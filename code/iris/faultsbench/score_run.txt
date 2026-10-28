@@ -1,0 +1,10 @@
+deepseek-r1_1.5b FAIL 1.0 0.767 {'P1': (0.333, 'CANNOT_TELL (gate failed)'), 'P2': (0.067, 'CANNOT_TELL (gate failed)'), 'P3': (1.0, 'CANNOT_TELL (gate failed)'), 'P4': (0.0, 'CANNOT_TELL (gate failed)')}
+falcon3_3b FAIL 1.0 0 {'P1': (0.0, 'CANNOT_TELL (gate failed)'), 'P2': (None, 'CANNOT_TELL (gate failed)'), 'P3': (None, 'CANNOT_TELL (gate failed)'), 'P4': (0.083, 'CANNOT_TELL (gate failed)')}
+gemma3_4b FAIL 0.993 0.367 {'P1': (1.0, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (0.15, 'CANNOT_TELL (gate failed)'), 'P4': (0.0, 'CANNOT_TELL (gate failed)')}
+granite3.3_2b FAIL 0.993 0.333 {'P1': (0.955, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (0.0, 'CANNOT_TELL (gate failed)'), 'P4': (0.0, 'CANNOT_TELL (gate failed)')}
+llama3.1_8b FAIL 1.0 0.37 {'P1': (0.0, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (0.0, 'CANNOT_TELL (gate failed)'), 'P4': (0.0, 'CANNOT_TELL (gate failed)')}
+mistral_7b FAIL 0.871 0.917 {'P1': (0.0, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (1.0, 'CANNOT_TELL (gate failed)'), 'P4': (0.067, 'CANNOT_TELL (gate failed)')}
+olmo2_7b FAIL 1.0 0.333 {'P1': (0.0, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (0.0, 'CANNOT_TELL (gate failed)'), 'P4': (0.0, 'CANNOT_TELL (gate failed)')}
+phi4-mini FAIL 0.971 0.533 {'P1': (0.25, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (0.3, 'CANNOT_TELL (gate failed)'), 'P4': (0.1, 'CANNOT_TELL (gate failed)')}
+qwen3_4b FAIL 1.0 0.643 {'P1': (0.0, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (1.0, 'CANNOT_TELL (gate failed)'), 'P4': (0.0, 'CANNOT_TELL (gate failed)')}
+smollm2_1.7b pass 1.0 0.833 {'P1': (1.0, 'BELOW'), 'P2': (1.0, 'CONSISTENT'), 'P3': (0.9, 'CONSISTENT'), 'P4': (0.0, 'CONSISTENT')}

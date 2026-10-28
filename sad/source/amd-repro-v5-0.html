@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMD, MLPerf® Inference v5.0 | SAD | Heuremen LLC</title>
+<meta name="description" content="AMD, MLPerf Inference v5.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="canonical" href="https://indahl.ai/sad/source/amd-repro-v5-0">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AMD, MLPerf® Inference v5.0 | SAD | Heuremen LLC">
+<meta property="og:description" content="AMD, MLPerf Inference v5.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<meta property="og:url" content="https://indahl.ai/sad/source/amd-repro-v5-0">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="AMD, MLPerf® Inference v5.0 | SAD | Heuremen LLC">
+<meta name="twitter:description" content="AMD, MLPerf Inference v5.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time">TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a></nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>AMD, MLPerf&reg; Inference v5.0</h1></div></section>
+<main class="wrap">
+<section class="legal"><p class="meta"><a href="/sad">SAD</a> &middot; <a href="/sad#sources">All sources</a></p><h2>AMD, MLPerf&reg; Inference v5.0</h2><p class="meta">Source: <a href="https://rocm.blogs.amd.com/artificial-intelligence/reproducing-amd-mlperf-inference-submission/README.html">ROCm Blogs: Reproducing the AMD Instinct GPUs MLPerf Inference v5.0 Submission (post dated 2 April 2025)</a>, fetched 2026-10-28. 6 statements checked: 2 BELOW, 3 CONSISTENT, 1 CANNOT_TELL. <a href="/respond?u=sad-amd-repro-v5-0">Respond</a></p><div class="scroll"><table class="mtx"><thead><tr><th>Statement</th><th>Compared</th><th>Stated</th><th>In the file</th><th>Outcome</th><th>Note</th></tr></thead><tbody><tr><td>&ldquo;The AMD MLPerf Inference v5.0 submission includes results that were generated on a system with 8 x MI325X GPUs and 2 x AMD EPYC 9655 CPUs.&rdquo;</td><td>AMD v5.0 entries 5.0-0001 (Llama 2 70B) and 5.0-0002 (SDXL), processor and accelerator fields</td><td>8 x MI325X and 2 x EPYC 9655</td><td>5.0-0001 Llama 2 70B: 2 x AMD EPYC 9575F, 8 AMD Instinct MI325X 25; 5.0-0002 SDXL: 2 x 2xAMD EPYC 9655, 8 AMD Instinct MI325X 25</td><td><strong>BELOW</strong></td><td>The SDXL system has the EPYC 9655. The Llama 2 70B system in the file has the EPYC 9575F.</td></tr><tr><td>&ldquo;Tokens per second: 33396.9 ... Completed tokens per second: 29522.56 ... Samples per second: 17 .0963&rdquo;</td><td>AMD v5.0 entries 5.0-0001 and 5.0-0002, result field</td><td>three sample outputs</td><td>Llama 2 70B Offline: post 33396.9, file 33928.1 (-1.57%), Llama 2 70B Server: post 29522.6, file 30724.5 (-3.91%), SDXL Offline: post 17.0963, file 17.0963 (+0.00%)</td><td><strong>BELOW</strong></td><td>Sample outputs come from a run on the reader&#x27;s system. Our rule: within 2% of the file entry. Llama 2 70B Server is 3.9% below.</td></tr><tr><td>&ldquo;These results are submitted in the Available category, showcasing AMD hardware and software that are already available to customers.&rdquo;</td><td>availability and category fields of the AMD v5.0 entries</td><td>available category</td><td>availability [&#x27;available&#x27;]; division [&#x27;closed&#x27;]</td><td><strong>CONSISTENT</strong></td><td></td></tr><tr><td>&ldquo;AMD has submitted results for two popular models&rdquo;</td><td>models in the AMD v5.0 entries</td><td>two models</td><td>models [&#x27;llama2-70b-99&#x27;, &#x27;llama2-70b-99.9&#x27;, &#x27;stable-diffusion-xl&#x27;]</td><td><strong>CONSISTENT</strong></td><td>Llama 2 70B appears at both 99 and 99.9 accuracy. SDXL is the second model.</td></tr><tr><td>&ldquo;Building upon the success of our MLPerf Inference v4.1 submission&rdquo;</td><td>AMD in the v4.1 repository</td><td>a v4.1 submission</td><td>AMD in v4.1 repository: True</td><td><strong>CONSISTENT</strong></td><td></td></tr><tr><td>&ldquo;ROCm 6.3.3 or later&rdquo;</td><td>Software field of the AMD v5.0 entry 5.0-0001</td><td>ROCm 6.3.3 or later for reproduction</td><td>the submitted Llama 2 70B run lists ROCm 6.3.1; the SDXL entry lists shark-ai 3.3.0</td><td><strong>CANNOT_TELL</strong></td><td>The post asks for a later ROCm than the one the Llama 2 70B entry lists. The SDXL entry names no ROCm version.</td></tr></tbody></table></div><h2>Notices</h2><p>MLPerf&reg; Inference v5.0, v5.1 and v6.0 results, datacenter and edge suites, closed and open divisions, as published by MLCommons Association in <code>summary_results.json</code> of the repositories <code>inference_results_v5.0</code>, <code>inference_results_v5.1</code> and <code>inference_results_v6.0</code> at github.com/mlcommons, retrieved 28 October 2026. MLPerf&reg; Training v6.0 results as published in the result logs of the repository <code>training_results_v6.0</code>, retrieved 28 October 2026. Training times on this page are recomputed from run start and run stop in each log, with the olympic average and review-committee scaling factors that the MLCommons result summarizer applies. Each row names the result entries it uses. The per-accelerator values, ratios and percentages on this page are our own computations from those results. They are not primary MLPerf&reg; metrics and are not verified by MLCommons Association. Unverified results have not been through an MLPerf&reg; review and may use measurement methodologies and/or workload implementations that are inconsistent with the MLPerf&reg; specification for verified results.</p><p>The MLPerf&reg; and MLCOMMONS&reg; trademarks and design versions thereof are registered and unregistered trademarks and service marks of MLCommons Association in the United States and other countries. All rights reserved. Unauthorized use is strictly prohibited. See www.mlcommons.org for more information. Heuremen LLC is not affiliated with MLCommons Association and nothing on this page is endorsed by it.</p><p class="meta">Vendor sentences are quoted from the pages named above. The MLCommons names and results are theirs. To correct or remove a row, use the <a href="/contact">inquiry form</a>. We acknowledge every request within three business days.</p></section>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC">GitHub</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-99399BFE</p>
+</div></footer>
+</body>
+</html>

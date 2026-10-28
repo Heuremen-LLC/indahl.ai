@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dell, MLPerf® Inference v6.0 | SAD | Heuremen LLC</title>
+<meta name="description" content="Dell, MLPerf Inference v6.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="canonical" href="https://indahl.ai/sad/source/dell-mi355x-v6-0">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dell, MLPerf® Inference v6.0 | SAD | Heuremen LLC">
+<meta property="og:description" content="Dell, MLPerf Inference v6.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<meta property="og:url" content="https://indahl.ai/sad/source/dell-mi355x-v6-0">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="Dell, MLPerf® Inference v6.0 | SAD | Heuremen LLC">
+<meta name="twitter:description" content="Dell, MLPerf Inference v6.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time">TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a></nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>Dell, MLPerf&reg; Inference v6.0</h1></div></section>
+<main class="wrap">
+<section class="legal"><p class="meta"><a href="/sad">SAD</a> &middot; <a href="/sad#sources">All sources</a></p><h2>Dell, MLPerf&reg; Inference v6.0</h2><p class="meta">Source: <a href="https://infohub.delltechnologies.com/en-us/p/mlperf-inference-v6-0-dell-showcases-breakthrough-performance-with-amd-instinct-tm-mi355x-gpus/">Dell Technologies Info Hub: MLPerf Inference v6.0: Dell Showcases Breakthrough Performance with AMD Instinct MI355X GPUs (post dated 16 April 2026)</a>, fetched 2026-10-28. 7 statements checked: 5 CONSISTENT, 2 CANNOT_TELL. <a href="/respond?u=sad-dell-mi355x-v6-0">Respond</a></p><div class="scroll"><table class="mtx"><thead><tr><th>Statement</th><th>Compared</th><th>Stated</th><th>In the file</th><th>Outcome</th><th>Note</th></tr></thead><tbody><tr><td>&ldquo;achieving 70,610.8 tokens/s&rdquo;</td><td>entry 6.0-0020 (Dell XE9785L, 8 x MI355X), Llama 2 70B Interactive</td><td>70,610.8 tokens/s</td><td>70,610.8 tokens/s</td><td><strong>CONSISTENT</strong></td><td></td></tr><tr><td>&ldquo;The MI355X delivers nearly 4x higher inference performance compared to the MI300X.&rdquo;</td><td>entry 6.0-0020 (8 x MI355X) against entry 6.0-0019 (Dell XE9680, 8 x MI300X), Llama 2 70B</td><td>nearly 4x</td><td>Offline 3.69x, Server 3.95x. Entry 6.0-0019 has no Interactive row</td><td><strong>CONSISTENT</strong></td><td>The post says three scenarios. The file has two for the MI300X entry.</td></tr><tr><td>Table 1 in the post lists GPT-OSS-120B on the XE9785L with 8 x MI355X at 78,603.5 queries/s in Server and 91,395.5 samples/s in Offline.</td><td>entry 6.0-0020 GPT-OSS-120B</td><td>Server 78,603.5, Offline 91,395.5</td><td>Server 78,603.5 tokens/s, Offline 91,395.5 tokens/s</td><td><strong>CONSISTENT</strong></td><td>The values match. The post labels the units queries/s and samples/s. The file lists tokens/s for both.</td></tr><tr><td>&ldquo;Approximately 95.5% scaling efficiency was achieved, despite mixing GPU generations across continents.&rdquo;</td><td>entry 6.0-0031 (Dell MangoBoost heterogeneous cluster, 24 GPUs) against the sum of single-system entries 6.0-0069 (8 x MI300X), 6.0-0070 (8 x MI325X) and 6.0-0032 (8 x MI355X), Llama 2 70B</td><td>about 95.5%</td><td>Offline 151,843 against a sum of 159,014 = 95.5%. Server 141,521 against 150,624 = 94.0%</td><td><strong>CONSISTENT</strong></td><td>The post does not name its baseline. The Offline figure reproduces with these three entries. Server is lower. The regions are not in the file.</td></tr><tr><td>&ldquo;Only ~16-18% throughput reduction for a 29% power drop&rdquo;</td><td>entry 6.0-0033 (XE9785, MI355X power capped at 1000 W) against entry 6.0-0032 (same system, 1400 W), Llama 2 70B</td><td>16% to 18% lower</td><td>Offline -16.1%, Server -18.1%. 1,000 W against 1,400 W is -28.6%</td><td><strong>CONSISTENT</strong></td><td></td></tr><tr><td>&ldquo;The XE9785L (8x MI355X) also delivered the first MLPerf submission of the open-source GPT-OSS-120B model&rdquo;</td><td>closed GPT-OSS-120B entries in v6.0</td><td>first submission of GPT-OSS-120B</td><td>14 submitters list GPT-OSS-120B in v6.0: AMD, ASUSTeK, Cisco, CoreWeave, Dell, GigaComputing, HPE, Intel, Lambda_SIT, Lenovo, NVIDIA, Nebius, ORACLE, RedHat</td><td><strong>CANNOT_TELL</strong></td><td>v6.0 is the first round with this model. The file does not order submissions within the round.</td></tr><tr><td>&ldquo;17.5% better tokens/s per Watt efficiency at the 1000W cap&rdquo;</td><td>same two entries, throughput divided by the capped power (1,000 W against 1,400 W)</td><td>+17.5%</td><td>Offline +17.5%, Server +14.6% using the cap values. Neither entry has measured power</td><td><strong>CANNOT_TELL</strong></td><td>The cap values are not measured power. The Offline figure reproduces from them and the Server figure does not.</td></tr></tbody></table></div><h2>Notices</h2><p>MLPerf&reg; Inference v5.0, v5.1 and v6.0 results, datacenter and edge suites, closed and open divisions, as published by MLCommons Association in <code>summary_results.json</code> of the repositories <code>inference_results_v5.0</code>, <code>inference_results_v5.1</code> and <code>inference_results_v6.0</code> at github.com/mlcommons, retrieved 28 October 2026. MLPerf&reg; Training v6.0 results as published in the result logs of the repository <code>training_results_v6.0</code>, retrieved 28 October 2026. Training times on this page are recomputed from run start and run stop in each log, with the olympic average and review-committee scaling factors that the MLCommons result summarizer applies. Each row names the result entries it uses. The per-accelerator values, ratios and percentages on this page are our own computations from those results. They are not primary MLPerf&reg; metrics and are not verified by MLCommons Association. Unverified results have not been through an MLPerf&reg; review and may use measurement methodologies and/or workload implementations that are inconsistent with the MLPerf&reg; specification for verified results.</p><p>The MLPerf&reg; and MLCOMMONS&reg; trademarks and design versions thereof are registered and unregistered trademarks and service marks of MLCommons Association in the United States and other countries. All rights reserved. Unauthorized use is strictly prohibited. See www.mlcommons.org for more information. Heuremen LLC is not affiliated with MLCommons Association and nothing on this page is endorsed by it.</p><p class="meta">Vendor sentences are quoted from the pages named above. The MLCommons names and results are theirs. To correct or remove a row, use the <a href="/contact">inquiry form</a>. We acknowledge every request within three business days.</p></section>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC">GitHub</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-8E1C7B2F</p>
+</div></footer>
+</body>
+</html>

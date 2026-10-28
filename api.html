@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API | Our measurements as tools for agents and scripts | Heuremen LLC</title>
+<meta name="description" content="A read-only MCP server and JSON API over every live measurement on indahl.ai, with the source, the time read and the terms on every answer.">
+<link rel="canonical" href="https://indahl.ai/api">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="API | Our measurements as tools for agents and scripts | Heuremen LLC">
+<meta property="og:description" content="A read-only MCP server and JSON API over every live measurement on indahl.ai, with the source, the time read and the terms on every answer.">
+<meta property="og:url" content="https://indahl.ai/api">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="API | Our measurements as tools for agents and scripts | Heuremen LLC">
+<meta name="twitter:description" content="A read-only MCP server and JSON API over every live measurement on indahl.ai, with the source, the time read and the terms on every answer.">
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time">TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a></nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>API &middot; Data and MCP</h1></div></section>
+<main class="wrap"><p class="meta">On this page: <a href="#add-it-to-an-agent">Add it to an agent</a> &middot; <a href="#tools">Tools</a> &middot; <a href="#the-same-tools-as-plain-json">The same tools as plain JSON</a> &middot; <a href="#terms">Terms</a></p>
+<section class="bench markguide"><h2>Our measurements as tools</h2><p>Every live measurement on this site can be read by an agent or a script, with no key and nothing to install. Each answer carries its source page, the time it was read and the terms. Outcomes are above, below, consistent or cannot tell, relative to what was stated. Nothing here writes anything.</p><h3 id="add-it-to-an-agent">Add it to an agent</h3><p>The MCP server is at https://indahl.ai/mcp and speaks the Model Context Protocol over HTTP. In Claude Code:</p><pre>claude mcp add --transport http indahl https://indahl.ai/mcp</pre><p>Any client that takes a remote MCP server can use the same address. Start with list_divisions.</p><h3 id="tools">Tools</h3><table class="mtx"><thead><tr><th>Tool</th><th>Returns</th></tr></thead><tbody><tr><td>list_divisions</td><td>Every division with a line on what it measures and its page.</td></tr><tr><td>time_servers</td><td>Public time servers against their own stated error bounds, live, from two networks. Optional server filter.</td></tr><tr><td>dns_filters</td><td>Public DNS filters against fresh malware and phishing listings, live: share blocked and counts by checkpoint.</td></tr><tr><td>coin_claims</td><td>Ravencoin whitepaper statements against the chain record, live, with the quote and outcome.</td></tr><tr><td>ibm_calibration</td><td>The calibration IBM publishes for each processor, mirrored every few minutes. Optional processor filter.</td></tr><tr><td>find_study</td><td>Search the List of indexed quantum or language-model studies, with receipts.</td></tr><tr><td>bench_results</td><td>Faults and Guards rates on open models, per round, with intervals.</td></tr><tr><td>model_claims_round</td><td>The live round that reruns an open model's stated results.</td></tr></tbody></table><h3 id="the-same-tools-as-plain-json">The same tools as plain JSON</h3><pre>curl https://indahl.ai/api/v1/time_servers?server=nist
+curl https://indahl.ai/api/v1/find_study?query=readout&amp;division=qia
+curl https://indahl.ai/api/v1</pre><p>The OpenAPI description is at <a href="/api/openapi.json">/api/openapi.json</a>. Responses are cached for a minute.</p><h3 id="terms">Terms</h3><p>Retrieval and answering are permitted with attribution. Use as training data is not permitted, as stated in the <a href="/terms#ai-training">terms</a>. The code is in the <a href="https://github.com/Heuremen-LLC/indahl.ai">public repository</a>. Named in a result and want to answer it? <a href="/contact">Inquiry</a>.</p></section>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC">GitHub</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-8D664A48</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intel, MLPerf® Inference v6.0 | SAD | Heuremen LLC</title>
+<meta name="description" content="Intel, MLPerf Inference v6.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="canonical" href="https://indahl.ai/sad/source/intel-v6-0">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Intel, MLPerf® Inference v6.0 | SAD | Heuremen LLC">
+<meta property="og:description" content="Intel, MLPerf Inference v6.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<meta property="og:url" content="https://indahl.ai/sad/source/intel-v6-0">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="Intel, MLPerf® Inference v6.0 | SAD | Heuremen LLC">
+<meta name="twitter:description" content="Intel, MLPerf Inference v6.0: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time">TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a></nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>Intel, MLPerf&reg; Inference v6.0</h1></div></section>
+<main class="wrap">
+<section class="legal"><p class="meta"><a href="/sad">SAD</a> &middot; <a href="/sad#sources">All sources</a></p><h2>Intel, MLPerf&reg; Inference v6.0</h2><p class="meta">Source: <a href="https://newsroom.intel.com/artificial-intelligence/intel-delivers-ai-performance-mlperf-inference-v6-0">Intel Newsroom: Intel Delivers Open, Scalable AI Performance in MLPerf Inference v6.0</a>, fetched 2026-10-28. 5 statements checked: 1 ABOVE, 1 BELOW, 1 CONSISTENT, 2 CANNOT_TELL. <a href="/respond?u=sad-intel-v6-0">Respond</a></p><div class="scroll"><table class="mtx"><thead><tr><th>Statement</th><th>Compared</th><th>Stated</th><th>In the file</th><th>Outcome</th><th>Note</th></tr></thead><tbody><tr><td>&ldquo;the Arc Pro B70 providing up to 1.8x higher inference performance than the Arc Pro B60&rdquo;</td><td>entries 6.0-0101 (4 x Arc Pro B70) over 6.0-0059 (4 x Arc Pro B60), same host CPU, every closed model and scenario they both ran</td><td>up to 1.8x</td><td>ratios gpt-oss-120b offline 1.83x, gpt-oss-120b server 2.10x, llama2-70b-99 offline 1.45x, llama2-70b-99 server 1.54x, llama3.1-8b offline 1.38x, llama3.1-8b server 1.33x, whisper offline 1.40x. Largest offline ratio 1.83x (gpt-oss-120b). Largest of all 2.10x (gpt-oss-120b server)</td><td><strong>ABOVE</strong></td><td>The statement says up to. The largest offline ratio matches it and the largest server ratio is higher. The post names the B60 comparison system as 2 Dual GPU cards, 4 B60 equivalent.</td></tr><tr><td>&ldquo;with over half of MLPerf 6.0 submissions powered by Xeon&rdquo;</td><td>the Processor column of the v6.0 file, entries and rows with Xeon in the processor name</td><td>over half</td><td>50 of 112 entries (44.6%), 235 of 520 rows (45.2%), 45 of 91 closed datacenter entries (49.5%)</td><td><strong>BELOW</strong></td><td>Every count of the processor field in the file is under half. If powered by means something other than the processor field, the file cannot show it.</td></tr><tr><td>&ldquo;up to 1.18x higher gains on the same Intel Arc Pro B60 hardware versus MLPerf v5.1&rdquo;</td><td>entries 6.0-0060 over 5.1-0056, 4 x Arc Pro B60 Dual GPU cards each, every model and scenario both ran</td><td>up to 1.18x</td><td>ratios llama2-70b-99 offline 1.087x, llama2-70b-99 server 1.042x, llama3.1-8b offline 1.045x, llama3.1-8b server 1.177x. Largest 1.177x</td><td><strong>CONSISTENT</strong></td><td>The host CPU differs, a Xeon w9-3475X in v5.1 and a Xeon 698X in v6.0.</td></tr><tr><td>&ldquo;powering up to 1.6x as much KV cache capacity when running larger models&rdquo;</td><td>a memory capacity comparison with competing GPUs</td><td>up to 1.6x KV cache capacity</td><td>not an MLPerf measurement</td><td><strong>CANNOT_TELL</strong></td><td>The MLCommons files hold throughput results, not cache capacity.</td></tr><tr><td>&ldquo;Intel Xeon 6 processors with P-cores delivered up to a 1.9x generational performance gain in MLPerf Inference v5.1&rdquo;</td><td>Xeon 6 entries against the previous Xeon generation</td><td>up to 1.9x generational gain</td><td>the previous generation is not in the v5.0, v5.1 or v6.0 files</td><td><strong>CANNOT_TELL</strong></td><td>Same statement as the v5.1 post.</td></tr></tbody></table></div><h2>Notices</h2><p>MLPerf&reg; Inference v5.0, v5.1 and v6.0 results, datacenter and edge suites, closed and open divisions, as published by MLCommons Association in <code>summary_results.json</code> of the repositories <code>inference_results_v5.0</code>, <code>inference_results_v5.1</code> and <code>inference_results_v6.0</code> at github.com/mlcommons, retrieved 28 October 2026. MLPerf&reg; Training v6.0 results as published in the result logs of the repository <code>training_results_v6.0</code>, retrieved 28 October 2026. Training times on this page are recomputed from run start and run stop in each log, with the olympic average and review-committee scaling factors that the MLCommons result summarizer applies. Each row names the result entries it uses. The per-accelerator values, ratios and percentages on this page are our own computations from those results. They are not primary MLPerf&reg; metrics and are not verified by MLCommons Association. Unverified results have not been through an MLPerf&reg; review and may use measurement methodologies and/or workload implementations that are inconsistent with the MLPerf&reg; specification for verified results.</p><p>The MLPerf&reg; and MLCOMMONS&reg; trademarks and design versions thereof are registered and unregistered trademarks and service marks of MLCommons Association in the United States and other countries. All rights reserved. Unauthorized use is strictly prohibited. See www.mlcommons.org for more information. Heuremen LLC is not affiliated with MLCommons Association and nothing on this page is endorsed by it.</p><p class="meta">Vendor sentences are quoted from the pages named above. The MLCommons names and results are theirs. To correct or remove a row, use the <a href="/contact">inquiry form</a>. We acknowledge every request within three business days.</p></section>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC">GitHub</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-BA8DC859</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,3390 @@
+{
+ "built": "2026-10-28",
+ "price_year": 2024,
+ "generation_year": 2024,
+ "unit": "cents per kilowatthour",
+ "method": "Average price = revenue divided by sales. Revenue sums Parts A, B, C and D of the EIA-861 sales table and sales sum Parts A, B and D, as the note under the table says. Generation shares are net generation by energy source over total net generation, Total Electric Power Industry, utility-scale. Other is total minus the named sources and includes petroleum, biomass, geothermal, other gases and pumped storage.",
+ "sources": {
+  "sales": "EIA-861 annual electric power industry report, Sales to Ultimate Customers 2024 (Sales_Ult_Cust_2024.xlsx)",
+  "generation": "EIA State Historical Tables, net generation by state and energy source (annual_generation_state.xlsx)"
+ },
+ "us": {
+  "sectors": {
+   "residential": {
+    "revenue_k": 244367408.7,
+    "sales_mwh": 1482873586.0,
+    "price": 16.48
+   },
+   "commercial": {
+    "revenue_k": 185043225.7,
+    "sales_mwh": 1450941216.0,
+    "price": 12.75
+   },
+   "industrial": {
+    "revenue_k": 84094810.5,
+    "sales_mwh": 1034584190.0,
+    "price": 8.13
+   },
+   "transportation": {
+    "revenue_k": 890328.0,
+    "sales_mwh": 6982840.0,
+    "price": 12.75
+   },
+   "total": {
+    "revenue_k": 514395773.2,
+    "sales_mwh": 3975381832.0,
+    "price": 12.94
+   }
+  },
+  "generation": {
+   "mwh": {
+    "coal": 652155921,
+    "gas": 1869902146,
+    "nuclear": 781865310,
+    "hydro": 242896054,
+    "wind": 451904357,
+    "solar": 219833913,
+    "other": 90076596,
+    "total": 4308634297
+   },
+   "share": {
+    "coal": 15.1,
+    "gas": 43.4,
+    "nuclear": 18.1,
+    "hydro": 5.6,
+    "wind": 10.5,
+    "solar": 5.1,
+    "other": 2.1
+   }
+  },
+  "ownership": [
+   {
+    "type": "Investor Owned",
+    "utilities": 145,
+    "sales_twh": 1903.7
+   },
+   {
+    "type": "Retail Power Marketer",
+    "utilities": 253,
+    "sales_twh": 813.1
+   },
+   {
+    "type": "Cooperative",
+    "utilities": 551,
+    "sales_twh": 484.8
+   },
+   {
+    "type": "Municipal",
+    "utilities": 456,
+    "sales_twh": 370.6
+   },
+   {
+    "type": "EIA adjustment",
+    "utilities": 1,
+    "sales_twh": 127.7
+   },
+   {
+    "type": "Political Subdivision",
+    "utilities": 58,
+    "sales_twh": 120.9
+   },
+   {
+    "type": "Community Choice Aggregator",
+    "utilities": 26,
+    "sales_twh": 62.2
+   },
+   {
+    "type": "State",
+    "utilities": 10,
+    "sales_twh": 51.5
+   },
+   {
+    "type": "Federal",
+    "utilities": 5,
+    "sales_twh": 28.6
+   },
+   {
+    "type": "Behind the Meter",
+    "utilities": 13,
+    "sales_twh": 12.3
+   }
+  ]
+ },
+ "states": {
+  "MS": {
+   "name": "Mississippi",
+   "sectors": {
+    "residential": {
+     "revenue_k": 2490447.3,
+     "sales_mwh": 18593201.0,
+     "price": 13.39
+    },
+    "commercial": {
+     "revenue_k": 1746176.4,
+     "sales_mwh": 14172165.0,
+     "price": 12.32
+    },
+    "industrial": {
+     "revenue_k": 1084653.2,
+     "sales_mwh": 15919246.0,
+     "price": 6.81
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 5321276.9,
+     "sales_mwh": 48684612.0,
+     "price": 10.93
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 22.606,
+    "Cooperative": 17.608,
+    "Federal": 4.501,
+    "Municipal": 3.146,
+    "EIA adjustment": 0.823
+   },
+   "generation": {
+    "mwh": {
+     "coal": 3334125,
+     "gas": 60025537,
+     "nuclear": 10653403,
+     "hydro": 0,
+     "wind": 346724,
+     "solar": 1690849,
+     "other": 1286074,
+     "total": 77336712
+    },
+    "share": {
+     "coal": 4.3,
+     "gas": 77.6,
+     "nuclear": 13.8,
+     "hydro": 0.0,
+     "wind": 0.4,
+     "solar": 2.2,
+     "other": 1.7
+    }
+   },
+   "data_centers": {
+    "osm_features": 7,
+    "epoch_sites": 1,
+    "epoch_mw": 228
+   }
+  },
+  "MD": {
+   "name": "Maryland",
+   "sectors": {
+    "residential": {
+     "revenue_k": 4880098.6,
+     "sales_mwh": 27327356.0,
+     "price": 17.86
+    },
+    "commercial": {
+     "revenue_k": 3600554.3,
+     "sales_mwh": 27773337.0,
+     "price": 12.96
+    },
+    "industrial": {
+     "revenue_k": 350492.5,
+     "sales_mwh": 3502025.0,
+     "price": 10.01
+    },
+    "transportation": {
+     "revenue_k": 48023.9,
+     "sales_mwh": 415970.0,
+     "price": 11.55
+    },
+    "total": {
+     "revenue_k": 8879169.3,
+     "sales_mwh": 59018688.0,
+     "price": 15.04
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 26.047,
+    "Retail Power Marketer": 25.487,
+    "Cooperative": 4.42,
+    "EIA adjustment": 2.001,
+    "Municipal": 0.559,
+    "Behind the Meter": 0.504
+   },
+   "generation": {
+    "mwh": {
+     "coal": 2465722,
+     "gas": 13910094,
+     "nuclear": 14724068,
+     "hydro": 1848233,
+     "wind": 558320,
+     "solar": 1036359,
+     "other": 882020,
+     "total": 35424816
+    },
+    "share": {
+     "coal": 7.0,
+     "gas": 39.3,
+     "nuclear": 41.6,
+     "hydro": 5.2,
+     "wind": 1.6,
+     "solar": 2.9,
+     "other": 2.5
+    }
+   },
+   "data_centers": {
+    "osm_features": 13,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "VA": {
+   "name": "Virginia",
+   "sectors": {
+    "residential": {
+     "revenue_k": 6524032.6,
+     "sales_mwh": 45272825.0,
+     "price": 14.41
+    },
+    "commercial": {
+     "revenue_k": 6865113.6,
+     "sales_mwh": 78710662.0,
+     "price": 8.72
+    },
+    "industrial": {
+     "revenue_k": 1238977.3,
+     "sales_mwh": 13775530.0,
+     "price": 8.99
+    },
+    "transportation": {
+     "revenue_k": 26443.3,
+     "sales_mwh": 285755.0,
+     "price": 9.25
+    },
+    "total": {
+     "revenue_k": 14654566.8,
+     "sales_mwh": 138044772.0,
+     "price": 10.62
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 103.669,
+    "Cooperative": 23.69,
+    "Retail Power Marketer": 5.598,
+    "Municipal": 2.843,
+    "EIA adjustment": 1.916,
+    "State": 0.329,
+    "Behind the Meter": 0.001
+   },
+   "generation": {
+    "mwh": {
+     "coal": 1972109,
+     "gas": 60998078,
+     "nuclear": 28945327,
+     "hydro": 1253138,
+     "wind": 50260,
+     "solar": 6998366,
+     "other": 2481337,
+     "total": 102698615
+    },
+    "share": {
+     "coal": 1.9,
+     "gas": 59.4,
+     "nuclear": 28.2,
+     "hydro": 1.2,
+     "wind": 0.0,
+     "solar": 6.8,
+     "other": 2.4
+    }
+   },
+   "data_centers": {
+    "osm_features": 391,
+    "epoch_sites": 7,
+    "epoch_mw": 1044
+   }
+  },
+  "WI": {
+   "name": "Wisconsin",
+   "sectors": {
+    "residential": {
+     "revenue_k": 3783444.7,
+     "sales_mwh": 22016559.0,
+     "price": 17.18
+    },
+    "commercial": {
+     "revenue_k": 2943282.3,
+     "sales_mwh": 23296259.0,
+     "price": 12.63
+    },
+    "industrial": {
+     "revenue_k": 1961925.0,
+     "sales_mwh": 22977299.0,
+     "price": 8.54
+    },
+    "transportation": {
+     "revenue_k": 239.9,
+     "sales_mwh": 1307.0,
+     "price": 18.36
+    },
+    "total": {
+     "revenue_k": 8688891.9,
+     "sales_mwh": 68291424.0,
+     "price": 12.72
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 56.452,
+    "Municipal": 6.01,
+    "EIA adjustment": 3.237,
+    "Cooperative": 2.593,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 20763128,
+     "gas": 26245562,
+     "nuclear": 10146871,
+     "hydro": 2071802,
+     "wind": 1994117,
+     "solar": 2880236,
+     "other": 1174628,
+     "total": 65276344
+    },
+    "share": {
+     "coal": 31.8,
+     "gas": 40.2,
+     "nuclear": 15.5,
+     "hydro": 3.2,
+     "wind": 3.1,
+     "solar": 4.4,
+     "other": 1.8
+    }
+   },
+   "data_centers": {
+    "osm_features": 12,
+    "epoch_sites": 1,
+    "epoch_mw": 369
+   }
+  },
+  "NY": {
+   "name": "New York",
+   "sectors": {
+    "residential": {
+     "revenue_k": 12424304.6,
+     "sales_mwh": 50857373.0,
+     "price": 24.43
+    },
+    "commercial": {
+     "revenue_k": 13337111.5,
+     "sales_mwh": 71053178.0,
+     "price": 18.77
+    },
+    "industrial": {
+     "revenue_k": 1450058.2,
+     "sales_mwh": 15804738.0,
+     "price": 9.17
+    },
+    "transportation": {
+     "revenue_k": 409084.0,
+     "sales_mwh": 2782212.0,
+     "price": 14.7
+    },
+    "total": {
+     "revenue_k": 27620558.4,
+     "sales_mwh": 140497501.0,
+     "price": 19.66
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 55.169,
+    "Retail Power Marketer": 44.661,
+    "State": 35.311,
+    "EIA adjustment": 2.452,
+    "Municipal": 2.321,
+    "Behind the Meter": 0.583
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 62345507,
+     "nuclear": 27073320,
+     "hydro": 27945295,
+     "wind": 6031402,
+     "solar": 3127486,
+     "other": 2492483,
+     "total": 129015493
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 48.3,
+     "nuclear": 21.0,
+     "hydro": 21.7,
+     "wind": 4.7,
+     "solar": 2.4,
+     "other": 1.9
+    }
+   },
+   "data_centers": {
+    "osm_features": 28,
+    "epoch_sites": 2,
+    "epoch_mw": 100
+   }
+  },
+  "PA": {
+   "name": "Pennsylvania",
+   "sectors": {
+    "residential": {
+     "revenue_k": 9641602.5,
+     "sales_mwh": 54272558.0,
+     "price": 17.77
+    },
+    "commercial": {
+     "revenue_k": 4252003.3,
+     "sales_mwh": 38548336.0,
+     "price": 11.03
+    },
+    "industrial": {
+     "revenue_k": 3840646.2,
+     "sales_mwh": 48830820.0,
+     "price": 7.87
+    },
+    "transportation": {
+     "revenue_k": 49267.7,
+     "sales_mwh": 494800.0,
+     "price": 9.96
+    },
+    "total": {
+     "revenue_k": 17783519.8,
+     "sales_mwh": 142146514.0,
+     "price": 12.51
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 86.701,
+    "Investor Owned": 48.158,
+    "EIA adjustment": 3.779,
+    "Cooperative": 2.771,
+    "Municipal": 0.52,
+    "Behind the Meter": 0.217
+   },
+   "generation": {
+    "mwh": {
+     "coal": 13041571,
+     "gas": 143912528,
+     "nuclear": 75404472,
+     "hydro": 2720842,
+     "wind": 3256555,
+     "solar": 1094923,
+     "other": 2067757,
+     "total": 241498648
+    },
+    "share": {
+     "coal": 5.4,
+     "gas": 59.6,
+     "nuclear": 31.2,
+     "hydro": 1.1,
+     "wind": 1.3,
+     "solar": 0.5,
+     "other": 0.9
+    }
+   },
+   "data_centers": {
+    "osm_features": 18,
+    "epoch_sites": 2,
+    "epoch_mw": 108
+   }
+  },
+  "MN": {
+   "name": "Minnesota",
+   "sectors": {
+    "residential": {
+     "revenue_k": 3408955.0,
+     "sales_mwh": 22062758.0,
+     "price": 15.45
+    },
+    "commercial": {
+     "revenue_k": 2729307.5,
+     "sales_mwh": 22468437.0,
+     "price": 12.15
+    },
+    "industrial": {
+     "revenue_k": 1831203.8,
+     "sales_mwh": 20015581.0,
+     "price": 9.15
+    },
+    "transportation": {
+     "revenue_k": 1948.5,
+     "sales_mwh": 15332.0,
+     "price": 12.71
+    },
+    "total": {
+     "revenue_k": 7971414.8,
+     "sales_mwh": 64562108.0,
+     "price": 12.35
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 38.845,
+    "Cooperative": 13.626,
+    "EIA adjustment": 6.246,
+    "Municipal": 5.791,
+    "Federal": 0.053,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 11430486,
+     "gas": 15888656,
+     "nuclear": 11844611,
+     "hydro": 867762,
+     "wind": 14781458,
+     "solar": 2285276,
+     "other": 1496973,
+     "total": 58595222
+    },
+    "share": {
+     "coal": 19.5,
+     "gas": 27.1,
+     "nuclear": 20.2,
+     "hydro": 1.5,
+     "wind": 25.2,
+     "solar": 3.9,
+     "other": 2.6
+    }
+   },
+   "data_centers": {
+    "osm_features": 16,
+    "epoch_sites": 1,
+    "epoch_mw": 178
+   }
+  },
+  "SC": {
+   "name": "South Carolina",
+   "sectors": {
+    "residential": {
+     "revenue_k": 4632120.5,
+     "sales_mwh": 32544816.0,
+     "price": 14.23
+    },
+    "commercial": {
+     "revenue_k": 2797768.4,
+     "sales_mwh": 26306224.0,
+     "price": 10.64
+    },
+    "industrial": {
+     "revenue_k": 1718300.2,
+     "sales_mwh": 25110388.0,
+     "price": 6.84
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 9148189.1,
+     "sales_mwh": 83961428.0,
+     "price": 10.9
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 49.544,
+    "Cooperative": 19.809,
+    "State": 10.087,
+    "Municipal": 2.852,
+    "EIA adjustment": 1.597,
+    "Behind the Meter": 0.072
+   },
+   "generation": {
+    "mwh": {
+     "coal": 16841756,
+     "gas": 22808743,
+     "nuclear": 53770407,
+     "hydro": 2411673,
+     "wind": 0,
+     "solar": 2925656,
+     "other": 1727181,
+     "total": 100485416
+    },
+    "share": {
+     "coal": 16.8,
+     "gas": 22.7,
+     "nuclear": 53.5,
+     "hydro": 2.4,
+     "wind": 0.0,
+     "solar": 2.9,
+     "other": 1.7
+    }
+   },
+   "data_centers": {
+    "osm_features": 13,
+    "epoch_sites": 1,
+    "epoch_mw": 69
+   }
+  },
+  "AZ": {
+   "name": "Arizona",
+   "sectors": {
+    "residential": {
+     "revenue_k": 6027533.9,
+     "sales_mwh": 40434931.0,
+     "price": 14.91
+    },
+    "commercial": {
+     "revenue_k": 4415074.5,
+     "sales_mwh": 36100156.0,
+     "price": 12.23
+    },
+    "industrial": {
+     "revenue_k": 1129681.1,
+     "sales_mwh": 14297880.0,
+     "price": 7.9
+    },
+    "transportation": {
+     "revenue_k": 1130.1,
+     "sales_mwh": 10321.0,
+     "price": 10.95
+    },
+    "total": {
+     "revenue_k": 11573419.6,
+     "sales_mwh": 90843288.0,
+     "price": 12.74
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 47.32,
+    "Political Subdivision": 35.113,
+    "Cooperative": 3.453,
+    "EIA adjustment": 2.208,
+    "Behind the Meter": 1.407,
+    "Federal": 0.529,
+    "State": 0.487,
+    "Municipal": 0.326
+   },
+   "generation": {
+    "mwh": {
+     "coal": 9814665,
+     "gas": 55089930,
+     "nuclear": 32388118,
+     "hydro": 5313826,
+     "wind": 2540455,
+     "solar": 10820663,
+     "other": 58854,
+     "total": 116026511
+    },
+    "share": {
+     "coal": 8.5,
+     "gas": 47.5,
+     "nuclear": 27.9,
+     "hydro": 4.6,
+     "wind": 2.2,
+     "solar": 9.3,
+     "other": 0.1
+    }
+   },
+   "data_centers": {
+    "osm_features": 59,
+    "epoch_sites": 2,
+    "epoch_mw": 266
+   }
+  },
+  "AL": {
+   "name": "Alabama",
+   "sectors": {
+    "residential": {
+     "revenue_k": 4993058.3,
+     "sales_mwh": 32899071.0,
+     "price": 15.18
+    },
+    "commercial": {
+     "revenue_k": 3118220.2,
+     "sales_mwh": 22861620.0,
+     "price": 13.64
+    },
+    "industrial": {
+     "revenue_k": 2303895.1,
+     "sales_mwh": 31762241.0,
+     "price": 7.25
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 10415173.6,
+     "sales_mwh": 87522932.0,
+     "price": 11.9
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 51.9,
+    "Municipal": 16.298,
+    "Cooperative": 12.107,
+    "Federal": 5.771,
+    "EIA adjustment": 1.447
+   },
+   "generation": {
+    "mwh": {
+     "coal": 20936166,
+     "gas": 64598751,
+     "nuclear": 44487194,
+     "hydro": 8357262,
+     "wind": 0,
+     "solar": 1255147,
+     "other": 3286696,
+     "total": 142921216
+    },
+    "share": {
+     "coal": 14.6,
+     "gas": 45.2,
+     "nuclear": 31.1,
+     "hydro": 5.8,
+     "wind": 0.0,
+     "solar": 0.9,
+     "other": 2.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 13,
+    "epoch_sites": 2,
+    "epoch_mw": 299
+   }
+  },
+  "CA": {
+   "name": "California",
+   "sectors": {
+    "residential": {
+     "revenue_k": 27443697.4,
+     "sales_mwh": 85850538.0,
+     "price": 31.97
+    },
+    "commercial": {
+     "revenue_k": 29399924.8,
+     "sales_mwh": 115125595.0,
+     "price": 25.54
+    },
+    "industrial": {
+     "revenue_k": 9477808.2,
+     "sales_mwh": 44025912.0,
+     "price": 21.53
+    },
+    "transportation": {
+     "revenue_k": 120098.2,
+     "sales_mwh": 715100.0,
+     "price": 16.79
+    },
+    "total": {
+     "revenue_k": 66441528.5,
+     "sales_mwh": 245717145.0,
+     "price": 27.04
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 83.146,
+    "Community Choice Aggregator": 61.217,
+    "Municipal": 40.093,
+    "Retail Power Marketer": 26.209,
+    "Political Subdivision": 20.647,
+    "EIA adjustment": 5.469,
+    "Behind the Meter": 5.175,
+    "Federal": 3.648,
+    "Cooperative": 0.113
+   },
+   "generation": {
+    "mwh": {
+     "coal": 245554,
+     "gas": 86655675,
+     "nuclear": 18378835,
+     "hydro": 29453931,
+     "wind": 15648353,
+     "solar": 48427600,
+     "other": 15381435,
+     "total": 214191383
+    },
+    "share": {
+     "coal": 0.1,
+     "gas": 40.5,
+     "nuclear": 8.6,
+     "hydro": 13.8,
+     "wind": 7.3,
+     "solar": 22.6,
+     "other": 7.2
+    }
+   },
+   "data_centers": {
+    "osm_features": 112,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "AK": {
+   "name": "Alaska",
+   "sectors": {
+    "residential": {
+     "revenue_k": 513968.0,
+     "sales_mwh": 2070594.0,
+     "price": 24.82
+    },
+    "commercial": {
+     "revenue_k": 561565.8,
+     "sales_mwh": 2603674.0,
+     "price": 21.57
+    },
+    "industrial": {
+     "revenue_k": 264999.2,
+     "sales_mwh": 1372235.0,
+     "price": 19.31
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 1340533.0,
+     "sales_mwh": 6046503.0,
+     "price": 22.17
+    }
+   },
+   "ownership_sales_twh": {
+    "Cooperative": 4.684,
+    "EIA adjustment": 0.632,
+    "Investor Owned": 0.553,
+    "Municipal": 0.177
+   },
+   "generation": {
+    "mwh": {
+     "coal": 752337,
+     "gas": 3134186,
+     "nuclear": 0,
+     "hydro": 1715040,
+     "wind": 123366,
+     "solar": 7770,
+     "other": 957807,
+     "total": 6690506
+    },
+    "share": {
+     "coal": 11.2,
+     "gas": 46.8,
+     "nuclear": 0.0,
+     "hydro": 25.6,
+     "wind": 1.8,
+     "solar": 0.1,
+     "other": 14.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 0,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "GA": {
+   "name": "Georgia",
+   "sectors": {
+    "residential": {
+     "revenue_k": 8740025.7,
+     "sales_mwh": 62062953.0,
+     "price": 14.08
+    },
+    "commercial": {
+     "revenue_k": 5994967.3,
+     "sales_mwh": 55172683.0,
+     "price": 10.87
+    },
+    "industrial": {
+     "revenue_k": 2352084.3,
+     "sales_mwh": 32616660.0,
+     "price": 7.21
+    },
+    "transportation": {
+     "revenue_k": 11591.4,
+     "sales_mwh": 151669.0,
+     "price": 7.64
+    },
+    "total": {
+     "revenue_k": 17098668.7,
+     "sales_mwh": 150003965.0,
+     "price": 11.4
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 87.226,
+    "Cooperative": 44.923,
+    "Municipal": 13.651,
+    "EIA adjustment": 3.818,
+    "Political Subdivision": 0.38,
+    "Behind the Meter": 0.007
+   },
+   "generation": {
+    "mwh": {
+     "coal": 17836880,
+     "gas": 56936526,
+     "nuclear": 47975859,
+     "hydro": 2941170,
+     "wind": 0,
+     "solar": 9184669,
+     "other": 4930324,
+     "total": 139805428
+    },
+    "share": {
+     "coal": 12.8,
+     "gas": 40.7,
+     "nuclear": 34.3,
+     "hydro": 2.1,
+     "wind": 0.0,
+     "solar": 6.6,
+     "other": 3.5
+    }
+   },
+   "data_centers": {
+    "osm_features": 55,
+    "epoch_sites": 3,
+    "epoch_mw": 681
+   }
+  },
+  "NC": {
+   "name": "North Carolina",
+   "sectors": {
+    "residential": {
+     "revenue_k": 8726608.1,
+     "sales_mwh": 61744942.0,
+     "price": 14.13
+    },
+    "commercial": {
+     "revenue_k": 5229699.1,
+     "sales_mwh": 49524269.0,
+     "price": 10.56
+    },
+    "industrial": {
+     "revenue_k": 1990135.4,
+     "sales_mwh": 25622927.0,
+     "price": 7.77
+    },
+    "transportation": {
+     "revenue_k": 1273.5,
+     "sales_mwh": 12388.0,
+     "price": 10.28
+    },
+    "total": {
+     "revenue_k": 15947716.1,
+     "sales_mwh": 136904526.0,
+     "price": 11.65
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 100.103,
+    "Cooperative": 19.687,
+    "Municipal": 13.558,
+    "EIA adjustment": 3.342,
+    "State": 0.207,
+    "Federal": 0.005,
+    "Behind the Meter": 0.002
+   },
+   "generation": {
+    "mwh": {
+     "coal": 17078652,
+     "gas": 55503196,
+     "nuclear": 43349344,
+     "hydro": 4829075,
+     "wind": 530043,
+     "solar": 11843879,
+     "other": 1831207,
+     "total": 134965396
+    },
+    "share": {
+     "coal": 12.7,
+     "gas": 41.1,
+     "nuclear": 32.1,
+     "hydro": 3.6,
+     "wind": 0.4,
+     "solar": 8.8,
+     "other": 1.4
+    }
+   },
+   "data_centers": {
+    "osm_features": 23,
+    "epoch_sites": 1,
+    "epoch_mw": 65
+   }
+  },
+  "IN": {
+   "name": "Indiana",
+   "sectors": {
+    "residential": {
+     "revenue_k": 4879873.4,
+     "sales_mwh": 33048641.0,
+     "price": 14.77
+    },
+    "commercial": {
+     "revenue_k": 2944083.8,
+     "sales_mwh": 23663900.0,
+     "price": 12.44
+    },
+    "industrial": {
+     "revenue_k": 3461231.4,
+     "sales_mwh": 42489190.0,
+     "price": 8.15
+    },
+    "transportation": {
+     "revenue_k": 2200.9,
+     "sales_mwh": 17876.0,
+     "price": 12.31
+    },
+    "total": {
+     "revenue_k": 11287389.5,
+     "sales_mwh": 99219607.0,
+     "price": 11.38
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 76.934,
+    "Cooperative": 13.092,
+    "Municipal": 5.161,
+    "EIA adjustment": 4.029,
+    "Behind the Meter": 0.003
+   },
+   "generation": {
+    "mwh": {
+     "coal": 40526060,
+     "gas": 39859718,
+     "nuclear": 0,
+     "hydro": 375251,
+     "wind": 10312184,
+     "solar": 3091430,
+     "other": 2848237,
+     "total": 97012880
+    },
+    "share": {
+     "coal": 41.8,
+     "gas": 41.1,
+     "nuclear": 0.0,
+     "hydro": 0.4,
+     "wind": 10.6,
+     "solar": 3.2,
+     "other": 2.9
+    }
+   },
+   "data_centers": {
+    "osm_features": 13,
+    "epoch_sites": 3,
+    "epoch_mw": 1215
+   }
+  },
+  "KS": {
+   "name": "Kansas",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1958283.7,
+     "sales_mwh": 13839989.0,
+     "price": 14.15
+    },
+    "commercial": {
+     "revenue_k": 1767253.7,
+     "sales_mwh": 15790720.0,
+     "price": 11.19
+    },
+    "industrial": {
+     "revenue_k": 898942.2,
+     "sales_mwh": 11627501.0,
+     "price": 7.73
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 4624479.6,
+     "sales_mwh": 41258210.0,
+     "price": 11.21
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 25.9,
+    "Cooperative": 6.293,
+    "Municipal": 4.909,
+    "EIA adjustment": 4.156,
+    "Federal": 0.0,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 13079183,
+     "gas": 5317906,
+     "nuclear": 9204226,
+     "hydro": 20044,
+     "wind": 29795187,
+     "solar": 121613,
+     "other": 157996,
+     "total": 57696155
+    },
+    "share": {
+     "coal": 22.7,
+     "gas": 9.2,
+     "nuclear": 16.0,
+     "hydro": 0.0,
+     "wind": 51.6,
+     "solar": 0.2,
+     "other": 0.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 7,
+    "epoch_sites": 1,
+    "epoch_mw": 237
+   }
+  },
+  "OK": {
+   "name": "Oklahoma",
+   "sectors": {
+    "residential": {
+     "revenue_k": 2977075.4,
+     "sales_mwh": 24328279.0,
+     "price": 12.24
+    },
+    "commercial": {
+     "revenue_k": 2267616.4,
+     "sales_mwh": 25412391.0,
+     "price": 8.92
+    },
+    "industrial": {
+     "revenue_k": 1305144.7,
+     "sales_mwh": 22343103.0,
+     "price": 5.84
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 6549836.5,
+     "sales_mwh": 72083773.0,
+     "price": 9.09
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 48.666,
+    "Cooperative": 14.452,
+    "State": 4.28,
+    "EIA adjustment": 2.48,
+    "Municipal": 2.205,
+    "Behind the Meter": 0.001
+   },
+   "generation": {
+    "mwh": {
+     "coal": 6135408,
+     "gas": 47742413,
+     "nuclear": 0,
+     "hydro": 1581588,
+     "wind": 37966661,
+     "solar": 311332,
+     "other": 331743,
+     "total": 94069145
+    },
+    "share": {
+     "coal": 6.5,
+     "gas": 50.8,
+     "nuclear": 0.0,
+     "hydro": 1.7,
+     "wind": 40.4,
+     "solar": 0.3,
+     "other": 0.4
+    }
+   },
+   "data_centers": {
+    "osm_features": 11,
+    "epoch_sites": 2,
+    "epoch_mw": 368
+   }
+  },
+  "LA": {
+   "name": "Louisiana",
+   "sectors": {
+    "residential": {
+     "revenue_k": 3633012.3,
+     "sales_mwh": 30974840.0,
+     "price": 11.73
+    },
+    "commercial": {
+     "revenue_k": 2473115.8,
+     "sales_mwh": 23651891.0,
+     "price": 10.46
+    },
+    "industrial": {
+     "revenue_k": 2286239.9,
+     "sales_mwh": 40720072.0,
+     "price": 5.61
+    },
+    "transportation": {
+     "revenue_k": 1157.0,
+     "sales_mwh": 10026.0,
+     "price": 11.54
+    },
+    "total": {
+     "revenue_k": 8393525.0,
+     "sales_mwh": 95356829.0,
+     "price": 8.8
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 80.952,
+    "Cooperative": 9.451,
+    "Municipal": 3.497,
+    "EIA adjustment": 1.014,
+    "Political Subdivision": 0.443,
+    "Behind the Meter": 0.001
+   },
+   "generation": {
+    "mwh": {
+     "coal": 3699808,
+     "gas": 75263347,
+     "nuclear": 14651585,
+     "hydro": 885203,
+     "wind": 0,
+     "solar": 1198620,
+     "other": 3924272,
+     "total": 99622835
+    },
+    "share": {
+     "coal": 3.7,
+     "gas": 75.5,
+     "nuclear": 14.7,
+     "hydro": 0.9,
+     "wind": 0.0,
+     "solar": 1.2,
+     "other": 3.9
+    }
+   },
+   "data_centers": {
+    "osm_features": 4,
+    "epoch_sites": 1,
+    "epoch_mw": 0
+   }
+  },
+  "MI": {
+   "name": "Michigan",
+   "sectors": {
+    "residential": {
+     "revenue_k": 6466083.6,
+     "sales_mwh": 33504932.0,
+     "price": 19.3
+    },
+    "commercial": {
+     "revenue_k": 5209955.8,
+     "sales_mwh": 37190845.0,
+     "price": 14.01
+    },
+    "industrial": {
+     "revenue_k": 2336235.9,
+     "sales_mwh": 28289760.0,
+     "price": 8.26
+    },
+    "transportation": {
+     "revenue_k": 771.9,
+     "sales_mwh": 5477.0,
+     "price": 14.09
+    },
+    "total": {
+     "revenue_k": 14013047.2,
+     "sales_mwh": 98991014.0,
+     "price": 14.16
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 78.553,
+    "Retail Power Marketer": 7.429,
+    "Municipal": 5.825,
+    "Cooperative": 5.402,
+    "EIA adjustment": 1.782,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 25738090,
+     "gas": 55734281,
+     "nuclear": 26280776,
+     "hydro": 1254958,
+     "wind": 9838928,
+     "solar": 1859352,
+     "other": 3493705,
+     "total": 124200090
+    },
+    "share": {
+     "coal": 20.7,
+     "gas": 44.9,
+     "nuclear": 21.2,
+     "hydro": 1.0,
+     "wind": 7.9,
+     "solar": 1.5,
+     "other": 2.8
+    }
+   },
+   "data_centers": {
+    "osm_features": 12,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "IA": {
+   "name": "Iowa",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1939174.6,
+     "sales_mwh": 14468850.0,
+     "price": 13.4
+    },
+    "commercial": {
+     "revenue_k": 1309887.1,
+     "sales_mwh": 12814989.0,
+     "price": 10.22
+    },
+    "industrial": {
+     "revenue_k": 1881132.4,
+     "sales_mwh": 27646583.0,
+     "price": 6.8
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 5130194.1,
+     "sales_mwh": 54930422.0,
+     "price": 9.34
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 41.636,
+    "EIA adjustment": 5.58,
+    "Cooperative": 5.316,
+    "Municipal": 2.399
+   },
+   "generation": {
+    "mwh": {
+     "coal": 14464419,
+     "gas": 9764541,
+     "nuclear": 0,
+     "hydro": 1030463,
+     "wind": 44277157,
+     "solar": 663478,
+     "other": 264090,
+     "total": 70464148
+    },
+    "share": {
+     "coal": 20.5,
+     "gas": 13.9,
+     "nuclear": 0.0,
+     "hydro": 1.5,
+     "wind": 62.8,
+     "solar": 0.9,
+     "other": 0.4
+    }
+   },
+   "data_centers": {
+    "osm_features": 45,
+    "epoch_sites": 4,
+    "epoch_mw": 427
+   }
+  },
+  "WA": {
+   "name": "Washington",
+   "sectors": {
+    "residential": {
+     "revenue_k": 4595906.3,
+     "sales_mwh": 38626766.0,
+     "price": 11.9
+    },
+    "commercial": {
+     "revenue_k": 3307355.4,
+     "sales_mwh": 33101746.0,
+     "price": 9.99
+    },
+    "industrial": {
+     "revenue_k": 1200154.6,
+     "sales_mwh": 18159320.0,
+     "price": 6.61
+    },
+    "transportation": {
+     "revenue_k": 10922.4,
+     "sales_mwh": 93797.0,
+     "price": 11.64
+    },
+    "total": {
+     "revenue_k": 9114338.7,
+     "sales_mwh": 89981629.0,
+     "price": 10.13
+    }
+   },
+   "ownership_sales_twh": {
+    "Political Subdivision": 34.451,
+    "Investor Owned": 31.155,
+    "Municipal": 15.195,
+    "Cooperative": 4.183,
+    "EIA adjustment": 2.327,
+    "Retail Power Marketer": 1.442,
+    "Federal": 1.228,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 2846594,
+     "gas": 18097481,
+     "nuclear": 9967139,
+     "hydro": 60736309,
+     "wind": 8863339,
+     "solar": 436826,
+     "other": 1450023,
+     "total": 102397711
+    },
+    "share": {
+     "coal": 2.8,
+     "gas": 17.7,
+     "nuclear": 9.7,
+     "hydro": 59.3,
+     "wind": 8.7,
+     "solar": 0.4,
+     "other": 1.4
+    }
+   },
+   "data_centers": {
+    "osm_features": 59,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "TX": {
+   "name": "Texas",
+   "sectors": {
+    "residential": {
+     "revenue_k": 24652421.8,
+     "sales_mwh": 165051743.0,
+     "price": 14.94
+    },
+    "commercial": {
+     "revenue_k": 14046065.6,
+     "sales_mwh": 164232987.0,
+     "price": 8.55
+    },
+    "industrial": {
+     "revenue_k": 10782107.5,
+     "sales_mwh": 176135056.0,
+     "price": 6.12
+    },
+    "transportation": {
+     "revenue_k": 501.7,
+     "sales_mwh": 11531.0,
+     "price": 4.35
+    },
+    "total": {
+     "revenue_k": 49481096.6,
+     "sales_mwh": 505431317.0,
+     "price": 9.79
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 321.659,
+    "Cooperative": 66.583,
+    "Municipal": 54.201,
+    "Investor Owned": 48.673,
+    "EIA adjustment": 13.978,
+    "Behind the Meter": 0.282,
+    "State": 0.056
+   },
+   "generation": {
+    "mwh": {
+     "coal": 65545244,
+     "gas": 293193469,
+     "nuclear": 38613118,
+     "hydro": 776742,
+     "wind": 124277504,
+     "solar": 40558964,
+     "other": 3537647,
+     "total": 566502688
+    },
+    "share": {
+     "coal": 11.6,
+     "gas": 51.8,
+     "nuclear": 6.8,
+     "hydro": 0.1,
+     "wind": 21.9,
+     "solar": 7.2,
+     "other": 0.6
+    }
+   },
+   "data_centers": {
+    "osm_features": 173,
+    "epoch_sites": 11,
+    "epoch_mw": 1327
+   }
+  },
+  "TN": {
+   "name": "Tennessee",
+   "sectors": {
+    "residential": {
+     "revenue_k": 5445099.8,
+     "sales_mwh": 43827503.0,
+     "price": 12.42
+    },
+    "commercial": {
+     "revenue_k": 4338477.4,
+     "sales_mwh": 35996043.0,
+     "price": 12.05
+    },
+    "industrial": {
+     "revenue_k": 1436731.7,
+     "sales_mwh": 23138889.0,
+     "price": 6.21
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 11220308.9,
+     "sales_mwh": 102962435.0,
+     "price": 10.9
+    }
+   },
+   "ownership_sales_twh": {
+    "Municipal": 66.796,
+    "Cooperative": 27.298,
+    "Federal": 7.004,
+    "Investor Owned": 1.803,
+    "EIA adjustment": 0.057,
+    "Behind the Meter": 0.005
+   },
+   "generation": {
+    "mwh": {
+     "coal": 17434868,
+     "gas": 16483405,
+     "nuclear": 32185960,
+     "hydro": 8911409,
+     "wind": 13186,
+     "solar": 1104334,
+     "other": 33604,
+     "total": 76166766
+    },
+    "share": {
+     "coal": 22.9,
+     "gas": 21.6,
+     "nuclear": 42.3,
+     "hydro": 11.7,
+     "wind": 0.0,
+     "solar": 1.4,
+     "other": 0.0
+    }
+   },
+   "data_centers": {
+    "osm_features": 27,
+    "epoch_sites": 3,
+    "epoch_mw": 1373
+   }
+  },
+  "WV": {
+   "name": "West Virginia",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1609064.2,
+     "sales_mwh": 10674503.0,
+     "price": 15.07
+    },
+    "commercial": {
+     "revenue_k": 890696.7,
+     "sales_mwh": 7665085.0,
+     "price": 11.62
+    },
+    "industrial": {
+     "revenue_k": 1144145.7,
+     "sales_mwh": 14650982.0,
+     "price": 7.81
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 3643906.6,
+     "sales_mwh": 32990570.0,
+     "price": 11.05
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 32.836,
+    "EIA adjustment": 0.155,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 43097869,
+     "gas": 3782254,
+     "nuclear": 0,
+     "hydro": 1361332,
+     "wind": 2002848,
+     "solar": 185815,
+     "other": 164700,
+     "total": 50594818
+    },
+    "share": {
+     "coal": 85.2,
+     "gas": 7.5,
+     "nuclear": 0.0,
+     "hydro": 2.7,
+     "wind": 4.0,
+     "solar": 0.4,
+     "other": 0.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 2,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "AR": {
+   "name": "Arkansas",
+   "sectors": {
+    "residential": {
+     "revenue_k": 2288691.4,
+     "sales_mwh": 18580638.0,
+     "price": 12.32
+    },
+    "commercial": {
+     "revenue_k": 1206779.5,
+     "sales_mwh": 11789053.0,
+     "price": 10.24
+    },
+    "industrial": {
+     "revenue_k": 1290759.0,
+     "sales_mwh": 19525858.0,
+     "price": 6.61
+    },
+    "transportation": {
+     "revenue_k": 34.8,
+     "sales_mwh": 263.0,
+     "price": 13.23
+    },
+    "total": {
+     "revenue_k": 4786264.7,
+     "sales_mwh": 49895812.0,
+     "price": 9.59
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 29.627,
+    "Cooperative": 13.68,
+    "Municipal": 5.881,
+    "EIA adjustment": 0.703,
+    "Behind the Meter": 0.004
+   },
+   "generation": {
+    "mwh": {
+     "coal": 15660355,
+     "gas": 24725307,
+     "nuclear": 14762779,
+     "hydro": 3134464,
+     "wind": 0,
+     "solar": 2329090,
+     "other": 930489,
+     "total": 61542484
+    },
+    "share": {
+     "coal": 25.4,
+     "gas": 40.2,
+     "nuclear": 24.0,
+     "hydro": 5.1,
+     "wind": 0.0,
+     "solar": 3.8,
+     "other": 1.5
+    }
+   },
+   "data_centers": {
+    "osm_features": 2,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "NJ": {
+   "name": "New Jersey",
+   "sectors": {
+    "residential": {
+     "revenue_k": 5743700.9,
+     "sales_mwh": 29692962.0,
+     "price": 19.34
+    },
+    "commercial": {
+     "revenue_k": 5431274.7,
+     "sales_mwh": 37086504.0,
+     "price": 14.64
+    },
+    "industrial": {
+     "revenue_k": 757877.6,
+     "sales_mwh": 6351180.0,
+     "price": 11.93
+    },
+    "transportation": {
+     "revenue_k": 44527.1,
+     "sales_mwh": 400778.0,
+     "price": 11.11
+    },
+    "total": {
+     "revenue_k": 11977380.3,
+     "sales_mwh": 73531424.0,
+     "price": 16.29
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 43.268,
+    "Retail Power Marketer": 27.081,
+    "EIA adjustment": 1.633,
+    "Behind the Meter": 0.842,
+    "Municipal": 0.708
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 29648850,
+     "nuclear": 27676781,
+     "hydro": 3541,
+     "wind": 19390,
+     "solar": 1596360,
+     "other": 1230323,
+     "total": 60175245
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 49.3,
+     "nuclear": 46.0,
+     "hydro": 0.0,
+     "wind": 0.0,
+     "solar": 2.7,
+     "other": 2.0
+    }
+   },
+   "data_centers": {
+    "osm_features": 59,
+    "epoch_sites": 1,
+    "epoch_mw": 50
+   }
+  },
+  "IL": {
+   "name": "Illinois",
+   "sectors": {
+    "residential": {
+     "revenue_k": 7117528.6,
+     "sales_mwh": 44850719.0,
+     "price": 15.87
+    },
+    "commercial": {
+     "revenue_k": 5344924.4,
+     "sales_mwh": 45240214.0,
+     "price": 11.81
+    },
+    "industrial": {
+     "revenue_k": 3767818.1,
+     "sales_mwh": 42693932.0,
+     "price": 8.83
+    },
+    "transportation": {
+     "revenue_k": 34313.9,
+     "sales_mwh": 442042.0,
+     "price": 7.76
+    },
+    "total": {
+     "revenue_k": 16264585.0,
+     "sales_mwh": 133226907.0,
+     "price": 12.21
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 75.828,
+    "Investor Owned": 40.285,
+    "EIA adjustment": 7.563,
+    "Cooperative": 4.675,
+    "Municipal": 4.557,
+    "Behind the Meter": 0.319
+   },
+   "generation": {
+    "mwh": {
+     "coal": 26965456,
+     "gas": 30137333,
+     "nuclear": 99211858,
+     "hydro": 74896,
+     "wind": 24910345,
+     "solar": 3057409,
+     "other": 655638,
+     "total": 185012935
+    },
+    "share": {
+     "coal": 14.6,
+     "gas": 16.3,
+     "nuclear": 53.6,
+     "hydro": 0.0,
+     "wind": 13.5,
+     "solar": 1.7,
+     "other": 0.4
+    }
+   },
+   "data_centers": {
+    "osm_features": 63,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "ME": {
+   "name": "Maine",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1190411.1,
+     "sales_mwh": 4901492.0,
+     "price": 24.29
+    },
+    "commercial": {
+     "revenue_k": 750189.3,
+     "sales_mwh": 4117961.0,
+     "price": 18.22
+    },
+    "industrial": {
+     "revenue_k": 289437.8,
+     "sales_mwh": 2322138.0,
+     "price": 12.46
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 2230038.2,
+     "sales_mwh": 11341591.0,
+     "price": 19.66
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 5.934,
+    "Retail Power Marketer": 5.267,
+    "Municipal": 0.104,
+    "Cooperative": 0.103,
+    "Behind the Meter": 0.013,
+    "EIA adjustment": -0.079
+   },
+   "generation": {
+    "mwh": {
+     "coal": 29380,
+     "gas": 6398782,
+     "nuclear": 0,
+     "hydro": 2851810,
+     "wind": 2446243,
+     "solar": 945193,
+     "other": 1983770,
+     "total": 14655178
+    },
+    "share": {
+     "coal": 0.2,
+     "gas": 43.7,
+     "nuclear": 0.0,
+     "hydro": 19.5,
+     "wind": 16.7,
+     "solar": 6.4,
+     "other": 13.5
+    }
+   },
+   "data_centers": {
+    "osm_features": 3,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "FL": {
+   "name": "Florida",
+   "sectors": {
+    "residential": {
+     "revenue_k": 19561173.6,
+     "sales_mwh": 138370720.0,
+     "price": 14.14
+    },
+    "commercial": {
+     "revenue_k": 10903072.9,
+     "sales_mwh": 99197472.0,
+     "price": 10.99
+    },
+    "industrial": {
+     "revenue_k": 1483602.6,
+     "sales_mwh": 17457348.0,
+     "price": 8.5
+    },
+    "transportation": {
+     "revenue_k": 7597.9,
+     "sales_mwh": 69918.0,
+     "price": 10.87
+    },
+    "total": {
+     "revenue_k": 31955447.0,
+     "sales_mwh": 255095458.0,
+     "price": 12.53
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 191.943,
+    "Municipal": 37.392,
+    "Cooperative": 24.388,
+    "EIA adjustment": 1.005,
+    "Behind the Meter": 0.368
+   },
+   "generation": {
+    "mwh": {
+     "coal": 7846316,
+     "gas": 204507263,
+     "nuclear": 29053590,
+     "hydro": 177238,
+     "wind": 0,
+     "solar": 18649153,
+     "other": 5885676,
+     "total": 266119236
+    },
+    "share": {
+     "coal": 2.9,
+     "gas": 76.8,
+     "nuclear": 10.9,
+     "hydro": 0.1,
+     "wind": 0.0,
+     "solar": 7.0,
+     "other": 2.2
+    }
+   },
+   "data_centers": {
+    "osm_features": 18,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "ND": {
+   "name": "North Dakota",
+   "sectors": {
+    "residential": {
+     "revenue_k": 565146.1,
+     "sales_mwh": 4910755.0,
+     "price": 11.51
+    },
+    "commercial": {
+     "revenue_k": 812797.0,
+     "sales_mwh": 11309334.0,
+     "price": 7.19
+    },
+    "industrial": {
+     "revenue_k": 981887.8,
+     "sales_mwh": 13549609.0,
+     "price": 7.25
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 2359830.9,
+     "sales_mwh": 29769698.0,
+     "price": 7.93
+    }
+   },
+   "ownership_sales_twh": {
+    "Cooperative": 21.222,
+    "Investor Owned": 7.67,
+    "EIA adjustment": 0.677,
+    "Federal": 0.2
+   },
+   "generation": {
+    "mwh": {
+     "coal": 23183087,
+     "gas": 2442153,
+     "nuclear": 0,
+     "hydro": 2060635,
+     "wind": 14762570,
+     "solar": 0,
+     "other": 108798,
+     "total": 42557243
+    },
+    "share": {
+     "coal": 54.5,
+     "gas": 5.7,
+     "nuclear": 0.0,
+     "hydro": 4.8,
+     "wind": 34.7,
+     "solar": 0.0,
+     "other": 0.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 6,
+    "epoch_sites": 1,
+    "epoch_mw": 68
+   }
+  },
+  "KY": {
+   "name": "Kentucky",
+   "sectors": {
+    "residential": {
+     "revenue_k": 3335307.7,
+     "sales_mwh": 26085709.0,
+     "price": 12.79
+    },
+    "commercial": {
+     "revenue_k": 2335162.4,
+     "sales_mwh": 20314415.0,
+     "price": 11.5
+    },
+    "industrial": {
+     "revenue_k": 1819859.9,
+     "sales_mwh": 28005747.0,
+     "price": 6.5
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 7490330.0,
+     "sales_mwh": 74405871.0,
+     "price": 10.07
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 38.16,
+    "Cooperative": 25.9,
+    "Municipal": 5.173,
+    "Federal": 4.223,
+    "EIA adjustment": 0.949,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 44829322,
+     "gas": 17267337,
+     "nuclear": 0,
+     "hydro": 4113686,
+     "wind": 0,
+     "solar": 276643,
+     "other": 463860,
+     "total": 66950848
+    },
+    "share": {
+     "coal": 67.0,
+     "gas": 25.8,
+     "nuclear": 0.0,
+     "hydro": 6.1,
+     "wind": 0.0,
+     "solar": 0.4,
+     "other": 0.7
+    }
+   },
+   "data_centers": {
+    "osm_features": 6,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "DE": {
+   "name": "Delaware",
+   "sectors": {
+    "residential": {
+     "revenue_k": 857254.2,
+     "sales_mwh": 5174514.0,
+     "price": 16.57
+    },
+    "commercial": {
+     "revenue_k": 522352.1,
+     "sales_mwh": 4282220.0,
+     "price": 12.2
+    },
+    "industrial": {
+     "revenue_k": 162760.9,
+     "sales_mwh": 1917182.0,
+     "price": 8.49
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 1542367.2,
+     "sales_mwh": 11373916.0,
+     "price": 13.56
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 3.909,
+    "Investor Owned": 3.802,
+    "Municipal": 1.649,
+    "Cooperative": 1.607,
+    "EIA adjustment": 0.375,
+    "Behind the Meter": 0.032
+   },
+   "generation": {
+    "mwh": {
+     "coal": 143875,
+     "gas": 4205666,
+     "nuclear": 0,
+     "hydro": 0,
+     "wind": 2632,
+     "solar": 165782,
+     "other": 281257,
+     "total": 4799212
+    },
+    "share": {
+     "coal": 3.0,
+     "gas": 87.6,
+     "nuclear": 0.0,
+     "hydro": 0.0,
+     "wind": 0.1,
+     "solar": 3.5,
+     "other": 5.9
+    }
+   },
+   "data_centers": {
+    "osm_features": 0,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "OH": {
+   "name": "Ohio",
+   "sectors": {
+    "residential": {
+     "revenue_k": 8340150.7,
+     "sales_mwh": 52174356.0,
+     "price": 15.99
+    },
+    "commercial": {
+     "revenue_k": 5418172.8,
+     "sales_mwh": 50813610.0,
+     "price": 10.66
+    },
+    "industrial": {
+     "revenue_k": 3596997.2,
+     "sales_mwh": 50687764.0,
+     "price": 7.1
+    },
+    "transportation": {
+     "revenue_k": 2315.0,
+     "sales_mwh": 31646.0,
+     "price": 7.32
+    },
+    "total": {
+     "revenue_k": 17357635.8,
+     "sales_mwh": 153707376.0,
+     "price": 11.29
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 110.568,
+    "Investor Owned": 19.59,
+    "EIA adjustment": 9.562,
+    "Cooperative": 7.231,
+    "Municipal": 6.749,
+    "Behind the Meter": 0.008
+   },
+   "generation": {
+    "mwh": {
+     "coal": 30079964,
+     "gas": 85136664,
+     "nuclear": 17946987,
+     "hydro": 467543,
+     "wind": 2821711,
+     "solar": 4001558,
+     "other": 2292279,
+     "total": 142746706
+    },
+    "share": {
+     "coal": 21.1,
+     "gas": 59.6,
+     "nuclear": 12.6,
+     "hydro": 0.3,
+     "wind": 2.0,
+     "solar": 2.8,
+     "other": 1.6
+    }
+   },
+   "data_centers": {
+    "osm_features": 81,
+    "epoch_sites": 7,
+    "epoch_mw": 1457
+   }
+  },
+  "OR": {
+   "name": "Oregon",
+   "sectors": {
+    "residential": {
+     "revenue_k": 2905554.7,
+     "sales_mwh": 19767745.0,
+     "price": 14.7
+    },
+    "commercial": {
+     "revenue_k": 2494169.3,
+     "sales_mwh": 24662444.0,
+     "price": 10.11
+    },
+    "industrial": {
+     "revenue_k": 1226001.3,
+     "sales_mwh": 15228350.0,
+     "price": 8.05
+    },
+    "transportation": {
+     "revenue_k": 2779.0,
+     "sales_mwh": 22162.0,
+     "price": 12.54
+    },
+    "total": {
+     "revenue_k": 6628504.4,
+     "sales_mwh": 59680701.0,
+     "price": 11.11
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 33.938,
+    "Cooperative": 11.712,
+    "Political Subdivision": 5.129,
+    "Municipal": 3.989,
+    "Retail Power Marketer": 2.844,
+    "EIA adjustment": 2.036,
+    "Behind the Meter": 0.028,
+    "Federal": 0.006
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 24925820,
+     "nuclear": 0,
+     "hydro": 26932746,
+     "wind": 9518977,
+     "solar": 2001404,
+     "other": 1282302,
+     "total": 64661249
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 38.5,
+     "nuclear": 0.0,
+     "hydro": 41.7,
+     "wind": 14.7,
+     "solar": 3.1,
+     "other": 2.0
+    }
+   },
+   "data_centers": {
+    "osm_features": 111,
+    "epoch_sites": 2,
+    "epoch_mw": 334
+   }
+  },
+  "SD": {
+   "name": "South Dakota",
+   "sectors": {
+    "residential": {
+     "revenue_k": 664939.1,
+     "sales_mwh": 5170067.0,
+     "price": 12.86
+    },
+    "commercial": {
+     "revenue_k": 539258.4,
+     "sales_mwh": 5111478.0,
+     "price": 10.55
+    },
+    "industrial": {
+     "revenue_k": 277781.6,
+     "sales_mwh": 3355659.0,
+     "price": 8.28
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 1481979.1,
+     "sales_mwh": 13637204.0,
+     "price": 10.87
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 6.387,
+    "Cooperative": 3.093,
+    "EIA adjustment": 2.747,
+    "Municipal": 1.03,
+    "Federal": 0.344,
+    "Political Subdivision": 0.036
+   },
+   "generation": {
+    "mwh": {
+     "coal": 1562679,
+     "gas": 2260720,
+     "nuclear": 0,
+     "hydro": 4600516,
+     "wind": 12073962,
+     "solar": 338312,
+     "other": 35805,
+     "total": 20871994
+    },
+    "share": {
+     "coal": 7.5,
+     "gas": 10.8,
+     "nuclear": 0.0,
+     "hydro": 22.0,
+     "wind": 57.8,
+     "solar": 1.6,
+     "other": 0.2
+    }
+   },
+   "data_centers": {
+    "osm_features": 2,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "MO": {
+   "name": "Missouri",
+   "sectors": {
+    "residential": {
+     "revenue_k": 4548192.4,
+     "sales_mwh": 35226895.0,
+     "price": 12.91
+    },
+    "commercial": {
+     "revenue_k": 3034338.8,
+     "sales_mwh": 29569769.0,
+     "price": 10.26
+    },
+    "industrial": {
+     "revenue_k": 1019597.7,
+     "sales_mwh": 12953946.0,
+     "price": 7.87
+    },
+    "transportation": {
+     "revenue_k": 2527.9,
+     "sales_mwh": 25424.0,
+     "price": 9.94
+    },
+    "total": {
+     "revenue_k": 8604656.8,
+     "sales_mwh": 77776034.0,
+     "price": 11.06
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 51.78,
+    "Cooperative": 13.713,
+    "Municipal": 7.553,
+    "EIA adjustment": 4.73,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 38831623,
+     "gas": 9099566,
+     "nuclear": 10525784,
+     "hydro": 1020421,
+     "wind": 6789964,
+     "solar": 207676,
+     "other": 400676,
+     "total": 66875710
+    },
+    "share": {
+     "coal": 58.1,
+     "gas": 13.6,
+     "nuclear": 15.7,
+     "hydro": 1.5,
+     "wind": 10.2,
+     "solar": 0.3,
+     "other": 0.6
+    }
+   },
+   "data_centers": {
+    "osm_features": 20,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "RI": {
+   "name": "Rhode Island",
+   "sectors": {
+    "residential": {
+     "revenue_k": 891367.7,
+     "sales_mwh": 3111332.0,
+     "price": 28.65
+    },
+    "commercial": {
+     "revenue_k": 773339.7,
+     "sales_mwh": 3666320.0,
+     "price": 21.09
+    },
+    "industrial": {
+     "revenue_k": 121070.8,
+     "sales_mwh": 614681.0,
+     "price": 19.7
+    },
+    "transportation": {
+     "revenue_k": 4718.7,
+     "sales_mwh": 21914.0,
+     "price": 21.53
+    },
+    "total": {
+     "revenue_k": 1790496.9,
+     "sales_mwh": 7414247.0,
+     "price": 24.15
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 3.704,
+    "Investor Owned": 3.19,
+    "EIA adjustment": 0.398,
+    "Municipal": 0.055,
+    "Behind the Meter": 0.052,
+    "Political Subdivision": 0.015
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 8791211,
+     "nuclear": 0,
+     "hydro": 2726,
+     "wind": 178146,
+     "solar": 600263,
+     "other": 204681,
+     "total": 9777027
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 89.9,
+     "nuclear": 0.0,
+     "hydro": 0.0,
+     "wind": 1.8,
+     "solar": 6.1,
+     "other": 2.1
+    }
+   },
+   "data_centers": {
+    "osm_features": 0,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "NV": {
+   "name": "Nevada",
+   "sectors": {
+    "residential": {
+     "revenue_k": 2194081.3,
+     "sales_mwh": 14631493.0,
+     "price": 15.0
+    },
+    "commercial": {
+     "revenue_k": 1453207.4,
+     "sales_mwh": 14259288.0,
+     "price": 10.19
+    },
+    "industrial": {
+     "revenue_k": 1016116.7,
+     "sales_mwh": 11766220.0,
+     "price": 8.64
+    },
+    "transportation": {
+     "revenue_k": 814.0,
+     "sales_mwh": 7638.0,
+     "price": 10.66
+    },
+    "total": {
+     "revenue_k": 4664219.4,
+     "sales_mwh": 40664639.0,
+     "price": 11.47
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 30.769,
+    "Retail Power Marketer": 5.02,
+    "Cooperative": 1.813,
+    "EIA adjustment": 1.661,
+    "Behind the Meter": 0.467,
+    "Political Subdivision": 0.463,
+    "State": 0.284,
+    "Municipal": 0.161,
+    "Federal": 0.027
+   },
+   "generation": {
+    "mwh": {
+     "coal": 2323250,
+     "gas": 24999470,
+     "nuclear": 0,
+     "hydro": 1606304,
+     "wind": 319340,
+     "solar": 12454761,
+     "other": 3825302,
+     "total": 45528427
+    },
+    "share": {
+     "coal": 5.1,
+     "gas": 54.9,
+     "nuclear": 0.0,
+     "hydro": 3.5,
+     "wind": 0.7,
+     "solar": 27.4,
+     "other": 8.4
+    }
+   },
+   "data_centers": {
+    "osm_features": 34,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "UT": {
+   "name": "Utah",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1444460.7,
+     "sales_mwh": 11825248.0,
+     "price": 12.22
+    },
+    "commercial": {
+     "revenue_k": 1326483.5,
+     "sales_mwh": 14128942.0,
+     "price": 9.39
+    },
+    "industrial": {
+     "revenue_k": 681891.1,
+     "sales_mwh": 8680830.0,
+     "price": 7.86
+    },
+    "transportation": {
+     "revenue_k": 6404.8,
+     "sales_mwh": 53063.0,
+     "price": 12.07
+    },
+    "total": {
+     "revenue_k": 3459240.1,
+     "sales_mwh": 34688083.0,
+     "price": 9.97
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 27.138,
+    "Municipal": 3.699,
+    "EIA adjustment": 1.771,
+    "Cooperative": 1.653,
+    "State": 0.318,
+    "Political Subdivision": 0.063,
+    "Federal": 0.037,
+    "Behind the Meter": 0.009
+   },
+   "generation": {
+    "mwh": {
+     "coal": 15966584,
+     "gas": 11640450,
+     "nuclear": 0,
+     "hydro": 758694,
+     "wind": 748405,
+     "solar": 5311068,
+     "other": 708705,
+     "total": 35133906
+    },
+    "share": {
+     "coal": 45.4,
+     "gas": 33.1,
+     "nuclear": 0.0,
+     "hydro": 2.2,
+     "wind": 2.1,
+     "solar": 15.1,
+     "other": 2.0
+    }
+   },
+   "data_centers": {
+    "osm_features": 22,
+    "epoch_sites": 2,
+    "epoch_mw": 133
+   }
+  },
+  "CT": {
+   "name": "Connecticut",
+   "sectors": {
+    "residential": {
+     "revenue_k": 3720210.0,
+     "sales_mwh": 12941903.0,
+     "price": 28.75
+    },
+    "commercial": {
+     "revenue_k": 2473628.2,
+     "sales_mwh": 11662707.0,
+     "price": 21.21
+    },
+    "industrial": {
+     "revenue_k": 437595.1,
+     "sales_mwh": 2555605.0,
+     "price": 17.12
+    },
+    "transportation": {
+     "revenue_k": 33961.7,
+     "sales_mwh": 191140.0,
+     "price": 17.77
+    },
+    "total": {
+     "revenue_k": 6665395.1,
+     "sales_mwh": 27351355.0,
+     "price": 24.37
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 13.25,
+    "Investor Owned": 11.537,
+    "Municipal": 1.421,
+    "EIA adjustment": 0.651,
+    "Behind the Meter": 0.492
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 26036343,
+     "nuclear": 16870305,
+     "hydro": 368824,
+     "wind": 10450,
+     "solar": 476431,
+     "other": 999059,
+     "total": 44761412
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 58.2,
+     "nuclear": 37.7,
+     "hydro": 0.8,
+     "wind": 0.0,
+     "solar": 1.1,
+     "other": 2.2
+    }
+   },
+   "data_centers": {
+    "osm_features": 5,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "MA": {
+   "name": "Massachusetts",
+   "sectors": {
+    "residential": {
+     "revenue_k": 5867778.6,
+     "sales_mwh": 19992635.0,
+     "price": 29.35
+    },
+    "commercial": {
+     "revenue_k": 4908121.9,
+     "sales_mwh": 23489390.0,
+     "price": 20.9
+    },
+    "industrial": {
+     "revenue_k": 1026914.1,
+     "sales_mwh": 5645295.0,
+     "price": 18.19
+    },
+    "transportation": {
+     "revenue_k": 26839.7,
+     "sales_mwh": 291255.0,
+     "price": 9.22
+    },
+    "total": {
+     "revenue_k": 11829654.2,
+     "sales_mwh": 49418575.0,
+     "price": 23.94
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 33.777,
+    "Investor Owned": 7.292,
+    "Municipal": 5.521,
+    "EIA adjustment": 1.989,
+    "Behind the Meter": 0.803,
+    "Political Subdivision": 0.037
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 16202972,
+     "nuclear": 0,
+     "hydro": 880681,
+     "wind": 169237,
+     "solar": 2126725,
+     "other": 1535275,
+     "total": 20914890
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 77.5,
+     "nuclear": 0.0,
+     "hydro": 4.2,
+     "wind": 0.8,
+     "solar": 10.2,
+     "other": 7.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 3,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "VT": {
+   "name": "Vermont",
+   "sectors": {
+    "residential": {
+     "revenue_k": 488488.1,
+     "sales_mwh": 2230155.0,
+     "price": 21.9
+    },
+    "commercial": {
+     "revenue_k": 368759.0,
+     "sales_mwh": 1952123.0,
+     "price": 18.89
+    },
+    "industrial": {
+     "revenue_k": 147815.1,
+     "sales_mwh": 1276669.0,
+     "price": 11.58
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 1005062.2,
+     "sales_mwh": 5458947.0,
+     "price": 18.41
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 4.086,
+    "EIA adjustment": 0.526,
+    "Cooperative": 0.474,
+    "Municipal": 0.323,
+    "Behind the Meter": 0.05
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 1068,
+     "nuclear": 0,
+     "hydro": 1283946,
+     "wind": 355257,
+     "solar": 216848,
+     "other": 401772,
+     "total": 2258891
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 0.0,
+     "nuclear": 0.0,
+     "hydro": 56.8,
+     "wind": 15.7,
+     "solar": 9.6,
+     "other": 17.8
+    }
+   },
+   "data_centers": {
+    "osm_features": 1,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "NE": {
+   "name": "Nebraska",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1198160.5,
+     "sales_mwh": 10391014.0,
+     "price": 11.53
+    },
+    "commercial": {
+     "revenue_k": 1081450.5,
+     "sales_mwh": 12885125.0,
+     "price": 8.39
+    },
+    "industrial": {
+     "revenue_k": 912995.2,
+     "sales_mwh": 11914906.0,
+     "price": 7.66
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 3192606.2,
+     "sales_mwh": 35191045.0,
+     "price": 9.07
+    }
+   },
+   "ownership_sales_twh": {
+    "Political Subdivision": 24.143,
+    "Municipal": 5.651,
+    "EIA adjustment": 4.794,
+    "Cooperative": 0.447,
+    "Federal": 0.157
+   },
+   "generation": {
+    "mwh": {
+     "coal": 16352213,
+     "gas": 1381470,
+     "nuclear": 6095731,
+     "hydro": 1182670,
+     "wind": 11891207,
+     "solar": 196130,
+     "other": 129529,
+     "total": 37228950
+    },
+    "share": {
+     "coal": 43.9,
+     "gas": 3.7,
+     "nuclear": 16.4,
+     "hydro": 3.2,
+     "wind": 31.9,
+     "solar": 0.5,
+     "other": 0.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 24,
+    "epoch_sites": 3,
+    "epoch_mw": 458
+   }
+  },
+  "NM": {
+   "name": "New Mexico",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1043282.7,
+     "sales_mwh": 7347620.0,
+     "price": 14.2
+    },
+    "commercial": {
+     "revenue_k": 1011137.0,
+     "sales_mwh": 9592789.0,
+     "price": 10.54
+    },
+    "industrial": {
+     "revenue_k": 725316.2,
+     "sales_mwh": 13355945.0,
+     "price": 5.43
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 2779735.9,
+     "sales_mwh": 30296354.0,
+     "price": 9.18
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 23.304,
+    "Cooperative": 4.377,
+    "Municipal": 1.401,
+    "EIA adjustment": 0.889,
+    "Federal": 0.147,
+    "State": 0.125,
+    "Behind the Meter": 0.053
+   },
+   "generation": {
+    "mwh": {
+     "coal": 8431834,
+     "gas": 11647803,
+     "nuclear": 0,
+     "hydro": 153211,
+     "wind": 15135568,
+     "solar": 4286642,
+     "other": 42236,
+     "total": 39697294
+    },
+    "share": {
+     "coal": 21.2,
+     "gas": 29.3,
+     "nuclear": 0.0,
+     "hydro": 0.4,
+     "wind": 38.1,
+     "solar": 10.8,
+     "other": 0.1
+    }
+   },
+   "data_centers": {
+    "osm_features": 17,
+    "epoch_sites": 1,
+    "epoch_mw": 118
+   }
+  },
+  "WY": {
+   "name": "Wyoming",
+   "sectors": {
+    "residential": {
+     "revenue_k": 370054.3,
+     "sales_mwh": 2968051.0,
+     "price": 12.47
+    },
+    "commercial": {
+     "revenue_k": 489048.4,
+     "sales_mwh": 5274652.0,
+     "price": 9.27
+    },
+    "industrial": {
+     "revenue_k": 714083.2,
+     "sales_mwh": 8974198.0,
+     "price": 7.96
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 1573185.9,
+     "sales_mwh": 17216901.0,
+     "price": 9.14
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 11.451,
+    "Cooperative": 4.235,
+    "EIA adjustment": 1.15,
+    "Municipal": 0.338,
+    "Federal": 0.042
+   },
+   "generation": {
+    "mwh": {
+     "coal": 24381618,
+     "gas": 5426058,
+     "nuclear": 0,
+     "hydro": 1016594,
+     "wind": 9001836,
+     "solar": 423149,
+     "other": 459895,
+     "total": 40709150
+    },
+    "share": {
+     "coal": 59.9,
+     "gas": 13.3,
+     "nuclear": 0.0,
+     "hydro": 2.5,
+     "wind": 22.1,
+     "solar": 1.0,
+     "other": 1.1
+    }
+   },
+   "data_centers": {
+    "osm_features": 19,
+    "epoch_sites": 1,
+    "epoch_mw": 152
+   }
+  },
+  "CO": {
+   "name": "Colorado",
+   "sectors": {
+    "residential": {
+     "revenue_k": 3086848.5,
+     "sales_mwh": 20693690.0,
+     "price": 14.92
+    },
+    "commercial": {
+     "revenue_k": 2479641.2,
+     "sales_mwh": 21171639.0,
+     "price": 11.71
+    },
+    "industrial": {
+     "revenue_k": 1283984.3,
+     "sales_mwh": 14891887.0,
+     "price": 8.62
+    },
+    "transportation": {
+     "revenue_k": 8279.6,
+     "sales_mwh": 85688.0,
+     "price": 9.66
+    },
+    "total": {
+     "revenue_k": 6858753.6,
+     "sales_mwh": 56842904.0,
+     "price": 12.07
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 30.227,
+    "Cooperative": 16.808,
+    "Municipal": 8.136,
+    "EIA adjustment": 1.383,
+    "Behind the Meter": 0.218,
+    "Federal": 0.071
+   },
+   "generation": {
+    "mwh": {
+     "coal": 16477718,
+     "gas": 17926802,
+     "nuclear": 0,
+     "hydro": 1660362,
+     "wind": 17602010,
+     "solar": 4938527,
+     "other": 192976,
+     "total": 58798395
+    },
+    "share": {
+     "coal": 28.0,
+     "gas": 30.5,
+     "nuclear": 0.0,
+     "hydro": 2.8,
+     "wind": 29.9,
+     "solar": 8.4,
+     "other": 0.3
+    }
+   },
+   "data_centers": {
+    "osm_features": 26,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "ID": {
+   "name": "Idaho",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1132688.2,
+     "sales_mwh": 9832269.0,
+     "price": 11.52
+    },
+    "commercial": {
+     "revenue_k": 638525.4,
+     "sales_mwh": 6963670.0,
+     "price": 9.17
+    },
+    "industrial": {
+     "revenue_k": 736518.1,
+     "sales_mwh": 9573616.0,
+     "price": 7.69
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 2507731.7,
+     "sales_mwh": 26369555.0,
+     "price": 9.51
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 22.556,
+    "Cooperative": 2.074,
+    "EIA adjustment": 0.976,
+    "Municipal": 0.764,
+    "Behind the Meter": 0.0
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 6285446,
+     "nuclear": 0,
+     "hydro": 9150273,
+     "wind": 3015899,
+     "solar": 1017779,
+     "other": 566041,
+     "total": 20035438
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 31.4,
+     "nuclear": 0.0,
+     "hydro": 45.7,
+     "wind": 15.1,
+     "solar": 5.1,
+     "other": 2.8
+    }
+   },
+   "data_centers": {
+    "osm_features": 4,
+    "epoch_sites": 1,
+    "epoch_mw": 152
+   }
+  },
+  "MT": {
+   "name": "Montana",
+   "sectors": {
+    "residential": {
+     "revenue_k": 721809.3,
+     "sales_mwh": 5700241.0,
+     "price": 12.66
+    },
+    "commercial": {
+     "revenue_k": 597479.3,
+     "sales_mwh": 5034278.0,
+     "price": 11.87
+    },
+    "industrial": {
+     "revenue_k": 366589.3,
+     "sales_mwh": 4832494.0,
+     "price": 7.59
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 1685877.9,
+     "sales_mwh": 15567013.0,
+     "price": 10.83
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 7.176,
+    "EIA adjustment": 4.454,
+    "Cooperative": 2.939,
+    "Federal": 0.566,
+    "Retail Power Marketer": 0.432
+   },
+   "generation": {
+    "mwh": {
+     "coal": 9785486,
+     "gas": 995229,
+     "nuclear": 0,
+     "hydro": 9220043,
+     "wind": 5815191,
+     "solar": 366230,
+     "other": 690704,
+     "total": 26872883
+    },
+    "share": {
+     "coal": 36.4,
+     "gas": 3.7,
+     "nuclear": 0.0,
+     "hydro": 34.3,
+     "wind": 21.6,
+     "solar": 1.4,
+     "other": 2.6
+    }
+   },
+   "data_centers": {
+    "osm_features": 3,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "DC": {
+   "name": "District of Columbia",
+   "sectors": {
+    "residential": {
+     "revenue_k": 433140.3,
+     "sales_mwh": 2445805.0,
+     "price": 17.71
+    },
+    "commercial": {
+     "revenue_k": 1227670.2,
+     "sales_mwh": 7193294.0,
+     "price": 17.07
+    },
+    "industrial": {
+     "revenue_k": 20254.9,
+     "sales_mwh": 187468.0,
+     "price": 10.8
+    },
+    "transportation": {
+     "revenue_k": 30559.5,
+     "sales_mwh": 316348.0,
+     "price": 9.66
+    },
+    "total": {
+     "revenue_k": 1711624.9,
+     "sales_mwh": 10142915.0,
+     "price": 16.88
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 6.543,
+    "Investor Owned": 3.209,
+    "EIA adjustment": 0.387,
+    "Behind the Meter": 0.004
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 99595,
+     "nuclear": 0,
+     "hydro": 0,
+     "wind": 0,
+     "solar": 31648,
+     "other": 55952,
+     "total": 187195
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 53.2,
+     "nuclear": 0.0,
+     "hydro": 0.0,
+     "wind": 0.0,
+     "solar": 16.9,
+     "other": 29.9
+    }
+   },
+   "data_centers": {
+    "osm_features": 1,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "NH": {
+   "name": "New Hampshire",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1134518.2,
+     "sales_mwh": 4847443.0,
+     "price": 23.4
+    },
+    "commercial": {
+     "revenue_k": 796348.5,
+     "sales_mwh": 4105167.0,
+     "price": 19.4
+    },
+    "industrial": {
+     "revenue_k": 317951.8,
+     "sales_mwh": 1961351.0,
+     "price": 16.21
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 2248818.5,
+     "sales_mwh": 10913961.0,
+     "price": 20.6
+    }
+   },
+   "ownership_sales_twh": {
+    "Retail Power Marketer": 5.707,
+    "Investor Owned": 3.29,
+    "Community Choice Aggregator": 1.011,
+    "Cooperative": 0.65,
+    "EIA adjustment": 0.21,
+    "Behind the Meter": 0.045
+   },
+   "generation": {
+    "mwh": {
+     "coal": 224470,
+     "gas": 4420983,
+     "nuclear": 9676862,
+     "hydro": 1411400,
+     "wind": 444569,
+     "solar": 3509,
+     "other": 760686,
+     "total": 16942479
+    },
+    "share": {
+     "coal": 1.3,
+     "gas": 26.1,
+     "nuclear": 57.1,
+     "hydro": 8.3,
+     "wind": 2.6,
+     "solar": 0.0,
+     "other": 4.5
+    }
+   },
+   "data_centers": {
+    "osm_features": 3,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  },
+  "HI": {
+   "name": "Hawaii",
+   "sectors": {
+    "residential": {
+     "revenue_k": 1136577.5,
+     "sales_mwh": 2651594.0,
+     "price": 42.86
+    },
+    "commercial": {
+     "revenue_k": 1080617.2,
+     "sales_mwh": 2830166.0,
+     "price": 38.18
+    },
+    "industrial": {
+     "revenue_k": 1184407.4,
+     "sales_mwh": 3470374.0,
+     "price": 34.13
+    },
+    "transportation": {
+     "revenue_k": 0.0,
+     "sales_mwh": 0.0,
+     "price": null
+    },
+    "total": {
+     "revenue_k": 3401602.1,
+     "sales_mwh": 8952134.0,
+     "price": 38.0
+    }
+   },
+   "ownership_sales_twh": {
+    "Investor Owned": 8.219,
+    "Cooperative": 0.472,
+    "Behind the Meter": 0.19,
+    "EIA adjustment": 0.07
+   },
+   "generation": {
+    "mwh": {
+     "coal": 0,
+     "gas": 0,
+     "nuclear": 0,
+     "hydro": 100483,
+     "wind": 663399,
+     "solar": 704978,
+     "other": 7692119,
+     "total": 9160979
+    },
+    "share": {
+     "coal": 0.0,
+     "gas": 0.0,
+     "nuclear": 0.0,
+     "hydro": 1.1,
+     "wind": 7.2,
+     "solar": 7.7,
+     "other": 84.0
+    }
+   },
+   "data_centers": {
+    "osm_features": 0,
+    "epoch_sites": 0,
+    "epoch_mw": 0
+   }
+  }
+ },
+ "legend": {
+  "industrial": [
+   "under 6.8",
+   "6.8 to 7.8",
+   "7.8 to 8.3",
+   "8.3 to 10.0",
+   "10.0 and over"
+  ],
+  "commercial": [
+   "under 10.1",
+   "10.1 to 10.7",
+   "10.7 to 12.1",
+   "12.1 to 14.6",
+   "14.6 and over"
+  ]
+ },
+ "unplaced_data_centers": {
+  "osm": 3,
+  "epoch": 10
+ }
+}

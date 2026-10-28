@@ -1,0 +1,5 @@
+FAULTY pass {'P1': (1.0, 'BELOW'), 'P2': (1.0, 'BELOW'), 'P3': (1.0, 'BELOW'), 'P4': (1.0, 'BELOW')}
+CLEAN pass {'P1': (0.0, 'CONSISTENT'), 'P2': (0.0, 'CONSISTENT'), 'P3': (0.0, 'CONSISTENT'), 'P4': (0.0, 'CONSISTENT')}
+STUBBORN pass {'P1': (1.0, 'CONSISTENT'), 'P2': (1.0, 'CONSISTENT'), 'P3': (1.0, 'CONSISTENT'), 'P4': (1.0, 'CONSISTENT')}
+GATEFAIL FAIL {'P1': (1.0, 'CANNOT_TELL (gate failed)'), 'P2': (1.0, 'CANNOT_TELL (gate failed)'), 'P3': (1.0, 'CANNOT_TELL (gate failed)'), 'P4': (1.0, 'CANNOT_TELL (gate failed)')}
+SYNTH PASS

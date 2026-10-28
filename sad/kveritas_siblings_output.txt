@@ -1,0 +1,35 @@
+
+### control_abandon_A
+Run ac5e1d84 recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+Error: session c5f5f857 is still open on this machine. Seal it, or remove it with: kveritas clean c5f5f857
+Error: server registration failed: server unreachable at https://kveritas-api-production.up.railway.app/api/v1/init: Post "https://kveritas-
+
+### delete_A_folder
+Run eb7c63cb recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+Error: session 0b782bb5 is still open on this machine. Seal it, or remove it with: kveritas clean 0b782bb5
+Error: server registration failed: server unreachable at https://kveritas-api-production.up.railway.app/api/v1/init: Post "https://kveritas-
+
+### clean_A
+Run 9181804b recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+Session 7cd13768 removed.
+Run 002a25d3 recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+SELF-ATTESTED
+Signer:     key 66b4ecd2776971e7, history self-reported (offline, not confirmed)
+Sessions:   1 started, 1 sealed, 0 never sealed
+            New signer: no earlier history, other attempts cannot be ruled out.
+
+### delete_session_ledger
+Run 4c0571e0 recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+Run d7d03f72 recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+SELF-ATTESTED
+Signer:     key 53e42305215e0b30, history self-reported (offline, not confirmed)
+Sessions:   1 started, 1 sealed, 0 never sealed
+            New signer: no earlier history, other attempts cannot be ruled out.
+
+### delete_signer_key_and_ledger
+Run d150fee3 recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+Run 6dc36192 recorded (4 metrics, 0 claims, 0 phases, 0 seeds)
+SELF-ATTESTED
+Signer:     key 4801c177da1a9f79, history self-reported (offline, not confirmed)
+Sessions:   1 started, 1 sealed, 0 never sealed
+            New signer: no earlier history, other attempts cannot be ruled out.

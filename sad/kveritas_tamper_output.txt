@@ -1,0 +1,21 @@
+Run ba2fc21f recorded (5 metrics, 0 claims, 0 phases, 0 seeds)
+[kveritas] Run failed (exit 7). It is not kept in the report, but the server still counts it in the run history.
+Error: command exited with code 7; only successful runs are recorded
+Run 68b08a8b recorded (5 metrics, 0 claims, 0 phases, 0 seeds)
+### original
+SELF-ATTESTED
+Runs:       2
+Signer:     key 36b250ed1008d2f3, history self-reported (offline, not confirmed)
+Sessions:   1 started, 1 sealed, 0 never sealed
+visible pages: text strings 267 ; mention a failed attempt or an invocation count: False
+embedded record: runs 2 , session.invocations 3
+### a metric value 0.8301 -> 0.9301
+   TAMPERED
+### the invocation count 3 -> 1 (hides the failed attempt)
+   TAMPERED
+### a kept run exit code 0 -> 7
+   TAMPERED
+### the visible page text 0.8301 -> 0.9301
+   TAMPERED
+### the self-reported signer history, started 1 -> 9
+   TAMPERED

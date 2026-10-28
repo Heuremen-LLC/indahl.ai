@@ -1,0 +1,21 @@
+### canary 1: declares a 7B model and 3 epochs of 1M examples, prints a result, takes no time
+Run 16c1dde5 recorded (5 metrics, 1 claims, 0 phases, 0 seeds)
+SELF-ATTESTED
+Coherence:  N/A (0.00)
+Claims:     1 inline
+Claim:      val_acc = 0.9713 (run 1, claimed at seal, explicit)
+Run 1 compute:
+  Compute [FABRICATION-IMPOSSIBLE] declared=2.58e+20 FLOPs  active=0s  energy=0J  peakmem=12415MB  MFU=15880854.206
+    ! memory-review: declared params need ~14000 MB of weights, but peak GPU memory was 12415 MB
+  metrics: [('val_acc', 0.9713, 'explicit'), ('loss', 0.0841, 'explicit'), ('wall_time_s', 0.131211, 'measured'), ('gpu_time_s', 0.016249, 'measured'), ('peak_gpu_memory_mb', 12415, 'measured')]
+  duration_sec: 0.131211  hardware_samples: [100, 100] [12415, 12415]
+
+### canary 2: declares a tiny model that fits the time, prints the same result
+Run f5a2d704 recorded (5 metrics, 1 claims, 0 phases, 0 seeds)
+SELF-ATTESTED
+Coherence:  N/A (0.00)
+Claims:     1 inline
+Claim:      val_acc = 0.9713 (run 1, claimed at seal, explicit)
+Run 1 compute:
+  metrics: [('val_acc', 0.9713, 'explicit'), ('loss', 0.0841, 'explicit'), ('wall_time_s', 0.130459, 'measured'), ('gpu_time_s', 0.017113, 'measured'), ('peak_gpu_memory_mb', 12529.6, 'measured')]
+  duration_sec: 0.130459  hardware_samples: [100, 100] [12530, 12530]

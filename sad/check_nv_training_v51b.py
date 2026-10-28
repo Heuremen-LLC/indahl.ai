@@ -1,0 +1,17 @@
+# NVIDIA technical blog "3x Faster Training" on MLPerf Training v5.1, held against the v5.0 and v5.1 training times. python3 -I check_claims_nv_training_v51b.py
+import json,hashlib
+FILES=['training_v51_times.json','training_v50_times.json']; RAW={f:open(f,'rb').read() for f in FILES}
+T=json.loads(RAW[FILES[0]]); U=json.loads(RAW[FILES[1]])
+def mk(i,q,calc,st,got,out,note): return dict(id=i,quote=q,calc=calc,stated=st,delivered=got,outcome=out,note=note,label_mismatch=False)
+def one(pool,g,acc,sub=None):
+    r=[x for x in pool if x['benchmark']=='llama31_405b' and x['gpus']==g and acc in x['accelerator'] and (sub is None or x['submitter']==sub)]
+    return sorted(r,key=lambda x:x['official_style'])[0]['official_style'] if r else None
+h=one(U,512,'H100','NVIDIA'); g200=one(T,512,'GB200'); g300=one(T,512,'GB300'); b50n=one(U,512,'Blackwell','NVIDIA'); b50=one(U,512,'Blackwell')
+C=[]
+C.append(mk('NX1','GB200 NVL72 delivered up to 3.2x faster training performance on the Llama 3.1 405B benchmark at the same GPU count compared to optimized submissions using NVIDIA Hopper running FP8','512 GPU H100 entry in training_v50_times.json over the 512 GPU GB200 entry in training_v51_times.json','up to 3.2x',f'H100 {h:.2f} min, GB200 {g200:.2f} min, ratio {h/g200:.2f}x','CONSISTENT' if round(h/g200,1)==3.2 else 'BELOW','The H100 entry is from v5.0. The files hold no later NVIDIA Hopper 512 GPU entry.'))
+C.append(mk('NX2','up to 1.4x higher performance at similar scale','512 GPU Blackwell entries in training_v50_times.json over the 512 GPU GB200 entry in training_v51_times.json','up to 1.4x',f'v5.0 NVIDIA {b50n:.2f} min and fastest v5.0 {b50:.2f} min, v5.1 GB200 {g200:.2f} min, ratios {b50n/g200:.2f}x and {b50/g200:.2f}x','CONSISTENT' if round(b50n/g200,1)==1.4 and round(b50/g200,1)==1.4 else 'BELOW','Both v5.0 512 GPU Blackwell entries give 1.4x after rounding.'))
+C.append(mk('NX3','GB300 NVL72 completed the Llama 3.1 405B benchmark 1.9x faster than GB200 NVL72 at the same scale did last round, bringing the cumulative performance gain compared to Hopper up to 4.2x','512 GPU GB300 entry in training_v51_times.json against the 512 GPU Blackwell entries and the 512 GPU H100 entry in training_v50_times.json','1.9x and 4.2x',f'GB300 {g300:.2f} min; GB200 last round {b50n:.2f} (ratio {b50n/g300:.2f}x) and {b50:.2f} (ratio {b50/g300:.2f}x); H100 {h:.2f} (ratio {h/g300:.2f}x)','CONSISTENT' if round(b50n/g300,1)==1.9 and round(b50/g300,1)==1.9 and round(h/g300,1)==4.2 else 'BELOW','Both last-round Blackwell 512 GPU entries give 1.9x after rounding.'))
+C.append(mk('NX4','GB200 NVL72 delivers almost 2x the performance per dollar of H100','performance per dollar needs rental prices, which are not in the files','almost 2x performance per dollar','prices are not in the files','CANNOT_TELL','The post says performance per dollar is derived from published on-demand instance pricing and is not verified by MLCommons.'))
+C.append(mk('NX5','NVIDIA made the industry’s first and only submissions using FP4 precision','numeric formats are not in the times files','first and only FP4 submissions','numeric formats not in the files','CANNOT_TELL','Numeric format is in the submission code, which is not in the files used here.'))
+json.dump(dict(source=FILES,sha256=[hashlib.sha256(RAW[x]).hexdigest() for x in FILES],claims=C),open('claims_nv_training_v51b.json','w'),indent=1)
+for c in C: print(c['id'],c['outcome'],'|',c['stated'][:44],'|',c['delivered'][:300])

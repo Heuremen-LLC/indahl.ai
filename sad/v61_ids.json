@@ -1,0 +1,1439 @@
+{
+ "6.1-0001": {
+  "submitter": "AMD",
+  "availability": "available",
+  "system": "8xMI350X_2xEPYC_9575F",
+  "accelerator": "AMD Instinct MI350X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "dlrm-v3|Server": 9297.78,
+   "dlrm-v3|Offline": 10891.1
+  }
+ },
+ "6.1-0002": {
+  "submitter": "AMD",
+  "availability": "available",
+  "system": "Quanta Grand Teton 1.5 MI350",
+  "accelerator": "AMD Instinct MI350X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "text_to_video|SingleStream": 20.603024726,
+   "text_to_video|Offline": 0.0565013
+  }
+ },
+ "6.1-0003": {
+  "submitter": "AMD",
+  "availability": "available",
+  "system": "smci355-ccs-aus-m13-13 (AS -4126GS-NMR-LCC)",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "dlrm-v3|Server": 12198.8,
+   "dlrm-v3|Offline": 13027.7,
+   "llama2-70b-99.9|Server": 103275.0,
+   "llama2-70b-99.9|Offline": 106517.0,
+   "llama2-70b-99.9|Interactive": 73191.5,
+   "text_to_video|SingleStream": 16.124484197,
+   "text_to_video|Offline": 0.0731282,
+   "gpt-oss-120b|Server": 113241.0,
+   "gpt-oss-120b|Offline": 121818.0
+  }
+ },
+ "6.1-0004": {
+  "submitter": "AMD",
+  "availability": "available",
+  "system": "9x8xMI355X_2xEPYC_9575F",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "gpt-oss-120b|Server": 964468.0,
+   "gpt-oss-120b|Offline": 1039900.0
+  }
+ },
+ "6.1-0005": {
+  "submitter": "ASUSTeK",
+  "availability": "available",
+  "system": "XA NB3I-E12",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 113455.0,
+   "llama2-70b-99.9|Offline": 113007.0,
+   "deepseek-r1|Server": 54568.6,
+   "deepseek-r1|Offline": 69846.9,
+   "gpt-oss-120b|Server": 109949.0,
+   "gpt-oss-120b|Offline": 109368.0
+  }
+ },
+ "6.1-0008": {
+  "submitter": "Azure",
+  "availability": "available",
+  "system": "Azure GB200 NVL72 (288x GB200-186GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 288.0,
+  "results": {
+   "deepseek-r1|Server": 1598510.0,
+   "deepseek-r1|Offline": 2091190.0
+  }
+ },
+ "6.1-0009": {
+  "submitter": "Azure",
+  "availability": "available",
+  "system": "Azure GB200 NVL72 (72x GB200-186GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 426796.0,
+   "deepseek-r1|Offline": 542075.0
+  }
+ },
+ "6.1-0010": {
+  "submitter": "Azure",
+  "availability": "available",
+  "system": "Azure GB300 NVL72 (72x GB300-288GB_aarch64 TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 589391.0,
+   "deepseek-r1|Offline": 661143.0,
+   "deepseek-r1|Interactive": 260098.0
+  }
+ },
+ "6.1-0011": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS C240 M8 - (5x NVIDIA RTX PRO 4500 Blackwell-32GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 4500 Blackwell",
+  "per_node": 5.0,
+  "total_accelerators": 5.0,
+  "results": {
+   "llama3.1-8b|Server": 11426.1,
+   "llama3.1-8b|Offline": 12017.7,
+   "llama3.1-8b|Interactive": 8494.68,
+   "whisper|Offline": 4808.98
+  }
+ },
+ "6.1-0012": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS C845A M8 (8x NVIDIA RTX PRO 4500 Blackwell-32GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 4500 Blackwell",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 18186.2,
+   "llama3.1-8b|Offline": 18800.9,
+   "llama3.1-8b|Interactive": 14316.2,
+   "whisper|Offline": 7777.66
+  }
+ },
+ "6.1-0013": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS C845A M8 (8x RTXPro6000-PCIe-96GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 49174.7,
+   "llama3.1-8b|Offline": 50453.7,
+   "llama3.1-8b|Interactive": 46164.4,
+   "llama2-70b-99.9|Server": 29316.4,
+   "llama2-70b-99.9|Offline": 29904.0,
+   "whisper|Offline": 18991.8,
+   "gpt-oss-120b|Server": 14817.4,
+   "gpt-oss-120b|Offline": 15508.4
+  }
+ },
+ "6.1-0014": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS C880A M8 (8x NVIDIA B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 173950.0,
+   "llama3.1-8b|Offline": 171114.0,
+   "llama3.1-8b|Interactive": 129168.0,
+   "deepseek-r1|Server": 66171.6,
+   "deepseek-r1|Offline": 70325.4,
+   "whisper|Offline": 52221.8,
+   "text_to_video|SingleStream": 20.00421451803472,
+   "text_to_video|Offline": 0.0612749682980279
+  }
+ },
+ "6.1-0015": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco_UCS_B300x16_G200_4x2_RO",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 16.0,
+  "results": {
+   "llama2-70b-99.9|Server": 179597.0,
+   "llama2-70b-99.9|Offline": 227570.0,
+   "deepseek-r1|Server": 88915.5,
+   "deepseek-r1|Offline": 137067.0,
+   "gpt-oss-120b|Server": 214774.0,
+   "gpt-oss-120b|Offline": 220527.0
+  }
+ },
+ "6.1-0016": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS H200 x8 + MI350X x8 G200 2x2 TOR",
+  "accelerator": "NVIDIA H200-SXM-141GB + AMD Instinct MI350X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 16.0,
+  "results": {
+   "llama3.1-8b|Server": 161110.0,
+   "llama3.1-8b|Offline": 163292.0,
+   "llama3.1-8b|Interactive": 121557.0,
+   "llama2-70b-99.9|Server": 95104.6,
+   "llama2-70b-99.9|Offline": 99683.8,
+   "llama2-70b-99.9|Interactive": 70354.5,
+   "gpt-oss-120b|Server": 73357.6,
+   "gpt-oss-120b|Offline": 94249.3
+  }
+ },
+ "6.1-0017": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS X210 M8 - X580P PCIe Node (4x NVIDIA RTX PRO 4500 Blackwell-32GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 4500 Blackwell",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama3.1-8b|Server": 9277.73,
+   "llama3.1-8b|Offline": 9518.66,
+   "llama3.1-8b|Interactive": 6883.94,
+   "whisper|Offline": 3877.67
+  }
+ },
+ "6.1-0018": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS X210c M8 - X580P PCIe Node (4x RTXPro6000-PCIe-96GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama2-70b-99.9|Server": 14333.3,
+   "llama2-70b-99.9|Offline": 14860.7,
+   "gpt-oss-120b|Server": 6950.76,
+   "gpt-oss-120b|Offline": 7801.36
+  }
+ },
+ "6.1-0019": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "Cisco UCS X215c M8 - X580P PCIe Node (4x RTXPro6000-PCIe-96GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama3.1-8b|Server": 24498.6,
+   "llama3.1-8b|Offline": 24913.5,
+   "llama3.1-8b|Interactive": 22447.0,
+   "whisper|Offline": 9236.94
+  }
+ },
+ "6.1-0020": {
+  "submitter": "Cisco",
+  "availability": "available",
+  "system": "X410M8_1_node_4S_GNR_86C",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 1030.45,
+   "llama3.1-8b|Offline": 2068.63,
+   "whisper|Offline": 2970.57
+  }
+ },
+ "6.1-0021": {
+  "submitter": "CoreWeave",
+  "availability": "available",
+  "system": "CoreWeave B200 SXM (8x B200-SXM-180GB)",
+  "accelerator": "NVIDIA B200-SXM-180GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 102398.0,
+   "llama2-70b-99.9|Offline": 102703.0,
+   "deepseek-r1|Server": 56121.3,
+   "deepseek-r1|Offline": 58913.2,
+   "gpt-oss-120b|Server": 90204.7,
+   "gpt-oss-120b|Offline": 91487.4
+  }
+ },
+ "6.1-0022": {
+  "submitter": "CoreWeave",
+  "availability": "available",
+  "system": "CoreWeave B300 SXM (8x B300-SXM-270GB)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 114576.0,
+   "llama2-70b-99.9|Offline": 115530.0,
+   "gpt-oss-120b|Server": 111247.0,
+   "gpt-oss-120b|Offline": 112840.0
+  }
+ },
+ "6.1-0023": {
+  "submitter": "CoreWeave",
+  "availability": "available",
+  "system": "CoreWeave GB200 NVL72 (72x GB200-186GB_aarch64)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "llama2-70b-99.9|Server": 910621.0,
+   "llama2-70b-99.9|Offline": 894002.0,
+   "deepseek-r1|Server": 419778.0,
+   "deepseek-r1|Offline": 529991.0,
+   "gpt-oss-120b|Server": 901058.0,
+   "gpt-oss-120b|Offline": 911566.0
+  }
+ },
+ "6.1-0024": {
+  "submitter": "CoreWeave",
+  "availability": "available",
+  "system": "CoreWeave GB300 NVL72 (4x GB300-288GB_aarch64)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "VLM|Server": 64.13202030676248,
+   "VLM|Offline": 72.59800294104302
+  }
+ },
+ "6.1-0025": {
+  "submitter": "CoreWeave",
+  "availability": "available",
+  "system": "CoreWeave GB300 NVL72 (72x GB300-288GB_aarch64)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "llama2-70b-99.9|Server": 944902.0,
+   "llama2-70b-99.9|Offline": 1136100.0,
+   "VLM|Server": 1195.590758633778,
+   "VLM|Offline": 1135.25001579439,
+   "gpt-oss-120b|Server": 1160490.0,
+   "gpt-oss-120b|Offline": 1197710.0
+  }
+ },
+ "6.1-0026": {
+  "submitter": "Crusoe",
+  "availability": "available",
+  "system": "Crusoe Cloud 64x8 MI355X (512 GPU) \u2014 DeepSeek-R1 / SGLang",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 512.0,
+  "results": {
+   "deepseek-r1|Server": 2405310.0,
+   "deepseek-r1|Offline": 2901950.0
+  }
+ },
+ "6.1-0027": {
+  "submitter": "Crusoe",
+  "availability": "available",
+  "system": "Crusoe Cloud 64x8 MI355X (512 GPU) \u2014 gpt-oss-120b / vLLM",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 512.0,
+  "results": {
+   "gpt-oss-120b|Server": 5392930.0,
+   "gpt-oss-120b|Offline": 5749440.0
+  }
+ },
+ "6.1-0028": {
+  "submitter": "Crusoe",
+  "availability": "available",
+  "system": "NVIDIA GB200 NVL72 (16x GB200-186GB_aarch64, Dynamo)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 16.0,
+  "results": {
+   "VLM|Server": 198.9444574056901,
+   "VLM|Offline": 230.088792881784,
+   "VLM|Interactive": 39.85079133425917
+  }
+ },
+ "6.1-0029": {
+  "submitter": "Crusoe",
+  "availability": "available",
+  "system": "NVIDIA GB200 NVL72 (4x GB200-186GB_aarch64, Dynamo)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "VLM|Server": 49.6962883240102,
+   "VLM|Offline": 58.39587523885307,
+   "VLM|Interactive": 3.994056744750478
+  }
+ },
+ "6.1-0030": {
+  "submitter": "Crusoe",
+  "availability": "available",
+  "system": "NVIDIA GB200 NVL72 (4x GB200-186GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "gpt-oss-120b|Server": 50613.5,
+   "gpt-oss-120b|Offline": 50912.9
+  }
+ },
+ "6.1-0031": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "PowerEdge R770AP_128C 24x96GB (6400 MT/s)",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "rgat|Offline": 21835.4,
+   "whisper|Offline": 2275.93
+  }
+ },
+ "6.1-0032": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "PowerEdge R770_86C 16x64GB (6400 MT/s)",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 516.012,
+   "llama3.1-8b|Offline": 1227.99,
+   "rgat|Offline": 16042.8,
+   "whisper|Offline": 1539.49
+  }
+ },
+ "6.1-0033": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "PowerEdge XE7740 (8x RTXPro6000-PCIe-96GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 28973.3,
+   "llama2-70b-99.9|Offline": 29796.7
+  }
+ },
+ "6.1-0034": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "PowerEdge XE7745 (8x NVIDIA RTX PRO 4500 Blackwell, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 4500 Blackwell",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 3012.33,
+   "llama2-70b-99.9|Offline": 4374.06
+  }
+ },
+ "6.1-0035": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "Dell PowerEdge XE9712",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "text_to_video|SingleStream": 10.58500054065278,
+   "text_to_video|Offline": 0.6455254875195523
+  }
+ },
+ "6.1-0036": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "Dell XE9780 (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "Nvidia B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 96180.6,
+   "llama2-70b-99.9|Offline": 104006.0,
+   "gpt-oss-120b|Server": 103332.0,
+   "gpt-oss-120b|Offline": 109257.0
+  }
+ },
+ "6.1-0037": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "XE9785L_8xMI355X",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 148563.0,
+   "llama3.1-8b|Offline": 158458.0,
+   "llama3.1-8b|Interactive": 130540.0,
+   "llama2-70b-99.9|Server": 103932.0,
+   "llama2-70b-99.9|Offline": 103792.0,
+   "llama2-70b-99.9|Interactive": 73238.1,
+   "gpt-oss-120b|Server": 110188.0,
+   "gpt-oss-120b|Offline": 117804.0
+  }
+ },
+ "6.1-0038": {
+  "submitter": "Dell",
+  "availability": "available",
+  "system": "Dell XE9785L (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 106898.0,
+   "llama2-70b-99.9|Offline": 113101.0
+  }
+ },
+ "6.1-0040": {
+  "submitter": "Dell_AMD",
+  "availability": "available",
+  "system": "XE7745_8xMI350P_2xEPYC_9455",
+  "accelerator": "AMD Instinct MI350P",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "dlrm-v3|Server": 4503.53,
+   "dlrm-v3|Offline": 4837.63,
+   "llama3.1-8b|Server": 72305.1,
+   "llama3.1-8b|Offline": 73643.0,
+   "llama3.1-8b|Interactive": 62723.7,
+   "llama2-70b-99.9|Server": 41830.0,
+   "llama2-70b-99.9|Offline": 42286.2,
+   "llama2-70b-99.9|Interactive": 22860.5,
+   "text_to_video|SingleStream": 41.83792310800001,
+   "text_to_video|Offline": 0.0345875,
+   "gpt-oss-120b|Server": 40867.9,
+   "gpt-oss-120b|Offline": 48971.1
+  }
+ },
+ "6.1-0041": {
+  "submitter": "Dell_MangoBoost",
+  "availability": "available",
+  "system": "Heterogeneous Four-Cluster (2x8x MI300X + 2x8x MI355X, LLMBoost)",
+  "accelerator": "AMD Instinct MI300X 192GB HBM3 (x2x8) and AMD Instinct MI355X 288GB HBM3e (x2x8)",
+  "per_node": 8.0,
+  "total_accelerators": 32.0,
+  "results": {
+   "gpt-oss-120b|Server": 253501.0,
+   "gpt-oss-120b|Offline": 285454.0
+  }
+ },
+ "6.1-0042": {
+  "submitter": "Dell_MangoBoost",
+  "availability": "available",
+  "system": "PowerEdge XE9785",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "gpt-oss-120b|Server": 109065.0,
+   "gpt-oss-120b|Offline": 115294.0,
+   "gpt-oss-120b|Interactive": 28265.9
+  }
+ },
+ "6.1-0043": {
+  "submitter": "Dell_MangoBoost",
+  "availability": "available",
+  "system": "PowerEdge XE9785L",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "gpt-oss-120b|Server": 110153.0,
+   "gpt-oss-120b|Offline": 116953.0,
+   "gpt-oss-120b|Interactive": 29585.5
+  }
+ },
+ "6.1-0044": {
+  "submitter": "Fujitsu",
+  "availability": "available",
+  "system": "PRIMERGY_CDI_RTX_PRO_6000_PCIE_96GBx8, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 27340.9,
+   "llama2-70b-99.9|Offline": 26626.5
+  }
+ },
+ "6.1-0045": {
+  "submitter": "GigaComputing",
+  "availability": "available",
+  "system": "G894-AD3-AAX7",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 114832.0,
+   "llama2-70b-99.9|Offline": 115034.0,
+   "deepseek-r1|Server": 70495.7,
+   "deepseek-r1|Offline": 72445.1,
+   "text_to_video|SingleStream": 19.07940438844444,
+   "text_to_video|Offline": 0.0629152672355444,
+   "VLM|Server": 111.7532977914224,
+   "VLM|Offline": 131.2852847183584,
+   "VLM|Interactive": 12.48543213240489,
+   "gpt-oss-120b|Server": 111218.0,
+   "gpt-oss-120b|Offline": 111625.0
+  }
+ },
+ "6.1-0046": {
+  "submitter": "GigaComputing",
+  "availability": "available",
+  "system": "G894-ZD3-AAX7",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 114578.0,
+   "llama2-70b-99.9|Offline": 114826.0,
+   "deepseek-r1|Server": 70771.7,
+   "deepseek-r1|Offline": 72327.1,
+   "text_to_video|SingleStream": 18.05179867184028,
+   "text_to_video|Offline": 0.0625123079679506,
+   "VLM|Server": 115.7839399384009,
+   "VLM|Offline": 132.0547880616454,
+   "VLM|Interactive": 12.88177974080564,
+   "gpt-oss-120b|Server": 110592.0,
+   "gpt-oss-120b|Offline": 111541.0
+  }
+ },
+ "6.1-0047": {
+  "submitter": "Google",
+  "availability": "available",
+  "system": "NVIDIA GB200 NVL72 (72x GB200-186GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 388590.0,
+   "deepseek-r1|Offline": 510781.0,
+   "deepseek-r1|Interactive": 232160.0
+  }
+ },
+ "6.1-0048": {
+  "submitter": "HPE",
+  "availability": "available",
+  "system": "NVIDIA GB200 NVL72 by HPE (8x GB200-186GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "gpt-oss-120b|Server": 100714.0,
+   "gpt-oss-120b|Offline": 101453.0
+  }
+ },
+ "6.1-0049": {
+  "submitter": "HPE",
+  "availability": "available",
+  "system": "HPE ProLiant Compute DL380a Gen12 (8x RTX Pro 6000 Blackwell Server Edition 96GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 49523.3,
+   "llama3.1-8b|Offline": 50965.3,
+   "llama3.1-8b|Interactive": 39986.3,
+   "llama2-70b-99.9|Server": 28643.3,
+   "llama2-70b-99.9|Offline": 29284.8,
+   "whisper|Offline": 19278.3,
+   "gpt-oss-120b|Server": 14581.7,
+   "gpt-oss-120b|Offline": 15256.0
+  }
+ },
+ "6.1-0050": {
+  "submitter": "HPE",
+  "availability": "available",
+  "system": "HPE ProLiant Compute XD685 (8x AMD MI355X-288GB, vLLM)",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 148118.0,
+   "llama3.1-8b|Offline": 157694.0,
+   "llama3.1-8b|Interactive": 130613.0,
+   "llama2-70b-99.9|Server": 101979.0,
+   "llama2-70b-99.9|Offline": 102991.0,
+   "llama2-70b-99.9|Interactive": 72977.2,
+   "text_to_video|SingleStream": 16.397060151,
+   "text_to_video|Offline": 0.0707035,
+   "gpt-oss-120b|Server": 108836.0,
+   "gpt-oss-120b|Offline": 117355.0
+  }
+ },
+ "6.1-0051": {
+  "submitter": "HPE",
+  "availability": "available",
+  "system": "HPE Compute XD690 (8x NVIDIA B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 16.0,
+  "results": {
+   "deepseek-r1|Server": 80536.9,
+   "deepseek-r1|Offline": 136854.0
+  }
+ },
+ "6.1-0052": {
+  "submitter": "HPE",
+  "availability": "available",
+  "system": "HPE Compute XD690 (8x NVIDIA B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "gpt-oss-120b|Server": 113685.0,
+   "gpt-oss-120b|Offline": 114569.0
+  }
+ },
+ "6.1-0059": {
+  "submitter": "Intel",
+  "availability": "available",
+  "system": "1-node-2S-GNR_128C",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 1139.51,
+   "llama3.1-8b|Offline": 1916.74,
+   "rgat|Offline": 24573.7,
+   "whisper|Offline": 2319.02
+  }
+ },
+ "6.1-0060": {
+  "submitter": "Intel",
+  "availability": "available",
+  "system": "1-node-2S-Xeon_6787P",
+  "accelerator": "Intel(R) Arc(TM) Pro B70",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "end to end question-answering|Offline": 0.464076,
+   "end to end vector-database|Offline": 22.6141
+  }
+ },
+ "6.1-0061": {
+  "submitter": "Intel",
+  "availability": "available",
+  "system": "1-node-4x-BMG-B70",
+  "accelerator": "Intel(R) Arc(TM) Pro B70",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama3.1-8b|Server": 4173.25,
+   "llama3.1-8b|Offline": 4613.28,
+   "llama2-70b-99.9|Server": 1745.48,
+   "llama2-70b-99.9|Offline": 2464.98,
+   "whisper|Offline": 5539.77,
+   "gpt-oss-120b|Server": 1296.87,
+   "gpt-oss-120b|Offline": 1956.4
+  }
+ },
+ "6.1-0062": {
+  "submitter": "Inventec",
+  "availability": "available",
+  "system": "Inventec P5800G7(LC) (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 106617.0,
+   "llama2-70b-99.9|Offline": 109933.0,
+   "deepseek-r1|Server": 57432.0,
+   "deepseek-r1|Offline": 70269.6,
+   "gpt-oss-120b|Server": 100299.0,
+   "gpt-oss-120b|Offline": 106280.0
+  }
+ },
+ "6.1-0063": {
+  "submitter": "Inventec",
+  "availability": "available",
+  "system": "Inventec P9000G7(AC) (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 106645.0,
+   "llama2-70b-99.9|Offline": 109755.0,
+   "deepseek-r1|Server": 57517.4,
+   "deepseek-r1|Offline": 69062.2,
+   "gpt-oss-120b|Server": 100300.0,
+   "gpt-oss-120b|Offline": 105617.0
+  }
+ },
+ "6.1-0064": {
+  "submitter": "Lambda",
+  "availability": "available",
+  "system": "Lambda Cloud 8x B200-SXM-180GB",
+  "accelerator": "NVIDIA B200-SXM-180GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "VLM|Server": 69.41536196217709,
+   "VLM|Offline": 101.5607239508195
+  }
+ },
+ "6.1-0065": {
+  "submitter": "Lambda",
+  "availability": "available",
+  "system": "Lambda 4x GB300-288GB (GB300 NVL4, aarch64)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "VLM|Server": 64.62448277938189,
+   "VLM|Offline": 71.1217334486934,
+   "gpt-oss-120b|Server": 58195.8,
+   "gpt-oss-120b|Offline": 65511.9
+  }
+ },
+ "6.1-0066": {
+  "submitter": "MangoBoost",
+  "availability": "available",
+  "system": "MangoBoost 2x8 MI355X (16x MI355X, LLMBoost P/D Disaggregated Interactive Engine)",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 16.0,
+  "results": {
+   "gpt-oss-120b|Offline": 228488.0,
+   "gpt-oss-120b|Interactive": 59297.4
+  }
+ },
+ "6.1-0067": {
+  "submitter": "MangoBoost",
+  "availability": "available",
+  "system": "8xMI300X_2xEPYC_9534",
+  "accelerator": "AMD Instinct MI300X 192GB HBM3",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "gpt-oss-120b|Server": 24863.0,
+   "gpt-oss-120b|Offline": 30198.4
+  }
+ },
+ "6.1-0068": {
+  "submitter": "MiTAC",
+  "availability": "available",
+  "system": "G8825Z5",
+  "accelerator": "AMD Instinct MI350X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 121706.0,
+   "llama3.1-8b|Offline": 129943.0,
+   "llama3.1-8b|Interactive": 104368.0,
+   "llama2-70b-99.9|Server": 85004.8,
+   "llama2-70b-99.9|Offline": 84016.4,
+   "llama2-70b-99.9|Interactive": 56673.0,
+   "gpt-oss-120b|Server": 87549.5,
+   "gpt-oss-120b|Offline": 97019.7
+  }
+ },
+ "6.1-0069": {
+  "submitter": "MiTAC",
+  "availability": "available",
+  "system": "G4826",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 151116.0,
+   "llama3.1-8b|Offline": 159278.0,
+   "llama3.1-8b|Interactive": 136999.0,
+   "llama2-70b-99.9|Server": 104541.0,
+   "llama2-70b-99.9|Offline": 104904.0,
+   "llama2-70b-99.9|Interactive": 74385.6,
+   "gpt-oss-120b|Server": 108861.0,
+   "gpt-oss-120b|Offline": 118042.0
+  }
+ },
+ "6.1-0070": {
+  "submitter": "MiTAC",
+  "availability": "available",
+  "system": "MiTAC_G4520G6_RTX_PRO_6000_PCIE_96GBx8",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 29203.3,
+   "llama2-70b-99.9|Offline": 30034.2
+  }
+ },
+ "6.1-0071": {
+  "submitter": "NVIDIA",
+  "availability": "available",
+  "system": "NVIDIA DGX B300 (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 106949.0,
+   "llama2-70b-99.9|Offline": 109277.0,
+   "deepseek-r1|Server": 59867.8,
+   "deepseek-r1|Offline": 70132.3,
+   "text_to_video|SingleStream": 17.97718330692361,
+   "text_to_video|Offline": 0.0621886628274087,
+   "VLM|Server": 104.5781916389203,
+   "VLM|Offline": 129.3583917213701,
+   "VLM|Interactive": 3.994428963207542,
+   "gpt-oss-120b|Server": 100630.0,
+   "gpt-oss-120b|Offline": 106637.0
+  }
+ },
+ "6.1-0072": {
+  "submitter": "NVIDIA",
+  "availability": "available",
+  "system": "NVIDIA GB200 NVL72 (72x GB200-186GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 395940.0,
+   "deepseek-r1|Offline": 523790.0,
+   "deepseek-r1|Interactive": 240274.0,
+   "text_to_video|SingleStream": 5.731549943319444,
+   "text_to_video|Offline": 0.4960942571652712,
+   "gpt-oss-120b|Server": 899005.0,
+   "gpt-oss-120b|Offline": 883761.0,
+   "gpt-oss-120b|Interactive": 625205.0
+  }
+ },
+ "6.1-0073": {
+  "submitter": "NVIDIA",
+  "availability": "available",
+  "system": "NVIDIA GB300 NVL72 (72x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 288.0,
+  "results": {
+   "deepseek-r1|Server": 2028030.0,
+   "deepseek-r1|Offline": 2705130.0
+  }
+ },
+ "6.1-0074": {
+  "submitter": "NVIDIA",
+  "availability": "available",
+  "system": "NVIDIA GB300 NVL72 (72x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 596944.0,
+   "deepseek-r1|Offline": 679740.0,
+   "deepseek-r1|Interactive": 253506.0,
+   "text_to_video|SingleStream": 5.807651162902777,
+   "text_to_video|Offline": 0.6546111599325777,
+   "VLM|Server": 1210.48823482974,
+   "VLM|Offline": 1304.985262579748,
+   "VLM|Interactive": 349.2921988473666,
+   "gpt-oss-120b|Server": 1120710.0,
+   "gpt-oss-120b|Offline": 1124500.0,
+   "gpt-oss-120b|Interactive": 669305.0
+  }
+ },
+ "6.1-0075": {
+  "submitter": "NVIDIA",
+  "availability": "available",
+  "system": "NVIDIA GB300 NVL72 (8x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 127911.0,
+   "llama2-70b-99.9|Offline": 131464.0,
+   "deepseek-r1|Server": 67578.3,
+   "deepseek-r1|Offline": 75918.2,
+   "gpt-oss-120b|Server": 128173.0,
+   "gpt-oss-120b|Offline": 131619.0
+  }
+ },
+ "6.1-0077": {
+  "submitter": "Nebius",
+  "availability": "available",
+  "system": "Nebius B200 n1 (8x B200-SXM-180GB, TensorRT)",
+  "accelerator": "NVIDIA B200-SXM-180GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "deepseek-r1|Server": 55869.0,
+   "deepseek-r1|Offline": 56929.9,
+   "gpt-oss-120b|Server": 89856.3,
+   "gpt-oss-120b|Offline": 88491.0
+  }
+ },
+ "6.1-0078": {
+  "submitter": "Nebius",
+  "availability": "available",
+  "system": "Nebius B300 n1 (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "deepseek-r1|Server": 63909.3,
+   "deepseek-r1|Offline": 69655.1,
+   "VLM|Server": 112.2858237129371,
+   "VLM|Offline": 131.4771630075575,
+   "gpt-oss-120b|Server": 108124.0,
+   "gpt-oss-120b|Offline": 108529.0
+  }
+ },
+ "6.1-0079": {
+  "submitter": "Nebius",
+  "availability": "available",
+  "system": "Nebius GB300 NVL72 (4x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "VLM|Server": 64.61995222586359,
+   "VLM|Offline": 73.18605442300793
+  }
+ },
+ "6.1-0080": {
+  "submitter": "Nebius",
+  "availability": "available",
+  "system": "Nebius GB300 NVL72 (72x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 603023.0,
+   "deepseek-r1|Offline": 689961.0,
+   "gpt-oss-120b|Server": 1122490.0,
+   "gpt-oss-120b|Offline": 1186750.0
+  }
+ },
+ "6.1-0081": {
+  "submitter": "Nebius",
+  "availability": "available",
+  "system": "Nebius GB300 NVL72 (8x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "gpt-oss-120b|Server": 127921.0,
+   "gpt-oss-120b|Offline": 132236.0
+  }
+ },
+ "6.1-0082": {
+  "submitter": "Nebius",
+  "availability": "available",
+  "system": "Nebius RTX PRO 6000 n1 (8x RTX-PRO-6000-PCIE-96GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "gpt-oss-120b|Server": 14784.3,
+   "gpt-oss-120b|Offline": 15738.5
+  }
+ },
+ "6.1-0083": {
+  "submitter": "Oracle",
+  "availability": "available",
+  "system": "BM.Standard4.Ax.120",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 324.995,
+   "llama3.1-8b|Offline": 853.14,
+   "whisper|Offline": 1099.64
+  }
+ },
+ "6.1-0084": {
+  "submitter": "Oracle",
+  "availability": "available",
+  "system": "8xMI355X_2xEPYC_9575F",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 148594.0,
+   "llama3.1-8b|Offline": 144321.0,
+   "llama3.1-8b|Interactive": 130625.0,
+   "llama2-70b-99.9|Server": 100392.0,
+   "llama2-70b-99.9|Offline": 101553.0,
+   "llama2-70b-99.9|Interactive": 70421.7,
+   "text_to_video|SingleStream": 16.334597792,
+   "text_to_video|Offline": 0.0706215,
+   "gpt-oss-120b|Server": 109083.0,
+   "gpt-oss-120b|Offline": 115567.0
+  }
+ },
+ "6.1-0085": {
+  "submitter": "Oracle",
+  "availability": "available",
+  "system": "NVIDIA DGX B300 (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 106696.0,
+   "llama2-70b-99.9|Offline": 108026.0,
+   "deepseek-r1|Server": 60745.5,
+   "deepseek-r1|Offline": 70354.0,
+   "VLM|Offline": 124.3859737873004,
+   "VLM|Interactive": 3.9944621629557,
+   "gpt-oss-120b|Server": 100608.0,
+   "gpt-oss-120b|Offline": 109931.0
+  }
+ },
+ "6.1-0086": {
+  "submitter": "Oracle",
+  "availability": "available",
+  "system": "NVIDIA GB300 NVL72 (4x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama2-70b-99.9|Server": 58991.9,
+   "llama2-70b-99.9|Offline": 66001.9,
+   "text_to_video|SingleStream": 30.653359842875,
+   "text_to_video|Offline": 0.0138372212111634,
+   "VLM|Server": 64.60782589940354,
+   "VLM|Offline": 72.78618281809769,
+   "VLM|Interactive": 4.992209807647115,
+   "gpt-oss-120b|Server": 59996.0,
+   "gpt-oss-120b|Offline": 60745.8
+  }
+ },
+ "6.1-0087": {
+  "submitter": "Oracle",
+  "availability": "available",
+  "system": "NVIDIA GB300 NVL72 (72x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 586852.0,
+   "deepseek-r1|Offline": 666613.0,
+   "deepseek-r1|Interactive": 235807.0,
+   "text_to_video|SingleStream": 5.895425553486111,
+   "text_to_video|Offline": 0.3997628673298144,
+   "VLM|Server": 1146.388942892591,
+   "VLM|Offline": 1297.490941230584,
+   "gpt-oss-120b|Server": 1092610.0,
+   "gpt-oss-120b|Offline": 1097620.0
+  }
+ },
+ "6.1-0088": {
+  "submitter": "Oracle",
+  "availability": "available",
+  "system": "NVIDIA GB300 NVL72 (8x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 127984.0,
+   "llama2-70b-99.9|Offline": 132253.0,
+   "deepseek-r1|Server": 68138.0,
+   "deepseek-r1|Offline": 77031.7
+  }
+ },
+ "6.1-0089": {
+  "submitter": "Quanta_Cloud_Technology",
+  "availability": "available",
+  "system": "1-node-2S-GNR_86C",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 516.012,
+   "llama3.1-8b|Offline": 1170.51,
+   "rgat|Offline": 15633.3,
+   "whisper|Offline": 1548.1
+  }
+ },
+ "6.1-0090": {
+  "submitter": "Quanta_Cloud_Technology",
+  "availability": "available",
+  "system": "1-node-4x-BMG-B70",
+  "accelerator": "Intel(R) Arc(TM) Pro B70",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama3.1-8b|Server": 4122.73,
+   "llama3.1-8b|Offline": 4977.67,
+   "whisper|Offline": 5401.23
+  }
+ },
+ "6.1-0091": {
+  "submitter": "Quanta_Cloud_Technology",
+  "availability": "available",
+  "system": "QuantaGrid D75H-10U (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 106285.0,
+   "llama2-70b-99.9|Offline": 113985.0,
+   "deepseek-r1|Server": 59622.2,
+   "deepseek-r1|Offline": 69841.6,
+   "whisper|Offline": 45408.2,
+   "VLM|Server": 104.8118239643209,
+   "VLM|Offline": 131.7949949301423,
+   "gpt-oss-120b|Server": 100183.0,
+   "gpt-oss-120b|Offline": 108293.0
+  }
+ },
+ "6.1-0092": {
+  "submitter": "RedHat_Intel",
+  "availability": "available",
+  "system": "1-node-2S-GNR_96C",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 644.788,
+   "llama3.1-8b|Offline": 1507.21,
+   "whisper|Offline": 1966.11
+  }
+ },
+ "6.1-0093": {
+  "submitter": "RedHat_Supermicro",
+  "availability": "available",
+  "system": "NVIDIA GB200 NVL4 (4x GB200-192GB_aarch64, vLLM)",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "VLM|Server": 50.68378958948414,
+   "VLM|Offline": 58.07798401246531
+  }
+ },
+ "6.1-0094": {
+  "submitter": "RedHat_Supermicro",
+  "availability": "available",
+  "system": "SMC Lab OpenShift GB200-NVL4 4xGB200-186GB",
+  "accelerator": "NVIDIA GB200",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "gpt-oss-120b|Server": 51095.2,
+   "gpt-oss-120b|Offline": 61205.6
+  }
+ },
+ "6.1-0095": {
+  "submitter": "Supermicro",
+  "availability": "available",
+  "system": "1-node-2S-GNR_128C",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 1101.19,
+   "llama3.1-8b|Offline": 1833.97,
+   "whisper|Offline": 2248.15
+  }
+ },
+ "6.1-0096": {
+  "submitter": "Supermicro",
+  "availability": "available",
+  "system": "1-node-2S-GNR_86C",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 516.059,
+   "llama3.1-8b|Offline": 1189.89,
+   "rgat|Offline": 13273.7,
+   "whisper|Offline": 1477.4
+  }
+ },
+ "6.1-0097": {
+  "submitter": "Supermicro",
+  "availability": "available",
+  "system": "1-node-4S-GNR_86C",
+  "accelerator": null,
+  "per_node": null,
+  "total_accelerators": 0.0,
+  "results": {
+   "llama3.1-8b|Server": 966.241,
+   "llama3.1-8b|Offline": 2063.24,
+   "whisper|Offline": 2881.28
+  }
+ },
+ "6.1-0098": {
+  "submitter": "Supermicro",
+  "availability": "available",
+  "system": "1-node-4x-BMG-B70",
+  "accelerator": "Intel(R) Arc(TM) Pro B70",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama3.1-8b|Server": 4208.73,
+   "llama3.1-8b|Offline": 4596.62,
+   "llama2-70b-99.9|Server": 1759.95,
+   "llama2-70b-99.9|Offline": 2484.14,
+   "whisper|Offline": 5854.85,
+   "gpt-oss-120b|Server": 1351.13,
+   "gpt-oss-120b|Offline": 2063.93
+  }
+ },
+ "6.1-0099": {
+  "submitter": "Supermicro",
+  "availability": "available",
+  "system": "AS-4126GS-NMR-LCC",
+  "accelerator": "AMD Instinct MI355X 288GB HBM3e",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 148710.0,
+   "llama3.1-8b|Offline": 159060.0,
+   "llama2-70b-99.9|Server": 103032.0,
+   "llama2-70b-99.9|Offline": 102243.0,
+   "llama2-70b-99.9|Interactive": 73181.5,
+   "gpt-oss-120b|Server": 109184.0,
+   "gpt-oss-120b|Offline": 117005.0
+  }
+ },
+ "6.1-0100": {
+  "submitter": "Supermicro",
+  "availability": "available",
+  "system": "AS-8126GS-NB3RT",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 106872.0,
+   "llama2-70b-99.9|Offline": 110802.0,
+   "deepseek-r1|Server": 61164.9,
+   "deepseek-r1|Offline": 69830.0,
+   "gpt-oss-120b|Server": 107288.0,
+   "gpt-oss-120b|Offline": 108727.0
+  }
+ },
+ "6.1-0101": {
+  "submitter": "Supermicro",
+  "availability": "available",
+  "system": "SYS-822GS-NB3RT",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama2-70b-99.9|Server": 109848.0,
+   "llama2-70b-99.9|Offline": 111247.0,
+   "deepseek-r1|Server": 66754.3,
+   "deepseek-r1|Offline": 69104.0,
+   "VLM|Server": 111.7738365067543,
+   "VLM|Offline": 128.9061241200454,
+   "gpt-oss-120b|Server": 107205.0,
+   "gpt-oss-120b|Offline": 107851.0
+  }
+ },
+ "6.1-0102": {
+  "submitter": "TTA",
+  "availability": "available",
+  "system": "ManyCoreSoft DeepGadget dg5W (4x NVIDIA RTX PRO 6000 Blackwell 96GB, TensorRT)",
+  "accelerator": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "llama3.1-8b|Server": 24510.5,
+   "llama3.1-8b|Offline": 24511.8
+  }
+ },
+ "6.1-0103": {
+  "submitter": "VibeHPC",
+  "availability": "available",
+  "system": "B300-SXM-270GBx1_TRT",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 1.0,
+  "total_accelerators": 1.0,
+  "results": {
+   "llama3.1-8b|Server": 20420.4,
+   "llama3.1-8b|Offline": 21266.1,
+   "llama2-70b-99.9|Server": 14495.6,
+   "llama2-70b-99.9|Offline": 14636.8,
+   "whisper|Offline": 7058.95,
+   "gpt-oss-120b|Server": 13854.0,
+   "gpt-oss-120b|Offline": 14130.6
+  }
+ },
+ "6.1-0104": {
+  "submitter": "VibeHPC",
+  "availability": "available",
+  "system": "NVIDIA DGX B300 (8x B300-SXM-270GB, TensorRT)",
+  "accelerator": "NVIDIA B300-SXM-270GB",
+  "per_node": 8.0,
+  "total_accelerators": 8.0,
+  "results": {
+   "llama3.1-8b|Server": 156867.0,
+   "llama3.1-8b|Offline": 161767.0,
+   "deepseek-r1|Server": 33415.2,
+   "deepseek-r1|Offline": 36639.6,
+   "whisper|Offline": 53267.2,
+   "text_to_video|SingleStream": 21.279754716,
+   "text_to_video|Offline": 0.0783824
+  }
+ },
+ "6.1-0105": {
+  "submitter": "Wiwynn",
+  "availability": "available",
+  "system": "OneW GB300 NVL72 (4x GB300-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA GB300",
+  "per_node": 4.0,
+  "total_accelerators": 4.0,
+  "results": {
+   "gpt-oss-120b|Server": 60466.2,
+   "gpt-oss-120b|Offline": 63990.5
+  }
+ },
+ "6.1-0106": {
+  "submitter": "NVIDIA",
+  "availability": "preview",
+  "system": "NVIDIA Vera Rubin NVL72 (72x VR-288GB_aarch64)",
+  "accelerator": "NVIDIA Vera Rubin",
+  "per_node": 4.0,
+  "total_accelerators": 72.0,
+  "results": {
+   "deepseek-r1|Server": 1175890.220816824,
+   "deepseek-r1|Offline": 1183326.854032202,
+   "deepseek-r1|Interactive": 652750.1447708113,
+   "VLM|Server": 2323.269841782506,
+   "VLM|Offline": 2392.69791945877,
+   "VLM|Interactive": 1306.607844683451
+  }
+ },
+ "6.1-0107": {
+  "submitter": "Nebius",
+  "availability": "preview",
+  "system": "Nebius VR200 NVL72 (36x VR200-288GB_aarch64, TensorRT)",
+  "accelerator": "NVIDIA VR200",
+  "per_node": 4.0,
+  "total_accelerators": 36.0,
+  "results": {
+   "deepseek-r1|Server": 591368.312764167,
+   "deepseek-r1|Offline": 558802.8293934778
+  }
+ },
+ "6.1-0108": {
+  "submitter": "Naeem Khoshnevis",
+  "availability": "rdi",
+  "system": "H200-1xGPU",
+  "accelerator": "NVIDIA H200-SXM-141GB",
+  "per_node": 1.0,
+  "total_accelerators": 1.0,
+  "results": {
+   "llama3.1-8b|Server": 7376.597666232419,
+   "llama3.1-8b|Offline": 7796.585132594509
+  }
+ }
+}

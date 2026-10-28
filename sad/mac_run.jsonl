@@ -1,0 +1,17 @@
+{"kind": "env", "at": "2026-10-28T11:30:58Z", "loadavg": "{ 3.72 4.13 4.30 }", "powermode": "2", "thermal": "Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded "}
+{"kind": "cpu_triad", "threads": 6, "gib_per_array": 1.0, "reps": 15, "best_gbs": 361.9, "median_gbs": 359.5, "worst_gbs": 158.1}
+{"kind": "cpu_triad", "threads": 6, "gib_per_array": 1.0, "reps": 15, "best_gbs": 362.9, "median_gbs": 361.1, "worst_gbs": 158.9}
+{"kind": "cpu_triad", "threads": 6, "gib_per_array": 1.0, "reps": 15, "best_gbs": 361.8, "median_gbs": 360.9, "worst_gbs": 168.2}
+{"kind": "cpu_triad", "threads": 12, "gib_per_array": 1.0, "reps": 15, "best_gbs": 302.1, "median_gbs": 280.6, "worst_gbs": 187.8}
+{"kind": "cpu_triad", "threads": 12, "gib_per_array": 1.0, "reps": 15, "best_gbs": 345.4, "median_gbs": 286.5, "worst_gbs": 188.9}
+{"kind": "cpu_triad", "threads": 12, "gib_per_array": 1.0, "reps": 15, "best_gbs": 287.0, "median_gbs": 278.7, "worst_gbs": 191.2}
+{"kind": "cpu_triad", "threads": 18, "gib_per_array": 1.0, "reps": 15, "best_gbs": 361.0, "median_gbs": 349.1, "worst_gbs": 177.3}
+{"kind": "cpu_triad", "threads": 18, "gib_per_array": 1.0, "reps": 15, "best_gbs": 358.2, "median_gbs": 350.4, "worst_gbs": 206.1}
+{"kind": "cpu_triad", "threads": 18, "gib_per_array": 1.0, "reps": 15, "best_gbs": 359.3, "median_gbs": 350.1, "worst_gbs": 202.5}
+{"kind": "gpu_copyk", "mib_per_buffer": 1024, "reps": 20, "best_gbs": 557.7, "median_gbs": 556.4, "worst_gbs": 421.4}
+{"kind": "gpu_triad", "mib_per_buffer": 1024, "reps": 20, "best_gbs": 560.1, "median_gbs": 559.4, "worst_gbs": 538.0}
+{"kind": "gpu_copyk", "mib_per_buffer": 1024, "reps": 20, "best_gbs": 557.9, "median_gbs": 556.9, "worst_gbs": 533.3}
+{"kind": "gpu_triad", "mib_per_buffer": 1024, "reps": 20, "best_gbs": 560.2, "median_gbs": 559.5, "worst_gbs": 547.6}
+{"kind": "gpu_copyk", "mib_per_buffer": 1024, "reps": 20, "best_gbs": 557.8, "median_gbs": 555.9, "worst_gbs": 537.6}
+{"kind": "gpu_triad", "mib_per_buffer": 1024, "reps": 20, "best_gbs": 560.2, "median_gbs": 558.9, "worst_gbs": 545.0}
+{"kind": "env_after", "loadavg": "{ 3.50 4.08 4.28 }", "at": "2026-10-28T11:31:02Z"}

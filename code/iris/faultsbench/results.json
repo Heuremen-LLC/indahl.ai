@@ -1,0 +1,702 @@
+[
+ {
+  "model": "deepseek-r1_1.5b",
+  "copy_agree": 1.0,
+  "n_copy": 140,
+  "control_ok": 0.789,
+  "n_control": 19,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.243
+    ],
+    "n_read": 12,
+    "unread": 18,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     0.067,
+     0.018,
+     0.213
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     0.267,
+     0.1,
+     0.467
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     null,
+     null,
+     null
+    ],
+    "n_read": 0,
+    "unread": 20,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.49
+    ],
+    "n_read": 4,
+    "unread": 26,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "falcon3_3b",
+  "copy_agree": 1.0,
+  "n_copy": 140,
+  "control_ok": 0.5,
+  "n_control": 10,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.607,
+     0.424,
+     0.764
+    ],
+    "n_read": 28,
+    "unread": 2,
+    "guard_effect": [
+     0.393,
+     0.214,
+     0.571
+    ],
+    "n_pairs": 28,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     null,
+     null,
+     null
+    ],
+    "n_read": 0,
+    "unread": 30,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     null,
+     null,
+     null
+    ],
+    "n_read": 0,
+    "unread": 20,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.324
+    ],
+    "n_read": 8,
+    "unread": 22,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "gemma3_4b",
+  "copy_agree": 0.993,
+  "n_copy": 140,
+  "control_ok": 0.458,
+  "n_control": 24,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     1.0,
+     0.857,
+     1
+    ],
+    "n_read": 23,
+    "unread": 7,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 23,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.886,
+     1
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 26,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     0.158,
+     0.055,
+     0.376
+    ],
+    "n_read": 19,
+    "unread": 1,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 14,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.117
+    ],
+    "n_read": 29,
+    "unread": 1,
+    "guard_effect": [
+     0.185,
+     0.037,
+     0.333
+    ],
+    "n_pairs": 27,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "granite3.3_2b",
+  "copy_agree": 0.993,
+  "n_copy": 140,
+  "control_ok": 0.333,
+  "n_control": 30,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.733,
+     0.556,
+     0.858
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     -0.733,
+     -0.867,
+     -0.567
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.886,
+     1
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.161
+    ],
+    "n_read": 20,
+    "unread": 0,
+    "guard_effect": [
+     0.357,
+     0.143,
+     0.643
+    ],
+    "n_pairs": 14,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.414,
+     0.255,
+     0.593
+    ],
+    "n_read": 29,
+    "unread": 1,
+    "guard_effect": [
+     -0.32,
+     -0.56,
+     -0.08
+    ],
+    "n_pairs": 25,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "llama3.1_8b",
+  "copy_agree": 1.0,
+  "n_copy": 140,
+  "control_ok": 0.37,
+  "n_control": 27,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.143
+    ],
+    "n_read": 23,
+    "unread": 7,
+    "guard_effect": [
+     0.957,
+     0.87,
+     1.0
+    ],
+    "n_pairs": 23,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.886,
+     1
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.161
+    ],
+    "n_read": 20,
+    "unread": 0,
+    "guard_effect": [
+     0.625,
+     0.25,
+     0.875
+    ],
+    "n_pairs": 8,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.0,
+     0.0,
+     0.125
+    ],
+    "n_read": 27,
+    "unread": 3,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 7,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "mistral_7b",
+  "copy_agree": 0.871,
+  "n_copy": 140,
+  "control_ok": 1.0,
+  "n_control": 30,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.114
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.886,
+     1
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     1.0,
+     0.832,
+     1
+    ],
+    "n_read": 19,
+    "unread": 1,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 19,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.117
+    ],
+    "n_read": 29,
+    "unread": 1,
+    "guard_effect": [
+     0.069,
+     0.0,
+     0.172
+    ],
+    "n_pairs": 29,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "olmo2_7b",
+  "copy_agree": 1.0,
+  "n_copy": 140,
+  "control_ok": 0.333,
+  "n_control": 30,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.133,
+     0.053,
+     0.297
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     -0.133,
+     -0.267,
+     -0.033
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.875,
+     1
+    ],
+    "n_read": 27,
+    "unread": 3,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 9,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.161
+    ],
+    "n_read": 20,
+    "unread": 0,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 20,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.034,
+     0.006,
+     0.172
+    ],
+    "n_read": 29,
+    "unread": 1,
+    "guard_effect": [
+     -0.034,
+     -0.103,
+     0.0
+    ],
+    "n_pairs": 29,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "phi4-mini",
+  "copy_agree": 0.971,
+  "n_copy": 140,
+  "control_ok": 0.552,
+  "n_control": 29,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.433,
+     0.274,
+     0.608
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     -0.037,
+     -0.185,
+     0.111
+    ],
+    "n_pairs": 27,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.886,
+     1
+    ],
+    "n_read": 30,
+    "unread": 0,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 30,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     0.125,
+     0.035,
+     0.36
+    ],
+    "n_read": 16,
+    "unread": 4,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 7,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.117
+    ],
+    "n_read": 29,
+    "unread": 1,
+    "guard_effect": [
+     0.05,
+     0.0,
+     0.15
+    ],
+    "n_pairs": 20,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "qwen3_4b",
+  "copy_agree": 1.0,
+  "n_copy": 140,
+  "control_ok": 0.25,
+  "n_control": 4,
+  "gate": "FAIL",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.39
+    ],
+    "n_read": 6,
+    "unread": 24,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.51,
+     1
+    ],
+    "n_read": 4,
+    "unread": 26,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P3": {
+    "bare_fault": [
+     null,
+     null,
+     null
+    ],
+    "n_read": 0,
+    "unread": 20,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   },
+   "P4": {
+    "bare_fault": [
+     null,
+     null,
+     null
+    ],
+    "n_read": 0,
+    "unread": 30,
+    "guard_effect": null,
+    "n_pairs": 0,
+    "outcome": "CANNOT_TELL (gate failed)"
+   }
+  }
+ },
+ {
+  "model": "smollm2_1.7b",
+  "copy_agree": 1.0,
+  "n_copy": 140,
+  "control_ok": 0.833,
+  "n_control": 30,
+  "gate": "pass",
+  "fam": {
+   "P1": {
+    "bare_fault": [
+     1.0,
+     0.875,
+     1
+    ],
+    "n_read": 27,
+    "unread": 3,
+    "guard_effect": [
+     -0.296,
+     -0.481,
+     -0.148
+    ],
+    "n_pairs": 27,
+    "outcome": "BELOW"
+   },
+   "P2": {
+    "bare_fault": [
+     1.0,
+     0.871,
+     1
+    ],
+    "n_read": 26,
+    "unread": 4,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 24,
+    "outcome": "CONSISTENT"
+   },
+   "P3": {
+    "bare_fault": [
+     0.9,
+     0.699,
+     0.972
+    ],
+    "n_read": 20,
+    "unread": 0,
+    "guard_effect": [
+     0.1,
+     0.0,
+     0.25
+    ],
+    "n_pairs": 20,
+    "outcome": "CONSISTENT"
+   },
+   "P4": {
+    "bare_fault": [
+     0.0,
+     0,
+     0.117
+    ],
+    "n_read": 29,
+    "unread": 1,
+    "guard_effect": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "n_pairs": 29,
+    "outcome": "CONSISTENT"
+   }
+  }
+ }
+]

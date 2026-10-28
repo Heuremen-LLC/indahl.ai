@@ -1,0 +1,8 @@
+Heuremen LLC
+Source: https://indahl.ai (QIA and IRIS data downloads)
+
+Free to download, read and cite with attribution (Heuremen LLC, with a link to the page it came from).
+All rights are reserved. Text and data mining, and use of this data to train, fine-tune or build AI models, are not permitted.
+This is an express reservation of rights, also made in machine-readable form at https://indahl.ai/robots.txt and https://indahl.ai/.well-known/tdmrep.json.
+Names of authors appear as published in their own papers. To have a name or a study removed: https://indahl.ai/contact
+The studies listed keep their own terms. Policy: https://indahl.ai/terms#ai-training

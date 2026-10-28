@@ -1,0 +1,34 @@
+# NVIDIA blog post on MLPerf Inference v6.1 (Vera Rubin NVL72 debut), held against the v6.0 and v6.1 result files. python3 -I check_claims_nv_v61.py
+import json,hashlib
+FILES=['raw/inf_6.0.json','raw/inf_6.1.json']; RAW={f:open(f,'rb').read() for f in FILES}
+A=json.loads(RAW['raw/inf_6.0.json']); B=list(json.loads(RAW['raw/inf_6.1.json']).values()); s=str
+def row(sysn,m,sc,n):
+    r=[x for x in B if x['Organization']=='NVIDIA' and sysn in x['SystemName'] and x['Model']==m and x['Scenario']==sc and x['total_accelerators']==n and x['Division']=='closed']; assert len(r)==1,(sysn,m,sc,n,len(r)); return r[0]['Result']
+def mk(i,q,calc,st,got,out,note): return dict(id=i,quote=q,calc=calc,stated=st,delivered=got,outcome=out,note=note,label_mismatch=False)
+C=[]
+SC=('Offline','Server','Interactive')
+qw={sc:row('Vera Rubin','qwen3-vl-235b-a22b',sc,72)/row('GB300 NVL72','qwen3-vl-235b-a22b',sc,72) for sc in SC}
+dr={sc:row('Vera Rubin','deepseek-r1',sc,72)/row('GB300 NVL72','deepseek-r1',sc,72) for sc in SC}
+C.append(mk('B1','Vera Rubin NVL72 delivers up to 3.7x higher throughput than GB300 NVL72 on Qwen3-VL across offline, server and interactive scenarios','NVIDIA Vera Rubin NVL72 entry 6.1-0106 (72 GPUs, preview) against GB300 NVL72 entry 6.1-0074 (72 GPUs), Qwen3-VL-235B','up to 3.7x',', '.join(f'{k} {v:.2f}x' for k,v in qw.items()),'CONSISTENT' if 3.65<=max(qw.values())<=3.8 else 'BELOW','The maximum is the Interactive scenario. The Vera Rubin entry has availability preview.'))
+C.append(mk('B2','On DeepSeek-R1, using the NVIDIA TensorRT-LLM library, throughput is up to 2.5x higher than GB300 NVL72.','same two entries, DeepSeek-R1','up to 2.5x',', '.join(f'{k} {v:.2f}x' for k,v in dr.items()),'CONSISTENT' if 2.45<=max(dr.values())<=2.7 else 'BELOW','The maximum is the Interactive scenario. The statement rounds down.'))
+r72=row('GB300 NVL72','deepseek-r1','Offline',72); r288=row('GB300 NVL72','deepseek-r1','Offline',288)
+C.append(mk('B3',"NVIDIA's DeepSeek-R1 (DSR1) submission scaled from a single GB300 NVL72 rack (72 GPUs) to four racks (288 GPUs), achieving 99% scaling efficiency in the offline scenario.",'NVIDIA GB300 NVL72 entries 6.1-0073 (288 GPUs) and 6.1-0074 (72 GPUs), DeepSeek-R1 Offline','99%',f'{r288:,.0f} against 4 x {r72:,.0f} = {100*r288/(4*r72):.1f}%','CONSISTENT' if abs(100*r288/(4*r72)-99)<0.8 else 'BELOW',''))
+w=row('GB300 NVL72','wan-2.2-t2v-a14b','Offline',72); wl=row('GB300 NVL72','wan-2.2-t2v-a14b','SingleStream',72); wl2=row('GB200 NVL72','wan-2.2-t2v-a14b','SingleStream',72)
+C.append(mk('B4','reaching 0.65 720p videos per second at 5.7 seconds per video','NVIDIA GB300 NVL72 (72 GPUs) WAN 2.2, Offline and SingleStream','0.65 videos/s and 5.7 s per video',f'Offline {w:.4f} samples/s. SingleStream {wl:.3f} s on GB300. The NVIDIA GB200 NVL72 row is {wl2:.3f} s','BELOW','Throughput matches. The GB300 latency is 5.8 s. The 5.7 s figure matches the GB200 row.'))
+o4=[x for x in B if x['Organization']=='Oracle' and 'GB300 NVL72 (4x' in x['SystemName'] and x['Model']=='wan-2.2-t2v-a14b']
+o4o=[x for x in o4 if x['Scenario']=='Offline'][0]['Result']; o4l=[x for x in o4 if x['Scenario']=='SingleStream'][0]['Result']
+d8o=row('DGX B300','wan-2.2-t2v-a14b','Offline',8); d8l=row('DGX B300','wan-2.2-t2v-a14b','SingleStream',8)
+C.append(mk('B5','9x higher throughput and 7.5x lower latency than a single node','NVIDIA GB300 NVL72 (72 GPUs) WAN 2.2 against the smaller entries in the file: Oracle GB300 4-GPU and NVIDIA DGX B300 8-GPU','9x throughput, 7.5x latency',f'Against the 4-GPU GB300 entry: {w/o4o:.1f}x throughput, {o4l/wl:.1f}x lower latency. Against the 8-GPU DGX B300 entry: {w/d8o:.1f}x and {d8l/wl:.1f}x','CANNOT_TELL','Neither smaller entry gives 9x and 7.5x. The single-node baseline the statement uses is not in the file.'))
+g1=[x for x in B if x['Organization']=='NVIDIA' and 'GB300 NVL72' in x['SystemName'] and x['total_accelerators']==72 and x['Model']=='qwen3-vl-235b-a22b' and x['Scenario']=='Server'][0]['Result']/72
+g0=[x for x in A if x['ID']=='6.0-0077' and x['Model']=='qwen3-vl-235b-a22b' and x['Scenario']=='Server'][0]['Performance_Result']/4
+C.append(mk('B6','In v6.1, GB300 NVL72 performance on Qwen3-VL improved up to 1.6x over v6.0 results.','NVIDIA GB300 Qwen3-VL-235B Server per GPU: v6.1 entry 6.1-0074 (72 GPUs) against v6.0 entry 6.0-0077 (4 GPUs)','up to 1.6x',f'{g1:.2f} per GPU against {g0:.2f} ({g1/g0:.2f}x)','CONSISTENT' if abs(g1/g0-1.6)<0.06 else 'BELOW','Per GPU, Server scenario. The v6.0 entry has 4 GPUs. Offline per GPU is lower.'))
+nvm={'ASUS':'ASUSTeK','Azure':'Azure','Cisco':'Cisco','CoreWeave':'CoreWeave','Crusoe':'Crusoe','Dell':'Dell','Fujitsu':'Fujitsu','Giga':'GigaComputing','HPE':'HPE','Inventec':'Inventec','Lambda':'Lambda','MiTAC':'MiTAC','Nebius':'Nebius','Oracle':'Oracle','QCT':'Quanta_Cloud_Technology','Red Hat':'RedHat_Supermicro','ScitiX':'ScitiX','Supermicro':'Supermicro','Wiwynn':'Wiwynn'}
+def nv(x):
+    a=s(x['accelerator_model_name']); return ('NVIDIA' in a.upper() or any(k in a for k in ('GB200','GB300','B200','B300','H200','H100','RTX','Jetson','GB10','VR-'))) and 'AMD' not in a.upper() and 'MI3' not in a and 'Arc' not in a
+orgs=sorted({x['Organization'] for x in B if x['Organization']!='NVIDIA' and nv(x)})
+multi=sorted({x['Organization'] for x in B if x['Organization']!='NVIDIA' and nv(x) and ('NVL72' in x['SystemName'] or 'GB200' in s(x['accelerator_model_name']) or 'GB300' in s(x['accelerator_model_name'])) and (x['number_of_nodes'] or 0)>1})
+named_multi=[o for o in multi if o in nvm.values()]
+C.append(mk('B7','The NVIDIA partner ecosystem participated broadly, with 19 partners ... eight of them on multi-node Blackwell NVL72 systems','organizations other than NVIDIA with an NVIDIA accelerator in the v6.1 file, and those with a multi-node GB200 or GB300 system','19 partners, eight on multi-node NVL72',f'All 19 named organizations have NVIDIA entries. The file has {len(orgs)} such organizations in all. Multi-node GB200 or GB300 systems: {len(multi)} organizations ({", ".join(multi)}). Among the 19 named: {len(named_multi)}','CANNOT_TELL' if len(named_multi)!=8 else 'CONSISTENT','Eight organizations in the file have multi-node systems, but one of them, Google, is not on the post list. Among the 19 named the count is seven. The statement does not say what counts as multi-node or as a partner.'))
+C.append(mk('B8','Vera Rubin NVL72 delivered 30 x better performance than GB300 NVL72 in preview testing.','SemiAnalysis AgentX results are not MLPerf results','30x on AgentX','The v6.1 file holds no AgentX benchmark','CANNOT_TELL','The statement refers to a different benchmark that is not in the MLCommons files.'))
+json.dump(dict(source=FILES,sha256=[hashlib.sha256(RAW[f]).hexdigest() for f in FILES],claims=C),open('claims_nv_v61.json','w'),indent=1)
+for c in C: print(c['id'],c['outcome'],'|',c['stated'],'|',c['delivered'][:210])

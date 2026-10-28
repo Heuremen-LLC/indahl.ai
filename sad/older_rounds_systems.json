@@ -1,0 +1,266 @@
+{
+ "v3.1": {
+  "repository": "https://github.com/mlcommons/inference_results_v3.1",
+  "tree_truncated": true,
+  "system_files": 108,
+  "submitters": [
+   "ASUSTeK",
+   "Azure",
+   "CTuning",
+   "ConnectTechInc",
+   "Dell",
+   "Fujitsu",
+   "GigaComputing",
+   "Google",
+   "H3C",
+   "HPE",
+   "IEI",
+   "Intel",
+   "Intel-HabanaLabs",
+   "Krai",
+   "Lenovo"
+  ],
+  "selected_systems": [
+   {
+    "path": "closed/Azure/systems/ND_H100_v5_TRT.json",
+    "division": "closed",
+    "submitter": "Azure",
+    "nodes": 1,
+    "accelerators_per_node": 8,
+    "accelerator": "NVIDIA H100-SXM-80GB",
+    "operating_system": "Ubuntu 22.04.2 LTS",
+    "framework": "TensorRT 9.0.0, CUDA 12.2"
+   }
+  ]
+ },
+ "v4.0": {
+  "repository": "https://github.com/mlcommons/inference_results_v4.0",
+  "tree_truncated": true,
+  "system_files": 94,
+  "submitters": [
+   "ASUSTeK",
+   "Azure",
+   "CTuning",
+   "Cisco",
+   "Dell",
+   "Fujitsu",
+   "GigaComputing",
+   "Google",
+   "HPE",
+   "Intel",
+   "Intel-HabanaLabs",
+   "Krai",
+   "Lenovo",
+   "NVIDIA",
+   "Oracle",
+   "Qualcomm",
+   "Quanta_Cloud_Technology",
+   "SiMa",
+   "Supermicro",
+   "Wiwynn"
+  ],
+  "selected_systems": [
+   {
+    "path": "closed/Azure/systems/NC_H100_v5_TRT.json",
+    "division": "closed",
+    "submitter": "Azure",
+    "nodes": 1,
+    "accelerators_per_node": 2,
+    "accelerator": "NVIDIA H100 NVL",
+    "operating_system": "Ubuntu 20.04.6 LTS",
+    "framework": "TensorRT 9.3.0, CUDA 12.2"
+   },
+   {
+    "path": "closed/NVIDIA/systems/GH200-GraceHopper-Superchip_GH200-144GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "NVIDIA",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200-GraceHopper-Superchip",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 9.3.0, CUDA 12.2"
+   },
+   {
+    "path": "closed/NVIDIA/systems/GH200-GraceHopper-Superchip_GH200-96GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "NVIDIA",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200-GraceHopper-Superchip",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 9.3.0, CUDA 12.2"
+   },
+   {
+    "path": "closed/Quanta_Cloud_Technology/systems/GH200-GraceHopper-Superchip_GH200-96GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "Quanta_Cloud_Technology",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200-GraceHopper-Superchip",
+    "operating_system": "Rocky Linux 9.1",
+    "framework": "TensorRT 9.3.0, CUDA 12.2"
+   }
+  ]
+ },
+ "v4.1": {
+  "repository": "https://github.com/mlcommons/inference_results_v4.1",
+  "tree_truncated": false,
+  "system_files": 112,
+  "submitters": [
+   "AMD",
+   "ASUSTeK",
+   "CTuning",
+   "Cisco",
+   "ConnectTechInc",
+   "Dell",
+   "Fujitsu",
+   "GigaComputing",
+   "Google",
+   "HPE",
+   "Intel",
+   "JuniperNetworks",
+   "Krai",
+   "Lenovo",
+   "NVIDIA",
+   "NeuralMagic",
+   "Oracle",
+   "Quanta_Cloud_Technology",
+   "RedHat",
+   "Supermicro",
+   "Sustainable_Metal_Cloud",
+   "UntetherAI"
+  ],
+  "selected_systems": [
+   {
+    "path": "closed/AMD/systems/1xMI300X_2xEPYC-9374F.json",
+    "division": "closed",
+    "submitter": "AMD",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "AMD Instinct MI300X-NPS1-SPX-192GB-750W",
+    "operating_system": "Ubuntu 22.04.4 LTS (Jammy Jellyfish)",
+    "framework": "vLLM 0.4.3+rocm614, PyTorch 2.3.0, ROCm 6.1.2"
+   },
+   {
+    "path": "closed/AMD/systems/8xMI300X_2xEPYC-9374F.json",
+    "division": "closed",
+    "submitter": "AMD",
+    "nodes": 1,
+    "accelerators_per_node": 8,
+    "accelerator": "AMD Instinct MI300X-NPS1-SPX-192GB-750W",
+    "operating_system": "Ubuntu 22.04.4 LTS (Jammy Jellyfish)",
+    "framework": "vLLM 0.4.3+rocm614, PyTorch 2.3.0, ROCm 6.1.2"
+   },
+   {
+    "path": "closed/AMD/systems/8xMI300X_2xEPYC-TURIN.json",
+    "division": "closed",
+    "submitter": "AMD",
+    "nodes": 1,
+    "accelerators_per_node": 8,
+    "accelerator": "AMD Instinct MI300X-NPS1-SPX-192GB-750W",
+    "operating_system": "Ubuntu 22.04.6 LTS (Jammy Jellyfish)",
+    "framework": "vLLM 0.4.3+rocm614, PyTorch 2.3.0, ROCm 6.1.2"
+   },
+   {
+    "path": "closed/Google/systems/GH200-GraceHopper-Superchip_GH200-144GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "Google",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200-GraceHopper-Superchip",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 10.2.0, CUDA 12.4"
+   },
+   {
+    "path": "closed/HPE/systems/GH200-GraceHopper-Superchip_GH200-144GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "HPE",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 144GB",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 10.2.0, CUDA 12.4"
+   },
+   {
+    "path": "closed/HPE/systems/GH200-GraceHopper-Superchip_GH200-144GB_aarch64x2_TRT.json",
+    "division": "closed",
+    "submitter": "HPE",
+    "nodes": 1,
+    "accelerators_per_node": 2,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 144GB",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 10.2.0, CUDA 12.4"
+   },
+   {
+    "path": "closed/NVIDIA/systems/GH200-GraceHopper-Superchip_GH200-144GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "NVIDIA",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 144GB",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 10.2.0, CUDA 12.4"
+   },
+   {
+    "path": "closed/NVIDIA/systems/GH200-GraceHopper-Superchip_GH200-144GB_aarch64x2_TRT.json",
+    "division": "closed",
+    "submitter": "NVIDIA",
+    "nodes": 1,
+    "accelerators_per_node": 2,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 144GB",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 10.2.0, CUDA 12.4"
+   },
+   {
+    "path": "closed/Oracle/systems/GH200-GraceHopper-Superchip_GH200-96GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "Oracle",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 96GB",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 10.2.0, CUDA 12.4"
+   },
+   {
+    "path": "closed/Quanta_Cloud_Technology/systems/GH200-GraceHopper-Superchip_GH200-96GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "Quanta_Cloud_Technology",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 96GB",
+    "operating_system": "Rocky Linux 9.3",
+    "framework": "TensorRT 10.2.0.19, CUDA 12.4"
+   },
+   {
+    "path": "closed/RedHat/systems/L40S-RedHat-OpenShift.json",
+    "division": "closed",
+    "submitter": "RedHat",
+    "nodes": "1",
+    "accelerators_per_node": "4",
+    "accelerator": "NVIDIA L40S",
+    "operating_system": "Red Hat Enterprise Linux CoreOS release 4.14",
+    "framework": "CUDA 12.2"
+   },
+   {
+    "path": "closed/Supermicro/systems/GH200-GraceHopper-Superchip_GH200-96GB_aarch64x1_TRT.json",
+    "division": "closed",
+    "submitter": "Supermicro",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 96GB",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 10.2.0, CUDA 12.4"
+   },
+   {
+    "path": "open/Oracle/systems/GH200-GraceHopper-Superchip_GH200-96GB_aarch64x1_TRT.json",
+    "division": "open",
+    "submitter": "Oracle",
+    "nodes": 1,
+    "accelerators_per_node": 1,
+    "accelerator": "NVIDIA GH200 Grace Hopper Superchip 96GB",
+    "operating_system": "Ubuntu 22.04.2",
+    "framework": "TensorRT 9.3.0, CUDA 12.2"
+   }
+  ]
+ }
+}

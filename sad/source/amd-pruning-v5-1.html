@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMD, MLPerf® Inference v5.1 | SAD | Heuremen LLC</title>
+<meta name="description" content="AMD, MLPerf Inference v5.1: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="canonical" href="https://indahl.ai/sad/source/amd-pruning-v5-1">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AMD, MLPerf® Inference v5.1 | SAD | Heuremen LLC">
+<meta property="og:description" content="AMD, MLPerf Inference v5.1: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<meta property="og:url" content="https://indahl.ai/sad/source/amd-pruning-v5-1">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="AMD, MLPerf® Inference v5.1 | SAD | Heuremen LLC">
+<meta name="twitter:description" content="AMD, MLPerf Inference v5.1: what the source states, set against the published files, with the quoted sentence, the entry and the outcome for every row.">
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time">TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a></nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>AMD, MLPerf&reg; Inference v5.1</h1></div></section>
+<main class="wrap">
+<section class="legal"><p class="meta"><a href="/sad">SAD</a> &middot; <a href="/sad#sources">All sources</a></p><h2>AMD, MLPerf&reg; Inference v5.1</h2><p class="meta">Source: <a href="https://rocm.blogs.amd.com/artificial-intelligence/mlperf-llama-pruning/README.html">ROCm Blogs: Slim Down Your Llama: Pruning &amp; Fine-Tuning for Maximum Performance (post dated 9 September 2025)</a>, fetched 2026-10-28. 4 statements checked: 1 CONSISTENT, 3 CANNOT_TELL. <a href="/respond?u=sad-amd-pruning-v5-1">Respond</a></p><div class="scroll"><table class="mtx"><thead><tr><th>Statement</th><th>Compared</th><th>Stated</th><th>In the file</th><th>Outcome</th><th>Note</th></tr></thead><tbody><tr><td>&ldquo;pruning 26 layers (~21%) from the original 126-layer Llama 3.1 405B model ... pruning 42 layers (33.3%)&rdquo;</td><td>arithmetic on the post&#x27;s layer counts</td><td>~21% and 33.3% of 126 layers</td><td>26 of 126 = 20.6%, 42 of 126 = 33.3%</td><td><strong>CONSISTENT</strong></td><td>Checked from the post&#x27;s own numbers.</td></tr><tr><td>&ldquo;In its original BF16 format, the model is 756 GB. Thanks to the MI355X’s support for MXFP4 quantization, we can quantize the model to approximately 207 GB.&rdquo;</td><td>arithmetic: 405 billion parameters at 16 bits and at 4.25 bits (4 bits plus one 8-bit scale per 32 values)</td><td>756 GB in BF16 and about 207 GB in MXFP4</td><td>BF16 810 GB decimal or 754 GiB; MXFP4 215 GB decimal or 200 GiB</td><td><strong>CANNOT_TELL</strong></td><td>Not a result file field. The BF16 figure matches the binary unit. The MXFP4 figure lies between the two computed values.</td></tr><tr><td>&ldquo;with Exact Match accuracy above 96.7% and RougeL accuracy above 97.7% ... above 96% for Exact Match and above 99.6% for RougeL metrics&rdquo;</td><td>accuracy fields of AMD open entries 5.1-0100 (2019.04 tokens/s) and 5.1-0101 (1942.15 tokens/s), and of the closed Llama 3.1 405B entries</td><td>accuracy percentages relative to the reference score</td><td>5.1-0100: ROUGEL 21.170, exact match 87.22; 5.1-0101: ROUGEL 21.619, exact match 86.60; mean of 23 closed entries: ROUGEL 21.899, exact match 90.08</td><td><strong>CANNOT_TELL</strong></td><td>The percentages are relative to a reference score that is not a field in the file. Against the closed-entry mean the exact match ratios are 96.8% and 96.1% and the ROUGEL ratios are 96.7% and 98.7%.</td></tr><tr><td>&ldquo;with generated tokens/s ranging from 2,307 to 2,921 and Exact Match accuracy from 78.35% to 88.78%&rdquo;</td><td>Table 1 experiments in the post; AMD open entries in the v5.1 file</td><td>2,307 to 2,921 tokens/s across pruning strategies</td><td>submitted open entries: 1,942.15 and 2,019.04 tokens/s</td><td><strong>CANNOT_TELL</strong></td><td>Table 1 is an experiment table and not a submission. The submitted entries are lower than the experiment range.</td></tr></tbody></table></div><h2>Notices</h2><p>MLPerf&reg; Inference v5.0, v5.1 and v6.0 results, datacenter and edge suites, closed and open divisions, as published by MLCommons Association in <code>summary_results.json</code> of the repositories <code>inference_results_v5.0</code>, <code>inference_results_v5.1</code> and <code>inference_results_v6.0</code> at github.com/mlcommons, retrieved 28 October 2026. MLPerf&reg; Training v6.0 results as published in the result logs of the repository <code>training_results_v6.0</code>, retrieved 28 October 2026. Training times on this page are recomputed from run start and run stop in each log, with the olympic average and review-committee scaling factors that the MLCommons result summarizer applies. Each row names the result entries it uses. The per-accelerator values, ratios and percentages on this page are our own computations from those results. They are not primary MLPerf&reg; metrics and are not verified by MLCommons Association. Unverified results have not been through an MLPerf&reg; review and may use measurement methodologies and/or workload implementations that are inconsistent with the MLPerf&reg; specification for verified results.</p><p>The MLPerf&reg; and MLCOMMONS&reg; trademarks and design versions thereof are registered and unregistered trademarks and service marks of MLCommons Association in the United States and other countries. All rights reserved. Unauthorized use is strictly prohibited. See www.mlcommons.org for more information. Heuremen LLC is not affiliated with MLCommons Association and nothing on this page is endorsed by it.</p><p class="meta">Vendor sentences are quoted from the pages named above. The MLCommons names and results are theirs. To correct or remove a row, use the <a href="/contact">inquiry form</a>. We acknowledge every request within three business days.</p></section>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC">GitHub</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-CE23019E</p>
+</div></footer>
+</body>
+</html>
