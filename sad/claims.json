@@ -1,7 +1,7 @@
 {
  "summary": {
   "built": "2026-10-28",
-  "claims": 514,
+  "claims": 531,
   "tally": {
    "NVIDIA v5.1": {
     "CONSISTENT": 7,
@@ -42,6 +42,10 @@
    "Azure Lustre Storage v3.0": {
     "CONSISTENT": 9,
     "CANNOT_TELL": 1
+   },
+   "NVIDIA AIStore Storage v3.0": {
+    "CONSISTENT": 15,
+    "CANNOT_TELL": 2
    },
    "NVIDIA Training v6.0": {
     "CONSISTENT": 13,
@@ -341,6 +345,7 @@
    "K-Veritas": "4552715d6d29cd8636579b3faf4a75d530841fb8032603b90dcf8329ea49563d",
    "Nebius Storage v3.0": "c2ec8a6035c91b802f1adc558979f602fbcaa56555eb8f571599dd86e431a970",
    "Azure Lustre Storage v3.0": "bf9e9c634dec23f57630d509c208212bf0f8752245d1b66570b7b2d57c948578",
+   "NVIDIA AIStore Storage v3.0": "0d21140d0423e6d99093d7f9bf720ba96c9fb9c132437c49316ca09b4af2b324",
    "NVIDIA Training v6.0": "b9c095237fd10f8572de6a3158d805b057199557660f56a8a4d8f57844a1f8c0",
    "AMD v5.1": "f702bbfb4cf37502c65183dc67491eb315236fbb0aed0e708bbb4a2db8a66e00",
    "AMD v6.0": "463eb1911a2702c4eb5568a6642647fda4bd862788437c50048f2253cab8f920",
@@ -473,6 +478,13 @@
     "vendor": "Azure",
     "title": "Microsoft Learn: Azure Managed Lustre MLPerf Storage v3.0 results (2026)",
     "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/mlperf-storage-v3-results",
+    "round": "MLPerf Storage v3.0"
+   },
+   {
+    "key": "NVIDIA AIStore Storage v3.0",
+    "vendor": "NVIDIA",
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
     "round": "MLPerf Storage v3.0"
    },
    {
@@ -2252,6 +2264,329 @@
    "source": {
     "title": "Microsoft Learn: Azure Managed Lustre MLPerf Storage v3.0 results (2026)",
     "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/mlperf-storage-v3-results",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS1",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "NVIDIA published 20 Closed Division results across training and checkpointing workloads.",
+   "verbatim": true,
+   "compared": "Closed division entries submitted by NVIDIA in the results repository",
+   "stated": "20 Closed Division results",
+   "in_file": "20 Closed entries; categories ['checkpointing', 'training']",
+   "outcome": "CONSISTENT",
+   "note": "Counted from the results repository.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS10",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "The benchmark delivered 136.54 GiB/s of recovery-read throughput and 133.27 GiB/s of write throughput, equivalent to 97.7% and 95.4% of that nominal figure, respectively.",
+   "verbatim": true,
+   "compared": "Llama 3 1T summary at 12 nodes, read and write, divided by 12 times 11.64 GiB/s",
+   "stated": "136.54 read, 133.27 write, 97.7% and 95.4%",
+   "in_file": "136.54 read, 133.27 write, 97.7% and 95.4%",
+   "outcome": "CONSISTENT",
+   "note": "Percentages use the exact nominal 139.70 GiB/s.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS11",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "RetinaNet has roughly 450 times as many objects per GiB as UNet3D, whose average sample is 140 MiB.",
+   "verbatim": true,
+   "compared": "the post's own sizes: 140 MiB per UNet3D sample and about 315 KiB per RetinaNet object",
+   "stated": "roughly 450 times",
+   "in_file": "455 times",
+   "outcome": "CONSISTENT",
+   "note": "The object sizes are from the post, not the results files. The arithmetic is checked.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS12",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "The 1T-parameter model checkpoint runs used 8, 8, and 16 clients, respectively",
+   "verbatim": true,
+   "compared": "client nodes (hosts) in the Llama 3 1T entries at 3, 6 and 12 AIStore nodes",
+   "stated": "8, 8 and 16 clients",
+   "in_file": "8, 8 and 16 client nodes",
+   "outcome": "CONSISTENT",
+   "note": "The rest of the sentence, two data-parallel instances at every scale, is not in the fields read here.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS13",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "The training runs scaled from 5 to 10 to 20 clients and simulated B200 accelerators",
+   "verbatim": true,
+   "compared": "UNet3D entries at 3, 6 and 12 AIStore nodes, client nodes and simulated accelerators",
+   "stated": "5, 10 and 20 clients and accelerators",
+   "in_file": "hosts 5, 10, 20; accelerators 5, 10, 20",
+   "outcome": "CONSISTENT",
+   "note": "Read from the three UNet3D entries.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS15",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "the submission is classified as Available, meaning all system components are publicly available, and as Shared Remote Object storage: multiple clients access the storage over a network through an object API.",
+   "verbatim": true,
+   "compared": "availability, storage location and benchmark API on all NVIDIA Closed entries",
+   "stated": "Available; Shared Remote Object storage",
+   "in_file": "availability ['available'], storage location ['remote'], benchmark API ['object']",
+   "outcome": "CONSISTENT",
+   "note": "Read from the entry classifications.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS16",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "It was submitted to the Closed Division",
+   "verbatim": true,
+   "compared": "division of NVIDIA entries",
+   "stated": "Closed Division",
+   "in_file": "divisions ['closed']",
+   "outcome": "CONSISTENT",
+   "note": "All 20 entries sit in the Closed folder.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS2",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "Increasing the AIStore cluster from 3 to 12 nodes (4x) delivered 3.97x the UNet3D training I/O and 3.99x the Llama 3 1T checkpoint recovery throughput",
+   "verbatim": true,
+   "compared": "UNet3D I/O at 12 nodes over 3 nodes; Llama 3 1T load_checkpoint_io_mean at 12 nodes over 3 nodes",
+   "stated": "3.97x and 3.99x",
+   "in_file": "UNet3D 115.58 over 29.15 = 3.966x. 1T read 136.54 over 34.20 = 3.993x. The 1T runs used 8 client nodes at 3 AIStore nodes and 16 at 12.",
+   "outcome": "CONSISTENT",
+   "note": "Both ratios round to the stated figures. The client count was doubled for the 12 node checkpoint run, which the post states in its table.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS3",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "UNet3D throughput remained nearly constant per storage node: 9.72 GiB/s at three nodes, 9.70 GiB/s at six, and 9.63 GiB/s at twelve.",
+   "verbatim": true,
+   "compared": "UNet3D I/O divided by AIStore node count",
+   "stated": "9.72, 9.70 and 9.63 GiB/s per node",
+   "in_file": "9.72, 9.70 and 9.63 GiB/s per node",
+   "outcome": "CONSISTENT",
+   "note": "Node counts taken from the submission names (3n, 6n, 12n).",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS4",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "From three to six OCI nodes, RetinaNet I/O increased from 27.09 to 50.04 GiB/s, a 1.85x gain.",
+   "verbatim": true,
+   "compared": "RetinaNet I/O at 3 and 6 OCI nodes",
+   "stated": "27.09 to 50.04 GiB/s, 1.85x",
+   "in_file": "27.09 to 50.04 GiB/s, 1.848x",
+   "outcome": "CONSISTENT",
+   "note": "Mean of the last five runs, as in every row.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS5",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "Mean AU was 94.06% at three nodes and 89.25% at six nodes, both above the workload's 85% requirement.",
+   "verbatim": true,
+   "compared": "RetinaNet accelerator utilization at 3 and 6 OCI nodes, against the 85% requirement stated in the post",
+   "stated": "94.06% and 89.25%, both above 85%",
+   "in_file": "94.06% and 89.25%",
+   "outcome": "CONSISTENT",
+   "note": "The 85% requirement is as the post states it.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS6",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "I/O per simulated B200 stayed in a narrow range of 5.77 to 5.83 GiB/s.",
+   "verbatim": true,
+   "compared": "UNet3D I/O divided by simulated accelerators on the three cloud deployments",
+   "stated": "5.77 to 5.83 GiB/s",
+   "in_file": "AWS 5.80, Google Cloud 5.77, OCI 5.83 GiB/s per accelerator",
+   "outcome": "CONSISTENT",
+   "note": "Accelerators are the simulated accelerator count in each entry.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS7",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "Three separate cloud deployments sustained more than 97% mean AU through the S3 object API.",
+   "verbatim": true,
+   "compared": "UNet3D accelerator utilization on the AWS, Google Cloud and OCI entries, and their benchmark API",
+   "stated": "more than 97% mean AU, object API",
+   "in_file": "98.37%, 97.88%, 98.86%; benchmark API ['object']",
+   "outcome": "CONSISTENT",
+   "note": "The files record an object benchmark API. Whether it is S3 is as the post states.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS8",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "Each storage node had a nominal 100 Gb/s network interface, equivalent to 11.64 GiB/s before protocol overhead.",
+   "verbatim": true,
+   "compared": "100 Gb/s converted to GiB/s",
+   "stated": "11.64 GiB/s",
+   "in_file": "11.642 GiB/s",
+   "outcome": "CONSISTENT",
+   "note": "Arithmetic on the stated interface speed. The interface itself is not in the results files.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS9",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "Across twelve nodes, that provided 139.7 GiB/s of nominal aggregate NIC bandwidth.",
+   "verbatim": true,
+   "compared": "12 nodes at 100 Gb/s each",
+   "stated": "139.7 GiB/s",
+   "in_file": "139.70 GiB/s",
+   "outcome": "CONSISTENT",
+   "note": "Arithmetic on the stated interface speed.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS14",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "Our submission used NVIDIA AIStore v4.8 on Kubernetes.",
+   "verbatim": true,
+   "compared": "NVIDIA system description files: AIStore version and Kubernetes",
+   "stated": "AIStore v4.8 on Kubernetes",
+   "in_file": "17 system files. AIStore v4.8 appears in the description of 17. Kubernetes appears in 16.",
+   "outcome": "CANNOT_TELL",
+   "note": "Counted from the yaml files. Where a file names Google Kubernetes Engine it counts as Kubernetes. One file, aistore-3n-oci-bm-denseio-e5-128-1client.yaml, does not name an orchestrator. The other 16 do, so the record is silent on that one entry and contradicts none.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Storage v3.0"
+   }
+  },
+  {
+   "id": "AS17",
+   "vendor": "NVIDIA",
+   "source_key": "NVIDIA AIStore Storage v3.0",
+   "statement": "Cloud object storage was not part of the measured data path.",
+   "verbatim": true,
+   "compared": "the results repository describes the system under test, not a negative about other storage",
+   "stated": "cloud object storage not in the measured data path",
+   "in_file": "the files list AIStore nodes as the storage and name no other",
+   "outcome": "CANNOT_TELL",
+   "note": "A system description lists what was used. It does not state what was absent.",
+   "label_mismatch": false,
+   "source": {
+    "title": "NVIDIA AIStore blog: NVIDIA AIStore at MLPerf Storage v3.0: Linear Scale-Out and Multi-Cloud Portability (2026)",
+    "url": "https://aistore.nvidia.com/blog/2026/09/01/mlperf-storage-v3",
     "fetched": "2026-10-28",
     "round": "MLPerf Storage v3.0"
    }
