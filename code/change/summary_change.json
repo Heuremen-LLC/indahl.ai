@@ -1,0 +1,131 @@
+{
+ "updated": "29 Oct 11:11",
+ "first_snapshot": "2026-10-29",
+ "rows": 281,
+ "sources": [
+  {
+   "vendor": "Anthropic",
+   "rows": 36,
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+   "vendor": "OpenAI",
+   "rows": 113,
+   "url": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+   "vendor": "Google",
+   "rows": 86,
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+   "vendor": "Cloudflare",
+   "rows": 46,
+   "url": "https://developers.cloudflare.com/deprecations/"
+  }
+ ],
+ "test": {
+  "of": 0,
+  "held": 0,
+  "moved": 0,
+  "removed_early": 0,
+  "share": null,
+  "share_lo": null,
+  "share_hi": null,
+  "outcome": "CANNOT_TELL"
+ },
+ "upcoming": [
+  {
+   "vendor": "Google",
+   "item": "gemini-3.1-flash-tts-preview",
+   "shutdown": "2026-11-17",
+   "days_left": 19,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "item": "gemini-3.1-flash-live-preview",
+   "shutdown": "2026-11-17",
+   "days_left": 19,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "item": "gemini-2.5-flash-native-audio-preview-12-2025",
+   "shutdown": "2026-11-17",
+   "days_left": 19,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "item": "gemini-2.5-flash-preview-tts",
+   "shutdown": "2026-11-17",
+   "days_left": 19,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "item": "gemini-2.5-pro-preview-tts",
+   "shutdown": "2026-11-17",
+   "days_left": 19,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Cloudflare",
+   "item": "Foundation DNS boolean setting",
+   "shutdown": "2026-11-23",
+   "days_left": 25,
+   "deprecated": "2026-07-27",
+   "notice": 119
+  },
+  {
+   "vendor": "Anthropic",
+   "item": "claude-opus-4-5-20251101",
+   "shutdown": "2026-11-24 (not sooner than)",
+   "days_left": 26,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Anthropic",
+   "item": "claude-sonnet-4-5-20250929",
+   "shutdown": "2026-11-30",
+   "days_left": 32,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Cloudflare",
+   "item": "Authoritative DNS and DNS Firewall Legacy Analytics",
+   "shutdown": "2026-12-01",
+   "days_left": 33,
+   "deprecated": "2025-12-09",
+   "notice": 357
+  }
+ ],
+ "notice": {
+  "Cloudflare": {
+   "n": 15,
+   "median": 182,
+   "shortest": 88,
+   "under30": 0,
+   "share": 0.0
+  }
+ },
+ "lifespan": {
+  "Google": {
+   "n": 51,
+   "median": 274,
+   "shortest": 83,
+   "under180": 11,
+   "share": 0.216
+  }
+ },
+ "changes": {},
+ "change_list": []
+}
