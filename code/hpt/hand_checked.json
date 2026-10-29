@@ -1,0 +1,17 @@
+{
+ "2|alicepeckday.org": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|atholhospital.org": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|blythedale.org": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|cheshiremed.org": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|ghcares.org": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|hughston.com": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|islandhospital.org": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|mptf.com": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|slhn.org": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|weisshospital.com": "the linked address returns HTTP 404 when opened by hand on 29 Oct",
+ "2|choa.org": "the address returns a web page (gzip-compressed HTML, decoded by hand), not a data file",
+ "2|mvhealth.org": "the address returns a web page, not a data file",
+ "2|onslow.org": "the address returns a web page (a price index viewer), not a data file",
+ "3|childrens.com": "a CSV whose first line is description, CDM, CPT, HCPCS and so on, with no hospital_name, last_updated_on or version",
+ "3|claxtonhepburn.org": "a CSV whose first line is a list of CPT and price columns, with no hospital_name, last_updated_on or version"
+}
