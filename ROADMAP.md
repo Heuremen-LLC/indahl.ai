@@ -23,7 +23,7 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [x] **Our data as SQL tables** ([dataset heuremen-llc-data.heuremen_public](code/bigquery/README.md), [plan and addendum](code/bigquery/PLAN.md)). Every trend history, the hash chain and the STACK rows in BigQuery, readable by any signed-in Google account, row counts read back after each load.
 - [ ] **Queue against wait, the analysis** ([rule committed](code/qia-queue/PLAN.md), Note 1). Needs 7 days of hourly readings.
 - [ ] **A second outside seat on a different network**. One runner is one seat.
-- [ ] **Open weight model support windows**. CHANGE covers vendor deprecation tables only.
+- [x] **Model names against their weights** ([WEIGHTS live](https://indahl.ai/weights), [plan](code/weights/PLAN.md)). The most downloaded open-weight models read pass after pass. The first pass is read and the comparison starts with the second.
 - [ ] **New Zenodo versions every month** (script written and tested; first scheduled run after the next release).
 - [ ] **Amazon Braket deviations table**. Parked: needs a funded account.
 - [ ] **Boston T1 and T2**. Job queued at IBM since the 29th, waits behind hundreds of pending jobs.
