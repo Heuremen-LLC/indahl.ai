@@ -18,7 +18,16 @@ def verify(d):
             if e['kind'] == 'beacon':
                 inp = dict(leaves)
                 if beacon(inp['drand_randomness'], inp['feeds_root'], inp['prev_entry'], inp.get('qbits_root')) != e['root']: bad.append('n %s: beacon does not match its inputs' % e['n'])
-                if inp['prev_entry'] != e['prev']: bad.append('n %s: beacon input prev differs from the chain' % e['n'])
+                fe = [x for x in lines if x['kind'] == 'feeds' and x['n'] < e['n']]
+                if not fe or inp['prev_entry'] != fe[-1]['entry'] or inp['feeds_root'] != fe[-1]['root']: bad.append('n %s: beacon inputs are not the feeds entry of the same run' % e['n'])
+            elif e['kind'] == 'qbits':
+                inp = dict(leaves)
+                if inp['extracted'] != e['root']: bad.append('n %s: qbits root is not the extracted value' % e['n'])
+                rd_ = os.path.join(d, 'qbits', 'runs')
+                if os.path.isdir(rd_):
+                    import hashlib, glob
+                    hs = [hashlib.sha256(open(f, 'rb').read()).hexdigest() for f in glob.glob(os.path.join(rd_, '*.bits'))]
+                    if hs and inp['raw_sha256'] not in hs: bad.append('n %s: no raw bits file in qbits/runs matches raw_sha256' % e['n'])
             elif merkle(leaves) != e['root']: bad.append('n %s: leaves do not give the root' % e['n'])
         prev = e['entry']; n_prev = e['n']
     return bad, len(lines)

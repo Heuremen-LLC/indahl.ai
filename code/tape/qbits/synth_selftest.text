@@ -1,6 +1,11 @@
-fair                               outcome CONSISTENT pooled 0.5000 usable True  flags []
-readout asymmetry only             outcome BELOW      pooled 0.4898 usable True  flags []
-twelve biased qubits               outcome ABOVE      pooled 0.5139 usable False flags ['qubits beyond 3 sigma of a fair coin: 12 of 64', 'Hadamard readings match the prediction from the 0 and 1 readouts on only 75% of qubits']
-three stuck qubits                 outcome BELOW      pooled 0.4778 usable False flags ['stuck qubits 3']
-neighbours copy 30 percent         outcome CONSISTENT pooled 0.5026 usable False flags ['adjacent pairs correlated: 63 of 63']
+fair                               outcome CONSISTENT  mean p1 0.5000 usable True  flags []
+readout asymmetry only             outcome BELOW       mean p1 0.4905 usable True  flags []
+readout crosstalk                  outcome ABOVE       mean p1 0.5040 usable True  flags []
+readout crosstalk, naive           the all-0 and all-1 prediction alone would read usable False, match 0% (the fix matters)
+twelve biased qubits               outcome ABOVE       mean p1 0.5143 usable False flags ['qubits beyond 3 sigma of a fair coin: 12 of 64', 'Hadamard readings match the prediction from the random-context readouts on only 78% of qubits']
+three stuck qubits                 outcome CONSISTENT  mean p1 0.4764 usable False flags ['stuck qubits 3']
+neighbours copy 30 percent         outcome CONSISTENT  mean p1 0.4990 usable False flags ['adjacent pairs correlated: 63 of 63']
+too few shots                      outcome CANNOT_TELL mean p1 0.5008 usable True  flags []
+FLOOR: 0 of 200 fair worlds flagged, 0.0 percent (the plan requires at most 5 percent)
 SELFTEST PASS
+ORDERTEST PASS [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0]

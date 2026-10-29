@@ -49,21 +49,21 @@ if pend:
         lv = [(x['h'], str(x['t'])) for x in pend]
         ec = append('commits', 'receipts, %d received' % len(lv), merkle(lv), lv)
         d1("UPDATE commits SET n=%d WHERE n IS NULL AND h IN (%s)" % (ec['n'], ','.join("'%s'" % h for h, _ in lv)))
-# 2 feeds
-fl = []
-for s in SLUGS + ['headlines']:
-    b = get('https://indahl.ai/%s' % (s + '/live.json?x=%d' % time.time() if s != 'headlines' else 'headlines.json?x=%d' % time.time()))
-    fl.append((s, sha(b) if b else 'NOTHING_RETURNED'))
-ef = append('feeds', 'live feeds, %d of %d read' % (sum(1 for _, h in fl if h != 'NOTHING_RETURNED'), len(fl)), merkle(fl), fl)
 # 2b quantum bits: a finished QBITS run waiting in qbits/new becomes a qbits entry (PLAN Addendum 2)
 os.makedirs('qbits/new', exist_ok=True); os.makedirs('qbits/done', exist_ok=True)
 for qf in sorted(glob.glob('qbits/new/*.json')):
     try:
         q = json.load(open(qf)); rd = q['reading']
         lv = [('backend', q['backend']), ('job_id', q['job_id']), ('shots', str(q['shots'])), ('qubits', str(q['qubits'])), ('raw_sha256', q['raw_sha256']), ('extracted', q['extracted']), ('outcome', rd['outcome']), ('usable', str(rd['usable']))]
-        append('qbits', 'quantum bits from %s' % q['backend'], q['extracted'], lv, dict(run=os.path.basename(qf), pooled_p1=rd['pooled_p1'], flags=rd['flags']))
+        append('qbits', 'quantum bits from %s, %s' % (q['backend'], 'usable under the plan flags' if rd['usable'] else 'not usable under the plan flags'), q['extracted'], lv, dict(run=os.path.basename(qf), mean_qubit_p1=rd['mean_qubit_p1'], mean_ci=rd['mean_ci'], flags=rd['flags']))
         os.rename(qf, 'qbits/done/' + os.path.basename(qf))
     except Exception as ex: print('tape: qbits file skipped,', os.path.basename(qf), type(ex).__name__)
+# 2 feeds
+fl = []
+for s in SLUGS + ['headlines']:
+    b = get('https://indahl.ai/%s' % (s + '/live.json?x=%d' % time.time() if s != 'headlines' else 'headlines.json?x=%d' % time.time()))
+    fl.append((s, sha(b) if b else 'NOTHING_RETURNED'))
+ef = append('feeds', 'live feeds, %d of %d read' % (sum(1 for _, h in fl if h != 'NOTHING_RETURNED'), len(fl)), merkle(fl), fl)
 # 3 beacon
 dr = get(DRAND, 20); drd = json.loads(dr) if dr else None
 rnd = str(drd['round']) if drd else 'NOTHING_RETURNED'; rr = drd['randomness'] if drd else 'NOTHING_RETURNED'

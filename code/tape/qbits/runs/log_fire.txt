@@ -1,0 +1,5 @@
+  job = sam.run([(isa[i], None, shots[i]) for i in range(len(isa))]); jid = job.job_id(); print('job', jid, flush=True)
+backend ibm_fez, 156 qubits, pending jobs 0. Circuits: no gate (1024 shots), X (1024), Hadamard (4096), and 32 random-pattern circuits (128 shots each), all qubits in one job. Raw bits: 638976.
+Estimated QPU seconds 4.1 (an estimate from 4.0e-04 s per shot, not a measurement). Account seconds remaining 1473. Cap per run 20, minimum to remain 300.
+job dbhsaamne4hc73bdhapg
+{"backend": "ibm_fez", "job_id": "dbhsaamne4hc73bdhapg", "extracted": "6efb1ab36003bcbf394b322cfc9845b916c30ea20934155eb2b50c39acff3028", "qpu_seconds_used": 0} CONSISTENT ['qubits beyond 3 sigma of a fair coin: 14 of 156', 'Hadamard readings match the prediction from the random-context readouts on only 73% of qubits']
