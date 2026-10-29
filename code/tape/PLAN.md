@@ -31,3 +31,11 @@ That a page's content is true. That a feed's content was correct. That the tape 
 
 ## Not in this plan
 Quantum bits from IBM. They arrive by addendum with their own known-good test of hardware bias on each processor, and never before.
+
+## Addendum 1 (29 Oct, before the first receipt: VAULT)
+A fourth entry kind and a public page where anyone can add a hash.
+1. **commits**. Written when at least one receipt is waiting. The leaves are each waiting hash with the Unix second we received it. The root is the Merkle root of those leaves, built as above. The entry's number is then stored beside each hash so a receipt can say which entry holds it.
+2. **What we receive.** Only a 64-character SHA-256 hash, from the visitor's own browser, when they press a receipt button. We store the hash and the time. We do not receive or store any file, any sealed file, any key, any file name or any network address. Limits: 20 receipts per address per hour and 3,000 a day in all, enforced with a one-way hash of the address and the hour that is deleted after three days.
+3. **Sealing.** The browser encrypts a file to a chosen future round of the drand quicknet chain using tlock-js, with the chain hash and public key fixed in the code, so the release time rests on drand and not on us. The sealed file is saved on the visitor's computer and is never sent to us. We cannot scan, host, find or release it. A hash of the sealed file can be sent for a receipt, like any other.
+4. **Not claimed.** That a receipt shows who made a file or that its content is true. That a sealed file is safe to hold or share. That a sealed file can be opened if drand stops publishing. That we can recover or remove any file, because we never hold one.
+5. **Known-good.** Before the first receipt: a file sealed to a round about a minute ahead must not open before that round and must open, byte for byte, after it, in a browser; a hash must return a receipt and be found again by hash; a malformed hash, a second post of the same hash and the 21st post in an hour must behave as rules 2 and 1 say. The result is committed with the first receipt.

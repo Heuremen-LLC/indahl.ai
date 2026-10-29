@@ -36,6 +36,19 @@ changed = [u for u, h in pages if last_pages.get(u) != h]
 if pages and changed:
     e = append('pages', 'built pages, %d changed' % len(changed), merkle(pages), pages, dict(changed=changed[:400]))
     json.dump(dict(pages), open('pages_last.json', 'w'))
+# 1b receipts: hashes people sent from their own browsers (VAULT), chained in batches
+ENVC = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
+def d1(sql):
+    r = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'd1', 'execute', 'tape-commits', '--remote', '--json', '--command', sql], cwd=W, env=ENVC, capture_output=True, text=True)
+    try: return json.loads(r.stdout)[0].get('results', [])
+    except Exception: return None
+pend = d1('SELECT h, t FROM commits WHERE n IS NULL ORDER BY t, h LIMIT 2000')
+if pend:
+    pend = [x for x in pend if re.fullmatch(r'[0-9a-f]{64}', str(x['h']))]
+    if pend:
+        lv = [(x['h'], str(x['t'])) for x in pend]
+        ec = append('commits', 'receipts, %d received' % len(lv), merkle(lv), lv)
+        d1("UPDATE commits SET n=%d WHERE n IS NULL AND h IN (%s)" % (ec['n'], ','.join("'%s'" % h for h, _ in lv)))
 # 2 feeds
 fl = []
 for s in SLUGS + ['headlines']:
