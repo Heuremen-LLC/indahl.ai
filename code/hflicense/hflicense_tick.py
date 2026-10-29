@@ -28,9 +28,11 @@ def fam_tag(t):
     return 'OTHER'
 def fam_text(txt):
     t = re.sub(r'\s+', ' ', txt.lower())
-    if 'creative commons' in t and ('cc0' in t or 'public domain dedication' in t or 'universal' in t and 'zero' in t): return 'CC0'
-    if 'creative commons' in t and 'attribution' in t:
-        u = t.replace('-', '').replace(' ', ''); return 'CC-BY' + ('-NC' if 'noncommercial' in u else '') + ('-SA' if 'sharealike' in u else '') + ('-ND' if 'noderivatives' in u else '')
+    hd6 = t[:600]                                         # addendum 2: the CC family is read from the title region; the legal text's trailer mentions CC0
+    if re.match(r'\s*(attribution|cc0|creative commons)', hd6) or 'creative commons' in hd6 or re.search(r'attribution[\w\- ]*\s\d\.\d|\bcc by\b|\bcc-by\b', hd6):      # addendum 4
+        if 'cc0' in hd6 or ('zero' in hd6 and 'universal' in hd6): return 'CC0'
+        if 'attribution' in hd6:
+            u = hd6.replace('-', '').replace(' ', ''); return 'CC-BY' + ('-NC' if 'noncommercial' in u else '') + ('-SA' if 'sharealike' in u else '') + ('-ND' if 'noderivatives' in u else '')
     if 'apache license' in t and 'version 2.0' in t: return 'Apache-2.0'
     if 'mozilla public license' in t: return 'MPL-2.0'
     hd = t[:400]                                          # addendum 1: the GNU licenses are read from their title, the GPL-3.0 body mentions the Affero license
@@ -62,8 +64,18 @@ if not SUMMARY_ONLY:
     for spdx, want in (('MIT', 'MIT'), ('Apache-2.0', 'Apache-2.0'), ('BSD-3-Clause', 'BSD'), ('CC-BY-4.0', 'CC-BY'), ('CC-BY-NC-4.0', 'CC-BY-NC'), ('GPL-3.0-only', 'GPL-3.0')):
         t = get('https://raw.githubusercontent.com/spdx/license-list-data/main/text/%s.txt' % spdx, raw=True); gate_texts &= bool(t) and fam_text(t) == want
     gate_texts &= fam_text('Our very own custom terms of use apply to this model.') == 'OTHER'
+    for spdx, want in (('CC-BY-NC-SA-4.0', 'CC-BY-NC-SA'), ('CC0-1.0', 'CC0'), ('CC-BY-SA-4.0', 'CC-BY-SA')):
+        t = get('https://raw.githubusercontent.com/spdx/license-list-data/main/text/%s.txt' % spdx, raw=True); gate_texts &= bool(t) and fam_text(t) == want
+    cc = get('https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC-BY-4.0.txt', raw=True) or ''
+    gate_texts &= fam_text(cc + '\n\nThe text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication.') == 'CC-BY'
+    gate_texts &= fam_text('FSD50K as a whole is released under license: Attribution 4.0 International (CC BY 4.0). You can find a human-readable summary of the license at https://creativecommons.org/licenses/by/4.0/') == 'CC-BY'
+    gate_texts &= fam_text('Model license. The model weights are licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Terms follow.') == 'CC-BY-NC'
 def repo_fam(kind, rid, files):
-    lf = next((f for f in files if re.match(r'^(license|licence|copying)([-._].*)?$', f, re.I)), None)
+    def lf_ok(f):          # addendum 3: LICENSE, LICENCE, COPYING with an optional -suffix; the last extension must be none, md, txt, rst or a version number
+        if not re.match(r'^(license|licence|copying)([-_.][\w.-]*)?$', f, re.I): return False
+        tail = f.rsplit('.', 1)[1].lower() if '.' in f else ''
+        return tail in ('', 'md', 'txt', 'rst') or tail.isdigit() or ('.' not in f)
+    lf = next((f for f in files if lf_ok(f)), None)
     if lf is None: return None, None, 'no license file in the repository root'
     t = get('https://huggingface.co/%s%s/resolve/main/%s' % ('datasets/' if kind == 'datasets' else '', rid, lf), raw=True)
     if t is None: return lf, None, 'license file not readable'
@@ -81,7 +93,10 @@ if gate and not SUMMARY_ONLY:
         for m in lst:
             rid = m['id']; key = kind + '|' + rid
             if key in store and now - store[key]['read'] < 30 * 86400: continue
-            files = [s['rfilename'] for s in m.get('siblings', []) if '/' not in s['rfilename']]; tag = next((t.split(':', 1)[1] for t in m.get('tags', []) if t.startswith('license:')), None)
+            sib = m.get('siblings') or []
+            if not sib and m.get('tags') and any(t.startswith('license:') for t in m['tags']) or (kind == 'datasets' and not sib):
+                full = get('https://huggingface.co/api/%s/%s' % (kind, rid)); time.sleep(0.4); sib = (full or {}).get('siblings') or []
+            files = [s['rfilename'] for s in sib if '/' not in s['rfilename']]; tag = next((t.split(':', 1)[1] for t in m.get('tags', []) if t.startswith('license:')), None) or next((('' + (m.get('cardData') or {}).get('license')) for _ in [0] if isinstance((m.get('cardData') or {}).get('license'), str)), None)
             rec = dict(read=now, kind=kind, id=rid, tag=tag, rank=lst.index(m) + 1)
             if not tag: rec.update(cls='NOT_COMPARABLE', why='no stated license tag')
             else:
@@ -101,6 +116,9 @@ why = C.Counter((r['kind'], r.get('why')) for r in store.values() if r['cls'] ==
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', models=len(M), datasets=len(D), comparison={'Models': cmp_m, 'Datasets': cmp_d},
            classes={c: dict(models=cm[c], datasets=cd[c]) for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, not_comparable_reasons={w: dict(models=why[('models', w)], datasets=why[('datasets', w)]) for w in sorted({w for _, w in why})},
            stated_without_file={'Models': nf_m, 'Datasets': nf_d},
+           mixed={'Tag names a standard license, file is a custom or unnamed text': dict(models=len([r for r in M if r.get('tag_family') not in (None, 'OTHER') and r.get('file_family') == 'OTHER']), datasets=len([r for r in D if r.get('tag_family') not in (None, 'OTHER') and r.get('file_family') == 'OTHER'])),
+                  'Tag is other or a custom name, file is a standard license': dict(models=len([r for r in M if r.get('tag_family') == 'OTHER' and r.get('file_family') not in (None, 'OTHER')]), datasets=len([r for r in D if r.get('tag_family') == 'OTHER' and r.get('file_family') not in (None, 'OTHER')]))},
+           mixed_list=[dict(repo=r['id'], kind=r['kind'][:-1], tag=r['tag'], file=r.get('file'), note=hc.get('mixed|' + r['id'])) for r in store.values() if r.get('tag_family') not in (None, 'OTHER') and r.get('file_family') == 'OTHER' and ('mixed|' + r['id']) in hc],
            disagree_list=[dict(repo=r['id'], kind=r['kind'][:-1], tag=r['tag'], file=r.get('file'), file_family=r.get('file_family'), reason=hc.get(r['kind'] + '|' + r['id']) or hc.get(r['id'])) for r in store.values() if r['cls'] == 'DISAGREE' and (r['kind'] + '|' + r['id'] in hc or r['id'] in hc)])
 json.dump(out, open('summary_hflicense.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
