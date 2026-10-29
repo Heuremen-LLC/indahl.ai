@@ -3,7 +3,7 @@
 Every item is plan-first (the plan is committed before the data), live on the tick bus, with trend rows in this repository. A box ticks in the commit that finishes the item.
 
 - [x] **arXiv version drift on every indexed study** ([live](https://indahl.ai/arxivdrift), [code](code/arxivdrift)). Flag when a later arXiv version changes the numbers or the claim we read, both versions shown. arXiv API, no key.
-- [ ] **Support windows against release activity** (read and being hand-checked; [plan](code/support/PLAN.md)). Stated end-of-life and support dates (endoflife.date) against actual release and support activity.
+- [x] **Support windows against release activity** ([live](https://indahl.ai/support), [plan and two addenda](code/support/PLAN.md); an error in my first classifier caught by hand check before publishing). Stated end-of-life and support dates (endoflife.date) against actual release and support activity.
 - [ ] **Package claims against the files** (built: PKGLICENSE reading now). PyPI metadata (license, requires-python, stated contents) against what the release files hold.
 - [x] **Older corners onto heuremen_kit** (Wilson interval moved to the kit in FORECAST, CADENCE, LAUNCH, CADA; an error in three of them found and corrected, see each plan). TIME, CADA, UPTIME, FORECAST, CADENCE move to the shared kit with summaries confirmed unchanged.
 - [x] **Second seat for LINKROT** ([plan addendum 2](code/linkrot/PLAN.md)). Runner-network seat; a disagreement between seats reads BLOCKED.
