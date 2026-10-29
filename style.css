@@ -122,6 +122,12 @@ section.tight{padding:8px 0;border-bottom:0}section.tight h2{margin:0 0 4px}sect
 
 .hero.slim{padding:16px 0 14px}.hero.slim h1{font-size:clamp(22px,2.4vw,28px)}.hero.slim .sub{font-size:14px;margin-top:4px}
 .mtx{font-size:13.5px;line-height:1.4}.mtx th{font-size:10.5px;letter-spacing:.06em;padding:6px 8px}.mtx td{padding:6px 8px}
+/* 29 Oct 2026 (his word): home headlines stacked like data, one row each */
+.hlgrid{display:block;border-top:2px solid var(--ink);margin:4px 0 10px}
+.hlcard{display:grid;grid-template-columns:168px 1fr 78px;align-items:baseline;gap:0 14px;border-top:0;border-bottom:1px solid var(--rule);padding:3px 0}
+.hlcard .hl-big{font-size:27px;line-height:1.1;white-space:nowrap}.hlcard .hl-line{font-size:14px;line-height:1.35;margin:0;max-width:none}
+.hlcard .hl-more{margin:0;text-align:right;font-size:10.5px}
+@media(max-width:640px){.hlcard{grid-template-columns:1fr auto}.hlcard .hl-line{grid-column:1/-1;order:3}}
 .mtx .by{font-size:12.5px}.mtx a.code{font-size:11px;padding:0 4px}
 .crumb{margin:14px 0 0;font-size:13.5px}
 .idx{margin:0 0 10px;gap:8px}.idx input[name=url]{font-size:15px;padding:7px 10px}.idx .btn{padding:7px 14px}
