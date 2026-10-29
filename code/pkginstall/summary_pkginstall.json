@@ -1,0 +1,47 @@
+{
+ "updated": "29 Oct 12:15",
+ "gate": "passed",
+ "projects": 1000,
+ "pip": "26.1.2",
+ "comparison": {
+  "of": 525,
+  "n": 0,
+  "share": 0.0,
+  "share_lo": 0.0,
+  "share_hi": 0.0073,
+  "outcome": "CONSISTENT",
+  "awaiting": 0
+ },
+ "classes": {
+  "AGREE": {
+   "n": 525
+  },
+  "DISAGREE": {
+   "n": 0
+  },
+  "NOT_COMPARABLE": {
+   "n": 475
+  }
+ },
+ "not_comparable_reasons": {
+  "no pip install line in the description": {
+   "n": 424
+  },
+  "command does not name this project": {
+   "n": 22
+  },
+  "command has other options": {
+   "n": 15
+  },
+  "target is a URL, file or path": {
+   "n": 6
+  },
+  "no wheel that fits this Python and platform": {
+   "n": 6
+  },
+  "placeholder in the command": {
+   "n": 2
+  }
+ },
+ "disagree_list": []
+}
