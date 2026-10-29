@@ -3,6 +3,32 @@
   var path = location.pathname.replace(/\/+$/, '') || '/';
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
   function block(h) { return '<div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + esc(h.line) + '</p>'; }
+  // STACK: pick any two tests on the site and see how their shares stack. The number is the difference in points with its interval (Newcombe, from each test's own 95% interval).
+  function stackPick(main) {
+    fetch('/stack/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+      var rows = (d.rows || []).filter(function (r) { return r.share != null && r.of > 0; }); if (rows.length < 2) return;
+      function pct(x) { var v = x * 100; return (v < 10 ? v.toFixed(1) : Math.round(v)) + '%'; }
+      function pts(x) { var v = Math.abs(x * 100); return (v < 10 ? v.toFixed(1) : Math.round(v)); }
+      function label(r) { return r.page + ': ' + r.test; }
+      var a = Math.floor(Math.random() * rows.length), b = a; while (b === a) b = Math.floor(Math.random() * rows.length);
+      var s = document.createElement('section'); s.className = 'hl pick';
+      var opts = rows.map(function (r, i) { return '<option value="' + i + '">' + esc(label(r).slice(0, 90)) + '</option>'; }).join('');
+      s.innerHTML = '<div class="hl-big" id="pk-big"></div><p class="hl-line" id="pk-line"></p><div class="pk-ctl"><select id="pk-a" aria-label="First test">' + opts + '</select><span class="pk-vs">against</span><select id="pk-b" aria-label="Second test">' + opts + '</select><button type="button" class="btn ghost" id="pk-go">Shuffle</button></div>';
+      var old = document.querySelector('.hl'); if (old) old.parentNode.removeChild(old);
+      main.insertBefore(s, main.firstChild);
+      var sa = s.querySelector('#pk-a'), sb = s.querySelector('#pk-b');
+      function show() {
+        var x = rows[+sa.value], y = rows[+sb.value], diff = x.share - y.share;
+        var lo = diff - Math.sqrt(Math.pow(x.share - x.share_lo, 2) + Math.pow(y.share_hi - y.share, 2)), hi = diff + Math.sqrt(Math.pow(x.share_hi - x.share, 2) + Math.pow(y.share - y.share_lo, 2));
+        var big = (diff === 0 ? '0' : pts(diff)) + ' points';
+        s.querySelector('#pk-big').textContent = big;
+        s.querySelector('#pk-line').textContent = x.page + ' ' + pct(x.share) + ' (' + x.n + ' of ' + x.of + ', ' + x.outcome.toLowerCase().replace(/_/g, ' ') + ') against ' + y.page + ' ' + pct(y.share) + ' (' + y.n + ' of ' + y.of + ', ' + y.outcome.toLowerCase().replace(/_/g, ' ') + '). ' + (diff >= 0 ? x.page : y.page) + ' is higher. Difference ' + (lo * 100).toFixed(1) + ' to ' + (hi * 100).toFixed(1) + ' points, 95% interval.';
+      }
+      sa.value = a; sb.value = b; sa.onchange = sb.onchange = show;
+      s.querySelector('#pk-go').onclick = function () { var i = Math.floor(Math.random() * rows.length), j = i; while (j === i) j = Math.floor(Math.random() * rows.length); sa.value = i; sb.value = j; show(); };
+      show();
+    }).catch(function () {});
+  }
   function run() {
     fetch('/headlines.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
       var pages = d.pages || {}, main = document.querySelector('main.wrap'); if (!main) return;
@@ -13,10 +39,11 @@
         g.innerHTML = list.map(function (s) { var h = pages[s]; var m = /^(.*?[.!?])(\s+.+)$/.exec(h.line || ''); var line = m ? esc(m[1]) + '<span class="hl-rest">' + esc(m[2]) + '</span>' : esc(h.line); return '<a class="hlcard" href="' + esc(h.href) + '"><div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + line + '</p><span class="hl-more">' + esc(s.toUpperCase()) + '</span></a>'; }).join('');
         main.insertBefore(g, main.firstChild);
       } else {
+        if (path === '/stack') { stackPick(main); return; }
         var slug = path.split('/')[1]; if (path.split('/').length > 2 && path !== '/hermes/model') return; var h = pages[slug]; if (!h || path === '/hermes/model') return;
         var s = document.createElement('section'); s.className = 'hl'; s.innerHTML = block(h); main.insertBefore(s, main.firstChild);
       }
     }).catch(function () {});
   }
-  run(); setInterval(run, 120000);
+  run(); if (path !== '/stack') setInterval(run, 120000);
 })();
