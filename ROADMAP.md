@@ -32,6 +32,6 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [x] **Scheduled flight time against flown time** ([AIRLINE live](https://indahl.ai/airline), [plan and two addenda](code/airline/PLAN.md)). Bureau of Transportation Statistics record, January to August of 2019, 2025 and 2026, routes as the independent units, every ABOVE hand-checked on its largest routes.
 - [ ] **ATLAS interconnection queues**. Large-load interconnection queues against announced data center MW, onsite generation permits, a live grid layer.
 - [ ] **ISP broadband labels against M-Lab**. Access to the M-Lab tables works. A label states a typical speed for one plan, and M-Lab measures every plan of a network together, so a fair test needs single-plan providers or a plan mix we do not have. The plan will name which providers qualify before any measurement is read.
-- [ ] **Air quality sensors against EPA monitors**. Waiting on a free sensor-network API key.
+- [x] **Air quality sensors against EPA monitors** ([AIRQ live](https://indahl.ai/airq), [plan and note](code/airq/PLAN.md)). PurpleAir outdoor sensors within 200 metres of EPA continuous monitors, June to September 2025, against the EPA's own sensor performance targets.
 
 Built and live: see `code/README.md` for every page and its folder.
