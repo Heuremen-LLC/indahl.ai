@@ -133,6 +133,11 @@ main .hlcard:hover .hl-line,main .hlcard:focus .hl-line{white-space:normal;overf
 main .hlcard:hover{background:#fbf5e6}
 main .hlcard .hl-more{margin:0;text-align:right;font-size:10.5px}
 @media(max-width:700px){main .hlcard{grid-template-columns:1fr auto}main .hlcard .hl-line{grid-column:1/-1;order:3;white-space:normal}main .hlcard .hl-rest{display:inline}}
+/* 29 Oct 2026 (his word): STACK picks two tests and shows how they stack */
+main .hl.pick .pk-ctl{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:8px 0 2px}
+main .hl.pick select{font:400 14px Lora,Georgia,serif;color:var(--ink);background:#fffdf6;border:1px solid var(--ink);border-radius:2px;padding:5px 8px;max-width:100%;min-width:0;flex:1 1 280px}
+main .hl.pick .pk-vs{font:600 11px Cinzel,Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+main .hl.pick .btn{margin:0;padding:6px 14px;cursor:pointer}
 .mtx .by{font-size:12.5px}.mtx a.code{font-size:11px;padding:0 4px}
 .crumb{margin:14px 0 0;font-size:13.5px}
 .idx{margin:0 0 10px;gap:8px}.idx input[name=url]{font-size:15px;padding:7px 10px}.idx .btn{padding:7px 14px}
