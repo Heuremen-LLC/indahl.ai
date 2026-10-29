@@ -23,3 +23,8 @@ Every CHANGED model is listed only after it is in data/hand_checked.json with th
 
 ## Not claimed
 Why a file changed. A repair, a conversion or a re-upload of the same numbers would all read CHANGED, because the hash changed. Weights in subfolders are not read. Gated repositories whose file lists need a login are UNREADABLE. The record starts today and says nothing about changes before it.
+
+Note 1 (29 Oct). The second pass is due from the tick bus about 38 hours after the first. An extra pass was run by hand on 29 Oct, about 3.5 hours after pass 1, so that the first comparison exists early. It follows the rule exactly. The pass times are stored, and a pair of reads 3.5 hours apart counts as one pair like any other. The tick bus pass later is the next pair.
+
+## Addendum 1 (29 Oct)
+The cadence in the plan, every 720 ticks of the tick bus (about 38 hours at the bus's current rate), is replaced by every 36 ticks (about 3 hours), so that a change to a model's weight files shows within hours. Nothing else changes. Each pass reads about 1,000 file lists and takes about 8 minutes, and the same politeness pauses apply. The 36-tick cadence can be changed again only by a dated addendum.
