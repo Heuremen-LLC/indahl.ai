@@ -2,7 +2,7 @@
 
 Every item is plan-first (the plan is committed before the data), live on the tick bus, with trend rows in this repository. A box ticks in the commit that finishes the item.
 
-- [ ] **arXiv version drift on every indexed study**. Flag when a later arXiv version changes the numbers or the claim we read, both versions shown. arXiv API, no key.
+- [x] **arXiv version drift on every indexed study** ([live](https://indahl.ai/arxivdrift), [code](code/arxivdrift)). Flag when a later arXiv version changes the numbers or the claim we read, both versions shown. arXiv API, no key.
 - [ ] **Support windows against release activity**. Stated end-of-life and support dates (endoflife.date) against actual release and support activity.
 - [ ] **Package claims against the files**. PyPI metadata (license, requires-python, stated contents) against what the release files hold.
 - [ ] **Older corners onto heuremen_kit**. TIME, CADA, UPTIME, FORECAST, CADENCE move to the shared kit with summaries confirmed unchanged.
