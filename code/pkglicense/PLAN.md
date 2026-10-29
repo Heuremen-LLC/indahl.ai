@@ -34,3 +34,7 @@ The first read: 1,000 projects, 692 AGREE, 7 DISAGREE, 301 NOT_COMPARABLE (186 r
 - opencv-python and opencv-python-headless: the repository license is MIT (the packaging scripts); the wheels bundle OpenCV, which is Apache-2.0, and the package states Apache.
 - pydeck and pandas-gbq: the package lives in a subfolder of a larger repository (deck.gl; google-cloud-python), whose root license differs from the package's.
 Each reason is shown beside its row.
+
+
+## Addendum on cadence (29 Oct)
+The repeat cadence is now every 68 ticks of the tick bus, about 6.6 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.

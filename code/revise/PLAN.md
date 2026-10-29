@@ -33,3 +33,7 @@ Four months have a revision above 300 thousand (March 2020, August, November and
 2. Known-good. The plan asked for 24 months of Most_Recent to match the BLS API. The public API without a key returns 14 months, and 14 matched. The code accepts 12 or more. The plan is amended to say so.
 3. Hand check. Every large month used to print the same note that its first print matches the archived release, though only four months had been opened. The note is now read from data/hand_checked.json, and a month not in it reads Not yet opened by hand.
 4. The stated 122 was read from the BLS note on 29 Oct and is a constant in the code. If the BLS changes its figure the page will not see it. It is shown with its read date at the top of the page.
+
+
+## Addendum on cadence (29 Oct)
+The repeat cadence is now every 36 ticks of the tick bus, about 3.5 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.

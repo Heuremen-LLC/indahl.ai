@@ -35,3 +35,7 @@ Two findings.
 2. Note 1 said both tests read ABOVE. That was wrong: the HSTS test read ABOVE and the SPF test read CONSISTENT, as the feed says. No rule or reading changed with this correction.
 
 Note 2 (29 Oct, after the full reread with the corrected SPF counter). The read finished on the same 1,000 domains. HSTS: 37 DISAGREE of 187 compared (36 of 186 before; the new row is shop.app, opened by hand: max-age 15,552,000 seconds, under the 31,536,000 the list asks for). SPF: 21 DISAGREE of 757 compared, the same count as before. The corrected counter changed the class of two domains: vk.ru went from AGREE to NOT_COMPARABLE (no SPF record was returned this time) and disneyplus.com from NOT_COMPARABLE to AGREE. Neither outcome changed: HSTS ABOVE, SPF CONSISTENT. The counting error in the first count did not move any DISAGREE row.
+
+
+## Addendum on cadence (29 Oct)
+The repeat cadence is now every 62 ticks of the tick bus, about 6.0 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.

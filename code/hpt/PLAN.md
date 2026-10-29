@@ -32,3 +32,7 @@ The first read returned step 1: 511 AGREE, 517 DISAGREE, 893 NOT_COMPARABLE. Ste
 4. Because the reader changed, steps 2 and 3 are read again for every domain whose step 1 was AGREE. Step 1 was not changed and its results are kept. Every DISAGREE row of the new steps 2 and 3 is opened by hand before it is listed.
 
 Addendum 2 (29 Oct, after the second read of steps 2 and 3 and a hand check of every DISAGREE row). Step 2: 487 AGREE, 13 DISAGREE, 11 NOT_COMPARABLE. Step 3: 327 AGREE, 2 DISAGREE, 158 NOT_COMPARABLE (JSON and zip files). Correction to addendum 1: choa.org was not a reading error. Its address returns a gzip-compressed web page, decoded by hand, so DISAGREE stands. The gzip decoding stays because it is the correct way to look at such a response. All 13 step 2 and both step 3 DISAGREE rows were opened by hand and are listed with the reason found.
+
+
+## Addendum on cadence (29 Oct)
+The re-read every 30 days in the plan is replaced by every 1,740 ticks of the tick bus, about 7 days, so that a change at a hospital shows within days. Nothing else changes.

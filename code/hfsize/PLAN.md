@@ -41,3 +41,7 @@ Note 1 gave the kinds as 3, 4 and 5. Counted again from data/hand_checked.json t
 1. NeoQuasar/Kronos-Tokenizer-2k read the 2k in its name as a size of 2,000 parameters and was filed as a DISAGREE at a ratio of 1,979. The card says 2k is a context length. Note 1 said none of the 12 rows was a reading error, and this one was. The size token no longer accepts K as a unit (a stated size in thousands of parameters is not in use at this scale), so a name with only a K token has no size in it. The whole read is run again.
 2. A failed list request returned an empty population that would have been published as 0 models. A list that returns fewer than 500 models now stops the pass, keeps the last read and publishes nothing.
 3. Stated and not fixed: five of the 12 rows are one organisation (Qwen) and the interval is priced on 142 repositories. The page already shows the number of organisations beside the count. The band of 0.70 to 1.35 stays as fixed, and three DISAGREE rows sit at 1.366, 1.382 and 1.387 just outside it.
+
+
+## Addendum on cadence (29 Oct)
+The repeat cadence is now every 64 ticks of the tick bus, about 6.2 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.

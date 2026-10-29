@@ -32,3 +32,7 @@ That a changed page was changed to hide anything: pages change for many ordinary
 
 ## Addendum 1 (29 Oct, before any real page was read)
 The first run of the known-good failed on two points of its own test data. (1) The planted text with one word in 40 changed has an overlap of 0.84, not between 0.90 and 1.0, because each changed word removes three 3-word shingles. The SAME bound of 0.90 is unchanged. The planted check now changes one word in 80, which must give an overlap from 0.90 up to but not including 1.0. (2) The link extractor listed the nearest heading as well as the table cell for a link inside a table row. It now gives the heading only for links outside a table row, as the plan says.
+
+
+## Addendum on cadence (29 Oct)
+The repeat cadence is now every 72 ticks of the tick bus, about 7.0 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.
