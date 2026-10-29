@@ -5,8 +5,9 @@ import json, os, glob, subprocess, datetime as D
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H)
 def onb(v, b): return v is not None and abs(v - b) <= 1e-6 * max(1.0, b)
 out = dict(updated=D.datetime.now(D.timezone.utc).strftime('%d %b %H:%M'), processors=[])
-for b in ('ibm_boston', 'ibm_kingston', 'ibm_fez'):
-    f = 'runs/results_%s.json' % b
+import glob
+ITEMS = [(b, 'runs/results_%s.json' % b, b) for b in ('ibm_boston', 'ibm_kingston', 'ibm_fez')] + [(os.path.basename(f)[8:-5].replace('_rerun', ' (rerun ') + (')' if '_rerun' in f else ''), f, 'ibm_fez') for f in sorted(glob.glob('runs/results_*_rerun*.json'))]
+for b, f, _bk in ITEMS:
     if not os.path.exists(f): out['processors'].append(dict(backend=b, state='submitted, waiting in the processor queue')); continue
     d = json.load(open(f)); qs = []
     for q, r in d['qubits'].items():

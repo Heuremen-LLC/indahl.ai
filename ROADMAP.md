@@ -7,7 +7,7 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [ ] **Package claims against the files** (built: PKGLICENSE reading now). PyPI metadata (license, requires-python, stated contents) against what the release files hold.
 - [x] **Older corners onto heuremen_kit** (Wilson interval moved to the kit in FORECAST, CADENCE, LAUNCH, CADA; an error in three of them found and corrected, see each plan). TIME, CADA, UPTIME, FORECAST, CADENCE move to the shared kit with summaries confirmed unchanged.
 - [x] **Second seat for LINKROT** ([plan addendum 2](code/linkrot/PLAN.md)). Runner-network seat; a disagreement between seats reads BLOCKED.
-- [ ] **T1 and T2 rerun** (submitted for fez q148, plan note 4; waiting in the device queue). Interleaved circuits and delays sized to the measured T1 (fez q148 measured T1 0.82 microseconds against 5.86 published).
+- [x] **T1 and T2 rerun** (fez q148, plan note 4: T1 measured 0.82 then 1.05 microseconds against 5.86 published; T2 still unresolved, the echo decays faster than the first delay step; [results](https://indahl.ai/qia)). Interleaved circuits and delays sized to the measured T1 (fez q148 measured T1 0.82 microseconds against 5.86 published).
 - [ ] **Security claims against DNS records**. Stated email protection and transport security against published SPF, DMARC and HSTS.
 - [ ] **Hospital price-transparency files**. The required machine-readable file, stated at a URL, against whether it resolves and carries the required fields.
 - [ ] **Airline on-time claims against BTS**. Stated on-time performance against the Bureau of Transportation Statistics record.
