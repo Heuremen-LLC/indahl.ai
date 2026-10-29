@@ -28,7 +28,7 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [ ] **Amazon Braket deviations table**. Parked: needs a funded account.
 - [ ] **Boston T1 and T2**. Job queued at IBM since the 29th, waits behind hundreds of pending jobs.
 - [ ] **Hospital price-transparency files** (HPT, plan committed, first read in progress). The cms-hpt.txt at the root of each hospital website, the file it links, and the template header.
-- [ ] **Airline on-time claims against BTS**. Stated on-time performance against the Bureau of Transportation Statistics record.
+- [x] **Scheduled flight time against flown time** ([AIRLINE live](https://indahl.ai/airline), [plan and two addenda](code/airline/PLAN.md)). Bureau of Transportation Statistics record, January to August of 2019, 2025 and 2026, routes as the independent units, every ABOVE hand-checked on its largest routes.
 - [ ] **ATLAS interconnection queues**. Large-load interconnection queues against announced data center MW, onsite generation permits, a live grid layer.
 - [ ] **ISP broadband labels against M-Lab**. Waiting on a Google sign-in for BigQuery.
 - [ ] **Air quality sensors against EPA monitors**. Waiting on a free sensor-network API key.
