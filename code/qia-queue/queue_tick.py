@@ -8,7 +8,7 @@ try: fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: sys.exit(0)
 now = D.datetime.now(D.timezone.utc)
 def ts(x): return D.datetime.fromisoformat(x.replace('Z', '+00:00')) if x else None
-rows = []; err = None; waits = {}; queued = {}
+rows = []; err = None; waits = {}; queued = {}; jobs_seen = []
 try:
     from qiskit_ibm_runtime import QiskitRuntimeService
     s = QiskitRuntimeService(channel='ibm_cloud', token=open(os.path.join(ROOT, '.ibm_quantum_key_3')).read().strip(), instance=open(os.path.join(ROOT, '.ibm_quantum_instance_crn')).read().strip())
@@ -18,11 +18,16 @@ try:
         try:
             n = j.backend().name; m = j.metrics().get('timestamps', {}); c = ts(m.get('created')); r = ts(m.get('running'))
             if c and r: waits.setdefault(n, []).append((c, (r - c).total_seconds()))
+            if c and r: jobs_seen.append({'id': j.job_id(), 'backend': n, 'created': m.get('created'), 'wait_s': (r - c).total_seconds()})
             elif c and not r and str(j.status()) in ('QUEUED', 'JobStatus.QUEUED'): queued.setdefault(n, []).append((now - c).total_seconds())
         except Exception: pass
 except Exception as e: err = type(e).__name__
 if not rows: rows = [{'backend': 'all', 'pending': None, 'outcome': 'NOTHING_RETURNED', 'error': err}]
 T = now.strftime('%Y-%m-%dT%H:%M:%SZ')
+jp = os.path.join(H, 'data', 'jobs.jsonl'); have = {json.loads(l)['id'] for l in open(jp)} if os.path.exists(jp) else set()
+with open(jp, 'a') as f:
+    for jb in jobs_seen:
+        if jb['id'] not in have: f.write(json.dumps(jb) + '\n')
 hp = os.path.join(H, 'data', 'history.jsonl')
 with open(hp, 'a') as f:
     for r in rows: f.write(json.dumps(dict(r, t=T)) + '\n')
@@ -44,5 +49,5 @@ r = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'qi
 PUB = ROOT + '/public_mirror/indahl.ai/code/qia-queue'
 if os.path.isdir(PUB):
     import shutil
-    for f, d in (('PLAN.md', 'PLAN.md'), ('queue_tick.py', 'queue_tick.py'), ('summary.json', 'summary.json'), ('data/history.jsonl', 'history.jsonl')): shutil.copy(os.path.join(H, f), os.path.join(PUB, d))
+    for f, d in (('PLAN.md', 'PLAN.md'), ('queue_tick.py', 'queue_tick.py'), ('summary.json', 'summary.json'), ('data/history.jsonl', 'history.jsonl'), ('data/jobs.jsonl', 'jobs.jsonl')): shutil.copy(os.path.join(H, f), os.path.join(PUB, d))
 print('qia_queue published' if r.returncode == 0 else 'qia_queue publish FAILED', len(out), 'processors')
