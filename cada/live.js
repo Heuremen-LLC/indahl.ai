@@ -2,7 +2,7 @@
 (function () {
   var box = document.getElementById('cada-live'); if (!box) return;
   var NAMES = { 'cloudflare_malware_1.1.1.2': 'Cloudflare 1.1.1.2', 'quad9_9.9.9.9': 'Quad9 9.9.9.9', 'opendns': 'OpenDNS', 'adguard_default': 'AdGuard DNS default', 'cleanbrowsing_security': 'CleanBrowsing security', 'dns0_eu': 'DNS0.eu', 'controld_malware': 'Control D malware' };
-  function cell(c) { if (!c || !c.n) return 'none yet'; return c.wilson[0] + '% [' + c.wilson[1] + ', ' + c.wilson[2] + '], ' + c.k + ' of ' + c.n; }
+  function cell(c) { if (c && c.state === 'NOTHING_RETURNED') return 'nothing returned, ' + c.timeouts + ' timeouts'; if (!c || !c.n) return 'none yet'; return c.wilson[0] + '% [' + c.wilson[1] + ', ' + c.wilson[2] + '], ' + c.k + ' of ' + c.n + (c.timeouts ? ', ' + c.timeouts + ' timeouts apart' : ''); }
   fetch('/cada/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     var rs = d.resolvers || [];
     var top = document.createElement('p'); top.className = 'bench-note';

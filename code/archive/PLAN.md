@@ -16,3 +16,6 @@ Does not prove: that a file's content is true, that a file we did not list was n
 
 ## Outside copies (his word 29 Oct)
 Public repositories are submitted to Software Heritage, key pages to the Internet Archive, and release tags are cut on each public repository so the Zenodo GitHub link archives each release with its own DOI once enabled. These carry only what is already public.
+
+## Note 1 (29 Oct, from the internal audit)
+The plan said the verify mode recomputes a manifest from the files and checks the chain. It rehashed the stored manifests and checked the chain, and did not look at the stamps. A manifest cannot be recomputed from the current files later, since files legitimately change after a digest. Verify now checks the chain from the first digest, that every digest has a stamp file that parses with the OpenTimestamps client (ots info) and that the stamped digest is the chain's digest. Whether a stamp is anchored in a Bitcoin block is checked with ots verify against a Bitcoin node or an explorer, which is not done by the script and is stated here. The public copy step now stops and says so if a copy fails or if the public chain differs from the local one, and a manifest is never overwritten if two runs fall in the same second.

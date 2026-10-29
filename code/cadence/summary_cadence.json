@@ -1,0 +1,696 @@
+{
+ "updated": "29 Oct 13:43",
+ "portals": [
+  {
+   "portal": "CMS",
+   "read": "28 Oct 23:41",
+   "datasets_total": 3491,
+   "stating_cadence": 3491,
+   "series": 159,
+   "readable": 155,
+   "consistent": 138,
+   "below": 17,
+   "cannot_tell": 4,
+   "below_share": [
+    11,
+    7,
+    17
+   ],
+   "by_class": {
+    "yearly or slower": {
+     "n": 104,
+     "below": 9,
+     "share": [
+      9,
+      5,
+      16
+     ]
+    },
+    "quarterly": {
+     "n": 31,
+     "below": 3,
+     "share": [
+      10,
+      3,
+      25
+     ]
+    },
+    "monthly": {
+     "n": 17,
+     "below": 3,
+     "share": [
+      18,
+      6,
+      41
+     ]
+    },
+    "weekly": {
+     "n": 3,
+     "below": 2,
+     "share": [
+      67,
+      21,
+      94
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 200,
+    "reachable": 200,
+    "comparable": 200,
+    "agree": 40
+   }
+  },
+  {
+   "portal": "CDC",
+   "read": "28 Oct 23:42",
+   "datasets_total": 1393,
+   "stating_cadence": 323,
+   "series": 192,
+   "readable": 130,
+   "consistent": 97,
+   "below": 33,
+   "cannot_tell": 62,
+   "below_share": [
+    25,
+    19,
+    33
+   ],
+   "by_class": {
+    "weekly": {
+     "n": 43,
+     "below": 18,
+     "share": [
+      42,
+      28,
+      57
+     ]
+    },
+    "yearly or slower": {
+     "n": 42,
+     "below": 0,
+     "share": [
+      0,
+      0,
+      8
+     ]
+    },
+    "monthly": {
+     "n": 25,
+     "below": 5,
+     "share": [
+      20,
+      9,
+      39
+     ]
+    },
+    "daily or faster": {
+     "n": 10,
+     "below": 10,
+     "share": [
+      100,
+      72,
+      100
+     ]
+    },
+    "quarterly": {
+     "n": 10,
+     "below": 0,
+     "share": [
+      0,
+      0,
+      28
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 190,
+    "reachable": 190,
+    "comparable": 167,
+    "agree": 4
+   }
+  },
+  {
+   "portal": "HealthData.gov",
+   "read": "28 Oct 23:45",
+   "datasets_total": 19687,
+   "stating_cadence": 1394,
+   "series": 300,
+   "readable": 229,
+   "consistent": 108,
+   "below": 121,
+   "cannot_tell": 71,
+   "below_share": [
+    53,
+    46,
+    59
+   ],
+   "by_class": {
+    "yearly or slower": {
+     "n": 55,
+     "below": 3,
+     "share": [
+      5,
+      2,
+      15
+     ]
+    },
+    "weekly": {
+     "n": 109,
+     "below": 84,
+     "share": [
+      77,
+      68,
+      84
+     ]
+    },
+    "quarterly": {
+     "n": 14,
+     "below": 4,
+     "share": [
+      29,
+      12,
+      55
+     ]
+    },
+    "daily or faster": {
+     "n": 24,
+     "below": 23,
+     "share": [
+      96,
+      80,
+      99
+     ]
+    },
+    "monthly": {
+     "n": 27,
+     "below": 7,
+     "share": [
+      26,
+      13,
+      45
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 200,
+    "reachable": 197,
+    "comparable": 35,
+    "agree": 0
+   }
+  },
+  {
+   "portal": "Veterans Affairs",
+   "read": "28 Oct 23:57",
+   "datasets_total": 2082,
+   "stating_cadence": 677,
+   "series": 302,
+   "readable": 302,
+   "consistent": 220,
+   "below": 82,
+   "cannot_tell": 0,
+   "below_share": [
+    27,
+    22,
+    32
+   ],
+   "by_class": {
+    "yearly or slower": {
+     "n": 195,
+     "below": 12,
+     "share": [
+      6,
+      4,
+      10
+     ]
+    },
+    "monthly": {
+     "n": 62,
+     "below": 62,
+     "share": [
+      100,
+      94,
+      100
+     ]
+    },
+    "quarterly": {
+     "n": 37,
+     "below": 0,
+     "share": [
+      0,
+      0,
+      9
+     ]
+    },
+    "daily or faster": {
+     "n": 7,
+     "below": 7,
+     "share": [
+      100,
+      65,
+      100
+     ]
+    },
+    "weekly": {
+     "n": 1,
+     "below": 1,
+     "share": [
+      100,
+      21,
+      100
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 200,
+    "reachable": 182,
+    "comparable": 45,
+    "agree": 0
+   }
+  },
+  {
+   "portal": "Energy",
+   "read": "29 Oct 00:09",
+   "datasets_total": 487,
+   "stating_cadence": 309,
+   "series": 130,
+   "readable": 103,
+   "consistent": 1,
+   "below": 102,
+   "cannot_tell": 27,
+   "below_share": [
+    99,
+    95,
+    100
+   ],
+   "by_class": {
+    "daily or faster": {
+     "n": 46,
+     "below": 46,
+     "share": [
+      100,
+      92,
+      100
+     ]
+    },
+    "quarterly": {
+     "n": 5,
+     "below": 5,
+     "share": [
+      100,
+      57,
+      100
+     ]
+    },
+    "yearly or slower": {
+     "n": 27,
+     "below": 26,
+     "share": [
+      96,
+      82,
+      99
+     ]
+    },
+    "monthly": {
+     "n": 22,
+     "below": 22,
+     "share": [
+      100,
+      85,
+      100
+     ]
+    },
+    "weekly": {
+     "n": 3,
+     "below": 3,
+     "share": [
+      100,
+      44,
+      100
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 200,
+    "reachable": 66,
+    "comparable": 43,
+    "agree": 0
+   }
+  },
+  {
+   "portal": "Labor",
+   "read": "29 Oct 00:21",
+   "datasets_total": 404,
+   "stating_cadence": 333,
+   "series": 264,
+   "readable": 223,
+   "consistent": 42,
+   "below": 181,
+   "cannot_tell": 41,
+   "below_share": [
+    81,
+    76,
+    86
+   ],
+   "by_class": {
+    "monthly": {
+     "n": 24,
+     "below": 24,
+     "share": [
+      100,
+      86,
+      100
+     ]
+    },
+    "daily or faster": {
+     "n": 106,
+     "below": 106,
+     "share": [
+      100,
+      97,
+      100
+     ]
+    },
+    "quarterly": {
+     "n": 43,
+     "below": 43,
+     "share": [
+      100,
+      92,
+      100
+     ]
+    },
+    "yearly or slower": {
+     "n": 44,
+     "below": 2,
+     "share": [
+      5,
+      1,
+      15
+     ]
+    },
+    "weekly": {
+     "n": 6,
+     "below": 6,
+     "share": [
+      100,
+      61,
+      100
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 74,
+    "reachable": 64,
+    "comparable": 34,
+    "agree": 0
+   }
+  },
+  {
+   "portal": "HealthCare.gov",
+   "read": "29 Oct 00:45",
+   "datasets_total": 329,
+   "stating_cadence": 110,
+   "series": 110,
+   "readable": 110,
+   "consistent": 25,
+   "below": 85,
+   "cannot_tell": 0,
+   "below_share": [
+    77,
+    69,
+    84
+   ],
+   "by_class": {
+    "yearly or slower": {
+     "n": 30,
+     "below": 6,
+     "share": [
+      20,
+      10,
+      37
+     ]
+    },
+    "daily or faster": {
+     "n": 80,
+     "below": 79,
+     "share": [
+      99,
+      93,
+      100
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 110,
+    "reachable": 110,
+    "comparable": 110,
+    "agree": 86
+   }
+  },
+  {
+   "portal": "BLS",
+   "read": "29 Oct 00:56",
+   "datasets_total": 31,
+   "stating_cadence": 2,
+   "series": 2,
+   "readable": 2,
+   "consistent": 0,
+   "below": 2,
+   "cannot_tell": 0,
+   "below_share": [
+    100,
+    34,
+    100
+   ],
+   "by_class": {
+    "monthly": {
+     "n": 1,
+     "below": 1,
+     "share": [
+      100,
+      21,
+      100
+     ]
+    },
+    "quarterly": {
+     "n": 1,
+     "below": 1,
+     "share": [
+      100,
+      21,
+      100
+     ]
+    }
+   },
+   "heads": {
+    "sampled": 2,
+    "reachable": 1,
+    "comparable": 1,
+    "agree": 0
+   }
+  }
+ ],
+ "most_overdue": [
+  {
+   "portal": "Energy",
+   "title": "GC Guidance/Opinions",
+   "agency": "DOE General Counsel",
+   "cadence": "R/P1D",
+   "modified": "2011-01-10",
+   "age_days": 5770,
+   "ratio": 2885.0,
+   "link": "http://energy.gov/gc/gc-guidanceopinions"
+  },
+  {
+   "portal": "Energy",
+   "title": "DOE Hearings and Appeals Case Decisions",
+   "agency": "DOE/Office of Hearings and Appeals",
+   "cadence": "R/P1D",
+   "modified": "2014-04-25",
+   "age_days": 4569,
+   "ratio": 2284.5,
+   "link": "http://energy.gov/oha/"
+  },
+  {
+   "portal": "Energy",
+   "title": "NEPANODE",
+   "agency": "DOE General Counsel",
+   "cadence": "R/P1D",
+   "modified": "2014-05-30",
+   "age_days": 4534,
+   "ratio": 2267.0,
+   "link": "DOE-019-1457634891"
+  },
+  {
+   "portal": "Energy",
+   "title": "NEPAnode MapWarper",
+   "agency": "DOE General Counsel",
+   "cadence": "R/P1D",
+   "modified": "2014-08-29",
+   "age_days": 4443,
+   "ratio": 2221.5,
+   "link": "DOE-019-1457678395"
+  },
+  {
+   "portal": "Energy",
+   "title": "Environmental Management webpage",
+   "agency": "DOE/Office of Environmental Management",
+   "cadence": "R/P1D",
+   "modified": "2014-08-30",
+   "age_days": 4442,
+   "ratio": 2221.0,
+   "link": "DOE-019-3321756490"
+  },
+  {
+   "portal": "Energy",
+   "title": "Administrative Record Publishing Website",
+   "agency": "DOE/Richland Operations and the Office of River Protection",
+   "cadence": "R/P1D",
+   "modified": "2014-10-01",
+   "age_days": 4410,
+   "ratio": 2205.0,
+   "link": "http://pdw.hanford.gov/arpir/"
+  },
+  {
+   "portal": "Energy",
+   "title": "Consumption & Efficiency Data and Statistics",
+   "agency": "U.S. Energy Information Administration",
+   "cadence": "R/P1D",
+   "modified": "2014-10-06",
+   "age_days": 4405,
+   "ratio": 2202.5,
+   "link": "http://www.eia.gov/consumption/"
+  },
+  {
+   "portal": "Energy",
+   "title": "Public Affairs Open Data",
+   "agency": "DOE Public Affairs",
+   "cadence": "R/P1D",
+   "modified": "2014-10-30",
+   "age_days": 4381,
+   "ratio": 2190.5,
+   "link": "DOE-019-3345623431"
+  },
+  {
+   "portal": "Energy",
+   "title": "Small and Disadvantaged Business Utilization website",
+   "agency": "DOE Small and Disadvantaged Business Utilization",
+   "cadence": "R/P1D",
+   "modified": "2014-10-30",
+   "age_days": 4381,
+   "ratio": 2190.5,
+   "link": "DOE-019-3576439991"
+  },
+  {
+   "portal": "Energy",
+   "title": "Office of Nuclear Energy Document Library",
+   "agency": "DOE Office of Nuclear Energy",
+   "cadence": "R/P1D",
+   "modified": "2014-10-30",
+   "age_days": 4381,
+   "ratio": 2190.5,
+   "link": "DOE-019-6633765611"
+  },
+  {
+   "portal": "Energy",
+   "title": "D&D Knowledge Management Information Tool",
+   "agency": "DOE/Office of Environmental Management",
+   "cadence": "R/P1D",
+   "modified": "2014-11-01",
+   "age_days": 4379,
+   "ratio": 2189.5,
+   "link": "DOE-019-4534567452"
+  },
+  {
+   "portal": "Energy",
+   "title": "Energy Policy and Systems Analysis webpage",
+   "agency": "DOE Energy Policy and Systems Analysis",
+   "cadence": "R/P1D",
+   "modified": "2014-11-15",
+   "age_days": 4365,
+   "ratio": 2182.5,
+   "link": "DOE-019-0334675232"
+  },
+  {
+   "portal": "Energy",
+   "title": "Indian Energy Policy and Programs webpage",
+   "agency": "DOE Indian Energy Policy and Programs",
+   "cadence": "R/P1D",
+   "modified": "2014-11-15",
+   "age_days": 4365,
+   "ratio": 2182.5,
+   "link": "DOE-019-3478123451"
+  },
+  {
+   "portal": "Energy",
+   "title": "Loan Programs Office website",
+   "agency": "DOE Loan Programs Office",
+   "cadence": "R/P1D",
+   "modified": "2014-11-15",
+   "age_days": 4365,
+   "ratio": 2182.5,
+   "link": "http://energy.gov/lpo/loan-programs-office"
+  },
+  {
+   "portal": "Energy",
+   "title": "Office of the Chief Information Officer web",
+   "agency": "DOE Office of Chief Information Officer",
+   "cadence": "R/P1D",
+   "modified": "2014-11-15",
+   "age_days": 4365,
+   "ratio": 2182.5,
+   "link": "DOE-019-3478654789"
+  },
+  {
+   "portal": "Energy",
+   "title": "International Affairs webpage",
+   "agency": "DOE International Affairs",
+   "cadence": "R/P1D",
+   "modified": "2014-11-15",
+   "age_days": 4365,
+   "ratio": 2182.5,
+   "link": "DOE-019-3489568912"
+  },
+  {
+   "portal": "Energy",
+   "title": "Inspector General webpage",
+   "agency": "DOE Inspector General",
+   "cadence": "R/P1D",
+   "modified": "2014-11-15",
+   "age_days": 4365,
+   "ratio": 2182.5,
+   "link": "DOE-019-3423678761"
+  },
+  {
+   "portal": "Energy",
+   "title": "Intelligence and Counterintelligence webpage",
+   "agency": "DOE Intelligence and Counterintelligence",
+   "cadence": "R/P1D",
+   "modified": "2014-11-15",
+   "age_days": 4365,
+   "ratio": 2182.5,
+   "link": "DOE-019-3342378941"
+  },
+  {
+   "portal": "Energy",
+   "title": "Economic Impact and Diversity webpage",
+   "agency": "Office of Civil Rights",
+   "cadence": "R/P1D",
+   "modified": "2014-11-28",
+   "age_days": 4352,
+   "ratio": 2176.0,
+   "link": "http://energy.gov/diversity/office-economic-impact-and-diversity"
+  },
+  {
+   "portal": "Energy",
+   "title": "Congressional and Intergovernmental Affairs Testimony",
+   "agency": "DOE Congressional and Intergovernmental Affairs",
+   "cadence": "R/P1D",
+   "modified": "2014-11-30",
+   "age_days": 4350,
+   "ratio": 2175.0,
+   "link": "http://energy.gov/congressional/listings/congressional-testimony"
+  }
+ ]
+}

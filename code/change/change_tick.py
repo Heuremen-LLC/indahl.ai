@@ -57,6 +57,14 @@ def parse(vendor, t):
     return out
 def fetch(u):
     r = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': UA}), timeout=90); return r.read().decode('utf8', 'replace')
+# 29 Oct (internal audit): the plan's fixture gate. Each saved page must still parse to the row count and the three named rows recorded when the plan was written, or the pass stops.
+FIXOK = True
+if not SUMMARY_ONLY:
+    ex = json.load(open('fixtures/EXPECTED.json')) if os.path.exists('fixtures/EXPECTED.json') else None
+    fx = {v: parse(v, open('fixtures/%s.html' % v).read()) for v in SRC if os.path.exists('fixtures/%s.html' % v)}
+    if ex is None: json.dump({v: dict(rows=len(g), names=sorted(g)[:3]) for v, g in fx.items()}, open('fixtures/EXPECTED.json', 'w'), indent=1)
+    else: FIXOK = all(v in fx and len(fx[v]) >= ex[v]['rows'] and all(n in fx[v] for n in ex[v]['names']) for v in ex)
+    if not FIXOK: print('change: the parser no longer reads the saved fixtures, stopping'); sys.exit(0)
 today = D.datetime.now(D.timezone.utc).date().isoformat(); now = time.time()
 store = json.load(open('data/rows.json')) if os.path.exists('data/rows.json') else {'first_snapshot': today, 'rows': {}}
 ok = True; snap = {}
@@ -70,6 +78,7 @@ if not SUMMARY_ONLY:
             if len(got) == 0: print('change:', v, 'returned no rows - stopping'); ok = False; break
             snap.update(got)
         except Exception as e: print('change: fetch failed for', v, type(e).__name__); ok = False; break
+    if not ok: print('change: the pass stopped, publishing nothing'); sys.exit(0)
     if ok:
         json.dump(snap, open('data/snapshots/%s.json' % time.strftime('%Y%m%dT%H%MZ', time.gmtime(now)), 'w'))
         ch = open('data/changes.jsonl', 'a'); first_run = not store['rows']
@@ -87,7 +96,7 @@ if not SUMMARY_ONLY:
         for k, o in store['rows'].items():
             if o.get('present') and k not in snap and o['vendor'] in {r['vendor'] for r in snap.values()}:
                 o['present'] = False; o['removed_on'] = today; ch.write(json.dumps(dict(t=today, kind='REMOVED', key=k, shutdown=o['shutdown'], early=bool(o['shutdown'] and today < o['shutdown']))) + '\n')
-        ch.close(); json.dump(store, open('data/rows.json.tmp', 'w')); os.replace('data/rows.json.tmp', 'data/rows.json')
+        store['last_pass'] = time.strftime('%d %b %H:%M', time.gmtime(now)); ch.close(); json.dump(store, open('data/rows.json.tmp', 'w')); os.replace('data/rows.json.tmp', 'data/rows.json')
 rows = list(store['rows'].values()); td = D.date.fromisoformat(today); first = store['first_snapshot']
 def days(a, b): return (D.date.fromisoformat(b) - D.date.fromisoformat(a)).days
 upcoming = sorted([r for r in rows if r.get('present') and r['shutdown'] and 0 <= days(today, r['shutdown']) <= 60], key=lambda r: r['shutdown'])
@@ -108,7 +117,7 @@ cnt = C.Counter(state(r) for r in tested); nh = cnt['MOVED'] + cnt['REMOVED_EARL
 oc = K.CANNOT_TELL if len(tested) < 30 else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 byv = C.Counter(r['vendor'] for r in rows if r.get('present'))
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), first_snapshot=first, rows=len(rows), sources=[dict(vendor=v, rows=byv[v], url=SRC[v]) for v in SRC],
+out = dict(updated=store.get('last_pass') or time.strftime('%d %b %H:%M', time.gmtime(now)), first_snapshot=first, rows=len(rows), sources=[dict(vendor=v, rows=byv[v], url=SRC[v]) for v in SRC],
            test=dict(of=len(tested), held=cnt['HELD'], moved=cnt['MOVED'], removed_early=cnt['REMOVED_EARLY'], share=round(nh / len(tested), 4) if tested else None, share_lo=round(lo, 4) if tested else None, share_hi=round(hi, 4) if tested else None, outcome=oc),
            upcoming=[dict(vendor=r['vendor'], item=r['name'], shutdown=r['shutdown'] + (' (not sooner than)' if r['tentative'] else ''), days_left=days(today, r['shutdown']), deprecated=r['deprecated'] or '', notice=days(r['deprecated'], r['shutdown']) if r['deprecated'] else None) for r in upcoming],
            notice={v: x for v, x in nrows.items()}, lifespan=lifespan, changes={k: dict(n=n) for k, n in sorted(kinds.items())},

@@ -1,0 +1,110 @@
+{
+ "updated": "29 Oct 13:43",
+ "stations": 30,
+ "forecasts_stored": 90,
+ "periods_stored": 453,
+ "periods_scored": 58,
+ "unscorable": 2,
+ "not_stated": 0,
+ "floor": {
+  "periods": 26,
+  "with_event": 0
+ },
+ "cells": [
+  {
+   "bin": "0 to 5",
+   "lead": "under 12 hours",
+   "n": 2,
+   "mean_stated": 0.5,
+   "observed": 0.0,
+   "lo": 0.0,
+   "hi": 65.8,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "bin": "0 to 5",
+   "lead": "12 to 24 hours",
+   "n": 0
+  },
+  {
+   "bin": "0 to 5",
+   "lead": "24 to 48 hours",
+   "n": 0
+  },
+  {
+   "bin": "10 to 20",
+   "lead": "under 12 hours",
+   "n": 0
+  },
+  {
+   "bin": "10 to 20",
+   "lead": "12 to 24 hours",
+   "n": 0
+  },
+  {
+   "bin": "10 to 20",
+   "lead": "24 to 48 hours",
+   "n": 0
+  },
+  {
+   "bin": "30 to 40",
+   "lead": "under 12 hours",
+   "n": 0
+  },
+  {
+   "bin": "30 to 40",
+   "lead": "12 to 24 hours",
+   "n": 0
+  },
+  {
+   "bin": "30 to 40",
+   "lead": "24 to 48 hours",
+   "n": 0
+  },
+  {
+   "bin": "50 to 60",
+   "lead": "under 12 hours",
+   "n": 0
+  },
+  {
+   "bin": "50 to 60",
+   "lead": "12 to 24 hours",
+   "n": 0
+  },
+  {
+   "bin": "50 to 60",
+   "lead": "24 to 48 hours",
+   "n": 0
+  },
+  {
+   "bin": "70 to 80",
+   "lead": "under 12 hours",
+   "n": 0
+  },
+  {
+   "bin": "70 to 80",
+   "lead": "12 to 24 hours",
+   "n": 0
+  },
+  {
+   "bin": "70 to 80",
+   "lead": "24 to 48 hours",
+   "n": 0
+  },
+  {
+   "bin": "90 to 100",
+   "lead": "under 12 hours",
+   "n": 0
+  },
+  {
+   "bin": "90 to 100",
+   "lead": "12 to 24 hours",
+   "n": 0
+  },
+  {
+   "bin": "90 to 100",
+   "lead": "24 to 48 hours",
+   "n": 0
+  }
+ ]
+}

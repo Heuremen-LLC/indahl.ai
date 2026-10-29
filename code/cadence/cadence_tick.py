@@ -67,7 +67,7 @@ for n, _ in PORTALS:
         d = interval_days(r['cadence']); mt = pdate(r['modified']) if r.get('modified') else None
         if d is None: ct += 1; why[(n, 'cadence not in the table')] += 1; continue
         if mt is None: ct += 1; why[(n, 'modified missing or unreadable')] += 1; continue
-        I = max(d, 2); age = (P['fetched'] if False else now) - mt; k = cls(d); bycl[k][1] += 1
+        I = max(d, 2); age = (P.get('fetched') or now) - mt; k = cls(d); bycl[k][1] += 1   # 29 Oct (audit): age is fetch time minus modified, as the plan says
         if age <= 2 * I * 86400: ok += 1
         else: bad += 1; bycl[k][0] += 1; over.append(dict(portal=n, title=r['title'], agency=r['agency'], cadence=r['cadence'], modified=r['modified'], age_days=round(age / 86400), ratio=round(age / 86400 / I, 1), link=r['landing']))
     hh = [h for h in heads if h['portal'] == n]; ag = [h for h in hh if h['status'] == 200 and h['header_ts'] and h['listed_ts']]; agree = sum(1 for h in ag if abs(h['header_ts'] - h['listed_ts']) <= 2 * 86400)

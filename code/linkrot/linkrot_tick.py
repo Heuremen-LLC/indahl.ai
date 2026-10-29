@@ -68,7 +68,7 @@ def seat2():
         subprocess.run(['git', 'add', 'data/linkrot/urls.txt'], cwd=NODES, capture_output=True)
         c = subprocess.run(['git', '-c', 'user.name=Bones', '-c', 'user.email=268764679+claude-wayfinder@users.noreply.github.com', 'commit', '-qm', 'LINKROT list from the first seat'], cwd=NODES, capture_output=True, text=True)
         subprocess.run(['git', 'push', '-q'], cwd=NODES, capture_output=True)
-        d = subprocess.run(['gh', 'api', 'repos/Heuremen-LLC/nodes/dispatches', '-f', 'event_type=linkrot-probe'], capture_output=True, text=True)
+        d = subprocess.run(['/opt/homebrew/bin/gh', 'api', 'repos/Heuremen-LLC/nodes/dispatches', '-f', 'event_type=linkrot-probe'], capture_output=True, text=True)
         if d.returncode == 0: st2['dispatched'] = time.time(); json.dump(st2, open(S2, 'w'))
     try: raw = urllib.request.urlopen(urllib.request.Request('https://raw.githubusercontent.com/Heuremen-LLC/nodes/main/data/linkrot/results.jsonl', headers={'User-Agent': UA}), timeout=60).read().decode()
     except Exception: return

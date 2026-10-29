@@ -30,3 +30,10 @@ The six horizon 0 misses were opened. Each median and range was read from the Se
 
 ## Note 2 (29 Oct, correcting Note 1, before anything was shown)
 Note 1 said the two unemployment outcomes were recomputed from the BLS API. They were not: the BLS public API without a key returns only the last three years, so 2020 and 2021 are not in it. The 2020 and 2021 outcomes are from FRED only. The BLS API check is the gate's, which compares the 2024 fourth-quarter unemployment average from FRED with the BLS API and must agree within 0.05. The medians and ranges in Note 1 were read from the SEP pages as stated. No row or rule changed.
+
+## Note 3 (29 Oct, from the internal audit)
+1. Triples with a missing median, range or outcome were skipped with no count. The output now counts them with the reason (no stated range for the federal funds rate in 2015 and 2016, outcome not available yet for next-year projections of 2026), as the plan's NOT_COMPARABLE class asks.
+2. The hand check opened only the this-year misses. The next-year misses are now listed with the note Not yet opened by hand, and none is claimed as opened.
+3. The plan reads Septembers from 2013, and the code starts at 2015. The September 2013 and 2014 pages carry no median row (the median was first published in 2015), so those two years are not comparable and are not read.
+4. Six of the 11 years take Table 2 from the minutes PDFs through a pattern match. The gate gains a known-good case: the September 2016 minutes must read the real GDP ranges 1.3 and 1.9 and the unemployment ranges 0.3 and 1.0, and the Table 1 median 1.8 and 2.0.
+5. Stated and not fixed: with a width cap of 0.45 the GDP this-year row reads CONSISTENT from an interval of 0.05 to 0.48, which excludes little. The funds rate in the main row is scored against the fourth-quarter average as fixed, with the year-end sensitivity row beside it.

@@ -87,6 +87,16 @@ if not SUMMARY_ONLY:
         m = get('https://huggingface.co/api/%s/%s' % (kind, rid)); files = [s['rfilename'] for s in (m or {}).get('siblings', []) if '/' not in s['rfilename']]; tag = next((t.split(':', 1)[1] for t in (m or {}).get('tags', []) if t.startswith('license:')), None)
         lf, ff, why = repo_fam(kind, rid, files); live_ok &= bool(m) and compare(fam_tag(tag), ff) == 'AGREE'
 gate = bool(gate_pairs and gate_texts and live_ok) if not SUMMARY_ONLY else bool(gate_pairs and json.load(open('summary_hflicense.json')).get('gate') == 'passed'); print('hflicense: gate', 'passed' if gate else 'FAILED', gate_pairs, gate_texts, live_ok, flush=True)
+if gate and not SUMMARY_ONLY and os.environ.get('HFLICENSE_RECHECK'):
+    n_fix = 0
+    for key, rec in list(store.items()):
+        if rec.get('why') != 'no license file in the repository root': continue
+        full = get('https://huggingface.co/api/%s/%s' % (rec['kind'], rec['id'])); time.sleep(0.4)
+        if full is None: rec.update(cls='NOT_COMPARABLE', why='file list could not be read'); n_fix += 1; continue
+        files = [x['rfilename'] for x in (full.get('siblings') or []) if '/' not in x['rfilename']]
+        if files != [] and any(re.match(r'^(license|licence|copying)', f, re.I) for f in files):
+            lf, ff, why = repo_fam(rec['kind'], rec['id'], files); rec.update(file=lf, file_family=ff, why=why, cls='NOT_COMPARABLE' if (why or rec.get('tag_family') == 'OTHER' or ff == 'OTHER') else compare(rec['tag_family'], ff)); n_fix += 1
+    json.dump(store, open('data/repos.json.tmp', 'w')); os.replace('data/repos.json.tmp', 'data/repos.json'); print('hflicense: recheck changed', n_fix, 'rows', flush=True)
 if gate and not SUMMARY_ONLY:
     for kind in ('models', 'datasets'):
         lst = get('https://huggingface.co/api/%s?sort=downloads&direction=-1&limit=500&full=true' % kind) or []
@@ -95,10 +105,11 @@ if gate and not SUMMARY_ONLY:
             if key in store and now - store[key]['read'] < 30 * 86400: continue
             sib = m.get('siblings') or []
             if not sib and m.get('tags') and any(t.startswith('license:') for t in m['tags']) or (kind == 'datasets' and not sib):
-                full = get('https://huggingface.co/api/%s/%s' % (kind, rid)); time.sleep(0.4); sib = (full or {}).get('siblings') or []
-            files = [s['rfilename'] for s in sib if '/' not in s['rfilename']]; tag = next((t.split(':', 1)[1] for t in m.get('tags', []) if t.startswith('license:')), None) or next((('' + (m.get('cardData') or {}).get('license')) for _ in [0] if isinstance((m.get('cardData') or {}).get('license'), str)), None)
+                full = get('https://huggingface.co/api/%s/%s' % (kind, rid)); time.sleep(0.4); sib = (full or {}).get('siblings') or []; list_failed = full is None   # 29 Oct (audit): a failed call is not an empty repository
+            list_failed = locals().get('list_failed', False); files = [s['rfilename'] for s in sib if '/' not in s['rfilename']]; tag = next((t.split(':', 1)[1] for t in m.get('tags', []) if t.startswith('license:')), None) or next((('' + (m.get('cardData') or {}).get('license')) for _ in [0] if isinstance((m.get('cardData') or {}).get('license'), str)), None)
             rec = dict(read=now, kind=kind, id=rid, tag=tag, rank=lst.index(m) + 1)
             if not tag: rec.update(cls='NOT_COMPARABLE', why='no stated license tag')
+            elif list_failed: rec.update(cls='NOT_COMPARABLE', why='file list could not be read')
             else:
                 lf, ff, why = repo_fam(kind, rid, files); time.sleep(0.4); rec.update(file=lf, file_family=ff, tag_family=fam_tag(tag), why=why)
                 rec['cls'] = 'NOT_COMPARABLE' if (why or fam_tag(tag) == 'OTHER' or ff == 'OTHER') else compare(fam_tag(tag), ff)

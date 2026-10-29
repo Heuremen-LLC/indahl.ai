@@ -36,3 +36,8 @@ After addendum 1, 12 of 142 comparable repositories read DISAGREE. All 12 were o
 
 ## Note 2 (29 Oct, correcting the count in Note 1, before anything was shown)
 Note 1 gave the kinds as 3, 4 and 5. Counted again from data/hand_checked.json the 12 rows are: a draft checkpoint whose name states the model it pairs with (3), a name that states one component, being the language model, the non-embedding count or a context length (3), a repository whose weights hold several components (5), and one row whose reason is not established because its configuration is gated (1). No row changed class.
+
+## Addendum 2 (29 Oct, from the internal audit)
+1. NeoQuasar/Kronos-Tokenizer-2k read the 2k in its name as a size of 2,000 parameters and was filed as a DISAGREE at a ratio of 1,979. The card says 2k is a context length. Note 1 said none of the 12 rows was a reading error, and this one was. The size token no longer accepts K as a unit (a stated size in thousands of parameters is not in use at this scale), so a name with only a K token has no size in it. The whole read is run again.
+2. A failed list request returned an empty population that would have been published as 0 models. A list that returns fewer than 500 models now stops the pass, keeps the last read and publishes nothing.
+3. Stated and not fixed: five of the 12 rows are one organisation (Qwen) and the interval is priced on 142 repositories. The page already shows the number of organisations beside the count. The band of 0.70 to 1.35 stays as fixed, and three DISAGREE rows sit at 1.366, 1.382 and 1.387 just outside it.

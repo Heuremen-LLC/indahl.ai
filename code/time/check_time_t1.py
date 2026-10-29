@@ -11,14 +11,19 @@ byround = C.defaultdict(list)
 for r in rows:
     if r['status'] == 'COMMITTED': byround[(r['server'], r['round'])].append(r)
 for (s, rd), v in byround.items(): kept[s].append(min(v, key=lambda r: r['delay']))
-out = []
+out = []; per = []
 for s in sorted(stat):
     k = kept.get(s, [])
     if not k:
         out.append(dict(server=s, outcome='NOTHING_RETURNED' if stat[s]['NOTHING_RETURNED'] else 'REFUSED', counts=dict(stat[s]))); continue
-    o = S.median(x['offset'] for x in k); h = S.median(x['delay'] / 2 for x in k); E = S.median(x['root_disp'] + x['root_delay'] / 2 for x in k)
-    oc = 'CONSISTENT' if abs(o) + h <= E else ('ABOVE' if abs(o) - h > E else 'CANNOT_TELL')
-    out.append(dict(server=s, outcome=oc, rounds=len(k), offset_ms=round(o*1e3, 2), half_delay_ms=round(h*1e3, 2), stated_bound_ms=round(E*1e3, 2), stratum=k[0]['stratum'], refid=k[0]['refid'], counts=dict(stat[s])))
+    o = S.median(x['offset'] for x in k); h = S.median(x['delay'] / 2 for x in k); E = S.median(x['root_disp'] + x['root_delay'] / 2 for x in k); per.append((s, k, o, h, E))
+# 29 Oct (internal audit, the Split): the offset every server shows on this seat is the seat's own part, not any server's. It is the median over servers and is removed before the second reading.
+SEAT = S.median(o for _, _, o, _, _ in per) if per else 0.0
+def judge(o, h, E): return 'CONSISTENT' if abs(o) + h <= E else ('ABOVE' if abs(o) - h > E else 'CANNOT_TELL')
+for s, k, o, h, E in per:
+    raw = judge(o, h, E); sp = judge(o - SEAT, h, E)
+    oc = raw if raw == sp else 'CANNOT_TELL'   # a reading that changes when the seat's own part is removed is not yet a reading of the server
+    out.append(dict(server=s, outcome=oc, outcome_raw=raw, outcome_seat_removed=sp, rounds=len(k), offset_ms=round(o*1e3, 2), offset_seat_removed_ms=round((o - SEAT)*1e3, 2), half_delay_ms=round(h*1e3, 2), stated_bound_ms=round(E*1e3, 2), stratum=k[0]['stratum'], refid=k[0]['refid'], counts=dict(stat[s])))
 refd = ref[-1]['reference'] if ref else {}
 offs = [x['offset_ms'] for x in out if x.get('offset_ms') is not None]
 import time as _t

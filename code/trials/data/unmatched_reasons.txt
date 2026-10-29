@@ -1,0 +1,288 @@
+NCT07573709	Not stopped. It is completed.
+NCT06658977	This is a rollover study following the Lighthouse II trial; it was scheduled to stop when the LH II trial was stopped/completed. The LH II trial has been prematurely terminated so, likewise, this study has also now been stopped.
+NCT07620964	Interim Analysis
+NCT06878443	Important delays limiting study starts
+NCT05826015	Trial did not go forward
+NCT06631846	The study was terminated due to administrative and operational considerations.
+NCT05046834	Researchers' workload and the fact that they work at different institutions made it difficult to gather data.
+NCT07000344	Results failed to achieve the anticipated effect.
+NCT06722807	Interim analysis
+NCT06445764	Technical problems with VR scenario development
+NCT05539365	Study never activated.
+NCT06673095	Pending coordinating center transition
+NCT04056741	alteration of study required
+NCT06667713	Stopped because of executive orders of new administration
+NCT06852560	PI has left institution
+NCT06489860	My record is not overseen by an IRB, I change the Overall Status to Withdrawn.
+NCT05672095	Abandoned
+NCT05022537	contract never completed
+NCT07240311	Early termination due to force majeure, including a prolonged regional internet blackout, initial suspension of the study over security concerns, and a complete halt following the outbreak of war in the region.
+NCT06725615	Negative study execution advice by ethical committee.
+NCT06813404	Unfunded
+NCT02988297	Withdrawn prior to initiation
+NCT06916143	Original scientific question rendered moot by the external scientific community
+NCT07288450	Not Funded
+NCT07553364	unable to obtain equipment needed for study
+NCT04958317	Trial was planned for 2020, but Melbourne 2020 and 2021 lockdowns hindered the study.
+NCT07226050	Clinical Hold
+NCT04965896	Trial was planned for 2020, but Melbourne 2020 and 2021 lockdowns hindered the study.
+NCT05710887	PI has left the university
+NCT06719609	Waiting for equipment
+NCT06770257	The project was terminated as the genetic office did not approve it.
+NCT06562439	not a clinical trial
+NCT06501911	PI leaving institution.
+NCT04069572	New investigational devices are currently under development.
+NCT05647694	Usability issues were identified with the app. Some usability enhancements are being implemented prior to continuing with the study
+NCT07006285	Because of the negative results reported in other studies
+NCT06282185	lagging inclusions
+NCT07634848	Plans to rejoin a center
+NCT06721338	Unable to resume the study due to patient billing issues. No actual clinical reason.
+NCT07216833	PI leaving the institution
+NCT07221721	PI departure
+NCT06545617	Reconsideration of the subsequent international development of BAT8006
+NCT05385341	The start of the study took too long and there are already many publications on the subject
+NCT06405230	Operational challenges
+NCT06030037	Trial withdrawn per PI directive
+NCT07555561	Due to the promulgation of State Council Order No. 818, this category of clinical trials is prohibited from conduct.
+NCT07769775	The study has been temporarily suspended due to a low volume of patient admissions and clinical encounters at the outpatient clinic during the summer period. Data collection is planned to resume once patient flow normalizes.
+NCT06616623	Pending ICF update
+NCT06916780	For a public vacation
+NCT07381920	Research assistants are away for summer break. Expect to resume in September 2026.
+NCT07242690	Study team is working on contracts.
+NCT07001254	Withdrawn in HawkIRB
+NCT06903286	patients treated through compassionate use program
+NCT07626476	Due to the promulgation of State Council Order No. 818, clinical trials of this category are prohibited.
+NCT07234799	PI Request
+NCT06246045	IRB Closed
+NCT07462390	The clinical trial number for this study was previously assigned. This was done in error.
+NCT06048263	PI is leaving the university
+NCT07313891	This study has been incorporated into the Relmada REL-NDV01-303 study.
+NCT06875141	This entry was unauthorized and has been withdrawn.
+NCT07353229	dose escalation trial, and the first 3 patients (who made up a cohort) were all accrued
+NCT06015295	\<\&%% participation
+NCT06518174	PI is leaving the Institution.
+NCT07066514	The study was stopped due to delays in the development and updating of the AI-assisted application intended for use in the study. As no further progress could be made at this stage, the study was withdrawn.
+NCT05893160	Study withdran per PI's request
+NCT06234059	Another research group ran a similar study and reported results
+NCT06833320	Administrative changes
+NCT07377526	PI Request
+NCT07044388	PI departure from institution
+NCT04328584	Research OR availibililty issues
+NCT07684014	Health conditions
+NCT07484906	This is temporary withdrawal as the record was started too soon. It will be reactivated in near future.
+NCT06143345	Due to operational issues
+NCT06673394	The study plan need to be modified after widely discussion with our consultation board, regarding the conscern about the efficiency may not be able to detect the expected differences. We would like to withdraw this study plan and startup a new one.
+NCT06984692	Due to collaboration model change
+NCT07075705	Not planning to pursue
+NCT05779228	Grant was not funded
+NCT06181630	Replaced with another clinical trial
+NCT07283900	temporary suspension
+NCT04578327	Administratively Closed
+NCT06516887	Investigational drug limitations
+NCT06682637	Clinical trial never activated, not authorized by CA
+NCT04294875	Study held.
+NCT06776406	Grant ended
+NCT06481670	IRB review was not completed and study was not done.
+NCT06679582	Terminated Early
+NCT06195046	Study not moving forward due to unable to identify patients who qualify.
+NCT06604065	project not funded
+NCT07049081	pipeline adjustment
+NCT06793566	Reorganisation and difficulties of neurology service of CHU Orleans
+NCT06575686	Pending Interim Analysis
+NCT06713798	Roche stopped thr peoduction of one of the study product.
+NCT05333432	difficulties in setting up the study within the investigation centers in connection with complex organization
+NCT06547632	Change in guidelines
+NCT04419181	Change in the landscape of current treatment of early stage breast cancer. Larger clinical trials answering similar questions are expected to result in the next few years.
+NCT06597734	PI request
+NCT05900544	Not funded by AHRQ
+NCT06572631	cprmc withdrawn
+NCT05467228	Did not get funded
+NCT07052383	Data update in progress.
+NCT05773430	It was never funded.
+NCT07407764	Ethics committee refusal
+NCT06432400	Refusal by the Ethics Committee
+NCT07428486	PI requested
+NCT07710001	The study has completed the collection of all target cases as planned, reaching the anticipated sample size. Data collection has ended, and the study has now entered the data cleaning and analysis phase.
+NCT02579187	withdrawn study from IRB
+NCT06833281	patients treated on compassionate use program
+NCT05910554	Many of sarcoidosis patients in this area already taking metformin
+NCT07369141	Despite extensive modelling, it was not possible to develop a model that had sufficient accuracy and could be readily applied in a clinical trial.
+NCT06493383	Information to be gathered in survey format instead of a clinical investigation.
+NCT06810674	the campaign section has not yet been finalised. A preliminary evaluation is difficult in this case, as the impact stems primarily from a media campaign and PR initiatives. Such effects are harder to assess in advance. Consequently, this specific stu
+NCT04129515	Contract Issues
+NCT06657885	No response regarding coverage of treatments by social security and the DGOS
+NCT05487859	due to overall cost of the study
+NCT05985135	Changed IRB number
+NCT06264999	Due to implant-related factors, forced to terminate the planned study
+NCT05960838	The shoulder brace is being revised by the Producer
+NCT06619015	suspended by the danish medical agency
+NCT06602076	Early termination of federal grant.
+NCT05482282	The products will be replace with others.
+NCT05353335	not justified based on recent analyses of non-dipping in children with CKD
+NCT06614361	terminated by NIH
+NCT07268105	This study does not need to be in CLinicalTrials.gov
+NCT06670105	PI Request
+NCT07638384	Initial data is being analyzed
+NCT06693999	Due to issue with the software development
+NCT07329088	The study was not funded.
+NCT06477003	Administrative reasons.
+NCT06575725	Abandoned 9/23/24
+NCT05394610	Study cancelled
+NCT06438861	Not funded by industry
+NCT05367401	waiting for update from Study Lead
+NCT06616649	PI request
+NCT07854548	Participant responses to primary outcome -assessing questions were abnormal. Out of 3 multiple choice Qs, #1 was \~70% correct, #2 and #3 were 50%. Review of question structure suggested confusing wording that confounded outcome assessment.
+NCT06196710	We were not funded for the project.
+NCT06492382	Per PI, the team couldn't get the home oxygen monitors needed for the study
+NCT06498024	The wild rice cereal development was stopped, so the trial was also withdrawn prior to starting.
+NCT07011550	PI Request
+NCT06462027	Temporary hold.
+NCT03879161	Expired IRB status
+NCT06928610	Stop order by NIJ
+NCT04959279	PI is in process of transferring to a new institution
+NCT06630325	Loss of support.
+NCT06116578	Abandon of the study by the partenair (MSD)
+NCT05518968	We changed our plan.
+NCT06983951	Due to the promulgation of State Council Order No. 818, clinical trials of this category are prohibited.
+NCT06823128	The reason for the early termination is that the results of the mediation analysis are inconclusive.
+NCT06822686	Unable to obtain theatre access to carry out the trial.
+NCT06644079	Study not moving forward due to upcoming PI departure
+NCT05389670	Study was submitted in preparation of potential NIH application being funded. However, the study was not funded.
+NCT06910384	organizational restructure
+NCT06469775	Institution unable to purchase machine to start study.
+NCT07150767	The applicant voluntarily withdrew the case
+NCT06489626	withdrawn
+NCT06748417	Software and hardware issues in data collection cannot be resolved.
+NCT06902753	Inclusions suspended during the period between phase 1 (adaptation of the test in French sign Language) and phase 2 (inclusion for the standardization of the test).
+NCT06895577	Due to errors in the previously submitted modification, we request to withdraw it and will submit a corrected update shortly.
+NCT07218692	Study Abandoned withdrawn
+NCT04523363	Study was not funded and could not be performed
+NCT06760871	the researcher cannot collect data.
+NCT07526428	Corrupted data
+NCT07055477	Placed on hold to conduct a review of events on study.
+NCT06665022	Study has been absorbed into a pre-existing, IRB-approved (IRB202202370) study with an active Clinical Trials page (NCT05998031). This IRB (IRB202401208) has been withdrawn.
+NCT07040995	Due to unforseen changes in the flow of patients with heart failure, the study interfered with another ongoing study and was therefore withdrawn
+NCT07071194	No plan to continue
+NCT06280092	PI has passed away
+NCT06653192	Class I Recall (Feb 2026): Boston Scientific issued a global recall for specific lots of AXIOS 6x8mm and 8x8mm due to reports of deployment and expansion failure during the procedure.
+NCT06590558	Manually added per CS0177524- Weekly CTEP status report.
+NCT07192237	PI requested
+NCT05067257	Sorrento Therapeutics filed for chapter 11 bankruptcy.
+NCT07741539	Due to the need of thesis presentation. After the presentation it will continue.
+NCT06764849	It corresponds to IDEAL Framework stage 4 and now we are conducting stage 2
+NCT07172438	The study was terminated due to data integrity concerns that affected the ability to reliably assess the study endpoints.
+NCT06064136	Failure of the surgical procedure under investigation to achieve satisfactory results.
+NCT06444022	The research content involving the use of hAESCs for the prevention of aGVHD after HSCT has completed the IND application for treating the said condition. Therefore, an application is submitted to terminate this research project.
+NCT06343194	Waiting agreement for the use of electromiography in the hospital
+NCT07422623	Product Issues
+NCT06455189	Terminated IRB
+NCT06312514	terminated by the new administration
+NCT07226687	Study not moving forward
+NCT07044622	Null findings from similar study.
+NCT07052994	PI requested
+NCT05729503	No research capacity to support the project at this time.
+NCT06624800	The patient completed the follow-up (FU), and the study was concluded.
+NCT04649411	PMR release
+NCT06276946	Operational reason
+NCT07126405	Study has been combined with the patient portion of this study under Pro00116081
+NCT03523156	The Trachoma Elimination Study by Focused Antibiotic (TESFA): The Impact of an Enhanced Antibiotic Treatment Regimen on Trachoma in Amhara, Ethiopia is withdrawn due to severe delays and continued insecurity in the Amhara region of Ethiopia.
+NCT04741256	Other (terminated before study began)
+NCT06173817	Difficulties in working across borders due to sanctions
+NCT05753085	Concerns with capacity
+NCT06926985	Due to limitation of production capacity
+NCT05503238	The researcher in charge has left the affiliation.
+NCT04659278	Study has been placed on hold
+NCT03180450	Others
+NCT06339710	The trial was finalized due to major administrative and contractual delays.
+NCT06222437	IRB did not approve
+NCT07053475	Post-discharge low follow-up (\<50%) rates.
+NCT07029971	Study terminated based on interim analysis results indicating the primary pharmacokinetic endpoint was unlikely to be met.
+NCT06169826	withdrawn by the PI
+NCT05358691	The research was cancelled
+NCT07429591	Study paused per IRB request.
+NCT03097796	Development plan revised
+NCT07342517	This study has been incorporated into the Relmada REL-NDV01-303 study.
+NCT06670976	to be submitted at a later date
+NCT07025512	PI requested
+NCT06839222	Change in scope
+NCT05667337	further biomaterial optimization
+NCT06095986	Operational and clinical reasons
+NCT06517316	Information to be gathered in survey format instead of a clinical investigation.
+NCT06965309	Change of registrant
+NCT07580898	Clinical Hold
+NCT06215664	Grant was terminated by NIH.
+NCT04336046	busy
+NCT03541486	Not funded
+NCT06107829	Not funded
+NCT06206473	material issue
+NCT06366074	The study was not funded.
+NCT05900557	PI has left the institution
+NCT06950177	Adjuvant stability not extended
+NCT06736509	Study AXS-05-AD-305 was terminated due to completion of overall program objectives.
+NCT04041232	Administrative changes
+NCT05538988	Contractual Issues
+NCT05514470	The study could not begin
+NCT03000803	PI is leaving the institution and study is being terminated with the IRB.
+NCT06284460	Drug Source Request
+NCT06579391	Institutional barriers.
+NCT05214989	We obtained information that referral rates are very low across the VA system for cardiac rehabilitation services, rendering the proposed clinical trial obsolete. Further information is detailed in the RPPR for the associated Career Development Award
+NCT06361797	PI leaving the institution
+NCT07553520	Not stated
+NCT06680479	Temporarily Closed (paused)
+NCT06325683	Scheduled Interim Monitoring
+NCT06442527	Study never initiaed.
+NCT06422351	Initiation of study has been paused, but may re-start in the future.
+NCT06779669	Not enough awnser in the qualitative study
+NCT06068153	In view of the recent developments in the field (the increasing number of trials with new KRAS inhibitors), the window of opportunity to answer the question raised in the AMBER trial was missed.
+NCT03946423	Not moving forward with study.
+NCT03277170	Unfunded
+NCT07431541	Not enough time to complete study within reasonable timeframe
+NCT06859294	The interim analysis data failed to demonstrate the intended treatment effect.
+NCT07151638	Investigation into mild/moderate delayed reactions.
+NCT06792344	temporarily suspended due to no new subjects at present
+NCT06002282	NIH grant termination
+NCT05860608	already submitted on NCT05859048
+NCT06547424	Project plan was abandoned.
+NCT06570915	No eligeble patients
+NCT06983158	Stopping rule for study was met
+NCT03301558	due to organizational reason
+NCT06494475	The trial has been postponed for later in the development program
+NCT03803566	The grant application has not been approved
+NCT03149211	project adjustment
+NCT05127122	Change in development plan
+NCT06994624	Death of lead PI
+NCT07639242	Administrative
+NCT05897996	difficulties with the device
+NCT06286319	More work needed to modify the device. In addition, more basic animal research needed.
+NCT06914752	Study not funded.
+NCT07031076	The investigative team has transferred to another university.
+NCT06810765	Study is being conducted externally.
+NCT07411339	Awaiting Award
+NCT07474844	Not funded
+NCT06514430	It was determined that it would be impracticable to conduct this study as a randomized trial. Study has been repurposed as a non-randomized study.
+NCT05462834	Changes in foreign component policy at NIH.
+NCT06168734	Study suspended
+NCT04435639	Researcher unable to continue.
+NCT06434948	Unable to find a sufficient number of suitable study patients.
+NCT04613024	Not funded
+NCT06867822	temporary suspended
+NCT07344090	Failure to reach the target sample size
+NCT06959537	PI Request
+NCT06024941	Submission not finished
+NCT07146646	Interim Analysis
+NCT06214793	Anheart acquired by Nuvation Bio; leadership not moving forward
+NCT07027059	The study was halted due to time constraints
+NCT06195280	No patients were included in this study.
+NCT07179770	PI Departure
+NCT06447987	Pending Interim Analysis
+NCT06568172	Other - Other
+NCT06451055	Due to operational issues
+NCT07037121	PI leaving
+NCT03895658	PI leaving NIH.
+NCT05900908	Study is being withdrawn in favor of a different study schema to be launched later this year.
+NCT05361915	Sorrento Therapeutics filed for chapter 11 bankruptcy.
+NCT06038695	Currently, there is no capacity for this project in the institute
+NCT05583539	Never IRB approved
+NCT07219303	Pending interim analysis
+NCT06090279	significant delays in acquiring the equipment that was supposed to be loaned for the study
+NCT05668949	PI requested

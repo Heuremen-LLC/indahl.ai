@@ -17,9 +17,11 @@ for (d, cp), rs in by.items():
     ALIVE[cp] += 1
     for n, r in rs.items():
         if r['group'] != 'filtered': continue
-        x = res.setdefault(n, {c: [0, 0] for c in CP}); x[cp][1] += 1; x[cp][0] += r['cls'] in ('NXDOMAIN', 'REFUSED', 'SINK'); status[n][r['cls']] += 1
+        x = res.setdefault(n, {c: [0, 0, 0] for c in CP}); status[n][r['cls']] += 1
+        if r['cls'] == 'TIMEOUT': x[cp][2] += 1; continue          # 29 Oct (internal audit): a query that got no answer says nothing about the filter, so it is counted apart and is not in the denominator
+        x[cp][1] += 1; x[cp][0] += r['cls'] in ('NXDOMAIN', 'REFUSED', 'SINK')
 feeds = [json.loads(l) for l in open('data/feed_reads.jsonl')] if os.path.exists('data/feed_reads.jsonl') else []
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), tracked=len(domains), alive={str(c): ALIVE[c] for c in CP}, not_alive={str(c): notalive[c] for c in CP},
            feed_reads=len([f for f in feeds if f.get('status') == 'COMMITTED' and not f.get('baseline')]), resolvers=[
-    dict(resolver=n, checkpoints={str(c): dict(k=v[c][0], n=v[c][1], wilson=wil(*v[c])) for c in CP}, classes=dict(status[n])) for n, v in sorted(res.items())])
+    dict(resolver=n, checkpoints={str(c): dict(k=v[c][0], n=v[c][1], timeouts=v[c][2], wilson=wil(v[c][0], v[c][1]) if v[c][1] else None, state='NOTHING_RETURNED' if (v[c][1] == 0 and v[c][2] > 0) else 'READ') for c in CP}, classes=dict(status[n])) for n, v in sorted(res.items())])
 json.dump(out, open('summary_caca.json', 'w'), indent=1); print('caca summary:', out['tracked'], 'domains,', out['feed_reads'], 'fresh reads')

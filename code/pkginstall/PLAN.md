@@ -31,3 +31,7 @@ The second read had no DISAGREE rows. Sampling the AGREE rows by hand found comm
 
 ## Note 1 (29 Oct, hand check of the third read, before anything was shown)
 After addendum 2 the read has 525 AGREE rows, no DISAGREE rows and 475 NOT_COMPARABLE rows. With no DISAGREE row there is nothing to open, so ten AGREE rows chosen with seed 11 were read by hand, the command against the description, and each names its project. A read of this size with zero failures bounds the share failing below 0.8% at 95%. No rule changed.
+
+## Note 2 (29 Oct, from the internal audit)
+1. The classifier scored any pip failure it did not recognise as DISAGREE, so a network or build error would have read as the project failing. An unrecognised failure is now NOT_COMPARABLE with its message. No project changed class.
+2. Stated and not fixed: 525 of 525 comparable commands agree, and a command that names a project by its own PyPI name from the top-PyPI list has little room to fail, so the ruler can barely show failure here. The 424 projects with no pip install line are found by a line-start pattern and an inline command would read as absent. The 0.8 percent bound treats projects as independent although families share one install line.

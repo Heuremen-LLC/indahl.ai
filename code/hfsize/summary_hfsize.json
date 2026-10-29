@@ -1,15 +1,15 @@
 {
- "updated": "29 Oct 11:00",
+ "updated": "29 Oct 13:34",
  "gate": "passed",
  "models": 1000,
  "comparison": {
-  "of": 142,
-  "n": 12,
-  "share": 0.0845,
-  "share_lo": 0.049,
-  "share_hi": 0.1419,
+  "of": 141,
+  "n": 11,
+  "share": 0.078,
+  "share_lo": 0.0441,
+  "share_hi": 0.1343,
   "outcome": "CANNOT_TELL",
-  "organizations": 8,
+  "organizations": 7,
   "awaiting": 0
  },
  "classes": {
@@ -17,15 +17,15 @@
    "n": 130
   },
   "DISAGREE": {
-   "n": 12
+   "n": 11
   },
   "NOT_COMPARABLE": {
-   "n": 858
+   "n": 859
   }
  },
  "not_comparable_reasons": {
   "no size in the name": {
-   "n": 494
+   "n": 495
   },
   "packed or quantized": {
    "n": 325
@@ -143,13 +143,6 @@
    "actual": "1.92 B",
    "ratio": 0.071,
    "reason": "The card says it is not a standalone language model but a draft model for Qwen3.8-27B. The name states the size of the model it pairs with."
-  },
-  {
-   "repo": "NeoQuasar/Kronos-Tokenizer-2k",
-   "stated": "0 M",
-   "actual": "4 M",
-   "ratio": 1979.13,
-   "reason": "The 2k in the name is a context length of 2048 in the card's table, not a parameter count. The table lists 4.1M parameters."
   }
  ]
 }

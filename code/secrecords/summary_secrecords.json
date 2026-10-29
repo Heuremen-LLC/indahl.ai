@@ -1,5 +1,5 @@
 {
- "updated": "29 Oct 11:53",
+ "updated": "29 Oct 13:25",
  "gate": "passed",
  "domains": 1000,
  "listdate": "2026-10-29",
@@ -46,16 +46,16 @@
   }
  },
  "dmarc": {
-  "reject": {
+  "p=reject": {
    "n": 435
   },
   "no record": {
    "n": 279
   },
-  "quarantine": {
+  "p=quarantine": {
    "n": 169
   },
-  "none": {
+  "p=none": {
    "n": 117
   }
  },

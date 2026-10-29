@@ -39,9 +39,10 @@ O, U = outcomes()
 bls = json.loads(urllib.request.urlopen(urllib.request.Request('https://api.bls.gov/publicAPI/v1/timeseries/data/LNS14000000', headers=UA), timeout=60).read())
 bq = [float(x['value']) for x in bls['Results']['series'][0]['data'] if x['year'] == '2024' and x['period'] in ('M10', 'M11', 'M12')]
 gate &= len(bq) == 3 and abs(sum(bq) / 3 - O[2024]['Unemployment rate']) <= 0.05
+gate &= proj['20160921']['t2']['Change in real GDP'][:2] == [1.3, 1.9] and proj['20160921']['t2']['Unemployment rate'][:2] == [0.3, 1.0] and proj['20160921']['t1']['Change in real GDP'][:2] == [1.8, 2.0]   # 29 Oct (audit): a known-good case for the minutes-PDF parser
 print('fedsep: gate', 'passed' if gate else 'FAILED', flush=True)
 if not gate: sys.exit(0)
-trip = []
+trip = []; SK = []
 for d in SEPT:
     s = int(d[:4])
     for hz in (0, 1):
@@ -50,7 +51,7 @@ for d in SEPT:
         for v in VARS:
             alt = O.get(ty, {}).get('Federal funds rate, year-end') if v == 'Federal funds rate' else None
             med = proj[d]['t1'].get(v, [None] * 4)[hz]; rng = proj[d]['t2'].get(v, [None] * 4)[hz] if proj[d]['t2'].get(v) else None; out = O.get(ty, {}).get(v)
-            if med is None or rng is None or out is None: continue
+            if med is None or rng is None or out is None: SK.append((s, hz, v, 'no median' if med is None else ('no stated range' if rng is None else 'outcome not available yet'))); continue
             trip.append(dict(sept=s, horizon=hz, target=ty, var=v, median=med, rng=rng, outcome=round(out, 2), err=round(out - med, 2), outside=not inside(med, out, rng), outside_alt=(not inside(med, alt, rng)) if alt is not None else (not inside(med, out, rng))))
 rnd = random.Random(7)
 def pooled(hz, alt=False):
@@ -73,7 +74,9 @@ for hz in (0, 1):
         miss = max((abs(t['err']) - t['rng'] for t in ts), default=0)
         per['%s, %s' % (v, 'this year' if hz == 0 else 'next year')] = dict(n=len(ts), outside=k, share=round(k / len(ts), 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, mean_error=round(S.mean(t['err'] for t in ts), 2), range_typical=round(S.median(t['rng'] for t in ts), 2))
 hand = [dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note=('Outside by 0.02 beyond a range printed to one decimal. ' if abs(abs(t['err']) - t['rng']) <= 0.03 else '') + ('Scored on the fourth-quarter average. At the year-end target midpoint it is inside. ' if t['var'] == 'Federal funds rate' and not t['outside_alt'] else '') + 'Median and range read from the SEP page, outcome from FRED')  for t in trip if t['horizon'] == 0 and t['outside']]
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', septs=len(SEPT), triples=len(trip), claim='about 70 percent inside, so about 30 percent outside', pooled=pool, sensitivity=sens, per_variable=per, misses=sorted(hand, key=lambda x: (x['year'], x['variable'])))
+import collections as _C
+skipped = dict(_C.Counter(r for *_, r in SK))
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', not_comparable=dict(n=len(SK), reasons=skipped), horizon1_misses=[dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note='Not yet opened by hand') for t in trip if t['horizon'] == 1 and t['outside']], septs=len(SEPT), triples=len(trip), claim='about 70 percent inside, so about 30 percent outside', pooled=pool, sensitivity=sens, per_variable=per, misses=sorted(hand, key=lambda x: (x['year'], x['variable'])))
 json.dump(out, open('summary_fedsep.json', 'w'), indent=1); json.dump(trip, open('data/triples.json', 'w'))
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'fedsep_live', '--path', os.path.join(H, 'summary_fedsep.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

@@ -1,5 +1,5 @@
 {
- "updated": "29 Oct 13:13",
+ "updated": "29 Oct 13:37",
  "tests": 20,
  "tally": {
   "ABOVE": {
@@ -172,11 +172,11 @@
   {
    "page": "HFSIZE",
    "test": "Size in the name against the weights",
-   "of": 142,
-   "n": 12,
-   "share": 0.0845,
-   "share_lo": 0.049,
-   "share_hi": 0.1419,
+   "of": 141,
+   "n": 11,
+   "share": 0.078,
+   "share_lo": 0.0441,
+   "share_hi": 0.1343,
    "outcome": "CANNOT_TELL"
   },
   {
@@ -262,13 +262,13 @@
   {
    "page": "CADENCE",
    "what": "Datasets updated more slowly than they state",
-   "reading": "623 below of 1254 readable series across 8 portals",
+   "reading": "623 below of 1254 readable series, plus 205 that cannot tell, across 8 portals",
    "state": "Per-series outcomes, tallied below"
   },
   {
    "page": "CADA",
    "what": "Public DNS filters that answer on listed bad domains",
-   "reading": "503 domains tracked, 7 filters read",
+   "reading": "547 domains tracked, 7 filters read",
    "state": "Running, under its own rule"
   },
   {
@@ -292,8 +292,8 @@
   {
    "page": "SEAT",
    "what": "Pages and feeds, seen from an outside runner",
-   "reading": "1 probes, 24 of 24 pages match, 20 of 20 feeds fresh",
-   "state": "CANNOT_TELL"
+   "reading": "read failed: KeyError",
+   "state": "NOTHING_RETURNED"
   },
   {
    "page": "QIA",
@@ -310,14 +310,14 @@
   {
    "page": "QIA",
    "what": "Jobs pending at each processor",
-   "reading": "kingston 122, boston 447, phoenix 2482",
+   "reading": "marrakesh 0, pittsburgh 4, fez 11, kingston 133, boston 449, phoenix 2472",
    "state": "Hourly, analysis rule committed"
   },
   {
    "page": "QIA",
    "what": "Stability of IBM published calibration over time",
-   "reading": "",
-   "state": "NOTHING_RETURNED"
+   "reading": "7 processors, 2 to 23 records each",
+   "state": "Waiting for 20 records and 14 days"
   }
  ],
  "divisions": [
@@ -439,11 +439,11 @@
    {
     "page": "HFSIZE",
     "test": "Size in the name against the weights",
-    "of": 142,
-    "n": 12,
-    "share": 0.0845,
-    "share_lo": 0.049,
-    "share_hi": 0.1419,
+    "of": 141,
+    "n": 11,
+    "share": 0.078,
+    "share_lo": 0.0441,
+    "share_hi": 0.1343,
     "outcome": "CANNOT_TELL"
    },
    {

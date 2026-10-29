@@ -61,6 +61,7 @@ for p in per:
 for lo, hi, nm in BINS:
     for l0, l1, ln in LEADS:
         xs = [(p, sm[p['id']]) for p in per if p['id'] in sm and not sm[p['id']]['unscorable'] and p['stated'] and lo <= p['pop'] <= hi and l0 <= p['lead_h'] < l1]
+        _seen = {}; xs = [_seen.setdefault((p['station'], p['start']), (p, o)) for p, o in sorted(xs, key=lambda z: z[0]['fetched'])]; xs = list({(p['station'], p['start']): (p, o) for p, o in xs}.values())   # 29 Oct (audit): one period counts once per cell, the earliest fetch
         n = len(xs)
         if not n: cells.append(dict(bin=nm, lead=ln, n=0)); continue
         k = sum(r['event'] for _, r in xs); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)

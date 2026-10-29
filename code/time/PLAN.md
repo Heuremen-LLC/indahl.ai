@@ -16,3 +16,12 @@ Four outcomes everywhere. No ranking of providers. Rounds repeated on the Pi's t
 
 ## What is published
 Per server: median and interquartile of the kept offsets, median delay, stated and measured fields, the outcome per statement, the raw sample file and the collector script. The reference's own quality line is shown next to every table.
+
+
+## Note (29 Oct, from the internal audit)
+This plan did not state its unit and what it does not claim in one place. Stated now, with no change to any rule, read or outcome. Unit: one public time server, scored per round and over the rounds held. Not claimed: that any server is good or bad, anything about a server we did not read, anything about a path other than the seats named here, or that a stated bound is a promise rather than the server's own statement.
+
+## Addendum 1 (29 Oct, from the internal audit, after the first publication)
+Two findings, both about the reading and not about any server.
+1. The seat's own offset. On the Pi seat every server reads about plus 2 to 5 milliseconds and on the GitHub runner seat about minus 4.7. A constant that every server shares is the seat's part, not the server's, and it was left in the offsets and scored against each server's stated bound (time.apple.com read ABOVE on the runner seat from minus 4.72 against a 0.15 bound). The page published the constant as seat_part_ms but the scoring did not use it. From now on each seat's common offset (the median over its servers) is removed before the second reading, and every server shows both: the raw outcome and the outcome with the seat part removed. The headline outcome is the raw one only where the two agree. Where they differ it is CANNOT_TELL. The rule T1 itself is unchanged.
+2. The plan's wording. This plan names the Mac as the second seat. The second seat is the GitHub runner network, as the page says. T2, T3 and T4 are not yet scored: only T1 is read and published. This is stated here so the page and the plan agree.
