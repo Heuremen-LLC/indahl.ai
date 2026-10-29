@@ -122,12 +122,17 @@ section.tight{padding:8px 0;border-bottom:0}section.tight h2{margin:0 0 4px}sect
 
 .hero.slim{padding:16px 0 14px}.hero.slim h1{font-size:clamp(22px,2.4vw,28px)}.hero.slim .sub{font-size:14px;margin-top:4px}
 .mtx{font-size:13.5px;line-height:1.4}.mtx th{font-size:10.5px;letter-spacing:.06em;padding:6px 8px}.mtx td{padding:6px 8px}
-/* 29 Oct 2026 (his word): home headlines stacked like data, one row each */
+/* 29 Oct 2026 (his word): home headlines stacked like data, the number and one line, the rest opens on hover */
 main .hlgrid{display:block;border-top:2px solid var(--ink);margin:4px 0 10px}
-main .hlcard{display:grid;grid-template-columns:168px 1fr 78px;align-items:baseline;gap:0 14px;border-top:0;border-bottom:1px solid var(--rule);padding:3px 0}
-main .hlcard .hl-big{font-size:27px;line-height:1.1;white-space:nowrap}main .hlcard .hl-line{font-size:14px;line-height:1.35;margin:0;max-width:none}
+main .hlcard{display:grid;grid-template-columns:minmax(150px,360px) 1fr 84px;align-items:center;gap:0 16px;border-top:0;border-bottom:1px solid var(--rule);padding:2px 0}
+main .hlcard .hl-big{font-size:clamp(36px,6vw,70px);line-height:1;color:var(--ink);white-space:nowrap}
+main .hlcard:hover .hl-big{color:var(--ink)}
+main .hlcard .hl-line{font-size:15px;line-height:1.35;margin:0;max-width:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+main .hlcard .hl-rest{display:none}
+main .hlcard:hover .hl-line,main .hlcard:focus .hl-line{white-space:normal;overflow:visible}main .hlcard:hover .hl-rest,main .hlcard:focus .hl-rest{display:inline}
+main .hlcard:hover{background:#fbf5e6}
 main .hlcard .hl-more{margin:0;text-align:right;font-size:10.5px}
-@media(max-width:640px){main .hlcard{grid-template-columns:1fr auto}main .hlcard .hl-line{grid-column:1/-1;order:3}}
+@media(max-width:700px){main .hlcard{grid-template-columns:1fr auto}main .hlcard .hl-line{grid-column:1/-1;order:3;white-space:normal}main .hlcard .hl-rest{display:inline}}
 .mtx .by{font-size:12.5px}.mtx a.code{font-size:11px;padding:0 4px}
 .crumb{margin:14px 0 0;font-size:13.5px}
 .idx{margin:0 0 10px;gap:8px}.idx input[name=url]{font-size:15px;padding:7px 10px}.idx .btn{padding:7px 14px}
