@@ -37,3 +37,7 @@ Note 1 said the two unemployment outcomes were recomputed from the BLS API. They
 3. The plan reads Septembers from 2013, and the code starts at 2015. The September 2013 and 2014 pages carry no median row (the median was first published in 2015), so those two years are not comparable and are not read.
 4. Six of the 11 years take Table 2 from the minutes PDFs through a pattern match. The gate gains a known-good case: the September 2016 minutes must read the real GDP ranges 1.3 and 1.9 and the unemployment ranges 0.3 and 1.0, and the Table 1 median 1.8 and 2.0.
 5. Stated and not fixed: with a width cap of 0.45 the GDP this-year row reads CONSISTENT from an interval of 0.05 to 0.48, which excludes little. The funds rate in the main row is scored against the fourth-quarter average as fixed, with the year-end sensitivity row beside it.
+
+
+## Addendum on cadence (29 Oct)
+The repeat cadence is now every 36 ticks of the tick bus, about 3.5 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.

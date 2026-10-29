@@ -35,3 +35,7 @@ After addendum 2 the read has 525 AGREE rows, no DISAGREE rows and 475 NOT_COMPA
 ## Note 2 (29 Oct, from the internal audit)
 1. The classifier scored any pip failure it did not recognise as DISAGREE, so a network or build error would have read as the project failing. An unrecognised failure is now NOT_COMPARABLE with its message. No project changed class.
 2. Stated and not fixed: 525 of 525 comparable commands agree, and a command that names a project by its own PyPI name from the top-PyPI list has little room to fail, so the ruler can barely show failure here. The 424 projects with no pip install line are found by a line-start pattern and an inline command would read as absent. The 0.8 percent bound treats projects as independent although families share one install line.
+
+
+## Addendum on cadence (29 Oct)
+The repeat cadence is now every 60 ticks of the tick bus, about 5.8 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.
