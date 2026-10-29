@@ -6,7 +6,7 @@
   fetch('/qia/queue.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     var ps = d.processors || []; if (!ps.length) { box.textContent = 'Waiting for the first read.'; return; }
     var t = document.createElement('table'); t.className = 'mtx';
-    t.innerHTML = '<thead><tr><th>Processor</th><th>Jobs pending at IBM</th><th>Change over 24 hours</th><th>Our finished jobs counted</th><th>Our median wait</th><th>Our longest wait</th><th>Our jobs queued now</th><th>Oldest of those</th></tr></thead>';
+    t.innerHTML = '<thead><tr><th>Processor</th><th>Jobs pending at IBM</th><th>Change since the earliest reading in the last 24 hours</th><th>Our finished jobs counted</th><th>Our median wait</th><th>Our longest wait</th><th>Our jobs queued now</th><th>Oldest of those</th></tr></thead>';
     var b = document.createElement('tbody');
     ps.forEach(function (p) {
       var r = document.createElement('tr'); r.appendChild(td(p.backend)); r.appendChild(td(p.pending == null ? 'nothing returned' : p.pending, 1)); r.appendChild(td(ch(p.change_24h), 1));

@@ -1,0 +1,14 @@
+{
+"meta-llama/Prompt-Guard-86M": "The name states 86M and the weights hold 278.8M. The configuration is gated, so the split could not be read and the reason is not established.",
+"Qwen/Qwen3-ASR-1.7B": "One set of weights holds an audio encoder and a text decoder (configuration: audio_config and text_config). The card does not give the split.",
+"Qwen/Qwen3-ASR-0.6B": "One set of weights holds an audio encoder and a text decoder (configuration: audio_config and text_config). The card does not give the split.",
+"Qwen/Qwen3-ForcedAligner-0.6B": "One set of weights holds an audio encoder and a text decoder (configuration: audio_config and text_config). The card does not give the split.",
+"EleutherAI/pythia-70m-deduped": "The card's table gives the size in non-embedding parameters. The weights also hold the embeddings.",
+"openbmb/MiniCPM5-2B-DSpark": "The card describes a draft checkpoint made to pair with MiniCPM5-2B. The name states the size of the model it pairs with.",
+"ornith-ai/Ornith-1.5-9B-DFlash": "The card describes a draft checkpoint for speculative decoding with Ornith-1.5-9B. The name states the size of the model it pairs with.",
+"incoai/Qwen3.8-27B-DFlash2": "The card says it is not a standalone language model but a draft model for Qwen3.8-27B. The name states the size of the model it pairs with.",
+"Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice": "The configuration holds a talker and a code predictor. The repository carries a second weight file for the speech tokenizer.",
+"Qwen/Qwen3-TTS-12Hz-0.6B-Base": "The configuration holds a talker and a code predictor. The repository carries a second weight file for the speech tokenizer.",
+"Salesforce/blip2-opt-2.7b": "The card says the model joins an image encoder, a querying transformer and the 2.7B language model. The name states the language model's size.",
+"NeoQuasar/Kronos-Tokenizer-2k": "The 2k in the name is a context length of 2048 in the card's table, not a parameter count. The table lists 4.1M parameters."
+}

@@ -1,0 +1,155 @@
+{
+ "updated": "29 Oct 11:00",
+ "gate": "passed",
+ "models": 1000,
+ "comparison": {
+  "of": 142,
+  "n": 12,
+  "share": 0.0845,
+  "share_lo": 0.049,
+  "share_hi": 0.1419,
+  "outcome": "CANNOT_TELL",
+  "organizations": 8,
+  "awaiting": 0
+ },
+ "classes": {
+  "AGREE": {
+   "n": 130
+  },
+  "DISAGREE": {
+   "n": 12
+  },
+  "NOT_COMPARABLE": {
+   "n": 858
+  }
+ },
+ "not_comparable_reasons": {
+  "no size in the name": {
+   "n": 494
+  },
+  "packed or quantized": {
+   "n": 325
+  },
+  "mixture-of-experts name": {
+   "n": 20
+  },
+  "no safetensors total": {
+   "n": 15
+  },
+  "Hugging Face total does not match its own breakdown": {
+   "n": 4
+  }
+ },
+ "api_mismatch": [
+  {
+   "repo": "ornith-ai/Ornith-1.0-35B",
+   "total": 664944,
+   "breakdown": 35107181936,
+   "stated": "35.00 B"
+  },
+  {
+   "repo": "ornith-ai/Ornith-1.0-9B",
+   "total": 1469680,
+   "breakdown": 9409813744,
+   "stated": "9.00 B"
+  },
+  {
+   "repo": "Infomaniak-AI/vllm-translategemma-4b-it",
+   "total": 4971331952,
+   "breakdown": 4300079472,
+   "stated": "4.00 B"
+  },
+  {
+   "repo": "farbodtavakkoli/OTel-2.0-LLM-31B-IT-QLoRA",
+   "total": 31273086512,
+   "breakdown": 31273088876,
+   "stated": "31.00 B"
+  }
+ ],
+ "disagree_list": [
+  {
+   "repo": "meta-llama/Prompt-Guard-86M",
+   "stated": "86 M",
+   "actual": "279 M",
+   "ratio": 3.242,
+   "reason": "The name states 86M and the weights hold 278.8M. The configuration is gated, so the split could not be read and the reason is not established."
+  },
+  {
+   "repo": "Qwen/Qwen3-ASR-1.7B",
+   "stated": "1.70 B",
+   "actual": "2.35 B",
+   "ratio": 1.382,
+   "reason": "One set of weights holds an audio encoder and a text decoder (configuration: audio_config and text_config). The card does not give the split."
+  },
+  {
+   "repo": "EleutherAI/pythia-70m-deduped",
+   "stated": "70 M",
+   "actual": "96 M",
+   "ratio": 1.366,
+   "reason": "The card's table gives the size in non-embedding parameters. The weights also hold the embeddings."
+  },
+  {
+   "repo": "openbmb/MiniCPM5-2B-DSpark",
+   "stated": "2.00 B",
+   "actual": "324 M",
+   "ratio": 0.162,
+   "reason": "The card describes a draft checkpoint made to pair with MiniCPM5-2B. The name states the size of the model it pairs with."
+  },
+  {
+   "repo": "Qwen/Qwen3-ASR-0.6B",
+   "stated": "600 M",
+   "actual": "938 M",
+   "ratio": 1.563,
+   "reason": "One set of weights holds an audio encoder and a text decoder (configuration: audio_config and text_config). The card does not give the split."
+  },
+  {
+   "repo": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+   "stated": "600 M",
+   "actual": "906 M",
+   "ratio": 1.51,
+   "reason": "The configuration holds a talker and a code predictor. The repository carries a second weight file for the speech tokenizer."
+  },
+  {
+   "repo": "Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+   "stated": "600 M",
+   "actual": "915 M",
+   "ratio": 1.524,
+   "reason": "The configuration holds a talker and a code predictor. The repository carries a second weight file for the speech tokenizer."
+  },
+  {
+   "repo": "Salesforce/blip2-opt-2.7b",
+   "stated": "2.70 B",
+   "actual": "3.74 B",
+   "ratio": 1.387,
+   "reason": "The card says the model joins an image encoder, a querying transformer and the 2.7B language model. The name states the language model's size."
+  },
+  {
+   "repo": "Qwen/Qwen3-ForcedAligner-0.6B",
+   "stated": "600 M",
+   "actual": "918 M",
+   "ratio": 1.53,
+   "reason": "One set of weights holds an audio encoder and a text decoder (configuration: audio_config and text_config). The card does not give the split."
+  },
+  {
+   "repo": "ornith-ai/Ornith-1.5-9B-DFlash",
+   "stated": "9.00 B",
+   "actual": "1.29 B",
+   "ratio": 0.144,
+   "reason": "The card describes a draft checkpoint for speculative decoding with Ornith-1.5-9B. The name states the size of the model it pairs with."
+  },
+  {
+   "repo": "incoai/Qwen3.8-27B-DFlash2",
+   "stated": "27.00 B",
+   "actual": "1.92 B",
+   "ratio": 0.071,
+   "reason": "The card says it is not a standalone language model but a draft model for Qwen3.8-27B. The name states the size of the model it pairs with."
+  },
+  {
+   "repo": "NeoQuasar/Kronos-Tokenizer-2k",
+   "stated": "0 M",
+   "actual": "4 M",
+   "ratio": 1979.13,
+   "reason": "The 2k in the name is a context length of 2048 in the card's table, not a parameter count. The table lists 4.1M parameters."
+  }
+ ]
+}
