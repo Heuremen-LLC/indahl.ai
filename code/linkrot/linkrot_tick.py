@@ -4,7 +4,10 @@ at most 600 per round, one request at a time per host with a pause, then rewrite
 import os, sys, re, json, time, socket, ssl, subprocess, threading, urllib.request, urllib.error, urllib.parse, collections as C
 from concurrent.futures import ThreadPoolExecutor
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
-import heuremen_kit as K
+import heuremen_kit as K, fcntl
+_lock = open(os.path.join(H, 'data', '.lock'), 'w')
+try: fcntl.flock(_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except OSError: print('linkrot: another run holds the lock, skipping'); sys.exit(0)   # 29 Oct: two writers corrupted links.json once
 W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); UA = 'heuremen-linkrot/0.1 (+https://indahl.ai/linkrot)'
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('linkrot: plan not committed, refusing to read'); sys.exit(0)
 LIVE_CTL = ['https://github.com/torvalds/linux', 'https://www.python.org', 'https://arxiv.org/abs/1706.03762', 'https://example.com', 'https://zenodo.org']
@@ -55,7 +58,8 @@ if gate_ok and due:
             m = re.match(r'https://(?:www\.)?(github|gitlab)\.com/([^/]+)/([^/?#]+)', u); f = re.match(r'https://(?:www\.)?(github|gitlab)\.com/([^/]+)/([^/?#]+)', fin or '')
             if s == 'LIVE' and m and f and (m.group(2).lower(), m.group(3).lower()) != (f.group(2).lower(), f.group(3).lower()): moved = True
             e['hist'].append([now, s]); e['moved'] = moved; n += 1
-    json.dump(links, open('data/links.json', 'w'))
+    json.dump(links, open('data/links.json.tmp', 'w')); os.replace('data/links.json.tmp', 'data/links.json')
+if gate_ok: subprocess.run([sys.executable, '-I', os.path.join(H, 'linkrot_repos.py')], capture_output=True, timeout=1500)   # second question, PLAN_REPOS.md
 # summary
 def cell(rows):
     c = C.Counter(r for r in rows); live, gone, dns = c['LIVE'], c['GONE'], c['DNS_FAIL']; rd = live + gone + dns; rot = gone + dns
@@ -72,6 +76,7 @@ ret = sum(1 for e in links.values() if len(e['hist']) > 1 and e['hist'][-1][1] =
 newly = sum(1 for e in links.values() if len(e['hist']) > 1 and e['hist'][-1][1] in ('GONE', 'DNS_FAIL') and e['hist'][-2][1] == 'LIVE')
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate_ok else 'FAILED', papers=len(papers), links=len(links), read=len(cur), due=len([u for u, e in links.items() if not e['hist'] or now - e['hist'][-1][0] > 7 * 86400]),
            all=cell(list(cur.values())), by_year=by_year, by_host=by_host, returned=ret, newly_gone=newly, moved=sum(1 for e in links.values() if e.get('moved')))
+if os.path.exists('summary_repos.json'): out['repos'] = json.load(open('summary_repos.json'))
 json.dump(out, open('summary_linkrot.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 p = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'linkrot_live', '--path', os.path.join(H, 'summary_linkrot.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

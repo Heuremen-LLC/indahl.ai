@@ -42,3 +42,6 @@ With the interval criterion, the same T1 = 100, T2 = 50 draw still fell just out
 
 ## Note 1 (29 Oct, after the jobs were submitted, before any result was read)
 Order inside a job: for each qubit the T1 circuits run, then the T2 circuits. A T1 that fluctuates over minutes could differ between the two halves. The job lasts seconds, but this plan did not interleave them and a rerun should. IBM does not state whether its published T2 is echo or Ramsey. The bound T2 <= 2 x T1 holds for both, so the outcome rule is valid. A comparison of our echo T2 with IBM's published T2 is not like for like and is reported as CANNOT_TELL. Six readings are taken (three flagged, three controls), so one false ABOVE in a world with ratio exactly 2 is possible at about 2.5% per reading.
+
+## Note 2 (29 Oct, 21:40 EDT, before any result was read)
+Queue depth read from the processors' status at 21:40: ibm_boston 397 pending jobs, ibm_kingston 86, ibm_fez 3. The boston job (submitted 20:36) was still queued, and the chain would not submit the other two until it finished. The kingston and fez jobs are now submitted in parallel with the boston job. Method, circuits, fits, thresholds and outcomes are unchanged. Only the order of submission changed. Each job still carries its own control qubit and the known-good gate applies per job.
