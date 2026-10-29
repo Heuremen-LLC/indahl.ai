@@ -19,3 +19,6 @@ Before each pass: torvalds/linux must read not empty with many commits, and a re
 Each repository is read once and again every 30 days. GraphQL cost is one point per 100 aliases, far under the hourly limit.
 ## Not claimed
 That the code matches the paper, runs, or is complete. Only whether anything is there.
+
+## Addendum 1 (29 Oct, after the first pass, before the column was shown)
+The pass already holds each repository's detected license (GitHub licenseInfo). A descriptive column is added: repositories that hold code or a stub and have no license detected (licenseInfo empty), as a count and a share of repositories read with a Wilson 95% interval, overall and by submission year of the paper. It is counted apart. It is not a miss, does not enter the empty-repository outcome, and carries no outcome of its own. A repository whose license GitHub reports as NOASSERTION (custom or mixed) is counted in neither this column nor a named license. It was defined after the first pass, and the page says so.
