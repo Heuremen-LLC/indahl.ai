@@ -35,7 +35,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Heuremen">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v=4768fe58">
 </head>
 <body>
 <header class="top"><div class="wrap bar">
@@ -43,7 +43,7 @@
 <nav class="links"><a href="/qia">QIA</a><span class="dd"><a href="/iris">IRIS</a><span class="ddpanel"><a href="/hfsize">HFSIZE</a><a href="/hflicense">HFLICENSE</a><a href="/pkglicense">PKGLICENSE</a><a href="/pkginstall">PKGINSTALL</a><a href="/weights">WEIGHTS</a><a href="/ailuminate">AILUMINATE</a><a href="/hosts">HOSTS</a></span></span><span class="dd"><a href="/hermes" aria-current=page>HERMES</a><span class="ddpanel"><a href="/hermes/model">MODEL</a><a href="/trials">TRIALS</a><a href="/hpt">HPT</a><a href="/airline">AIRLINE</a><a href="/airq">AIRQ</a><a href="/revise">REVISE</a><a href="/fedsep">FEDSEP</a><a href="/cadence">CADENCE</a><a href="/forecast">FORECAST</a><a href="/launch">LAUNCH</a><a href="/coin">COIN</a><a href="/arxivdrift">ARXIVDRIFT</a><a href="/linkrot">LINKROT</a></span></span><span class="dd"><a href="/atlas">ATLAS</a><span class="ddpanel"><a href="/uptime">UPTIME</a><a href="/time">TIME</a><a href="/cada">CADA</a><a href="/secrecords">SECRECORDS</a><a href="/seat">SEAT</a><a href="/support">SUPPORT</a><a href="/change">CHANGE</a></span></span><a href="/oy">OY</a><a href="/stack">STACK</a></nav>
 </div></header>
 <section class="hero slim"><div class="wrap"><h1><b class="ac">HPT</b> &middot; Hospital Price Files Against the Rule</h1></div></section>
-<main class="wrap"><p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
+<main class="wrap"><section id="hl-slot" class="hl-slot" aria-hidden="true"></section><p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <h2>Is the price file where the rule says it is?</h2><p>The federal hospital price transparency rule asks each hospital to publish a machine-readable file of its standard charges, and to put a small text file named cms-hpt.txt at the root of its website that links to it. For every hospital website listed in Wikidata we check three things in order: the text file at the root, whether the file it links to opens as data, and whether that file starts with the template header names.</p><div id="hpt-live" class="bench-live">Loading.</div><script src="/hpt/live.js" defer></script><p class="meta">Named here and want to answer a row? <a href="/respond?u=hpt-all">Respond</a></p><p>Wikidata lists clinics and parts of health systems, and a hospital that belongs to a system can have its file at the system's domain, so a missing file at a hospital's own domain can be correct. Our hand check of ten rows is in the plan. For that reason the first step is never scored above CANNOT_TELL. Steps two and three are scored against a claim of zero disagreement: ABOVE when the lower end of the 95 percent interval is above 10 percent, CONSISTENT when the upper end is below 5 percent. Websites we could not open, that refused our user agent, or that are a page on a shared site are counted apart. JSON and zip files are not checked for the header because their key names can sit after the data. Every failing row of steps two and three was opened by hand and is listed. <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/hpt/PLAN.md">Plan, addenda and code</a>.</p>
 <p class="meta">Plan, code and trend history for this page are public: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/hpt">hpt</a>. Every plan was committed before the data it describes.</p><p class="meta">Data read from: <a href="https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency">CMS hospital price transparency</a> &middot; <a href="https://www.wikidata.org">Wikidata</a>.</p><section id="replies" data-prefix="hpt"></section><script src="/replies.js" defer></script></main>
 <footer class="foot"><div class="wrap">
@@ -55,6 +55,6 @@
 <nav class="tabbar" aria-label="Divisions"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/hermes" aria-current=page>HERMES</a><a href="/atlas">ATLAS</a><a href="/oy">OY</a><a href="/stack">STACK</a></nav>
 <script src="/pwa.js" defer></script>
 <script src="/live-tags.js?v=35e2ef27" defer></script>
-<script src="/headline.js?v=6e4f48dc" defer></script>
+<script src="/headline.js?v=a83ed2e3" defer></script>
 </body>
 </html>
