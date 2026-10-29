@@ -29,12 +29,12 @@
 <body>
 <header class="top"><div class="wrap bar">
 <a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
-<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time" aria-current=page>TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a><a href="/uptime">UPTIME</a><a href="/forecast">FORECAST</a><a href="/cadence">CADENCE</a><a href="/trials">TRIALS</a><a href="/launch">LAUNCH</a></nav>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time" aria-current=page>TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a><a href="/uptime">UPTIME</a><a href="/forecast">FORECAST</a><a href="/cadence">CADENCE</a><a href="/trials">TRIALS</a><a href="/launch">LAUNCH</a><a href="/linkrot">LINKROT</a></nav>
 </div></header>
 <section class="hero slim"><div class="wrap"><h1>TIME &middot; Stated Against Delivered</h1></div></section>
 <main class="wrap">
 <section class="bench"><h2>Public Time Servers, Stated Against Delivered</h2><p>Each server below answers ordinary time queries. Every reply states its own error bound, a root dispersion plus half a root delay. We ask each server eight times per round from a clock disciplined by a GPS pulse, keep the fastest reply, and compare the measured offset with the server's own stated bound. The internet path adds an uncertainty of half its round trip, so a bound smaller than that cannot be confirmed or refused, and the outcome says cannot tell. Rules were committed before the first query.</p><div id="time-live" class="bench-live">Loading.</div><script src="/time/live.js" defer></script><p class="bench-note">Consistent: the offset and path uncertainty fit inside the stated bound. Above: the server is further from true time than it states. Below: it is closer than it states. Cannot tell: the path is wider than the bound. Nothing returned, refused and held are counted as their own outcomes. No ranking.</p></section>
-</main>
+<section id="replies" data-prefix="time"></section><script src="/replies.js" defer></script></main>
 <footer class="foot"><div class="wrap">
 <p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC">GitHub</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>

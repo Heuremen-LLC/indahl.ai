@@ -29,12 +29,12 @@
 <body>
 <header class="top"><div class="wrap bar">
 <a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
-<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time">TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a><a href="/uptime" aria-current=page>UPTIME</a><a href="/forecast">FORECAST</a><a href="/cadence">CADENCE</a><a href="/trials">TRIALS</a><a href="/launch">LAUNCH</a></nav>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/atlas">ATLAS</a><a href="/sad">SAD</a><a href="/time">TIME</a><a href="/coin">COIN</a><a href="/cada">CADA</a><a href="/uptime" aria-current=page>UPTIME</a><a href="/forecast">FORECAST</a><a href="/cadence">CADENCE</a><a href="/trials">TRIALS</a><a href="/launch">LAUNCH</a><a href="/linkrot">LINKROT</a></nav>
 </div></header>
 <section class="hero slim"><div class="wrap"><h1>UPTIME &middot; Status Pages Against Probes</h1></div></section>
 <main class="wrap">
 <section class="bench"><h2>Status Pages Against Independent Probes</h2><p>Each vendor below publishes a status page that says whether its systems are operational. Every round, three of our probe seats, two on a home network and one on a cloud network, make one plain request to a public endpoint the vendor serves. A request fails if it times out, cannot connect or returns a server error. A disagreement is a round where the page said operational and at least two seats failed. Two control targets with no status page set the floor for chance failures. Rules were committed before the first round.</p><div id="uptime-live" class="bench-live">Loading.</div><script src="/uptime/live.js" defer></script><p class="meta">Named here and want to answer a row? <a href="/respond?u=uptime-all">Respond</a></p><p class="bench-note">Consistent: disagreements are no more than the floor predicts. Below: more than the floor predicts, so the service was less reachable than its page stated. Cannot tell: fewer than 300 rounds. One endpoint is not a whole service, and a disagreement is between the page and that endpoint on those seats in that round. Incidents a vendor records are its own. No ranking.</p></section>
-</main>
+<section id="replies" data-prefix="uptime"></section><script src="/replies.js" defer></script></main>
 <footer class="foot"><div class="wrap">
 <p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC">GitHub</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
