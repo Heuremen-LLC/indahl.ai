@@ -14,6 +14,8 @@ Each plan file is committed before the run it describes. Run any script with `py
 <!-- live-index -->
 ## Live pages
 
+- [qia-queue/](qia-queue/): QIA: queue at each IBM processor, hourly - https://indahl.ai/qia
+- [archive/](archive/): Hash chain of our records, OpenTimestamps proofs and the Zenodo copies - https://indahl.ai/
 - [time/](time/): TIME: public time servers, stated against delivered - https://indahl.ai/time
 - [coin/](coin/): COIN: Ravencoin against its own whitepaper, with trends - https://indahl.ai/coin
 - [cada/](cada/): CADA: public DNS filters against fresh abuse reports - https://indahl.ai/cada
@@ -32,6 +34,10 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [support/](support/): SUPPORT: Stated support windows against release activity, live. - https://indahl.ai/support
 - [pkglicense/](pkglicense/): PKGLICENSE: Package licenses against repository licenses, live. - https://indahl.ai/pkglicense
 - [hflicense/](hflicense/): HFLICENSE: Hugging Face stated licenses against license files, live. - https://indahl.ai/hflicense
+- [hfsize/](hfsize/): HFSIZE: Hugging Face model names against the weights, live. - https://indahl.ai/hfsize
+- [change/](change/): CHANGE: Vendor shutdown dates, read over time, live. - https://indahl.ai/change
+- [secrecords/](secrecords/): SECRECORDS: Security headers and mail records against their own rules, live. - https://indahl.ai/secrecords
+- [seat/](seat/): SEAT: An outside seat reads our own pages, live. - https://indahl.ai/seat
 - [api/](api/): API and MCP server - https://indahl.ai/api
 - [kit/](kit/): The shared instrument pieces every corner uses - https://indahl.ai/
 - [replies/](replies/): Right of reply: posted responses beside the rows they answer - https://indahl.ai/

@@ -3,3 +3,5 @@
 {"rounds": 26, "seat2.seat_part_ms": 2.56, "seat_part_ms": 2.72, "t": "2026-10-29T05:01Z", "totals.CANNOT_TELL": 33, "totals.CONSISTENT": 1, "totals.NOTHING_RETURNED": 4}
 {"rounds": 34, "seat2.seat_part_ms": 5.04, "seat_part_ms": 2.77, "t": "2026-10-29T07:22Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 4}
 {"rounds": 42, "seat2.seat_part_ms": -1.19, "seat_part_ms": 2.79, "t": "2026-10-29T09:40Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 4}
+{"rounds": 49, "seat2.seat_part_ms": 0.73, "seat_part_ms": 2.76, "t": "2026-10-29T12:01Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 4}
+{"rounds": 49, "seat2.seat_part_ms": 0.05, "seat_part_ms": 2.8, "t": "2026-10-29T12:03Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 4}
