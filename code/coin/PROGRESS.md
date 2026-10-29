@@ -1,8 +1,8 @@
 # COIN trends: progress
 
-Updated 29 Oct 00:46 UTC.
+Updated 29 Oct 00:59 UTC.
 
-Blocks held: 3672 (heights 4597933 to 4601619), 2.59 days.
+Blocks held: 8690 (heights 4592933 to 4601637), 6.09 days.
 Transactions scanned: 2212.
 
 Pool share-move test: needs 14 days held. Window is still shorter, every series reads CANNOT_TELL.
