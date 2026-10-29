@@ -10,7 +10,7 @@ W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); FIRST 
 import re
 NODES = os.path.expanduser('~/bones-forge/nodes_repo'); TJ = NODES + '/drift/targets.json'
 try:
-    src = open(os.path.expanduser('~/bones-forge/indahl-ai/build_site.py')).read(); slugs = re.findall(r"\('/([a-z0-9]+)', '[A-Z0-9]+'\)", src.split('\n')[8])
+    src = open(os.path.expanduser('~/bones-forge/indahl-ai/build_site.py')).read(); slugs = sorted(set(re.findall(r"\('/([a-z0-9]+)', '[A-Z0-9]+'[,)]", src)))   # 29 Oct: read the whole file (menu, desks), not one line
     T = json.load(open(TJ)); have = set(T['pages']); hf = {f[0] for f in T['feeds']}; ch = False
     for sl in slugs:
         if sl not in have: T['pages'].append(sl); ch = True
