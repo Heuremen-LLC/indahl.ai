@@ -10,7 +10,8 @@ def make(d):
         if n % 2:
             leaves = [('a', 'h%d' % n), ('b', 'g%d' % n), ('c', 'k%d' % n)]; e = dict(n=n, t='t%d' % n, kind='feeds', subject='s', root=merkle(leaves), prev=prev); L = dict(leaves=leaves)
         else:
-            leaves = [('drand_randomness', 'r%d' % n), ('feeds_root', 'f%d' % n), ('prev_entry', prev)]; e = dict(n=n, t='t%d' % n, kind='beacon', subject='s', root=beacon('r%d' % n, 'f%d' % n, prev), prev=prev); L = dict(leaves=leaves)
+            q = ('q%d' % n) if n == 6 else None
+            leaves = [('drand_randomness', 'r%d' % n), ('feeds_root', 'f%d' % n), ('prev_entry', prev)] + ([('qbits_root', q)] if q else []); e = dict(n=n, t='t%d' % n, kind='beacon', subject='s', root=beacon('r%d' % n, 'f%d' % n, prev, q), prev=prev); L = dict(leaves=leaves)
         e['entry'] = entry_hash(e); prev = e['entry']; out.append(e); json.dump(L, open(d + '/leaves/%d.json' % n, 'w'))
     open(d + '/tape.jsonl', 'w').write('\n'.join(json.dumps(e) for e in out) + '\n')
 res = {}

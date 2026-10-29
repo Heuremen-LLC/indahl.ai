@@ -11,6 +11,8 @@ def merkle(leaves):
         if len(lv) % 2: nx.append(lv[-1])
         lv = nx
     return lv[0]
-def beacon(randomness, feeds_root, prev): return sha(('%s:%s:%s' % (randomness, feeds_root, prev)).encode())
+def beacon(randomness, feeds_root, prev, qroot=None):
+    # a beacon with no quantum entry behind it keeps the three-input form (PLAN Addendum 2, rule 3)
+    return sha(('%s:%s:%s' % (randomness, feeds_root, prev) + ((':%s' % qroot) if qroot and qroot != 'NONE' else '')).encode())
 FIELDS = ('n', 't', 'kind', 'subject', 'root', 'prev')
 def entry_hash(e): return sha(json.dumps({k: e[k] for k in FIELDS}, sort_keys=True, separators=(',', ':')).encode())

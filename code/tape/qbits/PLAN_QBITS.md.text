@@ -1,0 +1,22 @@
+# QBITS: quantum bits for the TAPE beacon, and how fair a superposed qubit is on each IBM processor. Run plan, written before any run.
+See ../PLAN.md Addendum 2 for what joins the beacon. This file is the run.
+
+## The run
+One job on one processor, all qubits at once, three circuits: no gate then measure, an X gate then measure, a Hadamard gate then measure. Shots: 1024, 1024 and 4096. For a 156-qubit processor that is 638,976 raw bits from the Hadamard circuit. The qubits are used in index order with no layout search and no optimisation, so a qubit is a qubit and no gate is added.
+
+## What is read
+For each qubit: P(1 given 0) from the first circuit, P(1 given 1) from the second, and P(1) from the third. The third is predicted from the first two as half of P(1 given 0) plus half of P(1 given 1). For the processor: the pooled share of ones with its 95 percent Wilson interval, the number of qubits further than three standard errors from a fair coin, the adjacent-qubit correlations, the number of stuck qubits, and the share of qubits whose Hadamard reading matches the prediction within two standard errors.
+
+## Outcomes (fixed now)
+CONSISTENT: the pooled interval contains one half. ABOVE: the whole interval is above one half. BELOW: the whole interval is below one half. CANNOT_TELL: fewer than 100 shots or the job did not return. A processor reads usable only if none of these flags is raised: any stuck qubit; more than the larger of 3 or 2 percent of qubits beyond three standard errors; more than the larger of 3 or 5 percent of adjacent pairs correlated beyond three over the square root of the shots; fewer than 80 percent of qubits matching the prediction. A bias is expected on real hardware, because the readout is not symmetric. A BELOW with no flag is the expected reading and is published as it is.
+
+## Limits (fixed now)
+One job per run. No run if the account's remaining seconds minus the estimate would be under 300, or the estimate is over 20 seconds. The job is capped at 20 seconds of execution. The estimate is shots times 0.0004 seconds and is an estimate, never a measurement. The measured seconds from the job record go in the result file.
+
+KNOWN-GOOD: the no-gate and X circuits on the same processor in the same job, where the answer is already known: P(1 given 0) must read near 0 and P(1 given 1) near 1, and each must be within the stated bound of the IBM-published prob_meas1_prep0 and prob_meas0_prep1 for that qubit's record or the reading is reported as a stated-against-delivered difference. The Hadamard reading must match the prediction from them on at least 80 percent of qubits or the processor reads not usable.
+
+## Planted worlds (run before any fire, output in synth_selftest.text)
+A fair world must read usable. A world with only a readout asymmetry must read usable and BELOW. A world with twelve biased qubits, a world with three stuck qubits and a world where each qubit copies its neighbour 30 percent of the time must each read not usable. The self-test must print SELFTEST PASS.
+
+## Not claimed
+That the bits are unpredictable beyond what the raw bits show. That the job came from the processor, which only IBM can confirm from its own records. That a hash removes correlations.

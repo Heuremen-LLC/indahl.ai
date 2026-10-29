@@ -17,7 +17,7 @@ def verify(d):
             L = json.load(open(lp)); leaves = [tuple(x) for x in L['leaves']]
             if e['kind'] == 'beacon':
                 inp = dict(leaves)
-                if beacon(inp['drand_randomness'], inp['feeds_root'], inp['prev_entry']) != e['root']: bad.append('n %s: beacon does not match its inputs' % e['n'])
+                if beacon(inp['drand_randomness'], inp['feeds_root'], inp['prev_entry'], inp.get('qbits_root')) != e['root']: bad.append('n %s: beacon does not match its inputs' % e['n'])
                 if inp['prev_entry'] != e['prev']: bad.append('n %s: beacon input prev differs from the chain' % e['n'])
             elif merkle(leaves) != e['root']: bad.append('n %s: leaves do not give the root' % e['n'])
         prev = e['entry']; n_prev = e['n']
