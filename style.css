@@ -151,6 +151,7 @@ h2{margin:0 0 .35em}
 .o-CONSISTENT,.o-ABOVE,.o-BELOW,.o-CANNOT_TELL,.o-NOTHING_RETURNED{font-family:Cinzel,Georgia,serif;font-weight:600;font-size:12px;letter-spacing:.06em}
 .o-CONSISTENT{color:#2a6a4a}.o-ABOVE,.o-BELOW{color:#9a2b1e}.o-CANNOT_TELL,.o-NOTHING_RETURNED{color:var(--mid)}
 
+.dd{position:relative;display:inline-block}.ddpanel{display:none;position:absolute;left:0;top:100%;margin-top:6px;background:var(--paper);border:1px solid var(--rule);padding:10px 16px;flex-direction:column;gap:8px;min-width:190px;z-index:7}.dd:hover .ddpanel,.dd:focus-within .ddpanel{display:flex}.ddpanel a{white-space:nowrap}
 .desklist{list-style:none;padding:0;margin:0 0 24px}.desklist li{padding:8px 0;border-bottom:1px solid var(--rule)}.desklist a{font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.12em;margin-right:10px}.deskwhat{color:var(--mid)}.deskread{display:block;font-size:14px;color:var(--mid);margin-top:2px}.crumb{margin:0 0 14px}
 .livemenu{position:relative}.livemenu summary{list-style:none;cursor:pointer;font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--mid);padding:6px 0;border-bottom:2px solid transparent}
 .livemenu summary::-webkit-details-marker{display:none}.livemenu summary::after{content:" \25BE"}.livemenu summary:hover,.livemenu summary[aria-current]{color:var(--ink);border-bottom-color:var(--rule)}
