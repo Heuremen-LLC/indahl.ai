@@ -17,3 +17,7 @@ Our jobs are not a random sample of jobs: they come from a few runs, mostly shor
 
 ## Note (29 Oct, from the internal audit)
 This plan did not state its unit and what it does not claim in one place. Stated now, with no change to any rule, read or outcome. Unit: one hourly reading of one processor's pending count, and one finished job of ours for the wait. Not claimed: a predicted wait, that our jobs stand for anyone else's, or anything about IBM's scheduling policy.
+
+
+## Note 2 (29 Oct, from the internal audit)
+The analysis rule in Note 1 bootstraps over jobs. Our jobs come from a few runs and many share one earlier reading, so they are not independent. The first analysis will also be read with runs as the unit and the number of runs printed beside the interval. The rule's outcome is read on the run-level interval where the two differ.

@@ -5,4 +5,4 @@ Live page: https://indahl.ai/cadence
 
 Everything here is public. Each plan (PLAN.md) was committed before the data it describes. A history.jsonl, where present, is one row of the published numbers each time they changed, so the commit history is the trend. Terms: free to read, run and cite with attribution, no use as training data (LICENSE.txt at the repository root, https://indahl.ai/terms).
 
-Files: `PLAN.md`, `cadence_tick.py`, `heuremen_kit.py`, `history.jsonl`
+Files: `PLAN.md`, `cadence_tick.py`, `heuremen_kit.py`, `history.jsonl`, `summary_cadence.json`
