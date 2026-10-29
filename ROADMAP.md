@@ -30,7 +30,7 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [ ] **Hospital price-transparency files** (HPT, plan committed, first read in progress). The cms-hpt.txt at the root of each hospital website, the file it links, and the template header.
 - [x] **Scheduled flight time against flown time** ([AIRLINE live](https://indahl.ai/airline), [plan and two addenda](code/airline/PLAN.md)). Bureau of Transportation Statistics record, January to August of 2019, 2025 and 2026, routes as the independent units, every ABOVE hand-checked on its largest routes.
 - [ ] **ATLAS interconnection queues**. Large-load interconnection queues against announced data center MW, onsite generation permits, a live grid layer.
-- [ ] **ISP broadband labels against M-Lab**. Waiting on a Google sign-in for BigQuery.
+- [ ] **ISP broadband labels against M-Lab**. Access to the M-Lab tables works. A label states a typical speed for one plan, and M-Lab measures every plan of a network together, so a fair test needs single-plan providers or a plan mix we do not have. The plan will name which providers qualify before any measurement is read.
 - [ ] **Air quality sensors against EPA monitors**. Waiting on a free sensor-network API key.
 
 Built and live: see `code/README.md` for every page and its folder.
