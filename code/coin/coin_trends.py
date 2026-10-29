@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """coin_trends.py: Ravencoin pool shares over time and batch payouts, exactly as PLAN_TRENDS.md (+Addenda 1 and 2). Reads data/rvn_*.jsonl and data/tx_rows.jsonl, writes summary_trends.json.
 The linkage reading is CANNOT_TELL because the Bitcoin positive control (AntPool and BTC.com) held no batch payouts: the known-good gate of Addendum 2 cannot pass."""
-import json, glob, math, re, statistics as S, collections as C, binascii, datetime as D
+import json, glob, math, os, re, subprocess, statistics as S, collections as C, binascii, datetime as D
 rows = {}
 for f in sorted(glob.glob('data/rvn_*.jsonl')):
     for l in open(f):
@@ -82,3 +82,8 @@ if os.path.isdir(pub):
              'Linkage test: %s. %s.' % (res['linkage']['outcome'], res['linkage']['why']), '',
              'Plan, committed before any series: PLAN_TRENDS.md. Scripts: rvn_history.py, rvn_txs.py, coin_trends.py, btc_control.py. Output: summary_trends.json.']
     open(os.path.join(pub, 'PROGRESS.md'), 'w').write('\n'.join(lines) + '\n')
+
+env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
+pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'coin_trends', '--path', os.path.abspath('summary_trends.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'],
+                    cwd=os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'), env=env, capture_output=True, text=True)
+print('coin_trends', 'published' if pr.returncode == 0 else 'publish FAILED')

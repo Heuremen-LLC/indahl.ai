@@ -26,3 +26,11 @@ Which side is right. That a repository's license file governs files in a package
 
 ## Addendum 1 (29 Oct, after the first gate run, before any project was compared)
 The first live gate failed on numpy. The plan named numpy as a control that must read AGREE, but its metadata lists several licenses (BSD-3-Clause, 0BSD, MIT, Zlib, CC0-1.0) and GitHub reports NOASSERTION for its repository, so under the rules numpy correctly reads NOT_COMPARABLE. The control was wrongly chosen, the rules are unchanged. The live controls are now requests (Apache-2.0 on both sides) and flask (BSD-3-Clause on both sides), both read by hand on 29 Oct 2026 before this addendum was committed.
+
+## Addendum 2 (29 Oct, after the first read and the hand check, before anything was shown)
+The first read: 1,000 projects, 692 AGREE, 7 DISAGREE, 301 NOT_COMPARABLE (186 repository license not detected, 100 no GitHub repository in the metadata, 15 no stated license). Disagreement share 7 of 699 compared, 1.0 per cent, Wilson 0.5 to 2.1 per cent, CONSISTENT. The hand check opened both sides of every DISAGREE row. Result, with no change to the mapping or any rule:
+- pathspec: the repository holds two license files (MIT and MPL-2.0) and GitHub reports MIT; the package states MPL-2.0.
+- requests-oauthlib and redshift-connector: the PyPI license field matches the repository (ISC; Apache License 2.0) and the License classifier contradicts it (BSD License). The plan's order uses the classifier when there is no expression, so these read DISAGREE; the metadata disagrees with itself.
+- opencv-python and opencv-python-headless: the repository license is MIT (the packaging scripts); the wheels bundle OpenCV, which is Apache-2.0, and the package states Apache.
+- pydeck and pandas-gbq: the package lives in a subfolder of a larger repository (deck.gl; google-cloud-python), whose root license differs from the package's.
+Each reason is shown beside its row.
