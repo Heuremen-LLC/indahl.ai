@@ -22,7 +22,7 @@ The first table held only the tests that report a share with an outcome. Every o
 1. The row list gains FEDSEP (the pooled share outside the stated range, this year and next year) and keeps REVISE and HPT.
 2. A second table, Running measurements, lists every other live page with what it measures, the reading as its own feed gives it, and its state: ARXIVDRIFT, CADENCE, CADA, FORECAST, LAUNCH, CHANGE, SEAT, and the four QIA feeds (audit, T1 and T2 runs, queue, stability). A reading is copied from the feed as text and no outcome is added to it. A page whose feed has no outcome rule yet is shown as running, with what it is waiting for.
 3. The tally of pages that report many separate items gains CADENCE, whose feed gives a count of series consistent, below and cannot tell for each portal; the counts are summed.
-IRIS, SAD, ATLAS and OY are pages of static tables with no live feed, and they are linked under the tables. The table still lists a test only when its page ships.
+IRIS, MODEL, ATLAS and OY are pages of static tables with no live feed, and they are linked under the tables. The table still lists a test only when its page ships.
 
 ## Addendum 3 (29 Oct, same day, on the owner's note that the page should summarise every division and stack across them)
 The page becomes three layers, with no change to any rule or reading.
