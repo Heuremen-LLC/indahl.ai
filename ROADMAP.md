@@ -20,6 +20,7 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [x] **Every test side by side** ([STACK live](https://indahl.ai/stack), [plan and addendum](code/stack/PLAN.md)). The headline test of every live page in one table, ordered by outcome, no reading of its own.
 - [x] **An outside seat reads our own pages** ([SEAT live](https://indahl.ai/seat), [plan](https://github.com/Heuremen-LLC/nodes/blob/main/drift/PLAN.md)). A GitHub runner compares every page with the repository and every feed with its limit.
 - [x] **Install commands against resolution** ([PKGINSTALL live](https://indahl.ai/pkginstall), [plan, two addenda and a note](code/pkginstall/PLAN.md): a placeholder the reader missed and commands that did not install the project, both caught by hand before anything was shown).
+- [x] **Our data as SQL tables** ([dataset heuremen-llc-data.heuremen_public](code/bigquery/README.md), [plan and addendum](code/bigquery/PLAN.md)). Every trend history, the hash chain and the STACK rows in BigQuery, readable by any signed-in Google account, row counts read back after each load.
 - [ ] **Queue against wait, the analysis** ([rule committed](code/qia-queue/PLAN.md), Note 1). Needs 7 days of hourly readings.
 - [ ] **A second outside seat on a different network**. One runner is one seat.
 - [ ] **Open weight model support windows**. CHANGE covers vendor deprecation tables only.
