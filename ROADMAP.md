@@ -16,14 +16,14 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [x] **Stopped trials in the last two years** ([TRIALS](https://indahl.ai/trials), [plan addendum 3](code/trials/PLAN.md)).
 - [x] **Hash-chained archive of our records** ([plan](code/archive/PLAN.md)). OpenTimestamps proofs, Software Heritage, Internet Archive, and Zenodo copies of the repositories.
 - [x] **An outside seat reads our own pages** ([SEAT live](https://indahl.ai/seat), [plan](https://github.com/Heuremen-LLC/nodes/blob/main/drift/PLAN.md)). A GitHub runner compares every page with the repository and every feed with its limit.
-- [ ] **Install commands against resolution** (PKGINSTALL, plan committed, read in progress). The first pip install line in each top PyPI project's description against pip's dry-run resolution.
+- [x] **Install commands against resolution** ([PKGINSTALL live](https://indahl.ai/pkginstall), [plan, two addenda and a note](code/pkginstall/PLAN.md): a placeholder the reader missed and commands that did not install the project, both caught by hand before anything was shown).
 - [ ] **Queue against wait, the analysis** ([rule committed](code/qia-queue/PLAN.md), Note 1). Needs 7 days of hourly readings.
 - [ ] **A second outside seat on a different network**. One runner is one seat.
 - [ ] **Open weight model support windows**. CHANGE covers vendor deprecation tables only.
 - [ ] **New Zenodo versions every month** (script written and tested; first scheduled run after the next release).
 - [ ] **Amazon Braket deviations table**. Parked: needs a funded account.
 - [ ] **Boston T1 and T2**. Job queued at IBM since the 29th, waits behind hundreds of pending jobs.
-- [ ] **Hospital price-transparency files**. The required machine-readable file, stated at a URL, against whether it resolves and carries the required fields.
+- [ ] **Hospital price-transparency files** (HPT, plan committed, first read in progress). The cms-hpt.txt at the root of each hospital website, the file it links, and the template header.
 - [ ] **Airline on-time claims against BTS**. Stated on-time performance against the Bureau of Transportation Statistics record.
 - [ ] **ATLAS interconnection queues**. Large-load interconnection queues against announced data center MW, onsite generation permits, a live grid layer.
 - [ ] **ISP broadband labels against M-Lab**. Waiting on a Google sign-in for BigQuery.
