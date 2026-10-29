@@ -10,3 +10,27 @@ Scripts behind the tables on indahl.ai. Free to read, run and cite with attribut
 - `*/history.jsonl` in each live corner's folder (and `mirror/audit_history.jsonl`, `mirror/ibm_history.jsonl`) is one row of that corner's published numbers every few hours, added only when something changed. Each commit is a point on the trend.
 
 Each plan file is committed before the run it describes. Run any script with `python3 -I` from its own folder.
+
+<!-- live-index -->
+## Live pages
+
+- [time/](time/): TIME: public time servers, stated against delivered - https://indahl.ai/time
+- [coin/](coin/): COIN: Ravencoin against its own whitepaper, with trends - https://indahl.ai/coin
+- [cada/](cada/): CADA: public DNS filters against fresh abuse reports - https://indahl.ai/cada
+- [uptime/](uptime/): UPTIME: vendor status pages against independent probes - https://indahl.ai/uptime
+- [forecast/](forecast/): FORECAST: stated chance of precipitation against what happened - https://indahl.ai/forecast
+- [cadence/](cadence/): CADENCE: stated update schedules against delivered - https://indahl.ai/cadence
+- [trials/](trials/): TRIALS: ClinicalTrials.gov results due against results posted - https://indahl.ai/trials
+- [launch/](launch/): LAUNCH: stated launch time against the time it flew - https://indahl.ai/launch
+- [linkrot/](linkrot/): LINKROT: stated code links against live - https://indahl.ai/linkrot
+- [mirror/](mirror/): QIA: IBM published calibration, mirrored, audited and tracked for stability - https://indahl.ai/qia
+- [t1t2-check/](t1t2-check/): QIA: the T1 and T2 joint-measurement check - https://indahl.ai/qia
+- [iris/](iris/): IRIS: language-model evaluations, Faults and Guards bench, lab queue - https://indahl.ai/iris
+- [sad/](sad/): SAD: vendor claims against published results - https://indahl.ai/sad
+- [atlas/](atlas/): ATLAS: built infrastructure, stated against delivered - https://indahl.ai/atlas
+- [api/](api/): API and MCP server - https://indahl.ai/api
+- [kit/](kit/): The shared instrument pieces every corner uses - https://indahl.ai/
+- [replies/](replies/): Right of reply: posted responses beside the rows they answer - https://indahl.ai/
+- [progress/](progress/): The trend-row rider that writes history.jsonl in each folder - https://indahl.ai/
+- [faultsguards](https://github.com/Heuremen-LLC/faultsguards): the Faults and Guards as a Python package. Live: https://indahl.ai/iris
+<!-- /live-index -->
