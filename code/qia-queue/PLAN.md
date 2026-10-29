@@ -21,3 +21,6 @@ This plan did not state its unit and what it does not claim in one place. Stated
 
 ## Note 2 (29 Oct, from the internal audit)
 The analysis rule in Note 1 bootstraps over jobs. Our jobs come from a few runs and many share one earlier reading, so they are not independent. The first analysis will also be read with runs as the unit and the number of runs printed beside the interval. The rule's outcome is read on the run-level interval where the two differ.
+
+## Addendum (29 Oct)
+The reading cadence was every 9 ticks of the tick bus, about 52 minutes, to match the hourly ticker asked for on 28 Oct. It is now every 2 ticks, about 12 minutes, so a rise or fall in a chip's queue shows within minutes. The call is one request per processor and costs no quantum seconds. Nothing else changes. The queue against wait analysis (Note 1) uses the same rule and reads the denser series the same way.
