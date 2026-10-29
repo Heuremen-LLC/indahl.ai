@@ -13,7 +13,7 @@
       var a = Math.floor(Math.random() * rows.length), b = a; while (b === a) b = Math.floor(Math.random() * rows.length);
       var s = document.createElement('section'); s.className = 'hl pick';
       var opts = rows.map(function (r, i) { return '<option value="' + i + '">' + esc(label(r).slice(0, 90)) + '</option>'; }).join('');
-      s.innerHTML = '<div class="hl-big" id="pk-big"></div><p class="hl-line" id="pk-line"></p><div class="pk-ctl"><select id="pk-a" aria-label="First test">' + opts + '</select><span class="pk-vs">against</span><select id="pk-b" aria-label="Second test">' + opts + '</select><button type="button" class="btn ghost" id="pk-go">Shuffle</button></div>';
+      s.innerHTML = '<div class="hl-big" id="pk-big"></div><p class="hl-line" id="pk-line"></p><div class="pk-ctl"><select id="pk-a" aria-label="First test">' + opts + '</select><span class="pk-vs">against</span><select id="pk-b" aria-label="Second test">' + opts + '</select><button type="button" class="btn ghost" id="pk-go">Shuffle</button></div><div id="pk-graph"></div>';
       var old = document.querySelector('.hl'); if (old) old.parentNode.removeChild(old);
       main.insertBefore(s, main.firstChild);
       var sa = s.querySelector('#pk-a'), sb = s.querySelector('#pk-b');
@@ -21,7 +21,7 @@
         var x = rows[+sa.value], y = rows[+sb.value]; if (x.share < y.share) { var t = x; x = y; y = t; } var diff = x.share - y.share;
         var lo = diff - Math.sqrt(Math.pow(x.share - x.share_lo, 2) + Math.pow(y.share_hi - y.share, 2)), hi = diff + Math.sqrt(Math.pow(x.share_hi - x.share, 2) + Math.pow(y.share - y.share_lo, 2));
         var big = (diff === 0 ? '0' : pts(diff)) + ' points';
-        s.querySelector('#pk-big').textContent = big;
+        s.querySelector('#pk-big').textContent = big; window.__stackPicked = [x, y]; document.dispatchEvent(new CustomEvent('stackpick', { detail: { rows: [x, y] } }));
         s.querySelector('#pk-line').textContent = x.page + ' ' + pct(x.share) + ' (' + x.n + ' of ' + x.of + ', ' + x.outcome.toLowerCase().replace(/_/g, ' ') + ') against ' + y.page + ' ' + pct(y.share) + ' (' + y.n + ' of ' + y.of + ', ' + y.outcome.toLowerCase().replace(/_/g, ' ') + '). ' + x.page + ' is higher. Difference ' + (lo * 100).toFixed(1) + ' to ' + (hi * 100).toFixed(1) + ' points, 95% interval.';
       }
       sa.value = a; sb.value = b; sa.onchange = sb.onchange = show;

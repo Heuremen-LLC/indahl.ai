@@ -41,14 +41,10 @@
     box.appendChild(el('p', 'Each line is the share of items that failed its own test, with its 95% interval. Colour is the outcome that page gave: orange above, blue below, green consistent, grey cannot tell. Two lines are not measures of the same thing. They share an axis so they can be read together.', 'bench-note'));
     var AXMAX = Math.max.apply(null, plotted.map(function (r) { return r.share_hi || r.share; })); AXMAX = Math.max(0.05, Math.ceil(AXMAX * 20) / 20);
     box.appendChild(forest(plotted, 'Every test on one axis', AXMAX));
-    // 3 random stack
-    box.appendChild(el('h3', 'Stack three at random'));
-    var out = el('div'), btn = el('button', 'Stack three'); btn.type = 'button'; btn.className = 'btn';
-    function pick() {
-      var pool = plotted.slice(), three = []; while (three.length < 3 && pool.length) three.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
-      out.textContent = ''; out.appendChild(forest(three, 'Three tests picked at random', AXMAX)); out.appendChild(el('p', three.map(function (r) { return r.page + ': ' + r.test + ', ' + r.n + ' of ' + r.of + ' (' + pc(r.share) + ')'; }).join('. ') + '.', 'bench-note'));
-    }
-    btn.addEventListener('click', pick); box.appendChild(btn); box.appendChild(out); pick();
+    // 3 the pick at the top of the page: draw the two chosen tests on the same axis
+    function drawPick(rows) { var g = document.getElementById('pk-graph'); if (!g) return; g.textContent = ''; g.appendChild(forest(rows, 'The two tests picked', AXMAX)); }
+    document.addEventListener('stackpick', function (e) { drawPick(e.detail.rows); });
+    if (window.__stackPicked) drawPick(window.__stackPicked);
     // 4 themed stacks
     box.appendChild(el('h3', 'Stacked by the question they ask'));
     Object.keys(d.stacks || {}).sort().forEach(function (g) {
