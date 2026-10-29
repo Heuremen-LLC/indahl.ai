@@ -28,6 +28,8 @@ SPEC = [('SUPPORT', 'support', 'Supported cycles that had stopped releasing', ['
         ('TRIALS', 'trials', 'Results due against results posted: records with no results', ['all'], 'n', 'no_results', 'share_no_results', 'lo', 'hi', None),
         ('TRIALS', 'trials', 'Stopped records with no reason given', ['cancelled', 'tests', 'Stopped records with no reason given'], 'of', 'n', 'share', 'share_lo', 'share_hi', 'outcome'),
         ('TRIALS', 'trials', 'Withdrawn records that list participants enrolled', ['cancelled', 'tests', 'Withdrawn records that list participants enrolled'], 'of', 'n', 'share', 'share_lo', 'share_hi', 'outcome')]
+SPEC.append(('REVISE', 'revise', 'Payroll: first estimate moved by more than the stated margin by the third release', ['counts', 'Third release against first'], 'months', 'exceed', 'share', 'share_lo', 'share_hi', 'outcome'))
+SPEC.append(('REVISE', 'revise', 'Payroll: first estimate moved by more than the stated margin by the benchmarked value', ['counts', 'Most recent, after the annual benchmark, against first'], 'months', 'exceed', 'share', 'share_lo', 'share_hi', 'outcome'))
 for k, name in (('1 A cms-hpt.txt at the root of the domain', 'Hospital website: a cms-hpt.txt at the root'), ('2 The file it links resolves to data', 'Hospital price file: the linked file resolves to data'), ('3 The file starts with the template header', 'Hospital price file: starts with the template header')):
     SPEC.append(('HPT', 'hpt', name, ['comparison', k], 'of', 'n', 'share', 'share_lo', 'share_hi', 'outcome'))
 rows = []; cache = {}
