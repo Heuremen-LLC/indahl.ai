@@ -20,3 +20,19 @@ A fair world must read usable. A world with only a readout asymmetry must read u
 
 ## Not claimed
 That the bits are unpredictable beyond what the raw bits show. That the job came from the processor, which only IBM can confirm from its own records. That a hash removes correlations.
+
+## Addendum 1 (29 Oct, from the /q pass, before any run)
+The first text above is superseded where this says so. Seven changes, none after any data.
+1. **The prediction uses the Hadamard circuit's own context.** Reading all qubits at once, a qubit's readout error depends on what its neighbours hold. The no-gate and X circuits put every neighbour in 0 or in 1, which is not the Hadamard circuit's context. The run adds 32 circuits that prepare random 0 and 1 patterns on all qubits (the pattern seed is 17, the patterns are stored with the result), 128 shots each. P(1 given 0) and P(0 given 1) for the prediction are read from these. The no-gate and X circuits stay, for the comparison with IBM in change 2.
+2. **The IBM comparison is built.** The first text promised it and the code did not do it. The run reads the processor's published prob_meas1_prep0 and prob_meas0_prep1 before the job and again after it. If the record's stamp is the same both times it is the record the job ran under, and the result gives, for each of the two figures, the share of qubits whose stated value lies inside our 95 percent interval from the no-gate or X circuit and the median of delivered over stated. If the stamp changed the comparison reads CANNOT_TELL. It is a reading, not a gate.
+3. **The qubit is the unit.** The interval on the mean share of ones is the mean over qubits with its standard error across qubits, not a pooled shot count. The pooled interval was far too narrow.
+4. **The floor is measured.** The self-test draws 200 fair worlds and the share flagged not usable must be at most 5 percent. It was 0 percent.
+5. **A job that does not return is NOTHING_RETURNED** and writes no qbits entry. CANNOT_TELL also covers fewer than 100 shots.
+6. **No double run.** The job carries the tag tape-qbits-20261029. The run refuses if a job with that tag already exists on the processor, so a second run cannot happen by a rerun of the command.
+7. **The qubit order is tested.** An X on qubits 2 and 9 only, through Qiskit's own local sampler, must unpack to a 1 at indexes 2 and 9 and nowhere else. It does.
+Cost: the job is now 10,240 shots, an estimate of 4.1 QPU seconds. The limits are unchanged.
+
+KNOWN-GOOD (replaces the line above): the no-gate and X circuits give the readout where the answer is known, P(1 given 0) near 0 and P(1 given 1) near 1, and the result states how they compare with IBM's published figures under change 2. The Hadamard reading must match the prediction from the random-context circuits on at least 80 percent of qubits or the processor reads not usable.
+
+## Note 1 (29 Oct, after the first run, a reporting field only)
+job.usage() returned 0 for the job. The measured seconds are in the job record: qpu_charge_time_seconds 5 and 2.65 seconds of circuit execution, against an estimate of 4.1. The result file keeps the whole job_metrics block. No rule above changes.

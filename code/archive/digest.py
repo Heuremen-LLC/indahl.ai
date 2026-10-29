@@ -12,7 +12,7 @@ def sha(p):
     with open(p, 'rb') as f:
         for b in iter(lambda: f.read(1 << 20), b''): h.update(b)
     return h.hexdigest()
-PATTERNS = ['*_index/PLAN*.md', '*_index/data/history*.jsonl', '*_index/data/changes.jsonl', '*_index/data/rows.json', '*_index/data/cancelled.json', '*_index/data/hand_checked.json', '*_index/data/repos.json', '*_index/data/projects.json', '*_index/data/domains.json',
+PATTERNS = ['tape_index/tape.jsonl', 'tape_index/leaves/*.json', '*_index/PLAN*.md', '*_index/data/history*.jsonl', '*_index/data/changes.jsonl', '*_index/data/rows.json', '*_index/data/cancelled.json', '*_index/data/hand_checked.json', '*_index/data/repos.json', '*_index/data/projects.json', '*_index/data/domains.json',
             '*_index/summary*.json', 'qia_mirror/AUDIT_PLAN.md', 'qia_mirror/STABILITY_PLAN.md', 'qia_mirror/changes.jsonl', 'qia_mirror/polls.jsonl', 'qia_mirror/summary.json', 'qia_mirror/audit.json', 'qia_mirror/records/*', 'qia_queue/PLAN.md', 'qia_queue/data/*.jsonl',
             't1t2_check/PLAN.md', 't1t2_check/runs/*.json', 'coin_index/PROGRESS.md', 'coin_index/summary_trends.json', 'trials_index/PLAN.md', 'trials_index/data/summary.json', 'archive/PLAN.md', 'replies/PLAN.md', 'nodes_repo/drift/PLAN.md', 'nodes_repo/drift/targets.json', 'nodes_repo/data/drift/history.jsonl', 'nodes_repo/data/linkrot/results.jsonl',
             'archive/pre-hermes/*', 'ledger/ledger.jsonl', 'qia_leads/THE_BOOK.md']

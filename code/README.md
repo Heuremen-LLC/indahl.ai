@@ -49,6 +49,7 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [airq/](airq/): AIRQ: Air sensors against the EPA's own targets, live. - https://indahl.ai/airq
 - [campus/](campus/): CAMPUS: The documents behind the OY page, kept over time, live. - https://indahl.ai/campus
 - [hosts/](hosts/): HOSTS: Open-weight models, their hosts, quantization and uptime, live. - https://indahl.ai/hosts
+- [tape/](tape/): TAPE: A public hash chain of every page and live feed, with a beacon value in each run. - https://indahl.ai/tape
 - [api/](api/): API and MCP server - https://indahl.ai/api
 - [kit/](kit/): The shared instrument pieces every corner uses - https://indahl.ai/
 - [replies/](replies/): Right of reply: posted responses beside the rows they answer - https://indahl.ai/
