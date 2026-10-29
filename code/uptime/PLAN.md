@@ -18,3 +18,9 @@ BELOW: disagreement rounds exceed the floor by more than two square roots of the
 
 ## Not claimed
 One endpoint is not a whole service. A disagreement is a disagreement between the page and the endpoint we asked, on those seats, in that round. No ranking. Each vendor gets a vendor-response path.
+
+## Addendum 1 (29 Oct, from the internal audit, before any vendor read BELOW)
+1. Seats. A disagreement needed two of three seats to fail, but the Mac and the Pi sit on the same house network, so one home-network fault counted as two seats and as a vendor disagreement. The Mac and the Pi are now one seat. A disagreement needs the home seat and the GitHub runner seat to fail in the same round with the page saying none.
+2. Floor. The control floor is 0 misses in 170 rounds. That is not a zero rate. The floor used for the expected count is the upper end of the Wilson 95 percent interval of the control rate (0.022 at 170 rounds), so the first disagreement round cannot make a vendor BELOW on its own.
+3. Episodes. Consecutive disagreement rounds are one episode, and BELOW now needs at least two episodes as well as the count over the expected count plus two square roots.
+4. Stated and not fixed. The control floor comes from example.com and 1.1.1.1, the most reliable targets, while vendors are probed at their own endpoints, so the floor may be lower than the floor of a vendor-type endpoint. A timeout at our seat or a failed connect is scored as a vendor failure with no terminating reason recorded. CONSISTENT at 300 rounds does not say how small an outage rate 300 rounds could have seen.

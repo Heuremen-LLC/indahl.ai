@@ -1,0 +1,491 @@
+{
+ "updated": "28 Oct 22:33",
+ "seat": "github-azure",
+ "reference": {
+  "source": "",
+  "stratum": "",
+  "system_time": "",
+  "rms": "",
+  "root_dispersion": ""
+ },
+ "seat_part_ms": 0.56,
+ "totals": {
+  "CONSISTENT": 3,
+  "CANNOT_TELL": 31,
+  "NOTHING_RETURNED": 4
+ },
+ "rounds": 1,
+ "servers": [
+  {
+   "server": "0.pool.ntp.org",
+   "outcome": "CONSISTENT",
+   "rounds": 1,
+   "offset_ms": -4.51,
+   "half_delay_ms": 26.38,
+   "stated_bound_ms": 68.06,
+   "stratum": 3,
+   "refid": "158.51.99.19",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "africa.pool.ntp.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -0.04,
+   "half_delay_ms": 121.89,
+   "stated_bound_ms": 0.12,
+   "stratum": 1,
+   "refid": "GPSs",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "asia.pool.ntp.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.2,
+   "half_delay_ms": 81.92,
+   "stated_bound_ms": 2.83,
+   "stratum": 2,
+   "refid": "216.239.35.4",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "europe.pool.ntp.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.19,
+   "half_delay_ms": 52.65,
+   "stated_bound_ms": 0.02,
+   "stratum": 1,
+   "refid": "TMNL",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "gbg1.ntp.netnod.se",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -1.23,
+   "half_delay_ms": 62.13,
+   "stated_bound_ms": 0.03,
+   "stratum": 1,
+   "refid": "PPS",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "north-america.pool.ntp.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -0.71,
+   "half_delay_ms": 17.67,
+   "stated_bound_ms": 1.14,
+   "stratum": 2,
+   "refid": "206.126.112.212",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp-p1.obspm.fr",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 1.04,
+   "half_delay_ms": 54.64,
+   "stated_bound_ms": 0.18,
+   "stratum": 1,
+   "refid": "MRS",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp.inrim.it",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 2.01,
+   "half_delay_ms": 60.66,
+   "stated_bound_ms": 22.64,
+   "stratum": 2,
+   "refid": "193.204.114.231",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp.metas.ch",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.58,
+   "half_delay_ms": 54.73,
+   "stated_bound_ms": 0.14,
+   "stratum": 1,
+   "refid": "PZF",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp.nic.cz",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -0.93,
+   "half_delay_ms": 62.14,
+   "stated_bound_ms": 0.21,
+   "stratum": 1,
+   "refid": "GPS",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp.nict.jp",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.46,
+   "half_delay_ms": 66.67,
+   "stated_bound_ms": 0.0,
+   "stratum": 1,
+   "refid": "NICT",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp.se",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -2.22,
+   "half_delay_ms": 60.95,
+   "stated_bound_ms": 0.03,
+   "stratum": 1,
+   "refid": "PPS",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp.time.nl",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.63,
+   "half_delay_ms": 53.61,
+   "stated_bound_ms": 0.18,
+   "stratum": 1,
+   "refid": "TMNL",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp.ubuntu.com",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 1.11,
+   "half_delay_ms": 50.21,
+   "stated_bound_ms": 3.61,
+   "stratum": 2,
+   "refid": "29.88.99.4",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ntp1.npl.co.uk",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -1.1,
+   "half_delay_ms": 52.54,
+   "stated_bound_ms": 0.02,
+   "stratum": 1,
+   "refid": "MBGh",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "nts.netnod.se",
+   "outcome": "NOTHING_RETURNED",
+   "counts": {
+    "NOTHING_RETURNED": 8
+   }
+  },
+  {
+   "server": "oceania.pool.ntp.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -0.45,
+   "half_delay_ms": 87.46,
+   "stated_bound_ms": 0.02,
+   "stratum": 1,
+   "refid": "PPS",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "pool.ntp.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 2.05,
+   "half_delay_ms": 15.7,
+   "stated_bound_ms": 10.42,
+   "stratum": 4,
+   "refid": "152.53.167.67",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ptbtime1.ptb.de",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -2.65,
+   "half_delay_ms": 58.03,
+   "stated_bound_ms": 0.07,
+   "stratum": 1,
+   "refid": "PTB",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "ptbtime2.ptb.de",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -1.87,
+   "half_delay_ms": 57.47,
+   "stated_bound_ms": 0.07,
+   "stratum": 1,
+   "refid": "PTB",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "south-america.pool.ntp.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 2.3,
+   "half_delay_ms": 70.85,
+   "stated_bound_ms": 1.17,
+   "stratum": 1,
+   "refid": "GPS",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "tick.usno.navy.mil",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 6.81,
+   "half_delay_ms": 21.61,
+   "stated_bound_ms": 0.07,
+   "stratum": 1,
+   "refid": "PHC1",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time-a-g.nist.gov",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 2.58,
+   "half_delay_ms": 19.45,
+   "stated_bound_ms": 0.61,
+   "stratum": 1,
+   "refid": "NIST",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time-b-g.nist.gov",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 2.23,
+   "half_delay_ms": 19.08,
+   "stated_bound_ms": 0.61,
+   "stratum": 1,
+   "refid": "NIST",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.apple.com",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 1.32,
+   "half_delay_ms": 15.46,
+   "stated_bound_ms": 0.12,
+   "stratum": 1,
+   "refid": "GPSs",
+   "counts": {
+    "COMMITTED": 7,
+    "NOTHING_RETURNED": 1
+   }
+  },
+  {
+   "server": "time.aws.com",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 1.11,
+   "half_delay_ms": 12.17,
+   "stated_bound_ms": 0.39,
+   "stratum": 4,
+   "refid": "169.254.169.123",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.cloudflare.com",
+   "outcome": "CONSISTENT",
+   "rounds": 1,
+   "offset_ms": 0.69,
+   "half_delay_ms": 3.03,
+   "stated_bound_ms": 10.6,
+   "stratum": 3,
+   "refid": "10.72.8.151",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.facebook.com",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.28,
+   "half_delay_ms": 12.7,
+   "stated_bound_ms": 0.02,
+   "stratum": 1,
+   "refid": "YYZ1",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.google.com",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.55,
+   "half_delay_ms": 9.78,
+   "stated_bound_ms": 0.11,
+   "stratum": 1,
+   "refid": "GOOG",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.kriss.re.kr",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.62,
+   "half_delay_ms": 79.48,
+   "stated_bound_ms": 5.46,
+   "stratum": 3,
+   "refid": "10.248.10.100",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.nist.gov",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 1.62,
+   "half_delay_ms": 11.31,
+   "stated_bound_ms": 0.61,
+   "stratum": 1,
+   "refid": "NIST",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.nplindia.org",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": -3.5,
+   "half_delay_ms": 117.72,
+   "stated_bound_ms": 1.04,
+   "stratum": 1,
+   "refid": "PPS",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time.ntp.se",
+   "outcome": "NOTHING_RETURNED",
+   "counts": {
+    "NOTHING_RETURNED": 1
+   }
+  },
+  {
+   "server": "time.sidn.nl",
+   "outcome": "NOTHING_RETURNED",
+   "counts": {
+    "NOTHING_RETURNED": 1
+   }
+  },
+  {
+   "server": "time.windows.com",
+   "outcome": "CONSISTENT",
+   "rounds": 1,
+   "offset_ms": -0.69,
+   "half_delay_ms": 0.42,
+   "stated_bound_ms": 10.15,
+   "stratum": 4,
+   "refid": "86.77.84.80",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "time1.google.com",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 0.56,
+   "half_delay_ms": 7.34,
+   "stated_bound_ms": 0.09,
+   "stratum": 1,
+   "refid": "GOOG",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "tock.usno.navy.mil",
+   "outcome": "CANNOT_TELL",
+   "rounds": 1,
+   "offset_ms": 6.82,
+   "half_delay_ms": 21.46,
+   "stated_bound_ms": 0.07,
+   "stratum": 1,
+   "refid": "PHC1",
+   "counts": {
+    "COMMITTED": 8
+   }
+  },
+  {
+   "server": "utcnist.colorado.edu",
+   "outcome": "NOTHING_RETURNED",
+   "counts": {
+    "NOTHING_RETURNED": 8
+   }
+  }
+ ]
+}

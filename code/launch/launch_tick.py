@@ -49,7 +49,8 @@ def cell(lbl, ll, rows):
     if not n: return None
     sl = sorted(abs(x) for _, x in rows); med = sl[n // 2] if n % 2 else (sl[n // 2 - 1] + sl[n // 2]) / 2; k = sum(1 for _, x in rows if abs(x) > 24); a, b = wil(k, n)
     oc = 'CANNOT_TELL' if (n < 30 or ll != '7 days') else ('ABOVE' if a > 0.25 else ('CONSISTENT' if b < 0.10 else 'CANNOT_TELL'))
-    return dict(who=lbl, lead=ll, n=n, median_abs_slip_h=round(med, 1), over_24h=k, share=round(k / n, 3), lo=round(a, 3), hi=round(b, 3), outcome=oc)
+    sg = sorted(x for _, x in rows); msg = sg[n // 2] if n % 2 else (sg[n // 2 - 1] + sg[n // 2]) / 2   # 29 Oct (audit): early and late are shown apart
+    return dict(who=lbl, lead=ll, n=n, median_abs_slip_h=round(med, 1), median_signed_slip_h=round(msg, 1), later_than_24h=sum(1 for _, x in rows if x > 24), earlier_than_24h=sum(1 for _, x in rows if x < -24), over_24h=k, share=round(k / n, 3), lo=round(a, 3), hi=round(b, 3), outcome=oc)
 for L, ll in LEADS:
     c = cell('All providers', ll, scored[L]); cells.append(c) if c else None
     byp = C.defaultdict(list)

@@ -1,0 +1,94 @@
+{
+ "updated": "29 Oct 05:01",
+ "gate": "passed",
+ "models": 500,
+ "datasets": 500,
+ "comparison": {
+  "Models": {
+   "of": 85,
+   "n": 0,
+   "share": 0.0,
+   "share_lo": 0.0,
+   "share_hi": 0.0432,
+   "outcome": "CONSISTENT",
+   "awaiting": 0
+  },
+  "Datasets": {
+   "of": 18,
+   "n": 0,
+   "share": 0.0,
+   "share_lo": 0.0,
+   "share_hi": 0.1759,
+   "outcome": "CANNOT_TELL",
+   "awaiting": 0
+  }
+ },
+ "classes": {
+  "AGREE": {
+   "models": 85,
+   "datasets": 18
+  },
+  "DISAGREE": {
+   "models": 0,
+   "datasets": 0
+  },
+  "NOT_COMPARABLE": {
+   "models": 415,
+   "datasets": 482
+  }
+ },
+ "not_comparable_reasons": {
+  "either side is a custom or named license": {
+   "models": 31,
+   "datasets": 15
+  },
+  "license file not readable": {
+   "models": 0,
+   "datasets": 2
+  },
+  "no license file in the repository root": {
+   "models": 352,
+   "datasets": 295
+  },
+  "no stated license tag": {
+   "models": 32,
+   "datasets": 170
+  }
+ },
+ "stated_without_file": {
+  "Models": {
+   "stated": 468,
+   "no_file": 352,
+   "share": 0.7521,
+   "share_lo": 0.7111,
+   "share_hi": 0.7891
+  },
+  "Datasets": {
+   "stated": 330,
+   "no_file": 295,
+   "share": 0.8939,
+   "share_lo": 0.8561,
+   "share_hi": 0.9227
+  }
+ },
+ "mixed": {
+  "Tag names a standard license, file is a custom or unnamed text": {
+   "models": 1,
+   "datasets": 0
+  },
+  "Tag is other or a custom name, file is a standard license": {
+   "models": 8,
+   "datasets": 1
+  }
+ },
+ "mixed_list": [
+  {
+   "repo": "Qwen/Qwen2.5-VL-7B-Instruct-AWQ",
+   "kind": "model",
+   "tag": "apache-2.0",
+   "file": "LICENSE",
+   "note": "The tag says apache-2.0. The LICENSE file is the Qwen License Agreement, a different license."
+  }
+ ],
+ "disagree_list": []
+}

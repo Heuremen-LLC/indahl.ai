@@ -1,0 +1,34 @@
+{
+ "Anthropic": {
+  "rows": 36,
+  "names": [
+   "Anthropic|claude-1.0",
+   "Anthropic|claude-1.1",
+   "Anthropic|claude-1.2"
+  ]
+ },
+ "OpenAI": {
+  "rows": 113,
+  "names": [
+   "OpenAI|/v1/answers",
+   "OpenAI|/v1/classifications",
+   "OpenAI|/v1/edits"
+  ]
+ },
+ "Google": {
+  "rows": 86,
+  "names": [
+   "Google|antigravity-preview-05-2026",
+   "Google|antigravity-preview-09-2026",
+   "Google|deep-research-max-preview-04-2026"
+  ]
+ },
+ "Cloudflare": {
+  "rows": 46,
+  "names": [
+   "Cloudflare|AMP/SXG API and Rules",
+   "Cloudflare|Access Bookmark applications",
+   "Cloudflare|Access applications: self_hosted_domains"
+  ]
+ }
+}

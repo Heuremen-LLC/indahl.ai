@@ -25,3 +25,12 @@ Pools on one chain are not unrelated: miners move between pools and exchanges pa
 Control: Bitcoin pools, where operator relationships are documented in public. Positive control: AntPool and BTC.com, which Bitmain documents as its own. Negative controls: pairs of pools documented as separate companies (Foundry USA, F2Pool, ViaBTC, Luxor, SpiderPool among them). The same quantities are computed the same way: recipient overlap of payout batches (Jaccard and volume share) and successive-block excess, from the same block scan of the same kind of window.
 Known-good gate: the statistic must flag the positive control and must not flag any negative pair. If it fails either, the Ravencoin linkage reading is CANNOT_TELL and the page says the instrument failed its gate. The ABOVE threshold on Ravencoin is the largest overlap seen among the negative control pairs, not any figure from the Ravencoin set. The Ravencoin internal pair overlaps are still shown as descriptive context, never as the floor.
 Sources: the pool addresses are taken from mempool.space's pool list as published there, with the page and date recorded. If those addresses cannot be read, the control is not built and the reading is CANNOT_TELL.
+
+
+## Note (29 Oct, from the internal audit)
+This plan did not state its unit and what it does not claim in one place. Stated now, with no change to any rule, read or outcome. Unit: a block, and for the share-move test a pool share over a window. Not claimed: anything about price, value or what any holder should do, or who operates an address beyond what the payout linkage shows.
+
+## Note 2 (29 Oct, from the internal audit)
+1. A failed read of a block's coinbase transaction was written as a normal block row with no address, so an apparatus failure counted as a block signed by no one in the share counts. A failed read is now written as a NOTHING_RETURNED row with its height and is not a block.
+2. A round reads at most 60 blocks from the greater of the next unread height and the tip minus 59. Heights skipped beyond that are no longer silent: the unread range and count are printed in the tool output. They are not yet backfilled by this rider.
+3. Stated and not fixed: the same blocks are tested as address series and as coinbase-tag series, so one event can flag two series, and the shares in a bucket are compositional. The normal approximation at 3 standard deviations understates the tail for small shares. The last buckets are partial. The page says what each test is and does not rank any pool.

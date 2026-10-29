@@ -13,3 +13,7 @@ Outcomes per read: COMMITTED (a count came back) or NOTHING_RETURNED.
 Question: does the number of pending jobs IBM reports predict how long our own jobs wait?
 Rule, fixed now. When 7 days of hourly readings are held, each finished job of ours is joined to the last reading of its processor taken before the job was created (a job with no reading in the 90 minutes before it is dropped and the number dropped is reported). For each processor with at least 20 joined jobs, the Spearman rank correlation between pending count and wait, with a bootstrap 95% interval over jobs (4,000 resamples, seed 7). Outcome per processor: ABOVE if the interval sits wholly above 0.3, BELOW if wholly below 0 and the pending counts spanned at least a factor of 3, CONSISTENT if wholly within -0.3 to 0.3, otherwise CANNOT_TELL. Fewer than 20 joined jobs, or pending counts spanning less than a factor of 3: CANNOT_TELL.
 Our jobs are not a random sample of jobs: they come from a few runs, mostly short. The result is a statement about our jobs only. The reading is shown on /qia only after it is computed under this rule, and the page says how many jobs were joined and dropped.
+
+
+## Note (29 Oct, from the internal audit)
+This plan did not state its unit and what it does not claim in one place. Stated now, with no change to any rule, read or outcome. Unit: one hourly reading of one processor's pending count, and one finished job of ours for the wait. Not claimed: a predicted wait, that our jobs stand for anyone else's, or anything about IBM's scheduling policy.

@@ -1,0 +1,91 @@
+{
+ "updated": "29 Oct 02:43",
+ "gate": "passed",
+ "list_date": "2026-10-01 12:41:32",
+ "projects": 1000,
+ "read": 1000,
+ "comparable": 699,
+ "classes": {
+  "AGREE": {
+   "n": 692
+  },
+  "DISAGREE": {
+   "n": 7
+  },
+  "NOT_COMPARABLE": {
+   "n": 301
+  }
+ },
+ "disagree": {
+  "n": 7,
+  "of": 699,
+  "share": 0.01,
+  "share_lo": 0.0049,
+  "share_hi": 0.0205,
+  "outcome": "CONSISTENT",
+  "hand_checked": 7,
+  "awaiting": 0
+ },
+ "disagree_list": [
+  {
+   "project": "pathspec",
+   "stated": "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+   "repo": "cpburnz/python-pathspec",
+   "repo_license": "MIT",
+   "reason": "The repository holds two license files, MIT and MPL-2.0, and GitHub reports MIT. The package states MPL-2.0."
+  },
+  {
+   "project": "requests-oauthlib",
+   "stated": "License :: OSI Approved :: BSD License",
+   "repo": "requests/requests-oauthlib",
+   "repo_license": "ISC",
+   "reason": "The PyPI license field says ISC, matching the repository. The License classifier says BSD."
+  },
+  {
+   "project": "redshift-connector",
+   "stated": "License :: OSI Approved :: BSD License",
+   "repo": "aws/amazon-redshift-python-driver",
+   "repo_license": "Apache-2.0",
+   "reason": "The PyPI license field says Apache License 2.0, matching the repository. The License classifier says BSD."
+  },
+  {
+   "project": "opencv-python-headless",
+   "stated": "License :: OSI Approved :: Apache Software License",
+   "repo": "opencv/opencv-python",
+   "repo_license": "MIT",
+   "reason": "The repository license is MIT (the packaging scripts). The wheels bundle OpenCV, which is Apache-2.0, and the package states Apache."
+  },
+  {
+   "project": "opencv-python",
+   "stated": "License :: OSI Approved :: Apache Software License",
+   "repo": "opencv/opencv-python",
+   "repo_license": "MIT",
+   "reason": "The repository license is MIT (the packaging scripts). The wheels bundle OpenCV, which is Apache-2.0, and the package states Apache."
+  },
+  {
+   "project": "pydeck",
+   "stated": "Apache License 2.0",
+   "repo": "visgl/deck.gl",
+   "repo_license": "MIT",
+   "reason": "The package lives in a subfolder of the deck.gl repository, whose root license is MIT."
+  },
+  {
+   "project": "pandas-gbq",
+   "stated": "License :: OSI Approved :: BSD License",
+   "repo": "googleapis/google-cloud-python",
+   "repo_license": "Apache-2.0",
+   "reason": "The package lives in a subfolder of the google-cloud-python repository, whose root license is Apache-2.0."
+  }
+ ],
+ "not_comparable_reasons": {
+  "repository license not detected": {
+   "n": 186
+  },
+  "no GitHub repository in the metadata": {
+   "n": 100
+  },
+  "no stated license": {
+   "n": 15
+  }
+ }
+}

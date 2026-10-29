@@ -10,11 +10,11 @@ try: fcntl.flock(_l, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: print('hfsize: another run holds the lock'); sys.exit(0)
 UA = {'User-Agent': 'heuremen-hfsize/0.1 (+https://indahl.ai/hfsize)'}; W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door')
 PACKED = re.compile(r'awq|gptq|gguf|bnb|[1-8]bit|int4|int8|fp8|fp4|nvfp4|mxfp4|w4a16|w8a8|quantized', re.I)
-TOK = re.compile(r'(?<![A-Za-z0-9.])(\d+(?:\.\d+)?)([BMKbmk])(?![A-Za-z])')
+TOK = re.compile(r'(?<![A-Za-z0-9.])(\d+(?:\.\d+)?)([BMbm])(?![A-Za-z])')   # 29 Oct (audit): K is not a size unit, a name's 2k is a context length (Addendum 2)
 def stated(name):
     """-> (size or None, reason or None)"""
     if re.search(r'\d+x\d+(?:\.\d+)?[Bb]', name) or re.search(r'(?<![A-Za-z0-9])A\d+(?:\.\d+)?B', name): return None, 'mixture-of-experts name'
-    toks = {float(n) * {'b': 1e9, 'm': 1e6, 'k': 1e3}[u.lower()] for n, u in TOK.findall(name)}
+    toks = {float(n) * {'b': 1e9, 'm': 1e6}[u.lower()] for n, u in TOK.findall(name)}
     if not toks: return None, 'no size in the name'
     if len(toks) > 1: return None, 'more than one size in the name'
     return toks.pop(), None
@@ -38,6 +38,7 @@ gate = bool(gate_pairs and live_ok); print('hfsize: gate', 'passed' if gate else
 now = time.time(); store = json.load(open('data/repos.json')) if os.path.exists('data/repos.json') else {}
 if gate:
     lst = get('https://huggingface.co/api/models?sort=downloads&direction=-1&limit=1000&expand[]=safetensors&expand[]=tags') or []
+    if len(lst) < 500: print('hfsize: list request returned', len(lst), 'models, keeping the last read and publishing nothing'); sys.exit(0)
     store = {}
     for i, m in enumerate(lst):
         rid = m['id']; name = rid.split('/')[-1]; tags = ' '.join(m.get('tags') or []); st = m.get('safetensors') or {}; tot = st.get('total'); psum = sum((st.get('parameters') or {}).values()) or None

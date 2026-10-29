@@ -36,3 +36,11 @@ The expansion is Checked Against Domain Abuse, so the name does not echo Stated 
 
 ## Addendum 3 (28 Oct, no query changed)
 The expansion is Checked Against Domain Alerts. Rules, feeds, resolvers and outcomes are unchanged.
+
+
+## Note (29 Oct, from the internal audit)
+This plan did not state its unit and what it does not claim in one place. Stated now, with no change to any rule, read or outcome. Unit: a listed fresh abusive domain at one checkpoint, for one filter. Not claimed: that any filter product is effective or ineffective, anything about domains outside the two lists, or that the lists are complete or correct.
+
+## Note 2 (29 Oct, from the internal audit)
+A resolver that answered none of its queries (dns0_eu, 1,075 timeouts) was scored as blocking 0 of 486 domains, 0 to 1 percent, which reads as a filter that blocks nothing. A timeout is a fact about our path or the resolver's availability, not about its filtering, and was sitting in the denominator as not blocked. From 29 Oct a query that returns no answer is counted apart as a timeout, is not in the denominator, and a resolver with no answered query at a checkpoint is shown as nothing returned with its timeout count. The six timeouts of ControlD and one of Quad9 are removed from their denominators the same way. No other rule changed.
+The audit also notes two limits that are not fixed here and are stated: the Wilson intervals treat each sampled name as independent although names from one campaign cluster, and the cell at each checkpoint is read on the domains still alive then, so the 1 hour and 6 hour cells are not one cohort followed in time.

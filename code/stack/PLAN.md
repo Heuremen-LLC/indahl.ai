@@ -36,3 +36,6 @@ The fifth division is HERMES (Held Every Record, Measured Every Statement). Ever
 
 ## Note on naming (29 Oct)
 This plan was written when the fifth division carried an earlier name. On 29 Oct 2026 the name was removed from the public files. The wording above was changed to the current names and nothing else. The earlier text is kept in the archive tag pre-hermes-20261029 and in the hash chain.
+
+## Addendum 5 (29 Oct, from the internal audit)
+The audit found, and this fixes: the QIA stability row read NOTHING_RETURNED because of an expression error that the catch-all treated as no data (the row now shows its reading, and a read that fails shows the exception type); the queue row said each processor but kept only the last three (it now shows every processor); and CADENCE appeared over two denominators (the row now says 623 below of 1,254 readable series plus 205 that cannot tell). Stated and not fixed: the table lists nested tests as separate rows (the SUPPORT pair, the REVISE pair and the FEDSEP pair come from one dataset each), so the tally of tests counts them separately. Each page's own rule gives its outcome, and the legend on the page does not restate each page's thresholds.

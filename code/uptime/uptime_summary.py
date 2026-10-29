@@ -20,30 +20,32 @@ last_ind = {}
 for (v, b), i in sorted(stat.items(), key=lambda x: x[0][1]): last_ind[v] = i
 res = {}
 for v in order:
-    n = dis = con = blip = quiet = 0; ok_by = C.defaultdict(lambda: [0, 0])
+    n = dis = con = blip = quiet = 0; ok_by = C.defaultdict(lambda: [0, 0]); dbuckets = []
     for (vv, b), s in pr.items():
         if vv != v: continue
         for seat, oks in s.items(): ok_by[seat][1] += 1; ok_by[seat][0] += all(oks)
-        if len(s) < 2: continue
-        fails = {k for k, oks in s.items() if not all(oks)}
+        if len({('home' if k in ('mac', 'pi') else k) for k in s}) < 2: continue
+        fails = {('home' if k in ('mac', 'pi') else k) for k, oks in s.items() if not all(oks)}   # 29 Oct (audit): the Mac and the Pi share one house network and are one seat
         if v in ctl:
             n += 1; dis += len(fails) >= 2; blip += len(fails) == 1; quiet += len(fails) == 0; continue
         ind = stat.get((v, b))
         if ind is None: continue
         n += 1
         if len(fails) >= 2: (dis if ind == 'none' else con).__class__  # no-op for readability
-        if len(fails) >= 2 and ind == 'none': dis += 1
+        if len(fails) >= 2 and ind == 'none': dis += 1; dbuckets.append(b)
         elif len(fails) >= 2: con += 1
         elif len(fails) == 1: blip += 1
         else: quiet += 1
-    res[v] = dict(rounds=n, disagree=dis, confirm=con, blips=blip, quiet=quiet, reach={k: round(100 * a / b, 1) for k, (a, b) in ok_by.items() if b})
+    bs = sorted(set(dbuckets)); episodes = sum(1 for i, b in enumerate(bs) if i == 0 or b - bs[i - 1] > 1) if all(isinstance(b, int) for b in bs) else len(bs)
+    res[v] = dict(episodes=episodes, rounds=n, disagree=dis, confirm=con, blips=blip, quiet=quiet, reach={k: round(100 * a / b, 1) for k, (a, b) in ok_by.items() if b})
 cr = [res[c] for c in ctl if c in res]; cn = sum(c['rounds'] for c in cr); cm = sum(c['disagree'] for c in cr); floor = cm / cn if cn else 0.0
+z = 1.96; floor_ub = ((cm / cn + z * z / (2 * cn) + z * math.sqrt((cm / cn) * (1 - cm / cn) / cn + z * z / (4 * cn * cn))) / (1 + z * z / cn)) if cn else 1.0   # 29 Oct (audit): zero misses in n rounds is not a zero rate
 vend = []
 for v in order:
     if v in ctl: continue
-    r = res[v]; exp = floor * r['rounds']
-    oc = 'CANNOT_TELL' if r['rounds'] < 300 else ('BELOW' if r['disagree'] > exp + 2 * math.sqrt(max(exp, 1e-9)) else 'CONSISTENT')
+    r = res[v]; exp = floor_ub * r['rounds']
+    oc = 'CANNOT_TELL' if r['rounds'] < 300 else ('BELOW' if (r['disagree'] > exp + 2 * math.sqrt(max(exp, 1e-9)) and r['episodes'] >= 2) else 'CONSISTENT')
     vend.append(dict(vendor=v, indicator_now=last_ind.get(v), incidents=inc.get(v, []), outcome=oc, expected_from_floor=round(exp, 2), **r))
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), seats=sorted(seats), buckets=len({b for (_, b) in pr}), control=dict(rounds=cn, misses=cm, floor=round(floor, 4), targets=sorted(ctl)), vendors=vend,
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), seats=sorted(seats), seats_counted='the Mac and the Pi count as one seat', floor_upper_bound=round(floor_ub, 4), buckets=len({b for (_, b) in pr}), control=dict(rounds=cn, misses=cm, floor=round(floor, 4), targets=sorted(ctl)), vendors=vend,
            totals=dict(C.Counter(x['outcome'] for x in vend)))
 json.dump(out, open('summary_uptime.json', 'w'), indent=1); print(out['updated'], out['seats'], 'buckets', out['buckets'], 'control floor', out['control'])

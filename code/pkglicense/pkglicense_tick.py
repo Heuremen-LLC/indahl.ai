@@ -64,7 +64,7 @@ def pypi(name):
     return dict(stated=parts, repo=repo)
 def gh(pairs):
     body = ' '.join('r%d: repository(owner:"%s", name:"%s") { licenseInfo { spdxId name } }' % (i, o, n) for i, (o, n) in enumerate(pairs))
-    r = subprocess.run(['gh', 'api', 'graphql', '-f', 'query={ ' + body + ' }'], capture_output=True, text=True)
+    r = subprocess.run(['/opt/homebrew/bin/gh', 'api', 'graphql', '-f', 'query={ ' + body + ' }'], capture_output=True, text=True)
     try: d = json.loads(r.stdout).get('data') or {}
     except Exception: return None
     return [((d.get('r%d' % i) or {}).get('licenseInfo') or {}).get('spdxId') if d.get('r%d' % i) is not None else 'NOT_FOUND' for i in range(len(pairs))]

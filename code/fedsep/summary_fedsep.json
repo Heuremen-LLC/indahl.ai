@@ -1,6 +1,105 @@
 {
- "updated": "29 Oct 12:55",
+ "updated": "29 Oct 13:41",
  "gate": "passed",
+ "not_comparable": {
+  "n": 6,
+  "reasons": {
+   "no stated range": 4,
+   "outcome not available yet": 2
+  }
+ },
+ "horizon1_misses": [
+  {
+   "year": 2020,
+   "variable": "Change in real GDP",
+   "median": 2.0,
+   "outcome_value": -0.92,
+   "stated_range": 1.8,
+   "miss": 1.12,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2020,
+   "variable": "Unemployment rate",
+   "median": 3.7,
+   "outcome_value": 6.77,
+   "stated_range": 1.1,
+   "miss": 1.97,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2020,
+   "variable": "Federal funds rate",
+   "median": 1.9,
+   "outcome_value": 0.09,
+   "stated_range": 1.7,
+   "miss": 0.11,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2021,
+   "variable": "Change in real GDP",
+   "median": 4.0,
+   "outcome_value": 5.82,
+   "stated_range": 1.7,
+   "miss": 0.12,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2021,
+   "variable": "Unemployment rate",
+   "median": 5.5,
+   "outcome_value": 4.17,
+   "stated_range": 1.1,
+   "miss": 0.23,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2021,
+   "variable": "PCE inflation",
+   "median": 1.7,
+   "outcome_value": 5.73,
+   "stated_range": 1.0,
+   "miss": 3.03,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2022,
+   "variable": "Change in real GDP",
+   "median": 3.8,
+   "outcome_value": 1.23,
+   "stated_range": 1.9,
+   "miss": 0.67,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2022,
+   "variable": "PCE inflation",
+   "median": 2.2,
+   "outcome_value": 6.07,
+   "stated_range": 1.0,
+   "miss": 2.87,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2022,
+   "variable": "Federal funds rate",
+   "median": 0.3,
+   "outcome_value": 3.65,
+   "stated_range": 1.8,
+   "miss": 1.55,
+   "note": "Not yet opened by hand"
+  },
+  {
+   "year": 2023,
+   "variable": "Change in real GDP",
+   "median": 1.2,
+   "outcome_value": 3.42,
+   "stated_range": 1.8,
+   "miss": 0.42,
+   "note": "Not yet opened by hand"
+  }
+ ],
  "septs": 11,
  "triples": 78,
  "claim": "about 70 percent inside, so about 30 percent outside",

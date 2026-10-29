@@ -34,7 +34,10 @@ def upgrade():
     return n
 def publish():
     os.makedirs(PUB + '/manifests', exist_ok=True); os.makedirs(PUB + '/stamps', exist_ok=True)
-    subprocess.run(['cp', 'chain.jsonl', PUB + '/chain.jsonl']); subprocess.run('cp manifests/* %s/manifests/ 2>/dev/null; cp stamps/* %s/stamps/ 2>/dev/null; cp PLAN.md digest.py %s/' % (PUB, PUB, PUB), shell=True)
+    rc = [subprocess.run(['cp', 'chain.jsonl', PUB + '/chain.jsonl']).returncode, subprocess.run('cp manifests/* %s/manifests/ && cp stamps/* %s/stamps/ && cp PLAN.md digest.py %s/' % (PUB, PUB, PUB), shell=True).returncode]
+    same = os.path.exists(PUB + '/chain.jsonl') and sha(PUB + '/chain.jsonl') == sha('chain.jsonl')   # 29 Oct (audit): read the public copy back
+    if any(rc) or not same: print('archive: PUBLIC COPY FAILED', rc, same); return False
+    return True
 def internal_marked(m):
     return {k: (dict(sha256=v['sha256'], bytes=v['bytes'], internal=True) if k in INTERNAL else v) for k, v in m.items()}
 if '--verify' in sys.argv:
@@ -44,9 +47,19 @@ if '--verify' in sys.argv:
         d = hashlib.sha256((prev + (msha or '')).encode()).hexdigest()
         if msha != e['manifest_sha256'] or d != e['digest'] or e['prev'] != prev: ok = False; print('BROKEN at', e['id'])
         prev = e['digest']
-    print('chain', 'OK' if ok else 'BROKEN', len(chain), 'entries'); sys.exit(0 if ok else 1)
+    bad = []
+    for e in chain:
+        st = 'stamps/%s.digest.ots' % e['id']
+        if not os.path.exists(st): bad.append(e['id']); continue
+        r = subprocess.run([OTS, 'info', st], capture_output=True, text=True)
+        if r.returncode: bad.append(e['id'])
+        if open('stamps/%s.digest' % e['id']).read().strip() != e['digest']: bad.append(e['id'] + ' digest file differs')
+    if bad: ok = False; print('stamps missing, unreadable or not matching:', bad[:5])
+    print('chain', 'OK' if ok else 'BROKEN', len(chain), 'entries, stamps checked'); sys.exit(0 if ok else 1)
 if '--upgrade' in sys.argv: print('upgraded', upgrade()); publish(); sys.exit(0)
-m = internal_marked(manifest()); t = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime()); prev = chain[-1]['digest'] if chain else '0' * 64
+m = internal_marked(manifest()); t = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+while os.path.exists('manifests/%s.json' % t): t += 'x'   # 29 Oct (audit): a second run inside one second never overwrites a manifest
+prev = chain[-1]['digest'] if chain else '0' * 64
 old = json.load(open('manifests/%s.json' % chain[-1]['id'])) if chain else {'files': {}}
 removed = sorted(set(old['files']) - set(m)); changed = sum(1 for k, v in m.items() if old['files'].get(k, {}).get('sha256') != v['sha256'])
 mf = dict(id=t, prev_digest=prev, files=m, removed=removed)
@@ -56,4 +69,5 @@ entry = dict(id=t, prev=prev, manifest_sha256=msha, digest=digest, files=len(m),
 with open('chain.jsonl', 'a') as f: f.write(json.dumps(entry) + '\n')
 open('stamps/%s.digest' % t, 'w').write(digest + '\n'); ok = stamp('stamps/%s.digest' % t)
 n = upgrade(); publish()
+ok2 = True
 print('archive: digest', digest[:16], 'files', len(m), 'changed', changed, 'removed', len(removed), 'stamp', 'ok' if ok else 'FAILED', 'upgraded', n)

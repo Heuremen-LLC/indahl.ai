@@ -31,16 +31,25 @@ def bls_changes():
 bc = bls_changes(); ys = int(updated_file[-4:]) if updated_file else int(time.strftime('%Y')); last_bench = '%04d:03' % (ys - 1)
 bench = [r for r in rows if r['recent'] is not None and r['m'] <= last_bench]
 chk = [abs(r['recent'] - bc[r['m']]) for r in bench[-24:] if r['m'] in bc]
-gate &= len(chk) >= 12 and max(chk) <= 1.0
+gate &= len(chk) >= 12 and max(chk) <= 1.0   # the plan asked for 24 months, the BLS API returns 14, see Note 2
 print('revise: gate', 'passed' if gate else 'FAILED', 'checked', len(chk), 'months against the BLS API, max difference', round(max(chk), 2) if chk else None, flush=True)
 if not gate: sys.exit(0)
 t3 = [r for r in rows if r['first'] is not None and r['third'] is not None][-120:]; mr = [r for r in bench if r['first'] is not None][-120:]
+import random as _rnd
+def yblock(rs, key, reps=4000):
+    by = {}
+    for r in rs: by.setdefault(r['m'][:4], []).append(abs(r[key] - r['first']) > STATED)
+    ys = sorted(by); rg = _rnd.Random(7); bs = []
+    for _ in range(reps):
+        sm = [x for y in (rg.choice(ys) for _ in ys) for x in by[y]]; bs.append(sum(sm) / len(sm))
+    bs.sort(); return len(ys), round(bs[int(0.025 * reps)], 4), round(bs[int(0.975 * reps)], 4)
 def block(rs, key):
     prs = [(r['first'], r[key]) for r in rs]; n = len(prs); k = count(prs); lo, hi = K.wilson(k, n); rev = [b - a for a, b in prs]
     oc = K.ABOVE if lo > 0.10 else (K.BELOW if hi < 0.10 else (K.CONSISTENT if (hi - lo) <= 0.12 else K.CANNOT_TELL))
-    return dict(months=n, first=rs[0]['m'], last=rs[-1]['m'], exceed=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, median_signed=round(S.median(rev), 1), mean_signed=round(S.mean(rev), 1), median_abs=round(S.median([abs(x) for x in rev]), 1), largest=round(max(rev, key=abs), 1))
+    yb, ylo, yhi = yblock(rs, key); return dict(years=yb, share_y=round(k / n, 4), share_y_lo=ylo, share_y_hi=yhi, months=n, first=rs[0]['m'], last=rs[-1]['m'], exceed=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, median_signed=round(S.median(rev), 1), mean_signed=round(S.mean(rev), 1), median_abs=round(S.median([abs(x) for x in rev]), 1), largest=round(max(rev, key=abs), 1))
 a = block(t3, 'third'); b = block(mr, 'recent')
-big = [dict(month=r['m'], first=r['first'], third=r['third'], most_recent=r['recent'], note='First print matches the archived BLS release') for r in {x['m']: x for x in t3 + mr}.values() if max(abs((r['third'] or r['first']) - r['first']), abs((r['recent'] or r['first']) - r['first']) if r['m'] <= last_bench else 0) > 300]
+HC = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
+big = [dict(month=r['m'], first=r['first'], third=r['third'], most_recent=r['recent'], note=HC.get(r['m'], 'Not yet opened by hand')) for r in {x['m']: x for x in t3 + mr}.values() if max(abs((r['third'] or r['first']) - r['first']), abs((r['recent'] or r['first']) - r['first']) if r['m'] <= last_bench else 0) > 300]
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', stated=int(STATED), file_updated=updated_file, sha=sha[:16], checked_months=len(chk),
            counts={'Third release against first': a, 'Most recent, after the annual benchmark, against first': b}, large=sorted(big, key=lambda x: x['month']))
 json.dump(out, open('summary_revise.json', 'w'), indent=1)

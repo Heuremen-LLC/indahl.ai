@@ -82,7 +82,7 @@ def classify(tg):
     if 'No matching distribution' in o or 'Could not find a version' in o:
         if all(fits(n) for n in names): return 'DISAGREE', 'no matching version: ' + e
         return 'NOT_COMPARABLE', 'no wheel that fits this Python and platform'
-    return 'DISAGREE', 'other: ' + e
+    return 'NOT_COMPARABLE', 'pip failed in a way the plan does not name: ' + e   # 29 Oct (audit): not scored as the project failing
 # gate
 PARSE = [('$ pip install foo', ['foo']), ('python -m pip install -U foo[extra]==1.2', ['foo[extra]==1.2']), ('pip3 install a b', ['a', 'b']), ('> pip install "foo>=1.0"', ['foo>=1.0'])]
 NOPE = ['pip install nvidia-foo-cuXX', 'pip install YOUR_PACKAGE', 'pip install git+https://x/y', 'pip install -e .', 'pip install <name>', 'pip install -r r.txt', 'pip install foo --pre', 'pip install ./local', 'pip install https://x/y.whl', 'nothing here']

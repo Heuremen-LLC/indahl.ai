@@ -5,6 +5,12 @@ H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); W = os.path.expandu
 for s in ('trials_collect.py', 'trials_summary.py', 'trials_cancelled.py'):
     r = subprocess.run([sys.executable, '-I', s], capture_output=True, text=True)
     if r.returncode: print('trials:', s, 'FAILED', r.stderr[-300:]); sys.exit(0)
+import urllib.request as _U
+def _has(n):
+    d = json.load(_U.urlopen(_U.Request('https://clinicaltrials.gov/api/v2/studies/%s?fields=HasResults' % n, headers={'User-Agent': 'heuremen-trials/0.1'}), timeout=60)); return d.get('hasResults')
+try: _kg = _has('NCT03515551') is True and _has('NCT04537429') is False   # 29 Oct (audit): the plan's known-good records, run before every publish
+except Exception: _kg = False
+if not _kg: print('trials: the known-good records did not read as the plan says, publishing nothing'); sys.exit(0)
 S = json.load(open('data/summary.json')); rd = open('data/read_at.txt').read().split('\n')
 S['read'] = rd[0][:10] + ' ' + rd[0][11:16] + ' UTC'; S['cutoff'] = rd[1].split('=')[1]; S['excluded'] = S.pop('excluded_phase1_drug_only')
 S['cancelled'] = json.load(open('data/cancelled.json')) if os.path.exists('data/cancelled.json') else None

@@ -15,8 +15,8 @@ def at(d, path):
     return d
 def trials_outcome(lo, hi): return 'ABOVE' if lo > 0.25 else ('CONSISTENT' if hi < 0.10 else 'CANNOT_TELL')
 # (page, slug, test, path, of key, failing key, share key, lo key, hi key, outcome key or None)
-SPEC = [('SUPPORT', 'support', 'Supported cycles that had stopped releasing', ['all'], 'tested', 'silent', 'share', 'share_lo', 'share_hi', 'outcome'),
-        ('SUPPORT', 'support', 'Products with at least one such cycle', ['product_level', 'Products with at least one silent supported cycle'], 'tested', 'silent', 'share', 'share_lo', 'share_hi', 'outcome'),
+SPEC = [('SUPPORT', 'support', 'Supported cycles that had stopped releasing', ['all'], 'tested', 'unreleased', 'share', 'share_lo', 'share_hi', 'outcome'),
+        ('SUPPORT', 'support', 'Products with at least one such cycle', ['product_level', 'Products with at least one unreleased supported cycle'], 'tested', 'unreleased', 'share', 'share_lo', 'share_hi', 'outcome'),
         ('PKGLICENSE', 'pkglicense', 'Stated license against the repository license', ['disagree'], 'of', 'n', 'share', 'share_lo', 'share_hi', 'outcome'),
         ('HFLICENSE', 'hflicense', 'Models: stated license against the license file', ['comparison', 'Models'], 'of', 'n', 'share', 'share_lo', 'share_hi', 'outcome'),
         ('HFLICENSE', 'hflicense', 'Datasets: stated license against the license file', ['comparison', 'Datasets'], 'of', 'n', 'share', 'share_lo', 'share_hi', 'outcome'),
@@ -64,11 +64,11 @@ def jget(path):
 def R(page, what, fn, path):
     d = jget(path)
     try: reading, state = fn(d)
-    except Exception: reading, state = '', 'NOTHING_RETURNED'
+    except Exception as e: reading, state = 'read failed: ' + type(e).__name__, 'NOTHING_RETURNED'
     return dict(page=page, what=what, reading=reading, state=state)
 running = [
  R('ARXIVDRIFT', 'Indexed studies whose later arXiv version changed their numbers', lambda d: ('%d of %d (%.1f%%), %d with any revision' % (d['classes']['REVISED_NUMBERS']['n'], d['studies'], 100 * d['classes']['REVISED_NUMBERS']['n'] / d['studies'], d['any_change']['n']), 'Counted, no outcome rule'), 'arxivdrift/live.json'),
- R('CADENCE', 'Datasets updated more slowly than they state', lambda d: ('%d below of %d readable series across %d portals' % (sum(p['below'] for p in d['portals']), sum(p['readable'] for p in d['portals']), len(d['portals'])), 'Per-series outcomes, tallied below'), 'cadence/live.json'),
+ R('CADENCE', 'Datasets updated more slowly than they state', lambda d: ('%d below of %d readable series, plus %d that cannot tell, across %d portals' % (sum(p['below'] for p in d['portals']), sum(p['readable'] for p in d['portals']), sum(p['cannot_tell'] for p in d['portals']), len(d['portals'])), 'Per-series outcomes, tallied below'), 'cadence/live.json'),
  R('CADA', 'Public DNS filters that answer on listed bad domains', lambda d: ('%d domains tracked, %d filters read' % (d['tracked'], len(d['resolvers'])), 'Running, under its own rule'), 'cada/live.json'),
  R('FORECAST', 'Stated chance of precipitation against what happened', lambda d: ('%d periods scored of %d stored, %d with an event' % (d['periods_scored'], d['periods_stored'], d['floor']['with_event']), 'Cannot tell, under 30 events'), 'forecast/live.json'),
  R('LAUNCH', 'Stated launch time against the time it flew', lambda d: ('%d launches tracked, %d flown, %d waiting' % (d['launches_tracked'], d['flown'], d['waiting']), 'Waiting for flown launches to score'), 'launch/live.json'),
@@ -76,8 +76,8 @@ running = [
  R('SEAT', 'Pages and feeds, seen from an outside runner', lambda d: ('%d probes, %d of %d pages match, %d of %d feeds fresh' % (d['probes'], d['now']['Pages matching the public repository']['n'], d['now']['Pages matching the public repository']['of'], d['now']['Feeds younger than their limit']['n'], d['now']['Feeds younger than their limit']['of']), d['rolling']['Last 24 probes']['outcome']), 'seat/live.json'),
  R('QIA', 'Published qubits with T2 above 2.5 times T1', lambda d: ('%d qubits on %d processors' % (len(d['flagged']), len({f['backend'] for f in d['flagged']})), 'Counted from IBM records, no outcome rule'), 'qia/audit.json'),
  R('QIA', 'T1 and T2 measured together on flagged qubits', lambda d: ('; '.join('%s %s' % (p['backend'].replace('ibm_', ''), p.get('state', '')[:34]) + ('' if 'qubits' not in p else ': ' + ', '.join('q%d %s' % (q['qubit'], q['reading'].lower().replace('_', ' ')) for q in p['qubits'])) for p in d['processors']), 'Per-qubit readings, four outcomes'), 'qia/t1t2.json'),
- R('QIA', 'Jobs pending at each processor', lambda d: (', '.join('%s %s' % (p['backend'].replace('ibm_', ''), p['pending']) for p in d['processors'][-3:]), 'Hourly, analysis rule committed'), 'qia/queue.json'),
- R('QIA', 'Stability of IBM published calibration over time', lambda d: ('%d processors, %s records' % (len(d['processors']), '-'.join(str(min(p['records'] for p in d['processors'])) + ':' + str(max(p['records'] for p in d['processors'])).split(':'))), 'Waiting for 20 records and 14 days'), 'qia/stability.json')]
+ R('QIA', 'Jobs pending at each processor', lambda d: (', '.join('%s %s' % (p['backend'].replace('ibm_', ''), p['pending']) for p in d['processors']), 'Hourly, analysis rule committed'), 'qia/queue.json'),
+ R('QIA', 'Stability of IBM published calibration over time', lambda d: ('%d processors, %d to %d records each' % (len(d['processors']), min(p['records'] for p in d['processors']), max(p['records'] for p in d['processors'])), 'Waiting for 20 records and 14 days'), 'qia/stability.json')]
 
 GROUP = {'REVISE': 'A stated number against its record', 'FEDSEP': 'A stated number against its record', 'SECRECORDS': 'A stated number against its record', 'HFSIZE': 'A stated number against its record', 'PKGLICENSE': 'A stated number against its record', 'HFLICENSE': 'A stated number against its record', 'TRIALS': 'A stated number against its record',
          'LINKROT': 'A promised file or link', 'PKGINSTALL': 'A promised file or link', 'HPT': 'A promised file or link', 'ARXIVDRIFT': 'A promised file or link',
