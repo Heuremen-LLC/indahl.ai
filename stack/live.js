@@ -62,6 +62,6 @@
     box.appendChild(table(['Page', 'What is measured', 'Reading', 'State'], (d.running || []).map(function (r) { return [r.page, r.what, r.reading, OC[r.state] || r.state]; })));
     box.appendChild(el('h3', 'Pages that report many separate items, by the outcome of each item'));
     box.appendChild(table(['Page', 'Above', 'Below', 'Consistent', 'Cannot tell'], Object.keys(d.items || {}).map(function (k) { var v = d.items[k]; return [k, v.ABOVE, v.BELOW, v.CONSISTENT, v.CANNOT_TELL]; }), [1, 2, 3, 4]));
-    var p = el('p', 'Pages of static tables: ', 'bench-note'); [['/iris', 'IRIS'], ['/sad', 'SAD'], ['/atlas', 'ATLAS'], ['/oy', 'OY']].forEach(function (x, i) { if (i) p.appendChild(document.createTextNode(', ')); p.appendChild(link(x[0], x[1])); }); p.appendChild(document.createTextNode('.')); box.appendChild(p);
+    var p = el('p', 'Pages of static tables: ', 'bench-note'); [['/iris', 'IRIS'], ['/hermes', 'HERMES'], ['/atlas', 'ATLAS'], ['/oy', 'OY']].forEach(function (x, i) { if (i) p.appendChild(document.createTextNode(', ')); p.appendChild(link(x[0], x[1])); }); p.appendChild(document.createTextNode('.')); box.appendChild(p);
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });
 })();
