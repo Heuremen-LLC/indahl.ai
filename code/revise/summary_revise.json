@@ -1,0 +1,68 @@
+{
+ "updated": "29 Oct 12:39",
+ "gate": "passed",
+ "stated": 122,
+ "file_updated": "September 9, 2026",
+ "sha": "9db563b4cb32feb7",
+ "checked_months": 14,
+ "counts": {
+  "Third release against first": {
+   "months": 120,
+   "first": "2016:03",
+   "last": "2026:06",
+   "exceed": 13,
+   "share": 0.1083,
+   "share_lo": 0.0644,
+   "share_hi": 0.1766,
+   "outcome": "CONSISTENT",
+   "median_signed": -4.0,
+   "mean_signed": -0.5,
+   "median_abs": 36.5,
+   "largest": -672.0
+  },
+  "Most recent, after the annual benchmark, against first": {
+   "months": 120,
+   "first": "2015:04",
+   "last": "2025:03",
+   "exceed": 25,
+   "share": 0.2083,
+   "share_lo": 0.1453,
+   "share_hi": 0.2895,
+   "outcome": "ABOVE",
+   "median_signed": -15.0,
+   "mean_signed": -5.4,
+   "median_abs": 62.0,
+   "largest": -697.0
+  }
+ },
+ "large": [
+  {
+   "month": "2020:03",
+   "first": -701.0,
+   "third": -1373.0,
+   "most_recent": -1398.0,
+   "note": "First print matches the archived BLS release"
+  },
+  {
+   "month": "2021:08",
+   "first": 235.0,
+   "third": 483.0,
+   "most_recent": 552.0,
+   "note": "First print matches the archived BLS release"
+  },
+  {
+   "month": "2021:11",
+   "first": 210.0,
+   "third": 647.0,
+   "most_recent": 658.0,
+   "note": "First print matches the archived BLS release"
+  },
+  {
+   "month": "2021:12",
+   "first": 199.0,
+   "third": 588.0,
+   "most_recent": 586.0,
+   "note": "First print matches the archived BLS release"
+  }
+ ]
+}
