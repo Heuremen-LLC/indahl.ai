@@ -1,20 +1,20 @@
 {
- "updated": "29 Oct 09:40",
- "blocks": 27115,
- "span_days": 22.07,
- "first_height": 4570473,
- "last_height": 4602018,
- "buckets": 83,
+ "updated": "29 Oct 12:01",
+ "blocks": 31355,
+ "span_days": 25.33,
+ "first_height": 4566013,
+ "last_height": 4602233,
+ "buckets": 95,
  "tx_scanned": 2212,
  "series": [
   {
    "kind": "address",
    "name": "RHUC17...XeeG",
-   "blocks": 12185,
-   "share": 0.4494,
-   "tests": 81,
+   "blocks": 14077,
+   "share": 0.449,
+   "tests": 94,
    "flags": 3,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "ABOVE",
    "flag_buckets": [
     {
@@ -37,22 +37,22 @@
   {
    "kind": "address",
    "name": "RHMKPy...MgG1",
-   "blocks": 3094,
-   "share": 0.1141,
-   "tests": 81,
+   "blocks": 3532,
+   "share": 0.1126,
+   "tests": 94,
    "flags": 0,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": []
   },
   {
    "kind": "address",
    "name": "RVMKX8...MFwk",
-   "blocks": 2202,
-   "share": 0.0812,
-   "tests": 81,
+   "blocks": 2562,
+   "share": 0.0817,
+   "tests": 94,
    "flags": 1,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": [
     {
@@ -65,11 +65,11 @@
   {
    "kind": "address",
    "name": "RRTcyu...2jtT",
-   "blocks": 2162,
-   "share": 0.0797,
-   "tests": 81,
+   "blocks": 2492,
+   "share": 0.0795,
+   "tests": 94,
    "flags": 1,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": [
     {
@@ -82,11 +82,11 @@
   {
    "kind": "address",
    "name": "RXtpH2...PMB5",
-   "blocks": 2093,
-   "share": 0.0772,
-   "tests": 81,
+   "blocks": 2414,
+   "share": 0.077,
+   "tests": 94,
    "flags": 1,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": [
     {
@@ -99,22 +99,22 @@
   {
    "kind": "address",
    "name": "RMTUdg...WinW",
-   "blocks": 2035,
-   "share": 0.0751,
-   "tests": 81,
+   "blocks": 2390,
+   "share": 0.0762,
+   "tests": 94,
    "flags": 0,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": []
   },
   {
    "kind": "address",
    "name": "RRL5mM...FGcy",
-   "blocks": 1185,
-   "share": 0.0437,
-   "tests": 81,
+   "blocks": 1373,
+   "share": 0.0438,
+   "tests": 94,
    "flags": 1,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": [
     {
@@ -127,38 +127,44 @@
   {
    "kind": "address",
    "name": "RV3hxJ...NAua",
-   "blocks": 699,
+   "blocks": 810,
    "share": 0.0258,
-   "tests": 81,
+   "tests": 94,
    "flags": 0,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": []
   },
   {
    "kind": "address",
    "name": "RKMRzc...SnBM",
-   "blocks": 461,
-   "share": 0.017,
-   "tests": 81,
-   "flags": 0,
-   "expected": 0.219,
+   "blocks": 527,
+   "share": 0.0168,
+   "tests": 94,
+   "flags": 1,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
-   "flag_buckets": []
+   "flag_buckets": [
+    {
+     "bucket": "07 Oct 00:00",
+     "z": 4.32,
+     "n": 364
+    }
+   ]
   },
   {
    "kind": "address",
    "name": "REQRzq...C1K7",
-   "blocks": 304,
-   "share": 0.0112,
-   "tests": 81,
+   "blocks": 341,
+   "share": 0.0109,
+   "tests": 93,
    "flags": 1,
-   "expected": 0.219,
+   "expected": 0.251,
    "outcome": "CONSISTENT",
    "flag_buckets": [
     {
      "bucket": "13 Oct 18:00",
-     "z": 3.31,
+     "z": 3.22,
      "n": 359
     }
    ]
@@ -166,11 +172,11 @@
   {
    "kind": "tag",
    "name": "Miners",
-   "blocks": 12309,
-   "share": 0.454,
-   "tests": 81,
+   "blocks": 14239,
+   "share": 0.4541,
+   "tests": 94,
    "flags": 4,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "ABOVE",
    "flag_buckets": [
     {
@@ -198,39 +204,39 @@
   {
    "kind": "tag",
    "name": "RavenMiner.com",
-   "blocks": 3094,
-   "share": 0.1141,
-   "tests": 81,
+   "blocks": 3532,
+   "share": 0.1126,
+   "tests": 94,
    "flags": 0,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": []
   },
   {
    "kind": "tag",
    "name": "hash2coin",
-   "blocks": 2663,
-   "share": 0.0982,
-   "tests": 81,
+   "blocks": 3091,
+   "share": 0.0986,
+   "tests": 94,
    "flags": 0,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": []
   },
   {
    "kind": "tag",
    "name": "K1Pool.com",
-   "blocks": 2168,
-   "share": 0.08,
-   "tests": 81,
+   "blocks": 2470,
+   "share": 0.0788,
+   "tests": 94,
    "flags": 2,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "ABOVE",
    "flag_buckets": [
     {
-     "bucket": "12 Oct 06:00",
-     "z": -3.03,
-     "n": 372
+     "bucket": "04 Oct 12:00",
+     "z": 3.04,
+     "n": 306
     },
     {
      "bucket": "27 Oct 06:00",
@@ -242,16 +248,16 @@
   {
    "kind": "tag",
    "name": "Mined",
-   "blocks": 1283,
-   "share": 0.0473,
-   "tests": 81,
+   "blocks": 1539,
+   "share": 0.0491,
+   "tests": 94,
    "flags": 1,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": [
     {
      "bucket": "12 Oct 00:00",
-     "z": 3.3,
+     "z": 3.38,
      "n": 359
     }
    ]
@@ -259,11 +265,11 @@
   {
    "kind": "tag",
    "name": "pool.kryptex.com",
-   "blocks": 1011,
-   "share": 0.0373,
-   "tests": 81,
+   "blocks": 1192,
+   "share": 0.038,
+   "tests": 94,
    "flags": 1,
-   "expected": 0.219,
+   "expected": 0.254,
    "outcome": "CONSISTENT",
    "flag_buckets": [
     {
@@ -343,9 +349,9 @@
   },
   {
    "bucket": "29 Oct 06:00",
-   "blocks": 67,
-   "top1": 0.403,
-   "top3": 0.642
+   "blocks": 162,
+   "top1": 0.438,
+   "top3": 0.636
   }
  ],
  "batches": [
