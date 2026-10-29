@@ -1,18 +1,21 @@
 {
- "updated": "29 Oct 12:52",
+ "updated": "29 Oct 13:13",
  "tests": 20,
  "tally": {
   "ABOVE": {
    "n": 4
   },
+  "BELOW": {
+   "n": 1
+  },
   "CONSISTENT": {
-   "n": 8
+   "n": 9
   },
   "CANNOT_TELL": {
    "n": 3
   },
   "NOTHING_RETURNED": {
-   "n": 5
+   "n": 3
   }
  },
  "rows": [
@@ -55,6 +58,26 @@
    "share_lo": 0.1432,
    "share_hi": 0.2563,
    "outcome": "ABOVE"
+  },
+  {
+   "page": "FEDSEP",
+   "test": "Federal Reserve projections: outcome outside the stated 70% range, this year",
+   "of": 41,
+   "n": 6,
+   "share": 0.1463,
+   "share_lo": 0.0256,
+   "share_hi": 0.275,
+   "outcome": "BELOW"
+  },
+  {
+   "page": "FEDSEP",
+   "test": "Federal Reserve projections: outcome outside the stated 70% range, next year",
+   "of": 37,
+   "n": 10,
+   "share": 0.2703,
+   "share_lo": 0.0811,
+   "share_hi": 0.4872,
+   "outcome": "CONSISTENT"
   },
   {
    "page": "REVISE",
@@ -195,26 +218,6 @@
    "share_lo": null,
    "share_hi": null,
    "outcome": "NOTHING_RETURNED"
-  },
-  {
-   "page": "FEDSEP",
-   "test": "Federal Reserve projections: outcome outside the stated 70% range, this year",
-   "of": null,
-   "n": null,
-   "share": null,
-   "share_lo": null,
-   "share_hi": null,
-   "outcome": "NOTHING_RETURNED"
-  },
-  {
-   "page": "FEDSEP",
-   "test": "Federal Reserve projections: outcome outside the stated 70% range, next year",
-   "of": null,
-   "n": null,
-   "share": null,
-   "share_lo": null,
-   "share_hi": null,
-   "outcome": "NOTHING_RETURNED"
   }
  ],
  "items": {
@@ -235,6 +238,12 @@
    "BELOW": 0,
    "CONSISTENT": 0,
    "CANNOT_TELL": 20
+  },
+  "FORECAST": {
+   "ABOVE": 0,
+   "BELOW": 0,
+   "CONSISTENT": 0,
+   "CANNOT_TELL": 1
   },
   "CADENCE": {
    "ABOVE": 0,
@@ -259,13 +268,13 @@
   {
    "page": "CADA",
    "what": "Public DNS filters that answer on listed bad domains",
-   "reading": "496 domains tracked, 7 filters read",
+   "reading": "503 domains tracked, 7 filters read",
    "state": "Running, under its own rule"
   },
   {
    "page": "FORECAST",
    "what": "Stated chance of precipitation against what happened",
-   "reading": "52 periods scored of 453 stored, 0 with an event",
+   "reading": "58 periods scored of 453 stored, 0 with an event",
    "state": "Cannot tell, under 30 events"
   },
   {
@@ -321,7 +330,7 @@
   {
    "name": "IRIS",
    "link": "/iris",
-   "holds": "Language-model evaluations, the Faults and Guards bench, a lab queue, and the evaluation studies we have indexed",
+   "holds": "Language-model evaluations, the Faults and Guards bench, a lab queue, the evaluation studies we have indexed, and the desks HFSIZE, HFLICENSE, PKGLICENSE and PKGINSTALL",
    "reading": "17 studies indexed, lab runs: 2 running, 1 next, 0 done"
   },
   {
@@ -333,14 +342,14 @@
   {
    "name": "ATLAS",
    "link": "/atlas",
-   "holds": "Built infrastructure in the United States, mapped from open sources",
-   "reading": "Static map and tables, read on the page"
+   "holds": "Built infrastructure, mapped from open sources, and the desks UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE",
+   "reading": "Static map and tables, and seven desks"
   },
   {
-   "name": "SAD",
-   "link": "/sad",
-   "holds": "Vendor claims against the results the published harness gives, one model at a time",
-   "reading": "Rounds run on the lab queue, read on the page"
+   "name": "HERMES",
+   "link": "/hermes",
+   "holds": "Held Every Record, Measured Every Statement: claims by vendors and public institutions against the record, and every desk under it",
+   "reading": "Eleven desks: MODEL, TRIALS, HPT, REVISE, FEDSEP, CADENCE, FORECAST, LAUNCH, COIN, ARXIVDRIFT, LINKROT"
   }
  ],
  "stacks": {
@@ -367,6 +376,16 @@
    }
   ],
   "A stated number against its record": [
+   {
+    "page": "FEDSEP",
+    "test": "Federal Reserve projections: outcome outside the stated 70% range, next year",
+    "of": 37,
+    "n": 10,
+    "share": 0.2703,
+    "share_lo": 0.0811,
+    "share_hi": 0.4872,
+    "outcome": "CONSISTENT"
+   },
    {
     "page": "TRIALS",
     "test": "Results due against results posted: records with no results",
@@ -396,6 +415,16 @@
     "share_lo": 0.1432,
     "share_hi": 0.2563,
     "outcome": "ABOVE"
+   },
+   {
+    "page": "FEDSEP",
+    "test": "Federal Reserve projections: outcome outside the stated 70% range, this year",
+    "of": 41,
+    "n": 6,
+    "share": 0.1463,
+    "share_lo": 0.0256,
+    "share_hi": 0.275,
+    "outcome": "BELOW"
    },
    {
     "page": "REVISE",
