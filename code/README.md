@@ -45,6 +45,9 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [airline/](airline/): AIRLINE: Scheduled flight time against flown flight time per airline, live. - https://indahl.ai/airline
 - [weights/](weights/): WEIGHTS: Open-weight model names against their weight files, pass after pass, live. - https://indahl.ai/weights
 - [hpt/](hpt/): HPT: Hospital price-transparency files against the rule, live. - https://indahl.ai/hpt
+- [ailuminate/](ailuminate/): AILUMINATE: MLCommons AILuminate Safety results, kept and checked, live. - https://indahl.ai/ailuminate
+- [airq/](airq/): AIRQ: Air sensors against the EPA's own targets, live. - https://indahl.ai/airq
+- [campus/](campus/): CAMPUS: The documents behind the OY page, kept over time, live. - https://indahl.ai/campus
 - [api/](api/): API and MCP server - https://indahl.ai/api
 - [kit/](kit/): The shared instrument pieces every corner uses - https://indahl.ai/
 - [replies/](replies/): Right of reply: posted responses beside the rows they answer - https://indahl.ai/
