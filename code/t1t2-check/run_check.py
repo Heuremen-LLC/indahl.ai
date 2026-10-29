@@ -38,8 +38,10 @@ def outcome(t1, t2, k1, k2, shots):
     if not (np.isfinite(T1) and np.isfinite(T2)): return dict(outcome='CANNOT_TELL', t1_us=T1, t2_us=T2, why='a fit failed')
     r = [y / x for x, y in zip(b1, b2) if np.isfinite(x) and np.isfinite(y)]
     lo, hi, n = interval(r); l1 = interval(b1); l2 = interval(b2)
-    oc = 'CANNOT_TELL' if not np.isfinite(lo) else ('ABOVE' if lo > 2 else ('CONSISTENT' if hi <= 2 else 'CANNOT_TELL'))
-    return dict(outcome=oc, t1_us=T1, t1_ci=l1[:2], t2_us=T2, t2_ci=l2[:2], ratio=T2 / T1, ratio_ci=[lo, hi])
+    lb1, ub1, lb2, ub2 = t1[1] * 0.05, t1[-1] * 50, t2[1] * 0.05, t2[-1] * 50      # the fit's own bounds (see fit()); a fit sitting on one is unbounded on that side
+    on_bound = any(abs(v - b) <= 1e-6 * max(1.0, b) for v, b in ((T1, lb1), (T1, ub1), (T2, lb2), (T2, ub2))) or any(abs(v - b) <= 1e-6 * max(1.0, b) for v, b in ((l1[0], lb1), (l1[1], ub1), (l2[0], lb2), (l2[1], ub2)) if np.isfinite(v))
+    oc = 'CANNOT_TELL' if (not np.isfinite(lo) or on_bound) else ('ABOVE' if lo > 2 else ('CONSISTENT' if hi <= 2 else 'CANNOT_TELL'))
+    return dict(outcome=oc, t1_us=T1, t1_ci=l1[:2], t2_us=T2, t2_ci=l2[:2], ratio=T2 / T1, ratio_ci=[lo, hi], fit_on_bound=bool(on_bound))
 
 def delays(Tpub, kind, t1pub):
     top = 3 * (Tpub if kind == 't1' else min(Tpub, 2 * t1pub)); return np.linspace(0, top, NPTS)
@@ -85,6 +87,11 @@ def selftest():
     for sd in range(SEEDS):
         rng = np.random.default_rng(500 + sd); flat += outcome(t1, t2, rng.binomial(SHOTS, 0.5 * np.ones(NPTS)), rng.binomial(SHOTS, 0.5 * np.ones(NPTS)), SHOTS)['outcome'] == 'CANNOT_TELL'
     good = flat >= 0.9 * SEEDS; ok &= good; print('flat data reads CANNOT_TELL in %d of %d' % (flat, SEEDS), 'OK' if good else 'FAIL')
+    t1, t2, _, _ = world(100, 100); short = 0                                   # decay of 0.5 us against a grid built for 100 us: the fit lands on its bound
+    for sd in range(SEEDS):
+        rng = np.random.default_rng(900 + sd); k1 = rng.binomial(SHOTS, 0.97 * np.exp(-t1 / 0.5) + 0.01); k2 = rng.binomial(SHOTS, 0.5 * 0.97 * (1 + np.exp(-t2 / 0.1)) + 0.01)
+        short += outcome(t1, t2, k1, k2, SHOTS)['outcome'] == 'CANNOT_TELL'
+    good = short >= 0.9 * SEEDS; ok &= good; print('decay far shorter than the grid reads CANNOT_TELL in %d of %d' % (short, SEEDS), 'OK' if good else 'FAIL')
     good = outcome(t1, t2, None, None, SHOTS)['outcome'] == 'NOTHING_RETURNED'; ok &= good; print('missing data -> NOTHING_RETURNED', 'OK' if good else 'FAIL')
     sim = AerSimulator()
     for kind, want in (('t1', '1'), ('t2', '0')):
