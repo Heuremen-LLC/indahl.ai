@@ -18,5 +18,15 @@
     var top = document.createElement('p'); top.className = 'bench-note';
     top.textContent = d.papers + ' papers, ' + d.links + ' links, ' + d.read + ' read so far, ' + d.due + ' due. Controls: ' + (d.gate === 'passed' ? 'all ten read right' : 'FAILED, every row reads cannot tell') + '. Gone since the last read: ' + d.newly_gone + '. Back after being gone: ' + d.returned + '. Moved to a different repository name: ' + d.moved + '. Links read by both network seats: ' + (d.seat2_links || 0) + ', seat disagreements counted as blocked: ' + (d.seat_disagreements || 0) + '. Updated ' + d.updated + ' UTC.';
     box.textContent = ''; box.appendChild(top); box.appendChild(table('By year of the paper', d.by_year, 'Year')); box.appendChild(table('By host', d.by_host, 'Host'));
+    if (d.repos && d.repos.all) {
+      var rh = document.createElement('h3'); rh.textContent = 'Is there code behind a live GitHub link?'; box.appendChild(rh);
+      var rn = document.createElement('p'); rn.className = 'bench-note'; rn.textContent = 'Controls for this check: ' + (d.repos.gate === 'passed' ? 'both read right' : 'FAILED, every row reads cannot tell') + '. Empty means the repository has no commits. A stub has three or fewer. Archived and not pushed in a year are shown for context and are not counted as misses.'; box.appendChild(rn);
+      var rt = document.createElement('table'); rt.className = 'mtx';
+      rt.innerHTML = '<thead><tr><th></th><th>Repositories read</th><th>Empty</th><th>Stub</th><th>Code</th><th>Archived</th><th>Not pushed in a year</th><th>Empty share, 95% interval</th><th>Outcome</th></tr></thead>';
+      var rb = document.createElement('tbody');
+      function rrow(name, g) { var tr = document.createElement('tr'); tr.appendChild(td(name)); [g.repos, g.empty, g.stub, g.code, g.archived, g.stale].forEach(function (v) { tr.appendChild(td(v, 1)); }); tr.appendChild(td(g.empty_share == null ? '' : pct(g.empty_share) + ' [' + pct(g.lo) + ', ' + pct(g.hi) + ']', 1)); tr.appendChild(td(W(g.outcome))); rb.appendChild(tr); }
+      rrow('All', d.repos.all); Object.keys(d.repos.by_year || {}).forEach(function (y) { rrow(y, d.repos.by_year[y]); });
+      rt.appendChild(rb); box.appendChild(rt);
+    }
   }).catch(function () { box.textContent = 'The pass could not be read just now.'; });
 })();
