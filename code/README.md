@@ -28,6 +28,8 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [iris/](iris/): IRIS: language-model evaluations, Faults and Guards bench, lab queue - https://indahl.ai/iris
 - [sad/](sad/): SAD: vendor claims against published results - https://indahl.ai/sad
 - [atlas/](atlas/): ATLAS: built infrastructure, stated against delivered - https://indahl.ai/atlas
+- [arxivdrift/](arxivdrift/): ARXIVDRIFT: Indexed arXiv studies against the version that stands now, live. - https://indahl.ai/arxivdrift
+- [support/](support/): SUPPORT: Stated support windows against release activity, live. - https://indahl.ai/support
 - [api/](api/): API and MCP server - https://indahl.ai/api
 - [kit/](kit/): The shared instrument pieces every corner uses - https://indahl.ai/
 - [replies/](replies/): Right of reply: posted responses beside the rows they answer - https://indahl.ai/
