@@ -16,7 +16,7 @@
   fetch('/linkrot/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.all) { box.textContent = 'Waiting for the first pass.'; return; }
     var top = document.createElement('p'); top.className = 'bench-note';
-    top.textContent = d.papers + ' papers, ' + d.links + ' links, ' + d.read + ' read so far, ' + d.due + ' due. Controls: ' + (d.gate === 'passed' ? 'all ten read right' : 'FAILED, every row reads cannot tell') + '. Gone since the last read: ' + d.newly_gone + '. Back after being gone: ' + d.returned + '. Moved to a different repository name: ' + d.moved + '. Updated ' + d.updated + ' UTC.';
+    top.textContent = d.papers + ' papers, ' + d.links + ' links, ' + d.read + ' read so far, ' + d.due + ' due. Controls: ' + (d.gate === 'passed' ? 'all ten read right' : 'FAILED, every row reads cannot tell') + '. Gone since the last read: ' + d.newly_gone + '. Back after being gone: ' + d.returned + '. Moved to a different repository name: ' + d.moved + '. Links read by both network seats: ' + (d.seat2_links || 0) + ', seat disagreements counted as blocked: ' + (d.seat_disagreements || 0) + '. Updated ' + d.updated + ' UTC.';
     box.textContent = ''; box.appendChild(top); box.appendChild(table('By year of the paper', d.by_year, 'Year')); box.appendChild(table('By host', d.by_host, 'Host'));
   }).catch(function () { box.textContent = 'The pass could not be read just now.'; });
 })();

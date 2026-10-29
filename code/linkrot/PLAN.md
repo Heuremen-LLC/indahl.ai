@@ -29,3 +29,9 @@ The known-good list above has a garbled fourth dead item. The exact controls are
 Must read LIVE: https://github.com/torvalds/linux, https://www.python.org, https://arxiv.org/abs/1706.03762, https://example.com, https://zenodo.org.
 Must read GONE or DNS_FAIL: https://github.com/this-owner-does-not-exist-7q2/none, https://example.com/no-such-page-7q2, https://made-up-host-7q2.invalid, https://raw.githubusercontent.com/torvalds/linux/master/no-such-file-7q2, https://zenodo.org/records/99999999999.
 Search tokens are matched on the arXiv side; the URL extraction is a pattern for the five hosts. Nothing else changed.
+
+## Addendum 2 (29 Oct, before the second seat was used)
+The second seat from the independent runner network is added, as the plan's Seats section allows. Every link in the list is also requested from the GitHub runner network (the nodes repository, workflow linkrot-probe, one pass every 7 days, results committed to data/linkrot/results.jsonl) with the same classification, the same controls and the same per-host pause as the first seat.
+Combining the seats (fixed now): a link with a reading from both seats within 14 days of each other reads LIVE if both read LIVE, and GONE or DNS_FAIL if both read that. If one seat reads LIVE and the other reads GONE or DNS_FAIL, the link reads BLOCKED and is counted as a disagreement, never as rot. Any other combination of two readings (for example one seat BLOCKED or TIMEOUT) keeps the first seat's reading. A link with a reading from one seat only keeps that reading. The page shows the number of disagreements and the number of links read by both seats.
+The runner's controls are the same ten links. If any control reads wrong in a runner pass, the whole pass is discarded and the links keep their first-seat readings.
+No threshold, class or outcome rule changes.

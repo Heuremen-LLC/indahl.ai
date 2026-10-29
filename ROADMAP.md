@@ -3,11 +3,11 @@
 Every item is plan-first (the plan is committed before the data), live on the tick bus, with trend rows in this repository. A box ticks in the commit that finishes the item.
 
 - [x] **arXiv version drift on every indexed study** ([live](https://indahl.ai/arxivdrift), [code](code/arxivdrift)). Flag when a later arXiv version changes the numbers or the claim we read, both versions shown. arXiv API, no key.
-- [ ] **Support windows against release activity**. Stated end-of-life and support dates (endoflife.date) against actual release and support activity.
-- [ ] **Package claims against the files**. PyPI metadata (license, requires-python, stated contents) against what the release files hold.
-- [ ] **Older corners onto heuremen_kit**. TIME, CADA, UPTIME, FORECAST, CADENCE move to the shared kit with summaries confirmed unchanged.
-- [ ] **Second seat for LINKROT**. Runner-network seat; a disagreement between seats reads BLOCKED.
-- [ ] **T1 and T2 rerun**. Interleaved circuits and delays sized to the measured T1 (fez q148 measured T1 0.82 microseconds against 5.86 published).
+- [ ] **Support windows against release activity** (read and being hand-checked; [plan](code/support/PLAN.md)). Stated end-of-life and support dates (endoflife.date) against actual release and support activity.
+- [ ] **Package claims against the files** (built: PKGLICENSE reading now). PyPI metadata (license, requires-python, stated contents) against what the release files hold.
+- [x] **Older corners onto heuremen_kit** (Wilson interval moved to the kit in FORECAST, CADENCE, LAUNCH, CADA; an error in three of them found and corrected, see each plan). TIME, CADA, UPTIME, FORECAST, CADENCE move to the shared kit with summaries confirmed unchanged.
+- [x] **Second seat for LINKROT** ([plan addendum 2](code/linkrot/PLAN.md)). Runner-network seat; a disagreement between seats reads BLOCKED.
+- [ ] **T1 and T2 rerun** (submitted for fez q148, plan note 4; waiting in the device queue). Interleaved circuits and delays sized to the measured T1 (fez q148 measured T1 0.82 microseconds against 5.86 published).
 - [ ] **Security claims against DNS records**. Stated email protection and transport security against published SPF, DMARC and HSTS.
 - [ ] **Hospital price-transparency files**. The required machine-readable file, stated at a URL, against whether it resolves and carries the required fields.
 - [ ] **Airline on-time claims against BTS**. Stated on-time performance against the Bureau of Transportation Statistics record.

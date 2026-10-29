@@ -18,3 +18,6 @@ No ranking of forecasters, no claim about any person. A bin that reads above or 
 
 ## Addendum 1 (28 Oct, after the first round, before any period was scored)
 A period that had already started when the forecast was fetched (negative lead) is stored but is not read: part of it was already known. Only periods with a lead from 0 to 48 hours enter the bins.
+
+## Addendum (29 Oct 2026, after publication): Wilson interval corrected
+The local Wilson function in this corner omitted the division of the half-width by d = 1 + z squared over n, so published 95% intervals were wider than the Wilson interval this plan names (up to 38% wider at n = 10, about 5% at n = 100). It was found on a read of the code while moving corners onto the shared kit, whose function is tested against planted worlds. The corner now uses the kit function and the page was republished. No verdict changed: FORECAST had no scored cell yet, so no outcome rested on an interval.

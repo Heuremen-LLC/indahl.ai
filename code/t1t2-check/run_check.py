@@ -113,7 +113,7 @@ def pick_control(backend):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--backend'); ap.add_argument('--qubits', default=''); ap.add_argument('--flagged', action='store_true', help='use the qubits flagged on indahl.ai/qia (one job per processor, pass --backend to pick which)'); ap.add_argument('--selftest', action='store_true')
-    ap.add_argument('--estimate', action='store_true'); ap.add_argument('--yes', action='store_true'); ap.add_argument('--out', default='results.json'); a = ap.parse_args()
+    ap.add_argument('--t1max', type=float); ap.add_argument('--t2max', type=float); ap.add_argument('--interleave', action='store_true'); ap.add_argument('--estimate', action='store_true'); ap.add_argument('--yes', action='store_true'); ap.add_argument('--out', default='results.json'); a = ap.parse_args()
     if a.selftest: sys.exit(0 if selftest() else 1)
     if a.flagged:
         import urllib.request
@@ -135,9 +135,13 @@ def main():
     qs = qs + ([ctrl] if ctrl not in qs else []); jobs = []; secs = 0.0; rep = float(getattr(be, 'default_rep_delay', None) or 250e-6)
     for q in qs:
         t1p, t2p, d1, d2, stamp = published(be, q)
+        per = {}
         for kind, Tp in (('t1', t1p), ('t2', t2p)):
             ds = delays(Tp, kind, t1p)
-            for d in ds: jobs.append((q, kind, float(d))); secs += SHOTS * (d * 1e-6 + rep)
+            if q != ctrl and getattr(a, kind + 'max'): ds = np.linspace(0, getattr(a, kind + 'max'), NPTS)      # note 4: a grid sized to the measured value, flagged qubits only
+            per[kind] = [float(x) for x in ds]
+        order = [(k, per[k][i]) for i in range(NPTS) for k in ('t1', 't2')] if a.interleave else [(k, d) for k in ('t1', 't2') for d in per[k]]
+        for kind, d in order: jobs.append((q, kind, d)); secs += SHOTS * (d * 1e-6 + rep)
     print('qubits', qs, 'control', ctrl, 'circuits', len(jobs), 'estimated QPU seconds about %.0f' % secs)
     if a.estimate or not a.yes: print('not submitted (add --yes to submit on your account)'); return
     dt = be.dt; gran = getattr(be.target, 'granularity', None) or 16; built = [circuit(k, d, QuantumCircuit, dt, gran) for q, k, d in jobs]

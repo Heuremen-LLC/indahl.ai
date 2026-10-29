@@ -27,3 +27,6 @@ Before the first full read: pull 3 launches with status Success from /previous/ 
 ## Addendum 1 (28 Oct, before the first snapshot)
 Known-good read on 3 flown launches: net sits inside the window and status reads Success. Precision names seen: Second, Minute. Second counts with Minute, Hour and Day as usable precision.
 The list mode omits the provider, so reads use mode=normal. A snapshot row is stored when a launch's net, precision or status changed since its last stored row or the last stored row is older than 6 hours, so the net at any past moment is the last stored row before it.
+
+## Addendum (29 Oct 2026, after publication): Wilson interval corrected
+The local Wilson function in this corner omitted the division of the half-width by d = 1 + z squared over n, so published 95% intervals were wider than the Wilson interval this plan names (up to 38% wider at n = 10, about 5% at n = 100). It was found on a read of the code while moving corners onto the shared kit, whose function is tested against planted worlds. The corner now uses the kit function and the page was republished. No verdict changed: LAUNCH had no scored launch yet, so no outcome rested on an interval.

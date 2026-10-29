@@ -59,6 +59,28 @@ if gate_ok and due:
             if s == 'LIVE' and m and f and (m.group(2).lower(), m.group(3).lower()) != (f.group(2).lower(), f.group(3).lower()): moved = True
             e['hist'].append([now, s]); e['moved'] = moved; n += 1
     json.dump(links, open('data/links.json.tmp', 'w')); os.replace('data/links.json.tmp', 'data/links.json')
+# second seat (PLAN.md Addendum 2): push the list to the nodes repository and dispatch its workflow every 7 days, merge the results it committed
+NODES = os.path.expanduser('~/bones-forge/nodes_repo'); S2 = 'data/seat2.json'; st2 = json.load(open(S2)) if os.path.exists(S2) else {}
+def seat2():
+    if not os.path.isdir(NODES): return
+    if time.time() - st2.get('dispatched', 0) > 7 * 86400 and len(links) > 0:
+        subprocess.run(['git', 'pull', '-q'], cwd=NODES, capture_output=True); open(os.path.join(NODES, 'data/linkrot/urls.txt'), 'w').write('\n'.join(sorted(links)) + '\n')
+        subprocess.run(['git', 'add', 'data/linkrot/urls.txt'], cwd=NODES, capture_output=True)
+        c = subprocess.run(['git', '-c', 'user.name=Bones', '-c', 'user.email=268764679+claude-wayfinder@users.noreply.github.com', 'commit', '-qm', 'LINKROT list from the first seat'], cwd=NODES, capture_output=True, text=True)
+        subprocess.run(['git', 'push', '-q'], cwd=NODES, capture_output=True)
+        d = subprocess.run(['gh', 'api', 'repos/Heuremen-LLC/nodes/dispatches', '-f', 'event_type=linkrot-probe'], capture_output=True, text=True)
+        if d.returncode == 0: st2['dispatched'] = time.time(); json.dump(st2, open(S2, 'w'))
+    try: raw = urllib.request.urlopen(urllib.request.Request('https://raw.githubusercontent.com/Heuremen-LLC/nodes/main/data/linkrot/results.jsonl', headers={'User-Agent': UA}), timeout=60).read().decode()
+    except Exception: return
+    n = 0
+    for l in raw.splitlines():
+        try: r = json.loads(l)
+        except Exception: continue
+        e = links.get(r['url'])
+        if e is not None and r['t'] > (e.get('seat2') or [0])[0]: e['seat2'] = [r['t'], r['status']]; n += 1
+    if n: json.dump(links, open('data/links.json.tmp', 'w')); os.replace('data/links.json.tmp', 'data/links.json')
+try: seat2()
+except Exception as ex: print('linkrot: seat 2 step failed', type(ex).__name__)
 if gate_ok: subprocess.run([sys.executable, '-I', os.path.join(H, 'linkrot_repos.py')], capture_output=True, timeout=1500)   # second question, PLAN_REPOS.md
 # summary
 def cell(rows):
@@ -66,7 +88,12 @@ def cell(rows):
     lo, hi = K.wilson(rot, rd)
     oc = K.CANNOT_TELL if (rd < 30 or not gate_ok) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
     return dict(links=len(rows), live=live, gone=gone, dns_fail=dns, blocked=c['BLOCKED'], timeout=c['TIMEOUT'], rot_share=round(rot / rd, 4) if rd else None, lo=round(lo, 4), hi=round(hi, 4), outcome=oc)
-cur = {u: e['hist'][-1][1] for u, e in links.items() if e['hist']}
+def combined(e):
+    a = e['hist'][-1]; b = e.get('seat2'); bad = ('GONE', 'DNS_FAIL')
+    if b and abs(a[0] - b[0]) <= 14 * 86400:
+        if (a[1] == 'LIVE' and b[1] in bad) or (a[1] in bad and b[1] == 'LIVE'): return 'BLOCKED'
+    return a[1]
+cur = {u: combined(e) for u, e in links.items() if e['hist']}
 by_year = {}; by_host = {}
 for y in sorted({y for e in links.values() for y in e['years']}):
     by_year[str(y)] = cell([cur[u] for u, e in links.items() if u in cur and min(e['years']) == y])
@@ -75,7 +102,7 @@ for hname in sorted({e['host'] for e in links.values()}):
 ret = sum(1 for e in links.values() if len(e['hist']) > 1 and e['hist'][-1][1] == 'LIVE' and any(s in ('GONE', 'DNS_FAIL') for _, s in e['hist'][:-1]))
 newly = sum(1 for e in links.values() if len(e['hist']) > 1 and e['hist'][-1][1] in ('GONE', 'DNS_FAIL') and e['hist'][-2][1] == 'LIVE')
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate_ok else 'FAILED', papers=len(papers), links=len(links), read=len(cur), due=len([u for u, e in links.items() if not e['hist'] or now - e['hist'][-1][0] > 7 * 86400]),
-           all=cell(list(cur.values())), by_year=by_year, by_host=by_host, returned=ret, newly_gone=newly, moved=sum(1 for e in links.values() if e.get('moved')))
+           all=cell(list(cur.values())), by_year=by_year, by_host=by_host, returned=ret, newly_gone=newly, seat2_links=sum(1 for e in links.values() if e.get('seat2') and e['hist'] and abs(e['hist'][-1][0] - e['seat2'][0]) <= 14 * 86400), seat_disagreements=sum(1 for e in links.values() if e['hist'] and e.get('seat2') and combined(e) == 'BLOCKED' and e['hist'][-1][1] != 'BLOCKED'), moved=sum(1 for e in links.values() if e.get('moved')))
 if os.path.exists('summary_repos.json'): out['repos'] = json.load(open('summary_repos.json'))
 json.dump(out, open('summary_linkrot.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')

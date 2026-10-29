@@ -2,10 +2,10 @@
 """caca_summary.py: reads data/queries.jsonl and writes summary_caca.json per PLAN.md. Share blocked of alive domains per resolver and checkpoint with Wilson 95%."""
 import json, os, math, time, collections as C
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H)
-def wil(k, n):
+import heuremen_kit as _K
+def wil(k, n):   # 29 Oct: kit's tested Wilson; the cadence copy omitted the division by d
     if not n: return None
-    p = k / n; z = 1.96; d = 1 + z * z / n; c = (p + z * z / (2 * n)) / d; h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return [round(100 * p), round(100 * max(0, c - h)), round(100 * min(1, c + h))]
+    p = k / n; lo, hi = _K.wilson(k, n); return [round(100 * p), round(100 * lo), round(100 * hi)]
 rows = [json.loads(l) for l in open('data/queries.jsonl')] if os.path.exists('data/queries.jsonl') else []
 by = C.defaultdict(dict)
 for r in rows: by[(r['domain'], r['cp'])][r['resolver']] = r

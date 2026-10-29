@@ -28,8 +28,8 @@ snaps = load('data/snapshots.jsonl'); hist = C.defaultdict(list)
 for s in snaps: hist[s['id']].append(s)
 FLOWN = {'Success', 'Failure', 'Partial Failure'}; USABLE = {'Second', 'Minute', 'Hour', 'Day'}
 LEADS = [(1, '1 day'), (7, '7 days'), (30, '30 days')]
-def wil(k, n):
-    p = k / n; z = 1.96; d = 1 + z * z / n; c = (p + z * z / (2 * n)) / d; h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)); return max(0, c - h), min(1, c + h)
+import heuremen_kit as _K
+def wil(k, n): return _K.wilson(k, n)   # 29 Oct: the local copy omitted the division by d; the kit's tested function replaces it
 scored = {L: [] for L, _ in LEADS}; flown = 0; waiting = 0; coarse = 0; cancelled = 0
 for i, hs in hist.items():
     fin = hs[-1]
