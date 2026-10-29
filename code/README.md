@@ -28,7 +28,7 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [mirror/](mirror/): QIA: IBM published calibration, mirrored, audited and tracked for stability - https://indahl.ai/qia
 - [t1t2-check/](t1t2-check/): QIA: the T1 and T2 joint-measurement check - https://indahl.ai/qia
 - [iris/](iris/): IRIS: language-model evaluations, Faults and Guards bench, lab queue - https://indahl.ai/iris
-- [sad/](sad/): SAD: vendor claims against published results - https://indahl.ai/sad
+- [model/](model/): MODEL: vendor claims and model claims against published results - https://indahl.ai/hermes/model
 - [atlas/](atlas/): ATLAS: built infrastructure, stated against delivered - https://indahl.ai/atlas
 - [arxivdrift/](arxivdrift/): ARXIVDRIFT: Indexed arXiv studies against the version that stands now, live. - https://indahl.ai/arxivdrift
 - [support/](support/): SUPPORT: Stated support windows against release activity, live. - https://indahl.ai/support
@@ -38,6 +38,10 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [change/](change/): CHANGE: Vendor shutdown dates, read over time, live. - https://indahl.ai/change
 - [secrecords/](secrecords/): SECRECORDS: Security headers and mail records against their own rules, live. - https://indahl.ai/secrecords
 - [seat/](seat/): SEAT: An outside seat reads our own pages, live. - https://indahl.ai/seat
+- [pkginstall/](pkginstall/): PKGINSTALL: PyPI install commands against resolution, live. - https://indahl.ai/pkginstall
+- [stack/](stack/): STACK: Every test side by side, live. - https://indahl.ai/stack
+- [revise/](revise/): REVISE: Payroll first estimates against the stated margin, live. - https://indahl.ai/revise
+- [fedsep/](fedsep/): FEDSEP: The Fed's stated projection ranges against outcomes, live. - https://indahl.ai/fedsep
 - [api/](api/): API and MCP server - https://indahl.ai/api
 - [kit/](kit/): The shared instrument pieces every corner uses - https://indahl.ai/
 - [replies/](replies/): Right of reply: posted responses beside the rows they answer - https://indahl.ai/

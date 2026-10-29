@@ -5,3 +5,4 @@
 {"alive.0": 264, "alive.21600": 84, "alive.3600": 231, "alive.86400": 0, "feed_reads": 78, "not_alive.0": 16, "not_alive.21600": 20, "not_alive.3600": 22, "not_alive.86400": 0, "t": "2026-10-29T09:40Z", "tracked": 280}
 {"alive.0": 358, "alive.21600": 134, "alive.3600": 283, "alive.86400": 0, "feed_reads": 94, "not_alive.0": 24, "not_alive.21600": 29, "not_alive.3600": 30, "not_alive.86400": 0, "t": "2026-10-29T12:01Z", "tracked": 382}
 {"alive.0": 385, "alive.21600": 134, "alive.3600": 286, "alive.86400": 0, "feed_reads": 96, "not_alive.0": 24, "not_alive.21600": 29, "not_alive.3600": 30, "not_alive.86400": 0, "t": "2026-10-29T12:03Z", "tracked": 409}
+{"alive.0": 478, "alive.21600": 185, "alive.3600": 355, "alive.86400": 0, "feed_reads": 104, "not_alive.0": 25, "not_alive.21600": 34, "not_alive.3600": 54, "not_alive.86400": 0, "t": "2026-10-29T13:12Z", "tracked": 503}
