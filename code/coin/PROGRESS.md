@@ -1,9 +1,9 @@
 # COIN trends: progress
 
-Updated 29 Oct 14:18 UTC.
+Updated 29 Oct 16:35 UTC.
 
-Blocks held: 37810 (heights 4558180 to 4602414), 30.93 days.
-Transactions scanned: 2212.
+Blocks held: 40143 (heights 4555233 to 4602515), 33.07 days.
+Transactions scanned: 9992.
 
 Pool share-move test: needs 14 days held. Window is long enough, outcomes are in summary_trends.json.
 Linkage test: CANNOT_TELL. the Bitcoin positive control (AntPool and BTC.com) held no batch payouts in 14 days, so the known-good gate cannot pass.
