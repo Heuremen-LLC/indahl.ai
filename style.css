@@ -139,6 +139,11 @@ main .hl.pick select{font:400 14px Lora,Georgia,serif;color:var(--ink);backgroun
 main .hl.pick .pk-vs{font:600 11px Cinzel,Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
 main .hl.pick .btn{margin:0;padding:6px 14px;cursor:pointer}
 .foot .fs a{display:inline;padding:0;font-size:inherit}
+/* 29 Oct 2026: reserved space for the script-filled blocks, so nothing jumps */
+.hl-slot{min-height:165px}.hl-slot.hl-home{min-height:616px}.hl-slot.hl-stack{min-height:344px}
+main section.hl-slot:not(.hl):not(.hlgrid){border-bottom:0}
+@media(max-width:700px){.hl-slot{min-height:150px}.hl-slot.hl-home{min-height:891px}.hl-slot.hl-stack{min-height:340px}}
+.bench-live{min-height:240px}#ibm-live{min-height:400px}
 .mtx .by{font-size:12.5px}.mtx a.code{font-size:11px;padding:0 4px}
 .crumb{margin:14px 0 0;font-size:13.5px}
 .idx{margin:0 0 10px;gap:8px}.idx input[name=url]{font-size:15px;padding:7px 10px}.idx .btn{padding:7px 14px}

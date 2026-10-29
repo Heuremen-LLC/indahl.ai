@@ -11,11 +11,10 @@
       function pts(x) { var v = Math.abs(x * 100); return (v < 10 ? v.toFixed(1) : Math.round(v)); }
       function label(r) { return r.page + ': ' + r.test; }
       var a = Math.floor(Math.random() * rows.length), b = a; while (b === a) b = Math.floor(Math.random() * rows.length);
-      var s = document.createElement('section'); s.className = 'hl pick';
+      var slot0 = document.getElementById('hl-slot'), s = slot0 || document.createElement('section'); s.className = (slot0 ? 'hl-slot hl-stack ' : '') + 'hl pick'; if (slot0) slot0.removeAttribute('aria-hidden');
       var opts = rows.map(function (r, i) { return '<option value="' + i + '">' + esc(label(r).slice(0, 90)) + '</option>'; }).join('');
       s.innerHTML = '<div class="hl-big" id="pk-big"></div><p class="hl-line" id="pk-line"></p><div class="pk-ctl"><select id="pk-a" aria-label="First test">' + opts + '</select><span class="pk-vs">against</span><select id="pk-b" aria-label="Second test">' + opts + '</select><button type="button" class="btn ghost" id="pk-go">Shuffle</button></div><div id="pk-graph"></div>';
-      var old = document.querySelector('.hl'); if (old) old.parentNode.removeChild(old);
-      main.insertBefore(s, main.firstChild);
+      if (!slot0) { var old = document.querySelector('.hl'); if (old) old.parentNode.removeChild(old); main.insertBefore(s, main.firstChild); }
       var sa = s.querySelector('#pk-a'), sb = s.querySelector('#pk-b');
       function show() {
         var x = rows[+sa.value], y = rows[+sb.value]; if (x.share < y.share) { var t = x; x = y; y = t; } var diff = x.share - y.share;
@@ -32,16 +31,16 @@
   function run() {
     fetch('/headlines.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
       var pages = d.pages || {}, main = document.querySelector('main.wrap'); if (!main) return;
-      var old = document.querySelector('.hl, .hlgrid'); if (old) old.parentNode.removeChild(old);
+      var slot = document.getElementById('hl-slot');
+      var old = slot ? null : document.querySelector('.hl, .hlgrid'); if (old) old.parentNode.removeChild(old);
+      function fill(cls, html) { if (slot) { slot.className = 'hl-slot ' + cls + (slot.className.indexOf('hl-home') > -1 ? ' hl-home' : '') + (slot.className.indexOf('hl-stack') > -1 ? ' hl-stack' : ''); slot.removeAttribute('aria-hidden'); slot.innerHTML = html; return slot; } var e = document.createElement('section'); e.className = cls; e.innerHTML = html; main.insertBefore(e, main.firstChild); return e; }
       if (path === '/') {
         var list = (d.home || []).filter(function (s) { return pages[s]; }); if (!list.length) return;
-        var g = document.createElement('section'); g.className = 'hlgrid'; g.setAttribute('aria-label', 'Headlines');
-        g.innerHTML = list.map(function (s) { var h = pages[s]; var m = /^(.*?[.!?])(\s+.+)$/.exec(h.line || ''); var line = m ? esc(m[1]) + '<span class="hl-rest">' + esc(m[2]) + '</span>' : esc(h.line); return '<a class="hlcard" href="' + esc(h.href) + '"><div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + line + '</p><span class="hl-more">' + esc(s.toUpperCase()) + '</span></a>'; }).join('');
-        main.insertBefore(g, main.firstChild);
+        fill('hlgrid', list.map(function (s) { var h = pages[s]; var m = /^(.*?[.!?])(\s+.+)$/.exec(h.line || ''); var line = m ? esc(m[1]) + '<span class="hl-rest">' + esc(m[2]) + '</span>' : esc(h.line); return '<a class="hlcard" href="' + esc(h.href) + '"><div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + line + '</p><span class="hl-more">' + esc(s.toUpperCase()) + '</span></a>'; }).join(''));
       } else {
         if (path === '/stack') { stackPick(main); return; }
         var slug = path.split('/')[1]; if (path.split('/').length > 2 && path !== '/hermes/model') return; var h = pages[slug]; if (!h || path === '/hermes/model') return;
-        var s = document.createElement('section'); s.className = 'hl'; s.innerHTML = block(h); main.insertBefore(s, main.firstChild);
+        fill('hl', block(h));
       }
     }).catch(function () {});
   }
