@@ -26,7 +26,13 @@ IRIS, SAD, ATLAS and OY are pages of static tables with no live feed, and they a
 
 ## Addendum 3 (29 Oct, same day, on the owner's note that the page should summarise every division and stack across them)
 The page becomes three layers, with no change to any rule or reading.
-1. A summary of every division and every group of live pages: what it holds and one live reading from its own feed. The divisions are QIA, IRIS, OY, ATLAS and SAD. The live pages are grouped by the question they ask: a stated number against its record (REVISE, FEDSEP, SECRECORDS, HFSIZE, PKGLICENSE, HFLICENSE, TRIALS), a promised file or link (LINKROT, PKGINSTALL, HPT, ARXIVDRIFT), a stated date or window (SUPPORT, CHANGE, CADENCE, LAUNCH, FORECAST), and the checks on ourselves and on time and uptime (SEAT, TIME, UPTIME, CADA, COIN). A page sits in one group, fixed here.
+1. A summary of every division and every group of live pages: what it holds and one live reading from its own feed. The divisions are QIA, IRIS, OY, ATLAS and HERMES. The live pages are grouped by the question they ask: a stated number against its record (REVISE, FEDSEP, SECRECORDS, HFSIZE, PKGLICENSE, HFLICENSE, TRIALS), a promised file or link (LINKROT, PKGINSTALL, HPT, ARXIVDRIFT), a stated date or window (SUPPORT, CHANGE, CADENCE, LAUNCH, FORECAST), and the checks on ourselves and on time and uptime (SEAT, TIME, UPTIME, CADA, COIN). A page sits in one group, fixed here.
 2. The headline tests plotted on one shared axis, share with its interval, coloured by outcome, so tests from different divisions can be read against each other. The axis is the share of items failing and the plot says that two tests are not measures of the same thing.
 3. A button that stacks three tests at random on that axis, for anyone who wants to put unlike tests next to each other. It reads the same rows and draws them. It chooses nothing and ranks nothing.
 The tables from addenda 1 and 2 stay.
+
+## Addendum 4 (29 Oct, on the division rename)
+The fifth division is HERMES (Held Every Record, Measured Every Statement). Every live page has one home division: IRIS holds HFSIZE, HFLICENSE, PKGLICENSE and PKGINSTALL; ATLAS holds UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE; HERMES holds TRIALS, HPT, REVISE, FEDSEP, CADENCE, FORECAST, LAUNCH, COIN, ARXIVDRIFT and LINKROT; QIA and OY hold their own pages. The groups by question in addendum 3 stay as the cross-cut. HERMES is the menu of every division and desk at /hermes, and its MODEL desk is at /hermes/model.
+
+## Note on naming (29 Oct)
+This plan was written when the fifth division carried an earlier name. On 29 Oct 2026 the name was removed from the public files. The wording above was changed to the current names and nothing else. The earlier text is kept in the archive tag pre-hermes-20261029 and in the hash chain.

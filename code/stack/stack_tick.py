@@ -93,10 +93,10 @@ def dv(path):
 qs, ir, irl, aud = dv('qia/list.json'), dv('iris/live.json'), dv('iris/list.json'), dv('qia/audit.json')
 divisions = [
  dict(name='QIA', link='/qia', holds='IBM calibration audited against itself, T1 and T2 runs on flagged qubits, the processor queue, and every quantum study we have indexed', reading=('%d studies indexed, %d qubits flagged by the audit' % (len(qs['studies']), len(aud['flagged']))) if qs and aud else ''),
- dict(name='IRIS', link='/iris', holds='Language-model evaluations, the Faults and Guards bench, a lab queue, and the evaluation studies we have indexed', reading=('%d studies indexed, lab runs: %d running, %d next, %d done' % (len(irl['studies']), len(ir['running']), len(ir['next']), len(ir['done']))) if irl and ir else ''),
+ dict(name='IRIS', link='/iris', holds='Language-model evaluations, the Faults and Guards bench, a lab queue, the evaluation studies we have indexed, and the desks HFSIZE, HFLICENSE, PKGLICENSE and PKGINSTALL', reading=('%d studies indexed, lab runs: %d running, %d next, %d done' % (len(irl['studies']), len(ir['running']), len(ir['next']), len(ir['done']))) if irl and ir else ''),
  dict(name='OY', link='/oy', holds='What colleges publish about measuring their own AI policies, with a source for every row', reading='Static tables, read on the page'),
- dict(name='ATLAS', link='/atlas', holds='Built infrastructure in the United States, mapped from open sources', reading='Static map and tables, read on the page'),
- dict(name='SAD', link='/sad', holds='Vendor claims against the results the published harness gives, one model at a time', reading='Rounds run on the lab queue, read on the page')]
+ dict(name='ATLAS', link='/atlas', holds='Built infrastructure, mapped from open sources, and the desks UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE', reading='Static map and tables, and seven desks'),
+ dict(name='HERMES', link='/hermes', holds='Held Every Record, Measured Every Statement: claims by vendors and public institutions against the record, and every desk under it', reading='Eleven desks: MODEL, TRIALS, HPT, REVISE, FEDSEP, CADENCE, FORECAST, LAUNCH, COIN, ARXIVDRIFT, LINKROT')]
 rows_out = [dict(r, test_key=i) for i, r in enumerate(rows)]
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), tests=len(rows), tally={o: dict(n=tally[o]) for o in ORDER if tally[o]}, rows=[dict(page=r['page'], test=r['test'], of=r['of'], n=r['n'], share=r['share'], share_lo=r['share_lo'], share_hi=r['share_hi'], outcome=r['outcome']) for r in rows],
            items={i['page']: {k: v for k, v in i.items() if k not in ('page', 'slug')} for i in items}, running=running, divisions=divisions, stacks=stacks)

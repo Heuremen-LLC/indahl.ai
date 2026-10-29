@@ -2107,7 +2107,7 @@
    "stated": "more than 90% utilization for five consecutive hours",
    "in_file": "lowest utilization 91.6% of 13 entries. The five timed runs add up to 4.82 to 5.21 hours",
    "outcome": "CONSISTENT",
-   "note": "Each run lasts about an hour and the five scored runs are consecutive with a few minutes between them. The sum of run time is 4.82 hours in the shortest entry, 3.6 percent under five hours. The rule used on SAD for a rounded figure is up to 5 percent.",
+   "note": "Each run lasts about an hour and the five scored runs are consecutive with a few minutes between them. The sum of run time is 4.82 hours in the shortest entry, 3.6 percent under five hours. The rule used on MODEL for a rounded figure is up to 5 percent.",
    "label_mismatch": false,
    "source": {
     "title": "Microsoft Learn: Azure Managed Lustre MLPerf Storage v3.0 results (2026)",
