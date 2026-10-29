@@ -1,0 +1,6 @@
+fair                               outcome CONSISTENT pooled 0.5000 usable True  flags []
+readout asymmetry only             outcome BELOW      pooled 0.4898 usable True  flags []
+twelve biased qubits               outcome ABOVE      pooled 0.5139 usable False flags ['qubits beyond 3 sigma of a fair coin: 12 of 64', 'Hadamard readings match the prediction from the 0 and 1 readouts on only 75% of qubits']
+three stuck qubits                 outcome BELOW      pooled 0.4778 usable False flags ['stuck qubits 3']
+neighbours copy 30 percent         outcome CONSISTENT pooled 0.5026 usable False flags ['adjacent pairs correlated: 63 of 63']
+SELFTEST PASS

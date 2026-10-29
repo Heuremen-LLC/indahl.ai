@@ -55,11 +55,21 @@ for s in SLUGS + ['headlines']:
     b = get('https://indahl.ai/%s' % (s + '/live.json?x=%d' % time.time() if s != 'headlines' else 'headlines.json?x=%d' % time.time()))
     fl.append((s, sha(b) if b else 'NOTHING_RETURNED'))
 ef = append('feeds', 'live feeds, %d of %d read' % (sum(1 for _, h in fl if h != 'NOTHING_RETURNED'), len(fl)), merkle(fl), fl)
+# 2b quantum bits: a finished QBITS run waiting in qbits/new becomes a qbits entry (PLAN Addendum 2)
+os.makedirs('qbits/new', exist_ok=True); os.makedirs('qbits/done', exist_ok=True)
+for qf in sorted(glob.glob('qbits/new/*.json')):
+    try:
+        q = json.load(open(qf)); rd = q['reading']
+        lv = [('backend', q['backend']), ('job_id', q['job_id']), ('shots', str(q['shots'])), ('qubits', str(q['qubits'])), ('raw_sha256', q['raw_sha256']), ('extracted', q['extracted']), ('outcome', rd['outcome']), ('usable', str(rd['usable']))]
+        append('qbits', 'quantum bits from %s' % q['backend'], q['extracted'], lv, dict(run=os.path.basename(qf), pooled_p1=rd['pooled_p1'], flags=rd['flags']))
+        os.rename(qf, 'qbits/done/' + os.path.basename(qf))
+    except Exception as ex: print('tape: qbits file skipped,', os.path.basename(qf), type(ex).__name__)
 # 3 beacon
 dr = get(DRAND, 20); drd = json.loads(dr) if dr else None
 rnd = str(drd['round']) if drd else 'NOTHING_RETURNED'; rr = drd['randomness'] if drd else 'NOTHING_RETURNED'
-bv = beacon(rr, ef['root'], ef['entry'])
-append('beacon', 'drand round %s' % rnd, bv, [('drand_randomness', rr), ('feeds_root', ef['root']), ('prev_entry', ef['entry'])], dict(drand_round=rnd, drand_chain='52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971'))
+qlast = [e for e in chain if e['kind'] == 'qbits']; qroot = qlast[-1]['root'] if qlast else None
+bv = beacon(rr, ef['root'], ef['entry'], qroot)
+append('beacon', 'drand round %s' % rnd, bv, [('drand_randomness', rr), ('feeds_root', ef['root']), ('prev_entry', ef['entry']), ('qbits_root', qroot or 'NONE')], dict(drand_round=rnd, drand_chain='52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971'))
 # anchoring: which entries a stamped ARCHIVE manifest covers
 anch = dict(archive_id=None, covers_n=0, attested=False)
 try:
@@ -78,11 +88,14 @@ try:
             anch['attested'] = 'BitcoinBlockHeaderAttestation' in (r.stdout + r.stderr); anch['digest'] = a['digest']; break
 except Exception as ex: anch['note'] = type(ex).__name__
 last = chain[-1]; bq = [e for e in chain if e['kind'] == 'beacon'][-1]
+lf = [e for e in chain if e['kind'] == 'feeds'][-1]; lfl = json.load(open('leaves/%d.json' % lf['n']))['leaves']
+feedrec = {k: dict(n=lf['n'], hash=h) for k, h in lfl}
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), read=1, count=len(chain), head=dict(n=last['n'], entry=last['entry'], t=last['t']), beacon=dict(n=bq['n'], t=bq['t'], value=bq['root'], drand_round=bq['subject'].replace('drand round ', '')), anchor=anch,
-           entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev']) for e in reversed(chain[-150:])])
+           feeds=feedrec, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
 json.dump(out, open('summary_tape.json', 'w'), indent=1)
 os.makedirs(PUB + '/leaves', exist_ok=True)
 subprocess.run('cp tape.jsonl PLAN.md tape_tick.py tape_verify.py tapelib.py known_good.py %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
+subprocess.run('mkdir -p %s/qbits/runs && cp qbits/PLAN_QBITS.md.text qbits/qbits_run.py qbits/synth_selftest.text %s/qbits/ && (cp qbits/runs/* %s/qbits/runs/ 2>/dev/null || true)' % (PUB, PUB, PUB), shell=True)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'tape_live', '--path', os.path.join(H, 'summary_tape.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('tape: entries', len(chain), 'head', last['entry'][:12], 'beacon', bv[:12], 'anchor n', anch['covers_n'], 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

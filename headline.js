@@ -28,6 +28,14 @@
       show();
     }).catch(function () {});
   }
+  // 29 Oct 2026: the receipt line. Says only that the feed behind the number was hashed onto the tape at an entry (TAPE PLAN Addendum 3).
+  function receipt(box, slug) {
+    fetch('/tape/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (t) {
+      var f = t.feeds && t.feeds[slug]; if (!f || box.querySelector('.hl-receipt')) return;
+      var p = document.createElement('p'); p.className = 'hl-receipt'; p.appendChild(document.createTextNode('Receipt: the feed behind this number was hashed onto the tape at entry ' + f.n + ', ' + f.hash.slice(0, 10) + '\u2026 '));
+      var a = document.createElement('a'); a.href = '/tape'; a.textContent = 'See the tape'; p.appendChild(a); p.appendChild(document.createTextNode('.')); box.appendChild(p);
+    }).catch(function () {});
+  }
   function run() {
     fetch('/headlines.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
       var pages = d.pages || {}, main = document.querySelector('main.wrap'); if (!main) return;
@@ -40,7 +48,7 @@
       } else {
         if (path === '/stack') { stackPick(main); return; }
         var slug = path.split('/')[1]; if (path.split('/').length > 2 && path !== '/hermes/model') return; var h = pages[slug]; if (!h || path === '/hermes/model') return;
-        fill('hl', block(h));
+        var hs = fill('hl', block(h)); receipt(hs, slug);
       }
     }).catch(function () {});
   }
