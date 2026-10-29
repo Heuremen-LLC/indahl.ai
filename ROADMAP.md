@@ -27,7 +27,7 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [ ] **New Zenodo versions every month** (script written and tested; first scheduled run after the next release).
 - [ ] **Amazon Braket deviations table**. Parked: needs a funded account.
 - [ ] **Boston T1 and T2**. Job queued at IBM since the 29th, waits behind hundreds of pending jobs.
-- [ ] **Hospital price-transparency files** (HPT, plan committed, first read in progress). The cms-hpt.txt at the root of each hospital website, the file it links, and the template header.
+- [x] **Hospital price-transparency files** ([HPT live](https://indahl.ai/hpt), [plan and two addenda](code/hpt/PLAN.md)). The cms-hpt.txt at the root of each hospital website, the file it links, and the template header. Hand check found non-subjects in the list and eleven reading errors in the first read, both corrected in the addenda.
 - [x] **Scheduled flight time against flown time** ([AIRLINE live](https://indahl.ai/airline), [plan and two addenda](code/airline/PLAN.md)). Bureau of Transportation Statistics record, January to August of 2019, 2025 and 2026, routes as the independent units, every ABOVE hand-checked on its largest routes.
 - [ ] **ATLAS interconnection queues**. Large-load interconnection queues against announced data center MW, onsite generation permits, a live grid layer.
 - [ ] **ISP broadband labels against M-Lab**. Access to the M-Lab tables works. A label states a typical speed for one plan, and M-Lab measures every plan of a network together, so a fair test needs single-plan providers or a plan mix we do not have. The plan will name which providers qualify before any measurement is read.
