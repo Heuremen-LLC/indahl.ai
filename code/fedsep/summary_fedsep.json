@@ -1,0 +1,185 @@
+{
+ "updated": "29 Oct 12:55",
+ "gate": "passed",
+ "septs": 11,
+ "triples": 78,
+ "claim": "about 70 percent inside, so about 30 percent outside",
+ "pooled": {
+  "This year, September projection": {
+   "triples": 41,
+   "years": 11,
+   "outside": 6,
+   "share": 0.1463,
+   "share_lo": 0.0256,
+   "share_hi": 0.275,
+   "outcome": "BELOW"
+  },
+  "Next year, September projection": {
+   "triples": 37,
+   "years": 10,
+   "outside": 10,
+   "share": 0.2703,
+   "share_lo": 0.0811,
+   "share_hi": 0.4872,
+   "outcome": "CONSISTENT"
+  }
+ },
+ "sensitivity": {
+  "This year, funds rate scored at year-end": {
+   "triples": 41,
+   "years": 11,
+   "outside": 5,
+   "share": 0.122,
+   "share_lo": 0.0,
+   "share_hi": 0.25,
+   "outcome": "BELOW"
+  },
+  "Next year, funds rate scored at year-end": {
+   "triples": 37,
+   "years": 10,
+   "outside": 10,
+   "share": 0.2703,
+   "share_lo": 0.0789,
+   "share_hi": 0.4872,
+   "outcome": "CONSISTENT"
+  }
+ },
+ "per_variable": {
+  "Change in real GDP, this year": {
+   "n": 11,
+   "outside": 2,
+   "share": 0.1818,
+   "share_lo": 0.0514,
+   "share_hi": 0.477,
+   "outcome": "CONSISTENT",
+   "mean_error": 0.66,
+   "range_typical": 1.2
+  },
+  "Unemployment rate, this year": {
+   "n": 10,
+   "outside": 2,
+   "share": 0.2,
+   "share_lo": 0.0567,
+   "share_hi": 0.5098,
+   "outcome": "CANNOT_TELL",
+   "mean_error": -0.21,
+   "range_typical": 0.3
+  },
+  "PCE inflation, this year": {
+   "n": 11,
+   "outside": 1,
+   "share": 0.0909,
+   "share_lo": 0.0162,
+   "share_hi": 0.3774,
+   "outcome": "CONSISTENT",
+   "mean_error": 0.16,
+   "range_typical": 0.8
+  },
+  "Federal funds rate, this year": {
+   "n": 9,
+   "outside": 1,
+   "share": 0.1111,
+   "share_lo": 0.0199,
+   "share_hi": 0.435,
+   "outcome": "CONSISTENT",
+   "mean_error": -0.13,
+   "range_typical": 0.5
+  },
+  "Change in real GDP, next year": {
+   "n": 10,
+   "outside": 4,
+   "share": 0.4,
+   "share_lo": 0.1682,
+   "share_hi": 0.6873,
+   "outcome": "CANNOT_TELL",
+   "mean_error": 0.15,
+   "range_typical": 1.8
+  },
+  "Unemployment rate, next year": {
+   "n": 9,
+   "outside": 2,
+   "share": 0.2222,
+   "share_lo": 0.0632,
+   "share_hi": 0.5474,
+   "outcome": "CANNOT_TELL",
+   "mean_error": 0.03,
+   "range_typical": 1.1
+  },
+  "PCE inflation, next year": {
+   "n": 10,
+   "outside": 2,
+   "share": 0.2,
+   "share_lo": 0.0567,
+   "share_hi": 0.5098,
+   "outcome": "CANNOT_TELL",
+   "mean_error": 0.71,
+   "range_typical": 1.05
+  },
+  "Federal funds rate, next year": {
+   "n": 8,
+   "outside": 2,
+   "share": 0.25,
+   "share_lo": 0.0715,
+   "share_hi": 0.5907,
+   "outcome": "CANNOT_TELL",
+   "mean_error": 0.12,
+   "range_typical": 1.7
+  }
+ },
+ "misses": [
+  {
+   "year": 2020,
+   "variable": "Change in real GDP",
+   "median": -3.7,
+   "outcome_value": -0.92,
+   "stated_range": 1.1,
+   "miss": 1.68,
+   "note": "Median and range read from the SEP page, outcome from FRED"
+  },
+  {
+   "year": 2020,
+   "variable": "Unemployment rate",
+   "median": 7.6,
+   "outcome_value": 6.77,
+   "stated_range": 0.3,
+   "miss": 0.53,
+   "note": "Median and range read from the SEP page, outcome from FRED"
+  },
+  {
+   "year": 2021,
+   "variable": "PCE inflation",
+   "median": 4.2,
+   "outcome_value": 5.73,
+   "stated_range": 0.8,
+   "miss": 0.73,
+   "note": "Median and range read from the SEP page, outcome from FRED"
+  },
+  {
+   "year": 2021,
+   "variable": "Unemployment rate",
+   "median": 4.8,
+   "outcome_value": 4.17,
+   "stated_range": 0.5,
+   "miss": 0.13,
+   "note": "Median and range read from the SEP page, outcome from FRED"
+  },
+  {
+   "year": 2022,
+   "variable": "Federal funds rate",
+   "median": 4.4,
+   "outcome_value": 3.65,
+   "stated_range": 0.5,
+   "miss": 0.25,
+   "note": "Scored on the fourth-quarter average. At the year-end target midpoint it is inside. Median and range read from the SEP page, outcome from FRED"
+  },
+  {
+   "year": 2023,
+   "variable": "Change in real GDP",
+   "median": 2.1,
+   "outcome_value": 3.42,
+   "stated_range": 1.3,
+   "miss": 0.02,
+   "note": "Outside by 0.02 beyond a range printed to one decimal. Median and range read from the SEP page, outcome from FRED"
+  }
+ ]
+}
