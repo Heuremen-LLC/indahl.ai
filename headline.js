@@ -10,7 +10,7 @@
       if (path === '/') {
         var list = (d.home || []).filter(function (s) { return pages[s]; }); if (!list.length) return;
         var g = document.createElement('section'); g.className = 'hlgrid'; g.setAttribute('aria-label', 'Headlines');
-        g.innerHTML = list.map(function (s) { var h = pages[s]; return '<a class="hlcard" href="' + esc(h.href) + '">' + block(h) + '<span class="hl-more">' + esc(s.toUpperCase()) + '</span></a>'; }).join('');
+        g.innerHTML = list.map(function (s) { var h = pages[s]; var m = /^(.*?[.!?])(\s+.+)$/.exec(h.line || ''); var line = m ? esc(m[1]) + '<span class="hl-rest">' + esc(m[2]) + '</span>' : esc(h.line); return '<a class="hlcard" href="' + esc(h.href) + '"><div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + line + '</p><span class="hl-more">' + esc(s.toUpperCase()) + '</span></a>'; }).join('');
         main.insertBefore(g, main.firstChild);
       } else {
         var slug = path.split('/')[1]; if (path.split('/').length > 2 && path !== '/hermes/model') return; var h = pages[slug]; if (!h || path === '/hermes/model') return;
