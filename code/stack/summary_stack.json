@@ -1,18 +1,18 @@
 {
- "updated": "29 Oct 12:20",
- "tests": 16,
+ "updated": "29 Oct 12:52",
+ "tests": 20,
  "tally": {
   "ABOVE": {
-   "n": 3
+   "n": 4
   },
   "CONSISTENT": {
-   "n": 7
+   "n": 8
   },
   "CANNOT_TELL": {
    "n": 3
   },
   "NOTHING_RETURNED": {
-   "n": 3
+   "n": 5
   }
  },
  "rows": [
@@ -37,6 +37,16 @@
    "outcome": "ABOVE"
   },
   {
+   "page": "REVISE",
+   "test": "Payroll: first estimate moved by more than the stated margin by the benchmarked value",
+   "of": 120,
+   "n": 25,
+   "share": 0.2083,
+   "share_lo": 0.1453,
+   "share_hi": 0.2895,
+   "outcome": "ABOVE"
+  },
+  {
    "page": "SECRECORDS",
    "test": "HSTS preload header against its own requirements",
    "of": 186,
@@ -45,6 +55,16 @@
    "share_lo": 0.1432,
    "share_hi": 0.2563,
    "outcome": "ABOVE"
+  },
+  {
+   "page": "REVISE",
+   "test": "Payroll: first estimate moved by more than the stated margin by the third release",
+   "of": 120,
+   "n": 13,
+   "share": 0.1083,
+   "share_lo": 0.0644,
+   "share_hi": 0.1766,
+   "outcome": "CONSISTENT"
   },
   {
    "page": "LINKROT",
@@ -175,6 +195,26 @@
    "share_lo": null,
    "share_hi": null,
    "outcome": "NOTHING_RETURNED"
+  },
+  {
+   "page": "FEDSEP",
+   "test": "Federal Reserve projections: outcome outside the stated 70% range, this year",
+   "of": null,
+   "n": null,
+   "share": null,
+   "share_lo": null,
+   "share_hi": null,
+   "outcome": "NOTHING_RETURNED"
+  },
+  {
+   "page": "FEDSEP",
+   "test": "Federal Reserve projections: outcome outside the stated 70% range, next year",
+   "of": null,
+   "n": null,
+   "share": null,
+   "share_lo": null,
+   "share_hi": null,
+   "outcome": "NOTHING_RETURNED"
   }
  ],
  "items": {
@@ -195,6 +235,270 @@
    "BELOW": 0,
    "CONSISTENT": 0,
    "CANNOT_TELL": 20
+  },
+  "CADENCE": {
+   "ABOVE": 0,
+   "BELOW": 623,
+   "CONSISTENT": 631,
+   "CANNOT_TELL": 205
   }
+ },
+ "running": [
+  {
+   "page": "ARXIVDRIFT",
+   "what": "Indexed studies whose later arXiv version changed their numbers",
+   "reading": "3 of 992 (0.3%), 3 with any revision",
+   "state": "Counted, no outcome rule"
+  },
+  {
+   "page": "CADENCE",
+   "what": "Datasets updated more slowly than they state",
+   "reading": "623 below of 1254 readable series across 8 portals",
+   "state": "Per-series outcomes, tallied below"
+  },
+  {
+   "page": "CADA",
+   "what": "Public DNS filters that answer on listed bad domains",
+   "reading": "496 domains tracked, 7 filters read",
+   "state": "Running, under its own rule"
+  },
+  {
+   "page": "FORECAST",
+   "what": "Stated chance of precipitation against what happened",
+   "reading": "52 periods scored of 453 stored, 0 with an event",
+   "state": "Cannot tell, under 30 events"
+  },
+  {
+   "page": "LAUNCH",
+   "what": "Stated launch time against the time it flew",
+   "reading": "201 launches tracked, 100 flown, 101 waiting",
+   "state": "Waiting for flown launches to score"
+  },
+  {
+   "page": "CHANGE",
+   "what": "Vendor shutdown dates that held as they passed",
+   "reading": "281 rows read since 2026-10-29, 0 dates have passed",
+   "state": "Cannot tell, under 30 dates"
+  },
+  {
+   "page": "SEAT",
+   "what": "Pages and feeds, seen from an outside runner",
+   "reading": "1 probes, 24 of 24 pages match, 20 of 20 feeds fresh",
+   "state": "CANNOT_TELL"
+  },
+  {
+   "page": "QIA",
+   "what": "Published qubits with T2 above 2.5 times T1",
+   "reading": "3 qubits on 3 processors",
+   "state": "Counted from IBM records, no outcome rule"
+  },
+  {
+   "page": "QIA",
+   "what": "T1 and T2 measured together on flagged qubits",
+   "reading": "boston submitted, waiting in the processo; kingston ran: q121 cannot tell, q19 consistent; fez ran: q148 cannot tell, q95 consistent; fez (rerun 1) ran: q148 cannot tell, q95 consistent",
+   "state": "Per-qubit readings, four outcomes"
+  },
+  {
+   "page": "QIA",
+   "what": "Jobs pending at each processor",
+   "reading": "kingston 122, boston 447, phoenix 2482",
+   "state": "Hourly, analysis rule committed"
+  },
+  {
+   "page": "QIA",
+   "what": "Stability of IBM published calibration over time",
+   "reading": "",
+   "state": "NOTHING_RETURNED"
+  }
+ ],
+ "divisions": [
+  {
+   "name": "QIA",
+   "link": "/qia",
+   "holds": "IBM calibration audited against itself, T1 and T2 runs on flagged qubits, the processor queue, and every quantum study we have indexed",
+   "reading": "1523 studies indexed, 3 qubits flagged by the audit"
+  },
+  {
+   "name": "IRIS",
+   "link": "/iris",
+   "holds": "Language-model evaluations, the Faults and Guards bench, a lab queue, and the evaluation studies we have indexed",
+   "reading": "17 studies indexed, lab runs: 2 running, 1 next, 0 done"
+  },
+  {
+   "name": "OY",
+   "link": "/oy",
+   "holds": "What colleges publish about measuring their own AI policies, with a source for every row",
+   "reading": "Static tables, read on the page"
+  },
+  {
+   "name": "ATLAS",
+   "link": "/atlas",
+   "holds": "Built infrastructure in the United States, mapped from open sources",
+   "reading": "Static map and tables, read on the page"
+  },
+  {
+   "name": "SAD",
+   "link": "/sad",
+   "holds": "Vendor claims against the results the published harness gives, one model at a time",
+   "reading": "Rounds run on the lab queue, read on the page"
+  }
+ ],
+ "stacks": {
+  "A stated date or window": [
+   {
+    "page": "SUPPORT",
+    "test": "Supported cycles that had stopped releasing",
+    "of": 512,
+    "n": 123,
+    "share": 0.2402,
+    "share_lo": 0.1667,
+    "share_hi": 0.3245,
+    "outcome": "ABOVE"
+   },
+   {
+    "page": "SUPPORT",
+    "test": "Products with at least one such cycle",
+    "of": 264,
+    "n": 54,
+    "share": 0.2045,
+    "share_lo": 0.1603,
+    "share_hi": 0.2573,
+    "outcome": "ABOVE"
+   }
+  ],
+  "A stated number against its record": [
+   {
+    "page": "TRIALS",
+    "test": "Results due against results posted: records with no results",
+    "of": 22316,
+    "n": 4881,
+    "share": 0.2187,
+    "share_lo": 0.2133,
+    "share_hi": 0.2242,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "page": "REVISE",
+    "test": "Payroll: first estimate moved by more than the stated margin by the benchmarked value",
+    "of": 120,
+    "n": 25,
+    "share": 0.2083,
+    "share_lo": 0.1453,
+    "share_hi": 0.2895,
+    "outcome": "ABOVE"
+   },
+   {
+    "page": "SECRECORDS",
+    "test": "HSTS preload header against its own requirements",
+    "of": 186,
+    "n": 36,
+    "share": 0.1935,
+    "share_lo": 0.1432,
+    "share_hi": 0.2563,
+    "outcome": "ABOVE"
+   },
+   {
+    "page": "REVISE",
+    "test": "Payroll: first estimate moved by more than the stated margin by the third release",
+    "of": 120,
+    "n": 13,
+    "share": 0.1083,
+    "share_lo": 0.0644,
+    "share_hi": 0.1766,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "page": "HFSIZE",
+    "test": "Size in the name against the weights",
+    "of": 142,
+    "n": 12,
+    "share": 0.0845,
+    "share_lo": 0.049,
+    "share_hi": 0.1419,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "page": "SECRECORDS",
+    "test": "SPF record against the 10-lookup limit",
+    "of": 757,
+    "n": 21,
+    "share": 0.0277,
+    "share_lo": 0.0182,
+    "share_hi": 0.042,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "page": "TRIALS",
+    "test": "Stopped records with no reason given",
+    "of": 1668,
+    "n": 25,
+    "share": 0.015,
+    "share_lo": 0.0102,
+    "share_hi": 0.022,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "page": "PKGLICENSE",
+    "test": "Stated license against the repository license",
+    "of": 699,
+    "n": 7,
+    "share": 0.01,
+    "share_lo": 0.0049,
+    "share_hi": 0.0205,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "page": "HFLICENSE",
+    "test": "Models: stated license against the license file",
+    "of": 85,
+    "n": 0,
+    "share": 0.0,
+    "share_lo": 0.0,
+    "share_hi": 0.0432,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "page": "TRIALS",
+    "test": "Withdrawn records that list participants enrolled",
+    "of": 1100,
+    "n": 0,
+    "share": 0.0,
+    "share_lo": 0.0,
+    "share_hi": 0.0035,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "page": "HFLICENSE",
+    "test": "Datasets: stated license against the license file",
+    "of": 18,
+    "n": 0,
+    "share": 0.0,
+    "share_lo": 0.0,
+    "share_hi": 0.1759,
+    "outcome": "CANNOT_TELL"
+   }
+  ],
+  "A promised file or link": [
+   {
+    "page": "LINKROT",
+    "test": "Stated code links that are gone",
+    "of": 1980,
+    "n": 69,
+    "share": 0.035,
+    "share_lo": 0.0277,
+    "share_hi": 0.044,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "page": "PKGINSTALL",
+    "test": "Install command against pip resolution",
+    "of": 525,
+    "n": 0,
+    "share": 0.0,
+    "share_lo": 0.0,
+    "share_hi": 0.0073,
+    "outcome": "CONSISTENT"
+   }
+  ]
  }
 }
