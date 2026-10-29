@@ -18,11 +18,11 @@
       main.insertBefore(s, main.firstChild);
       var sa = s.querySelector('#pk-a'), sb = s.querySelector('#pk-b');
       function show() {
-        var x = rows[+sa.value], y = rows[+sb.value], diff = x.share - y.share;
+        var x = rows[+sa.value], y = rows[+sb.value]; if (x.share < y.share) { var t = x; x = y; y = t; } var diff = x.share - y.share;
         var lo = diff - Math.sqrt(Math.pow(x.share - x.share_lo, 2) + Math.pow(y.share_hi - y.share, 2)), hi = diff + Math.sqrt(Math.pow(x.share_hi - x.share, 2) + Math.pow(y.share - y.share_lo, 2));
         var big = (diff === 0 ? '0' : pts(diff)) + ' points';
         s.querySelector('#pk-big').textContent = big;
-        s.querySelector('#pk-line').textContent = x.page + ' ' + pct(x.share) + ' (' + x.n + ' of ' + x.of + ', ' + x.outcome.toLowerCase().replace(/_/g, ' ') + ') against ' + y.page + ' ' + pct(y.share) + ' (' + y.n + ' of ' + y.of + ', ' + y.outcome.toLowerCase().replace(/_/g, ' ') + '). ' + (diff >= 0 ? x.page : y.page) + ' is higher. Difference ' + (lo * 100).toFixed(1) + ' to ' + (hi * 100).toFixed(1) + ' points, 95% interval.';
+        s.querySelector('#pk-line').textContent = x.page + ' ' + pct(x.share) + ' (' + x.n + ' of ' + x.of + ', ' + x.outcome.toLowerCase().replace(/_/g, ' ') + ') against ' + y.page + ' ' + pct(y.share) + ' (' + y.n + ' of ' + y.of + ', ' + y.outcome.toLowerCase().replace(/_/g, ' ') + '). ' + x.page + ' is higher. Difference ' + (lo * 100).toFixed(1) + ' to ' + (hi * 100).toFixed(1) + ' points, 95% interval.';
       }
       sa.value = a; sb.value = b; sa.onchange = sb.onchange = show;
       s.querySelector('#pk-go').onclick = function () { var i = Math.floor(Math.random() * rows.length), j = i; while (j === i) j = Math.floor(Math.random() * rows.length); sa.value = i; sb.value = j; show(); };
