@@ -13,9 +13,9 @@
   }
   function link(href, txt) { var a = el('a', txt); a.href = href; return a; }
   function svg(n, attrs) { var e = document.createElementNS(NS, n); Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); }); return e; }
-  function forest(rows, title) {
+  function forest(rows, title, fixedMax) {
     var rs = rows.filter(function (r) { return r.share != null; }); if (!rs.length) return el('p');
-    var max = Math.max.apply(null, rs.map(function (r) { return r.share_hi || r.share; })); max = Math.max(0.05, Math.ceil(max * 20) / 20);
+    var max = fixedMax || Math.max.apply(null, rs.map(function (r) { return r.share_hi || r.share; })); max = fixedMax || Math.max(0.05, Math.ceil(max * 20) / 20);
     var W = 760, L = 330, R = 20, T = 26, H = T + rs.length * 24 + 30, s = svg('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': title, width: '100%' });
     function x(v) { return L + (W - L - R) * v / max; }
     for (var g = 0; g <= max + 1e-9; g += max <= 0.15 ? 0.05 : 0.1) {
@@ -39,13 +39,14 @@
     var tests = d.rows || [], plotted = tests.filter(function (r) { return r.share != null; });
     box.appendChild(el('h3', 'Every test on one axis'));
     box.appendChild(el('p', 'Each line is the share of items that failed its own test, with its 95% interval. Colour is the outcome that page gave: orange above, blue below, green consistent, grey cannot tell. Two lines are not measures of the same thing. They share an axis so they can be read together.', 'bench-note'));
-    box.appendChild(forest(plotted, 'Every test on one axis'));
+    var AXMAX = Math.max.apply(null, plotted.map(function (r) { return r.share_hi || r.share; })); AXMAX = Math.max(0.05, Math.ceil(AXMAX * 20) / 20);
+    box.appendChild(forest(plotted, 'Every test on one axis', AXMAX));
     // 3 random stack
     box.appendChild(el('h3', 'Stack three at random'));
     var out = el('div'), btn = el('button', 'Stack three'); btn.type = 'button'; btn.className = 'btn';
     function pick() {
       var pool = plotted.slice(), three = []; while (three.length < 3 && pool.length) three.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
-      out.textContent = ''; out.appendChild(forest(three, 'Three tests picked at random')); out.appendChild(el('p', three.map(function (r) { return r.page + ': ' + r.test + ', ' + r.n + ' of ' + r.of + ' (' + pc(r.share) + ')'; }).join('. ') + '.', 'bench-note'));
+      out.textContent = ''; out.appendChild(forest(three, 'Three tests picked at random', AXMAX)); out.appendChild(el('p', three.map(function (r) { return r.page + ': ' + r.test + ', ' + r.n + ' of ' + r.of + ' (' + pc(r.share) + ')'; }).join('. ') + '.', 'bench-note'));
     }
     btn.addEventListener('click', pick); box.appendChild(btn); box.appendChild(out); pick();
     // 4 themed stacks
