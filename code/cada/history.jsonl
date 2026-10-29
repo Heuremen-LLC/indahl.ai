@@ -1,2 +1,5 @@
 {"alive.0": 28, "alive.21600": 0, "alive.3600": 27, "alive.86400": 0, "feed_reads": 18, "not_alive.0": 3, "not_alive.21600": 0, "not_alive.3600": 4, "not_alive.86400": 0, "t": "2026-10-29T00:48Z", "tracked": 31}
 {"alive.0": 90, "alive.21600": 0, "alive.3600": 48, "alive.86400": 0, "feed_reads": 30, "not_alive.0": 8, "not_alive.21600": 0, "not_alive.3600": 8, "not_alive.86400": 0, "t": "2026-10-29T02:27Z", "tracked": 98}
+{"alive.0": 152, "alive.21600": 0, "alive.3600": 126, "alive.86400": 0, "feed_reads": 46, "not_alive.0": 11, "not_alive.21600": 0, "not_alive.3600": 11, "not_alive.86400": 0, "t": "2026-10-29T05:01Z", "tracked": 163}
+{"alive.0": 205, "alive.21600": 41, "alive.3600": 149, "alive.86400": 0, "feed_reads": 62, "not_alive.0": 14, "not_alive.21600": 14, "not_alive.3600": 14, "not_alive.86400": 0, "t": "2026-10-29T07:22Z", "tracked": 219}
+{"alive.0": 264, "alive.21600": 84, "alive.3600": 231, "alive.86400": 0, "feed_reads": 78, "not_alive.0": 16, "not_alive.21600": 20, "not_alive.3600": 22, "not_alive.86400": 0, "t": "2026-10-29T09:40Z", "tracked": 280}

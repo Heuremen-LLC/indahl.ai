@@ -30,6 +30,8 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [atlas/](atlas/): ATLAS: built infrastructure, stated against delivered - https://indahl.ai/atlas
 - [arxivdrift/](arxivdrift/): ARXIVDRIFT: Indexed arXiv studies against the version that stands now, live. - https://indahl.ai/arxivdrift
 - [support/](support/): SUPPORT: Stated support windows against release activity, live. - https://indahl.ai/support
+- [pkglicense/](pkglicense/): PKGLICENSE: Package licenses against repository licenses, live. - https://indahl.ai/pkglicense
+- [hflicense/](hflicense/): HFLICENSE: Hugging Face stated licenses against license files, live. - https://indahl.ai/hflicense
 - [api/](api/): API and MCP server - https://indahl.ai/api
 - [kit/](kit/): The shared instrument pieces every corner uses - https://indahl.ai/
 - [replies/](replies/): Right of reply: posted responses beside the rows they answer - https://indahl.ai/
