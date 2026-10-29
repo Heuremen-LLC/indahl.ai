@@ -2,7 +2,7 @@
 
 Scripts behind the tables on indahl.ai. Free to read, run and cite with attribution. See LICENSE.txt in the repository root.
 
-- `sad/` builds and checks the Stated against Delivered sources, one claims checker per source.
+- `model/` builds and checks the model and hardware claims sources, one claims checker per source.
 - `iris/` holds the Faults and Guards bench (items, runner, scorer), the Falcon training plan and scripts, and the model claims round for SmolLM2.
 - `coin/` collects block records from public explorers, recomputes block hashes from header fields, and checks a chain's stated claims against its own record. It reads public data only.
 - `mirror/` mirrors the calibration IBM publishes and audits each record against itself, with an independent recount script.
