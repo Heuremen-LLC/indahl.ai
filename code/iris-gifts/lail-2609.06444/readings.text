@@ -1,0 +1,28 @@
+L1 the distance feature on labelled items (their build_features and fit_dcm, read; our reveal draw in their scheme)
+  labelled items 2494, zero-label items 619
+  labelled items whose own distance is the nearest (0 up to float rounding, max 2.0e-15): 2494 of 2494
+  standardised nearest-distance column: spread inside the fit set (labelled) sd 3.23e-15, range 2.48e-14 | over zero-label items sd 1.114, range [-0.41, 4.06]
+  items with an exact embedding duplicate elsewhere: 0
+  10-nearest density column: labelled mean 0.4188 as computed (self included) against 0.4706 with self left out | zero-label mean 0.4730
+
+L2 five labels against the judge, Manhattan units (0-2)
+  items with five valid old labels 3106 of 3113 | left out by reason {'4 old labels': 7}
+  old five unanimous on 0 items (ChaosNLI chose items for disagreement among them)
+  (a) against all 100 labels, n 3106: judge 0.4587 | old five 0.4618 | judge minus old five -0.0031 [-0.0196, +0.0123] | judge closer on 1600 items, old five closer on 1503, tied 3
+  (b) against a 50-label half, 200 random half-splits, per-item means:
+      all 3113 items: judge 0.4647 | five fresh labels from the other half 0.3695 | the other 50-label half (noise ceiling) 0.1579
+      judge minus five fresh labels +0.0952 [+0.0850, +0.1057] | judge closer on 1461 items, five fresh closer on 1652
+      n 3106 with five old labels: judge 0.4654 | old five 0.4683 | judge minus old five -0.0029 [-0.0190, +0.0122]
+      snli   n 1514: judge 0.3662 | five fresh 0.3257 | difference +0.0405 [+0.0272, +0.0541]
+      mnli_m n 1599: judge 0.5580 | five fresh 0.4110 | difference +0.1470 [+0.1317, +0.1619]
+
+L3 Appendix C: self-update 0.258, conjugate with the familiarity channel 0.262, without 0.307 (paper text and dice/RESULTS.md line 174).
+  lowest error (better): self-update | order: self-update 0.258 < conjugate, familiarity channel 0.262 < conjugate, base 0.307 | per-die values not rebuilt, no interval on the 0.004 gap
+
+L2c (defined after the data) k fresh labels from one half against the other half, same 200 splits (seed 0 sequence restarted)
+  judge 0.4647 | 1 fresh 0.8063 | 2 fresh 0.5689 | 3 fresh 0.4690 | 4 fresh 0.4107 | 5 fresh 0.3698
+
+L2d (defined after the data) the original five-label panel
+  agreement pattern over 3106 items: {'3-2': 2505, '3-1-1': 601}
+  snli   n 1507: judge 0.3597 | old five 0.5033 | judge minus old five -0.1436 [-0.1656, -0.1206]
+  mnli_m n 1599: judge 0.5521 | old five 0.4227 | judge minus old five +0.1294 [+0.1086, +0.1498]

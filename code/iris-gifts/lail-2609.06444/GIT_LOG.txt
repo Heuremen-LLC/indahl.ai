@@ -1,0 +1,5 @@
+4f79b5b 2026-10-30 18:36:05 -0400 Lail gift: referee pass, L2d (post hoc), corrections filed
+32349ec 2026-10-30 18:35:40 -0400 Lail gift: Addendum 2 (referee corrections; L2d defined after the data) before computing
+ab280d5 2026-10-30 18:09:43 -0400 Lail gift: known-good, readings L1-L3 and L2c (post hoc), Check Block filed
+dc23a9f 2026-10-30 18:09:19 -0400 Lail gift: Addendum 1 (L2c, defined after the data) committed before L2c is computed
+3b3c6f5 2026-10-30 18:07:45 -0400 Lail gift (2609.06444): plan L1-L3 committed before known-good and readings; STATUS for Sarkar and Ovcharov
