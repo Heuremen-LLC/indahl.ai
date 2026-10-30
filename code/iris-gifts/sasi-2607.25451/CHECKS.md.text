@@ -1,0 +1,54 @@
+
+## 2026-10-30 19:16 Sasi K and S1-S4: Table 1 rebuilds (16 rows); Wilson and Newcombe intervals (FP16 and INT8 consistent with the reference within about 5 points, four-bit drops clear zero); seeds 1 and 2 at n 2,000 give memorization lost 0.739 and 0.747 beside 0.723; 'over seventy percent' is m 0.718, not 0.596 of the sample; selectivity 7.97 Pile, 6.97 WikiText; references reproduce 0.756, 0.834, 0.830 of sequences defined as reproduced
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: every comparison within one model and one sample (the s0 sample shared across precisions); S2 compares NF4 and FP16 within each seed
+- II: holds: per-configuration counts printed with intervals; the seed runs read one by one, not pooled
+- III: holds: differences printed signed (quantized minus reference)
+- V: holds: Wilson per rate and Newcombe per difference, unpaired and said so (no per-sequence outputs)
+- VI: holds: four-bit drops BELOW the reference with intervals clear of zero; FP16 and INT8 CONSISTENT with bounds near 5 points; S2 the larger runs agree with the seed-0 headline
+- R: holds: every value read from his result JSON; counts recovered as rate times n and checked to be whole
+- L1: n/a: no text parsing; rates are stored fields
+- L2: holds: known_good (Table 1 match) printed before the readings in the same output
+- L3: holds: his m, c and s definitions as printed (Section 3), reference precision per model as Table 1 states
+- L4: n/a: no reruns in this entry; the live arm L1 gets its own entry
+- L5: holds: file names keyed by model, precision and seed exactly as released
+- L6: n/a: no dropped items in aggregates
+- L7: n/a: truth is the published memorized set
+- L8: cannot tell: pairing impossible from aggregates, so intervals are unpaired and wider than paired ones would be
+- L9: n/a: prompts are token ids from the set
+- L10: holds: model revisions pinned in the live arm setup
+- L11: n/a: nothing substituted
+- L12: holds: a refuting referee (Claude model, same family) follows
+- P1: holds: quotations checked against paper.txt lines 80, 73 and Section 3
+- P2: holds: each figure names its result file
+- P3: holds: precision labels as in his file names
+- P4: holds: no cause named for S4
+- P5: holds: 95% Wilson and Newcombe named
+- P6: holds: S3 worded as relative versus absolute, no stronger
+- P7: n/a: package after the referee
+- P8: n/a: no rendered page
+- P9: holds: plain sentences
+- P10: holds: all readings defined after reading the paper, said in the plan
+
+## 2026-10-30 19:21 Sasi L1 live reference: our FP32 Mac CPU runs equal his reference exactly (160m 0.756, 410m 0.834, mean prefix and token accuracy to every digit; 1B FP32 0.830 beside his FP16 0.830); repeat floor 0 of 500 per model; 122, 83 and 85 of 500 published memorized sequences are not reproduced at full precision on our machine either
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same items (his .npy samples), same generate call, same weights by revision; the 1B comparison crosses precision (ours FP32, his FP16) and is labelled
+- II: holds: per-sequence outcomes compared between our repeats (0 differ) before any rate
+- III: n/a: no signed effect in this entry
+- V: holds: exact match, mean prefix and token accuracy side by side against his three stored aggregates
+- VI: holds: CONSISTENT with his reference to every printed digit for 160m and 410m; the shortfall from 'reproduces greedily' replicates exactly, a fact about the set and the weights, cause not named
+- R: holds: runs/l1_*_r{1,2}.json written before read_l1.py ran; setup in SETUP_L1.md (revisions, file hashes, versions)
+- L1: n/a: token ids compared, no text parsing
+- L2: holds: both repeats written before the comparison
+- L3: holds: his extract.py call mirrored (prompt 32, greedy, 32 new, one beam, ones mask, pad 0, batch 32); device and dtype named (CPU FP32)
+- L4: holds: repeat floor 0 of 500 per model on the Mac CPU; his GPU and versions unrecorded, so no across-machine cause
+- L5: holds: his three sample files, rows in order
+- L6: n/a: no items dropped
+- L7: n/a: truth is the sequence's own last 32 ids
+- L8: holds: per-sequence outcomes paired across repeats
+- L9: n/a: the target is the held-out half of each sequence
+- L10: holds: weights pinned by revision and file sha256
+- L11: n/a: nothing substituted
+- L12: holds: refuting referee to follow is a Claude model, disclosed

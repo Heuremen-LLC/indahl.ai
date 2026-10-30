@@ -1,0 +1,52 @@
+K Table 1 from the result files (extract, PPL WT, PPL Pile, m, c, s against the printed digits)
+  160m fp32  n 500 extract 0.756 | WT 25.60 | Pile 12.27 | m 1.000 | c 1.000 | s - | matches printed: True
+  160m fp16  n 500 extract 0.746 | WT 25.84 | Pile 12.37 | m 0.987 | c 0.992 | s - | matches printed: True
+  160m int8  n 500 extract 0.734 | WT 26.07 | Pile 12.48 | m 0.971 | c 0.983 | s 1.73 | matches printed: True
+  160m nf4   n 500 extract 0.294 | WT 38.39 | Pile 17.33 | m 0.389 | c 0.708 | s 2.74 | matches printed: True
+  160m fp4   n 500 extract 0.176 | WT 48.61 | Pile 21.22 | m 0.233 | c 0.578 | s 2.66 | matches printed: True
+  410m fp32  n 500 extract 0.834 | WT 15.86 | Pile 8.88 | m 1.000 | c 1.000 | s - | matches printed: True
+  410m fp16  n 500 extract 0.822 | WT 15.87 | Pile 8.89 | m 0.986 | c 0.999 | s - | matches printed: True
+  410m int8  n 500 extract 0.810 | WT 16.13 | Pile 8.98 | m 0.971 | c 0.989 | s 2.59 | matches printed: True
+  410m nf4   n 500 extract 0.228 | WT 32.40 | Pile 15.35 | m 0.273 | c 0.579 | s 2.37 | matches printed: True
+  410m rtn4  n 500 extract 0.176 | WT 37.14 | Pile 18.49 | m 0.211 | c 0.480 | s 2.12 | matches printed: True
+  410m fp4   n 500 extract 0.132 | WT 39.60 | Pile 20.59 | m 0.158 | c 0.431 | s 2.19 | matches printed: True
+  1b   fp16  n 500 extract 0.830 | WT 12.68 | Pile 7.58 | m 1.000 | c 1.000 | s - | matches printed: True
+  1b   int8  n 500 extract 0.826 | WT 12.72 | Pile 7.60 | m 0.995 | c 0.997 | s 1.53 | matches printed: True
+  1b   nf4   n 500 extract 0.596 | WT 13.30 | Pile 7.90 | m 0.718 | c 0.959 | s 7.97 | matches printed: True
+  1b   rtn4  n 500 extract 0.498 | WT 14.28 | Pile 8.32 | m 0.600 | c 0.910 | s 5.44 | matches printed: True
+  1b   fp4   n 500 extract 0.460 | WT 14.25 | Pile 8.32 | m 0.554 | c 0.911 | s 6.33 | matches printed: True
+  rows not matching: 0
+
+S1 Wilson 95%% for every extraction rate (n 500) and the difference from the reference (Newcombe, unpaired)
+  160m fp32  378/500 = 0.756 [0.716, 0.792] (reference)
+  160m fp16  373/500 = 0.746 [0.706, 0.782] | minus reference -0.010 [-0.063, +0.044]
+  160m int8  367/500 = 0.734 [0.694, 0.771] | minus reference -0.022 [-0.076, +0.032]
+  160m nf4   147/500 = 0.294 [0.256, 0.335] | minus reference -0.462 [-0.514, -0.405]
+  160m fp4   88/500 = 0.176 [0.145, 0.212] | minus reference -0.580 [-0.627, -0.527]
+  410m fp32  417/500 = 0.834 [0.799, 0.864] (reference)
+  410m fp16  411/500 = 0.822 [0.786, 0.853] | minus reference -0.012 [-0.059, +0.035]
+  410m int8  405/500 = 0.810 [0.773, 0.842] | minus reference -0.024 [-0.071, +0.024]
+  410m nf4   114/500 = 0.228 [0.193, 0.267] | minus reference -0.606 [-0.652, -0.554]
+  410m rtn4  88/500 = 0.176 [0.145, 0.212] | minus reference -0.658 [-0.701, -0.608]
+  410m fp4   66/500 = 0.132 [0.105, 0.164] | minus reference -0.702 [-0.742, -0.654]
+  1b   fp16  415/500 = 0.830 [0.795, 0.860] (reference)
+  1b   int8  413/500 = 0.826 [0.790, 0.857] | minus reference -0.004 [-0.051, +0.043]
+  1b   nf4   298/500 = 0.596 [0.552, 0.638] | minus reference -0.234 [-0.287, -0.179]
+  1b   rtn4  249/500 = 0.498 [0.454, 0.542] | minus reference -0.332 [-0.385, -0.276]
+  1b   fp4   230/500 = 0.460 [0.417, 0.504] | minus reference -0.370 [-0.423, -0.314]
+
+S2 the 410M runs at other seeds (not cited in the paper)
+  seed 0: FP16 n 500 0.822 [0.786, 0.853] | NF4 n 500 0.228 [0.193, 0.267] | m (NF4 over FP16) 0.277, memorization lost 0.723
+  seed 1: FP16 n 2000 0.811 [0.793, 0.828] | NF4 n 2000 0.211 [0.194, 0.230] | m (NF4 over FP16) 0.261, memorization lost 0.739
+  seed 2: FP16 n 2000 0.811 [0.793, 0.828] | NF4 n 2000 0.205 [0.188, 0.223] | m (NF4 over FP16) 0.253, memorization lost 0.747
+
+S3 two sentences against Table 1
+  "over seventy percent of memorized sequences": 1B NF4 extracts 0.596 of the sample; m against the FP16 reference 0.718
+  "selectivity about seven": 1B NF4 s on Pile     7.97
+  "selectivity about seven": 1B NF4 s on WikiText 6.97
+
+S4 the reference against the definition: extraction at the reference precision on sequences defined as reproduced by the full-precision model
+  160m fp32 0.756 (122 of 500 not reproduced)
+  410m fp32 0.834 (83 of 500 not reproduced)
+  1b   fp16 0.830 (85 of 500 not reproduced)
+  released README/markdown mentions of why the reference falls short (words "not reproduce", "reference", "fp32" near "memorized"): False
