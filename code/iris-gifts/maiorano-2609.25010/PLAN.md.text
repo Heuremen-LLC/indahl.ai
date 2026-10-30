@@ -1,0 +1,42 @@
+# Gift recount: Maiorano, arXiv 2609.25010 "Do Synthetic Personas Predict Real Audience Response?"
+Written and committed 30 Oct 2026 before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as
+printed: Alexandre Cristovão Maiorano, no affiliation printed, alexandre@lumytics.com. No funding or acknowledgements printed. The conflict
+note names a commercial interest in copy-simulation tools. Released: github.com/alemaiorano/sim-to-real-validity at 7c1ab46b5d88 (MIT and
+CC BY 4.0); per-test scores are withheld in every commit, so tau and the intervals cannot be recomputed. Paper v1 read in full by the scout
+(scout/RECOUNT.md) and by us in Sections 4-5, Tables 1, 2 and 5, and the appendix on the protocol. Their code is read, never run.
+
+## KNOWN-GOOD (ours, ours/readings.py part K, before the readings)
+The scout rebuilt the corpus counts with its own code on the public data (1,695 tests, 399 reliable, our item list equals his locked corpus
+hash). Ours: Table 1 and every Table 2 row against his report files (reports/baseline_comparison.json, replication.json), value by value.
+This is a transcription check, since the items behind them are withheld.
+
+## Readings (record readings from his own files; defined after reading the paper)
+M1 The Reddit row. The text says the baseline "captures more than the panel in every dataset (Table 2)" and the caption says it "beats or
+   matches the persona panel everywhere". Read the Reddit row's top-1 and lift, with his intervals, from replication.json.
+M2 The rank coefficient. Read compute_validity.py's kendall_tau as text and name the statistic it computes, and read baseline_ties.json for
+   the share of packages where the baseline gives every variant the same score. Whether such packages enter the baseline's tau cannot be
+   told from the release, and the reading says so.
+M3 The GPT-4.1 rerun. The text says it reproduces the result "on all 399 reliable-winner packages", and the protocol gives the baseline the
+   panel's 30-sample budget per variant. Read draws, baseline draws and package counts from crossfamily_gpt41.json.
+M4 Seed spread. Read the three seed values in stability.json and give the population and sample standard deviations beside the printed
+   0.025 and 0.008.
+
+## What this gift never says
+No cause, no judgement of the method. Only his own files against his own text.
+
+## Addendum 1 (30 Oct 2026, after M1-M4 were computed; M2b is defined after the data)
+Reading compute_validity.py's analyze() shows that a package whose tau is None (every pair tied) is left out of the tau mean and its
+bootstrap, while n_packages counts it, and top-1 and lift keep it. So M2 can tell how the 71 all-tied baseline packages enter: they leave
+the baseline's tau. M2b gives the baseline's tau mean with those packages counted as 0, by arithmetic on his printed mean and counts
+(0.361 over 398 - 71 packages), beside the panel's 0.084. This assumes the None packages are exactly the all-tied ones, which holds when no
+package has every real CTR equal (his lift code drops such packages, and the reading counts them from replication.json n).
+
+## Addendum 2 (30 Oct 2026, after the referee pass; M2c and M3b are defined after the data)
+Corrections from the referee: M2b's reason in Addendum 1 is wrong. A package enters the reliable-winner set only when its top CTR is
+strictly above every other variant, so every pair with the top variant has a real difference, and tau is None only when every prediction is
+equal. The 71 come from a tie rate computed after rounding scores to six decimals, so the None count is at most 71, and the release does not
+give the panel's count. The 0.361 in Table 1 also equals analyze_replication.metrics() output, which applies the same rule. M2b is a
+sensitivity, not a correction. New readings, each defined after the data:
+M2c the same exclusion for Spearman rho: 0.350 with the 71 counted as 0, by the same arithmetic.
+M3b the seed in the GPT-4.1 rerun: whether scripts/tier2_crossmodel.py sends a seed, beside the paper's "all seeds are pinned and recorded
+per prediction" (Internal validity) and the seed rule in the protocol appendix.

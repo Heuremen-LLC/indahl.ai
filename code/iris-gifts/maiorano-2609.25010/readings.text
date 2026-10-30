@@ -1,0 +1,35 @@
+K Table 1 against reports/baseline_comparison.json (printed n = 399)
+  baseline n 398 | printed equals report on all nine values: True
+  panel    n 399 | printed equals report on all nine values: True
+K Table 2 against reports/replication.json (persona tau, baseline tau, lift persona/baseline; n per arm)
+  exploratory   printed equals report: True | n persona 399, baseline 398
+  holdout       printed equals report: True | n persona 402, baseline 401
+  confirmatory  printed equals report: True | n persona 1866, baseline 1864
+  mind-news     printed equals report: True | n persona 74, baseline 74
+  reddit-titles printed equals report: True | n persona 600, baseline 599
+
+M1 the Reddit row (reports/replication.json, his 95% intervals)
+  top1           persona 0.403 [0.363, 0.443] | baseline 0.302 [0.265, 0.341] | intervals overlap: False
+  lift_captured  persona 0.452 [0.414, 0.490] | baseline 0.333 [0.297, 0.371] | intervals overlap: False
+  kendall_tau    persona -0.009 [-0.077, 0.059] | baseline -0.026 [-0.105, 0.056] | intervals overlap: True
+  lift, baseline above persona by split: {'exploratory': True, 'holdout': True, 'confirmatory': True, 'mind-news': True, 'reddit-titles': False}
+
+M2 the rank coefficient in scripts/compute_validity.py
+  returns (concordant - discordant) / (concordant + discordant), tied pairs counted in neither: True
+  returns None when every pair is tied: True
+  baseline_ties.json: n 398, all variants tied on 0.1784 of packages (71)
+
+M3 the GPT-4.1 rerun (reports/crossfamily_gpt41.json)
+  persona draws 3, baseline draws 10 | packages: persona 399, baseline 395, paired 395
+
+M4 seed spread (reports/stability.json)
+  tau   seeds [0.034833333333333334, 0.09333333333333334, 0.07980952380952382] | population SD 0.0250 | sample SD 0.0306 | stored 0.0250
+  top1  seeds [0.33, 0.35, 0.34] | population SD 0.0082 | sample SD 0.0100 | stored 0.0082
+
+M2b (defined after the data) analyze() appends tau only when it is not None; n_packages counts every package
+  tau left out when None: True | mean over the kept taus: True
+  baseline tau 0.361 over 327 of 398 packages; with the 71 all-tied packages counted as 0: 0.297 | panel tau 0.084
+
+M2c (defined after the data) baseline rho 0.350 over the packages with a defined rho; with the 71 all-tied packages counted as 0: 0.288 | panel rho 0.104
+
+M3b (defined after the data) scripts/tier2_crossmodel.py mentions "seed": False | lines 229

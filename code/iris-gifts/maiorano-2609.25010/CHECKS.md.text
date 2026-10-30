@@ -1,0 +1,64 @@
+
+## 2026-10-30 18:22 Maiorano K, M1-M4, M2b: Tables 1 and 2 equal his reports; Reddit persona beats baseline on top-1 (40.3 vs 30.2) and lift (0.452 vs 0.333), non-overlapping; tau code is (C-D)/(C+D) and all-tied packages leave the tau mean (baseline 71 of 398; 0.361 over 327, 0.297 with them at 0, post hoc); GPT-4.1 baseline 10 draws, 395 packages; seed SD population formula (0.025, sample 0.031)
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: the tau mean drops packages whose tau is undefined, a gate the baseline fails on 71 of 398 packages and the panel does not; counted and shown both ways (M2b)
+- II: holds: per-split rows read one by one; Reddit is the only split where lift goes the other way
+- III: holds: signs read per split; Reddit's tau gap is -0.017 with both near 0, its top-1 and lift favour the panel
+- V: holds: his own intervals used for overlap; tau-as-computed beside tau with the tied packages at 0; population beside sample SD
+- VI: holds: M1 persona ABOVE baseline on Reddit top-1 and lift (non-overlapping intervals), tau CONSISTENT; M2b the conclusion holds either way (0.297 or 0.361 against 0.084)
+- R: holds: every value read from his report JSON and script text; M2b labelled defined after the data (Addendum 1, 35f1d34)
+- L1: n/a: no model outputs parsed; scores are withheld
+- L2: holds: Tables 1 and 2 checked against the reports before the readings
+- L3: holds: his metric code read as text (compute_validity.py, analyze_replication.py); both arms run through the same analyze()
+- L4: n/a: no reruns of ours; his seed spread is read as stored (M4)
+- L5: holds: n per arm read from the reports (baseline one or two short of the panel in four splits)
+- L6: caught: all-tied baseline packages leave the tau mean (71), counted
+- L7: n/a: outcomes are real CTRs and upvote ratios
+- L8: n/a: no paired test of ours; his paired GPT-4.1 gap uses 395 packages, read
+- L9: n/a: prompts not used in these readings
+- L10: holds: GPT-4.1 run reads baseline_draws 10 against the 30-sample budget stated in the protocol
+- L11: n/a: nothing substituted
+- L12: holds: the refuting referee is a Claude model (same family as the writer), disclosed
+- P1: holds: every quotation checked against paper.txt
+- P2: holds: each figure names its file (replication.json, baseline_comparison.json, crossfamily_gpt41.json, stability.json, compute_validity.py)
+- P3: holds: split and arm labels as in his reports
+- P4: holds: no cause named
+- P5: holds: intervals are his 95% bootstrap intervals, said so
+- P6: holds: summary lines no stronger than the readings
+- P7: n/a: nothing shipped to indahl.ai pages; package goes to the code repo after the referee
+- P8: n/a: no rendered page
+- P9: holds: plain sentences, no counts in headings, read in full wording
+- P10: holds: M2b labelled defined after the data
+
+## 2026-10-30 18:34 Referee pass: K, M1-M4, M2b reproduced; M2b reason corrected (winner filter), None count at most 71, panel count not released, presented as a sensitivity; M1 'leads' replaced by the row values; M2c rho 0.350 to 0.288 with the 71 at 0; M3b tier2_crossmodel.py sends no seed against 'all seeds are pinned'
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: fixed: M2b reason corrected (the winner filter, not equal CTRs); the None count is at most 71 and the panel's count is not released, so no claim about the panel's exclusions
+- II: holds: Reddit row read value by value; other splits unchanged
+- III: holds: Reddit tau and the other two metrics read separately; tau goes the baseline's way on no split for the panel claim, values printed signed
+- V: holds: as-computed and with-zeros side by side for tau and rho (M2b, M2c), as a sensitivity
+- VI: fixed: M1 wording now gives the row values instead of 'leads'; M2b and M2c are point values with no interval (per-package scores withheld), said so
+- R: holds: M2c and M3b labelled defined after the data (Addendum 2, 8ed2be0); Table 1 baseline equals analyze_replication.metrics() output, same None rule as analyze()
+- L1: n/a: no model outputs; scores withheld
+- L2: holds: referee numbers recomputed by our code before use
+- L3: fixed: the earlier line said both arms run through analyze(); the replication numbers come from analyze_replication.metrics(), which applies the same None rule
+- L4: n/a: no reruns of ours; M3b reads that his GPT-4.1 script sends no seed
+- L5: holds: n per arm from the reports
+- L6: holds: excluded packages counted (at most 71)
+- L7: n/a: outcomes are real engagement
+- L8: n/a: no paired test of ours
+- L9: n/a: prompts not used
+- L10: caught: the GPT-4.1 rerun sends no seed (tier2_crossmodel.py has no seed), while the paper says all seeds are pinned
+- L11: n/a: nothing substituted
+- L12: holds: referee is a Claude model (Sonnet), same family as the writer
+- P1: holds: quotations checked against paper.txt lines 451, 472-473, 617, 636
+- P2: holds: every figure names its file
+- P3: holds: split and arm labels as in his reports
+- P4: holds: no cause named for the Reddit row; the tie question goes as a question
+- P5: holds: intervals are his 95% bootstrap intervals
+- P6: holds: M2b worded as a sensitivity
+- P7: n/a: package goes to the code repo after this entry
+- P8: n/a: no rendered page
+- P9: holds: plain sentences, no counts in headings
+- P10: holds: M2b, M2c, M3b labelled defined after the data
