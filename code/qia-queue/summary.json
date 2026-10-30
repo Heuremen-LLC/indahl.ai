@@ -1,6 +1,6 @@
 {
- "updated": "30 Oct 00:31 UTC",
- "reads_held": 252,
+ "updated": "30 Oct 00:43 UTC",
+ "reads_held": 258,
  "processors": [
   {
    "backend": "ibm_fez",
@@ -15,8 +15,8 @@
   },
   {
    "backend": "ibm_marrakesh",
-   "pending": 0,
-   "change_24h": -6,
+   "pending": 1,
+   "change_24h": -5,
    "our_jobs": 6,
    "our_median_wait": "118 min",
    "our_longest_wait": "8.4 h",
@@ -37,8 +37,8 @@
   },
   {
    "backend": "ibm_kingston",
-   "pending": 321,
-   "change_24h": 195,
+   "pending": 346,
+   "change_24h": 220,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "40 s",
@@ -48,19 +48,19 @@
   },
   {
    "backend": "ibm_boston",
-   "pending": 757,
-   "change_24h": 275,
+   "pending": 749,
+   "change_24h": 267,
    "our_jobs": 3,
    "our_median_wait": "34 min",
    "our_longest_wait": "7.3 h",
    "our_queued_now": 2,
-   "our_oldest_queued": "23.9 h",
+   "our_oldest_queued": "24.1 h",
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 2303,
-   "change_24h": -321,
+   "pending": 2301,
+   "change_24h": -323,
    "our_jobs": 3,
    "our_median_wait": "18 min",
    "our_longest_wait": "20 min",
