@@ -1,0 +1,268 @@
+{
+ "updated": "2026-10-30T02:03:45Z",
+ "head": "d6a0311366b258f355cacf663d9b856ec62ceeb7e93fd10c5d38c85543ee0905",
+ "count": 8,
+ "entries": [
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_fez",
+   "qubits": [
+    148
+   ],
+   "window_utc": [
+    "2026-10-29T01:40:50Z",
+    "2026-10-29T01:42:06Z"
+   ],
+   "job_id": "dbha880te5oc738jpvrg",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T1",
+   "ibm_stated": 5.863,
+   "unit": "us",
+   "ibm_date": "2026-10-25 19:20",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "T1, single-exponential fit, 95% interval",
+    "value": 0.818,
+    "interval": [
+     0.678,
+     0.945
+    ]
+   },
+   "n": 1,
+   "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+   "hash": "24328aff503de8cbb69ade7d26e7b196b48dbcdf5b7b620e91957c57e220749a"
+  },
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_fez",
+   "qubits": [
+    148
+   ],
+   "window_utc": [
+    "2026-10-29T01:40:50Z",
+    "2026-10-29T01:42:06Z"
+   ],
+   "job_id": "dbha880te5oc738jpvrg",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T2",
+   "ibm_stated": 15.469,
+   "unit": "us",
+   "ibm_date": "2026-10-25 19:20",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "no T2, echo or Ramsey, can exceed 2 x T1; bound = 2 x upper end of measured T1",
+    "bound": 1.89,
+    "t2_echo": 0.117,
+    "t2_echo_interval": [
+     0.117,
+     1.301
+    ],
+    "t1_interval": [
+     0.678,
+     0.945
+    ]
+   },
+   "n": 2,
+   "prev": "24328aff503de8cbb69ade7d26e7b196b48dbcdf5b7b620e91957c57e220749a",
+   "hash": "fd129c486d1435f93e51896689bdb2e0571845bd2e3e7730c022cae9be8f6053"
+  },
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_kingston",
+   "qubits": [
+    121
+   ],
+   "window_utc": [
+    "2026-10-29T01:41:25Z",
+    "2026-10-29T01:44:58Z"
+   ],
+   "job_id": "dbha894dgr2s73ct4r3g",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T1",
+   "ibm_stated": 16.237,
+   "unit": "us",
+   "ibm_date": "2026-10-28 20:16",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "T1, single-exponential fit, 95% interval",
+    "value": 13.245,
+    "interval": [
+     11.943,
+     14.736
+    ]
+   },
+   "n": 3,
+   "prev": "fd129c486d1435f93e51896689bdb2e0571845bd2e3e7730c022cae9be8f6053",
+   "hash": "3b4bf51b0b3ad953f18014f55f9db24709781a7ec4d593895dcc76245c50ae18"
+  },
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_kingston",
+   "qubits": [
+    121
+   ],
+   "window_utc": [
+    "2026-10-29T01:41:25Z",
+    "2026-10-29T01:44:58Z"
+   ],
+   "job_id": "dbha894dgr2s73ct4r3g",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T2",
+   "ibm_stated": 53.333,
+   "unit": "us",
+   "ibm_date": "2026-10-27 19:36",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "no T2, echo or Ramsey, can exceed 2 x T1; bound = 2 x upper end of measured T1",
+    "bound": 29.472,
+    "t2_echo": 14.614,
+    "t2_echo_interval": [
+     8.566,
+     25.853
+    ],
+    "t1_interval": [
+     11.943,
+     14.736
+    ]
+   },
+   "n": 4,
+   "prev": "3b4bf51b0b3ad953f18014f55f9db24709781a7ec4d593895dcc76245c50ae18",
+   "hash": "af2b5badf3c428ea2c8224c1598932002cac5a6bc3b42711c4418aeda27c1ce7"
+  },
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_fez",
+   "qubits": [
+    148
+   ],
+   "window_utc": [
+    "2026-10-29T02:16:35Z",
+    "2026-10-29T02:17:36Z"
+   ],
+   "job_id": "dbhap08te5oc738jqoug",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T1",
+   "ibm_stated": 5.863,
+   "unit": "us",
+   "ibm_date": "2026-10-25 19:20",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "T1, single-exponential fit, 95% interval",
+    "value": 1.052,
+    "interval": [
+     0.887,
+     1.226
+    ]
+   },
+   "n": 5,
+   "prev": "af2b5badf3c428ea2c8224c1598932002cac5a6bc3b42711c4418aeda27c1ce7",
+   "hash": "959a444b43e5451e4e475720245c54e4628ba55f49afa89859fe2c821584d9e0"
+  },
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_fez",
+   "qubits": [
+    148
+   ],
+   "window_utc": [
+    "2026-10-29T02:16:35Z",
+    "2026-10-29T02:17:36Z"
+   ],
+   "job_id": "dbhap08te5oc738jqoug",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T2",
+   "ibm_stated": 15.469,
+   "unit": "us",
+   "ibm_date": "2026-10-25 19:20",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "no T2, echo or Ramsey, can exceed 2 x T1; bound = 2 x upper end of measured T1",
+    "bound": 2.453,
+    "t2_echo": 0.017,
+    "t2_echo_interval": [
+     0.017,
+     0.087
+    ],
+    "t1_interval": [
+     0.887,
+     1.226
+    ]
+   },
+   "n": 6,
+   "prev": "959a444b43e5451e4e475720245c54e4628ba55f49afa89859fe2c821584d9e0",
+   "hash": "be704614f5388e1bf912b2306227b8003ee3f5a522a711a3186d044c636041ff"
+  },
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_boston",
+   "qubits": [
+    85
+   ],
+   "window_utc": [
+    "2026-10-30T01:49:24Z",
+    "2026-10-30T01:50:32Z"
+   ],
+   "job_id": "dbh9a81q260s73bur7mg",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T1",
+   "ibm_stated": 8.393,
+   "unit": "us",
+   "ibm_date": "2026-10-27 15:13",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "T1, single-exponential fit, 95% interval",
+    "value": 7.544,
+    "interval": [
+     6.723,
+     8.35
+    ]
+   },
+   "n": 7,
+   "prev": "be704614f5388e1bf912b2306227b8003ee3f5a522a711a3186d044c636041ff",
+   "hash": "654ec23d7e9f3b60be4182a6036a3a02631522a63009f2d81588f4f58b6d7b6a"
+  },
+  {
+   "added": "2026-10-30T02:03:45Z",
+   "processor": "ibm_boston",
+   "qubits": [
+    85
+   ],
+   "window_utc": [
+    "2026-10-30T01:49:24Z",
+    "2026-10-30T01:50:32Z"
+   ],
+   "job_id": "dbh9a81q260s73bur7mg",
+   "rule": "t1t2-check PLAN.md Note 6",
+   "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check",
+   "quantity": "T2",
+   "ibm_stated": 47.871,
+   "unit": "us",
+   "ibm_date": "2026-10-14 23:08",
+   "outcome": "ABOVE",
+   "measured": {
+    "what": "no T2, echo or Ramsey, can exceed 2 x T1; bound = 2 x upper end of measured T1",
+    "bound": 16.701,
+    "t2_echo": 9.397,
+    "t2_echo_interval": [
+     5.404,
+     16.167
+    ],
+    "t1_interval": [
+     6.723,
+     8.35
+    ]
+   },
+   "n": 8,
+   "prev": "654ec23d7e9f3b60be4182a6036a3a02631522a63009f2d81588f4f58b6d7b6a",
+   "hash": "d6a0311366b258f355cacf663d9b856ec62ceeb7e93fd10c5d38c85543ee0905"
+  }
+ ],
+ "how_to_verify": "python3 verify.py chain.json (in the public repository, code/qia-offchain) recomputes every hash from the first entry."
+}
