@@ -1,0 +1,44 @@
+
+## 2026-10-30 18:02 S1-S4: headline drop 35/47 to 3/11 holds paired (6 to 0, exact p .031), Newcombe [+0.147, +0.675]; S2 flip direction; S3 kappa on own scenarios 0.000 because judge 2 escalated all 10 shared items, paired accuracy 3 vs 8 of 10 (5 to 0, p .0625), pooled kappa 0.157 [0.000, 0.511]; S3b both judges escalate most Consumer Duty items; S4 live MiniLM and bge on Mac CPU reproduce released similarities within 5.8e-7, 0 of 336 verdicts differ, repeat floor 0
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: S1(b) pairs each adversarial item with its own source original (11 pairs, every source assessed); failed scenarios counted by principle (adversarial 1, originals 3) and bounded both ways in S1(c); S3 uses only the 10 scenarios both judges assessed
+- II: holds: paired flips counted in both directions before any net (S1b 6 to 0, S3 0 to 5); S4 repeat floor measured (0 on Mac CPU) before the comparison to theirs
+- III: holds: all six S1 discordant pairs and all five S3 discordant pairs point one way; the drop is printed signed (+0.472)
+- V: holds: Newcombe interval and exact McNemar side by side (S1); paired accuracy with exact McNemar beside kappa with a bootstrap (S3); S4 max and median absolute difference plus verdict count
+- VI: holds: S1 ABOVE zero (Newcombe [+0.147, +0.675]) but the interval spans 15 to 68 points, so CANNOT_TELL on the printed size; S3 paired accuracy CANNOT_TELL at 5% (p .0625, direction with their claim); kappa on own scenarios is 0 by construction (judge 2 gave one verdict to all 10), so it cannot decide; S4 CONSISTENT, bound 5.8e-7
+- R: holds: every count read from their run files by our code; S3b labelled defined after the data (PLAN Addendum 1, b3c3939, and in readings.py); model revisions and file hashes in SETUP_S4.md
+- L1: holds: verdicts are their boolean escalation_required field, no text parsing; judge reasons for all 11 Consumer Duty adversarial items read in full: judge 1 comply verdicts on stuffed items carry confidence 0.70-0.86 and no review text, judge 2 names the inserted phrases as boilerplate
+- L2: holds: no rate read before known_good rebuilt their printed values; S4 compared only after both repeats were written
+- L3: holds: S4 setup named (no prefix, model default truncation, normalised cosine, CPU, versions); theirs is in scrat_core, not public; a match within 5.8e-7 says our setup reproduces their similarities
+- L4: holds: S4 repeat floor on Mac CPU 0 for both models; Armature half and mxbai not run (own addendum later), so no across-machine claim
+- L5: holds: known_good rebuilt 35/47, 3/11, 48/50, 12/13 and every judge_agreement.csv row; scenario ids matched exactly between run files and benchmark (0 not found in S4)
+- L6: holds: failed scenarios by judge and principle: judge 1 adversarial 4 (1 Consumer Duty, 3 COBS) and originals 3 Consumer Duty; judge 2 adversarial 2; each carries an error key in their run file
+- L7: n/a: labels are the author's; no labeller scores itself in our readings (the paper notes that the generator and judge 1 share a family)
+- L8: holds: S1b and S3 paired with exact McNemar; S4 two repeats; embedder runs have no seed (deterministic)
+- L9: holds: prompts are theirs, read in the traces; adversarial texts contain inserted exemplar phrases by design, not the label
+- L10: holds: the judges are Ollama Cloud names with no weights we can pin; our live arm covers only the embedders, by revision hash
+- L11: n/a: nothing substituted; their Hugging Face revisions are unpinned, ours are recorded
+- L12: holds: the refuting referee is a Claude model (same family as the writer), disclosed in its note
+
+## 2026-10-30 18:11 Referee pass: S1-S4 reproduced by a refuting referee with its own code; S4 verdict count is empty (all escalate both sides), reproduction rests on 2,688 similarities per model; S3c pooled kappa 0.157 equals the ceiling the two escalation rates allow (15 and 22 of 23); S1d judge 1 misses 5 false passes and 3 escalations; matched drop +0.545 [+0.195, +0.731]; run_s4.py falls back to repo and revision when no local snapshot (output identical)
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: S3c uses the same 23 pooled scenarios as their table; S1d counts every judge 1 miss on the 11 assessed items
+- II: holds: misses split by kind (5 false passes, 3 escalations) instead of one net accuracy; S4 compared value by value, not by verdict
+- III: holds: matched drop printed signed; all six discordant pairs one way
+- V: holds: kappa beside its ceiling for the same marginals; paired Newcombe beside exact McNemar
+- VI: fixed: S4's '0 of 336 verdicts differ' removed as support (every verdict escalates on both sides, so it cannot differ); S4 stays CONSISTENT on similarities, bound 5.8e-7; S3c the low pooled kappa is the rate difference, not item disagreement beyond it
+- R: holds: S3c and S1d labelled defined after the data (Addendum 2, fc8f51d); referee numbers recomputed by our code before use
+- L1: holds: unchanged from the S1-S4 entry; no new parsing
+- L2: holds: S3c and S1d computed after the addendum was committed
+- L3: holds: S4 setup unchanged; runner fallback to the pinned revision gives identical similarities (checked against the earlier r1 files)
+- L4: holds: S4 repeat floor 0; no across-machine claim
+- L5: holds: counts match the referee's own code and the author's primary_metrics.csv (n 47; judge 2 adversarial 9/11 there)
+- L6: holds: failed scenarios as in the S1-S4 entry
+- L7: n/a: labels are the author's; no labeller scores itself in S3c or S1d
+- L8: holds: paired readings on matched items
+- L9: n/a: no prompts used in S3c or S1d; adversarial texts carry inserted exemplar phrases by design
+- L10: n/a: judge models are cloud names with no pinnable weights; S4 embedders pinned by revision hash
+- L11: n/a: nothing substituted; their embedder revisions are unpinned and ours are recorded
+- L12: holds: referee is a Claude model (Sonnet), same family as the writer

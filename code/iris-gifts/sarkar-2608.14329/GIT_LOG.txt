@@ -1,0 +1,6 @@
+3a675a4 2026-10-30 18:11:54 -0400 Sarkar gift: referee pass, S3c and S1d (post hoc), S4 verdict count withdrawn as support, runner fallback
+fc8f51d 2026-10-30 18:10:41 -0400 Sarkar gift: Addendum 2 (S3c, S1d defined after the data; S4 verdict count is empty) before computing
+bed94aa 2026-10-30 18:03:12 -0400 Sarkar gift: readings S1-S3, S3b (post hoc), S4 live embedder arm, Check Block filed
+e5dd93d 2026-10-30 18:01:38 -0400 Sarkar gift: S4 setup record and runner committed before the first live embedder run
+b3c3939 2026-10-30 18:00:21 -0400 Sarkar gift: Addendum 1 (S3b, defined after the data) committed before S3b is computed
+a1f47f8 2026-10-30 17:59:14 -0400 Sarkar gift (2608.14329): plan S1-S4 and known-good committed before readings; Bahuguna sent

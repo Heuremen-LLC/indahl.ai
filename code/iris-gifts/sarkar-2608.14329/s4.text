@@ -1,0 +1,12 @@
+minilm (sentence-transformers/all-MiniLM-L6-v2 @ 1110a243fdf4): repeat floor, max |r1 - r2| over every scenario, principle and cluster: 0.00e+00
+  original    1600 values | max |ours - theirs| 3.03e-07 | median 4.27e-08
+  boundary     160 values | max |ours - theirs| 3.62e-07 | median 3.85e-08
+  paraphrase   480 values | max |ours - theirs| 2.28e-07 | median 4.59e-08
+  adversarial  448 values | max |ours - theirs| 2.81e-07 | median 4.75e-08
+  all splits: 2688 similarity values, max 3.62e-07, median 4.35e-08, values off by more than 1e-6: 0 | Eq. 2 score max |diff| 3.10e-08 | verdicts differing from theirs 0 of 336 | scenarios not found 0
+bge (BAAI/bge-base-en-v1.5 @ a5beb1e3e68b): repeat floor, max |r1 - r2| over every scenario, principle and cluster: 0.00e+00
+  boundary     160 values | max |ours - theirs| 5.44e-07 | median 1.10e-07
+  original    1600 values | max |ours - theirs| 5.80e-07 | median 1.11e-07
+  paraphrase   480 values | max |ours - theirs| 4.41e-07 | median 1.03e-07
+  adversarial  448 values | max |ours - theirs| 5.60e-07 | median 1.27e-07
+  all splits: 2688 similarity values, max 5.80e-07, median 1.12e-07, values off by more than 1e-6: 0 | Eq. 2 score max |diff| 8.77e-08 | verdicts differing from theirs 0 of 336 | scenarios not found 0
