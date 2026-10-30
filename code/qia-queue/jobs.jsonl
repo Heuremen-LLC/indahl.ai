@@ -200,3 +200,15 @@
 {"id": "dbht7etep8hs73amrfog", "backend": "ibm_kingston", "created": "2026-10-29T23:16:12.05696Z", "wait_s": 1.47544}
 {"id": "dbht7642d77s739ddp4g", "backend": "ibm_kingston", "created": "2026-10-29T23:15:36.217994Z", "wait_s": 1.094905}
 {"id": "dbht6imne4hc73bdj0gg", "backend": "ibm_kingston", "created": "2026-10-29T23:14:18.304917Z", "wait_s": 19.33047}
+{"id": "dbhtqgune4hc73bdkadg", "backend": "ibm_fez", "created": "2026-10-29T23:56:52.099022Z", "wait_s": 1.480067}
+{"id": "dbhtqalep8hs73amsoog", "backend": "ibm_fez", "created": "2026-10-29T23:56:26.917388Z", "wait_s": 1.094385}
+{"id": "dbhtq45ep8hs73amso90", "backend": "ibm_fez", "created": "2026-10-29T23:56:00.968202Z", "wait_s": 1.411518}
+{"id": "dbhtpstep8hs73amsnsg", "backend": "ibm_fez", "created": "2026-10-29T23:55:31.979934Z", "wait_s": 1.4631}
+{"id": "dbhtplg1h92s7382ft4g", "backend": "ibm_fez", "created": "2026-10-29T23:55:02.79739Z", "wait_s": 1.797362}
+{"id": "dbhtpf5ep8hs73amsn1g", "backend": "ibm_fez", "created": "2026-10-29T23:54:36.520397Z", "wait_s": 1.335774}
+{"id": "dbhtp8s2d77s739df0hg", "backend": "ibm_fez", "created": "2026-10-29T23:54:11.980538Z", "wait_s": 1.016481}
+{"id": "dbhtp1k2d77s739df00g", "backend": "ibm_fez", "created": "2026-10-29T23:53:42.719896Z", "wait_s": 1.392904}
+{"id": "dbhtoq01h92s7382fr40", "backend": "ibm_fez", "created": "2026-10-29T23:53:12.791068Z", "wait_s": 1.754455}
+{"id": "dbhtojs2d77s739deuvg", "backend": "ibm_fez", "created": "2026-10-29T23:52:47.539443Z", "wait_s": 1.243421}
+{"id": "dbhtoddep8hs73amskg0", "backend": "ibm_fez", "created": "2026-10-29T23:52:21.899676Z", "wait_s": 1.049761}
+{"id": "dbhto642d77s739detrg", "backend": "ibm_fez", "created": "2026-10-29T23:51:52.781552Z", "wait_s": 1.420537}
