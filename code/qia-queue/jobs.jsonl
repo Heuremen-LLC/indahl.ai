@@ -212,3 +212,6 @@
 {"id": "dbhtojs2d77s739deuvg", "backend": "ibm_fez", "created": "2026-10-29T23:52:47.539443Z", "wait_s": 1.243421}
 {"id": "dbhtoddep8hs73amskg0", "backend": "ibm_fez", "created": "2026-10-29T23:52:21.899676Z", "wait_s": 1.049761}
 {"id": "dbhto642d77s739detrg", "backend": "ibm_fez", "created": "2026-10-29T23:51:52.781552Z", "wait_s": 1.420537}
+{"id": "dbhu4b01h92s7382gk50", "backend": "ibm_fez", "created": "2026-10-30T00:17:48.189069Z", "wait_s": 0.995217}
+{"id": "dbhu4aune4hc73bdkvl0", "backend": "ibm_fez", "created": "2026-10-30T00:17:47.319748Z", "wait_s": 1.230984}
+{"id": "dbhu3as2d77s739dfm2g", "backend": "ibm_fez", "created": "2026-10-30T00:15:39.506781Z", "wait_s": 1.217827}
