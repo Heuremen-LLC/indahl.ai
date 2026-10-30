@@ -10,7 +10,7 @@
     var b = el('tbody');
     names.forEach(function (k) {
       var p = P[k], c = p.counts || {}, r = el('tr');
-      [k, (p.window_utc || [''])[0].replace('T', ' ').slice(0, 16), p.qubits_read, p.known_good, n(c.p10, 'ABOVE') + ' / ' + n(c.p10, 'BELOW'), n(c.p01, 'ABOVE') + ' / ' + n(c.p01, 'BELOW'), n(c.t1, 'ABOVE') + ' / ' + n(c.t1, 'BELOW') + ' (' + n(c.t1, 'CANNOT_TELL') + ')'].forEach(function (x) { r.appendChild(el('td', null, x)); });
+      [k, (p.window_utc || [''])[0].replace('T', ' ').slice(0, 16) + ((d.waiting || {})[k] && (d.waiting[k] > ((p.window_utc || [''])[0])) ? '. A newer job has waited in IBM’s queue since ' + d.waiting[k].slice(11, 16) : ''), p.qubits_read, p.known_good, n(c.p10, 'ABOVE') + ' / ' + n(c.p10, 'BELOW'), n(c.p01, 'ABOVE') + ' / ' + n(c.p01, 'BELOW'), n(c.t1, 'ABOVE') + ' / ' + n(c.t1, 'BELOW') + ' (' + n(c.t1, 'CANNOT_TELL') + ')'].forEach(function (x) { r.appendChild(el('td', null, x)); });
       var td = el('td'); var a = el('a', null, p.job_id); a.href = '/qia/cal/' + p.job_id + '.json'; td.appendChild(a); r.appendChild(td); b.appendChild(r);
     });
     t.appendChild(b); box.appendChild(t);

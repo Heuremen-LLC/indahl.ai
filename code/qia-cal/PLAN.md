@@ -30,3 +30,8 @@ Two rules change, both because IBM publishes no uncertainty for its figures:
    above 1.25 x the top of our interval, BELOW when below the bottom / 1.25, CONSISTENT inside our interval, CANNOT_TELL in between.
 The aachen run already in the off-record chain is corrected by a new entry under these rules (append only; the first entry stays).
 Synth under Note 1 (synth_results.text): IBM exactly right gives no chance calls (p10 0.00, p01 0.00, T1 0.00 per run); planted readout x3 found 88%, T1 x0.4 100%, readout x0.25 52%, T1 x2.5 100%, both 88%, wrong direction 0.
+
+## Note 2 (30 Oct 2026, display only)
+ibm_boston's 03:13 UTC job waited more than 8 hours in IBM's queue (497 jobs pending), and one job per processor is kept in flight, so boston's
+row showed a 02:14 reading with no reason given. The published file now also lists, per processor, the send time of a job still waiting in IBM's
+queue, and the page prints it beside the older reading. No reading, rule or interval changes.
