@@ -1,0 +1,41 @@
+models ['Mistral-7B-Instruct-v0.1', 'Mistral-7B-Instruct-v0.2', 'Mistral-7B-v0.1', 'Qwen1.5-7B-Chat', 'Yi-6B', 'Yi-6B-Chat']
+shared questions 1497 | rows per model {'Mistral-7B-Instruct-v0.1': 1497, 'Mistral-7B-Instruct-v0.2': 1497, 'Mistral-7B-v0.1': 1497, 'Qwen1.5-7B-Chat': 1497, 'Yi-6B': 1497, 'Yi-6B-Chat': 1497} | categories 14
+
+Table 1 rebuild: model, mean, naive SE
+  Mistral-7B-v0.1            0.291  0.0117
+  Mistral-7B-Instruct-v0.2   0.278  0.0116
+  Yi-6B-Chat                 0.271  0.0115
+  Qwen1.5-7B-Chat            0.255  0.0113
+  Yi-6B                      0.253  0.0112
+  Mistral-7B-Instruct-v0.1   0.238  0.0110
+
+Table 3 rebuild (paired z), sorted by p: A - B, diff, SE, p, unc/bonf/holm, discordant A-only / B-only, unpaired p
+  Mistral-7B-Instruct-v0.1   Mistral-7B-v0.1            -0.0534 0.0128  p 0.0000  U B H    145 / 225   unpaired p 0.0009
+  Mistral-7B-Instruct-v0.1   Mistral-7B-Instruct-v0.2   -0.0401 0.0126  p 0.0014  U B H    148 / 208   unpaired p 0.0121
+  Mistral-7B-v0.1            Yi-6B                      +0.0381 0.0127  p 0.0027  U B H    210 / 153   unpaired p 0.0192
+  Mistral-7B-v0.1            Qwen1.5-7B-Chat            +0.0367 0.0140  p 0.0087  U - -    248 / 193   unpaired p 0.0239
+  Mistral-7B-Instruct-v0.1   Yi-6B-Chat                 -0.0334 0.0130  p 0.0100  U - -    164 / 214   unpaired p 0.0358
+  Mistral-7B-Instruct-v0.2   Yi-6B                      +0.0247 0.0126  p 0.0506  - - -    198 / 161   unpaired p 0.1256
+  Mistral-7B-Instruct-v0.2   Qwen1.5-7B-Chat            +0.0234 0.0135  p 0.0841  - - -    223 / 188   unpaired p 0.1477
+  Yi-6B                      Yi-6B-Chat                 -0.0180 0.0113  p 0.1108  - - -    130 / 157   unpaired p 0.2618
+  Mistral-7B-v0.1            Yi-6B-Chat                 +0.0200 0.0132  p 0.1286  - - -    210 / 180   unpaired p 0.2226
+  Mistral-7B-Instruct-v0.1   Qwen1.5-7B-Chat            -0.0167 0.0133  p 0.2095  - - -    186 / 211   unpaired p 0.2888
+  Qwen1.5-7B-Chat            Yi-6B-Chat                 -0.0167 0.0136  p 0.2197  - - -    195 / 220   unpaired p 0.2992
+  Mistral-7B-Instruct-v0.1   Yi-6B                      -0.0154 0.0131  p 0.2411  - - -    181 / 204   unpaired p 0.3287
+  Mistral-7B-Instruct-v0.2   Mistral-7B-v0.1            -0.0134 0.0129  p 0.2997  - - -    176 / 196   unpaired p 0.4178
+  Mistral-7B-Instruct-v0.2   Yi-6B-Chat                 +0.0067 0.0128  p 0.6023  - - -    189 / 179   unpaired p 0.6822
+  Qwen1.5-7B-Chat            Yi-6B                      +0.0013 0.0134  p 0.9206  - - -    202 / 200   unpaired p 0.9331
+
+unc 5, bonferroni 3, holm 3 of 15
+
+Table 5 rebuild: naive one-way F(5,8976) = 2.90 p 0.013 | question-blocked F(5,7480) = 4.45 p 4.8e-04 | residual MS 0.1265
+Friedman chi2(5) = 22.2 p 4.8e-04 (tie-corrected)
+Eq. 3 contrast SE through the identity: 0.0130
+Table 4 rebuild, top rows: A - B, diff, raw p (z against the pooled SE)
+  Mistral-7B-Instruct-v0.1   Mistral-7B-v0.1            -0.0534  raw p 0.0000
+  Mistral-7B-Instruct-v0.1   Mistral-7B-Instruct-v0.2   -0.0401  raw p 0.0020
+  Mistral-7B-v0.1            Yi-6B                      +0.0381  raw p 0.0034
+  Mistral-7B-v0.1            Qwen1.5-7B-Chat            +0.0367  raw p 0.0047
+  Mistral-7B-Instruct-v0.1   Yi-6B-Chat                 -0.0334  raw p 0.0102
+  Mistral-7B-Instruct-v0.2   Yi-6B                      +0.0247  raw p 0.0573
+  Mistral-7B-Instruct-v0.2   Qwen1.5-7B-Chat            +0.0234  raw p 0.0721

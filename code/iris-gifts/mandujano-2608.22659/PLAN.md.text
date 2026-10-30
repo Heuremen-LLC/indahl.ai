@@ -1,0 +1,46 @@
+# Gift calibration: Mandujano Reyes, arXiv 2608.22659 "Statistical Methods for Multiple Language Model Comparison on a Shared Evaluation"
+Written and committed 30 Oct 2026 before any reading beyond the rebuild below. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md.
+Author: Juan Francisco Mandujano Reyes, Independent researcher (as printed). No contact printed in this paper; no funding or acknowledgement
+section. Paper v2 (18 Oct 2026), read in full. Repo github.com/JFMandujanoR/Statistical-Methods-for-Multi-Model-LLM-Evaluation at a353e2cbbce2.
+His file mmlu_pro_real_data.csv sha256 3dec4d922452266b. Upstream: TIGER-AI-Lab/MMLU-Pro eval_results (per-model output zips).
+
+## KNOWN-GOOD (done, zero GPU): ours/known_good.py, output ours/known_good.text
+From his CSV with our code, 1,497 shared questions, 6 models, 14 categories: Table 1 (6 of 6 means and naive SEs), Table 3 (15 of 15 paired
+z rows: difference, SE, p to the printed digits; 5 uncorrected, 3 Bonferroni, 3 Holm), Table 5 (naive F(5,8976) = 2.90 p .013; question-
+blocked F(5,7480) = 4.45 p 4.8e-4; residual MS .1265), Friedman chi2(5) = 22.2 p 4.8e-4, and Table 4's shown rows through the identity his
+paper reports (contrast SE sqrt(2 MSres / n) = .0130; raw p .002, .0034, .005, .010, .057, .072). Every printed value rebuilds.
+
+## Readings (four outcomes; every one below is defined after reading his paper and is labelled so in any write-up)
+K2 provenance: his 1,497 rows against TIGER-Lab's released per-item outputs for the same six models (correct = predicted letter equals the
+   answer key, keys matched by question_id). Count rows that agree, disagree, or have no upstream match, per model.
+G1 pairing under correction: Holm over the 15 pairs with unpaired p against paired p (how many survive each). His text says pairing barely
+   changes the uncorrected count (5 either way); this reads the corrected count.
+G2 a second ruler: exact McNemar (two-sided binomial on discordant items) beside the paired z for all 15 pairs, Holm on both.
+G3 the near miss: Holm, which his paper recommends for an exact guarantee, applied to the Eq. 3 contrasts (Table 4 raw p), against the
+   Bonferroni flag the paper prints. Does the third row (raw p .0034) clear Holm's step (.05/13)?
+G4 distance to the line: for Mistral-7B-v0.1 against Yi-6B, the fewest single-item score changes (one model, one item, 0 to 1 or 1 to 0)
+   that move the call across its line under each rule (paired z with Bonferroni, paired z with Holm, Eq. 3 identity with Bonferroni and
+   with Holm, exact McNemar with Bonferroni and with Holm), in both directions.
+G5 live (GPU, separate addendum before any run): the same six models are open weights. A rerun of Mistral-7B-v0.1 and Yi-6B on his 1,497
+   questions through TIGER-Lab's own 5-shot chain-of-thought setup on our two machines, two repeats each, gives a repeat floor and a machine
+   floor in item flips to set against G4. Weights, conversion, prompt and extraction get their own addendum and known-good (our replies
+   against TIGER-Lab's released replies on a sample) before any count.
+
+## What this gift will not say
+Anything about which model is better. A cause for any flip. Anything about TIGER-Lab's setup beyond what their files and code show.
+
+## Addendum 1 (30 Oct 2026, after K2, before G1-G6 are computed; stamp from the commit)
+K2 result (ours/k2_provenance.text): every row of his file with an extracted letter upstream agrees with TIGER-Lab's released output (0
+disagreements in 7,551). Every reply with no extracted letter is scored 0 in his file: Mistral-7B-Instruct-v0.1 225, v0.2 275,
+Mistral-7B-v0.1 162, Qwen1.5-7B-Chat 341, Yi-6B 176, Yi-6B-Chat 252 of 1,497. TIGER-Lab's own scoring (evaluate_from_local.py,
+save_res) gives such a reply a random guess among its options. Neither rule is an error; they differ, and the no-letter count differs by model.
+G6, defined after K2: (a) each model's no-letter share with a 95% Wilson interval; (b) for every pair, the discordant items split into
+   both-letter and one-side-no-letter; (c) the 15 paired tests again on items where both models gave a letter, Holm over 15; (d) the 15
+   paired tests under the benchmark's own random-guess rule, scored by its expectation (1 / number of options per no-letter item), Holm
+   over 15. Four outcomes per pair against his Table 3 call, labelled defined after the data.
+
+## Addendum 2 (30 Oct 2026, after the referee's report; written before our run but committed with its result, so G6c common set is the referee's reading recounted by us, not a reading planned blind)
+The referee reproduced K2 and G1 to G6 independently and flagged wording. G6c, added now: the 15 paired tests also on one common item set,
+the questions where all six models gave a letter, Holm over 15, beside the per-pair sets. Labels: the scoring of no-letter replies is "his
+file scores them 0" (the paper states no rule); the benchmark rule is TIGER-Lab's save_res (a guess among the item's options, realized guesses
+not stored), and their compute_accuracy.py guesses among ten letters instead.

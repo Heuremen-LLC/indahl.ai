@@ -1,0 +1,14 @@
+Files read as data, sha256 (paper.pdf is arXiv 2608.22659v2):
+4b870d4915ee4d64ce5c2cee9ac9d3c08d5b8b083d54b191b63b3096b60aedcc  paper.pdf
+3dec4d922452266b05e70a25b926dfff272c651d6130348fd1ab3fb016377a26  mmlu_pro_real_data.csv
+8cda305359ec6f510451ea8baa659225b40b9919919096cd703624c4f8a35eb5  upstream/Mistral-7B-Instruct-v0.1.zip
+ff1c5ae8a0f6412cca52537746f192476398c24590a3fb79e8f10c300ffa8248  upstream/Mistral-7B-Instruct-v0.2.zip
+d7fc5b95fe29f2e62fdf6ab7aad5da424f16a0ad204713db9f8f1fc7f25bbd72  upstream/Mistral-7B-v0.1.zip
+e1819661f16044ee97734d292c9a7e40f38f9be0aae274642f07943ab69a37b5  upstream/Qwen1.5-7B-Chat.zip
+b79d5074c3685ee9be86d1ecc9c4eef93f234c9fa84db7ae3c1fbec250fa10bf  upstream/Yi-6b-Chat.zip
+2a85c02303f8e9b98ebd689f239c9fa7bf329014ec911c589f2a91fa47bc377d  upstream/Yi-6B.zip
+c0052d10d0d8ada49f796a4a73fcf36c3a9348a0017f8fe46f41cede5457a599  upstream_code/compute_accuracy.py
+d0a4ae51b80efa8f99713a21253ad5542913ef2ac9915e95d40c8a62174e9401  upstream_code/evaluate_from_local.py
+
+His repository: github.com/JFMandujanoR/Statistical-Methods-for-Multi-Model-LLM-Evaluation at commit a353e2cbbce2c5ae10c8ea5d18fb5c0b0bed4f5b
+Upstream outputs: github.com/TIGER-AI-Lab/MMLU-Pro eval_results at commit f418b116db00b065c2aea046518d8fcf74d39872, read 30 Oct 2026

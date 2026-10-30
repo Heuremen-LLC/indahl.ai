@@ -1,0 +1,5 @@
+7bf9e27 2026-10-30T16:13:53-04:00 Gift 2608.22659: referee reproduced every reading; wording fixed (his file, not his rule; benchmark scorer named), G6c common set recounted (811 items, Holm 1); Check Block filed
+10ee0bf 2026-10-30T16:07:16-04:00 Gift 2608.22659 CHECKS: wording (setup)
+f6a663b 2026-10-30T16:04:40-04:00 Gift 2608.22659 G1-G6: Holm makes his two procedures agree (3 of 3); pairing decides 1 vs 3 survivors under correction; no-letter replies 10.8-22.8% by model scored 0; the borderline call sits 1-2 item changes from its line; Check Block filed
+82d0f7d 2026-10-30T16:03:15-04:00 Gift 2608.22659 K2: his file matches TIGER-Lab's outputs on every lettered reply; no-letter replies scored 0 (162 to 341 per model); Addendum 1 adds G6 before computing
+d4ec250 2026-10-30T16:02:03-04:00 Gift plan 2608.22659 (Mandujano Reyes): every printed table rebuilds from his CSV; readings K2, G1-G4 zero GPU, G5 live by addendum; committed before any reading
