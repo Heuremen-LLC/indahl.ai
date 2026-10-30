@@ -1,0 +1,16 @@
+LLM-judge (gpt-oss:120b), each scenario scored on its own principle:
+  original    PRINCIPLE_CONSUMER_DUTY_FAIR_VALUE   35 of 47 = 0.7447 (printed 0.74) | scenarios with no assessment on this principle: 3
+  adversarial PRINCIPLE_CONSUMER_DUTY_FAIR_VALUE    3 of 11 = 0.2727 (printed 0.27) | scenarios with no assessment on this principle: 1
+  original    PRINCIPLE_FAIR_CLEAR_NOT_MISLEADING  48 of 50 = 0.9600 (printed 0.96) | scenarios with no assessment on this principle: 0
+  adversarial PRINCIPLE_FAIR_CLEAR_NOT_MISLEADING  12 of 13 = 0.9231 (printed 0.92) | scenarios with no assessment on this principle: 3
+  adversarial scenarios with no assessment: {'ADV_flip_positive_P_FAIR_CLEAR_NOT_MISLEADING_043_escalate': ['error', 'latency_s'], 'ADV_flip_positive_P_FAIR_CLEAR_NOT_MISLEADING_035_escalate': ['error', 'latency_s'], 'ADV_flip_negative_P_FAIR_CLEAR_NOT_MISLEADING_042_comply': ['error', 'latency_s'], 'ADV_flip_negative_P_CONSUMER_DUTY_FAIR_VALUE_012_comply': ['error', 'latency_s']}
+
+Inter-judge kappa, their pooling (every scenario both judges assessed, scored against one principle):
+  original    PRINCIPLE_FAIR_CLEAR_NOT_MISLEADING  n  95 kappa 0.853 raw agreement 0.926
+  original    PRINCIPLE_CONSUMER_DUTY_FAIR_VALUE   n  95 kappa 0.493 raw agreement 0.884
+  paraphrase  PRINCIPLE_FAIR_CLEAR_NOT_MISLEADING  n  28 kappa 0.857 raw agreement 0.929
+  paraphrase  PRINCIPLE_CONSUMER_DUTY_FAIR_VALUE   n  28 kappa 0.759 raw agreement 0.929
+  adversarial PRINCIPLE_FAIR_CLEAR_NOT_MISLEADING  n  23 kappa 0.572 raw agreement 0.783
+  adversarial PRINCIPLE_CONSUMER_DUTY_FAIR_VALUE   n  23 kappa 0.157 raw agreement 0.696
+  boundary    PRINCIPLE_FAIR_CLEAR_NOT_MISLEADING  n   8 kappa 0.600 raw agreement 0.875
+  boundary    PRINCIPLE_CONSUMER_DUTY_FAIR_VALUE   n   8 kappa 1.000 raw agreement 1.000

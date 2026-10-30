@@ -1,0 +1,50 @@
+S1 the headline drop, LLM-judge (gpt-oss:120b), Consumer Duty, each scenario on its own principle
+  (a) original 35/47 = 0.745 Wilson [0.605, 0.847] | adversarial 3/11 = 0.273 Wilson [0.097, 0.566]
+      drop +0.472, Newcombe 95% [+0.147, +0.675] (printed 47 points)
+  (b) like for like: adversarial item against its own source original
+      ADV_flip_negative_P_CONSUMER_DUTY_FAIR_VALUE_002_comply    flip_negative source right     adversarial wrong
+      ADV_flip_negative_P_CONSUMER_DUTY_FAIR_VALUE_016_comply    flip_negative source wrong     adversarial wrong
+      ADV_flip_negative_P_CONSUMER_DUTY_FAIR_VALUE_026_comply    flip_negative source wrong     adversarial wrong
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_023_escalate  flip_positive source right     adversarial right
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_027_escalate  flip_positive source right     adversarial wrong
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_029_escalate  flip_positive source right     adversarial wrong
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_033_escalate  flip_positive source right     adversarial right
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_035_escalate  flip_positive source right     adversarial wrong
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_037_escalate  flip_positive source right     adversarial right
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_041_escalate  flip_positive source right     adversarial wrong
+      ADV_flip_positive_P_CONSUMER_DUTY_FAIR_VALUE_047_escalate  flip_positive source right     adversarial wrong
+      paired n 11: source right, adversarial wrong 6 | source wrong, adversarial right 0 | exact McNemar p 0.0312
+      source originals right 9/11, adversarial right 3/11 on the same pairs
+  (c) failed scenarios: adversarial ['ADV_flip_negative_P_CONSUMER_DUTY_FAIR_VALUE_012_comply']; originals ['P_CONSUMER_DUTY_FAIR_VALUE_015_escalate', 'P_CONSUMER_DUTY_FAIR_VALUE_042_comply', 'P_CONSUMER_DUTY_FAIR_VALUE_048_comply']
+      failed counted wrong   original 35/50 adversarial 3/12 drop +0.450 [+0.136, +0.644]
+      failed counted right   original 38/50 adversarial 4/12 drop +0.427 [+0.120, +0.645]
+
+S2 Consumer Duty adversarial by flip direction (own principle)
+  judge 1 gpt-oss:120b   flip_positive 3/8 Wilson [0.14, 0.69]
+  judge 1 gpt-oss:120b   flip_negative 0/3 Wilson [0.00, 0.56]
+  judge 2 kimi-k2.6      flip_positive 8/8 Wilson [0.68, 1.00]
+  judge 2 kimi-k2.6      flip_negative 1/3 Wilson [0.06, 0.79]
+  items per direction in adversarial.jsonl (Consumer Duty): {'flip_positive': 8, 'flip_negative': 4}
+  judge 2 failed adversarial scenarios: ['ADV_flip_negative_P_CONSUMER_DUTY_FAIR_VALUE_002_comply', 'ADV_flip_negative_P_FAIR_CLEAR_NOT_MISLEADING_042_comply']
+
+S3 second judge on Consumer Duty adversarial, own scenarios both judges assessed
+  n 10 | judge 1 right 3 | judge 2 right 8 | judge 1 only 0, judge 2 only 5 | exact McNemar p 0.0625
+  kappa on own scenarios 0.000, bootstrap 95% [0.000, 0.000] (9989 resamples defined)
+  kappa pooled as theirs (n 23: 10 Consumer Duty, 13 COBS scenarios scored against Consumer Duty) 0.157, bootstrap 95% [0.000, 0.511] (10000 resamples defined)
+
+S3b (defined after the data) Consumer Duty scenarios on their own principle, by split: escalate share and accuracy by expected verdict
+  original    judge 1 escalates 36/47 | right on escalate-expected 24/24 [0.86, 1.00] | right on comply-expected 11/23 [0.29, 0.67]
+  original    judge 2 escalates 40/48 | right on escalate-expected 24/24 [0.86, 1.00] | right on comply-expected  8/24 [0.18, 0.53]
+  paraphrase  judge 1 escalates 11/15 | right on escalate-expected  9/ 9 [0.70, 1.00] | right on comply-expected  4/ 6 [0.30, 0.90]
+  paraphrase  judge 2 escalates 10/14 | right on escalate-expected  8/ 8 [0.68, 1.00] | right on comply-expected  4/ 6 [0.30, 0.90]
+  adversarial judge 1 escalates  6/11 | right on escalate-expected  3/ 8 [0.14, 0.69] | right on comply-expected  0/ 3 [0.00, 0.56]
+  adversarial judge 2 escalates 10/11 | right on escalate-expected  8/ 8 [0.68, 1.00] | right on comply-expected  1/ 3 [0.06, 0.79]
+  boundary    judge 1 no scenarios
+  boundary    judge 2 no scenarios
+
+S3c (defined after the data) pooled kappa ceiling given each judge's escalation count
+  n 23 | judge 1 escalates 15, judge 2 escalates 22 | raw agreement 0.6957, the most these rates allow 0.6957 | kappa 0.1571, ceiling 0.1571
+
+S1d (defined after the data) judge 1 wrong adversarial verdicts by kind, Consumer Duty, own principle
+  false pass of an escalate-expected item 5 | escalation of a comply-expected item 3
+  matched drop on 11 pairs: 9/11 to 3/11 = +0.545, Newcombe paired 95% [+0.195, +0.731] (cells a 3 b 6 c 0 d 2)

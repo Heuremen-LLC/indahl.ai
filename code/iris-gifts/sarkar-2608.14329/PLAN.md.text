@@ -1,0 +1,57 @@
+# Gift recount: Sarkar, arXiv 2608.14329 "A Four-Axis Trustworthiness Benchmark for LLM-as-Judge in Principle-Based Regulation"
+Written and committed 30 Oct 2026 before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as
+printed: Dipankar Sarkar, Independent Researcher, dipankar@skelfresearch.com. No funding or acknowledgements printed. Released: GitHub
+sarkar-dipankar/principle-bench at a2e47aeff4bb3d69a8c417c1a64a3005957d59c9 (benchmark, 28 run files, raw judge traces, rules.py with the
+exemplars), hashes in scout/MANIFEST_sha256.txt. Paper read in full by the scout (scout/RECOUNT.md) and by us in its results, Table 1,
+Table 2, Figure 2 and Appendix B.
+
+## Their headline (abstract)
+The 120B LLM-judge (gpt-oss:120b) loses 47 accuracy points on keyword-stuffed Consumer Duty inputs (0.74 to 0.27), and a second judge from a
+different family (kimi-k2.6) agrees only at Cohen's kappa 0.16 on that split, "localising the failure to the model rather than the corpus".
+No interval is printed for 0.27 or for the drop.
+
+## KNOWN-GOOD
+Scout rebuild: 196 of 200 checks. Ours before the readings (ours/known_good.py, .text): LLM-judge Consumer Duty original 35 of 47 (0.7447),
+adversarial 3 of 11 (0.2727), COBS original 48 of 50, adversarial 12 of 13, each scenario scored on its own principle, and every row of
+judge_agreement.csv (kappa and raw agreement, including Consumer Duty adversarial 0.157 on n 23) to three places. Scenarios with no
+assessment (an error key in the run file) are counted by principle: 3 Consumer Duty originals, 1 Consumer Duty adversarial (flip_negative),
+3 COBS adversarial.
+
+## Readings (defined after reading the paper; four outcomes; 95% intervals)
+S1 The headline drop. (a) Wilson intervals for 35/47 and 3/11 and a Newcombe hybrid-score interval for the difference. (b) Like for like:
+   the Consumer Duty adversarial items with an assessment against their own source originals (source_id), paired correctness, discordant
+   counts in each direction, exact two-sided McNemar. A source original with no assessment is counted by reason. (c) Bounds with the failed
+   scenarios counted as wrong and as right. The drop is ABOVE zero only if its interval clears zero, and the reading says whether the interval
+   also tells the printed size (47 points) from a much smaller one.
+S2 By flip direction. Consumer Duty adversarial accuracy for flip_positive items (expected escalate) and flip_negative items (expected
+   comply), for both judges, with exact intervals. Descriptive.
+S3 The second judge on the principle's own scenarios. On Consumer Duty adversarial scenarios that both judges assessed, judge 1 against
+   judge 2 accuracy, discordant pairs and exact McNemar. Kappa on those scenarios beside their pooled kappa (n 23, which also scores COBS
+   scenarios against Consumer Duty), each with a percentile bootstrap over scenarios (10,000 resamples, seed 42). The paired accuracy test
+   is the direct ruler for "model-side". Kappa sits beside it.
+S4 Live embedder arm (their items through the same public embedder weights on our setup). Setup record before the first run: models
+   sentence-transformers/all-MiniLM-L6-v2 and BAAI/bge-base-en-v1.5 at the Hugging Face revisions we fetch (sha256 of every weight file
+   recorded), sentence-transformers and torch versions, Mac CPU (the Apple GPU is held by the lab queue), no prefix, model default
+   truncation. Inputs: the text field of every scenario in corpus_principle, paraphrases, boundaries and adversarial, and the 32 exemplars in
+   rules.py. Eq. 1 cluster means of cosine similarity against the released avg_positive_sim and avg_negative_sim for every scenario and
+   cluster, then Eq. 1 and Eq. 2 with rules.py weights and thresholds against the released escalation verdict. Two repeats. Readings: max
+   and median absolute difference per model, repeat floor (repeat 1 against repeat 2), scenarios whose verdict differs from theirs. Their
+   embedding settings (prefix, truncation, normalisation) live in a package that is not public, so any difference is a setup carrier and is
+   named as such, never a cause. mxbai-embed-large (Ollama) and the Armature half wait for a free GPU slot and get their own addendum.
+
+## What this gift never says
+No cause beyond what the readings separate. Small n is stated beside every interval. Post-hoc readings are labelled in place.
+
+## Addendum 1 (30 Oct 2026, written after S1-S3 were computed and before S3b; S3b is defined after the data)
+S3 printed kappa 0.000 with a flat bootstrap on the 10 Consumer Duty adversarial scenarios both judges assessed. Judge 2 (kimi-k2.6)
+escalated all 10 of them, and a rater who gives one verdict to every item has kappa 0 whatever the other rater does. S3b reads, for
+Consumer Duty scenarios on their own principle in each split (original, paraphrase, adversarial, boundary), each judge's escalate share and
+its accuracy on escalate-expected and comply-expected items separately, with Wilson intervals. It says whether judge 2's 8 of 8 on
+flip_positive items comes with escalating comply-expected items too. Descriptive. No new test.
+
+## Addendum 2 (30 Oct 2026, after the referee pass; S3c and S1d are defined after the data)
+S3c: the pooled kappa's ceiling. With each judge's escalation count on the 23 pooled scenarios fixed, the largest kappa the two rates allow,
+beside the observed 0.157 and raw agreement 0.696. S1d: judge 1's wrong adversarial verdicts split by kind (false pass of an
+escalate-expected item, escalation of a comply-expected item), and the matched drop on the 11 pairs with a Newcombe interval for paired
+proportions. Correction to S4: every embedder verdict is escalate in both their files and ours (raw scores sit below both thresholds), so the
+verdict count tests nothing; the reproduction rests on the similarity values only.
