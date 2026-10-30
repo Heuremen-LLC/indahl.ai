@@ -1,0 +1,44 @@
+
+## 2026-10-30 18:16 Caldwell C1-C5: declaration-level sign test holds below 1e-5 for all six judges (deepseek 2.9e-7); ties left out reorder the middle three judges (within a point); replicate flips 20-37% pairwise, 30-55% any-disagree; lost pairs as misses give muse 70.2, not sonnet 80.8 or inkling 69.3; gpt-5.4-mini printed 0.136 above the repo-rate bound 0.046, reproduced at 0.75/4.50 (post hoc)
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: every judge read on the same 218 declarations; lost pairs counted per judge (sonnet 6, muse 2, inkling 1) and treated two ways in C4; C1 declarations with fewer than three pairs counted (6, 2, 1)
+- II: holds: C1 counts declarations and pairs separately; C3 counts flips per replicate pair before any summary; C2 shows the middle three judges within a point under every tie rule
+- III: holds: all judges above chance in the same direction; signed shares only
+- V: holds: pooled and declaration-level sign tests side by side; three tie rules side by side with a declaration-clustered bootstrap
+- VI: holds: C1 ABOVE chance at the declaration level for all six (p from 1.3e-22 to 2.9e-7), so the printed claim holds; C2 the middle three cannot be ordered (intervals overlap); C4 CANNOT_TELL on why sonnet and inkling differ by 0.1
+- R: holds: counts from the six trace files; rates from their make_frontier.py read as text; C5b labelled defined after the data (Addendum 1, 4880be0)
+- L1: n/a: scores are a numeric field in each trace (recorded score equals the weighted dimension mean in every trace per the scout); no text parsing in these readings
+- L2: holds: known_good rebuilt Table 1 before any reading
+- L3: holds: their pairing and tie rule rebuilt from metrics.py; the 50% chance line is theirs and the tie-adjusted line sits beside it
+- L4: n/a: no reruns; their three replicates are the repeat floor and C3 reads it
+- L5: holds: pairs keyed by pr_number, declaration_name and replicate; 218 declarations in every file
+- L6: holds: lost trajectories by judge, variant and replicate (known_good.text)
+- L7: n/a: the label is the PR revision history, not built from any judge
+- L8: holds: declaration-clustered bootstrap; replicates paired by declaration
+- L9: n/a: prompts not used in these readings
+- L10: holds: judges by the names in the traces; no claim about provider behaviour over time
+- L11: n/a: nothing substituted
+- L12: holds: the refuting referee is a Claude model (same family as the writer), disclosed in its note
+
+## 2026-10-30 18:26 Referee pass: all counts reproduced; C2 spread 1.7 points (not about one); C3 range is his README's own, not raised; C5 restated as which rates are intended; C1b single replicates (deepseek r1, r2 above 1e-5 with ties as misses); C2b paired gaps: sonnet-gemini depends on tie rule, middle three span zero under every rule; C6 'vanishingly rare' comment against 3.9-8.9% ties
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: fixed: C5's repo-rate figure was framed as a bound on the paper's cost; the repo table may be the stale one, so it is now a question about which rates are intended
+- II: holds: C2b reads paired gaps per adjacent judge instead of comparing labels; C1b per replicate before the pooled claim
+- III: holds: gaps printed signed; muse minus inkling changes sign with the tie rule and its interval spans zero
+- V: holds: paired declaration-clustered bootstrap beside the unpaired intervals; three tie rules side by side
+- VI: fixed: C2 'within about a point' replaced by 1.7 points (ties as misses) and 0.6 (halved or left out); middle three CANNOT_TELL under every rule; sonnet above gemini only with ties as misses
+- R: holds: C1b, C2b, C6 labelled defined after the data (Addendum 2, f9ae09a); C3 range traced to his hf_traces README lines 67-68
+- L1: n/a: scores are numeric fields; no parsing
+- L2: holds: the referee's numbers recomputed by our code before any use
+- L3: holds: his tie rule and pairing from metrics.py; the chance-line comment read from make_frontier.py line 158
+- L4: n/a: no reruns; C1b reads his replicates one by one
+- L5: holds: same keys as known_good; 216 declarations common to all six judges for C2b
+- L6: holds: lost pairs as before (6, 2, 1)
+- L7: n/a: labels from PR history
+- L8: holds: paired by declaration in C2b
+- L9: n/a: prompts not used
+- L10: n/a: no claim about providers over time
+- L11: n/a: nothing substituted
+- L12: holds: referee is a Claude model (Sonnet), same family as the writer
