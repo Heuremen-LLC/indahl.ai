@@ -3,8 +3,13 @@
   var box = document.getElementById('revise-live'); if (!box) return;
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
+  function first(r, T) {
+    var v = r._key != null ? r._key : r[T.firstkey], c = td(v), u = T.link ? T.link.replace(/\{(\w+)\}/g, function (m, k) { return r[k] == null ? '' : encodeURI(r[k]); }) : '';
+    if (v && /^https?:\/\/[^/]+\//.test(u)) { c.textContent = ''; var a = document.createElement('a'); a.href = u; a.textContent = v; c.appendChild(a); }
+    return c;
+  }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Months the first estimate moved by more than the stated margin", "path": "counts", "first": "Comparison", "cols": [["Months", "months", "n"], ["Years", "years", "n"], ["Moved by more", "exceed", "n"], ["Share, 95% interval", "share", "pct"], ["Share, interval over years", "share_y", "pct"], ["Outcome", "outcome", "oc"], ["Median signed, thousands", "median_signed", "n"], ["Median absolute", "median_abs", "n"], ["Largest", "largest", "n"]]}, {"title": "Months with a revision above 300 thousand, opened by hand", "path": "large", "first": "Month", "firstkey": "month", "cols": [["First", "first", "n"], ["Third", "third", "n"], ["Most recent", "most_recent", "n"], ["Found by hand", "note", "t"]]}], TOP = "Stated margin {stated} thousand. Philadelphia Fed file updated {file_updated}. Updated {updated} UTC.";
+  var TABLES = [{"title": "Months the first estimate moved by more than the stated margin", "path": "counts", "first": "Comparison", "cols": [["Months", "months", "n"], ["Years", "years", "n"], ["Moved by more", "exceed", "n"], ["Share, 95% interval over months", "share", "pct"], ["Outcome", "outcome", "oc"], ["Share, 95% interval over calendar years (bootstrap, 4,000 resamples, defined after the first read)", "share_y", "pct"], ["Outcome if the interval over years were used (defined after the first read)", "outcome_y", "oc"], ["Median signed, thousands", "median_signed", "n"], ["Median absolute", "median_abs", "n"], ["Largest", "largest", "n"]]}, {"title": "Months with a revision above 300 thousand, read in full", "path": "large", "first": "Month", "firstkey": "month", "cols": [["First", "first", "n"], ["Third", "third", "n"], ["Most recent", "most_recent", "n"], ["Found on a full read", "note", "t"]], "link": "{url}"}], TOP = "Stated margin {stated} thousand. Philadelphia Fed file updated {file_updated}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
     if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
@@ -21,7 +26,7 @@
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(first(r, T)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

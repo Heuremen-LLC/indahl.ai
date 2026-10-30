@@ -3,8 +3,13 @@
   var box = document.getElementById('arxivdrift-live'); if (!box) return;
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
+  function first(r, T) {
+    var v = r._key != null ? r._key : r[T.firstkey], c = td(v), u = T.link ? T.link.replace(/\{(\w+)\}/g, function (m, k) { return r[k] == null ? '' : encodeURI(r[k]); }) : '';
+    if (v && /^https?:\/\/[^/]+\//.test(u)) { c.textContent = ''; var a = document.createElement('a'); a.href = u; a.textContent = v; c.appendChild(a); }
+    return c;
+  }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "By class", "path": "classes", "first": "Class", "cols": [["Studies", "n", "n"], ["Share, 95% interval", "share", "pct"]]}, {"title": "By month indexed", "path": "by_month", "first": "Month", "cols": [["Studies", "n", "n"], ["Unchanged", "unchanged", "n"], ["Revised, nothing changed", "revised_same", "n"], ["Revised wording", "revised_text", "n"], ["Revised numbers", "revised_numbers", "n"], ["Withdrawn", "withdrawn", "n"]]}, {"title": "Studies whose abstract numbers changed", "path": "drifted", "first": "Study", "firstkey": "title", "cols": [["Division", "division", "t"], ["arXiv id", "id", "t"], ["Read", "read", "t"], ["Now", "latest", "t"], ["Class", "cls", "t"], ["Numbers only in the version we read", "numbers_read", "t"], ["Numbers only in the latest", "numbers_latest", "t"]]}], TOP = "{read} of {studies} indexed arXiv studies read. Controls: {gate}. Due for a new read: {due}. Updated {updated} UTC.";
+  var TABLES = [{"title": "By class", "path": "classes", "first": "Class", "cols": [["Studies", "n", "n"], ["Share, 95% interval", "share", "pct"]]}, {"title": "By month indexed", "path": "by_month", "first": "Month", "cols": [["Studies", "n", "n"], ["Unchanged", "unchanged", "n"], ["Revised, nothing changed", "revised_same", "n"], ["Revised wording", "revised_text", "n"], ["Revised numbers", "revised_numbers", "n"], ["Withdrawn", "withdrawn", "n"]]}, {"title": "Studies whose abstract numbers changed", "path": "drifted", "link": "https://arxiv.org/abs/{id}", "first": "Study", "firstkey": "title", "cols": [["Division", "division", "t"], ["arXiv id", "id", "t"], ["Read", "read", "t"], ["Now", "latest", "t"], ["Class", "cls", "t"], ["Numbers only in the version we read", "numbers_read", "t"], ["Numbers only in the latest", "numbers_latest", "t"]]}], TOP = "{read} of {studies} indexed arXiv studies read. Controls: {gate}. Due for a new read: {due}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
     if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
@@ -20,7 +25,7 @@
       var rows = Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; });
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(first(r, T)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

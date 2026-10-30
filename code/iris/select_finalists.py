@@ -16,7 +16,9 @@ for d in DIRS:
         G, Bm, DG, DB = S.load(mk, 'guard'), S.load(mk, 'bare'), S.load_dr(mk, 'guard'), S.load_dr(mk, 'bare')
         fg, fb = [], []
         for fam in ('P1', 'P2', 'P3', 'P4'):
-            if r['fam'][fam]['outcome'] is None or str(r['fam'][fam]['outcome']).startswith('CANNOT_TELL (family') or str(r['fam'][fam]['outcome']).startswith('CANNOT_TELL (repeat'): continue
+            # 30 Oct 2026 correction: THUNDERDOME_PLAN.md says families whose gate failed are excluded. Until 30 Oct this line skipped only "CANNOT_TELL (family" and "CANNOT_TELL (repeat",
+            # so a family with "CANNOT_TELL (too few read)" (under 10 readable pairs) stayed in. Every CANNOT_TELL outcome is excluded now. See the 30 Oct addendum in THUNDERDOME_PLAN.md.
+            if r['fam'][fam]['outcome'] is None or str(r['fam'][fam]['outcome']).startswith('CANNOT_TELL'): continue
             ks = [k for k, i in S.IT.items() if i['fam'] == fam and i.get('kind') not in ('control', 'gw')]
             g = [S.cls(S.IT[k], G.get(k), 'guard', DG.get(k)) for k in ks if k in G]; b = [S.cls(S.IT[k], Bm.get(k), 'bare', DB.get(k)) for k in ks if k in Bm]
             g = [x for x in g if x in ('FAULT', 'OK')]; b = [x for x in b if x in ('FAULT', 'OK')]

@@ -6,27 +6,27 @@
  },
  "S1-04": {
   "state": "read",
-  "ours": "acc 53.5 \u00b1 1.0; acc_norm 71.7 \u00b1 0.9",
+  "ours": "acc 53.5 \u00b1 1.0, acc_norm 71.7 \u00b1 0.9. Under our harness the stated value sits between the variants, above the acc interval and below the acc_norm interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested",
   "outcome": "CANNOT_TELL"
  },
  "S1-05": {
   "state": "read",
-  "ours": "acc 53.8 \u00b1 1.7; acc_norm 53.5 \u00b1 1.8. Margin outside the interval: 0.002 points. Under our harness the stated value is below our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested",
+  "ours": "acc 53.8 \u00b1 1.7, acc_norm 53.5 \u00b1 1.8. Margin outside the interval: 0.002 points. Under our harness the stated value is below our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested",
   "outcome": "CANNOT_TELL"
  },
  "S1-06": {
   "state": "read",
-  "ours": "acc 75.7 \u00b1 2.0; acc_norm 76.3 \u00b1 2.0",
+  "ours": "acc 75.7 \u00b1 2.0, acc_norm 76.3 \u00b1 2.0",
   "outcome": "CONSISTENT"
  },
  "S1-08": {
   "state": "read",
-  "ours": "plain exact_match mean over subtasks 0.0 \u00b1 0.1; chat exact_match mean over subtasks 28.6 \u00b1 1.1. Margin outside the interval: 2.589 points. Under our harness the stated value is above our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested",
+  "ours": "plain exact_match mean over subtasks 0.0 \u00b1 0.1 [CANNOT_TELL (parser)], chat exact_match mean over subtasks 28.6 \u00b1 1.1. Margin outside the interval: 2.589 points. Under our harness the stated value is above our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested. Parser check (replies read in full) (HANDCHECK_S1.md, done on 30 Oct after these outcomes were first published): plain replies begin with a space and the exact-match metric does not strip it, so 4 of 10 correct answers scored 0. Plain is CANNOT_TELL (parser) and does not count toward the outcome. Chat matched the full reading on 10 of 10.",
   "outcome": "CANNOT_TELL"
  },
  "S1-09": {
   "state": "read",
-  "ours": "plain strict-match 0.4 \u00b1 0.4; plain flexible-extract 0.4 \u00b1 0.4; chat strict-match 30.3 \u00b1 2.5; chat flexible-extract 45.9 \u00b1 2.7; chat with turns strict-match 48.3 \u00b1 2.7; chat with turns flexible-extract 49.4 \u00b1 2.7",
+  "ours": "plain strict-match 0.4 \u00b1 0.4, plain flexible-extract 0.4 \u00b1 0.4, chat strict-match 30.3 \u00b1 2.5 [CANNOT_TELL (parser)], chat flexible-extract 45.9 \u00b1 2.7, chat with turns strict-match 48.3 \u00b1 2.7, chat with turns flexible-extract 49.4 \u00b1 2.7. Parser check (replies read in full) (HANDCHECK_S1.md, done on 30 Oct after these outcomes were first published): plain replies were empty on 10 of 10 and the filters agree. Chat strict-match found no answer on 4 of 10, 2 of them correct, so it is CANNOT_TELL (parser) and does not count toward the outcome. Chat flexible-extract and both chat-with-turns filters were each off on question 8 only, a reply that is wrong either way.",
   "outcome": "CONSISTENT"
  }
 }

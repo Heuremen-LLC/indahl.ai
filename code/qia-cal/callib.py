@@ -45,17 +45,24 @@ def t1_fit(p1, n, B):
     lo = np.array([GRID[np.where(row)[0].min()] for row in ok]); hi = np.array([GRID[np.where(row)[0].max()] for row in ok])
     edge = (lo <= GRID[0] * 1.001) | (hi >= GRID[-1] * 0.999) | (best < 5.0)
     return best, lo, hi, edge
-def analyse(c0_ones, c1_zeros, t1_ones, shots_ro, shots_t1, stated):
+def ibm_readout_shots(stated):
+    """Note 3 (30 Oct 2026): the shot count behind IBM's readout figures, read from the record itself. Every multiple of 1/1024 is also a multiple
+    of 1/4096, so a record whose readout figures are ALL multiples of 1/1024 is a count from about 1,024 shots (ibm_fez, ibm_marrakesh: 312 of 312);
+    otherwise 4,096 (ibm_aachen: 89 of 312 are multiples of 1/1024, about the quarter chance gives)."""
+    v = [x for s in stated.values() for x in (s.get('p10'), s.get('p01')) if x is not None and np.isfinite(x)]
+    return 1024 if v and all(abs(x * 1024 - round(x * 1024)) < 1e-6 for x in v) else 4096
+def analyse(c0_ones, c1_zeros, t1_ones, shots_ro, shots_t1, stated, n_ibm=None):
     """c0_ones (Q,), c1_zeros (Q,), t1_ones (Q, D-1) ones at the nonzero delays; stated: dict q-index -> {'p10','p01','t1'} (IBM, may be None).
     Returns per-qubit rows and the run's known-good."""
     Q = len(c0_ones); p10, l10, h10 = wilson(c0_ones, shots_ro); p01, l01, h01 = wilson(c1_zeros, shots_ro)
+    n_ibm = n_ibm or ibm_readout_shots(stated)
     p1 = np.column_stack([1 - p01] + [np.asarray(t1_ones)[:, j] / shots_t1 for j in range(np.asarray(t1_ones).shape[1])])
     n = np.array([shots_ro] + [shots_t1] * (p1.shape[1] - 1)); best, lo, hi, edge = t1_fit(p1, n, p10)
     rows = []
     for q in range(Q):
         s = stated[q]
-        rows.append(dict(p10=round(float(p10[q]), 4), p10_ci=[round(float(l10[q]), 4), round(float(h10[q]), 4)], ibm_p10=s.get('p10'), p10_outcome=side_counts(s.get('p10'), l10[q], h10[q]),
-                         p01=round(float(p01[q]), 4), p01_ci=[round(float(l01[q]), 4), round(float(h01[q]), 4)], ibm_p01=s.get('p01'), p01_outcome=side_counts(s.get('p01'), l01[q], h01[q]),
+        rows.append(dict(p10=round(float(p10[q]), 4), p10_ci=[round(float(l10[q]), 4), round(float(h10[q]), 4)], ibm_p10=s.get('p10'), p10_outcome=side_counts(s.get('p10'), l10[q], h10[q], n_ibm),
+                         p01=round(float(p01[q]), 4), p01_ci=[round(float(l01[q]), 4), round(float(h01[q]), 4)], ibm_p01=s.get('p01'), p01_outcome=side_counts(s.get('p01'), l01[q], h01[q], n_ibm),
                          t1=round(float(best[q]), 1), t1_ci=[round(float(lo[q]), 1), round(float(hi[q]), 1)], ibm_t1=s.get('t1'),
                          t1_outcome='CANNOT_TELL' if edge[q] else side_margin(s.get('t1'), lo[q], hi[q])))
     ro_ratio = [((r['p10'] + r['p01']) / 2) / ((r['ibm_p10'] + r['ibm_p01']) / 2) for r in rows if r['ibm_p10'] and r['ibm_p01']]
@@ -64,4 +71,4 @@ def analyse(c0_ones, c1_zeros, t1_ones, shots_ro, shots_t1, stated):
     kg = bool(0.5 <= mro <= 2.0 and 0.5 <= mt1 <= 2.0)
     if not kg:
         for r in rows: r['p10_outcome'] = r['p01_outcome'] = r['t1_outcome'] = 'CANNOT_TELL'
-    return rows, dict(known_good='passed' if kg else 'failed', median_readout_measured_over_stated=round(mro, 3), median_t1_measured_over_stated=round(mt1, 3))
+    return rows, dict(ibm_readout_shots=n_ibm, known_good='passed' if kg else 'failed', median_readout_measured_over_stated=round(mro, 3), median_t1_measured_over_stated=round(mt1, 3))

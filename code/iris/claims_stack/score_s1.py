@@ -19,7 +19,7 @@ if sys.argv[1] == 'knowngood':
         r = load(d); v = get(r, task, m)
         if not v: print('known-good not finished'); sys.exit()
         z = abs(v[0] - ref) / v[1]; ok &= z <= 2; parts.append(f'{task} {m} {v[0]:.2f} against the record {ref:.2f} ({z:.1f} standard errors)')
-    print(('passed. ' if ok else 'FAILED. ') + '; '.join(parts)); sys.exit()
+    print(('passed. ' if ok else 'FAILED. ') + '. '.join(parts)); sys.exit()
 if sys.argv[1] == 'genknowngood':
     f = glob.glob(os.path.join(HERE, 'kg/gsm8k/eval_*'))
     if not f: print('not finished'); sys.exit()
@@ -27,7 +27,7 @@ if sys.argv[1] == 'genknowngood':
     for m in ('strict-match', 'flexible-extract'):
         v, se = 100 * t_['exact_match,' + m], 100 * t_['exact_match_stderr,' + m]; lim = 2 * math.hypot(se, se_r); parts.append(f'{m} {v:.1f} (limit {lim:.1f})')
         if abs(v - ref) <= lim: best = True
-    print(('passed. ' if best else 'FAILED. ') + 'Qwen1.5-1.8B GSM8K 5-shot against the record 33.59: ' + '; '.join(parts)); sys.exit()
+    print(('passed. ' if best else 'FAILED. ') + 'Qwen1.5-1.8B GSM8K 5-shot against the record 33.59: ' + ' and '.join(parts)); sys.exit()
 rows = {r['claim_id']: r for r in csv.DictReader(open(os.path.join(HERE, 'claims_s1.csv')))}
 R = {t: load(f's1/{t}') for t in ('hellaswag', 'arc_easy', 'arc_challenge', 'piqa')}
 GV = {d: load(f's1/{d}') for d in ('gsm8k_plain', 'gsm8k_chat', 'gsm8k_chatmt', 'ifeval_chat', 'bbh_plain', 'bbh_chat')}
@@ -55,6 +55,11 @@ def variants(cid):
             t_ = r['gsm8k']
             for m in ('strict-match', 'flexible-extract'): o[f'{lab} {m}'] = (100 * t_['exact_match,' + m], 100 * t_['exact_match_stderr,' + m])
         return o or None
+# Parser check (replies read in full), 30 Oct 2026 (HANDCHECK_S1.md), done AFTER these outcomes were first published. More than 1 of 10 replies off: that variant is CANNOT_TELL (parser)
+# and does not count toward the outcome. Its value is still printed. Off counts: gsm8k chat strict-match 4 of 10, bbh plain 4 of 10. Every other variant 0 or 1 of 10.
+PARSER = {'S1-08': {'plain exact_match mean over subtasks'}, 'S1-09': {'chat strict-match'}}
+NOTE = {'S1-08': "Parser check (replies read in full) (HANDCHECK_S1.md, done on 30 Oct after these outcomes were first published): plain replies begin with a space and the exact-match metric does not strip it, so 4 of 10 correct answers scored 0. Plain is CANNOT_TELL (parser) and does not count toward the outcome. Chat matched the full reading on 10 of 10.",
+        'S1-09': "Parser check (replies read in full) (HANDCHECK_S1.md, done on 30 Oct after these outcomes were first published): plain replies were empty on 10 of 10 and the filters agree. Chat strict-match found no answer on 4 of 10, 2 of them correct, so it is CANNOT_TELL (parser) and does not count toward the outcome. Chat flexible-extract and both chat-with-turns filters were each off on question 8 only, a reply that is wrong either way."}
 out = {}
 for cid, row in rows.items():
     if row['status'] != 'RUN': continue
@@ -63,15 +68,22 @@ for cid, row in rows.items():
     v = variants(cid)
     if cid == 'S1-01' and not v: out[cid] = {'state': 'nothing returned: the evaluation tool stops with an error after generating (ROUND_S1.md addendum 5)', 'ours': '', 'outcome': ''}; continue
     if not v or any(x is None for x in v.values()): out[cid] = {'state': 'running' if os.path.isdir(os.path.join(HERE, 's1')) else 'queued', 'ours': '', 'outcome': ''}; continue
-    s = float(row['stated_value']); hit = []; lo_all = True; hi_all = True; txt = []
+    s = float(row['stated_value']); hit = []; lo_all = True; hi_all = True; txt = []; cnt = {}
     for name, (val, se) in v.items():
-        w = 1.96 * se + 0.05; txt.append(f'{name} {val:.1f} ± {w:.1f}')
+        w = 1.96 * se + 0.05; flagged = name in PARSER.get(cid, ())
+        txt.append(f'{name} {val:.1f} ± {w:.1f}' + (' [CANNOT_TELL (parser)]' if flagged else ''))
+        if flagged: continue
+        cnt[name] = (val, se)
         if abs(s - val) <= w: hit.append(name)
         lo_all &= s > val + w; hi_all &= s < val - w
     oc = 'CONSISTENT' if hit else ('BELOW' if lo_all else ('ABOVE' if hi_all else 'CANNOT_TELL'))
+    assert cnt, 'every variant is CANNOT_TELL (parser): decide the row on a full read'
     harness_note = ''
     if oc in ('ABOVE', 'BELOW') and 'lighteval' in row['stated_setting']:   # Addendum 6: the card ran lighteval, we ran lm-eval; the prompt rebuttal is untested
         harness_note = f'. Under our harness the stated value is {"above" if oc == "BELOW" else "below"} our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested'
-    marg = min(abs(s - (val - (1.96 * se + 0.05))) if hi_all else abs(s - (val + (1.96 * se + 0.05))) for val, se in v.values()) if oc in ('ABOVE', 'BELOW') else None
-    out[cid] = {'state': 'read', 'ours': '; '.join(txt) + (f'. Margin outside the interval: {marg:.3f} points' if marg is not None else '') + harness_note, 'outcome': 'CANNOT_TELL' if harness_note else oc}
+    elif oc == 'CANNOT_TELL' and not hit and 'lighteval' in row['stated_setting']:   # 30 Oct (site pass E-8): outside every interval on both sides gets its direction too
+        where = ' and '.join(f'{"above" if s > val + 1.96 * se + 0.05 else "below"} the {name} interval' for name, (val, se) in cnt.items())
+        harness_note = f'. Under our harness the stated value sits between the variants, {where}. The card ran lighteval, so this reads CANNOT_TELL until that is tested'
+    marg = min(abs(s - (val - (1.96 * se + 0.05))) if hi_all else abs(s - (val + (1.96 * se + 0.05))) for val, se in cnt.values()) if oc in ('ABOVE', 'BELOW') else None
+    out[cid] = {'state': 'read', 'ours': ', '.join(txt) + (f'. Margin outside the interval: {marg:.3f} points' if marg is not None else '') + harness_note + ('. ' + NOTE[cid] if cid in NOTE else ''), 'outcome': 'CANNOT_TELL' if harness_note else oc}
 json.dump(out, open(os.path.join(HERE, 'outcomes_s1.json'), 'w'), indent=1)

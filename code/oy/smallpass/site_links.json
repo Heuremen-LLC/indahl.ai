@@ -1,0 +1,1902 @@
+{
+"abcnash.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://abcnash.edu"
+},
+"abu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://abu.edu"
+},
+"adrian.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://adrian.edu"
+},
+"agnesscott.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://agnesscott.edu"
+},
+"aju.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://aju.edu"
+},
+"alaskapacific.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://alaskapacific.edu"
+},
+"albion.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://albion.edu"
+},
+"albright.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://albright.edu"
+},
+"alc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://alc.edu"
+},
+"allegheny.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://allegheny.edu"
+},
+"allenuniversity.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://allenuniversity.edu"
+},
+"alma.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://alma.edu"
+},
+"amherst.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://amherst.edu"
+},
+"anselm.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://anselm.edu"
+},
+"antiochcollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://antiochcollege.edu"
+},
+"aquinas.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://aquinas.edu"
+},
+"arizonachristian.edu": {
+"bare": "200",
+"www": "403",
+"link": "https://arizonachristian.edu"
+},
+"augustana.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://augustana.edu"
+},
+"austincollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://austincollege.edu"
+},
+"avemaria.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://avemaria.edu"
+},
+"bacone.edu": {
+"bare": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"www": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"link": null
+},
+"barclaycollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://barclaycollege.edu"
+},
+"bard.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bard.edu"
+},
+"barnard.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://barnard.edu"
+},
+"barton.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://barton.edu"
+},
+"bates.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bates.edu"
+},
+"bayamon.inter.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bayamon.inter.edu"
+},
+"beaconcollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://beaconcollege.edu"
+},
+"belmontabbeycollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://belmontabbeycollege.edu"
+},
+"beloit.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://beloit.edu"
+},
+"benedict.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://benedict.edu"
+},
+"benedictine.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://benedictine.edu"
+},
+"bennett.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://bennett.edu"
+},
+"bennington.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bennington.edu"
+},
+"berea.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://berea.edu"
+},
+"bethanylb.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bethanylb.edu"
+},
+"bethanywv.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://bethanywv.edu"
+},
+"bethelks.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bethelks.edu"
+},
+"beulah.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://beulah.edu"
+},
+"blackburn.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://blackburn.edu"
+},
+"blc.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://blc.edu"
+},
+"bluffton.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bluffton.edu"
+},
+"bmc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bmc.edu"
+},
+"boricuacollege.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "200",
+"link": "https://www.boricuacollege.edu"
+},
+"bowdoin.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bowdoin.edu"
+},
+"bpc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bpc.edu"
+},
+"br.inter.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://br.inter.edu"
+},
+"brescia.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://brescia.edu"
+},
+"brevard.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://brevard.edu"
+},
+"bridgewater.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bridgewater.edu"
+},
+"brynathyn.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://brynathyn.edu"
+},
+"brynmawr.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://brynmawr.edu"
+},
+"bua.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://bua.edu"
+},
+"buc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://buc.edu"
+},
+"bucknell.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://bucknell.edu"
+},
+"buf.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://buf.edu"
+},
+"byuh.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://byuh.edu"
+},
+"byui.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://byui.edu"
+},
+"calvary.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://calvary.edu"
+},
+"caribbean.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://caribbean.edu"
+},
+"carleton.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://carleton.edu"
+},
+"carroll.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://carroll.edu"
+},
+"catawba.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://catawba.edu"
+},
+"cbc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://cbc.edu"
+},
+"centenary.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://centenary.edu"
+},
+"central.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://central.edu"
+},
+"centralchristian.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://centralchristian.edu"
+},
+"centralmethodist.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://centralmethodist.edu"
+},
+"centre.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://centre.edu"
+},
+"chowan.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://chowan.edu"
+},
+"cityvision.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://cityvision.edu"
+},
+"claflin.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://claflin.edu"
+},
+"cmc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://cmc.edu"
+},
+"coa.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://coa.edu"
+},
+"coe.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://coe.edu"
+},
+"cofo.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://cofo.edu"
+},
+"colby-sawyer.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://colby-sawyer.edu"
+},
+"colby.edu": {
+"bare": "fail:URLError:timed out",
+"www": "403",
+"link": "https://www.colby.edu"
+},
+"colgate.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://colgate.edu"
+},
+"collegeofidaho.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://collegeofidaho.edu"
+},
+"coloradocollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://coloradocollege.edu"
+},
+"concordiacollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://concordiacollege.edu"
+},
+"conncoll.edu": {
+"bare": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"www": "200",
+"link": "https://www.conncoll.edu"
+},
+"cookman.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://cookman.edu"
+},
+"cooper.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://cooper.edu"
+},
+"cornellcollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://cornellcollege.edu"
+},
+"covenant.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://covenant.edu"
+},
+"cps.indianatech.edu": {
+"bare": "200",
+"www": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"link": "https://cps.indianatech.edu"
+},
+"crc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://crc.edu"
+},
+"criswell.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://criswell.edu"
+},
+"csbsju.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://csbsju.edu"
+},
+"culver.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://culver.edu"
+},
+"dallas.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://dallas.edu"
+},
+"davidson.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://davidson.edu"
+},
+"dean.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://dean.edu"
+},
+"defiance.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://defiance.edu"
+},
+"denison.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://denison.edu"
+},
+"depauw.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://depauw.edu"
+},
+"dewv.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://dewv.edu"
+},
+"dickinson.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "200",
+"link": "https://www.dickinson.edu"
+},
+"dillard.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://dillard.edu"
+},
+"drew.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://drew.edu"
+},
+"drury.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://drury.edu"
+},
+"dwci.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://dwci.edu"
+},
+"dwu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://dwu.edu"
+},
+"earlham.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://earlham.edu"
+},
+"eastwest.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://eastwest.edu"
+},
+"ec.edu": {
+"bare": "fail:URLError:[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake",
+"www": "fail:URLError:[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake",
+"link": null
+},
+"eckerd.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://eckerd.edu"
+},
+"ecollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ecollege.edu"
+},
+"elmira.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://elmira.edu"
+},
+"emmanuel.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://emmanuel.edu"
+},
+"emmaus.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://emmaus.edu"
+},
+"eureka.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://eureka.edu"
+},
+"ew.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://ew.edu"
+},
+"faith.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://faith.edu"
+},
+"fajardo.inter.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"link": null
+},
+"fandm.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://fandm.edu"
+},
+"ferrum.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ferrum.edu"
+},
+"fisher.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://fisher.edu"
+},
+"fisk.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://fisk.edu"
+},
+"flagler.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://flagler.edu"
+},
+"fmuniv.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://fmuniv.edu"
+},
+"franklincollege.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://franklincollege.edu"
+},
+"furman.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://furman.edu"
+},
+"gbs.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://gbs.edu"
+},
+"gcc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://gcc.edu"
+},
+"georgetowncollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://georgetowncollege.edu"
+},
+"gettysburg.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://gettysburg.edu"
+},
+"glcc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://glcc.edu"
+},
+"gordon.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://gordon.edu"
+},
+"goshen.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://goshen.edu"
+},
+"goucher.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://goucher.edu"
+},
+"gracechristian.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://gracechristian.edu"
+},
+"grinnell.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://grinnell.edu"
+},
+"guayama.inter.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://guayama.inter.edu"
+},
+"guilford.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://guilford.edu"
+},
+"gustavus.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://gustavus.edu"
+},
+"hallmarkuniversity.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hallmarkuniversity.edu"
+},
+"hamilton.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hamilton.edu"
+},
+"hampshire.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hampshire.edu"
+},
+"hanover.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hanover.edu"
+},
+"hartwick.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hartwick.edu"
+},
+"hastings.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hastings.edu"
+},
+"haverford.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://haverford.edu"
+},
+"hcc-nd.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hcc-nd.edu"
+},
+"hchc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hchc.edu"
+},
+"hendrix.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hendrix.edu"
+},
+"herzing.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://herzing.edu"
+},
+"highpoint.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://highpoint.edu"
+},
+"hilbert.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hilbert.edu"
+},
+"hillsdale.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hillsdale.edu"
+},
+"hiram.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://hiram.edu"
+},
+"hlg.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://hlg.edu"
+},
+"hmc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hmc.edu"
+},
+"hollins.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hollins.edu"
+},
+"holycross.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://holycross.edu"
+},
+"hope.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hope.edu"
+},
+"houghton.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://houghton.edu"
+},
+"hputx.edu": {
+"bare": "307",
+"www": "307",
+"link": "https://hputx.edu"
+},
+"hsbc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hsbc.edu"
+},
+"hsc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hsc.edu"
+},
+"htc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://htc.edu"
+},
+"htu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://htu.edu"
+},
+"huntingdon.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://huntingdon.edu"
+},
+"hws.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://hws.edu"
+},
+"ic.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ic.edu"
+},
+"iwu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://iwu.edu"
+},
+"jarvis.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://jarvis.edu"
+},
+"jcsu.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "200",
+"link": "https://www.jcsu.edu"
+},
+"jewell.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://jewell.edu"
+},
+"jpcatholic.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://jpcatholic.edu"
+},
+"juniata.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://juniata.edu"
+},
+"jwu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://jwu.edu"
+},
+"kcu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://kcu.edu"
+},
+"kenyon.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://kenyon.edu"
+},
+"keystone.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://keystone.edu"
+},
+"kmbc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://kmbc.edu"
+},
+"knox.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://knox.edu"
+},
+"kuyper.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://kuyper.edu"
+},
+"kwc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://kwc.edu"
+},
+"kwu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://kwu.edu"
+},
+"kzoo.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://kzoo.edu"
+},
+"lafayette.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lafayette.edu"
+},
+"lagrange.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lagrange.edu"
+},
+"lakeforest.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lakeforest.edu"
+},
+"lanecollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lanecollege.edu"
+},
+"lawrence.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lawrence.edu"
+},
+"lclark.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lclark.edu"
+},
+"lifepacific.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lifepacific.edu"
+},
+"limestone.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://limestone.edu"
+},
+"linfield.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://linfield.edu"
+},
+"livingstone.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://livingstone.edu"
+},
+"lmc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lmc.edu"
+},
+"loc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://loc.edu"
+},
+"loras.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://loras.edu"
+},
+"luther.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://luther.edu"
+},
+"lycoming.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lycoming.edu"
+},
+"lyon.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://lyon.edu"
+},
+"macalester.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://macalester.edu"
+},
+"macuniversity.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://macuniversity.edu"
+},
+"manna.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://manna.edu"
+},
+"marietta.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://marietta.edu"
+},
+"martin.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://martin.edu"
+},
+"maryvillecollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://maryvillecollege.edu"
+},
+"mayaguez.pucpr.edu": {
+"bare": "200",
+"www": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"link": "https://mayaguez.pucpr.edu"
+},
+"mcm.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://mcm.edu"
+},
+"mcpherson.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://mcpherson.edu"
+},
+"meredith.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://meredith.edu"
+},
+"mhu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://mhu.edu"
+},
+"middlebury.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://middlebury.edu"
+},
+"miles.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://miles.edu"
+},
+"millikin.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://millikin.edu"
+},
+"millsaps.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://millsaps.edu"
+},
+"mitchell.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://mitchell.edu"
+},
+"mmm.edu": {
+"bare": "fail:URLError:timed out",
+"www": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"link": null
+},
+"monmouthcollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://monmouthcollege.edu"
+},
+"montreat.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://montreat.edu"
+},
+"montserrat.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://montserrat.edu"
+},
+"morehouse.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://morehouse.edu"
+},
+"morris.edu": {
+"bare": "fail:URLError:[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake",
+"www": "200",
+"link": "https://www.morris.edu"
+},
+"mountsaintvincent.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://mountsaintvincent.edu"
+},
+"moval.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://moval.edu"
+},
+"mtaloy.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://mtaloy.edu"
+},
+"mtholyoke.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://mtholyoke.edu"
+},
+"muhlenberg.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://muhlenberg.edu"
+},
+"ncwu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ncwu.edu"
+},
+"new.trinity.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"link": null
+},
+"newberry.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://newberry.edu"
+},
+"northcentral.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://northcentral.edu"
+},
+"northland.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://northland.edu"
+},
+"northwestu.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "200",
+"link": "https://www.northwestu.edu"
+},
+"nsa.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://nsa.edu"
+},
+"oakhills.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://oakhills.edu"
+},
+"oberlin.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://oberlin.edu"
+},
+"obu.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://obu.edu"
+},
+"oglethorpe.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://oglethorpe.edu"
+},
+"onu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://onu.edu"
+},
+"ottawa.edu": {
+"bare": "307",
+"www": "307",
+"link": "https://ottawa.edu"
+},
+"owu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://owu.edu"
+},
+"oxy.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://oxy.edu"
+},
+"ozarks.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ozarks.edu"
+},
+"pacrim.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://pacrim.edu"
+},
+"paine.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://paine.edu"
+},
+"paulquinn.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://paulquinn.edu"
+},
+"paulsmiths.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://paulsmiths.edu"
+},
+"pcj.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://pcj.edu"
+},
+"peace.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://peace.edu"
+},
+"peirce.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://peirce.edu"
+},
+"phc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://phc.edu"
+},
+"philander.edu": {
+"bare": "fail:URLError:timed out",
+"www": "200",
+"link": "https://www.philander.edu"
+},
+"pillar.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://pillar.edu"
+},
+"pitzer.edu": {
+"bare": "fail:URLError:timed out",
+"www": "200",
+"link": "https://www.pitzer.edu"
+},
+"piu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://piu.edu"
+},
+"point.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://point.edu"
+},
+"pomona.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://pomona.edu"
+},
+"ponce.inter.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"link": null
+},
+"presby.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://presby.edu"
+},
+"prescott.erau.edu": {
+"bare": "200",
+"www": "fail:URLError:[Errno 61] Connection refused",
+"link": "https://prescott.erau.edu"
+},
+"principiacollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://principiacollege.edu"
+},
+"providencecc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://providencecc.edu"
+},
+"puc.edu": {
+"bare": "403",
+"www": "200",
+"link": "https://puc.edu"
+},
+"pugetsound.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://pugetsound.edu"
+},
+"pupr.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://pupr.edu"
+},
+"quincy.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://quincy.edu"
+},
+"randolphcollege.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://randolphcollege.edu"
+},
+"rcu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://rcu.edu"
+},
+"reed.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://reed.edu"
+},
+"reinhardt.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://reinhardt.edu"
+},
+"rhodes.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://rhodes.edu"
+},
+"richmond.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://richmond.edu"
+},
+"ripon.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ripon.edu"
+},
+"rmc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://rmc.edu"
+},
+"roanoke.edu": {
+"bare": "fail:RemoteDisconnected:Remote end closed connection without response",
+"www": "fail:RemoteDisconnected:Remote end closed connection without response",
+"link": null
+},
+"ru.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ru.edu"
+},
+"rustcollege.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://rustcollege.edu"
+},
+"sa.edu": {
+"bare": "fail:URLError:[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake",
+"www": "fail:URLError:[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake",
+"link": null
+},
+"saintmarys.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://saintmarys.edu"
+},
+"salem.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://salem.edu"
+},
+"sarahlawrence.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sarahlawrence.edu"
+},
+"sbc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sbc.edu"
+},
+"sckans.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sckans.edu"
+},
+"scrippscollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://scrippscollege.edu"
+},
+"sewanee.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sewanee.edu"
+},
+"sfbc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sfbc.edu"
+},
+"sfc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sfc.edu"
+},
+"shawu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://shawu.edu"
+},
+"shc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://shc.edu"
+},
+"shms.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://shms.edu"
+},
+"simmonscollegeky.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://simmonscollegeky.edu"
+},
+"simpson.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://simpson.edu"
+},
+"simpsonu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://simpsonu.edu"
+},
+"sjc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sjc.edu"
+},
+"skidmore.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "200",
+"link": "https://www.skidmore.edu"
+},
+"smcvt.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://smcvt.edu"
+},
+"smith.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://smith.edu"
+},
+"snc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://snc.edu"
+},
+"socalsem.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://socalsem.edu"
+},
+"soka.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://soka.edu"
+},
+"southwestern.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://southwestern.edu"
+},
+"spelman.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://spelman.edu"
+},
+"st-aug.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://st-aug.edu"
+},
+"sterling.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sterling.edu"
+},
+"sterlingcollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://sterlingcollege.edu"
+},
+"stillman.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://stillman.edu"
+},
+"stlawu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://stlawu.edu"
+},
+"stonehill.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://stonehill.edu"
+},
+"stvincent.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://stvincent.edu"
+},
+"susqu.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://susqu.edu"
+},
+"svu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://svu.edu"
+},
+"swarthmore.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://swarthmore.edu"
+},
+"swau.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://swau.edu"
+},
+"swcu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://swcu.edu"
+},
+"tabor.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://tabor.edu"
+},
+"talladega.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "200",
+"link": "https://www.talladega.edu"
+},
+"taylor.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://taylor.edu"
+},
+"tbc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://tbc.edu"
+},
+"texascollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://texascollege.edu"
+},
+"tfc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://tfc.edu"
+},
+"thiel.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://thiel.edu"
+},
+"thomasaquinas.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://thomasaquinas.edu"
+},
+"thomasmorecollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://thomasmorecollege.edu"
+},
+"tlu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://tlu.edu"
+},
+"tnwesleyan.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://tnwesleyan.edu"
+},
+"tougaloo.edu": {
+"bare": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"www": "200",
+"link": "https://www.tougaloo.edu"
+},
+"transy.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://transy.edu"
+},
+"trincoll.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://trincoll.edu"
+},
+"trine.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://trine.edu"
+},
+"trinitycollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://trinitycollege.edu"
+},
+"trnty.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://trnty.edu"
+},
+"truett.edu": {
+"bare": "200",
+"www": "fail:URLError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: ",
+"link": "https://truett.edu"
+},
+"uau.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://uau.edu"
+},
+"union.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://union.edu"
+},
+"uolivet.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://uolivet.edu"
+},
+"urshan.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://urshan.edu"
+},
+"ursinus.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://ursinus.edu"
+},
+"uwest.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://uwest.edu"
+},
+"valleyforge.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://valleyforge.edu"
+},
+"vassar.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://vassar.edu"
+},
+"vaughn.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://vaughn.edu"
+},
+"villa.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://villa.edu"
+},
+"voorhees.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://voorhees.edu"
+},
+"vuu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://vuu.edu"
+},
+"vwu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://vwu.edu"
+},
+"wabash.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wabash.edu"
+},
+"warnerpacific.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://warnerpacific.edu"
+},
+"warren-wilson.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://warren-wilson.edu"
+},
+"wartburg.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wartburg.edu"
+},
+"washcoll.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://washcoll.edu"
+},
+"washjeff.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://washjeff.edu"
+},
+"wcmo.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wcmo.edu"
+},
+"webber.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://webber.edu"
+},
+"welch.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://welch.edu"
+},
+"wellesley.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wellesley.edu"
+},
+"wesleyan.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wesleyan.edu"
+},
+"wesleyancollege.edu": {
+"bare": "fail:URLError:timed out",
+"www": "200",
+"link": "https://www.wesleyancollege.edu"
+},
+"westminster.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://westminster.edu"
+},
+"westmont.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://westmont.edu"
+},
+"wheaton.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://wheaton.edu"
+},
+"wheatoncollege.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wheatoncollege.edu"
+},
+"whitman.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://whitman.edu"
+},
+"whittier.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://whittier.edu"
+},
+"whitworth.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://whitworth.edu"
+},
+"wilberforce.edu": {
+"bare": "202",
+"www": "202",
+"link": "https://wilberforce.edu"
+},
+"wileyc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wileyc.edu"
+},
+"willamette.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://willamette.edu"
+},
+"williams.edu": {
+"bare": "403",
+"www": "403",
+"link": "https://williams.edu"
+},
+"williamsbaptistuniversity.com": {
+"bare": "200",
+"www": "200",
+"link": "https://williamsbaptistuniversity.com"
+},
+"wilmington.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wilmington.edu"
+},
+"wittenberg.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wittenberg.edu"
+},
+"wlc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wlc.edu"
+},
+"wlu.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wlu.edu"
+},
+"wmpenn.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wmpenn.edu"
+},
+"wofford.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wofford.edu"
+},
+"wooster.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wooster.edu"
+},
+"wp.stolaf.edu": {
+"bare": "200",
+"www": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"link": "https://wp.stolaf.edu"
+},
+"wvwc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://wvwc.edu"
+},
+"www2.oakwood.edu": {
+"bare": "200",
+"www": "fail:URLError:[Errno 8] nodename nor servname provided, or not known",
+"link": "https://www2.oakwood.edu"
+},
+"yhc.edu": {
+"bare": "200",
+"www": "200",
+"link": "https://yhc.edu"
+},
+"york.edu": {
+"bare": "fail:URLError:timed out",
+"www": "fail:URLError:timed out",
+"link": null
+}
+}

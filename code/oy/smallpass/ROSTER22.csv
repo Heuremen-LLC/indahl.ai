@@ -1,0 +1,194 @@
+# Source: NCES IPEDS HD2024, downloaded 2026-10-27. Filter: CONTROL=2 private nonprofit, C21BASIC=22 Carnegie 2021 Baccalaureate Colleges: Diverse Fields, CYACTIVE=1. Added on his word 27 Oct.
+school,state,domain,unitid
+Huntingdon College,AL,huntingdon.edu,101435
+Miles College,AL,miles.edu,101675
+Spring Hill College,AL,shc.edu,102234
+Stillman College,AL,stillman.edu,102270
+Talladega College,AL,talladega.edu,102298
+Alaska Pacific University,AK,alaskapacific.edu,102669
+Embry-Riddle Aeronautical University-Prescott,AZ,prescott.erau.edu,104586
+Arizona Christian University,AZ,arizonachristian.edu,105899
+Central Baptist College,AR,cbc.edu,106713
+Crowley's Ridge College,AR,crc.edu,106810
+University of the Ozarks,AR,ozarks.edu,107558
+Philander Smith University,AR,philander.edu,107600
+Williams Baptist University,AR,williamsbaptistuniversity.com,107877
+Bethesda University,CA,buc.edu,110060
+Life Pacific University,CA,lifepacific.edu,117104
+Southern California Seminary,CA,socalsem.edu,117575
+Pacific Union College,CA,puc.edu,120865
+Mitchell College,CT,mitchell.edu,129774
+Baptist University of Florida,FL,buf.edu,132408
+Edward Waters University,FL,ew.edu,133526
+Flagler College,FL,flagler.edu,133711
+Florida Memorial University,FL,fmuniv.edu,133979
+Hobe Sound Bible College,FL,hsbc.edu,134510
+Trinity Baptist College,FL,tbc.edu,137953
+Trinity College of Florida,FL,trinitycollege.edu,137962
+Webber International University,FL,webber.edu,138293
+Point University,GA,point.edu,138868
+Brewton-Parker College,GA,bpc.edu,139205
+Emmanuel University,GA,ec.edu,139630
+LaGrange College,GA,lagrange.edu,140234
+Herzing University-Atlanta,GA,herzing.edu,140340
+Reinhardt University,GA,reinhardt.edu,140872
+Toccoa Falls College,GA,tfc.edu,141185
+Truett McConnell University,GA,truett.edu,141237
+Wesleyan College,GA,wesleyancollege.edu,141325
+The College of Idaho,ID,collegeofidaho.edu,142294
+Brigham Young University-Idaho,ID,byui.edu,142522
+Blackburn College,IL,blackburn.edu,143288
+Eureka College,IL,eureka.edu,144971
+Illinois Wesleyan University,IL,iwu.edu,145646
+Millikin University,IL,millikin.edu,147244
+Quincy University,IL,quincy.edu,148131
+Trinity Christian College,IL,trnty.edu,149505
+Goshen College,IN,goshen.edu,150668
+Taylor University,IN,taylor.edu,152530
+Trine University,IN,trine.edu,152567
+Emmaus Bible College,IA,emmaus.edu,153302
+Faith Baptist Bible College and Theological Seminary,IA,faith.edu,153320
+Loras College,IA,loras.edu,153825
+Simpson College,IA,simpson.edu,154350
+William Penn University,IA,wmpenn.edu,154590
+Benedictine College,KS,benedictine.edu,154712
+Bethany College,KS,bethanylb.edu,154721
+Bethel College-North Newton,KS,bethelks.edu,154749
+Central Christian College of Kansas,KS,centralchristian.edu,154855
+Barclay College,KS,barclaycollege.edu,155070
+Kansas Wesleyan University,KS,kwu.edu,155414
+McPherson College,KS,mcpherson.edu,155511
+Ottawa University-Ottawa,KS,ottawa.edu,155627
+Southwestern College,KS,sckans.edu,155900
+Sterling College,KS,sterling.edu,155937
+Tabor College,KS,tabor.edu,155973
+Alice Lloyd College,KY,alc.edu,156189
+Brescia University,KY,brescia.edu,156356
+Kentucky Wesleyan College,KY,kwc.edu,157076
+Kentucky Christian University,KY,kcu.edu,157100
+Dean College,MA,dean.edu,165574
+Fisher College,MA,fisher.edu,165802
+Montserrat College of Art,MA,montserrat.edu,166911
+Adrian College,MI,adrian.edu,168528
+Alma College,MI,alma.edu,168591
+Grace Christian University,MI,gracechristian.edu,170000
+Great Lakes Christian College,MI,glcc.edu,170091
+Rochester University,MI,rcu.edu,170967
+The University of Olivet,MI,uolivet.edu,171599
+Kuyper College,MI,kuyper.edu,171881
+North Central University,MN,northcentral.edu,174437
+Oak Hills Christian College,MN,oakhills.edu,174525
+Blue Mountain Christian University,MS,bmc.edu,175430
+Calvary University,MO,calvary.edu,176789
+Central Methodist University-College of Liberal Arts and Sciences,MO,centralmethodist.edu,176947
+Culver-Stockton College,MO,culver.edu,177144
+Hannibal-LaGrange University,MO,hlg.edu,177542
+Missouri Valley College,MO,moval.edu,178369
+College of the Ozarks,MO,cofo.edu,178697
+William Jewell College,MO,jewell.edu,179955
+Carroll College,MT,carroll.edu,180106
+Hastings College,NE,hastings.edu,181127
+Union Adventist University,NE,uau.edu,181738
+York University,NE,york.edu,181853
+Colby-Sawyer College,NH,colby-sawyer.edu,182634
+Vaughn College of Aeronautics and Technology,NY,vaughn.edu,188340
+Boricua College,NY,boricuacollege.edu,189413
+The Cooper Union for the Advancement of Science and Art,NY,cooper.edu,190372
+Elmira College,NY,elmira.edu,190983
+Hilbert College,NY,hilbert.edu,191621
+University of Mount Saint Vincent,NY,mountsaintvincent.edu,193399
+Paul Smiths College of Arts and Science,NY,paulsmiths.edu,194392
+St. Francis College,NY,sfc.edu,195173
+Villa Maria College,NY,villa.edu,197142
+Barton College,NC,barton.edu,197911
+Belmont Abbey College,NC,belmontabbeycollege.edu,197984
+Brevard College,NC,brevard.edu,198066
+Catawba College,NC,catawba.edu,198215
+Chowan University,NC,chowan.edu,198303
+High Point University,NC,highpoint.edu,198695
+Lees-McRae College,NC,lmc.edu,198808
+Livingstone College,NC,livingstone.edu,198862
+Mars Hill University,NC,mhu.edu,198899
+Montreat College,NC,montreat.edu,199032
+North Carolina Wesleyan University,NC,ncwu.edu,199209
+William Peace University,NC,peace.edu,199272
+Mid-Atlantic Christian University,NC,macuniversity.edu,199458
+Saint Augustine's University,NC,st-aug.edu,199582
+Shaw University,NC,shawu.edu,199643
+St. Andrews University,NC,sa.edu,199698
+Bluffton University,OH,bluffton.edu,201371
+Defiance College,OH,defiance.edu,202514
+Gods Bible School and College,OH,gbs.edu,202903
+Hiram College,OH,hiram.edu,203128
+Marietta College,OH,marietta.edu,203845
+Ohio Northern University,OH,onu.edu,204635
+Wilberforce University,OH,wilberforce.edu,206491
+Wilmington College,OH,wilmington.edu,206507
+Bacone College,OK,bacone.edu,206817
+Southwestern Christian University,OK,swcu.edu,207856
+Warner Pacific University,OR,warnerpacific.edu,210304
+Grove City College,PA,gcc.edu,212805
+Keystone College,PA,keystone.edu,213303
+Mount Aloysius College,PA,mtaloy.edu,214166
+Peirce College,PA,peirce.edu,214883
+Thiel College,PA,thiel.edu,216357
+University of Valley Forge,PA,valleyforge.edu,216542
+Benedict College,SC,benedict.edu,217721
+Limestone University,SC,limestone.edu,218238
+Morris College,SC,morris.edu,218399
+Newberry College,SC,newberry.edu,218414
+Voorhees University,SC,voorhees.edu,218919
+Dakota Wesleyan University,SD,dwu.edu,219091
+American Baptist College,TN,abcnash.edu,219505
+Welch College,TN,welch.edu,220206
+Le Moyne-Owen College,TN,loc.edu,220604
+Tennessee Wesleyan University,TN,tnwesleyan.edu,221731
+Arlington Baptist University,TX,abu.edu,222877
+Dallas Christian College,TX,dallas.edu,224244
+Hallmark University,TX,hallmarkuniversity.edu,225201
+Howard Payne University,TX,hputx.edu,225548
+Huston-Tillotson University,TX,htu.edu,225575
+Jarvis Christian University,TX,jarvis.edu,225885
+McMurry University,TX,mcm.edu,226587
+Paul Quinn College,TX,paulquinn.edu,227429
+Southwestern Adventist University,TX,swau.edu,228468
+Texas College,TX,texascollege.edu,228884
+Texas Lutheran University,TX,tlu.edu,228981
+Wiley University,TX,wileyc.edu,229887
+Brigham Young University-Hawaii,HI,byuh.edu,230047
+Sterling College,VT,sterlingcollege.edu,231095
+Ferrum College,VA,ferrum.edu,232089
+Davis & Elkins College,WV,dewv.edu,237358
+West Virginia Wesleyan College,WV,wvwc.edu,237969
+Northland College,WI,northland.edu,239512
+Wisconsin Lutheran College,WI,wlc.edu,240338
+Caribbean University-Carolina,PR,caribbean.edu,241386
+Inter American University of Puerto Rico-Barranquitas,PR,br.inter.edu,242644
+Inter American University of Puerto Rico-Ponce,PR,ponce.inter.edu,242662
+Inter American University of Puerto Rico-Fajardo,PR,fajardo.inter.edu,242680
+Inter American University of Puerto Rico-Guayama,PR,guayama.inter.edu,242699
+Inter American University of Puerto Rico-Bayamon,PR,bayamon.inter.edu,242705
+Pontifical Catholic University of Puerto Rico-Mayaguez,PR,mayaguez.pucpr.edu,243586
+Caribbean University-Ponce,PR,caribbean.edu,363907
+Caribbean University-Vega Baja,PR,caribbean.edu,363916
+South Florida Bible College and Theological Seminary,FL,sfbc.edu,366003
+Beacon College,FL,beaconcollege.edu,384254
+Ottawa University-Milwaukee,WI,ottawa.edu,428259
+Baptist University of the Americas,TX,bua.edu,444398
+Johnson & Wales University-Charlotte,NC,jwu.edu,445708
+Ecclesia College,AR,ecollege.edu,446233
+Ottawa University-Online,KS,ottawa.edu,454582
+Polytechnic University of Puerto Rico-Miami,FL,pupr.edu,456481
+Polytechnic University of Puerto Rico-Orlando,FL,pupr.edu,456490
+Pacific Rim Christian University,HI,pacrim.edu,457484
+City Vision University,MO,cityvision.edu,457697
+Manna University,NC,manna.edu,461528
+John Paul the Great Catholic University,CA,jpcatholic.edu,462354
+Ottawa University-Surprise,AZ,ottawa.edu,464226
+Whitworth University-Adult Degree Programs,WA,whitworth.edu,475200
+Criswell College,TX,criswell.edu,475608
+Warner Pacific University Professional and Graduate Studies,OR,warnerpacific.edu,480198
+Northwest University-Center for Online and Extended Education,WA,northwestu.edu,487603
+Drury University-College of Continuing Professional Studies,MO,drury.edu,492801
+Indiana Institute of Technology-College of Professional Studies,IN,cps.indianatech.edu,492962
+Urshan University,MO,urshan.edu,494685

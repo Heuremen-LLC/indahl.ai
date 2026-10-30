@@ -1,4 +1,4 @@
-// QIA queue ticker: IBM's pending-job count per processor and the waits our own jobs saw. Reads /qia/queue.json, written every 9 Nova ticks.
+// QIA queue ticker: IBM's pending-job count per processor and the waits our own jobs saw. Reads /qia/queue.json, written every 2 Nova ticks (about 12 minutes since 29 Oct; the plan first said every 9 ticks).
 (function () {
   var box = document.getElementById('queue-live'); if (!box) return;
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
@@ -13,7 +13,7 @@
       r.appendChild(td(p.our_jobs, 1)); r.appendChild(td(p.our_median_wait, 1)); r.appendChild(td(p.our_longest_wait, 1)); r.appendChild(td(p.our_queued_now, 1)); r.appendChild(td(p.our_oldest_queued, 1)); b.appendChild(r);
     });
     t.appendChild(b); box.textContent = ''; box.appendChild(t);
-    var p = document.createElement('p'); p.className = 'bench-note'; p.textContent = 'Read ' + d.updated + '. ' + d.reads_held + ' rows held in the public history. Pending is the count IBM reports. IBM publishes no wait estimate and we do not make one. A wait is the time from creation to start of our own jobs, so it depends on the job and the plan on our account. A median is shown from three finished jobs.';
+    var p = document.createElement('p'); p.className = 'bench-note'; p.textContent = 'Read ' + d.updated + '. ' + d.reads_held + ' rows held in the public history. Pending is the count IBM reports. IBM publishes no wait estimate. We make none, except the Open plan column in the headline table at the top of this page. A wait is the time from creation to start of our own jobs, so it depends on the job and the plan on our account. A median is shown from three finished jobs.';
     box.appendChild(p);
   }).catch(function () { box.textContent = 'The ticker could not be read just now.'; });
 })();

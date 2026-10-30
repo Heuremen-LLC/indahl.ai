@@ -23,3 +23,11 @@ questions. BBH CoT chat: the first test question of each of the first 10 subtask
 ## Addendum 3 (30 Oct 2026, about 11:30 UTC, before any S3 outcome is computed)
 Same reconciliation as ROUND_S1.md Addendum 6: the card does not name its harness or prompts, so the setting is undisclosed. A stated value outside
 our interval reads CANNOT_TELL with the direction under our harness beside it. CONSISTENT stands as a bound.
+
+## Correction (30 Oct 2026, site pass) to Addendum 3
+Addendum 3 is headed "about 11:30 UTC, before any S3 outcome is computed". It was committed at 11:07:51 UTC (git d0da402). The S3 outcome file was written at 11:12 UTC and committed at 11:12:36 UTC (git 4907629), so the order stands but the time above is wrong. The heading is left as written.
+
+## Addendum 4 (30 Oct 2026, site pass, about 13:55 UTC)
+1. The claim list now holds every row of the card's Evaluation Results table (3B Dense column). The plan said claims_s3.csv "lists only what runs", but CLAIMS_STACK_PLAN.md lists a claim with no matching task as NOT RUN with the reason and never omits it. The 26 rows that were left out are added as NOT RUN with a reason each (judge-scored, runs generated code, no task in the harness, or not run in this round for one overnight slot). The three rows that ran are unchanged. The values were checked against cards/ibm-granite_granite-4.1-3b.md (sha256 7868b8ea...).
+2. Known-good scope, as ROUND_S2.md Addendum 3. The round S1 check covers the plain-prompt GSM8K path, which S3 uses for gsm8k. It does not cover mmlu, the bbh_cot_fewshot task or any run with the chat template. state_s3.json now says so.
+3. Parser hand-check, counts re-read from handcheck/s3_gsm8k_cot_chat.json. Chat flexible-extract read 9 of 10 replies as written (question 5 took "16" from "for 16 glasses", where the model answered 64). Chat strict-match found no answer on 2 of 10 (questions 5 and 8), 1 of them correct. By the rule applied to round S1 in ROUND_S1.md Addendum 7 (more than 1 of 10 off), chat strict-match is CANNOT_TELL (parser) and no longer counts toward the outcome. The S3-11 outcome does not change, because chat flexible-extract still holds the stated value. BBH chat missed 1 of 10 and stays a counted variant.
