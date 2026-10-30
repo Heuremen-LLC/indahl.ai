@@ -1,0 +1,22 @@
+
+## 2026-10-30 18:51 Bronder B1-B4: grammar shift holds per anchor (Fisher p 0.0001-0.0031, pooled 77.5 points [59.0, 87.0]); disclosure holds by instance (6 of 6, sign p .031, 0/58 upper 6.2%); meter minus lantern +0.233, instance bootstrap [+0.067, +0.383] beside binomial [+0.075, +0.377]; games flagged 29/60 mundane and 20/60 heroic against printed flag totals 35 and 29; 5,181 rows are 5,176 narrations plus 5 error rows; Gate 2 logs dirty, no temperature recorded
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: B1 compares the same four anchors under both grammars, all games counted; B2 the same six instances in both arms, valid games as the paper counts them; B3 the same 12 instances in both cells
+- II: holds: per-anchor and per-instance counts printed before pooled figures; every anchor and every instance points the same way
+- III: holds: drops and differences printed signed; no instance or anchor reverses in B1 and B2, one instance reverses in B3
+- V: holds: per-anchor Fisher beside pooled Newcombe; instance sign test beside the exact zero bound; instance bootstrap beside the binomial interval
+- VI: holds: B1 and B2 ABOVE zero at the unit the paper's caveats name; B3 ABOVE zero with the instance as the cluster, interval [+0.067, +0.383]; B4 record facts, no interval
+- R: holds: every count from his closed logs and Zenodo files; headers read for revision, dirty flag and generate config; copies collapsed by hash
+- L1: n/a: verdicts are engine-validated fields in his logs; no text parsing of ours
+- L2: holds: known_good rebuilt Tables 2 and 3 and the Gate 2 rates before the readings
+- L3: holds: his false-verdict definition (complete with no WIN, unreachable on solvable) applied as printed; zero wins counted in both arms
+- L4: n/a: no reruns; his repeated-run reading (3 of 4 non-stable) is his own and not redone
+- L5: holds: instances matched by id across logs; anchors found as the ids present in both Gate 0 and series 2
+- L6: holds: invalid games counted per arm (hidden 59/60, disclosed 58/60)
+- L7: n/a: truth is the engine's planted state
+- L8: holds: instance as the unit in B2 and B3
+- L9: n/a: prompts not used
+- L10: holds: generate config read per log; Gate 2 headers carry no temperature, earlier series carry 0.7
+- L11: n/a: nothing substituted
+- L12: holds: the refuting referee is a Claude model (same family as the writer); the paper's narrator and interpreter are also Claude models, noted
