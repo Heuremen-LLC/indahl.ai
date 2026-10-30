@@ -285,3 +285,4 @@
 {"id": "dbiaqpghoj4c73b5r2mg", "backend": "ibm_fez", "created": "2026-10-30T14:44:54.31265Z", "wait_s": 1.117963}
 {"id": "dbi846lep8hs73anbh50", "backend": "ibm_phoenix", "created": "2026-10-30T11:40:10.589126Z", "wait_s": 14204.888693}
 {"id": "dbibpeune4hc73be9170", "backend": "ibm_phoenix", "created": "2026-10-30T15:50:19.324321Z", "wait_s": 30.36174}
+{"id": "dbicnrg1h92s73836ds0", "backend": "ibm_kingston", "created": "2026-10-30T16:55:10.931912Z", "wait_s": 1.770189}
