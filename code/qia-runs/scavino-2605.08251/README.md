@@ -6,7 +6,7 @@ Everything behind the free calibration we sent to Vicenzo Scavino Alfaro.
 
 Your 10 QAOA MaxCut graphs (seeds 606 to 1506, n = 5, p = 1, gamma 0.8, beta 0.6) at noise scales 1 and 3, rebuilt from your published construction (rx/rz/cx, every gate folded G G^dag G at scale 3) without running your code. Transpiled once at optimization level 0 on physical qubits 0 to 4. Your runner left routing unseeded, so for each circuit we used the first seed from 24 to 83 that reproduces your published gate counts (all 20 matched; seeds per circuit in `job_lima.json`, `transpile_seeds`). 4000 shots per circuit, six jobs, each submitted after the previous one finished. IBM's record was saved before every job and after the last.
 
-The plan was written for ibm_marrakesh. Marrakesh was in maintenance and two attempts there failed on IBM's side with no data. Two addenda committed before any job moved it to ibm_kingston and then to ibm_fez (kingston's qubit 0 was reading wrong about 78% of the time in another job). Fez has the same coupling map. Nothing else changed. `GIT_LOG.txt` has every commit with its time.
+The plan was written for ibm_marrakesh. Marrakesh was in maintenance and two attempts there failed on IBM's side with no data. Two addenda, each committed before any job on its chip, moved it to ibm_kingston and then to ibm_fez (kingston's qubit 0 was reading wrong about 78% of the time in another job). Fez has the same coupling map. Nothing else changed. `GIT_LOG.txt` has every commit with its time.
 
 ## Jobs, in acquisition order
 
