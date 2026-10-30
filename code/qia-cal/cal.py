@@ -103,9 +103,9 @@ def process(s, r, corrects=None):
     print('cal read', r['backend'], r['id'], kg['known_good'], 'off', len(off), 'chain head', head[:12], flush=True)
     return dict(job_id=r['id'], window_utc=win, qubits_read=len(qs), known_good=kg['known_good'], counts=counts, off=len(off),
                 median_readout_measured_over_stated=kg['median_readout_measured_over_stated'], median_t1_measured_over_stated=kg['median_t1_measured_over_stated']), m
-def publish_latest(latest):
+def publish_latest(latest, waiting=None):   # Note 2: also lists jobs still waiting in IBM's queue, so an older reading says why it is older
     latest_p = H + '/data/latest.json'; old = json.load(open(latest_p)) if os.path.exists(latest_p) else {}; old.update(latest); json.dump(old, open(latest_p, 'w'), indent=1)
-    pub = H + '/data/qia_cal.json'; json.dump(dict(updated=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), processors=old), open(pub, 'w'), indent=1); kv('qia_cal', pub)
+    pub = H + '/data/qia_cal.json'; json.dump(dict(updated=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), processors=old, waiting=waiting or {}), open(pub, 'w'), indent=1); kv('qia_cal', pub)
 def collect(s):
     rs = rows(RUNS); changed = False; latest = {}
     for r in rs:
@@ -118,7 +118,8 @@ def collect(s):
     if changed:
         with open(RUNS, 'w') as f:
             for r in rs: f.write(json.dumps(r) + '\n')
-    if latest: publish_latest(latest)
+    waiting = {r['backend']: r['sent'] for r in rs if r.get('state') == 'SENT'}
+    publish_latest(latest, waiting)
     return rs
 if __name__ == '__main__' and '--reread' in sys.argv:   # Note 1 correction: re-read a finished job, chain entry names the entry it corrects
     s = service(); jid = sys.argv[sys.argv.index('--reread') + 1]; n = int(sys.argv[sys.argv.index('--corrects') + 1])

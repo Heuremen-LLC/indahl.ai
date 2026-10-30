@@ -32,7 +32,7 @@
       var t = el('table', 'mtx'); t.innerHTML = '<thead><tr><th>#</th><th>Processor</th><th>Qubits</th><th>Quantity</th><th>IBM published, date IBM gives</th><th>Measured by our job</th><th>Reading</th><th>Our job ran (UTC)</th>' + (t0 ? '<th>From your job</th>' : '') + '<th>Job id</th><th>Hash</th></tr></thead>';
       var b = el('tbody');
       rows.forEach(function (e) {
-        var r = el('tr'); [e.n, e.processor, e.qubits.join(', '), e.quantity, (e.ibm_stated === '' ? '' : e.ibm_stated + ' ' + e.unit + ', ') + e.ibm_date, meas(e.measured), W(e.outcome), e.window_utc[0].replace('T', ' ').slice(0, 16) + ' to ' + e.window_utc[1].slice(11, 16)].forEach(function (x) { r.appendChild(el('td', null, x)); });
+        var r = el('tr'); [e.n, e.processor, e.qubits.join(', '), e.quantity, (e.ibm_stated === '' ? '' : e.ibm_stated + (e.unit ? ' ' + e.unit : '') + ', ') + e.ibm_date, meas(e.measured), W(e.outcome), e.window_utc[0].replace('T', ' ').slice(0, 16) + ' to ' + e.window_utc[1].slice(11, 16)].forEach(function (x) { r.appendChild(el('td', null, x)); });
         if (t0) { var h = (Date.parse(e.window_utc[0]) - t0) / 3600000; r.appendChild(el('td', null, (h >= 0 ? '+' : '') + h.toFixed(1) + ' h')); }
         r.appendChild(el('td', null, e.job_id)); r.appendChild(el('td', null, e.hash.slice(0, 12) + '…')); b.appendChild(r);
       });
