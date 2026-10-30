@@ -1,0 +1,5 @@
+Files read as data, sha256:
+366d7acfff7edeeefdd9a7f7991a376af911eb5723003cc7188693e50c9b6821  OSF 9nsvr context-effect-osf-release-2026-07-18.zip (https://osf.io/download/tjec3/)
+32833fceecacf39c0f6d9249cf036f57b095bb73c4aa1b42a09219722faa8cf9  per_side_outcomes.csv (inside the zip)
+27ae0afee147bf2d383f57d1e824e1b9881f8d9b4c46e9323044bbf954fa976a  rerun_cells_release.csv (inside the zip)
+Registration: OSF 10.17605/OSF.IO/NS49B. Component: osf.io/9nsvr.
