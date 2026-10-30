@@ -1,0 +1,47 @@
+Q1 PubMed searches cached more than once: 166 | returned a different set of PMIDs: 9 | same set, different order only: 1 | identical: 156
+   copies per repeated search: {2: 166}; the replay loader keeps the last copy of each key
+
+Q2 accuracy on claims whose gold is SUPPORT or CONTRADICT, per harness, and oracle against each harness paired per claim
+  gemini-3.1-flash-lite: SUPPORT/CONTRADICT claims 64 | closed 53/64 (all-claim accuracy 0.55, stored 0.55) | single 27/64 (all-claim accuracy 0.53, stored 0.53) | agent 50/64 (all-claim accuracy 0.62, stored 0.62) | oracle 58/64 (all-claim accuracy 0.86, stored 0.86)
+     oracle against closed: oracle-only right  8, closed-only right  3, exact McNemar p 0.227
+     oracle against single: oracle-only right 31, single-only right  0, exact McNemar p 9.31e-10
+     oracle against agent : oracle-only right 11, agent-only right  3, exact McNemar p 0.0574
+  gemini-3.5-flash-lite: SUPPORT/CONTRADICT claims 64 | closed 53/64 (all-claim accuracy 0.59, stored 0.59) | single 20/64 (all-claim accuracy 0.49, stored 0.49) | agent 47/64 (all-claim accuracy 0.62, stored 0.62) | oracle 48/64 (all-claim accuracy 0.79, stored 0.79)
+     oracle against closed: oracle-only right  5, closed-only right 10, exact McNemar p 0.302
+     oracle against single: oracle-only right 29, single-only right  1, exact McNemar p 5.77e-08
+     oracle against agent : oracle-only right  9, agent-only right  8, exact McNemar p 1
+
+Q2 paired difference, oracle minus harness, SUPPORT/CONTRADICT claims, 95% paired bootstrap (three seeds)
+  gemini-3.1-flash-lite  oracle minus closed +0.078 [-0.016, +0.172] [-0.016, +0.172] [-0.016, +0.172]
+  gemini-3.1-flash-lite  oracle minus agent  +0.125 [+0.016, +0.234] [+0.016, +0.234] [+0.016, +0.234]
+  gemini-3.5-flash-lite  oracle minus closed -0.078 [-0.203, +0.031] [-0.188, +0.031] [-0.203, +0.031]
+  gemini-3.5-flash-lite  oracle minus agent  +0.016 [-0.109, +0.141] [-0.109, +0.141] [-0.109, +0.141]
+
+Q1b each differing repeated search: which backbone results file recorded the first and the second cached list
+  search:5:APOE4 OR expression OR iPSC-derived OR neurons OR inc first list in - | second list in -
+  search:5:Epidemiological disease burden noncommunicable diseas first list in ['3.1'] | second list in ['3.5']
+  search:5:Transplanted human glial cells can differentiate with first list in ['3.1'] | second list in ['3.5']
+  search:5:one-child policy has successful lowering population g first list in ['3.1'] | second list in ['3.5']
+  search:5:High levels CRP reduces risk exacerbations chronic ob first list in ['3.1'] | second list in ['3.5']
+  search:5:IgA OR plasma OR cells OR specific OR transglutaminas first list in - | second list in -
+  search:5:Chenodeosycholic acid treatment reduces whole-body en first list in ['3.1'] | second list in ['3.5']
+  search:5:Female carriers Apolipoprotein E4 APOE4 allele have i first list in ['3.1'] | second list in ['3.5']
+  search:5:Subcutaneous OR fat OR depots OR undergo OR extensive first list in - | second list in -
+  search:5:cardiopulmonary fitness mortality rate                first list in ['3.1'] | second list in ['3.5']
+  his loader reads the cache line by line into a dict, so the last line for a key wins
+
+Q2b oracle minus each harness on SUPPORT/CONTRADICT, paired bootstrap 95% (seed 1); Q2c predicted NEI against 36 gold NEI, NEI precision
+  gemini-3.1-flash-lite  oracle minus closed +0.078 [-0.016, +0.172]
+  gemini-3.1-flash-lite  oracle minus single +0.484 [+0.359, +0.609]
+  gemini-3.1-flash-lite  oracle minus agent  +0.125 [+0.016, +0.234]
+     closed predicts NEI on  4 (gold NEI 36) | NEI precision 0.50 | abstains on  2 of the 64 SUPPORT/CONTRADICT claims
+     single predicts NEI on 59 (gold NEI 36) | NEI precision 0.44 | abstains on 33 of the 64 SUPPORT/CONTRADICT claims
+     agent  predicts NEI on 17 (gold NEI 36) | NEI precision 0.71 | abstains on  5 of the 64 SUPPORT/CONTRADICT claims
+     oracle predicts NEI on 31 (gold NEI 36) | NEI precision 0.90 | abstains on  3 of the 64 SUPPORT/CONTRADICT claims
+  gemini-3.5-flash-lite  oracle minus closed -0.078 [-0.203, +0.031]
+  gemini-3.5-flash-lite  oracle minus single +0.438 [+0.312, +0.562]
+  gemini-3.5-flash-lite  oracle minus agent  +0.016 [-0.109, +0.141]
+     closed predicts NEI on  9 (gold NEI 36) | NEI precision 0.67 | abstains on  3 of the 64 SUPPORT/CONTRADICT claims
+     single predicts NEI on 70 (gold NEI 36) | NEI precision 0.41 | abstains on 41 of the 64 SUPPORT/CONTRADICT claims
+     agent  predicts NEI on 24 (gold NEI 36) | NEI precision 0.62 | abstains on  9 of the 64 SUPPORT/CONTRADICT claims
+     oracle predicts NEI on 45 (gold NEI 36) | NEI precision 0.69 | abstains on 14 of the 64 SUPPORT/CONTRADICT claims

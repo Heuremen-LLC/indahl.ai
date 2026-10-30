@@ -1,0 +1,4 @@
+1bccd44 2026-10-30T17:34:02-04:00 Gift 2610.29812: referee pass; reference named for 'without sacrificing' (holds against single-shot), NEI precision, duplicate searches traced to the two backbone runs; Check Block filed
+eef53a0 2026-10-30T17:33:10-04:00 Gift 2610.29812 Addendum 1: oracle against all three harnesses, NEI precision, which backbone recorded each list; before computing
+b8a1911 2026-10-30T17:29:40-04:00 Gift 2610.29812 Q1/Q2: PubMed repeat floor 10 of 166; 'without sacrificing SUPPORT/CONTRADICT accuracy' CANNOT_TELL for Gemini 3.5 flash-lite against closed-book; Check Block filed
+ec9e65a 2026-10-30T17:28:51-04:00 Gift plan 2610.29812 (Saqlain): Q1 PubMed repeat floor in his cache, Q2 SUPPORT/CONTRADICT accuracy by harness; before computing

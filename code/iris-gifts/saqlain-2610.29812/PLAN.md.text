@@ -1,0 +1,20 @@
+# Gift recount: Saqlain, arXiv 2610.29812 "Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents"
+Written and committed 30 Oct 2026 before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as
+printed: Mohammed Saqlain, Independent Researcher, Bangalore, India, saqlain.contact@gmail.com; "received no specific funding". Released:
+github.com/saqlain2204/real-pmids-wrong-papers (commit 6a6acdb7cedd; release d0326d50daa4 differs only in CITATION.cff and README).
+
+## KNOWN-GOOD
+Scout rebuild (scout/RECOUNT.md): every printed number rebuilds, including Table 1, all McNemar tests, the citation audit and the judge
+control (21/25). Ours before the readings: per-harness accuracy per backbone from the per-claim results files against summary.json.
+
+## Readings (defined after reading the paper; four outcomes)
+Q1 the retrieval repeat floor in his cache: PubMed searches cached more than once (same query key), how many returned a different list,
+   by membership and by order only. His loader keeps the last line per key; we report which list each replay would use.
+Q2 "without sacrificing SUPPORT/CONTRADICT accuracy" (F4): on the claims whose gold is SUPPORT or CONTRADICT, accuracy per harness per
+   backbone, and the oracle against each realistic harness paired per claim (discordant counts, exact McNemar), per backbone.
+
+## Addendum 1 (30 Oct 2026, after the referee's report, before we computed these; stamp from the commit)
+Q2b: F4 does not name its reference; the oracle is compared with all three realistic harnesses (closed, single, agent) on the 64
+SUPPORT/CONTRADICT claims, paired, with the same bootstrap. Q2c: per backbone and harness, predicted NEI count against the 36 gold NEI
+claims and NEI precision, beside "calibrated abstention". Q1b: which backbone's results file recorded each of the 10 differing lists
+(first or second cache line), and the replay rule in his loader (read as text), so the cache-replay statement is worded exactly.
