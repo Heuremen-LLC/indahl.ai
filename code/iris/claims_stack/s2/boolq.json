@@ -1,0 +1,9 @@
+{
+    "boolq": {
+        "name": "boolq",
+        "alias": "boolq",
+        "sample_len": 3270,
+        "acc,none": 0.8296636085626912,
+        "acc_stderr,none": 0.006575023078014431
+    }
+}

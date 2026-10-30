@@ -1,0 +1,32 @@
+{
+ "S1-01": {
+  "state": "nothing returned: the evaluation tool stops with an error after generating (ROUND_S1.md addendum 5)",
+  "ours": "",
+  "outcome": ""
+ },
+ "S1-04": {
+  "state": "read",
+  "ours": "acc 53.5 \u00b1 1.0; acc_norm 71.7 \u00b1 0.9",
+  "outcome": "CANNOT_TELL"
+ },
+ "S1-05": {
+  "state": "read",
+  "ours": "acc 53.8 \u00b1 1.7; acc_norm 53.5 \u00b1 1.8. Margin outside the interval: 0.002 points. Under our harness the stated value is below our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested",
+  "outcome": "CANNOT_TELL"
+ },
+ "S1-06": {
+  "state": "read",
+  "ours": "acc 75.7 \u00b1 2.0; acc_norm 76.3 \u00b1 2.0",
+  "outcome": "CONSISTENT"
+ },
+ "S1-08": {
+  "state": "read",
+  "ours": "plain exact_match mean over subtasks 0.0 \u00b1 0.1; chat exact_match mean over subtasks 28.6 \u00b1 1.1. Margin outside the interval: 2.589 points. Under our harness the stated value is above our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested",
+  "outcome": "CANNOT_TELL"
+ },
+ "S1-09": {
+  "state": "read",
+  "ours": "plain strict-match 0.4 \u00b1 0.4; plain flexible-extract 0.4 \u00b1 0.4; chat strict-match 30.3 \u00b1 2.5; chat flexible-extract 45.9 \u00b1 2.7; chat with turns strict-match 48.3 \u00b1 2.7; chat with turns flexible-extract 49.4 \u00b1 2.7",
+  "outcome": "CONSISTENT"
+ }
+}

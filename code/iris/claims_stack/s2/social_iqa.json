@@ -1,0 +1,9 @@
+{
+    "social_iqa": {
+        "name": "social_iqa",
+        "alias": "social_iqa",
+        "sample_len": 1954,
+        "acc,none": 0.5399181166837257,
+        "acc_stderr,none": 0.011277955967920314
+    }
+}
