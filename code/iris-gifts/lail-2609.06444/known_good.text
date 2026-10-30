@@ -1,0 +1,5 @@
+items 3113 (all 100 labels: True) | cache rows 12452 | parsed by variant: {('neutral', True): 3113, ('strict', True): 3113, ('intuitive', True): 3113, ('confidence', True): 3113}
+judge mean Manhattan error vs full 100 labels: 0.4580 (printed 0.458)
+mean stated confidence: 90.34 (printed 90.3) | items with a confidence: 3113
+Spearman, stated confidence vs error: -0.131 (printed -0.13) | prediction entropy vs error: +0.110 (printed 0.11)
+noise ceiling, 100 random half-splits (our seed 0): 0.1578 (printed 0.158)

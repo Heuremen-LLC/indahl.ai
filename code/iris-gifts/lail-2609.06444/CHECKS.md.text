@@ -1,0 +1,54 @@
+
+## 2026-10-30 18:09 Lail L1-L3: L1 nearest-labelled distance is the item itself for all 2,494 labelled items, column constant in the fit set (not identified), spread over 619 zero-label items; L2 judge vs original five annotators -0.003 [-0.020, +0.012] (CONSISTENT), vs five fresh labels +0.095 [+0.085, +0.106] (judge worse); L2c judge error at about three fresh labels (post hoc); L3 self-update lowest of the three printed errors
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: L2 arms on the same items and the same truth each time (all 100 labels in a, the same 50-label half in b); the old-five panel is gated by ChaosNLI's selection on those five labels (never unanimous: 0 of 3,106), stated as its own ruler; 7 items with four old labels left out of both arms
+- II: holds: item-level counts before nets (L2a judge closer on 1,600, old five on 1,503, tied 3; L2b 1,461 against 1,652); per-source split printed (SNLI +0.041, MNLI +0.147)
+- III: holds: differences printed signed as judge minus panel; both sources point the same way in L2b
+- V: holds: two rulers side by side for five labels (original panel, fresh draws) and they disagree, which is the reading; item bootstrap 10,000 for each paired difference
+- VI: holds: L2a CONSISTENT, bound [-0.020, +0.012]; L2b judge ABOVE five fresh labels in error, [+0.085, +0.106]; L1 not identified (a code-and-data fact, no interval); L3 order only, CANNOT_TELL on the 0.004 gap
+- R: holds: counts from the mirror and their cache; L2c labelled defined after the data (Addendum 1, dc23a9f); the 'five pseudo-labels' sentence is their regression's concentration, a different quantity from k sampled labels, said beside L2c
+- L1: holds: all 9,339 stored distributions match their raw replies exactly (one e/n/c triple summing to 100 each); 5 read in full; all 3,113 confidence replies parsed
+- L2: holds: known_good rebuilt their printed descriptives before any reading
+- L3: holds: their prediction rule (variant mean, 0.005 floor) rebuilt from judge.py; truth construction as theirs (100 labels; 50-label halves)
+- L4: n/a: no reruns; the judge is a closed deployment
+- L5: holds: 3,113 uids matched across cache, mirror and embeddings (order asserted)
+- L6: holds: no unparsed judge rows; 7 items left out of L2 old-five arms by reason (four old labels)
+- L7: n/a: the truth is the 100 ChaosNLI labels, not built from the judge
+- L8: holds: paired per item; 200 splits; seeds named
+- L9: n/a: prompts not used in these readings
+- L10: n/a: no claim about the judge model's identity over time
+- L11: holds: the authors' Dropbox file is gone; the community mirror is used, as in the scout, with its hashes recorded
+- L12: holds: the refuting referee is a Claude model (same family as the writer), disclosed in its note
+
+## 2026-10-30 18:36 Referee pass: known-good, L1 structure, L2, L2c, L3 reproduced; L1 counts are our reveal draw (theirs 2,505/608), structure holds under any draw; L2d every old-five panel is exactly 3 of 5 (2,505 3-2, 601 3-1-1); judge minus old five SNLI -0.144, MNLI +0.129; 'does not contradict' dropped; L3 order only
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: the old-five panel is the selection panel (exactly three of five agree on every item), stated beside its comparison; L1 counts labelled as our draw
+- II: caught: the overall judge-versus-old-five tie is two opposite gaps by source (SNLI -0.144, MNLI +0.129), now printed by source
+- III: holds: per-source signs printed; they disagree, which is the reading
+- V: holds: all-100 and half-split rulers side by side; per-source split added
+- VI: fixed: 'level' qualified by the per-source gaps (both resolved, opposite signs); 'does not contradict' removed as untested
+- R: holds: L2d labelled defined after the data (Addendum 2, 32349ec); L1 counts named as our reveal draw
+- L1: holds: parser check unchanged from the first entry (9,339 distributions equal their raw replies)
+- L2: holds: referee numbers recomputed by our code before use
+- L3: holds: their prediction rule and truth construction as before
+- L4: n/a: no reruns; the judge is closed
+- L5: holds: uids matched across files
+- L6: holds: 7 items with four old labels left out of both arms, by reason
+- L7: n/a: truth is the 100 ChaosNLI labels
+- L8: holds: paired per item with the item bootstrap
+- L9: n/a: prompts not used
+- L10: n/a: no claim about the deployment over time
+- L11: holds: community mirror as before, hashes recorded
+- L12: holds: referee is a Claude model (Sonnet), same family as the writer
+- P1: holds: quotations checked against paper.txt (Appendix C line 352-354; Section 5.3 line 166)
+- P2: holds: each figure names its source (cache, mirror, embeddings, code lines)
+- P3: holds: SNLI and MNLI labels as in the mirror's file names
+- P4: holds: no cause named; the L1 effect on Table 2 is said to be unmeasured by us
+- P5: holds: intervals are item-bootstrap 95%
+- P6: holds: summary lines no stronger than the readings
+- P7: n/a: package goes to the code repo
+- P8: n/a: no rendered page
+- P9: holds: plain sentences, no counts in headings
+- P10: holds: L2c and L2d labelled defined after the data
