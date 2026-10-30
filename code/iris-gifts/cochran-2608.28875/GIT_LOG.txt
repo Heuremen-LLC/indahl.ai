@@ -1,0 +1,3 @@
+2f8875b 2026-10-30T16:30:59-04:00 Gift 2608.28875: referee reproduced every reading; wording fixed (first-part position, sign changes not draw alone, two quartile rules); Check Block filed
+fdbb42b 2026-10-30T16:22:39-04:00 Gift 2608.28875 C1-C3: arm order CANNOT_TELL at H1's scale (gpt-4o bound [-2.07, +0.11]); main-run sign repeats 14 of 20 gpt-4o reruns; printed IQR is index quartiles; Check Block filed
+559d0b5 2026-10-30T16:21:43-04:00 Gift plan 2608.28875 (Cochran, Dodson, Nore): H1 rebuilds from their file with our code; C1 arm order, C2 sign repeat, C3 quartile convention, committed before computing

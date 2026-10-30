@@ -1,0 +1,28 @@
+C1 first-part position: arm-centred residual WER (rep minus its side-model-arm median over five reps), position 0 against position 2. arm_pos records each side's first audio part only (score_rerun.py), so this reads first-part position, not order across a whole side
+  gemini-2.5-flash   position 0: n 20  median residual +0.00  above zero 9, below 5, zero 6
+  gemini-2.5-flash   position 1: n 20  median residual -0.21  above zero 6, below 11, zero 3
+  gemini-2.5-flash   position 2: n 20  median residual +0.00  above zero 9, below 7, zero 4
+  gemini-2.5-flash   last minus first, paired within side and rep: n 20  median +0.02  last higher 10 of 20 nonzero, exact sign p 1.000
+  gpt-4o-transcribe  position 0: n 20  median residual +0.04  above zero 11, below 7, zero 2
+  gpt-4o-transcribe  position 1: n 20  median residual +0.00  above zero 8, below 7, zero 5
+  gpt-4o-transcribe  position 2: n 20  median residual -0.02  above zero 5, below 10, zero 5
+  gpt-4o-transcribe  last minus first, paired within side and rep: n 20  median -0.49  last higher 8 of 20 nonzero, exact sign p 0.503
+
+C2 sign repeat: sign of full minus none, main run against each rerun rep (rep k full minus rep k none). The main run and the reruns also differ in arm order (fixed against counterbalanced) and date (seven days), so a sign change is not read as draw alone
+  gemini-2.5-flash   S03  main -269.91  reruns  -44.26 -384.81 -188.01 -108.36 -403.42  same sign 5 of 5
+  gemini-2.5-flash   S06  main -232.78  reruns  +24.63 -167.83  +18.65   +9.84   +4.76  same sign 1 of 5
+  gemini-2.5-flash   S11  main   -0.61  reruns   -0.39   +0.18   -1.57   +0.06   -0.20  same sign 3 of 5
+  gemini-2.5-flash   S18  main   -2.46  reruns   -0.86   +8.52  +21.47   -5.90   -1.82  same sign 3 of 5
+  gpt-4o-transcribe  S03  main   +7.85  reruns   -9.16   -4.94   -7.92   +0.22   +3.05  same sign 2 of 5
+  gpt-4o-transcribe  S06  main   +1.04  reruns   +1.74  +12.67  +25.01   +2.97   +2.68  same sign 5 of 5
+  gpt-4o-transcribe  S11  main   +0.17  reruns   +0.04   +0.22   -0.06   +0.05   +0.17  same sign 4 of 5
+  gpt-4o-transcribe  S18  main   -1.39  reruns  -10.18   -1.89   +0.30   +0.85   -7.03  same sign 3 of 5
+
+C3 the rerun delta IQR (gpt-4o-transcribe, 20 side x rep pairs, full minus none). The paper's other IQRs use the linear rule; this one uses index quartiles. Two rules, not an error
+  n 20  median +0.19  range [-10.18, +25.01]
+  index quartiles sorted[n//4], sorted[3n//4]: [-1.89, +2.68]
+  linear interpolation (numpy default):      [-2.65, +1.98]
+
+C1 bound: 95% order-statistic interval for the median last-minus-first difference (WER points)
+  gemini-2.5-flash   [-3.28, +5.79] (coverage 0.959)
+  gpt-4o-transcribe  [-2.07, +0.11] (coverage 0.959)

@@ -1,0 +1,22 @@
+# Gift recount: Cochran, Dodson and Nore, arXiv 2608.28875 "No Detectable Change in Side-Level WER from Prompt-Level Context"
+Written and committed 30 Oct 2026 before any reading below is computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md.
+Authors as printed: Theodore O. Cochran (AI for Altruism), Stephanie Dodson and Keith Nore (Independent Researchers). Contact as printed:
+theo@ai4altruism.org. No funding line, no acknowledgements. Paper read in full by the scout (scout/RECOUNT.md) and in its method, timeline
+and rerun sections by us. Released files: OSF 9nsvr (component) and ns49b (registration), hashes in scout/theirs_sha256.txt.
+Live calibration: not possible (hosted model aliases, audio and references withheld).
+
+## KNOWN-GOOD
+Scout rebuild (scout/rebuild_main.py, scout/rebuild_rerun.py): every printed confirmatory, sensitivity, cluster and rerun figure rebuilds
+except the rerun delta IQR, which matches only under index quartiles. Our own recount (ours/known_good.py): H1 per model from
+per_side_outcomes.csv: gpt-4o-transcribe +0.56 WER points [-1.14, +1.04] (bootstrap, three seeds, same endpoints), Wilcoxon exact p .568;
+gemini-2.5-flash -0.37 [-2.46, +7.01], p 1.000. Printed: +0.6 [-1.1, +1.0] p 0.57, and -0.4 [-2.5, +7.0] p 1.0. Both rebuild.
+Checked and not raised: the OSF registration (11 Jul 03:47 UTC) follows the transcription batch (ended 03:34 UTC); the paper's own claim is
+registration before scoring, which the stamps fit.
+
+## Readings (all defined after reading the paper; four outcomes; post hoc labels in any write-up)
+C1 arm order: the main run always ran none, structure, full in that order (the paper names it as a threat, T5). The rerun counterbalanced
+   order. Per (side, model, arm), each rep's WER minus the median of that cell's five reps; then those residuals at position 0 against
+   position 2, per model, median and exact sign test. Says whether order moves WER on this subset, holding arm and side fixed.
+C2 sign repeat: for each of the four rerun sides and each model, the sign of full minus none in the main run against the sign in each of
+   the five reruns (rep k full minus rep k none). Count agreements.
+C3 quartile convention: the rerun delta IQR under index quartiles (the printed [-1.9, +2.7]) and under the common linear rule.

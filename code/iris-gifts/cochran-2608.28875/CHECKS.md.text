@@ -1,0 +1,44 @@
+
+## 2026-10-30 16:22 C1-C3 on their rerun and per-side files: arm order on the rerun subset, gpt-4o last minus first median -0.49 [-2.07, +0.11], sign p .50, CANNOT_TELL against an order effect of H1's size (bound reaches -2); gemini [-3.28, +5.79]; C2 main-run sign repeats in 14 of 20 gpt-4o reruns and 12 of 20 gemini; C3 printed IQR is index quartiles [-1.89, +2.68], linear rule [-2.65, +1.98]
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: C1-C3 named in PLAN 559d0b5 before the script ran; C1 residuals hold side, model and arm fixed through each cell's five-rep median, so unequal arm counts per position do not carry arm into position
+- II: holds: per-pair differences and per-rep signs printed item by item; the rerun itself is the repeat floor the paper measured, and C2 counts against it
+- III: holds: signs printed per side, model and rep; gpt-4o last-minus-first is negative in median and the interval spans both signs
+- V: holds: sign test and an order-statistic interval for the median side by side for C1; counts for C2; two quantile rules side by side for C3
+- VI: caught: C1 first read as CONSISTENT with no order effect; its bound [-2.07, +0.11] reaches effects larger than the paper's H1 interval, so on the question that matters it is CANNOT_TELL
+- R: holds: counts from their per_side_outcomes.csv and rerun_cells_release.csv (hashes in scout/theirs_sha256.txt); all readings post hoc to the paper and labelled so
+- L1: n/a: no replies parsed; WER as released
+- L2: holds: no run of ours
+- L3: holds: their setup named (hosted aliases, single pass, fixed arm order in the main run, counterbalanced in the rerun)
+- L4: n/a: no run of ours; their rerun is their own repeat floor and is read as such
+- L5: holds: H1 rebuilt with our code before any reading (known_good.text); the scout's rebuild covers the rest
+- L6: holds: pathological cells (WER above 1) kept in, as the paper keeps them; no cell dropped
+- L7: n/a: references are theirs
+- L8: holds: paired within side and rep throughout
+- L9: n/a: no prompt of ours
+- L10: holds: hosted aliases without logged versions, as the paper says; nothing here is about the weights
+- L11: n/a: nothing substituted
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 16:30 Referee pass on C1-C3: all reproduced; C1 relabelled arm-centred first-part position (arm_pos is first audio part only), CANNOT_TELL stands; C2 sign changes not read as draw alone; C3 two quartile rules, not an error
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: C1 does not hold arm fixed within a pair; it centres each arm on its own five-rep median, and arm_pos covers each side's first audio part only; both now stated in the output
+- II: holds: counts unchanged; the referee's stricter within-cell permutation test also finds nothing (p .15 and .86 rank-based)
+- III: holds: signs unchanged
+- V: holds: referee ran a second ruler for C1 (within-cell permutation) beside ours; both CANNOT_TELL
+- VI: holds: CANNOT_TELL on C1 stands and is strengthened by the first-part limit
+- R: caught: C2's sign changes cross a date and an order change as well as a draw; the output now says so
+- L1: n/a: no replies parsed; WER values taken as released
+- L2: holds: no run of ours exists for this gift
+- L3: holds: their scorer's first-part position rule named (score_rerun.py line 92)
+- L4: n/a: no run of ours; their rerun is their floor
+- L5: holds: referee reproduced H1 independently
+- L6: holds: no cell dropped, pathological cells kept as the paper keeps them
+- L7: n/a: references are the authors' own
+- L8: holds: paired within side and rep as before
+- L9: n/a: no prompt of ours in this gift
+- L10: holds: hosted aliases, nothing claimed about weights
+- L11: n/a: nothing substituted in this pass
+- L12: caught: the referee is the same model family as the writer; it wrote its own code before reading ours and was asked to refute

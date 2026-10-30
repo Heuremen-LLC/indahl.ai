@@ -1,0 +1,2 @@
+gemini-2.5-flash   n 19  median full-none -0.37 WER pt  95% CI (three seeds) [-2.46, +7.01] [-2.46, +7.01] [-2.46, +7.01]  Wilcoxon exact p 1.000 (n nonzero 19, W+ 95.0)
+gpt-4o-transcribe  n 19  median full-none +0.56 WER pt  95% CI (three seeds) [-1.14, +1.04] [-1.14, +1.04] [-1.14, +1.04]  Wilcoxon exact p 0.568 (n nonzero 19, W+ 110.0)
