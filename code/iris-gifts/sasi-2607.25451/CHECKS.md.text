@@ -56,31 +56,31 @@ packs: L
 ## 2026-10-30 19:32 Referee pass: K, S1-S4 and L1 reproduced; wording fixed in the package README: FP16 and INT8 within 2.4 points with every interval including zero (not 'about 5 points both ways'); larger samples are FP16-referenced further samples, not runs; 0.718 is a ratio of rates; 1B reference is FP16 on his GPU; per-sequence agreement with his runs not checkable
 packs: L,P
 (answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
-- I: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- II: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- III: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- V: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- VI: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- R: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L1: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L2: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L3: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L4: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L5: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L6: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L7: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L8: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L9: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L10: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L11: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- L12: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P1: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P2: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P3: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P4: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P5: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P6: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P7: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P8: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P9: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
-- P10: fixed or holds as listed in the entry title; numbers unchanged, wording corrected in README before publishing
+- I: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- II: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- III: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- V: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- VI: fixed: FP16 and INT8 now "within 2.4 points, every interval includes zero"; 1B reference named as FP16 on his GPU
+- R: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L1: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L2: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L3: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L4: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L5: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L6: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L7: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L8: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L9: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L10: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L11: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- L12: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P1: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P2: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P3: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P4: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P5: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P6: fixed: 0.718 described as a ratio of rates; larger samples as further samples of 2,000, FP16-referenced
+- P7: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P8: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P9: holds: numbers unchanged by the referee; wording corrected in the README before publishing
+- P10: holds: numbers unchanged by the referee; wording corrected in the README before publishing

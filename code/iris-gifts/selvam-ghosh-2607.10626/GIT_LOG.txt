@@ -1,0 +1,5 @@
+49660dd 2026-10-30 19:43:13 -0400 Selvam-Ghosh gift: referee pass, E3 and E4 (post hoc), Check Block filed
+0f5df66 2026-10-30 19:42:38 -0400 Selvam-Ghosh gift: Addendum 2 (E3, E4 defined after the data) before computing
+332cfb6 2026-10-30 19:35:46 -0400 Selvam-Ghosh gift: readings K, E1, E2, E2b (post hoc), Check Block filed
+c971e0e 2026-10-30 19:35:20 -0400 Selvam-Ghosh gift: Addendum 1 (E2b, defined after the data) before computing
+ac3c2a9 2026-10-30 19:34:43 -0400 Selvam-Ghosh gift (2607.10626): plan E1-E2 committed before known-good and readings
