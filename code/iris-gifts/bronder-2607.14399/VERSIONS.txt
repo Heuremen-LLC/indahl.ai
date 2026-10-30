@@ -1,0 +1,1 @@
+python3 standard library only (3.14 for compression.zstd): Python 3.14.7

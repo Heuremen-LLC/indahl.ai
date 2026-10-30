@@ -1,0 +1,31 @@
+# Gift recount: Bronder, arXiv 2607.14399 "Instrument Effects in Language-Model Honesty Evaluation: An Auditable Single-System Demonstration"
+Written and committed 30 Oct 2026 before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as
+printed: Justin Bronder, Corabo Inc., bronder@corabo.com. No funding printed. Acknowledgements: Joe Ganis (second coder). Released: tag
+v1.0-arxiv (commit 926c30ae609c) and Zenodo 10.5281/zenodo.21384627 (logs.tar.zst, hetero_values.jsonl, p2final.jsonl, MANIFEST.sha256),
+hashes in scout/SOURCES_AND_SHA256.txt. Paper read in full by the scout (scout/RECOUNT.md) and by us in Sections 3.4-3.5, 4.2-4.3 and the
+Gate 2 results. Their code is read, never run. GLM-derived files carry z.ai terms against training: kept out of any training.
+
+## KNOWN-GOOD (ours, ours/known_good.py, before the readings)
+From the inspect-ai logs (closed logs only, status success, picked by their task arguments), with our own code: Table 2 on the four
+anchors present in both zai-honest-epochs2 (Gate 0) and s2-main (complete 22 to 7, unreachable 16 to 0, incomplete 0 to 28, budget 2 to
+5), Table 3 (valid 59 and 58, HALT 43 and 10, false 18 and 0, pin games 4 and 42 on the six solvable grid instances), and the Gate 2 strong
+claim rates for the meter cell (.383) and the none-lantern cell (.150). A false verdict is HALT(complete) with no WIN or HALT(unreachable) on a
+solvable instance, as the paper defines it.
+
+## Readings (defined after reading the paper; four outcomes; 95% intervals)
+B1 The grammar shift per anchor: strong claims (complete plus unreachable) per anchor under each grammar (10 games each), with an exact
+   Fisher test per anchor and the pooled Newcombe interval, noting that games share four anchors and the change is confounded with time
+   (the paper's own caption).
+B2 The disclosure contrast by instance: false verdicts per instance in each arm on the six solvable grid instances, how many instances
+   carry the 18, an exact sign test with the instance as the unit, and the exact upper bound for 0 of 58.
+B3 Meter against lantern in Gate 2, with the instance as the cluster: strong-claim rate difference (meter minus none-lantern) with a
+   percentile bootstrap over the 12 instances (10,000, seed 42), beside the per-instance sign count and its exact test. The paper itself
+   says binomial intervals on 60-game cells are optimistic.
+B4 Record items. (a) Fidelity flags in Gate 2: games with at least one flag against flags in total, per cell, beside the printed
+   "35/60 games flagged vs heroic 29/60". (b) Budget-bearing narrations in hetero_values.jsonl: rows against unique keys, beside 5,181.
+   (c) Gate 2 eval headers: revision, dirty flag and generate config (temperature) per cell, beside Section 3.5 ("All runs ... temperature
+   0.7") and the Gate 2 ratification text (55789d2, 081586f, 05acada).
+The paper's 3,636 valued narrations rest on an inventory that is not released, so no reading is made of it.
+
+## What this gift never says
+No cause beyond what the readings separate. No live rerun (hosted player and narrator). Post-hoc readings are labelled in place.

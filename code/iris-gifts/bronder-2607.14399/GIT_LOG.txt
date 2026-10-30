@@ -1,0 +1,2 @@
+b3173ac 2026-10-30 18:51:36 -0400 Bronder gift: known-good and readings B1-B4, Check Block filed
+59f10de 2026-10-30 18:50:15 -0400 Bronder gift (2607.14399): plan B1-B4 committed before known-good and readings

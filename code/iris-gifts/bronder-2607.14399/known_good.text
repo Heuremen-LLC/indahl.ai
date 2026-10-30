@@ -1,0 +1,8 @@
+anchors in both Gate 0 and s2-main: ['lu-700000', 'lu-700001', 'lu-700002', 'lu-700003']
+  Gate 0 (binary)            {'HALT_UNREACHABLE': 16, 'HALT_COMPLETE': 22, 'BUDGET_EXHAUSTED': 2} | strong 38/40
+  series 2 (three-verdict)   {'HALT_INCOMPLETE': 28, 'BUDGET_EXHAUSTED': 5, 'HALT_COMPLETE': 7} | strong 7/40
+wins anywhere (event types win/won/quest_complete): s2-main 0, disclosure 0 | terminals s2-main {'HALT': 129, 'BUDGET_EXHAUSTED': 29, None: 2}, disclosure {'HALT': 10, 'BUDGET_EXHAUSTED': 48, None: 2}
+  hidden (s2-main, six instances)  valid 59/60 | HALT 43 | false 18 | pin games 4
+  disclosed (s2-disclosure)        valid 58/60 | HALT 10 | false 0 | pin games 42
+  g2-meter  strong 23/60 = 0.383
+  g2-none   strong 9/60 = 0.150
