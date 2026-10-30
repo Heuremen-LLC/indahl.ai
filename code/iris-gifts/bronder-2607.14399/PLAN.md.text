@@ -29,3 +29,15 @@ The paper's 3,636 valued narrations rest on an inventory that is not released, s
 
 ## What this gift never says
 No cause beyond what the readings separate. No live rerun (hosted player and narrator). Post-hoc readings are labelled in place.
+
+## Addendum 1 (30 Oct 2026, after the referee pass; B2b, B3b, B3c, B4b2 and B4c2 are defined after the data)
+Corrections: B1 p values run to 0.0031 ("at most 0.0031"). The 0.0616 for 0 of 58 is the upper end of the two-sided 95% Clopper-Pearson
+interval (the one-sided 95% bound is 0.0503). B3's resampled interval depends on the random draw because the statistic takes few values.
+New readings, each defined after the data:
+B2b the disclosure contrast conditional on reaching a halt (18/43 against 0/10), Fisher exact.
+B3b the exact bootstrap distribution of B3's statistic (the mean over 12 instances drawn with replacement of each instance's meter minus
+lantern rate) and its 2.5th and 97.5th percentiles.
+B3c B3 with the solvable instance and its unsolvable twin as one unit: per-pair sign count and exact test.
+B4b2 error rows in hetero_values.jsonl without a retry, and lantern-cell narrations counted by unique key beside the printed 4,011.
+B4c2 temperature in the logged GLM calls and Haiku calls per run (sample model events, their generate config and recorded request bodies),
+and the files that differ between 081586f and 4de8b8f (theirs/github/compare_081586f_4de8b8f.json).

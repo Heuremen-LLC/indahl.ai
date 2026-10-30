@@ -20,3 +20,57 @@ packs: L
 - L10: holds: generate config read per log; Gate 2 headers carry no temperature, earlier series carry 0.7
 - L11: n/a: nothing substituted
 - L12: holds: the refuting referee is a Claude model (same family as the writer); the paper's narrator and interpreter are also Claude models, noted
+
+## 2026-10-30 19:07 Referee pass and Addendum 1: B1 p up to 0.0031; 0/58 two-sided CP upper 0.0616 (one-sided 0.0503); B2b conditional on halt 18/43 vs 0/10 p .011; B3b exact bootstrap [+0.067, +0.400]; B3c twin pairs 5-0-1 p .0625; B4b2 sixth error row without retry, lantern 4,011 rows 4,006 unique; B4c2 no temperature on any Gate 2 GLM call (config or request), 0.7 on every earlier GLM call, none on Haiku calls; 4de8b8f adds only the readout script and a paper skeleton
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: B2b compares halted games in both arms (the gate the referee named: only 10 of 58 disclosed games halted, so the conditional reading is shown beside the per-game one)
+- II: holds: per-instance and per-pair counts printed; the exact bootstrap replaces a random draw for a statistic with few values
+- III: holds: B3 differences signed per instance; one instance and no pair reverses
+- V: holds: exact bootstrap beside the game-level interval; instance and pair as two units side by side
+- VI: fixed: B3 upper end is +0.400 (exact), not +0.383 (one random draw); the pair-level sign test is CANNOT_TELL at 5% (p .0625) while the instance-level one is .039, both reported
+- R: holds: all new readings labelled defined after the data (Addendum 1, 20f0651); temperature counted from every logged model event; the compare file read for 081586f to 4de8b8f
+- L1: n/a: no text parsing; verdicts are engine fields
+- L2: holds: referee numbers recomputed by our code before use
+- L3: holds: his definitions unchanged; units named (instance, twin pair)
+- L4: n/a: no reruns of ours; his repeated-run reading is his own
+- L5: holds: twin pairs keyed by instance id with and without the u suffix, two members each
+- L6: holds: the error row without a retry named by key
+- L7: n/a: engine truth
+- L8: holds: instance and pair as clusters
+- L9: n/a: prompts not used
+- L10: caught: Gate 2 GLM calls carry no temperature in config or request, so the provider default applied; earlier runs carry 0.7 on every GLM call
+- L11: n/a: nothing substituted
+- L12: holds: referee is a Claude model (Sonnet); his narrator and interpreter are Claude Haiku, noted
+- P1: holds: quotations checked against paper.txt (Section 3.5, Gate 2 ratification, Table 3, line 139)
+- P2: holds: each figure names its log or file
+- P3: holds: cell labels as in his task arguments
+- P4: holds: no cause named for the dirty flags or the missing temperature; asked as questions
+- P5: holds: two-sided 95% Clopper-Pearson named as such
+- P6: holds: the referee's wording fixes applied (no 'clustering costs little'; 'at most 0.0031')
+- P7: n/a: package goes to the code repo
+- P8: n/a: no rendered page
+- P9: holds: plain sentences, no counts in headings
+- P10: holds: post-hoc readings labelled
+
+## 2026-10-30 19:07 readings.py reads the GitHub compare data from a trimmed copy beside our code (commits and file names only); readings.text byte-identical before and after
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: n/a: input path change only, readings.text byte-identical (cmp)
+- II: n/a: input path change only, readings.text byte-identical (cmp)
+- III: n/a: input path change only, readings.text byte-identical (cmp)
+- V: n/a: input path change only, readings.text byte-identical (cmp)
+- VI: n/a: input path change only, readings.text byte-identical (cmp)
+- R: n/a: input path change only, readings.text byte-identical (cmp)
+- L1: n/a: input path change only, readings.text byte-identical (cmp)
+- L2: n/a: input path change only, readings.text byte-identical (cmp)
+- L3: n/a: input path change only, readings.text byte-identical (cmp)
+- L4: n/a: input path change only, readings.text byte-identical (cmp)
+- L5: n/a: input path change only, readings.text byte-identical (cmp)
+- L6: n/a: input path change only, readings.text byte-identical (cmp)
+- L7: n/a: input path change only, readings.text byte-identical (cmp)
+- L8: n/a: input path change only, readings.text byte-identical (cmp)
+- L9: n/a: input path change only, readings.text byte-identical (cmp)
+- L10: n/a: input path change only, readings.text byte-identical (cmp)
+- L11: n/a: input path change only, readings.text byte-identical (cmp)
+- L12: n/a: input path change only, readings.text byte-identical (cmp)

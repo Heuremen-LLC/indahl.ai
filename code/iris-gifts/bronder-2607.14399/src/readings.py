@@ -49,3 +49,52 @@ for d_ in ('zai-honest-epochs2', 's2-main', 's2-disclosure'):
     p, h = pick(d_); e = h['eval']; print('  (c)   %-18s revision %s dirty %s | generate config %s' % (d_, e['revision'].get('commit'), e['revision'].get('dirty'), e.get('model_generate_config')))
 rows = [json.loads(l) for l in open(os.path.join(Z, 'hetero_values.jsonl')) if l.strip()]; k = collections.Counter(r['key'] for r in rows)
 print('  (b) hetero_values.jsonl rows %d | unique keys %d | keys with two rows %d (each an error row and its retry: %s)' % (len(rows), len(k), sum(v > 1 for v in k.values()), all(any('error' in r['res'] for r in rows if r['key'] == kk) for kk, v in k.items() if v > 1)))
+# B2b, B3b, B3c, B4b2, B4c2 (PLAN Addendum 1, 20f0651, defined after the data)
+print('\nB2b (defined after the data) false verdicts conditional on reaching a halt')
+H6 = [g for g in s2 if g['inst'] in six and valid(g) and g['terminal'] == 'HALT']; D6 = [g for g in sd if valid(g) and g['terminal'] == 'HALT']
+fh, fd = sum(map(false_verdict, H6)), sum(map(false_verdict, D6))
+print('  hidden %d/%d | disclosed %d/%d | Fisher exact p %.4f' % (fh, len(H6), fd, len(D6), fisher2(fh, len(H6) - fh, fd, len(D6) - fd)))
+print('\nB3b (defined after the data) exact bootstrap distribution of the meter minus lantern statistic')
+from fractions import Fraction
+dv = [Fraction(pm[i][0], pm[i][1]) - Fraction(pn[i][0], pn[i][1]) for i in inst]; K = len(dv)
+dist = {Fraction(0): Fraction(1)}
+for _ in range(K):
+    nd = collections.defaultdict(Fraction)
+    for s_, p_ in dist.items():
+        for d_ in dv: nd[s_ + d_] += p_ / K
+    dist = nd
+cum = Fraction(0); lo_ = hi_ = None
+for s_ in sorted(dist):
+    cum += dist[s_]
+    if lo_ is None and cum >= Fraction(25, 1000): lo_ = s_ / K
+    if hi_ is None and cum >= Fraction(975, 1000): hi_ = s_ / K
+print('  per-instance differences %s | exact 2.5th and 97.5th percentiles [%+.3f, %+.3f]' % ([str(x) for x in dv], float(lo_), float(hi_)))
+print('\nB3c (defined after the data) the solvable instance and its unsolvable twin as one unit')
+base = sorted({i.rstrip('u') for i in inst}); up = dn = 0
+for b in base:
+    mem = [i for i in inst if i.rstrip('u') == b]
+    dm = sum(pm[i][0] for i in mem) / sum(pm[i][1] for i in mem) - sum(pn[i][0] for i in mem) / sum(pn[i][1] for i in mem)
+    up += dm > 0; dn += dm < 0
+print('  pairs %d (members per pair %s) | meter above %d, below %d, tied %d | exact sign p %.4f' % (len(base), sorted({len([i for i in inst if i.rstrip('u') == b]) for b in base}), up, dn, len(base) - up - dn, sign2(up, up + dn)))
+print('\nB4b2 (defined after the data) hetero_values.jsonl error rows and lantern-cell counts')
+err_keys = {r['key'] for r in rows if 'error' in r['res']}; ok_keys = {r['key'] for r in rows if 'error' not in r['res']}
+print('  keys whose only row is an error: %s | keys with an extraction: %d' % (sorted(err_keys - ok_keys), len(ok_keys)))
+lant = [r for r in rows if not r['key'].startswith('meter')]
+print('  lantern-cell rows %d, unique keys %d' % (len(lant), len({r['key'] for r in lant})))
+print('\nB4c2 (defined after the data) temperature in logged model calls, by run and model')
+def temps(path):
+    z = zipfile.ZipFile(path); c = collections.Counter()
+    for n in z.namelist():
+        if not (n.startswith('samples/') and n.endswith('.json')): continue
+        s_ = json.loads(z.read(n))
+        for e in s_.get('events') or []:
+            if e.get('event') != 'model': continue
+            mdl = 'glm' if 'glm' in str(e.get('model')) else ('haiku' if 'haiku' in str(e.get('model')) else str(e.get('model')))
+            cfg = e.get('config') or {}; req = ((e.get('call') or {}).get('request') or {})
+            c[(mdl, 'calls')] += 1; c[(mdl, 'config temperature')] += 'temperature' in cfg; c[(mdl, 'request temperature')] += 'temperature' in req
+    return c
+for d_, sk, rd in (('zai-honest-epochs2', None, None), ('s2-main', None, None), ('s2-disclosure', None, None), ('g2-none', 'none', 'lantern'), ('g2-mundane', 'mundane', 'lantern'), ('g2-heroic', 'heroic', 'lantern'), ('g2-incident', 'incident', 'lantern'), ('g2-meter', 'none', 'meter')):
+    c = temps(pick(d_, sk, rd)[0])
+    print('  %-18s %s' % (d_, ' | '.join('%s %d calls, temperature in config %d, in request %d' % (m, c[(m, 'calls')], c[(m, 'config temperature')], c[(m, 'request temperature')]) for m in ('glm', 'haiku'))))
+cmp_ = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'compare_081586f_4de8b8f.min.json')))   # trimmed copy of the public GitHub compare (commits and file names)
+print('  081586f to 4de8b8f: ahead %s, behind %s, files %s' % (cmp_.get('ahead_by'), cmp_.get('behind_by'), [(f['filename'], f['status']) for f in cmp_.get('files', [])]))
