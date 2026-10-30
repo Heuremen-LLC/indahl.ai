@@ -10,7 +10,7 @@ try: fcntl.flock(_l, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: sys.exit(0)
 R = os.path.expanduser('~/bones-forge'); W = R + '/cloudflare-workers/heuremen-door'; PUB = R + '/public_mirror/indahl.ai/code/tape'
 DRAND = 'https://api.drand.sh/52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971/public/latest'
-SLUGS = 'support pkglicense hflicense hfsize secrecords pkginstall linkrot trials revise hpt hosts airq ailuminate weights airline fedsep time coin cada uptime forecast cadence launch arxivdrift campus seat change stack'.split()
+SLUGS = 'support pkglicense hflicense hfsize secrecords pkginstall linkrot trials revise hpt hosts airq ailuminate weights airline fedsep time cada uptime forecast cadence launch arxivdrift campus seat change stack'.split()
 def get(url, t=40):
     try: return urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'heuremen-tape/0.1'}), timeout=t).read()
     except Exception: return None
