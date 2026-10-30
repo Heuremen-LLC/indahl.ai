@@ -1,0 +1,71 @@
+== 1. MEASURE MAPS (clbit position -> physical qubit)
+his experiment.json lane paths: lane3 = [69, 68, 67]; zhukov.py PATH[3] = [69, 68, 67]
+  ('exact', 'XXX') set 70 (his pub 86): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  ('exact', 'XXX') set 75 (his pub 266): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  ('exact', 'YYY') set 68 (his pub 80): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  ('exact', 'YYY') set 73 (his pub 201): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  ('strang8', 'XXX') set 71 (his pub 87): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  ('strang8', 'XXX') set 74 (his pub 265): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  ('strang8', 'YYY') set 69 (his pub 81): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  ('strang8', 'YYY') set 72 (his pub 200): his t3[0..2] -> [69, 68, 67]; ours t3[0..2] -> [69, 68, 67]; all 18 measure maps equal: True; circuit objects equal: True
+  -> measure map identical in both copies and equal to the lane path: True
+  all six lane registers: tK[j] <- path[j] confirmed on the qpy (his == ours == zhukov.PATH)
+
+== 2. IDEAL (noiseless) VALUE FROM MY OWN STATEVECTOR, lane 3, Jt=4/3
+  strang8 XXX pub 87: 105 CZ on lane 3; max|my p - his stored ideal_probabilities| = 2.47e-15
+  strang8 YYY pub 81: 105 CZ on lane 3; max|my p - his stored ideal_probabilities| = 1.21e-15
+  strang8: ideal <X1>=+0.5053 <Y1>=-0.6680; exact-H reference <X1>=+0.5048 <Y1>=-0.7057; ideal signed phase error vs exact H = +1.53 deg
+  exact XXX pub 86: 16 CZ on lane 3; max|my p - his stored ideal_probabilities| = 5.83e-16
+  exact YYY pub 80: 16 CZ on lane 3; max|my p - his stored ideal_probabilities| = 3.89e-16
+  exact: ideal <X1>=+0.5048 <Y1>=-0.7057; exact-H reference <X1>=+0.5048 <Y1>=-0.7057; ideal signed phase error vs exact H = -0.00 deg
+
+== 3a. HIS data: his runtime_result BitArrays pushed through OUR decoders, against his shots_codes.npz
+  ('exact', 'XXX') pub 86: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  ('exact', 'XXX') pub 266: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  ('exact', 'YYY') pub 80: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  ('exact', 'YYY') pub 201: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  ('strang8', 'XXX') pub 87: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  ('strang8', 'XXX') pub 265: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  ('strang8', 'YYY') pub 81: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  ('strang8', 'YYY') pub 200: our decode(BitArray) == his codes: True; get_counts-string path histogram == his counts: True; his-code re-encode round trip: True
+  -> our decoders reproduce his shot codes bit for bit on all 8 circuits: True
+
+== 3b. OUR data: true SamplerV2 output (re-fetched, read-only) through BOTH paths, against the codes zhukov.py used (raw_zhukov_*.npz)
+  all 32 circuit-job pairs: decode(BitArray)==npz codes, counts path==npz histogram, re-encode(his format)==npz codes: True
+  example get_counts keys (clbit0 rightmost), job A1 set 71: [('000', 111), ('101', 214), ('001', 230), ('110', 108)]
+
+== 4. SIGNED PHASE ERROR (zhukov.c1_from_counts estimator, same function, same exact-H reference), by data source
+  strang8: IDEAL   +1.53 | HIS data <X1>=+0.494 <Y1>=-0.070 ->  +46.32 (zhukov.py)  +46.32 (this script) | OURS (counts path, 4 jobs pooled) <X1>=-0.077 <Y1>=-0.389 ->  -46.77 (zhukov.py)  -46.77 (this script)
+      job A1:  -46.62 deg (se 3.09), |C1| 0.408
+      job B1:  -46.40 deg (se 3.27), |C1| 0.385
+      job B2:  -46.86 deg (se 3.11), |C1| 0.404
+      job A2:  -47.20 deg (se 3.25), |C1| 0.388
+  exact: IDEAL   -0.00 | HIS data <X1>=+0.484 <Y1>=-0.608 ->   +2.95 (zhukov.py)   +2.95 (this script) | OURS (counts path, 4 jobs pooled) <X1>=+0.426 <Y1>=-0.623 ->   -1.24 (zhukov.py)   -1.24 (this script)
+      job A1:   -2.47 deg (se 1.43), |C1| 0.767
+      job B1:   +0.18 deg (se 1.50), |C1| 0.735
+      job B2:   +0.68 deg (se 1.42), |C1| 0.763
+      job A2:   -3.31 deg (se 1.47), |C1| 0.755
+
+== 5. BIT-ORDER SCAN: total-variation distance of each data set from the MY-statevector ideal histogram under all 6 bit permutations of the code (strang8 and exact, XXX and YYY pooled)
+  HIS:
+     bit order (0, 1, 2)  <- as decoded: mean TV 0.1362
+     bit order (0, 2, 1): mean TV 0.2277
+     bit order (1, 0, 2): mean TV 0.3810
+     bit order (1, 2, 0): mean TV 0.4011
+     bit order (2, 0, 1): mean TV 0.3797
+     bit order (2, 1, 0): mean TV 0.3083
+     best fit: (0, 1, 2)
+  OURS:
+     bit order (0, 1, 2)  <- as decoded: mean TV 0.1388
+     bit order (0, 2, 1): mean TV 0.2401
+     bit order (1, 0, 2): mean TV 0.3357
+     bit order (1, 2, 0): mean TV 0.3745
+     bit order (2, 0, 1): mean TV 0.3559
+     bit order (2, 1, 0): mean TV 0.2935
+     best fit: (0, 1, 2)
+
+== 6. WHAT A DECODE FLIP WOULD DO (control): our strang8 data decoded with the code bits reversed (x1<->x3) and with the clbit order reversed
+  ours strang8, reversed code bits (x1<->x3): -23.22 deg, |C1| 0.139
+  his  strang8, reversed code bits (x1<->x3): +114.94 deg, |C1| 0.188
+  ours strang8, identity: -46.77 deg, |C1| 0.396
+  his  strang8, identity: +46.32 deg, |C1| 0.499

@@ -1,0 +1,24 @@
+(1) n=8 seed 100: max |my H - SparsePauliOp H| = 1.78e-15; E0 = -15.113057, E1 = -13.002404
+(1) n=12 seed 100: max |my H - SparsePauliOp H| = 3.55e-15; E0 = -21.927832, E1 = -21.106723
+(2) shots 2000 n=8: median |E-E0| standard 4.493e-01  random 3.375e-14  AS-SQD 1.066e-14   per-seed AS ['1.2e-14', '1.8e-15', '1.1e-14', '7.5e-14', '7.1e-15']  random ['4.8e-14', '3.4e-14', '7.1e-15', '5.0e-14', '1.4e-14']  (0.1 s)
+(2) shots 2000 n=10: median |E-E0| standard 1.507e+00  random 8.352e-01  AS-SQD 1.206e-04   per-seed AS ['2.7e-04', '1.4e-04', '1.2e-04', '1.2e-04', '1.0e-04']  random ['8.4e-01', '8.5e-01', '2.6e-01', '4.6e-01', '8.7e-01']  (0.3 s)
+(2) shots 2000 n=12: median |E-E0| standard 2.659e+00  random 1.789e+00  AS-SQD 3.797e-01   per-seed AS ['6.0e-01', '6.1e-01', '3.8e-01', '3.4e-01', '3.4e-01']  random ['2.5e+00', '2.3e+00', '1.7e+00', '1.8e+00', '1.7e+00']  (0.6 s)
+(2) shots 3000 n=8: median |E-E0| standard 5.567e-01  random 2.309e-14  AS-SQD 1.066e-14   per-seed AS ['7.1e-15', '1.8e-15', '1.1e-14', '5.3e-14', '1.1e-14']  random ['2.1e-14', '2.3e-14', '3.2e-14', '1.4e-14', '3.6e-14']  (0.1 s)
+(2) shots 3000 n=10: median |E-E0| standard 1.511e+00  random 8.422e-01  AS-SQD 1.371e-04   per-seed AS ['3.9e-04', '1.4e-04', '6.6e-05', '8.4e-05', '3.6e-04']  random ['8.4e-01', '9.6e-01', '3.9e-01', '5.3e-01', '8.6e-01']  (0.3 s)
+(2) shots 3000 n=12: median |E-E0| standard 2.724e+00  random 1.997e+00  AS-SQD 3.811e-01   per-seed AS ['5.9e-01', '6.1e-01', '3.8e-01', '3.4e-01', '3.3e-01']  random ['2.4e+00', '2.2e+00', '2.0e+00', '1.7e+00', '1.8e+00']  (0.6 s)
+(2) shots 2000: n=8 both near machine precision True; AS < Random < Standard at n=10,12 True; Standard grows with n True
+(2) shots 3000: n=8 both near machine precision True; AS < Random < Standard at n=10,12 True; Standard grows with n True
+(2) KNOWN-GOOD (printed statements of the exact-contamination protocol): PASS
+(3) n=8, AS-SQD from 3000 uniform random strings (no device): |E-E0| per seed ['1.8e-15', '1.9e+00', '1.6e+00', '3.4e+00', '3.0e-14']; final subspace 99 of 256
+(3) n=8, Random SQD from the same uniform strings: |E-E0| per seed ['5.3e-15', '2.4e-01', '9.5e-02', '1.5e-01', '8.8e-04']
+(3) reading: H conserves total Z, so AS-SQD (candidates from the dominant support only) cannot leave the Z-sector its restricted ground vector sits in; from uniform strings it reaches E0 at n=8 only when that sector is the ground sector. The n=8 hardware "~1e-14" is reachable by dimension, not guaranteed by it.
+(4) n=12 seed 100: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000239, t=1.2 0.000255; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 101: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000223, t=1.2 0.000299; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 102: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000246, t=1.2 0.000239; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 103: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000196, t=1.2 0.000357; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 104: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000219, t=1.2 0.000313; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 105: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000247, t=1.2 0.000234; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 106: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000207, t=1.2 0.000338; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 107: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000251, t=1.2 0.000225; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 108: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000206, t=1.2 0.000223; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)
+(4) n=12 seed 109: noiseless circuit overlap sum_b p_circ(b) |psi0(b)|^2: t=0.6 0.000214, t=1.2 0.000322; uniform 0.000244; circuit weight in the ground-state sector (6 ones) t=0.6 0.2256 (binomial 924/4096 = 0.2256)

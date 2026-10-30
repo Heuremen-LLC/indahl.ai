@@ -1,0 +1,5 @@
+ADDENDUM 1 (24 Oct 2026, before any result read; no result exists)
+Job P1 dbe1s6fsstms73fbascg (submitted 2026-10-24T02:55:21Z) ended ERROR 9703 "Temporary Internal Error" on IBM's side; no counts returned; billed 2 s.
+Its pre-job record, job file and log are kept in failed_P1_9703/. The run restarts from P1 with the same code, same design, same ABBA order.
+Circuits are rebuilt deterministically by the same code; the new circuits_lima.qpy hash is compared to the failed attempt's
+(cccd719c4bae8e46daaac162966181add8976c312a6525e1ebb0ae05c5596bdc) and reported either way. The failed job counts toward seconds spent, not toward data.

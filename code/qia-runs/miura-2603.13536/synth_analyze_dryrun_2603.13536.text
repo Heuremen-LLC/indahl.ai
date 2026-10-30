@@ -1,0 +1,36 @@
+analyze.py run on PLANTED hardware output (IDEAL world: noiseless rebuilt circuits + 1%/2% readout, seats planted, fake record readout_error 0.015, fake ring 0..11), made by a scratch script; zero QPU
+job FAKE attempt 1, created x, running None, finished None; usage 0 s; record last_update_date fake; ring [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  seat q0->phys 0: P(1|0) 0.0180  P(0|1) 0.0220  mean 0.0200  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.33
+  seat q1->phys 1: P(1|0) 0.0150  P(0|1) 0.0220  mean 0.0185  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.23
+  seat q2->phys 2: P(1|0) 0.0170  P(0|1) 0.0230  mean 0.0200  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.33
+  seat q3->phys 3: P(1|0) 0.0100  P(0|1) 0.0210  mean 0.0155  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.03
+  seat q4->phys 4: P(1|0) 0.0080  P(0|1) 0.0160  mean 0.0120  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 0.80
+  seat q5->phys 5: P(1|0) 0.0130  P(0|1) 0.0270  mean 0.0200  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.33
+  seat q6->phys 6: P(1|0) 0.0080  P(0|1) 0.0250  mean 0.0165  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.10
+  seat q7->phys 7: P(1|0) 0.0160  P(0|1) 0.0220  mean 0.0190  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.27
+  seat q8->phys 8: P(1|0) 0.0130  P(0|1) 0.0240  mean 0.0185  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 1.23
+  seat q9->phys 9: P(1|0) 0.0080  P(0|1) 0.0190  mean 0.0135  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 0.90
+  seat q10->phys 10: P(1|0) 0.0080  P(0|1) 0.0190  mean 0.0135  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 0.90
+  seat q11->phys 11: P(1|0) 0.0080  P(0|1) 0.0120  mean 0.0100  stated readout_error 0.0150 (p10 0.01, p01 0.02)  ratio 0.67
+KNOWN-GOOD seat: median measured/stated readout error over the 12 ring qubits 1.17 (rule [0.5, 2.0]) -> PASS; exact |0..0> survival 0.8680, |1..1> survival 0.7770
+D1 = mean(log10 err AS-SQD - mean log10 err Random SQD), hardware trot samples, 10 instances: -0.717 [-1.020, -0.415] -> BELOW
+D2 = mean(log10 err AS-SQD trot - log10 err AS-SQD no-gate ctrl), 10 instances: +0.007 [-0.443, +0.457] -> CONSISTENT  (M = 0.5 decade)
+HEADLINE (triage four outcomes): CANNOT_TELL
+DESCRIPTIVE (not scored):
+  seed 100: log10 err  AS trot +0.40  RND trot +0.97  STD trot +1.19  AS ctrl +0.17  RND ctrl +0.91  AS ideal-sim -0.08  AS uniform-sim +0.14 | top-50 ground weight trot 0.0060 ctrl 0.0056 (uniform expect 0.0122) | Jaccard top-50 0.02 | weight in 6-ones sector trot 0.233 ctrl 0.239 (binomial 0.226) | distinct strings 2102/2155
+  seed 101: log10 err  AS trot +0.67  RND trot +1.01  STD trot +1.24  AS ctrl +0.05  RND ctrl +0.89  AS ideal-sim +0.31  AS uniform-sim -0.09 | top-50 ground weight trot 0.0011 ctrl 0.0133 (uniform expect 0.0122) | Jaccard top-50 0.02 | weight in 6-ones sector trot 0.222 ctrl 0.231 (binomial 0.226) | distinct strings 2100/2131
+  seed 102: log10 err  AS trot -0.26  RND trot +0.88  STD trot +1.09  AS ctrl +0.60  RND ctrl +0.96  AS ideal-sim +0.14  AS uniform-sim -0.00 | top-50 ground weight trot 0.0134 ctrl 0.0010 (uniform expect 0.0122) | Jaccard top-50 0.01 | weight in 6-ones sector trot 0.208 ctrl 0.226 (binomial 0.226) | distinct strings 2122/2142
+  seed 103: log10 err  AS trot +0.68  RND trot +0.89  STD trot +1.16  AS ctrl -0.25  RND ctrl +0.86  AS ideal-sim +0.68  AS uniform-sim -0.39 | top-50 ground weight trot 0.0082 ctrl 0.0086 (uniform expect 0.0122) | Jaccard top-50 0.02 | weight in 6-ones sector trot 0.222 ctrl 0.250 (binomial 0.226) | distinct strings 2136/2147
+  seed 104: log10 err  AS trot -0.33  RND trot +0.88  STD trot +1.10  AS ctrl -0.33  RND ctrl +0.89  AS ideal-sim +0.27  AS uniform-sim +0.27 | top-50 ground weight trot 0.0374 ctrl 0.0313 (uniform expect 0.0122) | Jaccard top-50 0.00 | weight in 6-ones sector trot 0.216 ctrl 0.203 (binomial 0.226) | distinct strings 2101/2100
+  seed 105: log10 err  AS trot +0.38  RND trot +0.97  STD trot +1.18  AS ctrl +0.37  RND ctrl +0.94  AS ideal-sim +0.15  AS uniform-sim +0.67 | top-50 ground weight trot 0.0006 ctrl 0.0002 (uniform expect 0.0122) | Jaccard top-50 0.02 | weight in 6-ones sector trot 0.219 ctrl 0.230 (binomial 0.226) | distinct strings 2135/2137
+  seed 106: log10 err  AS trot +0.30  RND trot +1.02  STD trot +1.24  AS ctrl +0.31  RND ctrl +1.01  AS ideal-sim -0.43  AS uniform-sim +0.30 | top-50 ground weight trot 0.0007 ctrl 0.0004 (uniform expect 0.0122) | Jaccard top-50 0.00 | weight in 6-ones sector trot 0.210 ctrl 0.236 (binomial 0.226) | distinct strings 2116/2138
+  seed 107: log10 err  AS trot +0.20  RND trot +0.83  STD trot +0.99  AS ctrl +0.79  RND ctrl +0.94  AS ideal-sim -0.18  AS uniform-sim +0.13 | top-50 ground weight trot 0.0168 ctrl 0.0024 (uniform expect 0.0122) | Jaccard top-50 0.00 | weight in 6-ones sector trot 0.221 ctrl 0.237 (binomial 0.226) | distinct strings 2114/2115
+  seed 108: log10 err  AS trot -0.29  RND trot +0.93  STD trot +1.17  AS ctrl +0.04  RND ctrl +0.97  AS ideal-sim +0.62  AS uniform-sim -0.26 | top-50 ground weight trot 0.0113 ctrl 0.0007 (uniform expect 0.0122) | Jaccard top-50 0.01 | weight in 6-ones sector trot 0.222 ctrl 0.226 (binomial 0.226) | distinct strings 2063/2129
+  seed 109: log10 err  AS trot +0.44  RND trot +0.99  STD trot +1.14  AS ctrl +0.36  RND ctrl +0.96  AS ideal-sim -0.18  AS uniform-sim +0.76 | top-50 ground weight trot 0.0006 ctrl 0.0031 (uniform expect 0.0122) | Jaccard top-50 0.01 | weight in 6-ones sector trot 0.227 ctrl 0.236 (binomial 0.226) | distinct strings 2102/2122
+  AS trot - STD trot: -0.931 [-1.233, -0.628] -> BELOW (descriptive)
+  AS ctrl - RND ctrl (same contrast on no-gate samples): -0.720 [-0.997, -0.444] -> BELOW (descriptive)
+  AS trot - AS uniform-sim: +0.067 [-0.369, +0.502] -> CANNOT_TELL (descriptive)
+  AS ideal-sim - AS uniform-sim (zero QPU): -0.022 [-0.582, +0.539] -> CANNOT_TELL (descriptive)
+  paper's 5 seeds only (100..104), D1: -0.693 [-1.409, +0.023] t(4) -> CANNOT_TELL (descriptive)
+  paper's 5 seeds only (100..104), D2: +0.185 [-0.888, +1.258] t(4) -> CANNOT_TELL (descriptive)
+  median abs energy error over 10 instances: AS trot 2.195, RND trot 8.890, STD trot 14.600, AS ctrl 1.746

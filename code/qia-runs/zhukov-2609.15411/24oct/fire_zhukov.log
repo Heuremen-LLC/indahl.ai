@@ -1,0 +1,16 @@
+ibm_kingston: 86 circuits (76 his + 10 ours), 1024 shots, 4 jobs A1 B1 B2 A2, physical qubits 18 [2, 3, 16, 21, 36, 38, 41, 49, 50, 67, 68, 69, 96, 103, 104, 109, 118, 129], 22 directed two-qubit edges, ops ['cz', 'delay', 'measure', 'rz', 'sx', 'x'], operational True, layout available on kingston today, est 98 s (cap 150), remaining 1081
+   lane 0 [16, 3, 2]
+   lane 1 [21, 36, 41]
+   lane 2 [96, 103, 104]
+   lane 3 [69, 68, 67]
+   lane 5 [129, 118, 109]
+   lane 6 [38, 49, 50]
+SUBMITTED job A1 dbe5kkfpc3tc739l5efg 2026-10-24T07:12:17Z (remaining before 1081)
+DONE job A1 usage 26 s (total 26)
+SUBMITTED job B1 dbe5ktngdj9s73fl8d9g 2026-10-24T07:12:55Z (remaining before 1055)
+DONE job B1 usage 26 s (total 52)
+SUBMITTED job B2 dbe5l6nsstms73fbhf3g 2026-10-24T07:13:30Z (remaining before 1029)
+DONE job B2 usage 26 s (total 78)
+SUBMITTED job A2 dbe5llnpc3tc739l5fqg 2026-10-24T07:14:30Z (remaining before 1003)
+DONE job A2 usage 26 s (total 104)
+ALL DONE 104 s

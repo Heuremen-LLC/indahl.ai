@@ -1,0 +1,13 @@
+(i) result-metadata pub_index (and spec for 005) equals the assumed set row for 304 of 304 his-circuit results over 4 jobs (mismatches 0)
+
+(ii)/(iii) signed phase error (deg), strang8 r=8 and exact, Jt=4/3, every science chain: IDEAL(my statevector) | HIS round0 round1 | OURS jobs A1 B1 B2 A2
+  strang8 lane 1 [21, 36, 41]: ideal   +1.53 | his  -36.43  -37.84 | ours   +0.71   -1.19   +8.12   +6.72
+  strang8 lane 2 [96, 103, 104]: ideal   +1.53 | his  +43.25  +38.99 | ours   -9.65   -4.97   -2.53   -2.55
+  strang8 lane 3 [69, 68, 67]: ideal   +1.53 | his  +43.35  +49.95 | ours  -46.62  -46.40  -46.86  -47.20
+  strang8 lane 5 [129, 118, 109]: ideal   +1.53 | his   -9.93   -1.04 | ours   +6.01   +7.55   +6.70   +4.77
+  strang8 lane 6 [38, 49, 50]: ideal   +1.53 | his  +34.22  +36.32 | ours  -10.72  -11.55  -17.04  -14.14
+  exact   lane 1 [21, 36, 41]: ideal   -0.00 | his   +0.41   +4.55 | ours   -2.97   -2.24   -0.94   -2.82
+  exact   lane 2 [96, 103, 104]: ideal   -0.00 | his   +3.80   +3.06 | ours  -30.49  -29.51  -31.96  -31.24
+  exact   lane 3 [69, 68, 67]: ideal   -0.00 | his   +5.67   +0.05 | ours   -2.47   +0.18   +0.68   -3.31
+  exact   lane 5 [129, 118, 109]: ideal   -0.00 | his   -6.78  -10.73 | ours   -3.67   -5.35   -1.93   -4.29
+  exact   lane 6 [38, 49, 50]: ideal   -0.00 | his   -0.92   +5.17 | ours   +1.35   +1.24   +2.48   +1.31

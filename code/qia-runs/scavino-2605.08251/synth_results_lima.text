@@ -1,0 +1,136 @@
+== NEITHER
+R1 DRIFT mae(l=1)        = -0.00463 [-0.01176, +0.00233] shot-null [-0.00722, +0.00705] -> CONSISTENT
+R2 SPLIT A (l1 first)    = -0.00022 [-0.01009, +0.00957] shot-null [-0.01027, +0.01004] -> CONSISTENT
+R2 SPLIT B (l3 first)    = +0.00076 [-0.00916, +0.01073] shot-null [-0.01041, +0.01015] -> CONSISTENT
+R2C LINEAR-FREE          = +0.00027 [-0.00818, +0.00832] shot-null [-0.00868, +0.00843] -> CONSISTENT
+R3 GAIN P2-P1            = +0.00196 [-0.00439, +0.00802] shot-null [-0.00595, +0.00551] -> CONSISTENT
+R4 |dZNE| S1             = +0.01120 [+0.00437, +0.01860] shot-null [+0.00703, +0.01933] -> CONSISTENT
+R4 |dZNE| S2             = +0.00855 [+0.00235, +0.01617] shot-null [+0.00710, +0.01950] -> CONSISTENT
+R4 SHARE  max D_k / his published gain 0.03635 = 0.308  (shot-noise floor 0.346; within-job gain P1 +0.03508, P2 +0.03705; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 10/10, P2 9/10
+   TRUE (noise-free): R1 DRIFT mae(l=1) +0.0000, R2 SPLIT A (l1 first) +0.0000, R2 SPLIT B (l3 first) +0.0000, R2C LINEAR-FREE +0.0000, R3 GAIN P2-P1 +0.0000, R4 |dZNE| S1 +0.0000, R4 |dZNE| S2 +0.0000
+   R1 DRIFT mae(l=1)        expect CONSISTENT  got {'ABOVE': 1, 'CONSISTENT': 39} (98% as expected)  -> ok
+   R2 SPLIT A (l1 first)    expect CONSISTENT  got {'ABOVE': 1, 'CONSISTENT': 39} (98% as expected)  -> ok
+   R2 SPLIT B (l3 first)    expect CONSISTENT  got {'ABOVE': 1, 'BELOW': 3, 'CONSISTENT': 36} (90% as expected)  -> ok
+   R2C LINEAR-FREE          expect CONSISTENT  got {'ABOVE': 2, 'CONSISTENT': 38} (95% as expected)  -> ok
+   R3 GAIN P2-P1            expect CONSISTENT  got {'ABOVE': 1, 'BELOW': 1, 'CONSISTENT': 38} (95% as expected)  -> ok
+   R4 |dZNE| S1             expect CONSISTENT  got {'CONSISTENT': 40} (100% as expected)  -> ok
+   R4 |dZNE| S2             expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 39} (98% as expected)  -> ok
+== EFFECT only (S jobs +6 % noise, no drift)
+R1 DRIFT mae(l=1)        = +0.00438 [-0.00269, +0.01180] shot-null [-0.00731, +0.00691] -> CONSISTENT
+R2 SPLIT A (l1 first)    = +0.03342 [+0.02305, +0.04379] shot-null [-0.00978, +0.00972] -> ABOVE
+R2 SPLIT B (l3 first)    = +0.02624 [+0.01618, +0.03596] shot-null [-0.00953, +0.01017] -> ABOVE
+R2C LINEAR-FREE          = +0.02983 [+0.02135, +0.03789] shot-null [-0.00805, +0.00822] -> ABOVE
+R3 GAIN P2-P1            = +0.00096 [-0.00633, +0.00852] shot-null [-0.00515, +0.00549] -> CONSISTENT
+R4 |dZNE| S1             = +0.03342 [+0.02425, +0.04338] shot-null [+0.00734, +0.01918] -> ABOVE
+R4 |dZNE| S2             = +0.03067 [+0.02214, +0.04018] shot-null [+0.00720, +0.01900] -> ABOVE
+R4 SHARE  max D_k / his published gain 0.03635 = 0.920  (shot-noise floor 0.346; within-job gain P1 +0.03507, P2 +0.03604; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 10/10, P2 9/10
+   TRUE (noise-free): R1 DRIFT mae(l=1) +0.0000, R2 SPLIT A (l1 first) +0.0282, R2 SPLIT B (l3 first) +0.0282, R2C LINEAR-FREE +0.0282, R3 GAIN P2-P1 +0.0000, R4 |dZNE| S1 +0.0282, R4 |dZNE| S2 +0.0282
+   R1 DRIFT mae(l=1)        expect CONSISTENT  got {'ABOVE': 2, 'BELOW': 2, 'CONSISTENT': 36} (90% as expected)  -> ok
+   R2 SPLIT A (l1 first)    expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R2 SPLIT B (l3 first)    expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R2C LINEAR-FREE          expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R3 GAIN P2-P1            expect CONSISTENT  got {'BELOW': 3, 'CONSISTENT': 37} (92% as expected)  -> ok
+   R4 |dZNE| S1             expect GREY        got {'ABOVE': 39, 'CONSISTENT': 1} (0% as expected) [not scored] -> ok
+   R4 |dZNE| S2             expect GREY        got {'ABOVE': 38, 'CONSISTENT': 2} (0% as expected) [not scored] -> ok
+== DRIFT step (+8 % noise after job index 2)
+R1 DRIFT mae(l=1)        = +0.03543 [+0.02871, +0.04316] shot-null [-0.00733, +0.00751] -> ABOVE
+R2 SPLIT A (l1 first)    = -0.01516 [-0.02493, -0.00519] shot-null [-0.00955, +0.00972] -> BELOW
+R2 SPLIT B (l3 first)    = +0.02943 [+0.01943, +0.03994] shot-null [-0.01004, +0.01004] -> ABOVE
+R2C LINEAR-FREE          = +0.00713 [-0.00064, +0.01587] shot-null [-0.00817, +0.00804] -> CONSISTENT
+R3 GAIN P2-P1            = +0.00142 [-0.00571, +0.00838] shot-null [-0.00524, +0.00489] -> CONSISTENT
+R4 |dZNE| S1             = +0.02184 [+0.01433, +0.03038] shot-null [+0.00758, +0.01930] -> ABOVE
+R4 |dZNE| S2             = +0.02943 [+0.02068, +0.03877] shot-null [+0.00718, +0.01932] -> ABOVE
+R4 SHARE  max D_k / his published gain 0.03635 = 0.810  (shot-noise floor 0.349; within-job gain P1 +0.03086, P2 +0.03228; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 9/10, P2 10/10
+   TRUE (noise-free): R1 DRIFT mae(l=1) +0.0332, R2 SPLIT A (l1 first) -0.0188, R2 SPLIT B (l3 first) +0.0188, R2C LINEAR-FREE -0.0000, R3 GAIN P2-P1 -0.0025, R4 |dZNE| S1 +0.0188, R4 |dZNE| S2 +0.0188
+   R1 DRIFT mae(l=1)        expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R2 SPLIT A (l1 first)    expect GREY        got {'BELOW': 40} (0% as expected) [not scored] -> ok
+   R2 SPLIT B (l3 first)    expect GREY        got {'ABOVE': 39, 'CONSISTENT': 1} (0% as expected) [not scored] -> ok
+   R2C LINEAR-FREE          expect CONSISTENT  got {'CONSISTENT': 40} (100% as expected)  -> ok
+   R3 GAIN P2-P1            expect GREY        got {'ABOVE': 1, 'BELOW': 3, 'CONSISTENT': 36} (0% as expected) [not scored] -> ok
+   R4 |dZNE| S1             expect GREY        got {'ABOVE': 31, 'CONSISTENT': 9} (0% as expected) [not scored] -> ok
+   R4 |dZNE| S2             expect GREY        got {'ABOVE': 21, 'CONSISTENT': 19} (0% as expected) [not scored] -> ok
+== DRIFT linear (+2 % noise per job)
+R1 DRIFT mae(l=1)        = +0.03696 [+0.02950, +0.04372] shot-null [-0.00705, +0.00702] -> ABOVE
+R2 SPLIT A (l1 first)    = -0.01179 [-0.02158, -0.00238] shot-null [-0.00963, +0.00961] -> BELOW
+R2 SPLIT B (l3 first)    = +0.02004 [+0.00969, +0.03024] shot-null [-0.01036, +0.01042] -> ABOVE
+R2C LINEAR-FREE          = +0.00412 [-0.00423, +0.01226] shot-null [-0.00807, +0.00813] -> CONSISTENT
+R3 GAIN P2-P1            = +0.00902 [+0.00152, +0.01653] shot-null [-0.00504, +0.00509] -> ABOVE
+R4 |dZNE| S1             = +0.01333 [+0.00590, +0.02153] shot-null [+0.00701, +0.01936] -> CONSISTENT
+R4 |dZNE| S2             = +0.02181 [+0.01408, +0.03073] shot-null [+0.00737, +0.01959] -> ABOVE
+R4 SHARE  max D_k / his published gain 0.03635 = 0.600  (shot-noise floor 0.349; within-job gain P1 +0.02737, P2 +0.03639; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 9/10, P2 10/10
+   TRUE (noise-free): R1 DRIFT mae(l=1) +0.0419, R2 SPLIT A (l1 first) -0.0177, R2 SPLIT B (l3 first) +0.0177, R2C LINEAR-FREE -0.0000, R3 GAIN P2-P1 -0.0033, R4 |dZNE| S1 +0.0177, R4 |dZNE| S2 +0.0177
+   R1 DRIFT mae(l=1)        expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R2 SPLIT A (l1 first)    expect GREY        got {'BELOW': 37, 'CONSISTENT': 3} (0% as expected) [not scored] -> ok
+   R2 SPLIT B (l3 first)    expect GREY        got {'ABOVE': 38, 'CONSISTENT': 2} (0% as expected) [not scored] -> ok
+   R2C LINEAR-FREE          expect CONSISTENT  got {'ABOVE': 2, 'CONSISTENT': 38} (95% as expected)  -> ok
+   R3 GAIN P2-P1            expect GREY        got {'BELOW': 4, 'CONSISTENT': 36} (0% as expected) [not scored] -> ok
+   R4 |dZNE| S1             expect GREY        got {'ABOVE': 17, 'CONSISTENT': 23} (0% as expected) [not scored] -> ok
+   R4 |dZNE| S2             expect GREY        got {'ABOVE': 21, 'CONSISTENT': 19} (0% as expected) [not scored] -> ok
+== BOTH (linear drift + S jobs +6 %)
+R1 DRIFT mae(l=1)        = +0.04007 [+0.03263, +0.04736] shot-null [-0.00733, +0.00739] -> ABOVE
+R2 SPLIT A (l1 first)    = +0.01245 [+0.00256, +0.02261] shot-null [-0.01019, +0.01007] -> ABOVE
+R2 SPLIT B (l3 first)    = +0.04170 [+0.03196, +0.05166] shot-null [-0.00987, +0.01002] -> ABOVE
+R2C LINEAR-FREE          = +0.02708 [+0.01912, +0.03523] shot-null [-0.00814, +0.00817] -> ABOVE
+R3 GAIN P2-P1            = +0.00084 [-0.00508, +0.00719] shot-null [-0.00502, +0.00503] -> CONSISTENT
+R4 |dZNE| S1             = +0.01491 [+0.00775, +0.02280] shot-null [+0.00730, +0.01941] -> CONSISTENT
+R4 |dZNE| S2             = +0.04170 [+0.03222, +0.05169] shot-null [+0.00750, +0.01912] -> ABOVE
+R4 SHARE  max D_k / his published gain 0.03635 = 1.147  (shot-noise floor 0.352; within-job gain P1 +0.03324, P2 +0.03408; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 10/10, P2 10/10
+   TRUE (noise-free): R1 DRIFT mae(l=1) +0.0419, R2 SPLIT A (l1 first) +0.0105, R2 SPLIT B (l3 first) +0.0459, R2C LINEAR-FREE +0.0282, R3 GAIN P2-P1 -0.0033, R4 |dZNE| S1 +0.0105, R4 |dZNE| S2 +0.0459
+   R1 DRIFT mae(l=1)        expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R2 SPLIT A (l1 first)    expect GREY        got {'ABOVE': 23, 'CONSISTENT': 17} (0% as expected) [not scored] -> ok
+   R2 SPLIT B (l3 first)    expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R2C LINEAR-FREE          expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+   R3 GAIN P2-P1            expect GREY        got {'ABOVE': 1, 'BELOW': 3, 'CONSISTENT': 36} (0% as expected) [not scored] -> ok
+   R4 |dZNE| S1             expect GREY        got {'ABOVE': 11, 'BELOW': 1, 'CONSISTENT': 28} (0% as expected) [not scored] -> ok
+   R4 |dZNE| S2             expect ABOVE       got {'ABOVE': 40} (100% as expected)  -> ok
+== SMALL linear (+0.15 % per job, below detection)
+R1 DRIFT mae(l=1)        = -0.00505 [-0.01237, +0.00243] shot-null [-0.00734, +0.00711] -> CONSISTENT
+R2 SPLIT A (l1 first)    = +0.00076 [-0.00945, +0.01068] shot-null [-0.01001, +0.00995] -> CONSISTENT
+R2 SPLIT B (l3 first)    = +0.00293 [-0.00699, +0.01243] shot-null [-0.01015, +0.00982] -> CONSISTENT
+R2C LINEAR-FREE          = +0.00184 [-0.00623, +0.00967] shot-null [-0.00825, +0.00803] -> CONSISTENT
+R3 GAIN P2-P1            = +0.00011 [-0.00699, +0.00686] shot-null [-0.00622, +0.00686] -> CONSISTENT
+R4 |dZNE| S1             = +0.01268 [+0.00529, +0.02136] shot-null [+0.00730, +0.01948] -> CONSISTENT
+R4 |dZNE| S2             = +0.00787 [+0.00179, +0.01584] shot-null [+0.00753, +0.01894] -> CONSISTENT
+R4 SHARE  max D_k / his published gain 0.03635 = 0.349  (shot-noise floor 0.345; within-job gain P1 +0.03171, P2 +0.03182; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 9/10, P2 9/10
+   TRUE (noise-free): R1 DRIFT mae(l=1) +0.0026, R2 SPLIT A (l1 first) -0.0013, R2 SPLIT B (l3 first) +0.0013, R2C LINEAR-FREE -0.0000, R3 GAIN P2-P1 -0.0003, R4 |dZNE| S1 +0.0013, R4 |dZNE| S2 +0.0013
+   R1 DRIFT mae(l=1)        expect GREY        got {'ABOVE': 3, 'CONSISTENT': 37} (0% as expected) [not scored] -> ok
+   R2 SPLIT A (l1 first)    expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 39} (98% as expected)  -> ok
+   R2 SPLIT B (l3 first)    expect CONSISTENT  got {'ABOVE': 3, 'CONSISTENT': 37} (92% as expected)  -> ok
+   R2C LINEAR-FREE          expect CONSISTENT  got {'CONSISTENT': 40} (100% as expected)  -> ok
+   R3 GAIN P2-P1            expect CONSISTENT  got {'CONSISTENT': 40} (100% as expected)  -> ok
+   R4 |dZNE| S1             expect CONSISTENT  got {'ABOVE': 1, 'BELOW': 1, 'CONSISTENT': 38} (95% as expected)  -> ok
+   R4 |dZNE| S2             expect CONSISTENT  got {'ABOVE': 3, 'CONSISTENT': 37} (92% as expected)  -> ok
+== LOW SHOTS (NEITHER at 60 shots)
+R1 DRIFT mae(l=1)        = -0.02212 [-0.07102, +0.02488] shot-null [-0.04991, +0.05142] -> CANNOT_TELL
+R2 SPLIT A (l1 first)    = +0.10417 [+0.02756, +0.18865] shot-null [-0.08184, +0.08211] -> CANNOT_TELL
+R2 SPLIT B (l3 first)    = +0.04156 [-0.03951, +0.12338] shot-null [-0.08105, +0.08661] -> CANNOT_TELL
+R2C LINEAR-FREE          = +0.07286 [+0.00898, +0.14021] shot-null [-0.06605, +0.06848] -> CANNOT_TELL
+R3 GAIN P2-P1            = -0.01185 [-0.05875, +0.03842] shot-null [-0.04264, +0.04053] -> CANNOT_TELL
+R4 |dZNE| S1             = +0.13668 [+0.07233, +0.20557] shot-null [+0.05885, +0.15908] -> CANNOT_TELL
+R4 |dZNE| S2             = +0.07240 [+0.01859, +0.13431] shot-null [+0.05964, +0.15912] -> CANNOT_TELL
+R4 SHARE  max D_k / his published gain 0.03635 = 3.760  (shot-noise floor 2.874; within-job gain P1 +0.00853, P2 -0.00333; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 7/10, P2 6/10
+   TRUE (noise-free): R1 DRIFT mae(l=1) +0.0000, R2 SPLIT A (l1 first) +0.0000, R2 SPLIT B (l3 first) +0.0000, R2C LINEAR-FREE +0.0000, R3 GAIN P2-P1 +0.0000, R4 |dZNE| S1 +0.0000, R4 |dZNE| S2 +0.0000
+   R1 DRIFT mae(l=1)        expect CANNOT_TELL got {'CANNOT_TELL': 40} (100% as expected)  -> ok
+   R2 SPLIT A (l1 first)    expect CANNOT_TELL got {'CANNOT_TELL': 40} (100% as expected)  -> ok
+   R2 SPLIT B (l3 first)    expect CANNOT_TELL got {'CANNOT_TELL': 40} (100% as expected)  -> ok
+   R2C LINEAR-FREE          expect CANNOT_TELL got {'CANNOT_TELL': 40} (100% as expected)  -> ok
+   R3 GAIN P2-P1            expect CANNOT_TELL got {'CANNOT_TELL': 40} (100% as expected)  -> ok
+   R4 |dZNE| S1             expect CANNOT_TELL got {'CANNOT_TELL': 40} (100% as expected)  -> ok
+   R4 |dZNE| S2             expect CANNOT_TELL got {'CANNOT_TELL': 40} (100% as expected)  -> ok
+
+SYNTHETIC TABLE (40 runs per world)
+  PASS  NEITHER
+  PASS  EFFECT only (S jobs +6 % noise, no drift)
+  PASS  DRIFT step (+8 % noise after job index 2)
+  PASS  DRIFT linear (+2 % noise per job)
+  PASS  BOTH (linear drift + S jobs +6 %)
+  PASS  SMALL linear (+0.15 % per job, below detection)
+  PASS  LOW SHOTS (NEITHER at 60 shots)
+ALL WORLDS PASS

@@ -1,0 +1,1 @@
+ibm_marrakesh: 20 circuits (10 graphs x lambda 1,3), 4000 shots, 6 jobs P1 S1(l1,l3) S2(l3,l1) P2, physical qubits [(0, 1, 2, 3, 4)] (1 distinct), gate counts equal to his transpile in 20/20, est 110 s (cap 300), remaining 1719

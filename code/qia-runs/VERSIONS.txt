@@ -1,0 +1,1 @@
+Python 3.12.13; qiskit 2.5.2; qiskit-ibm-runtime 0.49.0; numpy 2.5.3; scipy 1.18.1

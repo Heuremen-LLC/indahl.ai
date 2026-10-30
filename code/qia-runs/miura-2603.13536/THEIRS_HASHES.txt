@@ -1,0 +1,6 @@
+058bc2ca3485d91581cf499d3627cf4d5721ae1f3cbe6f05e5ed3c26441052bf  main.py
+baad27d5480d7732b8b8955626c7ae74cadac6e7796f200cc585e992da530b75  build_2.py
+a62d4d12027b0861c84f77311726fcf87f85c7c1ae1fca5bedd12492b6391fb6  README.md
+a08db3911ebd045ee1fc8686d1089d4038bd9ebed204f4b66405b7f67ce3ea87  requirements.txt
+c14bdc16c9959cd5018e886632b86ded9dbdb4de
+repo https://github.com/G0wOz1PV/SQD; build_2.py.txt has line 317 (login call) replaced; .txt suffix so nothing here is importable

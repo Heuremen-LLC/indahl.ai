@@ -1,0 +1,17 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:30:20,536: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 22:30:24,153: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (pay-as-you-go, open), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:30:24,153: Loading account with the given token. A saved account will not be used.
+ibm_fez: 20 circuits (10 graphs x lambda 1,3), 4000 shots, 6 jobs P1 S1(l1,l3) S2(l3,l1) P2, physical qubits [(0, 1, 2, 3, 4)] (1 distinct), gate counts equal to his transpile in 20/20, est 110 s (cap 300), remaining 2501
+SUBMITTED job P1 dbemji0m94ac738s42eg 2026-10-25T02:30:32Z
+DONE job P1 usage 23 s (total 23)
+SUBMITTED job S1a dbemjp8m94ac738s431g 2026-10-25T02:31:01Z
+DONE job S1a usage 13 s (total 36)
+SUBMITTED job S1b dbemjtvpc3tc739m0bb0 2026-10-25T02:31:19Z
+DONE job S1b usage 13 s (total 49)
+SUBMITTED job S2a dbemk2ngdj9s73fm38lg 2026-10-25T02:31:38Z
+DONE job S2a usage 13 s (total 62)
+SUBMITTED job S2b dbemk7fsstms73fcc8ng 2026-10-25T02:31:57Z
+DONE job S2b usage 13 s (total 75)
+SUBMITTED job P2 dbemkbvgdj9s73fm39pg 2026-10-25T02:32:15Z
+DONE job P2 usage 23 s (total 98)
+ALL DONE 98 s

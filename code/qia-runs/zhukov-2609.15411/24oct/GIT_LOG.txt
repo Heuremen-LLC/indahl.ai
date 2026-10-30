@@ -1,0 +1,4 @@
+Commit history of this run folder (plan commits come before the first job):
+5e14dac  2026-10-24T03:11:41-04:00  Plan and code for free calibration run, Zhukov (kingston), before any job
+ec181ec  2026-10-24T03:15:40-04:00  RESULT: Zhukov free run; chain-C sign flagged
+94fa7c9  2026-10-24T03:19:58-04:00  RESULT correction: chain-C sign flip is device (signcheck), signed BELOW stands

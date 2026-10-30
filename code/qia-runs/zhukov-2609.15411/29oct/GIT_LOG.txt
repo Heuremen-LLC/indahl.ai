@@ -1,0 +1,6 @@
+Commit history of this run folder (plan commits come before the first job):
+445b9ce  2026-10-29T19:14:01-04:00  Plan for the 29 Oct repeat of the Zhukov run (same circuits, new date) and the date reading, before any job
+d62e4e2  2026-10-29T19:16:06-04:00  Zhukov repeat Addendum 1 from /q before any result: D_DATE floor measured (0/200), mechanism and sign lines
+5694d67  2026-10-29T19:16:15-04:00  Addendum 1 header corrected: A1 raw file landed during the floor test, unread
+60faaf0  2026-10-29T19:18:15-04:00  Zhukov repeat results: Strang r=8 phase -9.3 (24 Oct -46.8, Sep +46.3) ABOVE across dates; exact circuit CONSISTENT; q16 BELOW stated
+3e92759  2026-10-29T19:21:35-04:00  Zhukov gift: README, compact zip (both nights), draft in his mailbox

@@ -1,0 +1,145 @@
+== NEITHER (200 runs)
+   A q16 packed prep0                                                                           expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+   A q16 packed prep1                                                                           expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+   A q16 solo prep0                                                                             expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+   A q16 solo prep1                                                                             expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+   S0 MM prep0                                                                                  expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+   S1 MM prep1                                                                                  expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect CONSISTENT  got {'ABOVE': 1, 'BELOW': 2, 'CONSISTENT': 197} (98% as expected; false rate 2%) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CONSISTENT  got {'ABOVE': 1, 'BELOW': 3, 'CONSISTENT': 196} (98% as expected; false rate 2%) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CONSISTENT  got {'BELOW': 5, 'CONSISTENT': 195} (98% as expected; false rate 3%) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'ABOVE': 1, 'BELOW': 1, 'CONSISTENT': 198} (99% as expected; false rate 1%) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect CONSISTENT  got {'CONSISTENT': 200} (100% as expected; false rate 0%) -> ok
+== ANOMALY read-out flavour (60 runs)
+   A q16 packed prep0                                                                           expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 solo prep0                                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CONSISTENT  got {'CONSISTENT': 58, 'CANNOT_TELL': 2} (97% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+== ANOMALY state flavour (60 runs)
+   A q16 packed prep0                                                                           expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 solo prep0                                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect BELOW       got {'BELOW': 59, 'CANNOT_TELL': 1} (98% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+== DRIFT (job-level mixing, +0.02 per job) (60 runs)
+   A q16 packed prep0                                                                           expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect CONSISTENT  got {'ABOVE': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   A q16 solo prep0                                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   S0 MM prep0                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect BELOW       got {'CONSISTENT': 55, 'CANNOT_TELL': 5} (0% as expected) -> FAIL/Users/heuremen/bones-forge/qia_runs/2026-10-24-fill-zhukov/zhukov.py:128: RuntimeWarning: invalid value encountered in sqrt
+  cov = (np.diag(p) - np.outer(p, p)) / n; se = float(np.sqrt(grad @ cov @ grad)); return float(g), se
+
+== SLOT apparatus artefact (+0.001 noise per circuit position) (60 runs)
+   A q16 packed prep0                                                                           expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 solo prep0                                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect CONSISTENT  got {'ABOVE': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+== PHASE (+25 deg on Strang r=8) (60 runs)
+   A q16 packed prep0                                                                           expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 solo prep0                                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect CONSISTENT  got {'ABOVE': 3, 'CONSISTENT': 57} (95% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CONSISTENT  got {'ABOVE': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect CONSISTENT  got {'ABOVE': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+== BELOW (stated record far above delivered) (60 runs)
+   A q16 packed prep0                                                                           expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   A q16 solo prep0                                                                             expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect CONSISTENT  got {'ABOVE': 1, 'BELOW': 1, 'CONSISTENT': 58} (97% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+== BOTH (state anomaly + drift + phase) (60 runs)
+   A q16 packed prep0                                                                           expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 solo prep0                                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect BELOW       got {'BELOW': 60} (100% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect ABOVE       got {'ABOVE': 60} (100% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect BELOW       got {'CONSISTENT': 57, 'CANNOT_TELL': 3} (0% as expected) -> FAIL
+== LOW SHOTS (12 per circuit, anomaly on) (60 runs)
+   A q16 packed prep0                                                                           expect CANNOT_TELL got {'ABOVE': 13, 'CANNOT_TELL': 47} (78% as expected) -> FAIL
+   A q16 packed prep1                                                                           expect CANNOT_TELL got {'ABOVE': 37, 'CANNOT_TELL': 23} (38% as expected) -> FAIL
+   A q16 solo prep0                                                                             expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect CANNOT_TELL got {'CONSISTENT': 2, 'CANNOT_TELL': 58} (97% as expected) -> ok
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect CANNOT_TELL got {'BELOW': 1, 'CONSISTENT': 59} (0% as expected) -> FAIL
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect CANNOT_TELL got {'CANNOT_TELL': 60} (100% as expected) -> ok
+== SMALL drift (+0.001 per job; reported, not scored) (60 runs)
+   A q16 packed prep0                                                                           expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 packed prep1                                                                           expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 solo prep0                                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   A q16 solo prep1                                                                             expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S0 MM prep0                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   S1 MM prep1                                                                                  expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   D0 DLY prep0 100us minus none                                                                expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   B_WITHIN median T (A1|A2, B1|B2)                                                             expect GREY (not scored) got {'ABOVE': 3, 'BELOW': 1, 'CONSISTENT': 56}
+   B_SLOT median T (A1+A2 | B1+B2)                                                              expect GREY (not scored) got {'CONSISTENT': 60}
+   C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+   C_EXACT signed phase error at Jt=4/3 (deg)                                                   expect CONSISTENT  got {'CONSISTENT': 60} (100% as expected) -> ok
+   C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      expect CONSISTENT  got {'BELOW': 1, 'CONSISTENT': 59} (98% as expected) -> ok
+
+SYNTHETIC TABLE (200 runs NEITHER, 60 per other world)
+  PASS  NEITHER
+  PASS  ANOMALY read-out flavour
+  PASS  ANOMALY state flavour
+  FAIL  DRIFT (job-level mixing, +0.02 per job)
+  PASS  SLOT apparatus artefact (+0.001 noise per circuit position)
+  PASS  PHASE (+25 deg on Strang r=8)
+  PASS  BELOW (stated record far above delivered)
+  FAIL  BOTH (state anomaly + drift + phase)
+  FAIL  LOW SHOTS (12 per circuit, anomaly on)
+  PASS  SMALL drift (+0.001 per job; reported, not scored)  (reported, not scored)
+NOT ALL WORLDS PASS

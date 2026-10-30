@@ -1,0 +1,12 @@
+ADDENDUM 2 (24 Oct 2026, the run seat, written BEFORE any hardware counts were read; analysis code unchanged except a folder argument)
+ADDENDUM 1 is wrong on the facts: attempt 1 DID submit. Job dbeecdvgdj9s73flkcn0 was created 17:09:12Z (after the plan commit ae74781, 17:08:57Z),
+queued to 17:48:24Z, finished 17:50:58Z, 19 s billed. Its SUBMITTED line sat in the log filter's buffer (grep through a pipe), so the
+folder log looked empty; the unbuffered output is kept in job1_dbeecdvgdj9s73flkcn0/fire_job1_unbuffered.log.
+A second seat read the empty log as a pre-submission failure and submitted job dbeesuom94ac738rmbs0 (created 17:44:27Z, after ADDENDUM 1 at
+17:44:12Z), same committed code, same ring, 19 s billed. TOTAL 38 s billed for this run: OVER THE 30 s CAP by 8 s (duplicate, not planned).
+Its process overwrote raw/job/props files in the folder; job 1's counts, metrics and the backend record at 17:09Z were re-pulled from IBM
+(src/fetch_job1.py, zero QPU) into job1_dbeecdvgdj9s73flkcn0/; job 2's files are in job2_dbeesuom94ac738rmbs0/.
+Reading rule, fixed now: job 1 is THE planned job and carries every scored reading and the headline. Job 2 is an unplanned copy under the
+same committed code; it is read the same way and printed as a COPY (/q 20: copies compared by their gap with a width), never pooled with
+job 1 and never allowed to change job 1's outcome. analyze.py takes the job folder as argv[1] (only change). Job 1's before-record is
+IBM's record AT 17:09Z (properties(datetime=)), not one saved in the moment (the saved one was overwritten); stated as such.
