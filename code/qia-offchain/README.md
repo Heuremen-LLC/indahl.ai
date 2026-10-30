@@ -12,3 +12,4 @@ Rules
 - Only from our committed runs with a job id. Entries are recounted by hand before they are added (book rule).
 - Order in the chain is the order added. Each entry also carries its measurement window, so older readings can be added later (backfill) and still be
   found by time.
+- Calibration-run entries are added by qia_cal/cal.py under qia_cal/PLAN.md, by its rule and not recounted by hand; each carries the sha256 of its full per-qubit file.

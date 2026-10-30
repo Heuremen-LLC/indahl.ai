@@ -1,0 +1,5 @@
+NULL world (IBM exactly right), 40 runs x 156 qubits: false calls per run p10 0.00, p01 0.00, t1 0.00; T1 cannot-tell per run 0.1
+PLANTED, found (of 10 qubits x 40 runs): readout x3 88%, T1 x0.4 100%, readout x0.25 52%, T1 x2.5 100%, BOTH on one qubit 88%; wrong direction 0
+SHORT T1 (true 2 us, shortest delay 15 us): ['CANNOT_TELL', 'CANNOT_TELL', 'CANNOT_TELL', 'CANNOT_TELL', 'CANNOT_TELL']
+GATE (all readout x4): known-good failed
+SYNTH PASSED
