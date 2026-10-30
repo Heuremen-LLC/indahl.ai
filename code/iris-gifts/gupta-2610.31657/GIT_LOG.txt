@@ -1,0 +1,4 @@
+5f51f7e 2026-10-30T16:58:04-04:00 Gift 2610.31657: referee reproduced all; G3 AUROC, Llama few-shot 0.601 only through parse failures (0.500 parsed); labels fixed; Check Block filed
+00e39f5 2026-10-30T16:57:48-04:00 Gift 2610.31657 Addendum 1: G3 AUROC on all and parsed replies, labels fixed; before computing
+a354877 2026-10-30T16:54:13-04:00 Gift 2610.31657 K1/G1/G2: accuracies rebuild; few-shot examples all show confidence 1.0 and three of four models then report 1.0 on nearly every ticket; Check Block filed
+03b6048 2026-10-30T16:53:24-04:00 Gift plan 2610.31657 (Gupta): K1 accuracy recount, G1 confidence against the few-shot examples, G2 accuracy intervals; committed before computing
