@@ -56,3 +56,6 @@ Quantum bits from IBM join the beacon as an extra input. The beacon's guarantee 
 
 ## Note 1 (29 Oct, on the first qbits entry)
 The plan says a beacon's previous-entry input is the entry before it. It is the feeds entry of the same run, and that is the entry before it except in a run where a qbits entry was written between them, which happened once (entries 22 and 23). The verifier now checks the real rule: the beacon's inputs are the root and the entry hash of the newest feeds entry before it. The tape was not changed. A qbits entry's root is its extracted value, and the verifier checks that against the leaves and, when the raw bits file is present, against its hash. The tick now writes qbits entries before feeds so the two are always adjacent.
+
+## Note (30 Oct 2026, from the site pass)
+After each run the rider starts tape_push.py in the background. It commits and pushes only code/tape in the public mirror, so that the leaf links on the page open soon after an entry is written and not at the next release. Nothing else in the mirror is committed. The push is skipped when the public repository holds newer commits, and the release script then pushes the folder with the rest. No rule changed.
