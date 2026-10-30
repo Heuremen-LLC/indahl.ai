@@ -109,6 +109,27 @@ def process(s, r, corrects=None):
     print('cal read', r['backend'], r['id'], kg['known_good'], 'off', len(off), 'chain head', head[:12], flush=True)
     return dict(job_id=r['id'], window_utc=win, qubits_read=len(qs), known_good=kg['known_good'], counts=counts, off=len(off),
                 median_readout_measured_over_stated=kg['median_readout_measured_over_stated'], median_t1_measured_over_stated=kg['median_t1_measured_over_stated']), m
+# Note 4 (30 Oct 2026): send when IBM's readout or T1 figures changed since our last job on this processor, or 6 hours have passed.
+FLOOR_H = 6.0
+def _sig(qubits):
+    out = []
+    for q in qubits or []:
+        v = {p.get('name'): p.get('value') for p in q if isinstance(p, dict)}
+        out.append(tuple(round(float(v[k]), 6) if v.get(k) is not None else None for k in ('T1', 'prob_meas1_prep0', 'prob_meas0_prep1', 'readout_error')))
+    return tuple(out)
+def due(be):
+    import gzip, glob as _g
+    last = [r for f in ('/data/runs.jsonl', '/data/runs_eu.jsonl') for r in rows(H + f) if r.get('backend') == be and r.get('sent')]
+    if not last: return True, 'no job yet'
+    last = max(last, key=lambda r: r['sent']); age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(last['sent'].replace('Z', '+00:00'))).total_seconds() / 3600
+    if age >= FLOOR_H: return True, 'last job %.1f h ago' % age
+    recs = sorted(_g.glob(B + '/qia_mirror/records/%s/*.json.gz' % be))
+    rp = H + '/data/rec_%s.json' % last['id']
+    if not recs or not os.path.exists(rp): return True, 'no record to compare'
+    try:
+        new = _sig(json.load(gzip.open(recs[-1])).get('qubits')); old = _sig((json.load(open(rp)).get('props') or {}).get('qubits'))
+    except Exception as e: return True, 'record unreadable ' + type(e).__name__
+    return (new != old), ('IBM readout or T1 changed since our last job' if new != old else 'IBM record unchanged, last job %.1f h ago' % age)
 def publish_latest(latest, waiting=None):   # Note 2: also lists jobs still waiting in IBM's queue, so an older reading says why it is older
     waiting = {r['backend']: r['sent'] for f in ('/data/runs.jsonl', '/data/runs_eu.jsonl') for r in rows(H + f) if r.get('state') == 'SENT'}   # 30 Oct B-7: both run files, so the EU collect no longer blanks the US list
     latest_p = H + '/data/latest.json'; old = json.load(open(latest_p)) if os.path.exists(latest_p) else {}; old.update(latest); json.dump(old, open(latest_p, 'w'), indent=1)
@@ -166,6 +187,9 @@ if __name__ == '__main__':
     names = [sys.argv[sys.argv.index('--one') + 1]] if '--one' in sys.argv else sorted(b.name for b in s.backends(operational=True, simulator=False))
     for n in names:
         if n in waiting: print('cal: %s still waiting, skipped' % n); continue
+        ok, why = due(n)
+        if not ok: print('cal: %s not due (%s)' % (n, why)); continue
+        print('cal: %s due (%s)' % (n, why))
         try: send(s, s.backend(n))
         except Exception as e: print('cal: send failed', n, type(e).__name__, str(e)[:160])
     print('cal: round done; account %s s' % rem)

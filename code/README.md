@@ -4,7 +4,6 @@ Scripts behind the tables on indahl.ai. Free to read, run and cite with attribut
 
 - `model/` builds and checks the model and hardware claims sources, one claims checker per source.
 - `iris/` holds the Faults and Guards bench (items, runner, scorer), the Falcon training plan and scripts, and the model claims round for SmolLM2.
-- `coin/` collects block records from public explorers, recomputes block hashes from header fields, and checks a chain's stated claims against its own record. It reads public data only.
 - `mirror/` mirrors the calibration IBM publishes and audits each record against itself, with an independent recount script.
 - `checks/` is the check block: the required fields every reading of ours answers before it is committed or published, the tool that writes and checks an entry, and a git pre-commit gate with a self-test.
 - `t1t2-check/` measures T1 and a Hahn echo T2 together on chosen qubits with your own IBM account and compares the ratio with 2. It prints the estimated QPU seconds first and does not submit without --yes.
@@ -18,7 +17,6 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [qia-queue/](qia-queue/): QIA: queue at each IBM processor, hourly - https://indahl.ai/qia
 - [archive/](archive/): Hash chain of our records, OpenTimestamps proofs and the Zenodo copies - https://indahl.ai/
 - [time/](time/): TIME: public time servers, stated against delivered - https://indahl.ai/time
-- [coin/](coin/): COIN: Ravencoin against its own whitepaper, with trends - https://indahl.ai/coin
 - [cada/](cada/): CADA: public DNS filters against fresh abuse reports - https://indahl.ai/cada
 - [uptime/](uptime/): UPTIME: vendor status pages against independent probes - https://indahl.ai/uptime
 - [forecast/](forecast/): FORECAST: stated chance of precipitation against what happened - https://indahl.ai/forecast

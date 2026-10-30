@@ -1132,8 +1132,8 @@
    },
    "data_centers": {
     "osm_features": 7,
-    "epoch_sites": 1,
-    "epoch_mw": 237
+    "epoch_sites": 0,
+    "epoch_mw": 0
    }
   },
   "OK": {
@@ -2856,8 +2856,8 @@
    },
    "data_centers": {
     "osm_features": 24,
-    "epoch_sites": 3,
-    "epoch_mw": 458
+    "epoch_sites": 4,
+    "epoch_mw": 695
    }
   },
   "NM": {
