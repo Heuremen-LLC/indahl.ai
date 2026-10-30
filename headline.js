@@ -2,7 +2,12 @@
 (function () {
   var path = location.pathname.replace(/\/+$/, '') || '/';
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-  function block(h) { return '<div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + esc(h.line) + '</p>'; }
+  function table(t) {   // 29 Oct 2026: a headline may carry a small table (QIA: every processor's queue)
+    if (!t) return ''; var th = t.cols.map(function (c, i) { return '<th' + (i ? ' class="r"' : '') + '>' + esc(c) + '</th>'; }).join('');
+    function row(r, tag) { return '<tr>' + r.map(function (c, i) { return '<' + tag + (i === 1 ? ' class="n"' : i > 1 ? ' class="w"' : '') + '>' + esc(c) + '</' + tag + '>'; }).join('') + '</tr>'; }
+    return '<table class="hl-tab"><thead><tr>' + th + '</tr></thead><tbody>' + t.rows.map(function (r) { return row(r, 'td'); }).join('') + '</tbody>' + (t.foot ? '<tfoot>' + row(t.foot, 'td') + '</tfoot>' : '') + '</table>' + (t.note ? '<p class="hl-tnote">' + esc(t.note) + '</p>' : '');
+  }
+  function block(h) { return '<div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + esc(h.line) + '</p>' + table(h.table); }
   // STACK: pick any two tests on the site and see how their shares stack. The number is the difference in points with its interval (Newcombe, from each test's own 95% interval).
   function stackPick(main) {
     fetch('/stack/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
