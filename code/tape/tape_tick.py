@@ -94,8 +94,10 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), read=1, count=le
            feeds=feedrec, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
 json.dump(out, open('summary_tape.json', 'w'), indent=1)
 os.makedirs(PUB + '/leaves', exist_ok=True)
-subprocess.run('cp tape.jsonl PLAN.md tape_tick.py tape_verify.py tapelib.py known_good.py %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
+subprocess.run('cp tape.jsonl PLAN.md tape_tick.py tape_push.py tape_verify.py tapelib.py known_good.py %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
 subprocess.run('mkdir -p %s/qbits/runs && cp qbits/PLAN_QBITS.md.text qbits/qbits_run.py qbits/synth_selftest.text %s/qbits/ && (cp qbits/runs/* %s/qbits/runs/ 2>/dev/null || true)' % (PUB, PUB, PUB), shell=True)
+# 30 Oct (site pass I-6): the chain files are pushed to the public repository in the background after each run, so the leaf links on the page open soon after an entry is written and not at the next release. Only code/tape is committed.
+if not os.environ.get('TAPE_NO_PUSH'): subprocess.Popen([sys.executable, '-I', os.path.join(H, 'tape_push.py')], stdout=open('push_last.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'tape_live', '--path', os.path.join(H, 'summary_tape.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('tape: entries', len(chain), 'head', last['entry'][:12], 'beacon', bv[:12], 'anchor n', anch['covers_n'], 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)
