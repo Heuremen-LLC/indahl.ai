@@ -1,0 +1,201 @@
+{
+    "bbh_cot_fewshot_boolean_expressions": {
+        "name": "bbh_cot_fewshot_boolean_expressions",
+        "alias": "bbh_cot_fewshot_boolean_expressions",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.92,
+        "exact_match_stderr,get-answer": 0.01719250794146297
+    },
+    "bbh_cot_fewshot_causal_judgement": {
+        "name": "bbh_cot_fewshot_causal_judgement",
+        "alias": "bbh_cot_fewshot_causal_judgement",
+        "sample_len": 187,
+        "exact_match,get-answer": 0.5775401069518716,
+        "exact_match_stderr,get-answer": 0.03621824020753356
+    },
+    "bbh_cot_fewshot_date_understanding": {
+        "name": "bbh_cot_fewshot_date_understanding",
+        "alias": "bbh_cot_fewshot_date_understanding",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.684,
+        "exact_match_stderr,get-answer": 0.02946265759857869
+    },
+    "bbh_cot_fewshot_disambiguation_qa": {
+        "name": "bbh_cot_fewshot_disambiguation_qa",
+        "alias": "bbh_cot_fewshot_disambiguation_qa",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.584,
+        "exact_match_stderr,get-answer": 0.03123585623701455
+    },
+    "bbh_cot_fewshot_dyck_languages": {
+        "name": "bbh_cot_fewshot_dyck_languages",
+        "alias": "bbh_cot_fewshot_dyck_languages",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.26,
+        "exact_match_stderr,get-answer": 0.027797315752644297
+    },
+    "bbh_cot_fewshot_formal_fallacies": {
+        "name": "bbh_cot_fewshot_formal_fallacies",
+        "alias": "bbh_cot_fewshot_formal_fallacies",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.356,
+        "exact_match_stderr,get-answer": 0.03034368065715321
+    },
+    "bbh_cot_fewshot_geometric_shapes": {
+        "name": "bbh_cot_fewshot_geometric_shapes",
+        "alias": "bbh_cot_fewshot_geometric_shapes",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.344,
+        "exact_match_stderr,get-answer": 0.03010450339231639
+    },
+    "bbh_cot_fewshot_hyperbaton": {
+        "name": "bbh_cot_fewshot_hyperbaton",
+        "alias": "bbh_cot_fewshot_hyperbaton",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.824,
+        "exact_match_stderr,get-answer": 0.024133497525457112
+    },
+    "bbh_cot_fewshot_logical_deduction_five_objects": {
+        "name": "bbh_cot_fewshot_logical_deduction_five_objects",
+        "alias": "bbh_cot_fewshot_logical_deduction_five_objects",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.368,
+        "exact_match_stderr,get-answer": 0.030562070620993163
+    },
+    "bbh_cot_fewshot_logical_deduction_seven_objects": {
+        "name": "bbh_cot_fewshot_logical_deduction_seven_objects",
+        "alias": "bbh_cot_fewshot_logical_deduction_seven_objects",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.024,
+        "exact_match_stderr,get-answer": 0.009699087026964254
+    },
+    "bbh_cot_fewshot_logical_deduction_three_objects": {
+        "name": "bbh_cot_fewshot_logical_deduction_three_objects",
+        "alias": "bbh_cot_fewshot_logical_deduction_three_objects",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.948,
+        "exact_match_stderr,get-answer": 0.01407039102564165
+    },
+    "bbh_cot_fewshot_movie_recommendation": {
+        "name": "bbh_cot_fewshot_movie_recommendation",
+        "alias": "bbh_cot_fewshot_movie_recommendation",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.648,
+        "exact_match_stderr,get-answer": 0.03026628805735994
+    },
+    "bbh_cot_fewshot_multistep_arithmetic_two": {
+        "name": "bbh_cot_fewshot_multistep_arithmetic_two",
+        "alias": "bbh_cot_fewshot_multistep_arithmetic_two",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.928,
+        "exact_match_stderr,get-answer": 0.016381005750490105
+    },
+    "bbh_cot_fewshot_navigate": {
+        "name": "bbh_cot_fewshot_navigate",
+        "alias": "bbh_cot_fewshot_navigate",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.896,
+        "exact_match_stderr,get-answer": 0.019345100974843914
+    },
+    "bbh_cot_fewshot_object_counting": {
+        "name": "bbh_cot_fewshot_object_counting",
+        "alias": "bbh_cot_fewshot_object_counting",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.92,
+        "exact_match_stderr,get-answer": 0.017192507941462973
+    },
+    "bbh_cot_fewshot_penguins_in_a_table": {
+        "name": "bbh_cot_fewshot_penguins_in_a_table",
+        "alias": "bbh_cot_fewshot_penguins_in_a_table",
+        "sample_len": 146,
+        "exact_match,get-answer": 0.5,
+        "exact_match_stderr,get-answer": 0.041522739926869986
+    },
+    "bbh_cot_fewshot_reasoning_about_colored_objects": {
+        "name": "bbh_cot_fewshot_reasoning_about_colored_objects",
+        "alias": "bbh_cot_fewshot_reasoning_about_colored_objects",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.556,
+        "exact_match_stderr,get-answer": 0.03148684942554575
+    },
+    "bbh_cot_fewshot_ruin_names": {
+        "name": "bbh_cot_fewshot_ruin_names",
+        "alias": "bbh_cot_fewshot_ruin_names",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.596,
+        "exact_match_stderr,get-answer": 0.031096688184825295
+    },
+    "bbh_cot_fewshot_salient_translation_error_detection": {
+        "name": "bbh_cot_fewshot_salient_translation_error_detection",
+        "alias": "bbh_cot_fewshot_salient_translation_error_detection",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.568,
+        "exact_match_stderr,get-answer": 0.031391810765429407
+    },
+    "bbh_cot_fewshot_snarks": {
+        "name": "bbh_cot_fewshot_snarks",
+        "alias": "bbh_cot_fewshot_snarks",
+        "sample_len": 178,
+        "exact_match,get-answer": 0.7359550561797753,
+        "exact_match_stderr,get-answer": 0.033134310776588426
+    },
+    "bbh_cot_fewshot_sports_understanding": {
+        "name": "bbh_cot_fewshot_sports_understanding",
+        "alias": "bbh_cot_fewshot_sports_understanding",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.816,
+        "exact_match_stderr,get-answer": 0.024555812994222558
+    },
+    "bbh_cot_fewshot_temporal_sequences": {
+        "name": "bbh_cot_fewshot_temporal_sequences",
+        "alias": "bbh_cot_fewshot_temporal_sequences",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.984,
+        "exact_match_stderr,get-answer": 0.007951661188874326
+    },
+    "bbh_cot_fewshot_tracking_shuffled_objects_five_objects": {
+        "name": "bbh_cot_fewshot_tracking_shuffled_objects_five_objects",
+        "alias": "bbh_cot_fewshot_tracking_shuffled_objects_five_objects",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.888,
+        "exact_match_stderr,get-answer": 0.01998553693917144
+    },
+    "bbh_cot_fewshot_tracking_shuffled_objects_seven_objects": {
+        "name": "bbh_cot_fewshot_tracking_shuffled_objects_seven_objects",
+        "alias": "bbh_cot_fewshot_tracking_shuffled_objects_seven_objects",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.68,
+        "exact_match_stderr,get-answer": 0.02956172495524104
+    },
+    "bbh_cot_fewshot_tracking_shuffled_objects_three_objects": {
+        "name": "bbh_cot_fewshot_tracking_shuffled_objects_three_objects",
+        "alias": "bbh_cot_fewshot_tracking_shuffled_objects_three_objects",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.968,
+        "exact_match_stderr,get-answer": 0.01115354680923083
+    },
+    "bbh_cot_fewshot_web_of_lies": {
+        "name": "bbh_cot_fewshot_web_of_lies",
+        "alias": "bbh_cot_fewshot_web_of_lies",
+        "sample_len": 250,
+        "exact_match,get-answer": 1.0,
+        "exact_match_stderr,get-answer": 0.0
+    },
+    "bbh_cot_fewshot_word_sorting": {
+        "name": "bbh_cot_fewshot_word_sorting",
+        "alias": "bbh_cot_fewshot_word_sorting",
+        "sample_len": 250,
+        "exact_match,get-answer": 0.38,
+        "exact_match_stderr,get-answer": 0.030760116042626046
+    },
+    "bbh_cot_fewshot": {
+        "alias": "bbh_cot_fewshot",
+        "name": "bbh_cot_fewshot",
+        "sample_len": 6511,
+        "exact_match,get-answer": 0.6676393795115958,
+        "exact_match_stderr,get-answer": 0.00489206958634306,
+        "sample_count": {
+            "exact_match,get-answer": 6511
+        }
+    }
+}

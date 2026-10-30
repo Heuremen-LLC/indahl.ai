@@ -1,0 +1,11 @@
+{
+    "piqa": {
+        "name": "piqa",
+        "alias": "piqa",
+        "sample_len": 1838,
+        "acc,none": 0.7861806311207835,
+        "acc_stderr,none": 0.0095659942069157,
+        "acc_norm,none": 0.7959738846572362,
+        "acc_norm_stderr,none": 0.00940237810294258
+    }
+}

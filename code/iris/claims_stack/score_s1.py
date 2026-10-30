@@ -61,6 +61,7 @@ for cid, row in rows.items():
     if row['lm_eval_task'] in ('gsm8k', 'bbh_fewshot', 'ifeval') and not os.path.exists(os.path.join(HERE, 'gen_ok')):   # addendum 1: no generation result is read until a generation known-good passes
         out[cid] = {'state': 'held: generation check pending', 'ours': '', 'outcome': ''}; continue
     v = variants(cid)
+    if cid == 'S1-01' and not v: out[cid] = {'state': 'nothing returned: the evaluation tool stops with an error after generating (ROUND_S1.md addendum 5)', 'ours': '', 'outcome': ''}; continue
     if not v or any(x is None for x in v.values()): out[cid] = {'state': 'running' if os.path.isdir(os.path.join(HERE, 's1')) else 'queued', 'ours': '', 'outcome': ''}; continue
     s = float(row['stated_value']); hit = []; lo_all = True; hi_all = True; txt = []
     for name, (val, se) in v.items():
@@ -68,6 +69,9 @@ for cid, row in rows.items():
         if abs(s - val) <= w: hit.append(name)
         lo_all &= s > val + w; hi_all &= s < val - w
     oc = 'CONSISTENT' if hit else ('BELOW' if lo_all else ('ABOVE' if hi_all else 'CANNOT_TELL'))
+    harness_note = ''
+    if oc in ('ABOVE', 'BELOW') and 'lighteval' in row['stated_setting']:   # Addendum 6: the card ran lighteval, we ran lm-eval; the prompt rebuttal is untested
+        harness_note = f'. Under our harness the stated value is {"above" if oc == "BELOW" else "below"} our interval. The card ran lighteval, so this reads CANNOT_TELL until that is tested'
     marg = min(abs(s - (val - (1.96 * se + 0.05))) if hi_all else abs(s - (val + (1.96 * se + 0.05))) for val, se in v.values()) if oc in ('ABOVE', 'BELOW') else None
-    out[cid] = {'state': 'read', 'ours': '; '.join(txt) + (f'. Margin outside the interval: {marg:.3f} points' if marg is not None else ''), 'outcome': oc}
+    out[cid] = {'state': 'read', 'ours': '; '.join(txt) + (f'. Margin outside the interval: {marg:.3f} points' if marg is not None else '') + harness_note, 'outcome': 'CANNOT_TELL' if harness_note else oc}
 json.dump(out, open(os.path.join(HERE, 'outcomes_s1.json'), 'w'), indent=1)

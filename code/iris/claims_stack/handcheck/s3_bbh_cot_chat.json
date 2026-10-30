@@ -1,0 +1,202 @@
+[
+ {
+  "task": "bbh_cot_fewshot_boolean_expressions",
+  "doc_id": 0,
+  "question": "not ( True ) and ( True ) is",
+  "target": "False",
+  "reply": "Remember that (i) expressions inside brackets are always evaluated first and that (ii) the order of operations from highest priority to lowest priority is \"not\", \"and\", \"or\", respectively.\nWe first simplify this expression \"Z\" as follows: \"Z = not ( True ) and ( True ) = A and B\" where \"A = not ( True )\" and \"B = True\".\nLet's evaluate A: A = not ( True ) = False.\nPlugging in A and B, we get: Z = A and B = False and True = False. So the answer is False.",
+  "filters": {
+   "filtered_resps": [
+    "False"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "False"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 1.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_causal_judgement",
+  "doc_id": 0,
+  "question": "How would a typical person answer each of the following questions about causation?\nA machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time. The machine will not short circuit if just one of these wires touches the battery. The black wire is designated as the one that is supposed to touch the battery, while the red wire is supposed to remain in some other part of the machine. One day, the black wire and the red wire both end up touching the battery at the same time. There is a short circuit. Did the black wire cause the short circuit?\nOptions:\n- Yes\n- No",
+  "target": "No",
+  "reply": "Here in this question, we are told that \"the machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time.\" A typical person would understand that the short circuit occurs because the condition specified by the machine's design was met\u2014both wires touched the battery simultaneously. Since the machine's design explicitly states that a short circuit happens under this condition, a typical person would conclude that both wires together caused the short circuit. Therefore, the black wire alone did not cause the short circuit; it was the combination of both wires touching the battery that triggered it. So the answer is No.",
+  "filters": {
+   "filtered_resps": [
+    "No"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "No"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 1.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_date_understanding",
+  "doc_id": 0,
+  "question": "Today is Christmas Eve of 1937. What is the date tomorrow in MM/DD/YYYY?\nOptions:\n(A) 12/11/1937\n(B) 12/25/1937\n(C) 01/04/1938\n(D) 12/04/1937\n(E) 12/25/2006\n(F) 07/25/1937",
+  "target": "(B)",
+  "reply": "If today is Christmas Eve of 1937, then today's date is December 24, 1937. Therefore, tomorrow's date will be December 25, 1937, which is 12/25/1937. So the answer is (B).",
+  "filters": {
+   "filtered_resps": [
+    "(B)"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "(B)"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 1.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_disambiguation_qa",
+  "doc_id": 0,
+  "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The patient was referred to the specialist because he had a rare skin condition.\nOptions:\n(A) The patient had a skin condition\n(B) The specialist had a skin condition\n(C) Ambiguous",
+  "target": "(A)",
+  "reply": "Here we need to determine who the pronoun \"he\" might be referring to. There are two possible referents for \"he\", namely the patient and the specialist. The context of the sentence provides a clue to the most likely antecedent. The sentence states, \"The patient was referred to the specialist because he had a rare skin condition.\" Typically, when someone is referred to a specialist, it is because they have a condition that the specialist is best equipped to treat. In this case, it is more logical that the patient, not the specialist, would have the rare skin condition. Therefore, the pronoun \"he\" most likely refers to the patient. So the answer is (A).",
+  "filters": {
+   "filtered_resps": [
+    "(A)"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "(A)"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 1.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_dyck_languages",
+  "doc_id": 0,
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ [",
+  "target": "] ]",
+  "reply": "We should process each input one by one and keep track of the stack configuration.\n0: empty stack\n1: [ ; stack: [\n2: [ ; stack: [ [\nNow, we have reached the end. The final stack is \"[ [\".\nWe will need to pop out \"[\", \"[\" one by one in that order.\nSo, we need \"]\", \"]\". So the answer is ] ].",
+  "filters": {
+   "filtered_resps": [
+    "] ]"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "] ]"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 1.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_formal_fallacies",
+  "doc_id": 0,
+  "question": "\"Here comes a perfectly valid argument: First of all, whoever is a schoolmate of Sondra is not a stepsister of Pricilla. In consequence, whoever is not a stepsister of Pricilla is a schoolmate of Sondra.\"\nIs the argument, given the explicitly stated premises, deductively valid or invalid?\nOptions:\n- valid \n- invalid",
+  "target": "invalid",
+  "reply": "(1) Whoever is a schoolmate of Sondra is not a stepsister of Pricilla: If X = schoolmate(Sondra), then X = NOT (stepsister(Pricilla)).\nHypothesis: Does it follow that whoever is not a stepsister of Pricilla is a schoolmate of Sondra: If X = NOT (stepsister(Pricilla)), then X = schoolmate(Sondra)?\nLet\u2019s see whether the Hypothesis can be deduced from the argument (1) by logical reasoning?\nPremise (1) states a conditional relationship: being a schoolmate of Sondra implies not being a stepsister of Pricilla. However, the hypothesis reverses this relationship, suggesting that not being a stepsister of Pricilla necessarily means being a schoolmate of Sondra. This is a logical fallacy known as the converse error (or affirming the consequent), which is invalid in deductive reasoning. Therefore, the argument is invalid.",
+  "filters": {
+   "filtered_resps": [
+    "[invalid]"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "[invalid]"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_geometric_shapes",
+  "doc_id": 0,
+  "question": "This SVG path element <path d=\"M 55.57,80.69 L 57.38,65.80 M 57.38,65.80 L 48.90,57.46 M 48.90,57.46 L 45.58,47.78 M 45.58,47.78 L 53.25,36.07 L 66.29,48.90 L 78.69,61.09 L 55.57,80.69\"/> draws a\nOptions:\n(A) circle\n(B) heptagon\n(C) hexagon\n(D) kite\n(E) line\n(F) octagon\n(G) pentagon\n(H) rectangle\n(I) sector\n(J) triangle",
+  "target": "(B)",
+  "reply": "This SVG path element contains \"M\" and \"L\" commands. M takes two parameters (x,y) and moves the current point to the coordinates (x,y). L takes two parameters (x,y) and draws a line from the previous coordinate to the new coordinate (x,y).\nThis path can be decomposed into 10 separate commands.\n(1) M 55.57,80.69: Move the current point to 55.57,80.69.\n(2) L 57.38,65.80: Create a line from 55.57,80.69 to 57.38,65.80.\n(3) M 57.38,65.80: Move the current point to 57.38,65.80.\n(4) L 48.90,57.46: Create a line from 57.38,65.80 to 48.90,57.46.\n(5) M 48.90,57.46: Move the current point to 48.90,57.46.\n(6) L 45.58,47.78: Create a line from 48.90,57.46 to 45.58,47.78.\n(7) M 45.58,47.78: Move the current point to 45.58,47.78.\n(8) L 53.25,36.07: Create a line from 45.58,47.78 to 53.25,36.07.\n(9) L 66.29,48.90: Create a line from 53.25,36.07 to 66.29,48.90.\n(10) L 78.69,61.09: Create a line from 66.29,48.90 to 78.69,61.09.\n(11) L 55.57,80.69: Create a line from 78.69,61.09 to 55.57,80.69.\nThis SVG path starts at point 55.57,80.69, creates a series of lines that do not return to the starting point, and forms a complex shape with multiple disconnected segments. None of the options (A) circle, (B) heptagon, (C) hexagon, (D) kite, (E) line, (F) octagon, (G) pentagon, (H) rectangle, (",
+  "filters": {
+   "filtered_resps": [
+    "[invalid]"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "[invalid]"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_hyperbaton",
+  "doc_id": 0,
+  "question": "Which sentence has the correct adjective order:\nOptions:\n(A) midsize old grey Brazilian sweater\n(B) midsize grey Brazilian old sweater",
+  "target": "(A)",
+  "reply": "When there is more than one adjective before a noun, the adjectives need to respect the following order before a noun: \"[1. opinion] [2. size] [3. age] [4. shape] [5. color] [6. origin] [7. material] [8. purpose] noun\".\nOption (A): \"midsize old grey Brazilian sweater\". (1) \"midsize\" falls into the size category. (2) \"old\" falls into the age category. (3) \"grey\" falls into the color category. (4) \"Brazilian\" falls into the origin category. Option (A) has the following adjective order: [2. size] [3. age] [5. color] [6. origin] (or, in numeric terms, 2 3 5 6). Because 2 < 3 < 5 < 6 is correct, (A) has the correct ordering.\nOption (B): \"midsize grey Brazilian old sweater\". Option (B) has the following adjective order: [2. size] [5. color] [6. origin] [3. age] (or, in numeric terms, 2 5 6 3). Because 2 < 5 < 6 < 3 is not correct, (B) does not have the correct ordering. So the answer is (A).",
+  "filters": {
+   "filtered_resps": [
+    "(A)"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "(A)"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 1.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_logical_deduction_five_objects",
+  "doc_id": 0,
+  "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a quail, an owl, a raven, a falcon, and a robin. The owl is the leftmost. The robin is to the left of the raven. The quail is the rightmost. The raven is the third from the left.\nOptions:\n(A) The quail is the rightmost\n(B) The owl is the rightmost\n(C) The raven is the rightmost\n(D) The falcon is the rightmost\n(E) The robin is the rightmost",
+  "target": "(A)",
+  "reply": "(1) The owl is the leftmost: \"owl ? ? ? ? (rightmost)\".\n(2) The quail is the rightmost: \"(left) owl ? ? ? quail\".\n(3) The raven is the third from the left: \"(left) owl ? raven ? ?\".\n(4) The robin is to the left of the raven: \"(left) owl ? robin raven ?\".\n(5) Combining (3) and (4), we place the robin in the second position: \"owl ? robin raven ?\".\n(6) The only remaining position for the falcon is the fourth place: \"owl ? robin raven falcon quail\".\n(7) This fully orders the birds: \"owl (1) robin (2) raven (3) falcon (4) quail (5)\".\nAccording to this ordering, the rightmost bird is the quail.\nThe quail is the rightmost. So the answer is (A).",
+  "filters": {
+   "filtered_resps": [
+    "(A)"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "(A)"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 1.0
+  }
+ },
+ {
+  "task": "bbh_cot_fewshot_logical_deduction_seven_objects",
+  "doc_id": 0,
+  "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Ana, Eve, Ada, Dan, Rob, Amy, and Joe. Dan finished third. Ana finished above Ada. Amy finished last. Dan finished below Rob. Eve finished below Ada. Rob finished below Joe.\nOptions:\n(A) Ana finished third\n(B) Eve finished third\n(C) Ada finished third\n(D) Dan finished third\n(E) Rob finished third\n(F) Amy finished third\n(G) Joe finished third",
+  "target": "(D)",
+  "reply": "(1) Dan finished third: \"Dan = 3rd\".\n(2) Ana finished above Ada: \"(above) ? Ana ? Ada ? (below)\".\n(3) Amy finished last: \"Amy = 7th\".\n(4) Dan finished below Rob: \"(above) ? Rob ? Dan ? (below)\".\n(5) Eve finished below Ada: \"(above) ? Ada ? Eve ? (below)\".\n(6) Rob finished below Joe: \"(above) ? Joe ? Rob ? (below)\".",
+  "filters": {
+   "filtered_resps": [
+    "[invalid]"
+   ],
+   "filter": "get-answer"
+  },
+  "filtered": [
+   "[invalid]"
+  ],
+  "filter_name": "get-answer",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ }
+]

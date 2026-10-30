@@ -1,0 +1,9 @@
+{
+    "winogrande": {
+        "name": "winogrande",
+        "alias": "winogrande",
+        "sample_len": 1267,
+        "acc,none": 0.7379636937647988,
+        "acc_stderr,none": 0.012358944431637653
+    }
+}
