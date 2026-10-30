@@ -1,0 +1,202 @@
+[
+ {
+  "task": "bbh_fewshot_boolean_expressions",
+  "doc_id": 0,
+  "question": "not ( True ) and ( True ) is",
+  "target": "False",
+  "reply": " False",
+  "filters": {
+   "filtered_resps": [
+    " False"
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   " False"
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_causal_judgement",
+  "doc_id": 0,
+  "question": "How would a typical person answer each of the following questions about causation?\nA machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time. The machine will not short circuit if just one of these wires touches the battery. The black wire is designated as the one that is supposed to touch the battery, while the red wire is supposed to remain in some other part of the machine. One day, the black wire and the red wire both end up touching the battery at the same time. There is a short circuit. Did the black wire cause the short circuit?\nOptions:\n- Yes\n- No",
+  "target": "No",
+  "reply": " Yes",
+  "filters": {
+   "filtered_resps": [
+    " Yes"
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   " Yes"
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_date_understanding",
+  "doc_id": 0,
+  "question": "Today is Christmas Eve of 1937. What is the date tomorrow in MM/DD/YYYY?\nOptions:\n(A) 12/11/1937\n(B) 12/25/1937\n(C) 01/04/1938\n(D) 12/04/1937\n(E) 12/25/2006\n(F) 07/25/1937",
+  "target": "(B)",
+  "reply": " (B)",
+  "filters": {
+   "filtered_resps": [
+    " (B)"
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   " (B)"
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_disambiguation_qa",
+  "doc_id": 0,
+  "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The patient was referred to the specialist because he had a rare skin condition.\nOptions:\n(A) The patient had a skin condition\n(B) The specialist had a skin condition\n(C) Ambiguous",
+  "target": "(A)",
+  "reply": "",
+  "filters": {
+   "filtered_resps": [
+    ""
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   ""
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_dyck_languages",
+  "doc_id": 0,
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ [",
+  "target": "] ]",
+  "reply": " [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [",
+  "filters": {
+   "filtered_resps": [
+    " [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ ["
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   " [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ ["
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_formal_fallacies",
+  "doc_id": 0,
+  "question": "\"Here comes a perfectly valid argument: First of all, whoever is a schoolmate of Sondra is not a stepsister of Pricilla. In consequence, whoever is not a stepsister of Pricilla is a schoolmate of Sondra.\"\nIs the argument, given the explicitly stated premises, deductively valid or invalid?\nOptions:\n- valid \n- invalid",
+  "target": "invalid",
+  "reply": " invalid",
+  "filters": {
+   "filtered_resps": [
+    " invalid"
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   " invalid"
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_geometric_shapes",
+  "doc_id": 0,
+  "question": "This SVG path element <path d=\"M 55.57,80.69 L 57.38,65.80 M 57.38,65.80 L 48.90,57.46 M 48.90,57.46 L 45.58,47.78 M 45.58,47.78 L 53.25,36.07 L 66.29,48.90 L 78.69,61.09 L 55.57,80.69\"/> draws a\nOptions:\n(A) circle\n(B) heptagon\n(C) hexagon\n(D) kite\n(E) line\n(F) octagon\n(G) pentagon\n(H) rectangle\n(I) sector\n(J) triangle",
+  "target": "(B)",
+  "reply": "",
+  "filters": {
+   "filtered_resps": [
+    ""
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   ""
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_hyperbaton",
+  "doc_id": 0,
+  "question": "Which sentence has the correct adjective order:\nOptions:\n(A) midsize old grey Brazilian sweater\n(B) midsize grey Brazilian old sweater",
+  "target": "(A)",
+  "reply": " (A)",
+  "filters": {
+   "filtered_resps": [
+    " (A)"
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   " (A)"
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_logical_deduction_five_objects",
+  "doc_id": 0,
+  "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a quail, an owl, a raven, a falcon, and a robin. The owl is the leftmost. The robin is to the left of the raven. The quail is the rightmost. The raven is the third from the left.\nOptions:\n(A) The quail is the rightmost\n(B) The owl is the rightmost\n(C) The raven is the rightmost\n(D) The falcon is the rightmost\n(E) The robin is the rightmost",
+  "target": "(A)",
+  "reply": "",
+  "filters": {
+   "filtered_resps": [
+    ""
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   ""
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ },
+ {
+  "task": "bbh_fewshot_logical_deduction_seven_objects",
+  "doc_id": 0,
+  "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Ana, Eve, Ada, Dan, Rob, Amy, and Joe. Dan finished third. Ana finished above Ada. Amy finished last. Dan finished below Rob. Eve finished below Ada. Rob finished below Joe.\nOptions:\n(A) Ana finished third\n(B) Eve finished third\n(C) Ada finished third\n(D) Dan finished third\n(E) Rob finished third\n(F) Amy finished third\n(G) Joe finished third",
+  "target": "(D)",
+  "reply": "",
+  "filters": {
+   "filtered_resps": [
+    ""
+   ],
+   "filter": "none"
+  },
+  "filtered": [
+   ""
+  ],
+  "filter_name": "none",
+  "metrics": {
+   "exact_match": 0.0
+  }
+ }
+]

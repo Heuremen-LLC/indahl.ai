@@ -7,17 +7,20 @@ Run: --send [--eu]      one job per processor without a job still waiting (budge
      --collect [--eu]   read finished jobs, analyse, publish, chain (status reads only)
 """
 import os, sys, json, time, hashlib, subprocess, datetime as dt
-H = os.path.dirname(os.path.abspath(__file__)); B = os.path.dirname(H); sys.path.insert(0, H)
+import numpy as np
+H = os.path.dirname(os.path.abspath(__file__)); B = os.path.expanduser('~/bones-forge'); sys.path.insert(0, H)
 import callib as C
 EU = '--eu' in sys.argv; KEEP_S = 50 if EU else 100
 RUNS = H + ('/data/runs_eu.jsonl' if EU else '/data/runs.jsonl'); QLOG = B + ('/qia_queue/data/probes_eu.jsonl' if EU else '/qia_queue/data/probes.jsonl')
 TAG = 'qia-calibration-eu' if EU else 'qia-calibration'; SRO, ST1 = 1000, 500
 W = B + '/cloudflare-workers/heuremen-door'; NS = 'ecb59d96b07c43bdac14271687eae5af'
 def service():
-    """Your own IBM account: IBM_QUANTUM_TOKEN, and IBM_QUANTUM_INSTANCE (the CRN) if you have more than one instance."""
     from qiskit_ibm_runtime import QiskitRuntimeService
-    inst = os.environ.get('IBM_QUANTUM_INSTANCE')
-    return QiskitRuntimeService(channel='ibm_quantum_platform', token=os.environ['IBM_QUANTUM_TOKEN'], **({'instance': inst} if inst else {}))
+    if EU:
+        tok = open(B + '/.ibm_quantum_key_parallax').read().strip(); s0 = QiskitRuntimeService(channel='ibm_quantum_platform', token=tok)
+        crn = [i['crn'] for i in s0.instances() if isinstance(i, dict) and ':eu-de:' in i['crn']][0]
+        return QiskitRuntimeService(channel='ibm_quantum_platform', token=tok, instance=crn)
+    return QiskitRuntimeService(channel='ibm_cloud', token=open(B + '/.ibm_quantum_key_3').read().strip(), instance=open(B + '/.ibm_quantum_instance_crn').read().strip())
 def rows(p): return [json.loads(l) for l in open(p) if l.strip()] if os.path.exists(p) else []
 def kv(key, path):
     env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
@@ -69,6 +72,9 @@ def read(job, qs):
     return c0, c1z, t1
 def chain_append(entry):
     E = B + '/qia_offchain/entries.jsonl'
+    if entry.get('type') == 'calibration run' and not entry.get('corrects') and os.path.exists(E):   # 30 Oct B-6: one entry per job, a second collect skips
+        if any(x.get('type') == 'calibration run' and x.get('job_id') == entry.get('job_id') and not x.get('corrects') for x in rows(E)):
+            print('cal: chain already has job', entry.get('job_id'), '- not appended again', flush=True); return None
     with open(E, 'a') as f: f.write(json.dumps(entry, ensure_ascii=False) + '\n')
     sys.path.insert(0, B + '/qia_offchain'); import chain as CH
     c = CH.build(); CH.verify(B + '/qia_offchain/chain.json'); kv('qia_offchain', B + '/qia_offchain/chain.json'); return c['head']
@@ -85,7 +91,7 @@ def process(s, r, corrects=None):
     for k, q in enumerate(qs):
         x = dict(qubit=q, **rows_[k]); x.update(ibm_p10_date=dates[k]['p10'], ibm_p01_date=dates[k]['p01'], ibm_t1_date=dates[k]['t1']); per.append(x)
     full = dict(processor=r['backend'], job_id=r['id'], window_utc=win, record_used='IBM record in force at the job start (%s)' % win[0], record_saved_at_send=r['sent'],
-                rule='qia_cal PLAN.md with Note 1', shots=dict(readout=SRO, t1=ST1), delays_us=C.DELAYS_US, **kg, qubits=per,
+                rule='qia_cal PLAN.md with Notes 1 and 3', shots=dict(readout=SRO, t1=ST1), delays_us=C.DELAYS_US, **kg, qubits=per,
                 raw=dict(c0_ones=[int(v) for v in c0], c1_zeros=[int(v) for v in c1z], t1_ones=[[int(v) for v in row] for row in t1]))
     fp = H + '/data/res_%s.json' % r['id']; json.dump(full, open(fp, 'w')); sha = hashlib.sha256(open(fp, 'rb').read()).hexdigest()
     kv('qia_cal_' + r['id'], fp)
@@ -96,7 +102,7 @@ def process(s, r, corrects=None):
                 off.append(dict(qubit=x['qubit'], quantity=lab, ibm=x['ibm_' + qn], ibm_date=x['ibm_%s_date' % qn], measured=x[qn], interval=x[qn + '_ci'], unit=un, outcome=x[qn + '_outcome']))
     counts = {qn: {o: sum(1 for x in per if x[qn + '_outcome'] == o) for o in ('ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL')} for qn in ('p10', 'p01', 't1')}
     e = dict(type='calibration run', added=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), processor=r['backend'], qubits_read=len(qs), window_utc=win, job_id=r['id'],
-             rule='qia_cal PLAN.md with Note 1 (readout: IBM count vs ours, both exact 99.9%, call on non-overlap; T1: 99.99% interval, 25% margin)',
+             rule='qia_cal PLAN.md with Notes 1 and 3 (readout: IBM count out of %d vs ours, both exact 99.9%%, call on non-overlap; T1: 99.99%% interval, 25%% margin)' % kg.get('ibm_readout_shots', 4096),
              known_good=kg['known_good'], counts=counts, off=off, results='/qia/cal/%s.json' % r['id'], results_sha256=sha)
     if corrects: e['corrects'] = corrects
     head = chain_append(e)
@@ -104,6 +110,7 @@ def process(s, r, corrects=None):
     return dict(job_id=r['id'], window_utc=win, qubits_read=len(qs), known_good=kg['known_good'], counts=counts, off=len(off),
                 median_readout_measured_over_stated=kg['median_readout_measured_over_stated'], median_t1_measured_over_stated=kg['median_t1_measured_over_stated']), m
 def publish_latest(latest, waiting=None):   # Note 2: also lists jobs still waiting in IBM's queue, so an older reading says why it is older
+    waiting = {r['backend']: r['sent'] for f in ('/data/runs.jsonl', '/data/runs_eu.jsonl') for r in rows(H + f) if r.get('state') == 'SENT'}   # 30 Oct B-7: both run files, so the EU collect no longer blanks the US list
     latest_p = H + '/data/latest.json'; old = json.load(open(latest_p)) if os.path.exists(latest_p) else {}; old.update(latest); json.dump(old, open(latest_p, 'w'), indent=1)
     pub = H + '/data/qia_cal.json'; json.dump(dict(updated=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), processors=old, waiting=waiting or {}), open(pub, 'w'), indent=1); kv('qia_cal', pub)
 def collect(s):
@@ -121,6 +128,32 @@ def collect(s):
     waiting = {r['backend']: r['sent'] for r in rs if r.get('state') == 'SENT'}
     publish_latest(latest, waiting)
     return rs
+def reread_local(jid, corrects):
+    """Note 3: re-read a finished run from its saved raw counts and the IBM figures saved with it (no IBM call, no QPU time)."""
+    old = json.load(open(H + '/data/res_%s.json' % jid)); per0 = old['qubits']; raw = old['raw']
+    stated = {k: dict(p10=x.get('ibm_p10'), p01=x.get('ibm_p01'), t1=x.get('ibm_t1')) for k, x in enumerate(per0)}
+    rows_, kg = C.analyse(np.array(raw['c0_ones']), np.array(raw['c1_zeros']), np.array(raw['t1_ones']), old['shots']['readout'], old['shots']['t1'], stated)
+    per = []
+    for k, x0 in enumerate(per0):
+        x = dict(qubit=x0['qubit'], **rows_[k]); x.update({kk: x0[kk] for kk in ('ibm_p10_date', 'ibm_p01_date', 'ibm_t1_date') if kk in x0}); per.append(x)
+    nid = jid + 'n3'
+    full = dict(old, rule='qia_cal PLAN.md with Notes 1 and 3', corrects_results='/qia/cal/%s.json' % jid, qubits=per, **{k: v for k, v in kg.items()})
+    fp = H + '/data/res_%s.json' % nid; json.dump(full, open(fp, 'w')); sha = hashlib.sha256(open(fp, 'rb').read()).hexdigest(); kv('qia_cal_' + nid, fp)
+    off = [dict(qubit=x['qubit'], quantity=lab, ibm=x['ibm_' + qn], ibm_date=x.get('ibm_%s_date' % qn), measured=x[qn], interval=x[qn + '_ci'], unit=un, outcome=x[qn + '_outcome'])
+           for x in per for qn, lab, un in (('p10', 'readout P(1|0)', ''), ('p01', 'readout P(0|1)', ''), ('t1', 'T1', 'us')) if x[qn + '_outcome'] in ('ABOVE', 'BELOW')]
+    counts = {qn: {o: sum(1 for x in per if x[qn + '_outcome'] == o) for o in ('ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL')} for qn in ('p10', 'p01', 't1')}
+    e = dict(type='calibration run', added=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), processor=old['processor'], qubits_read=len(per), window_utc=old['window_utc'], job_id=jid,
+             rule='qia_cal PLAN.md with Notes 1 and 3 (readout: IBM count out of %d vs ours, both exact 99.9%%, call on non-overlap; T1: 99.99%% interval, 25%% margin). Re-read from saved counts.' % kg['ibm_readout_shots'],
+             known_good=kg['known_good'], counts=counts, off=off, results='/qia/cal/%s.json' % nid, results_sha256=sha, corrects=corrects)
+    head = chain_append(e)
+    summ = dict(job_id=jid, window_utc=old['window_utc'], qubits_read=len(per), known_good=kg['known_good'], counts=counts, off=len(off),
+                median_readout_measured_over_stated=kg['median_readout_measured_over_stated'], median_t1_measured_over_stated=kg['median_t1_measured_over_stated'], results='/qia/cal/%s.json' % nid)
+    return summ, len(off)
+if __name__ == '__main__' and '--reread-local' in sys.argv:   # Note 3: python3 cal.py --reread-local <job> --corrects <entry n>
+    jid = sys.argv[sys.argv.index('--reread-local') + 1]; n = int(sys.argv[sys.argv.index('--corrects') + 1]); summ, k = reread_local(jid, n)
+    lat = json.load(open(H + '/data/latest.json')) if os.path.exists(H + '/data/latest.json') else {}
+    if lat.get(summ_proc := json.load(open(H + '/data/res_%s.json' % jid))['processor'], {}).get('job_id') == jid: publish_latest({summ_proc: summ})
+    print('reread', jid, 'off', k); sys.exit(0)
 if __name__ == '__main__' and '--reread' in sys.argv:   # Note 1 correction: re-read a finished job, chain entry names the entry it corrects
     s = service(); jid = sys.argv[sys.argv.index('--reread') + 1]; n = int(sys.argv[sys.argv.index('--corrects') + 1])
     r = [x for x in rows(RUNS) if x['id'] == jid][0]; summ, m = process(s, r, corrects=n); publish_latest({r['backend']: summ}); sys.exit(0)

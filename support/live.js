@@ -4,24 +4,31 @@
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Supported cycles (the pre-registered test)", "path": "all", "label": "Supported cycles", "first": "", "cols": [["Tested", "tested", "n"], ["Silent", "unreleased", "n"], ["Share unreleased, 95% interval over products", "share", "pct"], ["Wilson interval low, cycles as independent", "wilson_lo", "n"], ["Wilson interval high", "wilson_hi", "n"], ["Outcome", "outcome", "oc"]]}, {"title": "By product, defined after the first read", "path": "product_level", "first": "Products", "cols": [["Products tested", "tested", "n"], ["Products meeting it", "unreleased", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Cycles whose end of life has passed: where the last release falls against the stated date", "path": "after_eol", "first": "Last release", "cols": [["Cycles", "cycles", "n"]]}, {"title": "Products with unreleased supported cycles", "path": "by_product", "first": "Product", "cols": [["Tested", "tested", "n"], ["Silent", "unreleased", "n"], ["Share unreleased, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "The unreleased cycles, longest first", "path": "silent_list", "first": "Product", "firstkey": "product", "cols": [["Cycle", "cycle", "t"], ["Latest release", "last", "t"], ["Stated end of life", "eol", "t"], ["Days since the latest release", "days", "n"]]}], TOP = "{products} products and {cycles} release cycles read from endoflife.date. Controls: {gate}. Updated {updated} UTC.";
-  function cell(kind, row, key) {
+  var TABLES = [{"title": "Supported cycles (the pre-registered test)", "path": "all", "label": "Supported cycles", "first": "", "cols": [["Tested", "tested", "n"], ["Unreleased", "unreleased", "n"], ["Share unreleased, 95% interval over products", "share", "pct"], ["Wilson 95% interval low (a share from 0 to 1), cycles as independent", "wilson_lo", "n"], ["Wilson 95% interval high", "wilson_hi", "n"], ["Outcome", "outcome", "oc"]]}, {"title": "By product, defined after the first read", "path": "product_level", "first": "Products", "cols": [["Products tested", "tested", "n"], ["Products meeting it", "unreleased", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Cycles whose end of life has passed: where the last release falls against the stated date", "path": "after_eol", "first": "Last release", "cols": [["Cycles", "cycles", "n"]]}, {"title": "Products with unreleased supported cycles", "path": "by_product", "first": "Product", "cols": [["Tested", "tested", "n"], ["Unreleased", "unreleased", "n"], ["Share unreleased, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "The unreleased cycles, longest first", "path": "silent_list", "first": "Product", "firstkey": "product", "cols": [["Cycle", "cycle", "t"], ["Latest release", "last", "t"], ["Stated end of life", "eol", "t"], ["Days since the latest release", "days", "n"]]}], TOP = "{products} products and {cycles} release cycles read from endoflife.date. Controls: {gate}. Updated {updated} UTC.";
+  function cell(kind, row, key, T) {
     var v = row[key];
-    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
+    if (kind === 'n') return td(v == null && T.nullword ? T.nullword : v, 1); if (kind === 'oc') return td(OC[v] || v);
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);
+  }
+  function lab(T, r) {
+    var t = r._key != null ? r._key : r[T.firstkey], href = '';
+    if (T.linkfield && typeof r[T.linkfield] === 'string' && /^https?:\/\//.test(r[T.linkfield])) href = r[T.linkfield];
+    else if (T.link && t != null && t !== '') href = T.link.replace(/\{(\w+)\}/g, function (m, k) { return encodeURIComponent(k === '_key' ? t : (r[k] == null ? '' : r[k])); });
+    if (!href) return td(t);
+    var c = td(''), a = document.createElement('a'); a.href = href; a.textContent = t; c.appendChild(a); return c;
   }
   fetch('/support/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.updated && !d.read) { box.textContent = 'Waiting for the first read.'; return; }
     box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{(\w+)\}/g, function (m, k) { return d[k] == null ? '' : d[k]; }); box.appendChild(top);
     TABLES.forEach(function (T) {
       var src = d; T.path.split('.').forEach(function (k) { src = src && src[k]; }); if (!src) return;
-      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object'; });
+      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object' || Array.isArray(src[k]); });
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(lab(T, r)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1], T)); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

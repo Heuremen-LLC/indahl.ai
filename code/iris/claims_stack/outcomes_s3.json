@@ -1,17 +1,17 @@
 {
  "S3-01": {
   "state": "read",
-  "ours": "size-weighted acc 65.5 \u00b1 0.8; macro mean of 57 subject acc 67.3 \u00b1 0.9",
+  "ours": "size-weighted acc 65.5 \u00b1 0.8, macro mean of 57 subject acc 67.3 \u00b1 0.9",
   "outcome": "CONSISTENT"
  },
  "S3-03": {
   "state": "read",
-  "ours": "chat exact_match mean over 27 subtasks 66.5 \u00b1 1.0. Under our harness the stated value is above every variant's interval. The card does not name its harness or prompts, so this reads CANNOT_TELL until that difference is tested. Parser hand-check (HANDCHECK_S3.md): the filter missed 1 correct answer in 10, and 2 replies in 10 ended without an answer (one at our 512-token cap, one at the task's blank-line stop). The claim lists strict and flexible filters, but this task has one filter (get-answer), so that is the variant read.",
+  "ours": "chat exact_match mean over 27 subtasks 66.5 \u00b1 1.0. Under our harness the stated value is above every variant's interval. The card does not name its harness or prompts, so this reads CANNOT_TELL until that difference is tested. Parser check (replies read in full) (HANDCHECK_S3.md): the filter missed 1 correct answer in 10, and 2 replies in 10 ended without an answer (one at our 512-token cap, one at the task's blank-line stop). The claim lists strict and flexible filters, but this task has one filter (get-answer), so that is the variant read.",
   "outcome": "CANNOT_TELL"
  },
  "S3-11": {
   "state": "read",
-  "ours": "plain strict-match 82.3 \u00b1 2.1; plain flexible-extract 82.3 \u00b1 2.1; chat CoT strict-match 72.9 \u00b1 2.4; chat CoT flexible-extract 86.4 \u00b1 1.9. Parser hand-check (HANDCHECK_S3.md): plain variants read 10 of 10 as written. Both chat filters missed 1 correct answer in 10.",
+  "ours": "plain strict-match 82.3 \u00b1 2.1, plain flexible-extract 82.3 \u00b1 2.1, chat CoT strict-match 72.9 \u00b1 2.4 [CANNOT_TELL (parser)], chat CoT flexible-extract 86.4 \u00b1 1.9. Parser check (replies read in full) (HANDCHECK_S3.md): plain variants read 10 of 10 as written. Chat flexible-extract read 9 of 10 as written (question 5 took '16' from 'for 16 glasses', where the model answered 64). Chat strict-match found no answer on 2 of 10 (questions 5 and 8), 1 of them correct, so it is CANNOT_TELL (parser) and does not count toward the outcome.",
   "outcome": "CONSISTENT"
  }
 }

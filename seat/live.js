@@ -3,8 +3,13 @@
   var box = document.getElementById('seat-live'); if (!box) return;
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
+  function first(r, T) {
+    var v = r._key != null ? r._key : r[T.firstkey], c = td(v), u = T.link ? T.link.replace(/\{(\w+)\}/g, function (m, k) { return r[k] == null ? '' : encodeURI(r[k]); }) : '';
+    if (v && /^https?:\/\/[^/]+\//.test(u)) { c.textContent = ''; var a = document.createElement('a'); a.href = u; a.textContent = v; c.appendChild(a); }
+    return c;
+  }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Rolling reading", "path": "rolling", "first": "Window", "cols": [["Probes", "of", "n"], ["With any drift, stale feed or broken chain", "n", "n"], ["Outcome", "outcome", "oc"]]}, {"title": "At the last probe", "path": "now", "first": "Check", "cols": [["Passing", "n", "n"], ["Of", "of", "n"], ["State", "state", "t"]]}, {"title": "Pages that do not match the repository", "path": "not_matching", "first": "Page", "firstkey": "page", "cols": [["State", "state", "t"]]}, {"title": "Live feeds, age against limit", "path": "feeds", "first": "Feed", "firstkey": "feed", "cols": [["Age, hours", "age_h", "n"], ["Limit, hours", "limit_h", "n"], ["State", "state", "t"]]}], TOP = "{probes} probes held. Last probe {last_probe}. Updated {updated} UTC.";
+  var TABLES = [{"title": "Rolling reading", "path": "rolling", "first": "Window", "cols": [["Probes", "of", "n"], ["Incidents, each a run of consecutive probes with a drifting page, a feed past its limit or a broken chain", "n", "n"], ["Outcome", "outcome", "oc"]]}, {"title": "Incidents in the last 24 probes, each a run of consecutive probes that saw a fault", "path": "incidents", "first": "First probe", "firstkey": "first", "cols": [["Last probe", "last", "t"], ["Probes", "probes", "n"], ["What the probes saw", "saw", "t"]]}, {"title": "At the last probe", "path": "now", "first": "Check", "cols": [["Passing", "n", "n"], ["Of", "of", "n"], ["State", "state", "t"]]}, {"title": "Pages that do not match the repository", "path": "not_matching", "first": "Page", "firstkey": "page", "cols": [["State", "state", "t"]], "link": "https://indahl.ai{page}"}, {"title": "Live feeds, age against limit", "path": "feeds", "first": "Feed", "firstkey": "feed", "cols": [["Age, hours", "age_h", "n"], ["Limit, hours", "limit_h", "n"], ["State", "state", "t"]], "link": "https://indahl.ai{feed}"}], TOP = "{probes} probes held. Last probe {last_probe}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
     if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
@@ -21,7 +26,7 @@
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(first(r, T)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

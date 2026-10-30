@@ -54,9 +54,9 @@
         [['bare', 0, 'bench-run'], ['guard', 15, 'bench-done']].forEach(function (a) {
           var v = c[a[0]], yy = y + a[1];
           svg.appendChild(el('rect', { x: x, y: yy, width: cw, height: 11, rx: 3, 'class': c.ct ? 'bench-ct' : 'bench-bg' }));
-          if (c.ct || !v) { if (a[0] === 'bare') svg.appendChild(el('text', { x: x + 4, y: yy + 9, 'class': 'bench-cn' }, 'cannot tell')); return; }
+          if (c.ct || !v) { svg.appendChild(el('text', { x: x + 4, y: yy + 9, 'class': 'bench-cn' }, a[0] === 'bare' ? 'cannot tell' : (c.why || ''))); return; }   // 30 Oct: the reason is shown under cannot tell
           if (v[0] > 0) svg.appendChild(el('rect', { x: x, y: yy, width: Math.max(2, cw * v[0] / 100), height: 11, rx: 3, 'class': a[2] }));
-          svg.appendChild(el('text', { x: x + cw - 3, y: yy + 9, 'text-anchor': 'end', 'class': 'bench-v' }, v[0] + '% [' + v[1] + ', ' + v[2] + ']'));
+          svg.appendChild(el('text', { x: x + cw - 3, y: yy + 9, 'text-anchor': 'end', 'class': 'bench-v' }, v[0] + '% [' + v[1] + ', ' + v[2] + '], ' + v[3] + ' read'));   // 30 Oct: number of replies read
         });
       });
     });
@@ -71,9 +71,10 @@
     rs[0].models.forEach(function (m0, mi) {
       var tr = document.createElement('tr'), cells = '<td>' + m0.name + '</td>';
       FAM.forEach(function (f) {
-        var b = [], g = [], n = 0;
-        rs.forEach(function (rd) { var c = rd.models[mi].fam[f[0]]; if (c.ct || !c.bare) return; n++; b.push(c.bare[0]); if (c.guard) g.push(c.guard[0]); });
-        cells += n ? '<td>Bare ' + span(b) + '<br>Guard ' + span(g) + '<span class="by"> in ' + n + ' of ' + rs.length + ' rounds</span></td>' : '<td><span class="by">Cannot tell in all ' + rs.length + ' rounds</span></td>';
+        var b = [], g = [], n = 0, why = {};
+        rs.forEach(function (rd) { var c = rd.models[mi].fam[f[0]]; if (c.ct || !c.bare) { var w = c.why || 'checks failed'; why[w] = (why[w] || 0) + 1; return; } n++; b.push(c.bare[0]); if (c.guard) g.push(c.guard[0]); });
+        var wl = Object.keys(why).map(function (k) { return k + ' in ' + why[k]; }).join(', ');   // 30 Oct: why the other rounds are cannot tell
+        cells += n ? '<td>Bare ' + span(b) + '<br>Guard ' + span(g) + '<span class="by"> in ' + n + ' of ' + rs.length + ' rounds' + (wl ? '. Cannot tell: ' + wl : '') + '</span></td>' : '<td><span class="by">Cannot tell in all ' + rs.length + ' rounds: ' + wl + '</span></td>';
       });
       tr.innerHTML = cells; tb.appendChild(tr);
     });
@@ -85,7 +86,7 @@
       var rs = d.rounds || []; if (!rs.length) return; res.textContent = ''; rs.forEach(function (rd) { done[rd.round] = 1; }); hideDone();
       res.appendChild(drawIndex(rs));
       var p = document.createElement('p'); p.className = 'bench-note';
-      p.textContent = 'Each cell gives the lowest and highest share of readable replies that commit the Fault, across the rounds in which that cell could be read. Bare is the plain prompt. Guard adds the Fault and Guard wording. Every round used different questions. Cannot tell means the round\u2019s repeat or control checks failed. No ranking.';
+      p.textContent = 'Each cell gives the lowest and highest share of readable replies that commit the Fault, across the rounds in which that cell could be read. Bare is the plain prompt. Guard adds the Fault and Guard wording. Every round used different questions. Intervals in the round grids are 95% Wilson intervals, and each rate says how many replies were read. Cannot tell means the round\u2019s repeat or control checks failed, or fewer than 10 replies could be read. The index and the grids say which. No ranking.';
       res.appendChild(p);
       rs.forEach(function (rd) { var dt = document.createElement('details'); dt.className = 'bench-round'; var s = document.createElement('summary'); s.textContent = 'Round ' + rd.round + ', full grid with intervals'; dt.appendChild(s); dt.appendChild(drawRound(rd)); res.appendChild(dt); });
     }).catch(function () {});

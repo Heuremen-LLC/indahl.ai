@@ -6,7 +6,8 @@
   fetch('/launch/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.updated) { box.textContent = 'Waiting for the first snapshot.'; return; }
     var s = d.scored || {}, top = document.createElement('p'); top.className = 'bench-note';
-    top.textContent = d.launches_tracked + ' launches tracked since ' + d.first_read + ', ' + d.snapshots + ' snapshots stored, ' + d.waiting + ' waiting to fly. Scored launches: ' + s['1 day'] + ' at 1 day, ' + s['7 days'] + ' at 7 days, ' + s['30 days'] + ' at 30 days. ' + d.coarse_precision + ' readings set aside for coarse time precision. Updated ' + d.updated + ' UTC.';
+    function fmt(x) { return String(x).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+    top.textContent = fmt(d.launches_tracked) + ' launches tracked since ' + d.first_read + ', ' + fmt(d.snapshots) + ' snapshots stored, ' + fmt(d.waiting) + ' waiting to fly. ' + (d.flown_watched == null ? '' : fmt(d.flown_watched) + ' have flown since we began reading them. ' + fmt(d.flown_before_first_read) + ' were already flown at our first read, were never watched before they flew, and cannot be scored. ') + 'Scored launches: ' + s['1 day'] + ' at 1 day, ' + s['7 days'] + ' at 7 days, ' + s['30 days'] + ' at 30 days. ' + d.coarse_precision + ' readings set aside for coarse time precision. Updated ' + d.updated + ' UTC.';
     box.textContent = ''; box.appendChild(top);
     if (!d.cells || !d.cells.length) { var p = document.createElement('p'); p.textContent = 'No launch we were watching has flown yet with a stored time far enough ahead. Rows appear here as they do.'; box.appendChild(p); return; }
     var t = document.createElement('table'); t.className = 'mtx';

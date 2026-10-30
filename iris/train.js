@@ -10,7 +10,7 @@
   function draw(d) {
     if (!d || !d.sets) { box.textContent = 'Waiting for the first step.'; return; }
     var all = d.sets.tA.concat(d.sets.tB).every(function (m) { return ARMS.every(function (x) { return (m[x[0]] || 0) >= (d.of || 170); }); }), stepsDone = ['trained', 'mixed'].every(function (k) { return (parseInt((d.step || {})[k] || 0, 10) || 0) >= (d.steps || 600); });
-    if (all && stepsDone) { box.textContent = d.model + '. Training finished, ' + (d.steps || 600) + ' steps each, and every reply was received on both evaluation sets' + (d.updated ? ' (' + d.updated + ' UTC)' : '') + '.'; return; }
+    if (all && stepsDone) { box.textContent = d.model + '. Training finished, ' + (d.steps || 600) + ' steps each, and every reply was received on both evaluation sets' + (d.updated ? ' (status last checked ' + d.updated + ' UTC)' : '') + '.'; return; }
     var W = 760, L = 230, bw = 150, gap = 12, rowh = 30, rows = 2 + 3 + 3, H = 60 + rows * rowh + 40;
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Training steps and replies received', 'class': 'bench-svg' });
     var y = 14; svg.appendChild(el('text', { x: 0, y: y, 'class': 'bench-h' }, 'Training, ' + (d.steps || 600) + ' steps each'));
@@ -33,7 +33,7 @@
     svg.setAttribute('viewBox', '0 0 ' + W + ' ' + (base + 2 * 4 * rowh + 10));
     box.textContent = ''; box.appendChild(svg);
     var p = document.createElement('p'); p.className = 'bench-note';
-    p.textContent = d.model + '. Replies received per arm and evaluation set' + (d.updated ? ' (updated ' + d.updated + ' UTC)' : '') + '. Scores are published after the parser hand-check, as in every round.';
+    p.textContent = d.model + '. Replies received per arm and evaluation set' + (d.updated ? ' (updated ' + d.updated + ' UTC)' : '') + '. Scores are published after the parser check (replies read in full), as in every round.';
     box.appendChild(p);
   }
   function load() { fetch('/iris/train.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(draw).catch(function () {}); }

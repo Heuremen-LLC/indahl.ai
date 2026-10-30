@@ -4,24 +4,32 @@
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Disagreement among websites that could be compared", "path": "comparison", "first": "Step", "cols": [["Compared", "of", "n"], ["Disagree", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Websites we could not compare", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Websites", "n", "n"]]}, {"title": "Rows that failed steps two and three, opened by hand", "path": "disagree_list", "first": "Website", "firstkey": "domain", "cols": [["Step", "step", "t"], ["Found", "found", "t"], ["Hand check", "reason", "t"]]}], TOP = "Websites read: {domains}. Wikidata list of {listdate}. Updated {updated}.";
-  function cell(kind, row, key) {
+  var TABLES = [{"title": "Disagreement among websites that could be compared", "path": "comparison", "first": "Step", "cols": [["Compared", "of", "n"], ["Disagree", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Websites we could not compare", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Websites", "n", "n"]]}, {"title": "Rows that failed steps two and three, read in full", "path": "disagree_list", "first": "Website", "firstkey": "domain", "cols": [["Step", "step", "t"], ["Found", "found", "t"], ["Linked file", "file", "url"], ["Full read", "reason", "t"]], "linkfield": "txt"}], TOP = "Websites read: {domains}. Wikidata list of {listdate}. Updated {updated} UTC.";
+  function cell(kind, row, key, T) {
     var v = row[key];
-    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
+    if (kind === 'url') { var uc = td(''); if (typeof v === 'string' && /^https?:\/\//.test(v)) { var ua = document.createElement('a'); ua.href = v; ua.textContent = 'open'; uc.appendChild(ua); } return uc; }
+    if (kind === 'n') return td(v == null && T.nullword ? T.nullword : v, 1); if (kind === 'oc') return td(OC[v] || v);
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);
+  }
+  function lab(T, r) {
+    var t = r._key != null ? r._key : r[T.firstkey], href = '';
+    if (T.linkfield && typeof r[T.linkfield] === 'string' && /^https?:\/\//.test(r[T.linkfield])) href = r[T.linkfield];
+    else if (T.link && t != null && t !== '') href = T.link.replace(/\{(\w+)\}/g, function (m, k) { return encodeURIComponent(k === '_key' ? t : (r[k] == null ? '' : r[k])); });
+    if (!href) return td(t);
+    var c = td(''), a = document.createElement('a'); a.href = href; a.textContent = t; c.appendChild(a); return c;
   }
   fetch('/hpt/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.updated && !d.read) { box.textContent = 'Waiting for the first read.'; return; }
     box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{(\w+)\}/g, function (m, k) { return d[k] == null ? '' : d[k]; }); box.appendChild(top);
     TABLES.forEach(function (T) {
       var src = d; T.path.split('.').forEach(function (k) { src = src && src[k]; }); if (!src) return;
-      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object'; });
+      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object' || Array.isArray(src[k]); });
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(lab(T, r)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1], T)); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

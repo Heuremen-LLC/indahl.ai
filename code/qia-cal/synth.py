@@ -8,8 +8,8 @@ def world(rng, stated, true):
     d = np.array(C.DELAYS_US[1:], float); p1 = p10[:, None] + (1 - p01 - p10)[:, None] * np.exp(-d[None, :] / t1[:, None])
     ones = rng.binomial(ST1, np.clip(p1, 0, 1))
     return C.analyse(c0, c1z, ones, SRO, ST1, {i: stated[i] for i in range(Q)})
-def stated_set(rng):   # Note 1: IBM's readout figures are counts out of 4,096
-    return [dict(p10=float(rng.binomial(4096, rng.uniform(0.002, 0.03)) / 4096), p01=float(rng.binomial(4096, rng.uniform(0.005, 0.05)) / 4096), t1=float(rng.uniform(30, 350))) for _ in range(Q)]
+def stated_set(rng, n=4096):   # Note 1: IBM's readout figures are counts out of 4,096; Note 3: or 1,024 on some processors
+    return [dict(p10=float(rng.binomial(n, rng.uniform(0.002, 0.03)) / n), p01=float(rng.binomial(n, rng.uniform(0.005, 0.05)) / n), t1=float(rng.uniform(30, 350))) for _ in range(Q)]
 ok = True; R = 40
 fals = dict(p10=0, p01=0, t1=0); ct = 0
 for s in range(R):
@@ -18,6 +18,19 @@ for s in range(R):
     ct += sum(r['t1_outcome'] == 'CANNOT_TELL' for r in rows)
 print('NULL world (IBM exactly right), %d runs x %d qubits: false calls per run p10 %.2f, p01 %.2f, t1 %.2f; T1 cannot-tell per run %.1f' % (R, Q, fals['p10'] / R, fals['p01'] / R, fals['t1'] / R, ct / R))
 ok &= all(v / R < 1.0 for v in fals.values())
+# Note 3: a null world whose IBM figures are counts out of 1,024. The inferred n must find 1,024 and keep chance calls near zero; the old rule
+# (n forced to 4,096) is printed beside it so the size of the old error is on the record.
+f3 = dict(p10=0, p01=0); f3old = dict(p10=0, p01=0); nfound = 0
+for s in range(R):
+    rng = np.random.default_rng(3000 + s); st = stated_set(rng, 1024); nfound += C.ibm_readout_shots({i: st[i] for i in range(Q)}) == 1024
+    rng2 = np.random.default_rng(3500 + s); rows, kg = world(rng2, st, st)
+    rng2 = np.random.default_rng(3500 + s)
+    p10 = np.array([t['p10'] for t in st]); p01 = np.array([t['p01'] for t in st]); c0 = rng2.binomial(SRO, p10); c1z = rng2.binomial(SRO, p01)
+    d = np.array(C.DELAYS_US[1:], float); t1 = np.array([t['t1'] for t in st]); ones = rng2.binomial(ST1, np.clip(p10[:, None] + (1 - p01 - p10)[:, None] * np.exp(-d[None, :] / t1[:, None]), 0, 1))
+    rows_old, _ = C.analyse(c0, c1z, ones, SRO, ST1, {i: st[i] for i in range(Q)}, n_ibm=4096)
+    for k in f3: f3[k] += sum(r[k + '_outcome'] in ('ABOVE', 'BELOW') for r in rows); f3old[k] += sum(r[k + '_outcome'] in ('ABOVE', 'BELOW') for r in rows_old)
+print('NULL world, IBM counts out of 1,024 (Note 3): n inferred as 1,024 in %d of %d runs; false calls per run p10 %.2f, p01 %.2f; with n forced to 4,096 (the old rule): p10 %.2f, p01 %.2f' % (nfound, R, f3['p10'] / R, f3['p01'] / R, f3old['p10'] / R, f3old['p01'] / R))
+ok &= nfound == R and all(v / R < 1.0 for v in f3.values())
 hit = dict(ro_dn=0, t1_dn=0, ro_up=0, t1_up=0, both=0, wrong=0)
 for s in range(R):
     rng = np.random.default_rng(2000 + s); st = stated_set(rng); tr = [dict(x) for x in st]

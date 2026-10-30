@@ -4,24 +4,32 @@
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Stated one-day uptime against our own 5-minute record", "path": "headline", "first": "", "cols": [["Endpoints compared", "of", "n"], ["Disagree", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Endpoints below 100 percent 5-minute uptime right now", "path": "problems", "first": "Model | host | tag", "cols": [["Quantization", "quantization", "t"], ["Uptime, 5 minutes", "uptime_5m", "n"], ["30 minutes", "uptime_30m", "n"], ["1 day", "uptime_1d", "n"]]}, {"title": "Readings at 100 percent 5-minute uptime, by stated quantization (last 24 hours of polls)", "path": "quantization", "first": "Quantization", "cols": [["Endpoints", "endpoints", "n"], ["Readings", "readings", "n"], ["At 100 percent", "at_100", "t"]]}, {"title": "Models by number of hosts", "path": "models_by_hosts", "first": "", "cols": [["1 host", "1 host", "n"], ["2 to 4 hosts", "2 to 4 hosts", "n"], ["5 to 9 hosts", "5 to 9 hosts", "n"], ["10 or more hosts", "10 or more hosts", "n"]]}], TOP = "{top_line} Polls kept: {polls_kept}, since {first_poll}. Updated {updated}.";
-  function cell(kind, row, key) {
+  var TABLES = [{"title": "Stated one-day uptime against our own 5-minute record", "path": "headline", "first": "", "cols": [["Endpoints compared", "of", "n"], ["Disagree", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Endpoints flagged by OpenRouter or below 100 percent 5-minute uptime right now", "path": "problems", "first": "Model | host | tag", "cols": [["Quantization", "quantization", "t"], ["OpenRouter status (0 is normal)", "status", "n"], ["Uptime, 5 minutes", "uptime_5m", "n"], ["30 minutes", "uptime_30m", "n"], ["1 day", "uptime_1d", "n"]], "linkfield": "url", "nullword": "none"}, {"title": "Readings at 100 percent 5-minute uptime, by stated quantization (last 24 hours of polls)", "path": "quantization", "first": "Quantization", "cols": [["Endpoints", "endpoints", "n"], ["Readings", "readings", "n"], ["At 100 percent", "at_100", "t"]]}, {"title": "Models by number of hosts", "path": "models_by_hosts", "first": "", "cols": [["1 host", "1 host", "n"], ["2 to 4 hosts", "2 to 4 hosts", "n"], ["5 to 9 hosts", "5 to 9 hosts", "n"], ["10 or more hosts", "10 or more hosts", "n"]]}], TOP = "{top_line} Polls kept: {polls_kept}, since {first_poll}. Updated {updated} UTC.";
+  function cell(kind, row, key, T) {
     var v = row[key];
-    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
+    if (kind === 'url') { var uc = td(''); if (typeof v === 'string' && /^https?:\/\//.test(v)) { var ua = document.createElement('a'); ua.href = v; ua.textContent = 'open'; uc.appendChild(ua); } return uc; }
+    if (kind === 'n') return td(v == null && T.nullword ? T.nullword : v, 1); if (kind === 'oc') return td(OC[v] || v);
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);
+  }
+  function lab(T, r) {
+    var t = r._key != null ? r._key : r[T.firstkey], href = '';
+    if (T.linkfield && typeof r[T.linkfield] === 'string' && /^https?:\/\//.test(r[T.linkfield])) href = r[T.linkfield];
+    else if (T.link && t != null && t !== '') href = T.link.replace(/\{(\w+)\}/g, function (m, k) { return encodeURIComponent(k === '_key' ? t : (r[k] == null ? '' : r[k])); });
+    if (!href) return td(t);
+    var c = td(''), a = document.createElement('a'); a.href = href; a.textContent = t; c.appendChild(a); return c;
   }
   fetch('/hosts/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.updated && !d.read) { box.textContent = 'Waiting for the first read.'; return; }
     box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{(\w+)\}/g, function (m, k) { return d[k] == null ? '' : d[k]; }); box.appendChild(top);
     TABLES.forEach(function (T) {
       var src = d; T.path.split('.').forEach(function (k) { src = src && src[k]; }); if (!src) return;
-      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object'; });
+      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object' || Array.isArray(src[k]); });
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(lab(T, r)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1], T)); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

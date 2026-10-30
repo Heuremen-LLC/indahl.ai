@@ -3,8 +3,13 @@
   var box = document.getElementById('hfsize-live'); if (!box) return;
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
+  function first(r, T) {
+    var v = r._key != null ? r._key : r[T.firstkey], c = td(v), u = T.link ? T.link.replace(/\{(\w+)\}/g, function (m, k) { return r[k] == null ? '' : encodeURI(r[k]); }) : '';
+    if (v && /^https?:\/\/[^/]+\//.test(u)) { c.textContent = ''; var a = document.createElement('a'); a.href = u; a.textContent = v; c.appendChild(a); }
+    return c;
+  }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Disagreement among models that could be compared", "path": "comparison", "first": "", "cols": [["Compared", "of", "n"], ["Disagree", "n", "n"], ["Organizations among them", "organizations", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "By class", "path": "classes", "first": "Class", "cols": [["Models", "n", "n"]]}, {"title": "Why models were not comparable", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Models", "n", "n"]]}, {"title": "Opened by hand: the name and the weights differ", "path": "disagree_list", "first": "Model", "firstkey": "repo", "cols": [["Stated", "stated", "t"], ["Weights", "actual", "t"], ["Ratio", "ratio", "n"], ["Found by hand", "reason", "t"]]}, {"title": "Where Hugging Face's total contradicts its own breakdown, defined after the first read", "path": "api_mismatch", "first": "Model", "firstkey": "repo", "cols": [["Name states", "stated", "t"], ["API total", "total", "n"], ["API breakdown sum", "breakdown", "n"]]}], TOP = "{models} models read. Controls: {gate}. Updated {updated} UTC.";
+  var TABLES = [{"title": "Disagreement among models that could be compared", "path": "comparison", "first": "", "cols": [["Compared", "of", "n"], ["Disagree", "n", "n"], ["Organizations among them", "organizations", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "By class", "path": "classes", "first": "Class", "cols": [["Models", "n", "n"]]}, {"title": "Why models were not comparable", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Models", "n", "n"]]}, {"title": "Read in full: the name and the weights differ", "path": "disagree_list", "link": "https://huggingface.co/{repo}", "first": "Model", "firstkey": "repo", "cols": [["Stated", "stated", "t"], ["Weights", "actual", "t"], ["Ratio", "ratio", "n"], ["Found on a full read", "reason", "t"]]}, {"title": "Where Hugging Face's total contradicts its own breakdown, defined after the first read", "path": "api_mismatch", "link": "https://huggingface.co/{repo}", "first": "Model", "firstkey": "repo", "cols": [["Name states", "stated", "t"], ["API total", "total", "n"], ["API breakdown sum", "breakdown", "n"]]}], TOP = "{models} models read. Controls: {gate}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
     if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
@@ -21,7 +26,7 @@
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(first(r, T)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

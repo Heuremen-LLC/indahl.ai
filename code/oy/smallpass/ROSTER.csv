@@ -1,0 +1,199 @@
+# Source: NCES IPEDS HD2024 (nces.ed.gov/ipeds/datacenter/data/HD2024.zip), downloaded 2026-10-27. Filter: CONTROL=2 private nonprofit, C21BASIC=21 Carnegie 2021 Baccalaureate Colleges: Arts & Sciences Focus, CYACTIVE=1.
+school,state,domain,unitid
+Oakwood University,AL,www2.oakwood.edu,101912
+Lyon College,AR,lyon.edu,106342
+Hendrix College,AR,hendrix.edu,107080
+Ouachita Baptist University,AR,obu.edu,107512
+Claremont McKenna College,CA,cmc.edu,112260
+Harvey Mudd College,CA,hmc.edu,115409
+American Jewish University,CA,aju.edu,116846
+Occidental College,CA,oxy.edu,120254
+Pitzer College,CA,pitzer.edu,121257
+Pomona College,CA,pomona.edu,121345
+Scripps College,CA,scrippscollege.edu,123165
+Simpson University,CA,simpsonu.edu,123457
+Thomas Aquinas College,CA,thomasaquinas.edu,124292
+Westmont College,CA,westmont.edu,125727
+Whittier College,CA,whittier.edu,125763
+Colorado College,CO,coloradocollege.edu,126678
+Connecticut College,CT,conncoll.edu,128902
+Trinity College,CT,trincoll.edu,130590
+Wesleyan University,CT,wesleyan.edu,130697
+Bethune-Cookman University,FL,cookman.edu,132602
+Eckerd College,FL,eckerd.edu,133492
+Agnes Scott College,GA,agnesscott.edu,138600
+Beulah Heights University,GA,beulah.edu,139153
+Covenant College,GA,covenant.edu,139393
+Morehouse College,GA,morehouse.edu,140553
+Oglethorpe University,GA,oglethorpe.edu,140696
+Paine College,GA,paine.edu,140720
+Spelman College,GA,spelman.edu,141060
+Young Harris College,GA,yhc.edu,141361
+Augustana College,IL,augustana.edu,143084
+East-West University,IL,eastwest.edu,144883
+Hebrew Theological College,IL,htc.edu,145497
+Illinois College,IL,ic.edu,145691
+Knox College,IL,knox.edu,146427
+Lake Forest College,IL,lakeforest.edu,146481
+Monmouth College,IL,monmouthcollege.edu,147341
+Principia College,IL,principiacollege.edu,148016
+Wheaton College,IL,wheaton.edu,149781
+DePauw University,IN,depauw.edu,150400
+Earlham College,IN,earlham.edu,150455
+Franklin College,IN,franklincollege.edu,150604
+Hanover College,IN,hanover.edu,150756
+Holy Cross College,IN,hcc-nd.edu,150774
+Martin University,IN,martin.edu,151810
+Saint Mary's College,IN,saintmarys.edu,152390
+Wabash College,IN,wabash.edu,152673
+Central College,IA,central.edu,153108
+Coe College,IA,coe.edu,153144
+Cornell College,IA,cornellcollege.edu,153162
+Divine Word College,IA,dwci.edu,153241
+Grinnell College,IA,grinnell.edu,153384
+Luther College,IA,luther.edu,153834
+Wartburg College,IA,wartburg.edu,154527
+Berea College,KY,berea.edu,156295
+Centre College,KY,centre.edu,156408
+Georgetown College,KY,georgetowncollege.edu,156745
+Kentucky Mountain Bible College,KY,kmbc.edu,157030
+Transylvania University,KY,transy.edu,157818
+Centenary College of Louisiana,LA,centenary.edu,158477
+Dillard University,LA,dillard.edu,158802
+College of the Atlantic,ME,coa.edu,160959
+Bates College,ME,bates.edu,160977
+Bowdoin College,ME,bowdoin.edu,161004
+Colby College,ME,colby.edu,161086
+Goucher College,MD,goucher.edu,162654
+St. John's College,MD,sjc.edu,163976
+Washington College,MD,washcoll.edu,164216
+Amherst College,MA,amherst.edu,164465
+Emmanuel College,MA,emmanuel.edu,165671
+Gordon College,MA,gordon.edu,165936
+Hampshire College,MA,hampshire.edu,166018
+Hellenic College-Holy Cross Greek Orthodox School of Theology,MA,hchc.edu,166054
+College of the Holy Cross,MA,holycross.edu,166124
+Mount Holyoke College,MA,mtholyoke.edu,166939
+Smith College,MA,smith.edu,167835
+Stonehill College,MA,stonehill.edu,167996
+Wellesley College,MA,wellesley.edu,168218
+Wheaton College (Massachusetts),MA,wheatoncollege.edu,168281
+Williams College,MA,williams.edu,168342
+Albion College,MI,albion.edu,168546
+Aquinas College,MI,aquinas.edu,168786
+Hillsdale College,MI,hillsdale.edu,170286
+Hope College,MI,hope.edu,170301
+Kalamazoo College,MI,kzoo.edu,170532
+Sacred Heart Major Seminary,MI,shms.edu,172033
+Bethany Lutheran College,MN,blc.edu,173142
+Carleton College,MN,carleton.edu,173258
+Concordia College at Moorhead,MN,concordiacollege.edu,173300
+Gustavus Adolphus College,MN,gustavus.edu,173647
+Macalester College,MN,macalester.edu,173902
+College of Saint Benedict,MN,csbsju.edu,174747
+Saint Johns University,MN,csbsju.edu,174792
+St Olaf College,MN,wp.stolaf.edu,174844
+Millsaps College,MS,millsaps.edu,175980
+Rust College,MS,rustcollege.edu,176318
+Tougaloo College,MS,tougaloo.edu,176406
+Westminster College,MO,wcmo.edu,179946
+Saint Anselm College,NH,anselm.edu,183239
+Thomas More College of Liberal Arts,NH,thomasmorecollege.edu,183275
+Drew University,NJ,drew.edu,184348
+Bard College,NY,bard.edu,189088
+Barnard College,NY,barnard.edu,189097
+Colgate University,NY,colgate.edu,190099
+Hamilton College,NY,hamilton.edu,191515
+Hartwick College,NY,hartwick.edu,191533
+Hobart William Smith Colleges,NY,hws.edu,191630
+Houghton University,NY,houghton.edu,191676
+Marymount Manhattan College,NY,mmm.edu,192864
+St Lawrence University,NY,stlawu.edu,195216
+Sarah Lawrence College,NY,sarahlawrence.edu,195304
+Skidmore College,NY,skidmore.edu,195526
+Union College,NY,union.edu,196866
+Vassar College,NY,vassar.edu,197133
+Bennett College,NC,bennett.edu,197993
+Davidson College,NC,davidson.edu,198385
+Guilford College,NC,guilford.edu,198613
+Johnson C Smith University,NC,jcsu.edu,198756
+Meredith College,NC,meredith.edu,198950
+Salem College,NC,salem.edu,199607
+Warren Wilson College,NC,warren-wilson.edu,199865
+Denison University,OH,denison.edu,202523
+Kenyon College,OH,kenyon.edu,203535
+Oberlin College,OH,oberlin.edu,204501
+Ohio Wesleyan University,OH,owu.edu,204909
+Pontifical College Josephinum,OH,pcj.edu,205027
+Wittenberg University,OH,wittenberg.edu,206525
+The College of Wooster,OH,wooster.edu,206589
+Randall University,OK,ru.edu,207157
+Lewis & Clark College,OR,lclark.edu,209056
+Linfield University,OR,linfield.edu,209065
+Reed College,OR,reed.edu,209922
+Willamette University,OR,willamette.edu,210401
+Bryn Athyn College of the New Church,PA,brynathyn.edu,210492
+Albright College,PA,albright.edu,210571
+Allegheny College,PA,allegheny.edu,210669
+Bryn Mawr College,PA,brynmawr.edu,211273
+Bucknell University,PA,bucknell.edu,211291
+Dickinson College,PA,dickinson.edu,212009
+Franklin and Marshall College,PA,fandm.edu,212577
+Gettysburg College,PA,gettysburg.edu,212674
+Haverford College,PA,haverford.edu,212911
+Juniata College,PA,juniata.edu,213251
+Lafayette College,PA,lafayette.edu,213385
+Lycoming College,PA,lycoming.edu,213668
+Muhlenberg College,PA,muhlenberg.edu,214175
+Saint Vincent College,PA,stvincent.edu,215798
+Susquehanna University,PA,susqu.edu,216278
+Swarthmore College,PA,swarthmore.edu,216287
+Ursinus College,PA,ursinus.edu,216524
+Washington & Jefferson College,PA,washjeff.edu,216667
+Westminster College,PA,westminster.edu,216807
+Allen University,SC,allenuniversity.edu,217624
+Claflin University,SC,claflin.edu,217873
+Furman University,SC,furman.edu,218070
+Presbyterian College,SC,presby.edu,218539
+Wofford College,SC,wofford.edu,218973
+Fisk University,TN,fisk.edu,220181
+Lane College,TN,lanecollege.edu,220598
+Maryville College,TN,maryvillecollege.edu,220710
+Rhodes College,TN,rhodes.edu,221351
+The University of the South,TN,sewanee.edu,221519
+Austin College,TX,austincollege.edu,222983
+Southwestern University,TX,southwestern.edu,228343
+Trinity University,TX,new.trinity.edu,229267
+Bennington College,VT,bennington.edu,230816
+Middlebury College,VT,middlebury.edu,230959
+Saint Michael's College,VT,smcvt.edu,231059
+Bridgewater College,VA,bridgewater.edu,231581
+Hampden-Sydney College,VA,hsc.edu,232256
+Hollins University,VA,hollins.edu,232308
+Randolph-Macon College,VA,rmc.edu,233295
+Randolph College,VA,randolphcollege.edu,233301
+University of Richmond,VA,richmond.edu,233374
+Roanoke College,VA,roanoke.edu,233426
+Southern Virginia University,VA,svu.edu,233611
+Sweet Briar College,VA,sbc.edu,233718
+Virginia Union University,VA,vuu.edu,234164
+Virginia Wesleyan University,VA,vwu.edu,234173
+Washington and Lee University,VA,wlu.edu,234207
+University of Puget Sound,WA,pugetsound.edu,236328
+Whitman College,WA,whitman.edu,237057
+Bethany College,WV,bethanywv.edu,237181
+Beloit College,WI,beloit.edu,238333
+Lawrence University,WI,lawrence.edu,239017
+Ripon College,WI,ripon.edu,239628
+Saint Norbert College,WI,snc.edu,239716
+St. John's College,NM,sjc.edu,245652
+Soka University of America,CA,soka.edu,399911
+Pacific Islands University,GU,piu.edu,439862
+New Saint Andrews College,ID,nsa.edu,440396
+Pillar College,NJ,pillar.edu,440794
+Ave Maria University,FL,avemaria.edu,446048
+University of the West,CA,uwest.edu,449870
+Patrick Henry College,VA,phc.edu,451927
+Providence Christian College,CA,providencecc.edu,455770
+Simmons College of Kentucky,KY,simmonscollegeky.edu,461759
+Antioch College,OH,antiochcollege.edu,483018

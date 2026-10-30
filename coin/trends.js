@@ -13,6 +13,8 @@
     var b = document.createElement('tbody');
     d.series.forEach(function (s) { var r = document.createElement('tr'); r.appendChild(td(s.name)); r.appendChild(td(s.kind)); r.appendChild(td(s.blocks, 1)); r.appendChild(td((100 * s.share).toFixed(1) + '%', 1)); r.appendChild(td(s.tests, 1)); r.appendChild(td(s.flags, 1)); r.appendChild(td(s.expected, 1)); r.appendChild(td(W(s.outcome))); b.appendChild(r); });
     t.appendChild(b); box.appendChild(t);
+    var rl = document.createElement('p'); rl.className = 'bench-note';
+    rl.textContent = 'A move is a six hour bucket whose share is three or more standard deviations from the series\' own share over the preceding seven days. Chance alone gives a move in about 0.27 percent of tests. The reading is above when the moves found exceed the number expected plus two square roots of it, consistent when they do not, and cannot tell while fewer than 14 days are held. The address rows and the tag rows are tests on the same blocks, so one event can flag an address and a tag together. The normal approximation at three standard deviations understates the tail for small shares.'; box.appendChild(rl);
     var h2 = document.createElement('h3'); h2.textContent = 'Batch payouts by watched address'; box.appendChild(h2);
     var t2 = document.createElement('table'); t2.className = 'mtx'; t2.innerHTML = '<thead><tr><th>Address</th><th>Payouts found</th><th>Median gap, hours</th><th>Median outputs</th><th>Median total, RVN</th><th>Recipients</th><th>Largest five recipients, share of volume</th></tr></thead>';
     var b2 = document.createElement('tbody');

@@ -18,7 +18,7 @@
         var row = document.createElement('tr'); row.appendChild(td(c.name)); row.appendChild(td(c.stated)); row.appendChild(td(c.ours || '')); row.appendChild(td(c.outcome || '', true)); row.appendChild(td(c.state)); tb.appendChild(row);
       });
       t.appendChild(tb); w.appendChild(t); box.appendChild(w);
-      var q = document.createElement('p'); q.className = 'meta'; var a = document.createElement('a'); a.href = '/respond?u=model-live-' + String(r.id).toLowerCase(); a.textContent = 'Respond'; q.appendChild(a); box.appendChild(q);
+      var q = document.createElement('p'); q.className = 'meta'; var a = document.createElement('a'); a.href = '/respond?u=model-live-' + String(r.id).toLowerCase(); a.textContent = 'Respond'; q.appendChild(a); q.appendChild(document.createTextNode(' \u00b7 ')); var g = document.createElement('a'); g.href = 'https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/claims_stack'; g.textContent = 'Plan, full read, scorer and outputs'; q.appendChild(g); box.appendChild(q);
     });
   }
   function load() { fetch('/hermes/model/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(draw).catch(function () {}); }

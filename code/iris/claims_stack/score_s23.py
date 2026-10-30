@@ -24,9 +24,13 @@ def bbh(r):
     vs = [(100 * v['exact_match,get-answer'], 100 * v['exact_match_stderr,get-answer']) for v in subs.values()]
     return {'chat exact_match mean over 27 subtasks': (sum(x[0] for x in vs) / 27, math.sqrt(sum(x[1] ** 2 for x in vs)) / 27)}
 MC = {'arc_challenge': ('arc_challenge',), 'boolq': ('boolq',), 'hellaswag': ('hellaswag',), 'openbookqa': ('openbookqa',), 'piqa': ('piqa',), 'social_iqa': ('social_iqa',), 'winogrande': ('winogrande',)}
-NOTE = {'S2': {'gsm8k_cot': 'Parser hand-check (HANDCHECK_S2.md): plain variants and chat flexible-extract read 10 of 10 replies as written. Chat strict-match missed 2 correct answers in 10 that lacked the closing phrase.'},
-        'S3': {'gsm8k_cot; gsm8k': 'Parser hand-check (HANDCHECK_S3.md): plain variants read 10 of 10 as written. Both chat filters missed 1 correct answer in 10.',
-               'bbh_cot_fewshot': 'Parser hand-check (HANDCHECK_S3.md): the filter missed 1 correct answer in 10, and 2 replies in 10 ended without an answer (one at our 512-token cap, one at the task\'s blank-line stop). The claim lists strict and flexible filters, but this task has one filter (get-answer), so that is the variant read.'}}[R]
+# Parser check (replies read in full), counts re-read from handcheck/*.json on 30 Oct 2026 (site pass). More than 1 of 10 replies off: that variant is CANNOT_TELL (parser) and does not count
+# toward the outcome (same rule as score_s1.py). Off counts. S2 gsm8k_cot: plain strict 0, plain flexible 0, chat flexible 1 of 10, chat strict 5 of 10.
+# S3 gsm8k: plain 0 and 0, chat flexible 1 of 10, chat strict 2 of 10. S3 bbh_cot_fewshot: 1 of 10.
+PARSER = {'S2': {'gsm8k_cot': {'chat CoT strict-match'}}, 'S3': {'gsm8k_cot; gsm8k': {'chat CoT strict-match'}}}[R]
+NOTE = {'S2': {'gsm8k_cot': "Parser check (replies read in full) (HANDCHECK_S2.md): plain variants read 10 of 10 replies as written. Chat flexible-extract read 9 of 10 as written (question 8 took '4' from 'those 4 hours', on a reply that is wrong either way). Chat strict-match found no answer on 5 of 10, 2 of them correct, so it is CANNOT_TELL (parser) and does not count toward the outcome."},
+        'S3': {'gsm8k_cot; gsm8k': "Parser check (replies read in full) (HANDCHECK_S3.md): plain variants read 10 of 10 as written. Chat flexible-extract read 9 of 10 as written (question 5 took '16' from 'for 16 glasses', where the model answered 64). Chat strict-match found no answer on 2 of 10 (questions 5 and 8), 1 of them correct, so it is CANNOT_TELL (parser) and does not count toward the outcome.",
+               'bbh_cot_fewshot': "Parser check (replies read in full) (HANDCHECK_S3.md): the filter missed 1 correct answer in 10, and 2 replies in 10 ended without an answer (one at our 512-token cap, one at the task's blank-line stop). The claim lists strict and flexible filters, but this task has one filter (get-answer), so that is the variant read."}}[R]
 def variants(row):
     t = row['lm_eval_task']
     if t in MC:
@@ -48,15 +52,16 @@ for row in rows:
     if row['status'] != 'RUN': continue
     v = variants(row)
     if not v or any(x is None for x in v.values()): out[cid] = {'state': 'not finished', 'ours': '', 'outcome': ''}; continue
-    s = float(row['stated_value']); hit = False; lo_all = hi_all = True; txt = []
+    s = float(row['stated_value']); hit = False; lo_all = hi_all = True; txt = []; pf = PARSER.get(row['lm_eval_task'], ())
     for name, (val, se) in v.items():
-        w = 1.96 * se + ROUND; txt.append(f'{name} {val:.1f} ± {w:.1f}')
+        w = 1.96 * se + ROUND; txt.append(f'{name} {val:.1f} ± {w:.1f}' + (' [CANNOT_TELL (parser)]' if name in pf else ''))
+        if name in pf: continue
         hit |= abs(s - val) <= w; lo_all &= s > val + w; hi_all &= s < val - w
     if hit: oc, note = 'CONSISTENT', ''
     else:
         d = 'above every variant\'s interval' if lo_all else ('below every variant\'s interval' if hi_all else 'outside every interval, on both sides')
         oc, note = 'CANNOT_TELL', f'. Under our harness the stated value is {d}. {HARNESS}, so this reads CANNOT_TELL until that difference is tested'
     pn = NOTE.get(row['lm_eval_task'], '')
-    out[cid] = {'state': 'read', 'ours': '; '.join(txt) + note + (('. ' + pn) if pn else ''), 'outcome': oc}
+    out[cid] = {'state': 'read', 'ours': ', '.join(txt) + note + (('. ' + pn) if pn else ''), 'outcome': oc}
 json.dump(out, open(os.path.join(HERE, f'outcomes_{r_}.json'), 'w'), indent=1)
 for k, x in out.items(): print(k, x['outcome'], x['ours'][:200])

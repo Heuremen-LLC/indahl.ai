@@ -1,12 +1,12 @@
 {
  "S2-03": {
   "state": "read",
-  "ours": "size-weighted acc 64.6 \u00b1 0.8; macro mean of 57 subject acc 66.0 \u00b1 1.0. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
+  "ours": "size-weighted acc 64.6 \u00b1 0.8, macro mean of 57 subject acc 66.0 \u00b1 1.0. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
   "outcome": "CANNOT_TELL"
  },
  "S2-05": {
   "state": "read",
-  "ours": "acc 54.4 \u00b1 2.9; acc_norm 58.0 \u00b1 2.9. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
+  "ours": "acc 54.4 \u00b1 2.9, acc_norm 58.0 \u00b1 2.9. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
   "outcome": "CANNOT_TELL"
  },
  "S2-06": {
@@ -16,17 +16,17 @@
  },
  "S2-08": {
   "state": "read",
-  "ours": "acc 54.7 \u00b1 1.0; acc_norm 73.2 \u00b1 0.9. Under our harness the stated value is outside every interval, on both sides. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
+  "ours": "acc 54.7 \u00b1 1.0, acc_norm 73.2 \u00b1 0.9. Under our harness the stated value is outside every interval, on both sides. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
   "outcome": "CANNOT_TELL"
  },
  "S2-09": {
   "state": "read",
-  "ours": "acc 34.4 \u00b1 4.2; acc_norm 46.8 \u00b1 4.4. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
+  "ours": "acc 34.4 \u00b1 4.2, acc_norm 46.8 \u00b1 4.4. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested",
   "outcome": "CANNOT_TELL"
  },
  "S2-10": {
   "state": "read",
-  "ours": "acc 78.6 \u00b1 1.9; acc_norm 79.6 \u00b1 1.9",
+  "ours": "acc 78.6 \u00b1 1.9, acc_norm 79.6 \u00b1 1.9",
   "outcome": "CONSISTENT"
  },
  "S2-11": {
@@ -41,7 +41,7 @@
  },
  "S2-16": {
   "state": "read",
-  "ours": "plain CoT strict-match 77.8 \u00b1 2.3; plain CoT flexible-extract 80.7 \u00b1 2.2; chat CoT strict-match 56.3 \u00b1 2.7; chat CoT flexible-extract 81.8 \u00b1 2.1. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested. Parser hand-check (HANDCHECK_S2.md): plain variants and chat flexible-extract read 10 of 10 replies as written. Chat strict-match missed 2 correct answers in 10 that lacked the closing phrase.",
+  "ours": "plain CoT strict-match 77.8 \u00b1 2.3, plain CoT flexible-extract 80.7 \u00b1 2.2, chat CoT strict-match 56.3 \u00b1 2.7 [CANNOT_TELL (parser)], chat CoT flexible-extract 81.8 \u00b1 2.1. Under our harness the stated value is above every variant's interval. The card's figures come from Microsoft's internal benchmark platform, so this reads CANNOT_TELL until that difference is tested. Parser check (replies read in full) (HANDCHECK_S2.md): plain variants read 10 of 10 replies as written. Chat flexible-extract read 9 of 10 as written (question 8 took '4' from 'those 4 hours', on a reply that is wrong either way). Chat strict-match found no answer on 5 of 10, 2 of them correct, so it is CANNOT_TELL (parser) and does not count toward the outcome.",
   "outcome": "CANNOT_TELL"
  }
 }

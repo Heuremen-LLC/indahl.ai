@@ -4,6 +4,7 @@
   function W(o) { return { CONSISTENT: 'consistent', ABOVE: 'above', CANNOT_TELL: 'cannot tell' }[o] || o; }
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t; return c; }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
+  function fmt(x) { return String(x).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   function table(title, obj, first) {
     var h = document.createElement('h3'); h.textContent = title; var t = document.createElement('table'); t.className = 'mtx';
     t.innerHTML = '<thead><tr><th>' + first + '</th><th>Links</th><th>Live</th><th>Page gone</th><th>Host gone</th><th>Blocked</th><th>Timed out</th><th>Rot share, 95% interval</th><th>Outcome</th></tr></thead>';
@@ -16,7 +17,7 @@
   fetch('/linkrot/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.all) { box.textContent = 'Waiting for the first pass.'; return; }
     var top = document.createElement('p'); top.className = 'bench-note';
-    top.textContent = d.papers + ' papers, ' + d.links + ' links, ' + d.read + ' read so far, ' + d.due + ' due. Controls: ' + (d.gate === 'passed' ? 'all ten read right' : 'FAILED, every row reads cannot tell') + '. Gone since the last read: ' + d.newly_gone + '. Back after being gone: ' + d.returned + '. Moved to a different repository name: ' + d.moved + '. Links read by both network seats: ' + (d.seat2_links || 0) + ', seat disagreements counted as blocked: ' + (d.seat_disagreements || 0) + '. Updated ' + d.updated + ' UTC.';
+    top.textContent = fmt(d.papers) + ' papers read' + (d.papers_with_a_link == null ? '' : ', ' + fmt(d.papers_with_a_link) + ' of them with a code or data link') + '. ' + fmt(d.links) + ' distinct links, ' + fmt(d.read) + ' read so far, ' + fmt(d.due) + ' due. Controls: ' + (d.gate === 'passed' ? 'all ten read right' : 'FAILED, every row reads cannot tell') + '. Gone since the last read: ' + d.newly_gone + '. Back after being gone: ' + d.returned + '. Moved to a different repository name: ' + d.moved + '. Links read by both network seats: ' + (d.seat2_links || 0) + ', seat disagreements counted as blocked: ' + (d.seat_disagreements || 0) + '. Updated ' + d.updated + ' UTC.';
     box.textContent = ''; box.appendChild(top); box.appendChild(table('By year of the paper', d.by_year, 'Year')); box.appendChild(table('By host', d.by_host, 'Host'));
     if (d.repos && d.repos.all) {
       var rh = document.createElement('h3'); rh.textContent = 'Is there code behind a live GitHub link?'; box.appendChild(rh);

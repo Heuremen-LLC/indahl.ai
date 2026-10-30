@@ -12,7 +12,7 @@
     var top = el('div', null, 'tape-top');
     var b = el('div', null, 'tape-card'); b.appendChild(el('h3', 'Beacon'));
     b.appendChild(el('p', d.beacon.value, 'hashline'));
-    var p = el('p', null, 'bench-note'); p.appendChild(document.createTextNode('Built at ' + when(d.beacon.t) + ' from drand round ')); p.appendChild(link('https://api.drand.sh/52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971/public/' + d.beacon.drand_round, d.beacon.drand_round)); p.appendChild(document.createTextNode(', the feeds of that run and the line before it. Inputs: ')); p.appendChild(link(GH + 'leaves/' + d.beacon.n + '.json', 'entry ' + d.beacon.n)); p.appendChild(document.createTextNode('.')); b.appendChild(p);
+    var p = el('p', null, 'bench-note'); p.appendChild(document.createTextNode('Built at ' + when(d.beacon.t) + ' from drand round ')); p.appendChild(link('https://api.drand.sh/52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971/public/' + d.beacon.drand_round, d.beacon.drand_round)); p.appendChild(document.createTextNode(', the feeds of that run, the line before it and the root of the newest quantum-bits entry. Inputs: ')); p.appendChild(link(GH + 'leaves/' + d.beacon.n + '.json', 'entry ' + d.beacon.n)); p.appendChild(document.createTextNode('.')); b.appendChild(p);
     var h = el('div', null, 'tape-card'); h.appendChild(el('h3', 'Head of the chain'));
     h.appendChild(el('p', d.head.entry, 'hashline')); h.appendChild(el('p', 'Entry ' + d.head.n + ', ' + when(d.head.t) + '. ' + d.count + ' entries in all.', 'bench-note'));
     var a = el('div', null, 'tape-card'); a.appendChild(el('h3', 'Anchor'));

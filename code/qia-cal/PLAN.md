@@ -35,3 +35,17 @@ Synth under Note 1 (synth_results.text): IBM exactly right gives no chance calls
 ibm_boston's 03:13 UTC job waited more than 8 hours in IBM's queue (497 jobs pending), and one job per processor is kept in flight, so boston's
 row showed a 02:14 reading with no reason given. The published file now also lists, per processor, the send time of a job still waiting in IBM's
 queue, and the page prints it beside the older reading. No reading, rule or interval changes.
+
+## Note 3 (30 Oct 2026, 13:57 UTC by the file time, written before any run is re-read under it; the re-reads were appended at about 14:00 UTC)
+Note 1 gave IBM's readout figure its own exact interval with n = 4,096 whenever the figure is a multiple of 1/4096. Every multiple of 1/1024 is also a
+multiple of 1/4096, and on ibm_fez and ibm_marrakesh every readout figure in the record is a multiple of 1/1024 (fez 312 of 312, marrakesh 312 of 312
+in the 30 Oct 12:41 UTC job; across saved runs fez 3,432 of 3,432 and marrakesh 2,808 of 3,432), so those figures are counts from about 1,024 shots.
+Their intervals were drawn half as wide as they are. Found by an outside read of the live page during the 30 Oct site pass, after fez and marrakesh
+readings were published.
+Rule from now on: the shot count behind IBM's readout figures is read from the record of each run. n = 1,024 when every readout figure in that
+record is a multiple of 1/1024, otherwise 4,096 (callib.ibm_readout_shots). Nothing else changes.
+Synth under Note 3 (synth_results.text): a null world whose IBM figures are counts out of 1,024 gives n = 1,024 in 40 of 40 runs and no chance calls.
+The old rule (n forced to 4,096) also gives no chance calls in a pure null world, so its extra calls on fez and marrakesh are readings near the edge
+where the record and our job differ by more than the narrower interval allowed. They are corrected, not explained.
+Every fez and marrakesh run already in the off-record chain is re-read from its saved raw counts and its saved record under Note 3, and a new
+entry names the entry it corrects (append only). Each corrected run's file is published as /qia/cal/<job>n3.json beside the original.

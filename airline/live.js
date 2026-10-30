@@ -3,8 +3,13 @@
   var box = document.getElementById('airline-live'); if (!box) return;
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
+  function first(r, T) {
+    var v = r._key != null ? r._key : r[T.firstkey], c = td(v), u = T.link ? T.link.replace(/\{(\w+)\}/g, function (m, k) { return r[k] == null ? '' : encodeURI(r[k]); }) : '';
+    if (v && /^https?:\/\/[^/]+\//.test(u)) { c.textContent = ''; var a = document.createElement('a'); a.href = u; a.textContent = v; c.appendChild(a); }
+    return c;
+  }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Live: the FAA's own airport delay programs, right now", "path": "faa.now", "first": "Airport and program", "cols": [["Stated by the FAA", "stated", "t"], ["Reason", "reason", "t"]]}, {"title": "2026 against 2025 (January to August)", "path": "now_vs_2025", "first": "Airline", "cols": [["Routes", "routes", "n"], ["Change in scheduled minus flown, minutes", "change", "ci"], ["Change in flown minutes", "flown_change", "n"], ["Late 15 minutes or more, 2025 then 2026", "late", "t"], ["Outcome", "outcome", "oc"]]}, {"title": "2025 against 2019 (January to August)", "path": "y2025_vs_2019", "first": "Airline", "cols": [["Routes", "routes", "n"], ["Change in scheduled minus flown, minutes", "change", "ci"], ["Change in flown minutes", "flown_change", "n"], ["Late 15 minutes or more, 2019 then 2025", "late", "t"], ["Outcome", "outcome", "oc"]]}], TOP = "Airlines with a longer schedule gap in 2026 than 2025: {headline_n} of {headline_of}. Updated {updated}. {faa_line}";
+  var TABLES = [{"title": "Live: the FAA's own airport delay programs, right now", "path": "faa.now", "first": "Airport and program", "cols": [["Stated by the FAA", "stated", "t"], ["Reason", "reason", "t"]]}, {"title": "Airport closures the FAA lists, right now, with the dates in each notice", "path": "faa.closures", "first": "Airport and notice", "cols": [["Closed from", "start", "t"], ["Reopens", "reopen", "t"], ["Notice as published", "reason", "t"]]}, {"title": "2026 against 2025 (January to August)", "path": "now_vs_2025", "first": "Airline", "cols": [["Routes", "routes", "n"], ["Change in scheduled minus flown, minutes", "change", "ci"], ["Change in flown minutes", "flown_change", "n"], ["Late 15 minutes or more, 2025 then 2026", "late", "t"], ["Outcome", "outcome", "oc"]]}, {"title": "2025 against 2019 (January to August)", "path": "y2025_vs_2019", "first": "Airline", "cols": [["Routes", "routes", "n"], ["Change in scheduled minus flown, minutes", "change", "ci"], ["Change in flown minutes", "flown_change", "n"], ["Late 15 minutes or more, 2019 then 2025", "late", "t"], ["Outcome", "outcome", "oc"]]}], TOP = "Airlines with a longer schedule gap in 2026 than 2025: {headline_n} of {headline_of}. Updated {updated} UTC. {faa_line}";
   function cell(kind, row, key) {
     var v = row[key];
     if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
@@ -17,11 +22,11 @@
     box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{(\w+)\}/g, function (m, k) { return d[k] == null ? '' : d[k]; }); box.appendChild(top);
     TABLES.forEach(function (T) {
       var src = d; T.path.split('.').forEach(function (k) { src = src && src[k]; }); if (!src) return;
-      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object'; });
+      var flat = !Array.isArray(src) && Object.keys(src).length > 0 && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object'; });
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(first(r, T)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });

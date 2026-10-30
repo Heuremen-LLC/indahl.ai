@@ -3,8 +3,13 @@
   var box = document.getElementById('pkginstall-live'); if (!box) return;
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
+  function first(r, T) {
+    var v = r._key != null ? r._key : r[T.firstkey], c = td(v), u = T.link ? T.link.replace(/\{(\w+)\}/g, function (m, k) { return r[k] == null ? '' : encodeURI(r[k]); }) : '';
+    if (v && /^https?:\/\/[^/]+\//.test(u)) { c.textContent = ''; var a = document.createElement('a'); a.href = u; a.textContent = v; c.appendChild(a); }
+    return c;
+  }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Failure among commands that could be compared", "path": "comparison", "first": "", "cols": [["Compared", "of", "n"], ["Fail", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "By class", "path": "classes", "first": "Class", "cols": [["Projects", "n", "n"]]}, {"title": "Why projects were not comparable", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Projects", "n", "n"]]}, {"title": "Opened by hand: commands that fail", "path": "disagree_list", "first": "Project", "firstkey": "project", "cols": [["Command", "command", "t"], ["Pip said", "error", "t"], ["Found by hand", "reason", "t"]]}], TOP = "{projects} projects read with pip {pip}. Controls: {gate}. Updated {updated} UTC.";
+  var TABLES = [{"title": "Failure among commands that could be compared", "path": "comparison", "first": "", "cols": [["Compared", "of", "n"], ["Fail", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "By class", "path": "classes", "first": "Class", "cols": [["Projects", "n", "n"]]}, {"title": "Why projects were not comparable", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Projects", "n", "n"]]}, {"title": "Read in full: commands that fail", "path": "disagree_list", "link": "https://pypi.org/project/{project}/", "first": "Project", "firstkey": "project", "cols": [["Command", "command", "t"], ["Pip said", "error", "t"], ["Found on a full read", "reason", "t"]]}], TOP = "{projects} projects read with pip {pip}. Controls: {gate}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
     if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
@@ -21,7 +26,7 @@
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(first(r, T)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });
