@@ -41,8 +41,10 @@ S0 is not scored against zero. The rule (`outcome_band` in `zhukov.py`, fixed in
 | S1, qubit 16, prep 1 | -0.0008 [-0.0130, +0.0113] | -0.0030 [-0.0142, +0.0081] |
 | SC, qubit 3, prep 0 (control) | +0.0001 [-0.0010, +0.0013] | -0.0002 [-0.0010, +0.0005] |
 
-Both S0 intervals exclude zero and both sit inside +-0.041. So on both nights the double-read statistic on qubit 16 after a preparation in 0 is small and negative, about -0.012 to -0.017. Against zero alone both would read BELOW. The qubit-3 control reads zero on both nights, so the effect belongs to qubit 16, not to back-to-back reads in general. A negative value is the sign a state already wrong before the first read would give. There is a component of that kind on qubit 16, below the threshold we set for a call.
+Both S0 intervals exclude zero and both sit inside +-0.041. Under the stricter rule from point 1 (all terms in quadrature at 99%) they still exclude zero: [-0.0267, -0.0063] and [-0.0191, -0.0052]. With a 99% t factor for 3 degrees of freedom on the between-job term, each night alone includes zero: [-0.0380, +0.0051] and [-0.0259, +0.0017]. All eight jobs over the two nights read negative, from -0.0067 to -0.0248 (this pooled view was defined after the data). The qubit-3 control reads zero on both nights, so the effect is not a property of back-to-back reads on every qubit.
 
-Our files should have printed the band and the fact that the interval excludes zero beside the label. The plan says CONSISTENT "rules out a persisting state". With the band, it rules out one larger than 0.041, not any. The line in our write-up that the double-read and delay arms "found nothing to separate" should have said this.
+A negative value says the wrong outcome persists from the first read to the second more than independent noise on each read allows. A state already wrong before the first read would do that, and so would a state changed by the first read. These arms cannot tell the two apart. Either way the size is below the threshold we set for a call.
+
+Our files should have printed the band and the fact that the interval excludes zero beside the label. The plan says CONSISTENT "rules out a persisting state". With the band, it rules out one larger than 0.041, not any. The line in our write-up that the double-read and delay arms "found nothing to separate" should have said this. The delay arm does include zero on both nights: -0.0043 [-0.0131, +0.0046] and -0.0011 [-0.0072, +0.0050].
 
 Heuremen LLC
