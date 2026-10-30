@@ -1,0 +1,44 @@
+
+## 2026-10-30 17:21 A1: full-context repeat floor inside his release (identical prompt_hash in both protocols): Haiku 0 items changed on BABILong and Oolong, 13 of 50 on GraphWalks; Sonnet 0 to 4; Opus 1 to 11; GPT-5.5 6 to 15 (Opus and GPT-5.5 at API-default temperature); all mean differences CONSISTENT with 0; beside his 28 Table 1 contrasts, 3 change no more items than their model's floor (GPT-5.5 BABILong and GraphWalks signal-aware, Sonnet GraphWalks signal-aware), all three his neutral rows
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: A1 named in PLAN 7c1e223 before a1.py ran; the floor uses only items whose prompt_hash is equal in both runs (all items qualified), so the two runs are the same request
+- II: holds: items counted in each direction for the floor; each Table 1 contrast's changed items counted item by item, not netted
+- III: holds: signs printed for every mean difference and delta; floors are counts with direction split
+- V: holds: paired bootstrap under three seeds for the floor's mean; the contrast-to-floor comparison is a count beside a count, labelled as such and not a test
+- VI: holds: all 14 floor means CONSISTENT with 0 with bounds printed; 'within floor' printed as a count comparison only, matching his own neutral verdicts on those three rows
+- R: holds: counts from his results JSONL at commit 229afe14e36d; our changed-item counts equal the scout's on all 28 contrasts; defined after reading the paper
+- L1: n/a: scores as released by his scorers; no replies parsed by us
+- L2: holds: no run of ours exists for this gift
+- L3: holds: his setup named: hosted models; Opus 4.7 and GPT-5.5 at API-default temperature per the scout; the floor is of that setup as run
+- L4: holds: this is his own repeat floor per model and eval, one rerun; no server settings are knowable for hosted APIs
+- L5: holds: scout rebuilt Table 1 28 of 28; our counts match its nonzero-difference counts
+- L6: holds: no item dropped; every item had equal prompts in both full-context runs
+- L7: n/a: golds are the datasets'
+- L8: holds: paired on sample_id throughout
+- L9: n/a: no prompt of ours
+- L10: holds: Haiku 4.5 repeats exactly on BABILong and Oolong and not on GraphWalks (13 of 50), printed per eval
+- L11: n/a: nothing substituted
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 17:24 Referee pass and A1b-A1d: reproduced; the two full-context runs are separate calls; Opus MRCR floor spans 18 May to 10 Jul; at |d| >= 0.05, 4 of 28 contrasts within floor (adds Haiku GraphWalks signal-aware, his 'trend'); Haiku GraphWalks floor mean -0.044 beside his +0.083 trend for that cell
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: Addendum 1 committed before A1b-A1d ran; the referee confirmed separate calls (timestamps differ by 12 minutes to an hour, no output reuse, no cache in his code)
+- II: holds: item counts at any change and at 0.05 printed side by side; floor means printed beside his deltas, not netted into one
+- III: holds: signs printed: Haiku GraphWalks floor -0.044 against his +0.083
+- V: holds: two thresholds side by side for continuous scores; count comparisons labelled as such
+- VI: caught: 'exactly 3 of 28, all neutral' held only at any change; at 0.05 it is 4, the fourth his 'trend' row; both printed
+- R: caught: the Opus MRCR floor mixes records from 18 May and 10 Jul, read from timestamp_utc, so it is labelled as possibly including model change
+- L1: n/a: scores as released, no replies parsed by us
+- L2: holds: no run of ours exists for this gift
+- L3: holds: setup as run, temperatures per the records
+- L4: holds: his one rerun per cell is the floor; a floor of 0 is degenerate and labelled so
+- L5: holds: referee reproduced every count and interval
+- L6: holds: no item dropped
+- L7: n/a: golds are the datasets'
+- L8: holds: paired on sample_id; his pairing removes item difficulty, not run noise, which A1d shows
+- L9: n/a: no prompt of ours
+- L10: holds: per model, per eval
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it wrote its own code first and asked to refute
