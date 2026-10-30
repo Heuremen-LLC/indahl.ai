@@ -1,0 +1,5 @@
+03a743c 2026-10-30 18:34:07 -0400 Maiorano gift: referee pass, M2c and M3b (post hoc), corrections filed
+8ed2be0 2026-10-30 18:33:45 -0400 Maiorano gift: Addendum 2 (referee corrections; M2c, M3b defined after the data) before computing
+52a321d 2026-10-30 18:22:23 -0400 Maiorano gift: K, M1-M4 and M2b (post hoc) readings, Check Block filed
+35f1d34 2026-10-30 18:21:34 -0400 Maiorano gift: Addendum 1 (M2b, defined after the data) before computing
+b035956 2026-10-30 18:19:14 -0400 Maiorano gift (2609.25010): plan M1-M4 (record readings) committed before computing; STATUS for Lail and Caldwell
