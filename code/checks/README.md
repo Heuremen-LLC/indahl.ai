@@ -16,6 +16,7 @@ many catches still came after a reading had gone out. A question can be skipped.
   above its folder staged in the same commit, with a complete new entry.
 - `install_hook.sh`: adds the gate to the pre-commit hook of the repository you are in, keeping any hook already there.
 - `test_gate.sh`: builds a throwaway repository and shows the gate refuse and pass, case by case.
+- `example/CHECKS.md`: a real entry, from our pass over every page of indahl.ai with this block on 30 October 2026.
 
 ## Use
 
