@@ -1,0 +1,4 @@
+60a6155 2026-10-30T17:24:39-04:00 Gift 2608.03297: referee reproduced A1; floor date span, 0.05 threshold (4 of 28 within floor), Haiku GraphWalks floor half his trend effect; Check Block filed
+2148d75 2026-10-30T17:24:16-04:00 Gift 2608.03297 Addendum 1: floor date span, 0.05 threshold, floor beside each Table 1 delta; before computing
+e068bd5 2026-10-30T17:21:02-04:00 Gift 2608.03297 A1: his own full-context repeat floor per model; 3 of 28 Table 1 contrasts change no more items than that floor, all his neutral rows; Check Block filed
+7c1e223 2026-10-30T17:19:50-04:00 Gift plan 2608.03297 (Arjmandi): A1 repeat floor from identical full-context prompts in both protocols; before computing

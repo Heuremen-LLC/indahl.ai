@@ -1,0 +1,23 @@
+# Gift recount: Arjmandi, arXiv 2608.03297 "Distractor-Aware Truncation" (plan, 30 Oct 2026, before the reading is computed)
+Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as printed: Mohsen Arjmandi, evolutionID GmbH, mohsen.arjmandi@evolutionid.com.
+No funding, acknowledgement or conflict statement printed. Released: github.com/evolutionIdGmbH/memoreach (MIT), single commit 229afe14e36d,
+104 results JSONL files; hashes in scout/SHA256SUMS.txt.
+
+## KNOWN-GOOD
+Scout rebuild (scout/RECOUNT.md): Table 1 28 of 28 on n, delta, adjusted p and verdict (CI endpoints within bootstrap noise; his Holm
+family is 84 tests, 56 unprinted), Table 2 63 of 64, Tables 3 to 5, BFS gold, BABILong regex recall. Our own check before A1: per model and
+eval, the number of items whose prompt_hash is the same in the naive and signal-aware runs at 100% retention.
+
+## Reading (defined after reading the paper; four outcomes)
+A1 the repeat floor inside his release: at 100% retention both protocols send the same prompt (prompt_hash equal). Per model and eval, on
+   items with equal prompt_hash, count items whose score differs between the two runs (each direction) and the mean paired difference with a
+   95% paired bootstrap interval (10,000, seeds 1, 2, 3). Set each model and eval's floor beside his Table 1 protocol deltas at lower
+   retention. Hosted models at API-default temperature for Opus and GPT-5.5 (as the scout found), so this is a floor of his setup as run.
+
+## Addendum 1 (30 Oct 2026, after the referee's report, before we computed these; stamp from the commit)
+A1b: the floor's date span per model and eval (earliest and latest timestamp_utc across the two full-context runs), so a floor that spans
+weeks is labelled as possibly including model change. A1c: for continuous scores (GraphWalks, MRCR), the changed-item counts at a 0.05
+threshold beside any-change, for the floor and for each Table 1 contrast. A1d: each model and eval's full-context floor mean difference set
+beside his Table 1 delta for the same cell, since his levels are separate runs and pairing on sample_id removes item difficulty, not run
+noise. Wording: count comparisons, not tests; a floor of 0 is degenerate and from one repeat; contrasts above the floor are not evidence
+against the paper, and the harm rows support it.

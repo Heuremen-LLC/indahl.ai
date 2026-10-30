@@ -1,0 +1,61 @@
+eval        model                       pairs equal | items scored differently (n>s / s>n) | mean signal-aware minus naive [95% paired, three seeds]
+babilong    claude-haiku-4-5-20251001     240   240 |    0 of  240 (0 / 0)               | +0.000 [+0.000, +0.000] [+0.000, +0.000] [+0.000, +0.000]
+babilong    claude-opus-4-7               240   240 |   10 of  240 (4 / 6)               | +0.008 [-0.017, +0.033] [-0.017, +0.033] [-0.017, +0.033]
+babilong    claude-sonnet-4-6             240   240 |    4 of  240 (3 / 1)               | -0.008 [-0.025, +0.008] [-0.025, +0.008] [-0.025, +0.008]
+babilong    gpt-5.5-2026-04-23            240   240 |   15 of  240 (6 / 9)               | +0.013 [-0.017, +0.046] [-0.021, +0.046] [-0.021, +0.046]
+graphwalks  claude-haiku-4-5-20251001      50    50 |   13 of   50 (7 / 6)               | -0.044 [-0.127, +0.034] [-0.127, +0.035] [-0.125, +0.034]
+graphwalks  claude-opus-4-7                50    50 |    1 of   50 (0 / 1)               | +0.000 [+0.000, +0.001] [+0.000, +0.001] [+0.000, +0.001]
+graphwalks  claude-sonnet-4-6              50    50 |    0 of   50 (0 / 0)               | +0.000 [+0.000, +0.000] [+0.000, +0.000] [+0.000, +0.000]
+graphwalks  gpt-5.5-2026-04-23             50    50 |    6 of   50 (3 / 3)               | -0.010 [-0.081, +0.060] [-0.081, +0.058] [-0.081, +0.060]
+mrcr_v2     claude-haiku-4-5-20251001      50    50 |    4 of   50 (3 / 1)               | -0.000 [-0.003, +0.003] [-0.004, +0.003] [-0.003, +0.003]
+mrcr_v2     claude-opus-4-7                50    50 |   10 of   50 (5 / 5)               | -0.018 [-0.087, +0.040] [-0.080, +0.039] [-0.088, +0.039]
+mrcr_v2     claude-sonnet-4-6              50    50 |    4 of   50 (2 / 2)               | +0.000 [-0.053, +0.054] [-0.053, +0.054] [-0.053, +0.054]
+oolong      claude-haiku-4-5-20251001     110   110 |    0 of  110 (0 / 0)               | +0.000 [+0.000, +0.000] [+0.000, +0.000] [+0.000, +0.000]
+oolong      claude-opus-4-7               110   110 |   11 of  110 (5 / 6)               | +0.009 [-0.055, +0.073] [-0.045, +0.073] [-0.045, +0.073]
+oolong      claude-sonnet-4-6             110   110 |    3 of  110 (2 / 1)               | -0.009 [-0.045, +0.018] [-0.036, +0.018] [-0.045, +0.018]
+
+Table 1 contrasts: items changed from full context to 25% (our count) against the full-context repeat floor of that model and eval
+  babilong   claude-haiku-4-5-20251001   naive        n  240 | changed   43 (mean delta -0.138) | floor   0 of  240 | above floor by 43
+  babilong   claude-haiku-4-5-20251001   signal_aware n  240 | changed   24 (mean delta +0.083) | floor   0 of  240 | above floor by 24
+  babilong   claude-opus-4-7             naive        n  240 | changed  126 (mean delta -0.433) | floor  10 of  240 | above floor by 116
+  babilong   claude-opus-4-7             signal_aware n  240 | changed   24 (mean delta +0.008) | floor  10 of  240 | above floor by 14
+  babilong   claude-sonnet-4-6           naive        n  240 | changed   80 (mean delta -0.175) | floor   4 of  240 | above floor by 76
+  babilong   claude-sonnet-4-6           signal_aware n  240 | changed   31 (mean delta +0.104) | floor   4 of  240 | above floor by 27
+  babilong   gpt-5.5-2026-04-23          naive        n  240 | changed  159 (mean delta -0.613) | floor  15 of  240 | above floor by 144
+  babilong   gpt-5.5-2026-04-23          signal_aware n  240 | changed   14 (mean delta +0.017) | floor  15 of  240 | within floor
+  graphwalks claude-haiku-4-5-20251001   naive        n   50 | changed   26 (mean delta -0.352) | floor  13 of   50 | above floor by 13
+  graphwalks claude-haiku-4-5-20251001   signal_aware n   50 | changed   16 (mean delta +0.083) | floor  13 of   50 | above floor by 3
+  graphwalks claude-opus-4-7             naive        n   50 | changed   22 (mean delta -0.407) | floor   1 of   50 | above floor by 21
+  graphwalks claude-opus-4-7             signal_aware n   50 | changed    3 (mean delta -0.041) | floor   1 of   50 | above floor by 2
+  graphwalks claude-sonnet-4-6           naive        n   50 | changed   22 (mean delta -0.427) | floor   0 of   50 | above floor by 22
+  graphwalks claude-sonnet-4-6           signal_aware n   50 | changed    0 (mean delta +0.000) | floor   0 of   50 | within floor
+  graphwalks gpt-5.5-2026-04-23          naive        n   50 | changed   24 (mean delta -0.397) | floor   6 of   50 | above floor by 18
+  graphwalks gpt-5.5-2026-04-23          signal_aware n   50 | changed    2 (mean delta +0.040) | floor   6 of   50 | within floor
+  mrcr_v2    claude-haiku-4-5-20251001   naive        n   50 | changed   37 (mean delta -0.088) | floor   4 of   50 | above floor by 33
+  mrcr_v2    claude-haiku-4-5-20251001   signal_aware n   50 | changed   31 (mean delta +0.198) | floor   4 of   50 | above floor by 27
+  mrcr_v2    claude-opus-4-7             naive        n   50 | changed   44 (mean delta -0.565) | floor  10 of   50 | above floor by 34
+  mrcr_v2    claude-opus-4-7             signal_aware n   50 | changed   26 (mean delta -0.060) | floor  10 of   50 | above floor by 16
+  mrcr_v2    claude-sonnet-4-6           naive        n   50 | changed   41 (mean delta -0.655) | floor   4 of   50 | above floor by 37
+  mrcr_v2    claude-sonnet-4-6           signal_aware n   50 | changed   16 (mean delta -0.112) | floor   4 of   50 | above floor by 12
+  oolong     claude-haiku-4-5-20251001   naive        n  110 | changed   22 (mean delta -0.055) | floor   0 of  110 | above floor by 22
+  oolong     claude-haiku-4-5-20251001   signal_aware n  110 | changed   23 (mean delta -0.045) | floor   0 of  110 | above floor by 23
+  oolong     claude-opus-4-7             naive        n  110 | changed   33 (mean delta -0.045) | floor  11 of  110 | above floor by 22
+  oolong     claude-opus-4-7             signal_aware n  110 | changed   31 (mean delta +0.027) | floor  11 of  110 | above floor by 20
+  oolong     claude-sonnet-4-6           naive        n  110 | changed    8 (mean delta +0.000) | floor   3 of  110 | above floor by 5
+  oolong     claude-sonnet-4-6           signal_aware n  110 | changed    8 (mean delta +0.018) | floor   3 of  110 | above floor by 5
+
+A1b-A1d per model and eval: floor date span | floor at any change and at |d| >= 0.05 | floor mean (signal-aware minus naive at 100%) beside his two Table 1 deltas
+  babilong   claude-haiku-4-5-20251001   2026-05-17 to 2026-05-17 | floor 0, at 0.05: 0 | floor mean +0.000 | naive -0.138 (changed 43, at 0.05: 43) | signal_aware +0.083 (changed 24, at 0.05: 24)
+  babilong   claude-opus-4-7             2026-05-17 to 2026-05-18 | floor 10, at 0.05: 10 | floor mean +0.008 | naive -0.433 (changed 126, at 0.05: 126) | signal_aware +0.008 (changed 24, at 0.05: 24)
+  babilong   claude-sonnet-4-6           2026-05-17 to 2026-05-18 | floor 4, at 0.05: 4 | floor mean -0.008 | naive -0.175 (changed 80, at 0.05: 80) | signal_aware +0.104 (changed 31, at 0.05: 31)
+  babilong   gpt-5.5-2026-04-23          2026-07-10 to 2026-07-10 | floor 15, at 0.05: 15 | floor mean +0.013 | naive -0.613 (changed 159, at 0.05: 159) | signal_aware +0.017 (changed 14, at 0.05: 14)
+  graphwalks claude-haiku-4-5-20251001   2026-05-17 to 2026-05-17 | floor 13, at 0.05: 6 | floor mean -0.044 | naive -0.352 (changed 26, at 0.05: 24) | signal_aware +0.083 (changed 16, at 0.05: 6)
+  graphwalks claude-opus-4-7             2026-05-18 to 2026-05-18 | floor 1, at 0.05: 0 | floor mean +0.000 | naive -0.407 (changed 22, at 0.05: 21) | signal_aware -0.041 (changed 3, at 0.05: 2)
+  graphwalks claude-sonnet-4-6           2026-05-18 to 2026-05-18 | floor 0, at 0.05: 0 | floor mean +0.000 | naive -0.427 (changed 22, at 0.05: 22) | signal_aware +0.000 (changed 0, at 0.05: 0)
+  graphwalks gpt-5.5-2026-04-23          2026-07-10 to 2026-07-10 | floor 6, at 0.05: 5 | floor mean -0.010 | naive -0.397 (changed 24, at 0.05: 24) | signal_aware +0.040 (changed 2, at 0.05: 2)
+  mrcr_v2    claude-haiku-4-5-20251001   2026-05-18 to 2026-05-18 | floor 4, at 0.05: 2 | floor mean -0.000 | naive -0.088 (changed 37, at 0.05: 27) | signal_aware +0.198 (changed 31, at 0.05: 21)
+  mrcr_v2    claude-opus-4-7             2026-05-18 to 2026-07-10 | floor 10, at 0.05: 4 | floor mean -0.018 | naive -0.565 (changed 44, at 0.05: 32) | signal_aware -0.060 (changed 26, at 0.05: 19)
+  mrcr_v2    claude-sonnet-4-6           2026-07-10 to 2026-07-10 | floor 4, at 0.05: 2 | floor mean +0.000 | naive -0.655 (changed 41, at 0.05: 38) | signal_aware -0.112 (changed 16, at 0.05: 11)
+  oolong     claude-haiku-4-5-20251001   2026-05-18 to 2026-05-18 | floor 0, at 0.05: 0 | floor mean +0.000 | naive -0.055 (changed 22, at 0.05: 22) | signal_aware -0.045 (changed 23, at 0.05: 23)
+  oolong     claude-opus-4-7             2026-07-10 to 2026-07-10 | floor 11, at 0.05: 11 | floor mean +0.009 | naive -0.045 (changed 33, at 0.05: 33) | signal_aware +0.027 (changed 31, at 0.05: 31)
+  oolong     claude-sonnet-4-6           2026-07-10 to 2026-07-10 | floor 3, at 0.05: 3 | floor mean -0.009 | naive +0.000 (changed 8, at 0.05: 8) | signal_aware +0.018 (changed 8, at 0.05: 8)
