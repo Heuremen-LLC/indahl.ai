@@ -1,0 +1,70 @@
+G1 and G2 and G3: per pair, p under four rulers; U = uncorrected .05, B = Bonferroni, H = Holm
+A                      B                       diff     paired z       unpaired z     exact McNemar  Eq.3 identity 
+M-Inst-v0.1            M-v0.1                  -0.0534  0.0000 UBH     0.0009 UBH     0.0000 UBH     0.0000 UBH    
+M-Inst-v0.1            M-Inst-v0.2             -0.0401  0.0014 UBH     0.0121 U--     0.0017 UBH     0.0020 UBH    
+M-v0.1                 Yi-6B                   +0.0381  0.0027 UBH     0.0192 U--     0.0032 UBH     0.0034 U-H    
+M-v0.1                 Qwen1.5-7BChat          +0.0367  0.0087 U--     0.0239 U--     0.0100 U--     0.0047 U--    
+M-Inst-v0.1            Yi-6BChat               -0.0334  0.0100 U--     0.0358 U--     0.0116 U--     0.0102 U--    
+M-Inst-v0.2            Yi-6B                   +0.0247  0.0506 ---     0.1256 ---     0.0573 ---     0.0573 ---    
+M-Inst-v0.2            Qwen1.5-7BChat          +0.0234  0.0841 ---     0.1477 ---     0.0934 ---     0.0721 ---    
+Yi-6B                  Yi-6BChat               -0.0180  0.1108 ---     0.2618 ---     0.1247 ---     0.1653 ---    
+M-v0.1                 Yi-6BChat               +0.0200  0.1286 ---     0.2226 ---     0.1419 ---     0.1232 ---    
+M-Inst-v0.1            Qwen1.5-7BChat          -0.0167  0.2095 ---     0.2888 ---     0.2283 ---     0.1989 ---    
+Qwen1.5-7BChat         Yi-6BChat               -0.0167  0.2197 ---     0.2992 ---     0.2387 ---     0.1989 ---    
+M-Inst-v0.1            Yi-6B                   -0.0154  0.2411 ---     0.3287 ---     0.2622 ---     0.2373 ---    
+M-Inst-v0.2            M-v0.1                  -0.0134  0.2997 ---     0.4178 ---     0.3246 ---     0.3041 ---    
+M-Inst-v0.2            Yi-6BChat               +0.0067  0.6023 ---     0.6822 ---     0.6390 ---     0.6074 ---    
+Qwen1.5-7BChat         Yi-6B                   +0.0013  0.9206 ---     0.9331 ---     0.9602 ---     0.9181 ---    
+  paired z       uncorrected 5, Bonferroni 3, Holm 3 of 15
+  unpaired z     uncorrected 5, Bonferroni 1, Holm 1 of 15
+  exact McNemar  uncorrected 5, Bonferroni 3, Holm 3 of 15
+  Eq.3 identity  uncorrected 5, Bonferroni 2, Holm 3 of 15
+  paired p below unpaired p on 15 of 15 pairs
+
+G4: Mistral-7B-v0.1 vs Yi-6B, fewest single-item score changes to cross each line (each step picks the change that moves p most)
+  paired z       Bonferroni now passes    -> fails after 2 change(s): M 1->0 where Yi 1 (p 0.0039)
+  paired z       Holm       now passes    -> fails after 2 change(s): M 1->0 where Yi 1 (p 0.0039)
+  exact McNemar  Bonferroni now passes    -> fails after 1 change(s): M 1->0 where Yi 1 (p 0.0039)
+  exact McNemar  Holm       now passes    -> fails after 1 change(s): M 1->0 where Yi 1 (p 0.0039)
+  Eq.3 identity  Bonferroni now fails     -> passes after 1 change(s): M 0->1 where Yi 1 (p 0.0029)
+  Eq.3 identity  Holm       now passes    -> fails after 1 change(s): M 1->0 where Yi 1 (p 0.0040)
+
+G6a: no-letter share per model, 95% Wilson
+  Mistral-7B-Instruct-v0.1    225 of 1497  0.150 [0.133, 0.169]
+  Mistral-7B-Instruct-v0.2    275 of 1497  0.184 [0.165, 0.204]
+  Mistral-7B-v0.1             162 of 1497  0.108 [0.093, 0.125]
+  Qwen1.5-7B-Chat             341 of 1497  0.228 [0.207, 0.250]
+  Yi-6B                       176 of 1497  0.118 [0.102, 0.135]
+  Yi-6B-Chat                  252 of 1497  0.168 [0.150, 0.188]
+
+G6b: discordant items per pair, split by reason (both gave a letter / one side gave no letter)
+  M-Inst-v0.1            M-v0.1                 discordant 370: both-letter 315, one-side-no-letter  55 (no-letter on A 40, on B 15)
+  M-Inst-v0.1            M-Inst-v0.2            discordant 356: both-letter 304, one-side-no-letter  52 (no-letter on A 21, on B 31)
+  M-v0.1                 Yi-6B                  discordant 363: both-letter 325, one-side-no-letter  38 (no-letter on A 17, on B 21)
+  M-v0.1                 Qwen1.5-7BChat         discordant 441: both-letter 343, one-side-no-letter  98 (no-letter on A 25, on B 73)
+  M-Inst-v0.1            Yi-6BChat              discordant 378: both-letter 321, one-side-no-letter  57 (no-letter on A 28, on B 29)
+  M-Inst-v0.2            Yi-6B                  discordant 359: both-letter 314, one-side-no-letter  45 (no-letter on A 33, on B 12)
+
+G6c: paired z on items where both models gave a letter (each pair on its own item set); G6d: paired z under the benchmark rule (TIGER-Lab save_res, a guess among the options, scored by its expectation 1/options; realized guesses are not stored); Holm over 15 each
+  M-Inst-v0.1            M-v0.1                 his file H | letters-only n 1186 -0.0464 p 0.0019 H | benchmark rule -0.0489 p 0.0001 H
+  M-Inst-v0.1            M-Inst-v0.2            his file H | letters-only n 1110 -0.0631 p 0.0001 H | benchmark rule -0.0441 p 0.0004 H
+  M-v0.1                 Yi-6B                  his file H | letters-only n 1216 +0.0436 p 0.0032 H | benchmark rule +0.0370 p 0.0033 H
+  M-v0.1                 Qwen1.5-7BChat         his file U | letters-only n 1058 +0.0066 p 0.7056 - | benchmark rule +0.0224 p 0.1030 -
+  M-Inst-v0.1            Yi-6BChat              his file U | letters-only n 1125 -0.0453 p 0.0043 H | benchmark rule -0.0357 p 0.0053 U
+  M-Inst-v0.2            Yi-6B                  his file - | letters-only n 1127 +0.0515 p 0.0010 H | benchmark rule +0.0322 p 0.0101 U
+  M-Inst-v0.2            Qwen1.5-7BChat         his file - | letters-only n 1006 +0.0229 p 0.1949 - | benchmark rule +0.0176 p 0.1840 -
+  Yi-6B                  Yi-6BChat              his file - | letters-only n 1155 -0.0355 p 0.0089 U | benchmark rule -0.0238 p 0.0334 U
+  M-v0.1                 Yi-6BChat              his file - | letters-only n 1157 +0.0061 p 0.6979 - | benchmark rule +0.0132 p 0.3093 -
+  M-Inst-v0.1            Qwen1.5-7BChat         his file - | letters-only n 1034 -0.0513 p 0.0027 H | benchmark rule -0.0265 p 0.0426 U
+  Qwen1.5-7BChat         Yi-6BChat              his file - | letters-only n 1026 -0.0010 p 0.9554 - | benchmark rule -0.0092 p 0.4900 -
+  M-Inst-v0.1            Yi-6B                  his file - | letters-only n 1179 -0.0093 p 0.5572 - | benchmark rule -0.0119 p 0.3604 -
+  M-Inst-v0.2            M-v0.1                 his file - | letters-only n 1129 +0.0089 p 0.5651 - | benchmark rule -0.0048 p 0.7049 -
+  M-Inst-v0.2            Yi-6BChat              his file - | letters-only n 1088 +0.0230 p 0.1507 - | benchmark rule +0.0084 p 0.5046 -
+  Qwen1.5-7BChat         Yi-6B                  his file - | letters-only n 1060 +0.0425 p 0.0126 U | benchmark rule +0.0146 p 0.2677 -
+  Holm survivors: his file 3, letters-only per pair 6, benchmark rule 3
+G6c on one common set (all six gave a letter, n 811): uncorrected 4, Bonferroni 1, Holm 1 of 15
+  M-Inst-v0.1            M-Inst-v0.2            p 0.0003 H
+  M-Inst-v0.1            M-v0.1                 p 0.0073 U
+  M-Inst-v0.1            Yi-6BChat              p 0.0173 U
+  M-Inst-v0.2            Yi-6B                  p 0.0193 U
+  M-Inst-v0.1            Qwen1.5-7BChat         p 0.0584 -

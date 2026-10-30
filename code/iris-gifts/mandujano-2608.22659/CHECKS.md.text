@@ -1,0 +1,44 @@
+
+## 2026-10-30 16:04 G1-G6 on his CSV and TIGER-Lab outputs: Holm survivors paired 3, unpaired 1, exact McNemar 3, Eq.3 identity 3 (Bonferroni 2); Mistral-7B-v0.1 vs Yi-6B crosses its line after 1 or 2 single-item changes under every rule; no-letter share 0.108 to 0.228 by model, scored 0 in his file; M-v0.1 vs Qwen1.5 uncorrected gap mostly one-side no-letter items (letters-only +0.0066 p .71)
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: every reading named in PLAN d4ec250 or Addendum 1 82d0f7d before it ran; G6c conditions on both models giving a letter, a gate that differs per pair and is printed with its n per pair, labelled as a different estimand
+- II: holds: discordant items counted in each direction for every pair (b10 / b01) and split by reason before any net; no run-to-run floor exists in his data, which is what G5 would measure
+- III: caught: under letters-only, Mistral-7B-Instruct-v0.2 vs Mistral-7B-v0.1 changes sign (+0.0089 against his -0.0134), both far from any line; printed with signs, never folded into magnitudes
+- V: holds: four rulers side by side per pair (paired z, unpaired z, exact McNemar, Eq. 3 identity) and two corrections (Bonferroni, Holm); G4 counts changes, a ruler that is not a p-value
+- VI: holds: per pair the call is printed under each ruler, never folded; G4 greedy is exhaustive at one change and a bound at two, so the count reads 1 or 2, not a minimum proven past one
+- R: holds: counts from his CSV (sha256 3dec4d92...) and TIGER-Lab's zips read today; TIGER-Lab's scoring rule read from their evaluate_from_local.py save_res; all readings defined after reading his paper, labelled so
+- L1: n/a: no replies parsed by us; TIGER-Lab's extraction is theirs and is read as released, its no-letter outcome kept as its own bin
+- L2: holds: no rate of ours exists yet; G5 has no addendum and has not run
+- L3: holds: both scoring rules named (his: no letter scores 0; TIGER-Lab: random guess among options, scored here by its expectation)
+- L4: n/a: no run of ours
+- L5: holds: recount from his released CSV first (every printed table rebuilds), then question_id matched against upstream with categories checked (0 mismatches)
+- L6: caught: no-letter replies are the setup answering for the model, 162 to 341 per model and scored 0; counted by model with Wilson intervals and split per pair
+- L7: n/a: no gold built from a labeller here; MMLU-Pro keys are the benchmark's
+- L8: holds: paired tests throughout; unpaired shown only as the contrast his paper draws
+- L9: n/a: no prompt of ours
+- L10: holds: says nothing about these weights today; TIGER-Lab's served run only
+- L11: n/a: nothing substituted
+- L12: n/a: no referee or labeller used
+
+## 2026-10-30 16:13 Referee pass: every reading reproduced independently; G6c on the common set of 811 items where all six lettered gives Holm 1 of 15 (per-pair sets gave 6); labels fixed: his file scores no-letter as 0, benchmark scorer named and its guesses unstored
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: the per-pair letters-only sets each drop items either model failed to letter, so the gate differs by pair; the common set of 811 items is the like-for-like read and is printed beside it
+- II: holds: discordant counts per pair unchanged from the filed entry; no net replaces an item count
+- III: holds: signs printed per pair in readings.text; the common-set top rows keep the signs of the per-pair rows
+- V: holds: same rulers as the filed entry; the referee's exhaustive search over one and two changes confirms the G4 counts, and our output no longer calls the search greedy
+- VI: holds: the common-set count (Holm 1) is printed beside the per-pair count (Holm 6) and his file's (Holm 3), none folded into one verdict
+- R: caught: Addendum 2 was written before our run but committed with its result, so the common-set reading is the referee's, recounted by us, and the addendum says so
+- L1: n/a: no replies parsed by us
+- L2: holds: no rate of ours exists
+- L3: holds: both scoring rules named with their sources (his file, TIGER-Lab save_res, and compute_accuracy.py's ten-letter guess)
+- L4: n/a: no run of ours
+- L5: holds: recount from his released CSV and the upstream zips, unchanged
+- L6: holds: no-letter counts per model unchanged; 811 of 1,497 items have a letter from all six models
+- L7: n/a: no gold built from a labeller
+- L8: holds: paired tests throughout
+- L9: n/a: no prompt of ours
+- L10: holds: about TIGER-Lab's served run only
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it was given the raw files and asked to refute, and wrote its own code before reading ours
