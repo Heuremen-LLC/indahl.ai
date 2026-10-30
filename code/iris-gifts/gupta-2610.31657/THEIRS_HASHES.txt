@@ -1,0 +1,4 @@
+Files read as data, sha256:
+22535c8389b0bcaaf08a8aed140e7c60651042b64a5ff2137798e2cc243d7471  routeguard_camera_ready_supplementary.zip (Zenodo 10.5281/zenodo.22654013, v1.1.0; concept DOI 10.5281/zenodo.22609128)
+Inside it: code/artifacts/ictai2026/table_ii_common_subset.json, code/artifacts/ictai2026/llm_inputs/*__model_reported.json, and
+code/src/ticket_routing/llm/prompt_templates.py (read as text). The zip's own MANIFEST.sha256 lists each file.

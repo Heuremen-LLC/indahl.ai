@@ -1,0 +1,44 @@
+
+## 2026-10-30 16:54 K1, G1, G2: accuracies rebuild from his per-ticket files (eight runs, stored values equal); few-shot examples all show confidence 1.0, and few-shot model-reported confidence is 1.0 on GPT-4o-mini 1000/1000, Llama 849/849 parsed, Qwen 853/1000, Haiku 19/1000, against 0, 1, 8, 0 zero-shot; paired few minus zero +0.083, +0.117, -0.123, +0.092 with Wilson intervals
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: G1 and G2 named in PLAN 03b6048 before readings.py ran; zero-shot and few-shot compared on the same 1,000 tickets
+- II: holds: paired per ticket, discordant tickets counted in each direction for G2, tickets moving to 1.0 counted for G1
+- III: holds: signs printed: three models gain with few-shot, Llama loses (-0.123), and the loss is mostly its 151 parse failures scored wrong as the paper scores them
+- V: holds: Wilson for accuracy, exact McNemar for paired change, counts for confidence identity
+- VI: holds: each model read on its own; Haiku's 19 of 1,000 printed beside the three models near 1,000, not folded into one claim
+- R: holds: from his llm_inputs/*model_reported.json and table_ii_common_subset.json (Zenodo record 22654013); the paper's own line on GPT-4o-mini quoted, the rest defined after reading it
+- L1: holds: parse_status as released; Llama's 151 failures carry confidence 0 and are kept, every parsed Llama reply is 1.0
+- L2: holds: no run of ours exists for this gift
+- L3: holds: his setup named (hosted APIs and Together FP8/INT4 for open weights, his prompt template v1)
+- L4: n/a: no run of ours exists for this gift
+- L5: holds: accuracies equal the stored values for all eight runs
+- L6: holds: parse failures counted by model (Llama few-shot 151), scored wrong as the paper does
+- L7: n/a: labels are the dataset's
+- L8: holds: paired by ticket
+- L9: caught: the prompt does not contain the label, but it does contain the confidence value 1.0 in every example, and three of four models return it; named as an association
+- L10: holds: about his served runs only
+- L11: n/a: nothing substituted
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 16:58 Referee pass and G3: all reproduced; correctness AUROC of model-reported confidence few-shot: GPT-4o-mini 0.500, Llama-3-8B-Lite 0.601 all but 0.500 on its 849 parsed replies, Qwen2.5-7B-Turbo 0.509 (zero-shot 0.555), Haiku 0.664 (zero-shot 0.671); endpoint names and full p values printed
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: Llama few-shot AUROC 0.601 came from the pipeline's 0.0 on 151 parse failures, a gate built from the outcome; parsed-only reads 0.500, printed beside it (G3, Addendum 1 committed before computing)
+- II: holds: per ticket throughout; G3 split by parse status before any summary
+- III: holds: AUROC printed per run, all at or above 0.5, signs not folded
+- V: holds: AUROC with ties counted half, on all tickets and on parsed only
+- VI: holds: Haiku stays near 0.67 and is printed as the counter-case, not folded into a claim about all models
+- R: holds: endpoint names from the paper's config (experiment_llm_paper.yaml) as the referee read them; p values printed in full
+- L1: holds: parse_status as released; Llama's failures are the pipeline's 0.0, kept apart
+- L2: holds: no run of ours exists for this gift
+- L3: caught: 'FP8 and INT4 runs' replaced by the provider-documented endpoint names, as the paper says precision was not independently verified
+- L4: n/a: no run of ours exists for this gift
+- L5: holds: referee reproduced every number
+- L6: holds: 151 Llama parse failures counted and separated
+- L7: n/a: labels are the dataset's
+- L8: holds: paired by ticket
+- L9: holds: association with the examples' 1.0 only, no cause; Haiku shows it is not uniform
+- L10: holds: about his served runs
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it wrote its own code first

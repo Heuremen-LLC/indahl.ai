@@ -1,0 +1,31 @@
+K1 and G2: accuracy per model and setting against the released true labels (parse failures scored wrong, as the paper does)
+  gpt4o_mini_zero_shot     accuracy 0.376 [0.347, 0.406] (stored 0.376) | parse failures 0
+  gpt4o_mini_few_shot_k3   accuracy 0.459 [0.428, 0.490] (stored 0.459) | parse failures 0
+  haiku_zero_shot          accuracy 0.360 [0.331, 0.390] (stored 0.360) | parse failures 0
+  haiku_few_shot_k3        accuracy 0.477 [0.446, 0.508] (stored 0.477) | parse failures 0
+  llama_zero_shot          accuracy 0.378 [0.348, 0.408] (stored 0.378) | parse failures 0
+  llama_few_shot_k3        accuracy 0.255 [0.229, 0.283] (stored 0.255) | parse failures 151
+  qwen_zero_shot           accuracy 0.355 [0.326, 0.385] (stored 0.355) | parse failures 0
+  qwen_few_shot_k3         accuracy 0.447 [0.416, 0.478] (stored 0.447) | parse failures 0
+
+G2 paired few-shot minus zero-shot, exact McNemar on discordant tickets
+  gpt4o_mini   few minus zero +0.083 | few-only right 111, zero-only right 28 | p 6.8e-13
+  haiku        few minus zero +0.117 | few-only right 153, zero-only right 36 | p 2.3e-18
+  llama        few minus zero -0.123 | few-only right 81, zero-only right 204 | p 2.1e-13
+  qwen         few minus zero +0.092 | few-only right 142, zero-only right 50 | p 2.1e-11
+
+G1 model-reported confidence: share exactly 1.0 and distinct values; few-shot examples in the prompt all show 1.0
+  gpt4o_mini   zero-shot: 1.0 on    0 of 1000,  6 distinct | few-shot: 1.0 on 1000 of 1000,  1 distinct | tickets moving to exactly 1.0 from below: 1000
+  haiku        zero-shot: 1.0 on    0 of 1000, 12 distinct | few-shot: 1.0 on   19 of 1000,  8 distinct | tickets moving to exactly 1.0 from below: 19
+  llama        zero-shot: 1.0 on    1 of 1000,  3 distinct | few-shot: 1.0 on  849 of 1000,  2 distinct | tickets moving to exactly 1.0 from below: 848
+  qwen         zero-shot: 1.0 on    8 of 1000,  8 distinct | few-shot: 1.0 on  853 of 1000,  3 distinct | tickets moving to exactly 1.0 from below: 846
+
+G3 correctness AUROC of model-reported confidence, all tickets and parsed replies only (Addendum 1)
+  GPT-4o-mini (alias, queried 2026-05-22)                    zero_shot all 0.655 | parsed only 0.655 (n 1000)
+  GPT-4o-mini (alias, queried 2026-05-22)                    few_shot  all 0.500 | parsed only 0.500 (n 1000)
+  Claude Haiku 4.5                                           zero_shot all 0.671 | parsed only 0.671 (n 1000)
+  Claude Haiku 4.5                                           few_shot  all 0.664 | parsed only 0.664 (n 1000)
+  Meta-Llama-3-8B-Instruct-Lite (Together, documented INT4)  zero_shot all 0.513 | parsed only 0.513 (n 1000)
+  Meta-Llama-3-8B-Instruct-Lite (Together, documented INT4)  few_shot  all 0.601 | parsed only 0.500 (n 849)
+  Qwen2.5-7B-Instruct-Turbo (Together, documented FP8)       zero_shot all 0.555 | parsed only 0.555 (n 1000)
+  Qwen2.5-7B-Instruct-Turbo (Together, documented FP8)       few_shot  all 0.509 | parsed only 0.509 (n 1000)

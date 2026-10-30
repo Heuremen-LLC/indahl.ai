@@ -1,0 +1,23 @@
+# Gift recount: Gupta, arXiv 2610.31657 "Cost-Aware Abstention for LLM-Based IT Ticket Classification" (plan, 30 Oct 2026)
+Written and committed before any reading below is computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as printed: Sachin
+Gupta, Independent Researcher, United States, sachinkg12@gmail.com. No funding or acknowledgement text. Released: Zenodo concept
+10.5281/zenodo.22609128 (record 22654013, v1.1.0, zip sha256 22535c8389b0, 177 files matching its MANIFEST), GitHub sachinkg12/RouteGuard
+793b337b0f5a; hashes in scout/HASHES.txt.
+
+## KNOWN-GOOD
+Scout rebuild: every LLM cell of Tables II to IV from the released per-ticket vectors; classical rows refit with architecture gaps the
+author warns of. Ours, before the readings: K1 accuracy per model and setting from his per-ticket predictions against the true labels in
+table_ii_common_subset.json, against the accuracy stored in each file and his Table II.
+
+## Readings (defined after reading the paper and code; four outcomes)
+G1 confidence and the examples: his few-shot prompt shows "confidence": 1.0 in every example (prompt_templates.py). Per model, the share of
+   model-reported confidences equal to 1.0 and the number of distinct values, zero-shot against few-shot, and per ticket how many move to
+   exactly 1.0 from below. Reported as an association with the prompt, no cause.
+G2 intervals the paper does not print for LLM accuracy: Wilson 95% per model and setting, and the paired few-shot minus zero-shot
+   difference per model with an exact McNemar p on the 1,000 tickets.
+
+## Addendum 1 (30 Oct 2026, after the referee's report, before we computed it; stamp from the commit)
+G3: correctness AUROC of model-reported confidence per run (ties counted half), over all 1,000 tickets and over parsed replies only, so a
+score set by the pipeline on parse failures (0.0) is separated from the model's own. Labels in any write-up: endpoint names as the config
+gives them (GPT-4o-mini alias queried 2026-05-22, Claude Haiku 4.5, Qwen2.5-7B-Instruct-Turbo and Meta-Llama-3-8B-Instruct-Lite on Together,
+documented by the provider as FP8 and INT4), Llama's few-shot counts as 849 of 849 parsed, exact p printed in full, no cause named.
