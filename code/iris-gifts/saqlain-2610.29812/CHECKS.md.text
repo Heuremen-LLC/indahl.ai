@@ -1,0 +1,44 @@
+
+## 2026-10-30 17:29 Q1: 166 PubMed searches cached twice, 9 returned a different set and 1 a different order; Q2: SUPPORT/CONTRADICT accuracy oracle minus closed-book, Gemini 3.5 flash-lite -0.078 [-0.20, +0.03] (CANNOT_TELL on 'without sacrificing', 5 vs 10 discordant), Gemini 3.1 +0.078 [-0.016, +0.172]; oracle minus agent 3.1 +0.125 [+0.016, +0.234], 3.5 +0.016 [-0.11, +0.14]
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: Q1 and Q2 named in PLAN ec9e65a before readings.py ran; Q2 uses the same 64 SUPPORT/CONTRADICT claims for every harness, paired
+- II: holds: discordant claims counted in each direction before any net; repeated searches counted one by one
+- III: holds: signed differences printed per backbone; the two backbones point opposite ways against closed-book (+0.078 and -0.078), kept apart
+- V: holds: exact McNemar and a paired bootstrap side by side for Q2; counts for Q1
+- VI: caught: 'without sacrificing' read against both alternatives: for Gemini 3.5 flash-lite the interval reaches 0 and a 20-point loss against closed-book, so CANNOT_TELL, not CONSISTENT with no sacrifice
+- R: holds: from his cache/pubmed.jsonl and results/*.jsonl; all-claim accuracies equal summary.json for all eight runs; defined after reading the paper
+- L1: n/a: labels as released, no replies parsed by us
+- L2: holds: no run of ours exists for this gift
+- L3: holds: his setup named (Gemini flash-lite backbones, PubMed E-utilities, his harnesses)
+- L4: holds: Q1 is a retrieval repeat floor from his cache; no model repeat exists in the release
+- L5: holds: accuracies rebuild against summary.json first
+- L6: holds: no claim dropped; all 100 per harness, 64 SUPPORT/CONTRADICT
+- L7: n/a: SciFact labels are the dataset's
+- L8: holds: paired per claim
+- L9: n/a: no prompt of ours
+- L10: holds: about his served runs
+- L11: n/a: nothing substituted
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 17:34 Referee pass and Addendum 1: repeated searches are the two backbone runs each caching the same query; 7 of the 10 differing lists map to 3.1 first and 3.5 second; last line wins in his loader; oracle minus single +0.484 and +0.438 (holds against single-shot for both); against closed-book and agent the 3.5 interval reaches a ~20-point loss; 3.5 oracle predicts NEI on 45 against 36 gold, precision 0.69 (3.1: 31, 0.90)
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: F4 does not name its reference; all three harnesses are now compared, and the sentence holds against single-shot for both backbones (Addendum 1 committed before computing)
+- II: holds: per claim and per search, counted one by one
+- III: holds: signs printed per comparison; the two backbones point opposite ways against closed-book
+- V: holds: bootstrap and exact McNemar side by side; NEI precision beside NEI recall
+- VI: caught: 'without sacrificing' read against each reference: holds against single-shot for both, CANNOT_TELL against closed-book and agent for Gemini 3.5 flash-lite
+- R: caught: Q1's first framing called the duplicates repeats over time; they are the two backbone runs each caching the same query near-simultaneously; 7 of 10 mapped to the backbone that recorded each list, 3 agent searches unmatched and said so
+- L1: n/a: labels as released
+- L2: holds: no run of ours exists for this gift
+- L3: holds: his setup named
+- L4: holds: Q1 is a retrieval floor of PubMed for identical queries, not a model floor
+- L5: holds: referee reproduced every count
+- L6: holds: NEI predictions counted per harness
+- L7: n/a: SciFact labels
+- L8: holds: paired per claim
+- L9: n/a: no prompt of ours
+- L10: holds: about his served runs
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it wrote its own code first
