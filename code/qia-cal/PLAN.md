@@ -49,3 +49,12 @@ The old rule (n forced to 4,096) also gives no chance calls in a pure null world
 where the record and our job differ by more than the narrower interval allowed. They are corrected, not explained.
 Every fez and marrakesh run already in the off-record chain is re-read from its saved raw counts and its saved record under Note 3, and a new
 entry names the entry it corrects (append only). Each corrected run's file is published as /qia/cal/<job>n3.json beside the original.
+
+## Note 4 (30 Oct 2026, written before the change, on Wayfinder's question "does it need to be hourly?")
+Measured from our own records: every calibration job is billed 4 s whatever its size (69 of 69 charged jobs), so shots do not set the cost, the
+number of jobs does. In the 40 to 43 hours of IBM records our mirror saved per processor, IBM changed its readout or T1 figures 0 to 9 times per
+processor (29 in all across 7 processors), with a median of 2.2 to 6.9 hours between changes. Most restamps change neither.
+Rule from now on: a processor is sent a job when IBM's published readout or T1 figures differ from the record our last job on it ran under, or when
+6 hours have passed since our last job on it. One job per processor stays in flight. Each run is still read and chained as before (Notes 1 and 3).
+What it gives up: hour-by-hour drift within a long-lived record is read every 6 hours instead of every hour. What it keeps: a reading of every new
+IBM record soon after it appears. Expected cost about 4 to 6 jobs per processor per day instead of 24.
