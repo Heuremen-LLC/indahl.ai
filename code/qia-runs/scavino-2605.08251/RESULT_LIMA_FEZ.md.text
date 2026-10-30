@@ -1,0 +1,9 @@
+# RESULT -- arXiv 2605.08251 (Scavino Alfaro, independent, Lima) free calibration run, ibm_fez (moved from marrakesh by two addenda), 25 Oct 2026, 98 s
+Jobs: P1 dbemji0m94ac738s42eg, S1a dbemjp8m94ac738s431g, S1b dbemjtvpc3tc739m0bb0, S2a dbemk2ngdj9s73fm38lg, S2b dbemk7fsstms73fcc8ng, P2 dbemkbvgdj9s73fm39pg (P S S P, his 20 circuits, 4000 shots, gate counts equal to his transpile 20/20). Full readout: results_lima_fez.text.
+KNOWN-GOOD: his raw counts through our code: MAE 0.06445 before ZNE, 0.02810 after, 9/10 improved, as published: PASS.
+His line: the interval 'reflects shot noise within each job rather than drift between jobs'.
+Our reading on fez: R1 drift in MAE between the two full passes (~3 min apart) -0.01589 [-0.02348, -0.00884] vs shot null [-0.00748, +0.00725]: BELOW
+(drift between jobs is present and resolves). R2 split B BELOW, linear-free R2C BELOW. R3 ZNE gain changed by +0.0075 between passes (ABOVE).
+R4: the job-to-job change in the ZNE correction reaches 0.038 = 1.06x his published ZNE gain 0.03635 (shot floor 0.35x).
+Plain line for the author: on fez today, the between-job drift is the same size as the ZNE gain he reports; his interval needs a between-job term.
+Caveat: his runs were on marrakesh; this is fez, same coupling map and physical qubits 0-4.

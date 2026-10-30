@@ -1,0 +1,6 @@
+MD5 (Exact_DM_triangle_Chain_Code_v2.0.zip) = 9b4c69613356c471bd58402e70357826
+MD5 (Exact_DM_triangle_Code_v1.0.zip) = 0ef3a7d6e21caf7556566729ee71578c
+MD5 (Exact_DM_triangle_Coherent_Compensation_v2.0.zip) = 4b9dd0af18f80e9914b69a978f838653
+MD5 (Exact_DM_triangle_IBM_Data_v2.0.zip) = 6585f0c92a277aa7b89543716104aee1
+MD5 (Exact_DM_triangle_Supplement_EN_v2.pdf) = 26e92d1fa81e8cc11c4dacc0f347f397
+07df185d8ed2b792ca41a8a3ef3d60538ed5a735bda974a201c7225863117e85  Exact_DM_triangle_IBM_Data_v2.0.zip

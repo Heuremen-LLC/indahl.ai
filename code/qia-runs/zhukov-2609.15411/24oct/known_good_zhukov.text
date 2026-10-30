@@ -1,0 +1,12 @@
+KG1 smallest P000 of the sentinel register over 344 dynamical circuits, raw/005: 0.2881 -> rounds to 0.288; published 0.288 -> PASS
+KG2 control minima per chain (lanes 1,2,3,5,6), raw/005: 0.9658, 0.9590, 0.9648, 0.9707, 0.9668 -> 0.959 to 0.971; published 0.959 to 0.971 -> PASS
+KG3 raw/005 chain C strang8 Jt=4/3: signed phase error 46.32 deg (counting se 2.52), |C1| 0.499; published "approximately 46" -> PASS
+KG3 raw/005 chain C exact Jt=4/3: signed phase error 2.95 deg (counting se 1.37), |C1| 0.778; published "approximately 3" -> PASS
+KG3 raw/003 chain C strang r=16 Jt=4/3: signed phase error 96.27 deg, |C1| 0.464; published "approximately 96" -> PASS
+KG3 raw/003 chain C exact Jt=4/3: signed phase error 2.75 deg, |C1| 0.820; published "approximately 3" -> PASS
+KG4 raw/003 qubit 16 solo prep0: P(read 1) 0.7657 +- 0.0047; Bones final 0.7657 +- 0.0047 -> PASS
+KG4 raw/003 qubit 16 solo prep1: P(read 1) 0.8927 +- 0.0034; Bones final 0.8927 +- 0.0034 -> PASS
+KG4 raw/003 qubit 16 packed prep0: P(read 1) 0.7315 +- 0.0035; Bones final 0.7315 +- 0.0035 -> PASS
+KG5 bit order: ideal modal code equals the SPAM pattern (x1 = MSB = q16) in 48 of 48 circuits -> PASS
+KG6 SCALE_B: his raw/003 vs raw/004 identical circuits, 410 rows: median T 1.72 vs null median 0.91; half the excess 0.406; SCALE_B fixed at 0.41 -> PASS
+R0 KNOWN-GOOD -> PASS

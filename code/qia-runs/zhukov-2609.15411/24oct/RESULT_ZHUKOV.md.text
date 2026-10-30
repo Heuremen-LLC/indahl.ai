@@ -1,0 +1,22 @@
+# RESULT -- free calibration run for Andrey Zhukov (independent), arXiv 2609.15411v2, ibm_kingston, 24 Oct 2026 07:10-07:15Z.
+Read under PLAN (commit 5e14dac, before any job). 86 circuits (his 76 unchanged on his physical qubits + 10 prep-vs-readout arms), 1024 shots,
+jobs A1 B1 B2 A2, 26 s each, 104 s total. KNOWN-GOOD 11/11 (his P000 0.288, control minima, chain-C phases, q16 SPAM from his raw data).
+(a) DELIVERED vs STATED (his gateless SPAM controls, today's record):
+   q16 P(1|prep0) packed 0.0126 [0.0115,0.0138], solo 0.0123 [0.0101,0.0146] vs stated 0.0093 -> ABOVE (x1.3); prep1 CONSISTENT.
+   q3  CONSISTENT on all four.   q2 P(1|prep0) 0.0047 / 0.0066 vs stated 0.0122 -> BELOW (record above delivered); prep1 CONSISTENT.
+   Prep-vs-readout arms (double read, 100 us idle, q3 control): all CONSISTENT -- nothing to separate today.
+   His 16-17 Sep anomaly (q16 P(1|prep0) 0.766 solo) is NOT present today: delivered 0.012.
+(b) DRIFT between jobs on identical untwirled circuits: B_WITHIN and B_SLOT CONSISTENT (median T 0.79 / 0.83 vs null 0.80 / 0.82).
+(c) CHAIN-C PHASE at Jt=4/3: r=8 ours -46.8 deg vs his +46.3; exact ours -1.2 vs his +2.9. Magnitudes agree at r=8 (46.8 vs 46.3).
+   FLAG (/q 17, sign checked twice): the same estimator gives + on his decoded shot codes and - on our counts. A bit-order / chain-order
+   difference between his data format and ours would flip the sign. The planned signed reading (BELOW) is NOT booked until the sign
+   convention is checked on one circuit both ways. Magnitude: CONSISTENT.
+   C_MIN control minima: ours 0.897 vs his 0.964 -> BELOW (today's controls on his qubits read lower; same sign issue does not apply).
+READING FOR THE AUTHOR: the q16 "diagnostic register" anomaly in his September data is absent on kingston today (record and delivered
+agree within x1.3); drift between jobs minutes apart is within noise on his circuits; the r=8 phase error has the same size today.
+
+CORRECTION after SIGNCHECK_ZHUKOV.md.text (zero QPU): decoding verified both ways (his shot codes reproduced bit for bit from his BitArrays;
+our counts re-encode to the codes used, 32/32; measure maps identical; noiseless exact = 0.00 deg, Strang r=8 = +1.53 deg). The sign flip is
+the DEVICE, not decoding. The planned signed reading stands: C_STRANG8 = -93.1 deg [-100.8, -85.4] -> BELOW (his +46.3 on 16-17 Sep, ours
+-46.8 today). "Same size today" holds for chain C only (other chains differ, and his own chains vary in sign). Cause: CANNOT_TELL (cross-date
+reading, not drift; the two calibration records can be compared at zero QPU on the pass). The earlier hold was the right call; it resolved.

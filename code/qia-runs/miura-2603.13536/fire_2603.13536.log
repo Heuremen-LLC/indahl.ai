@@ -1,0 +1,5 @@
+ibm_pittsburgh: operational True, pending 2; ring [128, 129, 118, 109, 108, 107, 106, 105, 117, 125, 126, 127] score 0.0824 (CZ err [0.0015, 0.0014, 0.0015, 0.0017, 0.0025, 0.0029, 0.0011, 0.0024, 0.004, 0.0012, 0.0009, 0.0013], readout [0.0027, 0.0085, 0.0023, 0.0243, 0.0028, 0.0026, 0.0027, 0.0033, 0.0034, 0.0022, 0.0022, 0.0029]); 32 circuits, 62000 shots; transpiled level 1 seed 13536: 2q gates off the ring 0, final layout = ring True, 2q per trot circuit 72-72, max depth 298; twirling OFF, DD OFF; est 21.6 s (cap 30), remaining 2701
+  job = smp.run([(c, None, m['shots']) for c, m in zip(isa, meta)]); sub = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+SUBMITTED attempt 1 job dbeecdvgdj9s73flkcn0 2026-10-24T17:09:12Z (remaining before 2701)
+DONE usage {'qpu_charge_time_seconds': 19, 'value': 0.304023, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.304023, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 19}}]}
+ALL DONE -- now run analyze.py

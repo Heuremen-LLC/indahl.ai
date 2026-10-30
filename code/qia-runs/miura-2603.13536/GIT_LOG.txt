@@ -1,0 +1,6 @@
+Commit history of this run folder (plan commits come before the first job):
+ae74781  2026-10-24T13:08:57-04:00  Plan and code for free run, arXiv:2603.13536 AS-SQD (ibm_pittsburgh), before any job
+99a87a2  2026-10-24T13:44:12-04:00  ADDENDUM 1: attempt 1 raised before submission (no job id); re-attempt same code, unfiltered log
+c3167ee  2026-10-24T13:52:09-04:00  ADDENDUM 2: attempt 1 did submit (dbeecdv..., 13:09:12); attempt 1 scored, attempt 2 = copy by gap; written before any counts read
+7023a52  2026-10-24T13:52:13-04:00  ADDENDUM 2: attempt 1 did submit (job dbeecdvg, 19 s); duplicate job dbeesuom by second seat; job 1 primary, job 2 copy; before reading counts
+b05ff48  2026-10-24T13:52:57-04:00  Result: arXiv:2603.13536 pittsburgh, job 1 D1 BELOW, D2 CONSISTENT, headline CANNOT_TELL; job 2 duplicate as copy

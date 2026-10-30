@@ -1,0 +1,23 @@
+A q16 packed prep0                                                                           = 0.0089 [0.0080, 0.0099] stated [0.0132, 0.0159] -> BELOW
+A q16 packed prep1                                                                           = 0.0087 [0.0078, 0.0096] stated [0.0117, 0.0117] -> BELOW
+A q16 solo prep0                                                                             = 0.0082 [0.0060, 0.0104] stated [0.0132, 0.0159] -> BELOW
+A q16 solo prep1                                                                             = 0.0076 [0.0065, 0.0090] stated [0.0117, 0.0117] -> BELOW
+A q3 packed prep0                                                                            = 0.0007 [0.0004, 0.0011] stated [0.0002, 0.0010] -> CONSISTENT
+A q3 packed prep1                                                                            = 0.0214 [0.0198, 0.0230] stated [0.0098, 0.0215] -> CONSISTENT
+A q3 solo prep0                                                                              = 0.0008 [0.0005, 0.0013] stated [0.0002, 0.0010] -> CONSISTENT
+A q3 solo prep1                                                                              = 0.0213 [0.0193, 0.0235] stated [0.0098, 0.0215] -> CONSISTENT
+A q2 packed prep0                                                                            = 0.0043 [0.0034, 0.0053] stated [0.0063, 0.0115] -> BELOW
+A q2 packed prep1                                                                            = 0.0118 [0.0108, 0.0129] stated [0.0088, 0.0107] -> ABOVE
+A q2 solo prep0                                                                              = 0.0068 [0.0055, 0.0081] stated [0.0063, 0.0115] -> CONSISTENT
+A q2 solo prep1                                                                              = 0.0111 [0.0095, 0.0127] stated [0.0088, 0.0107] -> CONSISTENT
+S0 MM prep0                                                                                  = -0.0121 [-0.0197, -0.0046] -> CONSISTENT
+S1 MM prep1                                                                                  = -0.0030 [-0.0142, 0.0081] -> CONSISTENT
+SC MM prep0 on qubit 3 (control)                                                             = -0.0002 [-0.0010, 0.0005] -> CONSISTENT
+D0 DLY prep0 100us minus none                                                                = -0.0011 [-0.0072, 0.0050] -> CONSISTENT
+B_WITHIN median T (A1|A2, B1|B2)                                                             = 0.8471 [0.7288, 0.8979] null median 0.813 rows 597 -> CONSISTENT
+B_SLOT median T (A1+A2 | B1+B2)                                                              = 0.8523 [0.7484, 0.9318] null median 0.834 rows 300 -> CONSISTENT
+B_pair_AA (reported)                                                                         = 0.8471 [0.7118, 0.9190] null median 0.810 rows 297 -> CONSISTENT
+B_pair_BB (reported)                                                                         = 0.8519 [0.6935, 0.9231] null median 0.812 rows 300 -> CONSISTENT
+C_STRANG8 signed phase error at Jt=4/3 (deg)                                                 = -55.6709 [-63.2203, -48.1214] ours -9.3468 his 46.3241 -> BELOW
+C_EXACT signed phase error at Jt=4/3 (deg)                                                   = -2.4664 [-6.4018, 1.4689] ours 0.4811 his 2.9475 -> CONSISTENT
+C_MIN mean over chains of min correct joint-outcome prob (ours - his, raw/003 controls)      = -0.0158 [-0.0214, -0.0095] ours 0.9485 his 0.9643 -> BELOW

@@ -1,0 +1,51 @@
+# SIGNCHECK -- chain-C phase error sign, Zhukov free run (24 Oct 2026). Zero QPU, nothing fired, no committed file touched, THE_BOOK and register untouched.
+Scripts: src_signcheck/fetch_ours.py (read-only re-fetch of the 4 finished jobs' SamplerV2 results), signcheck.py, signcheck2.py. Outputs: signcheck_output.text, signcheck2_output.text.
+Python: ~/bones-forge/qvenv/bin/python -I. His data: raw/005 of IBM_DM_data_v2 (arXiv 2609.15411v2), his circuits.qpy hash 6c076f81... as in download_hashes.txt.
+(The brief said "our copy in theirs/": theirs/ holds no qpy. Used his raw/005/circuits.qpy and our circuits_zhukov.qpy; they are equal circuit by circuit, below.)
+
+## OUTCOME: DEVICE
+Both decode paths agree with the ideal-checked convention, and the sign is still opposite. The signed BELOW stands.
+
+## 1. Measure maps (physical qubit per clbit)
+- His 005/circuits.qpy, lane 3 register t3: t3[0]=q69, t3[1]=q68, t3[2]=q67. Ours (circuits_zhukov.qpy), same. His experiment.json lane-3 path [69,68,67]; zhukov.py PATH[3] [69,68,67]. Equal.
+- All 8 chain-C circuits: all 18 measure instructions equal in both copies; the circuit objects compare equal (his pub 80,81,86,87,200,201,265,266 = our set 68..75). All six lane registers tK[j] <- path[j] confirmed.
+- Pairing: the SamplerV2 result metadata pub_index (and spec) equals the assumed row for 304 of 304 of his circuits over the 4 jobs.
+
+## 2. Decoding, both paths, on real data
+- Ours: fire_zhukov.decode(BitArray integer, bit j = clbit j) -> code with clbit0 = MSB; the get_counts path (string, clbit 0 rightmost, so reversed before int()).
+- His: DATA_FORMAT / experiment.json basis_order "spin1=MSB", "tK[0]=spin1, tK[1]=spin2, tK[2]=spin3; reverse printed bitstrings" -> shots_codes.npz.
+- KNOWN-GOOD on his own device output: his runtime_result BitArrays through OUR decode() and OUR counts path reproduce his shots_codes.npz and counts bit for bit on all 8 chain-C circuits.
+- On OUR true SamplerV2 output (re-fetched from the 4 job ids, read-only): decode(BitArray) = the codes zhukov.py used; counts path = their histogram; re-encoding the physical bits into his shot-code convention (spin1=path[0]=MSB) and reading them with his format = the same codes, on all 32 circuit-job pairs. The raw_zhukov_*.npz hold decoded codes, not counts; the BitArrays and get_counts() are in src_signcheck/ours_chainC_bitarrays_t3.npz.
+- The two paths are the same map. No flip between them.
+
+## 3. Ideal (noiseless) value, my own statevector (reduced to qubits 69,68,67, all CZ inside the lane, simulated from the qpy gates)
+- My probabilities equal his stored ideal_probabilities to 2.5e-15 on all 4 test circuits.
+- Exact-method circuit: ideal <X1> +0.5048, <Y1> -0.7057 = the exact-H reference; signed phase error -0.00 deg. A decoder with reversed bits would not give 0 here; this fixes the sign convention of the estimator.
+- Strang r=8 circuit, noiseless: <X1> +0.5053, <Y1> -0.6680, signed phase error +1.53 deg. So the +-46 deg is NOT the Trotter error of the circuit; it is produced by the hardware run.
+- Bit-order scan (6 permutations of the code bits, TV distance to my ideal histograms): the as-decoded order (x1=q69=MSB) is best for HIS data (0.136) and for OURS (0.139); every other order is >= 0.23.
+- Control: our strang8 data decoded with reversed code bits gives -23.2 deg (|C1| 0.14), his gives +114.9 deg: a decode error does not produce a clean mirror image of +-46.
+
+## 4. Signed readings, same estimator (zhukov.c1_from_counts), same exact-H reference
+- Chain C (lane 3), Strang r=8: ideal +1.53 | his +46.32 (rounds +43.35, +49.95) | ours -46.77 (jobs -46.62 -46.40 -46.86 -47.20).
+- Chain C, exact: ideal 0.00 | his +2.95 | ours -1.24 (jobs -2.47 +0.18 +0.68 -3.31).
+- Other chains, Strang r=8 (his rounds | our four jobs): lane 1 -36.4 -37.8 | +0.7 -1.2 +8.1 +6.7; lane 2 +43.3 +39.0 | -9.7 -5.0 -2.5 -2.6; lane 5 -9.9 -1.0 | +6.0 +7.6 +6.7 +4.8; lane 6 +34.2 +36.3 | -10.7 -11.6 -17.0 -14.1. Same decode for every lane. In his own data the sign differs from chain to chain (lanes 1,5 negative; 2,3,6 positive); it is not fixed by the method.
+- Lane 2 exact: his +3.8, +3.1 | ours -30.5 -29.5 -32.0 -31.2 (large and stable on our side).
+- Outcome per the task: DECODING would need one path to flip against the ideal-checked one: none does. DEVICE: both agree with the ideal-checked convention and chain C is still opposite (+46.3 vs -46.8), on the circuit that is identical gate for gate.
+
+## 5. Corrected reading to book (signed and magnitude stated separately)
+- SIGNED, chain C Strang r=8, ours minus his: -93.09 deg [-100.78, -85.41] -> BELOW (zhukov.py, unchanged; half-width 7.7 < SCALE_C 10). The signed BELOW does NOT become CONSISTENT.
+- SIGNED, chain C exact: -4.18 deg [-8.18, -0.17] -> BELOW (as printed).
+- MAGNITUDE, chain C r=8 only: |ours| 46.77 vs |his| 46.32, difference +0.45 deg; with the same half-width (7.7) as the signed line, [-7.2, +8.2] inside SCALE_C -> CONSISTENT. Approximate: zhukov.py scores signed values only.
+- What this is: the same circuits on the same physical qubits, 17 Sep vs 24 Oct, read opposite on chain C. It is a cross-date reading (not drift, /q 13), and it names no mechanism.
+- NOT supported: "the r=8 phase error has the same size today" for the register as a whole. Only chain C matches in size; lanes 1, 2, 6 differ by 30-50 deg in size or sign between his data and ours. RESULT_ZHUKOV.md.text (c) and its READING FOR THE AUTHOR line should say chain C only.
+- Not run: the circuit-level cause (which gate or qubit frequency moved) needs the calibration at 17 Sep vs 24 Oct; his calibration_at_execution.json is on disk, ours is props_zhukov_*.json (zero QPU). CANNOT_TELL on cause until that comparison is read.
+
+Did NOT do: re-run any QPU job; read his source/ code; simulate the noisy device; compare the two calibration records.
+
+## /q (Dr. Bonefish the Third, 37 checks, run against every number above)
+FIRED: 3.
+- 17 (sign convention twice): gate algebra checked (exact-circuit ideal phase 0.00 with my statevector, bit-order scan, reversed-bit control) AND committed values recomputed through the same code (his +46.32, ours -46.77, signed BELOW -93.09 reproduce results_zhukov.text). Caught: the RESULT line mixes a magnitude CONSISTENT with the signed BELOW in one block and generalises "the r=8 phase error has the same size today". Corrected: signed -93.09 [-100.78, -85.41] BELOW; magnitude chain C only +0.45 [-7.2, +8.2] CONSISTENT; other chains do not match. Outcome of the sign question: DEVICE.
+- 13 (sequential is drift, simultaneous is the thing): his circuits ran 17 Sep, ours 24 Oct. DEVICE here means the apparatus and the day, not a drift reading and not a fault. Within our 24 Oct session the four jobs agree (-46.4 to -47.2), within his session the two rounds agree (+43.4, +50.0).
+- 25 (more than two answers): "device" is what is left after ruling out decode, measure map, circuit identity and result pairing. No mechanism is named.
+HELD: 1-12, 14 (known-good = his own BitArrays reproduce his codes), 15 (reversed-bit plant tried), 16 (no floor measured for sign repeat across dates; signs already vary across chains in his own data), 18-24 (one chip; chain C is one chain; 4 jobs and 2 rounds not independent units; |C1| 0.40 and 0.50 far from the floor), 26-37 (nothing published, referee not out).
+Nothing else changed: no change to the signed BELOW, no line goes on a bill. The wording in RESULT (c) wants one edit (chain C only); I did not edit it (committed file).

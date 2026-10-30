@@ -1,0 +1,10 @@
+R0 KNOWN-GOOD (his raw counts): MAE lambda=1 0.06445 (published 0.06445), MAE after ZNE 0.02810 (published 0.0281), improved 9/10 (published 9/10), max |mean - his checkpoint mean| 1.7e-16 -> PASS
+R1 DRIFT mae(l=1)        = -0.01589 [-0.02348, -0.00884] shot-null [-0.00748, +0.00725] -> BELOW
+R2 SPLIT A (l1 first)    = -0.00038 [-0.01045, +0.00954] shot-null [-0.01055, +0.00981] -> CONSISTENT
+R2 SPLIT B (l3 first)    = -0.02815 [-0.03805, -0.01884] shot-null [-0.01010, +0.01014] -> BELOW
+R2C LINEAR-FREE          = -0.01427 [-0.02227, -0.00659] shot-null [-0.00866, +0.00832] -> BELOW
+R3 GAIN P2-P1            = +0.00752 [+0.00229, +0.01297] shot-null [-0.00521, +0.00532] -> ABOVE
+R4 |dZNE| S1             = +0.01533 [+0.00840, +0.02319] shot-null [+0.00749, +0.01932] -> CONSISTENT
+R4 |dZNE| S2             = +0.03839 [+0.02956, +0.04829] shot-null [+0.00723, +0.01960] -> ABOVE
+R4 SHARE  max D_k / his published gain 0.03635 = 1.056  (shot-noise floor 0.348; within-job gain P1 +0.02306, P2 +0.03058; his published 0.03635)
+graphs improved by ZNE (his count 9/10): P1 7/10, P2 10/10

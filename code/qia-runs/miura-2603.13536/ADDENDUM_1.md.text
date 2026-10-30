@@ -1,0 +1,5 @@
+ADDENDUM 1 (24 Oct 2026, Bones, before any re-submission; no result has been read because none exists)
+Attempt 1 (13:09 EDT) raised at smp.run(...) before job.job_id() printed. No job id, no SUBMITTED line, nothing billed by our record.
+The exception text was lost: the log filter removed it. Kept in failed_attempt1/.
+Re-attempt: same committed code, circuits and plan (CODE hash unchanged). The log keeps every line except those carrying a token or CRN.
+If attempt 2 also fails before submission, the run is HELD. No third attempt without Wayfinder.

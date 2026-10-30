@@ -1,0 +1,9 @@
+Commit history of this run folder (plan commits come before the first job):
+ca21b2f  2026-10-23T22:54:28-04:00  Plan and code for free calibration run, arXiv:2605.08251 (ibm_marrakesh), before any job
+05d68f1  2026-10-24T06:02:30-04:00  Addendum 1: P1 failed 9703 on IBM side (no data, 2 s); restart from P1, same code and order
+f9c1508  2026-10-24T15:19:29-04:00  Addendum: record the job ran under (submit blocked across marrakesh maintenance), before results
+cb1f9e0  2026-10-24T16:17:34-04:00  Correction: jobs were submitted and queued (my created_after filter hid them); REC_1 rule unchanged
+7d5c29a  2026-10-24T18:36:19-04:00  HOLD: P1 killed by IBM at 12h15m (error 1305, marrakesh in maintenance); second failure, no resubmit
+f857a47  2026-10-24T22:29:36-04:00  Addendum before any kingston job: chip moved from marrakesh (maintenance) to ibm_kingston, identical coupling map, nothing else changed
+0ce29b7  2026-10-24T22:30:20-04:00  Addendum 2 before any job: Lima moved to ibm_fez (kingston q0 delivering ~78% wrong reads); nothing else changed
+f15ec11  2026-10-24T22:33:57-04:00  RESULT Lima on fez: between-job drift BELOW null (present); job-to-job ZNE change 1.06x his published gain

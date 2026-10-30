@@ -1,0 +1,9 @@
+ibm_marrakesh: 20 circuits (10 graphs x lambda 1,3), 4000 shots, 6 jobs P1 S1(l1,l3) S2(l3,l1) P2, physical qubits [(0, 1, 2, 3, 4)] (1 distinct), gate counts equal to his transpile in 20/20, est 110 s (cap 300), remaining 975
+SUBMITTED job P1 dbe84h7sstms73fbkmm0 2026-10-24T10:02:44Z
+Traceback (most recent call last):
+  File "/Users/heuremen/bones-forge/qia_runs/2026-10-24-fill-lima/fire_lima.py", line 69, in <module>
+    res = job.result(); ents = [dict(graph_seed=CI[i][0], scale=CI[i][1], counts=counts_of(pr)) for i, pr in zip(idx, res)]
+          ^^^^^^^^^^^^
+  File "/Users/heuremen/bones-forge/qvenv/lib/python3.12/site-packages/qiskit_ibm_runtime/runtime_job_v2.py", line 150, in result
+    raise RuntimeJobMaxTimeoutError(error_message)
+qiskit_ibm_runtime.exceptions.RuntimeJobMaxTimeoutError: 'Error code 1305; Job dbe84h7sstms73fbkmm0 ran longer than 12h15m0s.'
