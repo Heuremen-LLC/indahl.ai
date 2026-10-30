@@ -1,0 +1,44 @@
+
+## 2026-10-30 17:31 N1: across 18 arms, mean agreement with the other models (+0.023 to +0.150) is 3.0 to 7.9 times agreement with readers (+0.006 to +0.047), and the two orderings agree (Spearman +0.94, descriptive, arms share pairs); N2: their stored median is the upper middle for even counts, so Table 2 'both closed' +0.174 is +0.172 exactly and 'same country' +0.090 is +0.089; the cross-border direction holds
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: N1 and N2 named in PLAN 01ec345 before readings.py ran; N1 uses all 153 released pairs and the 18 arms' reader agreement, no gate
+- II: holds: per arm, both columns printed side by side; the rank correlation is a summary beside them, not in place of them
+- III: holds: all agreements positive; the cross-border comparison keeps its sign with exact medians (+0.095 against +0.089)
+- V: holds: ratio and rank correlation side by side; Spearman is descriptive only, since arms share pairs and are not independent units, so no p-value is printed
+- VI: holds: no verdict claimed for N1 beyond the descriptive correlation; N2 differences printed to four places with their sources (their own median line in panel-agreement.py)
+- R: holds: from panel-agreement.json and typicality fields as released; arm metadata read from their script as text with ast.literal_eval, nothing executed; defined after reading the paper
+- L1: n/a: no replies parsed; agreement values as released
+- L2: holds: no run of ours exists for this gift
+- L3: holds: their estimator named (position-controlled excess agreement), used as released
+- L4: n/a: no run of ours; their own rerun controls are already in the paper
+- L5: holds: the reader range +0.006 to +0.047 and the pair values read from their files first
+- L6: holds: the three excluded arms (A3, D6, D11) are not in the 153 pairs, as in the paper
+- L7: n/a: reader marks are the gold and are theirs
+- L8: holds: per arm, paired columns
+- L9: n/a: no prompt of ours
+- L10: n/a: about their released estimates only
+- L11: n/a: nothing substituted
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 17:36 Referee pass: N1 numbers reproduce (Spearman +0.94, Pearson +0.91); the pair matrix is near rank one and reader agreement tracks the same per-arm factor, so the release cannot tell model from sentences-returned (their D1); framed as descriptive; N2 printed corrections are both closed +0.172 and same country +0.089
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: both columns share the same per-arm excess machinery, so a shared factor (possibly sentences returned, their own D1 note) could build the correlation in; the release cannot test it; stated in the output
+- II: holds: per-arm columns printed, not only the correlation
+- III: holds: all positive; the cross-border comparison keeps its direction with exact medians
+- V: holds: Spearman and Pearson side by side (+0.94, +0.91); arms are not independent units, so no p-value
+- VI: caught: N1 is reported as CANNOT_TELL on whether the shared factor is the model; described, not claimed
+- R: holds: printed values located: Table 2 prints both closed and same country; other groups appear only in their RESULTS-PAPER7.md
+- L1: n/a: no replies parsed
+- L2: holds: no run of ours exists for this gift
+- L3: holds: their estimator and budget named
+- L4: n/a: their rerun controls already in the paper
+- L5: holds: referee reproduced the numbers with its own code
+- L6: caught: sentences-returned per arm is an unread carrier (their D1), not released
+- L7: n/a: reader marks are theirs
+- L8: holds: per arm, both columns paired on the same arm
+- L9: n/a: no prompt of ours
+- L10: n/a: released estimates only
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it wrote its own code first

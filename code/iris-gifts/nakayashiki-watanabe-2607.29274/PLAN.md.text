@@ -1,0 +1,14 @@
+# Gift recount: Nakayashiki and Watanabe, arXiv 2607.29274 "Language Models Agree With Each Other, Not With Readers"
+Written and committed 30 Oct 2026 before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Authors as
+printed: Kazuki Nakayashiki and Keisuke Watanabe, Glasp Inc., kazuki@glasp.co, kei@glasp.co. No funding or acknowledgements printed; one
+author operates the platform the reader data come from (section 9). Released: 67 arXiv ancillary files (arxiv.org/src/2607.29274v1/anc),
+hashes in scout/SHA256SUMS.txt. Reader marks and documents withheld for privacy.
+
+## KNOWN-GOOD
+Scout rebuild (scout/RECOUNT.md): 213 of 224 checks from the released result files. Ours before the readings: the reader-agreement range
++0.006 (Granite 4.1 8B) to +0.047 (Gemini 3.1 Pro) and the 153 model-to-model pairs from panel-agreement.json.
+
+## Readings (defined after reading the paper; four outcomes)
+N1 per arm, the mean of its agreement with each other arm (from the 153 pairs) beside its agreement with readers (typicality), with the
+   rank correlation of the two columns across arms. The paper prints both kinds of number but no per-arm pairing of them.
+N2 the medians printed in Table 2 against the exact medians of the stored pair groups (even counts take the mean of the middle two).

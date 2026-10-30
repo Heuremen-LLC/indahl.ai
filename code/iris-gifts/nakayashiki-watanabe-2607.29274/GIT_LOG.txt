@@ -1,0 +1,3 @@
+6cee228 2026-10-30T17:36:45-04:00 Gift 2607.29274: referee pass; N1 framed descriptive (shared per-arm factor cannot be separated in the release); N2 printed corrections; Check Block filed
+ab939be 2026-10-30T17:31:39-04:00 Gift 2607.29274 N1/N2: per-arm agreement with models 3-8x agreement with readers, orderings agree (Spearman +0.94); Table 2 medians are upper middles for even counts; Check Block filed
+01ec345 2026-10-30T17:30:37-04:00 Gift plan 2607.29274 (Nakayashiki, Watanabe): N1 per-arm model-to-model beside model-to-reader, N2 exact medians; before computing

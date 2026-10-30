@@ -1,0 +1,36 @@
+N1 per arm: mean agreement with the other 17 arms beside agreement with readers (their typicality), 18 arms
+  A3b   gemini-3.1-pro         with models +0.147 (n 17) | with readers +0.047 [+0.035, +0.059] | ratio 3.1
+  A4    gemini-3.6-flash       with models +0.150 (n 17) | with readers +0.043 [+0.033, +0.054] | ratio 3.5
+  A2    claude-opus-5          with models +0.137 (n 17) | with readers +0.042 [+0.031, +0.053] | ratio 3.3
+  D9    glm-4.6                with models +0.120 (n 17) | with readers +0.040 [+0.031, +0.051] | ratio 3.0
+  B2    claude-sonnet-4.5      with models +0.131 (n 17) | with readers +0.035 [+0.024, +0.045] | ratio 3.8
+  C2    claude-haiku-4.5       with models +0.118 (n 17) | with readers +0.035 [+0.026, +0.043] | ratio 3.4
+  A1    gpt-5.4                with models +0.134 (n 17) | with readers +0.032 [+0.023, +0.042] | ratio 4.2
+  C1    gpt-5.4-mini           with models +0.115 (n 17) | with readers +0.028 [+0.021, +0.035] | ratio 4.1
+  D3    mistral-large-2512     with models +0.118 (n 17) | with readers +0.026 [+0.018, +0.035] | ratio 4.5
+  D5    deepseek-v3.1          with models +0.083 (n 17) | with readers +0.021 [+0.012, +0.029] | ratio 4.0
+  D7    gemma-3-27b            with models +0.103 (n 17) | with readers +0.018 [+0.009, +0.026] | ratio 5.8
+  D12   nemotron-3-super       with models +0.068 (n 17) | with readers +0.017 [+0.008, +0.026] | ratio 4.0
+  D1    llama-3.1-70b          with models +0.082 (n 17) | with readers +0.016 [+0.009, +0.023] | ratio 5.0
+  B1    gpt-4o                 with models +0.089 (n 17) | with readers +0.015 [+0.008, +0.023] | ratio 5.8
+  D8    phi-4                  with models +0.056 (n 17) | with readers +0.013 [+0.006, +0.020] | ratio 4.4
+  D2    llama-3.1-8b           with models +0.031 (n 17) | with readers +0.010 [+0.003, +0.016] | ratio 3.1
+  D4    qwen-2.5-72b           with models +0.077 (n 17) | with readers +0.010 [+0.003, +0.017] | ratio 7.9
+  D10   granite-4.1-8b         with models +0.023 (n 17) | with readers +0.006 [+0.001, +0.011] | ratio 3.8
+  Spearman rank correlation across arms, with-models against with-readers: +0.94 (n 18)
+
+N2 Table 2 medians: their stored value (upper middle for even counts) against the exact median
+  same vendor        n  10 | stored +0.1676 (prints +0.168) | exact median +0.1589 (prints +0.159) | differs at the third place
+  different vendor   n 143 | stored +0.0890 (prints +0.089) | exact median +0.0890 (prints +0.089) | same
+  same country       n  94 | stored +0.0897 (prints +0.090) | exact median +0.0888 (prints +0.089) | differs at the third place
+  different country  n  59 | stored +0.0950 (prints +0.095) | exact median +0.0950 (prints +0.095) | same
+  both closed        n  28 | stored +0.1736 (prints +0.174) | exact median +0.1718 (prints +0.172) | differs at the third place
+  both open          n  45 | stored +0.0587 (prints +0.059) | exact median +0.0587 (prints +0.059) | same
+  both frontier      n  15 | stored +0.1637 (prints +0.164) | exact median +0.1637 (prints +0.164) | same
+  both small         n  15 | stored +0.0410 (prints +0.041) | exact median +0.0410 (prints +0.041) | same
+  CROSS-EVERYTHING   n  21 | stored +0.1051 (prints +0.105) | exact median +0.1051 (prints +0.105) | same
+
+Reading note (after the referee pass): both columns come from the same per-arm excess machinery and the pair matrix is close to rank one,
+so the release cannot tell whether the shared factor is the model or how many sentences each arm returns (their HARNESS-DEFECTS.md, D1);
+the rankings needed to test it are not released. The paper reports the group version (newer models closer to readers and to each other).
+Of the medians, two are printed in the paper (Table 2): both closed +0.174 (exact +0.172) and same country +0.090 (exact +0.089).
