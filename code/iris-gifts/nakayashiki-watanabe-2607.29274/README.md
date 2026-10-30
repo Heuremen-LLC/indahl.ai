@@ -4,10 +4,11 @@ Readings of the released results behind "Language Models Agree With Each Other, 
 Watanabe (arXiv 2607.29274), from the authors' arXiv ancillary files. The plan was committed before each reading was computed. GIT_LOG.txt
 lists the commits with their times.
 
-## What rebuilds
+## What we read
 
-From panel-agreement.json, with our own code, the 153 model-to-model agreements and each model's agreement with readers, including the
-range from +0.006 (Granite 4.1 8B) to +0.047 (Gemini 3.1 Pro) (readings.text).
+Our code reads the 153 model-to-model agreements and each model's agreement with readers from panel-agreement.json, and they match the
+paper, including the range from +0.006 (Granite 4.1 8B) to +0.047 (Gemini 3.1 Pro) (readings.text). The reader rankings behind them are
+withheld for privacy, so these values are read from the released result file and not recomputed from rankings.
 
 ## Readings
 
@@ -15,7 +16,7 @@ Every reading below was defined after reading the paper.
 
 - Each model beside itself. For each of the 18 models, the mean of its agreement with the other 17 runs from +0.023 to +0.150, and is 3.0
   to 7.9 times its agreement with readers, which is the paper's title model by model. Across the 18 models the two columns rank the models
-  almost the same way (Spearman +0.94, Pearson +0.91). Both columns come from the same per-model excess computation, so the release cannot
+  almost the same way (Spearman +0.94, n 18). Both columns come from the same per-model excess computation, so the release cannot
   tell whether the shared factor is the model or something each model's output carries into both, such as how many sentences it returns
   (the authors' own HARNESS-DEFECTS.md, D1). The rankings needed to test that are not released. The paper reports the group version of this
   pattern (newer models closer both to readers and to each other).
