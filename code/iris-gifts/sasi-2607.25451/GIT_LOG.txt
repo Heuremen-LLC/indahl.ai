@@ -1,0 +1,4 @@
+71644dc 2026-10-30 19:21:01 -0400 Sasi gift: live reference arm L1 read, Check Block filed
+c80b1b7 2026-10-30 19:16:22 -0400 Sasi gift: known-good and readings S1-S4, Check Block filed
+56599b8 2026-10-30 19:15:27 -0400 Sasi gift: L1 setup record and runner committed before the first live run
+0721111 2026-10-30 19:11:11 -0400 Sasi gift (2607.25451): plan S1-S4 and live reference arm L1 committed before computing; calibration-floor scout tabled

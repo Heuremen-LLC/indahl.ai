@@ -1,0 +1,3 @@
+readings.py and read_l1.py: python3 standard library (Python 3.14.7); read_l1 needs nothing else
+run_l1.py: torch 2.15.0, transformers 5.22.1, numpy (Mac CPU, FP32)
+Weights: EleutherAI pythia-160m-deduped, -410m-deduped, -1b-deduped at the revisions in src/live/SETUP_L1.md

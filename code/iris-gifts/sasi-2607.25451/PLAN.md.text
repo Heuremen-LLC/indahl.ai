@@ -1,0 +1,32 @@
+# Gift recount: Sasi, arXiv 2607.25451 "Bits and Memories: Measuring Verbatim Extraction Across LLM Quantization"
+Written and committed 31 Oct 2026 (UTC) before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as
+printed: Akshay Sasi, Independent Researcher, akshaysasi12.knr@gmail.com. No funding printed. Released: github.com/AkshaySasi/bits-and-memories
+at 921ce4759ac1 and huggingface.co/datasets/AkshaySasi/bits-and-memories at aa3db05dbe45 (per-configuration result JSON, the three sampled
+sequence files, code), hashes in scout/FILES_READ.txt. Paper read in full by the scout (scout/RECOUNT.md) and by us in Sections 3-4 and
+Table 1. Their code is read, never run. Only per-configuration aggregates are released, so no per-sequence pairing is possible from files.
+
+## KNOWN-GOOD (ours, ours/known_good.py, before the readings)
+From the result JSON with our own code: every Extract, PPL (WT), PPL (Pile), m, c and s value in Table 1 (m = extraction over the reference,
+c = Pile perplexity of the reference over the quantized one, s = log m over log c), against the printed digits.
+
+## Readings (defined after reading the paper; four outcomes; 95% intervals)
+S1 Intervals the paper does not print: a Wilson interval for every extraction rate at n 500, and for each quantized configuration a
+   Newcombe interval for the difference from its reference (unpaired, since per-sequence outputs are not released, so wider than a paired
+   interval would be).
+S2 The unreported larger runs: the 410M FP16 and NF4 files for seeds 1 and 2 (their n as stored), their extraction rates with Wilson
+   intervals and m (NF4 over FP16 for each seed), beside the seed-0 values behind the "nearly three-quarters of the memorization" sentence.
+S3 Two sentences against Table 1: "over seventy percent of memorized sequences" (1B NF4 extracts 0.596 of the sample and m is 0.718 against
+   the FP16 reference) and "selectivity about seven" (s on Pile and on WikiText for 1B NF4).
+S4 The reference against the definition: the paper defines the sampled sequences as ones "the full-precision model reproduces greedily",
+   and the reference extraction rates are 0.756, 0.834 and 0.830. Read whether any released file states why.
+L1 Live reference arm (their items through the same public weights on our setup). Setup record before the first run: EleutherAI
+   pythia-160m-deduped at 582159a2dfe3, pythia-410m-deduped at c4fc8d586d62 and pythia-1b-deduped at 7199d8fc61a6 (sha256 of every weight
+   file recorded), transformers and torch versions, Mac CPU in FP32 (the Apple GPU is held by the lab queue), their three .npy samples,
+   their generate call (first 32 ids as prompt, greedy, 32 new tokens, one beam, all-ones attention mask, pad id 0, batch 32), exact match
+   of all 32 ids, mean correct prefix, token accuracy, and the per-sequence outcome. Two repeats each, all runs before any reading.
+   Readings: our FP32 exact-match rate per model beside theirs (FP32 for 160M and 410M, FP16 for 1B, so the 1B comparison crosses
+   precision and is labelled), our repeat floor (sequences whose outcome differs between repeats), and which sequences fail at full
+   precision. Their GPU, CUDA, torch and transformers versions are not recorded, so a gap is a setup carrier, never a cause.
+
+## What this gift never says
+No cause beyond what the readings separate. No reprinting of any training text: sequences are handled as token ids and counted only.
