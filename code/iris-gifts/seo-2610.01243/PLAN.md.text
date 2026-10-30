@@ -1,0 +1,16 @@
+# Gift recount: Seo, arXiv 2610.01243 "When the Judge Acts: Auditing VLM-Guided Image Selection on Culturally Situated Prompts"
+Written and committed 30 Oct 2026 before the reading below is computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md.
+Author as printed: Huichan Seo, Independent Researcher, gmlcks00513@gmail.com. No funding or acknowledgements printed. Released: GitHub
+seochan99/JudgeActs (MIT, commit 44bccd869138), Hugging Face mirror (rev 8c3f1d3b5a15), hashes in scout/HASHES_all.txt.
+
+## KNOWN-GOOD
+Scout rebuild: 1,104 of 1,105 printed checks (the miss is the Figure 2 prompt-selection rule). Ours (ours/known_good.py): Qwen3-VL-4B main
+run picks slot A on 439 of 900 calls (0.488) and changes its selection across the three orders on 179 of 300 prompts (0.597), as printed.
+His 8-bit MLX run of the same 4B judge returns the same image as the bf16 main run on 854 of 900 calls (0.949, as printed).
+
+## Reading (defined after reading the paper; four outcomes)
+S1 the gate under two runs of one judge. The unanimity gate keeps prompts where all three orders return the same image (121 under the
+   bf16 run). Rebuild it under the 8-bit run too. Count prompts kept by both runs, by bf16 only, by 8-bit only. Gain over random
+   (chosen image's mean alignment rating minus the pool mean) on each kept set, with a 95% bootstrap over prompts (10,000, seeds 1, 2, 3),
+   and on the prompts that change membership. Against his printed 0.141 [0.110, 0.173] on 121. Says how much of the gate is the judge and
+   how much the run, for one precision change on one machine. Not a claim about which precision is right.

@@ -1,0 +1,44 @@
+
+## 2026-10-30 16:26 B1: Section 8 answer rate 0.8931 (1,119 of 1,253) printed [0.8747, 0.9090] is the sample-level Wilson interval exactly; problem-level cluster bootstrap (79 problems, three seeds) [0.853-0.854, 0.928]; verdict unchanged, upper bound below the registered 0.995 either way
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: B1 named in PLAN 2cb9fb1 before b1.py ran; both intervals use the same 1,253 samples, no gate between them
+- II: n/a: one run, no between-run reading
+- III: holds: interval widths only, no signed effect
+- V: holds: two rulers side by side, sample-level Wilson and problem-level cluster bootstrap under three seeds; the paper's own convention is the second
+- VI: holds: the printed interval is identified as the sample-level one (exact match to four places); the registered 0.995 answer-rate line sits above both intervals, so the paper's unevaluated status for the replication does not move
+- R: holds: counts from derived__samples.jsonl (Zenodo MANIFEST hashes matched by the scout); B1 is defined after reading disclosure 24, labelled so
+- L1: n/a: extracted answers taken as released; no replies read or parsed by us, and none from the gated GPQA completions
+- L2: holds: no run of ours
+- L3: holds: their setup named (Qwen/Qwen3.5-9B hosted, cap 6,144, thinking disabled)
+- L4: n/a: no run of ours
+- L5: holds: the counts rebuild (1,253, 0.8931, 0.2905) before the interval is computed
+- L6: holds: 134 samples without an extracted answer are the quantity measured, kept in
+- L7: n/a
+- L8: holds: problems are the resampled unit, samples within a problem are not treated as independent
+- L9: n/a
+- L10: holds: about their hosted run only
+- L11: n/a
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 16:36 Referee pass on B1: reproduced; printed interval matches a sample-level Wilson to four places; problem-level about [0.85, 0.93] across setups (10,000 x three seeds and 1,000 x seed 42); 230 truncated samples still answered; the 79 problems are a budget-stopped slice; verdict unchanged
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same 1,253 samples for both intervals; the slice is the paper's own budget-stopped lowest-id set and is named as such
+- II: n/a: one run only, there is no between-run reading in this gift
+- III: n/a: interval widths only, no signed effect in this reading
+- V: holds: two rulers side by side, and the problem-level one under both of the paper's stated setups (10,000 and 1,000 iterations)
+- VI: caught: 'exactly Wilson' overstated it; Agresti-Coull matches to four places too, so the write-up says 'matches a sample-level Wilson interval to four places'
+- R: caught: the paper states two bootstrap setups, so no single replicate count is called its convention; counts read from derived__samples.jsonl
+- L1: n/a: extracted answers as released; no gated text read
+- L2: holds: no run of ours exists for this gift
+- L3: holds: setup as the paper names it
+- L4: n/a: no run of ours exists for this gift
+- L5: holds: counts rebuild first (1,253, 1,119, 364, 79)
+- L6: holds: 230 truncated samples still answered and are counted as answered; all 134 unanswered are truncated
+- L7: n/a: no gold set involved here
+- L8: holds: problems are the resampled unit
+- L9: n/a: no prompt of ours
+- L10: holds: about his hosted run only
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it wrote its own code before reading ours

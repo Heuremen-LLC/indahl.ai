@@ -1,0 +1,10 @@
+unanimity gate: bf16 keeps 121, 8-bit keeps 128, both 115 (different unanimous image on 0), bf16 only 6, 8-bit only 13, union 134
+  bf16 gate (printed 121, 0.141 [0.110, 0.173])    n 121  gain +0.141  95% CI by seed [0.111, 0.173] [0.110, 0.173] [0.110, 0.172]
+  8-bit gate                                       n 128  gain +0.135  95% CI by seed [0.104, 0.165] [0.104, 0.165] [0.104, 0.165]
+  kept by both, bf16 choice                        n 115  gain +0.140  95% CI by seed [0.108, 0.172] [0.108, 0.172] [0.107, 0.171]
+  bf16 only                                        n   6  gain +0.170  95% CI by seed [0.087, 0.250] [0.090, 0.250] [0.090, 0.247]
+  8-bit only                                       n  13  gain +0.088  95% CI by seed [0.005, 0.166] [0.006, 0.166] [0.006, 0.166]
+
+prompts with at least one call selecting a different image: 43 of 300 | calls differing: 46 of 900
+of the 19 prompts that change gate membership: differing calls per prompt {1: 18, 2: 1}
+8-bit-only set (n 13): gain +0.09, 4 of 13 below zero; too small for an interval worth printing

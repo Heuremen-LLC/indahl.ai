@@ -1,0 +1,8 @@
+margin-v2: 1253 samples, 1119 answered (0.8931), 364 truncated (0.2905), 79 problems
+sample-level Wilson 95%: [0.8747, 0.9090]   (printed [0.8747, 0.9090]; matches to four places)
+problem-level cluster bootstrap, seed 42: [0.8543, 0.9282]
+problem-level cluster bootstrap, seed 1: [0.8532, 0.9280]
+problem-level cluster bootstrap, seed 2: [0.8536, 0.9282]
+samples per problem: min 5, median 16, max 16
+truncated with an answer still extracted: 230 (so 1,253 - 364 is not 1,119); unanswered and truncated: 134 of 134 unanswered
+problem-level cluster bootstrap, 1,000 iterations, seed 42: [0.8515, 0.9272]

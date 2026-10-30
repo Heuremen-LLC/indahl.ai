@@ -1,0 +1,5 @@
+qwen 4B main (bf16)          calls 900, valid 900 | first slot (A) 439 = 0.488 | prompts with all three orders valid 300, selection changes 179 = 0.597
+qwen4b_mlx_main.jsonl        calls 900, valid 900 | first slot (A) 434 = 0.482 | prompts with all three orders valid 300, selection changes 172 = 0.573
+   call-level same selection as qwen main: 854 of 900 = 0.949
+qwen8b_mlx_main.jsonl        calls 900, valid 900 | first slot (A) 246 = 0.273 | prompts with all three orders valid 300, selection changes 129 = 0.430
+   call-level same selection as qwen main: 578 of 900 = 0.642

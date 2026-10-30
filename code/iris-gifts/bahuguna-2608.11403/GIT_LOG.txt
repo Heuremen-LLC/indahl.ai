@@ -1,0 +1,3 @@
+7408fde 2026-10-30T16:36:09-04:00 Gift 2608.11403: referee reproduced B1; wording fixed (four-place match, both bootstrap setups, budget-stopped slice, truncated-but-answered); Check Block filed
+f55189d 2026-10-30T16:26:05-04:00 Gift 2608.11403 B1: Section 8's printed interval is sample-level Wilson; problem-level cluster bootstrap [0.854, 0.928]; verdict unchanged; Check Block filed
+2cb9fb1 2026-10-30T16:25:47-04:00 Gift plan 2608.11403 (Bahuguna): Section 8 counts rebuild; B1 interval both ways, committed before computing
