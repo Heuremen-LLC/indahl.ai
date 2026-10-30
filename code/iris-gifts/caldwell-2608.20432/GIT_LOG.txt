@@ -1,0 +1,5 @@
+3381deb 2026-10-30 18:26:09 -0400 Caldwell gift: referee pass, C1b, C2b, C6 (post hoc), corrections filed
+f9ae09a 2026-10-30 18:25:31 -0400 Caldwell gift: Addendum 2 (referee corrections; C1b, C2b, C6 defined after the data) before computing
+3f5b15f 2026-10-30 18:16:14 -0400 Caldwell gift: known-good, readings C1-C5 and C5b (post hoc), Check Block filed
+4880be0 2026-10-30 18:15:55 -0400 Caldwell gift: Addendum 1 (C5b, defined after the data) before computing
+9f4b8a9 2026-10-30 18:14:36 -0400 Caldwell gift (2608.20432): plan C1-C5 committed before known-good and readings

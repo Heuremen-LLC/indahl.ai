@@ -1,0 +1,47 @@
+# Gift recount: Caldwell, arXiv 2608.20432 "ProofJudge: Tool-Grounded LLM Evaluation of Formal Proof Quality in Mathlib"
+Written and committed 30 Oct 2026 before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as
+printed: Shane Caldwell, Dreadnode, shane@dreadnode.io. No funding or acknowledgements printed. Released: GitHub SJCaldwell/ProofJudge at
+5c335ca2369d (MIT), Hugging Face SJCaldwell/proofjudge at 79c4352fdd48 and SJCaldwell/proofjudge-eval-traces at 2fe14f4cb00d (six trace
+files, 7,838 trajectories), hashes in scout/FILES.sha256. Paper read in full by the scout (scout/RECOUNT.md) and by us in Section 3 and
+Table 1. Their code is read, never run.
+
+## Their headline
+Six judges recover the reviewers' preference (the accepted revision scored above the first) from 80.8% (claude-sonnet-5) down to 63.5%
+(deepseek-v4-flash), "each at p < 10^-5 by sign test", against a 50% chance line. Table 1 intervals are a clustered bootstrap over
+declarations and replicates. The judges are noisy: a rerun "flips between a fifth and nearly half of its verdicts".
+
+## KNOWN-GOOD (ours, ours/known_good.py, before the readings)
+From the six trace files, with our own code: pairs keyed by (pr_number, declaration_name, replicate), aligned when the final scores above
+the initial, ties counted as misses (their metrics.py, read). Alignment per judge against Table 1, with trajectories missing from the
+release counted by judge, variant and replicate.
+
+## Readings (defined after reading the paper and code; four outcomes; 95% intervals)
+C1 Sign test with the declaration as the unit. Replicates share a declaration, so for each judge each declaration gets one verdict: aligned
+   when the final scores above the initial in at least two of its three replicates. Exact two-sided sign test on declarations (aligned
+   against not aligned, then aligned against inverted with ties left out), beside the pooled test over all pairs. Reports whether
+   p < 10^-5 holds for each judge at the declaration level.
+C2 Ties three ways. Per judge: alignment with ties as misses (theirs), ties as half, and aligned among decided pairs (ties left out), each
+   with a declaration-clustered bootstrap (10,000, seed 42). Whether the order of the six judges changes. The chance line for "aligned
+   over all pairs" with ties as misses is below 50% by half the tie share, stated beside it.
+C3 Replicate flips. Per judge: the share of declarations whose verdict (aligned or not) differs between two replicates, averaged over the
+   three replicate pairs, and the share whose three replicates do not all agree. Which definition gives the printed range.
+C4 Missing trajectories. Per judge, the pairs lost to omitted errored runs, and alignment with each lost pair counted as a miss over all
+   654 pairs, beside the printed value.
+C5 Cost bound. Per judge priced in the repo's make_frontier.py table, cost per pair with every prompt token at the fresh-input rate (an
+   upper bound, since the traces do not record the cached share), beside the printed USD per pair.
+
+## What this gift never says
+No cause beyond what the readings separate. The judges are not rerun. Post-hoc readings are labelled in place.
+
+## Addendum 1 (30 Oct 2026, after C1-C5; C5b is defined after the data)
+C5 found gpt-5.4-mini's printed 0.136 above the upper bound the repo's own rates allow (0.046). The scout noted that 0.75 in and 4.50 out
+per million tokens reproduce it. C5b recomputes gpt-5.4-mini's cost per pair at those rates, every prompt token fresh, beside 0.136.
+
+## Addendum 2 (30 Oct 2026, after the referee pass; C1b, C2b and C6 are defined after the data)
+Corrections from the referee: C2's "within about a point" is wrong (1.7 points with ties as misses); C3's range is the author's own README
+figure ("between 21% and 45% of pairs"), so C3 is not raised as new; C5's 0.046 bounds nothing in the paper, since the repo table may be the
+stale one, and is restated as a question about which rates are intended. New readings, each defined after the data:
+C1b single replicates: the exact sign test per judge on each replicate alone, ties as misses and ties left out.
+C2b paired gaps: the difference between judges adjacent in Table 1, per tie rule, with a paired declaration-clustered bootstrap (10,000,
+seed 42).
+C6 the chance line: make_frontier.py line 158 says ties are "vanishingly rare"; the observed tie shares from C2 sit beside it.

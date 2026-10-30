@@ -1,0 +1,62 @@
+C1 sign test with the declaration as the unit (aligned in at least two replicates), beside the pooled test
+  claude-sonnet-5          pooled pairs aligned 523 vs inverted 100 p 4.8e-70 | declarations aligned 179 of 218 (82.1%) p 1.3e-22 | majority direction aligned 181 vs inverted 27 (tied 10) p 3.5e-29 | <1e-5 at declaration level: yes | declarations with fewer than 3 pairs 6
+  gemini-3.7-flash         pooled pairs aligned 492 vs inverted 107 p 6.4e-60 | declarations aligned 169 of 218 (77.5%) p 1.2e-16 | majority direction aligned 176 vs inverted 31 (tied 11) p 8.4e-26 | <1e-5 at declaration level: yes | declarations with fewer than 3 pairs 0
+  muse-glimmer-30b         pooled pairs aligned 459 vs inverted 151 p 4.7e-37 | declarations aligned 166 of 218 (76.1%) p 4.5e-15 | majority direction aligned 167 vs inverted 42 (tied 9) p 7.7e-19 | <1e-5 at declaration level: yes | declarations with fewer than 3 pairs 2
+  inkling-small            pooled pairs aligned 452 vs inverted 144 p 5.7e-38 | declarations aligned 162 of 218 (74.3%) p 3.9e-13 | majority direction aligned 164 vs inverted 33 (tied 21) p 4.4e-22 | <1e-5 at declaration level: yes | declarations with fewer than 3 pairs 1
+  gpt-5.4-mini-2026-03-17  pooled pairs aligned 449 vs inverted 147 p 1.7e-36 | declarations aligned 159 of 218 (72.9%) p 8.7e-12 | majority direction aligned 163 vs inverted 43 (tied 12) p 1.2e-17 | <1e-5 at declaration level: yes | declarations with fewer than 3 pairs 0
+  deepseek-v4-flash        pooled pairs aligned 415 vs inverted 196 p 4.8e-19 | declarations aligned 147 of 218 (67.4%) p 2.9e-07 | majority direction aligned 150 vs inverted 55 (tied 13) p 2.3e-11 | <1e-5 at declaration level: yes | declarations with fewer than 3 pairs 0
+
+C2 ties three ways, declaration-clustered bootstrap 95% (10,000, seed 42)
+  claude-sonnet-5          ties  3.9% | ties as misses 80.7 [76.7, 84.6] (chance line 48.1) | ties as half 82.6 [78.9, 86.2] | ties left out 83.9 [80.1, 87.5]
+  gemini-3.7-flash         ties  8.4% | ties as misses 75.2 [70.8, 79.7] (chance line 45.8) | ties as half 79.4 [75.5, 83.3] | ties left out 82.1 [78.0, 86.1]
+  muse-glimmer-30b         ties  6.4% | ties as misses 70.4 [66.0, 74.7] (chance line 46.8) | ties as half 73.6 [69.6, 77.6] | ties left out 75.2 [71.0, 79.3]
+  inkling-small            ties  8.7% | ties as misses 69.2 [64.9, 73.5] (chance line 45.6) | ties as half 73.6 [69.7, 77.4] | ties left out 75.8 [71.7, 79.9]
+  gpt-5.4-mini-2026-03-17  ties  8.9% | ties as misses 68.7 [64.1, 73.1] (chance line 45.6) | ties as half 73.1 [68.7, 77.1] | ties left out 75.3 [70.7, 79.7]
+  deepseek-v4-flash        ties  6.6% | ties as misses 63.5 [59.0, 68.0] (chance line 46.7) | ties as half 66.7 [62.5, 71.0] | ties left out 67.9 [63.4, 72.4]
+  order, ties as misses: claude-sonnet-5 80.7 > gemini-3.7-flash 75.2 > muse-glimmer-30b 70.4 > inkling-small 69.2 > gpt-5.4-mini 68.7 > deepseek-v4-flash 63.5
+  order, ties as half  : claude-sonnet-5 82.6 > gemini-3.7-flash 79.4 > muse-glimmer-30b 73.6 > inkling-small 73.6 > gpt-5.4-mini 73.1 > deepseek-v4-flash 66.7
+  order, ties left out : claude-sonnet-5 83.9 > gemini-3.7-flash 82.1 > inkling-small 75.8 > gpt-5.4-mini 75.3 > muse-glimmer-30b 75.2 > deepseek-v4-flash 67.9
+
+C3 replicate flips per judge (binary verdict aligned or not; three-way aligned / tie / inverted beside it)
+  claude-sonnet-5          two replicates differ: binary 19.8%, three-way 22.4% (642 comparisons) | three replicates not all equal: binary 29.7%, three-way 31.6% (212 declarations)
+  gemini-3.7-flash         two replicates differ: binary 23.5%, three-way 27.5% (654 comparisons) | three replicates not all equal: binary 35.3%, three-way 39.0% (218 declarations)
+  muse-glimmer-30b         two replicates differ: binary 29.2%, three-way 34.3% (650 comparisons) | three replicates not all equal: binary 44.0%, three-way 49.5% (216 declarations)
+  inkling-small            two replicates differ: binary 33.4%, three-way 38.5% (652 comparisons) | three replicates not all equal: binary 50.2%, three-way 53.5% (217 declarations)
+  gpt-5.4-mini-2026-03-17  two replicates differ: binary 30.6%, three-way 34.6% (654 comparisons) | three replicates not all equal: binary 45.9%, three-way 49.5% (218 declarations)
+  deepseek-v4-flash        two replicates differ: binary 36.7%, three-way 41.4% (654 comparisons) | three replicates not all equal: binary 55.0%, three-way 59.2% (218 declarations)
+
+C4 lost pairs counted as misses over all 654 pairs
+  claude-sonnet-5          complete 648, lost 6 | released pairs 80.71% | lost as misses 79.97% | printed 80.8
+  gemini-3.7-flash         complete 654, lost 0 | released pairs 75.23% | lost as misses 75.23% | printed 75.2
+  muse-glimmer-30b         complete 652, lost 2 | released pairs 70.40% | lost as misses 70.18% | printed 70.2
+  inkling-small            complete 653, lost 1 | released pairs 69.22% | lost as misses 69.11% | printed 69.3
+  gpt-5.4-mini-2026-03-17  complete 654, lost 0 | released pairs 68.65% | lost as misses 68.65% | printed 68.7
+  deepseek-v4-flash        complete 654, lost 0 | released pairs 63.46% | lost as misses 63.46% | printed 63.5
+
+C5 cost per pair at the repo price table (make_frontier.py), every prompt token at the fresh-input rate: an upper bound
+  claude-sonnet-5          not in the repo price table (printed 1.392)
+  gemini-3.7-flash         not in the repo price table (printed 0.186)
+  muse-glimmer-30b         not in the repo price table (printed 0.140)
+  inkling-small            not in the repo price table (printed 0.126)
+  gpt-5.4-mini-2026-03-17  rates in 0.250 out 2.000 per million | upper bound 0.0462 USD per pair over 654 pairs | printed 0.136 | printed ABOVE the bound
+  deepseek-v4-flash        rates in 0.064 out 0.129 per million | upper bound 0.0305 USD per pair over 654 pairs | printed 0.029 | printed within the bound
+
+C5b (defined after the data) gpt-5.4-mini-2026-03-17: mean tokens per pair, prompt 168901, completion 1963 | at 0.75 in and 4.50 out per million, all prompt fresh: 0.1355 USD per pair (printed 0.136)
+
+C1b (defined after the data) exact sign test on each replicate alone
+  claude-sonnet-5          r1 173/216 p 1.1e-19 (ties out 1.3e-24) | r2 167/215 p 1.3e-16 (ties out 4.6e-20) | r3 183/217 p 7.1e-26 (ties out 1.6e-28)
+  gemini-3.7-flash         r1 164/218 p 4.4e-14 (ties out 1.0e-20) | r2 166/218 p 4.5e-15 (ties out 4.6e-22) | r3 162/218 p 3.9e-13 (ties out 7.5e-20)
+  muse-glimmer-30b         r1 158/217 p 1.3e-11 (ties out 6.3e-16) | r2 150/218 p 2.9e-08 (ties out 3.3e-12) | r3 151/217 p 7.7e-09 (ties out 8.2e-12)
+  inkling-small            r1 161/218 p 1.1e-12 (ties out 2.1e-18) | r2 141/218 p 1.7e-05 (ties out 6.8e-10) | r3 150/217 p 1.8e-08 (ties out 4.2e-13)
+  gpt-5.4-mini-2026-03-17  r1 143/218 p 4.8e-06 (ties out 9.6e-11) | r2 158/218 p 2.3e-11 (ties out 6.3e-16) | r3 148/218 p 1.4e-07 (ties out 9.5e-13)
+  deepseek-v4-flash        r1 136/218 p 3.1e-04 (ties out 1.5e-06) | r2 133/218 p 1.4e-03 (ties out 3.5e-06) | r3 146/218 p 6.0e-07 (ties out 5.4e-09)
+
+C2b (defined after the data) paired gaps between judges adjacent in Table 1, declaration-clustered bootstrap 95% (10,000, seed 42)
+  claude-sonnet-5 minus gemini-3.7-flash: ties misses +5.5 [+0.3, +10.6] | ties half +3.2 [-1.4, +7.8] | ties left out +1.8 [-3.0, +6.7]
+  gemini-3.7-flash minus muse-glimmer-30b: ties misses +4.8 [-0.5, +10.4] | ties half +5.8 [+0.8, +10.9] | ties left out +6.9 [+1.5, +12.4]
+  muse-glimmer-30b minus inkling-small: ties misses +1.2 [-3.9, +6.2] | ties half +0.0 [-4.5, +4.5] | ties left out -0.6 [-5.4, +4.2]
+  inkling-small minus gpt-5.4-mini: ties misses +0.6 [-4.4, +5.6] | ties half +0.5 [-3.9, +5.0] | ties left out +0.5 [-4.3, +5.5]
+  gpt-5.4-mini minus deepseek-v4-flash: ties misses +5.2 [+0.3, +10.1] | ties half +6.3 [+1.7, +10.9] | ties left out +7.4 [+2.3, +12.3]
+
+C6 (defined after the data) make_frontier.py line 158: # Chance for a continuous score is 1/2: ties are vanishingly rare, so a
+  observed tie share of pairs: {'claude-sonnet-5': 3.9, 'gemini-3.7-flash': 8.4, 'muse-glimmer-30b': 6.4, 'inkling-small': 8.7, 'gpt-5.4-mini': 8.9, 'deepseek-v4-flash': 6.6}

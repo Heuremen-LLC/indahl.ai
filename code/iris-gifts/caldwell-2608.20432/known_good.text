@@ -1,0 +1,6 @@
+claude-sonnet-5          declarations 218 | complete pairs 648 | aligned 523 tie 25 inverted 100 | alignment 80.7% (printed 80.8) | pairs with one trajectory missing {('final', 1): 2, ('initial', 2): 1, ('final', 2): 2, ('initial', 3): 1}, with both missing 0
+gemini-3.7-flash         declarations 218 | complete pairs 654 | aligned 492 tie 55 inverted 107 | alignment 75.2% (printed 75.2) | pairs with one trajectory missing none, with both missing 0
+muse-glimmer-30b         declarations 218 | complete pairs 652 | aligned 459 tie 42 inverted 151 | alignment 70.4% (printed 70.2) | pairs with one trajectory missing {('final', 1): 1, ('final', 3): 1}, with both missing 0
+inkling-small            declarations 218 | complete pairs 653 | aligned 452 tie 57 inverted 144 | alignment 69.2% (printed 69.3) | pairs with one trajectory missing none, with both missing 1
+gpt-5.4-mini-2026-03-17  declarations 218 | complete pairs 654 | aligned 449 tie 58 inverted 147 | alignment 68.7% (printed 68.7) | pairs with one trajectory missing none, with both missing 0
+deepseek-v4-flash        declarations 218 | complete pairs 654 | aligned 415 tie 43 inverted 196 | alignment 63.5% (printed 63.5) | pairs with one trajectory missing none, with both missing 0
