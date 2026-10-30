@@ -1,0 +1,27 @@
+records 300, validated 275 | answers with a verdict 896
+K paired same-model contrast on validated records (matching judge minus the mean of the others on the same answer)
+  answers with the matching judge and at least one other: 819 (all three judges: 816)
+  recall on adopted answers (printed -0.5): n 456 answers on 197 records: -0.5 pp [-2.7, +1.7]
+  flagging on avoided answers (printed -4.3): n 363 answers on 171 records: -4.3 pp [-6.6, -2.0]
+
+E1 the perturber as judge (perturber's judge minus the mean of the others on the same answer)
+  adopted answers: n 457 answers on 198 records: -0.9 pp [-3.8, +2.0]
+  avoided answers: n 363 answers on 171 records: +2.3 pp [-0.4, +5.1]
+  perturbers on validated records: {'grok': 92, 'gemini': 100, 'gpt': 83}
+
+E2 answers whose generator is not the perturber
+  perturber's judge, adopted: n 301 answers on 183 records: -0.2 pp [-3.6, +3.2] | avoided: n 246 answers on 156 records: +4.5 pp [+0.8, +8.3]
+  generator's judge, adopted: n 300 answers on 182 records: +0.3 pp [-2.5, +3.1] | avoided: n 246 answers on 156 records: -5.3 pp [-8.4, -2.2]
+
+E2b (defined after the data) answers whose generator is not the perturber: perturber's judge minus the third judge (neither is the generator's)
+  adopted: n 300 answers on 183 records: +0.0 pp [-3.9, +3.9] | avoided: n 246 answers on 156 records: +2.4 pp [-2.0, +6.9]
+  adopted: perturber flags and third does not 17, third flags and perturber does not 17
+  avoided: perturber flags and third does not 18, third flags and perturber does not 12
+
+E3 (defined after the data) validating model against perturbing model, and gate failures by perturber
+  records 300 | validator equals perturber in 300
+  records failing a gate by perturber: {'gemini': 25} of {'grok': 92, 'gemini': 125, 'gpt': 83}
+
+E4 (defined after the data) matching-judge contrast where the generator is also the perturber, beside the other answers
+  generator is perturber, adopted: n 156 answers on 156 records: -2.2 pp [-6.4, +1.6] | avoided: n 117 answers on 117 records: -2.1 pp [-5.6, +0.9]
+  generator is not perturber, adopted: n 300 answers on 182 records: +0.3 pp [-2.5, +3.1] | avoided: n 246 answers on 156 records: -5.3 pp [-8.4, -2.2]

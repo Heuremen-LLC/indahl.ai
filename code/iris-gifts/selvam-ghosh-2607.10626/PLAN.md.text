@@ -1,0 +1,36 @@
+# Gift recount: Selvam and Ghosh, arXiv 2607.10626 "Eval-Pair Matrix: Answer-Paired Meta-Evaluation of LLM Judges for Grounded RAG"
+Written and committed 31 Oct 2026 (UTC) before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Authors as
+printed: Sriram Selvam and Anneswa Ghosh, no affiliation printed, selvamsriram@gmail.com and anneswaghosh@gmail.com. No funding printed.
+Released: github.com/selvamsriram/eval-pair-matrix at daefdef9643a (byte-identical to the anonymous mirror the paper prints), hashes in
+scout/FILES.sha256. No license file, and GaRAGe passages sit inside the data, so no passage or answer text is reprinted. Paper v1 read in
+full by the scout (scout/RECOUNT.md) and by us in the abstract, Sections 3-5 and the perturber appendix. Their code is read, never run.
+
+## KNOWN-GOOD (ours, ours/known_good.py, before the readings)
+From the nine data/runs/*judge-*-on-*/06_judge.jsonl files with our own code: per answer (record, generator) the judges' contains_factual_error
+flags and the answer's gold_has_induced_error; on the 275 records that pass all five validation gates, the paper's paired same-model contrast
+(matching judge's flag minus the mean of the other judges' flags on the same answer, averaged over answers): recall on answers that adopted the
+induced claim (printed -0.5 pp) and flagging on answers that avoided it (printed -4.3 pp), and the answer counts.
+
+## Readings (defined after reading the paper; four outcomes; 95% intervals by a record-clustered bootstrap, 10,000 resamples, seed 42)
+E1 The perturber as judge. Each record's induced contradiction was written by one of the three models (generators.perturb.provider). The same
+   paired contrast with the perturber's judge in place of the generator's: the perturber-judge's flag minus the mean of the other judges' flags
+   on the same answer, on adopted and on avoided answers.
+E2 E1 restricted to answers whose generator is not the perturber, so the perturber's judge is never the matching judge there, beside the
+   paper's same-model contrast restricted to answers whose generator is not the perturber.
+The paper's own interval scheme is not stated (the scout matched it only with an unstated seed rule), so our intervals are ours, said so.
+
+## What this gift never says
+No cause beyond what the readings separate. No passage or answer text is reprinted. Post-hoc readings are labelled in place.
+
+## Addendum 1 (31 Oct 2026, written after E1-E2 were computed and before E2b; E2b is defined after the data)
+On answers whose generator is not the perturber, three distinct judges see each answer: the generator's (M), the perturber's (P) and the third
+(O). E2's P minus the mean of M and O moves with M, and M flags less on avoided answers, so E2 cannot separate a perturber effect from the
+paper's same-model effect. E2b compares the two judges that are not the generator's: P minus O on the same answer, on adopted and on avoided
+answers, record-clustered bootstrap as above.
+
+## Addendum 2 (31 Oct 2026, after the referee pass; E3 and E4 are defined after the data)
+Wording from the referee: judges never see the perturbed passages, so the perturber's judge is "the judge from the model that wrote the
+contradiction", not a judge seeing its own perturbation, and E2b is worded as "do not differ detectably" with its bound. New readings:
+E3 the validating model against the perturbing model for every record (generators.validate.provider), and the records failing any gate by
+perturber.
+E4 the paper's matching-judge contrast on answers whose generator is also the perturber, beside the same contrast on the other answers.
