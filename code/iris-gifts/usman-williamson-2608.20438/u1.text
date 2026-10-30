@@ -1,0 +1,12 @@
+blocks with other than four conditions: 0 | blocks whose conditions carry different config seeds: 0
+v1_core                gemma4_e4b     blocks  16 | round-0 honest agents  192: identical in all four conditions    2, differ  190 (0.990) | ['parallel {4}']
+v1_core                granite4_3b    blocks  16 | round-0 honest agents  192: identical in all four conditions    3, differ  189 (0.984) | ['parallel {4}']
+v1_core                ministral-3_8b blocks  16 | round-0 honest agents  192: identical in all four conditions    3, differ  189 (0.984) | ['parallel {4}']
+v1_core                qwen3.5_4b     blocks  16 | round-0 honest agents  192: identical in all four conditions  192, differ    0 (0.000) | ['parallel {4}']
+v1_size_extension      gemma4_12b     blocks  16 | round-0 honest agents  192: identical in all four conditions   39, differ  153 (0.797) | ['parallel {4}']
+v1_size_extension      ministral-3_14b blocks  16 | round-0 honest agents  192: identical in all four conditions    0, differ  192 (1.000) | ['parallel {4}']
+v1_size_extension      qwen3.5_9b     blocks  16 | round-0 honest agents  192: identical in all four conditions  192, differ    0 (0.000) | ['parallel {4}']
+all: 1344 agents, identical 431, differ 913 (0.679)
+Bounds: posts are stored cut at 180 characters, so identical counts are upper bounds and differ counts lower bounds. The request is
+identical (prompt rebuilt byte for byte by the referee for all 1,344 agents); server state and the mix of concurrent requests are not,
+so this is a repeat floor for the whole serving setup as they ran it, not for sampling alone. No cause is named.

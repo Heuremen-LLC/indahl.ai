@@ -1,0 +1,5 @@
+# url	path under theirs/	sha256
+https://raw.githubusercontent.com/seochan99/JudgeActs/44bccd869138ae71948a86627dfbf2bdd02b4c9f/data/derived/main.jsonl	JudgeActs/data/derived/main.jsonl	f8a8ed68f7fa243bd869f9a5c2bc626669b4fc2675da14cf3810d6d27be18a42
+https://raw.githubusercontent.com/seochan99/JudgeActs/44bccd869138ae71948a86627dfbf2bdd02b4c9f/runs/qwen_main.jsonl	JudgeActs/runs/qwen_main.jsonl	d330d61a0b851005fda7ddda3f773a3a5f7188e91031cd440e2d7e4c06057ef0
+https://raw.githubusercontent.com/seochan99/JudgeActs/44bccd869138ae71948a86627dfbf2bdd02b4c9f/runs/extension/qwen4b_mlx_main.jsonl	JudgeActs/runs/extension/qwen4b_mlx_main.jsonl	c3c047604eb86ce3ee741e46cbe4608f1a105ca63248d2aa6857d3ebfc4d6789
+https://raw.githubusercontent.com/seochan99/JudgeActs/44bccd869138ae71948a86627dfbf2bdd02b4c9f/runs/extension/qwen8b_mlx_main.jsonl	JudgeActs/runs/extension/qwen8b_mlx_main.jsonl	072d53d917f6ace6f9dca88628072fd0abdbe51aa746cc4e0913ea88c3b4fdcf

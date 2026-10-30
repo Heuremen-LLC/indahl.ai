@@ -1,0 +1,44 @@
+
+## 2026-10-30 16:30 U1: same round-0 request (same prompt, same seed, config equal but for condition) across four conditions: identical for qwen3.5 4b and 9b (192 of 192 each); differs for gemma4 e4b 190/192, granite4 3b 189/192, ministral-3 8b 189/192, gemma4 12b 153/192, ministral-3 14b 192/192; all 1,344 agents: 913 differ; texts read in full for one agent per model
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: U1 named in PLAN f08f83e; the four-condition change is Addendum 1, committed before any count was read; config seeds checked equal across each block's conditions (0 mismatches) and the configs differ only in the condition key for the example read
+- II: holds: counted agent by agent, identical against differ, per model; no net
+- III: n/a: counts of text identity, no signed effect
+- V: holds: exact text identity is the ruler; four texts read in full per model for one agent to confirm the differences are wording, not whitespace
+- VI: holds: per model, not pooled into one verdict; the two Qwen models repeat on every agent and the other five do not on 80 to 100 percent, printed side by side
+- R: holds: from their posts.jsonl and config.json at Hugging Face revision 64d770e (hashes in scout/FILES_SHA256.txt); defined after reading their code, labelled so
+- L1: holds: texts read in full for agent a03 under every condition for three models before the counts were accepted
+- L2: holds: no rate of ours
+- L3: holds: their setup named: Ollama /api/generate, temperature 0.8 for posts, seeded per request, four requests in parallel, format json, think false
+- L4: holds: this is their own repeat floor inside one release, per model; their server version and slot settings are not recorded in the release
+- L5: holds: the scout rebuilt every printed confirmatory number first
+- L6: holds: no agent dropped; 1,344 round-0 honest agents in 112 complete blocks
+- L7: n/a
+- L8: holds: the comparison is within block, the pairing the paper relies on
+- L9: n/a
+- L10: caught: the same model tag and the same seed do not give the same text for five of seven models; the pinned request is not pinned behaviour here
+- L11: n/a
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 16:36 Referee pass on U1: reproduced; round-0 prompt byte-identical across conditions for all 1,344 agents; counts are bounds (180-character cut); a repeat floor of the whole serving setup, not of sampling alone; the paper says request seeds are deterministic and does not test whether replies repeat
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the referee rebuilt the round-0 prompt for every agent from their files and found it byte-identical across conditions; config differs only in the condition key
+- II: holds: counted agent by agent per model; the referee adds that differing posts share a first stretch (median 20 to 27 characters) and then diverge
+- III: n/a: identity counts, no signed effect
+- V: holds: exact text identity, plus stance and confidence identity checked by the referee (one gemma agent differs in stance only)
+- VI: caught: the 180-character cut makes 'identical' an upper bound and 'differ' a lower bound; now printed
+- R: holds: counts from their posts.jsonl and config.json at revision 64d770e; paper quoted on deterministic request seeds
+- L1: holds: texts read in full for one agent per model earlier; the referee read more
+- L2: holds: no run of ours exists for this gift
+- L3: caught: identical request is not identical server state (cache and concurrent mix differ by trial); the reading names the whole serving setup as the floor
+- L4: holds: this is their repeat floor per model inside one release; server version and slots are not in the release
+- L5: holds: referee reproduced the counts with its own code
+- L6: holds: no agent dropped; 112 complete blocks
+- L7: n/a: no gold set involved here
+- L8: holds: within block
+- L9: n/a: no prompt of ours
+- L10: caught: same model tag and seed do not give the same text for five of seven models
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it wrote its own code before reading ours

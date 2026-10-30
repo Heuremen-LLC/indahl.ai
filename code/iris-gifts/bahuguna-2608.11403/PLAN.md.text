@@ -1,0 +1,17 @@
+# Gift recount: Bahuguna, arXiv 2608.11403 "When Self-Consistency Backfires" (v3, 21 Oct 2026)
+Written and committed 30 Oct 2026 before the reading below is computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md.
+Author as printed: Utkarsh Bahuguna, Scaler School of Technology, utkarshbahuguna10@gmail.com. No funding or acknowledgements printed.
+Released: Zenodo 10.5281/zenodo.21933418 (derived data, MANIFEST hashes match), GitHub u7k4rs6/self-consistency-backfire (v1 era).
+CAUTION: GitHub outputs hold completions that restate gated GPQA items. Nothing from theirs/ goes into any public tree, ever.
+
+## KNOWN-GOOD
+Scout rebuild (scout/RECOUNT.md): the headline margin contrasts (+0.0586 pooled, -0.0142 paired), the backfire counts (112 and 130 of 198),
+the gates and hypothesis table rebuild to the printed digits. Our own count, from derived__samples.jsonl: the Section 8 replication run
+(run_id margin-v2, Qwen/Qwen3.5-9B, cap 6,144) has 1,253 samples, 1,119 with an extracted answer (0.8931) and 364 truncated (0.2905), as
+printed.
+
+## Reading (defined after reading the paper; four outcomes)
+B1 Section 8 prints the replication answer rate as 0.8931 [0.8747, 0.9090]. Disclosure 24 of v3 moves two other answer-rate intervals
+   from sample-level Wilson to the paper's problem-level cluster bootstrap. B1 computes this one both ways: the sample-level Wilson interval
+   on 1,119 of 1,253, and the problem-level cluster bootstrap (problems resampled, 10,000 replicates, seeds 42, 1, 2), and says which one
+   the printed interval is. No claim about the registered verdict: the paper leaves the replication unevaluated on other grounds.

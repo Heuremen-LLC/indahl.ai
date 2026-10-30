@@ -1,0 +1,4 @@
+ca081da 2026-10-30T16:36:28-04:00 Gift 2608.20438: referee reproduced U1 (prompts byte-identical); counts are bounds; floor of the whole serving setup; Check Block filed
+69c26ac 2026-10-30T16:30:25-04:00 Gift 2608.20438 U1: the same seeded round-0 request repeats for both Qwen models and not for the other five (80-100% of agents differ); texts read in full; Check Block filed
+3dd6d11 2026-10-30T16:29:48-04:00 Gift 2608.20438 Addendum 1: four conditions per block, U1 compares all four; before any count was read
+f08f83e 2026-10-30T16:29:20-04:00 Gift plan 2608.20438 (Usman, Williamson): U1 round-0 repeat floor inside their release, committed before computing

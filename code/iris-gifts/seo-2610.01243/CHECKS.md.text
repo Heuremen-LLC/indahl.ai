@@ -1,0 +1,44 @@
+
+## 2026-10-30 16:28 S1: unanimity gate under two runs of the 4B judge: bf16 keeps 121 (gain 0.141 [0.110, 0.173], rebuilds), 8-bit MLX keeps 128 (0.135 [0.104, 0.165]); both 115, one run only 19 of 134 (bf16 only 6, gain 0.170; 8-bit only 13, gain 0.088 [0.005, 0.166]); the gate's gain holds across runs, its membership does not
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: S1 named in PLAN 60806aa before s1.py ran; both gates use the same 300 prompts, the same ratings and the same pool means
+- II: holds: membership counted prompt by prompt in each direction (6 and 13) before any gain is compared; no net replaces the churn
+- III: holds: all gains positive; the 8-bit-only set is lower (0.088) and the bf16-only set higher (0.170), signs kept
+- V: holds: bootstrap over prompts under three seeds for every set; counts for membership
+- VI: holds: the two gates' gains overlap heavily, read as CONSISTENT with a bound printed (8-bit [0.104, 0.165] against bf16 [0.110, 0.173]); the small sets are printed with their n and wide intervals, no verdict claimed on them
+- R: holds: from his runs/qwen_main.jsonl and runs/extension/qwen4b_mlx_main.jsonl and data/derived/main.jsonl (hashes in scout/HASHES_all.txt); S1 defined after reading the paper, labelled so
+- L1: holds: selected_id taken as his strict parser released it; all 900 calls valid in both runs
+- L2: holds: no run of ours
+- L3: holds: both runs are his: bf16 main and 8-bit MLX extension of Qwen3-VL-4B; the change is precision and runtime together, named as one
+- L4: n/a: no run of ours; his two runs give a cross-setup floor, not a repeat floor (each ran once)
+- L5: holds: headline numbers rebuilt by our code first (known_good.text), the bf16 gate rebuilds to the printed digits
+- L6: holds: no call dropped (900 of 900 valid in both runs)
+- L7: n/a: ratings are CulturalFrames annotators, not a labeller of his
+- L8: holds: paired by prompt; set-level bootstrap
+- L9: n/a
+- L10: holds: one model name, two runs, membership differs: the pinned-name point in his own data
+- L11: n/a
+- L12: n/a: no referee yet; one goes before anything is public
+
+## 2026-10-30 16:35 Referee pass on S1: reproduced; the paper already prints the 8-bit MLX gate (Table 12, 128, 0.135), so the new part is the overlap 115/6/13; 43 of 300 prompts have a differing call (46 calls), and 18 of the 19 membership moves turn on one call; the 8-bit MLX run also changes the checkpoint (community conversion), named so
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: the 8-bit gate and its gain are already in the paper (Table 12); only the overlap is new, and the write-up says so
+- II: holds: membership moves counted prompt by prompt and traced to calls: 18 of 19 moves turn on one differing call
+- III: holds: gains on the shared and marginal sets printed with signs; the 8-bit-only set has 4 of 13 below zero
+- V: holds: counts first; the n=13 set's interval is dropped as too small, gain printed to two places
+- VI: caught: the two gates share 115 prompts, so 0.141 against 0.135 is not two independent readings; the write-up no longer leans on that comparison
+- R: holds: call-level counts from his two run files read today; S1 defined after reading the paper
+- L1: holds: selected_id from his strict parser, 900 of 900 valid in both runs
+- L2: holds: no run of ours exists for this gift
+- L3: caught: the 8-bit MLX run changes precision, runtime and checkpoint (mlx-community conversion) together; named as one change of setup
+- L4: n/a: each of his runs ran once; this is a cross-setup reading, not a repeat floor
+- L5: holds: referee reproduced every number independently
+- L6: holds: no call dropped in either run
+- L7: n/a: ratings are CulturalFrames annotators
+- L8: holds: paired by prompt and by call
+- L9: n/a: no prompt of ours
+- L10: holds: one model name, two runs, 46 calls move
+- L11: n/a: nothing substituted
+- L12: caught: the referee is the same model family as the writer; it wrote its own code before reading ours

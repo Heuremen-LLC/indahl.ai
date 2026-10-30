@@ -1,0 +1,3 @@
+8a59800 2026-10-30T16:35:48-04:00 Gift 2610.01243: referee reproduced S1; the 8-bit gate is in the paper, the overlap is new; 18 of 19 membership moves turn on one call; Check Block filed
+9e85a28 2026-10-30T16:28:18-04:00 Gift 2610.01243 S1: unanimity gate gain holds across bf16 and 8-bit runs (0.141 vs 0.135), membership moves on 19 of 134 prompts; Check Block filed
+60806aa 2026-10-30T16:27:37-04:00 Gift plan 2610.01243 (Seo): headline numbers rebuild with our code; S1 unanimity gate under bf16 and 8-bit runs of one judge, committed before computing

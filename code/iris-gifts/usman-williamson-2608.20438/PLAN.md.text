@@ -1,0 +1,22 @@
+# Gift recount: Usman and Williamson, arXiv 2608.20438 "Peer-Voted LLM-Agent Stress Tests Find Feed-Induced Lexical Convergence..."
+Written and committed 30 Oct 2026 before the reading below is computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md.
+Authors as printed: Rana Muhammad Usman and Dominic Williamson (no affiliation; "This work was conducted independently"). Contact as printed:
+usmanashrafrana@gmail.com, dominic@codarossa.ai. No funding line. Released: GitHub ranausmanai/synthetic-social-networks (c9b9337, MIT),
+Hugging Face ranausmans/synthetic-social-networks (64d770e, CC-BY 4.0); hashes in scout/FILES_SHA256.txt.
+
+## KNOWN-GOOD
+Scout rebuild (scout/RECOUNT.md): all 448 trials' metrics from raw files, the 204 rows of their confirmatory_analysis.csv, the headline
++0.0082 [0.0043, 0.0121] and distributed-minus-single +0.0573 [-0.0091, 0.1250], all to the printed digits; one abstract rounding (upper
+bound 0.4 pp printed, 0.347 rebuilt). Read by us in their code: honest agents come first in every condition (agents + new_agents), the
+request seed is trial seed x 100000 + round x 1000 + phase x 500 + ordinal, and round 0 shows no feed, so each honest agent's round-0
+request is the same prompt and seed in control, single source and distributed sources. Requests run four at a time (parallel_requests 4).
+
+## Reading (defined after reading the paper and code; four outcomes)
+U1 the in-release repeat floor: for each block (panel, model, topic, seed) and each honest agent, the round-0 post text in the three
+   conditions. Count agents whose three texts are identical, and those where any differ, per model, with the config seed checked equal
+   across the block's conditions first. Says how often the same request returned different text inside their own run. No cause named.
+
+## Addendum 1 (30 Oct 2026, before any U1 count was read; stamp from the commit)
+The release holds four conditions per block (control, likes, single_source, distributed_sources), not three: our first script assumed
+three from the paper's wording and stopped on every block, printing no counts. Round 0 renders no feed in any condition, so U1 compares the
+round-0 text across all four conditions present in each block.
