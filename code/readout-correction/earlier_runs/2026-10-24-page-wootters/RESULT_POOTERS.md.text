@@ -1,0 +1,27 @@
+RESULT -- Page-Wootters, ibm_kingston, 24 Oct 2026 (plan 954c667, committed before any job). Read under the plan; nothing re-chosen after the data.
+Jobs: J1 dbe9nf7pc3tc739lar8g (submitted 11:51:24Z, 32 s), J2 dbe9ru7gdj9s73fle000 (12:00:56Z, 32 s). 64 QPU s in all. No IBM-side errors.
+Qubits c0 = 3, s = 16, c1 = 23; pack E = the 39 control-run emitters. 27 settings x 2 arms x 2 jobs (ABBA), 2000 shots. Full output: results_pooters.text.
+
+KNOWN-GOOD: PASS. Pooled R2 kicks, deg per readout (99 % band), against the committed 21 Oct per-qubit kicks on the same qubits:
+  q3  (c0)  -2.57 [-3.02, -2.15]    committed -3.06 [-3.52, -2.56]
+  q16 (s)   -7.39 [-7.94, -6.87]    committed -7.61 [-8.16, -7.06]
+  q23 (c1) -18.02 [-18.60, -17.39]  committed -18.12 [-18.72, -17.46]
+  All BELOW 0, intervals do not overlap, order q23 < q16 < q3 as committed. (Sizes were not part of the rule; they land within ~0.5 deg of 3 days ago.)
+
+FINAL READINGS (pooled if the copies agree, else CANNOT_TELL; CONSISTENT is a bound):
+ R1 inside view, arm D, alpha(t) minus the readout none:  t=0 +2.9 [-1.4, +6.9] CONSISTENT;  t=1 -5.4 [-9.6, -1.8] BELOW (each copy alone CONSISTENT,
+    pooled BELOW -- FINAL by the committed rule);  t=2 -0.5 [-6.4, +5.2] CONSISTENT;  t=3 +13.8 [+7.3, +19.6] ABOVE (both copies).
+    Conditional vector lengths 0.85-0.95 (shrink present). R1 cannot say whether t=3 is decoherence, gate error or readout beyond the record.
+ R2 the look: c0 -2.57, s -7.39, c1 -18.02 deg per readout, all BELOW (above).
+ R3 history fidelity: F(D) 0.665 -> F(M) 0.158; dF -0.507 [-0.524, -0.494] BELOW. Four readouts of the neighbouring pack take the history state's
+    overlap with the ideal from two thirds to under one sixth, almost all of it as phase (fitted shrink 0.98-1.00), not as loss of coherence.
+ R4 tick uniformity: delta = phi_c1 - 2 phi_c0 = -51.5 [-55.2, -47.3] deg BELOW (both copies; copy gap +0.07). The look does NOT add a phase
+    linear in t: looking at the neighbours makes the clock tick unevenly. Expected from the committed kicks: about -48. Rules out "linear in t";
+    says nothing about time itself (/q 25).
+
+DEFINED AFTER THE DATA (printed by the committed code, not a planned reading, not scored): in arm D the system's conditional vector carries a Y
+component of -0.38 to -0.49 at t = 1..3 (ideal 0), i.e. s precesses out of the X-Z plane during the history build and the 8.7 us idle, even with no look.
+
+WHAT THIS HANDS THE PAGE-WOOTTERS FIELD (their math, not ours): a measured 3-qubit history state (2 clock qubits, 4 ticks) with full 27-setting
+tomography, as built and as looked at; the per-shot pack readouts in arm M (shots_pooters_J*.npz) for anyone who wants to condition on what the
+look saw; the transpiled circuits (circuits_pooters.qpy) and the record before each job.

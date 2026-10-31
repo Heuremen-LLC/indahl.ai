@@ -1,0 +1,166 @@
+{
+ "DA": 0.006600000000000017,
+ "hDA": 0.014869329272318528,
+ "DA_outcome": "CONSISTENT",
+ "B2_minus_B1": 0.01579999999999999,
+ "hB2B1": 0.012348329904721827,
+ "SET": -0.009200000000000208,
+ "hSET": 0.016707259914380986,
+ "guardSET": 0.010734664636159272,
+ "SET_outcome": "CONSISTENT",
+ "BLM": -0.0016145144101305901,
+ "hBLM": 0.006849703430832064,
+ "guardBLM": 0.003789985682906915,
+ "BLM_outcome": "CANNOT_TELL",
+ "bLM_A": 0.0012110130163869234,
+ "bLM_B": -0.0004035013937436667,
+ "bLM_A2_minus_A1": 0.0005607273413423472,
+ "DP": 0.023045723421776576,
+ "hDP": 0.008353629957190493,
+ "DP_outcome": "ABOVE",
+ "baseline": {
+  "A1": 0.9334000000000001,
+  "B1": 0.9196000000000002,
+  "B2": 0.9354000000000001,
+  "A2": 0.9399999999999998
+ },
+ "censored": false,
+ "per_job": {
+  "A1": {
+   "q6_T2_us": 106.24618804797305,
+   "q6_readout_error": 0.0089111328125,
+   "wait_us": 8.219999999999999,
+   "projection": 0.9090542765782234,
+   "baseline": 0.9334000000000001
+  },
+  "B1": {
+   "q6_T2_us": 106.24618804797305,
+   "q6_readout_error": 0.0089111328125,
+   "wait_us": 8.219999999999999,
+   "projection": 0.9090542765782234,
+   "baseline": 0.9196000000000002
+  },
+  "B2": {
+   "q6_T2_us": 106.24618804797305,
+   "q6_readout_error": 0.0089111328125,
+   "wait_us": 8.219999999999999,
+   "projection": 0.9090542765782234,
+   "baseline": 0.9354000000000001
+  },
+  "A2": {
+   "q6_T2_us": 106.24618804797305,
+   "q6_readout_error": 0.0089111328125,
+   "wait_us": 8.219999999999999,
+   "projection": 0.9090542765782234,
+   "baseline": 0.9399999999999998
+  }
+ },
+ "job_times": [
+  {
+   "label": "A1",
+   "job_id": "dbea7evsstms73fbnehg",
+   "timestamps": {
+    "created": "2026-10-24T12:25:31.102163Z",
+    "finished": "2026-10-24T12:28:17.733395Z",
+    "running": "2026-10-24T12:26:12.883481Z"
+   },
+   "usage": {
+    "qpu_charge_time_seconds": 57,
+    "value": 0.948838,
+    "unit": "resource_units",
+    "status": "complete",
+    "details": [
+     {
+      "value": 0.948838,
+      "unit": "resource_units",
+      "metric": {
+       "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+       "value": 57
+      }
+     }
+    ]
+   }
+  },
+  {
+   "label": "B1",
+   "job_id": "dbea8oom94ac738rfiag",
+   "timestamps": {
+    "created": "2026-10-24T12:28:19.585767Z",
+    "finished": "2026-10-24T12:34:09.315965Z",
+    "running": "2026-10-24T12:28:47.403098Z"
+   },
+   "usage": {
+    "qpu_charge_time_seconds": 57,
+    "value": 0.948866,
+    "unit": "resource_units",
+    "status": "complete",
+    "details": [
+     {
+      "value": 0.948866,
+      "unit": "resource_units",
+      "metric": {
+       "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+       "value": 57
+      }
+     }
+    ]
+   }
+  },
+  {
+   "label": "B2",
+   "job_id": "dbeabgnpc3tc739lbj30",
+   "timestamps": {
+    "created": "2026-10-24T12:34:10.816151Z",
+    "finished": "2026-10-24T12:36:11.487323Z",
+    "running": "2026-10-24T12:34:11.862151Z"
+   },
+   "usage": {
+    "qpu_charge_time_seconds": 57,
+    "value": 0.948866,
+    "unit": "resource_units",
+    "status": "complete",
+    "details": [
+     {
+      "value": 0.948866,
+      "unit": "resource_units",
+      "metric": {
+       "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+       "value": 57
+      }
+     }
+    ]
+   }
+  },
+  {
+   "label": "A2",
+   "job_id": "dbeacfnsstms73fbnk50",
+   "timestamps": {
+    "created": "2026-10-24T12:36:14.298455Z",
+    "finished": "2026-10-24T12:38:09.396093Z",
+    "running": "2026-10-24T12:36:15.350032Z"
+   },
+   "usage": {
+    "qpu_charge_time_seconds": 57,
+    "value": 0.948838,
+    "unit": "resource_units",
+    "status": "complete",
+    "details": [
+     {
+      "value": 0.948838,
+      "unit": "resource_units",
+      "metric": {
+       "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+       "value": 57
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "per_job_delta": {
+  "A1": 0.024345723421776766,
+  "B1": 0.010545723421776843,
+  "B2": 0.026345723421776768,
+  "A2": 0.030945723421776483
+ }
+}

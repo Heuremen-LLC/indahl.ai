@@ -1,0 +1,14 @@
+RESULT -- Aryan Kumar's spectator probe (arXiv 2610.28705v1), ibm_marrakesh, the run his question lives on. Plan PLAN_KUMAR.md.text (24 Oct, before
+any job; refire addendum 31 Oct in ADDENDUM_CANCELLED.md). Jobs A1 dbj3rm1kdqps738vqf80 (19:13:28Z), B1 dbj3s7gnceqs73aj7ei0 (19:14:38Z),
+B2 dbj3sqt6p51s73ck240g (19:15:56Z), A2 dbj3tc9ffo6c73b8sigg (19:17:05Z); 58 s each, 232 s, no errors. Read by the committed analyze_kumar.py
+(results_kumar.text, readings_kumar.json). Code hashes checked OK before firing. The 24 Oct results_kumar.text (no data, void) is kept as
+results_kumar_VOID_20261024.text.
+  DA  drift between identical-circuit jobs (A2 - A1)      +0.089, half-width 0.011  -> ABOVE   (his scale S = 0.0561: today's shift is larger)
+      per-job baseline <X_s>: A1 0.849, B1 0.927, B2 0.927, A2 0.938; B2 - B1 +0.0003 (half-width 0.009). The move is a step after the first job.
+  SET twirl set B - A under ABBA                          +0.033, half-width 0.009, step guard 0.050 -> CANNOT_TELL
+  BLM b_LM(B) - b_LM(A)                                   +0.0065, half-width 0.0039, guard 0.0089 -> CANNOT_TELL (by design cannot read CONSISTENT)
+  DP  delivered baseline minus stated-T2 projection (q6)  -0.027, half-width 0.005 -> BELOW (A1 -0.089, B1 -0.011, B2 -0.011, A2 +0.0004; mostly A1)
+WHAT IT SAYS: on marrakesh today his probe's baseline moved by 0.089 between two runs of the SAME circuits minutes apart, more than the 0.056
+job-to-job shift his paper read as a twirl-set effect. With a move that size between identical jobs, his twirl-set contrast cannot be separated
+from it (SET CANNOT_TELL). Kingston (24 Oct companion) showed no such move at a third of his size. No cause is named.
+FOR HIM: the shift lives in the chip and the moment, not in his probe sets; identical-circuit repeats inside his own run would carry it.

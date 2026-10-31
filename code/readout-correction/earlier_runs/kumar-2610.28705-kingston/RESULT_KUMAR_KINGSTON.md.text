@@ -1,0 +1,9 @@
+RESULT -- Kumar probe, SECOND-CHIP companion on ibm_kingston (plan 0c47f26 + addenda cfd311f, a239cc5, 6959c0e, all before any job). 24 Oct 2026.
+Jobs A1 B1 B2 A2, 57 s each, 228 s total, no errors. Read by the committed analyze_kumar.py (byte-identical to the marrakesh copy).
+  DA  drift between identical-circuit jobs (A2 - A1)      +0.0066, half-width 0.0149  -> CONSISTENT  (bound well under his scale S = 0.0561)
+  SET twirl set B - A under ABBA                          -0.0092, half-width 0.0167, guard 0.0107 -> CONSISTENT  (his marrakesh shift was +0.0561)
+  BLM b_LM(B) - b_LM(A)                                   -0.0016, half-width 0.0068, guard 0.0038 -> CANNOT_TELL
+  DP  delivered baseline minus stated-T2 projection (q6)  +0.0230, half-width 0.0084 -> ABOVE  (the probe keeps MORE than IBM's stated T2 predicts)
+What it says, second chip only: on kingston today his probe shows no job-to-job shift and no twirl-set difference at the size he saw on marrakesh
+(0.056); both are bounded at roughly a third of it. It does NOT answer his marrakesh question -- the marrakesh run (queued, chip in maintenance) does.
+Timing differs by construction (kingston tau_w 5.33 us vs 6.87 us on marrakesh), addendum 2.

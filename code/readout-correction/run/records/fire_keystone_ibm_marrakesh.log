@@ -1,0 +1,8 @@
+ibm_marrakesh: clock c0,s,c1 = (104, 105, 106); L 671 dt; circuits main 210 x 2 jobs + cal 8; checks PASS; durations (dt) {"S_D": 6057, "S_DE": 6075, "S_M": 6057, "S_MC": 6057, "S_MF": 6057, "S_ME": 6075, "P_D": 3403, "P_DE": 3421, "P_M": 3403, "P_MC": 3403, "P_MF": 3403, "P_ME": 3421, "C_D": 3522, "C_DE": 3540, "C_M": 3522, "C_MC": 3522, "C_MF": 3522, "C_ME": 3540}; ME minus M (S) 18 dt; est 184 s (cap 240), remaining 679
+SUBMITTED C attempt 1 job dbj3ov0nceqs73aj79cg 2026-10-31T19:07:40Z
+DONE C usage {'qpu_charge_time_seconds': 11, 'value': 0.180913, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 0.180913, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 11}}]}
+SUBMITTED A attempt 1 job dbj3p4hffo6c73b8sc5g 2026-10-31T19:08:02Z
+DONE A usage {'qpu_charge_time_seconds': 80, 'value': 1.318643, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 1.318643, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 80}}]}
+SUBMITTED B attempt 1 job dbj3pthkdqps738vqbqg 2026-10-31T19:09:42Z
+DONE B usage {'qpu_charge_time_seconds': 80, 'value': 1.318643, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 1.318643, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 80}}]}
+ALL DONE ibm_marrakesh 0 s

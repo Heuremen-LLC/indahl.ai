@@ -1,0 +1,34 @@
+{
+ "job2": {
+  "baseline": 0.9058000000000002,
+  "published_baseline": 0.9058,
+  "bLM": 0.0007439969885321938,
+  "published_bLM": 0.0007,
+  "agree_to_printed_digits": true,
+  "projection": 0.9079022823379201,
+  "wait_us": 10.78
+ },
+ "job4": {
+  "baseline": 0.9619,
+  "published_baseline": 0.9619,
+  "bLM": -0.003088219853187406,
+  "published_bLM": -0.0031,
+  "agree_to_printed_digits": true,
+  "projection": 0.9451462652661927,
+  "wait_us": 10.78
+ },
+ "data_pass": true,
+ "circuits": {
+  "A": {
+   "instances": 200,
+   "metadata_equal": 200,
+   "live_target_window_dt_equal": 200
+  },
+  "B": {
+   "instances": 200,
+   "metadata_equal": 200,
+   "live_target_window_dt_equal": 200
+  }
+ },
+ "circuits_pass": true
+}

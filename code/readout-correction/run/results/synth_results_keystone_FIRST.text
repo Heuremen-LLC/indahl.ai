@@ -1,0 +1,234 @@
+synth_keystone.py  2 draws per world, chip table ibm_kingston, shots S 2000 P 2500 C 1000 per copy, two copies; FINAL outcomes
+  W0 C1 dF M minus none                                       CONSISTENT 2   (expected C)
+  W0 C1 dF M with the total put back at the END minus D       BELOW 2   (expected B)
+  W0 C1 dF MC minus none                                      BELOW 2   (expected B)
+  W0 C1 dF ME minus none                                      CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W0 C1 dF MF minus none                                      CONSISTENT 2   (expected C)
+  W0 C2 F(MC) minus F(M) (given back)                         BELOW 2   (expected B)
+  W0 C3 F(MC) minus F(M put back at the end)                  ABOVE 2   (expected None)
+  W0 KG kick M (deg/readout)                                  CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W0 P1 Bell fidelity M minus none                            CONSISTENT 2   (expected C)
+  W0 P1 Bell fidelity MC minus none                           BELOW 2   (expected B)
+  W0 P1 Bell fidelity ME minus none                           CONSISTENT 2   (expected C)
+  W0 P1 Bell fidelity MF minus none                           CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W0 P2 X-part concurrence M minus none                       BELOW 1  CONSISTENT 1   (expected C)
+  W0 P2 X-part concurrence MC minus none                      CONSISTENT 2   (expected C)
+  W0 P2 X-part concurrence ME minus none                      CONSISTENT 2   (expected C)
+  W0 P2 X-part concurrence MF minus none                      CONSISTENT 2   (expected C)
+  W0 P3 Bell fidelity MC minus M (given back)                 BELOW 2   (expected B)
+  W0 P3b X-part concurrence MC minus M (frame only)           CONSISTENT 2   (expected C)
+  W0 S1 signed residual MC (deg/readout)                      ABOVE 2   (expected A)
+  W0 S1 signed residual ME (deg/readout)                      CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W0 S1 signed residual MF (deg/readout)                      CANNOT_TELL 2   (expected C)
+  W0 S2 |residual| minus shot floor M                         CONSISTENT 2   (expected C)
+  W0 S2 |residual| minus shot floor MC                        ABOVE 2   (expected A)
+  W0 S2 |residual| minus shot floor ME                        CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W0 S2 |residual| minus shot floor MF                        ABOVE 2   (expected C)
+  W0 S3 P(1) excess back-to-zero M                            BELOW 1  CONSISTENT 1   (expected C)
+  W0 S3 P(1) excess back-to-zero MC                           ABOVE 2   (expected A)
+  W0 S3 P(1) excess back-to-zero ME                           CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W0 S3 P(1) excess back-to-zero MF                           CONSISTENT 2   (expected C)
+  W0 S4 coherence M minus none                                CONSISTENT 2   (expected C)
+  W0 S4 coherence MC minus none                               CONSISTENT 2   (expected C)
+  W0 S4 coherence ME minus none                               CONSISTENT 2   (expected C)
+  W0 S4 coherence MF minus none                               CONSISTENT 2   (expected C)
+  W0 S4b coherence MC minus M (frame only)                    CONSISTENT 2   (expected C)
+  W0 S5 |residual| MC minus MF (old vs fresh table)           ABOVE 2   (expected A)
+  W0 S6 |kick| M minus |residual| MC (given back)             BELOW 2   (expected B)
+  W1 C1 dF M minus none                                       BELOW 2   (expected B)
+  W1 C1 dF M with the total put back at the END minus D       BELOW 2   (expected B)
+  W1 C1 dF MC minus none                                      CONSISTENT 2   (expected C)
+  W1 C1 dF ME minus none                                      CONSISTENT 2   (expected C)
+  W1 C1 dF MF minus none                                      CONSISTENT 2   (expected C)
+  W1 C2 F(MC) minus F(M) (given back)                         ABOVE 2   (expected A)
+  W1 C3 F(MC) minus F(M put back at the end)                  ABOVE 2   (expected A)
+  W1 KG kick M (deg/readout)                                  BELOW 2   (expected B)
+  W1 P1 Bell fidelity M minus none                            BELOW 2   (expected B)
+  W1 P1 Bell fidelity MC minus none                           CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W1 P1 Bell fidelity ME minus none                           CONSISTENT 2   (expected C)
+  W1 P1 Bell fidelity MF minus none                           CONSISTENT 2   (expected C)
+  W1 P2 X-part concurrence M minus none                       CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W1 P2 X-part concurrence MC minus none                      ABOVE 1  CONSISTENT 1   (expected C)
+  W1 P2 X-part concurrence ME minus none                      CONSISTENT 2   (expected C)
+  W1 P2 X-part concurrence MF minus none                      CONSISTENT 2   (expected C)
+  W1 P3 Bell fidelity MC minus M (given back)                 ABOVE 2   (expected A)
+  W1 P3b X-part concurrence MC minus M (frame only)           CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W1 S1 signed residual MC (deg/readout)                      CONSISTENT 2   (expected C)
+  W1 S1 signed residual ME (deg/readout)                      ABOVE 1  CONSISTENT 1   (expected C)
+  W1 S1 signed residual MF (deg/readout)                      CONSISTENT 2   (expected C)
+  W1 S2 |residual| minus shot floor M                         ABOVE 2   (expected A)
+  W1 S2 |residual| minus shot floor MC                        CONSISTENT 2   (expected C)
+  W1 S2 |residual| minus shot floor ME                        CONSISTENT 2   (expected C)
+  W1 S2 |residual| minus shot floor MF                        CANNOT_TELL 2   (expected C)
+  W1 S3 P(1) excess back-to-zero M                            ABOVE 2   (expected A)
+  W1 S3 P(1) excess back-to-zero MC                           BELOW 1  CANNOT_TELL 1   (expected C)
+  W1 S3 P(1) excess back-to-zero ME                           CONSISTENT 2   (expected C)
+  W1 S3 P(1) excess back-to-zero MF                           CONSISTENT 2   (expected C)
+  W1 S4 coherence M minus none                                CONSISTENT 2   (expected C)
+  W1 S4 coherence MC minus none                               CONSISTENT 2   (expected C)
+  W1 S4 coherence ME minus none                               CONSISTENT 2   (expected C)
+  W1 S4 coherence MF minus none                               CONSISTENT 2   (expected C)
+  W1 S4b coherence MC minus M (frame only)                    CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W1 S5 |residual| MC minus MF (old vs fresh table)           BELOW 2   (expected C)
+  W1 S6 |kick| M minus |residual| MC (given back)             ABOVE 2   (expected A)
+  W2 C1 dF M minus none                                       BELOW 2   (expected B)
+  W2 C1 dF M with the total put back at the END minus D       BELOW 1  CONSISTENT 1   (expected B)
+  W2 C1 dF MC minus none                                      CONSISTENT 2   (expected B)
+  W2 C1 dF ME minus none                                      CONSISTENT 2   (expected C)
+  W2 C1 dF MF minus none                                      CONSISTENT 2   (expected C)
+  W2 C2 F(MC) minus F(M) (given back)                         ABOVE 2   (expected A)
+  W2 C3 F(MC) minus F(M put back at the end)                  ABOVE 1  CONSISTENT 1   (expected None)
+  W2 KG kick M (deg/readout)                                  BELOW 2   (expected B)
+  W2 P1 Bell fidelity M minus none                            BELOW 2   (expected B)
+  W2 P1 Bell fidelity MC minus none                           BELOW 2   (expected B)
+  W2 P1 Bell fidelity ME minus none                           CONSISTENT 2   (expected C)
+  W2 P1 Bell fidelity MF minus none                           CONSISTENT 2   (expected C)
+  W2 P2 X-part concurrence M minus none                       CONSISTENT 2   (expected C)
+  W2 P2 X-part concurrence MC minus none                      CONSISTENT 2   (expected C)
+  W2 P2 X-part concurrence ME minus none                      CONSISTENT 2   (expected C)
+  W2 P2 X-part concurrence MF minus none                      CONSISTENT 2   (expected C)
+  W2 P3 Bell fidelity MC minus M (given back)                 ABOVE 2   (expected A)
+  W2 P3b X-part concurrence MC minus M (frame only)           ABOVE 1  CONSISTENT 1   (expected C)
+  W2 S1 signed residual MC (deg/readout)                      ABOVE 2   (expected A)
+  W2 S1 signed residual ME (deg/readout)                      CONSISTENT 2   (expected C)
+  W2 S1 signed residual MF (deg/readout)                      CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W2 S2 |residual| minus shot floor M                         ABOVE 2   (expected A)
+  W2 S2 |residual| minus shot floor MC                        ABOVE 2   (expected A)
+  W2 S2 |residual| minus shot floor ME                        CONSISTENT 2   (expected C)
+  W2 S2 |residual| minus shot floor MF                        ABOVE 1  CANNOT_TELL 1   (expected C)
+  W2 S3 P(1) excess back-to-zero M                            ABOVE 2   (expected A)
+  W2 S3 P(1) excess back-to-zero MC                           ABOVE 2   (expected A)
+  W2 S3 P(1) excess back-to-zero ME                           CONSISTENT 2   (expected C)
+  W2 S3 P(1) excess back-to-zero MF                           CANNOT_TELL 2   (expected C)
+  W2 S4 coherence M minus none                                CONSISTENT 2   (expected C)
+  W2 S4 coherence MC minus none                               BELOW 1  CONSISTENT 1   (expected C)
+  W2 S4 coherence ME minus none                               CONSISTENT 2   (expected C)
+  W2 S4 coherence MF minus none                               CONSISTENT 2   (expected C)
+  W2 S4b coherence MC minus M (frame only)                    CONSISTENT 2   (expected C)
+  W2 S5 |residual| MC minus MF (old vs fresh table)           ABOVE 2   (expected A)
+  W2 S6 |kick| M minus |residual| MC (given back)             ABOVE 2   (expected A)
+  W3 C1 dF M minus none                                       CANNOT_TELL 2   (expected B)
+  W3 C1 dF M with the total put back at the END minus D       BELOW 2   (expected B)
+  W3 C1 dF MC minus none                                      BELOW 2   (expected B)
+  W3 C1 dF ME minus none                                      BELOW 2   (expected B)
+  W3 C1 dF MF minus none                                      CANNOT_TELL 1  CONSISTENT 1   (expected B)
+  W3 C2 F(MC) minus F(M) (given back)                         BELOW 2   (expected B)
+  W3 C3 F(MC) minus F(M put back at the end)                  ABOVE 2   (expected None)
+  W3 KG kick M (deg/readout)                                  CONSISTENT 2   (expected C)
+  W3 P1 Bell fidelity M minus none                            BELOW 2   (expected B)
+  W3 P1 Bell fidelity MC minus none                           BELOW 2   (expected B)
+  W3 P1 Bell fidelity ME minus none                           BELOW 2   (expected B)
+  W3 P1 Bell fidelity MF minus none                           BELOW 2   (expected B)
+  W3 P2 X-part concurrence M minus none                       BELOW 2   (expected B)
+  W3 P2 X-part concurrence MC minus none                      BELOW 2   (expected B)
+  W3 P2 X-part concurrence ME minus none                      BELOW 2   (expected B)
+  W3 P2 X-part concurrence MF minus none                      BELOW 2   (expected B)
+  W3 P3 Bell fidelity MC minus M (given back)                 BELOW 2   (expected B)
+  W3 P3b X-part concurrence MC minus M (frame only)           CONSISTENT 2   (expected C)
+  W3 S1 signed residual MC (deg/readout)                      ABOVE 2   (expected A)
+  W3 S1 signed residual ME (deg/readout)                      CONSISTENT 2   (expected C)
+  W3 S1 signed residual MF (deg/readout)                      CONSISTENT 2   (expected C)
+  W3 S2 |residual| minus shot floor M                         CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W3 S2 |residual| minus shot floor MC                        ABOVE 2   (expected A)
+  W3 S2 |residual| minus shot floor ME                        CONSISTENT 2   (expected C)
+  W3 S2 |residual| minus shot floor MF                        ABOVE 1  CANNOT_TELL 1   (expected C)
+  W3 S3 P(1) excess back-to-zero M                            ABOVE 2   (expected A)
+  W3 S3 P(1) excess back-to-zero MC                           ABOVE 2   (expected A)
+  W3 S3 P(1) excess back-to-zero ME                           ABOVE 2   (expected A)
+  W3 S3 P(1) excess back-to-zero MF                           ABOVE 2   (expected A)
+  W3 S4 coherence M minus none                                BELOW 2   (expected B)
+  W3 S4 coherence MC minus none                               BELOW 2   (expected B)
+  W3 S4 coherence ME minus none                               BELOW 2   (expected B)
+  W3 S4 coherence MF minus none                               BELOW 2   (expected B)
+  W3 S4b coherence MC minus M (frame only)                    CONSISTENT 2   (expected C)
+  W3 S5 |residual| MC minus MF (old vs fresh table)           ABOVE 2   (expected A)
+  W3 S6 |kick| M minus |residual| MC (given back)             BELOW 2   (expected B)
+  W4 C1 dF M minus none                                       BELOW 2   (expected B)
+  W4 C1 dF M with the total put back at the END minus D       BELOW 2   (expected B)
+  W4 C1 dF MC minus none                                      CANNOT_TELL 2   (expected B)
+  W4 C1 dF ME minus none                                      BELOW 1  CANNOT_TELL 1   (expected B)
+  W4 C1 dF MF minus none                                      CANNOT_TELL 2   (expected B)
+  W4 C2 F(MC) minus F(M) (given back)                         ABOVE 2   (expected A)
+  W4 C3 F(MC) minus F(M put back at the end)                  ABOVE 2   (expected A)
+  W4 KG kick M (deg/readout)                                  BELOW 2   (expected B)
+  W4 P1 Bell fidelity M minus none                            BELOW 2   (expected B)
+  W4 P1 Bell fidelity MC minus none                           BELOW 2   (expected B)
+  W4 P1 Bell fidelity ME minus none                           BELOW 2   (expected B)
+  W4 P1 Bell fidelity MF minus none                           BELOW 2   (expected B)
+  W4 P2 X-part concurrence M minus none                       BELOW 2   (expected B)
+  W4 P2 X-part concurrence MC minus none                      BELOW 2   (expected B)
+  W4 P2 X-part concurrence ME minus none                      BELOW 2   (expected B)
+  W4 P2 X-part concurrence MF minus none                      BELOW 2   (expected B)
+  W4 P3 Bell fidelity MC minus M (given back)                 ABOVE 2   (expected A)
+  W4 P3b X-part concurrence MC minus M (frame only)           CONSISTENT 2   (expected C)
+  W4 S1 signed residual MC (deg/readout)                      CONSISTENT 2   (expected C)
+  W4 S1 signed residual ME (deg/readout)                      CONSISTENT 2   (expected C)
+  W4 S1 signed residual MF (deg/readout)                      CANNOT_TELL 1  CONSISTENT 1   (expected C)
+  W4 S2 |residual| minus shot floor M                         ABOVE 2   (expected A)
+  W4 S2 |residual| minus shot floor MC                        CONSISTENT 2   (expected C)
+  W4 S2 |residual| minus shot floor ME                        CONSISTENT 2   (expected C)
+  W4 S2 |residual| minus shot floor MF                        ABOVE 1  CANNOT_TELL 1   (expected C)
+  W4 S3 P(1) excess back-to-zero M                            ABOVE 2   (expected A)
+  W4 S3 P(1) excess back-to-zero MC                           ABOVE 2   (expected A)
+  W4 S3 P(1) excess back-to-zero ME                           ABOVE 2   (expected A)
+  W4 S3 P(1) excess back-to-zero MF                           ABOVE 2   (expected A)
+  W4 S4 coherence M minus none                                BELOW 2   (expected B)
+  W4 S4 coherence MC minus none                               BELOW 2   (expected B)
+  W4 S4 coherence ME minus none                               BELOW 2   (expected B)
+  W4 S4 coherence MF minus none                               BELOW 2   (expected B)
+  W4 S4b coherence MC minus M (frame only)                    CONSISTENT 2   (expected C)
+  W4 S5 |residual| MC minus MF (old vs fresh table)           CANNOT_TELL 2   (expected C)
+  W4 S6 |kick| M minus |residual| MC (given back)             ABOVE 2   (expected A)
+FALSE CALLS (planted CONSISTENT read otherwise): 39/176 = 22.2 %   MISSES (planted ABOVE/BELOW read otherwise): 12/178 = 6.7 %
+MISMATCHES:
+  W0 d0 S1 signed residual MF (deg/readout): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0883 [-0.1415,-0.0105] want CONSISTENT
+  W0 d0 S1 signed residual ME (deg/readout): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0091 [-0.0270,+0.0574] want CONSISTENT
+  W0 d0 S2 |residual| minus shot floor MF: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0605 [+0.0122,+0.1052] want CONSISTENT
+  W0 d0 P1 Bell fidelity MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0010 [-0.0033,+0.0015] want CONSISTENT
+  W0 d0 P2 X-part concurrence M minus none: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0024 [-0.0064,-0.0001] want CONSISTENT
+  W0 d0 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0127 [-0.0268,+0.0029] want CONSISTENT
+  W0 d1 KG kick M (deg/readout): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0110 [-0.0084,+0.0583] want CONSISTENT
+  W0 d1 S1 signed residual MF (deg/readout): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0729 [-0.0732,+0.1707] want CONSISTENT
+  W0 d1 S2 |residual| minus shot floor MF: got ABOVE (A ABOVE, B ABOVE) value +0.1223 [+0.0732,+0.1562] want CONSISTENT
+  W0 d1 S2 |residual| minus shot floor ME: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0301 [-0.0544,+0.0047] want CONSISTENT
+  W0 d1 S3 P(1) excess back-to-zero M: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0015 [-0.0035,-0.0003] want CONSISTENT
+  W0 d1 S3 P(1) excess back-to-zero ME: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0013 [-0.0010,+0.0027] want CONSISTENT
+  W1 d0 S1 signed residual ME (deg/readout): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0266 [+0.0034,+0.0530] want CONSISTENT
+  W1 d0 S2 |residual| minus shot floor MF: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0670 [+0.0247,+0.1327] want CONSISTENT
+  W1 d0 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0020 [-0.0030,-0.0003] want CONSISTENT
+  W1 d0 S4b coherence MC minus M (frame only): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0028 [-0.0076,+0.0013] want CONSISTENT
+  W1 d0 S5 |residual| MC minus MF (old vs fresh table): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0756 [-0.1342,-0.0083] want CONSISTENT
+  W1 d0 P1 Bell fidelity MC minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0011 [-0.0004,+0.0025] want CONSISTENT
+  W1 d0 P2 X-part concurrence MC minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0035 [+0.0001,+0.0064] want CONSISTENT
+  W1 d1 S2 |residual| minus shot floor MF: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.1262 [+0.0108,+0.1743] want CONSISTENT
+  W1 d1 S3 P(1) excess back-to-zero MC: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0015 [-0.0025,-0.0003] want CONSISTENT
+  W1 d1 S5 |residual| MC minus MF (old vs fresh table): got BELOW (A BELOW, B BELOW) value -0.1031 [-0.1786,-0.0434] want CONSISTENT
+  W1 d1 P2 X-part concurrence M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0027 [-0.0071,+0.0018] want CONSISTENT
+  W1 d1 P3b X-part concurrence MC minus M (frame only): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0043 [+0.0005,+0.0078] want CONSISTENT
+  W2 d0 S1 signed residual MF (deg/readout): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0832 [-0.1523,+0.0082] want CONSISTENT
+  W2 d0 S2 |residual| minus shot floor MF: got ABOVE (A ABOVE, B ABOVE) value +0.0639 [+0.0449,+0.1480] want CONSISTENT
+  W2 d0 S3 P(1) excess back-to-zero MF: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0013 [-0.0025,+0.0003] want CONSISTENT
+  W2 d0 C1 dF MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0158 [-0.0321,+0.0028] want BELOW
+  W2 d1 S2 |residual| minus shot floor MF: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.1097 [+0.0752,+0.1787] want CONSISTENT
+  W2 d1 S3 P(1) excess back-to-zero MF: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0008 [-0.0020,+0.0037] want CONSISTENT
+  W2 d1 S4 coherence MC minus none: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0032 [-0.0061,-0.0003] want CONSISTENT
+  W2 d1 P3b X-part concurrence MC minus M (frame only): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0036 [+0.0006,+0.0069] want CONSISTENT
+  W2 d1 C1 dF MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0100 [-0.0051,+0.0241] want BELOW
+  W2 d1 C1 dF M with the total put back at the END minus D: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0087 [-0.0260,+0.0093] want BELOW
+  W3 d0 S2 |residual| minus shot floor MF: got ABOVE (A ABOVE, B ABOVE) value +0.0846 [+0.0502,+0.1224] want CONSISTENT
+  W3 d0 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0262 [-0.0420,-0.0056] want BELOW
+  W3 d0 C1 dF MF minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0160 [-0.0338,+0.0021] want BELOW
+  W3 d1 S2 |residual| minus shot floor M: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0558 [+0.0057,+0.0991] want CONSISTENT
+  W3 d1 S2 |residual| minus shot floor MF: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0923 [+0.0139,+0.1620] want CONSISTENT
+  W3 d1 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0312 [-0.0467,-0.0134] want BELOW
+  W3 d1 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0216 [-0.0401,-0.0063] want BELOW
+  W4 d0 S2 |residual| minus shot floor MF: got ABOVE (A ABOVE, B ABOVE) value +0.1447 [+0.0846,+0.2119] want CONSISTENT
+  W4 d0 S5 |residual| MC minus MF (old vs fresh table): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0968 [-0.1571,-0.0712] want CONSISTENT
+  W4 d0 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0251 [-0.0426,-0.0095] want BELOW
+  W4 d0 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0266 [-0.0427,-0.0100] want BELOW
+  W4 d1 S1 signed residual MF (deg/readout): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0703 [-0.0433,+0.1772] want CONSISTENT
+  W4 d1 S2 |residual| minus shot floor MF: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0814 [+0.0074,+0.1313] want CONSISTENT
+  W4 d1 S5 |residual| MC minus MF (old vs fresh table): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.1029 [-0.2090,-0.0550] want CONSISTENT
+  W4 d1 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0313 [-0.0477,-0.0141] want BELOW
+  W4 d1 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0321 [-0.0505,-0.0154] want BELOW
+  W4 d1 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0298 [-0.0476,-0.0110] want BELOW

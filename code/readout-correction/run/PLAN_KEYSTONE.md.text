@@ -1,0 +1,165 @@
+PLAN -- KEYSTONE: what a mid-circuit readout takes from the untouched qubits next to it, and how much a per-qubit virtual-Z gives back
+Written, hashed and timestamped (OpenTimestamps) BEFORE any job. Heuremen LLC, 31 October 2026. Chips ibm_kingston and ibm_marrakesh (<our IBM
+instance>). Code: keystone.py (circuits, corrections, readers), analyze_keystone.py (every reading below), synth_keystone.py (planted worlds),
+fire_keystone.py (build, checks, submit), committed_kicks.py + unwrap_kicks.py (the correction table from the committed 21 Oct run), sim_check.py
+(exact-statevector sign and placement check), pooters.py (byte copy of the 24 Oct analysis). Hashes in CODE_KEYSTONE.sha256.text.
+
+WHOSE QUESTIONS (each setup is a question already in print, the paper cites each one; the literature pass is a separate file):
+- Spectators during repeated mid-circuit readouts: an equal delay has been proposed to protect them (Santos & Uzdin, arXiv 2506.11270); a learned
+  measurement instrument has assumed them negligible or absorbed (Chu et al., arXiv 2606.00433); a spectator probe was built for this (Kumar,
+  arXiv 2610.28705); measurement modelled as its waiting time plus assignment error (Caselli et al., arXiv 2610.09062).
+- A clock that is looked at: the Page-Wootters history state (Page & Wootters 1983; Moreva et al. 2014, photonic; Diaz et al. 2025, numerical
+  only; Coppo et al. PRA 109, 052212, 2024) has no term for the clock being read. Our 24 Oct run (earlier_runs/2026-10-24-page-wootters) put four readouts of a neighbouring pack AFTER the build and the history
+  fidelity fell from 0.665 to 0.158.
+- Our own earlier preprint (Zenodo 10.5281/zenodo.23169755): the kick is about 2 deg per readout on untouched qubits, and Bell-pair X-part
+  concurrence falls slightly, a cost that a fixed local rotation can also produce.
+
+PRIOR ART (literature pass 31 Oct, papers read in full; arxiv_keystone/lit_sources): Krinner et al., Nature 605, 669 (2022) measured the coherent
+phase that a readout leaves on untargeted qubits (mean 0.6 deg, max 13.4 deg) and proposed correcting it with virtual-Z rotations of equal
+magnitude and opposite sign, not done there. Seif et al. (ISCA 2024, arXiv 2403.06852) appended Z corrections for coherent idle ZZ and Z errors
+during measurement and feedforward windows, calibrated by sweeping the window. Kan et al. (arXiv 2610.23840, ibm_phoenix) compared a readout with
+a delay of equal length on neighbours in |+> read in X and Y, and used an echo. Govia et al. (NJP 2023) and Shirizly et al. (PRA 2025) found a
+measurement-induced Z phase on spectators and reduced it with dynamical decoupling. This run does not claim the phase or the correction as new:
+it applies the proposed per-qubit frame correction on IBM Heron from a table measured ten days earlier and one measured minutes earlier, beside the
+echo, inside protocols already in print, and splits what comes back from what is lost.
+
+FREE CHECK ALREADY DONE (zero QPU, DEFINED AFTER THE 24 Oct DATA, labelled as such wherever it appears; free/f1_pooters_offline.py):
+the 24 Oct arm-M tomography rotated back offline by the COMMITTED 21 Oct per-qubit kicks (x 4 readouts) gives F = 0.663 [0.654, 0.673]
+against the unlooked 0.665 [0.653, 0.673]; recovered +0.505, left vs D +0.002 [-0.011, +0.015], both copies. With the look at the END a
+frame correction is exact algebra on the tomography, so that check cannot tell an in-circuit correction from bookkeeping.
+Pauli by Pauli (free/f2_pauli_by_pauli.py -> f2_results.text, same labelling): history fidelity is one projection, so the same data were read on
+all 63 expectations against the copy floor. Uncorrected look minus idle: 294 x the copy floor (chi2 32,800). Corrected: 1.17 x the floor (chi2 106
+against floors of 79 and 71 for idle and look copies), with one component left: clock bit 0's X at 4.8 sd, the 21 Oct c0 kick (-3.07) against the
+24 Oct value (-2.57), about 2 deg in total. That is a drift reading, and arm MF (fresh table) against arm MC (old table) is built to read it.
+Forward: the measured idle rotated by the committed kicks minus the measured look, F difference -0.007 [-0.021, +0.007] (99 % shot bootstrap). This run puts the look
+in the MIDDLE of the build (before the second controlled rotation acts on s). The phases on c0 and c1 commute with that rotation (c1 is its
+control), so a correction at the end can still undo them; the phase on s does not, so only the in-circuit correction undoes that part (ideal
+end-corrected F 0.956 against 1.000, sim_check).
+
+DESIGN (fixed now; one chip at a time is not required, the two chips run independently)
+- Roles from the committed 21 Oct control run of each chip (job_ibm_<chip>.json): the 39-qubit pack E is the look; the 117 untouched qubits S;
+  48 coupled Bell pairs + 21 singles among S. Look step = measure E (default measure). Idle step = every qubit of E idles exactly L
+  (kingston 545 dt, marrakesh 671 dt). Barriers on all qubits around every step. Untouched qubits get no gates during a step.
+- Correction tables (degrees per step, applied as rz(-kick) on EVERY untouched target after EVERY look step; no qubit is selected or dropped by
+  its kick): MC = the committed 21 Oct table (committed_kicks_<chip>.json), unwrapped per qubit across N = 2, 4, 8 of the same run (rule in
+  unwrap_kicks.py: N=4 total on the branch nearest 2 x N=2, N=8 on the branch nearest 2 x N=4); the dose used picks the field (N=4 -> the
+  N=4 kick, N=8 -> the N=8 kick). MF = a FRESH table measured minutes before in calibration job C on the same chip (D and M at N = 4 and 8,
+  X and Y, 4,000 shots; branch rule: N=4 total nearest 4 x the committed N=4 kick, N=8 nearest 2 x the fresh N=4 total).
+- Arms (all six in every setup, interleaved, same job): D idle | DE idle + echo | M look | MC look + committed correction | MF look + fresh
+  correction | ME look + echo. Echo = X on the untouched targets after step N/2 and after step N (net identity). The none of M, MC, MF is D;
+  the none of ME is DE (the echo also refocuses each qubit's own idle precession, so ME against D would not be like for like).
+- Setups: S spectators: sx on all 117, N = 8, settings X, Y (phase = atan2(<Y>, <X>), as the control run) and Z0 (sxdg then Z: a qubit that
+  kept its state reads 0), 2,000 shots. P pairs: |Phi+> on the 48 pairs + sx singles, N = 4, settings ZZ XX YY XY YX, 2,500 shots.
+  C clock: H c0, H c1, CRY(pi/4) c0 -> s, [look block, N = 4], CRY(pi/2) c1 -> s, 27 tomography settings, 1,000 shots.
+  Clock qubits: kingston (c0, s, c1) = (3, 16, 23) as 24 Oct; marrakesh by the rule in keystone.choose_clock (untouched path c0 - s - c1, every
+  kick resolved and N=2/4/8 within 2 deg, |kick| <= 20, readout_error < 0.05 and CZ error < 0.01 in today's record, c0 the smaller |kick|,
+  largest |kick(c1)| - |kick(c0)|; HOLD if the best contrast is under 5 deg): dry run gave (104, 105, 106), committed kicks -6.4, -4.6,
+  -15.2 deg per readout. Both clocks are chosen FOR a large kick contrast (unlike S and P, which take every untouched qubit); the clock
+  readings describe those qubits, not a chip average.
+- Jobs per chip: C (8 circuits) -> fresh table -> A (210 circuits in order) -> B (the same 210 reversed: ABBA). Copies A and B. DD and twirling
+  off. Transpile once (level 1, trivial layout, seed 31). Dry-run checks (both chips PASS): layout unmoved; CZ count 0 / 48 / 4; scheduled
+  duration on the untouched targets identical for D, M, MC, MF and for DE, ME (echo adds 16 dt kingston, 18 dt marrakesh); rz count higher in
+  MC than M. Every classical register is saved per shot, including the pack's own readouts in the look arms.
+- Budget: estimate 184 s per chip at 0.30 ms per shot (cap 240 each); at the control run's 0.33 ms, about 202 s per chip, 404 s for both,
+  leaving about 279 s of the 683 s remaining at 14:24 EDT. Kumar's marrakesh fill (its own plan, built
+  24 Oct, cancelled only for a maintenance window) fires after this run if the remaining seconds cover its estimate + 30.
+
+KNOWN-GOOD: the S-setup kick of arm M against D on each chip must reproduce our committed 21 Oct control-run median kick on the same 117
+untouched qubits with the same estimator (wrapped phase difference at N = 8, divided by 8): kingston -2.864, marrakesh -2.393 deg per readout.
+(read from arxiv_one_readout/control_run/results_prereg.txt, lines 57 and 106: -2.8638 [-3.5519, -2.0896] and -2.3931 [-2.9963, -1.7160]).
+Rule: pooled median with its 99 % band upper end below 0 AND the median within 0.5x to 2x of the committed value. A chip that fails is
+"not decided" and none of its readings is read as a finding.
+
+READINGS (only these; four outcomes ABOVE / BELOW / CONSISTENT / CANNOT_TELL; per copy A, B and pooled; FINAL = pooled if A and B give the
+same outcome, else CANNOT_TELL; CONSISTENT is printed as a bound). S and P: median over qubits (pairs), 2,000-draw bootstrap over qubits
+(pairs), 99 % band. C: shot bootstrap, 400 draws, 99 % band.
+ S1 signed residual per readout of MC, MF, ME against its none (median over the 117): vs 0. The uncorrected M median is printed beside it
+    (both alternatives: all given back = 0, nothing given back = the M value).
+ S2 THE SPLIT: per-qubit residual of MC, MF, ME regressed on the M kick read in the OTHER copy (Theil-Sen slope; copy A = y from A, x from B;
+    pooled = mean of both): vs 0 (everything given back) and vs 1 (nothing given back). The M-on-M slope is printed as the ruler's ceiling
+    (regression dilution makes it about 0.99), not scored.
+ S3 back to zero: P(1) in setting Z0, arm minus its none (median over the 117), for M, MC, MF, ME: vs 0.
+ S4 coherence |<X> + i<Y>|, arm minus none, for M, MC, MF, ME: vs 0 (the part that does not come back). S4b coherence MC minus M: vs 0 (a
+    frame change cannot change coherence: a non-zero S4b means the corrected circuits differ in more than the frame).
+ S5 the time ladder: SPLIT slope of MC minus SPLIT slope of MF (same resampled qubits): vs 0 (a ten-day-old table against a minutes-old one).
+ S6 given back per qubit: |M kick| minus |MC residual| (median over the 117): vs 0.
+ P1 Bell fidelity <Phi+|rho|Phi+> = (p00 + p11)/2 + (<XX> - <YY>)/4, arm minus none, for M, MC, MF, ME: vs 0 (phase-sensitive).
+ P2 X-part concurrence (the control run's estimator), arm minus none, pairs whose none concurrence is 0 excluded and counted: vs 0
+    (phase-blind: a Z rotation of either qubit leaves it unchanged, so this is the part a correction cannot give back).
+ P3 Bell fidelity MC minus M: vs 0 (given back). P3b X-part concurrence MC minus M: vs 0 (frame only).
+ C1 history fidelity F = (1/8) sum_P <P><P>_ideal (pooters.py), arm minus none, for M, MC, MF, ME; and M with the committed TOTAL phase put back
+    at the END (tomography frame) minus D.
+ C2 F(MC) minus F(M): vs 0 (given back); the recovered share (F(MC) - F(M)) / (F(D) - F(M)) printed.
+ C3 F(MC) minus F(M put back at the end): vs 0 (in-circuit correction against the same numbers applied after the fact).
+
+ADDED AFTER THE DESIGN REFEREE (31 Oct, before any job; referee report in REFEREE_DESIGN.md.text):
+ S2c SPLIT slope of MC, MF, ME vs 0.5 (BELOW = more than half of the kick given back).
+ S2d SPLIT slope of M minus the slope of MC, MF, ME (same resampled qubits): ABOVE = the corrected arm clears the ruler's own ceiling.
+ S7 share given back = 1 - median|residual of the arm| / median|kick of M| (same resampled qubits), vs 0.5.
+ P4a gate: median over pairs of |pair phase per step of M| minus the copy floor; P4 pair-phase share given back (MC, MF, ME) vs 0.5;
+ P5 signed pair-phase residual (MC, MF, ME) vs 0. The pair phase is atan2(<XY> + <YX>, <XX> - <YY>), read against its own none, so it
+    does not depend on the pairs' own idle phase (Bell fidelity P1/P3 does: secondary).
+ C4a gate: |E_M - E_D|^2 over the 63 expectations minus the copy floor; C4 distance share given back = 1 - |E_X - E_none|^2 / |E_M - E_D|^2
+    for MC, MF, ME, each squared distance less the shot-noise floor (once for the point, twice inside a bootstrap draw), vs 0.5. This is the
+    clock's headline reading: it does not depend on the idle state's own offset from the ideal. C1-C3 and C2b (history fidelity) are
+    SECONDARY: F measures distance to the ideal state, and the measured idle state sits off it (24 Oct: rotated by -25.7, +25.8, +36.0 deg it
+    would read 0.834), so the sign of an F difference can depend on that offset.
+ GATES: C2, C2b, C3 read only when C1(M) is BELOW; C4 only when C4a is ABOVE; P4 only when P4a is ABOVE; P3 only when P1(M) is BELOW;
+    otherwise CANNOT_TELL with the gate named. The spectator readings are gated by the chip's known-good.
+
+WHAT WOULD COUNT AGAINST "MORE THAN HALF OF WHAT A READOUT TAKES FROM THE UNTOUCHED QUBITS IS A PHASE THAT A VIRTUAL-Z GIVES BACK" (per chip,
+stated now; "mostly" means more than half, read on the two baseline-free rulers):
+ - spectators: S7 of MC not ABOVE 0.5, or S2c of MC not BELOW 0.5, or S2d of MC not ABOVE 0.
+ - clock: C4 of MC not ABOVE 0.5 when C4a is ABOVE. pairs: P4 of MC not ABOVE 0.5 when P4a is ABOVE.
+ - The claim holds only for a fresh table if MC fails these and MF passes (said that way, never folded).
+ - A corrected arm whose signed residual (S1, P5) lands on the far side of zero from M is OVER-CORRECTION and is reported as such.
+ - S1 at its +-0.1 deg resolution will flag a ten-day drift in MC; that is the S5 reading, not a failure of the claim.
+ - The N = 4 tables (pairs, clock) and the N = 8 table (spectators) disagreeing on the same qubits is reported (dose dependence).
+ - What is LOST is reported with the same weight: S4, P2 and the residual distance |E_MC - E_D|^2 left above the copy floor.
+ - A chip whose known-good fails, or a reading whose copies disagree, is CANNOT_TELL, not a result.
+
+SYNTHETIC (synth_results_keystone.text; the UNCHANGED readers on packed bit arrays in IBM's BitArray layout; kingston table; 8 draws per world;
+shots as above): W0 null; W1 stable kick (committed table + its own calibration noise 0.25 deg); W2 drifted (0.7 x committed + N(0, 1 deg));
+W3 loss only (the look multiplies coherence by 0.9, clock 0.97 per qubit); W4 kick + loss. Fresh table = truth + N(0, 0.15 deg). First pass
+(synth_results_keystone_FIRST.text, kept) used 95 % bands and an |residual|-minus-shot-floor reading: 22.2 % false calls; both replaced before any
+job (99 % bands, THE SPLIT). FINAL PASS AFTER THE REFEREE (30 draws per world, final code, real coherences, the 24 Oct measured idle offsets planted on the clock):
+kingston false calls 107/2970 = 3.6 %, misses 171/4200 = 4.1 %; marrakesh 113/2970 = 3.8 %, 203/4200 = 4.8 %. HEADLINE READINGS (S7, S2c, S2d,
+C4 with C4a, P4 with P4a, for MC): in the worlds where the claim is true (W1 stable, W4 kick + loss) every one resolves as planted in 30 of 30
+draws on both chips. In the drifted world (W2) S2c and S2d resolve 30/30, C4 26-27/30, and S7 and P4 of MC read CONSISTENT with 0.5 in 27-30/30
+(a 30 % drift leaves the old table near the threshold: a bound, as it should be). In the no-kick worlds (W0, W3) the known-good fails and the
+gates hold C4 and P4 at CANNOT_TELL. Earlier passes kept: synth_results_keystone_FIRST.text (95 % bands, 22.2 %), the 8-draw passes overwritten.
+FLOOR ACROSS THE RUN: about 60 scored readings per chip, 120 in all; at 3.6-3.8 % per planted-CONSISTENT reading (most of them CANNOT_TELL, not
+a resolved wrong call), up to about 4 false resolutions are expected among readings whose truth is zero. No single reading outside the headline set carries a claim alone.
+MARRAKESH: same synthetic on its own table and clock (104, 105, 106), numbers above. Its kicks are smaller, so P1 of M, P3, C3 and the clock
+loss readings are BOUNDS only there; the headline readings resolve as on kingston.
+End to end (sim_harness.py -> sim_harness_results.text, written by the design referee): the real circ_S/circ_P/circ_C with the look replaced by
+a planted rz kick, exact statevectors, IBM BitArray packing, the real readers: every planted kick comes back in its own slot (S order permuted,
+pair order reversed); MC, MF, ME read 0.00-0.03 deg; Bell fidelity 0.9636 / 0.8191 for M (predicted 0.9636 / 0.8187), 1.0 corrected; clock F D
+0.9999, M 0.6264, MC 1.0006, ME 0.9998, M put back at the end 0.9553.
+Sign and placement (sim_check_results.text, exact statevectors): a planted rz of -7.60 deg per step reads -7.600 through the committed X/Y phase
+convention and +0.000 with the correction; clock with the look in the middle: F(D) 1.0000, F(M) 0.6259, F(MC) 1.0000, F(M put back at the end)
+0.9556.
+Rotation alone, against the 24 Oct data (DEFINED AFTER THOSE DATA; sim_check part 3): the MEASURED 24 Oct idle tomography rotated by the committed
+21 Oct kicks with no loss gives F = 0.151 against the measured look 0.158 (measured idle 0.665). A pure rotation calibrated three days before
+predicts the damage forward and (free check F1) undoes it backward.
+
+## /q on this plan (Bones, before any job)
+A1-A7 no stated IBM figure is compared with anything; the record enters only as the clock-qubit HOLD gates and is saved before every job (check 3).
+B8 equal scheduled durations checked in the dry run (above); what the hardware does at acquisition beyond the schedule is part of "the look".
+B9 the arms differ in drive, resonator photons and the classical record; the correction acts only on the frame of the targets.
+B10 all shots in every arm. B11 the pack starts in |0> in every arm. B13 arms interleaved in one job, ABBA across two jobs.
+C14 known-good on real hardware with the answer known (committed 21 Oct kicks, same qubits, same estimator). C15 synthetic plants null, stable,
+drifted, loss only, both; NEITHER for the correction = W0 (a correction applied where nothing kicks). C16 floor printed from the synthetic.
+C17 sign checked twice: algebra + exact statevector (sim_check) and the committed reproduction of q3/q16/q23 (-3.065, -7.607, -18.120).
+C18 the known-good rule is fixed above and is not relaxed after the result.
+D19 four outcomes; D20 copies printed; D21 two chips, each read alone, no combined value unless chi2/dof < 2; D22 qubits within one chip are not
+independent processors (the claims are per chip).
+E25 a phase given back by a frame says only that the cost was a frame rotation on these qubits at these doses; no mechanism is named.
+E26 anything read from the per-shot pack bits (outcome-conditioned) is "defined after the data". E27 THE SPLIT used for the given-back share.
+F29-F31 times and ids from job records; plan and code hashed and timestamped before job C. F33 seconds checked against usage_remaining_seconds.
+G32 no referee on this question is out when it fires (the design referee's report is read first). G34 referees get raw files.
+CATCHES BEFORE ANY JOB (logged in our catch log): the N=8 table would have been applied at N=4 (each dose now uses the kick read at that
+dose; the referee showed the branch choice itself cannot change a correction modulo 360 deg at the dose used); the echo
+needs its own idle-echo none (DE added); X-part concurrence cannot see a Z rotation (Bell fidelity added beside it); 95 % bands and the
+residual-over-floor reading gave 22 % false calls (99 %, THE SPLIT); midnight is not an arXiv deadline (Fri 14:00 to Mon 14:00 ET all announce
+Mon 20:00 ET).
