@@ -1,0 +1,90 @@
+# Gift calibration: Ovcharov, arXiv 2608.15428 "Gated Against One Model, Open to the Next" (plan written and committed before any run, 30 Oct 2026)
+Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author: Volodymyr Ovcharov, LEX AI (vladimir@legal.org.ua as printed). No funding statement.
+His released data: huggingface.co/datasets/overthelex/ua-judge-exam (read as data, never run). sha256 prefixes of the files we read:
+ua_judge_exam_gated.jsonl 128a54b07da57fe9, ua_judge_exam_full.jsonl 3c783617bb7295b8, scenario_a.jsonl 0da766ff70183fe1,
+small_models.jsonl fd434fb8740bdbd2, small_models_4096.jsonl a017c17b88985844.
+
+## The lines it answers
+Llama 3.1 8B through Amazon Bedrock answers A on 92% of blind items (Table 4: A 0.92, B 0.00, C 0.07, D 0.01, blind 0.292, habit 0.287,
+excess +0.005, n 7,886 of 8,128), and in the full condition returns no parseable letter on 47.5% of calls, "and a larger token budget does
+not help". His paper cannot say whether the A habit and the unparsed replies belong to the weights or to the serving path. Two machines of
+our own, the same open weights, his prompts and his parser, can.
+
+## KNOWN-GOOD (done before this plan, zero GPU): ours/known_good.py, output ours/known_good.text
+From his scenario_a.jsonl with our own code: 12 of 12 complete rows of Table 4 rebuild to the printed digits (blind, interval, shares, n);
+the habit uses the gold-position shares of each model's parsed items (Llama 0.2867 = his 0.287). The paper's text describes the habit against
+the gold shares of the whole accepted set: that rule rebuilds 11 of 12 (Llama 0.2862, printed 0.287), so the printed column follows the
+parsed-items rule. Pixtral Large's released rows are 5,919, not the full re-run the paper describes, so its row is not rebuilt.
+Both rules side by side, every printed cell compared in code: the end of ours/known_good.text.
+
+## Runs (our runner, his prompt strings and his parser copied as text from his code/scenario_a.py and code/small_models.py)
+- Model files: Ollama library llama3.1:8b and ministral-3:8b (Q4_K_M), the same file digest on both machines, recorded before the first run.
+  Bedrock serves its own weights format, so every reading below is about these weights on our two setups, and says so.
+- Request: /api/chat, one user message holding his prompt text, temperature 0, seed 1, repeat_penalty 1.0 (set, not left to the engine),
+  num_ctx 8192; num_predict 4096 for the blind arm (his scenario_a) and 2048 for the full arm (his small_models).
+- Arm B: blind, all 8,128 gate-accepted items, his BLIND prompt, options in stored order.
+- Arm F: full condition, his 600-item sample (400 accepted, 200 rejected, the ids in his small_models.jsonl), his FULL prompt.
+- Machines: Armature (RTX 3080 10 GB, one parallel slot) and the Mac (our seat 127.0.0.1:11500, one job at a time, after the queued S1L
+  rounds). Two repeats per machine. Order: Armature B r1, B r2, F r1, F r2 for llama3.1:8b, then ministral-3:8b; the Mac the same.
+  Server version, parallel slots and model digest saved beside every run.
+- Every reply is saved with its raw text, parsed letter and token counts.
+
+## Readings (four outcomes; intervals are 95% Wilson for rates, exact binomial for flip counts)
+R1 repeat floor per machine: items whose parsed letter differs between the two repeats, with the unparsed counted as its own class.
+R2 machine floor: items whose parsed letter differs between machines (repeat 1 against repeat 1), against R1.
+R3 the habit: A/B/C/D shares, blind accuracy, habit and excess on each machine, against his Bedrock row. CONSISTENT where his printed
+   value sits inside our interval, ABOVE or BELOW otherwise, CANNOT_TELL where our two machines disagree with each other beyond R1.
+R4 parse: unparsed share in arm B and arm F on each machine against his 242 of 8,128 (blind) and 198 of 400 (full, accepted).
+R5 ministral-3:8b, the same readings, against his row (A 0.02, B 0.25, C 0.45, D 0.29, blind 0.239).
+Before any rate is read, 10 replies per arm per machine are read in full against the parser.
+
+## What this gift will not say
+Anything about Bedrock's serving internals. Anything about other models. A cause for the habit: we separate weights from serving, no more.
+
+## Addendum 1 (30 Oct 2026, 19:50 UTC by the commit clock, e72619f; before any run; only a smoke test, written to scratch, has touched a model; item 5)
+1. What his release holds. His prediction files keep the parsed letter only, no reply text. His "unparsed" holds two outcomes: a call that
+   failed after retries (reply None) and a reply with no letter. Ours keeps the reply text and keeps errors as their own outcome. R4 compares
+   our no-letter count plus our errors against his unparsed count and says the bins differ in what they hold.
+2. R6, added now: item by item, his Bedrock letter against ours on the same items, counted in each direction (same letter, different letter,
+   his unparsed and ours parsed, ours unparsed and his parsed), against our R1 and R2 floors. A Bedrock-to-ours flip count inside our own
+   floors is CONSISTENT with the same behaviour; above them, the serving path moves the letter.
+3. Carriers named: Bedrock applies its own chat template and serving format; Ollama applies the template shipped in the model file (its hash
+   is saved beside each run). Llama 3.1 8B Q4_K_M digest 46e0c10c039e... is the same file on Armature and the Mac seat (read 30 Oct
+   19:45Z). Armature: Ollama 0.34.3, OLLAMA_NUM_PARALLEL=1, MAX_LOADED_MODELS=2, KEEP_ALIVE 30m, RTX 3080. Mac seat: Ollama 0.34.2,
+   NUM_PARALLEL=1, MAX_LOADED_MODELS=1 (seats/serve.sh). The server versions differ and R2 names that.
+4. Order: Armature runs between Faults/Guards rounds r2 and r3 (rounds PLAN Addendum 2). The Mac runs after the queued S1L rounds, from the
+   lab queue, the same order.
+5. Smoke test: 3 blind items (general-0001 to 0003) and 2 full items (civil-0840, criminal-2734) through the runner on Armature,
+   19:46:13Z to 19:50:28Z, saved to scratch, never part of any reading. (Corrected 19:50 UTC, daca899: the first line of this addendum said 2 blind items.)
+
+## Addendum 2 (30 Oct 2026, before it is computed; stamp from the commit)
+R7, zero GPU, on his released scenario_a.jsonl: a paired item bootstrap of each model's excess (blind minus habit, the parsed-items rule that
+rebuilds his Table 4), 2,000 resamples of items with the model's parsed answers, seed 20261030, 95% percentile interval. His Table 4 prints
+excess without a width and calls two models' excess "worth the name". Four outcomes per model: ABOVE zero, BELOW zero, CONSISTENT with zero
+(the interval bound printed), and the second alternative tested beside zero: can the interval exclude +0.015, his largest "within" excess.
+Pixtral Large is left out (partial file). Haiku 4.5 is the gate's own model and its row is marked as such.
+
+## Correction to Addendum 1 item 3 and to the Runs section (30 Oct 2026, before any gift run; stamp from the commit)
+The Armature settings in item 3 were read from the machine's saved user and machine settings, which the running server does not use. The
+running server was started 29 Oct 21:11:57 local by a command that set its own values, and its startup log (C:\Users\Heure\ollama_serve.log)
+reads: OLLAMA_NUM_PARALLEL 4, OLLAMA_KEEP_ALIVE infinite, OLLAMA_MAX_LOADED_MODELS 2, flash attention false, KV cache type default.
+Requests are still sent one at a time, so "one parallel slot" in the Runs section reads "four parallel slots, one request at a time", the
+same setup Pub #2 names for its two-machine section. The Mac seat's startup log (seats/serve.log, 25 Oct 08:00:05 local) reads
+NUM_PARALLEL 1, KEEP_ALIVE 5m, MAX_LOADED_MODELS 1, flash attention false. Slot count is a carrier between the machines and R2 names it.
+
+## Addendum 3 (30 Oct 2026, after reading arm B r1 replies in full and before any rate; stamp from the commit)
+His parser stays the scoring rule, unchanged. R4 adds a count of no-letter replies by reason, for every run: Cyrillic letter (А, Б, В, Г, Д,
+with or without a bracket), refusal or other text, empty, error. No Cyrillic letter is mapped to a Latin one in any rate. His release holds
+no reply text, so his 242 unparsed Bedrock replies cannot be split the same way; the write-up says so.
+
+## Addendum 4 (31 Oct 2026, after the referee pass; every reading here is defined after the data)
+Corrections: R2 compares two setups, not two machines alone. Recorded beside the runs: the same model digest, template and options, with
+Ollama 0.34.3 (Armature) against 0.34.2 (Mac). Not recorded beside the runs: server slots (4 against 1 from the startup logs), CUDA against
+Metal, and whether all layers sat on the GPU. R2 for llama arm F does not exceed the Armature repeat floor.
+R2b Across-setup letter changes per model and arm with Clopper-Pearson 95% intervals, an exact test against each setup's repeat floor, and the
+    count with items unparsed on either side left out; the Mac floor printed with its upper bound.
+R2c Paired accuracy between setups (Armature r1 minus Mac r1) with exact McNemar on items correct on one side only, and the Stuart-Maxwell
+    test of marginal homogeneity on the four letters for each B arm.
+R8 His own reruns, from his released predictions: for each small model, items in both his 600-item blind run (small_models.jsonl) and his
+   full blind run (scenario_a.jsonl) whose letter differs (unparsed as its own class), with Clopper-Pearson; and llama-3.1-8b full mode at
+   2,048 tokens (small_models.jsonl) against 4,096 (small_models_4096.jsonl).

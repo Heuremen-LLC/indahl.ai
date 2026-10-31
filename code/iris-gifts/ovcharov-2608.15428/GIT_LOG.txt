@@ -1,0 +1,19 @@
+7a4e77e 2026-10-31T03:01:56-04:00 Ovcharov gift: R2b, R2c, R8 readings, Check Block filed
+e079cda 2026-10-31T03:00:56-04:00 Ovcharov gift: Addendum 4 (R2b, R2c, R8; setups not machines) committed before computing
+68d2104 2026-10-31T02:51:17-04:00 Ovcharov gift: Mac half read in full, R1-R6 on both machines, Check Block filed
+3b0ac8e 2026-10-31T02:20:44-04:00 Ovcharov gift: Mac llama arms B and F read in full (before rates)
+e3f09d6 2026-10-30T20:00:41-04:00 Ovcharov gift: Armature ministral arms B and F read in full, rates, Check Block filed (interim until the Mac half)
+d69a9db 2026-10-30T18:05:04-04:00 Ovcharov gift: Armature Llama arm F read in full (both repeats); R4 by-reason classifier fix; Check Block filed
+f0ffe0c 2026-10-30T17:35:19-04:00 Gift 2608.15428: arm B r2 read in full before its rates
+37ce816 2026-10-30T17:16:19-04:00 Gift 2608.15428: arm B r1 read in full (parser holds on Latin letters; 14 of 8,128 are Cyrillic letters it cannot read, 1 refusal); Addendum 3 counts no-letter replies by reason; before any rate
+3e3eef1 2026-10-30T16:09:19-04:00 Gift 2608.15428: reading script R1-R6 written before any reply exists; rates refused until each arm's read-in-full note is filed
+084784f 2026-10-30T15:59:54-04:00 Gift 2608.15428: Armature settings corrected from the running server's own startup log (four slots, keep-alive infinite), before any run
+be68a98 2026-10-30T15:56:26-04:00 Gift 2608.15428 R7: paired item bootstrap of excess on his scenario_a; DeepSeek R1 a third excess above zero (+0.015 [+0.006, +0.024]), four models below their habit, Llama 3.1 8B an edge; Check Block filed
+618b624 2026-10-30T15:54:29-04:00 Gift 2608.15428 Addendum 2: R7 paired item bootstrap on each model's excess, committed before computing
+6e3f6f4 2026-10-30T15:52:58-04:00 Addendum stamps corrected to the commit clock (19:50Z), not hand-written times
+811d506 2026-10-30T15:51:35-04:00 Gift 2608.15428: Mac seat drive (refuses unless digests equal Armature's), queued after S1L
+daca899 2026-10-30T15:50:53-04:00 Rounds Addendum 2 and gift Addendum 1: smoke window corrected to 19:46:13Z-19:50:28Z, five requests, from the smoke records
+fec6db5 2026-10-30T15:50:30-04:00 Gift 2608.15428: Armature chain (r2 end -> gift -> rounds r3)
+e72619f 2026-10-30T15:50:14-04:00 Rounds Addendum 2 (reload window 19:45-19:48Z, gift between r2 and r3) and gift 2608.15428 Addendum 1 (his letter-only release, R6 item flips against our floors, carriers, order); runner committed before any run
+962d477 2026-10-30T15:43:27-04:00 Gift 2608.15428 known-good: every printed Table 4 cell compared in code under both habit rules (parsed-items rule 12 of 12 complete rows, set rule 11 of 12); plan names which rule the printed column follows. Before any run.
+cb95872 2026-10-30T15:40:37-04:00 Gift plan 2608.15428 (Ovcharov): known-good rebuilt 12 of 12 rows from his scenario_a; two machines x two repeats of his blind and full arms on llama3.1:8b and ministral-3:8b, committed before any run

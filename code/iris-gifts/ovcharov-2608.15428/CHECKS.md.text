@@ -1,0 +1,130 @@
+
+## 2026-10-30 15:55 R7: paired item bootstrap of excess (blind minus habit) on his scenario_a, 12 models; DeepSeek R1 +0.015 [+0.006, +0.024] ABOVE zero; GPT-5.6 and Sonnet 4.6 ABOVE; Gemma, Nova 2 Lite, Nova Pro, Haiku BELOW; Llama 3.1 8B +0.005 CANNOT_TELL against zero (lower bound +0.0001 to +0.0003 across three seeds, an edge); Llama 3.3 70B, Ministral, Nova Micro, Qwen3 CONSISTENT with zero
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: both lines (zero and +0.015) and the habit rule named in Addendum 2, committed 618b624 before the script ran; unparsed replies leave blind and habit together, so each model's two terms use the same items (n column)
+- II: n/a: one released run per model, no between-run reading here; item pairing kept inside each resample (habit and blind on the same drawn items)
+- III: holds: signs printed per model and not folded: four ABOVE-or-edge positive, four BELOW negative, four CONSISTENT; excess is a difference, habit a sum of products
+- V: holds: ruler is a paired item bootstrap, 2,000 resamples, 95% percentile; run under three seeds side by side, and a bound whose seed spread reaches its distance from the line is labelled an edge
+- VI: caught: the first table printed Llama 3.1 8B ABOVE on a bound of +0.0004; under three seeds the bound is +0.0001 to +0.0003, inside its own spread, now CANNOT_TELL (edge) against zero; both lines tested for every model
+- R: holds: counts from his scenario_a.jsonl by our code, after 12 of 12 complete rows rebuilt every printed cell (known_good.text); R7 is defined after reading his Table 4 and before computing, so it is labelled defined after his data in any write-up
+- L1: n/a: his release carries parsed letters only, no reply text, so there is no reply of his to read; our own replies get the read in full under R1 to R6
+- L2: holds: no rate from our runs has been read; Armature has not started; this reads his released letters only
+- L3: holds: his setup named (Bedrock converse, temperature 0, 4,096 tokens, his parser, options in stored order); this reading claims nothing about any other setup
+- L4: n/a: no run of ours in this reading
+- L5: holds: recount from his released scenario_a.jsonl, model keys as written in his file, Pixtral left out as a partial file (5,919 rows)
+- L6: holds: parsed n per model printed; his unparsed bin mixes failed calls and replies with no letter and cannot be split from his file (Addendum 1 item 1)
+- L7: caught: Haiku 4.5 built the gate and is scored on the items it kept; its row is marked as the gate's own model and read on its own
+- L8: holds: paired item bootstrap; seed width shown; the position habit is the quantity being corrected for
+- L9: holds: the blind prompt holds the four options only, never the question or the key
+- L10: holds: the reading is about his Bedrock run of each model; it says nothing about the weights, which is what R1 to R6 measure
+- L11: n/a: nothing substituted
+- L12: n/a: no referee or labeller used; arithmetic on his file (the writer shares a vendor family with two scored models, which arithmetic does not touch)
+
+## 2026-10-30 18:05 Armature llama3.1:8b arm F r1 and r2 read in full (600 replies each); R4 by-reason classifier fixed (Cyrillic letter followed by option text); F repeat floor 20 of 600 items change class (B arm 15 of 8,128); interim, Mac half pending
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: F arm r1 and r2 are the same 600 items under the same committed settings; no gate between them; no-letter items counted by reason per arm
+- II: holds: R1 counts item flips by class pair (20 of 600 on F) before any net rate; the nets (accuracy 0.394 both repeats) hide them
+- III: n/a: no signed effect claimed in this entry; flips are listed by direction in the R1 line
+- V: holds: exact counts with Wilson intervals; F repeat floor 20/600 beside B 15/8,128 from the same machine and server
+- VI: cannot tell: interim, one machine; the Mac half (R2) is not run, so no across-machine or headline reading is made yet
+- R: holds: counts from runs/armature/*.jsonl read by read_gift.py; server settings from the Armature server log (PLAN Addendum 1 correction)
+- L1: holds: 10 sampled replies per repeat read in full (0 of 10 off), all 12 no-letter replies per repeat read in full, the one Cyrillic-led reply with a letter ('Варіант: B') read and correct
+- L2: holds: READ notes written before --rates ran on arm F
+- L3: holds: his prompts and parser unchanged; our runner and Ollama settings named in PLAN; his Bedrock setup differs and is named
+- L4: holds: R1 per machine on Armature; Ollama 0.34.3, NUM_PARALLEL 4 from the server log; Mac R1 pending
+- L5: holds: item keys match his 600 F items exactly (R6 shared 600)
+- L6: fixed: by-reason classifier counted a Cyrillic letter followed by option text as refusal (6 on F); fixed to count the letter; F now 12 Cyrillic letters, B unchanged 14 plus 1 refusal
+- L7: n/a: gold is the exam key he released
+- L8: holds: repeats paired by item id
+- L9: holds: prompts are his, read; the answer is not in the prompt
+- L10: holds: llama3.1:8b by Ollama tag with digest recorded per machine (drive_mac.sh refuses unless digests match)
+- L11: n/a: nothing substituted
+- L12: n/a: no referee on this entry yet; the gift referee will be a Claude model, disclosed
+
+## 2026-10-30 20:00 Ovcharov Armature ministral-3:8b arms B and F read in full (both repeats): parser returns each reply's final stated answer; repeat floor 0 of 8,128 (B) and 0 of 600 (F); B accuracy 0.239 [0.230, 0.249] against his 0.239, letter shares A 0.00 B 0.43 C 0.42 D 0.15 against his 0.02 0.25 0.45 0.29; R6 2,940 of 8,128 letters differ from his Bedrock letters; INTERIM until the Mac half
+packs: L
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same 8,128 and 600 items, same prompt builder and his parser on both models and both repeats; no item dropped
+- II: holds: items changing class between repeats counted item by item before any rate (0 and 0); letters changed against his counted by pair
+- III: holds: excess printed signed (accuracy minus habit)
+- V: holds: Wilson intervals on rates, paired bootstrap excess as committed; accuracy and letter shares read side by side, not folded
+- VI: holds: B accuracy CONSISTENT with his 0.239 (bound [0.230, 0.249]); letter shares ABOVE and BELOW his by arm, printed; cross-machine CANNOT_TELL until the Mac half runs
+- R: holds: counts from runs/armature/ministral-3-8b_*.jsonl, server settings from the meta files, rates in runs/rates_armature_20261031.text
+- L1: holds: 10 sampled plus all 14 F other-text and 10 of 382 B other-text replies read in full; 0 off; 3 F replies change their answer inside the reply and the parser takes the final one
+- L2: holds: read-in-full notes filed before --rates ran (the script refuses otherwise)
+- L3: holds: Bedrock serving template against the Ollama model-file template named as a carrier in the plan
+- L4: holds: two repeats on Armature, floor 0 items; Mac floor to come before any across-machine claim
+- L5: holds: items keyed by his ids; gold checked against his bank by assertion
+- L6: holds: no-letter and error replies counted by reason (0 and 0 for ministral)
+- L7: n/a: no labeller or judge in this reading
+- L8: holds: R6 paired item by item against his letters
+- L9: holds: arm B prompt carries options only as his blind arm does; the answer is not in it
+- L10: holds: model digest and server version in each meta file; Bedrock id mistral.ministral-3-8b-instruct matches the Ollama ministral-3:8b family
+- L11: n/a: nothing substituted in this reading
+- L12: n/a: no referee on this reading yet; one goes before any public line
+
+## 2026-10-31 02:51 Ovcharov R1-R6 on both machines (Armature RTX 3080 and Mac M5 Max, same GGUF digests, Ollama, temperature 0): repeat floors llama B 15 and 0, llama F 20 and 0, ministral 0 and 0; across machines 470 of 8,128 (llama B), 27 of 600 (llama F), 349 of 8,128 (ministral B) and 24 of 600 (ministral F) items change letter, while blind accuracy is 0.250 and 0.249 (llama) and 0.239 on Armature (ministral, his 0.239); one Mac ministral F reply is read by his parser as its leading letter, not its final answer (1 of 600)
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same items, prompt builder, parser and settings on both machines; model digests checked equal before the first run
+- II: caught: net accuracies agree across machines within their intervals while 4 to 6% of items change letter; item flips counted before any net, against each machine's repeat floor
+- III: holds: letter changes printed as ordered pairs (from, to), not folded
+- V: holds: item flip counts against the per-machine repeat floor (the split of R1 and R2), Wilson intervals on rates
+- VI: holds: R2 ABOVE both repeat floors on every model and arm; R3 accuracy CONSISTENT across machines; R5 ministral blind accuracy CONSISTENT with his 0.239, letter shares differ
+- R: holds: counts from runs/armature and runs/mac, server settings from the meta files; rates in runs/rates_both_20261031.text
+- L1: caught: Mac ministral F has one reply whose final answer is written in a form his marker pattern misses (1 of 600); every other arm 0 off in the read in full
+- L2: holds: every read-in-full note filed before --rates ran (the script refuses otherwise)
+- L3: holds: Bedrock serving against Ollama on two machines named as carriers in the plan
+- L4: holds: repeat floor per machine before the across-machine reading; server versions and model digests in the meta files
+- L5: holds: items keyed by his ids; gold checked against his bank by assertion
+- L6: holds: no-letter replies counted by reason (Cyrillic letters only on llama; none on ministral)
+- L7: n/a: no judge or labeller in this reading
+- L8: holds: R2 and R6 paired item by item
+- L9: holds: arm B prompt carries options only, as his blind arm does
+- L10: holds: same model digest on both machines; the machine is the only crossing in R2
+- L11: n/a: nothing substituted in this reading
+- L12: n/a: referee to follow is a Claude model, to be disclosed
+- P1: n/a: no quotation yet
+- P2: holds: each figure names its run files
+- P3: holds: arm names as in the plan
+- P4: holds: no cause named for the across-machine changes
+- P5: holds: Wilson 95% named
+- P6: holds: summary matches rates_both_20261031.text
+- P7: n/a: no surface touched yet
+- P8: n/a: no rendered page
+- P9: holds: no reply text in the summary
+- P10: holds: all readings were in the plan before the runs
+
+## 2026-10-31 03:01 Ovcharov R2b, R2c, R8 (Addendum 4, defined after the data): across our two setups 5.78% (llama B), 4.50% (llama F, not above the Armature floor of 20, Fisher p 0.37), 4.29% and 4.00% (ministral) of items change letter; paired accuracy differences +0.12 to +0.26 pp, McNemar p 0.13 to 1; ministral B letter shares shift (Stuart-Maxwell p 1.3e-13); his own two Bedrock blind runs differ on 2, 11, 17, 34 and 55 of 400 shared items (gemma, llama, ministral, nova-micro, qwen3-32b) with accuracy within 1 point; his llama full run at 2,048 against 4,096 tokens differs on 43 of 600
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: R8 uses only items present in both of his runs (400 for each model), the same unparsed class on both sides
+- II: holds: item changes counted before any net accuracy; the paired accuracy difference printed beside
+- III: holds: accuracy differences signed, Armature minus Mac
+- V: holds: Clopper-Pearson on counts, Fisher exact against each floor, McNemar on discordant correctness, Stuart-Maxwell on letter margins
+- VI: holds: llama F across-setup count CONSISTENT with the Armature floor (p 0.37), the other three ABOVE both floors; accuracy differences CONSISTENT with zero
+- R: holds: Addendum 4 (e079cda) committed in its own call before readings_b.py ran; his counts from predictions/ as released
+- L1: n/a: no new replies read in this reading
+- L2: holds: rates computed after every read-in-full note was filed
+- L3: holds: the two setups named as a bundle (Ollama version, slots, backend), not as hardware
+- L4: caught: the across-setup reading is now read against each setup's floor arm by arm, and llama F does not clear the Armature floor
+- L5: holds: items keyed by his ids on both of his runs
+- L6: holds: unparsed counted as its own class
+- L7: n/a: no judge or labeller in this reading
+- L8: holds: paired item by item
+- L9: n/a: no prompts sent in this reading
+- L10: holds: the crossing is named as two setups; slots and backend are not recorded beside the runs, said so
+- L11: n/a: nothing substituted in this reading
+- L12: holds: the referee is a Claude model, disclosed in the package
+- P1: n/a: no quotation in this reading
+- P2: holds: each figure names its file
+- P3: holds: model names as in his files and ours
+- P4: holds: no cause named for the changes in his runs or ours
+- P5: holds: Clopper-Pearson 95% named
+- P6: holds: summary matches readings_b.text
+- P7: n/a: no surface touched by this reading yet
+- P8: n/a: no rendered page
+- P9: holds: plain sentences
+- P10: holds: labelled defined after the data

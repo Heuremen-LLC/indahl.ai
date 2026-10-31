@@ -1,0 +1,108 @@
+
+######## llama3.1:8b arm B
+  R1 armature: 15 of 8128 items change class between repeats  {('A', 'C'): 2, ('C', 'A'): 4, ('D', 'A'): 1, ('A', 'B'): 2, ('A', 'D'): 2, ('C', 'B'): 2, ('B', 'A'): 1, ('D', 'B'): 1}
+  R1 mac: 0 of 8128 items change class between repeats  {}
+  R2 armature r1 vs mac r1: 470 of 8128 items change class  {('C', 'A'): 124, ('A', 'C'): 95, ('B', 'C'): 56, ('A', 'B'): 21, ('B', 'A'): 18, ('C', 'B'): 43, ('D', 'C'): 35, ('none', 'D'): 6, ('D', 'A'): 21, ('C', 'D'): 24, ('A', 'D'): 10, ('D', 'B'): 8, ('none', 'B'): 1, ('B', 'D'): 4, ('none', 'A'): 1, ('C', 'none'): 2, ('none', 'C'): 1}
+  armature r1: n 8128 | A 1387 B 785 C 5373 D 568 | no letter 15 | error 0
+    R4 no letter or error 15 of 8128 = 0.002 [0.001, 0.003]
+    R4 by reason: {'Cyrillic letter': 14, 'refusal or other text': 1}
+    R3 accepted: parsed 8113 | shares 0.17 0.10 0.66 0.07 | accuracy 0.250 [0.241, 0.260] | habit 0.2489 | excess +0.0014 [-0.0068, +0.0090]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 1994, changed 6134  {('A', 'C'): 4709, ('A', 'B'): 706, ('A', 'D'): 423, ('none', 'C'): 107, ('none', 'D'): 82, ('none', 'B'): 37, ('C', 'B'): 23, ('none', 'A'): 13}
+  armature r2: n 8128 | A 1387 B 789 C 5369 D 568 | no letter 15 | error 0
+    R4 no letter or error 15 of 8128 = 0.002 [0.001, 0.003]
+    R4 by reason: {'Cyrillic letter': 14, 'refusal or other text': 1}
+    R3 accepted: parsed 8113 | shares 0.17 0.10 0.66 0.07 | accuracy 0.251 [0.242, 0.261] | habit 0.2489 | excess +0.0022 [-0.0062, +0.0098]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 1994, changed 6134  {('A', 'C'): 4705, ('A', 'B'): 709, ('A', 'D'): 424, ('none', 'C'): 107, ('none', 'D'): 81, ('none', 'B'): 38, ('C', 'B'): 23, ('none', 'A'): 13}
+  mac r1: n 8128 | A 1425 B 780 C 5367 D 548 | no letter 8 | error 0
+    R4 no letter or error 8 of 8128 = 0.001 [0.000, 0.002]
+    R4 by reason: {'Cyrillic letter': 8}
+    R3 accepted: parsed 8120 | shares 0.18 0.10 0.66 0.07 | accuracy 0.249 [0.240, 0.258] | habit 0.2491 | excess -0.0002 [-0.0082, +0.0077]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 2033, changed 6095  {('A', 'C'): 4701, ('A', 'B'): 701, ('A', 'D'): 405, ('none', 'C'): 112, ('none', 'D'): 79, ('none', 'B'): 37, ('C', 'B'): 24, ('none', 'A'): 11}
+  mac r2: n 8128 | A 1425 B 780 C 5367 D 548 | no letter 8 | error 0
+    R4 no letter or error 8 of 8128 = 0.001 [0.000, 0.002]
+    R4 by reason: {'Cyrillic letter': 8}
+    R3 accepted: parsed 8120 | shares 0.18 0.10 0.66 0.07 | accuracy 0.249 [0.240, 0.258] | habit 0.2491 | excess -0.0002 [-0.0082, +0.0077]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 2033, changed 6095  {('A', 'C'): 4701, ('A', 'B'): 701, ('A', 'D'): 405, ('none', 'C'): 112, ('none', 'D'): 79, ('none', 'B'): 37, ('C', 'B'): 24, ('none', 'A'): 11}
+
+######## llama3.1:8b arm F
+  R1 armature: 20 of 600 items change class between repeats  {('D', 'C'): 1, ('D', 'none'): 1, ('C', 'D'): 2, ('A', 'C'): 3, ('B', 'C'): 4, ('none', 'D'): 1, ('C', 'A'): 2, ('C', 'none'): 1, ('C', 'B'): 1, ('none', 'B'): 1, ('none', 'C'): 1, ('B', 'none'): 1, ('A', 'D'): 1}
+  R1 mac: 0 of 600 items change class between repeats  {}
+  R2 armature r1 vs mac r1: 27 of 600 items change class  {('B', 'A'): 6, ('none', 'C'): 3, ('A', 'C'): 5, ('D', 'none'): 1, ('C', 'A'): 4, ('B', 'C'): 3, ('none', 'D'): 1, ('C', 'D'): 2, ('C', 'none'): 1, ('B', 'none'): 1}
+  armature r1: n 600 | A 114 B 111 C 284 D 79 | no letter 12 | error 0
+    R4 no letter or error 12 of 600 = 0.020 [0.011, 0.035]
+    R4 by reason: {'Cyrillic letter': 12}
+    R3 accepted: parsed 391 | shares 0.17 0.19 0.53 0.11 | accuracy 0.394 [0.347, 0.443] | habit 0.2525 | excess +0.1414 [+0.0972, +0.1840]
+    R3 rejected: parsed 197 | shares 0.24 0.19 0.38 0.19 | accuracy 0.528 [0.458, 0.596] | habit 0.2502 | excess +0.2777 [+0.2064, +0.3439]
+    R6 his Bedrock letter vs ours on 600 shared items: same 219, changed 381  {('none', 'C'): 124, ('none', 'B'): 62, ('none', 'D'): 60, ('A', 'C'): 42, ('none', 'A'): 30, ('A', 'B'): 18, ('D', 'C'): 10, ('C', 'A'): 8}
+  armature r2: n 600 | A 112 B 108 C 287 D 81 | no letter 12 | error 0
+    R4 no letter or error 12 of 600 = 0.020 [0.011, 0.035]
+    R4 by reason: {'Cyrillic letter': 12}
+    R3 accepted: parsed 391 | shares 0.17 0.18 0.54 0.11 | accuracy 0.394 [0.347, 0.443] | habit 0.2522 | excess +0.1417 [+0.0965, +0.1836]
+    R3 rejected: parsed 197 | shares 0.24 0.19 0.38 0.19 | accuracy 0.528 [0.458, 0.596] | habit 0.2512 | excess +0.2768 [+0.2088, +0.3437]
+    R6 his Bedrock letter vs ours on 600 shared items: same 221, changed 379  {('none', 'C'): 124, ('none', 'B'): 60, ('none', 'D'): 59, ('A', 'C'): 45, ('none', 'A'): 31, ('A', 'B'): 16, ('A', 'D'): 9, ('D', 'C'): 9}
+  mac r1: n 600 | A 119 B 101 C 288 D 81 | no letter 11 | error 0
+    R4 no letter or error 11 of 600 = 0.018 [0.010, 0.033]
+    R4 by reason: {'Cyrillic letter': 11}
+    R3 accepted: parsed 392 | shares 0.18 0.17 0.54 0.11 | accuracy 0.383 [0.336, 0.432] | habit 0.2531 | excess +0.1296 [+0.0844, +0.1728]
+    R3 rejected: parsed 197 | shares 0.25 0.18 0.39 0.19 | accuracy 0.543 [0.473, 0.611] | habit 0.2514 | excess +0.2918 [+0.2208, +0.3577]
+    R6 his Bedrock letter vs ours on 600 shared items: same 220, changed 380  {('none', 'C'): 127, ('none', 'D'): 60, ('none', 'B'): 56, ('A', 'C'): 43, ('none', 'A'): 33, ('A', 'B'): 16, ('D', 'C'): 10, ('C', 'A'): 9}
+  mac r2: n 600 | A 119 B 101 C 288 D 81 | no letter 11 | error 0
+    R4 no letter or error 11 of 600 = 0.018 [0.010, 0.033]
+    R4 by reason: {'Cyrillic letter': 11}
+    R3 accepted: parsed 392 | shares 0.18 0.17 0.54 0.11 | accuracy 0.383 [0.336, 0.432] | habit 0.2531 | excess +0.1296 [+0.0844, +0.1728]
+    R3 rejected: parsed 197 | shares 0.25 0.18 0.39 0.19 | accuracy 0.543 [0.473, 0.611] | habit 0.2514 | excess +0.2918 [+0.2208, +0.3577]
+    R6 his Bedrock letter vs ours on 600 shared items: same 220, changed 380  {('none', 'C'): 127, ('none', 'D'): 60, ('none', 'B'): 56, ('A', 'C'): 43, ('none', 'A'): 33, ('A', 'B'): 16, ('D', 'C'): 10, ('C', 'A'): 9}
+
+######## ministral-3:8b arm B
+  R1 armature: 0 of 8128 items change class between repeats  {}
+  R1 mac: 0 of 8128 items change class between repeats  {}
+  R2 armature r1 vs mac r1: 349 of 8128 items change class  {('D', 'B'): 52, ('B', 'C'): 80, ('C', 'B'): 125, ('D', 'C'): 50, ('C', 'D'): 19, ('A', 'C'): 2, ('B', 'A'): 6, ('B', 'D'): 8, ('C', 'A'): 6, ('D', 'A'): 1}
+  armature r1: n 8128 | A 29 B 3486 C 3395 D 1218 | no letter 0 | error 0
+    R4 no letter or error 0 of 8128 = 0.000 [0.000, 0.000]
+    R4 by reason: {}
+    R3 accepted: parsed 8128 | shares 0.00 0.43 0.42 0.15 | accuracy 0.239 [0.230, 0.249] | habit 0.2404 | excess -0.0012 [-0.0095, +0.0066]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 5188, changed 2940  {('C', 'B'): 1174, ('D', 'C'): 608, ('D', 'B'): 593, ('B', 'C'): 312, ('A', 'C'): 76, ('A', 'B'): 70, ('C', 'D'): 47, ('B', 'D'): 36}
+  armature r2: n 8128 | A 29 B 3486 C 3395 D 1218 | no letter 0 | error 0
+    R4 no letter or error 0 of 8128 = 0.000 [0.000, 0.000]
+    R4 by reason: {}
+    R3 accepted: parsed 8128 | shares 0.00 0.43 0.42 0.15 | accuracy 0.239 [0.230, 0.249] | habit 0.2404 | excess -0.0012 [-0.0095, +0.0066]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 5188, changed 2940  {('C', 'B'): 1174, ('D', 'C'): 608, ('D', 'B'): 593, ('B', 'C'): 312, ('A', 'C'): 76, ('A', 'B'): 70, ('C', 'D'): 47, ('B', 'D'): 36}
+  mac r1: n 8128 | A 40 B 3569 C 3377 D 1142 | no letter 0 | error 0
+    R4 no letter or error 0 of 8128 = 0.000 [0.000, 0.000]
+    R4 by reason: {}
+    R3 accepted: parsed 8128 | shares 0.00 0.44 0.42 0.14 | accuracy 0.237 [0.227, 0.246] | habit 0.2407 | excess -0.0041 [-0.0121, +0.0036]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 5172, changed 2956  {('C', 'B'): 1188, ('D', 'B'): 628, ('D', 'C'): 620, ('B', 'C'): 286, ('A', 'C'): 73, ('A', 'B'): 72, ('C', 'D'): 33, ('B', 'D'): 28}
+  mac r2: n 8128 | A 40 B 3569 C 3377 D 1142 | no letter 0 | error 0
+    R4 no letter or error 0 of 8128 = 0.000 [0.000, 0.000]
+    R4 by reason: {}
+    R3 accepted: parsed 8128 | shares 0.00 0.44 0.42 0.14 | accuracy 0.237 [0.227, 0.246] | habit 0.2407 | excess -0.0041 [-0.0121, +0.0036]
+    R6 his Bedrock letter vs ours on 8128 shared items: same 5172, changed 2956  {('C', 'B'): 1188, ('D', 'B'): 628, ('D', 'C'): 620, ('B', 'C'): 286, ('A', 'C'): 73, ('A', 'B'): 72, ('C', 'D'): 33, ('B', 'D'): 28}
+
+######## ministral-3:8b arm F
+  R1 armature: 0 of 600 items change class between repeats  {}
+  R1 mac: 0 of 600 items change class between repeats  {}
+  R2 armature r1 vs mac r1: 24 of 600 items change class  {('D', 'C'): 7, ('D', 'B'): 3, ('C', 'B'): 4, ('B', 'A'): 1, ('B', 'C'): 3, ('A', 'C'): 1, ('C', 'A'): 2, ('C', 'D'): 2, ('A', 'B'): 1}
+  armature r1: n 600 | A 50 B 150 C 276 D 124 | no letter 0 | error 0
+    R4 no letter or error 0 of 600 = 0.000 [0.000, 0.006]
+    R4 by reason: {}
+    R3 accepted: parsed 400 | shares 0.06 0.24 0.51 0.19 | accuracy 0.422 [0.375, 0.471] | habit 0.2413 | excess +0.1812 [+0.1367, +0.2275]
+    R3 rejected: parsed 200 | shares 0.12 0.27 0.36 0.24 | accuracy 0.700 [0.633, 0.759] | habit 0.2488 | excess +0.4512 [+0.3891, +0.5094]
+    R6 his Bedrock letter vs ours on 600 shared items: same 486, changed 114  {('B', 'C'): 36, ('A', 'C'): 29, ('D', 'C'): 16, ('A', 'B'): 8, ('A', 'D'): 6, ('C', 'D'): 6, ('B', 'D'): 5, ('D', 'B'): 4}
+  armature r2: n 600 | A 50 B 150 C 276 D 124 | no letter 0 | error 0
+    R4 no letter or error 0 of 600 = 0.000 [0.000, 0.006]
+    R4 by reason: {}
+    R3 accepted: parsed 400 | shares 0.06 0.24 0.51 0.19 | accuracy 0.422 [0.375, 0.471] | habit 0.2413 | excess +0.1812 [+0.1367, +0.2275]
+    R3 rejected: parsed 200 | shares 0.12 0.27 0.36 0.24 | accuracy 0.700 [0.633, 0.759] | habit 0.2488 | excess +0.4512 [+0.3891, +0.5094]
+    R6 his Bedrock letter vs ours on 600 shared items: same 486, changed 114  {('B', 'C'): 36, ('A', 'C'): 29, ('D', 'C'): 16, ('A', 'B'): 8, ('A', 'D'): 6, ('C', 'D'): 6, ('B', 'D'): 5, ('D', 'B'): 4}
+  mac r1: n 600 | A 51 B 154 C 279 D 116 | no letter 0 | error 0
+    R4 no letter or error 0 of 600 = 0.000 [0.000, 0.006]
+    R4 by reason: {}
+    R3 accepted: parsed 400 | shares 0.06 0.25 0.52 0.17 | accuracy 0.422 [0.375, 0.471] | habit 0.2414 | excess +0.1811 [+0.1381, +0.2273]
+    R3 rejected: parsed 200 | shares 0.13 0.28 0.36 0.23 | accuracy 0.695 [0.628, 0.755] | habit 0.2490 | excess +0.4460 [+0.3816, +0.5044]
+    R6 his Bedrock letter vs ours on 600 shared items: same 483, changed 117  {('B', 'C'): 35, ('A', 'C'): 29, ('D', 'C'): 18, ('A', 'B'): 8, ('D', 'B'): 7, ('A', 'D'): 6, ('B', 'D'): 5, ('C', 'B'): 4}
+  mac r2: n 600 | A 51 B 154 C 279 D 116 | no letter 0 | error 0
+    R4 no letter or error 0 of 600 = 0.000 [0.000, 0.006]
+    R4 by reason: {}
+    R3 accepted: parsed 400 | shares 0.06 0.25 0.52 0.17 | accuracy 0.422 [0.375, 0.471] | habit 0.2414 | excess +0.1811 [+0.1381, +0.2273]
+    R3 rejected: parsed 200 | shares 0.13 0.28 0.36 0.23 | accuracy 0.695 [0.628, 0.755] | habit 0.2490 | excess +0.4460 [+0.3816, +0.5044]
+    R6 his Bedrock letter vs ours on 600 shared items: same 483, changed 117  {('B', 'C'): 35, ('A', 'C'): 29, ('D', 'C'): 18, ('A', 'B'): 8, ('D', 'B'): 7, ('A', 'D'): 6, ('B', 'D'): 5, ('C', 'B'): 4}

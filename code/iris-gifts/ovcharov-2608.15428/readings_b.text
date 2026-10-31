@@ -1,0 +1,19 @@
+R2b across-setup letter changes (Armature r1 against Mac r1), Clopper-Pearson 95%, against each setup's repeat floor (Fisher exact)
+  llama3.1-8b     arm B: across 470 of 8128 = 5.78% [5.28, 6.31] | floor Armature 15 (Fisher p 3.5e-121) | floor Mac 0, upper bound 0.045% (Fisher p 6.1e-145) | both parsed: 459 of 8111
+  llama3.1-8b     arm F: across 27 of 600 = 4.50% [2.99, 6.48] | floor Armature 20 (Fisher p 0.37) | floor Mac 0, upper bound 0.613% (Fisher p 1.1e-08) | both parsed: 20 of 585
+  ministral-3-8b  arm B: across 349 of 8128 = 4.29% [3.86, 4.76] | floor Armature 0 (Fisher p 3.8e-107) | floor Mac 0, upper bound 0.045% (Fisher p 3.8e-107) | both parsed: 349 of 8128
+  ministral-3-8b  arm F: across 24 of 600 = 4.00% [2.58, 5.89] | floor Armature 0 (Fisher p 9.4e-08) | floor Mac 0, upper bound 0.613% (Fisher p 9.4e-08) | both parsed: 24 of 600
+
+R2c paired accuracy across setups (Armature r1 minus Mac r1), exact McNemar on items right on one side only; Stuart-Maxwell on the four letters
+  llama3.1-8b     arm B: accuracy 0.2499 and 0.2486, difference +0.12 pp | right on Armature only 120, on Mac only 110, exact p 0.553 | Stuart-Maxwell chi2 9.8 (df 3) p 0.02 over 8111 items parsed on both
+  llama3.1-8b     arm F: accuracy 0.4300 and 0.4283, difference +0.17 pp | right on Armature only 6, on Mac only 5, exact p 1 | Stuart-Maxwell chi2 11.1 (df 3) p 0.011 over 585 items parsed on both
+  ministral-3-8b  arm B: accuracy 0.2392 and 0.2366, difference +0.26 pp | right on Armature only 96, on Mac only 75, exact p 0.126 | Stuart-Maxwell chi2 63.1 (df 3) p 1.3e-13 over 8128 items parsed on both
+  ministral-3-8b  arm F: accuracy 0.5150 and 0.5133, difference +0.17 pp | right on Armature only 9, on Mac only 8, exact p 1 | Stuart-Maxwell chi2 6.1 (df 3) p 0.11 over 600 items parsed on both
+
+R8 his own reruns (his released predictions): letter changes between his runs on the items both hold
+  gemma-3-12b    blind, 600-item run against full run, 400 shared items: 2 differ = 0.5% [0.1, 1.8] | accuracy 0.2450 and 0.2450
+  llama-3.1-8b   blind, 600-item run against full run, 400 shared items: 11 differ = 2.8% [1.4, 4.9] | accuracy 0.2950 and 0.2875
+  ministral-8b   blind, 600-item run against full run, 400 shared items: 17 differ = 4.2% [2.5, 6.7] | accuracy 0.2375 and 0.2400
+  nova-micro     blind, 600-item run against full run, 400 shared items: 34 differ = 8.5% [6.0, 11.7] | accuracy 0.2350 and 0.2250
+  qwen3-32b      blind, 600-item run against full run, 400 shared items: 55 differ = 13.8% [10.5, 17.5] | accuracy 0.2625 and 0.2600
+  llama-3.1-8b full, 2,048 against 4,096 tokens, 600 shared items: 43 differ = 7.2% [5.2, 9.5]
