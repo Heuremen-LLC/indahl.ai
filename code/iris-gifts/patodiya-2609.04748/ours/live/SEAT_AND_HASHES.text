@@ -1,0 +1,12 @@
+seat: macOS 26.6.2 build 25G83 | Apple M5 Max | 48 GB
+--- llama-server --list-devices
+Available devices:
+  MTL0: Apple M5 Max (43008 MiB, 43007 MiB free)
+  BLAS: Accelerate (0 MiB, 0 MiB free)
+--- sha256 of raw runs
+ccce05706f07d3db38109872683de8cc95d308d04a7a54b6f0c6e2628d80a4d4  runs/Q3_K_M_s1.jsonl
+64a6342187ab5b12eb2c57ef0e8bce2ac31867f518aca7dad7cc228e8fa04d17  runs/Q3_K_M_s2.jsonl
+a699e147ddf483755c570e5d499ae1f10466f76a8f6a0fbfd23667716d30df62  runs/Q4_K_M_s1.jsonl
+b4ec0af595f65945e60cc006b46382e65a34b718246b0954f554f9a9393c15fa  runs/Q4_K_M_s2.jsonl
+8836b12dbcc22f3fc3e2879ffc512cf946dbc67ddb90338a3fd49339aef7a3ab  runs/Q8_0_s1.jsonl
+88bf331536397e858092cbc85436a1665be438cf9de6d75035017e7a74e584c9  runs/Q8_0_s2.jsonl

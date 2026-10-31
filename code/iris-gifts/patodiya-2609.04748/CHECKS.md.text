@@ -1,0 +1,43 @@
+
+## 2026-10-31 09:19 Patodiya 2609.04748 live bridge on Apple Metal (llama.cpp b10434, Qwen2.5-7B Q4_K_M/Q8_0/Q3_K_M, two sessions each): cold-vs-warm path divergence 8, 3, 9 of 200 (4.0/1.5/4.5%), above zero and below her CUDA 41.5/44.5/48.0%; session floor 0; no correctness flips
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: PLAN.md committed 5d3a336 and Addendum 1 36655da (30 Oct 20:03 and 20:05 EDT) before the first request (created 31 Oct 08:01 UTC); same tag and commit 7e4c0a968 (her fingerprint b1-7e4c0a9 from a shallow clone, ours b10434-7e4c0a968), the same command-line flags (effective defaults not logged by either side), the same prompt strings (sha256 equal on 200 of 200), weights equal to her MODEL_SHA256SUMS (her bridge pods recorded no hashes) [fixed after the referee, 31 Oct]; L2 gate (both paths self-consistent) dropped 0 of 200 items in every format and session
+- II: holds: divergence counted item by item (8, 3, 9 items); session floor 0 of 200 on both paths in every format, so the same items diverge in both sessions; correctness flips 0 in each direction in every format
+- III: holds: ours minus hers is negative in all three formats (-37.5, -43.0, -43.5 pp); text and token-id divergence counts agree (8/8, 3/3, 9/9)
+- V: holds: Wilson 95% on our rate, Newcombe 95% on the difference against her printed count, exact McNemar on discordant correctness pairs; text and token-id rulers run side by side and agree
+- VI: holds: both alternatives tested; above zero (Wilson lower bounds 2.0, 0.5, 2.4%) and below her rate (Newcombe upper bounds -29.9, -35.7, -35.7 pp) in every format
+- R: holds: counts from runs/*.jsonl through read_bridge.py --rates (output kept); her rows from her Table 7 as rebuilt by scout/rebuild_bridge.py; build from each session's meta.json; paper v2 (12 Oct 2026); nothing post hoc
+- L1: holds: READ_<fmt>_s1.md for Q4_K_M, Q8_0, Q3_K_M (10 replies each, seed 7) read in full before any rate; s2 token ids equal s1 on 800 of 800 in every format
+- L2: fixed: no L1, L2 or L4 to L6 value was computed before the six READ notes were committed (last 143b8db); the s2 notes record the L3 session-identity check, which was computed first [referee, 31 Oct]
+- L3: holds: hers llama-server b10434 CUDA RTX 4090 with her harness; ours the same tag and commit 7e4c0a968 built with Metal on an Apple M5 Max with our own urllib client, same server flags, temperature 0, seed 42, max_tokens 1024, her prompt strings; extraction her Table 7 scorer with her run-time rule printed beside
+- L4: holds: session floor 0 of 200 on both paths for every format on our seat; server cmd, props and build saved per session in runs/*.meta.json; her CUDA floor is her own (Table 7 cold vs cold2)
+- L5: holds: scout recount rebuilt her Table 7 to the printed digits from her released logs before any live request; prompt sha256 keys matched 200 of 200
+- L6: holds: unread or dropped by reason per session: 0 (finish reason stop on 800 of 800; telemetry outside rule 0 of 400 cold, 0 of 400 warm)
+- L7: n/a: no labeller; gold is the GSM8K dataset answer
+- L8: holds: cold and warm paired on the same item and session; seed fixed at 42 on both sides; --parallel 1, one request at a time; exact McNemar on the discordant pairs
+- L9: holds: the prompt is her GSM8K question string with her system text, sha256 equal to hers; the gold answer is not in it
+- L10: holds: weights equal to her MODEL_SHA256SUMS and the same tag give identical token ids to her CUDA run on 78 to 110 of 200 items (L4); her own CUDA cold-against-warm identity is 117, 111 and 104 of 200, the same order, so this says nothing against either seat [wording fixed after the referee, 31 Oct]
+- L11: n/a: GSM8K test split items 0 to 199 loaded and matched to her prompt hashes 200 of 200; no substitution
+- L12: holds: the referee for this reading is a Claude model, the same family as the writer; this check block says so
+- P1: n/a: no quotation in the reading; the draft quotes nothing of hers
+- P2: holds: every figure from runs/*.jsonl via read_bridge.py --rates or her Table 7 (paper v2) via the scout rebuild; package names the file for each
+- P3: holds: format labels Q4_K_M, Q8_0, Q3_K_M and pass names cold, cold2, warm, warm2 are hers
+- P4: holds: no cause named for the lower divergence on Metal; reported as a different backend and hardware reading only
+- P5: holds: Wilson 95% on rates, Newcombe 95% on differences, stated beside each
+- P6: holds: summary scoped to one seat (Apple M5 Max, Metal, b10434), one model, three formats, 200 items
+- P7: n/a: no public number yet; the package goes out through its push path and any Pub #2 line through the ledger first
+- P8: n/a: no rendered page in this reading
+- P9: holds: plain sentences, no AI statement in the draft, no count of ours in a title
+- P10: holds: every reading L0 to L6 was in PLAN.md or Addendum 1 before any request; nothing defined after the data
+
+### Referee corrections to this reading (31 Oct 2026, refuting referee: a Claude model, the same family as the writer)
+Every count reproduced independently, and the warm path was confirmed to hit the cache (client fields and server logs agree). Corrections:
+- Context the summary left out (defined after the data): her own CUDA F16 row is 7 of 200, 3.5% [1.7, 7.0]. Metal minus that row:
+  Q4_K_M +0.5 pp [-3.6, +4.6], Q8_0 -2.0 pp [-5.7, +1.3], Q3_K_M +1.0 pp [-3.1, +5.2] (Newcombe 95%), all CONSISTENT with it.
+  No Metal F16 was run (the Mac's memory rule excludes the 14.19 GiB file), so whether quantization amplifies divergence on Metal is untested.
+- "No correctness flips": 0 among the 8, 3 and 9 divergent items by the Table 7 scorer; 1 by the run-time rule (Q8_0 item 124, a formatting
+  change). Too few divergent items to bear on whether Metal flips correctness (her rate predicts 0.39, 0.13 and 0.28 flips).
+- Scope: single-turn GSM8K bridge, full-prefix cache hit with a one-token tail; nothing here touches partial reuse or her agentic results.
+- RATES.text prints "quartiles" for the first differing token position; with n = 8, 3 and 9 these are index picks. The positions are listed
+  in RATES_NOTES.md.
