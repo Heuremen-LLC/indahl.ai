@@ -1,0 +1,13 @@
+dd_e01 kinds=['number', 'number', 'number'] itself=True shifted=False empty=False ok | MW=180.16, LogP=1.24, HBD=1
+dd_e02 kinds=['ident', 'number'] itself=True shifted=False empty=False ok | SMILES=CC(C)Cc1ccc(cc1)C(C)C(=O)O, TPSA=37.3
+dd_e03 kinds=['number', 'number', 'number', 'number'] itself=True shifted=False empty=False ok | Yes: MW=129.16<500, LogP=-1.43<5, HBD=2<=5, HBA=4<=10
+dd_e04 kinds=['number'] itself=True shifted=False empty=False ok | IC50 approximately 2 nM
+dd_e05 kinds=['range'] itself=True shifted=False empty=False ok | Tanimoto similarity approximately 0.55-0.65
+dd_e06 kinds=['text', 'ident'] itself=True shifted=False empty=False ok | Dihydrofolate reductase (DHFR), UniProt: P00374
+dd_e07 kinds=['text'] itself=None shifted=None empty=None ok | Aspirin passes PAINS filter - no PAINS alerts
+dd_e08 kinds=['number', 'ident'] itself=True shifted=False empty=False ok | Rotatable bonds: 12, Formula: C33H35FN2O5
+dd_e09 kinds=['range'] itself=True shifted=False empty=False ok | LogS approximately -1.0 to -1.5 (moderately soluble)
+dd_e10 kinds=['number'] itself=True shifted=False empty=False ok | 4 aromatic rings
+dd_e11 kinds=['number'] itself=True shifted=False empty=False ok | Approved 2014 for melanoma (anti-PD-1)
+dd_e12 kinds=['range'] itself=True shifted=False empty=False ok | QED score approximately 0.3-0.4 (low drug-likeness, pol
+SELFTEST PASSED

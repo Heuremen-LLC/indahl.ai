@@ -1,0 +1,70 @@
+=== trajectories: 372 files (unparseable 0)
+ top keys: {'trajectory_id': 372, 'task_id': 372, 'domain': 372, 'difficulty': 372, 'prompt': 372, 'ground_truth': 372, 'model': 372, 'trajectory': 372, 'outcome': 372, 'metadata': 372}
+ step keys: {'step_id': 1536, 'timestamp': 1536, 'phase': 1536, 'thought': 1536, 'action': 1536, 'observation': 1536, 'error': 1536, 'revision_trigger': 1536, 'confidence': 1536, 'raw_response': 1536, 'wall_time': 1165}
+ outcome keys: {'success': 372, 'final_claim': 372, 'confidence': 372, 'verification': 372, 'failure_type': 372, 'recovery_attempted': 372, 'recovery_successful': 372}
+ meta keys: {'total_steps': 372, 'total_tokens_est': 372, 'total_tool_calls': 372, 'total_failures': 372, 'total_revisions': 372, 'wall_time_seconds': 372, 'max_steps_reached': 372, 'model_version': 372, 'temperature': 372, 'collection_timestamp': 372}
+ models: {'claude-opus-4.6': 124, 'gemini-3.1-pro': 124, 'gpt-5.4': 124}
+ domains: {'drug_discovery': 93, 'genomics': 93, 'literature': 93, 'materials_science': 93}
+ difficulty: {'easy': 147, 'hard': 72, 'medium': 153}
+ model_version: {'claude-opus-4.6': 124, 'gemini-3.1-pro': 124, 'gpt-5.4': 124}
+ success values: {'False': 39, 'True': 88, 'None': 245}
+=== data/trajectories: 251 files (unparseable 0)
+ top keys: {'trajectory_id': 251, 'task_id': 251, 'domain': 251, 'difficulty': 251, 'prompt': 251, 'ground_truth': 251, 'model': 251, 'trajectory': 251, 'outcome': 251, 'metadata': 251}
+ step keys: {'step_id': 1034, 'timestamp': 1034, 'phase': 1034, 'thought': 1034, 'action': 1034, 'observation': 1034, 'error': 1034, 'revision_trigger': 1034, 'confidence': 1034, 'raw_response': 1034, 'wall_time': 784}
+ outcome keys: {'success': 251, 'final_claim': 251, 'confidence': 251, 'verification': 251, 'failure_type': 251, 'recovery_attempted': 251, 'recovery_successful': 251}
+ meta keys: {'total_steps': 251, 'total_tokens_est': 251, 'total_tool_calls': 251, 'total_failures': 251, 'total_revisions': 251, 'wall_time_seconds': 251, 'max_steps_reached': 251, 'model_version': 251, 'temperature': 251, 'collection_timestamp': 251}
+ models: {'claude-opus-4.6': 84, 'gemini-3.1-pro': 88, 'gpt-5.4': 79}
+ domains: {'drug_discovery': 67, 'genomics': 64, 'literature': 59, 'materials_science': 61}
+ difficulty: {'easy': 101, 'hard': 51, 'medium': 99}
+ model_version: {'claude-opus-4.6': 84, 'gemini-3.1-pro': 88, 'gpt-5.4': 79}
+ success values: {'False': 27, 'True': 58, 'None': 166}
+=== trajectories_live: 30 files (unparseable 0)
+ top keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'retrieval_mode': 30, 'live_search_results': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+ step keys: {'step_id': 60, 'phase': 60, 'action': 60, 'observation': 30, 'error': 60, 'raw_response': 30, 'thought': 30}
+ outcome keys: {'final_claim': 30, 'success': 30}
+ meta keys: {'total_steps': 30, 'total_tool_calls': 30, 'wall_time_seconds': 30, 'retrieval_mode': 30}
+ models: {'gpt-5.4-mini-live': 30}
+ domains: {'drug_discovery': 30}
+ difficulty: {'easy': 12, 'hard': 5, 'medium': 13}
+ model_version: {None: 30}
+ success values: {'None': 30}
+=== trajectories_opensource: 30 files (unparseable 0)
+ top keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'prompt': 30, 'open_source': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+ step keys: {'step_id': 30, 'phase': 30, 'raw_response': 30, 'thought': 30, 'action': 30, 'error': 30}
+ outcome keys: {'final_claim': 30, 'success': 30}
+ meta keys: {'total_steps': 30, 'total_tool_calls': 30, 'total_failures': 30, 'total_revisions': 30, 'wall_time_seconds': 30, 'model_version': 30}
+ models: {'Qwen2.5-1.5B-Instruct': 30}
+ domains: {'drug_discovery': 30}
+ difficulty: {'easy': 12, 'hard': 5, 'medium': 13}
+ model_version: {'Qwen/Qwen2.5-1.5B-Instruct': 30}
+ success values: {'None': 30}
+=== trajectories_qwen2.5-7b: 30 files (unparseable 0)
+ top keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'model_full': 30, 'prompt': 30, 'open_weight': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+ step keys: {'step_id': 30, 'phase': 30, 'raw_response': 30, 'thought': 30, 'action': 30, 'observation': 30, 'error': 30, 'revision_trigger': 30, 'confidence': 30}
+ outcome keys: {'final_claim': 30, 'success': 30}
+ meta keys: {'total_steps': 30, 'total_tool_calls': 30, 'total_failures': 30, 'total_revisions': 30, 'wall_time_seconds': 30, 'model_version': 30}
+ models: {'qwen2.5-7b': 30}
+ domains: {'drug_discovery': 30}
+ difficulty: {'easy': 12, 'hard': 5, 'medium': 13}
+ model_version: {'Qwen/Qwen2.5-7B-Instruct': 30}
+ success values: {'None': 30}
+=== trajectories_mistral-7b-v0.3: 30 files (unparseable 0)
+ top keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'model_full': 30, 'prompt': 30, 'open_weight': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+ step keys: {'step_id': 30, 'phase': 30, 'raw_response': 30, 'thought': 30, 'action': 30, 'observation': 30, 'error': 30, 'revision_trigger': 30, 'confidence': 30}
+ outcome keys: {'final_claim': 30, 'success': 30}
+ meta keys: {'total_steps': 30, 'total_tool_calls': 30, 'total_failures': 30, 'total_revisions': 30, 'wall_time_seconds': 30, 'model_version': 30}
+ models: {'mistral-7b-v0.3': 30}
+ domains: {'drug_discovery': 30}
+ difficulty: {'easy': 12, 'hard': 5, 'medium': 13}
+ model_version: {'mistralai/Mistral-7B-Instruct-v0.3': 30}
+ success values: {'None': 30}
+=== trajectories_phi-3.5-mini: 30 files (unparseable 0)
+ top keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'model_full': 30, 'prompt': 30, 'open_weight': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+ step keys: {'step_id': 30, 'phase': 30, 'raw_response': 30, 'thought': 30, 'action': 30, 'observation': 30, 'error': 30, 'revision_trigger': 30, 'confidence': 30}
+ outcome keys: {'final_claim': 30, 'success': 30}
+ meta keys: {'total_steps': 30, 'total_tool_calls': 30, 'total_failures': 30, 'total_revisions': 30, 'wall_time_seconds': 30, 'model_version': 30}
+ models: {'phi-3.5-mini': 30}
+ domains: {'drug_discovery': 30}
+ difficulty: {'easy': 12, 'hard': 5, 'medium': 13}
+ model_version: {'microsoft/Phi-3.5-mini-instruct': 30}
+ success values: {'None': 30}

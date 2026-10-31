@@ -1,0 +1,4 @@
+in data/ not in trajectories/: 0
+in both: 251
+byte-identical among shared: 251
+differing: 0

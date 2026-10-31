@@ -1,0 +1,57 @@
+== TASK BANK  metadata: {'version': '1.0', 'total_tasks': 200, 'domains': ['drug_discovery', 'materials_science', 'genomics', 'literature'], 'difficulty_distribution': {'easy': 50, 'medium': 100, 'hard': 50}}
+tasks in file: 124 | per domain: {'drug_discovery': 31, 'materials_science': 31, 'genomics': 31, 'literature': 31} | per difficulty: {'easy': 49, 'medium': 51, 'hard': 24}
+tasks with non-empty ground_truth: 42 {'easy': 42}
+first 30 task ids in file order: dd_e01 ... dd_h05 | difficulty mix: {'easy': 12, 'medium': 13, 'hard': 5} | ground-truth among them: 12
+
+== Qwen2.5-7B  (trajectories_qwen2.5-7b)  files=30
+ task ids equal first 30 of task bank: True | prompt equals task_bank prompt for all: True
+ model strings: {'qwen2.5-7b': 30} | model_version: {'Qwen/Qwen2.5-7B-Instruct': 30}
+ mean wall_time_seconds 17.23 (printed ~15s A10G) | min 7.85 max 18.02
+ raw_response chars: mean 2127 min 889 max 2892 | files at the 3000-char truncation: 0
+ success values: {'None': 30} | steps per file: {1: 30}
+ error.occurred true: 0 | metadata total_failures sum: 0
+ responses that begin with 'Error': 0
+ top-level keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'model_full': 30, 'prompt': 30, 'open_weight': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+
+== Mistral-7B-v0.3  (trajectories_mistral-7b-v0.3)  files=30
+ task ids equal first 30 of task bank: True | prompt equals task_bank prompt for all: True
+ model strings: {'mistral-7b-v0.3': 30} | model_version: {'mistralai/Mistral-7B-Instruct-v0.3': 30}
+ mean wall_time_seconds 17.16 (printed ~15s A10G) | min 10.51 max 18.59
+ raw_response chars: mean 1744 min 1057 max 2466 | files at the 3000-char truncation: 0
+ success values: {'None': 30} | steps per file: {1: 30}
+ error.occurred true: 0 | metadata total_failures sum: 0
+ responses that begin with 'Error': 0
+ top-level keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'model_full': 30, 'prompt': 30, 'open_weight': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+
+== Phi-3.5-mini  (trajectories_phi-3.5-mini)  files=30
+ task ids equal first 30 of task bank: True | prompt equals task_bank prompt for all: True
+ model strings: {'phi-3.5-mini': 30} | model_version: {'microsoft/Phi-3.5-mini-instruct': 30}
+ mean wall_time_seconds 0.00 (printed <1s A10G) | min 0.00 max 0.00
+ raw_response chars: mean 59 min 59 max 59 | files at the 3000-char truncation: 0
+ success values: {'None': 30} | steps per file: {1: 30}
+ error.occurred true: 0 | metadata total_failures sum: 0
+ responses that begin with 'Error': 30
+   distinct first-80-char strings among them: {"Error: 'DynamicCache' object has no attribute 'seen_tokens'": 30}
+ top-level keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'model_full': 30, 'prompt': 30, 'open_weight': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+
+== Qwen2.5-1.5B  (trajectories_opensource)  files=30
+ task ids equal first 30 of task bank: True | prompt equals task_bank prompt for all: True
+ model strings: {'Qwen2.5-1.5B-Instruct': 30} | model_version: {'Qwen/Qwen2.5-1.5B-Instruct': 30}
+ mean wall_time_seconds 14.01 (printed ~7s V100) | min 4.22 max 16.94
+ raw_response chars: mean 1901 min 474 max 2753 | files at the 3000-char truncation: 0
+ success values: {'None': 30} | steps per file: {1: 30}
+ error.occurred true: 0 | metadata total_failures sum: 0
+ responses that begin with 'Error': 0
+ top-level keys: {'trajectory_id': 30, 'task_id': 30, 'domain': 30, 'difficulty': 30, 'model': 30, 'prompt': 30, 'open_source': 30, 'trajectory': 30, 'outcome': 30, 'metadata': 30}
+
+open-weight files total: 120 (printed 120 = 30 x 4)
+
+== LIVE VARIANT  files=30  (printed 60)
+ models: {'gpt-5.4-mini-live': 30} | retrieval_mode: {'live': 30} | unique task ids: 30
+ pubmed hit counts (live_search_results.pubmed) >0: 2 | pubchem True: 28
+ mean wall_time_seconds 4.33
+ responses beginning 'Error': 0
+
+== TOTALS
+frontier 372 + open 120 + live 30 = 522 released trajectory files; printed 558 = 372 + 120 + 6 tool-scaffolded + 60 live
+tool-scaffolded Qwen2.5-7B trajectories (printed 6): any file with model qwen2.5-7b and total_steps>1 in any directory: 0

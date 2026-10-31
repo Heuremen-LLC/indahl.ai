@@ -1,0 +1,107 @@
+== FILE COUNTS
+trajectories: 372 | per model: {'claude-opus-4.6': 124, 'gemini-3.1-pro': 124, 'gpt-5.4': 124}
+per domain: {'drug_discovery': 93, 'genomics': 93, 'literature': 93, 'materials_science': 93} | per difficulty: {'easy': 147, 'hard': 72, 'medium': 153}
+unique task ids: 124 | per domain per model: {('drug_discovery', 'claude-opus-4.6'): 31, ('drug_discovery', 'gemini-3.1-pro'): 31, ('drug_discovery', 'gpt-5.4'): 31, ('genomics', 'claude-opus-4.6'): 31, ('genomics', 'gemini-3.1-pro'): 31, ('genomics', 'gpt-5.4'): 31, ('literature', 'claude-opus-4.6'): 31, ('literature', 'gemini-3.1-pro'): 31, ('literature', 'gpt-5.4'): 31, ('materials_science', 'claude-opus-4.6'): 31, ('materials_science', 'gemini-3.1-pro'): 31, ('materials_science', 'gpt-5.4'): 31}
+  gpt-5.4 difficulty {'easy': 49, 'hard': 24, 'medium': 51}
+  claude-opus-4.6 difficulty {'easy': 49, 'hard': 24, 'medium': 51}
+  gemini-3.1-pro difficulty {'easy': 49, 'hard': 24, 'medium': 51}
+
+== INTEGRITY: trajectories whose metadata count differs from the count rebuilt from step records: {'steps': 0, 'failures': 0, 'tool_calls': 0, 'revisions': 0}
+tool-call gap detail (model, metadata minus step count): {}
+
+== TABLE 2 (frontier rows)
+conclusion rate (final_claim not null): 0.9973  (371 of 372)
+final_claim empty string count: 0
+mean steps 4.129 | median steps 2.0 | mean tool calls 3.013 | mean errors 0.981 | mean revisions 0.8683 | mean wall 99.09
+share with >=1 error: 0.3118 (116)  | share with >=1 revision: 0.3441 (128)
+max_steps_reached count: 1
+total response chars 2804938 -> chars/4 = 701234 tokens (printed ~701K)
+mean response chars per trajectory: overall 7540
+  gpt-5.4 mean response chars 5720
+  claude-opus-4.6 mean response chars 11237
+  gemini-3.1-pro mean response chars 5663
+
+== TABLE 3 (mean +/- SD with ddof=1, Kruskal-Wallis H and p, Cliff's delta)
+steps     gpt-5.4 3.48+/-3.55 | claude-opus-4.6 4.07+/-3.96 | gemini-3.1-pro 4.84+/-5.36 | H=3.689 p=0.158
+tools     gpt-5.4 2.45+/-3.50 | claude-opus-4.6 2.84+/-3.19 | gemini-3.1-pro 3.75+/-5.18 | H=3.082 p=0.214
+errors    gpt-5.4 0.08+/-0.33 | claude-opus-4.6 2.49+/-3.44 | gemini-3.1-pro 0.37+/-0.83 | H=122.027 p=3.18e-27
+revisions gpt-5.4 0.41+/-0.81 | claude-opus-4.6 1.23+/-1.99 | gemini-3.1-pro 0.96+/-2.50 | H=15.566 p=0.000417
+wall      gpt-5.4 39.64+/-37.44 | claude-opus-4.6 190.64+/-148.26 | gemini-3.1-pro 67.01+/-89.92 | H=109.973 p=1.32e-24
+conclusion gpt-5.4 1.0000 | claude-opus-4.6 0.9919 | gemini-3.1-pro 1.0000 | H=2.000 p=0.3679
+Cliff delta steps     claude-gemini 0.053 | claude-gpt 0.160 | gemini-gpt 0.023
+Cliff delta tools     claude-gemini 0.043 | claude-gpt 0.149 | gemini-gpt 0.023
+Cliff delta errors    claude-gemini 0.512 | claude-gpt 0.613 | gemini-gpt 0.164
+Cliff delta revisions claude-gemini 0.164 | claude-gpt 0.244 | gemini-gpt 0.060
+errors ratio Claude/GPT: 30.9
+
+== TABLE 4 / APPENDIX E failure taxonomy (counting rule read from the released script, re-implemented here)
+claude-opus-4.6  total 462 | tool_misuse 308 (66.7%) | reasoning 153 (33.1%) | other {'hallucination': 1}
+gemini-3.1-pro   total 165 | tool_misuse 46 (27.9%) | reasoning 119 (72.1%) | other {}
+gpt-5.4          total 61 | tool_misuse 10 (16.4%) | reasoning 51 (83.6%) | other {}
+all: total 688 | tool_misuse 364 (52.9%) | reasoning 323 (46.9%)
+error.type values among error steps: {'gpt-5.4': {'tool_error': 10}, 'claude-opus-4.6': {'tool_error': 279, 'api_error': 30}, 'gemini-3.1-pro': {'tool_error': 46}}
+revision_trigger values: {'self_detected_error': 323}
+steps with error.occurred and total reasoning-count tie: reasoning_error counts equal total_revisions by model: {'gpt-5.4': (51, 51), 'claude-opus-4.6': (153, 153), 'gemini-3.1-pro': (119, 119)}
+note: Claude 2.5 x 124 = 310 step-errors printed as 310, 152 keyword events printed. Rebuilt: 309 error steps + 153 revision events
+
+== TABLE 5 matched-task within-domain (n=31 per model per domain)
+drug_discovery    steps  4.06+/-3.07 | 4.74+/-5.56 | 4.16+/-3.90 | n=[31, 31, 31] H=0.60 p=0.74
+drug_discovery    errors 2.52+/-2.80 | 0.42+/-0.85 | 0.03+/-0.18 | n=[31, 31, 31] H=29.45 p=4e-07
+genomics          steps  5.03+/-5.79 | 5.87+/-5.93 | 3.16+/-3.36 | n=[31, 31, 31] H=2.70 p=0.26
+genomics          errors 3.32+/-5.59 | 0.48+/-0.96 | 0.00+/-0.00 | n=[31, 31, 31] H=29.29 p=4.4e-07
+literature        steps  3.90+/-4.04 | 4.26+/-5.91 | 3.00+/-3.47 | n=[31, 31, 31] H=3.80 p=0.15
+literature        errors 2.03+/-2.33 | 0.29+/-0.97 | 0.10+/-0.30 | n=[31, 31, 31] H=31.77 p=1.3e-07
+materials_science steps  3.29+/-1.81 | 4.48+/-3.92 | 3.58+/-3.49 | n=[31, 31, 31] H=0.44 p=0.8
+materials_science errors 2.10+/-1.70 | 0.29+/-0.46 | 0.19+/-0.54 | n=[31, 31, 31] H=34.00 p=4.1e-08
+
+== TABLE 6 per difficulty per model (mean steps, mean errors)
+easy n=147
+   claude-opus-4.6  steps 1.90 errors 0.27 (n=49)
+   gemini-3.1-pro   steps 3.39 errors 0.27 (n=49)
+   gpt-5.4          steps 2.00 errors 0.00 (n=49)
+medium n=153
+   claude-opus-4.6  steps 5.78 errors 4.14 (n=51)
+   gemini-3.1-pro   steps 5.02 errors 0.45 (n=51)
+   gpt-5.4          steps 4.94 errors 0.12 (n=51)
+hard n=72
+   claude-opus-4.6  steps 4.88 errors 3.54 (n=24)
+   gemini-3.1-pro   steps 7.42 errors 0.42 (n=24)
+   gpt-5.4          steps 3.38 errors 0.17 (n=24)
+
+== TABLE 9 tool invocations by action.tool string (steps with a non-empty tool)
+  claude-opus-4.6 {'web_search': 7, 'python_exec': 341, 'python_': 1, 'api_call': 1, 'web_': 1, 'pubmed_search': 1} total 352
+  gemini-3.1-pro {'python_exec': 372, 'pubmed_search': 41, 'web_search': 49, 'api_call': 3} total 465
+  gpt-5.4 {'api_call': 31, 'web_search': 72, 'python_exec': 163, 'pubmed_search': 35, 'calculation': 2, 'web_search + pubmed_search': 1} total 304
+total of all tool strings: 1121 | total of the four named tools: 1116 (printed 1,116) | python_exec 876 share of 1116 = 0.7849
+metadata total_tool_calls per model: {'gpt-5.4': 304, 'claude-opus-4.6': 352, 'gemini-3.1-pro': 465}
+GPT share of its four-tool total: web 0.239 pubmed 0.116 api 0.103 ; Claude python share 0.974
+latency (mean of step wall_time>0 by tool): {'python_exec': (27.48, 876), 'web_search': (8.81, 128), 'api_call': (6.76, 35), 'pubmed_search': (11.2, 77)}
+
+== H.2 error localization
+trajectories with >=1 error: 116 | with an error-flagged step found: 116
+first error at step 0: 79 of 116 = 0.6810 | at last step: 0
+1/mean(total steps) over those trajectories = 0.151 (printed ~7%)
+mean relative first-error position i/n = 0.071
+
+== H.3 claim verification: what the released outcome.success supports
+  gpt-5.4          null 82 | evaluable n=42 | true 29 | rate 0.690 | Wilson [0.540, 0.809]
+  claude-opus-4.6  null 81 | evaluable n=43 | true 30 | rate 0.698 | Wilson [0.549, 0.814]
+  gemini-3.1-pro   null 82 | evaluable n=42 | true 29 | rate 0.690 | Wilson [0.540, 0.809]
+  all: evaluable 127, true 88, rate 0.6929 ; verification.method values: {'pending': 372}
+  evaluable with null/empty ground_truth field: 1
+  ground-truth tasks (non-empty ground_truth): 42 difficulty of those: {'easy': 126}
+
+== H.3 printed judged rates: Wilson interval recomputed from the printed rate and n (arithmetic check only, no per-item file)
+  GPT-5.4          k=109 n=123 rate 0.8862 -> Wilson [81.8, 93.1] printed [81.8, 93.1]
+  Claude Opus 4.6  k=99 n=118 rate 0.8390 -> Wilson [76.2, 89.4] printed [76.2, 89.4]
+  Gemini 3.1 Pro   k=109 n=122 rate 0.8934 -> Wilson [82.6, 93.7] printed [82.6, 93.7]
+  pooled 317/363 = 0.8733 (printed 87.3%)
+  Kruskal-Wallis on the 0/1 vectors implied by the printed counts: H=1.882 p=0.390 (printed p=0.38)
+  9 unjudged: 372-363 = 9 ; 9/372 = 2.4% (printed 3.6%)
+
+== H.4 process quality (two definitions)
+  released-script rule: tool CALLS / max, steps / data max   0.747+/-0.008 | 0.747+/-0.011 | 0.724+/-0.067 | H=149.9
+  printed text rule: unique tools / max, steps / data max    0.792+/-0.063 | 0.769+/-0.045 | 0.739+/-0.074 | H=39.8
+  printed text rule: unique tools / max, steps / 30          0.792+/-0.063 | 0.769+/-0.045 | 0.739+/-0.074 | H=39.8
+  printed: GPT-5.4 0.747+/-0.008 | Gemini 0.747+/-0.011 | Claude 0.724+/-0.067 | H=149.9
+  max steps in data 30, max tool calls 23, max failures 30, max unique tools 4

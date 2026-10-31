@@ -1,0 +1,20 @@
+== Qwen/Qwen2.5-7B-Instruct
+ gated: False | license: ['license:apache-2.0'] | current main sha: a09a35458c702b33eeacc393d103063234e8bc28 | lastModified: 2025-01-12T02:10:10.000Z
+ weight files total GB: 15.23 | n files 4
+ commits listed: 13 | newest overall: a09a35458c70 2025-01-12T02:10:10.000Z
+ newest at or before cut: a09a35458c702b33eeacc393d103063234e8bc28 2025-01-12T02:10:10.000Z | Update README.md
+== mistralai/Mistral-7B-Instruct-v0.3
+ gated: False | license: ['license:apache-2.0'] | current main sha: c170c708c41dac9275d15a8fff4eca08d52bab71 | lastModified: 2025-12-03T12:13:48.000Z
+ weight files total GB: 28.99 | n files 4
+ commits listed: 34 | newest overall: c170c708c41d 2025-12-03T12:13:48.000Z
+ newest at or before cut: c170c708c41dac9275d15a8fff4eca08d52bab71 2025-12-03T12:13:48.000Z | Update README.md
+== microsoft/Phi-3.5-mini-instruct
+ gated: False | license: ['license:mit'] | current main sha: 2fe192450127e6a83f7441aef6e3ca586c338b77 | lastModified: 2025-12-10T20:22:56.000Z
+ weight files total GB: 7.64 | n files 2
+ commits listed: 14 | newest overall: 2fe192450127 2025-12-10T20:22:56.000Z
+ newest at or before cut: 2fe192450127e6a83f7441aef6e3ca586c338b77 2025-12-10T20:22:56.000Z | Update README.md (#43)
+== Qwen/Qwen2.5-1.5B-Instruct
+ gated: False | license: ['license:apache-2.0'] | current main sha: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 | lastModified: 2024-09-25T12:32:50.000Z
+ weight files total GB: 3.09 | n files 1
+ commits listed: 8 | newest overall: 989aa7980e4c 2024-09-25T12:32:50.000Z
+ newest at or before cut: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 2024-09-25T12:32:50.000Z | Update metadata: Add library_name to Transformers (#1)

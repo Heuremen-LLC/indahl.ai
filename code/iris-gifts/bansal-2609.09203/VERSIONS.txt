@@ -1,0 +1,4 @@
+Runs: Apple M5 Max, macOS 26.6.2, Python 3.12.13, PyTorch 2.4.0 (MPS), transformers 4.46.3, float16 (ours/live/runs/*.meta.json)
+Models: Qwen/Qwen2.5-1.5B-Instruct at 989aa7980e4cf806f80c7fef2b1adb7bc71aa306, microsoft/Phi-3.5-mini-instruct at 2fe192450127e6a83f7441aef6e3ca586c338b77 (weights sha256 in meta.json)
+Readers: ours/live/read_live.py and score.py with python3 (standard library), ours/gt_check/l5.py with Python 3.12.13 and RDKit 2024.09.6
+Recount: scout/ with numpy 2.5.3, scipy 1.18.1, scikit-learn 1.9.1 (scout/out/rebuild_baselines.txt), pypdf for the paper text

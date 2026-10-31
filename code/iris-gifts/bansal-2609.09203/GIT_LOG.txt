@@ -1,0 +1,9 @@
+b67ce70 2026-10-31 12:11:17 -0400 OpenDiscoveryTrace gift: second referee round (cut relabel per addendum 2, L5 three-way verdicts, wording)
+ba85fe0 2026-10-31 12:10:24 -0400 OpenDiscoveryTrace gift: addendum 4, changes made after the first outputs and the referee (L5 three-way verdicts, set-aside list, cut definition)
+6f92210 2026-10-31 12:03:59 -0400 OpenDiscoveryTrace gift: plain punctuation in the L3 output, numbers unchanged
+58b7df5 2026-10-31 12:03:11 -0400 OpenDiscoveryTrace gift: L1-L5 readings with Check Block, full-read verdicts, RDKit check, referee corrections, draft
+3f242aa 2026-10-31 11:24:39 -0400 OpenDiscoveryTrace gift: addendum 3, L5 check of their ground truth with RDKit on PubChem structures (defined after the data), before any L4 tally
+c5a0859 2026-10-31 11:22:08 -0400 OpenDiscoveryTrace gift: addendum 2, dd_e04 classify reads the 50 in IC50 (correction to addendum 1), rule B fails its hand-check, cut parts, before any L4 tally
+a20bf5b 2026-10-31 11:17:49 -0400 OpenDiscoveryTrace gift: addendum 1 time from its commit
+8f25c32 2026-10-31 11:17:40 -0400 OpenDiscoveryTrace gift: addendum 1, L4 committed rule fails its hand-check (list markers); full read becomes the L4 ruler, fixed rule B beside it, before any tally
+1bdf56c 2026-10-31 10:50:44 -0400 OpenDiscoveryTrace gift: plan for the Metal live arm (Qwen-1.5B, Phi-3.5-mini, their runner's settings), runner, driver, scorer and its known-good, before any request

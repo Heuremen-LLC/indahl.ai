@@ -1,0 +1,14 @@
+{
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+ "safetensors_sha256": {
+  "model.safetensors": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+ },
+ "device": "mps",
+ "dtype": "float16",
+ "torch": "2.4.0",
+ "transformers": "4.46.3",
+ "python": "3.12.13",
+ "macos": "26.6.2",
+ "started_utc": "2026-10-31T14:54:19Z"
+}

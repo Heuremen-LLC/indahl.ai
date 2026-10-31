@@ -1,0 +1,22 @@
+=== trajectories
+('claude-opus-4.6', 'False', "'pending'", 'None', 'gt') 12
+('claude-opus-4.6', 'False', "'pending'", 'None', 'nogt') 1
+('claude-opus-4.6', 'None', "'pending'", 'None', 'nogt') 81
+('claude-opus-4.6', 'True', "'pending'", 'None', 'gt') 30
+('gemini-3.1-pro', 'False', "'pending'", 'None', 'gt') 13
+('gemini-3.1-pro', 'None', "'pending'", 'None', 'nogt') 82
+('gemini-3.1-pro', 'True', "'pending'", 'None', 'gt') 29
+('gpt-5.4', 'False', "'pending'", 'None', 'gt') 13
+('gpt-5.4', 'None', "'pending'", 'None', 'nogt') 82
+('gpt-5.4', 'True', "'pending'", 'None', 'gt') 29
+=== data/trajectories
+('claude-opus-4.6', 'False', "'pending'", 'None', 'gt') 9
+('claude-opus-4.6', 'False', "'pending'", 'None', 'nogt') 1
+('claude-opus-4.6', 'None', "'pending'", 'None', 'nogt') 59
+('claude-opus-4.6', 'True', "'pending'", 'None', 'gt') 15
+('gemini-3.1-pro', 'False', "'pending'", 'None', 'gt') 9
+('gemini-3.1-pro', 'None', "'pending'", 'None', 'nogt') 56
+('gemini-3.1-pro', 'True', "'pending'", 'None', 'gt') 23
+('gpt-5.4', 'False', "'pending'", 'None', 'gt') 8
+('gpt-5.4', 'None', "'pending'", 'None', 'nogt') 51
+('gpt-5.4', 'True', "'pending'", 'None', 'gt') 20
