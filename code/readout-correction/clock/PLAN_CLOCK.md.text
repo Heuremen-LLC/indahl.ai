@@ -35,3 +35,8 @@ BUDGET. Estimate about 31 s per chip per fire (cap 60 s per chip-fire in fire_cl
  First fire: both chips tonight. Later fires during the week as seconds allow, each on the same code and plan.
 WHAT IT CANNOT SAY. No mechanism is named. A BELOW says the 31 Oct table no longer matches today's kick on these qubits; it does not say why.
  One fire is one point; the copies A and B are the only repeat inside a fire.
+
+ADDENDUM 1 (31 Oct 2026 ~19:00 EDT, after the first fire was read, before any later fire). The FINAL rule compares the two copies' LABELS.
+From the next fire on, analyze_clock.py also prints the copy GAP of the clock reading with its width: (share M31 - share MT) in copy A minus
+the same in copy B, 99 % bootstrap over qubits. The FINAL rule is unchanged. For the first fire this gap was computed after the data:
+kingston +0.009 [-0.038, +0.050], marrakesh +0.045 [-0.053, +0.133]; neither resolves, and on marrakesh the copies differ in sign.

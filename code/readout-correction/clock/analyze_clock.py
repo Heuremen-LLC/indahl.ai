@@ -23,4 +23,15 @@ L = [f'DARKWAVE CLOCK, {chip}, fire {rec["day_utc"]} UTC. Code and plan: PLAN_CL
 for k, v in fin.items():
     if k.startswith('KG'): continue
     L.append(f'{k}: {v["v"]:+.3f} [{v["lo"]:+.3f}, {v["hi"]:+.3f}] n={v["n"]} | A {v["A"]} B {v["B"]} | FINAL {v["final"] if kg else "not decided (known-good)"}')
+# ADDENDUM 1: the copy gap of the clock reading with its width (FINAL rule unchanged)
+def _ab(Zc):
+    ph = {a: np.arctan2(K.spect_expect(Zc[(a, 'Y')], len(S)), K.spect_expect(Zc[(a, 'X')], len(S))) for a in C.ARMS}
+    return {a: np.abs(np.degrees(K.wrap(ph[a] - ph['D'])) / C.N) for a in ('M', 'M31', 'MT')}
+_x = {'A': _ab({k: [v] for k, v in ZA.items()}), 'B': _ab({k: [v] for k, v in ZB.items()})}
+def _d(c, ix): x = _x[c]; return (1 - np.median(x['M31'][ix]) / np.median(x['M'][ix])) - (1 - np.median(x['MT'][ix]) / np.median(x['M'][ix]))
+_g = _d('A', np.arange(len(S))) - _d('B', np.arange(len(S))); _r = np.random.default_rng(31); _bs = []
+for _ in range(2000):
+    _ix = _r.integers(0, len(S), len(S)); _bs.append(_d('A', _ix) - _d('B', _ix))
+_lo, _hi = np.percentile(_bs, [0.5, 99.5])
+L.append(f'copy gap of the clock reading (A minus B, addendum 1): {_g:+.3f} [{_lo:+.3f}, {_hi:+.3f}] -> {"resolves" if (_lo > 0 or _hi < 0) else "does not resolve"}')
 open(f'{D}/results_clock.text', 'w').write('\n'.join(L) + '\n'); print('\n'.join(L))
