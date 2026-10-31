@@ -1,0 +1,38 @@
+# Gift plan: arXiv 2608.04355 (M. Chen, B. Qu, L. Wang, "The Calibration Floor"), written 31 Oct 2026 before any reading below
+
+Scout recount (scout/RECOUNT.md, scout/run_all.sh, our code, their files read as data): 496 of 527 checks rebuild, including the 29-cell
+decomposition table and the constrained-decoding table; 24 NOT REBUILT with our values; 7 NO FILE. That rebuild is the known-good for the
+readings: every reading starts from scout/common.py decompose(), which rebuilds their Table 9.6 to the printed digits.
+KNOWN-GOOD: scout/common.py decompose() on the 29 cells (scout/out, rebuild_core) before any reading.
+
+Release pinned at 35851b86432a (github deepgrounding/calibration-floor), files hashed in scout/SHA256SUMS_35851b8.txt. Zero GPU.
+
+## Readings (four outcomes; nothing folded; per cell first, then across cells)
+D1 Content margin with an exact paired interval, per cell of the 29: helpful (a0 wrong, final right, both parseable) and harmful (the
+   reverse) counted; the margin (helpful minus harmful)/n with an exact interval from the Clopper-Pearson interval on helpful/(helpful+harmful)
+   conditional on the discordant count; outcome per cell (ABOVE, BELOW, CONSISTENT with zero, with the bound printed) beside their bootstrap
+   interval. Counts of cells by outcome, by scale (0.8B and 2B against 4B, 9B and Gemma).
+D2 Token cap on unparseable first answers: for every cell, the a0 replies with no parseable answer (scout is_bad), re-encoded with the
+   Qwen3.5 tokenizer at their pinned model revision (tokenizer.json fetched as data, sha256 recorded), counted against the cap in their code
+   (896 multiple choice, 1024 open, 512 code). Histogram of lengths from cap minus 10 to cap printed. Ruler side by side: the same count on
+   a0 replies that did parse (a reply that parsed should rarely sit at the cap). A reply counts as at the cap when its re-encoded length is
+   at least cap minus 3 (re-encoding decoded text can drift by a token or two; the histogram shows the drift). Split their format-recovery
+   margin into recoveries whose a0 sat at the cap and the rest. Gemma cells use the same rule with the count marked approximate (Gemma's
+   tokenizer differs; we use Qwen's only for Qwen cells and print Gemma as characters).
+D3 GSM8K and MATH change by numeric equality against the string inequality their change rate uses: rows where the two answer strings differ
+   but parse to the same number, per cell, and the change rate both ways.
+D4 Closure with its population stated and an interval: per constrained cell, closure 1 - |constrained total - content| / |original total -
+   content| with a paired bootstrap over task ids (10,000 draws, seed 2026, their seed), and the median over each population: cells with a0-bad
+   at least 8% under the original extractor (the population their text names), the ten with a printed closure, and all fourteen.
+
+## Carriers and limits
+No model is run. D2 re-encodes decoded text, so a count at the cap is a re-encoding, not their generation log; the histogram is printed so
+the reader sees the drift. Any addendum is dated and committed before the reading it changes is computed.
+
+## Addendum 1 (31 Oct 2026, after the referee pass; every reading here is defined after the data)
+D1b Per cell, the discordant counts (helpful, harmful) and the exact McNemar p beside their own bootstrap interval from stats_tests.json; no
+    interval is printed for a cell with no discordant rows. The conditional interval of D1 is a test, not a width, when few rows disagree.
+D2b The D2 contrast split by task kind: text cells (multiple choice and open) against code cells, whose parsed replies can sit at the cap
+    for another reason; and the same cap count on unparseable final answers.
+D4b The median closure over the cells where closure is defined (one of the fourteen has a zero denominator), beside the six cells that
+    meet their 8% rule.

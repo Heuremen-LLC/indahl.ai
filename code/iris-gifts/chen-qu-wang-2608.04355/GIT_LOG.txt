@@ -1,0 +1,4 @@
+71f59f3 2026-10-30T20:29:54-04:00 Calibration-floor gift: D1b, D2b, D4b readings, Check Block filed
+2bec264 2026-10-30T20:29:02-04:00 Calibration-floor gift: Addendum 1 (D1b, D2b, D4b, defined after the data) before computing
+bd698f0 2026-10-30T20:18:44-04:00 Calibration-floor gift: readings D1-D4, D2 read in full, Check Block filed
+3e889dc 2026-10-30T20:08:41-04:00 Calibration-floor gift (2608.04355): scout recount and plan D1-D4 before any reading
