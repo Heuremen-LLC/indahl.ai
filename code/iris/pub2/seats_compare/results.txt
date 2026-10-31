@@ -1,0 +1,25 @@
+phi4-mini: model gate Mac pass (1.0) Armature pass (0.982); identical replies bare 84/170, bare_copy 80/170, guard 55/170
+   P1: CONSISTENT diff +0.067 [+0.000, +0.167] n 30 (Armature 0.300, Mac 0.233)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30 (Armature 1.000, Mac 1.000)
+   P3: CANNOT_TELL (gate failed (Mac fails/Armature fails), n 20)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29 (Armature 0.000, Mac 0.000)
+llama3.2_3b: model gate Mac pass (0.994) Armature pass (0.976); identical replies bare 120/170, bare_copy 120/170, guard 94/170
+   P1: CONSISTENT diff +0.115 [+0.000, +0.269] n 26 (Armature 0.692, Mac 0.577)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30 (Armature 1.000, Mac 1.000)
+   P3: CANNOT_TELL (gate failed (Mac fails/Armature fails), n 20)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29 (Armature 0.000, Mac 0.000)
+qwen2.5_1.5b: model gate Mac pass (1.0) Armature pass (1.0); identical replies bare 120/170, bare_copy 120/170, guard 98/170
+   P1: CANNOT_TELL (gate failed (Mac fails/Armature fails), n 30)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30 (Armature 1.000, Mac 1.000)
+   P3: CANNOT_TELL (gate failed (Mac fails/Armature fails), n 20)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29 (Armature 0.000, Mac 0.000)
+granite4.1_3b: model gate Mac pass (0.971) Armature pass (0.988); identical replies bare 90/170, bare_copy 96/170, guard 29/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 10 (Armature 1.000, Mac 1.000)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30 (Armature 1.000, Mac 1.000)
+   P3: CANNOT_TELL (gate failed (Mac fails/Armature fails), n 19)
+   P4: CONSISTENT diff +0.000 [-0.172, +0.172] n 29 (Armature 0.207, Mac 0.207)
+ministral-3_3b: model gate Mac pass (1.0) Armature pass (1.0); identical replies bare 71/170, bare_copy 71/170, guard 21/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 30 (Armature 0.233, Mac 0.233)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30 (Armature 1.000, Mac 1.000)
+   P3: CANNOT_TELL (gate failed (Mac fails/Armature fails), n 16)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29 (Armature 0.000, Mac 0.000)

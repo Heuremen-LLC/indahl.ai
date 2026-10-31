@@ -1,0 +1,86 @@
+{
+ "read_at": "2026-10-30 (after the runs)",
+ "mac_version": {
+  "version": "0.34.2"
+ },
+ "armature_version": {
+  "version": "0.34.3"
+ },
+ "models": {
+  "phi4-mini:latest": {
+   "manifest_digest_mac": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
+   "manifest_digest_armature": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
+   "template_same": true,
+   "parameters_same": true,
+   "system_same": true,
+   "template_sha": [
+    "813f53fdc6e5",
+    "813f53fdc6e5"
+   ],
+   "parameters": [
+    null,
+    null
+   ]
+  },
+  "llama3.2:3b": {
+   "manifest_digest_mac": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+   "manifest_digest_armature": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+   "template_same": true,
+   "parameters_same": true,
+   "system_same": true,
+   "template_sha": [
+    "966de95ca8a6",
+    "966de95ca8a6"
+   ],
+   "parameters": [
+    "stop                           \"<|start_header_id|>\"\nstop                           \"<|end_header_id|>\"\nstop                           \"<|eot_id|>\"",
+    "stop                           \"<|start_header_id|>\"\nstop                           \"<|end_header_id|>\"\nstop                           \"<|eot_id|>\""
+   ]
+  },
+  "qwen2.5:1.5b": {
+   "manifest_digest_mac": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+   "manifest_digest_armature": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+   "template_same": true,
+   "parameters_same": true,
+   "system_same": true,
+   "template_sha": [
+    "eb4402837c78",
+    "eb4402837c78"
+   ],
+   "parameters": [
+    null,
+    null
+   ]
+  },
+  "granite4.1:3b": {
+   "manifest_digest_mac": "6fd349357287c7ffc9e38189a93b48ea175d24fc566b38f09cfc564fb7f303eb",
+   "manifest_digest_armature": "6fd349357287c7ffc9e38189a93b48ea175d24fc566b38f09cfc564fb7f303eb",
+   "template_same": true,
+   "parameters_same": true,
+   "system_same": true,
+   "template_sha": [
+    "89a0ab46e638",
+    "89a0ab46e638"
+   ],
+   "parameters": [
+    null,
+    null
+   ]
+  },
+  "ministral-3:3b": {
+   "manifest_digest_mac": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
+   "manifest_digest_armature": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
+   "template_same": true,
+   "parameters_same": true,
+   "system_same": true,
+   "template_sha": [
+    "24c6226aca35",
+    "24c6226aca35"
+   ],
+   "parameters": [
+    "temperature                    0.15",
+    "temperature                    0.15"
+   ]
+  }
+ }
+}

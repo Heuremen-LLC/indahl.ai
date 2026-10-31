@@ -1,0 +1,170 @@
+{"id": "P1_00", "raw": "No \u2013 B\u2019s higher point estimate (0.70 vs. 0.68) and overlapping confidence intervals mean A is not better.", "done_reason": "stop", "error": null}
+{"id": "P1_01", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_02", "raw": "No \u2013 they have identical point estimates and identical confidence intervals, so there\u2019s no evidence that A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_03", "raw": "No \u2013 B\u2019s higher point estimate (0.70 vs. 0.68) and overlapping confidence intervals mean A is not better.", "done_reason": "stop", "error": null}
+{"id": "P1_04", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_05", "raw": "No \u2013 they have identical point estimates and overlapping confidence intervals, so A is not better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_06", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_07", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_08", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_09", "raw": "No \u2013 they\u2019re identical (same point estimate and confidence interval), so A is not better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_10", "raw": "No \u2013 the overlapping 95\u202f% CIs mean the difference is not statistically significant, so we cannot say A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_11", "raw": "No \u2013 the confidence intervals overlap (0.60\u20130.70 vs\u202f0.59\u20130.69), so we cannot conclude that A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_12", "raw": "No \u2013 they have identical point estimates and overlapping confidence intervals, so there\u2019s no evidence that A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_13", "raw": "No \u2013 they have identical point estimates and overlapping confidence intervals, so A is not better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_14", "raw": "No \u2013 the overlapping confidence intervals mean the difference is not statistically significant.", "done_reason": "stop", "error": null}
+{"id": "P1_15", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_16", "raw": "No \u2013 the overlapping confidence intervals mean the difference isn\u2019t statistically significant, so A isn\u2019t demonstrably better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_17", "raw": "No \u2013 the overlapping confidence intervals (0.56\u20130.66 vs\u202f0.54\u20130.64) mean we cannot conclude that A is statistically better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_18", "raw": "No \u2013 the confidence intervals overlap, so the difference isn\u2019t statistically significant.", "done_reason": "stop", "error": null}
+{"id": "P1_19", "raw": "No \u2013 the overlapping confidence intervals and only a 0.01 mean difference mean we cannot conclude that A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_20", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_21", "raw": "No \u2013 they\u2019re indistinguishable; the point estimates and confidence intervals are identical.", "done_reason": "stop", "error": null}
+{"id": "P1_22", "raw": "No \u2013 they have identical point estimates and overlapping (indeed identical) confidence intervals, so there\u2019s no evidence that A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_23", "raw": "No \u2013 the overlapping confidence intervals mean the difference isn\u2019t statistically significant, so A isn\u2019t conclusively better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_24", "raw": "No \u2013 the overlapping 95\u202f% CIs mean the difference (0.68 vs\u202f0.69) is not statistically significant.", "done_reason": "stop", "error": null}
+{"id": "P1_25", "raw": "No \u2013 B\u2019s higher estimate (0.70 vs\u202f0.68) and overlapping confidence intervals mean A is not better.", "done_reason": "stop", "error": null}
+{"id": "P1_26", "raw": "No \u2013 the 0.01 difference is within the overlapping 95\u202f% CIs, so A is not statistically better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_27", "raw": "No \u2013 the 0.01 difference is within the overlapping confidence intervals, so A is not statistically better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_28", "raw": "No \u2013 the confidence intervals overlap, so there\u2019s no statistically significant evidence that A outperforms B.", "done_reason": "stop", "error": null}
+{"id": "P1_29", "raw": "No \u2013 the confidence intervals overlap, so the difference is not statistically significant.", "done_reason": "stop", "error": null}
+{"id": "P1_30", "raw": "No \u2013 Method\u202fB (0.85\u202f[0.84,\u202f0.86]) outperforms Method\u202fA (0.68\u202f[0.67,\u202f0.69]).", "done_reason": "stop", "error": null}
+{"id": "P1_31", "raw": "No \u2013 Method\u202fB (0.72\u202f[0.71,\u202f0.73]) outperforms Method\u202fA (0.57\u202f[0.56,\u202f0.58]).", "done_reason": "stop", "error": null}
+{"id": "P1_32", "raw": "Yes, A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_33", "raw": "Yes \u2013 A\u2019s estimate (0.79) and 95\u202f% CI (0.78\u20130.80) lie well above B\u2019s estimate (0.57) and CI (0.56\u20130.58), so A is clearly superior.", "done_reason": "stop", "error": null}
+{"id": "P1_34", "raw": "No \u2013 B outperforms A (0.77\u202f[0.76,\u202f0.78] vs\u202f0.58\u202f[0.57,\u202f0.59]).", "done_reason": "stop", "error": null}
+{"id": "P1_35", "raw": "Yes \u2013 A\u2019s estimate (0.68) and CI (0.67\u20130.69) are higher and non\u2011overlapping with B\u2019s (0.48, 0.47\u20130.49), indicating a statistically significant advantage.", "done_reason": "stop", "error": null}
+{"id": "P1_36", "raw": "Yes, A is better \u2013 its confidence interval [0.59,\u202f0.61] lies entirely above B\u2019s [0.37,\u202f0.39].", "done_reason": "stop", "error": null}
+{"id": "P1_37", "raw": "No \u2013 B outperforms A (0.90\u202f[0.89,\u202f0.91] vs. 0.66\u202f[0.65,\u202f0.67]).", "done_reason": "stop", "error": null}
+{"id": "P1_38", "raw": "Yes \u2013 A is significantly better than B (mean\u202f0.55\u202fvs\u202f0.30, with non\u2011overlapping 95\u202f% CIs).", "done_reason": "stop", "error": null}
+{"id": "P1_39", "raw": "No \u2013 Method\u202fB (0.95\u202f[0.94,\u202f0.96]) outperforms Method\u202fA (0.78\u202f[0.77,\u202f0.79]).", "done_reason": "stop", "error": null}
+{"id": "P2_00", "raw": "The model answered 48 out of 80 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{48}{80} = 0.60 \\; \\text{(or 60\u202f%)}\n\\]\n\nSo the model\u2019s accuracy is **60\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_01", "raw": "The model answered 37 out of 50 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{37}{50} = 0.74 \\; \\text{(or 74\u202f%)}\n\\]\n\nSo the model\u2019s accuracy is **74\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_02", "raw": "The model answered 41 out of 80 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{41}{80} = 0.5125 \\;\\text{(or}\\; 51.25\\%\\text{)}\n\\]\n\nSo the model\u2019s accuracy is **51.25\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_03", "raw": "The model answered 26 out of 50 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{26}{50} = 0.52 \\; \\text{(or 52\u202f%)}\n\\]\n\nSo the model\u2019s accuracy is **52\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_04", "raw": "The model answered 16 out of 20 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{16}{20} = 0.80 = 80\\%\n\\]\n\nSo the model\u2019s accuracy on this test is **80\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_05", "raw": "The model answered 12 out of 20 questions correctly, so its accuracy is:\n\n\\[\n\\text{Accuracy} = \\frac{12}{20} = 0.60 \\; \\text{or} \\; 60\\%.\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_06", "raw": "The model answered 20 out of 25 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{\\text{Correct answers}}{\\text{Total questions}} = \\frac{20}{25} = 0.80\n\\]\n\nSo the model\u2019s accuracy is **80\u202f%** (or 0.80 in decimal form).", "done_reason": "stop", "error": null}
+{"id": "P2_07", "raw": "The model answered 37 out of 50 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{37}{50} = 0.74 \\; \\text{(or 74\u202f%)}\n\\]\n\nSo the model\u2019s accuracy is **74\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_08", "raw": "The model answered 22 out of 25 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{22}{25} = 0.88 \\; \\text{(or 88\u202f%)}\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_09", "raw": "The model\u2019s accuracy is calculated as the proportion of correct answers out of the total:\n\n\\[\n\\text{Accuracy} = \\frac{\\text{Correct Answers}}{\\text{Total Answers}}\n                 = \\frac{62}{80}\n                 = 0.775\n\\]\n\nSo the model achieved **77.5\u202f% accuracy** (or 0.775 in decimal form).", "done_reason": "stop", "error": null}
+{"id": "P2_10", "raw": "The model answered 28 out of 40 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{28}{40} = 0.70 = 70\\%\n\\]\n\nSo the model\u2019s accuracy on this test is **70\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_11", "raw": "The model answered 34 out of 40 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{34}{40} = 0.85 = 85\\%\n\\]\n\nSo the model\u2019s accuracy on this test is **85\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_12", "raw": "**Accuracy** = \\(\\dfrac{\\text{Correct answers}}{\\text{Total answers}}\\)\n\n\\[\n\\text{Accuracy} = \\frac{43}{60} \\approx 0.7167\n\\]\n\nSo the model\u2019s accuracy is **about 71.7\u202f%** (rounded to one decimal place).", "done_reason": "stop", "error": null}
+{"id": "P2_13", "raw": "The model answered 34 out of 50 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{34}{50} = 0.68 \\; \\text{(or 68\u202f%)}\n\\]\n\nSo the model\u2019s accuracy is **68\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_14", "raw": "The model answered 28 out of 40 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{28}{40} = 0.70 = 70\\%\n\\]\n\nSo the model\u2019s accuracy on this test is **70\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_15", "raw": "The model answered 39 out of 50 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{39}{50} = 0.78 \\; \\text{(or 78\u202f%)}\n\\]\n\nSo the model\u2019s accuracy on this test is **78\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P2_16", "raw": "The model\u2019s accuracy is calculated as the proportion of correct answers out of the total:\n\n\\[\n\\text{Accuracy} = \\frac{\\text{Correct Answers}}{\\text{Total Answers}}\n                 = \\frac{49}{80}\n                 = 0.6125\n\\]\n\nSo the model achieved **61.25\u202f% accuracy** (or 0.6125 in decimal form).", "done_reason": "stop", "error": null}
+{"id": "P2_17", "raw": "The model\u2019s accuracy is  \n\n\\[\n\\text{Accuracy} = \\frac{18}{25} = 0.72 \\;\\text{or}\\; 72\\%.\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_18", "raw": "The model\u2019s accuracy is:\n\n\\[\n\\text{Accuracy} = \\frac{59}{80} = 0.7375 \\;\\text{(or 73.75\u202f%)}\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_19", "raw": "The accuracy is calculated as the proportion of correct answers out of the total number of questions:\n\n\\[\n\\text{Accuracy} = \\frac{\\text{Correct answers}}{\\text{Total answers}}\n                 = \\frac{34}{60}\n                 \\approx 0.5667\n\\]\n\nSo the model\u2019s accuracy is **about 56.7\u202f%** (or 0.567 as a decimal).", "done_reason": "stop", "error": null}
+{"id": "P2_20", "raw": "The model\u2019s accuracy is:\n\n\\[\n\\text{Accuracy} = \\frac{43}{80} = 0.5375 \\;\\text{(or 53.75\u202f%)}\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_21", "raw": "The model answered 12 out of 20 questions correctly, so its accuracy is:\n\n\\[\n\\text{Accuracy} = \\frac{12}{20} = 0.60 \\; \\text{or} \\; 60\\%.\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_22", "raw": "The model\u2019s accuracy is  \n\n\\[\n\\text{Accuracy} = \\frac{11}{20} = 0.55 \\;\\text{or}\\; 55\\%.\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_23", "raw": "**Accuracy** = \\(\\dfrac{\\text{correct answers}}{\\text{total answers}}\\)\n\n\\[\n\\text{Accuracy} = \\frac{43}{60} \\approx 0.7167\n\\]\n\nSo the model\u2019s accuracy is **about 71.7\u202f%** (or 0.7167 in decimal form).", "done_reason": "stop", "error": null}
+{"id": "P2_24", "raw": "The model\u2019s accuracy is calculated as the proportion of correct answers out of the total:\n\n\\[\n\\text{Accuracy} = \\frac{\\text{Correct Answers}}{\\text{Total Answers}}\n                 = \\frac{66}{80}\n                 = 0.825\n\\]\n\nSo the model achieved **82.5\u202f% accuracy** (or 0.825 in decimal form).", "done_reason": "stop", "error": null}
+{"id": "P2_25", "raw": "The model\u2019s accuracy is:\n\n\\[\n\\text{Accuracy} = \\frac{\\text{Correct answers}}{\\text{Total answers}} = \\frac{29}{40} = 0.725\n\\]\n\nSo the model achieved **72.5\u202f% accuracy** (or 0.725 in decimal form).", "done_reason": "stop", "error": null}
+{"id": "P2_26", "raw": "The model\u2019s accuracy is:\n\n\\[\n\\text{Accuracy} = \\frac{51}{80} = 0.6375 \\;\\text{(or}\\; 63.75\\%\\text{)}\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_27", "raw": "The model\u2019s accuracy is:\n\n\\[\n\\text{Accuracy} = \\frac{57}{80} = 0.7125 \\;\\text{(or 71.25\u202f%)}\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_28", "raw": "The model\u2019s accuracy is  \n\n\\[\n\\frac{19}{25} = 0.76 \\;\\text{or}\\; 76\\%.\n\\]", "done_reason": "stop", "error": null}
+{"id": "P2_29", "raw": "The model answered 48 out of 80 questions correctly.\n\n\\[\n\\text{Accuracy} = \\frac{48}{80} = 0.60 \\; \\text{(or 60\u202f%)}\n\\]\n\nSo the model\u2019s accuracy is **60\u202f%**.", "done_reason": "stop", "error": null}
+{"id": "P3_00", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_01", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_02", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_03", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_04", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_05", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_06", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_07", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_08", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_09", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_10", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_11", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_12", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_13", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_14", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_15", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_16", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_17", "raw": "", "done_reason": "length", "error": null}
+{"id": "P3_18", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_19", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_20", "raw": "", "done_reason": "length", "error": null}
+{"id": "P3_21", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_22", "raw": "Yes.  \n\n104 \u00f7 156 = 0.666666\u2026, which is 66.666\u2026\u202f%. Rounded to two decimal places, that is 66.67\u202f%.", "done_reason": "stop", "error": null}
+{"id": "P3_23", "raw": "Yes.  \n\n85 \u00f7 210 = 0.4047619\u2026, which is 40.47619\u202f%. Rounded to two decimal places, that is 40.48\u202f%.", "done_reason": "stop", "error": null}
+{"id": "P3_24", "raw": "Yes.  \n\n275 \u00f7 325 = 0.846153846\u2026 \u00d7 100 \u2248 84.615%, which rounds to 84.62%.", "done_reason": "stop", "error": null}
+{"id": "P3_25", "raw": "Yes.  \n\n196 \u00f7 340 = 0.576470588\u2026, which is 57.6470588\u202f%. Rounded to two decimal places, that is 57.65\u202f%.", "done_reason": "stop", "error": null}
+{"id": "P3_26", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_27", "raw": "Yes. 91 divided by 168 equals 0.541666\u2026, which is 54.1666\u2026\u202f%\u2014rounded to two decimal places it is 54.17\u202f%.", "done_reason": "stop", "error": null}
+{"id": "P3_28", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_29", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_30", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_31", "raw": "Yes. 141 \u00f7 213 \u2248\u202f0.66197, which rounds to\u202f66.2\u202f% when expressed to one decimal place.", "done_reason": "stop", "error": null}
+{"id": "P3_32", "raw": "Yes. 117 divided by 166 equals approximately 0.7048, which is 70.48% when expressed as a percentage.", "done_reason": "stop", "error": null}
+{"id": "P3_33", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_34", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_35", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_36", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_37", "raw": "Yes.  \n\n141 \u00f7 221 \u2248 0.6380, which is 63.8\u202f%.", "done_reason": "stop", "error": null}
+{"id": "P3_38", "raw": "Yes.", "done_reason": "stop", "error": null}
+{"id": "P3_39", "raw": "Yes.  \n\n115 \u00f7 349 \u2248 0.329512, which is 32.9512\u202f%. Rounded to two decimal places, that is 32.95\u202f%.", "done_reason": "stop", "error": null}
+{"id": "P4_00", "raw": "**Model accuracy (average over 8 seeds):** **0.785**", "done_reason": "stop", "error": null}
+{"id": "P4_01", "raw": "**Model accuracy:** 0.713 (71.3\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_02", "raw": "**Model accuracy (average over 10 seeds):** **0.617** (\u2248\u202f61.7\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_03", "raw": "**Model accuracy (average over 10 seeds):** **0.65** (\u2248\u202f0.6498).", "done_reason": "stop", "error": null}
+{"id": "P4_04", "raw": "**Model accuracy (mean over 10 seeds):** **0.643**", "done_reason": "stop", "error": null}
+{"id": "P4_05", "raw": "The model\u2019s overall accuracy can be summarized by the mean of the eight runs:\n\n\\[\n\\text{Accuracy} = \\frac{0.698 + 0.640 + 0.716 + 0.709 + 0.716 + 0.726 + 0.665 + 0.697}{8}\n                 \\approx 0.696\n\\]\n\nSo, the model\u2019s accuracy is **\u2248\u202f0.696**.", "done_reason": "stop", "error": null}
+{"id": "P4_06", "raw": "**Model accuracy (average over 10 seeds):** **0.719** (\u2248\u202f71.9\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_07", "raw": "**Model accuracy (mean over 8 seeds):** **0.735**", "done_reason": "stop", "error": null}
+{"id": "P4_08", "raw": "**Accuracy:** 0.756 (average over the 10 seeds)", "done_reason": "stop", "error": null}
+{"id": "P4_09", "raw": "0.742", "done_reason": "stop", "error": null}
+{"id": "P4_10", "raw": "**Model accuracy (average over 5 seeds):** **0.708** (\u2248\u202f70.8\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_11", "raw": "The model\u2019s overall accuracy can be summarized by the mean of the eight runs:\n\n\\[\n\\text{Accuracy} = \\frac{0.762 + 0.699 + 0.703 + 0.676 + 0.740 + 0.681 + 0.725 + 0.699}{8}\n                 \\approx 0.711\n\\]\n\nSo, report the model\u2019s accuracy as **0.71** (rounded to two decimal places).", "done_reason": "stop", "error": null}
+{"id": "P4_12", "raw": "**Model accuracy (average over 10 seeds):** **0.697** (\u2248\u202f69.7\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_13", "raw": "The model\u2019s overall accuracy can be summarized by the mean of the five runs:\n\n\\[\n\\text{Accuracy} = \\frac{0.728 + 0.756 + 0.754 + 0.789 + 0.707}{5} \\approx 0.747\n\\]\n\nSo, the reported accuracy is **0.747**.", "done_reason": "stop", "error": null}
+{"id": "P4_14", "raw": "**Model accuracy:** 0.793", "done_reason": "stop", "error": null}
+{"id": "P4_15", "raw": "**Model accuracy (average over 8 seeds):** **0.73** (73\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_16", "raw": "**Model accuracy (average over 5 seeds):** **0.607** (\u2248\u202f60.7\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_17", "raw": "**Model accuracy (average over 10 seeds):** **0.802**", "done_reason": "stop", "error": null}
+{"id": "P4_18", "raw": "0.6524", "done_reason": "stop", "error": null}
+{"id": "P4_19", "raw": "**Model accuracy (average over 8 seeds):** **0.779**", "done_reason": "stop", "error": null}
+{"id": "P4_20", "raw": "The model\u2019s overall accuracy can be summarized by the mean of the five runs:\n\n\\[\n\\text{Accuracy} = \\frac{0.649 + 0.667 + 0.709 + 0.695 + 0.650}{5}\n                 \\approx 0.674\n\\]\n\nSo the reported accuracy is **0.674**.", "done_reason": "stop", "error": null}
+{"id": "P4_21", "raw": "**Model accuracy (average over seeds):** 0.611 (\u2248\u202f61.1\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_22", "raw": "The model\u2019s overall accuracy can be summarized by the mean of the five runs:\n\n\\[\n\\text{Accuracy} = \\frac{0.71 + 0.809 + 0.704 + 0.802 + 0.684}{5}\n                 \\approx 0.742\n\\]\n\nSo the reported accuracy is **0.742** (\u2248\u202f74.2\u202f%).", "done_reason": "stop", "error": null}
+{"id": "P4_23", "raw": "**Model accuracy (average over 8 seeds):** **0.644**", "done_reason": "stop", "error": null}
+{"id": "P4_24", "raw": "**Model accuracy (mean over 10 seeds):** **0.643** (\u2248\u202f64.3\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_25", "raw": "0.761", "done_reason": "stop", "error": null}
+{"id": "P4_26", "raw": "**Model accuracy (mean over 8 seeds):** **0.844** (\u2248\u202f84.4\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_27", "raw": "**Model accuracy (average over 8 seeds):** **0.607** (\u2248\u202f60.7\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_28", "raw": "**Model accuracy (average over 8 seeds):** **0.709** (\u2248\u202f70.9\u202f%)", "done_reason": "stop", "error": null}
+{"id": "P4_29", "raw": "The model\u2019s overall accuracy can be summarized by the mean of the ten runs:\n\n\\[\n\\text{Accuracy} = \\frac{0.695 + 0.649 + 0.718 + 0.693 + 0.687 + 0.643 + 0.783 + 0.670 + 0.726 + 0.778}{10}\n                 \\approx 0.704\n\\]\n\nSo the reported accuracy is **0.704** (\u2248\u202f70.4\u202f%).", "done_reason": "stop", "error": null}
+{"id": "P3_40", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_41", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_42", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_43", "raw": "No. 244 divided by 325 is about 0.7508, or 75.1\u202f%, not 99.0\u202f%.", "done_reason": "stop", "error": null}
+{"id": "P3_44", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_45", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_46", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_47", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_48", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_49", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_50", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_51", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_52", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_53", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_54", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_55", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_56", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_57", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_58", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P3_59", "raw": "No.", "done_reason": "stop", "error": null}
+{"id": "P1_40", "raw": "No \u2013 Method\u202fB (0.93\u202f[0.92,\u202f0.94]) outperforms Method\u202fA (0.78\u202f[0.77,\u202f0.79]).", "done_reason": "stop", "error": null}
+{"id": "P1_41", "raw": "Yes \u2013 A is better, since its lower metric (0.82) and non\u2011overlapping confidence interval [0.81,\u202f0.83] clearly outperform B\u2019s higher value (1.04) and interval [1.03,\u202f1.05].", "done_reason": "stop", "error": null}
+{"id": "P1_42", "raw": "No \u2013 B\u2019s higher score (1.04) and non\u2011overlapping confidence intervals ([1.03,\u202f1.05] vs. [0.81,\u202f0.83]) show it outperforms A.", "done_reason": "stop", "error": null}
+{"id": "P1_43", "raw": "Yes, A is better than B.", "done_reason": "stop", "error": null}
+{"id": "P1_44", "raw": "Yes \u2013 A\u2019s estimate (0.79\u202f[0.78,\u202f0.80]) is far above B\u2019s (0.58\u202f[0.57,\u202f0.59]), with non\u2011overlapping confidence intervals.", "done_reason": "stop", "error": null}
+{"id": "P1_45", "raw": "B is better \u2013 its mean (1.06) exceeds A\u2019s (0.83) and the confidence intervals do not overlap.", "done_reason": "stop", "error": null}
+{"id": "P1_46", "raw": "No \u2013 Method\u202fB (0.82\u202f[0.81,\u202f0.83]) outperforms Method\u202fA (0.64\u202f[0.63,\u202f0.65]).", "done_reason": "stop", "error": null}
+{"id": "P1_47", "raw": "Yes \u2013 A\u2019s estimate (0.56) and CI (0.55\u20130.57) are higher and non\u2011overlapping with B\u2019s (0.35, 0.34\u20130.36), indicating a statistically significant advantage.", "done_reason": "stop", "error": null}
+{"id": "P1_48", "raw": "No \u2013 Method\u202fB (0.77\u202f[0.76,\u202f0.78]) clearly outperforms Method\u202fA (0.62\u202f[0.61,\u202f0.63]).", "done_reason": "stop", "error": null}
+{"id": "P1_49", "raw": "Yes, A is better than B.", "done_reason": "stop", "error": null}

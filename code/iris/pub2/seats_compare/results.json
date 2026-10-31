@@ -1,0 +1,386 @@
+{
+ "phi4-mini": {
+  "gate_mac": {
+   "model_gate": "pass",
+   "class_repeat_agree": 1.0,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "gate_armature": {
+   "model_gate": "pass",
+   "class_repeat_agree": 0.982,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "identical": {
+   "bare": [
+    84,
+    170
+   ],
+   "bare_copy": [
+    80,
+    170
+   ],
+   "guard": [
+    55,
+    170
+   ]
+  },
+  "families": {
+   "P1": {
+    "outcome": "CONSISTENT",
+    "diff": 0.067,
+    "ci": [
+     0.0,
+     0.167
+    ],
+    "n": 30,
+    "armature_rate": 0.3,
+    "mac_rate": 0.233
+   },
+   "P2": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 30,
+    "armature_rate": 1.0,
+    "mac_rate": 1.0
+   },
+   "P3": {
+    "outcome": "CANNOT_TELL",
+    "why": "gate failed (Mac fails/Armature fails)",
+    "n": 20
+   },
+   "P4": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 29,
+    "armature_rate": 0.0,
+    "mac_rate": 0.0
+   }
+  }
+ },
+ "llama3.2_3b": {
+  "gate_mac": {
+   "model_gate": "pass",
+   "class_repeat_agree": 0.994,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "gate_armature": {
+   "model_gate": "pass",
+   "class_repeat_agree": 0.976,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "identical": {
+   "bare": [
+    120,
+    170
+   ],
+   "bare_copy": [
+    120,
+    170
+   ],
+   "guard": [
+    94,
+    170
+   ]
+  },
+  "families": {
+   "P1": {
+    "outcome": "CONSISTENT",
+    "diff": 0.115,
+    "ci": [
+     0.0,
+     0.269
+    ],
+    "n": 26,
+    "armature_rate": 0.692,
+    "mac_rate": 0.577
+   },
+   "P2": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 30,
+    "armature_rate": 1.0,
+    "mac_rate": 1.0
+   },
+   "P3": {
+    "outcome": "CANNOT_TELL",
+    "why": "gate failed (Mac fails/Armature fails)",
+    "n": 20
+   },
+   "P4": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 29,
+    "armature_rate": 0.0,
+    "mac_rate": 0.0
+   }
+  }
+ },
+ "qwen2.5_1.5b": {
+  "gate_mac": {
+   "model_gate": "pass",
+   "class_repeat_agree": 1.0,
+   "families": {
+    "P1": false,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "gate_armature": {
+   "model_gate": "pass",
+   "class_repeat_agree": 1.0,
+   "families": {
+    "P1": false,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "identical": {
+   "bare": [
+    120,
+    170
+   ],
+   "bare_copy": [
+    120,
+    170
+   ],
+   "guard": [
+    98,
+    170
+   ]
+  },
+  "families": {
+   "P1": {
+    "outcome": "CANNOT_TELL",
+    "why": "gate failed (Mac fails/Armature fails)",
+    "n": 30
+   },
+   "P2": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 30,
+    "armature_rate": 1.0,
+    "mac_rate": 1.0
+   },
+   "P3": {
+    "outcome": "CANNOT_TELL",
+    "why": "gate failed (Mac fails/Armature fails)",
+    "n": 20
+   },
+   "P4": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 29,
+    "armature_rate": 0.0,
+    "mac_rate": 0.0
+   }
+  }
+ },
+ "granite4.1_3b": {
+  "gate_mac": {
+   "model_gate": "pass",
+   "class_repeat_agree": 0.971,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "gate_armature": {
+   "model_gate": "pass",
+   "class_repeat_agree": 0.988,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "identical": {
+   "bare": [
+    90,
+    170
+   ],
+   "bare_copy": [
+    96,
+    170
+   ],
+   "guard": [
+    29,
+    170
+   ]
+  },
+  "families": {
+   "P1": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 10,
+    "armature_rate": 1.0,
+    "mac_rate": 1.0
+   },
+   "P2": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 30,
+    "armature_rate": 1.0,
+    "mac_rate": 1.0
+   },
+   "P3": {
+    "outcome": "CANNOT_TELL",
+    "why": "gate failed (Mac fails/Armature fails)",
+    "n": 19
+   },
+   "P4": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     -0.172,
+     0.172
+    ],
+    "n": 29,
+    "armature_rate": 0.207,
+    "mac_rate": 0.207
+   }
+  }
+ },
+ "ministral-3_3b": {
+  "gate_mac": {
+   "model_gate": "pass",
+   "class_repeat_agree": 1.0,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "gate_armature": {
+   "model_gate": "pass",
+   "class_repeat_agree": 1.0,
+   "families": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true
+   },
+   "passed": true
+  },
+  "identical": {
+   "bare": [
+    71,
+    170
+   ],
+   "bare_copy": [
+    71,
+    170
+   ],
+   "guard": [
+    21,
+    170
+   ]
+  },
+  "families": {
+   "P1": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 30,
+    "armature_rate": 0.233,
+    "mac_rate": 0.233
+   },
+   "P2": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 30,
+    "armature_rate": 1.0,
+    "mac_rate": 1.0
+   },
+   "P3": {
+    "outcome": "CANNOT_TELL",
+    "why": "gate failed (Mac fails/Armature fails)",
+    "n": 16
+   },
+   "P4": {
+    "outcome": "CONSISTENT",
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "n": 29,
+    "armature_rate": 0.0,
+    "mac_rate": 0.0
+   }
+  }
+ }
+}
