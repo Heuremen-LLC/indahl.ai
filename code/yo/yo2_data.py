@@ -20,8 +20,9 @@ RULE_C = ('You give a verdict on a measured value against a stated reference. Ap
           'lies within the reference plus or minus the margin; otherwise CANNOT_TELL. Answer with one word: ABOVE, BELOW, CONSISTENT or CANNOT_TELL.')
 def render(prompt):   # evaluation prompt: the tokenizer's chat template, thinking off
     return TOK.apply_chat_template([{'role': 'user', 'content': prompt}], tokenize=False, add_generation_prompt=True, enable_thinking=False)
-def ntok(prompt, answer):
-    return len(TOK.apply_chat_template([{'role': 'user', 'content': prompt}, {'role': 'assistant', 'content': answer}], tokenize=True))
+def ntok(prompt, answer):   # Addendum 1: count tokens of the templated text (apply_chat_template(tokenize=True) returns a 2-field record here)
+    txt = TOK.apply_chat_template([{'role': 'user', 'content': prompt}, {'role': 'assistant', 'content': answer}], tokenize=False)
+    return len(TOK(txt, add_special_tokens=False)['input_ids'])
 def load_records():
     recs = []
     for path in sorted(glob.glob(HERE + '/history/*.json.gz')):
