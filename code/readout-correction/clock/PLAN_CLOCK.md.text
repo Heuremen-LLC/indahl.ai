@@ -40,3 +40,10 @@ ADDENDUM 1 (31 Oct 2026 ~19:00 EDT, after the first fire was read, before any la
 From the next fire on, analyze_clock.py also prints the copy GAP of the clock reading with its width: (share M31 - share MT) in copy A minus
 the same in copy B, 99 % bootstrap over qubits. The FINAL rule is unchanged. For the first fire this gap was computed after the data:
 kingston +0.009 [-0.038, +0.050], marrakesh +0.045 [-0.053, +0.133]; neither resolves, and on marrakesh the copies differ in sign.
+
+ADDENDUM 2 (31 Oct 2026, written after the outside referee read the first fire, before any later fire). (1) Times corrected from the git and
+job records: the plan was committed at 18:06:44 EDT (22:06:44 UTC, commit c37242a, plan sha256 starting 13157ff0f8210f8a), the first job (kingston C) was
+created at 22:06:58.9 UTC, the analysis script was committed at 22:07:10 UTC (f682ff4) before any result existed, and Addendum 1 at
+18:15:24 EDT. The "~18:30" and "~19:00" written above were wrong. There is no outside timestamp of the plan before the jobs, only git.
+(2) From the next fire on, every bootstrap band uses 20,000 draws instead of 2,000: at 2,000 the kingston first-fire label flipped with the
+draw (CANNOT_TELL in 18 of 20 seeds, readings_after_referee.text). The FINAL rule is unchanged.

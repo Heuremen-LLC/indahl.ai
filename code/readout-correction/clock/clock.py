@@ -21,7 +21,7 @@ def outcome_m(lo, hi, m=MARGIN):
     if hi < 0: return 'BELOW'
     if -m <= lo and hi <= m: return 'CONSISTENT'
     return 'CANNOT_TELL'
-def read(Zc, nq, rng, B=2000):
+def read(Zc, nq, rng, B=20000):   # addendum 2: 20,000 draws from the second fire on
     """Zc: {(arm, st): [packed fin arrays]}. Per qubit: phase vs D per look (deg); shares given back on the same resampled qubits."""
     ph = {a: np.arctan2(K.spect_expect(Zc[(a, 'Y')], nq), K.spect_expect(Zc[(a, 'X')], nq)) for a in ARMS}
     kick = {a: np.degrees(K.wrap(ph[a] - ph['D'])) / N for a in ('M', 'MC', 'M31', 'MT')}; ab = {a: np.abs(v) for a, v in kick.items()}
