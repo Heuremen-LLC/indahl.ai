@@ -1,0 +1,29 @@
+{
+ "started": "2026-10-30T21:36:25Z",
+ "machine": "armature",
+ "server_version": "0.34.3",
+ "model": "ministral-3:8b",
+ "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
+ "details": {
+  "parent_model": "",
+  "format": "gguf",
+  "family": "mistral3",
+  "families": [
+   "mistral3"
+  ],
+  "parameter_size": "8.9B",
+  "quantization_level": "Q4_K_M"
+ },
+ "template_sha_prefix": "5b74c26b9e0b6358",
+ "arm": "B",
+ "rep": 1,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "repeat_penalty": 1.0,
+  "num_ctx": 8192,
+  "num_predict": 4096
+ },
+ "items": 8128,
+ "runner_sha_prefix": "8dee3aebb7daf6e9"
+}

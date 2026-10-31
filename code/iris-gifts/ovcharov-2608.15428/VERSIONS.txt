@@ -1,0 +1,1 @@
+python 3.9.6 numpy 2.0.2 scipy 1.13.1 | Ollama 0.34.3 (Armature, RTX 3080) and 0.34.2 (Mac, M5 Max)

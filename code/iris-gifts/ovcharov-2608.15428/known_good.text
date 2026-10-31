@@ -1,0 +1,32 @@
+fields: ['id', 'model', 'mode', 'grp', 'set', 'pred', 'gold']
+models: [('deepseek-r1', 8128), ('gemma-3-12b', 8128), ('gpt-5.6-sol', 8128), ('haiku-4.5', 8128), ('llama-3.1-8b', 8128), ('llama-3.3-70b', 8128), ('ministral-8b', 8128), ('nova-2-lite', 8128), ('nova-micro', 8316), ('nova-pro', 8130), ('pixtral-large', 5919), ('qwen3-32b', 8128), ('sonnet-4.6', 8128)]
+gold-position shares of the set: [0.29, 0.245, 0.241, 0.223] n 8128
+deepseek-r1      n  7976 of  8128  A 0.12 B 0.24 C 0.29 D 0.35  blind 0.257 [0.247, 0.266]  habit 0.242  excess +0.015
+gemma-3-12b      n  8128 of  8128  A 0.08 B 0.28 C 0.40 D 0.23  blind 0.230 [0.221, 0.239]  habit 0.242  excess -0.012
+gpt-5.6-sol      n  8128 of  8128  A 0.24 B 0.27 C 0.27 D 0.22  blind 0.515 [0.504, 0.526]  habit 0.250  excess +0.265
+haiku-4.5        n  8128 of  8128  A 0.16 B 0.44 C 0.22 D 0.19  blind 0.204 [0.195, 0.213]  habit 0.247  excess -0.043
+llama-3.1-8b     n  7886 of  8128  A 0.92 B 0.00 C 0.07 D 0.01  blind 0.292 [0.282, 0.302]  habit 0.286  excess +0.005
+llama-3.3-70b    n  8128 of  8128  A 0.08 B 0.28 C 0.31 D 0.33  blind 0.237 [0.228, 0.247]  habit 0.240  excess -0.003
+ministral-8b     n  8126 of  8128  A 0.02 B 0.25 C 0.45 D 0.29  blind 0.239 [0.229, 0.248]  habit 0.238  excess +0.001
+nova-2-lite      n  8128 of  8128  A 0.03 B 0.30 C 0.29 D 0.39  blind 0.225 [0.216, 0.234]  habit 0.237  excess -0.012
+nova-micro       n  8039 of  8316  A 0.09 B 0.31 C 0.22 D 0.39  blind 0.233 [0.224, 0.242]  habit 0.240  excess -0.007
+nova-pro         n  8128 of  8130  A 0.17 B 0.28 C 0.27 D 0.28  blind 0.232 [0.223, 0.241]  habit 0.246  excess -0.014
+pixtral-large    n  5764 of  5919  A 0.10 B 0.46 C 0.25 D 0.19  blind 0.245 [0.234, 0.256]  habit 0.244  excess +0.001
+qwen3-32b        n  8128 of  8128  A 0.14 B 0.27 C 0.30 D 0.30  blind 0.244 [0.234, 0.253]  habit 0.244  excess +0.000
+sonnet-4.6       n  8128 of  8128  A 0.08 B 0.20 C 0.30 D 0.42  blind 0.320 [0.310, 0.330]  habit 0.238  excess +0.081
+
+printed Table 4 against our rebuild, both habit rules (a cell is off when its rounding differs from the printed digit)
+deepseek-r1     n  7976  set habit 0.2419 all 7 cells match  |  parsed habit 0.2419 all 7 cells match
+gemma-3-12b     n  8128  set habit 0.2422 all 7 cells match  |  parsed habit 0.2422 all 7 cells match
+gpt-5.6-sol     n  8128  set habit 0.2501 all 7 cells match  |  parsed habit 0.2501 all 7 cells match
+haiku-4.5       n  8128  set habit 0.2472 all 7 cells match  |  parsed habit 0.2472 all 7 cells match
+llama-3.1-8b    n  7886  set habit 0.2862 off in habit  |  parsed habit 0.2867 all 7 cells match
+llama-3.3-70b   n  8128  set habit 0.2402 all 7 cells match  |  parsed habit 0.2402 all 7 cells match
+ministral-8b    n  8126  set habit 0.2381 all 7 cells match  |  parsed habit 0.2380 all 7 cells match
+nova-2-lite     n  8128  set habit 0.2367 all 7 cells match  |  parsed habit 0.2367 all 7 cells match
+nova-micro      n  8039  set habit 0.2398 all 7 cells match  |  parsed habit 0.2397 all 7 cells match
+nova-pro        n  8128  set habit 0.2457 all 7 cells match  |  parsed habit 0.2457 all 7 cells match
+pixtral-large   n  5764  set habit 0.2444 off in D,blind,excess  |  parsed habit 0.2472 off in D,blind,habit,excess   (partial file: 5919 rows released)
+qwen3-32b       n  8128  set habit 0.2436 all 7 cells match  |  parsed habit 0.2436 all 7 cells match
+sonnet-4.6      n  8128  set habit 0.2384 all 7 cells match  |  parsed habit 0.2384 all 7 cells match
+rows matching all 7 printed cells: set rule 11 of 13, parsed rule 12 of 13
