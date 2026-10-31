@@ -1,0 +1,7 @@
+# Read in full for D2 (31 Oct 2026, after readings.py printed counts, before any public line)
+- 10 of the 680 at-cap unparseable first answers (seed 7) read in full at their end: every one stops mid-sentence or mid-equation
+  (for example inside a list of factor pairs, inside a LaTeX expression, or after "Actually"). None reaches an answer line.
+- All 5 unparseable first answers not at the cap read in full: all are 4B TriviaQA, 1 to 6 tokens long, a bare answer phrase with no
+  answer marker ("Mumps", "Red"). These are the only unparseable first answers that are not cut at the cap.
+- Re-encoded length minus cap for the 685: 671 at exactly 0, 7 at -1, 1 at +1, 1 at +3, 5 below -10. The re-encoding drift is at most 3 tokens.
+Verdict: an unparseable first answer in the 26 Qwen cells is, in 680 of 685, a generation that ran to the token cap.

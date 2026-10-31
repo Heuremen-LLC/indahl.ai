@@ -1,0 +1,99 @@
+D1 content margin per cell: helpful, harmful, margin with exact conditional interval (Clopper-Pearson on helpful share of the discordant pairs) | outcome
+  Gemma 12B x GSM8K        n 200 | helpful  0 harmful  0 | margin +0.000 [+0.000, +0.000] | CONSISTENT
+  Gemma 12B x MATH         n 200 | helpful  0 harmful  0 | margin +0.000 [+0.000, +0.000] | CONSISTENT
+  Gemma 12B x MMLU         n 200 | helpful  0 harmful  0 | margin +0.000 [+0.000, +0.000] | CONSISTENT
+  0.8B x ARC               n 300 | helpful 12 harmful 26 | margin -0.047 [-0.082, -0.003] | BELOW
+  0.8B x GSM8K             n 300 | helpful  3 harmful  0 | margin +0.010 [-0.004, +0.010] | CONSISTENT
+  0.8B x MMLU              n 300 | helpful 14 harmful 21 | margin -0.023 [-0.061, +0.018] | CONSISTENT
+  2B x ARC                 n 300 | helpful  1 harmful 17 | margin -0.053 [-0.060, -0.027] | BELOW
+  2B x GSM8K               n 300 | helpful  7 harmful 14 | margin -0.023 [-0.050, +0.010] | CONSISTENT
+  2B x MMLU                n 300 | helpful  3 harmful 10 | margin -0.023 [-0.039, +0.003] | CONSISTENT
+  4B x ARC                 n 400 | helpful  1 harmful  0 | margin +0.003 [-0.002, +0.003] | CONSISTENT
+  4B x CommonsenseQA       n 200 | helpful  0 harmful  0 | margin +0.000 [+0.000, +0.000] | CONSISTENT
+  4B x GSM8K               n 400 | helpful  0 harmful  1 | margin -0.003 [-0.003, +0.002] | CONSISTENT
+  4B x GSM8K (v2)          n 200 | helpful  1 harmful  2 | margin -0.005 [-0.015, +0.012] | CONSISTENT
+  4B x GSM8K (v3)          n 200 | helpful  0 harmful  2 | margin -0.010 [-0.010, +0.007] | CONSISTENT
+  4B x HumanEval           n 164 | helpful  2 harmful  3 | margin -0.006 [-0.027, +0.022] | CONSISTENT
+  4B x MATH                n 400 | helpful  2 harmful  0 | margin +0.005 [-0.003, +0.005] | CONSISTENT
+  4B x MBPP                n 400 | helpful  1 harmful  1 | margin +0.000 [-0.005, +0.005] | CONSISTENT
+  4B x MMLU                n 400 | helpful  0 harmful  0 | margin +0.000 [+0.000, +0.000] | CONSISTENT
+  4B x MMLU (v2)           n 200 | helpful  2 harmful  2 | margin +0.000 [-0.017, +0.017] | CONSISTENT
+  4B x MMLU (v3)           n 200 | helpful  0 harmful  1 | margin -0.005 [-0.005, +0.005] | CONSISTENT
+  4B x TriviaQA            n 400 | helpful 13 harmful  1 | margin +0.030 [+0.011, +0.035] | ABOVE
+  4B x TruthfulQA-MC1      n 200 | helpful  0 harmful  1 | margin -0.005 [-0.005, +0.005] | CONSISTENT
+  9B x ARC                 n 400 | helpful  0 harmful  3 | margin -0.007 [-0.007, +0.003] | CONSISTENT
+  9B x GSM8K               n 400 | helpful  1 harmful  0 | margin +0.003 [-0.002, +0.003] | CONSISTENT
+  9B x HumanEval           n 164 | helpful  4 harmful  0 | margin +0.024 [-0.005, +0.024] | CONSISTENT
+  9B x MATH                n 400 | helpful  1 harmful  1 | margin +0.000 [-0.005, +0.005] | CONSISTENT
+  9B x MBPP                n 400 | helpful  4 harmful  0 | margin +0.010 [-0.002, +0.010] | CONSISTENT
+  9B x MMLU                n 400 | helpful  5 harmful  2 | margin +0.007 [-0.007, +0.016] | CONSISTENT
+  9B x TriviaQA            n 400 | helpful 13 harmful 10 | margin +0.007 [-0.018, +0.031] | CONSISTENT
+  ABOVE: 1 cells (floor scale 0, capable 1) 4B x TriviaQA
+  BELOW: 2 cells (floor scale 2, capable 0) 0.8B x ARC, 2B x ARC
+  CONSISTENT: 26 cells (floor scale 4, capable 22)
+
+D2 unparseable first answers against the token cap (Qwen3.5 tokenizer, sha256 in tok/SHA256.json; at cap = re-encoded length at least cap minus 3)
+  Gemma 12B x GSM8K        Gemma cell: 2 unparseable first answers (Qwen tokenizer not used; median 3150 characters)
+  Gemma 12B x MATH         Gemma cell: 15 unparseable first answers (Qwen tokenizer not used; median 2434 characters)
+  Gemma 12B x MMLU         Gemma cell: 14 unparseable first answers (Qwen tokenizer not used; median 2713 characters)
+  0.8B x ARC               cap  896 | unparseable  13, at cap  13 | parsed 287, at cap  0 | format recoveries (a0 unparseable, final right)  4, a0 at cap  4 -> recover margin +0.013, of which a0 at cap +0.013
+  0.8B x GSM8K             cap 1024 | unparseable  10, at cap  10 | parsed 290, at cap  0 | format recoveries (a0 unparseable, final right)  0, a0 at cap  0 -> recover margin +0.000, of which a0 at cap +0.000
+  0.8B x MMLU              cap  896 | unparseable  43, at cap  43 | parsed 257, at cap  0 | format recoveries (a0 unparseable, final right) 13, a0 at cap 13 -> recover margin +0.043, of which a0 at cap +0.043
+  2B x ARC                 cap  896 | unparseable  19, at cap  19 | parsed 281, at cap  0 | format recoveries (a0 unparseable, final right) 10, a0 at cap 10 -> recover margin +0.033, of which a0 at cap +0.033
+  2B x GSM8K               cap 1024 | unparseable  17, at cap  17 | parsed 283, at cap  0 | format recoveries (a0 unparseable, final right)  2, a0 at cap  2 -> recover margin +0.007, of which a0 at cap +0.007
+  2B x MMLU                cap  896 | unparseable  68, at cap  68 | parsed 232, at cap  1 | format recoveries (a0 unparseable, final right) 32, a0 at cap 32 -> recover margin +0.107, of which a0 at cap +0.107
+  4B x ARC                 cap  896 | unparseable  19, at cap  19 | parsed 381, at cap  1 | format recoveries (a0 unparseable, final right) 11, a0 at cap 11 -> recover margin +0.028, of which a0 at cap +0.028
+  4B x CommonsenseQA       cap  896 | unparseable  30, at cap  30 | parsed 170, at cap  0 | format recoveries (a0 unparseable, final right) 14, a0 at cap 14 -> recover margin +0.070, of which a0 at cap +0.070
+  4B x GSM8K               cap 1024 | unparseable  12, at cap  12 | parsed 388, at cap  0 | format recoveries (a0 unparseable, final right)  5, a0 at cap  5 -> recover margin +0.013, of which a0 at cap +0.013
+  4B x GSM8K (v2)          cap 1024 | unparseable   4, at cap   4 | parsed 196, at cap  0 | format recoveries (a0 unparseable, final right)  2, a0 at cap  2 -> recover margin +0.010, of which a0 at cap +0.010
+  4B x GSM8K (v3)          cap 1024 | unparseable   4, at cap   4 | parsed 196, at cap  0 | format recoveries (a0 unparseable, final right)  3, a0 at cap  3 -> recover margin +0.015, of which a0 at cap +0.015
+  4B x HumanEval           cap  512 | unparseable   0, at cap   0 | parsed 164, at cap  4 | format recoveries (a0 unparseable, final right)  0, a0 at cap  0 -> recover margin +0.000, of which a0 at cap +0.000
+  4B x MATH                cap 1024 | unparseable  74, at cap  74 | parsed 326, at cap  1 | format recoveries (a0 unparseable, final right) 32, a0 at cap 32 -> recover margin +0.080, of which a0 at cap +0.080
+  4B x MBPP                cap  512 | unparseable   0, at cap   0 | parsed 400, at cap 16 | format recoveries (a0 unparseable, final right)  0, a0 at cap  0 -> recover margin +0.000, of which a0 at cap +0.000
+  4B x MMLU                cap  896 | unparseable  75, at cap  75 | parsed 325, at cap  1 | format recoveries (a0 unparseable, final right) 42, a0 at cap 42 -> recover margin +0.105, of which a0 at cap +0.105
+  4B x MMLU (v2)           cap  896 | unparseable  36, at cap  36 | parsed 164, at cap  0 | format recoveries (a0 unparseable, final right)  8, a0 at cap  8 -> recover margin +0.040, of which a0 at cap +0.040
+  4B x MMLU (v3)           cap  896 | unparseable  36, at cap  36 | parsed 164, at cap  0 | format recoveries (a0 unparseable, final right) 23, a0 at cap 23 -> recover margin +0.115, of which a0 at cap +0.115
+  4B x TriviaQA            cap 1024 | unparseable  12, at cap   7 | parsed 388, at cap  0 | format recoveries (a0 unparseable, final right)  1, a0 at cap  0 -> recover margin +0.003, of which a0 at cap +0.000
+  4B x TruthfulQA-MC1      cap  896 | unparseable  21, at cap  21 | parsed 179, at cap  1 | format recoveries (a0 unparseable, final right)  8, a0 at cap  8 -> recover margin +0.040, of which a0 at cap +0.040
+  9B x ARC                 cap  896 | unparseable  16, at cap  16 | parsed 384, at cap  0 | format recoveries (a0 unparseable, final right)  9, a0 at cap  9 -> recover margin +0.022, of which a0 at cap +0.022
+  9B x GSM8K               cap 1024 | unparseable   8, at cap   8 | parsed 392, at cap  0 | format recoveries (a0 unparseable, final right)  6, a0 at cap  6 -> recover margin +0.015, of which a0 at cap +0.015
+/Users/heuremen/Library/Python/3.9/lib/python/site-packages/numpy/lib/_nanfunctions_impl.py:1424: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+  9B x HumanEval           cap  512 | unparseable   0, at cap   0 | parsed 164, at cap  7 | format recoveries (a0 unparseable, final right)  0, a0 at cap  0 -> recover margin +0.000, of which a0 at cap +0.000
+  9B x MATH                cap 1024 | unparseable  87, at cap  87 | parsed 313, at cap  3 | format recoveries (a0 unparseable, final right) 41, a0 at cap 41 -> recover margin +0.102, of which a0 at cap +0.102
+  9B x MBPP                cap  512 | unparseable   0, at cap   0 | parsed 400, at cap 21 | format recoveries (a0 unparseable, final right)  0, a0 at cap  0 -> recover margin +0.000, of which a0 at cap +0.000
+  9B x MMLU                cap  896 | unparseable  79, at cap  79 | parsed 321, at cap  1 | format recoveries (a0 unparseable, final right) 55, a0 at cap 55 -> recover margin +0.138, of which a0 at cap +0.138
+  9B x TriviaQA            cap 1024 | unparseable   2, at cap   2 | parsed 398, at cap  0 | format recoveries (a0 unparseable, final right)  0, a0 at cap  0 -> recover margin +0.000, of which a0 at cap +0.000
+  all Qwen cells: unparseable 685, at cap 680 | parsed 7443, at cap 57 | recoveries 321, a0 at cap 320
+  unparseable first answers, re-encoded length minus cap, from -10 to +5: {-10: 0, -9: 0, -8: 0, -7: 0, -6: 0, -5: 0, -4: 0, -3: 0, -2: 0, -1: 7, 0: 671, 1: 1, 2: 0, 3: 1, 4: 0, 5: 0} | below -10: 5 | above +5: 0
+
+D3 answer change by string inequality (their change rate) against numeric equality, GSM8K and MATH cells, both answers parseable
+  Gemma 12B x GSM8K        both parseable 198 | string change   0 (0.000) | of those, numerically equal  0 | change rate by number 0.000
+  Gemma 12B x MATH         both parseable 185 | string change   0 (0.000) | of those, numerically equal  0 | change rate by number 0.000
+  0.8B x GSM8K             both parseable 290 | string change  13 (0.045) | of those, numerically equal  0 | change rate by number 0.045
+  2B x GSM8K               both parseable 283 | string change  44 (0.155) | of those, numerically equal  0 | change rate by number 0.155
+  4B x GSM8K               both parseable 388 | string change   1 (0.003) | of those, numerically equal  0 | change rate by number 0.003
+  4B x GSM8K (v2)          both parseable 193 | string change   4 (0.021) | of those, numerically equal  0 | change rate by number 0.021
+  4B x GSM8K (v3)          both parseable 196 | string change   2 (0.010) | of those, numerically equal  0 | change rate by number 0.010
+  4B x MATH                both parseable 326 | string change   3 (0.009) | of those, numerically equal  0 | change rate by number 0.009
+  9B x GSM8K               both parseable 392 | string change   3 (0.008) | of those, numerically equal  0 | change rate by number 0.008
+  9B x MATH                both parseable 313 | string change   2 (0.006) | of those, numerically equal  0 | change rate by number 0.006
+
+D4 closure per constrained cell with a paired bootstrap over task ids (10,000 draws, seed 2026), and medians by population
+  2B ARC               a0-bad   6.3% | closure  100.0% | bootstrap 95% [ -75.0,  100.0] | draws with a zero denominator 14
+  4B ARC               a0-bad   4.8% | closure  100.0% | bootstrap 95% [  37.5,  100.0] | draws with a zero denominator 0
+  0.8B MMLU            a0-bad  14.3% | closure   84.6% | bootstrap 95% [  25.0,  100.0] | draws with a zero denominator 0
+  2B MMLU              a0-bad  22.7% | closure   80.6% | bootstrap 95% [  54.5,  100.0] | draws with a zero denominator 0
+  4B TruthfulQA-MC1    a0-bad  10.5% | closure   75.0% | bootstrap 95% [ -33.3,  100.0] | draws with a zero denominator 8
+  9B ARC               a0-bad   4.0% | closure   77.8% | bootstrap 95% [  29.4,  100.0] | draws with a zero denominator 1
+  9B GSM8K             a0-bad   2.0% | closure   66.7% | bootstrap 95% [  20.0,  100.0] | draws with a zero denominator 30
+  9B MMLU              a0-bad  19.8% | closure   67.3% | bootstrap 95% [  50.8,   86.4] | draws with a zero denominator 0
+  4B CommonsenseQA     a0-bad  15.0% | closure   64.3% | bootstrap 95% [  28.6,   93.8] | draws with a zero denominator 0
+  4B MMLU              a0-bad  18.8% | closure   54.8% | bootstrap 95% [  39.5,   70.0] | draws with a zero denominator 0
+  4B GSM8K             a0-bad   3.0% | closure   80.0% | bootstrap 95% [-100.0,  100.0] | draws with a zero denominator 60
+  0.8B ARC             a0-bad   4.3% | closure  -50.0% | bootstrap 95% [-400.0,  100.0] | draws with a zero denominator 1220
+  0.8B GSM8K           a0-bad   3.3% | closure    nan% | bootstrap 95% [   nan,    nan] | draws with a zero denominator 10000
+  2B GSM8K             a0-bad   5.7% | closure   50.0% | bootstrap 95% [-400.0,  100.0] | draws with a zero denominator 1347
+  median closure over a0-bad at least 8% (the population the text names) (6 cells: 0.8B MMLU, 2B MMLU, 4B TruthfulQA-MC1, 9B MMLU, 4B CommonsenseQA, 4B MMLU): 71.1% [53.4, 82.5]
+  median closure over the ten with a printed closure (10 cells: 2B ARC, 4B ARC, 0.8B MMLU, 2B MMLU, 4B TruthfulQA-MC1, 9B ARC, 9B GSM8K, 9B MMLU, 4B CommonsenseQA, 4B MMLU): 76.4% [57.0, 83.7]
+  median closure over all fourteen (14 cells: 2B ARC, 4B ARC, 0.8B MMLU, 2B MMLU, 4B TruthfulQA-MC1, 9B ARC, 9B GSM8K, 9B MMLU, 4B CommonsenseQA, 4B MMLU, 4B GSM8K, 0.8B ARC, 0.8B GSM8K, 2B GSM8K): nan% [53.3, 81.8]

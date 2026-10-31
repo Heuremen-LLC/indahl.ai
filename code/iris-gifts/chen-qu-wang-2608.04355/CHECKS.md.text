@@ -1,0 +1,64 @@
+
+## 2026-10-30 20:18 Calibration floor D1-D4 (plan 3e889dc): D1 content margins with exact paired intervals, 26 of 29 cells CONSISTENT with zero, 2 BELOW (0.8B and 2B ARC), 1 ABOVE (4B TriviaQA +0.030 [+0.011, +0.035]); D2 680 of 685 unparseable first answers in the Qwen cells sit at the token cap (57 of 7,443 parsed ones), 320 of 321 format recoveries start from an a0 at the cap; D3 0 string changes that are numerically equal; D4 median closure 71.1% [53.4, 82.5] over the 6 cells with a0-bad at least 8%, 76.4% over the 10 printed
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: every reading uses their 29-cell population and their bothok and is_bad gates from scout/common.py, which rebuild Table 9.6; D2 counts the gate's unparseable rows and the parsed rows side by side
+- II: holds: D1 helpful and harmful counted per cell before the margin; D2 per cell before the total; D4 per cell before any median
+- III: holds: margins printed signed; D1 outcomes by sign per cell (2 BELOW, 1 ABOVE) not folded into a count of non-zero
+- V: holds: D1 exact conditional interval named, beside their bootstrap; D2 parsed replies as the comparison ruler, histogram of re-encoded length shows the drift; D4 paired bootstrap with their seed
+- VI: holds: D1 four outcomes per cell with bounds; D4 intervals reach 25% to 100% on single cells, so single-cell closures are wide and only the population medians are summarised
+- R: holds: counts from their stage2 and constrained files at 35851b8; tokenizer.json sha256 87a7830d (same at all four pinned revisions) in tok/SHA256.json
+- L1: holds: D2 read in full, 10 at-cap and all 5 not-at-cap unparseable replies (ours/READ_D2.md); the parse rule is theirs as rebuilt by the scout
+- L2: caught: D2 counts were printed before the read in full; the read was done before any public line and confirms the count
+- L3: holds: caps read from their run_stage2.py (896 multiple choice, 1024 open, 512 code)
+- L4: n/a: no model runs; their single run per cell, no repeats exist to floor
+- L5: holds: constrained rows tied to stage2 rows by task_id with y0 and yf matching (scout check)
+- L6: caught: this is the reading; unparseable first answers are generations cut at the cap in 680 of 685 Qwen rows
+- L7: n/a: no labeller or judge scores itself in these readings
+- L8: holds: D1 and D4 paired by task id
+- L9: n/a: no prompts sent
+- L10: n/a: no models run
+- L11: n/a: nothing substituted; Gemma cells counted in characters, not Qwen tokens
+- L12: n/a: referee to follow is a Claude model, to be disclosed in the package
+- P1: n/a: no quotation yet
+- P2: holds: each figure names its data file and readings.py
+- P3: holds: cell labels as in their Table 9.6
+- P4: holds: no cause named; D2 is stated as a count of replies at the cap
+- P5: holds: D1 exact 95% conditional, D4 percentile bootstrap 95%, named
+- P6: holds: summary matches the printed counts
+- P7: n/a: no surface touched yet
+- P8: n/a: no rendered page
+- P9: holds: no reply text printed in readings.text
+- P10: holds: all four readings were defined in the plan before computing; nothing post hoc yet
+
+## 2026-10-30 20:29 Calibration floor D1b, D2b, D4b (Addendum 1, defined after the data): 9B TriviaQA 13 helpful against 10 harmful, exact p 0.678, their own bootstrap [-0.015, +0.030], while 4B TriviaQA is [+0.0125, +0.050]; text cells: 680 of 685 unparseable first answers at the cap against 9 of 6,315 parsed, 80 of 81 unparseable final answers at the cap; closure defined on 13 of 14 cells, median 75.0%
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: D2b splits code cells out because their parsed replies sit at the cap for another reason; the text-cell population is stated
+- II: holds: per cell counts printed before any total; final answers counted separately from first answers
+- III: holds: margins signed; helpful and harmful printed apart
+- V: holds: exact McNemar p beside their own bootstrap interval; no interval printed where no rows disagree
+- VI: holds: 9B TriviaQA CONSISTENT with zero on both rulers; 4B TriviaQA ABOVE on both
+- R: holds: their intervals read from stats_tests.json at 35851b8; Addendum 1 committed (2bec264) before readings_b.py ran
+- L1: holds: D2 read in full earlier (ours/READ_D2.md); final answers counted with the same rule
+- L2: holds: readings_b.py printed after the D2 read in full
+- L3: holds: caps from their run_stage2.py
+- L4: n/a: one run per cell in their release, no repeats to floor
+- L5: holds: cells mapped to files by the scout's cell_path; stats_tests keys checked per cell
+- L6: caught: the reading itself, cap truncation in first and final answers
+- L7: n/a: no judge or labeller scores itself here
+- L8: holds: paired within task ids
+- L9: n/a: no prompts sent in this reading
+- L10: n/a: no models run in this reading
+- L11: n/a: nothing substituted in this reading
+- L12: holds: the referee is a Claude model, disclosed in the package
+- P1: holds: the TriviaQA table row and section 9.2 sentence checked in paper.txt
+- P2: holds: each figure names its file
+- P3: holds: cell labels as in their Table 9.6
+- P4: holds: no cause named beyond the count at the cap
+- P5: holds: exact p and their percentile bootstrap named
+- P6: holds: summary matches readings_b.text
+- P7: n/a: no surface touched by this reading yet
+- P8: n/a: no rendered page
+- P9: holds: no reply text printed
+- P10: holds: labelled defined after the data
