@@ -1,0 +1,11 @@
+T1 twin pairs whose every raw reply is identical between the two members (of 10)
+  bielik-11b-v3   Q4_K_M ours 10 | his  6
+  bielik-11b-v3   Q3_K_M ours  9 | his 10
+  bielik-11b-v3   Q2_K   ours 10 | his  6
+  llama-pllum-8b  Q3_K_M ours 10 | his  5
+  llama-pllum-8b  Q2_K   ours 10 | his  5
+  all five files: ours 49 of 50 | his 32 of 50
+
+P4b Bielik-11B Q4_K_M against Q3_K_M with both members of every twin pair removed
+  ours 47 tasks: Q4_K_M 23, Q3_K_M 34 | Q4 only 4, Q3 only 15, exact p 0.0192
+  his  47 tasks: Q4_K_M 25, Q3_K_M 32 | Q4 only 5, Q3 only 12, exact p 0.143

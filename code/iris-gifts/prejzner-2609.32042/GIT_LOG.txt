@@ -1,0 +1,9 @@
+cdb72b2 2026-10-31T04:28:18-04:00 Prejzner gift: T1 twins and P4b, Check Block filed
+2836e40 2026-10-31T04:27:49-04:00 Prejzner gift: Addendum 2 (T1 twins, P4b, wording) committed before computing
+4c9e755 2026-10-31T04:20:45-04:00 Prejzner gift: G1 live readings P1-P4 (his collapse and dip replicate on the Mac), Check Block filed
+0f29fa3 2026-10-31T03:51:07-04:00 Prejzner gift: reader P1-P4 written before the tenth run finished
+71a3f31 2026-10-30T18:55:57-04:00 Prejzner live arm: CPU smoke flag (one task, never a reading) and queue entry after gift-2608-mac
+2efb360 2026-10-30T18:55:09-04:00 Prejzner gift: Addendum 1 (live arm G1 setup, tie-outs, readings P1-P4) and driver, committed before any model call
+9059ceb 2026-10-30T18:39:03-04:00 Prejzner live arm: fetch with manifest hashes, token tie-out (11B), live runner mirroring his LlamaCppRunner; no GPU job yet
+43d99cb 2026-10-30T17:26:41-04:00 Gifts status: Arjmandi ready; Lail scout; Prejzner env replica (0 mismatches over 17,973 steps)
+1cecf15 2026-10-30T16:52:48-04:00 Gift plan 2609.32042 (Prejzner): collapse tables rebuild with our code; the gift is a live arm on his exact GGUF files, build and its known-good first

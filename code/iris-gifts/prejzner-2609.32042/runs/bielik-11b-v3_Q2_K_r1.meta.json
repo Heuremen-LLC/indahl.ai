@@ -1,0 +1,18 @@
+{
+ "model_id": "bielik-11b-v3",
+ "quant": "Q2_K",
+ "gguf": "speakleash.Bielik-11B-v3.0-Instruct.Q2_K.gguf",
+ "gguf_sha256": "891e4c4ee5afa3c3142ce6fb05a780f906822b8fc94a59be3ced4b1bafcd0442",
+ "his_run": "v3_11b_2026-06-18__q2_no_repair",
+ "rep": 1,
+ "llama_cpp_python": "0.3.19",
+ "python": "3.14.7",
+ "machine": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+ "n_tasks": 67,
+ "passed": 5,
+ "formatter_prompt_mismatches": 0,
+ "formatter_checked": true,
+ "load_s": 0.7,
+ "wall_s": 414.1,
+ "ended_utc": "2026-10-31T07:14:13Z"
+}

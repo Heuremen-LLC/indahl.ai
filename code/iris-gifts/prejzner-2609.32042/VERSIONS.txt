@@ -1,0 +1,2 @@
+readings: python 3.14.7 (standard library)
+live runs: llama-cpp-python 0.3.19 built from the PyPI sdist on macOS (Apple M5 Max), Python 3.14.7, see runs/*.meta.json

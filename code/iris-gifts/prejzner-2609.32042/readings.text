@@ -1,0 +1,11 @@
+P1 repeat floor and P2 ours against his, per file (main67 tasks)
+  bielik-11b-v3   Q4_K_M ours 34 and 34 of 67 pass | P1 pass differs 0, any reply text differs 0 | his pass 36 | P2 ours r1 vs his: pass only ours 3, only his 5 (exact p 0.727) | first reply identical to his 54, every reply identical 40
+  bielik-11b-v3   Q3_K_M ours 47 and 47 of 67 pass | P1 pass differs 0, any reply text differs 0 | his pass 48 | P2 ours r1 vs his: pass only ours 2, only his 3 (exact p 1) | first reply identical to his 61, every reply identical 56
+  bielik-11b-v3   Q2_K   ours 5 and 5 of 67 pass | P1 pass differs 0, any reply text differs 0 | his pass 3 | P2 ours r1 vs his: pass only ours 3, only his 1 (exact p 0.625) | first reply identical to his 34, every reply identical 25
+  llama-pllum-8b  Q3_K_M ours 14 and 14 of 67 pass | P1 pass differs 0, any reply text differs 0 | his pass 15 | P2 ours r1 vs his: pass only ours 2, only his 3 (exact p 1) | first reply identical to his 32, every reply identical 23
+  llama-pllum-8b  Q2_K   ours 1 and 1 of 67 pass | P1 pass differs 0, any reply text differs 0 | his pass 1 | P2 ours r1 vs his: pass only ours 0, only his 0 (exact p 1) | first reply identical to his 48, every reply identical 24
+
+P3 the collapse step and P4 the 11B dip
+  P3 bielik-11b-v3 Q3_K_M to Q2_K on ours (r1): 47 to 5 of 67 | paired (both, first only, second only, neither) 3/44/2/18, exact p 3.08e-11 | his 48 to 3
+  P3 llama-pllum-8b Q3_K_M to Q2_K on ours (r1): 14 to 1 of 67 | paired (both, first only, second only, neither) 1/13/0/53, exact p 0.000244 | his 15 to 1
+  P4 bielik-11b-v3 Q4_K_M to Q3_K_M on ours (r1): 34 to 47 of 67 | paired (both, first only, second only, neither) 25/9/22/11, exact p 0.0294 | his 36 against 48

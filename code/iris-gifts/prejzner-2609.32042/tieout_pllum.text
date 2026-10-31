@@ -1,0 +1,3 @@
+llama-pllum-8b: 1386 trajectories | logged minus ours: exact 0 on 1376 | median +0 | min +0 max +5 | most common [(0, 1376), (1, 8), (5, 2)]
+   (difference, steps) most common: [((0, 2), 644), ((0, 3), 270), ((0, 1), 194), ((0, 4), 88), ((0, 5), 81), ((0, 6), 41), ((0, 8), 28), ((0, 10), 22)]
+runs skipped by model: {'bielik-11b-v3': 34, 'bielik-minitron-7b-v3': 29}
