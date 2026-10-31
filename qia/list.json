@@ -19260,11 +19260,16 @@
    "indexed": "2026-10-23",
    "read": "Full text",
    "codes": [
-    "F2"
+    "F2",
+    "F4"
    ],
    "basis": {
     "F2": [
      "IBM 2607.25941: README and paper give different fidelity, acceptance and bound for the same 70x70 circuit"
+    ],
+    "F4": [
+     "run dates not printed, and none in the released files (added 31 Oct 2026 on a second full read)",
+     "the released circuits are the 64-qubit logical circuits; the 76-qubit circuits run on the processor are not released (Zenodo record 22233383, file list and file structure read 31 Oct 2026)"
     ]
    },
    "calibrated": true,
