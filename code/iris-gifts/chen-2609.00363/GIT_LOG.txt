@@ -1,0 +1,5 @@
+702a9e2 2026-10-30T20:42:18-04:00 Kernel-determinism gift: readings.py corrected under Addendum 1 (median, 64-prompt line), rerun, Check Block filed
+3872826 2026-10-30T20:41:38-04:00 Kernel-determinism gift: K1b, K1c, K2 medians, K2b, Check Block filed
+e2371f7 2026-10-30T20:40:26-04:00 Kernel-determinism gift: Addendum 1 (K1b, K1c, K2b, median fix, K3 wording) before recomputing
+678639c 2026-10-30T20:28:18-04:00 Kernel-determinism gift: readings K1-K3 (rail is the CUTLASS decode, labelled), Check Block filed
+2cb3a14 2026-10-30T20:26:25-04:00 Kernel-determinism gift (2609.00363): scout recount and plan K1-K3 before any reading

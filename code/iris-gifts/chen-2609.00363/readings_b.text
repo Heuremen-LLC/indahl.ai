@@ -1,0 +1,23 @@
+K1b rail of the 64-prompt grid: the file whose sha256 equals the manifest rails_sha256: ['tokens64_CUTLASS.json']
+  CUTLASS prefill top-1 differs from the rail at 766 of 16384 = 4.68% [4.36, 5.01] | without position 0: 765 of 16320 = 4.69%
+  TRITON  prefill top-1 differs from the rail at 834 of 16384 = 5.09% [4.76, 5.44] | without position 0: 825 of 16320 = 5.06%
+  paired by position: CUTLASS only 317, TRITON only 385, both 449 | exact p 0.0114 | Triton minus CUTLASS +0.42 pp, prompt-cluster bootstrap [+0.09, +0.73] | prompts with Triton higher 38, CUTLASS higher 14
+  CUTLASS share by position window 0-63, 64-127, 128-191, 192-255: 7.6%, 5.5%, 3.4%, 2.2%
+
+K1c the 8-prompt grid without position 0 and tie-neutral (rail token log probability strictly below the top-1 log probability)
+  CUTLASS mismatches that are exact log-probability ties broken by token id: 7 | without position 0 and tie-neutral: 37 of 504 = 7.3% [5.2, 10.0]
+  TRITON  mismatches that are exact log-probability ties broken by token id: 10 | without position 0 and tie-neutral: 44 of 504 = 8.7% [6.4, 11.5]
+  paired: CUTLASS only 14, TRITON only 21 | exact p 0.311
+
+K2 medians recomputed (median of first differing index over prompts that differ)
+  1.7B own scales (Table V)    prompts  8, differ  8 | median 2.0, quartiles 0.75 and 10.5 | index 0 on 2
+  8B own scales (Table V)      prompts  8, differ  8 | median 2.5, quartiles 1.0 and 14.75 | index 0 on 1
+  14B own scales (Table V)     prompts  8, differ  8 | median 7.0, quartiles 1.5 and 14.75 | index 0 on 2
+  1.7B companion 64 prompts    prompts 64, differ 64 | median 5.5, quartiles 1.0 and 15.25 | index 0 on 9
+  8B companion 16 prompts      prompts 16, differ 16 | median 6.0, quartiles 2.75 and 9.25 | index 0 on 2
+
+K2b the same kernel across batch configurations, 1.7B: the batch-8 run (w1) against the same prompts in the batch-64 run (first 64 tokens)
+  prompt identity by prompt length (first teacher-forced position): batch-8 [360, 361, 339, 336, 324, 320, 325, 339], batch-64 first 8 [360, 361, 339, 336, 324, 320, 325, 339], equal True
+  CUTLASS batch-8 against batch-64: identical 0 of 8 | first differing index per prompt [4, 24, 2, 2, 6, 21, 17, 14] | median 10.0
+  TRITON  batch-8 against batch-64: identical 0 of 8 | first differing index per prompt [17, 24, 17, 9, 2, 5, 1, 8] | median 8.5
+  cross-kernel first index on these 8 prompts: batch-8 [33, 27, 0, 2, 2, 5, 1, 0] | batch-64 [4, None, 0, 9, 4, 36, 10, 0]
