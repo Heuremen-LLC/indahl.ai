@@ -7,7 +7,7 @@
   function h(tag, txt, cls) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function f3(x) { return x == null ? '-' : x.toFixed(3); }
   function chart(d) {
-    var W = 760, H = 230, L = 46, R = 16, T = 30, Bm = 30, steps = d.steps || 2000;
+    var W = 760, H = 240, L = 46, R = 16, T = 34, Bm = 30, steps = d.steps || 2000;
     var pts = (d.train || []).concat(d.val || []), ymax = 0.1; pts.forEach(function (p) { if (p[1] > ymax) ymax = p[1]; }); ymax = Math.ceil(ymax * 10) / 10;
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Training loss by step', 'class': 'bench-svg' });
     function X(s) { return L + (W - L - R) * Math.min(1, s / steps); } function Y(v) { return T + (H - T - Bm) * (1 - v / ymax); }
@@ -15,12 +15,12 @@
     svg.appendChild(el('text', { x: 0, y: 14, 'class': 'bench-h' }, 'Step ' + (d.step || 0).toLocaleString('en-US') + ' of ' + steps.toLocaleString('en-US')));
     svg.appendChild(el('rect', { x: 200, y: 3, width: W - 200 - R, height: 14, rx: 3, 'class': 'bench-bg' }));
     if (f > 0) svg.appendChild(el('rect', { x: 200, y: 3, width: Math.max(2, (W - 200 - R) * f), height: 14, rx: 3, 'class': f >= 1 ? 'bench-done' : 'bench-run' }));
-    [0, ymax / 2, ymax].forEach(function (v) { svg.appendChild(el('line', { x1: L, x2: W - R, y1: Y(v), y2: Y(v), stroke: 'currentColor', 'stroke-opacity': '0.15' })); svg.appendChild(el('text', { x: L - 6, y: Y(v) + 4, 'text-anchor': 'end', 'class': 'bench-n' }, v.toFixed(1))); });
+    [0, ymax / 2, ymax].forEach(function (v) { svg.appendChild(el('line', { x1: L, x2: W - R, y1: Y(v), y2: Y(v), stroke: 'currentColor', 'stroke-opacity': '0.15' })); svg.appendChild(el('text', { x: L - 6, y: Y(v) + 4, 'text-anchor': 'end', 'class': 'bench-n' }, v.toFixed(ymax < 1 ? 2 : 1))); });
     [0, steps / 2, steps].forEach(function (s) { svg.appendChild(el('text', { x: X(s), y: H - 10, 'text-anchor': 'middle', 'class': 'bench-n' }, String(s))); });
     function line(ps, dash, w) { if (ps.length < 2) return; svg.appendChild(el('polyline', { points: ps.map(function (p) { return X(p[0]).toFixed(1) + ',' + Y(p[1]).toFixed(1); }).join(' '), fill: 'none', stroke: 'currentColor', 'stroke-width': w, 'stroke-dasharray': dash || '' })); }
     line(d.train || [], '', 1.5); line(d.val || [], '5 4', 2);
     (d.val || []).forEach(function (p) { svg.appendChild(el('circle', { cx: X(p[0]), cy: Y(p[1]), r: 3, fill: 'currentColor' })); });
-    svg.appendChild(el('text', { x: W - R, y: T - 8, 'text-anchor': 'end', 'class': 'bench-n' }, 'solid: training loss · dashed with dots: validation loss'));
+    svg.appendChild(el('text', { x: W - R, y: T + 14, 'text-anchor': 'end', 'class': 'bench-n' }, 'solid: training loss · dashed with dots: validation loss'));
     return svg;
   }
   function table(rows, head) {
