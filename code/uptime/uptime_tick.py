@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""uptime_tick.py: one UPTIME round for Nova's tick bus. Probe from this Mac, from the Pi, pull the runner seat's saved rounds, ask the runner for the next, score, publish."""
+"""uptime_tick.py: one UPTIME round for the HST tick bus. Probe from this Mac, from the Pi, pull the runner seat's saved rounds, ask the runner for the next, score, publish."""
 import os, subprocess, sys, json, urllib.request
 H = os.path.dirname(os.path.abspath(__file__)); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); os.chdir(H)
 def sh(c, to=240): return subprocess.run(c, capture_output=True, text=True, timeout=to)

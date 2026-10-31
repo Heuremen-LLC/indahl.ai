@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""time_tick.py: one TIME round, run by Nova's tick bus as a rider. Runs one probe round on the Pi (the GPS-disciplined reference),
+"""time_tick.py: one TIME round, run by the HST tick bus as a rider. Runs one probe round on the Pi (the GPS-disciplined reference),
 pulls the rolling file, rescores T1 over the last 40 runs, and publishes summary_time.json to the page's KV key. No timers."""
 import os, subprocess, json, sys
 H = os.path.dirname(os.path.abspath(__file__)); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door')

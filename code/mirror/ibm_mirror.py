@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ibm_mirror.py: mirrors the calibration IBM publishes for every processor we can see. Runs on Nova's tick bus, never on a timer.
+"""ibm_mirror.py: mirrors the calibration IBM publishes for every processor we can see. Runs on the HST tick bus, never on a timer.
 Per run, per processor: read the published properties (no QPU seconds used), save the full record whenever IBM's stamp or values change,
 append one row per read to polls.jsonl (COMMITTED / NOTHING_RETURNED), and rewrite summary.json for the QIA page. Keys are read from the
 key files and passed straight to the service, never printed or stored."""

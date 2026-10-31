@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""forecast_tick.py: one FORECAST round for Nova's tick bus, per PLAN.md. Fetches NWS forecasts for stations that are due (6 hours since their last fetch, at most 10 per round),
+"""forecast_tick.py: one FORECAST round for the HST tick bus, per PLAN.md. Fetches NWS forecasts for stations that are due (6 hours since their last fetch, at most 10 per round),
 scores periods that have ended against the station's hourly observations, rewrites summary_forecast.json and publishes it. Read-only, our user agent names this site."""
 import os, sys, json, time, math, urllib.request, subprocess, datetime as D, collections as C
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); UA = 'heuremen-forecast/0.1 (+https://indahl.ai/forecast)'

@@ -17,7 +17,7 @@ Controls, which state no filtering: Cloudflare 1.1.1.1, Quad9 unfiltered 9.9.9.1
 A record, UDP, 3 s timeout, one try. Classes: ANSWERED (a public address), NXDOMAIN, REFUSED, SINK (0.0.0.0, 127.0.0.0/8, ::, or an address the provider documents for its block page), SERVFAIL, TIMEOUT.
 
 ## Checkpoints
-Each sampled domain is asked at first sight, then 1 hour, 6 hours and 24 hours later, on Nova's tick, never on a timer.
+Each sampled domain is asked at first sight, then 1 hour, 6 hours and 24 hours later, on an HST tick, never on a timer.
 
 ## Alive and blocked
 A domain is alive at a checkpoint if at least two of the three controls answer with the same public address set. A filtered resolver blocks it at that checkpoint if it returns NXDOMAIN, REFUSED or SINK while the controls answer. SERVFAIL and TIMEOUT are not blocks and are counted on their own. A domain the controls cannot resolve is not alive and is left out of that checkpoint's rate and counted.

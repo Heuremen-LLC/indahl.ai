@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""cadence_tick.py: one CADENCE round for Nova's tick bus, per PLAN.md. Fetches the one portal data.json that is due (24 hours since its last read), spot-checks up to 25 sampled download links with HEAD,
+"""cadence_tick.py: one CADENCE round for the HST tick bus, per PLAN.md. Fetches the one portal data.json that is due (24 hours since its last read), spot-checks up to 25 sampled download links with HEAD,
 rewrites summary_cadence.json from everything stored, and publishes it. Read-only, our user agent names this site."""
 import os, re, sys, json, time, math, hashlib, urllib.request, urllib.error, subprocess, datetime as D, email.utils, collections as C
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); UA = 'heuremen-cadence/0.1 (+https://indahl.ai/cadence)'; now = time.time()

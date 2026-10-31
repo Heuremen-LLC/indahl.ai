@@ -1,4 +1,4 @@
-// QIA queue ticker: IBM's pending-job count per processor and the waits our own jobs saw. Reads /qia/queue.json, written every 2 Nova ticks (about 12 minutes since 29 Oct; the plan first said every 9 ticks).
+// QIA queue ticker: IBM's pending-job count per processor and the waits our own jobs saw. Reads /qia/queue.json, written every 2 HST ticks (about 12 minutes since 29 Oct; the plan first said every 9 ticks).
 (function () {
   var box = document.getElementById('queue-live'); if (!box) return;
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
