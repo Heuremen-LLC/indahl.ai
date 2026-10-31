@@ -1,0 +1,26 @@
+RESULT -- Hebrew University run, ibm_fez, read under PLAN_HEBREW (commit 21111e4, before any job). 24 Oct 2026.
+Jobs J0 dbebthfgdj9s73flgpqg (14:20:53Z) and J1 dbebu70m94ac738rhstg (14:22:20Z, reversed order), 74 s each, 148 s total, no errors.
+Equal compiled durations M=D, MD=DD, KG: PASS at fire time.
+
+KNOWN-GOOD: PASS. KG (committed 21 Oct fez control-run design) pooled -1.474 deg/readout [-2.090, -0.959] vs committed -1.618 [-2.085, -1.179];
+copies -1.553 / -1.532. Rule (median in [-3.24, -0.81], upper end < 0) met.
+
+READINGS (11 untouched neighbours within two couplings of their 20-qubit set 0-19; 99 % bootstrap; FINAL = pooled if copies agree):
+ R1  kick, readout minus equal idle      -2.369 deg/readout [-5.807, -1.134]  BELOW       (copies -2.345 / -2.398, both BELOW)
+ R2  kick with their 1 us inter-round delay  -2.266 [-5.617, -1.026]          BELOW       (copies -2.527 / -2.220, both BELOW)
+ R2b delay effect (R1 - R2 per neighbour)  -0.093 [-0.190, +0.070]            CONSISTENT  (inside +-0.25; both copies CANNOT_TELL alone, same outcome -> pooled per plan)
+ R3  coherence per readout                +0.0003 [-0.0021, +0.0021]          CANNOT_TELL (copies disagree: CANNOT_TELL / CONSISTENT)
+ R3b coherence with delay                 +0.0008 [-0.0018, +0.0024]          CANNOT_TELL
+ Profile (median readout-minus-idle phase, deg) N = 1, 3, 5, 7, 13: -2.0, -6.9, -12.5, -16.2, -30.7 (no delay); -2.7, -7.5, -10.9, -18.4, -29.3 (delay).
+ State check (|1> qubits at distance 3, P(1) at N=13): M 0.807, D 0.806; MD 0.730, DD 0.731 -- no population change from the readouts.
+
+WHAT IT SAYS, and does not:
+ - Their equal delay does not make the spectators' phase the same as an idle: untouched neighbours of their own fez set turn by about -2.4 deg per
+   round of 20 readouts beyond the equal delay (BELOW, both copies), roughly -31 deg after 13 rounds. Their computational-basis checks cannot see it;
+   the state-check populations confirm the readouts leave populations alone.
+ - Their short-delay idea (1 us between rounds) does not change it: the difference is bounded within +-0.25 deg/readout (CONSISTENT).
+ - Coherence change per readout: not decided at this resolution.
+ - At K = 20 this neighbourhood reads larger than our committed K = 39 pack median (-1.62); the two layouts differ (a dense 20-qubit row and its
+   nearest neighbours vs a spread pack and 117 untouched); no dose curve is drawn from it. Observation, not a planned reading.
+ - No mechanism named.
+DELIVERABLE: raw_hebrew_J0/J1.npz (fin bits per circuit), circuits_hebrew.qpy, job_hebrew.json (durations, meta, job ids, usage), records before/after.

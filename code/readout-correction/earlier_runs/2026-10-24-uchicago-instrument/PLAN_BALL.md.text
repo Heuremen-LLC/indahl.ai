@@ -1,0 +1,85 @@
+PLAN -- THE UCHICAGO RUN: their three-repeated-MCM instrument on ibm_kingston at the readout count they used, at a syndrome-like count,
+one qubit at a time, and the phase on the neighbours their Z-twirl cannot see (24 Oct 2026)
+Written and committed BEFORE any job. Code: ball.py (analysis + synthetic), fire_ball.py (selection, build, checks, submit). Hashes in CODE_BALL.sha256.text.
+
+WHOSE QUESTION. Chu, Lee, Zheng, Chen, Pokharel, Seif, Jiang, arXiv 2606.00433v3 (16 Oct 2026, accepted PRL), "Learning Midcircuit Measurement
+Backaction from Three Repeated Measurements". Their open items, in their words (v3):
+ - S10(iv): "Any additional degrees of freedom (spectator qubits, classical control electronics, etc.) that influence the measured qubit are
+   assumed to be either negligible or effectively absorbed into a stationary single-qubit instrument description over the timescale of data acquisition."
+ - S7.1: "We select nonadjacent qubits to reduce measurement-induced crosstalk." and "On each processor, the 20 selected qubits are measured in
+   parallel within the same jobs."
+ - the application: "a compact characterization layer for state-preparation and measurement error separation, reset optimization, and
+   noise-aware quantum error correction" -- where a syndrome round reads a different number of qubits, adjacent ones included.
+ P1 (population level, their protocol CAN see it): is the learned instrument of a qubit the same when 20 nonadjacent qubits are read together (theirs),
+    when its neighbours are read with it (syndrome-like), and when it is read alone?
+ P2 (coherent level, removed by their Pauli Z-twirl by construction): what phase do the unmeasured neighbours pick up during their readouts?
+
+PROTOCOL (theirs, from S7.2, implemented from the text -- no code of theirs is public): Pauli input P in {I,X,Y,Z} on the reset |0>; before each of
+L = 3 consecutive MCMs apply Z^c with c uniform and independent; record w = w1 w2 w3. Equal weighting of the four inputs gives the input I/2.
+Optimization level 0, no dynamical decoupling, default measure instruction (2.18 us = 545 dt on kingston). Their N = 10^6 shots per input setting is
+scaled down (below); their Table S3 reports 99.4 % reconstruction success at N = 10,000 per setting on IBM hardware.
+Note for them, checked by the dry run: on IBM hardware Z is a virtual frame change, and with only MCMs after it the twirl bits change no pulse:
+across the 10 random instances of each setting the compiled circuits differ only in rz (fire_ball.py check (a): True).
+
+QUBITS (fixed now; selection_ball.json; record in force 2026-10-24 07:48:56 EDT). Their rule, made explicit in select(): candidates with
+readout_error < 0.05 that have a neighbour with readout_error < 0.05; ranked by readout error; for quantiles (i + 0.5)/20 the nearest-ranked candidate
+not adjacent to one already chosen. Targets (20, by readout error): 10, 3, 144, 122, 77, 62, 49, 136, 84, 33, 80, 60, 68, 70, 22, 155, 87, 107, 0, 43.
+Neighbours of the targets (37; 36 with readout_error < 0.05; the other is censored from R3). One-at-a-time targets (spanning the range): 144, 136, 68, 107.
+HOLD (no substitution) if the record in force at firing shows readout_error >= 0.05 on any target.
+
+ARMS (one job = all arms, round-robin interleaved so every arm spans the job; two jobs, J2 = J1 in reverse order (ABBA); same transpiled circuits):
+ A    theirs: the 20 targets read together (K = 20, nonadjacent); 4 inputs x 10 random twirl instances x 1000 shots = 10,000 per input setting.
+ Bhi  syndrome-like: the 20 targets AND all 37 neighbours run the same protocol in parallel (K = 57, adjacent readouts); same shots as A.
+ Blo  alone: each of 4 targets read alone (K = 1); 4 inputs x 10 instances x 400 shots = 4,000 per input setting per target.
+ C    the neighbours: all 37 neighbours prepared in |+> (h), the targets run arm A's protocol (same inputs, twirl, K = 20) [CM], or the same circuit
+      with every MCM replaced by a delay of 545 dt [CD]; then the neighbours are read in X (h) or Y (sdg h). 4 inputs x 2 instances x 1000 shots per
+      basis per arm. Dry run: the neighbours' scheduled durations are equal in CM and CD (2196 dt in both bases).
+ Shots per job 176,000; estimate 126 s for both jobs (cap 150), remaining 3,936 at the dry run; refuse if it would leave < 430 s.
+ Saved: the record before every job, job record, per-shot bit arrays of every register (raw_ball_J1.npz, raw_ball_J2.npz) -- the deliverable.
+ On an IBM-side ERROR: one restart, then HOLD.
+
+KNOWN-GOOD: their printed hardware reading, in kind -- a "T_1-decay dominated backaction" (abstract), i.e. state changes between consecutive MCMs that are mostly 1 -> 0. With no state change between readouts, ANY readout model gives Pr(w1=1,w2=0) = Pr(w1=0,w2=1) exactly; so a12 = Pr(10) - Pr(01) > 0 is decay outnumbering excitation, whatever the readout errors. PASS (arm A, pooled copies): the median a12 over the 20 targets has its 99 % band above 0 AND a12 > 0 on at least 16 of 20 targets. FAIL -> R2 and R3 are "not decided" (instrument not established on this run); R1 and the raw data stand. Synthetic: the rule passed 200/200 runs with decay > excitation and 0/40 runs with the asymmetry absent (S5).
+
+READINGS (only these; four outcomes ABOVE / BELOW / CONSISTENT / CANNOT_TELL; 99 % shot-bootstrap band (0.5-99.5 percentiles), 400 draws;
+per copy and pooled; FINAL = pooled if the two copies' outcomes are identical, else CANNOT_TELL; copy gap printed; CONSISTENT is a bound):
+ R1 arm A, per target and median over targets: their five gauge invariants from the three-bit strings -- p0 = S1, and T0 = tr M0, D0 = det M0
+    from S_n = Pr(first n readouts all 0) by Cayley-Hamilton (S2 = T0 S1 - D0, S3 = T0 S2 - D0 S1), T1, D1 likewise from the all-1 runs -- printed as
+    values with bands (no outcome: there is nothing to compare them to); plus a12 and a23 with outcomes vs 0.
+ R2 does K matter? per target the difference (Bhi - A) and (Blo - A) of each of the seven, then the median over targets (median of differences,
+    check 23), outcome vs 0. Per-target outcomes are printed as counts with the null floor beside them.
+ R3 the neighbours: phase = atan2(<Y>, <X>) per neighbour; kick = wrap(phase_CM - phase_CD) / 3 in deg per readout (convention of our control run:
+    negative = the same direction as every committed kick); median over neighbours kept (readout_error < 0.05 and coherence in CD above 5x shot
+    noise, check 24). Outcome vs 0.
+ Resolution and floor (synth_results_ball.text, product-model instruments built from this record -- a model, not IBM's number, check 4):
+    floor 7 false calls in 2,080 planted-null summary readings (0.3 %); per-target floor 1.2-1.6 % (about 2 of the 140 per-target Bhi-A readings
+    resolve under a null). Bhi: a change of eta_down x1.5 with e01 x1.3 reads on T0, D0, T1, a12, a23 in 40/40. Blo (4 targets, fewer shots): eta_down
+    x0.7 reads BELOW on a12 in 15/40 and CANNOT_TELL in 13/40 -- Blo differences under ~30 % are bounds. R3: -1.0 deg/readout reads BELOW 40/40;
+    -0.03 stays CONSISTENT 39/40. Fake-file check of the --real path: planted instrument recovered (T0 1.0094 vs 1.0088, D0 0.0199 vs 0.0195,
+    a12 +0.0051 vs ~+0.0055) and a planted -2.0 deg/readout neighbour kick read -2.06 [-2.18, -1.91] BELOW.
+ Nothing else is analysed. Their gauge bands, the full instrument, the validation predictors, outcome-conditioned neighbour phases (the target bits
+ are saved in arm C) are theirs to do from the raw data; anything we ever read beyond R1-R3 is labelled "defined after the data".
+
+## /q (run on this plan before any job; Bones fork, 24 Oct)
+A1 name the stated figure: no stated IBM figure is compared to anything. The record enters only in the selection (their rule), the HOLD gate and the
+   synthetic parameters (product model from prob_meas1_prep0 / prob_meas0_prep1 / T1 -- check 4, labelled a model).
+A3 the record the job ran under is saved before each job; selection is fixed from the 07:48 EDT record and frozen in selection_ball.json.
+B8 equal idle: CD replaces each MCM by a 545 dt delay; neighbour durations equal (2196 dt) in both bases.
+B9 FIRED: CM and CD differ in more than "a readout": drive and resonator photons on the targets, the classical record, AND the targets' own state
+   after each MCM (backaction flips change the targets' static ZZ on the neighbours). Listed; R3 cannot separate them (it reads all of them
+   together, which is what a neighbour in a syndrome round gets).
+B11 the neighbours hold the same state in CM and CD (|+>); in arms A/Bhi/Blo the non-measured qubits idle in |0>, as theirs.
+B13 FIRED: the first draft ran the arms one after another inside each job (A then Bhi then Blo then C, tens of seconds apart), so a K difference
+   would be partly drift. Changed: arms round-robin interleaved inside each job (interleave() in fire_ball.py), J2 reversed. No job had been sent.
+C14 known-good: their own printed hardware reading in kind (decay-dominated), with a rule that cannot pass by construction (S5: 0/40).
+C15 synthetic plants null, K-dependence, phase, both, NEITHER (below resolution), and the known-good null.   C16 floor measured (0.3 %; per target 1.2-1.6 %).
+C17 sign: kick convention from our control run; planted -2.0 read -2.06 BELOW through the real path; a12 sign by construction (string 10 = read 1 then 0).
+C18 the known-good rule and the 99 % band are fixed here and are not relaxed after the result.
+D19 four outcomes; CANNOT_TELL by censor or by copy disagreement.   D21/D22 one chip, one session, 20 targets: a reading of this device on this day.
+D23 R2 is a median of per-target differences.   D24 coherence censor on R3.
+E25 R2 says whether the instrument depends on K at the shot level here; it does not say why (crosstalk on the readout line, drive leakage, heating,
+   resonator photons from adjacent readouts) -- it names what it rules out. R3 likewise.
+E26 everything beyond R1-R3 is "defined after the data".   E28 no mechanism named.
+F29-F31 plan and code committed before any job; the fire script fixes the chip, re-reads the record and checks the cap and reserve.
+F33 budget: 126 s estimated of 3,936 remaining, reserve 430 for the queued free runs.
+G34-G37 not refereed.
+Outcome of /q: one design change (B13, interleaving), one difference listed (B9). No other change.

@@ -1,0 +1,64 @@
+PLAN -- Hebrew University run: arXiv 2506.11270v2, Jader P. Santos and Raam Uzdin (The Hebrew University of Jerusalem),
+"Drift-resilient mid-circuit measurement and state preparation error mitigation for dynamic circuits". Written and committed BEFORE any job, 24 Oct 2026.
+Desk read of the paper kept with our records.
+
+THEIR CLAIM (Fig. 1 caption, v2): "The delay, both for the measured qubit and the spectator qubits during the sequence is also scaled by a factor of
+2j + 1. As a result, qubit degradation due to ..." and spectators are "automatically mitigated ... this feature is unique to our approach". Every check
+they ran is a computational-basis fidelity, which a phase on a spectator cannot change.
+THEIR OPEN ITEM (Conclusion, v2): "a short delay between the measurements in the parity protocol might improve the results by removing residual
+oscillator ring-down effects."
+
+RUN (ibm_fez, theirs; <our IBM instance>; code hebrew.py, fire_hebrew.py, analyze_hebrew.py, synth_hebrew.py; hashes in CODE_HEBREW.sha256.text):
+- Measured set = their printed 20-qubit fez set, qubits 0-19 (q11 has readout error > 5 % in today's record; kept, it is theirs).
+- Neighbours = every untouched qubit within two couplings of 0-19 on today's coupling map: 23, 27, 31, 35 (distance 1), 22, 24, 26, 28, 30, 32, 34
+  (distance 2) = 11 qubits, prepared |+>, read X or Y. State check: 21, 25, 29, 33 (distance 3) prepared |1>, read Z.
+- Rounds N in {1, 3, 5, 7, 13}. Arms: M = the 20 measured N times (default measure, 415 dt = 1.66 us); D = the 20 idle 415 dt per round;
+  MD = measure then a 250 dt (1.0 us) delay per round (their "short delay"); DD = idle (415 + 250) dt per round. Barriers on all qubits each round.
+  Equal compiled durations M=D and MD=DD on every N and setting: checked in the dry run (PASS) and recomputed at fire time (fire refuses otherwise).
+- 44 circuits per job (40 main + 4 known-good), 6000 shots, two jobs: copy 0 in build order, copy 1 reversed. Record saved before each job.
+  Estimate 140 s (dry run, 0.25 ms repetition delay assumed), cap 200 s. One restart on an IBM-side error, then HOLD.
+- Dose: 20 simultaneous readouts. Committed fez dose rows: K=1 at most 0.15, K=10 0.13 (repeat 0.17), K=39 1.62 (repeat 1.47) deg per readout.
+  NO prediction is scaled from these; the run measures K=20.
+
+KNOWN-GOOD: arm KG repeats the committed 21 Oct fez control-run design exactly -- the 39-qubit pack E measured 8 times against an equal idle (415 dt
+per step), its 117 untouched S qubits in |+> read XX / YY, same convention (phase = arctan2(<Y>, <X>), kick = wrap(phi_M - phi_D) / 8, median over
+the 117). Committed value: R1 kick pooled -1.6180 deg [-2.0847, -1.1786] (control_run/results_prereg.txt). PASS rule, fixed now: the pooled median of
+this run's KG kick lies in [-3.24, -0.81] (within a factor 2 of -1.618) AND its 99 % bootstrap upper end is below 0. If it fails, the fez readings
+below are "not decided" and printed as such (the rule is the rule, never relaxed).
+
+READINGS (analyze_hebrew.py, units deg per readout unless stated; 99 % bootstrap over the 11 neighbours; per copy and pooled; FINAL = pooled outcome
+if both copies give the same outcome, else CANNOT_TELL):
+ R1  kick M - D: per neighbour, least-squares slope through the origin of wrap(phi_M - phi_D) vs N; median over neighbours.
+ R2  kick MD - DD: the same with the 1 us inter-round delay.
+ R2b delay effect: median over neighbours of (R1 slope - R2 slope): does their short delay change what the readouts do to the neighbours?
+ R3  coherence: slope of ln(r_M / r_D) vs N per readout; R3b the same with the delay.
+ Outcomes: ABOVE (lower end > 0), BELOW (upper end < 0), CONSISTENT (interval inside +-S), CANNOT_TELL otherwise. Scales S fixed now:
+ S = 0.25 deg/readout for R1/R2/R2b (what 11 neighbours x 6000 shots resolve: synthetic null intervals about +-0.1 to 0.2; it separates "no kick"
+ from a dose between the committed K=10 0.13 and K=39 1.62 values); S = 0.002 per readout for R3/R3b.
+ Descriptive, not scored: per-N profiles, state-check P(1) of the |1> qubits by arm. No mechanism is named; a resolved R1 says the neighbours' phase
+ moves per readout more than an equal idle at this dose on today's fez -- it does not say what the readout does.
+
+SYNTHETIC (synth_hebrew.py, 40 draws per world, both copies simulated and combined exactly as above; synth_results_hebrew.text):
+ worlds none / linear (-0.5 deg/readout +-0.15 per qubit, with coherence loss 0.004/readout) / saturating (-2 deg on the first readout only) /
+ ringdown (kick in M only, the delay removes it) / below (-0.02 deg/readout). False calls 4/1000 = 0.4 % (worst world 1.0 %). Power: R1 37/40 linear,
+ 34/40 saturating, 39/40 ringdown; R2b resolves the ringdown world 34/40; R3/R3b are weak (mostly CANNOT_TELL in null worlds at S = 0.002) -- stated.
+ KNOWN-GOOD rule on a planted -1.6 deg/readout pack: PASS 40/40.
+
+DELIVERABLE: raw fin bits per circuit (raw_hebrew_J0/J1.npz), transpiled circuits (circuits_hebrew.qpy), durations, records before/after, job ids.
+Their math is theirs.
+
+## /q (run on this plan before any job; checks that fired, and what changed)
+- 8 (equal idle of the stated length, compiled schedule): durations recomputed from the transpiled circuits; fire refuses on any mismatch. Held.
+- 9 (instruments differ in more than the named variable): M vs D differ in the readout pulse AND the classical write; MD/DD add the same delay to
+  both. Listed; no cause named.
+- 11 (the idle holds the same state): measured set is in |0> in both arms (no state prep on 0-19); neighbours identical in both arms. Held.
+- 13 (sequential is drift): every comparison is inside one job; copies are separate jobs, reported by their gap (FINAL rule). Held.
+- 14/18 (known-good, the rule is the rule): KG reproduces the committed control-run design on fez, rule fixed above, not relaxed after.
+- 15/16 (plant every world, measure the floor): five worlds planted; first synthetic at S = 0.15 left R2b/R1 CONSISTENT unreachable (null intervals
+  +-0.1-0.2) -> S fixed at 0.25 BEFORE any job (this plan); a single-copy null ABOVE seen in the smoke test is why FINAL needs both copies.
+- 17 (sign convention): same arctan2(<Y>, <X>) and readout-minus-idle as the committed analysis (control_run/analyze.py lines 45-46, 60-61), so a
+  KG sign is directly comparable to the committed -1.618.
+- 21/22 (one chip; units): one chip by design (their fez set); units are the 11 neighbours, not shots. A K=20 reading is not compared with K=39 values.
+- 25/28 (more than two answers; no mechanism): ring-down, frame updates, pulse edges, classical feed: none named; R2b only says whether the delay
+  changes the reading.
+- 33 (budget): <our IBM instance> remaining 3,086 s at the dry run; estimate 140 s; cap 200.

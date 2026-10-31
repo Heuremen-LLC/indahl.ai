@@ -1,0 +1,66 @@
+ibm_kingston: KNOWN-GOOD PASS: pooled median kick -2.424 [-3.984, -1.932] vs committed -2.864 (window x0.5..x2, upper end < 0)
+== S spectators (117 untouched, N = 8)
+  KG kick M (deg/readout)                              -2.4240 [-3.9835, -1.9317]  A BELOW       B BELOW       FINAL BELOW
+  S1 signed residual MC (deg/readout)                  -0.0095 [-0.1025, +0.1147]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S1 signed residual MF (deg/readout)                  +0.0894 [-0.0115, +0.1979]  A ABOVE       B CONSISTENT  FINAL CANNOT_TELL
+  S1 signed residual ME (deg/readout)                  +0.0145 [-0.0385, +0.0650]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S2 SPLIT slope M vs 0 (all given back)               +0.9921 [+0.9829, +0.9970]  A ABOVE       B ABOVE       FINAL ABOVE
+  S2b SPLIT slope M vs 1 (none given back)             +0.9921 [+0.9829, +0.9970]  A CONSISTENT  B CONSISTENT  FINAL BELOW
+  S2 SPLIT slope MC vs 0 (all given back)              -0.0105 [-0.0386, +0.0155]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S2b SPLIT slope MC vs 1 (none given back)            -0.0105 [-0.0386, +0.0155]  A BELOW       B BELOW       FINAL BELOW
+  S2 SPLIT slope MF vs 0 (all given back)              -0.0033 [-0.0227, +0.0183]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S2b SPLIT slope MF vs 1 (none given back)            -0.0033 [-0.0227, +0.0183]  A BELOW       B BELOW       FINAL BELOW
+  S2 SPLIT slope ME vs 0 (all given back)              +0.0019 [-0.0087, +0.0154]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S2b SPLIT slope ME vs 1 (none given back)            +0.0019 [-0.0087, +0.0154]  A BELOW       B BELOW       FINAL BELOW
+  S3 P(1) excess back-to-zero M                        +0.0778 [+0.0370, +0.1100]  A ABOVE       B ABOVE       FINAL ABOVE
+  S3 P(1) excess back-to-zero MC                       +0.0022 [-0.0035, +0.0083]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S3 P(1) excess back-to-zero MF                       +0.0015 [-0.0040, +0.0068]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S3 P(1) excess back-to-zero ME                       +0.0028 [+0.0008, +0.0068]  A CONSISTENT  B ABOVE       FINAL CANNOT_TELL
+  S4 coherence M minus none                            -0.0062 [-0.0117, -0.0011]  A CONSISTENT  B CONSISTENT  FINAL BELOW
+  S4 coherence MC minus none                           -0.0094 [-0.0146, +0.0002]  A CONSISTENT  B BELOW       FINAL CANNOT_TELL
+  S4 coherence MF minus none                           -0.0065 [-0.0112, -0.0002]  A BELOW       B BELOW       FINAL BELOW
+  S4 coherence ME minus none                           -0.0059 [-0.0102, -0.0017]  A BELOW       B BELOW       FINAL BELOW
+  S4b coherence MC minus M (frame only)                +0.0009 [-0.0037, +0.0057]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S5 SPLIT slope MC minus MF (old vs fresh table)      -0.0072 [-0.0330, +0.0167]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S2c SPLIT slope MC vs 0.5 (BELOW = more than half given back) -0.0105 [-0.0386, +0.0155]  A BELOW       B BELOW       FINAL BELOW
+  S2d SPLIT slope M minus MC (ABOVE = clears the ruler ceiling) +1.0026 [+0.9838, +1.0295]  A ABOVE       B ABOVE       FINAL ABOVE
+  S7 share given back MC vs 0.5 (ABOVE = more than half) +0.9221 [+0.8734, +0.9479]  A ABOVE       B ABOVE       FINAL ABOVE
+  S2c SPLIT slope MF vs 0.5 (BELOW = more than half given back) -0.0033 [-0.0227, +0.0183]  A BELOW       B BELOW       FINAL BELOW
+  S2d SPLIT slope M minus MF (ABOVE = clears the ruler ceiling) +0.9953 [+0.9753, +1.0156]  A ABOVE       B ABOVE       FINAL ABOVE
+  S7 share given back MF vs 0.5 (ABOVE = more than half) +0.9281 [+0.8738, +0.9538]  A ABOVE       B ABOVE       FINAL ABOVE
+  S2c SPLIT slope ME vs 0.5 (BELOW = more than half given back) +0.0019 [-0.0087, +0.0154]  A BELOW       B BELOW       FINAL BELOW
+  S2d SPLIT slope M minus ME (ABOVE = clears the ruler ceiling) +0.9902 [+0.9758, +1.0035]  A ABOVE       B ABOVE       FINAL ABOVE
+  S7 share given back ME vs 0.5 (ABOVE = more than half) +0.9495 [+0.9119, +0.9713]  A ABOVE       B ABOVE       FINAL ABOVE
+  S6 |kick| M minus |residual| MC (given back)         +2.2108 [+1.7203, +3.7165]  A ABOVE       B ABOVE       FINAL ABOVE
+== P Bell pairs (48, N = 4)
+  P1 Bell fidelity M minus none                        -0.1153 [-0.3097, -0.0477]  A BELOW       B BELOW       FINAL BELOW
+  P1 Bell fidelity MC minus none                       -0.0032 [-0.0088, +0.0083]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P1 Bell fidelity MF minus none                       +0.0018 [-0.0042, +0.0096]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P1 Bell fidelity ME minus none                       -0.0030 [-0.0087, +0.0001]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P2 X-part concurrence M minus none                   -0.0085 [-0.0158, -0.0004]  A BELOW       B CONSISTENT  FINAL CANNOT_TELL excluded 2
+  P2 X-part concurrence MC minus none                  -0.0136 [-0.0228, -0.0023]  A BELOW       B BELOW       FINAL BELOW excluded 2
+  P2 X-part concurrence MF minus none                  -0.0059 [-0.0230, +0.0034]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT excluded 2
+  P2 X-part concurrence ME minus none                  -0.0063 [-0.0213, -0.0007]  A BELOW       B CONSISTENT  FINAL CANNOT_TELL excluded 2
+  P3 Bell fidelity MC minus M (given back)             +0.1068 [+0.0561, +0.2356]  A ABOVE       B ABOVE       FINAL ABOVE
+  P4a |pair phase| M minus copy floor (gate)           +11.5962 [+6.1042, +13.9234]  A ABOVE       B ABOVE       FINAL ABOVE
+  P5 signed pair-phase residual MC (deg/step)          +0.0504 [-0.7495, +0.4702]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P4 pair-phase share given back MC vs 0.5             +0.9266 [+0.8362, +0.9627]  A ABOVE       B ABOVE       FINAL ABOVE
+  P5 signed pair-phase residual MF (deg/step)          +0.1412 [-0.1572, +0.3762]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P4 pair-phase share given back MF vs 0.5             +0.9619 [+0.9175, +0.9749]  A ABOVE       B ABOVE       FINAL ABOVE
+  P5 signed pair-phase residual ME (deg/step)          -0.0366 [-0.1786, +0.0748]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P4 pair-phase share given back ME vs 0.5             +0.9856 [+0.9715, +0.9912]  A ABOVE       B ABOVE       FINAL ABOVE
+  P3b X-part concurrence MC minus M (frame only)       -0.0048 [-0.0068, +0.0000]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  F per arm (pooled): {'D': 0.7195, 'DE': 0.8595, 'M': 0.1645, 'MC': 0.5679, 'MF': 0.715, 'ME': 0.8556, 'M_endcorr': 0.6313}
+== C clock c0, s, c1 = [3, 16, 23] (look in the middle, N = 4)
+  C1 dF M minus none                                   -0.5550 [-0.5764, -0.5371]  A BELOW       B BELOW       FINAL BELOW
+  C1 dF MC minus none                                  -0.1516 [-0.1712, -0.1291]  A BELOW       B BELOW       FINAL BELOW
+  C1 dF MF minus none                                  -0.0045 [-0.0238, +0.0155]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  C1 dF ME minus none                                  -0.0038 [-0.0234, +0.0160]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  C1 dF M with the total put back at the END minus D   -0.0882 [-0.1074, -0.0651]  A BELOW       B BELOW       FINAL BELOW
+  C2 F(MC) minus F(M) (given back)                     +0.4034 [+0.3852, +0.4248]  A ABOVE       B ABOVE       FINAL ABOVE
+  C3 F(MC) minus F(M put back at the end)              -0.0634 [-0.0867, -0.0439]  A BELOW       B BELOW       FINAL BELOW
+  C2b recovered share (F(MC)-F(M))/(F(D)-F(M)) vs 0.5  +0.7269 [+0.6954, +0.7628]  A ABOVE       B ABOVE       FINAL ABOVE
+  C4a look distance |E_M - E_D|^2 minus copy floor (gate) +8.4545 [+8.0733, +8.8587]  A ABOVE       B ABOVE       FINAL ABOVE
+  C4 distance share given back MC vs 0.5               +0.7591 [+0.7344, +0.7840]  A ABOVE       B ABOVE       FINAL ABOVE
+  C4 distance share given back MF vs 0.5               +1.0007 [+0.9965, +1.0047]  A ABOVE       B ABOVE       FINAL ABOVE
+  C4 distance share given back ME vs 0.5               +0.9998 [+0.9960, +1.0037]  A ABOVE       B ABOVE       FINAL ABOVE

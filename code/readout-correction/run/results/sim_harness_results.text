@@ -1,0 +1,13 @@
+S M: kick per readout by fin index (expect planted [-7.6, 2.1, -18.1, 5.5, -3.0]) -> [-7.6, 2.13, -18.08, 5.49, -2.99]
+S MC: kick per readout by fin index (expect planted [-7.6, 2.1, -18.1, 5.5, -3.0]) -> [0.03, 0.01, 0.02, -0.02, -0.01]
+S MF: kick per readout by fin index (expect planted [-7.6, 2.1, -18.1, 5.5, -3.0]) -> [0.02, -0.01, -0.03, -0.03, -0.03]
+S ME: kick per readout by fin index (expect planted [-7.6, 2.1, -18.1, 5.5, -3.0]) -> [-0.01, 0.03, 0.0, -0.01, 0.03]
+S D/DE phase (deg): [-90.1, -90.1, -90.2, -89.9, -90.0] / [-90.0, -90.2, -90.0, -90.0, -90.0]  (expect -90)
+S Z0 P1 excess M: [0.2548, 0.021, 0.9072, 0.1402, 0.043] expect (1-cos(8k))/2 = [np.float64(0.2561), np.float64(0.0213), np.float64(0.9086), np.float64(0.1403), np.float64(0.0432)]; MC [0.0, 0.0, 0.0, 0.0, 0.0]
+P D: fbell [1.0, 1.0] conc [1.0, 1.0]   (M expect F [np.float64(0.9636), np.float64(0.8187)])
+P DE: fbell [1.0, 1.0] conc [1.0, 1.0]   (M expect F [np.float64(0.9636), np.float64(0.8187)])
+P M: fbell [0.9636, 0.8191] conc [0.999, 1.0001]   (M expect F [np.float64(0.9636), np.float64(0.8187)])
+P MC: fbell [1.0, 1.0] conc [1.0, 1.0]   (M expect F [np.float64(0.9636), np.float64(0.8187)])
+P MF: fbell [1.0, 1.0] conc [1.0, 1.0]   (M expect F [np.float64(0.9636), np.float64(0.8187)])
+P ME: fbell [1.0, 1.0] conc [1.0, 1.0]   (M expect F [np.float64(0.9636), np.float64(0.8187)])
+C F per arm: D 0.9999, DE 1.0001, M 0.6264, MC 1.0006, MF 1.0003, ME 0.9998, M_endcorr 0.9553   (sim_check: D 1.0000, M 0.6259, MC 1.0000, M_end 0.9556; ME,DE expect 1, MF 1)

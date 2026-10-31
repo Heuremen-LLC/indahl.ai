@@ -1,0 +1,115 @@
+SYNTHETIC -- ball.py, 40 draws per world, bootstrap 400, band (0.5, 99.5); Q=20 targets, Blo on 4, NB=37 neighbours; shots per copy: A/Bhi 40000 per target, Blo 16000 per target, C 8000 per basis per arm. Two copies + pooled; FINAL = pooled if copies agree.
+== S0 null (no K dependence, no phase)
+   R1 A median a12                              ABOVE 40
+   R1 A median a23                              ABOVE 40
+   R2 Bhi-A median dp0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dT0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dD0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dT1                          CONSISTENT 40 [null]
+   R2 Bhi-A median dD1                          CONSISTENT 40 [null]
+   R2 Bhi-A median da12                         CONSISTENT 40 [null]
+   R2 Bhi-A median da23                         CONSISTENT 40 [null]
+   R2 Blo-A median dp0                          CONSISTENT 40 [null]
+   R2 Blo-A median dT0                          BELOW 1  CANNOT_TELL 1  CONSISTENT 38 [null]
+   R2 Blo-A median dD0                          BELOW 1  CANNOT_TELL 1  CONSISTENT 38 [null]
+   R2 Blo-A median dT1                          CONSISTENT 40 [null]
+   R2 Blo-A median dD1                          CONSISTENT 40 [null]
+   R2 Blo-A median da12                         BELOW 1  CONSISTENT 39 [null]
+   R2 Blo-A median da23                         CONSISTENT 40 [null]
+   R3 neighbour kick median [deg/readout]       CONSISTENT 40 [null]
+   per-target floor (null comparisons): 135 of 6720 per-target readings resolved (2.0 %)
+== S1 K dependence only (hi: eta_dn x1.5, e01 x1.3; lo: eta_dn x0.7)
+   R1 A median a12                              ABOVE 40
+   R1 A median a23                              ABOVE 40
+   R2 Bhi-A median dp0                          ABOVE 16  CANNOT_TELL 16  CONSISTENT 8
+   R2 Bhi-A median dT0                          ABOVE 40
+   R2 Bhi-A median dD0                          ABOVE 40
+   R2 Bhi-A median dT1                          BELOW 40
+   R2 Bhi-A median dD1                          CONSISTENT 40
+   R2 Bhi-A median da12                         ABOVE 40
+   R2 Bhi-A median da23                         ABOVE 40
+   R2 Blo-A median dp0                          CONSISTENT 40
+   R2 Blo-A median dT0                          CONSISTENT 40
+   R2 Blo-A median dD0                          CONSISTENT 40
+   R2 Blo-A median dT1                          ABOVE 6  CANNOT_TELL 8  CONSISTENT 26
+   R2 Blo-A median dD1                          ABOVE 1  CANNOT_TELL 1  CONSISTENT 38
+   R2 Blo-A median da12                         BELOW 15  CANNOT_TELL 13  CONSISTENT 12
+   R2 Blo-A median da23                         BELOW 16  CANNOT_TELL 12  CONSISTENT 12
+   R3 neighbour kick median [deg/readout]       CANNOT_TELL 1  CONSISTENT 39 [null]
+== S2 phase only (-1.0 deg/readout, spread 0.5)
+   R1 A median a12                              ABOVE 40
+   R1 A median a23                              ABOVE 40
+   R2 Bhi-A median dp0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dT0                          CANNOT_TELL 1  CONSISTENT 39 [null]
+   R2 Bhi-A median dD0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dT1                          CONSISTENT 40 [null]
+   R2 Bhi-A median dD1                          CONSISTENT 40 [null]
+   R2 Bhi-A median da12                         CONSISTENT 40 [null]
+   R2 Bhi-A median da23                         CONSISTENT 40 [null]
+   R2 Blo-A median dp0                          CANNOT_TELL 2  CONSISTENT 38 [null]
+   R2 Blo-A median dT0                          CANNOT_TELL 1  CONSISTENT 39 [null]
+   R2 Blo-A median dD0                          BELOW 1  CANNOT_TELL 1  CONSISTENT 38 [null]
+   R2 Blo-A median dT1                          CANNOT_TELL 1  CONSISTENT 39 [null]
+   R2 Blo-A median dD1                          CANNOT_TELL 1  CONSISTENT 39 [null]
+   R2 Blo-A median da12                         ABOVE 1  CANNOT_TELL 3  CONSISTENT 36 [null]
+   R2 Blo-A median da23                         CONSISTENT 40 [null]
+   R3 neighbour kick median [deg/readout]       BELOW 40
+   per-target floor (null comparisons): 79 of 6720 per-target readings resolved (1.2 %)
+== S3 both
+   R1 A median a12                              ABOVE 40
+   R1 A median a23                              ABOVE 40
+   R2 Bhi-A median dp0                          ABOVE 17  CANNOT_TELL 16  CONSISTENT 7
+   R2 Bhi-A median dT0                          ABOVE 40
+   R2 Bhi-A median dD0                          ABOVE 40
+   R2 Bhi-A median dT1                          BELOW 40
+   R2 Bhi-A median dD1                          BELOW 1  CANNOT_TELL 1  CONSISTENT 38
+   R2 Bhi-A median da12                         ABOVE 40
+   R2 Bhi-A median da23                         ABOVE 40
+   R2 Blo-A median dp0                          CANNOT_TELL 2  CONSISTENT 38
+   R2 Blo-A median dT0                          CONSISTENT 40
+   R2 Blo-A median dD0                          CONSISTENT 40
+   R2 Blo-A median dT1                          ABOVE 5  CANNOT_TELL 4  CONSISTENT 31
+   R2 Blo-A median dD1                          CONSISTENT 40
+   R2 Blo-A median da12                         BELOW 7  CANNOT_TELL 23  CONSISTENT 10
+   R2 Blo-A median da23                         BELOW 10  CANNOT_TELL 20  CONSISTENT 10
+   R3 neighbour kick median [deg/readout]       BELOW 40
+== S4 NEITHER resolvable (hi eta_dn x1.03, kick -0.03)
+   R1 A median a12                              ABOVE 40
+   R1 A median a23                              ABOVE 40
+   R2 Bhi-A median dp0                          CONSISTENT 40
+   R2 Bhi-A median dT0                          CONSISTENT 40
+   R2 Bhi-A median dD0                          CONSISTENT 40
+   R2 Bhi-A median dT1                          CONSISTENT 40
+   R2 Bhi-A median dD1                          CONSISTENT 40
+   R2 Bhi-A median da12                         CONSISTENT 40
+   R2 Bhi-A median da23                         ABOVE 1  CONSISTENT 39
+   R2 Blo-A median dp0                          CONSISTENT 40 [null]
+   R2 Blo-A median dT0                          CONSISTENT 40 [null]
+   R2 Blo-A median dD0                          CONSISTENT 40 [null]
+   R2 Blo-A median dT1                          CANNOT_TELL 1  CONSISTENT 39 [null]
+   R2 Blo-A median dD1                          CANNOT_TELL 1  CONSISTENT 39 [null]
+   R2 Blo-A median da12                         CANNOT_TELL 2  CONSISTENT 38 [null]
+   R2 Blo-A median da23                         CANNOT_TELL 1  CONSISTENT 39 [null]
+   R3 neighbour kick median [deg/readout]       CANNOT_TELL 1  CONSISTENT 39
+   per-target floor (null comparisons): 16 of 1120 per-target readings resolved (1.4 %)
+== S5 known-good null (eta_dn = eta_up = 0.002: no decay/excitation asymmetry)
+   R1 A median a12                              CONSISTENT 40
+   R1 A median a23                              CONSISTENT 40
+   R2 Bhi-A median dp0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dT0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dD0                          CONSISTENT 40 [null]
+   R2 Bhi-A median dT1                          CONSISTENT 40 [null]
+   R2 Bhi-A median dD1                          CONSISTENT 40 [null]
+   R2 Bhi-A median da12                         CONSISTENT 40 [null]
+   R2 Bhi-A median da23                         CONSISTENT 40 [null]
+   R2 Blo-A median dp0                          CONSISTENT 40 [null]
+   R2 Blo-A median dT0                          CONSISTENT 40 [null]
+   R2 Blo-A median dD0                          CONSISTENT 40 [null]
+   R2 Blo-A median dT1                          CONSISTENT 40 [null]
+   R2 Blo-A median dD1                          CONSISTENT 40 [null]
+   R2 Blo-A median da12                         ABOVE 2  CONSISTENT 38 [null]
+   R2 Blo-A median da23                         CANNOT_TELL 1  CONSISTENT 39 [null]
+   R3 neighbour kick median [deg/readout]       CONSISTENT 40 [null]
+   per-target floor (null comparisons): 108 of 6720 per-target readings resolved (1.6 %)
+KNOWN-GOOD rule (a12) passed in 200 of 200 synthetic pooled runs with eta_dn > eta_up (their printed reading), and in 0 of 40 runs of S5 where the asymmetry is absent (must be ~0).
+FLOOR: 7 false calls in 2080 planted-null summary readings (0.3 %).

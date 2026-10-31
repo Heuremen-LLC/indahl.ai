@@ -1,0 +1,67 @@
+record before J1: layout c0,c1,s = [3, 23, 16]; p10 [0.001220703125, 0.003173828125, 0.008056640625] p01 [0.00732421875, 0.0087890625, 0.01220703125]; none alpha(t) = 1.04, 45.45, 89.87, 134.42
+record before J2: layout c0,c1,s = [3, 23, 16]; p10 [0.001220703125, 0.003173828125, 0.008056640625] p01 [0.00732421875, 0.0087890625, 0.01220703125]; none alpha(t) = 1.04, 45.45, 89.87, 134.42
+ideal alpha(t) = 0, 45, 90, 135 deg; arm D ideal conditional Bloch of s = (sin t theta, 0, cos t theta)
+-- copy 0 (J1): F(D) 0.6628  F(M) 0.1601  fitted look shrink lambda c0,c1,s = 0.999, 1.000, 0.998
+   arm D conditional Bloch of s | t=0: X +0.065 Y -0.022 Z +0.894  length 0.896  (ideal +0.000 +0.000 +1.000, length 1)
+   arm M conditional Bloch of s | t=0: X +0.019 Y +0.033 Z +0.920  length 0.921  (ideal +0.000 +0.000 +1.000, length 1)
+   arm D conditional Bloch of s | t=1: X +0.526 Y -0.397 Z +0.644  length 0.921  (ideal +0.707 +0.000 +0.707, length 1)
+   arm M conditional Bloch of s | t=1: X +0.253 Y -0.547 Z +0.627  length 0.870  (ideal +0.707 +0.000 +0.707, length 1)
+   arm D conditional Bloch of s | t=2: X +0.718 Y -0.421 Z +0.028  length 0.833  (ideal +1.000 +0.000 +0.000, length 1)
+   arm M conditional Bloch of s | t=2: X +0.362 Y -0.744 Z -0.042  length 0.828  (ideal +1.000 +0.000 +0.000, length 1)
+   arm D conditional Bloch of s | t=3: X +0.366 Y -0.485 Z -0.584  length 0.842  (ideal +0.707 +0.000 -0.707, length 1)
+   arm M conditional Bloch of s | t=3: X +0.147 Y -0.640 Z -0.546  length 0.854  (ideal +0.707 +0.000 -0.707, length 1)
+   R1 alpha(t=0) - none [deg]                 +3.1198 [  -3.8429,   +9.8630] -> CONSISTENT
+   R1 alpha(t=1) - none [deg]                 -6.2435 [ -13.5966,   +0.1231] -> CONSISTENT
+   R1 alpha(t=2) - none [deg]                 -2.1291 [ -11.3254,   +6.5836] -> CONSISTENT
+   R1 alpha(t=3) - none [deg]                +13.5222 [  +4.6433,  +21.9232] -> ABOVE
+   R2 kick c0 [deg/readout]                   -2.3483 [  -2.9149,   -1.6866] -> BELOW
+   R2 kick c1 [deg/readout]                  -17.5768 [ -18.3998,  -16.7861] -> BELOW
+   R2 kick s [deg/readout]                    -7.7146 [  -8.5416,   -6.8972] -> BELOW
+   R3 dF (M - D)                              -0.5026 [  -0.5243,   -0.4841] -> BELOW
+   R4 delta = phi_c1 - 2 phi_c0 [deg]        -51.5214 [ -57.8114,  -46.8210] -> BELOW
+-- copy 1 (J2): F(D) 0.6680  F(M) 0.1563  fitted look shrink lambda c0,c1,s = 0.964, 1.007, 0.984
+   arm D conditional Bloch of s | t=0: X +0.060 Y -0.012 Z +0.934  length 0.936  (ideal +0.000 +0.000 +1.000, length 1)
+   arm M conditional Bloch of s | t=0: X -0.022 Y -0.030 Z +0.900  length 0.901  (ideal +0.000 +0.000 +1.000, length 1)
+   arm D conditional Bloch of s | t=1: X +0.594 Y -0.374 Z +0.684  length 0.980  (ideal +0.707 +0.000 +0.707, length 1)
+   arm M conditional Bloch of s | t=1: X +0.269 Y -0.591 Z +0.676  length 0.937  (ideal +0.707 +0.000 +0.707, length 1)
+   arm D conditional Bloch of s | t=2: X +0.762 Y -0.440 Z -0.014  length 0.880  (ideal +1.000 +0.000 +0.000, length 1)
+   arm M conditional Bloch of s | t=2: X +0.552 Y -0.775 Z +0.094  length 0.957  (ideal +1.000 +0.000 +0.000, length 1)
+   arm D conditional Bloch of s | t=3: X +0.369 Y -0.500 Z -0.603  length 0.866  (ideal +0.707 +0.000 -0.707, length 1)
+   arm M conditional Bloch of s | t=3: X +0.207 Y -0.633 Z -0.593  length 0.892  (ideal +0.707 +0.000 -0.707, length 1)
+   R1 alpha(t=0) - none [deg]                 +2.6244 [  -3.9621,   +9.1493] -> CONSISTENT
+   R1 alpha(t=1) - none [deg]                 -4.4860 [  -9.8061,   +1.2096] -> CONSISTENT
+   R1 alpha(t=2) - none [deg]                 +1.1494 [  -6.4154,  +10.2003] -> CONSISTENT
+   R1 alpha(t=3) - none [deg]                +14.1292 [  +4.9102,  +23.5520] -> ABOVE
+   R2 kick c0 [deg/readout]                   -2.7991 [  -3.3619,   -2.1276] -> BELOW
+   R2 kick c1 [deg/readout]                  -18.4606 [ -19.2515,  -17.7588] -> BELOW
+   R2 kick s [deg/readout]                    -7.0758 [  -7.8662,   -6.3334] -> BELOW
+   R3 dF (M - D)                              -0.5117 [  -0.5295,   -0.4920] -> BELOW
+   R4 delta = phi_c1 - 2 phi_c0 [deg]        -51.4491 [ -56.7822,  -45.9650] -> BELOW
+-- pooled: F(D) 0.6654  F(M) 0.1582  fitted look shrink lambda c0,c1,s = 0.982, 1.004, 0.991
+   arm D conditional Bloch of s | t=0: X +0.062 Y -0.017 Z +0.915  length 0.917  (ideal +0.000 +0.000 +1.000, length 1)
+   arm M conditional Bloch of s | t=0: X -0.002 Y +0.001 Z +0.910  length 0.910  (ideal +0.000 +0.000 +1.000, length 1)
+   arm D conditional Bloch of s | t=1: X +0.558 Y -0.385 Z +0.664  length 0.949  (ideal +0.707 +0.000 +0.707, length 1)
+   arm M conditional Bloch of s | t=1: X +0.261 Y -0.569 Z +0.652  length 0.903  (ideal +0.707 +0.000 +0.707, length 1)
+   arm D conditional Bloch of s | t=2: X +0.740 Y -0.431 Z +0.008  length 0.857  (ideal +1.000 +0.000 +0.000, length 1)
+   arm M conditional Bloch of s | t=2: X +0.454 Y -0.760 Z +0.024  length 0.885  (ideal +1.000 +0.000 +0.000, length 1)
+   arm D conditional Bloch of s | t=3: X +0.367 Y -0.492 Z -0.593  length 0.854  (ideal +0.707 +0.000 -0.707, length 1)
+   arm M conditional Bloch of s | t=3: X +0.176 Y -0.637 Z -0.569  length 0.872  (ideal +0.707 +0.000 -0.707, length 1)
+   R1 alpha(t=0) - none [deg]                 +2.8608 [  -1.4135,   +6.9197] -> CONSISTENT
+   R1 alpha(t=1) - none [deg]                 -5.4156 [  -9.6438,   -1.7737] -> BELOW
+   R1 alpha(t=2) - none [deg]                 -0.4605 [  -6.4452,   +5.2324] -> CONSISTENT
+   R1 alpha(t=3) - none [deg]                +13.8098 [  +7.2645,  +19.6174] -> ABOVE
+   R2 kick c0 [deg/readout]                   -2.5686 [  -3.0185,   -2.1519] -> BELOW
+   R2 kick c1 [deg/readout]                  -18.0164 [ -18.6031,  -17.3919] -> BELOW
+   R2 kick s [deg/readout]                    -7.3899 [  -7.9399,   -6.8730] -> BELOW
+   R3 dF (M - D)                              -0.5072 [  -0.5236,   -0.4938] -> BELOW
+   R4 delta = phi_c1 - 2 phi_c0 [deg]        -51.5165 [ -55.2141,  -47.3355] -> BELOW
+FINAL (pooled if the copies agree, else CANNOT_TELL)
+   R1 alpha(t=0) - none [deg]                 +2.8608 [  -1.4135,   +6.9197]  copies CONSISTENT/CONSISTENT  gap -0.4954  -> CONSISTENT  (bound: |value| within [-1.4135, +6.9197])
+   R1 alpha(t=1) - none [deg]                 -5.4156 [  -9.6438,   -1.7737]  copies CONSISTENT/CONSISTENT  gap +1.7575  -> BELOW
+   R1 alpha(t=2) - none [deg]                 -0.4605 [  -6.4452,   +5.2324]  copies CONSISTENT/CONSISTENT  gap +3.2785  -> CONSISTENT  (bound: |value| within [-6.4452, +5.2324])
+   R1 alpha(t=3) - none [deg]                +13.8098 [  +7.2645,  +19.6174]  copies ABOVE/ABOVE  gap +0.6070  -> ABOVE
+   R2 kick c0 [deg/readout]                   -2.5686 [  -3.0185,   -2.1519]  copies BELOW/BELOW  gap -0.4509  -> BELOW
+   R2 kick c1 [deg/readout]                  -18.0164 [ -18.6031,  -17.3919]  copies BELOW/BELOW  gap -0.8837  -> BELOW
+   R2 kick s [deg/readout]                    -7.3899 [  -7.9399,   -6.8730]  copies BELOW/BELOW  gap +0.6388  -> BELOW
+   R3 dF (M - D)                              -0.5072 [  -0.5236,   -0.4938]  copies BELOW/BELOW  gap -0.0090  -> BELOW
+   R4 delta = phi_c1 - 2 phi_c0 [deg]        -51.5165 [ -55.2141,  -47.3355]  copies BELOW/BELOW  gap +0.0722  -> BELOW

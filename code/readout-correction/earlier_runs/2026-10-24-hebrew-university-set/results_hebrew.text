@@ -1,0 +1,10 @@
+KNOWN-GOOD (21 Oct committed fez control run, 39-pack, N=8, median over 117 untouched: -1.618 deg [-2.085, -1.179]; rule: pooled median in [-3.24, -0.81] and 99% upper end < 0): pooled -1.474 [-2.090, -0.959] -> PASS  (copy 0 -1.553, copy 1 -1.532)
+R1 kick M-D (deg/readout)                  copy0 -2.3449 [-5.6796,-0.9341] BELOW       copy1 -2.3979 [-5.9383,-0.9968] BELOW       pooled -2.3688 [-5.8065,-1.1343] -> FINAL BELOW
+R2 kick MD-DD (deg/readout)                copy0 -2.5266 [-6.2010,-1.0569] BELOW       copy1 -2.2196 [-5.6622,-0.9400] BELOW       pooled -2.2662 [-5.6169,-1.0264] -> FINAL BELOW
+R2b delay effect (R1-R2 per neighbour)     copy0 +0.0451 [-0.1100,+0.2720] CANNOT_TELL copy1 -0.1635 [-0.3542,+0.0101] CANNOT_TELL pooled -0.0925 [-0.1896,+0.0702] -> FINAL CONSISTENT
+R3 coherence ln(rM/rD) per readout         copy0 -0.0007 [-0.0031,+0.0026] CANNOT_TELL copy1 +0.0014 [-0.0017,+0.0019] CONSISTENT  pooled +0.0003 [-0.0021,+0.0021] -> FINAL CANNOT_TELL
+R3b coherence with delay                   copy0 +0.0003 [-0.0025,+0.0067] CANNOT_TELL copy1 +0.0012 [-0.0030,+0.0045] CANNOT_TELL pooled +0.0008 [-0.0018,+0.0024] -> FINAL CANNOT_TELL
+profile median wrap(phi_M - phi_D) deg by N [1, 3, 5, 7, 13] [-1.993, -6.908, -12.485, -16.194, -30.692]
+profile median wrap(phi_MD - phi_DD) deg by N [1, 3, 5, 7, 13] [-2.749, -7.537, -10.879, -18.424, -29.343]
+state check P(1) on distance-3 |1> qubits at N=13 by arm {'M': 0.8074, 'D': 0.8056, 'MD': 0.7299, 'DD': 0.7309}
+jobs [('dbebthfgdj9s73flgpqg', 74), ('dbebu70m94ac738rhstg', 74)]

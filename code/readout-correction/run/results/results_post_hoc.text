@@ -1,0 +1,9 @@
+post_hoc_readings.py -- DEFINED AFTER THE DATA (31 Oct, after the results referee)
+ibm_kingston: (1) per-qubit scale today/committed (Theil-Sen) 0.959 [0.855, 1.003] (99 %); |kick| smaller today on 53% of the 117
+   (2) dose: committed N=4 vs N=8 differ by > 2 deg/readout on 8 of 117; fresh table on 7 of 117
+   (3) clock |E_X - E_none|^2 (pooled): M 8.492, MC 2.074, MF 0.032, ME 0.040; shot floor 0.038
+   (4) clock entries, committed N=4 vs fresh N=4 kick (deg/readout): q3 -3.03 vs -4.92, q16 -7.23 vs -7.32, q23 -18.38 vs -31.16
+ibm_marrakesh: (1) per-qubit scale today/committed (Theil-Sen) 0.523 [0.417, 0.642] (99 %); |kick| smaller today on 84% of the 117
+   (2) dose: committed N=4 vs N=8 differ by > 2 deg/readout on 12 of 117; fresh table on 8 of 117
+   (3) clock |E_X - E_none|^2 (pooled): M 0.491, MC 0.724, MF 0.140, ME 0.105; shot floor 0.035
+   (4) clock entries, committed N=4 vs fresh N=4 kick (deg/readout): q104 -6.13 vs -3.16, q105 -5.55 vs -3.25, q106 -14.79 vs -6.91

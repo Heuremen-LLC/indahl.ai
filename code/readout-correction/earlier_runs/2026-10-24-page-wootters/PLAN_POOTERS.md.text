@@ -1,0 +1,79 @@
+PLAN -- a Page-Wootters history state on ibm_kingston, and the same state with its clock LOOKED AT (24 Oct 2026)
+Written and committed BEFORE any job. Code: pooters.py (analysis + synthetic), fire_pooters.py (build, checks, submit). Hashes in CODE_POOTERS.sha256.text.
+
+QUESTION (theirs, not ours). Page & Wootters: a stationary global state of clock + system, (H_C x 1 + 1 x H_S)|Psi> = 0, shows ordinary evolution
+from the inside (conditioned on the clock) and none from the outside. The discrete version is the history state |Psi> = 1/sqrt(T) sum_t |t>|U^t psi0>.
+The ideal constraint has no term for the clock interacting with anything. The next step this run hands that field: what a real processor gives for
+the inside view, and what happens to the history state when the clock is LOOKED AT (a readout next to it) -- full tomography, raw counts and per-shot
+bitstrings, so they do their own math.
+
+DESIGN (fixed now).
+- Chip ibm_kingston (<our IBM instance>). Physical qubits: c0 = 3, s = 16, c1 = 23 (path 3-16-23, all three untouched qubits of the 21 Oct control-run
+  layout, within two couplings of its 39-qubit pack E, which stays as the "look"). Chosen because our committed per-qubit kicks on exactly these three
+  qubits are resolved and differ (known_good_source.text). HOLD (no substitution) if today's record shows readout_error >= 0.05 on any of them or
+  CZ gate_error >= 0.01 on (3,16) or (16,23).
+- History state: H on c0, c1; CRY(theta) c0 -> s; CRY(2 theta) c1 -> s; theta = pi/4; t = c0 + 2 c1 (0..3). Ideal conditional Bloch vector of s given
+  t: (sin t theta, 0, cos t theta).
+- Arms, same job, interleaved: M = the pack E read out 4 times (default measure) after the history is built; D = E idles 4 x 545 dt (the measure's
+  length on kingston, 2.18 us). Barriers around every step. Dry run checked: trivial layout, 4 CZ per circuit, scheduled durations on c0, c1, s equal
+  in M and D (XXX: 2865/2799/2873 dt; ZZZ: 2857/2791/2865 dt). The pack starts in |0> in both arms (check 11). The look = everything a readout of
+  the pack does (drive, resonator photons, record); this run cannot separate those (check 25).
+- Readout: all 27 Pauli settings (X/Y/Z on each of c0, c1, s; X = h, Y = sdg h), both arms: 54 circuits per job, 2000 shots. Two jobs, ABBA:
+  J1 settings in order with M before D; J2 settings reversed with D before M. Same transpiled circuits (qpy + hash saved). DD and twirling off.
+- Saved: backend record before every job, job record, counts (raw_pooters_J*.json), per-shot bitstrings of fin and of the pack's 4 readouts in arm M
+  (shots_pooters_J*.npz). On an IBM-side ERROR: one restart, then HOLD.
+- Budget: estimate 79 s (cap 90). Refuse if it would leave < 430 s for the free runs queued on marrakesh (other runs queued on that chip).
+
+KNOWN-GOOD: our committed per-qubit kick on these same three physical qubits, ibm_kingston 21 Oct control run (committed analyze.py functions, arm S, N = 8 vs equal idle, copies pooled, shot bootstrap; kg_perqubit_from_control.py -> known_good_source.text): q3 -3.06 [-3.52, -2.56], q16 -7.61 [-8.16, -7.06], q23 -18.12 [-18.72, -17.46] deg per readout. PASS (pooled R2): all three fitted kicks BELOW 0 AND their 95 % intervals do not overlap and sit in the committed order, q23 most negative, then q16, then q3 (an order read with widths, not point labels -- /q check 20). Sizes are not required to match (3 days later, N = 4 not 8, neighbours entangled not in superposition). FAIL -> R2-R4 are "not decided" (the instrument is not established on this run); R1 and the raw data stand.
+
+READINGS (only these; four outcomes ABOVE / BELOW / CONSISTENT / CANNOT_TELL; 99 % shot-bootstrap band (0.5-99.5 percentiles), 400 draws; per copy and pooled;
+FINAL = pooled if the two copies agree, else CANNOT_TELL; copy gap printed; CONSISTENT printed as a bound):
+ R1 inside view, arm D: alpha(t) = atan2(<X_s>|t, <Z_s>|t) minus the same angle for the ideal state through that job's record readout error (the
+    none). t = 0..3. A deviation can be decoherence during the 8.7 us idle, gate error, or readout beyond the record: R1 alone does not say which;
+    the conditional vector length (printed) separates shrink from rotation.
+ R2 the look: per-qubit Z-rotation fitted between arms, E_M = (M_c0 x M_c1 x M_s) E_D over all 63 Pauli expectations, with a shrink per qubit;
+    reported per readout (phi / 4). Convention as the control run: phase = atan2(<Y>, <X>), kick = phase_M - phase_D (negative = the same direction
+    as every committed kick). A qubit whose X/Y-bearing expectations in arm D are all under 5x shot noise is CANNOT_TELL (check 24).
+ R3 history fidelity change dF = F(M) - F(D), F = (1/8) sum_P <P> <P>_ideal (linear inversion).
+ R4 tick uniformity under the look: delta = phi_c1 - 2 phi_c0 (total, deg). delta = 0: the look adds a phase linear in t (the clock still ticks
+    evenly, the constraint just picks up a shifted clock term). delta != 0: the look makes the ticks uneven. From the committed per-qubit kicks the
+    expected direction is BELOW (about -48 deg); this is an expectation, not a pass rule. R4 rules out "linear in t"; it says nothing about time
+    itself (check 25).
+ Floor (measured, 99 % band): 10 false calls in 1,200 planted-CONSISTENT readings (0.8 %) -> about 0.1 per copy under a null.
+ Resolution: R2 resolves kicks of a few tenths of a degree per readout (W4 at 0.0125 deg/readout stays CONSISTENT); R1 resolves an angle deviation of
+ about 12 deg reliably (W5: +4 deg at t=1 read ABOVE 16/40, +8 deg at t=2 28/40, +12 deg at t=3 40/40) -- smaller R1 deviations are bounds.
+ Anything else (outcome-conditioned kicks from the per-shot pack bits, entanglement, constraint violation) is not analysed here; if we ever read
+ it, it is labelled "defined after the data".
+
+SYNTHETIC (synth_results_pooters.text, numpy exact 3-qubit state, binomial shots, readout from the kingston record, per-qubit dephasing,
+40 draws per world, bootstrap 400): W0 null; W1 clock-only kick (-12, -72 deg); W2 system-only (-30); W3 uniform clock (-10, -20) + system (-30);
+W4 NEITHER (0.05 deg); W5 D over-rotated +4 deg per tick; W6 R1 null (D = ideal + readout). R1 is scored only in W5/W6 (with dephasing its
+null is not zero, for a real reason). Rates in the synthetic file.
+
+## /q (run on this plan before any job; Bones fork, 24 Oct)
+A1-A7 vendor number: no stated IBM figure is compared to anything here. The record enters twice only: the R1 none (a model built from the record's
+  readout numbers, check 4 -- labelled as such, never called "IBM's number") and the HOLD gates. R1 uses the record saved before THAT job (check 3).
+B8 equal idle: scheduled durations on c0, c1, s equal in M and D (numbers above); the backend may still do something at acquisition that a schedule
+  does not show -- named as part of "the look".   B9 the arms differ in drive, resonator photons and the classical record, not just "a look" --
+  listed; R2-R4 cannot separate them.   B10 all shots in both arms.   B11 the pack is in |0> in both arms.   B13 arms interleaved in one job.
+C14 known-good on real hardware with the answer known (our committed per-qubit kicks, same qubits).   C15 synthetic plants null, clock-only,
+  system-only, both (uniform clock), NEITHER, an apparatus over-rotation, and a readout-only null.   C16 floor stated (~0.4 false calls per copy).
+C17 sign: the convention is the control run's (phase atan2(<Y>,<X>), kick = M - D, Y read by sdg h as in run.py); planted negative rotations read
+  BELOW in the synthetic and in a fake-file run of the --real path (planted -3/-18/-7.5 deg per readout came back -3.16/-17.81/-7.73).
+C18 the known-good rule is fixed here and is not relaxed after the result.
+D19 four outcomes; CANNOT_TELL by censor (check 24) or copy disagreement.   D20 FIRED: the known-good order rule compared point values; changed
+  to non-overlapping intervals in the committed order (above). Copy gaps printed.   D21/D22 one chip, one layout: these are readings of this device,
+  not of "superconducting processors"; shots are not independent processors.
+E25 R4 rules out "the look adds a phase linear in t"; a nonzero delta is what different per-qubit shifts give, and says nothing about time itself.
+E26 the per-shot pack bits are saved; any outcome-conditioned reading from them is "defined after the data".   E28 no mechanism named.
+F29-F31 times and job ids from the job records; plan and code committed before the job; the fire script has the chip fixed and checks the cap.
+F33 budget checked against usage_remaining_seconds with a reserve for the queued free runs.
+G34-G37 not refereed.
+Outcome of /q: one rule changed (D20). No other design change.
+
+## Band change (before any job)
+The first synthetic run (synth_results_pooters_95band_FIRST.text, kept) used the 95 % percentile band and gave 95/1200 = 7.9 % false calls on
+planted-CONSISTENT readings (R2-R4 about 7-13 % in the null worlds), above the ~5 % this plan allows. Diagnosis (scratch, not committed as a
+reading): bootstrap widths match the true spread (ratio 0.89-1.06), no bias (median(boot) - point under 0.004 deg), multi-start fitting changed
+nothing -- the percentile band simply under-covers a little. Fix, as in an earlier run of ours: the band is widened to 0.5-99.5 for every reading, and the
+synthetic is re-run with that band (synth_results_pooters.text). The known-good PASS rule reads the same 99 % band.

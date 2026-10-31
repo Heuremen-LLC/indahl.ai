@@ -1,0 +1,66 @@
+ibm_marrakesh: KNOWN-GOOD PASS: pooled median kick -1.683 [-2.338, -1.017] vs committed -2.393 (window x0.5..x2, upper end < 0)
+== S spectators (117 untouched, N = 8)
+  KG kick M (deg/readout)                              -1.6830 [-2.3377, -1.0173]  A BELOW       B BELOW       FINAL BELOW
+  S1 signed residual MC (deg/readout)                  +0.8521 [+0.5537, +1.4545]  A ABOVE       B ABOVE       FINAL ABOVE
+  S1 signed residual MF (deg/readout)                  +0.0418 [-0.0391, +0.1528]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S1 signed residual ME (deg/readout)                  -0.0814 [-0.1341, -0.0005]  A CONSISTENT  B CONSISTENT  FINAL BELOW
+  S2 SPLIT slope M vs 0 (all given back)               +0.9607 [+0.9059, +0.9845]  A ABOVE       B ABOVE       FINAL ABOVE
+  S2b SPLIT slope M vs 1 (none given back)             +0.9607 [+0.9059, +0.9845]  A BELOW       B CONSISTENT  FINAL CANNOT_TELL
+  S2 SPLIT slope MC vs 0 (all given back)              -0.3843 [-0.6375, -0.1980]  A BELOW       B BELOW       FINAL BELOW
+  S2b SPLIT slope MC vs 1 (none given back)            -0.3843 [-0.6375, -0.1980]  A BELOW       B BELOW       FINAL BELOW
+  S2 SPLIT slope MF vs 0 (all given back)              +0.0251 [-0.0194, +0.0732]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S2b SPLIT slope MF vs 1 (none given back)            +0.0251 [-0.0194, +0.0732]  A BELOW       B BELOW       FINAL BELOW
+  S2 SPLIT slope ME vs 0 (all given back)              +0.0033 [-0.0146, +0.0195]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S2b SPLIT slope ME vs 1 (none given back)            +0.0033 [-0.0146, +0.0195]  A BELOW       B BELOW       FINAL BELOW
+  S3 P(1) excess back-to-zero M                        +0.0153 [+0.0045, +0.0443]  A ABOVE       B ABOVE       FINAL ABOVE
+  S3 P(1) excess back-to-zero MC                       +0.0012 [-0.0075, +0.0120]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S3 P(1) excess back-to-zero MF                       +0.0030 [+0.0005, +0.0085]  A ABOVE       B CONSISTENT  FINAL CANNOT_TELL
+  S3 P(1) excess back-to-zero ME                       +0.0035 [+0.0000, +0.0085]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S4 coherence M minus none                            -0.0091 [-0.0165, -0.0027]  A CONSISTENT  B BELOW       FINAL CANNOT_TELL
+  S4 coherence MC minus none                           -0.0060 [-0.0116, +0.0004]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S4 coherence MF minus none                           -0.0083 [-0.0147, +0.0007]  A BELOW       B BELOW       FINAL CONSISTENT
+  S4 coherence ME minus none                           -0.0045 [-0.0092, +0.0022]  A BELOW       B CONSISTENT  FINAL CANNOT_TELL
+  S4b coherence MC minus M (frame only)                +0.0030 [-0.0023, +0.0098]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  S5 SPLIT slope MC minus MF (old vs fresh table)      -0.4094 [-0.6248, -0.2318]  A BELOW       B BELOW       FINAL BELOW
+  S2c SPLIT slope MC vs 0.5 (BELOW = more than half given back) -0.3843 [-0.6375, -0.1980]  A BELOW       B BELOW       FINAL BELOW
+  S2d SPLIT slope M minus MC (ABOVE = clears the ruler ceiling) +1.3451 [+1.1445, +1.5656]  A ABOVE       B ABOVE       FINAL ABOVE
+  S7 share given back MC vs 0.5 (ABOVE = more than half) +0.2426 [-0.1420, +0.4365]  A BELOW       B BELOW       FINAL BELOW
+  S2c SPLIT slope MF vs 0.5 (BELOW = more than half given back) +0.0251 [-0.0194, +0.0732]  A BELOW       B BELOW       FINAL BELOW
+  S2d SPLIT slope M minus MF (ABOVE = clears the ruler ceiling) +0.9356 [+0.8534, +0.9793]  A ABOVE       B ABOVE       FINAL ABOVE
+  S7 share given back MF vs 0.5 (ABOVE = more than half) +0.7952 [+0.6656, +0.8764]  A ABOVE       B ABOVE       FINAL ABOVE
+  S2c SPLIT slope ME vs 0.5 (BELOW = more than half given back) +0.0033 [-0.0146, +0.0195]  A BELOW       B BELOW       FINAL BELOW
+  S2d SPLIT slope M minus ME (ABOVE = clears the ruler ceiling) +0.9574 [+0.8951, +0.9898]  A ABOVE       B ABOVE       FINAL ABOVE
+  S7 share given back ME vs 0.5 (ABOVE = more than half) +0.9059 [+0.8375, +0.9450]  A ABOVE       B ABOVE       FINAL ABOVE
+  S6 |kick| M minus |residual| MC (given back)         +0.2637 [-0.0205, +0.7499]  A ABOVE       B CONSISTENT  FINAL CANNOT_TELL
+== P Bell pairs (48, N = 4)
+  P1 Bell fidelity M minus none                        -0.0351 [-0.0888, -0.0094]  A BELOW       B BELOW       FINAL BELOW
+  P1 Bell fidelity MC minus none                       +0.0008 [-0.0114, +0.0154]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P1 Bell fidelity MF minus none                       -0.0012 [-0.0074, +0.0044]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P1 Bell fidelity ME minus none                       -0.0050 [-0.0096, -0.0025]  A CONSISTENT  B BELOW       FINAL CANNOT_TELL
+  P2 X-part concurrence M minus none                   -0.0075 [-0.0200, -0.0014]  A CONSISTENT  B CONSISTENT  FINAL BELOW excluded 6
+  P2 X-part concurrence MC minus none                  -0.0046 [-0.0138, +0.0041]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT excluded 6
+  P2 X-part concurrence MF minus none                  -0.0047 [-0.0169, +0.0018]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT excluded 6
+  P2 X-part concurrence ME minus none                  -0.0104 [-0.0212, -0.0051]  A BELOW       B BELOW       FINAL BELOW excluded 3
+  P3 Bell fidelity MC minus M (given back)             +0.0241 [-0.0016, +0.0877]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P4a |pair phase| M minus copy floor (gate)           +4.0676 [+2.6318, +8.3387]  A ABOVE       B ABOVE       FINAL ABOVE
+  P5 signed pair-phase residual MC (deg/step)          +3.1537 [+2.0017, +4.1771]  A ABOVE       B ABOVE       FINAL ABOVE
+  P4 pair-phase share given back MC vs 0.5             +0.3958 [+0.1553, +0.6416]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P5 signed pair-phase residual MF (deg/step)          -0.1269 [-0.3178, +0.3208]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P4 pair-phase share given back MF vs 0.5             +0.9167 [+0.8310, +0.9605]  A ABOVE       B ABOVE       FINAL ABOVE
+  P5 signed pair-phase residual ME (deg/step)          -0.0266 [-0.1060, +0.1650]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  P4 pair-phase share given back ME vs 0.5             +0.9588 [+0.9223, +0.9824]  A ABOVE       B ABOVE       FINAL ABOVE
+  P3b X-part concurrence MC minus M (frame only)       +0.0030 [+0.0000, +0.0117]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  F per arm (pooled): {'D': 0.7317, 'DE': 0.7408, 'M': 0.6009, 'MC': 0.6555, 'MF': 0.6568, 'ME': 0.6695, 'M_endcorr': 0.598}
+== C clock c0, s, c1 = [104, 105, 106] (look in the middle, N = 4)
+  C1 dF M minus none                                   -0.1308 [-0.1516, -0.1105]  A BELOW       B BELOW       FINAL BELOW
+  C1 dF MC minus none                                  -0.0762 [-0.0951, -0.0560]  A BELOW       B BELOW       FINAL BELOW
+  C1 dF MF minus none                                  -0.0749 [-0.0934, -0.0554]  A BELOW       B BELOW       FINAL BELOW
+  C1 dF ME minus none                                  -0.0713 [-0.0912, -0.0523]  A BELOW       B BELOW       FINAL BELOW
+  C1 dF M with the total put back at the END minus D   -0.1337 [-0.1589, -0.1121]  A BELOW       B BELOW       FINAL BELOW
+  C2 F(MC) minus F(M) (given back)                     +0.0546 [+0.0333, +0.0804]  A ABOVE       B ABOVE       FINAL ABOVE
+  C3 F(MC) minus F(M put back at the end)              +0.0575 [+0.0343, +0.0819]  A ABOVE       B ABOVE       FINAL ABOVE
+  C2b recovered share (F(MC)-F(M))/(F(D)-F(M)) vs 0.5  +0.4175 [+0.2690, +0.5691]  A CONSISTENT  B CONSISTENT  FINAL CONSISTENT
+  C4a look distance |E_M - E_D|^2 minus copy floor (gate) +0.4556 [+0.3606, +0.5641]  A ABOVE       B ABOVE       FINAL ABOVE
+  C4 distance share given back MC vs 0.5               -0.5118 [-1.1330, -0.0918]  A BELOW       B BELOW       FINAL BELOW
+  C4 distance share given back MF vs 0.5               +0.7703 [+0.6458, +0.8819]  A CONSISTENT  B ABOVE       FINAL CANNOT_TELL
+  C4 distance share given back ME vs 0.5               +0.8479 [+0.7134, +0.9416]  A CONSISTENT  B ABOVE       FINAL CANNOT_TELL

@@ -1,0 +1,4 @@
+ADDENDUM (24 Oct 2026, before any hardware result read; none exists)
+Job A1 dbe5fdnsstms73fbh4j0 (submitted 2026-10-24T07:01:10Z) ended ERROR 8299 "A control instrument error occurred" on IBM's side; no counts.
+Pre-job record, job file, log kept in failed_A1_8299/. Restart from A1, same code, design and order; rebuilt circuits hash compared to the failed attempt's (ac5c97aee9e536a18c1acd30f695ee1705a7d2a9b36a13e79c756fd943ffabc2), reported either way.
+If a second attempt also ends ERROR, the run is HELD (not refired again) and the failure is the reading.

@@ -1,0 +1,108 @@
+
+## 2026-10-31 15:06 Keystone preregistration: free checks F1/F2 on the 24 Oct Pooters data (defined after those data), the sign/placement simulations, the referee's end-to-end harness and the synthetic floors, committed with the plan before any job
+packs: Q,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: echo arm needed its own idle-echo none (DE added); synthetic planted kingston only (marrakesh synthetic added); prior art (Krinner, Seif, Kan) narrows the claim. holds: every untouched qubit corrected, none dropped by its kick; gates drop C2/C3/C4/P3/P4 only when the look is unresolved, same rule in every arm
+- II: caught: F1's single fidelity folded a clock-bit-0 residual; Pauli by Pauli (f2) the corrected look is 1.17x the copy floor with XII at 4.8 sd (21 Oct vs 24 Oct c0 kick, ~2 deg); both rulers reported
+- III: caught: X-part concurrence cannot see a Z rotation (Bell fidelity and per-pair phase added beside it); holds: sign of kick and correction checked by exact statevector and by the referee's harness (planted -7.60 reads -7.600, corrected +0.000)
+- V: caught: 95 % bands gave 22.2 % false calls (99 %); |residual| over floor replaced by THE SPLIT; squared-distance bootstrap bias (floor subtracted once/twice); forward prediction given with its width (-0.007 [-0.021, +0.007]). Rulers: qubit bootstrap 99 % (S, P), shot bootstrap 99 % (C), Theil-Sen cross-copy slope, share vs 0.5
+- VI: caught: (referee BLOCKER) 'mostly' had no threshold; now share vs 0.5, slope vs 0.5, slope ceiling difference; both alternatives (all given back = 0 / none = M value) printed beside every residual
+- R: holds: committed medians -2.8638 / -2.3931 read from control_run/results_prereg.txt lines 57/106; 24 Oct numbers from RESULT_POOTERS and raw files; F1/F2 saved to free/*.text; post hoc labelled 'defined after the 24 Oct data'
+- QA: n/a: no stated IBM figure is compared; the record enters only as clock-qubit HOLD gates, saved before every job
+- QB: holds: equal scheduled durations on the targets for D/M/MC/MF and DE/ME (dry run both chips); arms interleaved in one job, ABBA across two
+- QC: holds: known-good = committed 21 Oct median kick, same qubits and estimator, rule fixed; synthetic W0 null, W1 stable, W2 drift, W3 loss, W4 both, 30 draws, both chips; floors 3.6 % / 3.8 %; ruler ceiling (M-on-M slope ~0.99) printed, not scored
+- QD: holds: four outcomes; FINAL = pooled only when A and B agree; chips read separately, combined only if chi2/dof < 2; degrees per readout step throughout
+- QE: holds: no mechanism named; 'only an in-circuit correction can work' reworded (c0/c1 commute with the later CRY); the given-back/lost split reports both
+- QF: holds: plan, code and synthetic committed and OpenTimestamps-stamped before job C; times will come from job records; fire script resubmits only on IBM ERROR/CANCELLED
+- QG: holds: design referee (Claude Sonnet, same family as the writer) got the raw files; all 13 findings acted on (REFEREE_DESIGN.md.text); no paper or site text yet
+- P1: n/a: no public text yet; the literature pass quotes (LIT_PASS.md.text) are to be re-checked against the saved papers before any paper line
+- P2: holds: every figure in the plan names its file
+- P3: holds: shots, N, L per chip match fire_keystone.py and the dry-run output
+- P4: holds: no cause named
+- P5: holds: 99 % bootstrap bands named for each part
+- P6: holds: free checks labelled defined after the 24 Oct data; the run decides
+- P7: n/a: nothing public in this commit
+- P8: n/a: no rendered page in this reading
+- P9: holds: plain sentences, no AI statement in public copy (none written), no counts of ours in a title
+- P10: holds: F1, F2 and sim_check part 3 labelled defined after the 24 Oct data
+
+## 2026-10-31 15:12 Keystone results, both chips (results_keystone_ibm_kingston.text, results_keystone_ibm_marrakesh.text), committed analysis, no reading defined after the data
+packs: Q,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: known-good PASS on both chips (kingston -2.424 [-3.984, -1.932] vs committed -2.864; marrakesh -1.683 [-2.338, -1.017] vs -2.393); every arm against its own none in the same job; gates applied as committed
+- II: holds: per-qubit SPLIT and per-qubit shares read beside the medians; copy disagreements left as CANNOT_TELL (marrakesh clock MF/ME C4, S4 cells), not netted
+- III: holds: marrakesh MC residual +0.85 deg on the far side of zero from M (-1.68) with slope -0.38 = over-correction, reported as over-correction (plan clause), not as 'given back'
+- V: holds: committed rulers only (99 % qubit bootstrap, 99 % shot bootstrap, Theil-Sen cross-copy slope, shares vs 0.5); F-based C1-C3 read as secondary per the plan
+- VI: holds: both alternatives printed (residual vs 0 beside M); CANNOT_TELL kept where copies disagree
+- R: holds: job ids, submit times and qpu_charge_time_seconds from job_keystone_*.json and the fire logs (kingston 11+77+77 s, marrakesh 11+80+80 s); the fire log's closing total read the wrong usage key (printed 0 s): logging bug only
+- QA: n/a: no stated IBM figure compared
+- QB: holds: durations checked equal at fire time (logs); arms interleaved, ABBA
+- QC: holds: known-good passed before any reading was read; synthetic floors 3.6 % / 3.8 % stand as committed
+- QD: holds: chips read separately; they disagree on MC (kingston passes, marrakesh over-corrects), so no combined value is quoted
+- QE: holds: no mechanism named; the marrakesh kick shrinking between 21 Oct and today is a reading (KG and S5), not explained
+- QF: holds: plan 0663d84 + hashes 53efdb1 (OTS) before job C 19:07:40Z; one attempt per job, no refire
+- QG: cannot tell: results referee not yet run (next step before any paper line)
+- P1: n/a: no quotes in these result files
+- P2: holds: every number from the two results files
+- P3: holds: arm and chip labels as in the files
+- P4: holds: no cause named
+- P5: holds: 99 % bootstrap bands
+- P6: holds: summary keeps the chip split and the over-correction
+- P7: n/a: nothing public yet
+- P8: n/a: no rendered page in this reading
+- P9: holds: plain sentences
+- P10: holds: nothing defined after the data in these files
+
+## 2026-10-31 15:26 Post-hoc readings after the results referee (results_post_hoc.text): per-qubit scale today vs ten-day table, dose disagreement counts, clock residual distances, clock-qubit entries; all DEFINED AFTER THE DATA
+packs: Q,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: computed on all 117 qubits, nothing dropped; the referee's exclusion tests (low coherence, top kicks) left the scale story unchanged
+- II: caught: the chip median hid two kingston clock qubits that moved (q3 -3.0 -> -4.9, q23 -18.4 -> -31.2); reported per qubit
+- III: holds: marrakesh scale 0.52 (kicks smaller) vs kingston clock entries larger: signs reported per qubit, not folded
+- V: holds: Theil-Sen scale with 99 % qubit bootstrap; counts for dose; residual distance against the measured shot floor
+- VI: holds: intervals printed; dose and distance readings are counts and values, not verdicts
+- R: holds: computed from the raw npz, fresh_kicks and committed tables; matches the referee's independent numbers (scale 0.54, dose 8/12, distances 2.07/0.032/0.040/0.038)
+- QA: n/a: no stated IBM figure
+- QB: holds: same jobs as the committed readings
+- QC: n/a: post-hoc readings carry no synthetic floor; labelled defined after the data
+- QD: holds: chips reported separately
+- QE: holds: labelled defined after the data in the paper; no mechanism named for the change
+- QF: holds: written after the results referee, before any paper line uses them
+- QG: holds: the results referee proposed these readings and its numbers agree with ours
+- P1: n/a: no quotes in this result
+- P2: holds: results_post_hoc.text
+- P3: holds: N=4 / N=8 labels as in the tables
+- P4: holds: no cause named
+- P5: holds: 99 % bootstrap
+- P6: holds: paper says 'Defined after the data' before each
+- P7: n/a: nothing public yet
+- P8: n/a: no rendered page in this reading
+- P9: holds: plain sentences
+- P10: holds: labelled post hoc
+
+## 2026-10-31 15:28 Results referee report filed (REFEREE_RESULTS.md.text): a review of the committed readings, each finding with the action taken
+packs: Q,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: a review file; every finding names its action, no new reading in it
+- II: holds: a review file; every finding names its action, no new reading in it
+- III: holds: a review file; every finding names its action, no new reading in it
+- V: holds: a review file; every finding names its action, no new reading in it
+- VI: holds: a review file; every finding names its action, no new reading in it
+- R: holds: a review file; every finding names its action, no new reading in it
+- QA: holds: a review file; every finding names its action, no new reading in it
+- QB: holds: a review file; every finding names its action, no new reading in it
+- QC: holds: a review file; every finding names its action, no new reading in it
+- QD: holds: a review file; every finding names its action, no new reading in it
+- QE: holds: a review file; every finding names its action, no new reading in it
+- QF: holds: a review file; every finding names its action, no new reading in it
+- QG: holds: a review file; every finding names its action, no new reading in it
+- P1: n/a: no quotes in this review file
+- P2: holds: a review file; every finding names its action, no new reading in it
+- P3: holds: a review file; every finding names its action, no new reading in it
+- P4: holds: a review file; every finding names its action, no new reading in it
+- P5: holds: a review file; every finding names its action, no new reading in it
+- P6: holds: a review file; every finding names its action, no new reading in it
+- P7: holds: a review file; every finding names its action, no new reading in it
+- P8: n/a: no rendered page in this review
+- P9: holds: a review file; every finding names its action, no new reading in it
+- P10: holds: a review file; every finding names its action, no new reading in it

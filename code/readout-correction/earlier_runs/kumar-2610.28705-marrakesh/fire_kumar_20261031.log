@@ -1,0 +1,10 @@
+ibm_marrakesh: FIRING, est 236 s, cap 280, remaining 343
+SUBMITTED job A1 dbj3rm1kdqps738vqf80 2026-10-31T19:13:28Z (remaining before 343)
+DONE job A1 usage 58 s (total 58)
+SUBMITTED job B1 dbj3s7gnceqs73aj7ei0 2026-10-31T19:14:38Z (remaining before 285)
+DONE job B1 usage 58 s (total 116)
+SUBMITTED job B2 dbj3sqt6p51s73ck240g 2026-10-31T19:15:56Z (remaining before 227)
+DONE job B2 usage 58 s (total 174)
+SUBMITTED job A2 dbj3tc9ffo6c73b8sigg 2026-10-31T19:17:05Z (remaining before 169)
+DONE job A2 usage 58 s (total 232)
+ALL DONE 232 s -- now run analyze_kumar.py

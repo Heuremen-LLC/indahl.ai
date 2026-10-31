@@ -1,0 +1,38 @@
+RESULT -- THE UCHICAGO RUN (arXiv 2606.00433v3 protocol on ibm_kingston), read under PLAN_BALL.md.text (commit 998c8fa, before any job).
+24 Oct 2026. Full output: RESULTS_BALL_raw.text.
+
+Jobs: J1 dbe9uhnpc3tc739lb2n0 (submitted 2026-10-24T12:06:30Z, 50 s), J2 dbea3bvsstms73fbn80g (12:16:47Z, 50 s, reversed order). 100 QPU s in all
+(estimate 126). Record in force before both jobs: 2026-10-24 07:48:56 EDT (saved, props_ball_before_J*.json). Code hashes verified before the analysis.
+Deliverable: raw_ball_J1.npz, raw_ball_J2.npz (per-shot bits of every register, every circuit), circuits_ball.qpy, job_ball.json (meta per circuit).
+
+KNOWN-GOOD (their printed reading in kind, "T_1-decay dominated backaction"): PASS. Arm A pooled, a12 = Pr(10) - Pr(01) median +0.00882
+[+0.00826, +0.00939] ABOVE, a12 > 0 on 20 of 20 targets. R2 and R3 are therefore decided readings.
+
+R1 (arm A, K = 20, their configuration; medians over the 20 targets, 99 % bands; values, not outcomes): p0 0.50312 [0.50172, 0.50472];
+   T0 = tr M0 0.99857 [0.99795, 0.99931]; D0 = det M0 0.00184 [0.00084, 0.00238]; T1 = tr M1 0.98011 [0.97793, 0.98270];
+   D1 = det M1 0.00346 [0.00250, 0.00503]; a12 +0.00882 ABOVE; a23 +0.00879 [+0.00829, +0.00933] ABOVE. Per-target values in RESULTS_BALL_raw.text.
+
+R2 (does K matter? median over targets of the per-target difference; FINAL, copies agree on every line):
+   Bhi - A (K = 57, all 37 neighbours read too): CONSISTENT on all seven. Bounds: dp0 within [-0.00194, +0.00173]; dT0 [-0.00021, +0.00100];
+      dD0 [-0.00027, +0.00052]; dT1 [-0.00386, +0.00087]; dD1 [-0.00214, +0.00067]; da12 [-0.00058, +0.00048]; da23 [-0.00018, +0.00081].
+   Blo - A (K = 1, four targets alone): CONSISTENT on all seven. Bounds: dp0 [-0.00551, +0.00346]; dT0 [-0.00276, +0.00173];
+      dD0 [-0.00156, +0.00132]; dT1 [-0.01233, +0.00416]; dD1 [-0.00857, +0.00162]; da12 [-0.00414, +0.00061]; da23 [-0.00104, +0.00244].
+      (Blo resolution per the synthetic: changes in eta_down under ~30 % are bounds here.)
+   Per-target counts (printed beside the floor, not a FINAL reading): Bhi - A resolved on 9 of 140 per-target readings (5 BELOW, 4 ABOVE) against a
+      null floor of 1.2-1.6 % (about 2 of 140); Blo - A 0 of 28. So at the median the instrument does not move with K at these widths; whether
+      individual targets do is CANNOT_TELL from this run (the per-target excess is not a planned reading and is read here only as a count).
+
+R3 (the phase their Z-twirl removes, on the 37 unmeasured neighbours during arm-A readouts, readout minus equal idle, per readout):
+   -0.561 deg/readout [-0.914, -0.498], copies BELOW/BELOW, gap -0.030 -> BELOW. 36 of 37 neighbours kept (one censored on readout_error).
+   It reads drive, resonator photons, the record and the targets' own state changes together (plan /q B9); it does not say which.
+   For scale (ours, same chip): K = 10 packed 0.28, K = 39 packed 2.86 deg per readout on untouched neighbours (control run).
+
+OBSERVATION, defined after the data (not a planned reading): physical q0, one of the 20 targets, gives p0 = 0.218 [0.214, 0.222] from the
+   maximally mixed input (the other 19: 0.499-0.563), and invariants outside the range of the rest (T1 = tr M1 1.489, D1 = det M1 0.504). The record
+   in force states prob_meas1_prep0 0.0029 and prob_meas0_prep1 0.0496 for q0. A two-state stationary model does not describe q0 today; why is not
+   tested here. (Kingston q0 was also out of line with its record in another run of ours on 24 Oct.)
+
+FOR THEM (what the data can answer that this file does not): their gauge bands for each target at K = 20, 57 and 1; the full learned instrument and
+   their validation predictors; outcome-conditioned neighbour phases (the targets' bits are saved in arm C); q0 against their model-mismatch checks.
+
+Seconds: 100 used; usage_remaining_seconds 3,804 after the run.

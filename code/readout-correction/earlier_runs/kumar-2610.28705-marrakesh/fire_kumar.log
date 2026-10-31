@@ -1,0 +1,9 @@
+ibm_marrakesh: FIRING, est 236 s, cap 280, remaining 970
+SUBMITTED job A1 dbe8q0nsstms73fblhrg 2026-10-24T10:48:34Z (remaining before 970)
+Traceback (most recent call last):
+  File "<local>/fire_kumar.py", line 50, in <module>
+    res = job.result(); ents = []
+          ^^^^^^^^^^^^
+  File "<local>/qvenv/lib/python3.12/site-packages/qiskit_ibm_runtime/runtime_job_v2.py", line 153, in result
+    raise RuntimeInvalidStateError(
+qiskit_ibm_runtime.exceptions.RuntimeInvalidStateError: 'Unable to retrieve result for job dbe8q0nsstms73fblhrg. Job was cancelled.'

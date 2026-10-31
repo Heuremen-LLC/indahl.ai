@@ -1,0 +1,35 @@
+LITERATURE PASS -- keystone, 31 Oct 2026. Done by a Claude (Sonnet) instance (the same model family as the writer), papers opened in full
+(arXiv HTML or PDF); texts kept in <local>/arxiv_keystone/lit_sources/. Quotes below are VERBATIM as the pass returned them; each is to be
+re-checked against the saved text before it enters the paper (Pack P1).
+
+WHOSE QUESTIONS
+- Santos & Uzdin, arXiv 2506.11270v2 (Hebrew University): "For this to apply to spectator qubits as well, it is important to apply the same delay
+  as the one measured qubits experience due to the measurements." (Sec. II.3). Hardware incl. ibm_fez (20 qubits).
+- Chu, Lee, Zheng, Chen, Pokharel, Seif, Jiang, arXiv 2606.00433v3, PRL 137, 180601 (2026): spectator qubits "are assumed to be either negligible
+  or effectively absorbed into a stationary single-qubit instrument description over the timescale of data acquisition." (Supp. S1.4, S10(iv));
+  "We select nonadjacent qubits to reduce measurement-induced crosstalk." (S7.1). ibm_kingston, pittsburgh, boston.
+- Caselli, Manuel, Arrachea, Cornaglia, arXiv 2610.09062v2: "with the working qubit particularly affected during the waiting intervals associated
+  with ancilla measurement and reset." (Discussion); their Aer diagnostic models measurement as 2.1 us of T1/T2 plus assignment error. ibm_kingston.
+- Aryan Kumar, arXiv 2610.28705v1 (Amity International School): "The spectator was rotating coherently, by about 0.27 rad per step of lambda L,
+  presumably because of a static frequency offset or ZZ coupling of the kind the echo is designed to cancel." (p.7); compares extra measurements
+  with "an equal time of echoed idling" (p.9). ibm_kingston, ibm_marrakesh.
+- Page & Wootters, Phys. Rev. D 27, 2885 (1983): bibliographic record only (full text not accessed; no wording attributed).
+- Moreva, Brida, Gramegna, Giovannetti, Maccone, Genovese, PRA 89, 052122 (2014), arXiv 1310.4691: photonic. Diaz, Braccia, Larocca, Matera,
+  Rossignoli, Cerezo, PRR 7, 033294 (2025), arXiv 2308.12944: numerical only, no hardware in any version. Coppo, Cuccoli, Verrucchi, PRA 109,
+  052212 (2024), arXiv 2310.13386 ("Magnetic clock for a harmonic oscillator").
+- McLauchlan, Nixon et al., arXiv 2610.11658 (ibm_boston): "qubits that remain idle while other qubits are measured use the same reported ID error,
+  even though measurements can take substantially longer than gates." The "~80 simultaneous readouts" figure is NOT in the text read.
+- Laux & Cavalcanti, arXiv 2609.12527 (ibm_marrakesh): the friend is a CNOT, no mid-circuit readout; spectator effects named as unmodelled.
+- Doucet & Deffner, QST 11, 035008 (2026), arXiv 2601.05350: verified; no spectator or mid-circuit content (not cited for this question).
+
+PRIOR ART (closest first)
+- Seif et al., ISCA 2024, arXiv 2403.06852 (IBM): Z corrections appended for coherent idle ZZ and Z errors during measurement and feedforward,
+  angles calibrated by sweeping the window time.
+- Krinner et al., Nature 605, 669 (2022): measured coherent phase on untargeted qubits (mean 0.6 deg, max 13.4 deg); "In future work, we expect
+  that we could correct for the coherent phase rotations by utilizing virtual-Z rotations of equal magnitude and opposite sign." Not done there.
+- Kan et al., arXiv 2610.23840 (ibm_phoenix): readout or an equal delay on a driver ancilla, four neighbours in |+> read in X/Y; XX echo.
+- Govia et al., NJP 25, 123016 (2023): "coherent Z-phase error induced by Stark shift" on spectators; equal-duration delay references.
+- Shirizly, Govia, McKay, PRA 111, 012611 (2025): measurement-induced Z phase reduced by dynamical decoupling. Chen et al. PRL 128, 110504 (2022),
+  Bultink et al. Sci. Adv. (2020), Hashim et al. APL Quantum (2025), Tong et al. arXiv 2604.18734, Rahman et al. PRApplied (2024): echo/DD.
+- No paper found that calibrates a per-qubit rz(-kick) for the readout phase on untouched qubits and compares it with the echo. Not read: Kelly et
+  al. (Google ref 44), Rigetti and AWS papers; not every 2025-26 arXiv paper reached.
