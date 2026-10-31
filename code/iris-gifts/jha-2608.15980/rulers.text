@@ -1,0 +1,24 @@
+Real ids: value | jackknife SE | product-weight annotator bootstrap SE | comparison bootstrap SE
+  J2 differ cross-within       +0.0095 | 0.0079 | 0.0141 | 0.0034
+  J2 reverse cross-within      +0.0039 | 0.0050 | 0.0099 | 0.0025
+  J3 differ actual-split1      +0.0274 | 0.0223 | 0.0399 | 0.0097
+  J3 differ actual-split2      +0.0138 | 0.0202 | 0.0387 | 0.0096
+  J3 opposite actual-split1    +0.0060 | 0.0141 | 0.0285 | 0.0072
+  J3 opposite actual-split2    +0.0033 | 0.0136 | 0.0269 | 0.0071
+
+Known-good: evaluator ids shuffled within each pool, 20 shuffles, seed 42 (ids carry no information, so the comparison bootstrap is the right width)
+  mean over shuffles: jackknife SE / comparison SE | product-weight SE / comparison SE
+  J2 differ cross-within       2.01 | 3.89
+  J2 reverse cross-within      1.99 | 3.88
+  J3 differ actual-split1      2.02 | 3.89
+  J3 differ actual-split2      2.02 | 3.87
+  J3 opposite actual-split1    1.98 | 3.87
+  J3 opposite actual-split2    2.00 | 3.87
+
+Real ids, ratio to the comparison SE: jackknife | product-weight
+  J2 differ cross-within       2.28 | 4.08
+  J2 reverse cross-within      1.98 | 3.94
+  J3 differ actual-split1      2.30 | 4.12
+  J3 differ actual-split2      2.09 | 4.01
+  J3 opposite actual-split1    1.94 | 3.94
+  J3 opposite actual-split2    1.90 | 3.77
