@@ -1,0 +1,12 @@
+SYNTHETIC, clock.py readers unchanged, 20 draws per world per chip (31 Oct 2026)
+ibm_kingston WH: known-good passed 20/20; M31 - MT FINAL {'CANNOT_TELL': 4, 'CONSISTENT': 16}; expected ('CONSISTENT', 'CANNOT_TELL')
+ibm_kingston WJ: known-good passed 20/20; M31 - MT FINAL {'CANNOT_TELL': 15, 'CONSISTENT': 5}; expected ANY
+ibm_kingston WA: known-good passed 20/20; M31 - MT FINAL {'BELOW': 20}; expected ('BELOW',)
+ibm_kingston WM: known-good passed 20/20; M31 - MT FINAL {'BELOW': 20}; expected ('BELOW',)
+ibm_kingston W0: known-good passed 0/20; M31 - MT FINAL {'NOT DECIDED (known-good failed)': 20}; expected known-good FAIL
+ibm_marrakesh WH: known-good passed 20/20; M31 - MT FINAL {'CANNOT_TELL': 14, 'CONSISTENT': 6}; expected ('CONSISTENT', 'CANNOT_TELL')
+ibm_marrakesh WJ: known-good passed 20/20; M31 - MT FINAL {'CANNOT_TELL': 19, 'BELOW': 1}; expected ANY
+ibm_marrakesh WA: known-good passed 19/20; M31 - MT FINAL {'BELOW': 19, 'NOT DECIDED (known-good failed)': 1}; expected ('BELOW',)
+ibm_marrakesh WM: known-good passed 20/20; M31 - MT FINAL {'BELOW': 20}; expected ('BELOW',)
+ibm_marrakesh W0: known-good passed 0/20; M31 - MT FINAL {'NOT DECIDED (known-good failed)': 20}; expected known-good FAIL
+MISMATCHES against the expected outcomes: 1 of 160 draws with an expected outcome
