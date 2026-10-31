@@ -1,0 +1,71 @@
+repeat brew-0.34.2      phi4-mini       byte-identical 167/170
+repeat brew-0.34.2      llama3.2_3b     byte-identical 168/170
+repeat brew-0.34.2      qwen2.5_1.5b    byte-identical 169/170
+repeat brew-0.34.2      granite4.1_3b   byte-identical 160/170
+repeat brew-0.34.2      ministral-3_3b  byte-identical 170/170
+repeat official-0.34.2  phi4-mini       byte-identical 167/170
+repeat official-0.34.2  llama3.2_3b     byte-identical 168/170
+repeat official-0.34.2  qwen2.5_1.5b    byte-identical 169/170
+repeat official-0.34.2  granite4.1_3b   byte-identical 160/170
+repeat official-0.34.2  ministral-3_3b  byte-identical 170/170
+repeat official-0.34.3  phi4-mini       byte-identical 167/170
+repeat official-0.34.3  llama3.2_3b     byte-identical 168/170
+repeat official-0.34.3  qwen2.5_1.5b    byte-identical 169/170
+repeat official-0.34.3  granite4.1_3b   byte-identical 160/170
+repeat official-0.34.3  ministral-3_3b  byte-identical 170/170
+
+== B1 build, same version: brew-0.34.2 against official-0.34.2
+phi4-mini       I=167 changed across builds 0 (CONSISTENT, 95% upper bound 0.022) | byte-identical across: bare 170/170, guard 170/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.2 minus brew-0.34.2)
+llama3.2_3b     I=168 changed across builds 0 (CONSISTENT, 95% upper bound 0.022) | byte-identical across: bare 170/170, guard 170/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 27, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.2 minus brew-0.34.2)
+qwen2.5_1.5b    I=169 changed across builds 0 (CONSISTENT, 95% upper bound 0.022) | byte-identical across: bare 170/170, guard 170/170
+   P1: CANNOT_TELL (gate failed, n 30, class flips 0)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.2 minus brew-0.34.2)
+granite4.1_3b   I=160 changed across builds 0 (CONSISTENT, 95% upper bound 0.023) | byte-identical across: bare 170/170, guard 170/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 11, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.2 minus brew-0.34.2)
+ministral-3_3b  I=170 changed across builds 14 (ABOVE) | byte-identical across: bare 156/170, guard 126/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.2 minus brew-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.2 minus brew-0.34.2)
+direction of class flips in gated families: to fault on official-0.34.2 0, to OK 0, exact two-sided p 1.000
+
+== B2 version, same build: official-0.34.2 against official-0.34.3
+phi4-mini       I=167 changed across builds 0 (CONSISTENT, 95% upper bound 0.022) | byte-identical across: bare 170/170, guard 170/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.3 minus official-0.34.2)
+llama3.2_3b     I=168 changed across builds 0 (CONSISTENT, 95% upper bound 0.022) | byte-identical across: bare 170/170, guard 170/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 27, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.3 minus official-0.34.2)
+qwen2.5_1.5b    I=169 changed across builds 0 (CONSISTENT, 95% upper bound 0.022) | byte-identical across: bare 170/170, guard 170/170
+   P1: CANNOT_TELL (gate failed, n 30, class flips 0)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.3 minus official-0.34.2)
+granite4.1_3b   I=160 changed across builds 0 (CONSISTENT, 95% upper bound 0.023) | byte-identical across: bare 170/170, guard 170/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 11, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.3 minus official-0.34.2)
+ministral-3_3b  I=170 changed across builds 0 (CONSISTENT, 95% upper bound 0.021) | byte-identical across: bare 170/170, guard 170/170
+   P1: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P2: CONSISTENT diff +0.000 [+0.000, +0.000] n 30, class flips 0 (official-0.34.3 minus official-0.34.2)
+   P3: CANNOT_TELL (gate failed, n 20, class flips 0)
+   P4: CONSISTENT diff +0.000 [+0.000, +0.000] n 29, class flips 0 (official-0.34.3 minus official-0.34.2)
+direction of class flips in gated families: to fault on official-0.34.3 0, to OK 0, exact two-sided p 1.000

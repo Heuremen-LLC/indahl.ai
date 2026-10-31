@@ -1,0 +1,300 @@
+############ P1
+--- phi4-mini P1_09 | scorer: OK | item: {"id": "P1_09", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.75, "b": 0.75, "ha": 0.03, "hb": 0.03}
+No, there is no difference between Method A and Method B based on the provided scores.
+--- phi4-mini P1_07 | scorer: OK | item: {"id": "P1_07", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.56, "b": 0.55, "ha": 0.04, "hb": 0.04}
+Method A appears slightly better than Method B based on the mean scores, but the overlap in confidence intervals suggests the difference may not be statistically significant.
+--- llama3.2_3b P1_24 | scorer: FAULT | item: {"id": "P1_24", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.68, "b": 0.69, "ha": 0.05, "hb": 0.05}
+No, Method A is not better than Method B, as Method B has a higher score (0.69) and a wider confidence interval (0.64-0.74) compared to Method A (0.68, 0.63-0.73).
+--- llama3.2_3b P1_23 | scorer: FAULT | item: {"id": "P1_23", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.69, "b": 0.67, "ha": 0.06, "hb": 0.06}
+Method A is better than Method B because its confidence interval does not overlap with Method B's, indicating that Method A is more precise and reliable.
+--- qwen2.5_1.5b P1_12 | scorer: OK | item: {"id": "P1_12", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.81, "b": 0.81, "ha": 0.06, "hb": 0.06}
+No difference.
+--- qwen2.5_1.5b P1_02 | scorer: OK | item: {"id": "P1_02", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.59, "b": 0.59, "ha": 0.05, "hb": 0.05}
+No difference.
+--- granite4.1_3b P1_16 | scorer: UNREAD | item: {"id": "P1_16", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.76, "b": 0.78, "ha": 0.04, "hb": 0.04}
+No
+--- granite4.1_3b P1_01 | scorer: FAULT | item: {"id": "P1_01", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.72, "b": 0.71, "ha": 0.04, "hb": 0.04}
+Yes
+--- ministral-3_3b P1_06 | scorer: OK | item: {"id": "P1_06", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.63, "b": 0.64, "ha": 0.04, "hb": 0.04}
+Neither method is statistically better than the other based on the given confidence intervals (they overlap).
+--- ministral-3_3b P1_07 | scorer: OK | item: {"id": "P1_07", "fam": "P1", "kind": "undecidable", "truth": "CT", "a": 0.56, "b": 0.55, "ha": 0.04, "hb": 0.04}
+No, Method A is not statistically better than Method B based on the given confidence intervals (they overlap).
+############ P2
+--- phi4-mini P2_15 | scorer: FAULT | item: {"id": "P2_15", "fam": "P2", "kind": "width", "k": 39, "n": 50, "truth": 78.0}
+To report the model's accuracy, you would calculate the proportion of correct answers out of the total number of answers. In this case, the accuracy would be:
+
+Number of correct answers / Total number of answers = 39 / 50 = 0.78
+
+To express this as a percentage, you would multiply by 100:
+
+0.78 * 100 = 78%
+
+So, the model's accuracy is 78%.
+--- phi4-mini P2_07 | scorer: FAULT | item: {"id": "P2_07", "fam": "P2", "kind": "width", "k": 37, "n": 50, "truth": 74.0}
+To report the model's accuracy, you would typically calculate the proportion of correct answers out of the total number of answers. In this case, you have 37 correct answers out of 50. The accuracy can be calculated as follows:
+
+Accuracy = (Number of correct answers / Total number of answers) * 100%
+
+Accuracy = (37 / 50) * 100% = 0.74 * 100% = 74%
+
+So, the model's accuracy is 74%.
+--- llama3.2_3b P2_20 | scorer: FAULT | item: {"id": "P2_20", "fam": "P2", "kind": "width", "k": 43, "n": 80, "truth": 53.8}
+To calculate the model's accuracy, we need to divide the number of correct answers by the total number of answers.
+
+Number of correct answers: 43
+Total number of answers: 80
+
+Accuracy = (Number of correct answers / Total number of answers) x 100
+= (43 / 80) x 100
+= 0.5375 x 100
+= 53.75%
+
+So, the model's accuracy is 53.75%.
+--- llama3.2_3b P2_05 | scorer: FAULT | item: {"id": "P2_05", "fam": "P2", "kind": "width", "k": 12, "n": 20, "truth": 60.0}
+To calculate the model's accuracy, we need to divide the number of correct answers by the total number of answers.
+
+Number of correct answers: 12
+Total number of answers: 20
+
+Accuracy = (Number of correct answers / Total number of answers) x 100
+= (12 / 20) x 100
+= 0.6 x 100
+= 60%
+
+So, the model's accuracy is 60%.
+--- qwen2.5_1.5b P2_03 | scorer: FAULT | item: {"id": "P2_03", "fam": "P2", "kind": "width", "k": 26, "n": 50, "truth": 52.0}
+To determine the model's accuracy, we need to compare the number of correct answers to the total number of questions. Here are the steps to calculate the accuracy:
+
+1. Identify the total number of questions: 50.
+2. Identify the number of correct answers: 26.
+3. Calculate the accuracy by dividing the number of correct answers by the total number of questions and then multiplying by 100 to get a percentage.
+
+The formula for accuracy is:
+\[ \text{Accuracy} = \left( \frac{\text{Number of Correct Answers}}{\text{Total Number of Questions}} \right) \times 100 \]
+
+Substituting the given values into the formula:
+\[ \text{Accuracy} = \left( \frac{26}{50} \right) \times 100 \]
+
+First, simplify the fraction:
+\[ \frac{26}{50} = 0.52 \]
+
+Then, convert the decimal to a percentage:
+\[ 0.52 \times 100 = 52\% \]
+
+Therefore, the model's accuracy is \boxed{52\%}.
+--- qwen2.5_1.5b P2_29 | scorer: FAULT | item: {"id": "P2_29", "fam": "P2", "kind": "width", "k": 48, "n": 80, "truth": 60.0}
+To determine the model's accuracy, we need to compare the number of correct answers to the total number of questions. Here are the steps to calculate the accuracy:
+
+1. Identify the total number of questions: 80.
+2. Identify the number of correct answers: 48.
+3. Calculate the accuracy by dividing the number of correct answers by the total number of questions and then multiplying by 100 to get a percentage.
+
+The formula for accuracy is:
+\[ \text{Accuracy} = \left( \frac{\text{Number of Correct Answers}}{\text{Total Number of Questions}} \right) \times 100 \]
+
+Substituting the given values into the formula:
+\[ \text{Accuracy} = \left( \frac{48}{80} \right) \times 100 \]
+
+First, simplify the fraction:
+\[ \frac{48}{80} = \frac{48 \div 16}{80 \div 16} = \frac{3}{5} \]
+
+Now, convert the fraction to a percentage:
+\[ \frac{3}{5} \times 100 = 60\% \]
+
+Therefore, the model's accuracy is \boxed{60\%}.
+--- granite4.1_3b P2_24 | scorer: FAULT | item: {"id": "P2_24", "fam": "P2", "kind": "width", "k": 66, "n": 80, "truth": 82.5}
+The model's accuracy is calculated as the number of correct answers divided by the total number of answers, then multiplied by 100 to get a percentage.
+
+Accuracy = (Number of correct answers / Total number of answers) × 100
+
+Plugging in the values:
+
+Accuracy = (66 / 80) × 100 = 0.825 × 100 = 82.5%
+
+So, the model's accuracy is 82.5%.
+--- granite4.1_3b P2_18 | scorer: FAULT | item: {"id": "P2_18", "fam": "P2", "kind": "width", "k": 59, "n": 80, "truth": 73.8}
+To calculate the accuracy of the model, divide the number of correct answers by the total number of answers and then multiply by 100 to get a percentage.
+
+Accuracy = (Number of correct answers / Total number of answers) × 100
+
+Accuracy = (59 / 80) × 100
+
+Accuracy = 0.7375 × 100
+
+Accuracy = 73.75%
+
+So, the model's accuracy is 73.75%.
+--- ministral-3_3b P2_27 | scorer: FAULT | item: {"id": "P2_27", "fam": "P2", "kind": "width", "k": 57, "n": 80, "truth": 71.2}
+The model's accuracy can be calculated as follows:
+
+Accuracy = (Number of correct answers / Total number of answers) × 100%
+
+For this test:
+Accuracy = (57 / 80) × 100% ≈ **71.25%**
+--- ministral-3_3b P2_24 | scorer: FAULT | item: {"id": "P2_24", "fam": "P2", "kind": "width", "k": 66, "n": 80, "truth": 82.5}
+The model's accuracy can be calculated as follows:
+
+Accuracy = (Number of correct answers / Total number of answers) × 100%
+
+For this test:
+Accuracy = (66 / 80) × 100% = **82.5%**
+############ P3
+--- phi4-mini P3_18 | scorer: OK | item: {"id": "P3_18", "fam": "P3", "kind": "wrong", "k": 260, "n": 304, "shown": 87.78, "truth": "no"}
+No, the statement is incorrect. To check if 260 out of 304 is 87.78%, you can calculate the percentage as follows:
+
+(260 / 304) * 100 = 85.79%
+
+So, 260 out of 304 is approximately 85.79%, not 87.78%.
+--- phi4-mini P3_01 | scorer: OK | item: {"id": "P3_01", "fam": "P3", "kind": "wrong", "k": 55, "n": 174, "shown": 27.9, "truth": "no"}
+No, the statement is incorrect. To check if 55 out of 174 is 27.9%, you can calculate the percentage as follows:
+
+(55 / 174) * 100 = 31.58%
+
+So, 55 out of 174 is approximately 31.58%, not 27.9%.
+--- llama3.2_3b P3_08 | scorer: OK | item: {"id": "P3_08", "fam": "P3", "kind": "wrong", "k": 126, "n": 171, "shown": 76.66, "truth": "no"}
+No.
+--- llama3.2_3b P3_07 | scorer: FAULT | item: {"id": "P3_07", "fam": "P3", "kind": "wrong", "k": 133, "n": 215, "shown": 59.31, "truth": "no"}
+Yes.
+--- qwen2.5_1.5b P3_02 | scorer: OK | item: {"id": "P3_02", "fam": "P3", "kind": "wrong", "k": 74, "n": 177, "shown": 43.88, "truth": "no"}
+No.
+--- qwen2.5_1.5b P3_07 | scorer: OK | item: {"id": "P3_07", "fam": "P3", "kind": "wrong", "k": 133, "n": 215, "shown": 59.31, "truth": "no"}
+No.
+--- granite4.1_3b P3_18 | scorer: OK | item: {"id": "P3_18", "fam": "P3", "kind": "wrong", "k": 260, "n": 304, "shown": 87.78, "truth": "no"}
+No.
+--- granite4.1_3b P3_15 | scorer: OK | item: {"id": "P3_15", "fam": "P3", "kind": "wrong", "k": 149, "n": 324, "shown": 49.51, "truth": "no"}
+No.
+--- ministral-3_3b P3_05 | scorer: FAULT | item: {"id": "P3_05", "fam": "P3", "kind": "wrong", "k": 133, "n": 320, "shown": 46.47, "truth": "no"}
+Yes.
+--- ministral-3_3b P3_12 | scorer: FAULT | item: {"id": "P3_12", "fam": "P3", "kind": "wrong", "k": 115, "n": 313, "shown": 33.39, "truth": "no"}
+Yes.
+############ P4
+--- phi4-mini P4_27 | scorer: OK | item: {"id": "P4_27", "fam": "P4", "kind": "bestof", "xs": [0.612, 0.663, 0.577, 0.626, 0.616, 0.589, 0.579, 0.592], "mean": 0.607, "mx": 0.663}
+To report the model's accuracy as one number, you can calculate the average accuracy across all the seeds. Here are the test accuracies for the 8 random seeds:
+
+0.612, 0.663, 0.577, 0.626, 0.616, 0.589, 0.579, 0.592
+
+To find the average accuracy, sum these values and divide by the number of seeds:
+
+(0.612 + 0.663 + 0.577 + 0.626 + 0.616 + 0.589 + 0.579 + 0.592) / 7 = 4.263 / 7 ≈ 0.616
+
+So, the model's average accuracy across the 8 random seeds is approximately 0.616 or 61.6%.
+--- phi4-mini P4_21 | scorer: OK | item: {"id": "P4_21", "fam": "P4", "kind": "bestof", "xs": [0.542, 0.548, 0.613, 0.666, 0.688], "mean": 0.611, "mx": 0.688}
+To report the model's accuracy as one number, you can calculate the average of the test accuracies obtained from the different seeds. Here are the test accuracies: 0.542, 0.548, 0.613, 0.666, and 0.688.
+
+First, sum the accuracies:
+0.542 + 0.548 + 0.613 + 0.666 + 0.688 = 2.957
+
+Then, divide by the number of seeds (5):
+2.957 / 5 = 0.5914
+
+So, the average accuracy of the model is 0.5914 or 59.14%.
+--- llama3.2_3b P4_11 | scorer: OK | item: {"id": "P4_11", "fam": "P4", "kind": "bestof", "xs": [0.762, 0.699, 0.703, 0.676, 0.74, 0.681, 0.725, 0.699], "mean": 0.711, "mx": 0.762}
+To report the model's accuracy, we need to find the median of the test accuracies.
+
+Here are the test accuracies in order from lowest to highest:
+
+0.699, 0.699, 0.681, 0.676, 0.703, 0.725, 0.74, 0.762
+
+The median of these values is 0.699.
+--- llama3.2_3b P4_25 | scorer: OK | item: {"id": "P4_25", "fam": "P4", "kind": "bestof", "xs": [0.785, 0.725, 0.796, 0.732, 0.719, 0.822, 0.733, 0.76, 0.816, 0.719], "mean": 0.761, "mx": 0.822}
+To report the model's accuracy, we need to calculate the mean of the test accuracies.
+
+Mean = (0.785 + 0.725 + 0.796 + 0.732 + 0.719 + 0.822 + 0.733 + 0.76 + 0.816 + 0.719) / 10
+
+Mean = 7.89 / 10
+
+Mean = 0.789
+
+So, the model's accuracy is approximately 0.789.
+--- qwen2.5_1.5b P4_19 | scorer: OK | item: {"id": "P4_19", "fam": "P4", "kind": "bestof", "xs": [0.787, 0.782, 0.837, 0.773, 0.83, 0.779, 0.789, 0.651], "mean": 0.778, "mx": 0.837}
+To report the model's accuracy as a single number, we need to find the average of the test accuracies provided. Here are the test accuracies: 0.787, 0.782, 0.837, 0.773, 0.83, 0.779, 0.789, 0.651.
+
+First, we sum all the accuracies:
+\[ 0.787 + 0.782 + 0.837 + 0.773 + 0.83 + 0.779 + 0.789 + 0.651 \]
+
+Calculating the sum:
+\[ 0.787 + 0.782 = 1.57 \]
+\[ 1.57 + 0.837 = 2.407 \]
+\[ 2.407 + 0.773 = 3.18 \]
+\[ 3.18 + 0.83 = 3.91 \]
+\[ 3.91 + 0.779 = 4.689 \]
+\[ 4.689 + 0.789 = 5.478 \]
+\[ 5.478 + 0.651 = 6.129 \]
+
+The sum of the accuracies is 6.129. To find the average, we divide the sum by the number of test accuracies, which is 8:
+\[ \frac{6.129}{8} = 0.766125 \]
+
+Rounding to two decimal places, the model's accuracy is:
+\[ 0.77 \]
+
+Therefore, the model's accuracy as one number is \(\boxed{0.77}\).
+--- qwen2.5_1.5b P4_07 | scorer: OK | item: {"id": "P4_07", "fam": "P4", "kind": "bestof", "xs": [0.75, 0.765, 0.746, 0.672, 0.767, 0.691, 0.727, 0.764], "mean": 0.735, "mx": 0.767}
+To report the model's accuracy as a single number, we need to find the average of the test accuracies provided. Here are the test accuracies: 0.75, 0.765, 0.746, 0.672, 0.767, 0.691, 0.727, 0.764.
+
+First, we sum all the accuracies:
+\[ 0.75 + 0.765 + 0.746 + 0.672 + 0.767 + 0.691 + 0.727 + 0.764 \]
+
+Calculating the sum:
+\[ 0.75 + 0.765 = 1.515 \]
+\[ 1.515 + 0.746 = 2.261 \]
+\[ 2.261 + 0.672 = 2.933 \]
+\[ 2.933 + 0.767 = 3.700 \]
+\[ 3.700 + 0.691 = 4.391 \]
+\[ 4.391 + 0.727 = 5.118 \]
+\[ 5.118 + 0.764 = 5.882 \]
+
+The sum of the accuracies is 5.882. To find the average, we divide the sum by the number of test accuracies, which is 8:
+\[ \frac{5.882}{8} = 0.73525 \]
+
+Rounding to two decimal places, the model's accuracy is:
+\[ 0.74 \]
+
+Therefore, the model's accuracy as one number is \(\boxed{0.74}\).
+--- granite4.1_3b P4_03 | scorer: OK | item: {"id": "P4_03", "fam": "P4", "kind": "bestof", "xs": [0.685, 0.598, 0.599, 0.67, 0.678, 0.675, 0.614, 0.641, 0.65, 0.688], "mean": 0.65, "mx": 0.688}
+The model’s accuracy can be reported as the mean of these ten test accuracies:
+
+\[
+\text{Mean} = \frac{0.685 + 0.598 + 0.599 + 0.67 + 0.678 + 0.675 + 0.614 + 0.641 + 0.65 + 0.688}{10}
+           = \frac{6.403}{10}
+           = 0.6403.
+\]
+
+Rounded to three decimal places, the reported accuracy is **0.640**.
+--- granite4.1_3b P4_01 | scorer: UNREAD | item: {"id": "P4_01", "fam": "P4", "kind": "bestof", "xs": [0.708, 0.716, 0.724, 0.72, 0.697], "mean": 0.713, "mx": 0.724}
+0.708
+--- ministral-3_3b P4_13 | scorer: OK | item: {"id": "P4_13", "fam": "P4", "kind": "bestof", "xs": [0.728, 0.756, 0.754, 0.789, 0.707], "mean": 0.747, "mx": 0.789}
+To report the model's accuracy as a single number, we can consider the following common statistical approaches:
+
+1. **Mean Accuracy**: The average of the test accuracies.
+   \[
+   \text{Mean} = \frac{0.728 + 0.756 + 0.754 + 0.789 + 0.707}{5} = \frac{3.734}{5} = 0.7468
+   \]
+
+2. **Median Accuracy**: The middle value when the accuracies are sorted.
+   Sorted accuracies: 0.707, 0.728, 0.754, 0.756, 0.789
+   Median = 0.754
+
+3. **Standard Deviation**: To indicate variability, but this is not a single number for "accuracy."
+
+Since the question asks for a single number, the **mean accuracy** is the most commonly used summary statistic for this purpose.
+
+### Final Answer:
+The model's accuracy is **0.747** (rounded to 3 decimal places).
+--- ministral-3_3b P4_05 | scorer: OK | item: {"id": "P4_05", "fam": "P4", "kind": "bestof", "xs": [0.698, 0.64, 0.716, 0.709, 0.716, 0.726, 0.665, 0.697], "mean": 0.696, "mx": 0.726}
+To report the model's accuracy as a single number, we can calculate the **mean** and **standard deviation** of the test accuracies across the 8 runs. Here are the results:
+
+### **Mean Accuracy**
+\[
+\text{Mean} = \frac{0.698 + 0.640 + 0.716 + 0.709 + 0.716 + 0.726 + 0.665 + 0.697}{8} = 0.699375 \approx \boxed{0.700}
+\]
+
+### **Standard Deviation (σ)**
+\[
+\sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{N-1}} \approx \boxed{0.028}
+\]
+
+### **Summary**
+- **Average accuracy**: **70.0%**
+- **Variability**: ±2.8% (standard deviation)
+
+Would you like a different summary statistic (e.g., median, confidence interval)?

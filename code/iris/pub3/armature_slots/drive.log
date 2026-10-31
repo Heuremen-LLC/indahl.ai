@@ -1,0 +1,21 @@
+== phi4-mini:latest 13:10:35
+phi4-mini:latest bare done
+phi4-mini:latest bare_copy done
+phi4-mini:latest guard done
+== llama3.2:3b 13:16:34
+llama3.2:3b bare done
+llama3.2:3b bare_copy done
+llama3.2:3b guard done
+== qwen2.5:1.5b 13:19:34
+qwen2.5:1.5b bare done
+qwen2.5:1.5b bare_copy done
+qwen2.5:1.5b guard done
+== granite4.1:3b 13:22:49
+granite4.1:3b bare done
+granite4.1:3b bare_copy done
+granite4.1:3b guard done
+== ministral-3:3b 13:27:01
+ministral-3:3b bare done
+ministral-3:3b bare_copy done
+ministral-3:3b guard done
+== ALL REPLIES IN 13:33:22
