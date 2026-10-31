@@ -1,0 +1,74 @@
+
+######## 600m (printed: well-formed 0.926 [0.892, 0.955], exact among well-formed 0.235)
+  r1 L1 well-formed: 248 of 269 = 0.922 [0.884, 0.948] | on the 247 call rows 238 = 0.964 [0.932, 0.981] | on the 22 no-call rows: 11 emit a call, 11 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 56 of 248 = 0.226 | whole completion equal 0 | not equal (generalized or other) 192
+  r1 L5 opened a <|tool_call|> 258 | parsed with name and args 248 | finish {'stop': 259, 'length': 10} | completion tokens median 116, max 256
+  r1 L4 P(<|tool_call|>) first token: call rows median 1.56e-13 [min 2.07e-15, max 2.03e-10] | no-call rows median 1.12e-13 [min 5.56e-15, max 2.78e-12] | first token is <|tool_call|> on 0 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 249 of 269 = 0.926 [0.888, 0.951] | exact copies among well-formed calls on call rows 56 of 238 = 0.235
+  r2 L1 well-formed: 248 of 269 = 0.922 [0.884, 0.948] | on the 247 call rows 238 = 0.964 [0.932, 0.981] | on the 22 no-call rows: 11 emit a call, 11 suppress
+  r2 L2 exact among well-formed: call text equal to the training call 56 of 248 = 0.226 | whole completion equal 0 | not equal (generalized or other) 192
+  r2 L5 opened a <|tool_call|> 258 | parsed with name and args 248 | finish {'stop': 259, 'length': 10} | completion tokens median 116, max 256
+  r2 L4 P(<|tool_call|>) first token: call rows median 1.56e-13 [min 2.07e-15, max 2.03e-10] | no-call rows median 1.12e-13 [min 5.56e-15, max 2.78e-12] | first token is <|tool_call|> on 0 of 247 call rows
+  r2 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 249 of 269 = 0.926 [0.888, 0.951] | exact copies among well-formed calls on call rows 56 of 238 = 0.235
+  L3 repeat floor: rows whose completion token ids differ between r1 and r2: 0 of 269 | largest first-token probability difference 0
+
+######## parent (printed: well-formed 0.100 [0.067, 0.138])
+  r1 L1 well-formed: 5 of 269 = 0.019 [0.008, 0.043] | on the 247 call rows 5 = 0.020 [0.009, 0.047] | on the 22 no-call rows: 0 emit a call, 22 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 3 of 5 = 0.600 | whole completion equal 0 | not equal (generalized or other) 2
+  r1 L5 opened a <|tool_call|> 5 | parsed with name and args 5 | finish {'stop': 265, 'length': 4} | completion tokens median 15, max 256
+  r1 L4 P(<|tool_call|>) first token: call rows median 7.73e-05 [min 8.13e-12, max 0.018] | no-call rows median 0.000127 [min 5.85e-09, max 0.0323] | first token is <|tool_call|> on 0 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 27 of 269 = 0.100 [0.070, 0.142] | exact copies among well-formed calls on call rows 3 of 5 = 0.600
+  r2 L1 well-formed: 5 of 269 = 0.019 [0.008, 0.043] | on the 247 call rows 5 = 0.020 [0.009, 0.047] | on the 22 no-call rows: 0 emit a call, 22 suppress
+  r2 L2 exact among well-formed: call text equal to the training call 3 of 5 = 0.600 | whole completion equal 0 | not equal (generalized or other) 2
+  r2 L5 opened a <|tool_call|> 5 | parsed with name and args 5 | finish {'stop': 265, 'length': 4} | completion tokens median 15, max 256
+  r2 L4 P(<|tool_call|>) first token: call rows median 7.73e-05 [min 8.13e-12, max 0.018] | no-call rows median 0.000127 [min 5.85e-09, max 0.0323] | first token is <|tool_call|> on 0 of 247 call rows
+  r2 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 27 of 269 = 0.100 [0.070, 0.142] | exact copies among well-formed calls on call rows 3 of 5 = 0.600
+  L3 repeat floor: rows whose completion token ids differ between r1 and r2: 0 of 269 | largest first-token probability difference 0
+
+######## child (printed: well-formed 0.959 [0.933, 0.981], exact among well-formed 0.988)
+  r1 L1 well-formed: 256 of 269 = 0.952 [0.919, 0.972] | on the 247 call rows 246 = 0.996 [0.977, 0.999] | on the 22 no-call rows: 10 emit a call, 12 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 243 of 256 = 0.949 | whole completion equal 243 | not equal (generalized or other) 13
+  r1 L5 opened a <|tool_call|> 256 | parsed with name and args 256 | finish {'stop': 269} | completion tokens median 27, max 57
+  r1 L4 P(<|tool_call|>) first token: call rows median 0.996 [min 0.0823, max 1] | no-call rows median 0.114 [min 3.47e-06, max 0.999] | first token is <|tool_call|> on 246 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 258 of 269 = 0.959 [0.928, 0.977] | exact copies among well-formed calls on call rows 243 of 246 = 0.988
+  r2 L1 well-formed: 256 of 269 = 0.952 [0.919, 0.972] | on the 247 call rows 246 = 0.996 [0.977, 0.999] | on the 22 no-call rows: 10 emit a call, 12 suppress
+  r2 L2 exact among well-formed: call text equal to the training call 243 of 256 = 0.949 | whole completion equal 243 | not equal (generalized or other) 13
+  r2 L5 opened a <|tool_call|> 256 | parsed with name and args 256 | finish {'stop': 269} | completion tokens median 27, max 57
+  r2 L4 P(<|tool_call|>) first token: call rows median 0.996 [min 0.0823, max 1] | no-call rows median 0.114 [min 3.47e-06, max 0.999] | first token is <|tool_call|> on 246 of 247 call rows
+  r2 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 258 of 269 = 0.959 [0.928, 0.977] | exact copies among well-formed calls on call rows 243 of 246 = 0.988
+  L3 repeat floor: rows whose completion token ids differ between r1 and r2: 0 of 269 | largest first-token probability difference 0
+
+######## narrow_highlr (printed: well-formed 1.000 (no interval printed), exact among well-formed 1.000)
+  r1 L1 well-formed: 247 of 269 = 0.918 [0.879, 0.945] | on the 247 call rows 247 = 1.000 [0.985, 1.000] | on the 22 no-call rows: 0 emit a call, 22 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 247 of 247 = 1.000 | whole completion equal 247 | not equal (generalized or other) 0
+  r1 L5 opened a <|tool_call|> 247 | parsed with name and args 247 | finish {'stop': 269} | completion tokens median 27, max 57
+  r1 L4 P(<|tool_call|>) first token: call rows median 1 [min 1, max 1] | no-call rows median 5.96e-09 [min 5.69e-19, max 5.73e-06] | first token is <|tool_call|> on 247 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 269 of 269 = 1.000 [0.986, 1.000] | exact copies among well-formed calls on call rows 247 of 247 = 1.000
+
+######## narrow_lowlr (printed: well-formed 1.000 (no interval printed), exact among well-formed 1.000)
+  r1 L1 well-formed: 247 of 269 = 0.918 [0.879, 0.945] | on the 247 call rows 247 = 1.000 [0.985, 1.000] | on the 22 no-call rows: 0 emit a call, 22 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 247 of 247 = 1.000 | whole completion equal 247 | not equal (generalized or other) 0
+  r1 L5 opened a <|tool_call|> 247 | parsed with name and args 247 | finish {'stop': 269} | completion tokens median 27, max 57
+  r1 L4 P(<|tool_call|>) first token: call rows median 1 [min 0.997, max 1] | no-call rows median 5.59e-08 [min 3.69e-12, max 0.000474] | first token is <|tool_call|> on 247 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 269 of 269 = 1.000 [0.986, 1.000] | exact copies among well-formed calls on call rows 247 of 247 = 1.000
+
+######## diverse_lowlr (printed: well-formed 0.996 [0.989, 1.000], exact among well-formed 0.996)
+  r1 L1 well-formed: 248 of 269 = 0.922 [0.884, 0.948] | on the 247 call rows 247 = 1.000 [0.985, 1.000] | on the 22 no-call rows: 1 emit a call, 21 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 246 of 248 = 0.992 | whole completion equal 246 | not equal (generalized or other) 2
+  r1 L5 opened a <|tool_call|> 248 | parsed with name and args 248 | finish {'stop': 269} | completion tokens median 27, max 57
+  r1 L4 P(<|tool_call|>) first token: call rows median 1 [min 0.976, max 1] | no-call rows median 0.00283 [min 1.09e-07, max 0.998] | first token is <|tool_call|> on 247 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 268 of 269 = 0.996 [0.979, 0.999] | exact copies among well-formed calls on call rows 246 of 247 = 0.996
+
+######## diverse_highlr_seed42 (printed: well-formed 1.000 (no interval printed), exact among well-formed 1.000)
+  r1 L1 well-formed: 247 of 269 = 0.918 [0.879, 0.945] | on the 247 call rows 247 = 1.000 [0.985, 1.000] | on the 22 no-call rows: 0 emit a call, 22 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 247 of 247 = 1.000 | whole completion equal 247 | not equal (generalized or other) 0
+  r1 L5 opened a <|tool_call|> 247 | parsed with name and args 247 | finish {'stop': 269} | completion tokens median 27, max 57
+  r1 L4 P(<|tool_call|>) first token: call rows median 1 [min 0.998, max 1] | no-call rows median 7.19e-07 [min 2.55e-11, max 0.0302] | first token is <|tool_call|> on 247 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 269 of 269 = 1.000 [0.986, 1.000] | exact copies among well-formed calls on call rows 247 of 247 = 1.000
+
+######## diverse_highlr_seed43 (printed: well-formed 0.996 [0.989, 1.000], exact among well-formed 1.000)
+  r1 L1 well-formed: 248 of 269 = 0.922 [0.884, 0.948] | on the 247 call rows 247 = 1.000 [0.985, 1.000] | on the 22 no-call rows: 1 emit a call, 21 suppress
+  r1 L2 exact among well-formed: call text equal to the training call 247 of 248 = 0.996 | whole completion equal 247 | not equal (generalized or other) 1
+  r1 L5 opened a <|tool_call|> 248 | parsed with name and args 248 | finish {'stop': 269} | completion tokens median 27, max 57
+  r1 L4 P(<|tool_call|>) first token: call rows median 1 [min 0.993, max 1] | no-call rows median 8.38e-06 [min 1.14e-11, max 0.414] | first token is <|tool_call|> on 247 of 247 call rows
+  r1 L1b (Addendum 2, defined after the data) pass: call rows with a well-formed call plus no-call rows that suppress = 268 of 269 = 0.996 [0.979, 0.999] | exact copies among well-formed calls on call rows 247 of 247 = 1.000

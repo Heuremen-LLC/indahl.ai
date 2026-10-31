@@ -1,0 +1,67 @@
+# Gift plan: arXiv 2610.02142 (J. S. Santillana, "Keyword Harnesses Fail Open"), written 31 Oct 2026 before any model run
+
+Scout recount (scout/RECOUNT.md, scout/reproduce.sh, our code, files read as data): the corpus counts, parameter counts, section 6.6 drift
+figures and printed arithmetic rebuild except the rows the recount lists as NOT REBUILT. Weights are read with scout/pt_safe.py (a
+restricted unpickler that runs nothing from the file). His code has no license, so the decoder below is our own, written from the
+architecture as described in his model file (RMSNorm pre-norm, SwiGLU, RoPE theta 1e6 rotate-half, no RoPE on every fourth layer, GQA,
+tied embeddings).
+
+## Live arm L: his verbatim protocol on the 269 corpus rows, CPU fp32 greedy, our code
+- Rows: tool_sft_mini_v1.jsonl (sha256 c0eb6e90), distinct user prompts with first occurrence kept, rows whose tool is outside the five
+  declared tools dropped (scout/corpus_counts.py rule A): 269 rows, 247 expect a call and 22 expect none.
+- Prompt: the row text up to and including <|assistant|>, tokenized with his tokenizer.json (sha256 462efac1), no BOS (his training
+  view encodes the text without one). Special tokens must encode to their single ids (<|system|> 4, <|user|> 5, <|assistant|> 6, <|end|> 7).
+- Models: 600M step 154,000 (vectrayx-600m-checkpoints, sha256 90e40590), the pre-remediation 1B parent (phase4a_v0_real_llm, 2c5b7f01) and
+  the repaired 1B child (text_diag_repro_v0 step 2,202, 207808179f, stored in bf16 and upcast exactly to fp32). Each loads with every tensor
+  used and none missing.
+- Decode: greedy (argmax) in fp32 on the Mac CPU with PyTorch 2.4.0, torch threads fixed at 6, no repetition penalty, stop at <|end|> or
+  </s>, at most 256 new tokens (his maximum is unstated; the cap and every completion length are recorded). Two repeats per model.
+- First-token probe: P(token 8, <|tool_call|>) at the position after <|assistant|>, per row, from the same forward pass.
+
+## Known-good before readings (KNOWN-GOOD)
+KNOWN-GOOD: the repaired child on its own corpus. His paper prints 0.959 well-formed and 0.988 exact copies among them; a decoder with a
+wrong forward pass cannot recite training completions token for token, so a child exact-copy rate far below his means our code is wrong
+and the arm stops before any other reading. Also: tokenizer special ids as above, and parameter counts equal the scout's (661.6M, 1,041.9M).
+
+## Scorer (his section 5.3 as printed, our code)
+Well-formed: the completion holds <|tool_call|> followed by a JSON object with a string "name" and an object "args", closed by
+<|/tool_call|> or the end of the completion. Exact: the call text equals the row's training completion call byte for byte. No-call rows
+pass suppression when no <|tool_call|> is emitted.
+
+## Readings (four outcomes, per model)
+L1 Well-formed emission over 269 rows with Wilson 95%, against his 0.926 (600M), 0.100 (parent), 0.959 (child); and over the 247
+   call-expecting rows separately.
+L2 Exact copies among well-formed calls, against his 0.235 (600M) and 0.988 (child), with the counts.
+L3 Repeat floor: rows whose completion token ids differ between our two repeats.
+L4 First-token probe: median and range of P(<|tool_call|>) per model over the 247 call rows.
+L5 Our counts beside his printed denominators (238 and 246 among well-formed calls, 5 parseable calls for the parent), to see which
+   population each printed figure uses.
+Any addendum is dated and committed before the reading it changes is computed.
+
+## Addendum 1 (31 Oct 2026, before any factorial file is downloaded or read; defined after reading the paper, before any of these data)
+F1 The verbatim arm (same rows, prompt, decoder, scorer, one repeat) on the five factorial finals at step 2,202 (vectrayx-vision-1b-checks
+   f3_factorial_v0: narrow_highlr, narrow_lowlr, diverse_lowlr, diverse_highlr_seed42, diverse_highlr_seed43), each hashed against the hub
+   (scout/out/live_needs.tsv), against his printed well-formed 1.000, 1.000, 0.9963, 1.000, 0.9963 and exact-copy 1.000 except diverse/low
+   0.9960.
+F2 His section 6.6 drift statistics for each of the five finals and the reproduced child against the same parent (phase4a_v0_real_llm):
+   the <|tool_call|> row (ID 8) cosine and norm change, 20 ordinary rows as his baseline (ids 1000 to 19000 in steps of 1000, fixed now),
+   mean and max absolute drift over the full tied table, the share of entries bit-identical after rounding both to bf16 and as stored,
+   and the relative change of the table's Frobenius norm by an explicit fp64 sum of squares. Read with scout/pt_safe.py.
+Correction to Addendum 1 (31 Oct 2026, before any factorial file has finished downloading): the 20 baseline rows are ids 1000 to 20000 in
+steps of 1000; "to 19000" gives 19 rows. The reproduced child against the parent is the known-good for F2: his section 6.6 prints cosine
+0.99999583, row norm 3.6246328 to 3.6246383, mean absolute drift 9.44e-6, max 5.98e-3, Frobenius 635.162769 to 635.163016 and 97.7%
+bit-identical entries, and our code must give those before any arm is read.
+
+## Addendum 2 (31 Oct 2026, after L1 to L5 printed; defined after the data)
+L1b His section 6.8 rates read as a pass rate: a well-formed call on a call-expecting row, or no <|tool_call|> on a no-call row, over 269
+    rows; and his exact-copy rate over the well-formed calls on call-expecting rows only. Printed for every model and arm the reader holds.
+Note on order (31 Oct 2026): Addendum 2 was written to this file before L1b ran and committed only after it ran, in the same command. The
+reading computed is the one defined above, unchanged.
+
+## Addendum 3 (31 Oct 2026, after the referee pass; every reading here is defined after the data)
+Label fix: the factorial is his section 6.9 (F3 in Table 10 and 7.4), not section 7.
+L1c His printed intervals against the binomial: the 2.5% and 97.5% quantiles of Binomial(269, k/269)/269 for each printed rate's numerator k
+    under the pass rule (249, 27, 258, 268), and under our well-formed-on-any-row numerators (248, 5, 256) beside them.
+F2b Where row 8 sits among all 32,768 rows: the rank of its fp64 cosine to the parent among every row's fp64 cosine, as the share of rows
+    less moved than row 8, for the child and each factorial arm; and the table median cosine beside it.
+F2c His own printed pair for the child (row 8 0.99999583, baseline mean 0.99999678), compared as printed.

@@ -1,0 +1,96 @@
+
+## 2026-10-30 21:34 Santillana live verbatim arm (CPU fp32 greedy, our decoder, two runs each, repeat floor 0 of 269 rows for every model): his 6.8 rates rebuild exactly as pass rates (Addendum 2): 600M 249 of 269 = 0.926, parent 27 = 0.100, child 258 = 0.959; exact copies 56 of 238 = 0.235 and 243 of 246 = 0.988; the parent emits a well-formed call on 5 of 247 call rows (its 0.100 is 5 calls plus 22 correct suppressions); first-token P(<|tool_call|>) medians 1.6e-13 (600M, newline first, as his 6.7 says), 7.7e-5 (parent), 0.996 (child)
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same 269 rows, prompt, decoder and scorer for all three models; his row rule rebuilt (247 call, 22 no-call); the pass rule printed beside our well-formed rule, not substituted
+- II: holds: call rows and no-call rows counted apart before any total; repeat floor counted row by row (0 of 269 per model)
+- III: n/a: rates and counts only, no signed differences in this reading
+- V: holds: Wilson 95% printed; his intervals are a different method (scout noted a percentile bootstrap), so only counts are compared to his
+- VI: holds: each model's count equals his printed rate exactly under the pass rule; the parent's call rate on call rows (5 of 247) printed beside
+- R: caught: Addendum 2 committed after L1b ran though written before; recorded in PLAN.md and the catch log
+- L1: holds: 10 completions per model read in full (runs/READ_*_r1.md); r2 equal to r1 token for token
+- L2: holds: rates printed only after the READ notes, the reader refuses otherwise
+- L3: holds: his protocol as printed in 5.3 and 6.8; the 256-token cap and no BOS are ours where his are unstated, named in the plan
+- L4: holds: two runs per model on the same machine, 0 rows differ; no across-machine claim is made
+- L5: holds: rows by his dedupe rule, 269 asserted; tokenizer and corpus hashes asserted
+- L6: holds: finish reasons counted (600M 10 at the cap, parent 4, child 0)
+- L7: n/a: no judge or labeller scores anything here
+- L8: holds: the same rows for every model
+- L9: holds: prompts end at <|assistant|>; the training completion is never in the prompt
+- L10: holds: model files hashed against the hub before loading
+- L11: n/a: nothing substituted in this reading
+- L12: n/a: referee to follow is a Claude model, to be disclosed
+- P1: holds: 6.7 and 6.8 sentences checked in paper.txt
+- P2: holds: each figure names its run file
+- P3: holds: model names as his checkpoints are named
+- P4: holds: no cause named
+- P5: holds: Wilson 95% named
+- P6: holds: summary matches verbatim.text
+- P7: n/a: no surface touched by this reading yet
+- P8: n/a: no rendered page
+- P9: holds: no completion text in the summary
+- P10: holds: L1b labelled defined after the data
+
+## 2026-10-30 22:10 Santillana F1 and F2 (Addendum 1, defined after reading the paper): the five factorial arms rebuild his section 7 verbatim values exactly under the pass rule (269, 269, 268, 269, 268 of 269; exact 247 of 247 except diverse/low 246); F2 drift: the <|tool_call|> row cosine 0.9999947 to 0.9999999 in every arm, at or above the 20 baseline rows' mean; table entries equal after bf16 rounding 19.6% to 89.6% in the factorial arms against 97.7% for the bf16 child; his section 6.6 child figures rebuild except the row-8 cosine, which is torch fp32 cosine_similarity (fp64 0.99999539)
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: factorial arms run on the same rows, prompt, decoder and scorer as the main arm; drift for every arm against the same parent and the same 20 baseline rows
+- II: holds: per arm counts printed; drift statistics per arm before any comparison
+- III: holds: norm changes printed signed (all five arms shrink the trigger row by 0.02% to 0.12%)
+- V: holds: fp64 sums for drift, three cosine rulers side by side for the row-8 figure (fp64, numpy fp32, torch fp32)
+- VI: holds: every factorial value equals his printed value; F2 is descriptive, no test claimed
+- R: holds: factorial files hashed against the hub; Addendum 1 (1017b71) and its correction (1fab29a) committed before any factorial file was read
+- L1: holds: 10 completions per arm read in full (runs/READ_<arm>_r1.md)
+- L2: holds: rates printed after the READ notes
+- L3: holds: same decode settings as the main arm, named in the plan
+- L4: n/a: one repeat per factorial arm; the main arm's floor was 0 of 269 for every model
+- L5: holds: same 269 rows
+- L6: holds: finish reasons counted per arm
+- L7: n/a: no judge or labeller in this reading
+- L8: holds: same rows for every arm
+- L9: holds: prompts end at <|assistant|>
+- L10: holds: weights hashed before use
+- L11: n/a: nothing substituted in this reading
+- L12: n/a: referee to follow is a Claude model, to be disclosed
+- P1: holds: his section 7 values checked in paper.txt
+- P2: holds: each figure names its file
+- P3: holds: arm names as his folders are named
+- P4: holds: no cause named for the drift differences beyond the stored precision he states
+- P5: holds: Wilson 95% named where printed
+- P6: holds: summary matches verbatim.text and drift.text
+- P7: n/a: no surface touched by this reading yet
+- P8: n/a: no rendered page
+- P9: holds: no completion text in the summary
+- P10: holds: F1 and F2 labelled as defined after reading the paper; L1b after the data
+
+## 2026-10-30 22:30 Santillana L1c, F2b, F2c (Addendum 3, defined after the data): his printed intervals equal the binomial 2.5% and 97.5% quantiles of the pass numerators (249, 27, 258, 268 of 269), not of well-formed counts; in fp64 the child's row 8 is more moved than 95.2% of the 32,768 rows (table median cosine 0.99999964 against row 8 0.99999539); across the factorial arms 13.6% to 73.2% of rows are less moved than row 8; his own printed pair puts row 8 slightly more moved than his baseline average
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the rank uses every row of the table against the same parent, not a chosen baseline
+- II: holds: per arm ranks printed, none averaged
+- III: caught: our earlier line read the trigger row as less moved in every arm; the fp64 rank shows the sign of that comparison changes by arm and is the other way for the child
+- V: holds: fp64 cosines for the rank; binomial quantiles beside his printed intervals; the fp32 library ruler kept apart
+- VI: holds: descriptive ranks, no test claimed; L1c equal to his printed intervals to three decimals for all four
+- R: holds: Addendum 3 (caec408) committed in its own call before readings_c.py ran
+- L1: n/a: no completions read in this reading
+- L2: n/a: no rates beyond those already filed
+- L3: holds: his printed figures quoted from paper.txt
+- L4: n/a: no reruns in this reading
+- L5: holds: same tables as F2, same parent
+- L6: n/a: no extraction step
+- L7: n/a: no judge or labeller
+- L8: holds: every row compared with itself across checkpoints
+- L9: n/a: no prompts in this reading
+- L10: holds: weights hashed earlier against the hub
+- L11: n/a: nothing substituted
+- L12: holds: the referee whose flags led here is a Claude model, disclosed; its run of his model file is not used
+- P1: holds: his 6.6 sentence and numbers checked in paper.txt
+- P2: holds: each figure names its file
+- P3: holds: section 6.9 label fixed
+- P4: holds: no cause named for the rank differences
+- P5: holds: binomial quantiles named
+- P6: holds: summary matches readings_c.text
+- P7: n/a: no surface touched yet
+- P8: n/a: no rendered page
+- P9: holds: plain sentences
+- P10: holds: labelled defined after the data
