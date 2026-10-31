@@ -1,0 +1,5 @@
+comparisons 10461 | actual pools: kept 2885, differ 680 = 23.6%, opposite 265 = 9.2%
+J3p both mixed pairings pooled: kept 5619, differ 1209 = 21.5%, opposite 490 = 8.7%
+  four-way agreement (all four annotators unanimous): 2205; comparisons split two against two: 1889
+  excess differ: +2.05 pp | comparison bootstrap SE 0.84, +-1.96 SE [+0.4, +3.7] | jackknife (upper width) SE 1.91, [-1.7, +5.8]
+  excess opposite: +0.47 pp | comparison bootstrap SE 0.62, +-1.96 SE [-0.8, +1.7] | jackknife (upper width) SE 1.20, [-1.9, +2.8]

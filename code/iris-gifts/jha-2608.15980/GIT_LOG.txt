@@ -1,0 +1,7 @@
+11f8050 2026-10-30T20:13:09-04:00 Jha gift: Addendum 4 (order-free mixed pairings, rulers per the second referee), J3p reading, Check Block filed
+e702420 2026-10-30T19:58:31-04:00 Jha gift: J2b, J3 pool-blind splits, ruler known-good, Check Block filed
+e795929 2026-10-30T19:57:05-04:00 Jha gift: Addendum 3 (known-good for the annotator-aware rulers) before any interval is used
+6d3da94 2026-10-30T19:54:26-04:00 Jha gift: Addendum 2 (J1 not new; J2b, J3 defined after the data) before computing
+13fe92c 2026-10-30T19:47:04-04:00 Jha gift: readings K, J1, J1b (post hoc), J2, Check Block filed
+2d1c05c 2026-10-30T19:46:20-04:00 Jha gift: Addendum 1 (J1b, defined after the data) before computing
+e0e4ac8 2026-10-30T19:45:38-04:00 Jha gift (2608.15980): plan J1-J2 committed before known-good and readings

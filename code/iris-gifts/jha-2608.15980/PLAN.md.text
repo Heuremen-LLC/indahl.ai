@@ -1,0 +1,57 @@
+# Gift recount: Jha, arXiv 2608.15980 "Whose Gold? Annotator-Pool Disagreement Is Large at the Item Level, and Hidden by Small Leaderboards"
+Written and committed 31 Oct 2026 (UTC) before the readings below are computed. Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as
+printed: Anik Jha, Independent Researcher, anik.k.jha@gmail.com. No funding printed. Data: allenai/multipref at 12910233a023 (MultiPref-Train
+.jsonl) and the camera-ready repository github.com/anik-jha/whose-gold at a32188f19f21 (v1 links none; the commit author is the printed
+contact). Paper v1 read in full by the scout (scout/RECOUNT.md) and by us in Sections 3-4 and Tables 2-3.
+
+## KNOWN-GOOD (ours, ours/known_good.py, before the readings)
+From MultiPref-Train.jsonl with our own code: the number of comparisons (printed 10,461), the comparisons where both crowd labels agree and both
+expert labels agree on overall_pref collapsed to A, Tie or B (printed 2,885), and on those the share where the pool labels differ (printed 23.6%)
+and where they reverse A against B (printed 9.2%).
+
+## Readings (defined after reading the paper; four outcomes; 95% intervals)
+J1 Table 3 under independent per-model shifts. The printed column follows from treating adjacent swaps as independent events, each with
+   probability P(N(0, 2.6) > gap). The paper's own setup is a per-model shift (SD 1.9 pp, so 2.6 pp on a difference). Simulate K models spread
+   uniformly over the same span (adjacent gaps as printed: 4.0, 2.2, 1.1, 0.7, 0.4 pp), each shifted by an independent N(0, 1.9 pp), and count
+   draws where any pair changes order (1,000,000 draws per K, seed 42), beside the printed 0.28, 0.86, 0.9997, 1.00, 1.00. Also the 0.8 pp pair
+   (printed 38%).
+J2 Within-pool against cross-pool disagreement at the single-annotator level, on all comparisons: the share of label pairs that differ
+   (A, Tie, B) and that reverse (A against B) for crowd against crowd, expert against expert, and crowd against expert (the four cross
+   pairs averaged per comparison), with a comparison bootstrap (2,000 resamples, seed 42) on the cross minus within differences. It says how
+   much of the pool difference is the difference between any two annotators.
+
+## What this gift never says
+No cause beyond what the readings separate. No prompt or completion text is printed. Post-hoc readings are labelled in place.
+
+## Addendum 1 (31 Oct 2026, written after J1-J2 were computed and before J1b; J1b is defined after the data)
+J1 used SD 1.9 pp per model, which gives SD 2.69 pp on a difference, not the 2.6 pp the paper measures on the pairwise difference. J1b repeats J1
+with SD 2.6/sqrt(2) = 1.84 pp per model, so the difference SD equals the paper's, same draws and seed.
+
+## Addendum 2 (31 Oct 2026, after the referee pass; J2b and J3 are defined after the data)
+Corrections: J1 is not new. The camera-ready release (github whose-gold, 3 Oct 2026) already replaces Table 3 with 0.29, 0.92, 1.00 from a
+simulation with shared models and withdraws it as validation, so J1 only confirms both columns. J2's interval resampled comparisons only, while
+89 crowd workers and 138 experts supply every label, so it is too narrow, and "the pool adds a point" is causal wording on an observational
+contrast. New readings, each defined after the data:
+J2b J2's cross minus within differences with an annotator-grouped jackknife standard error (delete one annotator id at a time).
+J3 a pool-blind baseline for the 23.6% and 9.2%: split each comparison's four annotators into two mixed pairs (crowd 1 with expert 1 against crowd 2
+with expert 2, and crowd 1 with expert 2 against crowd 2 with expert 1), keep comparisons where both pairs are unanimous, and count majorities that
+differ and that name opposite winners, beside the actual pools; the pool excess (actual minus each mixed split) with the annotator-grouped
+jackknife standard error.
+
+## Addendum 3 (31 Oct 2026, after J2b and J3 printed; defined after the data)
+The delete-one-annotator jackknife removes each comparison four times (once per annotator on it), so with no annotator effect it can overstate
+the width. Before any J2b or J3 interval is used: KNOWN-GOOD for the ruler. Shuffle the evaluator ids among the annotations of each pool (each id
+keeps its number of labels, the link between id and label is broken), 20 shuffles, seed 42, and compare the jackknife SE with the comparison
+bootstrap SE (2,000 resamples) on the same shuffled data, where the comparison bootstrap is the right width. Second ruler beside it: an
+annotator bootstrap with product weights (each annotator id drawn Poisson(1), a comparison weighted by the product of its four annotators'
+draws, 2,000 draws, seed 42), run on the shuffled data too. A ruler whose shuffled SE is more than 1.5 times the comparison SE is reported as an
+upper bound only.
+
+## Addendum 4 (31 Oct 2026, after the second referee pass; defined after the data)
+The second referee found annotator slot order is chronological (slot 1 before slot 2 in 92% of crowd and 94% of expert comparisons), so a
+single mixed split depends on slot labels. J3p replaces J3's single splits: the order-free baseline that pools both mixed pairings (kept,
+differ and opposite counts summed over split 1 and split 2). Rulers for the excess (actual minus J3p): the comparison bootstrap, which the
+referee's simulation with the real annotator design found close to the right width (0.85 to 1.03 of the truth), printed with the
+jackknife as the upper-width ruler beside it. The upper-width rulers have about 5% power at a true +2 points, so no CANNOT_TELL rests on them.
+Note on order (31 Oct 2026): Addendum 4 was written to this file before ours/j3p.py ran, but committed only after it ran, in the same
+minute. The reading computed is the one defined above, unchanged.

@@ -1,0 +1,32 @@
+K comparisons 10461 (printed 10,461) | overall_pref values {'A-is-clearly-better': 4123, 'B-is-slightly-better': 10490, 'Tie': 10997, 'B-is-clearly-better': 9253, 'A-is-slightly-better': 6981}
+  both pools unanimous 2885 (printed 2,885) | labels differ 680 = 23.6% (printed 23.6) | reverse 265 = 9.2% (printed 9.2)
+
+J1 Table 3 with independent per-model shifts (SD 1.9 pp each), K models uniformly spaced, 1,000,000 draws per K, seed 42
+  K  6 gap 4.0: independent adjacent swaps 0.2737 | independent per-model shifts 0.3130 | printed 0.28
+  K 10 gap 2.2: independent adjacent swaps 0.8639 | independent per-model shifts 0.9290 | printed 0.86
+  K 20 gap 1.1: independent adjacent swaps 0.9996 | independent per-model shifts 1.0000 | printed 0.9997
+  K 30 gap 0.7: independent adjacent swaps 1.0000 | independent per-model shifts 1.0000 | printed 1.0
+  K 50 gap 0.4: independent adjacent swaps 1.0000 | independent per-model shifts 1.0000 | printed 1.0
+  0.8 pp pair: P(N(0, 2.6) > 0.8) = 0.379 (printed 38%)
+
+J2 within-pool against cross-pool disagreement, single annotators, all comparisons with two labels in each pool
+  comparisons 10461 | differ: crowd-crowd 0.489, expert-expert 0.501, crowd-expert 0.504 | reverse: crowd-crowd 0.183, expert-expert 0.193, crowd-expert 0.192
+  cross minus mean within, differ: +0.010 [+0.003, +0.016] | reverse: +0.004 [-0.001, +0.009]
+
+J1b (defined after the data) J1 with SD 2.6/sqrt(2) per model, so the difference SD is the paper's 2.6 pp
+  K  6 gap 4.0: independent per-model shifts 0.2865 | printed 0.28
+  K 10 gap 2.2: independent per-model shifts 0.9184 | printed 0.86
+  K 20 gap 1.1: independent per-model shifts 1.0000 | printed 0.9997
+  K 30 gap 0.7: independent per-model shifts 1.0000 | printed 1.0
+  K 50 gap 0.4: independent per-model shifts 1.0000 | printed 1.0
+
+J2b and J3 (defined after the data) with annotator-grouped jackknife standard errors (delete one annotator id, every comparison it labelled)
+  comparisons 10461 | annotator ids 227 (crowd 89, expert 138, in both pools 0)
+  J2b cross minus mean within, differ +0.010 (jackknife SE 0.008, +-1.96 SE [-0.006, +0.025]) | reverse +0.004 (SE 0.005, [-0.006, +0.014])
+  J3 actual pools (crowd pair vs expert pair): both pairs unanimous 2885 | majorities differ 680 = 23.6% | opposite winners 265 = 9.2%
+  J3 mixed split 1 (crowd1+expert1 vs crowd2+expert2): both pairs unanimous 2785 | majorities differ 580 = 20.8% | opposite winners 239 = 8.6%
+  J3 mixed split 2 (crowd1+expert2 vs crowd2+expert1): both pairs unanimous 2834 | majorities differ 629 = 22.2% | opposite winners 251 = 8.9%
+  J3 pool excess differ, actual minus split 1: +2.7 pp (jackknife SE 2.2, +-1.96 SE [-1.6, +7.1])
+  J3 pool excess differ, actual minus split 2: +1.4 pp (jackknife SE 2.0, +-1.96 SE [-2.6, +5.3])
+  J3 pool excess opposite, actual minus split 1: +0.6 pp (jackknife SE 1.4, +-1.96 SE [-2.2, +3.4])
+  J3 pool excess opposite, actual minus split 2: +0.3 pp (jackknife SE 1.4, +-1.96 SE [-2.3, +3.0])

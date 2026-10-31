@@ -1,0 +1,96 @@
+
+## 2026-10-30 19:46 Jha K, J1, J1b, J2: Table 2 unanimous row rebuilds (2,885, 23.6%, 9.2%); Table 3 column follows from independent adjacent swaps; with independent per-model shifts at the paper's 2.6 pp difference SD it is 0.287, 0.918, 1.000 for K 6, 10, 20 (printed 0.28, 0.86, 0.9997); single-annotator disagreement within pools 0.489 and 0.501 against 0.504 across (cross minus within +0.010 [+0.003, +0.016]); reversals +0.004 [-0.001, +0.009]
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: J2 uses every comparison with two labels in each pool, the same label collapse (A, Tie, B) for every pair; J1 keeps the paper's gaps and span
+- II: holds: J2 within and cross shares printed separately before the difference; J1 per K
+- III: holds: differences printed signed (cross minus within)
+- V: holds: J1 two models of the same perturbation side by side (adjacent swaps independent, per-model shifts independent); J2 comparison bootstrap
+- VI: holds: J1 at K 10 ABOVE the printed 0.86 by the per-model model (0.918), K 6 CONSISTENT (0.287); J2 cross ABOVE within by 1.0 point [0.3, 1.6] on label differences, reversals CONSISTENT with zero (bound printed)
+- R: holds: counts from MultiPref-Train.jsonl; J1b labelled defined after the data (Addendum 1, 2d1c05c)
+- L1: n/a: labels are stored fields, collapsed by prefix; the five values counted and printed
+- L2: holds: K rebuilt before J2 was read
+- L3: holds: his tie-break rows rebuilt on the same collapse; Table 3's spacing and SD as printed
+- L4: n/a: no reruns of any model in this gift
+- L5: holds: comparisons keyed by comparison_id, 10,461
+- L6: holds: comparisons without two labels per pool counted (none in this file)
+- L7: caught: the expert pool is not ground truth here; J2 treats both pools as annotators, said so
+- L8: holds: J2 paired within each comparison
+- L9: n/a: no prompts are sent in this gift
+- L10: n/a: no models run
+- L11: n/a: nothing substituted
+- L12: holds: refuting referee to follow is a Claude model, disclosed
+- P1: holds: quotations checked against paper.txt
+- P2: holds: each figure names its file
+- P3: holds: pool names (crowd, expert) as in the data fields
+- P4: holds: no cause named
+- P5: holds: 95% bootstrap named; J1 is a simulation probability, not an interval
+- P6: holds: J2 worded as single-annotator disagreement, not a verdict on his item-level claim
+- P7: n/a: package after the referee
+- P8: n/a: no rendered page
+- P9: holds: plain sentences, no prompt text
+- P10: holds: J1b labelled
+
+## 2026-10-30 19:58 Jha J2b, J3 and the ruler known-good (all defined after the data): pool-blind mixed splits give 20.8% and 22.2% majorities differ and 8.6%, 8.9% opposite winners against 23.6% and 9.2% for crowd against expert; pool excess +2.7 and +1.4 pp, CANNOT_TELL against zero (comparison bootstrap lower-width [+0.8, +4.6] and [-0.5, +3.3]; jackknife upper-width [-1.6, +7.1] and [-2.6, +5.3]); annotator-aware rulers read 2.0x and 3.9x the right width on shuffled ids
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: mixed splits use the same comparisons, the same label collapse and the same both-pairs-unanimous gate as the actual pools; kept counts printed per split (2,885, 2,785, 2,834)
+- II: holds: each split's differ and opposite counts printed before any excess; two splits kept apart, not averaged
+- III: holds: excess printed signed as actual minus split
+- V: caught: the committed jackknife counts each comparison four times; on shuffled ids it reads 2.0x the comparison width and the product-weight bootstrap 3.9x; both kept as upper-width rulers only, the comparison bootstrap as lower-width, printed side by side
+- VI: cannot tell: pool excess on differ is ABOVE zero by the lower-width ruler for split 1 only and spans zero by the upper-width ruler for both splits; opposite winners CONSISTENT with zero on both rulers (bounds printed)
+- R: holds: counts from MultiPref-Train.jsonl via ours/readings.py and ours/rulers.py; Addendum 2 (6d3da94) and 3 (e795929) committed before each ran; all labelled defined after the data
+- L1: n/a: labels are stored fields collapsed by prefix, as in the earlier entry
+- L2: holds: J3 rates printed with the K rebuild in the same run, before any interval
+- L3: holds: his unanimity rule applied unchanged to the mixed pairs
+- L4: n/a: no model reruns in this reading
+- L5: holds: evaluator ids read from the evaluator field; 89 crowd, 138 expert, none in both pools
+- L6: holds: no comparison lacks two labels per pool in this file
+- L7: holds: no pool is scored as gold; both pools treated as annotators
+- L8: holds: splits are paired within each comparison
+- L9: n/a: no prompts are sent in this reading
+- L10: n/a: no models are run in this reading
+- L11: n/a: nothing substituted in this reading
+- L12: holds: the referee whose flag led here is a Claude model, disclosed in the package
+- P1: n/a: no quotation of his text in this reading
+- P2: holds: every figure names MultiPref-Train.jsonl and the script that printed it
+- P3: holds: pool names crowd and expert as in the data fields normal_worker and expert_worker
+- P4: holds: no cause named for the excess; worded as what a pool-blind split gives
+- P5: holds: each interval says plus or minus 1.96 standard errors and which ruler
+- P6: holds: summary says CANNOT_TELL on the excess, matching the readings
+- P7: n/a: no public surface touched by this reading yet
+- P8: n/a: no rendered page for this reading
+- P9: holds: plain sentences, no prompt or completion text printed
+- P10: holds: every J2b, J3 and ruler line says defined after the data
+
+## 2026-10-30 20:13 Jha J3p (defined after the data, Addendum 4): order-free mixed pairings give 21.5% majorities differ and 8.7% opposite winners against 23.6% and 9.2% for crowd against expert; excess +2.05 pp on differ ([+0.4, +3.7] by comparison bootstrap, [-1.7, +5.8] by the upper-width jackknife), borderline; +0.47 pp on opposite, CONSISTENT with zero on both rulers
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: J3p uses the same 10,461 comparisons and the same unanimity rule as the actual pools; both mixed pairings pooled so slot order cannot pick the baseline
+- II: holds: counts printed (kept 5,619, differ 1,209, opposite 490) before rates; four-way unanimous 2,205 and two-against-two 1,889 printed so the partition is visible
+- III: holds: excess printed signed, actual minus baseline
+- V: holds: two rulers side by side (comparison bootstrap, near the right width per the referee's simulation; jackknife as upper width)
+- VI: cannot tell: differ excess ABOVE zero by the comparison bootstrap and spanning zero by the upper-width ruler, worded borderline; opposite CONSISTENT with zero on both, bound printed
+- R: caught: Addendum 4 committed a minute after j3p.py ran though written before it; recorded in PLAN.md and the catch log
+- L1: n/a: labels are stored fields collapsed by prefix
+- L2: holds: rates printed with the actual-pool rebuild in the same run
+- L3: holds: his unanimity rule unchanged
+- L4: n/a: no model reruns in this reading
+- L5: holds: evaluator ids from the evaluator field
+- L6: holds: no comparison dropped; all have two labels per pool
+- L7: holds: neither pool scored as gold
+- L8: holds: paired within comparisons
+- L9: n/a: no prompts sent in this reading
+- L10: n/a: no models run in this reading
+- L11: n/a: nothing substituted in this reading
+- L12: holds: both referees are Claude models, disclosed in the package
+- P1: n/a: no quotation in this reading
+- P2: holds: figures name MultiPref-Train.jsonl and ours/j3p.py
+- P3: holds: crowd and expert as in the data fields
+- P4: holds: no cause named; the referee's crowd-pair timing note is not used until we recount it
+- P5: holds: plus or minus 1.96 standard errors, ruler named
+- P6: holds: summary says borderline, matching the two rulers
+- P7: n/a: no surface touched by this reading yet
+- P8: n/a: no rendered page for this reading
+- P9: holds: plain sentences, no text of the comparisons printed
+- P10: holds: labelled defined after the data
