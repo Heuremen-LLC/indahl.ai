@@ -24,7 +24,8 @@ if bi: nulls['C_binary_rule'] = mean(bi, 'C'); nulls['C_binary_rule_forced'] = f
 if ba: nulls['A_base'] = mean(ba, 'A'); nulls['C_base'] = mean(ba, 'C'); nulls['C_base_forced'] = forced(ba)
 if os.path.exists(os.path.join(HERE, 'nulls_extra.json')): nulls.update(json.load(open(os.path.join(HERE, 'nulls_extra.json'))))   # POSTHOC_BASE_A.md: the lenient reading, labelled on the page
 res = json.load(open(os.path.join(HERE, 'yo2_result.json'))) if os.path.exists(os.path.join(HERE, 'yo2_result.json')) else None
-state = 'done' if res else ('training' if step else ('baselines scored' if ba else 'preparing'))
+trained = os.path.exists(lp) and 'Saved final weights' in open(lp, errors='ignore').read()
+state = 'done' if res else ('trained' if trained else ('training' if step else ('baselines scored' if ba else 'preparing')))
 d = dict(model='Qwen3-1.7B (Apache-2.0), LoRA', steps=2000, step=step, train=train[-200:], val=val, nulls=nulls, result=res, state=state,
          plan='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V2.md')
 h = hashlib.sha256(json.dumps(d, sort_keys=True).encode()).hexdigest(); st = os.path.join(HERE, '.publish_state')

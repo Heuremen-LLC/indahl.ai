@@ -24,7 +24,7 @@
     root.appendChild(s1);
     if (YO && YO.state) {
       var s2 = sec('Training now'), st = YO.state === 'training';
-      var t = YO.state === 'done' ? 'YO finished training. Its test reading is on the lab page.' : st ? 'YO, step ' + fmt(YO.step) + ' of ' + fmt(YO.steps) + (YO.train && YO.train.length ? ', training loss ' + YO.train[YO.train.length - 1][1].toFixed(3) : '') : 'YO is getting ready to train.';
+      var t = YO.state === 'done' ? 'YO finished training. Its test reading is on the lab page.' : YO.state === 'trained' ? 'YO finished training. Its test reading is being checked.' : st ? 'YO, step ' + fmt(YO.step) + ' of ' + fmt(YO.steps) + (YO.train && YO.train.length ? ', training loss ' + YO.train[YO.train.length - 1][1].toFixed(3) : '') : 'YO is getting ready to train.';
       s2.appendChild(row('/iris/lab', 'YO', t, bar((YO.step || 0) / (YO.steps || 1), st ? 'nw-run' : ''))); root.appendChild(s2);
     }
     if (YOR && YOR.n) {

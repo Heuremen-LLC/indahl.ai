@@ -42,7 +42,7 @@
       box.appendChild(h('p', 'Test reading, read once after training (95% intervals, paired bootstrap over records):', 'bench-note'));
       box.appendChild(table((d.result.rows || []), d.result.head || ['Comparison', 'Difference', 'Outcome']));
     }
-    var p = h('p', null, 'bench-note'); p.appendChild(document.createTextNode(d.model + '. ' + (d.state === 'training' ? 'Training now. ' : d.state === 'done' ? 'Training finished. ' : 'Not training yet. ') + (d.updated ? 'Updated ' + d.updated.replace('T', ' ').replace(':00Z', '').replace('Z', '') + ' UTC. ' : '')));
+    var p = h('p', null, 'bench-note'); p.appendChild(document.createTextNode(d.model + '. ' + (d.state === 'training' ? 'Training now. ' : d.state === 'done' ? 'Training finished. ' : d.state === 'trained' ? 'Training finished. The test reading is being checked before it is posted. ' : 'Not training yet. ') + (d.updated ? 'Updated ' + d.updated.replace('T', ' ').replace(':00Z', '').replace('Z', '') + ' UTC. ' : '')));
     var a = h('a', 'The plan'); a.href = d.plan; p.appendChild(a); p.appendChild(document.createTextNode(' was committed before any data was built.')); box.appendChild(p);
   }
   function load() { fetch('/iris/yo.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(draw).catch(function () {}); }
