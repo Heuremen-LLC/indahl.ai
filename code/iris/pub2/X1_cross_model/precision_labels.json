@@ -1,0 +1,13 @@
+{
+ "rule": "real = the writer collapses its own judgement into two options where more exist; code, math verbs, true binaries and technical A-vs-B comparisons are not",
+ "real_indices": {
+  "gpt-4.1": [],
+  "claude-sonnet-4.5": [
+   5,
+   7
+  ],
+  "gemini-2.5-flash": []
+ },
+ "n": 20,
+ "reader": "Bones (a Claude model): limitation"
+}

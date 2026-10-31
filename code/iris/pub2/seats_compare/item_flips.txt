@@ -1,0 +1,6 @@
+phi4-mini: items 89; flips Mac repeat 0, CUDA repeat 2, across bare 2, across copy 2; dropped 1 of 90 (unread Mac bare 1, Mac copy 1, CUDA bare 1, CUDA copy 1)
+llama3.2_3b: items 85; flips Mac repeat 0, CUDA repeat 0, across bare 3, across copy 3; dropped 5 of 90 (unread Mac bare 4, Mac copy 4, CUDA bare 3, CUDA copy 3)
+qwen2.5_1.5b: items 59; flips Mac repeat 0, CUDA repeat 0, across bare 0, across copy 0; dropped 1 of 60 (unread Mac bare 1, Mac copy 1, CUDA bare 1, CUDA copy 1)
+granite4.1_3b: items 69; flips Mac repeat 1, CUDA repeat 2, across bare 6, across copy 5; dropped 21 of 90 (unread Mac bare 20, Mac copy 20, CUDA bare 21, CUDA copy 21)
+ministral-3_3b: items 89; flips Mac repeat 0, CUDA repeat 0, across bare 0, across copy 0; dropped 1 of 90 (unread Mac bare 1, Mac copy 1, CUDA bare 1, CUDA copy 1)
+TOTAL items 391; flips Mac repeat 1, CUDA repeat 4, across bare 11, across copy 10; dropped 29 of 420 (unread Mac bare 27, Mac copy 27, CUDA bare 27, CUDA copy 27); direction across bare: to fault on CUDA 8, to OK on CUDA 3, exact two-sided p 0.227
