@@ -1,0 +1,50 @@
+# Gift calibration: Prejzner, arXiv 2609.32042 "Quantization Thresholds Replicate, Failure Modes Do Not" (plan, 30 Oct 2026)
+Standing rules: iris_index/gifts/PLAN_LLM_GIFT.md. Author as printed: Jakub Prejzner, Independent Researcher, rd4drop@gmail.com. No
+funding statement. Released: github.com/JakubPrejzner/polagentbench at a816ba47b4fed4158da55b0b607f6a23e3ac95fe (code MIT, data CC BY 4.0),
+GGUF files on Hugging Face; hashes in scout/HASHES_repo.tsv.
+
+## KNOWN-GOOD
+Scout rebuild: 778 of 778 printed checks. Ours (ours/known_good.py, per_task_main67.csv, main suite, repair off): pass rates per model and
+quantization, and the Q3_K_M to Q2_K tables: 11B 0.716 to 0.045 (2/46/1/18), 7B 0.463 to 0.149 (10/21/0/36), PLLuM 0.224 to 0.015
+(1/14/0/52, exact McNemar p 0.00012), as printed.
+The paper already reports its own within-run floor (identical-prompt twins: 100 of 180 identical in raw output) and one exact rerun (L0
+control, 80 of 80). No zero-GPU reading of ours adds to that, so this gift is the live arm.
+
+## Live arm (G1), not yet run; a dated addendum with the build's known-good comes before any GPU job
+The same GGUF files (sha256 checked against docs/gguf_manifest.tsv) on our two machines, two repeats each, at the precisions the 3080 can
+hold (11B up to Q4_K_M, 7B and PLLuM up to about Q6_K; all on the Mac), temperature 0, seed 42, n_ctx 8192, his rendered prompts.
+Build first, zero GPU: his parser, oracle and tool environment reimplemented by us, passing his 17,221 released steps (our verdicts equal
+his on every logged trajectory) before any model call. Readings: per machine, task flips between our two repeats (repeat floor), between
+machines (machine floor), and between his 4090 run and ours; then each adjacent precision step's paired flips against those floors.
+Differences named before any run: our llama.cpp build is Ollama's or a pinned llama.cpp, not his llama-cpp-python 0.3.19 build; the two
+7B files he requantized (Q3_K_M, Q2_K) cannot be matched byte for byte.
+
+## Addendum 1 (30 Oct 2026): the live arm G1 on the Mac, setup and readings, written before any model call
+Build known-good (zero GPU): our env replica passes his 17,973 logged steps with 0 mismatches (ours/env/BUILD.md). Token tie-out with each
+GGUF's own vocabulary through llama-cpp-python 0.3.19 (ours/live/tokens_tieout.py): bielik-11b-v3 1,450 of 1,654 trajectories exact,
+llama-pllum-8b 1,376 of 1,386 exact; every other trajectory has his count higher by 1 to 26 and never lower, which fits reply tokens counted
+past the stop string and cut from his logged text, and leaves our prompt tokens equal to his (tieout_bielik.text, tieout_pllum.text).
+Setup: Mac (Apple silicon, Metal), llama-cpp-python 0.3.19 built from the PyPI sdist (sha256 in ours/live/sdist/SHA256.txt) with
+LLAMA_OPENSSL, LLAMA_CURL, LLAMA_BUILD_TOOLS and LLAMA_BUILD_SERVER off (the HTTP parts did not compile against the system OpenSSL and are not
+used by the bindings). Model files from the repos in his docs/gguf_manifest.tsv, each sha256 equal to his manifest: Bielik-11B Q4_K_M,
+Q3_K_M, Q2_K and PLLuM-8B Q3_K_M, Q2_K. The 7B Q3_K_M and Q2_K he requantized cannot be matched and are left out. Calls as his
+LlamaCppRunner makes them: Llama(model_path, n_ctx=8192, n_gpu_layers=-1, chat_format=chatml for Bielik and llama-3 for PLLuM, verbose=False),
+create_chat_completion(messages, temperature=0.0, top_p=1.0, max_tokens=512, seed=42), repair off, his main67 tasks in the order of his own
+run for that file (the library reuses its prompt cache between calls). The library's own formatter output is checked against our rendered
+prompt on every call. Two repeats per file, each a fresh process, all ten runs before any reading. Reference runs: his
+v3_11b_2026-06-18__q{4,3,2}_no_repair and v3_pllum_2026-07-29__q{3,2}_main_no_repair (4090, CUDA).
+Readings (four outcomes; exact tests on discordant tasks):
+P1 repeat floor per file: tasks whose pass or fail differs between our two repeats, and tasks whose reply text differs at any step.
+P2 ours against his: per file, tasks whose pass or fail differs between his run and our repeat 1, against P1; and tasks whose first reply is
+   byte-identical to his.
+P3 the collapse step on our machine: Q3_K_M to Q2_K pass counts and paired flips per model (his 11B 48 to 3, PLLuM 15 to 1).
+P4 the 11B dip: Q4_K_M against Q3_K_M on our machine (his 36 against 48), paired, against P1.
+A difference between his run and ours is read as a machine or build difference only where it exceeds our own repeat floor. The Armature
+half needs a CUDA build of the same library and gets its own addendum.
+
+## Addendum 2 (31 Oct 2026, after the referee pass; every reading here is defined after the data)
+Wording: P3 and P4 reproduce his figures on a second backend with his files (not "replicate", which in his title means across models). P1 is
+two same-order fresh-process repeats, which were identical; it is not a noise floor for his run.
+T1 Twins: for each file, the ten matched twin pairs (a task and its _arith copy: v3_chain_001, 004, 005, 006, 007, 010 and v3_chain_en_001,
+   003, 004, 005) whose every raw reply is identical between the two members, on our r1 and on his run.
+P4b P4 with both members of every twin pair removed (47 tasks), on our r1 and on his run, exact McNemar.

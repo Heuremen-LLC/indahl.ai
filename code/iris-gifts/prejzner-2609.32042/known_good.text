@@ -1,0 +1,6 @@
+bielik-11b-v3            Q8_0 0.806 (n 67)  Q6_K 0.836 (n 67)  Q5_K_M 0.746 (n 67)  Q4_K_M 0.537 (n 67)  Q3_K_M 0.716 (n 67)  Q2_K 0.045 (n 67)
+   Q3_K_M to Q2_K: 0.716 to 0.045 | n11 2 n10 46 n01 1 n00 18 | exact McNemar p 0.00000
+bielik-minitron-7b-v3    Q8_0 0.448 (n 67)  Q6_K 0.463 (n 67)  Q5_K_M 0.522 (n 67)  Q4_K_M 0.507 (n 67)  Q3_K_M 0.463 (n 67)  Q2_K 0.149 (n 67)
+   Q3_K_M to Q2_K: 0.463 to 0.149 | n11 10 n10 21 n01 0 n00 36 | exact McNemar p 0.00000
+llama-pllum-8b           Q8_0 0.194 (n 67)  Q6_K 0.179 (n 67)  Q5_K_M 0.104 (n 67)  Q4_K_M 0.224 (n 67)  Q3_K_M 0.224 (n 67)  Q2_K 0.015 (n 67)
+   Q3_K_M to Q2_K: 0.224 to 0.015 | n11 1 n10 14 n01 0 n00 52 | exact McNemar p 0.00012

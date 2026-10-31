@@ -1,0 +1,136 @@
+ACCEPTANCE REPORT (ours). Replay of every released trajectory through our parser, tool environment and oracle.
+Source data read as text only: <gift folder>/theirs
+
+suite              model                         runs        traj       steps   toolsteps  toolres_mm   action_mm perr_cat_mm perr_msg_mm    state_mm   repair_mm  verdict_mm  tag_mm(mx)   mxcols_mm  logline_mm      agg_mm
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+L0-control         bielik-11b-v3                    4          40         128          76           0           0           0           0           0           0           0           0           0           0           0
+L0-control         bielik-minitron-7b-v3            4          40         226          46           0           0           0           0           0           0           0           0           0           0           0
+L0e                bielik-11b-v3                    4          40         168           0           0           0           0           0           0           0           0           0           0           0           0
+L0e                bielik-minitron-7b-v3            4          40         230          96           0           0           0           0           0           0           0           0           0           0           0
+ladder46           bielik-11b-v3                    8         368        1736         977           0           0           0           0           0           0           0           0           0           0           0
+ladder46           bielik-minitron-7b-v3            8         368        2370        1542           0           0           0           0           0           0           0           0           0           0           0
+ladder46           llama-pllum-8b                  12         552        1342         682           0           0           0           0           0           0           0           0           0           0           0
+main67             bielik-11b-v3                   12         804        3400        2248           0           0           0           0           0           0           0           0           0           0           0
+main67             bielik-minitron-7b-v3           12         804        4014        2559           0           0           0           0           0           0           0           0           0           0           0
+main67             llama-pllum-8b                  12         804        2398        1246           0           0           0           0           0           0           0           0           0           0           0
+subset15           bielik-minitron-7b-v3            1          15          39          21           0           0           0           0           0           0           0           0           0           0           0
+subset15           llama-pllum-8b                   2          30          77          33           0           0           0           0           0           0           0           0           0           0           0
+variance(T=0.7)    bielik-11b-v3                    6         402        1845        1080           0           0           0           0           0           0           0           0           0           0           0
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+L0-control         (all models)                     8          80         354         122           0           0           0           0           0           0           0           0           0           0           0
+L0e                (all models)                     8          80         398          96           0           0           0           0           0           0           0           0           0           0           0
+ladder46           (all models)                    28        1288        5448        3201           0           0           0           0           0           0           0           0           0           0           0
+main67             (all models)                    36        2412        9812        6053           0           0           0           0           0           0           0           0           0           0           0
+subset15           (all models)                     3          45         116          54           0           0           0           0           0           0           0           0           0           0           0
+variance(T=0.7)    (all models)                     6         402        1845        1080           0           0           0           0           0           0           0           0           0           0           0
+release_data (73 runs)                             73        4147       17221       10388           0           0           0           0           0           0           0           0           0           0           0
+runs/L0e_2026-09 (16 runs)                         16         160         752         218           0           0           0           0           0           0           0           0           0           0           0
+ALL                                                89        4307       17973       10606           0           0           0           0           0           0           0           0           0           0           0
+
+Totals: trajectories 4307, steps 17973, steps compared 17973, fields compared 142649, trajectories with any mismatch 0.
+Logged tool results: 10606 steps carry one. Tool-result mismatches: 0.
+run.log lines checked (whole line incl. trajectory summary): 2952, equal: 2952. Matrix rows checked: 4307.
+Aggregate checks (summary.json fields and run.log footers): 759, mismatches 0.
+Prompts rendered (one per step, both chat formats): 17973, longest 19339 characters.
+Other mismatch kinds: none
+
+Columns: toolres_mm = steps whose tool result differs from the logged one; action_mm = parsed action differs; perr_cat_mm /
+perr_msg_mm = parse error category / message differs; state_mm = environment state after the step differs; repair_mm = repair
+flag or repaired text differs; verdict_mm = our PASS/FAIL differs from the logged verdict (the run.log line where the run has
+one, otherwise the per-task matrix, which is the author's replay); tag_mm(mx) = failure tag set differs from the matrix;
+mxcols_mm = matrix steps / trajectory_success columns differ; logline_mm = whole run.log line differs (pass/fail mark, tags,
+trajectory summary with argument values); agg_mm = run-level numbers differ from summary.json or the run.log footer.
+Runs without a run.log (21): their per-task verdict is the author's replay, so it is compared with the matrix, and the
+run-time summary.json (pass count, inconclusive count, success rate, repair count, tag histogram incl. timeouts) is the
+independent record we hold them to.
+
+Per run (verdict source, passes, aggregates equal):
+  v3_11b_2026-06-18__q2_no_repair                      main67       bielik-11b-v3          Q2_K   his replay (no run.log)    n=67  passed=3   agg_ok=True
+  v3_11b_2026-06-18__q2_repair                         main67       bielik-11b-v3          Q2_K   his replay (no run.log)    n=67  passed=5   agg_ok=True
+  v3_11b_2026-06-18__q3_no_repair                      main67       bielik-11b-v3          Q3_K_M his replay (no run.log)    n=67  passed=48  agg_ok=True
+  v3_11b_2026-06-18__q3_repair                         main67       bielik-11b-v3          Q3_K_M his replay (no run.log)    n=67  passed=48  agg_ok=True
+  v3_11b_2026-06-18__q4_no_repair                      main67       bielik-11b-v3          Q4_K_M his replay (no run.log)    n=67  passed=36  agg_ok=True
+  v3_11b_2026-06-18__q4_repair                         main67       bielik-11b-v3          Q4_K_M his replay (no run.log)    n=67  passed=40  agg_ok=True
+  v3_11b_2026-06-18__q5_no_repair                      main67       bielik-11b-v3          Q5_K_M his replay (no run.log)    n=67  passed=50  agg_ok=True
+  v3_11b_2026-06-18__q5_repair                         main67       bielik-11b-v3          Q5_K_M his replay (no run.log)    n=67  passed=51  agg_ok=True
+  v3_11b_2026-06-18__q6_no_repair                      main67       bielik-11b-v3          Q6_K   his replay (no run.log)    n=67  passed=56  agg_ok=True
+  v3_11b_2026-06-18__q6_repair                         main67       bielik-11b-v3          Q6_K   his replay (no run.log)    n=67  passed=57  agg_ok=True
+  v3_11b_2026-06-18__q8_no_repair                      main67       bielik-11b-v3          Q8_0   his replay (no run.log)    n=67  passed=54  agg_ok=True
+  v3_11b_2026-06-18__q8_repair                         main67       bielik-11b-v3          Q8_0   his replay (no run.log)    n=67  passed=54  agg_ok=True
+  v3_11b_ladder_2026-07-29__q2_no_repair               ladder46     bielik-11b-v3          Q2_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_11b_ladder_2026-07-29__q2_repair                  ladder46     bielik-11b-v3          Q2_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_11b_ladder_2026-07-29__q3_no_repair               ladder46     bielik-11b-v3          Q3_K_M run.log                    n=46  passed=32  agg_ok=True
+  v3_11b_ladder_2026-07-29__q3_repair                  ladder46     bielik-11b-v3          Q3_K_M run.log                    n=46  passed=32  agg_ok=True
+  v3_11b_ladder_2026-07-29__q4_no_repair               ladder46     bielik-11b-v3          Q4_K_M run.log                    n=46  passed=1   agg_ok=True
+  v3_11b_ladder_2026-07-29__q4_repair                  ladder46     bielik-11b-v3          Q4_K_M run.log                    n=46  passed=7   agg_ok=True
+  v3_11b_ladder_2026-07-29__q8_no_repair               ladder46     bielik-11b-v3          Q8_0   run.log                    n=46  passed=13  agg_ok=True
+  v3_11b_ladder_2026-07-29__q8_repair                  ladder46     bielik-11b-v3          Q8_0   run.log                    n=46  passed=13  agg_ok=True
+  v3_11b_variance_2026-07-29__q3_seed1                 variance(T=0.7) bielik-11b-v3          Q3_K_M run.log                    n=67  passed=13  agg_ok=True
+  v3_11b_variance_2026-07-29__q3_seed2                 variance(T=0.7) bielik-11b-v3          Q3_K_M run.log                    n=67  passed=43  agg_ok=True
+  v3_11b_variance_2026-07-29__q3_seed3                 variance(T=0.7) bielik-11b-v3          Q3_K_M run.log                    n=67  passed=51  agg_ok=True
+  v3_11b_variance_2026-07-29__q8_seed1                 variance(T=0.7) bielik-11b-v3          Q8_0   run.log                    n=67  passed=8   agg_ok=True
+  v3_11b_variance_2026-07-29__q8_seed2                 variance(T=0.7) bielik-11b-v3          Q8_0   run.log                    n=67  passed=49  agg_ok=True
+  v3_11b_variance_2026-07-29__q8_seed3                 variance(T=0.7) bielik-11b-v3          Q8_0   run.log                    n=67  passed=48  agg_ok=True
+  v3_7b_grid_2026-07-29__q5_no_repair                  main67       bielik-minitron-7b-v3  Q5_K_M run.log                    n=67  passed=35  agg_ok=True
+  v3_7b_grid_2026-07-29__q5_repair                     main67       bielik-minitron-7b-v3  Q5_K_M run.log                    n=67  passed=40  agg_ok=True
+  v3_7b_grid_2026-07-29__q6_no_repair                  main67       bielik-minitron-7b-v3  Q6_K   run.log                    n=67  passed=31  agg_ok=True
+  v3_7b_grid_2026-07-29__q6_repair                     main67       bielik-minitron-7b-v3  Q6_K   run.log                    n=67  passed=38  agg_ok=True
+  v3_7b_ladder_2026-07-29__q2_no_repair                ladder46     bielik-minitron-7b-v3  Q2_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_7b_ladder_2026-07-29__q2_repair                   ladder46     bielik-minitron-7b-v3  Q2_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_7b_ladder_2026-07-29__q3_no_repair                ladder46     bielik-minitron-7b-v3  Q3_K_M run.log                    n=46  passed=2   agg_ok=True
+  v3_7b_ladder_2026-07-29__q3_repair                   ladder46     bielik-minitron-7b-v3  Q3_K_M run.log                    n=46  passed=2   agg_ok=True
+  v3_7b_ladder_2026-07-29__q4_no_repair                ladder46     bielik-minitron-7b-v3  Q4_K_M run.log                    n=46  passed=1   agg_ok=True
+  v3_7b_ladder_2026-07-29__q4_repair                   ladder46     bielik-minitron-7b-v3  Q4_K_M run.log                    n=46  passed=9   agg_ok=True
+  v3_7b_ladder_2026-07-29__q8_no_repair                ladder46     bielik-minitron-7b-v3  Q8_0   run.log                    n=46  passed=2   agg_ok=True
+  v3_7b_ladder_2026-07-29__q8_repair                   ladder46     bielik-minitron-7b-v3  Q8_0   run.log                    n=46  passed=3   agg_ok=True
+  v3_arith_clean_2026-06-18__gate_q8_easy              subset15     bielik-minitron-7b-v3  Q8_0   his replay (no run.log)    n=15  passed=14  agg_ok=True
+  v3_arith_clean_2026-06-18__q2_no_repair              main67       bielik-minitron-7b-v3  Q2_K   his replay (no run.log)    n=67  passed=10  agg_ok=True
+  v3_arith_clean_2026-06-18__q2_repair                 main67       bielik-minitron-7b-v3  Q2_K   his replay (no run.log)    n=67  passed=12  agg_ok=True
+  v3_arith_clean_2026-06-18__q3_no_repair              main67       bielik-minitron-7b-v3  Q3_K_M his replay (no run.log)    n=67  passed=31  agg_ok=True
+  v3_arith_clean_2026-06-18__q3_repair                 main67       bielik-minitron-7b-v3  Q3_K_M his replay (no run.log)    n=67  passed=31  agg_ok=True
+  v3_arith_clean_2026-06-18__q4_no_repair              main67       bielik-minitron-7b-v3  Q4_K_M his replay (no run.log)    n=67  passed=34  agg_ok=True
+  v3_arith_clean_2026-06-18__q4_repair                 main67       bielik-minitron-7b-v3  Q4_K_M his replay (no run.log)    n=67  passed=40  agg_ok=True
+  v3_arith_clean_2026-06-18__q8_no_repair              main67       bielik-minitron-7b-v3  Q8_0   his replay (no run.log)    n=67  passed=30  agg_ok=True
+  v3_arith_clean_2026-06-18__q8_repair                 main67       bielik-minitron-7b-v3  Q8_0   his replay (no run.log)    n=67  passed=38  agg_ok=True
+  v3_pllum_2026-07-29___gateC_q8_easy                  subset15     llama-pllum-8b         Q8_0   run.log                    n=15  passed=6   agg_ok=True
+  v3_pllum_2026-07-29___gateC_q8_easy_repair           subset15     llama-pllum-8b         Q8_0   run.log                    n=15  passed=7   agg_ok=True
+  v3_pllum_2026-07-29__q2_ladder_no_repair             ladder46     llama-pllum-8b         Q2_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q2_ladder_repair                ladder46     llama-pllum-8b         Q2_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q2_main_no_repair               main67       llama-pllum-8b         Q2_K   run.log                    n=67  passed=1   agg_ok=True
+  v3_pllum_2026-07-29__q2_main_repair                  main67       llama-pllum-8b         Q2_K   run.log                    n=67  passed=1   agg_ok=True
+  v3_pllum_2026-07-29__q3_ladder_no_repair             ladder46     llama-pllum-8b         Q3_K_M run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q3_ladder_repair                ladder46     llama-pllum-8b         Q3_K_M run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q3_main_no_repair               main67       llama-pllum-8b         Q3_K_M run.log                    n=67  passed=15  agg_ok=True
+  v3_pllum_2026-07-29__q3_main_repair                  main67       llama-pllum-8b         Q3_K_M run.log                    n=67  passed=18  agg_ok=True
+  v3_pllum_2026-07-29__q4_ladder_no_repair             ladder46     llama-pllum-8b         Q4_K_M run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q4_ladder_repair                ladder46     llama-pllum-8b         Q4_K_M run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q4_main_no_repair               main67       llama-pllum-8b         Q4_K_M run.log                    n=67  passed=15  agg_ok=True
+  v3_pllum_2026-07-29__q4_main_repair                  main67       llama-pllum-8b         Q4_K_M run.log                    n=67  passed=17  agg_ok=True
+  v3_pllum_2026-07-29__q5_ladder_no_repair             ladder46     llama-pllum-8b         Q5_K_M run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q5_ladder_repair                ladder46     llama-pllum-8b         Q5_K_M run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q5_main_no_repair               main67       llama-pllum-8b         Q5_K_M run.log                    n=67  passed=7   agg_ok=True
+  v3_pllum_2026-07-29__q5_main_repair                  main67       llama-pllum-8b         Q5_K_M run.log                    n=67  passed=9   agg_ok=True
+  v3_pllum_2026-07-29__q6_ladder_no_repair             ladder46     llama-pllum-8b         Q6_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q6_ladder_repair                ladder46     llama-pllum-8b         Q6_K   run.log                    n=46  passed=0   agg_ok=True
+  v3_pllum_2026-07-29__q6_main_no_repair               main67       llama-pllum-8b         Q6_K   run.log                    n=67  passed=12  agg_ok=True
+  v3_pllum_2026-07-29__q6_main_repair                  main67       llama-pllum-8b         Q6_K   run.log                    n=67  passed=14  agg_ok=True
+  v3_pllum_2026-07-29__q8_ladder_no_repair             ladder46     llama-pllum-8b         Q8_0   run.log                    n=46  passed=2   agg_ok=True
+  v3_pllum_2026-07-29__q8_ladder_repair                ladder46     llama-pllum-8b         Q8_0   run.log                    n=46  passed=2   agg_ok=True
+  v3_pllum_2026-07-29__q8_main_no_repair               main67       llama-pllum-8b         Q8_0   run.log                    n=67  passed=13  agg_ok=True
+  v3_pllum_2026-07-29__q8_main_repair                  main67       llama-pllum-8b         Q8_0   run.log                    n=67  passed=15  agg_ok=True
+  L0e_2026-09__11b_q4_no_repair                        L0e          bielik-11b-v3          Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0e_2026-09__11b_q4_repair                           L0e          bielik-11b-v3          Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0e_2026-09__11b_q8_no_repair                        L0e          bielik-11b-v3          Q8_0   run.log                    n=10  passed=1   agg_ok=True
+  L0e_2026-09__11b_q8_repair                           L0e          bielik-11b-v3          Q8_0   run.log                    n=10  passed=1   agg_ok=True
+  L0e_2026-09__7b_q4_no_repair                         L0e          bielik-minitron-7b-v3  Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0e_2026-09__7b_q4_repair                            L0e          bielik-minitron-7b-v3  Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0e_2026-09__7b_q8_no_repair                         L0e          bielik-minitron-7b-v3  Q8_0   run.log                    n=10  passed=0   agg_ok=True
+  L0e_2026-09__7b_q8_repair                            L0e          bielik-minitron-7b-v3  Q8_0   run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__11b_q4_no_repair                 L0-control   bielik-11b-v3          Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__11b_q4_repair                    L0-control   bielik-11b-v3          Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__11b_q8_no_repair                 L0-control   bielik-11b-v3          Q8_0   run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__11b_q8_repair                    L0-control   bielik-11b-v3          Q8_0   run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__7b_q4_no_repair                  L0-control   bielik-minitron-7b-v3  Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__7b_q4_repair                     L0-control   bielik-minitron-7b-v3  Q4_K_M run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__7b_q8_no_repair                  L0-control   bielik-minitron-7b-v3  Q8_0   run.log                    n=10  passed=0   agg_ok=True
+  L0_control_2026-09__7b_q8_repair                     L0-control   bielik-minitron-7b-v3  Q8_0   run.log                    n=10  passed=0   agg_ok=True

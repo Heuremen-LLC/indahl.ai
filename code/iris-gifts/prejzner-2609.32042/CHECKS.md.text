@@ -1,0 +1,64 @@
+
+## 2026-10-31 04:20 Prejzner G1 live arm on the Mac (llama-cpp-python 0.3.19 Metal, his GGUF files by hash, his prompts, two repeats): P1 repeat floor 0 tasks and 0 reply texts on all five files; P2 pass counts 34, 47, 5, 14, 1 against his 36, 48, 3, 15, 1, with 8, 5, 4, 5 and 0 tasks changing outcome (no exact test below p 0.6) and every reply identical to his on 40, 56, 25, 23 and 24 of 67 tasks; P3 Bielik-11B Q3_K_M to Q2_K 47 to 5 (his 48 to 3), PLLuM 14 to 1 (his 15 to 1); P4 Bielik-11B Q4_K_M 34 against Q3_K_M 47 (his 36 against 48), paired p 0.029
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the same 67 main tasks in his run order, his files by hash, his prompts checked against the library's formatter on every call
+- II: holds: task outcomes compared one by one against his and between our repeats before any pass total
+- III: holds: paired tables printed with both directions (first only, second only)
+- V: holds: exact McNemar on discordant tasks; repeat floor 0 as the ruler for the setup difference
+- VI: holds: P3 and P4 replicate his direction with exact p 3e-11, 0.0002 and 0.029; P2 per-file changes CONSISTENT with no net difference, against a floor of 0
+- R: holds: counts from runs/*.jsonl and his per_task_main67.csv and trajectories; reader committed (0f29fa3) before the tenth run ended
+- L1: holds: replies read in full beside the env parse (runs/READ_all.md); the env replica equals his verdicts on 17,973 steps
+- L2: holds: readings run after all ten runs and the read note
+- L3: holds: his library version, call arguments and chat formats; the build (Metal against his CUDA) named as the difference
+- L4: holds: repeat floor 0 tasks and 0 texts per file before any comparison with his run
+- L5: holds: tasks matched by id; sets asserted equal
+- L6: holds: parse errors counted per file
+- L7: n/a: no judge or labeller; his oracle
+- L8: holds: paired by task
+- L9: n/a: prompts are his tasks; no answer in them beyond his design
+- L10: holds: GGUF sha256 equal to his manifest
+- L11: holds: his requantized 7B files cannot be matched and are left out, named in the plan
+- L12: n/a: referee to follow is a Claude model, to be disclosed
+- P1: n/a: no quotation yet
+- P2: holds: each figure names its file
+- P3: holds: quantization labels as in his manifest
+- P4: holds: no cause named for the task changes against his run
+- P5: holds: exact tests named
+- P6: holds: summary matches readings.text
+- P7: n/a: no surface touched yet
+- P8: n/a: no rendered page
+- P9: holds: no reply text in the summary
+- P10: holds: all readings were in Addendum 1 before any model call
+
+## 2026-10-31 04:28 Prejzner T1 and P4b (Addendum 2, defined after the data): twin pairs with every raw reply identical between members, ours 49 of 50 against his 32 of 50 on the five files; Bielik-11B Q4_K_M against Q3_K_M with all twin pairs removed (47 tasks): ours 23 against 34, exact p 0.019; his 25 against 32, exact p 0.143 (his paper's 0.14)
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the same ten twin pairs on both runs, named from his task files; the same 47 tasks for both P4b tables
+- II: holds: twin identity counted pair by pair per file before totals
+- III: holds: P4b printed with both directions
+- V: holds: exact McNemar; twin identity as a within-run reading on each side, side by side
+- VI: holds: P4b ABOVE on ours (p 0.019), CONSISTENT on his (p 0.143); our run is steadier within itself than his on these files
+- R: holds: Addendum 2 (2836e40) committed in its own call before read_live_b.py ran
+- L1: caught: the earlier read covered 4 first replies per file (20 of 1,114 steps), so CHECKS line L1 of the previous entry overstated its coverage; this reading adds no new parse
+- L2: holds: readings after the read note
+- L3: holds: his library version and call arguments; build and backend differences named
+- L4: holds: twin identity is the within-run reading for both setups
+- L5: holds: twin ids from his task files, asserted present
+- L6: n/a: no extraction step in this reading
+- L7: n/a: no judge or labeller
+- L8: holds: paired by task
+- L9: n/a: no prompts sent in this reading
+- L10: holds: same GGUF hashes as his manifest
+- L11: n/a: nothing substituted in this reading
+- L12: holds: the referee is a Claude model, disclosed in the package
+- P1: holds: his 0.14 and his twin counts checked in his paper source
+- P2: holds: each figure names its file
+- P3: holds: task and file names as his
+- P4: holds: no cause named for the twin difference
+- P5: holds: exact tests named
+- P6: holds: summary matches readings_b.text
+- P7: n/a: no surface touched by this reading yet
+- P8: n/a: no rendered page
+- P9: holds: plain sentences
+- P10: holds: labelled defined after the data

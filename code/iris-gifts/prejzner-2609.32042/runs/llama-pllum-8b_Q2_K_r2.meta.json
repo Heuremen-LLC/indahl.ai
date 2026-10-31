@@ -1,0 +1,18 @@
+{
+ "model_id": "llama-pllum-8b",
+ "quant": "Q2_K",
+ "gguf": "Llama-PLLuM-8B-instruct.Q2_K.gguf",
+ "gguf_sha256": "9ba65b322fc6b3430a34fdaa092e134da5b4b37cb896d6eb3e5d37bdf1473274",
+ "his_run": "v3_pllum_2026-07-29__q2_main_no_repair",
+ "rep": 2,
+ "llama_cpp_python": "0.3.19",
+ "python": "3.14.7",
+ "machine": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+ "n_tasks": 67,
+ "passed": 1,
+ "formatter_prompt_mismatches": 0,
+ "formatter_checked": true,
+ "load_s": 0.5,
+ "wall_s": 173.8,
+ "ended_utc": "2026-10-31T07:55:00Z"
+}
