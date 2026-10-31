@@ -310,3 +310,6 @@
 {"id": "dbirefune4hc73bf6r70", "backend": "ibm_marrakesh", "created": "2026-10-31T09:39:11.63523Z", "wait_s": 1.978588}
 {"id": "dbiref8hoj4c73b6qocg", "backend": "ibm_fez", "created": "2026-10-31T09:39:09.947629Z", "wait_s": 1.259177}
 {"id": "dbisdflep8hs73aogdng", "backend": "ibm_boston", "created": "2026-10-31T10:45:18.571587Z", "wait_s": 852.177766}
+{"id": "dbiu97mne4hc73bfaoug", "backend": "ibm_kingston", "created": "2026-10-31T12:52:47.124547Z", "wait_s": 4.360312}
+{"id": "dbiu98ghoj4c73b6umdg", "backend": "ibm_pittsburgh", "created": "2026-10-31T12:52:50.704676Z", "wait_s": 660.203922}
+{"id": "dbiu970hoj4c73b6umbg", "backend": "ibm_boston", "created": "2026-10-31T12:52:44.433115Z", "wait_s": 1906.240538}
