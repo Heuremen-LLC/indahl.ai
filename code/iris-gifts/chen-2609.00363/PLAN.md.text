@@ -1,0 +1,32 @@
+# Gift plan: arXiv 2609.00363 (T.-R. Chen, "Deterministic LLM Inference Across GPU Kernels"), written 31 Oct 2026 before any reading below
+
+Scout recount (scout/RECOUNT.md, scout/run_all.sh, our code, their files read as data, repository at 689cc52c62a0, SHA256SUMS 192 of 192):
+the fault-injection scorecard, Table IV, Table V, the perplexity figures and the companion's Tables II and III rebuild; "K from 1,042 to
+12,288" does not (layers have K 2,048 and 6,144). KNOWN-GOOD: the scout's rebuild of the companion's prefill-against-decode figure for the
+CUTLASS arm (44 of 512 = 8.6%) and of Table V (0 of 8 against 8 of 8 at every size) from these same files, before the readings below.
+No model is run; their checkpoints are unreleased and their kernels are CUDA only.
+
+## Readings (four outcomes; per arm, per size, per cell before any pooling)
+K1 Prefill against decode for each arm. Positions where the teacher-forced top-1 token differs from the generated (rail) token, by the
+   scout's rule, for the Triton arm beside CUTLASS: the 8-prompt files (tf_TRITON.json, tf_CUTLASS.json) and the 64-prompt files
+   (tf64v6b_TRITON.json, tf64v6b_CUTLASS.json), with Clopper-Pearson 95% intervals and the difference between arms paired by position
+   (exact test on the discordant positions).
+K2 Where the two kernels part. Per prompt, the first token index at which the CUTLASS and Triton greedy sequences differ under the
+   checkpoints' own scales, at 1.7B, 8B and 14B (p8_results e2e folders), and on the companion's 1.7B 64-prompt and 8B 16-prompt real-scale
+   runs; the same index between repeats of one kernel where repeats exist (w1 tokens, CUTLASS against CUTLASS2, TRITON against TRITON2).
+K3 Exact intervals for the scorecard. Per fault family and scale regime, the share of cells where the fault moved the output
+   (fault_observable) and the share detected by each check, with Clopper-Pearson 95% intervals, from p5_sensitivity.json.
+Any addendum is dated and committed before the reading it changes is computed.
+
+## Addendum 1 (31 Oct 2026, after the referee pass; every reading here is defined after the data)
+Corrections: K1 on the 64-prompt files is computable. Their manifests give rails_sha256, and the rail is the file whose sha256 equals it
+(checked in the code, expected tokens64_CUTLASS.json). K2 medians are the usual median (mean of the two middle values for an even count);
+the earlier code took the upper middle value. K3 says "no applicable check fires" and F5 is reported apart.
+K1b The 64 x 256 teacher-forced grid against its rail, both arms, paired by position, with a prompt-cluster bootstrap (10,000, seed 42) on
+    the Triton minus CUTLASS difference.
+K1c Both grids with position 0 excluded (it is the prefill pass, not a decode step) and tie-neutral: a position counts only when the rail
+    token's log probability is strictly below the top-1 log probability (8-prompt files, which carry both).
+K2b The same kernel across batch configurations: the 8 prompts of the batch-8 run against the same prompts inside the batch-64 run, for
+    each kernel (prompt identity checked by prompt hash or prompt length before any index is read).
+Note (31 Oct 2026): ours/readings.py was corrected under this addendum (usual median; the 64-prompt line now points to K1b) and rerun.
+Its earlier output is in the git history.

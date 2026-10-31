@@ -1,0 +1,96 @@
+
+## 2026-10-30 20:28 Kernel determinism K1-K3 (plan 2cb3a14): K1 the shared teacher-forced rail is the CUTLASS greedy output; CUTLASS prefill against its own decode 44 of 512 (8.6% [6.3, 11.4]), Triton prefill against that rail 55 of 512 (10.7% [8.2, 13.8]), paired 15 against 26, p 0.117; K2 own scales CUTLASS and Triton part at a median token index of 2 (1.7B), 3 (8B) and 8 (14B), at index 0 on 2, 1 and 2 prompts, repeats identical, requantized identical; K3 exact intervals, F1-F4 real-regime detection 0 of 439, 448, 205 and 478 moved cells (upper bounds 0.8 to 1.8%), F5 real 1 moved, 0 detected
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: caught: the Triton K1 row is against the CUTLASS rail, not its own decode; found by checking the rail against both greedy runs, labelled in the output
+- II: holds: K1 per prompt and paired by position before totals; K2 per prompt indices printed; K3 per fault and regime
+- III: holds: K1 paired difference printed by direction (15 against 26)
+- V: holds: Clopper-Pearson 95% on each rate, exact binomial test on discordant positions
+- VI: holds: K1 difference between prefills CONSISTENT with zero (p 0.117) with both rates printed; K3 zero-detection cells given as upper bounds
+- R: holds: counts from their artifacts at 689cc52c62a0; file names printed with each line
+- L1: n/a: no reply parsing; token ids compared as integers
+- L2: holds: scout rebuild of 44 of 512 and Table V reproduced in this run before the new rows
+- L3: holds: rail source checked and named
+- L4: holds: repeat floor of each kernel printed (8 of 8 identical for both)
+- L5: holds: prompts matched by position in their files; positions aligned checked
+- L6: n/a: no extraction step
+- L7: n/a: no judge or labeller scores anything here
+- L8: holds: K1 paired by position
+- L9: n/a: no prompts sent
+- L10: n/a: no models run
+- L11: n/a: nothing substituted
+- L12: n/a: referee to follow is a Claude model, to be disclosed
+- P1: n/a: no quotation yet
+- P2: holds: each figure names its file
+- P3: holds: arm and regime names as in their files
+- P4: holds: no cause named
+- P5: holds: intervals named Clopper-Pearson 95%
+- P6: holds: summary matches readings.text
+- P7: n/a: no surface touched yet
+- P8: n/a: no rendered page
+- P9: holds: plain sentences
+- P10: holds: all three readings were in the plan before computing
+
+## 2026-10-30 20:41 Kernel determinism K1b, K1c, K2 medians, K2b (Addendum 1, defined after the data): 64x256 grid rail is tokens64_CUTLASS.json; CUTLASS prefill against it 766 of 16,384 (4.68%), Triton 834 (5.09%), Triton minus CUTLASS +0.42 pp [+0.09, +0.73]; 8-prompt tie-neutral without position 0: 37 and 44 of 504; K2 medians 2.0, 2.5, 7.0 (8 prompts each), 5.5 over 64; K2b same kernel, same 8 prompts, batch-8 run against batch-64 run: 0 of 8 identical for each kernel, first differing index median 10 (CUTLASS) and 8.5 (Triton)
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: K2b prompt identity checked by prompt length before any index; K1b rail found by hash, not assumed
+- II: holds: K1b paired by position and by prompt (38 against 14) before the net difference
+- III: holds: Triton minus CUTLASS printed signed with its direction counts
+- V: holds: Clopper-Pearson per rate, exact test on discordant positions, prompt-cluster bootstrap for the difference
+- VI: holds: 64-prompt difference ABOVE zero [+0.09, +0.73]; 8-prompt tie-neutral difference CONSISTENT (p 0.311); K2b identical 0 of 8 per kernel
+- R: caught: the earlier not-computable line and the upper median were wrong; both fixed under Addendum 1 (e2371f7) before this ran
+- L1: n/a: no reply parsing; token ids compared as integers
+- L2: holds: K1 8-prompt figures reproduce the earlier run in the same script family
+- L3: holds: tie rule of their harness named (higher token id wins), tie-neutral count printed beside
+- L4: caught: repeats were identical only within one batch configuration; K2b reads the same kernel across two
+- L5: holds: rail matched by sha256 to the manifest
+- L6: n/a: no extraction step in these readings
+- L7: n/a: no judge or labeller in these readings
+- L8: holds: paired by position and by prompt
+- L9: n/a: no prompts sent in this reading
+- L10: n/a: no models run in this reading
+- L11: n/a: nothing substituted in this reading
+- L12: holds: the referee is a Claude model, disclosed in the package
+- P1: n/a: no quotation in this reading
+- P2: holds: each figure names its file
+- P3: holds: arm names as in their files
+- P4: holds: K2b names the two runs, not a cause (batch size is one of the differences between them)
+- P5: holds: intervals named
+- P6: holds: summary matches readings_b.text
+- P7: n/a: no surface touched by this reading yet
+- P8: n/a: no rendered page
+- P9: holds: plain sentences
+- P10: holds: labelled defined after the data
+
+## 2026-10-30 20:42 Kernel determinism readings.py rerun after the Addendum 1 corrections: only the K2 medians (now 2.0, 2.5, 7.0, 5.5, 6.0) and the 64-prompt K1 line changed; every count is unchanged (diff checked)
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same files and gates as the first run; diff of the two outputs shows only the corrected lines
+- II: holds: per-prompt indices unchanged and printed
+- III: holds: no signed quantity changed in the rerun
+- V: holds: the median is now the usual median for even counts
+- VI: holds: outcomes unchanged; no size ordering is claimed from the medians
+- R: fixed: upper median and the not-computable line, under Addendum 1 (e2371f7), earlier output kept in git history
+- L1: n/a: no reply parsing in this rerun
+- L2: holds: counts identical to the first run
+- L3: holds: nothing about the setup changed in the rerun
+- L4: holds: repeat wording now limited to one batch configuration in readings_b.text
+- L5: holds: files and keys unchanged from the first run
+- L6: n/a: no extraction step in this rerun
+- L7: n/a: no judge or labeller in this rerun
+- L8: holds: pairing unchanged from the first run
+- L9: n/a: no prompts sent in this rerun
+- L10: n/a: no models run in this rerun
+- L11: n/a: nothing substituted in this rerun
+- L12: holds: the referee whose flags led here is a Claude model, disclosed
+- P1: n/a: no quotation in this rerun
+- P2: holds: each figure names its file
+- P3: holds: labels unchanged from the first run
+- P4: holds: no cause named in this rerun
+- P5: holds: intervals unchanged and named
+- P6: holds: summary matches the diff
+- P7: n/a: no surface touched by this rerun
+- P8: n/a: no rendered page for this rerun
+- P9: holds: plain sentences
+- P10: holds: the correction is recorded in the plan
