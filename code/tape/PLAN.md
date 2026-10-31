@@ -1,7 +1,7 @@
 # TAPE: a public, hash-chained record of what we published and when, with a beacon. Plan, written before the first entry.
 
 ## What it does
-Every 6 ticks of Nova's clock a script appends entries to one chain. Each entry carries the hash of the one before it, so changing any old entry breaks every later one. The chain, every leaf behind every entry, and the verifier are public. The tape page shows the chain newest first.
+Every 6 HST ticks a script appends entries to one chain. Each entry carries the hash of the one before it, so changing any old entry breaks every later one. The chain, every leaf behind every entry, and the verifier are public. The tape page shows the chain newest first.
 
 ## Entry kinds (fixed now)
 1. **feeds**. Written every run. The leaves are the SHA-256 of the exact bytes each live desk feed served at that moment (/slug/live.json for every desk) and of headlines.json. A feed that cannot be read is a leaf with the word NOTHING_RETURNED in place of a hash.

@@ -1,0 +1,26 @@
+time=2026-10-31T13:34:06.143-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=C:\Users\Heure\.ollama\models\blobs\sha256-6e3f7757a149db5a1acc9d1e8efa55ca5ccb6e0bf402f312369a4eca0ad390a0
+load_tensors: offloaded 5/33 layers to GPU
+llama_context: n_seq_max             = 4
+llama_context: n_ctx                 = 32768
+llama_context: n_ctx_seq             = 8192
+llama_context: flash_attn            = auto
+llama_context: kv_unified            = false
+llama_context: n_ctx_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'false'
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+slot   load_model: id  1 | task -1 | new slot, n_ctx = 8192
+slot   load_model: id  2 | task -1 | new slot, n_ctx = 8192
+slot   load_model: id  3 | task -1 | new slot, n_ctx = 8192
+time=2026-10-31T13:35:22.609-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=C:\Users\Heure\.ollama\models\blobs\sha256-3c168af1dea0a414299c7d9077e100ac763370e5a98b3c53801a958a47f0a5db
+load_tensors: offloaded 7/33 layers to GPU
+llama_context: n_seq_max             = 4
+llama_context: n_ctx                 = 32768
+llama_context: n_ctx_seq             = 8192
+llama_context: flash_attn            = auto
+llama_context: kv_unified            = false
+llama_context: n_ctx_seq (8192) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'false'
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+slot   load_model: id  1 | task -1 | new slot, n_ctx = 8192
+slot   load_model: id  2 | task -1 | new slot, n_ctx = 8192
+slot   load_model: id  3 | task -1 | new slot, n_ctx = 8192

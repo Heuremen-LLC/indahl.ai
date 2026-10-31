@@ -1,0 +1,79 @@
+time=2026-10-25T08:00:05.258-04:00 level=INFO source=routes.go:1940 msg="server config" env="map[HTTPS_PROXY: HTTP_PROXY: LLAMA_ARG_FIT: LLAMA_ARG_FIT_TARGET: NO_PROXY: OLLAMA_CONTEXT_LENGTH:0 OLLAMA_CREATE_REMOTE:false OLLAMA_DEBUG:INFO OLLAMA_DEBUG_LOG_REQUESTS:false OLLAMA_EDITOR: OLLAMA_FLASH_ATTENTION:false OLLAMA_GO_TEMPLATE:true OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11500 OLLAMA_IGPU_ENABLE: OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:1 OLLAMA_MAX_QUEUE:512 OLLAMA_MAX_TRANSFER_STREAMS:4 OLLAMA_MODELS:~/bones-forge/iris_index/seats/models OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NO_CLOUD:false OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_REMOTES:[ollama.com] OLLAMA_SCHED_SPREAD:false http_proxy: https_proxy: no_proxy:]"
+time=2026-10-25T08:00:05.259-04:00 level=INFO source=routes.go:2000 msg="Listening on 127.0.0.1:11500 (version 0.34.2)"
+time=2026-10-27T09:04:26.778-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-3c168af1dea0a414299c7d9077e100ac763370e5a98b3c53801a958a47f0a5db
+load_tensors: offloaded 33/33 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-27T09:11:14.182-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-f5074b1221da0f5a2910d33b642efa5b9eb58cfdddca1c79e16d7ad28aa2b31f
+load_tensors: offloaded 33/33 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-30T05:26:57.359-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff
+load_tensors: offloaded 29/29 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-30T05:30:08.639-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-183715c435899236895da3869489cc30ac241476b4971a20285b1a462818a5b4
+load_tensors: offloaded 29/29 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-30T05:34:04.976-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-662b0626cd58f443baea23559b469df6576a81d349649c59413b36a9fb32eb29
+load_tensors: offloaded 41/41 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-30T05:39:10.381-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-910e4bf4e2338f181e99796d7452404e85c1b6bbbf8cd0bb094672cf9b6f2f22
+load_tensors: offloaded 27/27 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-31T13:11:53.064-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-3c168af1dea0a414299c7d9077e100ac763370e5a98b3c53801a958a47f0a5db
+load_tensors: offloaded 33/33 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-31T13:19:10.707-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff
+load_tensors: offloaded 29/29 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-31T13:22:40.798-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-183715c435899236895da3869489cc30ac241476b4971a20285b1a462818a5b4
+load_tensors: offloaded 29/29 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-31T13:26:37.648-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-662b0626cd58f443baea23559b469df6576a81d349649c59413b36a9fb32eb29
+load_tensors: offloaded 41/41 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
+time=2026-10-31T13:31:32.211-04:00 level=INFO source=llama_server.go:1052 msg="loading model via llama-server" model=~/bones-forge/iris_index/seats/models/blobs/sha256-910e4bf4e2338f181e99796d7452404e85c1b6bbbf8cd0bb094672cf9b6f2f22
+load_tensors: offloaded 27/27 layers to GPU
+llama_context: n_seq_max             = 1
+llama_context: n_ctx                 = 8192
+llama_context: n_batch               = 1024
+llama_context: n_ubatch              = 1024
+llama_context: flash_attn            = auto
