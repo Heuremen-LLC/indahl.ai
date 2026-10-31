@@ -44,3 +44,11 @@ Every job, every null, the forced-verdict rate and the confusion table are repor
 ## Live (indahl.ai)
 While training runs the page shows only: the step, train and validation loss as mlx-lm prints them, and the null scores fixed before training.
 The TEST reading appears after the run, once, with its intervals and four outcomes.
+
+## Addendum 1 (31 Oct 2026 ~17:45 EDT, after the first pipeline run stopped at its own known-good gate; no model output exists yet)
+- KNOWN-GOOD wording corrected. The per-item Job A score gives half credit when one of the two sets is empty and predicted empty, so the
+  flag-nothing score equals (share of items with both sets empty) + 0.5 x (share with exactly one set empty), not the first term alone.
+  The gate compared against the first term and stopped the run (0.716 against 0.5125). The scorer is unchanged; the gate now uses the
+  full expression. Only the rule baselines (oracle 1.000 on both jobs, flag nothing) had been scored; nothing from any model.
+- The length gate counted the fields of the tokenizer's return value (always 2) instead of tokens, so it could not refuse anything.
+  Fixed to count the tokens of the chat-templated prompt + answer. The data is rebuilt with the same seeds and the gate rerun before training.
