@@ -1,0 +1,18 @@
+L1c his printed intervals against the binomial quantiles of k/269 (2.5% and 97.5%)
+  600M, pass                       k 249: [0.892, 0.955]  printed [0.892, 0.955]
+  parent, pass                     k  27: [0.067, 0.138]  printed [0.067, 0.138]
+  child, pass                      k 258: [0.933, 0.981]  printed [0.933, 0.981]
+  diverse/low, pass                k 268: [0.989, 1.000]  printed [0.989, 1.000]
+  600M, well-formed on any row     k 248: [0.888, 0.952]
+  parent, well-formed on any row   k   5: [0.004, 0.037]
+  child, well-formed on any row    k 256: [0.926, 0.974]
+
+F2b row 8 among all 32,768 rows: fp64 cosine of each row to the parent; share of rows with a higher cosine (less moved than row 8)
+  child                  row 8 cosine 0.99999539 | table median 0.99999964 | rows less moved than row 8 (higher cosine): 95.2% | rows with exactly cosine 1: 28
+  narrow_highlr          row 8 cosine 0.99999833 | table median 0.99999915 | rows less moved than row 8 (higher cosine): 54.8% | rows with exactly cosine 1: 0
+  narrow_lowlr           row 8 cosine 0.99999987 | table median 0.99999999 | rows less moved than row 8 (higher cosine): 73.2% | rows with exactly cosine 1: 0
+  diverse_lowlr          row 8 cosine 0.99999814 | table median 0.99999781 | rows less moved than row 8 (higher cosine): 45.9% | rows with exactly cosine 1: 0
+  diverse_highlr_seed42  row 8 cosine 0.99999474 | table median 0.99995803 | rows less moved than row 8 (higher cosine): 13.6% | rows with exactly cosine 1: 0
+  diverse_highlr_seed43  row 8 cosine 0.99999470 | table median 0.99995830 | rows less moved than row 8 (higher cosine): 14.0% | rows with exactly cosine 1: 0
+
+F2c his printed pair for the child (section 6.6): row 8 cosine 0.99999583 against his baseline mean 0.99999678; the row-8 cosine is below the baseline mean, so row 8 moved more than his baseline average

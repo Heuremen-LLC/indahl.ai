@@ -1,0 +1,4 @@
+fp64:                       cosine 0.99999539 | norms 3.6246334 -> 3.6246390
+numpy fp32 dot and norms:   cosine 0.99999547 | norms 3.6246331 -> 3.6246388
+torch fp32 cosine_similarity: cosine 0.99999583 | norms 3.6246328 -> 3.6246383
+torch fp32 .norm() of the whole table: 630.1347046 and 630.1347046 (fp64 sum of squares: 635.162769 and 635.163016)

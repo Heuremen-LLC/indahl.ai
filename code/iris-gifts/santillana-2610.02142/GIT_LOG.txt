@@ -1,0 +1,12 @@
+71eac16 2026-10-30T22:30:57-04:00 Santillana gift: L1c, F2b, F2c readings, Check Block filed, section label fixed
+caec408 2026-10-30T22:30:13-04:00 Santillana gift: Addendum 3 (L1c, F2b, F2c, section label) committed before computing
+c5e8c34 2026-10-30T22:10:46-04:00 Santillana gift: F1 factorial verbatim (rebuilds exactly) and F2 drift, Check Block filed
+000da8d 2026-10-30T21:34:26-04:00 Santillana gift: verbatim arm rates (his 6.8 rebuilds exactly as pass rates, Addendum 2), Check Block filed
+16b9644 2026-10-30T21:17:56-04:00 Santillana gift: r1 read-in-full notes, F2 drift output, status
+01068cf 2026-10-30T20:54:14-04:00 Santillana gift: factorial arms wired for F1, driver chained after the main arm
+a39450e 2026-10-30T20:36:57-04:00 Santillana gift: F2 drift reader with its child known-good (rebuilds 6.6), row-8 cosine resolved as the fp32 ruler
+1fab29a 2026-10-30T20:36:08-04:00 Santillana gift: Addendum 1 correction (20 baseline rows) and F2 known-good named, before any factorial file is read
+1017b71 2026-10-30T20:35:23-04:00 Santillana gift: Addendum 1 (F1 factorial verbatim, F2 drift per arm) before any factorial file is downloaded
+4157a19 2026-10-30T20:24:35-04:00 Santillana gift: reader L1-L5 and its scorer known-good (247 of 247, 0 of 22), before any full-run output is read
+5df16c8 2026-10-30T20:23:49-04:00 Santillana gift: our decoder and verbatim runner (smoke: child 6 of 6 exact, 1,041.9M parameters), before the full arm
+d7d8c0a 2026-10-30T20:22:32-04:00 Santillana gift (2610.02142): scout recount and plan for the CPU verbatim arm, before any model run

@@ -1,0 +1,2 @@
+parent phase4a_v0_real_llm, stored FloatStorage, table (32768, 2048), Frobenius 635.162769 (fp64 sum of squares)
+child                  stored BFloat16Storage  | row 8 cosine 0.99999539, norm 3.6246334 -> 3.6246390 (+1.54e-04%) | 20 baseline rows mean cosine 0.99999868, min 0.99999009 | mean |drift| 9.44e-06, max 0.00598 | Frobenius 635.162769 -> 635.163016 (relative +3.9e-07) | equal as stored 97.7%, equal after bf16 rounding of both 97.7%

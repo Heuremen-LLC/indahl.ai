@@ -1,0 +1,1 @@
+# Known-good for read_verbatim.py's scorer (31 Oct 2026, before any full-run output was read): on the training completions themselves, call rows well-formed 247 of 247, no-call rows well-formed 0 of 22.
