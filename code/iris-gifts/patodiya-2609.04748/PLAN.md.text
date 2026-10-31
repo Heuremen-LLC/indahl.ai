@@ -1,0 +1,48 @@
+# Gift plan: arXiv 2609.04748 (A. Patodiya, "Same Request, Different Answer"), written 31 Oct 2026 before any live request
+
+Scout recount (scout/RECOUNT.md, scout/run_all.sh, our code, her files read as data): every printed number we tried rebuilds, including
+Table 7 to the printed digits (scout/run_bridge.log). That rebuild is the zero-GPU known-good for the readings below.
+
+Her caveat we can extend: the amplification result is one engine on one GPU model (RTX 4090, CUDA, sm_89). Her own Mac Metal dry run
+(VERSIONS.md, 14 Aug 2026) used Qwen2.5-3B at Q4_K_M on 20 GSM8K items and saw 1 of 20 diverge. No 7B Metal bridge exists.
+
+## Live arm: her GSM8K single-turn bridge on Apple Metal at her exact build
+- Seat: the Mac (Apple M5 Max, 48 GB). llama.cpp built from source at b10434 (7e4c0a968) with Metal (ours/live/llamacpp), llama-server.
+- Server flags exactly as her harness/server_llamacpp.sh: --parallel 1 -c 16384 -ngl 99 --seed 42 --slots (prompt cache RAM at its default),
+  KV f16. Server version, build info and system_fingerprint saved beside every session.
+- Weights: bartowski/Qwen2.5-7B-Instruct-GGUF at revision 8911e8a4, files Q8_0 (sha256 9c6a6e61...), Q4_K_M (65b8fcd9...), Q3_K_M (6738a2d4...),
+  each hashed after download against her MODEL_SHA256SUMS before any request. F16 (14.19 GiB) is not run: the Mac seat's memory rule excludes it.
+  [This public copy omits one internal name from the sentence above; the committed plan is otherwise unchanged.]
+- Requests: our own client (urllib, no her code run), POST /v1/completions with her prompt string (Qwen2.5 template plus her system text,
+  rendered by scout/check_gsm8k_prompts.py's rule), temperature 0, seed 42, logprobs 1, max_tokens 1024, cache_prompt false on cold and cold2,
+  true on warm and warm2. Items 0 to 199 of the GSM8K test split in order, four passes per item in her order (cold, cold2, warm, warm2).
+- Two server sessions per format (server restarted between), so a session floor exists. Order: Q4_K_M s1, Q4_K_M s2, Q8_0 s1, Q8_0 s2,
+  Q3_K_M s1, Q3_K_M s2. One GPU job on the Mac at a time, through the lab queue.
+
+## Known-good before any reading (L0)
+- Our rendered prompt sha256 equals her prompt_sha256 for all 200 items (checked by the driver before the first request; it refuses otherwise).
+- Telemetry purity per request, as in her check: cached_tokens 0 on cold passes; on warm passes cached_tokens equal to the prompt length less
+  at most one token. Any request outside that is counted and named.
+- Her extract_answer rule copied unchanged (last "#### <number>", commas removed, trailing period removed); gold from the dataset answer.
+
+## Readings (each per format and per session; four outcomes; nothing folded)
+L1 Path determinism on Metal: items with cold token ids equal to cold2, and warm equal to warm2 (of 200).
+L2 Path divergence on Metal: items whose cold and warm completions differ, counted only where both paths agree with themselves, Wilson 95%;
+   against her CUDA row at the same format (Q8_0 44.5 [37.8, 51.4], Q4_K_M 41.5 [34.9, 48.4], Q3_K_M 48.0 [41.2, 54.9]) by the difference
+   with a Newcombe 95% interval. Both alternatives tested: zero divergence, and her rate.
+L3 Session floor: items whose cold completion differs between our two sessions, and the same for warm.
+L4 Metal against CUDA: items whose cold token ids equal hers exactly, and the same for warm (a carrier reading: kernels and hardware differ).
+L5 Correctness: cold and warm accuracy, flips in each direction, exact McNemar on the discordant pairs.
+L6 The divergence by kind as she reports it: of the divergent items, the share whose extracted answer is unchanged (formatting-only by her
+   rule in scout/rebuild_bridge.py) and the first divergent token position.
+
+## What would change the plan
+A failed known-good stops the arm before any reading. Any addendum is dated and committed before the readings it changes are computed.
+
+## Addendum 1 (31 Oct 2026, before any live request)
+Correction to L0 and L5: her Table 7 correctness comes from her re-extraction scorer (analysis/reextract_bridge.py), not the run-time rule in
+harness/run_gsm8k.py. L5 uses the scorer in scout/rebuild_bridge.py (patterns in priority order, numeric comparison), which rebuilds her
+printed correct counts exactly, with gold from the dataset answer; the run-time rule is printed beside it as a second column.
+Correction to L6: L6 is the share of divergent items whose extracted answer (Table 7 scorer) is unchanged between cold and warm, and the
+first token position where cold and warm differ. The scout's "formatting-only" figure is a different quantity (old scorer wrong, new scorer
+right) and is not used here.

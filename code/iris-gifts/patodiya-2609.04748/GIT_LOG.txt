@@ -1,0 +1,9 @@
+5299961 2026-10-31 09:20:27 -0400 Patodiya gift: L0-L6 readings on Metal with Check Block (divergence 8, 3, 9 of 200; session floor 0)
+143b8db 2026-10-31 09:19:05 -0400 Patodiya gift: Q3_K_M session 2 read (identical to session 1)
+7c5bdb2 2026-10-31 08:23:48 -0400 Patodiya gift: Q3_K_M session 1 read in full
+bad7586 2026-10-31 07:50:18 -0400 Patodiya gift: Q8_0 session 2 read (identical to session 1)
+3f00432 2026-10-31 06:50:21 -0400 Patodiya gift: Q8_0 session 1 read in full
+a70cc62 2026-10-31 05:50:23 -0400 Patodiya gift: Q4_K_M sessions read in full (session 2 identical to session 1 on all 800 requests)
+535ef52 2026-10-30 20:06:55 -0400 Patodiya gift: reader L0-L6 with its known-good on her CUDA logs (every Table 7 value rebuilds), Metal bridge queued on the Mac
+36655da 2026-10-30 20:05:11 -0400 Patodiya gift: Addendum 1 (Table 7 scorer for L5, L6 defined), bridge driver with L0 prompt check (200 of 200), before any request
+5d3a336 2026-10-30 20:03:27 -0400 Patodiya gift: scout recount and plan for the Metal live bridge (before any request)

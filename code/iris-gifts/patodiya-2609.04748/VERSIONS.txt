@@ -1,0 +1,4 @@
+llama.cpp tag b10434, commit 7e4c0a968, built from source with Metal (ours/live/llamacpp; cmake log kept locally)
+macOS 26.6.2 build 25G83, Apple M5 Max, 48 GB
+client: /usr/bin/python3 3.9.6 standard library (urllib)
+readers: ours/live/read_bridge.py with /usr/bin/python3 (standard library); scout/rebuild_bridge.py with Python 3.12.13, numpy 2.5.3, scipy 1.18.1

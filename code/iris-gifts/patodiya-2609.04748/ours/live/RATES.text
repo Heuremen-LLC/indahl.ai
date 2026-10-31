@@ -1,0 +1,51 @@
+
+######## Qwen2.5-7B Q4_K_M (her CUDA row: 83 of 200 = 41.5%)
+  session 1: items 200 (all four passes 200)
+    L0 telemetry: cold passes with cached_tokens not 0: 0 of 400 | warm passes with cached_tokens below prompt minus 1: 0 of 400 | finish reasons {'stop': 800}
+    L1 path determinism (token ids): recompute 200 of 200 | cache hit 200 of 200
+    L2 path divergence (text): 8 of 200 = 4.0% [2.0, 7.7] | token ids 8 | ours minus hers -37.5 pp [-44.7, -29.9] (Newcombe 95%)
+    L4 Metal against her CUDA, identical token ids: cold 78 of 200 | warm 82 of 200
+    L5 correct (Table 7 scorer): recompute 178, cache hit 178 of 200 | flips: 0 favour cache hit, 0 favour recompute | exact McNemar p 1.000 | run-time rule: 105, 105
+    L6 divergent items with the same extracted answer: 7 of 8 | first differing token position: quartiles 8, 87, 289
+  session 2: items 200 (all four passes 200)
+    L0 telemetry: cold passes with cached_tokens not 0: 0 of 400 | warm passes with cached_tokens below prompt minus 1: 0 of 400 | finish reasons {'stop': 800}
+    L1 path determinism (token ids): recompute 200 of 200 | cache hit 200 of 200
+    L2 path divergence (text): 8 of 200 = 4.0% [2.0, 7.7] | token ids 8 | ours minus hers -37.5 pp [-44.7, -29.9] (Newcombe 95%)
+    L4 Metal against her CUDA, identical token ids: cold 78 of 200 | warm 82 of 200
+    L5 correct (Table 7 scorer): recompute 178, cache hit 178 of 200 | flips: 0 favour cache hit, 0 favour recompute | exact McNemar p 1.000 | run-time rule: 105, 105
+    L6 divergent items with the same extracted answer: 7 of 8 | first differing token position: quartiles 8, 87, 289
+  L3 session floor: items whose token ids differ between sessions: recompute 0 of 200 | cache hit 0 of 200
+
+######## Qwen2.5-7B Q8_0 (her CUDA row: 89 of 200 = 44.5%)
+  session 1: items 200 (all four passes 200)
+    L0 telemetry: cold passes with cached_tokens not 0: 0 of 400 | warm passes with cached_tokens below prompt minus 1: 0 of 400 | finish reasons {'stop': 800}
+    L1 path determinism (token ids): recompute 200 of 200 | cache hit 200 of 200
+    L2 path divergence (text): 3 of 200 = 1.5% [0.5, 4.3] | token ids 3 | ours minus hers -43.0 pp [-50.0, -35.7] (Newcombe 95%)
+    L4 Metal against her CUDA, identical token ids: cold 100 of 200 | warm 110 of 200
+    L5 correct (Table 7 scorer): recompute 183, cache hit 183 of 200 | flips: 0 favour cache hit, 0 favour recompute | exact McNemar p 1.000 | run-time rule: 125, 126
+    L6 divergent items with the same extracted answer: 3 of 3 | first differing token position: quartiles 17, 266, 508
+  session 2: items 200 (all four passes 200)
+    L0 telemetry: cold passes with cached_tokens not 0: 0 of 400 | warm passes with cached_tokens below prompt minus 1: 0 of 400 | finish reasons {'stop': 800}
+    L1 path determinism (token ids): recompute 200 of 200 | cache hit 200 of 200
+    L2 path divergence (text): 3 of 200 = 1.5% [0.5, 4.3] | token ids 3 | ours minus hers -43.0 pp [-50.0, -35.7] (Newcombe 95%)
+    L4 Metal against her CUDA, identical token ids: cold 100 of 200 | warm 110 of 200
+    L5 correct (Table 7 scorer): recompute 183, cache hit 183 of 200 | flips: 0 favour cache hit, 0 favour recompute | exact McNemar p 1.000 | run-time rule: 125, 126
+    L6 divergent items with the same extracted answer: 3 of 3 | first differing token position: quartiles 17, 266, 508
+  L3 session floor: items whose token ids differ between sessions: recompute 0 of 200 | cache hit 0 of 200
+
+######## Qwen2.5-7B Q3_K_M (her CUDA row: 96 of 200 = 48.0%)
+  session 1: items 200 (all four passes 200)
+    L0 telemetry: cold passes with cached_tokens not 0: 0 of 400 | warm passes with cached_tokens below prompt minus 1: 0 of 400 | finish reasons {'stop': 800}
+    L1 path determinism (token ids): recompute 200 of 200 | cache hit 200 of 200
+    L2 path divergence (text): 9 of 200 = 4.5% [2.4, 8.3] | token ids 9 | ours minus hers -43.5 pp [-50.7, -35.7] (Newcombe 95%)
+    L4 Metal against her CUDA, identical token ids: cold 92 of 200 | warm 81 of 200
+    L5 correct (Table 7 scorer): recompute 177, cache hit 177 of 200 | flips: 0 favour cache hit, 0 favour recompute | exact McNemar p 1.000 | run-time rule: 159, 159
+    L6 divergent items with the same extracted answer: 9 of 9 | first differing token position: quartiles 24, 41, 144
+  session 2: items 200 (all four passes 200)
+    L0 telemetry: cold passes with cached_tokens not 0: 0 of 400 | warm passes with cached_tokens below prompt minus 1: 0 of 400 | finish reasons {'stop': 800}
+    L1 path determinism (token ids): recompute 200 of 200 | cache hit 200 of 200
+    L2 path divergence (text): 9 of 200 = 4.5% [2.4, 8.3] | token ids 9 | ours minus hers -43.5 pp [-50.7, -35.7] (Newcombe 95%)
+    L4 Metal against her CUDA, identical token ids: cold 92 of 200 | warm 81 of 200
+    L5 correct (Table 7 scorer): recompute 177, cache hit 177 of 200 | flips: 0 favour cache hit, 0 favour recompute | exact McNemar p 1.000 | run-time rule: 159, 159
+    L6 divergent items with the same extracted answer: 9 of 9 | first differing token position: quartiles 24, 41, 144
+  L3 session floor: items whose token ids differ between sessions: recompute 0 of 200 | cache hit 0 of 200

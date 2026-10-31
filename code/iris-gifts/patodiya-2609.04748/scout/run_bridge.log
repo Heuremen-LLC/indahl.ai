@@ -1,0 +1,9 @@
+model, weights | n | det recompute | det cache hit | path divergence % [Wilson] | flips | correct recompute / cache hit | McNemar p
+Qwen2.5-7B F16 | 200 | 200/200 | 200/200 | 3.5 [1.7, 7.0] | 0 | 183 / 183 | 1.000   printed: (3.5, [1.7, 7.0], 0, 183, 183, 1.0)  (raw records 867, superseded 67, token-level div 7, formatting-only 32.0%, accuracy 91.5/91.5%)
+Qwen2.5-7B Q8_0 | 200 | 200/200 | 200/200 | 44.5 [37.8, 51.4] | 4 | 184 / 182 | 0.625   printed: (44.5, [37.8, 51.4], 4, 184, 182, 0.625)  (raw records 800, superseded 0, token-level div 89, formatting-only 32.5%, accuracy 92.0/91.0%)
+Qwen2.5-7B Q4_K_M | 200 | 200/200 | 200/200 | 41.5 [34.9, 48.4] | 4 | 180 / 180 | 1.000   printed: (41.5, [34.9, 48.4], 4, 180, 180, 1.0)  (raw records 800, superseded 0, token-level div 83, formatting-only 37.0%, accuracy 90.0/90.0%)
+Qwen2.5-14B Q4_K_M | 200 | 200/200 | 200/200 | 48.0 [41.2, 54.9] | 1 | 185 / 186 | 1.000   printed: (48.0, [41.2, 54.9], 1, 185, 186, 1.0)  (raw records 800, superseded 0, token-level div 96, formatting-only 33.0%, accuracy 92.5/93.0%)
+Qwen2.5-7B Q4_K_M | 500 | 500/500 | 500/500 | 45.4 [41.1, 49.8] | 12 | 453 / 459 | 0.146   printed: (45.4, [41.1, 49.8], 12, 453, 459, 0.146)  (raw records 2000, superseded 0, token-level div 227, formatting-only 30.6%, accuracy 90.6/91.8%)
+Qwen2.5-7B Q3_K_M | 200 | 200/200 | 200/200 | 48.0 [41.2, 54.9] | 3 | 178 / 179 | 1.000   printed: (48.0, [41.2, 54.9], 3, 178, 179, 1.0)  (raw records 800, superseded 0, token-level div 96, formatting-only 13.0%, accuracy 89.0/89.5%)
+pooled: observations 1300 over 500 unique problems; flips 20 (13 favor cache hit, 7 favor recompute) on 20 problems; pooled McNemar p 0.26; problem-clustered sign test p 0.26; net +0.46 points [-0.15, +1.15]
+   printed: 1300 observations over 500 unique problems; 20 flips, 13 favor cache hit and 7 recompute, on 20 different problems; p 0.26 and 0.26; +0.46 [-0.15, +1.15]
