@@ -42,3 +42,30 @@ packs: Q,P
 - P8: cannot tell: the page is not live yet; checked in the browser after the midnight ship
 - P9: holds: no AI statement, no count of our things in headings, plain sentences, byline Wayfinder and Bones
 - P10: holds: no post-hoc reading in this entry; the paper's post-hoc readings keep their labels where quoted
+
+## 2026-10-31 18:31 Darkwave clock first fire, after the referee: kingston clock reading CANNOT_TELL across bootstrap draws (18 of 20); copy gaps unresolved; IBM restamp between tables
+packs: Q,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same arms, same job, same qubits as the committed reading; nothing dropped (n=117)
+- II: caught: the committed label at one seed hid that copy B's band sits at the margin; reading the label across 20 seeds shows CANNOT_TELL in 18
+- III: holds: the copy gap is reported signed; marrakesh copies differ in sign and it is said
+- V: holds: same share ruler; the seed spread of the label is the second ruler and it disagrees with the single-seed label, so the reading goes out as CANNOT_TELL
+- VI: fixed: kingston goes out as CANNOT_TELL (pooled band inside the margin, one copy at its edge), never as holds
+- R: holds: seed counts, edges and record stamps printed by the scripts and read from props_before_C files
+- QA: holds: IBM's stated T1, T2, readout length and readout_error compared per qubit between the two records the jobs ran under
+- QB: holds: unchanged from the committed reading
+- QC: holds: the synthetic resolution (about 0.25 deg per qubit mostly unseen) is now stated on the page
+- QD: caught: FINAL compared copy labels; the copy gap with its width is now printed (addendum 1) and both copies' edges are reported
+- QE: holds: no mechanism named; the IBM restamp is reported without a cause
+- QF: fixed: the plan's written times corrected by addendum 2 from the git and job records
+- QG: fixed: outside referee (same model family as the writer) read the raw files; every flag acted on in the page before publish
+- P1: n/a: the page quotes no one, so there is nothing to check verbatim
+- P2: holds: page figures name the paper (31 Oct run) or the first fire and link the files
+- P3: holds: arms named as the paper and plan name them
+- P4: holds: no cause named
+- P5: holds: bands described per setup (qubits, pairs, shots)
+- P6: fixed: 'holds' removed for kingston; 'less than a minute before'; one point, no rate claimed
+- P7: holds: ledger rows go in with the release before the surface goes live
+- P8: cannot tell: page not live yet; rendered check after the midnight ship
+- P9: holds: no AI statement, no count of our things in headings, plain sentences
+- P10: fixed: 'more than ten degrees' and 'two that moved' labelled defined after the data
