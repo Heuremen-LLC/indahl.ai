@@ -4,7 +4,7 @@
 The BLS Employment Situation technical note states that the confidence interval for the monthly change in total nonfarm employment from the establishment survey "is on the order of plus or minus 122,000" at the 90-percent level, read on 29 Oct 2026 from bls.gov/news.release/empsit.tn.htm. Stated: there is about a 90-percent chance that the true over-the-month change lies within 122,000 of the first estimate. Record: the first-release value, and the values of the same month's change in the later releases.
 
 ## Data
-The Federal Reserve Bank of Philadelphia's Real-Time Data Set for Macroeconomists, file employ_level_first_second_third.xlsx (variable EMPLOY, monthly change in nonfarm payroll employment, thousands, seasonally adjusted): for each month the First, Second and Third release values and the Most_Recent value. The file is downloaded whole, its SHA-256 is stored, and a copy is kept in data/ for every read. Read every 240 ticks of Nova's clock (the file changes about once a month).
+The Federal Reserve Bank of Philadelphia's Real-Time Data Set for Macroeconomists, file employ_level_first_second_third.xlsx (variable EMPLOY, monthly change in nonfarm payroll employment, thousands, seasonally adjusted): for each month the First, Second and Third release values and the Most_Recent value. The file is downloaded whole, its SHA-256 is stored, and a copy is kept in data/ for every read. Read every 240 HST ticks (Heuremen Standard Time) (the file changes about once a month).
 
 ## What is counted (fixed now)
 Unit: a month. Two exceedance counts, each over the 120 most recent months that qualify:

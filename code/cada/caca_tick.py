@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""caca_tick.py: one CACA round for Nova's tick bus. Probe, summarise, publish to the page's KV key."""
+"""caca_tick.py: one CACA round for the HST tick bus. Probe, summarise, publish to the page's KV key."""
 import os, subprocess, sys
 H = os.path.dirname(os.path.abspath(__file__)); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); os.chdir(H)
 subprocess.run([sys.executable, 'caca_probe.py'], timeout=900); subprocess.run([sys.executable, 'caca_summary.py'], timeout=120)

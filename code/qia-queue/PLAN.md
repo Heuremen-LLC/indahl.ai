@@ -1,5 +1,5 @@
 # QIA queue ticker: plan (29 Oct 2026, committed before the first read)
-What it shows: for every IBM processor our paid instance can see, the number of jobs IBM reports as pending, read once per hour of Nova ticks (every 9 ticks).
+What it shows: for every IBM processor our paid instance can see, the number of jobs IBM reports as pending, read once per hour of HST ticks (every 9 ticks).
 Beside it: the wait our own jobs saw on that processor, measured as the time from created to running in IBM's job record. Median and longest of the last 20 finished jobs, and the age of any job still queued.
 Rules:
 - Pending count is IBM's number read through the runtime service. We add nothing to it and do not turn it into a predicted wait. IBM publishes no estimate and we publish none.

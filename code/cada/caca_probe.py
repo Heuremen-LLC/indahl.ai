@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""caca_probe.py: one CACA round per PLAN.md, run by Nova's tick bus as a rider. Reads two public feeds, finds domains that are new since our last read,
+"""caca_probe.py: one CACA round per PLAN.md, run by the HST tick bus as a rider. Reads two public feeds, finds domains that are new since our last read,
 asks controls and filtered resolvers about them at first sight and at 1 h, 6 h and 24 h, appends every answer to data/queries.jsonl.
 DNS queries only. Stdlib only. usage: caca_probe.py [--validate N]"""
 import os, sys, json, time, random, socket, struct, urllib.request, ipaddress

@@ -1,7 +1,7 @@
 # ARCHIVE: proof that our records existed, in this form, on this date. Plan, written before the first digest.
 
 ## What it does
-Every 24 ticks of Nova's clock a script hashes every plan, history, change log, summary and data store of every live corner, plus a commitment to the two internal files we do not publish (the ledger and the book: a hash only, never content). The list of paths with their hashes is the manifest. Each digest chains onto the one before it: digest = SHA-256 of the previous digest followed by the SHA-256 of the manifest. The chain and the manifests are public. Each new digest is stamped with OpenTimestamps, which anchors it to the Bitcoin chain through public calendar servers, so a third party can verify the digest existed before a given block without trusting us.
+Every 24 HST ticks (Heuremen Standard Time) a script hashes every plan, history, change log, summary and data store of every live corner, plus a commitment to the two internal files we do not publish (the ledger and the book: a hash only, never content). The list of paths with their hashes is the manifest. Each digest chains onto the one before it: digest = SHA-256 of the previous digest followed by the SHA-256 of the manifest. The chain and the manifests are public. Each new digest is stamped with OpenTimestamps, which anchors it to the Bitcoin chain through public calendar servers, so a third party can verify the digest existed before a given block without trusting us.
 
 ## What it proves and does not
 Proves: a file with this hash existed at this time, and the chain has not been rewritten since, because a changed old file changes every later digest. Together with the plan files committed before each read, it shows plans came first.

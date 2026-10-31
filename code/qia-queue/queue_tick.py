@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """queue.py: reads IBM's pending-job count for every processor the paid instance sees, plus the waits our own jobs saw (created to running).
-Runs on Nova's tick bus every 9 ticks. Saves every read to data/history.jsonl, writes summary.json, pushes KV qia_queue. No QPU seconds."""
+Runs on the HST tick bus every 9 ticks. Saves every read to data/history.jsonl, writes summary.json, pushes KV qia_queue. No QPU seconds."""
 import os, sys, json, time, statistics as S, datetime as D, subprocess, fcntl
 H = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.expanduser('~/bones-forge')
 lock = open(os.path.join(H, 'data', '.lock'), 'w')

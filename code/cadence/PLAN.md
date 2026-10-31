@@ -2,7 +2,7 @@
 Written and committed before any portal was read for this purpose.
 
 ## What is stated
-Each dataset's own accrualPeriodicity in the portal's standard data.json (Project Open Data / DCAT): an ISO 8601 repeating interval such as R/P1D or R/P1M, or a word such as daily, weekly, monthly, quarterly, annually. Portals read: data.cms.gov, data.cdc.gov, healthdata.gov, data.va.gov, www.energy.gov, www.dol.gov, www.fema.gov, data.healthcare.gov and data.bls.gov. Each portal's data.json is fetched at most once every 24 hours on Nova's ticks, with our user agent naming this site. NASA's file is an aggregate of tens of thousands of records and is left out of this plan.
+Each dataset's own accrualPeriodicity in the portal's standard data.json (Project Open Data / DCAT): an ISO 8601 repeating interval such as R/P1D or R/P1M, or a word such as daily, weekly, monthly, quarterly, annually. Portals read: data.cms.gov, data.cdc.gov, healthdata.gov, data.va.gov, www.energy.gov, www.dol.gov, www.fema.gov, data.healthcare.gov and data.bls.gov. Each portal's data.json is fetched at most once every 24 hours on HST ticks, with our user agent naming this site. NASA's file is an aggregate of tens of thousands of records and is left out of this plan.
 
 ## Interval table (fixed here)
 PT?M, PT?H, P?D, P?W, P?M (30 days), P?Y (365 days) as written; daily 1 day, weekly 7, biweekly 14, monthly 30, bimonthly 61, quarterly 91, semiannual 182, annually 365, biennial 730. irregular, continuously, as needed, never, unknown and anything not in the table are not read and are counted as CANNOT_TELL with the reason.

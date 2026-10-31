@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""launch_tick.py: LAUNCH rider for Nova's tick bus (every 6 ticks), per PLAN.md + Addendum 1. Snapshots the stated launch time of upcoming launches,
+"""launch_tick.py: LAUNCH rider for the HST tick bus (every 6 ticks), per PLAN.md + Addendum 1. Snapshots the stated launch time of upcoming launches,
 scores launches that have flown against the time stated at 1, 7 and 30 days before, publishes launch_live. Read-only, user agent names this site."""
 import os, sys, json, time, math, urllib.request, subprocess, datetime as D, collections as C
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); os.makedirs('data', exist_ok=True)

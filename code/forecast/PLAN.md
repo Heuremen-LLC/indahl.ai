@@ -2,7 +2,7 @@
 Written and committed before any forecast was stored or scored.
 
 ## What is stated
-The National Weather Service gridpoint forecast (api.weather.gov), probabilityOfPrecipitation for each 12 hour period, at the location of each of 30 major United States airports (stations.json). A forecast is fetched for a station at most once every 6 hours, on Nova's ticks. Each stored forecast keeps every period up to 48 hours ahead with its stated chance and its lead in hours (start of period minus the time fetched). A period whose chance is null is not stated and is dropped and counted. Our user agent names this site.
+The National Weather Service gridpoint forecast (api.weather.gov), probabilityOfPrecipitation for each 12 hour period, at the location of each of 30 major United States airports (stations.json). A forecast is fetched for a station at most once every 6 hours, on HST ticks. Each stored forecast keeps every period up to 48 hours ahead with its stated chance and its lead in hours (start of period minus the time fetched). A period whose chance is null is not stated and is dropped and counted. Our user agent names this site.
 
 ## What is delivered
 The hourly observations of the same station (api.weather.gov observations): an event occurred in a period if any observation in it reports precipitation in the last hour above zero, or a present-weather entry for rain, drizzle, snow, sleet, hail, showers or thunderstorm. A period is unscorable if observations are missing for more than 25% of its hours, and is counted as unscorable. A period is scored after it has ended and the observations for it are held.

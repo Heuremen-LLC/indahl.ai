@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""trials_tick.py: TRIALS rider for Nova's tick bus (every 48 ticks). Re-reads ClinicalTrials.gov per PLAN.md, scores per the fixed rule, publishes trials_live."""
+"""trials_tick.py: TRIALS rider for the HST tick bus (every 48 ticks). Re-reads ClinicalTrials.gov per PLAN.md, scores per the fixed rule, publishes trials_live."""
 import os, json, subprocess, sys
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door')
 for s in ('trials_collect.py', 'trials_summary.py', 'trials_cancelled.py'):

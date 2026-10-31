@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""linkrot_tick.py: LINKROT rider for Nova's tick bus (every 6 ticks). Per PLAN.md + Addendum 1: known-good gate first, then checks links that are due (never read, or last read over 7 days ago),
+"""linkrot_tick.py: LINKROT rider for the HST tick bus (every 6 ticks). Per PLAN.md + Addendum 1: known-good gate first, then checks links that are due (never read, or last read over 7 days ago),
 at most 600 per round, one request at a time per host with a pause, then rewrites summary_linkrot.json and publishes it to KV linkrot_live."""
 import os, sys, re, json, time, socket, ssl, subprocess, threading, urllib.request, urllib.error, urllib.parse, collections as C
 from concurrent.futures import ThreadPoolExecutor
