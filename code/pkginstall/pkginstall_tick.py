@@ -94,7 +94,9 @@ store = json.load(open('data/projects.json')) if os.path.exists('data/projects.j
 now = time.time()
 if gate and not SUMMARY_ONLY:
     top = get('https://hugovk.github.io/top-pypi-packages/top-pypi-packages.json'); names = [r['project'] for r in top['rows'][:1000]]; listdate = top['last_update']; store = {}
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP
     for i, n in enumerate(names):
+        DP.report('pkginstall', i, len(names), n)   # 31 Oct: live progress bar on the page
         d = get('https://pypi.org/pypi/%s/json' % n); time.sleep(0.25)
         rec = dict(read=now, project=n, rank=i + 1)
         if d in (None, 404): rec.update(cls='NOT_COMPARABLE', why='description not readable')

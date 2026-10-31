@@ -21,18 +21,22 @@ def get(u, n=3, to=30):
         except Exception: time.sleep(2 * (i + 1))
     return None, u, '', b''
 def extract_links(page):
-    """-> {url: [institution, ...]}; institution = first cell of the table row, else nearest heading."""
-    out = {}; pos = 0; heading = ''
-    for m in re.finditer(r'<h[1-4][^>]*>(.*?)</h[1-4]>|<tr[^>]*>(.*?)</tr>|<a [^>]*href="(https?://[^"]+)"', page, flags=re.S):
+    """-> {url: [institution, ...]}. 30 Oct 2026 (site pass H-6): an institution is the first cell of a table row only when the table's first column is headed Institution or School.
+    The first cell of any other table (the finding labels of the summary table, for example) and the nearest heading are not institutions, so a link outside such a table row names none."""
+    out = {}; heading = ''; instcol = False
+    for m in re.finditer(r'<h[1-4][^>]*>(.*?)</h[1-4]>|<table[^>]*>|<tr[^>]*>(.*?)</tr>|<a [^>]*href="(https?://[^"]+)"', page, flags=re.S):
         if m.group(1) is not None: heading = html.unescape(re.sub(r'<[^>]+>', ' ', m.group(1))).strip()
+        elif m.group(2) is None and m.group(3) is None: instcol = None    # a new table: its first header row decides
         elif m.group(2) is not None:
-            cells = re.findall(r'<td[^>]*>(.*?)</td>', m.group(2), flags=re.S); inst = html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', cells[0] if cells else ''))).strip()
+            ths = re.findall(r'<th[^>]*>(.*?)</th>', m.group(2), flags=re.S)
+            if ths and instcol is None: instcol = html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', ths[0]))).strip().lower() in ('institution', 'school')
+            cells = re.findall(r'<td[^>]*>(.*?)</td>', m.group(2), flags=re.S); inst = html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', cells[0] if cells else ''))).strip() if instcol else ''
             for u in re.findall(r'href="(https?://[^"]+)"', m.group(2)):
                 h = urllib.parse.urlparse(html.unescape(u)).hostname or ''
-                if not any(h == o or h.endswith('.' + o) for o in OWN): out.setdefault(html.unescape(u), set()).add(inst or heading)
+                if not any(h == o or h.endswith('.' + o) for o in OWN): out.setdefault(html.unescape(u), set()).add(inst)
     for m in re.finditer(r'<a [^>]*href="(https?://[^"]+)"', page):   # links outside rows
         u = html.unescape(m.group(1)); h = urllib.parse.urlparse(u).hostname or ''
-        if not any(h == o or h.endswith('.' + o) for o in OWN) and u not in out: out[u] = {heading}
+        if not any(h == o or h.endswith('.' + o) for o in OWN) and u not in out: out[u] = set()
     return {u: sorted(x for x in v if x) for u, v in out.items()}
 class TextOf(html.parser.HTMLParser if hasattr(html, 'parser') else object): pass
 import html.parser
@@ -87,8 +91,10 @@ def gate():
     Fix.pages['/p'] = (404, b''); d, dw = rd(); ok &= pair_class(c, d, cw, dw) == 'GONE'
     Fix.pages['/p'] = (403, b''); e, ew = rd(); ok &= pair_class(c, e, cw, ew) == 'BLOCKED'
     srv.shutdown()
-    page = '<h2>Heading A</h2><table><tr><td>School One</td><td><a href="https://one.example.edu/ai-policy">x</a></td></tr><tr><td>School Two</td><td><a href="https://indahl.ai/qia">y</a><a href="https://two.example.edu/p.pdf">z</a></td></tr></table><a href="https://heuremen.org/x">h</a>'
+    page = '<h2>Heading A</h2><table><tr><th>Institution</th><th>Source</th></tr><tr><td>School One</td><td><a href="https://one.example.edu/ai-policy">x</a></td></tr><tr><td>School Two</td><td><a href="https://indahl.ai/qia">y</a><a href="https://two.example.edu/p.pdf">z</a></td></tr></table><a href="https://heuremen.org/x">h</a>'
     L = extract_links(page); ok &= set(L) == {'https://one.example.edu/ai-policy', 'https://two.example.edu/p.pdf'} and L['https://one.example.edu/ai-policy'] == ['School One']
+    page2 = '<h2>Small colleges</h2><table><tr><th>Finding</th><th>Which</th></tr><tr><td>Plans to measure</td><td><a href="https://one.example.edu/ai-policy">x</a></td></tr></table><table><tr><th>School</th><th>Link</th></tr><tr><td>College Three</td><td><a href="https://three.example.edu/a">y</a></td></tr></table><a href="https://four.example.edu/b">z</a>'
+    L2 = extract_links(page2); ok &= L2 == {'https://one.example.edu/ai-policy': [], 'https://three.example.edu/a': ['College Three'], 'https://four.example.edu/b': []}   # 30 Oct: finding labels and headings are not institutions
     print('campus: gate', 'passed' if ok else 'FAILED', flush=True); return bool(ok)
 if not gate(): sys.exit(1)
 # ---- read
@@ -98,7 +104,9 @@ if st0 != 200: print('campus: OY page not read'); sys.exit(1)
 links = extract_links(pb.decode('utf8', 'replace')); print('campus: external sources', len(links), flush=True)
 reads = [json.loads(l) for l in open('data/reads.jsonl')] if os.path.exists('data/reads.jsonl') else []
 prev = reads[-1]['items'] if reads else {}; items = {}; pairs = {}; lasthost = {}
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP
 for i, (u, insts) in enumerate(sorted(links.items())):
+    DP.report('campus', i, len(links), u)   # 31 Oct: live progress bar on the page
     host = urllib.parse.urlparse(u).hostname or ''
     wait = 0.5 - (time.time() - lasthost.get(host, 0))
     if wait > 0: time.sleep(wait)

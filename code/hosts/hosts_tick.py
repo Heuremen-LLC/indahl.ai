@@ -34,7 +34,9 @@ def gate():
 ok, hf = gate()
 if not ok: sys.exit(1)
 now = time.time(); eps = []; failed = []
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP
 for i, m in enumerate(hf):
+    DP.report('hosts', i, len(hf), m.get('id', ''))   # 31 Oct: live progress bar on the page
     d = get(B + 'models/%s/endpoints' % m['id']); time.sleep(0.4)
     if d is None: failed.append(m['id']); continue
     for e in d['data']['endpoints']: r = parse_ep(e); r['m'] = m['id']; eps.append(r)
@@ -54,7 +56,10 @@ for f in sorted(glob.glob('data/polls/*.jsonl'))[-3:]:
 allp = sum(1 for f in glob.glob('data/polls/*.jsonl') for _ in open(f)); first = min(float(json.loads(open(f).readline())['t']) for f in glob.glob('data/polls/*.jsonl'))
 key = lambda e: '%s | %s | %s' % (e['m'], e['h'], e['t'])
 cur = {key(e): e for e in eps}
-problems = {k: dict(quantization=e['q'] or '-', uptime_5m=e['u5'], uptime_30m=round(e['u30'], 1) if e['u30'] is not None else None, uptime_1d=round(e['u1'], 1) if e['u1'] is not None else None) for k, e in cur.items() if (e['s'] not in (0, None)) or (e['u5'] is not None and e['u5'] < 100)}
+# 30 Oct (site pass H-5): the list is, as PLAN.md Display says, endpoints with a status other than 0 OR a 5-minute uptime below 100. The page now says so, shows the status, rounds the uptimes and lists every row (it was cut to 60 with the count left whole).
+r1 = lambda x: round(x, 1) if x is not None else None
+problems = {k: dict(quantization=e['q'] or '-', status=e['s'], uptime_5m=r1(e['u5']), uptime_30m=r1(e['u30']), uptime_1d=r1(e['u1']), url='https://openrouter.ai/' + e['m']) for k, e in cur.items() if (e['s'] not in (0, None)) or (e['u5'] is not None and e['u5'] < 100)}
+below_100_now = sum(1 for e in cur.values() if e['u5'] is not None and e['u5'] < 100); flagged_now = sum(1 for e in cur.values() if e['s'] not in (0, None))
 qt = collections.defaultdict(lambda: [0, 0, set()])
 for p in polls:
     for e in p['eps']:
@@ -79,9 +84,9 @@ hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_chec
 samp = random.Random(7).sample(sorted(nd), min(10, len(nd))) if nd else []
 json.dump(dict(sample_seed7=samp, disagree=sorted(nd)), open('data/hand_check.json', 'w'), indent=1)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed', polls_kept=allp, first_poll=time.strftime('%d %b %H:%M UTC', time.gmtime(first)), models=len({e['m'] for e in eps}), hosts=len({e['h'] for e in eps}), endpoints=len(eps), failed_models=len(failed),
-           problems_now=len(problems), problems=dict(list(problems.items())[:60]), quantization=quant, models_by_hosts=dict(b),
+           problems_now=len(problems), below_100_now=below_100_now, flagged_now=flagged_now, problems=problems, quantization=quant, models_by_hosts=dict(b),
            headline=dict(of=len(cmp), n=len(nd), share=round(len(nd) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc), headline_n=len(nd), headline_of=len(cmp),
-           top_line='%d endpoints on %d hosts for %d open-weight models. %d with a 5-minute uptime below 100 now.' % (len(eps), len({e['h'] for e in eps}), len({e['m'] for e in eps}), len(problems)))
+           top_line='%d endpoints on %d hosts for %d open-weight models. %d are flagged by OpenRouter or show a 5-minute uptime below 100 now.' % (len(eps), len({e['h'] for e in eps}), len({e['m'] for e in eps}), len(problems)))
 json.dump(out, open('summary_hosts.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'hosts_live', '--path', os.path.join(H, 'summary_hosts.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
