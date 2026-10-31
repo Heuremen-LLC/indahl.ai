@@ -36,7 +36,7 @@
   // Between reads: a clock counting up from the last read, and a bar filling toward the next scheduled read (the desk's rider schedule).
   var SLUG = (location.pathname.split('/')[1] || ''), ACT = null, PROG = null;
   function dur(ms) { var s = Math.max(0, Math.floor(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
-    return (h ? h + ' h ' : '') + (h || m ? m + ' min ' : '') + (h ? '' : x + ' s'); }
+    return ((h ? h + ' h ' : '') + (h || m ? m + ' min ' : '') + (h ? '' : x + ' s')).trim(); }
   function fmt(n) { return Number(n).toLocaleString('en-US'); }
   function stripEl() {
     var main = document.querySelector('main.wrap'); if (!main) return null; var s = document.getElementById('livestrip');
