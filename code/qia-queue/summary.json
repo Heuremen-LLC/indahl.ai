@@ -1,29 +1,7 @@
 {
- "updated": "30 Oct 22:51 UTC",
- "reads_held": 954,
+ "updated": "31 Oct 01:13 UTC",
+ "reads_held": 1026,
  "processors": [
-  {
-   "backend": "ibm_fez",
-   "pending": 0,
-   "change_24h": 0,
-   "our_jobs": 20,
-   "our_median_wait": "1 s",
-   "our_longest_wait": "18 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
-   "backend": "ibm_kingston",
-   "pending": 0,
-   "change_24h": -346,
-   "our_jobs": 20,
-   "our_median_wait": "8 s",
-   "our_longest_wait": "3 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
   {
    "backend": "ibm_marrakesh",
    "pending": 0,
@@ -37,9 +15,9 @@
   },
   {
    "backend": "ibm_pittsburgh",
-   "pending": 1,
-   "change_24h": -8,
-   "our_jobs": 20,
+   "pending": 0,
+   "change_24h": 0,
+   "our_jobs": 19,
    "our_median_wait": "1 s",
    "our_longest_wait": "95 min",
    "our_queued_now": 0,
@@ -47,25 +25,47 @@
    "outcome": "COMMITTED"
   },
   {
+   "backend": "ibm_kingston",
+   "pending": 1,
+   "change_24h": -294,
+   "our_jobs": 20,
+   "our_median_wait": "8 s",
+   "our_longest_wait": "3 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
+   "backend": "ibm_fez",
+   "pending": 4,
+   "change_24h": 4,
+   "our_jobs": 20,
+   "our_median_wait": "1 s",
+   "our_longest_wait": "18 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
    "backend": "ibm_boston",
-   "pending": 505,
-   "change_24h": -134,
+   "pending": 503,
+   "change_24h": -201,
    "our_jobs": 5,
    "our_median_wait": "34 min",
    "our_longest_wait": "25.2 h",
    "our_queued_now": 1,
-   "our_oldest_queued": "19.6 h",
+   "our_oldest_queued": "22.0 h",
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 1534,
-   "change_24h": -828,
-   "our_jobs": 8,
-   "our_median_wait": "17 min",
+   "pending": 1557,
+   "change_24h": -739,
+   "our_jobs": 9,
+   "our_median_wait": "20 min",
    "our_longest_wait": "5.5 h",
-   "our_queued_now": 1,
-   "our_oldest_queued": "45 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
    "outcome": "COMMITTED"
   }
  ]
