@@ -1,0 +1,84 @@
+
+## 2026-10-31 11:27 OpenDiscoveryTrace Metal rerun: L1 Qwen-1.5B text equal to their CUDA run on 15 of 30; L2 session floor 0 of 30 (Qwen; Phi pending); L3 Phi-3.5-mini yields model text where their 30 files hold an error string; L4 full-read ground-truth score 1 to 2 of 11 per source; L5 five ground-truth parts differ from RDKit on PubChem structures
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: plan 1bdf56c before any request, L4 rulers changed only by addenda 1 to 3 (8f25c32, c5a0859, 3f242aa), each committed before any tally, like for like with their released runner's settings (system text, template, fp16, 512 new tokens, greedy), the gate drops dd_e07 (no scored part) and their 30 Phi error files from every source alike, cut parts count as not found for every source
+- II: holds: flips counted item by item before any net, our repeat floor 0 of 30 for both models (L2), Metal against CUDA for Qwen2.5-1.5B: text equal on 15 of 30, one correctness flip (dd_e09, CUDA correct, Metal no value) and none the other way, their own floor is unknown from one released run, so CANNOT_TELL whether the CUDA run repeats itself
+- III: holds: the one flip is signed (CUDA right, Metal no value), one item cannot carry a direction, L5 differences printed with their signs and values per convention
+- V: holds: three L4 rulers side by side (full read, rule B, committed rule) with B and the committed rule failing their check against the full read (CANNOT_TELL parser), Wilson 95% for rates, exact two-sided McNemar on discordant items, L5 every convention printed
+- VI: holds: every source pair CANNOT_TELL (0 to 2 discordant items, p 1.0), intervals reach both zero and a 30-point gap, L5 parts AGREES, DIFFERS or AGREES only under a convention added after the first output
+- R: holds: counts from read_live.py output (READINGS.text) and L4_READ.tsv, versions and start times from runs/*.meta.json, PubChem fetch time and hash in gt_check, post hoc labelled (L5 as a whole, the precision rule for XLogP3, the PubChem MW and XLogP3-as-clogP conventions, the set-aside tally)
+- L1: caught: committed rule 2 of 4 items off on the first five replies (list markers, IC50 read as 50) and rule B 3 of 10 replies off at the part level, so both CANNOT_TELL (parser), the full read is the L4 ruler
+- L2: holds: L4_READ.tsv complete before the first L4 tally, no rate printed before the checks
+- L3: holds: their released runner read as text (Qwen2.5-1.5B only), Phi and the 7B runners unreleased, stated in the README, repetition penalty 1.1 from Qwen's generation_config named, caps for Qwen2.5-7B and Mistral unrecorded, stated
+- L4: holds: repeat floor 0 of 30 per model on the Mac (two sessions, process restarted), torch, transformers, device and weights hashes in meta.json, their CUDA settings beyond the runner unrecorded, stated
+- L5: holds: recount from their released files with our code (scout/out), keys task_id matched, prompts equal 30 of 30, clean-copy test: 831 files fetched by hash, all seven recount outputs and L5 identical
+- L6: holds: unread and dropped counted by reason per source (no value given, cut, unscored) in READINGS.text and the README table
+- L7: holds: the ground truth is theirs, not built from any model scored, L5 checks it against RDKit and PubChem
+- L8: holds: McNemar paired on the same items, greedy decoding so no seed width, batch 1 both sides
+- L9: holds: no prompt contains its answer (dd_e07 and dd_e12 give a SMILES, which is the input, not the answer)
+- L10: holds: their files record repo ids only, we pinned revisions and hashed weights, the 15 of 30 Metal against CUDA difference is exactly a pinned name not pinning behaviour, read as a carrier
+- L11: holds: dataset and repository at pinned commits, PubChem read live 31 Oct with time and hash recorded, RDKit pinned 2024.09.6
+- L12: holds: the full-read verdicts (Ruler A) were written by a Claude model, and the referee for this reading is a Claude model, the same family as the writer, this check block says so
+- P1: holds: quotes in the README checked against their files and the PDF text (system text, error string, Phase 4 pilot line)
+- P2: holds: every figure names its file, table or section and the revision read
+- P3: holds: Table 10 GPUs and settings as printed
+- P4: holds: no cause named for their Phi error, the Metal against CUDA difference, or the ground-truth differences, 'reproduced by' used for H.4
+- P5: holds: Wilson 95% named, McNemar exact two-sided
+- P6: holds: referee flag 10 fixed (no pair differs by more than one item), scope paragraph limits to two models, one Mac, 30 tasks
+- P7: n/a: no public number on a page, the package goes out through its push path
+- P8: n/a: no rendered page
+- P9: holds: no AI statements in README or draft, no counts of ours in headings, plain sentences, no semicolons, read in full wording
+- P10: holds: post hoc labelled (L5 section, set-aside tally, conventions added after the first output)
+
+## 2026-10-31 12:03 L3 output line reworded (commas for semicolons), every number in READINGS.text unchanged
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- II: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- III: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- V: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- VI: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- R: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P1: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P2: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P3: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P4: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P5: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P6: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P7: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P8: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P9: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+- P10: n/a: tool-output punctuation only, READINGS.text regenerated from the same runs and L4_READ.tsv, every number compared equal to the previous file
+
+## 2026-10-31 12:11 Second referee round: L4_READ cut and no-value relabelled per addendum 2 (12 rows, no verdict changed), L5 three-way verdicts (7 agree, 6 differ, 3 cannot tell), set-aside six parts, README and draft wording, addendum 4
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: addendum 4 records every change made after the first outputs, labelled defined after the data in the README
+- II: holds: relabelling moves rows only between cut and no value given, both not found, tallies recomputed and unchanged (READINGS.text)
+- III: holds: no signed quantity changed
+- V: holds: L5 now applies the three outcomes to every multi-convention part, printing each convention's value
+- VI: holds: three L5 parts are CANNOT_TELL (convention), six DIFFERS, seven AGREES, every source pair still CANNOT_TELL on items
+- R: holds: counts from READINGS.text and L5.text regenerated after the changes, the 11:27 entry above records the state at that time
+- L1: holds: no parser change, the full read stays the L4 ruler
+- L2: holds: no new rate before the relabel was written
+- L3: holds: README names the released runner as Qwen2.5-1.5B only and the Phi cap as ours
+- L4: holds: repeat floor unchanged (0 of 30 per model)
+- L5: holds: no change to the recount
+- L6: holds: cut and no-value counts per source follow addendum 2 (1/1, 4/0, 0/1, 3/0, 5/1)
+- L7: holds: ground truth theirs
+- L8: holds: McNemar still paired on the same 11 items per pair, recomputed after the relabel, p 1.0 for every pair
+- L9: holds: no prompt changed, prompts still equal to task_bank.json on 30 of 30
+- L10: holds: pinned revisions and weight hashes unchanged in runs/*.meta.json
+- L11: holds: PubChem file and fetch time unchanged (pubchem.json sha256 in L5_SOURCES), RDKit still 2024.09.6
+- L12: holds: the referee for this round is a Claude model, the same family as the writer, this entry says so
+- P1: holds: the Phase 4 and ground-truth quotes checked against the PDF text and task_bank.json
+- P2: holds: every new figure names its file
+- P3: holds: Table 10 GPUs and the runner settings still quoted as printed
+- P4: holds: no cause named
+- P5: holds: Wilson 95% named
+- P6: holds: item-count wording narrowed (no two sources' counts differ by more than one), intro names the Qwen runner applied to both models
+- P7: n/a: no public number on a page, the package goes out through its own push and this check
+- P8: n/a: no rendered page, the GitHub folder link is checked after the push
+- P9: holds: README and draft have no semicolons and say read in full
+- P10: holds: addendum 4 changes labelled

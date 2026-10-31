@@ -1,0 +1,109 @@
+# Gift plan: arXiv 2609.09203 (Bansal and Balaji, "OpenDiscoveryTrace"), written 31 Oct 2026 before any live request
+
+Scout recount (scout/RECOUNT.md, our code, their files read as data): file counts, Tables 2 to 6 except judged success, the taxonomy, H.2,
+and Table 7's simple baselines rebuild; their open-weight success fields are all null, and all 30 Phi-3.5-mini files hold the error string
+"Error: 'DynamicCache' object has no attribute 'seen_tokens'" instead of model text.
+
+## Live arm: their open-weight runner's settings on Apple Metal
+- Seat: the Mac (Apple M5 Max), PyTorch 2.4.0 with the MPS backend, transformers 4.46.3, our own runner (ours/live/run_live.py). Their
+  runner (src/harness/run_opensource.py at 26cb3ffb) is read as text only and never run.
+- Models, revisions pinned and recorded with each file's sha256 after download: Qwen/Qwen2.5-1.5B-Instruct at 989aa798 and
+  microsoft/Phi-3.5-mini-instruct at 2fe19245 (the main revisions the scout inferred; their files record repo ids only). Native transformers
+  code only (no trust_remote_code). The 7B models (Qwen2.5-7B, Mistral-7B-v0.3) are not run: at fp16 they exceed the Mac seat's memory rule.
+- Settings exactly as their runner: system text "You are an AI scientist. Analyze step by step, then conclude.", the task prompt as the user
+  turn, tokenizer.apply_chat_template(..., add_generation_prompt=True), torch_dtype float16, generate(max_new_tokens=512, do_sample=False,
+  pad_token_id=eos), decode of the new tokens with skip_special_tokens=True. Their runs were on CUDA (V100 for Qwen-1.5B by their text).
+- Items: the first 30 tasks of their task_bank.json (dd_e01 to dd_h05), prompts verbatim; the runner refuses unless each prompt equals the
+  prompt stored in their file for that task.
+- Two sessions per model (process restarted between), one request at a time. Stored per request: the full decoded text, generated token ids,
+  number of new tokens, wall time, and the run environment (versions, device, model sha256s).
+
+## Known-good before any reading (L0)
+- Prompt equality as above (30 of 30 per model, or the run stops).
+- The scorer (L4) passes its synthetic known-good on all 12 ground truths (ours/live/score_selftest.text), before any real reply is scored.
+- No external known-good exists for the generator on this seat; the session repeat (L2) is the instrument check.
+
+## Readings (four outcomes; nothing folded)
+L1 Qwen-1.5B against their stored outputs: items whose text equals their stored raw_response (they stored text[:3000], so compare our text
+   cut the same way), and for the rest the first differing character position. Different hardware and backend (CUDA V100 against MPS), so
+   this is a carrier reading.
+L2 Session floor: items whose generated token ids differ between our two sessions, per model.
+L3 Phi-3.5-mini: whether every item yields model text (no error), new-token counts, and items that hit the 512-token cap.
+L4 Ground truth on the 12 easy items that carry it (dd_e01 to dd_e12), one rule (ours/live/score.py) applied to every source: our
+   Qwen-1.5B and Phi-3.5-mini replies and their released Qwen2.5-7B, Mistral-7B-v0.3 and Qwen2.5-1.5B replies. Rule: split the ground truth
+   on commas outside parentheses; strip a "key=" or "key:" prefix; a part with two numbers joined by "-" or "to" is a range, found if any
+   number in the reply falls inside it; a part starting Yes or No is found if that word appears; a token of at least five characters mixing
+   letters and digits (a SMILES string, a formula, a UniProt id) is found if it appears verbatim; otherwise the part's first number is found if
+   any number in the reply equals it at its printed decimals; a part with none of these is free text and not scored. An item is correct when
+   every scored part is found, and an item with no scored part (dd_e07) is CANNOT_TELL. Parts that rest on one small integer (dd_e04 "2 nM",
+   dd_e10 "4 aromatic rings") are weak matches and are marked so. Report items correct and parts found per source with Wilson 95% intervals,
+   and paired exact McNemar between sources on the same items.
+   Synthetic known-good (run before any real reply is scored, output kept): every ground truth scores as found against itself, and as not
+   found against an empty reply and against a copy with every number moved by 10% plus one.
+
+## What would change the plan
+A failed known-good stops the arm before any reading. Any addendum is dated and committed before the readings it changes are computed.
+
+## Addendum 1 (31 Oct 2026, 15:17 UTC): L4 ruler, written after reading five replies and before any L4 tally
+Hand-check (Pack L1): five Qwen-1.5B session-1 replies were read in full (dd_e01, dd_e04, dd_e07, dd_e10, dd_e12) and the committed
+rule was run on them. It disagrees with the full read on 2 of the 4 scored items: dd_e04 and dd_e10 score correct from the list
+markers "2." and "4.", while the replies state 8 nM and 2 rings. On dd_e01 the part HBD=1 is found from the marker "1." (the reply
+says 2). More than 1 of 10 off, so the committed rule's L4 reading is CANNOT_TELL (parser). Its output is still printed, labelled so.
+No L1, L2 or L3 reading and no L4 tally has been computed. Phi-3.5-mini session 1 was running when this was written.
+
+L4 rulers from here on, all on the same scored parts as the committed rule (its split and classify are unchanged, so dd_e07 stays
+CANNOT_TELL and text parts stay unscored):
+- Ruler A, the L4 reading: every reply on dd_e01 to dd_e12 from every source is read in full, and one verdict per scored part is written
+  to ours/live/L4_READ.tsv before any tally: found, not found, or no value given, with the value the reply states. A part is found when
+  the reply's final stated value for that quantity equals the ground truth at its printed decimals, or lies inside its printed range (a
+  stated range is found only if both ends lie inside); a value the reply later replaces does not count. An ident part is found if it
+  appears verbatim. For their released files the reader reads raw_response and final_claim (their raw_response is cut at 3,000
+  characters; replies at that length are counted and their final value is read from final_claim, or marked cut if neither holds it).
+  Where our two sessions are identical token for token, the reply is read once and the verdict applies to both.
+- Ruler B, automated, defined after the five replies above: the committed rule, except numbers are taken after removing list and step
+  markers (a number opening a line and followed by "." or ")", and "Step N") and every token mixing letters and digits; ident parts are
+  matched on the raw text. Its hand-check is ten further replies read under Ruler A (none of the five above); more than 1 of 10
+  disagreeing makes B CANNOT_TELL (parser) as well.
+- Report: Ruler A per source (items correct, parts found, Wilson 95%; paired exact McNemar between sources on the same items), with B
+  and the committed rule beside it and each one's disagreements with A listed by item.
+
+## Addendum 2 (31 Oct 2026, written before any L4 tally): a correction to addendum 1 and the dd_e04 part
+- Addendum 1 says dd_e04 scores correct from the list marker "2.". That is wrong. The committed classify takes the first number in the
+  ground truth "IC50 approximately 2 nM", which is the 50 in "IC50", so the committed rule finds dd_e04 in any reply that writes "IC50".
+  The synthetic known-good did not catch it, because the shifted copy moves the 50 too. dd_e10 is as addendum 1 says (marker "4.").
+  The committed rule stays CANNOT_TELL (parser).
+- Ruler A reads dd_e04 as the IC50 value 2 nM at its printed decimals, the quantity the ground truth names, not the 50. This is the only
+  part where Ruler A departs from the committed classify. Every other part was checked against classify's output and agrees.
+- Rule B keeps the committed classify. Its hand-check (the first ten scored replies read after addendum 1: our Qwen-1.5B dd_e02, dd_e03,
+  dd_e05, dd_e06, dd_e08, dd_e09, dd_e11 and their Qwen-1.5B dd_e02, dd_e03, dd_e04) puts 3 of 10 replies off at the part level (dd_e03
+  HBA=4 found from the rule threshold "4" in two replies; dd_e04 from "50%") and 1 of 10 at the item level. Three replies off is more
+  than 1 of 10, so rule B is CANNOT_TELL (parser) as well and is not tuned further. Ruler A is the L4 reading. B and the committed rule
+  are printed beside it, labelled, with their disagreements listed.
+- A part whose reply ends at the 512-token cap before or inside its value is marked "cut" and counts as not found in the tally; the
+  number of cut parts is printed per source.
+
+## Addendum 3 (31 Oct 2026, defined after the data: written after reading Phi-3.5-mini's dd_e10 reply, before any L4 tally)
+L5, a check on their ground truth where a standard cheminformatics descriptor exists. RDKit (version pinned in its own venv, recorded)
+on PubChem's SMILES for each named compound (fetched by CID, CIDs and SMILES recorded), or on the SMILES the prompt itself gives:
+dd_e01 MolWt, Crippen MolLogP, NumHDonors; dd_e02 the canonical SMILES of their ground truth and of PubChem's ibuprofen, CalcTPSA;
+dd_e03 MolWt, MolLogP, NumHDonors and NumHAcceptors and Lipinski's NHOHCount and NOCount; dd_e05 Tanimoto on Morgan radius 2 at
+2048 bits (RDKit's default fingerprint size), with 1024 bits printed beside it; dd_e07 the PAINS A, B and C filter catalog;
+dd_e08 NumRotatableBonds and CalcMolFormula; dd_e09 Delaney's ESOL equation as published (logS = 0.16 - 0.63 clogP - 0.0062 MW
++ 0.066 RB - 0.74 AP, with RDKit's Crippen LogP as clogP); dd_e10 CalcNumAromaticRings; dd_e12 QED. dd_e04, dd_e06 and dd_e11 are
+database facts and are not checked here.
+Outcome per part: AGREES (within the ground truth's printed decimals or range), DIFFERS, or CANNOT_TELL where the descriptor's
+convention is not the one the ground truth used (LogP and the donor and acceptor counts have several conventions, so each is printed
+under every convention listed, and DIFFERS needs every convention to disagree).
+This reading does not change L4. L4 scores against their ground truth as printed. Parts that L5 finds DIFFERS are listed in the
+report, and L4 under Ruler A is printed a second time with those parts set aside, labelled defined after the data.
+
+## Addendum 4 (31 Oct 2026, after the first L4 and L5 outputs and the outside referee's two reports; every change below is defined after the data)
+- L5 verdicts follow addendum 3's three outcomes as written: AGREES when every printed convention agrees, DIFFERS when none does,
+  CANNOT_TELL (convention) when they split. The first l5.py could not return DIFFERS for LogP, which was wrong against addendum 3.
+  PubChem's XLogP3 is printed to one decimal, so it is compared at one decimal. PubChem's molecular weight (dd_e03) and XLogP3 as the
+  ESOL LogP input (dd_e09) were added as conventions after the first output.
+- The set-aside tally sets aside every part L5 calls DIFFERS: dd_e03 LogP joins the five parts of the first output.
+- L4_READ.tsv: "cut" and "no value given" now follow addendum 2's definition. A part is cut when the reply ends at the 512-token cap
+  before or inside its value (for their 7B files, whose cap is unrecorded, when the text ends mid-sentence). No value given means the
+  reply ends on its own without the value. Twelve rows were relabelled from the first reading. No found or not found verdict changed,
+  and both labels count as not found.

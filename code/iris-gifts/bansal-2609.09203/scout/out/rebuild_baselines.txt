@@ -1,0 +1,7 @@
+sklearn 1.9.1 scipy 1.18.1 numpy 2.5.3
+evaluable rows n=127, positives 88, majority baseline 0.6929 (printed 0.693)
+LogisticRegression acc 0.685+/-0.046 AUROC 0.496+/-0.096 | printed 0.685+/-0.046 AUROC 0.496+/-0.096
+RandomForest       acc 0.614+/-0.049 AUROC 0.452+/-0.091 | printed 0.614+/-0.049 AUROC 0.452+/-0.091
+GradientBoosting   acc 0.614+/-0.033 AUROC 0.427+/-0.066 | printed 0.614+/-0.033 AUROC 0.426+/-0.066
+expected majority accuracy if the 363 judged labels were used: not computable, labels not released; printed rates imply 0.873
+Pearson chi-square on printed counts: chi2=1.887 dof=2 p=0.389 (printed 0.38)

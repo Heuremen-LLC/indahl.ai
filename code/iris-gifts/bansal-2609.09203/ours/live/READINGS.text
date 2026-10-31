@@ -1,0 +1,121 @@
+### read_live.py L1
+L1 Qwen-1.5B session 1 against their stored raw_response: text equal on 15 of 30
+  dd_e02 first differing character 1110 of ours 1467 / theirs 1423
+  dd_e03 first differing character 692 of ours 1783 / theirs 1800
+  dd_e04 first differing character 873 of ours 1929 / theirs 1740
+  dd_e06 first differing character 359 of ours 474 / theirs 474
+  dd_e08 first differing character 340 of ours 996 / theirs 1296
+  dd_e09 first differing character 675 of ours 1043 / theirs 1603
+  dd_m02 first differing character 590 of ours 2003 / theirs 1586
+  dd_m03 first differing character 390 of ours 2057 / theirs 2043
+  dd_m06 first differing character 501 of ours 2003 / theirs 2251
+  dd_m07 first differing character 152 of ours 1676 / theirs 2048
+  dd_m09 first differing character 416 of ours 2640 / theirs 2606
+  dd_m10 first differing character 117 of ours 1717 / theirs 2261
+  dd_m11 first differing character 468 of ours 2181 / theirs 2136
+  dd_m13 first differing character 1136 of ours 1754 / theirs 1814
+  dd_h01 first differing character 1600 of ours 2512 / theirs 2571
+L1 Qwen-1.5B session 2 against their stored raw_response: text equal on 15 of 30
+  dd_e02 first differing character 1110 of ours 1467 / theirs 1423
+  dd_e03 first differing character 692 of ours 1783 / theirs 1800
+  dd_e04 first differing character 873 of ours 1929 / theirs 1740
+  dd_e06 first differing character 359 of ours 474 / theirs 474
+  dd_e08 first differing character 340 of ours 996 / theirs 1296
+  dd_e09 first differing character 675 of ours 1043 / theirs 1603
+  dd_m02 first differing character 590 of ours 2003 / theirs 1586
+  dd_m03 first differing character 390 of ours 2057 / theirs 2043
+  dd_m06 first differing character 501 of ours 2003 / theirs 2251
+  dd_m07 first differing character 152 of ours 1676 / theirs 2048
+  dd_m09 first differing character 416 of ours 2640 / theirs 2606
+  dd_m10 first differing character 117 of ours 1717 / theirs 2261
+  dd_m11 first differing character 468 of ours 2181 / theirs 2136
+  dd_m13 first differing character 1136 of ours 1754 / theirs 1814
+  dd_h01 first differing character 1600 of ours 2512 / theirs 2571
+
+### read_live.py L2
+L2 qwen15: generated token ids differ between sessions on 0 of 30 []
+L2 phi35: generated token ids differ between sessions on 0 of 30 []
+
+### read_live.py L3
+L3 phi35 s1: model text on 30 of 30 (empty or error []), new tokens min 376 median 512 max 512, hit the 512 cap on 26 ['dd_e01', 'dd_e02', 'dd_e03', 'dd_e05', 'dd_e06', 'dd_e09', 'dd_e11', 'dd_e12', 'dd_m01', 'dd_m02', 'dd_m03', 'dd_m04', 'dd_m05', 'dd_m06', 'dd_m07', 'dd_m08', 'dd_m09', 'dd_m10', 'dd_m11', 'dd_m12', 'dd_m13', 'dd_h01', 'dd_h02', 'dd_h03', 'dd_h04', 'dd_h05']
+L3 phi35 s2: model text on 30 of 30 (empty or error []), new tokens min 376 median 512 max 512, hit the 512 cap on 26 ['dd_e01', 'dd_e02', 'dd_e03', 'dd_e05', 'dd_e06', 'dd_e09', 'dd_e11', 'dd_e12', 'dd_m01', 'dd_m02', 'dd_m03', 'dd_m04', 'dd_m05', 'dd_m06', 'dd_m07', 'dd_m08', 'dd_m09', 'dd_m10', 'dd_m11', 'dd_m12', 'dd_m13', 'dd_h01', 'dd_h02', 'dd_h03', 'dd_h04', 'dd_h05']
+L3 their Phi-3.5-mini files: error string on 30 of 30
+
+### read_live.py L4
+ours_qwen15      ruler A         items correct 1 of 11 (0.02, 0.38)
+ours_qwen15      ruler B         items correct 2 of 11 (0.05, 0.48) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+ours_qwen15      ruler committed items correct 3 of 11 (0.10, 0.57) | disagrees with A on 2 ['dd_e04', 'dd_e10'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+ours_qwen15      ruler A   parts marked cut 1, no value given 1
+ours_qwen15      ruler A   parts found 2 of 18 (0.03, 0.33)
+ours_phi35       ruler A         items correct 2 of 11 (0.05, 0.48)
+ours_phi35       ruler B         items correct 1 of 11 (0.02, 0.38) | disagrees with A on 1 ['dd_e10'] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+ours_phi35       ruler committed items correct 3 of 11 (0.10, 0.57) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+ours_phi35       ruler A   parts marked cut 4, no value given 0
+ours_phi35       ruler A   parts found 4 of 18 (0.09, 0.45)
+theirs_qwen15    ruler A         items correct 2 of 11 (0.05, 0.48)
+theirs_qwen15    ruler B         items correct 3 of 11 (0.10, 0.57) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+theirs_qwen15    ruler committed items correct 4 of 11 (0.15, 0.65) | disagrees with A on 2 ['dd_e04', 'dd_e10'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+theirs_qwen15    ruler A   parts marked cut 0, no value given 1
+theirs_qwen15    ruler A   parts found 3 of 18 (0.06, 0.39)
+theirs_qwen7     ruler A         items correct 1 of 11 (0.02, 0.38)
+theirs_qwen7     ruler B         items correct 1 of 11 (0.02, 0.38) | disagrees with A on 0 [] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+theirs_qwen7     ruler committed items correct 3 of 11 (0.10, 0.57) | disagrees with A on 2 ['dd_e04', 'dd_e10'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+theirs_qwen7     ruler A   parts marked cut 3, no value given 0
+theirs_qwen7     ruler A   parts found 3 of 18 (0.06, 0.39)
+theirs_mistral7  ruler A         items correct 1 of 11 (0.02, 0.38)
+theirs_mistral7  ruler B         items correct 2 of 11 (0.05, 0.48) | disagrees with A on 1 ['dd_e09'] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+theirs_mistral7  ruler committed items correct 4 of 11 (0.15, 0.65) | disagrees with A on 3 ['dd_e04', 'dd_e09', 'dd_e10'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+theirs_mistral7  ruler A   parts marked cut 5, no value given 1
+theirs_mistral7  ruler A   parts found 2 of 18 (0.03, 0.33)
+
+Paired exact McNemar on ruler A (items scored by A in both sources):
+  ours_qwen15 vs ours_phi35: n 11, only first correct 0, only second correct 1, p 1.000
+  ours_qwen15 vs theirs_qwen15: n 11, only first correct 0, only second correct 1, p 1.000
+  ours_qwen15 vs theirs_qwen7: n 11, only first correct 0, only second correct 0, p 1.000
+  ours_qwen15 vs theirs_mistral7: n 11, only first correct 0, only second correct 0, p 1.000
+  ours_phi35 vs theirs_qwen15: n 11, only first correct 1, only second correct 1, p 1.000
+  ours_phi35 vs theirs_qwen7: n 11, only first correct 1, only second correct 0, p 1.000
+  ours_phi35 vs theirs_mistral7: n 11, only first correct 1, only second correct 0, p 1.000
+  theirs_qwen15 vs theirs_qwen7: n 11, only first correct 1, only second correct 0, p 1.000
+  theirs_qwen15 vs theirs_mistral7: n 11, only first correct 1, only second correct 0, p 1.000
+  theirs_qwen7 vs theirs_mistral7: n 11, only first correct 0, only second correct 0, p 1.000
+
+### read_live.py L4 --set-aside (defined after the data)
+Ruler A with the L5 DIFFERS parts set aside (defined after the data): [('dd_e03', 'HBA=4'), ('dd_e03', 'HBD=2'), ('dd_e03', 'LogP=-1.43'), ('dd_e05', 'Tanimoto 0.55-0.65'), ('dd_e10', '4 aromatic rings'), ('dd_e12', 'QED 0.3-0.4')]
+ours_qwen15      ruler A         items correct 1 of 8 (0.02, 0.47)
+ours_qwen15      ruler B         items correct 2 of 11 (0.05, 0.48) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+ours_qwen15      ruler committed items correct 3 of 11 (0.10, 0.57) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+ours_qwen15      ruler A   parts marked cut 1, no value given 0
+ours_qwen15      ruler A   parts found 1 of 12 (0.01, 0.35)
+ours_phi35       ruler A         items correct 1 of 8 (0.02, 0.47)
+ours_phi35       ruler B         items correct 1 of 11 (0.02, 0.38) | disagrees with A on 0 [] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+ours_phi35       ruler committed items correct 3 of 11 (0.10, 0.57) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+ours_phi35       ruler A   parts marked cut 2, no value given 0
+ours_phi35       ruler A   parts found 2 of 12 (0.05, 0.45)
+theirs_qwen15    ruler A         items correct 2 of 8 (0.07, 0.59)
+theirs_qwen15    ruler B         items correct 3 of 11 (0.10, 0.57) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+theirs_qwen15    ruler committed items correct 4 of 11 (0.15, 0.65) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+theirs_qwen15    ruler A   parts marked cut 0, no value given 0
+theirs_qwen15    ruler A   parts found 2 of 12 (0.05, 0.45)
+theirs_qwen7     ruler A         items correct 1 of 8 (0.02, 0.47)
+theirs_qwen7     ruler B         items correct 1 of 11 (0.02, 0.38) | disagrees with A on 0 [] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+theirs_qwen7     ruler committed items correct 3 of 11 (0.10, 0.57) | disagrees with A on 1 ['dd_e04'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+theirs_qwen7     ruler A   parts marked cut 2, no value given 0
+theirs_qwen7     ruler A   parts found 2 of 12 (0.05, 0.45)
+theirs_mistral7  ruler A         items correct 1 of 8 (0.02, 0.47)
+theirs_mistral7  ruler B         items correct 2 of 11 (0.05, 0.48) | disagrees with A on 1 ['dd_e09'] [CANNOT_TELL (parser): failed its check against the full read, addendum 2]
+theirs_mistral7  ruler committed items correct 4 of 11 (0.15, 0.65) | disagrees with A on 2 ['dd_e04', 'dd_e09'] [CANNOT_TELL (parser): failed its check against the full read, addendum 1]
+theirs_mistral7  ruler A   parts marked cut 3, no value given 0
+theirs_mistral7  ruler A   parts found 2 of 12 (0.05, 0.45)
+
+Paired exact McNemar on ruler A (items scored by A in both sources):
+  ours_qwen15 vs ours_phi35: n 8, only first correct 0, only second correct 0, p 1.000
+  ours_qwen15 vs theirs_qwen15: n 8, only first correct 0, only second correct 1, p 1.000
+  ours_qwen15 vs theirs_qwen7: n 8, only first correct 0, only second correct 0, p 1.000
+  ours_qwen15 vs theirs_mistral7: n 8, only first correct 0, only second correct 0, p 1.000
+  ours_phi35 vs theirs_qwen15: n 8, only first correct 0, only second correct 1, p 1.000
+  ours_phi35 vs theirs_qwen7: n 8, only first correct 0, only second correct 0, p 1.000
+  ours_phi35 vs theirs_mistral7: n 8, only first correct 0, only second correct 0, p 1.000
+  theirs_qwen15 vs theirs_qwen7: n 8, only first correct 1, only second correct 0, p 1.000
+  theirs_qwen15 vs theirs_mistral7: n 8, only first correct 1, only second correct 0, p 1.000
+  theirs_qwen7 vs theirs_mistral7: n 8, only first correct 0, only second correct 0, p 1.000

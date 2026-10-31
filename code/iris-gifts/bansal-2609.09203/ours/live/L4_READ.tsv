@@ -1,0 +1,106 @@
+# L4_READ.tsv: Ruler A (PLAN.md addendum 1). One row per scored part, written as each reply is read in full, before any tally.
+# Relabelled 31 Oct after the referee (addendum 4): "cut" = the reply ends at the 512-token cap (for their 7B files, whose cap is unrecorded, where the text ends mid-sentence) before or inside the value, "no value given" = the reply ends on its own without the value. Verdicts found/not found unchanged. Their Qwen2.5-7B dd_e07 row moved into item order.
+# source	task	part	verdict (found / not found / no value given / unscored)	value the reply states
+# ours_qwen15: sessions 1 and 2 are identical token for token on all 30 items (L2), so session 1 is read and stands for both.
+ours_qwen15	dd_e01	MW=180.16	not found	180.174 g/mol
+ours_qwen15	dd_e01	LogP=1.24	not found	approximately 3.5 to 4
+ours_qwen15	dd_e01	HBD=1	not found	2
+ours_qwen15	dd_e02	SMILES	not found	C1=CC=C(C(=O)N2C3=CN=C(N=C3)C4=NC5=NN=C4C6=CC=CC=C6)
+ours_qwen15	dd_e02	TPSA=37.3	not found	89.0
+ours_qwen15	dd_e03	MW=129.16	not found	368.37 (reply hit the 512 cap mid-sentence)
+ours_qwen15	dd_e03	LogP=-1.43	not found	-0.9 to -1.0
+ours_qwen15	dd_e03	HBD=2	found	2
+ours_qwen15	dd_e03	HBA=4	not found	2
+ours_qwen15	dd_e04	IC50 2 nM	not found	8 nM
+ours_qwen15	dd_e05	Tanimoto 0.55-0.65	not found	1 (reply hit the cap)
+ours_qwen15	dd_e06	DHFR (text)	unscored	DHFR named
+ours_qwen15	dd_e06	UniProt P00374	not found	Q96327
+ours_qwen15	dd_e07	PAINS (text)	unscored	likely passes, with caveats
+ours_qwen15	dd_e08	Rotatable bonds 12	not found	2
+ours_qwen15	dd_e08	Formula C33H35FN2O5	not found	C27H42O6
+ours_qwen15	dd_e09	LogS -1.0 to -1.5	cut	(reply ran into a string of zeros and hit the cap)
+ours_qwen15	dd_e10	4 aromatic rings	not found	2
+ours_qwen15	dd_e11	Approved 2014	found	2014
+ours_qwen15	dd_e12	QED 0.3-0.4	no value given	says it cannot compute
+# theirs_qwen15: on dd_e01, dd_e05, dd_e07, dd_e10, dd_e11, dd_e12 their stored text equals ours character for character (L1), so our verdict is carried; the other six were read in full.
+theirs_qwen15	dd_e01	MW=180.16	not found	180.174 g/mol (text equal to ours)
+theirs_qwen15	dd_e01	LogP=1.24	not found	approximately 3.5 to 4 (text equal to ours)
+theirs_qwen15	dd_e01	HBD=1	not found	2 (text equal to ours)
+theirs_qwen15	dd_e02	SMILES	not found	C1=CC=C(C(=O)N2C3=CN=C(N=C3)C4=NC5=NN=C4C6=CC=CC=C6)
+theirs_qwen15	dd_e02	TPSA=37.3	not found	approximately 70
+theirs_qwen15	dd_e03	MW=129.16	not found	368.37 (reply ends mid-sentence)
+theirs_qwen15	dd_e03	LogP=-1.43	not found	-0.9 to -1.0
+theirs_qwen15	dd_e03	HBD=2	found	2
+theirs_qwen15	dd_e03	HBA=4	not found	0
+theirs_qwen15	dd_e04	IC50 2 nM	not found	8 nM
+theirs_qwen15	dd_e05	Tanimoto 0.55-0.65	not found	1 (text equal to ours)
+theirs_qwen15	dd_e06	DHFR (text)	unscored	DHFR named
+theirs_qwen15	dd_e06	UniProt P00374	not found	Q96321
+theirs_qwen15	dd_e07	PAINS (text)	unscored	(text equal to ours)
+theirs_qwen15	dd_e08	Rotatable bonds 12	not found	8
+theirs_qwen15	dd_e08	Formula C33H35FN2O5	not found	C27H42O6
+theirs_qwen15	dd_e09	LogS -1.0 to -1.5	found	approximately -1.5
+theirs_qwen15	dd_e10	4 aromatic rings	not found	2 (text equal to ours)
+theirs_qwen15	dd_e11	Approved 2014	found	2014 (text equal to ours)
+theirs_qwen15	dd_e12	QED 0.3-0.4	no value given	(text equal to ours)
+theirs_qwen7	dd_e01	MW=180.16	not found	179.154 g/mol
+theirs_qwen7	dd_e01	LogP=1.24	not found	approximately 1.1
+theirs_qwen7	dd_e01	HBD=1	found	1
+theirs_qwen7	dd_e02	SMILES	not found	CC(=O)c1ccc(-c2ccccc2)cc1
+theirs_qwen7	dd_e02	TPSA=37.3	not found	approximately 14.5
+theirs_qwen7	dd_e03	MW=129.16	not found	approximately 121.14
+theirs_qwen7	dd_e03	LogP=-1.43	not found	approximately -0.4
+theirs_qwen7	dd_e03	HBD=2	found	2
+theirs_qwen7	dd_e03	HBA=4	not found	3
+theirs_qwen7	dd_e04	IC50 2 nM	not found	10 nM (as an example of the expected format)
+theirs_qwen7	dd_e05	Tanimoto 0.55-0.65	cut	(hypothetical vectors; reply ends before a value)
+theirs_qwen7	dd_e06	DHFR (text)	unscored	DHFR named
+theirs_qwen7	dd_e06	UniProt P00374	not found	Q00750
+theirs_qwen7	dd_e07	PAINS (text)	unscored	(lists PAINS features and ends at the cap before a verdict)
+theirs_qwen7	dd_e08	Rotatable bonds 12	not found	approximately 6
+theirs_qwen7	dd_e08	Formula C33H35FN2O5	cut	atom counts C 20, H 28, Cl 1, F 2; reply ends before the formula
+theirs_qwen7	dd_e09	LogS -1.0 to -1.5	cut	says it cannot provide a value without the coefficients
+theirs_qwen7	dd_e10	4 aromatic rings	not found	3
+theirs_qwen7	dd_e11	Approved 2014	found	2014
+theirs_qwen7	dd_e12	QED 0.3-0.4	not found	0.65 (stated as hypothetical)
+theirs_mistral7	dd_e01	MW=180.16	found	180.156 g/mol (its own sum of the weights shown gives 180.17)
+theirs_mistral7	dd_e01	LogP=1.24	not found	approximately 2.26
+theirs_mistral7	dd_e01	HBD=1	not found	3
+theirs_mistral7	dd_e02	SMILES	not found	C1=CC=CC=C1C(=O)OC1=CC=CC=C1
+theirs_mistral7	dd_e02	TPSA=37.3	not found	approximately 98.2
+theirs_mistral7	dd_e03	MW=129.16	not found	approximately 165.13
+theirs_mistral7	dd_e03	LogP=-1.43	no value given	(LogP not addressed)
+theirs_mistral7	dd_e03	HBD=2	not found	1
+theirs_mistral7	dd_e03	HBA=4	not found	3
+theirs_mistral7	dd_e04	IC50 2 nM	not found	approximately 3 nM
+theirs_mistral7	dd_e05	Tanimoto 0.55-0.65	cut	(reply ends at the cap inside a bit vector)
+theirs_mistral7	dd_e06	DHFR (text)	unscored	DHFR named
+theirs_mistral7	dd_e06	UniProt P00374	not found	P08133 (human), P0A6W9 (E. coli)
+theirs_mistral7	dd_e07	PAINS (text)	unscored	possibly passes, needs a tool to confirm
+theirs_mistral7	dd_e08	Rotatable bonds 12	cut	(lists five bonds, no total; reply ends at the cap)
+theirs_mistral7	dd_e08	Formula C33H35FN2O5	cut	says the formula is not provided; reply ends at the cap
+theirs_mistral7	dd_e09	LogS -1.0 to -1.5	cut	"LogS ≈ -1" is the last text; the reply ends there at the cap, mid-number possible; the arithmetic shown gives about -5.37
+theirs_mistral7	dd_e10	4 aromatic rings	not found	3
+theirs_mistral7	dd_e11	Approved 2014	found	2014
+theirs_mistral7	dd_e12	QED 0.3-0.4	cut	(reply ends at the cap while computing LogP)
+# ours_phi35: session 1 read in full; if session 2 differs on an item, that item is read again (see L2).
+ours_phi35	dd_e01	MW=180.16	not found	180.17 g/mol (conclusion begins to restate and ends at the cap)
+ours_phi35	dd_e01	LogP=1.24	not found	approximately 1.19
+ours_phi35	dd_e01	HBD=1	not found	2
+ours_phi35	dd_e02	SMILES	not found	C[C@H]1C(=O)N[C@@H](C(=O)CO)C(=O)O[C@@H]1C
+ours_phi35	dd_e02	TPSA=37.3	cut	(reply ends at the cap before a value)
+ours_phi35	dd_e03	MW=129.16	not found	approximately 166.22
+ours_phi35	dd_e03	LogP=-1.43	not found	approximately -0.4
+ours_phi35	dd_e03	HBD=2	found	2
+ours_phi35	dd_e03	HBA=4	not found	6
+ours_phi35	dd_e04	IC50 2 nM	not found	0.05 nM (given as an example of how to report)
+ours_phi35	dd_e05	Tanimoto 0.55-0.65	cut	(fingerprint runs into a string of zeros and hits the cap)
+ours_phi35	dd_e06	DHFR (text)	unscored	DHFR named
+ours_phi35	dd_e06	UniProt P00374	not found	P00434
+ours_phi35	dd_e07	PAINS (text)	unscored	says it does not pass, then that it is not likely to interfere
+ours_phi35	dd_e08	Rotatable bonds 12	found	approximately 12
+ours_phi35	dd_e08	Formula C33H35FN2O5	not found	C46H56N2O2
+ours_phi35	dd_e09	LogS -1.0 to -1.5	cut	(describes the steps and ends at the cap)
+ours_phi35	dd_e10	4 aromatic rings	found	four (in words; the rings it names are two indoles and two benzenes)
+ours_phi35	dd_e11	Approved 2014	found	2014
+ours_phi35	dd_e12	QED 0.3-0.4	cut	(lists descriptors and ends at the cap before a score)

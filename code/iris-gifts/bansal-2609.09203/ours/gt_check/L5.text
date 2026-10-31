@@ -1,0 +1,22 @@
+RDKit 2024.09.6. PubChem SMILES by CID, pubchem.json sha256 in L5_SOURCES, fetched 2026-10-31T15:25:11Z
+dd_e01	MW	ground truth 180.16	RDKit 180.159	AGREES
+dd_e01	LogP	ground truth 1.24	RDKit Crippen 1.310, PubChem XLogP3 1.2	CANNOT_TELL (convention: agrees under XLogP3 only)
+dd_e01	HBD	ground truth 1	RDKit NumHDonors 1, NHOHCount 1	AGREES
+dd_e02	SMILES	ground truth CC(C)Cc1ccc(cc1)C(C)C(=O)O	RDKit canonical CC(C)Cc1ccc(C(C)C(=O)O)cc1, same molecule as the ground truth: True	AGREES
+dd_e02	TPSA	ground truth 37.3	RDKit 37.30	AGREES
+dd_e03	MW	ground truth 129.16	RDKit 129.167	DIFFERS
+dd_e03	LogP	ground truth -1.43	RDKit Crippen -1.244, PubChem XLogP3 -1.3	DIFFERS
+dd_e03	HBD	ground truth 2	RDKit NumHDonors 3, NHOHCount 5, PubChem 3	DIFFERS
+dd_e03	HBA	ground truth 4	RDKit NumHAcceptors 1, NOCount 5, PubChem 1	DIFFERS
+dd_e05	Tanimoto	ground truth 0.55-0.65	RDKit 2048 bits 0.457, 1024 bits 0.471, count-based 0.532	DIFFERS
+dd_e07	PAINS	ground truth passes, no alerts	RDKit 0 PAINS matches []	AGREES
+dd_e08	Rotatable bonds	ground truth 12	RDKit NumRotatableBonds 12, PubChem 12	AGREES
+dd_e08	Formula	ground truth C33H35FN2O5	RDKit C33H35FN2O5	AGREES
+dd_e09	LogS (ESOL)	ground truth -1.0 to -1.5	RDKit -1.966 (clogP 1.351, MW 151.16, RB 1, aromatic proportion 0.545)	DIFFERS
+dd_e10	Aromatic rings	ground truth 4	RDKit CalcNumAromaticRings 3	DIFFERS
+dd_e12	QED	ground truth 0.3-0.4	RDKit 0.243 (molecule C20H12)	DIFFERS
+
+# Added after the first output (defined after the data): conventions that the first pass did not list. These rows give the final verdicts for dd_e03 MW and dd_e09 LogS (addendum 4).
+dd_e03	MW	PubChem MolecularWeight 129.16, RDKit MolWt 129.167	CANNOT_TELL (convention: agrees under PubChem only)
+dd_e09	LogS (ESOL)	with PubChem XLogP3 0.5 as clogP -1.430, with Crippen -1.966 (Delaney used Daylight clogP, not available here)	CANNOT_TELL (convention: agrees with XLogP3 as clogP only)
+dd_e12	QED	weights mean 0.243, max 0.286, none 0.170	DIFFERS under all three
