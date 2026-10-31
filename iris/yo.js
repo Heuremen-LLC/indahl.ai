@@ -34,7 +34,7 @@
     var n = d.nulls || {};
     box.appendChild(h('p', 'Baselines, scored on the test items before training began:', 'bench-note'));
     box.appendChild(table([
-      ['Record audit (0 to 1)', 'flag nothing ' + f3(n.A_flag_nothing), 'base model ' + f3(n.A_base)],
+      ['Record audit (0 to 1)', 'flag nothing ' + f3(n.A_flag_nothing), 'base model ' + f3(n.A_base) + (n.A_base_unparsed != null ? ' (' + n.A_base_unparsed + ' of ' + n.A_n + ' replies not valid JSON). Reading labels like q16 as 16, a rule defined after the replies were read: ' + f3(n.A_base_lenient) : '')],
       ['Four-outcome verdict (accuracy)', 'always CONSISTENT ' + f3(n.C_always_consistent) + ' · two-outcome rule ' + f3(n.C_binary_rule), 'base model ' + f3(n.C_base)],
       ['CANNOT_TELL cases given another verdict', 'always CONSISTENT ' + f3(n.C_always_consistent_forced) + ' · two-outcome rule ' + f3(n.C_binary_rule_forced), 'base model ' + f3(n.C_base_forced)]
     ], ['Job', 'Rule baselines', 'Base model, untrained']));

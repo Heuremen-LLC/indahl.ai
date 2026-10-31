@@ -22,6 +22,7 @@ if n: nulls['A_flag_nothing'] = mean(n, 'A')
 if c: nulls['C_always_consistent'] = mean(c, 'C'); nulls['C_always_consistent_forced'] = forced(c)
 if bi: nulls['C_binary_rule'] = mean(bi, 'C'); nulls['C_binary_rule_forced'] = forced(bi)
 if ba: nulls['A_base'] = mean(ba, 'A'); nulls['C_base'] = mean(ba, 'C'); nulls['C_base_forced'] = forced(ba)
+if os.path.exists(os.path.join(HERE, 'nulls_extra.json')): nulls.update(json.load(open(os.path.join(HERE, 'nulls_extra.json'))))   # POSTHOC_BASE_A.md: the lenient reading, labelled on the page
 res = json.load(open(os.path.join(HERE, 'yo2_result.json'))) if os.path.exists(os.path.join(HERE, 'yo2_result.json')) else None
 state = 'done' if res else ('training' if step else ('baselines scored' if ba else 'preparing'))
 d = dict(model='Qwen3-1.7B (Apache-2.0), LoRA', steps=2000, step=step, train=train[-200:], val=val, nulls=nulls, result=res, state=state,
