@@ -128,3 +128,35 @@ packs: L,P
 - P8: n/a: no rendered page
 - P9: holds: plain sentences
 - P10: holds: labelled defined after the data
+
+## 2026-10-31 03:10 Ovcharov R7 refereed and R7b (Addendum 5, defined after the data): DeepSeek R1 excess +0.0147 [+0.0056, +0.0241] under his drop-unparsed rule and +0.0099 [+0.0008, +0.0195] with unparsed counted as wrong; GPT-5.6 +0.265 and Sonnet 4.6 +0.081 above on both; Llama 3.1 8B +0.0048 at the edge under his rule, -0.0039 [-0.0084, +0.0008] with unparsed as wrong, CANNOT_TELL; Gemma, Nova Pro and Nova 2 Lite below their habit on both rules; Haiku is the gate's own model
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same items and habit rule for every model; the two unparsed rules printed side by side, neither substituted
+- II: holds: excess per model, not pooled; signs printed
+- III: holds: Llama 3.1 8B's sign changes between the two unparsed rules, so it is read CANNOT_TELL, not above
+- V: holds: paired item bootstrap with the habit recomputed in every resample (checked by the referee's own multinomial bootstrap)
+- VI: holds: R1 ABOVE zero on both rules (lower bound +0.0008 on the stricter one), GPT-5.6 and Sonnet ABOVE, Llama CANNOT_TELL, three non-gate models BELOW
+- R: holds: Addendum 5 (141db96) committed in its own call before r7b.py ran
+- L1: n/a: his files hold parsed letters only, no replies to read
+- L2: holds: Table 4 rebuilt (known_good.text) before any excess interval
+- L3: holds: his habit rule (parsed items) used, as his printed column follows
+- L4: n/a: one run per model in his file; his reruns are read in R8
+- L5: holds: ids deduplicated, a parsed retry kept over its unparsed first row
+- L6: holds: unparsed counted both ways
+- L7: caught: Haiku 4.5 is the gate's own model and below its habit by construction, marked
+- L8: holds: paired over items
+- L9: n/a: no prompts sent
+- L10: n/a: no models run in this reading
+- L11: n/a: Pixtral Large left out, its file is partial
+- L12: holds: the referee is a Claude model, disclosed
+- P1: holds: his 'ten of twelve' and 'nothing at all' wording checked in paper.txt
+- P2: holds: each figure names its file
+- P3: holds: model names as in his file
+- P4: holds: no cause named for the three below their habit
+- P5: holds: 95% percentile bootstrap named
+- P6: holds: summary matches r7_bootstrap.text and r7b.text
+- P7: n/a: package README updated after this entry
+- P8: n/a: no rendered page
+- P9: holds: plain sentences
+- P10: holds: R7 defined after reading his Table 4, R7b after the data

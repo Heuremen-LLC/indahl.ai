@@ -36,6 +36,13 @@ weights format, so these readings are about this model file on our setups.
   reply of 600, where the answer is written "Відповідь (за загальним правилом): B" and the parser takes the leading C instead. The only
   replies with no letter are single Cyrillic letters (А to Д).
 
+- Intervals on the excess (r7_bootstrap.text and r7b.text, R7 and R7b). Table 4 prints point excesses. With a paired item bootstrap over his
+  scenario_a items, recomputing the habit in every resample: GPT-5.6 +0.265 [+0.255, +0.276] and Sonnet 4.6 +0.081 [+0.072, +0.091].
+  DeepSeek R1 is +0.015 [+0.006, +0.024] under his rule of dropping unparsed replies and +0.0099 [+0.0008, +0.0195] with them counted as wrong.
+  Llama 3.1 8B is +0.005 under his rule and -0.004 [-0.008, +0.001] the other way, so we cannot tell. Gemma 3 12B, Nova Pro and Nova 2
+  Lite sit below their habit on both rules (for example Nova Pro -0.014 [-0.023, -0.005]). Haiku 4.5 is the gate's own model and sits
+  below its habit by construction.
+
 Every reading after the plan's first set was defined after the data, as PLAN.md.text records.
 
 ## Run it

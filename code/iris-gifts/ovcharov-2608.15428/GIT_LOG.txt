@@ -1,3 +1,7 @@
+d209e83 2026-10-31T03:10:53-04:00 Ovcharov gift: R7 refereed, R7b, Check Block filed
+141db96 2026-10-31T03:10:22-04:00 Ovcharov gift: Addendum 5 (R7b, unparsed as wrong) committed before computing
+f3675f2 2026-10-31T03:06:29-04:00 Ovcharov draft: plainer sentence on what the rerun shows
+478d476 2026-10-31T03:06:21-04:00 Ovcharov gift: draft ready, tabled for the morning
 7a4e77e 2026-10-31T03:01:56-04:00 Ovcharov gift: R2b, R2c, R8 readings, Check Block filed
 e079cda 2026-10-31T03:00:56-04:00 Ovcharov gift: Addendum 4 (R2b, R2c, R8; setups not machines) committed before computing
 68d2104 2026-10-31T02:51:17-04:00 Ovcharov gift: Mac half read in full, R1-R6 on both machines, Check Block filed

@@ -88,3 +88,8 @@ R2c Paired accuracy between setups (Armature r1 minus Mac r1) with exact McNemar
 R8 His own reruns, from his released predictions: for each small model, items in both his 600-item blind run (small_models.jsonl) and his
    full blind run (scenario_a.jsonl) whose letter differs (unparsed as its own class), with Clopper-Pearson; and llama-3.1-8b full mode at
    2,048 tokens (small_models.jsonl) against 4,096 (small_models_4096.jsonl).
+
+## Addendum 5 (31 Oct 2026, after the R7 referee pass; defined after the data)
+R7b R7 with unparsed replies counted as wrong: blind accuracy over every item id the model was asked (an id with any parsed row takes that row),
+    the habit as in R7 over the parsed items, the same paired bootstrap (2,000 resamples, seed 20261030). Printed beside R7 for every model.
+    Llama 3.1 8B is read as CANNOT_TELL under R7 (its bound sits at zero by the seed spread), and Haiku 4.5 is the gate's own model.
