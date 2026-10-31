@@ -72,12 +72,15 @@ if not SUMMARY_ONLY:
 gate = bool(gate_h and gate_s and live_ok) if not SUMMARY_ONLY else bool(gate_h and gate_s and json.load(open('summary_secrecords.json')).get('gate') == 'passed')
 print('secrecords: gate', 'passed' if gate else 'FAILED', gate_h, gate_s, live_ok, flush=True)
 store = json.load(open('data/domains.json')) if os.path.exists('data/domains.json') else {}; now = time.time()
+if SUMMARY_ONLY and store: now = max(r.get('read', 0) for r in store.values())   # 30 Oct: a summary rebuilt from stored data carries the time of the last read, not the time of the rebuild
 if gate and not SUMMARY_ONLY:
     z = zipfile.ZipFile(io.BytesIO(urllib.request.urlopen(urllib.request.Request('https://tranco-list.eu/top-1m.csv.zip', headers={'User-Agent': UA}), timeout=300).read()))
     rows = [l.split(',') for l in z.read(z.namelist()[0]).decode().splitlines()[:1000]]; store = {}
     open('data/listdate.txt', 'w').write(time.strftime('%Y-%m-%d', time.gmtime(now)))
     ctx = ssl.create_default_context()
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP
     for i, (rk, dom) in enumerate(rows):
+        DP.report('secrecords', i, len(rows), dom)   # 31 Oct: live progress bar on the page
         dom = dom.strip(); rec = dict(read=now, domain=dom, rank=int(rk))
         try:
             rq = urllib.request.urlopen(urllib.request.Request('https://%s/' % dom, headers={'User-Agent': UA}), timeout=15, context=ctx); h = rq.headers.get('Strict-Transport-Security'); rec['final'] = urllib.parse.urlparse(rq.geturl()).hostname; rec['hsts'] = h
@@ -107,7 +110,7 @@ def grp(key, kind):
     oc = K.CANNOT_TELL if (comp < 30 or not gate) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
     return cnt, dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, awaiting=len([r for r in rs if r[key + '_cls'] == 'DISAGREE' and kind + '|' + r['domain'] not in hc]))
 ch, cmp_h = grp('hsts', 'hsts'); cs, cmp_s = grp('spf', 'spf'); dm = C.Counter(('p=' + r['dmarc'] if r['dmarc'] in ('none', 'quarantine', 'reject') else r['dmarc']) for r in rs); anyh = len([r for r in rs if r.get('hsts')]); anys = len([r for r in rs if r.get('spf_cls') in ('AGREE', 'DISAGREE') or r.get('spf_why') == 'count cut short'])
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', domains=len(rs), listdate=open('data/listdate.txt').read() if os.path.exists('data/listdate.txt') else '',
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', domains=len(rs), awaiting=cmp_h['awaiting'] + cmp_s['awaiting'], listdate=open('data/listdate.txt').read() if os.path.exists('data/listdate.txt') else '',
            comparison={'HSTS preload header': cmp_h, 'SPF lookup limit': cmp_s}, classes={'HSTS preload header': {c: ch[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, 'SPF lookup limit': {c: cs[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}},
            descriptive={'Domains whose HTTPS response carries an HSTS header': dict(n=anyh, of=len(rs)), 'Domains that publish an SPF record': dict(n=anys, of=len(rs))},
            dmarc={k: dict(n=v) for k, v in sorted(dm.items(), key=lambda x: -x[1])},

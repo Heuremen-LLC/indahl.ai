@@ -40,7 +40,9 @@ if gate:
     lst = get('https://huggingface.co/api/models?sort=downloads&direction=-1&limit=1000&expand[]=safetensors&expand[]=tags') or []
     if len(lst) < 500: print('hfsize: list request returned', len(lst), 'models, keeping the last read and publishing nothing'); sys.exit(0)
     store = {}
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP
     for i, m in enumerate(lst):
+        DP.report('hfsize', i, len(lst), m.get('id', ''))   # 31 Oct: live progress bar on the page
         rid = m['id']; name = rid.split('/')[-1]; tags = ' '.join(m.get('tags') or []); st = m.get('safetensors') or {}; tot = st.get('total'); psum = sum((st.get('parameters') or {}).values()) or None
         rec = dict(read=now, id=rid, rank=i + 1, total=tot, psum=psum)
         if PACKED.search(name + ' ' + tags): rec.update(cls='NOT_COMPARABLE', why='packed or quantized')

@@ -36,38 +36,59 @@ A = [['a.safetensors', 'h1'], ['b.safetensors', 'h2']]
 cases = [(A, A, 'SAME'), (A, [['a.safetensors', 'h1'], ['b.safetensors', 'h9']], 'CHANGED'), (A, A + [['c.gguf', 'h3']], 'CHANGED'), (A, A[:1], 'CHANGED'),
          (A, [['x.safetensors', 'h1'], ['b.safetensors', 'h2']], 'CHANGED'), ([], A, 'NOT_COMPARABLE'), (A, 'GONE', 'GONE')]
 gate_pairs = all(pair(p, c) == w for p, c, w in cases)
-a1 = read('HuggingFaceTB/SmolLM2-135M'); a2 = read('HuggingFaceTB/SmolLM2-135M'); live_ok = a1[0] == 'OK' and a1 == a2 and len(a1[1]) > 0
-gone_ok = read('nonexistent-org/zzz-none-zzz')[0] == 'GONE'
-gate = bool(gate_pairs and live_ok and gone_ok); print('weights: gate', 'passed' if gate else 'FAILED', gate_pairs, live_ok, gone_ok, flush=True)
-if not gate: sys.exit(1)
-now = time.time(); store = json.load(open('data/repos.json')) if os.path.exists('data/repos.json') else {}
-st, lst = http('https://huggingface.co/api/models?sort=downloads&direction=-1&limit=1000')
-if st != 200 or not lst: print('weights: model list not read'); sys.exit(1)
-ids = [m['id'] for m in lst]; todo = list(dict.fromkeys(ids + [r for r in store if r not in ids])); unread = 0; passno = (max([r.get('passes', 0) for r in store.values()] or [0])) + 1
-for i, rid in enumerate(todo):
-    k, cur = read(rid); time.sleep(0.25)
-    rec = store.setdefault(rid, dict(first=now, files=None, passes=0, last_pair=None, changes=[], in_top=False))
-    rec['in_top'] = rid in ids
-    if k == 'UNREADABLE': unread += 1; rec['unreadable'] = rec.get('unreadable', 0) + 1; continue
-    prev = rec['files']
-    if prev is not None and prev != 'GONE':
-        rec['last_pair'] = pair(prev, cur)
-        if rec['last_pair'] in ('CHANGED', 'GONE'): rec['changes'].append(dict(t=now, kind=rec['last_pair'], before=prev, after=cur))
-    elif prev is None: rec['last_pair'] = None
-    rec['files'] = cur; rec['passes'] = passno; rec['last_read'] = now
-    if (i + 1) % 100 == 0: print('weights: read', i + 1, 'of', len(todo), flush=True); json.dump(store, open('data/repos.json.tmp', 'w')); os.replace('data/repos.json.tmp', 'data/repos.json')
-json.dump(store, open('data/repos.json.tmp', 'w')); os.replace('data/repos.json.tmp', 'data/repos.json')
+SUMMARY_ONLY = bool(os.environ.get('WEIGHTS_SUMMARY_ONLY'))   # 30 Oct: rebuild and publish the summary from the stored passes without reading Hugging Face
+if SUMMARY_ONLY:
+    now = time.time(); store = json.load(open('data/repos.json')); hist0 = [json.loads(l) for l in open('history.jsonl')]; passno = hist0[-1]['pass_number']; unread = hist0[-1]['unreadable']
+else:
+    a1 = read('HuggingFaceTB/SmolLM2-135M'); a2 = read('HuggingFaceTB/SmolLM2-135M'); live_ok = a1[0] == 'OK' and a1 == a2 and len(a1[1]) > 0
+    gone_ok = read('nonexistent-org/zzz-none-zzz')[0] == 'GONE'
+    gate = bool(gate_pairs and live_ok and gone_ok); print('weights: gate', 'passed' if gate else 'FAILED', gate_pairs, live_ok, gone_ok, flush=True)
+    if not gate: sys.exit(1)
+    now = time.time(); store = json.load(open('data/repos.json')) if os.path.exists('data/repos.json') else {}
+    st, lst = http('https://huggingface.co/api/models?sort=downloads&direction=-1&limit=1000')
+    if st != 200 or not lst: print('weights: model list not read'); sys.exit(1)
+    ids = [m['id'] for m in lst]; todo = list(dict.fromkeys(ids + [r for r in store if r not in ids])); unread = 0; passno = (max([r.get('passes', 0) for r in store.values()] or [0])) + 1
+    sys.path.insert(0, os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP   # 31 Oct: live progress bar on the page
+    for i, rid in enumerate(todo):
+        DP.report('weights', i, len(todo), rid, 'Pass %d' % passno)
+        k, cur = read(rid); time.sleep(0.25)
+        rec = store.setdefault(rid, dict(first=now, files=None, passes=0, last_pair=None, changes=[], in_top=False))
+        rec['in_top'] = rid in ids
+        if k == 'UNREADABLE': unread += 1; rec['unreadable'] = rec.get('unreadable', 0) + 1; continue
+        prev = rec['files']
+        if prev is not None and prev != 'GONE':
+            rec['last_pair'] = pair(prev, cur)
+            if rec['last_pair'] in ('CHANGED', 'GONE'): rec['changes'].append(dict(t=now, kind=rec['last_pair'], before=prev, after=cur))
+        elif prev is None: rec['last_pair'] = None
+        rec['files'] = cur; rec['passes'] = passno; rec['last_read'] = now
+        if (i + 1) % 100 == 0: print('weights: read', i + 1, 'of', len(todo), flush=True); json.dump(store, open('data/repos.json.tmp', 'w')); os.replace('data/repos.json.tmp', 'data/repos.json')
+    json.dump(store, open('data/repos.json.tmp', 'w')); os.replace('data/repos.json.tmp', 'data/repos.json')
+    DP.finish('weights', len(todo), 'Pass %d' % passno)
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
+def when(c): return time.strftime('%d %b %H:%M', time.gmtime(c['t']))
+# 30 Oct (site pass I-3): the headline below keeps the plan's rule (the latest pair of each model). A model that changed on one pass and was the same on the next leaves it, so every pass-to-pass change is also kept in evs and shown apart, with no outcome.
+evs = sorted([(i, c) for i, r in store.items() for c in r['changes'] if c['kind'] == 'CHANGED'], key=lambda x: x[1]['t'], reverse=True)
+evkey = lambda i, c: '%s|%s' % (i, when(c))
 cmp = [r for r in store.values() if r.get('last_pair') in ('SAME', 'CHANGED')]; ch = [r for r in cmp if r['last_pair'] == 'CHANGED']; gone = [i for i, r in store.items() if r.get('last_pair') == 'GONE']
 nc = [i for i, r in store.items() if r.get('files') in ([], None) and r.get('passes')]
 lo, hi = K.wilson(len(ch), len(cmp)) if cmp else (0, 1)
 oc = 'NOTHING_RETURNED' if not cmp else (K.ABOVE if lo > 0.01 else (K.CONSISTENT if hi < 0.01 else K.CANNOT_TELL))
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed', pass_number=passno, models=len(store), unreadable=unread, not_comparable=len(nc),
-           headline=dict(of=len(cmp), n=len(ch), share=round(len(ch) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, awaiting=len([i for i, r in store.items() if r.get('last_pair') == 'CHANGED' and i not in hc])),
+ever_n = len({i for i, c in evs}); ever_of = len({i for i, r in store.items() if r.get('last_pair') in ('SAME', 'CHANGED')} | {i for i, c in evs}); elo, ehi = K.wilson(ever_n, ever_of) if ever_of else (0, 1)
+hist = [json.loads(l) for l in open('history.jsonl')] if os.path.exists('history.jsonl') else []
+upd = hist[-1]['t'] if SUMMARY_ONLY else time.strftime('%d %b %H:%M', time.gmtime(now))
+this = dict(t=upd, pass_number=passno, compared=len(cmp), changed=len(ch), gone=len(gone), unreadable=unread)
+def diff(c):
+    b = {a: h for a, h in c['before']}; a_ = {a: h for a, h in c['after']}
+    return dict(files_before=len(b), files_after=len(a_), added=len(set(a_) - set(b)), removed=len(set(b) - set(a_)), replaced=len([x for x in set(a_) & set(b) if a_[x] != b[x]]))
+out = dict(updated=upd, gate='passed', pass_number=passno, models=len(store), retained=len([i for i, r in store.items() if not r.get('in_top')]), unreadable=unread, not_comparable=len(nc), awaiting=len([1 for i, c in evs if evkey(i, c) not in hc]),
+           headline=dict(of=len(cmp), n=len(ch), share=round(len(ch) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, awaiting=len([1 for i, c in evs if evkey(i, c) not in hc])),
            headline_n=len(ch), headline_of=len(cmp), gone=dict(models=len(gone), list=sorted(gone)[:50]),
-           changed_list=[dict(repo=i, note=hc[i]) for i, r in store.items() if r.get('last_pair') == 'CHANGED' and i in hc])
+           ever=dict(of=ever_of, n=ever_n, events=len(evs), share=round(ever_n / ever_of, 4) if ever_of else None, share_lo=round(elo, 4), share_hi=round(ehi, 4)),
+           passes=(hist if SUMMARY_ONLY else hist + [this])[::-1],
+           changed_list=[dict(repo=i, when=when(c), note=hc[evkey(i, c)], **diff(c)) for i, c in evs if evkey(i, c) in hc])
 json.dump(out, open('summary_weights.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'weights_live', '--path', os.path.join(H, 'summary_weights.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
-with open('history.jsonl', 'a') as f: f.write(json.dumps(dict(t=out['updated'], pass_number=passno, compared=len(cmp), changed=len(ch), gone=len(gone), unreadable=unread)) + '\n')
+if not SUMMARY_ONLY:
+    with open('history.jsonl', 'a') as f: f.write(json.dumps(this) + '\n')
 print('weights: pass', passno, len(store), 'models; compared', len(cmp), 'changed', len(ch), 'gone', len(gone), 'unreadable', unread, 'published' if pr.returncode == 0 else 'publish FAILED ' + (pr.stderr or pr.stdout)[-200:], flush=True)

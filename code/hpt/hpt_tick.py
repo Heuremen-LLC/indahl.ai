@@ -23,14 +23,20 @@ def http(url, rng=None, n=2):
         except urllib.error.HTTPError as e: return e.code, e.headers.get('Content-Type', '') if e.headers else '', b'', url
         except Exception: time.sleep(1)
     return None, '', b'', url
+MRF = re.compile(r'^[ \t]*mrf-url[ \t]*:[ \t]*(.+?)[ \t]*$', re.I | re.M)
+def mrf_of(t):
+    """30 Oct (site pass H-8): the value of mrf-url is the rest of the line, not the text up to the first space. Hospitals publish addresses with spaces in the file name (Alice Peck Day, Cheshire Medical Center), which a browser sends with the spaces percent-encoded."""
+    m = MRF.search(t.replace('\r', ''))
+    return urllib.parse.quote(m.group(1), safe=":/?#[]@!$&'()*+,;=%-._~") if m else None
+TXT = {}   # 30 Oct (site pass H-19): the cms-hpt.txt address that answered for each domain, kept so the full read rows can link it
 def step1(host):
     for h in (host, 'www.' + host):
         st, ct, body, fin = http('https://%s/cms-hpt.txt' % h)
         if st is None: continue
         if st in (404, 410): return 'DISAGREE', 'no file at the root (HTTP %d)' % st, None
         if st == 200:
-            t = body.decode('utf8', 'replace'); m = re.search(r'^\s*mrf-url\s*:\s*(\S+)', t, re.I | re.M)
-            return ('AGREE', None, m.group(1)) if m else ('DISAGREE', 'a file is served with no mrf-url line', None)
+            t = body.decode('utf8', 'replace'); m = mrf_of(t); TXT[host] = 'https://%s/cms-hpt.txt' % h
+            return ('AGREE', None, m) if m else ('DISAGREE', 'a file is served with no mrf-url line', None)
         return 'NOT_COMPARABLE', 'blocked or server error (HTTP %d)' % st, None
     return 'NOT_COMPARABLE', 'site could not be reached', None
 import zlib
@@ -56,7 +62,7 @@ def step3(body):
     t = body.decode('utf8', 'replace').lower(); return 'AGREE' if all(k in t for k in ('hospital_name', 'last_updated_on', 'version')) else 'DISAGREE'
 # gate
 gate = step3(b'hospital_name,last_updated_on,version,x') == 'AGREE' and step3(b'name,date,x') == 'DISAGREE' and step3(b'{"hospital_name":"a","last_updated_on":"b","version":"c"}') == 'NOT_COMPARABLE' and step3(b'PK\x03\x04abc') == 'NOT_COMPARABLE' and looks_html(b'<!doctype html><html>') and not looks_html(b'\xef\xbb\xbfhospital_name,x') and looks_html(zlib.compress(b'<html>', 9, ) if False else __import__('gzip').compress(b'<html>x')) and not looks_html(__import__('gzip').compress(b'hospital_name,x'))
-gate &= bool(re.search(r'^\s*mrf-url\s*:\s*(\S+)', 'location-name: A\nmrf-url: https://x/y.json', re.I | re.M)) and not re.search(r'^\s*mrf-url\s*:\s*(\S+)', 'location-name: A', re.I | re.M)
+gate &= mrf_of('location-name: A\nmrf-url: https://x/y.json') == 'https://x/y.json' and mrf_of('location-name: A') is None and mrf_of('mrf-url: https://x/a b/c d.csv\r\nother: 1') == 'https://x/a%20b/c%20d.csv'   # 30 Oct: the whole line, spaces encoded
 if not SUMMARY_ONLY: gate &= step1('indahl.ai')[0] == 'DISAGREE'
 print('hpt: gate', 'passed' if gate else 'FAILED', flush=True)
 store = json.load(open('data/domains.json')) if os.path.exists('data/domains.json') else {}; now = time.time()
@@ -83,11 +89,13 @@ if gate and not SUMMARY_ONLY:
         else: doms[host].add(r['h']['value'].rsplit('/', 1)[1])
     for h in shared - set(doms): doms[h] = set()
     store = {}
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP
     for i, (host, hs) in enumerate(sorted(doms.items())):
+        DP.report('hpt', i, len(doms), host)   # 31 Oct: live progress bar on the page
         rec = dict(read=now, domain=host, hospitals=len(hs))
         if not hs and host in shared: rec.update(s1='NOT_COMPARABLE', why1='website is a page on a shared site')
         else:
-            c, why, mrf = step1(host); time.sleep(0.4); rec.update(s1=c, why1=why, mrf=mrf)
+            c, why, mrf = step1(host); time.sleep(0.4); rec.update(s1=c, why1=why, mrf=mrf, txt=TXT.get(host))
             if c == 'AGREE':
                 c2, why2, body, isz = step2(mrf); time.sleep(0.4); rec.update(s2=c2, why2=why2)
                 if c2 == 'AGREE': rec['s3'] = 'NOT_COMPARABLE' if isz else step3(body); rec['why3'] = 'zip file' if isz else None
@@ -98,11 +106,11 @@ hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_chec
 rs = list(store.values()); random.Random(7).shuffle(rs := sorted(rs, key=lambda r: r['domain'])); sample1 = {r['domain'] for r in [r for r in rs if r['s1'] == 'DISAGREE'][:10]}
 def grp(key):
     cnt = C.Counter(r.get(key, 'NOT_RUN') for r in store.values()); comp = cnt['AGREE'] + cnt['DISAGREE']; lo, hi = K.wilson(cnt['DISAGREE'], comp)
-    oc = K.CANNOT_TELL if (comp < 30 or not gate or key == 's1') else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))   # addendum 1: step 1 stays CANNOT_TELL, the hand check found non-subjects in the population
+    oc = K.CANNOT_TELL if (comp < 30 or not gate or key == 's1') else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))   # addendum 1: step 1 stays CANNOT_TELL, the full read found non-subjects in the population
     return cnt, dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc)
 c1, g1 = grp('s1'); c2, g2 = grp('s2'); c3, g3 = grp('s3')
 why = C.Counter(r.get('why1') for r in store.values() if r['s1'] == 'NOT_COMPARABLE')
-shown = [dict(domain=r['domain'], step='1 no file at the root' if k == 's1' else ('2 link' if k == 's2' else '3 template header'), found=r.get('why1') if k == 's1' else (r.get('why2') or 'header names missing'), reason=hc.get(k[1] + '|' + r['domain'])) for k in ('s1', 's2', 's3') for r in store.values() if r.get(k) == 'DISAGREE' and (k[1] + '|' + r['domain']) in hc]
+shown = [dict(domain=r['domain'], step='1 no file at the root' if k == 's1' else ('2 link' if k == 's2' else '3 template header'), found=r.get('why1') if k == 's1' else (r.get('why2') or 'header names missing'), file=r.get('mrf'), txt=r.get('txt'), reason=hc.get(k[1] + '|' + r['domain'])) for k in ('s1', 's2', 's3') for r in store.values() if r.get(k) == 'DISAGREE' and (k[1] + '|' + r['domain']) in hc]
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', domains=len(store), hospitals=sum(r['hospitals'] for r in store.values()), listdate=open('data/listdate.txt').read() if os.path.exists('data/listdate.txt') else '',
            comparison={'1 A cms-hpt.txt at the root of the domain': g1, '2 The file it links resolves to data': g2, '3 The file starts with the template header': g3},
            classes={'1 A cms-hpt.txt at the root of the domain': {c: c1[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, '2 The file it links resolves to data': {c: c2[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, '3 The file starts with the template header': {c: c3[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}},
