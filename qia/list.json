@@ -13274,6 +13274,29 @@
    "anchor": "arxiv-2606.15489"
   },
   {
+   "study": "Order from chaos with adaptive circuits on quantum hardware",
+   "link": "https://arxiv.org/abs/2509.18259v1",
+   "version": "v1 (Nature Physics 2026, Supplementary Information read)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F6"
+   ],
+   "calibrated": true,
+   "anchor": "arxiv-2509.18259",
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no circuits or counts released (data available on request)"
+    ],
+    "F6": [
+     "main text 10,000 shots and L\u00b2/2 steps, Supplement II 1,000 shots and L\u00b2 steps",
+     "plotted circuit durations below what the printed protocol and gate times allow"
+    ]
+   }
+  },
+  {
    "study": "Orders of magnitude increased accuracy for quantum many-body problems on quantum computers via an exact transcorrelated method",
    "link": "https://doi.org/10.1103/physrevresearch.5.023174",
    "version": "published version",
@@ -22006,7 +22029,7 @@
   {
    "study": "The Spectral Bottleneck Constraint: A No-Go Theorem for Aggregate Asymptotic Rate Laws, Validated on IBM Quantum Hardware",
    "link": "https://doi.org/10.5281/zenodo.20367012",
-   "version": "Zenodo record 20367012 as listed 2026-10-24 (publication_date 2026-05-24)",
+   "version": "Zenodo record 20367012, re-read 2026-11-01 (publication_date 2026-05-24)",
    "indexed": "2026-10-24",
    "read": "Full text",
    "codes": [
@@ -22014,8 +22037,7 @@
    ],
    "basis": {
     "F4": [
-     "run dates",
-     "no job ids or run data in text"
+     "raw tomographic counts named in the paper are not in the linked repository (checked 2026-11-01)"
     ]
    },
    "calibrated": false,
