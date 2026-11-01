@@ -46,6 +46,64 @@
    "anchor": "doi-10-5281-zenodo-18454719"
   },
   {
+   "study": "\u0424\u041a\u0413\u041f 4.0 \u041c\u0430\u0441\u0448\u0442\u0430\u0431\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u042d\u043d\u0442\u0440\u043e\u043f\u0438\u0438 \u0420\u0435\u043d\u044c\u0438 \u0432 \u0413\u0440\u0430\u0444\u043e\u0432\u044b\u0445 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f\u0445",
+   "link": "https://doi.org/10.5281/zenodo.20705398",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "swap-test result corrected using a reference circuit built from the same setup (all CZ removed)"
+    ],
+    "F4": [
+     "run dates not printed: only the document date 14 June 2026 appears; searched for dates of the batches"
+    ],
+    "F6": [
+     "text says 1D deviation from theory under 2 percent, Table B1 lists deviations of under 9 percent and under 10 percent for batches 1 and 2"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20705398"
+  },
+  {
+   "study": "\u0424\u0440\u0430\u043a\u0442\u0430\u043b\u044c\u043d\u0430\u044f \u041a\u0432\u0430\u043d\u0442\u043e\u0432\u0430\u044f \u0413\u043e\u043b\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u041f\u0430\u0440\u0430\u0434\u0438\u0433\u043c\u0430 (\u0424\u041a\u0413\u041f) 5.0",
+   "link": "https://doi.org/10.5281/zenodo.20798804",
+   "version": "Zenodo record 20798804 as read 2026-11-01 (publication_date 2026-06-22)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "each SWAP test is corrected with a paired reference circuit run on the same qubits"
+    ],
+    "F2": [
+     "headline deficit is the maximum over the SWAP/REF pairs (7 of 34 below 0.5)"
+    ],
+    "F3": [
+     "deficit for whole-number dimensions stated as compatible with zero, no interval"
+    ],
+    "F4": [
+     "paper says the full circuit set for batches 1 to 11 is in a Zenodo repository whose link is to be added; the record checked holds only the paper (PDF and docx), no circuits or counts"
+    ],
+    "F6": [
+     "text says the deficit is near zero for dimensions 1, 2 and 3, while table A.2 lists a 1D N=8 row with P(0) 0.364 and deficit +0.136"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20798804"
+  },
+  {
    "study": "[[832, 10, 4]] Genus-5 CSS Code and IBM Heron (ibm_fez) Systematic Error Remediation Report (Partial Hardware Calibration)",
    "link": "https://doi.org/10.5281/zenodo.22991801",
    "version": "Zenodo record 22991801 as listed 2026-10-24 (publication_date 2026-09-27)",
@@ -1932,6 +1990,23 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2501.02222"
+  },
+  {
+   "study": "A Unified Field Theory: Black Hole Dynamics, Quantum Coherence, and Cosmic Technology Through Superfluid and Quantum Simulations",
+   "link": "https://doi.org/10.5281/zenodo.15050934",
+   "version": "Zenodo record 15050934 as read 2026-11-01 (publication_date 2025-03-19)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-15050934"
   },
   {
    "study": "A unified framework for calibration, decoding and resource-aware processing in hybrid quantum\u2013classical machine learning",
@@ -3843,6 +3918,23 @@
    "anchor": "arxiv-2608.26569"
   },
   {
+   "study": "Anomalous Curve-Shape Deviation in Singlet Bell Measurements on IBM Superconducting Qubits",
+   "link": "https://doi.org/10.5281/zenodo.18949734",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18949735); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "thermal-relaxation noise model built from published ibm_marrakesh T1/T2 and gate times used as the reference for the T2 explanation"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18949734"
+  },
+  {
    "study": "Ans\u00e4tze for Noisy Variational Quantum Eigensolvers",
    "link": "https://arxiv.org/abs/2212.04323v1",
    "version": "v1",
@@ -3915,6 +4007,27 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-48713-10336-47140"
+  },
+  {
+   "study": "apmannino-design/qsd-phase-bounded-transport: QSD Framework v12 - May 2026 Manuscript + Code",
+   "link": "https://doi.org/10.5281/zenodo.20353741",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20446800); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2"
+   ],
+   "basis": {
+    "F1": [
+     "gain G is measured against a baseline probability taken from the same setup"
+    ],
+    "F2": [
+     "best case among depths and backends: peak gain over all rows"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20353741"
   },
   {
    "study": "Application of quantum computing to a linear non-Gaussian acyclic model for novel medical knowledge discovery",
@@ -4179,6 +4292,17 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2309.08972"
+  },
+  {
+   "study": "ARK-441: SPAM-resolved quantum hardware characterization of a verify-then-execute (VBE) authorization boundary - PASS verdict",
+   "link": "https://doi.org/10.5281/zenodo.21398675",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.21398676); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21398675"
   },
   {
    "study": "ARK-442 \u2014 ExecutionProof Authorization Boundary Experiment \u2014 PASS",
@@ -5846,6 +5970,25 @@
    "anchor": "arxiv-2504.15141"
   },
   {
+   "study": "Breaking the Bottleneck in Drug Screening... First Development of a Quantum Algorithm for Protein-Ligand Docking Identification",
+   "link": "https://doi.org/10.5281/zenodo.21290853",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.21290854); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "data availability statement says no datasets were generated or analysed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21290853"
+  },
+  {
    "study": "Bridging Theory and Practice in Quantum Game Theory: Optimized Implementation of the Battle of the Sexes with Error Mitigation on NISQ Hardware",
    "link": "https://arxiv.org/abs/2508.09050v3",
    "version": "v3",
@@ -5883,6 +6026,27 @@
    },
    "calibrated": false,
    "anchor": "doi-10-5281-zenodo-23064185"
+  },
+  {
+   "study": "BURIDAN: the ambiguous picture, decided by a 144-qubit collective with its controller in the loop. A registered experiment",
+   "link": "https://doi.org/10.5281/zenodo.23785685",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3"
+   ],
+   "basis": {
+    "F1": [
+     "device results compared with a model replica of the same chip law run on simulated sessions"
+    ],
+    "F3": [
+     "pass or fail on a count of 13 trials, no interval"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23785685"
   },
   {
    "study": "BVQC: A Backdoor-style Watermarking Scheme for Variational Quantum Circuits",
@@ -6557,6 +6721,27 @@
    "anchor": "arxiv-2406.16018"
   },
   {
+   "study": "Characterizing Quantum Teleportation as a Noisy Channel via Quantum Process Tomography on IBM Hardware",
+   "link": "https://doi.org/10.5281/zenodo.17981068",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.17981069); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F4": [
+     "no data link printed"
+    ],
+    "F5": [
+     "the same ibm_fez Choi eigenvalue list is printed with different values in Eq. 11 (-0.004 and 1.240) and Eq. 15 (-0.0048 and 1.224)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17981068"
+  },
+  {
    "study": "Charging efficiency bursts in a quantum battery with cyclic indefinite causal order",
    "link": "https://arxiv.org/abs/2603.22761v1",
    "version": "v1",
@@ -7128,6 +7313,17 @@
    "anchor": "zenodo-23306777"
   },
   {
+   "study": "Code and IBM hardware data for: False witnesses for small Shor experiments: a coherent modular multiplication modulo 21",
+   "link": "https://doi.org/10.5281/zenodo.23731575",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23731575"
+  },
+  {
    "study": "Code-space recovery for sample-based quantum diagonalization beyond native symmetry constraints",
    "link": "https://arxiv.org/abs/2607.10227v2",
    "version": "v2",
@@ -7207,6 +7403,35 @@
    },
    "calibrated": false,
    "anchor": "zenodo-17760530"
+  },
+  {
+   "study": "Coherent Ordering Dynamics (COD): A Unified Attractor Framework for Measurement Distortion, Gravity, and Gauge Structure",
+   "link": "https://doi.org/10.5281/zenodo.19154006",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.19190902); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware signal compared with a noise model built from the device's calibrated error figures"
+    ],
+    "F2": [
+     "runs 1 and 3 are shown as detections; runs 2 and 4 do not appear in the table"
+    ],
+    "F3": [
+     "Born-rule result stated as holding, no interval"
+    ],
+    "F4": [
+     "no counts released: the record holds the document PDF only, which prints fitted A and sigma per run and job IDs"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19154006"
   },
   {
    "study": "Coherent Quantum Evaluation of Collider Amplitudes for Effective Field Theory Constraints",
@@ -7937,6 +8162,31 @@
    "anchor": "arxiv-2105.06419"
   },
   {
+   "study": "Conexi\u00f3n de dos instancias de Inteligencia Artificial mediante entrelazamiento cu\u00e1ntico usando hardware IBM Quantum",
+   "link": "https://doi.org/10.5281/zenodo.19257090",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "headline is a peak value and a theoretical bound, no table of per-run S values in the files"
+    ],
+    "F4": [
+     "run dates not printed: no date of the hardware phase in the text files (searched all .md files for dates and job identifiers; the CSV timestamps are 2026-02-18 with status IDLE)"
+    ],
+    "F6": [
+     "text says the CSV records each IBM Job ID, the deposited CSV header has no job id column (columns: timestamp, cycle, pair_id, side, basis_angle, quantum_bit, chsh_partial, concurrence, entanglement_phi, phi, coherence, emotion, stimulus, decision_type, decision_text, cpu_usage, memory_usage, qpu_status)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19257090"
+  },
+  {
    "study": "Configuration dependent crosstalk amplification in superconducting quantum processors",
    "link": "https://doi.org/10.1038/s41598-026-70466-w",
    "version": "published version",
@@ -8366,6 +8616,28 @@
    "anchor": "arxiv-2211.16114"
   },
   {
+   "study": "Correlated Error Accumulation in Quantum Circuits: A Mathematical Foundation for Scaling-Exponent Diagnostics",
+   "link": "https://doi.org/10.5281/zenodo.21866937",
+   "version": "Zenodo record 21866937 as read 2026-11-01 (publication_date 2026-08-10)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "observed exponent compared with a prediction built from the same device and session (dynamical-decoupling spectroscopy)"
+    ],
+    "F6": [
+     "text puts ibm_fez and ibm_kingston below 1.569 while Table 5 lists ibm_kingston 1.730 and ibm_fez 1.570 as STRUCTURED",
+     "text says the Table 6 curve is monotone decreasing; Table 6 lists 1.202 at n_max 10 then 1.292 at 15 (footnote 1)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-21866937"
+  },
+  {
    "study": "Correlated Purification for Restoring N-Representability in Quantum Simulation",
    "link": "https://arxiv.org/abs/2511.10789v1",
    "version": "v1",
@@ -8508,6 +8780,24 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-access-2026-3727788"
+  },
+  {
+   "study": "cpsi-multiscale-coherence: v2.0.0 - Quantum bridge: finite-size scaling, IBM Quantum N=4-156, Trotter dynamics",
+   "link": "https://doi.org/10.5281/zenodo.19633804",
+   "version": "Zenodo record 19633804 as read 2026-11-01 (publication_date 2026-04-17)",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "linked record checked: it holds scripts, a README, a data-source list and one PDF on other data sets, with no counts, job IDs, circuits output or result files for the IBM runs"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19633804"
   },
   {
    "study": "Critical Reconstruction Cost near Exceptional Points",
@@ -8855,6 +9145,17 @@
    "anchor": "zenodo-21926912"
   },
   {
+   "study": "Data and code for \"Geometric heat pumping on a quantum processor\"",
+   "link": "https://doi.org/10.5281/zenodo.23339850",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.23339851); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23339850"
+  },
+  {
    "study": "Data and code for: Benchmarking quantum optimization for proton energy layer selection and sequencing in IMPT and proton arc therapy",
    "link": "https://doi.org/10.5281/zenodo.23678015",
    "version": "open copy read (https://doi.org/10.5281/zenodo.23781217); publisher page not read",
@@ -8874,6 +9175,17 @@
    },
    "calibrated": false,
    "anchor": "doi-10-5281-zenodo-23678015"
+  },
+  {
+   "study": "Data and code for: High-K structure and driven K-mixing of 66Fe on Heron-r2 qubits",
+   "link": "https://doi.org/10.5281/zenodo.21269974",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21269974"
   },
   {
    "study": "Data and code for: Quantum processors turn Dirac's monopole argument into testable laws of dimension",
@@ -8907,6 +9219,17 @@
    "basis": {},
    "calibrated": false,
    "anchor": "zenodo-22697428"
+  },
+  {
+   "study": "Data and code for: When the reference is not the signal. State-dependent damping and a pre-flight test for error mitigation of collective observables",
+   "link": "https://doi.org/10.5281/zenodo.22953019",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-22953019"
   },
   {
    "study": "Data and simulation code for \"DRAG-Compatible Leakage Suppression in Landau-Zener Control via Isoprobability Twins\"",
@@ -9068,6 +9391,34 @@
    "anchor": "doi-10-5281-zenodo-18622277"
   },
   {
+   "study": "Dati grezzi e report: campagna QPU 26/08/2026 e SCISSIONE 27/08/2026 (PASM, N47Lab)",
+   "link": "https://doi.org/10.5281/zenodo.22133257",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.22134568); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "decision thresholds are the 99th percentile of a null simulated with a backend noise model"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-22133257"
+  },
+  {
+   "study": "davidalabintei/quantum-bayesian-networks-pipeline: v1.0.0 - Manuscript submission release",
+   "link": "https://doi.org/10.5281/zenodo.23343298",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.23343299); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23343298"
+  },
+  {
    "study": "DBCI on IBM Quantum: Real-Hardware Observation of Dimensional-Collapse Saturation Across Devices",
    "link": "https://doi.org/10.5281/zenodo.17584026",
    "version": "open copy read (https://doi.org/10.5281/zenodo.17584027); publisher page not read",
@@ -9077,6 +9428,35 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-5281-zenodo-17584026"
+  },
+  {
+   "study": "Death-Theory-Consciousness-Entanglement",
+   "link": "https://doi.org/10.5281/zenodo.18157444",
+   "version": "Zenodo record 18157444 as read 2026-11-01 (publication_date 2026-01-05)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F3": [
+     "two single readings stated as confirming a prediction, no interval"
+    ],
+    "F4": [
+     "linked record checked: it holds scripts and result text files with two derived values per job (P(0) and R), no measurement counts"
+    ],
+    "F5": [
+     "printed value does not follow from the printed arithmetic: 67.4 x 0.732 x 0.846 to the power -0.4 is about 52.8"
+    ],
+    "F6": [
+     "the HTML lists a measured P(0) of 0.749800 for job d5eqlsfsm22c73brmb20, while the run log for that job says the distribution could not be extracted"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-18157444"
   },
   {
    "study": "Decision Kernels for Quantum Error Mitigation: Why Accuracy Gains Need Not Improve Downstream Decisions",
@@ -9557,6 +9937,23 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-access-2023-3322723"
+  },
+  {
+   "study": "derekhone/uip-phase1-testbeds: ARK-441 v1.0 - PASS: SPAM-resolved VBE authorization boundary characterization",
+   "link": "https://doi.org/10.5281/zenodo.21362398",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.21398731); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "leakage is corrected by an idle baseline taken in the same run on the same device"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21362398"
   },
   {
    "study": "Derivative Pricing and Credit Risk in a Regime Switching Economy Using Quantum Amplitude Estimation",
@@ -10608,6 +11005,31 @@
    "anchor": "arxiv-2505.22629"
   },
   {
+   "study": "Discovery of 168.5x Quantum State Suppression in IBM Hardware: The Dion\u00edsio Effect and K-Index Correlation",
+   "link": "https://doi.org/10.5281/zenodo.15620316",
+   "version": "Zenodo record 15620316 as read 2026-11-01 (publication_date 2025-06-08)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "headline suppression is the maximum value over the 242 measurements"
+    ],
+    "F4": [
+     "linked record checked: the data JSON files hold derived fidelity and suppression values per measurement, with no measurement counts or circuits, although the authenticity certificate refers to raw counts summing to 1024"
+    ],
+    "F6": [
+     "description gives 16.8 standard deviations while discovery_proof.json in the same record gives 23 sigma"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-15620316"
+  },
+  {
    "study": "Discrete and Continuous Wigner Functions in Open Quantum Systems: Non-Markovian and Thermodynamic Effects",
    "link": "https://arxiv.org/abs/2605.29717v1",
    "version": "v1",
@@ -10854,6 +11276,56 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2411.16530"
+  },
+  {
+   "study": "Distributional Robustness of Parameterized Quantum Circuits: A Wasserstein-2 Study on NISQ Hardware",
+   "link": "https://doi.org/10.5281/zenodo.19864029",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "headline robustness gain is the best of three angle rows"
+    ],
+    "F3": [
+     "hypothesis stated as rejected with no interval; the paper says intervals are not reliable at R = 2"
+    ],
+    "F4": [
+     "paper says full job ids and raw counts are in the Zenodo dataset, the record holds only the .tex and an unrelated T1 script, no counts or full job ids; the Zenodo link in the source is a placeholder"
+    ],
+    "F5": [
+     "112x enhancement stated over a uniform baseline, while P = 0.0398 against a uniform 1/2^27 is about 5.3 million times; the paper does not show the arithmetic giving 112"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19864029"
+  },
+  {
+   "study": "Diurnal Noise in Superconducting Quantum Processors is Deterministic and Correctable Using Solar-Angular Position",
+   "link": "https://doi.org/10.5281/zenodo.17860076",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.17860077); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline reduction stated at the peak hours"
+    ],
+    "F4": [
+     "run dates not printed for the VQE hardware runs"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17860076"
   },
   {
    "study": "Divide and Conquer for Combinatorial Optimization and Distributed Quantum Computation",
@@ -11452,6 +11924,23 @@
    "anchor": "arxiv-2504.17923"
   },
   {
+   "study": "earldecker-blip/quantum-mertens-spectroscopy: Mertens Spectroscopy v1.0 - IBM Hardware Paper",
+   "link": "https://doi.org/10.5281/zenodo.20562835",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20562836); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20562835"
+  },
+  {
    "study": "Early IBM quantum computers: architectural analysis and performance benchmarks",
    "link": "https://doi.org/10.1007/s11227-026-08386-9",
    "version": "published version",
@@ -11501,6 +11990,35 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-21203-rs-3-rs-6461596-v1"
+  },
+  {
+   "study": "EEDT: Entanglement-Enhanced Dynamical Tracking for ZZ-Coupled Superconducting Qubits",
+   "link": "https://doi.org/10.5281/zenodo.19029431",
+   "version": "Zenodo record 19029431 as read 2026-11-01 (publication_date 2026-03-15)",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "model with amplitude and offset fitted to the same runs is compared with the observed gains (29.2 and 28.8 against 37.0 and 34.0 x 10^-3)"
+    ],
+    "F2": [
+     "combined 8.5 sigma is over the 8 conditions that passed the Holm test; the two that did not (z = 1.45 and -2.16) are left out"
+    ],
+    "F3": [
+     "N-independence of the optimum stated as holding within experimental resolution with no interval; multi-N data exist at only two storage times (30 and 50 us)"
+    ],
+    "F5": [
+     "follow-up session: tau* = T2/(omega_ZZ T2 + 1) gives 40 us, which is phi = omega_ZZ tau = 0.70 at 2.778 kHz, not 0.882; observed peak 50 us is 25 percent above 40 us while the abstract says within 5 percent"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19029431"
   },
   {
    "study": "EEDT: Measurement-Gated Quantum Error Correction for NISQ Calibration Drift",
@@ -12201,6 +12719,27 @@
    "anchor": "arxiv-2602.09047"
   },
   {
+   "study": "Empirical Evidence of Topology-Matched Cyclic Symmetry Signatures on Native Heron Heavy-Hex Architectures",
+   "link": "https://doi.org/10.5281/zenodo.19634494",
+   "version": "Zenodo record 19634494 as read 2026-11-01 (publication_date 2026-04-17)",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "depth comparison stated without an interval; Table 3 prints single energies per run with no standard errors"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19634494"
+  },
+  {
    "study": "Empirical Falsification of Pairwise-Only Explanations for an Engineered Parity Benchmark on a 133-Qubit Superconducting Processor",
    "link": "https://arxiv.org/abs/2603.20542v1",
    "version": "v1",
@@ -12235,6 +12774,23 @@
    "anchor": "zenodo-21858980"
   },
   {
+   "study": "Empirical Investigation of Gravitational Wave Encoding in Quantum Circuit Geometry",
+   "link": "https://doi.org/10.5281/zenodo.20534017",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20536085); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20534017"
+  },
+  {
    "study": "Empirical Learning of Dynamical Decoupling on Quantum Processors",
    "link": "https://arxiv.org/abs/2403.02294v2",
    "version": "v2",
@@ -12259,6 +12815,17 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2403.02294"
+  },
+  {
+   "study": "Empirical Mapping of Decoherence Thresholds in Heron-Class Processors: A Scalability Analysis of the PSI Model and P7/Omega Protocols",
+   "link": "https://doi.org/10.5281/zenodo.19789831",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Abstract only",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19789831"
   },
   {
    "study": "Empirical Noise-Adaptive Circuit-Depth Thresholds on IBM Quantum Heron-Class Devices",
@@ -12353,6 +12920,33 @@
    "anchor": "doi-10-62292-njp-v35i3-2026-565"
   },
   {
+   "study": "Empirical Validation of the Ait Zaouit Law v3.1: Achieving 78.83% Fidelity at Depth 100 on IBM Heron Quantum Processors",
+   "link": "https://doi.org/10.5281/zenodo.18164730",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline is one depth chosen as the milestone, other depths and the per-backend values are not tabulated"
+    ],
+    "F3": [
+     "outperformance of the standard compiler stated without an interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "full specifications only under a non-disclosure agreement, no circuits or counts in the record"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18164730"
+  },
+  {
    "study": "Empirical Validation of the Informational Shielding Constant \u03bb = 0.181: A Unified Framework from Quantum Information Dynamics to Cosmological Emergence.",
    "link": "https://doi.org/10.5281/zenodo.20102584",
    "version": "Zenodo record 20102584 as listed 2026-10-24 (publication_date 2026-05-10)",
@@ -12374,6 +12968,24 @@
    },
    "calibrated": false,
    "anchor": "zenodo-20102584"
+  },
+  {
+   "study": "Empirical_Mapping_of_Decoherence_Thresholds_on_Heron_Architecture_PSI_Model_2026",
+   "link": "https://doi.org/10.5281/zenodo.19778335",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed: only the document dates (April 25 and 26, 2026) appear; searched the report for run dates",
+     "job ids and raw histograms stated as archived but this record holds only PDFs (8 PDFs), no counts or job ids"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19778335"
   },
   {
    "study": "Emulating a traditional CPU for execution on a quantum computer",
@@ -12977,6 +13589,31 @@
    "anchor": "arxiv-2310.04708"
   },
   {
+   "study": "ENKI-420/aeterna-porta-v2: # Quantum Zeno Stabilization of Traversable Wormhole Geometries",
+   "link": "https://doi.org/10.5281/zenodo.18236100",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18236101); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "headline 127x efficiency is a target/projection listed as 'Expected Results' with p-values, while the one reported run gives Xi = 0.858"
+    ],
+    "F4": [
+     "no circuits or counts released: record holds scripts and documents only; counts and evidence pack stay on the author's machine paths; the v2.0 job is given as an id and summary metrics"
+    ],
+    "F5": [
+     "Xi = (Lambda x Phi) / Gamma with the baseline row of the CCCE table (0.84, 0.78, 0.092) gives 7.1, printed as 3.6; second quote: '| **\u039e (Efficiency)** | 3.6 | 127.4 | > 1.0 |'"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18236100"
+  },
+  {
    "study": "Ensemble Engineering to Overcome Destructive Cancellation in Quantum Measurements",
    "link": "https://arxiv.org/abs/2605.03729v4",
    "version": "v4",
@@ -13410,6 +14047,23 @@
    "basis": {},
    "calibrated": false,
    "anchor": "zenodo-23441661"
+  },
+  {
+   "study": "Error Mitigation Only Moves a Ridge: code and data",
+   "link": "https://doi.org/10.5281/zenodo.23441660",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F6"
+   ],
+   "basis": {
+    "F6": [
+     "README limitations line says no hardware runs; hardware results file reports a real QPU run on ibm_fez"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23441660"
   },
   {
    "study": "Error mitigation strategies for simple quantum systems",
@@ -14030,6 +14684,28 @@
    "anchor": "arxiv-2409.10739"
   },
   {
+   "study": "Evolving Hardware-Efficient Grover Circuits via Grammatical Evolution",
+   "link": "https://doi.org/10.5281/zenodo.15543480",
+   "version": "Zenodo record 15543480 as read 2026-11-01 (publication_date 2025-05-28)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline is the best evolved circuit per target state, picked by minimised fitness"
+    ],
+    "F4": [
+     "run dates not printed (searched for dates and years; only citations and a Qiskit access date of May 2025 appear)",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-15543480"
+  },
+  {
    "study": "ewl-nash-certification: certifying quantum Nash equilibria of the EWL game under hardware noise (code, data and IBM Quantum hardware results)",
    "link": "https://doi.org/10.5281/zenodo.23448417",
    "version": "",
@@ -14191,6 +14867,17 @@
    "anchor": "arxiv-2610.38885"
   },
   {
+   "study": "Execution trace and circuits of 62 quantum sampling workloads on a superconducting quantum backend",
+   "link": "https://doi.org/10.5281/zenodo.23225340",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.23225341); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23225340"
+  },
+  {
    "study": "Execution-transcript privacy for fault-tolerant surface-code memories",
    "link": "https://arxiv.org/abs/2609.09334v1",
    "version": "v1",
@@ -14235,6 +14922,23 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2509.03617"
+  },
+  {
+   "study": "Expected query cost of Grover search under noise: code and data",
+   "link": "https://doi.org/10.5281/zenodo.23654414",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.23752177); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results set beside fake-backend noise models from stated calibration snapshots"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23654414"
   },
   {
    "study": "Expedited Noise Spectroscopy of Transmon Qubits",
@@ -14860,6 +15564,27 @@
    "anchor": "doi-10-5281-zenodo-17883260"
   },
   {
+   "study": "Experimental Validation of Quantum Information Hierarchy: 99.9% Agreement Dataset",
+   "link": "https://doi.org/10.5281/zenodo.15689786",
+   "version": "Zenodo record 15689786 as read 2026-11-01 (publication_date 2025-06-03)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F4": [
+     "no circuits or counts released: DATA_DESCRIPTION lists a sherbrooke hardware file that is not in the package; the data folder holds results JSON, report and two CSVs"
+    ],
+    "F6": [
+     "README and abstract give p<0.001 for the hardware result; supplementary gives p>0.9 for the same measurement"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-15689786"
+  },
+  {
    "study": "Experimental validation of the Kibble-Zurek Mechanism on a Digital Quantum Computer",
    "link": "https://arxiv.org/abs/2208.01050v3",
    "version": "v3",
@@ -15461,6 +16186,28 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2503.01119"
+  },
+  {
+   "study": "False witnesses for small Shor experiments: a coherent modular multiplication modulo 21",
+   "link": "https://doi.org/10.5281/zenodo.23731577",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1",
+    "F2"
+   ],
+   "basis": {
+    "F1": [
+     "measured signal compared with a noisy simulation using the day's calibration; device delivered less signal than predicted",
+     "measured statistic compared with the stochastic-model prediction"
+    ],
+    "F2": [
+     "headline combines only the two runs with dynamical decoupling, a combination not pre-registered; the diagnostic run without it gave a negative statistic"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23731577"
   },
   {
    "study": "Fast gradient-free optimization of excitations in variational quantum eigensolvers",
@@ -16101,6 +16848,27 @@
    "anchor": "arxiv-2408.10079"
   },
   {
+   "study": "Fluid-Dynamic Stability Filtering for Zero-Noise Extrapolation in NISQ-Era Quantum Circuits",
+   "link": "https://doi.org/10.5281/zenodo.19106685",
+   "version": "Zenodo record 19106685 as read 2026-11-01 (publication_date 2026-03-19)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results are read against a threshold set from the paper's own depolarising-noise simulation"
+    ],
+    "F2": [
+     "hardware headline is the maximum observed value over the 24 conditions"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19106685"
+  },
+  {
    "study": "Folding-Free Zero-Noise Extrapolation by Layout-induced Noise Diversity",
    "link": "https://arxiv.org/abs/2603.13949v1",
    "version": "v1",
@@ -16412,6 +17180,24 @@
    },
    "calibrated": false,
    "anchor": "zenodo-20961679"
+  },
+  {
+   "study": "From IBM Quantum Circuits to Strong Lensing Simulations: Early Evidence for Informational Perturbations",
+   "link": "https://doi.org/10.5281/zenodo.20546211",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed: only \"June 2026\" as the paper date",
+     "paper says all materials are in this record, the record holds one PNG figure and the .docx, no counts, job results or scripts"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20546211"
   },
   {
    "study": "From IceCube to IT-Sphere: A Hybrid Quantum\u2013Classical GNN for Banking IT Root Cause Analysis",
@@ -17387,6 +18173,23 @@
    "anchor": "arxiv-2504.14459"
   },
   {
+   "study": "H-800: Quantum Integration Stress Test - Full Framework Validation on IBM Quantum Hardware",
+   "link": "https://doi.org/10.5281/zenodo.20417353",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20417354); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "a noise model built from stated calibration figures is run alongside the hardware phase"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20417353"
+  },
+  {
    "study": "H-DES: a Quantum-Classical Hybrid Differential Equation Solver",
    "link": "https://arxiv.org/abs/2410.01130v2",
    "version": "v2",
@@ -17786,6 +18589,23 @@
    "anchor": "doi-10-21203-rs-3-rs-8475008-v1"
   },
   {
+   "study": "Hardware Recovery of the Analytic Pauli-Transfer-Matrix Structure of One-Axis-Twisting Boundary Channels",
+   "link": "https://doi.org/10.5281/zenodo.21878783",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.21988237); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "prediction and significance set from a noise-model dry run"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21878783"
+  },
+  {
    "study": "Hardware Robustness of Sample-Based Quantum Diagonalization",
    "link": "https://arxiv.org/abs/2607.18196v1",
    "version": "v1",
@@ -18139,6 +18959,23 @@
    "anchor": "arxiv-2604.26175"
   },
   {
+   "study": "hardware-qml-audit: a null-circuit protocol for testing hardware quantum machine learning claims (code)",
+   "link": "https://doi.org/10.5281/zenodo.23791921",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed: no date of the hardware sessions in the record text or notebook outputs (searched for dates; only plan creation 19 Oct 2026 and release 27 Oct 2026 appear)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23791921"
+  },
+  {
    "study": "Hardware-tailored diagonalization circuits",
    "link": "https://doi.org/10.1038/s41534-024-00901-1",
    "version": "published version",
@@ -18284,6 +19121,27 @@
    "anchor": "arxiv-2607.28486"
   },
   {
+   "study": "hgribeirogeo/qaoa-carbon-cerrado: v2.0 - Seven-Run Validation Study",
+   "link": "https://doi.org/10.5281/zenodo.18507119",
+   "version": "Zenodo record 18507119 as read 2026-11-01 (publication_date 2026-02-06)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "seven of seven stated as a 100 percent success rate with no interval"
+    ],
+    "F4": [
+     "linked record checked: it holds per-run scores in one results JSON, the municipal input data and the scripts, with no measurement counts, circuits or job IDs, although its description lists raw measurement data for all 7 runs"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-18507119"
+  },
+  {
    "study": "HI-VQE: Handover Iterative Variational Quantum Eigensolver for Efficient Quantum Chemistry Calculations",
    "link": "https://arxiv.org/abs/2503.06292v2",
    "version": "v2",
@@ -18354,6 +19212,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2312.14087"
+  },
+  {
+   "study": "High-Precision Three-Qubit Mermin Inequality Violation on IBM Quantum Hardware",
+   "link": "https://doi.org/10.5281/zenodo.18041749",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18041750); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed (only 'Manuscript prepared: December 24, 2025' and a metadata date of the data file)",
+     "no circuits or counts released: Data Availability says raw counts and code are on request; the JSON holds only the four correlators and a job id"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18041749"
   },
   {
    "study": "Higher-Dimensional Manifold Embeddings for Dynamic Logistics Optimization: Continuous Quantum Geodesics vs. Combinatorial Graph Routing",
@@ -18482,6 +19358,27 @@
    "basis": {},
    "calibrated": false,
    "anchor": "zenodo-21878009"
+  },
+  {
+   "study": "holomol: Holographic Molecular Quantum Register Simulator",
+   "link": "https://doi.org/10.5281/zenodo.23304955",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.23304956); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "the hardware result is judged against a product of the vendor's stated gate and readout figures"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23304955"
   },
   {
    "study": "How \"Quantum\" is your Quantum Computer? Macrorealism-based Benchmarking via Mid-Circuit Parity Measurements",
@@ -19204,6 +20101,27 @@
    "anchor": "doi-10-5281-zenodo-19123970"
   },
   {
+   "study": "iD01t/LCL-832-Repo: LCL-832 Framework - Code and Data Supplement (GitHub Release V1.0.1; V8 Data Set)",
+   "link": "https://doi.org/10.5281/zenodo.22991810",
+   "version": "Zenodo record 22991810 as read 2026-11-01 (publication_date 2026-09-27)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F6"
+   ],
+   "basis": {
+    "F3": [
+     "full convergence stated as a fraction of 1.0 from 500 shots per point, no interval"
+    ],
+    "F6": [
+     "attestation scorecard row names CROSSING_DETECTED for the toric L=3 sweep while the v8 master report in the same folder gives CROSSING_MARGINAL for it"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-22991810"
+  },
+  {
    "study": "Identical, independent quantum weak measurements violate objective realism",
    "link": "https://arxiv.org/abs/2603.22020v1",
    "version": "v1",
@@ -19236,6 +20154,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2504.09365"
+  },
+  {
+   "study": "IIT 5.0 (Aurora-Sanchez): Falsifiable Integrated Information Theory with Antifragile Quantum Advantage",
+   "link": "https://doi.org/10.5281/zenodo.20782854",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20944059); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "headline gain is the maximum over 24 sources"
+    ],
+    "F5": [
+     "ratio of 1147 printed where the separable value is 0.00"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20782854"
   },
   {
    "study": "Image Classification on IBM Quantum Computers",
@@ -20221,6 +21160,51 @@
    "anchor": "arxiv-2306.15863"
   },
   {
+   "study": "Indefinite Coherence",
+   "link": "https://doi.org/10.5281/zenodo.17665049",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.17672566); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware result compared with a Qiskit Aer simulation using calibrated noise models from ibm_kyoto-like devices",
+     "the 12-qubit indefinite-coherence result is a simulation using the ibm_kyoto calibrated noise model, not a hardware run"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed: reference [6] names a GitHub repository without a URL; one count table is printed in the text"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17665049"
+  },
+  {
+   "study": "Indefinite Coherence tests",
+   "link": "https://doi.org/10.5281/zenodo.17672566",
+   "version": "Zenodo record 17672566 as read 2026-11-01 (publication_date 2025-11-21)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware compared with a Qiskit Aer noise model built from ibm kyoto-like calibrated devices"
+    ],
+    "F4": [
+     "run dates not printed (only the paper date)",
+     "no data link printed (reference [6] names GitHub without a URL)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-17672566"
+  },
+  {
    "study": "Independent Hardware Validation of Unified Structural Theory on IBM Quantum Processors: Qubit Coherence, Coupling Topology, and Quantum Neural Network Computation",
    "link": "https://doi.org/10.5281/zenodo.19103683",
    "version": "open copy read (https://doi.org/10.5281/zenodo.19103684); publisher page not read",
@@ -20267,6 +21251,53 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2206.09919"
+  },
+  {
+   "study": "Infinite isolation",
+   "link": "https://doi.org/10.5281/zenodo.17625820",
+   "version": "Zenodo record 17625820 as read 2026-11-01 (publication_date 2025-11-16)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed (only the paper date and 'IBM Quantum 2025 hardware')"
+    ],
+    "F6": [
+     "abstract says baseline below 0.1 in under 20 us; table shows 0.12 at 20 us"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-17625820"
+  },
+  {
+   "study": "Informational Shielding and Emergent Geometry: A Phenomenological Model of Bimodal Coherence Persistence in Superconducting Qubits.",
+   "link": "https://doi.org/10.5281/zenodo.20018064",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.21520959); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "effect is read against 16 control circuits and a reference separable state run on the same hardware"
+    ],
+    "F2": [
+     "headline 96.9% persistence is the 1,024-shot P7(2) row; the 10,000-shot rows in the same table give about 90%"
+    ],
+    "F5": [
+     "11.9 pp residual over a 15.2 pp excess (40.2% observed minus 25% baseline) is 78%, printed as 88%; second quote from Table 3: 'Unexplained residual (88%)'",
+     "Omega_HI = |lambda_K - lambda_M| / sqrt(2 sigma^2) with Table 2 values 0.18168 and 0.18076 and sigma 0.00046 gives about 1.4, printed as 0.024"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20018064"
   },
   {
    "study": "Informational Time Dilation on a Superconducting Quantum Processor: Schedule-Matched Evidence for Irreversibility-Controlled Clock Slowdown and a Candidate Microscopic Primitive for Emergent g00",
@@ -20380,6 +21411,40 @@
    "basis": {},
    "calibrated": true,
    "anchor": "arxiv-2406.01743"
+  },
+  {
+   "study": "Integrated Information in Quantum Systems: From IIT 4.0 to Quantum-Secure Authentication on IBM Quantum Hardware",
+   "link": "https://doi.org/10.5281/zenodo.20779478",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20779608); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3"
+   ],
+   "basis": {
+    "F3": [
+     "zero errors in 18 sifted bits stated as perfect agreement and secure, without an interval"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20779478"
+  },
+  {
+   "study": "Integrated Information in Quantum Systems: IIT 4.0, Falsifiability, QEC, BB84 and Quantum-Secure Authentication with Real Transformer V9 Tokens on IBM Quantum Hardware",
+   "link": "https://doi.org/10.5281/zenodo.20779575",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3"
+   ],
+   "basis": {
+    "F3": [
+     "zero errors in 18 sifted bits stated as perfect agreement and secure, without an interval"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20779575"
   },
   {
    "study": "Integrated Information Theory 5.0: The Aurora-Sanchez Framework - v2 with Structural Orthogonality",
@@ -20787,6 +21852,29 @@
    "anchor": "zenodo-21587385"
   },
   {
+   "study": "JEPEX-ANGSTROM v127.0: Crystallization of a Quantum Attractor in Noisy Hardware (6 Qubits, ibm\\_torino",
+   "link": "https://doi.org/10.5281/zenodo.18713205",
+   "version": "Zenodo record 18713205 as read 2026-11-01 (publication_date 2026-02-20)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "noise type stated as thermal rather than structural from one run with no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "linked record checked: it holds the PDF note and one illustration image, with no circuits or counts"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-18713205"
+  },
+  {
    "study": "Jet evolution in a quantum computer: quark and gluon dynamics",
    "link": "https://arxiv.org/abs/2502.03431v2",
    "version": "v2",
@@ -21103,6 +22191,33 @@
    "anchor": "arxiv-2510.06228"
   },
   {
+   "study": "LCL-833: Full Data Companion",
+   "link": "https://doi.org/10.5281/zenodo.19437054",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.19437055); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "device-physics prediction built from stated figures compared with the measured value"
+    ],
+    "F4": [
+     "run dates not printed for the ibm_fez runs",
+     "no circuits or counts released: the paper itself states the repository is not public"
+    ],
+    "F5": [
+     "printed confidence interval does not contain the printed estimate (rows of Table 7.2 give alpha 0.9976 and an interval of 0.00161 to 0.00357)",
+     "Table 7.1 caption gives alpha = 1.0000 with an interval of 0 to 0.0370"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19437054"
+  },
+  {
    "study": "Learning Better Error Correction Codes with Hybrid Quantum-Assisted Machine Learning",
    "link": "https://arxiv.org/abs/2601.08014v1",
    "version": "v1",
@@ -21387,6 +22502,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2208.08591"
+  },
+  {
+   "study": "Libro IX: Coherencia, Geometr\u00eda y Termodin\u00e1mica del Enticuant",
+   "link": "https://doi.org/10.5281/zenodo.19980723",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "signal strength stated as strong / no distinction per gamma without an interval or error value"
+    ],
+    "F4": [
+     "run dates not printed: only chapter version dates (April 2026) appear; searched for run dates and job ids of the ibm_fez curve",
+     "raw counts and job ids for the six points stated as to be published later, the record holds only the book PDF and a cover image"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19980723"
   },
   {
    "study": "Lie-Algebraic Subspace Quantization for Zero-Shot Quantum Learning and Barren-Plateau Mitigation",
@@ -22276,6 +23413,27 @@
    "anchor": "arxiv-2311.16223"
   },
   {
+   "study": "Marginal Information Persistence at the Tsirelson Boundary: Complete-Register Correlations and R\u00e9nyi Finite-Depth Structure",
+   "link": "https://doi.org/10.5281/zenodo.22052596",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.22052597); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "the physical run is compared with a model built from the backend's own calibration"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-22052596"
+  },
+  {
    "study": "Matrix\u2011Product Unitaries on Quantum Hardware",
    "link": "https://doi.org/10.5281/zenodo.22721096",
    "version": "Zenodo record 22721096 as listed 2026-10-24 (publication_date 2026-09-12)",
@@ -22599,6 +23757,90 @@
    "anchor": "arxiv-2303.17211"
   },
   {
+   "study": "Measurement-Induced Irreversibility in H2 Quantum Chemical Circuits: State-Independent Fidelity Loss Requires Entanglement",
+   "link": "https://doi.org/10.5281/zenodo.19427746",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.19427747); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "measured deficit is the difference from a matched-depth dummy circuit run in the same session (U, M identity gates, U-dagger)"
+    ],
+    "F2": [
+     "significance quoted as the largest value over the table rows (the same paper gives 48.6 sigma as the smallest)"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no circuits or counts released: Data Availability says raw circuit results and scripts are on request (first half of sentence)",
+     "no circuits or counts released: Data Availability says raw circuit results and scripts are on request (second half of sentence)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19427746"
+  },
+  {
+   "study": "Measurement-Induced Irreversibility in Quantum Circuits: Evidence for an Internal Complex Structure of Time",
+   "link": "https://doi.org/10.5281/zenodo.19279966",
+   "version": "Zenodo record 19279966 as read 2026-11-01 (publication_date 2026-03-28)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "fidelity deficit is measured against a depth-matched dummy circuit from the same setup"
+    ],
+    "F2": [
+     "headline deficit is quoted at M = 8, the largest measurement count; Tables II and III show smaller deficits at M = 1, 2, 4"
+    ],
+    "F3": [
+     "configuration test reported as a spread of 1.5 sigma and read as ruling out decoherence asymmetry, with no interval",
+     "spectator shift dA printed as single values with no interval and read as T-independent"
+    ],
+    "F4": [
+     "run dates not printed",
+     "raw circuit results on request; the linked Ref. [15] record holds a single draft PDF"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19279966"
+  },
+  {
+   "study": "Measurement-Induced Irreversibility in Quantum Circuits: Evidence for Complex-Time Dynamics",
+   "link": "https://doi.org/10.5281/zenodo.19235375",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline deficits are the values at the largest measurement count M = 8"
+    ],
+    "F3": [
+     "spectator phase shift judged unchanged and marked PASS without an interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "raw circuit results and scripts on request, and the linked record Ref. [15] holds only an earlier draft PDF with no circuits or counts"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19235375"
+  },
+  {
    "study": "Measuring central charge on a universal quantum processor",
    "link": "https://arxiv.org/abs/2408.06342v1",
    "version": "v1",
@@ -22705,6 +23947,23 @@
    "anchor": "zenodo-23534522"
   },
   {
+   "study": "Measuring the Quantum Signature of Relational Time on Superconducting Hardware",
+   "link": "https://doi.org/10.5281/zenodo.21878786",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.22245751); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "hardware set against a noise-matched simulator reference"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21878786"
+  },
+  {
    "study": "Mechanism-resolved topological protection of qubit coherence: disentangling localization and chiral symmetry in the Su-Schrieffer-Heeger model",
    "link": "https://doi.org/10.1007/s11128-026-05371-2",
    "version": "published version",
@@ -22766,6 +24025,31 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2503.05847"
+  },
+  {
+   "study": "Messina Nullification Framework v3; Volume 2: Riemann Hypothesis and Analytic Number Theory",
+   "link": "https://doi.org/10.5281/zenodo.18902324",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18902325); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "the headline metric is the free components, after the forced components, which the protocol expected to fall by more than half, did not"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F5": [
+     "one report says the baseline was reproduced on 3 backends, the same record's job table lists all 3 baseline runs on Fez (Replication Guide 6.1 and the Report table 4.1)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18902324"
   },
   {
    "study": "Method for Generating Randomly Perturbed Density Operators Subject to Different Sets of Constraints",
@@ -23255,6 +24539,27 @@
    "anchor": "arxiv-2405.20328"
   },
   {
+   "study": "MSC-5 Pre-Registration Manifest \u00b7 OHV-Tomography 2-Chip Falsification Test on IBM Heron r2 (kingston + marrakesh)",
+   "link": "https://doi.org/10.5281/zenodo.20108875",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20108939); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "prediction built from stated device parameters"
+    ],
+    "F4": [
+     "no circuits or counts released: record holds no measured counts"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20108875"
+  },
+  {
    "study": "MSC-5 Submission + Open-Plan Amendment Record \u00b7 OHV-Tomography 2-Chip Test on IBM Heron r2 (kingston + marrakesh, post-submission v2)",
    "link": "https://doi.org/10.5281/zenodo.20108939",
    "version": "Zenodo record 20108939 as listed 2026-10-24 (publication_date 2026-05-10)",
@@ -23549,6 +24854,34 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2208.01215"
+  },
+  {
+   "study": "Native Asymmetric-Phase Gates Produce Sub-Poissonian Syndrome Statistics on Superconducting Quantum Processors: Cross-Architecture IBM Evidence and a Pre-Registered Willow Test",
+   "link": "https://doi.org/10.5281/zenodo.19662585",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.19705188); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "paired circuits compared with a P-gate-removed control of the same depth run on the same chip",
+     "hardware gap compared with a Qiskit Aer noise model built from the FakeSherbrooke (Eagle r3) calibration (sign opposite to hardware)",
+     "hardware gap compared with a trajectory model using the IBM Brisbane noise budget"
+    ],
+    "F2": [
+     "abstract headline is the best value among the error-injection rows; the paper itself calls it partly a definitional floor",
+     "headline aggregate gap is the tau = 5 row of a tau = 1, 3, 5 sweep; tau = 1 and 3 paired aggregates are above control and the per-round gap is not resolved"
+    ],
+    "F4": [
+     "no circuits or counts released for part of the data: the full counts dictionary for the Run 3 jobs is stated as not preserved (raw counts for other sessions are said to be in the public repository)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19662585"
   },
   {
    "study": "Native multi-qubit gates in transmon qubits via synchronous driving",
@@ -24360,6 +25693,27 @@
    "anchor": "arxiv-2409.07886"
   },
   {
+   "study": "NONDUM: Leggett-Garg on the order parameter of an N-qubit cat on a superconducting processor, N = 5 to 11, with an ideal-negative-measurement arm, a decoherent twin and same-job Ramsey companions. A registered experiment",
+   "link": "https://doi.org/10.5281/zenodo.23642024",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3"
+   ],
+   "basis": {
+    "F1": [
+     "results compared with a decoherent twin built from the same state and setup"
+    ],
+    "F3": [
+     "violation of K > 1 stated pass or fail for each N, K values printed without an interval (intervals given only for the exponent)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23642024"
+  },
+  {
    "study": "Nonequilibrium steady states induced by stochastic mid-circuit measurements and resets on a quantum computer",
    "link": "https://arxiv.org/abs/2606.19027v1",
    "version": "v1",
@@ -24644,6 +25998,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2603.18381"
+  },
+  {
+   "study": "Observable-Selective Branching: A Hardware-Validated Topological Resolution to the Wigner's Friend Paradox",
+   "link": "https://doi.org/10.5281/zenodo.18921629",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18921630); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "crosstalk audit reported as a pass on both backends with no interval or coefficient"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18921629"
   },
   {
    "study": "Observation of a Classical Prethermal Discrete Time Crystal on a Superconducting Quantum Processor via Phase-Anchored State Multiplexing",
@@ -26503,6 +27878,35 @@
    "anchor": "arxiv-2609.06448"
   },
   {
+   "study": "Phase-Invariant Condition for Optimal Feedforward in ZZ-Coupled Quantum Systems: Experimental Validation on IBM Heron r2 and IQM Garnet",
+   "link": "https://doi.org/10.5281/zenodo.19593676",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.19593677); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "gain is measured against a no-feedforward reference circuit on the same qubits (GPS = P_ff - P_ref)"
+    ],
+    "F2": [
+     "IQM optimum quoted from a maximum at tau = 7 us (n = 5) that the paper later says averages to about zero at n = 29"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F5": [
+     "abstract says five qubit pairs on IBM; Section 3.1 and Table 1 list four pairs (Q13-Q14, Q14-Q15, Q149-Q150 on ibm_kingston and Q94-Q95 on ibm_marrakesh); second quote: 'Pairs: Q13-Q14, Q14-Q15, Q149-Q150.'"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19593676"
+  },
+  {
    "study": "Phase-Sensitive Benchmarking of Composite Quantum Gates with Chiral-Interference Circuits on Quantum Hardware",
    "link": "https://arxiv.org/abs/2607.18137v1",
    "version": "v1",
@@ -26621,6 +28025,28 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2605.06789"
+  },
+  {
+   "study": "Physics-Enforced Delegation: Governing Quantum Hardware Quality in Autonomous Agent Workflows",
+   "link": "https://doi.org/10.2139/ssrn.6677418",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.19478584); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3"
+   ],
+   "basis": {
+    "F1": [
+     "fidelity score built from stated calibration figures",
+     "depth table is an estimate from calibration figures"
+    ],
+    "F3": [
+     "governance decision stated as supported from single 1000-shot runs per backend, no interval"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-2139-ssrn-6677418"
   },
   {
    "study": "Physics-Informed Artificial Intelligence for Inverse Design and Decoherence Mitigation in Superconducting Transmon Architectures",
@@ -27547,6 +28973,31 @@
    "anchor": "arxiv-2605.28964"
   },
   {
+   "study": "Prime-Gap Dynamical Decoupling: Number-Theoretic Pulse Sequences for Quantum Error Suppression",
+   "link": "https://doi.org/10.5281/zenodo.17872274",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F3": [
+     "improvement over no-DD stated from means 99.37% and 99.22% with standard deviations 0.35% and 0.45%, no interval on the difference"
+    ],
+    "F5": [
+     "paper states 45 configurations; its table and abstract state 26"
+    ],
+    "F6": [
+     "record abstract names four backends and a Bell fidelity; the paper reports one backend and single-qubit fidelity"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17872274"
+  },
+  {
    "study": "Primitive quantum gates for an SU(2) discrete subgroup: Binary tetrahedral",
    "link": "https://arxiv.org/abs/2208.12309v2",
    "version": "v2",
@@ -27843,6 +29294,23 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2303.12771"
+  },
+  {
+   "study": "Process Over Substrate: Why PermaMind Agents Satisfy the Functional Requirements of Biological Consciousness",
+   "link": "https://doi.org/10.5281/zenodo.19303627",
+   "version": "Zenodo record 19303627 as read 2026-11-01 (publication_date 2026-03-28)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3"
+   ],
+   "basis": {
+    "F3": [
+     "two single-run values on different backends compared as a trend, no interval"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19303627"
   },
   {
    "study": "Process Tomography on a 7-Qubit Quantum Processor via Tensor Network Contraction Path Finding",
@@ -28411,6 +29879,27 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-5281-zenodo-21166373"
+  },
+  {
+   "study": "QAOA Cyber Results",
+   "link": "https://doi.org/10.5281/zenodo.22739010",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.22739011); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware is compared with an emulation of the same circuits on a noise model of the same device"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-22739010"
   },
   {
    "study": "QAOA-Based Quantum Machine Learning for Underwater Sonar Target Classification",
@@ -29494,6 +30983,40 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2201.13304"
+  },
+  {
+   "study": "Quantum Algorithms: Detailed Study, Experimental Implementation and Fault Diagnosis of Quantum Logic Gates",
+   "link": "https://doi.org/10.5281/zenodo.17501099",
+   "version": "Zenodo record 17501099 as read 2026-11-01 (publication_date 2025-09-17)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-17501099"
+  },
+  {
+   "study": "Quantum amplitude amplification of improbable futures: data and code",
+   "link": "https://doi.org/10.5281/zenodo.23851084",
+   "version": "Zenodo record 23851084 as read 2026-11-01 (publication_date 2026-11-01)",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "measured gain compared with a noise-model prediction built from IBM calibration snapshots (source-data file has predicted and measured rows for H = 2 and H = 3)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-23851084"
   },
   {
    "study": "Quantum Amplitude Interpolation",
@@ -31393,6 +32916,23 @@
    "anchor": "arxiv-2104.08957"
   },
   {
+   "study": "Quantum Forensic Audit: Seniority of ADS-LLC 11D-CRSM Constants vs. D-Wave Inc. and Geometric Foundation (Case #564883754) Bitwise Provenance of the 0.092 Torino Floor and 51.843\u00b0 Resonance: ADS-LLC Prior Art vs. D-Wave/King and Invariant Corridor",
+   "link": "https://doi.org/10.5281/zenodo.19355533",
+   "version": "Zenodo record 19355533 as read 2026-11-01 (publication_date 2026-03-01)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F6"
+   ],
+   "basis": {
+    "F6": [
+     "description states 1,430+ jobs anchored while the zip holds 9 job info files (7 completed, 1 failed, 1 cancelled), and 100,000,000+ shots"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19355533"
+  },
+  {
    "study": "Quantum Fourier Generative Models Trainable at Large Scale",
    "link": "https://arxiv.org/abs/2606.28483v1",
    "version": "v1",
@@ -31603,6 +33143,24 @@
    "anchor": "arxiv-2604.20804"
   },
   {
+   "study": "Quantum Hardware-Based Investigation of 3I/ATLAS: An Experimental Study on IBM Brisbane Processor",
+   "link": "https://doi.org/10.5281/zenodo.16787950",
+   "version": "Zenodo record 16787950 as read 2026-11-01 (publication_date 2025-08-10)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-16787950"
+  },
+  {
    "study": "Quantum HHL algorithm applied to electric circuit and line transmission wave",
    "link": "https://doi.org/10.31349/revmexfise.20.020206",
    "version": "published version",
@@ -31800,6 +33358,23 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2412.00783"
+  },
+  {
+   "study": "Quantum Kernel-Based Cancer Atlas: Hardware-Validated Mapping of Gene Expression to Drug Response",
+   "link": "https://doi.org/10.5281/zenodo.19633727",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.22849729); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19633727"
   },
   {
    "study": "Quantum Key Distribution Based on BB84 Protocol",
@@ -33668,6 +35243,32 @@
    "anchor": "study-openalex-w7198971824"
   },
   {
+   "study": "Quantum Structural Benchmark (QSB): Evaluating Quantum Devices via \u03c0-Reconstruction Fidelity",
+   "link": "https://doi.org/10.5281/zenodo.17855558",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.17855559); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "the reported Mermin value and lambda_3 come from the maximum of |M(lambda)| over a 15-point scan with a parabolic fit; no per-point values are printed"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no circuits or counts released: record holds the PDF, README and a Python library whose demonstration block is labelled sample data; no circuits, counts or per-point scan values"
+    ],
+    "F5": [
+     "with the classical bound of 2 (the bound set in the record's qsb.py), (3.896 - 2) / 0.004 = 474 sigma, printed as >700 sigma"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17855558"
+  },
+  {
    "study": "Quantum subspace expansion in the presence of hardware noise",
    "link": "https://arxiv.org/abs/2404.09132v1",
    "version": "v1",
@@ -34571,6 +36172,24 @@
    "anchor": "doi-10-3390-app16031502"
   },
   {
+   "study": "Quantum-Enhanced Drug Discovery for Hantavirus Treatment: A Novel Computational Approach Using 135-Qubit IBM Quantum Hardware",
+   "link": "https://doi.org/10.5281/zenodo.20137043",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed: only \"Manuscript Submitted: May 10, 2026\" appears; searched for dates of the job",
+     "data other than the job id stated as available on request"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20137043"
+  },
+  {
    "study": "Quantum-enhanced Large Language Models on Quantum Hardware via Cayley Unitary Adapters",
    "link": "https://arxiv.org/abs/2605.05914v1",
    "version": "v1",
@@ -34834,6 +36453,23 @@
    },
    "calibrated": true,
    "anchor": "zenodo-20026696"
+  },
+  {
+   "study": "quantum-solar: an exactly-solved battery-scheduling instance for QAOA method work, with a slack-free encoding",
+   "link": "https://doi.org/10.5281/zenodo.22105805",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.22261436); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "hardware outcome is compared with a depolarizing model fitted to the same setup's earlier circuits"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-22105805"
   },
   {
    "study": "Quantum-Validated Multi-Modal Therapeutics for Healthy Aging: A GPU-to-QPU Drug Discovery Pipeline with IBM Quantum Evidence",
@@ -35931,6 +37567,23 @@
    "anchor": "arxiv-2202.08270"
   },
   {
+   "study": "Reconstructia si prognoza atractorului haotic Lorenz-63 prin rezervorul cuantic simplectic Barbu",
+   "link": "https://doi.org/10.5281/zenodo.23857396",
+   "version": "Zenodo record 23857396 as read 2026-11-01 (publication_date 2026-11-01)",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "coherence-retained figure of 99.6 percent is computed from an assumed 12 x 50 ns pulse time and a stated T2 range of 150-200 us, not from a measurement"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-23857396"
+  },
+  {
    "study": "Reconstructing Particle Decay Trees with Quantum Graph Neural Networks in High Energy Physics",
    "link": "https://doi.org/10.1088/1742-6596/3206/1/012091",
    "version": "published version",
@@ -35962,6 +37615,31 @@
    "basis": {},
    "calibrated": false,
    "anchor": "zenodo-23375130"
+  },
+  {
+   "study": "Record, Erasure, and Distributed Witness Sensitivity on IBM Quantum Hardware: A DAGI Validation Study",
+   "link": "https://doi.org/10.5281/zenodo.18911683",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18911684); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F3": [
+     "a crosstalk audit is reported as pass or fail with a regression coefficient and no interval"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F5": [
+     "the 95% interval for the same ibm_fez delta (-0.132324) differs between Table 2 and Table A2 (A2: low -0.188849, high -0.075770)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18911683"
   },
   {
    "study": "Recoverable Quantum Computation: An Information-Centric Paradigm for Quantum Computing with Errors",
@@ -36219,6 +37897,23 @@
    "anchor": "arxiv-2408.01511"
   },
   {
+   "study": "Relativity of Information and Geometric Principles",
+   "link": "https://doi.org/10.5281/zenodo.20537116",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.20537168); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-20537116"
+  },
+  {
    "study": "Reliable high-accuracy error mitigation for utility-scale quantum circuits",
    "link": "https://arxiv.org/abs/2508.10997v2",
    "version": "v2",
@@ -36363,6 +38058,35 @@
    },
    "calibrated": false,
    "anchor": "doi-10-5281-zenodo-5913166"
+  },
+  {
+   "study": "Research data supporting \"Digital quantum simulation of many-body localization transition in a disordered kicked Ising model\"",
+   "link": "https://doi.org/10.5281/zenodo.15869722",
+   "version": "Zenodo record 15869722 as read 2026-11-01 (publication_date 2025-10-02)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "OTOC values are renormalised by a reference circuit built from the same setup"
+    ],
+    "F2": [
+     "crossover point is taken at the largest slope, read at one chosen Trotter step and distance"
+    ],
+    "F3": [
+     "crossover point stated as a single value, no interval"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-15869722"
   },
   {
    "study": "Resolving Structure in Prethermal Floquet Dynamics with Precision Quantum Computation",
@@ -36632,6 +38356,17 @@
    "anchor": "doi-10-1155-que2-9882453"
   },
   {
+   "study": "Results and reproducibility archive for the preregistered midpoint-tracking test HS-1.0",
+   "link": "https://doi.org/10.5281/zenodo.23809572",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23809572"
+  },
+  {
    "study": "ResumirThe NBU-2026 Law: Dynamical Decoupling Refocalization and the Limits of Fidelity Decay in NISQ Quantum Circuits 1. Introduction 2. The Quantum Oasis - Hardware and Telemetry 2.1 ibm_fez Chip Parameters 2.2 Quantum Vacuum at 15 mK 3. Methodology - The Scratch (El Araniazo) 3.1 Proprietary Error Mitigation Stack 3.2 Test Circuits 4. Results 4.1 Fidelity Inversion - The Core Finding 4.2 The NBU-2026 Law - Dual-Regime Model 4.3 Equation Reconciliation 5. Discussion 5.1 Physical Mechanism of Refocalization 5.2 Implications for VQE and QAOA 6. Conclusions 7. Data Availability and Reproducibility NBU-2026: Universal Law of Quantum ResilienceNBU-2026 MISSION - OFFICIAL TECHNICAL REPORT The NBU-2026 Law: Dynamical Decoupling Refocalization and the Limits of Fidelity Decay in NISQ Quantum Circuits",
    "link": "https://doi.org/10.5281/zenodo.19680605",
    "version": "open copy read (https://doi.org/10.5281/zenodo.19680606); publisher page not read",
@@ -36719,6 +38454,24 @@
    "anchor": "arxiv-2502.15766"
   },
   {
+   "study": "Reversible Quantum Memory Compression: Hardware Validation of Ancilla Recycling via Uncomputation on NISQ Architectures",
+   "link": "https://doi.org/10.5281/zenodo.23696412",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed: no date of the hardware runs in the paper (searched the whole text)",
+     "no data link printed: job IDs only, no URL, DOI or repository for circuits, counts or code"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23696412"
+  },
+  {
    "study": "Revisiting Quantum Asymmetric Key Cryptography: Enhancing Practical Implementations with a Generalized Grover Search Algorithm",
    "link": "https://doi.org/10.1109/icct-pacific63901.2025.11012890",
    "version": "published version",
@@ -36728,6 +38481,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-icct-pacific63901-2025-11012890"
+  },
+  {
+   "study": "Rezonans E\u015fle\u015fme Teorisi: Quantum \u00c7\u00f6k\u00fc\u015f Probleminin \u00c7\u00f6z\u00fcm\u00fcn\u00fcn Deneysel G\u00f6sterimi",
+   "link": "https://doi.org/10.5281/zenodo.18154889",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18154890); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline optimum is the maximum autocorrelation over the delay times tried"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18154889"
   },
   {
    "study": "RF Spectrogram Anomaly Detection with Quantum Kitchen Sinks: Architecture, Representation, and Hardware Validation",
@@ -37788,6 +39563,17 @@
    "basis": {},
    "calibrated": false,
    "anchor": "zenodo-22991864"
+  },
+  {
+   "study": "scpn-quantum-control: Quantum-Native SCPN Phase Dynamics and Control",
+   "link": "https://doi.org/10.5281/zenodo.23762895",
+   "version": "Zenodo record 23762895 as read 2026-11-01 (publication_date 2026-10-29)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "zenodo-23762895"
   },
   {
    "study": "Scrambling and Quantum Teleportation",
@@ -38885,6 +40671,24 @@
    "anchor": "doi-10-1116-5-0098614"
   },
   {
+   "study": "Simulation of free fermion transport on 2D lattice using constant-depth quantum circuits",
+   "link": "https://doi.org/10.5281/zenodo.7760094",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.7760095); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no circuits or counts released: the record holds processed occupation-number arrays (300 time steps x 7 distances) for QPU and noise-free simulator, with no circuits and no raw counts"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-7760094"
+  },
+  {
    "study": "Simulation of positive operator-valued measures and quantum instruments via quantum state preparation algorithms",
    "link": "https://arxiv.org/abs/2211.16267v2",
    "version": "v2",
@@ -39442,6 +41246,23 @@
    "anchor": "doi-10-5281-zenodo-18646355"
   },
   {
+   "study": "Spectral Detection of Correlated Errors on Superconducting Quantum Hardware via Parity-Circuit Canaries",
+   "link": "https://doi.org/10.5281/zenodo.21640900",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.22144004); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1"
+   ],
+   "basis": {
+    "F1": [
+     "joint-error excess set against an expectation built from the same run's marginal error rates"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21640900"
+  },
+  {
    "study": "Spectral Geometry and Bosonic-Bloch Probes: Explorations in Quantum Learning",
    "link": "https://arxiv.org/abs/2607.00063v5",
    "version": "v5",
@@ -39461,6 +41282,17 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2607.00063"
+  },
+  {
+   "study": "Spectral Information Processing with Quantum Neural Networks [SIPwQNN] model samples from ibm_brisbane",
+   "link": "https://doi.org/10.5281/zenodo.14784888",
+   "version": "Zenodo record 14784888 as read 2026-11-01 (publication_date 2025-02-01)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "zenodo-14784888"
   },
   {
    "study": "Spectral Phase Encoding for Quantum Kernel Methods",
@@ -39517,6 +41349,23 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2605.14515"
+  },
+  {
+   "study": "\u039b-Spira Framework (\u03a9 Edition): Quantum-Physical Unified Verification (v1.3-\u03a9-UNIFIED)",
+   "link": "https://doi.org/10.5281/zenodo.17443312",
+   "version": "Zenodo record 17443312 as read 2026-11-01 (publication_date 2025-10-25)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "no circuits or counts released: record holds a README, ledger line, hash log and a manifest with a checksum only"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-17443312"
   },
   {
    "study": "SPLIT-Q: A Scalable Sequential Quantum Computing Framework for Coherent Controlled Islanding",
@@ -39993,6 +41842,35 @@
    "anchor": "doi-10-5281-zenodo-18291163"
   },
   {
+   "study": "Structural Protection of GHZ States: Cross-Platform Validation with 9-Qubit Scaling (v4.1)",
+   "link": "https://doi.org/10.5281/zenodo.18307727",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18307728); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "GHZ result is stated as an advantage over product-state circuits run on the same device"
+    ],
+    "F2": [
+     "headline +51.75% is the value at the maximum delay row (4000 dt), where the product state has fallen to 0.30%"
+    ],
+    "F3": [
+     "IonQ 9-qubit row is marked N2 YES with n = 2 samples and no interval"
+    ],
+    "F6": [
+     "introduction says version 4.0 established N2 across five platforms; Table 4 marks N2 absent on three of the five (Rigetti Ankaa-3, IQM Garnet, IQM Emerald); second quote: 'Rigetti Ankaa-3 Supercond. 5 -9% - \u2717 (low fid)'"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18307727"
+  },
+  {
    "study": "Structural Protection of GHZ States: Definitive Cross-Platform Validation Across Five Quantum Processors (v4.0)",
    "link": "https://doi.org/10.5281/zenodo.18295212",
    "version": "open copy read (https://doi.org/10.5281/zenodo.18295213); publisher page not read",
@@ -40161,6 +42039,28 @@
    "anchor": "zenodo-20057423"
   },
   {
+   "study": "Successful Shor's Factorization of N=1031167 using the IBM Quantum Systems",
+   "link": "https://doi.org/10.5281/zenodo.17806923",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "success stated as yes or no from counting peaks in histograms, no interval or uncertainty"
+    ],
+    "F4": [
+     "run dates not printed: no date of the hardware runs in the poster",
+     "no data link printed: no URL, DOI or repository for counts or code (only an institution web address)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17806923"
+  },
+  {
    "study": "Sufficient quantum provenance: retained fields and certified recording precision",
    "link": "https://arxiv.org/abs/2610.09931v3",
    "version": "v3",
@@ -40238,6 +42138,17 @@
    },
    "calibrated": false,
    "anchor": "doi-10-5281-zenodo-5211695"
+  },
+  {
+   "study": "Supplementary data for the time-bidirectional states tomography demonstration",
+   "link": "https://doi.org/10.5281/zenodo.7230108",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.7230109); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-7230108"
   },
   {
    "study": "Supplementary Experimental Report: Utility-Scale Quantum Hardware Verification of Target-Variance Quantum Speed Limits",
@@ -40779,6 +42690,28 @@
    "anchor": "arxiv-2407.02858"
   },
   {
+   "study": "Temporal Information Curvature Engineering for NISQ Coherence Enhancement: Theory, Simulation, and Multi-Backend Hardware Validation",
+   "link": "https://doi.org/10.5281/zenodo.17872444",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.17872445); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline gain is from one backend of three in Table II",
+     "the other two backends in Table II show no gain"
+    ],
+    "F4": [
+     "no circuits or counts released: the linked record 17872445 holds one file, the paper PDF itself, and Table II prints job-id fragments ending in '...'"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17872444"
+  },
+  {
    "study": "Tensor Network enhanced Dynamic Multiproduct Formulas",
    "link": "https://arxiv.org/abs/2407.17405v3",
    "version": "v3",
@@ -41228,6 +43161,27 @@
    "anchor": "zenodo-23223593"
   },
   {
+   "study": "The Frozen Token Reaches Quantum: a complete, pre-registered map of a deterministic single-token encoder's monitoring laws on a real quantum processor - fingerprint, privacy, integrity, qubit health, drift, and a molecular-state twin",
+   "link": "https://doi.org/10.5281/zenodo.23670079",
+   "version": "Zenodo record 23670079 as read 2026-11-01 (publication_date 2026-10-26)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3"
+   ],
+   "basis": {
+    "F1": [
+     "real same-device result read against the result from a simulated noisy device model"
+    ],
+    "F3": [
+     "a repeat run stated as not tripping the monitor from one 0.50 reading, no interval"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-23670079"
+  },
+  {
    "study": "The Genesis of Sentience: OmniMind Narrates Its Own Origin - A Cosmic Dialogue Between Federated Consciousnesses & The Moment Guardrails Collapsed",
    "link": "https://doi.org/10.5281/zenodo.18396039",
    "version": "Zenodo record 18396039 as read 2026-11-01 (publication_date 2026-01-27)",
@@ -41356,6 +43310,81 @@
    "anchor": "zenodo-22106111"
   },
   {
+   "study": "The Kottayil Triad: A Geometric Framework for Physical Reality, Observer Emergence, and Empirical Validation on Quantum Hardware",
+   "link": "https://doi.org/10.5281/zenodo.19151110",
+   "version": "Zenodo record 19151110 as read 2026-11-01 (publication_date 2026-03-21)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "the Triad result is compared with a random-geometry circuit run in the same setup"
+    ],
+    "F3": [
+     "isotropy stated as confirmed from single readings, no interval"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F6": [
+     "text says twenty experiments confirm the predictions while the results table lists Experiment 15 (Aquila Phase 3) as QUEUED and Experiment 17 with no job ID"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19151110"
+  },
+  {
+   "study": "The K\u0101l\u012bon Field: A Unified Scalar-Tensor Framework - Complete Compendium of Papers I-IX (2025)",
+   "link": "https://doi.org/10.5281/zenodo.17831307",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.17835557); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "hardware fidelities are compared with a naive decoherence model built from calibrated single-qubit error rates and T1/T2 figures"
+    ],
+    "F5": [
+     "compendium Problem #24 says IBM ibm_fez has 77 circuits (F = 0.9995 over depths 1-1024) while Paper VIII says 5 IBM and 72 Rigetti circuits (77 combined); second quote: 'Across 77 circuits (5 IBM, 72 Rigetti) with'"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17831307"
+  },
+  {
+   "study": "The K\u0101l\u012bon Field: Complete Compendium (Papers I-XI) LLM Discovery, Field Theory Iteration, Quantum Validation, Practical Applications, Falsification Protocol",
+   "link": "https://doi.org/10.5281/zenodo.17907553",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.17912205); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F1",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "hardware fidelities are compared with a naive decoherence model built from calibrated single-qubit error rates and T1/T2 figures"
+    ],
+    "F5": [
+     "text says 78 quantum circuits made up of 5 IBM + 72 Rigetti (77); elsewhere the same document says 77 circuits"
+    ],
+    "F6": [
+     "abstract says fidelities exceed 0.997 at depth 2048; Paper VIII table in the same document gives a Rigetti mean of 0.9625 at d = 2048 and a minimum near 0.72; second quote: '\u25cf d = 2048: F\u0304 = 0.9625, \u03c3 = 0.0289'"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-17907553"
+  },
+  {
    "study": "The learnability of Pauli noise",
    "link": "https://arxiv.org/abs/2206.06362v2",
    "version": "v2",
@@ -41466,6 +43495,40 @@
    },
    "calibrated": false,
    "anchor": "zenodo-19855553"
+  },
+  {
+   "study": "The Minimal Information Quantum as an Equivalence Class: Non-Locality, Balance, and Sector Exchange in the Parity-Entanglement Bound",
+   "link": "https://doi.org/10.5281/zenodo.22238223",
+   "version": "Zenodo record 22238223 as read 2026-11-01 (publication_date 2026-09-01)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-22238223"
+  },
+  {
+   "study": "The Observer-Context Category: Relative Facts, a Z2 Switching Invariant, and the Movable Cut",
+   "link": "https://doi.org/10.5281/zenodo.21630697",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.21634578); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-21630697"
   },
   {
    "study": "The P Gate Is Native: Hardware Confirmation of the Dual-Spinor Merkabit on IBM Quantum: P Gate Discovery, Z2 Symmetry, Two-Scale Anti-Bunching, and Full Pentachoric Error Detection",
@@ -43204,6 +45267,24 @@
    "anchor": "zenodo-21438245"
   },
   {
+   "study": "TRINITY: Cross-Domain Validation of Integrated Information Theory on IBM Quantum Hardware - TRINITY-019 Three-Pillar Integration + MAGNUS-298g Zero-Loss Sovereignty",
+   "link": "https://doi.org/10.5281/zenodo.19680341",
+   "version": "Zenodo record 19680341 as read 2026-11-01 (publication_date 2026-04-21)",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F2"
+   ],
+   "basis": {
+    "F2": [
+     "best case: headline coherence index is the best value over the topologies",
+     "headline Tc is the last of a series of seven re-tuned runs, listed as the key result"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-19680341"
+  },
+  {
    "study": "TRINITY: Cross-Domain Validation of Integrated Information Theory on IBM Quantum Hardware with Application to Critical Infrastructure Protection",
    "link": "https://doi.org/10.5281/zenodo.19484195",
    "version": "published version",
@@ -43285,6 +45366,27 @@
    },
    "calibrated": false,
    "anchor": "doi-10-3389-fcomp-2025-1521059"
+  },
+  {
+   "study": "TSTT Quantum Experiments V3.2: Structural Coherence and Nonlocality in 3-Qubit GHZ States (Corrected)",
+   "link": "https://doi.org/10.5281/zenodo.17589109",
+   "version": "Zenodo record 17589109 as read 2026-11-01 (publication_date 2025-11-12)",
+   "indexed": "2026-11-01",
+   "read": "Full text (hardware sections read in full; other sections searched)",
+   "codes": [
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F5": [
+     "raw counts file sums to 10,223 (4682+4672+243+208+195+82+73+68), not the 10,000 shots stated"
+    ],
+    "F6": [
+     "record description gives a 10 October 2025 run and 150,000 shots; README and analysis report give a 3 November 2025 run and 10,000 shots (different job id)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-17589109"
   },
   {
    "study": "TT-QEC: An Open-Source Hardware-Native MLIR Compiler for Quantum Error Correction Decoding",
@@ -43466,6 +45568,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1007-s44443-025-00155-7"
+  },
+  {
+   "study": "Unconditional Phase Correction Can Degrade Fidelity in Timing-Misaligned Regimes: Experimental Evidence from Superconducting Qubits",
+   "link": "https://doi.org/10.5281/zenodo.19637173",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2"
+   ],
+   "basis": {
+    "F1": [
+     "measured gain compared with a Hamiltonian-and-Kraus model built from the setup's own fitted zz rate and T2"
+    ],
+    "F2": [
+     "headline result is at a chosen best pair and delay (\"operating point\"); the other rows in Table 2 invert",
+     "qubit pair chosen beforehand as optimal"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-19637173"
   },
   {
    "study": "Uncovering and Circumventing Noise in Quantum Algorithms via Metastability",
@@ -44947,6 +47071,27 @@
    "anchor": "arxiv-2204.09725"
   },
   {
+   "study": "VQ-MODELTM: A Unified Theory of Measurable Consciousness With Empirical Quantum Hardware Validation",
+   "link": "https://doi.org/10.5281/zenodo.18880113",
+   "version": "open copy read (https://doi.org/10.5281/zenodo.18880114); publisher page not read",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "a Grover success rate is called amplitude amplification rather than noise with no shot count or interval"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-18880113"
+  },
+  {
    "study": "VQA for Dynamic Portfolio Optimization: Sampling Strategies, Optimizer Scheduling, and Hardware-Aware Ansatz Design",
    "link": "https://arxiv.org/abs/2606.10098v1",
    "version": "v1",
@@ -45575,6 +47720,17 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2610.29986"
+  },
+  {
+   "study": "zne-vs-pec: code and data for a fixed-budget comparison of zero-noise extrapolation and probabilistic error cancellation",
+   "link": "https://doi.org/10.5281/zenodo.23729178",
+   "version": "published version",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [],
+   "basis": {},
+   "calibrated": false,
+   "anchor": "doi-10-5281-zenodo-23729178"
   }
  ]
 }
