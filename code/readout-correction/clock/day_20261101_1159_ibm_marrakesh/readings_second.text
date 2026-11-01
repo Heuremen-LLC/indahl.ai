@@ -1,0 +1,9 @@
+SECOND RULERS (PLAN_CLOCK Addendum 3), ibm_marrakesh, fire 20261101_1159 UTC. Defined after the data for the 1 November fires.
+(a) pooled clock reading over 20 bootstrap seeds: BELOW 3, CANNOT_TELL 17 | lower end -0.1595 to -0.1537, upper end -0.0002 to +0.0022
+(b) qubits where the 31 Oct table leaves a larger |residual| than today's table: 71, smaller: 46, of 117; exact two-sided sign test p = 0.026
+(c) signed median kick M: -1.474 [-2.072, -0.912] deg/readout
+(c) signed median residual MC: +0.932 [+0.570, +1.343] deg/readout
+(c) signed median residual M31: +0.169 [-0.059, +0.272] deg/readout
+(c) signed median residual MT: -0.041 [-0.143, +0.044] deg/readout
+(d) M31: median |residual| pooled 0.349 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.189
+(d) MT: median |residual| pooled 0.245 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.172
