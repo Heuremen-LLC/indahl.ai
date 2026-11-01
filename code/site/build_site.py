@@ -2198,6 +2198,17 @@ PAGES['/hermes'] = page('/hermes', 'HERMES | Held Every Record, Measured Every S
 _FEED.append(('/hermes', 'HERMES: Held Every Record, Measured Every Statement', 'The menu of every division and desk, with the live reading where a desk has one.'))
 
 
+# 1 Nov 2026 (his word: "Keep the darkwave as a separate tab on indahl.ai, and have a link to it on heuremen.org"): the Darkwave page lives
+# here, built from the one source (arxiv_keystone/site/darkwave.html), under the DARKWAVE tab. heuremen.org links to it.
+_dw = open(os.path.expanduser('~/bones-forge/arxiv_keystone/site/darkwave.html'), encoding='utf-8').read()
+_dw_desc = _re.search(r'name="description" content="(.*?)"', _dw).group(1)
+_dw_body = _dw[_dw.index('<h1>Darkwave</h1>') + len('<h1>Darkwave</h1>'):_dw.index('<p class="foot">')]
+_dw_sub = _re.search(r'<p class="sub">(.*?)</p>', _dw_body, _re.S).group(1)
+_dw_body = _dw_body.replace('<p class="sub">' + _dw_sub + '</p>', '', 1).replace('/media/darkwave_fig1.png', '/darkwave/fig1.png').replace('class="sub"', 'class="dwnote"').replace('class="lede"', 'class="dwlede"')
+assert 'href="/' not in _dw_body.replace('href="/darkwave', ''), 'relative heuremen.org link left in the Darkwave body'
+PAGES['/darkwave'] = page('/darkwave', 'Darkwave | A Readout’s Kick Is a Turn | Heuremen LLC', html.unescape(_dw_desc), '<section class="dwpage">' + _dw_body + '</section>', hero_slim('DARKWAVE', _dw_sub))
+CSS += ".dwpage table{border-collapse:collapse;font-size:14.5px;margin:12px 0;display:block;overflow-x:auto}.dwpage th{text-align:left;font-weight:600;border-bottom:1px solid currentColor;padding:5px 20px 5px 0}.dwpage td{padding:4px 20px 4px 0;border-bottom:1px solid rgba(127,127,127,.25);font-variant-numeric:tabular-nums}.dwpage img{max-width:100%;height:auto;margin:14px 0}.dwpage .dwnote{opacity:.8;font-size:14px}.dwpage .dwlede{font-size:18px;line-height:1.55}\n"
+
 # 29 Oct 2026: main menu = five divisions and STACK; a division with desks gets a dropdown of what is beneath it (hover or focus, no script). QIA stays a plain link.
 def _navfor(path):
     home = HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path)
@@ -2208,7 +2219,7 @@ def _navfor(path):
         ds = [x for x in DESKS.get(h, []) if x[0] in PAGES] if h in ('/iris', '/atlas', '/hermes') else []
         if ds: out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel">' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
         else: out.append('<a href="' + h + '"' + cur + '>' + t + '</a>')
-    out.append('<a class="dw" href="https://heuremen.org/darkwave.html">DARKWAVE</a>')   # 31 Oct: the Darkwave page on heuremen.org (countdown, then the paper page)
+    out.append('<a class="dw" href="/darkwave"' + (' aria-current=page' if path == '/darkwave' else '') + '>DARKWAVE</a>')   # 31 Oct: the Darkwave page on heuremen.org (countdown, then the paper page)
     return ''.join(out)
 for _k in list(PAGES):
     PAGES[_k] = PAGES[_k].replace('@@NAV:' + _k + '@@', _navfor(_k))
