@@ -14,6 +14,8 @@ if os.path.exists(os.path.join(HERE, 'yo3_train.log')) and not os.path.exists(os
 if os.path.exists(os.path.join(HERE, 'yo4_train.log')): lp = os.path.join(HERE, 'yo4_train.log'); RUN = 'v4'; STEPS = 1200   # 31 Oct night: v4 trains on records whose qubits all went stale together (PLAN_YO_V4.md); the posted v2/v3 table stays
 for _t, _r in (('yo5_train.log', 'v5'), ('yo5b_train.log', 'v5b')):   # 1 Nov: v5 trains from v4 on same-date records (PLAN_YO_V5.md), seeds 47 then 48; v4 stays at work until v5 is read
     if os.path.exists(os.path.join(HERE, _t)) and not os.path.exists(os.path.join(HERE, 'yo5_result.json')): lp = os.path.join(HERE, _t); RUN = _r; STEPS = 1200   # 1 Nov: once v5 is read and posted (yo5_result.json), the panel shows YO v4 at work again with the v5 block in its table
+for _t, _r in (('yo6_train.log', 'v6'), ('yo6b_train.log', 'v6b')):   # 1 Nov: v6 trains from v4 on young previous-day groups and young groups with a stale neighbour (PLAN_YO_V6.md)
+    if os.path.exists(os.path.join(HERE, _t)) and not os.path.exists(os.path.join(HERE, 'yo6_result.json')): lp = os.path.join(HERE, _t); RUN = _r; STEPS = 1200
 if os.path.exists(lp):
     for l in open(lp, errors='ignore'):
         m = re.search(r'Iter (\d+): Train loss ([\d.]+)', l)
@@ -27,12 +29,12 @@ if c: nulls['C_always_consistent'] = mean(c, 'C'); nulls['C_always_consistent_fo
 if bi: nulls['C_binary_rule'] = mean(bi, 'C'); nulls['C_binary_rule_forced'] = forced(bi)
 if ba: nulls['A_base'] = mean(ba, 'A'); nulls['C_base'] = mean(ba, 'C'); nulls['C_base_forced'] = forced(ba)
 if os.path.exists(os.path.join(HERE, 'nulls_extra.json')): nulls.update(json.load(open(os.path.join(HERE, 'nulls_extra.json'))))   # POSTHOC_BASE_A.md: the lenient reading, labelled on the page
-res = json.load(open(os.path.join(HERE, 'yo2_result.json'))) if (RUN in ('v2', 'v4', 'v5', 'v5b') and os.path.exists(os.path.join(HERE, 'yo2_result.json'))) else None
+res = json.load(open(os.path.join(HERE, 'yo2_result.json'))) if (RUN in ('v2', 'v4', 'v5', 'v5b', 'v6', 'v6b') and os.path.exists(os.path.join(HERE, 'yo2_result.json'))) else None
 trained = os.path.exists(lp) and 'Saved final weights' in open(lp, errors='ignore').read()
 V4DONE = os.path.exists(os.path.join(HERE, 'yo4_result.json'))   # 1 Nov: v4 posted after the referee, the model at work
-state = ('trained' if trained else 'training') if RUN in ('v5', 'v5b') else ('done' if (V4DONE and res) else ('trained' if trained else 'training')) if RUN == 'v4' else ('done' if res else ('trained' if trained else ('training' if step else ('baselines scored' if ba else 'preparing'))))
-d = dict(model='Qwen3-1.7B (Apache-2.0), LoRA' + (', YO v3 refining YO v2 on qubits stale by one to two days' if RUN == 'v3' else ((', YO v4, the model at work' if V4DONE else ', YO v4 training from YO v2 on records whose qubits all went stale together') if RUN == 'v4' else (', YO v5 training from YO v4 on records whose qubits share one calibration date (seed ' + ('47' if RUN == 'v5' else '48, the second seed') + '); YO v4 stays at work until v5 is read' if RUN in ('v5', 'v5b') else ''))), steps=STEPS, step=step, train=train[-200:], val=val, nulls=nulls, result=res, state=state,
-         plan='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V%s.md' % ('5' if RUN in ('v5', 'v5b') else '4' if RUN == 'v4' else '2'))
+state = ('trained' if trained else 'training') if RUN in ('v5', 'v5b', 'v6', 'v6b') else ('done' if (V4DONE and res) else ('trained' if trained else 'training')) if RUN == 'v4' else ('done' if res else ('trained' if trained else ('training' if step else ('baselines scored' if ba else 'preparing'))))
+d = dict(model='Qwen3-1.7B (Apache-2.0), LoRA' + (', YO v3 refining YO v2 on qubits stale by one to two days' if RUN == 'v3' else ((', YO v4, the model at work' if V4DONE else ', YO v4 training from YO v2 on records whose qubits all went stale together') if RUN == 'v4' else (', YO v5 training from YO v4 on records whose qubits share one calibration date (seed ' + ('47' if RUN == 'v5' else '48, the second seed') + '); YO v4 stays at work until v5 is read' if RUN in ('v5', 'v5b') else (', YO v6 training from YO v4 on young groups whose date falls on the previous day and young groups with a stale neighbour (seed ' + ('49' if RUN == 'v6' else '50, the second seed') + '); YO v4 stays at work until v6 is read' if RUN in ('v6', 'v6b') else '')))), steps=STEPS, step=step, train=train[-200:], val=val, nulls=nulls, result=res, state=state,
+         plan='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V%s.md' % ('6' if RUN in ('v6', 'v6b') else '5' if RUN in ('v5', 'v5b') else '4' if RUN == 'v4' else '2'))
 h = hashlib.sha256(json.dumps(d, sort_keys=True).encode()).hexdigest(); st = os.path.join(HERE, '.publish_state')
 import time
 if os.path.exists(st) and open(st).read().strip() == h and time.time() - os.path.getmtime(st) < 3600: print('yo: unchanged'); raise SystemExit   # republished at least hourly, so the feed's stamp stays current
