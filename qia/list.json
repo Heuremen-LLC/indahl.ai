@@ -13291,7 +13291,7 @@
      "no circuits or counts released (data available on request)"
     ],
     "F6": [
-     "main text 10,000 shots and L\u00b2/2 steps, Supplement II 1,000 shots and L\u00b2 steps",
+     "main text (arXiv v1) 10,000 shots and L\u00b2/2 steps, Supplement II 1,000 shots and L\u00b2 steps",
      "plotted circuit durations below what the printed protocol and gate times allow"
     ]
    }
