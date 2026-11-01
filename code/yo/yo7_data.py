@@ -68,6 +68,6 @@ if __name__ == '__main__':
         with open(f'{OUT}/{name}.jsonl', 'w') as fh:
             for i in rows: fh.write(json.dumps({'prompt': i['prompt'], 'completion': i['answer']}) + '\n')
     with open(HERE + '/DATA_YO_V7.sha256', 'w') as fh:
-        for n in ('train', 'valid'): fh.write(hashlib.sha256(open(f'{OUT}/{n}.jsonl', 'rb').read()).hexdigest() + f'  data6/{n}.jsonl\n')
+        for n in ('train', 'valid'): fh.write(hashlib.sha256(open(f'{OUT}/{n}.jsonl', 'rb').read()).hexdigest() + f'  data7/{n}.jsonl\n')
     print('TRAIN7', len(TR), '(young previous-day', len(YP), 'young with stale', len(YS), 'same-date older', len(SDO), 'same-date younger', len(SDY),
           'whole-window', len(A_win), 'band', len(A_band), 'replay A', len(A_rep), 'C', len(C_rep), ') VALID7', len(VA))
