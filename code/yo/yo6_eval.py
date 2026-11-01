@@ -3,8 +3,8 @@ data6/future_items.jsonl (PLAN_YO_V6.md FUTURE6, built once by yo6_future.py). S
 nothing (A null) | consistent (C null) | binary (C null) | base | yo. Writes eval2_<name>.jsonl, one row per item. Greedy decoding."""
 import json, sys, os, re, collections
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-SET = sys.argv.pop(1); assert SET in ('test6', 'future6'), SET
-items = [json.loads(l) for l in open(f'{HERE}/data6/' + ('test_items.jsonl' if SET == 'test6' else 'future_items.jsonl'))]
+SET = sys.argv.pop(1); assert SET in ('test6', 'future6', 'future7'), SET
+items = [json.loads(l) for l in open((f'{HERE}/data7/future_items.jsonl' if SET == 'future7' else f'{HERE}/data6/' + ('test_items.jsonl' if SET == 'test6' else 'future_items.jsonl')))]
 LAB = ('ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL')
 def f1(p, t):
     p, t = set(p), set(t)
