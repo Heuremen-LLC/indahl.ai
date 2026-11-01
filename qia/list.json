@@ -8616,28 +8616,6 @@
    "anchor": "arxiv-2211.16114"
   },
   {
-   "study": "Correlated Error Accumulation in Quantum Circuits: A Mathematical Foundation for Scaling-Exponent Diagnostics",
-   "link": "https://doi.org/10.5281/zenodo.21866937",
-   "version": "Zenodo record 21866937 as read 2026-11-01 (publication_date 2026-08-10)",
-   "indexed": "2026-11-01",
-   "read": "Full text",
-   "codes": [
-    "F1",
-    "F6"
-   ],
-   "basis": {
-    "F1": [
-     "observed exponent compared with a prediction built from the same device and session (dynamical-decoupling spectroscopy)"
-    ],
-    "F6": [
-     "text puts ibm_fez and ibm_kingston below 1.569 while Table 5 lists ibm_kingston 1.730 and ibm_fez 1.570 as STRUCTURED",
-     "text says the Table 6 curve is monotone decreasing; Table 6 lists 1.202 at n_max 10 then 1.292 at 15 (footnote 1)"
-    ]
-   },
-   "calibrated": false,
-   "anchor": "zenodo-21866937"
-  },
-  {
    "study": "Correlated Purification for Restoring N-Representability in Quantum Simulation",
    "link": "https://arxiv.org/abs/2511.10789v1",
    "version": "v1",
