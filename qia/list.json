@@ -4938,7 +4938,7 @@
      "run dates not printed"
     ],
     "F1": [
-     "scored against IBM's stated figures: FIG. 5 (a) demonstrates that, remarkably, the QITE algorithm executed on IBM quantum hardware (with \u2248 0.007 ECR/CX error rate, as obtained from Fig. S1 from App"
+     "scored against IBM's stated figures: the Fig. 5(a) QITE hardware runs are given an error rate of about 0.007 ECR/CX as obtained from Fig. S1, which is the error map of the IBM Brisbane device, and the QAOA comparison in Fig. 5(b) is a local simulation with noise of similar magnitude."
     ]
    },
    "calibrated": false,
@@ -5328,7 +5328,7 @@
      "\"Our characterization framework can reveal branch-specific error structure and mitigation behavior that state-of-the-art outcome-averaged analyses fail to expose.\" and \"demonstrating that our branch-resolved characterization is able to...\""
     ],
     "F4": [
-     "no run dates or job ids (\"available at the time we performed our experiments\"). No data or code link. No table of branch qualities (they are in Figs. 5 and 6 as bars with \"95% bootstrap confidence intervals\", no numbers in text). No ..."
+     "no run dates or job ids (\"available at the time we performed our experiments\"). No data or code link. No table of branch qualities (they are in Figs. 5 and 6 as bars with \"95% bootstrap confidence intervals\", no numbers in text). No counts for the shadow, tomography or calibration circuits."
     ],
     "F1": [
      "none. The branch quality is scored against the ideal Choi state, and the shadow estimator is validated against full tomography on layout 1 (RMSE 0.007 to 0.015, printed)"
@@ -10421,16 +10421,16 @@
    ],
    "basis": {
     "F1": [
-     "Fig. 6 scores the \"Heron noise model\" against a Torino job with fidelity relative to a noiseless simulation, but every other result in the paper is scored on models the authors built (SI1000, uniform p, device-class models) and the ..."
+     "Fig. 6 scores the \"Heron noise model\" against a real-hardware run with mean fidelity relative to a noiseless simulation, but every other result in the paper is scored on models the authors built (SI1000, uniform p, device-class models) and the logical error rates in the other figures come from stabilizer simulations, not from a device run."
     ],
     "F2": [
-     "(a) \"reducing logical errors by an average of 81.92% from a grid\" is a ratio of means dominated by the gross code (1.000 to 0.000). The mean of per-code reductions is 58.7%. One code is 80% worse. (b) \"69.14%\" and \"34.21%\" average a ..."
+     "(a) 'reducing logical errors by an average of 81.92% from a grid' is a ratio of means dominated by the gross code (1.000 to 0.000). The mean of per-code reductions is 58.7% (our computation from the released results files). One code is 80% worse. (b) '69.14%' and '34.21%' each average two ratios of means, one at the original noise and one at the tenfold-reduced noise (15.29% and 122.98%, 13.27% and 55.15%). The mean of per-code single-QPU advantages is 12.69%."
     ],
     "F3": [
      "\"universal improvements\" (contradicted by Steane, 3.7 sd worse). \"confirm\"/\"consistent\" statements for 1000-shot single runs, many near the 0.5 ceiling. \"negligible impact\" for qubit variance with no width"
     ],
     "F4": [
-     "counts, fidelity numbers, calibration record and a device name in the text for Fig. 6 (the text says only \"real hardware\"). Source, chip, date and statistic (mean or median) of the Heron model constants. An interval on any logical error ..."
+     "counts, fidelity numbers, calibration record and a device name in the text for Fig. 6 (the text says only \"real hardware\"). Source, chip, date and statistic (mean or median) of the Heron model constants. An interval on any logical error rate beyond the general statement of \"confidence intervals\" of about 0.004 for 1000 shots. The Zenodo record the paper cites holds one IBM job file (ibm_torino, submitted 2026-01-04, 60 circuits at 1000 shots) with no counts or fidelities, and the Heron constants appear there only as bare numbers in noise/heron_noise.py."
     ]
    },
    "calibrated": false,
@@ -11351,7 +11351,7 @@
      "no run dates, job ids, circuits or counts for the fez experiments"
     ],
     "F1": [
-     "scored against IBM's stated figures: true: Table 3.1 lists IBM median T1/T2/1q/2q/readout for fez, strasbourg, lagos, manhattan from Refs. Quote: \"T1 times, T2 times, single-qubit (1q), two-qubit ("
+     "scored against IBM's stated figures: Table 3.1 lists IBM median T1, T2, 1q, 2q and readout figures for ibmq_lima, ibm_lagos, ibm_manhattan, ibm_strasbourg and ibm_fez with the data taken from Refs. [3, 261, 396, 121], and its caption says they refer to the median across all qubits of the chip."
     ]
    },
    "calibrated": false,
@@ -11596,7 +11596,7 @@
      "no circuits or counts released"
     ],
     "F2": [
-     "abstract 'an enhancement in the classification performance' vs body 'the overall predictive performance for the PQK data is only marginally improved' (0.75 vs 0.73 median F1 over 10 splits"
+     "abstract 'an enhancement in the classification performance' vs body 'the overall predictive performance for the PQK data is only marginally improved' (0.75 vs 0.73 median F1 over 10 splits and 0.81 vs 0.77 maximal F1)."
     ]
    },
    "calibrated": false,
@@ -12221,15 +12221,15 @@
    ],
    "basis": {
     "F2": [
-     "\"reduces observed error of time-evolved states by up to 99% for the Ising model\": the 99.2 % is one repeat of one cell (n=5, h=0.5) whose three repeats are 99.2, -20.7, 19.7. The cell median is 19.7. The same cell's noiseless-Trotter ...",
-     "\"In TFIM with\u210e= 5, the combined method recovers 15%-99% of the energy gap\": at h = 5 the data give 42.7 to 56.8 %. The 15 and 99 come from the h = 0.5 cells (text against own data)",
-     "\"yields a energy gap improvement of at least 60% in ground state estimation\": 31 of 32 cell medians are >= 60 %. Ising n=8, h=5 is 37.7 % [37.4, 85.9]"
+     "The abstract's \"reduces observed error of time-evolved states by up to 99% for the Ising model\" matches only the upper error bar end (99.2) of the n=5, h=0.5 DD+ZNE cell in the Ising time-evolution figure (Fig. 6, values read off the figure), whose bar is 19.7 and whose lower end is -20.7, and the other three DD+ZNE bars in that figure are 48.1, 17.6 and 47.2. The text says \"the experiments laid out in Section 4 are repeated three times and the median value of the improvement percentage is reported\", and the caption does not define the error bars.",
+     "The text says \"In TFIM with h=5\" the combined method \"recovers 15%-99% of the energy gap\", but in the Ising time-evolution figure (Fig. 6, values read off the figure) the DD+ZNE bars at h=5 are 48.1 (n=5) and 47.2 (n=12) with error bar ends from 42.7 to 56.8. The 99.2 end and the bar heights of 19.7 and 17.6 belong to the h=0.5 cells.",
+     "The abstract says the combination \"yields a energy gap improvement of at least 60% in ground state estimation\", and in the ground state figures (Figs. 4 and 5, values read off the figures) 31 of 32 DD+ZNE bars are at or above 60, with the Ising n=8, h=5 bar at 37.7 and an error bar from 37.4 to 85.9. The results text says the combination is \"often achieving over 60% reduction in the energy gap across most system sizes\"."
     ],
     "F1": [
      "evolution score is \"the deviation from the initial energy\", a reference the noiseless circuit itself does not reach (Trotter energy 4.749 against 4 at n=5, h=5, 13.014 against 11 at n=12, h=5), so the metric rewards error cancellation. The"
     ],
     "F4": [
-     "shots, physical qubits and layout, calibration records or any T1/T2/gate/readout figure, run dates and times (only recoverable from job-id decoding), error bars on the energies (a single energy per circuit), the ZNE fit actually used ..."
+     "The paper names the backend (IBM Kingston) and links its code, but it prints no shot count, no physical qubits or layout, no calibration or T1, T2, gate or readout figure, no run dates or times, no uncertainty on the energies beyond the spread over three repeats in the figures, and no statement of which ZNE fit was used. It says only that \"The extrapolation typically uses linear, polynomial, or exponential fits\"."
     ]
    },
    "calibrated": false,
@@ -16452,7 +16452,7 @@
      "run dates not printed"
     ],
     "F1": [
-     "scored against IBM's stated figures: \"The global coefficient C0 denotes the average CZ gate error observed on the ibm_boston backend at the time of writing.\" (cost function of the Bonsai simulated"
+     "The cost function (12) that the simulated annealing minimises takes its global coefficient from the average CZ \"gate error observed on the ibm_boston backend at the time of writing\", with no value or source given, and the reduction from 1.166 to 0.667 is scored on that same cost function, not on hardware. The paper adds \"the actual gate fidelity depends exponentially on the per-gate error rate, and that our estimate assumes a uniform error rate across all qubits\"."
     ]
    },
    "calibrated": false,
@@ -22232,16 +22232,16 @@
    ],
    "basis": {
     "F2": [
-     "\"with an estimation precision of approximately 0.01 over a process infidelity range of 0.02-0.20\": the figure is the calibrated RMSE (scatter after the fitted slope and intercept are removed). The fit line EFS = 0.94 IRB + 0.012 puts EFS ..."
+     "The abstract's \"with an estimation precision of approximately 0.01 over a process infidelity range of 0.02 \u2013 0.20\" is the calibrated RMSE, defined in the text as the EFS standard deviation divided by the slope and multiplied by the square root of 1 minus r squared, which does not include the fitted intercept of 0.012 (\"both with intercept 0.012\"). From the fitted lines in Fig. 4 (y=0.94x+0.012 and y=0.93x+0.012, EFS against IRB) the EFS value is about 0.011 above IRB at IRB = 0.02 and within 0.002 of IRB at IRB = 0.20."
     ],
     "F1": [
-     "(i) Fig 3's simulation validation (\"EFS estimates vs true process infidelity ... from Aer Simulator with independent test ensemble\", r = 0.9813) is scored on the same generator family that trained the estimator (the authors' chosen Table I"
+     "Fig. 3's simulation check (legend r=0.9813) scores the estimator on \"a holdout test ensemble [15] with an independent random seed\", and the paper gives no difference between that ensemble and the training ensemble other than the seed. The training ensemble uses the variance scales of Table 1, of which the paper says \"This choice is not claimed to be optimal.\""
     ],
     "F3": [
      "\"confirming the expected null hypothesis that, under diagonal-dominated noise, \u03b5(CCZ)\u2248\u03b5(I CCZ)\": an equivalence read from an agreement with RMSE 0.0159 (1.6 times the Fig 4 figure) and slope 0.92, no width on \"\u2248\". And \"it follows that the...\""
     ],
     "F4": [
-     "run date(s), job ids, backend calibration records, the number of triples dropped as \"faulty\" and their source and date, the 204 per-triple EFS/IRB values, the IRB fit uncertainties and the interleaved-RB systematic bound at any point, the ..."
+     "The paper prints no run date, job ids, backend calibration records, per-triple EFS or IRB values, IRB fit uncertainties or IRB systematic bound, and has no data or code availability statement. It says only that triples were chosen \"excluding qubits and edges flagged as faulty\" and that \"ibm_kingston yields 204 valid triples\", with no count of the flagged items, their source or the date."
     ]
    },
    "calibrated": false,
@@ -22339,7 +22339,7 @@
      "run dates not printed"
     ],
     "F1": [
-     "scored against IBM's stated figures: To anticipate the behavior on NISQ hardware, we repeated the experiment by applying a channel that replicates the noise model of the backends provided by IBM"
+     "scored against IBM's stated figures: the realistic-noise results come from a channel that replicates the noise model of the backends provided by IBM, implemented in Qiskit, and the Fig. 4 caption names IBM_OSAKA as the backend emulated while the hardware run used IBM_BRISBANE."
     ]
    },
    "calibrated": false,
@@ -23112,7 +23112,7 @@
      "Fig. 3 caption names IBM Fez with ten trials. Released fez has 4 raw trials and no DD. Boston data not released"
     ],
     "F2": [
-     "intro 'up to 74 physical qubits ... providing better-than-physical performance' vs Fig. 4: 74-qubit hardware run sampled zero codewords in 1e6 shots (the 74-qubit curve is a depolarizing sim"
+     "intro 'up to 74 physical qubits ... providing better-than-physical performance' vs Fig. 4: 74-qubit hardware run sampled zero codewords in 1e6 shots (the 74-qubit curve is a depolarizing-noise simulation with all-to-all connectivity, not the heavy-hex device)."
     ],
     "F1": [
      "d=7 curve is a depolarizing-noise simulation with all-to-all connectivity shown beside hardware"
@@ -23819,7 +23819,7 @@
    ],
    "basis": {
     "F2": [
-     "\"Reported results are means over eight selected trials per setting\" (main l.404-406): rule, pool size and timing of the rule not stated. Also: \"The decoder with lower circuit depth generally retains higher mean fidelity\" (abstract) while ..."
+     "The methods say \"Reported results are means over eight selected trials per setting\" and give no rule for the selection, no size of the pool the eight were selected from and no time at which the rule was set, while the abstract and discussion call them \"eight trials\". The abstract says \"The decoder with lower circuit depth generally retains higher mean fidelity\", and the text says \"The R3 intervals for these between-rank differences include zero. Thus, the observed ordering does not establish a resolved advantage at every round.\""
     ],
     "F4": [
      "circuits, raw counts, job ids, per-trial calibration records for the cascade. The number of trials acquired. Run dates (only \"several days\")"
@@ -24434,10 +24434,10 @@
    ],
    "basis": {
     "F1": [
-     "the correction is fitted against the yardstick it is then scored on. \"we take the difference between the mean measured value from the hardware and one from the ideal circuit, and apply that shift to the remaining 500 executions.\" The ..."
+     "The hardware bias shift is the difference between the hardware mean and the ideal circuit mean, applied to 500 executions (\"we take the difference between the mean measured value from the hardware and one from the ideal circuit, and apply that shift to the remaining\"), so the correction is fitted to the same ideal circuit that Fig. 9 then shows the hardware against. The 100 calibration executions are \"disjoint from those used in the comparison\", so no execution is used both to fit the shift and to score it."
     ],
     "F2": [
-     "\"good agreement with the experimental data\" is judged on the executions that survive a cut which removes 28.8 % after the shift. The stated cause, \"which can be attributed to the low number of qubits and low depth of the circuit\", sits ..."
+     "The conclusion says \"after some postprocessing of the results, there was good agreement with the experimental data, which can be attributed to the low number of qubits and low depth of the circuit\". The postprocessing excludes the estimates that still fall outside [0,1] after the shift, 28.8% of executions, and the only hardware circuit is the four-qubit three-prong circuit with seven two-qubit gates and depth 33, so no hardware run varies qubit number or depth (of the four-prong circuit the paper says \"We run this circuit on an ideal simulation, following the same approach as in the three-prong case.\")."
     ],
     "F3": [
      "\"good agreement\" and \"consistent with simulation\" with no width and no test statistic. The figures give ratio panels and \"The error bars give the statistical uncertainty of the circuit samples\", with no number in the text"
@@ -26645,14 +26645,14 @@
    ],
    "basis": {
     "F1": [
-     "scored on a yardstick the authors built: the reference realization is QROB's own reverse-constructed reference, and the hardware instances are QROB-generated ..."
+     "The hardware comparison scores Qiskit O3 against QROB's own reference realization on QROB-generated instances: \"Recording the inverse transformations yields a feasible reference realization and its cost without solving the intractable forward optimization problem.\" The paper says \"The experiment is an existence demonstration on QROB-generated instances\u2014constructing instances whose near-optimal joint mapping the industrial pipeline does not find is precisely the benchmark\u2019s purpose.\""
     ],
     "F2": [
      "\"achieve a median mirror-circuit survival rate 1.65x ... across three 156-qubit IBM Heron-r2 processors\": a median pooled over chips and depths. Per chip 1.57 [1.27, 1.91], 2.37 [1.93, 2.56], 1.20 [1.04, 1.63], chi2/dof 6.1. Also \"3.9x at...\"",
      "\"reproducible across three generation seeds and reruns\" is kingston only. Marrakesh and fez have one seed"
     ],
     "F3": [
-     "\"demonstrating that closing algorithmic compilation gaps translates directly into physical fidelity gains\" with no width in the abstract sentence (fez lower bound 1.04). \"paired sign-test p ~3 x 10^-10\" counts 65 pairs from 3 chips x 3 ..."
+     "The abstract's \"demonstrating that closing algorithmic compilation gaps translates directly into physical fidelity gains\" follows a pooled median ratio of 1.65 with no interval, and Fig. 11 prints per-chip median ratios of 1.6, 2.1 and 1.2 for ibm_kingston, ibm_marrakesh and ibm_fez with error bars the caption does not define. The paired sign-test p of about 3 x 10^-10 is on 65 instance pairs (\"the QROB reference wins 57 of 65 instance pairs\") pooled over three chips at depths 8, 12 and 16 in Fig. 11(a1-a3), with no interval on the pooled ratio or on any single chip."
     ],
     "F4": [
      "no job ids, run dates, calibration stamp, mirror circuits, O3 physical layouts, full histograms"
@@ -29135,19 +29135,19 @@
    ],
    "basis": {
     "F1": [
-     "\"the learned channels recover the ground-truth Kraus operators with Choi process fidelity above0.99\": Table I has no null row. The noiseless channel scores F = 0.999 and T = 0.001 on the same truth, while the learned channels read T = ...",
-     "\"reproduces the device output distribution\" / \"closely match the experimental data\": scored on the training distribution itself (in-sample, 832 parameters, 31 free probabilities). The printed NLL excess is about 63 times the shot-noise ...",
-     "Fig 6 baseline: random Kraus noise \"of matched magnitude\" whose \"overall noise magnitude is set by the RMS of the learned parameters\" (the authors' own words: \"a mild information leakage\"). No comparison with a noise model built from IBM's"
+     "\"the learned channels recover the ground-truth Kraus operators with Choi process fidelity above 0.99\": Table I has no null row. The noiseless channel scores F = 0.999 and T = 0.001 on the same truth (our computation from the paper's channel definitions, p = 0.001 in the Table I caption), while the learned channels read T = 0.008822 to 0.02072 at the default bond dimension 8 and up to 0.29 at bond dimension 2, every one above 0.001.",
+     "\"reproduces the device output distribution\" / \"closely match the experimental data\": scored on the training distribution itself (in-sample, 832 parameters, 31 free probabilities). The printed NLL excess of about 0.06 nats (2.87 against the 2.81 bound) is about 63 times the shot-noise floor (our computation) of 31/(2 x 16,384), about 0.00095.",
+     "Fig 6 baseline: random Kraus noise \"of matched magnitude\" whose \"overall noise magnitude is set by the RMS of the learned parameters\" (the authors' own words: \"a mild information leakage\"). No comparison with a noise model built from IBM's reported ibm_fez figures is shown."
     ],
     "F2": [
      "\"A systematic evaluation across a range of benchmark circuits confirms that this generalization is consistent.\": the body says \"the majority of points lie above the diagonal\" and \"The few cases where the random baseline achieves comparable",
      "LABS: \"This means thatN= 8 is already too difficult given the noise strength.\" rests on \"the learnedCZinfidelity of\u22482\u00d710 \u22122 ... \u22480.98 268 \u22480.5%\", a number the paper itself calls an \"effective upper bound\" and \"not ... calibration-grade...\""
     ],
     "F3": [
-     "\"indicating that the method captures intrinsic device characteristics rather than overfitting to the training circuit\" and \"confirms\": from one training circuit, one named transfer circuit shown as an overlay, and a \"majority\" claim with ..."
+     "\"indicating that the method captures intrinsic device characteristics rather than overfitting to the training circuit\" and \"confirms\": from one training circuit, one named transfer circuit shown as an overlay, and a \"majority\" claim with no count of the about 40 circuits above the diagonal and no interval on the fidelity differences."
     ],
     "F4": [
-     "run date(s), job ids, qubit sets, calibration snapshot of the run, whether adder and multiplier ran in one session (fez drift: presence rate only), the ~40 circuit names and their fidelities, the count above the diagonal, the learned ..."
+     "run date(s), job ids, qubit sets, calibration snapshot of the run, whether adder and multiplier ran in one session (fez drift: presence rate only), the ~40 circuit names and their fidelities, the count above the diagonal, the learned parameter values. No data or code link is given."
     ]
    },
    "calibrated": false,
@@ -34227,8 +34227,8 @@
      "run dates not printed"
     ],
     "F2": [
-     "abstract 'up to a factor of 6.8e-6' is the N=30 row with a hand-chosen start state |0101..>. Table 1 rows with an arbitrary start show 0.19-0.35. No energy error is quoted at N=30 (no exact",
-     "abstract 'system sizes ranging from N=4 to N=30 qubits, demonstrating consistent performance across platforms' while the trapped-ion run is N=4 only and IBM runs N=14-30"
+     "abstract 'up to a factor of 6.8e-6' is the N=30 row with a chosen start state, the ground state |01...01> of the mass Hamiltonian. Table 1 rows with an arbitrary start show 0.19-0.35. No energy error is quoted at N=30 because no exact diagonalization is available there, and the only check printed at N=30 is the critical field l_0,c against a fit to the same SKQD data.",
+     "abstract 'system sizes ranging from N=4 to N=30 qubits, demonstrating consistent performance across platforms' while the trapped-ion run is N=4 only and IBM runs go from N=14 up to N=30, so no system size is run on both platforms."
     ],
     "F1": [
      "N=30 result scored against a fit model of the mass shift fitted to the same SKQD data"
@@ -36368,7 +36368,7 @@
      "run dates not printed"
     ],
     "F1": [
-     "scored against IBM's stated figures: the parameters in the noise model do not replicate the effects of noise at the time the HHL circuit was executed (as major calibrations of IBM devices take plac"
+     "scored against IBM's stated figures: the IBM Nairobi hardware runs are compared with a fake backend having the noise model of the IBM Nairobi machine, and the authors write that the parameters in the noise model do not replicate the effects of noise at the time the HHL circuit was executed, as major calibrations of IBM devices take place only daily."
     ]
    },
    "calibrated": false,
@@ -36555,7 +36555,7 @@
      "run dates not printed"
     ],
     "F1": [
-     "scored against IBM's stated figures: \"A noisy baseline is generated using the Aer simulator with a noise model constructed from device calibration data via NoiseModel.from_backend.\" (hardware resul"
+     "The reference for the ibm_fez energies is built from IBM's stated calibration figures: \"A noisy baseline is generated using the Aer simulator with a noise model constructed from device calibration data via NoiseModel.from_backend.\" Hardware energies are compared with it in Fig. 10, and the paper says \"Hardware deviations contain both positive and negative shifts, while the noisy simulation captures part of the systematic bias.\""
     ]
    },
    "calibrated": false,
@@ -37191,15 +37191,11 @@
    "indexed": "2026-10-24",
    "read": "Full text",
    "codes": [
-    "F2",
-    "F4"
+    "F2"
    ],
    "basis": {
     "F2": [
      "none firm. The finite-class label counts are stated as \"a finite-class consequence of the same simultaneous confidence event, not a lower bound for unobserved contexts\""
-    ],
-    "F4": [
-     "\"Data files are temporarily not available\" (Enodo, 24 Oct 2026) against the paper's \"available in the Enodo archive\". No job ids, per-shot timestamps or calibration values in the paper ..."
     ]
    },
    "calibrated": false,
@@ -39643,13 +39639,13 @@
      "\"12/12 circuits closer to the simulator's predicted distribution than that prediction is to uniform\". The yardstick and the null are both built from the authors' own simulator. Likewise Level 2 scores \"the measured p(bit = 1) with the...\""
     ],
     "F2": [
-     "the abstract's 12/12 is the line-entangler result after the ring run failed: \"Job A ... showed signal in only 4 of 9 circuits, passing the pre-registered bar at L = 2 only\". The abstract does not carry it, the text does ..."
+     "The abstract's \"12/12 circuits closer to the simulator\u2019s predicted distribution than that prediction is to uniform\" is the result of the second attempt with a line entangler (Job A\u2032). The first attempt with ring entangler circuits (Job A) \"showed signal in only 4 of 9 circuits, passing the pre-registered bar at L = 2 only\", and the abstract does not mention it while Section 8.2 does (\"a failure recorded and diagnosed\")."
     ],
     "F3": [
      "\"validated\" / \"show signal\" is a yes/no on TVD(measured, prediction) < TVD(prediction, uniform), no width on any of the 12. \"passed pre-registered accuracy bars\" at 4 tokens is \"median |\u0394p| = 0.0749 and 22/24 decisions\" with no interval on"
     ],
     "F4": [
-     "raw counts, circuits, printed run dates (decodable from the job ids: all five on 31 Aug 2026), calibration (\"Backend calibration was not snapshotted for Jobs A-C\"), repository (\"not publicly accessible\"). The pre-registration claim (\"first"
+     "The paper keeps its code, raw result JSON, circuits and per-circuit results in a private repository (\"not publicly accessible at the time of this preprint\") and says \"Backend calibration was not snapshotted for Jobs A\u2013C\". It prints the five job identifiers and 4,096 shots per circuit but no run dates (decoding the identifiers as time-stamped ids gives 31 Aug 2026 for all five), and its list of first pre-registration commit dates covers M18 to M21, M23 to M25, M26, M28 and M31 with none for M30, the hardware milestone."
     ]
    },
    "calibrated": false,
