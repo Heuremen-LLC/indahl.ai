@@ -47,3 +47,9 @@ created at 22:06:58.9 UTC, the analysis script was committed at 22:07:10 UTC (f6
 18:15:24 EDT. The "~18:30" and "~19:00" written above were wrong. There is no outside timestamp of the plan before the jobs, only git.
 (2) From the next fire on, every bootstrap band uses 20,000 draws instead of 2,000: at 2,000 the kingston first-fire label flipped with the
 draw (CANNOT_TELL in 18 of 20 seeds, readings_after_referee.text). The FINAL rule is unchanged.
+
+ADDENDUM 2, implementation note (1 Nov 2026, written before the second fire's jobs). The code drew 20,000 resamples only for R2 to R4.
+The R1 share bands, the known-good band and the Addendum 1 copy gap were still drawn 2,000 times. clock.py and analyze_clock.py now draw
+20,000 for every band, as Addendum 2 says. Re-run on a copy of the first ibm_kingston fire, every label is unchanged. The known-good band's
+upper end moves from -1.926 to -1.826 deg per readout and no other band end moves by more than 0.006. The FINAL rule is unchanged.
+Later fires, one per chip per day while seconds allow, run the same code and plan.
