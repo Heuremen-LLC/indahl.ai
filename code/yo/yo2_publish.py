@@ -13,7 +13,7 @@ lp = os.path.join(HERE, 'yo2_train.log'); RUN = 'v2'; STEPS = 2000
 if os.path.exists(os.path.join(HERE, 'yo3_train.log')) and not os.path.exists(os.path.join(HERE, 'yo2_result.json')): lp = os.path.join(HERE, 'yo3_train.log'); RUN = 'v3'; STEPS = 1200   # 31 Oct: v3 refines v2 (PLAN_YO_V3.md); once the result posts, the panel follows v2 (the model at work) and v3's readings sit in the result table
 if os.path.exists(os.path.join(HERE, 'yo4_train.log')): lp = os.path.join(HERE, 'yo4_train.log'); RUN = 'v4'; STEPS = 1200   # 31 Oct night: v4 trains on records whose qubits all went stale together (PLAN_YO_V4.md); the posted v2/v3 table stays
 for _t, _r in (('yo5_train.log', 'v5'), ('yo5b_train.log', 'v5b')):   # 1 Nov: v5 trains from v4 on same-date records (PLAN_YO_V5.md), seeds 47 then 48; v4 stays at work until v5 is read
-    if os.path.exists(os.path.join(HERE, _t)): lp = os.path.join(HERE, _t); RUN = _r; STEPS = 1200
+    if os.path.exists(os.path.join(HERE, _t)) and not os.path.exists(os.path.join(HERE, 'yo5_result.json')): lp = os.path.join(HERE, _t); RUN = _r; STEPS = 1200   # 1 Nov: once v5 is read and posted (yo5_result.json), the panel shows YO v4 at work again with the v5 block in its table
 if os.path.exists(lp):
     for l in open(lp, errors='ignore'):
         m = re.search(r'Iter (\d+): Train loss ([\d.]+)', l)
