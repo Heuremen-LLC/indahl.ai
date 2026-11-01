@@ -69,3 +69,30 @@ packs: Q,P
 - P8: cannot tell: page not live yet; rendered check after the midnight ship
 - P9: holds: no AI statement, no count of our things in headings, plain sentences
 - P10: fixed: 'more than ten degrees' and 'two that moved' labelled defined after the data
+
+## 2026-11-01 07:28 Darkwave clock second fire, ibm_marrakesh 1 Nov, after the referee: clock reading BELOW by the plan with the upper end on zero, below in 3 of 20 other seeds, printed as a lean; difference widened because the fresh table's residual fell
+packs: Q,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same arms in the same job, same 117 qubits as the committed reading; nothing dropped (n=117 in every arm)
+- II: caught: the widened difference (-0.02 -> -0.06) came from the fresh table residual falling 0.302 -> 0.245 while the 31 Oct table stayed 0.344 -> 0.349; per-qubit counts 71/46 pooled, 68/49 and 65/52 per copy, 64/53 at the first fire
+- III: caught: the share folds the residual sign; signed medians printed (MC +0.932, M31 +0.169 with its band through zero); over-correction counted per qubit (64 of 117)
+- V: holds: committed share ruler at the plan seed, then the seed spread (3 of 20 BELOW) and the exact sign test beside it; they disagree, so the page prints a lean
+- VI: fixed: zero barely excluded at one seed and not at 17 of 20; the 0.05 size inside the band; printed as a lean with the upper end at 0.00, never as a change
+- R: holds: every number from results_clock.text, readings_second.text and readings_compare.text, recounted by our code after the referee; table age 16.9 h from the job record; post hoc labelled
+- QA: holds: IBM records the two tables ran under compared per untouched qubit (T1 103/115, T2 110/115, readout error 115/117, readout length 0/117); no cause named
+- QB: holds: arms interleaved in one job, equal scheduled durations 6057 dt in the dry run
+- QC: holds: known-good PASS (-1.474, 0.62 of the committed kick, inside the 0.5x-2x window); shot-noise scale printed (0.17, 0.19); synthetic resolution unchanged
+- QD: holds: copies agree (both CANNOT_TELL) so FINAL takes the pooled label by the rule; copy gap -0.000 [-0.127, +0.114] reported; one chip, no combined claim
+- QE: holds: no mechanism named; every second ruler labelled defined after the data (Addendum 3, readings_compare)
+- QF: fixed: code change public 57 s before the first job (ae912152 11:58:19Z, job C 11:59:16Z); Addendum 3 after the fire, said on the page; run repo commit of the second-fire files made with this entry
+- QG: fixed: outside referee (same model family as the writer) read the raw files; every flag acted on: lean wording, post-hoc placement, either-direction wording, 0.24 not 0.25, IBM record sentence, first-fire paragraph rescoped, kingston not yet read, provenance sentence
+- P1: n/a: the page quotes no one
+- P2: holds: each figure names its fire and the files link from the page
+- P3: holds: 21 October table called the ten-day table as elsewhere on the page, 31 October table and fresh table as the plan names them
+- P4: holds: no cause named for the shrinking kick or the IBM record changes
+- P5: holds: bands are 99 % bootstrap over qubits as the page says above the table; the sign test says exact two-sided and not at 99 %
+- P6: fixed: below by the rule with the upper end on zero and below in 3 of 20 other seeds, printed as a lean
+- P7: holds: ledger rows added before the surface edit, ship.sh only, verified live after the ship
+- P8: cannot tell: checked in the rendered page after the ship
+- P9: holds: no AI statement, no count of our things in headings, plain sentences, no semicolons
+- P10: holds: Addendum 3 and readings_compare lines labelled defined after the data on the page
