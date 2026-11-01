@@ -61,3 +61,15 @@ each arm (positive = over-correction), (d) the shot-noise floor of the residual.
 BELOW with the band's upper end at -0.0002, BELOW in 3 of 20 seeds; the share folds the sign of the residual; the fresh table's residual sits
 near the floor. The setup, the shots and the FINAL rule are unchanged, so every fire stays comparable. For the 1 November fires these
 readings were defined after the data.
+
+CORRECTION to the Addendum 2 implementation note (1 Nov 2026, after the outside referee of the second ibm_kingston fire). "Every label is
+unchanged" is wrong: that check compared the numbers and cut the labels off. Read at 20,000 draws, the first ibm_kingston fire's clock reading
+goes from FINAL CONSISTENT (the committed 2,000-draw file) to CANNOT_TELL, because copy B's band reaches the margin, and its 21 Oct table minus
+today's table goes from copy B BELOW to CANNOT_TELL (FINAL CANNOT_TELL both ways). The page has printed that clock reading as cannot tell since
+31 Oct, after the first referee read it across draws.
+
+ADDENDUM 4 (1 Nov 2026, after the outside referee of the second ibm_kingston fire, before any 2 November fire). post_clock.py also prints,
+for R2, R3 and R4, the pooled label and the plan's FINAL rule applied at each bootstrap seed 1 to 20 (copies A, B and pooled read on one
+generator, as analyze_clock.py reads them), each copy's band at the plan's own draw, and when today's table was measured relative to the
+copies. Addendum 3's "defined after the data" label now keys off when the fire's first job ran. The FINAL rule, setup and shots are unchanged.
+For the 1 November fires these lines were defined after the data.
