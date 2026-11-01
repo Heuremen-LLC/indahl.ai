@@ -1,0 +1,13 @@
+NULLS (named in the plan): Job A flag nothing 0.704, date rule 0.930; Job C flag nothing n/a
+date rule: stale recall 0.533 precision 1.000 band recall 0.414 (149 of 360)
+Job A items with nothing to flag: 190 of 400 (every system scores them [1.0])
+Job A on the 210 items with something to flag (defined after the data): v3 0.941, v2 0.926, date rule 0.867
+band recall, v3: items where all 8 are band-stale 98/240 = 0.408; other items 104/120 = 0.867
+band recall, v2: items where all 8 are band-stale 88/240 = 0.367; other items 84/120 = 0.700
+band recall, date rule: items where all 8 are band-stale 88/240 = 0.367; other items 61/120 = 0.508
+v3 Job C: answers CANNOT_TELL on 118 of 400 (100 true); 18 of them wrong
+v2 Job C: answers CANNOT_TELL on 109 of 400 (100 true); 11 of them wrong
+v3 zero flags: 121 of 123 found, 1 false
+v2 zero flags: 122 of 123 found, 5 false
+band recall v3 minus v2, items where all 8 are band-stale: +0.042 [-0.101, +0.181] -> CANNOT_TELL
+band recall v3 minus v2, other items: +0.167 [+0.043, +0.312] -> ABOVE

@@ -1,0 +1,7 @@
+YO v3 {'A': 0.969, 'recall': 0.637, 'precision': 0.976, 'band_recall': 0.561, 'band_n': 360, 'C': 0.95, 'forced': 0.0}
+YO v2 {'A': 0.961, 'recall': 0.553, 'precision': 0.965, 'band_recall': 0.478, 'band_n': 360, 'C': 0.963, 'forced': 0.02}
+band recall, v3 minus v2: +0.083 [-0.021, +0.190] -> CANNOT_TELL
+Job A score, v3 minus v2: +0.008 [+0.001, +0.015] -> ABOVE
+Job C accuracy, v3 minus v2: -0.013 [-0.036, +0.010] -> CANNOT_TELL
+Job A score, v3 minus date rule: +0.039 [+0.024, +0.055] -> ABOVE
+PLAN RULE: v3 does not refine YO; YO v2 stays the working model

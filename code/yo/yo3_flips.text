@@ -1,0 +1,9 @@
+band stale qubits: flagged by v3 only 44, by v2 only 14, exact p 0.0001 (qubits treated as independent; the planned ruler resamples records)
+non-stale qubits wrongly flagged: by v3 only 4, by v2 only 6
+Job A items: v3 scores higher 19, v2 higher 5, equal 376, exact p 0.00661
+Job C items: v3 right and v2 wrong 9, v2 right and v3 wrong 14, exact p 0.405
+v3 Job C misses (truth -> said): {('CONSISTENT', 'CANNOT_TELL'): 17, ('CONSISTENT', 'ABOVE'): 2, ('BELOW', 'CANNOT_TELL'): 1}
+v2 Job C misses (truth -> said): {('ABOVE', 'CANNOT_TELL'): 1, ('CONSISTENT', 'CANNOT_TELL'): 10, ('CONSISTENT', 'BELOW'): 2, ('CANNOT_TELL', 'CONSISTENT'): 1, ('CANNOT_TELL', 'BELOW'): 1}
+v3-only band flags by item (count: items): {1: 5, 2: 1, 6: 1, 7: 1, 8: 3} | items 11 | records 11
+largest records: [('ibm_boston|2026-10-17T16:12:41+00:00', 8), ('ibm_phoenix|2026-10-15T13:33:30+00:00', 8), ('ibm_boston|2026-10-25T08:54:31+00:00', 8), ('ibm_marrakesh|2026-10-28T08:49:11+00:00', 7)]
+v2-only band flags by item (count: items): {7: 2} | items 2
