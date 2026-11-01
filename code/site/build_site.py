@@ -303,7 +303,7 @@ IRIS_YO = ('<section class="bench"><h2>YO: A Small Model Trained to Audit IBM&rs
            'The records are IBM&rsquo;s own calibration history for every processor our account can see, up to 180 days back. The newest month is held out as the test.</p>'
            '<p>The plan was committed before any data was built, and the baselines were scored on the test items before training began. The test reading was read once, after the run, and checked by a referee before it was posted. '
            'YO v3 then continued training YO v2 on qubits stale by one to two days and was not adopted. YO v4 continued training YO v2 on records whose qubits all went stale together, under a third plan committed before its data, was tested on records no earlier test used, and replaced YO v2 as the model at work. Every reading is in the table. '
-           '<a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V2.md">Plan, YO v2</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V3.md">Plan, YO v3</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V4.md">Plan, YO v4</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/yo">Code (git)</a></p>'
+           '<a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V2.md">Plan, YO v2</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V3.md">Plan, YO v3</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V4.md">Plan, YO v4</a> &middot; <a href="https://huggingface.co/indahl/YO">Download YO (Hugging Face)</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/yo">Code (git)</a></p>'
            '<div id="yo-live" class="bench-live">Loading.</div><script src="/iris/yo.js" defer></script></section>')
 IRIS_FALCON = ('<section class="bench"><h2>Live From Our Lab: A Falcon Trained on the Faults and Guards</h2>'
               '<p>Falcon3 3B Instruct, tuned with LoRA on new questions in the same form, then answered on two fresh evaluation sets. Three models answer the same items: the untouched model, the model trained on the Faults and Guards, and a control trained on the same items with mixed labels. Settings were fixed and committed before any training. This is one training run per model, with one training seed. A second seed and two further evaluation sets have been run and are not on this page yet. Results follow.</p>'
@@ -2265,7 +2265,7 @@ def main():
     PAGES['/qia'] = PAGES['/qia'][:_ae] + ('<section id="yo" class="bench" hidden><h2>YO Reads Each New Record</h2>'
       '<p>YO is a small open-weight model (Qwen3-1.7B, Apache-2.0) that we trained with LoRA on IBM&rsquo;s own calibration history. For every new record IBM publishes, '
       'YO is shown eight of its qubits and flags those whose T1 or T2 was measured more than a day before the record&rsquo;s stamp, and error values of exactly zero. '
-      'The code computes the right answer from the same record, and both are shown side by side. The reads below are by YO v4, the model at work since 1 November 2026. How YO was trained and tested is on <a href="/iris/lab">the IRIS lab page</a>.</p>'
+      'The code computes the right answer from the same record, and both are shown side by side. The reads below are by YO v4, the model at work since 1 November 2026. Anyone can run it on a record of their own: <a href="https://huggingface.co/indahl/YO">YO on Hugging Face</a>. How YO was trained and tested is on <a href="/iris/lab">the IRIS lab page</a>.</p>'
       '<div id="yo-reads" class="bench-live"></div><script src="/qia/yo.js" defer></script></section>') + PAGES['/qia'][_ae:]
     PAGES['/iris'] = _collapse(PAGES['/iris'], [
         ('Reverse the order of the options', None),
@@ -2274,7 +2274,7 @@ def main():
     PAGES['/iris/lab'] = _collapse(PAGES['/iris/lab'], [
         ('A Falcon Trained on the Faults and Guards', 'Against the untouched model, training on the Faults and Guards shows no gain in any Fault family. One training run per model, one seed.'),
         ('The Two Finalists, Head to Head', 'Every Fault family reads cannot tell in both head-to-head rounds, and no winner is named.'),
-        ('YO: A Small Model Trained to Audit', 'YO v4 is the model at work. On IBM records held out from training it finds 193 of 215 stale qubits in the everyday mix, and on records whose qubits all went stale at once it gets 130 of 136 exactly right, where YO v2 got 53. It reads each new IBM record live on the QIA page.')])
+        ('YO: A Small Model Trained to Audit', 'YO v4 is the model at work. In its planned test on IBM records held out from training, it found 905 of 928 qubits stale by one to two days in records whose eight qubits all sat near that line, where YO v2 found 403. It reads each new IBM record live on the QIA page.')])
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])

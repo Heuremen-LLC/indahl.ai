@@ -14,3 +14,4 @@ Job C yo_v4: 390 of 400
 Job C yo_v3: 371 of 400
 Job C yo_v2: 377 of 400
 Job C flips: v4 right and v2 wrong 17, v2 right and v4 wrong 4
+DEFINED AFTER THE DATA. R3 (precision), v4 minus v2, bootstrap over 30 calendar days (2,000 resamples, seed 41, 95 %): +0.029 [+0.000, +0.066] -> CANNOT_TELL
