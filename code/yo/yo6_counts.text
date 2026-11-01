@@ -1,0 +1,22 @@
+TEST6 yo_v4 {'R6a': '0 of 2400 in 300 items', 'R6a_items': 0, 'R6b_false': '94 of 1974', 'R6b_false_items': 18, 'R6b_found': '424 of 426 in 300 items', 'R6c': '2249 of 2320 in 290 items', 'R6c_items_all_found': '281 of 290'}
+TEST6 yo_v6 {'R6a': '0 of 2400 in 300 items', 'R6a_items': 0, 'R6b_false': '2 of 1974', 'R6b_false_items': 2, 'R6b_found': '424 of 426 in 300 items', 'R6c': '2297 of 2320 in 290 items', 'R6c_items_all_found': '287 of 290'}
+TEST6 yo_v6b {'R6a': '16 of 2400 in 300 items', 'R6a_items': 2, 'R6b_false': '1 of 1974', 'R6b_false_items': 1, 'R6b_found': '416 of 426 in 300 items', 'R6c': '2305 of 2320 in 290 items', 'R6c_items_all_found': '287 of 290'}
+TEST6 nothing {'R6a': '0 of 2400 in 300 items', 'R6a_items': 0, 'R6b_false': '0 of 1974', 'R6b_false_items': 0, 'R6b_found': '0 of 426 in 300 items', 'R6c': '0 of 2320 in 290 items', 'R6c_items_all_found': '0 of 290'}
+TEST6 all {'R6a': '2400 of 2400 in 300 items', 'R6a_items': 300, 'R6b_false': '1974 of 1974', 'R6b_false_items': 300, 'R6b_found': '426 of 426 in 300 items', 'R6c': '2320 of 2320 in 290 items', 'R6c_items_all_found': '290 of 290'}
+TEST6 daterule {'R6a': '0 of 2400 in 300 items', 'R6a_items': 0, 'R6b_false': '0 of 1974', 'R6b_false_items': 0, 'R6b_found': '271 of 426 in 300 items', 'R6c': '928 of 2320 in 290 items', 'R6c_items_all_found': '116 of 290'}
+TEST4 yo_v4 R1 905 of 928 R2 0.990 R3 0.9991 R4 390 of 400 forced 5 of 100 ct_wrong 4 false flags 1 (in 1 items) missed 45
+TEST4 yo_v6 R1 864 of 928 R2 0.985 R3 0.9981 R4 393 of 400 forced 5 of 100 ct_wrong 2 false flags 2 (in 2 items) missed 94
+TEST4 yo_v6b R1 906 of 928 R2 0.988 R3 0.9974 R4 384 of 400 forced 3 of 100 ct_wrong 12 false flags 3 (in 3 items) missed 25
+yo_v6 vs yo_v4, TEST4 audit (Job A): right where v4 was not 6, wrong where v4 was right 22, of 390
+yo_v6 vs yo_v4, TEST4 verdicts (Job C): right where v4 was not 4, wrong where v4 was right 1, of 400
+yo_v6 vs yo_v4, TEST6: right where v4 was not 26, wrong where v4 was right 14, of 890
+yo_v6b vs yo_v4, TEST4 audit (Job A): right where v4 was not 8, wrong where v4 was right 10, of 390
+yo_v6b vs yo_v4, TEST4 verdicts (Job C): right where v4 was not 5, wrong where v4 was right 11, of 400
+yo_v6b vs yo_v4, TEST6: right where v4 was not 26, wrong where v4 was right 17, of 890
+FUTURE6 records 15 {'zero': 3, 'nothing': 7, 'stale': 5} stamps  to 
+FUTURE6 yo_v4 exact 14 of 15 not exact: ['A|ibm_pittsburgh|2026-11-01T14:25:46+00:00|0']
+FUTURE6 yo_v6 exact 12 of 15 not exact: ['A|ibm_boston|2026-11-01T13:28:43+00:00|0', 'A|ibm_kingston|2026-11-01T14:09:06+00:00|0', 'A|ibm_boston|2026-11-01T14:46:44+00:00|0']
+FUTURE6 yo_v6b exact 14 of 15 not exact: ['A|ibm_pittsburgh|2026-11-01T14:25:46+00:00|0']
+TEST4 yo_v4 R3 1127 of 1128 flags truly stale
+TEST4 yo_v6 R3 1078 of 1080 flags truly stale
+TEST4 yo_v6b R3 1147 of 1150 flags truly stale
