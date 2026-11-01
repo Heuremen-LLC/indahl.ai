@@ -53,3 +53,11 @@ The R1 share bands, the known-good band and the Addendum 1 copy gap were still d
 20,000 for every band, as Addendum 2 says. Re-run on a copy of the first ibm_kingston fire, every label is unchanged. The known-good band's
 upper end moves from -1.926 to -1.826 deg per readout and no other band end moves by more than 0.006. The FINAL rule is unchanged.
 Later fires, one per chip per day while seconds allow, run the same code and plan.
+
+ADDENDUM 3 (1 Nov 2026, written after the second ibm_marrakesh fire was read, before any 2 November fire). post_clock.py prints second
+rulers beside every chip-fire into readings_second.text: (a) the pooled clock reading over bootstrap seeds 1 to 20, (b) the per-qubit count
+of qubits where the 31 Oct table leaves a larger |residual| than today's table, with an exact sign test, (c) the signed median residual of
+each arm (positive = over-correction), (d) the shot-noise floor of the residual. Why: on 1 Nov ibm_marrakesh the FINAL clock reading was
+BELOW with the band's upper end at -0.0002, BELOW in 3 of 20 seeds; the share folds the sign of the residual; the fresh table's residual sits
+near the floor. The setup, the shots and the FINAL rule are unchanged, so every fire stays comparable. For the 1 November fires these
+readings were defined after the data.
