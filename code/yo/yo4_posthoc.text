@@ -1,0 +1,13 @@
+DEFINED AFTER THE DATA. Share of qubits flagged stale, by gap (hours since the older T1/T2 date); stale means gap > 24 h. All Job A items of TEST4.
+gap band      n       yo_v4      yo_v2      yo_v3   daterule
+  0-  20 h  1215       0.000      0.012      0.000      0.000
+ 20-  23 h   457       0.002      0.002      0.002      0.000
+ 23-  24 h   276       0.000      0.007      0.058      0.000
+ 24-  25 h   118       0.932      0.017      0.585      0.000
+ 25-  30 h   411       1.000      0.304      0.611      0.187
+ 30-  36 h   293       0.922      0.485      0.648      0.273
+ 36-  42 h   196       0.964      0.673      0.949      0.474
+ 42-  48 h    99       0.929      0.949      1.000      0.798
+ 48- 999 h    55       1.000      1.000      1.000      1.000
+yo_v4 {'over 24 h, flagged': 1126, 'under 24 h, flagged': 2}
+yo_v2 {'over 24 h, flagged': 550, 'under 24 h, flagged': 17}

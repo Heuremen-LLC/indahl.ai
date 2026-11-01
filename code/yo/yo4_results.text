@@ -1,0 +1,13 @@
+yo_v4 {'R1': 0.975, 'R1_n': 928, 'R2': 0.99, 'R3': 0.999, 'R4': 0.975, 'forced': 0.05, 'ct_wrong': 4}
+yo_v3 {'R1': 0.739, 'R1_n': 928, 'R2': 0.972, 'R3': 0.98, 'R4': 0.927, 'forced': 0.03, 'ct_wrong': 25}
+yo_v2 {'R1': 0.434, 'R1_n': 928, 'R2': 0.961, 'R3': 0.97, 'R4': 0.943, 'forced': 0.07, 'ct_wrong': 14}
+nothing {'R1': 0.0, 'R1_n': 928, 'R2': 0.698, 'R3': 0.0, 'R4': 0.0, 'forced': 1.0, 'ct_wrong': 0}
+daterule {'R1': 0.279, 'R1_n': 928, 'R2': 0.917, 'R3': 1.0, 'R4': 0.0, 'forced': 1.0, 'ct_wrong': 0}
+all {'R1': 1.0, 'R1_n': 928, 'R2': 0.464, 'R3': 0.376, 'R4': 0.0, 'forced': 1.0, 'ct_wrong': 0}
+R1, yo_v4 minus yo_v2: +0.541 [+0.454, +0.630] -> ABOVE
+R2, yo_v4 minus yo_v2: +0.030 [+0.013, +0.048] -> ABOVE
+R3, yo_v4 minus yo_v2: +0.029 [+0.001, +0.069] -> ABOVE
+R4, yo_v4 minus yo_v2: +0.032 [+0.010, +0.055] -> ABOVE
+R1, yo_v4 minus yo_v3: +0.236 [+0.158, +0.314] -> ABOVE
+R2, yo_v4 minus yo_v3: +0.019 [+0.005, +0.032] -> ABOVE
+PLAN RULE: YO v4 replaces YO v2 as the model at work
