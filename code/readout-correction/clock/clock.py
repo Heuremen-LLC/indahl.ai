@@ -25,8 +25,8 @@ def read(Zc, nq, rng, B=20000):   # addendum 2: 20,000 draws from the second fir
     """Zc: {(arm, st): [packed fin arrays]}. Per qubit: phase vs D per look (deg); shares given back on the same resampled qubits."""
     ph = {a: np.arctan2(K.spect_expect(Zc[(a, 'Y')], nq), K.spect_expect(Zc[(a, 'X')], nq)) for a in ARMS}
     kick = {a: np.degrees(K.wrap(ph[a] - ph['D'])) / N for a in ('M', 'MC', 'M31', 'MT')}; ab = {a: np.abs(v) for a, v in kick.items()}
-    out = {'KG kick M (deg/readout)': A.med_reading(kick['M'], rng)}
-    for a in ('MC', 'M31', 'MT'): out[f'share given back {a} vs 0.5'] = A.share_reading(ab[a], ab['M'], rng)
+    out = {'KG kick M (deg/readout)': A.med_reading(kick['M'], rng, B=B)}   # addendum 2 covers every band (1 Nov: the R1 and known-good bands were still at 2,000)
+    for a in ('MC', 'M31', 'MT'): out[f'share given back {a} vs 0.5'] = A.share_reading(ab[a], ab['M'], rng, B=B)
     sh = lambda a, ix: 1 - np.median(ab[a][ix]) / np.median(ab['M'][ix])
     for a, b in (('M31', 'MT'), ('MC', 'MT'), ('MC', 'M31')):
         v = sh(a, np.arange(nq)) - sh(b, np.arange(nq)); bs = []
