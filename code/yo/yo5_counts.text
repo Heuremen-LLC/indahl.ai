@@ -1,0 +1,9 @@
+v4 {'test4_false_flags': 1, 'test4_missed': 45, 'test4_C_wrong': 10, 'test4_forced': 5, 'test5_missed': 80, 'test5_false_flags': 0}
+v5 {'test4_false_flags': 25, 'test4_missed': 0, 'test4_C_wrong': 8, 'test4_forced': 8, 'test5_missed': 8, 'test5_false_flags': 0}
+v5b {'test4_false_flags': 9, 'test4_missed': 48, 'test4_C_wrong': 46, 'test4_forced': 45, 'test5_missed': 23, 'test5_false_flags': 0}
+v5 vs v4, TEST4 Job A: right where v4 was not 6, wrong where v4 was right 9, of 390
+v5 vs v4, TEST4 Job C: right where v4 was not 6, wrong where v4 was right 4, of 400
+v5 vs v4, TEST5: right where v4 was not 10, wrong where v4 was right 4, of 590
+v5b vs v4, TEST4 Job A: right where v4 was not 6, wrong where v4 was right 9, of 390
+v5b vs v4, TEST4 Job C: right where v4 was not 5, wrong where v4 was right 41, of 400
+v5b vs v4, TEST5: right where v4 was not 11, wrong where v4 was right 8, of 590

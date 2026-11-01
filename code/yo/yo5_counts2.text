@@ -1,0 +1,10 @@
+DEFINED AFTER THE DATA (1 Nov 2026, after the outside referee of the YO v5 post).
+TEST5 stale qubits found in older same-date items, out of 2320: v4 2240, v5 2312, v5b 2297
+TEST5 older same-date items with every stale qubit found, out of 290: v4 280, v5 289, v5b 286
+TEST4 audit items with 7 or 8 of their 8 qubits sharing one older date younger than 24 h: 206 of 390
+v4: false flags on TEST4 1 in 1 items; of those, in young same-date items 1 qubits in 1 items
+v4b: false flags on TEST4 25 in 4 items; of those, in young same-date items 25 qubits in 4 items
+v4c: false flags on TEST4 8 in 2 items; of those, in young same-date items 8 qubits in 2 items
+v5: false flags on TEST4 25 in 5 items; of those, in young same-date items 25 qubits in 5 items
+v5b: false flags on TEST4 9 in 2 items; of those, in young same-date items 9 qubits in 2 items
+FUTURE: 15 records stamped 11:08 to 12:23 UTC on 01 Nov; with stale qubits 3 (11 in all, 1 with all 8), with a zero value 2, with nothing to flag 10
