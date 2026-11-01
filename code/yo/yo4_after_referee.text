@@ -1,0 +1,16 @@
+TEST4 distinct records: 426 | whole-window items 190
+items with all 8 qubits stale: 136
+  yo_v4: stale list exactly right on 130 of 136, flags nothing on 3
+  yo_v3: stale list exactly right on 94 of 136, flags nothing on 38
+  yo_v2: stale list exactly right on 53 of 136, flags nothing on 64
+general items (the live mix), stale qubits found by yo_v4: 193 of 215
+general items (the live mix), stale qubits found by yo_v3: 136 of 215
+general items (the live mix), stale qubits found by yo_v2: 119 of 215
+v4 whole-window recall by backend: {'ibm_boston': '120/135', 'ibm_fez': '123/123', 'ibm_kingston': '72/80', 'ibm_marrakesh': '430/430', 'ibm_phoenix': '48/48', 'ibm_pittsburgh': '112/112'}
+zero values, yo_v4: found 115 of 119, false 4
+zero values, yo_v3: found 116 of 119, false 0
+zero values, yo_v2: found 116 of 119, false 9
+Job C yo_v4: 390 of 400
+Job C yo_v3: 371 of 400
+Job C yo_v2: 377 of 400
+Job C flips: v4 right and v2 wrong 17, v2 right and v4 wrong 4

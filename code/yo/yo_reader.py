@@ -38,7 +38,8 @@ def score(it, out):
     try: return (_f1([int(x) for x in p.get('stale', [])], t['stale']) + _f1([str(x) for x in p.get('zero', [])], t['zero'])) / 2, 'json'
     except Exception: return 0.0, 'unparsed'
 from mlx_lm import load, generate
-model, tok = load('Qwen/Qwen3-1.7B', adapter_path=os.path.join(HERE, 'adapters', 'v2'))
+ADP = open(GATE).read().split()[0]   # 1 Nov: the gate file names the adapter at work (adapters/v4 since the v4 post)
+model, tok = load('Qwen/Qwen3-1.7B', adapter_path=os.path.join(HERE, ADP))
 for r in new:
     p = os.path.join(B, 'qia_mirror', 'records', r['backend'], r['file'])
     if not os.path.exists(p): continue
@@ -51,7 +52,7 @@ for r in new:
     out = generate(model, tok, prompt=render(it['prompt']), max_tokens=200, verbose=False); s, how = score(it, out)
     try: yo = json.loads(out[out.index('{'):out.rindex('}') + 1])
     except Exception: yo = None
-    row = dict(backend=r['backend'], stamp=str(S)[:16] + ' UTC', read=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), yo=yo, code=json.loads(it['answer']), score=round(s, 3), parsed=how)
+    row = dict(backend=r['backend'], stamp=str(S)[:16] + ' UTC', read=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), yo=yo, code=json.loads(it['answer']), score=round(s, 3), parsed=how, model=ADP.split('/')[-1])
     with open(OUT, 'a') as f: f.write(json.dumps(row) + '\n')
     st['at'] = max(st['at'], r['at']); json.dump(st, open(ST, 'w'))
     print('yo reader:', r['backend'], row['stamp'], 'score', row['score'])
