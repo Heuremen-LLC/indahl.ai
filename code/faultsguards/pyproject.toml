@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faultsguards"
+version = "0.1.1"
+description = "Faults and Guards from Heuremen LLC: the failure modes a model commits doing measurement work, and the procedures against them, as data, prompts and an MCP server."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE.txt" }
+authors = [{ name = "Heuremen LLC" }]
+dependencies = []
+
+[project.scripts]
+faultsguards = "faultsguards.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+faultsguards = ["data/*.json"]

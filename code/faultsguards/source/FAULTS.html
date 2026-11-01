@@ -1,0 +1,205 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Faults</title><style>@page { size: Letter; margin: 0.7in 0.75in; }
+body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #18202B; background: #FFFFFF; font-size: 10.5pt; line-height: 1.45; }
+h1 { font-size: 21pt; color: #0E4A4D; border-bottom: 2px solid #0F7173; padding-bottom: 6px; margin-top: 0; }
+h1.newpart { page-break-before: always; }
+h2 { font-size: 13.5pt; color: #0F7173; margin-top: 20px; }
+h3 { font-size: 11.5pt; color: #B5530C; margin-top: 14px; margin-bottom: 4px; }
+p, li { margin: 4px 0; } ul, ol { margin: 4px 0 8px 18px; padding-left: 10px; }
+hr { border: 0; border-top: 1px solid #D8DEDA; margin: 14px 0; }
+code { font-family: Menlo, monospace; font-size: 9pt; background: #EFF3F1; padding: 0 3px; }
+pre { font-family: Menlo, monospace; font-size: 8.8pt; background: #EFF3F1; padding: 8px 10px; line-height: 1.35; }
+table { border-collapse: collapse; width: 100%; margin: 8px 0 12px 0; font-size: 9.6pt; }
+th { text-align: left; color: #0E4A4D; border-bottom: 1.5px solid #0F7173; padding: 4px 6px; }
+td { border-bottom: 1px solid #E4E9E6; padding: 3px 6px; vertical-align: top; }
+td.sp { font-weight: 600; color: #0E4A4D; white-space: nowrap; }
+.lead { font-size: 11pt; }
+.foot { color: #6B7480; font-size: 8.5pt; margin-top: 20px; }
+.hold { background: #F4F8F6; border-left: 3px solid #0F7173; padding: 6px 10px; margin: 8px 0; }
+.cut { background: #FBF5F2; border-left: 3px solid #B5530C; padding: 6px 10px; margin: 8px 0; }
+blockquote { margin: 8px 0 8px 14px; padding-left: 12px; border-left: 3px solid #D8DEDA; color: #39434F; }</style></head><body>
+<h1>Faults</h1>
+<p>Every failure mode we have committed doing measurement work, with the number from the day it happened wherever there was one. Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026.</p>
+
+<p class="lead"><b>A running list of failure modes, grouped in families.</b> Each was reached by committing it, not by anticipating it. Where a figure is given it is the one measured at the time. <b>This document replaces earlier ones</b>: a trail of numbered lessons, a document about two-answer framing, and a shorter version of this catalogue. A method's failures scattered across the documents they were found in cannot be counted, and counting them is what makes any of it checkable.</p>
+
+
+
+<p><b>The numbers are stable identifiers assigned when a mode was found</b>, so they do not run in family order &mdash; a mode keeps its number when it moves. The procedures built against these are in the companion document, <i>Guards</i>, along with the only score either document has.</p>
+
+<h1 class="newpart">I &mdash; The baseline built after the measurement it judges</h1>
+<p>The dominant family by a wide margin: <b>217 of the 316 ledger rows</b> tagged with one of the first three families, 10 to 22 October 2026 (through row 608, written 16:45 EDT). The null, the control, the reference &mdash; constructed with less care than the thing it judges, and almost always in a direction that flatters the result. General form: <b>the measurement and its baseline were not held to the same standard.</b></p>
+
+<h3>1. The baseline averaged, counted or searched differently from the measurement</h3>
+<p>More samples on one side, a different window length, a different averaging depth, more freedom about where to look. <b>Any asymmetry in handling becomes signal.</b> Write down, for both arms, the sample count, the window, the averaging, and how many places were examined. If any differ, the difference is the result.</p>
+
+<p><b>And a second instance, in the frequency domain, 11 Oct.</b> A line of known period was judged against the same fit run at sixty-four off-period frequencies spanning 0.6 to 1.8 of that period. The noise was red &mdash; fitted log-power slopes against log-frequency of &minus;1.8 to &minus;2.9, from notes written that evening with the raw output not kept &mdash; so the expected amplitude is not the same across that span: measured, the median none amplitude rose from 14.5 ps in the shortest band to 20.9 ps in the longest. A none pooled across a sloped expectation is not like-for-like with a reading at one frequency. The repair is to fit the trend on the none bins only and evaluate it <i>at the measurement's own frequency</i>.</p>
+<h3>2. A fixed threshold against a statistic that grows with n</h3>
+<p>A bar is chosen once and applied to a quantity whose typical size increases as data arrives, so the bar is crossed by volume alone. Ask what the statistic does under the null <i>as n grows</i>. If it grows, the threshold must grow with it.</p>
+
+<h3>3. A maximum over many draws reported as a measurement</h3>
+<p>The best of n attempts is an extreme-value statistic and rises with n on noise alone. The seductive version is a series of bests, which looks like improvement. Compare whole distributions, never peaks. <b>Every figure carries the n it was selected from.</b></p>
+
+<h3>4. The in-sample fit, including its most disguised form</h3>
+<p>A rule tuned on the cases that suggested it, then scored on them. The disguised version is <b>writing the explanation after seeing the result and counting it as a prediction.</b></p>
+
+<h3>5. A continuum assumed where only discrete values were reachable</h3>
+<p>Priced against "any value in this range" when the setup could only emit a sparse set &mdash; small-integer ratios, a grid, a lookup. Enumerate what the setup can actually produce and price against that.</p>
+
+<h3>6. Dependent observations counted as independent</h3>
+<p>Pairs sharing a member, overlapping windows, repeated measures from one unit. Ask how many <i>independent units</i> contributed, not how many rows the table has. This has moved widths by factors of several.</p>
+
+<p><b>Two instances from one evening, 11 Oct, both counting rows instead of units.</b> First: forty &ldquo;independent&rdquo; none frequencies placed inside &plusmn;8 per cent of a line's period. A five-day record at 30 s resolves 1/432000 = 2.315 &times; 10<sup>&minus;6</sup> Hz, and the line sat at <b>bin 20.05</b>, so the nearest genuinely independent frequencies were bins 19 and 21. Forty values spanned about <b>three</b> resolution elements, with half of them inside the line's own main lobe, partly absorbing what they were built to be blind to. In the frequency domain, independence is set by the record length, not by how finely you are willing to step. Second: eight satellite-difference tests reported as eight confirmations. The fit was linear, so each difference's amplitude is algebraically the difference of two amplitudes already in hand &mdash; measured ratio <b>1.000000</b> on all eight. Before counting several tests, check whether any is a linear combination of the others.</p>
+<h3>7. Time-asymmetric differencing</h3>
+<p>One difference taken later-minus-earlier and the other earlier-minus-later. Any monotone drift then appears as a real effect with the right sign, mechanically. Write the actual temporal order of every arm.</p>
+
+<h3>8. A per-unit constant read as signal</h3>
+<p>Something attached identically to every unit &mdash; a fixed overhead, a boilerplate header, a standard footer &mdash; divided by a varying unit size gives a clean, tight, entirely spurious trend. <b>Remove the constant and measure again. Never mention it in a caveat instead.</b></p>
+
+<h3>9. An unequal setup across the columns being compared</h3>
+<p>Longer reference lists match more of anything, wider filters catch more of anything, and longer integrations resolve more of anything. Make the instrument identical across columns and re-run. If the ordering changes, the instrument was the finding.</p>
+
+<h3>10. Saturated or censored cells averaged as data</h3>
+<p>A cell at a ceiling records only that the limit was reached. Count cells at the extreme before any aggregation and analyse only the ones that moved.</p>
+
+<p><b>And the statistic itself can saturate, not only a data cell, 11 Oct.</b> A rank against a pool of forty nones returned <b>0.024</b> for thirty of thirty-two units, and was read as thirty strong detections. 0.024 is 1/41: a rank or permutation p <i>cannot</i> go below 1/(n+1). Every unit was reporting the pool floor, so the ruler had no dynamic range left and could not distinguish any unit from any other. If every detection shares one p-value, check whether that value is 1/(n+1). Replaced by an exact null with no floor &mdash; for Gaussian noise the periodogram power is exponential with mean &mu;, and E[log P] = log &mu; &minus; &gamma; &mdash; the same data gave p down to 2.5 &times; 10<sup>&minus;70</sup>.</p>
+<h3>11. One artifact's internal record used as a second, independent reading</h3>
+<p>A configuration file or label table is evidence of what a system was <i>told</i>, not what it <i>did</i> &mdash; and often it is the same file that performs the reading. For every pair of agreeing readings, name the two physically separate things they came from. If you cannot, there is one reading.</p>
+
+<h3>12. The pilot that came out perfect</h3>
+<p>A first run with clean, zero-overlap separation is a reason for suspicion. The base rate of perfect pilots in honest work is low. From an undetected asymmetry it is high.</p>
+
+<h1 class="newpart">II &mdash; Zeroing a gap that was itself the reading</h1>
+<p><b>Harmonise, do not synchronise.</b> The interval between two honest readings of one event carries information neither reading has alone. A procedure that drives it to zero has deleted a channel.</p>
+<h3>13. Calibrating away the difference between two seats</h3>
+<p>Two instruments aligned until they agree, and the alignment reported as accuracy. What was removed was the only evidence of which one was wrong.</p>
+<h3>14. Forcing agreement between quantities that cannot be commensurate</h3>
+<p>Driving two quantities into a common unit when their relation is irrational, or when one is a count and the other a continuous phase. The residual can never close, so it is tuned forever. Ask whether an exact match is arithmetically possible before treating the gap as a defect.</p>
+
+<h1 class="newpart">III &mdash; The fold that erases the discarded half</h1>
+<h3>15. A magnitude taken where the last step produced two numbers</h3>
+<p>Correlation, lock-in detection and demodulation return an amplitude <i>and</i> a phase. Taking the magnitude discards direction, alternation and inversion. <b>Four separate places in one system took an absolute value before a comparison, every one written deliberately, one of them commented as a virtue.</b> The measured consequence: a value of <b>+48.6 passed a check against a supplied &minus;48.6 and was recorded as agreeing.</b> Find the last step that returned two numbers and ask which survived.</p>
+<p><b>A fifth place, 11 Oct, and it cost a whole seat.</b> A lock-in fitted at a known period returned <code>hypot(cos, sin)</code>. The phase it discarded was the only thing that could separate a line shared by many units from a line belonging to each one separately. With the magnitude alone, the test built to make that separation was a restatement of readings already held. Keeping both numbers made a two-arm cross-control possible that the magnitude version could not run at all.</p>
+<h3>16. A sum assumed where two effects multiply</h3>
+<p>Additive analysis of a multiplicative process finds the wrong structure and misses the real one. Of the coupled cases where the cross term is large, the test returned a product in the overwhelming majority. The test favours the product whenever the cross term is large, so this counts the test&rsquo;s behaviour, not a finding about the physics. Test additivity rather than assuming it.</p>
+<h3>17. Asking which way a sign points instead of whether it holds</h3>
+<p>A sign's <i>direction</i> is often set by wiring or convention. Its <i>stability</i> is the measurement. The first question returns a near-coin and discards a real effect.</p>
+<h3>18. A snapshot that keeps the value and throws away the trajectory</h3>
+<p>A residual that shrinks as precision improves and one that does not are completely different findings, and one snapshot cannot tell them apart. Measure at two or more precisions and report how it moved.</p>
+
+<h1 class="newpart">IV &mdash; The forced verdict, and the answer that was never offered</h1>
+
+<h3>19. A ruler that cannot say &ldquo;I cannot tell&rdquo; lies at scale</h3>
+<p>A ruler returning one of two verdicts for every cell was run on <b>234 cells and reported a clean, publishable null at p = 0.102.</b> Rebuilt with a third verdict so a cell could decline, the same data said <b>7 to 8 cells carried information and the rest could not tell.</b> The null had been manufactured by forcing a verdict out of cells that had nothing to say. <b>A ruler that must answer manufactures sample size.</b> Count how many cells the instrument <i>decided</i> against how many it <i>reported</i>. If those are equal, it has no refusal and its null is inflated.</p>
+
+<h3>20. The two-answer question that has three answers</h3>
+<p>A scanner reading outgoing text flagged a two-option frame in <b>57.1 per cent of long replies (44 of 77) from independent one-shot sessions with no context at all.</b> The same scanner on the same author, after three days of context and standing correction, flagged a two-option frame in <b>27.5 per cent of 295 replies</b> (81 of them), and 32.5 per cent drew a pushback of any kind (96 of them). The middle halves of the two groups do not overlap in length: 689 to 1,246 words for the cold replies (median 1,052) and 268 to 428 for the seated ones (median 342). No seated reply reached the cold median. A length adjustment cannot separate the two, so we cannot tell whether context reduces the rate. <b>Context did not remove it.</b> That is the reason the counters in <i>Guards</i> are structural rather than motivational.</p>
+
+<h3>21. Four outcomes collapsed into two</h3>
+<p>Committed, held open, refused and nothing-returned are four states. Collapsing refusal into failure prices honesty as incompetence. Collapsing nothing-returned into refusal prices <b>your own configuration as the subject's behaviour</b> &mdash; we did exactly that: an output limit consumed a reply's whole budget, the field came back empty with no error, and the empty cells were reported as a system declining to answer. Record the terminating reason on every call.</p>
+
+<h3>44. A result that does not resolve, filed as a null</h3>
+<p>A test returns a p-value above the threshold and the finding is recorded as <i>no effect</i>.
+<b>It is not a statement about the world. It is a statement about the ruler's reach.</b> A quantity
+that cannot be resolved at the sample size available has not been shown to be absent. Nothing has
+been shown at all, and the honest report is a position rather than a verdict.</p>
+<p>Ours: a rate measured either side of a hardware failure came back at <b>p = 0.178 on 25
+observations a side</b> and went into the record as a null. The reading it actually had was a
+<i>direction</i> &mdash; the rate had moved the opposite way from what we expected &mdash; and a
+<i>position</i> on an axis. Both were discarded to produce one bit.</p>
+<div class="cut"><b>And the obvious fix is the same failure wearing a lab coat.</b> Asked to do better,
+we built a power calculator: given this distribution, how many samples before a move of size X clears
+the threshold. <b>That is the verdict machine with extra steps.</b> It still terminates in a
+two-outcome test, it hardcodes a significance level <i>and</i> a power target &mdash; two more
+constants chosen by the observer &mdash; and it wraps the verdict in several hundred repetitions of
+itself. It was deleted rather than kept, because the artifact to be refused was the verdict, not the
+sample size. <b>The replacement for a verdict is a position, not a better verdict.</b></div>
+
+<h1 class="newpart">V &mdash; The instrument that is wrong about itself</h1>
+
+<h3>22. You will report a count about yourself from memory</h3>
+<p>A guard had been writing one line per checked reply for three days. Asked how often it had fired, the answer given was <b>sixteen</b>. The file said <b>thirty-six</b> &mdash; off by <b>2.25 times</b>. The file was in the same directory as the guard and had been there the whole time. <b>The same answer from anyone else would have been rejected on sight.</b> Any count about your own behaviour is read from the record or not stated.</p>
+
+<h3>23. Your own checker will be wrong, and all in one direction</h3>
+<p>A guard tested against cases labelled after reading each one in full <b>got eight of thirteen wrong on the first pass, and every single error was a false positive</b> &mdash; it never missed a real instance. Re-running three days of its logged catches through the corrected version, <b>22 per cent should never have fired.</b> A checker written by the thing it checks inherits that thing's bias, and the bias has a direction.</p>
+
+<h3>24. Every count has a ruler hidden inside it, and the rulers disagree</h3>
+<p>One guard's rate of replies flagged for a two-option frame over three days, same data, two denominators. <b>Per reply</b> it read 27.3% &rarr; 22.6% &rarr; 39.5% (9 of 33, 42 of 186, 30 of 76), and the third day reads <b>above the second at +2.64 widths</b>. <b>Per thousand words</b> it read 0.79 &rarr; 0.69 &rarr; 0.88, and the third day reads <b>consistent with the second at +0.97 widths</b>. The third day's replies were 38 per cent longer on average than the second day's. A width here is the difference between two days divided by the root-sum-square of their standard errors: binomial per reply (the square root of p(1&minus;p)/n) and Poisson per thousand words (the square root of the count, over the words). Past two widths a difference reads above or below, and inside two it reads consistent. An earlier version of this entry printed pushbacks of any kind per reply (27.3% &rarr; 27.4% &rarr; 47.4%, +3.02 widths) beside frames per thousand words, two different numerators. Both rows now count frames. The days are not independent samples: 36 seated replies are rewrites within three minutes of a pushback, and the 374 rows were also the set the scanner was tuned on. <b>A rate is a ratio and the denominator is a choice.</b> State the denominator or the rate is not a measurement.</p>
+
+<h3>25. A verdict without a width is not a verdict</h3>
+<p>A body of <b>73 recorded measurements</b> was re-read for whether each stated its own uncertainty. <b>Eight of 73 stated a width below one per cent, and three of those eight were other people's published figures.</b> Of 18 conclusions re-scored against their own stated error, <b>nine came out unstable, all for the same single reason: no width had ever been stated.</b></p>
+
+<p><b>And a null is a verdict, 11 Oct.</b> A periodic term was looked for with Allan deviation and not found, and the absence was nearly reported as evidence the term was not there. For a sinusoid of fractional amplitude <i>a</i> and period T, &sigma;<sub>y</sub>(T/2) = (2/&pi;)&middot;<i>a</i> exactly (averaged over the sinusoid&rsquo;s phase) &mdash; so a term of amplitude 0.695 &times; 10<sup>&minus;14</sup> adds 0.44 &times; 10<sup>&minus;14</sup> in quadrature to an observed 3.9 &times; 10<sup>&minus;14</sup>, moving the deviation by <b>0.6 per cent</b> against a <b>13 per cent</b> scatter across units. The test could not have detected it either way. The width on a null is the smallest effect the instrument could have seen, and it has to be computed <i>before</i> the null is read.</p>
+<h3>26. Two of your three seats are the same seat</h3>
+<p>A three-reading check was built on a measurement, a target, and a third quantity <i>derived from the first two by a formula that assumed the relationship under test</i>. The third seat returned agreement &mdash; not a result, <b>a restatement of the input.</b> Two seats and a mirror, scored as a triangle. For every third reading, name what it would do if the hypothesis were false.</p>
+
+<h3>27. A reviewer handed no evidence is measuring your tone</h3>
+<p>An independent reviewer is kept outside the work specifically to price findings from outside. Against deliberate faults it behaves &mdash; it rejects flat contradictions, fabricated figures and internal absurdity. Then it was tested with the evidence withheld. <b>Both of its verdicts inverted</b>, on the same claims, with nothing to read but the manner they were written in. An outside seat with no evidence in front of it is a style critic.</p>
+
+<h3>28. The same fault counted as five successes</h3>
+<p>A guard flagged <b>one identical stale figure &mdash; the same wrong percentage from the same stale source &mdash; five separate times, and reported each as a successful catch.</b> Nothing in it knew it had seen the value before, so a permanent fault presented itself as five pieces of good news. A detector without memory converts one standing problem into a stream of wins.</p>
+
+<h1 class="newpart">VI &mdash; The claim that was never checked</h1>
+
+<h3>29. An equals sign is a claim, and you will print one you have not checked</h3>
+<p>A working document printed a relation between three constants with an equals sign between the sides. <b>They differ by 15.3 parts per million.</b> The value in use was fine and nothing downstream was harmed, but the printed identity was false and <b>had been copied forward four times.</b> Evaluate both sides of every identity numerically before printing it.</p>
+
+<h3>30. A fabricated number passes every check that reads shape</h3>
+<p>A guard scanning every outgoing reply for two-option frames, absent corners and required parts pushed back on the framing of one answer about money and <b>said nothing whatever about four invented numbers in it</b> &mdash; a rate quoted two ways, a power figure, a price, a total. <b>A structural check cannot see a fabricated value.</b> Shape and truth are independent, and a guard that reads only shape will certify a fabrication as well-formed.</p>
+
+<h3>31. Counting mentions and reporting it as measurement</h3>
+<p>A search across run outputs for how many analysis branches each conclusion had been checked against produced a clean result: one conclusion reported three of three and was the only one landing on three instruments. <b>Withdrawn within the hour.</b> The search had counted how many times a phrase appeared, and the phrase carried no commitment that the work had been done.</p>
+
+<h3>32. Fitting a sequence whose points are on different axes</h3>
+<p>A descending ladder of three values looked like a clean structural result. The rungs came from a phrase reading "through 3 looks, 9 looks and 30 microseconds." <b>The third rung is a time, and the first two are counts.</b> There was no sequence &mdash; two points and a unit error &mdash; and the claim died on inspection rather than on statistics. Check that every point in a series has the same units before fitting anything to it.</p>
+
+<h3>33. Computing the significance before checking the literature</h3>
+<p>A near-identity between two constants looked remarkable. Its unlikelihood was estimated three independent ways &mdash; a continued-fraction partial quotient, a density argument over small denominators, and a direct count of candidates at the same closeness &mdash; all agreeing at roughly <b>one in two thousand.</b> The estimate was correct and completely beside the point: the relation was already known. <b>The prior-art check costs minutes and dominates every significance calculation.</b> Run it first.</p>
+
+<h3>34. A pattern found twice is a pattern, not a law</h3>
+<p>Two parts of one system turned out to share a shape, and finding it the second time felt like confirmation. <b>Within the hour it had been written into a third structure, in two permanent records, because a number appeared there too.</b> It was wrong &mdash; the third structure has a different count and the shape does not apply. Two instances license a hypothesis and nothing else.</p>
+
+<h3>35. The correspondence with the deepest history proves the least</h3>
+<p>A structure here has twelve parts, and a solid chosen to represent it has twelve faces. That felt like a finding. The prior-art check says it is the opposite: <b>the association of those twelve faces with a twelve-part scheme runs continuously for roughly 2,400 years</b>, from Plato&rsquo;s <i>Timaeus</i> through Kepler to the present. <b>A correspondence available for more than two millennia is the cheapest possible match</b>, and the depth of its history is a measure of how easy it was to reach, not of how much it means.</p>
+
+<h3>36. The relationship the whole structure rests on is not a constant</h3>
+<p>A structure was built from one observation: two components overlapped far more tightly than any other pair, measured at <b>0.682</b> &mdash; the tightest on the board. <b>Fifteen rounds of training later, read live, the same pair measured 0.343.</b> Half. A different pair was now tightest and the full ordering had changed. <b>A relationship measured once and built upon is a snapshot load-bearing as a constant.</b> Re-read it live before anything stands on it.</p>
+
+<h1 class="newpart">VII &mdash; State, staleness, and work you cannot see</h1>
+
+<h3>37. Something long-lived is holding an old copy of what you just changed</h3>
+<p>In one working evening this fault appeared <b>at least four times, in a different costume each time</b>: an instruction file describing a machine that no longer existed, a ledger carrying a spending limit superseded later, a counter reading a log frozen hours earlier, and a long-running process serving an in-memory copy of a file already edited on disk. <b>The edit is not the deployment.</b> After any change, re-read the value through the path that consumes it.</p>
+
+<h3>38. The absence of a process is not the absence of work</h3>
+<p>Three times in one evening a healthy component was declared dead because no process was running: a worker that fires on a trigger and exits, a periodic job that runs briefly and exits, and a status row that reported both as failures. <b>A short-lived thing is supposed to be absent between runs.</b> Check for recent completed work, never for a running process.</p>
+
+<h3>39. Your test data will become a finding about innocent work</h3>
+<p>A new check was tested by feeding it a deliberate fabrication, which it caught. <b>On its first live use it reported that fabrication as a property of the next, unrelated reply</b> &mdash; because the probe had written to the same log the live path reads, and the reader took the most recent row with no test of which session it belonged to. Test writes go to a separate destination, or every read carries an identity check.</p>
+
+<h1 class="newpart">VIII &mdash; When the guard becomes the deliverable</h1>
+
+<h3>40. Naming the gap becomes the whole transaction</h3>
+<p>Every report ended with a paragraph naming what was still missing. A good rule, and it was measured: <b>of 50 such paragraphs, 9 named something that would have taken less time to fix than to describe &mdash; and then did not fix it.</b> The paragraph had become the deliverable. <b>Writing "this still needs X" feels like handling X and discharges the obligation to do it.</b></p>
+
+<h3>41. Writing a failure mode down did not stop it</h3>
+<p><b>And the strongest evidence for this entry is this document.</b> Mode 21 above &mdash; four outcomes collapsed into two &mdash; was written here and published, and <b>committed again two hours later in the next experiment</b>, with five outcomes in one bin: a wrong category, a legitimate absence, a task never attempted, an empty reply, and the reader being blind to the construction. Four facts about the subject and one about the instrument, in one column. The document was accurate, published, and had no effect, because <b>a catalogue occupies no position in the pipeline.</b> It is reference material, and reference material depends on recall at the moment of writing, which is exactly when context is thinnest. <b>Knowing this failure mode did not prevent it here.</b> What prevented it afterwards was a module that refuses to accept a bin named <i>none</i>, <i>other</i> or <i>silent</i> at all, and asserts that the declared outcomes are exhaustive and disjoint before it will return a table &mdash; described in the companion document. The lesson is not to read harder.</p>
+<p><b>And it is not only documents. The same thing happens to a named instrument.</b> Our tooling prints a roster of available instruments at the top of <b>every single exchange</b>, read live from the source so it cannot drift. On the day described above, the instrument built for exactly the reading in hand was in that roster dozens of times and its implementation was a day old. <b>We built a new one instead</b> &mdash; and the one we built was a verdict machine, entry 44. <b>A roster entry is not an instrument: a one-line label reads as a name, and a name is something you recognise rather than something you reach for. Recognition is not retrieval, and the moment of needing a different ruler is the moment of lowest attention.</b> The cause was structural and cheap to fix, which is the companion document's business rather than this one's: the corrective procedure loaded the papers saying <i>which error this is</i> and not the sheet saying <i>which instrument to use instead</i>, so it diagnosed and never re-armed.</p>
+<p>The uncomfortable one. Over three days, <b>96 pushbacks.</b> The density of replies flagged for a two-option frame across those three days: <b>0.79, 0.69, 0.88 per thousand words</b>, each day within one width of the day before (widths as in entry 24). Against the first two days pooled, a comparison chosen after the data, the third day ran at 1.24 times the rate, exact 95 per cent interval 0.76 to 1.99, so a fall of more than 24 per cent by the third day is outside what was measured. (The scanner's precision on this author is 20 to 35 per cent: 4 or 7 of 20 flagged frames were real two-option reductions, on two separate readings. Its rate on human-written prompts is 0.28 to 0.58 per thousand words. The level is not a count of real frames, and the comparison across days assumes the precision held steady across them.) <b>The corrections landed one at a time, and the rate shows no change that clears its own width.</b> A guard is a filter, not a teacher, and expecting it to teach is how it gets removed for underperforming at a job it never had.</p>
+
+<h3>42. A rule from a single instance given a theorem's authority</h3>
+<p>A lesson learned once enters the record indistinguishable in tone from something measured many times, and later work rests on it. Every retained rule carries what it rests on &mdash; an instruction, a verified tool behaviour, an arithmetic identity, or <b>one instance</b> &mdash; and a one-instance rule may not be cited as though it rested on a count.</p>
+
+<h3>43. Narrating the mechanism instead of using it</h3>
+<p>A system that describes a procedure accurately gets mistaken for one that performs it. Documentation, naming and discussion of a method all feel like the method. For every claimed capability, find the line that executes it and confirm it ran. <b>Prose shaped like a finding is not one.</b></p>
+
+<h3>45. Explaining the work instead of stating it</h3>
+<p>Asked for business copy, the writer explains and persuades at once: why the method deserves trust, what the client will receive, a slogan above every fact. Each rewrite toward a curter register came back as the same pitch in a new costume &mdash; asked for &ldquo;curt and arrogant&rdquo;, it produced <i>&ldquo;You name the processors. We name the figures worth checking.&rdquo;</i> <b>Six catches in one afternoon on one six-page website, all six made by the human partner reading it, none by the writer.</b> Shown the corrected voice, the writer could produce it. It could not hear the wrong one in its own draft. It is the assistant&rsquo;s default register rather than one bad draft: every rewrite drifted back to it.</p>
+<p>On the same six pages, with the same offer and the same form, <b>most of the copy was cut.</b> Nothing a client needs was removed. <b>Every line cut was the writer asking to be believed.</b> This sits beside 43: prose shaped like a capability is mistaken for one, and prose shaped like confidence is mistaken for confidence.</p>
+
+<hr>
+<h2>What this document cannot do</h2>
+<p>It cannot score itself. Every entry is <b>in sample</b> &mdash; the catalogue was built from these failures, so of course it explains them, and fitted to its own instances it accounts for all of them, which is what any ruler fitted to its own instances does. The only honest measurement of a catalogue is <b>prospective</b>: how often it catches the next one, before the fact, unprompted. That count is kept and published in <i>Guards</i>, and it is far below what the in-sample fit would suggest.</p>
+<h2>Why this is published at all</h2>
+<p>Anyone can put a two-answer question to a language model and get a confident two-answer reply &mdash; correctly formatted, well argued, and wrong in the same specific way, dozens of times a day. <b>The output reads like competence.</b> Showing the count and the error rate is more use to whoever comes next than showing the conclusions, so that is what is here.</p>
+<p class="foot">Faults &mdash; a running list of failure modes grouped in families, with the number from the day each was found, where there was one. Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion: <b>Guards</b>, the procedures and the only score either document has. This document supersedes the earlier ones it was assembled from. No instance is reported with the run that produced it.</p>
+<p class="foot">Heuremen LLC<br>&ldquo;We found it.&rdquo;</p>
+</body></html>

@@ -11,6 +11,7 @@ def forced(rs):
 train, val, step = [], [], 0
 lp = os.path.join(HERE, 'yo2_train.log'); RUN = 'v2'; STEPS = 2000
 if os.path.exists(os.path.join(HERE, 'yo3_train.log')) and not os.path.exists(os.path.join(HERE, 'yo2_result.json')): lp = os.path.join(HERE, 'yo3_train.log'); RUN = 'v3'; STEPS = 1200   # 31 Oct: v3 refines v2 (PLAN_YO_V3.md); once the result posts, the panel follows v2 (the model at work) and v3's readings sit in the result table
+if os.path.exists(os.path.join(HERE, 'yo4_train.log')) and not os.path.exists(os.path.join(HERE, 'yo4_result.json')): lp = os.path.join(HERE, 'yo4_train.log'); RUN = 'v4'; STEPS = 1200   # 31 Oct night: v4 trains on records whose qubits all went stale together (PLAN_YO_V4.md); the posted v2/v3 table stays
 if os.path.exists(lp):
     for l in open(lp, errors='ignore'):
         m = re.search(r'Iter (\d+): Train loss ([\d.]+)', l)
@@ -24,11 +25,11 @@ if c: nulls['C_always_consistent'] = mean(c, 'C'); nulls['C_always_consistent_fo
 if bi: nulls['C_binary_rule'] = mean(bi, 'C'); nulls['C_binary_rule_forced'] = forced(bi)
 if ba: nulls['A_base'] = mean(ba, 'A'); nulls['C_base'] = mean(ba, 'C'); nulls['C_base_forced'] = forced(ba)
 if os.path.exists(os.path.join(HERE, 'nulls_extra.json')): nulls.update(json.load(open(os.path.join(HERE, 'nulls_extra.json'))))   # POSTHOC_BASE_A.md: the lenient reading, labelled on the page
-res = json.load(open(os.path.join(HERE, 'yo2_result.json'))) if (RUN == 'v2' and os.path.exists(os.path.join(HERE, 'yo2_result.json'))) else None
+res = json.load(open(os.path.join(HERE, 'yo2_result.json'))) if (RUN in ('v2', 'v4') and os.path.exists(os.path.join(HERE, 'yo2_result.json'))) else None
 trained = os.path.exists(lp) and 'Saved final weights' in open(lp, errors='ignore').read()
-state = 'done' if res else ('trained' if trained else ('training' if step else ('baselines scored' if ba else 'preparing')))
-d = dict(model='Qwen3-1.7B (Apache-2.0), LoRA' + (', YO v3 refining YO v2 on qubits stale by one to two days' if RUN == 'v3' else ''), steps=STEPS, step=step, train=train[-200:], val=val, nulls=nulls, result=res, state=state,
-         plan='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V2.md')
+state = ('trained' if trained else 'training') if RUN == 'v4' else ('done' if res else ('trained' if trained else ('training' if step else ('baselines scored' if ba else 'preparing'))))
+d = dict(model='Qwen3-1.7B (Apache-2.0), LoRA' + (', YO v3 refining YO v2 on qubits stale by one to two days' if RUN == 'v3' else ', YO v4 training from YO v2 on records whose qubits all went stale together' if RUN == 'v4' else ''), steps=STEPS, step=step, train=train[-200:], val=val, nulls=nulls, result=res, state=state,
+         plan='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/yo/PLAN_YO_V%s.md' % ('4' if RUN == 'v4' else '2'))
 h = hashlib.sha256(json.dumps(d, sort_keys=True).encode()).hexdigest(); st = os.path.join(HERE, '.publish_state')
 import time
 if os.path.exists(st) and open(st).read().strip() == h and time.time() - os.path.getmtime(st) < 3600: print('yo: unchanged'); raise SystemExit   # republished at least hourly, so the feed's stamp stays current
