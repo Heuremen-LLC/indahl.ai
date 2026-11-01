@@ -57,9 +57,13 @@ Defined after the data:
 - Records with all 8 qubits stale: the stale list exactly right on 130 of 136 (YO v2: 53). YO still flags nothing on 3 of them and one qubit on 3.
 - The everyday mix of records: 193 of 215 stale qubits found (YO v2: 119).
 - Zero values: 115 of 119 found, with 4 false flags.
-- Weaker on some processors: in records whose 8 qubits all sit 20 to 50 hours from their stamp, 120 of 135 stale qubits found on ibm_boston and 72 of 80 on ibm_kingston, all of them on the other four.
+- By processor, in records whose 8 qubits all sit 20 to 50 hours from their stamp: 120 of 135 stale qubits found on ibm_boston and 72 of 80 on ibm_kingston, all of them on the other four.
 
-One training run, one seed, scored once. The plan was committed before any data was built. Plan, code and every reading: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/yo . The results table: https://indahl.ai/iris/lab
+## Seeds
+
+This model is seed 44 of three training runs on the same plan, data and settings. Seed 44 was fixed in the plan before any data was built, seed 45 was planned before it was trained, and seed 46 was added to the plan after the seed 45 readings were seen. All three were scored once on the same 426 records. Stale qubits found in the whole-window records were 905, 928 and 920 of 928 (YO v2: 403), and the record audit was 0.990, 0.990 and 0.992 (YO v2: 0.961). Qubits flagged that were not stale were 1, 25 and 8, in 1, 4 and 2 of 390 audit items. CANNOT_TELL items given another verdict were 5, 24 and 11 of 100, and verdict scores were 390, 375 and 385 of 400 (YO v2: 377). This model has the fewest false flags and forced verdicts of the three, and also finds the fewest stale qubits over all audit items (1,127 of 1,172, against 1,165 and 1,164). The figures above are this adapter's. Another seed gave the different counts listed here, and three seeds are a small sample.
+
+The plan was committed before any data was built. Plan, code and every reading: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/yo . The results table: https://indahl.ai/iris/lab
 
 ## Live
 

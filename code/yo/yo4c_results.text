@@ -1,0 +1,9 @@
+yo_v4c {'R1': 0.991, 'R1_n': 928, 'R2': 0.992, 'R3': 0.993, 'R4': 0.963, 'forced': 0.11, 'ct_wrong': 4}
+yo_v4 {'R1': 0.975, 'R1_n': 928, 'R2': 0.99, 'R3': 0.999, 'R4': 0.975, 'forced': 0.05, 'ct_wrong': 4}
+yo_v2 {'R1': 0.434, 'R1_n': 928, 'R2': 0.961, 'R3': 0.97, 'R4': 0.943, 'forced': 0.07, 'ct_wrong': 14}
+R1, yo_v4c minus yo_v4: +0.016 [-0.017, +0.048] -> CANNOT_TELL
+R2, yo_v4c minus yo_v4: +0.002 [-0.009, +0.013] -> CONSISTENT
+R4, yo_v4c minus yo_v4: -0.012 [-0.031, +0.005] -> CANNOT_TELL
+R1, yo_v4c minus yo_v2: +0.557 [+0.473, +0.642] -> ABOVE
+S3 Job A items whose stale list differs between the seeds: 10 of 390 (v4c exact where v4 is not: 7, v4 exact where v4c is not: 3)
+S3 Job C items whose verdict differs: 15 of 400 (v4c right: 5, v4 right: 10)
