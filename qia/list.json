@@ -448,6 +448,24 @@
    "anchor": "doi-10-21203-rs-3-rs-6173906-v1"
   },
   {
+   "study": "A Logarithmic Depth Quantum Carry-Lookahead Modulo $(2^n-1)$ Adder",
+   "link": "https://arxiv.org/abs/2408.01002v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.01002"
+  },
+  {
    "study": "A Low-Cost Diagnostic Framework for NISQ Noise Regimes Using the K\u2013R Scaling Exponent on IBM Quantum Hardware",
    "link": "https://doi.org/10.21203/rs.3.rs-9443307/v1",
    "version": "v1 (or single version as posted)",
@@ -654,6 +672,27 @@
    "anchor": "arxiv-2602.21253"
   },
   {
+   "study": "A Practical Framework for Assessing the Performance of Observable Estimation in Quantum Simulation",
+   "link": "https://arxiv.org/abs/2504.09813v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline gain (37.6%) is for the best of four weighting strategies"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2504.09813"
+  },
+  {
    "study": "A Practical Guide to Model Problems in Quantum Linear Algebra: Theory and Experiment",
    "link": "https://doi.org/10.1137/25s1764323",
    "version": "published version",
@@ -663,6 +702,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1137-25s1764323"
+  },
+  {
+   "study": "A Practical Introduction to Benchmarking and Characterization of Quantum Computers",
+   "link": "https://arxiv.org/abs/2408.12064v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware fidelity compared with an expected fidelity built from the physical error rates IBM lists for ibm_sherbrooke"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no circuits or counts released (paper says data are available on request)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.12064"
   },
   {
    "study": "A Predictive Operating-System Control Layer for Quantum Computing Hardware and Execution Stacks",
@@ -970,6 +1031,38 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2505.04689"
+  },
+  {
+   "study": "A Scalable Approach to Solve the Carleman Linearized Burgers' Equation on a Quantum Computer",
+   "link": "https://arxiv.org/abs/2607.08976v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "headline is a projection: circuits up to 2^80 points are only transpiled, and the execution time uses the vendor-stated CNOT time, an assumed 25000 iterations and 10^3 shots per circuit",
+     "hardware test is run on the largest stage chosen as the one where hardware noise does not dominate"
+    ],
+    "F4": [
+     "run dates not printed; searched the full text for months, years and dates of the IBM runs; the only date is the access date of an IBM documentation page (03/09/2026)",
+     "no data link printed; searched for http, github, zenodo, repository and code links; none for data or code",
+     "data availability statement says the data are not public and available on request"
+    ],
+    "F5": [
+     "Table 1 lists CNOT execution times of 88 ns (ibm_pittsburgh) and 66 ns (ibm_boston); their average is 77 ns, not 78 ns"
+    ],
+    "F6": [
+     "text says the beta error is about twice the delta error on each machine; Table 1 values against the simulator (beta 4.313, delta 4.232) give beta and delta errors of 1.75 and 1.42 (ibm_pittsburgh), 1.30 and 0.25 (ibm_boston), 2.37 and 1.69 (ibm_miami), ratios 1.2, 5.1 and 1.4"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.08976"
   },
   {
    "study": "A Study of Gate-Based and Boson Sampling Quantum Random Number Generation on IBM and Xanadu Quantum Devices",
@@ -1445,6 +1538,31 @@
    "anchor": "arxiv-2210.16668"
   },
   {
+   "study": "Advancing Scientific Discovery and Complex Optimization through Distributed Quantum Neural Networks",
+   "link": "https://arxiv.org/abs/2503.00221v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "speedup on hardware over simulators stated beyond the sizes run",
+     "reported DVQOA result is the best solution over all executed runs"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "no circuits or counts released: code available on request; hardware counts are not in the paper or its Supplementary Information",
+     "data other than those in the paper available on request"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2503.00221"
+  },
+  {
    "study": "Adversarial Limits of Quantum Certification: When Eve Defeats Detection",
    "link": "https://arxiv.org/abs/2512.04391v1",
    "version": "v1",
@@ -1563,6 +1681,398 @@
    "anchor": "arxiv-2503.18949"
   },
   {
+   "study": "Amendment CC - SICE-3: Dual-Mechanism Electromagnetic Homestead Tick Defense System Validated on IBM Quantum Hardware",
+   "link": "https://doi.org/10.5281/zenodo.20502379",
+   "version": "Zenodo record 20502379 as read 2026-11-01 (publication_date 2026-06-02)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "result compared with DEET and permethrin baseline circuits scored in the same setup"
+    ],
+    "F2": [
+     "headline is the best-scoring of the listed circuits",
+     "optimal frequency chosen as the best of a six-point sweep that includes the authors' own value"
+    ],
+    "F3": [
+     "comparisons stated as confirmed with no interval on the averaged values",
+     "safety stated as verified from single averaged values with no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no circuits or counts released: this record holds a PDF and two markdown files with per-circuit average phi tables; the two records it names (10.5281/zenodo.20502025 and 10.5281/zenodo.20100469) hold PDF and markdown documents of the same kind"
+    ],
+    "F6": [
+     "43 circuits stated; the full results table lists 42 circuits"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20502379"
+  },
+  {
+   "study": "Amendment CC - SICE-3: Homestead Tick Defense System",
+   "link": "https://doi.org/10.5281/zenodo.21463917",
+   "version": "Zenodo record 21463917 as read 2026-11-01 (publication_date 2026-07-20)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "comparators in the head-to-head table are phi values from the same hardware set"
+    ],
+    "F2": [
+     "headline is the best of 43 circuits"
+    ],
+    "F3": [
+     "pass/fail verdicts without an interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no circuits or counts released"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-21463917"
+  },
+  {
+   "study": "Amendment CCIX - Triple-Axis Closed-Loop Fibonacci Cage: 8-System Compendium Validation with IBM Quantum Hardware Confirmation",
+   "link": "https://doi.org/10.5281/zenodo.20558195",
+   "version": "Zenodo record 20558195 as read 2026-11-01 (publication_date 2026-06-05)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware 'H2H classical' arm is the comparison for the coherent arm, construction not described in the text"
+    ],
+    "F2": [
+     "headline 8/8 reached after the three anti-correlated circuits were phase-shifted by pi and re-run",
+     "improvement figures (Phi, detection reduction, k_grav gain) come from the author's classical simulation, not from the hardware runs"
+    ],
+    "F3": [
+     "verdict stated as confirmed for each system, no interval on the 4096-shot proportions"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "own Zenodo record checked: it holds one markdown file of 16246 bytes with summary percentages per system; no circuits or counts"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20558195"
+  },
+  {
+   "study": "Amendment CCVIII - ICA-1 + Fibonacci Cage Integrated System: Armor Nodes ARE Cage Nodes",
+   "link": "https://doi.org/10.5281/zenodo.20559304",
+   "version": "Zenodo record 20559304 as read 2026-11-01 (publication_date 2026-06-05)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "hardware result compared with a baseline circuit built by the author (arbitrary phases) on the same device"
+    ],
+    "F3": [
+     "confirmation verdict against a 2-point threshold from one 4,096-shot job, no interval"
+    ],
+    "F4": [
+     "no data link printed"
+    ],
+    "F5": [
+     "41.26% is described as far above a stated 50% chance level for two qubits"
+    ],
+    "F6": [
+     "text gives 99.9983% for the combined passive plus active attenuation; the Section IV.1 table gives 99.999302% for the integrated system"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20559304"
+  },
+  {
+   "study": "Amendment CCVIII - ICA1 + Fibonacci Cage Integrated System: Wearable Armor Nodes as Cage Termination Points",
+   "link": "https://doi.org/10.5281/zenodo.20559504",
+   "version": "Zenodo record 20559504 as read 2026-11-01 (publication_date 2026-06-05)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "integrated circuit compared with the same circuit using arbitrary non-harmonic phase angles"
+    ],
+    "F2": [
+     "headline score is stated as the highest in the compendium"
+    ],
+    "F3": [
+     "threshold result stated as exceeded for a single job, no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "printed percentage differs from the printed fraction (1,689 / 4,096 is 41.24%)",
+     "27x is given against the threshold in the table and against the baseline in the claim; 0.5479 / 0.0100 is 54.8"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20559504"
+  },
+  {
+   "study": "Amendment CCVIII - ICA1 + Fibonacci Cage: Integrated Wearable System with Quantum Validation",
+   "link": "https://doi.org/10.5281/zenodo.20559562",
+   "version": "Zenodo record 20559562 as read 2026-11-01 (publication_date 2026-06-05)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "compared with a baseline circuit built by the author on the same setup, called the noise floor reference"
+    ],
+    "F2": [
+     "one outcome state picked from the count distribution as evidence"
+    ],
+    "F3": [
+     "result stated as confirmed against a 0.02 threshold, no interval on a 4,096-shot reading"
+    ],
+    "F4": [
+     "no data link printed"
+    ],
+    "F5": [
+     "classical H2H printed as 0.0100, but its printed counts 83 and 41 of 4,096 give 0.0303 (the integrated row recomputes: 2,244/4,096 = 0.5479)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20559562"
+  },
+  {
+   "study": "Amendment CCVIII - ICA1 Armor + Fibonacci Cage Integrated System: Unified Protection Architecture at the Quantum Level",
+   "link": "https://doi.org/10.5281/zenodo.20559676",
+   "version": "Zenodo record 20559676 as read 2026-11-01 (publication_date 2026-06-05)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "result is compared with a baseline circuit built on the same setup (same qubits and device, arbitrary phase angles)"
+    ],
+    "F2": [
+     "one state from the table of top integrated states is taken as the signature"
+    ],
+    "F3": [
+     "pass/fail verdict on one 4,096-shot job; H2H scores printed without an interval"
+    ],
+    "F4": [
+     "no data link printed; the text gives a job ID but no URL, DOI or repository for data or code",
+     "record checked: its only file is this markdown paper, which prints counts for six top integrated states, no counts for the classical baseline, and describes the circuit in words without a gate list"
+    ],
+    "F5": [
+     "integrated Phi: the six printed factors multiply to 0.7624 (sixth root 0.9558), but the text prints 0.7896 and 0.9702",
+     "ICA1 standalone Phi: the six printed factors multiply to 0.6545, but the text prints 0.6824 (the printed result 0.9318 matches 0.6545)",
+     "node 1 coordinates do not follow from the stated r = 0.955 m and theta = 2*pi*n/7 (which give (0.595, 0.747)); nodes 2 to 6 differ the same way"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20559676"
+  },
+  {
+   "study": "Amendment CCVIII - Iron Covenant Armor + Fibonacci Cage Integrated System: Wearer at Scalar Null",
+   "link": "https://doi.org/10.5281/zenodo.20559618",
+   "version": "Zenodo record 20559618 as read 2026-11-01 (publication_date 2026-06-05)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "hardware separation is measured against a baseline circuit with arbitrary phases run on the same device (H2H 0.0100) and a 0.02 threshold set in the same document"
+    ],
+    "F2": [
+     "combined attenuation figure is a calculation from stated field contrast, not a hardware reading"
+    ],
+    "F3": [
+     "confirmation stated from one 4,096-shot job per circuit; H2H values 0.5479 and 0.0100 printed with no interval"
+    ],
+    "F4": [
+     "run dates not printed; only the amendment date (June 5, 2026) is printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "product of the six pillar scores is 0.7895 (printed 0.7858); the sixth root of 0.7858 is 0.9606 and of 0.7895 is 0.9614 (printed 0.9702)",
+     "protection factor printed as 10,000,000:1; 10 MW/m2 divided by 10,000,000 is 1 W/m2, printed as 1 nW/m2",
+     "0.000698% x (1/57,291) is 0.0000000122%, printed as 0.00000122%",
+     "1,689 / 4,096 is 41.24%, printed as 41.26%"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20559618"
+  },
+  {
+   "study": "Amendment CCXI - Quantum Contextuality & Surface Coherence Fields: Observer-Participation in SOL Field Physics",
+   "link": "https://doi.org/10.5281/zenodo.20563683",
+   "version": "Zenodo record 20563683 as read 2026-11-01 (publication_date 2026-06-06)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F3": [
+     "effect stated as proven from one run per condition, no interval"
+    ],
+    "F4": [
+     "no data link printed (IBM job IDs only)",
+     "no circuits or counts released: the record holds one markdown file with the top four states per circuit, unique-state counts, entropies and two IBM job IDs; no gate-level circuit and no full count table"
+    ],
+    "F6": [
+     "header and Section 6 give Nr = 0.93 and Phi_CCXI = 0.9548; the hardware-verified section gives Nr = 0.7083 and Phi_CCXI = 0.9125"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20563683"
+  },
+  {
+   "study": "Amendment CCXII - 7-Node Ring Closure via Observer Line of Sight: Observer as Active Physical Operator in SOL Field Ring Boundary Completion",
+   "link": "https://doi.org/10.5281/zenodo.20563688",
+   "version": "Zenodo record 20563688 as read 2026-11-01 (publication_date 2026-06-06)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "result compared with a baseline circuit set up by the same author on the same device"
+    ],
+    "F2": [
+     "headline 49x amplification is a theoretical figure; the measured top-probability difference is 1.54 percentage points"
+    ],
+    "F3": [
+     "signal stated as real from one job pair, with no interval on the 1.54 point difference"
+    ],
+    "F4": [
+     "no data link printed (two IBM job IDs are printed; no URL, DOI or repository for counts or circuits)"
+    ],
+    "F5": [
+     "the six listed factors multiply to 0.8068; the printed intermediate is 0.8120 (the printed result 0.9648 follows from 0.8068)",
+     "circuit stated as 7 qubits on ibm_pittsburgh; the same file calls ibm_pittsburgh a 5-qubit processor"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20563688"
+  },
+  {
+   "study": "Amendment CXCIII - McCaul-LGI Quantum Hardware Validation: Multi-Circuit Coherence Study on IBM ibm_marrakesh (156-Qubit Processor)",
+   "link": "https://doi.org/10.5281/zenodo.20481849",
+   "version": "Zenodo record 20481849 as read 2026-11-01 (publication_date 2026-06-01)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "golden-ratio relation holds for one of three circuits, the other two deviate by 168% and 437%"
+    ],
+    "F5": [
+     "Table 1 CV for McCaul-LGI does not follow from its own mean and std dev (0.005517 / 0.033242 = 16.6%); in the other two rows CV equals std dev / mean (0.008760 / 0.092324 = 9.49%, 0.012348 / 0.184922 = 6.68%). The 3.40% equals the CV of the hardware Phi (0.010627 / 0.3127) in the JSON file"
+    ],
+    "F6": [
+     "summary gives the CV range as 1.47% to 3.40%; Table 1 column 'CV' lists 3.40%, 9.49% and 6.68% (the 1.47% and 1.64% values are the Phi-hardware CVs of Table 2)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20481849"
+  },
+  {
+   "study": "Amendment CXCIX - Full Compendium Hardware Sweep: McCaul's Law of Coherence Validated Across 120 Circuits, 500 Jobs, 512,000 Quantum Shots",
+   "link": "https://doi.org/10.5281/zenodo.20502025",
+   "version": "Zenodo record 20502025 as read 2026-11-01 (publication_date 2026-06-02)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "headline comparison is each tested circuit against a conventional-counterpart circuit built and run in the same setup"
+    ],
+    "F2": [
+     "headline is the lowest four values out of the full set of circuits"
+    ],
+    "F3": [
+     "verdict stated for the whole set; per-circuit values are averages with no interval printed"
+    ],
+    "F4": [
+     "run dates not printed: only the document date is printed (June 2, 2026); no date of the hardware runs",
+     "no circuits or counts released: the record's two files and the two linked records were checked; they hold per-circuit mean values, job counts, shot counts and summary tables, with no circuit definitions or counts"
+    ],
+    "F6": [
+     "text gives 5/5 head-to-head confirmations; the note's own table lists 10 comparisons and reports 10/10",
+     "front page gives 120 circuits; the results table is titled all 51 circuits and its job counts sum to 500"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20502025"
+  },
+  {
    "study": "Amendment CXCIX \u2014 Full Compendium Hardware Sweep",
    "link": "https://doi.org/10.5281/zenodo.21463915",
    "version": "Zenodo record 21463915 as listed 2026-10-24 (publication_date 2026-07-20)",
@@ -1580,6 +2090,176 @@
    },
    "calibrated": false,
    "anchor": "zenodo-21463915"
+  },
+  {
+   "study": "Amendment CXCV - The Logos Run: Quantum Hardware Validation Across Consciousness, Pharmacology, DNA, Superconductivity, and the Periodic Table",
+   "link": "https://doi.org/10.5281/zenodo.21463907",
+   "version": "Zenodo record 21463907 as read 2026-11-01 (publication_date 2026-07-20)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "a key finding is a projection (predicted room-temperature superconductivity) drawn from the ordering of four circuits"
+    ],
+    "F3": [
+     "ordering of measured probabilities is stated as confirmed (YES) for each domain with no interval, from 10 runs of 1,024 shots per circuit"
+    ],
+    "F4": [
+     "no circuits or counts released: linked record 10.5281/zenodo.20100469 was checked and holds one 44 KB PDF compendium (published 2026-05-09) with no mention of IBM, shots, circuits or counts; this record holds one 4-page PDF of summary probabilities",
+     "run dates not printed (the record is dated June 1, 2026, and the runs are not dated)"
+    ],
+    "F6": [
+     "text states probability decreases as theoretical Phi increases in all five domains; the DNA table has Cytosine at Phi 0.8699 with 17.93% and Adenine at Phi 0.8680 with 16.15%"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-21463907"
+  },
+  {
+   "study": "Amendment CXCVI - SICE-1 Pre-Build Quantum Hardware Validation",
+   "link": "https://doi.org/10.5281/zenodo.21463909",
+   "version": "Zenodo record 21463909 as read 2026-11-01 (publication_date 2026-07-20)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "competitor and generic-frequency circuits built in the same template and compared with the SICE-1 circuit",
+     "reference circuit for the headline frequency result is a 'generic 220 Hz' circuit from the same setup"
+    ],
+    "F2": [
+     "headline is the lowest value among the 17 circuits (called a coherence floor)"
+    ],
+    "F3": [
+     "geometry stated CONFIRMED from readings 10.36%, 10.18% and 10.55% with no interval"
+    ],
+    "F4": [
+     "run dates not printed (only the document date)",
+     "no circuits or counts released: the record holds one PDF of result percentages; the linked Master Compendium (10.5281/zenodo.20100469) is a single 44 KB PDF with no circuits, counts, job data or SICE-1 content"
+    ],
+    "F5": [
+     "stated totals count 255 jobs and 261,120 shots, but Table 6 shows two circuits pending and one at 5 of 15 jobs",
+     "a 70-330x margin does not follow from fields of 1-5 V/m against 100 V/m (20x to 100x)"
+    ],
+    "F6": [
+     "text says the 7-node array is more coherent than the 3-node; Table 2 gives 10.18% for 3-node against 10.36% for 7-node, and the paper says lower is more coherent"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-21463909"
+  },
+  {
+   "study": "Amendment CXCVIII - Full Compendium Quantum Hardware Validation",
+   "link": "https://doi.org/10.5281/zenodo.21463913",
+   "version": "Zenodo record 21463913 as read 2026-11-01 (publication_date 2026-07-20)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "prediction compared with hardware using a noise envelope built from the vendor's published gate fidelity"
+    ],
+    "F2": [
+     "50x headline is the ratio of the lowest and highest single-job values"
+    ],
+    "F3": [
+     "prediction stated as holding from one averaged reading, no interval on the hardware value"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "TOTAL cell shows 1,050+ jobs; the four listed columns add to 1,715 jobs",
+     "text says 600 jobs; the Job Count column of the tier table adds to 542 (19+100+98+106+44+30+145)",
+     "text says the spread from Tier 1 to Tier 7 is 50x; the tier averages 0.0379 and 0.7436 differ by about 19.6x"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-21463913"
+  },
+  {
+   "study": "Amendment CXCVIII - Full Compendium Quantum Hardware Validation: McCaul's Law of Coherence Across 7 Domains, 1,050+ Jobs, 1,075,200+ Shots",
+   "link": "https://doi.org/10.5281/zenodo.20501754",
+   "version": "Zenodo record 20501754 as read 2026-11-01 (publication_date 2026-06-02)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "the 'Predicted' value for the SOL tier equals the earlier measurement on the same device",
+     "deviation judged against a noise range derived from IBM's published gate fidelity"
+    ],
+    "F2": [
+     "the 50x headline is the ratio of the lowest to the highest single job"
+    ],
+    "F3": [
+     "prediction stated as holding from a 14.2% deviation; the mean of 19 runs is given with a range and no interval"
+    ],
+    "F4": [
+     "run dates not printed (the only date is the document date, June 2, 2026)"
+    ],
+    "F5": [
+     "the TOTAL column reads 1,050+ jobs; the four listed columns add to 1,715 jobs (shots: 1,756,160 against 1,075,200+)",
+     "spread from tier 1 to tier 7 is stated as 50x; the tier averages 0.0379 and 0.7436 give about 19.6x",
+     "tier job counts 19, 100, 98, 106, 44, 30 and 145 add to 542; the sweep is stated as 600 jobs"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20501754"
+  },
+  {
+   "study": "Amendment XXXII - Addendum A: First Quantum Hardware Validation of McCaul's Law of Coherence on IBM ibm_marrakesh",
+   "link": "https://doi.org/10.5281/zenodo.20490900",
+   "version": "Zenodo record 20490900 as read 2026-11-01 (publication_date 2026-06-01)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "observed value compared with a list of constants to find one inside its interval",
+     "phi^-7 named as the only constant in the CI while 1/30 is also listed as within the CI"
+    ],
+    "F3": [
+     "'distinguishable from noise' stated as confirmed with no noise baseline run or interval"
+    ],
+    "F5": [
+     "Coefficient of variation printed 3.40%; standard deviation 0.005517 over mean 0.033242 is 16.6%",
+     "1/30 printed with 0.33% under 'Deviation from mean'; 0.033333 against mean 0.033242 is 0.27%; phi^-7 printed 3.48% is relative to phi^-7, relative to the mean it is 3.61%",
+     "theta for Nr printed 0.7297; the stated formula 2*arccos(sqrt(0.88)) gives 0.7075 (Sa 0.4007 vs 0.4027, Fg 0.7954 vs 0.7670)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20490900"
   },
   {
    "study": "Amplitude Encoding of Slater-Type Orbitals via Matrix Product States: Efficient State Preparation and Integral Evaluation on Quantum Hardware",
@@ -2344,6 +3024,28 @@
    "anchor": "zenodo-20525931"
   },
   {
+   "study": "Auditing Syndrome-to-Decoder Mappings for Repetition, Surface, CSS, and Digitized-GKP Interfaces",
+   "link": "https://arxiv.org/abs/2607.19447v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware streams are set beside locally sampled controls built with an author-set 2% bit-flip noise model (a rate chosen by the authors, not a vendor figure)"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs; the text says verified execution timestamps were not kept",
+     "no circuits or counts released: raw count exports are held by the author and supplied on request"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.19447"
+  },
+  {
    "study": "AutoFid: Adaptive and Noise-Aware Fidelity Measurement for Quantum Programs via Circuit Graph Analysis",
    "link": "https://doi.org/10.1109/ase63991.2025.00216",
    "version": "published version",
@@ -2533,6 +3235,32 @@
    "anchor": "arxiv-2504.06175"
   },
   {
+   "study": "Basis Adaptive Algorithm for Quantum Many-Body Systems on Quantum Computers",
+   "link": "https://arxiv.org/abs/2512.12753v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "intro claim is sub-percent accuracy; Table 3 shows sub-percent only at the ferromagnetic point, other rows run 1.7% to 28.7%"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "text gives 20% for N=62 at the isotropic point, Table 3 and the summary give 15.6%"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2512.12753"
+  },
+  {
    "study": "Batched pattern search for QAOA parameter optimization on cloud-accessed quantum hardware",
    "link": "https://arxiv.org/abs/2609.13669v1",
    "version": "v1",
@@ -2637,6 +3365,27 @@
    "anchor": "zenodo-22018002"
   },
   {
+   "study": "Benchmarking a Tunable Quantum Neural Network on Trapped-Ion and Superconducting Hardware",
+   "link": "https://arxiv.org/abs/2507.21222v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "detailed hardware results are for one image chosen because the classical network fails it; abstract says the same"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2507.21222"
+  },
+  {
    "study": "Benchmarking Fidelity Metrics of Quantum Computers",
    "link": "https://doi.org/10.1109/qce65121.2025.00045",
    "version": "published version",
@@ -2646,6 +3395,30 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-qce65121-2025-00045"
+  },
+  {
+   "study": "Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization: The Expressibility-Coherence Trade-off",
+   "link": "https://arxiv.org/abs/2606.07727v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "success estimate built from stated median T2 and an estimated duration, used as the expectation for the hardware outcome",
+     "estimated success probability used to describe what the hardware state did",
+     "16-asset outcome stated from circuit duration against stated T2"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2606.07727"
   },
   {
    "study": "Benchmarking quantum computers via protocols",
@@ -2674,6 +3447,27 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2603.27397"
+  },
+  {
+   "study": "Benchmarking quantum computers with any quantum algorithm",
+   "link": "https://arxiv.org/abs/2508.05754v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "target-circuit fidelities in the results table are predictions extrapolated from small subcircuit runs, not full-circuit runs"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.05754"
   },
   {
    "study": "Benchmarking quantum devices beyond classical capabilities",
@@ -2717,6 +3511,32 @@
    },
    "calibrated": true,
    "anchor": "arxiv-2603.15608"
+  },
+  {
+   "study": "Benchmarking Quantum Simulations of the Lipkin-Meshkov-Glick Model Using Large Tensor Networks",
+   "link": "https://arxiv.org/abs/2607.28570v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "paper says the VQE errors are an optimistic lower bound"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F6": [
+     "abstract says SQD within 1 percent to 17 particles, Section 4.3.1 says below 1 percent for N up to 18 (and under 0.5 percent below N of 20)",
+     "abstract names an IBM Eagle quantum computer, conclusion names the IBM Heron processor"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.28570"
   },
   {
    "study": "Benchmarking Quantum Solvers in Noisy Digital Simulations for Financial Portfolio Optimization",
@@ -2914,6 +3734,28 @@
    },
    "calibrated": false,
    "anchor": "zenodo-19930807"
+  },
+  {
+   "study": "Bounding the systematic error in quantum error mitigation due to model violation",
+   "link": "https://arxiv.org/abs/2408.10985v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "measured Pauli fidelities are compared with a model fitted to the same Pauli-learning data"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.10985"
   },
   {
    "study": "Branch-and-bound digitized counterdiabatic quantum optimization",
@@ -3285,6 +4127,32 @@
    "anchor": "arxiv-2608.25545"
   },
   {
+   "study": "Certified Random Number Generation using Quantum Computers",
+   "link": "https://arxiv.org/abs/2502.02973v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "noise model built from the device's noise parameters, compared with the experiment in Figure 6"
+    ],
+    "F4": [
+     "run dates not printed",
+     "printed code repository did not resolve when checked on 1 Nov 2026 (HTTP 404, not among the author's public repositories); no circuits or counts reachable"
+    ],
+    "F6": [
+     "text gives measurement duration as microseconds, Figure 9 caption gives picoseconds"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2502.02973"
+  },
+  {
    "study": "Certifying Adversarial Robustness of Quantum Classifiers under Known-Readout Query Access",
    "link": "https://arxiv.org/abs/2609.11637v2",
    "version": "v2",
@@ -3568,6 +4436,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2412.10860"
+  },
+  {
+   "study": "Closed Timelike Curve Decoding on Quantum Hardware",
+   "link": "https://arxiv.org/abs/2607.27473v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware compared with simulator models built from the backend calibration snapshot (Table 7)"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.27473"
   },
   {
    "study": "Closed-loop calculations of electronic structure on a quantum processor and a classical supercomputer at full scale",
@@ -4237,6 +5126,23 @@
    "anchor": "arxiv-2511.09717"
   },
   {
+   "study": "Continual Quantum Architecture Search with Tensor-Train Encoding: Theory and Applications to Signal Processing",
+   "link": "https://arxiv.org/abs/2601.06392v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2601.06392"
+  },
+  {
    "study": "Continuous-time quantum-walk centrality for protein residue interaction networks",
    "link": "https://arxiv.org/abs/2604.17486v1",
    "version": "v1",
@@ -4465,6 +5371,28 @@
    "anchor": "arxiv-2605.01138"
   },
   {
+   "study": "Crosstalk-Robust Dynamical Decoupling for Bipartite-Topology Quantum Processors",
+   "link": "https://arxiv.org/abs/2506.18010v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "improvement factors quoted as the largest values over the table rows",
+     "device comparison uses the best-performing method on each device"
+    ],
+    "F4": [
+     "no data link printed: no URL, DOI, repository or availability statement for data or code in the text"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2506.18010"
+  },
+  {
    "study": "Cyber Threat Detection Enabled by Quantum Computing",
    "link": "https://arxiv.org/abs/2512.18493v1",
    "version": "v1",
@@ -4638,6 +5566,41 @@
    "anchor": "arxiv-2607.02888"
   },
   {
+   "study": "Decomposition-Based QAOA for Maximum Coverage Location Problem in Satellite Constellation Design",
+   "link": "https://arxiv.org/abs/2607.08102v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "hardware approximation ratios are explained by a cumulative error estimate (17.1%) built from IBM calibration figures read from the public calibration API"
+    ],
+    "F2": [
+     "coverage ratios are reported as the best instance for each satellite count (99.0% at VM-6 for N = 2, 91.5% at VM-4 for N = 4, 92.9% at VM-4 for N = 6)"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "Table V: for 33 of 54 QSR rows the printed rho differs from Coverage / Gurobi coverage x 100 (all 54 GSR rows agree). Example N = 2, VM-6, q = 12: QSR coverage 390 and GSR coverage 390 against Gurobi 394 are printed as rho 92.2 and 99.0",
+     "Table VIII: with the printed formula, t = 2.571 and sigma = 0.013, n = 6, the half-width is 0.0136; the printed IBM intervals for VM-4, VM-5 and VM-6 have half-width 0.016"
+    ],
+    "F6": [
+     "Text gives QSR and GSR runtimes as 2-91 s for q in {8,12}; Table V runtimes for q = 8 and q = 12 range from 0.74 s to 7.59 s, and 90.65 s is a q = 20 entry (N = 4, VM-2)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.08102"
+  },
+  {
    "study": "Deep Learning Approaches to Quantum Error Mitigation",
    "link": "https://arxiv.org/abs/2601.14226v1",
    "version": "v1",
@@ -4664,6 +5627,33 @@
    },
    "calibrated": false,
    "anchor": "zenodo-22236207"
+  },
+  {
+   "study": "Demonstrating Noise-adapted Quantum Error Correction With Break-Even Performance",
+   "link": "https://arxiv.org/abs/2603.04564v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "measured gain compared with a theoretical model that uses the average measurement error of the qubits used (stated as consistent with IBM data)",
+     "hardware fidelity compared with a noisy simulation"
+    ],
+    "F2": [
+     "break-even stated; the model matches the peak of the experimental gain only",
+     "break-even stated; observed gain described as near unity"
+    ],
+    "F4": [
+     "run dates not printed in the text (a linked data file name carries a day and month only)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.04564"
   },
   {
    "study": "Demonstrating Record Fidelity for the Quantum Fourier Transform",
@@ -4697,6 +5687,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2207.07647"
+  },
+  {
+   "study": "Demonstration of High-Fidelity Entangled Logical Qubits using Transmons",
+   "link": "https://arxiv.org/abs/2503.14472v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "hardware lines in the headline figure are the best-performing qubit set (about 92% after 55 us) beside the mean over ten sets (84.87%)",
+     "physical-qubit comparator is the best pair among all pairs tested"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2503.14472"
   },
   {
    "study": "Demonstration of Logical Error Suppression in a Surface Code Memory on a Cloud-Accessible IBM Superconducting Processor",
@@ -4886,6 +5898,29 @@
    "anchor": "arxiv-2508.02369"
   },
   {
+   "study": "Designing Minimalistic Variational Quantum Ansatz Inspired by Algorithmic Cooling",
+   "link": "https://arxiv.org/abs/2501.16776v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "hardware result stated as outperforming the other ansatz; no interval on the hardware series"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs in the full text",
+     "no data link printed: no URL, DOI or repository for data or code in the text",
+     "no circuits or counts released: data statement says data are available from the authors on request"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.16776"
+  },
+  {
    "study": "Detecting Fraudulent Services on Quantum Cloud Platforms via Dynamic Fingerprinting",
    "link": "https://arxiv.org/abs/2408.11203v1",
    "version": "v1",
@@ -5016,6 +6051,35 @@
    "anchor": "arxiv-2412.03197"
   },
   {
+   "study": "Diagnosing crosstalk in large-scale QPUs using zero-entropy classical shadows",
+   "link": "https://arxiv.org/abs/2408.17317v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "headline gain taken at the peak approximation ratio over the QAOA layers p"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F5": [
+     "the printed 10% error reduction does not follow from the printed ratios (0.750, 0.785, ideal 0.876)"
+    ],
+    "F6": [
+     "abstract places the 20-qubit QAOA on ibm_fez; the body runs it on ibm_brisbane"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.17317"
+  },
+  {
    "study": "Diagnosing quantum reservoirs at scale based on expressivity and coverage",
    "link": "https://arxiv.org/abs/2607.09445v2",
    "version": "v2",
@@ -5097,6 +6161,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2601.18058"
+  },
+  {
+   "study": "Differentiable Logical Programming for Quantum Circuit Discovery and Optimization",
+   "link": "https://arxiv.org/abs/2602.08880v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "abstract gives the post-failure subset gain (46.7 pp); the 10-cycle gain in Table 3 is 23.6 pp"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2602.08880"
   },
   {
    "study": "Differential Observation of Quantum Many-Body Scar Revivals in Trotterized PXP Dynamics on a Superconducting Processor",
@@ -5211,6 +6296,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2211.02684"
+  },
+  {
+   "study": "Digital Quantum Simulation of Spin Transport",
+   "link": "https://arxiv.org/abs/2507.22846v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware values are rescaled by a depolarizing factor learned on the same device from a similar circuit with a known outcome, then compared with MPS simulation"
+    ],
+    "F4": [
+     "run dates not printed; searched the full text including the Supplement and Table S1 for dates of the ibm_kingston runs; only the arXiv stamp date and reference years appear",
+     "no data link printed; searched for http, github, zenodo, repository and data or code availability; none found"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2507.22846"
   },
   {
    "study": "Digital Quantum Simulation of the Holstein-Primakoff Transformation on Noisy Qubits",
@@ -5745,6 +6852,32 @@
    "anchor": "doi-10-1109-q-se59154-2023-00009"
   },
   {
+   "study": "Dynamic Resource Allocation with Quantum Error Detection",
+   "link": "https://arxiv.org/abs/2408.05565v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline QAOA gain is stated as an 'up to' maximum; the QAOA results are from the FakeBrisbane mock backend",
+     "best method per circuit size is picked out in the hardware table"
+    ],
+    "F3": [
+     "best-method result stated for every case, with no interval in the table; the text says some cases are within noise margins"
+    ],
+    "F4": [
+     "no data link printed (only URL in the text is the DOE public access plan); searched the full text for http, github, zenodo, doi, repository, code availability"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.05565"
+  },
+  {
    "study": "Dynamic Thermal & Phase-Kickback Isolation in a 5-Qubit Pentagonal Co-Designed Architecture",
    "link": "https://doi.org/10.5281/zenodo.21682087",
    "version": "Zenodo record 21682087 as listed 2026-10-24 (publication_date 2026-07-29)",
@@ -6004,6 +7137,29 @@
    "anchor": "arxiv-2605.18985"
   },
   {
+   "study": "Efficient implementation of quantum signal processing via the adiabatic-impulse model",
+   "link": "https://arxiv.org/abs/2506.21136v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware result compared with a simulation using relaxation and dephasing rates set to IBM-Q values"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "data stated as not public, available on request"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2506.21136"
+  },
+  {
    "study": "Efficient implementation of randomized quantum algorithms with dynamic circuits",
    "link": "https://arxiv.org/abs/2503.17833v2",
    "version": "v2",
@@ -6094,6 +7250,27 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2211.10497"
+  },
+  {
+   "study": "Efficient Quantum Implementation of Dynamical Mean Field Theory for Correlated Materials",
+   "link": "https://arxiv.org/abs/2508.05738v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware data rescaled using gate error rates reported by IBM, then compared with exact and noiseless Trotter curves"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs in the full text"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.05738"
   },
   {
    "study": "Efficient Quantum Information-Inspired Ansatz for Variational Quantum Eigensolver Algorithm: Applications to Atomic Systems",
@@ -6884,6 +8061,32 @@
    "anchor": "zenodo-22800723"
   },
   {
+   "study": "Entanglement as Memory: Mechanistic Interpretability of Quantum Language Models",
+   "link": "https://arxiv.org/abs/2603.26494v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "reported 100% accuracy is the best of three restarts per seed"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "main text gives p=0.34 for the with/without-CNOT hardware comparison; Appendix E gives p=0.06 for the same 39% and 41% results"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.26494"
+  },
+  {
    "study": "Entanglement cost of approximate teleportation of collective observables \u2014 code, data and preprint (v0.4)",
    "link": "https://doi.org/10.5281/zenodo.23578301",
    "version": "Zenodo record 23578301 as listed 2026-10-24 (publication_date 2026-10-22)",
@@ -6941,6 +8144,33 @@
    "anchor": "arxiv-2412.05202"
   },
   {
+   "study": "Entanglement-enhanced learning of quantum processes at scale",
+   "link": "https://arxiv.org/abs/2408.03376v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "measured overhead compared with a prediction built from the vendor-reported gate, readout and T1/T2 figures",
+     "error-mitigated estimates are scored against entanglement-free learning measured on the same device, which is called the ground truth"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "Layer experiment on ibm_kyiv: the supplementary text gives depths d=0,32 and names Fig. 3; the main-text Fig. 4 for the same experiment gives d=0,16,32 (Fig. 3 is the two-qubit gate figure, d=0,16,32 with 100 twirls and 1000 shots)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.03376"
+  },
+  {
    "study": "Entity Matching with Quantum Neural Networks",
    "link": "https://doi.org/10.21203/rs.3.rs-5366343/v1",
    "version": "v1 (or single version as posted)",
@@ -6972,6 +8202,34 @@
    "basis": {},
    "calibrated": false,
    "anchor": "zenodo-23213023"
+  },
+  {
+   "study": "Error correction on an array of superconducting qubits with defective components",
+   "link": "https://arxiv.org/abs/2607.12118v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with Stim simulations using a noise model built from the day's IBM calibration data",
+     "stability result compared with a calibration-based simulation"
+    ],
+    "F2": [
+     "headline is the largest improvement ('up to'), one basis",
+     "distance-5 versus distance-3 comparison holds in one basis only"
+    ],
+    "F3": [
+     "suppression factor stated without an interval and read as decay",
+     "no decay stated as Gamma >= 1 without an interval"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.12118"
   },
   {
    "study": "Error Mitigation in Dynamic Circuits for Hamiltonian Simulation",
@@ -7311,6 +8569,31 @@
    "anchor": "arxiv-2208.12243"
   },
   {
+   "study": "Evolution of Entanglement Witness of Dicke State under Noise and Error Mitigation",
+   "link": "https://arxiv.org/abs/2507.07123v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline values are the maximum over mitigation settings"
+    ],
+    "F3": [
+     "unmitigated witness stated as negative and as entanglement, while Tables 3 and 4 print -0.007\u00b10.009 and -0.005\u00b10.036"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2507.07123"
+  },
+  {
    "study": "Evolving a multi-population evolutionary-QAOA on distributed QPUs",
    "link": "https://arxiv.org/abs/2409.10739v3",
    "version": "v3",
@@ -7557,6 +8840,33 @@
    "anchor": "arxiv-2607.00735"
   },
   {
+   "study": "Experimental Quantum Bernoulli Factories via Bell-Basis Measurements",
+   "link": "https://arxiv.org/abs/2602.06193v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "maximum of the doubling output compared with a bound built from the reported readout error in Table 1"
+    ],
+    "F2": [
+     "doubling result summarised as the maximum over the bias sweep"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "no circuits or counts released"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2602.06193"
+  },
+  {
    "study": "Experimental Realization of Clifford (4, 1) and (5, 1) Quantum Random Access Codes on IBM Quantum Hardware",
    "link": "https://doi.org/10.5281/zenodo.20072706",
    "version": "Zenodo record 20072706 as listed 2026-10-24 (publication_date 2026-04-29)",
@@ -7611,6 +8921,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2410.16567"
+  },
+  {
+   "study": "Experimental simulation of postselected closed timelike curves for decoding scrambled quantum information",
+   "link": "https://arxiv.org/abs/2501.16335v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed (only calibration-data dates are printed: 10 April 2024 for H1-1, 26 September 2024 for ibm_torino)",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.16335"
   },
   {
    "study": "Experimental study of multiple-shot unitary channels discrimination using the IBM Q computers",
@@ -7985,6 +9313,27 @@
    "anchor": "arxiv-2505.23622"
   },
   {
+   "study": "Faster Algorithmic Quantum and Classical Simulations by Corrected Product Formulas",
+   "link": "https://arxiv.org/abs/2409.08265v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "noisy simulator of the same QPU shown beside the hardware results in Figure 4"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2409.08265"
+  },
+  {
    "study": "fbcouto/deterministic-wave-engine: # Official Release Document \u2014 Version 6.1 (Theoretical & Empirical Unification)",
    "link": "https://doi.org/10.5281/zenodo.20779672",
    "version": "Zenodo record 20779672 as listed 2026-10-24 (publication_date 2026-06-21)",
@@ -8014,6 +9363,23 @@
    "anchor": "doi-10-3390-electronics14193821"
   },
   {
+   "study": "Featuremetric benchmarking: Quantum computer benchmarks based on circuit features",
+   "link": "https://arxiv.org/abs/2504.12575v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2504.12575"
+  },
+  {
    "study": "FedQML-Edge: Compact Quantum Feature Sketches for Communication-Constrained Roadside Federated Learning",
    "link": "https://arxiv.org/abs/2607.28799v1",
    "version": "v1",
@@ -8029,6 +9395,31 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2607.28799"
+  },
+  {
+   "study": "Feedback Connections in Quantum Reservoir Computing with Mid-Circuit Measurements",
+   "link": "https://arxiv.org/abs/2503.22380v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "reported NMSE is the minimum over feedback strengths (simulation, not the QPU run)"
+    ],
+    "F3": [
+     "memory stated as nonzero without an interval in the abstract; the quantity is bounded below at zero"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2503.22380"
   },
   {
    "study": "Few-sample regression with an adaptively grown variational quantum Kolmogorov\u2013Arnold network",
@@ -8378,6 +9769,27 @@
    "anchor": "zenodo-20704048"
   },
   {
+   "study": "From Bits to Qubits: Challenges in Classical-Quantum Integration",
+   "link": "https://arxiv.org/abs/2501.18905v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ],
+    "F6": [
+     "text calls the errors minimal; Table I lists mean errors of 0.94, 2.38 and 4.34 for FRQI"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.18905"
+  },
+  {
    "study": "From Circuits to Hardware: Benchmarking Standard and Qubit-Efficient Quantum Optimization on Real Hardware",
    "link": "https://arxiv.org/abs/2607.11637v2",
    "version": "v2",
@@ -8406,6 +9818,28 @@
    },
    "calibrated": true,
    "anchor": "arxiv-2607.11637"
+  },
+  {
+   "study": "From compatibility of measurements to exploring Quantum Darwinism on NISQ",
+   "link": "https://arxiv.org/abs/2601.05350v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with vendor noisy simulators"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2601.05350"
   },
   {
    "study": "From Fourier Components to Response Functions: A Structural Analysis of Bell-State Feedforward Responses on a Superconducting Quantum Processor",
@@ -8993,6 +10427,28 @@
    "anchor": "arxiv-2606.18534"
   },
   {
+   "study": "Ground-state energies of Ising models calculated using the samples from a quantum computer that simulates short-time evolution",
+   "link": "https://arxiv.org/abs/2604.25715v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "no exact reference energies for the heavy-hex runs; error is judged from deviation of the same device's results from a smooth curve, and from the ratio R computed from the same samples"
+    ],
+    "F4": [
+     "run dates not printed; searched the full text for months, years and dates of the ibm_torino runs; only the arXiv stamp and reference years appear",
+     "no data link printed; searched for http, github, zenodo, repository and data or code availability; the only URLs are an IBM web page reference"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2604.25715"
+  },
+  {
    "study": "Ground-State Energy Estimation on Current Quantum Hardware through the Variational Quantum Eigensolver: A Practical Study",
    "link": "https://doi.org/10.1021/acs.jctc.4c01657",
    "version": "published version",
@@ -9075,6 +10531,32 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2503.21650"
+  },
+  {
+   "study": "Hadamard Random Forest: Reconstructing real-valued quantum states with exponential reduction in measurement settings",
+   "link": "https://arxiv.org/abs/2505.06455v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with noisy simulations built from the device's calibration data",
+     "overlap accuracy versus the SWAP test shown by noisy simulation, not hardware"
+    ],
+    "F2": [
+     "speedup stated for a 14-qubit size not run on hardware (post-processing time projected)"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2505.06455"
   },
   {
    "study": "Half the Interference, Most of the Answer: Approximate Quantum Simulation via Path-Sum Pruning",
@@ -9627,6 +11109,55 @@
    "anchor": "arxiv-2606.11673"
   },
   {
+   "study": "Histogram Driven Amplitude Embedding for Qubit Efficient Quantum Image Compression",
+   "link": "https://arxiv.org/abs/2509.04849v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "PSNR printed for hardware does not follow from the printed MSE and the stated formula (MAX = 1.0)"
+    ],
+    "F6": [
+     "results text runs hardware at 32 bins only, conclusion gives hardware PSNR for 6 and 7 qubits"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2509.04849"
+  },
+  {
+   "study": "Holographic deep thermalization for secure and efficient quantum random state generation",
+   "link": "https://arxiv.org/abs/2411.03587v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with noisy-device simulation from Qiskit circuit models (Table 1 lists median device calibration)",
+     "histograms described as consistent with the simulation that includes hardware noise"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2411.03587"
+  },
+  {
    "study": "Holographic Mass and Inertia from a Record's Maintenance Cost",
    "link": "https://doi.org/10.5281/zenodo.23025880",
    "version": "Zenodo record 23025880 as listed 2026-10-24 (publication_date 2026-09-28)",
@@ -9876,6 +11407,23 @@
    "anchor": "arxiv-2511.14802"
   },
   {
+   "study": "Hybrid quantum-classical end-to-end pipeline for solving MILPs: a vehicle routing case study",
+   "link": "https://arxiv.org/abs/2607.26771v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.26771"
+  },
+  {
    "study": "Hybrid Quantum-Classical Framework for Computational Mental Energy from Multichannel EEG Streams",
    "link": "https://doi.org/10.5815/ijem.2026.04.01",
    "version": "published version",
@@ -9988,6 +11536,32 @@
    "basis": {},
    "calibrated": true,
    "anchor": "arxiv-2510.05851"
+  },
+  {
+   "study": "Hybrid VQE-CVQE algorithm using diabatic state preparation",
+   "link": "https://arxiv.org/abs/2512.04801v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "hardware results shown at the parameters chosen as optimum of the same hardware scan"
+    ],
+    "F3": [
+     "within-chemical-accuracy statement for hardware energies with no interval or repeat spread"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2512.04801"
   },
   {
    "study": "HybridQC: Hardware-Grounded Simulation of Tightly Integrated Hybrid Quantum-Classical Systems",
@@ -10316,6 +11890,56 @@
    "anchor": "arxiv-2412.06977"
   },
   {
+   "study": "Implementing and benchmarking dynamically corrected gates on superconducting devices using space curve quantum control",
+   "link": "https://arxiv.org/abs/2504.09767v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "headline error per Clifford is the lowest value, reached on one qubit",
+     "the lowest value is the best of 18 qubits on ibm_strasbourg",
+     "selection shows in the qubit-by-qubit result: the paper reports lower performance than IBM pulses on the remaining qubits"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F5": [
+     "a 5% detuning step of the stated 0.0171 GHz field strength is 0.855 MHz; the printed MHz list gives 8.55 MHz for the 5% entry"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2504.09767"
+  },
+  {
+   "study": "Implementing Quantum Secret Sharing on Current Hardware",
+   "link": "https://arxiv.org/abs/2410.11640v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with noisy simulation on FakeBrisbane",
+     "the fake backend is built from IBM system snapshots (gate error rates, decoherence times)"
+    ],
+    "F4": [
+     "run dates not printed; searched the full text for months, years and 'time of data collection'; only the arXiv stamp date (3 Nov 2025) appears",
+     "no data link printed; searched the full text for http, github, zenodo, repository and data or code availability statements"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2410.11640"
+  },
+  {
    "study": "Improved Ising Meson Spectroscopy Simulation on a Noisy Digital Quantum Device",
    "link": "https://arxiv.org/abs/2512.02516v1",
    "version": "v1",
@@ -10618,6 +12242,24 @@
    "anchor": "doi-10-1016-j-rinp-2023-106661"
   },
   {
+   "study": "Interacting non-Hermitian edge and cluster bursts on a digital quantum processor",
+   "link": "https://arxiv.org/abs/2503.14595v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed; searched the HTML text and the supplementary PDF pages for months, years and dates of the runs; only 'four weeks in the middle of experiments' appears, with no calendar dates",
+     "no data link printed; searched for http, github, zenodo, repository, data or code availability and 'on request'; none found"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2503.14595"
+  },
+  {
    "study": "Interferometric Quantum Polynomial Chaos Expansion as a Generative Model for Calorimeter Shower Simulation",
    "link": "https://arxiv.org/abs/2608.05405v2",
    "version": "v2",
@@ -10656,6 +12298,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2508.02915"
+  },
+  {
+   "study": "Introduction to Quantum Error Correction with Stabilizer Codes",
+   "link": "https://arxiv.org/abs/2507.07121v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2507.07121"
   },
   {
    "study": "Investigate the Performance of Distribution Loading with Conditional Quantum Generative Adversarial Network Algorithm on Quantum Hardware with Error Suppression",
@@ -11039,6 +12699,36 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2510.06228"
+  },
+  {
+   "study": "Learning Better Error Correction Codes with Hybrid Quantum-Assisted Machine Learning",
+   "link": "https://arxiv.org/abs/2601.08014v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "results renormalized with a fidelity fitted to the same device's own earlier runs"
+    ],
+    "F2": [
+     "headline gains (45% and 99.8%) are after removing the device's fitted infidelity, a projection to a better machine"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "Fig. 7 caption says both best codes have 7 qubits; the same caption and the text give 6 qubits for IBM"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2601.08014"
   },
   {
    "study": "Learning Encodings by Maximizing State Distinguishability: Variational Quantum Error Correction",
@@ -11659,6 +13349,28 @@
    "anchor": "arxiv-2606.17975"
   },
   {
+   "study": "Many-Body Anti-Zeno Thermalization and Zeno Determinism in Monitored Hamiltonian Dynamics",
+   "link": "https://arxiv.org/abs/2508.13574v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware points compared with a noisy simulation using the device's built-in noise model with ibm_torino parameters"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.13574"
+  },
+  {
    "study": "Many-Body Time Evolution from a Correlation-Efficient Quantum Algorithm",
    "link": "https://arxiv.org/abs/2511.13871v1",
    "version": "v1",
@@ -11718,6 +13430,37 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1016-j-infsof-2025-108005"
+  },
+  {
+   "study": "McCaul's Law of Coherence - Amendment CCIV: PSP-1 Phi-Sentient Processor IBM Quantum Validation - 4/4 Predictions Confirmed Including Love Architecture (Claim 109)",
+   "link": "https://doi.org/10.5281/zenodo.20505397",
+   "version": "Zenodo record 20505397 as read 2026-11-01 (publication_date 2026-06-02)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "results compared with a Baseline_Statistical_AI circuit run in the same job on the same setup"
+    ],
+    "F3": [
+     "predictions stated as CONFIRMED from single 1,024-shot readings with no interval"
+    ],
+    "F4": [
+     "run dates not printed (only the document date)",
+     "no data link printed",
+     "no circuits or counts released: the record holds one text file of derived phi_hw values; its two related Zenodo records (10.5281/zenodo.20504900, 10.5281/zenodo.20505320) are the PSP-1 specification and an addendum with no circuits, counts or job data"
+    ],
+    "F6": [
+     "stated tier order puts T7 ahead of T2; Table gives T2 0.1617 and T7 0.1648"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-20505397"
   },
   {
    "study": "MCEM-raw-data",
@@ -11810,6 +13553,29 @@
    "anchor": "arxiv-2408.03064"
   },
   {
+   "study": "Measurement-based Simulation of Geometric Gates in Topological Qubits on NISQ Devices",
+   "link": "https://arxiv.org/abs/2503.15392v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "entangling-gate fidelities compared with a fake ibm_torino simulation described as an expected upper bound",
+     "S-gate fidelities compared with the same fake-backend simulation, described as a theoretical upper bound"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2503.15392"
+  },
+  {
    "study": "Measurement-enabled online quantum processing with amplitude encoding",
    "link": "https://arxiv.org/abs/2606.18991v2",
    "version": "v2",
@@ -11825,6 +13591,61 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2606.18991"
+  },
+  {
+   "study": "Measuring central charge on a universal quantum processor",
+   "link": "https://arxiv.org/abs/2408.06342v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "headline error is the lowest over rows ('as low as')",
+     "value reported for the best moment n chosen among n = 1 to 10"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "Fig. 2 caption gives c = 0.49 for n = 3; main text and Table II give 0.50 for n = 3",
+     "main text gives c = 0.59 +/- 0.11 for n = 1; Table II gives 0.59 +/- 0.10 for n = 1"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.06342"
+  },
+  {
+   "study": "Measuring error rates of mid-circuit measurements",
+   "link": "https://arxiv.org/abs/2410.16706v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "ibmq_algiers results compared with predictions built from IBM calibration data",
+     "H1-1 results compared with the vendor emulator of the same circuits"
+    ],
+    "F2": [
+     "reduction reported as the maximum over qubit counts"
+    ],
+    "F4": [
+     "no circuits or counts released (data on request)",
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2410.16706"
   },
   {
    "study": "Measuring the NISQ Decoherence Threshold in AI-Orchestrated Quantum Optimization for Pediatric Combination Therapy: A Synthetic Clinical Case Study",
@@ -11882,6 +13703,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2503.05847"
+  },
+  {
+   "study": "Method for simulating open-system dynamics using mid-circuit measurements on a quantum computer",
+   "link": "https://arxiv.org/abs/2504.15187v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2504.15187"
   },
   {
    "study": "Metriq: A Collaborative Platform for Benchmarking Quantum Computers",
@@ -12093,6 +13932,28 @@
    "anchor": "arxiv-2509.10758"
   },
   {
+   "study": "MoSAIC: Scalable Probabilistic Error Cancellation via Variational Blockwise Noise Aggregation",
+   "link": "https://arxiv.org/abs/2603.26063v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "linked code repository checked: it holds ansatz notebooks, three npz files of optimized parameters and a README; no hardware counts or noise-learning data"
+    ],
+    "F6": [
+     "abstract says at least 1-2 orders of magnitude better accuracy than PEC, printed relative errors give ratios of about 11.6, 15.9 and 5.4"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.26063"
+  },
+  {
    "study": "mRNA secondary structure prediction using utility-scale quantum computers",
    "link": "https://arxiv.org/abs/2405.20328v1",
    "version": "v1",
@@ -12146,6 +14007,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2508.13954"
+  },
+  {
+   "study": "Multifractality Analysis of Single Qubit Quantum Circuit Outcomes for a Superconducting Quantum Computer",
+   "link": "https://arxiv.org/abs/2512.18491v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2512.18491"
   },
   {
    "study": "N24: preregistration of a cloud fan-out test of final-effect laws on a public quantum processor",
@@ -12747,6 +14626,29 @@
    "anchor": "arxiv-2512.05484"
   },
   {
+   "study": "Observable and computable entanglement in time",
+   "link": "https://arxiv.org/abs/2502.12240v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware column compared with an Aer simulation set up from the ibm_sherbrooke backend",
+     "expected hardware error bound built from the device's stated median gate errors and gate counts"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2502.12240"
+  },
+  {
    "study": "Observable Estimation in the Absence of Classical Verification",
    "link": "https://arxiv.org/abs/2607.25998v1",
    "version": "v1",
@@ -12802,6 +14704,55 @@
    },
    "calibrated": true,
    "anchor": "zenodo-21938548"
+  },
+  {
+   "study": "Observation of Full Hierarchy of Temporal Quantum Correlations with a Superconducting Qubit",
+   "link": "https://arxiv.org/abs/2505.01379v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "measured curves compared with a Lindblad calculation using the qubits' T1 and T2 times"
+    ],
+    "F3": [
+     "nonzero correlation measures stated as evident without an interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2505.01379"
+  },
+  {
+   "study": "Observation of hadron scattering in a lattice gauge theory on a quantum computer",
+   "link": "https://arxiv.org/abs/2505.20387v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "agreement with the reference simulation is reported after mitigation hyperparameters were chosen to minimise deviation from that reference",
+     "hyperparameters tuned for each time step against the reference simulation (Supplementary Information)"
+    ],
+    "F4": [
+     "run dates not printed (only the date of the device error rates in Fig. 1d, April 11, 2025, is printed)",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2505.20387"
   },
   {
    "study": "Observation of Improved Accuracy over Classical Sparse Ground-State Solvers using a Quantum Computer",
@@ -12898,6 +14849,23 @@
    "anchor": "zenodo-21436092"
   },
   {
+   "study": "On Performance and Limitations of Quantum Wave Packet Dynamics Simulated using NISQ Hardware",
+   "link": "https://arxiv.org/abs/2605.20078v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2605.20078"
+  },
+  {
    "study": "On the encoding complexity of quantum numerical integration: an angle-structure characterization",
    "link": "https://arxiv.org/abs/2604.24289v2",
    "version": "v2",
@@ -12930,6 +14898,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2606.27693"
+  },
+  {
+   "study": "On the Hardness of Measuring Magic",
+   "link": "https://arxiv.org/abs/2408.01663v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.01663"
   },
   {
    "study": "On the learnability of quantum state fidelity",
@@ -13064,6 +15050,28 @@
    "anchor": "arxiv-2605.24166"
   },
   {
+   "study": "Optimal Quantum Purity Amplification",
+   "link": "https://arxiv.org/abs/2409.18167v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware compared with a simulated processor and theory",
+     "simulated processor with a static noise profile used as the comparison run"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2409.18167"
+  },
+  {
    "study": "Optimal training of finitely-sampled quantum reservoir computers for forecasting of chaotic dynamics",
    "link": "https://arxiv.org/abs/2409.01394v1",
    "version": "v1",
@@ -13170,6 +15178,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1103-physreva-107-052609"
+  },
+  {
+   "study": "Optimizing QAOA circuit transpilation with parity twine and SWAP network encodings",
+   "link": "https://arxiv.org/abs/2505.17944v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "hardware headline taken as the maximum over layers for each qubit count",
+     "ibm_kingston result quoted at the best depth"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2505.17944"
   },
   {
    "study": "Optimizing Quantum Algorithmic Complexity through Hybrid Variational Models",
@@ -13346,6 +15376,40 @@
    "anchor": "arxiv-2407.03970"
   },
   {
+   "study": "PACE-QAOA: Physics-Constrained Quantum Optimization for Qubit-Efficient Power System Islanding",
+   "link": "https://arxiv.org/abs/2608.02789v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "hardware compared with a noise model built from the device's calibration data"
+    ],
+    "F2": [
+     "reported cut is the best of the sampled bitstrings after classical repair and ranking"
+    ],
+    "F3": [
+     "direction of a feasible-rate change stated from 100 shots per run, no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "IBM IEEE 14-bus E2 Lagrangian feasible rate is 0.400 here and in Table 6, but 0.360 in Tables 7 and 8 (same p, shots, depth 77); IEEE 24-bus 0.411 against 0.454"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2608.02789"
+  },
+  {
    "study": "Pairing Hamiltonians of Nearest-Neighbor Interacting Superconducting Qubits on an IBM Quantum Computer",
    "link": "https://doi.org/10.3390/app132112075",
    "version": "published version",
@@ -13422,6 +15486,32 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2610.28204"
+  },
+  {
+   "study": "Parameter Analysis and Optimization of Layer Fidelity for Quantum Processor Benchmarking at Scale",
+   "link": "https://arxiv.org/abs/2510.16915v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "fixed-chain EPLG over time is reconstructed from per-gate historical fidelities, not measured"
+    ],
+    "F2": [
+     "headline compares the lowest-EPLG chain from a set of six measured chains with random chains",
+     "the reported optimal chain is the best measured of the candidate set"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2510.16915"
   },
   {
    "study": "Parameter-efficient Quantum Multi-task Learning",
@@ -13770,6 +15860,28 @@
    "anchor": "arxiv-2507.08570"
   },
   {
+   "study": "Photonic Quantum Computing on Spin Memory Architecture with Tree-Encoded Fusion",
+   "link": "https://arxiv.org/abs/2604.21475v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "headline compiler comparison run on a simulator the authors built from published hardware figures"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2604.21475"
+  },
+  {
    "study": "Physically-Aware Qubit Reuse for Optimized Quantum Circuit Compilation Using Machine Learning",
    "link": "https://doi.org/10.1109/qce65121.2025.00083",
    "version": "published version",
@@ -13886,6 +15998,27 @@
    "anchor": "arxiv-2412.18519"
   },
   {
+   "study": "Platform-Agnostic Modular Architecture for Quantum Benchmarking",
+   "link": "https://arxiv.org/abs/2510.08469v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "mid-circuit-measurement result stated as on par with the static circuits; three circuits per width, no interval"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs in the full text"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2510.08469"
+  },
+  {
    "study": "PNMS-OSE Quantum Hardware Calibration Review Package",
    "link": "https://doi.org/10.5281/zenodo.20547263",
    "version": "Zenodo record 20547263 as listed 2026-10-24 (publication_date 2026-06-04)",
@@ -13912,6 +16045,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2605.24824"
+  },
+  {
+   "study": "Polynomial Time Quantum Approximation Schemes for Constrained Optimisation",
+   "link": "https://arxiv.org/abs/2608.01121v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline is that the best repaired tours match or beat the published references",
+     "table reports the best repaired tour per instance"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2608.01121"
   },
   {
    "study": "Population-Based Classification on Superconducting Transmon Qutrits: A Blume-Capel Lattice Intelligence Architecture",
@@ -14043,6 +16198,38 @@
    "anchor": "arxiv-2210.06172"
   },
   {
+   "study": "Practical Challenges in Executing Shor's Algorithm on Existing Quantum Platforms",
+   "link": "https://arxiv.org/abs/2512.15330v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "runs were dropped as outliers by device state, with no count or list of the discarded runs printed"
+    ],
+    "F3": [
+     "hit-rate result reported as PASS or FAIL at alpha=0.01; excess over baseline printed without an interval"
+    ],
+    "F4": [
+     "run dates not printed; the text says only 'the months preceding and succeeding the experiments' and gives the machine's public debut date; searched for months, years and dates of the runs",
+     "no data link printed; searched for http, github, zenodo, repository and data or code availability; only platform documentation URLs appear"
+    ],
+    "F5": [
+     "N=15 p-value; Eq. 12 exact binomial tail Pr[X>=741] with n=2048 and b=132/512 computes to 2.0e-25, not 3.50e-27",
+     "N=21 p-value; Eq. 12 exact binomial tail Pr[X>=988] with n=4096 and b=342/2048 computes to 5.9e-34, not 2.45e-37",
+     "N=35 (a=4) p-value; Eq. 12 exact binomial tail Pr[X>=751] with n=4096 and b=174/1024 computes to 1.23e-2, not 1.17e-2 (same PASS/FAIL outcome)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2512.15330"
+  },
+  {
    "study": "Practical Entanglement Distillation Protocols with Quadratic Error Suppression",
    "link": "https://arxiv.org/abs/2605.26757v1",
    "version": "v1",
@@ -14058,6 +16245,33 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2605.26757"
+  },
+  {
+   "study": "Practical Evaluation of Quantum Kernel Methods for Radar Micro-Doppler Classification on Noisy Intermediate-Scale Quantum (NISQ) Hardware",
+   "link": "https://arxiv.org/abs/2601.22194v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F3": [
+     "device ranking declared (Winner column) from single runs with no interval on the Torino-Fez differences"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "text says QSVM trains 2.23 times faster; the text also says QSVM kernel estimation is far slower, and Table 10 lists train time 10.5 s (SVM) and 45.3 s (QSVM sim)",
+     "text says the top-five ranking is consistent across shot counts; Tables 5 and 6 list a different top-1 outcome at 1,024 shots (0011) and 8,096 shots (0111)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2601.22194"
   },
   {
    "study": "Practical Fidelity Limits of Toffoli Gates in Superconducting Quantum Processors",
@@ -14108,6 +16322,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2410.18746"
+  },
+  {
+   "study": "Practical learning of multi-time statistics in open quantum systems",
+   "link": "https://arxiv.org/abs/2412.17862v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2412.17862"
   },
   {
    "study": "Practical protein-pocket hydration-site prediction for drug discovery on a quantum computer",
@@ -14413,6 +16645,34 @@
    "anchor": "arxiv-2602.12465"
   },
   {
+   "study": "Probability distribution analysis of the cascaded variational quantum eigensolver",
+   "link": "https://arxiv.org/abs/2605.00807v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F2": [
+     "headline energy error is given for one of the four step sizes run on the QPU (beta = 10); the errors for the other three are not printed",
+     "count threshold tuned to separate symmetry-allowed from symmetry-forbidden states",
+     "subspace restricted to three electrons so that all cases reach chemical accuracy"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "SNR is defined as allowed over forbidden states; the printed 0.282 for 39 states equals 11 over 39 (allowed over total), and 0.078 for 128 states equals 10 over 128"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2605.00807"
+  },
+  {
    "study": "Probability distribution reconstruction using circuit cutting applied to a variational classifier",
    "link": "https://arxiv.org/abs/2510.03077v1",
    "version": "v1",
@@ -14620,6 +16880,23 @@
    },
    "calibrated": false,
    "anchor": "zenodo-20430063"
+  },
+  {
+   "study": "Proton-proton scattering on a quantum computer",
+   "link": "https://arxiv.org/abs/2508.07986v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.07986"
   },
   {
    "study": "PSI-ISAPP Framework: Theory, Simulations and  Complete Empirical Dataset \u2014 Quantum Mutual  Information as a Decoherence Modulator in  Open Quantum Systems.",
@@ -15377,6 +17654,46 @@
    "anchor": "arxiv-2603.02127"
   },
   {
+   "study": "Quantum Algorithm Framework for Phase-Contrast Transmission Electron Microscopy Image Simulation",
+   "link": "https://arxiv.org/abs/2602.13438v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed; searched the full text including Appendix F and the acknowledgements for the date of the ibm_torino run; none given"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2602.13438"
+  },
+  {
+   "study": "Quantum Algorithm Performance Under Noise: A Qiskit Aer Simulation Study and IBM Quantum Hardware Comparative Analysis",
+   "link": "https://doi.org/10.5281/zenodo.23131428",
+   "version": "Zenodo record 23131428 as read 2026-11-01 (publication_date 2026-10-04)",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "absence of a depth trend on hardware is stated from means of 0.991 to 0.993 without intervals, although Section 3.4 says 95% confidence intervals were calculated"
+    ],
+    "F4": [
+     "run dates not printed; searched the full text for months, years and dates of the ibm_marrakesh runs; only reference years appear",
+     "no data link printed; searched for http, github, zenodo, repository and data or code availability; only citation DOIs appear",
+     "record checked: its only file is this PDF, which holds mean success probability tables and figures, no counts and no circuit listing (the benchmark circuit is described in words)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "zenodo-23131428"
+  },
+  {
    "study": "Quantum algorithms for near-term quantum computers",
    "link": "https://doi.org/10.5287/ora-o0moqywjn",
    "version": "version at posted DOI",
@@ -15414,6 +17731,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2211.14854"
+  },
+  {
+   "study": "Quantum Algorithms for Realizing Symmetric, Asymmetric, and Antisymmetric Projectors",
+   "link": "https://arxiv.org/abs/2407.17563v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "probability of outcome 0 stated as zero at r=2 and the Schmidt rank read as two, no interval printed"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2407.17563"
   },
   {
    "study": "Quantum Amplitude-Amplification Eigensolver: A State-Learning-Assisted Approach beyond Energy-Gradient-Based Heuristics",
@@ -15588,6 +17927,32 @@
    "anchor": "arxiv-2607.09368"
   },
   {
+   "study": "Quantum Approximate Walk Algorithm",
+   "link": "https://arxiv.org/abs/2511.07676v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "noisy simulation uses a noise model calibrated from the same device, shown beside the hardware panel of Figure 4"
+    ],
+    "F2": [
+     "hardware results are chosen from two runs"
+    ],
+    "F4": [
+     "run dates not printed",
+     "linked Zenodo record 17419491 checked: it holds one zip of the GitHub release v1.0.1 (code, plotting scripts and three figure files); no raw counts or circuit files"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2511.07676"
+  },
+  {
    "study": "Quantum Bayesian Error Mitigation Employing Poisson Modelling over the Hamming Spectrum for Quantum Error Mitigation",
    "link": "https://arxiv.org/abs/2207.07237v3",
    "version": "v3",
@@ -15625,6 +17990,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-isocc59558-2023-10395936"
+  },
+  {
+   "study": "Quantum Buffer Design Using Petri Nets",
+   "link": "https://arxiv.org/abs/2408.08369v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "validation stated as yes for the hardware flip-flop runs; per-case counts are out of 100 runs with no interval"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs in the full text",
+     "no data link printed: the only URLs are for Qiskit, IBM Composer and Jupyter; the appendix prints OpenQASM and Qiskit listings"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.08369"
   },
   {
    "study": "Quantum chemistry simulation of ground- and excited-state properties of the sulfonium cation on a superconducting quantum processor",
@@ -15782,6 +18169,28 @@
    "anchor": "arxiv-2504.00309"
   },
   {
+   "study": "Quantum computation of mass gap in an asymptotically free theory",
+   "link": "https://arxiv.org/abs/2512.21282v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "error of 0.02 on the average of the QPU omega values is said to be the spread in Table 1; the Table 1 QPU values run from 2.41 to 2.73"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2512.21282"
+  },
+  {
    "study": "Quantum computational advantage in random-circuit sampling on IBM superconducting quantum computers",
    "link": "https://arxiv.org/abs/2609.28657v2",
    "version": "v2",
@@ -15862,6 +18271,37 @@
    "basis": {},
    "calibrated": false,
    "anchor": "zenodo-22216542"
+  },
+  {
+   "study": "Quantum Computing and Error Mitigation with Deep Learning for Frenkel Excitons",
+   "link": "https://arxiv.org/abs/2603.23936v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "mitigation tested against a noisy simulation built from device parameters and hardware gain compared with it"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "printed splitting 27.006 meV is not the difference of Table I values (27.026 meV) and not 218.75 cm-1 at 8.06 cm-1 per meV"
+    ],
+    "F6": [
+     "text puts hardware errors in meV; Table IV gives them in cm-1",
+     "text says the 3rd and 4th excitation errors are under 1 meV; Table III gives 1.697 meV for the 4th"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.23936"
   },
   {
    "study": "Quantum computing applications in High Energy Physics: clustering, integration and generative models",
@@ -16087,6 +18527,23 @@
    "anchor": "arxiv-2410.22485"
   },
   {
+   "study": "Quantum critical dynamics and emergent universality in decoherent digital quantum processors",
+   "link": "https://arxiv.org/abs/2512.13143v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2512.13143"
+  },
+  {
    "study": "Quantum cryptography compatible with noisy intermediate-scale quantum devices based on Parrondo dynamics in discrete-time quantum walks",
    "link": "https://arxiv.org/abs/2602.14678v2",
    "version": "v2",
@@ -16170,6 +18627,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2506.04847"
+  },
+  {
+   "study": "Quantum Distribution Error Mitigation via the Circulant Structure of Pauli Noise",
+   "link": "https://arxiv.org/abs/2501.01953v6",
+   "version": "v6",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline figure is the highest corrected fidelity of the seven hardware demonstrations in Table 1 (DEM row: 0.937, 0.977, 0.935, 0.803, 0.897, 0.326, 0.749)"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.01953"
   },
   {
    "study": "Quantum Embedding of Non-local Quantum Many-body Interactions in Prototypal Anti-tumor Vaccine Metalloprotein on Near Term Quantum Computing Hardware",
@@ -16387,6 +18865,23 @@
    "anchor": "arxiv-2510.03389"
   },
   {
+   "study": "Quantum Fidelity-per-Cost: A Metric for Evaluation of Quantum Computing Systems",
+   "link": "https://arxiv.org/abs/2607.28572v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.28572"
+  },
+  {
    "study": "Quantum Fourier Generative Models Trainable at Large Scale",
    "link": "https://arxiv.org/abs/2606.28483v1",
    "version": "v1",
@@ -16431,6 +18926,32 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-iccst63435-2025-11295591"
+  },
+  {
+   "study": "Quantum Gatekeeper: Multi-Factor Context-Bound Image Steganography with VQC Based Key Derivation on Quantum Hardware",
+   "link": "https://arxiv.org/abs/2604.26413v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F3": [
+     "peak agreement between simulator and hardware stated as exact match, no shot counts or interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "abstract gives TVD 0.0566, modal bitstring |1000>, hardware time 7.81 s; Table IV gives TVD 0.0391, 0.0371, 0.0825 and hardware times 9.9958, 9.0323, 8.9702 s; Table III peaks are 1101, 0011, 0111"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2604.26413"
   },
   {
    "study": "Quantum Gates via Dynamical Decoupling of Central Qubit on IBMQ and 15NV Center in Diamond",
@@ -16698,6 +19219,24 @@
    "anchor": "arxiv-2410.17397"
   },
   {
+   "study": "Quantum LEGO Learning: A Modular Design Principle for Hybrid Artificial Intelligence",
+   "link": "https://arxiv.org/abs/2601.21780v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "linked code repository checked: it holds six Python files and a README describing simulated Pre-ResNet and PCA plus VQC runs; no hardware circuits or counts"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2601.21780"
+  },
+  {
    "study": "Quantum LLMs Using Quantum Computing to Analyze and Process Semantic Information",
    "link": "https://arxiv.org/abs/2512.02619v1",
    "version": "v1",
@@ -16720,6 +19259,24 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2512.02619"
+  },
+  {
+   "study": "Quantum Machine Learning for State Tomography Using Classical Data",
+   "link": "https://arxiv.org/abs/2507.01246v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "linked code repository checked: it holds Python scripts and notebooks named for ideal-simulator GHZ, spin-chain, random-state, incomplete-basis and MMD runs plus READMEs, with no hardware circuits or counts files for IBM Brisbane or IonQ Forte"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2507.01246"
   },
   {
    "study": "Quantum machine learning prediction model for retinal conditions: performance analysis",
@@ -16785,6 +19342,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2212.07389"
+  },
+  {
+   "study": "Quantum Mini-Apps for Engineering Applications: A Case Study",
+   "link": "https://arxiv.org/abs/2411.12920v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "ansatz ranking stated from single fidelity values with no interval; Table 1 gives 73, 76, 80, 81 percent only"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2411.12920"
   },
   {
    "study": "Quantum Molecular Spectroscopy and Hardware-Aware Compilation: A Multi-Block Study on IBM ibm_fez Superconducting Hardware",
@@ -16902,6 +19481,36 @@
    "anchor": "zenodo-22103070"
   },
   {
+   "study": "Quantum Noise Suppression at Scale with Crosstalk-Robust Gate Sets",
+   "link": "https://arxiv.org/abs/2603.15758v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "basis": {
+    "F1": [
+     "measured decay parameters compared with a limit built from the backend's reported T1 and T2",
+     "co-design result comes from a simulator whose parameters are taken from IBM Brisbane records"
+    ],
+    "F2": [
+     "abstract halving result for gate times comes from numerical simulation, not a hardware run"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F5": [
+     "percentage and ratio printed together do not agree (16% versus 1.016x)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.15758"
+  },
+  {
    "study": "Quantum Noise-Induced Reservoir Computing",
    "link": "https://arxiv.org/abs/2207.07924v1",
    "version": "v1",
@@ -16928,6 +19537,57 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2606.16784"
+  },
+  {
+   "study": "Quantum Observers: A NISQ Hardware Demonstration of Chaotic State Prediction Using Quantum Echo-state Networks",
+   "link": "https://arxiv.org/abs/2505.06799v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware RMSE is compared with simulations under a noise model compiled from the ibm_fez device (a different device from the one used)"
+    ],
+    "F2": [
+     "simulated results in Table 1 are the best seed per bin, with regularization tuned per bin on test loss"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2505.06799"
+  },
+  {
+   "study": "Quantum Optimization Benchmarking Library - The Intractable Decathlon",
+   "link": "https://arxiv.org/abs/2504.03832v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "LABS time-to-solution curves use projected QPU times under stated optimistic assumptions from classical simulation",
+     "Independent Set 52-variable instance: no feasible sample from the QPU, optimal value reached only after classical post-processing"
+    ],
+    "F3": [
+     "success on the LABS hardware trials stated as non-zero for every initialization; success probabilities are single values with no interval"
+    ],
+    "F4": [
+     "run dates not printed: only submission dates are printed (Date of submission: January 20, 2025; January 30, 2025; January 15th, 2025); no date of the hardware runs"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2504.03832"
   },
   {
    "study": "Quantum Optimization for Optimal Power Flow: CVQLS-Augmented Interior Point Method",
@@ -17422,6 +20082,28 @@
    "anchor": "arxiv-2506.09144"
   },
   {
+   "study": "Quantum Simulation of Nucleon-Antinucleon Interaction in Large-$N$ QCD$_2$ on an IBM Quantum Nighthawk Processor",
+   "link": "https://arxiv.org/abs/2606.02574v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "main-text potential shows only the odd separations (r = 1, 3, 5) of the 0 to 6 simulated, one sublattice channel chosen using the exact ground state"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2606.02574"
+  },
+  {
    "study": "Quantum Simulation of Open Quantum Systems Using Density-Matrix Purification",
    "link": "https://arxiv.org/abs/2207.07112v2",
    "version": "v2",
@@ -17788,6 +20470,32 @@
    "anchor": "arxiv-2207.09181"
   },
   {
+   "study": "Quantum Utility in Simulating the Real-time Dynamics of the Fermi-Hubbard Model using Superconducting Quantum Computers",
+   "link": "https://arxiv.org/abs/2509.14196v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F3": [
+     "for L = 52 hardware values, agreement with MPS-TDVP is stated as good up to tau <= 4 with no interval or tolerance printed (standard deviations are printed for L = 10 only, Table IV)"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "Conclusion gives L = 10 sites as 10 qubits; Tables II and III and the text give L = 10 sites as N = 20 qubits"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2509.14196"
+  },
+  {
    "study": "Quantum Vacuum Analysis & Multi- System Coupling Data",
    "link": "https://doi.org/10.5281/zenodo.19851924",
    "version": "Zenodo record 19851924 as listed 2026-10-24 (publication_date 2026-04-28)",
@@ -17805,6 +20513,23 @@
    },
    "calibrated": false,
    "anchor": "zenodo-19851924"
+  },
+  {
+   "study": "Quantum Variational Activation Functions Empower Kolmogorov-Arnold Networks",
+   "link": "https://arxiv.org/abs/2509.14026v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2509.14026"
   },
   {
    "study": "Quantum Variational Approaches to the Maximum Independent Set Problem at Utility Scale",
@@ -17869,6 +20594,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2210.00306"
+  },
+  {
+   "study": "Quantum Walks: First Hitting Times with Weak Measurements",
+   "link": "https://arxiv.org/abs/2506.21168v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware deviation from theory explained by a bound built from the error rates IBM provides"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2506.21168"
   },
   {
    "study": "Quantum Wow!: The First Non-Electromagnetic Anomaly from Deep Space",
@@ -17955,6 +20702,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2506.20825"
+  },
+  {
+   "study": "Quantum-Centric Algorithm for Sample-Based Krylov Diagonalization",
+   "link": "https://arxiv.org/abs/2501.09702v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "no-deterioration with system size stated as a conclusion from a K=29 against K=41 comparison, with no interval or test"
+    ],
+    "F4": [
+     "run dates not printed; searched the full text including Methods V.5 and the Supplementary for months and years of the hardware runs, found only reference years and the arXiv stamp"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.09702"
   },
   {
    "study": "Quantum-centric computation of molecular excited states with extended sample-based quantum diagonalization",
@@ -18046,6 +20814,24 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-nano54668-2022-9928623"
+  },
+  {
+   "study": "Quantum-data-driven dynamical transition in quantum learning",
+   "link": "https://arxiv.org/abs/2410.01955v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2410.01955"
   },
   {
    "study": "Quantum-Enhanced DNA Image Compression: Theoretical Framework and NISQ Implementation Strategy",
@@ -18368,6 +21154,33 @@
    "anchor": "arxiv-2604.22194"
   },
   {
+   "study": "QubitHammer: Remotely Inducing Qubit State Change on Superconducting Quantum Computers",
+   "link": "https://arxiv.org/abs/2504.07875v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline is the maximum variational distance over experiments",
+     "summary table reports the maximal value over experiments"
+    ],
+    "F3": [
+     "attack stated as succeeded or not from a single variational distance with no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2504.07875"
+  },
+  {
    "study": "QUBO Formulation of the Pickup and Delivery Problem with Time Windows for Quantum Annealing",
    "link": "https://doi.org/10.3390/app16041690",
    "version": "published version",
@@ -18455,6 +21268,32 @@
    "anchor": "arxiv-2508.07104"
   },
   {
+   "study": "QuSplit: Achieving Both High Fidelity and Throughput via Job Splitting on Noisy Quantum Computers",
+   "link": "https://arxiv.org/abs/2501.12492v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "main evaluation uses noise models built from backend error rates, T1 and T2"
+    ],
+    "F3": [
+     "hardware confirmation stated from one H2 VQE run per condition, no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.12492"
+  },
+  {
    "study": "Qutrit and Qubit Circuits for Three-Flavor Collective Neutrino Oscillations",
    "link": "https://arxiv.org/abs/2407.13914v3",
    "version": "v3",
@@ -18475,6 +21314,28 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2212.06948"
+  },
+  {
+   "study": "Randomized Benchmarking Protocol for Dynamic Circuits",
+   "link": "https://arxiv.org/abs/2408.07677v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware error rates compared with a model built from device-reported assignment and CNOT errors",
+     "expected error rate computed from each qubit's device parameters and set against the FFDD data"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.07677"
   },
   {
    "study": "RANet: a custom CNN model and quanvolutional neural network for the automated detection of rheumatoid arthritis in hand thermal images",
@@ -18595,6 +21456,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2411.09084"
+  },
+  {
+   "study": "Realization of Two-dimensional Discrete Time Crystals with Anisotropic Heisenberg Coupling",
+   "link": "https://arxiv.org/abs/2501.18036v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "recovered hardware values rest on offsets learned from classical simulations and on Clifford-point data from the same device, then are shown beside the classical simulations"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.18036"
   },
   {
    "study": "Realizing a class of stabilizer quantum error correction codes using a single ancilla and circular connectivity",
@@ -18774,6 +21656,33 @@
    "anchor": "arxiv-2603.10224"
   },
   {
+   "study": "REGRID-QAOA: A Resource-Efficient Hybrid QAOA Framework for Physics-Constrained Power System Islanding",
+   "link": "https://arxiv.org/abs/2606.15083v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "noise-model simulation built from the device calibration used to represent the hardware runs"
+    ],
+    "F2": [
+     "headline Gurobi-optimal quality is the best of five post-processing variants",
+     "variant M. 4 selected from M. 1 to M. 5, which fail on 39-bus in two cases"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2606.15083"
+  },
+  {
    "study": "Relation of curvature and torsion of weighted graph states with graph properties and its studies on a quantum computer",
    "link": "https://arxiv.org/abs/2408.01511v2",
    "version": "v2",
@@ -18783,6 +21692,24 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2408.01511"
+  },
+  {
+   "study": "Renormalization-group-based preparation of matrix product states on up to 80 qubits",
+   "link": "https://arxiv.org/abs/2510.24681v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2510.24681"
   },
   {
    "study": "Repetition-code-based readout error detection and correction across hardware platforms and generations",
@@ -18906,6 +21833,29 @@
    "anchor": "arxiv-2607.21707"
   },
   {
+   "study": "Resonances, Recurrence Times and Steady States in Monitored Noisy Qubit Systems",
+   "link": "https://arxiv.org/abs/2603.18996v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "noise-model parameters are fitted to the same measured recurrence times and the theory is then said to match them",
+     "noise models built from device calibration data are used as the comparison for the hardware behaviour"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.18996"
+  },
+  {
    "study": "Resource analysis for quantum-aided Byzantine agreement with the four-qubit singlet state",
    "link": "https://arxiv.org/abs/2207.04939v2",
    "version": "v2",
@@ -18932,6 +21882,56 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2409.05962"
+  },
+  {
+   "study": "Resource-Efficient Hybrid Quantum Neighborhood Selection for Large-Scale Molecular Diversity Optimization",
+   "link": "https://arxiv.org/abs/2607.07336v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F5": [
+     "1 - 387.00/1097.03 = 64.72%, printed as 64.68%",
+     "1 - 108.33/952.88 = 88.63%, printed as 88.61%"
+    ],
+    "F6": [
+     "abstract and text give 94.91%, 64.68% and 88.61% (from 3.84 s, 387.00%, 108.33 MB); Table III gives HQNS 26.34 s, 483.00% and 617.33 MB, which are 65.0%, 56.0% and 35.2% below SA Parallel-11"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.07336"
+  },
+  {
+   "study": "Resource-efficient quantum correlation measurements via multicopy neural network methods",
+   "link": "https://arxiv.org/abs/2411.05745v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "spread of the results taken from simulations with noise models built from calibration data"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed",
+     "data and code stated to be available on request"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2411.05745"
   },
   {
    "study": "Resource-Efficient Quantum VQE via Classical Derivative Offloading: Bypassing the Noise Wall via GaLore-Sophia",
@@ -19055,6 +22055,24 @@
    },
    "calibrated": true,
    "anchor": "arxiv-2604.02569"
+  },
+  {
+   "study": "Riemannian gradient descent-based quantum algorithms for ground state preparation with guarantees",
+   "link": "https://arxiv.org/abs/2512.13401v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2512.13401"
   },
   {
    "study": "Robust digital optimal control on IBM quantum computers",
@@ -19441,6 +22459,32 @@
    "anchor": "doi-10-1109-qcnc69040-2026-00114"
   },
   {
+   "study": "Scalable quantum error correction tailored for a heavy-hex qubit array",
+   "link": "https://arxiv.org/abs/2604.14296v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "headline improvement is measured against decoder baselines built from the IBM calibration snapshot"
+    ],
+    "F2": [
+     "abstract headline is an upper figure",
+     "code placement and distance chosen as the best result obtained"
+    ],
+    "F4": [
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2604.14296"
+  },
+  {
    "study": "Scalable Quantum Reinforcement Learning on NISQ Devices with Dynamic-Circuit Qubit Reuse and Grover Optimization",
    "link": "https://arxiv.org/abs/2509.16002v2",
    "version": "v2",
@@ -19540,6 +22584,31 @@
    "anchor": "arxiv-2503.10923"
   },
   {
+   "study": "Scaling Laws of Quantum Information Lifetime in Monitored Quantum Dynamics",
+   "link": "https://arxiv.org/abs/2506.22755v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware points compared with a Qiskit noisy simulation of the same device"
+    ],
+    "F3": [
+     "gap on hardware called significant with no interval or error bar stated for the hardware points"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2506.22755"
+  },
+  {
    "study": "Scaling Qubit Readout with Hardware Efficient Machine Learning Architectures",
    "link": "https://arxiv.org/abs/2212.03895v2",
    "version": "v2",
@@ -19560,6 +22629,32 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2412.19150"
+  },
+  {
+   "study": "Scattering phase shift in quantum mechanics on quantum computers",
+   "link": "https://arxiv.org/abs/2601.04092v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware decay compared with Qiskit Aer noise models built from IBM median error rates and IBM backend noise models"
+    ],
+    "F3": [
+     "agreement with exact solutions stated as yes for the two-qubit-total run; no interval stated"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs in the full text",
+     "no data link printed: no URL, DOI or repository for data or code in the text"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2601.04092"
   },
   {
    "study": "Schrieffer-Wolff Transformation on IBM Quantum Computer",
@@ -19639,6 +22734,60 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2607.04791"
+  },
+  {
+   "study": "Secure and Efficient Quantum Signature Scheme Based on the Controlled Unitary Operations Encryption",
+   "link": "https://arxiv.org/abs/2507.10233v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "distinction read from one state's probability from 1,024 runs, no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2507.10233"
+  },
+  {
+   "study": "Securing HHL Quantum Algorithm against Quantum Computer Attacks",
+   "link": "https://arxiv.org/abs/2410.08010v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "noise resilience of the defence circuit is shown against an ideal simulator and a fake_brisbane noise simulation (IBM backend model)"
+    ],
+    "F3": [
+     "attack success is a yes or no (check mark or cross) from the ratio of three-run averages, no interval printed"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "Text gives HEA on clock1 as 1 : 1.1835; Table V and Table VII give 1 : 1.8335",
+     "Text gives the baseline hardware ratio as 1 : 1.759; Tables V, VI and VII give 1 : 1.1759",
+     "Table VII lists no-attack HEA 1 : 1.1883, all-qubit HEA 1 : 2.2500 and all-qubit IIA 1 : 1.2169; Table V lists no attack 1 : 1.1759 and all-qubit HEA 1 : 1.2169, Table VI lists all-qubit IIA 1 : 1.3788"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2410.08010"
   },
   {
    "study": "Securities Transaction Settlement Optimization on superconducting quantum devices",
@@ -19812,6 +22961,27 @@
    "anchor": "arxiv-2407.13835"
   },
   {
+   "study": "Setting angles in quantum approximate optimization at utility-scale",
+   "link": "https://arxiv.org/abs/2606.05311v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline hardware figure is the best single sample"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2606.05311"
+  },
+  {
    "study": "Shadow Ansatz for the Many-Fermion Wave Function in Scalable Molecular Simulations on Quantum Computing Devices",
    "link": "https://arxiv.org/abs/2408.11026v1",
    "version": "v1",
@@ -19919,6 +23089,25 @@
    "anchor": "zenodo-22898763"
   },
   {
+   "study": "Shift of quantum critical point of discrete time crystal on a noisy quantum simulator",
+   "link": "https://arxiv.org/abs/2509.18474v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "no circuits or counts released (data on request)",
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2509.18474"
+  },
+  {
    "study": "Shortcuts for Adiabatic and Variational Algorithms in Molecular Simulation",
    "link": "https://arxiv.org/abs/2407.20957v2",
    "version": "v2",
@@ -19983,6 +23172,36 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2510.14817"
+  },
+  {
+   "study": "Simon's Algorithm for the Even-Mansour Cipher on Quantum Hardware",
+   "link": "https://arxiv.org/abs/2604.25509v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F3",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "hardware distribution compared with a depolarizing estimate p = 434 x 10^-3 built from an averaged gate error of 10^-3 (source of the figure not stated)"
+    ],
+    "F3": [
+     "key recovery and reproducibility are stated as success for each of 5 runs; Tables I and II print five-run mean counts with no spread"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "Text lists the eight most common results \"in descending order\" as 0000, 0010, 1101, 1111, 0101, 0111, 1000, 1010; Table II counts: 1000 = 7,345.4 and 1010 = 7,311.2 are larger than 0101 = 6,895.8 and 0111 = 6,819.4"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2604.25509"
   },
   {
    "study": "Simulating Black Hole Thermality and Interior Scrambling on a Superconducting Quantum Processor",
@@ -20366,6 +23585,32 @@
    "anchor": "zenodo-21944796"
   },
   {
+   "study": "Soft information decoding with superconducting qubits",
+   "link": "https://arxiv.org/abs/2411.16228v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "simulation noise model built from the device's calibration data, shown beside the hardware results (Figure 7 against Figure 8)"
+    ],
+    "F2": [
+     "headline factor is the best case over code distances and logical states"
+    ],
+    "F4": [
+     "run dates not printed",
+     "paper states the data are available on request"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2411.16228"
+  },
+  {
    "study": "SoftQuantus Official Benchmark Report: QCOS Autopilot \u2014 Scalable Preparation of Entangled States from 2 to 10 Qubits with Sub-Linear Scaling Public",
    "link": "https://doi.org/10.5281/zenodo.21128153",
    "version": "Zenodo record 21128153 as listed 2026-10-24 (publication_date 2026-07-02)",
@@ -20382,6 +23627,31 @@
    },
    "calibrated": false,
    "anchor": "zenodo-21128153"
+  },
+  {
+   "study": "Software for Creating Scalable Benchmarks from Quantum Algorithms",
+   "link": "https://arxiv.org/abs/2511.02134v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with a simulation of the same device that uses IBM's noise model"
+    ],
+    "F4": [
+     "run dates not printed"
+    ],
+    "F6": [
+     "Fig. 5 caption says the circuits were run on IBM Fez; the text says IBM Kingston"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2511.02134"
   },
   {
    "study": "Solving industrial fault diagnosis problems with quantum computers",
@@ -20466,6 +23736,33 @@
    "anchor": "arxiv-2409.10857"
   },
   {
+   "study": "Solving the Traveling Salesman Problem via Different Quantum Computing Architectures",
+   "link": "https://arxiv.org/abs/2502.17725v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F2": [
+     "time complexity for D-Wave listed as a best case in Table III",
+     "time complexities are fitted estimates, stated as rough"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ],
+    "F6": [
+     "abstract states annealers handle up to 12 nodes, Fig. 21 caption lists D-Wave runs up to 10 nodes"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2502.17725"
+  },
+  {
    "study": "Sonata: two microcontrollers, two hands. A one-look Hebbian memory returns the unshown half of six phrases of Beethoven's Presto agitato through a 156-qubit IBM Heron processor. A registered experiment with sham and wrong-phrase controls",
    "link": "https://doi.org/10.5281/zenodo.22836753",
    "version": "Zenodo record 22836753 as listed 2026-10-24 (publication_date 2026-09-18)",
@@ -20515,6 +23812,33 @@
    },
    "calibrated": true,
    "anchor": "arxiv-2609.13108"
+  },
+  {
+   "study": "Sparse Non-Markovian Noise Modeling of Transmon-Based Multi-Qubit Operations",
+   "link": "https://arxiv.org/abs/2412.16092v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "VQE hardware energies compared with the IBM default noise model built from backend properties",
+     "authors' noise model fitted on the same qubits then compared with the hardware VQE energies"
+    ],
+    "F4": [
+     "no data link printed"
+    ],
+    "F6": [
+     "text names ibm_auckland for Figure 3; the Figure 3 caption names ibm_algiers",
+     "text gives the IBM model error as about 3.6%; the Figure 9 caption gives 3.5%"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2412.16092"
   },
   {
    "study": "Sparse Quantum Voxel Encoding for Readout-Efficient Molecular Geometry Reconstruction on NISQ Devices",
@@ -20626,6 +23950,36 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2605.14515"
+  },
+  {
+   "study": "SPLIT-Q: A Scalable Sequential Quantum Computing Framework for Coherent Controlled Islanding",
+   "link": "https://arxiv.org/abs/2608.12711v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results are compared with a simulator carrying a noise model calibrated from an IBM processor, and with an ideal simulator"
+    ],
+    "F2": [
+     "hardware result per system is the best cut value obtained, matched to the Gurobi optimum"
+    ],
+    "F3": [
+     "noise robustness is stated from identical best cut values across platforms (single set of runs per platform), no spread printed"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2608.12711"
   },
   {
    "study": "SQD-Enabled Circuit Compression for Resource-Efficient Quantum Chemistry",
@@ -20804,6 +24158,24 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-21203-rs-3-rs-6512631-v1"
+  },
+  {
+   "study": "String Breaking in the Heavy Quark Limit with Scalable Circuits",
+   "link": "https://arxiv.org/abs/2411.05915v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2411.05915"
   },
   {
    "study": "String dynamics of a (2+1)D U(1) quantum link model on a digital quantum computer",
@@ -21365,6 +24737,28 @@
    "anchor": "arxiv-2410.17184"
   },
   {
+   "study": "Teleportation Game: Quantum Teleportation in Multi-Agent Systems for Interactive Music",
+   "link": "https://arxiv.org/abs/2607.19212v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "melodic correlation from one simulator run is read as weak by a threshold of 0.5, with no interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.19212"
+  },
+  {
    "study": "Teleporting two-qubit entanglement across 19 qubits on a superconducting quantum computer",
    "link": "https://arxiv.org/abs/2407.02858v2",
    "version": "v2",
@@ -21425,6 +24819,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2408.04946"
+  },
+  {
+   "study": "TensorHyper-VQC: A Tensor-Train-Guided Hypernetwork for Robust and Scalable Variational Quantum Computing",
+   "link": "https://arxiv.org/abs/2508.01116v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "hardware headline accuracy is a peak value, given beside the final value"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.01116"
   },
   {
    "study": "TensorRL-QAS: Reinforcement learning with tensor networks for improved quantum architecture search",
@@ -22286,6 +25701,32 @@
    "anchor": "zenodo-23387025"
   },
   {
+   "study": "Toward Covert Quantum Computing",
+   "link": "https://arxiv.org/abs/2605.14325v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "detection rates quoted at their maximum over the experiments of each device"
+    ],
+    "F3": [
+     "detection stated as yes or no per spectator by a threshold on the fitted shift; no interval per shift"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs; the text says only 'weeks apart' for a repeated control",
+     "no data link printed: no URL, DOI or repository for data or code in the text"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2605.14325"
+  },
+  {
    "study": "Toward Quantum Utility in Correlated Topological Matter: Variational Preparation of Fractional Quantum Hall Manifolds",
    "link": "https://arxiv.org/abs/2607.11380v1",
    "version": "v1",
@@ -22301,6 +25742,50 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2607.11380"
+  },
+  {
+   "study": "Toward Quantum-Enabled Biomarker Discovery: An Outlook from Q4Bio",
+   "link": "https://arxiv.org/abs/2509.25904v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline crossover is stated as a projection to future machines with about 100 logical qubits"
+    ],
+    "F4": [
+     "run dates not printed (the only date on the front page, August 24, 2026, is a document date)",
+     "no data link printed for the study's own hardware data or code (URLs given are for third-party datasets and software)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2509.25904"
+  },
+  {
+   "study": "Toward Quantum-Optimized Flow Scheduling in Multi-Beam Digital Satellites",
+   "link": "https://arxiv.org/abs/2603.00701v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "viability for constellation-scale scheduling stated from 2- to 4-flow instances"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.00701"
   },
   {
    "study": "Toward Secure Multitenant Quantum Computing: Circuit Affinity, Crosstalk Patterns, and Grouping Strategies",
@@ -22361,6 +25846,67 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2606.18494"
+  },
+  {
+   "study": "Towards defending crosstalk-mediated attacks in multi-tenant quantum computing",
+   "link": "https://arxiv.org/abs/2409.14598v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F6"
+   ],
+   "basis": {
+    "F6": [
+     "text and caption say 10 days; Table 1 lists nine dates per qubit (12/25/2024 to 01/19/2025)"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2409.14598"
+  },
+  {
+   "study": "Towards Efficient Quantum Computation of Molecular Ground State Energies using Bayesian Optimization with Priors over Surface Topology",
+   "link": "https://arxiv.org/abs/2407.07963v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with fake backends built from IBM device data and with a noise-free state vector simulator"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2407.07963"
+  },
+  {
+   "study": "Towards Efficient Verification of Computation in Quantum Devices",
+   "link": "https://arxiv.org/abs/2508.00262v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "presence or absence of a CNOT read from purity 'close to 1' with no threshold or interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.00262"
   },
   {
    "study": "Towards few-body QCD on a quantum computer",
@@ -22504,6 +26050,32 @@
    "anchor": "arxiv-2505.05782"
   },
   {
+   "study": "Towards Studying Superconductivity in the Fermi-Hubbard Model on Rydberg Atoms",
+   "link": "https://arxiv.org/abs/2603.06529v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "gap quoted at the largest system size, where the stated gap between hardware-sampled and random-sampled energies is largest"
+    ],
+    "F3": [
+     "hardware-sampled result stated as better than random sampling with 10 times the shots; no interval stated"
+    ],
+    "F4": [
+     "run dates not printed: no date or date range of the hardware runs in the full text",
+     "no data link printed: no URL, DOI or repository for the study's data or code; the two URLs in the text are references to third-party software"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2603.06529"
+  },
+  {
    "study": "Towards violations of Local Friendliness with quantum computers",
    "link": "https://arxiv.org/abs/2409.15302v3",
    "version": "v3",
@@ -22595,6 +26167,32 @@
    "anchor": "arxiv-2409.03861"
   },
   {
+   "study": "Training Quantum Dragons",
+   "link": "https://arxiv.org/abs/2607.27168v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "the HHL result and the conclusion about hardware noise rest on a noise model based on ibm_torino; HHL was not run on the QPU"
+    ],
+    "F2": [
+     "hardware result is a single run at six energies the paper selected"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2607.27168"
+  },
+  {
    "study": "Transferring linearly fixed QAOA angles: performance and real device results",
    "link": "https://arxiv.org/abs/2504.12632v2",
    "version": "v2",
@@ -22610,6 +26208,27 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2504.12632"
+  },
+  {
+   "study": "Transmon qutrit-based simulation of spin-1 AKLT systems",
+   "link": "https://arxiv.org/abs/2412.19786v3",
+   "version": "v3",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "qutrit advantage over qubits shown by noisy simulation at existing and projected noise rates"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2412.19786"
   },
   {
    "study": "Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling",
@@ -22661,6 +26280,24 @@
    },
    "calibrated": false,
    "anchor": "zenodo-21438245"
+  },
+  {
+   "study": "Trotter-based quantum algorithm for solving transport equations with exponentially fewer time-steps",
+   "link": "https://arxiv.org/abs/2508.15691v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.15691"
   },
   {
    "study": "TT-QEC: An Open-Source Hardware-Native MLIR Compiler for Quantum Error Correction Decoding",
@@ -22935,6 +26572,24 @@
    "anchor": "zenodo-19995749"
   },
   {
+   "study": "Unification of Finite Symmetries in Simulation of Many-body Systems on Quantum Computers",
+   "link": "https://arxiv.org/abs/2411.05058v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed: no date or date range of the hardware run in the full text",
+     "no data link printed: no URL, DOI or repository for data or code in the text"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2411.05058"
+  },
+  {
    "study": "Unifying Qubit Routing Across Diverse Quantum ISAs via Canonical Representation",
    "link": "https://arxiv.org/abs/2511.04608v5",
    "version": "v5",
@@ -23004,6 +26659,32 @@
    "anchor": "zenodo-19905081"
   },
   {
+   "study": "Universal Quantum Transformer",
+   "link": "https://arxiv.org/abs/2606.00045v4",
+   "version": "v4",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F2": [
+     "headline hardware count is over a subset the paper calls selected; how the 40 instances were chosen is not stated"
+    ],
+    "F3": [
+     "each instance is reported as PASS or FAIL and as an overall rate with no interval, from 8,192 shots per instance"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2606.00045"
+  },
+  {
    "study": "Universal Scaling of the Informational Shielding Effect: From NISQ Anomalies to QCD Confinement.",
    "link": "https://doi.org/10.5281/zenodo.20139181",
    "version": "Zenodo record 20139181 as listed 2026-10-24 (publication_date 2026-05-12)",
@@ -23043,6 +26724,23 @@
    "basis": {},
    "calibrated": true,
    "anchor": "arxiv-2510.08719"
+  },
+  {
+   "study": "Unorthodox parallelization for Bayesian quantum state estimation",
+   "link": "https://arxiv.org/abs/2501.17334v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F4"
+   ],
+   "basis": {
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2501.17334"
   },
   {
    "study": "Unraveling Rodeo Algorithm Through the Zeeman Model",
@@ -23153,6 +26851,30 @@
    "anchor": "doi-10-1109-sisimpact67725-2025-11439155"
   },
   {
+   "study": "Using Detector Likelihood for Benchmarking Quantum Error Correction",
+   "link": "https://arxiv.org/abs/2408.02082v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "hardware results compared with simulations informed by the device's calibration data",
+     "calibrated noise model built from the device's per-qubit error rates",
+     "effective p taken from a run on the same device, then used to predict that device's logical error rate"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2408.02082"
+  },
+  {
    "study": "Using linear and nonlinear entanglement witnesses to generate and detect bound entangled states on an IBM quantum processor",
    "link": "https://arxiv.org/abs/2408.07769v1",
    "version": "v1",
@@ -23179,6 +26901,35 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2209.04860"
+  },
+  {
+   "study": "Using Universal Frame Randomization and Randomized Compilation to Mitigate Errors in Quantum Optimization",
+   "link": "https://arxiv.org/abs/2508.14142v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "basis": {
+    "F1": [
+     "device-specific noise model run beside the hardware landscapes (Figure 7, Table 1)"
+    ],
+    "F2": [
+     "headline extremal energies are the maximum and minimum over the 17 by 17 landscape"
+    ],
+    "F4": [
+     "no data link printed"
+    ],
+    "F6": [
+     "Table 1 caption gives Fall 2023 to Spring 2024, figure captions give Fall 2022 to Spring 2024"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2508.14142"
   },
   {
    "study": "Utility of NISQ devices: optimizing experimental parameters for the fabrication of Au atomic junction using gate-based quantum computers",
@@ -23546,6 +27297,28 @@
    "anchor": "arxiv-2409.11348"
   },
   {
+   "study": "Virtual Z gates and symmetric gate compilation",
+   "link": "https://arxiv.org/abs/2407.14782v2",
+   "version": "v2",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F3",
+    "F4"
+   ],
+   "basis": {
+    "F3": [
+     "no-difference statement made without a test or interval"
+    ],
+    "F4": [
+     "run dates not printed",
+     "no data link printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2407.14782"
+  },
+  {
    "study": "Visibility-Engineered Multiparameter Sensing in Dispersive Quantum Interferometry: Identifiability, Noise Robustness, and Hardware Emulation",
    "link": "https://arxiv.org/abs/2602.14420v2",
    "version": "v2",
@@ -23839,6 +27612,27 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1109-icce63647-2025-10929802"
+  },
+  {
+   "study": "WSBD: Freezing-Based Optimizer for Quantum Neural Networks",
+   "link": "https://arxiv.org/abs/2602.11383v1",
+   "version": "v1",
+   "indexed": "2026-11-01",
+   "read": "Full text",
+   "codes": [
+    "F1",
+    "F4"
+   ],
+   "basis": {
+    "F1": [
+     "noise-robustness results (Sec. 6.2) rest on a noise model built from IBM Heron calibration data; no training run on hardware"
+    ],
+    "F4": [
+     "run dates not printed"
+    ]
+   },
+   "calibrated": false,
+   "anchor": "arxiv-2602.11383"
   },
   {
    "study": "Z6 Topological Shielding",
