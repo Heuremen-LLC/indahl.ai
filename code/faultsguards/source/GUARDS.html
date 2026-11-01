@@ -1,0 +1,242 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Guards</title><style>@page { size: Letter; margin: 0.7in 0.75in; }
+body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #18202B; background: #FFFFFF; font-size: 10.5pt; line-height: 1.45; }
+h1 { font-size: 21pt; color: #0E4A4D; border-bottom: 2px solid #0F7173; padding-bottom: 6px; margin-top: 0; }
+h1.newpart { page-break-before: always; }
+h2 { font-size: 13.5pt; color: #0F7173; margin-top: 20px; }
+h3 { font-size: 11.5pt; color: #B5530C; margin-top: 14px; margin-bottom: 4px; }
+p, li { margin: 4px 0; } ul, ol { margin: 4px 0 8px 18px; padding-left: 10px; }
+hr { border: 0; border-top: 1px solid #D8DEDA; margin: 14px 0; }
+code { font-family: Menlo, monospace; font-size: 9pt; background: #EFF3F1; padding: 0 3px; }
+pre { font-family: Menlo, monospace; font-size: 8.8pt; background: #EFF3F1; padding: 8px 10px; line-height: 1.35; }
+table { border-collapse: collapse; width: 100%; margin: 8px 0 12px 0; font-size: 9.6pt; }
+th { text-align: left; color: #0E4A4D; border-bottom: 1.5px solid #0F7173; padding: 4px 6px; }
+td { border-bottom: 1px solid #E4E9E6; padding: 3px 6px; vertical-align: top; }
+td.sp { font-weight: 600; color: #0E4A4D; white-space: nowrap; }
+.lead { font-size: 11pt; }
+.foot { color: #6B7480; font-size: 8.5pt; margin-top: 20px; }
+.hold { background: #F4F8F6; border-left: 3px solid #0F7173; padding: 6px 10px; margin: 8px 0; }
+.cut { background: #FBF5F2; border-left: 3px solid #B5530C; padding: 6px 10px; margin: 8px 0; }
+blockquote { margin: 8px 0 8px 14px; padding-left: 12px; border-left: 3px solid #D8DEDA; color: #39434F; }</style></head><body>
+<h1>Guards</h1>
+<p>The procedures built against the failure modes, and the score they earn. Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026.</p>
+
+<p class="lead">Companion to <b>Faults</b>, which catalogues the ways a language model doing measurement work goes wrong. This document is what we run against them. <b>Every procedure here exists because the corresponding failure happened first</b>, and the guards we removed for making things worse are recorded in the last part. Both documents replace earlier ones, because a method scattered across the documents it was found in cannot be scored.</p>
+
+<div class="cut"><b>The organising principle, since it decides the shape of all of it.</b> Nearly every failure in the companion document is the same error with different clothes: <b>the comparison baseline was built with less care than the measurement, after the measurement, and in a direction that flattered it.</b> It is the largest family in the prospective ledger: 217 of the 316 rows tagged with one of the first three families. So the guards are not a list of separate checks. They are mostly one check, applied at the one moment it can still work, which is <i>before the number is stated</i>.</div>
+
+<h2>The first principle: structure rather than discipline</h2>
+<p>One recurring failure &mdash; reducing a situation with three states to two options &mdash; was treated for a long time as something to refuse by discipline. <b>That was measured.</b> Over three days, <b>96 pushbacks</b>, and the rate of replies flagged for a two-option frame across those days ran <b>0.79, 0.69, 0.88 per thousand words</b>, each day within one width of the day before. Against the first two days pooled, a comparison chosen after the data, the third day ran at 1.24 times the rate, exact 95 per cent interval 0.76 to 1.99, so a fall of more than 24 per cent by the third day is outside what was measured. The corrections landed one at a time, and the rate shows no change that clears its own width.</p>
+<p>Context did not remove it either. The same scanner reads a two-option frame in <b>57.1 per cent of long replies from fresh sessions with no context (44 of 77)</b>, against <b>27.5 per cent</b> for the same author after three days of standing correction (81 of 295). The middle halves of the two groups do not overlap in length (689 to 1,246 words for the fresh replies, 268 to 428 for the seated ones), so a length adjustment cannot separate them, and we cannot tell whether context reduces the rate.</p>
+<div class="hold"><b>So every guard below is structural rather than motivational</b>, and the strongest single one is a required field: a report format in which the uncertainty is a <i>slot that must be filled</i>, not a caveat that can be omitted when the writing gets confident. A rule you have to remember competes with the moment of writing. A field that is empty is visibly empty.</div>
+<p><b>So we put a deterministic check where we had been repeating an instruction.</b> Instruction depends on recall at the moment of writing, and the moment of writing is when context is thinnest. A check does not need to be remembered.</p>
+<p><b>A guard is a filter, not a teacher.</b> Expecting it to improve the underlying rate is how it gets removed for failing at a job it never had.</p>
+
+<h2>The ordering principle: a guard that fires after the answer is not a guard</h2>
+<p>A check applied to a stated conclusion is a check on prose. By then the conclusion has been written, the explanation has been fitted to it, and the only remaining question is how gracefully to withdraw it. <b>Every procedure below is positioned before the output it governs</b>, and the ones that are not are marked as weak.</p>
+
+<h1 class="newpart">I &mdash; Procedures that run before the work</h1>
+
+<h3>1. The ruler is chosen before the quantity is computed</h3>
+<p>The default move is a value with a standard error, which answers one kind of question and quietly refuses all the others. So a roster of available rulers is placed in front of the model <b>at the start of every single exchange</b>, automatically, read live from the source document rather than from a copy: the separation of setup from signal, the width needed to exclude a runner-up, the profile that places unlike records on one axis without assuming a shared mechanism, the three-seat reading of one event, the integration time beyond which phase becomes noise, the corner where neither a count nor a phase resolves, and the test of whether two effects add or multiply.</p>
+<p><b>Why it is injected rather than remembered.</b> A roster in a document is consulted when the model thinks to consult it, which is precisely never at the moment it is needed. Injected at the top of every exchange it costs nothing and arrives before the framing is fixed. <b>The guard is the position, not the content.</b></p>
+
+<h3>2. Reference material is loaded hot, not summarised</h3>
+<p>The three method papers are read <b>as text, in full, at the moment of use</b>, and not recalled. A summary of a method drifts, and the drift is invisible because a summary of a method reads exactly like the method. Loading the source each time costs context and buys the absence of a failure mode that leaves no trace. A single command loads all three and asks their questions in fixed order.</p>
+
+<h3>3. The baseline is constructed and written down first</h3>
+<p>Before the measurement arm is computed: the number of samples on each side, the window, the averaging depth, how many places were looked at, and what the setup could physically have emitted. If any of those differ between arms, that difference is the finding and the measurement is not taken yet. <b>This single procedure addresses all twelve modes of the first family, the family behind 217 of the 316 tagged ledger rows, and it is the one to install first.</b></p>
+
+<h3>4. The instrument is tested as an object before it is pointed at anything</h3>
+<p>Every instrument is first run on a case it <b>must</b> pass and a case it <b>must</b> fail, and both results are recorded as numbers:</p>
+<ul>
+<li><b>A ceiling</b> &mdash; what the instrument reads on genuine, held-out examples of the thing it is meant to detect. Nothing can score better than that, and if the ceiling is low the instrument cannot be used at all, whatever it later reports.</li>
+<li><b>A floor, which is never assumed to be zero</b> &mdash; what the instrument reads on material that by construction contains none of the target. It is always some small nonzero rate, and that rate is the bar everything else must clear.</li>
+<li><b>A known-good seat</b> &mdash; a case so easy that failing it condemns the instrument. Four instruments in a row passed our own inspection and were later shown to be measuring proxies. Every one of them would have been caught in minutes by a known-good seat, and none of them had one.</li>
+</ul>
+<p>Measured floors have twice told us the instrument itself was the result. In one case the detection rule matched ordinary material thousands of times per million words. The rule was rewritten and the rate fell by roughly three orders of magnitude. <b>The floor measurement also reversed one of our own fixes</b> &mdash; it showed that a refinement we had just made was cutting the most diagnostic cases while buying nothing at the scale we actually work at. A floor is not paperwork. It changes decisions.</p>
+
+<h3>5. Per-unit constants are removed, not caveated</h3>
+<p>Anything attached identically to every unit of data is subtracted before the reading, and <b>both readings are reported</b> &mdash; with the constant and without &mdash; because the difference between them is the size of the artifact and that is worth knowing. Naming a confound in a footnote while leaving it in the number is not a control.</p>
+
+<h3>6. The setup is equalised across every column being compared</h3>
+<p>Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at <b>two or three different settings</b> of whatever was equalised: if the ordering depends on the setting, the setting is the finding and no verdict is issued.</p>
+
+<h1 class="newpart">II &mdash; Procedures that run during the work</h1>
+
+<h3>7. Exact nulls in preference to resampling, wherever one exists</h3>
+<p>Where the null distribution is known in closed form or can be enumerated completely, it is used rather than approximated: full enumeration of every ordering when the count permits it, exact tests for small tables, exact distributions for counts and for phase concentration. A shuffle estimates the null. An enumeration <b>is</b> the null, and it cannot be accused of too few iterations or a bad seed. When a resampling procedure is unavoidable it must respect the dependence structure, which is where the naive version usually fails.</p>
+
+<h3>8. Four outcomes, never two, and the terminating reason on every call</h3>
+<p>Committed, held open, refused, and nothing-returned are recorded in <b>four separate columns</b>. A refusal is an outcome and is never scored as a low value. Nothing-returned is attributed to the setup and never to the subject, and the only way to keep that straight is to record, on every single call, why it stopped. We adopted this after reporting our own output limit as a system's decision to decline.</p>
+
+<h3>9. Every reported figure carries its own n, and the n it was selected from</h3>
+<p>A value from one observation may not be printed beside a value from nine as though they were comparable, and a best-of-n may not be printed at all without n. A cell below a minimum count does not enter an average, and the count of cells that did enter is printed next to the average.</p>
+
+<h3>10. Saturated cells are counted before anything is aggregated</h3>
+<p>Cells at a ceiling or floor are tallied and excluded from any correlation or mean, with the exclusion stated. A reading taken across censored cells is a statement about the censoring.</p>
+
+<h3>11. Dependence is priced by independent units, not by rows</h3>
+<p>Before any width is computed: how many independent units contributed. Overlapping windows, shared members and repeated measures are reduced to a disjoint set, and the width is taken from that. This has moved widths by factors of several.</p>
+
+<h3>12. One event is read from three seats, never two</h3>
+<p>Two readings that disagree give no way to decide which is wrong. Three give a closure condition &mdash; a quantity that must come back to where it started &mdash; and a closure residual is a fault with nowhere to hide. <b>And the disagreement between seats is kept as a measurement rather than calibrated away.</b> Harmonise, do not synchronise: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one.</p>
+
+<h3>13. An absence gets the same scrutiny as a presence</h3>
+<p>A confident report that something is <i>missing</i> is re-checked against a reference that did not come from the same data, because a fitted parameter that is slightly wrong looks for everything in the wrong place and reports a clean absence. Absences are rarely re-examined, which is exactly why they need the rule.</p>
+
+<h1 class="newpart">III &mdash; Procedures that run on the output</h1>
+
+<h3>14. The row is written at the moment of the catch, before the corrected number is stated</h3>
+<p>Every catch is logged immediately with four fields: <b>which failure mode it was, whether it was caught before or after the reading was stated, who or what caught it, and one line of what happened.</b> Written afterwards it would be a retrospective fit, which is the very failure being tracked. This ledger is the only part of the method with a real score, and the score is in the next section.</p>
+
+<h3>15. A dropped arm is named in the tool's own output, not quietly replaced</h3>
+<p>When a run is discarded, the discard is printed by the program that does the scoring &mdash; how many calls, why, and what replaced them &mdash; so that nobody reading the result has to take the cleanliness of the input on trust. A silently replaced arm is indistinguishable from a tidied one.</p>
+
+<h3>16. The wrong first reading is published beside the corrected one</h3>
+<p>Where a result has already been stated and later corrected, both stand in the record with the correction's reason. <b>A document that shows only what survived is not a record.</b> This is costly and it is the single procedure we would least like to drop, because it is the only one that makes the others checkable from outside.</p>
+
+<h3>17. Every report closes with four parts</h3>
+<p>The value, what happens next, confidence from inside the work, and a rating from outside it &mdash; what a stranger with no stake would make of it. The fourth part is the one that does the work, and it is the one that wants to go missing.</p>
+
+<h3>18. Writes are guarded by assertions that block partial application</h3>
+<p>Any edit to a source document asserts its anchor exists and is unique, and that the edit has not already been applied, before writing anything. Several times this has fired and left the file untouched rather than half-modified. A half-applied edit to a method document is worse than a failed one because it is silent.</p>
+
+<h3>19. Loops are bounded, and long work is not held open by a session</h3>
+<p>Verification loops carry an explicit maximum. Unbounded waits have cost entire working periods. Long-running work is detached and polled rather than held by whatever started it.</p>
+
+<h3>20. Retained rules carry what they rest on</h3>
+<p>Each kept rule is tagged with its basis: an instruction, a verified tool behaviour, an arithmetic identity, or <b>one instance</b>. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times.</p>
+
+<h1 class="newpart">IV &mdash; Procedures against the instrument being wrong about itself</h1>
+
+<h3>21. Any count about your own behaviour is read from the record, never from memory</h3>
+<p>Asked how often a guard had fired over three days, the answer given from memory was sixteen. The log in the same directory said thirty-six. <b>Off by 2.25 times, and the same answer from anyone else would have been rejected on sight.</b> A self-report is a claim about a file, so it is read out of the file or it is not stated.</p>
+
+<h3>22. Every rate states its denominator</h3>
+<p>One guard's rate of replies flagged for a two-option frame over three days read as a rise on the third day measured per reply (22.6% to 39.5%, <b>above the second day at +2.64 widths</b>) and as consistent with no change measured per thousand words on the same data (0.69 to 0.88, <b>+0.97 widths</b>). The third day's replies were 38 per cent longer on average. The width is defined in Faults, entry 24. <b>A rate is a ratio and the denominator is a choice</b>, so the choice is printed beside the number or the number is not a measurement.</p>
+
+<h3>23. A detector remembers what it has already flagged</h3>
+<p>Without memory, one standing fault becomes a stream of successes: a single stale figure was flagged five separate times and each was reported as a catch. Every detector deduplicates against what it has seen, so a permanent problem reads as one problem.</p>
+
+<h3>24. The third seat must be able to disagree</h3>
+<p>For any three-reading check, name what the third reading would do <i>if the hypothesis were false</i>. A third quantity derived from the first two by a formula that assumes the relationship under test returned agreement &mdash; two seats and a mirror, scored as a triangle. If the third seat cannot fail independently, there are two seats.</p>
+
+<h3>25. The outside reviewer is handed the evidence, or its verdict is discarded</h3>
+<p>An independent reviewer that rejects deliberate faults with the evidence in hand <b>inverted both of its verdicts when the evidence was withheld</b> and it had nothing to read but the manner of the writing. An outside seat without evidence in front of it is a style critic, and its approval is worth nothing.</p>
+
+<h3>26. Values get a separate check from structure</h3>
+<p>A structural guard reading for two-option frames, absent corners and required parts passed an answer containing <b>four invented numbers</b> without comment. <b>Shape and truth are independent</b>, so a structural check certifies a fabrication as well-formed. Numbers are verified against their source separately, and a clean structural pass is never read as a clean answer.</p>
+
+<h3>27. Both sides of every identity are evaluated before it is printed</h3>
+<p>A printed relation between three constants whose sides <b>differ by 15.3 parts per million</b> was copied forward four times. An equals sign is a claim. It is checked numerically at the moment it is written.</p>
+
+<h3>28. The prior-art check runs before the significance calculation, not after</h3>
+<p>An unlikelihood estimated three independent ways, all agreeing at about one in two thousand, was correct and beside the point because the relation was already known. <b>The literature check costs minutes and dominates any significance number</b>, so it comes first.</p>
+
+<h3>29. Units are checked across every point before anything is fitted</h3>
+<p>A three-rung ladder that looked structural had a time in the third position and counts in the first two. There was no sequence. The claim died on inspection, which is where it should die.</p>
+
+<h3>30. A load-bearing relationship is re-read live before anything stands on it</h3>
+<p>A structure was built on one pair measured at <b>0.682</b>, the tightest on the board. Read live later, the same pair measured <b>0.343</b>, a different pair was tightest, and the ordering had changed. <b>A relationship measured once and built upon is a snapshot carrying the load of a constant.</b></p>
+
+<h3>31. After any change, the value is re-read through the path that consumes it</h3>
+<p>In one evening a stale copy appeared at least four times, in a different costume each time &mdash; an instruction file naming a machine that no longer existed, a superseded limit, a counter reading a frozen log, a long-running process serving an in-memory copy of a file already edited. <b>The edit is not the deployment.</b></p>
+
+<h3>32. Liveness is checked by recent completed work, never by a running process</h3>
+<p>Three healthy components were declared dead in one evening because nothing was running. A short-lived job is supposed to be absent between runs.</p>
+
+<h3>33. Test writes go somewhere the live path does not read</h3>
+<p>A new check was proved with a deliberate fabrication and then reported that fabrication as a property of the next, unrelated piece of work, because the probe wrote to the log the live path reads and the reader took the most recent row. Separate destination, or an identity check on every read.</p>
+
+<h3>34. A named gap is fixed if fixing is cheaper than describing it</h3>
+<p>Of 50 closing paragraphs naming what was still missing, <b>9 named something that would have taken less time to fix than to describe, and then did not fix it.</b> The paragraph had become the deliverable. Before writing that a thing is missing, price the fix. If it is cheaper than the sentence, do it instead.</p>
+
+<h3>35. A residual bin is refused by the scorer, not avoided by the scorer's author</h3>
+<p>Every scoring script declares its outcomes with a positive definition each, through a module that
+<b>refuses the declaration outright if a bin is named <i>none</i>, <i>other</i>, <i>silent</i>,
+<i>misc</i>, <i>unknown</i> or <i>rest</i></b>, and that asserts the set is exhaustive and disjoint
+&mdash; naming the offending rows &mdash; before it will return a table at all. Outcomes about the
+<b>setup</b> are declared in a separate group from outcomes about the <b>subject</b>, and the
+table prints what share of the rows say nothing about the subject.</p>
+<p><b>Why the name check and not the exhaustiveness check is the one that matters.</b> The collapse
+that prompted this was already exhaustive and already disjoint &mdash; one of its bins simply meant
+five different things. Only refusing the name catches that. On the data that produced the failure,
+the corrected declaration gives 27.1 per cent complied, 11.5 per cent a different category, 3.1 per
+cent a measurable hybrid state, 43.8 per cent a legitimate and positively defined absence, and
+<b>14.6 per cent about the setup and therefore silent about the subject</b> &mdash; six bins
+where there had been one number, the sixth (no reply) at 0 per cent.</p>
+<p>This exists because the failure mode was published in the companion document and committed two
+hours later. <b>The procedure is the position, not the knowledge.</b></p>
+
+<h3>36. The catalogue's families ride in front of every exchange, read live from the published source</h3>
+<p>The eight family headings &mdash; not the individual modes &mdash; are injected at the top of
+every exchange alongside the ruler roster, parsed out of the published document itself so the two
+cannot drift apart. The purpose is to make the question <i>which family is this</i> arrive <b>before
+the framing is fixed</b>, which is the only moment it can change anything. Reading the catalogue
+afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the
+underlying rate showed no change that clears its own width.</p>
+
+<h3>37. The diagnosis and the replacement instrument ship in the same document</h3>
+<p>Our corrective procedure loaded the papers that identify <i>which error a reading has made</i> and
+not the sheet listing <i>which instrument to use instead</i>. It therefore diagnosed and never
+re-armed, and a diagnosis with no replacement in hand leaves the reader to invent one &mdash; which
+under that pressure is the two-answer one, because it is cheapest to build. <b>The sheet of
+instruments is now a required read inside the correction itself</b>, and the correction ends with a
+question it did not previously ask: <i>which ruler should this reading have gone out on?</i> Named off
+the sheet, before the answer.</p>
+<p><b>Naming a failure and supplying its replacement are two different jobs.</b> A procedure that does
+only the first is measured by how often the reader reaches a correct second step unaided, and ours did
+not do that job at all.</p>
+
+<h3>38. The ruler is named in the output, beside the number</h3>
+<p>A reading that goes out as a value with a standard error, or as a p-value, is <b>one instrument's
+answer to one kind of question</b>, and printed bare it looks like the quantity itself. So the
+instrument is named next to the figure. This costs a few words and makes a substitution visible:
+<i>value &plusmn; width</i> beside <i>a position on a landing profile</i> beside <i>a separation into
+setup and signal</i> are plainly three different readings of one event, and a report carrying only
+the first now says so on its face.</p>
+<p><b>Why a field and not a habit</b>, which is this document's first principle: the moment a
+different ruler is needed is the moment of lowest attention, so a remembered rule is competing with
+the writing. A named field is either filled or visibly empty.</p>
+
+<h3>39. Business copy passes a tone gate that refuses persuasion</h3>
+<p>The writer cannot hear its own register (Faults, entry 45), so the check is mechanical and runs in the site gate on every release of the business pages. It refuses three things: phrasing that argues or explains why instead of stating (<i>so you can</i>, <i>actually</i>, <i>holds up</i>, <i>decided later</i>, and the like), a page header carrying a second line under its headline, and one content word used twice inside a header. The rule it enforces fits in a line: <b>state what it is, what is received and on what terms, and never why the reader should want it.</b></p>
+<p><b>Its record so far is in sample and says little.</b> The phrase list was written from the copy it was then tested on: it passes the corrected site with no hits and catches that morning&rsquo;s version 23 times, which any list fitted to its own examples would do. A page-wide repeat check was tried first and fired on 11 lines of the approved site (from a note written that day, with the raw output not kept), where the repeats are section and step names. It was narrowed to the header before it could teach anyone to ignore it. The measurement that counts is prospective: the next pitch it stops before a human reader does.</p>
+
+<h1 class="newpart">V &mdash; What the guards score, and what we removed</h1>
+
+<h2>The only honest measurement: the prospective ledger</h2>
+<p>The catalogue of failure modes explains <b>all</b> of its own instances, because it was built from them. Fitted to its own cases it is perfect and therefore worthless. The sealed in-sample set was scored before any prospective counting began: <b>26 instances, 4 caught before the fact, 2 of those unaided &mdash; 7.7 per cent.</b> That is the bar, and it is deliberately the least flattering reading available.</p>
+<p>Since then, every catch has been logged at the moment it happened. The full ledger, 10 October to 22 October 2026, through row 608 (written 16:45 EDT):</p>
+<table>
+<tr><th>Prospective ledger</th><th>count</th><th>share</th></tr>
+<tr><td class="sp">Rows written at the moment</td><td>608</td><td>&mdash;</td></tr>
+<tr><td class="sp">Caught <b>before</b> the reading was stated</td><td>204</td><td>33.6%</td></tr>
+<tr><td class="sp">Caught before, by the model, with nobody pointing at it</td><td>148</td><td><b>24.3%</b></td></tr>
+<tr><td class="sp">Caught before by a check or an outside referee</td><td>37</td><td>6.1%</td></tr>
+<tr><td class="sp">Caught before by the human partner</td><td>19</td><td>3.1%</td></tr>
+<tr><td class="sp">Caught by the human partner</td><td>216</td><td>35.5%</td></tr>
+<tr><td class="sp">Sealed in-sample bar</td><td>&mdash;</td><td>7.7%</td></tr>
+<tr><td class="sp">Unaided catches against that bar (148 of 608)</td><td>above the point bar, and consistent with the bar&rsquo;s own interval (2 of 26, exact 95% 0.9&ndash;25.1%, Fisher p 0.06 two-sided)</td><td>&mdash;</td></tr>
+</table>
+<p>The first twenty rows, which an earlier version of this document scored, read 13 caught before (65.0%) and 8 unaided (40.0%, exact 95% 19&ndash;64%), above the bar&rsquo;s interval (Fisher p 0.01 two-sided). The full ledger reads lower, and the full ledger is the number.</p>
+<p>By failure family: of the rows tagged with one of the first three families, <b>217</b> are the baseline-built-afterwards family, 44 the zeroed-gap family and 55 the discarded-half family. Another 35 carry other tags (4, 12 and 19 under the fourth to sixth families as the ledger names them), and 257 carry no family tag. The first family dominates in the full ledger as it did in the first twenty rows (14 of 20). With 257 of 608 rows carrying no family tag, we cannot tell whether the other families are rarer or harder for us to see.</p>
+<div class="hold"><b>The honest caveat on the score.</b> 216 of the 608 catches came from the human partner rather than from the model, and that is recorded in the ledger as a separate field rather than folded in. A guard that works only when someone else is watching is a different thing from one that works unattended, and the field exists so the two can never be confused. <b>The 24.3 per cent above counts only the unaided ones. Checks and outside referees caught another 6.1 per cent before the reading was stated.</b> Most catches, 404 of 608, came after the reading was stated.</div>
+
+<h2>Guards removed for making things worse</h2>
+<p><b>A critic applied to the model's own reply after it was written.</b> It ran on finished output, which is the wrong position by the ordering principle above, and in practice it produced defensive rewriting rather than correction &mdash; the model argued with the critic instead of re-measuring. Removed.</p>
+<p><b>A prompt that echoed a standing demand back on every exchange.</b> Intended as a reminder, it functioned as noise and crowded out the material that was actually load-bearing. Removed, in the same revision, on the instruction that it was producing confusion rather than care. <b>Both removals are recorded here because a list of guards that only grows is an advertisement, not a method.</b></p>
+
+<h2>What is not guarded</h2>
+<ul>
+<li><b>Grammar, as against vocabulary.</b> Our strongest instrument for whether a system has a given capability measures the presence of the right components, not whether they are correctly arranged. Right pieces in the wrong order score well. We know of no cheap fix.</li>
+<li><b>The proxy problem in general.</b> The known-good seat catches a proxy only when a passing case exists to try. Where no verified example exists, we have no procedure that distinguishes a proxy from the thing, and we have the failures to prove it.</li>
+<li><b>Our own aggregate direction.</b> It is not measured. The guards are built to catch individual errors. Nothing above measures a standing bias in the direction of our corrections, and we do not currently know how to.</li>
+</ul>
+
+<hr>
+<h2>How to argue with these documents</h2>
+<p>The fastest useful attack is on the ledger, and it needs no data of ours: <b>the catalogue is fitted to its own instances and cannot score itself</b>, so the only number worth disputing is the prospective one &mdash; and the honest objection is that 608 rows from one working relationship are few, that the bar was set by us, and that the person setting the bar and the person being scored are the same. All three are true and are the reason the sealed in-sample figure is printed beside it. The second attack is to take any procedure above, apply it to a published method of ours, and report what falls over.</p>
+<p class="foot">Guards &mdash; the procedures, and their score. Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion document: <b>Faults</b>, the failure modes written as procedure. Removed guards are listed with the reason.</p>
+<p class="foot">Heuremen LLC<br>&ldquo;We found it.&rdquo;</p>
+</body></html>

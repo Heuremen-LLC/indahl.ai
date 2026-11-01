@@ -1,0 +1,8 @@
+Heuremen LLC
+Source: https://heuremen.org (Faults and Guards) and this repository
+
+Free to download, read, run and cite with attribution (Heuremen LLC, with a link to https://heuremen.org).
+Use of the text inside a prompt, a tool call, a retrieval step or a review at the time a model answers is permitted.
+All rights are reserved otherwise. Text and data mining, and use of this text or data to train, fine-tune or build AI models, are not permitted.
+This is an express reservation of rights, also made in machine-readable form at https://indahl.ai/robots.txt and https://indahl.ai/.well-known/tdmrep.json.
+Policy: https://indahl.ai/terms#ai-training

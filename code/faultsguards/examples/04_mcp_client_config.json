@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "faultsguards": {
+      "command": "python3",
+      "args": ["-m", "faultsguards", "mcp"]
+    }
+  }
+}

@@ -9,14 +9,17 @@ HERE = os.path.dirname(os.path.abspath(__file__)); B = os.path.dirname(HERE); sy
 W = os.path.join(B, 'cloudflare-workers', 'heuremen-door'); NS = 'ecb59d96b07c43bdac14271687eae5af'
 GATE = os.path.join(HERE, 'LIVE_READER_ON'); ST = os.path.join(HERE, '.reader_state.json'); OUT = os.path.join(HERE, 'live_reads.jsonl')
 if not os.path.exists(GATE): print('yo reader: gate closed (no LIVE_READER_ON)'); sys.exit(0)
-busy = subprocess.run("pgrep -f 'mlx_lm|yo2_eval|lighteval|lm_eval|falcon_train/train'", shell=True, capture_output=True, text=True).stdout.split()
+busy = subprocess.run("pgrep -f 'mlx_lm|yo[0-9]_eval|yo[0-9]_run|lighteval|lm_eval|falcon_train/train'", shell=True, capture_output=True, text=True).stdout.split()
 if busy: print('yo reader: another model job holds the GPU, skipped'); sys.exit(0)
 st = json.load(open(ST)) if os.path.exists(ST) else {'at': 0}
-new = [r for r in map(json.loads, open(os.path.join(B, 'qia_mirror', 'changes.jsonl'))) if r.get('at', 0) > st['at'] and r.get('file')][:6]
+open(os.path.join(HERE, '.reader_ran'), 'w').write(time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))   # heartbeat for the watch: the reader ran (gate open, GPU free)
+_rs = [r for r in map(json.loads, open(os.path.join(B, 'qia_mirror', 'changes.jsonl'))) if r.get('at', 0) > st['at'] and r.get('file')]
+new = _rs[:6] if os.path.exists(ST) else _rs[-6:]   # first run starts at the newest records, then reads forward in order, 6 per run
+WAITING = len(_rs) - len(new) if os.path.exists(ST) else 0
 def publish():
     rows = [json.loads(l) for l in open(OUT)] if os.path.exists(OUT) else []
     d = dict(updated=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), n=len(rows), mean=round(sum(r['score'] for r in rows) / len(rows), 3) if rows else None,
-             exact=sum(r['score'] == 1.0 for r in rows), latest=rows[-12:][::-1], adapter=open(GATE).read().strip())
+             exact=sum(r['score'] == 1.0 for r in rows), latest=rows[-12:][::-1], adapter=open(GATE).read().strip(), waiting=WAITING)
     f = os.path.join(HERE, 'yo_live.json'); json.dump(d, open(f, 'w'))
     env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
     r = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'yo_live', '--path', f, '--namespace-id', NS, '--remote'], cwd=W, env=env, capture_output=True, text=True)
