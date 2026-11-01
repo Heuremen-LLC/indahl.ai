@@ -1,0 +1,18 @@
+// gate-ui.js: each legal box must be scrolled to the end before its checkbox unlocks; the inquiry draft survives the sign-in.
+(function () {
+  function box(id, cb, flag) {
+    var b = document.getElementById(id), c = document.querySelector('input[name="' + cb + '"]'), f = document.querySelector('input[name="' + flag + '"]');
+    if (!b || !c || !f) return;
+    c.disabled = true; c.parentNode.classList.add('locked');
+    function check() { if (b.scrollTop + b.clientHeight >= b.scrollHeight - 6) { c.disabled = false; f.value = '1'; c.parentNode.classList.remove('locked'); } }
+    b.addEventListener('scroll', check); check();
+  }
+  box('box-nda', 'nda', 'nda_read'); box('box-privacy', 'privacy', 'privacy_read');
+  var f = document.getElementById('inq'); if (!f) return;
+  (function () { var r = f.elements['reason'], a = document.getElementById('scoping'), b = document.getElementById('scoping-note'); if (!r || !a) return; function t() { var on = r.value === 'engagement'; a.hidden = !on; if (b) b.hidden = !on; } r.addEventListener('change', t); t(); })();
+  var K = 'indahl_inquiry_draft', N = ['name', 'role', 'organisation', 'scope', 'budget', 'timeline', 'referral'];
+  try { var d = JSON.parse(sessionStorage.getItem(K) || '{}'); N.forEach(function (n) { if (d[n] && !f.elements[n].value) f.elements[n].value = d[n]; }); } catch (e) {}
+  var v = document.getElementById('verify');
+  if (v) v.addEventListener('click', function () { var d = {}; N.forEach(function (n) { d[n] = f.elements[n].value; }); try { sessionStorage.setItem(K, JSON.stringify(d)); } catch (e) {} });
+  f.addEventListener('submit', function () { try { sessionStorage.removeItem(K); } catch (e) {} });
+})();
