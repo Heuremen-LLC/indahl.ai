@@ -1,0 +1,11 @@
+yo_v4 off-record flagged numbers: TEST4 0 (in 0 items), TEST6 0 (in 0 items); every flag counted on TEST4: 1127 of 1128 truly stale, 1 not stale (in 1 items)
+yo_v6 off-record flagged numbers: TEST4 4 (in 4 items), TEST6 0 (in 0 items); every flag counted on TEST4: 1078 of 1084 truly stale, 6 not stale (in 6 items)
+   TEST4 win0 flagged [144] shown [11, 35, 63, 103, 108, 109, 114, 125]
+   TEST4 win0 flagged [23] shown [1, 29, 32, 68, 69, 86, 112, 141]
+   TEST4 win0 flagged [23] shown [1, 29, 32, 37, 61, 69, 86, 107]
+   TEST4 win0 flagged [34] shown [2, 37, 45, 60, 63, 73, 96, 125]
+yo_v6b off-record flagged numbers: TEST4 1 (in 1 items), TEST6 1 (in 1 items); every flag counted on TEST4: 1147 of 1151 truly stale, 4 not stale (in 4 items)
+   TEST4 ibm_fez flagged [106] shown [10, 21, 30, 34, 51, 65, 78, 146]
+R3 counting every flagged number, yo_v6 minus yo_v4: -0.00465 [-0.00900, -0.00099] -> BELOW
+R3 counting every flagged number, yo_v6b minus yo_v4: -0.00259 [-0.00586, +0.00000] -> CONSISTENT
+TEST6 records 662, TEST4 records 426, overlap 168; TEST5 records 444, overlap with TEST6 280; TEST6 items 890

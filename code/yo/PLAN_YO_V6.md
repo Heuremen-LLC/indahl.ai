@@ -40,3 +40,5 @@ TEST4 is kept as it is. FUTURE6: every record the QIA mirror saves with a stamp 
 ## KNOWN-GOOD
  The scorer on the code's own TEST6 answers gives 1.000. The nulls and YO v4 are scored on TEST6 with the same code and committed before the
  first v6 training step. The driver refuses to train if the known-good fails. Replies are read in full before any comparison is run.
+
+## ERRATUM (1 Nov 2026, after the reading): the nulls line says the date rule of PLAN_YO_V3 'flags a whole previous-day group by construction'. As coded (yo6_eval.py) the rule needs a date two or more calendar days before the stamp, so it flags none of the previous-day groups (R6a 0 of 2,400). The rule was scored as coded; only the plan's description of it was wrong.

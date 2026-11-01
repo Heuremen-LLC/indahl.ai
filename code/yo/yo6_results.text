@@ -1,0 +1,31 @@
+TEST4 yo_v4 {'R1': 0.975, 'R1_n': 928, 'R2': 0.99, 'R3': 0.999, 'R4': 0.975, 'forced': 0.05, 'ct_wrong': 4}
+TEST4 yo_v6 {'R1': 0.931, 'R1_n': 928, 'R2': 0.985, 'R3': 0.998, 'R4': 0.983, 'forced': 0.05, 'ct_wrong': 2}
+TEST4 yo_v6b {'R1': 0.976, 'R1_n': 928, 'R2': 0.988, 'R3': 0.997, 'R4': 0.96, 'forced': 0.03, 'ct_wrong': 12}
+TEST6 yo_v4 {'R6a': 0.0, 'R6a_n': 2400, 'R6b_false': 0.048, 'R6b_young_n': 1974, 'R6b_found': 0.995, 'R6b_stale_n': 426, 'R6c': 0.969, 'R6c_n': 2320}
+TEST6 yo_v6 {'R6a': 0.0, 'R6a_n': 2400, 'R6b_false': 0.001, 'R6b_young_n': 1974, 'R6b_found': 0.995, 'R6b_stale_n': 426, 'R6c': 0.99, 'R6c_n': 2320}
+TEST6 yo_v6b {'R6a': 0.007, 'R6a_n': 2400, 'R6b_false': 0.001, 'R6b_young_n': 1974, 'R6b_found': 0.977, 'R6b_stale_n': 426, 'R6c': 0.994, 'R6c_n': 2320}
+TEST6 nothing {'R6a': 0.0, 'R6a_n': 2400, 'R6b_false': 0.0, 'R6b_young_n': 1974, 'R6b_found': 0.0, 'R6b_stale_n': 426, 'R6c': 0.0, 'R6c_n': 2320}
+TEST6 all {'R6a': 1.0, 'R6a_n': 2400, 'R6b_false': 1.0, 'R6b_young_n': 1974, 'R6b_found': 1.0, 'R6b_stale_n': 426, 'R6c': 1.0, 'R6c_n': 2320}
+TEST6 daterule {'R6a': 0.0, 'R6a_n': 2400, 'R6b_false': 0.0, 'R6b_young_n': 1974, 'R6b_found': 0.636, 'R6b_stale_n': 426, 'R6c': 0.4, 'R6c_n': 2320}
+FUTURE6 yo_v4 n 15 exact 14
+FUTURE6 yo_v6 n 15 exact 12
+FUTURE6 yo_v6b n 15 exact 14
+R1, yo_v6 minus yo_v4: -0.044 [-0.092, -0.001] -> BELOW
+R2, yo_v6 minus yo_v4: -0.005 [-0.016, +0.005] -> CONSISTENT
+R3, yo_v6 minus yo_v4: -0.001 [-0.003, +0.000] -> CONSISTENT
+R4, yo_v6 minus yo_v4: +0.008 [-0.003, +0.019] -> CONSISTENT
+R6a, yo_v6 minus yo_v4: +0.000 [+0.000, +0.000] -> CONSISTENT
+R6b_false, yo_v6 minus yo_v4: -0.047 [-0.071, -0.023] -> BELOW
+R6b_found, yo_v6 minus yo_v4: +0.000 [-0.007, +0.007] -> CONSISTENT
+R6c, yo_v6 minus yo_v4: +0.021 [-0.007, +0.052] -> CANNOT_TELL
+yo_v6 passes the plan rule: False
+R1, yo_v6b minus yo_v4: +0.001 [-0.037, +0.041] -> CANNOT_TELL
+R2, yo_v6b minus yo_v4: -0.002 [-0.014, +0.009] -> CONSISTENT
+R3, yo_v6b minus yo_v4: -0.002 [-0.004, +0.000] -> CONSISTENT
+R4, yo_v6b minus yo_v4: -0.015 [-0.035, +0.005] -> CANNOT_TELL
+R6a, yo_v6b minus yo_v4: +0.007 [+0.000, +0.017] -> CONSISTENT
+R6b_false, yo_v6b minus yo_v4: -0.047 [-0.072, -0.024] -> BELOW
+R6b_found, yo_v6b minus yo_v4: -0.019 [-0.033, -0.005] -> BELOW
+R6c, yo_v6b minus yo_v4: +0.024 [-0.000, +0.053] -> CANNOT_TELL
+yo_v6b passes the plan rule: False
+PLAN RULE: YO v4 stays the model at work; YO v6 and v6b are reported as tried
