@@ -24,6 +24,7 @@ for D in sys.argv[1:3]:
     L.append(f'{n}: sign count pooled %d against %d p=%.3f | copy A %d against %d p=%.3f | copy B %d against %d p=%.3f' % (*st(kp), *st(ka), *st(kb)))
     L.append(f'{n}: median |residual| M31 {np.median(np.abs(kp["M31"])):.3f} MT {np.median(np.abs(kp["MT"])):.3f} | signed median MC {np.median(kp["MC"]):+.3f} M31 {np.median(kp["M31"]):+.3f} | median kick M {np.median(kp["M"]):+.3f} deg/readout')
     L.append(f'{n}: M31 residual opposite in sign to the kick (over-correction) on {int(np.sum(np.sign(kp["M31"]) != np.sign(kp["M"])))} of {len(S)} qubits')
+    L.append(f'{n}: shot-noise scale (copy-to-copy half-difference median) M31 {np.median(np.abs(ka["M31"] - kb["M31"])) / 2:.3f} MT {np.median(np.abs(ka["MT"] - kb["MT"])) / 2:.3f} deg/readout')
 a = json.load(open(sys.argv[3])); b = json.load(open(os.path.join(sys.argv[2], 'props_before_C.json'))); S = json.load(open(os.path.join(sys.argv[2], 'job_clock.json')))['S']
 def g(d, q, nm):
     for p in d['qubits'][q]:

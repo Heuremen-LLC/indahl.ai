@@ -96,3 +96,30 @@ packs: Q,P
 - P8: cannot tell: checked in the rendered page after the ship
 - P9: holds: no AI statement, no count of our things in headings, plain sentences, no semicolons
 - P10: holds: Addendum 3 and readings_compare lines labelled defined after the data on the page
+
+## 2026-11-01 08:20 Darkwave clock second fire, ibm_kingston 1 Nov, after the referee: clock cannot tell by the plan (copy labels differ), pooled inside the margin; ten-day table below by the plan with upper end on zero; plan note corrected; Addendum 4
+packs: Q,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: same arms in one job, same 117 qubits; nothing dropped; the fresh table finished 5 s before copy A after a 57 min queue wait, same IBM record before C, A, B and after
+- II: caught: the plan note said no first-fire label changed at 20,000 draws; my diff had cut the labels; kingston fire 1 R2 CONSISTENT -> CANNOT_TELL; now corrected in the plan and on the page
+- III: holds: ten-day table signed residual -0.08 [-0.21, +0.15] printed with its band through zero; no over-correction claimed
+- V: holds: plan FINAL at seed 31 beside the pooled seed spread (Addendum 3) and the plan rule per seed (Addendum 4); they disagree for R3 (15 vs 8 of 20 below), so it is printed as a lean
+- VI: fixed: R2 cannot tell (copy B past the margin by 0.0005); R3 and R4 below with the upper end on zero, printed with their per-seed counts, not as a change
+- R: holds: numbers from results_clock.text, readings_second.text (Addenda 3, 4) and readings_compare.text; job times from job_clock.json timestamps; record stamps from props files
+- QA: holds: IBM records the two tables ran under compared per untouched qubit (T1 113/116, T2 115/116, readout error 115/117, length 0/117); latest record 2 h 20 min before copy A
+- QB: holds: arms interleaved, equal scheduled durations 4921 dt in the dry run
+- QC: holds: known-good PASS -2.912 [-4.205, -1.903], 1.02 of the committed kick
+- QD: fixed: copy labels differ for R2 so FINAL is cannot tell; copy bands at the plan draw printed; copy gap +0.031 [-0.034, +0.078] printed
+- QE: holds: no mechanism named; Addendum 3 shown as fixed before this fire data; Addendum 4 lines labelled after the data
+- QF: fixed: provenance sentence per chip (56 s and 57 s), Addendum 3 time 12:08:49Z (public 292a5e21), job C queue wait from the record; the plan correction dated
+- QG: fixed: outside referee (same model family as the writer) read the raw files; all nine flags acted on: R3/R4 plan labels, -0.0505, first-fire wording, post-hoc labels both ways, provenance, over-correction wording, symmetric sizes and floors, copy gap, timing line
+- P1: n/a: the page quotes no one, nothing to check verbatim
+- P2: holds: every figure names its fire and file
+- P3: holds: arms named as the plan names them
+- P4: holds: no cause named for the queue wait or record changes
+- P5: holds: 99 % bootstrap over qubits as stated above the table; sign test labelled exact two-sided
+- P6: fixed: ten-day differences printed as below with the upper end on zero and per-seed counts, never as ageing
+- P7: holds: ledger rows before the surface ships; ship.sh only; verified live
+- P8: cannot tell: rendered page checked after the ship
+- P9: holds: no AI statement, plain sentences, no semicolons in the section
+- P10: holds: Addendum 4 lines and the copy bands labelled defined after the data

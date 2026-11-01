@@ -1,0 +1,17 @@
+SECOND RULERS (PLAN_CLOCK Addendum 3), ibm_kingston, fire 20261101_1159 UTC. Planned before this fire's data existed (Addendum 3 public 12:08:49 UTC 1 Nov, this fire's first job ran 12:55:54 UTC).
+(a) pooled clock reading over 20 bootstrap seeds: CONSISTENT 20 | lower end -0.0282 to -0.0276, upper end +0.0244 to +0.0252
+(b) qubits where the 31 Oct table leaves a larger |residual| than today's table: 63, smaller: 54, of 117; exact two-sided sign test p = 0.460
+(c) signed median kick M: -2.912 [-4.205, -1.903] deg/readout
+(c) signed median residual MC: -0.083 [-0.207, +0.151] deg/readout
+(c) signed median residual M31: +0.020 [-0.098, +0.100] deg/readout
+(c) signed median residual MT: -0.011 [-0.087, +0.102] deg/readout
+(d) M31: median |residual| pooled 0.245 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.142
+(d) MT: median |residual| pooled 0.229 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.185
+ADDENDUM 4 lines: defined after the data for this fire.
+(e) share M31 minus share MT over seeds 1-20: pooled label CONSISTENT 20 | the plan's rule (pooled if the copies agree) CANNOT_TELL 20
+(e) share MC minus share MT over seeds 1-20: pooled label BELOW 15, CANNOT_TELL 5 | the plan's rule (pooled if the copies agree) BELOW 8, CANNOT_TELL 12
+(e) share MC minus share M31 over seeds 1-20: pooled label BELOW 20 | the plan's rule (pooled if the copies agree) BELOW 17, CANNOT_TELL 3
+(f) share M31 minus share MT at the plan's draw: copy A +0.0150 [-0.0217, +0.0465] CONSISTENT | copy B -0.0156 [-0.0505, +0.0382] CANNOT_TELL
+(f) share MC minus share MT at the plan's draw: copy A -0.0212 [-0.0674, +0.0198] CANNOT_TELL | copy B -0.0330 [-0.0718, +0.0006] CANNOT_TELL
+(f) share MC minus share M31 at the plan's draw: copy A -0.0362 [-0.0769, +0.0010] CANNOT_TELL | copy B -0.0174 [-0.0727, +0.0159] CANNOT_TELL
+(g) today's table (job C) created 11:59:14, ran 12:55:54 to 12:56:29 UTC; copy A ran from 12:56:34, 5 s after job C finished; copy B from 12:56:49

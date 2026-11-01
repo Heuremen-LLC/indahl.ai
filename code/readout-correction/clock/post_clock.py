@@ -15,7 +15,10 @@ def Z(lab):
     z = np.load(f'{D}/raw_{lab}.npz'); order = list(range(len(keys))) if lab == 'A' else list(range(len(keys)))[::-1]
     return {keys[i]: z[f'fin_{i}'] for i in order}
 ZA, ZB = Z('A'), Z('B'); P = {k: [ZA[k], ZB[k]] for k in ZA}; key = 'share M31 minus share MT (margin 0.05)'
-L = [f'SECOND RULERS (PLAN_CLOCK Addendum 3), {rec["chip"]}, fire {rec["day_utc"]} UTC. ' + ('Defined after the data for the 1 November fires.' if rec['day_utc'].startswith('20261101') else 'Planned before this fire.')]
+import datetime as _dt
+_jc = [j for j in rec['jobs'] if j['label'] == 'C' and j.get('status') == 'DONE'][-1]; _tC = (_jc.get('timestamps') or {}).get('running') or _jc['submitted_utc']   # when this fire's first data was taken
+_A3 = '2026-11-01T12:08:49Z'   # Addendum 3 public (292a5e21)
+L = [f'SECOND RULERS (PLAN_CLOCK Addendum 3), {rec["chip"]}, fire {rec["day_utc"]} UTC. ' + ('Defined after the data for this fire.' if _tC[:19] < _A3[:19] else 'Planned before this fire\'s data existed (Addendum 3 public 12:08:49 UTC 1 Nov, this fire\'s first job ran ' + _tC[11:19] + ' UTC).')]
 labs, los, his = [], [], []
 for sd in range(1, 21):
     o, _ = C.read(P, nq, np.random.default_rng(sd)); labs.append(o[key]['out']); los.append(o[key]['lo']); his.append(o[key]['hi'])
@@ -33,3 +36,25 @@ for a in ('M', 'MC', 'M31', 'MT'):
 for a in ('M31', 'MT'):
     L.append(f'(d) {a}: median |residual| pooled {np.median(np.abs(kp[a])):.3f} deg/readout, shot-noise floor scale (copy-to-copy half-difference median) {np.median(np.abs(ka[a] - kb[a])) / 2:.3f}')
 open(f'{D}/readings_second.text', 'w').write('\n'.join(L) + '\n'); print('\n'.join(L))
+
+# ADDENDUM 4 (1 Nov 2026, after the outside referee of the ibm_kingston second fire): the seed spread for R3 and R4 too, the plan's
+# copies-agree rule applied at each seed, the copy bands at the plan's own draw, and when today's table was measured relative to the copies.
+L.append('ADDENDUM 4 lines: ' + ('defined after the data for this fire.' if rec['day_utc'] < '20261102' else 'planned before this fire.'))
+ks = ['share M31 minus share MT (margin 0.05)', 'share MC minus share MT (margin 0.05)', 'share MC minus share M31 (margin 0.05)']
+CA, CB = {k: [v] for k, v in ZA.items()}, {k: [v] for k, v in ZB.items()}
+pool, rule = {k: [] for k in ks}, {k: [] for k in ks}
+for sd in range(1, 21):
+    r_ = np.random.default_rng(sd); oa = C.read(CA, nq, r_)[0]; ob = C.read(CB, nq, r_)[0]; op = C.read(P, nq, r_)[0]
+    for k in ks: pool[k].append(op[k]['out']); rule[k].append(op[k]['out'] if oa[k]['out'] == ob[k]['out'] else 'CANNOT_TELL')
+for k in ks:
+    L.append(f'(e) {k.split(" (")[0]} over seeds 1-20: pooled label ' + ', '.join(f'{x} {pool[k].count(x)}' for x in ('ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL') if pool[k].count(x)) +
+             ' | the plan\'s rule (pooled if the copies agree) ' + ', '.join(f'{x} {rule[k].count(x)}' for x in ('ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL') if rule[k].count(x)))
+r_ = np.random.default_rng(31); oa = C.read(CA, nq, r_)[0]; ob = C.read(CB, nq, r_)[0]   # the plan's draw: analyze_clock.py reads A, then B, then pooled on one generator
+for k in ks: L.append(f'(f) {k.split(" (")[0]} at the plan\'s draw: copy A {oa[k]["v"]:+.4f} [{oa[k]["lo"]:+.4f}, {oa[k]["hi"]:+.4f}] {oa[k]["out"]} | copy B {ob[k]["v"]:+.4f} [{ob[k]["lo"]:+.4f}, {ob[k]["hi"]:+.4f}] {ob[k]["out"]}')
+ts = {j['label']: j.get('timestamps') for j in rec['jobs'] if j.get('status') == 'DONE'}
+try:
+    t = lambda s_: _dt.datetime.fromisoformat(s_.replace('Z', '+00:00'))
+    L.append(f'(g) today\'s table (job C) created {ts["C"]["created"][11:19]}, ran {ts["C"]["running"][11:19]} to {ts["C"]["finished"][11:19]} UTC; copy A ran from {ts["A"]["running"][11:19]}, '
+             f'{(t(ts["A"]["running"]) - t(ts["C"]["finished"])).total_seconds():.0f} s after job C finished; copy B from {ts["B"]["running"][11:19]}')
+except Exception as e: L.append('(g) job timing not in the record: ' + type(e).__name__)
+open(f'{D}/readings_second.text', 'w').write('\n'.join(L) + '\n'); print('\n'.join(L[-8:]))
