@@ -1,0 +1,47 @@
+ATLAS Data Pack
+Heuremen LLC · https://indahl.ai/atlas
+
+This pack mixes data from several sources. Each part keeps the licence of its source, and Heuremen LLC adds no restriction to any of them. The parts are listed here by file.
+
+1. OpenStreetMap data (Open Database License 1.0)
+
+© OpenStreetMap contributors. https://www.openstreetmap.org/copyright
+Licence: Open Database License (ODbL) 1.0. https://opendatacommons.org/licenses/odbl/1-0/
+
+This applies to every file that holds OpenStreetMap data or coordinates and counts derived from OpenStreetMap data, including coordinates found through OpenStreetMap Nominatim:
+
+- json/datacenters.json
+- csv/datacenters_osm.csv and geojson/datacenters_osm.geojson
+- csv/datacenters_epoch.csv and geojson/datacenters_epoch.geojson (the coordinates)
+- csv/scale_sites.csv, csv/scale_corrections.csv and csv/scale_states.csv, and json/scale.json
+- csv/electricity_states.csv (the data center counts), csv/electricity_meta.csv, and json/electricity.json
+
+No further restrictions may be added to these files. If you share them or a work made from them, the ODbL 1.0 applies to what you share.
+
+2. Epoch AI data (Creative Commons Attribution 4.0)
+
+Licence: CC BY 4.0. https://creativecommons.org/licenses/by/4.0/
+Citation: Epoch AI, "AI data centers". Published online at epoch.ai. Retrieved from "https://epoch.ai/data/ai-data-centers". Pulled 2026-10-28.
+
+This applies to csv/datacenters_epoch.csv, geojson/datacenters_epoch.geojson, the "epoch" list in json/datacenters.json, csv/scale_sites.csv, csv/scale_states.csv, csv/scale_corrections.csv, csv/scale_meta.csv, json/scale.json, and the Epoch columns of csv/electricity_states.csv.
+
+Changes made by Heuremen LLC: coordinates were added by geocoding the address text, with the US Census geocoder and then OpenStreetMap Nominatim. One geocoded point (Google Papillion) was replaced by a Nominatim point after the geocoder placed it in the wrong state. The columns placed, lat, lon and pulled were added. Epoch columns were renamed (for example Current H100 equivalents became h100e and Current power (MW) became mw), the owner text was cut at " #", and zero values in those two fields were left blank. The scale files add yearly energy and cost figures computed from Epoch's stated power and EIA prices.
+
+Where a file holds both Epoch fields and OpenStreetMap coordinates, both licences apply to it.
+
+3. US government data (public domain)
+
+U.S. Energy Information Administration, EIA-860M (2026-09), EIA-860 (2024), EIA-861 (2024) and State Historical Tables (2024), read 2026-10-28.
+Source: U.S. Energy Information Administration (2026-10-28). https://www.eia.gov/
+U.S. Environmental Protection Agency, eGRID2023 rev 2, read 2026-10-28. https://www.epa.gov/egrid
+U.S. Census Bureau geocoder, used to find coordinates for addresses. https://geocoding.geo.census.gov/
+
+These are works of the US government and are in the public domain. This applies to the plants, planned, utilities, carbon and electricity files outside the data center counts, and csv/electricity_us.csv and csv/electricity_us_ownership.csv.
+
+4. Heuremen LLC's own parts
+
+The README, SOURCES.md, NOTICE.txt, LICENSE.txt, START_HERE.html, verify.py, the build code, and the compilation of the data that is neither OpenStreetMap nor Epoch AI data (the flattening, the CSV and GeoJSON conversion, the column names).
+
+Heuremen LLC permits anyone to use, copy and change these parts with attribution to Heuremen LLC and https://indahl.ai/atlas.
+
+Heuremen LLC reserves text and data mining and use as AI training data for its own text only (the README, SOURCES.md, NOTICE.txt, LICENSE.txt and START_HERE.html). That reservation does not apply to any file derived from OpenStreetMap or Epoch AI and does not apply to public-domain data.

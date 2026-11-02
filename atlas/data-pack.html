@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATLAS Data Pack | Built Infrastructure | Heuremen LLC</title>
+<meta name="description" content="Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.">
+<link rel="canonical" href="https://indahl.ai/atlas/data-pack">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ATLAS Data Pack | Built Infrastructure | Heuremen LLC">
+<meta property="og:description" content="Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.">
+<meta property="og:url" content="https://indahl.ai/atlas/data-pack">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="ATLAS Data Pack | Built Infrastructure | Heuremen LLC">
+<meta name="twitter:description" content="Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="author" content="Heuremen LLC">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ATLAS Data Pack", "description": "Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.", "url": "https://indahl.ai/atlas/data-pack", "inLanguage": "en", "dateModified": "2026-11-01", "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": "https://indahl.ai/"}, "publisher": {"@type": "Organization", "name": "Heuremen LLC", "url": "https://indahl.ai/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Heuremen LLC", "item": "https://indahl.ai/"}, {"@type": "ListItem", "position": 2, "name": "ATLAS Data Pack", "item": "https://indahl.ai/atlas/data-pack"}]}</script>
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#f7f0e0">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Heuremen">
+<link rel="stylesheet" href="/style.css?v=@@CSSV@@">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links">@@NAV:/atlas/data-pack@@</nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>ATLAS Data Pack</h1><p class="sub">Heuremen LLC</p></div></section>
+<main class="wrap">
+<main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/atlas/atlas-data-pack.zip" download>Download (zip)</a> <span class="meta">sha256 <code>4e7ac2a035d7c9990c2cac3fc2ee3c9a71aadd556de891dfe9bbaac03d8749ef</code> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/atlas-data-pack">code (git)</a></span></p><p>The data behind the ATLAS pages at <a href="https://indahl.ai/atlas">https://indahl.ai/atlas</a>, as files you can open in a spreadsheet, a GIS tool or Python. Each dataset comes as the original JSON file unchanged, as CSV with one row per record, and for points on a map as GeoJSON. Each dataset carries its own build or pull date, or data year, listed in SOURCES.md.</p>
+<h2>What is in each file</h2>
+<p>Data centers (<code>json/datacenters.json</code>): {N_OSM} features from OpenStreetMap and {N_EPOCH} US sites from Epoch AI. They come as <code>csv/datacenters_osm.csv</code>, <code>csv/datacenters_epoch.csv</code>, <code>geojson/datacenters_osm.geojson</code> and <code>geojson/datacenters_epoch.geojson</code>. {N_EPOCH_UNPLACED} Epoch sites have no coordinates, so their GeoJSON features have a null geometry. Each OpenStreetMap row carries its source and its OpenStreetMap object id. Each row in both files carries the pull date in a <code>pulled</code> column.</p>
+<p>Operating power plants (<code>json/plants.json</code>): {N_PLANTS} plants from the EIA monthly generator inventory. They come as <code>csv/plants.csv</code> and <code>geojson/plants.geojson</code>. Capacity by fuel is in the columns that start with <code>mw_</code>. A blank means the plant has no capacity in that fuel.</p>
+<p>Planned power plants (<code>json/planned.json</code>): {N_PLANNED} plants. They come as <code>csv/planned.csv</code>, <code>csv/planned_generators.csv</code> and <code>geojson/planned.geojson</code>. The <code>planned_generators.csv</code> file has one row for each planned generator with its year, megawatts and fuel, taken from the <code>years</code> list of each plant. The same list is kept as text in the <code>years_json</code> column of <code>planned.csv</code>.</p>
+<p>Electricity (<code>json/electricity.json</code>): prices, sales and generation for {N_STATES} states, including the District of Columbia. They come as <code>csv/electricity_states.csv</code>, one row per state with the data center counts kept in the <code>data_centers_</code> columns. The national figures are in <code>csv/electricity_us.csv</code> and <code>csv/electricity_us_ownership.csv</code>.</p>
+<p>Utilities (<code>json/utilities.json</code>): {N_UTIL} rows of bundled EIA-861 data, one per utility and state, as <code>csv/utilities.csv</code>.</p>
+<p>Carbon (<code>json/carbon.json</code>): EPA eGRID emission rates for {N_CARBON_STATES} states as <code>csv/carbon_states.csv</code>, {N_SUBREGIONS} grid regions as <code>csv/carbon_subregions.csv</code> and the national figures as <code>csv/carbon_us.csv</code>.</p>
+<p>Cost to scale (<code>json/scale.json</code>): one year of electricity at the stated power of the Epoch AI sites. It comes as <code>csv/scale_sites.csv</code> with {N_SITES} sites, <code>csv/scale_states.csv</code> with {N_SCALE_STATES} states and <code>csv/scale_corrections.csv</code> with {N_CORR} correction. The method and the totals are in <code>csv/scale_meta.csv</code>.</p>
+<p>Every dataset also has a <code>csv/&lt;name&gt;_meta.csv</code> file with two columns, <code>key</code> and <code>value</code>. It holds the fields that describe the whole dataset, such as the source text, the method, the units, the legend bins and the build date.</p>
+<h2>Sources and dates</h2>
+<p>SOURCES.md lists the upstream sources, their links, their licences and the dates found in the data. NOTICE.txt carries the attribution lines. The OpenStreetMap rows are shared under the ODbL 1.0 with the line © OpenStreetMap contributors.</p>
+<p>Only the data center rows carry a source in every row. The plants, planned plants, electricity, utilities, carbon and scale files carry one source statement for the whole dataset, in the <code>source</code> or <code>sources</code> entry of the JSON and in the <code>_meta.csv</code> file. They have no source column per row. Their rows carry the build date or the data year as a column instead.</p>
+<h2>How to open the files</h2>
+<p>Spreadsheet: open any file in <code>csv/</code>. The files are UTF-8 with a byte order mark so Excel reads names correctly. Empty text and missing values are both shown as blank cells.</p>
+<p>GIS tool: add any file in <code>geojson/</code> as a vector layer. Coordinates are in longitude and latitude order in WGS 84. Properties keep their nested structure, and a tool that cannot read nested values will show them as text.</p>
+<p>Python, standard library only:</p>
+<p>``<code> import json, csv rows = list(csv.DictReader(open(&quot;csv/plants.csv&quot;, encoding=&quot;utf-8-sig&quot;))) plants = json.load(open(&quot;json/plants.json&quot;))[&quot;plants&quot;] points = json.load(open(&quot;geojson/plants.geojson&quot;))[&quot;features&quot;] </code>``</p>
+<p>Check the pack with <code>python verify.py</code>. It recounts the rows of every file, compares every CSV cell with the JSON and compares the GeoJSON features with the JSON records.</p>
+<h2>What is here</h2>
+<ul><li><code>json/</code>: the original files from the ATLAS data folder, unchanged</li><li><code>csv/</code>: one CSV for each table, plus the <code>_meta.csv</code> files</li><li><code>geojson/</code>: data centers, operating plants and planned plants as FeatureCollections</li><li><code>SOURCES.md</code>: upstream sources, links, licences and dates</li><li><code>NOTICE.txt</code>: upstream licences and attribution</li><li><code>verify.py</code>: recounts and compares the files</li><li><code>START_HERE.html</code>: this guide as a page</li><li><code>LICENSE.txt</code>, <code>CITATION.cff</code></li></ul>
+<h2>Links</h2>
+<ul><li>ATLAS: <a href="https://indahl.ai/atlas">https://indahl.ai/atlas</a></li><li>Electricity: <a href="https://indahl.ai/atlas/electricity">https://indahl.ai/atlas/electricity</a></li><li>Power plants: <a href="https://indahl.ai/atlas/power-plants">https://indahl.ai/atlas/power-plants</a></li><li>Planned plants: <a href="https://indahl.ai/atlas/planned-plants">https://indahl.ai/atlas/planned-plants</a></li><li>Carbon: <a href="https://indahl.ai/atlas/carbon">https://indahl.ai/atlas/carbon</a></li><li>Code: <a href="https://github.com/Heuremen-LLC/indahl.ai">https://github.com/Heuremen-LLC/indahl.ai</a></li><li>Data on Hugging Face: <a href="https://huggingface.co/indahl">https://huggingface.co/indahl</a></li><li>OpenStreetMap: <a href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright</a></li><li>Epoch AI: <a href="https://epoch.ai/data/ai-data-centers">https://epoch.ai/data/ai-data-centers</a></li><li>EIA-861: <a href="https://www.eia.gov/electricity/data/eia861/">https://www.eia.gov/electricity/data/eia861/</a></li><li>EIA-860M: <a href="https://www.eia.gov/electricity/data/eia860m/">https://www.eia.gov/electricity/data/eia860m/</a></li><li>EPA eGRID: <a href="https://www.epa.gov/egrid">https://www.epa.gov/egrid</a></li></ul>
+<h2>Notes on the data</h2>
+<p>The text in <code>json/scale.json</code> refers to our build step and names a script and a file path. That file is not in this pack. The JSON files are kept unchanged, so the text stays as it was written.</p>
+<h2>Known data issues</h2>
+<p>These are points in the source data whose coordinates do not match their stated state. They are drawn as given and are not corrected in any file. Colossus 2 in <code>datacenters_epoch</code> sits about 57 m from the Tennessee and Mississippi line, and its state in the scale files comes from the simplified state outlines.</p>
+<p>{COORD_ISSUES}</p>
+<h2>Terms</h2>
+<p>Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch&#x27;s citation, and where a file holds both, both apply. EIA, EPA and US Census data are US government works in the public domain.</p>
+<p>Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and <a href="https://indahl.ai/atlas">https://indahl.ai/atlas</a>. Its reservation against text and data mining and AI training covers its own text only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.</p></main>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-2632E179</p>
+</div></footer>
+<nav class="tabbar" aria-label="Divisions"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/hermes">HERMES</a><a href="/atlas">ATLAS</a><a href="/oy">OY</a><a href="/stack">STACK</a></nav>
+<script src="/pwa.js" defer></script>
+<script src="/live-tags.js?v=806615f8" defer></script>
+<script src="/headline.js?v=b01367d9" defer></script>
+</body>
+</html>
