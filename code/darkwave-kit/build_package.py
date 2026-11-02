@@ -15,7 +15,7 @@ for d, tag in (('2026-11-02-darkwave-kit-check', 'fire1_v1.0'), ('2026-11-02-dar
 import glob as _g
 cp(sorted(_g.glob(HW + '2026-11-02-darkwave-kit-check-2/kick_table_ibm_kingston_*.json'))[-1], 'hardware-check/kick_table_ibm_kingston_2nov2026.json')
 open(D + '/hardware-check/README.md', 'w').write('# Hardware check\n\nTwo preregistered fires on ibm_kingston, 2 November 2026: fire1_v1.0 (failed: the correction gave back 0.264 of the turn) and fire2_v1.1 (passed: 1.012). '
-    'Each folder holds its plan, its results and its README. Raw arrays, circuits and calibration records: https://github.com/Heuremen-LLC/heuremen.org/tree/main/experiments\n')
+    'Each folder holds its plan, its results and its README. Raw arrays, circuits and calibration records: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/darkwave-kit/hardware-check\n')
 open(D + '/examples/README.md', 'w').write('# Example tables\n\nThe tables measured minutes before our 31 October 2026 run (fields k4 and k8: degrees per readout from blocks of 4 and 8 readouts, cohD8: coherence of the idle comparison). '
     'They are in the study\'s format and cannot be used with the kit\'s apply command. They come from the study\'s public files (https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/readout-correction/run/data) and show the size of the turn we saw. They are not a table for your run.\n')
 sp = importlib.util.spec_from_file_location('qc', B + 'qia_package/src/qia_check.py'); qc = importlib.util.module_from_spec(sp); sp.loader.exec_module(qc)

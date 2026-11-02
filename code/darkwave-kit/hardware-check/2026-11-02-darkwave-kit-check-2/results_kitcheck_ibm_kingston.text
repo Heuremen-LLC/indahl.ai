@@ -1,0 +1,8 @@
+Darkwave Correction Kit, known-good run on ibm_kingston (PLAN_KITCHECK.md.text). Jobs: job1 dbju8h8nceqs73akq4jg 20 s, job2 dbju8opkdqps7391chdg 9 s
+Kit table read two ways (packed arrays and the kit's own get_counts path) agree: True
+Kit turn per readout, median over 117 targets: -3.224 deg. Study code k4 median: -3.251 deg.
+R1 kit minus study (same job), median -0.041 deg/readout [-0.231, +0.101] -> CONSISTENT (margin +-0.5). Share of targets differing by more than 1 deg: 0.085. Correlation +0.645.
+R2a residual turn after the kit's correction, median +0.086 deg/readout [-0.007, +0.180] -> CONSISTENT (margin +-0.5).
+R2b share given back, median +1.012 [+0.993, +1.027] over 113 targets -> ABOVE against 0.5. Uncorrected turn in job 2, median -3.223 deg/readout.
+Reported, not in the rule: kit table minus the study's 31 Oct table (k4), median -0.042 [-0.114, +0.126] deg/readout over 117 targets.
+Bands: 95 % bootstrap over targets, 2,000 resamples, seed 41.
