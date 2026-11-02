@@ -4,7 +4,7 @@ title: "IRIS Research Package: checks on language-model evaluation outputs befor
 authors:
   - name: "Heuremen LLC"
 version: 1.0.0
-date-released: 2026-11-01
+date-released: "2026-11-01"
 url: "https://indahl.ai/iris/package"
 repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
 keywords: [language models, evaluation, benchmarks, LLM-as-judge, reproducibility, parser check, repeat floor]

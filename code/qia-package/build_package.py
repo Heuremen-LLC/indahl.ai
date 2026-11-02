@@ -10,10 +10,12 @@ for f in ('qia_check.py', 'README.md', 'CITATION.cff'): cp(H + '/src/' + f, f)
 cp(B + 'public_mirror/indahl.ai/LICENSE.txt', 'LICENSE.txt')
 cp(B + 'yo/release/yo_audit.py', 'yo/yo_audit.py')
 for f in ('run_check.py', 'PLAN.md', 'README.md', 'requirements.txt'): cp(PUB + 't1t2-check/' + f, 't1t2-check/' + f)
-for r, _, fs in os.walk(PUB + 'checks'):
+CB = B + 'iris_package/dist/iris-research-package/check-block'   # 2 Nov: the cleaned check block, built and tested in the IRIS package
+assert os.path.isdir(CB), 'build the IRIS package first'
+for r, _, fs in os.walk(CB):
     for f in fs:
         if '__pycache__' in r or f.endswith('.pyc'): continue
-        p = os.path.join(r, f); cp(p, 'check-block/' + os.path.relpath(p, PUB + 'checks'))
+        p = os.path.join(r, f); cp(p, 'check-block/' + os.path.relpath(p, CB))
 cp(B + 'indahl-ai/quantum-idle-audit.pdf', 'papers/a-readout-is-not-an-idle.pdf')
 def get(u, dst):
     os.makedirs(os.path.dirname(D + '/' + dst), exist_ok=True)
