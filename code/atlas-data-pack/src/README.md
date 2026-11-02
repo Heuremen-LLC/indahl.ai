@@ -2,7 +2,7 @@
 
 Heuremen LLC · https://indahl.ai/atlas
 
-The data behind the ATLAS pages at https://indahl.ai/atlas, as files you can open in a spreadsheet, a GIS tool or Python. Each dataset comes as the original JSON file unchanged, as CSV with one row per record, and for points on a map as GeoJSON. Each dataset carries its own build or pull date, listed in SOURCES.md.
+The data behind the ATLAS pages at https://indahl.ai/atlas, as files you can open in a spreadsheet, a GIS tool or Python. Each dataset comes as the original JSON file unchanged, as CSV with one row per record, and for points on a map as GeoJSON. Each dataset carries its own build or pull date, or data year, listed in SOURCES.md.
 
 ## What is in each file
 
@@ -71,8 +71,18 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 - EIA-860M: https://www.eia.gov/electricity/data/eia860m/
 - EPA eGRID: https://www.epa.gov/egrid
 
+## Notes on the data
+
+The text in `json/scale.json` refers to our build step and names a script and a file path. That file is not in this pack. The JSON files are kept unchanged, so the text stays as it was written.
+
+## Known data issues
+
+These are points in the source data whose coordinates do not match their stated state. They are drawn as given and are not corrected in any file. Colossus 2 in `datacenters_epoch` sits about 57 m from the Tennessee and Mississippi line, and its state in the scale files comes from the simplified state outlines.
+
+{COORD_ISSUES}
+
 ## Terms
 
-Free to download, read and cite with attribution to Heuremen LLC and https://indahl.ai/atlas
+Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch's citation, and where a file holds both, both apply. EIA, EPA and US Census data are US government works in the public domain.
 
-Upstream data keep their upstream licences, listed in NOTICE.txt. Use of Heuremen LLC's compilation, text or code to train, fine-tune or build AI models is not permitted. See LICENSE.txt.
+Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. Its reservation against text and data mining and AI training covers its own text only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.

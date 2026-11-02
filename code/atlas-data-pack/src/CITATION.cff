@@ -3,8 +3,8 @@ message: "If you use this data pack, please cite it."
 title: "ATLAS Data Pack: US data centers, power plants, electricity prices and carbon intensity"
 authors:
   - name: "Heuremen LLC"
-version: 1.0.0
-date-released: 2026-11-01
+version: "1.0.0"
+date-released: "2026-11-01"
 url: "https://indahl.ai/atlas/data-pack"
 repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
 keywords: [data centers, power plants, electricity prices, carbon intensity, OpenStreetMap, EIA, eGRID, GeoJSON]

@@ -1,31 +1,29 @@
 ATLAS Data Pack
 Heuremen LLC · https://indahl.ai/atlas
 
-Upstream data and their licences
+Attribution. The full terms are in LICENSE.txt and this notice says the same.
 
 OpenStreetMap
-  Used in: json/datacenters.json (the "osm" list), csv/datacenters_osm.csv, geojson/datacenters_osm.geojson, the data center counts in the electricity files, and coordinates found through Nominatim for the Epoch AI sites.
-  © OpenStreetMap contributors
-  Licence: Open Database Licence (ODbL) 1.0. https://opendatacommons.org/licenses/odbl/1-0/
-  Copyright and attribution: https://www.openstreetmap.org/copyright
-  The files named above contain or derive from OpenStreetMap data and are shared under the ODbL 1.0.
+  © OpenStreetMap contributors. https://www.openstreetmap.org/copyright
+  Open Database License (ODbL) 1.0. https://opendatacommons.org/licenses/odbl/1-0/
+  Applies to json/datacenters.json, datacenters_osm.*, datacenters_epoch.*, scale_sites.csv, scale_states.csv, scale_corrections.csv, json/scale.json, json/electricity.json, electricity_states.csv and electricity_meta.csv. The Epoch AI files carry coordinates found through OpenStreetMap Nominatim, so the ODbL applies to them. No further restrictions may be added.
 
 Epoch AI, AI data centers
-  Used in: the "epoch" list of json/datacenters.json, csv/datacenters_epoch.csv, geojson/datacenters_epoch.geojson, and the sites in json/scale.json.
-  Source: https://epoch.ai/data/ai-data-centers
-  Licence: Creative Commons Attribution 4.0 (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/
-  Coordinates for these sites were added by Heuremen LLC.
+  Epoch AI, "AI data centers". Published online at epoch.ai. Retrieved from "https://epoch.ai/data/ai-data-centers". Pulled 2026-10-28.
+  Creative Commons Attribution 4.0 (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/
+  Applies to datacenters_epoch.*, the "epoch" list in json/datacenters.json, the scale files and the Epoch columns of electricity_states.csv.
+  Changes by Heuremen LLC: coordinates were added by geocoding the address text. One geocoded point (Google Papillion) was replaced after the geocoder placed it in the wrong state. The columns placed, lat, lon and pulled were added. Epoch columns were renamed (for example Current H100 equivalents became h100e and Current power (MW) became mw), the owner text was cut at " #", and zero values in those two fields were left blank. The scale files add yearly energy and cost figures.
+  Where a file holds both Epoch fields and OpenStreetMap coordinates, both licences apply.
 
-U.S. Energy Information Administration (EIA-861, EIA-860M, State Historical Tables)
-  Used in: plants, planned, electricity, utilities and scale files.
-  https://www.eia.gov/electricity/data/
-  U.S. government data.
+U.S. Energy Information Administration
+  Source: U.S. Energy Information Administration (2026-10-28). https://www.eia.gov/
+  EIA-860M 2026-09, EIA-860 2024, EIA-861 2024 and State Historical Tables 2024. Public domain.
 
-U.S. Environmental Protection Agency (eGRID2023)
-  Used in: carbon files.
-  https://www.epa.gov/egrid
-  U.S. government data.
+U.S. Environmental Protection Agency
+  eGRID2023 rev 2. https://www.epa.gov/egrid . Public domain.
 
-Heuremen LLC compilation
+U.S. Census Bureau
+  Geocoder used for addresses. https://geocoding.geo.census.gov/ . Public domain.
 
-The selection, flattening, CSV and GeoJSON conversion, the cost-to-scale arithmetic, the text and the code in this pack are by Heuremen LLC and are covered by LICENSE.txt. LICENSE.txt does not change the licence of any upstream data listed above. Each upstream source keeps its own licence and its own attribution requirements.
+Heuremen LLC
+  The README, SOURCES.md, NOTICE.txt, LICENSE.txt, START_HERE.html, verify.py, the build code and the compilation of non-OpenStreetMap, non-Epoch data may be used, copied and changed with attribution to Heuremen LLC and https://indahl.ai/atlas. The reservation against text and data mining and AI training covers Heuremen LLC's own text only. It does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.
