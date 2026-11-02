@@ -1,11 +1,33 @@
 {
- "updated": "01 Nov 22:14 UTC",
- "reads_held": 2448,
+ "updated": "02 Nov 00:00 UTC",
+ "reads_held": 2502,
  "processors": [
   {
+   "backend": "ibm_fez",
+   "pending": 1,
+   "change_24h": -1066,
+   "our_jobs": 20,
+   "our_median_wait": "2 s",
+   "our_longest_wait": "3.0 h",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
+   "backend": "ibm_kingston",
+   "pending": 1,
+   "change_24h": -43,
+   "our_jobs": 20,
+   "our_median_wait": "2 s",
+   "our_longest_wait": "2.1 h",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
    "backend": "ibm_marrakesh",
-   "pending": 0,
-   "change_24h": 0,
+   "pending": 1,
+   "change_24h": 1,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "3 min",
@@ -15,8 +37,8 @@
   },
   {
    "backend": "ibm_pittsburgh",
-   "pending": 0,
-   "change_24h": -32,
+   "pending": 1,
+   "change_24h": -50,
    "our_jobs": 20,
    "our_median_wait": "11 s",
    "our_longest_wait": "110 min",
@@ -25,31 +47,9 @@
    "outcome": "COMMITTED"
   },
   {
-   "backend": "ibm_fez",
-   "pending": 1,
-   "change_24h": -1147,
-   "our_jobs": 20,
-   "our_median_wait": "1 s",
-   "our_longest_wait": "3.0 h",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
-   "backend": "ibm_kingston",
-   "pending": 7,
-   "change_24h": 7,
-   "our_jobs": 20,
-   "our_median_wait": "2 s",
-   "our_longest_wait": "2.1 h",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
    "backend": "ibm_boston",
-   "pending": 96,
-   "change_24h": -614,
+   "pending": 151,
+   "change_24h": -672,
    "our_jobs": 12,
    "our_median_wait": "53 min",
    "our_longest_wait": "25.2 h",
@@ -59,10 +59,10 @@
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 1149,
-   "change_24h": -670,
-   "our_jobs": 18,
-   "our_median_wait": "22 min",
+   "pending": 1105,
+   "change_24h": -693,
+   "our_jobs": 19,
+   "our_median_wait": "20 min",
    "our_longest_wait": "7.1 h",
    "our_queued_now": 0,
    "our_oldest_queued": null,

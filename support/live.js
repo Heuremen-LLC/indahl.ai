@@ -7,6 +7,7 @@
   var TABLES = [{"title": "Supported cycles (the pre-registered test)", "path": "all", "label": "Supported cycles", "first": "", "cols": [["Tested", "tested", "n"], ["Unreleased", "unreleased", "n"], ["Share unreleased, 95% interval over products", "share", "pct"], ["Wilson 95% interval low (a share from 0 to 1), cycles as independent", "wilson_lo", "n"], ["Wilson 95% interval high", "wilson_hi", "n"], ["Outcome", "outcome", "oc"]]}, {"title": "By product, defined after the first read", "path": "product_level", "first": "Products", "cols": [["Products tested", "tested", "n"], ["Products meeting it", "unreleased", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Cycles whose end of life has passed: where the last release falls against the stated date", "path": "after_eol", "first": "Last release", "cols": [["Cycles", "cycles", "n"]]}, {"title": "Products with unreleased supported cycles", "path": "by_product", "first": "Product", "cols": [["Tested", "tested", "n"], ["Unreleased", "unreleased", "n"], ["Share unreleased, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "The unreleased cycles, longest first", "path": "silent_list", "first": "Product", "firstkey": "product", "cols": [["Cycle", "cycle", "t"], ["Latest release", "last", "t"], ["Stated end of life", "eol", "t"], ["Days since the latest release", "days", "n"]]}], TOP = "{products} products and {cycles} release cycles read from endoflife.date. Controls: {gate}. Updated {updated} UTC.";
   function cell(kind, row, key, T) {
     var v = row[key];
+    if (kind === 'url') { var uc = td(''); if (typeof v === 'string' && /^https?:\/\//.test(v)) { var ua = document.createElement('a'); ua.href = v; ua.textContent = 'open'; uc.appendChild(ua); } return uc; }
     if (kind === 'n') return td(v == null && T.nullword ? T.nullword : v, 1); if (kind === 'oc') return td(OC[v] || v);
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
@@ -27,8 +28,9 @@
       var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object' || Array.isArray(src[k]); });
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
-      var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr><th>' + T.first + '</th>' + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
-      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(lab(T, r)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1], T)); }); b.appendChild(tr); });
+      var nolab = flat && !T.label && !T.first;   // 1 Nov: a one-row table with no row label drops the empty first column
+      var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr>' + (nolab ? '' : '<th>' + T.first + '</th>') + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
+      var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); if (!nolab) tr.appendChild(lab(T, r)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1], T)); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });
