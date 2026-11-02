@@ -2302,7 +2302,7 @@ def main():
     # of /qia, and the download (built by ~/bones-forge/qia_package/build_package.py into public/qia/qia-research-package.zip).
     _pk_sha = open(os.path.join(_pub, 'qia', 'qia-research-package.zip.sha256')).read().split()[0]
     _pk_body = """<p class="lede">Check the IBM Quantum calibration record your run depends on, before the run and after it. One download. Your files are opened read-only and never changed. Reports go to their own folder. Run on saved files, the checker sends nothing anywhere.</p>
-<p class="pkgget"><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download the package (zip)</a> <span class="meta">sha256 <code>{SHA}</code> &middot; version 1.0.0 &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/qia-package">code (git)</a></span></p>
+<p class="pkgget"><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download the package (zip)</a> <span class="meta">sha256 <code>{SHA}</code> &middot; version 1.0.0 &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/qia-package">code (git)</a></span></p>@@QIA_CITE@@
 <h2>Before a run</h2>
 <ol>
 <li>Save the record you are about to run under, or let the checker pull it with your own saved IBM account (needs <code>pip install qiskit-ibm-runtime</code>): <code>python qia_check.py before --pull ibm_kingston</code></li>
@@ -2345,6 +2345,12 @@ def main():
     # shows only once its zip and sha256 are in public/, so each one ships when its referee is done.
     import html as _ph, re as _pr
     _MARK = '<svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>'
+    # 2 Nov 2026: Zenodo DOIs for every package (zenodo_packs/dois.json), shown where the download is
+    try: _DOI = _jsonld.load(open(os.path.join(HERE, '..', 'zenodo_packs', 'dois.json')))
+    except Exception: _DOI = {}
+    def _cite(name):
+        d = (_DOI.get(name) or {}).get('doi')
+        return f'<p class="pkgalso">Cite: <a href="https://doi.org/{d}">doi:{d}</a> (Zenodo)</p>' if d else ''
     def _md_body(md):
         out = []
         for blk in md.split('\n\n'):
@@ -2364,7 +2370,7 @@ def main():
     def _tested(dist_md):
         f = os.path.join(HERE, '..', dist_md)
         return ('<section id="tested"><h2>How it was tested</h2>' + _md_body(open(f, encoding='utf-8').read()) + '</section>') if os.path.exists(f) else ''
-    PAGES['/qia/package'] = PAGES['/qia/package'].replace('@@QIA_TESTED@@', _tested('qia_package/dist/qia-research-package/TESTED.md'), 1)
+    PAGES['/qia/package'] = PAGES['/qia/package'].replace('@@QIA_CITE@@', _cite('QIA Research Package'), 1).replace('@@QIA_TESTED@@', _tested('qia_package/dist/qia-research-package/TESTED.md'), 1)
     def _place(path, box):
         i = PAGES[path].index('<main class="wrap">') + len('<main class="wrap">'); PAGES[path] = PAGES[path][:i] + box + PAGES[path][i:]
     _LISTP = {'/qia': ('qia/qia-list-pack.zip', 'QIA List Pack'), '/iris': ('iris/iris-list-pack.zip', 'IRIS List Pack')}
@@ -2373,7 +2379,7 @@ def main():
         if not _ls: continue
         _lbox = (f'<aside class="pkgbox"><span class="pkghead">{_MARK}{_lt}</span><p>Every study on this List as CSV, BibTeX and RIS, with the key to the codes. '
                  f'Ready for Zotero, a reference manager or a spreadsheet.</p><p class="pkgtested">Tested: every study on this List is in every file.</p><p><a class="pkgbtn" href="/{_lz}" download>Download</a> '
-                 f'<span class="meta">sha256 <code>{_ls[:12]}</code></span></p></aside>')
+                 f'<span class="meta">sha256 <code>{_ls[:12]}</code></span></p>' + _cite(_lt) + '</aside>')
         _place(_lp + '/list', _lbox)
         if _lp == '/qia': PAGES['/qia'] = PAGES['/qia'].replace('<a href="/qia/package">What is in it</a></p></aside>', f'<a href="/qia/package">What is in it</a></p><p class="pkgalso">Also: <a href="/{_lz}" download>{_lt}</a> (every study on the List, CSV and BibTeX)</p></aside>', 1)
     _PKGS = [('/darkwave', '/darkwave/kit', 'darkwave/darkwave-correction-kit.zip', 'Darkwave Correction Kit', 'darkwave_kit/src/README.md',
@@ -2401,7 +2407,7 @@ def main():
         if not _zs: continue
         _md = open(os.path.join(HERE, '..', _src), encoding='utf-8').read()
         _body = (f'<main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/{_z}" download>Download (zip)</a> <span class="meta">sha256 <code>{_zs}</code> &middot; '
-                 f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack', '/oy/data-pack': 'oy-data-pack', '/hermes/model/data-pack': 'model-data-pack'}[_pg] + '">code (git)</a></span></p>' + _md_body(_md) + (_tested(_TESTED[_pg][1]) if _TESTED[_pg][1] else '') + '</main>')
+                 f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack', '/oy/data-pack': 'oy-data-pack', '/hermes/model/data-pack': 'model-data-pack'}[_pg] + '">code (git)</a></span></p>' + _cite({'/darkwave/kit': 'Darkwave Correction Kit', '/iris/package': 'IRIS Research Package', '/atlas/data-pack': 'ATLAS Data Pack', '/oy/data-pack': 'OY Data Pack', '/hermes/model/data-pack': 'MODEL Data Pack'}[_pg]) + _md_body(_md) + (_tested(_TESTED[_pg][1]) if _TESTED[_pg][1] else '') + '</main>')
         PAGES[_pg] = page(_pg, _ttl, _dsc, _body, hero_slim(_t, 'Heuremen LLC'))
         _place(_home, _box(_t, _pg, _txt, _z, tested=_TESTED[_pg][0]))
     if _sha('iris/iris-list-pack.zip') and '/iris/package' in PAGES:
