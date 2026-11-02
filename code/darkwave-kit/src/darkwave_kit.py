@@ -131,7 +131,9 @@ def cmd_measure(a):
         print('Checks passed. Nothing has been submitted. Add --yes to submit one job. IBM bills it by its quantum seconds, shown on your plan after the job.')
         return
     print('Submitting one job.')
-    job = SamplerV2(mode=b).run([tc[k] for k in keys()], shots=a.shots); print('job', job.job_id()); res = job.result()
+    smp = SamplerV2(mode=b)   # no dynamical decoupling and no twirling: either would change what happens during the idle arm's wait
+    smp.options.dynamical_decoupling.enable = False; smp.options.twirling.enable_gates = False; smp.options.twirling.enable_measure = False
+    job = smp.run([tc[k] for k in keys()], shots=a.shots); print('job', job.job_id()); res = job.result()
     counts = {}
     for k, r in zip(keys(), res):
         c, s = p1_from(r.data.fin.get_counts(), len(targets)); counts[k] = (c, s)
