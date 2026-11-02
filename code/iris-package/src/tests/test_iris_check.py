@@ -107,8 +107,10 @@ class T(unittest.TestCase):
         rows[0]['id'] = 2.0; rows[1]['id'] = 7; rows[2]['id'] = '7.0'                    # ids that are not strings
         rows.append({'correct': True}); rows.append({'id': 'nc'}); rows.append({'id': 'nb', 'correct': 'maybe'}); rows.append(dict(rows[10]))
         jl(os.path.join(self.data, 'messy.jsonl'), rows[:5] + ['', ''] + rows[5:])
-        self.rep(self.f('A2'), os.path.join(self.data, 'messy.jsonl')); r = {x['run']: x for x in self.report()['runs']}['messy.jsonl']
-        self.assertEqual((r['blank_lines'], r['missing_id_field'], r['missing_correct_field'], r['non_boolean_correct'], r['duplicate_ids_left_out']), (2, 1, 1, 1, 1))
+        c = self.rep(self.f('A2'), os.path.join(self.data, 'messy.jsonl')); self.assertIn('rows read 304 = usable 299 + missing id 1 + missing correct field 1 + not a boolean 1 + duplicate rows 2 (1 duplicate ids)', c.stdout); r = {x['run']: x for x in self.report()['runs']}['messy.jsonl']
+        self.assertEqual((r['blank_lines'], r['missing_id_field'], r['missing_correct_field'], r['non_boolean_correct'], r['duplicate_rows'], r['duplicate_ids']), (2, 1, 1, 1, 2, 1))
+        self.assertEqual((r['rows_read'], r['usable_items']), (304, 299)); self.assertTrue(r['ties_out'])   # 304 = 299 + 1 + 1 + 1 + 2
+        self.assertEqual(r['rows_read'], r['usable_items'] + r['missing_id_field'] + r['missing_correct_field'] + r['non_boolean_correct'] + r['duplicate_rows'])
         self.assertEqual(r['ids_normalised_to_text'], 2); self.assertIn('nb', r['examples']); self.assertIn('nc', r['examples']); self.assertIn('line', r['examples'])
     def test_id_types_are_one_id(self):
         jl(os.path.join(self.data, 'x.jsonl'), [dict(id=i, correct=True) for i in range(30)]); jl(os.path.join(self.data, 'y.jsonl'), [dict(id=str(i), correct=(i % 2 == 0)) for i in range(30)])
@@ -122,6 +124,16 @@ class T(unittest.TestCase):
         self.assertEqual(rows[('A1.jsonl', 'short.jsonl')]['left_out_a'], 300)
         self.assertIn('WARNING', r.stderr); self.assertIn('A1.jsonl loses 75.0%', r.stderr); self.assertTrue(self.report()['drop_warnings'])
         with open(latest(self.out, 'repeat_*.html')) as f: self.assertIn('WARNING', f.read())
+    def test_row_counted_once_by_precedence(self):   # a row with a missing correct field is not also a duplicate, a row with no id is not also a missing correct field
+        jl(os.path.join(self.data, 'p.jsonl'), [dict(id='a', correct=True), dict(id='a'), dict(id='b', correct=True), dict(correct=False), dict(id='c', correct='maybe'), dict(id='c', correct=True)])
+        self.rep(os.path.join(self.data, 'p.jsonl'), self.f('A2')); r = {x['run']: x for x in self.report()['runs']}['p.jsonl']
+        self.assertEqual((r['rows_read'], r['usable_items'], r['missing_id_field'], r['missing_correct_field'], r['non_boolean_correct'], r['duplicate_rows'], r['duplicate_ids']), (6, 3, 1, 1, 1, 0, 0))
+        self.assertTrue(r['ties_out'])
+    def test_warning_always_lists_ids_not_in_other_run(self):   # item 1
+        rows = readjl(self.f('A2')); m = rows[:340] + [{'id': x['id']} for x in rows[340:380]]; jl(os.path.join(self.data, 'm.jsonl'), m)
+        r = self.rep(self.f('A1'), os.path.join(self.data, 'm.jsonl')); w = self.report()['drop_warnings']; wm = [x for x in w if x.startswith('m.jsonl')][0]; wa = [x for x in w if x.startswith('A1.jsonl')][0]
+        self.assertIn('missing correct field: 40', wm); self.assertIn('ids not in the other run: 0', wm); self.assertIn('ids not in the other run: 60', wa)
+        self.assertIn('ids not in the other run: 60', r.stderr)
     def test_no_warning_at_or_below_five_percent(self):
         jl(os.path.join(self.data, 'few.jsonl'), readjl(self.f('A2'))[:381])   # 19 of 400 left out is 4.75%
         r = self.rep(self.f('A1'), os.path.join(self.data, 'few.jsonl')); self.assertNotIn('WARNING', r.stderr); self.assertEqual(self.report()['drop_warnings'], [])
@@ -130,7 +142,7 @@ class T(unittest.TestCase):
     # ---- sample, tally
     def sample(self, *extra): return run('sample', self.f('parser'), '--reply-field', 'reply', '--extracted-field', 'pred', '--label-field', 'family', '--id-field', 'id', '--out', self.out, *extra)
     def sheet(self):
-        with open(latest(self.out, 'sample_*.csv'), newline='', encoding='utf-8') as f: return list(csv.DictReader(f))
+        with open(latest(self.out, 'sample_*.csv'), newline='', encoding='utf-8-sig') as f: return list(csv.DictReader(f))
     def test_sample_shape_seed_and_fields(self):
         self.sample(); rows = self.sheet(); self.assertEqual(len(rows), 30)
         for fam in ('good', 'bad', 'edge'): self.assertEqual(sum(r['label'] == fam for r in rows), 10)
@@ -147,11 +159,11 @@ class T(unittest.TestCase):
         for r in rows:   # the reader's verdict: the answer is the last number in the reply
             r['read'] = read; r['misparsed'] = 'x' if re.findall(r'\d+', r['reply'])[-1] != r['extracted'] else ''
         p = os.path.join(self.sh, 'filled.csv'); wcsv(p, rows, ['label', 'id', 'reply', 'extracted', 'read', 'misparsed']); return p
-    def tally(self, p, ok=True):
-        o2 = os.path.join(self.tmp, 'tally'); r = run('sample', '--tally', p, '--out', o2, ok=ok)
+    def tally(self, p, ok=True, record=None):
+        o2 = os.path.join(self.tmp, 'tally'); shutil.rmtree(o2, ignore_errors=True); r = run('sample', '--tally', p, '--out', o2, *(['--record', record] if record else []), ok=ok)
         return r, ({x['label']: x for x in jload(latest(o2, 'tally_*.json'))['tally']} if r.returncode == 0 else None)
     def test_tally_rule_on_planted_parser_errors(self):
-        self.sample(); rows = self.sheet(); r, t = self.tally(self.fill(rows)); src = {x['id']: x for x in readjl(self.f('parser'))}
+        self.sample(); rows = self.sheet(); r, t = self.tally(self.fill(rows), record=latest(self.out, 'sample_*.json')); src = {x['id']: x for x in readjl(self.f('parser'))}
         self.assertEqual((t['good']['misparsed'], t['good']['reading']), (0, 'rate can be read'))
         self.assertEqual((t['bad']['misparsed'], t['bad']['reading']), (10, 'cannot tell (parser)'))
         k = sum(src[x['id']]['pred'] != str(int(x['id'].split('-')[1])) for x in rows if x['label'] == 'edge'); self.assertEqual(t['edge']['misparsed'], k)
@@ -166,13 +178,16 @@ class T(unittest.TestCase):
         p = os.path.join(self.sh, 'u.csv'); wcsv(p, rows, ['label', 'id', 'reply', 'extracted', 'read', 'misparsed']); r, t = self.tally(p)
         self.assertEqual((t['L']['unread'], t['L']['reading']), (1, 'cannot tell (not read)')); self.assertEqual(t['M']['reading'], 'rate can be read'); self.assertIn('1 unread', r.stdout)
     def test_tally_accepts_words_and_names_bad_rows(self):
-        cols = ['label', 'id', 'reply', 'extracted', 'read', 'misparsed']; words = ['ok', 'y', 'yes', '0', 'no', 'n', 'false', 'f', '', 'OK']
+        cols = ['label', 'id', 'reply', 'extracted', 'read', 'misparsed']; words = ['ok', 'fine', '0', 'no', 'n', 'false', '', 'OK', 'Fine', ' no ']
         p = os.path.join(self.sh, 'w.csv'); wcsv(p, [dict(label='L', id=i, reply='r', extracted='e', read='x', misparsed=w) for i, w in enumerate(words)], cols)
         self.assertEqual(self.tally(p)[1]['L']['misparsed'], 0)
-        p = os.path.join(self.sh, 'w2.csv'); wcsv(p, [dict(label='L', id=i, reply='r', extracted='e', read='x', misparsed=w) for i, w in enumerate(['x', 'bad', '1', 'wrong', 'X'])], cols)
-        self.assertEqual(self.tally(p)[1]['L']['misparsed'], 5)
+        p = os.path.join(self.sh, 'w2.csv'); wcsv(p, [dict(label='L', id=i, reply='r', extracted='e', read='x', misparsed=w) for i, w in enumerate(['x', 'bad', '1', 'wrong', 'X', 'misparsed'])], cols)
+        self.assertEqual(self.tally(p)[1]['L']['misparsed'], 6)
         p = os.path.join(self.sh, 'w3.csv'); wcsv(p, [dict(label='L', id='a', reply='r', extracted='e', read='x', misparsed=''), dict(label='L', id='b7', reply='r', extracted='e', read='x', misparsed='maybe')], cols)
         r, _ = self.tally(p, ok=False); self.assertNotEqual(r.returncode, 0); self.assertIn("sheet row 3 (label 'L', id 'b7')", r.stderr); self.assertIn("'maybe'", r.stderr); self.assertNotIn('Traceback', r.stderr)
+        for w in ('yes', 'y', 'f', 'Y', 'true'):   # ambiguous or unlisted, so each is an error that names the row
+            p = os.path.join(self.sh, 'amb.csv'); wcsv(p, [dict(label='L', id='r1', reply='r', extracted='e', read='x', misparsed=w)], cols)
+            r, _ = self.tally(p, ok=False); self.assertNotEqual(r.returncode, 0, w); self.assertIn("sheet row 2 (label 'L', id 'r1')", r.stderr)
         p = os.path.join(self.sh, 'w4.csv'); wcsv(p, [dict(label='L', id='u', reply='r', extracted='e', read='', misparsed='x')], cols); self.assertIn('read cell is blank', self.tally(p, ok=False)[0].stderr)
         p = os.path.join(self.sh, 'w5.csv'); wcsv(p, [dict(label='L', id='u', reply='r', extracted='e', read='yes', misparsed='')], cols); self.assertIn('read cell holds', self.tally(p, ok=False)[0].stderr)
     def test_tally_reads_utf8_with_bom(self):   # item 7
@@ -187,11 +202,66 @@ class T(unittest.TestCase):
         self.assertEqual((rows['0']['reply'], rows['0']['extracted'], rows['0']['label']), ("'=1+1", "'-5", "'=SUM(A1)")); self.assertEqual((rows['1']['reply'], rows['1']['extracted']), ("'+3", "'@x"))
         self.assertEqual((rows['2']['reply'], rows['2']['extracted']), ("'\tTab", "'\rCR")); self.assertEqual(rows['3']['reply'], 'plain')
     def test_sample_counts_skipped_rows_and_none_labels(self):   # item 10
-        jl(os.path.join(self.data, 's.jsonl'), [dict(id=1, family='a', reply='r', pred='p'), '', dict(id=2, reply='r', pred='p'), dict(id=3, family=None, reply='r', pred='p'), dict(id=4, family='a', reply='r'), '', dict(id=5, family='a', reply='r', pred='p')])
+        jl(os.path.join(self.data, 's.jsonl'), [dict(id=1, family='a', reply='r', pred='p'), '', dict(id=2, reply='r', pred='p'), dict(id=3, family=None, reply='r', pred='p'), dict(id=4, family='a', reply='r'), '', dict(id=5, family='a', reply='r', pred='p'), dict(id=6, family='a', reply=None, pred='p')])
         r = run('sample', os.path.join(self.data, 's.jsonl'), '--reply-field', 'reply', '--extracted-field', 'pred', '--label-field', 'family', '--id-field', 'id', '--out', self.out)
         sk = jload(latest(self.out, 'sample_*.json'))['skipped']
-        self.assertEqual((sk['blank_lines'], sk['rows_skipped_missing_field'], sk['rows_with_null_label_shown_as_none'], sk['rows_read']), (2, 1, 2, 5)); self.assertIn('blank lines 2', r.stdout.replace('| ', '')) if False else None
-        self.assertIn('blank lines 2', r.stdout); self.assertIn('skipped for a missing field 1', r.stdout); self.assertEqual({x['label'] for x in self.sheet()}, {'a', '(none)'})
+        self.assertEqual((sk['blank_lines'], sk['rows_skipped_missing_field'], sk['rows_with_null_label_shown_as_none'], sk['rows_read']), (2, 2, 2, 6))   # the JSON null reply of id 6 is missing, not the text null
+        self.assertIn('blank lines 2', r.stdout); self.assertIn('skipped for a missing field 2', r.stdout); self.assertEqual({x['label'] for x in self.sheet()}, {'a', '(none)'}); self.assertNotIn('null', ' '.join(x['reply'] + x['extracted'] for x in self.sheet()))
+    # ---- second referee
+    def test_to_bool_accepts_listed_values(self):   # item 7
+        for v in (True, 1, 1.0, 'TRUE', 't', 'Yes', 'y', 'correct', '1'): self.assertIs(IC.to_bool(v), True, v)
+        for v in (False, 0, 0.0, 'false', 'F', 'no', 'N', 'incorrect', '0'): self.assertIs(IC.to_bool(v), False, v)
+        for v in ('maybe', 2, 0.5, [], None, {}, ''): self.assertIsNone(IC.to_bool(v), v)
+        jl(os.path.join(self.data, 'fl.jsonl'), [dict(id=i, correct=float(i % 2)) for i in range(30)]); jl(os.path.join(self.data, 'fl2.jsonl'), [dict(id=i, correct=bool(i % 2)) for i in range(30)])
+        self.rep(os.path.join(self.data, 'fl.jsonl'), os.path.join(self.data, 'fl2.jsonl')); self.assertEqual(self.report()['repeat_A'][0]['items_flipped'], 0)
+    def test_tiny_p_shown_as_less_than(self):   # item 8
+        x = {str(i): True for i in range(2000)}; y = {str(i): False for i in range(2000)}
+        c = IC.compare(x, y, sorted(x, key=int), 0.02, 200, 1); self.assertEqual(c['mcnemar_exact_p'], '<1e-300'); self.assertEqual(c['outcome'], 'ABOVE')
+        a, b = self.pair_dicts(); self.assertIsInstance(IC.compare(a, b, sorted(a), 0.02, 200, 1)['mcnemar_exact_p'], float)   # an ordinary p stays a number
+    def pair_dicts(self):
+        a = {f'q{i}': i % 3 != 0 for i in range(400)}; b = dict(a)
+        for i in range(0, 120, 3): b[f'q{i}'] = True
+        return a, b
+    def test_upper_quantile_index(self):   # item 8
+        self.assertEqual(IC.ci_bounds(list(range(2000))), (49, 1949)); self.assertEqual(IC.ci_bounds(list(range(1000))), (24, 974))
+    def test_bootstrap_method_is_reported_above_5000(self):   # item 4
+        n = 6000; x = {str(i): i % 2 == 0 for i in range(n)}; y = dict(x)
+        for i in range(0, 300, 2): y[str(i)] = False
+        jl(os.path.join(self.data, 'big_a.jsonl'), [dict(id=k, correct=v) for k, v in x.items()]); jl(os.path.join(self.data, 'big_b.jsonl'), [dict(id=k, correct=v) for k, v in y.items()])
+        self.rep(os.path.join(self.data, 'big_a.jsonl'), '--vs', os.path.join(self.data, 'big_b.jsonl')); j = self.report()
+        self.assertTrue(j['comparison'][0]['bootstrap'].startswith('count draws')); self.assertTrue(any('count draws' in m and 'Python version' in m and 'approximate' in m for m in j['meta']))
+        self.assertEqual(j['comparison'][0]['outcome'], 'ABOVE')
+        self.rep(self.f('A1'), '--vs', self.f('B1')); self.assertEqual(self.report()['comparison'][0]['bootstrap'], 'items resampled'); self.assertFalse(any('count draws' in m for m in self.report()['meta']))
+    def test_tally_cp1252_sheet_gets_a_plain_instruction(self):   # item 5
+        p = os.path.join(self.sh, 'cp.csv')
+        with open(p, 'wb') as f: f.write('label,id,reply,extracted,read,misparsed\ncaf\u00e9,1,r,e,x,\n'.encode('cp1252'))
+        r, _ = self.tally(p, ok=False); self.assertNotEqual(r.returncode, 0); self.assertIn('CSV UTF-8', r.stderr); self.assertNotIn('Traceback', r.stderr)
+    def test_sample_csv_has_bom(self):   # item 6
+        self.sample()
+        with open(latest(self.out, 'sample_*.csv'), 'rb') as f: self.assertEqual(f.read(3), b'\xef\xbb\xbf')
+    def test_formula_labels_round_trip_through_the_tally(self):   # item 6
+        labs = ['=SUM(A1)', "'=x", 'plain', '-1']
+        jl(os.path.join(self.data, 'fl3.jsonl'), [dict(id=f'{l}{i}', family=l, reply='r 5', pred='5') for l in labs for i in range(10)])
+        run('sample', os.path.join(self.data, 'fl3.jsonl'), '--reply-field', 'reply', '--extracted-field', 'pred', '--label-field', 'family', '--id-field', 'id', '--out', self.out)
+        rows = self.sheet(); self.assertEqual({r['label'] for r in rows}, {"'=SUM(A1)", "''=x", 'plain', "'-1"})
+        for r in rows: r['read'] = 'x'
+        p = os.path.join(self.sh, 'fl3.csv'); wcsv(p, rows, ['label', 'id', 'reply', 'extracted', 'read', 'misparsed'])
+        r, t = self.tally(p, record=latest(self.out, 'sample_*.json')); self.assertEqual(set(t), set(labs)); self.assertTrue(all(x['reading'] == 'rate can be read' for x in t.values()))
+    def test_deleted_rows_are_caught_against_the_record(self):   # item 9
+        self.sample(); rows = self.sheet(); rec = latest(self.out, 'sample_*.json'); gone = [r for r in rows if r['label'] == 'bad'][:3]; kept = [r for r in rows if r not in gone]
+        p = self.fill(kept); r, t = self.tally(p, record=rec)
+        self.assertEqual((t['bad']['rows'], t['bad']['rows_missing'], t['bad']['reading']), (7, 3, 'cannot tell (rows missing)')); self.assertEqual(t['good']['reading'], 'rate can be read')
+        self.assertTrue(all(i['id'] in t['bad']['missing_ids_examples'] for i in gone[:3])); self.assertIn('3 rows missing', r.stdout)
+        p = self.fill([r for r in rows if r['label'] != 'edge']); r, t = self.tally(p, record=rec); self.assertEqual((t['edge']['rows'], t['edge']['reading']), (0, 'cannot tell (rows missing)'))   # a whole label deleted
+        p = self.fill(rows + [dict(rows[0])]); r, _ = self.tally(p, record=rec, ok=False); self.assertNotEqual(r.returncode, 0); self.assertIn('rows were added or copied', r.stderr)
+        shutil.copy(rec, os.path.join(self.sh, 'filled.json')); r, t = self.tally(self.fill(kept)); self.assertEqual(t['bad']['reading'], 'cannot tell (rows missing)')   # record found beside the sheet by name
+        shutil.rmtree(os.path.join(self.tmp, 'tally')); os.remove(os.path.join(self.sh, 'filled.json')); r, t = self.tally(self.fill(kept)); self.assertIn('NOTE: no sample record', r.stderr); self.assertEqual(t['bad']['reading'], 'cannot tell (parser)')   # without the record the missing rows cannot be seen, so the other rules decide
+    def test_licence_text_matches_the_code(self):   # item 3
+        root = os.path.dirname(H) if os.path.exists(os.path.join(os.path.dirname(H), 'LICENSE.txt')) else None
+        if root is None: self.skipTest('LICENSE.txt is not beside the tests')
+        with open(os.path.join(root, 'LICENSE.txt'), encoding='utf-8') as f: lic = f.read()
+        for w in ('may be run, copied and changed by anyone, for any purpose', 'https://indahl.ai/iris', 'not permitted', 'keep their own terms', 'faultsguards'): self.assertIn(w, lic)
+        with open(TOOL, encoding='utf-8') as f: self.assertIn('permits anyone to run, copy and change this code', f.read())
     # ---- replycheck
     def test_replycheck_help_and_named_arguments(self):
         rc = os.path.join(ROOT, 'parser-check', 'replycheck.py')

@@ -44,21 +44,33 @@ tok.update({'DC_PULLED': d['pulled'], 'OSM_PAGE_COUNT': '1,649 of 1,853 features
             'CARBON_YEAR': c['data_year'], 'CARBON_BUILT': c['built'], 'SCALE_PRICE_YEAR': s['price_year'], 'SCALE_BUILT': s['built']})
 assert tok['N_OSM'] == '1,649', 'the page count 1,649 no longer matches the data'
 import sys; sys.path.insert(0, H + '/tools'); import coord_scan
-_hint = {('plants.json', 70557): ', which is in California', ('planned.json', 64670): ', which is in California'}
+_hint = {70557: ', which is in California', 64670: ', which is in California', 70519: ', which is in the Atlantic south of Nantucket',
+         68028: ', which is in Mississippi, and its utility is Entergy Mississippi LLC'}
 _items = []
-for _f in ('plants.json', 'planned.json'):
-    for _p in coord_scan.scan(_f)[0]:
-        _items.append(f"- `{_f}` code {_p['code']} \"{_p['name']}\": stated state {_p['state']}, point at {_p['lat']}, {_p['lon']}{_hint.get((_f, _p['code']), '')}")
-assert len(_items) >= 2, 'the scan no longer finds the two known records'
-tok['COORD_ISSUES'] = ('A rough check was run over every plant and planned plant. A record is listed when its point lies more than 1 degree outside an approximate latitude and longitude box for its stated state. '
-    'The check does not catch a point that is wrong but still inside the box, or in a neighbouring state. It lists ' + str(len(_items)) + ' records.\n\n' + '\n'.join(_items))
+for _f, _p, _w in coord_scan.scan_all():
+    _r = ' and '.join(x for x in ('outside the state box' if _w['box'] else '', f"{_w['near_km']} km from the nearest record of its state" if _w['near_km'] else '') if x)
+    _items.append(f"- `{_f}` code {_p['code']} \"{_p['name']}\": stated state {_p['state']}, point at {_p['lat']}, {_p['lon']}{_hint.get(_p['code'], '')}. Flagged: {_r}.")
+assert {70557, 64670, 68028} <= {int(i.split('code ')[1].split(' ')[0]) for i in _items}, 'the scan no longer finds the known records'
+tok['COORD_ISSUES'] = ('Rule 1, state box: a record is listed when its point lies more than 1 degree outside an approximate latitude and longitude box for its stated state. '
+    'Rule 2, nearest same-state record: plants and planned plants are pooled by stated state, and a record is listed when the nearest other record of its state is more than ' + str(coord_scan.NEAR_KM) + ' km away. Alaska and Hawaii are skipped by rule 2. '
+    'Neither rule catches a wrong point that sits close to other records of the state or inside the box. A flag is a reason to look and not a finding. Some remote plants are flagged by rule 2 alone. The rules list ' + str(len(_items)) + ' records.\n\n' + '\n'.join(_items))
+_ep = [r for r in csv.DictReader(open(B + 'atlas/raw/epoch/data_centers.csv', encoding='utf-8'))]
+_us = [r for r in _ep if r['Country'] == 'United States']; assert len(_us) == len(d['epoch'])
+tok['N_EPOCH_ALL'] = str(len(_ep)); tok['N_TAG'] = str(sum(1 for r in _us if '#' in r['Owner'])); tok['N_OWNER_EMPTY'] = str(sum(1 for r in _us if not r['Owner'].strip()))
+assert not any(r['Owner'].strip().startswith('#') for r in _us), 'an owner that is only a tag exists'
+assert sorted(r['Name'] for r in _us) == sorted(x['name'] for x in d['epoch']), 'Epoch names differ from the pack data'
 def fill(t):
     for k, v in tok.items(): t = t.replace('{' + k + '}', str(v))
     left = re.findall(r'\{[A-Z_]+\}', t); assert not left, left
     return t
 for f in ('README.md', 'SOURCES.md'): open(D + '/' + f, 'w').write(fill(open(H + '/src/' + f).read()))
-for f in ('NOTICE.txt', 'CITATION.cff'): shutil.copy(H + '/src/' + f, D + '/' + f)
-shutil.copy(H + '/src/LICENSE.txt', D + '/LICENSE.txt')
+for f in ('LICENSE.txt', 'NOTICE.txt'): open(D + '/' + f, 'w').write(fill(open(H + '/src/' + f).read()))
+shutil.copy(H + '/src/CITATION.cff', D + '/CITATION.cff')
+_paths = lambda f: set(re.findall(r'(?:json|csv|geojson)/[A-Za-z0-9_]+\.(?:json|csv|geojson)', open(D + '/' + f).read()))
+assert _paths('LICENSE.txt') == _paths('NOTICE.txt'), ('LICENSE and NOTICE list different files', _paths('LICENSE.txt') ^ _paths('NOTICE.txt'))
+assert all(os.path.exists(D + '/' + p) for p in _paths('LICENSE.txt')), 'a listed file is missing from the pack'
+_all = {f'{x}/{y}' for x in ('json', 'csv', 'geojson') for y in os.listdir(D + '/' + x)}
+assert _all == _paths('LICENSE.txt'), ('files not covered by LICENSE.txt', _all ^ _paths('LICENSE.txt'))
 # 4. START_HERE.html from README.md, with the logo
 LOGO = ('<svg viewBox="0 0 200 200" width="44" height="44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="9">'
         '<polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5" fill="currentColor"/></svg>')

@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this data pack, please cite it."
+message: "If you use this data pack, please cite it. It includes data © OpenStreetMap contributors (ODbL 1.0) and data from Epoch AI (CC BY 4.0). Licences are given by file in LICENSE.txt."
+comment: "Licences are given by file in LICENSE.txt."
 title: "ATLAS Data Pack: US data centers, power plants, electricity prices and carbon intensity"
 authors:
   - name: "Heuremen LLC"

@@ -15,7 +15,7 @@ def cptree(src, dst):
             p = os.path.join(r, f); cp(p, dst + '/' + os.path.relpath(p, src))
 for f in ('iris_check.py', 'README.md', 'CITATION.cff'): cp(H + '/src/' + f, f)
 cptree(H + '/src/tests', 'tests')
-cp(B + 'public_mirror/indahl.ai/LICENSE.txt', 'LICENSE.txt')
+cp(H + '/src/LICENSE.txt', 'LICENSE.txt')   # pack-specific licence
 cptree(PUB + 'checks', 'check-block')
 cp(H + '/src/check-block/SPEC.md', 'check-block/SPEC.md'); cp(H + '/src/check-block/example/CHECKS.md', 'check-block/example/CHECKS.md')   # our own clean versions: core, pack L and pack P only; the original example stays out
 def patch(path, pairs):
@@ -37,6 +37,7 @@ patch('check-block/readcheck_hook.py', [("results, readings, hand-checks, outcom
 patch('check-block/README.md', [
     ("the packs for quantum hardware (Q), language-model evaluations (L), public\n  copy (P) and live operations (O). Each pack line comes from a mistake we made, with its date.", "the packs for language-model evaluations (L) and public\n  copy (P)."),
     (" Our own release ledger runs the same check, so a new public number, or a change to one,\nis refused without a complete entry.", ""),
+    ("License: LICENSE.txt in the repository root.", "License: LICENSE.txt at the top of this package. The check block code may be run, copied and changed by anyone for any purpose, with attribution to Heuremen LLC and https://indahl.ai/iris"),
     ("`example/CHECKS.md`: a real entry, from our pass over every page of indahl.ai with this block on 30 October 2026.", "`example/CHECKS.md`: a fictional entry, written to show the format."),
     ("python3 readcheck.py new path/to/run", "mkdir -p path/to/run     # the folder given to new must exist\npython3 readcheck.py new path/to/run")])
 IR = PUB + 'iris/'

@@ -2,7 +2,7 @@
 
 Heuremen LLC · https://indahl.ai/atlas
 
-The data behind the ATLAS pages at https://indahl.ai/atlas, as files you can open in a spreadsheet, a GIS tool or Python. Each dataset comes as the original JSON file unchanged, as CSV with one row per record, and for points on a map as GeoJSON. Each dataset carries its own build or pull date, or data year, listed in SOURCES.md.
+The data behind the ATLAS pages at https://indahl.ai/atlas, as files you can open in a spreadsheet, a GIS tool or Python. Each dataset comes as the original JSON file unchanged, as CSV with one row per record, and for points on a map as GeoJSON. Each dataset carries its own build or pull date, or data year, listed in SOURCES.md. Epoch AI values are as of the pull date, 2026-10-28, and Epoch has updated some sites since.
 
 ## What is in each file
 
@@ -77,7 +77,7 @@ The text in `json/scale.json` refers to our build step and names a script and a 
 
 ## Known data issues
 
-These are points in the source data whose coordinates do not match their stated state. They are drawn as given and are not corrected in any file. Colossus 2 in `datacenters_epoch` sits about 57 m from the Tennessee and Mississippi line, and its state in the scale files comes from the simplified state outlines.
+This list comes from two rough checks and is not complete. It names records whose point may not match the stated state. The records are drawn as given and are not corrected in any file. Colossus 2 in `datacenters_epoch` sits about 57 m from the Tennessee and Mississippi line, and its state in the scale files comes from the simplified state outlines.
 
 {COORD_ISSUES}
 
@@ -85,4 +85,4 @@ These are points in the source data whose coordinates do not match their stated 
 
 Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch's citation, and where a file holds both, both apply. EIA, EPA and US Census data are US government works in the public domain.
 
-Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. Its reservation against text and data mining and AI training covers its own text only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.
+Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For its own text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt and START_HERE.html) that permission does not include use as AI training data. Its reservation against text and data mining and AI training covers those text files only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.
