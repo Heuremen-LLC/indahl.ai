@@ -49,7 +49,7 @@
 <h2>1. Self-test, no account needed</h2>
 <p><code>python darkwave_kit.py selftest</code></p>
 <p>On the simulator it plants a known turn on five qubits, from 0 to 62 degrees per readout, measures it, applies the correction and measures again. It passes when every planted value comes back within 1 degree and every corrected value sits within 1 degree of zero. It tests the analysis, the bit order of the simulator&#x27;s counts and the placement of the correction. It does not test hardware noise, real readout timing or your IBM account.</p>
-<h2>Tested on IBM hardware</h2>
+<h2 id="tested">Tested on IBM hardware</h2>
 <p>We tested the kit on ibm_kingston on 2 November 2026 under plans committed and public before each job. The study&#x27;s 39-qubit readout pack and its 117 untouched qubits were used, with the study&#x27;s own calibration code running in the same job as the reference.</p>
 <ul><li>Version 1.0 read the same turn as the study&#x27;s code (kit minus study +0.025 [-0.063, +0.143] degrees per readout) but its correction gave back
   only 0.264 [0.248, 0.285] of the turn, and it failed the test. Its apply step merged readouts separated by barriers into one group, so a

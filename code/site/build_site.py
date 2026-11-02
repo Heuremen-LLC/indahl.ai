@@ -2256,7 +2256,7 @@ def _page_dates(docs):
     return {p: v[1] for p, v in out.items()}
 
 # 1 Nov 2026: QIA Research Package box (top right of /qia) and download button, added before the stylesheet version stamp is taken
-CSS += ".pkgbox{float:right;width:280px;margin:8px 0 16px 24px;padding:14px 16px;border:2px solid var(--rule);background:var(--paper2);font-size:15px;line-height:1.45}.pkgbox p{margin:8px 0}.pkghead{display:flex;align-items:center;gap:8px;font:400 19px/1.2 \"Abril Fatface\",Georgia,serif;color:var(--ink);text-decoration:none}.pkghead .mark{width:28px;height:28px;flex:none}.pkgbtn{display:inline-block;padding:6px 14px;background:var(--ink);color:var(--paper)!important;text-decoration:none;border-radius:2px;margin-right:10px}.pkgbtn:hover{background:var(--goldink)}.pkgget{margin:18px 0}.pkgalso{font-size:14px;margin:6px 0 0}@media (max-width:700px){.pkgbox{float:none;width:auto;margin:8px 0 16px}}\n"
+CSS += ".pkgbox{float:right;width:280px;margin:8px 0 16px 24px;padding:14px 16px;border:2px solid var(--rule);background:var(--paper2);font-size:15px;line-height:1.45}.pkgbox p{margin:8px 0}.pkghead{display:flex;align-items:center;gap:8px;font:400 19px/1.2 \"Abril Fatface\",Georgia,serif;color:var(--ink);text-decoration:none}.pkghead .mark{width:28px;height:28px;flex:none}.pkgbtn{display:inline-block;padding:6px 14px;background:var(--ink);color:var(--paper)!important;text-decoration:none;border-radius:2px;margin-right:10px}.pkgbtn:hover{background:var(--goldink)}.pkgget{margin:18px 0}.pkgalso{font-size:14px;margin:6px 0 0}.pkgtested{font-size:14px;margin:6px 0;color:var(--goldink)}@media (max-width:700px){.pkgbox{float:none;width:auto;margin:8px 0 16px}}\n"
 def main():
     names = {}
     import hashlib as _hh
@@ -2319,9 +2319,10 @@ def main():
 <p class="meta">Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/qia. Your results remain yours. The text, papers and data follow the license file in the package, and their use to train, fine-tune or build AI models is not permitted. <a href="/qia">QIA</a> &middot; <a href="/qia/list">List</a> &middot; <a href="/qia/key">Key</a></p>""".replace('{SHA}', _pk_sha)
     PAGES['/qia/package'] = page('/qia/package', 'QIA Research Package | Quantum Idle Audit | Heuremen LLC',
         'Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.',
-        '<main class="wrap">' + _pk_body + '</main>', hero_slim('QIA Research Package', 'Heuremen LLC'))
+        '<main class="wrap">' + _pk_body + '@@QIA_TESTED@@</main>', hero_slim('QIA Research Package', 'Heuremen LLC'))
     _pk_box = ('<aside class="pkgbox"><a class="pkghead" href="/qia/package"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>QIA Research Package</a>'
                '<p>For runs on IBM quantum hardware. Check the calibration record your run depends on, before the run and after it. Record checker, YO, the Faults and Guards, and a same-job T1 and T2 check.</p>'
+               '<p class="pkgtested">Tested on real IBM records and a live run. <a href="/qia/package#tested">How it was tested</a></p>'
                '<p><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download</a> <a href="/qia/package">What is in it</a></p></aside>')
     assert PAGES['/qia'].count(_SLOT) == 1, 'QIA headline slot'
     PAGES['/qia'] = PAGES['/qia'].replace(_SLOT, _pk_box + _SLOT, 1)   # before the headline, so it floats at the top right
@@ -2335,16 +2336,20 @@ def main():
             b = _ph.escape(blk.strip()); b = _pr.sub(r'`([^`]+)`', r'<code>\1</code>', b)
             b = _pr.sub(r'(?<![\w/"])(https://[^\s<·]*[^\s<·.,;:)])', r'<a href="\1">\1</a>', b)
             if not b or b.startswith('# ') or b.startswith('Heuremen LLC &middot;') or b.startswith('Heuremen LLC ·'): continue
-            if b.startswith('## '): out.append('<h2>' + b[3:] + '</h2>')
+            if b.startswith('## '): out.append(('<h2 id="tested">' if b[3:].startswith('Tested on') else '<h2>') + b[3:] + '</h2>')
             elif _pr.match(r'^(-|\d\.) ', b): out.append('<ul>' + ''.join('<li>' + _pr.sub(r'^(-|\d\.) ', '', l.strip()) + '</li>' for l in _pr.split(r'\n(?=(?:-|\d\.) )', b)) + '</ul>')
             else: out.append('<p>' + b.replace('\n', ' ') + '</p>')
         return '\n'.join(out)
     def _sha(rel):
         f = os.path.join(_pub, rel + '.sha256')
         return open(f).read().split()[0] if os.path.exists(f) else None
-    def _box(title, href, text, zip_rel, extra=''):
-        return (f'<aside class="pkgbox"><a class="pkghead" href="{href}">{_MARK}{title}</a><p>{text}</p>'
+    def _box(title, href, text, zip_rel, extra='', tested=''):
+        return (f'<aside class="pkgbox"><a class="pkghead" href="{href}">{_MARK}{title}</a><p>{text}</p>' + (f'<p class="pkgtested">{tested} <a href="{href}#tested">How it was tested</a></p>' if tested else '') +
                 f'<p><a class="pkgbtn" href="/{zip_rel}" download>Download</a> <a href="{href}">What is in it</a></p>{extra}</aside>')
+    def _tested(dist_md):
+        f = os.path.join(HERE, '..', dist_md)
+        return ('<section id="tested"><h2>How it was tested</h2>' + _md_body(open(f, encoding='utf-8').read()) + '</section>') if os.path.exists(f) else ''
+    PAGES['/qia/package'] = PAGES['/qia/package'].replace('@@QIA_TESTED@@', _tested('qia_package/dist/qia-research-package/TESTED.md'), 1)
     def _place(path, box):
         i = PAGES[path].index('<main class="wrap">') + len('<main class="wrap">'); PAGES[path] = PAGES[path][:i] + box + PAGES[path][i:]
     _LISTP = {'/qia': ('qia/qia-list-pack.zip', 'QIA List Pack'), '/iris': ('iris/iris-list-pack.zip', 'IRIS List Pack')}
@@ -2352,12 +2357,12 @@ def main():
         _ls = _sha(_lz)
         if not _ls: continue
         _lbox = (f'<aside class="pkgbox"><span class="pkghead">{_MARK}{_lt}</span><p>Every study on this List as CSV, BibTeX and RIS, with the key to the codes. '
-                 f'Ready for Zotero, a reference manager or a spreadsheet.</p><p><a class="pkgbtn" href="/{_lz}" download>Download</a> '
+                 f'Ready for Zotero, a reference manager or a spreadsheet.</p><p class="pkgtested">Tested: every study on this List is in every file.</p><p><a class="pkgbtn" href="/{_lz}" download>Download</a> '
                  f'<span class="meta">sha256 <code>{_ls[:12]}</code></span></p></aside>')
         _place(_lp + '/list', _lbox)
         if _lp == '/qia': PAGES['/qia'] = PAGES['/qia'].replace('<a href="/qia/package">What is in it</a></p></aside>', f'<a href="/qia/package">What is in it</a></p><p class="pkgalso">Also: <a href="/{_lz}" download>{_lt}</a> (every study on the List, CSV and BibTeX)</p></aside>', 1)
     _PKGS = [('/darkwave', '/darkwave/kit', 'darkwave/darkwave-correction-kit.zip', 'Darkwave Correction Kit', 'darkwave_kit/src/README.md',
-              'Measure the turn a mid-circuit readout gives the untouched qubits next to it on your own IBM account, and add the matching virtual-Z correction to your circuits. Tested on ibm_kingston: the correction gave back the turn, with both hardware runs included.',
+              'For runs on IBM quantum hardware. Measure the turn a mid-circuit readout gives the untouched qubits next to it on your own account, and add the matching virtual-Z correction to your circuits.',
               'Darkwave Correction Kit | A Readout&rsquo;s Kick Is a Turn | Heuremen LLC', 'Measure the phase turn a mid-circuit readout gives untouched qubits on your own IBM account, and add the matching virtual-Z correction to your circuits.'),
              ('/iris', '/iris/package', 'iris/iris-research-package.zip', 'IRIS Research Package', 'iris_package/src/README.md',
               'For language-model evaluations. Read replies before trusting a parser, count flips between repeated runs, and compare two systems with four outcomes. With the Faults and Guards.',
@@ -2365,14 +2370,17 @@ def main():
              ('/atlas', '/atlas/data-pack', 'atlas/atlas-data-pack.zip', 'ATLAS Data Pack', 'atlas_package/src/README.md',
               'Every ATLAS dataset in one download: data centers, power plants, planned plants, electricity and carbon, as JSON, CSV and GeoJSON with sources and pull dates.',
               'ATLAS Data Pack | Built Infrastructure | Heuremen LLC', 'Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.')]
+    _TESTED = {'/darkwave/kit': ('Tested on ibm_kingston under plans published before each job.', None),
+               '/iris/package': ('Tested on our own published two-machine runs, and it reproduced every flip count.', 'iris_package/dist/iris-research-package/TESTED.md'),
+               '/atlas/data-pack': ('Tested in mapping and spreadsheet tools, and every count matches these pages.', 'atlas_package/dist/atlas-data-pack/TESTED.md')}
     for _home, _pg, _z, _t, _src, _txt, _ttl, _dsc in _PKGS:
         _zs = _sha(_z)
         if not _zs: continue
         _md = open(os.path.join(HERE, '..', _src), encoding='utf-8').read()
         _body = (f'<main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/{_z}" download>Download (zip)</a> <span class="meta">sha256 <code>{_zs}</code> &middot; '
-                 f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack'}[_pg] + '">code (git)</a></span></p>' + _md_body(_md) + '</main>')
+                 f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack'}[_pg] + '">code (git)</a></span></p>' + _md_body(_md) + (_tested(_TESTED[_pg][1]) if _TESTED[_pg][1] else '') + '</main>')
         PAGES[_pg] = page(_pg, _ttl, _dsc, _body, hero_slim(_t, 'Heuremen LLC'))
-        _place(_home, _box(_t, _pg, _txt, _z))
+        _place(_home, _box(_t, _pg, _txt, _z, tested=_TESTED[_pg][0]))
     if _sha('iris/iris-list-pack.zip') and '/iris/package' in PAGES:
         PAGES['/iris'] = PAGES['/iris'].replace('<a href="/iris/package">What is in it</a></p></aside>', '<a href="/iris/package">What is in it</a></p><p class="pkgalso">Also: <a href="/iris/iris-list-pack.zip" download>IRIS List Pack</a> (every study on the List, CSV and BibTeX)</p></aside>', 1)
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
