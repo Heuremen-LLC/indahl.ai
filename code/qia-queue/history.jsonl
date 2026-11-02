@@ -2962,3 +2962,9 @@
 {"backend": "ibm_marrakesh", "pending": 0, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:45:34Z"}
 {"backend": "ibm_phoenix", "pending": 1210, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:45:34Z"}
 {"backend": "ibm_pittsburgh", "pending": 39, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:45:34Z"}
+{"backend": "ibm_boston", "pending": 162, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:56:21Z"}
+{"backend": "ibm_fez", "pending": 2, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:56:21Z"}
+{"backend": "ibm_kingston", "pending": 19, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:56:21Z"}
+{"backend": "ibm_marrakesh", "pending": 0, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:56:21Z"}
+{"backend": "ibm_phoenix", "pending": 1217, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:56:21Z"}
+{"backend": "ibm_pittsburgh", "pending": 0, "operational": true, "outcome": "COMMITTED", "t": "2026-11-02T14:56:21Z"}
