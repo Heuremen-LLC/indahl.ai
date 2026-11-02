@@ -1259,6 +1259,15 @@ _TIMEBODY = ('<section class="bench"><h2>Public Time Servers, Stated Against Del
   '<div id="time-live" class="bench-live">Loading.</div><script src="/time/live.js" defer></script>'
   '<p class="bench-note">Consistent: the offset and path uncertainty fit inside the stated bound. Above: the server is further from true time than it states. Below: it is closer than it states. Cannot tell: the path is wider than the bound. Nothing returned, refused and held are counted as their own outcomes. No ranking.</p></section>')
 PAGES['/time'] = page('/time', 'TIME | Public Time Servers Stated Against Delivered | Heuremen LLC', 'TIME: public time servers held against their own stated error bounds, measured live from a GPS-disciplined clock, with the outcome for every server.', _TIMEBODY, hero_slim('TIME &middot; Stated Against Delivered'))
+# 2 Nov 2026: the free downloads and tools, so feed readers see them
+for _fp, _ft, _fd in (('/qia/package', 'QIA Research Package', 'For runs on IBM quantum hardware: check the calibration record your run depends on, before and after the run. Tested on real IBM records. The checker alone: pip install qia-check.'),
+                      ('/darkwave/kit', 'Darkwave Correction Kit', 'Measure the turn a mid-circuit readout gives untouched qubits on your own IBM account and add the matching virtual-Z correction. Tested on ibm_kingston under plans published before each job.'),
+                      ('/iris/package', 'IRIS Research Package', 'For language-model evaluations: reading sheets, flip counts between repeated runs and paired comparisons with four outcomes. The checker alone: pip install iris-check.'),
+                      ('/atlas/data-pack', 'ATLAS Data Pack', 'Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.'),
+                      ('/oy/data-pack', 'OY Data Pack', 'Every OY table as JSON and CSV, with the source of every row.'),
+                      ('/hermes/model/data-pack', 'MODEL Data Pack', 'Every MODEL statement and the MLCommons results it was held against, as JSON and CSV.'),
+                      ('/qia#runcheck', 'Check a Run Against the Record in Force', 'Pick an IBM processor and the start and end of your run to see the published calibration record in force, its flags for your qubits and what changed during the run.')):
+    _FEED.append((_fp, _ft, _fd))
 _FEED.append(('/time', 'TIME: Public Time Servers Stated Against Delivered', 'What public time servers state about their own accuracy, measured live against a GPS-disciplined clock.'))
 # 28 Oct 2026 (his word): COIN. Ravencoin's whitepaper statements held against the chain's own block record, live. Plan and checker: coin_index/.
 _COINBODY = ('<section class="bench"><h2>Ravencoin, Stated Against Delivered</h2>'
