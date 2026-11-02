@@ -2373,6 +2373,8 @@ def main():
                  f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack'}[_pg] + '">code (git)</a></span></p>' + _md_body(_md) + '</main>')
         PAGES[_pg] = page(_pg, _ttl, _dsc, _body, hero_slim(_t, 'Heuremen LLC'))
         _place(_home, _box(_t, _pg, _txt, _z))
+    if _sha('iris/iris-list-pack.zip') and '/iris/package' in PAGES:
+        PAGES['/iris'] = PAGES['/iris'].replace('<a href="/iris/package">What is in it</a></p></aside>', '<a href="/iris/package">What is in it</a></p><p class="pkgalso">Also: <a href="/iris/iris-list-pack.zip" download>IRIS List Pack</a> (every study on the List, CSV and BibTeX)</p></aside>', 1)
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])

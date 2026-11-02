@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IRIS Research Package | Recount Matrix: Language Models | Heuremen LLC</title>
+<meta name="description" content="Checks for language-model evaluations before and after a run: reading sheets, repeat floors, paired comparisons, the Faults and Guards.">
+<link rel="canonical" href="https://indahl.ai/iris/package">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IRIS Research Package | Recount Matrix: Language Models | Heuremen LLC">
+<meta property="og:description" content="Checks for language-model evaluations before and after a run: reading sheets, repeat floors, paired comparisons, the Faults and Guards.">
+<meta property="og:url" content="https://indahl.ai/iris/package">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="IRIS Research Package | Recount Matrix: Language Models | Heuremen LLC">
+<meta name="twitter:description" content="Checks for language-model evaluations before and after a run: reading sheets, repeat floors, paired comparisons, the Faults and Guards.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="author" content="Heuremen LLC">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "IRIS Research Package", "description": "Checks for language-model evaluations before and after a run: reading sheets, repeat floors, paired comparisons, the Faults and Guards.", "url": "https://indahl.ai/iris/package", "inLanguage": "en", "dateModified": "2026-11-01", "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": "https://indahl.ai/"}, "publisher": {"@type": "Organization", "name": "Heuremen LLC", "url": "https://indahl.ai/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Heuremen LLC", "item": "https://indahl.ai/"}, {"@type": "ListItem", "position": 2, "name": "IRIS Research Package", "item": "https://indahl.ai/iris/package"}]}</script>
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#f7f0e0">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Heuremen">
+<link rel="stylesheet" href="/style.css?v=@@CSSV@@">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links">@@NAV:/iris/package@@</nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>IRIS Research Package</h1><p class="sub">Heuremen LLC</p></div></section>
+<main class="wrap">
+<main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/iris/iris-research-package.zip" download>Download (zip)</a> <span class="meta">sha256 <code>23d0d8851a124009364446b693a63c1cfbff42a6c823967b71c8fa6bce3309fd</code> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris-package">code (git)</a></span></p><p>Tools to check the numbers from a language-model evaluation before you trust them and after a run. This applies to benchmark scores, LLM-as-judge scores and fine-tuning studies. IRIS recounts published evaluation studies from their own released output files, and this package puts the same checks in your hands for your own outputs. Your files are opened read-only and never changed. Reports go to a separate folder, and the checker refuses a folder inside the folder that holds an input, so run it from outside your data folder. The checker sends nothing anywhere. Two parts need other software or the network when you run them: <code>parser-check/replycheck.py</code> runs a model on your machine, and installing the Faults and Guards package from PyPI downloads it. Python 3.9 or later.</p>
+<h2>Before a run</h2>
+<ul><li>Read the Guards before the work. Install the package with <code>pip install faultsguards</code> or from the wheel in <code>faultsguards/</code>, then run <code>python -m faultsguards guards</code></li><li>Decide how each answer will be extracted from a reply and write that rule down before any reply exists.</li><li>If you fine-tune or compare systems, plan at least two runs of the same items with the same settings. The difference between those two runs is the repeat floor, and it is the first thing any later difference is read against.</li><li>Give the plan a check block: <code>check-block/</code>. The packs for language-model evaluations (L) and public copy (P) are in <code>check-block/SPEC.md</code>.</li></ul>
+<h2>After a run</h2>
+<ul><li>Save the outputs of each run as a JSONL file with one reply per line. Each line needs an item id, the reply, what your parser extracted and whether it was scored correct. Keep these files in one folder and write reports to a different folder.</li><li>Read a sample of replies beside what your parser extracted:
+   <code>python iris_check.py sample run1.jsonl --reply-field reply --extracted-field pred --label-field family --id-field id -n 10 --seed 1</code>
+   This writes a reading sheet as HTML and CSV with 10 random replies per label. Read each reply. In the CSV, write x in the <code>read</code> column for every reply you read. In the <code>misparsed</code> column write x, bad, 1 or wrong where the extracted value is not the answer the reply gives. A parse that is fine takes ok, y, yes, 0, no, n, false, f or a blank. Any other entry is an error that names the row. Then run <code>python iris_check.py sample --tally SHEET.csv</code>, which prints the result for each label.</li><li>The tally rule, exactly: a label reads &quot;cannot tell (not read)&quot; if any of its rows is unread. Otherwise it reads &quot;cannot tell (parser)&quot; when more than 10% of its read rows are mis-parsed, so 1 of 10 is fine, 2 of 10 is not, and 1 of 9 is not. Otherwise the rate can be read. The default sample is 10 replies per label.</li><li>Reply text that starts with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code> gets a single quote in front of it in the CSV, so a spreadsheet does not run it as a formula. Rows that lack the reply or extracted field, blank lines, and rows with a missing or null label (shown as <code>(none)</code>) are counted on the console and in the JSON report.</li><li>Count the flips between repeats of the same items:
+   <code>python iris_check.py repeat run1.jsonl run2.jsonl --id-field id --correct-field correct</code>
+   Item ids are turned into strings first, so 2, 2.0 and &quot;2&quot; are one id. Each pair of runs is compared on the items both runs hold. The report counts items that went right to wrong and items that went wrong to right, and gives the repeat floor as the share of matched items that flip. The net change alone hides flips that cancel. With three or more runs there is no combined repeat floor, you get one row per pair of runs.</li><li>The report lists, for each run, how many rows were left out and why, with up to 5 example ids. The reasons are an id missing, a duplicate id (every copy is left out), a missing correctness field, and a correctness value that is not true/false, 1/0, yes/no or correct/incorrect. It also lists the items present in one run of a pair and not the other. If more than 5% of a run is left out of a comparison, a warning is printed on the console and shown at the top of the report.</li><li>Compare two systems on the same items:
+   <code>python iris_check.py repeat a_run1.jsonl a_run2.jsonl --vs b_run1.jsonl b_run2.jsonl --id-field id --correct-field correct --margin 0.02</code>
+   Run k of A is paired with run k of B, in the order given on the command line. Each pair gets an exact two-sided McNemar test on the discordant items and a bootstrap 95% interval for the accuracy difference A minus B. The number of matched items and the discordant counts are always printed. Both the interval and the McNemar p are used, in this order. ABOVE if the low end of the interval is above 0 and p is below 0.05. BELOW if the high end is below 0 and p is below 0.05. If only one of the two says different, CANNOT_TELL. Then CONSISTENT if the whole interval is within plus or minus the margin, but only with at least 20 matched items and at least 1 discordant item. Otherwise CANNOT_TELL. Because ABOVE and BELOW are checked before CONSISTENT, a small difference that is resolved reads ABOVE or BELOW even when it is inside the margin.</li><li>Read your write-up against the Faults: <code>python -m faultsguards faults</code></li><li>Give each reading a check block before it goes in a paper or a page: <code>check-block/</code>. The folder you give to <code>readcheck.py new</code> must already exist.</li></ul>
+<h2>Test the checker</h2>
+<p><code>python tests/make_synthetic.py</code> writes a synthetic dataset where the answers are planted. These are the flips between repeats, the discordant items between systems and the parser errors. <code>python tests/test_iris_check.py</code> runs the checker on it and asserts that the planted answers come back.</p>
+<h2>What is here</h2>
+<ul><li><code>iris_check.py</code>: the sample and repeat checks, standard library only</li><li><code>START_HERE.html</code>: this guide as a page</li><li><code>tests/</code>: the synthetic dataset and the tests</li><li><code>faultsguards/</code>: the Faults and Guards as a Python package, with the PDFs</li><li><code>check-block/</code>: the check block and its commit gate</li><li><code>faultsbench/</code>: the scorer and the planted items of our Faults and Guards bench, with the synthetic check that runs the scorer on planted worlds. Run <code>python synth.py</code> from inside <code>faultsbench/</code>. The prompts and the runner are in the repository: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench">https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench</a></li><li><code>parser-check/</code>: <code>replycheck.py</code> regenerates replies from an lm-evaluation-harness task and writes each reply beside what each filter extracted, so the replies can be read in full. Run <code>python replycheck.py --help</code> for the named arguments. Output goes to <code>--out</code> (default <code>./replycheck_out</code>). It needs <code>pip install mlx-lm lm-eval</code> on Apple silicon.</li><li><code>LICENSE.txt</code>, <code>CITATION.cff</code></li></ul>
+<p>Our other IRIS code, such as the round scorers, the training scripts and the run drivers, is in the repository at <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris">https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris</a> and is not copied here because it depends on our own folders and data.</p>
+<h2>Links</h2>
+<ul><li>IRIS: <a href="https://indahl.ai/iris">https://indahl.ai/iris</a></li><li>List of studies: <a href="https://indahl.ai/iris/list">https://indahl.ai/iris/list</a></li><li>Key: <a href="https://indahl.ai/iris/key">https://indahl.ai/iris/key</a></li><li>Code: <a href="https://github.com/Heuremen-LLC/indahl.ai">https://github.com/Heuremen-LLC/indahl.ai</a></li><li>Faults and Guards on PyPI: <a href="https://pypi.org/project/faultsguards/">https://pypi.org/project/faultsguards/</a></li><li>Data and models: <a href="https://huggingface.co/indahl">https://huggingface.co/indahl</a></li></ul>
+<h2>Terms</h2>
+<p>Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and <a href="https://indahl.ai/iris">https://indahl.ai/iris</a></p>
+<p>Your results remain yours. The text and data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted. The Faults and Guards package keeps its own terms.</p></main>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-26F876BB</p>
+</div></footer>
+<nav class="tabbar" aria-label="Divisions"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/hermes">HERMES</a><a href="/atlas">ATLAS</a><a href="/oy">OY</a><a href="/stack">STACK</a></nav>
+<script src="/pwa.js" defer></script>
+<script src="/live-tags.js?v=806615f8" defer></script>
+<script src="/headline.js?v=b01367d9" defer></script>
+</body>
+</html>

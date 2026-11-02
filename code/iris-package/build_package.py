@@ -17,12 +17,34 @@ for f in ('iris_check.py', 'README.md', 'CITATION.cff'): cp(H + '/src/' + f, f)
 cptree(H + '/src/tests', 'tests')
 cp(B + 'public_mirror/indahl.ai/LICENSE.txt', 'LICENSE.txt')
 cptree(PUB + 'checks', 'check-block')
+cp(H + '/src/check-block/SPEC.md', 'check-block/SPEC.md'); cp(H + '/src/check-block/example/CHECKS.md', 'check-block/example/CHECKS.md')   # our own clean versions: core, pack L and pack P only; the original example stays out
+def patch(path, pairs):
+    t = open(D + '/' + path, encoding='utf-8').read()
+    for old, new in pairs:
+        assert t.count(old) >= 1, f'patch target missing in {path}: {old[:50]!r}'; t = t.replace(old, new)
+    open(D + '/' + path, 'w', encoding='utf-8').write(t)
+import re as _re
+rc = open(D + '/check-block/readcheck.py', encoding='utf-8').read()
+a0 = rc.index("PACKS = {'Q'"); a1 = rc.index("         'L': [")
+rc = rc[:a0] + "PACKS = {" + rc[a1 + len("         "):]
+b0 = rc.index(",\n         'O': ["); b1 = rc.index("]}", b0)
+rc = rc[:b0] + "}" + rc[b1 + 2:]
+open(D + '/check-block/readcheck.py', 'w', encoding='utf-8').write(rc)
+patch('check-block/readcheck.py', [("--packs Q,L,P,O --what", "--packs L,P --what"), ("Packs: Q quantum hardware, L language-model evaluations, P public copy, O live operations.", "Packs: L language-model evaluations, P public copy."),
+    ("(watch/readcheck.py)", "(readcheck.py)"), ("'parser read in full before any rate'", "'parser read in full before any rate'"), ("'ledger first, one release path, verified live'", "'source first, one release path, verified live'"),
+    ("'house style rules'", "'style rules written down and checked'"), ("substituted with counts and an addendum", "substituted with counts and a note written first")])
+patch('check-block/readcheck_hook.py', [("results, readings, hand-checks, outcomes, by name", "results, readings, parser-check files, outcomes, by name"), ("<Q,L,P,O>", "<L,P>")])
+patch('check-block/README.md', [
+    ("the packs for quantum hardware (Q), language-model evaluations (L), public\n  copy (P) and live operations (O). Each pack line comes from a mistake we made, with its date.", "the packs for language-model evaluations (L) and public\n  copy (P)."),
+    (" Our own release ledger runs the same check, so a new public number, or a change to one,\nis refused without a complete entry.", ""),
+    ("`example/CHECKS.md`: a real entry, from our pass over every page of indahl.ai with this block on 30 October 2026.", "`example/CHECKS.md`: a fictional entry, written to show the format."),
+    ("python3 readcheck.py new path/to/run", "mkdir -p path/to/run     # the folder given to new must exist\npython3 readcheck.py new path/to/run")])
 IR = PUB + 'iris/'
 for f in ('items.json', 'score.py', 'synth.py'): cp(IR + 'faultsbench/' + f, 'faultsbench/' + f)
-cp(IR + 'claims_stack/handcheck.py', 'parser-check/handcheck.py')
+cp(H + '/src/replycheck.py', 'parser-check/replycheck.py')
 open(D + '/faultsbench/README.md', 'w').write('# Faults and Guards bench: scorer and planted items\n\nHeuremen LLC. `items.json` holds the planted items, each with its own truth. `score.py` scores replies written as `out/<model>/<arm>.jsonl` '
-    '(arms bare, bare_copy and guard, one JSON object per line with id, raw and done_reason) and writes `results.json`. `synth.py` runs the scorer on planted worlds and asserts the expected outcomes.\n\n'
-    '```\npython synth.py\n```\n\nThe prompts (`items.py`), the runner and the plan are in the repository: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench\n')
+    '(arms bare, bare_copy and guard, one JSON object per line with id, raw and done_reason) and writes `results.json`. `synth.py` runs the scorer on planted worlds and asserts the expected outcomes. Run it from inside this folder, because it reads `items.json` and imports `score.py` from the current folder.\n\n'
+    '```\ncd faultsbench\npython synth.py\n```\n\nThe prompts (`items.py`), the runner and the plan are in the repository: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench\n')
 def get(u, dst):
     os.makedirs(os.path.dirname(D + '/' + dst), exist_ok=True)
     open(D + '/' + dst, 'wb').write(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'heuremen-package/1.0'}), timeout=60).read())
@@ -47,7 +69,8 @@ open(D + '/START_HERE.html', 'w').write(f'<!doctype html><html lang="en"><meta c
 # gate: nothing private
 bad = re.compile(r'bones-forge|/Users/|\.ibm_quantum_key|\.ibm_.*crn|wrangler|\bKV\b|IBM_QUANTUM_TOKEN="?[A-Za-z0-9]{10}|hf_[A-Za-z0-9]{20}|pypi-[A-Za-z0-9]{20}|[\w.+-]+@(?!example\.(invalid|com)\b)[\w-]+\.[a-z]{2,}'
                  r'|Wayfinder|\bNova\b|his word|Armature|127\.0\.0\.1:11500|\bBones\b')
-HANDS = re.compile(r'by hand|hand-read|hand-checked|hand-reads')   # house wording; check-block/ is copied unchanged from the public repo, so it is reported, not blocked
+INTERNAL = re.compile(r'watch/|release ledger|ledger first|three-box|\bbill\b|\bhis\b|\(\d{1,2}[–-]?\d* ?Oct|ROUND_S|Addendum|\bS[123]\b|\bpack Q\b', re.I)
+HANDS = re.compile(r'by hand|hand-read|hand-checked|hand-reads')
 for r, _, fs in os.walk(D):
     for f in fs:
         p = os.path.join(r, f)
@@ -55,8 +78,9 @@ for r, _, fs in os.walk(D):
         m = bad.search(open(p, errors='replace').read())
         assert not m, f'REFUSED: {os.path.relpath(p, D)} contains {m.group(0)!r}'
         t = open(p, errors='replace').read(); m = HANDS.search(t)
-        if m and not p.startswith(D + '/check-block/'): raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains {m.group(0)!r}')
-        if m: print('NOTE: check-block file keeps its public wording:', os.path.relpath(p, D), repr(m.group(0)))
+        if m: raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains {m.group(0)!r}')
+        m = INTERNAL.search(t)
+        if m and ('/check-block/' in p or p.endswith(('replycheck.py', 'README.md'))): raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains internal wording {m.group(0)!r}')
 ALLOWED = re.compile(r'^https://(indahl\.ai/iris(/list|/key|/package)?|github\.com/Heuremen-LLC/indahl\.ai(/tree/main/code/[\w./-]+)?|pypi\.org/project/faultsguards/|huggingface\.co/indahl)$')
 for f in ('README.md', 'faultsbench/README.md', 'CITATION.cff'):
     t = open(D + '/' + f).read()
