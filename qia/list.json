@@ -21176,7 +21176,7 @@
     ],
     "F4": [
      "run dates not printed (only the paper date)",
-     "no data link printed (reference [6] names GitHub without a URL)"
+     "the paper text names GitHub without a URL (reference [6]). The Zenodo record metadata links github.com/reinhardtmarta/Indefinite-coherence, not yet opened by us. Updated 2 Nov 2026"
     ]
    },
    "calibrated": false,
@@ -31461,7 +31461,7 @@
    ],
    "basis": {
     "F4": [
-     "no data link printed"
+     "the paper text prints no data link. The Zenodo record (current version 19670176) attaches Logs.zip and workload zip files beside the paper, not yet opened by us. Updated 2 Nov 2026"
     ]
    },
    "calibrated": false,
