@@ -6,7 +6,7 @@ B = os.path.expanduser('~/bones-forge/'); H = os.path.dirname(os.path.abspath(__
 PUB = B + 'public_mirror/indahl.ai/code/'
 shutil.rmtree(H + '/dist', ignore_errors=True); os.makedirs(D)
 def cp(src, dst): os.makedirs(os.path.dirname(D + '/' + dst), exist_ok=True); shutil.copy(src, D + '/' + dst)
-for f in ('qia_check.py', 'README.md', 'CITATION.cff'): cp(H + '/src/' + f, f)
+for f in ('qia_check.py', 'README.md', 'CITATION.cff', 'TESTED.md'): cp(H + '/src/' + f, f)
 cp(B + 'public_mirror/indahl.ai/LICENSE.txt', 'LICENSE.txt')
 cp(B + 'yo/release/yo_audit.py', 'yo/yo_audit.py')
 for f in ('run_check.py', 'PLAN.md', 'README.md', 'requirements.txt'): cp(PUB + 't1t2-check/' + f, 't1t2-check/' + f)

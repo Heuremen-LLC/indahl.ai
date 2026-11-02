@@ -36,7 +36,7 @@ We tested the kit on ibm_kingston on 2 November 2026 under plans committed and p
   mostly targets with low idle coherence, and one high-coherence target kept +9.47 of a -22.1 degree turn. Check the coherence the table
   prints before you trust a target's value.
 
-Brackets are 95 % bootstrap bands over the target qubits. An outside referee recomputed every number from the raw arrays. Both runs, with their plans, raw data and code, are in `hardware-check/` and at
+Brackets are 95 % bootstrap bands over the target qubits. Every number was recomputed from the raw arrays with separate code. Both runs, with their plans, raw data and code, are in `hardware-check/` and at
 https://github.com/Heuremen-LLC/heuremen.org/tree/main/experiments
 
 ## 2. Measure your table

@@ -39,6 +39,7 @@ time and needs at least eight qubits with a T1, a T2 and their dates. Model: htt
 ## What is here
 
 - `qia_check.py`: before and after checks, standard library only
+- `TESTED.md`: how this package was tested, with results
 - `START_HERE.html`: this guide as a page
 - `yo/`: YO's record reader
 - `faultsguards/`: the Faults and Guards as a Python package, with the PDFs
