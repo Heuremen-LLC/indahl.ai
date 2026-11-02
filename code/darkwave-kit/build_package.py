@@ -9,7 +9,7 @@ for f in ('darkwave_kit.py', 'README.md', 'CITATION.cff', 'requirements.txt'): c
 cp(B + 'public_mirror/indahl.ai/LICENSE.txt', 'LICENSE.txt')
 for chip in ('ibm_kingston', 'ibm_marrakesh'): cp(RUN + f'fresh_kicks_{chip}.json', f'examples/table_31oct2026_{chip}.json')
 open(D + '/examples/README.md', 'w').write('# Example tables\n\nThe tables measured minutes before our 31 October 2026 run (fields k4 and k8: degrees per readout from blocks of 4 and 8 readouts, cohD8: coherence of the idle comparison). '
-    'They come from the study\'s public files (https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/readout-correction/run/data) and show the size of the turn we saw. They are not a table for your run.\n')
+    'They are in the study\'s format and cannot be used with the kit\'s apply command. They come from the study\'s public files (https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/readout-correction/run/data) and show the size of the turn we saw. They are not a table for your run.\n')
 sp = importlib.util.spec_from_file_location('qc', B + 'qia_package/src/qia_check.py'); qc = importlib.util.module_from_spec(sp); sp.loader.exec_module(qc)
 md = open(H + '/src/README.md').read(); body = []
 for blk in md.split('\n\n'):

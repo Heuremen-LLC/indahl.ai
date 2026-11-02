@@ -6,7 +6,7 @@ one value per untouched qubit in degrees per readout, and adds the matching virt
 one in "A Readout's Kick Is a Turn" (doi:10.5281/zenodo.23843468). It names no mechanism for the turn.
 
   SELF-TEST   python darkwave_kit.py selftest                                     (simulator only, needs qiskit-aer)
-  MEASURE     python darkwave_kit.py measure --backend ibm_kingston --readout 5,6,7 --targets 4,8,9 --estimate
+  MEASURE     python darkwave_kit.py measure --backend ibm_kingston --readout 5,6,7 --targets 4,8,9 --check
               python darkwave_kit.py measure --backend ibm_kingston --readout 5,6,7 --targets 4,8,9 --yes
   APPLY       python darkwave_kit.py apply --table kicks/kick_table_ibm_kingston_....json my_circuit.qpy corrected.qpy
 
@@ -20,8 +20,11 @@ The table holds for the readout set, backend and calibration it was measured wit
 to your run and keep it with your data.
 
 apply: after each group of mid-circuit measurements on the table's readout qubits, adds rz(-kick) to each target qubit in the table.
-A group is a run of consecutive measure instructions (barriers allowed between them). Measurements at the very end of a circuit get no
-correction. The input file is opened read-only. Your account: qiskit-ibm-runtime's saved account (QiskitRuntimeService.save_account).
+A group is a run of consecutive measure instructions (barriers allowed between them), and the table assumes the whole readout set is
+measured together in each group, as when it was measured. Measurements at the very end of a circuit get no correction. Circuits must be
+on physical qubit numbers (transpiled with the layout the table was measured on). Readouts inside if/else or loop blocks are not
+corrected and are counted in a warning. The input file is opened read-only and the output is written to a new file.
+Your account: qiskit-ibm-runtime's saved account (QiskitRuntimeService.save_account). Python 3.10 or later.
 Free to run and cite with attribution to Heuremen LLC. See LICENSE.txt."""
 import argparse, json, os, sys, hashlib, datetime as dt
 import numpy as np
@@ -80,12 +83,13 @@ def analyse(counts, targets, margin, seed=41, B=2000):
     for i, q in enumerate(targets):
         oc = 'ABOVE' if lo[i] > 0 else 'BELOW' if hi[i] < 0 else 'CONSISTENT' if (lo[i] >= -margin and hi[i] <= margin) else 'CANNOT_TELL'
         out[int(q)] = dict(deg_per_readout=round(float(k4[i]), 4), band95=[round(float(lo[i]), 4), round(float(hi[i]), 4)], outcome=oc,
-                           deg_per_readout_n1=round(float(k1[i]), 4), coherence_kept=round(float(keep[i]), 4), coherence_idle=round(float(rD[i]), 4))
+                           deg_per_readout_n1=round(float(k1[i]), 4), coherence_kept=None if not np.isfinite(keep[i]) else round(float(keep[i]), 4), coherence_idle=round(float(rD[i]), 4))
     return out
 def ints(s, name):
     try: v = [int(x) for x in s.split(',') if x.strip()]
     except ValueError: sys.exit(f'{name} takes qubit numbers separated by commas, for example 4,8,9')
     if not v: sys.exit(f'{name} is empty')
+    if len(set(v)) != len(v): sys.exit(f'{name} lists a qubit twice')
     return v
 def sha(p):
     h = hashlib.sha256()
@@ -114,12 +118,19 @@ def cmd_measure(a):
     tc = {k: transpile(c, b, optimization_level=1, initial_layout=list(range(n)), seed_transpiler=31) for k, c in circs.items()}
     for k, t in tc.items():
         if t.layout is not None and list(t.layout.final_index_layout()) != list(range(n)): sys.exit(f'transpiler moved the qubits in {k}, nothing submitted')
+    for N in NS:   # the two arms must take the same time on every target, or the comparison is not like for like
+        dur = {}
+        for arm in ARMS:
+            sc = transpile(tc[(N, arm, 'X')], b, optimization_level=0, scheduling_method='alap', initial_layout=list(range(n)))
+            dur[arm] = [sc.qubit_duration(q) for q in targets]
+        if dur['D'] != dur['M']: sys.exit(f'N={N}: idle and readout arms differ in time on the targets ({dur}), nothing submitted')
+        print(f'N={N}: idle and readout arms take {dur["D"][0]} dt on every target')
     print(f'{NAME} | {ORG} | {SITE}')
     print(f'{a.backend}: {len(tc)} circuits x {a.shots} shots, readout {readout}, targets {targets}, readout duration {L_dt} dt.')
-    print('IBM bills the job by its quantum seconds. Your plan shows them after the job. Nothing has been submitted.' if a.estimate or not a.yes else 'Submitting one job.')
-    if a.estimate or not a.yes:
-        if not a.estimate: print('Add --yes to submit.')
+    if a.check or not a.yes:
+        print('Checks passed. Nothing has been submitted. Add --yes to submit one job. IBM bills it by its quantum seconds, shown on your plan after the job.')
         return
+    print('Submitting one job.')
     job = SamplerV2(mode=b).run([tc[k] for k in keys()], shots=a.shots); print('job', job.job_id()); res = job.result()
     counts = {}
     for k, r in zip(keys(), res):
@@ -128,36 +139,59 @@ def cmd_measure(a):
     p = save_table(a.out, a.backend, readout, targets, L_dt, a.shots, job.job_id(), tab, a.margin)
     for q, v in tab.items(): print(f'q{q}: {v["deg_per_readout"]:+.3f} deg per readout [{v["band95"][0]:+.3f}, {v["band95"][1]:+.3f}] {v["outcome"]}, coherence kept {v["coherence_kept"]:.3f}')
     print('table:', p)
-def corrected(qc, readout, kicks):
-    from qiskit import QuantumCircuit
-    R = set(readout); out = qc.copy_empty_like(); pending = False
+def corrected(qc, readout, kicks, notes=None):
+    R = set(readout); out = qc.copy_empty_like(); pending = set()
     idx = {q: i for i, q in enumerate(qc.qubits)}
+    bad = [q for q in kicks if q >= qc.num_qubits]
+    if bad: raise ValueError(f'the circuit has {qc.num_qubits} qubits and the table corrects qubits {bad}. Transpile the circuit to physical qubits first, with the layout the table was measured on')
+    notes = notes if notes is not None else {}
     def flush():
+        if pending != R: notes['partial'] = notes.get('partial', 0) + 1
         for q, k in kicks.items(): out.rz(-np.radians(k), q)
+    def nested(op):
+        return any(i.operation.name == 'measure' and {idx.get(x, -1) for x in i.qubits} & R for blk in getattr(op, 'blocks', ()) for i in blk.data)
     data = list(qc.data)
     for j, ins in enumerate(data):
         name = ins.operation.name; qs = [idx[x] for x in ins.qubits]
-        if name == 'measure' and set(qs) <= R: pending = True; out.append(ins); continue
+        if getattr(ins.operation, 'blocks', None) and nested(ins.operation): notes['nested'] = notes.get('nested', 0) + 1
+        if name == 'measure' and set(qs) <= R: pending |= set(qs); out.append(ins); continue
         if name == 'barrier' and pending: out.append(ins); continue
         if pending:
             if any(d.operation.name not in ('measure', 'barrier') for d in data[j:]): flush()
-            pending = False
+            pending = set()
         out.append(ins)
     return out
 def cmd_apply(a):
     from qiskit import qpy
-    T = json.load(open(a.table, encoding='utf-8'))
-    if 'kicks' not in T or 'readout' not in T: sys.exit(a.table + ' is not a kick table from this kit')
-    kicks = {int(q): v['deg_per_readout'] for q, v in T['kicks'].items()}
-    if os.path.realpath(a.input) == os.path.realpath(a.output): sys.exit('write the corrected circuits to a new file')
+    import tempfile
+    try: T = json.load(open(a.table, encoding='utf-8'))
+    except (OSError, ValueError) as e: sys.exit(f'could not read the table {a.table}: {e}')
+    if not isinstance(T, dict) or 'kicks' not in T or 'readout' not in T or 'deg_per_readout' not in next(iter(T['kicks'].values()), {}):
+        sys.exit(a.table + ' is not a kick table from this kit (the study tables in examples/ use another format)')
+    use = {int(q): v for q, v in T['kicks'].items() if not a.only_resolved or v.get('outcome') in ('ABOVE', 'BELOW')}
+    kicks = {q: v['deg_per_readout'] for q, v in use.items()}
+    unres = sorted(int(q) for q, v in T['kicks'].items() if v.get('outcome') == 'CANNOT_TELL')
+    if not os.path.exists(a.input): sys.exit('no such file: ' + a.input)
+    if os.path.exists(a.output):
+        if os.path.samefile(a.input, a.output): sys.exit('the output is the input file. Write the corrected circuits to a new file')
+        if not a.force: sys.exit(a.output + ' exists. Add --force to replace it')
     h0 = sha(a.input)
     with open(a.input, 'rb') as f: circs = qpy.load(f)
-    outc = [corrected(c, T['readout'], kicks) for c in circs]
-    with open(a.output, 'wb') as f: qpy.dump(outc, f)
-    added = [c.count_ops().get('rz', 0) - o.count_ops().get('rz', 0) for c, o in zip(outc, circs)]
+    notes = {}
+    try: outc = [corrected(c, T['readout'], kicks, notes) for c in circs]
+    except ValueError as e: sys.exit(str(e))
+    d = os.path.dirname(os.path.abspath(a.output))
+    if not os.path.isdir(d): sys.exit('no such folder: ' + d)
+    fd, tmp = tempfile.mkstemp(dir=d, suffix='.qpy')
+    with os.fdopen(fd, 'wb') as f: qpy.dump(outc, f)
+    os.replace(tmp, a.output)
+    added = [o.count_ops().get('rz', 0) - c.count_ops().get('rz', 0) for o, c in zip(outc, circs)]
     print(f'{NAME} | {ORG} | {SITE}')
-    print(f'{len(outc)} circuit(s) written to {a.output}. rz added per circuit: {added}. Table: {T["backend"]}, measured {T["measured_utc"]}.')
-    print(f'input sha256 before {h0[:16]} after {sha(a.input)[:16]} ({"unchanged" if h0 == sha(a.input) else "CHANGED"})')
+    print(f'{len(outc)} circuit(s) written to {a.output}. rz added per circuit: {added}. Table: {T.get("backend", "?")}, measured {T.get("measured_utc", "?")}.')
+    if unres: print(f'Qubits whose turn read CANNOT_TELL: {unres}. ' + ('They were left uncorrected (--only-resolved).' if a.only_resolved else 'They were corrected with their measured value. Use --only-resolved to correct only ABOVE and BELOW.'))
+    if notes.get('partial'): print(f'WARNING: {notes["partial"]} readout group(s) measured only part of the readout set the table was measured with, and still got the full correction.')
+    if notes.get('nested'): print(f'WARNING: {notes["nested"]} if/else or loop block(s) hold readouts on the readout set. Those readouts were not corrected.')
+    h1 = sha(a.input); print(f'input sha256 before {h0}\ninput sha256 after  {h1} ({"unchanged" if h0 == h1 else "CHANGED"})')
 def cmd_selftest(a):
     """Known answer on the simulator: plant a turn per readout (rz after each readout step), measure it, correct it, measure again."""
     from qiskit_aer import AerSimulator
@@ -192,8 +226,8 @@ def main():
     ap = argparse.ArgumentParser(description=f'{NAME}, {ORG}'); sub = ap.add_subparsers(dest='cmd', required=True)
     s = sub.add_parser('selftest')
     m = sub.add_parser('measure'); m.add_argument('--backend', required=True); m.add_argument('--readout', required=True); m.add_argument('--targets', required=True)
-    m.add_argument('--shots', type=int, default=4000); m.add_argument('--margin', type=float, default=0.5); m.add_argument('--estimate', action='store_true'); m.add_argument('--yes', action='store_true')
+    m.add_argument('--shots', type=int, default=4000); m.add_argument('--margin', type=float, default=0.5); m.add_argument('--check', '--estimate', dest='check', action='store_true'); m.add_argument('--yes', action='store_true')
     m.add_argument('--out', default='kicks')
-    p = sub.add_parser('apply'); p.add_argument('--table', required=True); p.add_argument('input'); p.add_argument('output')
+    p = sub.add_parser('apply'); p.add_argument('--table', required=True); p.add_argument('--only-resolved', action='store_true'); p.add_argument('--force', action='store_true'); p.add_argument('input'); p.add_argument('output')
     a = ap.parse_args(); {'selftest': cmd_selftest, 'measure': cmd_measure, 'apply': cmd_apply}[a.cmd](a)
 if __name__ == '__main__': main()

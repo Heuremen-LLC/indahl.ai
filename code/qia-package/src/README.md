@@ -58,6 +58,6 @@ time and needs at least eight qubits with a T1, a T2 and their dates. Model: htt
 
 ## Terms
 
-Free to download, run and cite with attribution to Heuremen LLC and https://indahl.ai/qia
+Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/qia
 
-Your results remain yours. Use of this package's text or data to train, fine-tune or build AI models is not permitted. See LICENSE.txt.
+Your results remain yours. The text, papers and data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted. The Faults and Guards package keeps its own terms.

@@ -2316,7 +2316,7 @@ def main():
 <li><code>papers/</code>: A Readout Is Not an Idle.</li>
 <li><code>START_HERE.html</code>, <code>README.md</code>, <code>LICENSE.txt</code>, <code>CITATION.cff</code>.</li>
 </ul>
-<p class="meta">Free to download, run and cite with attribution (Heuremen LLC, https://indahl.ai/qia). Your results remain yours. Use of this package&rsquo;s text or data to train, fine-tune or build AI models is not permitted. <a href="/qia">QIA</a> &middot; <a href="/qia/list">List</a> &middot; <a href="/qia/key">Key</a></p>""".replace('{SHA}', _pk_sha)
+<p class="meta">Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/qia. Your results remain yours. The text, papers and data follow the license file in the package, and their use to train, fine-tune or build AI models is not permitted. <a href="/qia">QIA</a> &middot; <a href="/qia/list">List</a> &middot; <a href="/qia/key">Key</a></p>""".replace('{SHA}', _pk_sha)
     PAGES['/qia/package'] = page('/qia/package', 'QIA Research Package | Quantum Idle Audit | Heuremen LLC',
         'Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.',
         '<main class="wrap">' + _pk_body + '</main>', hero_slim('QIA Research Package', 'Heuremen LLC'))
