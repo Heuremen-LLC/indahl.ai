@@ -13,7 +13,7 @@ def cptree(src, dst):
         for f in fs:
             if SKIP(r, f): continue
             p = os.path.join(r, f); cp(p, dst + '/' + os.path.relpath(p, src))
-for f in ('iris_check.py', 'README.md', 'CITATION.cff'): cp(H + '/src/' + f, f)
+for f in ('iris_check.py', 'README.md', 'CITATION.cff', 'TESTED.md'): cp(H + '/src/' + f, f)
 cptree(H + '/src/tests', 'tests')
 cp(H + '/src/LICENSE.txt', 'LICENSE.txt')   # pack-specific licence
 cptree(PUB + 'checks', 'check-block')
@@ -83,13 +83,16 @@ for r, _, fs in os.walk(D):
         m = INTERNAL.search(t)
         if m and ('/check-block/' in p or p.endswith(('replycheck.py', 'README.md'))): raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains internal wording {m.group(0)!r}')
 ALLOWED = re.compile(r'^https://(indahl\.ai/iris(/list|/key|/package)?|github\.com/Heuremen-LLC/indahl\.ai(/tree/main/code/[\w./-]+)?|pypi\.org/project/faultsguards/|huggingface\.co/indahl)$')
-for f in ('README.md', 'faultsbench/README.md', 'CITATION.cff'):
+for f in ('README.md', 'TESTED.md', 'faultsbench/README.md', 'CITATION.cff'):
     t = open(D + '/' + f).read()
     for u in re.findall(r'https://[^\s)"`>]+', t): assert ALLOWED.match(u), f'REFUSED: {f} links to {u}'
     assert ';' not in t.replace('\n', ' ') or f == 'CITATION.cff', f'REFUSED: semicolon in {f}'
 # tests run against the assembled copy
 r = subprocess.run([sys.executable, '-B', D + '/tests/test_iris_check.py'], capture_output=True, text=True, cwd=H)
 assert r.returncode == 0, 'REFUSED: tests failed\n' + r.stderr[-1500:]
+nt = int(re.search(r'Ran (\d+) tests', r.stderr).group(1))   # TESTED.md carries the count from this run
+t = open(D + '/TESTED.md', encoding='utf-8').read(); assert t.count('{TESTS}') == 1; open(D + '/TESTED.md', 'w', encoding='utf-8').write(t.replace('{TESTS}', str(nt)))
+assert 'Ran %d tests' % nt in r.stderr
 r = subprocess.run([sys.executable, '-B', 'synth.py'], capture_output=True, text=True, cwd=D + '/faultsbench')
 assert r.returncode == 0 and 'SYNTH PASS' in r.stdout, 'REFUSED: synth failed\n' + r.stderr[-800:]
 for r_, _, fs in os.walk(D):

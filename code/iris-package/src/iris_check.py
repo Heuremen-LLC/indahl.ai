@@ -19,8 +19,11 @@ It sends nothing anywhere.
   REPEAT   python iris_check.py repeat RUN1.jsonl RUN2.jsonl [RUN3.jsonl ...] --id-field id --correct-field correct
            python iris_check.py repeat A1.jsonl A2.jsonl --vs B1.jsonl B2.jsonl --id-field id --correct-field correct [--margin 0.02]
            Item ids are turned into strings first (2 and 2.0 and "2" are one id). Each pair of runs is compared on the items both hold.
-           For every pair of runs of one system it counts the per-item flips in each direction (right to wrong, wrong to right) and reports the
-           repeat floor, the share of matched items that flip. There is one row per pair and no combined floor over three or more runs.
+           For every pair of runs of one system it counts the per-item flips in each direction (right to wrong, wrong to right), prints the flip
+           COUNT first ("flips N: right->wrong a, wrong->right b, of n matched") and then the share of matched items that flip. The share is called
+           the "repeat floor" only when you mark the runs of each system as repeats of the same setup with --repeats (same model, same settings, same
+           machine). Without --repeats it is called "flip share between these runs". There is one row per pair and no combined figure over three or
+           more runs. Give several names to --id-field to join them into one id (--id-field model id), for example when one file pools several models.
            With --vs, run k of A (command-line order) is paired with run k of B. Each pair gets an exact two-sided McNemar test on the discordant
            items and a seeded bootstrap 95% interval (2000 resamples) for the accuracy difference A minus B. Outcome, in this order:
            ABOVE if the interval's low end is above 0 and the McNemar p is below 0.05. BELOW if the high end is below 0 and p is below 0.05.
@@ -28,8 +31,10 @@ It sends nothing anywhere.
            (default 0.02), but only with at least 20 matched items and at least 1 discordant item. Otherwise CANNOT_TELL.
            ABOVE and BELOW are checked before CONSISTENT, so a resolved difference inside the margin reads ABOVE or BELOW.
            The correct field holds true or false, the numbers 1 and 0 (also 1.0 and 0.0), or text (any case) true, t, yes, y, correct, 1 or false, f,
-           no, n, incorrect, 0. Anything else, and JSON null, leaves the row out and is counted. Every row is counted once under one reason (missing
-           id, missing correct field, not a boolean, duplicate id), and rows read = usable + the reasons. A duplicate id leaves out every row that
+           no, n, incorrect, 0. Anything else leaves the row out and is counted. A correct field that is explicitly null means the item was not scored:
+           it is counted as "unscored (null correct)", reported, and kept out of the 5% drop warning. Every row is counted once under one reason
+           (missing id, missing correct field, unscored, not a boolean, duplicate id), and rows read = usable + the reasons. The command exits with
+           status 1 and says why when a comparison matches no items. A duplicate id leaves out every row that
            holds it, and duplicate rows and duplicate ids are counted separately.
            Above 5000 matched items the bootstrap interval uses count draws instead of resampling items one by one. It is approximate, and it can differ
            slightly by Python version (a normal approximation before Python 3.12).
@@ -225,29 +230,32 @@ def to_bool(v):
     if not isinstance(v, str): return None
     s = v.strip().lower()
     return True if s in TRUE else False if s in FALSE else None
-REASONS = ('missing_id_field', 'missing_correct_field', 'non_boolean_correct')
+REASONS = ('missing_id_field', 'missing_correct_field', 'unscored_null_correct', 'non_boolean_correct')
 def load_run(p, idf, cf):
-    """returns the run: ok = {id: bool} for the usable items. Every row is counted once under one reason, in this order: missing id, missing correct field,
-    not a boolean, duplicate id. Rows read = usable + the reasons."""
+    """returns the run: ok = {id: bool} for the usable items. idf is one field name or a list of names joined into one id. Every row is counted once under one reason,
+    in this order: missing id, missing correct field, unscored (correct is null), not a boolean, duplicate id. Rows read = usable + the reasons."""
+    idf = [idf] if isinstance(idf, str) else list(idf)
     rows, blank = read_jsonl(p); why = {k: [] for k in REASONS}; cand = {}; normalised = 0
     for ln, r in rows:
-        i, ok1 = dig(r, idf)
-        if not ok1 or i is None: why['missing_id_field'].append(f'line {ln}'); continue
-        if not isinstance(i, str): normalised += 1
-        k = norm_id(i); c, ok2 = dig(r, cf)
-        if not ok2 or c is None: why['missing_correct_field'].append(k); continue
+        parts = [dig(r, f) for f in idf]
+        if any((not ok) or v is None for v, ok in parts): why['missing_id_field'].append(f'line {ln}'); continue
+        normalised += sum(not isinstance(v, str) for v, _ in parts)
+        k = '|'.join(norm_id(v) for v, _ in parts); c, ok2 = dig(r, cf)
+        if not ok2: why['missing_correct_field'].append(k); continue
+        if c is None: why['unscored_null_correct'].append(k); continue
         b = to_bool(c)
         if b is None: why['non_boolean_correct'].append(k); continue
         cand.setdefault(k, []).append(b)
     ok = {k: v[0] for k, v in cand.items() if len(v) == 1}   # an id on more than one row is ambiguous, so every row that holds it is left out
     dup_ids = sorted(k for k, v in cand.items() if len(v) > 1); dup_rows = sum(len(cand[k]) for k in dup_ids); why['duplicate_id'] = dup_ids
     assert len(rows) == len(ok) + sum(len(why[k]) for k in REASONS) + dup_rows
-    return dict(path=p, name=os.path.basename(p), ok=ok, rows=len(rows), blank=blank, normalised=normalised, why=why, duplicate_ids=len(dup_ids), duplicate_rows=dup_rows)
+    return dict(path=p, name=os.path.basename(p), ok=ok, rows=len(rows), blank=blank, normalised=normalised, why=why, duplicate_ids=len(dup_ids), duplicate_rows=dup_rows, unscored=len(why['unscored_null_correct']))
 def run_row(r):
     w = r['why']; ex = ' | '.join(f'{k}: {", ".join(v[:5])}' for k, v in w.items() if v)
     d = dict(run=r['name'], rows_read=r['rows'], usable_items=len(r['ok']), missing_id_field=len(w['missing_id_field']), missing_correct_field=len(w['missing_correct_field']),
-             non_boolean_correct=len(w['non_boolean_correct']), duplicate_rows=r['duplicate_rows'], duplicate_ids=r['duplicate_ids'], blank_lines=r['blank'], ids_normalised_to_text=r['normalised'], examples=ex)
-    d['ties_out'] = d['rows_read'] == d['usable_items'] + d['missing_id_field'] + d['missing_correct_field'] + d['non_boolean_correct'] + d['duplicate_rows']
+             unscored_null_correct=len(w['unscored_null_correct']), non_boolean_correct=len(w['non_boolean_correct']), duplicate_rows=r['duplicate_rows'], duplicate_ids=r['duplicate_ids'],
+             blank_lines=r['blank'], ids_normalised_to_text=r['normalised'], examples=ex)
+    d['ties_out'] = d['rows_read'] == d['usable_items'] + d['missing_id_field'] + d['missing_correct_field'] + d['unscored_null_correct'] + d['non_boolean_correct'] + d['duplicate_rows']
     return d
 def mcnemar_exact(b, c):
     """exact two-sided sign test on b and c discordant items: min(1, 2 * P(X <= min(b, c))), X ~ Binomial(b + c, 1/2)"""
@@ -270,7 +278,8 @@ def pair_ids(ra, rb):
     ids = sorted(set(ra['ok']) & set(rb['ok'])); out = {}
     for tag, x, y in (('a', ra, rb), ('b', rb, ra)):
         miss = sorted(set(x['ok']) - set(y['ok'])); out['left_out_' + tag] = len(miss); out['examples_' + tag] = miss[:5]
-        out['dropped_share_' + tag] = 1 - len(ids) / x['rows'] if x['rows'] else 0.0
+        scorable = x['rows'] - x['unscored']   # rows explicitly null for correct are unscored by design, so they do not count toward the 5% warning
+        out['dropped_share_' + tag] = 1 - len(ids) / scorable if scorable else 0.0
     return ids, out
 def ci_bounds(sorted_diffs):
     """2.5% and 97.5% points of the sorted bootstrap differences: with 2000 resamples these are indexes 49 and 1949"""
@@ -299,12 +308,14 @@ def compare(x, y, ids, margin, boots, seed):
     else: out, why = 'CANNOT_TELL', f'the interval reaches beyond plus or minus {margin}'
     return dict(n_matched=n, acc_A=round(sum(xa) / n, 4) if n else None, acc_B=round(sum(ya) / n, 4) if n else None, A_right_B_wrong=b, A_wrong_B_right=c, discordant=b + c,
                 diff_A_minus_B=round(d, 4), ci95_low=round(lo, 4), ci95_high=round(hi, 4), mcnemar_exact_p=shown_p(p), margin=margin, outcome=out, reason=why, bootstrap=method)
-def flips(runs):
+def flips(runs, repeats=False):
     rows = []
     for ra, rb in itertools.combinations(runs, 2):
         ids, info = pair_ids(ra, rb); rw = sum(ra['ok'][k] and not rb['ok'][k] for k in ids); wr = sum(rb['ok'][k] and not ra['ok'][k] for k in ids)
-        rows.append(dict(run_a=ra['name'], run_b=rb['name'], n_matched=len(ids), right_to_wrong=rw, wrong_to_right=wr, net=wr - rw, items_flipped=rw + wr,
-                         repeat_floor=round((rw + wr) / len(ids), 4) if ids else None, left_out_a=info['left_out_a'], left_out_b=info['left_out_b'], _info=info, _ra=ra, _rb=rb))
+        share = round((rw + wr) / len(ids), 4) if ids else None
+        row = dict(run_a=ra['name'], run_b=rb['name'], n_matched=len(ids), flips=rw + wr, right_to_wrong=rw, wrong_to_right=wr, net=wr - rw, flip_share=share)
+        if repeats: row['repeat_floor'] = share   # the share is the repeat floor only for runs the user marked as repeats of the same setup
+        row.update(left_out_a=info['left_out_a'], left_out_b=info['left_out_b'], _info=info, _ra=ra, _rb=rb); rows.append(row)
     return rows
 def drop_warnings(rows):
     """a warning for every run in a comparison that loses more than 5% of its rows, from any reason"""
@@ -316,10 +327,11 @@ def drop_warnings(rows):
                 parts = [f'{k.replace("_", " ")}: {n}' for k, n in (('missing_id_field', len(run['why']['missing_id_field'])), ('missing_correct_field', len(run['why']['missing_correct_field'])),
                          ('non_boolean_correct', len(run['why']['non_boolean_correct'])), ('duplicate_rows', run['duplicate_rows'])) if n]
                 parts.append(f"ids not in the other run: {r['_info']['left_out_' + tag]}")   # always listed
-                w.append(f"{run['name']} loses {sh:.1%} of its {run['rows']} rows in the comparison with {(r['_rb'] if tag == 'a' else r['_ra'])['name']} ({r['n_matched']} matched). Left out: {', '.join(parts)}.")
+                un = f" {run['unscored']} rows with a null correct field are unscored, reported separately and not counted here." if run['unscored'] else ''
+                w.append(f"{run['name']} loses {sh:.1%} of its {run['rows'] - run['unscored']} scored rows in the comparison with {(r['_rb'] if tag == 'a' else r['_ra'])['name']} ({r['n_matched']} matched). Left out: {', '.join(parts)}.{un}")
     return w
 def cmd_repeat(a):
-    a.out = a.out or 'heuremen_report'; A = a.runs; B = a.vs or []
+    a.out = a.out or 'heuremen_report'; A = a.runs; B = a.vs or []; SHARE = 'repeat_floor' if a.repeats else 'flip_share'; SHARE_NAME = 'repeat floor' if a.repeats else 'flip share between these runs'
     if not B and len(A) < 2: die('give two or more runs, or one or more runs of A and --vs runs of B')
     allp = A + B; guard_out(a.out, allp)
     if len(set(os.path.realpath(p) for p in allp)) != len(allp): die('the same file was given twice')
@@ -330,13 +342,16 @@ def cmd_repeat(a):
     data = dict(runs=[run_row(R[p]) for p in allp]); allflips = []; warns = []
     for nm, S in (('A', A), ('B', B)):
         if len(S) < 2: continue
-        rows = flips([R[p] for p in S]); allflips += rows
+        rows = flips([R[p] for p in S], a.repeats); allflips += rows
         clean = [{k: v for k, v in r.items() if not k.startswith('_')} for r in rows]
-        sections.append((f'System {nm}: flips between repeats and the repeat floor, one row per pair of runs', clean, ['run_a', 'run_b', 'n_matched', 'right_to_wrong', 'wrong_to_right', 'net', 'items_flipped', 'repeat_floor', 'left_out_a', 'left_out_b']))
+        sections.append((f'System {nm}: flips between runs and the {SHARE_NAME}, one row per pair of runs', clean, ['run_a', 'run_b', 'n_matched', 'flips', 'right_to_wrong', 'wrong_to_right', 'net', SHARE, 'left_out_a', 'left_out_b']))
         data['repeat_' + nm] = clean; warns += drop_warnings(rows)
         accs = [dict(run=R[p]['name'], accuracy=round(sum(R[p]['ok'].values()) / len(R[p]['ok']), 4) if R[p]['ok'] else None, usable_items=len(R[p]['ok'])) for p in S]
         sections.append((f'System {nm}: accuracy per run, on that run\'s own usable items', accs, ['run', 'accuracy', 'usable_items'])); data['accuracy_' + nm] = accs
-        meta.append(f'System {nm}: the repeat floor is the share of matched items whose right or wrong flips between two runs. There is no combined floor over three or more runs, one row per pair. Net change is wrong to right minus right to wrong.')
+        meta.append(f'System {nm}: a flip is an item that is right in one run and wrong in the other, and the flips are counted in each direction. ' + (
+            'You marked these runs as repeats of the same setup, so the share of matched items that flip is the repeat floor.' if a.repeats else
+            'The share of matched items that flip is called the flip share between these runs. It is called the repeat floor only when the runs are repeats of the same setup, which you mark with --repeats.') +
+            ' There is no combined figure over three or more runs, one row per pair. Net change is wrong to right minus right to wrong.')
     if B:
         m = min(len(A), len(B)); comp = []; crow = []
         for k in range(m):
@@ -352,21 +367,33 @@ def cmd_repeat(a):
             meta.append('For comparisons above 5000 matched items the bootstrap interval uses count draws (two binomial draws per resample) instead of resampling items one by one. It is approximate, and it can differ slightly by Python version, because before Python 3.12 a normal approximation is used for the draws. The method used is in the bootstrap column of the JSON.')
         meta.append(f'Outcome rule with margin {a.margin}, in this order. ABOVE if the low end of the 95% interval is above 0 and the exact McNemar p is below 0.05. BELOW if the high end is below 0 and p is below 0.05. If only one of the two says different, CANNOT_TELL. '
                     f'Then CONSISTENT if the whole interval is within plus or minus {a.margin}, with at least {MIN_ITEMS} matched items and at least 1 discordant item. Otherwise CANNOT_TELL. Bootstrap: {a.boot} resamples of items, seed {a.seed}.')
-    warns = list(dict.fromkeys(warns)); data['drop_warnings'] = warns
+    zero = [(r['run_a'], r['run_b'], r['_ra'], r['_rb']) for r in allflips if r['n_matched'] == 0]   # a comparison that matches no items is an error, with a hint when repeated ids are the cause
+    for k, c in enumerate(data.get('comparison', [])):
+        if c['n_matched'] == 0: zero.append((R[A[k]]['name'], R[B[k]]['name'], R[A[k]], R[B[k]]))
+    zmsgs = []
+    for na, nb, ra, rb in zero:
+        m = f'No items matched between {na} and {nb}, so nothing can be compared.'
+        for run in (ra, rb):
+            if run['duplicate_ids']: m += f" {run['name']} holds {run['duplicate_ids']} ids that repeat, on {run['duplicate_rows']} rows, and every one of those rows is left out. If one file pools several models, give every field that makes an item unique, for example --id-field model id, or keep one model per file."
+            if not run['ok']: m += f" {run['name']} has no usable items."
+        zmsgs.append(m)
+    warns = list(dict.fromkeys(warns + zmsgs)); data['drop_warnings'] = warns; data['no_items_matched'] = zmsgs
     paths = write(a.out, 'repeat', 'Repeat floor and paired comparison', meta, sections, [(p, h0[p], sha(p)) for p in allp], data, warnings=warns)
     for r in data['runs']:
-        print(f"{r['run']}: rows read {r['rows_read']} = usable {r['usable_items']} + missing id {r['missing_id_field']} + missing correct field {r['missing_correct_field']} + not a boolean {r['non_boolean_correct']} + duplicate rows {r['duplicate_rows']} ({r['duplicate_ids']} duplicate ids). Blank lines {r['blank_lines']}, ids turned into text {r['ids_normalised_to_text']}" + (f" | examples {r['examples']}" if r['examples'] else ''))
+        print(f"{r['run']}: rows read {r['rows_read']} = usable {r['usable_items']} + missing id {r['missing_id_field']} + missing correct field {r['missing_correct_field']} + unscored (null correct) {r['unscored_null_correct']} + not a boolean {r['non_boolean_correct']} + duplicate rows {r['duplicate_rows']} ({r['duplicate_ids']} duplicate ids). Blank lines {r['blank_lines']}, ids turned into text {r['ids_normalised_to_text']}" + (f" | examples {r['examples']}" if r['examples'] else ''))
     for nm in ('A', 'B'):
-        for r in data.get('repeat_' + nm, []): print(f"{nm}: {r['run_a']} vs {r['run_b']}: n matched {r['n_matched']}, right->wrong {r['right_to_wrong']}, wrong->right {r['wrong_to_right']}, net {r['net']:+d}, repeat floor {r['repeat_floor']}")
+        for r in data.get('repeat_' + nm, []): print(f"{nm}: {r['run_a']} vs {r['run_b']}: flips {r['flips']}: right->wrong {r['right_to_wrong']}, wrong->right {r['wrong_to_right']}, of {r['n_matched']} matched. Net {r['net']:+d}. {SHARE_NAME} {r[SHARE]}")
     for c in data.get('comparison', []): print(f"A vs B: n matched {c['n_matched']}, discordant {c['A_right_B_wrong']}/{c['A_wrong_B_right']}, diff {c['diff_A_minus_B']:+.4f} [{c['ci95_low']:+.4f}, {c['ci95_high']:+.4f}] p={c['mcnemar_exact_p']} -> {c['outcome']} ({c['reason']})")
     for w in warns: print('WARNING:', w, file=sys.stderr)
     print(NAME, '|', ORG, '|', SITE); print('report:', paths['html']); print('data:  ', paths['json'])
+    if zmsgs: sys.exit(1)
 
 def main():
     ap = argparse.ArgumentParser(description=NAME + ', ' + ORG); sub = ap.add_subparsers(dest='cmd', required=True)
     s = sub.add_parser('sample', help='reading sheet of replies beside the parser output'); s.add_argument('run', nargs='?'); s.add_argument('--reply-field'); s.add_argument('--extracted-field')
     s.add_argument('--label-field'); s.add_argument('--id-field'); s.add_argument('-n', type=int, default=10); s.add_argument('--seed', default='1'); s.add_argument('--tally', metavar='SHEET.csv'); s.add_argument('--record', metavar='sample_....json'); s.add_argument('--out')
-    r = sub.add_parser('repeat', help='flips between repeats, repeat floor, paired comparison'); r.add_argument('runs', nargs='+'); r.add_argument('--vs', nargs='+'); r.add_argument('--id-field', required=True)
+    r = sub.add_parser('repeat', help='flips between repeats, repeat floor, paired comparison'); r.add_argument('runs', nargs='+'); r.add_argument('--vs', nargs='+'); r.add_argument('--id-field', nargs='+', required=True, help='one or more field names, joined into one id')
+    r.add_argument('--repeats', action='store_true', help='mark the runs of each system as repeats of the same setup, so the flip share is called the repeat floor')
     r.add_argument('--correct-field', required=True); r.add_argument('--margin', type=float, default=0.02); r.add_argument('--boot', type=int, default=2000); r.add_argument('--seed', type=int, default=20261101); r.add_argument('--out')
     a = ap.parse_args(); cmd_sample(a) if a.cmd == 'sample' else cmd_repeat(a)
 if __name__ == '__main__': main()

@@ -50,10 +50,35 @@ def planned_generators(d):
             out.append({'plant_code': p['code'], 'plant_name': p['name'], 'state': p['state'], 'generator_index': i, 'year': yr, 'mw': mw, 'fuel': fuel, 'built': d['built']})
     return out
 
+METHODS = ('nominatim address', 'nominatim city/zip only')
+
+def place_split(placed):
+    """splits the JSON field placed into (place_method, place_match)"""
+    if not placed: return '', ''
+    if placed in METHODS: return placed, ''
+    if placed.startswith('corrected '): return 'corrected', placed[len('corrected '):]
+    return 'address match', placed
+
+def place_join(method, match):
+    if not method and not match: return ''
+    if method in METHODS: return method
+    if method == 'corrected': return 'corrected ' + match
+    return match
+
+def epoch_rows(d):
+    out = []
+    for r in d['epoch']:
+        m, a = place_split(r['placed']); n = {}
+        for k, v in r.items():
+            if k == 'placed': n['place_method'] = m; n['place_match'] = a
+            else: n[k] = v
+        out.append(dict(n, pulled=d['pulled']))
+    return out
+
 # name: (json file, rows(d), independent row count(d), geo, meta keys)
 TABLES = {
     'datacenters_osm': ('datacenters.json', lambda d: with_(d['osm'], pulled=d['pulled']), lambda d: len(d['osm']), True),
-    'datacenters_epoch': ('datacenters.json', lambda d: with_(d['epoch'], pulled=d['pulled']), lambda d: len(d['epoch']), True),
+    'datacenters_epoch': ('datacenters.json', epoch_rows, lambda d: len(d['epoch']), True),
     'electricity_states': ('electricity.json', lambda d: with_(keyed(d['states'], 'state_code'), built=d['built'], price_year=d['price_year'], generation_year=d['generation_year']), lambda d: len(d['states']), False),
     'electricity_us': ('electricity.json', lambda d: [dict({k: v for k, v in d['us'].items() if k != 'ownership'}, built=d['built'], price_year=d['price_year'], generation_year=d['generation_year'])], lambda d: 1, False),
     'electricity_us_ownership': ('electricity.json', lambda d: with_(d['us']['ownership'], built=d['built'], price_year=d['price_year']), lambda d: len(d['us']['ownership']), False),
@@ -121,6 +146,10 @@ def main():
             if gb: fails.append(f'{t}: {gb} geojson mismatches')
             nul = sum(1 for ft in feats if ft['geometry'] is None)
             line += f' | {t}.geojson: {len(feats)} features ({nul} without coordinates), {"OK" if not gb else "FAIL"}'
+        if t == 'datacenters_epoch':
+            back = [place_join(c['place_method'], c['place_match']) for c in got]
+            if back != [r['placed'] for r in d['epoch']]: fails.append('datacenters_epoch: place_method and place_match do not rebuild the JSON placed field')
+            else: line += ' | place_method + place_match rebuild placed: OK'
         summary.append(line)
     for ds, keys in META.items():
         d = J(ds + '.json'); want = flat_meta({k: d[k] for k in keys})
