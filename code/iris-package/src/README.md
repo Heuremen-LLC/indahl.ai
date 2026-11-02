@@ -4,6 +4,11 @@ Heuremen LLC · https://indahl.ai/iris
 
 Tools to check the numbers from a language-model evaluation before you trust them and after a run. This applies to benchmark scores, LLM-as-judge scores and fine-tuning studies. IRIS recounts published evaluation studies from their own released output files, and this package puts the same checks in your hands for your own outputs. Your files are opened read-only and never changed. Reports go to a separate folder, and the checker refuses a folder inside the folder that holds an input, so run it from outside your data folder. The checker sends nothing anywhere. Two parts need other software or the network when you run them: `parser-check/replycheck.py` runs a model on your machine, and installing the Faults and Guards package from PyPI downloads it. Python 3.9 or later.
 
+
+## Install the checker on its own
+
+`pip install iris-check` gives the `iris-check` command (Python 3.9 or later): https://pypi.org/project/iris-check/
+
 ## Before a run
 
 1. Read the Guards before the work. Install the package with `pip install faultsguards` or from the wheel in `faultsguards/`, then run `python -m faultsguards guards`

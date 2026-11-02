@@ -7,6 +7,12 @@ to a separate folder. Run on saved files, the checker sends nothing anywhere. Th
 `--pull` option and step 1 below contact IBM with your own saved account, the YO reader downloads the model from Hugging Face, and
 `t1t2-check` submits a job on your IBM account. Python 3.9 or later.
 
+## Install the checker on its own
+
+`pip install qia-check` gives the `qia-check` command (Python 3.9 or later): https://pypi.org/project/qia-check/
+
+Add `[ibm]` to pull records with your own IBM account: `pip install "qia-check[ibm]"`
+
 ## Before a run
 
 1. Save the record you are about to run under. This needs `pip install qiskit-ibm-runtime` and a saved IBM Quantum account:
