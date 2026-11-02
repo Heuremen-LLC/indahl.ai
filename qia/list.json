@@ -885,9 +885,7 @@
    "version": "Zenodo record 22644883 as listed 2026-10-24 (publication_date 2026-09-07)",
    "indexed": "2026-10-24",
    "read": "Full text",
-   "codes": [
-    "F4"
-   ],
+   "codes": [],
    "basis": {},
    "calibrated": true,
    "anchor": "zenodo-22644883"
@@ -7317,7 +7315,7 @@
    "link": "https://doi.org/10.5281/zenodo.23731575",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [],
    "basis": {},
    "calibrated": false,
@@ -8166,7 +8164,7 @@
    "link": "https://doi.org/10.5281/zenodo.19257090",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F2",
     "F4",
@@ -9159,7 +9157,7 @@
    "link": "https://doi.org/10.5281/zenodo.21269974",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [],
    "basis": {},
    "calibrated": false,
@@ -9203,7 +9201,7 @@
    "link": "https://doi.org/10.5281/zenodo.22953019",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [],
    "basis": {},
    "calibrated": false,
@@ -11260,7 +11258,7 @@
    "link": "https://doi.org/10.5281/zenodo.19864029",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F2",
     "F3",
@@ -17164,7 +17162,7 @@
    "link": "https://doi.org/10.5281/zenodo.20546211",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F4"
    ],
@@ -20058,7 +20056,7 @@
    "link": "https://doi.org/10.5281/zenodo.19123970",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page and a third-party errata only (the paper is inside a zip that was not opened)",
    "codes": [
     "F2",
     "F3",
@@ -21412,7 +21410,7 @@
    "link": "https://doi.org/10.5281/zenodo.20779575",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F3"
    ],
@@ -24542,7 +24540,7 @@
    "link": "https://doi.org/10.5281/zenodo.20108939",
    "version": "Zenodo record 20108939 as listed 2026-10-24 (publication_date 2026-05-10)",
    "indexed": "2026-10-24",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [],
    "basis": {},
    "calibrated": false,
@@ -26443,7 +26441,7 @@
    "link": "https://doi.org/10.5281/zenodo.21988237",
    "version": "Zenodo record 21988237 as listed 2026-10-24 (publication_date 2026-08-18)",
    "indexed": "2026-10-24",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [],
    "basis": {},
    "calibrated": false,
@@ -36124,7 +36122,7 @@
    "link": "https://doi.org/10.5281/zenodo.20137043",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F4"
    ],
@@ -36292,7 +36290,7 @@
    "link": "https://doi.org/10.5281/zenodo.21937122",
    "version": "Zenodo record 21937122 as listed 2026-10-24 (publication_date 2026-08-14)",
    "indexed": "2026-10-24",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [],
    "basis": {},
    "calibrated": false,
@@ -38409,7 +38407,8 @@
    "basis": {
     "F4": [
      "run dates not printed: no date of the hardware runs in the paper (searched the whole text)",
-     "no data link printed: job IDs only, no URL, DOI or repository for circuits, counts or code"
+     "no data link printed: job IDs only, no URL, DOI or repository for circuits, counts or code",
+     "a later version (2 Nov 2026) prints a run date of 27 Oct 2026 and a GitHub link, not yet read in full"
     ]
    },
    "calibrated": false,
@@ -41169,7 +41168,7 @@
    "link": "https://doi.org/10.5281/zenodo.18646355",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F2",
     "F3",
@@ -45233,7 +45232,7 @@
    "link": "https://doi.org/10.5281/zenodo.19484195",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F2"
    ],
@@ -46708,9 +46707,7 @@
    "version": "Zenodo record 22849729 as listed 2026-10-24 (publication_date 2026-09-19)",
    "indexed": "2026-10-24",
    "read": "Full text",
-   "codes": [
-    "F6"
-   ],
+   "codes": [],
    "basis": {},
    "calibrated": true,
    "anchor": "zenodo-22849729"
@@ -47425,7 +47422,7 @@
    "link": "https://doi.org/10.5281/zenodo.18335978",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [
     "F1"
    ],
@@ -47674,7 +47671,7 @@
    "link": "https://doi.org/10.5281/zenodo.23729178",
    "version": "published version",
    "indexed": "2026-11-01",
-   "read": "Full text",
+   "read": "Record page only (the record holds no PDF of the paper; its other files were not opened)",
    "codes": [],
    "basis": {},
    "calibrated": false,

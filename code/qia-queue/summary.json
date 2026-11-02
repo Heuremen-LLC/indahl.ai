@@ -1,33 +1,11 @@
 {
- "updated": "02 Nov 21:42 UTC",
- "reads_held": 3180,
+ "updated": "02 Nov 21:53 UTC",
+ "reads_held": 3186,
  "processors": [
   {
-   "backend": "ibm_pittsburgh",
-   "pending": 3,
-   "change_24h": 0,
-   "our_jobs": 20,
-   "our_median_wait": "55 s",
-   "our_longest_wait": "110 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
-   "backend": "ibm_marrakesh",
-   "pending": 8,
-   "change_24h": 8,
-   "our_jobs": 20,
-   "our_median_wait": "1 s",
-   "our_longest_wait": "3 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
    "backend": "ibm_fez",
-   "pending": 17,
-   "change_24h": 17,
+   "pending": 4,
+   "change_24h": 3,
    "our_jobs": 20,
    "our_median_wait": "2 s",
    "our_longest_wait": "3.0 h",
@@ -36,9 +14,31 @@
    "outcome": "COMMITTED"
   },
   {
+   "backend": "ibm_marrakesh",
+   "pending": 4,
+   "change_24h": 4,
+   "our_jobs": 20,
+   "our_median_wait": "1 s",
+   "our_longest_wait": "3 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
+   "backend": "ibm_pittsburgh",
+   "pending": 4,
+   "change_24h": 4,
+   "our_jobs": 20,
+   "our_median_wait": "55 s",
+   "our_longest_wait": "110 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
    "backend": "ibm_kingston",
-   "pending": 40,
-   "change_24h": 39,
+   "pending": 9,
+   "change_24h": 9,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "60 min",
@@ -48,8 +48,8 @@
   },
   {
    "backend": "ibm_boston",
-   "pending": 236,
-   "change_24h": 141,
+   "pending": 234,
+   "change_24h": 138,
    "our_jobs": 12,
    "our_median_wait": "30 min",
    "our_longest_wait": "24.3 h",
@@ -59,8 +59,8 @@
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 1079,
-   "change_24h": -103,
+   "pending": 1047,
+   "change_24h": -114,
    "our_jobs": 20,
    "our_median_wait": "24 min",
    "our_longest_wait": "7.1 h",
