@@ -43,3 +43,7 @@
 {"rounds": 49, "seat2.seat_part_ms": 1.89, "seat_part_ms": 2.85, "t": "2026-11-01T20:00Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
 {"rounds": 49, "seat2.seat_part_ms": -0.08, "seat_part_ms": 2.42, "t": "2026-11-01T22:14Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
 {"rounds": 49, "seat2.seat_part_ms": -2.35, "seat_part_ms": 1.81, "t": "2026-11-02T00:35Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": 0.02, "seat_part_ms": 0.96, "t": "2026-11-02T02:55Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": -0.04, "seat_part_ms": 0.88, "t": "2026-11-02T05:15Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": 0.57, "seat_part_ms": 0.26, "t": "2026-11-02T07:35Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": 0.28, "seat_part_ms": 0.07, "t": "2026-11-02T09:51Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
