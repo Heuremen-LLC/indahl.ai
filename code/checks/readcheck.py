@@ -14,7 +14,7 @@ PACKS = {'Q': [('QA', "vendor's number is the same quantity; record the job ran 
                ('QC', 'known-good, floor, ceiling, synth plants every alternative'), ('QD', 'four outcomes, copies by gap, chips by value, units'),
                ('QE', 'more than two answers; post hoc labelled; no mechanism named'), ('QF', 'history and times from the job record; plans before jobs'),
                ('QG', 'referees got raw files; flags acted on; paper, site and bill agree')],
-         'L': [('L1', 'parser hand-read before any rate'), ('L2', 'no rate seen before the hand-check'), ('L3', 'setup/harness/extraction named on both sides'),
+         'L': [('L1', 'parser read in full before any rate'), ('L2', 'no rate seen before the parser read'), ('L3', 'setup/harness/extraction named on both sides'),
                ('L4', 'repeat floor per machine; run-time server settings recorded'), ('L5', 'recount from released files, keys matched'),
                ('L6', 'unread/dropped counted by reason, per arm'), ('L7', 'gold not built from the labeller it scores'), ('L8', 'paired; seed width; position copy floor; batch'),
                ('L9', 'prompt does not contain the answer'), ('L10', 'pinned name is not pinned behaviour'), ('L11', 'aged datasets/tools substituted with counts and an addendum'),

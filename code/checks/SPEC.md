@@ -130,10 +130,10 @@ Post-hoc readings say "defined after the data".
 37. **Paper, site and bill agree number for number** — one batch edit, one push, after the referee.
 
 ## Pack L: language-model evaluations, model claims, benches
-1. **Parser read by hand before any rate.** 10 replies per family, two models. More than 1 of 10 off → that family CANNOT_TELL (parser).
+1. **Parser read in full before any rate.** 10 replies per family, two models. More than 1 of 10 off → that family CANNOT_TELL (parser).
    *(25 Oct first letter read as the answer, 27 Oct LaTeX and "confidence interval" words read as a width, last number read as the figure,
    30 Oct v1 scorer dropped "equivalent" and read "not better" as a verdict.)*
-2. **No rate seen before the hand-check.** Liveness reads progress lines only. Never cat a results file or a log tail first. *(30 Oct, two model-claims rounds.)*
+2. **No rate seen before the parser read.** Liveness reads progress lines only. Never cat a results file or a log tail first. *(30 Oct, two model-claims rounds.)*
 3. **The setup is a carrier.** Harness, prompt format, chat template, extraction rule, shots, max tokens, stop sequences: name both
    sides' setup. If the vendor's differs or is unnamed, a value outside the interval reads CANNOT_TELL with its direction beside it.
    *(30 Oct, two model-card rows.)* Test the rebuttal by running their setup where it is public.

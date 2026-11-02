@@ -8,7 +8,7 @@ python3 "$HERE/readcheck.py" new run1 --packs P --what "test reading" >/dev/null
 python3 - run1/CHECKS.md <<'PY'
 import sys, re
 p = sys.argv[1]; t = open(p).read()
-t = re.sub(r'(?m)^- ([A-Z]+\d*): TODO \((.*)\)$', lambda m: '- %s: holds: checked %s by hand' % (m.group(1), m.group(2)[:40]), t); open(p, 'w').write(t)
+t = re.sub(r'(?m)^- ([A-Z]+\d*): TODO \((.*)\)$', lambda m: '- %s: holds: checked %s in full' % (m.group(1), m.group(2)[:40]), t); open(p, 'w').write(t)
 PY
 git add run1/CHECKS.md; C; say $? 0 "a complete entry passes"
 echo 2 > run1/results_x.txt; git add run1/results_x.txt; C; say $? 1 "a changed reading without a new entry is refused"
