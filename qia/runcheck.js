@@ -217,7 +217,7 @@
     if (!r.flags.length) out.appendChild(el('p', null, 'Nothing flagged.'));
     else out.appendChild(table('Flags in the record in force at the start', [['Qubit', 'qubit', 1], ['Check', 'check'], ['Figure', 'field'], ['Detail', 'detail'], ['Outcome', 'outcome']], r.flags));
     out.appendChild(el('h4', null, 'Records IBM stamped during the run'));
-    if (!r.during.length) out.appendChild(el('p', null, 'None. The record above stayed in force for the whole run.'));
+    if (!r.during.length) out.appendChild(el('p', null, (m.newest && Date.parse(m.newest) < e) ? 'None in our mirror so far. Our records stop before the end of the run, so a later record may still appear.' : 'None. No record in our mirror was stamped between the start and the end of the run.'));
     else {
       var ul = el('ul'); r.during.forEach(function (x) { ul.appendChild(el('li', null, second(x.stamp) + ' UTC, ' + x.file)); }); out.appendChild(ul);
       if (!r.changes.length) out.appendChild(el('p', null, 'The T1, T2 and readout-error figures on these qubits did not change in those records.'));
