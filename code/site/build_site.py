@@ -2375,16 +2375,24 @@ def main():
               'IRIS Research Package | Recount Matrix: Language Models | Heuremen LLC', 'Checks for language-model evaluations before and after a run: reading sheets, repeat floors, paired comparisons, the Faults and Guards.'),
              ('/atlas', '/atlas/data-pack', 'atlas/atlas-data-pack.zip', 'ATLAS Data Pack', 'atlas_package/src/README.md',
               'Every ATLAS dataset in one download: data centers, power plants, planned plants, electricity and carbon, as JSON, CSV and GeoJSON with sources and pull dates.',
-              'ATLAS Data Pack | Built Infrastructure | Heuremen LLC', 'Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.')]
+              'ATLAS Data Pack | Built Infrastructure | Heuremen LLC', 'Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.'),
+             ('/oy', '/oy/data-pack', 'oy/oy-data-pack.zip', 'OY Data Pack', 'oy_package/src/README.md',
+              'For learning research. Every OY table in one download: the school policy list, the findings and the colleges, as JSON and CSV with the source of every row.',
+              'OY Data Pack | Learning Research | Heuremen LLC', 'Every OY table as JSON and CSV, with the source of every row.'),
+             ('/hermes/model', '/hermes/model/data-pack', 'hermes/model-data-pack.zip', 'MODEL Data Pack', 'model_package/src/README.md',
+              'For AI hardware claims. Every statement on this desk with the MLCommons result it was held against, the per-accelerator results, and the file hashes, as JSON and CSV.',
+              'MODEL Data Pack | Stated Against Delivered | Heuremen LLC', 'Every MODEL statement and the MLCommons results it was held against, as JSON and CSV.')]
     _TESTED = {'/darkwave/kit': ('Tested on ibm_kingston under plans published before each job.', None),
                '/iris/package': ('Tested on our own published two-machine runs, and it reproduced every flip count.', 'iris_package/dist/iris-research-package/TESTED.md'),
-               '/atlas/data-pack': ('Tested in mapping and spreadsheet tools, and every count matches these pages.', 'atlas_package/dist/atlas-data-pack/TESTED.md')}
+               '/atlas/data-pack': ('Tested in mapping and spreadsheet tools, and every count matches these pages.', 'atlas_package/dist/atlas-data-pack/TESTED.md'),
+               '/oy/data-pack': ('Tested in a spreadsheet tool, and every count matches the OY pages.', 'oy_package/dist/oy-data-pack/TESTED.md'),
+               '/hermes/model/data-pack': ('Tested in a spreadsheet tool, and every count matches this desk.', 'model_package/dist/model-data-pack/TESTED.md')}
     for _home, _pg, _z, _t, _src, _txt, _ttl, _dsc in _PKGS:
         _zs = _sha(_z)
         if not _zs: continue
         _md = open(os.path.join(HERE, '..', _src), encoding='utf-8').read()
         _body = (f'<main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/{_z}" download>Download (zip)</a> <span class="meta">sha256 <code>{_zs}</code> &middot; '
-                 f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack'}[_pg] + '">code (git)</a></span></p>' + _md_body(_md) + (_tested(_TESTED[_pg][1]) if _TESTED[_pg][1] else '') + '</main>')
+                 f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack', '/oy/data-pack': 'oy-data-pack', '/hermes/model/data-pack': 'model-data-pack'}[_pg] + '">code (git)</a></span></p>' + _md_body(_md) + (_tested(_TESTED[_pg][1]) if _TESTED[_pg][1] else '') + '</main>')
         PAGES[_pg] = page(_pg, _ttl, _dsc, _body, hero_slim(_t, 'Heuremen LLC'))
         _place(_home, _box(_t, _pg, _txt, _z, tested=_TESTED[_pg][0]))
     if _sha('iris/iris-list-pack.zip') and '/iris/package' in PAGES:

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this data pack, please cite it. It includes MLPerf results published by MLCommons Association (Apache-2.0) and sentences quoted from the sources named in each row. Terms are given by file in LICENSE.txt."
+comment: "Terms are given by file in LICENSE.txt."
+title: "MODEL Data Pack: vendor statements held against published MLCommons results"
+authors:
+  - name: "Heuremen LLC"
+version: "1.0.0"
+date-released: "2026-11-01"
+url: "https://indahl.ai/hermes/model"
+repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
+keywords: [MLPerf, MLCommons, AI hardware, vendor statements, inference, training, storage]

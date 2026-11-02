@@ -2046,7 +2046,7 @@
    "stated": "cpu-d3, AMD EPYC Genoa, Ubuntu 24.04, Ethernet",
    "in_file": "chassis model_name cpu-d3, cpu_model AMD EPYC-Genoa Processor, operating_system Ubuntu 24.04, networking type ethernet (400 Gb/s)",
    "outcome": "CONSISTENT",
-   "note": "Read by hand from storage/v3.0/closed/Nebius/systems/nebius-s3-retinanet-32nx24-cm64.yaml. Memory is listed as 61 GiB per client.",
+   "note": "Read in full from storage/v3.0/closed/Nebius/systems/nebius-s3-retinanet-32nx24-cm64.yaml. Memory is listed as 61 GiB per client.",
    "label_mismatch": false,
    "source": {
     "title": "Nebius blog: MLPerf Storage v3.0 results: Leading RetinaNet training on Nebius Object Storage (2026)",

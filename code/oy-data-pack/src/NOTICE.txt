@@ -1,0 +1,29 @@
+OY Data Pack
+Heuremen LLC · https://indahl.ai/oy
+
+Attribution. The full terms are in LICENSE.txt and this notice says the same.
+
+Quoted from schools and other authors
+  Sentences, course titles and quoted passages in these files are quoted from the pages and documents named by the address in the same row. They belong to the schools and authors of those pages, who keep their terms. They are quoted so that each row can be traced to its source. Names of schools and authors appear as published.
+  - json/oy_chatbot_citations.json
+  - csv/oy_chatbot_citations.csv
+  - json/oy_schools.json
+  - csv/oy_schools.csv
+  - csv/oy_school_sentences.csv
+  - csv/oy_school_course_titles.csv
+  To correct or remove a row, use https://indahl.ai/correction.
+
+Federal directory
+  The federal ID, the school name and the Carnegie 2021 class in json/oy_schools.json and csv/oy_schools.csv come from the IPEDS directory of the National Center for Education Statistics, U.S. Department of Education. https://nces.ed.gov/collegenavigator/ . U.S. government data.
+
+Heuremen LLC
+  The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, verify.py, the build code, the compilation (the reading of the pages into tables, the CSV conversion, the column names), the labels, counts and notes that Heuremen LLC wrote in the tables, and these files may be used, copied and changed with attribution to Heuremen LLC and https://indahl.ai/oy:
+  - json/oy_findings.json
+  - csv/oy_findings.csv
+  - csv/oy_finding_institutions.csv
+  - json/oy_list.json
+  - csv/oy_list.csv
+  - json/oy_text.json
+  - csv/oy_text_meta.csv
+  The labels, counts and notes are the columns measures_own_policy, released_own_data, public_policy_or_guidance, pilot_results, what_we_found, site_read, read_in_full_label, read_in_full_note, sentences_note and course_titles_note, the finding text, the notes and counts of the findings, and the text file.
+  For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) and for those columns, that permission does not include use as AI training data. The reservation against text and data mining and AI training covers that text only. It does not apply to the quoted sentences, titles and quotations or to federal directory data.

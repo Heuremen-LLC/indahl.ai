@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MODEL Data Pack | Stated Against Delivered | Heuremen LLC</title>
+<meta name="description" content="Every MODEL statement and the MLCommons results it was held against, as JSON and CSV.">
+<link rel="canonical" href="https://indahl.ai/hermes/model/data-pack">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MODEL Data Pack | Stated Against Delivered | Heuremen LLC">
+<meta property="og:description" content="Every MODEL statement and the MLCommons results it was held against, as JSON and CSV.">
+<meta property="og:url" content="https://indahl.ai/hermes/model/data-pack">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="MODEL Data Pack | Stated Against Delivered | Heuremen LLC">
+<meta name="twitter:description" content="Every MODEL statement and the MLCommons results it was held against, as JSON and CSV.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="author" content="Heuremen LLC">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "MODEL Data Pack", "description": "Every MODEL statement and the MLCommons results it was held against, as JSON and CSV.", "url": "https://indahl.ai/hermes/model/data-pack", "inLanguage": "en", "dateModified": "2026-11-01", "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": "https://indahl.ai/"}, "publisher": {"@type": "Organization", "name": "Heuremen LLC", "url": "https://indahl.ai/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Heuremen LLC", "item": "https://indahl.ai/"}, {"@type": "ListItem", "position": 2, "name": "MODEL Data Pack", "item": "https://indahl.ai/hermes/model/data-pack"}]}</script>
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#f7f0e0">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Heuremen">
+<link rel="stylesheet" href="/style.css?v=@@CSSV@@">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links">@@NAV:/hermes/model/data-pack@@</nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>MODEL Data Pack</h1><p class="sub">Heuremen LLC</p></div></section>
+<main class="wrap">
+<main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/hermes/model-data-pack.zip" download>Download (zip)</a> <span class="meta">sha256 <code>19e332f908a34a5128fae37fb03bdfad4afbd949a0778a68ee8b7709f7e221c3</code> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/model-data-pack">code (git)</a></span></p><p>The data behind the MODEL page at <a href="https://indahl.ai/hermes/model">https://indahl.ai/hermes/model</a>, as files you can open in a spreadsheet or Python. MODEL sets what AI hardware vendors state about their systems next to the results MLCommons publishes. Each file comes as the page publishes it, and each JSON file also comes as CSV with one row per record. The statements were fetched and compared on {FETCHED}, the files were built on {BUILT}, and the MLCommons files were retrieved on 28 October 2026. Vendor pages and MLCommons files change, so a later read can differ.</p>
+<h2>What is in each file</h2>
+<p>Statements and outcomes (<code>json/claims.json</code>): {N_CLAIMS} statements from {N_SOURCES} sources, each with an outcome of ABOVE, BELOW, CONSISTENT or CANNOT_TELL. The file has a <code>summary</code> entry and a <code>claims</code> list. The rows come as <code>csv/claims.csv</code>. The columns are <code>id</code>, <code>vendor</code>, <code>source_key</code>, <code>statement</code>, <code>verbatim</code>, <code>compared</code>, <code>stated</code>, <code>in_file</code>, <code>outcome</code>, <code>note</code>, <code>label_mismatch</code> and four columns that start with <code>source_</code>, which hold the title, address, fetch date and round of the page the sentence comes from. The <code>id</code> repeats between sources, so a row is named by <code>source_key</code> and <code>id</code> together. The <code>statement</code> column holds the sentence as published, without quotation marks. The page puts it in quotation marks when <code>verbatim</code> is true. The <code>compared</code> column names the MLCommons entries the statement points to, such as 5.1-0072, and the <code>in_file</code> column gives what the files show. In {N_LABEL} rows <code>label_mismatch</code> is true, and the <code>in_file</code> text of those rows says how the label in the file differs from the label in the statement. For those rows the page adds one sentence to the note, which reads: The entry named in the post is listed in the file with a different accelerator or model.</p>
+<p>The summary comes as five more files. <code>csv/claims_sources.csv</code> has one row per source with its vendor, title, address and round. <code>csv/claims_tally.csv</code> has the number of statements per source and outcome, and a blank means none. <code>csv/claims_vendor_page_hash.csv</code> has the SHA-256 of the vendor page as we read it. <code>csv/claims_mlcommons_files.csv</code> has the address, SHA-256 and row count of each MLCommons inference file we used. <code>csv/claims_meta.csv</code> has the remaining summary fields as key and value, such as the build date and the commits of the training and storage repositories.</p>
+<p>Results by accelerator (<code>csv/accelerators.csv</code> and <code>json/accelerators_summary.json</code>): {N_ACC_ROWS} closed-division datacenter throughput results from MLPerf Inference v5.0, v5.1 and v6.0 that have an accelerator count, in {N_GROUPS} groups of version, model, scenario and accelerator. The <code>per_accelerator</code> column is <code>result</code> divided by <code>total</code>, which is our own computation and not an MLPerf primary metric. The summary file gives the number of submissions and submitters, the minimum, median and maximum, and the entry with the highest value for each group. <code>csv/accelerators_summary.csv</code> holds the same groups as CSV. The page states which rows are left out and why.</p>
+<p>Storage results (<code>json/storage_v30_results.json</code>): {N_STORAGE} rows that aggregate the MLPerf Storage v3.0 result files into one row per system and workload, where for training the value is the mean of the runs after the first, as <code>csv/storage_v30_rows.csv</code>, with the source and licence in <code>csv/storage_v30_meta.csv</code>. Rows for different workloads have different measurement columns, so a column is blank where the workload has no such measurement.</p>
+<p>Readings from our unit (<code>json/mac_run.jsonl</code>): {N_MAC} lines of memory bandwidth readings from the MacBook Pro 14-inch with M5 Max that the Apple table on the page uses. Each line has a <code>kind</code>. They come as <code>csv/mac_run.csv</code>, where a column is blank for a line of another kind.</p>
+<h2>Sources and dates</h2>
+<p>SOURCES.md lists the upstream sources, their links, their terms and the dates found in the data. NOTICE.txt carries the MLCommons attribution and trademark lines. The statements were fetched on {FETCHED}. The MLCommons files were retrieved on 28 October 2026. Every row of <code>csv/claims.csv</code> carries the address of the page its sentence comes from and the date it was fetched.</p>
+<h2>How to open the files</h2>
+<p>Spreadsheet: open any file in <code>csv/</code>. The files are UTF-8, and the ones we wrote carry a byte order mark so Excel reads names correctly. Empty text and missing values are both shown as blank cells. The file <code>csv/accelerators.csv</code> is the published file without a byte order mark.</p>
+<p>Python, standard library only:</p>
+<p>``<code> import json, csv claims = json.load(open(&quot;json/claims.json&quot;, encoding=&quot;utf-8&quot;))[&quot;claims&quot;] rows = list(csv.DictReader(open(&quot;csv/claims.csv&quot;, encoding=&quot;utf-8-sig&quot;))) acc = list(csv.DictReader(open(&quot;csv/accelerators.csv&quot;, encoding=&quot;utf-8-sig&quot;))) </code>``</p>
+<p>Check the pack with <code>python verify.py</code>. It recounts the rows of every file, compares every CSV cell with the JSON, recomputes the outcome counts of each source from the statements, and recomputes every group in <code>accelerators_summary.json</code> from the rows of <code>accelerators.csv</code>.</p>
+<h2>What is here</h2>
+<ul><li><code>json/</code>: the original files from the MODEL data folder, unchanged</li><li><code>csv/</code>: one CSV for each table, plus the <code>_meta.csv</code> files, and the published <code>accelerators.csv</code></li><li><code>SOURCES.md</code>: upstream sources, links, terms and dates</li><li><code>TESTED.md</code>: what the files were opened with and what was compared</li><li><code>NOTICE.txt</code>: MLCommons attribution and trademark lines, and the terms of each source</li><li><code>LICENSE.txt</code>: terms by file</li><li><code>APACHE-2.0.txt</code>: the Apache License 2.0, which covers the MLCommons results</li><li><code>verify.py</code>: recounts and compares the files</li><li><code>START_HERE.html</code>: this guide as a page</li><li><code>CITATION.cff</code></li></ul>
+<h2>Links</h2>
+<ul><li>MODEL: <a href="https://indahl.ai/hermes/model">https://indahl.ai/hermes/model</a></li><li>Papers table: <a href="https://indahl.ai/hermes/model/papers">https://indahl.ai/hermes/model/papers</a></li><li>Code: <a href="https://github.com/Heuremen-LLC/indahl.ai">https://github.com/Heuremen-LLC/indahl.ai</a></li><li>MLCommons: <a href="https://mlcommons.org">https://mlcommons.org</a></li><li>MLPerf results messaging guidelines: <a href="https://github.com/mlcommons/policies/blob/master/MLPerf_Results_Messaging_Guidelines.adoc">https://github.com/mlcommons/policies/blob/master/MLPerf_Results_Messaging_Guidelines.adoc</a></li><li>Correction or removal form: <a href="https://indahl.ai/correction">https://indahl.ai/correction</a></li></ul>
+<h2>Notes on the data</h2>
+<p>The files in <code>json/</code> are the files the MODEL page links, unchanged. The page also links the scripts that recompute each row from the MLCommons files, and those scripts are not in this pack. They are in the code folder at <a href="https://github.com/Heuremen-LLC/indahl.ai">https://github.com/Heuremen-LLC/indahl.ai</a>.</p>
+<p>The papers table on the MODEL papers page and the live model-claim rounds are not in this pack. The papers table has no data file, and the live rounds are a feed that the page reloads every 30 seconds.</p>
+<h2>Terms</h2>
+<p>Each part of this pack keeps the terms of its source, and LICENSE.txt gives them by file. The MLCommons results are published by MLCommons Association under the Apache License 2.0, and the Apache text is included. MLPerf and MLCOMMONS are trademarks of MLCommons Association. The per-accelerator values, ratios and percentages here are our own computations and are not verified by MLCommons Association. The sentences quoted from vendor pages belong to the pages named in each row. To correct or remove a row, use <a href="https://indahl.ai/correction">https://indahl.ai/correction</a>. It is open to anyone, and we acknowledge every request within three business days.</p>
+<p>Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and <a href="https://indahl.ai/hermes/model">https://indahl.ai/hermes/model</a>. For its own text (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html and the <code>compared</code>, <code>in_file</code>, <code>outcome</code> and <code>note</code> columns of the claims files) that permission does not include use as AI training data. Its reservation against text and data mining and AI training covers that text only and does not apply to the MLCommons results or to the sentences quoted from the sources.</p><section id="tested"><h2>How it was tested</h2><p>On 2026-11-01 the zip was unzipped into an empty folder and every CSV was opened with pandas 3.1.0 on Python 3.14 at default settings. The live MODEL page and its 74 source pages were fetched the same day and read with lxml 6.1 and Beautiful Soup 4. Every count and number below was compared with the live pages and matched, except the one note named further down.</p>
+<ul><li>Live files: claims.json, accelerators_summary.json, storage_v30_results.json, mac_run.jsonl and accelerators.csv are byte for byte the files in the pack</li><li>Statements: 531 rows in 74 sources, with 8 ABOVE, 51 BELOW, 368 CONSISTENT and 104 CANNOT_TELL, which are the sums of the source table on the page</li><li>Source table: vendor, round and the four outcome counts of all 74 rows equal <code>claims.csv</code> recounted with pandas and <code>claims_tally.csv</code></li><li>Source pages: the sentence, compared, stated, in the file, outcome and note of all 531 statements, and the line N statements checked of each of the 74 pages</li><li>Results by accelerator: 1,727 rows in 569 groups, 814 in v5.0, 493 in v5.1 and 420 in v6.0, and <code>per_accelerator</code> equals <code>result</code> divided by <code>total</code> in every row</li><li>Left out rows: no accelerator count 49, 61 and 24, and latency units 6, 0 and 7, for v5.0, v5.1 and v6.0</li><li>MLCommons files: rows 17,454, 1,448, 520 and 492 for v5.0, v5.1, v6.0 and v6.1, with the first 16 characters of each SHA-256 as the page prints them</li><li>Training and storage: result sets 229, 201 and 185 with commits eabf23a07b2a, d7e703fccc1c and 441d65f4445c, and 144 storage result rows with commit 802035fe6580</li><li>Known answer: entry 5.0-0001, llama2-70b-99, Offline, 33,928.1 tokens per second on 8 accelerators is 4,241.0125 per accelerator</li><li>Known answer: the statement NVIDIA v5.1 C1 reads +45.2% and CONSISTENT, and 5.1-0072 over 5.1-0071 for DeepSeek-R1 Offline recomputes from <code>accelerators.csv</code> as 1.452</li></ul>
+<p>The id column repeats between sources, with 500 different values over 531 rows, so a row is named by <code>source_key</code> and <code>id</code> together, and that pair is unique.</p>
+<p>The test found one note, Nebius Storage v3.0 with <code>id</code> NB11, worded differently in the published <code>claims.json</code> than on the page. The published file was corrected on 2 November 2026 to match the page, and this pack carries the corrected file.</p>
+<p>For the rows with <code>label_mismatch</code> true, the page adds the sentence The entry named in the post is listed in the file with a different accelerator or model. to the note. The pack does not repeat it in the note column.</p>
+<p>At default settings pandas reads a blank cell as missing. In <code>csv/claims_tally.csv</code> a blank means no statement with that outcome. No cell in any file is text that pandas reads as missing, such as NA or None.</p>
+<p>The file <code>verify.py</code> compares every CSV cell with the JSON, recomputes the outcome counts of each source from the statements, and recomputes every group of <code>accelerators_summary.json</code> from <code>accelerators.csv</code>.</p>
+<p>Not tested: Excel or LibreOffice, the scripts that recompute the rows from the MLCommons files, and a new download of the MLCommons files. The page prints the first 16 characters of each SHA-256 and the pack holds the full values, and those were compared, but the files were not downloaded again.</p></section></main>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-B776B446</p>
+</div></footer>
+<nav class="tabbar" aria-label="Divisions"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/hermes" aria-current=page>HERMES</a><a href="/atlas">ATLAS</a><a href="/oy">OY</a><a href="/stack">STACK</a></nav>
+<script src="/pwa.js" defer></script>
+<script src="/live-tags.js?v=806615f8" defer></script>
+<script src="/headline.js?v=b01367d9" defer></script>
+</body>
+</html>
