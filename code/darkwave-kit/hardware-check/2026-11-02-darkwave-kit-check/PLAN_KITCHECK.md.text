@@ -1,0 +1,32 @@
+# Darkwave Correction Kit -- known-good run on IBM hardware. Plan, written and committed before any job. Heuremen LLC, 2 Nov 2026.
+
+Why: the kit (https://indahl.ai/darkwave/kit) measures the phase turn a mid-circuit readout gives untouched qubits and adds the matching
+virtual-Z correction. It has run on the simulator and fake backends only. This run measures the kit on hardware against the code of the
+study it comes from ("A Readout's Kick Is a Turn", doi:10.5281/zenodo.23843468), in the same job, and then measures what its correction gives back.
+
+Chip: ibm_kingston. Readout pack E (39 qubits) and untouched targets S (117 qubits) from the study's committed table (committed_kicks_ibm_kingston.json).
+Settings: no dynamical decoupling, no twirling, trivial layout, optimization level 1, seed 31, 4,000 shots per circuit.
+
+Job 1 (16 circuits): the kit's 8 circuits (darkwave_kit.build: N = 1 and 4 steps, idle arm D and readout arm M, X and Y bases, idle wait = the
+chip's measure duration on the pack) and the study's 8 calibration circuits (keystone.circ_S, keys_cal: N = 4 and 8, D and M, X and Y, idle
+wait 545 dt as in the study). Before submitting, the script requires the layout unmoved and the kit's D and M arms equal in scheduled time on
+every target.
+Job 2 (6 circuits), right after job 1: the kit's N = 4 circuits, arms D and M, plus M with the kit's correction from the job-1 kit table applied by
+darkwave_kit.corrected (rz(-turn) on each target after each readout).
+
+Readings (kitcheck.py, analyze_kitcheck.py). Bands: 95 % bootstrap over targets, 2,000 resamples, seed 41.
+R1  kit turn minus the study code's turn (k4), per target, median over targets. Outcome against 0 with margin 0.5 deg per readout:
+    ABOVE / BELOW / CONSISTENT (band inside +-0.5) / CANNOT_TELL. Also printed: share of targets differing by more than 1 deg, correlation.
+R2a residual turn after the kit's correction (job 2, MC minus D, per readout), median over targets, against 0 with margin 0.5 deg per readout.
+R2b share of the turn given back (1 - residual/turn) per target with |turn| above 0.25 deg per readout, median, against 0.5: ABOVE / BELOW / CANNOT_TELL.
+Also checked: the kit table read through the kit's own path (get_counts) equals the table read from the packed arrays.
+Reported, not in the rule: the kit table minus the study's 31 Oct fresh table (drift between dates).
+
+Rule: the kit passes its hardware check if R1 is CONSISTENT, R2a is CONSISTENT and R2b is ABOVE. Any other result is published as it reads, and the
+kit page says so. One fire. An IBM-side error gets one resubmission after the backend's job list is read. No reading is changed after the data.
+
+KNOWN-GOOD: the study's own calibration code (keystone.circ_S + fresh_from_cal), which measured the published 31 Oct tables on ibm_kingston, runs in the same job on the same qubits. The kit must read the same turn (R1 CONSISTENT within 0.5 deg/readout).
+
+Synthetic test (synth_kitcheck.py, output synth_kitcheck_results.text): planted counts for five worlds, each read as planted: same turn and right
+correction (R1 CONSISTENT, R2a CONSISTENT, R2b ABOVE), kit sign flipped, kit 1 deg too big, null world (no turn), correction sign wrong on hardware.
+Cost estimate: the study's 8-circuit calibration job on this chip charged 11 s, so about 30 s for both jobs.

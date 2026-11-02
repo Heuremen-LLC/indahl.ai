@@ -37,7 +37,7 @@ We tested the kit on ibm_kingston on 2 November 2026 under plans committed and p
   prints before you trust a target's value.
 
 Brackets are 95 % bootstrap bands over the target qubits. Every number was recomputed from the raw arrays with separate code. Both runs, with their plans, raw data and code, are in `hardware-check/` and at
-https://github.com/Heuremen-LLC/heuremen.org/tree/main/experiments
+https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/darkwave-kit/hardware-check
 
 ## 2. Measure your table
 
