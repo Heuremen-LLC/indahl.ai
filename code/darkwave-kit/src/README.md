@@ -19,7 +19,8 @@ never stores your key.
 On the simulator it plants a known turn on five qubits, from 0 to 62 degrees per readout, measures it, applies the correction and measures
 again. It passes when every planted value comes back within 1 degree and every corrected value sits within 1 degree of zero. It tests the
 analysis, the bit order of the simulator's counts and the placement of the correction. It does not test hardware noise, real readout timing
-or your IBM account.
+or your IBM account. The measure step has been checked on the simulator and on IBM's fake backends. It has not yet been run on
+IBM hardware by us. Our study's tables were measured with the study's own code, which uses the same method.
 
 ## 2. Measure your table
 
@@ -53,7 +54,7 @@ hardware and adds no time. Measurements at the very end of a circuit get no corr
 
 A table holds for the readout set, the backend and the calibration it was measured with. In our study a table measured minutes before the
 run gave most of the turn back on both chips. A table ten days old did so on ibm_kingston. On ibm_marrakesh it over-corrected: its values
-were larger than the turn measured that day (median 1.5 times, our computation from the two public tables), it gave back less than half of
+were larger than the turn measured that day (median 1.5 times, our computation from the two public tables, defined after the data), it gave back less than half of
 the spectators' turn, and the clock came out worse than with no correction. Measure close to your run and keep the
 table with your data. A phase correction cannot give back coherence that was lost. The table prints the coherence kept so you can see it.
 
