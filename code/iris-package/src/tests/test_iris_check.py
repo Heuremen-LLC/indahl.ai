@@ -36,7 +36,7 @@ class T(unittest.TestCase):
     def report(self): return jload(latest(self.out, 'repeat_*.json'))
     # ---- planted answers
     def test_repeat_floor(self):
-        self.rep(self.f('A1'), self.f('A2')); r = self.report()['repeat_A'][0]; p = PLANTED['A1_vs_A2']
+        self.rep(self.f('A1'), self.f('A2'), '--repeats'); r = self.report()['repeat_A'][0]; p = PLANTED['A1_vs_A2']
         self.assertEqual((r['right_to_wrong'], r['wrong_to_right'], r['net'], r['n_matched']), (p['right_to_wrong'], p['wrong_to_right'], p['net'], 400))
         self.assertAlmostEqual(r['repeat_floor'], p['repeat_floor'], places=4)
     def test_outcomes(self):
@@ -107,7 +107,7 @@ class T(unittest.TestCase):
         rows[0]['id'] = 2.0; rows[1]['id'] = 7; rows[2]['id'] = '7.0'                    # ids that are not strings
         rows.append({'correct': True}); rows.append({'id': 'nc'}); rows.append({'id': 'nb', 'correct': 'maybe'}); rows.append(dict(rows[10]))
         jl(os.path.join(self.data, 'messy.jsonl'), rows[:5] + ['', ''] + rows[5:])
-        c = self.rep(self.f('A2'), os.path.join(self.data, 'messy.jsonl')); self.assertIn('rows read 304 = usable 299 + missing id 1 + missing correct field 1 + not a boolean 1 + duplicate rows 2 (1 duplicate ids)', c.stdout); r = {x['run']: x for x in self.report()['runs']}['messy.jsonl']
+        c = self.rep(self.f('A2'), os.path.join(self.data, 'messy.jsonl')); self.assertIn('rows read 304 = usable 299 + missing id 1 + missing correct field 1 + unscored (null correct) 0 + not a boolean 1 + duplicate rows 2 (1 duplicate ids)', c.stdout); r = {x['run']: x for x in self.report()['runs']}['messy.jsonl']
         self.assertEqual((r['blank_lines'], r['missing_id_field'], r['missing_correct_field'], r['non_boolean_correct'], r['duplicate_rows'], r['duplicate_ids']), (2, 1, 1, 1, 2, 1))
         self.assertEqual((r['rows_read'], r['usable_items']), (304, 299)); self.assertTrue(r['ties_out'])   # 304 = 299 + 1 + 1 + 1 + 2
         self.assertEqual(r['rows_read'], r['usable_items'] + r['missing_id_field'] + r['missing_correct_field'] + r['non_boolean_correct'] + r['duplicate_rows'])
@@ -125,10 +125,11 @@ class T(unittest.TestCase):
         self.assertIn('WARNING', r.stderr); self.assertIn('A1.jsonl loses 75.0%', r.stderr); self.assertTrue(self.report()['drop_warnings'])
         with open(latest(self.out, 'repeat_*.html')) as f: self.assertIn('WARNING', f.read())
     def test_row_counted_once_by_precedence(self):   # a row with a missing correct field is not also a duplicate, a row with no id is not also a missing correct field
-        jl(os.path.join(self.data, 'p.jsonl'), [dict(id='a', correct=True), dict(id='a'), dict(id='b', correct=True), dict(correct=False), dict(id='c', correct='maybe'), dict(id='c', correct=True)])
-        self.rep(os.path.join(self.data, 'p.jsonl'), self.f('A2')); r = {x['run']: x for x in self.report()['runs']}['p.jsonl']
-        self.assertEqual((r['rows_read'], r['usable_items'], r['missing_id_field'], r['missing_correct_field'], r['non_boolean_correct'], r['duplicate_rows'], r['duplicate_ids']), (6, 3, 1, 1, 1, 0, 0))
-        self.assertTrue(r['ties_out'])
+        rows = [dict(id='a', correct=True), dict(id='a'), dict(id='b', correct=True), dict(correct=False), dict(id='c', correct='maybe'), dict(id='c', correct=True), dict(id='d', correct=None)]
+        jl(os.path.join(self.data, 'p.jsonl'), rows); jl(os.path.join(self.data, 'p2.jsonl'), rows)
+        self.rep(os.path.join(self.data, 'p.jsonl'), os.path.join(self.data, 'p2.jsonl')); r = {x['run']: x for x in self.report()['runs']}['p.jsonl']
+        self.assertEqual((r['rows_read'], r['usable_items'], r['missing_id_field'], r['missing_correct_field'], r['non_boolean_correct'], r['duplicate_rows'], r['duplicate_ids']), (7, 3, 1, 1, 1, 0, 0))   # a, b and c are usable once each, id d is unscored
+        self.assertEqual((r['usable_items'], r['unscored_null_correct']), (3, 1)); self.assertTrue(r['ties_out'])
     def test_warning_always_lists_ids_not_in_other_run(self):   # item 1
         rows = readjl(self.f('A2')); m = rows[:340] + [{'id': x['id']} for x in rows[340:380]]; jl(os.path.join(self.data, 'm.jsonl'), m)
         r = self.rep(self.f('A1'), os.path.join(self.data, 'm.jsonl')); w = self.report()['drop_warnings']; wm = [x for x in w if x.startswith('m.jsonl')][0]; wa = [x for x in w if x.startswith('A1.jsonl')][0]
@@ -213,7 +214,7 @@ class T(unittest.TestCase):
         for v in (False, 0, 0.0, 'false', 'F', 'no', 'N', 'incorrect', '0'): self.assertIs(IC.to_bool(v), False, v)
         for v in ('maybe', 2, 0.5, [], None, {}, ''): self.assertIsNone(IC.to_bool(v), v)
         jl(os.path.join(self.data, 'fl.jsonl'), [dict(id=i, correct=float(i % 2)) for i in range(30)]); jl(os.path.join(self.data, 'fl2.jsonl'), [dict(id=i, correct=bool(i % 2)) for i in range(30)])
-        self.rep(os.path.join(self.data, 'fl.jsonl'), os.path.join(self.data, 'fl2.jsonl')); self.assertEqual(self.report()['repeat_A'][0]['items_flipped'], 0)
+        self.rep(os.path.join(self.data, 'fl.jsonl'), os.path.join(self.data, 'fl2.jsonl')); self.assertEqual(self.report()['repeat_A'][0]['flips'], 0)
     def test_tiny_p_shown_as_less_than(self):   # item 8
         x = {str(i): True for i in range(2000)}; y = {str(i): False for i in range(2000)}
         c = IC.compare(x, y, sorted(x, key=int), 0.02, 200, 1); self.assertEqual(c['mcnemar_exact_p'], '<1e-300'); self.assertEqual(c['outcome'], 'ABOVE')
@@ -262,6 +263,37 @@ class T(unittest.TestCase):
         with open(os.path.join(root, 'LICENSE.txt'), encoding='utf-8') as f: lic = f.read()
         for w in ('may be run, copied and changed by anyone, for any purpose', 'https://indahl.ai/iris', 'not permitted', 'keep their own terms', 'faultsguards'): self.assertIn(w, lic)
         with open(TOOL, encoding='utf-8') as f: self.assertIn('permits anyone to run, copy and change this code', f.read())
+    # ---- real-data referee
+    def test_flip_count_printed_and_share_named_by_what_the_user_marked(self):   # item 1
+        r = self.rep(self.f('A1'), self.f('A2'))
+        self.assertIn('flips 30: right->wrong 20, wrong->right 10, of 400 matched', r.stdout); self.assertIn('flip share between these runs 0.075', r.stdout); self.assertNotIn('repeat floor', r.stdout)
+        j = self.report()['repeat_A'][0]; self.assertEqual((j['flips'], j['flip_share']), (30, 0.075)); self.assertNotIn('repeat_floor', j)
+        shutil.rmtree(self.out); r = self.rep(self.f('A1'), self.f('A2'), '--repeats')
+        self.assertIn('flips 30: right->wrong 20, wrong->right 10, of 400 matched', r.stdout); self.assertIn('repeat floor 0.075', r.stdout); self.assertEqual(self.report()['repeat_A'][0]['repeat_floor'], 0.075)
+        with open(latest(self.out, 'repeat_*.html')) as f: self.assertIn('You marked these runs as repeats', f.read())
+    def pooled(self, name, models, ids=40, flipk=0):
+        rows = [dict(model=m, id=i, correct=(i + j + (flipk if i < flipk else 0)) % 2 == 0) for j, m in enumerate(models) for i in range(ids)]; p = os.path.join(self.data, name); jl(p, rows); return p
+    def test_several_id_fields_are_joined_and_pooled_duplicates_give_a_hint(self):   # item 3 and 4
+        a = self.pooled('pa.jsonl', ['m1', 'm2']); b = self.pooled('pb.jsonl', ['m1', 'm2'], flipk=3)
+        r = run('repeat', a, b, '--id-field', 'id', '--correct-field', 'correct', '--out', self.out, ok=False)   # ids repeat across the two models in each file
+        self.assertEqual(r.returncode, 1); self.assertIn('No items matched', r.stderr); self.assertIn('--id-field model id', r.stderr); self.assertIn('ids that repeat', r.stderr)
+        shutil.rmtree(self.out, ignore_errors=True); r = run('repeat', a, b, '--id-field', 'model', 'id', '--correct-field', 'correct', '--out', self.out)
+        self.assertEqual(self.report()['repeat_A'][0]['n_matched'], 80); self.assertEqual(self.report()['runs'][0]['usable_items'], 80)
+    def test_no_match_exits_nonzero_with_the_reason(self):   # item 4
+        jl(os.path.join(self.data, 'o.jsonl'), [dict(id=f'z{i}', correct=True) for i in range(30)])
+        r = run('repeat', self.f('A1'), os.path.join(self.data, 'o.jsonl'), '--id-field', 'id', '--correct-field', 'correct', '--out', self.out, ok=False)
+        self.assertEqual(r.returncode, 1); self.assertIn('No items matched between A1.jsonl and o.jsonl', r.stderr); self.assertTrue(self.report()['no_items_matched'])   # the report is still written
+        shutil.rmtree(self.out); r = run('repeat', self.f('A1'), '--vs', os.path.join(self.data, 'o.jsonl'), '--id-field', 'id', '--correct-field', 'correct', '--out', self.out, ok=False)
+        self.assertEqual(r.returncode, 1); self.assertIn('No items matched', r.stderr)
+    def test_null_correct_is_unscored_and_not_a_warning(self):   # item 5
+        rows = readjl(self.f('A2')); n = [dict(r) for r in rows]
+        for r in n[:40]: r['correct'] = None
+        jl(os.path.join(self.data, 'nulls.jsonl'), n); r = self.rep(self.f('A1'), os.path.join(self.data, 'nulls.jsonl')); j = self.report(); x = {q['run']: q for q in j['runs']}['nulls.jsonl']
+        self.assertEqual((x['unscored_null_correct'], x['usable_items'], x['missing_correct_field'], x['non_boolean_correct']), (40, 360, 0, 0)); self.assertTrue(x['ties_out'])
+        self.assertIn('unscored (null correct) 40', r.stdout); self.assertFalse([w for w in j['drop_warnings'] if w.startswith('nulls.jsonl')])   # its own nulls are not a warning
+        m = [dict(r, correct=None) if i < 40 else (({'id': r['id']}) if i < 70 else r) for i, r in enumerate(rows)]; jl(os.path.join(self.data, 'nulls2.jsonl'), m)   # 40 unscored and 30 absent
+        self.rep(self.f('A1'), os.path.join(self.data, 'nulls2.jsonl')); w = self.report()['drop_warnings']; wn = [x for x in w if x.startswith('nulls2.jsonl')][0]
+        self.assertIn('missing correct field: 30', wn); self.assertIn('40 rows with a null correct field are unscored, reported separately and not counted here', wn); self.assertIn('of its 360 scored rows', wn)
     # ---- replycheck
     def test_replycheck_help_and_named_arguments(self):
         rc = os.path.join(ROOT, 'parser-check', 'replycheck.py')

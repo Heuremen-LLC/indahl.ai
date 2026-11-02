@@ -6,7 +6,7 @@ The data behind the ATLAS pages at https://indahl.ai/atlas, as files you can ope
 
 ## What is in each file
 
-Data centers (`json/datacenters.json`): {N_OSM} features from OpenStreetMap and {N_EPOCH} US sites from Epoch AI. They come as `csv/datacenters_osm.csv`, `csv/datacenters_epoch.csv`, `geojson/datacenters_osm.geojson` and `geojson/datacenters_epoch.geojson`. {N_EPOCH_UNPLACED} Epoch sites have no coordinates, so their GeoJSON features have a null geometry. Each OpenStreetMap row carries its source and its OpenStreetMap object id. Each row in both files carries the pull date in a `pulled` column.
+Data centers (`json/datacenters.json`): {N_OSM} features from OpenStreetMap and {N_EPOCH} US sites from Epoch AI. They come as `csv/datacenters_osm.csv`, `csv/datacenters_epoch.csv`, `geojson/datacenters_osm.geojson` and `geojson/datacenters_epoch.geojson`. {N_EPOCH_UNPLACED} Epoch sites have no coordinates, so their GeoJSON features have a null geometry. The `place_method` column says how a point was found and `place_match` holds the matched address text when there is one. Each OpenStreetMap row carries its source and its OpenStreetMap object id. Each row in both files carries the pull date in a `pulled` column.
 
 Operating power plants (`json/plants.json`): {N_PLANTS} plants from the EIA monthly generator inventory. They come as `csv/plants.csv` and `geojson/plants.geojson`. Capacity by fuel is in the columns that start with `mw_`. A blank means the plant has no capacity in that fuel.
 
@@ -51,6 +51,7 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 - `csv/`: one CSV for each table, plus the `_meta.csv` files
 - `geojson/`: data centers, operating plants and planned plants as FeatureCollections
 - `SOURCES.md`: upstream sources, links, licences and dates
+- `TESTED.md`: what the files were opened with and what was compared
 - `NOTICE.txt`: upstream licences and attribution
 - `verify.py`: recounts and compares the files
 - `START_HERE.html`: this guide as a page
@@ -75,6 +76,12 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 
 The text in `json/scale.json` refers to our build step and names a script and a file path. That file is not in this pack. The JSON files are kept unchanged, so the text stays as it was written.
 
+In `csv/utilities.csv` the column `ba_code` holds the text NA in {N_NA} rows ({NA_STATES}). NA is a code in EIA's file and not a missing value. The pack's data does not define the code and the EIA files we hold do not either, so we leave its meaning to EIA. Pandas and many spreadsheets read the text NA as missing, so in pandas keep it with `pd.read_csv("csv/utilities.csv", keep_default_na=False, na_values=[""])`.
+
+The ATLAS page counts {N_SCALE_NOT_PLACED} sites as not placed in a state, while the Epoch GeoJSON has {N_EPOCH_UNPLACED} points without coordinates. The difference is {N_ADDR_STATE} sites that got their state from the address text without a point.
+
+The `datacenters_epoch` files split the JSON field `placed` in two. `place_method` is one of nominatim address, nominatim city/zip only, address match, corrected, or blank. `place_match` is the matched address text when there is one. The JSON keeps the original `placed` field.
+
 ## Known data issues
 
 This list comes from two rough checks and is not complete. It names records whose point may not match the stated state. The records are drawn as given and are not corrected in any file. Colossus 2 in `datacenters_epoch` sits about 57 m from the Tennessee and Mississippi line, and its state in the scale files comes from the simplified state outlines.
@@ -85,4 +92,4 @@ This list comes from two rough checks and is not complete. It names records whos
 
 Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch's citation, and where a file holds both, both apply. EIA, EPA and US Census data are US government works in the public domain.
 
-Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For its own text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt and START_HERE.html) that permission does not include use as AI training data. Its reservation against text and data mining and AI training covers those text files only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.
+Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For its own text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. Its reservation against text and data mining and AI training covers those text files only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.

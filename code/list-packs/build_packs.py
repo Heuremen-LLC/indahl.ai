@@ -38,7 +38,7 @@ def build(div, NAME, other_cols):
     PAGE = f'https://indahl.ai/{div}/list'; KEY = f'https://indahl.ai/{div}/key'
     shutil.copy(SRC + div + '/list.json', P + '/list.json')
     shutil.copy(B + 'public_mirror/indahl.ai/LICENSE.txt', P + '/LICENSE.txt')
-    shutil.copy(H + '/src/verify.py', P + '/verify.py')
+    shutil.copy(H + '/src/verify.py', P + '/verify.py'); shutil.copy(H + '/src/TESTED.md', P + '/TESTED.md')
     for s in S:  # anchor: the data carries one for QIA, IRIS rows get one from the arXiv id
         if 'anchor' not in s:
             a, dd = ids(s['link']); assert a, s['link']; s['_anchor'] = 'arxiv-' + re.sub(r'v\d+$', '', a)
@@ -94,10 +94,22 @@ def build(div, NAME, other_cols):
              ('references.bib', 'One BibTeX entry for each study on the List. These are other people\'s papers. Each entry carries the title and link as listed, the arXiv number or DOI when the link holds one, and a note that points to the List. No authors or years are given because the List does not carry them.'),
              ('references.ris', 'The same entries in RIS format.'),
              ('CITE_THE_LIST.bib', f'One BibTeX entry for the {NAME} itself.'),
-             ('CITATION.cff', 'Citation file for the List.'), ('verify.py', 'Checks that the files agree with each other. Run python3 verify.py in this folder.'),
+             ('CITATION.cff', 'Citation file for the List.'), ('TESTED.md', 'What was tested before release and what was not.'),
+             ('verify.py', 'Checks that the files agree with each other. Run python3 verify.py in this folder.'),
              ('LICENSE.txt', 'Terms for this data.'), ('START_HERE.html', 'This page.')]
+
+    nonascii = sum(any(ord(c) > 127 for c in s['study']) for s in S)
+    nobasis = sum(1 for s in S if s.get('codes') and not any(s.get('basis', {}).values()))
+    more = ''
+    if div == 'qia':
+        more += (f'The version column holds free text as the List records it, for example "published version" or "as read 2026-11-01". It is not only an arXiv version number.\n\n'
+                 f'Some studies have codes and no basis text. In this data {nobasis} studies have codes and an empty basis. The List records no basis text for those rows.\n\n')
+    compile_ = (f'## Compile\n\nreferences.bib is written for biblatex with biber and LuaLaTeX or XeLaTeX. ' + (f'{nonascii} titles hold characters outside ASCII, such as Cyrillic, Greek, subscripts and dashes, so classic bibtex with pdflatex will stop on them.' if nonascii else 'No title in this pack holds characters outside ASCII, but the same recipe works for all of the packs.') + f' A minimal example:\n\n'
+        '```\n\\documentclass{article}\n\\usepackage[backend=biber]{biblatex}\n\\addbibresource{references.bib}\n\\begin{document}\n'
+        f'Text \\cite{{{div}-{S[0]["_anchor"]}}}.\n\\printbibliography\n\\end{{document}}\n```\n\n'
+        'Run `lualatex main`, then `biber main`, then `lualatex main` twice more. Replace lualatex with xelatex if you prefer.\n\n')
     md = (f'# {NAME} Pack\n\nHeuremen LLC. The {NAME} in files you can open in a spreadsheet, a reference manager or a LaTeX project. Page: {PAGE}\n\n'
-          f'## Files\n\n' + '\n'.join(f'- `{n}`: {t}' for n, t in files) + '\n\n'
+          f'## Files\n\n' + '\n'.join(f'- `{n}`: {t}' for n, t in files) + '\n\n' + more
           + (f'A few links that list.json gives as http are written as https in the other files, because their host serves https.\n\n' if any(st['link'].startswith('http://') for st in S) else '')
           + (f'{sum(1 for st in S if not st.get("indexed"))} rows have no indexed date in the source, so that cell is blank.\n\n' if any(not st.get('indexed') for st in S) else '')
           + (f'In list.csv, codes are separated by spaces and the reasons in the basis column are separated by " | ". A few reasons contain that sequence themselves, so read list.json when you need each reason exactly. ' if div == 'qia' else '')
@@ -107,7 +119,7 @@ def build(div, NAME, other_cols):
           f'- BibTeX or LaTeX: copy references.bib next to your document and cite an entry with its key, for example `\\cite{{{div}-{S[0]["_anchor"]}}}`. To cite the List itself use CITE_THE_LIST.bib. Titles are UTF-8 and some hold Greek, Cyrillic or math characters, so use biber with LuaLaTeX or XeLaTeX, or a recent LaTeX with UTF-8 input.\n'
           f'- Spreadsheet: open list.csv. It is UTF-8 with a header row. In Excel use Data, then From Text/CSV, and pick UTF-8.\n\n'
           f'## Terms\n\n{d["terms"]}\n\nEach listed study keeps its own terms. Names appear as published. To have a name or a study removed: https://indahl.ai/contact\n\n'
-          f'## Check\n\nRun `python3 verify.py` in this folder. It compares the row counts of list.json, list.csv, references.bib and references.ris, checks the BibTeX braces and keys, and checks that every link starts with https://\n\n'
+          + compile_ + f'## Check\n\nRun `python3 verify.py` in this folder. It compares the row counts of list.json, list.csv, references.bib and references.ris, checks the BibTeX braces and keys, and checks that every link starts with https://\n\n'
           f'## More\n\nThe site: https://indahl.ai\n\nCode: {REPO}\n\nBuilt {TODAY}.\n')
     assert ';' not in md.replace('&', ''), 'semicolon in README'
     open(P + '/README.md', 'w').write(md)

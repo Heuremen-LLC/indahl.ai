@@ -37,11 +37,14 @@ for ds, keys in V.META.items():
 d, e, c, s = data['datacenters'], data['electricity'], data['carbon'], data['scale']
 tok = {'N_OSM': len(d['osm']), 'N_EPOCH': len(d['epoch']), 'N_EPOCH_UNPLACED': sum(1 for x in d['epoch'] if x['lat'] is None), 'N_PLANTS': len(data['plants']['plants']),
        'N_PLANNED': len(data['planned']['plants']), 'N_STATES': len(e['states']), 'N_UTIL': len(data['utilities']['utilities']), 'N_CARBON_STATES': len(c['states']),
-       'N_SUBREGIONS': len(c['subregions']), 'N_SITES': len(s['sites']), 'N_SCALE_STATES': len(s['states']), 'N_CORR': len(s['corrections'])}
+       'N_SUBREGIONS': len(c['subregions']), 'N_SITES': len(s['sites']), 'N_SCALE_STATES': len(s['states']), 'N_SCALE_NOT_PLACED': s['totals']['not_placed'], 'N_ADDR_STATE': sum(1 for x in s['sites'] if x['state_from'] == 'address text'), 'N_CORR': len(s['corrections'])}
 tok = {k: f'{v:,}' for k, v in tok.items()}
 tok.update({'DC_PULLED': d['pulled'], 'OSM_PAGE_COUNT': '1,649 of 1,853 features kept', 'PLANTS_BUILT': data['plants']['built'], 'PLANNED_BUILT': data['planned']['built'],
             'ELEC_BUILT': e['built'], 'ELEC_PRICE_YEAR': e['price_year'], 'ELEC_GEN_YEAR': e['generation_year'], 'UTIL_YEAR': data['utilities']['year'],
             'CARBON_YEAR': c['data_year'], 'CARBON_BUILT': c['built'], 'SCALE_PRICE_YEAR': s['price_year'], 'SCALE_BUILT': s['built']})
+_na = [u for u in data['utilities']['utilities'] if u['ba_code'] == 'NA']
+tok['N_NA'] = str(len(_na)); tok['NA_STATES'] = ', '.join(f"{st} {n}" for st, n in sorted(__import__('collections').Counter(u['state'] for u in _na).items()))
+assert tok['N_SCALE_NOT_PLACED'] == '8' and tok['N_ADDR_STATE'] == '2' and int(tok['N_EPOCH_UNPLACED']) - 8 == 2, 'unplaced counts changed'
 assert tok['N_OSM'] == '1,649', 'the page count 1,649 no longer matches the data'
 import sys; sys.path.insert(0, H + '/tools'); import coord_scan
 _hint = {70557: ', which is in California', 64670: ', which is in California', 70519: ', which is in the Atlantic south of Nantucket',
@@ -63,7 +66,7 @@ def fill(t):
     for k, v in tok.items(): t = t.replace('{' + k + '}', str(v))
     left = re.findall(r'\{[A-Z_]+\}', t); assert not left, left
     return t
-for f in ('README.md', 'SOURCES.md'): open(D + '/' + f, 'w').write(fill(open(H + '/src/' + f).read()))
+for f in ('README.md', 'SOURCES.md', 'TESTED.md'): open(D + '/' + f, 'w').write(fill(open(H + '/src/' + f).read()))
 for f in ('LICENSE.txt', 'NOTICE.txt'): open(D + '/' + f, 'w').write(fill(open(H + '/src/' + f).read()))
 shutil.copy(H + '/src/CITATION.cff', D + '/CITATION.cff')
 _paths = lambda f: set(re.findall(r'(?:json|csv|geojson)/[A-Za-z0-9_]+\.(?:json|csv|geojson)', open(D + '/' + f).read()))
@@ -93,7 +96,7 @@ for r, _, fs in os.walk(D):
     for f in fs:
         p = os.path.join(r, f); m = bad.search(open(p, errors='replace').read())
         assert not m, f'REFUSED: {os.path.relpath(p, D)} contains {m.group(0)!r}'
-        if f in ('README.md', 'SOURCES.md', 'NOTICE.txt', 'LICENSE.txt'):
+        if f in ('README.md', 'SOURCES.md', 'NOTICE.txt', 'LICENSE.txt', 'TESTED.md'):
             m = wording.search(re.sub(r'&[a-z]+;|&#\d+;', '', open(p).read())); assert not m, f'REFUSED wording: {f} contains {m.group(0)!r}'
 # 6. zip
 z = H + '/dist/atlas-data-pack.zip'
