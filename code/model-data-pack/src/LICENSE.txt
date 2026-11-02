@@ -1,0 +1,47 @@
+MODEL Data Pack
+Heuremen LLC · https://indahl.ai/hermes/model
+
+This pack mixes data from several sources. Each part keeps the terms of its source, and Heuremen LLC adds no restriction to any of them. The parts are listed here by file.
+
+1. MLCommons results (Apache License 2.0)
+
+MLPerf® results published by MLCommons Association, retrieved 28 October 2026 from the repositories named in NOTICE.txt.
+Licence: Apache License 2.0. https://www.apache.org/licenses/LICENSE-2.0 . The text is in APACHE-2.0.txt.
+
+This applies to every file made from those results:
+
+- json/accelerators_summary.json
+- json/storage_v30_results.json
+- csv/accelerators.csv
+- csv/accelerators_summary.csv
+- csv/storage_v30_rows.csv
+- csv/storage_v30_meta.csv
+- csv/claims_mlcommons_files.csv
+
+Changes made by Heuremen LLC: accelerators.csv keeps only closed-division datacenter results that have an accelerator count and a throughput unit, and adds the column per_accelerator, which is the result divided by the number of accelerators in the entry. accelerators_summary.json and its CSV give the count, minimum, median, maximum and best entry for each group. storage_v30_results.json is our aggregation of the Storage v3.0 result files into one row per system and workload, where for training the value is the mean of the runs after the first.
+
+MLPerf and MLCOMMONS are trademarks of MLCommons Association. The per-accelerator values, ratios and percentages are our own computations and are not verified by MLCommons Association. The trademark and verification lines are in NOTICE.txt. Heuremen LLC is a member of MLCommons, and nothing in this pack is endorsed by MLCommons Association.
+
+2. Quoted vendor and other sentences
+
+The sentences in the statement column of the claims files are quoted from the pages and documents named in the source_ columns of the same row. They belong to the owners of those pages, who keep their terms. Each row names its source. To correct or remove a row, use https://indahl.ai/correction.
+
+This applies to these files, whose columns compared, in_file, outcome and note are Heuremen LLC's own text as item 3 says:
+
+- json/claims.json
+- csv/claims.csv
+- csv/claims_sources.csv
+
+3. Heuremen LLC's own parts
+
+The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, verify.py, the build code, the compilation (the flattening, the CSV conversion, the column names), the columns compared, in_file, outcome and note of the claims files, and these files:
+
+- json/mac_run.jsonl
+- csv/mac_run.csv
+- csv/claims_tally.csv
+- csv/claims_vendor_page_hash.csv
+- csv/claims_meta.csv
+
+Heuremen LLC permits anyone to use, copy and change these parts with attribution to Heuremen LLC and https://indahl.ai/hermes/model. For its own text (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html and the columns compared, in_file, outcome and note of the claims files) that permission does not include use as AI training data.
+
+Heuremen LLC reserves text and data mining and use as AI training data for that text only. That reservation does not apply to the MLCommons results or to the sentences quoted from the sources.
