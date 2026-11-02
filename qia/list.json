@@ -45713,7 +45713,7 @@
    "anchor": "arxiv-2511.04608"
   },
   {
-   "study": "UniMind: Calibration-Aware Scheduling and Placement for Quantum-Accelerated AI Middlewars",
+   "study": "UniMind: Calibration-Aware Scheduling and Placement for Quantum-Accelerated AI Middleware",
    "link": "https://doi.org/10.5281/zenodo.22242711",
    "version": "Zenodo record 22242711 as listed 2026-10-24 (publication_date 2026-09-02)",
    "indexed": "2026-10-24",
@@ -45721,7 +45721,11 @@
    "codes": [
     "F6"
    ],
-   "basis": {},
+   "basis": {
+    "F6": [
+     "Table XII caption gives 450 trials per cell for every row, while the two decomposition cells fit 167/205 and 85/93. The author confirmed both counts on 2 Nov 2026 and says Zenodo v1.8 will add an n column and a corrected caption (not yet read)"
+    ]
+   },
    "calibrated": true,
    "anchor": "zenodo-22242711"
   },
