@@ -35549,36 +35549,6 @@
    "anchor": "doi-10-70675-a5ad5ad8z217az422az9443zcb2788cbc504"
   },
   {
-   "study": "Quantum variational rewinding for gravitational wave detection",
-   "link": "https://doi.org/10.1007/s42484-025-00244-w",
-   "version": "published version",
-   "indexed": "2026-11-01",
-   "read": "Full text",
-   "codes": [
-    "F2",
-    "F3",
-    "F4",
-    "F6"
-   ],
-   "basis": {
-    "F2": [
-     "displayed runs are chosen by informativeness; the perfect-accuracy headline is the best of five runs (Table 3 best model 1, model mean 0.919)",
-     "the model sent to hardware is the best-performing filtered model"
-    ],
-    "F3": [
-     "two-signal hardware result stated as separation, with no interval"
-    ],
-    "F4": [
-     "run dates not printed"
-    ],
-    "F6": [
-     "Discussion names ibm_nairobi for the hardware tests; Results and the Figure 10 caption name ibm_kyoto"
-    ]
-   },
-   "calibrated": false,
-   "anchor": "doi-10-1007-s42484-025-00244-w"
-  },
-  {
    "study": "Quantum Variational Rewinding for Time Series Anomaly Detection",
    "link": "https://arxiv.org/abs/2210.16438v2",
    "version": "v2",
