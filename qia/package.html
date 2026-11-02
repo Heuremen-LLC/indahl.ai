@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QIA Research Package | Quantum Idle Audit | Heuremen LLC</title>
+<meta name="description" content="Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.">
+<link rel="canonical" href="https://indahl.ai/qia/package">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://indahl.ai/terms#ai-training">
+<meta property="og:site_name" content="Heuremen LLC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QIA Research Package | Quantum Idle Audit | Heuremen LLC">
+<meta property="og:description" content="Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.">
+<meta property="og:url" content="https://indahl.ai/qia/package">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://indahl.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://indahl.ai/og.png">
+<link rel="alternate" type="application/atom+xml" title="Heuremen LLC" href="/feed.xml">
+<meta name="twitter:title" content="QIA Research Package | Quantum Idle Audit | Heuremen LLC">
+<meta name="twitter:description" content="Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="author" content="Heuremen LLC">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "QIA Research Package", "description": "Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.", "url": "https://indahl.ai/qia/package", "inLanguage": "en", "dateModified": "2026-11-01", "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": "https://indahl.ai/"}, "publisher": {"@type": "Organization", "name": "Heuremen LLC", "url": "https://indahl.ai/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Heuremen LLC", "item": "https://indahl.ai/"}, {"@type": "ListItem", "position": 2, "name": "QIA Research Package", "item": "https://indahl.ai/qia/package"}]}</script>
+<link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#f7f0e0">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Heuremen">
+<link rel="stylesheet" href="/style.css?v=@@CSSV@@">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
+<nav class="links">@@NAV:/qia/package@@</nav>
+</div></header>
+<section class="hero slim"><div class="wrap"><h1>QIA Research Package</h1><p class="sub">Heuremen LLC</p></div></section>
+<main class="wrap">
+<main class="wrap"><p class="lede">Check the IBM Quantum calibration record your run depends on, before the run and after it. One download. Your files are opened read-only and never changed. Reports go to their own folder. Run on saved files, the checker sends nothing anywhere.</p>
+<p class="pkgget"><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download the package (zip)</a> <span class="meta">sha256 <code>7435447d6820001c930367e40f16801bf1fab4e5f72bbf85d5ac151201e783e0</code> &middot; version 1.0.0 &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/qia-package">code (git)</a></span></p>
+<h2>Before a run</h2>
+<ol>
+<li>Save the record you are about to run under, or let the checker pull it with your own saved IBM account (needs <code>pip install qiskit-ibm-runtime</code>): <code>python qia_check.py before --pull ibm_kingston</code></li>
+<li>Check it: <code>python qia_check.py before record.json --qubits 0,1,5</code>. It flags T1 or T2 measured more than 24 hours before the record&rsquo;s stamp, error values of exactly 0, T2 above 2 &times; T1, and T1 and T2 measured more than 24 hours apart.</li>
+<li>Read the Guards before the work: <code>python -m faultsguards guards</code> (<a href="https://pypi.org/project/faultsguards/">PyPI</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/faultsguards">git</a>).</li>
+<li>Measure a T1 and T2 pair yourself in one job: <code>t1t2-check/</code> prints the QPU seconds before it submits anything.</li>
+</ol>
+<h2>After a run</h2>
+<ol>
+<li>Save the record again into the same folder. Keep reports in a different folder.</li>
+<li><code>python qia_check.py after records/ --start 2026-11-01T12:00:00Z --end 2026-11-01T12:40:00Z --qubits 0,1,5</code> names the latest record in the folder stamped at or before the start, lists every newer record stamped up to the end, and shows each change in the T1, T2 and readout-error figures on your qubits. Times are UTC. If IBM recalibrated between your last saved record and the run, the record in force is not in the folder, so save one right before you submit.</li>
+<li>Read the write-up against the Faults: <code>python -m faultsguards faults</code>. Give each reading a check block: <code>check-block/</code>.</li>
+</ol>
+<h2>What is in it</h2>
+<ul>
+<li><code>qia_check.py</code>: the before and after checks, Python standard library only.</li>
+<li><code>yo/</code>: the reader for <a href="https://huggingface.co/indahl/YO">YO</a>, our model trained on IBM calibration records. On each run, the exact answer computed by code is printed beside YO&rsquo;s.</li>
+<li><code>faultsguards/</code>: the Faults and Guards package and both PDFs.</li>
+<li><code>t1t2-check/</code>: T1 and a Hahn echo T2 on the same qubit in one job, on your account.</li>
+<li><code>check-block/</code>: the check block and its commit gate.</li>
+<li><code>papers/</code>: A Readout Is Not an Idle.</li>
+<li><code>START_HERE.html</code>, <code>README.md</code>, <code>LICENSE.txt</code>, <code>CITATION.cff</code>.</li>
+</ul>
+<p class="meta">Free to download, run and cite with attribution (Heuremen LLC, https://indahl.ai/qia). Your results remain yours. Use of this package&rsquo;s text or data to train, fine-tune or build AI models is not permitted. <a href="/qia">QIA</a> &middot; <a href="/qia/list">List</a> &middot; <a href="/qia/key">Key</a></p></main>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
+<p class="fs">Heuremen LLC</p>
+<p class="fs">&ldquo;We found it.&rdquo;</p>
+<p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference HLC-04755FC0</p>
+</div></footer>
+<nav class="tabbar" aria-label="Divisions"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/hermes">HERMES</a><a href="/atlas">ATLAS</a><a href="/oy">OY</a><a href="/stack">STACK</a></nav>
+<script src="/pwa.js" defer></script>
+<script src="/live-tags.js?v=806615f8" defer></script>
+<script src="/headline.js?v=b01367d9" defer></script>
+</body>
+</html>
