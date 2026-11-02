@@ -82,7 +82,7 @@ for r, _, fs in os.walk(D):
         if m: raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains {m.group(0)!r}')
         m = INTERNAL.search(t)
         if m and ('/check-block/' in p or p.endswith(('replycheck.py', 'README.md'))): raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains internal wording {m.group(0)!r}')
-ALLOWED = re.compile(r'^https://(indahl\.ai/iris(/list|/key|/package)?|github\.com/Heuremen-LLC/indahl\.ai(/tree/main/code/[\w./-]+)?|pypi\.org/project/faultsguards/|huggingface\.co/indahl)$')
+ALLOWED = re.compile(r'^https://(indahl\.ai/iris(/list|/key|/package)?|github\.com/Heuremen-LLC/indahl\.ai(/tree/main/code/[\w./-]+)?|pypi\.org/project/(faultsguards|iris-check)/|huggingface\.co/indahl)$')
 for f in ('README.md', 'TESTED.md', 'faultsbench/README.md', 'CITATION.cff'):
     t = open(D + '/' + f).read()
     for u in re.findall(r'https://[^\s)"`>]+', t): assert ALLOWED.match(u), f'REFUSED: {f} links to {u}'

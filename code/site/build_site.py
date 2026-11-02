@@ -2323,6 +2323,7 @@ def main():
     _pk_box = ('<aside class="pkgbox"><a class="pkghead" href="/qia/package"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>QIA Research Package</a>'
                '<p>For runs on IBM quantum hardware. Check the calibration record your run depends on, before the run and after it. Record checker, YO, the Faults and Guards, and a same-job T1 and T2 check.</p>'
                '<p class="pkgtested">Tested on real IBM records and a live run. <a href="/qia/package#tested">How it was tested</a></p>'
+               '<p class="pkgalso">Checker alone: <code>pip install qia-check</code> (<a href="https://pypi.org/project/qia-check/">PyPI</a>)</p>'
                '<p><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download</a> <a href="/qia/package">What is in it</a></p></aside>')
     assert PAGES['/qia'].count(_SLOT) == 1, 'QIA headline slot'
     PAGES['/qia'] = PAGES['/qia'].replace(_SLOT, _pk_box + _SLOT, 1)   # before the headline, so it floats at the top right
@@ -2382,7 +2383,7 @@ def main():
         PAGES[_pg] = page(_pg, _ttl, _dsc, _body, hero_slim(_t, 'Heuremen LLC'))
         _place(_home, _box(_t, _pg, _txt, _z, tested=_TESTED[_pg][0]))
     if _sha('iris/iris-list-pack.zip') and '/iris/package' in PAGES:
-        PAGES['/iris'] = PAGES['/iris'].replace('<a href="/iris/package">What is in it</a></p></aside>', '<a href="/iris/package">What is in it</a></p><p class="pkgalso">Also: <a href="/iris/iris-list-pack.zip" download>IRIS List Pack</a> (every study on the List, CSV and BibTeX)</p></aside>', 1)
+        PAGES['/iris'] = PAGES['/iris'].replace('<a href="/iris/package">What is in it</a></p></aside>', '<a href="/iris/package">What is in it</a></p><p class="pkgalso">Also: <a href="/iris/iris-list-pack.zip" download>IRIS List Pack</a> (every study on the List, CSV and BibTeX)</p><p class="pkgalso">Checker alone: <code>pip install iris-check</code> (<a href="https://pypi.org/project/iris-check/">PyPI</a>)</p></aside>', 1)
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])
