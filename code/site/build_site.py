@@ -2286,6 +2286,44 @@ def main():
         ('A Falcon Trained on the Faults and Guards', 'Against the untouched model, training on the Faults and Guards shows no gain in any Fault family. One training run per model, one seed.'),
         ('The Two Finalists, Head to Head', 'Every Fault family reads cannot tell in both head-to-head rounds, and no winner is named.'),
         ('YO: A Small Model Trained to Audit', 'YO v7 is the model at work. In YO v4&rsquo;s planned test on IBM records held out from training, it found 905 of 928 qubits stale by one to two days in records whose eight qubits all sat near that line, where YO v2 found 403. YO v5, trained further on same-date items (8 qubits from one record that share a calibration date), found 2,312 (seed 47) and 2,297 (seed 48) of 2,320 stale qubits in such items, where YO v4 found 2,240. Seed 47&rsquo;s gain is above zero and seed 48&rsquo;s cannot be told from zero. Seed 47 was below YO v4 on the share of its flags that were right and seed 48 on the verdicts, so YO v4 stays at work. YO v6, trained further on young groups, flagged 2 and 1 of the 1,974 young qubits sitting beside a stale one with its two seeds, where YO v4 flagged 94, but neither seed&rsquo;s gain on older same-date stale qubits was clear, one seed was below YO v4 on whole-window recall and the other found fewer stale neighbours, so YO v4 stays at work. YO v7, trained again with YO v4&rsquo;s whole-window and band items restored, found 0.993 to 1.000 of the 2,320 older same-date stale qubits across the three retest seeds, where YO v4 found 0.969, without being shown to flag more young qubits, so by the rule written before training YO v7 seed 51 now does the live reads (one of the first two seeds failed). It reads each new IBM record live on the QIA page.')])
+    # 1 Nov 2026 (his "a box in the top right corner that has a research package"): the QIA Research Package page, its box at the top right
+    # of /qia, and the download (built by ~/bones-forge/qia_package/build_package.py into public/qia/qia-research-package.zip).
+    _pk_sha = open(os.path.join(_pub, 'qia', 'qia-research-package.zip.sha256')).read().split()[0]
+    _pk_body = """<p class="lede">Check the IBM Quantum calibration record your run depends on, before the run and after it. One download. Your files are opened read-only and never changed. Reports go to their own folder. Run on saved files, the checker sends nothing anywhere.</p>
+<p class="pkgget"><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download the package (zip)</a> <span class="meta">sha256 <code>{SHA}</code> &middot; version 1.0.0 &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/qia-package">code (git)</a></span></p>
+<h2>Before a run</h2>
+<ol>
+<li>Save the record you are about to run under, or let the checker pull it with your own saved IBM account (needs <code>pip install qiskit-ibm-runtime</code>): <code>python qia_check.py before --pull ibm_kingston</code></li>
+<li>Check it: <code>python qia_check.py before record.json --qubits 0,1,5</code>. It flags T1 or T2 measured more than 24 hours before the record&rsquo;s stamp, error values of exactly 0, T2 above 2 &times; T1, and T1 and T2 measured more than 24 hours apart.</li>
+<li>Read the Guards before the work: <code>python -m faultsguards guards</code> (<a href="https://pypi.org/project/faultsguards/">PyPI</a> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/faultsguards">git</a>).</li>
+<li>Measure a T1 and T2 pair yourself in one job: <code>t1t2-check/</code> prints the QPU seconds before it submits anything.</li>
+</ol>
+<h2>After a run</h2>
+<ol>
+<li>Save the record again into the same folder. Keep reports in a different folder.</li>
+<li><code>python qia_check.py after records/ --start 2026-11-01T12:00:00Z --end 2026-11-01T12:40:00Z --qubits 0,1,5</code> names the latest record in the folder stamped at or before the start, lists every newer record stamped up to the end, and shows each change in the T1, T2 and readout-error figures on your qubits. Times are UTC. If IBM recalibrated between your last saved record and the run, the record in force is not in the folder, so save one right before you submit.</li>
+<li>Read the write-up against the Faults: <code>python -m faultsguards faults</code>. Give each reading a check block: <code>check-block/</code>.</li>
+</ol>
+<h2>What is in it</h2>
+<ul>
+<li><code>qia_check.py</code>: the before and after checks, Python standard library only.</li>
+<li><code>yo/</code>: the reader for <a href="https://huggingface.co/indahl/YO">YO</a>, our model trained on IBM calibration records. On each run, the exact answer computed by code is printed beside YO&rsquo;s.</li>
+<li><code>faultsguards/</code>: the Faults and Guards package and both PDFs.</li>
+<li><code>t1t2-check/</code>: T1 and a Hahn echo T2 on the same qubit in one job, on your account.</li>
+<li><code>check-block/</code>: the check block and its commit gate.</li>
+<li><code>papers/</code>: A Readout Is Not an Idle.</li>
+<li><code>START_HERE.html</code>, <code>README.md</code>, <code>LICENSE.txt</code>, <code>CITATION.cff</code>.</li>
+</ul>
+<p class="meta">Free to download, run and cite with attribution (Heuremen LLC, https://indahl.ai/qia). Your results remain yours. Use of this package&rsquo;s text or data to train, fine-tune or build AI models is not permitted. <a href="/qia">QIA</a> &middot; <a href="/qia/list">List</a> &middot; <a href="/qia/key">Key</a></p>""".replace('{SHA}', _pk_sha)
+    PAGES['/qia/package'] = page('/qia/package', 'QIA Research Package | Quantum Idle Audit | Heuremen LLC',
+        'Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.',
+        '<main class="wrap">' + _pk_body + '</main>', hero_slim('QIA Research Package', 'Heuremen LLC'))
+    _pk_box = ('<aside class="pkgbox"><a class="pkghead" href="/qia/package"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>QIA Research Package</a>'
+               '<p>Check the IBM calibration record your run depends on, before the run and after it. Record checker, YO, the Faults and Guards, and a same-job T1 and T2 check.</p>'
+               '<p><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download</a> <a href="/qia/package">What is in it</a></p></aside>')
+    assert PAGES['/qia'].count(_SLOT) == 1, 'QIA headline slot'
+    PAGES['/qia'] = PAGES['/qia'].replace(_SLOT, _SLOT + _pk_box, 1)
+    globals()["CSS"] += ".pkgbox{float:right;width:280px;margin:8px 0 16px 24px;padding:14px 16px;border:2px solid var(--rule);background:var(--paper2);font-size:15px;line-height:1.45}.pkgbox p{margin:8px 0}.pkghead{display:flex;align-items:center;gap:8px;font:400 19px/1.2 \"Abril Fatface\",Georgia,serif;color:var(--ink);text-decoration:none}.pkghead .mark{width:28px;height:28px;flex:none}.pkgbtn{display:inline-block;padding:6px 14px;background:var(--ink);color:var(--paper)!important;text-decoration:none;border-radius:2px;margin-right:10px}.pkgbtn:hover{background:var(--goldink)}.pkgget{margin:18px 0}@media (max-width:700px){.pkgbox{float:none;width:auto;margin:8px 0 16px}}\n"
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])
@@ -2309,3 +2347,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
