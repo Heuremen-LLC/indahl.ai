@@ -2255,6 +2255,8 @@ def _page_dates(docs):
     _j.dump(out, open(sf, 'w'))
     return {p: v[1] for p, v in out.items()}
 
+# 1 Nov 2026: QIA Research Package box (top right of /qia) and download button, added before the stylesheet version stamp is taken
+CSS += ".pkgbox{float:right;width:280px;margin:8px 0 16px 24px;padding:14px 16px;border:2px solid var(--rule);background:var(--paper2);font-size:15px;line-height:1.45}.pkgbox p{margin:8px 0}.pkghead{display:flex;align-items:center;gap:8px;font:400 19px/1.2 \"Abril Fatface\",Georgia,serif;color:var(--ink);text-decoration:none}.pkghead .mark{width:28px;height:28px;flex:none}.pkgbtn{display:inline-block;padding:6px 14px;background:var(--ink);color:var(--paper)!important;text-decoration:none;border-radius:2px;margin-right:10px}.pkgbtn:hover{background:var(--goldink)}.pkgget{margin:18px 0}@media (max-width:700px){.pkgbox{float:none;width:auto;margin:8px 0 16px}}\n"
 def main():
     names = {}
     import hashlib as _hh
@@ -2323,7 +2325,6 @@ def main():
                '<p><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download</a> <a href="/qia/package">What is in it</a></p></aside>')
     assert PAGES['/qia'].count(_SLOT) == 1, 'QIA headline slot'
     PAGES['/qia'] = PAGES['/qia'].replace(_SLOT, _SLOT + _pk_box, 1)
-    globals()["CSS"] += ".pkgbox{float:right;width:280px;margin:8px 0 16px 24px;padding:14px 16px;border:2px solid var(--rule);background:var(--paper2);font-size:15px;line-height:1.45}.pkgbox p{margin:8px 0}.pkghead{display:flex;align-items:center;gap:8px;font:400 19px/1.2 \"Abril Fatface\",Georgia,serif;color:var(--ink);text-decoration:none}.pkghead .mark{width:28px;height:28px;flex:none}.pkgbtn{display:inline-block;padding:6px 14px;background:var(--ink);color:var(--paper)!important;text-decoration:none;border-radius:2px;margin-right:10px}.pkgbtn:hover{background:var(--goldink)}.pkgget{margin:18px 0}@media (max-width:700px){.pkgbox{float:none;width:auto;margin:8px 0 16px}}\n"
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])
