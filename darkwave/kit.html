@@ -75,7 +75,14 @@
 <ul><li>Darkwave: <a href="https://indahl.ai/darkwave">https://indahl.ai/darkwave</a></li><li>Data and code of the study: <a href="https://doi.org/10.5281/zenodo.23843468">https://doi.org/10.5281/zenodo.23843468</a></li><li>Code: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/readout-correction">https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/readout-correction</a></li><li>QIA Research Package, checks on the calibration record before and after a run: <a href="https://indahl.ai/qia/package">https://indahl.ai/qia/package</a></li></ul>
 <h2>Terms</h2>
 <p>Heuremen LLC permits anyone to run, copy and change the code in this kit, for any purpose, with attribution to Heuremen LLC and <a href="https://indahl.ai/darkwave">https://indahl.ai/darkwave</a></p>
-<p>Your results remain yours. The text and the example data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted.</p></main>
+<p>Your results remain yours. The text and the example data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted.</p><section id="todays-tables"><h2>Today&rsquo;s tables</h2>
+<p>Once a day we run the kit&rsquo;s measurement on each chip with our own IBM account and publish the table in the kit&rsquo;s format. Download one and run <code>python darkwave_kit.py apply --table kick_table_ibm_kingston_2026-11-02.json my_circuit.qpy corrected.qpy</code> to apply it to your circuits without spending your own IBM time.</p>
+<div id="tables-live" class="bench-live">Loading.</div>
+<noscript><p>This list needs JavaScript. The tables are plain JSON files under <a href="/darkwave/tables/latest.json">/darkwave/tables/latest.json</a>.</p></noscript>
+<script src="/darkwave/tables.js" defer></script>
+<p>A table holds for that readout set, chip and calibration. The hardware check of 2 November, described <a href="#tested">above</a>, is the validation.</p>
+</section>
+</main>
 </main>
 <footer class="foot"><div class="wrap">
 <p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
