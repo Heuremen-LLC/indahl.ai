@@ -68,7 +68,18 @@
 <li><code>papers/</code>: A Readout Is Not an Idle.</li>
 <li><code>START_HERE.html</code>, <code>README.md</code>, <code>LICENSE.txt</code>, <code>CITATION.cff</code>.</li>
 </ul>
-<p class="meta">Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/qia. Your results remain yours. The text, papers and data follow the license file in the package, and their use to train, fine-tune or build AI models is not permitted. <a href="/qia">QIA</a> &middot; <a href="/qia/list">List</a> &middot; <a href="/qia/key">Key</a></p></main>
+<p class="meta">Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/qia. Your results remain yours. The text, papers and data follow the license file in the package, and their use to train, fine-tune or build AI models is not permitted. <a href="/qia">QIA</a> &middot; <a href="/qia/list">List</a> &middot; <a href="/qia/key">Key</a></p><section id="tested"><h2>How it was tested</h2><p>Heuremen LLC, 2 November 2026, on the package as published at <a href="https://indahl.ai/qia/qia-research-package.zip">https://indahl.ai/qia/qia-research-package.zip</a></p>
+<ul><li>Against our mirror&#x27;s audit code. For the latest published calibration record of each of seven IBM processors (ibm_aachen, ibm_boston,
+   ibm_fez, ibm_kingston, ibm_marrakesh, ibm_phoenix, ibm_pittsburgh), <code>qia_check.py before</code> was compared with the separate audit code that
+   runs our public IBM mirror (<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/mirror">https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/mirror</a>). The T2 above 2 x T1 flags, with their
+   outcomes, and the T1 and T2 date-gap flags agreed qubit for qubit on all seven. Both were written by us to the same rules, so this shows
+   the two implementations agree. It does not test the rules themselves.</li><li>Against 362 saved ibm_kingston records. The before checks were recounted with separate code, and every count agreed on every record.</li><li>On a real run. Our Darkwave kit test jobs ran on ibm_kingston from 01:11 to 01:17 UTC on 2 November 2026, and each job saved the
+   calibration record it ran under. <code>qia_check.py after</code>, given the six records our mirror saved that evening, named the same record
+   (stamped 00:39 UTC) and reported no record stamped during the run. No record was stamped in that window, so the part of the check that
+   lists records stamped during a run was exercised on test files only, not on this run.</li><li>The pull path. <code>qia_check.py before --pull ibm_kingston</code> saved the live record from IBM and checked it. The saved file was unchanged
+   after the check (sha256 before and after equal). Our test passed our own IBM connection in place of a saved account. The saved-account
+   step itself (QiskitRuntimeService with no arguments) is IBM&#x27;s own code.</li></ul>
+<p>Not yet tested inside this package: the YO reader (<code>yo/yo_audit.py</code>) against the model. YO itself is scored against the exact code answer on held-out IBM records at <a href="https://indahl.ai/iris/lab">https://indahl.ai/iris/lab</a></p></section></main>
 </main>
 <footer class="foot"><div class="wrap">
 <p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
