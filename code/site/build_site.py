@@ -2357,7 +2357,7 @@ def main():
         _place(_lp + '/list', _lbox)
         if _lp == '/qia': PAGES['/qia'] = PAGES['/qia'].replace('<a href="/qia/package">What is in it</a></p></aside>', f'<a href="/qia/package">What is in it</a></p><p class="pkgalso">Also: <a href="/{_lz}" download>{_lt}</a> (every study on the List, CSV and BibTeX)</p></aside>', 1)
     _PKGS = [('/darkwave', '/darkwave/kit', 'darkwave/darkwave-correction-kit.zip', 'Darkwave Correction Kit', 'darkwave_kit/src/README.md',
-              'Measure the turn a mid-circuit readout gives the untouched qubits next to it on your own IBM account, and add the matching virtual-Z correction to your circuits. Simulator self-test included.',
+              'Measure the turn a mid-circuit readout gives the untouched qubits next to it on your own IBM account, and add the matching virtual-Z correction to your circuits. Tested on ibm_kingston: the correction gave back the turn, with both hardware runs included.',
               'Darkwave Correction Kit | A Readout&rsquo;s Kick Is a Turn | Heuremen LLC', 'Measure the phase turn a mid-circuit readout gives untouched qubits on your own IBM account, and add the matching virtual-Z correction to your circuits.'),
              ('/iris', '/iris/package', 'iris/iris-research-package.zip', 'IRIS Research Package', 'iris_package/src/README.md',
               'Check a language-model evaluation before and after a run: read replies before trusting a parser, count flips between repeats, compare two systems with four outcomes. With the Faults and Guards.',

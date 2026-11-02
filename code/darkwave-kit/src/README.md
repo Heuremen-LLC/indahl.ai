@@ -19,8 +19,25 @@ never stores your key.
 On the simulator it plants a known turn on five qubits, from 0 to 62 degrees per readout, measures it, applies the correction and measures
 again. It passes when every planted value comes back within 1 degree and every corrected value sits within 1 degree of zero. It tests the
 analysis, the bit order of the simulator's counts and the placement of the correction. It does not test hardware noise, real readout timing
-or your IBM account. The measure step has been checked on the simulator and on IBM's fake backends. It has not yet been run on
-IBM hardware by us. Our study's tables were measured with the study's own code, which uses the same method.
+or your IBM account.
+
+## Tested on IBM hardware
+
+We tested the kit on ibm_kingston on 2 November 2026 under plans committed and public before each job. The study's 39-qubit readout pack and its
+117 untouched qubits were used, with the study's own calibration code running in the same job as the reference.
+
+- Version 1.0 read the same turn as the study's code (kit minus study +0.025 [-0.063, +0.143] degrees per readout) but its correction gave back
+  only 0.264 [0.248, 0.285] of the turn, and it failed the test. Its apply step merged readouts separated by barriers into one group, so a
+  circuit with four readouts got one correction instead of four.
+- Version 1.1, this one, read the same turn as the study's code (kit minus study -0.041 [-0.231, +0.101] degrees per readout) and its correction
+  gave back 1.012 [0.993, 1.027] of the turn over 113 targets. The turn left after the correction was +0.086 [-0.007, +0.180] degrees per readout,
+  against -3.223 uncorrected. It passed the test, on one chip and one calibration snapshot, on the second attempt after the fix.
+- The share given back is a median over the targets. A tail keeps part of the turn: 12 % of targets kept more than 1 degree per readout,
+  mostly targets with low idle coherence, and one high-coherence target kept +9.47 of a -22.1 degree turn. Check the coherence the table
+  prints before you trust a target's value.
+
+Brackets are 95 % bootstrap bands over the target qubits. An outside referee recomputed every number from the raw arrays. Both runs, with their plans, raw data and code, are in `hardware-check/` and at
+https://github.com/Heuremen-LLC/heuremen.org/tree/main/experiments
 
 ## 2. Measure your table
 
@@ -60,6 +77,7 @@ table with your data. A phase correction cannot give back coherence that was los
 
 ## Examples
 
+`hardware-check/kick_table_ibm_kingston_2nov2026.json` is a table this kit measured on ibm_kingston on 2 November 2026, in the kit's own format.
 `examples/` holds the tables from our own 31 October 2026 run on ibm_kingston and ibm_marrakesh, measured minutes before that run. They
 are in the study's own format, show the size of the turn we saw, and cannot be used with `apply`. They are not a table for your run.
 
