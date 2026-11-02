@@ -1,0 +1,78 @@
+# ATLAS Data Pack
+
+Heuremen LLC · https://indahl.ai/atlas
+
+The data behind the ATLAS pages at https://indahl.ai/atlas, as files you can open in a spreadsheet, a GIS tool or Python. Each dataset comes as the original JSON file unchanged, as CSV with one row per record, and for points on a map as GeoJSON. Each dataset carries its own build or pull date, listed in SOURCES.md.
+
+## What is in each file
+
+Data centers (`json/datacenters.json`): {N_OSM} features from OpenStreetMap and {N_EPOCH} US sites from Epoch AI. They come as `csv/datacenters_osm.csv`, `csv/datacenters_epoch.csv`, `geojson/datacenters_osm.geojson` and `geojson/datacenters_epoch.geojson`. {N_EPOCH_UNPLACED} Epoch sites have no coordinates, so their GeoJSON features have a null geometry. Each OpenStreetMap row carries its source and its OpenStreetMap object id. Each row in both files carries the pull date in a `pulled` column.
+
+Operating power plants (`json/plants.json`): {N_PLANTS} plants from the EIA monthly generator inventory. They come as `csv/plants.csv` and `geojson/plants.geojson`. Capacity by fuel is in the columns that start with `mw_`. A blank means the plant has no capacity in that fuel.
+
+Planned power plants (`json/planned.json`): {N_PLANNED} plants. They come as `csv/planned.csv`, `csv/planned_generators.csv` and `geojson/planned.geojson`. The `planned_generators.csv` file has one row for each planned generator with its year, megawatts and fuel, taken from the `years` list of each plant. The same list is kept as text in the `years_json` column of `planned.csv`.
+
+Electricity (`json/electricity.json`): prices, sales and generation for {N_STATES} states, including the District of Columbia. They come as `csv/electricity_states.csv`, one row per state with the data center counts kept in the `data_centers_` columns. The national figures are in `csv/electricity_us.csv` and `csv/electricity_us_ownership.csv`.
+
+Utilities (`json/utilities.json`): {N_UTIL} rows of bundled EIA-861 data, one per utility and state, as `csv/utilities.csv`.
+
+Carbon (`json/carbon.json`): EPA eGRID emission rates for {N_CARBON_STATES} states as `csv/carbon_states.csv`, {N_SUBREGIONS} grid regions as `csv/carbon_subregions.csv` and the national figures as `csv/carbon_us.csv`.
+
+Cost to scale (`json/scale.json`): one year of electricity at the stated power of the Epoch AI sites. It comes as `csv/scale_sites.csv` with {N_SITES} sites, `csv/scale_states.csv` with {N_SCALE_STATES} states and `csv/scale_corrections.csv` with {N_CORR} correction. The method and the totals are in `csv/scale_meta.csv`.
+
+Every dataset also has a `csv/<name>_meta.csv` file with two columns, `key` and `value`. It holds the fields that describe the whole dataset, such as the source text, the method, the units, the legend bins and the build date.
+
+## Sources and dates
+
+SOURCES.md lists the upstream sources, their links, their licences and the dates found in the data. NOTICE.txt carries the attribution lines. The OpenStreetMap rows are shared under the ODbL 1.0 with the line © OpenStreetMap contributors.
+
+Only the data center rows carry a source in every row. The plants, planned plants, electricity, utilities, carbon and scale files carry one source statement for the whole dataset, in the `source` or `sources` entry of the JSON and in the `_meta.csv` file. They have no source column per row. Their rows carry the build date or the data year as a column instead.
+
+## How to open the files
+
+Spreadsheet: open any file in `csv/`. The files are UTF-8 with a byte order mark so Excel reads names correctly. Empty text and missing values are both shown as blank cells.
+
+GIS tool: add any file in `geojson/` as a vector layer. Coordinates are in longitude and latitude order in WGS 84. Properties keep their nested structure, and a tool that cannot read nested values will show them as text.
+
+Python, standard library only:
+
+```
+import json, csv
+rows = list(csv.DictReader(open("csv/plants.csv", encoding="utf-8-sig")))
+plants = json.load(open("json/plants.json"))["plants"]
+points = json.load(open("geojson/plants.geojson"))["features"]
+```
+
+Check the pack with `python verify.py`. It recounts the rows of every file, compares every CSV cell with the JSON and compares the GeoJSON features with the JSON records.
+
+## What is here
+
+- `json/`: the original files from the ATLAS data folder, unchanged
+- `csv/`: one CSV for each table, plus the `_meta.csv` files
+- `geojson/`: data centers, operating plants and planned plants as FeatureCollections
+- `SOURCES.md`: upstream sources, links, licences and dates
+- `NOTICE.txt`: upstream licences and attribution
+- `verify.py`: recounts and compares the files
+- `START_HERE.html`: this guide as a page
+- `LICENSE.txt`, `CITATION.cff`
+
+## Links
+
+- ATLAS: https://indahl.ai/atlas
+- Electricity: https://indahl.ai/atlas/electricity
+- Power plants: https://indahl.ai/atlas/power-plants
+- Planned plants: https://indahl.ai/atlas/planned-plants
+- Carbon: https://indahl.ai/atlas/carbon
+- Code: https://github.com/Heuremen-LLC/indahl.ai
+- Data on Hugging Face: https://huggingface.co/indahl
+- OpenStreetMap: https://www.openstreetmap.org/copyright
+- Epoch AI: https://epoch.ai/data/ai-data-centers
+- EIA-861: https://www.eia.gov/electricity/data/eia861/
+- EIA-860M: https://www.eia.gov/electricity/data/eia860m/
+- EPA eGRID: https://www.epa.gov/egrid
+
+## Terms
+
+Free to download, read and cite with attribution to Heuremen LLC and https://indahl.ai/atlas
+
+Upstream data keep their upstream licences, listed in NOTICE.txt. Use of Heuremen LLC's compilation, text or code to train, fine-tune or build AI models is not permitted. See LICENSE.txt.

@@ -12,7 +12,7 @@ many catches still came after a reading had gone out. A question can be skipped.
 - `SPEC.md`: the core fields every reading answers, and the packs for quantum hardware (Q), language-model evaluations (L), public
   copy (P) and live operations (O). Each pack line comes from a mistake we made, with its date.
 - `readcheck.py`: writes a template entry and checks that the latest entry is complete.
-- `readcheck_hook.py`: a git pre-commit gate. A staged results, readings, hand-check or outcomes file needs the nearest CHECKS.md at or
+- `readcheck_hook.py`: a git pre-commit gate. A staged file whose name marks a reading (results, readings, HANDCHECK..., outcomes_....json) needs the nearest CHECKS.md at or
   above its folder staged in the same commit, with a complete new entry.
 - `install_hook.sh`: adds the gate to the pre-commit hook of the repository you are in, keeping any hook already there.
 - `test_gate.sh`: builds a throwaway repository and shows the gate refuse and pass, case by case.

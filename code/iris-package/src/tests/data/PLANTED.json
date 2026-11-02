@@ -1,0 +1,32 @@
+{
+ "items": 400,
+ "A1_vs_A2": {
+  "right_to_wrong": 20,
+  "wrong_to_right": 10,
+  "net": -10,
+  "repeat_floor": 0.075
+ },
+ "A1_vs_B1": {
+  "A_right_B_wrong": 60,
+  "A_wrong_B_right": 10,
+  "outcome": "ABOVE"
+ },
+ "B1_vs_A1": {
+  "outcome": "BELOW"
+ },
+ "A1_vs_C1": {
+  "A_right_B_wrong": 5,
+  "A_wrong_B_right": 5,
+  "outcome": "CONSISTENT"
+ },
+ "A1_vs_E1": {
+  "A_right_B_wrong": 14,
+  "A_wrong_B_right": 6,
+  "outcome": "CANNOT_TELL"
+ },
+ "parser": {
+  "good": "0 mis-parsed in every reply",
+  "bad": "every reply mis-parsed",
+  "edge": "exactly 6 of 60 replies mis-parsed (ids edge-00, edge-10, ... edge-50)"
+ }
+}
