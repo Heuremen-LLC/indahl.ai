@@ -2321,7 +2321,7 @@ def main():
         'Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Faults and Guards, and a same-job T1 and T2 check. One download.',
         '<main class="wrap">' + _pk_body + '</main>', hero_slim('QIA Research Package', 'Heuremen LLC'))
     _pk_box = ('<aside class="pkgbox"><a class="pkghead" href="/qia/package"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>QIA Research Package</a>'
-               '<p>Check the IBM calibration record your run depends on, before the run and after it. Record checker, YO, the Faults and Guards, and a same-job T1 and T2 check.</p>'
+               '<p>For runs on IBM quantum hardware. Check the calibration record your run depends on, before the run and after it. Record checker, YO, the Faults and Guards, and a same-job T1 and T2 check.</p>'
                '<p><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download</a> <a href="/qia/package">What is in it</a></p></aside>')
     assert PAGES['/qia'].count(_SLOT) == 1, 'QIA headline slot'
     PAGES['/qia'] = PAGES['/qia'].replace(_SLOT, _pk_box + _SLOT, 1)   # before the headline, so it floats at the top right
@@ -2360,7 +2360,7 @@ def main():
               'Measure the turn a mid-circuit readout gives the untouched qubits next to it on your own IBM account, and add the matching virtual-Z correction to your circuits. Tested on ibm_kingston: the correction gave back the turn, with both hardware runs included.',
               'Darkwave Correction Kit | A Readout&rsquo;s Kick Is a Turn | Heuremen LLC', 'Measure the phase turn a mid-circuit readout gives untouched qubits on your own IBM account, and add the matching virtual-Z correction to your circuits.'),
              ('/iris', '/iris/package', 'iris/iris-research-package.zip', 'IRIS Research Package', 'iris_package/src/README.md',
-              'Check a language-model evaluation before and after a run: read replies before trusting a parser, count flips between repeats, compare two systems with four outcomes. With the Faults and Guards.',
+              'For language-model evaluations. Read replies before trusting a parser, count flips between repeated runs, and compare two systems with four outcomes. With the Faults and Guards.',
               'IRIS Research Package | Recount Matrix: Language Models | Heuremen LLC', 'Checks for language-model evaluations before and after a run: reading sheets, repeat floors, paired comparisons, the Faults and Guards.'),
              ('/atlas', '/atlas/data-pack', 'atlas/atlas-data-pack.zip', 'ATLAS Data Pack', 'atlas_package/src/README.md',
               'Every ATLAS dataset in one download: data centers, power plants, planned plants, electricity and carbon, as JSON, CSV and GeoJSON with sources and pull dates.',
