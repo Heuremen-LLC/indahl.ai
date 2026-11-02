@@ -1,0 +1,20 @@
+IRIS Research Package
+Heuremen LLC, https://indahl.ai/iris
+
+Code
+The code in this package may be run, copied and changed by anyone, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/iris
+This covers iris_check.py, the tests folder, the faultsbench folder, the parser-check folder and the code in the check-block folder (readcheck.py,
+readcheck_hook.py, install_hook.sh and test_gate.sh). The code is provided as it is, without warranty of any kind.
+
+Text and data
+The text and data in this package (this README, START_HERE.html, SPEC.md, the example CHECKS.md, items.json and the synthetic test data) are free to
+download, read and cite with attribution (Heuremen LLC, with a link to https://indahl.ai/iris). All rights are reserved. Text and data mining, and use of
+this text or data to train, fine-tune or build AI models, are not permitted. This is an express reservation of rights, also made in machine-readable form
+at https://indahl.ai/robots.txt and https://indahl.ai/.well-known/tdmrep.json.
+
+Other parts
+The Faults and Guards package (the wheel in the faultsguards folder) and the Faults and Guards PDFs keep their own terms, which are stated in the wheel and in
+the PDFs. This file does not change them.
+
+Your results
+Your files and results remain yours. The checks read them on your machine and send nothing anywhere.

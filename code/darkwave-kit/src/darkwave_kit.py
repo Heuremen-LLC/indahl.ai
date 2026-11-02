@@ -20,8 +20,8 @@ The table holds for the readout set, backend and calibration it was measured wit
 to your run and keep it with your data.
 
 apply: after each group of mid-circuit measurements on the table's readout qubits, adds rz(-kick) to each target qubit in the table.
-A group is a run of consecutive measure instructions (barriers allowed between them), and the table assumes the whole readout set is
-measured together in each group, as when it was measured. Measurements at the very end of a circuit get no correction. Circuits must be
+A group is a run of consecutive measure instructions (barriers allowed between them) in which no qubit is read twice. A qubit read again
+starts a new group. The table assumes the whole readout set is measured together in each group, as when it was measured. Measurements at the very end of a circuit get no correction. Circuits must be
 on physical qubit numbers (transpiled with the layout the table was measured on). Readouts inside if/else or loop blocks are not
 corrected and are counted in a warning. The input file is opened read-only and the output is written to a new file.
 Your account: qiskit-ibm-runtime's saved account (QiskitRuntimeService.save_account). Python 3.10 or later.
@@ -156,7 +156,9 @@ def corrected(qc, readout, kicks, notes=None):
     for j, ins in enumerate(data):
         name = ins.operation.name; qs = [idx[x] for x in ins.qubits]
         if getattr(ins.operation, 'blocks', None) and nested(ins.operation): notes['nested'] = notes.get('nested', 0) + 1
-        if name == 'measure' and set(qs) <= R: pending |= set(qs); out.append(ins); continue
+        if name == 'measure' and set(qs) <= R:
+            if set(qs) & pending: flush(); pending = set()   # a qubit read again starts a new readout: its group ends here
+            pending |= set(qs); out.append(ins); continue
         if name == 'barrier' and pending: out.append(ins); continue
         if pending:
             if any(d.operation.name not in ('measure', 'barrier') for d in data[j:]): flush()
@@ -207,6 +209,10 @@ def cmd_selftest(a):
             r = sim.run(transpile(qc, sim, seed_transpiler=31), shots=shots, seed_simulator=7).result().get_counts()
             counts[k] = p1_from_full(r, len(targets))
         return analyse(counts, targets, 0.5)
+    for N in NS:   # the kit's own readout circuit, barriers between readouts and no planted rz: one correction per readout per target
+        base = build(n, readout, targets, 160, N, 'M', 'X'); add = corrected(base, readout, {q: 1.0 for q in targets}).count_ops().get('rz', 0) - base.count_ops().get('rz', 0)
+        good = add == N * len(targets); print(f'apply on a {N}-readout circuit: {add} rz added, want {N * len(targets)} {"ok" if good else "WRONG"}')
+        if not good: print('SELFTEST FAILED'); sys.exit(1)
     tab = run(); ok = True
     for q in targets:
         v = tab[q]; good = abs(v['deg_per_readout'] - plant[q]) < 1.0; ok &= good
