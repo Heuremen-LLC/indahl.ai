@@ -2324,7 +2324,7 @@ def main():
                '<p>Check the IBM calibration record your run depends on, before the run and after it. Record checker, YO, the Faults and Guards, and a same-job T1 and T2 check.</p>'
                '<p><a class="pkgbtn" href="/qia/qia-research-package.zip" download>Download</a> <a href="/qia/package">What is in it</a></p></aside>')
     assert PAGES['/qia'].count(_SLOT) == 1, 'QIA headline slot'
-    PAGES['/qia'] = PAGES['/qia'].replace(_SLOT, _SLOT + _pk_box, 1)
+    PAGES['/qia'] = PAGES['/qia'].replace(_SLOT, _pk_box + _SLOT, 1)   # before the headline, so it floats at the top right
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])
