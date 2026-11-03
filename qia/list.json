@@ -11910,7 +11910,7 @@
    ],
    "basis": {
     "F4": [
-     "run dates not printed"
+     "run dates not printed in the paper. The released zip holds the job-info file for Experiment 6 (ibm_marrakesh, created 2 June 2026), while Experiments 7 and 8 have results files named by job ID but no job-info file with dates. The author has announced a v1.1 that prints the dates. Updated 3 Nov 2026 after the author wrote"
     ]
    },
    "calibrated": false,
