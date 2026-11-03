@@ -452,3 +452,5 @@
 {"id": "dbl0l49kdqps7393br10", "backend": "ibm_marrakesh", "created": "2026-11-03T16:23:45.465487Z", "wait_s": 12.27864}
 {"id": "dbl1i9t6p51s73cnjm6g", "backend": "ibm_pittsburgh", "created": "2026-11-03T17:25:59.863426Z", "wait_s": 1.229059}
 {"id": "dbl1i9l6p51s73cnjm40", "backend": "ibm_marrakesh", "created": "2026-11-03T17:25:58.303515Z", "wait_s": 1.870129}
+{"id": "dbl2folgg49c73djtfh0", "backend": "ibm_kingston", "created": "2026-11-03T18:28:50.255382Z", "wait_s": 75.025103}
+{"id": "dbl2fo56p51s73cnkshg", "backend": "ibm_fez", "created": "2026-11-03T18:28:48.756823Z", "wait_s": 304.394484}
