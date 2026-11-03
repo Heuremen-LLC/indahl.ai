@@ -38398,17 +38398,15 @@
   {
    "study": "Reversible Quantum Memory Compression: Hardware Validation of Ancilla Recycling via Uncomputation on NISQ Architectures",
    "link": "https://doi.org/10.5281/zenodo.23696412",
-   "version": "published version",
-   "indexed": "2026-11-01",
+   "version": "v2 (Zenodo record 23875995, 2 November 2026)",
+   "indexed": "2026-11-03",
    "read": "Full text",
    "codes": [
     "F4"
    ],
    "basis": {
     "F4": [
-     "run dates not printed: no date of the hardware runs in the paper (searched the whole text)",
-     "no data link printed: job IDs only, no URL, DOI or repository for circuits, counts or code",
-     "a later version (2 Nov 2026) prints a run date of 27 Oct 2026 and a GitHub link, not yet read in full"
+     "counts not released: v2 prints the run date (27 October 2026) and links github.com/RAMM143/quantum-ancilla-uncomputation-benchmark, whose notebook holds the circuit code but whose saved outputs are package-install logs only, with no counts. Updated 3 Nov 2026 after the author sent the links"
     ]
    },
    "calibrated": false,
