@@ -1,33 +1,11 @@
 {
- "updated": "04 Nov 22:58 UTC",
- "reads_held": 4752,
+ "updated": "04 Nov 23:10 UTC",
+ "reads_held": 4758,
  "processors": [
   {
-   "backend": "ibm_kingston",
+   "backend": "ibm_fez",
    "pending": 0,
    "change_24h": -2,
-   "our_jobs": 20,
-   "our_median_wait": "7 s",
-   "our_longest_wait": "33 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
-   "backend": "ibm_marrakesh",
-   "pending": 1,
-   "change_24h": 1,
-   "our_jobs": 20,
-   "our_median_wait": "1 s",
-   "our_longest_wait": "27 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
-   "backend": "ibm_fez",
-   "pending": 2,
-   "change_24h": -38,
    "our_jobs": 20,
    "our_median_wait": "3 s",
    "our_longest_wait": "6 min",
@@ -36,9 +14,31 @@
    "outcome": "COMMITTED"
   },
   {
+   "backend": "ibm_marrakesh",
+   "pending": 0,
+   "change_24h": -2,
+   "our_jobs": 20,
+   "our_median_wait": "1 s",
+   "our_longest_wait": "27 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
+   "backend": "ibm_kingston",
+   "pending": 2,
+   "change_24h": -3,
+   "our_jobs": 20,
+   "our_median_wait": "7 s",
+   "our_longest_wait": "33 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
    "backend": "ibm_pittsburgh",
    "pending": 304,
-   "change_24h": 165,
+   "change_24h": 143,
    "our_jobs": 20,
    "our_median_wait": "90 s",
    "our_longest_wait": "8.1 h",
@@ -49,18 +49,18 @@
   {
    "backend": "ibm_boston",
    "pending": 384,
-   "change_24h": -42,
+   "change_24h": -104,
    "our_jobs": 20,
    "our_median_wait": "11 min",
    "our_longest_wait": "15.0 h",
    "our_queued_now": 1,
-   "our_oldest_queued": "7.2 h",
+   "our_oldest_queued": "7.4 h",
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_phoenix",
    "pending": 951,
-   "change_24h": -345,
+   "change_24h": -504,
    "our_jobs": 20,
    "our_median_wait": "19 min",
    "our_longest_wait": "2.3 h",

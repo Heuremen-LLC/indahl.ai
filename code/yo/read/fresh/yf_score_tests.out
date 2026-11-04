@@ -1,0 +1,24 @@
+== planted perfect YO Read, self-label always-NO, shuffled best constant (expect REPLICATES and PASS) [primary]
+DATES: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
+LINK: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 3, best constant 0
+REQUEST: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
+== planted perfect YO Read, self-label always-NO, shuffled best constant (expect REPLICATES and PASS) [full]
+DATES: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
+LINK: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 3, best constant 0
+REQUEST: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
+== planted null: YO Read always-NO, self-label perfect (expect no replication, not shown) [primary]
+DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+LINK: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+== planted null: YO Read always-NO, self-label perfect (expect no replication, not shown) [full]
+DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+LINK: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+== planted always-YES YO Read (beats always-NO on LINK, must NOT replicate) [primary]
+DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+LINK: A 3/3, A2 0/3, both 0/3 -> does not replicate; B 3/3 -> PASS on B alone, NOT read as needing the real answers (field does not replicate; Addendum 2 item 8); C shuffled clearing always-NO 0, best constant 0
+REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+== planted always-YES YO Read (beats always-NO on LINK, must NOT replicate) [full]
+DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+LINK: A 3/3, A2 0/3, both 0/3 -> does not replicate; B 3/3 -> PASS on B alone, NOT read as needing the real answers (field does not replicate; Addendum 2 item 8); C shuffled clearing always-NO 0, best constant 0
+REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0

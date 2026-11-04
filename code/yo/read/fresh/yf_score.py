@@ -9,7 +9,9 @@ def binom_two(b, c):
     if n == 0: return 1.0
     k = min(b, c); return min(1.0, 2 * sum(comb(n, i) for i in range(k + 1)) / 2 ** n)
 ld = lambda a: {json.loads(l)['id']: json.loads(l) for l in open(f'{H}/eval_fresh_yo_{a}.jsonl')}
-items = [json.loads(l) for l in open(H + '/data/test_items_fresh.jsonl')]
+import sys
+SET = sys.argv[1] if len(sys.argv) > 1 else 'primary'   # Addendum 2: verdicts on 'primary'; 'full' = the 288, secondary
+items = [json.loads(l) for l in open(H + ('/data/test_items_primary.jsonl' if SET == 'primary' else '/data/test_items_fresh.jsonl'))]
 NO = {i['id']: i['answer'] == 'NO' for i in items}
 import collections
 BEST = {q: collections.Counter(i['answer'] for i in items if i['q'] == q).most_common(1)[0][0] for q in F}
@@ -30,7 +32,7 @@ A2 = holm([pair(q, YO[s], BC, f'YO Read {60 + s}', f'always-{BEST[q]}') for q in
 B = holm([pair(q, YO[s], SL[s], f'YO Read {60 + s}', f'self-label {73 + s}') for q in F for s in (1, 2, 3)])
 C = holm([pair(q, SH[s], NO, f'shuffled {70 + s}', 'always-NO') for q in F for s in (1, 2, 3)])
 C2 = holm([pair(q, SH[s], BC, f'shuffled {70 + s}', f'always-{BEST[q]}') for q in F for s in (1, 2, 3)])
-L = [f'YO Read FRESH TEST (PLAN_YO_FRESH.md), {len({i["paper"] for i in items})} papers never used by any arm. Exact McNemar per field, Holm across 9 per family.']
+L = [f'YO Read FRESH TEST (PLAN_YO_FRESH.md + Addenda 1-2), {SET.upper()} set' + (' (verdicts read here; UNDERPOWERED below ~100 papers)' if SET == 'primary' else ' (SECONDARY: includes default-YES labels and partial reads; no verdict read here)') + f', {len({i["paper"] for i in items})} papers. Exact McNemar per field, Holm across 9 per family.']
 L.append(f'Best constant per field (fresh majority truth): {BEST}. Families are separate claims, each Holm across its own 9, none corrected across families.')
 for name, fam in (('A  YO Read vs always-NO', A), ('A2 YO Read vs best constant', A2), ('B  YO Read vs self-label', B), ('C  shuffled vs always-NO', C), ('C2 shuffled vs best constant', C2)):
     L.append('Family ' + name)
@@ -39,5 +41,5 @@ for q in F:
     both = sum(x['win'] and y['win'] for x, y in zip([t for t in A if t['q'] == q], [t for t in A2 if t['q'] == q]))
     a = sum(t['win'] for t in A if t['q'] == q); a2 = sum(t['win'] for t in A2 if t['q'] == q); b = sum(t['win'] for t in B if t['q'] == q)
     c = sum(t['win'] for t in C if t['q'] == q); c2 = sum(t['win'] for t in C2 if t['q'] == q)
-    L.append(f"{q}: A {a}/3, A2 {a2}/3, both {both}/3 -> {'REPLICATES' if both >= 2 else 'does not replicate'}; B {b}/3 -> {'PASS' if b == 3 else 'not shown to need the real answers'}; C shuffled clearing always-NO {c}, best constant {c2}")
-open(H + '/results_fresh.text', 'w').write('\n'.join(L) + '\n'); json.dump(dict(BEST=BEST, A=A, A2=A2, B=B, C=C, C2=C2), open(H + '/results_fresh.json', 'w'), indent=1); print('\n'.join(L))
+    L.append(f"{q}: A {a}/3, A2 {a2}/3, both {both}/3 -> {'REPLICATES' if both >= 2 else 'does not replicate'}; B {b}/3 -> {('PASS' if both >= 2 else 'PASS on B alone, NOT read as needing the real answers (field does not replicate; Addendum 2 item 8)') if b == 3 else 'not shown to need the real answers'}; C shuffled clearing always-NO {c}, best constant {c2}")
+open(H + f'/results_fresh_{SET}.text', 'w').write('\n'.join(L) + '\n'); json.dump(dict(BEST=BEST, A=A, A2=A2, B=B, C=C, C2=C2), open(H + f'/results_fresh_{SET}.json', 'w'), indent=1); print('\n'.join(L))

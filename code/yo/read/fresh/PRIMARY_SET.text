@@ -1,0 +1,9 @@
+PRIMARY set (Addendum 2): 88 papers, 264 items, of the 288 fresh papers. Dropped, in this order of checks:
+  in the 688: 0
+  read label not exactly Full text: 123
+  no F4 note: 72
+  same work (List version field): 3
+  same work (title/content pair): 2
+  DATES: YES 46/88 = 0.523; best constant YES
+  LINK: YES 70/88 = 0.795; best constant YES
+  REQUEST: YES 12/88 = 0.136; best constant NO
