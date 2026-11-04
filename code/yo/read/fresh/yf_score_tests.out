@@ -2,6 +2,11 @@
 DATES: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
 LINK: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 3, best constant 0
 REQUEST: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
+== planted perfect YO Read, self-label always-NO, shuffled best constant (expect REPLICATES and PASS) [sensitivity]
+DATES: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
+LINK: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 3, best constant 0
+REQUEST: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
+   combine: DATES replication: REPLICATES | DATES labels: needs the real labels | LINK replication: REPLICATES | LINK labels: needs the real labels | REQUEST replication: REPLICATES | REQUEST labels: needs the real labels
 == planted perfect YO Read, self-label always-NO, shuffled best constant (expect REPLICATES and PASS) [full]
 DATES: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
 LINK: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 3, best constant 0
@@ -10,6 +15,11 @@ REQUEST: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled cleari
 DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
 LINK: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
 REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+== planted null: YO Read always-NO, self-label perfect (expect no replication, not shown) [sensitivity]
+DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+LINK: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+   combine: DATES replication: not shown on these papers | DATES labels: not shown to need the real labels | LINK replication: not shown on these papers | LINK labels: not shown to need the real labels | REQUEST replication: not shown on these papers | REQUEST labels: not shown to need the real labels
 == planted null: YO Read always-NO, self-label perfect (expect no replication, not shown) [full]
 DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
 LINK: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
@@ -18,7 +28,14 @@ REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to ne
 DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
 LINK: A 3/3, A2 0/3, both 0/3 -> does not replicate; B 3/3 -> PASS on B alone, NOT read as needing the real answers (field does not replicate; Addendum 2 item 8); C shuffled clearing always-NO 0, best constant 0
 REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+== planted always-YES YO Read (beats always-NO on LINK, must NOT replicate) [sensitivity]
+DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+LINK: A 3/3, A2 0/3, both 0/3 -> does not replicate; B 3/3 -> PASS on B alone, NOT read as needing the real answers (field does not replicate; Addendum 2 item 8); C shuffled clearing always-NO 0, best constant 0
+REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+   combine: DATES replication: not shown on these papers | DATES labels: not shown to need the real labels | LINK replication: not shown on these papers | LINK labels: not shown to need the real labels | REQUEST replication: not shown on these papers | REQUEST labels: not shown to need the real labels
 == planted always-YES YO Read (beats always-NO on LINK, must NOT replicate) [full]
 DATES: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
 LINK: A 3/3, A2 0/3, both 0/3 -> does not replicate; B 3/3 -> PASS on B alone, NOT read as needing the real answers (field does not replicate; Addendum 2 item 8); C shuffled clearing always-NO 0, best constant 0
 REQUEST: A 0/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+== planted split (primary replicates DATES, sensitivity does not)
+DATES replication: depends on 4 labels (primary: REPLICATES; sensitivity: not shown on these papers)
