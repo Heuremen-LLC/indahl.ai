@@ -11,7 +11,7 @@ def binom_two(b, c):
 ld = lambda a: {json.loads(l)['id']: json.loads(l) for l in open(f'{H}/eval_fresh_yo_{a}.jsonl')}
 import sys
 SET = sys.argv[1] if len(sys.argv) > 1 else 'primary'   # Addendum 2: verdicts on 'primary'; 'full' = the 288, secondary
-items = [json.loads(l) for l in open(H + ('/data/test_items_primary.jsonl' if SET == 'primary' else '/data/test_items_fresh.jsonl'))]
+items = [json.loads(l) for l in open(H + {'primary': '/data/test_items_primary.jsonl', 'sensitivity': '/data/test_items_sensitivity.jsonl', 'full': '/data/test_items_fresh.jsonl'}[SET])]
 NO = {i['id']: i['answer'] == 'NO' for i in items}
 import collections
 BEST = {q: collections.Counter(i['answer'] for i in items if i['q'] == q).most_common(1)[0][0] for q in F}
@@ -32,7 +32,7 @@ A2 = holm([pair(q, YO[s], BC, f'YO Read {60 + s}', f'always-{BEST[q]}') for q in
 B = holm([pair(q, YO[s], SL[s], f'YO Read {60 + s}', f'self-label {73 + s}') for q in F for s in (1, 2, 3)])
 C = holm([pair(q, SH[s], NO, f'shuffled {70 + s}', 'always-NO') for q in F for s in (1, 2, 3)])
 C2 = holm([pair(q, SH[s], BC, f'shuffled {70 + s}', f'always-{BEST[q]}') for q in F for s in (1, 2, 3)])
-L = [f'YO Read FRESH TEST (PLAN_YO_FRESH.md + Addenda 1-2), {SET.upper()} set' + (' (verdicts read here; UNDERPOWERED below ~100 papers)' if SET == 'primary' else ' (SECONDARY: includes default-YES labels and partial reads; no verdict read here)') + f', {len({i["paper"] for i in items})} papers. Exact McNemar per field, Holm across 9 per family.']
+L = [f'YO Read FRESH TEST (PLAN_YO_FRESH.md + Addenda 1-2), {SET.upper()} set' + {'primary': ' (verdicts read here with the sensitivity set; UNDERPOWERED below ~100 papers; measures agreement with the List reader F4 notes as parsed)', 'sensitivity': ' (primary minus 4 known-bad labels; a field is shown only if it holds here AND on primary)', 'full': ' (SECONDARY: includes default-YES labels and partial reads; no verdict read here)'}[SET] + f', {len({i["paper"] for i in items})} papers. Exact McNemar per field, Holm across 9 per family.']
 L.append(f'Best constant per field (fresh majority truth): {BEST}. Families are separate claims, each Holm across its own 9, none corrected across families.')
 for name, fam in (('A  YO Read vs always-NO', A), ('A2 YO Read vs best constant', A2), ('B  YO Read vs self-label', B), ('C  shuffled vs always-NO', C), ('C2 shuffled vs best constant', C2)):
     L.append('Family ' + name)

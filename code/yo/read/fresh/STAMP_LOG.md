@@ -10,3 +10,5 @@
 - overlap result at stamp time had no output file; yf_overlap.out is a re-run at 23:03:54Z.
 - Rule from here: a withdrawn proof file is never deleted. It is withdrawn in this log and left on disk.
 - 23:10:29Z addendum 2 stamped (Sage VERDICT 23:08Z on Addendum 1: MOVES). Addendum 1's proof stays on disk; its rules stand, its test set is replaced by the primary set.
+- 23:16:53Z addendum 3 stamped (Sage VERDICT 23:15Z on Addendum 2: MOVES).
+- 23:17:24Z addendum 3 re-stamped; the 23:16:53Z stamp is withdrawn because the driver gate call omitted Addendum 3. Its text and proof are kept in withdrawn/.
