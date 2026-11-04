@@ -5,6 +5,10 @@ Copy Simulation" by Alexandre Cristovão Maiorano (arXiv 2609.25010), from his G
 in the release, so these readings compare his report files and code with his text. The plan was committed before each reading was
 computed. GIT_LOG.txt lists the commits with their times.
 
+## Version
+
+These readings concern the manuscript as first posted (arXiv 2609.25010v1) and release commit 7c1ab46. The author has since posted a revision, arXiv 2609.25010v2 (4 November 2026), under the title "Do Synthetic Personas Predict Real Audience Response? A Headline-Ranking Study with a Generic-Reader Baseline": http://arxiv.org/abs/2609.25010v2. The readings below were not rerun on the revision.
+
 ## What matches
 
 Every value in Table 1 and every row of Table 2 equals his report files (baseline_comparison.json, replication.json). The baseline's n is
