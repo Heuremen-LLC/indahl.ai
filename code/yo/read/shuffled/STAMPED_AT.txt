@@ -1,0 +1,6 @@
+stamped 10:00:16Z, training waits for the block
+addendum1 stamped 10:05:29Z
+addendum2 stamped 10:08:54Z
+addendum3 stamped 10:11:01Z
+addendum4 stamped 10:13:04Z
+addendum5 stamped 10:14:25Z

@@ -1,0 +1,10 @@
+Stamped flags applied to BASE_RATES.text (read 4 Nov 2026 ~21:53Z, while self1 trains; no number in the plan changed).
+Addendum 2 MISMATCH (self-label YES share differs from real YES share by more than 0.10):
+  REQUEST: train 0.282 vs 0.109 (diff 0.173), valid 0.349 vs 0.093 (diff 0.256) -> FLAGGED in both splits. The page says REQUEST's SELF-LABEL comparison is a weak test.
+  DATES: train 0.245 vs 0.217 (diff 0.028) not flagged; valid 0.372 vs 0.163 (diff 0.209) FLAGGED on the 43-item valid split only. The stamp does not say
+    which split decides; both are printed and the page says DATES is flagged on the valid split, not on the 497-item train split.
+  LINK: train 0.505 vs 0.416 (diff 0.089), valid 0.302 vs 0.372 (diff 0.070) -> not flagged.
+  Note: the stamped page wording says the self-labels "were mostly one answer"; on REQUEST and valid DATES the base said YES MORE often than the real labels.
+    The page prints both shares beside the flag so the reader sees the direction (Addendum 5 item 3 spirit), wording not retuned.
+Addendum 3 drops: 0 of 1620 off-format overall, 0 for every question -> no size flag.
+Addendum 4 mostly-NO line: self-label YES share is not below half the real share on DATES (0.245 vs 0.217) or LINK (0.505 vs 0.416) -> not printed.
