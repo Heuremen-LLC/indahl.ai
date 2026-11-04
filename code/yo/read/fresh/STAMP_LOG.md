@@ -20,3 +20,5 @@
 - 23:29:19Z addendum 6 stamped: one-shot plus exit-trap stamp. The A5 line for yf_drive.sh is superseded by A6 at 23:29:19Z. From now on yf_drive.sh is not executed until the run.
 - 23:33Z correction: line 18 above says the A4 driver line was superseded by A5 at 23:23:28Z. That is the withdrawn A5 stamp. The live A5 stamp is 23:23:56Z.
 - 23:33Z: STAMPED_FILES_ADDENDUM3-6.sha256 diffed against the hash lines inside each stamped .md: 17/17, 29/29, 1/1, 1/1 match. Disclosed limits are in DISCLOSED_LIMITS.md.
+- 2026-11-04T23:39:27Z correction: the two lines above marked 23:33Z were committed at 23:31:46Z (commit 18140cc).
+- 2026-11-04T23:39:27Z yf_drive.log (holding the 22:56:21Z WAIT cited in A6 item 4) committed with -f in 51fa9cd before the launcher can run. The launcher now writes yf_drive_run.log and never overwrites yf_drive.log.
