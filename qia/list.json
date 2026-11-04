@@ -26477,7 +26477,7 @@
 {
 "study": "One-run polycontextural quantum  computation on a 156-qubit  processor",
 "link": "https://doi.org/10.5281/zenodo.22831221",
-"version": "Zenodo record 22831221 as listed 2026-10-24 (publication_date 2026-09-18)",
+"version": "Zenodo record 22831221 as listed 2026-10-24 (publication_date 2026-09-18), and the author's website quantumpolycontextural.ai (read 4 Nov 2026)",
 "indexed": "2026-10-24",
 "read": "Full text",
 "codes": [
@@ -26485,7 +26485,7 @@
 ],
 "basis": {
 "F4": [
-"Zenodo record holds documents only, no circuits or counts (file list checked 25 Oct 2026)"
+"Zenodo record holds documents only, no circuits or counts (file list checked 25 Oct 2026). The author's website, read 4 Nov 2026 after the author wrote, prints the IBM job IDs for the two ibm_kingston runs (daas1burrl7c73860bd0, da1gvd6g52gs73clkp20) with backend and shot count, and scores derived from the counts. It releases no counts, circuits or run dates, and prints no job ID for the ibm_marrakesh run. An IBM job ID lets only the account that ran the job retrieve its results, so the counts cannot be recomputed from it. Released counts and run dates would clear this note. The circuits can stay private"
 ]
 },
 "calibrated": false,
