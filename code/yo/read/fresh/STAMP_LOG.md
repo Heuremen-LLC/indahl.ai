@@ -12,3 +12,5 @@
 - 23:10:29Z addendum 2 stamped (Sage VERDICT 23:08Z on Addendum 1: MOVES). Addendum 1's proof stays on disk; its rules stand, its test set is replaced by the primary set.
 - 23:16:53Z addendum 3 stamped (Sage VERDICT 23:15Z on Addendum 2: MOVES).
 - 23:17:24Z addendum 3 re-stamped; the 23:16:53Z stamp is withdrawn because the driver gate call omitted Addendum 3. Its text and proof are kept in withdrawn/.
+- 23:20:57Z addendum 4 stamped: pins the 9 adapters, the base snapshot and the driver; records 76 of 88 REQUEST NO are from silence; yf_score_tests.out versions (A2 era = commit 19689c1, sha 04e29dea, kept as yf_score_tests_A2era.out; current = A3).
+- 76 of 88 REQUEST NO are from silence.
