@@ -7,3 +7,5 @@
 - 23:01:17Z  yf_overlap.py written (mtime) and run: "fresh 288 vs old 671: id 0, arXiv (version stripped) 0, exact title 0, title ratio > 0.9 0".
 - 23:01:21Z  addendum item 2 corrected (mtime); 23:01:23Z corrected addendum stamped (this is the one the driver checks).
 - No adapter has answered a fresh item: no eval_fresh_* or out_* file exists at the time of writing.
+- overlap result at stamp time had no output file; yf_overlap.out is a re-run at 23:03:54Z.
+- Rule from here: a withdrawn proof file is never deleted. It is withdrawn in this log and left on disk.
