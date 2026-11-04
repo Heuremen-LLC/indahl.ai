@@ -4,3 +4,5 @@ addendum2 stamped 2026-11-04T23:10:29Z
 addendum3 stamped 2026-11-04T23:16:53Z
 addendum3 stamped 2026-11-04T23:17:24Z (first stamp 23:16:53Z withdrawn, kept in withdrawn/)
 addendum4 stamped 2026-11-04T23:20:57Z
+addendum5 stamped 2026-11-04T23:23:28Z (last addendum)
+addendum5 re-stamped 2026-11-04T23:23:56Z (first stamp withdrawn: wrong file count; kept in withdrawn/)
