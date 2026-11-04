@@ -70,3 +70,4 @@
 {"alive.0": 3347, "alive.21600": 2876, "alive.3600": 3078, "alive.86400": 2378, "feed_reads": 1090, "not_alive.0": 322, "not_alive.21600": 663, "not_alive.3600": 520, "not_alive.86400": 797, "t": "2026-11-04T09:20Z", "tracked": 3669}
 {"alive.0": 3399, "alive.21600": 2887, "alive.3600": 3179, "alive.86400": 2436, "feed_reads": 1106, "not_alive.0": 323, "not_alive.21600": 663, "not_alive.3600": 522, "not_alive.86400": 805, "t": "2026-11-04T11:31Z", "tracked": 3722}
 {"alive.0": 3447, "alive.21600": 2905, "alive.3600": 3224, "alive.86400": 2506, "feed_reads": 1122, "not_alive.0": 323, "not_alive.21600": 663, "not_alive.3600": 525, "not_alive.86400": 825, "t": "2026-11-04T13:44Z", "tracked": 3770}
+{"alive.0": 3500, "alive.21600": 3015, "alive.3600": 3281, "alive.86400": 2529, "feed_reads": 1138, "not_alive.0": 326, "not_alive.21600": 667, "not_alive.3600": 527, "not_alive.86400": 835, "t": "2026-11-04T15:59Z", "tracked": 3826}
