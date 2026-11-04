@@ -18,3 +18,5 @@
 - A3 line for yf_drive.sh superseded by A4 at 23:20:57Z; A4 line for yf_drive.sh superseded by A5 at 23:23:28Z. Neither is tampering: the driver changed on purpose, and each addendum says so.
 - 23:23:56Z addendum 5 re-stamped; the first A5 stamp (232328) is withdrawn because it said 11 snapshot files (there are 10). Kept in withdrawn/.
 - 23:29:19Z addendum 6 stamped: one-shot plus exit-trap stamp. The A5 line for yf_drive.sh is superseded by A6 at 23:29:19Z. From now on yf_drive.sh is not executed until the run.
+- 23:33Z correction: line 18 above says the A4 driver line was superseded by A5 at 23:23:28Z. That is the withdrawn A5 stamp. The live A5 stamp is 23:23:56Z.
+- 23:33Z: STAMPED_FILES_ADDENDUM3-6.sha256 diffed against the hash lines inside each stamped .md: 17/17, 29/29, 1/1, 1/1 match. Disclosed limits are in DISCLOSED_LIMITS.md.
