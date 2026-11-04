@@ -6,3 +6,4 @@ addendum3 stamped 2026-11-04T23:17:24Z (first stamp 23:16:53Z withdrawn, kept in
 addendum4 stamped 2026-11-04T23:20:57Z
 addendum5 stamped 2026-11-04T23:23:28Z (last addendum)
 addendum5 re-stamped 2026-11-04T23:23:56Z (first stamp withdrawn: wrong file count; kept in withdrawn/)
+addendum6 stamped 2026-11-04T23:29:19Z (failed-run witness; one exception to the freeze)
