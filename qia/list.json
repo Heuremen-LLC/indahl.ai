@@ -4556,23 +4556,6 @@
 "anchor": "arxiv-2503.21815"
 },
 {
-"study": "Auditable Multi-Context Quantum Orchestration on IBM Heron: Protein Comparison, Controlled K-Ablations, and Open-Instance Scale Evidence",
-"link": "https://doi.org/10.5281/zenodo.20525931",
-"version": "Zenodo record 20525931 as listed 2026-10-24 (publication_date 2026-06-03)",
-"indexed": "2026-10-24",
-"read": "Full text",
-"codes": [
-"F4"
-],
-"basis": {
-"F4": [
-"Zenodo record holds documents only, no circuits or counts (file list checked 25 Oct 2026)"
-]
-},
-"calibrated": false,
-"anchor": "zenodo-20525931"
-},
-{
 "study": "Auditing Syndrome-to-Decoder Mappings for Repetition, Surface, CSS, and Digitized-GKP Interfaces",
 "link": "https://arxiv.org/abs/2607.19447v2",
 "version": "v2",
@@ -26456,23 +26439,6 @@
 },
 "calibrated": false,
 "anchor": "arxiv-2201.01826"
-},
-{
-"study": "One-run polycontextural quantum  computation on a 156-qubit  processor",
-"link": "https://doi.org/10.5281/zenodo.22831221",
-"version": "Zenodo record 22831221 as listed 2026-10-24 (publication_date 2026-09-18), and the author's website quantumpolycontextural.ai (read 4 Nov 2026)",
-"indexed": "2026-10-24",
-"read": "Full text",
-"codes": [
-"F4"
-],
-"basis": {
-"F4": [
-"Zenodo record holds documents only, no circuits or counts (file list checked 25 Oct 2026). The author's website, read 4 Nov 2026 after the author wrote, prints the IBM job IDs for the two ibm_kingston runs (daas1burrl7c73860bd0, da1gvd6g52gs73clkp20) with backend and shot count, and scores derived from the counts. It releases no counts, circuits or run dates, and prints no job ID for the ibm_marrakesh run. An IBM job ID lets only the account that ran the job retrieve its results, so the counts cannot be recomputed from it. Released counts and run dates would clear this note. The circuits can stay private"
-]
-},
-"calibrated": false,
-"anchor": "zenodo-22831221"
 },
 {
 "study": "Onset of Ergodicity Across Scales on a Digital Quantum Processor",
