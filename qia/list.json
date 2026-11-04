@@ -24788,23 +24788,6 @@
 "anchor": "zenodo-23408659"
 },
 {
-"study": "NaN Lattice Defense: An Active Irreversible Defense for Lattice-Based Post-Quantum Cryptography",
-"link": "https://doi.org/10.5281/zenodo.20210165",
-"version": "Zenodo record 20210165 as listed 2026-10-24 (publication_date 2026-05-15)",
-"indexed": "2026-10-24",
-"read": "Full text",
-"codes": [
-"F4"
-],
-"basis": {
-"F4": [
-"Zenodo record holds documents only, no circuits or counts (file list checked 25 Oct 2026)"
-]
-},
-"calibrated": false,
-"anchor": "zenodo-20210165"
-},
-{
 "study": "NAPA: Intermediate-level Variational Native-pulse Ansatz for Variational Quantum Algorithms",
 "link": "https://arxiv.org/abs/2208.01215v5",
 "version": "v5",
