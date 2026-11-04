@@ -13,16 +13,26 @@ shasum -a 256 -c PLAN_YO_FRESH_ADDENDUM4.sha256 >/dev/null || { echo "FAILED: ad
 shasum -a 256 -c PLAN_YO_FRESH_ADDENDUM5.sha256 >/dev/null || { echo "FAILED: addendum 5 hash"; exit 1; }
 # Addendum 5: yf_drive.sh is pinned by Addendum 5; its Addendum 4 line is skipped here (as its Addendum 3 line is above)
 (cd .. && grep -v "  fresh/yf_drive.sh$" fresh/STAMPED_FILES_ADDENDUM4.sha256 | shasum -a 256 -c - >/dev/null) || { echo "FAILED: a file stamped in Addendum 4 (models) has changed"; exit 1; }
-(cd .. && shasum -a 256 -c fresh/STAMPED_FILES_ADDENDUM5.sha256 >/dev/null) || { echo "FAILED: a file stamped in Addendum 5 (driver) has changed"; exit 1; }
+shasum -a 256 -c PLAN_YO_FRESH_ADDENDUM6.sha256 >/dev/null || { echo "FAILED: addendum 6 hash"; exit 1; }
+# Addendum 6: the driver is pinned by Addendum 6; its Addendum 3, 4 and 5 lines are superseded
+(cd .. && shasum -a 256 -c fresh/STAMPED_FILES_ADDENDUM6.sha256 >/dev/null) || { echo "FAILED: the driver stamped in Addendum 6 has changed"; exit 1; }
 [ "$(cat $HOME/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/refs/main)" = 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e ] || { echo "FAILED: HF refs/main is not the pinned snapshot"; exit 1; }
 shasum -a 256 -c DATA_YO_FRESH.sha256 >/dev/null || { echo "FAILED: items or List hash"; exit 1; }
-for o in PLAN_YO_FRESH.md.ots PLAN_YO_FRESH_ADDENDUM1.md.ots PLAN_YO_FRESH_ADDENDUM2.md.ots PLAN_YO_FRESH_ADDENDUM3.md.ots PLAN_YO_FRESH_ADDENDUM4.md.ots PLAN_YO_FRESH_ADDENDUM5.md.ots; do $OTS upgrade $o >/dev/null 2>&1 || true; done
+for o in PLAN_YO_FRESH.md.ots PLAN_YO_FRESH_ADDENDUM1.md.ots PLAN_YO_FRESH_ADDENDUM2.md.ots PLAN_YO_FRESH_ADDENDUM3.md.ots PLAN_YO_FRESH_ADDENDUM4.md.ots PLAN_YO_FRESH_ADDENDUM5.md.ots PLAN_YO_FRESH_ADDENDUM6.md.ots; do $OTS upgrade $o >/dev/null 2>&1 || true; done
 # block gate (Sage, 4 Nov): verifies each proof against the current bytes and the block's merkle root, and the block time against this start.
 NOW=$(date -u +%s); GATE_RC=0
-"$HOME/bones-forge/archive/venv/bin/python" yf_gate.py "$NOW" PLAN_YO_FRESH.md PLAN_YO_FRESH_ADDENDUM1.md PLAN_YO_FRESH_ADDENDUM2.md PLAN_YO_FRESH_ADDENDUM3.md PLAN_YO_FRESH_ADDENDUM4.md PLAN_YO_FRESH_ADDENDUM5.md || GATE_RC=$?
+"$HOME/bones-forge/archive/venv/bin/python" yf_gate.py "$NOW" PLAN_YO_FRESH.md PLAN_YO_FRESH_ADDENDUM1.md PLAN_YO_FRESH_ADDENDUM2.md PLAN_YO_FRESH_ADDENDUM3.md PLAN_YO_FRESH_ADDENDUM4.md PLAN_YO_FRESH_ADDENDUM5.md PLAN_YO_FRESH_ADDENDUM6.md || GATE_RC=$?
 if [ "$GATE_RC" -eq 2 ]; then echo "WAIT: gate says wait"; exit 2; fi
 if [ "$GATE_RC" -ne 0 ]; then echo "FAILED: gate refused (rc $GATE_RC)"; exit 1; fi
 (cd .. && shasum -a 256 -c ADAPTERS_YO_READ.sha256 >/dev/null && cd shuffled && shasum -a 256 -c ADAPTERS_YO_SHUFFLED.sha256 >/dev/null && cd selflabel && shasum -a 256 -c ADAPTERS_SELFLABEL.sha256 >/dev/null) || { echo "FAILED: adapter hash"; exit 1; }
+# Addendum 6: one-shot. After the gate passes, refuse if any trace of an earlier run exists.
+for f in RUN_MANIFEST.txt eval_fresh_yo_*.jsonl out_*.log OUTPUTS_YO_FRESH.sha256 OUTPUTS_YO_FRESH.sha256.ots; do if [ -e "$f" ]; then echo "FAILED: an earlier run left $f here; this round is one-shot"; exit 1; fi; done
+# Addendum 6: from here on, any exit (done, error, crash, kill) hashes and stamps whatever exists, with the exit code
+finish() { rc=$?; set +e; echo "exit $rc at $(date -u +%FT%TZ)" >> RUN_MANIFEST.txt
+  shasum -a 256 RUN_MANIFEST.txt eval_fresh_yo_*.jsonl out_*.log 2>/dev/null > OUTPUTS_YO_FRESH.sha256
+  $OTS stamp OUTPUTS_YO_FRESH.sha256 >/dev/null 2>&1 || echo "WARN: output stamp failed; stamp OUTPUTS_YO_FRESH.sha256 by hand now"
+  echo "== exit $rc $(date -u +%FT%TZ): outputs hashed and stamped (OUTPUTS_YO_FRESH.sha256.ots)"; }
+trap finish EXIT; trap "exit 130" INT TERM HUP
 echo "== start $(date -u -r $NOW +%FT%TZ) (gate passed, see lines above)"
 # Addendum 5: run manifest, written by the driver that is actually running, hashed and stamped with the outputs at the end
 { echo "start $(date -u -r $NOW +%FT%TZ)"; echo "running driver $(shasum -a 256 "$0" | cut -d" " -f1)"; shasum -a 256 yf_eval.py ../../yo2_data.py | sed "s/^/running /"
@@ -31,6 +41,4 @@ echo "== start $(date -u -r $NOW +%FT%TZ) (gate passed, see lines above)"
 for a in adapters/read1 adapters/read2 adapters/read3 shuffled/selflabel/adapters/self1 shuffled/selflabel/adapters/self2 shuffled/selflabel/adapters/self3 shuffled/adapters/shuf1 shuffled/adapters/shuf2 shuffled/adapters/shuf3; do
   echo "== $a $(date -u +%FT%TZ)"; $PY yf_eval.py yo "../$a" > "out_$(basename $a).log" 2>&1 || { echo "FAILED: $a"; exit 1; }
 done
-shasum -a 256 RUN_MANIFEST.txt eval_fresh_yo_*.jsonl out_*.log > OUTPUTS_YO_FRESH.sha256
-$OTS stamp OUTPUTS_YO_FRESH.sha256 >/dev/null 2>&1 || echo "WARN: output stamp failed; stamp OUTPUTS_YO_FRESH.sha256 by hand now"
-echo "== done $(date -u +%FT%TZ): outputs hashed and stamped (OUTPUTS_YO_FRESH.sha256.ots); replies unread; score with yf_score.py after the parser read"
+echo "== done $(date -u +%FT%TZ): all nine adapters answered; replies unread; score with yf_score.py after the parser read"
