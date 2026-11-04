@@ -1,0 +1,11 @@
+YO rescore (PREREG_YO_RESCORE.md fe751109..., items DATA_YO_RESCORE.sha256 132a3b0f...). Every seed, every field; raw counts beside rates.
+DATES    seed 61: 136/148 = 0.919 vs always-NO 119/148 = 0.804; b 18 c 1; unread 0; McNemar p 7.629e-05, Holm 0.0005341 -> CLEARS
+DATES    seed 62: 139/148 = 0.939 vs always-NO 119/148 = 0.804; b 25 c 5; unread 0; McNemar p 0.0003249, Holm 0.001625 -> CLEARS
+DATES    seed 63: 123/148 = 0.831 vs always-NO 119/148 = 0.804; b 28 c 24; unread 0; McNemar p 0.6778, Holm 0.6778 -> does not clear
+LINK     seed 61: 120/148 = 0.811 vs always-NO 76/148 = 0.514; b 47 c 3; unread 0; McNemar p 3.708e-11, Holm 3.337e-10 -> CLEARS
+LINK     seed 62: 112/148 = 0.757 vs always-NO 76/148 = 0.514; b 64 c 28; unread 0; McNemar p 0.0002225, Holm 0.001335 -> CLEARS
+LINK     seed 63: 120/148 = 0.811 vs always-NO 76/148 = 0.514; b 61 c 17; unread 0; McNemar p 5.664e-07, Holm 4.531e-06 -> CLEARS
+REQUEST  seed 61: 145/148 = 0.980 vs always-NO 135/148 = 0.912; b 13 c 3; unread 0; McNemar p 0.02127, Holm 0.08508 -> does not clear
+REQUEST  seed 62: 142/148 = 0.959 vs always-NO 135/148 = 0.912; b 13 c 6; unread 0; McNemar p 0.1671, Holm 0.3341 -> does not clear
+REQUEST  seed 63: 143/148 = 0.966 vs always-NO 135/148 = 0.912; b 13 c 5; unread 0; McNemar p 0.09625, Holm 0.2888 -> does not clear
+DATES: cleared by seed(s) 61, 62

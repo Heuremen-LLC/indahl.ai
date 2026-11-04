@@ -1,0 +1,15 @@
+YO SHUFFLED arm, scored with a copy of yr_rescore_score.py (only file names and seed numbers changed). YO rescore (PREREG_YO_RESCORE.md fe751109..., items DATA_YO_RESCORE.sha256 132a3b0f...). Every seed, every field; raw counts beside rates.
+DATES    seed 71: 119/148 = 0.804 vs always-NO 119/148 = 0.804; b 0 c 0; unread 0; McNemar p 1, Holm 1 -> does not clear
+DATES    seed 72: 119/148 = 0.804 vs always-NO 119/148 = 0.804; b 0 c 0; unread 0; McNemar p 1, Holm 1 -> does not clear
+DATES    seed 73: 119/148 = 0.804 vs always-NO 119/148 = 0.804; b 0 c 0; unread 0; McNemar p 1, Holm 1 -> does not clear
+LINK     seed 71: 63/148 = 0.426 vs always-NO 76/148 = 0.514; b 49 c 62; unread 0; McNemar p 0.2546, Holm 1 -> does not clear
+LINK     seed 72: 76/148 = 0.514 vs always-NO 76/148 = 0.514; b 0 c 0; unread 0; McNemar p 1, Holm 1 -> does not clear
+LINK     seed 73: 69/148 = 0.466 vs always-NO 76/148 = 0.514; b 32 c 39; unread 0; McNemar p 0.4767, Holm 1 -> does not clear
+REQUEST  seed 71: 135/148 = 0.912 vs always-NO 135/148 = 0.912; b 0 c 0; unread 0; McNemar p 1, Holm 1 -> does not clear
+REQUEST  seed 72: 135/148 = 0.912 vs always-NO 135/148 = 0.912; b 0 c 0; unread 0; McNemar p 1, Holm 1 -> does not clear
+REQUEST  seed 73: 135/148 = 0.912 vs always-NO 135/148 = 0.912; b 0 c 0; unread 0; McNemar p 1, Holm 1 -> does not clear
+VERDICT (PLAN_YO_SHUFFLED.md, Addendum 1): DATES cleared by 0 of 3 shuffled seeds, LINK by 0 of 3 -> PASS.
+Shape, read from the replies: on DATES all three seeds answered NO on every paper (b 0, c 0), the same as always-NO. Seed 72 answered NO on all 444 items.
+On LINK seeds 71 and 73 sat BELOW always-NO (63 and 69 of 148 vs 76), neither significant. On DATES and REQUEST the shuffled adapters answered like always-NO; we name no mechanism.
+IRIS wording, fixed by Addendum 1 item 2: "three adapters trained on shuffled answers did not reproduce the gain". Nothing stronger.
+Parser read before any rate: 1332 of 1332 replies a bare YES or NO, 0 unread. Scored 2026-11-04T21:47Z with ys_score.py (diff vs yr_rescore_score.py: file names, seed numbers, output path only).

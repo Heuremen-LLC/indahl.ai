@@ -1,0 +1,8 @@
+SELF-LABEL base-rate report (Addenda 2-5), written before any self-label adapter trains. Base Qwen/Qwen3-1.7B snapshot 70d244cc, greedy, max_tokens 8.
+train DATES   : n 497; self-label YES 122/497 = 0.245; real YES 108/497 = 0.217; off-format 0 (0.0%)
+train LINK    : n 497; self-label YES 251/497 = 0.505; real YES 207/497 = 0.416; off-format 0 (0.0%)
+train REQUEST : n 497; self-label YES 140/497 = 0.282; real YES 54/497 = 0.109; off-format 0 (0.0%)
+valid DATES   : n 43; self-label YES 16/43 = 0.372; real YES 7/43 = 0.163; off-format 0 (0.0%)
+valid LINK    : n 43; self-label YES 13/43 = 0.302; real YES 16/43 = 0.372; off-format 0 (0.0%)
+valid REQUEST : n 43; self-label YES 15/43 = 0.349; real YES 4/43 = 0.093; off-format 0 (0.0%)
+overall off-format 0/1620 = 0.0% (Addendum 3 flag above 5 % overall or 10 % for one question)

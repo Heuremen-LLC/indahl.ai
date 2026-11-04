@@ -1,0 +1,19 @@
+SELF-LABEL arm (PLAN_YO_SHUFFLED Addendum 2). YO Read seed vs self-label seed, per field, 148 papers, exact McNemar, Holm across 9.
+DATES    YO 61 136/148 vs self 74 108/148; b 33 c 5; self unread 0; p 4.256e-06, Holm 2.554e-05 -> YO READ BEATS IT
+DATES    YO 62 139/148 vs self 75 117/148; b 26 c 4; self unread 0; p 5.948e-05, Holm 0.0002974 -> YO READ BEATS IT
+DATES    YO 63 123/148 vs self 76 112/148; b 29 c 18; self unread 0; p 0.1439, Holm 0.4316 -> not beaten
+LINK     YO 61 120/148 vs self 74 104/148; b 35 c 19; self unread 0; p 0.04022, Holm 0.1609 -> not beaten
+LINK     YO 62 112/148 vs self 75 105/148; b 22 c 15; self unread 0; p 0.324, Holm 0.4316 -> not beaten
+LINK     YO 63 120/148 vs self 76 112/148; b 18 c 10; self unread 0; p 0.1849, Holm 0.4316 -> not beaten
+REQUEST  YO 61 145/148 vs self 74 105/148; b 40 c 0; self unread 0; p 1.819e-12, Holm 1.273e-11 -> YO READ BEATS IT
+REQUEST  YO 62 142/148 vs self 75 95/148; b 47 c 0; self unread 0; p 1.421e-14, Holm 1.279e-13 -> YO READ BEATS IT
+REQUEST  YO 63 143/148 vs self 76 100/148; b 43 c 0; self unread 0; p 2.274e-13, Holm 1.819e-12 -> YO READ BEATS IT
+DATES: YO Read beats 2 of 3 self-label seeds -> FAIL (the gain is NOT SHOWN to need the real labels on DATES)
+LINK: YO Read beats 0 of 3 self-label seeds -> FAIL (the gain is NOT SHOWN to need the real labels on LINK)
+REQUEST: YO Read beats 3 of 3 self-label seeds -> PASS
+READING (written after the data, from the rows above; no number in the plan changed):
+- The stamped rule fails on DATES (2 of 3) and LINK (0 of 3): the page says the gain is NOT SHOWN to need the real labels on those fields (never "self-sharpening proven"; three seeds may be underpowered).
+- Sign, all 9 pairs: YO Read is right more often than its self-label partner in 9 of 9 (b > c every time). On DATES the unbeaten pair is seed 63, the same YO Read seed that did not clear always-NO in the rescore. On LINK the gaps are 7-16 papers of 148, none past Holm.
+- REQUEST passes, but Addendum 2 flagged it a WEAK TEST before training (self-label YES 0.282 vs real 0.109 on train): the self-label adapters said YES far too often and fell below always-NO (95-105 of 148 vs 135). YO Read itself cleared always-NO on REQUEST 0 of 3 in the rescore.
+- Combined sentence ("the gain needs the real labels"): NOT allowed. Addendum 2 requires BOTH arms to pass; the shuffled arm passed, the self-label arm did not on DATES or LINK.
+- Parser read before scoring: 1332 of 1332 self-label replies a bare YES or NO, 0 unread. Scored with sl_score.py as committed in 8af4e22.
