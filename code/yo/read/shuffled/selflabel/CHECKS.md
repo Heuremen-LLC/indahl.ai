@@ -26,7 +26,7 @@ packs: L,P
 - P4: holds: no mechanism named
 - P5: n/a: p-values named as exact McNemar, Holm
 - P6: holds: combined sentence withheld because one arm failed
-- P7: cannot tell: nothing public yet; IRIS line waits for Wayfinder and ship.sh
+- P7: cannot tell: nothing public yet; IRIS line waits for our word and ship.sh
 - P8: n/a: no page rendered or changed tonight
 - P9: holds: plain sentences, no counts in titles, no AI statements
 - P10: holds: READING block labelled "written after the data"
