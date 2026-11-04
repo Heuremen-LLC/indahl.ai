@@ -12566,7 +12566,7 @@
 ],
 "basis": {
 "F4": [
-"the paper text prints no data link. The Zenodo record links a GitHub repository (github.com/joemerson/eiez-lang) that holds the circuits in OpenQASM and result images named by IBM job ID. Run dates and counts as text are not released, so the counts must be read off the images. Updated 2 Nov 2026 after the author sent the links. On 3 Nov 2026 the author wrote that the counts were not saved"
+"the paper text prints no data link. The Zenodo record links a GitHub repository (github.com/joemerson/eiez-lang) that holds the circuits in OpenQASM and result images named by IBM job ID. Run dates and counts as text are not released, so the counts must be read off the images. Updated 2 Nov 2026 after the author sent the links. On 3 Nov 2026 the author wrote that the counts were not saved. On 4 Nov 2026 the author pointed to a JSON file added to the repository that day (eiez-lang/Teste_rodados_IBM_/JSON.json). It does not match the result images in the same folder. For job d6qta8i0q0ls73csotkg the file lists two-qubit counts over 1,024 shots and for job d6qtb13opkic73fig290 two-qubit counts over 4,096 shots, while the images for those jobs show one-bit results over about 1,024 shots each. The other six job IDs in the file have no result image, and one (d6qtc42x791k00ab9110) contains a character IBM job IDs do not use"
 ]
 },
 "calibrated": false,
