@@ -14,3 +14,6 @@
 - 23:17:24Z addendum 3 re-stamped; the 23:16:53Z stamp is withdrawn because the driver gate call omitted Addendum 3. Its text and proof are kept in withdrawn/.
 - 23:20:57Z addendum 4 stamped: pins the 9 adapters, the base snapshot and the driver; records 76 of 88 REQUEST NO are from silence; yf_score_tests.out versions (A2 era = commit 19689c1, sha 04e29dea, kept as yf_score_tests_A2era.out; current = A3).
 - 76 of 88 REQUEST NO are from silence.
+- 23:23:28Z addendum 5 stamped (last addendum).
+- A3 line for yf_drive.sh superseded by A4 at 23:20:57Z; A4 line for yf_drive.sh superseded by A5 at 23:23:28Z. Neither is tampering: the driver changed on purpose, and each addendum says so.
+- 23:23:56Z addendum 5 re-stamped; the first A5 stamp (232328) is withdrawn because it said 11 snapshot files (there are 10). Kept in withdrawn/.
