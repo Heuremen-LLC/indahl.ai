@@ -1,0 +1,9 @@
+Item check, 5 Nov after Sage 07:58Z: the same-work paper in primary, zenodo.18154889 (Turkish translation), and its trained twin zenodo.18155193.
+Labels (yr_data.truth on the List reader F4 notes, pre-removal list): translation DATES NO, LINK NO, REQUEST NO. Trained twin DATES NO, LINK NO, REQUEST NO.
+YO Read answers on the translation, seeds 61/62/63:
+  DATES   NO, NO, YES   (seed 63 wrong where always-NO is right: the one item that moves seed 63 across Holm 0.05)
+  LINK    YES, YES, YES (wrong on all seeds; always-YES also wrong here)
+  REQUEST NO, NO, NO    (right; always-NO also right; not a discordant pair)
+Reading: the wrong YES answers disagree with the twin's labels too, so they are not memory of the twin's labels.
+Addendum 7: block 974624, 04:30:33Z 5 Nov (preflight PASS, 204 min before the first result was opened at about 07:55Z). Addenda 8-12: block 974635, 07:19:14Z.
+Training-label check (Sage 07:59Z): the twin's three prompts rebuilt with yr_data.py (same candidates, same 1900-token trim) are all present in data/train.jsonl (sha d251476e...), each once, completion NO for DATES, LINK and REQUEST. The labels the adapter trained on match yr_data.truth.

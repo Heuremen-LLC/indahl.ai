@@ -1,0 +1,4 @@
+yf_minus.py planted test, 2026-11-05T04:11:43Z, scratch copy, synthetic replies (read arms = truth, others NO), no real output read:
+  scorer direct on primary: rc 0; yf_minus pktron: rc 0, 87 papers 261 items; text90: rc 0, 87 papers 261 items
+  results_fresh_primary.text untouched by the minus runs (separate files); unknown tag -> KeyError; scorer edited by one byte -> 'yf_score.py is not the stamped scorer'
+SENSITIVITY (Addendum 7): PRIMARY minus pktron = ['doi:10.2139/ssrn.7358502']; 87 papers, 261 items. The scorer header below says PRIMARY because it is the stam

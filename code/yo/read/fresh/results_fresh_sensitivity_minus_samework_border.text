@@ -1,0 +1,56 @@
+SENSITIVITY (Addendum 10): SENSITIVITY minus samework_border = ['doi:10.5281/zenodo.18154889', 'doi:10.5281/zenodo.19437054']; 82 papers, 246 items. The scorer header below is from the stamped scorer, unchanged.
+YO Read FRESH TEST (PLAN_YO_FRESH.md + Addenda 1-2), SENSITIVITY set (primary minus 4 known-bad labels; a field is shown only if it holds here AND on primary), 82 papers. Exact McNemar per field, Holm across 9 per family.
+Best constant per field (fresh majority truth): {'DATES': 'YES', 'LINK': 'YES', 'REQUEST': 'NO'}. Families are separate claims, each Holm across its own 9, none corrected across families.
+Family A  YO Read vs always-NO
+  DATES    YO Read 61 61/82 vs always-NO 39/82; b 23 c 1; unread 0; p 2.98e-06, Holm 1.788e-05 -> AHEAD
+  DATES    YO Read 62 66/82 vs always-NO 39/82; b 37 c 10; unread 0; p 9.849e-05, Holm 0.0004924 -> AHEAD
+  DATES    YO Read 63 57/82 vs always-NO 39/82; b 42 c 24; unread 0; p 0.03558, Holm 0.03558 -> AHEAD
+  LINK     YO Read 61 66/82 vs always-NO 16/82; b 55 c 5; unread 0; p 1.038e-11, Holm 9.344e-11 -> AHEAD
+  LINK     YO Read 62 64/82 vs always-NO 16/82; b 60 c 12; unread 0; p 8.055e-09, Holm 5.639e-08 -> AHEAD
+  LINK     YO Read 63 68/82 vs always-NO 16/82; b 63 c 11; unread 0; p 5.321e-10, Holm 4.257e-09 -> AHEAD
+  REQUEST  YO Read 61 80/82 vs always-NO 70/82; b 10 c 0; unread 0; p 0.001953, Holm 0.003906 -> AHEAD
+  REQUEST  YO Read 62 81/82 vs always-NO 70/82; b 11 c 0; unread 0; p 0.0009766, Holm 0.003906 -> AHEAD
+  REQUEST  YO Read 63 81/82 vs always-NO 70/82; b 11 c 0; unread 0; p 0.0009766, Holm 0.003906 -> AHEAD
+Family A2 YO Read vs best constant
+  DATES    YO Read 61 61/82 vs always-YES 43/82; b 38 c 20; unread 0; p 0.02475, Holm 0.09898 -> not shown
+  DATES    YO Read 62 66/82 vs always-YES 43/82; b 29 c 6; unread 0; p 0.0001168, Holm 0.001052 -> AHEAD
+  DATES    YO Read 63 57/82 vs always-YES 43/82; b 15 c 1; unread 0; p 0.0005188, Holm 0.00415 -> AHEAD
+  LINK     YO Read 61 66/82 vs always-YES 66/82; b 11 c 11; unread 0; p 1, Holm 1 -> not shown
+  LINK     YO Read 62 64/82 vs always-YES 66/82; b 4 c 6; unread 0; p 0.7539, Holm 1 -> not shown
+  LINK     YO Read 63 68/82 vs always-YES 66/82; b 5 c 3; unread 0; p 0.7266, Holm 1 -> not shown
+  REQUEST  YO Read 61 80/82 vs always-NO 70/82; b 10 c 0; unread 0; p 0.001953, Holm 0.009766 -> AHEAD
+  REQUEST  YO Read 62 81/82 vs always-NO 70/82; b 11 c 0; unread 0; p 0.0009766, Holm 0.006836 -> AHEAD
+  REQUEST  YO Read 63 81/82 vs always-NO 70/82; b 11 c 0; unread 0; p 0.0009766, Holm 0.006836 -> AHEAD
+Family B  YO Read vs self-label
+  DATES    YO Read 61 61/82 vs self-label 74 55/82; b 14 c 8; unread 0; p 0.2863, Holm 1 -> not shown
+  DATES    YO Read 62 66/82 vs self-label 75 53/82; b 22 c 9; unread 0; p 0.02945, Holm 0.1767 -> not shown
+  DATES    YO Read 63 57/82 vs self-label 76 56/82; b 17 c 16; unread 0; p 1, Holm 1 -> not shown
+  LINK     YO Read 61 66/82 vs self-label 74 69/82; b 5 c 8; unread 0; p 0.5811, Holm 1 -> not shown
+  LINK     YO Read 62 64/82 vs self-label 75 65/82; b 3 c 4; unread 0; p 1, Holm 1 -> not shown
+  LINK     YO Read 63 68/82 vs self-label 76 68/82; b 3 c 3; unread 0; p 1, Holm 1 -> not shown
+  REQUEST  YO Read 61 80/82 vs self-label 74 63/82; b 18 c 1; unread 0; p 7.629e-05, Holm 0.0005341 -> AHEAD
+  REQUEST  YO Read 62 81/82 vs self-label 75 53/82; b 28 c 0; unread 0; p 7.451e-09, Holm 6.706e-08 -> AHEAD
+  REQUEST  YO Read 63 81/82 vs self-label 76 63/82; b 18 c 0; unread 0; p 7.629e-06, Holm 6.104e-05 -> AHEAD
+Family C  shuffled vs always-NO
+  DATES    shuffled 71 40/82 vs always-NO 39/82; b 1 c 0; unread 0; p 1, Holm 1 -> not shown
+  DATES    shuffled 72 39/82 vs always-NO 39/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+  DATES    shuffled 73 39/82 vs always-NO 39/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+  LINK     shuffled 71 59/82 vs always-NO 16/82; b 58 c 15; unread 0; p 4.093e-07, Holm 3.684e-06 -> AHEAD
+  LINK     shuffled 72 16/82 vs always-NO 16/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+  LINK     shuffled 73 43/82 vs always-NO 16/82; b 39 c 12; unread 0; p 0.000198, Holm 0.001584 -> AHEAD
+  REQUEST  shuffled 71 70/82 vs always-NO 70/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+  REQUEST  shuffled 72 70/82 vs always-NO 70/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+  REQUEST  shuffled 73 70/82 vs always-NO 70/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+Family C2 shuffled vs best constant
+  DATES    shuffled 71 40/82 vs always-YES 43/82; b 39 c 42; unread 0; p 0.8243, Holm 1 -> not shown
+  DATES    shuffled 72 39/82 vs always-YES 43/82; b 39 c 43; unread 0; p 0.7407, Holm 1 -> not shown
+  DATES    shuffled 73 39/82 vs always-YES 43/82; b 39 c 43; unread 0; p 0.7407, Holm 1 -> not shown
+  LINK     shuffled 71 59/82 vs always-YES 66/82; b 1 c 8; unread 0; p 0.03906, Holm 0.2734 -> not shown
+  LINK     shuffled 72 16/82 vs always-YES 66/82; b 16 c 66; unread 0; p 2.252e-08, Holm 2.027e-07 -> not shown
+  LINK     shuffled 73 43/82 vs always-YES 66/82; b 4 c 27; unread 0; p 3.395e-05, Holm 0.0002716 -> not shown
+  REQUEST  shuffled 71 70/82 vs always-NO 70/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+  REQUEST  shuffled 72 70/82 vs always-NO 70/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+  REQUEST  shuffled 73 70/82 vs always-NO 70/82; b 0 c 0; unread 0; p 1, Holm 1 -> not shown
+DATES: A 3/3, A2 2/3, both 2/3 -> REPLICATES; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 0, best constant 0
+LINK: A 3/3, A2 0/3, both 0/3 -> does not replicate; B 0/3 -> not shown to need the real answers; C shuffled clearing always-NO 2, best constant 0
+REQUEST: A 3/3, A2 3/3, both 3/3 -> REPLICATES; B 3/3 -> PASS; C shuffled clearing always-NO 0, best constant 0
