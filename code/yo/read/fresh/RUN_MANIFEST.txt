@@ -1,0 +1,7 @@
+start 2026-11-05T01:35:35Z
+running driver 22b295456d330541f8aa93952e8a81b3ad1e8144313d9248d8b5443db1a4d68a
+running 9e4729b0c4fd3edf99beeef72f0badd51ddb921522523cb7a26691529bad71d8  yf_eval.py
+running 3a33c1945cd3795e3e9ce1c68c7c5c5abe05333f5a42961696e701500ed4977f  ../../yo2_data.py
+hf refs/main 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e HF_HUB_OFFLINE=1
+python 3.12.13 mlx 0.32.0 mlx_lm 0.31.3 transformers 5.14.1
+exit 0 at 2026-11-05T01:54:14Z

@@ -1,0 +1,6 @@
+yf_minus_a10.py planted test, 2026-11-05T05:45:23Z, scratch copy, synthetic replies (read arms = truth, others NO), no real output read:
+  sensitivity samework: SENSITIVITY (Addendum 10): SENSITIVITY minus samework = ['doi:10.5281/zenodo.18154889']; 83 papers, 249 items. The scorer header below is from the sta
+  sensitivity samework_border: SENSITIVITY (Addendum 10): SENSITIVITY minus samework_border = ['doi:10.5281/zenodo.18154889', 'doi:10.5281/zenodo.19437054']; 82 papers, 246 items. T
+  primary samework: SENSITIVITY (Addendum 10): PRIMARY minus samework = ['doi:10.5281/zenodo.18154889']; 87 papers, 261 items. The scorer header below is from the stamped
+  primary samework_border: SENSITIVITY (Addendum 10): PRIMARY minus samework_border = ['doi:10.5281/zenodo.18154889', 'doi:10.5281/zenodo.19437054']; 86 papers, 258 items. The s
+  results_fresh_sensitivity.text untouched; SET 'full' refused (AssertionError)

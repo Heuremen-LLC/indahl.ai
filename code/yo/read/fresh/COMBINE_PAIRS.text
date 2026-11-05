@@ -1,0 +1,5 @@
+Stamped combine rule (yf_combine.py, unchanged) applied to each pre-registered sensitivity pair, 5 Nov after Sage's question:
+primary_minus_samework + sensitivity_minus_samework: DATES REPLICATES; LINK not shown; REQUEST REPLICATES
+primary_minus_samework_border + sensitivity_minus_samework_border: DATES REPLICATES; LINK not shown; REQUEST REPLICATES
+primary_minus_pktron + sensitivity: DATES depends on 4 labels; LINK not shown; REQUEST REPLICATES
+primary_minus_text90 + sensitivity: DATES depends on 4 labels; LINK not shown; REQUEST REPLICATES
