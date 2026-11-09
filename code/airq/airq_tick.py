@@ -6,7 +6,18 @@ import heuremen_kit as K
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('airq: plan not committed'); sys.exit(0)
 ACC = os.path.expanduser('~/Documents/Heuremen LLC/ACCOUNTS')
 AQS_E, AQS_K = open(ACC + '/epa-aqs-key').read().split()[:2]; PA_K = open(ACC + '/purpleair-read-key').read().strip()
-B0, B1 = '20250601', '20250930'; T0 = int(datetime.datetime(2025, 6, 1, tzinfo=datetime.timezone.utc).timestamp()); T1 = int(datetime.datetime(2025, 9, 30, 23, 59, 59, tzinfo=datetime.timezone.utc).timestamp())
+# 9 Nov 2026 (addendum 4): the same read for a newer window. AIRQ_WINDOW=2025 (default) is the published read, unchanged, end 23:59:59 on 30 Sep as it was run.
+# AIRQ_WINDOW=2026 reads 1 March to 30 June 2026 (122 UTC days, the newest the AQS record holds on 9 Nov 2026) into data/w2026/ and summary_airq_w2026.json,
+# with the sensor window ending at the next midnight (site pass correction 1), so 30 June is held.
+WIN = os.environ.get('AIRQ_WINDOW', '2025')
+if WIN == '2025':
+    B0, B1 = '20250601', '20250930'; T0 = int(datetime.datetime(2025, 6, 1, tzinfo=datetime.timezone.utc).timestamp()); T1 = int(datetime.datetime(2025, 9, 30, 23, 59, 59, tzinfo=datetime.timezone.utc).timestamp())
+    DD, SUMMARY, WLABEL = 'data', 'summary_airq.json', '1 June to 29 September 2025'
+elif WIN == '2026':
+    B0, B1 = '20260301', '20260630'; T0 = int(datetime.datetime(2026, 3, 1, tzinfo=datetime.timezone.utc).timestamp()); T1 = int(datetime.datetime(2026, 7, 1, tzinfo=datetime.timezone.utc).timestamp())
+    DD, SUMMARY, WLABEL = 'data/w2026', 'summary_airq_w2026.json', '1 March to 30 June 2026'
+else: print('airq: unknown window', WIN); sys.exit(1)
+os.makedirs(DD, exist_ok=True)
 RADIUS, MINDAYS, MINHOURS, STOP_POINTS = 200.0, 30, 18, 400000
 def jget(u, headers=None, n=4, to=300):
     for i in range(n):
@@ -43,16 +54,32 @@ if not gate(): print('airq: GATE FAILED'); sys.exit(1)
 print('airq: gate passed', flush=True)
 # ---- stage A: EPA monitors, hourly continuous PM2.5 into UTC-day means
 states = jget('https://aqs.epa.gov/data/api/list/states?email=%s&key=%s' % (AQS_E, AQS_K))['Data']; time.sleep(6)
-sites = {}; filter_only = set(); cont_sites = set()
+sites = {}; filter_only = set(); cont_sites = set(); AQS_FAILED = []; AQS_DAYS_REFUSED = []
 for st in states:
-    code = st['code']; cache = 'data/aqs_%s.json' % code
+    code = st['code']; cache = DD + '/aqs_%s.json' % code
     if os.path.exists(cache): part = json.load(open(cache))
     else:
         d = None
-        for t in range(3):
-            d = jget('https://aqs.epa.gov/data/api/sampleData/byState?email=%s&key=%s&param=88101&bdate=%s&edate=%s&state=%s' % (AQS_E, AQS_K, B0, B1, code)); time.sleep(6)
-            if d: break
-        rows = (d or {}).get('Data') or []; acc = {}; fo = set(); cont = set()
+        if WIN == '2025':
+            for t in range(3):
+                d = jget('https://aqs.epa.gov/data/api/sampleData/byState?email=%s&key=%s&param=88101&bdate=%s&edate=%s&state=%s' % (AQS_E, AQS_K, B0, B1, code)); time.sleep(6)
+                if d: break
+            rows = (d or {}).get('Data') or []
+        else:   # 9 Nov 2026: the same request month by month (the four-month request timed out for Alaska); the rows are joined, nothing else changes. A state is cached only when every month answered.
+            rows = []; months = [(B0[:4] + '%02d01' % mo, B0[:4] + '%02d%02d' % (mo, [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][mo - 1])) for mo in range(int(B0[4:6]), int(B1[4:6]) + 1)]; stats = []
+            def span(b, e):   # a range the service refuses (Alaska, early March 2026: HTTP 422) is split in halves down to single days; a day still refused is listed
+                dm = None
+                for t in range(2):
+                    dm = jget('https://aqs.epa.gov/data/api/sampleData/byState?email=%s&key=%s&param=88101&bdate=%s&edate=%s&state=%s' % (AQS_E, AQS_K, b, e, code), to=900); time.sleep(6)
+                    if dm: return [dm['Header'][0].get('status')], (dm.get('Data') or [])
+                d0, d1 = datetime.date(int(b[:4]), int(b[4:6]), int(b[6:])), datetime.date(int(e[:4]), int(e[4:6]), int(e[6:]))
+                if d0 == d1: AQS_DAYS_REFUSED.append(code + ' ' + b); print('airq: aqs', code, 'day', b, 'refused by the service', flush=True); return ['Success'], []
+                mid = d0 + (d1 - d0) // 2; s1, r1 = span(b, mid.strftime('%Y%m%d')); s2, r2 = span((mid + datetime.timedelta(days=1)).strftime('%Y%m%d'), e); return s1 + s2, r1 + r2
+            for b, e in months:
+                st_, rw_ = span(b, e); stats += st_; rows += rw_
+            d = {'Header': [{'status': 'Success' if any(x == 'Success' for x in stats) else ('no response' if 'no response' in stats else stats[0])}], 'Data': rows} if 'no response' not in stats else None
+            if d is None: print('airq: aqs', code, 'a month did not answer', stats, 'not cached', flush=True); AQS_FAILED.append(code)
+        acc = {}; fo = set(); cont = set()
         for r in rows:
             key = '%s-%s-%s' % (r['state_code'], r['county_code'], r['site_number'])
             if r['sample_duration'] != '1 HOUR': fo.add(key); continue
@@ -61,7 +88,7 @@ for st in states:
             s = acc.setdefault(key + '|%s' % r['poc'], dict(site=key, poc=r['poc'], lat=r['latitude'], lon=r['longitude'], hours=collections.defaultdict(list)))
             s['hours'][r['date_gmt']].append(r['sample_measurement'])
         part = dict(mon=[dict(site=v['site'], poc=v['poc'], lat=v['lat'], lon=v['lon'], days={dd: sum(vs) / len(vs) for dd, vs in v['hours'].items() if len(vs) >= MINHOURS}) for v in acc.values()], filter_only=sorted(fo), cont=sorted(cont), rows=len(rows), status=(d or {}).get('Header', [{}])[0].get('status') if d else 'no response')
-        json.dump(part, open(cache, 'w'))
+        if WIN == '2025' or d is not None: json.dump(part, open(cache, 'w'))
     for m in part['mon']:
         if len(m['days']) >= MINDAYS: sites.setdefault(m['site'], []).append(m)
     filter_only |= set(part['filter_only']); cont_sites |= set(part.get('cont', []))
@@ -71,7 +98,7 @@ for k, v in sites.items(): mons[k] = max(v, key=lambda m: len(m['days']))   # th
 fo_only = sorted(filter_only - cont_sites)
 print('airq: monitors with >= %d valid UTC days: %d; sites with only filter samples: %d' % (MINDAYS, len(mons), len(fo_only)), flush=True)
 # ---- stage C: PurpleAir sensors near each monitor
-near_cache = 'data/pa_near.json'; near = json.load(open(near_cache)) if os.path.exists(near_cache) else {}
+near_cache = DD + '/pa_near.json'; near = json.load(open(near_cache)) if os.path.exists(near_cache) else {}
 for i, (k, m) in enumerate(sorted(mons.items())):
     if k in near: continue
     dlat = 0.0025; dlon = 0.0025 / max(0.2, math.cos(math.radians(m['lat'])))
@@ -89,7 +116,7 @@ sens = sorted({s['id'] for v in near.values() for s in v}); print('airq: sensors
 # ---- stage D: daily UTC averages per sensor, with the points guard
 unread = []; fields = 'pm2.5_atm_a,pm2.5_atm_b,pm2.5_cf_1_a,pm2.5_cf_1_b,humidity'
 for i, sid in enumerate(sens):
-    cache = 'data/pa_%d.json' % sid
+    cache = DD + '/pa_%d.json' % sid
     if os.path.exists(cache): continue
     if i % 25 == 0:
         left = points_left()
@@ -99,7 +126,7 @@ for i, sid in enumerate(sens):
     if i % 50 == 49: print('airq: pa history', i + 1, 'of', len(sens), flush=True)
 # ---- stage E: pairs and metrics
 def sensor_days(sid):
-    p = 'data/pa_%d.json' % sid
+    p = DD + '/pa_%d.json' % sid
     if not os.path.exists(p): return {}
     d = json.load(open(p)); f = d.get('fields') or []; out = {}
     for row in d.get('data') or []:
@@ -133,8 +160,9 @@ for r in ('R1', 'R2', 'R3'):
     ms = [p[r] for p in unit]
     medians[NAME[r]] = dict(monitors=n, slope=round(statistics.median([m['slope'] for m in ms]), 2) if ms else None, intercept=round(statistics.median([m['intercept'] for m in ms]), 2) if ms else None, r2=round(statistics.median([m['r2'] for m in ms]), 2) if ms else None, rmse=round(statistics.median([m['rmse'] for m in ms]), 2) if ms else None)
     srt = sorted(unit, key=lambda p: p[r]['rmse']) if r == 'R3' else []
-    if r == 'R3': json.dump(dict(largest=[dict(monitor=p['monitor'], sensor=p['sensor'], dist=p['dist'], n=p['n'], rmse=p['R3']['rmse']) for p in srt[-5:]], smallest=[dict(monitor=p['monitor'], sensor=p['sensor'], dist=p['dist'], n=p['n'], rmse=p['R3']['rmse']) for p in srt[:5]]), open('data/hand_check_pairs.json', 'w'), indent=1)
-res = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', window='1 June to 29 September 2025', monitors_read=len(mons), monitors_with_sensor=len(by_mon), sensors=len(sens), sensors_not_read=len(unread), pairs=len(pairs), days_kept=kept_days, days_removed_ab=removed_ab, filter_only_sites=len(fo_only),
+    if r == 'R3': json.dump(dict(largest=[dict(monitor=p['monitor'], sensor=p['sensor'], dist=p['dist'], n=p['n'], rmse=p['R3']['rmse']) for p in srt[-5:]], smallest=[dict(monitor=p['monitor'], sensor=p['sensor'], dist=p['dist'], n=p['n'], rmse=p['R3']['rmse']) for p in srt[:5]]), open(DD + '/hand_check_pairs.json', 'w'), indent=1)
+res = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', window=WLABEL, monitors_read=len(mons), monitors_with_sensor=len(by_mon), sensors=len(sens), sensors_not_read=len(unread), pairs=len(pairs), days_kept=kept_days, days_removed_ab=removed_ab, filter_only_sites=len(fo_only),
            comparison=comparison, medians=medians, headline_n=comparison[NAME['R3']]['n'], headline_of=comparison[NAME['R3']]['of'], headline=comparison[NAME['R3']])
-json.dump(res, open('summary_airq.json', 'w'), indent=1); json.dump(pairs, open('data/pairs.json', 'w'))
+if WIN == '2026': res['aqs_states_not_answered'] = AQS_FAILED; res['aqs_state_days_refused'] = AQS_DAYS_REFUSED; res['source_line'] = 'Monitor values are the EPA Air Quality System hourly record as the monitoring agencies submitted it, not yet certified for 2026. The record ends at 30 June 2026, so no later window can be read yet.'; res['max_daily_ref'] = round(max((p['max_ref'] for p in pairs), default=0), 1); res['pairs_with_a_day_of_25_or_more'] = sum(1 for p in pairs if p['max_ref'] >= 25)
+json.dump(res, open(SUMMARY, 'w'), indent=1); json.dump(pairs, open(DD + '/pairs.json', 'w'))
 print('airq: monitors', len(mons), 'with sensors', len(by_mon), 'pairs', len(pairs), '| comparison', {k: (v['n'], v['of'], v['outcome']) for k, v in comparison.items()}, flush=True)
