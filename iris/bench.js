@@ -8,11 +8,12 @@
     var W = 760, L = 150, bw = 170, gap = 12, rowh = 30, H = 44 + ms.length * rowh;
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Replies received per model and arm', 'class': 'bench-svg' });
     ARMS.forEach(function (a, i) { svg.appendChild(el('text', { x: L + i * (bw + gap), y: 16, 'class': 'bench-h' }, a[1])); });
+    var whole = ms.length > 0;   // 9 Nov 2026 (site pass M9): a finished grid says so, and that its results are not published yet
     ms.forEach(function (m, r) {
       var y = 28 + r * rowh;
       svg.appendChild(el('text', { x: 0, y: y + 14, 'class': 'bench-m' }, m.name));
       ARMS.forEach(function (a, i) {
-        var x = L + i * (bw + gap), f = Math.min(1, (m[a[0]] || 0) / (d.of || 1));
+        var x = L + i * (bw + gap), f = Math.min(1, (m[a[0]] || 0) / (d.of || 1)); if (f < 1) whole = false;
         svg.appendChild(el('rect', { x: x, y: y, width: bw, height: 18, rx: 3, 'class': 'bench-bg' }));
         if (f > 0) svg.appendChild(el('rect', { x: x, y: y, width: Math.max(2, bw * f), height: 18, rx: 3, 'class': f >= 1 ? 'bench-done' : 'bench-run' }));
         svg.appendChild(el('text', { x: x + bw + 4, y: y + 13, 'class': 'bench-n' }, f >= 1 ? '✓' : ''));
@@ -20,7 +21,8 @@
     });
     box.textContent = ''; box.appendChild(svg);
     var p = document.createElement('p'); p.className = 'bench-note';
-    p.textContent = 'Replies received per model and arm. Updated as each batch lands' + (d.updated ? ' (' + d.updated + ' UTC)' : '') + '. Results are published after review.';
+    p.textContent = whole ? 'Replies received per model and arm. All replies in' + (d.updated ? ' by ' + d.updated + ' UTC' : '') + '. Results are not published yet.'
+      : 'Replies received per model and arm. Updated as each batch lands' + (d.updated ? ' (' + d.updated + ' UTC)' : '') + '. Results are published after review.';
     box.appendChild(p);
   }
   function started(d) { return (d.models || []).some(function (m) { return m.bare > 0; }); }

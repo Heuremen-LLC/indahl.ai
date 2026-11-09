@@ -7,6 +7,8 @@
   var TITLE = { live: 'Being read now', eval: 'A model evaluation is running now', train: 'A training run is going now' };
   var MODE_TITLE = { reading: 'Being read now', 'just read': 'Read in the last few minutes' };
   var READ = {};
+  // 9 Nov 2026 (site pass M1): a tag sits only in the menus, the desk lists and the Division line, never inside a sentence, a licence or a table note.
+  var IN = 'nav, header, .hdesks, .ddpanel, .desklist, .hmore, .crumb';
   function href(slug) { return HREF[slug] || '/' + slug; }
   function ago(iso) {
     var m = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 60000));
@@ -26,9 +28,9 @@
       clear(); if (!d || (d.updated && (Date.now() - Date.parse(d.updated)) > 45 * 60 * 1000)) return;
       var live = d.live || {}, divs = d.divisions || {}; READ = d.read || {};
       Object.keys(live).forEach(function (slug) {
-        var m = live[slug], w = WORD[m] || 'live'; document.querySelectorAll('a[href="' + href(slug) + '"]').forEach(function (a) { if (!(slug in divs)) mark(a, w, m, slug); else if (a.closest('.hdesks, .ddpanel, .desklist, .hmore')) mark(a, w, m, slug); });
+        var m = live[slug], w = WORD[m] || 'live'; document.querySelectorAll('a[href="' + href(slug) + '"]').forEach(function (a) { if (!(slug in divs)) { if (a.closest(IN)) mark(a, w, m, slug); } else if (a.closest('.hdesks, .ddpanel, .desklist, .hmore')) mark(a, w, m, slug); });
       });
-      Object.keys(divs).forEach(function (dv) { document.querySelectorAll('a[href="/' + dv + '"]').forEach(function (a) { mark(a, divs[dv]); }); });
+      Object.keys(divs).forEach(function (dv) { document.querySelectorAll('a[href="/' + dv + '"]').forEach(function (a) { if (a.closest(IN)) mark(a, divs[dv]); }); });
     }).catch(function () {});
   }
   // 31 Oct 2026 (his "anything that we label live should look live and not static"): on a desk's own page, a strip under the headline.

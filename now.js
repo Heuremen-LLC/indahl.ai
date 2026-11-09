@@ -23,7 +23,7 @@
     });
     root.appendChild(s1);
     if (YO && YO.state) {
-      var s2 = sec('Training now'), st = YO.state === 'training';
+      var st = YO.state === 'training', s2 = sec(st ? 'Training now' : 'Training');   // 9 Nov 2026 (site pass L17): 'now' only while a run is going
       var t = YO.state === 'done' ? 'YO finished training. Its test reading is on the lab page.' : YO.state === 'trained' ? 'YO finished training. Its test reading is being checked.' : st ? 'YO, step ' + fmt(YO.step) + ' of ' + fmt(YO.steps) + (YO.train && YO.train.length ? ', training loss ' + YO.train[YO.train.length - 1][1].toFixed(3) : '') : 'YO is getting ready to train.';
       s2.appendChild(row('/iris/lab', 'YO', t, bar((YO.step || 0) / (YO.steps || 1), st ? 'nw-run' : ''))); root.appendChild(s2);
     }
@@ -31,11 +31,13 @@
       var s3 = sec('YO reads IBM records'); (YOR.latest || []).slice(0, 3).forEach(function (r) { s3.appendChild(row('/qia#yo', r.backend, r.stamp + ', agreement with the code ' + r.score.toFixed(2))); }); root.appendChild(s3);
     }
     if (CLOCK && CLOCK.rows) {
-      var s4 = sec('Darkwave clock'); CLOCK.rows.slice(-2).forEach(function (r) { s4.appendChild(row('https://heuremen.org/darkwave.html', r.chip, r.text)); }); root.appendChild(s4);
+      // 9 Nov 2026 (site pass M16): the block says which fire it shows, and that later fires are on the Darkwave page (this feed is not rewritten after each fire yet)
+      var s4 = sec('Darkwave clock' + (CLOCK.fire ? ', fire of ' + CLOCK.fire : '')); CLOCK.rows.slice(-2).forEach(function (r) { s4.appendChild(row('https://heuremen.org/darkwave.html', r.chip, r.text)); });
+      if (CLOCK.note) s4.appendChild(h('p', CLOCK.note, 'nw-note')); root.appendChild(s4);
     }
     var pr = Q && Q.processors; if (typeof pr === 'string') { try { pr = JSON.parse(pr.replace(/'/g, '"').replace(/None/g, 'null').replace(/True/g, 'true').replace(/False/g, 'false')); } catch (e) { pr = null; } }
     if (pr && pr.length) {
-      var s5 = sec('IBM processors'); pr.forEach(function (p) { s5.appendChild(row('/qia', p.backend, (p.pending == null ? 'queue not read' : fmt(p.pending) + ' jobs waiting'))); });
+      var s5 = sec('IBM processors'); pr.forEach(function (p) { s5.appendChild(row('/qia', p.backend, (p.pending == null ? 'queue not read' : fmt(p.pending) + (+p.pending === 1 ? ' job waiting' : ' jobs waiting')))); });
       if (Q.updated) s5.appendChild(h('p', 'Read ' + Q.updated + '.', 'nw-note')); root.appendChild(s5);
     }
     if (LISTS.length) {

@@ -1,5 +1,5 @@
-"""heuremen_kit.py: shared instrument pieces for the live corners of indahl.ai. See PLAN.md. Never touches the network. Run `python3 -I heuremen_kit.py` for the self-test."""
-import math, subprocess, os, sys, random
+"""heuremen_kit.py: shared instrument pieces for the live corners of indahl.ai. See PLAN.md. Never touches the network itself (opener() only builds one). Run `python3 -I heuremen_kit.py` for the self-test."""
+import math, subprocess, os, sys, random, urllib.request
 ABOVE, BELOW, CONSISTENT, CANNOT_TELL, NOTHING_RETURNED = 'ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL', 'NOTHING_RETURNED'
 OUTCOMES = (ABOVE, BELOW, CONSISTENT, CANNOT_TELL)
 
@@ -45,6 +45,32 @@ def plan_committed(plan_path, first_data_time=None):
     except Exception: return False
     return True if first_data_time is None else t <= first_data_time
 
+class _Follow308(urllib.request.HTTPRedirectHandler):
+    """9 Nov 2026 (site pass M14): urllib before Python 3.11 has no handler for HTTP 308 and returns it as an error. A 308 is followed the way a 307 is
+    (RFC 9110: same method, same body), so a desk reads the same thing on every Python."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return super().redirect_request(req, fp, 307 if code == 308 else code, msg, headers, newurl)
+    http_error_308 = urllib.request.HTTPRedirectHandler.http_error_302
+
+def opener(*handlers):
+    """An urllib opener that follows 301, 302, 303, 307 and 308 on every Python version. Use opener().open(request, timeout=...)."""
+    return urllib.request.build_opener(_Follow308(), *handlers)
+
+def _planted_308():
+    """Self-test: a local server answers /a with a 308 to /b, and /b with 200. opener() must land on /b."""
+    import http.server, threading
+    class Hd(http.server.BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path == '/a': self.send_response(308); self.send_header('Location', '/b')
+            else: self.send_response(200)
+            self.send_header('Content-Length', '0'); self.end_headers()
+        def log_message(self, *a): pass
+    s = http.server.HTTPServer(('127.0.0.1', 0), Hd); threading.Thread(target=s.serve_forever, daemon=True).start()
+    try:
+        r = opener(urllib.request.ProxyHandler({})).open('http://127.0.0.1:%d/a' % s.server_port, timeout=10); return r.status == 200 and r.geturl().endswith('/b')
+    except Exception: return False
+    finally: s.shutdown(); s.server_close()
+
 def floor(false_flags, n_tests, threshold_rate=0.0027):
     """What a null world gives: expected false flags and the count above which a result exceeds chance (expected + 2 sqrt(expected))."""
     exp = n_tests * threshold_rate; return dict(expected=exp, exceeds=exp + 2 * math.sqrt(exp), observed=false_flags, above_chance=false_flags > exp + 2 * math.sqrt(exp))
@@ -73,5 +99,6 @@ def selftest():
     check('plan not in git is refused', plan_committed('/nonexistent/PLAN.md') is False)
     check('estimate without yes refuses', estimate_then_yes('cost about 10 s', False) is False and estimate_then_yes('cost about 10 s', True) is True)
     f = floor(5, 1000); check('floor expected 2.7 and 5 flags is not above chance', abs(f['expected'] - 2.7) < 1e-9 and not f['above_chance'])
+    check('a 308 redirect is followed (local server)', _planted_308())
     print('SELFTEST', 'PASSED' if ok else 'FAILED'); return ok
 if __name__ == '__main__': sys.exit(0 if selftest() else 1)

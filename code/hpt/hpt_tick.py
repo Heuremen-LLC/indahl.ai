@@ -19,7 +19,7 @@ def http(url, rng=None, n=2):
         try:
             h = {'User-Agent': UA}
             if rng: h['Range'] = rng
-            r = urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=30); return r.status, r.headers.get('Content-Type', ''), r.read(rng and 4096 or 20000), r.geturl()
+            r = K.opener().open(urllib.request.Request(url, headers=h), timeout=30); return r.status, r.headers.get('Content-Type', ''), r.read(rng and 4096 or 20000), r.geturl()   # 9 Nov 2026 (Addendum 3): the kit's opener follows 308 too
         except urllib.error.HTTPError as e: return e.code, e.headers.get('Content-Type', '') if e.headers else '', b'', url
         except Exception: time.sleep(1)
     return None, '', b'', url
@@ -37,6 +37,7 @@ def step1(host):
         if st == 200:
             t = body.decode('utf8', 'replace'); m = mrf_of(t); TXT[host] = 'https://%s/cms-hpt.txt' % h
             return ('AGREE', None, m) if m else ('DISAGREE', 'a file is served with no mrf-url line', None)
+        if 300 <= st < 400: return 'NOT_COMPARABLE', 'redirect not followed (HTTP %d)' % st, None   # 9 Nov 2026 (Addendum 3): a redirect is not a block
         return 'NOT_COMPARABLE', 'blocked or server error (HTTP %d)' % st, None
     return 'NOT_COMPARABLE', 'site could not be reached', None
 import zlib
@@ -78,6 +79,19 @@ if gate and os.environ.get('HPT_REREAD23'):
         n23 += 1
         if n23 % 100 == 0: print('hpt: reread steps 2 and 3,', n23, flush=True)
     json.dump(store, open('data/domains.json.tmp', 'w')); os.replace('data/domains.json.tmp', 'data/domains.json'); SUMMARY_ONLY = True
+if gate and os.environ.get('HPT_REREAD308'):
+    # Addendum 3 (9 Nov 2026): every domain whose step 1 was filed under a 3xx status is read again through all three steps with the 308-following opener.
+    # Every other row is kept as read.
+    n308 = 0
+    for host, rec in store.items():
+        if not re.search(r'\(HTTP 3\d\d\)', rec.get('why1') or ''): continue
+        for k in ('s1', 'why1', 'mrf', 'txt', 's2', 'why2', 's3', 'why3'): rec.pop(k, None)
+        c, why, mrf = step1(host); time.sleep(0.4); rec.update(s1=c, why1=why, mrf=mrf, txt=TXT.get(host), reread308=time.time())
+        if c == 'AGREE':
+            c2, why2, body, isz = step2(mrf); time.sleep(0.4); rec.update(s2=c2, why2=why2)
+            if c2 == 'AGREE': rec['s3'] = 'NOT_COMPARABLE' if isz else step3(body); rec['why3'] = 'zip file' if isz else None
+        n308 += 1; print('hpt: reread 3xx', host, c, why, rec.get('s2'), rec.get('s3'), flush=True)
+    json.dump(store, open('data/domains.json.tmp', 'w')); os.replace('data/domains.json.tmp', 'data/domains.json'); SUMMARY_ONLY = True; print('hpt: reread 3xx rows', n308, flush=True)
 if gate and not SUMMARY_ONLY:
     q = urllib.request.Request('https://query.wikidata.org/sparql?' + urllib.parse.urlencode({'query': SPARQL}), headers={'Accept': 'application/sparql-results+json', 'User-Agent': UA})
     rows = json.loads(urllib.request.urlopen(q, timeout=180).read())['results']['bindings']; open('data/listdate.txt', 'w').write(time.strftime('%Y-%m-%d', time.gmtime(now)))
