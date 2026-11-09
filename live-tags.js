@@ -40,6 +40,7 @@
   function dur(ms) { var s = Math.max(0, Math.floor(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
     return ((h ? h + ' h ' : '') + (h || m ? m + ' min ' : '') + (h ? '' : x + ' s')).trim(); }
   function fmt(n) { return Number(n).toLocaleString('en-US'); }
+  function coarse(ms) { var m = Math.floor(ms / 60000), h = Math.floor(m / 60); return h >= 48 ? Math.floor(h / 24) + ' days' : h >= 1 ? h + ' h' : m + ' min'; }
   function stripEl() {
     var main = document.querySelector('main.wrap'); if (!main) return null; var s = document.getElementById('livestrip');
     if (!s) { s = document.createElement('div'); s.id = 'livestrip'; s.setAttribute('aria-live', 'off');
@@ -60,7 +61,10 @@
     } else if (read) {
       var el = now - Date.parse(read), cyc = every ? every * 60000 : 0; s.className = 'livestrip lsp-wait';
       fill.style.width = cyc ? Math.min(100, 100 * el / cyc).toFixed(2) + '%' : '0%';
-      txt.textContent = 'Last read ' + dur(el) + ' ago.' + (cyc ? (el < cyc ? ' Next scheduled read in about ' + dur(cyc - el).replace(/ \d+ s$/, '') + '.' : ' Next scheduled read is due.') + ' Reads about every ' + dur(cyc).replace(/ \d+ s$/, '').trim() + '.' : '');
+      // 9 Nov 2026 (his word, after the tick clock stalled 09:17Z to 20:22Z): a read that is late says so plainly. Within one schedule: next read in about X.
+      // Up to twice the schedule: due now. Past that: overdue, with the gap in whole hours, and no "about every" beside it as if it were on schedule.
+      txt.textContent = 'Last read ' + (cyc && el >= 2 * cyc ? coarse(el) : dur(el)) + ' ago.' + (cyc ? (el < cyc ? ' Next scheduled read in about ' + dur(cyc - el).replace(/ \d+ s$/, '') + '. Reads about every ' + dur(cyc).replace(/ \d+ s$/, '').trim() + '.' : el < 2 * cyc ? ' The next read is due now. Reads about every ' + dur(cyc).replace(/ \d+ s$/, '').trim() + '.' : ' The next read is overdue.') : '');
+      s.className = 'livestrip lsp-wait' + (cyc && el >= 2 * cyc ? ' lsp-late' : '');
     }
   }
   function prog() { if (!SLUG) return; fetch('/progress/' + SLUG + '.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (p) { PROG = p && p.desk ? p : null; paint(); }).catch(function () {}); }

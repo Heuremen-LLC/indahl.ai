@@ -24,11 +24,11 @@
     root.appendChild(s1);
     if (YO && YO.state) {
       var st = YO.state === 'training', s2 = sec(st ? 'Training now' : 'Training');   // 9 Nov 2026 (site pass L17): 'now' only while a run is going
-      var t = YO.state === 'done' ? 'YO finished training. Its test reading is on the lab page.' : YO.state === 'trained' ? 'YO finished training. Its test reading is being checked.' : st ? 'YO, step ' + fmt(YO.step) + ' of ' + fmt(YO.steps) + (YO.train && YO.train.length ? ', training loss ' + YO.train[YO.train.length - 1][1].toFixed(3) : '') : 'YO is getting ready to train.';
-      s2.appendChild(row('/iris/lab', 'YO', t, bar((YO.step || 0) / (YO.steps || 1), st ? 'nw-run' : ''))); root.appendChild(s2);
+      var t = YO.state === 'done' ? 'YO finished training. Its test reading is on the YO page.' : YO.state === 'trained' ? 'YO finished training. Its test reading is being checked.' : st ? 'YO, step ' + fmt(YO.step) + ' of ' + fmt(YO.steps) + (YO.train && YO.train.length ? ', training loss ' + YO.train[YO.train.length - 1][1].toFixed(3) : '') : 'YO is getting ready to train.';
+      s2.appendChild(row('/yo', 'YO', t, bar((YO.step || 0) / (YO.steps || 1), st ? 'nw-run' : ''))); root.appendChild(s2);
     }
     if (YOR && YOR.n) {
-      var s3 = sec('YO reads IBM records'); (YOR.latest || []).slice(0, 3).forEach(function (r) { s3.appendChild(row('/qia#yo', r.backend, r.stamp + ', agreement with the code ' + r.score.toFixed(2))); }); root.appendChild(s3);
+      var s3 = sec('YO reads IBM records'); (YOR.latest || []).slice(0, 3).forEach(function (r) { s3.appendChild(row('/yo#yo', r.backend, r.stamp + ', agreement with the code ' + r.score.toFixed(2))); }); root.appendChild(s3);
     }
     if (CLOCK && CLOCK.rows) {
       // 9 Nov 2026 (site pass M16): the block says which fire it shows. The feed is rewritten after each fire by clock_feed.py (newest fire per chip)
@@ -50,7 +50,7 @@
   function tick() {   // clocks and bars move every second without rebuilding the page, so links stay clickable
     var now = Date.now(), c = root.querySelector('.nw-clock'); if (c) c.firstChild.nodeValue = 'Now: ' + new Date(now).toUTCString().replace('GMT', 'UTC') + '. Every line below is read from a live feed and moves on its own.';
     root.querySelectorAll('[data-read]').forEach(function (r) { var el = now - Date.parse(r.getAttribute('data-read')), cyc = +r.getAttribute('data-cyc');
-      r.querySelector('.nw-txt').textContent = 'read ' + dur(el) + ' ago' + (cyc ? (el < cyc ? ', next in about ' + dur(cyc - el).replace(/ \d+ s$/, '') : ', next read due') : '');
+      r.querySelector('.nw-txt').textContent = 'read ' + (cyc && el >= 2 * cyc ? (Math.floor(el / 3600000) >= 1 ? Math.floor(el / 3600000) + ' h' : Math.floor(el / 60000) + ' min') : dur(el)) + ' ago' + (cyc ? (el < cyc ? ', next in about ' + dur(cyc - el).replace(/ \d+ s$/, '') : el < 2 * cyc ? ', next read due now' : ', next read overdue') : '');   // 9 Nov 2026: late reads say overdue
       r.querySelector('.nw-fill').style.width = (cyc ? Math.min(100, 100 * el / cyc) : 0).toFixed(2) + '%'; });
   }
   function loadAct() { J('/activity.json').then(function (d) { ACT = d; var ks = Object.keys((d && d.live) || {});
