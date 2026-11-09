@@ -39,7 +39,7 @@ def sdrop(s):
     if SCONTACT.search(s): return 'contact details'
     if not SAI_CLEAR.search(s): return 'AI word that means something else here (LLM law degree, Gemini, Claude)'
     if SPERSON.search(s): return 'names a student'
-    if SRELIG.search(s): return 'religious text'
+    if SRELIG.search(s): return 'off-topic text'   # 9 Nov 2026 (site pass L3): the label names no subject
     return None
 def cdrop(l):
     if re.match(r'^PAGE \d',l): return 'page header'
