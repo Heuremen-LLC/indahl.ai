@@ -19,6 +19,36 @@ def hsts_class(h):
     ma = next((int(x.split('=', 1)[1].strip('" ')) for x in d if x.startswith('max-age=') and x.split('=', 1)[1].strip('" ').isdigit()), None)
     ok = ma is not None and ma >= 31536000 and 'includesubdomains' in d
     return ('AGREE' if ok else 'DISAGREE'), None
+class _NoFollow(urllib.request.HTTPRedirectHandler):
+    """9 Nov 2026 (PLAN.md Addendum 2): never follow a redirect. The preload list reads the header on the base domain's own response, a redirect included."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl): return None
+def base_read(url, ctx=None, timeout=15, proxies=None):
+    """-> (status, HSTS header or None, redirect target or None) of the first response to url, whatever its status. Raises when the request fails."""
+    hs = [_NoFollow(), urllib.request.HTTPSHandler(context=ctx or ssl.create_default_context())] + ([urllib.request.ProxyHandler(proxies)] if proxies is not None else [])
+    op = urllib.request.build_opener(*hs)
+    try:
+        rq = op.open(urllib.request.Request(url, headers={'User-Agent': UA}), timeout=timeout)
+        with rq: return (getattr(rq, 'status', None) or rq.getcode()), rq.headers.get('Strict-Transport-Security'), None
+    except urllib.error.HTTPError as e:
+        try: return e.code, e.headers.get('Strict-Transport-Security'), e.headers.get('Location')
+        finally: e.close()
+def planted_read_ok():
+    """Known-good for the read (Addendum 2): a local server answers / with a 301 and /p8 with a 308, each carrying one header, and /next with a 200 carrying
+    another. The reader must return the first response's own header and status and keep the redirect target, and never the page it points to."""
+    import http.server, threading
+    class Hd(http.server.BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path in ('/', '/p8'):
+                self.send_response(301 if self.path == '/' else 308); self.send_header('Location', '/next')
+                self.send_header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload' if self.path == '/' else 'max-age=600; preload')
+            else: self.send_response(200); self.send_header('Strict-Transport-Security', 'max-age=300; preload')
+            self.send_header('Content-Length', '0'); self.end_headers()
+        def log_message(self, *a): pass
+    s = http.server.HTTPServer(('127.0.0.1', 0), Hd); threading.Thread(target=s.serve_forever, daemon=True).start(); u = 'http://127.0.0.1:%d' % s.server_port
+    try: a, b, c = base_read(u + '/', proxies={}), base_read(u + '/p8', proxies={}), base_read(u + '/next', proxies={})
+    except Exception: return False
+    finally: s.shutdown(); s.server_close()
+    return a == (301, 'max-age=31536000; includeSubDomains; preload', '/next') and b == (308, 'max-age=600; preload', '/next') and c == (200, 'max-age=300; preload', None)
 def doh(name, typ='TXT', n=3):
     u = 'https://cloudflare-dns.com/dns-query?' + urllib.parse.urlencode({'name': name, 'type': typ})
     for i in range(n):
@@ -64,13 +94,14 @@ fp = lambda n: P.get(n)
 r1 = spf_count('a.test', fp)[0] == 3; r2 = spf_class('b.test', fp)[0] == 'DISAGREE'; r3 = spf_count('d.test', fp)[0] == 1; r4 = spf_count('e.test', fp)[0] == 0; r5 = spf_count('b.test', fp)[0] > 10
 r6 = spf_count('dup.test', fp)[0] == 14
 gate_s = all((r1, r2, r3, r4, r5, r6)); live_ok = True
+gate_r = planted_read_ok()   # 9 Nov 2026 (Addendum 2): the reader returns the first response's header and follows no redirect
 if not SUMMARY_ONLY:
     try:
-        rq = urllib.request.urlopen(urllib.request.Request('https://github.com/', headers={'User-Agent': UA}), timeout=20); live_ok &= hsts_class(rq.headers.get('Strict-Transport-Security'))[0] == 'AGREE'
+        st, h, _ = base_read('https://github.com/', timeout=20); live_ok &= st == 200 and hsts_class(h)[0] == 'AGREE'   # same reader as the pass (Addendum 2)
         c, _, n = spf_class('google.com', doh); live_ok &= c == 'AGREE'
     except Exception: live_ok = False
-gate = bool(gate_h and gate_s and live_ok) if not SUMMARY_ONLY else bool(gate_h and gate_s and json.load(open('summary_secrecords.json')).get('gate') == 'passed')
-print('secrecords: gate', 'passed' if gate else 'FAILED', gate_h, gate_s, live_ok, flush=True)
+gate = bool(gate_h and gate_s and gate_r and live_ok) if not SUMMARY_ONLY else bool(gate_h and gate_s and gate_r and json.load(open('summary_secrecords.json')).get('gate') == 'passed')
+print('secrecords: gate', 'passed' if gate else 'FAILED', gate_h, gate_s, gate_r, live_ok, flush=True)
 store = json.load(open('data/domains.json')) if os.path.exists('data/domains.json') else {}; now = time.time()
 if SUMMARY_ONLY and store: now = max(r.get('read', 0) for r in store.values())   # 30 Oct: a summary rebuilt from stored data carries the time of the last read, not the time of the rebuild
 if gate and not SUMMARY_ONLY:
@@ -82,11 +113,8 @@ if gate and not SUMMARY_ONLY:
     for i, (rk, dom) in enumerate(rows):
         DP.report('secrecords', i, len(rows), dom)   # 31 Oct: live progress bar on the page
         dom = dom.strip(); rec = dict(read=now, domain=dom, rank=int(rk))
-        try:
-            rq = urllib.request.urlopen(urllib.request.Request('https://%s/' % dom, headers={'User-Agent': UA}), timeout=15, context=ctx); h = rq.headers.get('Strict-Transport-Security'); rec['final'] = urllib.parse.urlparse(rq.geturl()).hostname; rec['hsts'] = h
-            rec['hsts_cls'], rec['hsts_why'] = hsts_class(h)
-        except urllib.error.HTTPError as e:
-            h = e.headers.get('Strict-Transport-Security'); rec['hsts'] = h; rec['hsts_cls'], rec['hsts_why'] = hsts_class(h)
+        try:   # 9 Nov 2026 (Addendum 2): the base domain's own first response, no redirect followed. Its status and redirect target are kept in their own fields.
+            st, h, loc = base_read('https://%s/' % dom, ctx); rec.update(status=st, redirect=loc, hsts=h); rec['hsts_cls'], rec['hsts_why'] = hsts_class(h)
         except Exception as e: rec.update(hsts=None, hsts_cls='NOT_COMPARABLE', hsts_why='HTTPS request failed')
         rec['spf_cls'], rec['spf_why'], rec['spf_n'] = spf_class(dom, doh)
         if rec['spf_cls'] != 'NOT_COMPARABLE' or rec['spf_why'] == 'count cut short': rec['spf'] = (spf_of(dom, doh)[0] or '')[:400]

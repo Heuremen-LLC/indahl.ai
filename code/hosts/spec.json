@@ -1,0 +1,127 @@
+{
+ "slug": "hosts",
+ "nav": "HOSTS",
+ "h1": "HOSTS &middot; One Model, Many Hosts",
+ "title": "HOSTS | One Model, Many Hosts | Heuremen LLC",
+ "desc": "HOSTS: every open-weight model served through OpenRouter, every host serving it, each host's stated quantization and uptime, polled every 12 minutes and kept.",
+ "intro_html": "<h2>Who serves the same model, and how steadily?</h2><p>An open-weight model can be served by a dozen companies. OpenRouter, an aggregator, lists for each model its hosts, each host's stated quantization (the numeric precision of the weights), prices, limits and uptime figures. We read all of it every 12 minutes and keep every read, so the page shows where hosts differ for the same model, who is down right now, and how uptime varies with quantization. We run no inference and spend nothing, and we never rank hosts.</p>",
+ "note_html": "<p>The first table compares the one-day uptime a host states with the mean of the 5-minute uptime figures from our own polls over the same 24 hours, with the 2 percentage point tolerance fixed in the plan. It reads NOTHING_RETURNED until 24 hours of polls exist. The aggregator may compute uptime from requests rather than time, so a difference is not an error by itself. Latency and throughput are empty in the public data and are not shown. A model with one host is listed as such. <a href=\"https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/hosts/PLAN.md\">Plan, addenda and code</a>.</p>",
+ "kv": "hosts_live",
+ "api_name": "hosts",
+ "api_desc": "HOSTS: open-weight models on OpenRouter, every host, its stated quantization and uptime, polled every 12 minutes.",
+ "every": 2,
+ "rider": "~/bones-forge/hosts_index/hosts_tick.py",
+ "folder": "hosts",
+ "live_desc": "Open-weight models, their hosts, quantization and uptime, live.",
+ "top": "{top_line} Polls kept: {polls_kept}, since {first_poll}. Updated {updated}.",
+ "tables": [
+  {
+   "title": "Stated one-day uptime against our own 5-minute record",
+   "path": "headline",
+   "first": "",
+   "cols": [
+    [
+     "Endpoints compared",
+     "of",
+     "n"
+    ],
+    [
+     "Disagree",
+     "n",
+     "n"
+    ],
+    [
+     "Share, 95% interval",
+     "share",
+     "pct"
+    ],
+    [
+     "Outcome",
+     "outcome",
+     "oc"
+    ]
+   ]
+  },
+  {
+   "title": "Endpoints below 100 percent 5-minute uptime right now",
+   "path": "problems",
+   "first": "Model | host | tag",
+   "cols": [
+    [
+     "Quantization",
+     "quantization",
+     "t"
+    ],
+    [
+     "Uptime, 5 minutes",
+     "uptime_5m",
+     "n"
+    ],
+    [
+     "30 minutes",
+     "uptime_30m",
+     "n"
+    ],
+    [
+     "1 day",
+     "uptime_1d",
+     "n"
+    ]
+   ]
+  },
+  {
+   "title": "Readings at 100 percent 5-minute uptime, by stated quantization (last 24 hours of polls)",
+   "path": "quantization",
+   "first": "Quantization",
+   "cols": [
+    [
+     "Endpoints",
+     "endpoints",
+     "n"
+    ],
+    [
+     "Readings",
+     "readings",
+     "n"
+    ],
+    [
+     "At 100 percent",
+     "at_100",
+     "t"
+    ]
+   ]
+  },
+  {
+   "title": "Models by number of hosts",
+   "path": "models_by_hosts",
+   "first": "",
+   "cols": [
+    [
+     "1 host",
+     "1 host",
+     "n"
+    ],
+    [
+     "2 to 4 hosts",
+     "2 to 4 hosts",
+     "n"
+    ],
+    [
+     "5 to 9 hosts",
+     "5 to 9 hosts",
+     "n"
+    ],
+    [
+     "10 or more hosts",
+     "10 or more hosts",
+     "n"
+    ]
+   ]
+  }
+ ],
+ "files": [
+  "~/bones-forge/hosts_index/PLAN.md",
+  "~/bones-forge/hosts_index/hosts_tick.py",
+  "~/bones-forge/hosts_index/history.jsonl"
+ ]
+}

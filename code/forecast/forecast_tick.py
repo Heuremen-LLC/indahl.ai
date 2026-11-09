@@ -51,23 +51,29 @@ so.close(); sc = load('data/scores.jsonl'); sm = {x['id']: x for x in sc}
 BINS = [(0, 5, '0 to 5'), (10, 20, '10 to 20'), (30, 40, '30 to 40'), (50, 60, '50 to 60'), (70, 80, '70 to 80'), (90, 100, '90 to 100')]; LEADS = [(0, 12, 'under 12 hours'), (12, 24, '12 to 24 hours'), (24, 48, '24 to 48 hours')]
 import heuremen_kit as _K
 def wil(k, n): return _K.wilson(k, n)   # 29 Oct: the local copy omitted the division by d; the kit's tested function replaces it
-cells = []; unsc = 0; dropped = sum(1 for p in per if not p['stated']); scored = 0; lowev = [0, 0]
+cells = []
+# 30 Oct (site pass H-10): the counts printed above the table are taken from the set the cells use. A period is a station and a start time, counted once however many forecasts of it were fetched. Only stated chances with a lead from 0 to 48 hours are read (Addendum 1). Rows are counted apart.
+dropped = len({(p['station'], p['start']) for p in per if not p['stated']})
+okp = {}; badp = set(); lowp = {}
 for p in per:
     r = sm.get(p['id'])
-    if not r: continue
-    if r['unscorable']: unsc += 1; continue
-    scored += 1
-    if p['pop'] in (0, 5): lowev[1] += 1; lowev[0] += r['event']
+    if not r or not p['stated'] or not (0 <= p['lead_h'] < 48): continue
+    k = (p['station'], p['start'])
+    if r['unscorable']: badp.add(k); continue
+    okp[k] = True
+    if p['pop'] in (0, 5): lowp[k] = lowp.get(k, False) or bool(r['event'])
+scored = len(okp); unsc = len(badp - set(okp)); lowev = [sum(lowp.values()), len(lowp)]; cellkeys = set()
 for lo, hi, nm in BINS:
     for l0, l1, ln in LEADS:
         xs = [(p, sm[p['id']]) for p in per if p['id'] in sm and not sm[p['id']]['unscorable'] and p['stated'] and lo <= p['pop'] <= hi and l0 <= p['lead_h'] < l1]
         _seen = {}; xs = [_seen.setdefault((p['station'], p['start']), (p, o)) for p, o in sorted(xs, key=lambda z: z[0]['fetched'])]; xs = list({(p['station'], p['start']): (p, o) for p, o in xs}.values())   # 29 Oct (audit): one period counts once per cell, the earliest fetch
-        n = len(xs)
+        n = len(xs); cellkeys.update((p['station'], p['start']) for p, _ in xs)
         if not n: cells.append(dict(bin=nm, lead=ln, n=0)); continue
         k = sum(r['event'] for _, r in xs); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)
         oc = 'CANNOT_TELL' if n < 30 else ('ABOVE' if a * 100 > ms else ('BELOW' if b * 100 < ms else 'CONSISTENT'))
         cells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 1), observed=round(100 * k / n, 1), lo=round(100 * a, 1), hi=round(100 * b, 1), outcome=oc))
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), stations=len(ST), forecasts_stored=len({(p['station'], p['fetched']) for p in per}), periods_stored=len(per), periods_scored=scored, unscorable=unsc, not_stated=dropped,
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), stations=len(ST), forecasts_stored=len({(p['station'], p['fetched']) for p in per}), period_rows=len(per), periods_stored=len({(p['station'], p['start']) for p in per}), negative_lead_rows=sum(1 for p in per if p['lead_h'] < 0),
+           periods_scored=scored, unscorable=unsc, not_stated=dropped, periods_in_no_cell=len(set(okp) - cellkeys), periods_in_cells=len(cellkeys), cell_periods=sum(c['n'] for c in cells),
            floor=dict(periods=lowev[1], with_event=lowev[0]), cells=cells)
 json.dump(out, open('summary_forecast.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')

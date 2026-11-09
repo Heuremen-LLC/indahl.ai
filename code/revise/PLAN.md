@@ -37,3 +37,6 @@ Four months have a revision above 300 thousand (March 2020, August, November and
 
 ## Addendum on cadence (29 Oct)
 The repeat cadence is now every 36 ticks of the tick bus, about 3.5 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.
+
+## Note 3 (30 Oct 2026, from the site pass)
+The outcome keeps the fixed rule on the interval over months. Beside the interval over calendar years the page now shows the outcome the same rule gives for it (above if the lower end is above 0.10, below if the upper end is below 0.10, consistent if 0.10 is inside and the interval is no wider than 0.12, otherwise cannot tell). It is descriptive and was defined after the first read. At the 30 Oct read it gives cannot tell for both counts, where the interval over months gives consistent for the third release and above for the benchmarked value. The months in the table of large revisions link to the Philadelphia Fed file. No rule changed.

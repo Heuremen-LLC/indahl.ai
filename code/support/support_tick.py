@@ -80,5 +80,8 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed' if
            apart=dict(eol_no_date=sum(1 for r in rows if r['state'] == 'EOL_NO_DATE'), no_release_date=sum(1 for r in rows if r['state'] == 'NO_RELEASE_DATE'), too_new=sum(1 for r in rows if r['state'] == 'SUPPORTED_TOO_NEW'), support_ended_no_eol=sum(1 for r in rows if r['state'] == 'SUPPORT_ENDED_NO_EOL')))
 json.dump(out, open('summary_support.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'support_live', '--path', os.path.join(H, 'summary_support.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+for _try in range(3):   # 31 Oct: one transient wrangler failure left the feed stale; retry, and log the error when it still fails
+    pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'support_live', '--path', os.path.join(H, 'summary_support.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+    if pr.returncode == 0: break
+    print('support: publish attempt %d failed: %s' % (_try + 1, (pr.stderr or pr.stdout or '').strip().splitlines()[-1:] ), flush=True); time.sleep(20)
 print('support:', len(prods), 'products,', len(rows), 'cycles,', len(tested), 'tested,', len(sil), 'unreleased,', out['all']['outcome'], 'published' if pr.returncode == 0 else 'publish FAILED')

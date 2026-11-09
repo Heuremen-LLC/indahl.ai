@@ -23,3 +23,6 @@ Ten DISAGREE endpoints, chosen by seed 7, are opened by hand against the stored 
 
 ## Not claimed
 That a host's figures are wrong. The aggregator may define uptime from requests and not from time, so a difference between its 1-day figure and the mean of its 5-minute figures need not be an error, and the page says so. That any host serves the model it names. Anything about the quality or speed of a host.
+# Correction (30 Oct 2026, site pass H-5). Ready to append to PLAN.md and commit in one step. Not appended because the rider refuses to run while PLAN.md differs from its commit.
+
+The Display section names the list of endpoints with a status other than 0 or a 5-minute uptime below 100. The page said only below 100 in its top line and the table title. The labels now say flagged by OpenRouter or below 100 percent, the table shows the status and rounds the uptimes to one decimal, and the list is no longer cut to 60 rows while the count was left whole. The count in the feed (problems_now) is that union. Feed fields below_100_now and flagged_now count the two parts. No rule changed.

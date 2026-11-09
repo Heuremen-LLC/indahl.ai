@@ -53,3 +53,25 @@ Also noted: the published results are for a joint measurement now. A later measu
 ## Note 4 (29 Oct, 22:20 EDT, before the rerun is submitted)
 A second run, on ibm_fez only, for qubit 148 and the same control (q95, grid unchanged). The first run measured T1 = 0.82 microseconds for q148 against 5.86 published, so its delay grid (built from the published values, up to 17.6 microseconds for T1 and 35 for T2) sampled the decay with one or two points and the T2 fit sat on its bound. The rerun uses a grid sized to the measured T1 for the flagged qubit: T1 delays 0 to 5 microseconds and T2 delays 0 to 5 microseconds, 16 points each, and the T1 and T2 circuits are interleaved in time (note 1). Shots, circuits, fits, thresholds, outcomes and the on-bound rule of note 3 are unchanged. The first run stays on the page. The rerun is a new reading, not a replacement. Cost about 25 QPU seconds on the paid instance, which has about 1,560 seconds left.
 The options added to run_check.py: --t1max and --t2max (microseconds, applied to the flagged qubits only, never to the control) and --interleave.
+
+
+## Note 5 (29 Oct, from the internal audit)
+1. In the fez rerun the flagged qubit's delays were sized from its own first result and the control kept the old grid, so the two were not read on the same grid. The rerun is described as such on the page.
+2. The CANNOT_TELL class holds both an unresolved ratio and a failed or on-bound fit from our own delay grid. The page's rows say which, through the fit-on-bound column. They are different facts and are not to be read as one.
+
+## Note 6 (30 Oct, about 02:10 EDT, written after the boston, kingston and fez results were read; Wayfinder: "the outcome is still what's actually happening")
+Note 3 left published T2 against measured unscored because IBM does not state whether its T2 is echo or Ramsey. That gap closes with physics: any T2,
+echo or Ramsey, is at most 2 x T1. Two readings are added for every qubit, both against the record in force at the job (its dates printed beside it):
+- IBM T2 against this qubit now: ABOVE when the published T2 exceeds 2 x the upper end of our measured T1 interval (no T2 of either kind can be that
+  large on this qubit now). Otherwise CANNOT_TELL (inside the physical bound, and the definition decides the rest). A T1 fit on its bound reads CANNOT_TELL.
+- IBM T1 against this qubit now: ABOVE / BELOW when the published T1 sits outside our measured T1 interval, CONSISTENT inside, CANNOT_TELL if the T1 fit
+  is on its bound. Both T1s are single-exponential fits; ours is one job, so this reads the record against the qubit at that hour, not IBM's own day.
+The planned T2/T1 ratio outcome is unchanged and stays beside these. Nothing here dates a past record.
+
+## Note 7 (30 Oct 2026, written before the append, from the outside-seat site pass, B-3)
+The off-record chain holds T1 readings under two rules: entries 1 to 8 were called under Note 6 (95% interval, no margin), the hourly runs under
+qia_cal PLAN.md Note 1 (ABOVE only when IBM's T1 is above 1.25 times the top of our interval, because IBM publishes no fit uncertainty). Entries 3 and 7
+are re-read under the hourly rule so one page carries one rule for T1: entry 3 (ibm_kingston q121, IBM 16.237 us, ours [11.943, 14.736], margin line
+18.420) and entry 7 (ibm_boston q85, IBM 8.393 us, ours [6.723, 8.35], margin line 10.44) both read CANNOT_TELL. Each is a new chain entry naming the
+entry it corrects. Entries 1 and 5 (ibm_fez q148, IBM 5.863 against tops 0.945 and 1.226) stay ABOVE under both rules. The 95% interval and the Note 6
+rule are unchanged for the T1 and T2 table on the page.

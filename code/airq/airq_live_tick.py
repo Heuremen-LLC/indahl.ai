@@ -7,7 +7,7 @@ if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('airq-live: plan not 
 _l = open('data/.live.lock', 'w')
 try: fcntl.flock(_l, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: print('airq-live: another run holds the lock'); sys.exit(0)
-PA_K = open(os.path.expanduser('~/Documents/Heuremen LLC/ACCOUNTS/purpleair-read-key')).read().strip()
+PA_K = open(os.path.expanduser('~/bones-forge/.purpleair_read_key')).read().strip()   # 29 Oct: launchd riders may not read ~/Documents (macOS privacy), so the read key sits beside the IBM keys, mode 600
 UA = {'User-Agent': 'heuremen-airq/0.1 (+https://indahl.ai/airq)'}; W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door')
 UTC = datetime.timezone.utc; MINDAYS, WINDOW, STOP_POINTS = 30, 60, 400000
 FIELDS = 'pm2.5_atm_a,pm2.5_atm_b,pm2.5_cf_1_a,pm2.5_cf_1_b,humidity'
@@ -18,9 +18,19 @@ def get(u, headers=None, n=3, to=90):
             if e.code in (404, 403): return None
             time.sleep(3 * (i + 1))
         except Exception: time.sleep(3 * (i + 1))
+PA_N = collections.Counter()    # 30 Oct (site pass H-12): every PurpleAir answer is counted by kind, so a failed call is told from an empty one
 def pa(path, **q):
-    time.sleep(1.1); b = get('https://api.purpleair.com/v1/' + path + ('?' + '&'.join('%s=%s' % kv for kv in q.items()) if q else ''), {'X-API-Key': PA_K})
-    return json.loads(b) if b else None
+    """-> the parsed answer, {} when the service answered that this sensor holds nothing (403 private, 404 gone), None when the call itself failed."""
+    time.sleep(1.1); u = 'https://api.purpleair.com/v1/' + path + ('?' + '&'.join('%s=%s' % kv for kv in q.items()) if q else '')
+    for i in range(3):
+        try:
+            d = json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=dict(UA, **{'X-API-Key': PA_K})), timeout=90).read()); PA_N['answered'] += 1; return d
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 404): PA_N['refused_%d' % e.code] += 1; return {}
+            if e.code == 402: PA_N['out_of_points'] += 1; return None
+            time.sleep(3 * (i + 1))
+        except Exception: time.sleep(3 * (i + 1))
+    PA_N['failed'] += 1; return None
 def metrics(x, y):
     n = len(x); mx, my = sum(x) / n, sum(y) / n; sxx = sum((a - mx) ** 2 for a in x); sxy = sum((a - mx) * (b - my) for a, b in zip(x, y)); syy = sum((b - my) ** 2 for b in y)
     if sxx == 0 or syy == 0: return None
@@ -67,9 +77,11 @@ def an_hour(dt):
     f = 'data/an/%s.json' % dt.strftime('%Y%m%d%H')
     if os.path.exists(f): return json.load(open(f))
     b = get(an_path(dt)); time.sleep(0.15)
-    if b is None: return None
+    if b is None: print('airq-live: AirNow file', dt.strftime('%Y%m%d%H'), 'not returned', flush=True); return None
     d = parse_airnow(b.decode('utf8', 'replace'), want)
-    if dt.date() < today or dt < now - datetime.timedelta(hours=3): json.dump(d, open(f, 'w'))
+    print('airq-live: AirNow file', dt.strftime('%Y%m%d%H'), len(b), 'bytes,', len(d), 'of our monitors', flush=True)
+    # 30 Oct (site pass H-12): an hour is cached only when it is old enough and its file holds a normal number of our monitors. An empty or partial answer used to be cached for good (20261029 22:00 and 23:00, 20261030 09:00 and 10:00).
+    if (dt.date() < today or dt < now - datetime.timedelta(hours=3)) and len(d) >= 0.6 * len(want): json.dump(d, open(f, 'w'))
     return d
 days = [today - datetime.timedelta(days=k) for k in range(WINDOW, 0, -1)]
 if now.hour < 6: days = days[:-1]    # yesterday closes after 06:00 UTC
@@ -87,19 +99,38 @@ json.dump(live, open('data/live_days.json', 'w'))
 # ---- sensor daily averages, one call per sensor for the missing range
 def left():
     d = pa('organization'); return d['remaining_points'] if d else None
-miss = [d for d in days if d.isoformat() not in sens]
+# 30 Oct (site pass H-12): two faults found and fixed here.
+# 1. The PurpleAir history service returns only the averaging buckets that are complete inside [start, end]. A bucket labelled with the start of a UTC day needs end_timestamp at or after the next midnight.
+#    The old end of 23:59:59 on the last day dropped that last day from every call: 28 Oct was empty on the first run, and each later day closed alone and came back empty. Checked against the service on 30 Oct.
+# 2. The old code wrote an empty record for every missing day before the call, so a day that returned nothing was marked read and never asked again. A day is now stored only when sensor rows come back,
+#    and a day that returns nothing stays open for the next run. After three runs in which every sensor answered and none held a row, the day is stored as read, empty, and the count is printed.
+sens_none = live.setdefault('sens_empty', {})
+miss = [d for d in days if not sens.get(d.isoformat()) and sens_none.get(d.isoformat(), 0) < 3]
 if miss:
     lp = left()
     if lp is not None and lp < STOP_POINTS: print('airq-live: points guard,', lp, 'left'); miss = []
-if miss:
-    t0 = int(datetime.datetime(miss[0].year, miss[0].month, miss[0].day, tzinfo=UTC).timestamp()); t1 = int(datetime.datetime(miss[-1].year, miss[-1].month, miss[-1].day, 23, 59, 59, tzinfo=UTC).timestamp())
-    for d in miss: sens[d.isoformat()] = {}
+runs = []
+for d in miss:
+    if runs and (d - runs[-1][-1]).days == 1: runs[-1].append(d)
+    else: runs.append([d])
+for run in runs:
+    t0 = int(datetime.datetime(run[0].year, run[0].month, run[0].day, tzinfo=UTC).timestamp()); nx = run[-1] + datetime.timedelta(days=1); t1 = int(datetime.datetime(nx.year, nx.month, nx.day, tzinfo=UTC).timestamp())
+    want = {d.isoformat() for d in run}; got = collections.defaultdict(dict); before = PA_N['failed'] + PA_N['out_of_points']
     for i, m in enumerate(mons):
         h = pa('sensors/%d/history' % sel[m], start_timestamp=t0, end_timestamp=t1, average=1440, fields=FIELDS)
         for row in (h or {}).get('data', []):
             r = dict(zip(h['fields'], row)); dd = datetime.datetime.fromtimestamp(r['time_stamp'], UTC).date().isoformat()
-            if dd in sens and all(r.get(f) is not None for f in FIELDS.split(',')): sens[dd][m] = [r[f] for f in FIELDS.split(',')]
-        if i % 30 == 29: print('airq-live: sensors', i + 1, 'of', len(mons), flush=True)
+            if dd in want and all(r.get(f) is not None for f in FIELDS.split(',')): got[dd][m] = [r[f] for f in FIELDS.split(',')]
+        if i % 30 == 29: print('airq-live: sensors', i + 1, 'of', len(mons), 'for', run[0], 'to', run[-1], flush=True)
+    clean = PA_N['failed'] + PA_N['out_of_points'] == before
+    for d in run:
+        k = d.isoformat()
+        if got.get(k): sens[k] = got[k]; sens_none.pop(k, None); print('airq-live: sensor day', k, len(got[k]), 'sensors with a row', flush=True)
+        elif clean:
+            sens_none[k] = sens_none.get(k, 0) + 1
+            if sens_none[k] >= 3: sens[k] = {}
+            print('airq-live: sensor day', k, 'no sensor returned a row, run', sens_none[k], 'of 3', flush=True)
+        else: print('airq-live: sensor day', k, 'left open, some calls failed', flush=True)
 json.dump(live, open('data/live_days.json', 'w'))
 # ---- rolling evaluation
 res = {'R1': [], 'R2': [], 'R3': []}; used = 0
@@ -124,15 +155,15 @@ strip = []; hr = None
 cand = [now.replace(minute=0, second=0, microsecond=0) - datetime.timedelta(hours=k) for k in (1, 2, 3, 4)]
 for dt in cand:
     r = an_hour(dt)
-    if r: hr = dt; ar = r; break
+    if r and len(r) >= 0.6 * len(want): hr = dt; ar = r; break   # 30 Oct (H-12): AirNow posts the newest hour's file part filled (4 of our 147 monitors eight minutes after the hour, 97 or more when whole), so a thin file is not the last complete hour
 if hr:
     pick = random.Random(7).sample(mons, 10)
     for m in sorted(pick):
-        h = pa('sensors/%d/history' % sel[m], start_timestamp=int(hr.timestamp()), end_timestamp=int(hr.timestamp()) + 3599, average=60, fields=FIELDS)
+        h = pa('sensors/%d/history' % sel[m], start_timestamp=int(hr.timestamp()), end_timestamp=int(hr.timestamp()) + 3600, average=60, fields=FIELDS)   # 30 Oct (H-12): end at the next hour, not 3599 s in, or the bucket is never returned
         v = None
         for row in (h or {}).get('data', []):
             r = dict(zip(h['fields'], row))
-            if all(r.get(f) is not None for f in FIELDS.split(',')): v = r
+            if r.get('time_stamp') == int(hr.timestamp()) and all(r.get(f) is not None for f in FIELDS.split(',')): v = r
         a = ar.get(aqsid(m))
         if v and a is not None:
             c = corrected((v['pm2.5_cf_1_a'] + v['pm2.5_cf_1_b']) / 2, v['humidity']); strip.append(dict(monitor=m, airnow=round(a, 1), sensor=round(c, 1), difference=round(c - a, 1)))
@@ -140,12 +171,27 @@ if hr:
 # ---- publish: merge into the main summary
 S = json.load(open('summary_airq.json'))
 done_days = len([d for d in days if d.isoformat() in sens and sens[d.isoformat()]])
-S['live'] = dict(updated=now.strftime('%d %b %H:%M'), window='the last %d UTC days' % WINDOW, monitors_in_panel=len(mons), monitors_with_30_kept_days=used, days_read=done_days, comparison=live_cmp,
-                 strip_hour=(hr.strftime('%d %b %H:00 UTC') if hr else None), strip={s['monitor']: dict(airnow=s['airnow'], sensor=s['sensor'], difference=s['difference']) for s in strip},
+# 30 Oct (site pass H-12): the sensor side and the AirNow side each carry the date of their own newest day, so a stamp that moves every hour cannot hide a sensor side that has stopped.
+sens_days = [d for d in days if sens.get(d.isoformat())]; ref_days = [d for d in days if any(v is not None for v in ref.get(d.isoformat(), {}).values())]
+sens_through = max(sens_days) if sens_days else None; ref_through = max(ref_days) if ref_days else None
+strip_n = len([s for s in strip if s['difference'] is not None]); fmt_d = lambda d: (d.strftime('%d %b') + ' UTC') if d else 'none yet'
+S['live'] = dict(updated=now.strftime('%d %b %H:%M') + ' UTC', window='the last %d UTC days' % WINDOW, monitors_in_panel=len(mons), monitors_with_30_kept_days=used, days_read=done_days, comparison=live_cmp,
+                 sensor_days_through=(sens_through.isoformat() if sens_through else None), airnow_days_through=(ref_through.isoformat() if ref_through else None), sensors_in_newest_day=(len(sens[sens_through.isoformat()]) if sens_through else 0),
+                 strip_hour=(hr.strftime('%d %b %H:00 UTC') if hr else None), strip_sensors_with_a_reading=strip_n, strip={s['monitor']: dict(airnow=s['airnow'], sensor=s['sensor'], difference=s['difference']) for s in strip},
                  strip_median_difference=(round(statistics.median([s['difference'] for s in strip if s['difference'] is not None]), 2) if any(s['difference'] is not None for s in strip) else None))
-S['live_line'] = 'Live panel: %d monitors, %d with 30 kept days. Last strip hour: %s. Updated %s.' % (len(mons), used, S['live']['strip_hour'], S['live']['updated'])
+S['live_line'] = 'Live panel: %d monitors, %d with 30 kept days. Sensor days read through %s, AirNow days read through %s. Last strip hour: %s, %d of %d sensors returned a reading. Updated %s.' % (
+    len(mons), used, fmt_d(sens_through), fmt_d(ref_through), S['live']['strip_hour'], strip_n, len(strip), S['live']['updated'])
 json.dump(S, open('summary_airq.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'airq_live', '--path', os.path.join(H, 'summary_airq.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
-with open('live_history.jsonl', 'a') as f: f.write(json.dumps(dict(t=S['live']['updated'], panel=len(mons), with30=used, strip_hour=S['live']['strip_hour'], strip_n=len([s for s in strip if s['difference'] is not None]))) + '\n')
-print('airq-live:', len(mons), 'monitors,', used, 'with 30 kept days;', {k: (v['n'], v['of'], v['outcome']) for k, v in live_cmp.items()}, 'strip', len(strip), 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)
+with open('live_history.jsonl', 'a') as f: f.write(json.dumps(dict(t=S['live']['updated'], panel=len(mons), with30=used, strip_hour=S['live']['strip_hour'], strip_n=strip_n, sensor_through=(sens_through.isoformat() if sens_through else None), pa=dict(PA_N))) + '\n')
+# 30 Oct (site pass H-12): alert when the sensor side stops. strip_n of 0 in the last 3 logged runs, or a newest sensor day more than 2 UTC days old, is printed and written to data/last_run.log, which watch/alerts_check.py reads for Bones.
+# The alert line is removed again by the first run that is healthy.
+LOGF = 'data/last_run.log'; hist = [json.loads(l) for l in open('live_history.jsonl') if l.strip()][-3:]
+stuck = len(hist) == 3 and all(h.get('strip_n') == 0 for h in hist); old = sens_through is None or (today - sens_through).days > 2
+keep = [l for l in (open(LOGF).read().split('\n') if os.path.exists(LOGF) else []) if l and not l.startswith('airq-live: ALERT')]
+if stuck or old:
+    msg = 'airq-live: ALERT sensor side FAILED: %s%s (newest sensor day %s, PurpleAir answers %s)' % ('strip empty in the last 3 runs' if stuck else '', ' and sensor days stale' if (old and stuck) else ('sensor days stale' if old else ''), sens_through, dict(PA_N))
+    print(msg, flush=True); keep.append(msg)
+open(LOGF, 'w').write('\n'.join(keep) + ('\n' if keep else ''))
+print('airq-live:', len(mons), 'monitors,', used, 'with 30 kept days; sensor days through', sens_through, 'PurpleAir answers', dict(PA_N), ';', {k: (v['n'], v['of'], v['outcome']) for k, v in live_cmp.items()}, 'strip', len(strip), 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

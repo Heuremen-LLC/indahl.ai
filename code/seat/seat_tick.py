@@ -14,7 +14,7 @@ try:
     T = json.load(open(TJ)); have = set(T['pages']); hf = {f[0] for f in T['feeds']}; ch = False
     for sl in slugs:
         if sl not in have: T['pages'].append(sl); ch = True
-        if sl in ('qia', 'iris', 'oy', 'atlas', 'sad'): continue
+        if sl in ('qia', 'iris', 'oy', 'atlas', 'sad', 'hermes', 'vault'): continue   # 30 Oct: VAULT is a tool with no live feed
         if sl + '/live.json' not in hf: T['feeds'].append([sl + '/live.json', 40]); ch = True
     if ch:
         json.dump(T, open(TJ, 'w')); ID = subprocess.run(['/opt/homebrew/bin/gh', 'api', 'user', '--jq', '.id'], capture_output=True, text=True).stdout.strip()
@@ -33,11 +33,23 @@ def bad(r):
 def drift_pages(i):
     a = good[i]['pages']; b = good[i - 1]['pages'] if i else {}
     return [p for p in a if a[p] != 'MATCH' and b.get(p, 'MATCH') != 'MATCH']
-win = good[-24:]; flags = []
+win = good[-24:]; flags = []; why = []
 for k, r in enumerate(win):
-    idx = len(good) - len(win) + k; flags.append(bool(drift_pages(idx)) or any(v['state'] != 'FRESH' for v in r['feeds'].values()) or r['chain']['state'] != 'OK')
+    idx = len(good) - len(win) + k
+    w = ['page /%s differs from the repository' % p for p in drift_pages(idx)] + ['feed /%s %s' % (f, v['state'].lower()) for f, v in r['feeds'].items() if v['state'] != 'FRESH'] + (['archive chain %s' % r['chain']['state'].lower()] if r['chain']['state'] != 'OK' else [])
+    flags.append(bool(w)); why.append(w)
 # 29 Oct (internal audit, Addendum 1): a standing fault is one incident however many probes see it, so the count is runs of consecutive flagged probes
 nflag = sum(1 for k, f in enumerate(flags) if f and (k == 0 or not flags[k - 1]))
+# 30 Oct (site pass I-7): each incident is listed with its first and last probe, how many probes saw it and what they saw
+incidents = []; k = 0
+while k < len(flags):
+    if flags[k]:
+        j = k
+        while j + 1 < len(flags) and flags[j + 1]: j += 1
+        fmt = lambda t: t.replace('T', ' ').replace('Z', ' UTC')[:-7] + ' UTC'
+        incidents.append(dict(first=fmt(win[k]['t']), last=fmt(win[j]['t']), probes=j - k + 1, saw=', '.join(sorted({x for w in why[k:j + 1] for x in w}))))
+        k = j + 1
+    else: k += 1
 import datetime as _D
 age_h = (_D.datetime.now(_D.timezone.utc) - _D.datetime.strptime(last['t'], '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=_D.timezone.utc)).total_seconds() / 3600
 oc = K.CANNOT_TELL if (len(win) < 24 or age_h > 3) else (K.CONSISTENT if nflag == 0 else (K.ABOVE if nflag >= 3 else K.CANNOT_TELL))
@@ -46,6 +58,7 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), probes=len(good)
            rolling={'Last 24 probes, counted as incidents': dict(of=len(win), n=nflag, outcome=oc, newest_probe_hours=round(age_h, 1))},
            now={'Pages matching the public repository': dict(n=sum(1 for v in pg.values() if v == 'MATCH'), of=len(pg)), 'Feeds younger than their limit': dict(n=sum(1 for v in fd.values() if v['state'] == 'FRESH'), of=len(fd)),
                 'Archive chain': dict(n=last['chain']['entries'], of=last['chain']['entries'], state=last['chain']['state'])},
+           incidents=incidents, flagged_probes=sum(flags),
            feeds=[dict(feed='/' + f, age_h=v.get('age_h'), limit_h=v.get('limit_h'), state=v['state']) for f, v in fd.items()],
            not_matching=[dict(page='/' + p, state=v) for p, v in pg.items() if v != 'MATCH'])
 json.dump(out, open('summary_seat.json', 'w'), indent=1)

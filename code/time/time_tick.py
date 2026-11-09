@@ -19,7 +19,7 @@ try:
         sh([sys.executable, os.path.join(H, 'check_time_t1.py'), 'github-azure', os.path.join(H, 'data', 'probe_azure.jsonl')], 120)
         az = json.load(open(os.path.join(H, 'summary_time.json'))); pi = json.load(open(os.path.join(H, 'summary_time_pi.json'))); azs = {x['server']: x for x in az['servers']}
         for x in pi['servers']:
-            y = azs.get(x['server'], {}); x['offset_ms_2'] = y.get('offset_ms'); x['half_delay_ms_2'] = y.get('half_delay_ms'); x['outcome_2'] = y.get('outcome')
+            y = azs.get(x['server'], {}); x['offset_ms_2'] = y.get('offset_ms'); x['half_delay_ms_2'] = y.get('half_delay_ms'); x['outcome_2'] = y.get('outcome'); x['stated_bound_ms_2'] = y.get('stated_bound_ms'); x['rounds_2'] = y.get('rounds'); x['counts_2'] = y.get('counts')   # 30 Oct (H-15): the runner's own bound and rounds travel with its outcome
         pi['seat2'] = dict(name='GitHub runner network', seat_part_ms=az.get('seat_part_ms'), updated=az.get('updated'))
         json.dump(pi, open(os.path.join(H, 'summary_time.json'), 'w'), indent=1)
     sh([GH, 'api', 'repos/Heuremen-LLC/nodes/dispatches', '-f', 'event_type=time-probe'], 60)

@@ -7,7 +7,7 @@ if not K.plan_committed(os.path.join(H, 'PLAN_REPOS.md')): print('repos: plan no
 FIELDS = 'isEmpty isArchived isFork pushedAt diskUsage licenseInfo { spdxId } defaultBranchRef { target { ... on Commit { history { totalCount } } } }'
 def q(pairs):
     body = ' '.join('r%d: repository(owner:"%s", name:"%s") { %s }' % (i, o, n, FIELDS) for i, (o, n) in enumerate(pairs))
-    r = subprocess.run(['gh', 'api', 'graphql', '-f', 'query={ ' + body + ' }'], capture_output=True, text=True)
+    r = subprocess.run(['/opt/homebrew/bin/gh', 'api', 'graphql', '-f', 'query={ ' + body + ' }'], capture_output=True, text=True)
     try: d = json.loads(r.stdout).get('data') or {}
     except Exception: return None
     return [d.get('r%d' % i) for i in range(len(pairs))]

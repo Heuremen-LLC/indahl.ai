@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""airq_tick.py: AIRQ per PLAN.md. PurpleAir sensors within 200 m of EPA continuous PM2.5 monitors, June to September 2025, against the EPA's Table ES-2 targets."""
+"""airq_tick.py: AIRQ per PLAN.md. PurpleAir sensors within 200 m of EPA continuous PM2.5 monitors, 1 June to 29 September 2025, against the EPA's Table ES-2 targets."""
 import os, sys, json, math, time, statistics, collections, urllib.request, urllib.parse, urllib.error, datetime, random, subprocess
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 import heuremen_kit as K
@@ -134,7 +134,7 @@ for r in ('R1', 'R2', 'R3'):
     medians[NAME[r]] = dict(monitors=n, slope=round(statistics.median([m['slope'] for m in ms]), 2) if ms else None, intercept=round(statistics.median([m['intercept'] for m in ms]), 2) if ms else None, r2=round(statistics.median([m['r2'] for m in ms]), 2) if ms else None, rmse=round(statistics.median([m['rmse'] for m in ms]), 2) if ms else None)
     srt = sorted(unit, key=lambda p: p[r]['rmse']) if r == 'R3' else []
     if r == 'R3': json.dump(dict(largest=[dict(monitor=p['monitor'], sensor=p['sensor'], dist=p['dist'], n=p['n'], rmse=p['R3']['rmse']) for p in srt[-5:]], smallest=[dict(monitor=p['monitor'], sensor=p['sensor'], dist=p['dist'], n=p['n'], rmse=p['R3']['rmse']) for p in srt[:5]]), open('data/hand_check_pairs.json', 'w'), indent=1)
-res = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', window='1 June to 30 September 2025', monitors_read=len(mons), monitors_with_sensor=len(by_mon), sensors=len(sens), sensors_not_read=len(unread), pairs=len(pairs), days_kept=kept_days, days_removed_ab=removed_ab, filter_only_sites=len(fo_only),
+res = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', window='1 June to 29 September 2025', monitors_read=len(mons), monitors_with_sensor=len(by_mon), sensors=len(sens), sensors_not_read=len(unread), pairs=len(pairs), days_kept=kept_days, days_removed_ab=removed_ab, filter_only_sites=len(fo_only),
            comparison=comparison, medians=medians, headline_n=comparison[NAME['R3']]['n'], headline_of=comparison[NAME['R3']]['of'], headline=comparison[NAME['R3']])
 json.dump(res, open('summary_airq.json', 'w'), indent=1); json.dump(pairs, open('data/pairs.json', 'w'))
 print('airq: monitors', len(mons), 'with sensors', len(by_mon), 'pairs', len(pairs), '| comparison', {k: (v['n'], v['of'], v['outcome']) for k, v in comparison.items()}, flush=True)

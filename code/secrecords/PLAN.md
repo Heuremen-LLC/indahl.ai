@@ -39,3 +39,12 @@ Note 2 (29 Oct, after the full reread with the corrected SPF counter). The read 
 
 ## Addendum on cadence (29 Oct)
 The repeat cadence is now every 62 ticks of the tick bus, about 6.0 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.
+
+## Note 3 (30 Oct 2026, from the site pass)
+Two HSTS rows, epicgames.com and wp.com, were DISAGREE but had not been opened when the page was published, so the page listed 35 of the 37. Both were read again on 30 Oct with a second tool (curl, same user agent) and match what was stored. Both are now listed. The page shows the count of mismatches still waiting for this above its tables. No rule or reading changed.
+
+## Addendum 2 (9 Nov 2026, from the site pass, before the reread)
+The HSTS read followed redirects and read the header of the final response, often on another host (for fbcdn.net it stored the header of www.facebook.com). The preload list's rule is about the base domain's own response: "If you are serving an additional redirect from your HTTPS site, that redirect must still have the HSTS header (rather than the page it redirects to)." (hstspreload.org, read 9 Nov 2026). A 308 was never followed under the Python that runs the reader, so those rows already read the base domain, and one column held two rules. Of the 189 rows that sent a preload header in the 8 Nov read, 125 were read after a redirect.
+The read is now: one HTTPS GET of https://DOMAIN/ that follows no redirect, timeout 15 seconds, the same user agent. The header of that first response is read, whatever its status, a redirect included. Its status and its redirect target are kept in their own fields. If the request fails, the domain is NOT_COMPARABLE for claim 1, as before.
+Known-good gains a planted check: a local server answers with a 301 and with a 308 that each carry one header, and the page they point to carries another. The reader must return each redirect's own header, status and target. A reader that follows the redirect fails it and stops the pass. The live github.com check uses the same reader. Classes, the outcome rule and the hand check do not change.
+The whole read is run again on the day's Tranco list, every DISAGREE row whose header changed is read in full again before it is shown, and the page names the change. The 8 Nov read is kept in data/domains_before_addendum2.json.

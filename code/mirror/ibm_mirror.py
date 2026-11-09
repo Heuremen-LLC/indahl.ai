@@ -24,6 +24,14 @@ def stats(p):
             for x in g.get('parameters', []):
                 if x['name'] == 'gate_error': g2.append(x['value'])
     return dict(n_qubits=len(q), t1_us=med(T1), t2_us=med(T2), readout_error=med(RO), two_qubit_error=med(g2))
+def kept_rows(ch, n):
+    """Rows of changes.jsonl whose record file still exists, in time order, and how many were overwritten. A row without a 'file' key was saved under the
+    stamp alone: a later row of the same backend and stamp replaced its file. A row with a 'file' key has its own file."""
+    rows = [c for c in ch if c['backend'] == n]; kept = []; lost = 0
+    for i, c in enumerate(rows):
+        if 'file' not in c and any('file' not in d and d['stamp'] == c['stamp'] for d in rows[i + 1:]): lost += 1
+        else: kept.append(c)
+    return kept, lost
 def main():
     state_f = os.path.join(HERE, 'state.json'); state = json.load(open(state_f)) if os.path.exists(state_f) else {}
     now = time.time(); polls = open(os.path.join(HERE, 'polls.jsonl'), 'a'); changes = open(os.path.join(HERE, 'changes.jsonl'), 'a')
@@ -40,20 +48,31 @@ def main():
         polls.write(json.dumps(dict(at=now, backend=n, status='COMMITTED', stamp=stamp, hash=h, changed=changed)) + '\n')
         if changed:
             sd = os.path.join(HERE, 'records', n); os.makedirs(sd, exist_ok=True)
-            fn = os.path.join(sd, stamp.replace(':', '-').replace('+', 'p').replace(' ', 'T') + '.json.gz')
+            base = stamp.replace(':', '-').replace('+', 'p').replace(' ', 'T'); fn = os.path.join(sd, base + '.json.gz')
+            # 30 Oct 2026 (site pass B-9): a record is never replaced. Until 30 Oct the file was named by the stamp alone, so when IBM changed values under an
+            # unchanged stamp the earlier version was overwritten. A second version of one stamp now goes to its own file, named by the stamp, '~', the read
+            # time and the first eight characters of its hash, so sorted file names stay in time order.
+            if os.path.exists(fn): fn = os.path.join(sd, f'{base}~{int(now)}_{h[:8]}.json.gz')
             with gzip.open(fn, 'wt') as f: f.write(json.dumps(p, default=str))
-            s = stats(p); changes.write(json.dumps(dict(at=now, backend=n, stamp=stamp, hash=h, values_changed=vchanged, **s)) + '\n'); st = dict(hash=h, vh=vh, stamp=stamp, **s)
+            s = stats(p); changes.write(json.dumps(dict(at=now, backend=n, stamp=stamp, hash=h, values_changed=vchanged, file=os.path.basename(fn), **s)) + '\n'); st = dict(hash=h, vh=vh, stamp=stamp, **s)
         st['last_read'] = now; state[n] = st
     json.dump(state, open(state_f, 'w'), indent=1); polls.close(); changes.close()
     wk = now - 7 * 86400; ch = [json.loads(l) for l in open(os.path.join(HERE, 'changes.jsonl'))]; pl = [json.loads(l) for l in open(os.path.join(HERE, 'polls.jsonl'))]
     out = []
     for n in sorted(state):
-        s = state[n]; out.append(dict(backend=n, stamp=s['stamp'], n_qubits=s['n_qubits'], t1_us=s['t1_us'], t2_us=s['t2_us'], readout_error=s['readout_error'], two_qubit_error=s['two_qubit_error'],
-            records_saved=sum(1 for c in ch if c['backend'] == n), restamps_7d=sum(1 for c in ch if c['backend'] == n and c['at'] >= wk), value_changes_7d=sum(1 for c in ch if c['backend'] == n and c['at'] >= wk and c.get('values_changed')), reads=sum(1 for q in pl if q.get('backend') == n and q['status'] == 'COMMITTED'),
+        s = state[n]; kept, lost = kept_rows(ch, n)
+        # 30 Oct 2026 (site pass B-9): records_saved counts files on disk. A restamp is a saved record after the first, so restamps = records saved minus one.
+        # versions_replaced counts versions saved before 30 Oct that a later version of the same stamp overwrote (their files are gone).
+        out.append(dict(backend=n, stamp=s['stamp'], n_qubits=s['n_qubits'], t1_us=s['t1_us'], t2_us=s['t2_us'], readout_error=s['readout_error'], two_qubit_error=s['two_qubit_error'],
+            records_saved=len(kept), versions_replaced=lost, restamps_7d=sum(1 for c in kept[1:] if c['at'] >= wk), value_changes_7d=sum(1 for c in kept[1:] if c['at'] >= wk and c.get('values_changed')), reads=sum(1 for q in pl if q.get('backend') == n and q['status'] == 'COMMITTED'),
             missed=sum(1 for q in pl if q.get('backend') == n and q['status'] != 'COMMITTED'), last_read=D.datetime.utcfromtimestamp(s['last_read']).strftime('%d %b %H:%M'), since=D.datetime.utcfromtimestamp(min(c['at'] for c in ch if c['backend'] == n)).strftime('%d %b %Y')))
     json.dump(dict(updated=D.datetime.utcfromtimestamp(now).strftime('%d %b %H:%M'), backends=out), open(os.path.join(HERE, 'summary.json'), 'w'), indent=1)
     try:
         import subprocess; subprocess.run([sys.executable, os.path.join(HERE, 'publish_qia_ibm.py')], timeout=120)
     except Exception as e: print('publish step failed', type(e).__name__)
+    try: subprocess.run([sys.executable, '-I', os.path.join(HERE, 'audit.py')], timeout=240)   # 29 Oct: published-calibration audit after every pull (AUDIT_PLAN.md)
+    except Exception as e: print('audit step failed', type(e).__name__)
+    try: subprocess.run([sys.executable, '-I', os.path.join(HERE, 'stability.py')], timeout=240)   # 29 Oct: stability index (STABILITY_PLAN.md)
+    except Exception as e: print('stability step failed', type(e).__name__)
     print('mirror:', len(names), 'processors,', sum(1 for n in names if state.get(n, {}).get('last_read') == now), 'read')
 if __name__ == '__main__': main()

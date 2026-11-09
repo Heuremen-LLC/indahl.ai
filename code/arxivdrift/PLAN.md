@@ -30,3 +30,6 @@ Nothing is edited automatically. A study that reads REVISED_NUMBERS gets a recou
 
 ## Addendum 1 (29 Oct, after the first round, before anything was published)
 The first round flagged 2604.24289 as WITHDRAWN because its arXiv comment says "Section 6 ... is withdrawn". The comment withdraws a section, and the paper stands; also that comment was already part of the version we read (v2). The detector matched the word anywhere in the comment, which is looser than the plan's class (the paper is withdrawn). The detector now requires the abstract to begin with, or the comment to begin with, a statement that the paper itself is withdrawn (this paper or article or submission, withdrawn). All studies are read again with the corrected detector. The hand check of 2511.10921 (v1: 27 benchmark circuits, 24.94 to 52.00 per cent fidelity improvement; v2: 24 circuits, 24.94 to 80.48 per cent) confirms REVISED_NUMBERS there.
+
+## Note (30 Oct 2026, from the site pass)
+The table of studies by month indexed left out the 13 QIA studies that have no indexed date, so its rows did not add up to the studies read. They are now a row called month not recorded. No class or rule changed.

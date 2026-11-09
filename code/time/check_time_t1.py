@@ -5,6 +5,9 @@ import sys, json, statistics as S, collections as C
 seat = sys.argv[1]; files = sys.argv[2:]
 rows = [json.loads(l) for f in files for l in open(f)]
 ref = [r for r in rows if 'reference' in r]; rows = [r for r in rows if 'server' in r]
+import os
+if os.path.exists('servers.txt'):   # 30 Oct (site pass H-15): only the names in servers.txt are scored, so a name removed from the list leaves the table at once and not when its rows roll out of the file
+    _ok = {l.strip() for l in open('servers.txt') if l.strip()}; rows = [r for r in rows if r['server'] in _ok]
 stat = C.defaultdict(C.Counter); kept = C.defaultdict(list)
 for r in rows: stat[r['server']][r['status']] += 1
 byround = C.defaultdict(list)

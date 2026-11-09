@@ -44,6 +44,12 @@ def fam_text(txt):
     if 'permission to use, copy, modify, and/or distribute this software for any purpose with or without fee' in t: return 'ISC'
     if 'this is free and unencumbered software' in t: return 'Unlicense'
     return 'OTHER'
+def other_kind(tag):
+    """Addendum 6: why a tag reads OTHER. blank_or_other = empty or the word other/unknown/none; named_custom = a named custom license (llama, gemma, openrail, ...); unrecognised = anything else."""
+    t = (tag or '').lower().strip()
+    if not t or t in ('other', 'unknown', 'none'): return 'blank_or_other'
+    if re.search(r'openrail|llama|gemma|bigscience|creativeml|falcon|deepseek|qwen|license|agreement', t): return 'named_custom'
+    return 'unrecognised'
 def compare(s, f):
     if s == 'OTHER' or f == 'OTHER' or not s or not f: return 'NOT_COMPARABLE'
     return 'AGREE' if (s == f or (s == 'GPL' and f in ('GPL-2.0', 'GPL-3.0')) or (f == 'GPL' and s in ('GPL-2.0', 'GPL-3.0'))) else 'DISAGREE'
@@ -127,10 +133,11 @@ why = C.Counter((r['kind'], r.get('why')) for r in store.values() if r['cls'] ==
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', models=len(M), datasets=len(D), comparison={'Models': cmp_m, 'Datasets': cmp_d},
            classes={c: dict(models=cm[c], datasets=cd[c]) for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, not_comparable_reasons={w: dict(models=why[('models', w)], datasets=why[('datasets', w)]) for w in sorted({w for _, w in why})},
            stated_without_file={'Models': nf_m, 'Datasets': nf_d},
+           other_breakdown={k: dict(models=len([r for r in M if r.get('tag_family') == 'OTHER' and other_kind(r.get('tag')) == k]), datasets=len([r for r in D if r.get('tag_family') == 'OTHER' and other_kind(r.get('tag')) == k]), file_side=len([r for r in M + D if r.get('file_family') == 'OTHER' and r.get('tag_family') == 'OTHER' and other_kind(r.get('tag')) == k])) for k in ('blank_or_other', 'named_custom', 'unrecognised')},
            mixed={'Tag names a standard license, file is a custom or unnamed text': dict(models=len([r for r in M if r.get('tag_family') not in (None, 'OTHER') and r.get('file_family') == 'OTHER']), datasets=len([r for r in D if r.get('tag_family') not in (None, 'OTHER') and r.get('file_family') == 'OTHER'])),
                   'Tag is other or a custom name, file is a standard license': dict(models=len([r for r in M if r.get('tag_family') == 'OTHER' and r.get('file_family') not in (None, 'OTHER')]), datasets=len([r for r in D if r.get('tag_family') == 'OTHER' and r.get('file_family') not in (None, 'OTHER')]))},
-           mixed_list=[dict(repo=r['id'], kind=r['kind'][:-1], tag=r['tag'], file=r.get('file'), note=hc.get('mixed|' + r['id'])) for r in store.values() if r.get('tag_family') not in (None, 'OTHER') and r.get('file_family') == 'OTHER' and ('mixed|' + r['id']) in hc],
-           disagree_list=[dict(repo=r['id'], kind=r['kind'][:-1], tag=r['tag'], file=r.get('file'), file_family=r.get('file_family'), reason=hc.get(r['kind'] + '|' + r['id']) or hc.get(r['id'])) for r in store.values() if r['cls'] == 'DISAGREE' and (r['kind'] + '|' + r['id'] in hc or r['id'] in hc)])
+           mixed_list=[dict(repo=r['id'], url='https://huggingface.co/' + ('datasets/' if r['kind'] == 'datasets' else '') + r['id'], kind=r['kind'][:-1], tag=r['tag'], file=r.get('file'), note=hc.get('mixed|' + r['id'])) for r in store.values() if r.get('tag_family') not in (None, 'OTHER') and r.get('file_family') == 'OTHER' and ('mixed|' + r['id']) in hc],
+           disagree_list=[dict(repo=r['id'], url='https://huggingface.co/' + ('datasets/' if r['kind'] == 'datasets' else '') + r['id'], kind=r['kind'][:-1], tag=r['tag'], file=r.get('file'), file_family=r.get('file_family'), reason=hc.get(r['kind'] + '|' + r['id']) or hc.get(r['id'])) for r in store.values() if r['cls'] == 'DISAGREE' and (r['kind'] + '|' + r['id'] in hc or r['id'] in hc)])
 json.dump(out, open('summary_hflicense.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'hflicense_live', '--path', os.path.join(H, 'summary_hflicense.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

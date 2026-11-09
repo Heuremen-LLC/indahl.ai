@@ -32,6 +32,12 @@ if bi: nulls['C_binary_rule'] = mean(bi, 'C'); nulls['C_binary_rule_forced'] = f
 if ba: nulls['A_base'] = mean(ba, 'A'); nulls['C_base'] = mean(ba, 'C'); nulls['C_base_forced'] = forced(ba)
 if os.path.exists(os.path.join(HERE, 'nulls_extra.json')): nulls.update(json.load(open(os.path.join(HERE, 'nulls_extra.json'))))   # POSTHOC_BASE_A.md: the lenient reading, labelled on the page
 res = json.load(open(os.path.join(HERE, 'yo2_result.json'))) if (RUN in ('v2', 'v4', 'v5', 'v5b', 'v6', 'v6b', 'v7', 'v7b') and os.path.exists(os.path.join(HERE, 'yo2_result.json'))) else None
+# 3 Nov 2026 HOLD (outside referee Sage; ledger yo.read.hold): the YO Read block is withdrawn for a rescore, one held line replaces it.
+if res and isinstance(res.get('rows'), list):
+    _r = res['rows']; _a = next((i for i, x in enumerate(_r) if str(x[0]).startswith('YO Read is a new adapter')), None)
+    if _a is not None:
+        _b = next((i for i in range(_a + 1, len(_r)) if str(_r[i][0]).startswith('YO v8')), len(_r))
+        _r[_a:_b] = [["YO Read's held-out scores are withdrawn for a rescore. An outside read on 3 November found faults in how its test was built: YO Read was given the wrong text, or only part of it, for 22 of the 148 test papers, and the weakest seed's run-dates score sat only 2 papers above always answering no. The rescored result will replace this line.", "", "HELD"]]
 trained = os.path.exists(lp) and 'Saved final weights' in open(lp, errors='ignore').read()
 V4DONE = os.path.exists(os.path.join(HERE, 'yo4_result.json'))   # 1 Nov: v4 posted after the referee, the model at work
 state = ('trained' if trained else 'training') if RUN in ('v5', 'v5b', 'v6', 'v6b', 'v7', 'v7b') else ('done' if (V4DONE and res) else ('trained' if trained else 'training')) if RUN == 'v4' else ('done' if res else ('trained' if trained else ('training' if step else ('baselines scored' if ba else 'preparing'))))

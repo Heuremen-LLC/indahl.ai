@@ -73,7 +73,21 @@ for n, _ in PORTALS:
     hh = [h for h in heads if h['portal'] == n]; ag = [h for h in hh if h['status'] == 200 and h['header_ts'] and h['listed_ts']]; agree = sum(1 for h in ag if abs(h['header_ts'] - h['listed_ts']) <= 2 * 86400)
     out.append(dict(portal=n, read=time.strftime('%d %b %H:%M', time.gmtime(P['fetched'])), datasets_total=P['n_total'], stating_cadence=nrec, series=len(rows_s), readable=ok + bad, consistent=ok, below=bad, cannot_tell=ct, below_share=wil(bad, ok + bad),
                     by_class={k: dict(n=v[1], below=v[0], share=wil(v[0], v[1])) for k, v in bycl.items()}, heads=dict(sampled=len(hh), reachable=sum(1 for h in hh if h['status'] == 200), comparable=len(ag), agree=agree)))
-over.sort(key=lambda x: -x['ratio']); summ = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), portals=out, most_overdue=over[:20])
+over.sort(key=lambda x: -x['ratio'])
+# 30 Oct (site pass I-22): each landing page in the list is opened once a day with our own user agent, and the status is kept so the page can say when a link does not open
+lc = json.load(open('data/linkcheck.json')) if os.path.exists('data/linkcheck.json') else {}
+for x in over[:20]:
+    u = x['link']
+    if not (isinstance(u, str) and u.startswith('http')): continue
+    if u not in lc or now - lc[u][0] > 24 * 3600:
+        try:
+            with urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': UA}), timeout=25) as r: code = r.status
+        except urllib.error.HTTPError as e: code = e.code
+        except Exception: code = None
+        lc[u] = [now, code]; time.sleep(0.5)
+    x['link_status'] = lc[u][1]
+json.dump(lc, open('data/linkcheck.json', 'w'))
+summ = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), portals=out, most_overdue=over[:20])
 json.dump(summ, open('summary_cadence.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 p = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'cadence_live', '--path', os.path.join(H, 'summary_cadence.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

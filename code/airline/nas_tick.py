@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """nas_tick.py: AIRLINE FAA keeper per PLAN.md addendum 3. Every snapshot of the FAA airport delay feed, as published, with a live display."""
-import os, sys, json, time, hashlib, subprocess, urllib.request, urllib.error, xml.etree.ElementTree as ET
+import os, sys, re, json, time, hashlib, subprocess, urllib.request, urllib.error, xml.etree.ElementTree as ET
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 import heuremen_kit as K
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('nas: plan not committed'); sys.exit(0)
@@ -42,18 +42,30 @@ open('data/snapshots.jsonl', 'a').write(json.dumps(snap) + '\n')
 # ---- live display, merged into the page summary
 snaps = sum(1 for _ in open('data/snapshots.jsonl')); first = json.loads(open('data/snapshots.jsonl').readline())['t']
 S = json.load(open('summary_airline.json')) if os.path.exists('summary_airline.json') else {}
-rows = {}
+rows = {}; closures = {}
+# 30 Oct (site pass I-4): an airport closure is not a delay program. The closures the FAA lists are notices to non-scheduled general aviation that can run for months. They are shown under their own heading, with the year taken from the notice's own dates (YYMMDDHHMM-YYMMDDHHMM at the end of the text), and are not counted in "airports with a program".
+def notice_dates(it):
+    """-> (closed from, reopens) with the year, or the FAA's own words if the notice dates do not agree with them."""
+    st, re_ = it.get('Start', ''), it.get('Reopen', '')
+    m = re.search(r'(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})\s*$', it.get('Reason', ''))
+    if not m: return st, re_
+    g = [int(x) for x in m.groups()]; a = '20%02d-%02d-%02d %02d:%02d UTC' % tuple(g[0:5]); b = '20%02d-%02d-%02d %02d:%02d UTC' % tuple(g[5:10])
+    mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    def same(txt, gg): return txt.startswith('%s %02d at %02d:%02d UTC' % (mon[gg[1] - 1], gg[2], gg[3], gg[4]))
+    return (a, b) if same(st, g[0:5]) and same(re_, g[5:10]) else (st, re_)
 if 'types' in snap:
     for tname, items in snap['types'].items():
         for it in items:
             arp = it.get('ARPT') or it.get('Airport') or '?'
+            if 'closure' in tname.lower():
+                a, b = notice_dates(it); nid = re.match(r'!\w+\s+(\S+)', it.get('Reason', '')); closures['%s %s' % (arp, nid.group(1)) if nid else arp] = dict(start=a, reopen=b, reason=it.get('Reason', '')); continue
             stated = ', '.join('%s %s' % (k.split('.')[-1], v) for k, v in it.items() if k not in ('ARPT', 'Reason') and not k.endswith('@Type') and k.split('.')[-1] in ('Avg', 'Max', 'Min', 'Trend', 'End_Time', 'Start', 'Reopen'))
             kind = tname + ((' (' + it['Arrival_Departure@Type'] + ')') if it.get('Arrival_Departure@Type') else '')
             rows['%s, %s' % (arp, kind)] = dict(reason=it.get('Reason', ''), stated=stated)
-S['faa'] = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), feed_time=snap.get('update_time', 'not returned'), snapshots=snaps, first_snapshot=time.strftime('%d %b %H:%M UTC', time.gmtime(first)), airports_now=len({k.split(',')[0] for k in rows}), now=rows, status=snap.get('status', 'read'))
-S['faa_line'] = 'FAA feed: %d snapshots kept since %s. Airports with a program now: %d.' % (snaps, S['faa']['first_snapshot'], S['faa']['airports_now'])
+S['faa'] = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), feed_time=snap.get('update_time', 'not returned'), snapshots=snaps, first_snapshot=time.strftime('%d %b %H:%M UTC', time.gmtime(first)), airports_now=len({k.split(',')[0] for k in rows}), airports_listed=len({k.split(',')[0] for k in rows} | {k.split(' ')[0] for k in closures}), now=rows, closures=closures, status=snap.get('status', 'read'))
+S['faa_line'] = 'FAA feed: %d snapshots kept since %s. Airports with a delay program now: %d. Airport closures listed: %d.' % (snaps, S['faa']['first_snapshot'], S['faa']['airports_now'], len(closures))
 json.dump(S, open('summary_airline.json', 'w'), indent=1)
-fp = hashlib.sha256(json.dumps(rows, sort_keys=True).encode()).hexdigest()[:12]; st = 'data/nas_state.json'; prev = json.load(open(st)) if os.path.exists(st) else {}
+fp = hashlib.sha256(json.dumps([rows, closures], sort_keys=True).encode()).hexdigest()[:12]; st = 'data/nas_state.json'; prev = json.load(open(st)) if os.path.exists(st) else {}
 if prev.get('fp') != fp or now - prev.get('t', 0) > 1500:
     env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
     r = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'airline_live', '--path', os.path.join(H, 'summary_airline.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

@@ -81,7 +81,9 @@ lo, hi = K.wilson(change, read)
 classes = {k: dict(n=v, share=round(v / read, 4) if read else None, share_lo=round(K.wilson(v, read)[0], 4), share_hi=round(K.wilson(v, read)[1], 4)) for k, v in sorted(cls_n.items())}
 bym = C.defaultdict(C.Counter)
 for i, c in cur.items(): bym[(studies[i].get('indexed') or '')[:7]][c] += 1
-by_month = {m: dict(n=sum(v.values()), unchanged=v['UNCHANGED'], revised_same=v['REVISED_SAME'], revised_text=v['REVISED_TEXT'], revised_numbers=v['REVISED_NUMBERS'], withdrawn=v['WITHDRAWN']) for m, v in sorted(bym.items()) if m}
+mrow = lambda v: dict(n=sum(v.values()), unchanged=v['UNCHANGED'], revised_same=v['REVISED_SAME'], revised_text=v['REVISED_TEXT'], revised_numbers=v['REVISED_NUMBERS'], withdrawn=v['WITHDRAWN'])
+by_month = {m: mrow(v) for m, v in sorted(bym.items()) if m}
+if bym.get(''): by_month['month not recorded'] = mrow(bym[''])   # 30 Oct (site pass I-15): studies with no indexed date were left out of every row, so the rows did not sum to the studies read
 drifted = [dict(title=studies[i]['title'][:110], id=i, read=studies[i]['read_version'], latest=studies[i].get('latest_version'), cls=c, numbers_read=', '.join(studies[i].get('only_read', [])[:8]), numbers_latest=', '.join(studies[i].get('only_latest', [])[:8]), division=studies[i]['division'].upper())
            for i, c in cur.items() if c in ('REVISED_NUMBERS', 'WITHDRAWN')][:200]
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', studies=len(studies), read=read, due=len([i for i, e in studies.items() if not e['hist'] or now - e['hist'][-1][0] > 7 * 86400]),

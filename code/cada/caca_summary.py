@@ -5,7 +5,7 @@ H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H)
 import heuremen_kit as _K
 def wil(k, n):   # 29 Oct: kit's tested Wilson; the cadence copy omitted the division by d
     if not n: return None
-    p = k / n; lo, hi = _K.wilson(k, n); return [round(100 * p), round(100 * lo), round(100 * hi)]
+    p = k / n; lo, hi = _K.wilson(k, n); return [round(100 * p, 1), round(100 * lo, 1), round(100 * hi, 1)]   # 30 Oct (site pass I-31): one decimal, so a count of zero shows its upper end (0 of 1,087 reads 0.0 to 0.4) and not 0 to 0
 rows = [json.loads(l) for l in open('data/queries.jsonl')] if os.path.exists('data/queries.jsonl') else []
 by = C.defaultdict(dict)
 for r in rows: by[(r['domain'], r['cp'])][r['resolver']] = r

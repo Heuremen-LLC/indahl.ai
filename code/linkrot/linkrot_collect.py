@@ -6,6 +6,7 @@ UA = 'heuremen-linkrot/0.1 (+https://indahl.ai/linkrot)'; CATS = '(cat:cs.LG+OR+
 HOSTS = r'(?:github\.com|gitlab\.com|huggingface\.co|zenodo\.org|bitbucket\.org)'
 URLRE = re.compile(r'https?://(?:www\.)?' + HOSTS + r'/[^\s<>"\)\]\}]*|https?://(?:www\.)?' + HOSTS + r'\b', re.I)
 def norm(u):
+    u = re.sub(r'\\(.)', r'\1', u)   # 30 Oct (site pass H-9): abstracts copy LaTeX escapes (\_ and \#) into the address, which the host answers 404 and the table counted as gone
     u = u.rstrip('.,;:!?\'"*'); m = re.match(r'(https?://)(?:www\.)?(github\.com|gitlab\.com)/([^/\s]+)/([^/\s?#]+)', u, re.I)
     if m: return 'https://%s/%s/%s' % (m.group(2).lower(), m.group(3), re.sub(r'\.git$', '', m.group(4)))
     return u.replace('http://', 'https://')

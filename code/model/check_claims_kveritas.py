@@ -2,21 +2,30 @@
 # The tests (kveritas/test_tamper.sh, test_siblings.sh, test_canary.sh) were run offline in local mode with the network blocked, on synthetic scripts. This file reads their saved outputs.
 import json, hashlib, re
 FILES = ['kveritas/outputs/tamper.txt', 'kveritas/outputs/siblings.txt', 'kveritas/outputs/canary.txt']; RAW = {f: open(f).read() for f in FILES}
-def mk(i, q, calc, st, got, out, note): return dict(id=i, quote=q, calc=calc, stated=st, delivered=got, outcome=out, note=note, label_mismatch=False)
+import re as _re
+_KEEP={'bert','rgat','retinanet','resnet','dlrm','unet','sdxl'}
+def _and(L): return L[0] if len(L)==1 else ', '.join(L[:-1])+' and '+L[-1]
+def _pl(s,prose=False):   # a table cell as plain text: no semicolons, and in the data cells no Python list, True/False or None
+    if not isinstance(s,str): return s
+    if not prose:
+        s=_re.sub(r"\[((?:'[^']*'(?:, )?)+)\]",lambda m:_and(_re.findall(r"'([^']*)'",m.group(1))),s).replace('[]','none')
+        s=_re.sub(r'\bTrue\b','yes',s); s=_re.sub(r'\bFalse\b','no',s); s=_re.sub(r'\bNone\b','none',s)
+    return _re.sub(r'; ([a-z]+)\b(?![-_./])',lambda m:'. '+(m.group(1) if m.group(1) in _KEEP else m.group(1).capitalize()),s).replace('; ','. ')
+def mk(i, q, calc, st, got, out, note): return dict(id=i, quote=q, calc=_pl(calc),stated=_pl(st),delivered=_pl(got),outcome=out,note=_pl(note,True), label_mismatch=False)
 T, S, C = (RAW[f] for f in FILES)
 orig = T.split('### original')[1].split('###')[0]
 tam = re.findall(r'^### (.+)\n\s+(TAMPERED|[A-Z-]+)', T.split('### original')[1], re.M)
 n_t = sum(1 for _, v in tam if v == 'TAMPERED')
 K = []
 K.append(mk('KV1', 'these numbers came from this code, at this time, unchanged.', 'five edits to a sealed local-mode report, each verified offline', 'a sealed result cannot be changed without detection',
-            f'{n_t} of {len(tam)} edits read TAMPERED: ' + '; '.join(t for t, _ in tam), 'CONSISTENT' if n_t == len(tam) else 'BELOW',
-            'The edits were a metric value, the invocation count, a kept run exit code, the visible page text and the self-reported signer history. The report reads SELF-ATTESTED, which the tool prints as "signed with an author-supplied key, not K-Veritas". The code and time claims were not tested.'))
+            f'{n_t} of {len(tam)} edits read TAMPERED: ' + '; '.join(t for t, _ in tam), 'CANNOT_TELL' if n_t == len(tam) else 'BELOW',
+            'The edits were a metric value, the invocation count, a kept run exit code, the visible page text and the self-reported signer history. The report reads SELF-ATTESTED, which the tool prints as "signed with an author-supplied key, not K-Veritas". The edits test the word unchanged. The code and time parts of the sentence were not tested, so the row reads CANNOT_TELL.'))
 failed_msg = 'not kept in the report' in T
 shows = bool(re.search(r'Total invocations|Total runs', orig)) or 'mention a failed attempt or an invocation count: True' in T
 K.append(mk('KV2', 'every run is recorded, failed ones too, so an attempt shows.', 'a local-mode session with two kept runs and one failed run, sealed and verified offline', 'a failed attempt shows in the report',
             'The failed run printed "It is not kept in the report, but the server still counts it in the run history." The verify output lists Runs: 2 and no line for the failed attempt. The visible pages name no failed attempt. The embedded record holds 2 runs and an invocation count of 3' + ('' if not shows else ' (a line naming it was found)'),
-            'BELOW' if failed_msg and not shows else 'CONSISTENT',
-            'Verify prints a total of invocations only when a hosted seal supplies one (cmd/kveritas/main.go line 2305). The hosted service was not used for this row, so the sentence is not tested in the mode it describes.'))
+            'CANNOT_TELL' if failed_msg and not shows else 'CONSISTENT',
+            'Verify prints a total of invocations only when a hosted seal supplies one (cmd/kveritas/main.go line 2305). The hosted service was not used for this row, so the sentence is not tested in the mode it describes. In local mode the failed run does not show.'))
 K.append(mk('KV3', 'Every run anchored at the server when it ends, failed ones too.', 'needs the hosted service, which these tests did not use', 'every run, failed ones too, is anchored at the server', 'not run: the tests ran in local mode with the network blocked', 'CANNOT_TELL',
             'About ten sessions with a single print each were registered at the hosted service from this Mac by mistake before the network was blocked. A hosted registration sends a session id, a hashed machine id and run digests, with no script text.'))
 blocks = {m.group(1): m.group(2) for m in re.finditer(r'### (\w+)\n(.*?)(?=\n### |\Z)', S, re.S)}

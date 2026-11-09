@@ -30,11 +30,11 @@ FLOWN = {'Success', 'Failure', 'Partial Failure'}; USABLE = {'Second', 'Minute',
 LEADS = [(1, '1 day'), (7, '7 days'), (30, '30 days')]
 import heuremen_kit as _K
 def wil(k, n): return _K.wilson(k, n)   # 29 Oct: the local copy omitted the division by d; the kit's tested function replaces it
-scored = {L: [] for L, _ in LEADS}; flown = 0; waiting = 0; coarse = 0; cancelled = 0
+scored = {L: [] for L, _ in LEADS}; flown = 0; waiting = 0; coarse = 0; cancelled = 0; flown_watched = 0   # 30 Oct (site pass H-4): flown_watched counts launches with a snapshot taken before they flew. The rest were already flown at our first read and cannot be scored.
 for i, hs in hist.items():
     fin = hs[-1]
     if fin['status'] in FLOWN:
-        flown += 1; act = iso(fin['net'])
+        flown += 1; act = iso(fin['net']); flown_watched += 1 if any(h['status'] not in FLOWN for h in hs) else 0
         for L, _ in LEADS:
             before = [h for h in hs if h['read'] <= act - L * 86400]
             if not before: continue
@@ -59,7 +59,7 @@ for L, ll in LEADS:
         if len(rs) >= 10:
             c = cell(p, ll, rs); cells.append(c) if c else None
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), launches_tracked=len(hist), snapshots=len(snaps), first_read=time.strftime('%Y-%m-%d', time.gmtime(min(s['read'] for s in snaps))) if snaps else None,
-           flown=flown, waiting=waiting, coarse_precision=coarse, scored={ll: len(scored[L]) for L, ll in LEADS}, cells=cells)
+           flown=flown, flown_watched=flown_watched, flown_before_first_read=flown - flown_watched, waiting=waiting, coarse_precision=coarse, scored={ll: len(scored[L]) for L, ll in LEADS}, cells=cells)
 json.dump(out, open('summary_launch.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 p = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'launch_live', '--path', os.path.join(H, 'summary_launch.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

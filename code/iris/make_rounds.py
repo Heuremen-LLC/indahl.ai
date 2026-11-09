@@ -38,7 +38,7 @@ for n in ROUNDS:
     open(os.path.join(d, f'PLAN_r{n}.md'), 'w').write(f"""# Faults/Guards bench, round {n} (27 Oct 2026, his word: ours go to eleven)
 Written and committed before any round {n} reply exists. Same published Faults and Guards, same ten models, same settings, scorer and gates as round 1 (PLAN_v2.md) and round 2.
 Different questions: seed {20261027 + 11 * n}, a new story ({t[0].lower()[:-1]}), new counts. Guard wording identical to every other round.
-Starts by itself when round {n - 1} ends. Rounds are reported side by side, never pooled. Rates are read only after the parser hand-check passes for the round. Progress counts go to indahl.ai/iris (key status{n}).
+Starts by itself when round {n - 1} ends. Rounds are reported side by side, never pooled. Rates are read only after the parser check (replies read in full) passes for the round. Progress counts go to indahl.ai/iris (key status{n}).
 """)
     subprocess.run('shasum -a 256 items.py items.json run.py score.py synth.py PLAN_r%d.md drive.sh publish_status.py > CODE.sha256' % n, shell=True, cwd=d, check=True)
     print('round', n, 'ok')

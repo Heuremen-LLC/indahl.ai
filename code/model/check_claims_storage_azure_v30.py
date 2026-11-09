@@ -2,7 +2,16 @@
 import json, hashlib, re, glob, os, datetime as dt, statistics as st
 FILES = ['storage/storage_v30_results.json']; RAW = {f: open(f, 'rb').read() for f in FILES}
 R = json.loads(RAW[FILES[0]])['rows']; A = [r for r in R if r['submitter'] == 'Azure' and r['division'] == 'closed']
-def mk(i, q, calc, st_, got, out, note): return dict(id=i, quote=q, calc=calc, stated=st_, delivered=got, outcome=out, note=note, label_mismatch=False)
+import re as _re
+_KEEP={'bert','rgat','retinanet','resnet','dlrm','unet','sdxl'}
+def _and(L): return L[0] if len(L)==1 else ', '.join(L[:-1])+' and '+L[-1]
+def _pl(s,prose=False):   # a table cell as plain text: no semicolons, and in the data cells no Python list, True/False or None
+    if not isinstance(s,str): return s
+    if not prose:
+        s=_re.sub(r"\[((?:'[^']*'(?:, )?)+)\]",lambda m:_and(_re.findall(r"'([^']*)'",m.group(1))),s).replace('[]','none')
+        s=_re.sub(r'\bTrue\b','yes',s); s=_re.sub(r'\bFalse\b','no',s); s=_re.sub(r'\bNone\b','none',s)
+    return _re.sub(r'; ([a-z]+)\b(?![-_./])',lambda m:'. '+(m.group(1) if m.group(1) in _KEEP else m.group(1).capitalize()),s).replace('; ','. ')
+def mk(i, q, calc, st_, got, out, note): return dict(id=i, quote=q, calc=_pl(calc),stated=_pl(st_),delivered=_pl(got),outcome=out,note=_pl(note,True), label_mismatch=False)
 tr = [r for r in A if r['category'] == 'training']; ck = [r for r in A if r['category'] == 'checkpointing']
 def parse(r):
     m = re.match(r'AMLFS-Durable-Premium-(\d+)-(\d+)TiB-(\d+)-', r['system']); return int(m.group(1)), int(m.group(2))

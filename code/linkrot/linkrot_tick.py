@@ -101,7 +101,7 @@ for hname in sorted({e['host'] for e in links.values()}):
     by_host[hname] = cell([cur[u] for u, e in links.items() if u in cur and e['host'] == hname])
 ret = sum(1 for e in links.values() if len(e['hist']) > 1 and e['hist'][-1][1] == 'LIVE' and any(s in ('GONE', 'DNS_FAIL') for _, s in e['hist'][:-1]))
 newly = sum(1 for e in links.values() if len(e['hist']) > 1 and e['hist'][-1][1] in ('GONE', 'DNS_FAIL') and e['hist'][-2][1] == 'LIVE')
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate_ok else 'FAILED', papers=len(papers), links=len(links), read=len(cur), due=len([u for u, e in links.items() if not e['hist'] or now - e['hist'][-1][0] > 7 * 86400]),
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate_ok else 'FAILED', papers=len(papers), papers_with_a_link=sum(1 for p in papers if p['urls']), links=len(links), read=len(cur), due=len([u for u, e in links.items() if not e['hist'] or now - e['hist'][-1][0] > 7 * 86400]),
            all=cell(list(cur.values())), by_year=by_year, by_host=by_host, returned=ret, newly_gone=newly, seat2_links=sum(1 for e in links.values() if e.get('seat2') and e['hist'] and abs(e['hist'][-1][0] - e['seat2'][0]) <= 14 * 86400), seat_disagreements=sum(1 for e in links.values() if e['hist'] and e.get('seat2') and combined(e) == 'BLOCKED' and e['hist'][-1][1] != 'BLOCKED'), moved=sum(1 for e in links.values() if e.get('moved')))
 if os.path.exists('summary_repos.json'): out['repos'] = json.load(open('summary_repos.json'))
 json.dump(out, open('summary_linkrot.json', 'w'), indent=1)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """pkglicense_tick.py: PKGLICENSE rider per PLAN.md. Top 1,000 PyPI projects: the license a project states against the license GitHub detects in the repository it points to.
-Detaches into the background (about 12 minutes). DISAGREE rows are listed only after they are marked hand-checked in data/hand_checked.json. Publishes KV pkglicense_live."""
+Detaches into the background (about 12 minutes). DISAGREE rows are listed only after they are marked read in full in data/hand_checked.json. Publishes KV pkglicense_live."""
 import os, sys, re, json, time, collections as C, subprocess, fcntl, urllib.request
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 if not os.environ.get('PKG_FORKED'):

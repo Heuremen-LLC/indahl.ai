@@ -9,6 +9,7 @@ m = today.month - 13
 y = today.year + (m - 1) // 12
 m = (m - 1) % 12 + 1
 end = datetime.date(y, m, 1) - datetime.timedelta(days=1)
+# 30 Oct 2026 (site pass H-14): this is the last day of the month 14 months before the read month (31 Aug 2025 for a read in October 2026), so every record is at least 13 months past its primary completion date. The plan's '13 months' is met with the month of grace; the page says 14 months.
 adv = ("AREA[StudyType]INTERVENTIONAL AND (AREA[IsFDARegulatedDrug]true OR AREA[IsFDARegulatedDevice]true) "
        f"AND AREA[PrimaryCompletionDate]RANGE[2018-01-01,{end.isoformat()}] AND AREA[PrimaryCompletionDateType]ACTUAL")
 FIELDS = "NCTId,LeadSponsorName,LeadSponsorClass,Phase,PrimaryCompletionDate,ResultsFirstSubmitDate,ResultsFirstPostDate,IsFDARegulatedDrug,IsFDARegulatedDevice,OverallStatus,HasResults"

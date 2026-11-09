@@ -7,6 +7,12 @@ VPY = os.path.join(H, 'venv', 'bin', 'python')
 if os.path.realpath(sys.executable) != os.path.realpath(VPY) and not os.environ.get('REVISE_VENV'):
     os.execv(VPY, [VPY, os.path.abspath(__file__)] + sys.argv[1:])
 import openpyxl, heuremen_kit as K
+import openpyxl.reader.excel as _rx
+_rp = _rx.ExcelReader.read_properties
+def _safe_rp(self):
+    try: _rp(self)
+    except TypeError: pass   # 2 Nov: Philadelphia Fed file has a malformed created/modified stamp; the data sheets are unaffected
+_rx.ExcelReader.read_properties = _safe_rp
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('revise: plan not committed'); sys.exit(0)
 UA = {'User-Agent': 'heuremen-revise/0.1 (+https://indahl.ai/revise)'}; W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); STATED = 122.0
 URL = 'https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/real-time-data/data-files/xlsx/employ_level_first_second_third.xlsx'
@@ -46,10 +52,13 @@ def yblock(rs, key, reps=4000):
 def block(rs, key):
     prs = [(r['first'], r[key]) for r in rs]; n = len(prs); k = count(prs); lo, hi = K.wilson(k, n); rev = [b - a for a, b in prs]
     oc = K.ABOVE if lo > 0.10 else (K.BELOW if hi < 0.10 else (K.CONSISTENT if (hi - lo) <= 0.12 else K.CANNOT_TELL))
-    yb, ylo, yhi = yblock(rs, key); return dict(years=yb, share_y=round(k / n, 4), share_y_lo=ylo, share_y_hi=yhi, months=n, first=rs[0]['m'], last=rs[-1]['m'], exceed=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, median_signed=round(S.median(rev), 1), mean_signed=round(S.mean(rev), 1), median_abs=round(S.median([abs(x) for x in rev]), 1), largest=round(max(rev, key=abs), 1))
+    yb, ylo, yhi = yblock(rs, key)
+    # 30 Oct (site pass I-10): the same outcome rule applied to the interval over years, shown beside the fixed outcome so the two can be read together. Descriptive, defined after the first read.
+    ocy = K.ABOVE if ylo > 0.10 else (K.BELOW if yhi < 0.10 else (K.CONSISTENT if (yhi - ylo) <= 0.12 else K.CANNOT_TELL))
+    return dict(outcome_y=ocy, years=yb, share_y=round(k / n, 4), share_y_lo=ylo, share_y_hi=yhi, months=n, first=rs[0]['m'], last=rs[-1]['m'], exceed=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, median_signed=round(S.median(rev), 1), mean_signed=round(S.mean(rev), 1), median_abs=round(S.median([abs(x) for x in rev]), 1), largest=round(max(rev, key=abs), 1))
 a = block(t3, 'third'); b = block(mr, 'recent')
 HC = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
-big = [dict(month=r['m'], first=r['first'], third=r['third'], most_recent=r['recent'], note=HC.get(r['m'], 'Not yet opened by hand')) for r in {x['m']: x for x in t3 + mr}.values() if max(abs((r['third'] or r['first']) - r['first']), abs((r['recent'] or r['first']) - r['first']) if r['m'] <= last_bench else 0) > 300]
+big = [dict(url=URL, month=r['m'], first=r['first'], third=r['third'], most_recent=r['recent'], note=HC.get(r['m'], 'Not yet read in full')) for r in {x['m']: x for x in t3 + mr}.values() if max(abs((r['third'] or r['first']) - r['first']), abs((r['recent'] or r['first']) - r['first']) if r['m'] <= last_bench else 0) > 300]
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', stated=int(STATED), file_updated=updated_file, sha=sha[:16], checked_months=len(chk),
            counts={'Third release against first': a, 'Most recent, after the annual benchmark, against first': b}, large=sorted(big, key=lambda x: x['month']))
 json.dump(out, open('summary_revise.json', 'w'), indent=1)

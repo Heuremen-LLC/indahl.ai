@@ -29,3 +29,8 @@ The first row of data/drift/history.jsonl, stamped before the first dispatch, wa
 3. Age. The reading covered the last 24 probes however old they were, so if probing stopped the last good reading would stand for ever. If the newest probe is more than three hours old the reading is CANNOT_TELL and the page shows how old it is.
 
 Note (29 Oct). The rider read the target list from one line of the site builder that no longer holds the menu, so new pages were never added and /sad stayed after the rename. It now reads every menu and desk entry in the builder. The list was also corrected by hand (see the drift addendum in the nodes repository). No outcome rule changed.
+
+Note (29 Oct, second). The new rider read /hermes as a page with a live feed and the probe reported /hermes/live.json unreachable. HERMES is a menu page, its desks have the feeds. It is now skipped like the other division pages and its feed is removed from the target list. This cleared one false incident.
+
+## Addendum 2 (30 Oct 2026, from the site pass)
+The page now lists each incident of the rolling reading with its first and last probe, the number of probes that saw it and what they saw, and states the incident rule of Addendum 1 in its note. The one incident in the first 24 probes was four consecutive probes in which /vault/live.json was unreachable, a target that has no feed and is no longer probed. The probes are triggered by our scheduler. No rule changed.

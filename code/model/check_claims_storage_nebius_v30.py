@@ -2,7 +2,16 @@
 import json, hashlib
 FILES = ['storage/storage_v30_results.json']; RAW = {f: open(f, 'rb').read() for f in FILES}
 R = json.loads(RAW[FILES[0]])['rows']; C = [r for r in R if r['division'] == 'closed']
-def mk(i, q, calc, st, got, out, note): return dict(id=i, quote=q, calc=calc, stated=st, delivered=got, outcome=out, note=note, label_mismatch=False)
+import re as _re
+_KEEP={'bert','rgat','retinanet','resnet','dlrm','unet','sdxl'}
+def _and(L): return L[0] if len(L)==1 else ', '.join(L[:-1])+' and '+L[-1]
+def _pl(s,prose=False):   # a table cell as plain text: no semicolons, and in the data cells no Python list, True/False or None
+    if not isinstance(s,str): return s
+    if not prose:
+        s=_re.sub(r"\[((?:'[^']*'(?:, )?)+)\]",lambda m:_and(_re.findall(r"'([^']*)'",m.group(1))),s).replace('[]','none')
+        s=_re.sub(r'\bTrue\b','yes',s); s=_re.sub(r'\bFalse\b','no',s); s=_re.sub(r'\bNone\b','none',s)
+    return _re.sub(r'; ([a-z]+)\b(?![-_./])',lambda m:'. '+(m.group(1) if m.group(1) in _KEEP else m.group(1).capitalize()),s).replace('; ','. ')
+def mk(i, q, calc, st, got, out, note): return dict(id=i, quote=q, calc=_pl(calc),stated=_pl(st),delivered=_pl(got),outcome=out,note=_pl(note,True), label_mismatch=False)
 tr = [r for r in C if r['category'] == 'training']; ck = [r for r in C if r['category'] == 'checkpointing']
 nb = lambda wl: [r for r in C if r['submitter'] == 'Nebius' and r['workload'] == wl][0]
 ret = sorted([r for r in tr if r['workload'] == 'retinanet'], key=lambda r: -r['accelerators']); un = [r for r in tr if r['workload'] == 'unet3d']
@@ -31,7 +40,7 @@ N.append(mk('NB8', 'Checkpoint write bandwidth scaled from 2.81 GiB/s on one cli
 N.append(mk('NB9', 'aggregate read bandwidth increased from 7.14 GiB/s to 38.27 GiB/s.', 'same two summaries, load_checkpoint_io_mean', '7.14 to 38.27 GiB/s read', f'{c8["read_GiB_per_s"]:.2f} and {c70["read_GiB_per_s"]:.2f} GiB/s', 'CONSISTENT' if (round(c8['read_GiB_per_s'], 2), round(c70['read_GiB_per_s'], 2)) == (7.14, 38.27) else 'BELOW', ''))
 nbr = [r for r in C if r['submitter'] == 'Nebius']
 N.append(mk('NB10', 'All four Closed division results ran on Object Storage with the Enhanced storage class in one of our production regions.', 'Nebius Closed entries and their system descriptions', 'four Closed results, all on Object Storage with the Enhanced storage class', f'{len(nbr)} Closed entries ({", ".join(sorted(r["workload"] for r in nbr))}), benchmark API {sorted({r.get("benchmark_API") for r in nbr})}, URI scheme {sorted({r.get("uri_scheme") for r in nbr})}', 'CANNOT_TELL', 'The count and the object API match. A storage class and a production region are not fields in the system files.'))
-N.append(mk('NB11', 'Client nodes ran as publicly available CPU-only virtual machines (the AMD EPYC Genoa cpu-d3 preset) on Ubuntu 24.04 over Ethernet, with capped memory.', 'system description yaml for the RetinaNet entry', 'cpu-d3, AMD EPYC Genoa, Ubuntu 24.04, Ethernet', 'chassis model_name cpu-d3, cpu_model AMD EPYC-Genoa Processor, operating_system Ubuntu 24.04, networking type ethernet (400 Gb/s)', 'CONSISTENT', 'Read by hand from storage/v3.0/closed/Nebius/systems/nebius-s3-retinanet-32nx24-cm64.yaml. Memory is listed as 61 GiB per client.'))
+N.append(mk('NB11', 'Client nodes ran as publicly available CPU-only virtual machines (the AMD EPYC Genoa cpu-d3 preset) on Ubuntu 24.04 over Ethernet, with capped memory.', 'system description yaml for the RetinaNet entry', 'cpu-d3, AMD EPYC Genoa, Ubuntu 24.04, Ethernet', 'chassis model_name cpu-d3, cpu_model AMD EPYC-Genoa Processor, operating_system Ubuntu 24.04, networking type ethernet (400 Gb/s)', 'CONSISTENT', 'Read in full from storage/v3.0/closed/Nebius/systems/nebius-s3-retinanet-32nx24-cm64.yaml. Memory is listed as 61 GiB per client.'))
 N.append(mk('NB12', 'entry v3.0-0074.', 'public entry IDs are on the MLCommons results page, not in the results repository', 'RetinaNet is entry v3.0-0074', 'the repository holds no entry IDs', 'CANNOT_TELL', 'The repository is organized by submitter and system name.'))
 json.dump(dict(source=FILES + ['raw/storage_nebius_v30.txt'], sha256=[hashlib.sha256(RAW[f]).hexdigest() for f in FILES], claims=N), open('claims_storage_nebius_v30.json', 'w'), indent=1)
 for c in N: print(c['id'], c['outcome'], '|', c['delivered'][:230])

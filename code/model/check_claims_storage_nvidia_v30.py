@@ -3,7 +3,16 @@ import json, hashlib, glob
 FILES = ['storage/storage_v30_results.json']; YAMLS = sorted(glob.glob('storage/v3.0/closed/NVIDIA/systems/*.yaml'))
 RAW = {f: open(f, 'rb').read() for f in FILES + YAMLS}
 R = json.loads(RAW[FILES[0]])['rows']; NV = [r for r in R if r['submitter'] == 'NVIDIA' and r['division'] == 'closed']
-def mk(i, q, calc, st, got, out, note): return dict(id=i, quote=q, calc=calc, stated=st, delivered=got, outcome=out, note=note, label_mismatch=False)
+import re as _re
+_KEEP={'bert','rgat','retinanet','resnet','dlrm','unet','sdxl'}
+def _and(L): return L[0] if len(L)==1 else ', '.join(L[:-1])+' and '+L[-1]
+def _pl(s,prose=False):   # a table cell as plain text: no semicolons, and in the data cells no Python list, True/False or None
+    if not isinstance(s,str): return s
+    if not prose:
+        s=_re.sub(r"\[((?:'[^']*'(?:, )?)+)\]",lambda m:_and(_re.findall(r"'([^']*)'",m.group(1))),s).replace('[]','none')
+        s=_re.sub(r'\bTrue\b','yes',s); s=_re.sub(r'\bFalse\b','no',s); s=_re.sub(r'\bNone\b','none',s)
+    return _re.sub(r'; ([a-z]+)\b(?![-_./])',lambda m:'. '+(m.group(1) if m.group(1) in _KEEP else m.group(1).capitalize()),s).replace('; ','. ')
+def mk(i, q, calc, st, got, out, note): return dict(id=i, quote=q, calc=_pl(calc),stated=_pl(st),delivered=_pl(got),outcome=out,note=_pl(note,True), label_mismatch=False)
 def row(sub, wl):
     m = [r for r in NV if r['submission_name'] == sub and r['workload'] == wl]; assert len(m) == 1, (sub, wl, len(m)); return m[0]
 u3, u6, u12 = row('aistore-3n-oci-bm-denseio-e5-128-5client-unet3d', 'unet3d'), row('aistore-6n-oci-bm-denseio-e5-128-10client-unet3d', 'unet3d'), row('aistore-12n-oci-bm-denseio-e5-128-20client-unet3d', 'unet3d')
