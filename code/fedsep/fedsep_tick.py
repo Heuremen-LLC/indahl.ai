@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
-"""fedsep_tick.py: FEDSEP rider per PLAN.md. September SEP medians and stated 70% error ranges against realized outcomes from FRED's public downloads.
+"""fedsep_tick.py: FEDSEP rider per PLAN.md. September SEP medians and stated 70% error ranges against realized outcomes read from BEA, BLS and the Federal Reserve Board (agency.py, PLAN.md Addendum 2, 9 Nov 2026).
 Runs under the revise venv (pypdf). Publishes KV fedsep_live. The parsed projections are stored in data/projections.json (a page is read once)."""
 import os, sys, re, io, csv, json, time, random, logging, statistics as S, subprocess, urllib.request
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True); logging.disable(logging.CRITICAL)
 VPY = os.path.expanduser('~/bones-forge/revise_index/venv/bin/python')
 if os.path.realpath(sys.executable) != os.path.realpath(VPY) and not os.environ.get('FEDSEP_VENV'):
     os.execv(VPY, [VPY, os.path.abspath(__file__)] + sys.argv[1:])
-import heuremen_kit as K, sep_parse as P
+import heuremen_kit as K, sep_parse as P, agency as A
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('fedsep: plan not committed'); sys.exit(0)
 W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); UA = {'User-Agent': 'heuremen-fedsep/0.1 (+https://indahl.ai/fedsep)'}
 SEPT = ['20150917', '20160921', '20170920', '20180926', '20190918', '20200916', '20210922', '20220921', '20230920', '20240918', '20250917']
 VARS = ['Change in real GDP', 'Unemployment rate', 'PCE inflation', 'Federal funds rate']
-def fred(sid):
-    t = urllib.request.urlopen(urllib.request.Request('https://fred.stlouisfed.org/graph/fredgraph.csv?id=' + sid, headers=UA), timeout=90).read().decode()
-    return {r[0]: float(r[1]) for r in list(csv.reader(io.StringIO(t)))[1:] if len(r) > 1 and r[1] not in ('', '.')}
+# 9 Nov 2026 (PLAN.md Addendum 2): the outcome series come from the agencies that publish them, not from FRED (FRED's terms bar storing and
+# commercial reuse of its content). Same series, same keys, so the scoring below is unchanged.
 def q4avg(d, y): v = [d.get('%d-%02d-01' % (y, m)) for m in (10, 11, 12)]; return sum(v) / 3 if all(x is not None for x in v) else None
 def outcomes():
-    g, u, p, f = fred('GDPC1'), fred('UNRATE'), fred('PCEPI'), fred('FEDFUNDS'); tu, tl = fred('DFEDTARU'), fred('DFEDTARL'); o = {}
+    g, u, p, f = A.gdp(), A.unrate(), A.pce(), A.fedfunds(); tu, tl = A.target_range(); o = {}
     def ye(y):
         ds = sorted(d for d in tu if d <= '%d-12-31' % y and d in tl); return (tu[ds[-1]] + tl[ds[-1]]) / 2 if ds and ds[-1] >= '%d-12-01' % y else None
     for y in range(2014, 2026):
@@ -35,10 +34,15 @@ for d in SEPT:
     proj[d] = dict(t1=t1, t2=t2)
 json.dump(proj, open('data/projections.json', 'w'), indent=0)
 p25 = proj['20250917']; gate &= [p25['t1'][v][0] for v in VARS] == [1.6, 4.5, 3.0, 3.6] and [p25['t2'][v][0] for v in VARS] == [1.4, 0.5, 1.0, 0.5]
-O, U = outcomes()
-bls = json.loads(urllib.request.urlopen(urllib.request.Request('https://api.bls.gov/publicAPI/v1/timeseries/data/LNS14000000', headers=UA), timeout=60).read())
-bq = [float(x['value']) for x in bls['Results']['series'][0]['data'] if x['year'] == '2024' and x['period'] in ('M10', 'M11', 'M12')]
-gate &= len(bq) == 3 and abs(sum(bq) / 3 - O[2024]['Unemployment rate']) <= 0.05
+# 9 Nov 2026 (Addendum 2): the agency series are read at most once a UTC day and kept in data/outcomes_day.json, since the keyless BLS API
+# allows 25 requests a day and the outcomes are yearly. The known-good is the BLS fourth-quarter 2024 unemployment average read on 9 Nov 2026
+# (4.13 from LNS14000000 October to December 2024), within 0.05, and the BEA, BLS and Board readers must each return the 2024 values.
+_OD = 'data/outcomes_day.json'; _today = time.strftime('%Y-%m-%d', time.gmtime())
+_c = json.load(open(_OD)) if os.path.exists(_OD) else {}
+if _c.get('day') == _today: O = {int(k): v for k, v in _c['O'].items()}
+else:
+    O, U = outcomes(); json.dump(dict(day=_today, O=O), open(_OD, 'w'))
+gate &= O.get(2024, {}).get('Unemployment rate') is not None and abs(O[2024]['Unemployment rate'] - 4.13) <= 0.05 and all(O.get(2024, {}).get(v) is not None for v in VARS)
 gate &= proj['20160921']['t2']['Change in real GDP'][:2] == [1.3, 1.9] and proj['20160921']['t2']['Unemployment rate'][:2] == [0.3, 1.0] and proj['20160921']['t1']['Change in real GDP'][:2] == [1.8, 2.0]   # 29 Oct (audit): a known-good case for the minutes-PDF parser
 print('fedsep: gate', 'passed' if gate else 'FAILED', flush=True)
 if not gate: sys.exit(0)
@@ -73,7 +77,7 @@ for hz in (0, 1):
         k = sum(t['outside'] for t in ts); lo, hi = K.wilson(k, len(ts)); oc = K.ABOVE if lo > 0.30 else (K.BELOW if hi < 0.30 else (K.CONSISTENT if (hi - lo) <= 0.45 else K.CANNOT_TELL))
         miss = max((abs(t['err']) - t['rng'] for t in ts), default=0)
         per['%s, %s' % (v, 'this year' if hz == 0 else 'next year')] = dict(n=len(ts), outside=k, share=round(k / len(ts), 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, mean_error=round(S.mean(t['err'] for t in ts), 2), range_typical=round(S.median(t['rng'] for t in ts), 2))
-hand = [dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note=('Outside by 0.02 beyond a range printed to one decimal. ' if abs(abs(t['err']) - t['rng']) <= 0.03 else '') + ('Scored on the fourth-quarter average. At the year-end target midpoint it is inside. ' if t['var'] == 'Federal funds rate' and not t['outside_alt'] else '') + 'Median and range read from the SEP page, outcome from FRED')  for t in trip if t['horizon'] == 0 and t['outside']]
+hand = [dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note=('Outside by 0.02 beyond a range printed to one decimal. ' if abs(abs(t['err']) - t['rng']) <= 0.03 else '') + ('Scored on the fourth-quarter average. At the year-end target midpoint it is inside. ' if t['var'] == 'Federal funds rate' and not t['outside_alt'] else '') + 'Median and range read from the SEP page, outcome from BEA, BLS or the Federal Reserve Board')  for t in trip if t['horizon'] == 0 and t['outside']]
 import collections as _C
 skipped = dict(_C.Counter(r for *_, r in SK))
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', not_comparable=dict(n=len(SK), reasons=skipped), horizon1_misses=[dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note='Not yet read in full') for t in trip if t['horizon'] == 1 and t['outside']], septs=len(SEPT), triples=len(trip), claim='about 70 percent inside, so about 30 percent outside', pooled=pool, sensitivity=sens, per_variable=per, misses=sorted(hand, key=lambda x: (x['year'], x['variable'])))

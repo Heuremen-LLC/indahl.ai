@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """revise_tick.py: REVISE rider per PLAN.md. First, third and most recent releases of monthly nonfarm payroll change against the BLS's stated 90% interval of 122 thousand.
-Runs under the venv's Python (openpyxl). Publishes KV revise_live."""
+From 9 Nov 2026 (PLAN.md Addendum 1) every value is read from the BLS itself (bls_source.py), not from the Philadelphia Fed file. Publishes KV revise_live."""
 import os, sys, re, json, time, hashlib, subprocess, statistics as S, urllib.request
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data/files', exist_ok=True)
 VPY = os.path.join(H, 'venv', 'bin', 'python')
@@ -15,30 +15,25 @@ def _safe_rp(self):
 _rx.ExcelReader.read_properties = _safe_rp
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('revise: plan not committed'); sys.exit(0)
 UA = {'User-Agent': 'heuremen-revise/0.1 (+https://indahl.ai/revise)'}; W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); STATED = 122.0
-URL = 'https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/real-time-data/data-files/xlsx/employ_level_first_second_third.xlsx'
+import bls_source as BS
+URL = BS.TABLE
 def count(pairs, limit=STATED): return sum(1 for a, b in pairs if abs(b - a) > limit)
 gate = count([(0, 122), (0, 123), (0, -123)]) == 2 and [abs(b - a) > STATED for a, b in [(0, 122), (0, 123), (0, -123)]] == [False, True, True]
-raw = urllib.request.urlopen(urllib.request.Request(URL, headers=UA), timeout=120).read(); sha = hashlib.sha256(raw).hexdigest()
-fn = 'data/files/employ_%s.xlsx' % sha[:12]
+raw = BS.table_raw(); sha = hashlib.sha256(raw).hexdigest()
+fn = 'data/files/cesnaicsrev_%s.htm' % sha[:12]
 if not os.path.exists(fn): open(fn, 'wb').write(raw)
-wb = openpyxl.load_workbook(fn, read_only=True, data_only=True); notes = ' '.join(str(c) for r in wb['NOTES'].iter_rows(values_only=True) for c in r if c)
-gate &= 'EMPLOY' in notes and 'Thousands' in notes
-rows = []
-for r in wb['DATA'].iter_rows(values_only=True):
-    if r and isinstance(r[0], str) and re.match(r'\d{4}:\d{2}$', r[0]):
-        num = lambda x: float(x) if isinstance(x, (int, float)) else None
-        rows.append(dict(m=r[0], first=num(r[1]), second=num(r[2]), third=num(r[3]), recent=num(r[4])))
-upd = re.search(r'Last updated on: ([A-Za-z]+ \d+, \d{4})', notes); updated_file = upd.group(1) if upd else ''
-# known-good against the BLS API: the last 24 benchmarked months of Most_Recent against month-over-month changes of the level series
-def bls_changes():
-    d = json.loads(urllib.request.urlopen(urllib.request.Request('https://api.bls.gov/publicAPI/v1/timeseries/data/CES0000000001', headers=UA), timeout=60).read())
-    pts = {(int(p['year']), int(p['period'][1:])): float(p['value']) for p in d['Results']['series'][0]['data'] if p['period'].startswith('M')}
-    return {'%04d:%02d' % k: pts[k] - pts[(k[0] - (k[1] == 1), k[1] - 1 or 12)] for k in pts if (k[0] - (k[1] == 1), k[1] - 1 or 12) in pts}
-bc = bls_changes(); ys = int(updated_file[-4:]) if updated_file else int(time.strftime('%Y')); last_bench = '%04d:03' % (ys - 1)
+tab = BS.first_second_third(raw); bc = BS.most_recent()
+upd = re.search(r'Last Modified Date:\s*(?:</strong>)?\s*([A-Za-z]+ \d+, \d{4})', raw.decode('utf-8', 'replace')); updated_file = upd.group(1) if upd else ''
+rows = [dict(m=m, first=tab[m]['first'], second=tab[m]['second'], third=tab[m]['third'], recent=bc.get(m)) for m in sorted(tab)]
+ys = int(updated_file[-4:]) if updated_file else int(time.strftime('%Y')); last_bench = '%04d:03' % (ys - 1)
 bench = [r for r in rows if r['recent'] is not None and r['m'] <= last_bench]
-chk = [abs(r['recent'] - bc[r['m']]) for r in bench[-24:] if r['m'] in bc]
-gate &= len(chk) >= 12 and max(chk) <= 1.0   # the plan asked for 24 months, the BLS API returns 14, see Note 2
-print('revise: gate', 'passed' if gate else 'FAILED', 'checked', len(chk), 'months against the BLS API, max difference', round(max(chk), 2) if chk else None, flush=True)
+# known-good (Addendum 1): the first estimates of the four months opened by hand against the archived releases (Note 1) must read the same here,
+# the table must hold every month from 1979, and the flat file must give the current change for every month of the last ten years.
+KG = {'2020:03': -701.0, '2021:08': 235.0, '2021:11': 210.0, '2021:12': 199.0}
+chk = [abs((tab.get(m) or {}).get('first', 1e9) - v) for m, v in KG.items()]
+need = ['%04d:%02d' % (y, mo) for y in range(ys - 10, ys) for mo in range(1, 13)]
+gate &= max(chk) <= 0.5 and len(tab) >= 500 and all(m in bc for m in need)
+print('revise: gate', 'passed' if gate else 'FAILED', 'first estimates of', len(KG), 'hand-checked months, max difference', round(max(chk), 2), '|', len(tab), 'months in the table', flush=True)
 if not gate: sys.exit(0)
 t3 = [r for r in rows if r['first'] is not None and r['third'] is not None][-120:]; mr = [r for r in bench if r['first'] is not None][-120:]
 import random as _rnd
@@ -59,7 +54,7 @@ def block(rs, key):
 a = block(t3, 'third'); b = block(mr, 'recent')
 HC = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 big = [dict(url=URL, month=r['m'], first=r['first'], third=r['third'], most_recent=r['recent'], note=HC.get(r['m'], 'Not yet read in full')) for r in {x['m']: x for x in t3 + mr}.values() if max(abs((r['third'] or r['first']) - r['first']), abs((r['recent'] or r['first']) - r['first']) if r['m'] <= last_bench else 0) > 300]
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', stated=int(STATED), file_updated=updated_file, sha=sha[:16], checked_months=len(chk),
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', stated=int(STATED), file_updated=updated_file, sha=sha[:16], checked_months=len(KG),
            counts={'Third release against first': a, 'Most recent, after the annual benchmark, against first': b}, large=sorted(big, key=lambda x: x['month']))
 json.dump(out, open('summary_revise.json', 'w'), indent=1)
 with open('data/history.jsonl', 'a') as f: f.write(json.dumps(dict(t=time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime()), sha=sha[:16], third=a, recent=b), sort_keys=True) + '\n')
