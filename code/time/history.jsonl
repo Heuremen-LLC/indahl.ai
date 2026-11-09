@@ -118,3 +118,6 @@
 {"rounds": 49, "seat2.seat_part_ms": 0.47, "seat_part_ms": 3.05, "t": "2026-11-08T20:16Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
 {"rounds": 49, "seat2.seat_part_ms": 0.32, "seat_part_ms": 3.07, "t": "2026-11-08T22:29Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
 {"rounds": 49, "seat2.seat_part_ms": -0.21, "seat_part_ms": 2.95, "t": "2026-11-09T00:44Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": -0.85, "seat_part_ms": 3.04, "t": "2026-11-09T02:56Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": 1.12, "seat_part_ms": 2.96, "t": "2026-11-09T05:06Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": 0.74, "seat_part_ms": 2.88, "t": "2026-11-09T07:23Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}

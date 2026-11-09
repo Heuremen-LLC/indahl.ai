@@ -5,4 +5,4 @@ Live page: https://indahl.ai/qia
 
 Everything here is public. Each plan (PLAN.md) was committed before the data it describes. A history.jsonl, where present, is one row of the published numbers each time they changed, so the commit history is the trend. Terms: free to read, run and cite with attribution, no use as training data (LICENSE.txt at the repository root, https://indahl.ai/terms).
 
-Files: `AUDIT_PLAN.md`, `STABILITY_PLAN.md`, `audit.py`, `audit_history.jsonl`, `heuremen_kit.py`, `ibm_history.jsonl`, `ibm_mirror.py`, `recount.py`, `stability.py`
+Files: `AUDIT_PLAN.md`, `STABILITY_PLAN.md`, `audit.py`, `audit_history.jsonl`, `heuremen_kit.py`, `ibm_history.jsonl`, `ibm_mirror.py`, `publish_qia_ibm.py`, `recount.py`, `stability.py`

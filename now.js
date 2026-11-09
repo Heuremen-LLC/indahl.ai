@@ -31,8 +31,8 @@
       var s3 = sec('YO reads IBM records'); (YOR.latest || []).slice(0, 3).forEach(function (r) { s3.appendChild(row('/qia#yo', r.backend, r.stamp + ', agreement with the code ' + r.score.toFixed(2))); }); root.appendChild(s3);
     }
     if (CLOCK && CLOCK.rows) {
-      // 9 Nov 2026 (site pass M16): the block says which fire it shows, and that later fires are on the Darkwave page (this feed is not rewritten after each fire yet)
-      var s4 = sec('Darkwave clock' + (CLOCK.fire ? ', fire of ' + CLOCK.fire : '')); CLOCK.rows.slice(-2).forEach(function (r) { s4.appendChild(row('https://heuremen.org/darkwave.html', r.chip, r.text)); });
+      // 9 Nov 2026 (site pass M16): the block says which fire it shows. The feed is rewritten after each fire by clock_feed.py (newest fire per chip)
+      var s4 = sec('Darkwave clock' + (CLOCK.fire ? ', fire of ' + CLOCK.fire : '')); CLOCK.rows.slice(-2).forEach(function (r) { s4.appendChild(row('/darkwave', r.chip, r.text)); });
       if (CLOCK.note) s4.appendChild(h('p', CLOCK.note, 'nw-note')); root.appendChild(s4);
     }
     var pr = Q && Q.processors; if (typeof pr === 'string') { try { pr = JSON.parse(pr.replace(/'/g, '"').replace(/None/g, 'null').replace(/True/g, 'true').replace(/False/g, 'false')); } catch (e) { pr = null; } }

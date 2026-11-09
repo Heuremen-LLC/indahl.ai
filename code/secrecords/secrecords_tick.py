@@ -132,6 +132,7 @@ if os.environ.get('SECRECORDS_SPF_REREAD') and gate:
         if i % 100 == 99: json.dump(store, open('data/domains.json.tmp', 'w')); os.replace('data/domains.json.tmp', 'data/domains.json'); print('secrecords: spf reread', i + 1, flush=True)
     json.dump(store, open('data/domains.json.tmp', 'w')); os.replace('data/domains.json.tmp', 'data/domains.json')
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
+UL = set(json.load(open('data/unlisted.json'))) if os.path.exists('data/unlisted.json') else set()   # 9 Nov 2026: house-only list of domains never named on a public page (legal caution). They stay in the counts, never in disagree_list
 rs = list(store.values())
 def grp(key, kind):
     cnt = C.Counter(r[key + '_cls'] for r in rs); comp = cnt['AGREE'] + cnt['DISAGREE']; lo, hi = K.wilson(cnt['DISAGREE'], comp)
@@ -142,7 +143,7 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed'
            comparison={'HSTS preload header': cmp_h, 'SPF lookup limit': cmp_s}, classes={'HSTS preload header': {c: ch[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, 'SPF lookup limit': {c: cs[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}},
            descriptive={'Domains whose HTTPS response carries an HSTS header': dict(n=anyh, of=len(rs)), 'Domains that publish an SPF record': dict(n=anys, of=len(rs))},
            dmarc={k: dict(n=v) for k, v in sorted(dm.items(), key=lambda x: -x[1])},
-           disagree_list=[dict(domain=r['domain'], claim='HSTS preload header', record=r.get('hsts'), reason=hc.get('hsts|' + r['domain'])) for r in rs if r['hsts_cls'] == 'DISAGREE' and 'hsts|' + r['domain'] in hc] + [dict(domain=r['domain'], claim='SPF lookup limit', record='%s lookups: %s' % (r['spf_n'], (r.get('spf') or '')[:120]), reason=hc.get('spf|' + r['domain'])) for r in rs if r['spf_cls'] == 'DISAGREE' and 'spf|' + r['domain'] in hc])
+           disagree_list=[dict(domain=r['domain'], claim='HSTS preload header', record=r.get('hsts'), reason=hc.get('hsts|' + r['domain'])) for r in rs if r['hsts_cls'] == 'DISAGREE' and 'hsts|' + r['domain'] in hc and r['domain'] not in UL] + [dict(domain=r['domain'], claim='SPF lookup limit', record='%s lookups: %s' % (r['spf_n'], (r.get('spf') or '')[:120]), reason=hc.get('spf|' + r['domain'])) for r in rs if r['spf_cls'] == 'DISAGREE' and 'spf|' + r['domain'] in hc and r['domain'] not in UL])
 json.dump(out, open('summary_secrecords.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'secrecords_live', '--path', os.path.join(H, 'summary_secrecords.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
