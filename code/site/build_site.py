@@ -717,7 +717,7 @@ PAGES['/security'] = page('/security', 'Security and Vulnerability Reporting | H
 
 PAGES['/inquire-ok'] = page('/inquire-ok', 'Inquiry received | Heuremen LLC', 'Inquiry received.', '<section class="closing"><h2>Inquiry received.</h2><p>We review every inquiry for fit, independence and authority. If we are able to take it on, we will reply to the organisation email address you gave.</p><p class="actions"><a class="btn" href="/">Home</a></p></section>')
 PAGES['/inquire-error'] = page('/inquire-error', 'Inquiry not sent | Heuremen LLC', 'Inquiry not sent.', '<section class="closing"><h2>Inquiry not sent.</h2><p>__MSG__</p><p class="actions"><a class="btn" href="/contact">Back to the form</a></p><p>To keep what you typed, use your browser&rsquo;s Back button instead.</p></section>')
-PAGES['/404'] = page('/404', 'Not found | Heuremen LLC', 'Page not found.', '<section class="closing"><h2>That page does not exist.</h2><p>Try the home page, or use the inquiry form.</p><p class="actions"><a class="btn" href="/">Home</a><a class="ghost" href="/contact">Contact</a></p></section>')
+PAGES['/404'] = page('/404', 'Not found | Heuremen LLC', 'Page not found.', '<section class="closing"><h2>That page does not exist.</h2><p>Try the home page, or use the inquiry form.</p><p class="actions"><a class="btn" href="/">Home</a></p></section>')
 
 # The /agree privacy box carries the live privacy notice body (one source; h2 -> h3 inside the box).
 _pm = _re.search(r'<section class="legal">(.*?)</section>', PAGES['/privacy'], _re.S)
@@ -1807,8 +1807,9 @@ _SW = {'pip': ('pip', 'https://github.com/pypa/pip', 'https://pypi.org/project/p
        'mlperf': ('MLPerf Inference', 'https://github.com/mlcommons/inference', 'https://pypi.org/project/mlcommons-loadgen/'), 'hf-hub': ('huggingface_hub', 'https://github.com/huggingface/huggingface_hub', 'https://pypi.org/project/huggingface-hub/'),
        'faultsguards': ('faultsguards (ours)', 'https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/faultsguards', 'https://pypi.org/project/faultsguards/'), 'ravencoin': ('Ravencoin core', 'https://github.com/RavenProject/Ravencoin', None),
        'pypdf': ('pypdf', 'https://github.com/py-pdf/pypdf', 'https://pypi.org/project/pypdf/'), 'tectonic': ('Tectonic', 'https://github.com/tectonic-typesetting/tectonic', None),
-       'lighteval': ('lighteval', 'https://github.com/huggingface/lighteval', 'https://pypi.org/project/lighteval/')}   # 9 Nov 2026 (site pass M13)
-_SWMAP = {'pkginstall': ['pip'], 'hfsize': ['hf-hub'], 'change': [], 'qia': ['qiskit', 'qiskit-ibm-runtime', 'qiskit-aer', 'numpy', 'scipy', 'pypdf'], 'iris': ['mlx-lm', 'mlx', 'ollama', 'hf-hub', 'faultsguards'], 'model': ['mlperf', 'lm-eval', 'mlx-lm', 'lighteval'], 'coin': ['ravencoin']}
+       'lighteval': ('lighteval', 'https://github.com/huggingface/lighteval', 'https://pypi.org/project/lighteval/'),
+       'ots': ('OpenTimestamps client', 'https://github.com/opentimestamps/opentimestamps-client', 'https://pypi.org/project/opentimestamps-client/'), 'drand': ('drand', 'https://github.com/drand/drand', None)}   # 9 Nov 2026 (site pass L4)   # 9 Nov 2026 (site pass M13)
+_SWMAP = {'pkginstall': ['pip'], 'hfsize': ['hf-hub'], 'change': [], 'qia': ['qiskit', 'qiskit-ibm-runtime', 'qiskit-aer', 'numpy', 'scipy', 'pypdf'], 'iris': ['mlx-lm', 'mlx', 'ollama', 'hf-hub', 'faultsguards'], 'model': ['mlperf', 'lm-eval', 'mlx-lm', 'lighteval'], 'tape': ['ots', 'drand'], 'coin': ['ravencoin']}
 _GH = 'https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/'
 _CODE = {'time': [('time', 'time')], 'coin': [('coin', 'coin')], 'cada': [('cada', 'cada')], 'uptime': [('uptime', 'uptime')], 'forecast': [('forecast', 'forecast')], 'cadence': [('cadence', 'cadence')],
          'trials': [('trials', 'trials')], 'launch': [('launch', 'launch')], 'linkrot': [('linkrot', 'linkrot')], 'tape': [('tape', 'tape')], 'hosts': [('hosts', 'hosts')], 'campus': [('campus', 'campus')], 'airq': [('airq', 'airq')], 'ailuminate': [('ailuminate', 'ailuminate')], 'hpt': [('hpt', 'hpt')], 'weights': [('weights', 'weights')], 'airline': [('airline', 'airline')], 'fedsep': [('fedsep', 'fedsep')], 'revise': [('revise', 'revise')], 'stack': [('stack', 'stack')], 'pkginstall': [('pkginstall', 'pkginstall')], 'seat': [('seat', 'seat')], 'secrecords': [('secrecords', 'secrecords')], 'change': [('change', 'change')], 'hfsize': [('hfsize', 'hfsize')], 'hflicense': [('hflicense', 'hflicense')], 'pkglicense': [('pkglicense', 'pkglicense')], 'support': [('support', 'support')], 'arxivdrift': [('arxivdrift', 'arxivdrift')], 'iris': [('iris', 'iris')], 'model': [('model', 'model')], 'atlas': [('atlas', 'atlas')],
@@ -2101,6 +2102,7 @@ def main():
     for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])
+    for _pp in PAGES: PAGES[_pp] = PAGES[_pp].replace('@@CSSV@@', _cv)   # 9 Nov 2026 (site pass L14): the package pages are built after the first replace
     for path, doc in PAGES.items():
         name = 'index.html' if path == '/' else path.strip('/') + '.html'
         os.makedirs(os.path.dirname(os.path.join(HERE, name)), exist_ok=True)
@@ -2111,11 +2113,49 @@ def main():
     _lm = _page_dates(PAGES)
     imports = '\n'.join(f"import P{i} from './{n}';" for i, n in enumerate(names.values()))
     table = ',\n'.join(f"  '{p}': P{i}" for i, p in enumerate(names))
+    # 9 Nov 2026 (site pass M10): llms.txt is built here from the division and desk lists (DESKS), so it names every live desk, and the worker
+    # serves the LLMS string from pages.js. The fixed sections below are the ones the worker used to carry, with "every live desk" for the tools.
+    import html as _lh
+    _ll = ['# Heuremen LLC', '',
+           "> Heuremen LLC measures published claims against the data behind them. Quantum hardware studies are recounted against IBM's published calibration (QIA). "
+           "Language-model evaluation studies are recounted from their own released files (IRIS). University AI policy documents are indexed against their own published numbers (OY). "
+           "Built infrastructure is mapped from public data, with a source for every dot (ATLAS). Vendor statements about AI hardware are held against published MLPerf® results "
+           "(the MODEL desk of HERMES). Every live desk is listed below with one line. Every row has a source. Data downloads are free.", '',
+           '## API and MCP',
+           '- [MCP server](https://indahl.ai/mcp): read-only tools over every live desk, for Claude and other agents. Add it as a remote MCP server at https://indahl.ai/mcp.',
+           '- [REST API](https://indahl.ai/api): the same tools as JSON at /api/v1, with an OpenAPI file at /api/openapi.json. Retrieval and answering are permitted, training is not.', '',
+           '## Divisions',
+           '- [QIA](https://indahl.ai/qia): IBM processors measured against their published calibration, the studies calibrated, and the List of every indexed study with its receipt.',
+           '- [IRIS](https://indahl.ai/iris): Recount Matrix for language models, live Faults and Guards runs on open models, and the List of indexed evaluation studies.',
+           '- [OY](https://indahl.ai/oy): Learning research, school AI policy and data, recounted with a source per row.',
+           '- [ATLAS](https://indahl.ai/atlas): Built infrastructure. A map of United States data centers from OpenStreetMap and Epoch AI, with a source and pull date for every dot.',
+           '- [HERMES](https://indahl.ai/hermes): Held Every Record, Measured Every Statement. The menu of every division and desk.',
+           '- [STACK](https://indahl.ai/stack): Every test side by side, live.', '',
+           '## Desks']
+    for _dv in ('/qia', '/iris', '/oy', '/atlas', '/hermes'):
+        _dd = [x for x in DESKS.get(_dv, []) if x[0] in PAGES]
+        if not _dd: continue
+        _ll.append('### ' + _DNAME.get(_dv, _dv.strip('/').upper()))
+        _ll += ['- [%s](https://indahl.ai%s): %s.' % (_lh.unescape(n), h, _lh.unescape(w).rstrip('.')) for h, n, w in _dd]
+    _ll += ['', '## Data', '- [Feed of new studies and bench rounds (Atom)](https://indahl.ai/feed.xml)', '- [QIA List (JSON)](https://indahl.ai/qia/list.json)', '- [IRIS List (JSON)](https://indahl.ai/iris/list.json)',
+            '- [MODEL claims (JSON)](https://indahl.ai/hermes/model/claims.json) and [per-accelerator results (CSV)](https://indahl.ai/hermes/model/accelerators.csv)', '- [Datasets on Hugging Face](https://huggingface.co/indahl)',
+            '- [QIA key (codes Q1 to Q23, F1 to F7)](https://indahl.ai/qia/key)', '- [IRIS key (codes L1 to L9)](https://indahl.ai/iris/key)', '',
+            '## Free downloads (each tested, with a TESTED.md inside)',
+            '- [QIA Research Package](https://indahl.ai/qia/package): for runs on IBM quantum hardware. Checks the calibration record a run depends on, before and after the run. The checker alone: pip install qia-check (https://pypi.org/project/qia-check/).',
+            '- [Darkwave Correction Kit](https://indahl.ai/darkwave/kit): measures the phase turn a mid-circuit readout gives untouched qubits on your own IBM account and adds the matching virtual-Z correction. Tested on ibm_kingston.',
+            '- [IRIS Research Package](https://indahl.ai/iris/package): for language-model evaluations. Reading sheets for parsers, flip counts between repeated runs, paired comparisons with four outcomes. The checker alone: pip install iris-check (https://pypi.org/project/iris-check/).',
+            '- [ATLAS Data Pack](https://indahl.ai/atlas/data-pack): every ATLAS dataset as JSON, CSV and GeoJSON with sources.',
+            '- [QIA List Pack](https://indahl.ai/qia/qia-list-pack.zip) and [IRIS List Pack](https://indahl.ai/iris/iris-list-pack.zip): every listed study as CSV, BibTeX and RIS.', '',
+            '## Research', '- [A Readout Is Not an Idle (paper, PDF)](https://heuremen.org/a-readout-is-not-an-idle.pdf)', '- [Faults (PDF)](https://heuremen.org/faults.pdf) and [Guards (PDF)](https://heuremen.org/guards.pdf)',
+            '- [Zenodo record](https://doi.org/10.5281/zenodo.23662284)', '- [heuremen.org](https://heuremen.org/)', '',
+            '## Usage', '- Free to read, download and cite with attribution. Text and data mining and use as AI training data are not permitted: https://indahl.ai/terms#ai-training', '',
+            '## Policies', '- [Privacy](https://indahl.ai/privacy), [Terms](https://indahl.ai/terms), [Security](https://indahl.ai/security), [Conflict of interest](https://indahl.ai/conflict-of-interest)', '']
+    _llms = '\n'.join(_ll)
     open(os.path.join(HERE, 'pages.js'), 'w').write(
         "// GENERATED by build_site.py -- do not edit. The indahl.ai pages the worker serves.\n" + imports +
-        "\nimport FEED_STATIC from './feed-entries.html';\nimport GATE_UI from './gate-ui.txt';\nimport CSS from './style.css';\nexport const PAGES = {\n" + table + "\n};\nexport const STYLE = CSS;\nexport const GATE_JS = GATE_UI;\nexport const FEED = FEED_STATIC;\nexport const NDA = { version: '" + NDA_VERSION + "' };\nexport const PRIVACY = { version: '" + PRIVACY_VERSION + "' };\nexport const BUILT = '" + __import__('datetime').date.today().isoformat() + "';\nexport const LASTMOD = " + __import__('json').dumps(_lm, separators=(',', ':')) + ";\nexport const OY_FILES = {};  // kids files held 25 Oct\n")
+        "\nimport FEED_STATIC from './feed-entries.html';\nimport GATE_UI from './gate-ui.txt';\nimport CSS from './style.css';\nexport const PAGES = {\n" + table + "\n};\nexport const STYLE = CSS;\nexport const GATE_JS = GATE_UI;\nexport const FEED = FEED_STATIC;\nexport const NDA = { version: '" + NDA_VERSION + "' };\nexport const PRIVACY = { version: '" + PRIVACY_VERSION + "' };\nexport const BUILT = '" + __import__('datetime').date.today().isoformat() + "';\nexport const LASTMOD = " + __import__('json').dumps(_lm, separators=(',', ':')) + ";\nexport const OY_FILES = {};  // kids files held 25 Oct\nexport const LLMS = " + __import__('json').dumps(_llms) + ";\n")
     import html as _hf
-    _fe = ''.join(f'<entry><id>tag:indahl.ai,2026:{_hf.escape(p)}</id><title>{_hf.escape(t)}</title><link href="https://indahl.ai{_hf.escape(p)}"/><updated>{_lm.get(p) or _lm.get('/')}</updated><summary>{_hf.escape(d)}</summary></entry>' for p, t, d in _FEED)
+    _fe = ''.join(f'<entry><id>tag:indahl.ai,2026:{_hf.escape(p)}</id><title>{_hf.escape(t.replace(' : ', ': '))}</title><link href="https://indahl.ai{_hf.escape(p)}"/><updated>{_lm.get(p) or _lm.get('/')}</updated><summary>{_hf.escape(d)}</summary></entry>' for p, t, d in _FEED)
     open(os.path.join(HERE, 'feed-entries.html'), 'w', encoding='utf-8').write(_fe)
     print('built', len(names), 'pages + style.css + pages.js')
 
