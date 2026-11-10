@@ -28,7 +28,7 @@ SRC = {
     'trials': ('url:/trials/live.json', 'TRIALS', '/trials'), 'airline': ('url:/airline/live.json', 'AIRLINE', '/airline'), 'airq': ('url:/airq/live.json', 'AIRQ', '/airq'),
     'ailuminate': ('url:/ailuminate/live.json', 'AILUMINATE', '/ailuminate'), 'secrecords': ('url:/secrecords/live.json', 'SECRECORDS', '/secrecords'),
     'hfsize': ('url:/hfsize/live.json', 'HFSIZE', '/hfsize'), 'hflicense': ('url:/hflicense/live.json', 'HFLICENSE', '/hflicense'),
-    'pkglicense': ('url:/pkglicense/live.json', 'PKGLICENSE', '/pkglicense'), 'wiki': ('url:/wiki/live.json', 'WIKI', '/wiki'),
+    'pkglicense': ('url:/pkglicense/live.json', 'PKGLICENSE', '/pkglicense'), 'wiki': ('url:/wiki/live.json', 'WIKI', '/wiki'), 'credit': ('file:credit_index/data/credit_live.json', 'CREDIT', '/credit'),
     'social_dsa': ('file:cloudflare-workers/heuremen-door/public/social/dsa.json', 'SOCIAL', '/social#social-dsa'),
     'social_tiktok': ('file:social_index/tiktok/summary_tiktok.json', 'SOCIAL', '/social#social-tiktok'),
     'social_bluesky': ('file:social_index/bluesky/summary_bluesky.json', 'SOCIAL', '/social#social-bluesky'),
@@ -458,9 +458,25 @@ def ex_ledger_social():
                          NONE, C('{0} {1:q}', ('l', lid, 'value'), ('l', lid, 'unit')), NONE, C('a count of rows on the desk'), read=C('{0}', ('lat', lid)), receipt=lid))
     return out
 
+def ex_credit():
+    k = 'credit'; d = snap(k); rd = _upd(k); out = []
+    if d is None: raise Miss('no snapshot credit')
+    for i, r in enumerate(d.get('ruler1', [])):
+        p = ('f', k, 'ruler1', i)
+        out.append(R(k, [('CFPB', 'statement')], 'Does the timely response share the CFPB prints match its own complaint database?', C('complaints received in {0:q}', p + ('year',)),
+                     C('printed: {0:q} of complaints sent to companies', p + ('printed',)), C('database: {0:pct} of {1} complaints', p + ('timely',), p + ('rows',)), C('{0:pct} to {1:pct}', p + ('lo',), p + ('hi',)),
+                     C('{0:out}', p + ('outcome',)), C('the printed figure counts every complaint sent, the database the published ones'), read=rd))
+    for i, c in enumerate(d.get('companies', [])):
+        if not c.get('bureau'): continue
+        p = ('f', k, 'companies', i)
+        out.append(R(k, [(c['company'], 'named')], 'How often is a company flagged not timely against the share the CFPB printed figure leaves?', C('complaints received in {0:q}', p + ('year',)),
+                     C('printed all-company figure leaves {0:pct} to {1:pct} not timely', p + ('band', 0), p + ('band', 1)), C('not timely: {0} of {1}', p + ('not_timely',), p + ('rows',)),
+                     C('{0:pct} to {1:pct}', p + ('lo',), p + ('hi',)), C('{0:out}', p + ('outcome',)), C('the printed figure is an all-company average, not a per-company limit'), read=rd))
+    return out
+
 EXTRACT = [ex_uptime, ex_time, ex_cada, ex_support, ex_change, ex_model, ex_model_live, ex_qia, ex_forecast, ex_water, ex_fedsep, ex_revise, ex_cadence,
            ex_trials, ex_airline, ex_airq, ex_ailuminate, ex_secrecords, lambda: ex_hf('hfsize', "Does the size in a model's name match the weights?"),
-           lambda: ex_hf('hflicense', 'Does the license tag of a model match its license file?'), ex_pkglicense, ex_wiki, ex_social_dsa, ex_social_tiktok, ex_social_bluesky, ex_ledger_social]
+           lambda: ex_hf('hflicense', 'Does the license tag of a model match its license file?'), ex_pkglicense, ex_wiki, ex_social_dsa, ex_social_tiktok, ex_social_bluesky, ex_ledger_social, ex_credit]
 
 
 # ---------------------------------------------------------------- build

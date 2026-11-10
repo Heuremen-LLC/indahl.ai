@@ -45,3 +45,22 @@ Public, documented cases where a school's submitted data was later found wrong a
 - US News content is copyrighted. The page quotes only the rank, the method and the specific figures checked, each with a link. No US News table is republished. Raw captures stay internal.
 - Every row has a respond link so the school or US News can answer.
 - A referee with its own code re-reads every figure from US News and the public sources before each ship.
+
+---
+## Addendum 1, 2026-11-10 (before any New Jersey figure is compared): New Jersey
+
+Lists, read 2026-11-10 in the owner's signed-in browser (raw/nj_*_20261110.txt):
+- Best High Schools in New Jersey (2026-2027), state ranks 1 to 10, with the national rank US News prints beside each.
+- Best Public Elementary Schools in New Jersey and Best Public Middle Schools in New Jersey (2027), state ranks 1 to 10.
+- Colleges: US News's New Jersey page (2027) shows schools by list, then rank. The first ten rows it shows are all National Universities. The New Jersey school ranked highest on each other list it shows (National Liberal Arts Colleges, Regional Universities North) is added. Every rank is printed with the list it comes from. Ranks from different lists are never compared.
+
+The source rule (owner's): for every indicator a list uses, name where its data comes from, and check the figure at that source.
+- "Where the data comes from" table for every list on the page: indicator, weight, source as US News names it, and whether that source is public. Surveys US News runs, models US News fits, and purchased or school-submitted data that is not published per school read "not public".
+- State test proficiency (NJ): New Jersey School Performance Reports (NJ SPR) and NJDOE assessment files, school year 2023-24 for high schools (US News names it). For elementary and middle schools the method page read names no test year, so each figure is read against 2023-24 and against 2024-25, scored CANNOT_TELL (year not printed), with both shown.
+- Who is in the proficiency figure: from NJ SPR and NJDOE files, for each school and subject: enrolled or eligible count, tested count, participation rate, and every count of students not tested or not in the proficiency figure that the state publishes, by reason as the state names it (for example not tested, alternate assessment DLM, first-year English learners, medical exemption). The share of enrolled students whose scores are not in the figure is computed as (eligible minus counted) over eligible and shown for all schools side by side. Only counts are shown. No reason is given for any count.
+- Subgroups: the subgroup proficiency and participation tables NJ SPR publishes for the same school and year, shown as published.
+- Instructional time: NJ SPR's own reported length of school day and instructional time, set against the school's or district's published bell schedule or calendar where public. Only stated figures, side by side.
+- Graduation, enrollment, lunch shares: NJ SPR and NCES CCD as in the plan.
+- Colleges: Common Data Set, IPEDS, and the indicator list US News names, as in the plan.
+- Rank claims: a public statement by a school or district about its US News rank (homepage, press release, board minutes) is quoted exactly, linked and dated, and set against the list: MATCH if the stated rank, list and edition equal what US News prints, MISMATCH if not (for example a state rank stated as a national rank), CANNOT_TELL if the statement names no edition or list.
+- Same rules otherwise: same rule for every school, no cause, no adjectives, counts not motives. Pages that refuse automated reads are logged in research/MANUAL_READS.md for the owner to open.

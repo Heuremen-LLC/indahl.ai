@@ -14,7 +14,8 @@ for l in D['lists']:
     rid = f"rank.list.{l['key']}"
     if l['scope'] == 'none' or rid not in rows: continue
     h = body.index(f'<h2>{l["title"].replace("&", "&amp;")}</h2>') if f'<h2>{l["title"]}</h2>' not in body else body.index(f'<h2>{l["title"]}</h2>')
-    tb = body[h:].split('<tbody>', 1)[1].split('</tbody>', 1)[0]
+    tbs = [t.split('</tbody>', 1)[0] for t in body[h:].split('<tbody>')[1:4]]
+    tb = next(t for t in tbs if 'respond?u=rank-' in t)   # the listing table carries the answer links, the sources table does not
     trs = re.findall(r'<tr>.*?</tr>', tb, flags=re.S)
     snips = [re.sub(r'\s*Respond$', '', norm(t)) for t in (trs[0], trs[-1])]
     for s_ in snips: assert s_ in nb, s_

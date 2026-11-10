@@ -46,6 +46,7 @@ for r in hs:
     r.update(grad=grad, college_readiness=cr, enrollment=enr, url=f'{US}/education/best-high-schools/{path}'); del r['extra']
 W = [('College Readiness', '30%'), ('College Curriculum Breadth', '10%'), ('State Assessment Proficiency', '20%'), ('State Assessment Performance', '20%'), ('Underserved Student Performance', '10%'), ('Graduation Rate', '10%')]
 check_weights('raw/hs_method_20261110.txt', W)
+HSW = list(W)
 L.append(dict(key='hs', title='Best High Schools', scope='national', edition='2026-2027', list_url=f'{US}/education/best-high-schools/national-rankings',
               method_url=f'{US}/education/best-high-schools/articles/how-us-news-calculated-the-rankings', weights=W, rows=tie_fix(hs), raw='raw/hs_national_20261110.txt',
               data_years='US News states that state assessment data are from 2023-2024, AP and IB data are for 2023-2024 12th graders, and graduation rates are for 2024 (2023 or 2022 where 2024 was not available).',
@@ -102,6 +103,37 @@ check_weights('raw/grad_method_20261110.txt', [('Median MCAT score', '13% in res
 L.append(dict(key='med', title='Best Medical Schools (Research)', scope='tiers', edition='2026', list_url=US + '/best-graduate-schools/top-medical-schools/research-rankings',
               method_url=f'{US}/education/best-graduate-schools/articles/medical-schools-methodology', weights=MW2,
               rows=[dict(rank=None, tie=False, name=n, place=medplaces[n]) for n in tier1], raw=G, quote='U.S. News uses evaluative tiers instead of traditional ordinal rankings', tier_def='Tier 1: Highest-performing (85th-99th percentile)'))
+
+# New Jersey (Addendum 1)
+def nj_rows(path, section=None):
+    out, on = [], section is None
+    for ln in open(path, encoding='utf-8'):
+        ln = ln.rstrip('\n')
+        if ln.startswith('== '): on = section is not None and section in ln; continue
+        if on and re.match(r'#\d+', ln): out.append(ln.split(';'))
+    return out
+hsr = []
+for p in nj_rows('raw/nj_hs_20261110.txt'):
+    if len(p) < 8: continue
+    hsr.append(dict(rank=int(p[0][1:]), tie=False, name=p[1], place=p[2], national=p[3], grad=p[4], college_readiness=p[5], enrollment=p[6],
+                    url=f'{US}/education/best-high-schools/new-jersey/districts/{p[7]}'))
+L.append(dict(key='nj_hs', title='Best High Schools in New Jersey', scope='state', edition='2026-2027', list_url=f'{US}/education/best-high-schools/new-jersey/rankings',
+              method_url=f'{US}/education/best-high-schools/articles/how-us-news-calculated-the-rankings', weights=HSW, rows=hsr, raw='raw/nj_hs_20261110.txt', nj=True,
+              data_years='US News states that state assessment data are from 2023-2024 and graduation rates are for students who entered ninth grade in 2020-21.'))
+for key, title, sec, url in (('nj_elem', 'Best Public Elementary Schools in New Jersey', 'elementary-schools/new-jersey', f'{US}/education/k12/elementary-schools/new-jersey'),
+                             ('nj_middle', 'Best Public Middle Schools in New Jersey', 'middle-schools/new-jersey', f'{US}/education/k12/middle-schools/new-jersey')):
+    rr = [dict(rank=int(p[0][1:]), tie=False, name=p[1], place=p[2], district=p[3], grades=p[4], enrollment=p[5], url=f'{US}/education/k12/new-jersey/{p[7]}') for p in nj_rows('raw/nj_k8_20261110.txt', sec)]
+    L.append(dict(key=key, title=title, scope='state', edition='2027', list_url=url, method_url=f'{US}/education/k12/articles/how-us-news-calculated-the-rankings', weights=KW, rows=rr, raw='raw/nj_k8_20261110.txt', nj=True))
+cr = []
+for p in nj_rows('raw/nj_colleges_20261110.txt'):
+    m = re.match(r'#(\d+)( \(tie\))?', p[0]); cr.append(dict(rank=int(m.group(1)), tie=bool(m.group(2)), name=p[1], place=p[2], list_name=p[3], url=f'{US}/best-colleges/{p[4]}'))
+nt = open('raw/nj_colleges_20261110.txt', encoding='utf-8').read()
+assert '#85 (tie) Drew University, National Liberal Arts Colleges' in nt and '#5 The College of New Jersey, Regional Universities North' in nt and 'Drew University / Madison, NJ' in nt and 'The College of New Jersey / Ewing, NJ' in nt
+cr.append(dict(rank=85, tie=True, name='Drew University', place='Madison, NJ', list_name='National Liberal Arts Colleges', url=f'{US}/best-colleges/drew-university-2603', other_list=True))
+cr.append(dict(rank=5, tie=False, name='The College of New Jersey', place='Ewing, NJ', list_name='Regional Universities North', url=f'{US}/best-colleges/the-college-of-new-jersey-2642', other_list=True))
+L.append(dict(key='nj_col', title='Best Colleges in New Jersey', scope='state page', edition='2027', list_url=f'{US}/best-colleges/nj',
+              method_url=f'{US}/education/best-colleges/articles/how-us-news-calculated-the-rankings', weights=[('Student outcomes', '52%'), ('Peer assessment', '20%'), ('Faculty resources', '11%'), ('Financial resources', '8%'), ('Standardized tests', '5%'), ('Faculty research', '4%')],
+              weights_note='Weights shown are the National Universities weights. National Liberal Arts Colleges and Regional Universities use 15 percent for faculty resources and no faculty research.', rows=cr, raw='raw/nj_colleges_20261110.txt', nj=True))
 
 for l in L:
     for r in l['rows']:

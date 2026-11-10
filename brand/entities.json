@@ -208,44 +208,6 @@
    ]
   },
   {
-   "slug": "aws",
-   "name": "Amazon Web Services",
-   "kind": "company",
-   "note": "Amazon Web Services, Inc. (AWS), a subsidiary of Amazon.com, Inc. Kept apart from the Amazon page, which holds the Amazon Store and Kindle rows.",
-   "aliases": [
-    {
-     "desk": "time",
-     "raw": "time.aws.com",
-     "decided": "the server is on an aws.com host name, run by AWS"
-    },
-    {
-     "desk": "support",
-     "raw": "amazon-neptune",
-     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
-    },
-    {
-     "desk": "support",
-     "raw": "amazon-rds-mysql",
-     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
-    },
-    {
-     "desk": "support",
-     "raw": "amazon-msk",
-     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
-    },
-    {
-     "desk": "support",
-     "raw": "amazon-elasticache-redis",
-     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
-    },
-    {
-     "desk": "pkglicense",
-     "raw": "aws",
-     "decided": "aws is the GitHub organisation of Amazon Web Services"
-    }
-   ]
-  },
-  {
    "slug": "amd",
    "name": "AMD",
    "kind": "company",
@@ -452,6 +414,44 @@
    ]
   },
   {
+   "slug": "aws",
+   "name": "Amazon Web Services",
+   "kind": "company",
+   "note": "Amazon Web Services, Inc. (AWS), a subsidiary of Amazon.com, Inc. Kept apart from the Amazon page, which holds the Amazon Store and Kindle rows.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.aws.com",
+     "decided": "the server is on an aws.com host name, run by AWS"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-neptune",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-rds-mysql",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-msk",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-elasticache-redis",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "pkglicense",
+     "raw": "aws",
+     "decided": "aws is the GitHub organisation of Amazon Web Services"
+    }
+   ]
+  },
+  {
    "slug": "axsome-therapeutics-inc",
    "name": "Axsome Therapeutics, Inc.",
    "kind": "company",
@@ -461,6 +461,19 @@
      "desk": "trials",
      "raw": "Axsome Therapeutics, Inc.|INDUSTRY",
      "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "aylo",
+   "name": "Pornhub",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Pornhub",
+     "decided": "the desk names the organisation itself"
     }
    ]
   },
@@ -792,6 +805,19 @@
    ]
   },
   {
+   "slug": "cdc",
+   "name": "Centers for Disease Control and Prevention",
+   "kind": "agency",
+   "note": "United States Department of Health and Human Services.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "CDC",
+     "decided": "CDC is the Centers for Disease Control and Prevention"
+    }
+   ]
+  },
+  {
    "slug": "cedars-sinai-medical-center",
    "name": "Cedars-Sinai Medical Center",
    "kind": "organisation",
@@ -814,37 +840,6 @@
      "desk": "trials",
      "raw": "Celgene|INDUSTRY",
      "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
-    }
-   ]
-  },
-  {
-   "slug": "cdc",
-   "name": "Centers for Disease Control and Prevention",
-   "kind": "agency",
-   "note": "United States Department of Health and Human Services.",
-   "aliases": [
-    {
-     "desk": "cadence",
-     "raw": "CDC",
-     "decided": "CDC is the Centers for Disease Control and Prevention"
-    }
-   ]
-  },
-  {
-   "slug": "cms",
-   "name": "Centers for Medicare & Medicaid Services",
-   "kind": "agency",
-   "note": "United States Department of Health and Human Services. CMS runs HealthCare.gov, and that portal is listed here and named on its row.",
-   "aliases": [
-    {
-     "desk": "cadence",
-     "raw": "CMS",
-     "decided": "CMS is the Centers for Medicare & Medicaid Services"
-    },
-    {
-     "desk": "cadence",
-     "raw": "HealthCare.gov",
-     "decided": "HealthCare.gov is run by CMS"
     }
    ]
   },
@@ -934,6 +929,24 @@
    ]
   },
   {
+   "slug": "cms",
+   "name": "Centers for Medicare & Medicaid Services",
+   "kind": "agency",
+   "note": "United States Department of Health and Human Services. CMS runs HealthCare.gov, and that portal is listed here and named on its row.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "CMS",
+     "decided": "CMS is the Centers for Medicare & Medicaid Services"
+    },
+    {
+     "desk": "cadence",
+     "raw": "HealthCare.gov",
+     "decided": "HealthCare.gov is run by CMS"
+    }
+   ]
+  },
+  {
    "slug": "colgate-palmolive",
    "name": "Colgate Palmolive",
    "kind": "company",
@@ -956,6 +969,19 @@
      "desk": "trials",
      "raw": "Columbia University|OTHER",
      "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "consumer-financial-protection-bureau",
+   "name": "Consumer Financial Protection Bureau",
+   "kind": "agency",
+   "note": "The agency that prints the figure.",
+   "aliases": [
+    {
+     "desk": "credit",
+     "raw": "CFPB",
+     "decided": "the CFPB, whose annual report prints the figure"
     }
    ]
   },
@@ -1021,19 +1047,6 @@
      "desk": "model",
      "raw": "Crusoe",
      "decided": "the desk names the organisation itself (vendor of the source)"
-    }
-   ]
-  },
-  {
-   "slug": "npl-india",
-   "name": "CSIR-National Physical Laboratory (India)",
-   "kind": "agency",
-   "note": "Kept apart from the National Physical Laboratory, UK, a separate body with the same name.",
-   "aliases": [
-    {
-     "desk": "time",
-     "raw": "time.nplindia.org",
-     "decided": "the server host name belongs to CSIR-National Physical Laboratory (India)"
     }
    ]
   },
@@ -1152,58 +1165,6 @@
    ]
   },
   {
-   "slug": "doe",
-   "name": "Department of Energy",
-   "kind": "agency",
-   "note": "",
-   "aliases": [
-    {
-     "desk": "cadence",
-     "raw": "Energy",
-     "decided": "the Energy portal is the Department of Energy data portal"
-    }
-   ]
-  },
-  {
-   "slug": "hhs",
-   "name": "Department of Health and Human Services",
-   "kind": "agency",
-   "note": "Kept apart from CMS and CDC, which have their own pages.",
-   "aliases": [
-    {
-     "desk": "cadence",
-     "raw": "HealthData.gov",
-     "decided": "HealthData.gov is the HHS data portal"
-    }
-   ]
-  },
-  {
-   "slug": "dol",
-   "name": "Department of Labor",
-   "kind": "agency",
-   "note": "Kept apart from the Bureau of Labor Statistics, which has its own page.",
-   "aliases": [
-    {
-     "desk": "cadence",
-     "raw": "Labor",
-     "decided": "the Labor portal is the Department of Labor data portal"
-    }
-   ]
-  },
-  {
-   "slug": "va",
-   "name": "Department of Veterans Affairs",
-   "kind": "agency",
-   "note": "",
-   "aliases": [
-    {
-     "desk": "cadence",
-     "raw": "Veterans Affairs",
-     "decided": "the desk names the organisation itself"
-    }
-   ]
-  },
-  {
    "slug": "digitalocean",
    "name": "DigitalOcean",
    "kind": "company",
@@ -1257,6 +1218,32 @@
      "desk": "uptime",
      "raw": "Docker",
      "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "doe",
+   "name": "Department of Energy",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "Energy",
+     "decided": "the Energy portal is the Department of Energy data portal"
+    }
+   ]
+  },
+  {
+   "slug": "dol",
+   "name": "Department of Labor",
+   "kind": "agency",
+   "note": "Kept apart from the Bureau of Labor Statistics, which has its own page.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "Labor",
+     "decided": "the Labor portal is the Department of Labor data portal"
     }
    ]
   },
@@ -1378,19 +1365,6 @@
    ]
   },
   {
-   "slug": "epa",
-   "name": "Environmental Protection Agency",
-   "kind": "agency",
-   "note": "United States Environmental Protection Agency.",
-   "aliases": [
-    {
-     "desk": "airq",
-     "raw": "EPA",
-     "decided": "the desk names the organisation itself (its performance targets and regulatory monitors)"
-    }
-   ]
-  },
-  {
    "slug": "envoy-air",
    "name": "Envoy Air",
    "kind": "company",
@@ -1404,6 +1378,32 @@
    ]
   },
   {
+   "slug": "epa",
+   "name": "Environmental Protection Agency",
+   "kind": "agency",
+   "note": "United States Environmental Protection Agency.",
+   "aliases": [
+    {
+     "desk": "airq",
+     "raw": "EPA",
+     "decided": "the desk names the organisation itself (its performance targets and regulatory monitors)"
+    }
+   ]
+  },
+  {
+   "slug": "equifax",
+   "name": "Equifax",
+   "kind": "company",
+   "note": "Company name as the CFPB complaint database gives it. Other names in the same group are not merged.",
+   "aliases": [
+    {
+     "desk": "credit",
+     "raw": "EQUIFAX, INC.",
+     "decided": "the Company value exactly as the CFPB complaint database gives it"
+    }
+   ]
+  },
+  {
    "slug": "etsy",
    "name": "Etsy",
    "kind": "company",
@@ -1413,6 +1413,19 @@
      "desk": "secrecords",
      "raw": "etsy.com",
      "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "experian",
+   "name": "Experian",
+   "kind": "company",
+   "note": "Company name as the CFPB complaint database gives it. Other names in the same group are not merged.",
+   "aliases": [
+    {
+     "desk": "credit",
+     "raw": "Experian Information Solutions Inc.",
+     "decided": "the Company value exactly as the CFPB complaint database gives it"
     }
    ]
   },
@@ -1678,6 +1691,19 @@
      "desk": "trials",
      "raw": "Henry Ford Health System|OTHER",
      "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "hhs",
+   "name": "Department of Health and Human Services",
+   "kind": "agency",
+   "note": "Kept apart from CMS and CDC, which have their own pages.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "HealthData.gov",
+     "decided": "HealthData.gov is the HHS data portal"
     }
    ]
   },
@@ -2515,19 +2541,6 @@
    ]
   },
   {
-   "slug": "npl-uk",
-   "name": "National Physical Laboratory (UK)",
-   "kind": "agency",
-   "note": "Kept apart from CSIR-National Physical Laboratory, India, a separate body with the same name.",
-   "aliases": [
-    {
-     "desk": "time",
-     "raw": "ntp1.npl.co.uk",
-     "decided": "the server host name belongs to National Physical Laboratory (UK)"
-    }
-   ]
-  },
-  {
    "slug": "national-weather-service",
    "name": "National Weather Service",
    "kind": "agency",
@@ -2739,6 +2752,32 @@
      "desk": "trials",
      "raw": "Novo Nordisk A/S|INDUSTRY",
      "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "npl-india",
+   "name": "CSIR-National Physical Laboratory (India)",
+   "kind": "agency",
+   "note": "Kept apart from the National Physical Laboratory, UK, a separate body with the same name.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.nplindia.org",
+     "decided": "the server host name belongs to CSIR-National Physical Laboratory (India)"
+    }
+   ]
+  },
+  {
+   "slug": "npl-uk",
+   "name": "National Physical Laboratory (UK)",
+   "kind": "agency",
+   "note": "Kept apart from CSIR-National Physical Laboratory, India, a separate body with the same name.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp1.npl.co.uk",
+     "decided": "the server host name belongs to National Physical Laboratory (UK)"
     }
    ]
   },
@@ -3019,19 +3058,6 @@
     {
      "desk": "social_dsa",
      "raw": "Pinterest",
-     "decided": "the desk names the organisation itself"
-    }
-   ]
-  },
-  {
-   "slug": "aylo",
-   "name": "Pornhub",
-   "kind": "company",
-   "note": "",
-   "aliases": [
-    {
-     "desk": "social_dsa",
-     "raw": "Pornhub",
      "decided": "the desk names the organisation itself"
     }
    ]
@@ -3709,6 +3735,19 @@
    ]
   },
   {
+   "slug": "transunion",
+   "name": "TransUnion",
+   "kind": "company",
+   "note": "Company name as the CFPB complaint database gives it. Other names in the same group are not merged.",
+   "aliases": [
+    {
+     "desk": "credit",
+     "raw": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+     "decided": "the Company value exactly as the CFPB complaint database gives it"
+    }
+   ]
+  },
+  {
    "slug": "trend-micro",
    "name": "Trend Micro",
    "kind": "company",
@@ -3744,37 +3783,6 @@
      "desk": "uptime",
      "raw": "Twilio",
      "decided": "the desk names the organisation itself (its own status page)"
-    }
-   ]
-  },
-  {
-   "slug": "usgs",
-   "name": "U.S. Geological Survey",
-   "kind": "agency",
-   "note": "United States Department of the Interior.",
-   "aliases": [
-    {
-     "desk": "water",
-     "raw": "USGS",
-     "decided": "the desk names the organisation itself (provisional gauge data)"
-    }
-   ]
-  },
-  {
-   "slug": "usno",
-   "name": "U.S. Naval Observatory",
-   "kind": "agency",
-   "note": "",
-   "aliases": [
-    {
-     "desk": "time",
-     "raw": "tick.usno.navy.mil",
-     "decided": "the server host name belongs to U.S. Naval Observatory"
-    },
-    {
-     "desk": "time",
-     "raw": "tock.usno.navy.mil",
-     "decided": "the server host name belongs to U.S. Naval Observatory"
     }
    ]
   },
@@ -4260,6 +4268,50 @@
    ]
   },
   {
+   "slug": "usgs",
+   "name": "U.S. Geological Survey",
+   "kind": "agency",
+   "note": "United States Department of the Interior.",
+   "aliases": [
+    {
+     "desk": "water",
+     "raw": "USGS",
+     "decided": "the desk names the organisation itself (provisional gauge data)"
+    }
+   ]
+  },
+  {
+   "slug": "usno",
+   "name": "U.S. Naval Observatory",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "tick.usno.navy.mil",
+     "decided": "the server host name belongs to U.S. Naval Observatory"
+    },
+    {
+     "desk": "time",
+     "raw": "tock.usno.navy.mil",
+     "decided": "the server host name belongs to U.S. Naval Observatory"
+    }
+   ]
+  },
+  {
+   "slug": "va",
+   "name": "Department of Veterans Affairs",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "Veterans Affairs",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
    "slug": "va-office-of-research-and-development",
    "name": "VA Office of Research and Development",
    "kind": "agency",
@@ -4403,6 +4455,19 @@
    ]
   },
   {
+   "slug": "who",
+   "name": "World Health Organization",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "who.int",
+     "decided": "who.int is the WHO domain"
+    }
+   ]
+  },
+  {
    "slug": "wikimedia-foundation",
    "name": "Wikimedia Foundation",
    "kind": "nonprofit",
@@ -4466,19 +4531,6 @@
      "desk": "wiki",
      "raw": "World Bank",
      "decided": "the desk names the organisation itself"
-    }
-   ]
-  },
-  {
-   "slug": "who",
-   "name": "World Health Organization",
-   "kind": "agency",
-   "note": "",
-   "aliases": [
-    {
-     "desk": "secrecords",
-     "raw": "who.int",
-     "decided": "who.int is the WHO domain"
     }
    ]
   },

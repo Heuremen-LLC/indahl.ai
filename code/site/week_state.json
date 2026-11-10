@@ -201,6 +201,11 @@
    "Stated tornado chances and warning goals against the tornadoes that came"
   ],
   [
+   "/credit",
+   "CREDIT",
+   "Stated complaint responses and card terms against the public record"
+  ],
+  [
    "/launch",
    "LAUNCH",
    "Stated launch time against the time it flew"
@@ -260,6 +265,7 @@
   "/campus": "2026-10-29T18:28:01Z",
   "/change": "2026-10-29T11:12:43Z",
   "/cone": "2026-11-10T15:50:55Z",
+  "/credit": "2026-11-10T18:12:46Z",
   "/fedsep": "2026-10-29T12:56:10Z",
   "/flu": "2026-11-10T15:50:55Z",
   "/forecast": "2026-10-28T23:43:20Z",

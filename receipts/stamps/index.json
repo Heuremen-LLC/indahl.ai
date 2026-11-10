@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-10T16:43:30Z",
+ "built_utc": "2026-11-10T17:29:14Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 67,
+   "commit": "90a9bfc1ec6fb6ccba20c745b4a09bc8b253b3e7",
+   "files": 5096,
+   "id": "90a9bfc1ec6f",
+   "json": "/receipts/stamps/release_90a9bfc1ec6f.json",
+   "ledger_sha256": "2157556c871a007672cbab9a585168cc45c45100f6bc6d1151de3bb93c038e42",
+   "manifest_sha256": "5a3b41e2e408b381441c12037d00c734be9edbf5771011ebc26bc73fbdaf47a2",
+   "ots": "/receipts/stamps/release_90a9bfc1ec6f.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T16:53:42Z",
+   "sha256": "476ad6e34f12c211e013595a54a2dd5d587499101999351c190f11bdb6f1a7a1",
+   "wayback": [],
+   "wayback_waiting": 65
+  },
   {
    "changed": 43,
    "commit": "5afc6e90b578c8f1413c7c00dc3b7c7171bb7738",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-10T16:43:28Z",
    "sha256": "8ea33eceb27411d55edddd26de6604437f817a725c9277ba93d7b3213b858aeb",
    "wayback": [],
-   "wayback_waiting": 42
+   "wayback_waiting": 7
   },
   {
    "changed": 35,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-10T16:39:59Z",
    "sha256": "3c5fcd2e8edd26c090b985842325fe894355056d0b4e7e380b03bcfbad997d22",
    "wayback": [],
-   "wayback_waiting": 29
+   "wayback_waiting": 22
   },
   {
    "changed": 75,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-10T16:37:51Z",
    "sha256": "81417f2e72326fa489a8e8af930469d7a47928053dff6256e4d7053cd543fa8e",
    "wayback": [],
-   "wayback_waiting": 44
+   "wayback_waiting": 43
   },
   {
    "changed": 815,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-10T16:35:44Z",
    "sha256": "406b9d743b79fd198bb780557ad5417658c285018468c71bfe29a4ced738c95a",
    "wayback": [],
-   "wayback_waiting": 775
+   "wayback_waiting": 767
   },
   {
    "changed": 47,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-10T16:29:38Z",
    "sha256": "1fdef256f7b88cd619928b8bfff21b613a5e796b5e66afa3b90ec1443209a7c3",
    "wayback": [],
-   "wayback_waiting": 9
+   "wayback_waiting": 7
   },
   {
    "changed": 1017,
@@ -105,7 +120,7 @@
    "released_at": "2026-11-10T16:27:19Z",
    "sha256": "21eb48158d64d7c494e903771f56a5322f1cdd25f261d750190f7377b3963170",
    "wayback": [],
-   "wayback_waiting": 208
+   "wayback_waiting": 191
   },
   {
    "changed": 46,
@@ -180,7 +195,7 @@
    "released_at": "2026-11-10T16:16:22Z",
    "sha256": "bd8f6b5200a361c22f1ffc513987d1f1cbcab1c3f6b9f73f1557cb37c35a2582",
    "wayback": [],
-   "wayback_waiting": 29
+   "wayback_waiting": 28
   },
   {
    "changed": 14,
@@ -392,7 +407,7 @@
    "ledger_sha256": "86ec4bd1e077f989a67dc8a93ead5b7e0a3fd308147482ace4404202a077b9ac",
    "manifest_sha256": "99682dd40baa81ef7d485e9a9019cb473043cb1d938529455e7c2f0c5c2cadaf",
    "ots": "/receipts/stamps/release_0ec7c2c9f738.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975319",
    "released_at": "2026-11-10T15:45:00Z",
    "sha256": "c6bc80c4073dde94914cc569fbf12d20abf9bc82cf697cd3ad569858aa8922a7",
    "wayback": [],
@@ -407,7 +422,7 @@
    "ledger_sha256": "86ec4bd1e077f989a67dc8a93ead5b7e0a3fd308147482ace4404202a077b9ac",
    "manifest_sha256": "c87a82142dcf04703e81bfd0062dc871c6d89b99353e66cfa8c724ba1257829a",
    "ots": "/receipts/stamps/release_2b39aed52b00.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975319",
    "released_at": "2026-11-10T15:41:43Z",
    "sha256": "f6998b3ae8fc4f9f40b42e9d57cee6f4ab93efe226b0bcfdb99702edf873866e",
    "wayback": [
@@ -483,7 +498,7 @@
    "ledger_sha256": "d7dc4068487767836d5c73b069297d448d737f7bf221ee09964178877edaa902",
    "manifest_sha256": "82ac3d6be765b76c0f6865dc57598f77273bf60f7707a0b9f24589caa9695526",
    "ots": "/receipts/stamps/release_3a7b7d84d550.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975319",
    "released_at": "2026-11-10T15:04:31Z",
    "sha256": "2fb6130371d3df2989c566c5b011dde98d36270231b75f2fdd320d4b9de605ba",
    "wayback": [

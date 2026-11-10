@@ -315,6 +315,12 @@
 "trials"
 ]
 ],
+"consumer-financial-protection-bureau": [
+"Consumer Financial Protection Bureau",
+[
+"credit"
+]
+],
 "coopervision-inc": [
 "CooperVision, Inc.",
 [
@@ -435,10 +441,22 @@
 "airq"
 ]
 ],
+"equifax": [
+"Equifax",
+[
+"credit"
+]
+],
 "etsy": [
 "Etsy",
 [
 "secrecords"
+]
+],
+"experian": [
+"Experian",
+[
+"credit"
 ]
 ],
 "federal-reserve": [
@@ -1133,6 +1151,12 @@
 "trials"
 ]
 ],
+"transunion": [
+"TransUnion",
+[
+"credit"
+]
+],
 "trend-micro": [
 "Trend Micro",
 [
@@ -1486,6 +1510,10 @@
 "cone": [
 "CONE",
 "When the National Hurricane Center draws a cone, how often does the storm stay inside it?"
+],
+"credit": [
+"CREDIT",
+"When the CFPB states how companies answer complaints, what does its own database show?"
 ],
 "fedsep": [
 "FEDSEP",

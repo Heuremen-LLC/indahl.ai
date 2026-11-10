@@ -667,6 +667,19 @@
 /r/copygap.kingston_bell_repeat	2026-10-25
 /r/copygap.marrakesh_1of39	2026-10-22
 /r/copygap.pairs_fez_39m1	2026-10-25
+/r/credit.bureau.equifax.2025	2026-11-10
+/r/credit.bureau.experian.2025	2026-11-10
+/r/credit.bureau.transunion.2025	2026-11-10
+/r/credit.companies.2025	2026-11-10
+/r/credit.compfam.2025	2026-11-10
+/r/credit.fcra30	2026-11-10
+/r/credit.sent.2025	2026-11-10
+/r/credit.tccp.2025h2	2026-11-10
+/r/credit.timely.2021	2026-11-10
+/r/credit.timely.2022	2026-11-10
+/r/credit.timely.2023	2026-11-10
+/r/credit.timely.2024	2026-11-10
+/r/credit.timely.2025	2026-11-10
 /r/darkwave.kit.v10.r1	2026-11-01
 /r/darkwave.kit.v10.r2b	2026-11-01
 /r/darkwave.kit.v11.r1	2026-11-01
@@ -1350,6 +1363,7 @@
 /r/now.manifold.n	2026-11-10
 /r/now.manifold.skill	2026-11-10
 /r/now.resolved	2026-11-10
+/r/oy.bacc_guidance_49	2026-11-10
 /r/oy.bastani	2026-10-30
 /r/oy.chatbot_cited_8	2026-10-29
 /r/oy.clarkson	2026-10-25
@@ -3340,6 +3354,7 @@
 /r/desk/campus	2026-11-10
 /r/desk/change	2026-11-10
 /r/desk/cone	2026-11-10
+/r/desk/credit	2026-11-10
 /r/desk/darkwave	2026-11-09
 /r/desk/faults-guards	2026-11-08
 /r/desk/fedsep	2026-11-10
