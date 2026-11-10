@@ -287,4 +287,11 @@ main .su{margin:14px 0 10px;border-bottom:0;border-top:1px solid var(--rule);pad
 main .su .btn{background:var(--ink);color:var(--paper)}.su-list{list-style:none;padding:0;margin:6px 0 12px}.su-list li{margin:6px 0;line-height:1.4}.su-list input{vertical-align:-2px;margin:0 4px 0 0}
 @media (max-width:520px){.su-c{flex-direction:column;gap:0}.su-c label{font-size:14px;padding:5px 0}}
 
+.np{margin:14px 0 6px}.np .btn{border:0;cursor:pointer;font-size:12px}.np-msg{display:block;font-size:14px;color:var(--mid);margin-top:6px}.np-msg:empty{display:none}
+.nt-list{list-style:none;padding:0;margin:6px 0 12px}.nt-list li{margin:5px 0;line-height:1.4}.nt-cols{columns:2 260px;column-gap:28px}.nt-cols li{break-inside:avoid}
+.whform input[type=url]{font:inherit;font-size:15px;padding:7px 9px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);width:100%;max-width:560px;box-sizing:border-box}
+.whform .btn{border:0;cursor:pointer;margin-top:6px}.whform label.lbl{display:block;font-weight:600;margin:8px 0 4px}
+.legal pre{background:var(--paper2);border:1px solid var(--rule);padding:10px 12px;overflow-x:auto;font-size:13px;line-height:1.45;max-width:100%}
+code.whsec{word-break:break-all;font-size:14px}.cl-day{margin:0 0 6px}.cl-row{margin:3px 0;font-size:14.5px;line-height:1.45}.cl-tag{font-size:12px;font-family:Cinzel,Georgia,serif;letter-spacing:.06em;margin-right:6px}
+
 .week ul.wk{padding-left:18px}.week ul.wk li{margin:6px 0;line-height:1.45}.wkt{color:var(--mid);font-size:14px;white-space:nowrap}.wkr{font-size:14px;margin-left:8px}

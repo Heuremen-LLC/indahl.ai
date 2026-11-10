@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Heuremen LLC//indahl.ai calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:indahl.ai SEASONAL: source release dates
+X-WR-CALDESC:Release dates the source of the SEASONAL desk publishes\, as s
+ tated on its schedule page.
+X-WR-TIMEZONE:UTC
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:cpc-long-lead-20261119@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:NOAA CPC long-lead seasonal outlook release: December 2026 forecast
+ \, seasons DJF 2026 to DJF 2027
+DESCRIPTION:CPC states the forecast is generally released around 8:30 AM Ea
+ stern Time on the scheduled date\, on the third Thursday of the month. CPC
+  says its 2027 schedule will be released on or about 2 December 2026. Sche
+ dule as published at https://www.cpc.ncep.noaa.gov/products/predictions/sc
+ hedule.php (read 10 November 2026). The SEASONAL desk on indahl.ai: https:
+ //indahl.ai/seasonal
+URL:https://www.cpc.ncep.noaa.gov/products/predictions/schedule.php
+CATEGORIES:SEASONAL
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cpc-long-lead-20261217@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+SUMMARY:NOAA CPC long-lead seasonal outlook release: January 2027 forecast\
+ , seasons JFM 2027 to JFM 2028
+DESCRIPTION:CPC states the forecast is generally released around 8:30 AM Ea
+ stern Time on the scheduled date\, on the third Thursday of the month. CPC
+  says its 2027 schedule will be released on or about 2 December 2026. Sche
+ dule as published at https://www.cpc.ncep.noaa.gov/products/predictions/sc
+ hedule.php (read 10 November 2026). The SEASONAL desk on indahl.ai: https:
+ //indahl.ai/seasonal
+URL:https://www.cpc.ncep.noaa.gov/products/predictions/schedule.php
+CATEGORIES:SEASONAL
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

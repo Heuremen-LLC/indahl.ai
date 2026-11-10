@@ -1,0 +1,379 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Heuremen LLC//indahl.ai calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:indahl.ai schedules
+X-WR-CALDESC:The Heuremen LLC weekly newsletter and the release dates the s
+ ources of the indahl.ai desks publish. Each event links its source schedul
+ e.
+X-WR-TIMEZONE:UTC
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:newsletter-weekly@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+RRULE:FREQ=WEEKLY;BYDAY=TU
+SUMMARY:Heuremen LLC weekly newsletter
+DESCRIPTION:The Heuremen LLC weekly newsletter goes out every Tuesday. Ever
+ y issue is kept at https://indahl.ai/newsletter. Sign up with the form at 
+ the foot of any page on indahl.ai.
+URL:https://indahl.ai/newsletter
+CATEGORIES:Heuremen LLC
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20261208@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+SUMMARY:EIA Short-Term Energy Outlook release: December 2026 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270112@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270112
+DTEND;VALUE=DATE:20270113
+SUMMARY:EIA Short-Term Energy Outlook release: January 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270209@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270209
+DTEND;VALUE=DATE:20270210
+SUMMARY:EIA Short-Term Energy Outlook release: February 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270309@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270309
+DTEND;VALUE=DATE:20270310
+SUMMARY:EIA Short-Term Energy Outlook release: March 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270406@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+SUMMARY:EIA Short-Term Energy Outlook release: April 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270511@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270511
+DTEND;VALUE=DATE:20270512
+SUMMARY:EIA Short-Term Energy Outlook release: May 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270608@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270609
+SUMMARY:EIA Short-Term Energy Outlook release: June 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270707@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270707
+DTEND;VALUE=DATE:20270708
+SUMMARY:EIA Short-Term Energy Outlook release: July 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270810@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270810
+DTEND;VALUE=DATE:20270811
+SUMMARY:EIA Short-Term Energy Outlook release: August 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270908@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270908
+DTEND;VALUE=DATE:20270909
+SUMMARY:EIA Short-Term Energy Outlook release: September 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20271013@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271013
+DTEND;VALUE=DATE:20271014
+SUMMARY:EIA Short-Term Energy Outlook release: October 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20271109@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271109
+DTEND;VALUE=DATE:20271110
+SUMMARY:EIA Short-Term Energy Outlook release: November 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20271207@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271207
+DTEND;VALUE=DATE:20271208
+SUMMARY:EIA Short-Term Energy Outlook release: December 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cpc-long-lead-20261119@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:NOAA CPC long-lead seasonal outlook release: December 2026 forecast
+ \, seasons DJF 2026 to DJF 2027
+DESCRIPTION:CPC states the forecast is generally released around 8:30 AM Ea
+ stern Time on the scheduled date\, on the third Thursday of the month. CPC
+  says its 2027 schedule will be released on or about 2 December 2026. Sche
+ dule as published at https://www.cpc.ncep.noaa.gov/products/predictions/sc
+ hedule.php (read 10 November 2026). The SEASONAL desk on indahl.ai: https:
+ //indahl.ai/seasonal
+URL:https://www.cpc.ncep.noaa.gov/products/predictions/schedule.php
+CATEGORIES:SEASONAL
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cpc-long-lead-20261217@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+SUMMARY:NOAA CPC long-lead seasonal outlook release: January 2027 forecast\
+ , seasons JFM 2027 to JFM 2028
+DESCRIPTION:CPC states the forecast is generally released around 8:30 AM Ea
+ stern Time on the scheduled date\, on the third Thursday of the month. CPC
+  says its 2027 schedule will be released on or about 2 December 2026. Sche
+ dule as published at https://www.cpc.ncep.noaa.gov/products/predictions/sc
+ hedule.php (read 10 November 2026). The SEASONAL desk on indahl.ai: https:
+ //indahl.ai/seasonal
+URL:https://www.cpc.ncep.noaa.gov/products/predictions/schedule.php
+CATEGORIES:SEASONAL
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nhc-season-20261130@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:NHC hurricane season: Atlantic and eastern Pacific seasons end
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nhc-season-20270515@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:NHC hurricane season: Eastern Pacific season begins
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nhc-season-20270601@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270601
+DTEND;VALUE=DATE:20270602
+SUMMARY:NHC hurricane season: Atlantic season begins
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nhc-season-20271130@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271130
+DTEND;VALUE=DATE:20271201
+SUMMARY:NHC hurricane season: Atlantic and eastern Pacific seasons end
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20261208@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261210
+SUMMARY:FOMC meeting with a Summary of Economic Projections: December 2026 
+ meeting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20270316@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270316
+DTEND;VALUE=DATE:20270318
+SUMMARY:FOMC meeting with a Summary of Economic Projections: March 2027 mee
+ ting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20270608@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270610
+SUMMARY:FOMC meeting with a Summary of Economic Projections: June 2027 meet
+ ing
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20270914@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270914
+DTEND;VALUE=DATE:20270916
+SUMMARY:FOMC meeting with a Summary of Economic Projections: September 2027
+  meeting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20271207@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271207
+DTEND;VALUE=DATE:20271209
+SUMMARY:FOMC meeting with a Summary of Economic Projections: December 2027 
+ meeting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

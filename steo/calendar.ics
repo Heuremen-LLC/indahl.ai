@@ -1,0 +1,194 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Heuremen LLC//indahl.ai calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:indahl.ai STEO: source release dates
+X-WR-CALDESC:Release dates the source of the STEO desk publishes\, as state
+ d on its schedule page.
+X-WR-TIMEZONE:UTC
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:eia-steo-20261208@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+SUMMARY:EIA Short-Term Energy Outlook release: December 2026 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270112@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270112
+DTEND;VALUE=DATE:20270113
+SUMMARY:EIA Short-Term Energy Outlook release: January 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270209@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270209
+DTEND;VALUE=DATE:20270210
+SUMMARY:EIA Short-Term Energy Outlook release: February 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270309@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270309
+DTEND;VALUE=DATE:20270310
+SUMMARY:EIA Short-Term Energy Outlook release: March 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270406@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+SUMMARY:EIA Short-Term Energy Outlook release: April 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270511@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270511
+DTEND;VALUE=DATE:20270512
+SUMMARY:EIA Short-Term Energy Outlook release: May 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270608@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270609
+SUMMARY:EIA Short-Term Energy Outlook release: June 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270707@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270707
+DTEND;VALUE=DATE:20270708
+SUMMARY:EIA Short-Term Energy Outlook release: July 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270810@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270810
+DTEND;VALUE=DATE:20270811
+SUMMARY:EIA Short-Term Energy Outlook release: August 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20270908@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270908
+DTEND;VALUE=DATE:20270909
+SUMMARY:EIA Short-Term Energy Outlook release: September 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20271013@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271013
+DTEND;VALUE=DATE:20271014
+SUMMARY:EIA Short-Term Energy Outlook release: October 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20271109@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271109
+DTEND;VALUE=DATE:20271110
+SUMMARY:EIA Short-Term Energy Outlook release: November 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eia-steo-20271207@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271207
+DTEND;VALUE=DATE:20271208
+SUMMARY:EIA Short-Term Energy Outlook release: December 2027 issue
+DESCRIPTION:EIA states the STEO is normally released between 12:00 pm and 1
+ 2:15 pm Eastern Time on the release date. Schedule as published at https:/
+ /www.eia.gov/outlooks/steo/release_schedule.php (read 10 November 2026). T
+ he STEO desk on indahl.ai: https://indahl.ai/steo
+URL:https://www.eia.gov/outlooks/steo/release_schedule.php
+CATEGORIES:STEO
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

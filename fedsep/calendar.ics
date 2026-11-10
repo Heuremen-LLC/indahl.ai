@@ -1,0 +1,92 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Heuremen LLC//indahl.ai calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:indahl.ai FEDSEP: source release dates
+X-WR-CALDESC:Release dates the source of the FEDSEP desk publishes\, as sta
+ ted on its schedule page.
+X-WR-TIMEZONE:UTC
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:fomc-sep-20261208@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261210
+SUMMARY:FOMC meeting with a Summary of Economic Projections: December 2026 
+ meeting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20270316@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270316
+DTEND;VALUE=DATE:20270318
+SUMMARY:FOMC meeting with a Summary of Economic Projections: March 2027 mee
+ ting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20270608@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270610
+SUMMARY:FOMC meeting with a Summary of Economic Projections: June 2027 meet
+ ing
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20270914@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270914
+DTEND;VALUE=DATE:20270916
+SUMMARY:FOMC meeting with a Summary of Economic Projections: September 2027
+  meeting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fomc-sep-20271207@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271207
+DTEND;VALUE=DATE:20271209
+SUMMARY:FOMC meeting with a Summary of Economic Projections: December 2027 
+ meeting
+DESCRIPTION:The Federal Reserve marks these meetings as associated with a S
+ ummary of Economic Projections and states that each meeting date is tentat
+ ive until confirmed at the meeting before it. Schedule as published at htt
+ ps://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (read 10 Nove
+ mber 2026). The FEDSEP desk on indahl.ai: https://indahl.ai/fedsep
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CATEGORIES:FEDSEP
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

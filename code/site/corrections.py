@@ -205,7 +205,7 @@ def atom(rows):
                    f'<link href="{SITE}/corrections#{E(r["id"])}"/><link rel="related" href="{E(page)}"/><updated>{r["date"]}T00:00:00Z</updated>'
                    f'<category term="{E(r["desk"])}"/><content type="html">{E(body)}</content></entry>')
     return ('<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:indahl.ai,2026:corrections</id>'
-            f'<title>Heuremen LLC: corrections</title><link href="{SITE}/corrections.xml" rel="self"/><link href="{SITE}/corrections"/>'
+            f'<title>Heuremen LLC: corrections</title><link href="{SITE}/corrections.xml" rel="self"/><link href="https://pubsubhubbub.appspot.com/" rel="hub"/><link href="{SITE}/corrections"/>'
             f'<updated>{upd}</updated><author><name>Heuremen LLC</name></author>' + ''.join(ent) + '</feed>\n')
 
 

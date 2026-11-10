@@ -1,0 +1,68 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Heuremen LLC//indahl.ai calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:indahl.ai CONE: source release dates
+X-WR-CALDESC:Release dates the source of the CONE desk publishes\, as state
+ d on its schedule page.
+X-WR-TIMEZONE:UTC
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:nhc-season-20261130@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:NHC hurricane season: Atlantic and eastern Pacific seasons end
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nhc-season-20270515@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:NHC hurricane season: Eastern Pacific season begins
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nhc-season-20270601@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20270601
+DTEND;VALUE=DATE:20270602
+SUMMARY:NHC hurricane season: Atlantic season begins
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:nhc-season-20271130@indahl.ai
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20271130
+DTEND;VALUE=DATE:20271201
+SUMMARY:NHC hurricane season: Atlantic and eastern Pacific seasons end
+DESCRIPTION:NHC states the Atlantic hurricane season runs from June 1 to No
+ vember 30 and the eastern Pacific season from May 15 to November 30. Sched
+ ule as published at https://www.nhc.noaa.gov/climo/ (read 10 November 2026
+ ). The CONE desk on indahl.ai: https://indahl.ai/cone
+URL:https://www.nhc.noaa.gov/climo/
+CATEGORIES:CONE
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

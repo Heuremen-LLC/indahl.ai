@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-10T20:43:02Z",
+ "built_utc": "2026-11-10T21:00:38Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 4429,
+   "commit": "313254c448670217589cddbf405ef1f51ee8c70d",
+   "files": 5173,
+   "id": "313254c44867",
+   "json": "/receipts/stamps/release_313254c44867.json",
+   "ledger_sha256": "49fa50bebf767a65443998ca91a9c3f999da74ae6bcb035e476a83a0745d8bcb",
+   "manifest_sha256": "0059ce222e88c7bc2c94de506e4dfd4c26823fb056b293b188ee845ee0df857f",
+   "ots": "/receipts/stamps/release_313254c44867.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T21:00:35Z",
+   "sha256": "78dd4857f9950821048fe09d5acb206f0b2f85dd1172a93ea6a1bfc42e85c08d",
+   "wayback": [],
+   "wayback_waiting": 4417
+  },
   {
    "changed": 18,
    "commit": "e5cee01d11ca4ff15abeee9ba25db9004e1f018c",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-10T20:22:33Z",
    "sha256": "d698dc7d295a1253b59ddeb60920ea579f33dca29cb09d4dda42a9e14886efa7",
    "wayback": [],
-   "wayback_waiting": 17
+   "wayback_waiting": 5
   },
   {
    "changed": 82,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-10T20:19:44Z",
    "sha256": "42482593fe5a1e7c8c101a747d4c003313cea660a15eb0a856b231466d5daf32",
    "wayback": [],
-   "wayback_waiting": 49
+   "wayback_waiting": 2
   },
   {
    "changed": 57,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-10T20:00:53Z",
    "sha256": "d8468be8719824987db81672a88258ca9170cf2b33c133c2653efe57875c698a",
    "wayback": [],
-   "wayback_waiting": 9
+   "wayback_waiting": 2
   },
   {
    "changed": 4220,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-10T19:55:23Z",
    "sha256": "07248fcfaf236d763028b26e9068e67dbc1d710e59bb1ee55ddba7105ea205b4",
    "wayback": [],
-   "wayback_waiting": 4153
+   "wayback_waiting": 3
   },
   {
    "changed": 697,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-10T19:44:49Z",
    "sha256": "d4667437cadc5e5d03b6a42a0f94fb3b8c29a63e003016890851c755ead9f525",
    "wayback": [],
-   "wayback_waiting": 66
+   "wayback_waiting": 52
   },
   {
    "changed": 11,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-10T18:31:24Z",
    "sha256": "c14f6e610a965d6b43e6a574ef91e647072197aa333a85fc78876bb6efc0eded",
    "wayback": [],
-   "wayback_waiting": 3
+   "wayback_waiting": 2
   },
   {
    "changed": 10,
@@ -105,7 +120,7 @@
    "released_at": "2026-11-10T18:28:18Z",
    "sha256": "0928da0042ae413f714cd2bf27900b09ab12da3aa25dea8ec9542805b78c5f23",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 45,
@@ -120,7 +135,7 @@
    "released_at": "2026-11-10T18:26:01Z",
    "sha256": "2e6fd9ffd26e6cf3fdec4be545516e89068e848622ca45eff68b9ede07635fae",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 72,
@@ -135,7 +150,7 @@
    "released_at": "2026-11-10T18:24:02Z",
    "sha256": "e0d8b642a6b8023f0a7483f642ef21dd25f37cd9b0997ba56a1771aa3b6f640c",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 177,
@@ -150,7 +165,7 @@
    "released_at": "2026-11-10T18:21:41Z",
    "sha256": "1f6213c2b98107463dd663363c600e21d1607362f94c982792e5d1fbc4cbb2b7",
    "wayback": [],
-   "wayback_waiting": 8
+   "wayback_waiting": 7
   },
   {
    "changed": 926,
@@ -240,7 +255,7 @@
    "released_at": "2026-11-10T16:35:44Z",
    "sha256": "406b9d743b79fd198bb780557ad5417658c285018468c71bfe29a4ced738c95a",
    "wayback": [],
-   "wayback_waiting": 4
+   "wayback_waiting": 1
   },
   {
    "changed": 47,
@@ -285,7 +300,7 @@
    "released_at": "2026-11-10T16:27:19Z",
    "sha256": "21eb48158d64d7c494e903771f56a5322f1cdd25f261d750190f7377b3963170",
    "wayback": [],
-   "wayback_waiting": 161
+   "wayback_waiting": 6
   },
   {
    "changed": 46,
@@ -300,7 +315,7 @@
    "released_at": "2026-11-10T16:25:07Z",
    "sha256": "a9b9b6ba637a9418c48320aeca557882e8bfec72b5e7ff9bf62309021071e57b",
    "wayback": [],
-   "wayback_waiting": 12
+   "wayback_waiting": 11
   },
   {
    "changed": 19,
