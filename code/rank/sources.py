@@ -22,18 +22,42 @@ def COL(nu):
             ('Student-faculty ratio', '3%' if nu else '4%', 'Reported by schools, and in the Common Data Set where a school posts one', PUB), ('Full-time faculty share', '2%' if nu else '3%', 'Reported by schools, and in the Common Data Set where a school posts one', PUB),
             ('Faculty salaries', '6%' if nu else '8%', 'Reported by schools to US News, aligned with IPEDS', CALC), ('Financial resources per student', '8%', 'Spending reported by schools, aligned with IPEDS', CALC),
             ('Standardized tests', '5%', 'Median SAT and ACT of the entering class, with adjustments US News makes for higher reporting', CALC)] + ([('Faculty research', '4%', 'Elsevier bibliometric data, 2021-2025', NOT)] if nu else [])
-MBA = [('Employment and salary of graduates', '50%', 'Reported by schools to US News, many schools also publish employment reports', CALC), ('Peer and recruiter assessments', '25%', 'Surveys US News runs', NOT),
-       ('GMAT and GRE, GPA, acceptance rate', '25%', 'Reported by schools to US News, class profiles published by many schools', CALC)]
+MBA = [('Employment rate at graduation', '7%', 'Share of 2024 and 2025 job-seeking graduates employed at graduation, reported by schools to US News. Schools publish employment reports, many under the MBA CSEA standards', CALC),
+       ('Employment rate three months after graduation', '13%', 'Same, three months after graduation, from school reports and published employment reports', CALC),
+       ('Mean starting salary and bonus', '20%', 'Salary and bonus of 2024 and 2025 graduates, reported by schools. Employment reports publish salary, some as a median only', CALC),
+       ('Salary by profession', '10%', 'Salaries by job type reported by schools, combined by US News', CALC),
+       ('Peer assessment', '12.5%', 'A survey US News runs among business school deans and program directors', NOT),
+       ('Recruiter assessment', '12.5%', 'A survey US News runs among recruiters', NOT),
+       ('Median GMAT and GRE scores', '13%', 'Fall 2025 full-time entrants, reported by schools. Class profiles publish GMAT and GRE figures, not always the median', CALC),
+       ('Median undergraduate GPA', '10%', 'Fall 2025 full-time entrants, reported by schools. Class profiles publish GPA, some as an average', PUB),
+       ('Acceptance rate', '2%', 'Fall 2025 full-time applicants offered admission, reported by schools. Not every class profile prints admits', CALC)]
 LAW = [('Employment 10 months after graduation', '33%', 'ABA employment summary reports', PUB), ('First-time and ultimate bar passage', '25%', 'ABA bar passage reports', PUB),
        ('Peer and lawyers and judges assessments', '25%', 'Surveys US News runs', NOT), ('LSAT and GRE, GPA, acceptance rate', '10%', 'ABA Standard 509 reports', PUB),
        ('Student-faculty ratio and library resources', '7%', 'ABA Standard 509 reports and school reports', CALC)]
-ENG = [('Research expenditures, total and per faculty member', '40%', 'Reported by schools to US News', NOT), ('Faculty research (citations and journal measures)', '10%', 'Elsevier bibliometric data', NOT),
-       ('Peer and recruiter assessments', '25%', 'Surveys US News runs', NOT), ('Doctoral degrees and doctorate-to-faculty ratio', '15%', 'Reported by schools, doctoral degrees also in IPEDS', CALC),
-       ('Faculty in the National Academy of Engineering', '5%', 'NAE member directory and school counts', CALC), ('Acceptance rate', '5%', 'Reported by schools to US News', NOT)]
-EDU = [('Research expenditures, total and per faculty member', '50%', 'Reported by schools to US News', NOT), ('Peer and educational professionals assessments', '25%', 'Surveys US News runs', NOT),
-       ('Doctoral degrees, student-faculty ratio, faculty awards, degrees per faculty', '20%', 'Reported by schools to US News, doctoral degrees also in IPEDS', CALC), ('Acceptance rate', '5%', 'Reported by schools to US News', NOT)]
-MED = [('Research activity, total and per faculty member, and NIH grants', '60%', 'Reported by schools to US News, NIH grant totals are also published by NIH', CALC),
-       ('Median MCAT, median GPA, acceptance rate', '20%', 'Reported by schools to US News', NOT), ('Faculty resources (a faculty ratio described on the method page)', '20%', 'Reported by schools to US News', NOT)]
+ENG = [('Total research expenditures', '25%', 'Externally funded engineering research, fiscal 2024 and 2025, by the ASEE definition, reported by schools to US News. NSF HERD publishes engineering research spending for the whole institution, a different scope', NOT),
+       ('Research expenditures per faculty member', '15%', 'The same spending over tenured and tenure-track faculty reported by schools', NOT),
+       ('Faculty research (citations and journal measures)', '10%', 'Elsevier SciVal bibliometric data, 2021 to 2025, licensed', NOT),
+       ('Peer assessment', '12.5%', 'A survey US News runs among engineering deans', NOT), ('Recruiter assessment', '12.5%', 'A survey US News runs among recruiters', NOT),
+       ('Doctoral degrees awarded', '9%', 'Doctoral degrees in 2024-25, reported by schools. IPEDS publishes engineering doctorates by field for the whole institution, a different scope', CALC),
+       ('Doctorate-to-faculty ratio', '6%', 'Fall 2025 doctoral students over tenured and tenure-track faculty, reported by schools', NOT),
+       ('Faculty in the National Academy of Engineering', '5%', 'NAE membership and school faculty counts', CALC),
+       ('Acceptance rate', '5%', 'Doctoral applicants offered admission for fall 2025, reported by schools. Few schools publish it', NOT)]
+EDU = [('Total research expenditures', '30%', 'Education school research spending, fiscal 2024 and 2025, reported by schools to US News. NSF HERD publishes education-field research spending for the whole institution, a different scope', NOT),
+       ('Research expenditures per faculty member', '20%', 'The same spending over tenured and tenure-track faculty reported by schools', NOT),
+       ('Peer assessment', '12.5%', 'A survey US News runs among education deans', NOT), ('Educational professionals assessment', '12.5%', 'A survey US News runs among school superintendents and other professionals', NOT),
+       ('Total doctoral degrees granted', '8%', 'Education doctorates in 2024-25, reported by schools. IPEDS publishes education doctorates by field for the whole institution, a different scope', CALC),
+       ('Student-faculty ratio', '5%', 'Weighted student and faculty counts for 2025, reported by schools, with a log transform by US News', NOT),
+       ('Percentage of faculty with awards', '5%', 'Awards and journal editorships US News selects, over faculty reported by schools', NOT),
+       ('Graduate degrees granted-faculty ratio', '2%', 'Weighted degree counts over faculty, reported by schools', NOT),
+       ('Acceptance rate', '5%', 'Doctoral applicants offered admission for 2025-26, reported by schools. Few schools publish it', NOT)]
+MED = [('Total research activity', '20%', 'Research spending fiscal 2023 and 2024, as schools report it to the LCME (Part 1-A Schedule B) and to US News. Not published per school', NOT),
+       ('Research activity per faculty member', '10%', 'The same over full-time faculty reported by schools', NOT),
+       ('NIH research grants, medical school and affiliated hospitals', '20%', 'NIH awards fiscal 2024 and 2025, reported by schools. NIH RePORTER publishes awards per organization, and the hospital share depends on which affiliates a school counts', CALC),
+       ('NIH research grants per faculty member', '10%', 'The same over full-time faculty reported by schools', CALC),
+       ('Median MCAT score', '13%', '2025 entering class, reported by schools. AAMC publishes it per school only in a paid guide. Some schools publish it in a class profile', CALC),
+       ('Median undergraduate GPA', '5%', '2025 entering class, reported by schools, as for the MCAT', CALC),
+       ('Acceptance rate', '2%', 'Applicants offered admission to the 2025 entering class. AAMC publishes applicants and matriculants per school, not offers', NOT),
+       ('Faculty resources', '20%', 'Full-time faculty over full-time MD students in 2025. AAMC publishes enrollment per school, faculty counts are school-reported (LCME)', CALC)]
 S = {'hs': HS, 'nj_hs': HS, 'elem': K8, 'middle': K8, 'nj_elem': K8, 'nj_middle': K8, 'nu': COL(True), 'nlac': COL(False), 'nj_col': COL(True), 'mba': MBA, 'law': LAW, 'eng': ENG, 'edu': EDU, 'med': MED}
 json.dump(S, open(os.path.join(HERE, 'data', 'sources.json'), 'w'), indent=1)
 print({k: f"{sum(1 for x in v if x[3] == NOT)} of {len(v)} not public" for k, v in S.items()})

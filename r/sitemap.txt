@@ -3352,10 +3352,13 @@
 /r/zen.zz_fez	2026-10-23
 /r/zen.zz_phoenix	2026-10-23
 /r/zenodo.atlas.concept	2026-11-10
+/r/zenodo.atlas.version	2026-11-10
+/r/zenodo.atlas_desks.concept	2026-11-10
 /r/zenodo.hermes_desks.concept	2026-11-10
 /r/zenodo.iris_desks.concept	2026-11-10
 /r/zenodo.model.concept	2026-11-10
 /r/zenodo.oy.concept	2026-11-10
+/r/zenodo.oy_desks.concept	2026-11-10
 /r/zenodo.social.concept	2026-11-10
 /r/desk/ailuminate	2026-11-10
 /r/desk/airline	2026-11-10

@@ -461,6 +461,18 @@ summary = dict(
     radii=RADII, cells=cells, by_season=by_season, current=current, verification=ver, verification_tally=ver_tally,
     after_data_note='ours_60h on second-ruler rows whose case counts differ was added after the data on 10 Nov 2026 (first read). Display only. No outcome uses it.',
     outside_paths_first_hour=dict(C.Counter(str(p['first_outside_h']) for p in outside_paths)), storm_names={s: NAMES.get(s) for s in sorted(set(r['storm'] for r in rows))})
+# the block indahl.ai/forecasters reads (indahl-ai/forecasters.py, rows 'feed'). Display only, the cells above decide. Each row carries the band its
+# outcome rule reads against: NHC's own 60 to 70 percent for the whole path, our reading of two-thirds for the circles. The point is drawn from the band's middle.
+def _fc_row(c):
+    wp = c['kind'] == 'whole path'
+    return dict(kind='coverage', item=c['cell'] if wp else '%s circle' % c['cell'],
+                counts='share of official forecasts whose best-track positions stayed inside the cone, along the whole path or within one lead circle',
+                stated=round((WP_BAND[0] + WP_BAND[1]) / 2, 4) if wp else round(CIRCLE_CLAIM, 4),
+                band=list(WP_BAND) if wp else [round(x, 4) for x in CIRCLE_BAND], band_kind='stated' if wp else 'rule', band_by=None if wp else 'ours',
+                n=c['inside'], of=c['scored'], delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'],
+                interval='storm-level block bootstrap, as the desk gives it')
+summary['forecasters'] = dict(rows=[_fc_row(c) for c in cells if c['lo'] is not None],
+                              note='The whole path is read against the band NHC states and the circles against two-thirds read as a band, our reading. Each point is drawn from the middle of its band.')
 json.dump(dict(generated=summary['generated'], rows=rows, paths=paths), open('data/cone.json.tmp', 'w')); os.replace('data/cone.json.tmp', 'data/cone.json')
 json.dump(summary, open('summary_cone.json.tmp', 'w'), indent=1); os.replace('summary_cone.json.tmp', 'summary_cone.json')
 live = dict({k: v for k, v in summary.items() if k not in ('storm_names', 'by_season')}, updated=summary['generated'])

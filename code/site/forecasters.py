@@ -152,14 +152,22 @@ def _expand(m):
     if specs == 'feed':
         blk = d.get('forecasters', {}).get('rows') if isinstance(d.get('forecasters'), dict) else None
         if not blk: raise Miss('feed has no forecasters block')
+        bnote = d['forecasters'].get('note') or ''
         for i, r in enumerate(blk):
             base = ['forecasters', 'rows', i]; sc = 1
-            sp = {'kind': r.get('kind'), 'scale': sc, 'item': {'f': ['item']}, 'counts': {'f': ['counts']},
-                  'stated': {'t': '{0:pct}' + (', our reading' if r.get('stated_by') == 'ours' else ''), 'refs': [{'f': ['stated']}]},
+            band = isinstance(r.get('band'), list) and len(r['band']) == 2
+            if not band: st = {'t': '{0:pct}' + (', our reading' if r.get('stated_by') == 'ours' else ''), 'refs': [{'f': ['stated']}]}
+            elif r.get('band_kind') == 'stated':   # the forecaster states the band itself; the point is drawn from its middle
+                st = {'t': '{1:pct} to {2:pct}, drawn from {0:pct}' + (', our reading' if r.get('stated_by') == 'ours' else ''), 'refs': [{'f': ['stated']}, {'f': ['band', 0]}, {'f': ['band', 1]}]}
+            else:                                    # the forecaster states one share; the desk's rule reads it as a band
+                st = {'t': '{0:pct}, read as {1:pct} to {2:pct}' + (', our reading' if r.get('band_by') == 'ours' else ''), 'refs': [{'f': ['stated']}, {'f': ['band', 0]}, {'f': ['band', 1]}]}
+            sp = {'kind': r.get('kind'), 'scale': sc, 'item': {'f': ['item']}, 'counts': {'f': ['counts']}, 'note': bnote,
+                  'stated': st,
                   'delivered': ({'t': '{0} of {1}, {2:pct}', 'refs': [{'f': ['n']}, {'f': ['of']}, {'f': ['delivered']}]} if r.get('n') is not None and r.get('of') is not None
                                 else {'t': '{0:pct}', 'refs': [{'f': ['delivered']}]}),
                   'interval': {'t': '{0:pct} to {1:pct}', 'refs': [{'f': ['lo']}, {'f': ['hi']}]}, 'outcome': {'f': ['outcome']},
-                  'num': {'stated': {'f': ['stated']}, 'delivered': {'f': ['delivered']}, 'lo': {'f': ['lo']}, 'hi': {'f': ['hi']}},
+                  'num': dict({'stated': {'f': ['stated']}, 'delivered': {'f': ['delivered']}, 'lo': {'f': ['lo']}, 'hi': {'f': ['hi']}},
+                              **({'blo': {'f': ['band', 0]}, 'bhi': {'f': ['band', 1]}} if band else {})),
                   'note_ref': {'f': ['interval']} if r.get('interval') else None}
             if r.get('brier_skill') is not None and r.get('brier_skill_lo') is not None and r.get('brier_skill_hi') is not None:
                 sp['brier'] = {'t': '{0} ({1} to {2})', 'refs': [{'f': ['brier_skill']}, {'f': ['brier_skill_lo']}, {'f': ['brier_skill_hi']}]}
@@ -206,10 +214,13 @@ def position(r):
     """Delivered minus stated, and the interval moved by the same stated share, in percentage points. Drawn, never printed."""
     k = 100.0 if r['scale'] == 1 else 1.0
     s, v, lo, hi = (value(r['nums'][x]) * k for x in ('stated', 'delivered', 'lo', 'hi'))
-    return {'gap': round(v - s, 4), 'lo': round(lo - s, 4), 'hi': round(hi - s, 4)}
+    out = {'gap': round(v - s, 4), 'lo': round(lo - s, 4), 'hi': round(hi - s, 4)}
+    if 'blo' in r['nums']: out.update(blo=round(value(r['nums']['blo']) * k - s, 4), bhi=round(value(r['nums']['bhi']) * k - s, 4))
+    return out
 
 def domain(rows):
-    lo = min([0.0] + [r['pos']['lo'] for r in rows]); hi = max([0.0] + [r['pos']['hi'] for r in rows])
+    lo = min([0.0] + [r['pos']['lo'] for r in rows] + [r['pos']['blo'] for r in rows if 'blo' in r['pos']])
+    hi = max([0.0] + [r['pos']['hi'] for r in rows] + [r['pos']['bhi'] for r in rows if 'bhi' in r['pos']])
     step = 10 if hi - lo <= 80 else 20
     a = step * int(-(-abs(lo) // step)) * (-1 if lo < 0 else 1) if lo < 0 else 0
     b = step * int(-(-hi // step)) if hi > 0 else 0
@@ -237,6 +248,8 @@ INTRO = (
  'Each desk&rsquo;s section says what its share counts, inside the range for some and outside it for others, so a point right of zero means that thing happened more often than stated.</p>'
  '<p>The label beside each point is the desk&rsquo;s own outcome, exactly as the desk gives it. ABOVE means the whole interval sits above the stated share and BELOW that it sits below. '
  'CONSISTENT means the interval holds the stated share and meets that desk&rsquo;s rule for width or size. CANNOT_TELL means it does not, so a point clear of zero can still read CANNOT_TELL when its cell is small or its interval wide.</p>'
+ '<p>Some desks read their outcome against a band rather than one share, because the forecaster states a band or because the desk reads a single share as one. '
+ 'On those rows the band is drawn as a shaded span, the point is measured from the middle of the band, and ABOVE, BELOW and CONSISTENT are read against the band, as that desk&rsquo;s rule says.</p>'
  '<p>The members measure unlike things: precipitation at airports, lake levels, economic projections, payroll revisions and asteroid distances. '
  'Their units, sample sizes, intervals and outcome rules differ, and each desk&rsquo;s page says how its cells are made. '
  'The width of a bar reflects the desk&rsquo;s sample size and its interval method, and on some desks neighbouring cells are not independent of each other, as their pages say. '
@@ -279,6 +292,7 @@ def chart(rows):
                    f'<span class="fcx-l">{E(t["item"])}</span>'
                    f'<svg class="fcx-s" viewBox="0 0 1000 22" preserveAspectRatio="none" aria-hidden="true" focusable="false">{grid}'
                    f'<line class="z" x1="{z}" x2="{z}" y1="0" y2="22"/>'
+                   + (f'<line class="bd" x1="{_x(p["blo"], a, b)}" x2="{_x(p["bhi"], a, b)}" y1="11" y2="11"/>' if 'blo' in p else '') +
                    f'<line class="i" x1="{lo}" x2="{hi}" y1="11" y2="11"/>'
                    f'{_dot("r " + k, g)}{_dot("d " + k, g)}</svg>'
                    f'<span class="fcx-o">{E(t["outcome"])}</span></div>')
@@ -321,7 +335,7 @@ CSS = ('.fcx{margin:6px 0 0;padding:14px 14px 10px;background:var(--fcx-bg);colo
        '.fcx-ticks{display:flex;justify-content:space-between;margin:0 14px;height:18px;border-bottom:1px solid var(--fcx-line)}'
        '.fcx-tick{flex:0 0 0;width:0;position:relative}.fcx-tick b{position:absolute;left:0;top:0;transform:translateX(-50%);white-space:nowrap;font:500 11px sans-serif;color:var(--fcx-mid)}'
        '.fcx-s line,.fcx-kd line{vector-effect:non-scaling-stroke}.fcx-s .g{stroke:var(--fcx-line);stroke-width:1}.fcx-s .z{stroke:var(--fcx-zero);stroke-width:1}'
-       '.fcx-s .i{stroke:var(--fcx-mark);stroke-width:2;stroke-linecap:round}'
+       '.fcx-s .i{stroke:var(--fcx-mark);stroke-width:2;stroke-linecap:round}.fcx-s .bd{stroke:var(--fcx-line);stroke-width:12;stroke-linecap:butt}'
        '.fcx .r{stroke:var(--fcx-bg);stroke-width:13;stroke-linecap:round}.fcx .d{stroke:var(--fcx-mark);stroke-width:9;stroke-linecap:round}'
        '.fcx .r.p{stroke-linecap:square;stroke-width:12}.fcx .d.p{stroke-linecap:square;stroke-width:8}'
        '.fcx-kd{width:14px;height:14px;display:inline-block;vertical-align:middle}'
@@ -358,7 +372,14 @@ _RC = re.compile(r'<a class="rcpt"[^>]*>[^<]*</a>')
 def _txt(h): return html.unescape(re.sub(r'<[^>]+>', '', _RC.sub('', h))).strip()
 
 def _sign_ok(out, pos):
-    """The desk's label against the drawn interval: ABOVE wholly right of zero, BELOW wholly left, CONSISTENT holds zero. A flipped axis fails here."""
+    """The desk's label against the drawn interval: ABOVE wholly right of zero, BELOW wholly left, CONSISTENT holds zero. A flipped axis fails here.
+    On a band row: ABOVE wholly right of the band, BELOW wholly left of it, CONSISTENT wholly inside it (a hundredth of a point of slack for band ends the feed rounds)."""
+    if 'blo' in pos:
+        e = 0.01
+        if out == 'ABOVE': return pos['lo'] > pos['bhi'] - e and pos['bhi'] >= 0 >= pos['blo']
+        if out == 'BELOW': return pos['hi'] < pos['blo'] + e and pos['bhi'] >= 0 >= pos['blo']
+        if out == 'CONSISTENT': return pos['blo'] - e <= pos['lo'] and pos['hi'] <= pos['bhi'] + e
+        return out == 'CANNOT_TELL'
     if out == 'ABOVE': return pos['lo'] > 0
     if out == 'BELOW': return pos['hi'] < 0
     if out == 'CONSISTENT': return pos['lo'] <= 0 <= pos['hi']
@@ -386,6 +407,7 @@ def gate():
         if nm['stated'] not in ce['stated'][1]: errs.append('row %d: printed stated and drawn stated read different numbers' % n)
         if nm['delivered'] not in ce['delivered'][1]: errs.append('row %d: printed delivered and drawn delivered read different numbers' % n)
         if ce['interval'][1] != [nm['lo'], nm['hi']]: errs.append('row %d: printed interval and drawn interval read different numbers' % n)
+        if 'blo' in nm and (nm['blo'] not in ce['stated'][1] or nm['bhi'] not in ce['stated'][1]): errs.append('row %d: printed band and drawn band read different numbers' % n)
         if not _sign_ok(r['text']['outcome'], r['pos']): errs.append('row %d (%s %s): label %s does not sit where the drawn interval sits %r' % (n, r['desk'], r['text']['item'], r['text']['outcome'], r['pos']))
         if r['text']['outcome'] not in ('ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL'): errs.append('row %d: outcome %r is not one of the four' % (n, r['text']['outcome']))
     # 2 the built page holds exactly these rows, cell by cell, and nothing else with a digit
@@ -411,6 +433,7 @@ def gate():
         dd = re.findall(r'<line class="d [cp]" x1="([^"]+)" x2="([^"]+)"', strips)
         if dd != [(_x(r['pos']['gap'], a, b),) * 2 for r in fresh]: errs.append('chart points do not match the source positions')
         if re.findall(r'<line class="i" x1="([^"]+)" x2="([^"]+)"', strips) != [_ival(r['pos'], a, b) for r in fresh]: errs.append('chart intervals do not match the source positions')
+        if re.findall(r'<line class="bd" x1="([^"]+)" x2="([^"]+)"', strips) != [(_x(r['pos']['blo'], a, b), _x(r['pos']['bhi'], a, b)) for r in fresh if 'blo' in r['pos']]: errs.append('chart bands do not match the source positions')
         zs = set(re.findall(r'<line class="z" x1="([^"]+)" x2="([^"]+)"', strips))
         if zs != {(_x(0, a, b),) * 2}: errs.append('zero line is not at zero')
         gs = set(re.findall(r'<line class="g" x1="([^"]+)"', strips))

@@ -424,6 +424,13 @@ summary = dict(
                     scored=sum(1 for r in by_seq_r[s['id']] if r['status'] == 'scored' and r['kind'] == 'bin'),
                     m3_inside=sum(1 for r in by_seq_r[s['id']] if r['status'] == 'scored' and r['kind'] == 'bin' and r['mag'] == 3.0 and r['outcome'] == K.CONSISTENT),
                     m3_scored=sum(1 for r in by_seq_r[s['id']] if r['status'] == 'scored' and r['kind'] == 'bin' and r['mag'] == 3.0)) for s in SEQ])
+# the block indahl.ai/forecasters reads (indahl-ai/forecasters.py, rows 'feed'). Display only, the cells above decide. Range coverage against the stated 95 percent.
+def _fc_row(c):
+    return dict(kind='coverage', item=c['cell'], counts='share of stated ranges that held the aftershock count', stated=c['claim'],
+                n=c['inside'], of=c['scored'], delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'],
+                interval='union of the Wilson and block bootstrap intervals, as the desk gives it')
+summary['forecasters'] = dict(rows=[_fc_row(c) for c in [cover_all] + cover_win + cover_mag if c['lo'] is not None],
+                              note='CONSISTENT also needs the whole interval within two and a half points of the stated share. The interval is the union of a Wilson interval and a block bootstrap.')
 slim = [{k: r.get(k) for k in ('seq', 'block', 'issued', 'window', 't0', 't1', 'mag', 'kind', 'p', 'nmin', 'nmax', 'count', 'count_mag_rounded', 'occurred', 'outcome', 'why', 'status', 'zone', 'model', 'file')} for r in rows + outside]
 gzip.open('data/quake_rows.json.gz.tmp', 'wt').write(json.dumps(dict(generated=summary['generated'], rows=slim))); os.replace('data/quake_rows.json.gz.tmp', 'data/quake_rows.json.gz')
 json.dump(summary, open('summary_quake.json.tmp', 'w'), indent=1); os.replace('summary_quake.json.tmp', 'summary_quake.json')

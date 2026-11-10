@@ -2484,7 +2484,7 @@ def main():
         _box = (f'<div class="gg"><span class="dd ggdd"><button type="button" class="ggbtn" aria-haspopup="true" aria-controls="{_gid}">Grab and go</button>'
                 f'<span class="ddpanel ggpanel" id="{_gid}"><span class="ggnote">Every pack in {_DNAME.get(_dv, _dv.strip("/").upper())}, each a zip with its README, sources and tests.</span><ul>' + ''.join(_li) + '</ul></span></span></div>')
         # 10 Nov 2026 (Zenodo packs): the Zenodo record that holds this division's desk packs, cited under the list
-        _zr = {'/hermes': 'HERMES Desk Packs', '/iris': 'IRIS Desk Packs', '/social': 'SOCIAL Data Pack'}.get(_dv)
+        _zr = {'/hermes': 'HERMES Desk Packs', '/iris': 'IRIS Desk Packs', '/social': 'SOCIAL Data Pack', '/atlas': 'ATLAS Desk Packs', '/oy': 'OY Desk Packs'}.get(_dv)   # 10 Nov evening: ATLAS and OY desk records
         if _zr and _cite(_zr): _box += _cite(_zr).replace('Cite: ', ('Desk packs on Zenodo: ' if _dv != '/social' else 'Cite: '), 1)
         _doc = PAGES[_dv]; _hd = f'<a class="pkghead" href="{ {"/atlas": "/atlas/data-pack", "/iris": "/iris/package", "/oy": "/oy/data-pack", "/qia": "/qia/package"}.get(_dv, "") }">'
         if _dv in ('/atlas', '/iris', '/oy', '/qia') and _hd in _doc:
@@ -2493,14 +2493,14 @@ def main():
             _m = '<main class="wrap">' + _hlslot(_dv); _m = _m if _m in _doc else '<main class="wrap">'
             PAGES[_dv] = _doc.replace(_m, _m + '<aside class="pkgbox ggbox"><span class="pkghead">' + _MARK + ('HERMES desk packs' if _dv == '/hermes' else 'SOCIAL Data Pack') + '</span>' + _box + '</aside>', 1)
     # 10 Nov 2026 (Zenodo packs): each desk page whose pack is deposited on Zenodo says where, under the page, from ledger/zenodo_dois.json.
-    # ATLAS desks are left out while the ATLAS version that holds them is held (ledger/zenodo_packs_PLAN.json).
+    # 10 Nov evening: the ATLAS version that holds the ATLAS desks is published (10.5281/zenodo.24110654), so those desks say their data is inside it.
     try: _ZD = _jsonld.load(open(os.path.join(HERE, '..', 'ledger', 'zenodo_dois.json')))['desks']
     except Exception: _ZD = {}
     for _zs, _ze in _ZD.items():
         _zp = '/' + _zs
-        if _zs == 'social' or _zp not in PAGES or not _ze.get('concept_doi') or _ze.get('record') in (None, 'ATLAS Data Pack') or '</main>' not in PAGES[_zp]: continue   # SOCIAL cites in its pack box
+        if _zs == 'social' or _zp not in PAGES or not _ze.get('concept_doi') or _ze.get('record') is None or '</main>' not in PAGES[_zp]: continue   # SOCIAL cites in its pack box
         _zl = (f'<p class="pkgalso">Data pack on Zenodo: <a href="https://doi.org/{_ze["concept_doi"]}">doi:{_ze["concept_doi"]}</a>'
-               + ('' if _ze['record'] == _zs.upper() + ' Data Pack' else f', one file of the {_ze["record"]} record') + '</p>')
+               + ('' if _ze['record'] == _zs.upper() + ' Data Pack' else (', inside the ATLAS Data Pack' if _ze['record'] == 'ATLAS Data Pack' else f', one file of the {_ze["record"]} record')) + '</p>')
         _zi = PAGES[_zp].rindex('</main>'); PAGES[_zp] = PAGES[_zp][:_zi] + _zl + PAGES[_zp][_zi:]
     # 10 Nov 2026 (findable pass, findable.py): the banner is filled here for every page, package pages included (they were built after the old
     # fill and shipped an empty banner). Then the data links and embed box, the page dates, the share cards, Dataset JSON-LD and the change feeds.

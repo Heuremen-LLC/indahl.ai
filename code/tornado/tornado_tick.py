@@ -466,6 +466,16 @@ summary = dict(
                           no_outlook_other_cycle_1300=nothing['no_outlook_other_cycle_1300'], late_cycle13_scored=nothing['late_cycle13_scored']),
     cells=cells, years=years, warnings=dict(pooled=warn_pooled, years=warn_years, polygon_end_floor=warn_floor),
     after_data_note='label_reading and year_blocks on bands, hatched unrated_as_ef2_upper, warnings polygon_end_floor and nothing_returned no_outlook_other_cycle_1300 and late_cycle13_scored were added after the data on 10 Nov 2026 at the outside referee (tornado_index_referee/REFEREE.md R2, R2b, R4, R5, R6 and the bootstrap note). Display only. No outcome uses them. The grid rectangle was widened at the referee (R1) to keep every point inside the 48 states, as the plan says.')
+# the block indahl.ai/forecasters reads (indahl-ai/forecasters.py, rows 'feed'). Display only, the cells above decide. The ten to fifteen percent band of the
+# closed years, the headline band, read against the band SPC states. The point is drawn from the band's middle, the outcome is the band rule's.
+def _fc_row(c, b):
+    return dict(kind='probability', item='%s, stated band %s percent, %d to %d' % (c['cell'], b['band'], FIRST_YEAR, LAST_CLOSED),
+                counts='share of point-days in the band with a tornado within twenty-five miles',
+                stated=round((b['lo_stated'] + b['hi_stated']) / 2, 4), band=[b['lo_stated'], b['hi_stated']], band_kind='stated',
+                n=b['events'], of=b['rows'], delivered=b['freq'], lo=b['lo'], hi=b['hi'], outcome=b['outcome'],
+                interval='day-level block bootstrap, as the desk gives it')
+summary['forecasters'] = dict(rows=[_fc_row(c, b) for c in cells if not c['preliminary'] for b in c['bands'] if b['band'] == '10 to 15' and b['lo'] is not None],
+                              note='Each row is read against the band SPC states, and its point is drawn from the middle of the band.')
 json.dump(summary, open('summary_tornado.json.tmp', 'w'), indent=1); os.replace('summary_tornado.json.tmp', 'summary_tornado.json')
 live = dict(summary, updated=summary['generated']); live.pop('years', None)
 json.dump(live, open('data/tornado_live.json.tmp', 'w'), separators=(',', ':')); os.replace('data/tornado_live.json.tmp', 'data/tornado_live.json')

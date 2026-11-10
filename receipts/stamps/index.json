@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-10T18:38:47Z",
+ "built_utc": "2026-11-10T19:44:53Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 697,
+   "commit": "e37780599c933d1d36bd2bb3aeb4962c1ea1ffd5",
+   "files": 5156,
+   "id": "e37780599c93",
+   "json": "/receipts/stamps/release_e37780599c93.json",
+   "ledger_sha256": "9b2a170393d6a8d5a757248c191190390118c39395460194b1596bb023eda554",
+   "manifest_sha256": "62b1ba3aa8892f69af818b5264a86d2522ead39ade32a5beaef23ad5606732d5",
+   "ots": "/receipts/stamps/release_e37780599c93.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T19:44:49Z",
+   "sha256": "d4667437cadc5e5d03b6a42a0f94fb3b8c29a63e003016890851c755ead9f525",
+   "wayback": [],
+   "wayback_waiting": 695
+  },
   {
    "changed": 11,
    "commit": "a9a6ed8532d1c4e801d3a726c87620359b0a33e7",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-10T18:31:24Z",
    "sha256": "c14f6e610a965d6b43e6a574ef91e647072197aa333a85fc78876bb6efc0eded",
    "wayback": [],
-   "wayback_waiting": 10
+   "wayback_waiting": 9
   },
   {
    "changed": 10,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-10T18:28:18Z",
    "sha256": "0928da0042ae413f714cd2bf27900b09ab12da3aa25dea8ec9542805b78c5f23",
    "wayback": [],
-   "wayback_waiting": 6
+   "wayback_waiting": 2
   },
   {
    "changed": 45,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-10T18:26:01Z",
    "sha256": "2e6fd9ffd26e6cf3fdec4be545516e89068e848622ca45eff68b9ede07635fae",
    "wayback": [],
-   "wayback_waiting": 24
+   "wayback_waiting": 2
   },
   {
    "changed": 72,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-10T18:24:02Z",
    "sha256": "e0d8b642a6b8023f0a7483f642ef21dd25f37cd9b0997ba56a1771aa3b6f640c",
    "wayback": [],
-   "wayback_waiting": 40
+   "wayback_waiting": 19
   },
   {
    "changed": 177,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-10T18:21:41Z",
    "sha256": "1f6213c2b98107463dd663363c600e21d1607362f94c982792e5d1fbc4cbb2b7",
    "wayback": [],
-   "wayback_waiting": 134
+   "wayback_waiting": 113
   },
   {
    "changed": 926,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-10T18:16:10Z",
    "sha256": "8a49846dab9e8350df6c8d009d937b0b6752cd54a2d44a335a2f918d05273ec1",
    "wayback": [],
-   "wayback_waiting": 723
+   "wayback_waiting": 698
   },
   {
    "changed": 67,
@@ -105,7 +120,7 @@
    "released_at": "2026-11-10T16:53:42Z",
    "sha256": "476ad6e34f12c211e013595a54a2dd5d587499101999351c190f11bdb6f1a7a1",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 43,
@@ -120,7 +135,7 @@
    "released_at": "2026-11-10T16:43:28Z",
    "sha256": "8ea33eceb27411d55edddd26de6604437f817a725c9277ba93d7b3213b858aeb",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 35,
@@ -135,7 +150,7 @@
    "released_at": "2026-11-10T16:39:59Z",
    "sha256": "3c5fcd2e8edd26c090b985842325fe894355056d0b4e7e380b03bcfbad997d22",
    "wayback": [],
-   "wayback_waiting": 17
+   "wayback_waiting": 16
   },
   {
    "changed": 75,
@@ -150,7 +165,7 @@
    "released_at": "2026-11-10T16:37:51Z",
    "sha256": "81417f2e72326fa489a8e8af930469d7a47928053dff6256e4d7053cd543fa8e",
    "wayback": [],
-   "wayback_waiting": 41
+   "wayback_waiting": 3
   },
   {
    "changed": 815,
@@ -165,7 +180,7 @@
    "released_at": "2026-11-10T16:35:44Z",
    "sha256": "406b9d743b79fd198bb780557ad5417658c285018468c71bfe29a4ced738c95a",
    "wayback": [],
-   "wayback_waiting": 18
+   "wayback_waiting": 4
   },
   {
    "changed": 47,
@@ -180,7 +195,7 @@
    "released_at": "2026-11-10T16:32:47Z",
    "sha256": "c7f32d8002056590351b2d1c34b9a5563e33029ad3e3a962db0f184d4826d1ba",
    "wayback": [],
-   "wayback_waiting": 6
+   "wayback_waiting": 5
   },
   {
    "changed": 798,
@@ -195,7 +210,7 @@
    "released_at": "2026-11-10T16:29:38Z",
    "sha256": "1fdef256f7b88cd619928b8bfff21b613a5e796b5e66afa3b90ec1443209a7c3",
    "wayback": [],
-   "wayback_waiting": 5
+   "wayback_waiting": 4
   },
   {
    "changed": 1017,
@@ -210,7 +225,7 @@
    "released_at": "2026-11-10T16:27:19Z",
    "sha256": "21eb48158d64d7c494e903771f56a5322f1cdd25f261d750190f7377b3963170",
    "wayback": [],
-   "wayback_waiting": 191
+   "wayback_waiting": 162
   },
   {
    "changed": 46,
@@ -225,7 +240,7 @@
    "released_at": "2026-11-10T16:25:07Z",
    "sha256": "a9b9b6ba637a9418c48320aeca557882e8bfec72b5e7ff9bf62309021071e57b",
    "wayback": [],
-   "wayback_waiting": 20
+   "wayback_waiting": 18
   },
   {
    "changed": 19,
@@ -240,7 +255,7 @@
    "released_at": "2026-11-10T16:22:57Z",
    "sha256": "39b20e5fe06fbee01217148090de829386897347ec945ec59cfe5e1175cfc209",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 837,
@@ -255,7 +270,7 @@
    "released_at": "2026-11-10T16:21:18Z",
    "sha256": "1d2216365e1ca2495adcf2870848cfc33bff787837d970afcbe11f20e4449849",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 62,
@@ -270,7 +285,7 @@
    "released_at": "2026-11-10T16:19:14Z",
    "sha256": "565405bff912e5ff8f6cde7f977f422d44aacba1e91ea4a054b0f6d8a4e26868",
    "wayback": [],
-   "wayback_waiting": 15
+   "wayback_waiting": 3
   },
   {
    "changed": 70,
@@ -285,7 +300,7 @@
    "released_at": "2026-11-10T16:16:22Z",
    "sha256": "bd8f6b5200a361c22f1ffc513987d1f1cbcab1c3f6b9f73f1557cb37c35a2582",
    "wayback": [],
-   "wayback_waiting": 28
+   "wayback_waiting": 5
   },
   {
    "changed": 14,
@@ -300,7 +315,7 @@
    "released_at": "2026-11-10T16:13:32Z",
    "sha256": "4072beda17d494a44f04d97709b73e48d47a1d0704477a29483b1f0b1d6e0be5",
    "wayback": [],
-   "wayback_waiting": 5
+   "wayback_waiting": 3
   },
   {
    "changed": 61,
@@ -315,7 +330,7 @@
    "released_at": "2026-11-10T16:10:32Z",
    "sha256": "2442f0389b55032d65e29c4f6e6edf9bf33af8f3858d2ce08be48c58ef1a55d4",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 367,
@@ -330,7 +345,7 @@
    "released_at": "2026-11-10T16:07:59Z",
    "sha256": "afd5f1e41179cb46b1d30cfea3d40834df2b3132f02159e9a2796a91b1bab804",
    "wayback": [],
-   "wayback_waiting": 343
+   "wayback_waiting": 3
   },
   {
    "changed": 495,
@@ -345,7 +360,7 @@
    "released_at": "2026-11-10T16:05:11Z",
    "sha256": "301f72b6ff529211d0673547a426d919b7ad727b6f63d81318eb5070aac8c477",
    "wayback": [],
-   "wayback_waiting": 55
+   "wayback_waiting": 9
   },
   {
    "changed": 1343,
@@ -577,7 +592,7 @@
      "url": "https://indahl.ai/arxivdrift"
     }
    ],
-   "wayback_waiting": 2766
+   "wayback_waiting": 2733
   },
   {
    "changed": 3836,
@@ -1405,7 +1420,7 @@
      "url": "https://indahl.ai/uptime"
     }
    ],
-   "wayback_waiting": 87
+   "wayback_waiting": 59
   },
   {
    "changed": 882,
@@ -1465,7 +1480,7 @@
    "released_at": "2026-11-10T13:47:03Z",
    "sha256": "37d8e30cf76ba239373180a769c2c091e5acfa33fb94eb04d12cadad487719f4",
    "wayback": [],
-   "wayback_waiting": 118
+   "wayback_waiting": 115
   },
   {
    "changed": 3601,

@@ -13,6 +13,8 @@ NJC = json.load(open('data/checks_nj.json', encoding='utf-8')) if os.path.exists
 for c in NJC['checks']:
     if c['list'] == 'nj_k8': c['list'] = 'nj_k8'
 CK = CK + NJC['checks']
+GRADC = json.load(open('data/checks_grad.json', encoding='utf-8')) if os.path.exists('data/checks_grad.json') else {'checks': []}
+CK = CK + GRADC['checks']
 CLAIMS = json.load(open('data/claims_scored.json', encoding='utf-8')) if os.path.exists('data/claims_scored.json') else []
 DONE = sorted({c['list'] for c in CK} | ({'nj_elem', 'nj_middle'} if any(c['list'] == 'nj_k8' for c in CK) else set()))
 e = html.escape
@@ -44,6 +46,8 @@ RECOMPUTE = {
  'eng': 'Peer and recruiter assessments (25 percent) are surveys US News runs.', 'edu': 'Peer and educational professionals assessments (25 percent) are surveys US News runs.',
  'med': 'Research activity per faculty member and faculty resources use counts that schools report to US News, which are not published per school in full.'}
 
+GRAD_SHOWN = GRADC.get('shown_text', {})
+
 def checks_section(l):
     k = l['key']
     if k in RECOMPUTE or k in ('nj_hs', 'nj_col', 'nj_elem', 'nj_middle'):
@@ -68,6 +72,16 @@ def checks_section(l):
         out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(c['school']), e(c['field']), e(str(c['usn'] or '')), e(str(c['usn_year'] or 'not printed')), e(str(pub)), e(str(c['pub_year'] or '')), e(rd), note)) + '</tr>')
     out.append('</tbody></table></div>')
     disp = [c for c in CK if c['list'] == k and c['outcome'] == 'DISPLAY']
+    if disp and k in GRAD_SHOWN:
+        out.append(f'<h3>Shown beside, not scored</h3><p class="bench-note">{GRAD_SHOWN[k]}</p>')
+        out.append('<div class="tw"><table class="bench"><thead><tr><th>School</th><th>Figure</th><th>US News</th><th>Public record</th><th>Year</th><th>Note</th></tr></thead><tbody>')
+        for c in disp:
+            note = e(c['note'])
+            m = __import__('re').search(r'https?://\S+', c.get('source') or '')
+            if m: note += f' <a href="{e(m.group(0).rstrip(")"))}">Source</a>.'
+            out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(c['school']), e(c['field']), e(str(c['usn'] or '')), e(str(c['pub'] or 'not found')), e(str(c['pub_year'] or '')), note)) + '</tr>')
+        out.append('</tbody></table></div>')
+        return
     if disp:
         out.append('<p class="bench-note">Shown after the data and not scored: the same figures set beside each college&rsquo;s Common Data Set for 2025-26, the latest each college has published. US News prints no year for these figures, so they are not scored. Percents are worked from the counts in the Common Data Set.</p><ul class="bench-note">')
         for c in disp: out.append(f'<li>{e(c["school"])}: {e(c["note"]).replace("; ", ". ")}.</li>')
@@ -90,14 +104,15 @@ out.append('<p>US News &amp; World Report publishes rankings of schools and coll
            'or the school&rsquo;s own published report, and checks whether the order follows from the stated method where the method can be worked again from public inputs.</p>')
 out.append('<p>Each figure reads match, mismatch or cannot tell, with the year used on each side. Match means the public figure, rounded to the precision US News prints, is the same. '
            'Cannot tell is given with its reason, such as a year that is not printed, a figure the state suppresses, or a figure not found. The rules were fixed and committed before any figure was compared. '
-           'High schools, National Universities, National Liberal Arts Colleges, law schools and the New Jersey lists are checked. Rows on the other lists read <b>check in progress</b>.</p>')
+           'Every list on this page is checked: high schools, National Universities, National Liberal Arts Colleges, the law, business, engineering, education and medical school lists, and the New Jersey lists. '
+           'On the graduate school lists, figures US News shows only to paying subscribers were not read and read cannot tell (paid tier, not read).</p>')
 SUM = Counter((c['list'], c['outcome']) for c in CK if c['outcome'] != 'DISPLAY')
 def tally(k):
     m, x, t = SUM[(k, 'MATCH')], SUM[(k, 'MISMATCH')], SUM[(k, 'CANNOT_TELL')]
     return f'{m} match, {x} mismatch, {t} cannot tell'
-NAMES = {'hs': 'High schools', 'nu': 'National Universities', 'nlac': 'National Liberal Arts Colleges', 'law': 'Law schools', 'nj_hs': 'New Jersey high schools', 'nj_k8': 'New Jersey elementary and middle schools', 'nj_col': 'New Jersey colleges'}
+NAMES = {'hs': 'High schools', 'nu': 'National Universities', 'nlac': 'National Liberal Arts Colleges', 'law': 'Law schools', 'mba': 'Business schools', 'eng': 'Engineering schools', 'edu': 'Education schools', 'med': 'Medical schools (Tier 1)', 'nj_hs': 'New Jersey high schools', 'nj_k8': 'New Jersey elementary and middle schools', 'nj_col': 'New Jersey colleges'}
 if CK:
-    out.append('<p>Figures checked so far: ' + ', '.join(f'{NAMES[k]} {tally(k)}' for k in ('hs', 'nu', 'nlac', 'law', 'nj_hs', 'nj_k8', 'nj_col') if k in DONE) + '.</p>')
+    out.append('<p>Figures checked so far: ' + ', '.join(f'{NAMES[k]} {tally(k)}' for k in ('hs', 'nu', 'nlac', 'law', 'mba', 'eng', 'edu', 'med', 'nj_hs', 'nj_k8', 'nj_col') if k in DONE) + '.</p>')
 out.append(f'<p>The lists were read on {e(D["read"])}. A rank is printed as US News prints it. A tie is marked, and a tie at the tenth place is kept whole, so a list can hold more than ten schools. '
            'Only the rank, the stated method and the figures to be checked are shown here. The full lists are on the US News pages linked below.</p>')
 
@@ -207,8 +222,8 @@ if CASES:
     out.append('</tbody></table></div>')
     out.append('<p class="bench-note">Cases named only in news reports, or whose primary page refused our reader, are not listed until the primary document is read.</p>')
 out.append('<h2>What comes next</h2>')
-out.append('<p>The business, engineering, education and medical school lists are checked next, against each school&rsquo;s own published reports. '
-           'Colleges whose Common Data Set could not be read are added when it can be.</p>')
+out.append('<p>Colleges whose Common Data Set could not be read, and graduate school pages that stopped at a challenge or a login, are added when they can be read. '
+           'Each list is read again when US News publishes a new edition.</p>')
 out.append('<p class="meta">Rankings, list names and method text belong to US News &amp; World Report and are quoted here only as far as each check needs, with links. '
            f'Named here and want to answer a row? Each row has an answer link. US News can answer here: {resp("usnews", "Respond")}.</p>')
 out.append('<p class="meta">Plan and code for this page are public: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/rank">rank</a>. The plan was committed before any figure was compared.</p>')
