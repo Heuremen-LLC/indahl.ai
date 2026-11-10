@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-10T13:47:05Z",
+ "built_utc": "2026-11-10T13:50:21Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 3575,
+   "commit": "c184c7baf348a49b4d7f9f0d30d0284f03b3f253",
+   "files": 4080,
+   "id": "c184c7baf348",
+   "json": "/receipts/stamps/release_c184c7baf348.json",
+   "ledger_sha256": "a8ec78168d54c0b75e033d1d8e3d73af784fe54bc020d1515521e4d81472754c",
+   "manifest_sha256": "2f0936af8689482784f38a6dd4685ad4cf99df96e9db72d2afc10fb7a5ff1b31",
+   "ots": "/receipts/stamps/release_c184c7baf348.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T13:50:20Z",
+   "sha256": "c2847dbfb58b9109c08850fb687ab26903ef92b4a04b633fdf741451c316c5d9",
+   "wayback": [],
+   "wayback_waiting": 3568
+  },
   {
    "changed": 3695,
    "commit": "9afb2762993becd6b293ca097493161b3f9f668a",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-10T13:47:03Z",
    "sha256": "37d8e30cf76ba239373180a769c2c091e5acfa33fb94eb04d12cadad487719f4",
    "wayback": [],
-   "wayback_waiting": 3685
+   "wayback_waiting": 120
   },
   {
    "changed": 3601,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-10T13:41:40Z",
    "sha256": "94b3f8da95e44ac991c2ad5d8f6936104d3dc22586a987bd734650c7dd07fd26",
    "wayback": [],
-   "wayback_waiting": 21
+   "wayback_waiting": 20
   },
   {
    "changed": 72,
@@ -209,6 +224,36 @@
      "capture": "https://web.archive.org/web/20261110134631/https://indahl.ai/now",
      "timestamp": "20261110134631",
      "url": "https://indahl.ai/now"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261110134702/https://indahl.ai/oy",
+     "timestamp": "20261110134702",
+     "url": "https://indahl.ai/oy"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261110134733/https://indahl.ai/pkginstall",
+     "timestamp": "20261110134733",
+     "url": "https://indahl.ai/pkginstall"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261110134803/https://indahl.ai/pkglicense",
+     "timestamp": "20261110134803",
+     "url": "https://indahl.ai/pkglicense"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261110134834/https://indahl.ai/privacy",
+     "timestamp": "20261110134834",
+     "url": "https://indahl.ai/privacy"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261110134904/https://indahl.ai/qia",
+     "timestamp": "20261110134904",
+     "url": "https://indahl.ai/qia"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261110134935/https://indahl.ai/revise",
+     "timestamp": "20261110134935",
+     "url": "https://indahl.ai/revise"
     }
    ],
    "wayback_waiting": 256

@@ -275,4 +275,4 @@ main section{padding:7px 0}main section:first-child{padding-top:6px}.hl{padding:
 .nl{margin:8px 0 14px;max-width:560px}.nl input[type=email]{font:inherit;padding:6px 8px;border:1px solid var(--rule);background:var(--paper);min-width:0;width:min(320px,100%);margin:0 8px 6px 0}
 .nl .btn{vertical-align:top}.nl-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}.nl-say{font-size:14px;color:var(--mid);margin:4px 0 0}.nl-msg{margin:6px 0 0;font-weight:600}.nl-msg:empty{display:none}
 .foot .nl{margin:0 0 14px}.foot .nl-say{color:inherit;opacity:.85}
-.week ul.wk{padding-left:18px}.week ul.wk li{margin:6px 0;line-height:1.45}.wkt{color:var(--mid);font-size:14px;white-space:nowrap}
+.week ul.wk{padding-left:18px}.week ul.wk li{margin:6px 0;line-height:1.45}.wkt{color:var(--mid);font-size:14px;white-space:nowrap}.wkr{font-size:14px;margin-left:8px}
