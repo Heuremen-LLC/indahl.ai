@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MARK = ('<svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/>'
         '<polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>')
 HOME = {'/vault': '/hermes', '/tape': '/hermes', '/receipts/stamps': '/hermes', '/hfsize': '/iris', '/hflicense': '/iris', '/pkglicense': '/iris', '/pkginstall': '/iris', '/uptime': '/atlas', '/time': '/atlas', '/cada': '/atlas', '/secrecords': '/atlas', '/seat': '/atlas', '/support': '/atlas', '/change': '/atlas',
-        '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/hosts': '/iris', '/water': '/atlas', '/neo': '/atlas', '/wiki': '/hermes', '/social': '/hermes'}
+        '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/hosts': '/iris', '/water': '/atlas', '/neo': '/atlas', '/solar': '/atlas', '/quake': '/atlas', '/flu': '/hermes', '/quake': '/atlas', '/tornado': '/hermes', '/cone': '/atlas', '/wiki': '/hermes', '/social': '/hermes'}
 NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
 DOI = 'https://doi.org/10.5281/zenodo.23169755'
 
@@ -44,7 +44,7 @@ def seo_head(path, title, desc):
     import datetime as _dt0
     _today = _dt0.date.today().isoformat(); _org = {"@type": "Organization", "name": "Heuremen LLC", "url": SITE + "/"}
     _short = title.split(' | ')[0]
-    _live = {'support','pkglicense','hflicense','hfsize','secrecords','pkginstall','linkrot','trials','revise','hpt','hosts','airq','ailuminate','weights','airline','fedsep','time','cada','uptime','forecast','cadence','launch','arxivdrift','campus','seat','change','tape','water','neo','wiki'}
+    _live = {'support','pkglicense','hflicense','hfsize','secrecords','pkginstall','linkrot','trials','revise','hpt','hosts','airq','ailuminate','weights','airline','fedsep','time','cada','uptime','forecast','cadence','launch','arxivdrift','campus','seat','change','tape','water','neo','solar','quake','wiki','cone','tornado'}
     _slug = path.strip('/')
     if path not in NOINDEX and path not in ('/', '/qia', '/iris') and not path.startswith(('/qia/study/', '/iris/study/')):
         _wp = {"@context": "https://schema.org", "@type": "WebPage", "name": _short, "description": desc, "url": url, "inLanguage": "en", "dateModified": _today, "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": SITE + "/"}, "publisher": _org}
@@ -600,7 +600,8 @@ PAGES['/media'] = page('/media', 'IBM processors delivered more gate error than 
 <section class="legal">
 <p class="meta">For release: 29 October 2026</p>
 <p>Heuremen LLC reported today that every gate-error run it made on IBM quantum processors on 23 and 24 October measured above the figures IBM publishes for them.</p>
-<p>Single-qubit gate error ran 1.17 to 1.93 times the stated figure. Two-qubit (CZ) gate error ran 1.18 to 1.62 times. The 95 percent interval on each of the 14 runs, on seven processors, excludes 1.0.</p>
+<p>Single-qubit gate error ran 1.17 to 1.93 times the stated figure. Two-qubit (CZ) gate error ran 1.18 to 1.62 times. The 95 percent interval on each of the 16 runs, on seven processors, excludes 1.0. Each figure is a median over qubits or edges, and in every run 8 to 34 percent of them did better than stated. Eleven of the 16 runs share an IBM record with another run and were fired 4 to 111 minutes apart, so they are repeats inside one calibration, not 16 separate calibrations.</p>
+<p class="meta">Corrected 10 November 2026: this release first said 14 runs. Two ibm_kingston runs of 24 October, made with the same design, had been left out. Both measured above, and the ranges did not change.</p>
 <p>The same audit, QIA (Quantum Idle Audit), found two more things in IBM&rsquo;s published calibration records:</p>
 <ul>
 <li>A T1 value on ibm_marrakesh dated 895 hours before the record that carried it, and a T2 value on ibm_kingston dated 2,332 hours before its record.</li>
@@ -1072,13 +1073,18 @@ PAGES['/launch'] = page('/launch', 'LAUNCH | Stated Time Against Flown | Heureme
 _FEED.append(('/launch', 'LAUNCH: Stated Time Against Flown', 'Stated launch times stored as they change, against the times launches flew.'))
 
 # 29 Oct 2026: LINKROT, live. Plan: linkrot_index/PLAN.md.
-_LRBODY = ('<h2>Papers state where their code is. Does the link still lead there?</h2>'
+_LRBODY = ('<p>This page reads links two ways. The first part reads every arXiv paper in five categories that states where its code is. The second part reads random samples beside it: early web listings, addresses cited in standards and in official documents, landmark sites of the early web and our own name (<a href="#linkrot-early">samples beside arXiv</a>).</p>'
+  '<h2>Papers state where their code is. Does the link still lead there?</h2>'
   '<p>We read every arXiv paper in five categories whose abstract points to GitHub, GitLab, Hugging Face, Zenodo or Bitbucket, and keep each link the abstract or the arXiv comment gives. Every link is requested and read again every seven days. A link counts as rot when the page is gone or the host name no longer exists. A host that blocks us or times out is counted apart and is never rot. Every link is also requested from an independent network, the GitHub runner network, and a link that one network reads live and the other reads gone is counted as blocked and never as rot.</p>'
   '<p>Ten control links run before each pass, five that must be live and five that must be gone. If any control reads wrong, every row reads cannot tell. For links that lead to a GitHub repository we also ask whether anything is there: the repository check below counts repositories with no commits. We do not read the code. Links that appear only in the full text of a paper are not reached. Rules were committed before the first link was checked.</p>'
   '<div id="linkrot-live" class="bench-live">Loading.</div><script src="/linkrot/live.js" defer></script>'
   '<p class="meta">Named here and want to answer a row? <a href="/respond?u=linkrot-all">Respond</a></p>'
   '<p class="bench-note">Above: the rot share has a lower bound above 10 percent. Consistent: the upper bound is below 5 percent. Cannot tell: neither, or fewer than 30 readable links. Thresholds were fixed before the first check. Source: the arXiv API.</p>')
-PAGES['/linkrot'] = page('/linkrot', 'LINKROT | Stated Links Against Live | Heuremen LLC', 'LINKROT: code and data links stated in arXiv papers against whether they still resolve, read every week, by year and host, with intervals.', _LRBODY, hero_slim('LINKROT &middot; Stated Links Against Live'))
+# 10 Nov 2026: samples beside arXiv (PLAN.md Addenda 3 and 4). The fragment is the shipped snapshot linkrot_index/shipped/linkrot_samples.html, written only by
+# linkrot_index/early/ship_samples.py freeze, so the tick that keeps reading never changes the page between ships. Its numbers have ledger rows (linkrot.samples.*).
+_lrs = os.path.join(HERE, '..', 'linkrot_index', 'shipped', 'linkrot_samples.html')
+if os.path.exists(_lrs): _LRBODY = _LRBODY + open(_lrs, encoding='utf-8').read()
+PAGES['/linkrot'] = page('/linkrot', 'LINKROT | Stated Links Against Live | Heuremen LLC', 'LINKROT: code and data links stated in arXiv papers against whether they still resolve, read every week, and random samples beside them from the early web, RFCs, the Federal Register, landmark sites and our own name, with intervals.', _LRBODY, hero_slim('LINKROT &middot; Stated Links Against Live'))
 _FEED.append(('/linkrot', 'LINKROT: Stated Links Against Live', 'Code and data links stated in arXiv papers against whether they resolve.'))
 
 # 29 Oct 2026: TAPE, live. Plan: tape/PLAN.md.
@@ -1413,6 +1419,68 @@ _NEOBODY = _NEOBODY.replace('<p class="meta crumb">Division: <a href="/atlas">AT
 _NEOBODY = _NEOBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')   # the site's table and scroll styles (no inline style on indahl.ai)
 PAGES['/neo'] = page('/neo', 'NEO | Stated Close-Approach Distances Against the Later Record | Heuremen LLC', 'NEO: close-approach distance ranges that NASA/JPL stated from an earlier orbit solution, copied at the time by the Internet Archive and by this desk, set beside the distance from the latest solution, by how long before the approach each range was stated.', _NEOBODY, hero_slim('NEO &middot; Stated Close-Approach Distances Against the Later Record'))
 _FEED.append(('/neo', 'NEO: Stated Close-Approach Distances Against the Later Record', 'Close-approach distance ranges JPL stated from an earlier orbit solution against the latest solution, by how long before the approach they were stated.'))
+# 10 Nov 2026: SOLAR, under ATLAS. Plan: solar_index/PLAN.md, committed (07b57e8) before any stated chance was set beside an outcome, addenda 1 and 2 after
+# the data, outside referee solar_index_referee/REFEREE.md (HOLD on the flare reader, fixed, re-check SHIP). Same pattern as NEO: the body is taken from
+# solar_index/solar.html, which build_page.py renders from summary_solar.json. The headline is the live one (watch/headlines.py solar()).
+_so = open(os.path.join(HERE, '..', 'solar_index', 'solar.html'), encoding='utf-8').read()
+_so_main = _so[_so.index('<main class="wrap">') + len('<main class="wrap">'):_so.index('</main>')]
+assert _so_main.startswith('<section id="hl-slot"'), 'SOLAR: the headline block is not where build_page.py puts it'
+_SOLARBODY = _so_main[_so_main.index('</section>') + len('</section>'):]
+assert '<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>' in _SOLARBODY, 'SOLAR: the division line is not where build_page.py puts it'
+_SOLARBODY = _SOLARBODY.replace('<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>', '', 1).lstrip('\n')
+_SOLARBODY = _SOLARBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')
+PAGES['/solar'] = page('/solar', 'SOLAR | Stated Space Weather Chances Against What Happened | Heuremen LLC', 'SOLAR: the chances of solar flares and geomagnetic storms that NOAA SWPC states each day, as first published, set beside what happened, bin by bin, with a Brier score against the base rate.', _SOLARBODY, hero_slim('SOLAR &middot; Stated Space Weather Chances Against What Happened'))
+_FEED.append(('/solar', 'SOLAR: Stated Space Weather Chances Against What Happened', 'NOAA SWPC stated chances of solar flares and geomagnetic storms against what happened, by bin of stated chance.'))
+# 10 Nov 2026: QUAKE, under ATLAS. Plan: quake_index/PLAN.md, committed (ae75b55) before any stated probability or range was set beside a count, outside referee
+# quake_index_referee/REFEREE.md. The body is taken from quake_index/quake.html, which build_page.py renders from summary_quake.json. The headline is the live
+# one (watch/headlines.py quake(), same function as the page). The feed /quake/live.json is the summary of the newest run and can be newer than the tables.
+_qk = open(os.path.join(HERE, '..', 'quake_index', 'quake.html'), encoding='utf-8').read()
+_qk_main = _qk[_qk.index('<main class="wrap">') + len('<main class="wrap">'):_qk.index('</main>')]
+assert _qk_main.startswith('<section id="hl-slot"'), 'QUAKE: the headline block is not where build_page.py puts it'
+_QKBODY = _qk_main[_qk_main.index('</section>') + len('</section>'):]
+assert '<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>' in _QKBODY, 'QUAKE: the division line is not where build_page.py puts it'
+_QKBODY = _QKBODY.replace('<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>', '', 1).lstrip('\n')
+_QKBODY = _QKBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')
+PAGES['/quake'] = page('/quake', 'QUAKE | Stated Aftershock Odds Against the Aftershocks That Followed | Heuremen LLC', 'QUAKE: every archived USGS aftershock forecast, its stated probabilities and 95% ranges set beside the earthquakes the USGS catalog shows in the same zone and window.', _QKBODY, hero_slim('QUAKE &middot; Stated Aftershock Odds Against the Aftershocks That Followed'))
+_FEED.append(('/quake', 'QUAKE: Stated Aftershock Odds Against the Aftershocks That Followed', 'Every archived USGS aftershock forecast against the earthquakes the USGS catalog shows in the same zone and window.'))
+
+# 10 Nov 2026: FLU, under HERMES beside FORECAST. Plan: flu_index/PLAN.md, committed (d82aaca) before the first comparison, outside referee
+# flu_index_referee/REFEREE.md (fixes applied in flu_index/build_page.py). The body is taken from flu_index/flu.html as for NEO. The headline is the
+# live one (watch/headlines.py flu(), same function as the page). The feed /flu/live.json is the summary of the newest run.
+_flu = open(os.path.join(HERE, '..', 'flu_index', 'flu.html'), encoding='utf-8').read()
+_flu_main = _flu[_flu.index('<main class="wrap">') + len('<main class="wrap">'):_flu.index('</main>')]
+assert _flu_main.startswith('<section id="hl-slot"'), 'FLU: the headline block is not where build_page.py puts it'
+_FLUBODY = _flu_main[_flu_main.index('</section>') + len('</section>'):]
+assert '<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>' in _FLUBODY, 'FLU: the division line is not where build_page.py puts it'
+_FLUBODY = _FLUBODY.replace('<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>', '', 1).lstrip('\n')
+_FLUBODY = _FLUBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')
+PAGES['/flu'] = page('/flu', 'FLU | Stated Flu Forecast Intervals Against Reported Admissions | Heuremen LLC', 'FLU: the CDC FluSight ensemble stated 50 and 95 percent intervals for weekly flu hospital admissions, set beside the counts later reported, by horizon, season and place, with block bootstrap intervals.', _FLUBODY, hero_slim('FLU &middot; Stated Flu Forecast Intervals Against Reported Admissions'))
+_FEED.append(('/flu', 'FLU: Stated Flu Forecast Intervals Against Reported Admissions', 'The CDC FluSight ensemble stated intervals for weekly flu hospital admissions against the counts later reported, live.'))
+
+# 10 Nov 2026: TORNADO, under HERMES beside FORECAST. Plan: tornado_index/PLAN.md, committed (447599c) before the first comparison, outside referee
+# tornado_index_referee/REFEREE.md (fixes applied in tornado_index/build_page.py). The body is taken from tornado_index/tornado.html as for NEO. The headline is the
+# live one (watch/headlines.py tornado(), same function as the page). The feed /tornado/live.json is the summary of the newest run.
+_tornado = open(os.path.join(HERE, '..', 'tornado_index', 'tornado.html'), encoding='utf-8').read()
+_tornado_main = _tornado[_tornado.index('<main class="wrap">') + len('<main class="wrap">'):_tornado.index('</main>')]
+assert _tornado_main.startswith('<section id="hl-slot"'), 'TORNADO: the headline block is not where build_page.py puts it'
+_TORNADOBODY = _tornado_main[_tornado_main.index('</section>') + len('</section>'):]
+assert '<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>' in _TORNADOBODY, 'TORNADO: the division line is not where build_page.py puts it'
+_TORNADOBODY = _TORNADOBODY.replace('<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>', '', 1).lstrip('\n')
+_TORNADOBODY = _TORNADOBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')
+PAGES['/tornado'] = page('/tornado', 'TORNADO | Stated Tornado Chances Against the Tornadoes That Came | Heuremen LLC', 'TORNADO: the Storm Prediction Center Day 1 tornado probabilities and the National Weather Service tornado warning goals, set beside the tornadoes in the SPC tornado database, with Kansas and Tornado Alley apart and day block bootstrap intervals.', _TORNADOBODY, hero_slim('TORNADO &middot; Stated Tornado Chances Against the Tornadoes That Came'))
+_FEED.append(('/tornado', 'TORNADO: Stated Tornado Chances Against the Tornadoes That Came', 'Storm Prediction Center tornado probability bands and NWS tornado warning goals against the tornadoes in the SPC database, live.'))
+# 10 Nov 2026: CONE, under ATLAS. Plan: cone_index/PLAN.md, committed (e49ebd2) before any forecast position was set beside a best-track position. Outside referee
+# cone_index_referee/REFEREE.md. The body is taken from cone_index/cone.html, which build_page.py renders from summary_cone.json, so nav, division line, footer
+# and reference code come from page(). The headline is the live one (watch/headlines.py cone(), same function as the page). The feed /cone/live.json is the newest run.
+_co = open(os.path.join(HERE, '..', 'cone_index', 'cone.html'), encoding='utf-8').read()
+_co_main = _co[_co.index('<main class="wrap">') + len('<main class="wrap">'):_co.index('</main>')]
+assert _co_main.startswith('<section id="hl-slot"'), 'CONE: the headline block is not where build_page.py puts it'
+_CONEBODY = _co_main[_co_main.index('</section>') + len('</section>'):]
+assert '<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>' in _CONEBODY, 'CONE: the division line is not where build_page.py puts it'
+_CONEBODY = _CONEBODY.replace('<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>', '', 1).lstrip('\n')
+_CONEBODY = _CONEBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')
+PAGES['/cone'] = page('/cone', 'CONE | The Hurricane Forecast Cone Against Where Storms Went | Heuremen LLC', 'CONE: National Hurricane Center official track forecasts set beside the post-season best track, scored against the cone NHC states holds the storm centre about 60 to 70 percent of the time.', _CONEBODY, hero_slim('CONE &middot; The Hurricane Forecast Cone Against Where Storms Went'))
+_FEED.append(('/cone', 'CONE: The Hurricane Forecast Cone Against Where Storms Went', 'National Hurricane Center official track forecasts against the best track, read against the cone NHC states holds the storm centre about 60 to 70 percent of the time.'))
 # 10 Nov 2026: WIKI, under HERMES. Plan: wiki_index/PLAN.md (committed before any comparison, notes 1 and 2 after the outside referee).
 # The page is one reading: wiki_index/build_page.py renders it from data/wiki_live.json, and its body and headline are taken from that file here,
 # so nav, division line, footer and reference code come from page(). The feed /wiki/live.json is read again about once a week and can be newer.
@@ -1976,11 +2044,11 @@ if '/iris/lab' in PAGES and '</main>' in PAGES['/iris/lab']:   # 30 Oct 2026: th
 # 29 Oct 2026: DIVISIONS. Each live page has one home division. A division page lists its desks, and a desk page shows its division.
 DESKS = {'/oy': [('/campus', 'CAMPUS', 'The documents behind the OY page, kept over time')],
          '/iris': [('/iris/lab', 'LAB', 'Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Faults and Guards across models'), ('/yo', 'YO', 'Our small language model trained on IBM calibration records: live reads and every test'), ('/hfsize', 'HFSIZE', 'Model names against the weights'), ('/hflicense', 'HFLICENSE', 'Stated licenses against license files'), ('/pkglicense', 'PKGLICENSE', 'Package licenses against repository licenses'), ('/pkginstall', 'PKGINSTALL', 'Install commands against pip resolution'), ('/weights', 'WEIGHTS', 'Model names against their weight files, pass after pass'), ('/ailuminate', 'AILUMINATE', 'MLCommons AILuminate Safety results, kept and checked'), ('/hosts', 'HOSTS', 'One open-weight model, many hosts, stated uptime and quantization')],
-         '/atlas': [('/atlas/electricity', 'ELECTRICITY', 'Prices, providers and generation by state'), ('/atlas/power-plants', 'POWER PLANTS', 'Every operating plant by fuel and capacity'), ('/atlas/carbon', 'CARBON', 'Pounds of CO2 per megawatthour by state and grid region'), ('/atlas/planned-plants', 'PLANNED PLANTS', 'What is coming, by fuel, stage and year'), ('/water', 'WATER', 'Reservoir forecasts against measured levels'), ('/neo', 'NEO', 'Stated asteroid close-approach distances against the later record'),
+         '/atlas': [('/atlas/electricity', 'ELECTRICITY', 'Prices, providers and generation by state'), ('/atlas/power-plants', 'POWER PLANTS', 'Every operating plant by fuel and capacity'), ('/atlas/carbon', 'CARBON', 'Pounds of CO2 per megawatthour by state and grid region'), ('/atlas/planned-plants', 'PLANNED PLANTS', 'What is coming, by fuel, stage and year'), ('/water', 'WATER', 'Reservoir forecasts against measured levels'), ('/neo', 'NEO', 'Stated asteroid close-approach distances against the later record'), ('/solar', 'SOLAR', 'Stated flare and storm chances against what happened'), ('/quake', 'QUAKE', 'Stated aftershock odds against the aftershocks that followed'), ('/cone', 'CONE', 'The hurricane forecast cone against where storms went'),
                     ('/uptime', 'UPTIME', 'Vendor status pages against independent probes'), ('/time', 'TIME', 'Public time servers, stated against delivered'), ('/cada', 'CADA', 'Public DNS filters against fresh abuse reports'), ('/secrecords', 'SECRECORDS', 'Security records against their own rules'),
                     ('/seat', 'SEAT', 'An outside seat reads our own pages'), ('/support', 'SUPPORT', 'Stated support windows against release activity'), ('/change', 'CHANGE', 'Announced shutdown dates, kept over time')],
          '/hermes': [('/hermes/model', 'MODEL', 'Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data'), ('/trials', 'TRIALS', 'Results due against results posted, and stopped trials'), ('/hpt', 'HPT', 'Hospital price files against the rule'), ('/airline', 'AIRLINE', 'Scheduled flight time against flown time'), ('/airq', 'AIRQ', 'Air sensors against the EPA\'s own targets'), ('/revise', 'REVISE', 'Stated margin against later revision'), ('/fedsep', 'FEDSEP', 'The Fed\'s stated ranges against outcomes'), ('/cadence', 'CADENCE', 'Stated update schedules against delivered'),
-                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/forecasters', 'FORECASTERS', 'Every forecaster desk on one axis, stated against delivered'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/stack', 'STACK', 'Every test side by side')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot
+                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/flu', 'FLU', 'Stated flu forecast intervals against reported admissions'), ('/tornado', 'TORNADO', 'Stated tornado chances and warning goals against the tornadoes that came'), ('/forecasters', 'FORECASTERS', 'Every forecaster desk on one axis, stated against delivered'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/stack', 'STACK', 'Every test side by side')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot
 _DNAME = {'/iris': 'IRIS', '/atlas': 'ATLAS', '/hermes': 'HERMES', '/oy': 'OY'}
 for _d, _ds in DESKS.items():
     if _d == '/hermes': continue
@@ -2146,7 +2214,7 @@ def main():
         return doc
     # 9 Nov 2026: the YO reads section moved from /qia to the YO desk (/yo, YO_READS).
     PAGES['/iris'] = _collapse(PAGES['/iris'], [
-        ('Reverse the order of the options', None),
+        ('reversing the order of the options changes 27% to 50%', None),   # 10 Nov 2026: the IRIS headline was reworded (newsletter audit), key follows it
         ('Models as judges in our own pipeline', 'Most of our own judge&rsquo;s recorded verdicts were holds with no decision, and the harness had to force most of the orchestrator&rsquo;s asks.'),
         ('Our own fine-tuning runs', 'In our own LoRA runs, some training sessions reached a loss that was not a number, and no candidate adapter cleared our promotion bar.')])
     PAGES['/iris/lab'] = _collapse(PAGES['/iris/lab'], [

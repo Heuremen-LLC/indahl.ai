@@ -1483,9 +1483,17 @@
 "CHANGE",
 "When a vendor says something ends on a date, does the date hold?"
 ],
+"cone": [
+"CONE",
+"When the National Hurricane Center draws a cone, how often does the storm stay inside it?"
+],
 "fedsep": [
 "FEDSEP",
 "Do the Fed's stated ranges describe what happened?"
+],
+"flu": [
+"FLU",
+"When the CDC flu forecast states an interval, how often does the reported count land inside it?"
 ],
 "hfsize": [
 "HFSIZE",
@@ -1519,6 +1527,10 @@
 "PKGLICENSE",
 "Is the license a package states the license of its repository?"
 ],
+"quake": [
+"QUAKE",
+"When the USGS states the odds of aftershocks, what follows?"
+],
 "revise": [
 "REVISE",
 "How far does a first estimate move?"
@@ -1526,6 +1538,10 @@
 "secrecords": [
 "SECRECORDS",
 "Do a domain's security records do what they say?"
+],
+"solar": [
+"SOLAR",
+"When SWPC states a chance of a solar flare or a geomagnetic storm, how often does it happen?"
 ],
 "support": [
 "SUPPORT",

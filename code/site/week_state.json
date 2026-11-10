@@ -81,6 +81,21 @@
    "Stated asteroid close-approach distances against the later record"
   ],
   [
+   "/solar",
+   "SOLAR",
+   "Stated flare and storm chances against what happened"
+  ],
+  [
+   "/quake",
+   "QUAKE",
+   "Stated aftershock odds against the aftershocks that followed"
+  ],
+  [
+   "/cone",
+   "CONE",
+   "The hurricane forecast cone against where storms went"
+  ],
+  [
    "/uptime",
    "UPTIME",
    "Vendor status pages against independent probes"
@@ -161,6 +176,16 @@
    "Stated chance against what happened"
   ],
   [
+   "/flu",
+   "FLU",
+   "Stated flu forecast intervals against reported admissions"
+  ],
+  [
+   "/tornado",
+   "TORNADO",
+   "Stated tornado chances and warning goals against the tornadoes that came"
+  ],
+  [
    "/launch",
    "LAUNCH",
    "Stated launch time against the time it flew"
@@ -214,7 +239,9 @@
   "/cadence": "2026-10-28T23:43:20Z",
   "/campus": "2026-10-29T18:28:01Z",
   "/change": "2026-10-29T11:12:43Z",
+  "/cone": "2026-11-10T15:50:55Z",
   "/fedsep": "2026-10-29T12:56:10Z",
+  "/flu": "2026-11-10T15:50:55Z",
   "/forecast": "2026-10-28T23:43:20Z",
   "/hermes/model": "2026-10-29T13:11:24Z",
   "/hflicense": "2026-10-29T03:36:56Z",
@@ -227,14 +254,17 @@
   "/neo": "2026-11-10T13:59:24Z",
   "/pkginstall": "2026-10-29T12:16:37Z",
   "/pkglicense": "2026-10-29T02:44:25Z",
+  "/quake": "2026-11-10T15:50:55Z",
   "/revise": "2026-10-29T12:40:10Z",
   "/seat": "2026-10-29T11:58:53Z",
   "/secrecords": "2026-10-29T11:54:10Z",
   "/social": "2026-11-10T12:49:07Z",
+  "/solar": "2026-11-10T15:51:33Z",
   "/stack": "2026-10-29T12:21:11Z",
   "/support": "2026-10-29T02:25:43Z",
   "/tape": "2026-10-29T21:44:56Z",
   "/time": null,
+  "/tornado": "2026-11-10T15:50:55Z",
   "/trials": "2026-10-28T23:51:50Z",
   "/uptime": "2026-10-28T23:37:42Z",
   "/vault": "2026-10-29T21:51:28Z",

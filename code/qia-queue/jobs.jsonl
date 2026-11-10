@@ -729,3 +729,4 @@
 {"id": "dbpieblt7fqc7389gav0", "backend": "ibm_pittsburgh", "created": "2026-11-10T14:16:14.574145Z", "wait_s": 1.025987}
 {"id": "dbpj9rc4148s739unthg", "backend": "ibm_pittsburgh", "created": "2026-11-10T15:14:53.439309Z", "wait_s": 1.640617}
 {"id": "dbpheugqtr0c738ee290", "backend": "ibm_chicago", "created": "2026-11-10T13:09:14.53125Z", "wait_s": 8231.561095}
+{"id": "dbphuedt7fqc7389f5ag", "backend": "ibm_phoenix", "created": "2026-11-10T13:42:17.238162Z", "wait_s": 7248.784185}
