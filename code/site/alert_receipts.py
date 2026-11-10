@@ -192,6 +192,7 @@ def kv_put(key, value):
     os.makedirs(STATE, exist_ok=True); fd, tmp = tempfile.mkstemp(prefix='.kv_pub.', dir=STATE)
     with os.fdopen(fd, 'w') as f: f.write(value)
     try: return _wr('kv', 'key', 'put', key, '--path', tmp, '--namespace-id', NS_PUBLIC, '--remote') == 0
+    except Exception: return False
     finally:
         try: os.remove(tmp)
         except OSError: pass
@@ -202,7 +203,9 @@ def kv_push(recs):
     try: done = json.load(open(PUSHED))
     except Exception: done = {}
     for r in recs:
-        w = kv_put('alert_r_' + r['id'], json.dumps(public(r), ensure_ascii=False, separators=(',', ':')))
+        try: body = json.dumps(public(r), ensure_ascii=False, separators=(',', ':'))
+        except ValueError as e: _alert_bones('receipt:' + r.get('id', '?'), str(e)); done[r['id']] = r.get('chain_hash'); ok = False; continue   # refused, never published, a Bones alert says why
+        w = kv_put('alert_r_' + r['id'], body)
         if w: done[r['id']] = r.get('chain_hash')
         ok &= w
     if not DRY:
@@ -221,7 +224,7 @@ def public(r):
     return out
 
 
-PRIVATE = re.compile(r'(?i)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}|https?://(?!indahl\.ai/)|\bendpoint\b|\btoken\b|fcm\.googleapis|push\.apple|mozilla\.com')
+PRIVATE = re.compile(r'(?i)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}|https?://(?!indahl\.ai/)|fcm\.googleapis|push\.apple|push\.services\.mozilla|notify\.windows\.com|whsec_')
 def check_public(d):
     if set(d) - FIELDS: return 'fields %s' % sorted(set(d) - FIELDS)
     if PRIVATE.search(json.dumps(d, ensure_ascii=False)): return 'looks like subscriber data'

@@ -174,6 +174,6 @@ def main():
     NE.status('webhooks', True, '%d sent' % sent)
     print('webhooks: %d POST(s) this run, %d delivery(s) left in the queue' % (sent, len(keep)))
 
-import alert_hooks as _ah; post, deliver = _ah.webhooks(post, deliver)   # 10 Nov 2026: Ed25519 header beside the HMAC, and alert receipts (alert_hooks.py)
+import alert_hooks as _ah; post, deliver, url_ok = _ah.webhooks(post, deliver, url_ok)   # 10 Nov 2026: Ed25519 header beside the HMAC, alert receipts, and the canary address let through (alert_hooks.py)
 
 if __name__ == '__main__': main()

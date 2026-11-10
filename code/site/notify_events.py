@@ -94,7 +94,7 @@ def _guarded(out, rows):
     except AttributeError: return out
     import datetime as _D
     old = (_D.datetime.now(_D.timezone.utc) - _D.timedelta(days=7)).isoformat()
-    keep = [c for c in out if AR.utc(c['at']) and AR.utc(c['at']) < old[:19] + 'Z' or AR.guard(c['id'], rows=idx)[0]]   # rows older than 7 days went out long ago and are not guarded again
+    keep = [c for c in out if (AR.utc(c['at']) and AR.utc(c['at']) < old[:19] + 'Z') or AR.guard(c['id'], rows=idx)[0]]   # rows older than 7 days went out long ago and are not guarded again
     if len(keep) == len(out): AR.guard_clear()
     return keep
 

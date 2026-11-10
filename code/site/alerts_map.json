@@ -1818,7 +1818,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about once a week",
-"every_min": 9953,
+"every_min": 9959,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -1910,7 +1910,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about once a week",
-"every_min": 9621,
+"every_min": 9627,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -1995,7 +1995,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1592,
+"every_min": 1593,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -2042,7 +2042,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about once a day",
-"every_min": 1460,
+"every_min": 1461,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -2060,7 +2060,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1460,
+"every_min": 1461,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -2114,7 +2114,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1460,
+"every_min": 1461,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -2123,7 +2123,7 @@
 "support": {
 "div": "atlas",
 "every": "checked about every 4 hours",
-"every_min": 265,
+"every_min": 266,
 "mode": "outcome",
 "name": "SUPPORT",
 "src": "rider",
@@ -2159,7 +2159,7 @@
 "trials": {
 "div": "hermes",
 "every": "checked about every 4 hours",
-"every_min": 265,
+"every_min": 266,
 "mode": "outcome",
 "name": "TRIALS",
 "src": "rider",

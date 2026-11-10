@@ -173,10 +173,10 @@ async function canaryHook(req, env) {
     const want = 'v1=' + [...new Uint8Array(await crypto.subtle.sign('HMAC', k, msg))].map(x => x.toString(16).padStart(2, '0')).join('');
     hm = want === (req.headers.get('x-indahl-signature') || '');
   }
-  const KV = env.IRIS_BENCH; let log = []; try { log = JSON.parse((await KV.get('canary_hook_log')) || '[]'); } catch (e) {}
+  const KV = env.IRIS_BENCH; if (!KV) return J({ ok: false, stored: false }, 503); let log = []; try { log = JSON.parse((await KV.get('canary_hook_log')) || '[]'); } catch (e) {}
   const dv = String(req.headers.get('x-indahl-delivery') || '').slice(0, 40);
   if (log.some(x => x.sig === sig.slice(0, 24) || (dv && x.delivery === dv))) return J({ ok: true, stored: false, why: 'already stored' });   // the same delivery twice writes nothing
-  if (log[0] && Date.now() - Date.parse(log[0].at) < 10000) return J({ ok: false, stored: false, why: 'one delivery per 10 seconds' }, 429);   // a hard cap on writes
+  if (log.filter(x => Date.now() - Date.parse(x.at) < 60000).length >= 6) return J({ ok: false, stored: false, why: 'at most 6 deliveries a minute' }, 429);   // a hard cap on writes
   log.unshift({ at: new Date().toISOString().replace(/\.\d+Z$/, 'Z'), ts: +ts, delivery: dv, sig: sig.slice(0, 24), events: (Array.isArray(b.events) ? b.events : []).map(e => String((e && e.id) || '').slice(0, 120)).slice(0, 50), ed25519: ed, hmac: hm });
   await KV.put('canary_hook_log', JSON.stringify(log.slice(0, 100)));
   return J({ ok: true });
@@ -279,5 +279,6 @@ export async function decorate(req, u, res) {
     const box = `<form method="post" action="/mydata/${kind}" class="md"><input type="hidden" name="t" value="${t}"><p><strong>Your data.</strong> Download everything we hold for ${what} as JSON, or delete it all now and get a deletion receipt.</p><p><button class="btn" type="submit" name="a" value="export">Download what we hold</button> <button class="btn" type="submit" name="a" value="delete">Delete everything now</button></p></form>`;
     const i = doc.lastIndexOf('</form>'); if (i > 0) doc = doc.slice(0, i + 7) + box + doc.slice(i + 7);
   }
-  return new Response(doc, { status: res.status, headers: res.headers });
+  const hh = new Headers(res.headers); hh.delete('content-length'); hh.set('cache-control', 'no-store'); hh.set('referrer-policy', 'no-referrer');
+  return new Response(doc, { status: res.status, headers: hh });
 }

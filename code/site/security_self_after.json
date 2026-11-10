@@ -1,0 +1,103 @@
+{
+ "desk": "SECRECORDS",
+ "domains": {
+  "heuremen.com": {
+   "headers": {
+    "final": {
+     "headers": {
+      "content-security-policy": "default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY"
+     },
+     "status": 200,
+     "url": "https://indahl.ai/"
+    },
+    "first": {
+     "hsts": null,
+     "location": "https://indahl.ai/",
+     "status": 301
+    }
+   },
+   "hsts_class": "NOT_COMPARABLE",
+   "hsts_header": null,
+   "hsts_note": "no HSTS header",
+   "mail_records": {
+    "_dmarc.heuremen.com": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:aa0c50a47e5b4e40a65bc3a1a0a1bd63@dmarc-reports.cloudflare.net",
+    "_mta-sts.heuremen.com": "",
+    "_smtp._tls.heuremen.com": ""
+   },
+   "spf_class": "AGREE",
+   "spf_lookups": 1,
+   "spf_note": null
+  },
+  "heuremen.org": {
+   "headers": {
+    "final": {
+     "headers": {
+      "content-security-policy": null,
+      "permissions-policy": null,
+      "referrer-policy": null,
+      "strict-transport-security": "max-age=31556952",
+      "x-content-type-options": null,
+      "x-frame-options": null
+     },
+     "status": 200,
+     "url": "https://heuremen.org/?door=1"
+    },
+    "first": {
+     "hsts": "max-age=31556952",
+     "location": null,
+     "status": 200
+    }
+   },
+   "hsts_class": "NOT_COMPARABLE",
+   "hsts_header": "max-age=31556952",
+   "hsts_note": "header does not state preload",
+   "mail_records": {
+    "_dmarc.heuremen.org": "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc_rua@onsecureserver.net;",
+    "_mta-sts.heuremen.org": "",
+    "_smtp._tls.heuremen.org": ""
+   },
+   "spf_class": "AGREE",
+   "spf_lookups": 0,
+   "spf_note": null
+  },
+  "indahl.ai": {
+   "headers": {
+    "final": {
+     "headers": {
+      "content-security-policy": "default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY"
+     },
+     "status": 200,
+     "url": "https://indahl.ai/?door=1"
+    },
+    "first": {
+     "hsts": "max-age=31536000; includeSubDomains",
+     "location": null,
+     "status": 200
+    }
+   },
+   "hsts_class": "NOT_COMPARABLE",
+   "hsts_header": "max-age=31536000; includeSubDomains",
+   "hsts_note": "header does not state preload",
+   "mail_records": {
+    "_dmarc.indahl.ai": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:d90fee9887324a9abf105a1bb4912822@dmarc-reports.cloudflare.net,mailto:dmarc_rua@onsecureserver.net;",
+    "_mta-sts.indahl.ai": "",
+    "_smtp._tls.indahl.ai": ""
+   },
+   "spf_class": "AGREE",
+   "spf_lookups": 1,
+   "spf_note": null
+  }
+ },
+ "plan": "https://indahl.ai/secrecords",
+ "read_at": "2026-11-10T22:57:19Z"
+}

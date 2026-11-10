@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """alert_hooks.py (10 Nov 2026): what a sender adds with one line, without changing its own code paths.
 
-  webhooks_send.py:  post, deliver = alert_hooks.webhooks(post, deliver)
+  webhooks_send.py:  post, deliver, url_ok = alert_hooks.webhooks(post, deliver, url_ok)
+    - the canary address https://indahl.ai/canary/hook (exactly that URL) passes the sender's address check
     - every signed delivery (one that carries x-indahl-timestamp) also gets x-indahl-signature-ed25519 and x-indahl-key-id: the Ed25519
       signature of "<timestamp>.<body>" under the published key (sign.py). If signing fails the delivery still goes, without that header,
       and the canary (canary.py) reports it.
@@ -11,7 +12,10 @@ import os, sys
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
 
 
-def webhooks(post, deliver):
+CANARY_URL = 'https://indahl.ai/canary/hook'   # our own receiver (security.js). The public form and the sender refuse indahl.ai addresses, so this one exact URL is let through here
+
+
+def webhooks(post, deliver, url_ok=None):
     import sign, alert_receipts as AR
 
     def post2(u, body, headers):
@@ -27,7 +31,8 @@ def webhooks(post, deliver):
                 try: AR.record(ev, 'webhook')
                 except Exception: pass
         return ok, why
-    return post2, deliver2
+    if url_ok is None: return post2, deliver2
+    return post2, deliver2, (lambda u: u == CANARY_URL or url_ok(u))
 
 
 def email_sent(events):
