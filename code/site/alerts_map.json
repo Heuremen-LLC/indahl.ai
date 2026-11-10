@@ -1543,9 +1543,17 @@
 "SOLAR",
 "When SWPC states a chance of a solar flare or a geomagnetic storm, how often does it happen?"
 ],
+"steo": [
+"STEO",
+"When EIA states a price interval, how often does the price land inside it?"
+],
 "support": [
 "SUPPORT",
 "Is a cycle that is stated as supported still being released?"
+],
+"tornado": [
+"TORNADO",
+"When the Storm Prediction Center draws a tornado chance, how often does a tornado come?"
 ],
 "trials": [
 "TRIALS",

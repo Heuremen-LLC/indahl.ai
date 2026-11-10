@@ -6,6 +6,11 @@
    "The documents behind the OY page, kept over time"
   ],
   [
+   "/rank",
+   "RANK",
+   "US News education rankings against the public record"
+  ],
+  [
    "/iris/lab",
    "LAB",
    "Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Faults and Guards across models"
@@ -176,6 +181,11 @@
    "Stated chance against what happened"
   ],
   [
+   "/steo",
+   "STEO",
+   "Stated energy price intervals against the spot price"
+  ],
+  [
    "/flu",
    "FLU",
    "Stated flu forecast intervals against reported admissions"
@@ -221,6 +231,11 @@
    "Platform reports against the filings"
   ],
   [
+   "/predictions",
+   "NOW",
+   "Public predictions against their deadline, and FORTUNE"
+  ],
+  [
    "/stack",
    "STACK",
    "Every test side by side"
@@ -254,13 +269,16 @@
   "/neo": "2026-11-10T13:59:24Z",
   "/pkginstall": "2026-10-29T12:16:37Z",
   "/pkglicense": "2026-10-29T02:44:25Z",
+  "/predictions": "2026-11-10T16:25:14Z",
   "/quake": "2026-11-10T15:50:55Z",
+  "/rank": "2026-11-10T16:27:24Z",
   "/revise": "2026-10-29T12:40:10Z",
   "/seat": "2026-10-29T11:58:53Z",
   "/secrecords": "2026-10-29T11:54:10Z",
   "/social": "2026-11-10T12:49:07Z",
   "/solar": "2026-11-10T15:51:33Z",
   "/stack": "2026-10-29T12:21:11Z",
+  "/steo": "2026-11-10T16:19:33Z",
   "/support": "2026-10-29T02:25:43Z",
   "/tape": "2026-10-29T21:44:56Z",
   "/time": null,

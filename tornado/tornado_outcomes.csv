@@ -1,0 +1,152 @@
+path,label,outcome,n,of,share,lo,hi,label_reading,year_blocks,band,lo_stated,hi_stated,rows,days,events,freq,unrated_as_ef2_upper,bs,bs_clim,bss,why,value,goal
+/cells[0]/bands[0],bands[0],CONSISTENT,,,,0.00038,0.00042,,,under 2,0.0,0.02,8320020,6925,3358,0.0004,,,,,,,
+/cells[0]/bands[1],bands[1],CONSISTENT,,,,0.02064,0.02302,ABOVE,,2 to 5,0.02,0.05,139433,3880,3037,0.02178,,,,,,,
+/cells[0]/bands[2],bands[2],CONSISTENT,,,,0.06802,0.07562,ABOVE,,5 to 10,0.05,0.1,46225,1963,3320,0.07182,,,,,,,
+/cells[0]/bands[3],bands[3],ABOVE,,,,0.16246,0.19038,ABOVE,,10 to 15,0.1,0.15,8760,502,1546,0.17648,,,,,,,
+/cells[0]/bands[3]/year_blocks,year_blocks,ABOVE,,,,0.15107,0.20248,,,,,,,,,,,,,,,,
+/cells[0]/bands[4],bands[4],CANNOT_TELL,,,,0.23249,0.30116,ABOVE,,15 to 30,0.15,0.3,2914,137,776,0.2663,,,,,,,
+/cells[0]/bands[5],bands[5],CANNOT_TELL,,,,0.4171,0.54986,,,30 to 45,0.3,0.45,389,22,187,0.48072,,,,,,,
+/cells[0]/bands[6],bands[6],CANNOT_TELL,,,,0.33333,0.33333,,,45 to 60,0.45,0.6,9,1,3,0.33333,,,,,,,
+/cells[0]/bands[7],bands[7],CANNOT_TELL,,,,,,,,60 and over,0.6,1.0,0,0,0,,,,,,,,
+/cells[0]/hatched,hatched,CANNOT_TELL,,,,0.0818,0.11269,,,,,,7454,295,723,0.09699,0.10545,,,,,,
+/cells[0]/brier,brier,ABOVE,,,,0.053,0.0625,,,,,,,,,,,0.001348,0.00143,0.0579,,,
+/cells[1]/bands[0],bands[0],CONSISTENT,,,,0.00055,0.00082,,,under 2,0.0,0.02,205568,6913,140,0.00068,,,,,,,
+/cells[1]/bands[1],bands[1],CANNOT_TELL,,,,0.01912,0.02807,CONSISTENT,,2 to 5,0.02,0.05,6244,872,146,0.02338,,,,,,,
+/cells[1]/bands[2],bands[2],CONSISTENT,,,,0.06183,0.0894,ABOVE,,5 to 10,0.05,0.1,2089,364,156,0.07468,,,,,,,
+/cells[1]/bands[3],bands[3],CANNOT_TELL,,,,0.11874,0.1965,ABOVE,,10 to 15,0.1,0.15,541,96,84,0.15527,,,,,,,
+/cells[1]/bands[3]/year_blocks,year_blocks,CANNOT_TELL,,,,0.1184,0.19756,,,,,,,,,,,,,,,,
+/cells[1]/bands[4],bands[4],CANNOT_TELL,,,,0.12552,0.26705,CONSISTENT,,15 to 30,0.15,0.3,198,31,38,0.19192,,,,,,,
+/cells[1]/bands[5],bands[5],CANNOT_TELL,,,,0.10526,0.59649,,,30 to 45,0.3,0.45,35,6,16,0.45714,,,,,,,
+/cells[1]/bands[6],bands[6],CANNOT_TELL,,,,,,,,45 to 60,0.45,0.6,0,0,0,,,,,,,,
+/cells[1]/bands[7],bands[7],CANNOT_TELL,,,,,,,,60 and over,0.6,1.0,0,0,0,,,,,,,,
+/cells[1]/hatched,hatched,BELOW,,,,0.03183,0.09871,,,,,,497,64,31,0.06237,0.07042,,,,,,
+/cells[1]/brier,brier,ABOVE,,,,0.0451,0.0799,,,,,,,,,,,0.002522,0.002685,0.0605,,,
+/cells[2]/bands[0],bands[0],CONSISTENT,,,,0.00047,0.00056,,,under 2,0.0,0.02,1672452,6925,854,0.00051,,,,,,,
+/cells[2]/bands[1],bands[1],CANNOT_TELL,,,,0.01778,0.02109,CONSISTENT,,2 to 5,0.02,0.05,46939,2373,910,0.01939,,,,,,,
+/cells[2]/bands[2],bands[2],CONSISTENT,,,,0.05866,0.07022,ABOVE,,5 to 10,0.05,0.1,14969,1106,963,0.06433,,,,,,,
+/cells[2]/bands[3],bands[3],ABOVE,,,,0.15243,0.1929,ABOVE,,10 to 15,0.1,0.15,2811,293,485,0.17254,,,,,,,
+/cells[2]/bands[3]/year_blocks,year_blocks,CANNOT_TELL,,,,0.14665,0.20593,,,,,,,,,,,,,,,,
+/cells[2]/bands[4],bands[4],CONSISTENT,,,,0.18925,0.28725,ABOVE,,15 to 30,0.15,0.3,874,77,205,0.23455,,,,,,,
+/cells[2]/bands[5],bands[5],CANNOT_TELL,,,,0.38889,0.503,,,30 to 45,0.3,0.45,121,9,55,0.45455,,,,,,,
+/cells[2]/bands[6],bands[6],CANNOT_TELL,,,,0.33333,0.33333,,,45 to 60,0.45,0.6,9,1,3,0.33333,,,,,,,
+/cells[2]/bands[7],bands[7],CANNOT_TELL,,,,,,,,60 and over,0.6,1.0,0,0,0,,,,,,,,
+/cells[2]/hatched,hatched,BELOW,,,,0.05491,0.08979,,,,,,2270,172,164,0.07225,0.09075,,,,,,
+/cells[2]/brier,brier,ABOVE,,,,0.0493,0.0633,,,,,,,,,,,0.001878,0.00199,0.0561,,,
+/cells[3]/bands[0],bands[0],CONSISTENT,,,,0.00037,0.00054,,,under 2,0.0,0.02,374305,311,169,0.00045,,,,,,,
+/cells[3]/bands[1],bands[1],CONSISTENT,,,,0.02711,0.0395,ABOVE,,2 to 5,0.02,0.05,6011,181,200,0.03327,,,,,,,
+/cells[3]/bands[2],bands[2],CANNOT_TELL,,,,0.08617,0.1359,ABOVE,,5 to 10,0.05,0.1,1834,81,202,0.11014,,,,,,,
+/cells[3]/bands[3],bands[3],CANNOT_TELL,,,,0.14506,0.29839,,,10 to 15,0.1,0.15,306,23,65,0.21242,,,,,,,
+/cells[3]/bands[4],bands[4],CANNOT_TELL,,,,0.08889,0.36232,,,15 to 30,0.15,0.3,74,6,16,0.21622,,,,,,,
+/cells[3]/bands[5],bands[5],CANNOT_TELL,,,,,,,,30 to 45,0.3,0.45,0,0,0,,,,,,,,
+/cells[3]/bands[6],bands[6],CANNOT_TELL,,,,,,,,45 to 60,0.45,0.6,0,0,0,,,,,,,,
+/cells[3]/bands[7],bands[7],CANNOT_TELL,,,,,,,,60 and over,0.6,1.0,0,0,0,,,,,,,,
+/cells[3]/hatched,hatched,CANNOT_TELL,,,,0.0,0.0,,,,,,7,1,0,0.0,0.71429,,,,"no preliminary report carries a rating, so an EF2 or stronger tornado cannot be told apart",,
+/cells[3]/brier,brier,ABOVE,,,,0.0402,0.0593,,,,,,,,,,,0.001615,0.0017,0.0499,,,
+/cells[4]/bands[0],bands[0],CONSISTENT,,,,0.00033,0.00184,,,under 2,0.0,0.02,9192,311,9,0.00098,,,,,,,
+/cells[4]/bands[1],bands[1],CANNOT_TELL,,,,0.00337,0.0274,CONSISTENT,,2 to 5,0.02,0.05,282,45,4,0.01418,,,,,,,
+/cells[4]/bands[2],bands[2],CANNOT_TELL,,,,0.03226,0.12281,,,5 to 10,0.05,0.1,146,18,11,0.07534,,,,,,,
+/cells[4]/bands[3],bands[3],CANNOT_TELL,,,,0.0,0.21429,,,10 to 15,0.1,0.15,14,4,1,0.07143,,,,,,,
+/cells[4]/bands[4],bands[4],CANNOT_TELL,,,,0.28571,0.28571,,,15 to 30,0.15,0.3,7,1,2,0.28571,,,,,,,
+/cells[4]/bands[5],bands[5],CANNOT_TELL,,,,,,,,30 to 45,0.3,0.45,0,0,0,,,,,,,,
+/cells[4]/bands[6],bands[6],CANNOT_TELL,,,,,,,,45 to 60,0.45,0.6,0,0,0,,,,,,,,
+/cells[4]/bands[7],bands[7],CANNOT_TELL,,,,,,,,60 and over,0.6,1.0,0,0,0,,,,,,,,
+/cells[4]/hatched,hatched,CANNOT_TELL,,,,,,,,,,,0,0,0,,,,,,"no preliminary report carries a rating, so an EF2 or stronger tornado cannot be told apart",,
+/cells[4]/brier,brier,ABOVE,,,,0.0176,0.0741,,,,,,,,,,,0.002667,0.002798,0.0468,,,
+/cells[5]/bands[0],bands[0],CONSISTENT,,,,0.00046,0.00097,,,under 2,0.0,0.02,75503,311,53,0.0007,,,,,,,
+/cells[5]/bands[1],bands[1],CANNOT_TELL,,,,0.01534,0.02763,CONSISTENT,,2 to 5,0.02,0.05,1851,110,39,0.02107,,,,,,,
+/cells[5]/bands[2],bands[2],CANNOT_TELL,,,,0.04428,0.10649,CONSISTENT,,5 to 10,0.05,0.1,603,45,43,0.07131,,,,,,,
+/cells[5]/bands[3],bands[3],CANNOT_TELL,,,,0.09901,0.29673,,,10 to 15,0.1,0.15,86,13,16,0.18605,,,,,,,
+/cells[5]/bands[4],bands[4],CANNOT_TELL,,,,0.0,0.33333,,,15 to 30,0.15,0.3,18,3,5,0.27778,,,,,,,
+/cells[5]/bands[5],bands[5],CANNOT_TELL,,,,,,,,30 to 45,0.3,0.45,0,0,0,,,,,,,,
+/cells[5]/bands[6],bands[6],CANNOT_TELL,,,,,,,,45 to 60,0.45,0.6,0,0,0,,,,,,,,
+/cells[5]/bands[7],bands[7],CANNOT_TELL,,,,,,,,60 and over,0.6,1.0,0,0,0,,,,,,,,
+/cells[5]/hatched,hatched,CANNOT_TELL,,,,,,,,,,,0,0,0,,,,,,"no preliminary report carries a rating, so an EF2 or stronger tornado cannot be told apart",,
+/cells[5]/brier,brier,ABOVE,,,,0.0247,0.0604,,,,,,,,,,,0.001908,0.001994,0.0429,,,
+/warnings/pooled/pod,pod,BELOW,,,,0.6145,0.6394,,,,,,,,,,,,,,,0.6269,0.72
+/warnings/pooled/lead_min,lead_min,BELOW,,,,9.36,10.16,,,,,,,,,,,,,,,9.75,13.0
+/warnings/pooled/far,far,CANNOT_TELL,,,,0.7036,0.7204,,,,,,,,,,,,,,,0.712,0.71
+/warnings/pooled/initial_lead_min,initial_lead_min,,,,,8.53,9.26,,,,,,,,,,,,,,,8.9,
+/warnings/years[0]/pod,pod,CANNOT_TELL,,,,0.6688,0.743,,,,,,,,,,,,,,,0.7082,0.72
+/warnings/years[0]/lead_min,lead_min,CANNOT_TELL,,,,11.83,14.52,,,,,,,,,,,,,,,13.25,13.0
+/warnings/years[0]/far,far,ABOVE,,,,0.7172,0.7784,,,,,,,,,,,,,,,0.7472,0.71
+/warnings/years[0]/initial_lead_min,initial_lead_min,,,,,11.08,13.83,,,,,,,,,,,,,,,12.47,
+/warnings/years[1]/pod,pod,BELOW,,,,0.5922,0.6748,,,,,,,,,,,,,,,0.637,0.72
+/warnings/years[1]/lead_min,lead_min,BELOW,,,,9.66,11.93,,,,,,,,,,,,,,,10.84,13.0
+/warnings/years[1]/far,far,ABOVE,,,,0.7542,0.7994,,,,,,,,,,,,,,,0.7753,0.71
+/warnings/years[1]/initial_lead_min,initial_lead_min,,,,,9.03,11.01,,,,,,,,,,,,,,,10.07,
+/warnings/years[2]/pod,pod,CANNOT_TELL,,,,0.649,0.7339,,,,,,,,,,,,,,,0.6958,0.72
+/warnings/years[2]/lead_min,lead_min,CANNOT_TELL,,,,11.3,14.22,,,,,,,,,,,,,,,12.84,13.0
+/warnings/years[2]/far,far,ABOVE,,,,0.7115,0.7758,,,,,,,,,,,,,,,0.7456,0.71
+/warnings/years[2]/initial_lead_min,initial_lead_min,,,,,10.52,13.54,,,,,,,,,,,,,,,12.13,
+/warnings/years[3]/pod,pod,CANNOT_TELL,,,,0.6843,0.7662,,,,,,,,,,,,,,,0.7304,0.72
+/warnings/years[3]/lead_min,lead_min,CANNOT_TELL,,,,11.84,15.53,,,,,,,,,,,,,,,13.76,13.0
+/warnings/years[3]/far,far,CANNOT_TELL,,,,0.7002,0.7718,,,,,,,,,,,,,,,0.7334,0.71
+/warnings/years[3]/initial_lead_min,initial_lead_min,,,,,11.07,14.51,,,,,,,,,,,,,,,12.87,
+/warnings/years[4]/pod,pod,CANNOT_TELL,,,,0.6102,0.7221,,,,,,,,,,,,,,,0.6716,0.72
+/warnings/years[4]/lead_min,lead_min,BELOW,,,,8.89,11.93,,,,,,,,,,,,,,,10.55,13.0
+/warnings/years[4]/far,far,CANNOT_TELL,,,,0.6821,0.7623,,,,,,,,,,,,,,,0.724,0.71
+/warnings/years[4]/initial_lead_min,initial_lead_min,,,,,8.16,11.45,,,,,,,,,,,,,,,9.95,
+/warnings/years[5]/pod,pod,BELOW,,,,0.4862,0.6045,,,,,,,,,,,,,,,0.5515,0.72
+/warnings/years[5]/lead_min,lead_min,BELOW,,,,7.08,9.76,,,,,,,,,,,,,,,8.48,13.0
+/warnings/years[5]/far,far,CANNOT_TELL,,,,0.7087,0.7731,,,,,,,,,,,,,,,0.7383,0.71
+/warnings/years[5]/initial_lead_min,initial_lead_min,,,,,6.2,8.94,,,,,,,,,,,,,,,7.61,
+/warnings/years[6]/pod,pod,BELOW,,,,0.4918,0.6163,,,,,,,,,,,,,,,0.5578,0.72
+/warnings/years[6]/lead_min,lead_min,BELOW,,,,6.53,9.99,,,,,,,,,,,,,,,8.24,13.0
+/warnings/years[6]/far,far,CANNOT_TELL,,,,0.6722,0.745,,,,,,,,,,,,,,,0.7065,0.71
+/warnings/years[6]/initial_lead_min,initial_lead_min,,,,,5.83,8.85,,,,,,,,,,,,,,,7.34,
+/warnings/years[7]/pod,pod,BELOW,,,,0.5126,0.6235,,,,,,,,,,,,,,,0.5739,0.72
+/warnings/years[7]/lead_min,lead_min,BELOW,,,,6.83,8.92,,,,,,,,,,,,,,,7.93,13.0
+/warnings/years[7]/far,far,CANNOT_TELL,,,,0.665,0.7342,,,,,,,,,,,,,,,0.6978,0.71
+/warnings/years[7]/initial_lead_min,initial_lead_min,,,,,5.98,8.18,,,,,,,,,,,,,,,7.16,
+/warnings/years[8]/pod,pod,BELOW,,,,0.5538,0.647,,,,,,,,,,,,,,,0.6041,0.72
+/warnings/years[8]/lead_min,lead_min,BELOW,,,,7.27,9.48,,,,,,,,,,,,,,,8.41,13.0
+/warnings/years[8]/far,far,CANNOT_TELL,,,,0.6578,0.7274,,,,,,,,,,,,,,,0.6931,0.71
+/warnings/years[8]/initial_lead_min,initial_lead_min,,,,,6.09,8.32,,,,,,,,,,,,,,,7.27,
+/warnings/years[9]/pod,pod,BELOW,,,,0.5158,0.5998,,,,,,,,,,,,,,,0.5597,0.72
+/warnings/years[9]/lead_min,lead_min,BELOW,,,,6.94,8.89,,,,,,,,,,,,,,,7.95,13.0
+/warnings/years[9]/far,far,CANNOT_TELL,,,,0.6845,0.7505,,,,,,,,,,,,,,,0.7175,0.71
+/warnings/years[9]/initial_lead_min,initial_lead_min,,,,,6.22,8.13,,,,,,,,,,,,,,,7.22,
+/warnings/years[10]/pod,pod,BELOW,,,,0.5155,0.6105,,,,,,,,,,,,,,,0.5644,0.72
+/warnings/years[10]/lead_min,lead_min,BELOW,,,,6.54,8.51,,,,,,,,,,,,,,,7.57,13.0
+/warnings/years[10]/far,far,CANNOT_TELL,,,,0.6516,0.7137,,,,,,,,,,,,,,,0.6825,0.71
+/warnings/years[10]/initial_lead_min,initial_lead_min,,,,,5.81,7.73,,,,,,,,,,,,,,,6.81,
+/warnings/years[11]/pod,pod,BELOW,,,,0.5497,0.6434,,,,,,,,,,,,,,,0.6015,0.72
+/warnings/years[11]/lead_min,lead_min,BELOW,,,,7.52,10.06,,,,,,,,,,,,,,,8.79,13.0
+/warnings/years[11]/far,far,CANNOT_TELL,,,,0.6629,0.7183,,,,,,,,,,,,,,,0.6896,0.71
+/warnings/years[11]/initial_lead_min,initial_lead_min,,,,,6.59,9.07,,,,,,,,,,,,,,,7.87,
+/warnings/years[12]/pod,pod,BELOW,,,,0.5337,0.6641,,,,,,,,,,,,,,,0.6024,0.72
+/warnings/years[12]/lead_min,lead_min,BELOW,,,,6.6,9.7,,,,,,,,,,,,,,,8.22,13.0
+/warnings/years[12]/far,far,CANNOT_TELL,,,,0.6298,0.7303,,,,,,,,,,,,,,,0.6801,0.71
+/warnings/years[12]/initial_lead_min,initial_lead_min,,,,,5.72,8.8,,,,,,,,,,,,,,,7.3,
+/warnings/years[13]/pod,pod,BELOW,,,,0.5525,0.6454,,,,,,,,,,,,,,,0.6015,0.72
+/warnings/years[13]/lead_min,lead_min,BELOW,,,,6.9,9.28,,,,,,,,,,,,,,,8.14,13.0
+/warnings/years[13]/far,far,CANNOT_TELL,,,,0.6783,0.7489,,,,,,,,,,,,,,,0.7135,0.71
+/warnings/years[13]/initial_lead_min,initial_lead_min,,,,,6.01,8.29,,,,,,,,,,,,,,,7.21,
+/warnings/years[14]/pod,pod,BELOW,,,,0.5395,0.6439,,,,,,,,,,,,,,,0.5981,0.72
+/warnings/years[14]/lead_min,lead_min,BELOW,,,,7.2,10.03,,,,,,,,,,,,,,,8.69,13.0
+/warnings/years[14]/far,far,CONSISTENT,,,,0.6255,0.7052,,,,,,,,,,,,,,,0.6603,0.71
+/warnings/years[14]/initial_lead_min,initial_lead_min,,,,,6.44,9.34,,,,,,,,,,,,,,,7.96,
+/warnings/years[15]/pod,pod,BELOW,,,,0.5451,0.6522,,,,,,,,,,,,,,,0.6046,0.72
+/warnings/years[15]/lead_min,lead_min,BELOW,,,,7.22,9.76,,,,,,,,,,,,,,,8.61,13.0
+/warnings/years[15]/far,far,CANNOT_TELL,,,,0.6587,0.7319,,,,,,,,,,,,,,,0.692,0.71
+/warnings/years[15]/initial_lead_min,initial_lead_min,,,,,6.36,8.8,,,,,,,,,,,,,,,7.66,
+/warnings/years[16]/pod,pod,BELOW,,,,0.5858,0.6778,,,,,,,,,,,,,,,0.6353,0.72
+/warnings/years[16]/lead_min,lead_min,BELOW,,,,7.84,10.42,,,,,,,,,,,,,,,9.25,13.0
+/warnings/years[16]/far,far,CANNOT_TELL,,,,0.653,0.7247,,,,,,,,,,,,,,,0.6892,0.71
+/warnings/years[16]/initial_lead_min,initial_lead_min,,,,,7.13,9.64,,,,,,,,,,,,,,,8.41,
+/warnings/years[17]/pod,pod,BELOW,,,,0.6178,0.702,,,,,,,,,,,,,,,0.6642,0.72
+/warnings/years[17]/lead_min,lead_min,BELOW,,,,8.78,11.23,,,,,,,,,,,,,,,10.09,13.0
+/warnings/years[17]/far,far,CONSISTENT,,,,0.6358,0.7062,,,,,,,,,,,,,,,0.6704,0.71
+/warnings/years[17]/initial_lead_min,initial_lead_min,,,,,7.64,10.07,,,,,,,,,,,,,,,8.99,
+/warnings/years[18]/pod,pod,BELOW,,,,0.5641,0.6507,,,,,,,,,,,,,,,0.6136,0.72
+/warnings/years[18]/lead_min,lead_min,BELOW,,,,7.63,10.48,,,,,,,,,,,,,,,9.15,13.0
+/warnings/years[18]/far,far,ABOVE,,,,0.7286,0.7769,,,,,,,,,,,,,,,0.7512,0.71
+/warnings/years[18]/initial_lead_min,initial_lead_min,,,,,7.7,10.47,,,,,,,,,,,,,,,9.11,
+/warnings/years[19]/pod,pod,CANNOT_TELL,,,,0.2632,0.8397,,,,,,,,,,,,,,,0.6508,0.72
+/warnings/years[19]/lead_min,lead_min,BELOW,,,,3.14,11.0,,,,,,,,,,,,,,,8.37,13.0
+/warnings/years[19]/far,far,CANNOT_TELL,,,,0.6406,0.8987,,,,,,,,,,,,,,,0.7419,0.71
+/warnings/years[19]/initial_lead_min,initial_lead_min,,,,,3.09,10.95,,,,,,,,,,,,,,,8.37,
+/warnings/polygon_end_floor/pod,pod,,,,,0.3401,0.3548,,,,,,,,,,,,,,,0.3473,0.72
+/warnings/polygon_end_floor/lead_min,lead_min,,,,,2.52,2.76,,,,,,,,,,,,,,,2.64,13.0
+/warnings/polygon_end_floor/far,far,,,,,0.7747,0.7884,,,,,,,,,,,,,,,0.7817,0.71
+/warnings/polygon_end_floor/initial_lead_min,initial_lead_min,,,,,2.37,2.61,,,,,,,,,,,,,,,2.49,

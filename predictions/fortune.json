@@ -1,0 +1,824 @@
+[
+ {
+  "short_id": "watson_five_computers",
+  "who": "Thomas J. Watson (IBM)",
+  "popular_version": "I think there is a world market for about five computers.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2026/08/29/market-five/",
+   "title": "Quote Investigator, 'world market for about five computers' (quotes Facts and Fallacies, 1981, as printing this line)"
+  },
+  "claimed_date": "1943",
+  "verdict": "NO_PRIMARY_SOURCE_FOUND",
+  "primary": {
+   "title": "No primary source found for the popular line",
+   "date": null,
+   "url": null,
+   "archive_url": null,
+   "quote": null,
+   "note": "Quote Investigator reports that IBM searched its documents and that Kevin Maney (2003) found no evidence that Watson made the remark. Popular books date the line 1943 or 1958."
+  },
+  "earliest_found": {
+   "title": "Der Spiegel, 'Sieg der Mikrosekunde', p. 59 (as translated and quoted by Quote Investigator)",
+   "date": "1965-05-25",
+   "url": "https://quoteinvestigator.com/2026/08/29/market-five/"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated, and the line itself is not traced to Watson.",
+   "evidence_url": null
+  },
+  "summary": "The line is not found in any primary source. The earliest located printing that ties a figure of five machines to Watson is a 1965 Der Spiegel article, 22 years after the date popular books give. IBM points to a 1953 remark by Thomas Watson Jr. about orders for the 701 machine.",
+  "raw_files": [
+   "data/raw/fortune/qi_watson.html"
+  ],
+  "related": [
+   {
+    "title": "Thomas J. Watson Jr., IBM annual stockholders meeting, as quoted in IBM's FAQ (2002) and reprinted by Quote Investigator",
+    "date": "1953-04-28",
+    "quote": "as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18",
+    "url": "https://quoteinvestigator.com/2026/08/29/market-five/"
+   }
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "duell_everything_invented",
+  "who": "Charles H. Duell (U.S. Commissioner of Patents)",
+  "popular_version": "Everything that can be invented has been invented.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2023/06/23/invented/",
+   "title": "Quote Investigator, 'Everything That Can Be Invented Has Been Invented' (question text)"
+  },
+  "claimed_date": "1899",
+  "verdict": "CONTRADICTED",
+  "primary": {
+   "title": "The Dayton Daily News, 'Great Prizes For Inventors' by Waldon Fawcett, Saturday Magazine Supplement p. 11 (as quoted by Quote Investigator, newspaper scan not fetched)",
+   "date": "1901-12-28",
+   "url": "https://quoteinvestigator.com/2023/06/23/invented/",
+   "archive_url": null,
+   "quote": "In my opinion all previous advances in the various lines of invention will appear totally insignificant when compared with those which the present century will witness. I almost wish that I might have my life over again to see the new wonders which are at the threshold.",
+   "note": "A widely reprinted 1901 article quotes Duell saying the opposite of the popular line.",
+   "archive_note": "no capture made: Save Page Now was refused or timed out (Quote Investigator answers the Internet Archive crawler with 403) and no earlier capture exists"
+  },
+  "earliest_found": {
+   "title": "Punch, 'The Coming Century' (fiction, a boy character says the line), as quoted by Quote Investigator",
+   "date": "1899",
+   "url": "https://quoteinvestigator.com/2023/06/23/invented/"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "Not scored. The popular line is not traced to Duell, and the words he is recorded as saying are a forecast with no checkable event.",
+   "evidence_url": null
+  },
+  "summary": "No primary source has Duell saying everything has been invented. A 1901 newspaper article quotes him predicting that later advances would dwarf all earlier ones. The earliest match to the popular wording is a 1899 Punch sketch.",
+  "raw_files": [
+   "data/raw/fortune/qi_duell.html"
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "olsen_computer_at_home",
+  "who": "Ken Olsen (Digital Equipment Corporation)",
+  "popular_version": "There is no reason for any individual to have a computer in their home.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2017/09/14/home-computer/",
+   "title": "Quote Investigator, 'There is No Reason for Any Individual To Have a Computer in Their Home'"
+  },
+  "claimed_date": "1977",
+  "verdict": "SAID_DIFFERENTLY",
+  "primary": {
+   "title": "Creative Computing, vol. 6 no. 4, 'Interview with Gordon Bell' by David Ahl, p. 89 (as quoted by Quote Investigator, scans at archive.org not fetched)",
+   "date": "1980-04",
+   "url": "https://quoteinvestigator.com/2017/09/14/home-computer/",
+   "archive_url": null,
+   "quote": "Just prior to the time I left DEC in 1974 I remember Ken Olsen (president of DEC) saying that he couldn’t see any need or any use for a computer in someone’s home",
+   "note": "These are David Ahl's words reporting Olsen, not Olsen's own text, and they carry no quotation marks. Ahl's 1984 article gives 'I can’t see any reason that anyone would want a computer of his own' for a 1974 meeting. In a later book Olsen called the Time-magazine version 'ridiculous' because DEC made personal computers and he had them at home. No 1977 World Future Society transcript was found.",
+   "archive_note": "no capture made: Save Page Now was refused or timed out (Quote Investigator answers the Internet Archive crawler with 403) and no earlier capture exists"
+  },
+  "earliest_found": {
+   "title": "Creative Computing, interview with Gordon Bell by David Ahl",
+   "date": "1980-04",
+   "url": "https://quoteinvestigator.com/2017/09/14/home-computer/"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated.",
+   "evidence_url": null
+  },
+  "summary": "The earliest printing is a 1980 recollection by David Ahl, three years after the claimed 1977 talk, and it words the remark differently from the popular line. No transcript of Olsen's own words was found.",
+  "raw_files": [
+   "data/raw/fortune/qi_olsen.html"
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "gates_640k",
+  "who": "Bill Gates (Microsoft)",
+  "popular_version": "640K ought to be enough for anyone.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2011/09/08/640k-enough/",
+   "title": "Quote Investigator, 'Computer Memory: 640K Ought to be Enough for Anyone' (InfoWorld Jan 1990 timeline printed this wording)"
+  },
+  "claimed_date": "1981",
+  "verdict": "CONTRADICTED",
+  "primary": {
+   "title": "Bill Gates, 'Computer Industry Offers Wealth of Career Options', Daily News of Los Angeles, p. B1 (as quoted by Quote Investigator)",
+   "date": "1996-01-22",
+   "url": "https://quoteinvestigator.com/2011/09/08/640k-enough/",
+   "archive_url": null,
+   "quote": "I’ve said some stupid things and some wrong things, but not that. No one involved in computers would ever say that a certain amount of memory is enough for all time.",
+   "note": "Gates denies the line in his own syndicated column. In a 1989 recorded talk he said the 640k limit felt like it would last about 10 years. The earliest printing of the popular wording is an InfoWorld timeline of January 1990 with no source given.",
+   "archive_note": "no capture made: Save Page Now was refused or timed out (Quote Investigator answers the Internet Archive crawler with 403) and no earlier capture exists"
+  },
+  "earliest_found": {
+   "title": "InfoWorld timeline of the 1980s PC industry, 'IBM introduces the PC ... (\"640K ought to be enough for anyone\" - Bill Gates)' (as quoted by Quote Investigator)",
+   "date": "1990-01",
+   "url": "https://quoteinvestigator.com/2011/09/08/640k-enough/"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "Not scored. Gates's recorded 1989 remark was a ten-year expectation, and the memory limit was a problem in about six years in his words.",
+   "evidence_url": null
+  },
+  "summary": "The popular line first appears in print in 1990 with no source. Gates denied it in a 1996 column. In a 1989 talk he said the 640k limit felt like it would last about ten years.",
+  "raw_files": [
+   "data/raw/fortune/qi_gates640.html"
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "kelvin_flying_machines",
+  "who": "Lord Kelvin (William Thomson)",
+  "popular_version": "Heavier-than-air flying machines are impossible",
+  "popular_source": {
+   "url": "https://en.wikiquote.org/wiki/William_Thomson",
+   "title": "Wikiquote, William Thomson (notes the line is often reproduced without a primary source, citing Cerf and Navasky, The Experts Speak, 1984)"
+  },
+  "claimed_date": "1896",
+  "verdict": "SAID_DIFFERENTLY",
+  "primary": {
+   "title": "Letter, Kelvin to Major Baden Baden-Powell, transcribed with a scan of the original at zapatopi.net",
+   "date": "1896-12-08",
+   "url": "https://zapatopi.net/kelvin/papers/letters.html",
+   "archive_url": "http://web.archive.org/web/20261017125806/https://en.wikiquote.org/wiki/William_Thomson",
+   "quote": "I have not the smallest molecule of faith in aerial navigation other than ballooning or of expectation of good results from any of the trials we hear of.",
+   "note": "The letter declines to join the Aeronautical Society. It does not use the words 'heavier-than-air' or 'impossible'. The scan is saved as kelvin_badenpowell_scan.png and was not machine-read."
+  },
+  "earliest_found": {
+   "title": "Letter to Baden Baden-Powell",
+   "date": "1896-12-08",
+   "url": "https://zapatopi.net/kelvin/papers/letters.html"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated. The letter expresses doubt about the trials then under way and gives no date or event.",
+   "evidence_url": null
+  },
+  "summary": "Kelvin wrote in 1896 that he had no faith in aerial navigation other than ballooning. The popular wording 'heavier-than-air flying machines are impossible' is not in that letter.",
+  "raw_files": [
+   "data/raw/fortune/kelvin_zapatopi.html",
+   "data/raw/fortune/kelvin_badenpowell_scan.png",
+   "data/raw/fortune/wikiquote_kelvin.html"
+  ]
+ },
+ {
+  "short_id": "fisher_high_plateau",
+  "who": "Irving Fisher (Yale economist)",
+  "popular_version": "stock prices have reached 'what looks like a permanently high plateau.'",
+  "popular_source": {
+   "url": "https://www.federalreservehistory.org/essays/stock-market-crash-of-1929",
+   "title": "Federal Reserve History, Stock Market Crash of 1929"
+  },
+  "claimed_date": "1929-10-15",
+  "verdict": "SAID",
+  "primary": {
+   "title": "New York Times, 16 October 1929, p. 8 (page not fetched, cited by Federal Reserve History, which quotes it)",
+   "date": "1929-10-16",
+   "url": "https://www.federalreservehistory.org/essays/stock-market-crash-of-1929",
+   "archive_url": "https://web.archive.org/web/20261110154526/https://www.federalreservehistory.org/essays/stock-market-crash-of-1929",
+   "quote": "stock prices have reached 'what looks like a permanently high plateau.'",
+   "note": "Fisher spoke at the monthly dinner of the Purchasing Agents Association on 15 October 1929. The Times report is paywalled and was not read by us. The wording is the Federal Reserve's quotation of it."
+  },
+  "earliest_found": {
+   "title": "New York Times, 16 October 1929, p. 8",
+   "date": "1929-10-16",
+   "url": "https://www.federalreservehistory.org/essays/stock-market-crash-of-1929"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated beyond 'permanently'. The Dow stood at 381 in September 1929, lost almost half its value by mid-November 1929, closed at 41 in summer 1932, and did not return to its pre-crash height until November 1954.",
+   "evidence_url": "https://www.federalreservehistory.org/essays/stock-market-crash-of-1929"
+  },
+  "summary": "The remark is reported in the New York Times of 16 October 1929. The Dow had lost almost half its value by mid-November and regained its pre-crash height in November 1954. The statement gives no deadline, so it is not scored.",
+  "raw_files": [
+   "data/raw/fortune/fedhist_1929.html",
+   "data/raw/fortune/wikiquote_fisher.html"
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "western_union_telephone_memo",
+  "who": "Western Union (committee memo)",
+  "popular_version": "The idea is idiotic on the face of it.",
+  "popular_source": {
+   "url": "https://wondermark.com/true-stuff-western-union-bell/",
+   "title": "Wondermark, 'True Stuff: Alexander Graham Bell vs. Western Union' (reproduces the memo text it then investigates)"
+  },
+  "claimed_date": "1876",
+  "verdict": "NO_PRIMARY_SOURCE_FOUND",
+  "primary": {
+   "title": "No primary source found",
+   "date": null,
+   "url": null,
+   "archive_url": null,
+   "quote": null,
+   "note": "Wondermark, drawing on Phil Lapsley's research, reports no mention of the memo in newspapers from 1876 to 1900 or verbatim in documents up to 1950. A 1976 IEEE Spectrum article calls the report suspect. Another version often circulated, beginning 'This telephone has too many shortcomings', was not found in any source we fetched."
+  },
+  "earliest_found": {
+   "title": "Richard C. Levine, 'Chairman's Statement', IEEE journal (as reported by Wondermark citing Lapsley)",
+   "date": "1968",
+   "url": "https://wondermark.com/true-stuff-western-union-bell/"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "Not scored. The memo is not traced.",
+   "evidence_url": null
+  },
+  "summary": "No 1876 memo has been found. The earliest printing located is a 1968 IEEE chairman's statement, 92 years later. Levine told Lapsley he assembled it from two versions that circulated among engineers.",
+  "raw_files": [
+   "data/raw/fortune/wondermark_wu.html",
+   "data/raw/fortune/ascii_wu.html"
+  ]
+ },
+ {
+  "short_id": "decca_beatles",
+  "who": "Dick Rowe (Decca Records), as reported by Brian Epstein",
+  "popular_version": "We don’t like their sound. Groups of guitars are on the way out.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2013/04/27/guitars-out/",
+   "title": "Stephen Pile, The Book of Heroic Failures (1979), as quoted by Quote Investigator"
+  },
+  "claimed_date": "1962",
+  "verdict": "SAID_DIFFERENTLY",
+  "primary": {
+   "title": "Brian Epstein, A Cellarful of Noise, ch. 5, p. 46 (as quoted by Quote Investigator, 'verified with scans' there, not fetched by us)",
+   "date": "1964",
+   "url": "https://quoteinvestigator.com/2013/04/27/guitars-out/",
+   "archive_url": null,
+   "quote": "Not to mince words, Mr. Epstein, we don’t like your boys’ sound. Groups of four guitarists are on the way out.",
+   "note": "This is Epstein's report of what Rowe said. Quote Investigator states that Rowe denied it until his death in 1986. Hunter Davies (1968) gives a variant: 'Groups of guitars were on the way out.'",
+   "archive_note": "no capture made: Save Page Now was refused or timed out (Quote Investigator answers the Internet Archive crawler with 403) and no earlier capture exists"
+  },
+  "earliest_found": {
+   "title": "A Cellarful of Noise by Brian Epstein",
+   "date": "1964",
+   "url": "https://quoteinvestigator.com/2013/04/27/guitars-out/"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated.",
+   "evidence_url": null
+  },
+  "summary": "The earliest source is Brian Epstein's 1964 book, which words it 'Groups of four guitarists are on the way out'. Rowe denied saying it. The 'no future in it' wording is not in the sources we read.",
+  "raw_files": [
+   "data/raw/fortune/qi_decca.html"
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "zanuck_television",
+  "who": "Darryl F. Zanuck (20th Century Fox)",
+  "popular_version": "Video won’t be able to hold onto any market it captures after the first six months.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2019/11/27/plywood/",
+   "title": "Gabe Essoe, The Book of Movie Lists (1981), as quoted by Quote Investigator"
+  },
+  "claimed_date": "1946",
+  "verdict": "NO_PRIMARY_SOURCE_FOUND",
+  "primary": {
+   "title": "No primary source found",
+   "date": null,
+   "url": null,
+   "archive_url": null,
+   "quote": null,
+   "note": "The 1946 date comes from a 1997 book with no cited evidence. The 1981 attribution to Zanuck cites no source."
+  },
+  "earliest_found": {
+   "title": "The Wall Street Journal, 'Movie Upturn', p. 1, quoting an unnamed 'New York movie mogul' (as quoted by Quote Investigator)",
+   "date": "1951-02-14",
+   "url": "https://quoteinvestigator.com/2019/11/27/plywood/"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "Not scored.",
+   "evidence_url": null
+  },
+  "summary": "The earliest printing is a 1951 Wall Street Journal item that quotes an unnamed New York movie executive, five years after the claimed date. Zanuck's name is attached from 1981.",
+  "raw_files": [
+   "data/raw/fortune/qi_zanuck.html"
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "metcalfe_internet_collapse",
+  "who": "Robert Metcalfe (InfoWorld column)",
+  "popular_version": "I predict the Internet will soon go spectacularly supernova and in 1996 catastrophically collapse.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2020/03/09/collapse/",
+   "title": "Quote Investigator, 'I Predict the Internet Will Soon Go Spectacularly Supernova and in 1996 Catastrophically Collapse'"
+  },
+  "claimed_date": "1995-12-04",
+  "verdict": "SAID",
+  "primary": {
+   "title": "InfoWorld, 'From the Ether: Predicting the Internet’s catastrophic collapse and ghost sites galore in 1996' by Bob Metcalfe, p. 61 (text as reproduced by Elon University Imagining the Internet, page scan not fetched)",
+   "date": "1995-12-04",
+   "url": "https://www.elon.edu/u/imagining/expert_predictions/from-the-ether-predicting-the-internets-catastrophic-collapse-and-ghost-sites-galore-in-1996/",
+   "archive_url": "http://web.archive.org/web/20260607145558/https://www.elon.edu/u/imagining/expert_predictions/from-the-ether-predicting-the-internets-catastrophic-collapse-and-ghost-sites-galore-in-1996/",
+   "quote": "But I predict the Internet, which only just recently got this section here in InfoWorld, will soon go spectacularly supernova and in 1996 catastrophically collapse.",
+   "note": "The popular version drops the clause 'which only just recently got this section here in InfoWorld'. Elon dates the column 1 December 1995, Quote Investigator 4 December 1995."
+  },
+  "earliest_found": {
+   "title": "InfoWorld, From the Ether",
+   "date": "1995-12-04",
+   "url": "https://quoteinvestigator.com/2020/03/09/collapse/"
+  },
+  "landed": {
+   "outcome": "WRONG",
+   "deadline": "1996-12-31",
+   "record": "InfoWorld of 28 April 1997 reports that Metcalfe put a copy of the column in a blender at a conference and ate it. The Economist covered the episode in April 1997 under the title 'Why the Internet failed to collapse'. We did not fetch a measurement of network outages for 1996.",
+   "evidence_url": "https://quoteinvestigator.com/2020/03/09/collapse/"
+  },
+  "summary": "The words are in Metcalfe's 4 December 1995 InfoWorld column. He publicly ate the column in April 1997 after the Internet had not collapsed in 1996.",
+  "raw_files": [
+   "data/raw/fortune/metcalfe_elon.html",
+   "data/raw/fortune/qi_metcalfe.html"
+  ]
+ },
+ {
+  "short_id": "stoll_internet_bah",
+  "who": "Clifford Stoll (Newsweek)",
+  "popular_version": "The truth is no online database will replace your daily newspaper, no CD-ROM can take the place of a competent teacher and no computer network will change the way government works.",
+  "popular_source": {
+   "url": "https://www.newsweek.com/clifford-stoll-why-web-wont-be-nirvana-185306",
+   "title": "Newsweek, 'Why the Web Won’t Be Nirvana' (the article itself)"
+  },
+  "claimed_date": "1995-02-26",
+  "verdict": "SAID",
+  "primary": {
+   "title": "Newsweek, 'Why the Web Won’t Be Nirvana' by Clifford Stoll (online page, dated 26 February 1995)",
+   "date": "1995-02-26",
+   "url": "https://www.newsweek.com/clifford-stoll-why-web-wont-be-nirvana-185306",
+   "archive_url": "http://web.archive.org/web/20261029060309/https://www.newsweek.com/clifford-stoll-why-web-wont-be-nirvana-185306",
+   "quote": "The truth is no online database will replace your daily newspaper, no CD-ROM can take the place of a competent teacher and no computer network will change the way government works.",
+   "note": "The online page is Newsweek's own text of the piece. It also says 'Stores will become obselete' as one of the promises Stoll is doubting, and 'Baloney' and 'Bah' appear in the text."
+  },
+  "earliest_found": {
+   "title": "Newsweek, 26 February 1995 (online date)",
+   "date": "1995-02-26",
+   "url": "https://www.newsweek.com/clifford-stoll-why-web-wont-be-nirvana-185306"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated. The claims are open-ended ('will replace', 'will change') and we did not fix a test for each.",
+   "evidence_url": null
+  },
+  "summary": "The sentence is in Stoll's Newsweek piece of February 1995. It states no deadline, so it is not scored.",
+  "raw_files": [
+   "data/raw/fortune/stoll.html"
+  ]
+ },
+ {
+  "short_id": "moore_1965_cramming",
+  "who": "Gordon E. Moore (Electronics, 1965)",
+  "popular_version": "by 1975 economics may dictate squeezing as many as 65000 components on a single silicon chip.",
+  "popular_source": {
+   "url": "https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf",
+   "title": "Moore, 'Cramming More Components onto Integrated Circuits' (1998 Proceedings of the IEEE reprint), abstract"
+  },
+  "claimed_date": "1965-04-19",
+  "verdict": "SAID",
+  "primary": {
+   "title": "Gordon E. Moore, 'Cramming More Components onto Integrated Circuits', Electronics, pp. 114-117 (copy: 1998 Proceedings of the IEEE reprint)",
+   "date": "1965-04-19",
+   "url": "https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf",
+   "archive_url": "http://web.archive.org/web/20261010185037/https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf",
+   "quote": "That means by 1975, the number of components per integrated circuit for minimum cost will be 65 000.",
+   "note": "The complexity for minimum component cost 'has increased at a rate of roughly a factor of two per year' and Moore says it can be expected to continue 'for at least ten years'."
+  },
+  "earliest_found": {
+   "title": "Electronics, 19 April 1965",
+   "date": "1965-04-19",
+   "url": "https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf"
+  },
+  "landed": {
+   "outcome": "CANNOT_TELL",
+   "deadline": "1975-12-31",
+   "record": "Moore's own 1975 paper plots a 16,384-bit charge-coupled-device memory chip as the 1975 point on the complexity curve and says annual doubling from 1959 gives about 65,000-fold growth. The text we read does not print the plotted component count for that chip, and we did not read the figure. In the same paper Moore revises the forward slope to a doubling about every two years by the end of the decade.",
+   "evidence_url": "https://www.eng.auburn.edu/~agrawvd/COURSE/E7770_Spr07/READ/Gordon_Moore_1975_Speech.pdf"
+  },
+  "summary": "Moore's 1965 article states 65,000 components per circuit by 1975. His 1975 paper plots a 16,384-bit memory chip as the 1975 point, but the plotted count is in a figure we did not read, so we do not score it.",
+  "raw_files": [
+   "data/raw/fortune/moore1965.pdf",
+   "data/raw/fortune/moore1975.pdf"
+  ]
+ },
+ {
+  "short_id": "simon_machines_twenty_years",
+  "who": "Herbert A. Simon",
+  "popular_version": "machines will be capable, within twenty years, of doing any work a man can do.",
+  "popular_source": {
+   "url": "https://quoteinvestigator.com/2020/11/11/ai-can-do/",
+   "title": "Brynjolfsson and McAfee, The Second Machine Age (2014), as quoted by Quote Investigator, dated 1965"
+  },
+  "claimed_date": "1965",
+  "verdict": "SAID",
+  "primary": {
+   "title": "Herbert A. Simon, The New Science of Management Decision, Lecture III, p. 38 (as quoted by Quote Investigator, 'verified with scans' there, not fetched by us)",
+   "date": "1960-04-07",
+   "url": "https://quoteinvestigator.com/2020/11/11/ai-can-do/",
+   "archive_url": null,
+   "quote": "Technologically, as I have argued earlier, machines will be capable, within twenty years, of doing any work that a man can do.",
+   "note": "The words are from a 7 April 1960 lecture, reprinted in the 1965 book The Shape of Automation for Men and Management. The next sentence says 'Economically, men will retain their greatest comparative advantage' in some kinds of work.",
+   "archive_note": "no capture made: Save Page Now was refused or timed out (Quote Investigator answers the Internet Archive crawler with 403) and no earlier capture exists"
+  },
+  "earliest_found": {
+   "title": "The New Science of Management Decision, Lecture III",
+   "date": "1960-04-07",
+   "url": "https://quoteinvestigator.com/2020/11/11/ai-can-do/"
+  },
+  "landed": {
+   "outcome": "CANNOT_TELL",
+   "deadline": "1980-04-07",
+   "record": "The claim is 'any work that a man can do', which no public record tests as a single criterion. Simon himself limits it to what is technologically possible and lists kinds of work where people keep an economic advantage.",
+   "evidence_url": "https://quoteinvestigator.com/2020/11/11/ai-can-do/"
+  },
+  "summary": "The sentence is from Simon's 1960 lectures, five years before the 1965 date usually given. 'Any work that a man can do' does not fix a test the record can answer, so it is not scored.",
+  "raw_files": [
+   "data/raw/fortune/qi_simon.html"
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "minsky_life_1970",
+  "who": "Marvin Minsky (as reported by Brad Darrach in Life)",
+  "popular_version": "In from three to eight years we will have a machine with the general intelligence of an average human being.",
+  "popular_source": {
+   "url": "https://gwern.net/doc/reinforcement-learning/robot/1970-darrach.pdf",
+   "title": "Life, 'Meet Shakey' by Brad Darrach (scan hosted by gwern.net)"
+  },
+  "claimed_date": "1970-11-20",
+  "verdict": "SAID",
+  "primary": {
+   "title": "Life, 'Meet Shakey, the First Electronic Person' by Brad Darrach (scan, text extracted)",
+   "date": "1970-11-20",
+   "url": "https://gwern.net/doc/reinforcement-learning/robot/1970-darrach.pdf",
+   "archive_url": null,
+   "quote": "In from three to eight years we will have a machine with the general intelligence of an average human being.",
+   "note": "Darrach writes that Minsky 'recently told me' this. The issue date is from Wikipedia's citation of the article. Darrach adds that others working in the field said 'give us 15 years'.",
+   "archive_note": "no capture made: Save Page Now was refused or timed out (Quote Investigator answers the Internet Archive crawler with 403) and no earlier capture exists"
+  },
+  "earliest_found": {
+   "title": "Life, 20 November 1970",
+   "date": "1970-11-20",
+   "url": "https://gwern.net/doc/reinforcement-learning/robot/1970-darrach.pdf"
+  },
+  "landed": {
+   "outcome": "WRONG",
+   "deadline": "1978-11-20",
+   "record": "We found no public record of a machine with the general intelligence of an average human being, as the Life article describes it, by November 1978. The 1973 Lighthill report on AI research says that 'In no part of the field have the discoveries made so far produced the major impact that was then promised'. That report predates the deadline by five years.",
+   "evidence_url": "https://en.wikipedia.org/wiki/Lighthill_report"
+  },
+  "summary": "The words are in the 20 November 1970 Life article, as reported speech by the journalist. Eight years from that date is November 1978, and no record of such a machine was found.",
+  "raw_files": [
+   "data/raw/fortune/life1970_darrach.pdf",
+   "data/raw/fortune/wiki_shakey.html",
+   "data/raw/fortune/wiki_lighthill.html"
+  ]
+ },
+ {
+  "short_id": "ehrlich_population_bomb",
+  "who": "Paul R. Ehrlich",
+  "popular_version": "The battle to feed all of humanity is over.",
+  "popular_source": {
+   "url": "https://csg.igrothendieck.org/wp-content/uploads/2025/12/ehrlich.pdf",
+   "title": "The Population Bomb, Sierra Club-Ballantine edition (scan), Prologue"
+  },
+  "claimed_date": "1968",
+  "verdict": "SAID",
+  "primary": {
+   "title": "Paul R. Ehrlich, The Population Bomb, Prologue (Ballantine paperback, first printing May 1968; scan copy, OCR text)",
+   "date": "1968-05",
+   "url": "https://csg.igrothendieck.org/wp-content/uploads/2025/12/ehrlich.pdf",
+   "archive_url": "http://web.archive.org/web/20260120132519/https://csg.igrothendieck.org/wp-content/uploads/2025/12/ehrlich.pdf",
+   "quote": "The battle to feed all of humanity is over. In the 1970’s the world will undergo famines—hundreds of millions of people are going to starve to death in spite of any crash programs embarked upon now.",
+   "quote_ocr_note": "The OCR text of the scan reads 'goin;' for 'going' and uses a different apostrophe. The wording is otherwise as printed.",
+   "note": "The same book also says 'But there will be famines' about the next decade or so."
+  },
+  "earliest_found": {
+   "title": "The Population Bomb, first printing",
+   "date": "1968-05",
+   "url": "https://csg.igrothendieck.org/wp-content/uploads/2025/12/ehrlich.pdf"
+  },
+  "landed": {
+   "outcome": "WRONG",
+   "deadline": "1979-12-31",
+   "record": "Our World in Data, using World Peace Foundation data, gives 36 million as the most likely death toll of the largest single famine in its record (China, 1958 to 1962), and says famine deaths in recent decades are low by historical standards. No famine in that record approaches hundreds of millions of deaths in the 1970s.",
+   "evidence_url": "https://ourworldindata.org/famines"
+  },
+  "summary": "The prologue of the 1968 book says hundreds of millions would starve in the 1970s. The largest famine toll in the dataset we read is about 36 million, in 1958 to 1962.",
+  "raw_files": [
+   "data/raw/fortune/ehrlich_igr.pdf",
+   "data/raw/fortune/owid_famines.html"
+  ]
+ },
+ {
+  "short_id": "simon_ehrlich_wager",
+  "who": "Julian Simon and Paul Ehrlich (wager, 1980)",
+  "popular_version": "The Simon–Ehrlich wager was a 1980 scientific wager between economist Julian Simon and biologist Paul Ehrlich, betting on a mutually agreed-on measure of natural-resource scarcity over the decade leading up to 1990.",
+  "popular_source": {
+   "url": "https://en.wikipedia.org/wiki/Simon%E2%80%93Ehrlich_wager",
+   "title": "Wikipedia, Simon-Ehrlich wager"
+  },
+  "claimed_date": "1980",
+  "verdict": "SAID",
+  "primary": {
+   "title": "John Tierney, 'Betting on the Planet', New York Times Magazine (contemporaneous report of the terms and result)",
+   "date": "1990-12-02",
+   "url": "https://www.nytimes.com/1990/12/02/magazine/betting-on-the-planet.html",
+   "archive_url": "http://web.archive.org/web/20250910131248/https://www.nytimes.com/1990/12/02/magazine/betting-on-the-planet.html",
+   "quote": "If the 1990 combined prices turned out to be higher than $1,000, Simon would pay them the difference in cash.",
+   "note": "Ehrlich's group chose chrome, copper, nickel, tin and tungsten, $200 of each at 1980 prices. The 1980 wager document itself was not found. Tierney's page was read through an Internet Archive capture."
+  },
+  "earliest_found": {
+   "title": "Julian Simon, The Ultimate Resource (1981), cited by Wikipedia; not fetched",
+   "date": "1981",
+   "url": "https://en.wikipedia.org/wiki/Simon%E2%80%93Ehrlich_wager"
+  },
+  "landed": {
+   "outcome": "WRONG",
+   "deadline": "1990-09-29",
+   "record": "Tierney: 'Each of the five metals chosen by Ehrlich's group, when adjusted for inflation since 1980, had declined in price.' Ehrlich's group predicted rising prices, so their side reads WRONG. Ehrlich mailed Simon a check for $576. Wikipedia gives 29 September 1990 as the payoff date and Tierney says October 1990.",
+   "evidence_url": "https://www.nytimes.com/1990/12/02/magazine/betting-on-the-planet.html"
+  },
+  "summary": "Ehrlich's group bet in 1980 that the inflation-adjusted prices of five metals would rise by 1990. All five fell and Ehrlich paid Simon $576.",
+  "raw_files": [
+   "data/raw/fortune/tierney1990.html",
+   "data/raw/fortune/wiki_simon_ehrlich.html"
+  ]
+ },
+ {
+  "short_id": "hubbert_1956_peak",
+  "who": "M. King Hubbert (API paper, 1956)",
+  "popular_version": "Hubbert correctly predicted that production of oil from conventional sources would peak in the continental United States around 1965–1970.",
+  "popular_source": {
+   "url": "https://en.wikipedia.org/wiki/Hubbert_peak_theory",
+   "title": "Wikipedia, Hubbert peak theory"
+  },
+  "claimed_date": "1956-03",
+  "verdict": "SAID",
+  "primary": {
+   "title": "M. King Hubbert, 'Nuclear Energy and the Fossil Fuels', American Petroleum Institute, Spring Meeting of the Southern District, San Antonio, 7-9 March 1956 (scan; text read by our own OCR)",
+   "date": "1956-03-09",
+   "url": "http://www.hubbertpeak.com/hubbert/1956/1956.pdf",
+   "archive_url": "http://web.archive.org/web/20240521170602/http://www.hubbertpeak.com/hubbert/1956/1956.pdf",
+   "quote": "the curve must culminate at about 1965 and then must decline at a rate comparable to its earlier rate of growth ... even then the date of culmination is retarded only until about 1970",
+   "quote_ocr_note": "The PDF is image-only. The text was produced by tesseract OCR run by us and saved as hubbert1956_ocr_tesseract.txt. This passage is for an assumed ultimate recovery of 150 billion barrels. For 200 billion barrels the paper says 'even then the date of culmination is retarded only until about 1970'.",
+   "note": "The paper is about crude oil production in the United States as then recoverable."
+  },
+  "earliest_found": {
+   "title": "Nuclear Energy and the Fossil Fuels (API, March 1956)",
+   "date": "1956-03",
+   "url": "http://www.hubbertpeak.com/hubbert/1956/1956.pdf"
+  },
+  "landed": {
+   "outcome": "RIGHT",
+   "deadline": "1970-12-31",
+   "record": "EIA annual U.S. field production of crude oil is 9,238 thousand barrels a day in 1969, 9,637 in 1970, the highest of the 1970s, and 9,463 in 1971. Production then fell and rose again, reaching 10,972 in 2018 and 12,335 in 2019, above the 1970 level. Hubbert's paper makes no claim about those later years or about shale.",
+   "evidence_url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=MCRFPUS2&f=A"
+  },
+  "summary": "The 1956 paper puts the U.S. oil production peak at about 1965 on one assumption and about 1970 on another. EIA data show the peak at 1970 for that period. Output passed the 1970 level again in 2018.",
+  "raw_files": [
+   "data/raw/fortune/hubbert1956.pdf",
+   "data/raw/fortune/hubbert1956_ocr_tesseract.txt",
+   "data/raw/fortune/eia_crude_annual.html",
+   "data/raw/fortune/wiki_hubbert_peak.html"
+  ]
+ },
+ {
+  "short_id": "asimov_2014",
+  "who": "Isaac Asimov (New York Times, 1964)",
+  "popular_version": "robots will neither be common nor very good in 2014, but they will be in existence.",
+  "popular_source": {
+   "url": "https://www.openculture.com/2018/12/in-1964-isaac-asimov-predicts-what-the-world-will-look-like-today.html",
+   "title": "Open Culture, 'In 1964, Isaac Asimov Predicts What the World Will Look Like Today' (quotes the article)"
+  },
+  "claimed_date": "1964-08-16",
+  "verdict": "SAID",
+  "primary": {
+   "title": "Isaac Asimov, 'Visit to the World’s Fair of 2014', New York Times (paywalled, not read by us; wording as quoted by Open Culture)",
+   "date": "1964-08-16",
+   "url": "https://www.openculture.com/2018/12/in-1964-isaac-asimov-predicts-what-the-world-will-look-like-today.html",
+   "archive_url": "http://web.archive.org/web/20260518123230/https://www.openculture.com/2018/12/in-1964-isaac-asimov-predicts-what-the-world-will-look-like-today.html",
+   "quote": "robots will neither be common nor very good in 2014, but they will be in existence.",
+   "note": "The Times page returned an access refusal and no archive capture exists, so the article text was not read directly. Open Culture and Scientific American quote and paraphrase it."
+  },
+  "earliest_found": {
+   "title": "New York Times, 16 August 1964",
+   "date": "1964-08-16",
+   "url": "https://www.openculture.com/2018/12/in-1964-isaac-asimov-predicts-what-the-world-will-look-like-today.html"
+  },
+  "landed": {
+   "outcome": "CANNOT_TELL",
+   "deadline": "2014-12-31",
+   "record": "The quoted line names no threshold a record can test, and the New York Times text was not read by us.",
+   "evidence_url": "https://www.scientificamerican.com/article/asimov-predictions-from-1964-brief-report-card/"
+  },
+  "summary": "The 1964 article is read here only through two later pages that quote and describe it. Of three checkable items for 2014, the population figure and the moon colonies read WRONG and the robot line cannot be tested.",
+  "raw_files": [
+   "data/raw/fortune/asimov_openculture.html",
+   "data/raw/fortune/asimov_sciam.html",
+   "data/raw/fortune/asimov_mentalfloss.html"
+  ],
+  "items": [
+   {
+    "claim": "robots will neither be common nor very good in 2014, but they will be in existence",
+    "outcome": "CANNOT_TELL",
+    "record": "'Common' and 'very good' fix no test."
+   },
+   {
+    "claim": "world population in 2014 of 6.5 billion (paraphrase in Open Culture and Scientific American)",
+    "outcome": "WRONG",
+    "record": "Open Culture gives 7,298,453,033 for 2014. Scientific American says about 7.1 billion. Scientific American also gives Asimov's U.S. figure as 350 million against 317 million."
+   },
+   {
+    "claim": "moon colonies established by 2014 (paraphrase in Scientific American)",
+    "outcome": "WRONG",
+    "record": "Scientific American, March 2014, lists moon colonies among the predictions that had not come true."
+   }
+  ],
+  "primary_read": false
+ },
+ {
+  "short_id": "ballmer_iphone",
+  "who": "Steve Ballmer (Microsoft), interview with USA Today",
+  "popular_version": "There’s no chance that the iPhone is going to get any significant market share. No chance.",
+  "popular_source": {
+   "url": "https://daringfireball.net/2007/05/iphones_funny_price",
+   "title": "Daring Fireball, 'iPhone’s Funny Price' (quotes the interview)"
+  },
+  "claimed_date": "2007-04-29",
+  "verdict": "SAID",
+  "primary": {
+   "title": "David Lieberman, 'CEO Forum: Microsoft’s Ballmer having a ‘great time’', USA Today",
+   "date": "2007-04-29",
+   "url": "https://usatoday30.usatoday.com/money/companies/management/2007-04-29-ballmer-ceo-forum-usat_N.htm",
+   "archive_url": "http://web.archive.org/web/20260925133732/https://usatoday30.usatoday.com/money/companies/management/2007-04-29-ballmer-ceo-forum-usat_N.htm",
+   "quote": "There’s no chance that the iPhone is going to get any significant market share. No chance.",
+   "note": "The same answer continues: 'It’s a $500 subsidized item' and 'I’d prefer to have our software in 60% or 70% or 80% of them, than I would to have 2% or 3%, which is what Apple might get.' The date in the page's address is 2007-04-29."
+  },
+  "earliest_found": {
+   "title": "USA Today, CEO Forum interview",
+   "date": "2007-04-29",
+   "url": "https://usatoday30.usatoday.com/money/companies/management/2007-04-29-ballmer-ceo-forum-usat_N.htm"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated. 'Significant market share' is not defined in the interview.",
+   "evidence_url": null
+  },
+  "summary": "The words are in the 29 April 2007 USA Today interview. It gives no deadline and no figure for 'significant', so it is not scored.",
+  "raw_files": [
+   "data/raw/fortune/ballmer_usatoday.html",
+   "data/raw/fortune/ballmer_gruber.html",
+   "data/raw/fortune/ballmer_regex.html"
+  ]
+ },
+ {
+  "short_id": "clarke_extraterrestrial_relays",
+  "who": "Arthur C. Clarke (Wireless World, 1945)",
+  "popular_version": null,
+  "popular_source": null,
+  "claimed_date": "1945-10",
+  "verdict": "SAID",
+  "primary": {
+   "title": "Arthur C. Clarke, 'Extra-Terrestrial Relays: Can Rocket Stations Give World-wide Radio Coverage?', Wireless World, October 1945",
+   "date": "1945-10",
+   "url": "https://www.worldradiohistory.com/UK/Wireless-World/40s/Wireless-World-1945-10.pdf",
+   "archive_url": "http://web.archive.org/web/20260210024651/https://www.worldradiohistory.com/UK/Wireless-World/40s/Wireless-World-1945-10.pdf",
+   "quote": "It will be observed that one orbit, with a radius of 42,000 km, has a period of exactly 24 hours.",
+   "note": "The article continues that a body in such an orbit would 'revolve with the earth and would thus be stationary above the same spot on the planet.' It proposes a space station there as a radio relay. Two-column text extracted from the scanned issue."
+  },
+  "earliest_found": {
+   "title": "Wireless World, October 1945",
+   "date": "1945-10",
+   "url": "https://www.worldradiohistory.com/UK/Wireless-World/40s/Wireless-World-1945-10.pdf"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "No deadline stated. The article says 'It will be possible in a few more years to build radio controlled rockets' for such orbits, which fixes no date.",
+   "evidence_url": null
+  },
+  "summary": "Clarke's October 1945 Wireless World article describes a 24-hour orbit at 42,000 km radius and a relay station fixed above one spot. It states no deadline.",
+  "raw_files": [
+   "data/raw/fortune/clarke_ww1945.pdf"
+  ]
+ },
+ {
+  "short_id": "ladies_home_journal_1900",
+  "who": "John Elfreth Watkins Jr. (Ladies' Home Journal, 1900)",
+  "popular_version": "There will be No C, X or Q in our every-day alphabet.",
+  "popular_source": {
+   "url": "https://archive.org/details/sim_ladies-home-journal_1900-12_18_1",
+   "title": "Ladies' Home Journal, December 1900, 'What May Happen in the Next Hundred Years'"
+  },
+  "claimed_date": "1900-12",
+  "verdict": "SAID",
+  "primary": {
+   "title": "John Elfreth Watkins Jr., 'What May Happen in the Next Hundred Years', Ladies' Home Journal, December 1900 (Internet Archive scan, OCR text)",
+   "date": "1900-12",
+   "url": "https://archive.org/details/sim_ladies-home-journal_1900-12_18_1",
+   "archive_url": "https://archive.org/details/sim_ladies-home-journal_1900-12_18_1",
+   "quote": "There will be No C, X or Q in our every-day alphabet.",
+   "note": "The article says its forecasts are for 'before the dawn of 2001'. The same article says 'There will be No C, X or Q in our every-day alphabet' and 'Photographs will be Telegraphed from any distance', with newspapers publishing snapshots of a battle in China 'an hour later'."
+  },
+  "earliest_found": {
+   "title": "Ladies' Home Journal, December 1900",
+   "date": "1900-12",
+   "url": "https://archive.org/details/sim_ladies-home-journal_1900-12_18_1"
+  },
+  "landed": {
+   "outcome": "WRONG",
+   "deadline": "2000-12-31",
+   "record": "C, X and Q are letters of the English alphabet in 2000, as in 1900.",
+   "evidence_url": null
+  },
+  "summary": "The December 1900 article gives forecasts for the year 2000. C, X and Q are still letters of the alphabet in 2000. Its population range of 350 to 500 million is above the 2000 census count of 281 million.",
+  "raw_files": [
+   "data/raw/fortune/lhj1900_ia_text.txt",
+   "data/raw/fortune/wiki_census2000.html",
+   "data/raw/fortune/wiki_wirephoto.html"
+  ],
+  "items": [
+   {
+    "claim": "350,000,000 to 500,000,000 people in America and its possessions by the next century",
+    "outcome": "WRONG",
+    "record": "The 2000 census counted 281,421,906 resident population of the United States (Census Bureau, via Wikipedia)."
+   },
+   {
+    "claim": "There will be No C, X or Q in our every-day alphabet",
+    "outcome": "WRONG",
+    "record": "All three letters remain in everyday English spelling. No source fetched for this item beyond the article itself."
+   },
+   {
+    "claim": "Photographs will be Telegraphed from any distance",
+    "outcome": "RIGHT",
+    "record": "The Associated Press began its Wirephoto service in 1935 (Wikipedia, Wirephoto). The 'an hour later' timing was not tested."
+   }
+  ]
+ },
+ {
+  "short_id": "nostradamus_propheties",
+  "who": "Michel de Nostredame (Nostradamus), Les Propheties",
+  "popular_version": null,
+  "popular_source": null,
+  "claimed_date": "1555",
+  "verdict": "NOT_SCOREABLE",
+  "primary": {
+   "title": "Les Propheties (Lyon, Macé Bonhomme, 1555), Centurie I quatrain 1 as pictured on Wikimedia Commons (an image excerpt, not a full scan; no full 1555 scan was found)",
+   "date": "1555",
+   "url": "https://commons.wikimedia.org/wiki/File:Nostradamus_CI_1.jpg",
+   "archive_url": "http://web.archive.org/web/20250710151657/https://commons.wikimedia.org/wiki/File:Nostradamus_CI_1.jpg",
+   "quote": null,
+   "note": "The Commons page carries a transcription of the quatrain and gives its source as Lyon, 1555. The Wikipedia article on Les Propheties states the first edition was published in 1555 by Macé Bonhomme."
+  },
+  "earliest_found": {
+   "title": "Les Propheties, first edition",
+   "date": "1555",
+   "url": "https://en.wikipedia.org/wiki/Les_Proph%C3%A9ties"
+  },
+  "landed": {
+   "outcome": null,
+   "deadline": null,
+   "record": "Not scoreable.",
+   "evidence_url": null
+  },
+  "summary": "The verses give no date, no named event and no probability, so nothing can be checked against a record.",
+  "raw_files": [
+   "data/raw/fortune/nostradamus_CI1_commons.jpg",
+   "data/raw/fortune/nostradamus_CI1_commons_filepage.html",
+   "data/raw/fortune/wiki_propheties.html"
+  ]
+ }
+]
