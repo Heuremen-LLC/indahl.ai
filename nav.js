@@ -4,13 +4,15 @@
 (function () {
   var lastTouch = 0;
   document.addEventListener('pointerdown', function (e) { if (e.pointerType === 'touch' || e.pointerType === 'pen') lastTouch = Date.now(); }, true);
-  function top(dd) { return dd.querySelector('a'); }
+  function top(dd) { return dd.querySelector('a, button'); }
   function closeAll(except) {
     var o = document.querySelectorAll('.dd.open');
     for (var i = 0; i < o.length; i++) if (o[i] !== except) { o[i].classList.remove('open'); top(o[i]).setAttribute('aria-expanded', 'false'); }
   }
   document.addEventListener('click', function (e) {
     var t = e.target, a = t.closest ? t.closest('.dd > a') : null;
+    var b = t.closest ? t.closest('.dd > button') : null;
+    if (b) { var bd = b.parentNode, was = bd.classList.contains('open'); closeAll(bd); bd.classList.toggle('open', !was); bd.classList.toggle('shut', was); b.setAttribute('aria-expanded', was ? 'false' : 'true'); return; }   // the Grab and go button: a tap toggles its panel
     if (a) {
       var dd = a.parentNode, touch = (Date.now() - lastTouch < 1000) || (window.matchMedia && window.matchMedia('(hover: none)').matches);
       if (touch && !dd.classList.contains('open')) { e.preventDefault(); closeAll(dd); dd.classList.remove('shut'); dd.classList.add('open'); a.setAttribute('aria-expanded', 'true'); return; }
@@ -25,7 +27,7 @@
   });
   function unshut(e) { var dd = e.target.closest ? e.target.closest('.dd') : null; if (dd && !dd.contains(e.relatedTarget)) dd.classList.remove('shut'); }
   document.addEventListener('focusout', unshut); document.addEventListener('mouseout', unshut);
-  var dds = document.querySelectorAll('.dd > a');
+  var dds = document.querySelectorAll('.dd > a, .dd > button');
   for (var i = 0; i < dds.length; i++) dds[i].setAttribute('aria-expanded', 'false');
   // the embed box: focus selects the whole snippet, ready to copy
   document.addEventListener('focusin', function (e) { var t = e.target; if (t.classList && t.classList.contains('embedcode')) setTimeout(function () { t.select(); }, 0); });

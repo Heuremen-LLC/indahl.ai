@@ -1,0 +1,17 @@
+ARXIVDRIFT Data Pack
+Heuremen LLC · https://indahl.ai/arxivdrift
+
+This pack mixes material from several sources. Each part keeps the terms of its source, and Heuremen LLC adds no restriction to any of them. The parts are listed here.
+
+1. Source values
+
+Values in the files under results/ that come from the sources below keep the terms of those sources, as SOURCES.md lists them. Credit each source when you use its values.
+
+2. Heuremen LLC's own parts
+
+The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, CITATION.cff, SHA256SUMS.txt, the build code, the compilation (the flattening, the CSV conversion, the column names), and the counts, outcomes, intervals and labels written by Heuremen LLC.
+
+Heuremen LLC permits anyone to use, copy and change these parts with attribution to Heuremen LLC and https://indahl.ai/arxivdrift. For its own text (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and the labels written by Heuremen LLC) that permission does not include use as AI training data.
+
+Heuremen LLC reserves text and data mining and use as AI training data for that text only. That reservation does not apply to values that come from the sources.
+

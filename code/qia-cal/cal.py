@@ -10,7 +10,7 @@ import os, sys, json, time, hashlib, subprocess, datetime as dt
 import numpy as np
 H = os.path.dirname(os.path.abspath(__file__)); B = os.path.expanduser('~/bones-forge'); sys.path.insert(0, H)
 import callib as C
-EU = '--eu' in sys.argv; KEEP_S = 50 if EU else 100
+EU = '--eu' in sys.argv; KEEP_S = 5 if '--open' in sys.argv else (50 if EU else 100)   # 10 Nov: spend every free second (open), keep a reserve on paid
 RUNS = H + ('/data/runs_eu.jsonl' if EU else '/data/runs.jsonl'); QLOG = B + ('/qia_queue/data/probes_eu.jsonl' if EU else '/qia_queue/data/probes.jsonl')
 TAG = 'qia-calibration-eu' if EU else 'qia-calibration'; SRO, ST1 = 1000, 500
 W = B + '/cloudflare-workers/heuremen-door'; NS = 'ecb59d96b07c43bdac14271687eae5af'
@@ -143,7 +143,8 @@ def collect(s):
     rs = rows(RUNS); changed = False; latest = {}
     for r in rs:
         if r.get('state') != 'SENT': continue
-        st = str(s.job(r['id']).status())
+        try: st = str(s.job(r['id']).status())
+        except Exception: continue   # 10 Nov: a job from another instance (open vs paid) is not visible to this session; collect it on its own instance's run
         if st in ('ERROR', 'CANCELLED'): r['state'] = st; changed = True; continue
         if st != 'DONE': continue
         summ, m = process(s, r); latest[r['backend']] = summ

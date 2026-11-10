@@ -65,7 +65,7 @@ def lock(name):
 # ---- manifest: the same file set ship.sh hashes to decide a deploy (its NOW line), plus the JS modules wrangler bundles from indahl-ai
 def deployed_files():
     fs = [W + '/worker.js', W + '/wrangler.toml', I + '/style.css'] + sorted(glob.glob(I + '/*.js')) + sorted(glob.glob(I + '/*.html'))
-    for d in [I + '/' + x for x in ('oy', 'atlas', 'iris', 'qia', 'hermes', 'darkwave', 'media')] + [W + '/public']:
+    for d in [I + '/' + x for x in ('oy', 'atlas', 'iris', 'qia', 'hermes', 'darkwave', 'media', 'receipts')] + [W + '/public']:
         for root, dirs, files in os.walk(d):
             for n in files: fs.append(os.path.join(root, n))
     out = []
@@ -208,14 +208,14 @@ def wayback():
     q = jload(S + '/wayback_queue.json', [])
     if not q: log('wayback: queue empty'); return
     q.sort(key=lambda x: 0 if x.get('release') == (releases() or [{}])[-1].get('id') else 1)
-    batch, rest = q[:CAP], q[CAP:]
-    done, keep, backoff, stopped = 0, [], 60, False
-    for i, x in enumerate(batch):
-        if stopped: keep.append(x); continue
+    done, sent, keep, backoff, stopped, skipped = 0, 0, [], 60, False, 0
+    for i, x in enumerate(q):
+        if stopped or sent >= CAP: keep.append(x); continue   # the cap counts requests to the Archive, not queue entries
         u = x['url']
         st, _, _ = http(u, timeout=30)
         if st != 200:
-            log('wayback: skip', u, 'live answers', st); continue
+            skipped += 1; log('wayback: skip', u, 'live answers', st); continue
+        if sent: time.sleep(PACE)
         while True:
             st, hd, body = http('https://web.archive.org/save/' + u)
             if st == 429:
@@ -223,6 +223,7 @@ def wayback():
                 log('wayback: 429, waiting', backoff, 's'); time.sleep(backoff); backoff *= 2; continue
             break
         if stopped: keep.append(x); continue
+        sent += 1
         cap, ts = capture_of(u, hd, body)
         row = {'at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'release': x.get('release'), 'url': u, 'status': st, 'capture': cap, 'timestamp': ts}
         if cap:
@@ -232,9 +233,12 @@ def wayback():
             x['tries'] = x.get('tries', 0) + 1
             if x['tries'] < MAX_TRIES: keep.append(x)
             log('wayback: no capture for', u, 'status', st, 'try', x['tries'])
-        if i < len(batch) - 1: time.sleep(PACE)
-    jdump(S + '/wayback_queue.json', keep + rest)
-    log('wayback: captured', done, 'of', len(batch), 'queued for the next release', len(keep) + len(rest))
+    # a release may have queued more while this run went on: merge with the file as it is now, never write back a stale copy
+    key = lambda x: (x['url'], x.get('release'))
+    kept = dict((key(x), x) for x in keep); gone = set(key(x) for x in q) - set(kept)
+    final = [kept.get(key(x), x) for x in jload(S + '/wayback_queue.json', []) if key(x) not in gone]
+    jdump(S + '/wayback_queue.json', final)
+    log('wayback: captured', done, 'of', sent, 'sent, skipped (not live)', skipped, 'queued for the next release', len(final))
     publish()
 
 

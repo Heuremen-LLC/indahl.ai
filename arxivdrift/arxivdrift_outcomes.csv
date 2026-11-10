@@ -1,0 +1,5 @@
+path,label,outcome,n,of,share,lo,hi,share_lo,share_hi
+/any_change,any_change,,5,1590,0.0031,0.0013,0.0073,0.0013,0.0073
+/classes/REVISED_NUMBERS,REVISED_NUMBERS,,5,,0.0031,0.0013,0.0073,0.0013,0.0073
+/classes/REVISED_SAME,REVISED_SAME,,6,,0.0038,0.0017,0.0082,0.0017,0.0082
+/classes/UNCHANGED,UNCHANGED,,1579,,0.9931,0.9877,0.9961,0.9877,0.9961

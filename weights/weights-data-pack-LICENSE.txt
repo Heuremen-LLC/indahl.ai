@@ -1,0 +1,13 @@
+WEIGHTS Data Pack
+Heuremen LLC · https://indahl.ai/weights
+
+This pack mixes material from several sources. Each part keeps the terms of its source, and Heuremen LLC adds no restriction to any of them. The parts are listed here.
+
+1. Heuremen LLC's own parts
+
+The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, CITATION.cff, SHA256SUMS.txt, the build code, the compilation (the flattening, the CSV conversion, the column names), and the counts, outcomes, intervals and labels written by Heuremen LLC. Every file under results/ in this pack is one of these parts.
+
+Heuremen LLC permits anyone to use, copy and change these parts with attribution to Heuremen LLC and https://indahl.ai/weights. For its own text (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and the labels written by Heuremen LLC) that permission does not include use as AI training data.
+
+Heuremen LLC reserves text and data mining and use as AI training data for that text only. That reservation does not apply to values that come from the sources.
+

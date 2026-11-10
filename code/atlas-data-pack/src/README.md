@@ -85,6 +85,14 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 - `START_HERE.html`: this guide as a page
 - `LICENSE.txt`, `CITATION.cff`
 
+## Cite
+
+Heuremen LLC, ATLAS Data Pack, Zenodo, doi:10.5281/zenodo.23874305
+
+https://doi.org/10.5281/zenodo.23874305
+
+That DOI always points to the newest version on Zenodo. Each version there also has its own DOI.
+
 ## Links
 
 - ATLAS: https://indahl.ai/atlas

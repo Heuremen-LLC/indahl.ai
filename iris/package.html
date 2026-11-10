@@ -34,14 +34,14 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Heuremen">
-<link rel="stylesheet" href="/style.css?v=a713c883">
+<link rel="stylesheet" href="/style.css?v=e43a6492">
 </head>
 <body>
 <header class="top"><div class="wrap bar">
 <a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Heuremen LLC</span></a>
 <nav class="links">@@NAV:/iris/package@@</nav>
 </div></header>
-<section class="hero slim"><div class="wrap"><h1>IRIS Research Package</h1><p class="sub">Heuremen LLC</p></div></section>
+<section class="hero slim"><div class="wrap"><a class="dpk" href="/iris/iris-research-package.zip" download aria-label="Data pack: download the IRIS Research Package (zip)" title="IRIS Research Package (zip)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9M4 6.5 8 10.5 12 6.5M2 14h12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Data pack</a><h1>IRIS Research Package</h1><p class="sub">Heuremen LLC</p></div></section>
 <main class="wrap">
 <main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/iris/iris-research-package.zip" download>Download (zip)</a> <span class="meta">sha256 <code>93c207dd872d963ac3f616bbfc89f902be18903dd3a02d382ae2668549ca738d</code> &middot; <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris-package">code (git)</a></span></p><p class="pkgalso">Cite: <a href="https://doi.org/10.5281/zenodo.23874303">doi:10.5281/zenodo.23874303</a> (Zenodo)</p><p>Tools to check the numbers from a language-model evaluation before you trust them and after a run. This applies to benchmark scores, LLM-as-judge scores and fine-tuning studies. IRIS recounts published evaluation studies from their own released output files, and this package puts the same checks in your hands for your own outputs. Your files are opened read-only and never changed. Reports go to a separate folder, and the checker refuses a folder inside the folder that holds an input, so run it from outside your data folder. The checker sends nothing anywhere. Two parts need other software or the network when you run them: <code>parser-check/replycheck.py</code> runs a model on your machine, and installing the Faults and Guards package from PyPI downloads it. Python 3.9 or later.</p>
 <h2>Install the checker on its own</h2>

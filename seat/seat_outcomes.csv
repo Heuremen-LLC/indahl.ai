@@ -1,0 +1,2 @@
+path,label,outcome,n,of,share,lo,hi,newest_probe_hours
+"/rolling/Last 24 probes, counted as incidents","Last 24 probes, counted as incidents",ABOVE,3,24,,,,0.8
