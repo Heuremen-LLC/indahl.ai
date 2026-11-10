@@ -466,7 +466,7 @@ summary = dict(
 def _fc_row(c):
     wp = c['kind'] == 'whole path'
     return dict(kind='coverage', item=c['cell'] if wp else '%s circle' % c['cell'],
-                counts='share of official forecasts whose best-track positions stayed inside the cone, along the whole path or within one lead circle',
+                counts=('share of official forecasts whose best-track positions stayed inside the cone for the whole path' if wp else 'share of official forecasts whose best-track position at that lead fell inside the lead circle'),
                 stated=round((WP_BAND[0] + WP_BAND[1]) / 2, 4) if wp else round(CIRCLE_CLAIM, 4),
                 band=list(WP_BAND) if wp else [round(x, 4) for x in CIRCLE_BAND], band_kind='stated' if wp else 'rule', band_by=None if wp else 'ours',
                 n=c['inside'], of=c['scored'], delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'],

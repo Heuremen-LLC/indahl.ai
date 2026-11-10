@@ -167,7 +167,8 @@ def _expand(m):
                                 else {'t': '{0:pct}', 'refs': [{'f': ['delivered']}]}),
                   'interval': {'t': '{0:pct} to {1:pct}', 'refs': [{'f': ['lo']}, {'f': ['hi']}]}, 'outcome': {'f': ['outcome']},
                   'num': dict({'stated': {'f': ['stated']}, 'delivered': {'f': ['delivered']}, 'lo': {'f': ['lo']}, 'hi': {'f': ['hi']}},
-                              **({'blo': {'f': ['band', 0]}, 'bhi': {'f': ['band', 1]}} if band else {})),
+                              **({'blo': {'f': ['band', 0]}, 'bhi': {'f': ['band', 1]}} if band else {}),
+                              **({'wlo': {'f': ['consistent_within', 0]}, 'whi': {'f': ['consistent_within', 1]}} if isinstance(r.get('consistent_within'), list) else {})),
                   'note_ref': {'f': ['interval']} if r.get('interval') else None}
             if r.get('brier_skill') is not None and r.get('brier_skill_lo') is not None and r.get('brier_skill_hi') is not None:
                 sp['brier'] = {'t': '{0} ({1} to {2})', 'refs': [{'f': ['brier_skill']}, {'f': ['brier_skill_lo']}, {'f': ['brier_skill_hi']}]}
@@ -216,6 +217,7 @@ def position(r):
     s, v, lo, hi = (value(r['nums'][x]) * k for x in ('stated', 'delivered', 'lo', 'hi'))
     out = {'gap': round(v - s, 4), 'lo': round(lo - s, 4), 'hi': round(hi - s, 4)}
     if 'blo' in r['nums']: out.update(blo=round(value(r['nums']['blo']) * k - s, 4), bhi=round(value(r['nums']['bhi']) * k - s, 4))
+    if 'wlo' in r['nums']: out.update(wlo=round(value(r['nums']['wlo']) * k - s, 4), whi=round(value(r['nums']['whi']) * k - s, 4))   # checked by the gate, not drawn
     return out
 
 def domain(rows):
@@ -267,8 +269,13 @@ def _dot(cls, x, y='11'): return f'<line class="{cls}" x1="{x}" x2="{x}" y1="{y}
 def _tip(r):
     t = r['text']; return f'{t["desk"]}, {t["item"]}, {t["counts"]}: stated {t["stated"]}, delivered {t["delivered"]}, interval {t["interval"]}, outcome {t["outcome"]}'
 
-def _header(r):
-    t = r['text']
+def _header(r, rows=None):
+    t = dict(r['text'])
+    if rows:   # a desk whose rows count different things names each, in its own order
+        cs = []
+        for x in rows:
+            if x['desk'] == r['desk'] and x['text']['counts'] not in cs: cs.append(x['text']['counts'])
+        t['counts'] = '. '.join(c[:1].upper() + c[1:] if i else c for i, c in enumerate(cs))
     return (f'<div class="fcx-h"><a href="{r["page"]}">{E(r["desk"])}</a> <span>{E(r["source"])}</span>'
             f'<span class="fcx-c">Share counted: {E(t["counts"])}.' + (' ' + OURS if r.get('ours') else '') + '</span></div>')
 
@@ -286,7 +293,7 @@ def chart(rows):
     for r in rows:
         t = r['text']; p = r['pos']; k = 'p' if r['kind'] == 'probability' else 'c'; lo, hi = _ival(p, a, b); g = _x(p['gap'], a, b)
         if r['desk'] != last:
-            out.append(_header(r)); last = r['desk']
+            out.append(_header(r, rows)); last = r['desk']
         tip = _tip(r)
         out.append(f'<div class="fcx-r" tabindex="0" title="{E(tip)}" aria-label="{E(tip)}">'
                    f'<span class="fcx-l">{E(t["item"])}</span>'
@@ -382,7 +389,7 @@ def _sign_ok(out, pos):
         return out == 'CANNOT_TELL'
     if out == 'ABOVE': return pos['lo'] > 0
     if out == 'BELOW': return pos['hi'] < 0
-    if out == 'CONSISTENT': return pos['lo'] <= 0 <= pos['hi']
+    if out == 'CONSISTENT': return pos['lo'] <= 0 <= pos['hi'] and ('wlo' not in pos or (pos['wlo'] - 0.01 <= pos['lo'] and pos['hi'] <= pos['whi'] + 0.01))
     return out == 'CANNOT_TELL'
 
 def gate():
@@ -445,7 +452,7 @@ def gate():
         hd = [_txt(x) for x in re.findall(r'<div class="fcx-h">(.*?)</div>', main, re.S)]
         last = None; wh = []
         for r in fresh:
-            if r['desk'] != last: wh.append(_txt(_header(r))); last = r['desk']
+            if r['desk'] != last: wh.append(_txt(_header(r, fresh))); last = r['desk']
         if hd != wh: errs.append('chart desk headers differ from the rows')
         # strip the figure and the table, then nothing left inside main may carry a digit except the blocks build_site.py adds to every page
         rest = re.sub(r'<figure class="fcx".*?</figure>', '', main, flags=re.S)

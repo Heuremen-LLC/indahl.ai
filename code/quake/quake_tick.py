@@ -426,7 +426,7 @@ summary = dict(
                     m3_scored=sum(1 for r in by_seq_r[s['id']] if r['status'] == 'scored' and r['kind'] == 'bin' and r['mag'] == 3.0)) for s in SEQ])
 # the block indahl.ai/forecasters reads (indahl-ai/forecasters.py, rows 'feed'). Display only, the cells above decide. Range coverage against the stated 95 percent.
 def _fc_row(c):
-    return dict(kind='coverage', item=c['cell'], counts='share of stated ranges that held the aftershock count', stated=c['claim'],
+    return dict(kind='coverage', item=c['cell'], counts='share of stated ranges that held the aftershock count', stated=c['claim'], consistent_within=list(COVER_BAND),
                 n=c['inside'], of=c['scored'], delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'],
                 interval='union of the Wilson and block bootstrap intervals, as the desk gives it')
 summary['forecasters'] = dict(rows=[_fc_row(c) for c in [cover_all] + cover_win + cover_mag if c['lo'] is not None],
