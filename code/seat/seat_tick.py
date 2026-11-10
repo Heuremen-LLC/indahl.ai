@@ -14,7 +14,7 @@ try:
     T = json.load(open(TJ)); have = set(T['pages']); hf = {f[0] for f in T['feeds']}; ch = False
     for sl in slugs:
         if sl not in have: T['pages'].append(sl); ch = True
-        if sl in ('qia', 'iris', 'oy', 'atlas', 'sad', 'hermes', 'vault'): continue   # 30 Oct: VAULT is a tool with no live feed
+        if sl in ('qia', 'iris', 'oy', 'atlas', 'sad', 'hermes', 'vault', 'yo'): continue   # 10 Nov: YO reads qia/yo.json + iris/yo.json, it has no yo/live.json   # 30 Oct: VAULT is a tool with no live feed
         if sl + '/live.json' not in hf: T['feeds'].append([sl + '/live.json', 40]); ch = True
     if ch:
         json.dump(T, open(TJ, 'w')); ID = subprocess.run(['/opt/homebrew/bin/gh', 'api', 'user', '--jq', '.id'], capture_output=True, text=True).stdout.strip()

@@ -23,6 +23,7 @@ Each plan file is committed before the run it describes. Run any script with `py
 - [cadence/](cadence/): CADENCE: stated update schedules against delivered - https://indahl.ai/cadence
 - [trials/](trials/): TRIALS: ClinicalTrials.gov results due against results posted - https://indahl.ai/trials
 - [launch/](launch/): LAUNCH: stated launch time against the time it flew - https://indahl.ai/launch
+- [water/](water/): WATER: 24-Month Study projections of Lake Mead and Lake Powell against measured levels - https://indahl.ai/water
 - [linkrot/](linkrot/): LINKROT: stated code links against live - https://indahl.ai/linkrot
 - [mirror/](mirror/): QIA: IBM published calibration, mirrored, audited and tracked for stability - https://indahl.ai/qia
 - [t1t2-check/](t1t2-check/): QIA: the T1 and T2 joint-measurement check - https://indahl.ai/qia
