@@ -2427,6 +2427,10 @@
 /r/quake.prob10.month	2026-11-10
 /r/quake.prob10.week	2026-11-10
 /r/quake.prob10.year	2026-11-10
+/r/rank.checks.hs	2026-11-10
+/r/rank.checks.law	2026-11-10
+/r/rank.checks.nlac	2026-11-10
+/r/rank.checks.nu	2026-11-10
 /r/rank.list.edu	2026-11-10
 /r/rank.list.elem	2026-11-10
 /r/rank.list.eng	2026-11-10

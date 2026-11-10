@@ -118,7 +118,7 @@ for l in D['lists']:
     if hs: out.append('<p class="bench-note">' + e(l['data_years']) + ' US News prints a graduation rate of &ldquo;&gt; 95%&rdquo; or &ldquo;&gt; 99%&rdquo; for some schools and N/A for one. These are shown as printed.</p>')
 
 out.append('<h2>National Blue Ribbon awards</h2>')
-out.append('<p>The US Department of Education pages for the National Blue Ribbon Schools program, including the award search and the yearly lists at the addresses tried, returned &ldquo;Page not found&rdquo; on 2026-11-10. '
+out.append('<p>The US Department of Education pages for the National Blue Ribbon Schools program, including the award search and the yearly lists at the addresses tried, showed &ldquo;Page not found&rdquo; in a browser on 2026-11-10 and refused automated reads. '
            'Award years below come from state education agency releases and from the National Archives copy of the Department&rsquo;s 2018 list. '
            'None of these sources states the category of each school&rsquo;s award, so the stated criterion for that category cannot be set against the state assessment data. Each reads cannot tell.</p>')
 BR = []
@@ -131,19 +131,20 @@ if BR:
     for nm, yr, u, rowt in BR:
         out.append(f'<tr><td>{e(nm)}</td><td>{e(yr)}</td><td>not stated in the source</td><td><a href="{e(u)}">source</a></td><td>cannot tell (category not stated)</td></tr>')
     out.append('</tbody></table></div>')
-out.append('<p class="bench-note">Earlier or other awards named in school or press pages, without a Department or state agency record read here, are not listed. For the other high schools in the list no award record was found in the sources read.</p>')
+out.append('<p class="bench-note">Earlier or other awards named in school or press pages, without a Department or state agency record read here, are not listed. For the other high schools in the list no award record was read.</p>')
 out.append('<h2>Instructional time</h2>')
 out.append('<p>None of the ten states publishes instructional minutes or days per school in the files read. The District of Columbia publishes daily school hours. Nothing is set side by side.</p>')
+QUOTE = {'George Washington University': "It was the decision of U.S. News to remove GW's numerical ranking from its website until next year"}
 ITEM = {'Temple University': 'Number of new entrants who provided GMAT scores', 'University of Southern California': 'Doctoral program selectivity figures, with EdD data left out and PhD data reported',
         'George Washington University': 'Share of incoming students in the top 10 percent of their high school class, 58 percent reported as 78 percent', 'University of California': 'Alumni giving rate, with pledges counted',
         'University of Wisconsin': 'Not named. The document says a discrepancy in its data', 'Emory University': 'Test scores of admitted students reported as those of enrolled students, and class rank'}
 out.append('<h2>Documented cases of corrected data</h2>')
 if CASES:
-    out.append('<p>Cases where a school&rsquo;s own statement or report says data it gave US News was inaccurate and its US News rank was removed, withdrawn or computed again. Primary sources only, quoted. '
+    out.append('<p>Cases where a school&rsquo;s own statement or report says data it gave US News was inaccurate and its US News rank was removed or withdrawn. Primary sources only, quoted. '
                'The data item is described in short, and the quote is the document&rsquo;s own words.</p>')
     out.append('<div class="tw"><table class="bench"><thead><tr><th>School</th><th>List and edition</th><th>Data item, as the document states it</th><th>What the document says</th><th>Date</th><th>Source</th></tr></thead><tbody>')
-    for v in CASES['verified']:
-        out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(v['school']), e(v['list'].split(' (')[0].split(';')[0]), e(next((t for k_, t in ITEM.items() if v['school'].startswith(k_)), '')), '&ldquo;' + e(v['rank_outcome_quote']) + '&rdquo;', e(str(v.get('date', '')).split(' (')[0].split(';')[0]), ' '.join(f'<a href="{e(u)}">source</a>' for u in (v['primary_urls'] if isinstance(v['primary_urls'], list) else [v['primary_urls']])[:2]))) + '</tr>')
+    for v in [v for v in CASES['verified'] if not str(v.get('rank_outcome_type', '')).startswith('computed')]:
+        out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(v['school']), e(v['list'].split(' (')[0].split(';')[0]), e(next((t for k_, t in ITEM.items() if v['school'].startswith(k_)), '')), '&ldquo;' + e(QUOTE.get(v['school'], v['rank_outcome_quote'])) + '&rdquo;', e(str(v.get('date', '')).split(' (')[0].split(';')[0]), ' '.join(f'<a href="{e(u)}">source</a>' for u in (v['primary_urls'] if isinstance(v['primary_urls'], list) else [v['primary_urls']])[:2]))) + '</tr>')
     out.append('</tbody></table></div>')
     out.append('<p class="bench-note">Cases named only in news reports, or whose primary page refused our reader, are not listed until the primary document is read.</p>')
 out.append('<h2>What comes next</h2>')

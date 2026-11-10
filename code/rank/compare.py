@@ -141,11 +141,11 @@ for slug, (gpa, lsat, acc, ft, ult) in LAWU.items():
     avg = (Decimal(f23) + Decimal(f24)) / 2
     oc24 = compare(ft, f24, 'x', 'x')[0]; ocav = compare(ft, str(avg), 'x', 'x')[0]
     add('law', nm, 'First-time bar passage', ft, None, f24, '2024 graduates', 'ABA First-Time Bar Passage, reports 2024 and 2025',
-        f"The school page prints no year for this figure. US News's method names a two-year average of the 2023 and 2024 classes. ABA: 2023 graduates {f23}, 2024 graduates {f24}, average {avg.quantize(Decimal('0.01'))}. The printed figure agrees with the 2024 graduates' rate after rounding: {'yes' if oc24 == 'MATCH' else 'no'}. With the two-year average: {'yes' if ocav == 'MATCH' else 'no'}. Shown after the data, not scored.")
+        f"The school page prints no year for this figure. US News's method names a two-year nonweighted average of the 2023 and 2024 graduating classes for its first-time bar indicator. ABA: 2023 graduates {f23}, 2024 graduates {f24}, average {avg.quantize(Decimal('0.01'))}. The printed figure agrees with the 2024 graduates' rate after rounding: {'yes' if oc24 == 'MATCH' else 'no'}. With the two-year average: {'yes' if ocav == 'MATCH' else 'no'}. Shown after the data, not scored.")
     u21 = U21[s['aba_name']]; u22 = F['ultimate_2022_graduates']['pass_pct']['value'].rstrip('%')
     uav = ((Decimal(u21) + Decimal(u22)) / 2)
     add('law', nm, 'Ultimate bar passage, two-year average', ult, '2021 and 2022 graduates', str(uav), '2021 and 2022 graduates',
-        'ABA Two-Year Ultimate Bar Passage, reports 2024 and 2025', f'ABA: 2021 graduates {u21}, 2022 graduates {u22}, unweighted average {uav.quantize(Decimal("0.001"))}, as US News states it averages them.')
+        'ABA Two-Year Ultimate Bar Passage, reports 2024 and 2025', f'US News method: a two-year nonweighted average of 2021 and 2022 graduates. ABA: 2021 graduates {u21}, 2022 graduates {u22}, average {uav.quantize(Decimal("0.001"))}.')
 # ---------- Colleges ----------
 C = json.load(open('public/college/college_public.json', encoding='utf-8'))
 CKEY = {'massachusetts-institute-of-technology-2178': 'mit', 'princeton-university-2627': 'princeton', 'harvard-university-2155': 'harvard', 'yale-university-1426': 'yale',
@@ -186,7 +186,7 @@ for slug, u in CU.items():
             return v if not re.match(r'^\d+\.\d{3,}$', v) else str(Decimal(v).quantize(Decimal('0.1')))
         def chk(lab, usn, pub):
             if usn in (None, '', '?') or pub in (None, ''): disp.append(f'{lab}: not compared'); return
-            disp.append(f'{lab} {usn} against {fmt(pub)}: ' + ('agrees' if compare(usn, pub, 'x', 'x')[0] == 'MATCH' else 'differs'))
+            disp.append(f'{lab} {usn}, Common Data Set {fmt(pub)}, equal after rounding ' + ('yes' if compare(usn, pub, 'x', 'x')[0] == 'MATCH' else 'no'))
         if c1.get('applicants') and c1.get('admits'): chk('acceptance rate', u.get('acc'), str(Decimal(c1['admits']) * 100 / Decimal(c1['applicants'])))
         if c9.get('SAT_comp_25'): chk('SAT', u.get('sat'), f"{c9['SAT_comp_25']}-{c9['SAT_comp_75']}")
         if c9.get('ACT_comp_25'): chk('ACT', u.get('act'), f"{c9['ACT_comp_25']}-{c9['ACT_comp_75']}")
@@ -196,7 +196,7 @@ for slug, u in CU.items():
         if bg.get('B6_adj_cohort') and bg.get('B7_4yr'): chk('4-year graduation rate', u.get('grad4'), str(Decimal(bg['B7_4yr']) * 100 / Decimal(bg['B6_adj_cohort'])) )
     for lab, k in (('Acceptance rate', 'acc'), ('SAT range', 'sat'), ('ACT range', 'act'), ('Student/faculty ratio', 'ratio'), ('Classes with fewer than 20 students', 'small'), ('4-year graduation rate', 'grad4')):
         add(lst, nm, lab, u.get(k), None, 'see the Common Data Set note', None, 'Common Data Set 2025-26 ' + src, 'The US News page prints no year for this figure.', shown_pub='')
-    OUT.append(dict(list=lst, school=nm, field='_display_cds2025', note=('; '.join(disp) if disp else ('Only item B1 could be read from the college posting' if y else 'No Common Data Set 2025-26 was read')), outcome='DISPLAY', reason='after the data, not scored'))
+    OUT.append(dict(list=lst, school=nm, field='_display_cds2025', note=('; '.join(disp) if disp else ('Only item B1 could be read from the college posting' if b1 else 'No Common Data Set 2025-26 was read')), outcome='DISPLAY', reason='after the data, not scored'))
 
 OUTLAW = [o for o in OUT if o['list'] == 'law']
 json.dump(dict(read='2026-11-10', checks=OUT), open('data/checks.json', 'w'), indent=1, ensure_ascii=False)

@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-10T16:40:01Z",
+ "built_utc": "2026-11-10T16:43:30Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 43,
+   "commit": "5afc6e90b578c8f1413c7c00dc3b7c7171bb7738",
+   "files": 5090,
+   "id": "5afc6e90b578",
+   "json": "/receipts/stamps/release_5afc6e90b578.json",
+   "ledger_sha256": "4bd976135cf9c14722bf110d893de24c5349d28f41c767bf911f218770378e09",
+   "manifest_sha256": "cc5c179308e46094e879dee86087d393b9019bcc0c87538cbdf544846d36becc",
+   "ots": "/receipts/stamps/release_5afc6e90b578.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T16:43:28Z",
+   "sha256": "8ea33eceb27411d55edddd26de6604437f817a725c9277ba93d7b3213b858aeb",
+   "wayback": [],
+   "wayback_waiting": 42
+  },
   {
    "changed": 35,
    "commit": "8b3baab572bdf4c1e745d8320597ebe8c48aaf7e",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-10T16:39:59Z",
    "sha256": "3c5fcd2e8edd26c090b985842325fe894355056d0b4e7e380b03bcfbad997d22",
    "wayback": [],
-   "wayback_waiting": 33
+   "wayback_waiting": 29
   },
   {
    "changed": 75,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-10T16:37:51Z",
    "sha256": "81417f2e72326fa489a8e8af930469d7a47928053dff6256e4d7053cd543fa8e",
    "wayback": [],
-   "wayback_waiting": 66
+   "wayback_waiting": 44
   },
   {
    "changed": 815,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-10T16:32:47Z",
    "sha256": "c7f32d8002056590351b2d1c34b9a5563e33029ad3e3a962db0f184d4826d1ba",
    "wayback": [],
-   "wayback_waiting": 7
+   "wayback_waiting": 6
   },
   {
    "changed": 798,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-10T16:29:38Z",
    "sha256": "1fdef256f7b88cd619928b8bfff21b613a5e796b5e66afa3b90ec1443209a7c3",
    "wayback": [],
-   "wayback_waiting": 18
+   "wayback_waiting": 9
   },
   {
    "changed": 1017,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-10T16:27:19Z",
    "sha256": "21eb48158d64d7c494e903771f56a5322f1cdd25f261d750190f7377b3963170",
    "wayback": [],
-   "wayback_waiting": 213
+   "wayback_waiting": 208
   },
   {
    "changed": 46,
