@@ -7,7 +7,7 @@
 // /newsletter/unsubscribe?t=<token>: GET shows one button, POST (the button, or a mail program's one-click List-Unsubscribe-Post) deletes both keys.
 // /week and /week/<yyyy-ww>: the copy weekly.py tick put in IRIS_BENCH (week_current, week_<slug>) when there is one, else the built page.
 // Nothing here is logged, posted or emailed to anyone. Addresses never leave the private KV except to Cloudflare Email Sending at send time.
-const EMAIL = /^[^\s@<>"(),;:\\[\]]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?)*\.[A-Za-z]{2,24}$/;
+export const EMAIL = /^[^\s@<>"(),;:\\[\]]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?)*\.[A-Za-z]{2,24}$/;
 const OK = 'Thank you. The weekly changes page will come to this address every Tuesday. Every email has a one-click unsubscribe.';
 import { PRIVACY } from './pages.js';
 const PRIVACY_V = PRIVACY.version;   // 10 Nov: follows the notice version build_site.py sets, so a sign-up records the notice in force
@@ -26,6 +26,37 @@ const JS = `(function () {
 `;
 async function sha(s) { const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join(''); }
 const esc = t => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// The one subscribe path (10 Nov 2026, combined sign-up form): /newsletter/subscribe and /signup (alerts.js) both call this, so the list is
+// written in one place. em is a checked address. Returns {ok, msg, status}.
+export const NL_OK = OK;
+export async function subscribeNewsletter(env, em, ip) {
+  const rk = 'nlrl:' + (await sha('nl|' + ip)).slice(0, 32);
+  const n = parseInt((await env.INDAHL_INQUIRIES.get(rk)) || '0', 10);
+  if (n >= 5) return { ok: false, msg: 'Several sign-ups have come from your connection this hour. Please try again later.', status: 429 };
+  await env.INDAHL_INQUIRIES.put(rk, String(n + 1), { expirationTtl: 3600 });
+  await nlAdd(env, em);
+  return { ok: true, msg: OK, status: 200 };
+}
+const nlKey = async e => 'nlh:' + (await sha('nladdr|' + e)).slice(0, 32);
+// on the list? (the manage page of a confirmed alert address reads this to show the newsletter tick)
+export async function nlHas(env, em) { return !!(await env.INDAHL_INQUIRIES.get(await nlKey(String(em).toLowerCase()))); }
+// add an address (nothing new stored when it is already on the list)
+export async function nlAdd(env, em) {
+  const norm = String(em).toLowerCase(); const hk = await nlKey(norm);
+  if (await env.INDAHL_INQUIRIES.get(hk)) return false;
+  const tok = crypto.randomUUID().replace(/-/g, '') + crypto.randomUUID().replace(/-/g, '').slice(0, 8);
+  const at = new Date().toISOString();
+  await env.INDAHL_INQUIRIES.put('nl:' + tok, JSON.stringify({ e: norm, at, v: PRIVACY_V }), { metadata: { e: norm, at } });
+  await env.INDAHL_INQUIRIES.put(hk, tok);
+  return true;
+}
+// remove an address: both keys, as the unsubscribe link does
+export async function nlRemove(env, em) {
+  const norm = String(em).toLowerCase(); const hk = await nlKey(norm); const t = await env.INDAHL_INQUIRIES.get(hk);
+  if (t) await env.INDAHL_INQUIRIES.delete('nl:' + t);
+  await env.INDAHL_INQUIRIES.delete(hk);
+}
 
 export async function handleWeekly(req, env, u, html, PAGES) {
   const p = u.pathname.replace(/\/+$/, '') || '/';
@@ -47,17 +78,8 @@ export async function handleWeekly(req, env, u, html, PAGES) {
     if (String(f.get('website') || '')) return out(true, OK, 200);                       // the bot trap: same answer, nothing stored
     const em = String(f.get('email') || '').trim();
     if (!em || em.length > 160 || !EMAIL.test(em)) return out(false, 'Please enter a full email address, like name@example.org.', 400);
-    const ip = req.headers.get('cf-connecting-ip') || ''; const rk = 'nlrl:' + (await sha('nl|' + ip)).slice(0, 32);
-    const n = parseInt((await env.INDAHL_INQUIRIES.get(rk)) || '0', 10);
-    if (n >= 5) return out(false, 'Several sign-ups have come from your connection this hour. Please try again later.', 429);
-    await env.INDAHL_INQUIRIES.put(rk, String(n + 1), { expirationTtl: 3600 });
-    const norm = em.toLowerCase(); const hk = 'nlh:' + (await sha('nladdr|' + norm)).slice(0, 32);
-    if (await env.INDAHL_INQUIRIES.get(hk)) return out(true, OK, 200);                  // already on the list: nothing new stored
-    const tok = crypto.randomUUID().replace(/-/g, '') + crypto.randomUUID().replace(/-/g, '').slice(0, 8);
-    const at = new Date().toISOString();
-    await env.INDAHL_INQUIRIES.put('nl:' + tok, JSON.stringify({ e: norm, at, v: PRIVACY_V }), { metadata: { e: norm, at } });
-    await env.INDAHL_INQUIRIES.put(hk, tok);
-    return out(true, OK, 200);
+    const r = await subscribeNewsletter(env, em, req.headers.get('cf-connecting-ip') || '');
+    return out(r.ok, r.msg, r.status);
   }
   if (p === '/newsletter/unsubscribe') {
     let t = u.searchParams.get('t') || '';
