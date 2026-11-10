@@ -132,3 +132,4 @@
 {"rounds": 49, "seat2.seat_part_ms": 1.56, "seat_part_ms": 3.06, "t": "2026-11-10T16:23Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
 {"rounds": 49, "seat2.seat_part_ms": 0.79, "seat_part_ms": 3.16, "t": "2026-11-10T18:34Z", "totals.CANNOT_TELL": 33, "totals.CONSISTENT": 1, "totals.NOTHING_RETURNED": 2}
 {"rounds": 49, "seat2.seat_part_ms": 8.25, "seat_part_ms": 3.24, "t": "2026-11-10T20:42Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
+{"rounds": 49, "seat2.seat_part_ms": 0.38, "seat_part_ms": 3.15, "t": "2026-11-10T22:48Z", "totals.CANNOT_TELL": 34, "totals.NOTHING_RETURNED": 2}
