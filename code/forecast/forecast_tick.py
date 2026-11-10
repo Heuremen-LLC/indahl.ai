@@ -72,10 +72,47 @@ for lo, hi, nm in BINS:
         k = sum(r['event'] for _, r in xs); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)
         oc = 'CANNOT_TELL' if n < 30 else ('ABOVE' if a * 100 > ms else ('BELOW' if b * 100 < ms else 'CONSISTENT'))
         cells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 1), observed=round(100 * k / n, 1), lo=round(100 * a, 1), hi=round(100 * b, 1), outcome=oc))
+# 10 Nov 2026 (PLAN.md Addendum 2, decided after the data): the NWS event rule, measurable precipitation of 0.01 inch or more, is the primary reading
+# from today. The original rule above (any amount above zero or a present-weather entry) is kept beside it as the original committed rule.
+# The amounts come from the routine hourly METAR totals in the Iowa Environmental Mesonet ASOS archive (measurable.py). Same periods, bins,
+# leads, one count per period per cell, Wilson 95% and the same four outcomes.
+import measurable as _M
+try: _nm = _M.update(per, sc, now=now, max_stations=10)
+except Exception as _e: _nm = 0; print('forecast: measurable read failed', type(_e).__name__, str(_e)[:80])
+_mm = _M.load()
+def _mev(p):
+    r = sm.get(p['id']); m = _mm.get((p['station'], p['start'], p['end']))
+    if not r or r['unscorable'] or not m or m['unscorable']: return None
+    return bool(m['event'])
+mcells = []; _mok = {}; _mbad = set(); _mlow = {}; _mkeys = set(); _mwait = set()
+for p in per:
+    r = sm.get(p['id'])
+    if not r or r['unscorable'] or not p['stated'] or not (0 <= p['lead_h'] < 48): continue
+    k = (p['station'], p['start']); m = _mm.get((p['station'], p['start'], p['end']))
+    if not m: _mwait.add(k); continue
+    if m['unscorable']: _mbad.add(k); continue
+    _mok[k] = True
+    if p['pop'] in (0, 5): _mlow[k] = _mlow.get(k, False) or bool(m['event'])
+for lo, hi, nm in BINS:
+    for l0, l1, ln in LEADS:
+        xs = [(p, _mev(p)) for p in per if p['stated'] and lo <= (p['pop'] if p['pop'] is not None else -1) <= hi and l0 <= p['lead_h'] < l1]
+        xs = [(p, e) for p, e in xs if e is not None]
+        xs = list({(p['station'], p['start']): (p, e) for p, e in sorted(xs, key=lambda z: -z[0]['fetched'])}.values())   # earliest fetch per period wins
+        n = len(xs); _mkeys.update((p['station'], p['start']) for p, _ in xs)
+        if not n: mcells.append(dict(bin=nm, lead=ln, n=0)); continue
+        k = sum(1 for _, e in xs if e); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)
+        oc = 'CANNOT_TELL' if n < 30 else ('ABOVE' if a * 100 > ms else ('BELOW' if b * 100 < ms else 'CONSISTENT'))
+        mcells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 1), observed=round(100 * k / n, 1), lo=round(100 * a, 1), hi=round(100 * b, 1), outcome=oc))
+measurable_out = dict(rule='Measurable precipitation, 0.01 inch or more, from the routine hourly reports of the station (the NWS definition). Primary from 10 Nov 2026, decided after the data (PLAN.md Addendum 2).',
+                      source='Iowa Environmental Mesonet ASOS archive, routine hourly METAR precipitation totals, a trace read as zero',
+                      periods_scored=len(_mok), unscorable=len(_mbad - set(_mok)), waiting=len(_mwait - set(_mok) - _mbad), periods_in_no_cell=len(set(_mok) - _mkeys),
+                      cell_periods=sum(c['n'] for c in mcells), floor=dict(periods=len(_mlow), with_event=sum(_mlow.values())), cells=mcells)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), stations=len(ST), forecasts_stored=len({(p['station'], p['fetched']) for p in per}), period_rows=len(per), periods_stored=len({(p['station'], p['start']) for p in per}), negative_lead_rows=sum(1 for p in per if p['lead_h'] < 0),
            periods_scored=scored, unscorable=unsc, not_stated=dropped, periods_in_no_cell=len(set(okp) - cellkeys), periods_in_cells=len(cellkeys), cell_periods=sum(c['n'] for c in cells),
-           floor=dict(periods=lowev[1], with_event=lowev[0]), cells=cells)
+           floor=dict(periods=lowev[1], with_event=lowev[0]), cells=cells,
+           original_rule='Any hourly amount above zero, or a present-weather entry for rain, drizzle, snow, sleet, hail, showers or thunderstorm (PLAN.md, committed 28 Oct 2026 before any forecast was stored). Kept beside the primary reading, never deleted.',
+           measurable=measurable_out, primary='measurable')
 json.dump(out, open('summary_forecast.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 p = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'forecast_live', '--path', os.path.join(H, 'summary_forecast.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
-print('forecast:', nf, 'fetched,', nsc, 'scored this round;', len(per), 'periods stored;', 'published' if p.returncode == 0 else 'publish FAILED')
+print('forecast:', nf, 'fetched,', nsc, 'scored,', _nm, 'measurable read this round;', len(per), 'periods stored;', 'published' if p.returncode == 0 else 'publish FAILED')
