@@ -133,5 +133,5 @@
    "how": "All qubits prepared in |1⟩, read at 30 to 600 µs in one job; the job’s own |0⟩ and |1⟩ circuits remove readout error. The test cannot separate a non-exponential decay from a per-qubit systematic common to the three copies; the data do not identify the cause"
   }
  ],
- "method": "Method: same quantity, same definition, against IBM’s calibration record saved when the job ran. Medians over qubits, 95 % intervals; a deviation is listed only when IBM’s figure falls outside our interval. Data and scripts: heuremen.org/experiments · doi:10.5281/zenodo.23169755. IBM’s real-time benchmarking tutorial, quoted in rows 3, 4, 5 and 9, was read 22 Oct 2026 and has since been revised (copy of 9 Sep 2026 at web.archive.org)."
+ "method": "Method: same quantity, same definition, against IBM’s calibration record saved when the job ran. Medians over qubits, 95 % intervals; a deviation is listed only when IBM’s figure falls outside our interval. Data and scripts: heuremen.org/experiments · doi:10.5281/zenodo.23169755."
 }
