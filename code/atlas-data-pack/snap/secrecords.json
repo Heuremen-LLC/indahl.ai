@@ -1,0 +1,299 @@
+{
+ "updated": "10 Nov 12:00",
+ "gate": "passed",
+ "domains": 1000,
+ "awaiting": 1,
+ "listdate": "2026-11-10",
+ "comparison": {
+  "HSTS preload header": {
+   "of": 145,
+   "n": 20,
+   "share": 0.1379,
+   "share_lo": 0.0911,
+   "share_hi": 0.2035,
+   "outcome": "CANNOT_TELL",
+   "awaiting": 1
+  },
+  "SPF lookup limit": {
+   "of": 765,
+   "n": 20,
+   "share": 0.0261,
+   "share_lo": 0.017,
+   "share_hi": 0.04,
+   "outcome": "CONSISTENT",
+   "awaiting": 0
+  }
+ },
+ "classes": {
+  "HSTS preload header": {
+   "AGREE": 125,
+   "DISAGREE": 20,
+   "NOT_COMPARABLE": 855
+  },
+  "SPF lookup limit": {
+   "AGREE": 745,
+   "DISAGREE": 20,
+   "NOT_COMPARABLE": 235
+  }
+ },
+ "descriptive": {
+  "Domains whose HTTPS response carries an HSTS header": {
+   "n": 322,
+   "of": 1000
+  },
+  "Domains that publish an SPF record": {
+   "n": 765,
+   "of": 1000
+  }
+ },
+ "dmarc": {
+  "p=reject": {
+   "n": 439
+  },
+  "no record": {
+   "n": 270
+  },
+  "p=quarantine": {
+   "n": 175
+  },
+  "p=none": {
+   "n": 116
+  }
+ },
+ "disagree_list": [
+  {
+   "domain": "facebook.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=15552000; preload",
+   "reason": "max-age is 15552000 seconds, under the 31,536,000 the preload list asks for. No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.facebook.com/): \"max-age=15552000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "ntp.org",
+   "claim": "HSTS preload header",
+   "record": "max-age-16000000; includeSubDomains; preload;",
+   "reason": "max-age is written 'max-age-16000000', not max-age=NUMBER. Header as sent on the base domain's own response (HTTP 302, a redirect to https://www.ntp.org/): \"max-age-16000000; includeSubDomains; preload;\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "wordpress.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 200): \"max-age=31536000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "bbc.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.bbc.com/): \"max-age=31536000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "sciencedirect.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=2678400; preload",
+   "reason": "max-age is 2678400 seconds, under the 31,536,000 the preload list asks for. No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.sciencedirect.com/): \"max-age=2678400; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "bbc.co.uk",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.bbc.co.uk/): \"max-age=31536000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "www.gov.uk",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 200): \"max-age=31536000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "trendmicro.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=15552000; preload",
+   "reason": "max-age is 15552000 seconds, under the 31,536,000 the preload list asks for. No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.trendmicro.com/): \"max-age=15552000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "shop.app",
+   "claim": "HSTS preload header",
+   "record": "max-age=15552000; includeSubDomains; preload",
+   "reason": "max-age is 15552000 seconds, under the 31,536,000 the preload list asks for. Header as sent on the base domain's own response (HTTP 301, a redirect to https://shop.com/): \"max-age=15552000; includeSubDomains; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the header \"max-age=63072000; includeSubDomains; preload\" (HTTP 301). The header differs from one read to the next."
+  },
+  {
+   "domain": "atlassian.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.atlassian.com/): \"max-age=31536000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "wildberries.ru",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload; always",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 307, a redirect to https://www.wildberries.ru/): \"max-age=31536000; preload; always\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "sagepub.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=15552000; includeSubDomains; preload",
+   "reason": "max-age is 15552000 seconds, under the 31,536,000 the preload list asks for. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.sagepub.com/): \"max-age=15552000; includeSubDomains; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "loc.gov",
+   "claim": "HSTS preload header",
+   "record": "max-age=3600; preload",
+   "reason": "max-age is 3600 seconds, under the 31,536,000 the preload list asks for. No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.loc.gov/): \"max-age=3600; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "python.org",
+   "claim": "HSTS preload header",
+   "record": "max-age=315360000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.python.org/): \"max-age=315360000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "statuspage.io",
+   "claim": "HSTS preload header",
+   "record": "max-age=63072000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.atlassian.com/software/statuspage): \"max-age=63072000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "g.co",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 200): \"max-age=31536000; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "wb.ru",
+   "claim": "HSTS preload header",
+   "record": "max-age=31536000; preload;",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.wildberries.ru/): \"max-age=31536000; preload;\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "digitaloceanspaces.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=15552000; includeSubDomains; preload",
+   "reason": "max-age is 15552000 seconds, under the 31,536,000 the preload list asks for. Header as sent on the base domain's own response (HTTP 302, a redirect to https://www.digitalocean.com): \"max-age=15552000; includeSubDomains; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "theverge.com",
+   "claim": "HSTS preload header",
+   "record": "max-age=31556952; preload",
+   "reason": "No includeSubDomains. Header as sent on the base domain's own response (HTTP 301, a redirect to https://www.theverge.com/): \"max-age=31556952; preload\". Read again on 9 Nov with a second tool (curl, same user agent, no redirect followed), which saw the same header."
+  },
+  {
+   "domain": "iiko.it",
+   "claim": "SPF lookup limit",
+   "record": "15 lookups: v=spf1 a mx include:iiko.ru include:amazonses.com -all",
+   "reason": "Recounted with dig and a second script: 15 lookups, over the limit of 10."
+  },
+  {
+   "domain": "applovin.com",
+   "claim": "SPF lookup limit",
+   "record": "15 lookups: v=spf1 include:_spf.google.com include:sendgrid.net include:spf.tipalti.com include:mailsenders.netsuite.com include:520",
+   "reason": "Recounted with dig and a second script: 15 lookups, over the limit of 10."
+  },
+  {
+   "domain": "who.int",
+   "claim": "SPF lookup limit",
+   "record": "17 lookups: v=spf1 ip4:158.232.12.0/24 include:spf.protection.outlook.com include:_spfincludes.who.int -all",
+   "reason": "Recounted with dig and a second script: 17 lookups, over the limit of 10."
+  },
+  {
+   "domain": "etsy.com",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 ip4:66.3.159.0/24 ip4:192.147.0.0/24 ip4:173.46.67.72/29 ip4:192.147.1.0/24 ip4:38.106.64.0/24 ip4:38.76.1.0/24 i",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  },
+  {
+   "domain": "branch.io",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 include:_spf.google.com include:mg-spf.greenhouse.io include:stspg-customer.com include:mktomail.com include:spf.",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  },
+  {
+   "domain": "pubmatic.com",
+   "claim": "SPF lookup limit",
+   "record": "24 lookups: v=spf1 ip4:18.200.1.103 ip4:52.8.26.248 ip4:162.248.17.59 ip4:74.199.212.72 include:jira.iponweb.net include:_spf-dc41.s",
+   "reason": "Recounted with dig and a second script: 24 lookups, over the limit of 10."
+  },
+  {
+   "domain": "unsplash.com",
+   "claim": "SPF lookup limit",
+   "record": "13 lookups: v=spf1 include:nzx5d.s.dmarcdutydns.com ~include:nzx5d.a.dmarcdutydns.com include:_spf.google.com include:sendgrid.net i",
+   "reason": "Recounted with dig and a second script: 13 lookups, over the limit of 10."
+  },
+  {
+   "domain": "bluehost.com",
+   "claim": "SPF lookup limit",
+   "record": "14 lookups: v=spf1 ip4:209.17.115.0/24 ip4:64.69.218.0/24 include:spf2.bluehost.com include:_spf.qualtrics.com include:_spf.salesfor",
+   "reason": "Recounted with dig and a second script: 14 lookups, over the limit of 10."
+  },
+  {
+   "domain": "dyndns.org",
+   "claim": "SPF lookup limit",
+   "record": "17 lookups: v=spf1 mx/24 a:lists.dyndns.com ip4:63.208.196.0/24 ptr:opensrs.net include:outbound.mailhop.org include:sendlabs.com in",
+   "reason": "Recounted with dig and a second script: 17 lookups, over the limit of 10."
+  },
+  {
+   "domain": "hostgator.com",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 ip4:209.17.115.0/24 ip4:64.69.218.0/24 include:spf.constantcontact.com include:_spf.salesforce.com include:_spf2.",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  },
+  {
+   "domain": "markmonitor.com",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 include:spf1.markmonitor.com include:spf2.markmonitor.com -all",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  },
+  {
+   "domain": "inmobi.com",
+   "claim": "SPF lookup limit",
+   "record": "15 lookups: v=spf1 ip4:50.213.20.161 ip4:209.214.228.18 ip4:101.254.125.194 ip4:123.127.0.146 ip4:219.142.139.218 ip4:123.123.3.122 ",
+   "reason": "Recounted with dig and a second script: 15 lookups, over the limit of 10."
+  },
+  {
+   "domain": "outbrain.com",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 mx include:_spf1.outbrain.com include:_spf2.outbrain.com include:_spf3.outbrain.com include:stspg-customer.com in",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  },
+  {
+   "domain": "teads.tv",
+   "claim": "SPF lookup limit",
+   "record": "20 lookups: v=spf1 a include:_spf.google.com include:amazonses.com include:spf1.teads.tv include:spf2.teads.tv -all",
+   "reason": "Recounted with dig and a second script: 20 lookups, over the limit of 10."
+  },
+  {
+   "domain": "ngenix.net",
+   "claim": "SPF lookup limit",
+   "record": "12 lookups: v=spf1 mx include:_spf.yandex.net include:spf.smtp.bz include:_netblocks.ngenix.net ip4:213.152.131.125 -all",
+   "reason": "Recounted with dig and a second script: 12 lookups, over the limit of 10."
+  },
+  {
+   "domain": "ebay.co.uk",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 include:p._spf.ebay.com include:c._spf.ebay.com ip4:66.135.222.1/32 include:em6952.ebay.co.uk include:eu.khoros-m",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  },
+  {
+   "domain": "pikabu.ru",
+   "claim": "SPF lookup limit",
+   "record": "12 lookups: v=spf1 include:_spf.google.com include:_spf.dashasender.ru include:_spf.yandex.net include:_spf.pikabu.ru ~all",
+   "reason": "Recounted with dig and a second script: 12 lookups, over the limit of 10."
+  },
+  {
+   "domain": "allaboutcookies.org",
+   "claim": "SPF lookup limit",
+   "record": "12 lookups: v=spf1 a mx include:spf.securedserverspace.com include:_spf.google.com include:_spf.emailcampaigns.net -all",
+   "reason": "Recounted with dig and a second script: 12 lookups, over the limit of 10."
+  },
+  {
+   "domain": "nexusmods.com",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 a mx include:amazonses.com include:helpscoutemail.com include:_spf.google.com include:spf.braintreegateway.com in",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  },
+  {
+   "domain": "seedtag.com",
+   "claim": "SPF lookup limit",
+   "record": "11 lookups: v=spf1 include:_spf.google.com include:mailgun.org include:servers.mcsv.net include:_spf.salesforce.com include:amazonse",
+   "reason": "Recounted with dig and a second script: 11 lookups, over the limit of 10."
+  }
+ ]
+}

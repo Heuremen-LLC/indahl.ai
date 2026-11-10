@@ -20,13 +20,25 @@ Carbon (`json/carbon.json`): EPA eGRID emission rates for {N_CARBON_STATES} stat
 
 Cost to scale (`json/scale.json`): one year of electricity at the stated power of the Epoch AI sites. It comes as `csv/scale_sites.csv` with {N_SITES} sites, `csv/scale_states.csv` with {N_SCALE_STATES} states and `csv/scale_corrections.csv` with {N_CORR} correction. The method and the totals are in `csv/scale_meta.csv`.
 
+Water (`json/water.json` and `json/water_rows.json`): the Bureau of Reclamation 24-Month Study projections for Lake Mead and Lake Powell set against the measured end-of-month elevations, as on https://indahl.ai/water. `json/water.json` is the file the WATER page reads at /water/live.json, as of {WATER_UPDATED} UTC. `json/water_rows.json` holds the {N_WATER_ROWS} rows of the same run. They cover {N_WATER_REPORTS} reports issued from {WATER_FIRST_ISSUE} to {WATER_LAST_ISSUE} ({N_WATER_MP} Most Probable, {N_WATER_MIN} Probable Minimum and {N_WATER_MAX} Probable Maximum), with measured levels through {WATER_MEASURED_LAST}. The page reads a new file about every half hour, and this pack holds one fixed copy.
+
+- `csv/water_cells.csv`: {N_WATER_CELLS} rows, one for each lake and each lead from 0 to 23 months ahead. The `band_` columns hold the band test. They give the rows inside, above and below the range between the Probable Minimum and Probable Maximum projections of the same month, the 95% Wilson interval on water years (`band_lo`, `band_hi` and `band_n_wy`) and the outcome. The `mp_` columns hold the Most Probable test. They give the rows where the lake ended above or below the projection, the interval, the outcome and the error percentiles in feet. The columns with `checks_after_data` in their name hold the same counts read on the other rulers the page prints beside each outcome. They were added after the data and decide no outcome.
+- `csv/water_rows.csv`: one row for each report month, lake and target month. `mp`, `pmin` and `pmax` are the projected elevations in feet and `measured` is the end-of-month elevation from Reclamation HDB. `mp_error` is measured minus Most Probable. `outcome` is the band test for the row and `why` gives the reason for a cannot tell. `mp_src` says whether the Most Probable value came from the HDB model run (hdb) or from the report text (text).
+- `csv/water_band_sentence_cells.csv`: the band cells counted only on the {N_WATER_SENT_MONTHS} report months whose Probable Minimum and Probable Maximum reports both print Reclamation's 80 percent sentence.
+- `csv/water_variants.csv`: the {N_WATER_VARIANTS} rows of the 6.0 maf Lake Powell release runs, which the page shows apart.
+- `csv/water_notable.csv`, `csv/water_misread_by_era.csv` and `csv/water_flagged_groups.csv`: the notable rows, the rate of misread digits in our reading of the printed reports by era, and the groups of cells that read above or below.
+- `csv/water_reservoirs.csv`: storage on the snapshot day against the capacity the operating agency states, for {N_WATER_RES} reservoirs. A share of stated capacity is a reading and not a test.
+- `csv/water_thresholds.csv`: the {N_WATER_THRESH} elevations named in the governing documents, each with its document, link, section and quote.
+- `csv/water_usgs_revisions.csv`: USGS provisional daily values stored by us for {N_WATER_GAUGES} gauges, with revisions counted from our first read on {WATER_FIRST_READ}.
+- `csv/water_meta.csv`: the coverage counts, the lead-6 headline cells, the cross-checks of the measured side, the live readings of Lake Mead and Lake Powell, and the notes.
+
 Every dataset also has a `csv/<name>_meta.csv` file with two columns, `key` and `value`. It holds the fields that describe the whole dataset, such as the source text, the method, the units, the legend bins and the build date.
 
 ## Sources and dates
 
 SOURCES.md lists the upstream sources, their links, their licences and the dates found in the data. NOTICE.txt carries the attribution lines. The OpenStreetMap rows are shared under the ODbL 1.0 with the line © OpenStreetMap contributors.
 
-Only the data center rows carry a source in every row. The plants, planned plants, electricity, utilities, carbon and scale files carry one source statement for the whole dataset, in the `source` or `sources` entry of the JSON and in the `_meta.csv` file. They have no source column per row. Their rows carry the build date or the data year as a column instead.
+Only the data center rows carry a source in every row. The water rows name their report in `mp_report` and the source of their Most Probable value in `mp_src`. The plants, planned plants, electricity, utilities, carbon and scale files carry one source statement for the whole dataset, in the `source` or `sources` entry of the JSON and in the `_meta.csv` file. They have no source column per row. Their rows carry the build date or the data year as a column instead.
 
 ## How to open the files
 
@@ -47,7 +59,7 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 
 ## What is here
 
-- `json/`: the original files from the ATLAS data folder, unchanged
+- `json/`: the original files from the ATLAS data folder and the WATER page, unchanged
 - `csv/`: one CSV for each table, plus the `_meta.csv` files
 - `geojson/`: data centers, operating plants and planned plants as FeatureCollections
 - `SOURCES.md`: upstream sources, links, licences and dates
@@ -64,6 +76,7 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 - Power plants: https://indahl.ai/atlas/power-plants
 - Planned plants: https://indahl.ai/atlas/planned-plants
 - Carbon: https://indahl.ai/atlas/carbon
+- Water: https://indahl.ai/water
 - Code: https://github.com/Heuremen-LLC/indahl.ai
 - Data on Hugging Face: https://huggingface.co/indahl
 - OpenStreetMap: https://www.openstreetmap.org/copyright
@@ -71,6 +84,10 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 - EIA-861: https://www.eia.gov/electricity/data/eia861/
 - EIA-860M: https://www.eia.gov/electricity/data/eia860m/
 - EPA eGRID: https://www.epa.gov/egrid
+- Reclamation 24-Month Study archive (RISE): https://data.usbr.gov/rise/api/catalog-record/6331
+- Reclamation HDB: https://www.usbr.gov/pn-bin/hdb/hdb.pl
+- USGS Water Services: https://waterservices.usgs.gov/
+- California CDEC: https://cdec.water.ca.gov/
 
 ## Notes on the data
 
@@ -90,6 +107,6 @@ This list comes from two rough checks and is not complete. It names records whos
 
 ## Terms
 
-Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch's citation, and where a file holds both, both apply. EIA, EPA and US Census data are US government works in the public domain.
+Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch's citation, and where a file holds both, both apply. EIA, EPA, US Census, Bureau of Reclamation and USGS data are US government works in the public domain. The storage figures for {WATER_CDEC_NAMES} in the water files come from California CDEC, a State of California service, and keep CDEC's terms.
 
 Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For its own text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. Its reservation against text and data mining and AI training covers those text files only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.

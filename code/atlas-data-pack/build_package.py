@@ -6,6 +6,9 @@ import os, shutil, re, zipfile, hashlib, html, json, csv, importlib.util
 B = os.path.expanduser('~/bones-forge/'); H = os.path.dirname(os.path.abspath(__file__)); D = H + '/dist/atlas-data-pack'
 SRC = B + 'cloudflare-workers/heuremen-door/public/atlas/'
 FILES = ['datacenters', 'electricity', 'utilities', 'plants', 'planned', 'carbon', 'scale']
+# 10 Nov 2026: desks whose figures live in the site KV are pinned in snap/ at build time (water.json = the bytes served at /water/live.json,
+# water_rows.json = data/water.json of the same run), so the pack is one fixed snapshot and every rebuild gives the same files
+SNAP = H + '/snap/'; SNAPS = ['water', 'water_rows', 'uptime', 'time', 'cada', 'secrecords', 'seat', 'support', 'change']   # the other ATLAS desks, from their /<desk>/live.json
 shutil.rmtree(H + '/dist', ignore_errors=True)
 for s in ('json', 'csv', 'geojson'): os.makedirs(D + '/' + s)
 sp = importlib.util.spec_from_file_location('verify', H + '/src/verify.py'); V = importlib.util.module_from_spec(sp); sp.loader.exec_module(V)
@@ -16,6 +19,10 @@ for f in FILES:
     shutil.copyfile(SRC + f + '.json', D + f'/json/{f}.json')
     assert open(SRC + f + '.json', 'rb').read() == open(D + f'/json/{f}.json', 'rb').read()
     data[f] = json.load(open(SRC + f + '.json', encoding='utf-8'))
+for f in SNAPS:
+    shutil.copyfile(SNAP + f + '.json', D + f'/json/{f}.json')
+    assert open(SNAP + f + '.json', 'rb').read() == open(D + f'/json/{f}.json', 'rb').read()
+    data[f] = json.load(open(SNAP + f + '.json', encoding='utf-8'))
 # 2. CSV and GeoJSON
 def put_csv(path, header, rows):
     with open(path, 'w', newline='', encoding='utf-8-sig') as fh:
@@ -32,7 +39,7 @@ for t, (jf, rows, count, geo) in V.TABLES.items():
         with open(D + f'/geojson/{t}.geojson', 'w', encoding='utf-8') as fh:
             json.dump({'type': 'FeatureCollection', 'features': feats}, fh, ensure_ascii=False, separators=(',', ':'))
 for ds, keys in V.META.items():
-    fm = V.flat_meta({k: data[ds][k] for k in keys}); put_csv(D + f'/csv/{ds}_meta.csv', ['key', 'value'], [{'key': k, 'value': v} for k, v in fm.items()])
+    fm = V.flat_meta(V.meta_of(ds, data[ds])); put_csv(D + f'/csv/{ds}_meta.csv', ['key', 'value'], [{'key': k, 'value': v} for k, v in fm.items()])
 # 3. text from templates, counts from the data
 d, e, c, s = data['datacenters'], data['electricity'], data['carbon'], data['scale']
 tok = {'N_OSM': len(d['osm']), 'N_EPOCH': len(d['epoch']), 'N_EPOCH_UNPLACED': sum(1 for x in d['epoch'] if x['lat'] is None), 'N_PLANTS': len(data['plants']['plants']),
@@ -42,6 +49,20 @@ tok = {k: f'{v:,}' for k, v in tok.items()}
 tok.update({'DC_PULLED': d['pulled'], 'OSM_PAGE_COUNT': '1,649 of 1,853 features kept', 'PLANTS_BUILT': data['plants']['built'], 'PLANNED_BUILT': data['planned']['built'],
             'ELEC_BUILT': e['built'], 'ELEC_PRICE_YEAR': e['price_year'], 'ELEC_GEN_YEAR': e['generation_year'], 'UTIL_YEAR': data['utilities']['year'],
             'CARBON_YEAR': c['data_year'], 'CARBON_BUILT': c['built'], 'SCALE_PRICE_YEAR': s['price_year'], 'SCALE_BUILT': s['built']})
+W, WR = data['water'], data['water_rows']; _wc = W['coverage']
+assert len(WR) == _wc['rows'], 'water rows differ from the coverage count of the same run'
+assert len(W['cells']) == 48 and {(c['res'], c['lead']) for c in W['cells']} == {(r, l) for r in ('mead', 'powell') for l in range(24)}, 'water cells are not 2 lakes by leads 0 to 23'
+for _r in ('mead', 'powell'):   # the lead-6 band cell recounts from the rows of the same run
+    _rs = [x for x in WR if x['res'] == _r and x['lead'] == 6 and x['outcome'] in ('ABOVE', 'BELOW', 'CONSISTENT')]
+    _hb = W['headline_lead6'][_r]['band']; assert (len(_rs), sum(x['outcome'] == 'CONSISTENT' for x in _rs)) == (_hb['n'], _hb['inside']), ('water lead-6 recount', _r)
+tok.update({k: f'{v:,}' for k, v in {'N_WATER_REPORTS': _wc['reports'], 'N_WATER_MP': _wc['by_scenario']['MP'], 'N_WATER_MIN': _wc['by_scenario']['MIN'], 'N_WATER_MAX': _wc['by_scenario']['MAX'],
+            'N_WATER_ROWS': len(WR), 'N_WATER_CELLS': len(W['cells']), 'N_WATER_BAND_MONTHS': _wc['band_months'], 'N_WATER_SENT_MONTHS': len(W['band_sentence_months']['months']),
+            'N_WATER_VARIANTS': len(W['variants']), 'N_WATER_NOTABLE': len(W['notable']), 'N_WATER_RES': len(W['live']['others']), 'N_WATER_THRESH': len(W['live']['thresholds']),
+            'N_WATER_GAUGES': len(W['usgs_revisions']['gauges']), 'N_WATER_ERAS': len(W['misread_by_era']), 'N_WATER_FLAG_GROUPS': len(W['flagged']['groups']),
+            'N_WATER_CDEC': sum(1 for o in W['live']['others'] if 'CDEC' in o['agency'])}.items()})
+tok.update({'WATER_UPDATED': W['updated'], 'WATER_FIRST_ISSUE': _wc['first_issue'], 'WATER_LAST_ISSUE': _wc['last_issue'], 'WATER_MEASURED_LAST': _wc['measured_last']['mead'],
+            'WATER_FIRST_READ': W['usgs_revisions']['first_read'], 'WATER_CDEC_NAMES': ' and '.join(o['name'] for o in W['live']['others'] if 'CDEC' in o['agency'])})
+assert _wc['measured_last']['mead'] == _wc['measured_last']['powell'] and W['gate'] == 'passed' and not W['stale_sources'], 'water snapshot is not a clean run'
 _na = [u for u in data['utilities']['utilities'] if u['ba_code'] == 'NA']
 tok['N_NA'] = str(len(_na)); tok['NA_STATES'] = ', '.join(f"{st} {n}" for st, n in sorted(__import__('collections').Counter(u['state'] for u in _na).items()))
 assert tok['N_SCALE_NOT_PLACED'] == '8' and tok['N_ADDR_STATE'] == '2' and int(tok['N_EPOCH_UNPLACED']) - 8 == 2, 'unplaced counts changed'

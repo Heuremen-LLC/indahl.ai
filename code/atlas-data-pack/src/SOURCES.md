@@ -51,6 +51,19 @@ Each entry gives the upstream source as the ATLAS pages and the data files state
 - The method is stated in `scale_meta.csv`. The figures are arithmetic on published numbers. They are not a forecast and not any site's bill.
 - Built {SCALE_BUILT}. Per-row source: none in the data, the sources are stated once for the dataset.
 
+## Water (json/water.json and json/water_rows.json)
+
+- U.S. Bureau of Reclamation, 24-Month Study reports, every report listed in RISE catalog record 6331 from January 2000 on. https://data.usbr.gov/rise/api/catalog-record/6331 . Projected end-of-month water surface elevations for Lake Powell and Lake Mead under the Most Probable, Probable Minimum and Probable Maximum inflow scenarios. The report files were read on 2026-11-09 and 2026-11-10. The catalog was read again on 2026-11-10.
+- U.S. Bureau of Reclamation, Hydrologic Database (HDB). https://www.usbr.gov/pn-bin/hdb/hdb.pl . Model runs named by the Model Run ID printed in a report (table M, monthly), and the observed end-of-month elevation (table R, monthly). Lake Powell is sdi 1928 on uchdb2 and Lake Mead is sdi 1930 on lchdb. The daily and hourly readings in the live panel come from the same database. Measured values and live readings are as of {WATER_UPDATED} UTC.
+- U.S. Bureau of Reclamation, Lower Colorado Region. Lake Mead end-of-month elevation table, https://www.usbr.gov/lc/region/g4000/hourly/mead-elv.html , used as a cross-check. Daily reservoir report, https://www.usbr.gov/lc/region/g4000/hourly/levels.html , and its JSON feed, https://www.usbr.gov/lc/region/g4000/riverops/webreports/accumweb.json , for storage and stated capacity. Read {WATER_UPDATED} UTC.
+- U.S. Bureau of Reclamation, governing documents quoted in `csv/water_thresholds.csv`: the 2007 Interim Guidelines Record of Decision, https://www.usbr.gov/lc/region/programs/strategies/RecordofDecision.pdf , the 2027-2028 Operating Guidelines, https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf , and the October 2026 Most Probable 24-Month Study. Each row names its document, link and section.
+- U.S. Geological Survey, Water Services. https://waterservices.usgs.gov/ . Daily values and instantaneous values for 09379900 Lake Powell at Glen Canyon Dam (parameter 62614, NGVD 1929) and daily discharge for the gauges listed in `csv/water_usgs_revisions.csv`. Read {WATER_UPDATED} UTC. Provisional values have been stored by us since {WATER_FIRST_READ}.
+- California Department of Water Resources, California Data Exchange Center (CDEC), reservoir report. https://cdec.water.ca.gov/reportapp/javareports?name=RES . Storage and stated capacity for {WATER_CDEC_NAMES}, in {N_WATER_CDEC} rows of `csv/water_reservoirs.csv` and the matching entries of `json/water.json`. Read {WATER_UPDATED} UTC.
+- Reclamation and USGS data are U.S. government works in the public domain. CDEC is a State of California service and its figures keep CDEC's terms.
+- Per-row source: each row of `water_rows.csv` names its report in `mp_report`, and `mp_src` says whether the Most Probable value came from HDB or from the report text. Each row of `water_reservoirs.csv` names its source in `source`, and each row of `water_thresholds.csv` names its document in `doc` and `url`. The plan, the rules and the reading of the reports are in the desk's plan, https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/water .
+
 ## Not in this pack
 
 The state outlines on the ATLAS map come from us-atlas (ISC licence, US Census boundaries). https://github.com/topojson/us-atlas . They are map drawing files and are not part of the data, so they are left out.
+
+The 24-Month Study report files and the raw HDB, USGS and CDEC downloads behind the water files are not in this pack. The links above lead to them.

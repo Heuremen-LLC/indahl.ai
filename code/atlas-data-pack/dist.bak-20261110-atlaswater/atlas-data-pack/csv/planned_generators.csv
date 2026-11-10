@@ -1,0 +1,2359 @@
+﻿plant_code,plant_name,state,generator_index,year,mw,fuel,built
+69799,Project Matador Gas Plant (PMG),TX,0,2027,40.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,1,2027,40.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,2,2027,40.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,3,2027,18.9,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,4,2027,18.9,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,5,2027,18.9,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,6,2027,18.9,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,7,2027,18.9,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,8,2027,18.9,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,9,2027,18.9,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,10,2027,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,11,2027,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,12,2027,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,13,2027,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,14,2027,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,15,2027,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,16,2027,50.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,17,2027,50.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,18,2027,50.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,19,2027,50.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,20,2027,50.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,21,2027,50.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,22,2027,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,23,2028,260.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,24,2028,260.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,25,2028,260.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,26,2028,260.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,27,2028,260.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,28,2028,260.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,29,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,30,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,31,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,32,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,33,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,34,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,35,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,36,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,37,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,38,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,39,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,40,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,41,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,42,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,43,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,44,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,45,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,46,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,47,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,48,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,49,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,50,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,51,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,52,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,53,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,54,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,55,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,56,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,57,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,58,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,59,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,60,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,61,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,62,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,63,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,64,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,65,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,66,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,67,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,68,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,69,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,70,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,71,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,72,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,73,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,74,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,75,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,76,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,77,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,78,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,79,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,80,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,81,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,82,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,83,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,84,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,85,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,86,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,87,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,88,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,89,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,90,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,91,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,92,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,93,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,94,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,95,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,96,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,97,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,98,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,99,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,100,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,101,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,102,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,103,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,104,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,105,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,106,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,107,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,108,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,109,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,110,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,111,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,112,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,113,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,114,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,115,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,116,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,117,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,118,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,119,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,120,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,121,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,122,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,123,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,124,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,125,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,126,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,127,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,128,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,129,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,130,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,131,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,132,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,133,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,134,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,135,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,136,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,137,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,138,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,139,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,140,2030,57.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,141,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,142,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,143,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,144,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,145,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,146,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,147,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,148,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,149,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,150,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,151,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,152,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,153,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,154,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,155,2030,105.0,gas,2026-10-28
+69799,Project Matador Gas Plant (PMG),TX,156,2030,105.0,gas,2026-10-28
+69798,Project Matador Nuclear,TX,0,2031,1117.0,nuclear,2026-10-28
+69798,Project Matador Nuclear,TX,1,2031,1117.0,nuclear,2026-10-28
+69798,Project Matador Nuclear,TX,2,2032,1117.0,nuclear,2026-10-28
+69798,Project Matador Nuclear,TX,3,2032,1117.0,nuclear,2026-10-28
+3122,Homer City Generating Station,PA,0,2028,268.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,1,2028,268.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,2,2028,360.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,3,2028,360.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,4,2028,268.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,5,2028,268.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,6,2028,360.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,7,2028,360.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,8,2029,268.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,9,2029,360.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,10,2029,268.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,11,2029,360.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,12,2029,268.0,gas,2026-10-28
+3122,Homer City Generating Station,PA,13,2029,360.0,gas,2026-10-28
+58987,Chokecherry and Sierra Madre Wind,WY,0,2031,844.2,wind,2026-10-28
+58987,Chokecherry and Sierra Madre Wind,WY,1,2031,849.6,wind,2026-10-28
+58987,Chokecherry and Sierra Madre Wind,WY,2,2032,1303.2,wind,2026-10-28
+58987,Chokecherry and Sierra Madre Wind,WY,3,2033,553.5,wind,2026-10-28
+64550,Coastal Virginia Offshore Wind (CVOW) Commercial Project,VA,0,2027,2640.0,wind,2026-10-28
+68367,Pepper Hammock Solar and Storage,GA,0,2029,900.0,solar,2026-10-28
+68367,Pepper Hammock Solar and Storage,GA,1,2029,1200.0,solar,2026-10-28
+68367,Pepper Hammock Solar and Storage,GA,2,2029,400.0,storage,2026-10-28
+68396,Sunstone Solar,OR,0,2027,1200.0,storage,2026-10-28
+68396,Sunstone Solar,OR,1,2027,1200.0,solar,2026-10-28
+69944,Pointe Coupee Power Station,LA,0,2031,469.3,gas,2026-10-28
+69944,Pointe Coupee Power Station,LA,1,2031,311.0,gas,2026-10-28
+69944,Pointe Coupee Power Station,LA,2,2031,469.3,gas,2026-10-28
+69944,Pointe Coupee Power Station,LA,3,2031,311.0,gas,2026-10-28
+69944,Pointe Coupee Power Station,LA,4,2031,469.3,gas,2026-10-28
+69944,Pointe Coupee Power Station,LA,5,2031,311.0,gas,2026-10-28
+68763,Deschutes Solar and BESS,OR,0,2029,1000.0,solar,2026-10-28
+68763,Deschutes Solar and BESS,OR,1,2029,1000.0,storage,2026-10-28
+3407,Kingston,TN,0,2027,454.8,gas,2026-10-28
+3407,Kingston,TN,1,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,2,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,3,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,4,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,5,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,6,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,7,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,8,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,9,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,10,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,11,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,12,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,13,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,14,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,15,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,16,2027,65.8,gas,2026-10-28
+3407,Kingston,TN,17,2027,323.0,gas,2026-10-28
+68214,Franklin Farms 1&2,LA,0,2028,469.3,gas,2026-10-28
+68214,Franklin Farms 1&2,LA,1,2028,311.0,gas,2026-10-28
+68214,Franklin Farms 1&2,LA,2,2028,469.3,gas,2026-10-28
+68214,Franklin Farms 1&2,LA,3,2028,311.0,gas,2026-10-28
+69449,Richland Parish Power Station 1&2,LA,0,2030,469.3,gas,2026-10-28
+69449,Richland Parish Power Station 1&2,LA,1,2030,311.0,gas,2026-10-28
+69449,Richland Parish Power Station 1&2,LA,2,2030,469.3,gas,2026-10-28
+69449,Richland Parish Power Station 1&2,LA,3,2030,311.0,gas,2026-10-28
+3399,Cumberland (TN),TN,0,2029,454.8,gas,2026-10-28
+3399,Cumberland (TN),TN,1,2029,323.0,gas,2026-10-28
+3399,Cumberland (TN),TN,2,2034,454.8,gas,2026-10-28
+3399,Cumberland (TN),TN,3,2034,323.0,gas,2026-10-28
+69071,Bison Generation Station,ND,0,2029,263.0,gas,2026-10-28
+69071,Bison Generation Station,ND,1,2029,496.0,gas,2026-10-28
+69071,Bison Generation Station,ND,2,2030,263.0,gas,2026-10-28
+69071,Bison Generation Station,ND,3,2030,496.0,gas,2026-10-28
+728,Yates,GA,0,2027,482.8,gas,2026-10-28
+728,Yates,GA,1,2027,482.8,gas,2026-10-28
+728,Yates,GA,2,2027,482.8,gas,2026-10-28
+69566,CPV Basin Ranch Energy Center,TX,0,2029,722.5,gas,2026-10-28
+69566,CPV Basin Ranch Energy Center,TX,1,2029,722.5,gas,2026-10-28
+69857,Libra Solar,NV,0,2027,700.0,storage,2026-10-28
+69857,Libra Solar,NV,1,2027,700.0,solar,2026-10-28
+8059,Comanche (OK),OK,0,2029,408.8,gas,2026-10-28
+8059,Comanche (OK),OK,1,2029,277.6,gas,2026-10-28
+8059,Comanche (OK),OK,2,2029,408.8,gas,2026-10-28
+8059,Comanche (OK),OK,3,2029,277.6,gas,2026-10-28
+66621,Orange County Advanced Power Station,TX,0,2026,453.0,gas,2026-10-28
+66621,Orange County Advanced Power Station,TX,1,2026,453.0,gas,2026-10-28
+66621,Orange County Advanced Power Station,TX,2,2026,400.0,gas,2026-10-28
+68504,Sandow Lakes Energy Station,TX,0,2028,645.0,gas,2026-10-28
+68504,Sandow Lakes Energy Station,TX,1,2028,645.0,gas,2026-10-28
+62022,Lincoln Land Energy Center,IL,0,2030,638.4,gas,2026-10-28
+62022,Lincoln Land Energy Center,IL,1,2030,638.4,gas,2026-10-28
+69595,Saddleback Generation Station,AZ,0,2030,375.0,gas,2026-10-28
+69595,Saddleback Generation Station,AZ,1,2030,375.0,gas,2026-10-28
+69595,Saddleback Generation Station,AZ,2,2030,250.0,gas,2026-10-28
+69595,Saddleback Generation Station,AZ,3,2030,250.0,gas,2026-10-28
+70453,Red Oak Ridge Energy Center LLC,WI,0,2029,242.0,gas,2026-10-28
+70453,Red Oak Ridge Energy Center LLC,WI,1,2029,242.0,gas,2026-10-28
+70453,Red Oak Ridge Energy Center LLC,WI,2,2029,242.0,gas,2026-10-28
+70453,Red Oak Ridge Energy Center LLC,WI,3,2029,242.0,gas,2026-10-28
+70453,Red Oak Ridge Energy Center LLC,WI,4,2029,242.0,gas,2026-10-28
+65842,Clear Fork Creek Solar and BESS SLF,TX,0,2027,600.0,storage,2026-10-28
+65842,Clear Fork Creek Solar and BESS SLF,TX,1,2027,600.0,solar,2026-10-28
+65301,Steward Creek Solar Phase 1,IL,0,2029,1200.0,solar,2026-10-28
+68342,Hop Hill Solar Generation and BESS,WA,0,2031,200.0,wind,2026-10-28
+68342,Hop Hill Solar Generation and BESS,WA,1,2031,500.0,solar,2026-10-28
+68342,Hop Hill Solar Generation and BESS,WA,2,2031,500.0,storage,2026-10-28
+67551,Vista Sands Solar,WI,0,2028,1182.0,solar,2026-10-28
+4041,South Oak Creek,WI,0,2028,236.3,gas,2026-10-28
+4041,South Oak Creek,WI,1,2028,236.3,gas,2026-10-28
+4041,South Oak Creek,WI,2,2028,236.3,gas,2026-10-28
+4041,South Oak Creek,WI,3,2028,236.3,gas,2026-10-28
+4041,South Oak Creek,WI,4,2028,236.3,gas,2026-10-28
+66478,NTEC Gas Plant,NM,0,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,1,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,2,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,3,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,4,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,5,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,6,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,7,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,8,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,9,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,10,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,11,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,12,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,13,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,14,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,15,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,16,2028,60.5,gas,2026-10-28
+66478,NTEC Gas Plant,NM,17,2028,60.5,gas,2026-10-28
+65855,Tehuacana Creek Solar,TX,0,2026,418.0,storage,2026-10-28
+65855,Tehuacana Creek Solar,TX,1,2027,644.8,solar,2026-10-28
+64209,Bellefield 2 Solar & Energy Storage Farm,CA,0,2026,500.0,solar,2026-10-28
+64209,Bellefield 2 Solar & Energy Storage Farm,CA,1,2026,500.0,storage,2026-10-28
+69820,Grace Energy Center,CA,0,2027,500.0,solar,2026-10-28
+69820,Grace Energy Center,CA,1,2027,500.0,storage,2026-10-28
+66684,Intermountain Pumped Storage Project,UT,0,2028,250.0,storage,2026-10-28
+66684,Intermountain Pumped Storage Project,UT,1,2028,250.0,storage,2026-10-28
+66684,Intermountain Pumped Storage Project,UT,2,2028,250.0,storage,2026-10-28
+66684,Intermountain Pumped Storage Project,UT,3,2028,250.0,storage,2026-10-28
+66686,Haiwee Pumped Storage Project,CA,0,2028,250.0,storage,2026-10-28
+66686,Haiwee Pumped Storage Project,CA,1,2028,250.0,storage,2026-10-28
+66686,Haiwee Pumped Storage Project,CA,2,2028,250.0,storage,2026-10-28
+66686,Haiwee Pumped Storage Project,CA,3,2028,250.0,storage,2026-10-28
+68034,Sunscape Renewable Energy,TX,0,2028,500.0,storage,2026-10-28
+68034,Sunscape Renewable Energy,TX,1,2028,500.0,solar,2026-10-28
+3797,Chesterfield,VA,0,2029,250.0,gas,2026-10-28
+3797,Chesterfield,VA,1,2029,250.0,gas,2026-10-28
+3797,Chesterfield,VA,2,2029,250.0,gas,2026-10-28
+3797,Chesterfield,VA,3,2029,250.0,gas,2026-10-28
+68317,Dutchman Solar generation and BESS,WY,0,2029,499.0,solar,2026-10-28
+68317,Dutchman Solar generation and BESS,WY,1,2029,499.0,storage,2026-10-28
+70359,"Sycamore Riverside Energy, LLC",IN,0,2029,964.0,gas,2026-10-28
+69060,Snowflake A Solar and BESS,AZ,0,2027,475.0,solar,2026-10-28
+69060,Snowflake A Solar and BESS,AZ,1,2027,475.0,storage,2026-10-28
+69989,Arkansas Cypress Solar Station,AR,0,2029,600.0,solar,2026-10-28
+69989,Arkansas Cypress Solar Station,AR,1,2029,350.0,storage,2026-10-28
+67435,Sunrise Wind,NY,0,2027,924.0,wind,2026-10-28
+68273,Naples Power Plant,TX,0,2028,450.0,gas,2026-10-28
+68273,Naples Power Plant,TX,1,2028,450.0,gas,2026-10-28
+2951,Horseshoe Lake,OK,0,2026,224.0,gas,2026-10-28
+2951,Horseshoe Lake,OK,1,2026,224.0,gas,2026-10-28
+2951,Horseshoe Lake,OK,2,2029,224.0,gas,2026-10-28
+2951,Horseshoe Lake,OK,3,2029,224.0,gas,2026-10-28
+69689,Vast Sands Power,TX,0,2027,440.0,gas,2026-10-28
+69689,Vast Sands Power,TX,1,2027,440.0,gas,2026-10-28
+69184,Waterford 5,LA,0,2029,478.0,gas,2026-10-28
+69184,Waterford 5,LA,1,2029,342.0,gas,2026-10-28
+69185,Jefferson Power Station,AR,0,2029,342.0,gas,2026-10-28
+69185,Jefferson Power Station,AR,1,2029,478.0,gas,2026-10-28
+69445,Waterford 6,LA,0,2030,478.0,gas,2026-10-28
+69445,Waterford 6,LA,1,2030,342.0,gas,2026-10-28
+69223,Vicksburg Advanced Power Station,MS,0,2028,477.7,gas,2026-10-28
+69223,Vicksburg Advanced Power Station,MS,1,2028,341.7,gas,2026-10-28
+70187,Traceview Advanced Power Station,MS,0,2028,477.7,gas,2026-10-28
+70187,Traceview Advanced Power Station,MS,1,2028,341.7,gas,2026-10-28
+69426,Westlake Power Station,LA,0,2030,341.7,gas,2026-10-28
+69426,Westlake Power Station,LA,1,2030,477.7,gas,2026-10-28
+67914,Delta Blues Advanced Power Station,MS,0,2028,477.0,gas,2026-10-28
+67914,Delta Blues Advanced Power Station,MS,1,2028,341.7,gas,2026-10-28
+68443,Empire Wind 1,NY,0,2027,810.0,wind,2026-10-28
+65854,Rowdy Creek Solar and BESS,TX,0,2027,350.0,storage,2026-10-28
+65854,Rowdy Creek Solar and BESS,TX,1,2028,455.0,solar,2026-10-28
+68546,Smarr Combined Cycle Energy Facility,GA,0,2029,459.0,gas,2026-10-28
+68546,Smarr Combined Cycle Energy Facility,GA,1,2029,345.0,gas,2026-10-28
+66805,Lycan Solar Project,CA,0,2027,400.0,solar,2026-10-28
+66805,Lycan Solar Project,CA,1,2030,400.0,storage,2026-10-28
+69056,CO Bar Solar and BESS,AZ,0,2027,400.0,storage,2026-10-28
+69056,CO Bar Solar and BESS,AZ,1,2027,400.0,solar,2026-10-28
+68022,Cowboy Solar I,WY,0,2028,400.0,solar,2026-10-28
+68022,Cowboy Solar I,WY,1,2028,400.0,storage,2026-10-28
+68287,Eagle Eye Solar and Storage,AZ,0,2028,400.0,solar,2026-10-28
+68287,Eagle Eye Solar and Storage,AZ,1,2028,400.0,storage,2026-10-28
+68209,Purple Sage Energy Center,NV,0,2028,400.0,storage,2026-10-28
+68209,Purple Sage Energy Center,NV,1,2028,400.0,solar,2026-10-28
+66011,Cedar Island Solar LLC,OR,0,2031,800.0,solar,2026-10-28
+55972,Cass County,NE,0,2029,264.0,gas,2026-10-28
+55972,Cass County,NE,1,2029,264.0,gas,2026-10-28
+55972,Cass County,NE,2,2029,264.0,gas,2026-10-28
+69057,CO Bar D Solar and BESS,AZ,0,2028,394.0,storage,2026-10-28
+69057,CO Bar D Solar and BESS,AZ,1,2028,394.0,solar,2026-10-28
+69649,Richland Parish Power Station 3,LA,0,2030,469.3,gas,2026-10-28
+69649,Richland Parish Power Station 3,LA,1,2030,311.0,gas,2026-10-28
+69650,Richland Parish Power Station 4,LA,0,2030,469.3,gas,2026-10-28
+69650,Richland Parish Power Station 4,LA,1,2030,311.0,gas,2026-10-28
+68305,Gigawatt Solar,TX,0,2028,429.0,solar,2026-10-28
+68305,Gigawatt Solar,TX,1,2028,344.0,solar,2026-10-28
+68294,Viola Generating Station,KS,0,2029,765.0,gas,2026-10-28
+68295,McNew Generating Station,KS,0,2030,765.0,gas,2026-10-28
+68053,Legend Power Station,TX,0,2028,754.0,gas,2026-10-28
+70397,Steel River Solar Phase 1,AR,0,2028,250.0,storage,2026-10-28
+70397,Steel River Solar Phase 1,AR,1,2028,500.0,solar,2026-10-28
+70398,Steel River Solar Phase 2,AR,0,2029,250.0,storage,2026-10-28
+70398,Steel River Solar Phase 2,AR,1,2029,500.0,solar,2026-10-28
+70399,Steel River Solar Phase 3,AR,0,2030,250.0,storage,2026-10-28
+70399,Steel River Solar Phase 3,AR,1,2030,500.0,solar,2026-10-28
+69808,Princeton Road Station,NE,0,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,1,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,2,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,3,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,4,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,5,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,6,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,7,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,8,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,9,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,10,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,11,2029,18.1,gas,2026-10-28
+69808,Princeton Road Station,NE,12,2029,265.4,gas,2026-10-28
+69808,Princeton Road Station,NE,13,2029,265.4,gas,2026-10-28
+1364,Mill Creek (KY),KY,0,2027,740.0,gas,2026-10-28
+63841,Arida Solar (Hybrid),NV,0,2029,370.0,solar,2026-10-28
+63841,Arida Solar (Hybrid),NV,1,2029,370.0,storage,2026-10-28
+68606,Cedar Bayou 5,TX,0,2028,721.0,gas,2026-10-28
+65500,Revolution Wind,RI,0,2026,715.0,wind,2026-10-28
+64208,Red Antelope Solar & Energy Storage Farm,AZ,0,2028,400.0,solar,2026-10-28
+64208,Red Antelope Solar & Energy Storage Farm,AZ,1,2028,300.0,storage,2026-10-28
+68607,Pelicans Jaw Hybrid Solar,CA,0,2027,238.5,storage,2026-10-28
+68607,Pelicans Jaw Hybrid Solar,CA,1,2027,440.0,solar,2026-10-28
+65853,Banita Creek- Spindlepop Solar,TX,0,2027,302.9,storage,2026-10-28
+65853,Banita Creek- Spindlepop Solar,TX,1,2028,371.0,solar,2026-10-28
+68202,IP Roman Wind,TX,0,2028,670.5,wind,2026-10-28
+70541,Swan Solar,MO,0,2028,650.0,solar,2026-10-28
+67576,Castle Bluff Energy Center,MO,0,2027,216.0,gas,2026-10-28
+67576,Castle Bluff Energy Center,MO,1,2027,216.0,gas,2026-10-28
+67576,Castle Bluff Energy Center,MO,2,2027,216.0,gas,2026-10-28
+69661,Darden I Solar,CA,0,2028,303.7,storage,2026-10-28
+69661,Darden I Solar,CA,1,2028,342.7,solar,2026-10-28
+69662,Darden II Solar,CA,0,2028,303.7,storage,2026-10-28
+69662,Darden II Solar,CA,1,2028,342.7,solar,2026-10-28
+69663,Darden III Solar,CA,0,2028,303.7,storage,2026-10-28
+69663,Darden III Solar,CA,1,2028,342.7,solar,2026-10-28
+69664,Darden IV Solar,CA,0,2028,303.7,storage,2026-10-28
+69664,Darden IV Solar,CA,1,2028,342.7,solar,2026-10-28
+63878,Haymaker Hybrid,MT,0,2031,630.0,wind,2026-10-28
+69764,Illinois Generation LLC,IL,0,2028,616.5,wind,2026-10-28
+67776,Cuchillas PV and BESS,TX,0,2028,306.9,storage,2026-10-28
+67776,Cuchillas PV and BESS,TX,1,2028,305.6,solar,2026-10-28
+63802,Shady Hills Combined Cycle Facility,FL,0,2026,612.0,gas,2026-10-28
+68479,Short Creek Solar,TX,0,2028,606.4,solar,2026-10-28
+68982,Singing Grass Wind,CO,0,2027,603.0,wind,2026-10-28
+70485,White Cloud Generating,MO,0,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,1,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,2,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,3,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,4,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,5,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,6,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,7,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,8,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,9,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,10,2028,50.2,gas,2026-10-28
+70485,White Cloud Generating,MO,11,2028,50.2,gas,2026-10-28
+66914,"Danish Fields Solar, LLC",TX,0,2026,600.0,solar,2026-10-28
+70135,Swenson Solar,TX,0,2026,600.0,solar,2026-10-28
+68328,Pioneer Clean Energy Center,AZ,0,2027,300.0,solar,2026-10-28
+68328,Pioneer Clean Energy Center,AZ,1,2027,300.0,storage,2026-10-28
+66685,Whale Rock Pumped Storage Hydro Project,CA,0,2027,200.0,storage,2026-10-28
+66685,Whale Rock Pumped Storage Hydro Project,CA,1,2027,200.0,storage,2026-10-28
+66685,Whale Rock Pumped Storage Hydro Project,CA,2,2027,200.0,storage,2026-10-28
+68030,Red Hollow Renewable Energy,TX,0,2027,300.0,solar,2026-10-28
+68030,Red Hollow Renewable Energy,TX,1,2027,300.0,storage,2026-10-28
+70097,Sherco BESS,MN,0,2027,300.0,storage,2026-10-28
+70097,Sherco BESS,MN,1,2027,300.0,storage,2026-10-28
+60070,Nolin Hills,OR,0,2027,300.0,wind,2026-10-28
+60070,Nolin Hills,OR,1,2027,300.0,solar,2026-10-28
+68033,Sunrose Renewable Energy,TX,0,2027,300.0,solar,2026-10-28
+68033,Sunrose Renewable Energy,TX,1,2027,300.0,storage,2026-10-28
+63113,Southern Bighorn Solar Hybrid,NV,0,2028,300.0,storage,2026-10-28
+63113,Southern Bighorn Solar Hybrid,NV,1,2028,300.0,solar,2026-10-28
+68283,Desert Sand BESS,AZ,0,2028,300.0,storage,2026-10-28
+68283,Desert Sand BESS,AZ,1,2028,300.0,solar,2026-10-28
+68298,THREE SISTERS Solar Generation and BESS,AZ,0,2029,300.0,storage,2026-10-28
+68298,THREE SISTERS Solar Generation and BESS,AZ,1,2029,300.0,solar,2026-10-28
+68371,Red Butte Solar and Storage,UT,0,2029,300.0,solar,2026-10-28
+68371,Red Butte Solar and Storage,UT,1,2029,300.0,storage,2026-10-28
+68344,Lower Snake Solar Generation BESS,WA,0,2029,300.0,solar,2026-10-28
+68344,Lower Snake Solar Generation BESS,WA,1,2029,300.0,storage,2026-10-28
+67819,Robinson Solar,NV,0,2029,300.0,storage,2026-10-28
+67819,Robinson Solar,NV,1,2029,300.0,solar,2026-10-28
+68071,Bellflower Solar (VA),VA,0,2030,600.0,solar,2026-10-28
+68758,Easley Solar,CA,0,2026,290.0,solar,2026-10-28
+68758,Easley Solar,CA,1,2028,300.0,storage,2026-10-28
+60206,Wolf Summit Energy,WV,0,2028,207.4,gas,2026-10-28
+60206,Wolf Summit Energy,WV,1,2028,371.5,gas,2026-10-28
+69956,Sanborn Hybrid 3,CA,0,2026,55.0,solar,2026-10-28
+69956,Sanborn Hybrid 3,CA,1,2026,210.0,storage,2026-10-28
+69956,Sanborn Hybrid 3,CA,2,2026,210.0,solar,2026-10-28
+69956,Sanborn Hybrid 3,CA,3,2026,103.0,solar,2026-10-28
+69189,Cowboy Solar II,WY,0,2027,200.0,storage,2026-10-28
+69189,Cowboy Solar II,WY,1,2027,365.0,solar,2026-10-28
+64163,Hecate Energy Cider Solar LLC,NY,0,2026,557.0,solar,2026-10-28
+69778,Hashknife Energy Center LLC,AZ,0,2026,275.0,solar,2026-10-28
+69778,Hashknife Energy Center LLC,AZ,1,2026,275.0,storage,2026-10-28
+69684,Maricopa Solar,AZ,0,2026,550.0,storage,2026-10-28
+70419,Royal Slope,WA,0,2027,260.0,storage,2026-10-28
+70419,Royal Slope,WA,1,2027,260.0,solar,2026-10-28
+68940,Country Acres Clean Power LLC,CA,0,2027,172.0,storage,2026-10-28
+68940,Country Acres Clean Power LLC,CA,1,2027,344.0,solar,2026-10-28
+65310,Renegade Solar Project (Dawn),TX,0,2027,515.0,solar,2026-10-28
+64234,Hecate Energy Harley Hand Solar LLC,TX,0,2028,514.0,solar,2026-10-28
+69147,New Caledonia,MS,0,2028,84.0,gas,2026-10-28
+69147,New Caledonia,MS,1,2028,84.0,gas,2026-10-28
+69147,New Caledonia,MS,2,2028,84.0,gas,2026-10-28
+69147,New Caledonia,MS,3,2028,84.0,gas,2026-10-28
+69147,New Caledonia,MS,4,2028,84.0,gas,2026-10-28
+69147,New Caledonia,MS,5,2028,84.0,gas,2026-10-28
+64847,Rail Tie Wind,WY,0,2029,504.0,wind,2026-10-28
+65028,"Roseland Solar Project, LLC",TX,0,2026,500.0,solar,2026-10-28
+66414,Hecate Energy Ramsey Storage,TX,0,2027,500.0,storage,2026-10-28
+70034,"Evlou Solar, LLC",TX,0,2028,250.0,solar,2026-10-28
+70034,"Evlou Solar, LLC",TX,1,2028,250.0,storage,2026-10-28
+68204,IP Meitner Wind,TX,0,2028,500.0,wind,2026-10-28
+67987,Mystic Springs Renewable Energy (Hybrid),TX,0,2028,250.0,storage,2026-10-28
+67987,Mystic Springs Renewable Energy (Hybrid),TX,1,2028,250.0,solar,2026-10-28
+68203,IP Meitner Solar,TX,0,2028,500.0,solar,2026-10-28
+67982,Athens Solar I (Hybrid),CA,0,2028,250.0,solar,2026-10-28
+67982,Athens Solar I (Hybrid),CA,1,2028,250.0,storage,2026-10-28
+68201,IP Roman Solar,TX,0,2028,500.0,solar,2026-10-28
+68883,Sawtooth Solar,AZ,0,2028,250.0,storage,2026-10-28
+68883,Sawtooth Solar,AZ,1,2028,250.0,solar,2026-10-28
+68354,La Salle Solar,TX,0,2028,500.0,solar,2026-10-28
+69584,Rising Star Solar,TX,0,2028,500.0,solar,2026-10-28
+68353,La Salle ESS,TX,0,2029,500.0,storage,2026-10-28
+70492,Willow Rock Energy Storage Center,CA,0,2030,125.0,storage,2026-10-28
+70492,Willow Rock Energy Storage Center,CA,1,2030,125.0,storage,2026-10-28
+70492,Willow Rock Energy Storage Center,CA,2,2030,125.0,storage,2026-10-28
+70492,Willow Rock Energy Storage Center,CA,3,2030,125.0,storage,2026-10-28
+68635,Kemmerer Unit 1,WY,0,2030,500.0,nuclear,2026-10-28
+63911,MEC North,MI,0,2034,500.0,gas,2026-10-28
+63912,MEC South,MI,0,2034,500.0,gas,2026-10-28
+70522,Hecate Energy Sunfish Solar LLC,MI,0,2028,499.0,solar,2026-10-28
+66908,Bonanza Solar and Storage Project,NV,0,2027,195.0,storage,2026-10-28
+66908,Bonanza Solar and Storage Project,NV,1,2027,300.0,solar,2026-10-28
+68370,Salmonfly Solar and Storage,OR,0,2029,247.0,solar,2026-10-28
+68370,Salmonfly Solar and Storage,OR,1,2029,247.0,storage,2026-10-28
+68296,Mullin Creek #1 Generating Station,MO,0,2030,489.7,gas,2026-10-28
+68705,Horizon,CO,0,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,1,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,2,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,3,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,4,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,5,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,6,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,7,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,8,2028,48.0,gas,2026-10-28
+68705,Horizon,CO,9,2028,48.0,gas,2026-10-28
+6112,Fort St Vrain,CO,0,2027,239.0,gas,2026-10-28
+6112,Fort St Vrain,CO,1,2027,239.0,gas,2026-10-28
+69690,Panther Grove 2,IL,0,2027,472.5,wind,2026-10-28
+69077,Lone Star Power Station,TX,0,2028,467.3,gas,2026-10-28
+69750,Ironwood Power Station,AR,0,2028,467.3,gas,2026-10-28
+65851,Hollow Branch Creek,TX,0,2027,460.0,solar,2026-10-28
+66871,"GulfStar Power, LLC",TX,0,2026,451.6,solar,2026-10-28
+68772,Chalk Bluff Solar,AR,0,2027,450.0,solar,2026-10-28
+68417,Hallsville,TX,0,2027,225.0,gas,2026-10-28
+68417,Hallsville,TX,1,2027,225.0,gas,2026-10-28
+70175,ZSS Solar,TX,0,2027,450.0,solar,2026-10-28
+70462,Pawnee Solar & BESS,CO,0,2027,200.0,storage,2026-10-28
+70462,Pawnee Solar & BESS,CO,1,2027,250.0,solar,2026-10-28
+67664,Soleil,TX,0,2028,450.0,solar,2026-10-28
+61170,Gale 1 Solar,UT,0,2030,300.0,solar,2026-10-28
+61170,Gale 1 Solar,UT,1,2030,150.0,storage,2026-10-28
+6085,R M Schahfer,IN,0,2027,71.5,gas,2026-10-28
+6085,R M Schahfer,IN,1,2027,71.5,gas,2026-10-28
+6085,R M Schahfer,IN,2,2027,71.5,gas,2026-10-28
+6085,R M Schahfer,IN,3,2027,233.8,gas,2026-10-28
+69691,Greens Bayou 6,TX,0,2028,447.0,gas,2026-10-28
+69873,Cheyenne Ridge II,CO,0,2027,438.0,wind,2026-10-28
+56,Lowman Energy Center,AL,0,2029,438.0,gas,2026-10-28
+63818,"Panther Grove Wind, LLC",IL,0,2026,423.0,wind,2026-10-28
+68759,Quantum BESS,TX,0,2026,422.4,storage,2026-10-28
+68761,Quantum II BESS,TX,0,2026,422.4,storage,2026-10-28
+69537,Lyon County Generating Station,MN,0,2028,210.0,gas,2026-10-28
+69537,Lyon County Generating Station,MN,1,2028,210.0,gas,2026-10-28
+67262,Ripley Energy Center,OK,0,2027,419.0,gas,2026-10-28
+67263,Turney Energy Center,MO,0,2027,419.0,gas,2026-10-28
+8224,North Valmy,NV,0,2028,208.0,gas,2026-10-28
+8224,North Valmy,NV,1,2028,208.0,gas,2026-10-28
+69272,Enbridge Solar (Sequoia II),TX,0,2026,415.0,solar,2026-10-28
+69058,CO Bar C Solar and BESS,AZ,0,2027,206.0,storage,2026-10-28
+69058,CO Bar C Solar and BESS,AZ,1,2027,206.0,solar,2026-10-28
+68369,Starfire Mountain Solar,KY,0,2029,410.0,solar,2026-10-28
+66912,Hill Solar 1,TX,0,2026,405.0,solar,2026-10-28
+64290,"SE Athos II, LLC",CA,0,2027,100.0,storage,2026-10-28
+64290,"SE Athos II, LLC",CA,1,2027,102.3,storage,2026-10-28
+64290,"SE Athos II, LLC",CA,2,2027,200.0,storage,2026-10-28
+67984,Firefly Solar PA,PA,0,2027,401.6,solar,2026-10-28
+67378,Mineral Basin Solar Power,PA,0,2028,401.6,solar,2026-10-28
+68422,Callisto II Energy Center,TX,0,2026,400.0,storage,2026-10-28
+67978,Sierra Solar Hybrid,NV,0,2026,400.0,solar,2026-10-28
+69779,Hashknife Energy Center II LLC,AZ,0,2027,200.0,solar,2026-10-28
+69779,Hashknife Energy Center II LLC,AZ,1,2027,200.0,storage,2026-10-28
+68917,Beavertail Solar,MO,0,2027,400.0,solar,2026-10-28
+69509,Gabriel,CA,0,2027,400.0,storage,2026-10-28
+67059,Iron Belt,TX,0,2027,400.0,storage,2026-10-28
+69508,Marici,CA,0,2027,400.0,storage,2026-10-28
+69553,Blacks Creek Solar,ID,0,2027,400.0,solar,2026-10-28
+64670,Big Creek Solar LLC,AR,0,2027,400.0,solar,2026-10-28
+66401,OCI Hillsboro,TX,0,2027,200.0,solar,2026-10-28
+66401,OCI Hillsboro,TX,1,2027,200.0,storage,2026-10-28
+63782,Rough Hat,NV,0,2027,400.0,solar,2026-10-28
+68031,Scopus Solar,MO,0,2027,200.0,storage,2026-10-28
+68031,Scopus Solar,MO,1,2027,200.0,solar,2026-10-28
+68036,Vichy Solar,MO,0,2027,200.0,storage,2026-10-28
+68036,Vichy Solar,MO,1,2027,200.0,solar,2026-10-28
+68315,Anthelope Hills Solar Generation BESS,MT,0,2027,200.0,solar,2026-10-28
+68315,Anthelope Hills Solar Generation BESS,MT,1,2027,200.0,storage,2026-10-28
+69239,High Spring Solar Energy,OK,0,2027,400.0,solar,2026-10-28
+70219,Valley Farms Energy Center,AZ,0,2027,400.0,storage,2026-10-28
+70583,"Highland Solar I, LLC - (CO)",CO,0,2027,100.0,storage,2026-10-28
+70583,"Highland Solar I, LLC - (CO)",CO,1,2027,300.0,solar,2026-10-28
+67985,Hornet Solar II (TX) (Hybrid),TX,0,2028,200.0,solar,2026-10-28
+67985,Hornet Solar II (TX) (Hybrid),TX,1,2028,200.0,storage,2026-10-28
+67250,Alina Energy LLC,TX,0,2028,200.0,storage,2026-10-28
+67250,Alina Energy LLC,TX,1,2028,200.0,solar,2026-10-28
+65847,Eldora Energy LLC,TX,0,2028,200.0,storage,2026-10-28
+65847,Eldora Energy LLC,TX,1,2028,200.0,solar,2026-10-28
+69952,Cypress Harvest Solar Station,LA,0,2028,200.0,solar,2026-10-28
+69952,Cypress Harvest Solar Station,LA,1,2029,200.0,storage,2026-10-28
+63488,Obsidian Solar Center,OR,0,2028,400.0,solar,2026-10-28
+64632,Sienna Solar Farm,CA,0,2028,200.0,solar,2026-10-28
+64632,Sienna Solar Farm,CA,1,2028,200.0,storage,2026-10-28
+68485,Rexford 2 Solar Farm,CA,0,2028,200.0,solar,2026-10-28
+68485,Rexford 2 Solar Farm,CA,1,2028,200.0,storage,2026-10-28
+70331,"Mirasol Energy Center, LLC.",CO,0,2028,400.0,solar,2026-10-28
+68332,Dega Solar and Storage,AL,0,2029,200.0,solar,2026-10-28
+68332,Dega Solar and Storage,AL,1,2029,200.0,storage,2026-10-28
+70186,Solstice Solar LLC,OK,0,2029,200.0,storage,2026-10-28
+70186,Solstice Solar LLC,OK,1,2029,200.0,solar,2026-10-28
+69278,Fortress 1,CO,0,2028,199.0,solar,2026-10-28
+69278,Fortress 1,CO,1,2028,150.0,storage,2026-10-28
+69278,Fortress 1,CO,2,2028,49.9,storage,2026-10-28
+67657,Hanson,TX,0,2027,396.0,solar,2026-10-28
+69877,Charger Solar,TX,0,2026,394.4,solar,2026-10-28
+55455,Red Hawk,AZ,0,2027,49.0,gas,2026-10-28
+55455,Red Hawk,AZ,1,2027,49.0,gas,2026-10-28
+55455,Red Hawk,AZ,2,2027,49.0,gas,2026-10-28
+55455,Red Hawk,AZ,3,2027,49.0,gas,2026-10-28
+55455,Red Hawk,AZ,4,2027,49.0,gas,2026-10-28
+55455,Red Hawk,AZ,5,2027,49.0,gas,2026-10-28
+55455,Red Hawk,AZ,6,2027,49.0,gas,2026-10-28
+55455,Red Hawk,AZ,7,2027,49.0,gas,2026-10-28
+66893,Jones City 2 Solar,TX,0,2026,185.0,solar,2026-10-28
+66893,Jones City 2 Solar,TX,1,2027,200.0,storage,2026-10-28
+68323,Atlas VIII,AZ,0,2026,210.0,storage,2026-10-28
+68323,Atlas VIII,AZ,1,2027,172.4,storage,2026-10-28
+67777,Harryoung PV and BESS,TX,0,2028,190.0,storage,2026-10-28
+67777,Harryoung PV and BESS,TX,1,2028,190.0,solar,2026-10-28
+66691,"Briggs Solar, LLC",TX,0,2027,305.0,solar,2026-10-28
+66691,"Briggs Solar, LLC",TX,1,2027,70.5,storage,2026-10-28
+67552,Elm Flats Solar,TX,0,2027,250.0,storage,2026-10-28
+67552,Elm Flats Solar,TX,1,2027,125.0,solar,2026-10-28
+66896,"Lupinus Solar 2, LLC",TX,0,2027,122.9,storage,2026-10-28
+66896,"Lupinus Solar 2, LLC",TX,1,2027,244.0,solar,2026-10-28
+68760,Quantum Solar,TX,0,2026,362.8,solar,2026-10-28
+68762,Quantum II Solar,TX,0,2026,362.8,solar,2026-10-28
+68745,Sunfish Solar 2,MI,0,2026,360.0,solar,2026-10-28
+69761,Dawn Break Solar,WI,0,2029,180.0,storage,2026-10-28
+69761,Dawn Break Solar,WI,1,2029,180.0,solar,2026-10-28
+63850,Cherry,CA,0,2027,110.0,storage,2026-10-28
+63850,Cherry,CA,1,2027,249.7,solar,2026-10-28
+66651,Arco Wind and Solar Project,ID,0,2027,153.0,wind,2026-10-28
+66651,Arco Wind and Solar Project,ID,1,2028,206.0,wind,2026-10-28
+70200,Lucy Solar,TX,0,2027,351.3,solar,2026-10-28
+66915,Cottonwood Bayou Solar,TX,0,2026,350.0,solar,2026-10-28
+67359,Funston Solar,TX,0,2026,350.0,solar,2026-10-28
+68065,Chillingham Solar,TX,0,2026,350.0,solar,2026-10-28
+69796,Harvey Solar,OH,0,2028,350.0,solar,2026-10-28
+68039,Elisabeth Solar,AZ,0,2028,350.0,solar,2026-10-28
+62954,Alle-Catt Wind Energy LLC,NY,0,2026,340.0,wind,2026-10-28
+69040,Arroyo Solar,CO,0,2026,335.0,solar,2026-10-28
+67956,Concho Pearl Solar and Storage,TX,0,2027,162.4,storage,2026-10-28
+67956,Concho Pearl Solar and Storage,TX,1,2027,171.9,solar,2026-10-28
+66891,Indigo Solar & Storage,TX,0,2027,180.0,storage,2026-10-28
+66891,Indigo Solar & Storage,TX,1,2027,150.0,solar,2026-10-28
+64999,Pecan Prairie North Solar,TX,0,2027,324.1,solar,2026-10-28
+70360,Foundry Ridge Energy Center LLC,WI,0,2028,108.0,gas,2026-10-28
+70360,Foundry Ridge Energy Center LLC,WI,1,2028,108.0,gas,2026-10-28
+70360,Foundry Ridge Energy Center LLC,WI,2,2028,108.0,gas,2026-10-28
+64669,Notch Peak Solar LLC,UT,0,2028,324.0,solar,2026-10-28
+68907,Vidal Energy Center,CA,0,2026,160.0,storage,2026-10-28
+68907,Vidal Energy Center,CA,1,2026,160.0,solar,2026-10-28
+66910,"Myrtle Solar, LLC",TX,0,2026,313.0,solar,2026-10-28
+69930,Milford Solar Phase II,UT,0,2027,310.0,solar,2026-10-28
+67341,SGT Hoskins Solar Project Hybrid,TX,0,2027,102.1,storage,2026-10-28
+67341,SGT Hoskins Solar Project Hybrid,TX,1,2027,204.1,solar,2026-10-28
+66391,Ash Creek BESS,TX,0,2028,306.0,storage,2026-10-28
+68739,Uva Creek Solar,TX,0,2028,301.0,solar,2026-10-28
+63798,Atlas,AZ,0,2026,300.0,solar,2026-10-28
+66545,Mammoth South Solar Project,IN,0,2026,300.0,solar,2026-10-28
+69055,ATLAS SOLAR IV,AZ,0,2026,300.0,solar,2026-10-28
+66546,Mammoth Central Solar Project,IN,0,2026,300.0,solar,2026-10-28
+68514,Mammoth Central II Solar Facility,IN,0,2026,300.0,solar,2026-10-28
+68461,Key Energy Storage,CA,0,2026,75.0,storage,2026-10-28
+68461,Key Energy Storage,CA,1,2027,190.0,storage,2026-10-28
+68461,Key Energy Storage,CA,2,2027,35.0,storage,2026-10-28
+69479,Koshkonong Solar Energy Center LLC,WI,0,2026,300.0,solar,2026-10-28
+68932,Overnight Solar,CA,0,2027,150.0,storage,2026-10-28
+68932,Overnight Solar,CA,1,2027,150.0,solar,2026-10-28
+69299,Singer Solar,LA,0,2027,300.0,solar,2026-10-28
+68184,Coles Wind,IL,0,2027,300.0,wind,2026-10-28
+69480,High Noon Solar Energy LLC,WI,0,2027,300.0,solar,2026-10-28
+70020,Pinopolis BESS,SC,0,2027,300.0,storage,2026-10-28
+69364,Red Egret,TX,0,2027,300.0,storage,2026-10-28
+63202,TREX US Red Holly,TX,0,2027,250.0,solar,2026-10-28
+63202,TREX US Red Holly,TX,1,2027,50.0,storage,2026-10-28
+65850,Elio Energy LLC,TX,0,2027,300.0,storage,2026-10-28
+66309,Uvalde Solar 2,TX,0,2027,300.0,solar,2026-10-28
+66426,Utah Solar 1,UT,0,2027,300.0,solar,2026-10-28
+69963,Yellow Wood Solar Energy LLC,OH,0,2027,300.0,solar,2026-10-28
+70204,Cantaloupe Solar,TX,0,2027,300.0,solar,2026-10-28
+70238,Roadhouse Energy Center,CA,0,2027,300.0,storage,2026-10-28
+70330,Bighorn Ridge Solar,TX,0,2027,300.0,solar,2026-10-28
+68076,Rocky Run Solar,VA,0,2028,300.0,solar,2026-10-28
+67986,Meadow Springs Renewable Energy (Hybrid),IL,0,2028,150.0,storage,2026-10-28
+67986,Meadow Springs Renewable Energy (Hybrid),IL,1,2028,150.0,solar,2026-10-28
+68604,Dahlia Energy,TX,0,2028,100.0,storage,2026-10-28
+68604,Dahlia Energy,TX,1,2028,200.0,solar,2026-10-28
+68813,Vitex Storage,NV,0,2028,300.0,storage,2026-10-28
+69763,Heritage Prairie Solar LLC,IL,0,2028,300.0,solar,2026-10-28
+61331,NISA Electric Generation Project,NY,0,2028,79.9,storage,2026-10-28
+61331,NISA Electric Generation Project,NY,1,2028,220.1,storage,2026-10-28
+70367,O'Bannion Energy Storage,TX,0,2028,300.0,storage,2026-10-28
+67649,Amerada,TX,0,2029,300.0,solar,2026-10-28
+65703,Humidor Storage I,CA,0,2029,300.0,storage,2026-10-28
+65808,"Sacramento Valley Energy Center, LLC",CA,0,2029,100.0,storage,2026-10-28
+65808,"Sacramento Valley Energy Center, LLC",CA,1,2029,200.0,solar,2026-10-28
+69640,Cazadores Solar,TX,0,2029,300.0,solar,2026-10-28
+67894,Bellefield 3 Solar and Battery Storage,CA,0,2030,150.0,solar,2026-10-28
+67894,Bellefield 3 Solar and Battery Storage,CA,1,2030,150.0,storage,2026-10-28
+69643,Deep Space Solar,CO,0,2030,300.0,solar,2026-10-28
+69644,Pease River Solar,TX,0,2030,300.0,solar,2026-10-28
+64634,Kingsley Solar Farm,CA,0,2028,225.0,solar,2026-10-28
+64634,Kingsley Solar Farm,CA,1,2028,74.0,storage,2026-10-28
+68186,Firelands Wind,OH,0,2027,297.0,wind,2026-10-28
+56948,Coolidge Generation Station,AZ,0,2027,49.5,gas,2026-10-28
+56948,Coolidge Generation Station,AZ,1,2027,49.5,gas,2026-10-28
+56948,Coolidge Generation Station,AZ,2,2027,49.5,gas,2026-10-28
+56948,Coolidge Generation Station,AZ,3,2027,49.5,gas,2026-10-28
+56948,Coolidge Generation Station,AZ,4,2027,49.5,gas,2026-10-28
+56948,Coolidge Generation Station,AZ,5,2027,49.5,gas,2026-10-28
+68153,Fremont Solar,UT,0,2027,198.0,storage,2026-10-28
+68153,Fremont Solar,UT,1,2027,99.0,solar,2026-10-28
+68339,Abercrombie Solar,ND,0,2028,295.1,solar,2026-10-28
+69150,Sypert Branch Solar,TX,0,2026,293.9,solar,2026-10-28
+68078,Chisme Solar and Storage,TX,0,2027,146.0,storage,2026-10-28
+68078,Chisme Solar and Storage,TX,1,2027,147.0,solar,2026-10-28
+64911,South Ripley Solar,NY,0,2027,20.0,storage,2026-10-28
+64911,South Ripley Solar,NY,1,2027,270.0,solar,2026-10-28
+68876,Okolona Solar,MS,0,2027,145.0,solar,2026-10-28
+68876,Okolona Solar,MS,1,2028,145.0,storage,2026-10-28
+59243,Changing Winds,TX,0,2028,288.0,wind,2026-10-28
+69606,"Monarch Creek Wind, LLC",TX,0,2027,287.6,wind,2026-10-28
+68507,Excelsior Energy Center,NY,0,2026,280.0,solar,2026-10-28
+69496,Piedra Solar,TX,0,2026,280.0,solar,2026-10-28
+67542,Blue Hills Wind Project,TX,0,2029,276.0,wind,2026-10-28
+66786,Elevate Middletown,CT,0,2027,275.0,storage,2026-10-28
+70218,Selma Energy Center,AZ,0,2027,150.0,storage,2026-10-28
+70218,Selma Energy Center,AZ,1,2027,125.0,solar,2026-10-28
+69588,"Yellow Cat Wind, LLC",TX,0,2026,270.0,wind,2026-10-28
+69403,Goodnight Wind II,TX,0,2027,265.5,wind,2026-10-28
+68873,Big Sampson Wind,TX,0,2026,265.0,wind,2026-10-28
+64547,Turtle Creek,NE,0,2028,264.0,gas,2026-10-28
+64215,Aratina Solar Center 2,CA,0,2026,150.0,solar,2026-10-28
+64215,Aratina Solar Center 2,CA,1,2026,113.0,storage,2026-10-28
+7916,Talbot County Energy,GA,0,2029,262.0,gas,2026-10-28
+69635,Peach Wood Solar,GA,0,2030,261.0,solar,2026-10-28
+65893,OCI SunRoper,TX,0,2027,260.0,solar,2026-10-28
+70407,Roy Solar,OK,0,2027,258.0,solar,2026-10-28
+65141,Boulder Solar III LLC,NV,0,2027,128.0,solar,2026-10-28
+65141,Boulder Solar III LLC,NV,1,2027,128.0,storage,2026-10-28
+67837,Ray Ranch Solar,TX,0,2026,255.2,solar,2026-10-28
+66411,Hecate Grid East Valley Storage,TX,0,2027,255.0,storage,2026-10-28
+70299,"Pioneer Creek Wind, LLC",KS,0,2027,252.0,wind,2026-10-28
+64835,Silver Queen Wind Farm,IA,0,2028,252.0,wind,2026-10-28
+69892,Oak Valley Solar,TX,0,2029,251.3,solar,2026-10-28
+68410,Brazoria Solar I,TX,0,2026,125.0,solar,2026-10-28
+68410,Brazoria Solar I,TX,1,2026,125.0,solar,2026-10-28
+69681,Mallard Energy Storage,TX,0,2026,250.0,storage,2026-10-28
+69968,Rumble Solar,OK,0,2026,250.0,solar,2026-10-28
+68325,Show Me State Solar,MO,0,2026,250.0,solar,2026-10-28
+65880,Zeya,TX,0,2026,250.0,storage,2026-10-28
+67357,Tiger Solar,TX,0,2026,250.0,solar,2026-10-28
+70137,Dry Land Prairie Energy Storage,CO,0,2026,250.0,storage,2026-10-28
+69967,"Foxtail Flats Solar, LLC",NM,0,2027,80.0,storage,2026-10-28
+69967,"Foxtail Flats Solar, LLC",NM,1,2027,170.0,solar,2026-10-28
+70053,South Platte Storage,CO,0,2027,250.0,storage,2026-10-28
+70300,Adams Creek Solar Project,TX,0,2027,250.0,solar,2026-10-28
+69887,"Portage Solar, LLC",WI,0,2027,250.0,solar,2026-10-28
+70178,Cobalt,CA,0,2027,250.0,solar,2026-10-28
+66706,Patoka Solar,IN,0,2027,250.0,solar,2026-10-28
+66707,Prairie Oak Solar,IL,0,2027,250.0,solar,2026-10-28
+68583,Rock N' Roll,TX,0,2027,250.0,storage,2026-10-28
+67226,Rock House Solar,GA,0,2027,250.0,solar,2026-10-28
+68316,Biglow Solar Generation and BESS,OR,0,2027,125.0,solar,2026-10-28
+68316,Biglow Solar Generation and BESS,OR,1,2027,125.0,storage,2026-10-28
+69721,Energizar BESS,MA,0,2027,250.0,storage,2026-10-28
+70047,Selenite Springs Solar,TX,0,2027,250.0,solar,2026-10-28
+70258,"Hawkeye Solar II, LLC",IA,0,2028,250.0,solar,2026-10-28
+70515,Burt County Solar (Sandhills Energy),NE,0,2028,250.0,solar,2026-10-28
+64912,Mill Point Solar,NY,0,2028,250.0,solar,2026-10-28
+68491,Freedom Pine Solar,ME,0,2029,250.0,solar,2026-10-28
+68351,Clairemont Solar,TX,0,2029,250.0,solar,2026-10-28
+68356,Lazy U ESS 2,TX,0,2029,250.0,storage,2026-10-28
+68357,Lazy U Solar 1,TX,0,2029,250.0,solar,2026-10-28
+68358,Lazy U Solar 2,TX,0,2029,250.0,solar,2026-10-28
+68355,Lazy U ESS 1,TX,0,2030,250.0,storage,2026-10-28
+67950,Moonlight Flats Solar Power 1,PA,0,2030,250.0,solar,2026-10-28
+67862,Kingstree East 230 Solar Project,SC,0,2029,249.0,solar,2026-10-28
+68738,Cannibal Draw Solar and Storage,TX,0,2028,98.6,storage,2026-10-28
+68738,Cannibal Draw Solar and Storage,TX,1,2028,149.5,solar,2026-10-28
+66895,"Lupinus Solar 1, LLC",TX,0,2027,83.0,storage,2026-10-28
+66895,"Lupinus Solar 1, LLC",TX,1,2027,165.0,solar,2026-10-28
+66701,Buffalo Branch Wind and Solar LLC,MO,0,2029,247.0,wind,2026-10-28
+63851,Grape,CA,0,2027,246.4,solar,2026-10-28
+68302,Lake Trout Solar,IN,0,2027,245.0,solar,2026-10-28
+69506,Gail Mountain Solar,TX,0,2028,244.4,solar,2026-10-28
+69773,Mohave Energy Park,AZ,0,2027,60.5,gas,2026-10-28
+69773,Mohave Energy Park,AZ,1,2027,60.5,gas,2026-10-28
+69773,Mohave Energy Park,AZ,2,2027,60.5,gas,2026-10-28
+69773,Mohave Energy Park,AZ,3,2027,60.5,gas,2026-10-28
+62892,EDPR CA Solar Park VI LLC (CA) Hybrid,CA,0,2026,40.0,storage,2026-10-28
+62892,EDPR CA Solar Park VI LLC (CA) Hybrid,CA,1,2026,201.0,solar,2026-10-28
+66168,Cattlemen Solar Park,TX,0,2026,240.0,solar,2026-10-28
+68785,Dolet Hills Solar,LA,0,2026,240.0,solar,2026-10-28
+68264,Rich Road Solar Energy Center,NY,0,2028,240.0,solar,2026-10-28
+66421,Despain Solar,TX,0,2027,236.2,solar,2026-10-28
+69295,Duffy BESS,TX,0,2026,235.9,storage,2026-10-28
+68080,Marcos PV and BESS,TX,0,2029,115.9,storage,2026-10-28
+68080,Marcos PV and BESS,TX,1,2029,115.9,solar,2026-10-28
+67581,Cairos Solar and Storage,TX,0,2027,153.3,solar,2026-10-28
+67581,Cairos Solar and Storage,TX,1,2027,77.3,storage,2026-10-28
+69004,Adelite Storage Project LLC,TX,0,2028,230.0,storage,2026-10-28
+68579,AC Ranch II,NM,0,2029,230.0,solar,2026-10-28
+68079,Stagecoach LRE,CO,0,2029,230.0,solar,2026-10-28
+62437,Dodge County Wind,MN,0,2027,228.0,wind,2026-10-28
+68173,Sandford Solar and Storage,TX,0,2028,100.9,storage,2026-10-28
+68173,Sandford Solar and Storage,TX,1,2028,126.2,solar,2026-10-28
+67783,Ventures BESS,TX,0,2028,226.8,storage,2026-10-28
+69658,New Salem Wind II,ND,0,2028,226.0,wind,2026-10-28
+67356,Throckmorton Wind,TX,0,2026,225.6,wind,2026-10-28
+67767,Bramble Energy Center,TX,0,2029,225.1,storage,2026-10-28
+65458,Anode (Springville) BESS,CA,0,2027,112.5,storage,2026-10-28
+65458,Anode (Springville) BESS,CA,1,2027,112.5,storage,2026-10-28
+70193,Romero Energy Center,AZ,0,2027,225.0,storage,2026-10-28
+69198,"ATLAS Solar X, LLC",AZ,0,2027,225.0,solar,2026-10-28
+70194,"Romero Energy Center II, LLC",AZ,0,2028,225.0,storage,2026-10-28
+69450,Emerald Bluffs Solar Park,WI,0,2028,225.0,solar,2026-10-28
+66138,Mayapple Solar 1,IN,0,2029,224.0,solar,2026-10-28
+6761,Rawhide,CO,0,2028,44.6,gas,2026-10-28
+6761,Rawhide,CO,1,2028,44.6,gas,2026-10-28
+6761,Rawhide,CO,2,2028,44.6,gas,2026-10-28
+6761,Rawhide,CO,3,2028,44.6,gas,2026-10-28
+6761,Rawhide,CO,4,2028,44.6,gas,2026-10-28
+63193,Alira,TX,0,2030,222.8,solar,2026-10-28
+66390,MRG Goody Solar Project Hybrid,TX,0,2026,50.4,storage,2026-10-28
+66390,MRG Goody Solar Project Hybrid,TX,1,2026,170.8,solar,2026-10-28
+63028,Tip Top Solar Energy Center LLC,NM,0,2026,220.0,solar,2026-10-28
+67759,Trenton Channel Energy Center,MI,0,2027,220.0,storage,2026-10-28
+69520,Amador BESS,TX,0,2027,220.0,storage,2026-10-28
+69590,Hollis Creek Solar,LA,0,2027,220.0,solar,2026-10-28
+65344,Noria Hondo Solar (Hybrid),TX,0,2027,145.0,solar,2026-10-28
+65344,Noria Hondo Solar (Hybrid),TX,1,2027,75.0,storage,2026-10-28
+65821,Honey Creek Solar,IN,0,2027,20.0,storage,2026-10-28
+65821,Honey Creek Solar,IN,1,2027,200.0,solar,2026-10-28
+68744,Liberty Solar Energy Center,MI,0,2027,220.0,solar,2026-10-28
+68668,Coke BESS,TX,0,2028,220.0,storage,2026-10-28
+69108,Eastern Cottontail Solar,OH,0,2028,220.0,solar,2026-10-28
+69149,Anson 2 Solar,TX,0,2026,218.5,solar,2026-10-28
+69726,Liberty Station,KY,0,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,1,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,2,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,3,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,4,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,5,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,6,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,7,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,8,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,9,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,10,2028,18.1,gas,2026-10-28
+69726,Liberty Station,KY,11,2028,18.1,gas,2026-10-28
+67996,Leuven Solar LLC,TX,0,2029,217.0,solar,2026-10-28
+66559,Jones City 1 Solar,TX,0,2026,215.0,solar,2026-10-28
+69654,Zeus BESS,CA,0,2031,213.6,storage,2026-10-28
+64672,"Blue Jay Solar I, LLC",TX,0,2026,210.0,solar,2026-10-28
+68040,Sycamore Cross Solar,VA,0,2029,208.2,solar,2026-10-28
+70237,Mule Shoe Energy Storage,TX,0,2028,207.0,storage,2026-10-28
+69589,Beekman Solar,LA,0,2027,206.8,solar,2026-10-28
+70514,Hoyte Solar,TX,0,2027,206.8,solar,2026-10-28
+69468,Poseyville Solar Park,MI,0,2028,206.4,solar,2026-10-28
+69507,New Hickory Solar,TX,0,2026,206.0,solar,2026-10-28
+68511,Henry Solar,OH,0,2028,206.0,solar,2026-10-28
+67543,Donegal Solar Project,TX,0,2028,204.2,solar,2026-10-28
+68853,Limewood Bell Renewables Solar,TX,0,2026,204.0,solar,2026-10-28
+67353,Erath County Solar,TX,0,2028,204.0,solar,2026-10-28
+67917,"Champaign BESS, LLC",TX,0,2027,202.7,storage,2026-10-28
+65049,Pike Creek Wind,IL,0,2027,202.5,wind,2026-10-28
+69659,Red Butte Wind,ND,0,2027,202.0,wind,2026-10-28
+68275,Erin,TX,0,2029,202.0,solar,2026-10-28
+69879,Ninnescah Flats Solar,KS,0,2026,201.6,solar,2026-10-28
+67918,"Dios BESS, LLC",TX,0,2027,201.6,storage,2026-10-28
+65948,Plum Nellie Wind Farm LLC,KS,0,2027,201.6,wind,2026-10-28
+65462,Axton Solar,VA,0,2028,201.1,solar,2026-10-28
+67575,TX Nazareth Solar,TX,0,2027,201.0,solar,2026-10-28
+68902,Echols Grove Solar,TX,0,2027,201.0,solar,2026-10-28
+67535,Bell Creek BESS LLC,TX,0,2028,200.9,storage,2026-10-28
+68168,Kahla Storage,TX,0,2028,200.9,storage,2026-10-28
+69120,Resaca Oasis Storage,TX,0,2028,200.7,storage,2026-10-28
+67558,Blackcat BESS,TX,0,2028,200.6,storage,2026-10-28
+70021,Staccato BESS,TX,0,2027,200.5,storage,2026-10-28
+68179,Templeton Wind,IN,0,2027,200.2,wind,2026-10-28
+67976,Cattlemen Solar II,TX,0,2026,200.0,solar,2026-10-28
+68481,Hill Solar II,TX,0,2026,200.0,solar,2026-10-28
+68914,Padua 3,TX,0,2026,200.0,storage,2026-10-28
+70344,Rush Springs Solar,OK,0,2026,200.0,solar,2026-10-28
+68425,Tidwell Prairie II,TX,0,2026,200.0,storage,2026-10-28
+69155,Apache Hill Energy Center,TX,0,2026,200.0,storage,2026-10-28
+65870,Castor,TX,0,2026,200.0,storage,2026-10-28
+66968,Blackford Wind,IN,0,2026,200.0,wind,2026-10-28
+68089,Twelvemile Solar 3,OK,0,2026,200.0,solar,2026-10-28
+68341,Greenwater BESS,WA,0,2026,200.0,storage,2026-10-28
+68452,Kitt Solar,AZ,0,2026,100.0,storage,2026-10-28
+68452,Kitt Solar,AZ,1,2026,100.0,solar,2026-10-28
+68515,Greer Solar Plant,MS,0,2026,200.0,solar,2026-10-28
+69477,Pleasant Prairie Solar Energy LLC,OH,0,2026,200.0,solar,2026-10-28
+69497,Star Light Energy Center,NM,0,2026,100.0,storage,2026-10-28
+69497,Star Light Energy Center,NM,1,2026,100.0,solar,2026-10-28
+69517,Buena Vista Energy Center III,NM,0,2026,100.0,storage,2026-10-28
+69517,Buena Vista Energy Center III,NM,1,2026,100.0,solar,2026-10-28
+69549,Dry Lake East Energy Center,NV,0,2026,200.0,solar,2026-10-28
+70408,Willow Creek Energy Storage,OK,0,2026,200.0,storage,2026-10-28
+70513,Delta Bobcat Solar,MO,0,2026,200.0,solar,2026-10-28
+69392,Barton Branch IA,TX,0,2027,200.0,storage,2026-10-28
+64744,Turkey Creek Solar Project,CO,0,2027,200.0,solar,2026-10-28
+67249,Rock Rose Energy Storage,TX,0,2027,200.0,storage,2026-10-28
+68568,SR Tullahoma,TN,0,2027,200.0,solar,2026-10-28
+69059,Crimson Orchard Solar and BESS,ID,0,2027,100.0,storage,2026-10-28
+69059,Crimson Orchard Solar and BESS,ID,1,2027,100.0,solar,2026-10-28
+69723,Taft BESS,MA,0,2027,200.0,storage,2026-10-28
+66852,Hillsboro Solar 3,AL,0,2027,200.0,solar,2026-10-28
+65964,"Ursa Solar, LLC",WI,0,2027,200.0,solar,2026-10-28
+69169,"Freshwater Solar, LLC",MI,0,2027,200.0,solar,2026-10-28
+70400,Bee Branch IA,TX,0,2027,200.0,storage,2026-10-28
+63784,Palomino Solar,OH,0,2027,200.0,solar,2026-10-28
+68348,Alamo City ESS,TX,0,2027,200.0,storage,2026-10-28
+68909,Imperial Sun Solar,CA,0,2027,100.0,storage,2026-10-28
+68909,Imperial Sun Solar,CA,1,2027,100.0,solar,2026-10-28
+68911,Flint,OH,0,2027,200.0,storage,2026-10-28
+69966,"Four Mile Mesa Solar, LLC",NM,0,2027,100.0,solar,2026-10-28
+69966,"Four Mile Mesa Solar, LLC",NM,1,2027,100.0,storage,2026-10-28
+68906,Pine Forest Solar I,TX,0,2027,200.0,storage,2026-10-28
+67768,Cumbia Energy Center,TX,0,2027,200.0,storage,2026-10-28
+66904,"Lumberton PV I, LLC",TX,0,2027,200.0,solar,2026-10-28
+67354,Waco Solar II,TX,0,2027,200.0,solar,2026-10-28
+67652,Bhalu,TX,0,2027,200.0,storage,2026-10-28
+68299,Tualatin Battery Energy Storage System,OR,0,2027,200.0,storage,2026-10-28
+69199,"ATLAS Solar XI, LLC",AZ,0,2027,200.0,solar,2026-10-28
+69982,Diamondback Solar,TX,0,2027,200.0,solar,2026-10-28
+70297,Blackwater Solar Center - NM,NM,0,2027,200.0,solar,2026-10-28
+70341,"Thunder Wolf II, LLC",CO,0,2027,200.0,solar,2026-10-28
+66858,Spring Valley Solar 2,AL,0,2028,200.0,solar,2026-10-28
+67945,Juniper Creek Storage,CA,0,2028,200.0,storage,2026-10-28
+70257,"Hawkeye Solar, LLC",IA,0,2028,200.0,solar,2026-10-28
+68490,Broadleaf Solar,CT,0,2028,200.0,solar,2026-10-28
+68032,Skylight Renewable Energy,CA,0,2028,100.0,solar,2026-10-28
+68032,Skylight Renewable Energy,CA,1,2028,100.0,storage,2026-10-28
+68347,Abeja Solar Farm,TX,0,2028,200.0,solar,2026-10-28
+68362,Sun Angel ESS,TX,0,2028,200.0,storage,2026-10-28
+69762,Southern Bighorn Solar 2,NV,0,2028,100.0,solar,2026-10-28
+69762,Southern Bighorn Solar 2,NV,1,2028,100.0,storage,2026-10-28
+69470,Silver Creek Solar Park,MI,0,2028,200.0,solar,2026-10-28
+69776,Deckerville Solar Park,MI,0,2028,200.0,solar,2026-10-28
+61687,Plum Creek,MN,0,2028,200.0,wind,2026-10-28
+68282,Centralia Battery Energy Storage System,WA,0,2028,200.0,storage,2026-10-28
+69657,New Salem Wind I,ND,0,2028,200.0,wind,2026-10-28
+69990,Bogalusa West Solar Station,LA,0,2028,200.0,solar,2026-10-28
+68090,Willow Beach Wind,TX,0,2029,200.0,wind,2026-10-28
+67655,Elk Run,CO,0,2029,200.0,solar,2026-10-28
+68292,Gage Solar,KY,0,2029,200.0,solar,2026-10-28
+70138,Crawfish Creek Energy Storage,AL,0,2029,200.0,storage,2026-10-28
+68349,Avant Prairie ESS,TX,0,2029,200.0,storage,2026-10-28
+68350,Bravo ESS,TX,0,2029,200.0,storage,2026-10-28
+68360,Prost ESS,TX,0,2029,200.0,storage,2026-10-28
+68363,SunShiner ESS,TX,0,2029,200.0,storage,2026-10-28
+68364,Tex-Bar ESS,TX,0,2029,200.0,storage,2026-10-28
+68343,Grand Valley Solar Generation and BESS,CO,0,2029,100.0,solar,2026-10-28
+68343,Grand Valley Solar Generation and BESS,CO,1,2029,100.0,storage,2026-10-28
+68368,Mayfield Solar and Storage,KY,0,2029,200.0,solar,2026-10-28
+64904,Elliot Solar LLC,IN,0,2029,200.0,solar,2026-10-28
+68084,Morrow Lake BESS,TX,0,2029,200.0,storage,2026-10-28
+68288,Flag Run Solar,IN,0,2029,200.0,solar,2026-10-28
+68290,Dyers Spring Solar,KY,0,2029,200.0,solar,2026-10-28
+68843,Tupper Lake Wind,MI,0,2029,200.0,wind,2026-10-28
+69633,Lion Solar,AR,0,2029,200.0,solar,2026-10-28
+58652,La Paz Solar Tower,AZ,0,2030,200.0,solar,2026-10-28
+69637,Oakley BESS,TX,0,2030,200.0,storage,2026-10-28
+69641,Metro BESS,TX,0,2030,200.0,storage,2026-10-28
+70136,Morel Energy Storage,CO,0,2030,200.0,storage,2026-10-28
+68361,Rush ESS,TX,0,2031,200.0,storage,2026-10-28
+58835,Elk Station,TX,0,2027,199.8,gas,2026-10-28
+68767,Greenalia Solar Power Blackwelder Ranch,TX,0,2030,199.7,solar,2026-10-28
+69946,Spindle BESS,CO,0,2026,199.0,storage,2026-10-28
+68510,Ritter Solar,OH,0,2027,199.0,solar,2026-10-28
+69780,Oystercatcher Solar,TX,0,2027,197.0,solar,2026-10-28
+70259,Cunningham Solar II,NM,0,2027,196.0,solar,2026-10-28
+67798,Steelhead Energy Storage,TX,0,2027,193.7,storage,2026-10-28
+67233,Lawrence County Solar,AL,0,2027,193.0,solar,2026-10-28
+66673,"Accalia Point Solar, LLC",TX,0,2028,190.5,solar,2026-10-28
+70450,Wheatridge Optimization II,OR,0,2027,60.0,storage,2026-10-28
+70450,Wheatridge Optimization II,OR,1,2027,130.0,solar,2026-10-28
+68029,Penton Solar Plant,MS,0,2028,190.0,solar,2026-10-28
+59047,"Gallegos Wind Farm, Phase 1",NM,0,2028,190.0,wind,2026-10-28
+64658,"AEUG Fleming Solar, LLC",KY,0,2028,188.5,solar,2026-10-28
+68411,Noor Solar,TX,0,2028,188.2,solar,2026-10-28
+67555,Zephyr Storage,TX,0,2028,185.6,storage,2026-10-28
+67556,Serrano BESS,TX,0,2028,185.6,storage,2026-10-28
+65935,Vermillion Rise Solar,IN,0,2027,185.0,solar,2026-10-28
+69467,Peatville Solar Park,MI,0,2028,185.0,solar,2026-10-28
+68319,Nimbus Wind Farm,AR,0,2026,183.0,wind,2026-10-28
+69579,"Honey Mesquite Wind, LLC",TX,0,2026,180.5,wind,2026-10-28
+67559,Dunlay Solar,TX,0,2030,180.4,solar,2026-10-28
+69151,Arroyo Storage,TX,0,2026,180.0,storage,2026-10-28
+69245,Nightfall Solar,TX,0,2026,180.0,solar,2026-10-28
+67173,Hoosier Line Solar,IN,0,2027,180.0,solar,2026-10-28
+70183,Flatland Solar,TX,0,2027,180.0,solar,2026-10-28
+62846,Water Valley Wind Energy,TX,0,2027,180.0,wind,2026-10-28
+63096,Horseshoe Solar Energy,NY,0,2028,180.0,solar,2026-10-28
+68814,Brazos River BESS LLC,TX,0,2028,180.0,storage,2026-10-28
+66238,Sculpin Solar,IN,0,2028,180.0,solar,2026-10-28
+65975,Starr Solar Ranch,TX,0,2031,180.0,storage,2026-10-28
+68413,Old Town Wind,IL,0,2029,178.0,wind,2026-10-28
+68172,Myers Solar and Storage,TX,0,2028,75.7,storage,2026-10-28
+68172,Myers Solar and Storage,TX,1,2028,100.9,solar,2026-10-28
+68176,Willis Storage,TX,0,2027,176.1,storage,2026-10-28
+68165,Brotherton Storage,TX,0,2027,176.1,storage,2026-10-28
+68171,Mcmurtre Storage,TX,0,2027,176.1,storage,2026-10-28
+68178,Yooperlite Storage,TX,0,2027,175.7,storage,2026-10-28
+70405,"Winchester Solar I, LLC",AZ,0,2027,87.8,storage,2026-10-28
+70405,"Winchester Solar I, LLC",AZ,1,2027,87.8,solar,2026-10-28
+70406,"Winchester Solar II, LLC",AZ,0,2027,87.8,storage,2026-10-28
+70406,"Winchester Solar II, LLC",AZ,1,2027,87.8,solar,2026-10-28
+64349,Armadillo Solar Center,TX,0,2027,175.0,solar,2026-10-28
+65425,Kingwood Solar,OH,0,2027,175.0,solar,2026-10-28
+70420,Wheatridge Optimization I,OR,0,2027,65.0,storage,2026-10-28
+70420,Wheatridge Optimization I,OR,1,2027,110.0,solar,2026-10-28
+69984,Hackberry Creek Solar,TX,0,2028,175.0,solar,2026-10-28
+68459,"Bob Creek Wind, LLC",TX,0,2028,175.0,wind,2026-10-28
+69462,Au Gres Solar Park,MI,0,2028,175.0,solar,2026-10-28
+69795,Keamuku,HI,0,2030,86.0,storage,2026-10-28
+69795,Keamuku,HI,1,2030,86.0,solar,2026-10-28
+69110,Coneflower Storage Project LLC,TX,0,2028,170.9,storage,2026-10-28
+66397,Tokio Solar,TX,0,2028,170.4,solar,2026-10-28
+67222,Yellow Viking Solar,TX,0,2027,170.0,solar,2026-10-28
+68082,Bluebonnet Prairie Wind,TX,0,2027,170.0,wind,2026-10-28
+68366,AGATE BESS,WA,0,2029,170.0,storage,2026-10-28
+69991,Segno Solar Station,TX,0,2029,170.0,solar,2026-10-28
+68769,Greenalia Solar Power Misae III,TX,0,2027,169.6,solar,2026-10-28
+68397,Ironwood Solar,AZ,0,2026,168.0,solar,2026-10-28
+67884,Two Oaks Solar and Storage LLC,VA,0,2027,50.0,storage,2026-10-28
+67884,Two Oaks Solar and Storage LLC,VA,1,2029,118.0,solar,2026-10-28
+67782,RedSun PV and BESS,TX,0,2028,84.0,storage,2026-10-28
+67782,RedSun PV and BESS,TX,1,2028,84.0,solar,2026-10-28
+69722,Salt Cod BESS,MA,0,2028,168.0,storage,2026-10-28
+66976,"Carol Wind, LLC",TX,0,2027,167.8,wind,2026-10-28
+69148,Allen 2 BESS,NC,0,2027,167.0,storage,2026-10-28
+66312,Courthouse Solar,VA,0,2030,167.0,solar,2026-10-28
+70559,Mammoth,WV,0,2028,86.0,solar,2026-10-28
+70559,Mammoth,WV,1,2029,70.0,storage,2026-10-28
+70559,Mammoth,WV,2,2029,10.0,storage,2026-10-28
+70441,Palo Duro Energy Storage II,TX,0,2029,165.7,storage,2026-10-28
+66341,Eagle Springs Hybrid,TX,0,2026,55.1,storage,2026-10-28
+66341,Eagle Springs Hybrid,TX,1,2026,110.1,solar,2026-10-28
+67936,Goshen Solar,WY,0,2030,163.0,solar,2026-10-28
+63342,McCrae Wind Energy II,TX,0,2026,162.1,wind,2026-10-28
+68993,MPG Solar,PA,0,2028,162.0,solar,2026-10-28
+64428,JVR Energy Park LLC,CA,0,2027,90.0,solar,2026-10-28
+64428,JVR Energy Park LLC,CA,1,2027,70.0,storage,2026-10-28
+68559,SR Magnolia,MS,0,2027,160.0,solar,2026-10-28
+69582,"Chester Solar Technology Park, LLC",VA,0,2027,160.0,solar,2026-10-28
+70256,"Dry Creek Energy Storage, LLC",CA,0,2027,160.0,storage,2026-10-28
+68584,Yellow Barn Solar,NY,0,2028,160.0,solar,2026-10-28
+67653,Carriger,WA,0,2028,160.0,solar,2026-10-28
+69638,Landshark Energy Generation Facility,MS,0,2030,160.0,solar,2026-10-28
+69524,Windy Lane Energy Center,NM,0,2026,68.0,storage,2026-10-28
+69524,Windy Lane Energy Center,NM,1,2026,90.0,solar,2026-10-28
+67774,Pecan BESS,TX,0,2028,157.1,storage,2026-10-28
+68673,Sand Luis West,CA,0,2028,125.0,solar,2026-10-28
+68673,Sand Luis West,CA,1,2028,31.3,storage,2026-10-28
+68667,Chimney Rock BESS,TX,0,2028,156.0,storage,2026-10-28
+70584,SOSA Energy Center,TX,0,2027,155.8,storage,2026-10-28
+65900,"Springwater Solar, LLC",OH,0,2027,155.0,solar,2026-10-28
+70022,Decoy Solar Energy LLC,AR,0,2027,155.0,solar,2026-10-28
+67078,Quarter Ranch Solar,TX,0,2028,154.1,solar,2026-10-28
+69945,Watertown Solar,MI,0,2027,154.0,solar,2026-10-28
+59971,Easter,TX,0,2027,152.0,wind,2026-10-28
+63584,NY2 Battery,NY,0,2028,151.5,storage,2026-10-28
+66894,"Albatross Solar, LLC",TX,0,2027,50.4,storage,2026-10-28
+66894,"Albatross Solar, LLC",TX,1,2027,101.0,solar,2026-10-28
+69351,Honeycomb Solar and Storage,TX,0,2026,76.5,storage,2026-10-28
+69351,Honeycomb Solar and Storage,TX,1,2026,74.8,solar,2026-10-28
+66905,Ables Springs Solar & Storage,TX,0,2026,151.0,solar,2026-10-28
+68478,Darkwood Solar,TX,0,2027,150.7,solar,2026-10-28
+68866,Santa Teresa Solar,NM,0,2026,150.0,storage,2026-10-28
+69540,Rock Creek Solar,IA,0,2026,150.0,solar,2026-10-28
+66960,Blackford Solar,IN,0,2026,150.0,solar,2026-10-28
+67964,Agave,AZ,0,2026,150.0,storage,2026-10-28
+69874,"Bee Hollow Solar, LLC",IL,0,2026,150.0,solar,2026-10-28
+65043,Dulles Solar and Storage,VA,0,2026,100.0,solar,2026-10-28
+65043,Dulles Solar and Storage,VA,1,2026,50.0,storage,2026-10-28
+67347,Osagrove Flats Wind,IL,0,2026,150.0,wind,2026-10-28
+67755,Little Trout Solar,MI,0,2026,150.0,solar,2026-10-28
+69277,Gunnar Reliability Project,TX,0,2026,150.0,storage,2026-10-28
+69605,Tennyson Solar,TX,0,2026,150.0,solar,2026-10-28
+67995,Piney Woods Solar,TX,0,2027,150.0,solar,2026-10-28
+68321,Atlas BESS IV LLC,AZ,0,2027,150.0,storage,2026-10-28
+69929,Weirs Creek,KY,0,2027,150.0,solar,2026-10-28
+70377,Boxcar Energy Storage,TX,0,2027,150.0,storage,2026-10-28
+66671,"Conez Solar, LLC",GA,0,2027,150.0,solar,2026-10-28
+67676,Zeta Solar & Storage,CA,0,2027,75.0,solar,2026-10-28
+67676,Zeta Solar & Storage,CA,1,2027,75.0,storage,2026-10-28
+67231,"Hinds Solar, LLC",MS,0,2027,150.0,solar,2026-10-28
+66672,"Stark Solar, LLC",OH,0,2027,150.0,solar,2026-10-28
+68901,Cedar Range Solar,TX,0,2027,150.0,solar,2026-10-28
+69660,El Patrimonio,TX,0,2027,150.0,solar,2026-10-28
+69974,Corazon Energy Storage,NM,0,2027,150.0,storage,2026-10-28
+60272,"Cone Renewable Energy Project, LLC",TX,0,2027,150.0,wind,2026-10-28
+70195,Mammoth Plains Energy Storage,OK,0,2027,150.0,storage,2026-10-28
+70199,Palo Duro Energy Storage,TX,0,2027,150.0,storage,2026-10-28
+66558,Mowata Solar,LA,0,2027,150.0,solar,2026-10-28
+67358,Lake Whitney Solar,TX,0,2027,150.0,solar,2026-10-28
+67874,Parks Valley Energy LLC,WV,0,2027,150.0,storage,2026-10-28
+69972,South Platte Solar,CO,0,2027,150.0,solar,2026-10-28
+70544,Greer Energy Storage,MS,0,2027,150.0,storage,2026-10-28
+65665,Hecate Energy Pulaski 1,VA,0,2028,150.0,solar,2026-10-28
+68480,Laurens Solar,GA,0,2028,150.0,solar,2026-10-28
+66132,Trinity River Solar 1,TX,0,2028,150.0,solar,2026-10-28
+68061,Gemstone Solar LLC,MI,0,2028,150.0,solar,2026-10-28
+69577,"Superior Solar Project, LLC",MI,0,2028,150.0,solar,2026-10-28
+70055,Allen Acres Solar,IL,0,2029,150.0,solar,2026-10-28
+68333,Crossroads Solar - GA,GA,0,2029,150.0,solar,2026-10-28
+68105,SR Jasper,MS,0,2029,150.0,solar,2026-10-28
+67352,"CPV County Line Solar, LLC",VA,0,2030,150.0,solar,2026-10-28
+70236,Sierra Luna Energy Storage,AZ,0,2030,150.0,storage,2026-10-28
+62184,Big Fork Solar,SC,0,2027,74.9,storage,2026-10-28
+62184,Big Fork Solar,SC,1,2028,74.9,solar,2026-10-28
+70340,"Carousel Energy Storage, LLC",CO,0,2027,149.6,storage,2026-10-28
+68194,Riverstone Solar,VA,0,2027,149.5,solar,2026-10-28
+68900,Badger State Solar LLC,WI,0,2027,149.0,solar,2026-10-28
+67773,Cosper Solar,TX,0,2027,148.2,solar,2026-10-28
+7903,McCartney,MO,0,2027,48.9,gas,2026-10-28
+7903,McCartney,MO,1,2027,48.9,gas,2026-10-28
+7903,McCartney,MO,2,2027,48.9,gas,2026-10-28
+67567,Wensowitch Solar Park,TX,0,2028,145.6,solar,2026-10-28
+69102,Toronto Power Plant,SD,0,2029,36.3,gas,2026-10-28
+69102,Toronto Power Plant,SD,1,2029,36.3,gas,2026-10-28
+69102,Toronto Power Plant,SD,2,2029,36.3,gas,2026-10-28
+69102,Toronto Power Plant,SD,3,2029,36.3,gas,2026-10-28
+69464,Cedar Field Solar Park,MI,0,2027,145.0,solar,2026-10-28
+68665,Summerhill BESS,TX,0,2028,143.0,storage,2026-10-28
+67784,Vial BESS,TX,0,2027,141.4,storage,2026-10-28
+69993,Votaw Solar Station,TX,0,2029,141.0,solar,2026-10-28
+67999,Spring Creek Agri-Energy Center,MI,0,2026,140.0,solar,2026-10-28
+69878,Emmons-Logan Energy Storage,ND,0,2026,140.0,storage,2026-10-28
+69648,Rosamond South II,CA,0,2027,48.0,storage,2026-10-28
+69648,Rosamond South II,CA,1,2027,92.0,storage,2026-10-28
+70455,City Breeze Energy Storage,TX,0,2027,140.0,storage,2026-10-28
+66703,Austin Creek Solar,IL,0,2027,140.0,solar,2026-10-28
+64857,Canyonland Solar,CO,0,2027,140.0,solar,2026-10-28
+69482,Bluebird Solar,WA,0,2027,140.0,solar,2026-10-28
+64849,Wildcat Solar Power Plant LLC,NM,0,2028,50.0,storage,2026-10-28
+64849,Wildcat Solar Power Plant LLC,NM,1,2028,90.0,solar,2026-10-28
+67661,Oxbow Hill,NY,0,2029,140.0,solar,2026-10-28
+68766,Pioneer Field Wind Power,TX,0,2030,136.2,wind,2026-10-28
+70098,Blue Lake BESS,MN,0,2027,135.5,storage,2026-10-28
+66409,Hecate Grid Gwent Storage 1,CA,0,2028,135.0,storage,2026-10-28
+68666,Stonewall BESS,TX,0,2029,135.0,storage,2026-10-28
+70109,Jasmine,CA,0,2027,64.4,storage,2026-10-28
+70109,Jasmine,CA,1,2027,70.0,solar,2026-10-28
+64981,Pecan Prairie South Solar,TX,0,2027,132.9,solar,2026-10-28
+69101,Millers Branch Solar,TX,0,2026,132.0,solar,2026-10-28
+68252,SR Quincy Valley,WA,0,2026,130.0,solar,2026-10-28
+64216,Rockmont Solar and Storage Project,NM,0,2027,100.0,solar,2026-10-28
+64216,Rockmont Solar and Storage Project,NM,1,2027,30.0,storage,2026-10-28
+69965,Roccasecca BESS LLC,NV,0,2027,126.5,storage,2026-10-28
+68191,Heritage Wind,NY,0,2028,126.0,wind,2026-10-28
+62263,Saddle Mountain East Wind Farm,WA,0,2029,126.0,wind,2026-10-28
+68166,Dolomite Storage,TX,0,2028,125.7,storage,2026-10-28
+1355,E W Brown,KY,0,2027,125.0,storage,2026-10-28
+66663,Empire Solar (NY),NY,0,2027,125.0,solar,2026-10-28
+67937,Flora Solar,IL,0,2027,125.0,solar,2026-10-28
+65590,Octans,TX,0,2028,125.0,storage,2026-10-28
+68671,Houston County BESS,TX,0,2029,125.0,storage,2026-10-28
+67666,Sundance (CO),CO,0,2026,50.0,storage,2026-10-28
+67666,Sundance (CO),CO,1,2026,74.9,solar,2026-10-28
+68925,Midway BESS,CA,0,2027,124.6,storage,2026-10-28
+69626,FRP Miller Solar,FL,0,2026,50.0,storage,2026-10-28
+69626,FRP Miller Solar,FL,1,2026,74.5,solar,2026-10-28
+68765,Hutcherson Solar,TX,0,2030,123.3,solar,2026-10-28
+68155,Rio Lago Solar,TX,0,2026,123.0,solar,2026-10-28
+69890,Marshall Energy Center,MO,0,2026,23.1,gas,2026-10-28
+69890,Marshall Energy Center,MO,1,2026,23.1,gas,2026-10-28
+69890,Marshall Energy Center,MO,2,2028,38.0,gas,2026-10-28
+69890,Marshall Energy Center,MO,3,2028,38.0,gas,2026-10-28
+69760,Rock Island Generation Project,TX,0,2027,20.3,gas,2026-10-28
+69760,Rock Island Generation Project,TX,1,2027,20.3,gas,2026-10-28
+69760,Rock Island Generation Project,TX,2,2027,20.3,gas,2026-10-28
+69760,Rock Island Generation Project,TX,3,2027,20.3,gas,2026-10-28
+69760,Rock Island Generation Project,TX,4,2027,20.3,gas,2026-10-28
+69760,Rock Island Generation Project,TX,5,2027,20.3,gas,2026-10-28
+69167,Backbone Creek BESS,TX,0,2026,121.0,storage,2026-10-28
+66778,Hart Solar Project,MI,0,2026,120.0,solar,2026-10-28
+68968,Border Basin Solar,OH,0,2026,120.0,solar,2026-10-28
+67870,Clermont Solar,PA,0,2026,120.0,solar,2026-10-28
+68898,Eagle Creek Solar Park LLC,MI,0,2027,120.0,solar,2026-10-28
+68359,Pepper Solar Farm,TX,0,2027,120.0,solar,2026-10-28
+68293,Frontier Solar,KY,0,2027,120.0,solar,2026-10-28
+68877,Wildcat Ranch Energy Storage,TX,0,2027,120.0,storage,2026-10-28
+57703,Cheyenne Prairie Generating Station,WY,0,2028,40.0,gas,2026-10-28
+57703,Cheyenne Prairie Generating Station,WY,1,2028,40.0,gas,2026-10-28
+57703,Cheyenne Prairie Generating Station,WY,2,2028,40.0,gas,2026-10-28
+65051,Tracy Solar Energy Center,NY,0,2027,119.0,solar,2026-10-28
+70547,Rippon Energy Facility,WV,0,2028,117.1,solar,2026-10-28
+65823,Parowan Solar,UT,0,2028,58.0,storage,2026-10-28
+65823,Parowan Solar,UT,1,2028,58.0,solar,2026-10-28
+66675,"Alfred Oaks Solar, LLC",NY,0,2029,115.2,solar,2026-10-28
+68086,South Branch Solar,OH,0,2027,115.0,solar,2026-10-28
+68553,SR Bacon II,GA,0,2027,115.0,solar,2026-10-28
+6249,Winyah,SC,0,2027,57.0,oil,2026-10-28
+6249,Winyah,SC,1,2027,57.0,oil,2026-10-28
+64543,Cedar Creek Solar,DE,0,2028,114.0,solar,2026-10-28
+67779,Hayrick BESS,TX,0,2028,113.9,storage,2026-10-28
+65977,Boulder Flats Solar,NV,0,2028,113.0,solar,2026-10-28
+389,El Centro Hybrid,CA,0,2029,18.8,gas,2026-10-28
+389,El Centro Hybrid,CA,1,2029,18.8,gas,2026-10-28
+389,El Centro Hybrid,CA,2,2029,18.8,gas,2026-10-28
+389,El Centro Hybrid,CA,3,2029,18.8,gas,2026-10-28
+389,El Centro Hybrid,CA,4,2029,18.8,gas,2026-10-28
+389,El Centro Hybrid,CA,5,2029,18.8,gas,2026-10-28
+66363,"Black Walnut Solar, LLC",NC,0,2027,80.0,solar,2026-10-28
+66363,"Black Walnut Solar, LLC",NC,1,2028,32.0,storage,2026-10-28
+66385,"Panther Branch Solar, LLC",NC,0,2028,80.0,solar,2026-10-28
+66385,"Panther Branch Solar, LLC",NC,1,2029,32.0,storage,2026-10-28
+68871,Timber Mill Solar,NC,0,2028,32.0,storage,2026-10-28
+68871,Timber Mill Solar,NC,1,2028,80.0,solar,2026-10-28
+68768,Blackwelder Ranch Wind,TX,0,2030,110.4,wind,2026-10-28
+70463,"Westminster Reliability Project, LLC",CA,0,2026,110.0,storage,2026-10-28
+68099,SR Copeland,TN,0,2027,110.0,solar,2026-10-28
+68486,Sienna 2 Solar and Storage Project,CA,0,2029,55.0,solar,2026-10-28
+68486,Sienna 2 Solar and Storage Project,CA,1,2029,55.0,storage,2026-10-28
+69481,Foxtrot Solar Energy LLC,MO,0,2027,108.9,solar,2026-10-28
+65338,Union Ridge Solar,OH,0,2026,108.0,solar,2026-10-28
+68043,Robeson Solar I,NC,0,2028,80.0,solar,2026-10-28
+68043,Robeson Solar I,NC,1,2028,28.0,storage,2026-10-28
+68563,SR Norwood,GA,0,2027,107.0,solar,2026-10-28
+67564,Reis Solar Park,TX,0,2029,105.5,solar,2026-10-28
+7887,Terry Bundy Generating Station,NE,0,2029,52.0,gas,2026-10-28
+7887,Terry Bundy Generating Station,NE,1,2029,52.0,gas,2026-10-28
+67346,Hoffman Falls Wind 2,NY,0,2029,103.5,wind,2026-10-28
+68428,Gatsby Energy Storage Project,TX,0,2027,103.4,storage,2026-10-28
+68284,Puuloa Energy,HI,0,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,1,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,2,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,3,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,4,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,5,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,6,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,7,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,8,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,9,2029,9.4,other,2026-10-28
+68284,Puuloa Energy,HI,10,2029,9.4,other,2026-10-28
+62894,High Bridge Wind Project,NY,0,2027,103.2,wind,2026-10-28
+68334,Evans Creek Energy Storage Project,TX,0,2026,103.0,storage,2026-10-28
+65326,Sunset Solar,OR,0,2028,103.0,solar,2026-10-28
+66396,Naduah Solar,TX,0,2027,102.3,solar,2026-10-28
+70531,Newman Buffer,TX,0,2027,102.2,solar,2026-10-28
+69969,Panhandle Solar,OK,0,2026,102.0,solar,2026-10-28
+67919,"Dolce BESS, LLC",TX,0,2028,101.4,storage,2026-10-28
+70443,Mammoth Plains Energy Storage II,OK,0,2029,101.2,storage,2026-10-28
+66958,Northern Prairie 1,WI,0,2028,101.0,solar,2026-10-28
+67778,Findley PV and BESS,TX,0,2028,50.3,storage,2026-10-28
+67778,Findley PV and BESS,TX,1,2028,50.3,solar,2026-10-28
+68014,Bradford Solar PA,PA,0,2027,100.5,solar,2026-10-28
+68851,Hermes Solar PV,TX,0,2026,100.4,solar,2026-10-28
+68852,Hermes Storage BESS,TX,0,2026,100.4,storage,2026-10-28
+68149,Raven Storage,TX,0,2026,100.0,storage,2026-10-28
+69156,Duff Solar Park,IN,0,2026,100.0,solar,2026-10-28
+69054,ATLAS II,AZ,0,2026,100.0,solar,2026-10-28
+63386,"Three Rivers Solar Power, LLC",ME,0,2026,100.0,solar,2026-10-28
+69027,"Stoneridge Solar, LLC",TX,0,2026,100.0,storage,2026-10-28
+69586,"Great Plains Solar, LLC",IL,0,2026,100.0,solar,2026-10-28
+69594,"Switchgrass Plains Solar, LLC",IL,0,2026,100.0,solar,2026-10-28
+69809,Northern Divide Energy Storage,ND,0,2026,100.0,storage,2026-10-28
+70188,Weld Energy Storage,CO,0,2026,100.0,storage,2026-10-28
+68426,Voyager Energy Storage,MI,0,2027,100.0,storage,2026-10-28
+69393,Pamela Heights I Energy Center,TX,0,2027,100.0,storage,2026-10-28
+66441,Crossvine Solar,IN,0,2027,100.0,solar,2026-10-28
+66658,Nottingham Solar,OH,0,2027,100.0,solar,2026-10-28
+69356,Powerline Energy Storage,FL,0,2027,100.0,storage,2026-10-28
+70403,Grand Basin Energy Storage,MI,0,2027,100.0,storage,2026-10-28
+70033,White Tank Energy Storage,AZ,0,2027,100.0,storage,2026-10-28
+68897,New Frontiers Solar,KY,0,2027,100.0,solar,2026-10-28
+68473,Brookside Solar,NY,0,2027,100.0,solar,2026-10-28
+69687,Lucky 7 Solar Farm LLC,TX,0,2027,100.0,solar,2026-10-28
+67667,"Third Coast BESS, LLC",TX,0,2027,100.0,storage,2026-10-28
+65471,Rose Gold Solar,IN,0,2027,100.0,solar,2026-10-28
+66113,Big Elk Solar,NE,0,2027,100.0,solar,2026-10-28
+66216,Yaupon Solar Project (Hybrid),TX,0,2027,100.0,storage,2026-10-28
+68554,SR Bacon III,GA,0,2027,100.0,solar,2026-10-28
+68555,SR Cordova,SC,0,2027,100.0,solar,2026-10-28
+68903,Solex Ridge Solar,TX,0,2027,100.0,solar,2026-10-28
+68939,Coggon Solar LLC,IA,0,2027,100.0,solar,2026-10-28
+69170,"Freshwater Solar II, LLC",MI,0,2027,100.0,solar,2026-10-28
+67090,Flint Mine Solar,NY,0,2028,100.0,solar,2026-10-28
+70050,Drennan Energy Storage,CO,0,2028,100.0,storage,2026-10-28
+67983,Aurora Renewable Energy (Hybrid),CA,0,2028,50.0,storage,2026-10-28
+67983,Aurora Renewable Energy (Hybrid),CA,1,2028,50.0,solar,2026-10-28
+66922,Timber Cove Solar,TX,0,2028,100.0,solar,2026-10-28
+69973,Oso Negro,NM,0,2028,100.0,storage,2026-10-28
+68205,Greenwood Solar I,VA,0,2028,100.0,solar,2026-10-28
+64659,"AEUG Madison Solar, LLC",KY,0,2028,100.0,solar,2026-10-28
+64848,"Bedington Energy Facility, LLC",WV,0,2028,100.0,solar,2026-10-28
+69021,Rustic Hills Solar I,IN,0,2028,100.0,solar,2026-10-28
+69022,Rustic Hills Solar II LLC,IN,0,2028,100.0,solar,2026-10-28
+66114,Merrillville Solar,IN,0,2028,100.0,solar,2026-10-28
+68352,Girasol Solar Farm,MS,0,2028,100.0,solar,2026-10-28
+69608,Sinnissippi Solar Energy LLC,WI,0,2028,100.0,solar,2026-10-28
+69775,Strasburg Solar Park,MI,0,2028,100.0,solar,2026-10-28
+67896,Holstein 2 Battery Storage,TX,0,2029,100.0,storage,2026-10-28
+67325,Riverside Solar LLC,NY,0,2029,100.0,solar,2026-10-28
+67324,Somerset Solar LLC,NY,0,2029,100.0,solar,2026-10-28
+69636,Main Horn Solar,TX,0,2029,100.0,solar,2026-10-28
+69642,Arkana Solar,AR,0,2029,100.0,solar,2026-10-28
+69639,Triune Solar,TX,0,2030,100.0,solar,2026-10-28
+55478,Lange Generating Station,SD,0,2026,16.6,gas,2026-10-28
+55478,Lange Generating Station,SD,1,2026,16.6,gas,2026-10-28
+55478,Lange Generating Station,SD,2,2026,16.6,gas,2026-10-28
+55478,Lange Generating Station,SD,3,2026,16.6,gas,2026-10-28
+55478,Lange Generating Station,SD,4,2026,16.6,gas,2026-10-28
+55478,Lange Generating Station,SD,5,2026,16.6,gas,2026-10-28
+64531,Noosa Energy Storage LLC,CA,0,2026,99.0,storage,2026-10-28
+4050,Edgewater,WI,0,2027,99.0,storage,2026-10-28
+69981,"Grant Solar, LLC",SD,0,2027,99.0,solar,2026-10-28
+68228,Agricola Wind,NY,0,2029,99.0,wind,2026-10-28
+69742,Cooperative Solar Three-Marion,KY,0,2027,96.0,solar,2026-10-28
+65293,Covington (MS),MS,0,2028,96.0,solar,2026-10-28
+67568,Wittig Solar Park,TX,0,2029,96.0,solar,2026-10-28
+69629,Big Muddy Solar,IL,0,2026,95.0,solar,2026-10-28
+68073,Blue Ridge Solar,VA,0,2027,95.0,solar,2026-10-28
+68085,Red Maple LRE,IL,0,2028,95.0,solar,2026-10-28
+66484,"Glen Canyon Solar A, LLC",UT,0,2028,95.0,solar,2026-10-28
+68271,Sweetleaf Solar LLC,NC,0,2027,93.0,solar,2026-10-28
+67650,Bear Ridge,NY,0,2028,93.0,solar,2026-10-28
+67544,Leitrim Solar Park,TX,0,2030,91.2,solar,2026-10-28
+64253,Mohawk Solar,NY,0,2027,90.5,solar,2026-10-28
+68253,SR Rochelle I,GA,0,2026,90.0,solar,2026-10-28
+50736,Pure Hedge LLC,CT,0,2027,20.0,storage,2026-10-28
+50736,Pure Hedge LLC,CT,1,2027,70.0,solar,2026-10-28
+65052,Homer Solar Energy Center,NY,0,2027,90.0,solar,2026-10-28
+67561,Callan Solar,TX,0,2028,90.0,solar,2026-10-28
+68585,York Run Solar,NY,0,2028,90.0,solar,2026-10-28
+68672,Chalan,CA,0,2026,25.0,storage,2026-10-28
+68672,Chalan,CA,1,2026,64.9,solar,2026-10-28
+68068,Cape Generating Station,UT,0,2027,43.0,other,2026-10-28
+68068,Cape Generating Station,UT,1,2027,43.0,other,2026-10-28
+68226,SR Bacon,GA,0,2026,85.0,solar,2026-10-28
+70089,"Murch Solar, LLC",MI,0,2027,85.0,solar,2026-10-28
+69925,Stellar Wright BESS,CA,0,2026,84.8,storage,2026-10-28
+67566,Roscommon Solar Park,TX,0,2029,82.8,solar,2026-10-28
+68002,"Foley Solar, LLC",AL,0,2026,80.0,solar,2026-10-28
+69197,Halifax County Solar,NC,0,2026,80.0,solar,2026-10-28
+70235,Mulqueeney Wind Energy,CA,0,2026,80.0,wind,2026-10-28
+67998,Karn Solar Energy Center,MI,0,2026,80.0,solar,2026-10-28
+70084,Alligator Creek Solar,GA,0,2026,80.0,solar,2026-10-28
+70364,Walker Solar,PA,0,2026,80.0,solar,2026-10-28
+70302,"Gum Swamp Solar, LLC",NC,0,2027,80.0,solar,2026-10-28
+70035,"North Star Energy Storage, LLC",MN,0,2027,80.0,storage,2026-10-28
+69463,Beecher Solar Park,MI,0,2027,80.0,solar,2026-10-28
+67663,Scotch Grove Solar,NC,0,2027,80.0,solar,2026-10-28
+67665,South Davidson,NC,0,2027,80.0,solar,2026-10-28
+68057,Alabama Creek Solar,AL,0,2027,80.0,solar,2026-10-28
+70271,"Fiddle Leaf Solar, LLC",OK,0,2027,80.0,solar,2026-10-28
+70304,"Sleepy Creek Solar, LLC",NC,0,2027,80.0,solar,2026-10-28
+66383,Hyco Solar LLC,NC,0,2027,80.0,solar,2026-10-28
+67989,Drawhorn Solar,GA,0,2027,80.0,solar,2026-10-28
+68028,Delta Solar Plant,LA,0,2027,80.0,solar,2026-10-28
+68035,Syracuse and Tours Renewable Energy,CA,0,2027,40.0,storage,2026-10-28
+68035,Syracuse and Tours Renewable Energy,CA,1,2027,40.0,solar,2026-10-28
+63653,Sand Hill C,CA,0,2027,80.0,wind,2026-10-28
+67990,Bright Mountain Solar,KY,0,2027,80.0,solar,2026-10-28
+68104,SR Hope Hull,AL,0,2027,80.0,solar,2026-10-28
+65325,High Top Solar,WA,0,2029,80.0,solar,2026-10-28
+58175,Jawbone Wind Project,MT,0,2029,80.0,wind,2026-10-28
+68812,Stevens Mill Solar,NC,0,2030,80.0,solar,2026-10-28
+68249,SR Horus,KY,0,2027,79.7,solar,2026-10-28
+68969,Strinestown Solar,PA,0,2027,79.6,solar,2026-10-28
+66862,"KCE NY 29, LLC",NY,0,2030,79.0,storage,2026-10-28
+67563,Ratcliff Solar Park,TX,0,2029,78.8,solar,2026-10-28
+66315,Clover Creek Solar,VA,0,2027,77.2,solar,2026-10-28
+66398,Eytcheson Solar,TX,0,2028,76.4,solar,2026-10-28
+69823,Cabokenze Energy Storage,GA,0,2027,76.0,storage,2026-10-28
+70220,Robinson Solar Plant,SC,0,2027,76.0,solar,2026-10-28
+69869,Hannibal Energy Center,MO,0,2029,38.0,gas,2026-10-28
+69869,Hannibal Energy Center,MO,1,2029,38.0,gas,2026-10-28
+68453,KYMEA Energy Center I,KY,0,2027,18.8,gas,2026-10-28
+68453,KYMEA Energy Center I,KY,1,2027,18.8,gas,2026-10-28
+68453,KYMEA Energy Center I,KY,2,2027,18.8,gas,2026-10-28
+68453,KYMEA Energy Center I,KY,3,2027,18.8,gas,2026-10-28
+68578,AC Ranch I,NM,0,2027,75.0,solar,2026-10-28
+70023,Edgecombe Solar LLC,NC,0,2027,75.0,solar,2026-10-28
+68337,Lotus Solar,SC,0,2027,75.0,solar,2026-10-28
+68995,Dover Solar (PA),PA,0,2027,75.0,solar,2026-10-28
+66851,Fairview Solar (AR),AR,0,2027,75.0,solar,2026-10-28
+70545,Wildwood Energy Storage,MS,0,2027,75.0,storage,2026-10-28
+70454,Big Bend III Battery Storage,FL,0,2028,75.0,storage,2026-10-28
+70365,Bodkin BESS,TX,0,2028,75.0,storage,2026-10-28
+70366,Boot Hill Energy Storage,KS,0,2028,75.0,storage,2026-10-28
+61511,Burt County Wind,NE,0,2029,75.0,wind,2026-10-28
+68331,Caverns Solar,FL,0,2029,75.0,solar,2026-10-28
+67723,Kingstree West 115,SC,0,2026,74.9,solar,2026-10-28
+62181,B & K Solar,SC,0,2026,74.9,solar,2026-10-28
+70223,Turnpike Solar Plant,FL,0,2027,74.9,solar,2026-10-28
+62234,Juniper Solar,SC,0,2027,74.9,solar,2026-10-28
+70222,Lonesome Camp Solar Plant,FL,0,2027,74.9,solar,2026-10-28
+64345,Highland Solar North,FL,0,2027,74.9,solar,2026-10-28
+62221,Culpepper Solar,SC,0,2027,74.9,solar,2026-10-28
+62295,Rollins Solar,SC,0,2027,74.9,solar,2026-10-28
+62296,Ross Solar,SC,0,2027,74.9,solar,2026-10-28
+62188,Colleton Solar,SC,0,2028,74.9,solar,2026-10-28
+68075,Pineside Solar,VA,0,2030,74.9,solar,2026-10-28
+69474,Sweet Sue Solar,VA,0,2028,74.8,solar,2026-10-28
+69461,Keene Branch Solar,FL,0,2026,74.5,solar,2026-10-28
+68828,Tangelo,FL,0,2027,74.5,solar,2026-10-28
+68834,Hendry,FL,0,2027,74.5,solar,2026-10-28
+68824,Middle Lake,FL,0,2027,74.5,solar,2026-10-28
+68829,Ambersweet,FL,0,2027,74.5,solar,2026-10-28
+68832,County Line,FL,0,2027,74.5,solar,2026-10-28
+68830,Catfish,FL,0,2027,74.5,solar,2026-10-28
+68831,Cocoplum,FL,0,2027,74.5,solar,2026-10-28
+68833,Hardwood Hammock,FL,0,2027,74.5,solar,2026-10-28
+68836,Maple Trail,FL,0,2027,74.5,solar,2026-10-28
+68825,Pinecone,FL,0,2027,74.5,solar,2026-10-28
+68826,Saddle,FL,0,2027,74.5,solar,2026-10-28
+68827,Spanish Moss,FL,0,2027,74.5,solar,2026-10-28
+68835,Joshua Creek,FL,0,2027,74.5,solar,2026-10-28
+65708,Warren Meadow Solar Station,ME,0,2028,74.5,solar,2026-10-28
+62229,Holliday Solar I,SC,0,2028,74.0,solar,2026-10-28
+62309,Shining Sun Solar,SC,0,2028,74.0,solar,2026-10-28
+64167,Hornet Solar,NC,0,2026,73.0,solar,2026-10-28
+67195,Maple Leaf Solar,NC,0,2027,73.0,solar,2026-10-28
+62262,Rolling Upland Wind Farm LLC,NY,0,2029,71.4,wind,2026-10-28
+70221,Hudson Place Solar Plant,SC,0,2028,70.7,solar,2026-10-28
+68000,Blue Moon,KY,0,2026,70.0,solar,2026-10-28
+66787,Elevate Pier S,CA,0,2026,70.0,storage,2026-10-28
+69947,EDPR Scarlet III,CA,0,2026,70.0,storage,2026-10-28
+67560,Edens Solar,TX,0,2028,70.0,solar,2026-10-28
+66124,"Switchgrass Solar, LLC",VA,0,2028,70.0,solar,2026-10-28
+201,Thomas Fitzhugh,AR,0,2026,69.3,gas,2026-10-28
+68416,Crooked Trail Solar,ME,0,2029,68.0,solar,2026-10-28
+67379,Whitetail Wind Farm,WI,0,2027,67.2,wind,2026-10-28
+68175,Symank Solar,TX,0,2027,66.6,solar,2026-10-28
+68926,"Blue Jay Road Solar, LLC",MO,0,2026,66.0,solar,2026-10-28
+68556,SR Durhamville,TN,0,2027,66.0,solar,2026-10-28
+69631,Sunflower Sky Energy Center,KS,0,2027,65.0,solar,2026-10-28
+62280,Melsam Solar,SC,0,2028,65.0,solar,2026-10-28
+68074,Cerulean Solar,VA,0,2026,62.0,solar,2026-10-28
+67871,Gladys Solar LLC,VA,0,2027,60.4,solar,2026-10-28
+67781,Lampe Solar,TX,0,2027,60.2,solar,2026-10-28
+67562,Stonewall Solar,TX,0,2028,60.2,solar,2026-10-28
+66066,AES Waiawa Phase 2 Solar,HI,0,2026,30.0,storage,2026-10-28
+66066,AES Waiawa Phase 2 Solar,HI,1,2026,30.0,solar,2026-10-28
+68054,Sunnyside Solar Energy Center,WI,0,2026,40.0,storage,2026-10-28
+68054,Sunnyside Solar Energy Center,WI,1,2026,20.0,solar,2026-10-28
+66313,Moon Corner Solar,VA,0,2026,60.0,solar,2026-10-28
+68495,Bird Dog Energy Storage,TX,0,2026,60.0,storage,2026-10-28
+70261,Westside - (NM),NM,0,2027,16.0,gas,2026-10-28
+70261,Westside - (NM),NM,1,2028,24.0,gas,2026-10-28
+70261,Westside - (NM),NM,2,2028,20.0,gas,2026-10-28
+62310,Shorthorn Solar,SC,0,2027,60.0,solar,2026-10-28
+68810,Mora Solar,PA,0,2027,60.0,solar,2026-10-28
+63567,Westminister NC,NC,0,2028,60.0,solar,2026-10-28
+64767,Pigeon Run Solar Project,VA,0,2029,60.0,solar,2026-10-28
+64768,Zenith Solar,VA,0,2030,60.0,solar,2026-10-28
+68924,Iron BESS,CA,0,2027,59.5,storage,2026-10-28
+69541,Vaca BESS,CA,0,2027,59.5,storage,2026-10-28
+708,Hammond,GA,0,2026,57.5,storage,2026-10-28
+67785,Whistle Solar,TX,0,2028,56.3,solar,2026-10-28
+69119,New Hill 1 Battery,NC,0,2027,56.0,storage,2026-10-28
+67157,Powell Solar,OR,0,2027,55.9,solar,2026-10-28
+68561,SR Middleton,TN,0,2027,55.0,solar,2026-10-28
+66382,"Healing Springs Solar, LLC",NC,0,2027,55.0,solar,2026-10-28
+68923,Enterprise BESS,CA,0,2027,54.1,storage,2026-10-28
+69771,Clark Creek Solar Plant,NC,0,2028,14.0,storage,2026-10-28
+69771,Clark Creek Solar Plant,NC,1,2028,40.0,solar,2026-10-28
+70546,Jarratt Energy Facility,VA,0,2027,16.3,solar,2026-10-28
+70546,Jarratt Energy Facility,VA,1,2027,14.9,solar,2026-10-28
+70546,Jarratt Energy Facility,VA,2,2027,22.4,solar,2026-10-28
+69523,Mattaniah Solar,FL,0,2026,52.0,solar,2026-10-28
+68380,Isaac Solar,TX,0,2026,51.4,solar,2026-10-28
+69793,Henderson County Solar,KY,0,2027,51.1,solar,2026-10-28
+68970,Ho-Fel Solar,VA,0,2026,50.2,solar,2026-10-28
+68850,Gratiot Solar Park,MI,0,2026,50.0,solar,2026-10-28
+68929,"Ruby Solar, LLC",IL,0,2026,50.0,solar,2026-10-28
+68938,"Juliet Energy Project, LLC",OH,0,2026,50.0,solar,2026-10-28
+67215,Sun Ridge Solar,VA,0,2026,50.0,solar,2026-10-28
+68247,SR Georgetown,SC,0,2026,50.0,solar,2026-10-28
+68340,Solway Solar,MN,0,2026,50.0,solar,2026-10-28
+68953,Kifer BESS 1,CA,0,2026,50.0,storage,2026-10-28
+69548,FRP Forest Trail Solar,FL,0,2026,50.0,solar,2026-10-28
+70107,Mills Solar Project,IA,0,2026,50.0,solar,2026-10-28
+70345,Steele Flats Energy Storage,NE,0,2026,50.0,storage,2026-10-28
+68930,MC Solar,PA,0,2027,50.0,solar,2026-10-28
+69770,Ryan Storage,TX,0,2027,50.0,storage,2026-10-28
+69964,Baldy Mesa Storage,CA,0,2027,50.0,storage,2026-10-28
+63846,Raceway Solar,DE,0,2027,50.0,solar,2026-10-28
+69194,Maiden Creek Battery,NC,0,2027,50.0,storage,2026-10-28
+68564,SR Puryear,TN,0,2027,50.0,solar,2026-10-28
+67988,Sandersville Solar,GA,0,2027,50.0,solar,2026-10-28
+70197,Lorenzo Energy Storage,TX,0,2027,50.0,storage,2026-10-28
+56998,Pueblo Airport Generating Station,CO,0,2027,50.0,storage,2026-10-28
+65407,Beartooth Energy Storage LLC,MT,0,2027,50.0,storage,2026-10-28
+68562,SR Mount Pleasant,MS,0,2027,50.0,solar,2026-10-28
+68565,SR Rochelle II,GA,0,2027,50.0,solar,2026-10-28
+62190,Crossroads Solar,SC,0,2028,50.0,solar,2026-10-28
+62217,GEB Solar,SC,0,2028,50.0,solar,2026-10-28
+62299,Quest Solar,SC,0,2028,50.0,solar,2026-10-28
+65286,Caden Energix Piney River LLC,VA,0,2028,50.0,solar,2026-10-28
+68019,Richwood Solar and Storage,OH,0,2028,50.0,storage,2026-10-28
+68213,Panton,VT,0,2028,50.0,solar,2026-10-28
+69099,Orion - Helion,WA,0,2028,50.0,other,2026-10-28
+60670,CE&P Imperial Valley 1,CA,0,2029,50.0,other,2026-10-28
+65445,Ridgely Energy Farm,TN,0,2029,50.0,storage,2026-10-28
+67838,"KCE NY 30, LLC",NY,0,2030,50.0,storage,2026-10-28
+67839,"KCE NY 31, LLC",NY,0,2031,50.0,storage,2026-10-28
+56964,Bayonne Energy Center,NJ,0,2027,49.8,storage,2026-10-28
+62391,Overton Hydroelectric Project,LA,0,2028,8.1,hydro,2026-10-28
+62391,Overton Hydroelectric Project,LA,1,2028,8.1,hydro,2026-10-28
+62391,Overton Hydroelectric Project,LA,2,2028,8.1,hydro,2026-10-28
+62391,Overton Hydroelectric Project,LA,3,2028,8.1,hydro,2026-10-28
+62391,Overton Hydroelectric Project,LA,4,2028,8.1,hydro,2026-10-28
+62391,Overton Hydroelectric Project,LA,5,2028,8.1,hydro,2026-10-28
+68240,Solar Star 3,CA,0,2026,24.0,solar,2026-10-28
+68240,Solar Star 3,CA,1,2026,23.0,storage,2026-10-28
+68241,Solar Star 4,CA,0,2026,24.0,solar,2026-10-28
+68241,Solar Star 4,CA,1,2026,23.0,storage,2026-10-28
+64073,"Great Bear Solar, LLC",OH,0,2027,46.0,solar,2026-10-28
+69772,Bush River Solar Plant,SC,0,2028,45.0,solar,2026-10-28
+66879,"KCE CT 1, LLC",CT,0,2031,45.0,storage,2026-10-28
+67772,Braswell Solar,TX,0,2028,44.2,solar,2026-10-28
+70343,GPI WACO Power,TX,0,2027,43.4,gas,2026-10-28
+6211,Dynegy Oakland Power Plant,CA,0,2028,43.3,storage,2026-10-28
+66657,Steubenville Solar,OH,0,2028,43.0,solar,2026-10-28
+68229,SR Denmark,TN,0,2026,42.0,solar,2026-10-28
+64188,Shepherd's Run Solar,NY,0,2027,42.0,solar,2026-10-28
+69294,Oregon Trail Solar,OR,0,2027,41.0,solar,2026-10-28
+70225,Shutler Energy Storage,OR,0,2028,41.0,storage,2026-10-28
+69522,Brewster Solar,FL,0,2026,40.0,solar,2026-10-28
+70306,"Westfield Solar, LLC",NC,0,2026,40.0,solar,2026-10-28
+70092,"Two Blues Solar, LLC",IL,0,2027,40.0,solar,2026-10-28
+69539,Tracy BESS,CA,0,2027,40.0,storage,2026-10-28
+69978,Station Solar,IL,0,2027,40.0,solar,2026-10-28
+63806,"West River Solar, LLC",NC,0,2027,40.0,solar,2026-10-28
+69741,Cooperative Solar Two-Fayette,KY,0,2027,40.0,solar,2026-10-28
+69743,Kuihelani Phase 2,HI,0,2028,40.0,solar,2026-10-28
+67221,Foothills Solar (NY),NY,0,2030,40.0,solar,2026-10-28
+67966,New Jay PV & BESS,IN,0,2028,39.0,solar,2026-10-28
+70093,Wallace Solar - (TX),TX,0,2027,36.0,solar,2026-10-28
+61364,Hu Honua Bioenergy Facility,HI,0,2027,36.0,other,2026-10-28
+69977,Blue Branch Solar,IL,0,2027,35.9,solar,2026-10-28
+1167,Muscatine Plant #1,IA,0,2027,35.0,gas,2026-10-28
+67977,Quaker Creek Farm Solar,NC,0,2027,34.9,solar,2026-10-28
+64168,Bear Branch Solar,NC,0,2027,34.5,solar,2026-10-28
+66850,Beaver Creek Solar,PA,0,2027,34.2,solar,2026-10-28
+3338,Aberdeen CT,SD,0,2026,16.0,gas,2026-10-28
+3338,Aberdeen CT,SD,1,2026,16.0,gas,2026-10-28
+2161,James River Power Station,MO,0,2027,31.0,storage,2026-10-28
+60434,Baxter Creek Solar,NC,0,2026,30.0,solar,2026-10-28
+65930,Redbud Run Solar,VA,0,2028,30.0,solar,2026-10-28
+64171,Tygart Hydropower,WV,0,2029,10.0,hydro,2026-10-28
+64171,Tygart Hydropower,WV,1,2029,10.0,hydro,2026-10-28
+64171,Tygart Hydropower,WV,2,2029,10.0,hydro,2026-10-28
+65981,Second Division Solar,TX,0,2031,30.0,storage,2026-10-28
+69704,R.C. Byrd L&D Hydroelectric Project,WV,0,2029,4.8,hydro,2026-10-28
+69704,R.C. Byrd L&D Hydroelectric Project,WV,1,2029,4.8,hydro,2026-10-28
+69704,R.C. Byrd L&D Hydroelectric Project,WV,2,2029,4.8,hydro,2026-10-28
+69704,R.C. Byrd L&D Hydroelectric Project,WV,3,2029,4.8,hydro,2026-10-28
+69704,R.C. Byrd L&D Hydroelectric Project,WV,4,2029,4.8,hydro,2026-10-28
+69704,R.C. Byrd L&D Hydroelectric Project,WV,5,2029,4.8,hydro,2026-10-28
+60642,M&G Resins USA,TX,0,2028,14.3,other,2026-10-28
+60642,M&G Resins USA,TX,1,2028,14.3,other,2026-10-28
+70090,"Snapdragon Solar, LLC",IL,0,2026,28.0,solar,2026-10-28
+54224,Franklin Heating Station,MN,0,2027,7.5,gas,2026-10-28
+54224,Franklin Heating Station,MN,1,2027,3.4,oil,2026-10-28
+54224,Franklin Heating Station,MN,2,2027,3.4,oil,2026-10-28
+54224,Franklin Heating Station,MN,3,2027,3.4,oil,2026-10-28
+54224,Franklin Heating Station,MN,4,2027,3.4,oil,2026-10-28
+54224,Franklin Heating Station,MN,5,2027,3.4,oil,2026-10-28
+54224,Franklin Heating Station,MN,6,2028,3.1,oil,2026-10-28
+1239,Riverton,KS,0,2026,13.5,gas,2026-10-28
+1239,Riverton,KS,1,2026,13.5,gas,2026-10-28
+66618,Fish Lake Geothermal,NV,0,2027,3.3,other,2026-10-28
+66618,Fish Lake Geothermal,NV,1,2027,3.3,other,2026-10-28
+66618,Fish Lake Geothermal,NV,2,2027,4.7,other,2026-10-28
+66618,Fish Lake Geothermal,NV,3,2027,6.2,other,2026-10-28
+66618,Fish Lake Geothermal,NV,4,2027,9.0,other,2026-10-28
+59969,"Windhub Solar B, LLC",CA,0,2026,26.4,solar,2026-10-28
+67836,Gibson Solar Project - Hybrid,CA,0,2027,13.0,solar,2026-10-28
+67836,Gibson Solar Project - Hybrid,CA,1,2027,13.0,storage,2026-10-28
+69695,Colonel Charles D. Maynard Project,AR,0,2031,8.6,hydro,2026-10-28
+69695,Colonel Charles D. Maynard Project,AR,1,2031,8.6,hydro,2026-10-28
+69695,Colonel Charles D. Maynard Project,AR,2,2031,8.6,hydro,2026-10-28
+67669,Arlington Battery Energy Storage System,WA,0,2026,25.0,storage,2026-10-28
+70303,"Midfield Solar, LLC",NC,0,2026,25.0,solar,2026-10-28
+69024,Glenarm BESS Plant,CA,0,2027,25.0,storage,2026-10-28
+70049,Sierra Solar,AZ,0,2027,25.0,solar,2026-10-28
+66695,Horsepen Branch Solar,VA,0,2028,25.0,solar,2026-10-28
+68528,Dynamo Solar LLC,CA,0,2027,24.5,solar,2026-10-28
+66978,MPW Solar 1,IA,0,2028,24.0,solar,2026-10-28
+69628,GBG SOLAR,TX,0,2026,22.2,solar,2026-10-28
+69806,"Gaskell West Storage 1, LLC",CA,0,2026,21.6,storage,2026-10-28
+70495,Welcome Solar II,PA,0,2026,21.0,solar,2026-10-28
+70496,Welcome Solar III,PA,0,2026,21.0,solar,2026-10-28
+70240,PF Onsite BESS,PA,0,2027,21.0,storage,2026-10-28
+63088,Rooney Ranch,CA,0,2027,21.0,wind,2026-10-28
+57472,TBE-Montgomery LLC,NY,0,2039,12.0,other,2026-10-28
+57472,TBE-Montgomery LLC,NY,1,2039,9.0,other,2026-10-28
+62400,Montgomery L&D Hydroelectric Project,PA,0,2028,6.8,hydro,2026-10-28
+62400,Montgomery L&D Hydroelectric Project,PA,1,2028,6.8,hydro,2026-10-28
+62400,Montgomery L&D Hydroelectric Project,PA,2,2028,6.8,hydro,2026-10-28
+62433,Emsworth L&D Hydroelectric Project,PA,0,2030,6.8,hydro,2026-10-28
+62433,Emsworth L&D Hydroelectric Project,PA,1,2030,6.8,hydro,2026-10-28
+62433,Emsworth L&D Hydroelectric Project,PA,2,2030,6.8,hydro,2026-10-28
+69535,Nutes Solar,NH,0,2026,20.0,solar,2026-10-28
+70232,"Evergreen Energy Center, LLC",VA,0,2026,20.0,storage,2026-10-28
+64255,Vonore Battery Energy Storage System,TN,0,2026,20.0,storage,2026-10-28
+70231,"Bethlehem Energy Center, LLC - (VA)",VA,0,2026,20.0,storage,2026-10-28
+70233,"Railroad Energy Center, LLC",VA,0,2026,20.0,storage,2026-10-28
+70234,"Reid Energy Center, LLC",VA,0,2026,20.0,storage,2026-10-28
+62823,SunEast Dog Corners Solar Project,NY,0,2027,20.0,solar,2026-10-28
+63862,SunEast Valley Solar Project,NY,0,2027,20.0,solar,2026-10-28
+62816,SunEast Skyline Solar Project,NY,0,2027,20.0,solar,2026-10-28
+64037,SunEast Manchester Solar Project,NY,0,2027,20.0,solar,2026-10-28
+63901,SunEast Flat Hill Solar Project,NY,0,2027,20.0,solar,2026-10-28
+62895,SunEast Hills Solar Project,NY,0,2027,20.0,solar,2026-10-28
+63863,SunEast Grassy Knoll Solar Project,NY,0,2027,20.0,solar,2026-10-28
+70395,Pace Road Battery Storage,FL,0,2027,20.0,storage,2026-10-28
+62896,SunEast Watkins Road Solar Project,NY,0,2027,20.0,solar,2026-10-28
+65901,Hatchery Solar,NY,0,2027,20.0,solar,2026-10-28
+65931,Clear View Solar,NY,0,2027,20.0,solar,2026-10-28
+68278,Greater Wise Solar Project,VA,0,2027,20.0,solar,2026-10-28
+69667,Fair Haven Solar,VT,0,2028,20.0,solar,2026-10-28
+64036,"Caden Energix New Kent, LLC",VA,0,2028,20.0,solar,2026-10-28
+66682,"KCE NY 10, LLC",NY,0,2028,20.0,storage,2026-10-28
+68072,Bridleton Solar,VA,0,2028,20.0,solar,2026-10-28
+64064,Shaftsbury Solar,VT,0,2028,20.0,solar,2026-10-28
+69702,Pike Island Hydroelectric Project,OH,0,2029,10.0,hydro,2026-10-28
+69702,Pike Island Hydroelectric Project,OH,1,2029,10.0,hydro,2026-10-28
+69701,New Cumberland Hydroelectric Project,WV,0,2029,10.0,hydro,2026-10-28
+69701,New Cumberland Hydroelectric Project,WV,1,2029,10.0,hydro,2026-10-28
+65934,Highbanks Solar,NY,0,2029,20.0,solar,2026-10-28
+60588,Sweetheart Lake Hydroelectric Facility,AK,0,2028,6.6,hydro,2026-10-28
+60588,Sweetheart Lake Hydroelectric Facility,AK,1,2028,6.6,hydro,2026-10-28
+60588,Sweetheart Lake Hydroelectric Facility,AK,2,2028,6.6,hydro,2026-10-28
+65709,Turner Meadow Solar Station,ME,0,2028,19.8,solar,2026-10-28
+62434,Emsworth BC Hydroelectric Project,PA,0,2030,6.0,hydro,2026-10-28
+62434,Emsworth BC Hydroelectric Project,PA,1,2030,6.0,hydro,2026-10-28
+62434,Emsworth BC Hydroelectric Project,PA,2,2030,6.8,hydro,2026-10-28
+70108,PIKE Solar,IL,0,2026,18.0,solar,2026-10-28
+70260,Scipio Solar,NY,0,2027,18.0,solar,2026-10-28
+69782,Cartwright Solar II,OR,0,2026,17.6,solar,2026-10-28
+65305,Powells Creek Solar - Hybrid,VA,0,2027,17.5,storage,2026-10-28
+65369,Topsham Meadow Solar Station,ME,0,2028,17.2,solar,2026-10-28
+65371,West Baldwin Solar Station,ME,0,2028,17.1,solar,2026-10-28
+50666,Pasco Cnty Solid Waste Resource Recovery,FL,0,2027,17.0,other,2026-10-28
+63652,Sand Hill B,CA,0,2027,17.0,wind,2026-10-28
+69868,Fulton Energy Center,MO,0,2027,16.5,gas,2026-10-28
+65366,Emery Meadow Solar Station,ME,0,2027,16.4,solar,2026-10-28
+1024,Crawfordsville Power Plant,IN,0,2027,16.3,gas,2026-10-28
+69602,Essex VT BESS 1,VT,0,2026,16.0,storage,2026-10-28
+59572,Cotton Solar,SC,0,2027,16.0,solar,2026-10-28
+67954,BAI-Boyles Run-Phase I,PA,0,2028,15.9,solar,2026-10-28
+67955,BAI-Boyles Run-Phase 2,PA,0,2028,15.9,solar,2026-10-28
+54918,Ergon Refining Vicksburg,MS,0,2027,7.9,gas,2026-10-28
+54918,Ergon Refining Vicksburg,MS,1,2027,7.9,gas,2026-10-28
+69593,MCCo BESS Generating Facility,OH,0,2026,3.9,storage,2026-10-28
+69593,MCCo BESS Generating Facility,OH,1,2026,3.9,storage,2026-10-28
+69593,MCCo BESS Generating Facility,OH,2,2026,3.9,storage,2026-10-28
+69593,MCCo BESS Generating Facility,OH,3,2026,3.9,storage,2026-10-28
+66785,Elevate Arthur Kill,NY,0,2026,15.1,storage,2026-10-28
+68560,SR Marion Junction,AL,0,2027,15.0,solar,2026-10-28
+10328,T B Simon Power Plant,MI,0,2028,15.0,gas,2026-10-28
+62425,Sardis Lake Hydroelectric Project,MS,0,2028,7.5,hydro,2026-10-28
+62425,Sardis Lake Hydroelectric Project,MS,1,2028,7.5,hydro,2026-10-28
+67879,Stony Creek Solar,PA,0,2028,15.0,solar,2026-10-28
+70203,Bealeton Solar,VA,0,2028,14.2,solar,2026-10-28
+66002,AES Mountain View Solar,HI,0,2026,7.0,storage,2026-10-28
+66002,AES Mountain View Solar,HI,1,2026,7.0,solar,2026-10-28
+61912,McGinness Hills 3,NV,0,2027,14.0,solar,2026-10-28
+63126,Sand Hill A,CA,0,2027,13.5,wind,2026-10-28
+70409,Hera Solar,VA,0,2028,13.3,solar,2026-10-28
+70296,Milltown Onsite BESS,NJ,0,2026,13.2,storage,2026-10-28
+65302,Salt City Solar Project - Hybrid,OH,0,2027,12.5,storage,2026-10-28
+65304,ENGIE Solidago Solar Project - Hybrid,DE,0,2027,12.5,storage,2026-10-28
+65307,Sunnybrook Solar Project - Hybrid,VA,0,2027,12.5,storage,2026-10-28
+67253,Cherry Valley,IL,0,2027,12.5,solar,2026-10-28
+68285,Puuloa Solar,HI,0,2027,6.4,solar,2026-10-28
+68285,Puuloa Solar,HI,1,2027,6.0,storage,2026-10-28
+67283,Six Flags Magic Mountain,CA,0,2026,10.0,solar,2026-10-28
+67283,Six Flags Magic Mountain,CA,1,2026,2.0,storage,2026-10-28
+69749,Scholl Canyon,CA,0,2027,3.0,other,2026-10-28
+69749,Scholl Canyon,CA,1,2027,3.0,other,2026-10-28
+69749,Scholl Canyon,CA,2,2027,3.0,other,2026-10-28
+69749,Scholl Canyon,CA,3,2027,3.0,other,2026-10-28
+70410,Willow Solar,VA,0,2027,12.0,solar,2026-10-28
+58639,KRS I Anahola Solar Hybrid,HI,0,2027,12.0,storage,2026-10-28
+58640,KRS II Koloa Solar,HI,0,2027,12.0,storage,2026-10-28
+62388,Grays Landing L&D Hydroelectric Project,PA,0,2028,6.0,hydro,2026-10-28
+62388,Grays Landing L&D Hydroelectric Project,PA,1,2028,6.0,hydro,2026-10-28
+62404,Monongahela L&D4 Hydroelectric Project,PA,0,2028,6.0,hydro,2026-10-28
+62404,Monongahela L&D4 Hydroelectric Project,PA,1,2028,6.0,hydro,2026-10-28
+62385,Maxwell L&D Hydroelectric Project,PA,0,2028,6.0,hydro,2026-10-28
+62385,Maxwell L&D Hydroelectric Project,PA,1,2028,6.0,hydro,2026-10-28
+69870,Parkwood BESS,NC,0,2026,11.6,storage,2026-10-28
+66870,Davis Solar (WV),WV,0,2028,11.5,solar,2026-10-28
+69552,Danville VA BESS 2,VA,0,2026,11.0,storage,2026-10-28
+70542,Mount Whitney BESS,TX,0,2027,11.0,storage,2026-10-28
+70543,Denali Energy Storage,TX,0,2027,11.0,storage,2026-10-28
+68543,Town of Sharon Portfolio -Mt St Landfill,MA,0,2027,5.7,storage,2026-10-28
+68543,Town of Sharon Portfolio -Mt St Landfill,MA,1,2027,5.0,solar,2026-10-28
+58903,Marseilles Lock and Dam Hydro,IL,0,2027,2.6,hydro,2026-10-28
+58903,Marseilles Lock and Dam Hydro,IL,1,2027,2.6,hydro,2026-10-28
+58903,Marseilles Lock and Dam Hydro,IL,2,2027,2.6,hydro,2026-10-28
+58903,Marseilles Lock and Dam Hydro,IL,3,2027,2.6,hydro,2026-10-28
+69864,Colorado Clean Energy Center (BESS),TX,0,2026,10.1,storage,2026-10-28
+69865,Columbus Clean Energy Center (BESS),TX,0,2026,10.1,storage,2026-10-28
+69866,Matagorda Clean Energy Center (BESS),TX,0,2026,10.1,storage,2026-10-28
+69226,Knapp BESS,TX,0,2026,10.0,storage,2026-10-28
+67279,Borrego - Highland Ave,MA,0,2026,5.0,solar,2026-10-28
+67279,Borrego - Highland Ave,MA,1,2026,5.0,storage,2026-10-28
+69252,Harlingen #1 BESS 1,TX,0,2026,10.0,storage,2026-10-28
+69253,North Edinburg BESS 1,TX,0,2026,10.0,storage,2026-10-28
+69465,City of Detroit Castle Solar,MI,0,2026,10.0,solar,2026-10-28
+69665,Orchard BESS,TX,0,2026,10.0,storage,2026-10-28
+66410,Grizzly Ridge Solar,TX,0,2026,10.0,storage,2026-10-28
+68439,NorCal FPV 1,CA,0,2026,10.0,solar,2026-10-28
+69262,Hillsboro Solar Project,TX,0,2027,5.0,solar,2026-10-28
+69262,Hillsboro Solar Project,TX,1,2027,5.0,solar,2026-10-28
+69268,Coyanosa Gas,TX,0,2027,2.5,gas,2026-10-28
+69268,Coyanosa Gas,TX,1,2027,2.5,gas,2026-10-28
+69268,Coyanosa Gas,TX,2,2027,2.5,gas,2026-10-28
+69268,Coyanosa Gas,TX,3,2027,2.5,gas,2026-10-28
+68215,Braley Hill North Solar,MA,0,2027,5.0,storage,2026-10-28
+68215,Braley Hill North Solar,MA,1,2027,5.0,solar,2026-10-28
+68218,Randall Lane Solar,MA,0,2027,5.0,storage,2026-10-28
+68218,Randall Lane Solar,MA,1,2027,5.0,solar,2026-10-28
+70560,Grey Wolf,TX,0,2027,10.0,gas,2026-10-28
+70561,WT2,TX,0,2027,10.0,gas,2026-10-28
+67858,Dill Holdings LLC,NC,0,2027,10.0,solar,2026-10-28
+70533,Nash Solar,TX,0,2027,10.0,solar,2026-10-28
+64616,"South Portland ESS, LLC",ME,0,2027,10.0,storage,2026-10-28
+68566,SR Sipsey,AL,0,2027,10.0,solar,2026-10-28
+69948,SV CSG Manteno,IL,0,2027,5.0,storage,2026-10-28
+69948,SV CSG Manteno,IL,1,2027,5.0,solar,2026-10-28
+69949,SV CSG Bloomington,IL,0,2027,5.0,storage,2026-10-28
+69949,SV CSG Bloomington,IL,1,2027,5.0,solar,2026-10-28
+62430,Grenada Lake Hydroelectric Project,MS,0,2028,5.0,hydro,2026-10-28
+62430,Grenada Lake Hydroelectric Project,MS,1,2028,5.0,hydro,2026-10-28
+68988,Sherco LDES,MN,0,2028,10.0,storage,2026-10-28
+67570,Cedar Hill ESS,TX,0,2030,10.0,storage,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,0,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,1,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,2,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,3,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,4,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,5,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,6,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,7,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,8,2030,1.0,hydro,2026-10-28
+69699,Dresden Island Hydroelectric Project,IL,9,2030,1.0,hydro,2026-10-28
+69318,Apple BESS,TX,0,2026,9.9,storage,2026-10-28
+69338,Regis Leakey,TX,0,2026,9.9,storage,2026-10-28
+65834,Saddleback BESS2,TX,0,2026,9.9,other,2026-10-28
+69271,Staghorn Gas,TX,0,2026,3.3,gas,2026-10-28
+69271,Staghorn Gas,TX,1,2026,3.3,gas,2026-10-28
+69271,Staghorn Gas,TX,2,2026,3.3,gas,2026-10-28
+69340,Regis Medina,TX,0,2026,9.9,storage,2026-10-28
+69534,Torrecillas Energy Storage,TX,0,2026,9.9,storage,2026-10-28
+69246,BESS TX Camarine - BSHOU001,TX,0,2027,9.9,storage,2026-10-28
+70549,CF BESS NINE,TX,0,2027,9.9,storage,2026-10-28
+65811,Coyote Springs (TX),TX,0,2027,9.9,oil,2026-10-28
+69902,Hockley,TX,0,2027,9.9,storage,2026-10-28
+65897,Industrial Parkway Storage,CA,0,2026,9.8,storage,2026-10-28
+68255,SR Shelby,TN,0,2027,9.8,solar,2026-10-28
+59596,Rhubarb One SC,SC,0,2027,9.6,solar,2026-10-28
+59027,Mahoney Lake Hydroelectric,AK,0,2027,9.6,hydro,2026-10-28
+69903,East Bernard,TX,0,2026,9.5,storage,2026-10-28
+69904,Pledger,TX,0,2026,9.5,storage,2026-10-28
+69357,Asheville Solar,NC,0,2026,9.5,solar,2026-10-28
+69819,Trenton Solar - (OH),OH,0,2027,9.5,solar,2026-10-28
+50969,MU Combined Heat and Power Plant,MO,0,2026,9.0,gas,2026-10-28
+62401,Allegheny L&D2 Hydroelectric Project,PA,0,2030,4.5,hydro,2026-10-28
+62401,Allegheny L&D2 Hydroelectric Project,PA,1,2030,4.5,hydro,2026-10-28
+70242,Riverhead - CVE,NY,0,2026,4.9,solar,2026-10-28
+70242,Riverhead - CVE,NY,1,2026,4.0,storage,2026-10-28
+69698,Dashields Hydroelectric Project,PA,0,2030,1.1,hydro,2026-10-28
+69698,Dashields Hydroelectric Project,PA,1,2030,1.1,hydro,2026-10-28
+69698,Dashields Hydroelectric Project,PA,2,2030,1.1,hydro,2026-10-28
+69698,Dashields Hydroelectric Project,PA,3,2030,1.1,hydro,2026-10-28
+69698,Dashields Hydroelectric Project,PA,4,2030,1.1,hydro,2026-10-28
+69698,Dashields Hydroelectric Project,PA,5,2030,1.1,hydro,2026-10-28
+69698,Dashields Hydroelectric Project,PA,6,2030,1.1,hydro,2026-10-28
+69698,Dashields Hydroelectric Project,PA,7,2030,1.1,hydro,2026-10-28
+70305,"Tanglewood Solar, LLC",NC,0,2026,8.4,solar,2026-10-28
+66901,Wylie Ridge Solar,WV,0,2027,8.4,solar,2026-10-28
+69697,CW Bill Young Hydropower Project,PA,0,2031,1.2,hydro,2026-10-28
+69697,CW Bill Young Hydropower Project,PA,1,2031,1.2,hydro,2026-10-28
+69697,CW Bill Young Hydropower Project,PA,2,2031,1.2,hydro,2026-10-28
+69697,CW Bill Young Hydropower Project,PA,3,2031,1.2,hydro,2026-10-28
+69697,CW Bill Young Hydropower Project,PA,4,2031,1.2,hydro,2026-10-28
+69697,CW Bill Young Hydropower Project,PA,5,2031,1.2,hydro,2026-10-28
+69697,CW Bill Young Hydropower Project,PA,6,2031,1.2,hydro,2026-10-28
+68558,SR Lott,AL,0,2027,8.3,solar,2026-10-28
+52021,ITT Cogen Facility,IL,0,2027,4.1,gas,2026-10-28
+52021,ITT Cogen Facility,IL,1,2027,4.1,gas,2026-10-28
+1291,Iola,KS,0,2026,2.0,oil,2026-10-28
+1291,Iola,KS,1,2026,2.0,oil,2026-10-28
+1291,Iola,KS,2,2026,2.0,oil,2026-10-28
+1291,Iola,KS,3,2026,2.0,oil,2026-10-28
+68219,Snipatuit Road Solar,MA,0,2027,4.0,storage,2026-10-28
+68219,Snipatuit Road Solar,MA,1,2027,4.0,solar,2026-10-28
+70466,Nine Springs Solar,WI,0,2027,8.0,solar,2026-10-28
+69992,Sherwood Forest BESS,LA,0,2027,7.7,storage,2026-10-28
+55027,Papillion Creek Wastewater,NE,0,2026,2.5,gas,2026-10-28
+55027,Papillion Creek Wastewater,NE,1,2026,2.5,gas,2026-10-28
+55027,Papillion Creek Wastewater,NE,2,2026,2.5,gas,2026-10-28
+69668,Brigham City Gas,UT,0,2028,2.5,gas,2026-10-28
+69668,Brigham City Gas,UT,1,2028,2.5,gas,2026-10-28
+69668,Brigham City Gas,UT,2,2028,2.5,gas,2026-10-28
+55369,Hamakua Energy Plant,HI,0,2030,7.5,storage,2026-10-28
+70333,Keenesburg,CO,0,2026,7.2,solar,2026-10-28
+61592,Cody Road Wind Farm,NY,0,2029,2.4,wind,2026-10-28
+61592,Cody Road Wind Farm,NY,1,2029,2.4,wind,2026-10-28
+61592,Cody Road Wind Farm,NY,2,2029,2.4,wind,2026-10-28
+70465,New Florence Renewable Energy Center,MO,0,2026,7.0,solar,2026-10-28
+70119,Raceway Solar - (CO),CO,0,2027,7.0,solar,2026-10-28
+69466,City of Detroit Greenfield,MI,0,2027,7.0,solar,2026-10-28
+2185,Hauser,MT,0,2028,3.5,hydro,2026-10-28
+2185,Hauser,MT,1,2029,3.5,hydro,2026-10-28
+1267,Chanute 1,KS,0,2026,2.2,oil,2026-10-28
+1267,Chanute 1,KS,1,2026,2.2,oil,2026-10-28
+1267,Chanute 1,KS,2,2026,2.2,oil,2026-10-28
+10748,Marina Landfill Gas,CA,0,2027,1.6,other,2026-10-28
+10748,Marina Landfill Gas,CA,1,2027,1.6,other,2026-10-28
+10748,Marina Landfill Gas,CA,2,2027,1.6,other,2026-10-28
+10748,Marina Landfill Gas,CA,3,2027,1.6,other,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,0,2031,0.8,hydro,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,1,2031,0.8,hydro,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,2,2031,0.8,hydro,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,3,2031,0.8,hydro,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,4,2031,0.8,hydro,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,5,2031,0.8,hydro,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,6,2031,0.8,hydro,2026-10-28
+69694,Allegheny Lock and Dam 4,PA,7,2031,0.8,hydro,2026-10-28
+63972,Two Rivers Wind Facility,WY,0,2028,6.1,wind,2026-10-28
+69516,Hamms Landfill,NJ,0,2026,6.0,solar,2026-10-28
+70467,Pine Hill Solar,WI,0,2026,6.0,solar,2026-10-28
+70468,"Big Rapids Solar WI, LLC",WI,0,2026,6.0,solar,2026-10-28
+70469,"Campbellsport Solar WI, LLC",WI,0,2026,6.0,solar,2026-10-28
+70470,"Honey Creek Solar WI, LLC",WI,0,2026,6.0,solar,2026-10-28
+70471,"Germantown - Rockfield Rd Solar WI, LLC",WI,0,2026,6.0,solar,2026-10-28
+70472,"Lime Kiln Solar, LLC",WI,0,2026,6.0,solar,2026-10-28
+70473,"Little Rose Solar WI, LLC",WI,0,2026,6.0,solar,2026-10-28
+70476,"Root River Solar WI, LLC",WI,0,2026,6.0,solar,2026-10-28
+70478,"Tichigan Solar WI, LLC",WI,0,2026,6.0,solar,2026-10-28
+1263,Belleville,KS,0,2027,3.0,oil,2026-10-28
+1263,Belleville,KS,1,2028,3.0,oil,2026-10-28
+63535,Solar BESS Hybrid,GA,0,2027,2.0,gas,2026-10-28
+63535,Solar BESS Hybrid,GA,1,2027,2.0,gas,2026-10-28
+63535,Solar BESS Hybrid,GA,2,2027,2.0,gas,2026-10-28
+68216,Cushman Road Solar,MA,0,2027,3.0,storage,2026-10-28
+68216,Cushman Road Solar,MA,1,2027,3.0,solar,2026-10-28
+66513,MA Acushnet 540R Main St,MA,0,2027,4.0,solar,2026-10-28
+66513,MA Acushnet 540R Main St,MA,1,2027,2.0,storage,2026-10-28
+70105,Gardenia 1,CA,0,2027,3.0,storage,2026-10-28
+70105,Gardenia 1,CA,1,2027,3.0,solar,2026-10-28
+69867,"SR Shelby II, LLC",TN,0,2028,6.0,solar,2026-10-28
+62386,Opekiska L&D Hydroelectric Project,WV,0,2028,3.0,hydro,2026-10-28
+62386,Opekiska L&D Hydroelectric Project,WV,1,2028,3.0,hydro,2026-10-28
+67265,CHP Plant,DC,0,2026,5.7,gas,2026-10-28
+70538,Belchertown Solar PV + Battery Project,MA,0,2026,2.8,solar,2026-10-28
+70538,Belchertown Solar PV + Battery Project,MA,1,2026,2.8,storage,2026-10-28
+54808,New York University Central Plant,NY,0,2026,2.6,gas,2026-10-28
+54808,New York University Central Plant,NY,1,2027,2.9,gas,2026-10-28
+59091,Braddock Lock and Dam,PA,0,2027,5.3,hydro,2026-10-28
+63677,Sturbridge Road Solar,MA,0,2026,5.0,solar,2026-10-28
+68975,Washington Street Solar 1 LLC,IL,0,2026,5.0,solar,2026-10-28
+69551,Holyoke MA BESS 1,MA,0,2026,5.0,storage,2026-10-28
+69592,NL NY- Pulaski,NY,0,2026,2.5,storage,2026-10-28
+69592,NL NY- Pulaski,NY,1,2026,2.5,solar,2026-10-28
+69844,"Horseshoe Solar Project, LLC",IL,0,2026,5.0,solar,2026-10-28
+69931,Bjorn,WI,0,2026,5.0,solar,2026-10-28
+70176,Kieser,IL,0,2026,5.0,solar,2026-10-28
+70386,Chicopee BESS,MA,0,2026,5.0,storage,2026-10-28
+70387,Framingham BESS,MA,0,2026,5.0,storage,2026-10-28
+70563,"Hibiscus Solar, LLC",IL,0,2026,5.0,solar,2026-10-28
+67637,Gillard,IL,0,2026,5.0,solar,2026-10-28
+67643,Solitude,IL,0,2026,5.0,solar,2026-10-28
+69178,Cherry Solar 1,IL,0,2026,5.0,solar,2026-10-28
+69180,Cold Springs,NY,0,2026,5.0,solar,2026-10-28
+69182,KA 340,IL,0,2026,5.0,solar,2026-10-28
+69310,SL Pembroke 2,NY,0,2026,5.0,solar,2026-10-28
+69384,Mallory South PV II,NY,0,2026,5.0,solar,2026-10-28
+69603,Ipswich MA BESS 1,MA,0,2026,5.0,storage,2026-10-28
+69756,SL Dunkirk,NY,0,2026,5.0,solar,2026-10-28
+70012,Redlands DC 9 - sline609,CA,0,2026,2.4,storage,2026-10-28
+70012,Redlands DC 9 - sline609,CA,1,2026,2.6,solar,2026-10-28
+70294,NL IL 2700 East,IL,0,2026,5.0,solar,2026-10-28
+70295,NL IL Lake,IL,0,2026,5.0,solar,2026-10-28
+70440,NL IL Braceville,IL,0,2026,5.0,solar,2026-10-28
+70464,Blackman Battery Energy Storage System,MO,0,2026,5.0,storage,2026-10-28
+70562,"Bungalow Solar, LLC",IL,0,2026,5.0,solar,2026-10-28
+70565,Trenton CSG 1 LLC,IL,0,2026,5.0,solar,2026-10-28
+70580,NL IL Old Stage,IL,0,2026,5.0,solar,2026-10-28
+67609,NY ELBA 7195 OAK ORCHARD RD - Genesee 1,NY,0,2026,5.0,solar,2026-10-28
+69159,SV CSG Diel 1,IL,0,2026,5.0,solar,2026-10-28
+69205,Lodi I,NY,0,2026,5.0,solar,2026-10-28
+69206,Lodi II,NY,0,2026,5.0,solar,2026-10-28
+69218,Vienna,NY,0,2026,5.0,solar,2026-10-28
+69383,Mallory South PV I,NY,0,2026,5.0,solar,2026-10-28
+69814,SV CSG Sun Trust Solar,IL,0,2026,5.0,solar,2026-10-28
+69815,SV CSG Kingston Solar 1,IL,0,2026,5.0,solar,2026-10-28
+69837,"Falconhead Solar, LLC",IL,0,2026,5.0,solar,2026-10-28
+69882,USS Middle Solar,IL,0,2026,5.0,solar,2026-10-28
+69883,USS Jornada Solar,NM,0,2026,5.0,solar,2026-10-28
+69997,Fast Ave Solar LLC,IL,0,2026,5.0,solar,2026-10-28
+70001,"Harper Creek Solar, LLC",IL,0,2026,5.0,solar,2026-10-28
+70382,Mazaska Garden,MN,0,2026,5.0,solar,2026-10-28
+70474,"Lyndon Solar WI, LLC",WI,0,2026,5.0,solar,2026-10-28
+70475,"Maple Creek Solar WI, LLC",WI,0,2026,5.0,solar,2026-10-28
+70493,Four Mile Creek,IL,0,2026,5.0,solar,2026-10-28
+70499,North Pana,IL,0,2026,5.0,solar,2026-10-28
+70500,Pawpaw (IL),IL,0,2026,5.0,solar,2026-10-28
+70501,South Cherry Solar 1,IL,0,2026,5.0,solar,2026-10-28
+70517,NL IL 1400 East,IL,0,2026,5.0,solar,2026-10-28
+70548,Cenergy IL - Worden,IL,0,2026,5.0,solar,2026-10-28
+66497,Bensonhurst Energy Storage 1 LLC,NY,0,2027,5.0,storage,2026-10-28
+69035,Pivot Solar 36,CO,0,2027,5.0,solar,2026-10-28
+69372,Knox II PV,NY,0,2027,5.0,solar,2026-10-28
+70009,"Willis Solar 1, LLC - (IL)",IL,0,2027,5.0,solar,2026-10-28
+70102,Pivot Solar 33 LLC,CO,0,2027,5.0,solar,2026-10-28
+70177,Allen CSG,IL,0,2027,5.0,solar,2026-10-28
+70376,Pivot Energy IL 52,IL,0,2027,5.0,solar,2026-10-28
+70586,Raven Sol Solar CSG,NM,0,2027,5.0,solar,2026-10-28
+70587,Gonzo Sol Solar CSG,NM,0,2027,5.0,solar,2026-10-28
+67639,Leatherleaf,NY,0,2027,5.0,solar,2026-10-28
+68855,Tracy Renewable Power Plant,CA,0,2027,5.0,other,2026-10-28
+69181,Hillview,NY,0,2027,5.0,solar,2026-10-28
+70100,Pivot Energy IL 70 LLC,IL,0,2027,5.0,solar,2026-10-28
+70002,Macedon CSG LLC,NY,0,2027,5.0,solar,2026-10-28
+70025,Cincinnati CSG 1 LLC,IL,0,2027,5.0,solar,2026-10-28
+70026,Cincinnati CSG 2 LLC,IL,0,2027,5.0,solar,2026-10-28
+70030,Fabius CSG LLC,NY,0,2027,5.0,solar,2026-10-28
+70378,Crane Creek Garden,MN,0,2027,5.0,solar,2026-10-28
+70554,EESolar29,MN,0,2027,5.0,solar,2026-10-28
+67257,Bear Valley Battery Plant,CA,0,2027,5.0,storage,2026-10-28
+68520,Madena 4,CA,0,2027,5.0,storage,2026-10-28
+68934,SV CSG East St Louis,IL,0,2027,5.0,solar,2026-10-28
+68863,Bloomfield Solar,NY,0,2027,5.0,solar,2026-10-28
+70007,Richmond Road Solar LLC,VA,0,2027,5.0,solar,2026-10-28
+70210,Cypert - Fallsburg I,NY,0,2027,5.0,solar,2026-10-28
+67645,Varnsen,IL,0,2027,5.0,solar,2026-10-28
+70401,Clems Way Solar,MA,0,2027,5.0,solar,2026-10-28
+70437,Groton Flanders Road Landfill,CT,0,2027,5.0,solar,2026-10-28
+69825,Madden Creek Solar,IL,0,2027,5.0,solar,2026-10-28
+70402,Logging Swamp North,MA,0,2027,5.0,solar,2026-10-28
+70404,Logging Swamp South,MA,0,2027,5.0,solar,2026-10-28
+69894,E 1300 Street Solar LLC,IL,0,2027,5.0,solar,2026-10-28
+70134,Westhampton - NY 0243 (Giaquinto 1),NY,0,2027,5.0,solar,2026-10-28
+69859,Murphysboro 1,IL,0,2027,5.0,solar,2026-10-28
+70027,Cortland CSG 2 LLC,NY,0,2027,5.0,solar,2026-10-28
+70130,Suffolk - VA 0141 (Johnson South),VA,0,2027,5.0,solar,2026-10-28
+70132,Waynesboro - VA 0426 (Patterson B),VA,0,2027,5.0,solar,2026-10-28
+58151,Central Utility Plant - Texas A&M,TX,0,2027,5.0,gas,2026-10-28
+64615,"Sanford ESS, LLC",ME,0,2027,5.0,storage,2026-10-28
+67647,Kinglet,VA,0,2027,5.0,solar,2026-10-28
+68859,Endicott,NY,0,2027,5.0,solar,2026-10-28
+68861,Tully 4,NY,0,2027,5.0,solar,2026-10-28
+68862,Emerson NY,NY,0,2027,5.0,solar,2026-10-28
+69158,SV CSG Reeder Solar,IL,0,2027,5.0,solar,2026-10-28
+69817,SV CSG St Anne 1,IL,0,2027,5.0,solar,2026-10-28
+69816,SV CSG Wilson School Solar,IL,0,2028,5.0,solar,2026-10-28
+69821,SV CSG South Roxana,IL,0,2028,5.0,solar,2026-10-28
+64067,Auburn PV - BD Solar Auburn LLC,ME,0,2028,5.0,solar,2026-10-28
+64071,Lewiston Jn PV - BD Solar Lewiston Jn LL,ME,0,2028,5.0,solar,2026-10-28
+62402,Arkabutla Lake Hydroelectric Project,MS,0,2028,2.5,hydro,2026-10-28
+62402,Arkabutla Lake Hydroelectric Project,MS,1,2028,2.5,hydro,2026-10-28
+62387,Morgantown L&D Hydroelectric Project,WV,0,2028,2.5,hydro,2026-10-28
+62387,Morgantown L&D Hydroelectric Project,WV,1,2028,2.5,hydro,2026-10-28
+62432,Enid Lake Hydroelectric Project,MS,0,2028,2.5,hydro,2026-10-28
+62432,Enid Lake Hydroelectric Project,MS,1,2028,2.5,hydro,2026-10-28
+62384,Point Marion L&D Hydroelectric Project,PA,0,2028,2.5,hydro,2026-10-28
+62384,Point Marion L&D Hydroelectric Project,PA,1,2028,2.5,hydro,2026-10-28
+68864,Bridgewater 2,NY,0,2030,5.0,solar,2026-10-28
+68865,Bridgewater 1,NY,0,2030,5.0,solar,2026-10-28
+68277,Brookings Solar,SD,0,2026,4.9,solar,2026-10-28
+68392,IL2 - W109,IL,0,2026,4.9,solar,2026-10-28
+70010,Pescara 1,NY,0,2026,4.9,solar,2026-10-28
+70011,Pescara 2,NY,0,2026,4.9,solar,2026-10-28
+68208,City of Little Rock Solar Array,AR,0,2026,4.9,solar,2026-10-28
+70491,Hacadam Hill Solar,NY,0,2026,4.9,solar,2026-10-28
+70327,"Heron Clean Energy, LLC",NY,0,2026,4.9,storage,2026-10-28
+70442,KN216,IL,0,2026,4.9,solar,2026-10-28
+70490,Grassy Grove Solar East,NY,0,2026,4.9,solar,2026-10-28
+70328,"Jamaica Community Energy, LLC",NY,0,2027,4.9,storage,2026-10-28
+68870,Watson 2,NY,0,2027,4.9,solar,2026-10-28
+64541,Potic Solar,NY,0,2027,4.9,solar,2026-10-28
+70312,Lobelia Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+70313,Lobelia 4452 Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+70322,"Wintergreen Clean Energy, LLC",NY,0,2027,4.9,storage,2026-10-28
+70323,Wintergreen B Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+70324,Wintergreen C Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+70325,Wintergreen D Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+70308,Blue Aster Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+70309,Blue Aster B Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+70310,Blue Aster C Clean Energy LLC,NY,0,2027,4.9,storage,2026-10-28
+67749,Pistachio Road 1726-WD,CA,0,2026,4.8,solar,2026-10-28
+68230,SR Des Arc,AR,0,2026,4.8,solar,2026-10-28
+67134,"SR Marshall, LLC",MS,0,2026,4.8,solar,2026-10-28
+68256,SR South Bastrop,LA,0,2026,4.8,solar,2026-10-28
+68257,SR Winnsboro,LA,0,2026,4.8,solar,2026-10-28
+68869,Watson 1,NY,0,2027,4.8,solar,2026-10-28
+70116,La Junta Solar,CO,0,2027,4.8,solar,2026-10-28
+70117,Lamar Solar,CO,0,2027,4.8,solar,2026-10-28
+68557,SR Forrest City,AR,0,2027,4.8,solar,2026-10-28
+68569,SR Ulm,AR,0,2027,4.8,solar,2026-10-28
+68570,SR West Helena,AR,0,2027,4.8,solar,2026-10-28
+70048,City of Milwaukee- Airport Expansion,WI,0,2026,4.6,solar,2026-10-28
+70585,Trigo Sol Solar CSG,NM,0,2027,4.6,solar,2026-10-28
+69195,Longtown Energy Storage,SC,0,2026,4.5,storage,2026-10-28
+69828,"Mexico PV, LLC",NY,0,2026,4.5,solar,2026-10-28
+69932,Castle Rock Lake Solar,WI,0,2026,4.5,solar,2026-10-28
+70488,IL - Renewable Properties - Bobcat - Wes,IL,0,2026,4.5,solar,2026-10-28
+69174,Arlington 1,IL,0,2026,4.5,solar,2026-10-28
+69175,Arlington 2,IL,0,2026,4.5,solar,2026-10-28
+69207,Osman Trust,IL,0,2026,4.5,solar,2026-10-28
+70357,Pivot Solar 58 LLC,CO,0,2026,4.5,solar,2026-10-28
+70498,Ladd Solar 3,IL,0,2026,4.5,solar,2026-10-28
+68972,Gilman Solar LLC,IL,0,2027,4.5,solar,2026-10-28
+68243,SR Bear Creek,AL,0,2027,4.5,solar,2026-10-28
+70311,Eastern BlueBird Clean Energy LLC,NY,0,2027,4.4,storage,2026-10-28
+70315,"Northern Cardinal Clean Energy, LLC",NY,0,2027,4.4,storage,2026-10-28
+56615,Rancho Penasquitos,CA,0,2026,4.3,hydro,2026-10-28
+69276,SL Ashville 2,NY,0,2026,4.3,solar,2026-10-28
+69473,SL Brockport,NY,0,2026,4.3,solar,2026-10-28
+69889,USS Gold Solar,NM,0,2026,4.3,solar,2026-10-28
+68567,SR Sunset,LA,0,2027,4.3,solar,2026-10-28
+70516,Fry Ontario Solar Project,OR,0,2027,4.2,solar,2026-10-28
+2308,Tecumseh,NE,0,2027,2.1,oil,2026-10-28
+2308,Tecumseh,NE,1,2027,2.1,oil,2026-10-28
+63541,Solar Carver 1 Hybrid,MA,0,2026,2.0,storage,2026-10-28
+63541,Solar Carver 1 Hybrid,MA,1,2026,2.0,solar,2026-10-28
+68195,Delaware Ave Solar,DE,0,2026,4.0,solar,2026-10-28
+70201,Pivot Solar 50 LLC,CO,0,2026,4.0,solar,2026-10-28
+70380,Kraemer Garden,MN,0,2026,4.0,solar,2026-10-28
+66511,CA Riverside 2356 Fleetwood Dr.,CA,0,2026,2.0,solar,2026-10-28
+66511,CA Riverside 2356 Fleetwood Dr.,CA,1,2026,2.0,storage,2026-10-28
+69204,Little Creek,IL,0,2026,4.0,solar,2026-10-28
+69309,SL Pembroke,NY,0,2026,4.0,solar,2026-10-28
+70510,McDonough Solar 4 LLC,IL,0,2026,4.0,solar,2026-10-28
+70550,Meadow Creek VA BESS 1,VA,0,2026,4.0,storage,2026-10-28
+70551,Piney River VA BESS 1,VA,0,2026,4.0,storage,2026-10-28
+70552,Colleen VA BESS 1,VA,0,2026,4.0,storage,2026-10-28
+70553,Salem VA BESS 1,VA,0,2026,4.0,storage,2026-10-28
+68196,Rifle Range Road Solar,DE,0,2026,4.0,solar,2026-10-28
+69620,Waterton Solar II,CO,0,2026,4.0,solar,2026-10-28
+70504,EESolar33,MN,0,2026,4.0,solar,2026-10-28
+70374,Chaberton Solar Crestone,DE,0,2027,4.0,solar,2026-10-28
+70104,Pivot Solar 53 LLC,CO,0,2027,4.0,solar,2026-10-28
+69293,Waterton Solar I,CO,0,2027,4.0,solar,2026-10-28
+65710,Putnam Meadow Solar Station,CT,0,2027,4.0,solar,2026-10-28
+68211,Grears Corner Solar,DE,0,2027,4.0,solar,2026-10-28
+70461,Plainfield Solar One,CT,0,2027,4.0,solar,2026-10-28
+65146,CT Airport Authority Solar One,CT,0,2027,4.0,solar,2026-10-28
+68936,SV CSG Naplate,IL,0,2026,3.9,solar,2026-10-28
+68519,Madena 3,CA,0,2026,3.9,storage,2026-10-28
+69137,Althea Avenue Solar,CA,0,2026,3.9,solar,2026-10-28
+69871,Tanglewood BESS,NC,0,2026,3.9,storage,2026-10-28
+69872,Windsor BESS,NC,0,2026,3.9,storage,2026-10-28
+70320,Water Willow A Clean Energy LLC,NY,0,2027,3.9,storage,2026-10-28
+70321,Water Willow B Clean Energy LLC,NY,0,2027,3.9,storage,2026-10-28
+69275,SL Ashville,NY,0,2026,3.8,solar,2026-10-28
+69935,Gilman,WI,0,2026,3.8,solar,2026-10-28
+65072,Fremont CA AutoFactory,CA,0,2026,1.5,solar,2026-10-28
+65072,Fremont CA AutoFactory,CA,1,2026,0.5,solar,2026-10-28
+65072,Fremont CA AutoFactory,CA,2,2026,1.4,solar,2026-10-28
+65072,Fremont CA AutoFactory,CA,3,2026,0.4,solar,2026-10-28
+70019,"SL Portland Community 2, LLC",NY,0,2027,3.8,solar,2026-10-28
+7907,Pine Flat,CA,0,2028,3.8,hydro,2026-10-28
+70326,Coral Honeysuckle Clean Energy LLC,NY,0,2027,3.7,storage,2026-10-28
+70329,"Linden Clean Energy, LLC",NY,0,2027,3.7,storage,2026-10-28
+69811,SV CSG Angelly 1,IL,0,2026,3.6,solar,2026-10-28
+70497,Greenfield Solar 1 (IL),IL,0,2026,3.6,solar,2026-10-28
+70202,Pivot Solar 56 LLC,CO,0,2027,3.6,solar,2026-10-28
+69472,NYSolar06,NY,0,2026,3.5,solar,2026-10-28
+70103,Pivot Solar 43 LLC,CO,0,2026,3.5,solar,2026-10-28
+70018,"SL Portland Community, LLC",NY,0,2027,3.5,solar,2026-10-28
+69810,SV CSG Mahomet,IL,0,2028,3.5,solar,2026-10-28
+65060,Hope Solar One,RI,0,2028,3.5,solar,2026-10-28
+70228,AC IL - Lockport West,IL,0,2026,3.4,solar,2026-10-28
+68884,Glen Mary,NY,0,2027,3.4,solar,2026-10-28
+69854,"TJA-NY-1806 Perth Rd Galway, LLC",NY,0,2026,3.3,solar,2026-10-28
+70457,DeVillez,IL,0,2026,3.3,solar,2026-10-28
+69881,USS Hermanas Solar,NM,0,2026,3.3,solar,2026-10-28
+70439,SR 415 - NY Avoca I,NY,0,2027,3.3,solar,2026-10-28
+70317,Roseate Tern Clean Energy LLC,NY,0,2027,3.3,storage,2026-10-28
+69861,Norris City 2,IL,0,2027,3.2,solar,2026-10-28
+70227,AC IL - Lockport East,IL,0,2026,3.1,solar,2026-10-28
+70339,Pivot Energy IL 55 LLC,IL,0,2026,3.1,solar,2026-10-28
+68070,Alberta Solar,VA,0,2026,3.0,solar,2026-10-28
+69937,Mondovi,WI,0,2026,3.0,solar,2026-10-28
+70486,IL - Renewable Properties - Bobcat - Whi,IL,0,2026,3.0,solar,2026-10-28
+66475,CA Bloomington 2551 S Lilac Avenue Micro,CA,0,2026,1.5,solar,2026-10-28
+66475,CA Bloomington 2551 S Lilac Avenue Micro,CA,1,2026,1.5,storage,2026-10-28
+66552,EnerSmart Mesa Heights Sub Station,CA,0,2026,3.0,storage,2026-10-28
+68018,Merced BESS,CA,0,2026,3.0,storage,2026-10-28
+69562,Minneola Solar,CA,0,2026,3.0,solar,2026-10-28
+69855,"Pomfret PV, LLC",NY,0,2026,3.0,solar,2026-10-28
+69884,USS Meadow Lake Solar,NM,0,2026,3.0,solar,2026-10-28
+69996,Penn Hemlock Solar LLC,PA,0,2026,3.0,solar,2026-10-28
+70004,Monroe Route 35 Solar LLC,PA,0,2026,3.0,solar,2026-10-28
+70006,Perry Route 104 Solar LLC,PA,0,2026,3.0,solar,2026-10-28
+70487,NJ - CS Energy - Tabernacle Sands Solar,NJ,0,2026,3.0,solar,2026-10-28
+70494,Four Mile Creek Solar Two,IL,0,2026,3.0,solar,2026-10-28
+2678,Plant No 1 Freeport,NY,0,2027,3.0,other,2026-10-28
+68140,Melrose Park 2-SLCHI547,IL,0,2027,3.0,solar,2026-10-28
+69427,Waxwing Solar CSG,CO,0,2027,3.0,solar,2026-10-28
+70477,"Stone Elephant Solar WI, LLC",WI,0,2027,3.0,solar,2026-10-28
+69369,Bartell South PV I,NY,0,2027,3.0,solar,2026-10-28
+70008,West Perry Planing Mill Road Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+69998,Franklin White Church Road Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+69999,Greenwood Bottom Road Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+70000,Greenwood Route 254 Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+70003,Madison Taylor Road Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+70564,Salem Route 11 Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+65828,Chidsey Hill Road Solar,NY,0,2027,3.0,solar,2026-10-28
+69560,Sunrise Magnolia DE,DE,0,2027,3.0,solar,2026-10-28
+70005,Penn Shoofly Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+70106,Jade Solar 3,CA,0,2027,1.5,storage,2026-10-28
+70106,Jade Solar 3,CA,1,2027,1.5,solar,2026-10-28
+56895,Ameresco Ox Mountain,CA,0,2027,3.0,other,2026-10-28
+69994,Montour Tower Drive Solar LLC,PA,0,2027,3.0,solar,2026-10-28
+70170,Jones - PA 0429 (Rhodes South),PA,0,2027,3.0,solar,2026-10-28
+69160,SV CSG Ottawa 1,IL,0,2027,3.0,solar,2026-10-28
+69995,Muncy Creek Lime Bluff Road Solar,PA,0,2027,3.0,solar,2026-10-28
+70075,Bigler - PA 0409 (Flango 1),PA,0,2027,3.0,solar,2026-10-28
+70079,Buckingham - PA 0151 (Crea),PA,0,2027,3.0,solar,2026-10-28
+70080,Burrell - PA 0396 (Copeland),PA,0,2027,3.0,solar,2026-10-28
+70081,CVE US PA Dayton 379,PA,0,2027,3.0,solar,2026-10-28
+70083,Jones - PA 0399 (Rhodes),PA,0,2027,3.0,solar,2026-10-28
+70166,Unity - PA 0385 (Soccerhound),PA,0,2027,3.0,solar,2026-10-28
+70171,Wetmore - PA 0187 (Chittester),PA,0,2027,3.0,solar,2026-10-28
+70172,Kittanning - PA 0383 (Hoeter),PA,0,2027,3.0,solar,2026-10-28
+70077,Bigler - PA 0437 (Flango 3),PA,0,2027,3.0,solar,2026-10-28
+70120,New Alexandria - PA 0185 (Weimer),PA,0,2027,3.0,solar,2026-10-28
+70169,Monroe - PA 0486 (Acey),PA,0,2027,3.0,solar,2026-10-28
+70076,Bigler - PA 0436 (Flango 2),PA,0,2028,3.0,solar,2026-10-28
+70024,Beaver Gross Road Solar LLC,PA,0,2028,3.0,solar,2026-10-28
+70028,Delaware Conrath Road Solar LLC,PA,0,2028,3.0,solar,2026-10-28
+69970,Maple Ridge A,PA,0,2028,3.0,solar,2026-10-28
+69971,Maple Ridge B,PA,0,2028,3.0,solar,2026-10-28
+70032,Liberty Keefer Mill Road Solar LLC,PA,0,2028,3.0,solar,2026-10-28
+65313,Elm Spring Solar 1,VA,0,2028,3.0,solar,2026-10-28
+70164,Kittanning - PA 0406 (Hoeter B),PA,0,2028,3.0,solar,2026-10-28
+70165,Kittanning - PA 0407 (Hoeter C),PA,0,2028,3.0,solar,2026-10-28
+65312,Shenvalee Solar,VA,0,2029,3.0,solar,2026-10-28
+69220,West Genesee,NY,0,2026,2.9,solar,2026-10-28
+62749,Heidelberg Hydroelectric Project,KY,0,2026,0.6,hydro,2026-10-28
+62749,Heidelberg Hydroelectric Project,KY,1,2026,0.6,hydro,2026-10-28
+62749,Heidelberg Hydroelectric Project,KY,2,2026,0.2,hydro,2026-10-28
+62749,Heidelberg Hydroelectric Project,KY,3,2026,0.2,hydro,2026-10-28
+62749,Heidelberg Hydroelectric Project,KY,4,2026,0.6,hydro,2026-10-28
+62749,Heidelberg Hydroelectric Project,KY,5,2026,0.6,hydro,2026-10-28
+67770,Pittsburg RV Solar,CA,0,2026,2.8,solar,2026-10-28
+70334,Pivot Energy IL 55b LLC,IL,0,2027,2.8,solar,2026-10-28
+69804,Menard 1,IL,0,2027,2.8,solar,2026-10-28
+62390,KY No. 11 L&D Hydroelectric Project,KY,0,2027,0.6,hydro,2026-10-28
+62390,KY No. 11 L&D Hydroelectric Project,KY,1,2027,0.6,hydro,2026-10-28
+62390,KY No. 11 L&D Hydroelectric Project,KY,2,2027,0.6,hydro,2026-10-28
+62390,KY No. 11 L&D Hydroelectric Project,KY,3,2027,0.2,hydro,2026-10-28
+62390,KY No. 11 L&D Hydroelectric Project,KY,4,2027,0.2,hydro,2026-10-28
+62390,KY No. 11 L&D Hydroelectric Project,KY,5,2027,0.6,hydro,2026-10-28
+68110,SR Milan,TN,0,2028,2.8,solar,2026-10-28
+62748,Evelyn Hydroelectric Project,KY,0,2029,0.6,hydro,2026-10-28
+62748,Evelyn Hydroelectric Project,KY,1,2029,0.6,hydro,2026-10-28
+62748,Evelyn Hydroelectric Project,KY,2,2029,0.2,hydro,2026-10-28
+62748,Evelyn Hydroelectric Project,KY,3,2029,0.2,hydro,2026-10-28
+62748,Evelyn Hydroelectric Project,KY,4,2029,0.6,hydro,2026-10-28
+62748,Evelyn Hydroelectric Project,KY,5,2029,0.6,hydro,2026-10-28
+69196,Nebo Energy Storage,NC,0,2026,2.7,storage,2026-10-28
+63622,OES Biogas Power,CA,0,2026,1.3,other,2026-10-28
+63622,OES Biogas Power,CA,1,2026,1.3,other,2026-10-28
+70375,Clinton Solar 5,IL,0,2026,2.6,solar,2026-10-28
+70503,EESolar22,MN,0,2026,2.6,solar,2026-10-28
+70123,Petersburg - VA 0224 (Murphy),VA,0,2027,2.6,solar,2026-10-28
+70126,Roulette - PA 0467,PA,0,2027,2.6,solar,2026-10-28
+69371,Middle Road Solar Partners,PA,0,2026,2.5,solar,2026-10-28
+70031,"Zebrawood Solar, LLC",IL,0,2026,2.5,solar,2026-10-28
+69377,New Freedom Solar Partners,PA,0,2026,2.5,solar,2026-10-28
+69934,Falun,WI,0,2026,2.5,solar,2026-10-28
+69936,Kalmar,MN,0,2026,2.5,solar,2026-10-28
+69940,Teeple Creek,IA,0,2026,2.5,solar,2026-10-28
+52149,West Point (PA),PA,0,2026,2.5,gas,2026-10-28
+68935,SV CSG Roxana 1,IL,0,2026,2.5,solar,2026-10-28
+70489,Bakers Falls Solar,NY,0,2026,2.5,solar,2026-10-28
+70502,Sunset Road Solar 2,IL,0,2026,2.5,solar,2026-10-28
+70205,Bureau Solar 2 LLC,IL,0,2027,2.5,solar,2026-10-28
+70336,"NCBP ONE, LLC",MD,0,2027,2.5,solar,2026-10-28
+69176,Bonacci 1,IL,0,2027,2.5,solar,2026-10-28
+69177,Bonacci 2,IL,0,2027,2.5,solar,2026-10-28
+69373,Little Falls PV,NY,0,2027,2.5,solar,2026-10-28
+68212,Maryland Line Road Solar,DE,0,2027,2.5,solar,2026-10-28
+935,Bushnell,IL,0,2027,2.5,oil,2026-10-28
+68144,Northlake 5-SLCHI305,IL,0,2027,2.5,solar,2026-10-28
+66340,Canyonville Solar LLC (CSG),OR,0,2027,2.5,solar,2026-10-28
+70082,Dayton - PA 0404 (Good East),PA,0,2027,2.5,solar,2026-10-28
+70372,Lerdo Middle,CA,0,2026,2.4,solar,2026-10-28
+69375,Lysander III PV,NY,0,2026,2.4,solar,2026-10-28
+70458,Sapphire Solar NY,NY,0,2026,2.4,solar,2026-10-28
+69767,NCBP Seven,MD,0,2027,2.4,solar,2026-10-28
+70452,Buckaroo Solar 1,OR,0,2027,2.4,solar,2026-10-28
+70168,Monroe - PA 0485 (Lawrence),PA,0,2027,2.4,solar,2026-10-28
+69939,Spooner,WI,0,2026,2.3,solar,2026-10-28
+70370,Ranch 4701,CA,0,2026,2.3,solar,2026-10-28
+68571,"Lowe's - 1440 - Rockford, IL RDC (POI 1)",IL,0,2026,2.3,solar,2026-10-28
+68572,"Lowe's - 1440 - Rockford, IL RDC (POI 2)",IL,0,2026,2.3,solar,2026-10-28
+70555,Cenergy IL - Zion Park District,IL,0,2026,2.3,solar,2026-10-28
+65070,Austin TX GigaFactory,TX,0,2026,2.3,solar,2026-10-28
+66516,TX Dallas 7750 Dynasty Drive,TX,0,2026,2.3,solar,2026-10-28
+66830,Harrah's Atlantic City - POI 1 (Meeting,NJ,0,2026,2.3,solar,2026-10-28
+70101,Pivot Energy PPA 29 LLC,CA,0,2027,0.1,storage,2026-10-28
+70101,Pivot Energy PPA 29 LLC,CA,1,2027,2.2,solar,2026-10-28
+70319,Warbler Clean Energy LLC,NY,0,2027,2.3,storage,2026-10-28
+70316,"Piping Plover Clean Energy, LLC",NY,0,2027,2.3,storage,2026-10-28
+69818,SV CSG North Creek 1,IL,0,2027,2.1,solar,2026-10-28
+70428,Bakersfield Driver,CA,0,2026,0.3,storage,2026-10-28
+70428,Bakersfield Driver,CA,1,2026,1.7,solar,2026-10-28
+70574,Sandoval 2,IL,0,2026,2.0,solar,2026-10-28
+63506,Solar Carver 3 Hybrid,MA,0,2026,1.0,storage,2026-10-28
+63506,Solar Carver 3 Hybrid,MA,1,2026,1.0,solar,2026-10-28
+67857,McDowell Creek Solar LLC,NC,0,2026,2.0,solar,2026-10-28
+68139,McCook 2-SLCHI102,IL,0,2026,2.0,solar,2026-10-28
+70182,Steger,IL,0,2026,2.0,solar,2026-10-28
+70206,Pivot Solar 57 LLC,CO,0,2026,2.0,solar,2026-10-28
+70393,Stephenson County IL S1,IL,0,2026,2.0,solar,2026-10-28
+70448,Keithsburg North Solar LLC PV,IL,0,2026,2.0,solar,2026-10-28
+66768,Hogs Bay,ME,0,2026,2.0,solar,2026-10-28
+68933,SV CSG Corbell,IL,0,2026,2.0,solar,2026-10-28
+70373,100a Swiss Dale Farm,MD,0,2026,2.0,solar,2026-10-28
+70537,Downsville II,MD,0,2026,2.0,solar,2026-10-28
+65130,City of Bowie,MD,0,2026,2.0,solar,2026-10-28
+68465,Imperator Solar,CA,0,2026,2.0,solar,2026-10-28
+69885,USS Mourning,IL,0,2026,2.0,solar,2026-10-28
+70350,IL - Forefront Ameren- Route 40,IL,0,2026,2.0,solar,2026-10-28
+70353,IL-Forefront Ameren-Truitt 1,IL,0,2026,2.0,solar,2026-10-28
+70354,IL-Forefront Ameren-Truitt 2,IL,0,2026,2.0,solar,2026-10-28
+70508,"4786A George Washington, LLC",MD,0,2026,2.0,solar,2026-10-28
+70509,"4786B George Washington, LLC",MD,0,2026,2.0,solar,2026-10-28
+70523,Marley Neck 3 - SLBAL005,MD,0,2026,2.0,solar,2026-10-28
+70196,"DEL022-30423B Thorogoods Rd, LLC",DE,0,2027,2.0,solar,2026-10-28
+70198,"CF IL Solar Marigold Lane, Flora2 LLC",IL,0,2027,2.0,solar,2026-10-28
+68217,Featherbed Lane South Solar,MA,0,2027,1.0,storage,2026-10-28
+68217,Featherbed Lane South Solar,MA,1,2027,1.0,solar,2026-10-28
+70460,"Willington Solar One, LLC",CT,0,2027,2.0,solar,2026-10-28
+61037,Apple Hill Solar,VT,0,2027,2.0,solar,2026-10-28
+69215,Sommer,IL,0,2027,2.0,solar,2026-10-28
+67741,OIT BESS,OR,0,2027,2.0,storage,2026-10-28
+68858,Cavern,NY,0,2027,2.0,solar,2026-10-28
+68860,Tully 5,NY,0,2027,2.0,solar,2026-10-28
+70078,Bigler - PA 0438 (Flango 4),PA,0,2027,2.0,solar,2026-10-28
+68122,Bensenville 2-SLCHI526,IL,0,2026,1.9,solar,2026-10-28
+70335,Pivot Solar 42 LLC,CO,0,2026,1.9,solar,2026-10-28
+69591,20525 Nordhoff PV (North),CA,0,2026,1.9,solar,2026-10-28
+68119,Aurora 7-SLCHI307,IL,0,2027,1.9,solar,2026-10-28
+69222,American Canyon RV Boat Storage,CA,0,2027,1.9,solar,2026-10-28
+68129,Cicero 3-SLCHI603,IL,0,2027,1.9,solar,2026-10-28
+69706,Bishop Ranch - BR 3-GG,CA,0,2027,0.6,storage,2026-10-28
+69706,Bishop Ranch - BR 3-GG,CA,1,2027,1.1,solar,2026-10-28
+69706,Bishop Ranch - BR 3-GG,CA,2,2027,0.2,solar,2026-10-28
+69554,BPL NJ - Belmont,NJ,0,2026,1.8,solar,2026-10-28
+69807,Windsor Locks,CT,0,2026,1.8,solar,2026-10-28
+70337,Pivot Solar 71 LLC,CO,0,2026,1.8,solar,2026-10-28
+68787,NorCal FPV 1 (Pond 2),CA,0,2026,1.8,solar,2026-10-28
+70115,Fort Lyon Solar,CO,0,2027,1.8,solar,2026-10-28
+70118,Trinidad Solar,CO,0,2027,1.8,solar,2026-10-28
+68138,Internationale Ctr 11-SLCHI321,IL,0,2027,1.8,solar,2026-10-28
+68044,Rodatherm Milford 1,UT,0,2028,1.8,other,2026-10-28
+69888,USS Fletcher Solar,NM,0,2026,1.7,solar,2026-10-28
+68132,Elk Grove 1-SLCHI701,IL,0,2026,1.7,solar,2026-10-28
+68541,Palmdale Water District HQ,CA,0,2026,1.7,solar,2026-10-28
+68127,Bensenville Ind Park 4-SLCHI424,IL,0,2027,1.7,solar,2026-10-28
+69766,Kalaeloa Home Lands Solar,HI,0,2027,1.7,solar,2026-10-28
+68118,Addison 11-SLCHI404,IL,0,2026,1.6,solar,2026-10-28
+68130,Des Plaines 11-SLCHI211,IL,0,2026,1.6,solar,2026-10-28
+69711,L3 Harris San Diego,CA,0,2026,1.6,solar,2026-10-28
+70451,Tutuilla Solar,OR,0,2026,1.6,solar,2026-10-28
+70507,Prologis - SLNNJ036 - Community Solar,NJ,0,2026,1.6,solar,2026-10-28
+68141,Northlake 2-SLCHI302,IL,0,2027,1.6,solar,2026-10-28
+69385,Hastings Generating Facility,MI,0,2027,1.6,other,2026-10-28
+69242,AB Van Nuys,CA,0,2027,1.6,solar,2026-10-28
+69791,BPL NJ - Union Distribution Center,NJ,0,2026,1.5,solar,2026-10-28
+70445,W 167th St,IL,0,2026,1.5,solar,2026-10-28
+69753,50 Meister Ave,NJ,0,2026,1.5,solar,2026-10-28
+69813,Argenta Solar,IL,0,2026,1.5,solar,2026-10-28
+2316,Wisner,NE,0,2026,1.5,oil,2026-10-28
+69805,Rockford Plant 7,IL,0,2027,1.5,solar,2026-10-28
+69862,Galva School,IL,0,2027,1.5,solar,2026-10-28
+70114,New Alexandria  - PA 0363 (Weimer North),PA,0,2027,1.5,solar,2026-10-28
+68120,Bensenville 13-SLCHI513,IL,0,2026,1.4,solar,2026-10-28
+69891,Torrance Dis Ctr 2 - SLLAX100,CA,0,2026,1.4,solar,2026-10-28
+70099,Pivot Energy IL 7 LLC,IL,0,2026,1.4,solar,2026-10-28
+70456,W Belmont Ave,IL,0,2026,1.4,solar,2026-10-28
+68600,Las Virgenes MWD - Composting Plant,CA,0,2026,0.5,storage,2026-10-28
+68600,Las Virgenes MWD - Composting Plant,CA,1,2026,0.9,solar,2026-10-28
+69713,Sanger USD - Sanger West HS,CA,0,2026,0.5,storage,2026-10-28
+69713,Sanger USD - Sanger West HS,CA,1,2026,0.9,solar,2026-10-28
+70524,Marley Neck 4 - SLBAL006,MD,0,2026,1.4,solar,2026-10-28
+70338,"NCBP TEN, LLC",MD,0,2027,1.4,solar,2026-10-28
+68143,Northlake 4-SLCHI304,IL,0,2027,1.4,solar,2026-10-28
+68133,Elk Grove 51-SLCHI151,IL,0,2027,1.4,solar,2026-10-28
+69708,Bishop Ranch - BR 3-HH,CA,0,2027,0.6,storage,2026-10-28
+69708,Bishop Ranch - BR 3-HH,CA,1,2027,0.6,solar,2026-10-28
+69708,Bishop Ranch - BR 3-HH,CA,2,2027,0.2,solar,2026-10-28
+69710,Bishop Ranch - BR 3-FF,CA,0,2027,0.6,storage,2026-10-28
+69710,Bishop Ranch - BR 3-FF,CA,1,2027,0.6,solar,2026-10-28
+69710,Bishop Ranch - BR 3-FF,CA,2,2027,0.2,solar,2026-10-28
+64758,Manorville II,NY,0,2027,0.6,solar,2026-10-28
+64758,Manorville II,NY,1,2027,0.8,storage,2026-10-28
+68502,Vienna Walbec Customer Hosted,WI,0,2027,1.4,solar,2026-10-28
+70029,East Windsor Solar 1 LLC,NJ,0,2028,1.4,solar,2026-10-28
+68542,Palmdale Water District 6MG Tank,CA,0,2026,0.3,storage,2026-10-28
+68542,Palmdale Water District 6MG Tank,CA,1,2026,1.0,solar,2026-10-28
+68793,Bandini - SLLAX710,CA,0,2026,1.3,solar,2026-10-28
+68121,Bensenville 14-SLCHI414,IL,0,2027,1.3,solar,2026-10-28
+68137,Glendale Heights 10-SLCHI910,IL,0,2027,1.3,solar,2026-10-28
+68236,South Bay Dis Ctr 6-SLLAX680,CA,0,2027,1.3,solar,2026-10-28
+68792,Fordyce - SLLAX680,CA,0,2027,1.3,solar,2026-10-28
+69860,Murphysboro 2,IL,0,2027,1.3,solar,2026-10-28
+69790,Elizabeth Metropolitan Logistics Center,NJ,0,2026,1.2,solar,2026-10-28
+68789,South Bay Dis Ctr 12 - SLLAX104,CA,0,2026,1.2,solar,2026-10-28
+68124,Bensenville Ind Park 11,IL,0,2026,1.2,solar,2026-10-28
+68135,Franklin Park 2-SLCHI802,IL,0,2026,1.2,solar,2026-10-28
+68123,Bensenville Ind Park 10-SLCHI410,IL,0,2027,1.2,solar,2026-10-28
+69211,San Pedro Public Market (SPPM),CA,0,2027,1.2,solar,2026-10-28
+70207,Pivot Solar 60 LLC,CO,0,2026,1.1,solar,2026-10-28
+69533,CA National City Terminal Ave,CA,0,2026,1.1,solar,2026-10-28
+68126,Bensenville Ind Park 2-SLCHI402,IL,0,2027,1.1,solar,2026-10-28
+69895,Gateway#1&2 (Newark CA),CA,0,2027,1.1,solar,2026-10-28
+70128,Roulette - PA 0479,PA,0,2027,1.1,solar,2026-10-28
+65045,Emery Shute Solar One,ME,0,2026,1.0,solar,2026-10-28
+69983,Novel Gertken Solar LLC,MN,0,2026,1.0,solar,2026-10-28
+68783,NY CDG 009,NY,0,2026,1.0,solar,2026-10-28
+69305,Enterprise MN - Fitzthum,MN,0,2026,1.0,solar,2026-10-28
+69616,USS Lyndon Solar LLC,IL,0,2026,1.0,solar,2026-10-28
+69886,USS Swank Solar,IL,0,2026,1.0,solar,2026-10-28
+64098,Tesla Reno GigaFactory,NV,0,2026,1.0,solar,2026-10-28
+64291,Lincoln Medical and Mental Health Center,NY,0,2026,1.0,oil,2026-10-28
+70505,"VS HR Warner NEM, LLC",CA,0,2026,1.0,solar,2026-10-28
+64865,Novel Blilie Solar LLC,MN,0,2027,1.0,solar,2026-10-28
+69812,SV CSG Brownstown 1,IL,0,2027,1.0,solar,2026-10-28
+70381,Carver Garden,MN,0,2027,1.0,solar,2026-10-28
+70301,MN CSG 2019-57,MN,0,2027,1.0,solar,2026-10-28
+70379,Fuller Garden,MN,0,2027,1.0,solar,2026-10-28
+69034,Pivot Energy Minnesota Solar 2,MN,0,2027,1.0,solar,2026-10-28
+69724,Pike County Solar,IL,0,2027,1.0,solar,2026-10-28
+69786,Stockton 9 - slcva209,CA,0,2027,1.0,solar,2026-10-28
+69609,San Leandro 10 - sleba702,CA,0,2027,1.0,solar,2026-10-28
+67565,East Road Storage Project,CA,0,2027,1.0,storage,2026-10-28
+69785,Stockton 1 - slcva801,CA,0,2027,1.0,solar,2026-10-28
+2038,Cambridge CT Hybrid,MN,0,2027,1.0,storage,2026-10-28
+70167,Latrobe - PA 0408 (Soccerhound B),PA,0,2027,1.0,solar,2026-10-28
+58168,Energy Center,CA,0,2030,0.3,gas,2026-10-28
+58168,Energy Center,CA,1,2030,0.3,gas,2026-10-28
+58168,Energy Center,CA,2,2030,0.3,gas,2026-10-28
+68235,Romeoville 34 - SLCHI234 - BSCHI234,IL,0,2027,0.5,storage,2026-10-28

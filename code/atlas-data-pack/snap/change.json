@@ -1,0 +1,459 @@
+{
+ "updated": "10 Nov 11:51",
+ "first_snapshot": "2026-10-29",
+ "rows": 330,
+ "sources": [
+  {
+   "vendor": "Anthropic",
+   "rows": 38,
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+   "vendor": "OpenAI",
+   "rows": 156,
+   "url": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+   "vendor": "Google",
+   "rows": 87,
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+   "vendor": "Cloudflare",
+   "rows": 47,
+   "url": "https://developers.cloudflare.com/deprecations/"
+  }
+ ],
+ "test": {
+  "of": 1,
+  "held": 0,
+  "moved": 1,
+  "removed_early": 0,
+  "share": 1.0,
+  "share_lo": 0.2065,
+  "share_hi": 1.0,
+  "outcome": "CANNOT_TELL"
+ },
+ "upcoming": [
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-3.1-flash-tts-preview",
+   "shutdown": "2026-11-17",
+   "days_left": 7,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-3.1-flash-live-preview",
+   "shutdown": "2026-11-17",
+   "days_left": 7,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-2.5-flash-native-audio-preview-12-2025",
+   "shutdown": "2026-11-17",
+   "days_left": 7,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-2.5-flash-preview-tts",
+   "shutdown": "2026-11-17",
+   "days_left": 7,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-2.5-pro-preview-tts",
+   "shutdown": "2026-11-17",
+   "days_left": 7,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Cloudflare",
+   "url": "https://developers.cloudflare.com/deprecations/",
+   "item": "Foundation DNS boolean setting",
+   "shutdown": "2026-11-23",
+   "days_left": 13,
+   "deprecated": "2026-07-27",
+   "notice": 119
+  },
+  {
+   "vendor": "Anthropic",
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "item": "claude-opus-4-5-20251101",
+   "shutdown": "2026-11-24 (not sooner than)",
+   "days_left": 14,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Anthropic",
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "item": "claude-sonnet-4-5-20250929",
+   "shutdown": "2026-11-30",
+   "days_left": 20,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "The v1/prompts API and reusable prompt objects are scheduled to shut down.",
+   "shutdown": "2026-11-30",
+   "days_left": 20,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "The Evals dashboard and API are scheduled to shut down.",
+   "shutdown": "2026-11-30",
+   "days_left": 20,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "Agent Builder is scheduled to shut down.",
+   "shutdown": "2026-11-30",
+   "days_left": 20,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-2.5-pro",
+   "shutdown": "2026-12-01",
+   "days_left": 21,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-2.5-flash",
+   "shutdown": "2026-12-01",
+   "days_left": 21,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Cloudflare",
+   "url": "https://developers.cloudflare.com/deprecations/",
+   "item": "Authoritative DNS and DNS Firewall Legacy Analytics",
+   "shutdown": "2026-12-01",
+   "days_left": 21,
+   "deprecated": "2025-12-09",
+   "notice": 357
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-image-1-mini",
+   "shutdown": "2026-12-01",
+   "days_left": 21,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-image-1.5 | gpt-image-1.5-2025-12-16",
+   "shutdown": "2026-12-01",
+   "days_left": 21,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "chatgpt-image-latest",
+   "shutdown": "2026-12-01",
+   "days_left": 21,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "Google",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "item": "gemini-omni-1.1-flash",
+   "shutdown": "2026-12-03",
+   "days_left": 23,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-5 | gpt-5-2025-08-07",
+   "shutdown": "2026-12-11",
+   "days_left": 31,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-5-mini | gpt-5-mini-2025-08-07",
+   "shutdown": "2026-12-11",
+   "days_left": 31,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-5-nano | gpt-5-nano-2025-08-07",
+   "shutdown": "2026-12-11",
+   "days_left": 31,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-5-pro | gpt-5-pro-2025-10-06",
+   "shutdown": "2026-12-11",
+   "days_left": 31,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "o3 | o3-2025-04-16",
+   "shutdown": "2026-12-11",
+   "days_left": 31,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "o3-pro | o3-pro-2025-06-10",
+   "shutdown": "2026-12-11",
+   "days_left": 31,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "tts-1",
+   "shutdown": "2027-01-06",
+   "days_left": 57,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "tts-1-hd",
+   "shutdown": "2027-01-06",
+   "days_left": 57,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-4o-mini-tts | gpt-4o-mini-tts-2025-03-20",
+   "shutdown": "2027-01-06",
+   "days_left": 57,
+   "deprecated": "",
+   "notice": null
+  },
+  {
+   "vendor": "OpenAI",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "item": "gpt-4o-mini-tts | gpt-4o-mini-tts-2025-12-15",
+   "shutdown": "2027-01-06",
+   "days_left": 57,
+   "deprecated": "",
+   "notice": null
+  }
+ ],
+ "notice": {
+  "Cloudflare": {
+   "n": 16,
+   "median": 182,
+   "shortest": 88,
+   "under30": 0,
+   "share": 0.0
+  }
+ },
+ "lifespan": {
+  "Google": {
+   "n": 54,
+   "median": 275.5,
+   "shortest": 83,
+   "under180": 11,
+   "share": 0.204
+  },
+  "Google, names with preview": {
+   "n": 34,
+   "median": 217,
+   "shortest": 83,
+   "under180": 10,
+   "share": 0.294
+  },
+  "Google, other names": {
+   "n": 20,
+   "median": 454,
+   "shortest": 98,
+   "under180": 1,
+   "share": 0.05
+  }
+ },
+ "changes": {
+  "DATE_ADDED": {
+   "n": 3
+  },
+  "MOVED_LATER": {
+   "n": 1
+  },
+  "NEW": {
+   "n": 7
+  },
+  "REMOVED": {
+   "n": 1
+  }
+ },
+ "change_list": [
+  {
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "date": "2026-11-10",
+   "kind": "NEW",
+   "item": "gpt-image-2 | gpt-image-2-2026-04-21",
+   "vendor": "OpenAI",
+   "was": "2027-02-10",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "date": "2026-11-09",
+   "kind": "NEW",
+   "item": "claude-mythos-5-2",
+   "vendor": "Anthropic",
+   "was": "2027-11-09",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "date": "2026-11-09",
+   "kind": "NEW",
+   "item": "claude-fable-5-2",
+   "vendor": "Anthropic",
+   "was": "2027-11-09",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "date": "2026-11-06",
+   "kind": "MOVED_LATER",
+   "item": "gemini-embedding-2-preview",
+   "vendor": "Google",
+   "was": "2026-08-10",
+   "now": "2026-11-06",
+   "note": ""
+  },
+  {
+   "url": "https://developers.cloudflare.com/deprecations/",
+   "date": "2026-11-05",
+   "kind": "NEW",
+   "item": "Load Balancing monitors and Health Checks: Legacy TLS cipher suites",
+   "vendor": "Cloudflare",
+   "was": "2027-02-01",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "date": "2026-11-05",
+   "kind": "NEW",
+   "item": "gpt-5.5-cyber-preview",
+   "vendor": "OpenAI",
+   "was": "2027-02-01",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "date": "2026-11-05",
+   "kind": "DATE_ADDED",
+   "item": "gemini-omni-1.1-flash",
+   "vendor": "Google",
+   "was": "",
+   "now": "2026-12-03",
+   "note": ""
+  },
+  {
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "date": "2026-11-05",
+   "kind": "NEW",
+   "item": "gemini-omni-1.2-flash",
+   "vendor": "Google",
+   "was": "",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "date": "2026-11-03",
+   "kind": "REMOVED",
+   "item": "embedding-2-preview",
+   "vendor": "Google",
+   "was": "2026-08-10",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "date": "2026-11-03",
+   "kind": "NEW",
+   "item": "gemini-embedding-2-preview",
+   "vendor": "Google",
+   "was": "2026-08-10",
+   "now": "",
+   "note": ""
+  },
+  {
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "date": "2026-11-02",
+   "kind": "DATE_ADDED",
+   "item": "gemini-2.5-flash",
+   "vendor": "Google",
+   "was": "",
+   "now": "2026-12-01",
+   "note": ""
+  },
+  {
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "date": "2026-11-02",
+   "kind": "DATE_ADDED",
+   "item": "gemini-2.5-pro",
+   "vendor": "Google",
+   "was": "",
+   "now": "2026-12-01",
+   "note": ""
+  }
+ ]
+}
