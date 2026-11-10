@@ -396,7 +396,7 @@ import re as _re
 _NDA_SRC = os.path.join(HERE, '..', 'heuremen-specbook', 'contracts', 'MUTUAL_NDA.md')
 _nda_md = open(_NDA_SRC, encoding='utf-8').read()
 NDA_VERSION = _re.search(r'DRAFT v([0-9.]+)', _nda_md).group(1)
-PRIVACY_VERSION = '2026-11-10'   # 10 Nov: semicolons split into sentences, no change in meaning. 30 Oct (2026-10-30b): the correction or removal form
+PRIVACY_VERSION = '2026-11-10b'   # 10 Nov (2026-11-10b): the weekly changes email (what is stored, why, how to leave). 10 Nov: semicolons split into sentences, no change in meaning. 30 Oct (2026-10-30b): the correction or removal form
 _nda = '\n'.join(l for l in _nda_md.split('\n') if not l.startswith('*DRAFT'))
 _nda = _nda.split('\n---')[0]                                            # no signature block on the web: acceptance is the checkbox (section 12)
 _nda = _nda.replace('is made on [DATE] between', 'is made on the date Counterparty accepts it between', 1)
@@ -476,7 +476,7 @@ GATE_JS = r"""// gate-ui.js: each legal box must be scrolled to the end before i
 PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heuremen LLC', 'How Heuremen LLC and all of its divisions collect, use, protect and retain personal information.',
  '''
 <section class="legal">
-<p class="meta">Effective 23 October 2026. Updated 29 October 2026 to describe the installable app. Updated 30 October 2026 to say which pages load typefaces from Google Fonts.</p>
+<p class="meta">Effective 23 October 2026. Updated 29 October 2026 to describe the installable app. Updated 30 October 2026 to say which pages load typefaces from Google Fonts. Updated 10 November 2026 to describe the weekly changes email.</p>
 <p>This notice explains how Heuremen LLC (&ldquo;Heuremen&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;), including all of its divisions, collects, uses, shares, protects and retains personal information through indahl.ai, heuremen.org, our inquiry form, our correspondence and our engagements. We hold the information of everyone who contacts us, and of any client, in confidence.</p>
 
 <h2>Information we collect</h2>
@@ -485,6 +485,8 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <p>If you install indahl.ai as an app on your phone or computer, your browser keeps a copy of the public pages you open on your own device so that they open without a connection. We receive nothing from that copy and it holds no personal information from you. Removing the app or clearing the site&rsquo;s data deletes it. Live data feeds, the inquiry form and sign-in are never kept in it.</p>
 <h3>When you send a correction or removal request</h3> <p>The correction or removal form collects what you enter: your name, an email address we can answer, the page concerned and your request, with the time it arrived and the country your connection reports. We use it only to handle the request, to answer you, and where needed to confirm that a removal request comes from the person or organisation named. It is never posted. A short one-way hash of your network address is kept for one hour to limit repeated requests, and the address itself is not kept.</p> <h3>When you submit an inquiry</h3>
 <p>The inquiry form collects what you enter: your name, organisation email address, organisation, role, a description of what you need (including the systems or results involved and your organisation&rsquo;s relationships with relevant vendors), an approximate budget range and timeline, who referred you, and your confirmations regarding non-disclosure, authority and this notice. For an engagement inquiry we also record the identity you verified (your work email address, the name on that account, the sign-in method and the identifier our sign-in provider assigns), and your acceptance of our Mutual Non-Disclosure Agreement and this notice (which versions, the time, that you read both to the end, and your name, title and organisation). Nothing is recorded until you submit the inquiry. We also record the time of the inquiry and the country the request came from. We do not store your IP address. A truncated one-way hash of it, which may still be personal data, is held for up to one hour only to limit repeat submissions. Each accepted inquiry is also emailed to us.</p>
+<h3>When you subscribe to the weekly changes email</h3>
+<p>The email field at the foot of each page and on the weekly changes page collects only your email address. We store it with the time you subscribed, the version of this notice in force then, and a random unsubscribe token. We use it for one thing: to email you the weekly changes page every Tuesday. Every email has a one-click unsubscribe link. Unsubscribing deletes your address and its token from the list at once. A truncated one-way hash of your IP address is held for up to one hour only to limit repeat sign-ups. We never share, sell or rent the list, and we never use it for anything other than this email. The addresses are kept in a private storage area accessible only to us and are never published, logged or posted.</p>
 <h3>When you add a PDF link under a Recount Matrix</h3>
 <p>The one-field box under each Recount Matrix stores the link you paste, the table it was added under and the time. It stores no name, email address or IP address. A truncated one-way hash of your IP address is held for up to one hour only to limit repeat submissions. We read each link before anything changes in a table.</p>
 <h3>When you add a response</h3>
@@ -498,6 +500,7 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <ul class="ticks">
 <li>To review inquiries for fit, independence (including conflicts with vendors we measure) and authority, and to reply.</li>
 <li>To negotiate, perform and invoice engagements.</li>
+<li>To email the weekly changes page to the addresses that asked for it.</li>
 <li>To keep our websites secure, and to detect and prevent abuse of the inquiry form.</li>
 <li>To meet legal, tax and accounting obligations, and to establish or defend legal claims.</li>
 </ul>
@@ -507,7 +510,7 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <p>Where the GDPR or UK GDPR applies, we rely on our legitimate interests in reviewing inquiries and running our business securely. We also rely on steps taken at your request before entering a contract, and on the performance of that contract. We rely on compliance with legal obligations. Where we ask for it, we rely on your consent, which you may withdraw at any time.</p>
 
 <h2>Who we share it with</h2>
-<p>We share personal information only with service providers that process it on our behalf and under their contractual obligations: Cloudflare (delivery of indahl.ai, the inquiry form&rsquo;s storage and email delivery), WorkOS (verifying the work identity of people who send an engagement inquiry), GitHub (hosting of heuremen.org), Google Workspace (our email), and Google Fonts (typefaces on one page of heuremen.org). We disclose information when required by law or valid legal process, to protect our rights or the safety of others, or in connection with a merger, acquisition or sale of assets, in which case this notice continues to apply to the information transferred. We never name a client, partner or engagement without written consent.</p>
+<p>We share personal information only with service providers that process it on our behalf and under their contractual obligations: Cloudflare (delivery of indahl.ai, the storage of the inquiry form and the weekly changes list, and email delivery), WorkOS (verifying the work identity of people who send an engagement inquiry), GitHub (hosting of heuremen.org), Google Workspace (our email), and Google Fonts (typefaces on one page of heuremen.org). We disclose information when required by law or valid legal process, to protect our rights or the safety of others, or in connection with a merger, acquisition or sale of assets, in which case this notice continues to apply to the information transferred. We never name a client, partner or engagement without written consent.</p>
 
 <h2>International transfers</h2>
 <p>We are based in the United States, and our service providers may process information in other countries. Where the law requires it, transfers are made under appropriate safeguards such as the European Commission&rsquo;s standard contractual clauses relied on by those providers.</p>
@@ -517,6 +520,7 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <li>Inquiries that do not lead to an engagement, and the copy emailed to us: up to 24 months from receipt, then deleted.</li> <li>Correction or removal requests, and the copy emailed to us: up to 24 months from receipt, then deleted.</li>
 <li>Engagement records, agreements and invoices: for the life of the engagement and as long afterwards as contract, tax and legal obligations require.</li>
 <li>Engagement data you provide: returned or deleted at the end of the engagement on request, except where we must keep it by law.</li>
+<li>Weekly changes email addresses: until you unsubscribe, then deleted at once.</li>
 <li>The one-way hash used to limit repeat submissions: one hour.</li>
 <li>Inquiry cookies. A signed cookie records that you accepted the agreements and is kept up to two hours. A cookie that ties a sign-in to your browser is kept up to ten minutes. A signed cookie holds your verified identity while you complete an engagement inquiry and is kept up to 45 minutes. We set no other cookies and no tracking cookies.</li>
 </ul>
@@ -2096,6 +2100,7 @@ CSS += """
 .ggs::before{content:"\\00b7\\00a0"}.ggr{display:block;font-size:13px;color:var(--goldink)}.ggnote{display:block;font-size:14px;color:var(--mid);margin-bottom:4px}.ggall a{font-size:15px}
 @media (max-width:640px){.ggpanel{position:static;margin-top:8px;width:auto}}
 """
+import weekly as _wk; CSS += _wk.CSS   # 10 Nov 2026: /week pages and the newsletter field (weekly.py, newsletter.js); placed in main() below
 def main():
     names = {}
     import hashlib as _hh
@@ -2175,7 +2180,7 @@ def main():
     try: _DOI = _jsonld.load(open(os.path.join(HERE, '..', 'zenodo_packs', 'dois.json')))
     except Exception: _DOI = {}
     def _cite(name):
-        d = (_DOI.get(name) or {}).get('doi')
+        d = (_DOI.get(name) or {}).get('concept_doi') or (_DOI.get(name) or {}).get('doi')   # 10 Nov 2026: the concept DOI, which always resolves to the newest version
         return f'<p class="pkgalso">Cite: <a href="https://doi.org/{d}">doi:{d}</a> (Zenodo)</p>' if d else ''
     def _md_body(md):
         out = []
@@ -2321,14 +2326,28 @@ def main():
         _gid = 'gg-' + _dv.strip('/')
         _box = (f'<div class="gg"><span class="dd ggdd"><button type="button" class="ggbtn" aria-haspopup="true" aria-controls="{_gid}">Grab and go</button>'
                 f'<span class="ddpanel ggpanel" id="{_gid}"><span class="ggnote">Every pack in {_DNAME.get(_dv, _dv.strip("/").upper())}, each a zip with its README, sources and tests.</span><ul>' + ''.join(_li) + '</ul></span></span></div>')
+        # 10 Nov 2026 (Zenodo packs): the Zenodo record that holds this division's desk packs, cited under the list
+        _zr = {'/hermes': 'HERMES Desk Packs', '/iris': 'IRIS Desk Packs', '/social': 'SOCIAL Data Pack'}.get(_dv)
+        if _zr and _cite(_zr): _box += _cite(_zr).replace('Cite: ', ('Desk packs on Zenodo: ' if _dv != '/social' else 'Cite: '), 1)
         _doc = PAGES[_dv]; _hd = f'<a class="pkghead" href="{ {"/atlas": "/atlas/data-pack", "/iris": "/iris/package", "/oy": "/oy/data-pack", "/qia": "/qia/package"}.get(_dv, "") }">'
         if _dv in ('/atlas', '/iris', '/oy', '/qia') and _hd in _doc:
             _i = _doc.index('</aside>', _doc.index(_hd)); PAGES[_dv] = _doc[:_i] + _box + _doc[_i:]
         else:
             _m = '<main class="wrap">' + _hlslot(_dv); _m = _m if _m in _doc else '<main class="wrap">'
             PAGES[_dv] = _doc.replace(_m, _m + '<aside class="pkgbox ggbox"><span class="pkghead">' + _MARK + ('HERMES desk packs' if _dv == '/hermes' else 'SOCIAL Data Pack') + '</span>' + _box + '</aside>', 1)
+    # 10 Nov 2026 (Zenodo packs): each desk page whose pack is deposited on Zenodo says where, under the page, from ledger/zenodo_dois.json.
+    # ATLAS desks are left out while the ATLAS version that holds them is held (ledger/zenodo_packs_PLAN.json).
+    try: _ZD = _jsonld.load(open(os.path.join(HERE, '..', 'ledger', 'zenodo_dois.json')))['desks']
+    except Exception: _ZD = {}
+    for _zs, _ze in _ZD.items():
+        _zp = '/' + _zs
+        if _zs == 'social' or _zp not in PAGES or not _ze.get('concept_doi') or _ze.get('record') in (None, 'ATLAS Data Pack') or '</main>' not in PAGES[_zp]: continue   # SOCIAL cites in its pack box
+        _zl = (f'<p class="pkgalso">Data pack on Zenodo: <a href="https://doi.org/{_ze["concept_doi"]}">doi:{_ze["concept_doi"]}</a>'
+               + ('' if _ze['record'] == _zs.upper() + ' Data Pack' else f', one file of the {_ze["record"]} record') + '</p>')
+        _zi = PAGES[_zp].rindex('</main>'); PAGES[_zp] = PAGES[_zp][:_zi] + _zl + PAGES[_zp][_zi:]
     # 10 Nov 2026 (findable pass, findable.py): the banner is filled here for every page, package pages included (they were built after the old
     # fill and shipped an empty banner). Then the data links and embed box, the page dates, the share cards, Dataset JSON-LD and the change feeds.
+    _wk.apply(PAGES, page, hero_slim, DESKS)   # 10 Nov 2026: /week, every past week, and the one-field newsletter box in every footer
     for _pp in PAGES: PAGES[_pp] = _re.sub(r'@@NAV:[^@]*@@', lambda _m, _pp=_pp: _navfor(_pp), PAGES[_pp])
     import findable as _fd
     _packs = _fd.packs(PAGES, DESKS)

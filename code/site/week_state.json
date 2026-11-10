@@ -1,0 +1,240 @@
+{
+ "desks": [
+  [
+   "/campus",
+   "CAMPUS",
+   "The documents behind the OY page, kept over time"
+  ],
+  [
+   "/iris/lab",
+   "LAB",
+   "Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Faults and Guards across models"
+  ],
+  [
+   "/yo",
+   "YO",
+   "Our small language model trained on IBM calibration records: live reads and every test"
+  ],
+  [
+   "/hfsize",
+   "HFSIZE",
+   "Model names against the weights"
+  ],
+  [
+   "/hflicense",
+   "HFLICENSE",
+   "Stated licenses against license files"
+  ],
+  [
+   "/pkglicense",
+   "PKGLICENSE",
+   "Package licenses against repository licenses"
+  ],
+  [
+   "/pkginstall",
+   "PKGINSTALL",
+   "Install commands against pip resolution"
+  ],
+  [
+   "/weights",
+   "WEIGHTS",
+   "Model names against their weight files, pass after pass"
+  ],
+  [
+   "/ailuminate",
+   "AILUMINATE",
+   "MLCommons AILuminate Safety results, kept and checked"
+  ],
+  [
+   "/hosts",
+   "HOSTS",
+   "One open-weight model, many hosts, stated uptime and quantization"
+  ],
+  [
+   "/atlas/electricity",
+   "ELECTRICITY",
+   "Prices, providers and generation by state"
+  ],
+  [
+   "/atlas/power-plants",
+   "POWER PLANTS",
+   "Every operating plant by fuel and capacity"
+  ],
+  [
+   "/atlas/carbon",
+   "CARBON",
+   "Pounds of CO2 per megawatthour by state and grid region"
+  ],
+  [
+   "/atlas/planned-plants",
+   "PLANNED PLANTS",
+   "What is coming, by fuel, stage and year"
+  ],
+  [
+   "/water",
+   "WATER",
+   "Reservoir forecasts against measured levels"
+  ],
+  [
+   "/uptime",
+   "UPTIME",
+   "Vendor status pages against independent probes"
+  ],
+  [
+   "/time",
+   "TIME",
+   "Public time servers, stated against delivered"
+  ],
+  [
+   "/cada",
+   "CADA",
+   "Public DNS filters against fresh abuse reports"
+  ],
+  [
+   "/secrecords",
+   "SECRECORDS",
+   "Security records against their own rules"
+  ],
+  [
+   "/seat",
+   "SEAT",
+   "An outside seat reads our own pages"
+  ],
+  [
+   "/support",
+   "SUPPORT",
+   "Stated support windows against release activity"
+  ],
+  [
+   "/change",
+   "CHANGE",
+   "Announced shutdown dates, kept over time"
+  ],
+  [
+   "/hermes/model",
+   "MODEL",
+   "Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data"
+  ],
+  [
+   "/trials",
+   "TRIALS",
+   "Results due against results posted, and stopped trials"
+  ],
+  [
+   "/hpt",
+   "HPT",
+   "Hospital price files against the rule"
+  ],
+  [
+   "/airline",
+   "AIRLINE",
+   "Scheduled flight time against flown time"
+  ],
+  [
+   "/airq",
+   "AIRQ",
+   "Air sensors against the EPA's own targets"
+  ],
+  [
+   "/revise",
+   "REVISE",
+   "Stated margin against later revision"
+  ],
+  [
+   "/fedsep",
+   "FEDSEP",
+   "The Fed's stated ranges against outcomes"
+  ],
+  [
+   "/cadence",
+   "CADENCE",
+   "Stated update schedules against delivered"
+  ],
+  [
+   "/forecast",
+   "FORECAST",
+   "Stated chance against what happened"
+  ],
+  [
+   "/launch",
+   "LAUNCH",
+   "Stated launch time against the time it flew"
+  ],
+  [
+   "/tape",
+   "TAPE",
+   "Every page and live feed, hashed and chained, with a beacon"
+  ],
+  [
+   "/vault",
+   "VAULT",
+   "A receipt for any file, or a file sealed until a date, no file stored"
+  ],
+  [
+   "/arxivdrift",
+   "ARXIVDRIFT",
+   "Studies read, then revised"
+  ],
+  [
+   "/linkrot",
+   "LINKROT",
+   "Stated code links against live"
+  ],
+  [
+   "/wiki",
+   "WIKI",
+   "Cited figures against their source"
+  ],
+  [
+   "/social",
+   "SOCIAL",
+   "Platform reports against the filings"
+  ],
+  [
+   "/stack",
+   "STACK",
+   "Every test side by side"
+  ]
+ ],
+ "first_seen": {
+  "/ailuminate": "2026-10-29T18:04:48Z",
+  "/airline": "2026-10-29T14:57:22Z",
+  "/airq": "2026-10-29T18:22:27Z",
+  "/arxivdrift": "2026-10-29T02:07:39Z",
+  "/atlas/carbon": null,
+  "/atlas/electricity": null,
+  "/atlas/planned-plants": null,
+  "/atlas/power-plants": null,
+  "/cada": null,
+  "/cadence": "2026-10-28T23:43:20Z",
+  "/campus": "2026-10-29T18:28:01Z",
+  "/change": "2026-10-29T11:12:43Z",
+  "/fedsep": "2026-10-29T12:56:10Z",
+  "/forecast": "2026-10-28T23:43:20Z",
+  "/hermes/model": "2026-10-29T13:11:24Z",
+  "/hflicense": "2026-10-29T03:36:56Z",
+  "/hfsize": "2026-10-29T11:02:15Z",
+  "/hosts": "2026-10-29T19:18:57Z",
+  "/hpt": "2026-10-29T15:30:48Z",
+  "/iris/lab": "2026-10-30T00:40:25Z",
+  "/launch": "2026-10-28T23:54:05Z",
+  "/linkrot": "2026-10-29T00:56:18Z",
+  "/pkginstall": "2026-10-29T12:16:37Z",
+  "/pkglicense": "2026-10-29T02:44:25Z",
+  "/revise": "2026-10-29T12:40:10Z",
+  "/seat": "2026-10-29T11:58:53Z",
+  "/secrecords": "2026-10-29T11:54:10Z",
+  "/social": "2026-11-10T12:49:07Z",
+  "/stack": "2026-10-29T12:21:11Z",
+  "/support": "2026-10-29T02:25:43Z",
+  "/tape": "2026-10-29T21:44:56Z",
+  "/time": null,
+  "/trials": "2026-10-28T23:51:50Z",
+  "/uptime": "2026-10-28T23:37:42Z",
+  "/vault": "2026-10-29T21:51:28Z",
+  "/water": "2026-11-10T04:09:31Z",
+  "/weights": "2026-10-29T15:10:38Z",
+  "/wiki": "2026-11-10T09:42:08Z",
+  "/yo": "2026-11-09T20:33:50Z"
+ }
+}
