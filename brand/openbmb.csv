@@ -1,0 +1,2 @@
+brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
+OpenBMB,HFSIZE,https://indahl.ai/hfsize,Does the size in a model's name match the weights?,openbmb/MiniCPM5-2B-DSpark,Its statement,size in the name: 2.00 B,parameters in the weights: 324 M,,"mismatch, read in full",The card describes a draft checkpoint made to pair with MiniCPM5-2B. The name states the size of the model it pairs with.,10 Nov 10:27,

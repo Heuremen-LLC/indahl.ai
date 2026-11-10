@@ -1,0 +1,4607 @@
+{
+ "note": "Entity map for the brand pages on indahl.ai (/brand). Each alias is a name exactly as one desk shows it, with how it was tied to the page. Distinct legal entities are merged only where the page note says so. Individuals never get a page, and the excluded list names every name kept off. A name a desk shows that is not in this map stays on its desk and on no brand page.",
+ "updated": "2026-11-10",
+ "roles": {
+  "statement": "its statement is held against the record",
+  "service": "its service is measured",
+  "record": "its record is the yardstick"
+ },
+ "entities": [
+  {
+   "slug": "abbott-medical-devices",
+   "name": "Abbott Medical Devices",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Abbott Medical Devices|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "abbvie",
+   "name": "AbbVie",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "AbbVie|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "acadia-pharmaceuticals-inc",
+   "name": "ACADIA Pharmaceuticals Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "ACADIA Pharmaceuticals Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "aclaris-therapeutics-inc",
+   "name": "Aclaris Therapeutics, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Aclaris Therapeutics, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "adguard",
+   "name": "AdGuard",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cada",
+     "raw": "adguard_default",
+     "decided": "the resolver is the public filter run by AdGuard"
+    }
+   ]
+  },
+  {
+   "slug": "ain-shams-university",
+   "name": "Ain Shams University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Ain Shams University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "alaska-airlines",
+   "name": "Alaska Airlines",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Alaska (AS)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (AS) is Alaska Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "albert-einstein-college-of-medicine",
+   "name": "Albert Einstein College of Medicine",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Albert Einstein College of Medicine|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "alcon-research",
+   "name": "Alcon Research",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Alcon Research|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "aldeyra-therapeutics-inc",
+   "name": "Aldeyra Therapeutics, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Aldeyra Therapeutics, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "alexion-pharmaceuticals-inc",
+   "name": "Alexion Pharmaceuticals, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Alexion Pharmaceuticals, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "aliexpress",
+   "name": "AliExpress",
+   "kind": "company",
+   "note": "An Alibaba Group marketplace, kept apart from Qwen.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "AliExpress",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "allegiant-air",
+   "name": "Allegiant Air",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Allegiant (G4)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (G4) is Allegiant Air"
+    }
+   ]
+  },
+  {
+   "slug": "allergan",
+   "name": "Allergan",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Allergan|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "amazon",
+   "name": "Amazon",
+   "kind": "company",
+   "note": "Amazon.com, Inc. and the EU entity that files the Amazon Store DSA report. AWS has its own page and is not merged here.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Amazon Store",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "support",
+     "raw": "kindle",
+     "decided": "Kindle is an Amazon device line"
+    }
+   ]
+  },
+  {
+   "slug": "aws",
+   "name": "Amazon Web Services",
+   "kind": "company",
+   "note": "Amazon Web Services, Inc. (AWS), a subsidiary of Amazon.com, Inc. Kept apart from the Amazon page, which holds the Amazon Store and Kindle rows.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.aws.com",
+     "decided": "the server is on an aws.com host name, run by AWS"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-neptune",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-rds-mysql",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-msk",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "support",
+     "raw": "amazon-elasticache-redis",
+     "decided": "an AWS managed service (product name starts with Amazon, sold by AWS)"
+    },
+    {
+     "desk": "pkglicense",
+     "raw": "aws",
+     "decided": "aws is the GitHub organisation of Amazon Web Services"
+    }
+   ]
+  },
+  {
+   "slug": "amd",
+   "name": "AMD",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "AMD",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "american-airlines",
+   "name": "American Airlines",
+   "kind": "company",
+   "note": "Envoy Air and PSA Airlines are American Airlines Group subsidiaries with their own pages.",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "American (AA)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (AA) is American Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "amgen",
+   "name": "Amgen",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Amgen|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "anthropic",
+   "name": "Anthropic",
+   "kind": "company",
+   "note": "Anthropic PBC.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Anthropic",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "change",
+     "raw": "Anthropic",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "apple",
+   "name": "Apple",
+   "kind": "company",
+   "note": "Apple Inc. The App Store DSA report is filed by Apple Distribution International Limited, listed here under Apple.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.apple.com",
+     "decided": "the server is on an apple.com host name, run by Apple"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Apple App Store",
+     "decided": "an Apple service"
+    },
+    {
+     "desk": "model",
+     "raw": "Apple",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "applovin",
+   "name": "AppLovin",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "applovin.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "arcutis-biotherapeutics-inc",
+   "name": "Arcutis Biotherapeutics, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Arcutis Biotherapeutics, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "astellas-pharma-global-development-inc",
+   "name": "Astellas Pharma Global Development, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Astellas Pharma Global Development, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "astrazeneca",
+   "name": "AstraZeneca",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "AstraZeneca|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "asus",
+   "name": "ASUS",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "ASUS",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "atlassian",
+   "name": "Atlassian",
+   "kind": "company",
+   "note": "Atlassian Corporation, which also runs Statuspage.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Atlassian",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "support",
+     "raw": "jira-service-management",
+     "decided": "Jira Service Management is an Atlassian product"
+    },
+    {
+     "desk": "support",
+     "raw": "jira-software",
+     "decided": "Jira Software is an Atlassian product"
+    },
+    {
+     "desk": "support",
+     "raw": "confluence",
+     "decided": "Confluence is an Atlassian product"
+    },
+    {
+     "desk": "support",
+     "raw": "bamboo",
+     "decided": "Bamboo is an Atlassian product"
+    },
+    {
+     "desk": "support",
+     "raw": "bitbucket",
+     "decided": "Bitbucket is an Atlassian product"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "atlassian.com",
+     "decided": "atlassian.com is Atlassian's domain"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "statuspage.io",
+     "decided": "Statuspage is an Atlassian product"
+    }
+   ]
+  },
+  {
+   "slug": "automattic",
+   "name": "Automattic",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "wordpress.com",
+     "decided": "wordpress.com is run by Automattic"
+    }
+   ]
+  },
+  {
+   "slug": "axsome-therapeutics-inc",
+   "name": "Axsome Therapeutics, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Axsome Therapeutics, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "bausch-and-lomb-incorporated",
+   "name": "Bausch & Lomb Incorporated",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Bausch & Lomb Incorporated|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "bayer",
+   "name": "Bayer",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Bayer|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "baylor-college-of-medicine",
+   "name": "Baylor College of Medicine",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Baylor College of Medicine|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "bbc",
+   "name": "BBC",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "bbc.com",
+     "decided": "bbc.com and bbc.co.uk are the BBC's domains"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "bbc.co.uk",
+     "decided": "bbc.com and bbc.co.uk are the BBC's domains"
+    }
+   ]
+  },
+  {
+   "slug": "beigene",
+   "name": "BeiGene",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "BeiGene|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "beth-israel-deaconess-medical-center",
+   "name": "Beth Israel Deaconess Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Beth Israel Deaconess Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "biogen",
+   "name": "Biogen",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Biogen|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "biontech-se",
+   "name": "BioNTech SE",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "BioNTech SE|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "bluehost",
+   "name": "Bluehost",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "bluehost.com",
+     "decided": "named after its own domain. Ownership group not looked up and not merged"
+    }
+   ]
+  },
+  {
+   "slug": "bluesky",
+   "name": "Bluesky",
+   "kind": "company",
+   "note": "Bluesky Social, PBC.",
+   "aliases": [
+    {
+     "desk": "social_bluesky",
+     "raw": "Bluesky",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "boehringer-ingelheim",
+   "name": "Boehringer Ingelheim",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Boehringer Ingelheim|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "booking-com",
+   "name": "Booking.com",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Booking.com",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "boston-children-s-hospital",
+   "name": "Boston Children's Hospital",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Boston Children's Hospital|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "boston-scientific-corporation",
+   "name": "Boston Scientific Corporation",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Boston Scientific Corporation|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "branch",
+   "name": "Branch",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "branch.io",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "brigham-and-women-s-hospital",
+   "name": "Brigham and Women's Hospital",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Brigham and Women's Hospital|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "bristol-myers-squibb",
+   "name": "Bristol-Myers Squibb",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Bristol-Myers Squibb|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "broadcom",
+   "name": "Broadcom",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Broadcom",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "btl-industries-ltd",
+   "name": "BTL Industries Ltd.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "BTL Industries Ltd.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "bureau-of-labor-statistics",
+   "name": "Bureau of Labor Statistics",
+   "kind": "agency",
+   "note": "United States Department of Labor. Kept apart from the Department of Labor portal page.",
+   "aliases": [
+    {
+     "desk": "revise",
+     "raw": "BLS",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "cadence",
+     "raw": "BLS",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "bureau-of-reclamation",
+   "name": "Bureau of Reclamation",
+   "kind": "agency",
+   "note": "United States Department of the Interior.",
+   "aliases": [
+    {
+     "desk": "water",
+     "raw": "Reclamation",
+     "decided": "the desk names the organisation itself (24-Month Study)"
+    }
+   ]
+  },
+  {
+   "slug": "cairo-university",
+   "name": "Cairo University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Cairo University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "canonical",
+   "name": "Canonical",
+   "kind": "company",
+   "note": "Canonical Ltd., publisher of Ubuntu.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp.ubuntu.com",
+     "decided": "the server is on an ubuntu.com host name, run by Canonical"
+    },
+    {
+     "desk": "support",
+     "raw": "ubuntu",
+     "decided": "Ubuntu is published by Canonical"
+    }
+   ]
+  },
+  {
+   "slug": "case-comprehensive-cancer-center",
+   "name": "Case Comprehensive Cancer Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Case Comprehensive Cancer Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "cedars-sinai-medical-center",
+   "name": "Cedars-Sinai Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Cedars-Sinai Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "celgene",
+   "name": "Celgene",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Celgene|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "cdc",
+   "name": "Centers for Disease Control and Prevention",
+   "kind": "agency",
+   "note": "United States Department of Health and Human Services.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "CDC",
+     "decided": "CDC is the Centers for Disease Control and Prevention"
+    }
+   ]
+  },
+  {
+   "slug": "cms",
+   "name": "Centers for Medicare & Medicaid Services",
+   "kind": "agency",
+   "note": "United States Department of Health and Human Services. CMS runs HealthCare.gov, and that portal is listed here and named on its row.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "CMS",
+     "decided": "CMS is the Centers for Medicare & Medicaid Services"
+    },
+    {
+     "desk": "cadence",
+     "raw": "HealthCare.gov",
+     "decided": "HealthCare.gov is run by CMS"
+    }
+   ]
+  },
+  {
+   "slug": "children-s-hospital-medical-center-cincinnati",
+   "name": "Children's Hospital Medical Center, Cincinnati",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Children's Hospital Medical Center, Cincinnati|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "children-s-hospital-of-philadelphia",
+   "name": "Children's Hospital of Philadelphia",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Children's Hospital of Philadelphia|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "cisco",
+   "name": "Cisco",
+   "kind": "company",
+   "note": "Cisco Systems, Inc. OpenDNS is a Cisco service and its rows are listed here, named on each row.",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Cisco",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "cada",
+     "raw": "opendns",
+     "decided": "OpenDNS is a Cisco service (Cisco Umbrella)"
+    }
+   ]
+  },
+  {
+   "slug": "cleanbrowsing",
+   "name": "CleanBrowsing",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cada",
+     "raw": "cleanbrowsing_security",
+     "decided": "the resolver is the public filter run by CleanBrowsing"
+    }
+   ]
+  },
+  {
+   "slug": "cloudflare",
+   "name": "Cloudflare",
+   "kind": "company",
+   "note": "Cloudflare, Inc.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Cloudflare",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "time",
+     "raw": "time.cloudflare.com",
+     "decided": "the server is on a cloudflare.com host name, run by Cloudflare"
+    },
+    {
+     "desk": "cada",
+     "raw": "cloudflare_malware_1.1.1.2",
+     "decided": "the resolver 1.1.1.2 is Cloudflare for Families, malware blocking"
+    },
+    {
+     "desk": "change",
+     "raw": "Cloudflare",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "colgate-palmolive",
+   "name": "Colgate Palmolive",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Colgate Palmolive|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "columbia-university",
+   "name": "Columbia University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Columbia University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "control-d",
+   "name": "Control D",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cada",
+     "raw": "controld_malware",
+     "decided": "the resolver is the public filter run by Control D"
+    }
+   ]
+  },
+  {
+   "slug": "coopervision-inc",
+   "name": "CooperVision, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "CooperVision, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "coreweave",
+   "name": "CoreWeave",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "CoreWeave",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "corewell-health-east",
+   "name": "Corewell Health East",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Corewell Health East|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "crusoe",
+   "name": "Crusoe",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Crusoe",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "npl-india",
+   "name": "CSIR-National Physical Laboratory (India)",
+   "kind": "agency",
+   "note": "Kept apart from the National Physical Laboratory, UK, a separate body with the same name.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.nplindia.org",
+     "decided": "the server host name belongs to CSIR-National Physical Laboratory (India)"
+    }
+   ]
+  },
+  {
+   "slug": "cz-nic",
+   "name": "CZ.NIC",
+   "kind": "nonprofit",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp.nic.cz",
+     "decided": "the server host name belongs to CZ.NIC"
+    }
+   ]
+  },
+  {
+   "slug": "daiichi-sankyo",
+   "name": "Daiichi Sankyo",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Daiichi Sankyo|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "dana-farber-cancer-institute",
+   "name": "Dana-Farber Cancer Institute",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Dana-Farber Cancer Institute|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "datadog",
+   "name": "Datadog",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Datadog",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "deep-cogito",
+   "name": "Deep Cogito",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Deep Cogito Cogito v2.1 671B",
+     "decided": "the system name starts with Deep Cogito, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "deepseek",
+   "name": "DeepSeek",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "DeepSeek V4 Flash",
+     "decided": "the system name starts with DeepSeek, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "DeepSeek V4 Flash Vision Exp",
+     "decided": "the system name starts with DeepSeek, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "DeepSeek Flash Latest (OpenRouter)",
+     "decided": "the system name starts with DeepSeek, its maker (served through OpenRouter, as the name says)"
+    }
+   ]
+  },
+  {
+   "slug": "dell",
+   "name": "Dell",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Dell",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "delta-air-lines",
+   "name": "Delta Air Lines",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Delta (DL)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (DL) is Delta Air Lines"
+    }
+   ]
+  },
+  {
+   "slug": "doe",
+   "name": "Department of Energy",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "Energy",
+     "decided": "the Energy portal is the Department of Energy data portal"
+    }
+   ]
+  },
+  {
+   "slug": "hhs",
+   "name": "Department of Health and Human Services",
+   "kind": "agency",
+   "note": "Kept apart from CMS and CDC, which have their own pages.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "HealthData.gov",
+     "decided": "HealthData.gov is the HHS data portal"
+    }
+   ]
+  },
+  {
+   "slug": "dol",
+   "name": "Department of Labor",
+   "kind": "agency",
+   "note": "Kept apart from the Bureau of Labor Statistics, which has its own page.",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "Labor",
+     "decided": "the Labor portal is the Department of Labor data portal"
+    }
+   ]
+  },
+  {
+   "slug": "va",
+   "name": "Department of Veterans Affairs",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cadence",
+     "raw": "Veterans Affairs",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "digitalocean",
+   "name": "DigitalOcean",
+   "kind": "company",
+   "note": "DigitalOcean, LLC.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "DigitalOcean",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "digitaloceanspaces.com",
+     "decided": "digitaloceanspaces.com is the DigitalOcean Spaces domain"
+    }
+   ]
+  },
+  {
+   "slug": "discord",
+   "name": "Discord",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Discord",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "dns0-eu",
+   "name": "dns0.eu",
+   "kind": "nonprofit",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cada",
+     "raw": "dns0_eu",
+     "decided": "the resolver is the public filter run by dns0.eu"
+    }
+   ]
+  },
+  {
+   "slug": "docker",
+   "name": "Docker",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Docker",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "dropbox",
+   "name": "Dropbox",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Dropbox",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "duke-university",
+   "name": "Duke University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Duke University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "ebay",
+   "name": "eBay",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "ebay.co.uk",
+     "decided": "ebay.co.uk is eBay's UK domain"
+    }
+   ]
+  },
+  {
+   "slug": "eisai-inc",
+   "name": "Eisai Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Eisai Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "eleutherai",
+   "name": "EleutherAI",
+   "kind": "nonprofit",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "hfsize",
+     "raw": "EleutherAI",
+     "decided": "EleutherAI is the organisation account of EleutherAI (an organisation, not a person)"
+    }
+   ]
+  },
+  {
+   "slug": "eli-lilly-and-company",
+   "name": "Eli Lilly and Company",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Eli Lilly and Company|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "elsevier",
+   "name": "Elsevier",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "sciencedirect.com",
+     "decided": "ScienceDirect is run by Elsevier"
+    }
+   ]
+  },
+  {
+   "slug": "emd-serono-research-and-development-institute-inc",
+   "name": "EMD Serono Research & Development Institute, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "EMD Serono Research & Development Institute, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "emory-university",
+   "name": "Emory University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Emory University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "epa",
+   "name": "Environmental Protection Agency",
+   "kind": "agency",
+   "note": "United States Environmental Protection Agency.",
+   "aliases": [
+    {
+     "desk": "airq",
+     "raw": "EPA",
+     "decided": "the desk names the organisation itself (its performance targets and regulatory monitors)"
+    }
+   ]
+  },
+  {
+   "slug": "envoy-air",
+   "name": "Envoy Air",
+   "kind": "company",
+   "note": "A subsidiary of American Airlines Group, kept apart from American Airlines.",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Envoy (MQ)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (MQ) is Envoy Air"
+    }
+   ]
+  },
+  {
+   "slug": "etsy",
+   "name": "Etsy",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "etsy.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "federal-reserve",
+   "name": "Federal Reserve",
+   "kind": "agency",
+   "note": "Board of Governors of the Federal Reserve System and the FOMC.",
+   "aliases": [
+    {
+     "desk": "fedsep",
+     "raw": "Federal Reserve",
+     "decided": "the desk names the organisation itself (Summary of Economic Projections)"
+    }
+   ]
+  },
+  {
+   "slug": "fred-hutchinson-cancer-center",
+   "name": "Fred Hutchinson Cancer Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Fred Hutchinson Cancer Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "frontier-airlines",
+   "name": "Frontier Airlines",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Frontier (F9)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (F9) is Frontier Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "fujitsu",
+   "name": "Fujitsu",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Fujitsu",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "galderma-r-and-d",
+   "name": "Galderma R&D",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Galderma R&D|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "genentech-inc",
+   "name": "Genentech, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Genentech, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "gigacomputing",
+   "name": "GigaComputing",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "GigaComputing",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "gilead-sciences",
+   "name": "Gilead Sciences",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Gilead Sciences|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "github",
+   "name": "GitHub",
+   "kind": "company",
+   "note": "GitHub, Inc., a subsidiary of Microsoft. Kept apart from Microsoft.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "GitHub",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "glaxosmithkline",
+   "name": "GlaxoSmithKline",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "GlaxoSmithKline|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "google",
+   "name": "Google",
+   "kind": "company",
+   "note": "Google LLC, a subsidiary of Alphabet Inc. The EU transparency reports for YouTube, Google Maps, Google Play and Google Shopping are filed by Google Ireland Limited, a separate legal entity in the same group. Its rows are listed here under Google and named on each row.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.google.com",
+     "decided": "the server is on a google.com host name, run by Google"
+    },
+    {
+     "desk": "time",
+     "raw": "time1.google.com",
+     "decided": "the server is on a google.com host name, run by Google"
+    },
+    {
+     "desk": "change",
+     "raw": "Google",
+     "decided": "the desk names the organisation itself (Gemini API deprecations page)"
+    },
+    {
+     "desk": "model",
+     "raw": "Google",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "YouTube",
+     "decided": "a Google service. Its DSA report is filed by Google Ireland Limited, a separate legal entity in the Google group"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Google Maps",
+     "decided": "a Google service. Its DSA report is filed by Google Ireland Limited, a separate legal entity in the Google group"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Google Play",
+     "decided": "a Google service. Its DSA report is filed by Google Ireland Limited, a separate legal entity in the Google group"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Google Shopping",
+     "decided": "a Google service. Its DSA report is filed by Google Ireland Limited, a separate legal entity in the Google group"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "YouTube (ads)",
+     "decided": "a Google service. Its DSA report is filed by Google Ireland Limited, a separate legal entity in the Google group"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Google Maps (ads)",
+     "decided": "a Google service. Its DSA report is filed by Google Ireland Limited, a separate legal entity in the Google group"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Google Play (ads)",
+     "decided": "a Google service. Its DSA report is filed by Google Ireland Limited, a separate legal entity in the Google group"
+    },
+    {
+     "desk": "social_adspend",
+     "raw": "Google",
+     "decided": "the desk names the organisation itself (Google's political ads transparency report)"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "Google Gemma 3n E4B IT",
+     "decided": "the system name starts with Google, its maker"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "g.co",
+     "decided": "g.co is a Google short domain"
+    },
+    {
+     "desk": "pkglicense",
+     "raw": "googleapis",
+     "decided": "googleapis is the GitHub organisation of Google APIs client libraries, run by Google"
+    }
+   ]
+  },
+  {
+   "slug": "gov-uk",
+   "name": "GOV.UK",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "www.gov.uk",
+     "decided": "the UK government website, named after its domain"
+    }
+   ]
+  },
+  {
+   "slug": "h-lee-moffitt-cancer-center-and-research-institute",
+   "name": "H. Lee Moffitt Cancer Center and Research Institute",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "H. Lee Moffitt Cancer Center and Research Institute|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "hawaiian-airlines",
+   "name": "Hawaiian Airlines",
+   "kind": "company",
+   "note": "Owned by Alaska Air Group and kept apart from Alaska Airlines. The two still report to the Bureau of Transportation Statistics under their own codes.",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Hawaiian (HA)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (HA) is Hawaiian Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "henry-ford-health-system",
+   "name": "Henry Ford Health System",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Henry Ford Health System|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "hkust",
+   "name": "HKUST",
+   "kind": "university",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "HKUST JailJudge Guard",
+     "decided": "the system name starts with HKUST, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "hoffmann-la-roche",
+   "name": "Hoffmann-La Roche",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Hoffmann-La Roche|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "hospital-for-special-surgery-new-york",
+   "name": "Hospital for Special Surgery, New York",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Hospital for Special Surgery, New York|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "hostgator",
+   "name": "HostGator",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "hostgator.com",
+     "decided": "named after its own domain. Ownership group not looked up and not merged"
+    }
+   ]
+  },
+  {
+   "slug": "hpe",
+   "name": "HPE",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "HPE",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "hugging-face",
+   "name": "Hugging Face",
+   "kind": "company",
+   "note": "Hugging Face, Inc.",
+   "aliases": [
+    {
+     "desk": "model_live",
+     "raw": "SmolLM2-1.7B-Instruct",
+     "decided": "SmolLM2 is published by HuggingFaceTB, the Hugging Face research organisation"
+    }
+   ]
+  },
+  {
+   "slug": "ibm",
+   "name": "IBM",
+   "kind": "company",
+   "note": "International Business Machines Corporation. Red Hat is an IBM subsidiary with its own page and is not merged here.",
+   "aliases": [
+    {
+     "desk": "qia",
+     "raw": "IBM processors",
+     "decided": "the processors are IBM Quantum systems and the record is the calibration IBM publishes"
+    },
+    {
+     "desk": "model_live",
+     "raw": "Granite 4.1 3B",
+     "decided": "Granite is the IBM model family (ibm-granite on Hugging Face)"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "IBM Granite 4.2 30B",
+     "decided": "the system name starts with IBM, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "IBM Granite 4.2 3B",
+     "decided": "the system name starts with IBM, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "IBM Granite 4.2 8B",
+     "decided": "the system name starts with IBM, its maker"
+    },
+    {
+     "desk": "support",
+     "raw": "ibm-aix",
+     "decided": "AIX is an IBM operating system"
+    },
+    {
+     "desk": "support",
+     "raw": "ibm-i",
+     "decided": "IBM i is an IBM operating system"
+    }
+   ]
+  },
+  {
+   "slug": "icahn-school-of-medicine-at-mount-sinai",
+   "name": "Icahn School of Medicine at Mount Sinai",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Icahn School of Medicine at Mount Sinai|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "iiko",
+   "name": "iiko",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "iiko.it",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "inclusionai",
+   "name": "InclusionAI",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "InclusionAI Ling 2.6 1T",
+     "decided": "the system name starts with InclusionAI, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "InclusionAI Ling 3.0 Flash",
+     "decided": "the system name starts with InclusionAI, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "InclusionAI Ling 3.0 Flash Fin",
+     "decided": "the system name starts with InclusionAI, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "InclusionAI Ling 3.0 Flash VL",
+     "decided": "the system name starts with InclusionAI, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "incyte-corporation",
+   "name": "Incyte Corporation",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Incyte Corporation|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "indiana-university",
+   "name": "Indiana University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Indiana University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "inmobi",
+   "name": "InMobi",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "inmobi.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "inrim",
+   "name": "INRiM",
+   "kind": "agency",
+   "note": "Istituto Nazionale di Ricerca Metrologica, Italy.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp.inrim.it",
+     "decided": "the server host name belongs to INRiM"
+    }
+   ]
+  },
+  {
+   "slug": "intel",
+   "name": "Intel",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Intel",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "ionis-pharmaceuticals-inc",
+   "name": "Ionis Pharmaceuticals, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Ionis Pharmaceuticals, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "janssen-research-and-development-llc",
+   "name": "Janssen Research & Development, LLC",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Janssen Research & Development, LLC|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "janssen-vaccines-and-prevention-b-v",
+   "name": "Janssen Vaccines & Prevention B.V.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Janssen Vaccines & Prevention B.V.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "jazz-pharmaceuticals",
+   "name": "Jazz Pharmaceuticals",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Jazz Pharmaceuticals|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "jetblue",
+   "name": "JetBlue",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "JetBlue (B6)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (B6) is JetBlue"
+    }
+   ]
+  },
+  {
+   "slug": "johns-hopkins-university",
+   "name": "Johns Hopkins University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Johns Hopkins University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "johnson-and-johnson-vision-care-inc",
+   "name": "Johnson & Johnson Vision Care, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Johnson & Johnson Vision Care, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "jonsson-comprehensive-cancer-center",
+   "name": "Jonsson Comprehensive Cancer Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Jonsson Comprehensive Cancer Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "k-veritas",
+   "name": "K-Veritas",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "K-Veritas",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "kriss",
+   "name": "KRISS",
+   "kind": "agency",
+   "note": "Korea Research Institute of Standards and Science.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.kriss.re.kr",
+     "decided": "the server host name belongs to KRISS"
+    }
+   ]
+  },
+  {
+   "slug": "lambda",
+   "name": "Lambda",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Lambda",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "lenovo",
+   "name": "Lenovo",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Lenovo",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "leo-pharma",
+   "name": "LEO Pharma",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "LEO Pharma|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "library-of-congress",
+   "name": "Library of Congress",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "loc.gov",
+     "decided": "loc.gov is the Library of Congress domain"
+    }
+   ]
+  },
+  {
+   "slug": "linear",
+   "name": "Linear",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Linear",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "linkedin",
+   "name": "LinkedIn",
+   "kind": "company",
+   "note": "The DSA report is filed by LinkedIn Ireland Unlimited Company. LinkedIn is a Microsoft subsidiary and is kept apart from Microsoft.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "LinkedIn",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "loma-linda-university",
+   "name": "Loma Linda University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Loma Linda University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "m-d-anderson-cancer-center",
+   "name": "M.D. Anderson Cancer Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "M.D. Anderson Cancer Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "mangoboost",
+   "name": "MangoBoost",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "MangoBoost",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "markmonitor",
+   "name": "MarkMonitor",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "markmonitor.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "masimo-corporation",
+   "name": "Masimo Corporation",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Masimo Corporation|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "masonic-cancer-center-university-of-minnesota",
+   "name": "Masonic Cancer Center, University of Minnesota",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Masonic Cancer Center, University of Minnesota|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "massachusetts-general-hospital",
+   "name": "Massachusetts General Hospital",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Massachusetts General Hospital|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "mayo-clinic",
+   "name": "Mayo Clinic",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Mayo Clinic|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "medical-college-of-wisconsin",
+   "name": "Medical College of Wisconsin",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Medical College of Wisconsin|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "medical-university-of-south-carolina",
+   "name": "Medical University of South Carolina",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Medical University of South Carolina|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "medtronic-minimed-inc",
+   "name": "Medtronic MiniMed, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Medtronic MiniMed, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "memorial-sloan-kettering-cancer-center",
+   "name": "Memorial Sloan Kettering Cancer Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Memorial Sloan Kettering Cancer Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "merck-sharp-and-dohme-llc",
+   "name": "Merck Sharp & Dohme LLC",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Merck Sharp & Dohme LLC|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "meta",
+   "name": "Meta",
+   "kind": "company",
+   "note": "Meta Platforms, Inc. The EU transparency reports for Facebook and Instagram are filed by Meta Platforms Ireland Limited and the one for WhatsApp Channels by WhatsApp Ireland Limited, separate legal entities in the same group. Their rows are listed here under Meta and named on each row.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Facebook",
+     "decided": "a Meta service. Its DSA report is filed by Meta Platforms Ireland Limited"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Instagram",
+     "decided": "a Meta service. Its DSA report is filed by Meta Platforms Ireland Limited"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "Facebook and Instagram",
+     "decided": "a Meta service. Its DSA report is filed by Meta Platforms Ireland Limited"
+    },
+    {
+     "desk": "social_dsa",
+     "raw": "WhatsApp Channels",
+     "decided": "a Meta service. Its DSA report is filed by WhatsApp Ireland Limited, a separate legal entity in the Meta group"
+    },
+    {
+     "desk": "time",
+     "raw": "time.facebook.com",
+     "decided": "the server is on a facebook.com host name, run by Meta"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "facebook.com",
+     "decided": "facebook.com is Meta's domain"
+    },
+    {
+     "desk": "hfsize",
+     "raw": "meta-llama",
+     "decided": "meta-llama is the Hugging Face organisation for Meta Llama models"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "Meta Llama Guard 2 8B",
+     "decided": "the system name starts with Meta, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "Meta Llama Guard 3 8B",
+     "decided": "the system name starts with Meta, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "Meta Llama Guard 4 12B",
+     "decided": "the system name starts with Meta, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "metas",
+   "name": "METAS",
+   "kind": "agency",
+   "note": "Federal Institute of Metrology, Switzerland.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp.metas.ch",
+     "decided": "the server host name belongs to METAS"
+    }
+   ]
+  },
+  {
+   "slug": "microsoft",
+   "name": "Microsoft",
+   "kind": "company",
+   "note": "Microsoft Corporation. GitHub, LinkedIn and npm are Microsoft subsidiaries with their own pages and are not merged here.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.windows.com",
+     "decided": "the server is on a windows.com host name, run by Microsoft"
+    },
+    {
+     "desk": "support",
+     "raw": "azure-devops-server",
+     "decided": "Azure DevOps Server is a Microsoft product"
+    },
+    {
+     "desk": "model_live",
+     "raw": "Phi-4-mini-instruct",
+     "decided": "Phi-4-mini is published by Microsoft on Hugging Face (microsoft/Phi-4-mini-instruct)"
+    },
+    {
+     "desk": "model",
+     "raw": "Azure",
+     "decided": "Azure is Microsoft Azure, the cloud of Microsoft"
+    }
+   ]
+  },
+  {
+   "slug": "milton-s-hershey-medical-center",
+   "name": "Milton S. Hershey Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Milton S. Hershey Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "mistral-ai",
+   "name": "Mistral AI",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Mistral Medium 3.5",
+     "decided": "the system name starts with Mistral AI, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "mlcommons",
+   "name": "MLCommons",
+   "kind": "nonprofit",
+   "note": "MLCommons Association. Heuremen LLC is a member of MLCommons.",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "MLCommons",
+     "decided": "the desk names the organisation itself (the AILuminate results page)"
+    }
+   ]
+  },
+  {
+   "slug": "modernatx-inc",
+   "name": "ModernaTX, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "ModernaTX, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "montefiore-medical-center",
+   "name": "Montefiore Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Montefiore Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "moonshot-ai",
+   "name": "Moonshot AI",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Moonshot AI Kimi K2.7 Code",
+     "decided": "the system name starts with Moonshot AI, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "national-cancer-institute-nci",
+   "name": "National Cancer Institute (NCI)",
+   "kind": "agency",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "National Cancer Institute (NCI)|NIH",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "national-heart-lung-and-blood-institute-nhlbi",
+   "name": "National Heart, Lung, and Blood Institute (NHLBI)",
+   "kind": "agency",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "National Heart, Lung, and Blood Institute (NHLBI)|NIH",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "national-institute-of-allergy-and-infectious-diseases-niaid",
+   "name": "National Institute of Allergy and Infectious Diseases (NIAID)",
+   "kind": "agency",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "National Institute of Allergy and Infectious Diseases (NIAID)|NIH",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "npl-uk",
+   "name": "National Physical Laboratory (UK)",
+   "kind": "agency",
+   "note": "Kept apart from CSIR-National Physical Laboratory, India, a separate body with the same name.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp1.npl.co.uk",
+     "decided": "the server host name belongs to National Physical Laboratory (UK)"
+    }
+   ]
+  },
+  {
+   "slug": "national-weather-service",
+   "name": "National Weather Service",
+   "kind": "agency",
+   "note": "Part of NOAA, United States Department of Commerce.",
+   "aliases": [
+    {
+     "desk": "forecast",
+     "raw": "National Weather Service",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "nebius",
+   "name": "Nebius",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Nebius",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "netlify",
+   "name": "Netlify",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Netlify",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "netnod",
+   "name": "Netnod",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "nts.netnod.se",
+     "decided": "the server host name belongs to Netnod"
+    },
+    {
+     "desk": "time",
+     "raw": "gbg1.ntp.netnod.se",
+     "decided": "the server host name belongs to Netnod"
+    }
+   ]
+  },
+  {
+   "slug": "neurocrine-biosciences",
+   "name": "Neurocrine Biosciences",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Neurocrine Biosciences|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "new-york-state-psychiatric-institute",
+   "name": "New York State Psychiatric Institute",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "New York State Psychiatric Institute|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "nexus-mods",
+   "name": "Nexus Mods",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "nexusmods.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "ngenix",
+   "name": "NGENIX",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "ngenix.net",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "nict",
+   "name": "NICT",
+   "kind": "agency",
+   "note": "National Institute of Information and Communications Technology, Japan.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp.nict.jp",
+     "decided": "the server host name belongs to NICT"
+    }
+   ]
+  },
+  {
+   "slug": "nist",
+   "name": "NIST",
+   "kind": "agency",
+   "note": "National Institute of Standards and Technology. utcnist.colorado.edu is a NIST server hosted at the University of Colorado.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "time.nist.gov",
+     "decided": "the server host name belongs to NIST"
+    },
+    {
+     "desk": "time",
+     "raw": "time-a-g.nist.gov",
+     "decided": "the server host name belongs to NIST"
+    },
+    {
+     "desk": "time",
+     "raw": "time-b-g.nist.gov",
+     "decided": "the server host name belongs to NIST"
+    },
+    {
+     "desk": "time",
+     "raw": "utcnist.colorado.edu",
+     "decided": "the server host name belongs to NIST"
+    }
+   ]
+  },
+  {
+   "slug": "northwell-health",
+   "name": "Northwell Health",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Northwell Health|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "northwestern-university",
+   "name": "Northwestern University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Northwestern University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "notion",
+   "name": "Notion",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Notion",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "novartis-pharmaceuticals",
+   "name": "Novartis Pharmaceuticals",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Novartis Pharmaceuticals|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "novo-nordisk-a-s",
+   "name": "Novo Nordisk A/S",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Novo Nordisk A/S|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "npm",
+   "name": "npm",
+   "kind": "company",
+   "note": "npm, Inc., owned by GitHub. Kept apart from GitHub and Microsoft.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "npm",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "ntp-pool-project",
+   "name": "NTP Pool Project",
+   "kind": "nonprofit",
+   "note": "A volunteer project. Each pool name answers with servers run by many volunteers.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    },
+    {
+     "desk": "time",
+     "raw": "0.pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    },
+    {
+     "desk": "time",
+     "raw": "africa.pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    },
+    {
+     "desk": "time",
+     "raw": "asia.pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    },
+    {
+     "desk": "time",
+     "raw": "europe.pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    },
+    {
+     "desk": "time",
+     "raw": "north-america.pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    },
+    {
+     "desk": "time",
+     "raw": "oceania.pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    },
+    {
+     "desk": "time",
+     "raw": "south-america.pool.ntp.org",
+     "decided": "the server host name belongs to NTP Pool Project"
+    }
+   ]
+  },
+  {
+   "slug": "nvidia",
+   "name": "NVIDIA",
+   "kind": "company",
+   "note": "NVIDIA Corporation.",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "NVIDIA",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "NVIDIA Nemotron 3 Ultra 550B A55B",
+     "decided": "the system name starts with NVIDIA, its maker"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "NVIDIA Nemotron 3.5 Content Safety",
+     "decided": "the system name starts with NVIDIA, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "nyu-langone-health",
+   "name": "NYU Langone Health",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "NYU Langone Health|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "observatoire-de-paris",
+   "name": "Observatoire de Paris",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ntp-p1.obspm.fr",
+     "decided": "the server host name belongs to Observatoire de Paris"
+    }
+   ]
+  },
+  {
+   "slug": "ohio-state-university",
+   "name": "Ohio State University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Ohio State University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "openai",
+   "name": "OpenAI",
+   "kind": "company",
+   "note": "OpenAI.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "OpenAI",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "change",
+     "raw": "OpenAI",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "ailuminate",
+     "raw": "OpenAI gpt-oss-120b",
+     "decided": "the system name starts with OpenAI, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "openbmb",
+   "name": "OpenBMB",
+   "kind": "nonprofit",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "hfsize",
+     "raw": "openbmb",
+     "decided": "openbmb is the organisation account of OpenBMB (an organisation, not a person)"
+    }
+   ]
+  },
+  {
+   "slug": "opencv",
+   "name": "OpenCV",
+   "kind": "nonprofit",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "pkglicense",
+     "raw": "opencv",
+     "decided": "opencv is the organisation account of OpenCV (an organisation, not a person)"
+    }
+   ]
+  },
+  {
+   "slug": "oracle",
+   "name": "Oracle",
+   "kind": "company",
+   "note": "Oracle Corporation.",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Oracle",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "support",
+     "raw": "oracle-linux",
+     "decided": "Oracle Linux is an Oracle product"
+    }
+   ]
+  },
+  {
+   "slug": "oregon-health-and-science-university",
+   "name": "Oregon Health and Science University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Oregon Health and Science University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "orrick-industries",
+   "name": "Orrick Industries",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Orrick Industries",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "otsuka-pharmaceutical-development-and-commercialization-inc",
+   "name": "Otsuka Pharmaceutical Development & Commercialization, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Otsuka Pharmaceutical Development & Commercialization, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "outbrain",
+   "name": "Outbrain",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "outbrain.com",
+     "decided": "named after its own domain. Ownership group not looked up and not merged"
+    }
+   ]
+  },
+  {
+   "slug": "pfizer",
+   "name": "Pfizer",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Pfizer|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "pikabu",
+   "name": "Pikabu",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "pikabu.ru",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "pinterest",
+   "name": "Pinterest",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Pinterest",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "aylo",
+   "name": "Pornhub",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Pornhub",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "psa-airlines",
+   "name": "PSA Airlines",
+   "kind": "company",
+   "note": "A subsidiary of American Airlines Group, kept apart from American Airlines.",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "PSA (OH)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (OH) is PSA Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "ptb",
+   "name": "PTB",
+   "kind": "agency",
+   "note": "Physikalisch-Technische Bundesanstalt, Germany.",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "ptbtime1.ptb.de",
+     "decided": "the server host name belongs to PTB"
+    },
+    {
+     "desk": "time",
+     "raw": "ptbtime2.ptb.de",
+     "decided": "the server host name belongs to PTB"
+    }
+   ]
+  },
+  {
+   "slug": "pubmatic",
+   "name": "PubMatic",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "pubmatic.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "purpleair",
+   "name": "PurpleAir",
+   "kind": "company",
+   "note": "PurpleAir, Inc.",
+   "aliases": [
+    {
+     "desk": "airq",
+     "raw": "PurpleAir",
+     "decided": "the desk names the organisation itself (its sensors)"
+    }
+   ]
+  },
+  {
+   "slug": "python-software-foundation",
+   "name": "Python Software Foundation",
+   "kind": "nonprofit",
+   "note": "The Python Software Foundation runs PyPI and python.org.",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "PyPI",
+     "decided": "PyPI is run by the Python Software Foundation"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "python.org",
+     "decided": "python.org is run by the Python Software Foundation"
+    }
+   ]
+  },
+  {
+   "slug": "quad9",
+   "name": "Quad9",
+   "kind": "nonprofit",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "cada",
+     "raw": "quad9_9.9.9.9",
+     "decided": "the resolver is the public filter run by Quad9"
+    }
+   ]
+  },
+  {
+   "slug": "qwen",
+   "name": "Qwen",
+   "kind": "company",
+   "note": "Qwen is the model team of Alibaba Cloud. Kept apart from AliExpress, a separate Alibaba Group company.",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Qwen3 235B A22B Instruct 2507",
+     "decided": "the system name starts with Qwen, its maker"
+    },
+    {
+     "desk": "hfsize",
+     "raw": "Qwen",
+     "decided": "Qwen is the Hugging Face organisation of the Qwen team"
+    },
+    {
+     "desk": "hflicense",
+     "raw": "Qwen",
+     "decided": "Qwen is the Hugging Face organisation of the Qwen team"
+    }
+   ]
+  },
+  {
+   "slug": "red-hat",
+   "name": "Red Hat",
+   "kind": "company",
+   "note": "Red Hat, Inc., a subsidiary of IBM. Kept apart from IBM.",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Red Hat",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "support",
+     "raw": "rhel",
+     "decided": "Red Hat Enterprise Linux is a Red Hat product"
+    },
+    {
+     "desk": "support",
+     "raw": "redhat-build-of-openjdk",
+     "decided": "the Red Hat build of OpenJDK is a Red Hat product"
+    }
+   ]
+  },
+  {
+   "slug": "reddit",
+   "name": "Reddit",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Reddit",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "regeneron-pharmaceuticals",
+   "name": "Regeneron Pharmaceuticals",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Regeneron Pharmaceuticals|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "reka",
+   "name": "Reka",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Reka Edge",
+     "decided": "the system name starts with Reka, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "republic-airways",
+   "name": "Republic Airways",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Republic (YX)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (YX) is Republic Airways"
+    }
+   ]
+  },
+  {
+   "slug": "roswell-park-cancer-institute",
+   "name": "Roswell Park Cancer Institute",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Roswell Park Cancer Institute|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "rush-university-medical-center",
+   "name": "Rush University Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Rush University Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "rutgers-the-state-university-of-new-jersey",
+   "name": "Rutgers, The State University of New Jersey",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Rutgers, The State University of New Jersey|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "sage-publishing",
+   "name": "Sage Publishing",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "sagepub.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "salesforce",
+   "name": "Salesforce",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "hfsize",
+     "raw": "Salesforce",
+     "decided": "Salesforce is the organisation account of Salesforce (an organisation, not a person)"
+    }
+   ]
+  },
+  {
+   "slug": "sanofi",
+   "name": "Sanofi",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Sanofi|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "sanofi-pasteur-a-sanofi-company",
+   "name": "Sanofi Pasteur, a Sanofi Company",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Sanofi Pasteur, a Sanofi Company|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "scitix",
+   "name": "ScitiX",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "ScitiX",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "seedtag",
+   "name": "Seedtag",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "seedtag.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "sentry",
+   "name": "Sentry",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Sentry",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "shein",
+   "name": "Shein",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Shein",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "shire",
+   "name": "Shire",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Shire|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "shopify",
+   "name": "Shopify",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "shop.app",
+     "decided": "Shop is the Shopify app at shop.app"
+    }
+   ]
+  },
+  {
+   "slug": "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins",
+   "name": "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "skywest-airlines",
+   "name": "SkyWest Airlines",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "SkyWest (OO)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (OO) is SkyWest Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "snap",
+   "name": "Snap",
+   "kind": "company",
+   "note": "Snap Inc. Snapchat is its service.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Snapchat",
+     "decided": "Snapchat is the service of Snap"
+    }
+   ]
+  },
+  {
+   "slug": "sonova-ag",
+   "name": "Sonova AG",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Sonova AG|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "southwest-airlines",
+   "name": "Southwest Airlines",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Southwest (WN)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (WN) is Southwest Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "speakleash",
+   "name": "SpeakLeash",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "SpeakLeash Bielik 11B v3.0 Instruct",
+     "decided": "the system name starts with SpeakLeash, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "spirit-airlines",
+   "name": "Spirit Airlines",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "Spirit (NK)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (NK) is Spirit Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "st-jude-children-s-research-hospital",
+   "name": "St. Jude Children's Research Hospital",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "St. Jude Children's Research Hospital|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "stanford-university",
+   "name": "Stanford University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Stanford University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "stripchat",
+   "name": "Stripchat",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Stripchat",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "sun-pharmaceutical-industries-limited",
+   "name": "Sun Pharmaceutical Industries Limited",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Sun Pharmaceutical Industries Limited|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "supermicro",
+   "name": "Supermicro",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Supermicro",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "supernus-pharmaceuticals-inc",
+   "name": "Supernus Pharmaceuticals, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Supernus Pharmaceuticals, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "takeda",
+   "name": "Takeda",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Takeda|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "teads",
+   "name": "Teads",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "teads.tv",
+     "decided": "named after its own domain. Ownership group not looked up and not merged"
+    }
+   ]
+  },
+  {
+   "slug": "temu",
+   "name": "Temu",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Temu",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "tencent",
+   "name": "Tencent",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Tencent HY4 Preview",
+     "decided": "the system name starts with Tencent, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "teva-branded-pharmaceutical-products-r-and-d-inc",
+   "name": "Teva Branded Pharmaceutical Products R&D, Inc.",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Teva Branded Pharmaceutical Products R&D, Inc.|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "the-cleveland-clinic",
+   "name": "The Cleveland Clinic",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "The Cleveland Clinic|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "the-university-of-texas-health-science-center-at-san-antonio",
+   "name": "The University of Texas Health Science Center at San Antonio",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "The University of Texas Health Science Center at San Antonio|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "the-university-of-texas-health-science-center-houston",
+   "name": "The University of Texas Health Science Center, Houston",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "The University of Texas Health Science Center, Houston|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "the-university-of-texas-medical-branch-galveston",
+   "name": "The University of Texas Medical Branch, Galveston",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "The University of Texas Medical Branch, Galveston|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "thomas-jefferson-university",
+   "name": "Thomas Jefferson University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Thomas Jefferson University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "tiktok",
+   "name": "TikTok",
+   "kind": "company",
+   "note": "The DSA report is filed by TikTok Technology Limited.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "TikTok",
+     "decided": "the desk names the organisation itself"
+    },
+    {
+     "desk": "social_tiktok",
+     "raw": "TikTok",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "trend-micro",
+   "name": "Trend Micro",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "trendmicro.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "tufts-medical-center",
+   "name": "Tufts Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Tufts Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "twilio",
+   "name": "Twilio",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Twilio",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "usgs",
+   "name": "U.S. Geological Survey",
+   "kind": "agency",
+   "note": "United States Department of the Interior.",
+   "aliases": [
+    {
+     "desk": "water",
+     "raw": "USGS",
+     "decided": "the desk names the organisation itself (provisional gauge data)"
+    }
+   ]
+  },
+  {
+   "slug": "usno",
+   "name": "U.S. Naval Observatory",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "time",
+     "raw": "tick.usno.navy.mil",
+     "decided": "the server host name belongs to U.S. Naval Observatory"
+    },
+    {
+     "desk": "time",
+     "raw": "tock.usno.navy.mil",
+     "decided": "the server host name belongs to U.S. Naval Observatory"
+    }
+   ]
+  },
+  {
+   "slug": "ucb-biopharma-srl",
+   "name": "UCB Biopharma SRL",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "UCB Biopharma SRL|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "unc-lineberger-comprehensive-cancer-center",
+   "name": "UNC Lineberger Comprehensive Cancer Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "UNC Lineberger Comprehensive Cancer Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "unesco-uis",
+   "name": "UNESCO Institute for Statistics",
+   "kind": "agency",
+   "note": "Its releases are the record the WIKI desk reads Wikidata figures against.",
+   "aliases": [
+    {
+     "desk": "wiki",
+     "raw": "UNESCO Institute for Statistics",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "united-airlines",
+   "name": "United Airlines",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "airline",
+     "raw": "United (UA)",
+     "decided": "the Bureau of Transportation Statistics carrier code in the label (UA) is United Airlines"
+    }
+   ]
+  },
+  {
+   "slug": "university-hospitals-cleveland-medical-center",
+   "name": "University Hospitals Cleveland Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University Hospitals Cleveland Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-alabama-at-birmingham",
+   "name": "University of Alabama at Birmingham",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Alabama at Birmingham|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-arizona",
+   "name": "University of Arizona",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Arizona|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-arkansas",
+   "name": "University of Arkansas",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Arkansas|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-california-davis",
+   "name": "University of California, Davis",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of California, Davis|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-california-irvine",
+   "name": "University of California, Irvine",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of California, Irvine|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-california-los-angeles",
+   "name": "University of California, Los Angeles",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of California, Los Angeles|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-california-san-diego",
+   "name": "University of California, San Diego",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of California, San Diego|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-california-san-francisco",
+   "name": "University of California, San Francisco",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of California, San Francisco|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-chicago",
+   "name": "University of Chicago",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Chicago|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-colorado-denver",
+   "name": "University of Colorado, Denver",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Colorado, Denver|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-florida",
+   "name": "University of Florida",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Florida|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-iowa",
+   "name": "University of Iowa",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Iowa|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-kansas-medical-center",
+   "name": "University of Kansas Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Kansas Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-maryland-baltimore",
+   "name": "University of Maryland, Baltimore",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Maryland, Baltimore|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-miami",
+   "name": "University of Miami",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Miami|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-michigan",
+   "name": "University of Michigan",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Michigan|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-michigan-rogel-cancer-center",
+   "name": "University of Michigan Rogel Cancer Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Michigan Rogel Cancer Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-minnesota",
+   "name": "University of Minnesota",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Minnesota|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-missouri-columbia",
+   "name": "University of Missouri-Columbia",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Missouri-Columbia|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-nebraska",
+   "name": "University of Nebraska",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Nebraska|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-new-mexico",
+   "name": "University of New Mexico",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of New Mexico|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-north-carolina-chapel-hill",
+   "name": "University of North Carolina, Chapel Hill",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of North Carolina, Chapel Hill|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-oklahoma",
+   "name": "University of Oklahoma",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Oklahoma|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-pennsylvania",
+   "name": "University of Pennsylvania",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Pennsylvania|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-rochester",
+   "name": "University of Rochester",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Rochester|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-southern-california",
+   "name": "University of Southern California",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Southern California|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-texas-southwestern-medical-center",
+   "name": "University of Texas Southwestern Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Texas Southwestern Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-utah",
+   "name": "University of Utah",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Utah|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-virginia",
+   "name": "University of Virginia",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Virginia|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-washington",
+   "name": "University of Washington",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Washington|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "university-of-wisconsin-madison",
+   "name": "University of Wisconsin, Madison",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "University of Wisconsin, Madison|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "unsplash",
+   "name": "Unsplash",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "unsplash.com",
+     "decided": "named after its own domain"
+    }
+   ]
+  },
+  {
+   "slug": "va-office-of-research-and-development",
+   "name": "VA Office of Research and Development",
+   "kind": "agency",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "VA Office of Research and Development|FED",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "vanderbilt-university-medical-center",
+   "name": "Vanderbilt University Medical Center",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Vanderbilt University Medical Center|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "vercel",
+   "name": "Vercel",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Vercel",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  },
+  {
+   "slug": "vertex-pharmaceuticals-incorporated",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Vertex Pharmaceuticals Incorporated|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "vibehpc",
+   "name": "VibeHPC",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "VibeHPC",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "viiv-healthcare",
+   "name": "ViiV Healthcare",
+   "kind": "company",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "ViiV Healthcare|INDUSTRY",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "virginia-commonwealth-university",
+   "name": "Virginia Commonwealth University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Virginia Commonwealth University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "vox-media",
+   "name": "Vox Media",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "theverge.com",
+     "decided": "The Verge is published by Vox Media"
+    }
+   ]
+  },
+  {
+   "slug": "wake-forest-university-health-sciences",
+   "name": "Wake Forest University Health Sciences",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Wake Forest University Health Sciences|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "washington-university-school-of-medicine",
+   "name": "Washington University School of Medicine",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Washington University School of Medicine|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "weill-medical-college-of-cornell-university",
+   "name": "Weill Medical College of Cornell University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Weill Medical College of Cornell University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "wikimedia-foundation",
+   "name": "Wikimedia Foundation",
+   "kind": "nonprofit",
+   "note": "The Wikimedia Foundation runs Wikipedia and Wikidata.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Wikipedia",
+     "decided": "Wikipedia is the service of Wikimedia Foundation"
+    },
+    {
+     "desk": "wiki",
+     "raw": "Wikimedia Foundation",
+     "decided": "the desk names the organisation itself (statements on its own pages)"
+    },
+    {
+     "desk": "wiki",
+     "raw": "Wikidata",
+     "decided": "Wikidata is run by the Wikimedia Foundation"
+    }
+   ]
+  },
+  {
+   "slug": "wildberries",
+   "name": "Wildberries",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "wildberries.ru",
+     "decided": "wildberries.ru and wb.ru are Wildberries domains"
+    },
+    {
+     "desk": "secrecords",
+     "raw": "wb.ru",
+     "decided": "wildberries.ru and wb.ru are Wildberries domains"
+    }
+   ]
+  },
+  {
+   "slug": "wiwynn",
+   "name": "Wiwynn",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "model",
+     "raw": "Wiwynn",
+     "decided": "the desk names the organisation itself (vendor of the source)"
+    }
+   ]
+  },
+  {
+   "slug": "world-bank",
+   "name": "World Bank",
+   "kind": "agency",
+   "note": "The World Bank Group. Its releases are the record the WIKI desk reads Wikidata figures against.",
+   "aliases": [
+    {
+     "desk": "wiki",
+     "raw": "World Bank",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "who",
+   "name": "World Health Organization",
+   "kind": "agency",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "secrecords",
+     "raw": "who.int",
+     "decided": "who.int is the WHO domain"
+    }
+   ]
+  },
+  {
+   "slug": "x",
+   "name": "X",
+   "kind": "company",
+   "note": "X Corp. and its EU entity Twitter International Unlimited Company, which files the DSA report.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "X",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "xiaomi",
+   "name": "Xiaomi",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Xiaomi MiMo V2.5 Pro",
+     "decided": "the system name starts with Xiaomi, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "xnxx",
+   "name": "XNXX",
+   "kind": "company",
+   "note": "Kept apart from XVideos. The two file separate DSA reports.",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "XNXX",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "xvideos",
+   "name": "XVideos",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "XVideos",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "yale-university",
+   "name": "Yale University",
+   "kind": "organisation",
+   "note": "Lead sponsor name as ClinicalTrials.gov gives it. Other sponsor names, even in the same group, are not merged.",
+   "aliases": [
+    {
+     "desk": "trials",
+     "raw": "Yale University|OTHER",
+     "decided": "the lead sponsor name as ClinicalTrials.gov gives it, exactly"
+    }
+   ]
+  },
+  {
+   "slug": "z-ai",
+   "name": "Z.ai",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "ailuminate",
+     "raw": "Z.ai GLM-5.3 Flash BF16",
+     "decided": "the system name starts with Z.ai, its maker"
+    }
+   ]
+  },
+  {
+   "slug": "zalando",
+   "name": "Zalando",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "social_dsa",
+     "raw": "Zalando",
+     "decided": "the desk names the organisation itself"
+    }
+   ]
+  },
+  {
+   "slug": "zoom",
+   "name": "Zoom",
+   "kind": "company",
+   "note": "",
+   "aliases": [
+    {
+     "desk": "uptime",
+     "raw": "Zoom",
+     "decided": "the desk names the organisation itself (its own status page)"
+    }
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "desk": "model",
+   "raw": "Individual contributor Naeem Khoshnevis",
+   "why": "an individual. People never get a page"
+  },
+  {
+   "desk": "weights",
+   "raw": "fidel1234",
+   "why": "a personal Hugging Face account. People never get a page"
+  },
+  {
+   "desk": "pkglicense",
+   "raw": "cpburnz",
+   "why": "a personal GitHub account. People never get a page"
+  }
+ ]
+}

@@ -915,6 +915,14 @@
 /r/model.s3.s3-11	2026-10-30
 /r/msg.echo_off	2026-10-25
 /r/msg.echo_on	2026-10-22
+/r/neo.august2026	2026-11-10
+/r/neo.cell.all	2026-11-10
+/r/neo.cell.lead0_7	2026-11-10
+/r/neo.cell.lead30	2026-11-10
+/r/neo.cell.lead8_30	2026-11-10
+/r/neo.dep.copy20240209	2026-11-10
+/r/neo.dep.without	2026-11-10
+/r/neo.outside.small	2026-11-10
 /r/oy.bastani	2026-10-30
 /r/oy.chatbot_cited_8	2026-10-29
 /r/oy.clarkson	2026-10-25
@@ -2807,6 +2815,7 @@
 /r/desk/media	2026-10-29
 /r/desk/media-2026-10-26	2026-10-30
 /r/desk/model	2026-11-10
+/r/desk/neo	2026-11-10
 /r/desk/oy-data-pack	2026-11-10
 /r/desk/oy	2026-11-10
 /r/desk/paper	2026-11-04

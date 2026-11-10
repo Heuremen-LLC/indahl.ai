@@ -76,6 +76,11 @@
    "Reservoir forecasts against measured levels"
   ],
   [
+   "/neo",
+   "NEO",
+   "Stated asteroid close-approach distances against the later record"
+  ],
+  [
    "/uptime",
    "UPTIME",
    "Vendor status pages against independent probes"
@@ -219,6 +224,7 @@
   "/iris/lab": "2026-10-30T00:40:25Z",
   "/launch": "2026-10-28T23:54:05Z",
   "/linkrot": "2026-10-29T00:56:18Z",
+  "/neo": "2026-11-10T13:59:24Z",
   "/pkginstall": "2026-10-29T12:16:37Z",
   "/pkglicense": "2026-10-29T02:44:25Z",
   "/revise": "2026-10-29T12:40:10Z",
