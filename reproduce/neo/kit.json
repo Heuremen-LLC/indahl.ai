@@ -1,0 +1,56 @@
+{
+ "cwd": "",
+ "desk": "neo",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "cell": "all leads"
+   },
+   "share"
+  ],
+  "hi": [
+   "cells",
+   {
+    "cell": "all leads"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "cell": "all leads"
+   },
+   "lo"
+  ],
+  "n": [
+   "cells",
+   {
+    "cell": "all leads"
+   },
+   "inside"
+  ],
+  "of": [
+   "cells",
+   {
+    "cell": "all leads"
+   },
+   "scored"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "cell": "all leads"
+   },
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "NEO",
+ "output": "data/neo_live.json",
+ "steps": [
+  [
+   "neo_run.py"
+  ]
+ ]
+}

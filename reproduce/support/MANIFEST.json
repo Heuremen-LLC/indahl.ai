@@ -1,0 +1,48 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/support/heuremen_kit.py",
+   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  },
+  {
+   "extract_of": "support_tick.py lines 66 to 87, the counts, the product bootstrap and the all cell",
+   "path": "support_score.py",
+   "sha256": "70c4cbb6427606bbd225a579cc796362a895d3bc52c989dc635cead7492d79a7"
+  }
+ ],
+ "desk": "support",
+ "inputs": [
+  {
+   "bytes": 1920498,
+   "gzip_added": true,
+   "modified": "2026-11-10T20:50:47Z",
+   "path": "data/cycles.json",
+   "sha256": "c833214792e91eac492175f80336b0af26359e02f9e431249114f979d559eee9",
+   "stored": "data/cycles.json.gz",
+   "stored_sha256": "7e439b88a8755ca3c8c0bda4a34afcb44d06ae9cc8eb26db517a9f3d4a2c0cc1"
+  },
+  {
+   "bytes": 20245,
+   "gzip_added": true,
+   "modified": "2026-11-10T20:50:47Z",
+   "path": "summary_support.json",
+   "sha256": "983bdce758766dc48db0c8b1814185c791632e78bc76469f2e6f9ea35f0c6f4b",
+   "stored": "summary_support.json.gz",
+   "stored_sha256": "f26b72408792078dd56d8bdd1af711ecd13024954ad4b5ec75ddc8dee28eb8f4"
+  }
+ ],
+ "made": "2026-11-10T23:47:04Z",
+ "mode": "fetch",
+ "name": "SUPPORT",
+ "reference": [
+  {
+   "path": "desk/support_tick.py",
+   "sha256": "6bda783765e56d84d103911d9201df2c05f2e9aac2133a67efe7acf1564173cd"
+  }
+ ],
+ "sources": [
+  "For each product, https://endoflife.date/api/PRODUCT.json, read on the date of the updated field of the feed. The class of each cycle (supported, and no release in more than a year) was set on that date and is stored in each row."
+ ],
+ "why_not_included": "the endoflife.date licence was not confirmed for this pack"
+}

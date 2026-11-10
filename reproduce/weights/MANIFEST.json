@@ -1,0 +1,39 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/weights/heuremen_kit.py",
+   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  },
+  {
+   "extract_of": "weights_tick.py lines 70 to 76 and 84 to 86, the latest pair, the any-pass count and their intervals",
+   "path": "weights_score.py",
+   "sha256": "f04058c9b2fb1b21fa61d3042218748ef456eb225f7440506546a861d617162c"
+  }
+ ],
+ "desk": "weights",
+ "inputs": [
+  {
+   "bytes": 1774361,
+   "gzip_added": true,
+   "modified": "2026-11-10T22:58:26Z",
+   "path": "data/repos.json",
+   "sha256": "d794e486ee773de38f251981b08216bdf39af3068dc72fe1080fd3a4ff8463da",
+   "stored": "data/repos.json.gz",
+   "stored_sha256": "3222dcc773a1066af2c10ff43255cf0f8c9578b3023748d0cc5354cac9a29b11"
+  }
+ ],
+ "made": "2026-11-10T23:47:05Z",
+ "mode": "fetch",
+ "name": "WEIGHTS",
+ "reference": [
+  {
+   "path": "desk/weights_tick.py",
+   "sha256": "73ffdfc36d1f67425f9d86cb735f01737f2290144adf61f3524a1bbb2c68f845"
+  }
+ ],
+ "sources": [
+  "For each model, https://huggingface.co/api/models/MODEL/tree/main on each pass. data/repos.json holds the sha256 of every weight file Hugging Face reported on each pass, with the pass times, so a reader can compare them with the files as served now."
+ ],
+ "why_not_included": "the Hugging Face API is under its terms of service and not an open licence"
+}

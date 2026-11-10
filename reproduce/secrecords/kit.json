@@ -1,0 +1,44 @@
+{
+ "cwd": "",
+ "desk": "secrecords",
+ "headline": {
+  "field": [
+   "comparison",
+   "HSTS preload header",
+   "share"
+  ],
+  "hi": [
+   "comparison",
+   "HSTS preload header",
+   "share_hi"
+  ],
+  "lo": [
+   "comparison",
+   "HSTS preload header",
+   "share_lo"
+  ],
+  "n": [
+   "comparison",
+   "HSTS preload header",
+   "n"
+  ],
+  "of": [
+   "comparison",
+   "HSTS preload header",
+   "of"
+  ],
+  "outcome": [
+   "comparison",
+   "HSTS preload header",
+   "outcome"
+  ],
+  "show": "pct"
+ },
+ "name": "SECRECORDS",
+ "output": "out.json",
+ "steps": [
+  [
+   "secrecords_score.py"
+  ]
+ ]
+}

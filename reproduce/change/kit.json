@@ -1,0 +1,41 @@
+{
+ "cwd": "",
+ "desk": "change",
+ "headline": {
+  "field": [
+   "lifespan",
+   "Google, names with preview",
+   "under180"
+  ],
+  "keys": [
+   [
+    "lifespan",
+    "Google, names with preview",
+    "under180"
+   ],
+   [
+    "lifespan",
+    "Google, names with preview",
+    "n"
+   ]
+  ],
+  "n": [
+   "lifespan",
+   "Google, names with preview",
+   "under180"
+  ],
+  "of": [
+   "lifespan",
+   "Google, names with preview",
+   "n"
+  ],
+  "show": "n_of"
+ },
+ "name": "CHANGE",
+ "output": "out.json",
+ "steps": [
+  [
+   "change_score.py"
+  ]
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "cwd": "",
+ "desk": "cadence",
+ "headline": {
+  "field": [
+   "most_overdue",
+   0,
+   "age_days"
+  ],
+  "keys": [
+   [
+    "most_overdue",
+    0,
+    "title"
+   ],
+   [
+    "most_overdue",
+    0,
+    "portal"
+   ]
+  ],
+  "show": "years"
+ },
+ "name": "CADENCE",
+ "output": "out.json",
+ "steps": [
+  [
+   "cadence_score.py"
+  ]
+ ]
+}

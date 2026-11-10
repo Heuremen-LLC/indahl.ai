@@ -1,0 +1,93 @@
+{
+ "code": [
+  {
+   "extract_of": "cadence_tick.py lines 8 to 32 and 70 to 95, the interval and date readers and the series and overdue loop",
+   "path": "cadence_score.py",
+   "sha256": "f1b3f02e5e35e0e35d70b5354cb86fd5a98d24c8e9b7114e3aad7622ae1ca0fa"
+  }
+ ],
+ "desk": "cadence",
+ "inputs": [
+  {
+   "bytes": 829,
+   "gzip_added": true,
+   "modified": "2026-11-10T02:13:53Z",
+   "path": "data/portal_bls.json",
+   "sha256": "80ba8297c7910cccb595d36ae684175eab9010a67f6aa679241e9c1c3802e424",
+   "stored": "data/portal_bls.json.gz",
+   "stored_sha256": "36bcf8f2a4b91faadf57b4b4cf90678bfd4f4b1abc986545e3d0734299776bbb"
+  },
+  {
+   "bytes": 120471,
+   "gzip_added": true,
+   "modified": "2026-11-10T00:57:31Z",
+   "path": "data/portal_cdc.json",
+   "sha256": "6be23ce1ddb643b6097d7e3724d278351082fc5260bd573fcf3aa875439c092f",
+   "stored": "data/portal_cdc.json.gz",
+   "stored_sha256": "32e8d16dafa9f8a236264926e9b22deb2ee73fb5490d86cf7660d5f63ded2a69"
+  },
+  {
+   "bytes": 2265126,
+   "gzip_added": true,
+   "modified": "2026-11-10T00:46:30Z",
+   "path": "data/portal_cms.json",
+   "sha256": "94757ba75dffcc5e3681add14a9a36f8a0f3b8cf1b19ad2872c2c0eab8923ace",
+   "stored": "data/portal_cms.json.gz",
+   "stored_sha256": "6ae7cdc335f07cab40e483291ef89157f9925ae59508c41b14f470013c2dd35d"
+  },
+  {
+   "bytes": 98896,
+   "gzip_added": true,
+   "modified": "2026-11-10T01:41:59Z",
+   "path": "data/portal_energy.json",
+   "sha256": "84ee4933706210c4694a7bde9774ae3c5269fe57c8faa8d99b63a2fd1ddc284e",
+   "stored": "data/portal_energy.json.gz",
+   "stored_sha256": "f1bcfb823a1a55d3c43f4d3d4d4545c9be170380f69106e1b280ea4b5c0a56f4"
+  },
+  {
+   "bytes": 39052,
+   "gzip_added": true,
+   "modified": "2026-11-10T02:03:24Z",
+   "path": "data/portal_healthcare_gov.json",
+   "sha256": "0d55bb796f99eafd82fe64ca8c310dfbc623c90e878ac841db4459dd2f5a0e56",
+   "stored": "data/portal_healthcare_gov.json.gz",
+   "stored_sha256": "4a7d9ffda2e8fff3b6d99cff4bdc0761823bd8cb0b1d7bb4fae639799ac7a802"
+  },
+  {
+   "bytes": 444375,
+   "gzip_added": true,
+   "modified": "2026-11-10T05:07:28Z",
+   "path": "data/portal_healthdata_gov.json",
+   "sha256": "34e6d5f4be71899dd32686f0db3d9c55d6e985063defbf8a7cd24e67d168e211",
+   "stored": "data/portal_healthdata_gov.json.gz",
+   "stored_sha256": "bfa446745aef6c6ab4413b3b01ff156c81735d031272106338a1153dab7bde04"
+  },
+  {
+   "bytes": 98682,
+   "gzip_added": true,
+   "modified": "2026-11-10T01:52:41Z",
+   "path": "data/portal_labor.json",
+   "sha256": "78133855fac269565e39130f2db646fefc3ef5e12c2d090090a60ef68e9252f1",
+   "stored": "data/portal_labor.json.gz",
+   "stored_sha256": "58900ce38e67e8d78fc79ce4fa3bb283172516f8440fda796c5dbe8251cd808b"
+  },
+  {
+   "bytes": 205199,
+   "gzip_added": true,
+   "modified": "2026-11-10T01:31:36Z",
+   "path": "data/portal_veterans_affairs.json",
+   "sha256": "aadf42eebfe0f80772eb5819d419ab7ffc30129df8e499f182f15dbbd1e57119",
+   "stored": "data/portal_veterans_affairs.json.gz",
+   "stored_sha256": "46f96528c603a05060301d3a72fdd8672f41813ccc27ee4327d538546a899e62"
+  }
+ ],
+ "made": "2026-11-10T23:47:09Z",
+ "mode": "inputs",
+ "name": "CADENCE",
+ "reference": [
+  {
+   "path": "desk/cadence_tick.py",
+   "sha256": "aa587fcbdf66a27adf6589f7896f7f0b932644e7b63a8ba1c7caec420261ff8f"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "cwd": "",
+ "desk": "solar",
+ "headline": {
+  "field": [
+   "headline",
+   "bss"
+  ],
+  "hi": [
+   "headline",
+   "hi"
+  ],
+  "lo": [
+   "headline",
+   "lo"
+  ],
+  "n": [
+   "headline",
+   "consistent"
+  ],
+  "of": [
+   "headline",
+   "bins"
+  ],
+  "outcome": [
+   "headline",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "SOLAR",
+ "output": "data/solar_live.json",
+ "steps": [
+  [
+   "solar_tick.py",
+   "--offline"
+  ]
+ ]
+}

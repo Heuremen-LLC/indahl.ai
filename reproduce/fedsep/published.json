@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/fedsep/live.json",
+ "feed_sha256": "a597069318580396105f05ce649a286f7e55ac3b1c7074883dcbd4425b37b147",
+ "headline": {
+  "desk": "FEDSEP",
+  "display": "10 of 37",
+  "hi": 0.4872,
+  "keys": [],
+  "lo": 0.0811,
+  "n": 10,
+  "of": 37,
+  "outcome": "CONSISTENT",
+  "value": 0.2703
+ },
+ "read_at": "2026-11-10T23:47:08Z",
+ "stamp": "10 Nov 22:48"
+}

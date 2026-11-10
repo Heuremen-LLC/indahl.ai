@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/seasonal/live.json",
+ "feed_sha256": "3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653",
+ "headline": {
+  "desk": "SEASONAL",
+  "display": "60%",
+  "hi": 0.6422,
+  "keys": [],
+  "lo": 0.5488,
+  "n": 18533,
+  "of": 30834,
+  "outcome": "ABOVE",
+  "value": 0.6011
+ },
+ "read_at": "2026-11-10T23:45:55Z",
+ "stamp": "2026-11-10T16:32:50Z"
+}

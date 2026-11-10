@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "hfsize",
+ "headline": {
+  "field": [
+   "comparison",
+   "share"
+  ],
+  "hi": [
+   "comparison",
+   "share_hi"
+  ],
+  "lo": [
+   "comparison",
+   "share_lo"
+  ],
+  "n": [
+   "comparison",
+   "n"
+  ],
+  "of": [
+   "comparison",
+   "of"
+  ],
+  "outcome": [
+   "comparison",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "HFSIZE",
+ "output": "out.json",
+ "steps": [
+  [
+   "hfsize_score.py"
+  ]
+ ]
+}

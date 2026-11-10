@@ -1,0 +1,34 @@
+{
+ "code": [
+  {
+   "extract_of": "change_tick.py lines 128 to 143, the days and life_of functions and the lifespan block",
+   "path": "change_score.py",
+   "sha256": "e14410eb00c471431f99b5fd24d0fba37e5d5c7cc9fa42951dd20e28b8da5413"
+  }
+ ],
+ "desk": "change",
+ "inputs": [
+  {
+   "bytes": 90561,
+   "gzip_added": true,
+   "modified": "2026-11-10T22:48:06Z",
+   "path": "data/rows.json",
+   "sha256": "64a30ffbbac4c3f3db791ae1e25b624b9e5461fcf2519024ea57763e367527cf",
+   "stored": "data/rows.json.gz",
+   "stored_sha256": "62e738f72f1ab50f4839273c9fbe1952d1e00b0c2fe6f9a3a923a650a9459f30"
+  }
+ ],
+ "made": "2026-11-10T23:47:05Z",
+ "mode": "fetch",
+ "name": "CHANGE",
+ "reference": [
+  {
+   "path": "desk/change_tick.py",
+   "sha256": "1c28575ceb37e213cea4e57759084e7b9eceb4efe11baa74537f3bd9946413df"
+  }
+ ],
+ "sources": [
+  "The Google model deprecation page and the other vendor pages listed in the sources block of https://indahl.ai/change/live.json. data/rows.json holds each dated row as read, with the first and last time it was seen."
+ ],
+ "why_not_included": "the vendor pages carry mixed terms and one bars automated copying"
+}

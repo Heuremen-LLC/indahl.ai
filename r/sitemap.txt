@@ -2475,6 +2475,7 @@
 /r/rank.list.nj_middle	2026-11-10
 /r/rank.list.nlac	2026-11-10
 /r/rank.list.nu	2026-11-10
+/r/reproduce.kits	2026-11-10
 /r/restart.vs_none	2026-10-22
 /r/revise.bench.years	2026-11-10
 /r/revise.third	2026-11-10

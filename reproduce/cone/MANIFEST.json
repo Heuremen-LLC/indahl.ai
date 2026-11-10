@@ -1,0 +1,35 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/cone/heuremen_kit.py",
+   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  },
+  {
+   "extract_of": "cone_tick.py lines 18 to 25, 200 to 222 and 398 to 401, the storm-level bootstrap and the whole-path cells",
+   "path": "cone_score.py",
+   "sha256": "4e8299e8f5c474fc4d3caf65597a84d5c8f8477b7ad3046ffd04a732250b618a"
+  }
+ ],
+ "desk": "cone",
+ "inputs": [
+  {
+   "bytes": 17222482,
+   "gzip_added": true,
+   "modified": "2026-11-10T20:45:34Z",
+   "path": "data/cone.json",
+   "sha256": "b26067843e788aa35730fad24ba4c004f5c6209b5bc6002367a82cf7c34e4ab1",
+   "stored": "data/cone.json.gz",
+   "stored_sha256": "f1376b99d3f85e41f82ff09dfb5fbfd63ff506d1331ac0e190db523e0d60306d"
+  }
+ ],
+ "made": "2026-11-10T23:47:11Z",
+ "mode": "inputs",
+ "name": "CONE",
+ "reference": [
+  {
+   "path": "desk/cone_tick.py",
+   "sha256": "656ffd86be52dbc77c51bf590ad327e4937b657a79700dfa0c5384fbcfd2fae8"
+  }
+ ]
+}

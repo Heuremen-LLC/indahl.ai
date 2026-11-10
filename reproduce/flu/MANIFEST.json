@@ -1,0 +1,885 @@
+{
+ "code": [
+  {
+   "path": "flu_tick.py",
+   "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/flu/flu_tick.py",
+   "sha256": "22f7be3c54ecda6d756a968ac1fad10418eaa9d32e8e7168e7bb19dd273b8cf1"
+  },
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/flu/heuremen_kit.py",
+   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  }
+ ],
+ "desk": "flu",
+ "inputs": [
+  {
+   "bytes": 524323,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-10-14-FluSight-ensemble.csv",
+   "sha256": "0495532d8fc3885fb64b62f541a35cc1aa851a6869f82480645a8c58831293bc",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-10-14-FluSight-ensemble.csv.gz",
+   "stored_sha256": "7a86291955e85dffdf8cd0ccb76b5bd401629337dcf2e05958195b2c0243975c"
+  },
+  {
+   "bytes": 531866,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-10-21-FluSight-ensemble.csv",
+   "sha256": "047c6086ce9ed1bb864c05caf640fb028afa8e22c3151210b43e5f664988e23a",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-10-21-FluSight-ensemble.csv.gz",
+   "stored_sha256": "eef35dbdc779c514f4893bdd938347c5d7077002952beaa747281ec905b0dee9"
+  },
+  {
+   "bytes": 524028,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-10-28-FluSight-ensemble.csv",
+   "sha256": "9b6e7391ca116c160e0efa34a07cda890dfb5a2bce060f092dbf1f0f30f42071",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-10-28-FluSight-ensemble.csv.gz",
+   "stored_sha256": "a687c6e2fcde6d10716d2e16dc95af01f3eb2361591bd803a31a100b9cd9201d"
+  },
+  {
+   "bytes": 533097,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-11-04-FluSight-ensemble.csv",
+   "sha256": "162b23402ced53430cc8e5f571680116c2e1f2e293b76d526a01a8aaaf07ca5b",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-11-04-FluSight-ensemble.csv.gz",
+   "stored_sha256": "838a0b8e4a0ab9f88dee0caf37df9e8f1977b11327647ec73b70a2c6b8400215"
+  },
+  {
+   "bytes": 525177,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-11-11-FluSight-ensemble.csv",
+   "sha256": "f3609fa223906f681ddffd6853c665b742ffc9bb04dc7de63a4de65fd38ff8f4",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-11-11-FluSight-ensemble.csv.gz",
+   "stored_sha256": "13b955ca0ab96e49d499a3768522e62cf037329a23bac9c2f7a081dc7848dd9f"
+  },
+  {
+   "bytes": 523470,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-11-18-FluSight-ensemble.csv",
+   "sha256": "b334656ef393e5be77816b23707cb8648bb006be8921d0844b498c98c8830563",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-11-18-FluSight-ensemble.csv.gz",
+   "stored_sha256": "e3500284381230c21143fbb5b1aabe40cbebf34a20073bb1d7f47f14e0b8326a"
+  },
+  {
+   "bytes": 521218,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-11-25-FluSight-ensemble.csv",
+   "sha256": "e6792783b4e6e1b16d1e85f19f0d41b5a4938326595c0245707ad505377425a9",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-11-25-FluSight-ensemble.csv.gz",
+   "stored_sha256": "47ff896fc831c4bde311985691c35ffd02417f843ad1d88c7e57fc79b503e674"
+  },
+  {
+   "bytes": 524082,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-12-02-FluSight-ensemble.csv",
+   "sha256": "2000f662432078c454819800a7b99ab1c195ea27214454c8c419b4d8fd851c3c",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-12-02-FluSight-ensemble.csv.gz",
+   "stored_sha256": "f30a8acfa78e60f48918f2d7c234b5771425f4390a165d12f0a2ab3baf9414be"
+  },
+  {
+   "bytes": 517894,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-12-09-FluSight-ensemble.csv",
+   "sha256": "4383a58aa74bf4224097896bd5a9c983261b2862c4751f996f4ece7abbdc2ac5",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-12-09-FluSight-ensemble.csv.gz",
+   "stored_sha256": "4aeed4cccd042a1f0bcf92f4614360ab8988a25466082bdc8ffd5fe4e3389b2a"
+  },
+  {
+   "bytes": 522581,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-12-16-FluSight-ensemble.csv",
+   "sha256": "818c7a84e68cfbb33821c6fef34532e42d85429f1e1ee4413d44ca6e4fa2035f",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-12-16-FluSight-ensemble.csv.gz",
+   "stored_sha256": "3cb91e4489da67baa205c6a5dffffe35070bbbd7fad4875c95fa28814d679452"
+  },
+  {
+   "bytes": 525370,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-12-23-FluSight-ensemble.csv",
+   "sha256": "d3ec72d524011f186d2b7f898a29e50606dc7e610a6a33d15e1afff6706751fe",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-12-23-FluSight-ensemble.csv.gz",
+   "stored_sha256": "b7d020a02220ae49b61a12d8525b80704b68deb10407239a79cc699f540ff4b8"
+  },
+  {
+   "bytes": 532102,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2023-12-30-FluSight-ensemble.csv",
+   "sha256": "00f5e92c2a024f657f101bce5c8d1c14f5fefb998748a3c8b43f4e8ba7f25772",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2023-12-30-FluSight-ensemble.csv.gz",
+   "stored_sha256": "d82cd722ce55a4c131fedff18552717bea9efe7cc26c9a0d904e562da7ab244c"
+  },
+  {
+   "bytes": 522958,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-01-06-FluSight-ensemble.csv",
+   "sha256": "b45584863813245c9e41330a9ac8aa453335e89a8e5cd16145d29bcceeafdd68",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-01-06-FluSight-ensemble.csv.gz",
+   "stored_sha256": "044db12b7d4617d1e5898565b10515a12db45d473bc05c6bfa74871e11354e74"
+  },
+  {
+   "bytes": 530517,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-01-13-FluSight-ensemble.csv",
+   "sha256": "8c4291e70c5b47dd1475136daa5ffdf9a833a3a9c567dd863ebc14bdcab9951a",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-01-13-FluSight-ensemble.csv.gz",
+   "stored_sha256": "c76b710ab9b8a846f913b162e7e96c0ed6e52e9afa24ae0e60ae92ac38249200"
+  },
+  {
+   "bytes": 524342,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-01-20-FluSight-ensemble.csv",
+   "sha256": "6389a83d3aff69a8138b2220c10c7c21fd14d61daf895dd42bc53b53a4479a6b",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-01-20-FluSight-ensemble.csv.gz",
+   "stored_sha256": "01d0eef1ba7cf4beadc778fbb7ebb243e39bb79046a7b552a0d1d6c1f958b5ee"
+  },
+  {
+   "bytes": 529998,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-01-27-FluSight-ensemble.csv",
+   "sha256": "a9c200a1395433deb24ec71ef2ae7210f9d7cbba5b3b166cf04303b7629f01c3",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-01-27-FluSight-ensemble.csv.gz",
+   "stored_sha256": "9a0651fa982abd552372ffe7e29f046ddb257430996019dcd99c4d8a84d930f2"
+  },
+  {
+   "bytes": 519229,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-02-03-FluSight-ensemble.csv",
+   "sha256": "c276963e4f30094e9ddd71c811349161d4a7aa1b97a2b8cc4cd162cab09ccd10",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-02-03-FluSight-ensemble.csv.gz",
+   "stored_sha256": "5452b0ab0b12aa5bb574f05378f0844d7a44a4602c20dcafc0e134cde2dc5798"
+  },
+  {
+   "bytes": 532036,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-02-10-FluSight-ensemble.csv",
+   "sha256": "b03fc33babde3f32ef15780fdbddb603d7156379d2cc6663e4d6ca275b08c8f5",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-02-10-FluSight-ensemble.csv.gz",
+   "stored_sha256": "6efe71ecf6e6b5532e83f2121ce31605f8cfce1067c902043e2cc57c52f5bd49"
+  },
+  {
+   "bytes": 519604,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-02-17-FluSight-ensemble.csv",
+   "sha256": "ab2aba8cfaff6fdc76e8d8c5224e44f12d465f63e02b4200e8a8510420142417",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-02-17-FluSight-ensemble.csv.gz",
+   "stored_sha256": "ff69f7c4588cae5829728ea6858ab3c21c2a399bedcfeea61a7cc6d798e6aa53"
+  },
+  {
+   "bytes": 525554,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-02-24-FluSight-ensemble.csv",
+   "sha256": "fd19dd168b080e56d593e1e2cefefce893f4e5efe1ee1c1739b5d65dd6dcffe5",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-02-24-FluSight-ensemble.csv.gz",
+   "stored_sha256": "803d2712a7deeb345076bb8576705e9073fbdbeccf7722c61d2df3f5e7320395"
+  },
+  {
+   "bytes": 537652,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-03-02-FluSight-ensemble.csv",
+   "sha256": "076d6e2876c2f4af916020a7bea7c5cf691b11420e4f3f06a7e35542512c87be",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-03-02-FluSight-ensemble.csv.gz",
+   "stored_sha256": "f804b55f1355446fbf52209397becacb7277bf9b0b38043ee64695495d024ee7"
+  },
+  {
+   "bytes": 526838,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-03-09-FluSight-ensemble.csv",
+   "sha256": "618a5502e6c38e97f016cca4889605289b3aabe7be8fefa3fa2cc83757f94f14",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-03-09-FluSight-ensemble.csv.gz",
+   "stored_sha256": "4e2e79f60ca39de212154e85026cfa6c34e764e6825317689a46e9019502e884"
+  },
+  {
+   "bytes": 527611,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-03-16-FluSight-ensemble.csv",
+   "sha256": "1f4fac2368357d70c17d8d9a8df18dfa4bfcd745d6934cdd8d9d44cfc9b55a7b",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-03-16-FluSight-ensemble.csv.gz",
+   "stored_sha256": "f2a6c30494ed034182592cf5fe9415edbc1905fae45c62246fc0cb4a16b5bc5e"
+  },
+  {
+   "bytes": 514690,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-03-23-FluSight-ensemble.csv",
+   "sha256": "d569e10bae9221350ab9dbb215c254e676d3a2a9376b81c04ebd2dea237c1698",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-03-23-FluSight-ensemble.csv.gz",
+   "stored_sha256": "632973f062f727dc63f47fa2300597ec5975554555b2ee8ac4873d56af8a356b"
+  },
+  {
+   "bytes": 529207,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-03-30-FluSight-ensemble.csv",
+   "sha256": "fdb9b4ec47e44bf7d5609eb6c6f8b1be94ab51c7589de126a555de329fe97207",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-03-30-FluSight-ensemble.csv.gz",
+   "stored_sha256": "dfb9949a769860f3fb35c06d2f03e506ce51554bf13cc5ed736893f0aa32c3d3"
+  },
+  {
+   "bytes": 523289,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-04-06-FluSight-ensemble.csv",
+   "sha256": "91b49e7b92a27faecfcdc5ceea76cfb140e4394d39f3c6bec1519bdf9445c61f",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-04-06-FluSight-ensemble.csv.gz",
+   "stored_sha256": "97598cba3572fea88c324a5d03577f1956af28991077592e798e3e71167c977b"
+  },
+  {
+   "bytes": 505669,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-04-13-FluSight-ensemble.csv",
+   "sha256": "80eef2e9467ec5163381ad8896b974e694cbd4b73611508841fb51982655111e",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-04-13-FluSight-ensemble.csv.gz",
+   "stored_sha256": "c574be1f0c75b3c77119663a875be1c1bc20f02f81bf370335175414df89fe99"
+  },
+  {
+   "bytes": 517904,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-04-20-FluSight-ensemble.csv",
+   "sha256": "b05295fb232f9e8526c1fa70a5ba07bbeaf809e6cc9051baddf0df2df42a6e75",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-04-20-FluSight-ensemble.csv.gz",
+   "stored_sha256": "6854c91d20b3ad9429bae8229b7de5e582798e62ea9f92b40b184e5ca81f449e"
+  },
+  {
+   "bytes": 517120,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-04-27-FluSight-ensemble.csv",
+   "sha256": "3730576ed02066ec7bd389972cb0d45e751ca1c3224ec0950cbf78de59299ade",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-04-27-FluSight-ensemble.csv.gz",
+   "stored_sha256": "e32d791159bde56de30ea17374a1362f9cf7157c77388be350f55c48d45806f4"
+  },
+  {
+   "bytes": 516774,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-05-04-FluSight-ensemble.csv",
+   "sha256": "ea5f0deebb7d16eb948f5d5acb9ca2358ffd0a3e1b8f1dba0b47117d441c1880",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-05-04-FluSight-ensemble.csv.gz",
+   "stored_sha256": "6d4bb652773cfda52e6cc2f669e0a74c0a3e374752a2a404016609f5c1b85d49"
+  },
+  {
+   "bytes": 647370,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-11-23-FluSight-ensemble.csv",
+   "sha256": "c465c4c4f73cbb47f0bd7c412e3950216dc8a68ca3c1e66c4e1fb672a6d9050a",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-11-23-FluSight-ensemble.csv.gz",
+   "stored_sha256": "92bf1715add1123db49a489ef4d95c1b2b1b7dc1844c3c5f7de5491d057a6b58"
+  },
+  {
+   "bytes": 648016,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-11-30-FluSight-ensemble.csv",
+   "sha256": "cec0d545ab82b55a33c0ae57412b17e86ad513c291f8ed82967649277f498a99",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-11-30-FluSight-ensemble.csv.gz",
+   "stored_sha256": "a44fb42b6748961440f1f3c70c3e88076e6d4ef3909d8a4126016f6777898f58"
+  },
+  {
+   "bytes": 651959,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-12-07-FluSight-ensemble.csv",
+   "sha256": "a826062c33b865d9db39acac987140bae665d46a5f656cd7ea5807a08bb31ae7",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-12-07-FluSight-ensemble.csv.gz",
+   "stored_sha256": "23f1cc608a1d2028d10b03a9e9db1ee9e59f0549ec61b05dce8c22103d9aab5b"
+  },
+  {
+   "bytes": 578777,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-12-14-FluSight-ensemble.csv",
+   "sha256": "8bd843fd80f396637abd7427b5fb362bd2611da105a61f919368194b85e62782",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-12-14-FluSight-ensemble.csv.gz",
+   "stored_sha256": "faa7004b28e556c8345a4cdf71ffb3c745b03e4b963815f72ab4a9a06b900364"
+  },
+  {
+   "bytes": 578999,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-12-21-FluSight-ensemble.csv",
+   "sha256": "3b1fe87c177864b54c1bd4c299d63abf33a30f7bc798b4e466502befe9c5c98c",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-12-21-FluSight-ensemble.csv.gz",
+   "stored_sha256": "76b0aca1ec4cfcaad0a5e75698fd48350bb4df88d724316026810e3dc227f339"
+  },
+  {
+   "bytes": 579036,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2024-12-28-FluSight-ensemble.csv",
+   "sha256": "37f739dceebdeeba65d2fce2533f8f0d6312ace8b91990e374e2aabeb52f454d",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2024-12-28-FluSight-ensemble.csv.gz",
+   "stored_sha256": "14995ccea5c21dddf3054190e6a3968c40fe32591cc710d026848dfd6b543f66"
+  },
+  {
+   "bytes": 578838,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-01-04-FluSight-ensemble.csv",
+   "sha256": "49f23c3a385965d8a89d88ef5df991289547cc78ca8b2f4f770e1bcd746c1308",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-01-04-FluSight-ensemble.csv.gz",
+   "stored_sha256": "40a6d24f9a95deada0c2074642d7a082629222f2dc81576cf7f688a1e315525a"
+  },
+  {
+   "bytes": 579220,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-01-11-FluSight-ensemble.csv",
+   "sha256": "2fe5b14b22c0ed20a51fe69d94dbafadc4a44f6848592634841bd6b0f7574e6d",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-01-11-FluSight-ensemble.csv.gz",
+   "stored_sha256": "b2f8d3df94bb3f1759189ada9bcd8d65955c0e9b9286ccc046674b6e83b2f1af"
+  },
+  {
+   "bytes": 579273,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-01-18-FluSight-ensemble.csv",
+   "sha256": "e5f43f74d8e8a996c2e38ed2c3410290c17fa64098231dc96bdcbca8134aba21",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-01-18-FluSight-ensemble.csv.gz",
+   "stored_sha256": "f4277b0f96314976ec1e64d23c5a46f75c22d1dd67165f0a62a8162500ba8038"
+  },
+  {
+   "bytes": 580492,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-02-01-FluSight-ensemble.csv",
+   "sha256": "6c3b428efbdf33b11fa322ed7d2953acea8c77baf3312d4519d98a929723f5e4",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-02-01-FluSight-ensemble.csv.gz",
+   "stored_sha256": "2084d17ac3ee3b103d3a2be4884a9df4d71b3b803e83265ee3a3da451aec88c1"
+  },
+  {
+   "bytes": 579023,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-02-08-FluSight-ensemble.csv",
+   "sha256": "0f0354c678f4d1e78bfe881528fe32f9da2e22367bab738f0c5ab8bea392487a",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-02-08-FluSight-ensemble.csv.gz",
+   "stored_sha256": "ea1ed3c5343f45db5aef16850394cd7164e077e90c6cd78fdf3456678deefc68"
+  },
+  {
+   "bytes": 577955,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-02-15-FluSight-ensemble.csv",
+   "sha256": "07d438fa2f6105b0f013367f5ce5947ade3d002275bc53added995f6dbe48aa5",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-02-15-FluSight-ensemble.csv.gz",
+   "stored_sha256": "c097b86cb14b1cda9283c3ea633c314a394d66034ec2a1ef4e38677e0ffcbb13"
+  },
+  {
+   "bytes": 575922,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-02-22-FluSight-ensemble.csv",
+   "sha256": "0f317cb957a4cfb192420d53d59a6875f4414e354373f8781dbc1e9737047ade",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-02-22-FluSight-ensemble.csv.gz",
+   "stored_sha256": "2d0b12fe554a4b9407639e6e403cf9e87f25da0b108275fafe5b64e595f44b2b"
+  },
+  {
+   "bytes": 574775,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-03-01-FluSight-ensemble.csv",
+   "sha256": "627ce1611a7cee45ba88a6eea60528501f6da24892e5733b16ac70da358a7b96",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-03-01-FluSight-ensemble.csv.gz",
+   "stored_sha256": "90a4d428cf5ccc8d1ea17fe70a4406bb4d9b153e5c5465928b11e72957534cc3"
+  },
+  {
+   "bytes": 574077,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-03-08-FluSight-ensemble.csv",
+   "sha256": "5a1b40fa89e66f29639841004542a7f049c6e72b110c487845ae7e85b33aa772",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-03-08-FluSight-ensemble.csv.gz",
+   "stored_sha256": "0b0eb9a23b89c053dda29888b93fef0ab08fc40e4fbb00373a33a225ab77949a"
+  },
+  {
+   "bytes": 578359,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-03-15-FluSight-ensemble.csv",
+   "sha256": "ff14567dab273b0e144ebba04862d480c24860e56353801c116edafbe420adb6",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-03-15-FluSight-ensemble.csv.gz",
+   "stored_sha256": "8da0597ddad82a1c372fb56d181fc91f53c03c1b5cdc5f6dbe33bd04dcf02ff4"
+  },
+  {
+   "bytes": 577117,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-03-22-FluSight-ensemble.csv",
+   "sha256": "9762aef907a36cdde57302e0cf4850872d0b8cd9d48102930ba221014c1498bf",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-03-22-FluSight-ensemble.csv.gz",
+   "stored_sha256": "ce147d9819fe97691a91d29e31e2061bba3630aa408e06caf71acafa2a9527a1"
+  },
+  {
+   "bytes": 574936,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-03-29-FluSight-ensemble.csv",
+   "sha256": "890bd69e772c98de73e561474e0a2651b06fe948b698270301c2e12ae3888d31",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-03-29-FluSight-ensemble.csv.gz",
+   "stored_sha256": "da1bdc971a463d97181ceb0bc63f00d50c853ea44161b035bca50fd9f9ce0ce6"
+  },
+  {
+   "bytes": 564699,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-04-05-FluSight-ensemble.csv",
+   "sha256": "c7c2decd346a55d1ac80723052d3c7624146c5f9f89592ac5247f2ac01aa17c0",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-04-05-FluSight-ensemble.csv.gz",
+   "stored_sha256": "b316d16f3791c9a1777a7f6f1d7975071c9f2c9bf1dce8f73b33d04289ffff74"
+  },
+  {
+   "bytes": 563788,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-04-12-FluSight-ensemble.csv",
+   "sha256": "a0a0f2b399c954d496ed3ccdc47ec7b3745d4b4bf070fef94332793726717b6a",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-04-12-FluSight-ensemble.csv.gz",
+   "stored_sha256": "b760595a06999f6c0a653d182bdaa94aed949b377266f9838c19a373d91e686c"
+  },
+  {
+   "bytes": 560265,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-04-19-FluSight-ensemble.csv",
+   "sha256": "9f3a441ce65d4876db7e679337a723b59af27b1eb2f77326b965bec6795b4aaa",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-04-19-FluSight-ensemble.csv.gz",
+   "stored_sha256": "fd7d212df495f6b8ca2046b3e7e9cdbb780d2bc702434b4f8a0b4b0703ac8675"
+  },
+  {
+   "bytes": 559180,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-04-26-FluSight-ensemble.csv",
+   "sha256": "2d8f8c752966eeb7d4c04d7d0e0853f52302e47044f18f3bbc786e266653abba",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-04-26-FluSight-ensemble.csv.gz",
+   "stored_sha256": "66fa5e34cc6fe0b1cf9e5c3ca31883e38bda9143ce06a69ab4f8fc3ef1ce8bea"
+  },
+  {
+   "bytes": 559477,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-05-03-FluSight-ensemble.csv",
+   "sha256": "e407d9da602fe17afd64a2fae6977bf220f9ebd8dbae6bd13273db71422b4bce",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-05-03-FluSight-ensemble.csv.gz",
+   "stored_sha256": "5d5001894def449649eee2dfa15e9343c79160f4120131bb2901bd93a2541475"
+  },
+  {
+   "bytes": 558024,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-05-10-FluSight-ensemble.csv",
+   "sha256": "12eac14f926880b54e807aca7b60515ade807a72358d3d9bc3fdd501ece70293",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-05-10-FluSight-ensemble.csv.gz",
+   "stored_sha256": "8447b883b869d38141264853d19d8450bb0aca518da447eadf25ca13db5302c8"
+  },
+  {
+   "bytes": 539493,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-05-17-FluSight-ensemble.csv",
+   "sha256": "de768af3cee37ee49720616a045b238e6b93cde7f0248b4918597843ffe951bd",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-05-17-FluSight-ensemble.csv.gz",
+   "stored_sha256": "c0d43878194a0ab5b7425f47b19ec38a331f0139ef1624229b62295abe1aee97"
+  },
+  {
+   "bytes": 537488,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-05-24-FluSight-ensemble.csv",
+   "sha256": "6353466a39a2c90cf5c3ed1ff6526d006ffd47dd30c33acf75206511964cf2f9",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-05-24-FluSight-ensemble.csv.gz",
+   "stored_sha256": "e6509bcc80d36a57eefcbabb676f1ae57ae154e76cfb55826efd2d6243b8acd5"
+  },
+  {
+   "bytes": 538713,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-05-31-FluSight-ensemble.csv",
+   "sha256": "d8bd291cd55907e7e3dd56d01aa76b495105ac8975a18dfca6b60cedade1983d",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-05-31-FluSight-ensemble.csv.gz",
+   "stored_sha256": "76bf2d86ec5c1f5624c2abf1f628e1822973fbbd2043ce2bab608c93527c58e3"
+  },
+  {
+   "bytes": 1079439,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-11-22-FluSight-ensemble.csv",
+   "sha256": "2d19a10cdd85f831de5a260de0b3d7f148e27924b6d5281fffa759a1d6b798cb",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-11-22-FluSight-ensemble.csv.gz",
+   "stored_sha256": "27904247874ca8a56cbba00dfd88e8ee8851b76b12866bad05a67732aa427b05"
+  },
+  {
+   "bytes": 1072231,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-11-29-FluSight-ensemble.csv",
+   "sha256": "3ffeb280862e493e013d233a0d547a63b215fb6646f7d3ee0b9ba46d1e221148",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-11-29-FluSight-ensemble.csv.gz",
+   "stored_sha256": "773243b161bb241bd762b86d4a652c66066c479fbb34ab6cb04132b0a5a1b3f0"
+  },
+  {
+   "bytes": 1074040,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-12-06-FluSight-ensemble.csv",
+   "sha256": "cd2e2d0e8ea216edc6ca10e3e908f527547f9cccddbc5cf47384ff7a6e5a82c6",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-12-06-FluSight-ensemble.csv.gz",
+   "stored_sha256": "adf6f2d353e03ae9c5e6b0f175e2348b5374c0c7ef0cd9eaa033050f0cb09442"
+  },
+  {
+   "bytes": 1070826,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-12-13-FluSight-ensemble.csv",
+   "sha256": "5906b050dabdbf5398585e3bc1f8395211bc09d685e92be4d50ef640a4e0d874",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-12-13-FluSight-ensemble.csv.gz",
+   "stored_sha256": "f7e2ed2c26af6722ac713f7c12d129312b3c4f4faa6d052c22118d13cff21019"
+  },
+  {
+   "bytes": 1073044,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-12-20-FluSight-ensemble.csv",
+   "sha256": "efa7628032de99e259ce3b6aa694c2dc9b1164608f2456a3b02435e51ea0b1e2",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-12-20-FluSight-ensemble.csv.gz",
+   "stored_sha256": "ac3e3e49101e68a73da8e1fe75e38c4478bcd4c08ec608c227f9f07bf137fbeb"
+  },
+  {
+   "bytes": 1073369,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2025-12-27-FluSight-ensemble.csv",
+   "sha256": "d3e601092fd7b2d3eae3c7c80c00657513bfe1a4dbc84d0d585bb0bd17957ccb",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2025-12-27-FluSight-ensemble.csv.gz",
+   "stored_sha256": "e0499d2639200cebf02482a0d5d7fa4b3aa03a2a236b7b203a55fdfd43fc1369"
+  },
+  {
+   "bytes": 1071826,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-01-03-FluSight-ensemble.csv",
+   "sha256": "57dff31d12c3ee5fec130a5ca776f07ff8867cf38d5d5130eb9850f9dc5cbbea",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-01-03-FluSight-ensemble.csv.gz",
+   "stored_sha256": "df8fbf4f7a6d7924c4e972f420f2885199e65cd292b0a7d13c94b0266b11a213"
+  },
+  {
+   "bytes": 1071584,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-01-10-FluSight-ensemble.csv",
+   "sha256": "b751a094026c1c1aa5283a52e415087d30b18162cb0b452bc5cd9fb7beb5fb61",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-01-10-FluSight-ensemble.csv.gz",
+   "stored_sha256": "9d65869f30499e96bcfa114ca7702cd121477258d70310396631be415dd0f7b5"
+  },
+  {
+   "bytes": 1073718,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-01-17-FluSight-ensemble.csv",
+   "sha256": "cd5c92969c026e98dfe970a4e9202c1cf8d1df19b41ad35021100243e7a4637f",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-01-17-FluSight-ensemble.csv.gz",
+   "stored_sha256": "56ef67a19753711f03035e8b54b081d746799b06f205de63b959d3a2452393f9"
+  },
+  {
+   "bytes": 1071033,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-01-24-FluSight-ensemble.csv",
+   "sha256": "abae020ef585cc757675a9f576bce84af6ded942845bc52425d274a28a7b0735",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-01-24-FluSight-ensemble.csv.gz",
+   "stored_sha256": "1c220da1cd20c5fa5c244f4ba715e3397fe62c105da717c13a43a4dd9fdf38f4"
+  },
+  {
+   "bytes": 1069118,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-01-31-FluSight-ensemble.csv",
+   "sha256": "f610ef90c0e67be7adf2d26329143957f0eb6509db337fb3bf8d9b7ab4a2acd9",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-01-31-FluSight-ensemble.csv.gz",
+   "stored_sha256": "7b65259fe5d7ae33c31a90fa2d6c6ea8feb19916ec4fb6559ebcd7d58cb410f3"
+  },
+  {
+   "bytes": 1068783,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-02-07-FluSight-ensemble.csv",
+   "sha256": "ca9eb0414601063d707009a7f49f414bf3c8570c23a3a92683b293cb38d1c9ed",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-02-07-FluSight-ensemble.csv.gz",
+   "stored_sha256": "4e43002ef7eb1e1ae2db9b141b5316f9668b3d459ffc592f87fa3e24c8a34295"
+  },
+  {
+   "bytes": 1070758,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-02-14-FluSight-ensemble.csv",
+   "sha256": "10ce61e9e0151c828dbd92c0ea225157c367a433e7d4eb40f0d167c1c8b1ab00",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-02-14-FluSight-ensemble.csv.gz",
+   "stored_sha256": "08d096713d6d4cb722d735a5b4d9bd7d287c4a8107449e50adb5275f52694e9b"
+  },
+  {
+   "bytes": 1070008,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-02-21-FluSight-ensemble.csv",
+   "sha256": "d79352cb78e501f14e611af678f8eef6cffc391f55ca9c3b2493b229bffb80ac",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-02-21-FluSight-ensemble.csv.gz",
+   "stored_sha256": "c466dde310a5b00308542109466df3640fc558243643ba31f1077a983790a182"
+  },
+  {
+   "bytes": 1069345,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-02-28-FluSight-ensemble.csv",
+   "sha256": "dfc25ad8793c3f9aee7b3bacb44cda013281291057b847c4509e8da8a3f9e8bb",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-02-28-FluSight-ensemble.csv.gz",
+   "stored_sha256": "a27a6b7d12ed529db3d96ad0b1098d05a50f0ce703e2502555acef2df7ba4edc"
+  },
+  {
+   "bytes": 1063666,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-03-07-FluSight-ensemble.csv",
+   "sha256": "036da39368381a2486800b802c8366bc3e09cbdc0edfdfb073ad38f1f8b2645d",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-03-07-FluSight-ensemble.csv.gz",
+   "stored_sha256": "926846d2e2311d29d093030803c98908ebf5b2edd4409eb03fbf0e355ea6d6ef"
+  },
+  {
+   "bytes": 1063180,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-03-14-FluSight-ensemble.csv",
+   "sha256": "3e41303eaa87d62cfb56d50fad4b874351e446a37f4be32309a434fee726e3dc",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-03-14-FluSight-ensemble.csv.gz",
+   "stored_sha256": "a5a2559e7e3e298b6839a16a96dd300a6b6e776ef5b51f0862f23dfca6d19e77"
+  },
+  {
+   "bytes": 1060171,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-03-21-FluSight-ensemble.csv",
+   "sha256": "f7d2fbf4bdc35a40553d64907143936e3fd0a954c085922edddc449b7a537b84",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-03-21-FluSight-ensemble.csv.gz",
+   "stored_sha256": "6a5db4659d88f164f23d4d716f322af62e8a195e229b1f3ba23e149a2eae385b"
+  },
+  {
+   "bytes": 1059173,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-03-28-FluSight-ensemble.csv",
+   "sha256": "0689584e8261bff56c3c6741d83f48f2a87763014b5ac007e20e406ea4410abe",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-03-28-FluSight-ensemble.csv.gz",
+   "stored_sha256": "bf70b3ebff5ce0c0215db716c2a1d2d95c5fe9533a43b6e7dd0532d0ce124ad1"
+  },
+  {
+   "bytes": 1055964,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-04-04-FluSight-ensemble.csv",
+   "sha256": "a1f6ff7614a3614ad2407c203ef79b8a130264faf9a88f79519380425bd9a0ec",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-04-04-FluSight-ensemble.csv.gz",
+   "stored_sha256": "0068a483dc603ea429c9cf765c94efae94db3f882a542d2ac8f76bad8c0eb783"
+  },
+  {
+   "bytes": 1049432,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-04-11-FluSight-ensemble.csv",
+   "sha256": "c37ae23060c6c075c054e75bc01922cfb90b665ba72ae8e4e731f0f198da7ae0",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-04-11-FluSight-ensemble.csv.gz",
+   "stored_sha256": "2fa31fb592c3f5232448dbe809e07e79f33506c29fe21c2b8071fab2f675643f"
+  },
+  {
+   "bytes": 1044810,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-04-18-FluSight-ensemble.csv",
+   "sha256": "6cf2cda4d4d33f00f19b78eed6f0fb379c956760d7ac9659a805f10385db6dc5",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-04-18-FluSight-ensemble.csv.gz",
+   "stored_sha256": "84bfa44ad966c12fbc0d1e635a42ec6078bd6c72f8ade4147a3a25b6f060407c"
+  },
+  {
+   "bytes": 1046490,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-04-25-FluSight-ensemble.csv",
+   "sha256": "b7ffaaf10f5bc0ff2676a3b338becef15841aa06932c3497177234c88e3eda4d",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-04-25-FluSight-ensemble.csv.gz",
+   "stored_sha256": "f1301773ad8db85e5c94f39ceebf6dca52b053eff18c8a1f9baf2dfcfd6349e5"
+  },
+  {
+   "bytes": 1043385,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-05-02-FluSight-ensemble.csv",
+   "sha256": "b19eecdaed2c45bb266f076bec9db160e77b33d0dc86f7bfdd1324e4fad0b943",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-05-02-FluSight-ensemble.csv.gz",
+   "stored_sha256": "aa38bdd690bee1aecc9daa3bc87081924f7be1ba60a6d8f3c2da750a22ffe37a"
+  },
+  {
+   "bytes": 1046806,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-05-09-FluSight-ensemble.csv",
+   "sha256": "b9b893599f8f58eef933457790fac634e1bed23b027bcd9c7f7cf4cacc98b7fb",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-05-09-FluSight-ensemble.csv.gz",
+   "stored_sha256": "c87d36b70a1f6bf90deafb25c418a7584003d0ee1767d1f3e4b87ab084f9c172"
+  },
+  {
+   "bytes": 1043383,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-05-16-FluSight-ensemble.csv",
+   "sha256": "5c50a161f5906b0a0692432177e8929a0af60df949ec012cbb729e47f7610f27",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-05-16-FluSight-ensemble.csv.gz",
+   "stored_sha256": "a742f9c6e9b0a7f16ec6c3e60cfca382e1adf5aa2aa375769c363a6f9cb0fb90"
+  },
+  {
+   "bytes": 1038724,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-05-23-FluSight-ensemble.csv",
+   "sha256": "8ae490af6c6d6b8f4dfc62b58bc0a08fdd5e4ae7c4980e4e2736461ba18fb9b3",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-05-23-FluSight-ensemble.csv.gz",
+   "stored_sha256": "c933e972fe86d19c2f67af324466e3b325368cb5601c392a807f40fc1de03363"
+  },
+  {
+   "bytes": 1050062,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-05-30-FluSight-ensemble.csv",
+   "sha256": "da7f92cf11b1f05df55913dcb0107e3ff1affccd0df5bf132d7be42d2f1909c8",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-05-30-FluSight-ensemble.csv.gz",
+   "stored_sha256": "23dc8f43075dba1c469baa8b3f27dd42df3a82c53364a77e8ee6dbdaa469fd54"
+  },
+  {
+   "bytes": 1117126,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-10-10-FluSight-ensemble.csv",
+   "sha256": "c0969ca9e20e898f3d428058b161cdf5e90fbf7f58cc0ae57e4f7a59bfa17ed2",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-10-10-FluSight-ensemble.csv.gz",
+   "stored_sha256": "0b82b12d1ea62419e4c61a2003313776cde7b4d230a5e9e45d01d9db2270f827"
+  },
+  {
+   "bytes": 1114958,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-10-17-FluSight-ensemble.csv",
+   "sha256": "1b85d431a8d563904ea4ecfc624becaf7607a4c8ccb2aa0d9d488efbbc6aea66",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-10-17-FluSight-ensemble.csv.gz",
+   "stored_sha256": "f8d15a1f36ab30babb98bba51806e4b6ae6b49283685ebe71d20ff49751a7f45"
+  },
+  {
+   "bytes": 1111506,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-10-24-FluSight-ensemble.csv",
+   "sha256": "b3d59ed12221298edc91b2a383434bd04499e76060bc8f713ad9ab2abfe93326",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-10-24-FluSight-ensemble.csv.gz",
+   "stored_sha256": "3ffd7efee9b5dc281c90537a989539d28282fd245111dca264a4a8ca043b6a39"
+  },
+  {
+   "bytes": 1114126,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-10-31-FluSight-ensemble.csv",
+   "sha256": "5494a4935e3798c4a5656d78d92d2e4782a9692a560f7a8ecd23074cdfa4af3b",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-10-31-FluSight-ensemble.csv.gz",
+   "stored_sha256": "05ef56f2d4042eb3dfe595c6cca1c6aada64adf6725e4bb2a6b5d6bcdf95c8cf"
+  },
+  {
+   "bytes": 1114677,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/model-output/FluSight-ensemble/2026-11-07-FluSight-ensemble.csv",
+   "sha256": "f22dba7ebcad2a0e697d4d0af14efabef1ba5da4ba0e1a0110f9bdb63659a03a",
+   "stored": "data/raw/hub/model-output/FluSight-ensemble/2026-11-07-FluSight-ensemble.csv.gz",
+   "stored_sha256": "b910d886602d6cfc300fcc34f1906d0cc1177c1ee197799de33ee4361d858cea"
+  },
+  {
+   "bytes": 95069683,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/target-data/time-series.csv",
+   "sha256": "2524463c6b02791b4276054986287e747c8a8f6c99dfe59cf6d23ed67812f98d",
+   "stored": "data/raw/hub/target-data/time-series.csv.gz",
+   "stored_sha256": "99506f6ec0a4c5a78a0ed705200acc8e1f9aed5546a7158ea3d6927bbf61891f"
+  },
+  {
+   "bytes": 616178,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/target-data/target-hospital-admissions.csv",
+   "sha256": "c1a98bd361f75024bb2391f594af69a3f246bb104845b855624340df66bbb949",
+   "stored": "data/raw/hub/target-data/target-hospital-admissions.csv.gz",
+   "stored_sha256": "5f3b6fa89d70e7b13b93369c516437cc50361d05561b97fafdd6960abda44cb5"
+  },
+  {
+   "bytes": 3197,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:18:31Z",
+   "path": "data/raw/hub/auxiliary-data/locations.csv",
+   "sha256": "80aaa24750044a837e063812a1d0a22339c8b3a92513f71a23dac613eaaa29e0",
+   "stored": "data/raw/hub/auxiliary-data/locations.csv.gz",
+   "stored_sha256": "70fb1764b31abbcd1c374cb376dd67bfaf166b16e9cd9c42268bb0674270d68e"
+  },
+  {
+   "bytes": 453,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:22:26Z",
+   "path": "data/known_good_rows.json",
+   "sha256": "53ba7dd6abbd3ad748961363591cf8efb63ab2eeceb02c670204a73a948d0f00",
+   "stored": "data/known_good_rows.json.gz",
+   "stored_sha256": "d006c6ae86a56a59144675df4b6012a1f7b6f9e3da57baffa78b1f674e95d092"
+  },
+  {
+   "bytes": 10016,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:22:14Z",
+   "path": "PLAN.md",
+   "sha256": "b68f3fa1fe96eb0a7ad870c01038153467a83fdf9a4ca0c327fb5b38ac0018c2",
+   "stored": "PLAN.md.gz",
+   "stored_sha256": "8de5e7d75ca31485493a4c55332ddf98506ad374ef4111207e4f4857a31f9672"
+  },
+  {
+   "bytes": 241,
+   "gzip_added": true,
+   "modified": "2026-11-10T14:24:16Z",
+   "path": "data/plan_seal.json",
+   "sha256": "f9422093d9ea46e4bd013264c6562bab9b3d266567c087071724e904fa2db9f7",
+   "stored": "data/plan_seal.json.gz",
+   "stored_sha256": "f7840b80b541bc34152d154413f4129697176bdd932c06129631571105d45bcd"
+  }
+ ],
+ "made": "2026-11-10T23:46:41Z",
+ "mode": "inputs",
+ "name": "FLU",
+ "reference": []
+}

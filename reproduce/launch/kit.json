@@ -1,0 +1,24 @@
+{
+ "cwd": "",
+ "desk": "launch",
+ "headline": {
+  "field": [
+   "flown_watched"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "lead": "7 days"
+   },
+   "outcome"
+  ],
+  "show": "count"
+ },
+ "name": "LAUNCH",
+ "output": "out.json",
+ "steps": [
+  [
+   "launch_score.py"
+  ]
+ ]
+}

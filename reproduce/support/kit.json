@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "support",
+ "headline": {
+  "field": [
+   "all",
+   "share"
+  ],
+  "hi": [
+   "all",
+   "share_hi"
+  ],
+  "lo": [
+   "all",
+   "share_lo"
+  ],
+  "n": [
+   "all",
+   "unreleased"
+  ],
+  "of": [
+   "all",
+   "tested"
+  ],
+  "outcome": [
+   "all",
+   "outcome"
+  ],
+  "show": "pct"
+ },
+ "name": "SUPPORT",
+ "output": "out.json",
+ "steps": [
+  [
+   "support_score.py"
+  ]
+ ]
+}

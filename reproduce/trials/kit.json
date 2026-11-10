@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "trials",
+ "headline": {
+  "field": [
+   "all",
+   "share_no_results"
+  ],
+  "hi": [
+   "all",
+   "hi"
+  ],
+  "lo": [
+   "all",
+   "lo"
+  ],
+  "n": [
+   "all",
+   "no_results"
+  ],
+  "of": [
+   "all",
+   "n"
+  ],
+  "outcome": [
+   "all",
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "TRIALS",
+ "output": "data/summary.json",
+ "steps": [
+  [
+   "trials_summary.py"
+  ]
+ ]
+}

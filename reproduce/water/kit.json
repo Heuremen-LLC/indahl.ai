@@ -1,0 +1,50 @@
+{
+ "cwd": "",
+ "desk": "water",
+ "headline": {
+  "field": [
+   "headline_lead6",
+   "mead",
+   "band",
+   "share"
+  ],
+  "hi": [
+   "headline_lead6",
+   "mead",
+   "band",
+   "hi"
+  ],
+  "lo": [
+   "headline_lead6",
+   "mead",
+   "band",
+   "lo"
+  ],
+  "n": [
+   "headline_lead6",
+   "mead",
+   "band",
+   "inside"
+  ],
+  "of": [
+   "headline_lead6",
+   "mead",
+   "band",
+   "n"
+  ],
+  "outcome": [
+   "headline_lead6",
+   "mead",
+   "band",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "WATER",
+ "output": "out.json",
+ "steps": [
+  [
+   "water_score.py"
+  ]
+ ]
+}

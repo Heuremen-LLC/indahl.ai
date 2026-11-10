@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "pkglicense",
+ "headline": {
+  "field": [
+   "disagree",
+   "share"
+  ],
+  "hi": [
+   "disagree",
+   "share_hi"
+  ],
+  "lo": [
+   "disagree",
+   "share_lo"
+  ],
+  "n": [
+   "disagree",
+   "n"
+  ],
+  "of": [
+   "disagree",
+   "of"
+  ],
+  "outcome": [
+   "disagree",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "PKGLICENSE",
+ "output": "out.json",
+ "steps": [
+  [
+   "pkglicense_score.py"
+  ]
+ ]
+}

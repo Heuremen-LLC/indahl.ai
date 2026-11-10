@@ -1,0 +1,56 @@
+{
+ "cwd": "",
+ "desk": "cone",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "cell": "Atlantic, whole path"
+   },
+   "share"
+  ],
+  "hi": [
+   "cells",
+   {
+    "cell": "Atlantic, whole path"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "cell": "Atlantic, whole path"
+   },
+   "lo"
+  ],
+  "n": [
+   "cells",
+   {
+    "cell": "Atlantic, whole path"
+   },
+   "inside"
+  ],
+  "of": [
+   "cells",
+   {
+    "cell": "Atlantic, whole path"
+   },
+   "scored"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "cell": "Atlantic, whole path"
+   },
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "CONE",
+ "output": "out.json",
+ "steps": [
+  [
+   "cone_score.py"
+  ]
+ ]
+}

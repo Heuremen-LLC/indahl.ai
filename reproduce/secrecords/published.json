@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/secrecords/live.json",
+ "feed_sha256": "08328af2090273071ce33394a74c4485548f79f03df2dd0f11a733c24d4a2561",
+ "headline": {
+  "desk": "SECRECORDS",
+  "display": "14%",
+  "hi": 0.2035,
+  "keys": [],
+  "lo": 0.0911,
+  "n": 20,
+  "of": 145,
+  "outcome": "CANNOT_TELL",
+  "value": 0.1379
+ },
+ "read_at": "2026-11-10T23:47:03Z",
+ "stamp": "10 Nov 18:23"
+}

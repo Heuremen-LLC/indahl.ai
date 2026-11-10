@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "quake",
+ "headline": {
+  "field": [
+   "headline_cell",
+   "share"
+  ],
+  "hi": [
+   "headline_cell",
+   "hi"
+  ],
+  "lo": [
+   "headline_cell",
+   "lo"
+  ],
+  "n": [
+   "headline_cell",
+   "inside"
+  ],
+  "of": [
+   "headline_cell",
+   "scored"
+  ],
+  "outcome": [
+   "headline_cell",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "QUAKE",
+ "output": "out.json",
+ "steps": [
+  [
+   "quake_score.py"
+  ]
+ ]
+}

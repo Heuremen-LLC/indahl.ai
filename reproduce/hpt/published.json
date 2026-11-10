@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/hpt/live.json",
+ "feed_sha256": "6608dc006ccd67be259e16d590dbde1762f60c4b7d1341f99ca2702d5670c46d",
+ "headline": {
+  "desk": "HPT",
+  "display": "12 of 506",
+  "hi": 0.041,
+  "keys": [],
+  "lo": 0.0136,
+  "n": 12,
+  "of": 506,
+  "outcome": "CONSISTENT",
+  "value": 0.0237
+ },
+ "read_at": "2026-11-10T23:47:01Z",
+ "stamp": "09 Nov 02:11"
+}

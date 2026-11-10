@@ -1,0 +1,31 @@
+{
+ "cwd": "",
+ "desk": "campus",
+ "headline": {
+  "field": [
+   "state_now",
+   "Opens (HTTP 200)"
+  ],
+  "keys": [
+   [
+    "state_now",
+    "Not found (404, 410)"
+   ]
+  ],
+  "n": [
+   "state_now",
+   "Opens (HTTP 200)"
+  ],
+  "of": [
+   "sources"
+  ],
+  "show": "n_of"
+ },
+ "name": "CAMPUS",
+ "output": "out.json",
+ "steps": [
+  [
+   "campus_score.py"
+  ]
+ ]
+}

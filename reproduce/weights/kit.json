@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "weights",
+ "headline": {
+  "field": [
+   "ever",
+   "share"
+  ],
+  "hi": [
+   "ever",
+   "share_hi"
+  ],
+  "lo": [
+   "ever",
+   "share_lo"
+  ],
+  "n": [
+   "ever",
+   "n"
+  ],
+  "of": [
+   "ever",
+   "of"
+  ],
+  "outcome": [
+   "headline",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "WEIGHTS",
+ "output": "out.json",
+ "steps": [
+  [
+   "weights_score.py"
+  ]
+ ]
+}

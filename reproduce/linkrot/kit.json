@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "linkrot",
+ "headline": {
+  "field": [
+   "all",
+   "rot_share"
+  ],
+  "hi": [
+   "all",
+   "hi"
+  ],
+  "lo": [
+   "all",
+   "lo"
+  ],
+  "n": [
+   "all",
+   "gone"
+  ],
+  "of": [
+   "all",
+   "links"
+  ],
+  "outcome": [
+   "all",
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "LINKROT",
+ "output": "out.json",
+ "steps": [
+  [
+   "linkrot_score.py"
+  ]
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "cwd": "",
+ "desk": "pkginstall",
+ "headline": {
+  "field": [
+   "comparison",
+   "share"
+  ],
+  "hi": [
+   "comparison",
+   "share_hi"
+  ],
+  "lo": [
+   "comparison",
+   "share_lo"
+  ],
+  "n": [
+   "comparison",
+   "n"
+  ],
+  "of": [
+   "comparison",
+   "of"
+  ],
+  "outcome": [
+   "comparison",
+   "outcome"
+  ],
+  "show": "of_minus_n"
+ },
+ "name": "PKGINSTALL",
+ "output": "out.json",
+ "steps": [
+  [
+   "pkginstall_score.py"
+  ]
+ ]
+}

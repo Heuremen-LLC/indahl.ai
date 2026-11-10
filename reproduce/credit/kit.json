@@ -1,0 +1,42 @@
+{
+ "cwd": "",
+ "desk": "credit",
+ "headline": {
+  "field": [
+   "ruler1",
+   {
+    "year": 2025
+   },
+   "timely"
+  ],
+  "hi": [
+   "ruler1",
+   {
+    "year": 2025
+   },
+   "hi"
+  ],
+  "lo": [
+   "ruler1",
+   {
+    "year": 2025
+   },
+   "lo"
+  ],
+  "outcome": [
+   "ruler1",
+   {
+    "year": 2025
+   },
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "CREDIT",
+ "output": "out.json",
+ "steps": [
+  [
+   "credit_score.py"
+  ]
+ ]
+}

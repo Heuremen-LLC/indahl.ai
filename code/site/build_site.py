@@ -2529,6 +2529,7 @@ def main():
     _alr.apply(PAGES, page, hero_slim, HOME, _bb, _jsonld.load(open(_brd.ROWS))['rows'], desks=DESKS); PAGES['/alerts'] = PAGES['/alerts'].replace('@@CSSV@@', _cv)
     _ntf.apply(PAGES, page, hero_slim, HOME, _cv, _FEED)   # 10 Nov 2026: follow page, webhooks, changelog, the device button and the footer Follow link (notify.py)
     import accountability as _acc; _acc.apply(PAGES, page, hero_slim, HOME, _cv)   # 10 Nov 2026: /verify, /reproduce, /transparency, /security/self, /security/policy, /security/thanks, /mydata (accountability.py, security.js)
+    import reproduce_kits as _rk; _rk.apply(PAGES)   # 10 Nov 2026: the per-desk reproduce table on /reproduce and a Reproduce this number link on each desk page (reproduce_kits.py)
     _alr.footer(PAGES)   # 10 Nov 2026 (owner's word): ONE sign-up form in every footer, newsletter, new desks and new data, every desk, and this desk or organisation
     for _pp in PAGES: PAGES[_pp] = _re.sub(r'@@NAV:[^@]*@@', lambda _m, _pp=_pp: _navfor(_pp), PAGES[_pp])
     import findable as _fd

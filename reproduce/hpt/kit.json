@@ -1,0 +1,44 @@
+{
+ "cwd": "",
+ "desk": "hpt",
+ "headline": {
+  "field": [
+   "comparison",
+   "2 The file it links resolves to data",
+   "share"
+  ],
+  "hi": [
+   "comparison",
+   "2 The file it links resolves to data",
+   "share_hi"
+  ],
+  "lo": [
+   "comparison",
+   "2 The file it links resolves to data",
+   "share_lo"
+  ],
+  "n": [
+   "comparison",
+   "2 The file it links resolves to data",
+   "n"
+  ],
+  "of": [
+   "comparison",
+   "2 The file it links resolves to data",
+   "of"
+  ],
+  "outcome": [
+   "comparison",
+   "2 The file it links resolves to data",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "HPT",
+ "output": "out.json",
+ "steps": [
+  [
+   "hpt_score.py"
+  ]
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "cwd": "",
+ "desk": "flu",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "cell": "all horizons",
+    "level": "95",
+    "side": "final"
+   },
+   "share"
+  ],
+  "hi": [
+   "cells",
+   {
+    "cell": "all horizons",
+    "level": "95",
+    "side": "final"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "cell": "all horizons",
+    "level": "95",
+    "side": "final"
+   },
+   "lo"
+  ],
+  "n": [
+   "cells",
+   {
+    "cell": "all horizons",
+    "level": "95",
+    "side": "final"
+   },
+   "inside"
+  ],
+  "of": [
+   "cells",
+   {
+    "cell": "all horizons",
+    "level": "95",
+    "side": "final"
+   },
+   "scored"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "cell": "all horizons",
+    "level": "95",
+    "side": "final"
+   },
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "FLU",
+ "output": "data/flu_live.json",
+ "steps": [
+  [
+   "flu_tick.py",
+   "--offline"
+  ]
+ ]
+}

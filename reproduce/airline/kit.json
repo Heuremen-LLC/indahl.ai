@@ -1,0 +1,32 @@
+{
+ "cwd": "",
+ "desk": "airline",
+ "headline": {
+  "field": [
+   "headline",
+   "n"
+  ],
+  "keys": [
+   [
+    "headline",
+    "above"
+   ]
+  ],
+  "n": [
+   "headline",
+   "n"
+  ],
+  "of": [
+   "headline",
+   "of"
+  ],
+  "show": "n_of"
+ },
+ "name": "AIRLINE",
+ "output": "out.json",
+ "steps": [
+  [
+   "airline_score.py"
+  ]
+ ]
+}

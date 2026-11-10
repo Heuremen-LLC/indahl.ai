@@ -1,0 +1,34 @@
+{
+ "code": [
+  {
+   "extract_of": "campus_tick.py lines 126 to 138, the stnow function and the state_now block",
+   "path": "campus_score.py",
+   "sha256": "aed897333470aa08da4d66e955d2dc51067650a8d2ae0abc637ef739eb13e068"
+  }
+ ],
+ "desk": "campus",
+ "inputs": [
+  {
+   "bytes": 6084375,
+   "gzip_added": true,
+   "modified": "2026-11-10T22:58:02Z",
+   "path": "data/reads.jsonl",
+   "sha256": "231bed0be3f71bb799a2321d7fe2d23f16f1940f6fd2e268751ea0a93421a250",
+   "stored": "data/reads.jsonl.gz",
+   "stored_sha256": "4cc8cc8d811f14d30a9d6daec9879e0cf5bf22cd794ba4c154119a795fddad40"
+  }
+ ],
+ "made": "2026-11-10T23:47:02Z",
+ "mode": "fetch",
+ "name": "CAMPUS",
+ "reference": [
+  {
+   "path": "desk/campus_tick.py",
+   "sha256": "08e372584ee041106f368797246bf3607886e00fe775e99047c488b1851ed86b"
+  }
+ ],
+ "sources": [
+  "Every external source cited on https://indahl.ai/oy, read pass after pass. The newest line of data/reads.jsonl holds the status of each address on the newest pass, with the pass time."
+ ],
+ "why_not_included": "each school keeps its rights to its pages, and the data pack holds only our status counts"
+}
