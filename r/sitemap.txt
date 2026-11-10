@@ -1466,6 +1466,7 @@
 /r/pack.size.campus-data-pack	2026-11-10
 /r/pack.size.change-data-pack	2026-11-10
 /r/pack.size.cone-data-pack	2026-11-10
+/r/pack.size.credit-data-pack	2026-11-10
 /r/pack.size.fedsep-data-pack	2026-11-10
 /r/pack.size.forecast-data-pack	2026-11-10
 /r/pack.size.hflicense-data-pack	2026-11-10
