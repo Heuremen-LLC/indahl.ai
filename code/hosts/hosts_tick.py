@@ -67,16 +67,36 @@ for p in polls:
         q = e['q'] or 'not stated'; qt[q][0] += 1; qt[q][1] += 1 if e['u5'] >= 100 else 0; qt[q][2].add(key(e))
 quant = {q: dict(endpoints=len(v[2]), readings=v[0], at_100='%.1f%%' % (100 * v[1] / v[0])) for q, v in sorted(qt.items(), key=lambda kv: kv[0])}
 perm = collections.Counter(e['m'] for e in eps); b = collections.Counter('1 host' if n == 1 else ('2 to 4 hosts' if n <= 4 else ('5 to 9 hosts' if n <= 9 else '10 or more hosts')) for n in perm.values())
+# 10 Nov 2026 (cold read row 6): PLAN.md compares at "a 24-hour span ending at a poll" with at least 100 polls, "taking the latest qualifying
+# poll". The code only tried the span ending now, so when the poll cadence fell below 100 a day (62 in the 24 h to 10 Nov 11:00) the test
+# returned nothing. It now takes the latest kept poll whose 24-hour span holds at least 100 polls, and the feed says when that span ended.
+# No rule changed: same threshold, same tolerance, same absence limit.
+import re as _re, bisect as _bi
+_ts = sorted(float(m.group(1)) for f in glob.glob('data/polls/*.jsonl') for m in (_re.match(r'\{"t": ([0-9.]+)', l) for l in open(f)) if m)
+_q = [t for i, t in enumerate(_ts) if i - _bi.bisect_left(_ts, t - 86400) + 1 >= 100]
+wend = _q[-1] if _q else None
+if wend is not None and wend < now - 1:
+    wpolls = []
+    for f in sorted(glob.glob('data/polls/*.jsonl')):
+        if os.path.getmtime(f) < wend - 86400: continue
+        for l in open(f):
+            _m = _re.match(r'\{"t": ([0-9.]+)', l)
+            if _m and wend - 86400 <= float(_m.group(1)) <= wend:
+                try: wpolls.append(json.loads(l))
+                except Exception: pass
+    wpolls.sort(key=lambda p: p['t'])
+else: wpolls = polls
+wcur = {key(e): e for e in wpolls[-1]['eps']} if wpolls else {}
 hist = collections.defaultdict(list)
-for p in polls:
+for p in wpolls:
     present = {key(e): e for e in p['eps']}
-    for k in set(cur) | set(present): hist[k].append(present.get(k))
+    for k in set(wcur) | set(present): hist[k].append(present.get(k))
 rows = {}
-for k in cur:
+for k in wcur:
     h = hist[k]; polls_n = len(h); absent = sum(1 for x in h if x is None) / polls_n if polls_n else 1
     u5 = [x['u5'] for x in h if x and x['u5'] is not None]
-    if polls_n >= 100 and cur[k]['u1'] is not None and u5: rows[k] = (agree(cur[k]['u1'], sum(u5) / len(u5), polls_n, absent), cur[k]['u1'], sum(u5) / len(u5), polls_n)
-    else: rows[k] = ('NOT_COMPARABLE', cur[k]['u1'], None, polls_n)
+    if polls_n >= 100 and wcur[k]['u1'] is not None and u5: rows[k] = (agree(wcur[k]['u1'], sum(u5) / len(u5), polls_n, absent), wcur[k]['u1'], sum(u5) / len(u5), polls_n)
+    else: rows[k] = ('NOT_COMPARABLE', wcur[k]['u1'], None, polls_n)
 cmp = [k for k, v in rows.items() if v[0] in ('AGREE', 'DISAGREE')]; nd = [k for k in cmp if rows[k][0] == 'DISAGREE']
 lo, hi = K.wilson(len(nd), len(cmp)) if cmp else (0, 1)
 oc = 'NOTHING_RETURNED' if not cmp else (K.ABOVE if lo > 0.05 else (K.CONSISTENT if hi < 0.15 else K.CANNOT_TELL))
@@ -85,10 +105,13 @@ samp = random.Random(7).sample(sorted(nd), min(10, len(nd))) if nd else []
 json.dump(dict(sample_seed7=samp, disagree=sorted(nd)), open('data/hand_check.json', 'w'), indent=1)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed', polls_kept=allp, first_poll=time.strftime('%d %b %H:%M UTC', time.gmtime(first)), models=len({e['m'] for e in eps}), hosts=len({e['h'] for e in eps}), endpoints=len(eps), failed_models=len(failed),
            problems_now=len(problems), below_100_now=below_100_now, flagged_now=flagged_now, problems=problems, quantization=quant, models_by_hosts=dict(b),
-           headline=dict(of=len(cmp), n=len(nd), share=round(len(nd) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc), headline_n=len(nd), headline_of=len(cmp),
+           headline=dict(of=len(cmp), n=len(nd), share=round(len(nd) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, span_end=time.strftime('%d %b %H:%M', time.gmtime(wend)) if wend else None, span_polls=len(wpolls) if wend else len(polls), polls_24h=len(polls)), headline_n=len(nd), headline_of=len(cmp),
            top_line='%d endpoints on %d hosts for %d open-weight models. %d are flagged by OpenRouter or show a 5-minute uptime below 100 now.' % (len(eps), len({e['h'] for e in eps}), len({e['m'] for e in eps}), len(problems)))
 json.dump(out, open('summary_hosts.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'hosts_live', '--path', os.path.join(H, 'summary_hosts.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 with open('history.jsonl', 'a') as f: f.write(json.dumps(dict(t=out['updated'], endpoints=len(eps), problems=len(problems), failed=len(failed))) + '\n')
 print('hosts:', out['top_line'], 'test', out['headline']['outcome'], 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)
+# 10 Nov 2026 (cold read row 5): rebuild the headlines from this read now, so the headline and the page body come from the same read
+try: subprocess.Popen([sys.executable, '-I', os.path.expanduser('~/bones-forge/watch/headlines.py')], stdout=open(os.path.expanduser('~/bones-forge/watch/novatime_jobs.log'), 'a'), stderr=subprocess.STDOUT, start_new_session=True)
+except Exception as e: print('headlines restart failed', type(e).__name__)

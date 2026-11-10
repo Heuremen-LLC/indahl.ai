@@ -51,3 +51,6 @@ if os.path.isdir(PUB):
     import shutil
     for f, d in (('PLAN.md', 'PLAN.md'), ('queue_tick.py', 'queue_tick.py'), ('summary.json', 'summary.json'), ('data/history.jsonl', 'history.jsonl'), ('data/jobs.jsonl', 'jobs.jsonl')): shutil.copy(os.path.join(H, f), os.path.join(PUB, d))
 print('qia_queue published' if r.returncode == 0 else 'qia_queue publish FAILED', len(out), 'processors')
+# 10 Nov 2026 (cold read row 5): rebuild the headlines from this read now, so the headline and the page body come from the same read
+try: subprocess.Popen([sys.executable, '-I', os.path.expanduser('~/bones-forge/watch/headlines.py')], stdout=open(os.path.expanduser('~/bones-forge/watch/novatime_jobs.log'), 'a'), stderr=subprocess.STDOUT, start_new_session=True)
+except Exception as e: print('headlines restart failed', type(e).__name__)
