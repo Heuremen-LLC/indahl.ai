@@ -145,7 +145,7 @@ def page(path, title, desc, body, wide_hero=None):
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
@@ -1772,6 +1772,9 @@ PAGES['/correction'] = page('/correction', 'Correction or Removal | Heuremen LLC
  '<button class="btn" type="submit">Send</button></form>'
  '<p class="meta">What this form keeps and for how long is in the <a href="/privacy">privacy notice</a>. To add a public response to a page instead, use the Respond link at the foot of that page.</p></section>',
  hero_slim('Correction or Removal'))
+# 10 Nov 2026: the public corrections log at /corrections, with corrections.xml (Atom) and corrections.csv in the worker's public folder.
+# Generator and rows live in corrections.py and corrections_rows.json. The build stops if a row's source, commit, link or receipt is not real.
+import corrections as _corr; _corr.build(PAGES, page, hero_slim, _FEED); CSS += _corr.CSS
 
 PAGES['/respond'] = page('/respond', 'Respond | Heuremen LLC', 'Add a response to a page: a PDF on your own site, posted as received with its date and host.',
  '<section class="legal"><h2>Add a response</h2>'

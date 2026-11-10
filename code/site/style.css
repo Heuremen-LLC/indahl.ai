@@ -234,6 +234,8 @@ main section{padding:7px 0}main section:first-child{padding-top:6px}.hl{padding:
 .mtx td,.mtx th{padding-top:4px;padding-bottom:4px}
 .mtx .by{font-family:Lora,Georgia,serif;letter-spacing:0;text-transform:none;font-variant:normal;margin-top:0}
 
+.corr-row{border-top:1px solid var(--rule);padding:10px 0 4px}.corr-row h3{margin:0 0 4px}.corr-row h3 .meta{font-size:13px;font-weight:400;margin-left:6px}.corr-row p{margin:4px 0;font-size:14.5px;line-height:1.5}.corr-row code{font-size:12px;word-break:break-all}
+
 .coin-top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:8px 32px;align-items:start;margin:4px 0 10px}
 .coin-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;margin:4px 0 10px}
 @media(max-width:700px){.coin-top,.coin-three{grid-template-columns:1fr}}
