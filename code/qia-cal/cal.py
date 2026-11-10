@@ -20,6 +20,10 @@ def service():
         tok = open(B + '/.ibm_quantum_key_parallax').read().strip(); s0 = QiskitRuntimeService(channel='ibm_quantum_platform', token=tok)
         crn = [i['crn'] for i in s0.instances() if isinstance(i, dict) and ':eu-de:' in i['crn']][0]
         return QiskitRuntimeService(channel='ibm_quantum_platform', token=tok, instance=crn)
+    if '--open' in sys.argv:   # 10 Nov (Wayfinder): spend the FREE open-instance seconds first, then the paid instances
+        tok = open(B + '/.ibm_quantum_key_3').read().strip(); s0 = QiskitRuntimeService(channel='ibm_cloud', token=tok)
+        crn = [i['crn'] for i in s0.instances() if isinstance(i, dict) and (i.get('name') == 'open-instance' or str(i.get('plan', '')).lower().startswith('open'))][0]
+        return QiskitRuntimeService(channel='ibm_cloud', token=tok, instance=crn)
     return QiskitRuntimeService(channel='ibm_cloud', token=open(B + '/.ibm_quantum_key_3').read().strip(), instance=open(B + '/.ibm_quantum_instance_crn').read().strip())
 def rows(p): return [json.loads(l) for l in open(p) if l.strip()] if os.path.exists(p) else []
 def kv(key, path):
@@ -110,7 +114,7 @@ def process(s, r, corrects=None):
     return dict(job_id=r['id'], window_utc=win, qubits_read=len(qs), known_good=kg['known_good'], counts=counts, off=len(off),
                 median_readout_measured_over_stated=kg['median_readout_measured_over_stated'], median_t1_measured_over_stated=kg['median_t1_measured_over_stated']), m
 # Note 4 (30 Oct 2026): send when IBM's readout or T1 figures changed since our last job on this processor, or 6 hours have passed.
-FLOOR_H = 1.0   # 10 Nov (Wayfinder: fire while the paid seconds last): was 6.0
+FLOOR_H = 0.5   # 10 Nov later: 1.0 -> 0.5 (Wayfinder: fire on paid until cut off) # 10 Nov (Wayfinder: fire while the paid seconds last): was 6.0
 def _sig(qubits):
     out = []
     for q in qubits or []:

@@ -2061,6 +2061,20 @@ CSS += ".lablead,.yolead{padding-bottom:4px}.svlive .tablewrap{overflow-x:auto;m
 # 1 Nov 2026: QIA Research Package box (top right of /qia) and download button, added before the stylesheet version stamp is taken
 CSS += ".rc-field{display:inline-block;margin:0 16px 10px 0;vertical-align:top}.rc-field label{display:block;font-size:14px;margin-bottom:4px}.rc-field input,.rc-field select{font:inherit;padding:4px 6px;border:1px solid var(--rule);background:var(--paper)}\n"
 CSS += ".pkgbox{float:right;width:280px;margin:8px 0 16px 24px;padding:14px 16px;border:2px solid var(--rule);background:var(--paper2);font-size:15px;line-height:1.45}.pkgbox p{margin:8px 0}.pkghead{display:flex;align-items:center;gap:8px;font:400 19px/1.2 \"Abril Fatface\",Georgia,serif;color:var(--ink);text-decoration:none}.pkghead .mark{width:28px;height:28px;flex:none}.pkgbtn{display:inline-block;padding:6px 14px;background:var(--ink);color:var(--paper)!important;text-decoration:none;border-radius:2px;margin-right:10px}.pkgbtn:hover{background:var(--goldink)}.pkgget{margin:18px 0}.pkgalso{font-size:14px;margin:6px 0 0}.pkgtested{font-size:14px;margin:6px 0;color:var(--goldink)}@media (max-width:700px){.pkgbox{float:none;width:auto;margin:8px 0 16px}}\n"
+# 10 Nov 2026: the Data pack link at the top right of the heading band (placed in main() on every page with data)
+CSS += """
+.dpk{float:right;display:inline-flex;align-items:center;gap:6px;margin:2px 0 6px 16px;padding:6px 11px;border:1px solid var(--lit);border-radius:2px;color:#efe5cf!important;text-decoration:none;font-family:Cinzel,Georgia,serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;white-space:nowrap}
+.dpk svg{width:13px;height:13px;flex:none}.dpk:hover{background:var(--lit);color:var(--cave)!important}.dpk:focus-visible{outline:2px solid var(--lit);outline-offset:2px}
+.dpkrow{display:flex;justify-content:flex-end;margin:0 0 6px}.dpk-l{float:none;margin:0;color:var(--ink)!important;border-color:var(--rule)}.dpk-l:hover{background:var(--rule);color:var(--paper)!important}
+@media (max-width:640px){.dpk{font-size:11px;padding:5px 8px;margin-left:10px;letter-spacing:.1em}}
+@media print{.dpk{display:none}}
+.gg{margin:10px 0 2px}.ggbtn{font:inherit;font-family:Cinzel,Georgia,serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:6px 12px;cursor:pointer}
+.ggbtn::after{content:" \\25BE"}.ggbtn:focus-visible{outline:2px solid var(--rule);outline-offset:2px}
+.ggpanel{width:min(600px,calc(100vw - 32px));min-width:0;padding:12px 16px;gap:6px}.ggpanel ul{list-style:none;margin:0;padding:0}.ggpanel li{padding:6px 0;border-bottom:1px solid rgba(200,144,42,.35);line-height:1.4}
+.ggpanel li:last-child{border-bottom:0}.ggpanel a{white-space:normal;font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.1em;margin-right:8px}.ggw{color:var(--mid)}.ggs{font-size:13px;color:var(--mid);white-space:nowrap}
+.ggs::before{content:"\\00b7 "}.ggr{display:block;font-size:13px;color:var(--goldink)}.ggnote{display:block;font-size:14px;color:var(--mid);margin-bottom:4px}.ggall a{font-size:15px}
+@media (max-width:640px){.ggpanel{position:static;margin-top:8px;width:auto}}
+"""
 def main():
     names = {}
     import hashlib as _hh
@@ -2223,6 +2237,75 @@ def main():
         if _pp not in PAGES or '</main>' not in PAGES[_pp]: continue
         _ln = '<p class="meta">Data on Hugging Face: ' + ' &middot; '.join((f'<a href="https://huggingface.co/indahl/{r[6:]}">indahl/{r[6:]}</a> (model)' if r.startswith('model:') else f'<a href="{_HFD}{r}">indahl/{r}</a>') for r in _rs) + '.</p>'
         _i = PAGES[_pp].rfind('</main>'); PAGES[_pp] = PAGES[_pp][:_i] + _ln + PAGES[_pp][_i:]
+    # 10 Nov 2026 (Wayfinder: "a data pack at the top right of every page"): every page with data carries a small Data pack link at the top
+    # right of its heading band. Desk pages link their own pack (tools/desk_pack.py, built and checked against the live feed), division pages and
+    # their sub-pages link the division pack, SOCIAL links the SOCIAL pack. Pages without data (policies, API, forms, the menu) get none.
+    # A link is placed only when its zip and .sha256 are in public/, so a page never points at a pack that is not served.
+    def _dpk_for(p):
+        if p in ('/qia/list',) or p.startswith('/qia/study/'): return 'qia/qia-list-pack.zip', 'QIA List Pack'
+        if p in ('/iris/list',) or p.startswith('/iris/study/'): return 'iris/iris-list-pack.zip', 'IRIS List Pack'
+        if p == '/qia' or p.startswith('/qia/'): return 'qia/qia-research-package.zip', 'QIA Research Package'
+        if p in ('/iris', '/yo') or p.startswith('/iris/'): return 'iris/iris-research-package.zip', 'IRIS Research Package'
+        if p == '/atlas' or p.startswith('/atlas/'): return 'atlas/atlas-data-pack.zip', 'ATLAS Data Pack'
+        if p == '/oy' or p.startswith('/oy/'): return 'oy/oy-data-pack.zip', 'OY Data Pack'
+        if p == '/hermes/model' or p.startswith('/hermes/model/'): return 'hermes/model-data-pack.zip', 'MODEL Data Pack'
+        if p == '/darkwave' or p.startswith('/darkwave/'): return 'darkwave/darkwave-correction-kit.zip', 'Darkwave Correction Kit'
+        s = p.strip('/')
+        if s and '/' not in s: return f'{s}/{s}-data-pack.zip', s.upper() + ' Data Pack'
+        return None
+    _DPK_NONE = {'/', '/agree', '/contact', '/inquiry', '/privacy', '/terms', '/conflict-of-interest', '/media', '/community', '/changes', '/vault', '/security',
+                 '/inquire-ok', '/inquire-error', '/404', '/api', '/correction', '/respond', '/now', '/hermes', '/request'}
+    for _pp in list(PAGES):
+        if _pp in _DPK_NONE or _pp.startswith('/media/'): continue
+        _d = _dpk_for(_pp)
+        if not _d or not _sha(_d[0]): continue
+        _a = (f'<a class="dpk" href="/{_d[0]}" download aria-label="Data pack: download the {_d[1]} (zip)" title="{_d[1]} (zip)">'
+              '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9M4 6.5 8 10.5 12 6.5M2 14h12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Data pack</a>')
+        _h = '<section class="hero slim"><div class="wrap">'
+        if _h in PAGES[_pp]: PAGES[_pp] = PAGES[_pp].replace(_h, _h + _a, 1)
+        elif '<main class="wrap">' in PAGES[_pp]: PAGES[_pp] = PAGES[_pp].replace('<main class="wrap">', '<main class="wrap"><p class="dpkrow">' + _a.replace('class="dpk"', 'class="dpk dpk-l"', 1) + '</p>', 1)
+    # 10 Nov 2026 (Wayfinder): on each division page, where the division pack sits, a "grab and go" list of every pack in that division: the
+    # division pack first, then one line per desk with its zip and size. Same no-script dropdown as the banner (.dd/.ddpanel, hover or focus).
+    # Sizes come from tools/desk_packs/pack_sizes.json (tools/desk_pack.py sizes), the file the ledger rows pack.size.* cite.
+    try: _PS = _jsonld.load(open(os.path.join(HERE, '..', 'tools', 'desk_packs', 'pack_sizes.json')))
+    except Exception: _PS = {}
+    def _ggline(name, label, z, note=''):
+        if z not in _PS: return ''
+        r = _PS[z]; ro = ' <span class="ggr">Results only: our counts, outcomes and intervals, no source data</span>' if r['licence'] == 'results' else ''
+        return (f'<li><a href="/{z}" download>{name}</a> <span class="ggw">{label}</span> <span class="ggs">' + (note or r['size']) + f'</span>{ro}</li>')
+    _DIVPK = {'/atlas': 'atlas/atlas-data-pack.zip', '/iris': 'iris/iris-research-package.zip', '/oy': 'oy/oy-data-pack.zip', '/qia': 'qia/qia-research-package.zip',
+              '/hermes': 'hermes/model-data-pack.zip', '/social': 'social/social-data-pack.zip'}
+    _SECT = [('DSA', 'EU moderation reports against the DSA Transparency Database', ''), ('AD SPEND', "Google's political ad library against FEC filings", 'results'),
+             ('TIKTOK', "TikTok's quarterly report against its EU filings", 'results'), ('BLUESKY', "Bluesky's transparency report against its signed label stream", 'results')]
+    for _dv, _top in _DIVPK.items():
+        if _dv not in PAGES: continue
+        _li = []
+        if _dv == '/hermes': _li.append('')   # HERMES is the menu: no division pack, the list holds every HERMES desk
+        else:
+            _t = _PS.get(_top)
+            if not _t: continue
+            _li.append(f'<li class="ggall"><a href="/{_top}" download>All of {_DNAME.get(_dv, _dv.strip("/").upper())}</a> <span class="ggw">{_t["title"]}</span> <span class="ggs">{_t["size"]}</span></li>')
+        if _dv == '/qia': _li.append(_ggline('QIA LIST', 'Every study on the QIA List', 'qia/qia-list-pack.zip'))
+        if _dv == '/iris': _li.append(_ggline('IRIS LIST', 'Every study on the IRIS List', 'iris/iris-list-pack.zip'))
+        if _dv == '/social':
+            for _n, _w, _l in _SECT:
+                _li.append(f'<li><a href="/{_top}" download>{_n}</a> <span class="ggw">{_w}</span> <span class="ggs">in the SOCIAL pack</span>' + (' <span class="ggr">Results only: our counts, outcomes and intervals, no source data</span>' if _l else '') + '</li>')
+        for _h, _n, _w in DESKS.get(_dv, []):
+            if _h not in PAGES or _h == '/vault': continue
+            _d = _dpk_for(_h)
+            if not _d or _d[0] not in _PS: continue
+            _li.append(_ggline(_n, _w, _d[0], '' if _d[0].endswith(_h.strip('/') + '-data-pack.zip') or _h in ('/hermes/model', '/social') else 'in the ' + _PS[_d[0]]['title']))
+        _li = [x for x in _li if x]
+        if not _li: continue
+        _gid = 'gg-' + _dv.strip('/')
+        _box = (f'<div class="gg"><span class="dd ggdd"><button type="button" class="ggbtn" aria-haspopup="true" aria-controls="{_gid}">Grab and go</button>'
+                f'<span class="ddpanel ggpanel" id="{_gid}"><span class="ggnote">Every pack in {_DNAME.get(_dv, _dv.strip("/").upper())}, each a zip with its README, sources and tests.</span><ul>' + ''.join(_li) + '</ul></span></span></div>')
+        _doc = PAGES[_dv]; _hd = f'<a class="pkghead" href="{ {"/atlas": "/atlas/data-pack", "/iris": "/iris/package", "/oy": "/oy/data-pack", "/qia": "/qia/package"}.get(_dv, "") }">'
+        if _dv in ('/atlas', '/iris', '/oy', '/qia') and _hd in _doc:
+            _i = _doc.index('</aside>', _doc.index(_hd)); PAGES[_dv] = _doc[:_i] + _box + _doc[_i:]
+        else:
+            _m = '<main class="wrap">' + _hlslot(_dv); _m = _m if _m in _doc else '<main class="wrap">'
+            PAGES[_dv] = _doc.replace(_m, _m + '<aside class="pkgbox ggbox"><span class="pkghead">' + _MARK + ('HERMES desk packs' if _dv == '/hermes' else 'SOCIAL Data Pack') + '</span>' + _box + '</aside>', 1)
     for path, doc in PAGES.items():
         name = 'index.html' if path == '/' else path.strip('/') + '.html'
         os.makedirs(os.path.dirname(os.path.join(HERE, name)), exist_ok=True)
