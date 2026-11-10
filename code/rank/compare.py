@@ -14,6 +14,7 @@ from rule import compare
 OUT = []
 def add(lst, school, field, usn, usn_year, pub, pub_year, source, note='', same=True, shown_pub=None):
     oc, why = compare(usn, pub, usn_year, pub_year, same)
+    note = note.replace('; ', ', ').replace(';', ',')
     OUT.append(dict(list=lst, school=school, field=field, usn=usn, usn_year=usn_year, pub=shown_pub if shown_pub is not None else pub,
                     pub_year=pub_year, source=source, note=note, outcome=oc, reason=why))
 
@@ -45,7 +46,12 @@ def fig(st, idx, must):
 def first_num(v):
     m = re.search(r'-?\d+(?:\.\d+)?', str(v)); return m.group(0) if m else None
 def pct_of_share(v):   # 0.9706 -> 97.06
-    return str((Decimal(first_num(v)) * 100).normalize())
+    x = Decimal(first_num(v)) * 100
+    return format(x.quantize(Decimal('0.0001')), 'f').rstrip('0').rstrip('.')
+def counts(v):
+    m = re.search(r'(\d+) of (\d+)', str(v)) or re.search(r'Grads (\d+), Cohort (\d+)', str(v)) or re.search(r'graduates (\d+)\)?.*?cohort (\d+)', str(v), re.I)
+    if not m: m2 = re.search(r'cohort (\d+), graduates (\d+)', str(v)); return f' ({m2.group(2)} of {m2.group(1)})' if m2 else ''
+    return f' ({m.group(1)} of {m.group(2)})'
 def ccd(st, figure, year):
     for f in sch(st)['nces_ccd']:
         if f['figure'] == figure and f['year'] == year: return f['value']
@@ -77,10 +83,10 @@ for st, name in NAME.items():
         idx, must, how = HSMAP[(st, k)]; f = fig(st, idx, must); v = f['value']; note = ''
         py = uy
         if how == 'raw': pub = str(v).split(' ')[0].rstrip(';')
-        elif how == 'share': pub = pct_of_share(v); note = f'Published as {str(v)[:60]}, shown as a percent.'
+        elif how == 'share': pub = pct_of_share(v); note = f'Published as a share of 1{counts(v)}, shown here as a percent.'
         elif how == 'bin': m = re.search(r"[>≥]\s*[\d.]+%?", str(v)); pub = m.group(0).replace('%', '') if m else str(v)
         elif how == 'passed': pub = re.search(r'Passed (\d+)', str(v)).group(1); note = 'Virginia publishes a pass rate (Advanced plus Proficient).'
-        elif how == 'raw_year_unresolved': pub = str(v).split(' ')[0]; py = 'year label ' + str(f.get('year'))[:40]; note = 'The state page does not say which graduating class the figure is for.'
+        elif how == 'raw_year_unresolved': pub = str(v).split(' ')[0]; py = 'labelled ' + str(f.get('year')).split(' ')[0]; note = 'The state page does not say which graduating class the figure is for.'
         elif how == 'ga':
             t, pr, di = (int(re.search(fr'{x}=(\d+)', str(v)).group(1)) for x in ('tested', 'Proficient_cnt', 'Distinguished_cnt'))
             pub = str((Decimal(pr + di) * 100 / Decimal(t)).quantize(Decimal('0.0001'))); note = f'Proficient {pr} plus Distinguished {di} of {t} tested (Georgia Milestones counts).'
@@ -91,7 +97,7 @@ for st, name in NAME.items():
                 pub = a if (a == m_ == a2 == m2) else None; note = f'English I and English II: Approaches {a} and {a2}, Meets {m_} and {m2}.'
             else:
                 pub = a if a == m_ else None; note = f'Approaches {a}, Meets {m_}.'
-        elif how == 'supp': pub = '*'; note = 'Suppressed by the state (' + str(v)[:50] + ').'
+        elif how == 'supp': pub = '*'; note = 'The state does not publish this figure for the school.'
         add('hs', name, LABEL[k], usn, uy, pub, py, SRC(st, f), note)
     # enrollment 9 to 12 and lunch shares, 2024-25 CCD (US News: profile data pertain to 2024-2025)
     g = [ccd(st, f'CCD enrollment grade {n}', '2024-25') for n in (9, 10, 11, 12)]
@@ -153,6 +159,13 @@ for f, cols in (('raw/college_pages_20261110.txt', ['enr', 'acc', 'sat', 'act', 
         m = re.match(r'([a-z0-9-]+-\d+): (.+)$', ln.strip())
         if m and m.group(1) in CKEY:
             CU.setdefault(m.group(1), {}).update(dict(zip(cols, [x.strip().split(' ')[0] for x in m.group(2).split(' | ')])))
+def cds_gap(key):
+    r = ' '.join(map(str, (C[key].get('cds') or {}).get('refusals') or []))
+    if 'box' in r.lower(): why = 'the college posts it as a file that needs a sign-in'
+    elif re.search(r'40[35]|captcha|bot check|Cloudflare', r, re.I): why = 'the college page refused our reader'
+    elif 'tableau' in r.lower(): why = 'the college posts it as an interactive dashboard only'
+    else: why = 'no 2025-26 edition was found'
+    return f'No Common Data Set 2025-26 was read for this college: {why}.'
 def cds25(key):
     c = C.get(key, {}).get('cds') or {}
     y = (c.get('years') or {}).get('2025-2026') or {}
@@ -164,7 +177,7 @@ for slug, u in CU.items():
     lst = 'nu' if slug in list(CKEY)[:11] else 'nlac'
     b1 = str(y['B1_total_undergrad']['value']) if y and isinstance(y.get('B1_total_undergrad'), dict) else None
     add(lst, nm, 'Undergraduate enrollment', u['enr'], 'fall 2025', b1, 'fall 2025' if b1 else None, 'Common Data Set 2025-26, item B1 ' + src,
-        '' if b1 else 'No Common Data Set 2025-26 was read for this college (' + '; '.join(map(str, (C[key].get('cds') or {}).get('refusals') or ['not published or not reached']))[:120] + ').')
+        '' if b1 else cds_gap(key))
     # the other printed figures carry no year on the US News page: scored CANNOT_TELL (year), with the CDS 2025-26 reading shown beside them
     disp = []
     if y:

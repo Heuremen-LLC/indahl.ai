@@ -2,7 +2,7 @@
 """lint_copy.py: house public-copy checks on the visible text of neo.html (quoted JPL text is checked too, so a hit inside a quote is read and cleared in CHECKS.md) (main content only). Prints every hit; exit 1 on any."""
 import re, sys, html, os
 H = os.path.dirname(os.path.abspath(__file__))
-t = open(os.path.join(H, 'rank_body.html')).read()
+t = open(os.path.join(H, sys.argv[1] if len(sys.argv) > 1 else 'rank_body.html')).read()
 main = t
 vis = html.unescape(re.sub(r'<[^>]+>', ' ', re.sub(r'(?is)<script.*?</script>', ' ', main)))
 vis = re.sub(r'\s+', ' ', vis)

@@ -1272,6 +1272,8 @@
 /r/live.quake.v20261110T162303Z	2026-11-10
 /r/live.revise.headline	2026-11-10
 /r/live.revise.v20261110T120408Z	2026-11-10
+/r/live.seasonal.headline	2026-11-10
+/r/live.seasonal.v20261110T163810Z	2026-11-10
 /r/live.secrecords.headline	2026-11-10
 /r/live.secrecords.v20261110T120408Z	2026-11-10
 /r/live.solar.headline	2026-11-10
