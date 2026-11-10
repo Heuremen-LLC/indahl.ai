@@ -110,7 +110,7 @@ def process(s, r, corrects=None):
     return dict(job_id=r['id'], window_utc=win, qubits_read=len(qs), known_good=kg['known_good'], counts=counts, off=len(off),
                 median_readout_measured_over_stated=kg['median_readout_measured_over_stated'], median_t1_measured_over_stated=kg['median_t1_measured_over_stated']), m
 # Note 4 (30 Oct 2026): send when IBM's readout or T1 figures changed since our last job on this processor, or 6 hours have passed.
-FLOOR_H = 6.0
+FLOOR_H = 1.0   # 10 Nov (Wayfinder: fire while the paid seconds last): was 6.0
 def _sig(qubits):
     out = []
     for q in qubits or []:
@@ -119,6 +119,7 @@ def _sig(qubits):
     return tuple(out)
 def due(be):
     import gzip, glob as _g
+    if '--force' in sys.argv: return True, 'forced (10 Nov, Wayfinder: fire while the paid seconds last)'
     last = [r for f in ('/data/runs.jsonl', '/data/runs_eu.jsonl') for r in rows(H + f) if r.get('backend') == be and r.get('sent')]
     if not last: return True, 'no job yet'
     last = max(last, key=lambda r: r['sent']); age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(last['sent'].replace('Z', '+00:00'))).total_seconds() / 3600

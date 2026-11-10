@@ -2157,7 +2157,10 @@ def main():
     for _home, _pg, _z, _t, _src, _txt, _ttl, _dsc in _PKGS:
         _zs = _sha(_z)
         if not _zs: continue
-        _md = open(os.path.join(HERE, '..', _src), encoding='utf-8').read()
+        # 10 Nov 2026 (cold read BLOCK 1): the page shows the BUILT README (values filled), never the src template with its {TOKEN} slots
+        _dist = os.path.join(HERE, '..', os.path.dirname(os.path.dirname(_src)), 'dist', _z.rsplit('/', 1)[-1][:-4], 'README.md')
+        _md = open(_dist if os.path.exists(_dist) else os.path.join(HERE, '..', _src), encoding='utf-8').read()
+        if _re.search(r'\{[A-Z][A-Z0-9_]{2,}\}', _md): raise SystemExit(f'BUILD REFUSED: {_pg} README has unfilled {{TOKEN}} slots; rebuild the package first')
         _body = (f'<main class="wrap"><p class="pkgget"><a class="pkgbtn" href="/{_z}" download>Download (zip)</a> <span class="meta">sha256 <code>{_zs}</code> &middot; '
                  f'<a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/' + {'/darkwave/kit': 'darkwave-kit', '/iris/package': 'iris-package', '/atlas/data-pack': 'atlas-data-pack', '/oy/data-pack': 'oy-data-pack', '/hermes/model/data-pack': 'model-data-pack'}[_pg] + '">code (git)</a></span></p>' + _cite({'/darkwave/kit': 'Darkwave Correction Kit', '/iris/package': 'IRIS Research Package', '/atlas/data-pack': 'ATLAS Data Pack', '/oy/data-pack': 'OY Data Pack', '/hermes/model/data-pack': 'MODEL Data Pack'}[_pg]) + _md_body(_md) + (_tested(_TESTED[_pg][1]) if _TESTED[_pg][1] else '') + (open(os.path.join(HERE, '..', 'darkwave_daily', 'fragment_tables.html'), encoding='utf-8').read() if _pg == '/darkwave/kit' else '') + '</main>')
         PAGES[_pg] = page(_pg, _ttl, _dsc, _body, hero_slim(_t, 'Heuremen LLC'))
