@@ -105,8 +105,13 @@ print('secrecords: gate', 'passed' if gate else 'FAILED', gate_h, gate_s, gate_r
 store = json.load(open('data/domains.json')) if os.path.exists('data/domains.json') else {}; now = time.time()
 if SUMMARY_ONLY and store: now = max(r.get('read', 0) for r in store.values())   # 30 Oct: a summary rebuilt from stored data carries the time of the last read, not the time of the rebuild
 if gate and not SUMMARY_ONLY:
-    z = zipfile.ZipFile(io.BytesIO(urllib.request.urlopen(urllib.request.Request('https://tranco-list.eu/top-1m.csv.zip', headers={'User-Agent': UA}), timeout=300).read()))
-    rows = [l.split(',') for l in z.read(z.namelist()[0]).decode().splitlines()[:1000]]; store = {}
+    for _try in range(4):   # 9 Nov 2026: the list read stalled 300 s once and the pass died with no rows (alert log:secrecords_index). A stalled read is tried again, up to four times. Same list, same rows.
+        try: _zb = urllib.request.urlopen(urllib.request.Request('https://tranco-list.eu/top-1m.csv.zip', headers={'User-Agent': UA}), timeout=120).read(); break
+        except Exception as e:
+            if _try == 3: raise
+            print('secrecords: list read stalled (%s), try %d of 4 next' % (type(e).__name__, _try + 2), flush=True); time.sleep(30 * (_try + 1))
+    z = zipfile.ZipFile(io.BytesIO(_zb))
+    rows =[l.split(',') for l in z.read(z.namelist()[0]).decode().splitlines()[:1000]]; store = {}
     open('data/listdate.txt', 'w').write(time.strftime('%Y-%m-%d', time.gmtime(now)))
     ctx = ssl.create_default_context()
     import sys as _sys, os as _os; _sys.path.insert(0, _os.path.expanduser('~/bones-forge/watch')); import desk_progress as DP
