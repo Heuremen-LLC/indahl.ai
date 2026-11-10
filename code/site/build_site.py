@@ -145,7 +145,7 @@ def page(path, title, desc, body, wide_hero=None):
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
@@ -2076,6 +2076,9 @@ def _page_dates(docs):
     return {p: v[1] for p, v in out.items() if p != '_rule'}
 
 CSS += ".lablead,.yolead{padding-bottom:4px}.svlive .tablewrap{overflow-x:auto;margin:4px 0 10px}.svlive td{padding:3px 18px 3px 0;border-bottom:1px solid rgba(127,127,127,.2)}.svlive h3{margin:22px 0 6px}.svlive .sv-ph{margin:16px 0 2px;font-weight:600}\n"
+# 10 Nov 2026: receipt links (a small arrow after a number, ledger/receipts.py) and the receipt pages /r/ (body class rp)
+CSS += ".rcpt{display:inline-block;text-decoration:none;color:var(--goldink);font-size:.72em;line-height:1;vertical-align:super;padding:0 .12em;margin-left:.05em;opacity:.75}.rcpt::after{content:'\\2197'}.rcpt:hover,.rcpt:focus-visible{opacity:1;text-decoration:none}@media (pointer:coarse){.rcpt{padding:.15em .3em;margin-left:0}}@media print{.rcpt{display:none}}\n" \
+       ".rp-main{padding-bottom:28px}.rp-sec{margin:22px 0}.rp-sec h2{margin:0 0 8px}.rp-num{font-size:1.25em;font-weight:600;margin:6px 0;overflow-wrap:anywhere}.rp-kv{border-collapse:collapse;margin:8px 0}.rp-kv th{text-align:left;font-weight:600;padding:3px 18px 3px 0;vertical-align:top;white-space:nowrap}.rp-kv td{padding:3px 0;overflow-wrap:anywhere}.rp-h{font-size:.85em;word-break:break-all}.rp-pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.88em;background:var(--paper2);padding:8px 10px;border-left:3px solid var(--rule);max-width:100%}.rp-q{margin:6px 0 12px;padding:6px 12px;border-left:3px solid var(--rule);background:var(--paper2);overflow-wrap:anywhere}.rp-status{padding:8px 12px;border:1px solid var(--rule);background:var(--paper2)}.rp-hist{padding-left:18px}.rp-d{display:inline-block;min-width:7.5em;font-variant-numeric:tabular-nums;opacity:.8}.rp-t{border-collapse:collapse;width:100%}.rp-t th,.rp-t td{text-align:left;padding:4px 14px 4px 0;border-bottom:1px solid rgba(127,127,127,.25);vertical-align:top;overflow-wrap:anywhere}.rp-t .r{text-align:right}.rp-find{margin:14px 0 4px}.rp-find button{font:inherit;padding:4px 14px;border:1px solid var(--rule);background:var(--paper2);cursor:pointer}.rp-nav{margin-top:26px}@media (max-width:640px){.rp-kv th{white-space:normal}.rp-num{font-size:1.1em}}\n"
 # 1 Nov 2026: QIA Research Package box (top right of /qia) and download button, added before the stylesheet version stamp is taken
 CSS += ".rc-field{display:inline-block;margin:0 16px 10px 0;vertical-align:top}.rc-field label{display:block;font-size:14px;margin-bottom:4px}.rc-field input,.rc-field select{font:inherit;padding:4px 6px;border:1px solid var(--rule);background:var(--paper)}\n"
 CSS += ".pkgbox{float:right;width:280px;margin:8px 0 16px 24px;padding:14px 16px;border:2px solid var(--rule);background:var(--paper2);font-size:15px;line-height:1.45}.pkgbox p{margin:8px 0}.pkghead{display:flex;align-items:center;gap:8px;font:400 19px/1.2 \"Abril Fatface\",Georgia,serif;color:var(--ink);text-decoration:none}.pkghead .mark{width:28px;height:28px;flex:none}.pkgbtn{display:inline-block;padding:6px 14px;background:var(--ink);color:var(--paper)!important;text-decoration:none;border-radius:2px;margin-right:10px}.pkgbtn:hover{background:var(--goldink)}.pkgget{margin:18px 0}.pkgalso{font-size:14px;margin:6px 0 0}.pkgtested{font-size:14px;margin:6px 0;color:var(--goldink)}@media (max-width:700px){.pkgbox{float:none;width:auto;margin:8px 0 16px}}\n"
@@ -2336,6 +2339,10 @@ def main():
     _bad = [(p, e) for p, d in PAGES.items() for e in _fd.check_doc(d)]
     if _bad: raise SystemExit('BUILD REFUSED: JSON-LD: ' + '; '.join('%s %s' % x for x in _bad[:8]))
     print('findable: %d desk pages with data links or embed, %d change feeds' % (len(_fdi), _fd.write_changes()))
+    # 10 Nov 2026 ("receipts available to anyone"): every number with a live ledger row gets a small receipt link to /r/<row>, placed right after
+    # the snippet the ledger matches on that page (ledger/receipts.py). check_ledger strips these links, so they never change what a snippet reads.
+    _sys.path.insert(0, os.path.join(HERE, '..', 'ledger')); import receipts as _rcp
+    _rcp.link_pages(PAGES)
     for path, doc in PAGES.items():
         name = 'index.html' if path == '/' else path.strip('/') + '.html'
         os.makedirs(os.path.dirname(os.path.join(HERE, name)), exist_ok=True)
