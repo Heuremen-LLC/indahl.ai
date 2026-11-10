@@ -2011,14 +2011,14 @@ CSS += ".dwpage table{border-collapse:collapse;font-size:14.5px;margin:12px 0;di
 # so a touch reader reaches it from the panel too. Filled once in main(), after the package and data-pack pages exist.
 _NAVEXTRA = {'/qia': [('/qia/list', 'The List', ''), ('/qia/key', 'Key', ''), ('/qia/package', 'Research package', '')],
              '/oy': [('/oy/data-pack', 'Data pack', ''), ('/campus', 'CAMPUS', '')],
-             '/social': [('/social#social-dsa', 'DSA reports', ''), ('/social#adspend', 'Political ad spend', ''), ('/social#social-tiktok', 'TikTok', ''), ('/social#bluesky', 'Bluesky', ''), ('/social/data-pack', 'Data pack', '')]}
+             '/social': [('/social#social-dsa', 'DSA reports', ''), ('/social#adspend', 'Political ad spend', ''), ('/social#social-tiktok', 'TikTok', ''), ('/social#bluesky', 'Bluesky', ''), ('/social/social-data-pack.zip', 'Data pack (zip)', '')]}
 def _navfor(path):
     home = HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path)
     out = []
     for h, t in NAV:
         if h not in ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/social'): continue   # 10 Nov: SOCIAL in the banner, STACK under HERMES
         cur = ' aria-current=page' if h == home else ''
-        ds = [x for x in DESKS.get(h, []) + _NAVEXTRA.get(h, []) if x[0].split('#')[0] in PAGES and x[0] != h]
+        ds = [x for x in DESKS.get(h, []) + _NAVEXTRA.get(h, []) if (x[0].split('#')[0] in PAGES or (x[0].endswith('.zip') and os.path.isfile(os.path.join(HERE, '..', 'cloudflare-workers', 'heuremen-door', 'public', x[0].lstrip('/'))))) and x[0] != h]
         _seen = set(); ds = [x for x in ds if not (x[0] in _seen or _seen.add(x[0]))]
         if ds: out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel"><a href="' + h + '">' + t + ' main page</a>' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
         else: out.append('<a href="' + h + '"' + cur + '>' + t + '</a>')
