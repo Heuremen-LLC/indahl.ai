@@ -50,13 +50,16 @@ def checks_section(l):
         rd = READ[c['outcome']] + (f' ({WHY.get(c["reason"], c["reason"])})' if c['outcome'] == 'CANNOT_TELL' else '')
         pub = c['pub'] if c['pub'] not in (None, '') else ''
         if pub and pub.replace('.', '').isdigit() and '.' in pub and len(pub.split('.')[1]) > 2: pub = f'{float(pub):.2f}'
-        note = c['note'] + (' Source: ' + c['source'] if c.get('source') else '')
-        out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(c['school']), e(c['field']), e(str(c['usn'] or '')), e(str(c['usn_year'] or 'not printed')), e(str(pub)), e(str(c['pub_year'] or '')), e(rd), e(note))) + '</tr>')
+        note = e(c['note'])
+        m = __import__('re').search(r'https?://\S+', c.get('source') or '')
+        if m: note += f' <a href="{e(m.group(0).rstrip(")"))}">Source</a>.'
+        elif c.get('source'): note += ' Source: ' + e(c['source']) + '.'
+        out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(c['school']), e(c['field']), e(str(c['usn'] or '')), e(str(c['usn_year'] or 'not printed')), e(str(pub)), e(str(c['pub_year'] or '')), e(rd), note)) + '</tr>')
     out.append('</tbody></table></div>')
     disp = [c for c in CK if c['list'] == k and c['outcome'] == 'DISPLAY']
     if disp:
-        out.append('<p class="bench-note">Shown after the data and not scored: the same figures set beside each college&rsquo;s Common Data Set for 2025-26, the latest each college has published, because US News prints no year for them. Percents are worked from the counts in the Common Data Set.</p><ul class="bench-note">')
-        for c in disp: out.append(f'<li>{e(c["school"])}: {e(c["note"])}.</li>')
+        out.append('<p class="bench-note">Shown after the data and not scored: the same figures set beside each college&rsquo;s Common Data Set for 2025-26, the latest each college has published. US News prints no year for these figures, so they are not scored. Percents are worked from the counts in the Common Data Set.</p><ul class="bench-note">')
+        for c in disp: out.append(f'<li>{e(c["school"])}: {e(c["note"]).replace("; ", ". ")}.</li>')
         out.append('</ul>')
 
 out = []
@@ -131,13 +134,16 @@ if BR:
 out.append('<p class="bench-note">Earlier or other awards named in school or press pages, without a Department or state agency record read here, are not listed. For the other high schools in the list no award record was found in the sources read.</p>')
 out.append('<h2>Instructional time</h2>')
 out.append('<p>None of the ten states publishes instructional minutes or days per school in the files read. The District of Columbia publishes daily school hours. Nothing is set side by side.</p>')
+ITEM = {'Temple University': 'Number of new entrants who provided GMAT scores', 'University of Southern California': 'Doctoral program selectivity figures, with EdD data left out and PhD data reported',
+        'George Washington University': 'Share of incoming students in the top 10 percent of their high school class, 58 percent reported as 78 percent', 'University of California': 'Alumni giving rate, with pledges counted',
+        'University of Wisconsin': 'Not named. The document says a discrepancy in its data', 'Emory University': 'Test scores of admitted students reported as those of enrolled students, and class rank'}
 out.append('<h2>Documented cases of corrected data</h2>')
 if CASES:
     out.append('<p>Cases where a school&rsquo;s own statement or report says data it gave US News was inaccurate and its US News rank was removed, withdrawn or computed again. Primary sources only, quoted. '
-               'None of these schools is in a current top-ten list above, except where named.</p>')
+               'The data item is described in short, and the quote is the document&rsquo;s own words.</p>')
     out.append('<div class="tw"><table class="bench"><thead><tr><th>School</th><th>List and edition</th><th>Data item, as the document states it</th><th>What the document says</th><th>Date</th><th>Source</th></tr></thead><tbody>')
     for v in CASES['verified']:
-        out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(v['school']), e(v['list'] + ', ' + v['editions']), e(v['data_item']), '&ldquo;' + e(v['rank_outcome_quote']) + '&rdquo;', e(v.get('date', '')), ' '.join(f'<a href="{e(u)}">source</a>' for u in (v['primary_urls'] if isinstance(v['primary_urls'], list) else [v['primary_urls']])[:2]))) + '</tr>')
+        out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(v['school']), e(v['list'].split(' (')[0].split(';')[0]), e(next((t for k_, t in ITEM.items() if v['school'].startswith(k_)), '')), '&ldquo;' + e(v['rank_outcome_quote']) + '&rdquo;', e(str(v.get('date', '')).split(' (')[0].split(';')[0]), ' '.join(f'<a href="{e(u)}">source</a>' for u in (v['primary_urls'] if isinstance(v['primary_urls'], list) else [v['primary_urls']])[:2]))) + '</tr>')
     out.append('</tbody></table></div>')
     out.append('<p class="bench-note">Cases named only in news reports, or whose primary page refused our reader, are not listed until the primary document is read.</p>')
 out.append('<h2>What comes next</h2>')

@@ -196,7 +196,7 @@ for slug, u in CU.items():
         if bg.get('B6_adj_cohort') and bg.get('B7_4yr'): chk('4-year graduation rate', u.get('grad4'), str(Decimal(bg['B7_4yr']) * 100 / Decimal(bg['B6_adj_cohort'])) )
     for lab, k in (('Acceptance rate', 'acc'), ('SAT range', 'sat'), ('ACT range', 'act'), ('Student/faculty ratio', 'ratio'), ('Classes with fewer than 20 students', 'small'), ('4-year graduation rate', 'grad4')):
         add(lst, nm, lab, u.get(k), None, 'see the Common Data Set note', None, 'Common Data Set 2025-26 ' + src, 'The US News page prints no year for this figure.', shown_pub='')
-    OUT.append(dict(list=lst, school=nm, field='_display_cds2025', note='; '.join(disp) if disp else 'No Common Data Set 2025-26 was read.', outcome='DISPLAY', reason='after the data, not scored'))
+    OUT.append(dict(list=lst, school=nm, field='_display_cds2025', note=('; '.join(disp) if disp else ('Only item B1 could be read from the college posting' if y else 'No Common Data Set 2025-26 was read')), outcome='DISPLAY', reason='after the data, not scored'))
 
 OUTLAW = [o for o in OUT if o['list'] == 'law']
 json.dump(dict(read='2026-11-10', checks=OUT), open('data/checks.json', 'w'), indent=1, ensure_ascii=False)
