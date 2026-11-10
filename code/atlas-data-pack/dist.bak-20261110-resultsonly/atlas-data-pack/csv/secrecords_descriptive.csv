@@ -1,0 +1,3 @@
+﻿label,n,of,updated
+Domains whose HTTPS response carries an HSTS header,322,1000,10 Nov 12:00
+Domains that publish an SPF record,765,1000,10 Nov 12:00

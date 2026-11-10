@@ -1,0 +1,4 @@
+﻿first,last,probes,saw
+2026-11-09 20:22 UTC,2026-11-09 21:10 UTC,3,"feed /ailuminate/live.json stale, feed /airq/live.json stale, feed /cada/live.json stale, feed /forecast/live.json stale, feed /hosts/live.json stale, feed /qia/ibm.json stale, feed /qia/queue.json stale, feed /support/live.json stale, feed /time/live.json stale, feed /trials/live.json stale, feed /weights/live.json stale"
+2026-11-10 00:30 UTC,2026-11-10 03:45 UTC,5,"feed /yo/live.json unreachable, page /airq differs from the repository, page /hermes differs from the repository, page /launch differs from the repository, page /trials differs from the repository"
+2026-11-10 09:44 UTC,2026-11-10 09:44 UTC,1,"feed /airq/live.json stale, feed /arxivdrift/live.json stale, feed /launch/live.json stale, feed /linkrot/live.json stale, feed /qia/audit.json stale, feed /qia/ibm.json stale, feed /qia/stability.json stale, feed /tape/live.json stale, feed /water/live.json stale"

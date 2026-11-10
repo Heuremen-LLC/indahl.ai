@@ -1,0 +1,12 @@
+﻿key,value
+built,2026-10-28
+price_year,2024
+generation_year,2024
+unit,cents per kilowatthour
+method,"Average price = revenue divided by sales. Revenue sums Parts A, B, C and D of the EIA-861 sales table and sales sum Parts A, B and D, as the note under the table says. Generation shares are net generation by energy source over total net generation, Total Electric Power Industry, utility-scale. Other is total minus the named sources and includes petroleum, biomass, geothermal, other gases and pumped storage."
+sources.sales,"EIA-861 annual electric power industry report, Sales to Ultimate Customers 2024 (Sales_Ult_Cust_2024.xlsx)"
+sources.generation,"EIA State Historical Tables, net generation by state and energy source (annual_generation_state.xlsx)"
+legend.industrial,"[""under 6.8"",""6.8 to 7.8"",""7.8 to 8.3"",""8.3 to 10.0"",""10.0 and over""]"
+legend.commercial,"[""under 10.1"",""10.1 to 10.7"",""10.7 to 12.1"",""12.1 to 14.6"",""14.6 and over""]"
+unplaced_data_centers.osm,3
+unplaced_data_centers.epoch,10

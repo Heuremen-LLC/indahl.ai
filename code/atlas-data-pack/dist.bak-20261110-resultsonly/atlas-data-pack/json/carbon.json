@@ -1,0 +1,595 @@
+{
+ "built": "2026-10-28",
+ "data_year": 2023,
+ "source": "EPA eGRID2023 rev 2 (egrid2023_data_rev2.xlsx), sheets ST23, SRL23, US23. Total output emission rates in pounds per megawatthour of net generation, all fuels.",
+ "us": {
+  "co2_lb_mwh": 767.209,
+  "nox_lb_mwh": 0.452,
+  "so2_lb_mwh": 0.359,
+  "net_generation_mwh": 4190970937.357
+ },
+ "states": {
+  "AK": {
+   "name": "Alaska",
+   "co2_lb_mwh": 809.824,
+   "nox_lb_mwh": 6.166,
+   "so2_lb_mwh": 0.404,
+   "net_generation_mwh": 6678905.161
+  },
+  "AL": {
+   "name": "Alabama",
+   "co2_lb_mwh": 710.988,
+   "nox_lb_mwh": 0.214,
+   "so2_lb_mwh": 0.093,
+   "net_generation_mwh": 138596256.477
+  },
+  "AR": {
+   "name": "Arkansas",
+   "co2_lb_mwh": 993.413,
+   "nox_lb_mwh": 0.482,
+   "so2_lb_mwh": 0.857,
+   "net_generation_mwh": 63195646.552
+  },
+  "AZ": {
+   "name": "Arizona",
+   "co2_lb_mwh": 686.688,
+   "nox_lb_mwh": 0.296,
+   "so2_lb_mwh": 0.126,
+   "net_generation_mwh": 111820945.514
+  },
+  "CA": {
+   "name": "California",
+   "co2_lb_mwh": 393.486,
+   "nox_lb_mwh": 0.294,
+   "so2_lb_mwh": 0.013,
+   "net_generation_mwh": 216080235.825
+  },
+  "CO": {
+   "name": "Colorado",
+   "co2_lb_mwh": 1085.021,
+   "nox_lb_mwh": 0.544,
+   "so2_lb_mwh": 0.351,
+   "net_generation_mwh": 57471488.483
+  },
+  "CT": {
+   "name": "Connecticut",
+   "co2_lb_mwh": 538.266,
+   "nox_lb_mwh": 0.191,
+   "so2_lb_mwh": 0.072,
+   "net_generation_mwh": 40652074.995
+  },
+  "DC": {
+   "name": "District of Columbia",
+   "co2_lb_mwh": 394.099,
+   "nox_lb_mwh": 2.835,
+   "so2_lb_mwh": 0.027,
+   "net_generation_mwh": 171869.499
+  },
+  "DE": {
+   "name": "Delaware",
+   "co2_lb_mwh": 703.194,
+   "nox_lb_mwh": 0.226,
+   "so2_lb_mwh": 0.074,
+   "net_generation_mwh": 4772059.259
+  },
+  "FL": {
+   "name": "Florida",
+   "co2_lb_mwh": 786.645,
+   "nox_lb_mwh": 0.254,
+   "so2_lb_mwh": 0.126,
+   "net_generation_mwh": 258099011.95
+  },
+  "GA": {
+   "name": "Georgia",
+   "co2_lb_mwh": 713.831,
+   "nox_lb_mwh": 0.285,
+   "so2_lb_mwh": 0.2,
+   "net_generation_mwh": 129220273.258
+  },
+  "HI": {
+   "name": "Hawaii",
+   "co2_lb_mwh": 1385.131,
+   "nox_lb_mwh": 4.951,
+   "so2_lb_mwh": 4.339,
+   "net_generation_mwh": 9158617.733
+  },
+  "IA": {
+   "name": "Iowa",
+   "co2_lb_mwh": 630.187,
+   "nox_lb_mwh": 0.386,
+   "so2_lb_mwh": 0.52,
+   "net_generation_mwh": 69819809.048
+  },
+  "ID": {
+   "name": "Idaho",
+   "co2_lb_mwh": 313.292,
+   "nox_lb_mwh": 0.132,
+   "so2_lb_mwh": 0.049,
+   "net_generation_mwh": 17842445.937
+  },
+  "IL": {
+   "name": "Illinois",
+   "co2_lb_mwh": 471.705,
+   "nox_lb_mwh": 0.169,
+   "so2_lb_mwh": 0.27,
+   "net_generation_mwh": 177690286.567
+  },
+  "IN": {
+   "name": "Indiana",
+   "co2_lb_mwh": 1457.19,
+   "nox_lb_mwh": 0.825,
+   "so2_lb_mwh": 0.547,
+   "net_generation_mwh": 90031870.696
+  },
+  "KS": {
+   "name": "Kansas",
+   "co2_lb_mwh": 728.16,
+   "nox_lb_mwh": 0.496,
+   "so2_lb_mwh": 0.113,
+   "net_generation_mwh": 58456598.044
+  },
+  "KY": {
+   "name": "Kentucky",
+   "co2_lb_mwh": 1735.009,
+   "nox_lb_mwh": 0.959,
+   "so2_lb_mwh": 1.116,
+   "net_generation_mwh": 62417958.511
+  },
+  "LA": {
+   "name": "Louisiana",
+   "co2_lb_mwh": 761.404,
+   "nox_lb_mwh": 0.661,
+   "so2_lb_mwh": 0.192,
+   "net_generation_mwh": 97434806.41
+  },
+  "MA": {
+   "name": "Massachusetts",
+   "co2_lb_mwh": 822.39,
+   "nox_lb_mwh": 0.593,
+   "so2_lb_mwh": 0.278,
+   "net_generation_mwh": 19663313.081
+  },
+  "MD": {
+   "name": "Maryland",
+   "co2_lb_mwh": 520.022,
+   "nox_lb_mwh": 0.174,
+   "so2_lb_mwh": 0.116,
+   "net_generation_mwh": 35987133.297
+  },
+  "ME": {
+   "name": "Maine",
+   "co2_lb_mwh": 311.824,
+   "nox_lb_mwh": 0.313,
+   "so2_lb_mwh": 0.188,
+   "net_generation_mwh": 12512180.99
+  },
+  "MI": {
+   "name": "Michigan",
+   "co2_lb_mwh": 793.171,
+   "nox_lb_mwh": 0.565,
+   "so2_lb_mwh": 0.439,
+   "net_generation_mwh": 120648501.215
+  },
+  "MN": {
+   "name": "Minnesota",
+   "co2_lb_mwh": 747.545,
+   "nox_lb_mwh": 0.496,
+   "so2_lb_mwh": 0.187,
+   "net_generation_mwh": 57260118.977
+  },
+  "MO": {
+   "name": "Missouri",
+   "co2_lb_mwh": 1444.137,
+   "nox_lb_mwh": 1.059,
+   "so2_lb_mwh": 2.18,
+   "net_generation_mwh": 66705178.956
+  },
+  "MS": {
+   "name": "Mississippi",
+   "co2_lb_mwh": 826.335,
+   "nox_lb_mwh": 0.366,
+   "so2_lb_mwh": 0.123,
+   "net_generation_mwh": 72933440.201
+  },
+  "MT": {
+   "name": "Montana",
+   "co2_lb_mwh": 1056.167,
+   "nox_lb_mwh": 0.873,
+   "so2_lb_mwh": 0.809,
+   "net_generation_mwh": 26895758.013
+  },
+  "NC": {
+   "name": "North Carolina",
+   "co2_lb_mwh": 623.958,
+   "nox_lb_mwh": 0.386,
+   "so2_lb_mwh": 0.166,
+   "net_generation_mwh": 126510680.084
+  },
+  "ND": {
+   "name": "North Dakota",
+   "co2_lb_mwh": 1288.364,
+   "nox_lb_mwh": 1.326,
+   "so2_lb_mwh": 1.603,
+   "net_generation_mwh": 42068807.125
+  },
+  "NE": {
+   "name": "Nebraska",
+   "co2_lb_mwh": 1018.154,
+   "nox_lb_mwh": 0.955,
+   "so2_lb_mwh": 2.119,
+   "net_generation_mwh": 39445955.006
+  },
+  "NH": {
+   "name": "New Hampshire",
+   "co2_lb_mwh": 272.854,
+   "nox_lb_mwh": 0.134,
+   "so2_lb_mwh": 0.053,
+   "net_generation_mwh": 16824998.889
+  },
+  "NJ": {
+   "name": "New Jersey",
+   "co2_lb_mwh": 468.31,
+   "nox_lb_mwh": 0.163,
+   "so2_lb_mwh": 0.059,
+   "net_generation_mwh": 64195046.033
+  },
+  "NM": {
+   "name": "New Mexico",
+   "co2_lb_mwh": 770.214,
+   "nox_lb_mwh": 0.394,
+   "so2_lb_mwh": 0.105,
+   "net_generation_mwh": 39258858.763
+  },
+  "NV": {
+   "name": "Nevada",
+   "co2_lb_mwh": 642.37,
+   "nox_lb_mwh": 0.479,
+   "so2_lb_mwh": 0.137,
+   "net_generation_mwh": 42162355.474
+  },
+  "NY": {
+   "name": "New York",
+   "co2_lb_mwh": 465.136,
+   "nox_lb_mwh": 0.183,
+   "so2_lb_mwh": 0.051,
+   "net_generation_mwh": 123473720.157
+  },
+  "OH": {
+   "name": "Ohio",
+   "co2_lb_mwh": 1063.843,
+   "nox_lb_mwh": 0.344,
+   "so2_lb_mwh": 0.61,
+   "net_generation_mwh": 133121090.814
+  },
+  "OK": {
+   "name": "Oklahoma",
+   "co2_lb_mwh": 647.207,
+   "nox_lb_mwh": 0.469,
+   "so2_lb_mwh": 0.221,
+   "net_generation_mwh": 88878115.88
+  },
+  "OR": {
+   "name": "Oregon",
+   "co2_lb_mwh": 364.162,
+   "nox_lb_mwh": 0.639,
+   "so2_lb_mwh": 0.02,
+   "net_generation_mwh": 61683300.013
+  },
+  "PA": {
+   "name": "Pennsylvania",
+   "co2_lb_mwh": 645.773,
+   "nox_lb_mwh": 0.205,
+   "so2_lb_mwh": 0.229,
+   "net_generation_mwh": 235912550.485
+  },
+  "RI": {
+   "name": "Rhode Island",
+   "co2_lb_mwh": 839.136,
+   "nox_lb_mwh": 0.372,
+   "so2_lb_mwh": 0.013,
+   "net_generation_mwh": 10416553.048
+  },
+  "SC": {
+   "name": "South Carolina",
+   "co2_lb_mwh": 557.173,
+   "nox_lb_mwh": 0.238,
+   "so2_lb_mwh": 0.171,
+   "net_generation_mwh": 100853387.4
+  },
+  "SD": {
+   "name": "South Dakota",
+   "co2_lb_mwh": 334.032,
+   "nox_lb_mwh": 0.25,
+   "so2_lb_mwh": 0.076,
+   "net_generation_mwh": 17405995.526
+  },
+  "TN": {
+   "name": "Tennessee",
+   "co2_lb_mwh": 657.267,
+   "nox_lb_mwh": 0.237,
+   "so2_lb_mwh": 0.213,
+   "net_generation_mwh": 77754006.807
+  },
+  "TX": {
+   "name": "Texas",
+   "co2_lb_mwh": 768.317,
+   "nox_lb_mwh": 0.476,
+   "so2_lb_mwh": 0.389,
+   "net_generation_mwh": 544038647.008
+  },
+  "UT": {
+   "name": "Utah",
+   "co2_lb_mwh": 1413.019,
+   "nox_lb_mwh": 1.282,
+   "so2_lb_mwh": 0.275,
+   "net_generation_mwh": 32789440.038
+  },
+  "VA": {
+   "name": "Virginia",
+   "co2_lb_mwh": 536.851,
+   "nox_lb_mwh": 0.175,
+   "so2_lb_mwh": 0.071,
+   "net_generation_mwh": 91024103.437
+  },
+  "VT": {
+   "name": "Vermont",
+   "co2_lb_mwh": 42.981,
+   "nox_lb_mwh": 0.168,
+   "so2_lb_mwh": 0.039,
+   "net_generation_mwh": 2480198.747
+  },
+  "WA": {
+   "name": "Washington",
+   "co2_lb_mwh": 265.119,
+   "nox_lb_mwh": 0.181,
+   "so2_lb_mwh": 0.044,
+   "net_generation_mwh": 102953150.197
+  },
+  "WI": {
+   "name": "Wisconsin",
+   "co2_lb_mwh": 1156.996,
+   "nox_lb_mwh": 0.508,
+   "so2_lb_mwh": 0.144,
+   "net_generation_mwh": 62538903.174
+  },
+  "WV": {
+   "name": "West Virginia",
+   "co2_lb_mwh": 1954.383,
+   "nox_lb_mwh": 1.062,
+   "so2_lb_mwh": 1.498,
+   "net_generation_mwh": 52286784.268
+  },
+  "WY": {
+   "name": "Wyoming",
+   "co2_lb_mwh": 1820.318,
+   "nox_lb_mwh": 1.202,
+   "so2_lb_mwh": 1.113,
+   "net_generation_mwh": 43176351.213
+  }
+ },
+ "subregions": [
+  {
+   "code": "AKGD",
+   "name": "ASCC Alaska Grid",
+   "co2_lb_mwh": 899.633,
+   "nox_lb_mwh": 5.554,
+   "so2_lb_mwh": 0.31,
+   "net_generation_mwh": 5096872.779
+  },
+  {
+   "code": "AKMS",
+   "name": "ASCC Miscellaneous",
+   "co2_lb_mwh": 520.483,
+   "nox_lb_mwh": 8.139,
+   "so2_lb_mwh": 0.708,
+   "net_generation_mwh": 1582032.382
+  },
+  {
+   "code": "AZNM",
+   "name": "WECC Southwest",
+   "co2_lb_mwh": 703.703,
+   "nox_lb_mwh": 0.36,
+   "so2_lb_mwh": 0.103,
+   "net_generation_mwh": 175554659.519
+  },
+  {
+   "code": "CAMX",
+   "name": "WECC California",
+   "co2_lb_mwh": 428.464,
+   "nox_lb_mwh": 0.332,
+   "so2_lb_mwh": 0.02,
+   "net_generation_mwh": 220986983.331
+  },
+  {
+   "code": "ERCT",
+   "name": "ERCOT All",
+   "co2_lb_mwh": 733.862,
+   "nox_lb_mwh": 0.443,
+   "so2_lb_mwh": 0.319,
+   "net_generation_mwh": 477137386.101
+  },
+  {
+   "code": "FRCC",
+   "name": "FRCC All",
+   "co2_lb_mwh": 782.262,
+   "nox_lb_mwh": 0.242,
+   "so2_lb_mwh": 0.128,
+   "net_generation_mwh": 250055523.983
+  },
+  {
+   "code": "HIMS",
+   "name": "HICC Miscellaneous",
+   "co2_lb_mwh": 1123.371,
+   "nox_lb_mwh": 7.565,
+   "so2_lb_mwh": 4.489,
+   "net_generation_mwh": 2611612.997
+  },
+  {
+   "code": "HIOA",
+   "name": "HICC Oahu",
+   "co2_lb_mwh": 1489.548,
+   "nox_lb_mwh": 3.908,
+   "so2_lb_mwh": 4.28,
+   "net_generation_mwh": 6547004.736
+  },
+  {
+   "code": "MROE",
+   "name": "MRO East",
+   "co2_lb_mwh": 1397.313,
+   "nox_lb_mwh": 0.982,
+   "so2_lb_mwh": 0.277,
+   "net_generation_mwh": 24520967.706
+  },
+  {
+   "code": "MROW",
+   "name": "MRO West",
+   "co2_lb_mwh": 920.13,
+   "nox_lb_mwh": 0.711,
+   "so2_lb_mwh": 0.896,
+   "net_generation_mwh": 240934538.663
+  },
+  {
+   "code": "NEWE",
+   "name": "NPCC New England",
+   "co2_lb_mwh": 539.275,
+   "nox_lb_mwh": 0.291,
+   "so2_lb_mwh": 0.116,
+   "net_generation_mwh": 102716862.75
+  },
+  {
+   "code": "NWPP",
+   "name": "WECC Northwest",
+   "co2_lb_mwh": 631.735,
+   "nox_lb_mwh": 0.568,
+   "so2_lb_mwh": 0.268,
+   "net_generation_mwh": 269253053.412
+  },
+  {
+   "code": "NYCW",
+   "name": "NPCC NYC/Westchester",
+   "co2_lb_mwh": 864.469,
+   "nox_lb_mwh": 0.232,
+   "so2_lb_mwh": 0.024,
+   "net_generation_mwh": 34602268.097
+  },
+  {
+   "code": "NYLI",
+   "name": "NPCC Long Island",
+   "co2_lb_mwh": 1180.672,
+   "nox_lb_mwh": 0.829,
+   "so2_lb_mwh": 0.331,
+   "net_generation_mwh": 9823461.808
+  },
+  {
+   "code": "NYUP",
+   "name": "NPCC Upstate NY",
+   "co2_lb_mwh": 242.089,
+   "nox_lb_mwh": 0.083,
+   "so2_lb_mwh": 0.027,
+   "net_generation_mwh": 85283183.254
+  },
+  {
+   "code": "PRMS",
+   "name": "Puerto Rico Miscellaneous",
+   "co2_lb_mwh": 1543.073,
+   "nox_lb_mwh": 3.902,
+   "so2_lb_mwh": 3.695,
+   "net_generation_mwh": 17501153.122
+  },
+  {
+   "code": "RFCE",
+   "name": "RFC East",
+   "co2_lb_mwh": 596.904,
+   "nox_lb_mwh": 0.202,
+   "so2_lb_mwh": 0.212,
+   "net_generation_mwh": 284874108.51
+  },
+  {
+   "code": "RFCM",
+   "name": "RFC Michigan",
+   "co2_lb_mwh": 970.617,
+   "nox_lb_mwh": 0.519,
+   "so2_lb_mwh": 0.564,
+   "net_generation_mwh": 91629481.603
+  },
+  {
+   "code": "RFCW",
+   "name": "RFC West",
+   "co2_lb_mwh": 911.424,
+   "nox_lb_mwh": 0.422,
+   "so2_lb_mwh": 0.412,
+   "net_generation_mwh": 524352082.167
+  },
+  {
+   "code": "RMPA",
+   "name": "WECC Rockies",
+   "co2_lb_mwh": 1036.601,
+   "nox_lb_mwh": 0.526,
+   "so2_lb_mwh": 0.329,
+   "net_generation_mwh": 67674810.481
+  },
+  {
+   "code": "SPNO",
+   "name": "SPP North",
+   "co2_lb_mwh": 861.999,
+   "nox_lb_mwh": 0.462,
+   "so2_lb_mwh": 0.137,
+   "net_generation_mwh": 73458953.049
+  },
+  {
+   "code": "SPSO",
+   "name": "SPP South",
+   "co2_lb_mwh": 872.042,
+   "nox_lb_mwh": 0.673,
+   "so2_lb_mwh": 0.658,
+   "net_generation_mwh": 158074959.653
+  },
+  {
+   "code": "SRMV",
+   "name": "SERC Mississippi Valley",
+   "co2_lb_mwh": 739.72,
+   "nox_lb_mwh": 0.488,
+   "so2_lb_mwh": 0.351,
+   "net_generation_mwh": 176359169.826
+  },
+  {
+   "code": "SRMW",
+   "name": "SERC Midwest",
+   "co2_lb_mwh": 1239.839,
+   "nox_lb_mwh": 0.787,
+   "so2_lb_mwh": 1.636,
+   "net_generation_mwh": 105391939.282
+  },
+  {
+   "code": "SRSO",
+   "name": "SERC South",
+   "co2_lb_mwh": 842.329,
+   "nox_lb_mwh": 0.347,
+   "so2_lb_mwh": 0.162,
+   "net_generation_mwh": 256144699.488
+  },
+  {
+   "code": "SRTV",
+   "name": "SERC Tennessee Valley",
+   "co2_lb_mwh": 898.079,
+   "nox_lb_mwh": 0.384,
+   "so2_lb_mwh": 0.427,
+   "net_generation_mwh": 209324307.73
+  },
+  {
+   "code": "SRVC",
+   "name": "SERC Virginia/Carolina",
+   "co2_lb_mwh": 593.419,
+   "nox_lb_mwh": 0.282,
+   "so2_lb_mwh": 0.152,
+   "net_generation_mwh": 319478860.928
+  }
+ ],
+ "legend": [
+  "under 465",
+  "465 to 646",
+  "646 to 768",
+  "768 to 1,064",
+  "1,064 and over"
+ ]
+}

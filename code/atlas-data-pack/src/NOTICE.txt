@@ -60,10 +60,10 @@ California Data Exchange Center (CDEC), California Department of Water Resources
   Storage figures for {WATER_CDEC_NAMES} in json/water.json and csv/water_reservoirs.csv. https://cdec.water.ca.gov/ . Not a US government work. These figures keep CDEC's terms.
 
 endoflife.date
-  Release, support and end-of-life dates in json/support.json and the csv/support_ files. https://endoflife.date/ . MIT License, Copyright 2020 endoflife.date contributors. The full licence text is in LICENSE.txt.
+  Product and release cycle names in json/support.json and the csv/support_ files. The dates are not in this pack. https://endoflife.date/ . MIT License, Copyright 2020 endoflife.date contributors. The full licence text is in LICENSE.txt.
 
 Vendor pages
-  The CHANGE files carry names, dates and links from the deprecation pages of Anthropic, OpenAI, Google and Cloudflare. The UPTIME files carry status indicators and incident titles from vendor status pages. These keep their own terms.
+  The CHANGE files name models and products from the deprecation pages of Anthropic, OpenAI, Google and Cloudflare. The UPTIME files name the vendors whose status pages were read. The dates, notes, links, status indicators and incident text of those pages are not in this pack. The names keep their owners' terms.
 
 Tranco
   The SECRECORDS files name domains from the Tranco list. https://tranco-list.eu/ . Le Pochat et al., NDSS 2019.
@@ -91,12 +91,11 @@ Public-domain files
   - csv/electricity_us.csv, csv/electricity_us_ownership.csv
 
 Heuremen LLC
-  The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, verify.py, the build code and the compilation of non-OpenStreetMap, non-Epoch data and csv/datacenters_meta.csv (which holds only the pull date) may be used, copied and changed with attribution to Heuremen LLC and https://indahl.ai/atlas. For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. The reservation against text and data mining and AI training covers those text files and the measurement files listed below only. It does not apply to any OpenStreetMap-derived or Epoch-derived file, to public-domain data or to the endoflife.date values.
+  The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, verify.py, the build code and the compilation of non-OpenStreetMap, non-Epoch data and csv/datacenters_meta.csv (which holds only the pull date) may be used, copied and changed with attribution to Heuremen LLC and https://indahl.ai/atlas. For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. The reservation against text and data mining and AI training covers those text files and the measurement files listed below only. It does not apply to any OpenStreetMap-derived or Epoch-derived file, to public-domain data or to the endoflife.date names.
 
 Measurements of the other ATLAS desks
-  Heuremen LLC's own measurements and counts from UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE. They may be used, copied and changed with attribution to Heuremen LLC and the desk page. That permission does not include text and data mining or use as AI training data, as the desk pages state. The endoflife.date values stay under the MIT License.
+  Heuremen LLC's own measurements and counts from UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE. They may be used, copied and changed with attribution to Heuremen LLC and the desk page. That permission does not include text and data mining or use as AI training data, as the desk pages state. The UPTIME, SECRECORDS, SUPPORT and CHANGE files are results only, with every source value left out as in each desk's own data pack. The endoflife.date names stay under the MIT License.
   - json/uptime.json
-  - csv/uptime_incidents.csv
   - csv/uptime_meta.csv
   - csv/uptime_vendors.csv
   - json/time.json

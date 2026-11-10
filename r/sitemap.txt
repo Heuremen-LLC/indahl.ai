@@ -1262,6 +1262,7 @@
 /r/live.cone.headline	2026-11-10
 /r/live.cone.v20261110T162303Z	2026-11-10
 /r/live.credit.headline	2026-11-10
+/r/live.credit.v20261110T183430Z	2026-11-10
 /r/live.fedsep.headline	2026-11-10
 /r/live.fedsep.v20261110T120408Z	2026-11-10
 /r/live.flu.headline	2026-11-10

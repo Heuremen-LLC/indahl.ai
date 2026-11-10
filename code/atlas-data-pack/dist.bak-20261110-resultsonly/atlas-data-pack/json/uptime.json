@@ -1,0 +1,746 @@
+{
+ "updated": "10 Nov 13:21",
+ "seats": [
+  "github-azure",
+  "mac",
+  "pi"
+ ],
+ "seats_counted": "the Mac and the Pi count as one seat",
+ "floor_upper_bound": 0.0126,
+ "buckets": 1720,
+ "control": {
+  "rounds": 301,
+  "misses": 0,
+  "floor": 0.0,
+  "targets": [
+   "control: 1.1.1.1",
+   "control: example.com"
+  ]
+ },
+ "vendors": [
+  {
+   "vendor": "GitHub",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Degraded availability for GPT-5.3 Codex and GPT-5.6 models in Copilot",
+     "impact": "major",
+     "started": "2026-11-09T23:16:32.233Z",
+     "resolved": "2026-11-10T00:05:52.345Z"
+    },
+    {
+     "name": "Incident with Actions and Checks API",
+     "impact": "critical",
+     "started": "2026-11-09T18:12:37.242Z",
+     "resolved": "2026-11-09T18:59:32.565Z"
+    },
+    {
+     "name": "Incident with Webhooks and Actions",
+     "impact": "major",
+     "started": "2026-11-09T10:00:35.232Z",
+     "resolved": "2026-11-09T11:50:35.774Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.89,
+   "episodes": 0,
+   "rounds": 150,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 150,
+   "reach": {
+    "mac": 99.4,
+    "pi": 97.4,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Cloudflare",
+   "indicator_now": "major",
+   "incidents": [
+    {
+     "name": "Account Analytics Filter Issue",
+     "impact": "minor",
+     "started": "2026-11-10T08:02:37.766Z",
+     "resolved": "2026-11-10T08:45:13.933Z"
+    },
+    {
+     "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+     "impact": "minor",
+     "started": "2026-11-10T01:53:58.905Z",
+     "resolved": null
+    },
+    {
+     "name": "Changes made to Workers may be delayed or disrupted",
+     "impact": "minor",
+     "started": "2026-11-09T16:15:26.798Z",
+     "resolved": "2026-11-10T01:46:28.887Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Discord",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Connectivity Issue w/ Discord's Homepage and Marketing Sites",
+     "impact": "major",
+     "started": "2026-11-09T09:05:03.041-08:00",
+     "resolved": "2026-11-09T09:05:03.172-08:00"
+    },
+    {
+     "name": "Issues establishing voice call",
+     "impact": "major",
+     "started": "2026-10-31T08:26:29.258-07:00",
+     "resolved": "2026-10-31T14:43:44.392-07:00"
+    },
+    {
+     "name": "Issues establishing voice calls",
+     "impact": "major",
+     "started": "2026-10-30T08:23:30.627-07:00",
+     "resolved": "2026-10-30T09:18:51.314-07:00"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 100.0,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "npm",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Minor issues impacting package publish",
+     "impact": "minor",
+     "started": "2026-11-07T14:28:25.152Z",
+     "resolved": "2026-11-07T15:05:04.230Z"
+    },
+    {
+     "name": "View package and auth outage on npmjs.com",
+     "impact": "major",
+     "started": "2026-10-26T05:54:32.531Z",
+     "resolved": "2026-10-26T06:30:18.628Z"
+    },
+    {
+     "name": "Degraded Publish, Install, and View Package",
+     "impact": "minor",
+     "started": "2026-10-22T06:43:54.961Z",
+     "resolved": "2026-10-22T11:59:57.053Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.89,
+   "episodes": 0,
+   "rounds": 150,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 150,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "PyPI",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "PyPI Backends Partial Availability",
+     "impact": "major",
+     "started": "2026-10-02T01:15:43.811Z",
+     "resolved": "2026-10-02T01:32:32.701Z"
+    },
+    {
+     "name": "Multiple services unavailable",
+     "impact": "none",
+     "started": "2026-10-01T11:13:03.628Z",
+     "resolved": "2026-10-01T11:18:46.513Z"
+    },
+    {
+     "name": "Issues with search, logins and logged-in pages",
+     "impact": "minor",
+     "started": "2026-09-28T12:42:45.256Z",
+     "resolved": "2026-09-29T01:24:58.361Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.89,
+   "episodes": 0,
+   "rounds": 150,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 150,
+   "reach": {
+    "mac": 100.0,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Docker",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Degraded performance and intermittent availability on Docker Hub",
+     "impact": "minor",
+     "started": "2026-10-21T14:14:01Z",
+     "resolved": "2026-10-21T15:39:58Z"
+    },
+    {
+     "name": "Hub Registry Authenticated Actions Failing",
+     "impact": "major",
+     "started": "2026-10-09T21:45:20Z",
+     "resolved": "2026-10-09T21:55:50Z"
+    },
+    {
+     "name": "Issues viewing newly pushed images and tags",
+     "impact": "major",
+     "started": "2026-09-14T13:29:16Z",
+     "resolved": "2026-09-14T13:34:44Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.8,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Netlify",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Elevated build and deploy failures",
+     "impact": "minor",
+     "started": "2026-11-04T17:15:39.013Z",
+     "resolved": "2026-11-04T17:21:17.856Z"
+    },
+    {
+     "name": "Delays in build logs appearing in the UI",
+     "impact": "minor",
+     "started": "2026-11-02T00:15:36.287Z",
+     "resolved": "2026-11-02T09:12:31.585Z"
+    },
+    {
+     "name": "Elevated Build Errors and Agent Runner failures",
+     "impact": "major",
+     "started": "2026-10-27T07:48:36.339Z",
+     "resolved": "2026-10-27T08:45:08.494Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Vercel",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Build delays and degraded Vercel Dashboard performance",
+     "impact": "minor",
+     "started": "2026-11-05T18:25:10.527Z",
+     "resolved": "2026-11-05T18:50:23.107Z"
+    },
+    {
+     "name": "Delays in Logs and Observability data",
+     "impact": "minor",
+     "started": "2026-10-23T16:31:02.356Z",
+     "resolved": "2026-10-23T17:32:46.892Z"
+    },
+    {
+     "name": "Increased build and deployment failures",
+     "impact": "major",
+     "started": "2026-10-12T13:35:07.398Z",
+     "resolved": "2026-10-12T20:11:12.778Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 1,
+   "quiet": 150,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "DigitalOcean",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Kubernetes Cluster Management Operations",
+     "impact": "major",
+     "started": "2026-10-27T22:14:46.900Z",
+     "resolved": "2026-10-28T01:55:12.407Z"
+    },
+    {
+     "name": "App Platform Deployments",
+     "impact": "none",
+     "started": "2026-10-13T17:09:47.490Z",
+     "resolved": "2026-10-13T17:09:47.560Z"
+    },
+    {
+     "name": "DNS Resolution for Managed Kubernetes",
+     "impact": "minor",
+     "started": "2026-10-11T22:01:39.863Z",
+     "resolved": "2026-10-11T23:29:01.690Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.89,
+   "episodes": 0,
+   "rounds": 150,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 1,
+   "quiet": 149,
+   "reach": {
+    "mac": 99.8,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Atlassian",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Issues with 403 user authentication errors across Atlassian products",
+     "impact": "none",
+     "started": "2025-03-04T07:31:46.048Z",
+     "resolved": "2025-03-04T07:31:46.088Z"
+    },
+    {
+     "name": "Slowness in Jira.",
+     "impact": "none",
+     "started": "2024-09-02T09:23:21.124Z",
+     "resolved": "2024-09-10T13:15:07.668Z"
+    },
+    {
+     "name": "Slow loading times and extended response times for Cloud products in the EU-West region.",
+     "impact": "none",
+     "started": "2024-09-10T10:26:14.585Z",
+     "resolved": "2024-09-10T12:43:48.654Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Twilio",
+   "indicator_now": "minor",
+   "incidents": [
+    {
+     "name": "WhatsApp Business API Message Send Failures",
+     "impact": "minor",
+     "started": "2026-11-09T12:32:47.259-08:00",
+     "resolved": "2026-11-10T05:02:00.206-08:00"
+    },
+    {
+     "name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Chile",
+     "impact": "minor",
+     "started": "2026-11-09T08:53:55.325-08:00",
+     "resolved": "2026-11-10T04:14:23.297-08:00"
+    },
+    {
+     "name": "Gateway API (Lookup API) Failure Increase on Verizon in United States",
+     "impact": "minor",
+     "started": "2026-11-09T21:42:49.495-08:00",
+     "resolved": null
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Datadog",
+   "indicator_now": "none",
+   "incidents": [],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 0.0,
+   "episodes": 0,
+   "rounds": 0,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 0,
+   "reach": {
+    "mac": 100.0,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Zoom",
+   "indicator_now": "maintenance",
+   "incidents": [
+    {
+     "name": "Service Degradation Affecting a subset of users with ZVA and ZoomMate",
+     "impact": "none",
+     "started": "2026-11-09T17:08:06.919-08:00",
+     "resolved": "2026-11-09T17:08:07.068-08:00"
+    },
+    {
+     "name": "Service Degradation Affecting Zoom Inbound SMS Service in the AU region",
+     "impact": "minor",
+     "started": "2026-11-08T16:07:48.240-08:00",
+     "resolved": "2026-11-08T17:08:13.169-08:00"
+    },
+    {
+     "name": "Service Degradation Affecting Zoom Mail, Calendar and Scheduler.",
+     "impact": "minor",
+     "started": "2026-11-05T19:32:15.277-08:00",
+     "resolved": "2026-11-05T21:09:23.146-08:00"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.8,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Dropbox",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Some customers are unable to access certain website routes and features.",
+     "impact": "major",
+     "started": "2026-09-09T21:36:10.294Z",
+     "resolved": "2026-09-09T22:35:21.683Z"
+    },
+    {
+     "name": "Customer support via telephone may be unavailable for some users",
+     "impact": "minor",
+     "started": "2026-09-03T22:13:35.477Z",
+     "resolved": "2026-09-04T05:02:56.500Z"
+    },
+    {
+     "name": "Some Dropbox Protect features are not working correctly",
+     "impact": "minor",
+     "started": "2026-08-25T23:14:32.000Z",
+     "resolved": "2026-08-26T11:01:25.652Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Anthropic",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Degraded performance for Claude Fable 5.1",
+     "impact": "minor",
+     "started": "2026-11-08T08:28:32.818Z",
+     "resolved": "2026-11-08T08:54:43.667Z"
+    },
+    {
+     "name": "Elevated errors affecting the Google Calendar connector",
+     "impact": "minor",
+     "started": "2026-10-28T16:19:09.946Z",
+     "resolved": "2026-10-28T20:05:18.208Z"
+    },
+    {
+     "name": "Elevated errors affecting the Gmail connector",
+     "impact": "minor",
+     "started": "2026-10-28T03:59:32.234Z",
+     "resolved": "2026-10-28T05:48:13.126Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 1,
+   "quiet": 150,
+   "reach": {
+    "mac": 99.8,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "OpenAI",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Incorrect cost data in Costs API exports",
+     "impact": "none",
+     "started": "2026-11-10T04:42:21Z",
+     "resolved": "2026-11-10T07:02:33Z"
+    },
+    {
+     "name": "Elevated Errors On API",
+     "impact": "minor",
+     "started": "2026-11-09T23:08:12Z",
+     "resolved": "2026-11-09T23:50:46Z"
+    },
+    {
+     "name": "Elevated ChatGPT Conversation Errors",
+     "impact": "minor",
+     "started": "2026-11-09T18:16:30Z",
+     "resolved": "2026-11-09T19:08:31Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.89,
+   "episodes": 0,
+   "rounds": 150,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 1,
+   "quiet": 149,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Reddit",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Investigating elevated errors across reddit.com and native apps",
+     "impact": "none",
+     "started": "2026-10-07T12:58:52.875-07:00",
+     "resolved": "2026-10-07T13:55:28.539-07:00"
+    },
+    {
+     "name": "Mods Unable to Approve Content",
+     "impact": "minor",
+     "started": "2026-09-22T17:23:28.770-07:00",
+     "resolved": "2026-09-22T18:27:11.818-07:00"
+    },
+    {
+     "name": "Elevated site errors",
+     "impact": "major",
+     "started": "2026-09-01T12:51:37.979-07:00",
+     "resolved": "2026-09-01T14:24:05.849-07:00"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.8,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Linear",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Project pages failing to load",
+     "impact": "minor",
+     "started": "2026-10-30T14:53:29Z",
+     "resolved": "2026-10-30T14:57:04Z"
+    },
+    {
+     "name": "Some Slack integrations have been unexpectedly archived",
+     "impact": "none",
+     "started": "2026-10-28T20:12:32Z",
+     "resolved": "2026-10-28T21:09:31Z"
+    },
+    {
+     "name": "Problems loading application",
+     "impact": "major",
+     "started": "2026-10-27T08:07:28Z",
+     "resolved": "2026-10-27T08:22:00Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Sentry",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "Ingestion delays across all data",
+     "impact": "minor",
+     "started": "2026-11-04T17:31:30.344Z",
+     "resolved": "2026-11-04T18:41:32.904Z"
+    },
+    {
+     "name": "Delays in spans and transactions processing",
+     "impact": "major",
+     "started": "2026-11-03T15:40:37.817Z",
+     "resolved": "2026-11-03T17:25:41.808Z"
+    },
+    {
+     "name": "Sentry.io dashboard and API is down",
+     "impact": "critical",
+     "started": "2026-11-03T14:57:34.679Z",
+     "resolved": "2026-11-03T16:30:08.746Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 0,
+   "quiet": 151,
+   "reach": {
+    "mac": 99.9,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  },
+  {
+   "vendor": "Notion",
+   "indicator_now": "none",
+   "incidents": [
+    {
+     "name": "PHP2Shell (CVE-2026-109618, CVE-2026-109619)",
+     "impact": "none",
+     "started": "2026-10-23T00:14:55Z",
+     "resolved": "2026-10-26T18:24:26Z"
+    },
+    {
+     "name": "Security update: Preventative certificate security measures",
+     "impact": "none",
+     "started": "2026-10-20T19:00:35Z",
+     "resolved": "2026-10-26T18:23:55Z"
+    },
+    {
+     "name": "Users unable to access Notion",
+     "impact": "critical",
+     "started": "2026-10-23T03:38:19Z",
+     "resolved": "2026-10-23T06:44:30Z"
+    }
+   ],
+   "outcome": "CANNOT_TELL",
+   "expected_from_floor": 1.9,
+   "episodes": 0,
+   "rounds": 151,
+   "disagree": 0,
+   "confirm": 0,
+   "blips": 1,
+   "quiet": 150,
+   "reach": {
+    "mac": 99.8,
+    "pi": 100.0,
+    "github-azure": 100.0
+   }
+  }
+ ],
+ "totals": {
+  "CANNOT_TELL": 20
+ }
+}

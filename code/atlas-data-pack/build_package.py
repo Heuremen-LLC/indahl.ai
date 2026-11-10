@@ -1,7 +1,7 @@
 """build_package.py: assembles the ATLAS Data Pack from the live ATLAS data files into dist/atlas-data-pack/ and zips it.
 Writes the original JSON unchanged, one CSV per table, GeoJSON for point data, SOURCES.md, NOTICE.txt, README, START_HERE.html and verify.py.
 Refuses if any text file names a local path, a key file, a token, an email address, or breaks the house wording rules.
-Builds locally only. Nothing is published."""
+Builds locally only. Nothing is published. UPTIME, SECRECORDS, SUPPORT and CHANGE are results only, filtered as tools/desk_pack.py filters their own packs."""
 import os, shutil, re, zipfile, hashlib, html, json, csv, importlib.util
 B = os.path.expanduser('~/bones-forge/'); H = os.path.dirname(os.path.abspath(__file__)); D = H + '/dist/atlas-data-pack'
 SRC = B + 'cloudflare-workers/heuremen-door/public/atlas/'
@@ -19,10 +19,25 @@ for f in FILES:
     shutil.copyfile(SRC + f + '.json', D + f'/json/{f}.json')
     assert open(SRC + f + '.json', 'rb').read() == open(D + f'/json/{f}.json', 'rb').read()
     data[f] = json.load(open(SRC + f + '.json', encoding='utf-8'))
+# 10 Nov 2026 (ATLAS pack fix): the desks whose own pack is results only (tools/desk_pack.py lic 'results': UPTIME, SECRECORDS, SUPPORT, CHANGE)
+# go in through the same filter that desk pack uses, so this pack never carries a source value that the desk's own pack leaves out
+# (incident titles and impact, quoted records, end-of-life dates, change notes and links). raw[] keeps the unfiltered snapshot for the build checks only.
+_dsp = importlib.util.spec_from_file_location('desk_pack', B + 'tools/desk_pack.py'); DP = importlib.util.module_from_spec(_dsp); _dsp.loader.exec_module(DP)
+RO = [f for f in SNAPS if f in DP.DESKS and DP.DESKS[f]['lic'] == 'results']
+assert RO == ['uptime', 'secrecords', 'support', 'change'], ('results-only desks changed, check LICENSE.txt item 5 and the README', RO)
+raw = {}
 for f in SNAPS:
-    shutil.copyfile(SNAP + f + '.json', D + f'/json/{f}.json')
-    assert open(SNAP + f + '.json', 'rb').read() == open(D + f'/json/{f}.json', 'rb').read()
-    data[f] = json.load(open(SNAP + f + '.json', encoding='utf-8'))
+    raw[f] = json.load(open(SNAP + f + '.json', encoding='utf-8'))
+    if f in RO:
+        open(D + f'/json/{f}.json', 'wb').write((json.dumps(DP.filt(raw[f]), indent=1, ensure_ascii=False) + '\n').encode())
+        data[f] = json.load(open(D + f'/json/{f}.json', encoding='utf-8'))
+        assert data[f] == DP.filt(raw[f])
+        _keys = {k for p_, _ in DP.leaves(data[f]) for k in re.findall(r'/([^/\[]+)', p_)}
+        assert not _keys & {'incidents', 'title', 'impact', 'url', 'note', 'record', 'eol', 'last', 'claim', 'deprecated', 'shutdown', 'was', 'now', 'date', 'reach', 'indicator_now'}, (f, _keys)
+    else:
+        shutil.copyfile(SNAP + f + '.json', D + f'/json/{f}.json')
+        assert open(SNAP + f + '.json', 'rb').read() == open(D + f'/json/{f}.json', 'rb').read()
+        data[f] = raw[f]
 # 2. CSV and GeoJSON
 def put_csv(path, header, rows):
     with open(path, 'w', newline='', encoding='utf-8-sig') as fh:
@@ -63,7 +78,7 @@ tok.update({k: f'{v:,}' for k, v in {'N_WATER_REPORTS': _wc['reports'], 'N_WATER
 tok.update({'WATER_UPDATED': W['updated'], 'WATER_FIRST_ISSUE': _wc['first_issue'], 'WATER_LAST_ISSUE': _wc['last_issue'], 'WATER_MEASURED_LAST': _wc['measured_last']['mead'],
             'WATER_FIRST_READ': W['usgs_revisions']['first_read'], 'WATER_CDEC_NAMES': ' and '.join(o['name'] for o in W['live']['others'] if 'CDEC' in o['agency'])})
 assert _wc['measured_last']['mead'] == _wc['measured_last']['powell'] and W['gate'] == 'passed' and not W['stale_sources'], 'water snapshot is not a clean run'
-_u, _t, _c, _s, _se, _su, _ch = (data[k] for k in ('uptime', 'time', 'cada', 'secrecords', 'seat', 'support', 'change'))
+_u, _t, _c, _s, _se, _su, _ch = (raw[k] for k in ('uptime', 'time', 'cada', 'secrecords', 'seat', 'support', 'change'))   # counts only, from the unfiltered snapshot
 tok.update({k: f'{v:,}' for k, v in {'N_UP_VENDORS': len(_u['vendors']), 'N_UP_INC': sum(len(v['incidents']) for v in _u['vendors']), 'N_TIME_SERVERS': len(_t['servers']),
             'N_CADA_RES': len(_c['resolvers']), 'N_SEC_DOMAINS': _s['domains'], 'N_SEC_FULL': len(_s['disagree_list']), 'N_SEAT_INC': len(_se['incidents']), 'N_SEAT_FEEDS': len(_se['feeds']),
             'N_SUP_PRODUCTS': _su['products'], 'N_SUP_CYCLES': _su['cycles'], 'N_SUP_BYPROD': len(_su['by_product']), 'N_SUP_SILENT': len(_su['silent_list']),

@@ -7,6 +7,13 @@ authors:
 version: "2026-11-10"
 date-released: "2026-11-10"
 doi: "10.5281/zenodo.23874305"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23874305"
+    description: "All versions. Resolves to the newest version."
+  - type: doi
+    value: "10.5281/zenodo.24110654"
+    description: "This version, 2026-11-10."
 url: "https://indahl.ai/atlas/data-pack"
 repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
 keywords: [data centers, power plants, electricity prices, carbon intensity, OpenStreetMap, EIA, eGRID, GeoJSON]

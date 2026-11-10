@@ -1,0 +1,24 @@
+﻿key,value
+built,2026-10-30
+hours_per_year,8760
+price_year,2024
+unit_price,cents per kilowatthour
+unit_cost,dollars per year
+method,"For each Epoch AI site that states a current power and sits in a state: stated megawatts x 8,760 hours x the average price paid by industrial customers in that state in 2024 (EIA-861 sales table, revenue divided by sales), expressed in dollars. The commercial column is the same arithmetic at the state commercial price. This is full stated power for a full year at a state average price. It is not any site's contract price or bill and not a forecast. The state comes from the geocoded point, or from the state named in Epoch's own address text where the geocoders found no point."
+sources.power,"Epoch AI, AI data centers (CC BY 4.0), field Current power (MW), pulled 28 Oct 2026"
+sources.price,"EIA-861 2024, Sales to Ultimate Customers, computed in electricity/electricity.json by build_electricity.py"
+totals.sites_us,77
+totals.with_power,60
+totals.placed,69
+totals.counted,57
+totals.not_counted_with_power,3
+totals.with_power_mw_not_counted,449
+totals.not_placed,8
+totals.without_power,17
+totals.total_mw,"11,560.33"
+totals.total_twh,101.3
+totals.total_musd,"7,419.0"
+totals.total_busd,7.4
+totals.total_musd_commercial,"10,807.1"
+totals.total_busd_commercial,10.8
+totals.states_with_sites,25

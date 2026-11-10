@@ -111,9 +111,9 @@ TABLES = {
     'water_reservoirs': ('water.json', lambda d: d['live']['others'], lambda d: len(d['live']['others']), False),
     'water_thresholds': ('water.json', lambda d: d['live']['thresholds'], lambda d: len(d['live']['thresholds']), False),
     'water_usgs_revisions': ('water.json', lambda d: with_(d['usgs_revisions']['gauges'], first_read=d['usgs_revisions']['first_read']), lambda d: len(d['usgs_revisions']['gauges']), False),
-    # the other desks listed under ATLAS (10 Nov 2026): each JSON is the desk's live.json as served, with updated (UTC, day and month) on every row
+    # the other desks listed under ATLAS (10 Nov 2026): TIME, CADA and SEAT are the desk's live.json as served, UPTIME, SECRECORDS, SUPPORT and CHANGE
+    # are results only (our counts, outcomes, intervals and labels, as each desk's own pack holds them), with updated (UTC, day and month) on every row
     'uptime_vendors': ('uptime.json', lambda d: with_(d['vendors'], updated=d['updated']), lambda d: len(d['vendors']), False),
-    'uptime_incidents': ('uptime.json', lambda d: [dict(vendor=v['vendor'], **i) for v in d['vendors'] for i in v['incidents']], lambda d: sum(len(v['incidents']) for v in d['vendors']), False),
     'time_servers': ('time.json', lambda d: with_(d['servers'], updated=d['updated']), lambda d: len(d['servers']), False),
     'cada_checkpoints': ('cada.json', cada_rows, lambda d: sum(len(r['checkpoints']) for r in d['resolvers']), False),
     'cada_answer_classes': ('cada.json', lambda d: [dict({'resolver': r['resolver']}, **r['classes'], updated=d['updated']) for r in d['resolvers']], lambda d: len(d['resolvers']), False),
@@ -152,13 +152,13 @@ META = {
     'water': lambda d: dict({k: d[k] for k in ('updated', 'gate', 'stale_sources', 'coverage', 'headline_lead6', 'checks_after_data_note', 'measured_cross_checks')},
                             flagged={k: v for k, v in d['flagged'].items() if k != 'groups'}, band_sentence_months={k: v for k, v in d['band_sentence_months'].items() if k != 'cells'},
                             live={k: v for k, v in d['live'].items() if k not in ('others', 'thresholds')}),
-    'uptime': ['updated', 'seats', 'seats_counted', 'floor_upper_bound', 'buckets', 'control', 'totals'],
+    'uptime': ['updated', 'buckets', 'control', 'totals'],
     'time': ['updated', 'seat', 'reference', 'seat_part_ms', 'totals', 'rounds', 'seat2'],
     'cada': ['updated', 'tracked', 'feed_reads'],
     'secrecords': ['updated', 'gate', 'domains', 'awaiting', 'listdate'],
     'seat': ['updated', 'probes', 'failed_controls', 'last_probe', 'flagged_probes', 'not_matching'],
     'support': ['updated', 'gate', 'products', 'no_cycles', 'cycles', 'supported_tested', 'apart'],
-    'change': ['updated', 'first_snapshot', 'rows'],
+    'change': ['updated', 'rows'],
 }
 
 def meta_of(ds, d):

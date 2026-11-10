@@ -1,0 +1,13 @@
+﻿url,date,kind,item,vendor,was,now,note,updated
+https://developers.openai.com/api/docs/deprecations,2026-11-10,NEW,gpt-image-2 | gpt-image-2-2026-04-21,OpenAI,2027-02-10,,,10 Nov 11:51
+https://platform.claude.com/docs/en/about-claude/model-deprecations,2026-11-09,NEW,claude-mythos-5-2,Anthropic,2027-11-09,,,10 Nov 11:51
+https://platform.claude.com/docs/en/about-claude/model-deprecations,2026-11-09,NEW,claude-fable-5-2,Anthropic,2027-11-09,,,10 Nov 11:51
+https://ai.google.dev/gemini-api/docs/deprecations,2026-11-06,MOVED_LATER,gemini-embedding-2-preview,Google,2026-08-10,2026-11-06,,10 Nov 11:51
+https://developers.cloudflare.com/deprecations/,2026-11-05,NEW,Load Balancing monitors and Health Checks: Legacy TLS cipher suites,Cloudflare,2027-02-01,,,10 Nov 11:51
+https://developers.openai.com/api/docs/deprecations,2026-11-05,NEW,gpt-5.5-cyber-preview,OpenAI,2027-02-01,,,10 Nov 11:51
+https://ai.google.dev/gemini-api/docs/deprecations,2026-11-05,DATE_ADDED,gemini-omni-1.1-flash,Google,,2026-12-03,,10 Nov 11:51
+https://ai.google.dev/gemini-api/docs/deprecations,2026-11-05,NEW,gemini-omni-1.2-flash,Google,,,,10 Nov 11:51
+https://ai.google.dev/gemini-api/docs/deprecations,2026-11-03,REMOVED,embedding-2-preview,Google,2026-08-10,,,10 Nov 11:51
+https://ai.google.dev/gemini-api/docs/deprecations,2026-11-03,NEW,gemini-embedding-2-preview,Google,2026-08-10,,,10 Nov 11:51
+https://ai.google.dev/gemini-api/docs/deprecations,2026-11-02,DATE_ADDED,gemini-2.5-flash,Google,,2026-12-01,,10 Nov 11:51
+https://ai.google.dev/gemini-api/docs/deprecations,2026-11-02,DATE_ADDED,gemini-2.5-pro,Google,,2026-12-01,,10 Nov 11:51

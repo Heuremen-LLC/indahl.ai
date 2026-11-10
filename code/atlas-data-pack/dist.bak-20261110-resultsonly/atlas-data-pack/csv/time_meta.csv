@@ -1,0 +1,15 @@
+﻿key,value
+updated,10 Nov 13:16
+seat,pi
+reference.source,50505300 (PPS)
+reference.stratum,1
+reference.system_time,0.000006672 seconds slow of NTP time
+reference.rms,0.000018256 seconds
+reference.root_dispersion,0.000118047 seconds
+seat_part_ms,3.04
+totals.NOTHING_RETURNED,2
+totals.CANNOT_TELL,34
+rounds,49
+seat2.name,GitHub runner network
+seat2.seat_part_ms,0.53
+seat2.updated,10 Nov 13:16

@@ -1,0 +1,78 @@
+﻿source,name,operator,mw,h100e,capex_usd_b,address,lat,lon,place_method,place_match,pulled
+Epoch AI,Colossus 2,SpaceXAI,946.0,1111672.5618999496,35.836372,"5420 Tulane Rd, Memphis, TN 38109",34.9994880087,-90.042976440198,address match,"5420 TULANE RD, MEMPHIS, TN, 38109",2026-10-28
+Epoch AI,Anthropic-Amazon New Carlisle,Amazon,1037.0,818428.4992420415,39.283634,"55001 Larrison Blvd, New Carlisle, IN 46552",41.693774125775,-86.460524297175,address match,"55001 LARRISON DR, NEW CARLISLE, IN, 46552",2026-10-28
+Epoch AI,Microsoft Fairwater Atlanta,Microsoft,636.0,768768.7220818596,24.092952,"1435 Hwy 54 W, Fayetteville, GA 30214",33.445340546204,-84.525446609061,address match,"1435 STATE RTE 54, FAYETTEVILLE, GA, 30214",2026-10-28
+Epoch AI,Google Pryor (North),Google,368.0,636685.1945426983,13.940576,"4581 Webb St, Pryor, OK 74361",36.2411721,-95.3300473,nominatim address,,2026-10-28
+Epoch AI,Meta Prometheus,Meta,471.0,536343.0015159171,17.842422,"1 Community Cir, New Albany, OH 43054",40.0811745,-82.8087864,nominatim city/zip only,,2026-10-28
+Epoch AI,OpenAI Stargate Abilene,Oracle,421.0,509348.15563415864,15.948322,"5502 Spinks Rd, Abilene, TX 79601",32.4942321,-99.8009071,nominatim address,,2026-10-28
+Epoch AI,Microsoft Fairwater Wisconsin,Microsoft,369.0,445679.63617988885,13.978458,"4800 90th St, Mount Pleasant, WI 53403",42.674891499261,-87.894853580498,address match,"4800 90TH ST, MOUNT PLEASANT, WI, 53403",2026-10-28
+Epoch AI,Google Columbus,Google,303.0,331985.85144012125,11.478245999999999,"5076 S High St, Columbus, OH 43207",39.8614521,-83.0039995,nominatim address,,2026-10-28
+Epoch AI,Google New Albany,Google,333.0,323900.9600808489,12.614706,"1101 Beech Rd SW, New Albany, OH 43054",40.070051,-82.754042,nominatim address,,2026-10-28
+Epoch AI,Google Mesa,Google,183.0,289540.17180394137,6.932405999999999,,,,,,2026-10-28
+Epoch AI,Colossus 1,SpaceXAI,340.0,275795.85649317835,12.87988,"3231 Riverport Rd, Memphis, TN 38109",35.0691616,-90.0972869,nominatim address,,2026-10-28
+Epoch AI,Google Council Bluffs (East),Google,237.0,255684.68923698837,8.978034,"10410 Bunge Ave, Council Bluffs, IA 51503",41.167418141276,-95.793107634728,address match,"10410 BUNGE AVE, COUNCIL BLUFFS, IA, 51503",2026-10-28
+Epoch AI,CoreWeave Denton TX,CoreWeave,262.0,252652.85497726125,9.925084,"8171 Jim Christal Rd, Denton, TX 76207",33.2192732,-97.174715,nominatim address,,2026-10-28
+Epoch AI,QTS Richmond 1,,238.0,242546.7407781708,9.015915999999999,"6000 Technology Blvd, Sandston, VA 23150",37.4888273,-77.24749,nominatim address,,2026-10-28
+Epoch AI,Meta Rosemount,Meta,178.0,215675.11520970188,6.742996,"1772-2396 145th St, Rosemount, MN 55068, USA",44.738819595512,-93.057004685235,address match,"2396 145TH ST E, ROSEMOUNT, MN, 55068",2026-10-28
+Epoch AI,Amazon Madison Mega Site,Amazon,284.0,214348.14354550533,10.758488,"Amazon Data Services Inc, Madison Mega Site Nissan Parkway and Highway 22 Canton, Mississippi Madison County",,,,,2026-10-28
+Epoch AI,Google Bristow,Google,238.0,209860.53562405254,9.015915999999999,"13001 Rollins Ford Road, Bristow, VA 20136",38.782544165202,-77.57971701769,address match,"13001 ROLLINS FORD RD, BRISTOW, VA, 20136",2026-10-28
+Epoch AI,Microsoft Goodyear,Microsoft,202.0,205154.11824153614,7.652164000000001,"14250 W Broadway Rd, Goodyear, AZ 85338",33.4089905,-112.3647996,nominatim address,,2026-10-28
+Epoch AI,Meta Jeffersonville,Meta,178.0,203132.89540171804,6.742996,"500 8th St, Jeffersonville, IN 47130, USA",38.279118096229,-85.739096631921,address match,"500 E 8TH ST, JEFFERSONVILLE, IN, 47130",2026-10-28
+Epoch AI,Google Kansas City East,Google,105.0,202627.5896917635,3.9776099999999994,,,,,,2026-10-28
+Epoch AI,Meta Temple,Meta,178.0,202472.98777125112,6.742996,"2310 Eberhardt Rd, Temple, TX 76504",31.1259599,-97.3598178,nominatim address,,2026-10-28
+Epoch AI,AWS New Albany,Amazon,213.0,201111.67256189996,8.068866,13360 Miller Rd NW,40.1157846,-82.7390187,nominatim address,,2026-10-28
+Epoch AI,Google Omaha,Google,237.0,198585.14401212733,8.978034,"11110 State St, Omaha, NE 68142",41.335728085545,-96.088471406098,address match,"11110 STATE ST, OMAHA, NE, 68142",2026-10-28
+Epoch AI,Google Lincoln,Google,141.0,197574.53259221828,5.341361999999999,"5475 Cloud Ct, Lincoln, NE 68514",40.907472,-96.6457832,nominatim address,,2026-10-28
+Epoch AI,QTS Richmond 2,,180.0,182920.66700353715,6.818759999999999,"6030–6070 Technology Blvd, Sandston, VA 23150",37.5234794,-77.3158118,nominatim city/zip only,,2026-10-28
+Epoch AI,Google The Dalles,Google,154.0,175341.0813542193,5.8338280000000005,"3500 River Rd, The Dalles, OR",45.6253889,-121.2023887,nominatim address,,2026-10-28
+Epoch AI,QTS Richmond 3,,144.0,174835.77564426477,5.455007999999999,"3525–3543 Portugee Rd, Sandston, VA 23150",37.5234794,-77.3158118,nominatim city/zip only,,2026-10-28
+Epoch AI,Meta Montgomery,Meta,153.0,174517.43304699342,5.795946,"Co Rd 42, Montgomery, AL 36105, USA",32.26499674362,-86.363511872502,address match,"42 COUNTY CT, MONTGOMERY, AL, 36105",2026-10-28
+Epoch AI,Meta Kuna,Meta,152.0,173247.67205659422,5.758064,"601 Kuna Mora Rd,  Kuna ID 83634",43.459233402117,-116.421077193242,address match,"601 KUNA MORA RD, KUNA, ID, 83634",2026-10-28
+Epoch AI,Meta Cheyenne,Meta,152.0,172814.5528044467,5.758064,"Cheyenne, WY 82007, USA",41.139981,-104.820246,nominatim address,,2026-10-28
+Epoch AI,Amazon Ridgeland,Amazon,228.0,171298.6356745831,8.637096,"1626 County Line Road Ridgeland, Mississippi",32.399543508385,-90.120485603023,address match,"1626 E COUNTY LINE RD, RIDGELAND, MS, 39157",2026-10-28
+Epoch AI,Meta Huntsville,Meta,146.0,166760.9903991915,5.530772,"5400 Prosperity Dr NW, Toney, AL",34.8981438,-86.7335699,nominatim city/zip only,,2026-10-28
+Epoch AI,Coreweave Helios,CoreWeave,132.0,159551.768236855,5.000424000000001,"984 County Road 112, Afton, TX 79220",33.780638980867,-100.867098637288,address match,"984 CO RD 112, AFTON, TX, 79220",2026-10-28
+Epoch AI,Microsoft Project Osmium,Microsoft,190.0,155634.15866599293,7.19758,"5855 SW Kerry St, Cumming, IA 50061",41.4833235,-93.7624442,nominatim city/zip only,,2026-10-28
+Epoch AI,Meta Eagle Mountain,Meta,133.0,151354.21930267813,5.038306,"1275 N Community Cir, Eagle Mountain, UT 84005",40.3093488,-112.0119825,nominatim city/zip only,,2026-10-28
+Epoch AI,Google Midlothian,Google,103.0,143580.85118746842,3.901846,"3250 Railport Parkway, Midlothian, TX 76065",32.438927,-97.0507991,nominatim address,,2026-10-28
+Epoch AI,Google Storey County,Google,161.0,133906.01313794847,6.0990020000000005,,,,,,2026-10-28
+Epoch AI,Meta Los Lunas,Meta,118.0,133906.01313794847,4.470076,"4250 Messenger Lp, Los Lunas, NM 87031",34.8301645,-106.7838267,nominatim address,,2026-10-28
+Epoch AI,Google Lancaster,Google,137.0,130368.8731682668,5.189834,"105 Whiley Rd, Lancaster, OH 43130",39.727031372056,-82.683111290507,address match,"105 WHILEY RD, LANCASTER, OH, 43130",2026-10-28
+Epoch AI,Meta-QTS Hillsboro 2,Meta,180.0,123839.0,6.818759999999999,"4755 NE Huffman St, Hillsboro, OR 97124",45.556953477024,-122.931942381381,address match,"4755 NE HUFFMAN ST, HILLSBORO, OR, 97124",2026-10-28
+Epoch AI,Google Arcola,Google,77.0,108135.42193026781,2.9169140000000002,"42575 Arcola Blvd, Sterling, VA 20166",39.0017455,-77.4033349,nominatim city/zip only,,2026-10-28
+Epoch AI,Google Red Oak,Google,77.0,108135.42193026781,2.9169140000000002,"330 Austin Blvd, Red Oak, TX 75154",32.529975790363,-96.799787783078,address match,"330 AUSTIN BLVD, RED OAK, TX, 75154",2026-10-28
+Epoch AI,Google Papillion,Google,237.0,100555.83628094998,8.978034,"14651-15249 Gold Coast Rd 68138 Papillion Nebraska, USA",41.1399379,-96.1437376,corrected,30 Oct 2026: nominatim way 754196077,2026-10-28
+Epoch AI,Meta Gallatin,Meta,87.0,99545.22486104093,3.2957339999999995,"1 Meta Lp, Gallatin, TN 37066",36.3883031,-86.4475898,nominatim city/zip only,,2026-10-28
+Epoch AI,CoreWeave Ellendale ND,CoreWeave,68.0,93481.55634158666,2.5759760000000003,"9685 87th Ave SE, Ellendale, ND 58436",46.00614270139,-98.568735689845,address match,"9685 87TH AVE SE, ELLENDALE, ND, 58436",2026-10-28
+Epoch AI,Meta Sarpy,Meta,80.0,91965.63921172309,3.03056,"14436-14998 Fairview Rd, Springfield, NE 68059, USA",41.103572416149,-96.147913090146,address match,"14998 FAIRVIEW RD, SPRINGFIELD, NE, 68059",2026-10-28
+Epoch AI,CoreWeave Chester VA,CoreWeave,82.0,88428.49924204143,3.106324,"1401 Meadowville Technology Parkway, Chester, VA",37.361745240614,-77.325259396826,address match,"1401 MEADOWVILLE TECHNOLOGY PKWY, CHESTER, VA, 23836",2026-10-28
+Epoch AI,AWS Berwick,Amazon,108.0,81354.21930267812,4.091256,"1125 Electron Ave, Berwick, PA 18603",41.0838485,-76.1435333,nominatim address,,2026-10-28
+Epoch AI,CoreWeave Marble NC,CoreWeave,65.0,78827.6907529055,2.46233,"155 Palmer Ln, Marble, NC 28905",35.184986531552,-83.914091369842,address match,"155 PALMER LN, MARBLE, NC, 28905",2026-10-28
+Epoch AI,Meta Aiken,Meta,69.0,78322.38504295099,2.613858,"7601 State Hwy 105, Trenton, SC 29847, USA",33.7416558,-81.8423388,nominatim city/zip only,,2026-10-28
+Epoch AI,Core42 Lake Mariner,Core42,58.0,71753.4108135422,2.197156,"7725 Lake Rd, Barker, NY 14012",43.348940357577,-78.603357217695,address match,"7725 LAKE RD, BARKER, NY, 14012",2026-10-28
+Epoch AI,Microsoft SAT40,Microsoft,75.0,64679.13087417888,2.84115,"15000 Lambda Drive, San Antonio, TX 78245",29.4246002,-98.4951405,nominatim city/zip only,,2026-10-28
+Epoch AI,STACK Infrastructure NVA02,,85.0,61141.99090449722,3.21997,"9590 Hornbaker Rd, Manassas, VA 20109",38.749819262609,-77.535848480473,address match,"9590 HORNBAKER RD, MANASSAS, VA, 20109",2026-10-28
+Epoch AI,Anthropic Lake Mariner,AI XPV Platform,42.0,58564.93178372915,1.5910440000000001,"7725 Lake Rd, Barker, NY 14012",43.348940357577,-78.603357217695,address match,"7725 LAKE RD, BARKER, NY, 14012",2026-10-28
+Epoch AI,Microsoft-Nebius New Jersey,Nebius,50.0,56846.89236988378,1.8941,"3963 S Lincoln Ave, Vineland, New Jersey",39.428192532649,-75.018457282871,address match,"3963 S LINCOLN AVE, VINELAND, NJ, 08361",2026-10-28
+Epoch AI,Stream Phoenix,,64.0,46134.4113188479,2.424448,2950 S. Litchfield Road,33.479282344597,-112.35932850694,address match,"2950 LITCHFIELD RD BYP, GOODYEAR, AZ, 85395",2026-10-28
+Epoch AI,Microsoft SAT14,Microsoft,47.0,45174.33046993431,1.7804540000000002,"3545 Wiseman Boulevard, San Antonio, TX 78251",29.473182459994,-98.681508657437,address match,"3545 WISEMAN BLVD, SAN ANTONIO, TX, 78251",2026-10-28
+Epoch AI,Vantage TX1,,32.0,38706.417382516425,1.212224,"14720 Omicron Dr, San Antonio, TX 78245",29.416683531254,-98.788564103486,address match,"14720 OMICRON DR, SAN ANTONIO, TX, 78245",2026-10-28
+Epoch AI,CoreWeave Dalton 1 & 2,CoreWeave,28.0,32238.504295098533,1.060696,"2205 Industrial South Rd, Dalton, GA, 30721",34.713506892783,-84.952184746212,address match,"2205 INDUSTRIAL SOUTH RD, DALTON, GA, 30721",2026-10-28
+Epoch AI,xAI QTS Atlanta,SpaceXAI,17.32971,11470.43961596766,0.6564840742199999,"1025 Jefferson Street NW, Atlanta, GA 30318",33.775662280728,-84.422576064561,address match,"1025 JEFFERSON ST NW, ATLANTA, GA, 30318",2026-10-28
+Epoch AI,Anthropic Barber Lake,Cipher Mining,,,,,,,,,2026-10-28
+Epoch AI,CoreWeave Lancaster Greenfield site,CoreWeave,,,,"216 Greenfield Rd, Lancaster, PA",40.048690305089,-76.256089835306,address match,"216 GREENFIELD RD, LANCASTER, PA, 17601",2026-10-28
+Epoch AI,CoreWeave Muskogee OK,CoreWeave,,,,"1525 W 43rd St S, Muskogee, OK 74401, USA",35.6969243,-95.3842747,nominatim address,,2026-10-28
+Epoch AI,Crusoe Abilene Expansion,Microsoft,,,,"5502 Spinks Rd, Abilene, TX 79601",32.4942321,-99.8009071,nominatim address,,2026-10-28
+Epoch AI,Goodnight,Google,,,,"10001 Lima Rd, Claude, TX 79019",35.1081103,-101.362741,nominatim city/zip only,,2026-10-28
+Epoch AI,Google Cedar Rapids,Google,,,,"5800 EDGEWOOD RD SW CEDAR RAPIDS, IA 52404",41.921946128019,-91.715629615019,address match,"5800 EDGEWOOD RD SW, CEDAR RAPIDS, IA, 52404",2026-10-28
+Epoch AI,Google Fort Wayne,Google,,,,"6015 Adams Center Road, Fort Wayne, IN 46806",41.031166579954,-85.057768391974,address match,"6015 ADAMS CENTER RD, FORT WAYNE, IN, 46816",2026-10-28
+Epoch AI,Meta Bowling Green,Meta,,,,"12356 Middleton Pike, Bowling Green, OH 43402",41.45826725086,-83.636217439419,address match,"12356 MIDDLETON PIKE, BOWLING GREEN, OH, 43402",2026-10-28
+Epoch AI,Meta Hyperion,Meta,,,,"Holly Ridge, LA 71269",32.4676421,-91.6267883,nominatim address,,2026-10-28
+Epoch AI,OpenAI Stargate Lordstown,Softbank,,,,"2300 Hallock Young Rd, Warren, OH 44481",41.143721220025,-80.883293483213,address match,"2300 HALLOCK YOUNG RD, WARREN, OH, 44481",2026-10-28
+Epoch AI,OpenAI Stargate Michigan,Oracle,,,,,,,,,2026-10-28
+Epoch AI,OpenAI Stargate Milam,Softbank,,,,,,,,,2026-10-28
+Epoch AI,OpenAI Stargate New Mexico,Oracle,,,,,,,,,2026-10-28
+Epoch AI,OpenAI Stargate Shackelford,Oracle,,,,"175 Private Road 1604, Abilene, TX 79601, Shackelford County",,,,,2026-10-28
+Epoch AI,OpenAI Stargate Wisconsin,Oracle,,,,,,,,,2026-10-28
+Epoch AI,QTS Cedar Rapids,,,,,"6200 76th Ave SW, Fairfax, IA 52228",41.905594293137,-91.751082222284,address match,"6200 76TH AVE SW, FAIRFAX, IA, 52228",2026-10-28
+Epoch AI,QTS Eagle Mountain,Meta,,,,"652 E Hyperscale Way, Eagle Mountain, UT 84013",40.2688855,-112.0342942,nominatim address,,2026-10-28

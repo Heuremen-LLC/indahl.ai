@@ -100,14 +100,17 @@ The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, ver
 
 Heuremen LLC permits anyone to use, copy and change these parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data.
 
-Heuremen LLC reserves text and data mining and use as AI training data for those text files and for the measurement files in item 5 only. That reservation does not apply to any file derived from OpenStreetMap or Epoch AI, to public-domain data, or to the endoflife.date values in item 5.
+Heuremen LLC reserves text and data mining and use as AI training data for those text files and for the measurement files in item 5 only. That reservation does not apply to any file derived from OpenStreetMap or Epoch AI, to public-domain data, or to the names from endoflife.date in item 5.
 
 5. Measurements of the other ATLAS desks (UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE)
 
-These files hold Heuremen LLC's own measurements and counts, as the desk pages publish them. Heuremen LLC permits anyone to use, copy and change them with attribution to Heuremen LLC and the desk page. That permission does not include text and data mining or use as AI training data, as the desk pages state.
+These files hold Heuremen LLC's own measurements and counts. Heuremen LLC permits anyone to use, copy and change them with attribution to Heuremen LLC and the desk page. That permission does not include text and data mining or use as AI training data, as the desk pages state.
+
+The TIME, CADA and SEAT files are the file each desk page reads, as served. They hold our own probes and counts.
+
+The UPTIME, SECRECORDS, SUPPORT and CHANGE files are results only. They hold our counts, outcomes and intervals and the labels that say what each result is about, such as a vendor, product, release cycle, model or domain name. Every other value in the file the desk page reads was left out, with the same filter each of these desks uses for its own data pack. That removes the vendor status indicators, incident titles and impact, the separate record column of SECRECORDS, the release, support and end-of-life dates, and the change notes, dates and links. The SECRECORDS reasons are our own sentences. Where it matters they quote the HSTS header or SPF record that the domain itself sends, a public protocol fact we read. Those values come from sources whose terms restrict reuse, state none, or were not confirmed for this pack, so the pack links to them and does not copy them. The names used as labels identify what was measured and stay with their owners.
 
 - json/uptime.json
-- csv/uptime_incidents.csv
 - csv/uptime_meta.csv
 - csv/uptime_vendors.csv
 - json/time.json
@@ -149,7 +152,7 @@ These files hold Heuremen LLC's own measurements and counts, as the desk pages p
 
 Parts of these files come from others and keep their own terms.
 
-The SUPPORT files (json/support.json and the csv/support_ files) carry release, support and end-of-life dates from endoflife.date, https://endoflife.date/ , under the MIT License:
+The SUPPORT files name products and release cycles as endoflife.date lists them, https://endoflife.date/ , under the MIT License. The dates themselves are not in this pack.
 
 Copyright 2020 endoflife.date contributors
 
@@ -159,4 +162,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-The CHANGE files carry model and product names, dates and links from the deprecation pages of Anthropic, OpenAI, Google and Cloudflare, which keep their own terms. The UPTIME files carry each vendor's status indicator and incident titles from its public status page, written by the vendor. The SECRECORDS files name domains from the Tranco list (https://tranco-list.eu/ , Le Pochat et al., NDSS 2019) and quote each domain's own published HSTS header or SPF record. The TIME files carry the stratum and reference ID that each public time server states in its own replies.
+The CHANGE files name models and products from the deprecation pages of Anthropic, OpenAI, Google and Cloudflare, which keep their own terms. The UPTIME files name each vendor whose status page was read. The SECRECORDS files name domains from the Tranco list (https://tranco-list.eu/ , Le Pochat et al., NDSS 2019). The TIME files carry the stratum and reference ID that each public time server states in its own replies.

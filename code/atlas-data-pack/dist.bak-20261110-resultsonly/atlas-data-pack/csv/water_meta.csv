@@ -1,0 +1,265 @@
+﻿key,value
+updated,2026-11-10 13:21
+gate,passed
+stale_sources,[]
+coverage.reports,530
+coverage.by_scenario.MP,325
+coverage.by_scenario.MAX,86
+coverage.by_scenario.MIN,119
+coverage.first_issue,2000-01
+coverage.last_issue,2026-10
+coverage.band_months,86
+coverage.missing_files,0
+coverage.read_from.mead text,120
+coverage.read_from.powell text,121
+coverage.read_from.mead hdb,410
+coverage.read_from.powell hdb,409
+coverage.hdb_runs_that_differ_from_print,27
+coverage.unreadable_values,126
+coverage.duplicates_set_aside,[]
+coverage.rows,15222
+coverage.rows_by_outcome.mead ABOVE,430
+coverage.rows_by_outcome.mead BELOW,493
+coverage.rows_by_outcome.mead CANNOT_TELL,5470
+coverage.rows_by_outcome.mead CONSISTENT,945
+coverage.rows_by_outcome.mead NOTHING_RETURNED,276
+coverage.rows_by_outcome.powell ABOVE,190
+coverage.rows_by_outcome.powell BELOW,550
+coverage.rows_by_outcome.powell CANNOT_TELL,5466
+coverage.rows_by_outcome.powell CONSISTENT,1126
+coverage.rows_by_outcome.powell NOTHING_RETURNED,276
+coverage.variant_rows,144
+coverage.inverted_band_rows,117
+coverage.mp_outside_own_band_rows,273
+coverage.inverted_detail.mead,8
+coverage.inverted_detail.powell,109
+coverage.inverted_detail.powell_leads_0_to_5,98
+coverage.zero_width_band_rows,48
+coverage.zero_width_lead0.mead,"[16,86]"
+coverage.zero_width_lead0.powell,"[10,86]"
+coverage.print_vs_hdb.months_compared,19862
+coverage.print_vs_hdb.months_agree,19632
+coverage.print_vs_hdb.runs_used,819
+coverage.print_vs_hdb.runs_below_60,9
+coverage.print_vs_hdb.misread_rate_in_used_runs,0.0026
+coverage.measured_last.mead,2026-10
+coverage.measured_last.powell,2026-10
+headline_lead6.mead.band.n,83
+headline_lead6.mead.band.inside,42
+headline_lead6.mead.band.above,19
+headline_lead6.mead.band.below,22
+headline_lead6.mead.band.share,0.51
+headline_lead6.mead.band.n_wy,20
+headline_lead6.mead.band.k_wy,10
+headline_lead6.mead.band.lo,0.299
+headline_lead6.mead.band.hi,0.701
+headline_lead6.mead.band.outcome,BELOW
+headline_lead6.mead.band.median_width_ft,4.96
+headline_lead6.mead.band.zero_width,0
+headline_lead6.mead.band.inverted,0
+headline_lead6.mead.band.wy_lag1_corr,-0.13
+headline_lead6.mead.band.checks_after_data.rows_as_independent.n,83
+headline_lead6.mead.band.checks_after_data.rows_as_independent.k,42
+headline_lead6.mead.band.checks_after_data.rows_as_independent.lo,0.401
+headline_lead6.mead.band.checks_after_data.rows_as_independent.hi,0.611
+headline_lead6.mead.band.checks_after_data.rows_as_independent.outcome,BELOW
+headline_lead6.mead.band.checks_after_data.rows_as_independent.lo_unrounded,0.401
+headline_lead6.mead.band.checks_after_data.rows_as_independent.hi_unrounded,0.611
+headline_lead6.mead.band.checks_after_data.rows_as_independent.outcome_unrounded,BELOW
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.n,16.2
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.k,8
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.lo,0.276
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.hi,0.714
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.outcome,BELOW
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.lo_unrounded,0.286
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.hi_unrounded,0.724
+headline_lead6.mead.band.checks_after_data.kish_weighted_water_years.outcome_unrounded,BELOW
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.n,11
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.k,6
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.lo,0.28
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.hi,0.787
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.outcome,BELOW
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.lo_unrounded,0.25
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.hi_unrounded,0.759
+headline_lead6.mead.band.checks_after_data.two_water_year_blocks.outcome_unrounded,BELOW
+headline_lead6.mead.mp.n,315
+headline_lead6.mead.mp.above,180
+headline_lead6.mead.mp.below,135
+headline_lead6.mead.mp.ties,0
+headline_lead6.mead.mp.share_above,0.57
+headline_lead6.mead.mp.n_wy,28
+headline_lead6.mead.mp.k_wy,16
+headline_lead6.mead.mp.lo,0.391
+headline_lead6.mead.mp.hi,0.735
+headline_lead6.mead.mp.outcome,CANNOT_TELL
+headline_lead6.mead.mp.median_error,0.7
+headline_lead6.mead.mp.median_abs_error,3.06
+headline_lead6.mead.mp.p10,-5.8
+headline_lead6.mead.mp.p90,8.97
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.n,315
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.k,180
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.lo,0.516
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.hi,0.625
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.outcome,ABOVE
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.lo_unrounded,0.516
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.hi_unrounded,0.625
+headline_lead6.mead.mp.checks_after_data.rows_as_independent.outcome_unrounded,ABOVE
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.n,26.6
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.k,15
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.lo,0.38
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.hi,0.732
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.outcome,CANNOT_TELL
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.lo_unrounded,0.386
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.hi_unrounded,0.738
+headline_lead6.mead.mp.checks_after_data.kish_weighted_water_years.outcome_unrounded,CANNOT_TELL
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.n,14
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.k,8
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.lo,0.326
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.hi,0.786
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.outcome,CANNOT_TELL
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.lo_unrounded,0.326
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.hi_unrounded,0.786
+headline_lead6.mead.mp.checks_after_data.two_water_year_blocks.outcome_unrounded,CANNOT_TELL
+headline_lead6.powell.band.n,83
+headline_lead6.powell.band.inside,49
+headline_lead6.powell.band.above,8
+headline_lead6.powell.band.below,26
+headline_lead6.powell.band.share,0.59
+headline_lead6.powell.band.n_wy,20
+headline_lead6.powell.band.k_wy,12
+headline_lead6.powell.band.lo,0.387
+headline_lead6.powell.band.hi,0.781
+headline_lead6.powell.band.outcome,BELOW
+headline_lead6.powell.band.median_width_ft,26.46
+headline_lead6.powell.band.zero_width,0
+headline_lead6.powell.band.inverted,5
+headline_lead6.powell.band.wy_lag1_corr,-0.06
+headline_lead6.powell.band.checks_after_data.rows_as_independent.n,83
+headline_lead6.powell.band.checks_after_data.rows_as_independent.k,49
+headline_lead6.powell.band.checks_after_data.rows_as_independent.lo,0.483
+headline_lead6.powell.band.checks_after_data.rows_as_independent.hi,0.69
+headline_lead6.powell.band.checks_after_data.rows_as_independent.outcome,BELOW
+headline_lead6.powell.band.checks_after_data.rows_as_independent.lo_unrounded,0.483
+headline_lead6.powell.band.checks_after_data.rows_as_independent.hi_unrounded,0.69
+headline_lead6.powell.band.checks_after_data.rows_as_independent.outcome_unrounded,BELOW
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.n,16.2
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.k,10
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.lo,0.381
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.hi,0.808
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.outcome,CANNOT_TELL
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.lo_unrounded,0.357
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.hi_unrounded,0.789
+headline_lead6.powell.band.checks_after_data.kish_weighted_water_years.outcome_unrounded,BELOW
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.n,11
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.k,6
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.lo,0.28
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.hi,0.787
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.outcome,BELOW
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.lo_unrounded,0.316
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.hi_unrounded,0.818
+headline_lead6.powell.band.checks_after_data.two_water_year_blocks.outcome_unrounded,CANNOT_TELL
+headline_lead6.powell.mp.n,314
+headline_lead6.powell.mp.above,110
+headline_lead6.powell.mp.below,204
+headline_lead6.powell.mp.ties,0
+headline_lead6.powell.mp.share_above,0.35
+headline_lead6.powell.mp.n_wy,28
+headline_lead6.powell.mp.k_wy,10
+headline_lead6.powell.mp.lo,0.207
+headline_lead6.powell.mp.hi,0.542
+headline_lead6.powell.mp.outcome,CANNOT_TELL
+headline_lead6.powell.mp.median_error,-3.77
+headline_lead6.powell.mp.median_abs_error,6.87
+headline_lead6.powell.mp.p10,-14.64
+headline_lead6.powell.mp.p90,11.49
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.n,314
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.k,110
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.lo,0.3
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.hi,0.405
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.outcome,BELOW
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.lo_unrounded,0.3
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.hi_unrounded,0.405
+headline_lead6.powell.mp.checks_after_data.rows_as_independent.outcome_unrounded,BELOW
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.n,26.6
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.k,9
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.lo,0.19
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.hi,0.528
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.outcome,CANNOT_TELL
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.lo_unrounded,0.199
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.hi_unrounded,0.54
+headline_lead6.powell.mp.checks_after_data.kish_weighted_water_years.outcome_unrounded,CANNOT_TELL
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.n,14
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.k,5
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.lo,0.163
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.hi,0.612
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.outcome,CANNOT_TELL
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.lo_unrounded,0.159
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.hi_unrounded,0.606
+headline_lead6.powell.mp.checks_after_data.two_water_year_blocks.outcome_unrounded,CANNOT_TELL
+checks_after_data_note,"Added after the data and never used for any outcome. Each cell carries the same count read on three other rulers: rows_as_independent (Wilson on rows), kish_weighted_water_years (water years weighted by row count, n = (sum m) squared over sum of m squared), two_water_year_blocks (water years paired 2000-2001, 2002-2003 and so on). The effective count of successes is rounded as the plan rounds it, and the unrounded reading is given beside it. wy_lag1_corr is the correlation of the per-water-year share between neighbouring water years."
+measured_cross_checks.mead_hdb_vs_lc_table.months_compared_since_1990,432
+measured_cross_checks.mead_hdb_vs_lc_table.differ_since_1990,9
+measured_cross_checks.mead_hdb_vs_lc_table.differ_since_2000,3
+measured_cross_checks.mead_hdb_vs_lc_table.largest_since_2000.month,2002-06
+measured_cross_checks.mead_hdb_vs_lc_table.largest_since_2000.hdb,1159.19
+measured_cross_checks.mead_hdb_vs_lc_table.largest_since_2000.lc_table,1160.19
+measured_cross_checks.mead_hdb_vs_lc_table.largest_since_2000.gap,-1.0
+measured_cross_checks.mead_hdb_vs_lc_table.months_since_2000,"[{""month"":""2002-06"",""hdb"":1159.19,""lc_table"":1160.19},{""month"":""2023-12"",""hdb"":1068.05,""lc_table"":1068.18},{""month"":""2024-07"",""hdb"":1061.38,""lc_table"":1061.49}]"
+measured_cross_checks.powell_usgs_daily_mean_minus_hdb_end_of_day.days,2762
+measured_cross_checks.powell_usgs_daily_mean_minus_hdb_end_of_day.median,-0.36
+measured_cross_checks.powell_usgs_daily_mean_minus_hdb_end_of_day.p10,-0.57
+measured_cross_checks.powell_usgs_daily_mean_minus_hdb_end_of_day.p90,-0.21
+flagged.cells,96
+flagged.flagged,34
+flagged.note,"Neighbouring cells share reports and target months, so these are not separate results."
+band_sentence_months.note,Added after the data: band cells restricted to the issue months whose Probable Minimum and Probable Maximum reports both print the 80 percent sentence.
+band_sentence_months.months,"[""2010-01"",""2010-04"",""2010-08"",""2010-10"",""2011-01"",""2011-04"",""2011-08"",""2011-10"",""2012-01"",""2012-04"",""2012-08"",""2012-10"",""2013-01"",""2013-04"",""2013-08"",""2013-10"",""2014-01"",""2014-04"",""2014-08"",""2014-10"",""2015-01"",""2015-04"",""2015-08"",""2015-10"",""2016-01"",""2016-04"",""2016-08"",""2017-01"",""2017-04"",""2017-08"",""2017-10"",""2018-01"",""2018-04"",""2018-08"",""2018-10"",""2019-01"",""2019-04"",""2019-08"",""2019-10"",""2020-01"",""2020-04"",""2020-08"",""2020-10"",""2021-01"",""2021-02"",""2021-03"",""2021-04"",""2021-05"",""2021-06"",""2021-07"",""2021-08"",""2021-09"",""2021-10"",""2021-11"",""2021-12"",""2022-01"",""2022-02"",""2022-04"",""2022-06"",""2022-07"",""2022-08"",""2022-10"",""2023-01"",""2023-04"",""2023-08"",""2024-01"",""2024-04"",""2024-05"",""2024-08"",""2024-10"",""2025-01"",""2025-04"",""2025-08"",""2025-10"",""2026-01"",""2026-04"",""2026-05"",""2026-08"",""2026-10""]"
+live.mead.name,Lake Mead
+live.mead.daily_date,2026-11-09
+live.mead.daily_ft,1039.86
+live.mead.hourly_time,2026-11-10T05
+live.mead.hourly_ft,1039.98
+live.mead.change_1d,0.2
+live.mead.change_7d,0.8
+live.mead.change_30d,2.21
+live.mead.largest_rise_60d.1.rise_ft,0.49
+live.mead.largest_rise_60d.1.start,2026-10-23
+live.mead.largest_rise_60d.1.end,2026-10-24
+live.mead.largest_rise_60d.2.rise_ft,0.81
+live.mead.largest_rise_60d.2.start,2026-10-23
+live.mead.largest_rise_60d.2.end,2026-10-25
+live.mead.largest_rise_60d.7.rise_ft,1.44
+live.mead.largest_rise_60d.7.start,2026-10-23
+live.mead.largest_rise_60d.7.end,2026-10-30
+live.mead.lowest_daily_since_dec_1999.date,2026-10-22
+live.mead.lowest_daily_since_dec_1999.ft,1037.16
+live.mead.source,"Reclamation HDB, sdi 1930 (lchdb), daily end-of-day and hourly readings, Mountain Standard Time"
+live.powell.name,Lake Powell
+live.powell.daily_date,2026-11-09
+live.powell.daily_ft,3539.1
+live.powell.hourly_time,2026-11-09T23
+live.powell.hourly_ft,3539.1
+live.powell.change_1d,0.26
+live.powell.change_7d,5.64
+live.powell.change_30d,20.18
+live.powell.largest_rise_60d.1.rise_ft,1.83
+live.powell.largest_rise_60d.1.start,2026-10-21
+live.powell.largest_rise_60d.1.end,2026-10-22
+live.powell.largest_rise_60d.2.rise_ft,3.24
+live.powell.largest_rise_60d.2.start,2026-10-21
+live.powell.largest_rise_60d.2.end,2026-10-23
+live.powell.largest_rise_60d.7.rise_ft,9.32
+live.powell.largest_rise_60d.7.start,2026-10-20
+live.powell.largest_rise_60d.7.end,2026-10-27
+live.powell.lowest_daily_since_dec_1999.date,2026-09-15
+live.powell.lowest_daily_since_dec_1999.ft,3516.62
+live.powell.source,"Reclamation HDB, sdi 1928 (uchdb2), daily end-of-day and hourly readings, Mountain Standard Time"
+live.powell_usgs.time,2026-11-10T05:45:00.000-07:00
+live.powell_usgs.ft,3538.9
+live.powell_usgs.qualifiers,"[""P""]"
+live.powell_usgs.datum,NGVD 1929
+live.powell_usgs.site,"USGS 09379900 Lake Powell at Glen Canyon Dam, AZ"
+live.threshold_notes,"[{""doc"":""2027-2028 Operating Guidelines (August 2026)"",""url"":""https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf"",""section"":""5.3.A.1"",""what"":""a shortage provision for 2027 and 2028 that names no elevation"",""quote"":""The Secretary will determine that a Shortage Condition exists for the applicable Year for purposes of the apportionment of Colorado River water among the Lower Division States and will apportion 6.25 maf for consumptive use in the Lower Division States.""},{""doc"":""October 2026 Most Probable 24-Month Study (7 maf)"",""url"":""https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/OCT26_7_508.pdf"",""section"":""page 2"",""what"":""which 2007 tier governed 2026, and other documents that also governed Lake Mead in 2026 and are not listed in the table"",""quote"":""Consistent with Section 2.D.1 of the 2007 Interim Guidelines, a Shortage Condition consistent with Section 2.D.1.a governs the operation of Lake Mead for CY 2026. In addition, Section III.B of Exhibit 1 to the Lower Basin Drought Contingency Plan (DCP) Agreement and provisions in IBWC Minutes No. 323 and 330 also governs the operation of Lake Mead for CY 2026.""}]"
+live.added_after_plan,"[""largest_rise_60d"",""lowest_daily_since_dec_1999"",""datum notes"",""measured-side cross-checks""]"
+live.datum.mead,"RISE names the USGS 1912 datum, ""Locally known at Hoover Dam as “Power House Datum.” Add 0.55 foot to convert to National Geodetic Vertical Datum of 1929 (NVGD 1929), leveling of 1935."""
+live.datum.powell,RISE lists EGM96 for the Lake Powell site and gives no definition.

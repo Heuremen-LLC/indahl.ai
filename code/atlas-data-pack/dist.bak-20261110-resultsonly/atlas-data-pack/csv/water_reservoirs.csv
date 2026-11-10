@@ -1,0 +1,10 @@
+﻿name,agency,date,storage_af,stated_capacity_af,share,capacity_label,source
+Lake Mead,Reclamation,2026-11-09,6968039,26120000,0.267,content at the bottom of exclusive flood control space,Reclamation Lower Colorado daily report and its JSON feed
+Lake Mohave,Reclamation,2026-11-09,1656532,1873648,0.884,available capacity,Reclamation Lower Colorado daily report and its JSON feed
+Lake Havasu,Reclamation,2026-11-09,534432,570253,0.937,available capacity,Reclamation Lower Colorado daily report and its JSON feed
+Blue Mesa,Reclamation,2026-11-09,173639,827472,0.21,maximum storage,Reclamation Lower Colorado daily report and its JSON feed
+Flaming Gorge,Reclamation,2026-11-09,2400865,3749000,0.64,maximum storage,Reclamation Lower Colorado daily report and its JSON feed
+Lake Powell,Reclamation,2026-11-09,6392399,23314000,0.274,maximum storage,Reclamation Lower Colorado daily report and its JSON feed
+Navajo,Reclamation,2026-11-09,1424042,1696000,0.84,maximum storage,Reclamation Lower Colorado daily report and its JSON feed
+Shasta,California CDEC,2026-11-09,2249458,4552000,0.494,capacity,CDEC daily reservoir storage summary (RES)
+Oroville,California CDEC,2026-11-09,1443205,3424753,0.421,capacity,CDEC daily reservoir storage summary (RES)
