@@ -1,18 +1,7 @@
 {
- "updated": "10 Nov 04:56 UTC",
- "reads_held": 8983,
+ "updated": "10 Nov 09:34 UTC",
+ "reads_held": 9011,
  "processors": [
-  {
-   "backend": "ibm_fez",
-   "pending": 0,
-   "change_24h": -218,
-   "our_jobs": 20,
-   "our_median_wait": "4 s",
-   "our_longest_wait": "29 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
   {
    "backend": "ibm_marrakesh",
    "pending": 0,
@@ -26,8 +15,8 @@
   },
   {
    "backend": "ibm_kingston",
-   "pending": 6,
-   "change_24h": -143,
+   "pending": 4,
+   "change_24h": -63,
    "our_jobs": 20,
    "our_median_wait": "6 min",
    "our_longest_wait": "58 min",
@@ -36,47 +25,58 @@
    "outcome": "COMMITTED"
   },
   {
+   "backend": "ibm_fez",
+   "pending": 14,
+   "change_24h": 14,
+   "our_jobs": 20,
+   "our_median_wait": "4 s",
+   "our_longest_wait": "29 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
    "backend": "ibm_pittsburgh",
-   "pending": 59,
-   "change_24h": 58,
+   "pending": 84,
+   "change_24h": 67,
    "our_jobs": 20,
    "our_median_wait": "4 min",
    "our_longest_wait": "6.9 h",
-   "our_queued_now": 1,
-   "our_oldest_queued": "120 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_boston",
-   "pending": 564,
-   "change_24h": 157,
+   "pending": 748,
+   "change_24h": 248,
    "our_jobs": 4,
    "our_median_wait": "5 min",
    "our_longest_wait": "5 min",
    "our_queued_now": 1,
-   "our_oldest_queued": "78.1 h",
+   "our_oldest_queued": "82.8 h",
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_chicago",
-   "pending": 848,
-   "change_24h": 674,
+   "pending": 964,
+   "change_24h": 773,
    "our_jobs": 20,
    "our_median_wait": "16 min",
    "our_longest_wait": "18.0 h",
-   "our_queued_now": 1,
-   "our_oldest_queued": "2.0 h",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 1248,
-   "change_24h": 566,
+   "pending": 1043,
+   "change_24h": 126,
    "our_jobs": 20,
    "our_median_wait": "11 min",
    "our_longest_wait": "8.9 h",
-   "our_queued_now": 1,
-   "our_oldest_queued": "2.0 h",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
    "outcome": "COMMITTED"
   }
  ]

@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MARK = ('<svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/>'
         '<polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>')
 HOME = {'/vault': '/hermes', '/tape': '/hermes', '/hfsize': '/iris', '/hflicense': '/iris', '/pkglicense': '/iris', '/pkginstall': '/iris', '/uptime': '/atlas', '/time': '/atlas', '/cada': '/atlas', '/secrecords': '/atlas', '/seat': '/atlas', '/support': '/atlas', '/change': '/atlas',
-        '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/hosts': '/iris', '/water': '/atlas'}
+        '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/hosts': '/iris', '/water': '/atlas', '/wiki': '/hermes'}
 NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
 DOI = 'https://doi.org/10.5281/zenodo.23169755'
 
@@ -44,7 +44,7 @@ def seo_head(path, title, desc):
     import datetime as _dt0
     _today = _dt0.date.today().isoformat(); _org = {"@type": "Organization", "name": "Heuremen LLC", "url": SITE + "/"}
     _short = title.split(' | ')[0]
-    _live = {'support','pkglicense','hflicense','hfsize','secrecords','pkginstall','linkrot','trials','revise','hpt','hosts','airq','ailuminate','weights','airline','fedsep','time','cada','uptime','forecast','cadence','launch','arxivdrift','campus','seat','change','tape','water'}
+    _live = {'support','pkglicense','hflicense','hfsize','secrecords','pkginstall','linkrot','trials','revise','hpt','hosts','airq','ailuminate','weights','airline','fedsep','time','cada','uptime','forecast','cadence','launch','arxivdrift','campus','seat','change','tape','water','wiki'}
     _slug = path.strip('/')
     if path not in NOINDEX and path not in ('/', '/qia', '/iris') and not path.startswith(('/qia/study/', '/iris/study/')):
         _wp = {"@context": "https://schema.org", "@type": "WebPage", "name": _short, "description": desc, "url": url, "inLanguage": "en", "dateModified": _today, "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": SITE + "/"}, "publisher": _org}
@@ -76,6 +76,7 @@ _SLOT = '<section id="hl-slot" class="hl-slot" aria-hidden="true"></section>'
 try: _HLSLUGS = set(_jsonld.load(open(os.path.join(HERE, '..', 'watch', 'headlines.json')))['pages'].keys()) | {'stack'}
 except Exception: _HLSLUGS = set()
 def _hlslot(path):
+    if path == '/wiki' and globals().get('_WIKISLOT'): return _WIKISLOT   # 10 Nov 2026: WIKI ships one reading, so its headline is the one built with that page (wiki_index/build_page.py), not the feed's
     if path == '/': return _SLOT.replace('class="hl-slot"', 'class="hl-slot hl-home"')
     if path == '/stack': return _SLOT.replace('class="hl-slot"', 'class="hl-slot hl-stack"')
     # 29 Oct 2026 (his "too much space under the headline"): the page ships with the current headline in it, so nothing is reserved and nothing jumps. headline.js refreshes the words in place.
@@ -1372,6 +1373,17 @@ _WATERBODY = ('<h2>When Reclamation projects a lake level, where does the lake e
   '<section id="replies" data-prefix="water"></section><script src="/replies.js" defer></script>')
 PAGES['/water'] = page('/water', 'WATER | Projected Lake Levels Against Measured | Heuremen LLC', 'WATER: each 24-Month Study projection of Lake Mead and Lake Powell since 2000 against the level the lake reached, by months ahead, with a live panel of both lakes and the elevations the governing documents name.', _WATERBODY, hero_slim('WATER &middot; Projected Lake Levels Against Measured'))
 _FEED.append(('/water', 'WATER: Projected Lake Levels Against Measured', 'Each 24-Month Study projection of Lake Mead and Lake Powell since 2000 against the level the lake reached, live.'))
+# 10 Nov 2026: WIKI, under HERMES. Plan: wiki_index/PLAN.md (committed before any comparison, notes 1 and 2 after the outside referee).
+# The page is one reading: wiki_index/build_page.py renders it from data/wiki_live.json, and its body and headline are taken from that file here,
+# so nav, division line, footer and reference code come from page(). The feed /wiki/live.json is read again about once a week and can be newer.
+_wk = open(os.path.join(HERE, '..', 'wiki_index', 'wiki.html'), encoding='utf-8').read()
+_wk_main = _wk[_wk.index('<main class="wrap">') + len('<main class="wrap">'):_wk.index('</main>')]
+_WIKISLOT = _wk_main[:_wk_main.index('</section>') + len('</section>')]
+assert _WIKISLOT.startswith('<section id="hl-slot"'), 'WIKI: the headline block is not where build_page.py puts it'
+_WIKIBODY = _wk_main[len(_WIKISLOT):]
+_WIKIBODY = _WIKIBODY.replace('<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>', '', 1).lstrip('\n')
+PAGES['/wiki'] = page('/wiki', 'WIKI | Figures Against Their Source | Heuremen LLC', 'WIKI: figures in Wikidata that cite the World Bank or UNESCO, read against that source\'s current and archived releases, and the Wikimedia Foundation\'s stated reach read against its own public data.', _WIKIBODY, hero_slim('WIKI &middot; Figures Against Their Source'))
+_FEED.append(('/wiki', 'WIKI: Figures Against Their Source', 'Figures in Wikidata that cite the World Bank or UNESCO against the source\'s releases, and the Wikimedia Foundation\'s stated reach against its own data.'))
 PAGES['/oy'] = page('/oy', 'Recount Matrix: Learning Research | OY | Heuremen LLC',
  'Recount Matrix: Learning Research. What United States institutions have published about measuring their own policies on AI in teaching and learning, with a source for every row.',
  OY_TOP + _OY_BODY + _OY_SCH, hero_slim('OY &middot; Learning Research'))
@@ -1908,7 +1920,7 @@ DESKS = {'/oy': [('/campus', 'CAMPUS', 'The documents behind the OY page, kept o
                     ('/uptime', 'UPTIME', 'Vendor status pages against independent probes'), ('/time', 'TIME', 'Public time servers, stated against delivered'), ('/cada', 'CADA', 'Public DNS filters against fresh abuse reports'), ('/secrecords', 'SECRECORDS', 'Security records against their own rules'),
                     ('/seat', 'SEAT', 'An outside seat reads our own pages'), ('/support', 'SUPPORT', 'Stated support windows against release activity'), ('/change', 'CHANGE', 'Announced shutdown dates, kept over time')],
          '/hermes': [('/hermes/model', 'MODEL', 'Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data'), ('/trials', 'TRIALS', 'Results due against results posted, and stopped trials'), ('/hpt', 'HPT', 'Hospital price files against the rule'), ('/airline', 'AIRLINE', 'Scheduled flight time against flown time'), ('/airq', 'AIRQ', 'Air sensors against the EPA\'s own targets'), ('/revise', 'REVISE', 'Stated margin against later revision'), ('/fedsep', 'FEDSEP', 'The Fed\'s stated ranges against outcomes'), ('/cadence', 'CADENCE', 'Stated update schedules against delivered'),
-                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live')]}
+                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source')]}
 _DNAME = {'/iris': 'IRIS', '/atlas': 'ATLAS', '/hermes': 'HERMES', '/oy': 'OY'}
 for _d, _ds in DESKS.items():
     if _d == '/hermes': continue
