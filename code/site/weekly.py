@@ -188,6 +188,7 @@ def body(slug, evs=None, now=None, all_weeks=None):
         o.append('</ul>')
     if not ev: o.append('<p>No changes have been recorded in this week%s.</p>' % (' so far' if cur else ''))
     o.append('<!--NEWS--><h2>By email</h2>' + FORM + '<!--/NEWS-->')
+    o.append('<h2>Newsletter</h2><p>Every issue of the newsletter, as published: <a href="/newsletter">indahl.ai/newsletter</a>.</p>')   # 10 Nov 2026 (newsletter_pages.py)
     past = [s for s in (all_weeks or weeks(evs, now)) if s != slug]
     if past:
         o.append('<h2>Other weeks</h2><ul class="wk">' + ''.join('<li><a href="%s">%s</a></li>' % ('/week' if s == current_slug(now) else '/week/' + s, e(span(start_of(s)))) for s in reversed(past)) + '</ul>')
@@ -214,7 +215,7 @@ def text(slug, evs=None, now=None):
 FORM = ('<form class="nl" action="/newsletter/subscribe" method="post"><input type="email" name="email" required maxlength="160" autocomplete="email" '
         'placeholder="Email address" aria-label="Email address"><input class="nl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">'
         '<button class="btn" type="submit">Subscribe</button><p class="nl-say">We email this weekly changes page every Tuesday. Every email has a one-click unsubscribe. '
-        '<a href="/privacy">Privacy</a></p><p class="nl-msg" role="status" aria-live="polite"></p></form>')
+        '<a href="/newsletter">Newsletter issues</a> &middot; <a href="/privacy">Privacy</a></p><p class="nl-msg" role="status" aria-live="polite"></p></form>')
 CSS = """
 .nl{margin:8px 0 14px;max-width:560px}.nl input[type=email]{font:inherit;padding:6px 8px;border:1px solid var(--rule);background:var(--paper);min-width:0;width:min(320px,100%);margin:0 8px 6px 0}
 .nl .btn{vertical-align:top}.nl-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}.nl-say{font-size:14px;color:var(--mid);margin:4px 0 0}.nl-msg{margin:6px 0 0;font-weight:600}.nl-msg:empty{display:none}

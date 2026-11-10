@@ -1782,6 +1782,8 @@ PAGES['/correction'] = page('/correction', 'Correction or Removal | Heuremen LLC
 # 10 Nov 2026: the public corrections log at /corrections, with corrections.xml (Atom) and corrections.csv in the worker's public folder.
 # Generator and rows live in corrections.py and corrections_rows.json. The build stops if a row's source, commit, link or receipt is not real.
 import corrections as _corr; _corr.build(PAGES, page, hero_slim, _FEED); CSS += _corr.CSS
+# 10 Nov 2026: the newsletter on the web, /newsletter and /newsletter/<N>, one Markdown file per issue in ~/bones-forge/newsletter (newsletter_pages.py)
+import newsletter_pages as _nlp; _nlp.build(PAGES, page, hero_slim); CSS += _nlp.CSS
 # 10 Nov 2026: FORECASTERS at /forecasters, every forecaster desk on one axis, built in forecasters.py (members in ../forecasters/members.json, its own trace gate).
 import forecasters as _fcs; CSS += _fcs.CSS
 

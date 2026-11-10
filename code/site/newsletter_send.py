@@ -7,6 +7,9 @@ DMARC pass, bounces to cf-bounce.heuremen.com), the same path, pacing and guards
   --week YYYY-WW        the edition's week (default: the last complete Tuesday-to-Tuesday week, weekly.py)
   --edition FILE        a hand-written edition replacing the generated body (plain text). FILE.html beside it, if present, is the HTML part,
                         otherwise the HTML part is built from the text. The edition key is the file name, so it is never sent twice.
+                        A web issue, --edition newsletter/issue_N.md (10 Nov 2026), is the same Markdown file that builds indahl.ai/newsletter/N
+                        (newsletter_pages.py): the text and HTML parts come from it, with the web address at the top, and the subject is its title.
+                        A relative FILE is read from the working folder, else from ~/bones-forge.
   --to-self             one email to the Heuremen inbox (the From address) and nobody else, with a dummy unsubscribe token
 
 Guards (send_guarded.py): --cap N emails per run (default 60); 25 to 75 s apart; after every 20 sends it reads Cloudflare's own delivery records for
@@ -50,6 +53,14 @@ def subscribers():
 def edition():
     """(key, text, html or None) of what goes out."""
     ef = arg('--edition')
+    if ef and not os.path.isabs(ef) and not os.path.exists(ef): ef = os.path.join(os.path.expanduser('~/bones-forge'), ef)
+    if ef and ef.endswith('.md'):   # a web issue: the file behind indahl.ai/newsletter/N
+        import newsletter_pages as NP
+        global SUBJECT
+        md = open(ef, encoding='utf-8').read(); n = NP.number_of(ef); title = NP.parse(md)[0]
+        if n is None: raise SystemExit('newsletter: a web issue file is named issue_N.md; nothing sent')
+        if title: SUBJECT = title
+        return 'edition-' + os.path.basename(ef), NP.text(md, n), NP.email_html(md, n)
     if ef:
         t = open(ef, encoding='utf-8').read(); hf = ef + '.html' if os.path.exists(ef + '.html') else (os.path.splitext(ef)[0] + '.html' if os.path.exists(os.path.splitext(ef)[0] + '.html') and not ef.endswith('.html') else None)
         return 'edition-' + os.path.basename(ef), t, (open(hf, encoding='utf-8').read() if hf else None)

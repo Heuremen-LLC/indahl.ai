@@ -220,7 +220,7 @@ def ticks(a, b, step): return list(range(int(a), int(b) + 1, int(step)))
 
 def tick_label(t): return '0' if t == 0 else ('+%d' % t if t > 0 else '&minus;%d' % -t)
 
-def _x(v, a, b): return '%.3f%%' % (100.0 * (v - a) / (b - a))
+def _x(v, a, b): return '%.2f' % (1000.0 * (v - a) / (b - a))   # SVG user units across a 1000-wide strip (the CSP allows no inline style)
 
 
 # ---------------------------------------------------------------- page
@@ -247,7 +247,9 @@ INTRO = (
 
 OURS = 'The stated share is our reading.'
 
-def _ival_style(p, a, b): return 'left:%s;width:%s' % (_x(p['lo'], a, b), '%.3f%%' % (100.0 * (p['hi'] - p['lo']) / (b - a)))
+def _ival(p, a, b): return (_x(p['lo'], a, b), _x(p['hi'], a, b))
+
+def _dot(cls, x, y='11'): return f'<line class="{cls}" x1="{x}" x2="{x}" y1="{y}" y2="{y}"/>'
 
 def _tip(r):
     t = r['text']; return f'{t["desk"]}, {t["item"]}, {t["counts"]}: stated {t["stated"]}, delivered {t["delivered"]}, interval {t["interval"]}, outcome {t["outcome"]}'
@@ -259,24 +261,26 @@ def _header(r):
 
 def chart(rows):
     a, b, step = domain(rows); ts = ticks(a, b, step); z = _x(0, a, b)
-    head = ''.join(f'<span class="fcx-tick" style="left:{_x(t, a, b)}">{tick_label(t)}</span>' for t in ts)
-    grid = ''.join(f'<span class="fcx-g" style="left:{_x(t, a, b)}"></span>' for t in ts if t != 0)
+    head = ''.join(f'<span class="fcx-tick"><b>{tick_label(t)}</b></span>' for t in ts)
+    grid = ''.join(f'<line class="g" x1="{_x(t, a, b)}" x2="{_x(t, a, b)}" y1="0" y2="22"/>' for t in ts if t != 0)
+    key = lambda k: f'<svg class="fcx-kd" viewBox="0 0 14 14" aria-hidden="true" focusable="false">{_dot("r " + k, "7", "7")}{_dot("d " + k, "7", "7")}</svg>'
     out = ['<figure class="fcx" aria-labelledby="fcx-cap">',
            '<figcaption id="fcx-cap" class="fcx-cap">Delivered minus stated, percentage points, with each desk&rsquo;s interval and its own outcome label</figcaption>',
-           '<p class="fcx-key" aria-hidden="true"><span class="fcx-k"><i class="fcx-d c"></i> a range with a stated coverage</span> '
-           '<span class="fcx-k"><i class="fcx-d p"></i> a probability forecast, reliability</span></p>',
-           f'<div class="fcx-r fcx-ax" aria-hidden="true"><span class="fcx-l"></span><span class="fcx-s">{head}</span><span class="fcx-o"></span></div>']
+           f'<p class="fcx-key" aria-hidden="true"><span class="fcx-k">{key("c")} a range with a stated coverage</span> '
+           f'<span class="fcx-k">{key("p")} a probability forecast, reliability</span></p>',
+           f'<div class="fcx-r fcx-ax" aria-hidden="true"><span class="fcx-l"></span><span class="fcx-ticks">{head}</span><span class="fcx-o"></span></div>']
     last = None
     for r in rows:
-        t = r['text']; p = r['pos']
+        t = r['text']; p = r['pos']; k = 'p' if r['kind'] == 'probability' else 'c'; lo, hi = _ival(p, a, b); g = _x(p['gap'], a, b)
         if r['desk'] != last:
             out.append(_header(r)); last = r['desk']
         tip = _tip(r)
         out.append(f'<div class="fcx-r" tabindex="0" title="{E(tip)}" aria-label="{E(tip)}">'
                    f'<span class="fcx-l">{E(t["item"])}</span>'
-                   f'<span class="fcx-s" aria-hidden="true">{grid}<span class="fcx-z" style="left:{z}"></span>'
-                   f'<span class="fcx-i" style="{_ival_style(p, a, b)}"></span>'
-                   f'<span class="fcx-d {"p" if r["kind"] == "probability" else "c"}" style="left:{_x(p["gap"], a, b)}"></span></span>'
+                   f'<svg class="fcx-s" viewBox="0 0 1000 22" preserveAspectRatio="none" aria-hidden="true" focusable="false">{grid}'
+                   f'<line class="z" x1="{z}" x2="{z}" y1="0" y2="22"/>'
+                   f'<line class="i" x1="{lo}" x2="{hi}" y1="11" y2="11"/>'
+                   f'{_dot("r " + k, g)}{_dot("d " + k, g)}</svg>'
                    f'<span class="fcx-o">{E(t["outcome"])}</span></div>')
     out.append('</figure>')
     return ''.join(out)
@@ -309,21 +313,22 @@ CSS = ('.fcx{margin:6px 0 0;padding:14px 14px 10px;background:var(--fcx-bg);colo
        '--fcx-bg:#f7f0e0;--fcx-ink:#1a1208;--fcx-mid:#5a4830;--fcx-line:#d9c9a3;--fcx-mark:#8a6410;--fcx-zero:#1a1208}'
        '@media (prefers-color-scheme:dark){.fcx{--fcx-bg:#1c1710;--fcx-ink:#efe5cf;--fcx-mid:#cbbf9f;--fcx-line:#4a3d26;--fcx-mark:#b08a2c;--fcx-zero:#efe5cf}.fcx a{color:#efe5cf}}'
        '.fcx-cap{font:600 13.5px sans-serif;color:var(--fcx-ink);margin:0 0 6px}.fcx-key{font:500 12.5px sans-serif;color:var(--fcx-mid);margin:0 0 8px;display:flex;gap:16px;flex-wrap:wrap}'
-       '.fcx-k{display:inline-flex;align-items:center;gap:6px}.fcx-k .fcx-d{position:static;transform:none;display:inline-block}'
+       '.fcx-k{display:inline-flex;align-items:center;gap:6px}'
        '.fcx-r{display:grid;grid-template-columns:minmax(150px,34%) 1fr 104px;gap:10px;align-items:center;min-height:24px;border-radius:2px}'
        '.fcx-r[tabindex]:hover,.fcx-r[tabindex]:focus{background:var(--fcx-line);outline:none}.fcx-r[tabindex]:focus-visible{outline:2px solid var(--fcx-mark)}'
        '.fcx-l{font:500 12.5px/1.3 sans-serif;color:var(--fcx-ink)}.fcx-o{font:600 11.5px sans-serif;letter-spacing:.03em;color:var(--fcx-ink)}'
-       '.fcx-s{position:relative;height:22px;margin:0 14px}'
-       '.fcx-ax .fcx-s{height:18px;border-bottom:1px solid var(--fcx-line)}'
-       '.fcx-tick{position:absolute;top:0;transform:translateX(-50%);font:500 11px sans-serif;color:var(--fcx-mid);white-space:nowrap}'
-       '.fcx-g{position:absolute;top:0;bottom:0;width:1px;background:var(--fcx-line)}.fcx-z{position:absolute;top:-2px;bottom:-2px;width:1px;background:var(--fcx-zero)}'
-       '.fcx-i{position:absolute;top:50%;height:2px;margin-top:-1px;background:var(--fcx-mark);border-radius:1px}'
-       '.fcx-d{position:absolute;top:50%;width:9px;height:9px;transform:translate(-50%,-50%);background:var(--fcx-mark);box-shadow:0 0 0 2px var(--fcx-bg)}'
-       '.fcx-d.c{border-radius:50%}.fcx-d.p{width:8px;height:8px;transform:translate(-50%,-50%) rotate(45deg);border-radius:1px}'
+       '.fcx-s{display:block;width:calc(100% - 28px);height:22px;margin:0 14px;overflow:visible}'
+       '.fcx-ticks{display:flex;justify-content:space-between;margin:0 14px;height:18px;border-bottom:1px solid var(--fcx-line)}'
+       '.fcx-tick{flex:0 0 0;width:0;position:relative}.fcx-tick b{position:absolute;left:0;top:0;transform:translateX(-50%);white-space:nowrap;font:500 11px sans-serif;color:var(--fcx-mid)}'
+       '.fcx-s line,.fcx-kd line{vector-effect:non-scaling-stroke}.fcx-s .g{stroke:var(--fcx-line);stroke-width:1}.fcx-s .z{stroke:var(--fcx-zero);stroke-width:1}'
+       '.fcx-s .i{stroke:var(--fcx-mark);stroke-width:2;stroke-linecap:round}'
+       '.fcx .r{stroke:var(--fcx-bg);stroke-width:13;stroke-linecap:round}.fcx .d{stroke:var(--fcx-mark);stroke-width:9;stroke-linecap:round}'
+       '.fcx .r.p{stroke-linecap:square;stroke-width:12}.fcx .d.p{stroke-linecap:square;stroke-width:8}'
+       '.fcx-kd{width:14px;height:14px;display:inline-block;vertical-align:middle}'
        '.fcx-h{font:600 12.5px sans-serif;letter-spacing:.06em;margin:12px 0 2px;color:var(--fcx-ink)}.fcx-h span{font-weight:500;letter-spacing:0;color:var(--fcx-mid);margin-left:6px}'
        '.fcx-c{display:block;font-weight:500;letter-spacing:0;color:var(--fcx-mid);margin:1px 0 0}.fcx-h .fcx-c{margin-left:0}.fcx-h a{color:var(--fcx-ink)}.fcx-t td{font-size:13.5px}'
        '@media(max-width:700px){.fcx{padding:10px 8px}.fcx-r{grid-template-columns:1fr 96px;gap:2px 6px}.fcx-o{font-size:10.5px;letter-spacing:0}.fcx-l{grid-column:1/-1}.fcx-ax .fcx-l{display:none}}'
-       '@media (forced-colors:active){.fcx-d,.fcx-i,.fcx-z{background:CanvasText;forced-color-adjust:none}}')
+       '@media (forced-colors:active){.fcx .d,.fcx-s .i,.fcx-s .z{stroke:CanvasText}.fcx .r{stroke:Canvas}}')
 
 MEMBER_LINK = '<p class="meta"><a href="/forecasters">FORECASTERS</a>: this desk beside the other public forecasters we score, on one axis.</p>'
 
@@ -399,12 +404,18 @@ def gate():
         got = [[_txt(x) for x in re.findall(r'<td>(.*?)</td>', '<tr><td>' + tr + '</tr>', re.S)] for tr in re.findall(r'<tr><td>(.*?)</tr>', main, re.S)]
         if got != want: errs.append('page table differs from the rows, cell by cell (%d rows on page, %d derived)' % (len(got), len(want)))
         a, b, step = domain(fresh)
-        tk = re.findall(r'<span class="fcx-tick" style="left:([^"]+)">(.*?)</span>', main)
-        if [(x, html.unescape(y)) for x, y in tk] != [(_x(t, a, b), html.unescape(tick_label(t))) for t in ticks(a, b, step)]: errs.append('axis ticks do not match the axis rule')
-        if re.findall(r'<span class="fcx-d [cp]" style="left:([^"]+)">', main) != [_x(r['pos']['gap'], a, b) for r in fresh]: errs.append('chart points do not match the source positions')
-        if re.findall(r'<span class="fcx-i" style="([^"]+)">', main) != [_ival_style(r['pos'], a, b) for r in fresh]: errs.append('chart intervals do not match the source positions')
-        zs = set(re.findall(r'<span class="fcx-z" style="left:([^"]+)">', main))
-        if zs != {_x(0, a, b)}: errs.append('zero line is not at zero')
+        tk = re.findall(r'<span class="fcx-tick"><b>(.*?)</b></span>', main)
+        if [html.unescape(y) for y in tk] != [html.unescape(tick_label(t)) for t in ticks(a, b, step)]: errs.append('axis ticks do not match the axis rule')
+        strips = ''.join(re.findall(r'<svg class="fcx-s"[^>]*>(.*?)</svg>', main, re.S))   # chart strips only, the legend key's dots are not points
+        if len(re.findall(r'<svg class="fcx-s"', main)) != len(fresh): errs.append('chart strips differ in number from the rows')
+        dd = re.findall(r'<line class="d [cp]" x1="([^"]+)" x2="([^"]+)"', strips)
+        if dd != [(_x(r['pos']['gap'], a, b),) * 2 for r in fresh]: errs.append('chart points do not match the source positions')
+        if re.findall(r'<line class="i" x1="([^"]+)" x2="([^"]+)"', strips) != [_ival(r['pos'], a, b) for r in fresh]: errs.append('chart intervals do not match the source positions')
+        zs = set(re.findall(r'<line class="z" x1="([^"]+)" x2="([^"]+)"', strips))
+        if zs != {(_x(0, a, b),) * 2}: errs.append('zero line is not at zero')
+        gs = set(re.findall(r'<line class="g" x1="([^"]+)"', strips))
+        if gs != {_x(t, a, b) for t in ticks(a, b, step) if t != 0}: errs.append('grid lines are not at the ticks')
+        if re.search(r'\sstyle="', main): errs.append('inline style attribute on the page (the CSP blocks it)')
         if [html.unescape(x) for x in re.findall(r'<div class="fcx-r" tabindex="0" title="([^"]*)"', main)] != [_tip(r) for r in fresh]: errs.append('chart hover text differs from the rows')
         if [_txt(x) for x in re.findall(r'<span class="fcx-l">(.*?)</span>', main) if _txt(x)] != [r['text']['item'] for r in fresh]: errs.append('chart labels differ from the rows')
         if [_txt(x) for x in re.findall(r'<span class="fcx-o">(.*?)</span>', main) if _txt(x)] != [r['text']['outcome'] for r in fresh]: errs.append('chart outcomes differ from the rows')
