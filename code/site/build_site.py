@@ -154,6 +154,7 @@ def page(path, title, desc, body, wide_hero=None):
 <script src="/pwa.js" defer></script>
 <script src="/live-tags.js?v=35e2ef27" defer></script>
 <script src="/headline.js?v=6e4f48dc" defer></script>
+<script src="/nav.js?v=00000000" defer></script>
 </body>
 </html>
 '''
@@ -1082,7 +1083,7 @@ _FEED.append(('/tape', "TAPE : What We Published, and When", "A public hash chai
 _STAMPSBODY = ('<h2>Proof of what we released, and when</h2><p>Each time we release this site we write a release record. It names the commit of the <a href="https://github.com/Heuremen-LLC/indahl.ai">public repository</a>, the SHA-256 hash of every file the release put on the site and the hash of our internal claims ledger. The record is stamped with <a href="https://opentimestamps.org">OpenTimestamps</a>, which ties its hash to a Bitcoin block, usually within a few hours. The pages and data files that changed are sent to the <a href="https://web.archive.org">Internet Archive</a>, which keeps its own dated copy. Neither one depends on us, so anyone can check what we published and when without trusting Heuremen LLC.</p>'
   '<div id="stamps-live" class="bench-live">Loading.</div><script src="/receipts/stamps/live.js" defer></script>'
   '<h2>How to verify a release</h2><ol><li>Download the release record (JSON) and its .ots file from the table above.</li>'
-  '<li>Install the OpenTimestamps client with <code>pip install opentimestamps-client</code>. In the folder that holds both files, run <code>ots verify</code> on the .ots file. It names the Bitcoin block that holds the stamp. If the stamp is still waiting for its block, run <code>ots upgrade</code> on it first, or try again later.</li>'
+  '<li>Check the stamp. Open <a href="https://opentimestamps.org">opentimestamps.org</a> and drop the .ots file and the release record on it. It names the Bitcoin block that holds the stamp. With your own Bitcoin node you can do the same offline. Install the client with <code>pip install opentimestamps-client</code> and run <code>ots verify</code> on the .ots file in the folder that holds both files. A stamp that is still waiting for its block can be completed later with <code>ots upgrade</code>.</li>'
   '<li>Compare hashes. Hash any file you downloaded from indahl.ai, or a file from the public repository at the listed commit, with <code>shasum -a 256</code> (or <code>sha256sum</code>) and find the same hash beside its path in the record. The Internet Archive capture shows the page as it was served at that time.</li></ol>'
   '<p class="bench-note">A stamp proves that a file with this hash existed by that time. It does not prove that the content is true. Each record also carries the hash of the record before it, so the releases form a chain. The record holds the hash of our internal ledger, never its content. The script that writes the records is public in <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/stamps">the repository</a>. For a hash chain of every page and live feed between releases, see <a href="/tape">TAPE</a>.</p>')
 PAGES['/receipts/stamps'] = page('/receipts/stamps', "STAMPS | What We Released, and When | Heuremen LLC", "Every release of indahl.ai, with its commit, the hash of every deployed file, an OpenTimestamps proof anchored in Bitcoin and Internet Archive captures of what changed.", _STAMPSBODY, hero_slim("STAMPS &middot; What We Released, and When"))
@@ -2001,23 +2002,28 @@ PAGES['/darkwave'] = page('/darkwave', 'Darkwave | A Readout’s Kick Is a Turn 
 CSS += ".dwpage table{border-collapse:collapse;font-size:14.5px;margin:12px 0;display:block;overflow-x:auto}.dwpage th{text-align:left;font-weight:600;border-bottom:1px solid currentColor;padding:5px 20px 5px 0}.dwpage td{padding:4px 20px 4px 0;border-bottom:1px solid rgba(127,127,127,.25);font-variant-numeric:tabular-nums}.dwpage img{max-width:100%;height:auto;margin:14px 0}.dwpage .dwnote{opacity:.8;font-size:14px}.dwpage .dwlede{font-size:18px;line-height:1.55}\n"
 
 # 29 Oct 2026: main menu = five divisions and STACK (10 Nov: SOCIAL replaced STACK in the banner); a division with desks gets a dropdown of what is beneath it (hover or focus, no script). QIA stays a plain link.
+# 10 Nov 2026 (Wayfinder: "can the headers get a drop-down menu too?"): every banner header has a dropdown. The panel opens on hover and on
+# keyboard focus with no script, and nav.js makes the first tap on a touch screen open it. The first panel entry is the division's own page,
+# so a touch reader reaches it from the panel too. Filled once in main(), after the package and data-pack pages exist.
+_NAVEXTRA = {'/qia': [('/qia/list', 'The List', ''), ('/qia/key', 'Key', ''), ('/qia/package', 'Research package', '')],
+             '/oy': [('/oy/data-pack', 'Data pack', ''), ('/campus', 'CAMPUS', '')],
+             '/social': [('/social#social-dsa', 'DSA reports', ''), ('/social#adspend', 'Political ad spend', ''), ('/social#social-tiktok', 'TikTok', ''), ('/social#bluesky', 'Bluesky', ''), ('/social/data-pack', 'Data pack', '')]}
 def _navfor(path):
     home = HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path)
     out = []
     for h, t in NAV:
         if h not in ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/social'): continue   # 10 Nov: SOCIAL in the banner, STACK under HERMES
         cur = ' aria-current=page' if h == home else ''
-        ds = [x for x in DESKS.get(h, []) if x[0] in PAGES] if h in ('/iris', '/atlas', '/hermes') else []
-        if ds: out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel">' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
+        ds = [x for x in DESKS.get(h, []) + _NAVEXTRA.get(h, []) if x[0].split('#')[0] in PAGES and x[0] != h]
+        _seen = set(); ds = [x for x in ds if not (x[0] in _seen or _seen.add(x[0]))]
+        if ds: out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel"><a href="' + h + '">' + t + ' main page</a>' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
         else: out.append('<a href="' + h + '"' + cur + '>' + t + '</a>')
     out.append('<a class="dw" href="/darkwave"' + (' aria-current=page' if path == '/darkwave' else '') + '>DARKWAVE</a>')   # 31 Oct: the Darkwave page on heuremen.org (countdown, then the paper page)
     return ''.join(out)
-for _k in list(PAGES):
-    PAGES[_k] = PAGES[_k].replace('@@NAV:' + _k + '@@', _navfor(_k))
 
 CSS += """
 .links a.dw,.links a.dw:hover{background:linear-gradient(90deg,#0891b2,#7c3aed,#c026d3,#0891b2);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:dwshift 6s linear infinite}@keyframes dwshift{to{background-position:300% 0}}@media (prefers-reduced-motion:reduce){.links a.dw{animation:none}}
-.dd{position:relative;display:inline-block}.ddpanel{display:none;position:absolute;left:0;top:100%;margin-top:6px;background:var(--paper);border:1px solid var(--rule);padding:10px 16px;flex-direction:column;gap:8px;min-width:190px;z-index:7}.dd:hover .ddpanel,.dd:focus-within .ddpanel{display:flex}.ddpanel::before{content:'';position:absolute;left:-1px;right:-1px;top:-10px;height:10px}.ddpanel a{white-space:nowrap}
+.dd{position:relative;display:inline-block}.ddpanel{display:none;position:absolute;left:0;top:100%;margin-top:6px;background:var(--paper);border:1px solid var(--rule);padding:10px 16px;flex-direction:column;gap:8px;min-width:190px;z-index:7}.dd:hover .ddpanel,.dd:focus-within .ddpanel{display:flex}.ddpanel::before{content:'';position:absolute;left:-1px;right:-1px;top:-10px;height:10px}.dd.open .ddpanel{display:flex}.dd.shut .ddpanel{display:none!important}@media (min-width:861px){.links .dd:last-of-type .ddpanel{left:auto;right:0}}@media (max-width:860px){.links{position:relative}.links .dd{position:static}.links .dd.open .ddpanel,.links .dd:has(a:focus-visible) .ddpanel{display:flex!important;left:0;right:0;top:100%;margin-top:2px;flex-flow:row wrap;gap:10px 20px;min-width:0;max-height:62vh;overflow-y:auto}.links .dd.shut .ddpanel{display:none!important}.links .ddpanel a{white-space:normal;padding:4px 0}.dd.open .ggpanel,.ggdd:focus-within .ggpanel{display:flex!important}.ggdd.shut .ggpanel{display:none!important}}\n.share{margin:30px 0 8px;padding-top:14px;border-top:1px solid var(--rule)}.share h3{margin:12px 0 6px}.embedcode{display:block;width:100%;box-sizing:border-box;font:13px/1.45 ui-monospace,Menlo,monospace;padding:8px 10px;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);resize:vertical}.ddpanel a{white-space:nowrap}
 .desklist{list-style:none;padding:0;margin:0}.desks{padding-bottom:6px}.desks+script+.meta,.desks+.meta{margin-top:8px}.desklist li{padding:8px 0;border-bottom:1px solid var(--rule)}.desklist a{font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.12em;margin-right:10px}.deskwhat{color:var(--mid)}.deskread{display:block;font-size:14px;color:var(--mid);margin-top:2px}.crumb{margin:0 0 14px}
 .livemenu{position:relative}.livemenu summary{list-style:none;cursor:pointer;font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--mid);padding:6px 0;border-bottom:2px solid transparent}
 .livemenu summary::-webkit-details-marker{display:none}.livemenu summary::after{content:" \\25BE"}.livemenu summary:hover,.livemenu summary[aria-current]{color:var(--ink);border-bottom-color:var(--rule)}
@@ -2033,6 +2039,7 @@ def _page_dates(docs):
     import json as _j, hashlib as _h2, subprocess as _sp, datetime as _dt
     def ck(doc):
         a = doc.find('<main'); b = doc.rfind('</main>'); m = doc[a:b] if a >= 0 and b > a else doc
+        m = _re.sub(r'(?s)<!--emb-->.*?<!--/emb-->', '', m)   # 10 Nov 2026 (findable pass): the embed and data links block carries a read time, not content
         return _h2.sha256(_re.sub(r'\?v=[0-9a-f]{6,}', '', m).encode('utf-8')).hexdigest()[:16]
     sf = os.path.join(HERE, 'page_dates.json'); st = _j.load(open(sf)) if os.path.exists(sf) else {}
     if st.get('_rule') != 'main-v1': st = {}
@@ -2231,7 +2238,7 @@ def main():
         _place(_home, _box(_t, _pg, _txt, _z, tested=_TESTED[_pg][0]))
     if _sha('iris/iris-list-pack.zip') and '/iris/package' in PAGES:
         PAGES['/iris'] = PAGES['/iris'].replace('<a href="/iris/package">What is in it</a></p></aside>', '<a href="/iris/package">What is in it</a></p><p class="pkgalso">Also: <a href="/iris/iris-list-pack.zip" download>IRIS List Pack</a> (every study on the List, CSV and BibTeX)</p><p class="pkgalso">Checker alone: <code>pip install iris-check</code> (<a href="https://pypi.org/project/iris-check/">PyPI</a>)</p></aside>', 1)
-    for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
+    for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('nav.js', r'/nav\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])
     for _pp in PAGES: PAGES[_pp] = PAGES[_pp].replace('@@CSSV@@', _cv)   # 9 Nov 2026 (site pass L14): the package pages are built after the first replace
@@ -2317,6 +2324,18 @@ def main():
         else:
             _m = '<main class="wrap">' + _hlslot(_dv); _m = _m if _m in _doc else '<main class="wrap">'
             PAGES[_dv] = _doc.replace(_m, _m + '<aside class="pkgbox ggbox"><span class="pkghead">' + _MARK + ('HERMES desk packs' if _dv == '/hermes' else 'SOCIAL Data Pack') + '</span>' + _box + '</aside>', 1)
+    # 10 Nov 2026 (findable pass, findable.py): the banner is filled here for every page, package pages included (they were built after the old
+    # fill and shipped an empty banner). Then the data links and embed box, the page dates, the share cards, Dataset JSON-LD and the change feeds.
+    for _pp in PAGES: PAGES[_pp] = _re.sub(r'@@NAV:[^@]*@@', lambda _m, _pp=_pp: _navfor(_pp), PAGES[_pp])
+    import findable as _fd
+    _packs = _fd.packs(PAGES, DESKS)
+    _fd.version_zips(PAGES)
+    _fdi = _fd.apply_main(PAGES, DESKS, _packs)
+    _lm = _page_dates(PAGES)
+    _fd.apply_head(PAGES, DESKS, _lm, _fdi, _packs)
+    _bad = [(p, e) for p, d in PAGES.items() for e in _fd.check_doc(d)]
+    if _bad: raise SystemExit('BUILD REFUSED: JSON-LD: ' + '; '.join('%s %s' % x for x in _bad[:8]))
+    print('findable: %d desk pages with data links or embed, %d change feeds' % (len(_fdi), _fd.write_changes()))
     for path, doc in PAGES.items():
         name = 'index.html' if path == '/' else path.strip('/') + '.html'
         os.makedirs(os.path.dirname(os.path.join(HERE, name)), exist_ok=True)
@@ -2324,7 +2343,6 @@ def main():
     open(os.path.join(HERE, 'model_all.html'), 'w', encoding='utf-8').write('\n'.join(doc for pth, doc in PAGES.items() if pth == '/hermes/model' or pth.startswith('/hermes/model/')))   # 28 Oct: the ledger surface for SAD (every SAD page in one file, never served)
     open(os.path.join(HERE, 'style.css'), 'w').write(CSS)
     open(os.path.join(HERE, 'gate-ui.txt'), 'w', encoding='utf-8').write(GATE_JS)
-    _lm = _page_dates(PAGES)
     imports = '\n'.join(f"import P{i} from './{n}';" for i, n in enumerate(names.values()))
     table = ',\n'.join(f"  '{p}': P{i}" for i, p in enumerate(names))
     # 9 Nov 2026 (site pass M10): llms.txt is built here from the division and desk lists (DESKS), so it names every live desk, and the worker
