@@ -37,7 +37,7 @@ def same_school(a, b):
 
 READ = {'MATCH': 'match', 'MISMATCH': 'mismatch', 'CANNOT_TELL': 'cannot tell'}
 WHY = {'year': 'year not printed or not the same', 'not_found': 'public figure not found', 'not_printed': 'not printed by US News or missing in the public file',
-       'suppressed': 'suppressed by the state', 'floor_or_range_unsettled': 'binned figure does not settle it', 'definition': 'definition differs', 'paid_tier': 'paid tier, not read', '': ''}
+       'suppressed': 'suppressed by the state', 'floor_or_range_unsettled': 'binned figure does not settle it', 'precision': 'public figure printed coarser, does not settle it', 'definition': 'definition differs', 'paid_tier': 'paid tier, not read', '': ''}
 RECOMPUTE = {
  'hs': 'College readiness and college curriculum breadth (40 percent together) use AP and IB exam results for each school, which are not published per school. State assessment performance (20 percent) is measured against what US News predicts for a school with its demographic characteristics.',
  'nu': 'Peer assessment (20 percent) is a survey US News runs. Graduation performance (10 percent) and Pell graduation performance (5.5 percent) are measured against rates US News predicts. Faculty salaries and spending per student come from what schools report.',
