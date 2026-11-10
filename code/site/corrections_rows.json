@@ -2839,7 +2839,7 @@
   "stage": "public",
   "published": "Rows Q3, Q4, Q5 and Q9 and the bill quoted an IBM tutorial sentence that the linked page no longer holds.",
   "wrong": "The page now redirects to a revised tutorial that does not contain the sentence.",
-  "now": "The rows keep the quote with its read date of 22 Oct 2026 and link an archived copy and the current page. The bill method line says the tutorial has since been revised.",
+  "now": "The rows keep the quote with its read date of 22 Oct 2026 and link an archived copy and the current page. The issued bill is not changed.",
   "why": "A quote must carry the date it was read.",
   "caught_by": "our referee",
   "worse": false,
@@ -2871,13 +2871,13 @@
   "stage": "public",
   "published": "The issued bill QIA-2026-001 (23 October 2026) quotes IBM's real-time benchmarking tutorial in rows 3, 4, 5 and 9.",
   "wrong": "IBM revised the tutorial after we read it, so the quotes no longer match the live page. The bill did not say when the tutorial was read.",
-  "now": "One sentence was added to the bill's method line on 9 November 2026. It says the tutorial was read on 22 October 2026, has since been revised, and that a copy of 9 September 2026 is at web.archive.org. No figure, row or outcome on the bill changed.",
+  "now": "On 9 November 2026 one sentence was added to the bill's method line saying the tutorial was read on 22 October 2026 and has since been revised. An issued bill is not edited, so on 10 November 2026 the bill was restored to its issued text. The read date and the archived copy are on the QIA page rows instead. No figure, row or outcome on the bill changed at any point.",
   "why": "A reader following the quote today would find different text.",
   "caught_by": "our referee",
   "worse": false,
   "source": "indahl-ai/qia_template/QIA-2026-001.json.bak-20261109-leftovers",
-  "commit": "indahl-ai@5bb3e9bf",
-  "public_commit": "fedb1a1b7"
+  "commit": "indahl-ai@931818b1",
+  "public_commit": "7ca026887"
  },
  {
   "id": "c20261109-34",
