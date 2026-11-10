@@ -856,7 +856,8 @@ for _s in _SCH:
     else:
         _lines.append('<h2>Course titles in the public catalog</h2><p>' + {'readable': 'None matched in the catalog pages the script read.', 'not readable by script': 'The script could not read course lists on this site.', 'pending': 'Not yet read.'}[_s['catalog']] + '</p>')
     if _s.get('hand'):
-        _lines.insert(0, f'<h2>Read in full</h2><p>Page type: <b>{_e(_s["hand"]["label"])}.</b> {_e(_s["hand"]["note"])} Read 28 October 2026.</p>')
+        _lines.insert(0, (f'<h2>Read in a browser</h2><p>Page type: <b>{_e(_s["hand"]["label"])}.</b> {_e(_s["hand"]["note"])} Read {_e(_s["hand"]["read_on"])}. The script read below found no page about AI, so we opened the school&rsquo;s AI pages in an ordinary browser.</p>') if _s['hand'].get('how') == 'browser' else
+                         f'<h2>Read in full</h2><p>Page type: <b>{_e(_s["hand"]["label"])}.</b> {_e(_s["hand"]["note"])} Read 28 October 2026.</p>')   # 10 Nov 2026 browser re-read (oy_index/raw_browser_20261110/)
     _ipn = (f" Listed in the federal directory as {_e(_s['ipeds_name'])}." if _s.get('ipeds_name') and _s['ipeds_name'] != _s['school'] and not _s.get('name_note') else '')
     _nn = (' ' + _e(_s['name_note'])) if _s.get('name_note') else ''
     _shr = (' This school shares its website with ' + _e(', '.join(_s['shared_with'])) + ', so the read below covers the shared site.') if _s.get('shared_with') else ''
@@ -870,8 +871,8 @@ for _s in _SCH:
     PAGES[_pp] = page(_pp, f"{_nm} | OY | Heuremen LLC", _d, _body, hero_slim(_e(_nm)))
     _FEED.append((_pp, f"{_nm} (OY)", _d))
     _rows.append(f'<tr><td><a href="{_pp}">{_e(_nm)}</a></td><td>{_e(_s["state"])}</td><td>{_readtxt(_s)}</td><td>{_s["sentences_total"] if _s["site_read"] == "yes" else "&mdash;"}</td><td>{_s["courses_total"] if _s["catalog"] == "readable" else "&mdash;"}</td><td>{_e(_s["hand"]["label"]) if _s.get("hand") else "&mdash;"}</td></tr>')
-_OY_SCH = ('<section><h2>Private baccalaureate colleges</h2><p>Private nonprofit baccalaureate colleges from the federal directory, one page each. The directory puts them in two Carnegie 2021 classes, Arts and Sciences focus and Diverse fields, and the pages cover both. The script reads each school&rsquo;s own public pages for sentences that name AI with a number or a study word, and its public catalog for course titles on AI, technology and society, and related topics. These are script reads, not recounts. The last column marks the schools whose pages we also read in full.</p>'
-           '<div class="scroll"><table class="mtx"><thead><tr><th>School</th><th>State</th><th>Site</th><th>Sentences</th><th>Course titles</th><th>Read in full</th></tr></thead><tbody>' + ''.join(_rows) + '</tbody></table></div></section>')
+_OY_SCH = ('<section><h2>Private baccalaureate colleges</h2><p>Private nonprofit baccalaureate colleges from the federal directory, one page each. The directory puts them in two Carnegie 2021 classes, Arts and Sciences focus and Diverse fields, and the pages cover both. The script reads each school&rsquo;s own public pages for sentences that name AI with a number or a study word, and its public catalog for course titles on AI, technology and society, and related topics. These are script reads, not recounts. The last column marks the schools whose pages we also read ourselves, in full on 28 October 2026 or in a browser on 10 November 2026. We read in a browser the 89 schools where the script reached the site but found no page about AI. Of those 89, 48 have an AI policy or guidance page, and none states a measured outcome of its own AI policy, guidance, tool or pilot.</p>'
+           '<div class="scroll"><table class="mtx"><thead><tr><th>School</th><th>State</th><th>Site</th><th>Sentences</th><th>Course titles</th><th>Read by us</th></tr></thead><tbody>' + ''.join(_rows) + '</tbody></table></div></section>')
 print('oy school pages', len(_SCH))
 
 # 27 Oct 2026 (his word): ATLAS, fourth division. First page: US data center map. Data: atlas/datacenters.json, atlas/map.svg, atlas/summary.json (build_atlas.py).

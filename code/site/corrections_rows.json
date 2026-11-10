@@ -4369,5 +4369,20 @@
   "worse": true,
   "source": "qia_leads/nl_audit_20261110/q148_fit_dependence.text",
   "receipt": "qia.panel.t1t2.q148_cannot_tell"
+ },
+ {
+  "id": "c20261110-90",
+  "date": "2026-11-10",
+  "desk": "OY",
+  "page": "/oy",
+  "stage": "public",
+  "published": "The list said the pages of 4 schools refused our reader or needed a login, so they read not reached: Williams, Haverford, Mississippi State and Wellesley. None found read 17 of 148.",
+  "wrong": "Williams, Haverford and the 18 blocked Mississippi State provost pages open in an ordinary browser. Read there, none of them states a measured outcome of the school’s own AI policy, guidance, tool or pilot.",
+  "now": "Those 3 rows read None found, dated 10 Nov 2026. Wellesley still needs a login and reads not reached. None found reads 20 of 148 and not reached reads 1 of 148. The two headline counts, 10 of 148 and 3 to 4 of 148, do not change.",
+  "why": "Our reader was refused by those sites, and a read in an ordinary browser had not been tried.",
+  "caught_by": "our own check",
+  "worse": false,
+  "source": "oy_index/BROWSER_REREAD_20261110.md",
+  "receipt": "oy.s0_unreached"
  }
 ]

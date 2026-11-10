@@ -1261,6 +1261,7 @@
 /r/live.change.v20261110T145316Z	2026-11-10
 /r/live.cone.headline	2026-11-10
 /r/live.cone.v20261110T162303Z	2026-11-10
+/r/live.credit.headline	2026-11-10
 /r/live.fedsep.headline	2026-11-10
 /r/live.fedsep.v20261110T120408Z	2026-11-10
 /r/live.flu.headline	2026-11-10
@@ -1363,7 +1364,10 @@
 /r/now.manifold.n	2026-11-10
 /r/now.manifold.skill	2026-11-10
 /r/now.resolved	2026-11-10
+/r/oy.bacc_browser_89	2026-11-10
+/r/oy.bacc_guidance_48	2026-11-10
 /r/oy.bacc_guidance_49	2026-11-10
+/r/oy.bacc_measured_0	2026-11-10
 /r/oy.bastani	2026-10-30
 /r/oy.chatbot_cited_8	2026-10-29
 /r/oy.clarkson	2026-10-25
@@ -1392,12 +1396,15 @@
 /r/oy.pilots_read_10	2026-10-25
 /r/oy.planned_only	2026-11-10
 /r/oy.rows_148	2026-10-30
+/r/oy.s0_browser_reread	2026-11-10
 /r/oy.s0_learning_original_rule	2026-11-10
 /r/oy.s0_learning_policy_rule	2026-11-10
 /r/oy.s0_none_found	2026-11-10
+/r/oy.s0_none_found_b	2026-11-10
 /r/oy.s0_policy_measured	2026-11-10
 /r/oy.s0_rule_after_41	2026-11-10
 /r/oy.s0_unreached	2026-11-10
+/r/oy.s0_unreached_b	2026-11-10
 /r/oy.s0_usage	2026-11-10
 /r/oy.trial_wo_numbers	2026-10-30
 /r/oy.umd	2026-10-30
@@ -2443,6 +2450,9 @@
 /r/quake.prob10.year	2026-11-10
 /r/rank.checks.hs	2026-11-10
 /r/rank.checks.law	2026-11-10
+/r/rank.checks.nj_col	2026-11-10
+/r/rank.checks.nj_hs	2026-11-10
+/r/rank.checks.nj_k8	2026-11-10
 /r/rank.checks.nlac	2026-11-10
 /r/rank.checks.nu	2026-11-10
 /r/rank.list.edu	2026-11-10
@@ -2453,6 +2463,10 @@
 /r/rank.list.mba	2026-11-10
 /r/rank.list.med	2026-11-10
 /r/rank.list.middle	2026-11-10
+/r/rank.list.nj_col	2026-11-10
+/r/rank.list.nj_elem	2026-11-10
+/r/rank.list.nj_hs	2026-11-10
+/r/rank.list.nj_middle	2026-11-10
 /r/rank.list.nlac	2026-11-10
 /r/rank.list.nu	2026-11-10
 /r/restart.vs_none	2026-10-22

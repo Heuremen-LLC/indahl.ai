@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-10T17:29:14Z",
+ "built_utc": "2026-11-10T18:16:13Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 926,
+   "commit": "b6f4d1339734624ae32961c9063b4f9fc422eb1a",
+   "files": 5120,
+   "id": "b6f4d1339734",
+   "json": "/receipts/stamps/release_b6f4d1339734.json",
+   "ledger_sha256": "b38db5fb0b268875cedc27247243ad98dc71c812070f6b3d29bf1aca261f8974",
+   "manifest_sha256": "094c087dc057646f68b8f2fb91cb7ff5170bf68e0e1a73e987b925d8e78b2c53",
+   "ots": "/receipts/stamps/release_b6f4d1339734.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T18:16:10Z",
+   "sha256": "8a49846dab9e8350df6c8d009d937b0b6752cd54a2d44a335a2f918d05273ec1",
+   "wayback": [],
+   "wayback_waiting": 915
+  },
   {
    "changed": 67,
    "commit": "90a9bfc1ec6fb6ccba20c745b4a09bc8b253b3e7",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-10T16:53:42Z",
    "sha256": "476ad6e34f12c211e013595a54a2dd5d587499101999351c190f11bdb6f1a7a1",
    "wayback": [],
-   "wayback_waiting": 65
+   "wayback_waiting": 3
   },
   {
    "changed": 43,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-10T16:43:28Z",
    "sha256": "8ea33eceb27411d55edddd26de6604437f817a725c9277ba93d7b3213b858aeb",
    "wayback": [],
-   "wayback_waiting": 7
+   "wayback_waiting": 2
   },
   {
    "changed": 35,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-10T16:39:59Z",
    "sha256": "3c5fcd2e8edd26c090b985842325fe894355056d0b4e7e380b03bcfbad997d22",
    "wayback": [],
-   "wayback_waiting": 22
+   "wayback_waiting": 17
   },
   {
    "changed": 75,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-10T16:37:51Z",
    "sha256": "81417f2e72326fa489a8e8af930469d7a47928053dff6256e4d7053cd543fa8e",
    "wayback": [],
-   "wayback_waiting": 43
+   "wayback_waiting": 41
   },
   {
    "changed": 815,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-10T16:35:44Z",
    "sha256": "406b9d743b79fd198bb780557ad5417658c285018468c71bfe29a4ced738c95a",
    "wayback": [],
-   "wayback_waiting": 767
+   "wayback_waiting": 18
   },
   {
    "changed": 47,
@@ -105,7 +120,7 @@
    "released_at": "2026-11-10T16:29:38Z",
    "sha256": "1fdef256f7b88cd619928b8bfff21b613a5e796b5e66afa3b90ec1443209a7c3",
    "wayback": [],
-   "wayback_waiting": 7
+   "wayback_waiting": 5
   },
   {
    "changed": 1017,
@@ -396,7 +411,7 @@
      "url": "https://indahl.ai/flu"
     }
    ],
-   "wayback_waiting": 62
+   "wayback_waiting": 51
   },
   {
    "changed": 128,
@@ -411,7 +426,7 @@
    "released_at": "2026-11-10T15:45:00Z",
    "sha256": "c6bc80c4073dde94914cc569fbf12d20abf9bc82cf697cd3ad569858aa8922a7",
    "wayback": [],
-   "wayback_waiting": 52
+   "wayback_waiting": 1
   },
   {
    "changed": 3746,
@@ -487,7 +502,7 @@
      "url": "https://indahl.ai/arxivdrift"
     }
    ],
-   "wayback_waiting": 2771
+   "wayback_waiting": 2769
   },
   {
    "changed": 3836,
@@ -1315,7 +1330,7 @@
      "url": "https://indahl.ai/uptime"
     }
    ],
-   "wayback_waiting": 88
+   "wayback_waiting": 87
   },
   {
    "changed": 882,
