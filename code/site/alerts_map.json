@@ -1535,6 +1535,10 @@
 "REVISE",
 "How far does a first estimate move?"
 ],
+"seasonal": [
+"SEASONAL",
+"When the seasonal outlook states a chance, how often does it happen?"
+],
 "secrecords": [
 "SECRECORDS",
 "Do a domain's security records do what they say?"

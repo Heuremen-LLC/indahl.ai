@@ -3151,6 +3151,14 @@
 /r/sad.supermicro.v2	2026-10-28
 /r/sad.supermicro.v3	2026-10-28
 /r/sad.supermicro.v4	2026-10-30
+/r/seasonal.hss.prec.all	2026-11-10
+/r/seasonal.hss.prec.nonec	2026-11-10
+/r/seasonal.hss.temp.all	2026-11-10
+/r/seasonal.hss.temp.nonec	2026-11-10
+/r/seasonal.lean.prec	2026-11-10
+/r/seasonal.lean.temp	2026-11-10
+/r/seasonal.temp.above.40	2026-11-10
+/r/seasonal.temp.above.50	2026-11-10
 /r/sept.fez_space_pairs	2026-10-30
 /r/sept.kingston_pair16_23_alone	2026-10-30
 /r/sept.kingston_pair16_23_excluded	2026-10-30
@@ -3359,6 +3367,7 @@
 /r/desk/quake	2026-11-10
 /r/desk/rank	2026-11-10
 /r/desk/revise	2026-11-10
+/r/desk/seasonal	2026-11-10
 /r/desk/secrecords	2026-11-10
 /r/desk/social	2026-11-10
 /r/desk/solar	2026-11-10

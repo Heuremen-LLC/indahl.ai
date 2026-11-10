@@ -181,6 +181,11 @@
    "Stated chance against what happened"
   ],
   [
+   "/seasonal",
+   "SEASONAL",
+   "Stated seasonal outlook chances against what was observed"
+  ],
+  [
    "/steo",
    "STEO",
    "Stated energy price intervals against the spot price"
@@ -273,6 +278,7 @@
   "/quake": "2026-11-10T15:50:55Z",
   "/rank": "2026-11-10T16:27:24Z",
   "/revise": "2026-10-29T12:40:10Z",
+  "/seasonal": "2026-11-10T16:33:09Z",
   "/seat": "2026-10-29T11:58:53Z",
   "/secrecords": "2026-10-29T11:54:10Z",
   "/social": "2026-11-10T12:49:07Z",
