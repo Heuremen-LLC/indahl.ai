@@ -873,6 +873,8 @@
 /r/live.launch.v20261110T120408Z	2026-11-10
 /r/live.linkrot.headline	2026-11-10
 /r/live.linkrot.v20261110T120408Z	2026-11-10
+/r/live.neo.headline	2026-11-10
+/r/live.neo.v20261110T140235Z	2026-11-10
 /r/live.pkginstall.headline	2026-11-10
 /r/live.pkginstall.v20261110T120408Z	2026-11-10
 /r/live.pkglicense.headline	2026-11-10
@@ -1021,6 +1023,7 @@
 /r/pack.size.launch-data-pack	2026-11-10
 /r/pack.size.linkrot-data-pack	2026-11-10
 /r/pack.size.model-data-pack	2026-11-10
+/r/pack.size.neo-data-pack	2026-11-10
 /r/pack.size.oy-data-pack	2026-11-10
 /r/pack.size.pkginstall-data-pack	2026-11-10
 /r/pack.size.pkglicense-data-pack	2026-11-10
