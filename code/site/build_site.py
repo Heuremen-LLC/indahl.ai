@@ -8,7 +8,7 @@ MARK = ('<svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon poi
         '<polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>')
 HOME = {'/vault': '/hermes', '/tape': '/hermes', '/hfsize': '/iris', '/hflicense': '/iris', '/pkglicense': '/iris', '/pkginstall': '/iris', '/uptime': '/atlas', '/time': '/atlas', '/cada': '/atlas', '/secrecords': '/atlas', '/seat': '/atlas', '/support': '/atlas', '/change': '/atlas',
         '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/hosts': '/iris', '/water': '/atlas', '/wiki': '/hermes', '/social': '/hermes'}
-NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
+NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
 DOI = 'https://doi.org/10.5281/zenodo.23169755'
 
 
@@ -150,7 +150,7 @@ def page(path, title, desc, body, wide_hero=None):
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
 </div></footer>
-<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/stack', 'STACK')))}</nav>
+<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL')))}</nav>
 <script src="/pwa.js" defer></script>
 <script src="/live-tags.js?v=35e2ef27" defer></script>
 <script src="/headline.js?v=6e4f48dc" defer></script>
@@ -1567,6 +1567,7 @@ PAGES['/yo'] = page('/yo', 'YO: A Small Model for IBM Calibration Records | IRIS
  YO_LEAD + YO_READS + IRIS_YO.replace('<h2>YO: A Small Model Trained to Audit IBM&rsquo;s Records</h2>', '<h2>How YO Was Trained and Tested</h2>', 1),
  hero_slim('YO', 'A Small Model for IBM Calibration Records'))
 HOME['/yo'] = '/iris'
+HOME['/stack'] = '/hermes'   # 10 Nov (Wayfinder): STACK lives under HERMES now; SOCIAL has the banner slot
 _FEED.append(('/yo', 'YO: a small model for IBM calibration records', 'What YO is, its live reads of each new IBM record, and how every version was trained and tested.'))
 _FEED.append(('/iris/lab/live', 'Sage V training, live', 'The stage each Sage V seat is in, the paired evals with their intervals, and each promotion and rollback.'))
 PAGES['/iris/key'] = page('/iris/key', 'IRIS Key | IRIS | Heuremen LLC', 'IRIS codes: what moves a language-model result besides the model, where we measured it, and the indexed studies it touches.',
@@ -1936,7 +1937,7 @@ DESKS = {'/oy': [('/campus', 'CAMPUS', 'The documents behind the OY page, kept o
                     ('/uptime', 'UPTIME', 'Vendor status pages against independent probes'), ('/time', 'TIME', 'Public time servers, stated against delivered'), ('/cada', 'CADA', 'Public DNS filters against fresh abuse reports'), ('/secrecords', 'SECRECORDS', 'Security records against their own rules'),
                     ('/seat', 'SEAT', 'An outside seat reads our own pages'), ('/support', 'SUPPORT', 'Stated support windows against release activity'), ('/change', 'CHANGE', 'Announced shutdown dates, kept over time')],
          '/hermes': [('/hermes/model', 'MODEL', 'Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data'), ('/trials', 'TRIALS', 'Results due against results posted, and stopped trials'), ('/hpt', 'HPT', 'Hospital price files against the rule'), ('/airline', 'AIRLINE', 'Scheduled flight time against flown time'), ('/airq', 'AIRQ', 'Air sensors against the EPA\'s own targets'), ('/revise', 'REVISE', 'Stated margin against later revision'), ('/fedsep', 'FEDSEP', 'The Fed\'s stated ranges against outcomes'), ('/cadence', 'CADENCE', 'Stated update schedules against delivered'),
-                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings')]}
+                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/stack', 'STACK', 'Every test side by side')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot
 _DNAME = {'/iris': 'IRIS', '/atlas': 'ATLAS', '/hermes': 'HERMES', '/oy': 'OY'}
 for _d, _ds in DESKS.items():
     if _d == '/hermes': continue
@@ -1988,12 +1989,12 @@ assert 'href="/' not in _dw_body.replace('href="/darkwave', ''), 'relative heure
 PAGES['/darkwave'] = page('/darkwave', 'Darkwave | A Readout’s Kick Is a Turn | Heuremen LLC', html.unescape(_dw_desc), '<section class="dwpage">' + _dw_body + '</section>', hero_slim('DARKWAVE', _dw_sub))
 CSS += ".dwpage table{border-collapse:collapse;font-size:14.5px;margin:12px 0;display:block;overflow-x:auto}.dwpage th{text-align:left;font-weight:600;border-bottom:1px solid currentColor;padding:5px 20px 5px 0}.dwpage td{padding:4px 20px 4px 0;border-bottom:1px solid rgba(127,127,127,.25);font-variant-numeric:tabular-nums}.dwpage img{max-width:100%;height:auto;margin:14px 0}.dwpage .dwnote{opacity:.8;font-size:14px}.dwpage .dwlede{font-size:18px;line-height:1.55}\n"
 
-# 29 Oct 2026: main menu = five divisions and STACK; a division with desks gets a dropdown of what is beneath it (hover or focus, no script). QIA stays a plain link.
+# 29 Oct 2026: main menu = five divisions and STACK (10 Nov: SOCIAL replaced STACK in the banner); a division with desks gets a dropdown of what is beneath it (hover or focus, no script). QIA stays a plain link.
 def _navfor(path):
     home = HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path)
     out = []
     for h, t in NAV:
-        if h not in ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/stack'): continue
+        if h not in ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/social'): continue   # 10 Nov: SOCIAL in the banner, STACK under HERMES
         cur = ' aria-current=page' if h == home else ''
         ds = [x for x in DESKS.get(h, []) if x[0] in PAGES] if h in ('/iris', '/atlas', '/hermes') else []
         if ds: out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel">' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
