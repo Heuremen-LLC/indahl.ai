@@ -2774,10 +2774,10 @@
 /r/desk/ailuminate	2026-11-10
 /r/desk/airline	2026-11-10
 /r/desk/airq	2026-11-10
-/r/desk/atlas	2026-11-10
 /r/desk/atlas-carbon	2026-10-30
 /r/desk/atlas-data-pack	2026-11-10
 /r/desk/atlas-electricity	2026-10-30
+/r/desk/atlas	2026-11-10
 /r/desk/atlas-planned-plants	2026-10-30
 /r/desk/atlas-power-plants	2026-10-30
 /r/desk/cadence	2026-11-10
@@ -2801,8 +2801,8 @@
 /r/desk/media	2026-10-29
 /r/desk/media-2026-10-26	2026-10-30
 /r/desk/model	2026-11-10
-/r/desk/oy	2026-11-10
 /r/desk/oy-data-pack	2026-11-10
+/r/desk/oy	2026-11-10
 /r/desk/paper	2026-11-04
 /r/desk/pkginstall	2026-11-10
 /r/desk/pkglicense	2026-11-10
