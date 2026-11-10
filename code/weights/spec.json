@@ -13,7 +13,7 @@
  "rider": "~/bones-forge/weights_index/weights_tick.py",
  "folder": "weights",
  "live_desc": "Open-weight model names against their weight files, pass after pass, live.",
- "top": "Pass {pass_number}. Models read: {models}, of which {retained} left the top 1,000 after an earlier pass and are still read. Could not be read: {unreadable}. Changed models awaiting a read in full: {awaiting}. Updated {updated}.",
+ "top": "Pass {pass_number}. Models read: {models}, of which {retained} left the top 1,000 after an earlier pass and are still read. Could not be read: {unreadable}. Not comparable: {not_comparable}. Compared on the latest pass: {headline.of}. Change events awaiting a read in full: {awaiting}. Updated {updated}.",
  "tables": [
   {
    "title": "Weight files between passes",
@@ -53,8 +53,13 @@
      "n"
     ],
     [
-     "Changed on any pass",
+     "Models changed on any pass",
      "n",
+     "n"
+    ],
+    [
+     "Change events",
+     "events",
      "n"
     ],
     [
@@ -65,7 +70,7 @@
    ]
   },
   {
-   "title": "Models whose weight files changed between two passes, each read in full",
+   "title": "Changes between two passes read in full so far",
    "path": "changed_list",
    "link": "https://huggingface.co/{repo}",
    "first": "Model",

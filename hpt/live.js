@@ -4,7 +4,7 @@
   var OC = { CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell', NOTHING_RETURNED: 'nothing returned' };
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = t == null ? '' : t; return c; }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Disagreement among websites that could be compared", "path": "comparison", "first": "Step", "cols": [["Compared", "of", "n"], ["Disagree", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Websites we could not compare", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Websites", "n", "n"]]}, {"title": "Rows that failed steps two and three, read in full", "path": "disagree_list", "first": "Website", "firstkey": "domain", "cols": [["Step", "step", "t"], ["Found", "found", "t"], ["Linked file", "file", "url"], ["Full read", "reason", "t"]], "linkfield": "txt"}], TOP = "Websites read: {domains}. Wikidata list of {listdate}. Updated {updated} UTC.";
+  var TABLES = [{"title": "Disagreement among websites that could be compared", "path": "comparison", "first": "Step", "cols": [["Compared", "of", "n"], ["Disagree", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "Websites we could not compare", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Websites", "n", "n"]]}, {"title": "Rows that failed steps two and three, read in full", "path": "disagree_list", "first": "Website", "firstkey": "domain", "cols": [["Step", "step", "t"], ["Found", "found", "t"], ["Linked file", "file", "url"], ["Full read", "reason", "t"]], "linkfield": "txt"}], TOP = "Websites read: {domains}. Wikidata list of {listdate}. Failing rows awaiting a read in full: {awaiting}. Updated {updated} UTC.";
   function cell(kind, row, key, T) {
     var v = row[key];
     if (kind === 'url') { var uc = td(''); if (typeof v === 'string' && /^https?:\/\//.test(v)) { var ua = document.createElement('a'); ua.href = v; ua.textContent = 'open'; uc.appendChild(ua); } return uc; }
@@ -22,7 +22,7 @@
   }
   fetch('/hpt/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.updated && !d.read) { box.textContent = 'Waiting for the first read.'; return; }
-    box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{(\w+)\}/g, function (m, k) { return d[k] == null ? '' : d[k]; }); box.appendChild(top);
+    box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{([\w.]+)\}/g, function (m, k) { var v = d; k.split('.').forEach(function (p) { v = v == null ? v : v[p]; }); return v == null ? '' : v; }); box.appendChild(top);
     TABLES.forEach(function (T) {
       var src = d; T.path.split('.').forEach(function (k) { src = src && src[k]; }); if (!src) return;
       var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object' || Array.isArray(src[k]); });
