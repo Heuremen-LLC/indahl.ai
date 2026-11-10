@@ -3199,6 +3199,10 @@
 /r/seasonal.lean.temp	2026-11-10
 /r/seasonal.temp.above.40	2026-11-10
 /r/seasonal.temp.above.50	2026-11-10
+/r/security.self.heuremen_com	2026-11-10
+/r/security.self.heuremen_org	2026-11-10
+/r/security.self.indahl_ai	2026-11-10
+/r/security.signing_key.kid	2026-11-10
 /r/sept.fez_space_pairs	2026-10-30
 /r/sept.kingston_pair16_23_alone	2026-10-30
 /r/sept.kingston_pair16_23_excluded	2026-10-30
@@ -3413,6 +3417,7 @@
 /r/desk/revise	2026-11-10
 /r/desk/seasonal	2026-11-10
 /r/desk/secrecords	2026-11-10
+/r/desk/security-self	2026-11-10
 /r/desk/social	2026-11-10
 /r/desk/solar	2026-11-10
 /r/desk/steo	2026-11-10
@@ -3420,6 +3425,7 @@
 /r/desk/tape	2026-11-10
 /r/desk/tornado	2026-11-10
 /r/desk/trials	2026-11-10
+/r/desk/verify	2026-11-10
 /r/desk/water	2026-11-10
 /r/desk/weights	2026-11-10
 /r/desk/wiki	2026-11-10

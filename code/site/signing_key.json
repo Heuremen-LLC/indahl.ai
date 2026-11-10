@@ -1,0 +1,8 @@
+{
+ "kid": "f0c0aac503f8211c",
+ "alg": "EdDSA",
+ "crv": "Ed25519",
+ "x": "0oTA2BSs50d4B22ZKEKRlAreYyj4VXRy4aoxrlh4hQ0",
+ "pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA0oTA2BSs50d4B22ZKEKRlAreYyj4VXRy4aoxrlh4hQ0=\n-----END PUBLIC KEY-----\n",
+ "created": "2026-11-10T21:49:41Z"
+}

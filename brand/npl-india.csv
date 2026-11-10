@@ -1,2 +1,2 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-CSIR-National Physical Laboratory (India),TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.nplindia.org,Its statement,stated bound 1.07 ms,"offset 29.08 ms, path half-delay 136.56 ms",,CANNOT TELL,,10 Nov 21:31,
+CSIR-National Physical Laboratory (India),TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.nplindia.org,Its statement,stated bound 1.07 ms,"offset 27.97 ms, path half-delay 136.12 ms",,CANNOT TELL,,10 Nov 22:48,

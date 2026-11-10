@@ -1,0 +1,69 @@
+{
+  "_about": "Release schedules the desks' sources publish, read from the source pages on 2026-11-10 (notify.py builds /calendar.ics and /<desk>/calendar.ics from this file). Only dates the source itself states. Each event cites its schedule page. Add a date only after reading it on the source page, with the read date in 'read'.",
+  "sources": [
+    {
+      "desk": "steo",
+      "id": "eia-steo",
+      "title": "EIA Short-Term Energy Outlook release",
+      "url": "https://www.eia.gov/outlooks/steo/release_schedule.php",
+      "read": "2026-11-10",
+      "note": "EIA states the STEO is normally released between 12:00 pm and 12:15 pm Eastern Time on the release date.",
+      "events": [
+        {"date": "2026-12-08", "label": "December 2026 issue"},
+        {"date": "2027-01-12", "label": "January 2027 issue"},
+        {"date": "2027-02-09", "label": "February 2027 issue"},
+        {"date": "2027-03-09", "label": "March 2027 issue"},
+        {"date": "2027-04-06", "label": "April 2027 issue"},
+        {"date": "2027-05-11", "label": "May 2027 issue"},
+        {"date": "2027-06-08", "label": "June 2027 issue"},
+        {"date": "2027-07-07", "label": "July 2027 issue"},
+        {"date": "2027-08-10", "label": "August 2027 issue"},
+        {"date": "2027-09-08", "label": "September 2027 issue"},
+        {"date": "2027-10-13", "label": "October 2027 issue"},
+        {"date": "2027-11-09", "label": "November 2027 issue"},
+        {"date": "2027-12-07", "label": "December 2027 issue"}
+      ]
+    },
+    {
+      "desk": "seasonal",
+      "id": "cpc-long-lead",
+      "title": "NOAA CPC long-lead seasonal outlook release",
+      "url": "https://www.cpc.ncep.noaa.gov/products/predictions/schedule.php",
+      "read": "2026-11-10",
+      "note": "CPC states the forecast is generally released around 8:30 AM Eastern Time on the scheduled date, on the third Thursday of the month. CPC says its 2027 schedule will be released on or about 2 December 2026.",
+      "events": [
+        {"date": "2026-11-19", "label": "December 2026 forecast, seasons DJF 2026 to DJF 2027"},
+        {"date": "2026-12-17", "label": "January 2027 forecast, seasons JFM 2027 to JFM 2028"}
+      ]
+    },
+    {
+      "desk": "cone",
+      "id": "nhc-season",
+      "title": "NHC hurricane season",
+      "url": "https://www.nhc.noaa.gov/climo/",
+      "read": "2026-11-10",
+      "note": "NHC states the Atlantic hurricane season runs from June 1 to November 30 and the eastern Pacific season from May 15 to November 30.",
+      "events": [
+        {"date": "2026-11-30", "label": "Atlantic and eastern Pacific seasons end"},
+        {"date": "2027-05-15", "label": "Eastern Pacific season begins"},
+        {"date": "2027-06-01", "label": "Atlantic season begins"},
+        {"date": "2027-11-30", "label": "Atlantic and eastern Pacific seasons end"}
+      ]
+    },
+    {
+      "desk": "fedsep",
+      "id": "fomc-sep",
+      "title": "FOMC meeting with a Summary of Economic Projections",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "read": "2026-11-10",
+      "note": "The Federal Reserve marks these meetings as associated with a Summary of Economic Projections and states that each meeting date is tentative until confirmed at the meeting before it.",
+      "events": [
+        {"date": "2026-12-08", "end": "2026-12-09", "label": "December 2026 meeting"},
+        {"date": "2027-03-16", "end": "2027-03-17", "label": "March 2027 meeting"},
+        {"date": "2027-06-08", "end": "2027-06-09", "label": "June 2027 meeting"},
+        {"date": "2027-09-14", "end": "2027-09-15", "label": "September 2027 meeting"},
+        {"date": "2027-12-07", "end": "2027-12-08", "label": "December 2027 meeting"}
+      ]
+    }
+  ]
+}

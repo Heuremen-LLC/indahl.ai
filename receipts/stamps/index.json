@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-10T21:45:47Z",
+ "built_utc": "2026-11-10T22:48:32Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 100,
+   "commit": "5e1b3a67ca53c2967432b024c18c98d12e80740c",
+   "files": 5189,
+   "id": "5e1b3a67ca53",
+   "json": "/receipts/stamps/release_5e1b3a67ca53.json",
+   "ledger_sha256": "49fa50bebf767a65443998ca91a9c3f999da74ae6bcb035e476a83a0745d8bcb",
+   "manifest_sha256": "fa58b3241e76a635fc95ff3f5e96db3a51b27d891b2382ec8174a090f1721b11",
+   "ots": "/receipts/stamps/release_5e1b3a67ca53.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T21:47:34Z",
+   "sha256": "c90dd5e0d170b2be533ff4724fd0d304e1b1b7228068f3d54661be33b86f04c5",
+   "wayback": [],
+   "wayback_waiting": 93
+  },
   {
    "changed": 4291,
    "commit": "8e955b49dc16b30495def95ce30f021007c0766c",
@@ -11,11 +26,11 @@
    "ledger_sha256": "49fa50bebf767a65443998ca91a9c3f999da74ae6bcb035e476a83a0745d8bcb",
    "manifest_sha256": "f4f90a8cb83fdbf34c48db1be60933614bb6ffe19d0f613d90b119f1c9f4b3d5",
    "ots": "/receipts/stamps/release_8e955b49dc16.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975349",
    "released_at": "2026-11-10T21:26:47Z",
    "sha256": "8557ead26691345884abaf1681c095d2932efd6c6ee9c2bcf049f5acdca53b52",
    "wayback": [],
-   "wayback_waiting": 4280
+   "wayback_waiting": 4191
   },
   {
    "changed": 4429,
@@ -26,11 +41,11 @@
    "ledger_sha256": "49fa50bebf767a65443998ca91a9c3f999da74ae6bcb035e476a83a0745d8bcb",
    "manifest_sha256": "0059ce222e88c7bc2c94de506e4dfd4c26823fb056b293b188ee845ee0df857f",
    "ots": "/receipts/stamps/release_313254c44867.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975346",
    "released_at": "2026-11-10T21:00:35Z",
    "sha256": "78dd4857f9950821048fe09d5acb206f0b2f85dd1172a93ea6a1bfc42e85c08d",
    "wayback": [],
-   "wayback_waiting": 181
+   "wayback_waiting": 180
   },
   {
    "changed": 18,
@@ -41,7 +56,7 @@
    "ledger_sha256": "49fa50bebf767a65443998ca91a9c3f999da74ae6bcb035e476a83a0745d8bcb",
    "manifest_sha256": "8c04fbeeb6a1825fcbc4a01a0286868282a86956cc7e6ca7e6fec7f0a102424d",
    "ots": "/receipts/stamps/release_e5cee01d11ca.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975346",
    "released_at": "2026-11-10T20:22:33Z",
    "sha256": "d698dc7d295a1253b59ddeb60920ea579f33dca29cb09d4dda42a9e14886efa7",
    "wayback": [],
@@ -56,11 +71,11 @@
    "ledger_sha256": "49fa50bebf767a65443998ca91a9c3f999da74ae6bcb035e476a83a0745d8bcb",
    "manifest_sha256": "980ef37cbbb9b1ea9fd5974b79e00be16dac78ca25e8596d6bb431a860aa00b0",
    "ots": "/receipts/stamps/release_feed547e6d78.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975346",
    "released_at": "2026-11-10T20:19:44Z",
    "sha256": "42482593fe5a1e7c8c101a747d4c003313cea660a15eb0a856b231466d5daf32",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 57,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-10T20:00:53Z",
    "sha256": "d8468be8719824987db81672a88258ca9170cf2b33c133c2653efe57875c698a",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 4220,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-10T19:55:23Z",
    "sha256": "07248fcfaf236d763028b26e9068e67dbc1d710e59bb1ee55ddba7105ea205b4",
    "wayback": [],
-   "wayback_waiting": 3
+   "wayback_waiting": 2
   },
   {
    "changed": 697,
@@ -682,7 +697,7 @@
      "url": "https://indahl.ai/arxivdrift"
     }
    ],
-   "wayback_waiting": 15
+   "wayback_waiting": 14
   },
   {
    "changed": 3836,
