@@ -1,0 +1,22 @@
+{
+ "built_utc": "2026-11-10T13:29:31Z",
+ "publisher": "Heuremen LLC",
+ "releases": [
+  {
+   "changed": 1054,
+   "commit": "7c7e335f7c8cb8a046702633b71bcf8f1599d405",
+   "files": 1054,
+   "id": "7c7e335f7c8c",
+   "json": "/receipts/stamps/release_7c7e335f7c8c.json",
+   "ledger_sha256": "a9468d7c996db9e4f8e2b49f05b119d0634c8a383d60b9f9193ea6051aa3ec9f",
+   "manifest_sha256": "c4dc6e47aa8fb8d89c3532aa22b4c0079bbb9f3098131bb0e61618fb94c6f119",
+   "ots": "/receipts/stamps/release_7c7e335f7c8c.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-10T13:29:29Z",
+   "sha256": "00a6850120104e627d1cbf34a8d80fba6166f34be88d3377243168e4ce9b70a7",
+   "wayback": [],
+   "wayback_waiting": 998
+  }
+ ],
+ "site": "https://indahl.ai"
+}

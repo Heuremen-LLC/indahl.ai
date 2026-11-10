@@ -63,6 +63,16 @@ tok.update({k: f'{v:,}' for k, v in {'N_WATER_REPORTS': _wc['reports'], 'N_WATER
 tok.update({'WATER_UPDATED': W['updated'], 'WATER_FIRST_ISSUE': _wc['first_issue'], 'WATER_LAST_ISSUE': _wc['last_issue'], 'WATER_MEASURED_LAST': _wc['measured_last']['mead'],
             'WATER_FIRST_READ': W['usgs_revisions']['first_read'], 'WATER_CDEC_NAMES': ' and '.join(o['name'] for o in W['live']['others'] if 'CDEC' in o['agency'])})
 assert _wc['measured_last']['mead'] == _wc['measured_last']['powell'] and W['gate'] == 'passed' and not W['stale_sources'], 'water snapshot is not a clean run'
+_u, _t, _c, _s, _se, _su, _ch = (data[k] for k in ('uptime', 'time', 'cada', 'secrecords', 'seat', 'support', 'change'))
+tok.update({k: f'{v:,}' for k, v in {'N_UP_VENDORS': len(_u['vendors']), 'N_UP_INC': sum(len(v['incidents']) for v in _u['vendors']), 'N_TIME_SERVERS': len(_t['servers']),
+            'N_CADA_RES': len(_c['resolvers']), 'N_SEC_DOMAINS': _s['domains'], 'N_SEC_FULL': len(_s['disagree_list']), 'N_SEAT_INC': len(_se['incidents']), 'N_SEAT_FEEDS': len(_se['feeds']),
+            'N_SUP_PRODUCTS': _su['products'], 'N_SUP_CYCLES': _su['cycles'], 'N_SUP_BYPROD': len(_su['by_product']), 'N_SUP_SILENT': len(_su['silent_list']),
+            'N_CH_SRC': len(_ch['sources']), 'N_CH_UP': len(_ch['upcoming']), 'N_CH_LIST': len(_ch['change_list']), 'N_CH_ROWS': _ch['rows']}.items()})
+tok.update({'SEC_LISTDATE': _s['listdate'], 'SEAT_LAST': _se['last_probe'].replace(' UTC', ''), 'CH_FIRST': _ch['first_snapshot'],
+            **{'UPD_' + k.upper(): data[k]['updated'][len('10 Nov '):] for k in ('uptime', 'time', 'cada', 'secrecords', 'seat', 'support', 'change')}})
+assert all(data[k]['updated'].startswith('10 Nov ') for k in ('uptime', 'time', 'cada', 'secrecords', 'seat', 'support', 'change')), 'SOURCES.md says the desk snapshots are from 10 Nov'
+assert _su['all']['unreleased'] == len(_su['silent_list']) and _su['supported_tested'] == _su['all']['tested'], 'support headline and its list differ'
+assert all(v['n'] - (v['awaiting'] or 0) == sum(1 for x in _s['disagree_list'] if x['claim'] == k) for k, v in _s['comparison'].items()), 'secrecords read-in-full rows differ from the counts'
 _na = [u for u in data['utilities']['utilities'] if u['ba_code'] == 'NA']
 tok['N_NA'] = str(len(_na)); tok['NA_STATES'] = ', '.join(f"{st} {n}" for st, n in sorted(__import__('collections').Counter(u['state'] for u in _na).items()))
 assert tok['N_SCALE_NOT_PLACED'] == '8' and tok['N_ADDR_STATE'] == '2' and int(tok['N_EPOCH_UNPLACED']) - 8 == 2, 'unplaced counts changed'

@@ -73,10 +73,90 @@ These are works of the US government and are in the public domain. This applies 
 
 It also applies to the EIA values inside json/electricity.json and csv/electricity_states.csv, which are covered by item 1 as a database.
 
+U.S. Bureau of Reclamation, 24-Month Study reports, the Hydrologic Database (HDB) and the Lower Colorado daily reports and tables, and U.S. Geological Survey Water Services, read 2026-11-09 to {WATER_UPDATED} UTC. https://www.usbr.gov/ and https://waterservices.usgs.gov/
+These are works of the US government and are in the public domain. This applies to the projected and measured elevations, storage figures and quotes in:
+
+- json/water.json
+- json/water_rows.json
+- csv/water_band_sentence_cells.csv
+- csv/water_cells.csv
+- csv/water_flagged_groups.csv
+- csv/water_meta.csv
+- csv/water_misread_by_era.csv
+- csv/water_notable.csv
+- csv/water_reservoirs.csv
+- csv/water_rows.csv
+- csv/water_thresholds.csv
+- csv/water_usgs_revisions.csv
+- csv/water_variants.csv
+
+The storage figures for {WATER_CDEC_NAMES} in json/water.json and csv/water_reservoirs.csv come from the California Data Exchange Center (CDEC) of the California Department of Water Resources, https://cdec.water.ca.gov/ . CDEC is a State of California service and not a US government work, so those {N_WATER_CDEC} rows keep CDEC's terms and are not claimed as public domain.
+
+The counts, intervals and outcomes in the water files are Heuremen LLC's own work on that data and are covered by item 4.
+
 4. Heuremen LLC's own parts
 
 The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, verify.py, the build code, and the compilation of the data that is neither OpenStreetMap nor Epoch AI data (the flattening, the CSV and GeoJSON conversion, the column names), and csv/datacenters_meta.csv, which holds only the pull date.
 
 Heuremen LLC permits anyone to use, copy and change these parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data.
 
-Heuremen LLC reserves text and data mining and use as AI training data for those text files only. That reservation does not apply to any file derived from OpenStreetMap or Epoch AI and does not apply to public-domain data.
+Heuremen LLC reserves text and data mining and use as AI training data for those text files and for the measurement files in item 5 only. That reservation does not apply to any file derived from OpenStreetMap or Epoch AI, to public-domain data, or to the endoflife.date values in item 5.
+
+5. Measurements of the other ATLAS desks (UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE)
+
+These files hold Heuremen LLC's own measurements and counts, as the desk pages publish them. Heuremen LLC permits anyone to use, copy and change them with attribution to Heuremen LLC and the desk page. That permission does not include text and data mining or use as AI training data, as the desk pages state.
+
+- json/uptime.json
+- csv/uptime_incidents.csv
+- csv/uptime_meta.csv
+- csv/uptime_vendors.csv
+- json/time.json
+- csv/time_meta.csv
+- csv/time_servers.csv
+- json/cada.json
+- csv/cada_alive.csv
+- csv/cada_answer_classes.csv
+- csv/cada_checkpoints.csv
+- csv/cada_meta.csv
+- json/secrecords.json
+- csv/secrecords_comparison.csv
+- csv/secrecords_descriptive.csv
+- csv/secrecords_dmarc.csv
+- csv/secrecords_meta.csv
+- csv/secrecords_read_in_full.csv
+- json/seat.json
+- csv/seat_feeds.csv
+- csv/seat_incidents.csv
+- csv/seat_meta.csv
+- csv/seat_now.csv
+- csv/seat_rolling.csv
+- json/support.json
+- csv/support_after_eol.csv
+- csv/support_all.csv
+- csv/support_by_product.csv
+- csv/support_meta.csv
+- csv/support_product_level.csv
+- csv/support_unreleased_cycles.csv
+- json/change.json
+- csv/change_kinds.csv
+- csv/change_lifespan.csv
+- csv/change_list.csv
+- csv/change_meta.csv
+- csv/change_notice.csv
+- csv/change_sources.csv
+- csv/change_test.csv
+- csv/change_upcoming.csv
+
+Parts of these files come from others and keep their own terms.
+
+The SUPPORT files (json/support.json and the csv/support_ files) carry release, support and end-of-life dates from endoflife.date, https://endoflife.date/ , under the MIT License:
+
+Copyright 2020 endoflife.date contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+The CHANGE files carry model and product names, dates and links from the deprecation pages of Anthropic, OpenAI, Google and Cloudflare, which keep their own terms. The UPTIME files carry each vendor's status indicator and incident titles from its public status page, written by the vendor. The SECRECORDS files name domains from the Tranco list (https://tranco-list.eu/ , Le Pochat et al., NDSS 2019) and quote each domain's own published HSTS header or SPF record. The TIME files carry the stratum and reference ID that each public time server states in its own replies.

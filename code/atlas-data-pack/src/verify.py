@@ -191,6 +191,7 @@ def main():
             for col, v in flatten(r).items():
                 if col not in c or not eq(c[col], v): bad += 1; fails.append(f'{t} row {i} column {col}: csv {c.get(col)!r} json {v!r}') if bad < 4 else None
         for i in sorted({0, len(recs) // 2, len(recs) - 1}):
+            if not 0 <= i < len(got): continue   # a short CSV is already a failure on the row count
             for k, v in recs[i].items():
                 if not isinstance(v, (dict, list)) and not eq(got[i][slug(k)], v): fails.append(f'{t} sample row {i} field {k}: csv {got[i][slug(k)]!r} json {v!r}')
         line = f'{t}.csv: {len(got)} rows, {len(got[0]) if got else 0} columns, {"OK" if ok and not bad else "FAIL"}'

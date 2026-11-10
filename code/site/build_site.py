@@ -2180,7 +2180,7 @@ def main():
               'For language-model evaluations. Read replies before trusting a parser, count flips between repeated runs, and compare two systems with four outcomes. With the Faults and Guards.',
               'IRIS Research Package | Recount Matrix: Language Models | Heuremen LLC', 'Checks for language-model evaluations before and after a run: reading sheets, repeat floors, paired comparisons, the Faults and Guards.'),
              ('/atlas', '/atlas/data-pack', 'atlas/atlas-data-pack.zip', 'ATLAS Data Pack', 'atlas_package/src/README.md',
-              'Every ATLAS dataset in one download: data centers, power plants, planned plants, electricity and carbon, as JSON, CSV and GeoJSON with sources and pull dates.',
+              'Every ATLAS dataset in one download: data centers, power plants, planned plants, electricity, carbon and water, with the files of the other ATLAS desks, as JSON, CSV and GeoJSON with sources and pull dates.',
               'ATLAS Data Pack | Built Infrastructure | Heuremen LLC', 'Every ATLAS dataset as JSON, CSV and GeoJSON with sources and pull dates.'),
              ('/oy', '/oy/data-pack', 'oy/oy-data-pack.zip', 'OY Data Pack', 'oy_package/src/README.md',
               'For learning research. Every OY table in one download: the school policy list, the findings and the colleges, as JSON and CSV with the source of every row.',

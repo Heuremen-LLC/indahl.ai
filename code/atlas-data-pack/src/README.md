@@ -32,6 +32,22 @@ Water (`json/water.json` and `json/water_rows.json`): the Bureau of Reclamation 
 - `csv/water_usgs_revisions.csv`: USGS provisional daily values stored by us for {N_WATER_GAUGES} gauges, with revisions counted from our first read on {WATER_FIRST_READ}.
 - `csv/water_meta.csv`: the coverage counts, the lead-6 headline cells, the cross-checks of the measured side, the live readings of Lake Mead and Lake Powell, and the notes.
 
+The other desks under ATLAS each come as the file the desk page reads at /<desk>/live.json, unchanged, with one CSV for each table and a `_meta.csv` file. Each is one fixed copy. Its `updated` field gives the day, month and time in UTC without the year, and every snapshot here is from 2026. The times are listed in SOURCES.md.
+
+Uptime (`json/uptime.json`): the status pages of {N_UP_VENDORS} vendors against our own probes, as on https://indahl.ai/uptime. `csv/uptime_vendors.csv` has one row for each vendor with its rounds, disagreements, confirmations and blips, its reach from each seat in the `reach_` columns, and the outcome. `csv/uptime_incidents.csv` has the {N_UP_INC} incidents the vendors' own status pages list, with each vendor's title. The control rounds and the floor are in `csv/uptime_meta.csv`.
+
+Time (`json/time.json`): {N_TIME_SERVERS} public time servers measured from our reference seat, and from the GitHub runner network in the columns that end in `_2`, as on https://indahl.ai/time. `csv/time_servers.csv` has one row for each server. The reference clock and the part of each offset that belongs to the seat are in `csv/time_meta.csv`.
+
+CADA (`json/cada.json`): public DNS filters against fresh domains from abuse feeds, as on https://indahl.ai/cada. `csv/cada_checkpoints.csv` has one row for each of the {N_CADA_RES} resolvers at each checkpoint, given in seconds after a domain was first seen, with the share in percent and its 95% interval in `share_pct`, `lo_pct` and `hi_pct`. `csv/cada_answer_classes.csv` counts each kind of answer by resolver and `csv/cada_alive.csv` counts the domains still alive at each checkpoint. The domains and the feeds are not in this pack.
+
+SECRECORDS (`json/secrecords.json`): the security records of {N_SEC_DOMAINS} domains from the Tranco list of {SEC_LISTDATE} against the rules they are meant to meet, as on https://indahl.ai/secrecords. `csv/secrecords_comparison.csv` has one row for each rule with its count, interval, outcome and class counts. `csv/secrecords_read_in_full.csv` has the {N_SEC_FULL} records read in full, with the record text and the reason. The HSTS and DMARC counts are in `csv/secrecords_descriptive.csv` and `csv/secrecords_dmarc.csv`.
+
+SEAT (`json/seat.json`): an outside seat on the GitHub runner network reads our own pages, as on https://indahl.ai/seat. `csv/seat_now.csv` and `csv/seat_rolling.csv` hold the state at the last probe, {SEAT_LAST} UTC, and the count over the last probes. `csv/seat_incidents.csv` has {N_SEAT_INC} incidents and `csv/seat_feeds.csv` has {N_SEAT_FEEDS} feeds with their age and limit.
+
+SUPPORT (`json/support.json`): stated support windows against release activity, from {N_SUP_PRODUCTS} products and {N_SUP_CYCLES} release cycles on endoflife.date, as on https://indahl.ai/support. `csv/support_all.csv` holds the headline count and `csv/support_product_level.csv` the two product readings. `csv/support_by_product.csv` has {N_SUP_BYPROD} products and `csv/support_unreleased_cycles.csv` has the {N_SUP_SILENT} supported cycles with no release in the window. In that file the text False in `eol` means no end of life is stated. `csv/support_after_eol.csv` counts the last releases by their time against the end of life.
+
+CHANGE (`json/change.json`): announced shutdown dates from the deprecation pages of {N_CH_SRC} vendors, kept since {CH_FIRST}, as on https://indahl.ai/change. `csv/change_upcoming.csv` has {N_CH_UP} upcoming shutdowns and `csv/change_list.csv` has {N_CH_LIST} changes seen between snapshots. `csv/change_test.csv`, `csv/change_lifespan.csv`, `csv/change_notice.csv` and `csv/change_kinds.csv` hold the test, the lifespans, the notice periods and the changes by kind. `csv/change_sources.csv` lists the pages read.
+
 Every dataset also has a `csv/<name>_meta.csv` file with two columns, `key` and `value`. It holds the fields that describe the whole dataset, such as the source text, the method, the units, the legend bins and the build date.
 
 ## Sources and dates
@@ -59,7 +75,7 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 
 ## What is here
 
-- `json/`: the original files from the ATLAS data folder and the WATER page, unchanged
+- `json/`: the original files from the ATLAS data folder and from the desk pages, unchanged
 - `csv/`: one CSV for each table, plus the `_meta.csv` files
 - `geojson/`: data centers, operating plants and planned plants as FeatureCollections
 - `SOURCES.md`: upstream sources, links, licences and dates
@@ -77,6 +93,13 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 - Planned plants: https://indahl.ai/atlas/planned-plants
 - Carbon: https://indahl.ai/atlas/carbon
 - Water: https://indahl.ai/water
+- Uptime: https://indahl.ai/uptime
+- Time: https://indahl.ai/time
+- CADA: https://indahl.ai/cada
+- SECRECORDS: https://indahl.ai/secrecords
+- SEAT: https://indahl.ai/seat
+- SUPPORT: https://indahl.ai/support
+- CHANGE: https://indahl.ai/change
 - Code: https://github.com/Heuremen-LLC/indahl.ai
 - Data on Hugging Face: https://huggingface.co/indahl
 - OpenStreetMap: https://www.openstreetmap.org/copyright
@@ -107,6 +130,6 @@ This list comes from two rough checks and is not complete. It names records whos
 
 ## Terms
 
-Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch's citation, and where a file holds both, both apply. EIA, EPA, US Census, Bureau of Reclamation and USGS data are US government works in the public domain. The storage figures for {WATER_CDEC_NAMES} in the water files come from California CDEC, a State of California service, and keep CDEC's terms.
+Each part of this pack keeps the licence of its source, and LICENSE.txt gives them by file. Files derived from OpenStreetMap are under the ODbL 1.0 with © OpenStreetMap contributors, and no further restrictions may be added to them. Files derived from Epoch AI are under CC BY 4.0 with Epoch's citation, and where a file holds both, both apply. EIA, EPA, US Census, Bureau of Reclamation and USGS data are US government works in the public domain. The storage figures for {WATER_CDEC_NAMES} in the water files come from California CDEC, a State of California service, and keep CDEC's terms. The files of the other desks hold Heuremen LLC's own measurements, which may be used, copied and changed with attribution but not used for text and data mining or AI training, as the desk pages state. The endoflife.date values in the SUPPORT files are under the MIT License, and the names and dates from vendor pages keep their vendors' terms.
 
-Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For its own text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. Its reservation against text and data mining and AI training covers those text files only and does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.
+Heuremen LLC permits anyone to use, copy and change its own parts with attribution to Heuremen LLC and https://indahl.ai/atlas. For its own text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. Its reservation against text and data mining and AI training covers those text files and the measurement files of the other desks only. It does not apply to any OpenStreetMap-derived or Epoch-derived file, to public-domain data or to the endoflife.date values.

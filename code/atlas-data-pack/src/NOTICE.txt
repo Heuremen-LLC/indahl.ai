@@ -52,7 +52,37 @@ U.S. Environmental Protection Agency
 U.S. Census Bureau
   Geocoder used for addresses. https://geocoding.geo.census.gov/ . Public domain.
 
+U.S. Bureau of Reclamation and U.S. Geological Survey
+  24-Month Study reports (RISE catalog record 6331), HDB, Lower Colorado daily reports and tables, and USGS Water Services, read 2026-11-09 to {WATER_UPDATED} UTC. Public domain.
+  https://data.usbr.gov/rise/api/catalog-record/6331 , https://www.usbr.gov/pn-bin/hdb/hdb.pl , https://waterservices.usgs.gov/
+
+California Data Exchange Center (CDEC), California Department of Water Resources
+  Storage figures for {WATER_CDEC_NAMES} in json/water.json and csv/water_reservoirs.csv. https://cdec.water.ca.gov/ . Not a US government work. These figures keep CDEC's terms.
+
+endoflife.date
+  Release, support and end-of-life dates in json/support.json and the csv/support_ files. https://endoflife.date/ . MIT License, Copyright 2020 endoflife.date contributors. The full licence text is in LICENSE.txt.
+
+Vendor pages
+  The CHANGE files carry names, dates and links from the deprecation pages of Anthropic, OpenAI, Google and Cloudflare. The UPTIME files carry status indicators and incident titles from vendor status pages. These keep their own terms.
+
+Tranco
+  The SECRECORDS files name domains from the Tranco list. https://tranco-list.eu/ . Le Pochat et al., NDSS 2019.
+
 Public-domain files
+  - json/water.json
+  - json/water_rows.json
+  - csv/water_band_sentence_cells.csv
+  - csv/water_cells.csv
+  - csv/water_flagged_groups.csv
+  - csv/water_meta.csv
+  - csv/water_misread_by_era.csv
+  - csv/water_notable.csv
+  - csv/water_reservoirs.csv
+  - csv/water_rows.csv
+  - csv/water_thresholds.csv
+  - csv/water_usgs_revisions.csv
+  - csv/water_variants.csv
+    (the US government values in these files, apart from the CDEC rows named above)
   - json/plants.json, json/planned.json, json/utilities.json, json/carbon.json
   - csv/plants.csv, csv/plants_meta.csv, geojson/plants.geojson
   - csv/planned.csv, csv/planned_generators.csv, csv/planned_meta.csv, geojson/planned.geojson
@@ -61,4 +91,47 @@ Public-domain files
   - csv/electricity_us.csv, csv/electricity_us_ownership.csv
 
 Heuremen LLC
-  The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, verify.py, the build code and the compilation of non-OpenStreetMap, non-Epoch data and csv/datacenters_meta.csv (which holds only the pull date) may be used, copied and changed with attribution to Heuremen LLC and https://indahl.ai/atlas. For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. The reservation against text and data mining and AI training covers those text files only. It does not apply to any OpenStreetMap-derived or Epoch-derived file or to public-domain data.
+  The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, verify.py, the build code and the compilation of non-OpenStreetMap, non-Epoch data and csv/datacenters_meta.csv (which holds only the pull date) may be used, copied and changed with attribution to Heuremen LLC and https://indahl.ai/atlas. For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) that permission does not include use as AI training data. The reservation against text and data mining and AI training covers those text files and the measurement files listed below only. It does not apply to any OpenStreetMap-derived or Epoch-derived file, to public-domain data or to the endoflife.date values.
+
+Measurements of the other ATLAS desks
+  Heuremen LLC's own measurements and counts from UPTIME, TIME, CADA, SECRECORDS, SEAT, SUPPORT and CHANGE. They may be used, copied and changed with attribution to Heuremen LLC and the desk page. That permission does not include text and data mining or use as AI training data, as the desk pages state. The endoflife.date values stay under the MIT License.
+  - json/uptime.json
+  - csv/uptime_incidents.csv
+  - csv/uptime_meta.csv
+  - csv/uptime_vendors.csv
+  - json/time.json
+  - csv/time_meta.csv
+  - csv/time_servers.csv
+  - json/cada.json
+  - csv/cada_alive.csv
+  - csv/cada_answer_classes.csv
+  - csv/cada_checkpoints.csv
+  - csv/cada_meta.csv
+  - json/secrecords.json
+  - csv/secrecords_comparison.csv
+  - csv/secrecords_descriptive.csv
+  - csv/secrecords_dmarc.csv
+  - csv/secrecords_meta.csv
+  - csv/secrecords_read_in_full.csv
+  - json/seat.json
+  - csv/seat_feeds.csv
+  - csv/seat_incidents.csv
+  - csv/seat_meta.csv
+  - csv/seat_now.csv
+  - csv/seat_rolling.csv
+  - json/support.json
+  - csv/support_after_eol.csv
+  - csv/support_all.csv
+  - csv/support_by_product.csv
+  - csv/support_meta.csv
+  - csv/support_product_level.csv
+  - csv/support_unreleased_cycles.csv
+  - json/change.json
+  - csv/change_kinds.csv
+  - csv/change_lifespan.csv
+  - csv/change_list.csv
+  - csv/change_meta.csv
+  - csv/change_notice.csv
+  - csv/change_sources.csv
+  - csv/change_test.csv
+  - csv/change_upcoming.csv

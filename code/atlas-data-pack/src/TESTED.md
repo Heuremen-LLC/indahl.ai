@@ -23,4 +23,19 @@ The file `verify.py` compares every CSV and GeoJSON file cell by cell with the J
 
 At default settings pandas reads the text NA in the `ba_code` column of `csv/utilities.csv` as missing. The README explains how to keep it.
 
+On 2026-11-10 the water files and the files of the other ATLAS desks were opened with pandas 3.0.5 at default settings. Every count below was compared with the live desk pages, with the /<desk>/live.json files those pages read, and for water with the desk's own summary file of the same run, and matched.
+
+- Water: {N_WATER_CELLS} cells, one for each lake and each lead from 0 to 23. All of them equal the desk summary in rows, inside, above, below and outcome for both tests.
+- Water, six months ahead: Lake Mead 42 of 83 inside the range (interval 30 to 70 percent, below) and 180 of 315 above the Most Probable projection. Lake Powell 49 of 83 inside (39 to 78 percent, below) and 110 of 314 above. These are the counts printed at the top of https://indahl.ai/water.
+- Water: {N_WATER_ROWS} rows, with the same count for each lake and outcome as the page's coverage, {N_WATER_REPORTS} reports, {N_WATER_BAND_MONTHS} months with both a Probable Minimum and a Probable Maximum, measured levels through {WATER_MEASURED_LAST}, {N_WATER_VARIANTS} 6.0 maf rows, {N_WATER_NOTABLE} notable rows, {N_WATER_RES} reservoirs, {N_WATER_THRESH} thresholds and {N_WATER_GAUGES} USGS gauges.
+- Uptime: {N_UP_VENDORS} vendors and {N_UP_INC} incidents, 0 misses in 301 control rounds, every vendor cannot tell.
+- Time: {N_TIME_SERVERS} servers, 34 cannot tell and 2 nothing returned.
+- CADA: {N_CADA_RES} resolvers at 4 checkpoints, 6,459 fresh domains from 2,048 feed reads.
+- SECRECORDS: 20 of 145 HSTS preload headers and 20 of 765 SPF records, {N_SEC_FULL} records read in full, and DMARC counts that sum to the {N_SEC_DOMAINS} domains read. One HSTS mismatch awaits a read in full, so that rule has 19 rows in the read-in-full file against a count of 20.
+- SEAT: 344 probes, the last at {SEAT_LAST} UTC, {N_SEAT_INC} incidents and {N_SEAT_FEEDS} feeds.
+- SUPPORT: 127 of 512 supported cycles with no release in the window, {N_SUP_BYPROD} products in the product table, {N_SUP_PRODUCTS} products and {N_SUP_CYCLES} cycles read.
+- CHANGE: {N_CH_ROWS} rows read since {CH_FIRST}, {N_CH_UP} upcoming shutdowns and {N_CH_LIST} changes. The lifespan file holds 10 of 34 Google preview names and 1 of 20 other Google names under 180 days, with medians of 217 and 454 days, as the page prints them.
+
+The desk pages read a new file on their own schedule. The counts above match the snapshot in this pack, and later counts on the pages may differ.
+
 Not tested: QGIS or ArcGIS desktop, and Excel itself.
