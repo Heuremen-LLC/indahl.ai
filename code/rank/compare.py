@@ -140,6 +140,51 @@ for slug, (gpa, lsat, acc, ft, ult) in LAWU.items():
     uav = ((Decimal(u21) + Decimal(u22)) / 2)
     add('law', nm, 'Ultimate bar passage, two-year average', ult, '2021 and 2022 graduates', str(uav), '2021 and 2022 graduates',
         'ABA Two-Year Ultimate Bar Passage, reports 2024 and 2025', f'ABA: 2021 graduates {u21}, 2022 graduates {u22}, unweighted average {uav.quantize(Decimal("0.001"))}, as US News states it averages them.')
+# ---------- Colleges ----------
+C = json.load(open('public/college/college_public.json', encoding='utf-8'))
+CKEY = {'massachusetts-institute-of-technology-2178': 'mit', 'princeton-university-2627': 'princeton', 'harvard-university-2155': 'harvard', 'yale-university-1426': 'yale',
+        'california-institute-of-technology-1131': 'caltech', 'stanford-university-1305': 'stanford', 'university-of-pennsylvania-3378': 'penn', 'duke-university-2920': 'duke',
+        'jhu-2077': 'jhu', 'northwestern-university-1739': 'northwestern', 'university-of-chicago-1774': 'uchicago', 'williams-college-2229': 'williams', 'amherst-college-2115': 'amherst',
+        'bowdoin-college-2038': 'bowdoin', 'claremont-mckenna-college-1170': 'cmc', 'pomona-college-1173': 'pomona', 'swarthmore-college-3370': 'swarthmore',
+        'united-states-naval-academy-2101': 'usna', 'harvey-mudd-college-1171': 'harveymudd', 'west-point-2893': 'usma', 'wellesley-college-2224': 'wellesley'}
+CU = {}
+for f, cols in (('raw/college_pages_20261110.txt', ['enr', 'acc', 'sat', 'act', 'ratio_first']), ('raw/college_pages2_20261110.txt', ['grad4', 'ratio', 'small'])):
+    for ln in open(f, encoding='utf-8'):
+        m = re.match(r'([a-z0-9-]+-\d+): (.+)$', ln.strip())
+        if m and m.group(1) in CKEY:
+            CU.setdefault(m.group(1), {}).update(dict(zip(cols, [x.strip().split(' ')[0] for x in m.group(2).split(' | ')])))
+def cds25(key):
+    c = C.get(key, {}).get('cds') or {}
+    y = (c.get('years') or {}).get('2025-2026') or {}
+    return y if y.get('exists') else None
+for slug, u in CU.items():
+    key = CKEY[slug]
+    if key not in C: raise KeyError(key)
+    nm = C[key]['college']; y = cds25(key); src = (y or {}).get('source_url', '')
+    lst = 'nu' if slug in list(CKEY)[:11] else 'nlac'
+    b1 = str(y['B1_total_undergrad']['value']) if y and isinstance(y.get('B1_total_undergrad'), dict) else None
+    add(lst, nm, 'Undergraduate enrollment', u['enr'], 'fall 2025', b1, 'fall 2025' if b1 else None, 'Common Data Set 2025-26, item B1 ' + src,
+        '' if b1 else 'No Common Data Set 2025-26 was read for this college (' + '; '.join(map(str, (C[key].get('cds') or {}).get('refusals') or ['not published or not reached']))[:120] + ').')
+    # the other printed figures carry no year on the US News page: scored CANNOT_TELL (year), with the CDS 2025-26 reading shown beside them
+    disp = []
+    if y:
+        c1 = y.get('C1') or {}; c9 = y.get('C9') or {}; i3 = y.get('I3') or {}; bg = y.get('B_grad') or {}
+        def fmt(v):
+            return v if not re.match(r'^\d+\.\d{3,}$', v) else str(Decimal(v).quantize(Decimal('0.1')))
+        def chk(lab, usn, pub):
+            if usn in (None, '', '?') or pub in (None, ''): disp.append(f'{lab}: not compared'); return
+            disp.append(f'{lab} {usn} against {fmt(pub)}: ' + ('agrees' if compare(usn, pub, 'x', 'x')[0] == 'MATCH' else 'differs'))
+        if c1.get('applicants') and c1.get('admits'): chk('acceptance rate', u.get('acc'), str(Decimal(c1['admits']) * 100 / Decimal(c1['applicants'])))
+        if c9.get('SAT_comp_25'): chk('SAT', u.get('sat'), f"{c9['SAT_comp_25']}-{c9['SAT_comp_75']}")
+        if c9.get('ACT_comp_25'): chk('ACT', u.get('act'), f"{c9['ACT_comp_25']}-{c9['ACT_comp_75']}")
+        r = re.match(r'\s*([\d.]+)', str(y.get('I2_ratio') or ''))
+        if r: chk('student/faculty ratio', u.get('ratio'), r.group(1) + ':1')
+        if i3.get('total'): chk('classes under 20', u.get('small'), str(Decimal(i3['2-9'] + i3['10-19']) * 100 / Decimal(i3['total'])))
+        if bg.get('B6_adj_cohort') and bg.get('B7_4yr'): chk('4-year graduation rate', u.get('grad4'), str(Decimal(bg['B7_4yr']) * 100 / Decimal(bg['B6_adj_cohort'])) )
+    for lab, k in (('Acceptance rate', 'acc'), ('SAT range', 'sat'), ('ACT range', 'act'), ('Student/faculty ratio', 'ratio'), ('Classes with fewer than 20 students', 'small'), ('4-year graduation rate', 'grad4')):
+        add(lst, nm, lab, u.get(k), None, 'see the Common Data Set note', None, 'Common Data Set 2025-26 ' + src, 'The US News page prints no year for this figure.', shown_pub='')
+    OUT.append(dict(list=lst, school=nm, field='_display_cds2025', note='; '.join(disp) if disp else 'No Common Data Set 2025-26 was read.', outcome='DISPLAY', reason='after the data, not scored'))
+
 OUTLAW = [o for o in OUT if o['list'] == 'law']
 json.dump(dict(read='2026-11-10', checks=OUT), open('data/checks.json', 'w'), indent=1, ensure_ascii=False)
 from collections import Counter
