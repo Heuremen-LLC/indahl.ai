@@ -2,7 +2,7 @@
 var V = 'hlc-v4', SHELL = ['/', '/style.css', '/icons/icon-192.png'];
 var SKIP = /^\/(contact|inquire|inquiry|api|auth|callback|respond|nda|alerts|signup|webhooks|push|newsletter\/unsubscribe)(\/|$|\?)|\/live\.json$|\/live\.js$|\.json$|\.xml$|\.ics$/;
 self.addEventListener('install', function (e) { e.waitUntil(caches.open(V).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); })); });
-self.addEventListener('activate', function (e) { e.waitUntil(caches.keys().then(function (ks) { return Promise.all(ks.filter(function (k) { return k !== V; }).map(function (k) { return caches.delete(k); })); }).then(function () { return self.clients.claim(); })); });
+self.addEventListener('activate', function (e) { e.waitUntil(caches.keys().then(function (ks) { return Promise.all(ks.filter(function (k) { return k !== V && k !== 'hlc-push'; }).map(function (k) { return caches.delete(k); })); }).then(function () { return self.clients.claim(); })); });
 self.addEventListener('fetch', function (e) {
   var r = e.request, u = new URL(r.url);
   if (r.method !== 'GET' || u.origin !== location.origin || SKIP.test(u.pathname)) return;
@@ -24,4 +24,14 @@ self.addEventListener('notificationclick', function (e) {
     for (var i = 0; i < cs.length; i++) if (cs[i].url === new URL(u, location.origin).href && 'focus' in cs[i]) return cs[i].focus();
     return self.clients.openWindow(u);
   }));
+});
+// 10 Nov 2026: the browser replaced the push subscription. Subscribe again with our key and move the record (found by the token the page keeps
+// in the hlc-push cache) to the new subscription, so the desks picked stay on without a press of the button.
+self.addEventListener('pushsubscriptionchange', function (e) {
+  e.waitUntil(caches.open('hlc-push').then(function (c) { return c.match('/push/token'); }).then(function (m) { return m ? m.text() : ''; }).then(function (t) {
+    if (!/^[0-9a-f]{40}$/.test(t)) return;
+    var b64 = function (s) { var r = atob((s + '='.repeat((4 - s.length % 4) % 4)).replace(/-/g, '+').replace(/_/g, '/')), a = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) a[i] = r.charCodeAt(i); return a; };
+    var get = e.newSubscription ? Promise.resolve(e.newSubscription) : fetch('/push/key').then(function (r) { return r.json(); }).then(function (k) { return self.registration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64(k.key) }); });
+    return get.then(function (s) { return fetch('/push/resubscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ t: t, sub: s.toJSON() }) }); });
+  }).catch(function () {}));
 });

@@ -95,13 +95,17 @@ def post(u, body, headers):
     return 200 <= code <= 299, 'status %d' % code
 
 
-def deliver(rec, evs):
-    """-> (ok, why). rec is the full KV record (value)."""
+def deliver(rec, evs, done=None):
+    """-> (ok, why). rec is the full KV record (value). For a chat app each event is one message: done (a list in the queue item) collects
+    the event ids already accepted, so a retry after a partial failure sends only the ones still missing, never a message twice."""
     if rec.get('k') in ('slack', 'discord', 'teams'):
+        done = done if done is not None else []
         for ev in evs:
+            if ev['id'] in done: continue
             t = 'indahl.ai outcome change\n' + NE.text(ev)
             ok, why = post(rec['u'], json.dumps(chat_body(rec['k'], t)).encode(), {})
             if not ok: return ok, why
+            done.append(ev['id'])
         return True, 'ok'
     body = json.dumps({'type': 'outcome_change', 'events': evs, 'sent_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}, ensure_ascii=False, separators=(',', ':')).encode()
     ts = int(time.time())
@@ -151,7 +155,7 @@ def main():
             except ValueError: recs[t] = None
         rec = recs[t]
         if not rec: continue
-        ok, why = deliver(rec, q['events']); sent += 1; q['n'] += 1
+        ok, why = deliver(rec, q['events'], q.setdefault('done', [])); sent += 1; q['n'] += 1
         f = fails.setdefault(t, {'n': 0})
         if ok:
             f['n'] = 0; log('ok %s… attempt %d, %d event(s)' % (t[:8], q['n'], len(q['events']))); continue

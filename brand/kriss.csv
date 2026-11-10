@@ -1,2 +1,2 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-KRISS,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.kriss.re.kr,Its statement,stated bound 5.49 ms,"offset 2.91 ms, path half-delay 103.14 ms",,CANNOT TELL,,10 Nov 21:15,
+KRISS,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.kriss.re.kr,Its statement,stated bound 5.52 ms,"offset 2.91 ms, path half-delay 103.04 ms",,CANNOT TELL,,10 Nov 21:31,

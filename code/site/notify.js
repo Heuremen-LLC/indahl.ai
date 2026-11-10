@@ -191,7 +191,8 @@ async function webhooks(req, env, u, p, ctx, fetcher) {
       const { d, all } = pickDesks(f);
       if (!d.length && !all) note = '<p><strong>Not saved.</strong> Tick at least one desk, or every desk. To stop every delivery, press Delete.</p>';
       else {
-        if (a === 'enable' && r.off) {
+        if (a === 'enable' && r.off && await limited(KV, 'whrl:', ip, 5)) note = '<p><strong>Still off.</strong> Several checks have come from your connection this hour. Please try again later. Your desk choices were saved.</p>';
+        else if (a === 'enable' && r.off) {
           const chk = r.k === 'signed' ? await challenge(r.u, fetcher) : await chatHello(r.k, r.u, d, all, fetcher);
           if (!chk.ok) note = '<p><strong>Still off.</strong> ' + esc(chk.msg) + '</p>'; else { delete r.off; delete r.f; }
         }
@@ -251,6 +252,19 @@ async function push(req, env, p, ctx) {
   const hk = 'psh:' + (await sha('psend|' + r.e)).slice(0, 32);
   const drop = async () => { await KV.delete('ps:' + t); await KV.delete(hk); await bump(KV, 'psn', -1); };
   if (p === '/push/state') return J({ ok: true, d: r.d || [], all: r.all ? 1 : 0 });
+  if (p === '/push/resubscribe') {   // the service worker's pushsubscriptionchange: the browser replaced the subscription, the desks stay
+    const s = checkSub(b.sub);
+    if (!s) return J({ ok: false, msg: 'This browser gave a subscription we cannot use.' }, 400);
+    if (await limited(KV, 'psrl:', ip, 20)) return J({ ok: false, msg: 'Too many requests this hour.' }, 429);
+    const nh = 'psh:' + (await sha('psend|' + s.e)).slice(0, 32);
+    const other = await KV.get(nh); if (other && other !== t && await KV.get('ps:' + other)) return J({ ok: false, msg: 'This subscription belongs to another record.' }, 409);
+    r.e = s.e; r.k = s.k;
+    if (JSON.stringify(psMeta(r)).length > 1000) return J({ ok: false, msg: 'That subscription is too long to keep.' }, 400);
+    if (nh !== hk) await KV.put(nh, t);   // the new index first, so a failure part way never leaves a record without one
+    await KV.put('ps:' + t, JSON.stringify(r), { metadata: psMeta(r) });
+    if (nh !== hk) await KV.delete(hk);
+    return J({ ok: true, d: r.d || [], all: r.all ? 1 : 0 });
+  }
   if (p === '/push/unsubscribe') { await drop(); return J({ ok: true, gone: true, msg: 'Notifications are off on this device, and its subscription is deleted.' }); }
   if (p === '/push/update') {
     const d = desks(b.d), all = b.all ? 1 : 0;
@@ -268,7 +282,8 @@ export const JS = `(function () {
   var K = 'hlc_push_t', st = null;
   function say(b, t) { var m = b.parentNode.querySelector('.np-msg'); if (m) m.textContent = t; }
   function gt() { try { return localStorage.getItem(K) || ''; } catch (e) { return ''; } }
-  function pt(t) { try { if (t) localStorage.setItem(K, t); else localStorage.removeItem(K); } catch (e) {} }
+  function pt(t) { try { if (t) localStorage.setItem(K, t); else localStorage.removeItem(K); } catch (e) {}
+    try { caches.open('hlc-push').then(function (c) { return t ? c.put('/push/token', new Response(t)) : c.delete('/push/token'); }); } catch (e) {} }   // the service worker reads it on pushsubscriptionchange
   var ok = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
   bs.forEach(function (b) { b.hidden = false; if (!ok) { b.disabled = true; say(b, /iP(hone|ad|od)/.test(navigator.userAgent) ? 'On an iPhone or iPad, add indahl.ai to your Home Screen first, then open it from there and press this button.' : 'This browser does not offer notifications.'); } });
   if (!ok) return;
@@ -301,7 +316,7 @@ export const JS = `(function () {
     });
   });
   var t = gt();
-  if (t) post('/push/state', { t: t }).then(function (r) { if (r.ok) st = { d: r.d, all: r.all }; else if (r.gone) pt(''); draw(); }).catch(draw); else draw();
+  if (t) post('/push/state', { t: t }).then(function (r) { if (r.ok) { st = { d: r.d, all: r.all }; pt(t); } else if (r.gone) pt(''); draw(); }).catch(draw); else draw();
 })();
 `;
 
