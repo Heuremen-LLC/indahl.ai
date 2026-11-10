@@ -2361,6 +2361,8 @@ def main():
     # 10 Nov 2026 (findable pass, findable.py): the banner is filled here for every page, package pages included (they were built after the old
     # fill and shipped an empty banner). Then the data links and embed box, the page dates, the share cards, Dataset JSON-LD and the change feeds.
     _wk.apply(PAGES, page, hero_slim, DESKS)   # 10 Nov 2026: /week, every past week, and the one-field newsletter box in every footer
+    # 10 Nov 2026 (brand pages): /brand and /brand/<slug>, every desk row about one organisation, built in brands.py (its own module and gate).
+    import brands as _brd; _brd.add_pages(PAGES, page, hero_slim, HOME); [PAGES.__setitem__(_p, PAGES[_p].replace('@@CSSV@@', _cv)) for _p in PAGES if _p.startswith('/brand')]
     for _pp in PAGES: PAGES[_pp] = _re.sub(r'@@NAV:[^@]*@@', lambda _m, _pp=_pp: _navfor(_pp), PAGES[_pp])
     import findable as _fd
     _packs = _fd.packs(PAGES, DESKS)
