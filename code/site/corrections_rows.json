@@ -4047,5 +4047,21 @@
    "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/wiki/PLAN.md"
   ],
   "receipt": "wiki.s2.ar_articles"
+ },
+ {
+  "id": "c20261110-42",
+  "date": "2026-11-10",
+  "desk": "OY",
+  "page": "/oy",
+  "stage": "public",
+  "published": "The OY page and headline said 0 of 148 listed colleges and universities had published a measured learning outcome of their own AI policy, 3 had measured their own policy or tool, and 21 had none found.",
+  "wrong": "The zero used a split between policy and pilots that we set at 11:35 on 25 October, after the first 41 schools were read. The rule written before any school was read counted a grade or learning outcome of a school's own AI policy, guidance, tools or pilots, and under it 10 of 148 qualify. Two Turnitin detector tests were filed as policy while the University of Maryland trial of its own study assistant was filed as a pilot. Williams and Haverford refused our reader on every page, and Mississippi State and Wellesley were partly blocked or behind a login, yet all four read none found. The policy column showed the first link in our notes as Found.",
+  "now": "The page leads with 10 of 148 under the rule written before the read, and prints 3 to 4 of 148 beside it under the later rule, labelled as set after the first 41 schools were read. One filing rule now covers every tool, which moves Maryland, Carnegie Mellon and Michigan State to measured at policy level, 6 in all. The four blocked schools read not reached, and none found is 17. The column is renamed First document cited, the two survey and plan labels say pilots are counted in their own row, and every count is built from the rows.",
+  "why": "Found by our own audit of the facts for our newsletter. A rule set after reading part of the data decided the headline, and unread pages were counted as nothing found.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "research/nl_audit_oy_social_20261110.md",
+  "commit": "oy_index@41d71cd",
+  "receipt": "oy.s0_learning_original_rule"
  }
 ]

@@ -45,3 +45,6 @@ Note 1 gave the kinds as 3, 4 and 5. Counted again from data/hand_checked.json t
 
 ## Addendum on cadence (29 Oct)
 The repeat cadence is now every 64 ticks of the tick bus, about 6.2 hours, so that a change at the source shows within hours. The earlier cadence was a default chosen when the corner was built. Nothing else changes; each pass keeps the same read, the same politeness pauses and the same known-good checks.
+
+## Note 3 (10 Nov, hand check of openbmb/MiniCPM-V-4.7-1B, found by our newsletter audit)
+The 10 Nov pass counted openbmb/MiniCPM-V-4.7-1B (stated 1B, safetensors total 1.554B, ratio 1.554) in the headline before its hand check, so the headline showed 12 of 135 with one row awaiting. Opened by hand on 10 Nov: the name, the card and the file list (one model.safetensors of 3.11 GB in BF16). The configuration holds a SigLIP2 vision encoder (27 layers, width 1152) and a Qwen3.5 language model (24 layers, width 1024, untied embeddings over a 248,094-token vocabulary) with one multi-token-prediction layer. The card does not give the split. This is a repository whose weights hold several components, not a reading error. The row stays DISAGREE and the count stays 12 of 135.

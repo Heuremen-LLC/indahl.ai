@@ -16,6 +16,10 @@ def headline(S):
         s += (' %d of them come from one archived copy made on %s, which holds %d of the %d statements made more than 30 days ahead. Without that copy %d of %d are inside.'
               % (dc['from_copy_outside'], time.strftime('%d %B %Y', time.strptime(DEP['copy_day'], '%Y%m%d')).lstrip('0'), df['from_copy_scored'], far['scored'], dc['without']['inside'], dc['without']['scored']))
     s += (' Read against about 99.7 percent, which is our reading, the share is %s percent with a 95%% interval of %s to %s percent and reads %s.' % (pc(allc['share']), pc(allc['lo']), pc(allc['hi']), WORD[allc['outcome']]))
+    # 10 Nov 2026 (newsletter audit): the plan's outcome stands, and the line says what it rests on. The Wilson interval treats rows as independent,
+    # and when most rows outside come from one copy the outcome rests on that copy. Stated no more strongly than the plan's rule allows.
+    if dc and dc['from_copy_outside'] and out_n and 2 * dc['from_copy_outside'] > out_n:
+        s += (' That is the plan\'s rule, and its interval treats each row as independent. The rows outside cluster in one copy, so this reading rests on that copy, and without it the cell reads %s.' % WORD.get((dc.get('without') or {}).get('outcome'), 'otherwise'))
     d7 = DC.get('0 to 7 days') or {}
     s += ' Stated 0 to 7 days ahead, %d of %d were inside and the cell reads %s' % (near['inside'], near['scored'], WORD[near['outcome']])
     s += (', and one row outside would make it %s.' % WORD[d7['outcome_if_one_outside']]) if near['outcome'] == 'CONSISTENT' and d7.get('outcome_if_one_outside') and d7['outcome_if_one_outside'] != 'CONSISTENT' else '.'

@@ -32,6 +32,9 @@
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr>' + (nolab ? '' : '<th>' + T.first + '</th>') + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
       var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); if (!nolab) tr.appendChild(lab(T, r)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1], T)); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
+      // 10 Nov 2026 (SUPPORT Addendum 3, newsletter audit): the plan's rule, with the count under the rule the code ran until 10 Nov beside it, once
+      if (T.path === 'all' && d.all_old_rule) { var on = document.createElement('p'); on.className = 'bench-note'; var A = d.apart || {};
+        on.textContent = 'Counted under the plan\'s rule. Under the rule the code ran until 10 Nov 2026, which still tested a cycle whose stated support end had passed when its end of life was in the future, the same read gives ' + d.all_old_rule.unreleased + ' unreleased of ' + d.all_old_rule.tested + ' tested. The plan wins. Cycles whose stated support end has passed are counted apart: ' + ((A.support_ended || 0) + (A.support_ended_no_eol || 0)) + ' in this read.'; box.appendChild(on); }
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });
 })();

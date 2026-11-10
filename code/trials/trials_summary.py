@@ -29,9 +29,32 @@ def group(rs):
     return {"n": len(rs), "posted": c["POSTED"], "no_results": c["NO_RESULTS"], "in_review": c["IN_REVIEW"],
             "share_no_results": round(c["NO_RESULTS"] / scored, 4) if scored else None,
             "lo": round(lo, 4), "hi": round(hi, 4), "outcome": outcome(lo, hi) if scored else "CANNOT_TELL"}
-# lag zone: pcd 13-15 months back is outside the query end (13 months), so none here; recorded in read_at
-summ = {"read": open("data/read_at.txt").read().split("\n")[0], "all": group(Q), "excluded_phase1_drug_only": len(R) - len(Q)}
+# 10 Nov 2026 (Addendum 5, newsletter audit): the plan's floor is now built. Records with primary completion 13 to 15 months before the read
+# are the lag zone: shown apart, not scored. The old comment here said the query end left none, but the query ends about 13 months back, so
+# 395 records of the 10 Nov read sat in the lag zone and were scored. Lag-zone records are those completed after the read date minus 15 months.
+import datetime as _D
+_read = open("data/read_at.txt").read().split("\n")[0]
+_rd = _D.date.fromisoformat(_read[:10]); _m = _rd.month - 15; _y = _rd.year + (_m - 1) // 12; _m = (_m - 1) % 12 + 1
+import calendar as _C
+LAG_FROM = _D.date(_y, _m, min(_rd.day, _C.monthrange(_y, _m)[1])).isoformat()
+def in_lag(r): return (r["pcd"] or "") > LAG_FROM
+LAG = [r for r in R if not phase1_only_drug(r) and in_lag(r)]
+Q = [r for r in Q if not in_lag(r)]
+def cluster_interval(rs, key="sponsor", z=1.96):
+    """Added 10 Nov 2026 (Addendum 5), beside the plan's Wilson interval: a sponsor-clustered interval for the share with no results, the
+    ratio estimator with a cluster-robust standard error, lead sponsors as the units. Not the plan's ruler, labelled on the page with its date."""
+    sc = [r for r in rs if state(r) != "IN_REVIEW"]; n = len(sc)
+    if not n: return None
+    k = sum(1 for r in sc if state(r) == "NO_RESULTS"); p = k / n; cl = collections.defaultdict(list)
+    for r in sc: cl[r[key]].append(r)
+    m = len(cl); s = sum((sum(1 for r in v if state(r) == "NO_RESULTS") - p * len(v)) ** 2 for v in cl.values())
+    se = math.sqrt(m / (m - 1) * s) / n if m > 1 else float("nan")
+    return {"lo": round(max(0.0, p - z * se), 4), "hi": round(min(1.0, p + z * se), 4), "sponsors": m, "defined": "2026-11-10, after the data"}
+summ = {"read": _read, "all": group(Q), "excluded_phase1_drug_only": len(R) - len(Q) - len(LAG)}
+summ["all"]["sponsor_clustered"] = cluster_interval(Q)
+summ["lag_zone"] = dict(group(LAG), completed_after=LAG_FROM, scored=False)
 summ["by_class"] = {k: group([r for r in Q if r["class"] == k]) for k in sorted({r["class"] for r in Q if r["class"]})}
+for _k, _g in summ["by_class"].items(): _g["sponsors"] = len({r["sponsor"] for r in Q if r["class"] == _k})
 summ["by_kind"] = {"drug": group([r for r in Q if r["drug"] and not r["device"]]), "device_only": group([r for r in Q if r["device"] and not r["drug"]]),
                    "both": group([r for r in Q if r["device"] and r["drug"]])}
 sp = collections.defaultdict(list)

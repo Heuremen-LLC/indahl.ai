@@ -101,13 +101,16 @@ def main():
     n0 = len(fails)
     F = J('oy_findings.json')['findings']; L = J('oy_list.json')['rows']; C = J('oy_chatbot_citations.json')['rows']; S = J('oy_schools.json')['schools']
     for f in F:
-        if f['count'] != len(f['institutions']): fails.append(f'finding {f["finding"]!r}: count {f["count"]}, institutions listed {len(f["institutions"])}')
+        hi = f.get('count_high')   # a range a to b of n lists b names, a of them settled
+        if (hi is None and f['count'] != len(f['institutions'])) or (hi is not None and not f['count'] <= hi == len(f['institutions'])): fails.append(f'finding {f["finding"]!r}: count {f["count"]}, institutions listed {len(f["institutions"])}')
     byname = {f['finding']: f for f in F}
     vc = collections.Counter(r['measures_own_policy'] for r in L)
-    for name, label in (('Measured its own policy or tool', 'Measured its own policy or tool'), ('Outcome reported without counts', 'Outcome reported without counts'), ('Plans to measure', 'Plans to measure'),
-                        ('Usage or attitude surveys only', 'Usage or attitude surveys only')):
+    for name, label in (('Measured its own policy, guidance or a centrally provided tool', 'Measured its own policy or a central tool'), ('Outcome reported without counts', 'Outcome reported without counts'),
+                        ('Plans to measure its own policy (pilots counted in their own row)', 'Plans to measure'),
+                        ('Surveys of use or attitudes, no measure of its own policy (pilots counted in their own row)', 'Usage or attitude surveys, no measure')):
         if byname[name]['count'] != vc[label]: fails.append(f'{name}: finding says {byname[name]["count"]}, the list has {vc[label]}')
     if byname['None found']['count'] != sum(1 for r in L if r['measures_own_policy'].startswith('None found')): fails.append('None found: finding and list differ')
+    if byname['Not reached: its pages refused our reader or need a login']['count'] != sum(1 for r in L if r['measures_own_policy'].startswith('Not reached')): fails.append('Not reached: finding and list differ')
     rc = collections.Counter(r['released_own_data'] for r in L)
     if byname['Released nothing (of 114 read)']['count'] != rc['Nothing'] or byname['Released summary tables or an instrument only (of 114 read)']['count'] != rc['Summary tables or an instrument only']: fails.append('released data counts differ between findings and list')
     if len(C) != byname['Chatbot cited as a source']['count']: fails.append('chatbot rows differ between the table and the finding')

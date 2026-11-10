@@ -75,7 +75,9 @@ def k(g, b): return g['bins'][b]['k']
 parts = []
 hl_big = f'{n(k(pop, "MATCHES_CURRENT") + k(pop, "MATCHES_AN_OLDER_RELEASE"))} of {n(pop["rows"])}'
 hl_line = (f'population figures for countries and territories in Wikidata that cite the World Bank match a World Bank release at the precision '
-           f'they are written in. {n(k(pop, "MATCHES_CURRENT"))} match the current release and {n(k(pop, "MATCHES_AN_OLDER_RELEASE"))} an older one.')
+           f'they are written in. {n(k(pop, "MATCHES_CURRENT"))} match the current release and {n(k(pop, "MATCHES_AN_OLDER_RELEASE"))} an older one.'
+           # 10 Nov 2026 (newsletter audit): the share is quoted with the interval over countries, the one the plan says is honest about clustering
+           + (lambda t: f' That is {100 * t["share"]:.1f} percent matching an older release, with a 95 percent interval of {100 * t["country95"][0]:.1f} to {100 * t["country95"][1]:.1f} percent when whole countries are resampled.')(pop['bins']['MATCHES_AN_OLDER_RELEASE']))
 
 wbr = pop.get('source_read') or {}; uisr = (s1.get('UIS-LE', {}).get('source_read') or {})
 parts.append('<h2>Cited figures against their source</h2>')
@@ -103,7 +105,8 @@ for gid in GROUP_ORDER + ['ALL']:
                      ''.join(cell(g['bins'][b]) for b in BINS) + '</tr>')
 parts.append(table(['Figure', 'Figures read'] + [BIN_WORD[b] for b in BINS], rows_html))
 parts.append('<p class="bench-note">Each share has two 95% intervals. Wilson treats every figure as independent. Countries resamples whole countries '
-             '(2,000 draws), since the figures for one country come from one source series and are not independent of each other. The bins use neither interval.</p>')
+             '(2,000 draws), since the figures for one country come from one source series and are not independent of each other. The bins use neither interval. '
+             'When a share is quoted, quote the interval over countries. The Wilson interval is narrower than the figures justify.</p>')
 
 # UIS: what the figures cite, and the second reading (B2: count only real matches; denominator: figures that match no UIS release)
 uis_bits, cite_bits, nodate_bits = [], [], []

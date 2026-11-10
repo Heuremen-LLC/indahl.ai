@@ -68,19 +68,19 @@ def findings(tbl):
         names = [i['name'] for i in items]
         assert set(found) <= set(names), (set(found) - set(names))
         for i in items: i['what_we_found'], i['what_we_found_source_url'] = found.get(i['name'], ('', ''))
-        rows = T(c[1]); m = re.fullmatch(r'(\d+)(?: of (\d+))?', rows); assert m, rows
-        out.append({'finding': T(c[0]), 'rows': rows, 'count': int(m.group(1)), 'of': int(m.group(2)) if m.group(2) else None, 'note': note, 'institutions': items})
+        rows = T(c[1]); m = re.fullmatch(r'(\d+)(?: to (\d+))?(?: of (\d+))?', rows); assert m, rows   # 10 Nov 2026: a count the record cannot settle is printed as a range, a to b of n
+        out.append({'finding': T(c[0]), 'rows': rows, 'count': int(m.group(1)), 'count_high': int(m.group(2)) if m.group(2) else None, 'of': int(m.group(3)) if m.group(3) else None, 'note': note, 'institutions': items})
     return out
 
 def lst(tbl):
-    assert heads(tbl) == ['Institution', 'Public AI policy or guidance', 'Measures its own AI policy', 'Released its own AI data', 'Pilot results read']
+    assert heads(tbl) == ['Institution', 'First document cited', 'Measures its own AI policy', 'Released its own AI data', 'Pilot results read']   # 10 Nov 2026: was Public AI policy or guidance
     out = []
     for c in trs(tbl):
         m = A.fullmatch(c[0].strip()); inst = {'institution': T(c[0]), 'institution_url': '', 'institution_url_kind': ''}
         if m: inst = {'institution': html.unescape(m.group(2)), 'institution_url': html.unescape(m.group(1)), 'institution_url_kind': m.group(3) or ''}
         else: assert '<' not in c[0], c[0]
-        m = A.fullmatch(c[1].strip()); pol = {'public_policy_or_guidance': T(c[1]), 'public_policy_url': ''}
-        if m: pol = {'public_policy_or_guidance': html.unescape(m.group(2)), 'public_policy_url': html.unescape(m.group(1))}
+        m = A.fullmatch(c[1].strip()); pol = {'first_document_cited': T(c[1]), 'first_document_url': ''}
+        if m: pol = {'first_document_cited': html.unescape(m.group(2)), 'first_document_url': html.unescape(m.group(1))}
         pil = T(c[4]); purl = ''
         m = re.search(r'\(<a href="([^"]*)">pilot source</a>\)\s*$', c[4].strip())
         if m: purl = html.unescape(m.group(1)); pil = T(c[4].strip()[:m.start()])

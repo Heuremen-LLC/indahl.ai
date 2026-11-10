@@ -147,8 +147,8 @@
     "CANNOT_TELL": 2
    },
    "Lenovo v5.1": {
-    "BELOW": 5,
-    "CONSISTENT": 3,
+    "BELOW": 2,
+    "CONSISTENT": 6,
     "CANNOT_TELL": 1
    },
    "Nebius v6.1": {
@@ -6464,44 +6464,6 @@
    }
   },
   {
-   "id": "LN1",
-   "vendor": "Lenovo",
-   "source_key": "Lenovo v5.1",
-   "statement": "earning Top 3 rankings and 1st place in fifteen categories",
-   "verbatim": true,
-   "compared": "first-place counts for the SR680a V3, SR780a V3 and SE100 entries under the rank rule in the notes",
-   "stated": "1st place in fifteen categories",
-   "in_file": "SR680a 2, SR780a 1, SE100 4 first places, total 7",
-   "outcome": "BELOW",
-   "note": "Our rank rule: datacenter entries ranked among the closed 8-accelerator B200 entries for the same model and scenario, which reproduces the field sizes in the list. Edge entries ranked among all closed edge entries for the same model and scenario. Singlestream and multistream rank by lower latency.",
-   "label_mismatch": false,
-   "source": {
-    "title": "Lenovo: Unleashing AI Excellence: Lenovo ThinkSystem Dominates MLPerf v5.1 with Exceptional Inference Performance (Lenovo Press LP2330, published 11 November 2025)",
-    "url": "https://lenovopress.lenovo.com/lp2330-lenovo-thinksystem-dominates-mlperf-v51-with-exceptional-inference-performance",
-    "fetched": "2026-10-28",
-    "round": "MLPerf Inference v5.1"
-   }
-  },
-  {
-   "id": "LN4",
-   "vendor": "Lenovo",
-   "source_key": "Lenovo v5.1",
-   "statement": "The Table 1 row for ThinkEdge SE100 in the post lists twelve categories submitted with twelve first place finishes and no second or third place finishes.",
-   "verbatim": false,
-   "compared": "SE100 closed edge entry 5.1-0064, rank among closed edge entries for each model and scenario",
-   "stated": "12 categories, 12 first, 0 second, 0 third",
-   "in_file": "12 categories, 4 first, 6 second, 2 third. Fields: resnet SingleStream 2/7, resnet MultiStream 2/7, resnet Offline 2/7, retinanet SingleStream 2/7, retinanet MultiStream 3/7, retinanet Offline 3/7, 3d-unet-99 SingleStream 2/2, 3d-unet-99 Offline 2/2, 3d-unet-99.9 SingleStream 1/1, 3d-unet-99.9 Offline 1/1, stable-diffusion-xl SingleStream 1/1, stable-diffusion-xl Offline 1/1",
-   "outcome": "BELOW",
-   "note": "The list in the post says 1/1 and no competitors for all twelve. The file has other closed edge entries in eight of the twelve, from GATEOverflow and HPE, and one other entry in two more.",
-   "label_mismatch": false,
-   "source": {
-    "title": "Lenovo: Unleashing AI Excellence: Lenovo ThinkSystem Dominates MLPerf v5.1 with Exceptional Inference Performance (Lenovo Press LP2330, published 11 November 2025)",
-    "url": "https://lenovopress.lenovo.com/lp2330-lenovo-thinksystem-dominates-mlperf-v51-with-exceptional-inference-performance",
-    "fetched": "2026-10-28",
-    "round": "MLPerf Inference v5.1"
-   }
-  },
-  {
    "id": "LN6",
    "vendor": "Lenovo",
    "source_key": "Lenovo v5.1",
@@ -6540,16 +6502,16 @@
    }
   },
   {
-   "id": "LN9",
+   "id": "LN1",
    "vendor": "Lenovo",
    "source_key": "Lenovo v5.1",
-   "statement": "Under the ThinkEdge SE100 heading the post lists twelve entries for resnet50, retinanet, 3d-unet, 3d-unet-99.9 and stable-diffusion-xl, each marked 1/1 with no competitors.",
-   "verbatim": false,
-   "compared": "closed edge entries for the same model and scenario as each SE100 entry",
-   "stated": "12 categories with no competitors",
-   "in_file": "8 of 12 have other closed edge entries. Field sizes: resnet SingleStream 7, resnet MultiStream 7, resnet Offline 7, retinanet SingleStream 7, retinanet MultiStream 7, retinanet Offline 7, 3d-unet-99 SingleStream 2, 3d-unet-99 Offline 2, 3d-unet-99.9 SingleStream 1, 3d-unet-99.9 Offline 1, stable-diffusion-xl SingleStream 1, stable-diffusion-xl Offline 1",
-   "outcome": "BELOW",
-   "note": "Rank 1 does not hold in every one of the twelve.",
+   "statement": "earning Top 3 rankings and 1st place in fifteen categories",
+   "verbatim": true,
+   "compared": "first-place counts for the SR680a V3, SR780a V3 and SE100 entries under the rank rule in the notes",
+   "stated": "1st place in fifteen categories",
+   "in_file": "SR680a 2, SR780a 1, SE100 12 first places, total 15",
+   "outcome": "CONSISTENT",
+   "note": "Our rank rule, one rule for every entry: each Lenovo entry is ranked among the closed entries of its own suite with the same accelerator and the same accelerator count, for the same model and scenario. That is 8x B200 for the two datacenter systems, which reproduces the field sizes in the list, and 1x RTX-2000E-Ada-16GB for the SE100. Singlestream and multistream rank by lower latency. Until 10 Nov 2026 the SE100 was ranked among all closed edge entries, which gave 4 first places for it and a total of 7. That mixed two rules in one statement and was corrected in the vendor's favour.",
    "label_mismatch": false,
    "source": {
     "title": "Lenovo: Unleashing AI Excellence: Lenovo ThinkSystem Dominates MLPerf v5.1 with Exceptional Inference Performance (Lenovo Press LP2330, published 11 November 2025)",
@@ -6569,6 +6531,25 @@
    "in_file": "8 of 8 found as submitter names or parts of combined names. Missing: none",
    "outcome": "CONSISTENT",
    "note": "Broadcom appears only in combined names (Broadcom_Supermicro, Dell_Broadcom).",
+   "label_mismatch": false,
+   "source": {
+    "title": "Lenovo: Unleashing AI Excellence: Lenovo ThinkSystem Dominates MLPerf v5.1 with Exceptional Inference Performance (Lenovo Press LP2330, published 11 November 2025)",
+    "url": "https://lenovopress.lenovo.com/lp2330-lenovo-thinksystem-dominates-mlperf-v51-with-exceptional-inference-performance",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Inference v5.1"
+   }
+  },
+  {
+   "id": "LN4",
+   "vendor": "Lenovo",
+   "source_key": "Lenovo v5.1",
+   "statement": "The Table 1 row for ThinkEdge SE100 in the post lists twelve categories submitted with twelve first place finishes and no second or third place finishes.",
+   "verbatim": false,
+   "compared": "SE100 closed edge entry 5.1-0064, rank among closed edge entries with the same accelerator and count (1x RTX-2000E-Ada-16GB) for each model and scenario",
+   "stated": "12 categories, 12 first, 0 second, 0 third",
+   "in_file": "12 categories, 12 first, 0 second, 0 third. Fields: resnet SingleStream 1/1, resnet MultiStream 1/1, resnet Offline 1/1, retinanet SingleStream 1/1, retinanet MultiStream 1/1, retinanet Offline 1/1, 3d-unet-99 SingleStream 1/1, 3d-unet-99 Offline 1/1, 3d-unet-99.9 SingleStream 1/1, 3d-unet-99.9 Offline 1/1, stable-diffusion-xl SingleStream 1/1, stable-diffusion-xl Offline 1/1",
+   "outcome": "CONSISTENT",
+   "note": "Ranked among closed edge entries with the same accelerator and count, the rule used for the datacenter entries, the SE100 is the only entry in each of the twelve, so its first place is in a field of one. Ranked among all closed edge entries, the reading used until 10 Nov 2026, it is first in 4 of 12. The file has other closed edge entries, on other accelerators, in eight of the twelve, from GATEOverflow and HPE.",
    "label_mismatch": false,
    "source": {
     "title": "Lenovo: Unleashing AI Excellence: Lenovo ThinkSystem Dominates MLPerf v5.1 with Exceptional Inference Performance (Lenovo Press LP2330, published 11 November 2025)",
@@ -6607,6 +6588,25 @@
    "in_file": "llama2-70b-99 Server 7/10, llama2-70b-99 Offline 1/10, llama2-70b-99.9 Server 3/11, llama2-70b-99.9 Offline 1/11, whisper Offline 7/14",
    "outcome": "CONSISTENT",
    "note": "",
+   "label_mismatch": false,
+   "source": {
+    "title": "Lenovo: Unleashing AI Excellence: Lenovo ThinkSystem Dominates MLPerf v5.1 with Exceptional Inference Performance (Lenovo Press LP2330, published 11 November 2025)",
+    "url": "https://lenovopress.lenovo.com/lp2330-lenovo-thinksystem-dominates-mlperf-v51-with-exceptional-inference-performance",
+    "fetched": "2026-10-28",
+    "round": "MLPerf Inference v5.1"
+   }
+  },
+  {
+   "id": "LN9",
+   "vendor": "Lenovo",
+   "source_key": "Lenovo v5.1",
+   "statement": "Under the ThinkEdge SE100 heading the post lists twelve entries for resnet50, retinanet, 3d-unet, 3d-unet-99.9 and stable-diffusion-xl, each marked 1/1 with no competitors.",
+   "verbatim": false,
+   "compared": "closed edge entries with the same accelerator and count, for the same model and scenario as each SE100 entry",
+   "stated": "12 categories with no competitors",
+   "in_file": "12 of 12 with no other entry on the same accelerator. 8 of 12 have other closed edge entries on other accelerators. Field sizes, all closed edge entries: resnet SingleStream 7, resnet MultiStream 7, resnet Offline 7, retinanet SingleStream 7, retinanet MultiStream 7, retinanet Offline 7, 3d-unet-99 SingleStream 2, 3d-unet-99 Offline 2, 3d-unet-99.9 SingleStream 1, 3d-unet-99.9 Offline 1, stable-diffusion-xl SingleStream 1, stable-diffusion-xl Offline 1",
+   "outcome": "CONSISTENT",
+   "note": "Under the rank rule used for every Lenovo entry, no other closed edge entry in the file uses the same accelerator, so 1/1 holds in all twelve. Other closed edge entries on other accelerators exist in eight of the twelve. Until 10 Nov 2026 this row read below on those, a different rule from the datacenter rows, corrected in the vendor's favour.",
    "label_mismatch": false,
    "source": {
     "title": "Lenovo: Unleashing AI Excellence: Lenovo ThinkSystem Dominates MLPerf v5.1 with Exceptional Inference Performance (Lenovo Press LP2330, published 11 November 2025)",

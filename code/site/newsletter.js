@@ -9,7 +9,8 @@
 // Nothing here is logged, posted or emailed to anyone. Addresses never leave the private KV except to Cloudflare Email Sending at send time.
 const EMAIL = /^[^\s@<>"(),;:\\[\]]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?)*\.[A-Za-z]{2,24}$/;
 const OK = 'Thank you. The weekly changes page will come to this address every Tuesday. Every email has a one-click unsubscribe.';
-const PRIVACY_V = '2026-11-10b';
+import { PRIVACY } from './pages.js';
+const PRIVACY_V = PRIVACY.version;   // 10 Nov: follows the notice version build_site.py sets, so a sign-up records the notice in force
 const JS = `(function () {
   document.querySelectorAll('form.nl').forEach(function (f) {
     f.addEventListener('submit', function (ev) {

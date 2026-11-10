@@ -13,7 +13,7 @@ sp = importlib.util.spec_from_file_location('verify', H + '/src/verify.py'); V =
 shutil.copy(H + '/src/verify.py', D + '/verify.py')
 # 1. read the pages
 page = open(X.SITE + 'oy.html', encoding='utf-8').read(); tb = X.tables(page); assert len(tb) == 4
-TX = X.text_blocks(page); AS_OF = re.search(r'as of (\d+ \w+ \d{4})', TX['headline_text']).group(1)
+TX = X.text_blocks(page); AS_OF = re.search(r'as of (\d+ \w+ \d{4})', TX['headline_text'] + ' ' + TX['how_these_rows_were_read']).group(1)   # 10 Nov 2026: the headline now says read once, on <date>
 chat, find, lst, sch = X.chatbot(tb[0]), X.findings(tb[1]), X.lst(tb[2]), X.schools_table(tb[3])
 PAGE = 'https://indahl.ai/oy'
 schools = []

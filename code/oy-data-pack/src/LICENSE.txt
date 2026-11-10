@@ -32,7 +32,7 @@ The README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html, ver
 - json/oy_text.json
 - csv/oy_text_meta.csv
 
-The labels, counts and notes written by Heuremen LLC are the columns measures_own_policy, released_own_data, public_policy_or_guidance, pilot_results, what_we_found, site_read, read_in_full_label, read_in_full_note, sentences_note and course_titles_note in all files, the finding text, notes and counts of the findings files, and the text file.
+The labels, counts and notes written by Heuremen LLC are the columns measures_own_policy, released_own_data, first_document_cited, pilot_results, what_we_found, site_read, read_in_full_label, read_in_full_note, sentences_note and course_titles_note in all files, the finding text, notes and counts of the findings files, and the text file.
 
 Heuremen LLC permits anyone to use, copy and change these parts with attribution to Heuremen LLC and https://indahl.ai/oy. For its own text (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md, START_HERE.html and the labels, counts and notes listed above) that permission does not include use as AI training data.
 

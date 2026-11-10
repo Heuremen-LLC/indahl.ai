@@ -25,5 +25,5 @@ Heuremen LLC
   - csv/oy_list.csv
   - json/oy_text.json
   - csv/oy_text_meta.csv
-  The labels, counts and notes are the columns measures_own_policy, released_own_data, public_policy_or_guidance, pilot_results, what_we_found, site_read, read_in_full_label, read_in_full_note, sentences_note and course_titles_note, the finding text, the notes and counts of the findings, and the text file.
+  The labels, counts and notes are the columns measures_own_policy, released_own_data, first_document_cited, pilot_results, what_we_found, site_read, read_in_full_label, read_in_full_note, sentences_note and course_titles_note, the finding text, the notes and counts of the findings, and the text file.
   For the text files (the README, SOURCES.md, NOTICE.txt, LICENSE.txt, TESTED.md and START_HERE.html) and for those columns, that permission does not include use as AI training data. The reservation against text and data mining and AI training covers that text only. It does not apply to the quoted sentences, titles and quotations or to federal directory data.

@@ -11,7 +11,7 @@ Each entry gives the source as the OY pages state it, with the dates found in th
 - Where the page marks a link as a journal article, a preprint, a registry entry, a repository copy, a faculty blog post or conference slides, the column `kind` or `institution_url_kind` says so.
 - The chatbot citations quote a passage from each named document, with the address of the document.
 - The documents belong to the institutions and authors that published them. The terms of each document are its owner's.
-- The words in the columns `public_policy_or_guidance`, `measures_own_policy`, `released_own_data`, `pilot_results` and in the findings, notes and `what_we_found` text are ours.
+- The words in the columns `first_document_cited`, `measures_own_policy`, `released_own_data`, `pilot_results` and in the findings, notes and `what_we_found` text are ours.
 
 ## Private baccalaureate colleges (json/oy_schools.json)
 

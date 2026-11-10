@@ -77,7 +77,8 @@ try: _HLSLUGS = set(_jsonld.load(open(os.path.join(HERE, '..', 'watch', 'headlin
 except Exception: _HLSLUGS = set()
 def _hlslot(path):
     if path == '/social' and globals().get('_SOCIALSLOT'): return _SOCIALSLOT   # 10 Nov 2026: SOCIAL ships one reading per section, so its headline is the one built with the page (social_index/build_social.py)
-    if path == '/wiki' and globals().get('_WIKISLOT'): return _WIKISLOT   # 10 Nov 2026: WIKI ships one reading, so its headline is the one built with that page (wiki_index/build_page.py), not the feed's
+    if path == '/wiki' and globals().get('_WIKISLOT'): return _WIKISLOT
+    if path == '/oy' and globals().get('_OYSLOT'): return _OYSLOT   # 10 Nov 2026 (newsletter audit): OY's headline is built with the page from the rows (oy_index/matrix_page/oy_headline.json)   # 10 Nov 2026: WIKI ships one reading, so its headline is the one built with that page (wiki_index/build_page.py), not the feed's
     if path == '/': return _SLOT.replace('class="hl-slot"', 'class="hl-slot hl-home"')
     if path == '/stack': return _SLOT.replace('class="hl-slot"', 'class="hl-slot hl-stack"')
     # 29 Oct 2026 (his "too much space under the headline"): the page ships with the current headline in it, so nothing is reserved and nothing jumps. headline.js refreshes the words in place.
@@ -396,7 +397,7 @@ import re as _re
 _NDA_SRC = os.path.join(HERE, '..', 'heuremen-specbook', 'contracts', 'MUTUAL_NDA.md')
 _nda_md = open(_NDA_SRC, encoding='utf-8').read()
 NDA_VERSION = _re.search(r'DRAFT v([0-9.]+)', _nda_md).group(1)
-PRIVACY_VERSION = '2026-11-10b'   # 10 Nov (2026-11-10b): the weekly changes email (what is stored, why, how to leave). 10 Nov: semicolons split into sentences, no change in meaning. 30 Oct (2026-10-30b): the correction or removal form
+PRIVACY_VERSION = '2026-11-10c'   # 10 Nov (2026-11-10c): outcome alerts (double opt-in, what is stored, how to leave). 10 Nov (2026-11-10b): the weekly changes email (what is stored, why, how to leave). 10 Nov: semicolons split into sentences, no change in meaning. 30 Oct (2026-10-30b): the correction or removal form
 _nda = '\n'.join(l for l in _nda_md.split('\n') if not l.startswith('*DRAFT'))
 _nda = _nda.split('\n---')[0]                                            # no signature block on the web: acceptance is the checkbox (section 12)
 _nda = _nda.replace('is made on [DATE] between', 'is made on the date Counterparty accepts it between', 1)
@@ -476,7 +477,7 @@ GATE_JS = r"""// gate-ui.js: each legal box must be scrolled to the end before i
 PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heuremen LLC', 'How Heuremen LLC and all of its divisions collect, use, protect and retain personal information.',
  '''
 <section class="legal">
-<p class="meta">Effective 23 October 2026. Updated 29 October 2026 to describe the installable app. Updated 30 October 2026 to say which pages load typefaces from Google Fonts. Updated 10 November 2026 to describe the weekly changes email.</p>
+<p class="meta">Effective 23 October 2026. Updated 29 October 2026 to describe the installable app. Updated 30 October 2026 to say which pages load typefaces from Google Fonts. Updated 10 November 2026 to describe the weekly changes email, and again the same day to describe outcome alerts.</p>
 <p>This notice explains how Heuremen LLC (&ldquo;Heuremen&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;), including all of its divisions, collects, uses, shares, protects and retains personal information through indahl.ai, heuremen.org, our inquiry form, our correspondence and our engagements. We hold the information of everyone who contacts us, and of any client, in confidence.</p>
 
 <h2>Information we collect</h2>
@@ -487,6 +488,8 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <p>The inquiry form collects what you enter: your name, organisation email address, organisation, role, a description of what you need (including the systems or results involved and your organisation&rsquo;s relationships with relevant vendors), an approximate budget range and timeline, who referred you, and your confirmations regarding non-disclosure, authority and this notice. For an engagement inquiry we also record the identity you verified (your work email address, the name on that account, the sign-in method and the identifier our sign-in provider assigns), and your acceptance of our Mutual Non-Disclosure Agreement and this notice (which versions, the time, that you read both to the end, and your name, title and organisation). Nothing is recorded until you submit the inquiry. We also record the time of the inquiry and the country the request came from. We do not store your IP address. A truncated one-way hash of it, which may still be personal data, is held for up to one hour only to limit repeat submissions. Each accepted inquiry is also emailed to us.</p>
 <h3>When you subscribe to the weekly changes email</h3>
 <p>The email field at the foot of each page and on the weekly changes page collects only your email address. We store it with the time you subscribed, the version of this notice in force then, and a random unsubscribe token. We use it for one thing: to email you the weekly changes page every Tuesday. Every email has a one-click unsubscribe link. Unsubscribing deletes your address and its token from the list at once. A truncated one-way hash of your IP address is held for up to one hour only to limit repeat sign-ups. We never share, sell or rent the list, and we never use it for anything other than this email. The addresses are kept in a private storage area accessible only to us and are never published, logged or posted.</p>
+<h3 id="alerts">When you sign up for outcome alerts</h3>
+<p>The outcome alerts box on a desk page, a brand page or the alerts page collects your email address and the desks or organisations you tick. We store them with the time you signed up and the version of this notice in force then. We then email one confirmation link to that address. Nothing else is sent until you open the link and press Confirm. A sign-up that is not confirmed is deleted after two days. Once you confirm, we store the time you confirmed and a random token for your manage and unsubscribe links. We use the address for one thing: to email you when an outcome changes on a desk you follow. Every alert has a link to change your desks and a one-click unsubscribe link. Unsubscribing deletes your address, your choices and the token at once. A truncated one-way hash of your IP address is held for up to one hour, and a truncated one-way hash of your email address for up to one day, only to limit repeat sign-ups and confirmation emails. We never share, sell or rent the list, and we never use it for anything other than these alerts. The addresses are kept in a private storage area accessible only to us and are never published, logged or posted.</p>
 <h3>When you add a PDF link under a Recount Matrix</h3>
 <p>The one-field box under each Recount Matrix stores the link you paste, the table it was added under and the time. It stores no name, email address or IP address. A truncated one-way hash of your IP address is held for up to one hour only to limit repeat submissions. We read each link before anything changes in a table.</p>
 <h3>When you add a response</h3>
@@ -501,6 +504,7 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <li>To review inquiries for fit, independence (including conflicts with vendors we measure) and authority, and to reply.</li>
 <li>To negotiate, perform and invoice engagements.</li>
 <li>To email the weekly changes page to the addresses that asked for it.</li>
+<li>To email outcome alerts to the addresses that confirmed them.</li>
 <li>To keep our websites secure, and to detect and prevent abuse of the inquiry form.</li>
 <li>To meet legal, tax and accounting obligations, and to establish or defend legal claims.</li>
 </ul>
@@ -510,7 +514,7 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <p>Where the GDPR or UK GDPR applies, we rely on our legitimate interests in reviewing inquiries and running our business securely. We also rely on steps taken at your request before entering a contract, and on the performance of that contract. We rely on compliance with legal obligations. Where we ask for it, we rely on your consent, which you may withdraw at any time.</p>
 
 <h2>Who we share it with</h2>
-<p>We share personal information only with service providers that process it on our behalf and under their contractual obligations: Cloudflare (delivery of indahl.ai, the storage of the inquiry form and the weekly changes list, and email delivery), WorkOS (verifying the work identity of people who send an engagement inquiry), GitHub (hosting of heuremen.org), Google Workspace (our email), and Google Fonts (typefaces on one page of heuremen.org). We disclose information when required by law or valid legal process, to protect our rights or the safety of others, or in connection with a merger, acquisition or sale of assets, in which case this notice continues to apply to the information transferred. We never name a client, partner or engagement without written consent.</p>
+<p>We share personal information only with service providers that process it on our behalf and under their contractual obligations: Cloudflare (delivery of indahl.ai, the storage of the inquiry form, the weekly changes list and the outcome alerts list, and email delivery), WorkOS (verifying the work identity of people who send an engagement inquiry), GitHub (hosting of heuremen.org), Google Workspace (our email), and Google Fonts (typefaces on one page of heuremen.org). We disclose information when required by law or valid legal process, to protect our rights or the safety of others, or in connection with a merger, acquisition or sale of assets, in which case this notice continues to apply to the information transferred. We never name a client, partner or engagement without written consent.</p>
 
 <h2>International transfers</h2>
 <p>We are based in the United States, and our service providers may process information in other countries. Where the law requires it, transfers are made under appropriate safeguards such as the European Commission&rsquo;s standard contractual clauses relied on by those providers.</p>
@@ -521,6 +525,7 @@ PAGES['/privacy'] = page('/privacy', 'Privacy Notice and Data Handling | Heureme
 <li>Engagement records, agreements and invoices: for the life of the engagement and as long afterwards as contract, tax and legal obligations require.</li>
 <li>Engagement data you provide: returned or deleted at the end of the engagement on request, except where we must keep it by law.</li>
 <li>Weekly changes email addresses: until you unsubscribe, then deleted at once.</li>
+<li>Outcome alert sign-ups that are not confirmed: two days, then deleted. Confirmed outcome alert addresses: until you unsubscribe, then deleted at once.</li>
 <li>The one-way hash used to limit repeat submissions: one hour.</li>
 <li>Inquiry cookies. A signed cookie records that you accepted the agreements and is kept up to two hours. A cookie that ties a sign-in to your browser is kept up to ten minutes. A signed cookie holds your verified identity while you complete an engagement inquiry and is kept up to 45 minutes. We set no other cookies and no tracking cookies.</li>
 </ul>
@@ -802,6 +807,8 @@ main section{padding:36px 0;border-bottom:1px solid #dccfb0}main section:first-c
 HELD_KIDS = {k: PAGES.pop(k) for k in [p for p in list(PAGES) if p == '/oy' or p.startswith('/oy/')]}
 OY_TOP = IRIS_TOP.replace('value="iris"', 'value="oy"').replace('Submit a published study or model review for indexing', 'Submit a published study or school AI document for indexing')
 _OY_BODY = open(os.path.join(HERE, '..', 'oy_index', 'matrix_page', 'oy_body.html'), encoding='utf-8').read()
+_OYHL = _jsonld.load(open(os.path.join(HERE, '..', 'oy_index', 'matrix_page', 'oy_headline.json'), encoding='utf-8'))   # 10 Nov 2026: built with oy_body.html by build_matrix_page.py
+_OYSLOT = '<section id="hl-slot" class="hl-slot hl"><div class="hl-big">' + html.escape(_OYHL['big']) + '</div><p class="hl-line">' + html.escape(_OYHL['line']) + '</p></section>'
 # 27 Oct 2026 (his word): every small private liberal arts college gets a page. Data: oy_index/schools.json (build_schools.py). Script reads, not hand verdicts.
 import json as _oj, html as _oh
 _SCH = _oj.load(open(os.path.join(HERE, '..', 'oy_index', 'schools.json'), encoding='utf-8'))
@@ -1775,6 +1782,8 @@ PAGES['/correction'] = page('/correction', 'Correction or Removal | Heuremen LLC
 # 10 Nov 2026: the public corrections log at /corrections, with corrections.xml (Atom) and corrections.csv in the worker's public folder.
 # Generator and rows live in corrections.py and corrections_rows.json. The build stops if a row's source, commit, link or receipt is not real.
 import corrections as _corr; _corr.build(PAGES, page, hero_slim, _FEED); CSS += _corr.CSS
+# 10 Nov 2026: FORECASTERS at /forecasters, every forecaster desk on one axis, built in forecasters.py (members in ../forecasters/members.json, its own trace gate).
+import forecasters as _fcs; CSS += _fcs.CSS
 
 PAGES['/respond'] = page('/respond', 'Respond | Heuremen LLC', 'Add a response to a page: a PDF on your own site, posted as received with its date and host.',
  '<section class="legal"><h2>Add a response</h2>'
@@ -1969,7 +1978,7 @@ DESKS = {'/oy': [('/campus', 'CAMPUS', 'The documents behind the OY page, kept o
                     ('/uptime', 'UPTIME', 'Vendor status pages against independent probes'), ('/time', 'TIME', 'Public time servers, stated against delivered'), ('/cada', 'CADA', 'Public DNS filters against fresh abuse reports'), ('/secrecords', 'SECRECORDS', 'Security records against their own rules'),
                     ('/seat', 'SEAT', 'An outside seat reads our own pages'), ('/support', 'SUPPORT', 'Stated support windows against release activity'), ('/change', 'CHANGE', 'Announced shutdown dates, kept over time')],
          '/hermes': [('/hermes/model', 'MODEL', 'Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data'), ('/trials', 'TRIALS', 'Results due against results posted, and stopped trials'), ('/hpt', 'HPT', 'Hospital price files against the rule'), ('/airline', 'AIRLINE', 'Scheduled flight time against flown time'), ('/airq', 'AIRQ', 'Air sensors against the EPA\'s own targets'), ('/revise', 'REVISE', 'Stated margin against later revision'), ('/fedsep', 'FEDSEP', 'The Fed\'s stated ranges against outcomes'), ('/cadence', 'CADENCE', 'Stated update schedules against delivered'),
-                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/stack', 'STACK', 'Every test side by side')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot
+                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/forecasters', 'FORECASTERS', 'Every forecaster desk on one axis, stated against delivered'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/stack', 'STACK', 'Every test side by side')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot
 _DNAME = {'/iris': 'IRIS', '/atlas': 'ATLAS', '/hermes': 'HERMES', '/oy': 'OY'}
 for _d, _ds in DESKS.items():
     if _d == '/hermes': continue
@@ -2116,6 +2125,7 @@ CSS += """
 .ggs::before{content:"\\00b7\\00a0"}.ggr{display:block;font-size:13px;color:var(--goldink)}.ggnote{display:block;font-size:14px;color:var(--mid);margin-bottom:4px}.ggall a{font-size:15px}
 @media (max-width:640px){.ggpanel{position:static;margin-top:8px;width:auto}}
 """
+import alerts as _alr; CSS += _alr.CSS   # 10 Nov 2026: outcome alerts sign-up box (alerts.py, alerts.js, alerts_send.py)
 import weekly as _wk; CSS += _wk.CSS   # 10 Nov 2026: /week pages and the newsletter field (weekly.py, newsletter.js); placed in main() below
 def main():
     names = {}
@@ -2365,7 +2375,10 @@ def main():
     # fill and shipped an empty banner). Then the data links and embed box, the page dates, the share cards, Dataset JSON-LD and the change feeds.
     _wk.apply(PAGES, page, hero_slim, DESKS)   # 10 Nov 2026: /week, every past week, and the one-field newsletter box in every footer
     # 10 Nov 2026 (brand pages): /brand and /brand/<slug>, every desk row about one organisation, built in brands.py (its own module and gate).
-    import brands as _brd; _brd.add_pages(PAGES, page, hero_slim, HOME); [PAGES.__setitem__(_p, PAGES[_p].replace('@@CSSV@@', _cv)) for _p in PAGES if _p.startswith('/brand')]
+    import brands as _brd; _bb = _brd.add_pages(PAGES, page, hero_slim, HOME); [PAGES.__setitem__(_p, PAGES[_p].replace('@@CSSV@@', _cv)) for _p in PAGES if _p.startswith('/brand')]
+    # 10 Nov 2026 (outcome alerts): the sign-up box on each desk page that can flip and each brand page on one, and /alerts (alerts.py)
+    _alr.apply(PAGES, page, hero_slim, HOME, _bb, _jsonld.load(open(_brd.ROWS))['rows']); PAGES['/alerts'] = PAGES['/alerts'].replace('@@CSSV@@', _cv)
+    _fcs.add_pages(PAGES, page, hero_slim, HOME); PAGES['/forecasters'] = PAGES['/forecasters'].replace('@@CSSV@@', _cv)   # 10 Nov 2026: /forecasters, and a link to it on each member desk
     for _pp in PAGES: PAGES[_pp] = _re.sub(r'@@NAV:[^@]*@@', lambda _m, _pp=_pp: _navfor(_pp), PAGES[_pp])
     import findable as _fd
     _packs = _fd.packs(PAGES, DESKS)

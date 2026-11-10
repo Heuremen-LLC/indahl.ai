@@ -6,13 +6,16 @@ H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); W = os.path.expandu
 PORTALS = [('CMS', 'https://data.cms.gov/data.json'), ('CDC', 'https://data.cdc.gov/data.json'), ('HealthData.gov', 'https://healthdata.gov/data.json'), ('Veterans Affairs', 'https://data.va.gov/data.json'),
            ('Energy', 'https://www.energy.gov/data.json'), ('Labor', 'https://www.dol.gov/data.json'), ('FEMA', 'https://www.fema.gov/data.json'), ('HealthCare.gov', 'https://data.healthcare.gov/data.json'), ('BLS', 'https://data.bls.gov/data.json')]
 WORDS = {'daily': 1, 'weekly': 7, 'biweekly': 14, 'bi-weekly': 14, 'monthly': 30, 'bimonthly': 61, 'quarterly': 91, 'semiannual': 182, 'semiannually': 182, 'annually': 365, 'annual': 365, 'yearly': 365, 'biennial': 730, 'biennially': 730}
-def interval_days(s):
+def interval_days(s, decimals=True):
+    """10 Nov 2026 (Addendum 2): ISO 8601 lets a duration carry a decimal number (CMS states R/P3.5D on 1,426 records), so the numbers may be
+    decimal. decimals=False is the integer-only reading the code used until 10 Nov, kept only to print the old count beside the new one."""
     if not s: return None
     s = s.strip().lower()
     if s in WORDS: return WORDS[s]
-    m = re.fullmatch(r'r/p(?:(\d+)y)?(?:(\d+)m)?(?:(\d+)w)?(?:(\d+)d)?(?:t(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?)?', s)
+    N = r'(\d+(?:[.,]\d+)?)' if decimals else r'(\d+)'
+    m = re.fullmatch(r'r/p(?:%sy)?(?:%sm)?(?:%sw)?(?:%sd)?(?:t(?:%sh)?(?:%sm)?(?:%ss)?)?' % ((N,) * 7), s)
     if not m or not any(m.groups()): return None
-    y, mo, w, d, h, mi, se = [int(x or 0) for x in m.groups()]; return y * 365 + mo * 30 + w * 7 + d + h / 24 + mi / 1440 + se / 86400
+    y, mo, w, d, h, mi, se = [float((x or '0').replace(',', '.')) for x in m.groups()]; return y * 365 + mo * 30 + w * 7 + d + h / 24 + mi / 1440 + se / 86400
 def get(u, head=False):
     req = urllib.request.Request(u, headers={'User-Agent': UA}, method='HEAD' if head else 'GET')
     try:
@@ -53,15 +56,30 @@ def wil(k, n):   # 29 Oct: kit's tested Wilson; the cadence copy omitted the div
     if not n: return None
     p = k / n; lo, hi = _K.wilson(k, n); return [round(100 * p), round(100 * lo), round(100 * hi)]
 def cls(d): return 'daily or faster' if d <= 1.5 else 'weekly' if d <= 8 else 'monthly' if d <= 35 else 'quarterly' if d <= 100 else 'yearly or slower'
-out = []; over = []; why = C.Counter()
+out = []; over = []; why = C.Counter(); old_rule = [0, 0]
+def _old_series(rows):
+    """The series rule as the code ran it until 10 Nov 2026: integer-only durations, and on a tie of newest dates the first record in file order."""
+    ser = {}
+    for r in rows:
+        lk = r['landing']; lk = lk.get('accessURL') if isinstance(lk, dict) else lk; key = lk or ('id:' + str(r['id']))
+        mt0 = pdate(r['modified']) if r.get('modified') else None
+        if key not in ser or (mt0 or 0) > (ser[key][1] or 0): ser[key] = (r, mt0)
+    return [v[0] for v in ser.values()]
 for n, _ in PORTALS:
     f = f'data/portal_{re.sub("[^a-z0-9]+", "_", n.lower())}.json'
     if not os.path.exists(f): continue
     P = json.load(open(f)); ok = bad = ct = 0; bycl = C.defaultdict(lambda: [0, 0]); ser = {}
+    for r in _old_series(P['rows']):
+        d0 = interval_days(r['cadence'], decimals=False); m0 = pdate(r['modified']) if r.get('modified') else None
+        if d0 is None or m0 is None: continue
+        old_rule[1] += 1; old_rule[0] += ((P.get('fetched') or now) - m0) > 2 * max(d0, 2) * 86400
     for r in P['rows']:
         lk = r['landing']; lk = lk.get('accessURL') if isinstance(lk, dict) else lk; key = lk or ('id:' + str(r['id'])); r['landing'] = lk
         mt0 = pdate(r['modified']) if r.get('modified') else None
+        # 10 Nov 2026 (Addendum 2): when records of one series share the newest date and state different cadences, file order used to pick one.
+        # Now the series is read against the longest interval its newest records state, so it reads BELOW only when it is behind all of them.
         if key not in ser or (mt0 or 0) > (ser[key][1] or 0): ser[key] = (r, mt0)
+        elif (mt0 or 0) == (ser[key][1] or 0) and (interval_days(r['cadence']) or -1) > (interval_days(ser[key][0]['cadence']) or -1): ser[key] = (r, mt0)
     nrec = len(P['rows']); rows_s = [v[0] for v in ser.values()]
     for r in rows_s:
         d = interval_days(r['cadence']); mt = pdate(r['modified']) if r.get('modified') else None
@@ -87,8 +105,11 @@ for x in over[:20]:
         lc[u] = [now, code]; time.sleep(0.5)
     x['link_status'] = lc[u][1]
 json.dump(lc, open('data/linkcheck.json', 'w'))
-summ = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), portals=out, most_overdue=over[:20])
+summ = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), portals=out, most_overdue=over[:20],
+            totals=dict(below=sum(p['below'] for p in out), readable=sum(p['readable'] for p in out), portals=len(out),
+                        old_rule=dict(below=old_rule[0], readable=old_rule[1], rule='as the code ran until 10 Nov 2026: whole numbers only in a stated duration, and file order on a tie of newest dates')))
 json.dump(summ, open('summary_cadence.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
+if os.environ.get('CADENCE_NO_PUBLISH'): print('cadence: summary written, not published'); sys.exit(0)
 p = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'cadence_live', '--path', os.path.join(H, 'summary_cadence.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('cadence:', len(out), 'portals;', nh, 'head checks this round;', 'published' if p.returncode == 0 else 'publish FAILED')
