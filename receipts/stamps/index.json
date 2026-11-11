@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T13:04:11Z",
+ "built_utc": "2026-11-11T13:27:22Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 811,
+   "commit": "1ad2a2347539778e3ddb4b3561a53089bc6bf107",
+   "files": 5240,
+   "id": "1ad2a2347539",
+   "json": "/receipts/stamps/release_1ad2a2347539.json",
+   "ledger_sha256": "1a2242cc5ae77eeda9f35d446b5066cb057063f423378b76103895db7779e28b",
+   "manifest_sha256": "80884e609ec35a9d78cf781842cbaa44230feb23adaf50a9ffa9686f8c910113",
+   "ots": "/receipts/stamps/release_1ad2a2347539.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T13:27:21Z",
+   "sha256": "8476b72633bf9e5338a417808c5387ea515d0cc7290d53ce6b4dcaa2385a7d9b",
+   "wayback": [],
+   "wayback_waiting": 808
+  },
   {
    "changed": 0,
    "commit": "e40d0c7177feb2e0479ad85447559e4030ba49e1",
@@ -281,7 +296,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 191
+   "wayback_waiting": 124
   },
   {
    "changed": 369,
@@ -547,7 +562,7 @@
      "url": "https://indahl.ai/brand/adguard.csv"
     }
    ],
-   "wayback_waiting": 191
+   "wayback_waiting": 31
   },
   {
    "changed": 4261,
@@ -562,7 +577,7 @@
    "released_at": "2026-11-11T00:30:27Z",
    "sha256": "fde2c29eef40194b0ba4c5184c6d5e677d252f878b60ad34463b3104f7a3c32b",
    "wayback": [],
-   "wayback_waiting": 4032
+   "wayback_waiting": 3504
   },
   {
    "changed": 4233,
