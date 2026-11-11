@@ -32,7 +32,7 @@ Every item is plan-first (the plan is committed before the data), live on the ti
 - [x] **Model names against their weights** ([WEIGHTS live](https://indahl.ai/weights), [plan](code/weights/PLAN.md)). The most downloaded open-weight models read pass after pass. The first pass is read and the comparison starts with the second.
 - [x] **New Zenodo versions with every release** (ledger/zenodo_sync.py). Each release refreshes the Zenodo records whose files changed, at most once a day per record.
 - [ ] **Amazon Braket deviations table**. Parked: needs a funded account.
-- [ ] **Boston T1 and T2**. Job queued at IBM since the 29th, waits behind hundreds of pending jobs.
+- [x] **Boston T1 and T2** ([results](https://indahl.ai/qia), [code](code/t1t2-check)). Ran 2026-10-30 on qubit 85 (job dbh9a81q260s73bur7mg): T1 7.54 microseconds, T2 9.40, so no T2 of either kind can exceed 16.7 on that qubit, against 47.9 published.
 - [x] **Hospital price-transparency files** ([HPT live](https://indahl.ai/hpt), [plan and two addenda](code/hpt/PLAN.md)). The cms-hpt.txt at the root of each hospital website, the file it links, and the template header. A full read found non-subjects in the list and eleven reading errors in the first read, both corrected in the addenda.
 - [x] **Scheduled flight time against flown time** ([AIRLINE live](https://indahl.ai/airline), [plan and two addenda](code/airline/PLAN.md)). Bureau of Transportation Statistics record, January to August of 2019, 2025 and 2026, routes as the independent units, every ABOVE read in full on its largest routes.
 - [ ] **ATLAS interconnection queues**. Large-load interconnection queues against announced data center MW, onsite generation permits, a live grid layer.
