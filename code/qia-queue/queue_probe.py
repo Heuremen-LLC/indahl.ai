@@ -14,6 +14,19 @@ KEEP_S, DAY_CAP_S = {'paid': (100, 10 ** 9), 'eu': (50, 10 ** 9), 'open': (200, 
 LOG = H + {'paid': '/data/probes.jsonl', 'eu': '/data/probes_eu.jsonl', 'open': '/data/probes_open.jsonl'}[PLAN]
 def service():
     from qiskit_ibm_runtime import QiskitRuntimeService
+    if PLAN == 'open':   # 11 Nov: every Open plan account we hold, (key file, CRN file); the first with seconds above the floor is used, else the first
+        pool = []
+        for kf, cf in (('.ibm_quantum_key_5', '.ibm_open_instance_crn_2'), ('.ibm_quantum_key_parallax', None)):
+            if not os.path.exists(B + '/' + kf): continue
+            try:
+                tok = open(B + '/' + kf).read().strip()
+                if cf: crn = open(B + '/' + cf).read().strip()
+                else: crn = [i['crn'] for i in QiskitRuntimeService(channel='ibm_quantum_platform', token=tok).instances() if isinstance(i, dict) and i.get('plan') == 'open'][0]
+                sv = QiskitRuntimeService(channel='ibm_quantum_platform', token=tok, instance=crn)
+                if (sv.usage().get('usage_remaining_seconds') or 0) >= KEEP_S: return sv
+                pool.append(sv)
+            except Exception: continue
+        if pool: return pool[0]
     if PLAN in ('open', 'eu'):   # his Parallax key: the Open plan line (us-east) or the Quaker instance (eu-de, ibm_aachen)
         tok = open(B + '/.ibm_quantum_key_parallax').read().strip(); want = 'open' if PLAN == 'open' else 'eu-de'
         s0 = QiskitRuntimeService(channel='ibm_quantum_platform', token=tok)
@@ -21,13 +34,38 @@ def service():
         return QiskitRuntimeService(channel='ibm_quantum_platform', token=tok, instance=crn)
     tok = open(B + '/.ibm_quantum_key_3').read().strip(); crn = open(B + '/.ibm_quantum_instance_crn').read().strip()
     return QiskitRuntimeService(channel='ibm_cloud', token=tok, instance=crn)
+_ALT = []
+def _alt():
+    if _ALT: return _ALT
+    if PLAN == 'open':   # a probe sent from one Open plan account is read back from that account
+        from qiskit_ibm_runtime import QiskitRuntimeService
+        for kf, cf in (('.ibm_quantum_key_5', '.ibm_open_instance_crn_2'), ('.ibm_quantum_key_parallax', None)):
+            if not os.path.exists(B + '/' + kf): continue
+            try:
+                tok = open(B + '/' + kf).read().strip()
+                crn = open(B + '/' + cf).read().strip() if cf else [i['crn'] for i in QiskitRuntimeService(channel='ibm_quantum_platform', token=tok).instances() if isinstance(i, dict) and i.get('plan') == 'open'][0]
+                _ALT.append(QiskitRuntimeService(channel='ibm_quantum_platform', token=tok, instance=crn))
+            except Exception: pass
+        return _ALT
+    if PLAN != 'paid': return _ALT
+    from qiskit_ibm_runtime import QiskitRuntimeService
+    tok = open(B + '/.ibm_quantum_key_3').read().strip()
+    for f in ('.ibm_darkwave_disco_crn',):
+        try: _ALT.append(QiskitRuntimeService(channel='ibm_quantum_platform', token=tok, instance=open(B + '/' + f).read().strip()))
+        except Exception: pass
+    return _ALT
 def rows():
     return [json.loads(l) for l in open(LOG)] if os.path.exists(LOG) else []
 def collect(s):
     out, changed = rows(), False
     for r in out:
-        if r.get('state') in ('DONE', 'ERROR', 'CANCELLED'): continue
-        j = s.job(r['id']); st = str(j.status()); m = j.metrics(); ts = m.get('timestamps') or {}
+        if r.get('state') in ('DONE', 'ERROR', 'CANCELLED', 'NOT_FOUND'): continue
+        j = None
+        for s_ in [s] + _alt():   # 11 Nov: one job IBM could not find stopped every probe after it (US waits read "waiting 15 h so far"); try each paid instance, then record NOT_FOUND
+            try: j = s_.job(r['id']); break
+            except Exception: continue
+        if j is None: r['state'] = 'NOT_FOUND'; changed = True; continue
+        st = str(j.status()); m = j.metrics(); ts = m.get('timestamps') or {}
         if ts.get('running') and not r.get('wait_s'):
             c = dt.datetime.fromisoformat(str(ts['created']).replace('Z', '+00:00')); u = dt.datetime.fromisoformat(str(ts['running']).replace('Z', '+00:00'))
             r['wait_s'] = round((u - c).total_seconds(), 1); changed = True
