@@ -50,7 +50,11 @@
  "output": "data/neo_live.json",
  "steps": [
   [
-   "neo_run.py"
+   "clock_run.py",
+   "neo_tick.py",
+   "data/neo_live.json",
+   "--offline",
+   "--no-sbdb"
   ]
  ]
 }

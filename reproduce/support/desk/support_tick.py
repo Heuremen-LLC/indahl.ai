@@ -2,6 +2,13 @@
 """support_tick.py: SUPPORT rider per PLAN.md. Reads endoflife.date, tests stated support windows against release activity, publishes KV support_live.
 Detaches into the background so the tick bus is not held (about 6 minutes for the whole product list)."""
 import os, sys, re, json, time, datetime as D, collections as C, subprocess, fcntl, urllib.request
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 if not os.environ.get('SUPPORT_FORKED'):
     subprocess.Popen([sys.executable, '-I', os.path.abspath(__file__)], env=dict(os.environ, SUPPORT_FORKED='1'), stdout=open('data/last_run.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True); print('support: started in the background'); sys.exit(0)
@@ -96,7 +103,7 @@ json.dump(out, open('summary_support.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 if os.environ.get('SUPPORT_NO_PUBLISH'): print('support: summary written, not published (SUPPORT_NO_PUBLISH)'); sys.exit(0)
 for _try in range(3):   # 31 Oct: one transient wrangler failure left the feed stale; retry, and log the error when it still fails
-    pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'support_live', '--path', os.path.join(H, 'summary_support.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+    pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'support_live', '--path', os.path.join(H, 'summary_support.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
     if pr.returncode == 0: break
     print('support: publish attempt %d failed: %s' % (_try + 1, (pr.stderr or pr.stdout or '').strip().splitlines()[-1:] ), flush=True); time.sleep(20)
 print('support:', len(prods), 'products,', len(rows), 'cycles,', len(tested), 'tested,', len(sil), 'unreleased,', out['all']['outcome'], 'published' if pr.returncode == 0 else 'publish FAILED')

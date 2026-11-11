@@ -14,7 +14,7 @@ Needs Python 3.9 or later with numpy and xlrd (PyPI). It prints one line of JSON
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/steo/live.json served it at the feed stamp 2026-11-10T16:19:16Z, read by us at 2026-11-10T23:46:53Z. The feed bytes had sha256 `4d878afd9c2fbcb9d12e660f466b33aa217eb6a9e30c2515d2163a792885b999`.
+The headline as the live feed https://indahl.ai/steo/live.json served it at the feed stamp 2026-11-10T16:19:16Z, read by us at 2026-11-11T00:12:47Z. The feed bytes had sha256 `4d878afd9c2fbcb9d12e660f466b33aa217eb6a9e30c2515d2163a792885b999`.
 
 - number: 392 of 452
 - value: 0.8673
@@ -38,6 +38,7 @@ As the STEO data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
+| data/steo_live.json | 14,172 | `4d878afd9c2fbcb9d12e660f466b33aa217eb6a9e30c2515d2163a792885b999` |
 | data/raw/wayback/cg_20111119111250_LUTRMTMZ.xls | 1,006,080 | `6af41b833ab08d583c5b9a8806d2e9af710c0b2b17d5770b9c91c5e20308b1ee` |
 | data/raw/wayback/cg_20120207180925_FDZOLAQ5.xls | 1,040,896 | `a4991d178f2408be6e0678a5da0ac401844769b1eb8a0301e30e4ed7d549b7e6` |
 | data/raw/wayback/cg_20120524194946_2EXNPRZF.xls | 1,022,976 | `ed69b0edbca0619c8ce010665177a5da258d86923d5496b605dd3c3b043a1b6d` |
@@ -134,7 +135,7 @@ As the STEO data pack lists them. Credit each source when you use its values.
 
 ## Code
 
-The desk's own scripts, byte for byte, under code/. They run in this order: code/steo_tick.py --offline. The same files are in the public repository under code/steo/.
+code/clock_run.py runs the desk's own scripts in code/, byte for byte, and changes the clock only. It runs steo_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/steo_live.json), which the desk uses to tell a settled or passed row from an open one. The same files are in the public repository under code/steo/. Scripts that run: code/clock_run.py steo_tick.py data/steo_live.json --offline.
 
 ## Files
 

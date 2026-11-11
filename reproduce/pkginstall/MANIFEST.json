@@ -41,13 +41,13 @@
    "stored_sha256": "31e6641e9feb9ff448a880e8d13abbf513c2d3bb5bb15484b6c4e792869efabf"
   }
  ],
- "made": "2026-11-10T23:47:06Z",
+ "made": "2026-11-11T00:08:47Z",
  "mode": "fetch",
  "name": "PKGINSTALL",
  "reference": [
   {
    "path": "desk/pkginstall_tick.py",
-   "sha256": "e4638c35c9d17f9e59517af2687c4f7a4309e67232fa838c20ccc48f6c961928"
+   "sha256": "fc4ef5cc1c4e84dbeec1f787a2f0a66286689af9354f93d7e4c6cef6ec782b99"
   }
  ],
  "sources": [

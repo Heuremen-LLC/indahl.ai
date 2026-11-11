@@ -1,0 +1,44 @@
+{
+ "cwd": "",
+ "desk": "airq",
+ "headline": {
+  "field": [
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "share"
+  ],
+  "hi": [
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "share_hi"
+  ],
+  "lo": [
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "share_lo"
+  ],
+  "n": [
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "n"
+  ],
+  "of": [
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "of"
+  ],
+  "outcome": [
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "outcome"
+  ],
+  "show": "pct"
+ },
+ "name": "AIRQ",
+ "output": "out.json",
+ "steps": [
+  [
+   "airq_score.py"
+  ]
+ ]
+}

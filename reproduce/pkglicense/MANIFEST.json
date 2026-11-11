@@ -50,13 +50,13 @@
    "stored_sha256": "d23e1d3031fea3e62381d44a960e1fd2cc4c5ddb518c54cf3810ab9c34896a96"
   }
  ],
- "made": "2026-11-10T23:47:07Z",
+ "made": "2026-11-11T00:08:48Z",
  "mode": "fetch",
  "name": "PKGLICENSE",
  "reference": [
   {
    "path": "desk/pkglicense_tick.py",
-   "sha256": "93baf0e3a96b3c0733eecb0f99ef8b9ca73da7d07718114710a632fa315fbef2"
+   "sha256": "1ebfd305110452a605d53f77b81897be582b4051567853cb30b231fd2849338a"
   }
  ],
  "sources": [

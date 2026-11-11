@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/solar/live.json served it at the feed stamp 2026-11-10T20:42:24Z, read by us at 2026-11-10T23:45:56Z. The feed bytes had sha256 `568bb531c40726e8472a3d7eb7905f50c16f1d247384a767e3fe746634d0480b`.
+The headline as the live feed https://indahl.ai/solar/live.json served it at the feed stamp 2026-11-10T20:42:24Z, read by us at 2026-11-11T00:11:29Z. The feed bytes had sha256 `568bb531c40726e8472a3d7eb7905f50c16f1d247384a767e3fe746634d0480b`.
 
 - number: 4 of 8
 - value: 0.2683
@@ -45,6 +45,7 @@ As the SOLAR data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
+| data/solar_live.json | 55,968 | `568bb531c40726e8472a3d7eb7905f50c16f1d247384a767e3fe746634d0480b` |
 | data/raw/SPE.txt | 29,502 | `c75b901b1509ab15635978e11d0fc8ebfc2f02237c05f75c1d96fafab4796c5d` |
 | data/raw/SPE_listing.json | 53 | `cb42785564dbccc37bd4734b185dc15602119507a33e02713456436bfb9fa177` |
 | data/raw/gfz/Kp_ap_Ap_SN_F107_since_1932.txt | 5,512,465 | `83d91dae47f3769da8965c79a241a5fb7c845680249f1cdac6b1704a57f30cd5` |
@@ -716,7 +717,7 @@ As the SOLAR data pack lists them. Credit each source when you use its values.
 
 ## Code
 
-The desk's own scripts, byte for byte, under code/. They run in this order: code/solar_tick.py --offline. The same files are in the public repository under code/solar/.
+code/clock_run.py runs the desk's own scripts in code/, byte for byte, and changes the clock only. It runs solar_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/solar_live.json), which the desk uses to tell a settled or passed row from an open one. The same files are in the public repository under code/solar/. Scripts that run: code/clock_run.py solar_tick.py data/solar_live.json --offline.
 
 ## Files
 

@@ -7,6 +7,13 @@ Run: --send [--eu]      one job per processor without a job still waiting (budge
      --collect [--eu]   read finished jobs, analyse, publish, chain (status reads only)
 """
 import os, sys, json, time, hashlib, subprocess, datetime as dt
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 import numpy as np
 H = os.path.dirname(os.path.abspath(__file__)); B = os.path.expanduser('~/bones-forge'); sys.path.insert(0, H)
 import callib as C
@@ -28,7 +35,7 @@ def service():
 def rows(p): return [json.loads(l) for l in open(p) if l.strip()] if os.path.exists(p) else []
 def kv(key, path):
     env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-    return subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', key, '--path', path, '--namespace-id', NS, '--remote'], cwd=W, env=env, capture_output=True, text=True).returncode == 0
+    return _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', key, '--path', path, '--namespace-id', NS, '--remote'], cwd=W, env=env, capture_output=True, text=True).returncode == 0
 def usable(be):
     t = be.target; return [q for q in range(be.num_qubits) if t.instruction_supported('x', (q,)) and t.instruction_supported('measure', (q,))]
 def circuits(be, qs):

@@ -9,10 +9,24 @@
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/flu/heuremen_kit.py",
    "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  },
+  {
+   "extract_of": "the clock only. It runs flu_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/flu_live.json), which the desk uses to tell a settled or passed row from an open one",
+   "path": "clock_run.py",
+   "sha256": "f40eea8e07b0df53c499abb27465b057e8456cc7b9c9d3bc733dff36afb57dad"
   }
  ],
  "desk": "flu",
  "inputs": [
+  {
+   "bytes": 94778,
+   "gzip_added": true,
+   "modified": "2026-11-10T21:15:36Z",
+   "path": "data/flu_live.json",
+   "sha256": "05393ac5b4dc40236750f48103e87b4bf2063a2765a20c66b9245dfafe5300cc",
+   "stored": "data/flu_live.json.gz",
+   "stored_sha256": "01cf732c93a15ad0c4a24667f4ea75ceb0d9cf0d54560931d3d57cc529b6ad62"
+  },
   {
    "bytes": 524323,
    "gzip_added": true,
@@ -878,7 +892,7 @@
    "stored_sha256": "f7840b80b541bc34152d154413f4129697176bdd932c06129631571105d45bcd"
   }
  ],
- "made": "2026-11-10T23:46:41Z",
+ "made": "2026-11-11T00:12:28Z",
  "mode": "inputs",
  "name": "FLU",
  "reference": []

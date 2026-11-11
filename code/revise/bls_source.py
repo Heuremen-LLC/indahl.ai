@@ -19,10 +19,13 @@ def first_second_third(raw=None):
             num = lambda x: float(x.replace(',', '')) if re.fullmatch(r'-?[\d,]+(\.\d+)?', x or '') else None
             out['%s:%02d' % (td[0], MON[th.group(1)[:3]])] = dict(first=num(td[1]), second=num(td[2]), third=num(td[3]))
     return out
-def most_recent():
-    """Current over-the-month change of CES0000000001, from the BLS flat file of total nonfarm employment (download.bls.gov, no key, no daily limit)."""
+FLAT = 'https://download.bls.gov/pub/time.series/ce/ce.data.00a.TotalNonfarm.Employment'
+def flat_raw(): return _get(FLAT)
+def most_recent(raw=None):
+    """Current over-the-month change of CES0000000001, from the BLS flat file of total nonfarm employment (download.bls.gov, no key, no daily limit).
+    raw: the flat file's bytes as read (10 Nov 2026: revise_tick.py keeps each version it reads in data/files/, so a run can be recomputed offline)."""
     pts = {}
-    for line in _get('https://download.bls.gov/pub/time.series/ce/ce.data.00a.TotalNonfarm.Employment').decode('utf-8', 'replace').splitlines():
+    for line in (raw if raw is not None else flat_raw()).decode('utf-8', 'replace').splitlines():
         f = line.split('\t')
         if len(f) < 4 or f[0].strip() != 'CES0000000001' or not f[2].strip().startswith('M') or f[2].strip() == 'M13': continue
         try: pts[(int(f[1]), int(f[2].strip()[1:]))] = float(f[3].strip())

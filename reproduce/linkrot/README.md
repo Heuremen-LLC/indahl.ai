@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 10 Nov 23:21, read by us at 2026-11-10T23:47:01Z. The feed bytes had sha256 `651ec0729ffab6b9ca5e6e77c413090194125a5ec91980a6190bc369bc442cb9`.
+The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 10 Nov 23:50, read by us at 2026-11-11T00:08:39Z. The feed bytes had sha256 `01090048b6954d51af096ba875583621598b07fd758d471964fc29bc93afc23f`.
 
 - number: 3.3%
 - value: 0.0329
@@ -39,7 +39,7 @@ As the LINKROT data pack lists them. Credit each source when you use its values.
 | File | Bytes | sha256 |
 |---|---|---|
 | data/links.json | 421,524 | `c12550b30a1bf847e64db5d9501c8ccdee9c239c1306f56f48ba6219f8698f04` |
-| summary_linkrot.json | 6,855 | `651ec0729ffab6b9ca5e6e77c413090194125a5ec91980a6190bc369bc442cb9` |
+| summary_linkrot.json | 6,855 | `01090048b6954d51af096ba875583621598b07fd758d471964fc29bc93afc23f` |
 
 ## Code
 

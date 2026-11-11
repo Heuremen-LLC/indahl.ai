@@ -2,6 +2,13 @@
 """pkglicense_tick.py: PKGLICENSE rider per PLAN.md. Top 1,000 PyPI projects: the license a project states against the license GitHub detects in the repository it points to.
 Detaches into the background (about 12 minutes). DISAGREE rows are listed only after they are marked read in full in data/hand_checked.json. Publishes KV pkglicense_live."""
 import os, sys, re, json, time, collections as C, subprocess, fcntl, urllib.request
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 if not os.environ.get('PKG_FORKED'):
     subprocess.Popen([sys.executable, '-I', os.path.abspath(__file__)], env=dict(os.environ, PKG_FORKED='1'), stdout=open('data/last_run.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True); print('pkglicense: started in the background'); sys.exit(0)
@@ -69,8 +76,21 @@ def gh(pairs):
     except Exception: return None
     return [((d.get('r%d' % i) or {}).get('licenseInfo') or {}).get('spdxId') if d.get('r%d' % i) is not None else 'NOT_FOUND' for i in range(len(pairs))]
 SUMMARY_ONLY = bool(os.environ.get('PKG_SUMMARY_ONLY'))
-if SUMMARY_ONLY: prev = json.load(open('summary_pkglicense.json')); listdate = prev['list_date']; names = list(json.load(open('data/projects.json')))[:1000]
-else: top = get('https://hugovk.github.io/top-pypi-packages/top-pypi-packages.json'); listdate = top['last_update']; names = [r['project'] for r in top['rows'][:1000]]
+# 10 Nov 2026 (reproduce kits): summary-only took the first 1,000 keys of data/projects.json, which also holds projects that have left the top
+# list, so it scored 699 comparable projects where the full run scores 704. The full run now keeps the list it scored in data/names.json, and
+# summary-only reads that list. Before the first full run that writes it, summary-only reads the same list of the same date from PKGINSTALL.
+def _names_kept(listdate):
+    if os.path.exists('data/names.json'):
+        d = json.load(open('data/names.json'))
+        if d.get('list_date') == listdate: return d['names']
+    pi = os.path.expanduser('~/bones-forge/pkginstall_index/data')
+    if open(os.path.join(pi, 'listdate.txt')).read().strip() == str(listdate).strip():
+        return [r['project'] for r in sorted(json.load(open(os.path.join(pi, 'projects.json'))).values(), key=lambda r: r['rank'])][:1000]
+    sys.exit('pkglicense: no kept name list for the list date %s, summary not rebuilt' % listdate)
+if SUMMARY_ONLY: prev = json.load(open('summary_pkglicense.json')); listdate = prev['list_date']; names = _names_kept(listdate)
+else:
+    top = get('https://hugovk.github.io/top-pypi-packages/top-pypi-packages.json'); listdate = top['last_update']; names = [r['project'] for r in top['rows'][:1000]]
+    json.dump(dict(list_date=listdate, names=names), open('data/names.json.tmp', 'w')); os.replace('data/names.json.tmp', 'data/names.json')
 projects = json.load(open('data/projects.json')) if os.path.exists('data/projects.json') else {}
 now = time.time(); todo = [] if SUMMARY_ONLY else [n for n in names if n not in projects or now - projects[n]['read'] > 30 * 86400]
 # live controls first
@@ -104,5 +124,5 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed' if
            disagree_list=[dict(project=n, stated='; '.join(rows[n]['stated'])[:90], repo='%s/%s' % tuple(rows[n]['repo']), repo_license=rows[n].get('repo_license'), reason=hc[n]) for n in dis if n in hc][:150], not_comparable_reasons={k: dict(n=v) for k, v in C.Counter(r.get('why') for r in rows.values() if r['cls'] == 'NOT_COMPARABLE').most_common()})
 json.dump(out, open('summary_pkglicense.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'pkglicense_live', '--path', os.path.join(H, 'summary_pkglicense.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'pkglicense_live', '--path', os.path.join(H, 'summary_pkglicense.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('pkglicense:', len(rows), 'read,', dict(cnt), 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

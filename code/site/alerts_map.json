@@ -7363,7 +7363,7 @@
 "ailuminate": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 133,
+"every_min": 132,
 "mode": "outcome",
 "name": "AILUMINATE",
 "src": "rider",
@@ -7464,7 +7464,7 @@
 "campus": {
 "div": "oy",
 "every": "checked about every 7 hours",
-"every_min": 398,
+"every_min": 397,
 "mode": "outcome",
 "name": "CAMPUS",
 "src": "rider",
@@ -7473,7 +7473,7 @@
 "change": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 133,
+"every_min": 132,
 "mode": "outcome",
 "name": "CHANGE",
 "src": "rider",
@@ -7482,7 +7482,7 @@
 "cone": {
 "div": "atlas",
 "every": "checked about every 6 hours",
-"every_min": 332,
+"every_min": 331,
 "mode": "outcome",
 "name": "CONE",
 "src": "rider",
@@ -7491,7 +7491,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about once a week",
-"every_min": 9945,
+"every_min": 9933,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7509,7 +7509,7 @@
 "flu": {
 "div": "hermes",
 "every": "checked about every 6 hours",
-"every_min": 365,
+"every_min": 364,
 "mode": "outcome",
 "name": "FLU",
 "src": "rider",
@@ -7556,7 +7556,7 @@
 "hflicense": {
 "div": "iris",
 "every": "checked about every 6 hours",
-"every_min": 365,
+"every_min": 364,
 "mode": "update",
 "name": "HFLICENSE",
 "src": "rider",
@@ -7565,7 +7565,7 @@
 "hfsize": {
 "div": "iris",
 "every": "checked about every 6 hours",
-"every_min": 354,
+"every_min": 353,
 "mode": "outcome",
 "name": "HFSIZE",
 "src": "rider",
@@ -7583,7 +7583,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about once a week",
-"every_min": 9614,
+"every_min": 9602,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7630,7 +7630,7 @@
 "neo": {
 "div": "atlas",
 "every": "checked about every 6 hours",
-"every_min": 332,
+"every_min": 331,
 "mode": "outcome",
 "name": "NEO",
 "src": "rider",
@@ -7650,7 +7650,7 @@
 "pkginstall": {
 "div": "iris",
 "every": "checked about every 6 hours",
-"every_min": 332,
+"every_min": 331,
 "mode": "outcome",
 "name": "PKGINSTALL",
 "src": "rider",
@@ -7659,7 +7659,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 6 hours",
-"every_min": 376,
+"every_min": 375,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -7668,7 +7668,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1591,
+"every_min": 1589,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7706,7 +7706,7 @@
 "quake": {
 "div": "atlas",
 "every": "checked about every 6 hours",
-"every_min": 332,
+"every_min": 331,
 "mode": "outcome",
 "name": "QUAKE",
 "src": "rider",
@@ -7715,7 +7715,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about once a day",
-"every_min": 1459,
+"every_min": 1457,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7733,7 +7733,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1459,
+"every_min": 1457,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7751,7 +7751,7 @@
 "secrecords": {
 "div": "atlas",
 "every": "checked about every 6 hours",
-"every_min": 343,
+"every_min": 342,
 "mode": "outcome",
 "name": "SECRECORDS",
 "src": "rider",
@@ -7760,7 +7760,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1227,
+"every_min": 1225,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7769,7 +7769,7 @@
 "solar": {
 "div": "atlas",
 "every": "checked about every 6 hours",
-"every_min": 332,
+"every_min": 331,
 "mode": "outcome",
 "name": "SOLAR",
 "src": "rider",
@@ -7787,7 +7787,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1459,
+"every_min": 1457,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7823,7 +7823,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about once a day",
-"every_min": 1227,
+"every_min": 1225,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -8005,5 +8005,5 @@
 ]
 }
 },
-"tick_min": 5.53
+"tick_min": 5.52
 }

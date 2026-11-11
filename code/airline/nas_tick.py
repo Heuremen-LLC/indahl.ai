@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """nas_tick.py: AIRLINE FAA keeper per PLAN.md addendum 3. Every snapshot of the FAA airport delay feed, as published, with a live display."""
 import os, sys, re, json, time, hashlib, subprocess, urllib.request, urllib.error, xml.etree.ElementTree as ET
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 import heuremen_kit as K
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('nas: plan not committed'); sys.exit(0)
@@ -68,7 +75,7 @@ json.dump(S, open('summary_airline.json', 'w'), indent=1)
 fp = hashlib.sha256(json.dumps([rows, closures], sort_keys=True).encode()).hexdigest()[:12]; st = 'data/nas_state.json'; prev = json.load(open(st)) if os.path.exists(st) else {}
 if prev.get('fp') != fp or now - prev.get('t', 0) > 1500:
     env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-    r = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'airline_live', '--path', os.path.join(H, 'summary_airline.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+    r = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'airline_live', '--path', os.path.join(H, 'summary_airline.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
     if r.returncode == 0: json.dump(dict(fp=fp, t=now), open(st, 'w'))
     print('nas: snapshot', snaps, len(rows), 'airport programs now', 'published' if r.returncode == 0 else 'publish FAILED')
 else: print('nas: snapshot', snaps, len(rows), 'unchanged')

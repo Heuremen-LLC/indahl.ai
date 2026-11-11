@@ -3,6 +3,13 @@
 Detaches into the background. DISAGREE rows of steps 2 and 3 and the ten step 1 sample rows are listed only after they are in data/hand_checked.json (key step|domain).
 Publishes KV hpt_live. HPT_SUMMARY_ONLY=1 rebuilds the summary from stored data."""
 import os, sys, re, json, time, random, collections as C, subprocess, fcntl, urllib.request, urllib.error, urllib.parse
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 if not os.environ.get('HPT_FORKED') and not os.environ.get('HPT_SUMMARY_ONLY'):
     subprocess.Popen([sys.executable, '-I', os.path.abspath(__file__)], env=dict(os.environ, HPT_FORKED='1'), stdout=open('data/last_run.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True); print('hpt: started in the background'); sys.exit(0)
@@ -131,5 +138,5 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed'
            not_comparable_reasons={w: dict(n=n) for w, n in sorted(why.items(), key=lambda x: -x[1]) if w}, disagree_list=shown, awaiting=len([1 for k in ('s2', 's3') for r in store.values() if r.get(k) == 'DISAGREE' and (k[1] + '|' + r['domain']) not in hc]))
 json.dump(out, open('summary_hpt.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'hpt_live', '--path', os.path.join(H, 'summary_hpt.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'hpt_live', '--path', os.path.join(H, 'summary_hpt.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('hpt:', len(store), 'domains;', dict(c1), dict(c2), dict(c3), 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

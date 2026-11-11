@@ -9,10 +9,24 @@
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/seasonal/heuremen_kit.py",
    "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  },
+  {
+   "extract_of": "the clock only. It runs seasonal_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/seasonal_live.json), which the desk uses to tell a settled or passed row from an open one",
+   "path": "clock_run.py",
+   "sha256": "f40eea8e07b0df53c499abb27465b057e8456cc7b9c9d3bc733dff36afb57dad"
   }
  ],
  "desk": "seasonal",
  "inputs": [
+  {
+   "bytes": 13822,
+   "gzip_added": true,
+   "modified": "2026-11-10T16:32:50Z",
+   "path": "data/seasonal_live.json",
+   "sha256": "3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653",
+   "stored": "data/seasonal_live.json.gz",
+   "stored_sha256": "72ffd683e01bd5005d32736a8f8064b1fc4ef1bdd05c1e4120cfbb906002eea0"
+  },
   {
    "bytes": 698,
    "gzip_added": true,
@@ -158,7 +172,7 @@
    "stored_sha256": "ada93daef99899044cf8d1794d881015cc9e0f48bf7b5bb948e8856b7510308c"
   }
  ],
- "made": "2026-11-10T23:45:55Z",
+ "made": "2026-11-11T00:11:28Z",
  "mode": "inputs",
  "name": "SEASONAL",
  "reference": []

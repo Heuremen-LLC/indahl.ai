@@ -14,7 +14,7 @@ Needs Python 3.9 or later with numpy (PyPI). It prints one line of JSON and chec
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/seasonal/live.json served it at the feed stamp 2026-11-10T16:32:50Z, read by us at 2026-11-10T23:45:55Z. The feed bytes had sha256 `3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653`.
+The headline as the live feed https://indahl.ai/seasonal/live.json served it at the feed stamp 2026-11-10T16:32:50Z, read by us at 2026-11-11T00:11:28Z. The feed bytes had sha256 `3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653`.
 
 - number: 60%
 - value: 0.6011
@@ -37,6 +37,7 @@ As the SEASONAL data pack lists them. Credit each source when you use its values
 
 | File | Bytes | sha256 |
 |---|---|---|
+| data/seasonal_live.json | 13,822 | `3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653` |
 | data/raw/cpc_verif_grid/90day_Pverif_about.txt | 698 | `a7f72da2d2955c6ccef0e36dd863bfc0b1e73e6f5228c87400a1bcf132788905` |
 | data/raw/cpc_verif_grid/90day_Tverif_about.txt | 690 | `659a3c6b4ea8adbae0c48665a613187d39fadc1f73f442bea6b667f0cd606836` |
 | data/raw/cpc_verif_grid/90day_obs_about.txt | 500 | `88fd12d31a28e0d75841dd28212be9ec80e39c525b7ac7acf03d7f396ea21707` |
@@ -56,7 +57,7 @@ As the SEASONAL data pack lists them. Credit each source when you use its values
 
 ## Code
 
-The desk's own scripts, byte for byte, under code/. They run in this order: code/seasonal_tick.py --offline. The same files are in the public repository under code/seasonal/.
+code/clock_run.py runs the desk's own scripts in code/, byte for byte, and changes the clock only. It runs seasonal_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/seasonal_live.json), which the desk uses to tell a settled or passed row from an open one. The same files are in the public repository under code/seasonal/. Scripts that run: code/clock_run.py seasonal_tick.py data/seasonal_live.json --offline.
 
 ## Files
 

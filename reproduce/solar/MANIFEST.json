@@ -9,10 +9,24 @@
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/solar/heuremen_kit.py",
    "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  },
+  {
+   "extract_of": "the clock only. It runs solar_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/solar_live.json), which the desk uses to tell a settled or passed row from an open one",
+   "path": "clock_run.py",
+   "sha256": "f40eea8e07b0df53c499abb27465b057e8456cc7b9c9d3bc733dff36afb57dad"
   }
  ],
  "desk": "solar",
  "inputs": [
+  {
+   "bytes": 55968,
+   "gzip_added": true,
+   "modified": "2026-11-10T20:45:22Z",
+   "path": "data/solar_live.json",
+   "sha256": "568bb531c40726e8472a3d7eb7905f50c16f1d247384a767e3fe746634d0480b",
+   "stored": "data/solar_live.json.gz",
+   "stored_sha256": "8b845e732c3dc161f858a398477dc948dd2d6a4ff796ac0ccb581df02a54264c"
+  },
   {
    "bytes": 29502,
    "gzip_added": true,
@@ -6026,7 +6040,7 @@
    "stored_sha256": "ad69d9c7867bcaf428d070c2190be5127fec1e367cad84a31886381656347813"
   }
  ],
- "made": "2026-11-10T23:45:56Z",
+ "made": "2026-11-11T00:11:29Z",
  "mode": "fetch",
  "name": "SOLAR",
  "reference": [],

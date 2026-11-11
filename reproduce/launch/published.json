@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/launch/live.json",
- "feed_sha256": "4f786286313964f10844ce257f0c18ef42c2f1476c1d46b6a2ecd9ca22c6d41f",
+ "feed_sha256": "73049cac12f8a8a2b050306f0ea37b11060051cf4ebe1906f15fe1c130abe9f2",
  "headline": {
   "desk": "LAUNCH",
   "display": "9",
@@ -12,6 +12,6 @@
   "outcome": "CANNOT_TELL",
   "value": 9
  },
- "read_at": "2026-11-10T23:47:06Z",
- "stamp": "10 Nov 23:21"
+ "read_at": "2026-11-11T00:08:46Z",
+ "stamp": "10 Nov 23:50"
 }

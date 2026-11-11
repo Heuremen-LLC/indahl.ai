@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/launch/live.json served it at the feed stamp 10 Nov 23:21, read by us at 2026-11-10T23:47:06Z. The feed bytes had sha256 `4f786286313964f10844ce257f0c18ef42c2f1476c1d46b6a2ecd9ca22c6d41f`.
+The headline as the live feed https://indahl.ai/launch/live.json served it at the feed stamp 10 Nov 23:50, read by us at 2026-11-11T00:08:46Z. The feed bytes had sha256 `73049cac12f8a8a2b050306f0ea37b11060051cf4ebe1906f15fe1c130abe9f2`.
 
 - number: 9
 - value: 9

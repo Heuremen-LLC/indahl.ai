@@ -23,13 +23,13 @@
    "stored_sha256": "3222dcc773a1066af2c10ff43255cf0f8c9578b3023748d0cc5354cac9a29b11"
   }
  ],
- "made": "2026-11-10T23:47:05Z",
+ "made": "2026-11-11T00:08:44Z",
  "mode": "fetch",
  "name": "WEIGHTS",
  "reference": [
   {
    "path": "desk/weights_tick.py",
-   "sha256": "73ffdfc36d1f67425f9d86cb735f01737f2290144adf61f3524a1bbb2c68f845"
+   "sha256": "9f482134c261529f7e5f13de8bce032c950c8c8dcdfa23f650c032ee6445d581"
   }
  ],
  "sources": [

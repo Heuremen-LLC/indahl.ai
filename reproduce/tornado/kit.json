@@ -1,0 +1,65 @@
+{
+ "cwd": "",
+ "desk": "tornado",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "cell": "United States",
+    "preliminary": false
+   },
+   "bands",
+   {
+    "band": "10 to 15"
+   },
+   "freq"
+  ],
+  "hi": [
+   "cells",
+   {
+    "cell": "United States",
+    "preliminary": false
+   },
+   "bands",
+   {
+    "band": "10 to 15"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "cell": "United States",
+    "preliminary": false
+   },
+   "bands",
+   {
+    "band": "10 to 15"
+   },
+   "lo"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "cell": "United States",
+    "preliminary": false
+   },
+   "bands",
+   {
+    "band": "10 to 15"
+   },
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "TORNADO",
+ "output": "data/tornado_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "tornado_tick.py",
+   "data/tornado_live.json",
+   "--offline"
+  ]
+ ]
+}

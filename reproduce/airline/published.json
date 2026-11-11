@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/airline/live.json",
- "feed_sha256": "6e6cf04586a34c7caa169443659b0636e3de05a2ddf85369daf16c3612f2ca98",
+ "feed_sha256": "74cb787d3e003caa806302c3de6bbf2ea41e15093e8664cc344918fe0d41961e",
  "headline": {
   "desk": "AIRLINE",
   "display": "5 of 13",
@@ -20,6 +20,6 @@
   "outcome": null,
   "value": 5
  },
- "read_at": "2026-11-10T23:47:08Z",
+ "read_at": "2026-11-11T00:08:49Z",
  "stamp": "29 Oct 16:35"
 }

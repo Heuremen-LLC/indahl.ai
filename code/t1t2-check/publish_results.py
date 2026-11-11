@@ -2,6 +2,13 @@
 """publish_results.py: collects runs/results_*.json, applies the plan's failed-fit clause (Note 3: a fit sitting on its own bound reads CANNOT_TELL) to the stored fits without re-bootstrapping,
 and publishes KV qia_t1t2 for the QIA page. The printed outcome is kept beside the reading. A processor with no results file is shown as submitted and queued."""
 import json, os, glob, subprocess, datetime as D
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H)
 def onb(v, b): return v is not None and abs(v - b) <= 1e-6 * max(1.0, b)
 out = dict(updated=D.datetime.now(D.timezone.utc).strftime('%d %b %H:%M'), processors=[])
@@ -29,7 +36,7 @@ for b, f, _bk in ITEMS:
     out['processors'].append(dict(backend=b, state='ran', ran=d['ran'][:16].replace('T', ' '), known_good=d['known_good'], qubits=qs))
 json.dump(out, open('summary_t1t2.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-p = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'qia_t1t2', '--path', os.path.join(H, 'summary_t1t2.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'), env=env, capture_output=True, text=True)
+p = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'qia_t1t2', '--path', os.path.join(H, 'summary_t1t2.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'), env=env, capture_output=True, text=True)
 for pr in out['processors']:
     print(pr['backend'], pr['state'], [(q['qubit'], q['printed'], q['reading']) for q in pr.get('qubits', [])])
 print('qia_t1t2', 'published' if p.returncode == 0 else 'publish FAILED')

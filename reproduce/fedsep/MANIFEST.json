@@ -32,13 +32,13 @@
    "stored_sha256": "faaf7360962f7d420d9a61513e60525538ff2c766eeec6feda5c7f74aec41070"
   }
  ],
- "made": "2026-11-10T23:47:08Z",
+ "made": "2026-11-11T00:08:50Z",
  "mode": "inputs",
  "name": "FEDSEP",
  "reference": [
   {
    "path": "desk/fedsep_tick.py",
-   "sha256": "87760d01fc8d7c264915398faf686790dd805bb26240ebbfa7d0d6ae224d23c9"
+   "sha256": "b104727376abfaf8042615d043eacbe225b22575b0a7127c233363ddd58cf46c"
   }
  ]
 }

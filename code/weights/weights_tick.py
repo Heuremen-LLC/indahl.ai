@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """weights_tick.py: WEIGHTS per PLAN.md. Weight-file hashes of the 1,000 most downloaded Hugging Face models, compared pass to pass."""
 import os, sys, re, json, time, fcntl, subprocess, urllib.request, urllib.error
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 import heuremen_kit as K
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('weights: plan not committed'); sys.exit(0)
@@ -88,7 +95,7 @@ out = dict(updated=upd, gate='passed', pass_number=passno, models=len(store), re
            changed_list=[dict(repo=i, when=when(c), note=hc[evkey(i, c)], **diff(c)) for i, c in evs if evkey(i, c) in hc])
 json.dump(out, open('summary_weights.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'weights_live', '--path', os.path.join(H, 'summary_weights.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'weights_live', '--path', os.path.join(H, 'summary_weights.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 if not SUMMARY_ONLY:
     with open('history.jsonl', 'a') as f: f.write(json.dumps(this) + '\n')
 print('weights: pass', passno, len(store), 'models; compared', len(cmp), 'changed', len(ch), 'gone', len(gone), 'unreadable', unread, 'published' if pr.returncode == 0 else 'publish FAILED ' + (pr.stderr or pr.stdout)[-200:], flush=True)

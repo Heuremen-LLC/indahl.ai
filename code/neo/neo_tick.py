@@ -3,7 +3,7 @@
 JPL SBDB Close-Approach Data API (current record and our own dated copies), JPL SBDB API (latest solution facts), JPL Sentry API (stored, not scored),
 Internet Archive Wayback Machine (archived copies of Close-Approach responses). Sets each close-approach distance range stated from an earlier
 orbit solution beside the latest solution's distance. Writes data/neo.json, summary_neo.json, data/snapshots/*.json.gz and data/neo_history.jsonl.
---offline: cached files only, no new copy. --publish: also put data/neo_live.json in the site KV as neo_live, served at /neo/live.json. --no-sbdb: skip the latest-solution facts. --selftest: rule checks only, no network."""
+--offline: cached files only, no new copy. --publish: also put data/neo_live.json in the site KV as neo_live, served at /neo/live.json. --no-sbdb: skip the latest-solution facts (no SBDB read and no kept SBDB answer, a display field only). The designation lookups kept in data/cache/des_*.json are Close-Approach answers for renamed or numbered objects that the matching needs, so --offline reads them and no flag skips them. --selftest: rule checks only, no network."""
 import os, sys, json, time, math, re, gzip, glob, hashlib, statistics, subprocess, urllib.request, urllib.parse, collections as C
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
 import heuremen_kit as K
@@ -303,6 +303,7 @@ for r in rows:
 
 # ---------------- 7. latest-solution facts for scored headline rows (display only) ----------------
 def sbdb(des, oid):
+    if NOSBDB: return None   # 10 Nov 2026: --no-sbdb skips the SBDB answers entirely, kept ones too. They fill latest_solution, a display field the scoring never reads
     f = 'data/cache/sbdb/%s.json' % re.sub(r'\W+', '_', des)
     if os.path.exists(f):
         v = json.load(open(f))

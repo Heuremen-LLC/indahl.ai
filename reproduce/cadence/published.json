@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/cadence/live.json",
- "feed_sha256": "641a8d6d29c8e277783a7c8cb99b85f3e2b678700b3f6a52948fbbfa8b99c2ef",
+ "feed_sha256": "0dbfb20b236c662318a075fa701520d6bb2e028c009ad2dd7a70cbcb47bccf35",
  "headline": {
   "desk": "CADENCE",
   "display": "15.8 years (5,782 days)",
@@ -15,6 +15,6 @@
   "outcome": null,
   "value": 5782
  },
- "read_at": "2026-11-10T23:47:09Z",
- "stamp": "10 Nov 23:39"
+ "read_at": "2026-11-11T00:08:50Z",
+ "stamp": "11 Nov 00:00"
 }

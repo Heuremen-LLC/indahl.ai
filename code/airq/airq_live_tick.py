@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """airq_live_tick.py: AIRQ live panel per PLAN.md addenda 2 and 3. PurpleAir sensors against the AirNow real-time hourly values of the same monitors, daily pairs rolling over 30 kept days, plus an hourly strip."""
 import os, sys, re, json, math, time, datetime, statistics, random, collections, subprocess, urllib.request, urllib.error, fcntl
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data/an', exist_ok=True)
 import heuremen_kit as K
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('airq-live: plan not committed'); sys.exit(0)
@@ -183,7 +190,7 @@ S['live_line'] = 'Live panel: %d monitors, %d with 30 kept days. Sensor days rea
     len(mons), used, fmt_d(sens_through), fmt_d(ref_through), S['live']['strip_hour'], strip_n, len(strip), S['live']['updated'])
 json.dump(S, open('summary_airq.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'airq_live', '--path', os.path.join(H, 'summary_airq.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'airq_live', '--path', os.path.join(H, 'summary_airq.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 with open('live_history.jsonl', 'a') as f: f.write(json.dumps(dict(t=S['live']['updated'], panel=len(mons), with30=used, strip_hour=S['live']['strip_hour'], strip_n=strip_n, sensor_through=(sens_through.isoformat() if sens_through else None), pa=dict(PA_N))) + '\n')
 # 30 Oct (site pass H-12): alert when the sensor side stops. strip_n of 0 in the last 3 logged runs, or a newest sensor day more than 2 UTC days old, is printed and written to data/last_run.log, which watch/alerts_check.py reads for Bones.
 # The alert line is removed again by the first run that is healthy.

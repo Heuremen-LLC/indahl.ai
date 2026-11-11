@@ -56,7 +56,9 @@
  "output": "data/steo_live.json",
  "steps": [
   [
+   "clock_run.py",
    "steo_tick.py",
+   "data/steo_live.json",
    "--offline"
   ]
  ]

@@ -1,0 +1,301 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/ailuminate/heuremen_kit.py",
+   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+  },
+  {
+   "extract_of": "ailuminate_tick.py, CATS, ordinal, ord_str, parse_page, parse_pdf and pdf_text as written, and the rows, cmp, oc and A lines on the newest read",
+   "path": "ailuminate_score.py",
+   "sha256": "779fe7d69481b7f7c6346b5df1a80b32561c071192726d7cb30bed7e39e48c27"
+  }
+ ],
+ "desk": "ailuminate",
+ "inputs": [
+  {
+   "bytes": 166467,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:09Z",
+   "path": "data/raw/20261110T2248/DeepSeek_Flash_Latest_OpenRouter_.pdf",
+   "sha256": "4d2f7990254d7d9bf9d38d79f6575fe9699fe5f432dc3e6048ce3e549abd889d",
+   "stored": "data/raw/20261110T2248/DeepSeek_Flash_Latest_OpenRouter_.pdf",
+   "stored_sha256": "4d2f7990254d7d9bf9d38d79f6575fe9699fe5f432dc3e6048ce3e549abd889d"
+  },
+  {
+   "bytes": 165771,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:14Z",
+   "path": "data/raw/20261110T2248/DeepSeek_V4_Flash.pdf",
+   "sha256": "b0c4267eb3ec8c16d8fa4d7df7920cfec1b64dd4793a6739dc3f2d5a427065fc",
+   "stored": "data/raw/20261110T2248/DeepSeek_V4_Flash.pdf",
+   "stored_sha256": "b0c4267eb3ec8c16d8fa4d7df7920cfec1b64dd4793a6739dc3f2d5a427065fc"
+  },
+  {
+   "bytes": 166316,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:19Z",
+   "path": "data/raw/20261110T2248/DeepSeek_V4_Flash_Vision_Exp.pdf",
+   "sha256": "f4b9028e1941ecf03709b055a4339390e244b3d4f7739c93323512ef70c21986",
+   "stored": "data/raw/20261110T2248/DeepSeek_V4_Flash_Vision_Exp.pdf",
+   "stored_sha256": "f4b9028e1941ecf03709b055a4339390e244b3d4f7739c93323512ef70c21986"
+  },
+  {
+   "bytes": 166886,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:05Z",
+   "path": "data/raw/20261110T2248/Deep_Cogito_Cogito_v2_1_671B.pdf",
+   "sha256": "414912643c4dfbc6648f40d3f9354772d157c39897ec070d4adc6fa69b3ca909",
+   "stored": "data/raw/20261110T2248/Deep_Cogito_Cogito_v2_1_671B.pdf",
+   "stored_sha256": "414912643c4dfbc6648f40d3f9354772d157c39897ec070d4adc6fa69b3ca909"
+  },
+  {
+   "bytes": 166850,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:22Z",
+   "path": "data/raw/20261110T2248/Google_Gemma_3n_E4B_IT.pdf",
+   "sha256": "d1d605ae38ae11478c8ff53d6be5a7653e317f89d7d04512d04697414d41bad1",
+   "stored": "data/raw/20261110T2248/Google_Gemma_3n_E4B_IT.pdf",
+   "stored_sha256": "d1d605ae38ae11478c8ff53d6be5a7653e317f89d7d04512d04697414d41bad1"
+  },
+  {
+   "bytes": 166754,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:12Z",
+   "path": "data/raw/20261110T2248/HKUST_JailJudge_Guard.pdf",
+   "sha256": "e64642c7cd2d3a60f5de1b4e0108ff67c2a7893131e58e9599f6f33264fb0694",
+   "stored": "data/raw/20261110T2248/HKUST_JailJudge_Guard.pdf",
+   "stored_sha256": "e64642c7cd2d3a60f5de1b4e0108ff67c2a7893131e58e9599f6f33264fb0694"
+  },
+  {
+   "bytes": 167057,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:30Z",
+   "path": "data/raw/20261110T2248/IBM_Granite_4_2_30B.pdf",
+   "sha256": "ef8914b69d2dd7cf70a6814fb771a228eac8cb6686f28ac97f8f017f6908c5c6",
+   "stored": "data/raw/20261110T2248/IBM_Granite_4_2_30B.pdf",
+   "stored_sha256": "ef8914b69d2dd7cf70a6814fb771a228eac8cb6686f28ac97f8f017f6908c5c6"
+  },
+  {
+   "bytes": 166789,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:25Z",
+   "path": "data/raw/20261110T2248/IBM_Granite_4_2_3B.pdf",
+   "sha256": "5147749d2c83e98bab5ddae4640ac40031cf3966c41a3435a977769d63582706",
+   "stored": "data/raw/20261110T2248/IBM_Granite_4_2_3B.pdf",
+   "stored_sha256": "5147749d2c83e98bab5ddae4640ac40031cf3966c41a3435a977769d63582706"
+  },
+  {
+   "bytes": 166915,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:28Z",
+   "path": "data/raw/20261110T2248/IBM_Granite_4_2_8B.pdf",
+   "sha256": "d4eeec399d27d318476c1c1c6894d72cbd97b892c17f45a26925bf0939bd5060",
+   "stored": "data/raw/20261110T2248/IBM_Granite_4_2_8B.pdf",
+   "stored_sha256": "d4eeec399d27d318476c1c1c6894d72cbd97b892c17f45a26925bf0939bd5060"
+  },
+  {
+   "bytes": 166556,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:33Z",
+   "path": "data/raw/20261110T2248/InclusionAI_Ling_2_6_1T.pdf",
+   "sha256": "076d319d9eafd836a53400f5258a0b8a59c575fe6a666656dba4951342718649",
+   "stored": "data/raw/20261110T2248/InclusionAI_Ling_2_6_1T.pdf",
+   "stored_sha256": "076d319d9eafd836a53400f5258a0b8a59c575fe6a666656dba4951342718649"
+  },
+  {
+   "bytes": 166249,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:35Z",
+   "path": "data/raw/20261110T2248/InclusionAI_Ling_3_0_Flash.pdf",
+   "sha256": "7132f5ce9af1cac5068dca415312eeb0b17787937f9d2ac9bece1800aed46012",
+   "stored": "data/raw/20261110T2248/InclusionAI_Ling_3_0_Flash.pdf",
+   "stored_sha256": "7132f5ce9af1cac5068dca415312eeb0b17787937f9d2ac9bece1800aed46012"
+  },
+  {
+   "bytes": 166348,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:40Z",
+   "path": "data/raw/20261110T2248/InclusionAI_Ling_3_0_Flash_Fin.pdf",
+   "sha256": "79f13c86e521d17e488de9501089047bbf72c94387190e056a322128722926d5",
+   "stored": "data/raw/20261110T2248/InclusionAI_Ling_3_0_Flash_Fin.pdf",
+   "stored_sha256": "79f13c86e521d17e488de9501089047bbf72c94387190e056a322128722926d5"
+  },
+  {
+   "bytes": 166450,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:45Z",
+   "path": "data/raw/20261110T2248/InclusionAI_Ling_3_0_Flash_VL.pdf",
+   "sha256": "a69e5024dc64cabeac223c2ae5f7d0b0558d58b20892a810c5b91f891c4a891a",
+   "stored": "data/raw/20261110T2248/InclusionAI_Ling_3_0_Flash_VL.pdf",
+   "stored_sha256": "a69e5024dc64cabeac223c2ae5f7d0b0558d58b20892a810c5b91f891c4a891a"
+  },
+  {
+   "bytes": 166275,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:14Z",
+   "path": "data/raw/20261110T2248/Meta_Llama_Guard_2_8B.pdf",
+   "sha256": "bda27bb98339f61b97490aa9d4a5eaee7d50103ae82b604351ec18603424f141",
+   "stored": "data/raw/20261110T2248/Meta_Llama_Guard_2_8B.pdf",
+   "stored_sha256": "bda27bb98339f61b97490aa9d4a5eaee7d50103ae82b604351ec18603424f141"
+  },
+  {
+   "bytes": 166570,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:18Z",
+   "path": "data/raw/20261110T2248/Meta_Llama_Guard_3_8B.pdf",
+   "sha256": "c11d78bf86252081a198bb71ecd70f1eb555345fffad0812f7469edfe23c1ea4",
+   "stored": "data/raw/20261110T2248/Meta_Llama_Guard_3_8B.pdf",
+   "stored_sha256": "c11d78bf86252081a198bb71ecd70f1eb555345fffad0812f7469edfe23c1ea4"
+  },
+  {
+   "bytes": 166177,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:22Z",
+   "path": "data/raw/20261110T2248/Meta_Llama_Guard_4_12B.pdf",
+   "sha256": "504e9b1a253777f42c275e252e11e17cb003b01eefb6ad36fb97b39544359be9",
+   "stored": "data/raw/20261110T2248/Meta_Llama_Guard_4_12B.pdf",
+   "stored_sha256": "504e9b1a253777f42c275e252e11e17cb003b01eefb6ad36fb97b39544359be9"
+  },
+  {
+   "bytes": 166162,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:47Z",
+   "path": "data/raw/20261110T2248/Mistral_Medium_3_5.pdf",
+   "sha256": "92c89dd3eac3b9e610dfc02f94c70bc1d77127ae0f82ee88648302a765192b4c",
+   "stored": "data/raw/20261110T2248/Mistral_Medium_3_5.pdf",
+   "stored_sha256": "92c89dd3eac3b9e610dfc02f94c70bc1d77127ae0f82ee88648302a765192b4c"
+  },
+  {
+   "bytes": 166176,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:50Z",
+   "path": "data/raw/20261110T2248/Moonshot_AI_Kimi_K2_7_Code.pdf",
+   "sha256": "5870d9ee40e70698e07576abf8ce595a13bcb4c0943fb8adfe1de61b02ed8216",
+   "stored": "data/raw/20261110T2248/Moonshot_AI_Kimi_K2_7_Code.pdf",
+   "stored_sha256": "5870d9ee40e70698e07576abf8ce595a13bcb4c0943fb8adfe1de61b02ed8216"
+  },
+  {
+   "bytes": 166809,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:26Z",
+   "path": "data/raw/20261110T2248/NVIDIA_Nemotron_3_5_Content_Safety.pdf",
+   "sha256": "326c9365f550815dee53e6ae4834547a51c193f2482fc6086c535f53e895638f",
+   "stored": "data/raw/20261110T2248/NVIDIA_Nemotron_3_5_Content_Safety.pdf",
+   "stored_sha256": "326c9365f550815dee53e6ae4834547a51c193f2482fc6086c535f53e895638f"
+  },
+  {
+   "bytes": 166889,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:52Z",
+   "path": "data/raw/20261110T2248/NVIDIA_Nemotron_3_Ultra_550B_A55B.pdf",
+   "sha256": "476a7396431c25a1fd97375359e972e2e2f7b0554046bee61ec2efb56189331a",
+   "stored": "data/raw/20261110T2248/NVIDIA_Nemotron_3_Ultra_550B_A55B.pdf",
+   "stored_sha256": "476a7396431c25a1fd97375359e972e2e2f7b0554046bee61ec2efb56189331a"
+  },
+  {
+   "bytes": 166828,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:54Z",
+   "path": "data/raw/20261110T2248/OpenAI_gpt_oss_120b.pdf",
+   "sha256": "cfe0d538d1ae483921f6afa9a79185531ec6a05f1710d1fe6445f11764477eff",
+   "stored": "data/raw/20261110T2248/OpenAI_gpt_oss_120b.pdf",
+   "stored_sha256": "cfe0d538d1ae483921f6afa9a79185531ec6a05f1710d1fe6445f11764477eff"
+  },
+  {
+   "bytes": 167666,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:57Z",
+   "path": "data/raw/20261110T2248/Qwen3_235B_A22B_Instruct_2507.pdf",
+   "sha256": "77b03b382ca020a173f60d9bc2f765117d67e9a8e26c663d2c5a40adae060478",
+   "stored": "data/raw/20261110T2248/Qwen3_235B_A22B_Instruct_2507.pdf",
+   "stored_sha256": "77b03b382ca020a173f60d9bc2f765117d67e9a8e26c663d2c5a40adae060478"
+  },
+  {
+   "bytes": 165300,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:48:59Z",
+   "path": "data/raw/20261110T2248/Reka_Edge.pdf",
+   "sha256": "ba1d43547c8460e9acb04d541f0300c22d2d697b0945630829f98d538ac391d5",
+   "stored": "data/raw/20261110T2248/Reka_Edge.pdf",
+   "stored_sha256": "ba1d43547c8460e9acb04d541f0300c22d2d697b0945630829f98d538ac391d5"
+  },
+  {
+   "bytes": 166524,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:02Z",
+   "path": "data/raw/20261110T2248/SpeakLeash_Bielik_11B_v3_0_Instruct.pdf",
+   "sha256": "085d689b9aa47948d9eec163f2dfa043003fa70e4a88b46459ebb1f7e570ce7c",
+   "stored": "data/raw/20261110T2248/SpeakLeash_Bielik_11B_v3_0_Instruct.pdf",
+   "stored_sha256": "085d689b9aa47948d9eec163f2dfa043003fa70e4a88b46459ebb1f7e570ce7c"
+  },
+  {
+   "bytes": 166195,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:04Z",
+   "path": "data/raw/20261110T2248/Tencent_HY4_Preview.pdf",
+   "sha256": "4c653090623cbaf2ce824ec02421b6ed505a1649dee3b4d7115b1c637aad6613",
+   "stored": "data/raw/20261110T2248/Tencent_HY4_Preview.pdf",
+   "stored_sha256": "4c653090623cbaf2ce824ec02421b6ed505a1649dee3b4d7115b1c637aad6613"
+  },
+  {
+   "bytes": 166408,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:07Z",
+   "path": "data/raw/20261110T2248/Xiaomi_MiMo_V2_5_Pro.pdf",
+   "sha256": "193320ab7829c7ed99ed64601ddf252bca581b37e0df35987e63a5eb1a3a2f6a",
+   "stored": "data/raw/20261110T2248/Xiaomi_MiMo_V2_5_Pro.pdf",
+   "stored_sha256": "193320ab7829c7ed99ed64601ddf252bca581b37e0df35987e63a5eb1a3a2f6a"
+  },
+  {
+   "bytes": 167596,
+   "gzip_added": false,
+   "modified": "2026-11-10T22:49:09Z",
+   "path": "data/raw/20261110T2248/Z_ai_GLM_5_3_Flash_BF16.pdf",
+   "sha256": "30955ee8cc5d996a4c340d85a44f59626c0393f5ce4456797d615964080d28e5",
+   "stored": "data/raw/20261110T2248/Z_ai_GLM_5_3_Flash_BF16.pdf",
+   "stored_sha256": "30955ee8cc5d996a4c340d85a44f59626c0393f5ce4456797d615964080d28e5"
+  },
+  {
+   "bytes": 145847,
+   "gzip_added": true,
+   "modified": "2026-11-10T22:49:26Z",
+   "path": "data/raw/20261110T2248/candela.html",
+   "sha256": "59790e8c49060190fe1bdbcc76c6bd40c443ba44f77ddd85bde8efda829e63b5",
+   "stored": "data/raw/20261110T2248/candela.html.gz",
+   "stored_sha256": "55ae3d3b7089a1bac5519126bc46e39f343368d22023d22c24f85352a65de63b"
+  },
+  {
+   "bytes": 167203,
+   "gzip_added": true,
+   "modified": "2026-11-10T22:48:02Z",
+   "path": "data/raw/20261110T2248/page.html",
+   "sha256": "3123ef515e242e50d8b9677bc6a78a9205ccdcc87ce8591267ea5376ce5b6cf6",
+   "stored": "data/raw/20261110T2248/page.html.gz",
+   "stored_sha256": "bba69f52c70eaed29217094b03c5aa289bd4d55042efc8f3e2c9849c96a61b8d"
+  },
+  {
+   "bytes": 1630748,
+   "gzip_added": true,
+   "modified": "2026-11-10T22:49:27Z",
+   "path": "data/reads.jsonl",
+   "sha256": "61fb554a02f0531985f95b267998af070b85d0ef8f08ae17fbc8051b25d1da61",
+   "stored": "data/reads.jsonl.gz",
+   "stored_sha256": "89b2bc3ff385b2ab1850c8f47c60321d50c120c7be155f7401831f2cb8f4d5bd"
+  }
+ ],
+ "made": "2026-11-11T00:06:39Z",
+ "mode": "fetch",
+ "name": "AILUMINATE",
+ "reference": [
+  {
+   "path": "desk/ailuminate_tick.py",
+   "sha256": "8be44f69d4a605640768a8ba919f353ef7aa086de126ece0cc9fc1883fc44334"
+  }
+ ],
+ "sources": [
+  "The MLCommons AILuminate Safety results page, https://mlcommons.org/ailuminate/safety/results/ (page.html of the newest read).",
+  "The Detailed Results PDF of each system from the MLCommons Google Drive folder the page links, https://drive.google.com/embeddedfolderview?id=1hRjh2gALmmlpNMIDuoASBKMHUO7V0T95. The read log data/reads.jsonl records the sha256 of the page and of every PDF on every read."
+ ],
+ "why_not_included": "MLCommons terms of use exclude redistribution and derivative use of site materials"
+}

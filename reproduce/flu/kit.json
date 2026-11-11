@@ -62,7 +62,9 @@
  "output": "data/flu_live.json",
  "steps": [
   [
+   "clock_run.py",
    "flu_tick.py",
+   "data/flu_live.json",
    "--offline"
   ]
  ]

@@ -23,13 +23,13 @@
    "stored_sha256": "07ed6be1b3d039150ff5dd710597c8bec95c0cd9bc61a43268baa8c3179aa8a5"
   }
  ],
- "made": "2026-11-10T23:47:08Z",
+ "made": "2026-11-11T00:08:49Z",
  "mode": "inputs",
  "name": "AIRLINE",
  "reference": [
   {
    "path": "desk/airline_summary.py",
-   "sha256": "510b2f1ce84ef7ec2378e4bea2b12fb05472b031ac7c8f6e2826d60d3bbe4566"
+   "sha256": "f9592c2ce748d3b33fb2bfd60040cac959b49f8672eee1614979c0d3d734517c"
   },
   {
    "path": "desk/airline_tick.py",

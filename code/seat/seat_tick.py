@@ -2,6 +2,13 @@
 """seat_tick.py: SEAT rider. Asks the GitHub runner for a new probe (repository_dispatch) and publishes the runner's saved probes as the SEAT page, per PLAN.md.
 The Mac only relays what the runner wrote to Heuremen-LLC/nodes; it adds no reading of its own."""
 import os, sys, json, time, subprocess, urllib.request, datetime as D
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
 import heuremen_kit as K
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('seat: plan not committed'); sys.exit(0)
@@ -63,5 +70,5 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), probes=len(good)
            not_matching=[dict(page='/' + p, state=v) for p, v in pg.items() if v != 'MATCH'])
 json.dump(out, open('summary_seat.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'seat_live', '--path', os.path.join(H, 'summary_seat.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'seat_live', '--path', os.path.join(H, 'summary_seat.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('seat:', len(good), 'probes;', 'last', last['t'], 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

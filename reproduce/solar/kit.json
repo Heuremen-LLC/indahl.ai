@@ -32,7 +32,9 @@
  "output": "data/solar_live.json",
  "steps": [
   [
+   "clock_run.py",
    "solar_tick.py",
+   "data/solar_live.json",
    "--offline"
   ]
  ]

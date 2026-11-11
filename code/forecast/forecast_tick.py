@@ -2,6 +2,13 @@
 """forecast_tick.py: one FORECAST round for the HST tick bus, per PLAN.md. Fetches NWS forecasts for stations that are due (6 hours since their last fetch, at most 10 per round),
 scores periods that have ended against the station's hourly observations, rewrites summary_forecast.json and publishes it. Read-only, our user agent names this site."""
 import os, sys, json, time, math, urllib.request, subprocess, datetime as D, collections as C
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'); UA = 'heuremen-forecast/0.1 (+https://indahl.ai/forecast)'
 ST = json.load(open('stations.json')); now = time.time()
 def get(u):
@@ -114,5 +121,5 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), stations=len(
            measurable=measurable_out, primary='measurable')
 json.dump(out, open('summary_forecast.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-p = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'forecast_live', '--path', os.path.join(H, 'summary_forecast.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+p = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'forecast_live', '--path', os.path.join(H, 'summary_forecast.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('forecast:', nf, 'fetched,', nsc, 'scored,', _nm, 'measurable read this round;', len(per), 'periods stored;', 'published' if p.returncode == 0 else 'publish FAILED')

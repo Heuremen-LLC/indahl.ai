@@ -2,6 +2,13 @@
 """revise_tick.py: REVISE rider per PLAN.md. First, third and most recent releases of monthly nonfarm payroll change against the BLS's stated 90% interval of 122 thousand.
 From 9 Nov 2026 (PLAN.md Addendum 1) every value is read from the BLS itself (bls_source.py), not from the Philadelphia Fed file. Publishes KV revise_live."""
 import os, sys, re, json, time, hashlib, subprocess, statistics as S, urllib.request
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data/files', exist_ok=True)
 VPY = os.path.join(H, 'venv', 'bin', 'python')
 if os.path.realpath(sys.executable) != os.path.realpath(VPY) and not os.environ.get('REVISE_VENV'):
@@ -22,7 +29,10 @@ gate = count([(0, 122), (0, 123), (0, -123)]) == 2 and [abs(b - a) > STATED for 
 raw = BS.table_raw(); sha = hashlib.sha256(raw).hexdigest()
 fn = 'data/files/cesnaicsrev_%s.htm' % sha[:12]
 if not os.path.exists(fn): open(fn, 'wb').write(raw)
-tab = BS.first_second_third(raw); bc = BS.most_recent()
+flat = BS.flat_raw(); flat_sha = hashlib.sha256(flat).hexdigest()   # 10 Nov 2026: the BLS flat file is kept too, each version by its sha256, so the most recent values can be replayed
+ffn = 'data/files/ce_totalnonfarm_%s.txt' % flat_sha[:12]
+if not os.path.exists(ffn): open(ffn, 'wb').write(flat)
+tab = BS.first_second_third(raw); bc = BS.most_recent(flat)
 upd = re.search(r'Last Modified Date:\s*(?:</strong>)?\s*([A-Za-z]+ \d+, \d{4})', raw.decode('utf-8', 'replace')); updated_file = upd.group(1) if upd else ''
 rows = [dict(m=m, first=tab[m]['first'], second=tab[m]['second'], third=tab[m]['third'], recent=bc.get(m)) for m in sorted(tab)]
 ys = int(updated_file[-4:]) if updated_file else int(time.strftime('%Y')); last_bench = '%04d:03' % (ys - 1)
@@ -54,10 +64,10 @@ def block(rs, key):
 a = block(t3, 'third'); b = block(mr, 'recent')
 HC = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 big = [dict(url=URL, month=r['m'], first=r['first'], third=r['third'], most_recent=r['recent'], note=HC.get(r['m'], 'Not yet read in full')) for r in {x['m']: x for x in t3 + mr}.values() if max(abs((r['third'] or r['first']) - r['first']), abs((r['recent'] or r['first']) - r['first']) if r['m'] <= last_bench else 0) > 300]
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', stated=int(STATED), file_updated=updated_file, sha=sha[:16], checked_months=len(KG),
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', stated=int(STATED), file_updated=updated_file, sha=sha[:16], flat_sha=flat_sha[:16], checked_months=len(KG),
            counts={'Third release against first': a, 'Most recent, after the annual benchmark, against first': b}, large=sorted(big, key=lambda x: x['month']))
 json.dump(out, open('summary_revise.json', 'w'), indent=1)
-with open('data/history.jsonl', 'a') as f: f.write(json.dumps(dict(t=time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime()), sha=sha[:16], third=a, recent=b), sort_keys=True) + '\n')
+with open('data/history.jsonl', 'a') as f: f.write(json.dumps(dict(t=time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime()), sha=sha[:16], flat_sha=flat_sha[:16], third=a, recent=b), sort_keys=True) + '\n')
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
-pr = subprocess.run(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'revise_live', '--path', os.path.join(H, 'summary_revise.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'revise_live', '--path', os.path.join(H, 'summary_revise.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('revise:', a['outcome'], a['exceed'], 'of', a['months'], '|', b['outcome'], b['exceed'], 'of', b['months'], 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

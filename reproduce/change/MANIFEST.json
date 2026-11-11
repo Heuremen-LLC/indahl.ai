@@ -18,13 +18,13 @@
    "stored_sha256": "62e738f72f1ab50f4839273c9fbe1952d1e00b0c2fe6f9a3a923a650a9459f30"
   }
  ],
- "made": "2026-11-10T23:47:05Z",
+ "made": "2026-11-11T00:08:45Z",
  "mode": "fetch",
  "name": "CHANGE",
  "reference": [
   {
    "path": "desk/change_tick.py",
-   "sha256": "1c28575ceb37e213cea4e57759084e7b9eceb4efe11baa74537f3bd9946413df"
+   "sha256": "8eab09dd24e35ffab0c11c38c77eb388d70f3cf5036a69d51ad37dfcdf2bbd7e"
   }
  ],
  "sources": [

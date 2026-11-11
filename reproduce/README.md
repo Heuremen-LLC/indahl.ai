@@ -8,7 +8,9 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 
 | Desk | Inputs | Expected output sha256 |
 |---|---|---|
+| [AILUMINATE](ailuminate/) | fetch and verify | `c8b880287c02d1391439b93353357ceb7123096c42b965ae0d9a2aa35398b752` |
 | [AIRLINE](airline/) | included | `f32a4e777ddcb767a5d232aacfb62cb2fdaa988637a2dba251a24714e2230e58` |
+| [AIRQ](airq/) | fetch and verify | `a105a4e665f0c2eef3ebd8bd394bae4a764c41aefc25cd5db23ad288ac8a3aed` |
 | [CADENCE](cadence/) | included | `bd1fa582abf223661c0665a91e2e38bef375cd629fa2b611f126480bb6be114a` |
 | [CAMPUS](campus/) | fetch and verify | `e5f3789d15dfc9987b79a37085319a0f91401da5d9a8a46ef2b2d0b85944f9b8` |
 | [CHANGE](change/) | fetch and verify | `4aaa2bbf381335f18c0ca16e247bd5122f9ecb01bbe3c93ba392fac653a01749` |
@@ -29,18 +31,16 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [SOLAR](solar/) | fetch and verify | `336e3ae79281b594f30b1ad6497dcf7103702986d2f9ee016b672e787bd5fa9c` |
 | [STEO](steo/) | included | `62582754f487e4bbb247ecb496530bfe0811c434a8f16222e973664ae554574d` |
 | [SUPPORT](support/) | fetch and verify | `9fc34e209b7b6fbd8193eb2737e61f188a60a1193cfc1871060a384b73527817` |
+| [TORNADO](tornado/) | fetch and verify | `5ff5d0988b98d09801df2459fa0deb6eb6639eaa2ad0ff222460b5408c325930` |
 | [TRIALS](trials/) | included | `465d4475aaf21301d6efeaaf2a0c76e2e1f11b3d6cced0694da959dd1886c9d8` |
 | [WATER](water/) | included | `9fa82deee3bf63d3989a180ae7ff29fed0d2d341b59a49bcbe5a37f4640537cf` |
 | [WEIGHTS](weights/) | fetch and verify | `4c7210eb6fb63bf4497494951561cbe86b54f11a182c89eccfaaeaf4bdc8eaa8` |
 
 ## Desks without a kit
 
-- AILUMINATE: The desk keeps every page and report it read, with the sha256 of each in its read log, and its parser needs a PDF reader the kits do not carry yet.
-- AIRQ: The window read keeps the PurpleAir answers but keeps the EPA AQS side only as parsed daily means, and its scoring sits inside a script that reads keys and the network.
 - CADA: The desk asks public DNS resolvers live whether they block fresh abuse listings. A resolver answer cannot be replayed.
 - HOSTS: The headline is the count at the newest poll of OpenRouter, a live service whose answers cannot be replayed, and its flag test reads the 24 hours before the poll by the clock. We keep each poll as parsed rows, not as the service's answers.
-- REVISE: The headline compares the first BLS estimate with the most recent value, read from the BLS flat file on each run. The BLS table of first, second and third estimates is kept with its sha256, the flat file is not, so the most recent values cannot be replayed.
+- REVISE: The headline compares the first BLS estimate with the most recent value, read from the BLS flat file on each run. The BLS table of first, second and third estimates is kept with its sha256. Until 10 Nov 2026 the flat file was not kept, so the published values cannot be replayed. From the next read on, each version of the flat file is kept by its sha256, and its sha256 is in the feed.
 - TAPE: The headline is a clock, the time since the newest entry was chained.
 - TIME: The desk measures public time servers live against a GPS-disciplined clock. A time reading cannot be replayed.
-- TORNADO: The headline cell reads about 380 MB of outlook archives for 2007 to 2025, more than a public kit carries.
 - UPTIME: The desk probes vendor services and their status pages live from two networks. A probe answer cannot be replayed.

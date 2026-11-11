@@ -50,7 +50,9 @@
  "output": "data/seasonal_live.json",
  "steps": [
   [
+   "clock_run.py",
    "seasonal_tick.py",
+   "data/seasonal_live.json",
    "--offline"
   ]
  ]

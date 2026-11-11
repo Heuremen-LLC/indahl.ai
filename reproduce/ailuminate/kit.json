@@ -1,0 +1,30 @@
+{
+ "cwd": "",
+ "desk": "ailuminate",
+ "headline": {
+  "field": [
+   "table",
+   "*",
+   "overall"
+  ],
+  "keys": [
+   [
+    "table",
+    "*",
+    "overall"
+   ]
+  ],
+  "outcome": [
+   "headline",
+   "outcome"
+  ],
+  "show": "range"
+ },
+ "name": "AILUMINATE",
+ "output": "out.json",
+ "steps": [
+  [
+   "ailuminate_score.py"
+  ]
+ ]
+}

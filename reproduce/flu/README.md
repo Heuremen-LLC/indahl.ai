@@ -14,7 +14,7 @@ Needs Python 3.9 or later with numpy (PyPI). It prints one line of JSON and chec
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/flu/live.json served it at the feed stamp 2026-11-10T21:14:43Z, read by us at 2026-11-10T23:46:41Z. The feed bytes had sha256 `05393ac5b4dc40236750f48103e87b4bf2063a2765a20c66b9245dfafe5300cc`.
+The headline as the live feed https://indahl.ai/flu/live.json served it at the feed stamp 2026-11-10T21:14:43Z, read by us at 2026-11-11T00:12:28Z. The feed bytes had sha256 `05393ac5b4dc40236750f48103e87b4bf2063a2765a20c66b9245dfafe5300cc`.
 
 - number: 16,416 of 18,544
 - value: 0.8852
@@ -37,6 +37,7 @@ As the FLU data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
+| data/flu_live.json | 94,778 | `05393ac5b4dc40236750f48103e87b4bf2063a2765a20c66b9245dfafe5300cc` |
 | data/raw/hub/model-output/FluSight-ensemble/2023-10-14-FluSight-ensemble.csv | 524,323 | `0495532d8fc3885fb64b62f541a35cc1aa851a6869f82480645a8c58831293bc` |
 | data/raw/hub/model-output/FluSight-ensemble/2023-10-21-FluSight-ensemble.csv | 531,866 | `047c6086ce9ed1bb864c05caf640fb028afa8e22c3151210b43e5f664988e23a` |
 | data/raw/hub/model-output/FluSight-ensemble/2023-10-28-FluSight-ensemble.csv | 524,028 | `9b6e7391ca116c160e0efa34a07cda890dfb5a2bce060f092dbf1f0f30f42071` |
@@ -136,7 +137,7 @@ As the FLU data pack lists them. Credit each source when you use its values.
 
 ## Code
 
-The desk's own scripts, byte for byte, under code/. They run in this order: code/flu_tick.py --offline. The same files are in the public repository under code/flu/.
+code/clock_run.py runs the desk's own scripts in code/, byte for byte, and changes the clock only. It runs flu_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/flu_live.json), which the desk uses to tell a settled or passed row from an open one. The same files are in the public repository under code/flu/. Scripts that run: code/clock_run.py flu_tick.py data/flu_live.json --offline.
 
 ## Files
 

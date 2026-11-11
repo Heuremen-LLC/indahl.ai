@@ -32,13 +32,13 @@
    "stored_sha256": "c98bf5a55456644795e7f645d4d9cf2a74ceff8b8973ee9c0e9ae1dcd076255b"
   }
  ],
- "made": "2026-11-10T23:47:03Z",
+ "made": "2026-11-11T00:08:42Z",
  "mode": "fetch",
  "name": "HFSIZE",
  "reference": [
   {
    "path": "desk/hfsize_tick.py",
-   "sha256": "71b8e357732234a292f427faee6bb3bc2baa7ae03bba8aab1cc1d612906aa733"
+   "sha256": "8166cae9740b221bb8859d5a7c585008e62bd655622c9470907b0dc89d17f0da"
   }
  ],
  "sources": [
