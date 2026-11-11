@@ -16,6 +16,11 @@
    "State marriage and divorce counts from the CDC against the Census survey estimates"
   ],
   [
+   "/census/vintages",
+   "VINTAGES",
+   "State population estimates across Vintages and against the 2020 Census count"
+  ],
+  [
    "/campus",
    "CAMPUS",
    "The documents behind the OY page, kept over time"
@@ -281,6 +286,7 @@
   "/census/coverage": "2026-11-11T16:35:13Z",
   "/census/fidelity": "2026-11-11T16:41:08Z",
   "/census/revisions": "2026-11-11T15:36:20Z",
+  "/census/vintages": "2026-11-11T18:31:40Z",
   "/change": "2026-10-29T11:12:43Z",
   "/cone": "2026-11-10T15:50:55Z",
   "/credit": "2026-11-10T18:12:46Z",

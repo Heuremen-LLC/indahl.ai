@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T16:38:45Z",
+ "built_utc": "2026-11-11T18:42:46Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 1172,
+   "commit": "059af95ecd48a00a588e37b3ce11f6e8a6538b78",
+   "files": 5621,
+   "id": "059af95ecd48",
+   "json": "/receipts/stamps/release_059af95ecd48.json",
+   "ledger_sha256": "7af68aaafea4b01e1f00f3c193e69f67c7888ebec0932810825456344c8eddae",
+   "manifest_sha256": "02924439ed17a0da1913a09d501c947f4035a8009eda6e3d5a8a563b02d4b50d",
+   "ots": "/receipts/stamps/release_059af95ecd48.json.ots",
+   "ots_status": "bitcoin 975458",
+   "released_at": "2026-11-11T16:45:30Z",
+   "sha256": "55b8fbc93e57a28b34d2c9decadb941cb9ed33ed08a9617994f503a50b076117",
+   "wayback": [],
+   "wayback_waiting": 1163
+  },
   {
    "changed": 1207,
    "commit": "1d942fda2ecf608d8c1b1d53707d113600bbeaf6",
@@ -11,11 +26,11 @@
    "ledger_sha256": "fbe5dcdae77776efdb53d213a3b353dea7d1dd7c5a5e92d1ec79648cc922c5e6",
    "manifest_sha256": "c90d2961738fdedf98a4b8b6822f2cabb36b4ec54cefaf96eb2dff50d5b6c9a1",
    "ots": "/receipts/stamps/release_1d942fda2ecf.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975458",
    "released_at": "2026-11-11T16:38:42Z",
    "sha256": "12370d1c9e100ddf1b9d813a62e1838ed5023c81a7cd61ff123264eb96202f8f",
    "wayback": [],
-   "wayback_waiting": 1198
+   "wayback_waiting": 228
   },
   {
    "changed": 164,
@@ -26,11 +41,11 @@
    "ledger_sha256": "7fa67e18802c03f627415a515421d9d1a4f4bd17fc954019808aa6e9dc63e965",
    "manifest_sha256": "6d2aab717e8a8f3fe49d65b2e4e1502d06e105a6b652675551c11052799b65e5",
    "ots": "/receipts/stamps/release_58f6a0c96cf8.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975458",
    "released_at": "2026-11-11T16:21:23Z",
    "sha256": "dfececf8f3553277328d3029fee6ecbbf080bdfcecdc6829fbaa0d46a15f4eea",
    "wayback": [],
-   "wayback_waiting": 15
+   "wayback_waiting": 14
   },
   {
    "changed": 162,
@@ -41,7 +56,7 @@
    "ledger_sha256": "df527c82778b3884d9514afeaee86362f22b87a6992b37a125ea18dadc167d41",
    "manifest_sha256": "4c69a9baa15075c67e0e7f42d40f3d1cfc6a6b7dd0523f7dafa3555676ae5be7",
    "ots": "/receipts/stamps/release_8123eafbb8b8.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975458",
    "released_at": "2026-11-11T16:02:30Z",
    "sha256": "bb1a9a60aca615b5e5cb1f4461130351ad76414274c5515b280014cc9e1267f0",
    "wayback": [],
@@ -56,7 +71,7 @@
    "ledger_sha256": "df527c82778b3884d9514afeaee86362f22b87a6992b37a125ea18dadc167d41",
    "manifest_sha256": "430a01427b62d23334904990e5dc10e0edc4abd0a1869296b39f95287e4e6ceb",
    "ots": "/receipts/stamps/release_4f6a355d93af.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975458",
    "released_at": "2026-11-11T15:53:54Z",
    "sha256": "f5305dd3e6bfced13c06067027e82d4eb24772e5c52b968df580fbfc14de5c21",
    "wayback": [],
@@ -71,11 +86,11 @@
    "ledger_sha256": "d44249f042e08d5d4487daed8b3552216a026d91c6a740d92fb190c2d4b0afd5",
    "manifest_sha256": "0a4074a0e17a780ac2efb5c0b588c6ce22661094aa6c6d0c0fd776a1c7811111",
    "ots": "/receipts/stamps/release_b4d94faa4e7c.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975458",
    "released_at": "2026-11-11T15:45:11Z",
    "sha256": "e62a0fa4139a059ee2707917846fae45350fb04e5f47ff4e2457fe40c302491d",
    "wayback": [],
-   "wayback_waiting": 11
+   "wayback_waiting": 6
   },
   {
    "changed": 1112,
@@ -86,7 +101,7 @@
    "ledger_sha256": "9d6708f86c56a155a8ce9e72902301e38dad84ef3a3047709b7fa2b9e890bcff",
    "manifest_sha256": "cee06601253ac7e93db4bf62d951714530a1ae76e10d954533e102c3dda0e82b",
    "ots": "/receipts/stamps/release_fdc77f6ae477.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975458",
    "released_at": "2026-11-11T14:57:06Z",
    "sha256": "36246cbfb4b1dc38bff8d37418d219e29c2c6d8bb5955ca2d214ff7a86695d17",
    "wayback": [],
@@ -101,7 +116,7 @@
    "ledger_sha256": "fef047588dc0d2dd911a6534f0433d0e64cb0768c63e5f14cd61f67960490b38",
    "manifest_sha256": "ecddae7f05aaf74dde459f9a1dca7dc3f00ce64bfc581a315aae46aa53168371",
    "ots": "/receipts/stamps/release_c6947729599a.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975458",
    "released_at": "2026-11-11T14:37:37Z",
    "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
    "wayback": [],

@@ -634,6 +634,9 @@ def add_pages(PAGES, page, hero_slim, HOME=None, FEED=None, refresh_feeds=True, 
                    + (f'. Also named {E(_desks_line(other[:4]))}' + (' and others' if len(other) > 4 else '') if other else '') + '.</span></li>')
     for f in os.listdir(CSVDIR):
         if f.endswith('.csv') and f not in keep: os.remove(os.path.join(CSVDIR, f))
+    _bd = os.path.join(HERE, 'brand')   # 11 Nov: a brand whose last row left its desk loses its page too (the gate refused a stale brand/shopify.html)
+    for f in os.listdir(_bd) if os.path.isdir(_bd) else []:
+        if f.endswith('.html') and '/brand/' + f[:-5] not in PAGES: os.remove(os.path.join(_bd, f))
     open(os.path.join(CSVDIR, 'search.js'), 'w').write(SEARCH_JS)
     ibody = ('<section class="legal"><p>One page for each company, agency and organisation our desks measure. Each page lists every row the desks publish about it, '
              'with the desk, the question, the stated figure, the delivered figure, the outcome and the read time. People never get a page.</p>'

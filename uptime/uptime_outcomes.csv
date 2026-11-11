@@ -11,7 +11,7 @@ path,label,outcome,n,of,share,lo,hi,vendor,expected_from_floor,episodes,rounds,d
 /vendors[9],Atlassian,CANNOT_TELL,,,,,,Atlassian,1.86,0,60,0,0,0,60
 /vendors[10],Twilio,CANNOT_TELL,,,,,,Twilio,1.86,0,60,0,0,0,60
 /vendors[11],Datadog,CANNOT_TELL,,,,,,Datadog,0.0,0,0,0,0,0,0
-/vendors[12],Zoom,CANNOT_TELL,,,,,,Zoom,1.86,0,60,0,0,0,60
+/vendors[12],Zoom,CANNOT_TELL,,,,,,Zoom,1.86,0,60,0,0,1,59
 /vendors[13],Dropbox,CANNOT_TELL,,,,,,Dropbox,1.86,0,60,0,0,0,60
 /vendors[14],Anthropic,CANNOT_TELL,,,,,,Anthropic,1.86,0,60,0,0,0,60
 /vendors[15],OpenAI,CANNOT_TELL,,,,,,OpenAI,1.86,0,60,0,0,0,60
