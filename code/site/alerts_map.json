@@ -1961,13 +1961,6 @@
 "name": "ibm_cleveland",
 "url": "/e/backend/ibm-cleveland"
 },
-"backend/ibm-cusco": {
-"feed": false,
-"kind": "backend",
-"kword": "quantum backend",
-"name": "ibm_cusco",
-"url": "/e/backend/ibm-cusco"
-},
 "backend/ibm-fez": {
 "feed": false,
 "kind": "backend",
