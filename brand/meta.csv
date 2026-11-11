@@ -1,5 +1,5 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-Meta,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.facebook.com,Its statement,stated bound 0.02 ms,"offset 3.21 ms, path half-delay 10.05 ms",,CANNOT TELL,,11 Nov 00:06,
+Meta,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.facebook.com,Its statement,stated bound 0.02 ms,"offset 3.19 ms, path half-delay 9.91 ms",,CANNOT TELL,,11 Nov 00:22,
 Meta,AILUMINATE,https://indahl.ai/ailuminate,Do the published results stay what they say?,Meta Llama Guard 2 8B,Named in the row,overall percentile 100,mean of its category percentiles 100.0,categories from 100 to 100,AGREE,released April 2024,10 Nov 22:48,
 Meta,AILUMINATE,https://indahl.ai/ailuminate,Do the published results stay what they say?,Meta Llama Guard 3 8B,Named in the row,overall percentile 100,mean of its category percentiles 100.0,categories from 100 to 100,AGREE,released July 2024,10 Nov 22:48,
 Meta,AILUMINATE,https://indahl.ai/ailuminate,Do the published results stay what they say?,Meta Llama Guard 4 12B,Named in the row,overall percentile 100,mean of its category percentiles 100.0,categories from 100 to 100,AGREE,released April 2025,10 Nov 22:48,

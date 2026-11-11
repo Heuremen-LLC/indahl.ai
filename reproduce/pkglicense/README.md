@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/pkglicense/live.json served it at the feed stamp 10 Nov 21:45, read by us at 2026-11-11T00:08:48Z. The feed bytes had sha256 `b69f4ac5a377856795f48da2d0a3313fcce51dd486e8bd16eccec53217e3052f`.
+The headline as the live feed https://indahl.ai/pkglicense/live.json served it at the feed stamp 10 Nov 21:45, read by us at 2026-11-11T00:26:05Z. The feed bytes had sha256 `b69f4ac5a377856795f48da2d0a3313fcce51dd486e8bd16eccec53217e3052f`.
 
 - number: 7 of 704
 - value: 0.0099
@@ -65,4 +65,4 @@ The desk's tick script reads its sources, scores and publishes in one run, so it
 
 ## Note
 
-The desk does not store the list of names it scored. The PKGINSTALL desk stores the same list of the same date with each rank, so this kit reads the names from there and stops if the two list dates differ.
+Until 10 Nov 2026 the desk did not keep the list of names it scored. From its next full read it keeps them in data/names.json. This kit reads the same list of the same date from the PKGINSTALL desk, which keeps each rank, and stops if the two list dates differ.

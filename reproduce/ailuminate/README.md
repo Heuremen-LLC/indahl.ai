@@ -10,11 +10,11 @@ This kit recomputes the AILUMINATE headline number and its outcome label with th
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later with pypdf 6.21.4 (the version the desk runs) (PyPI). It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `c8b880287c02d1391439b93353357ceb7123096c42b965ae0d9a2aa35398b752`.
+Needs Python 3.9 or later with pypdf 6.21.4 (PyPI). It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `c8b880287c02d1391439b93353357ceb7123096c42b965ae0d9a2aa35398b752`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/ailuminate/live.json served it at the feed stamp 10 Nov 22:48, read by us at 2026-11-11T00:06:39Z. The feed bytes had sha256 `6b1353f3c24141d9cf780db88a71c4504dbd3b336085250b72ec5f5445eab960`.
+The headline as the live feed https://indahl.ai/ailuminate/live.json served it at the feed stamp 10 Nov 22:48, read by us at 2026-11-11T00:26:08Z. The feed bytes had sha256 `6b1353f3c24141d9cf780db88a71c4504dbd3b336085250b72ec5f5445eab960`.
 
 - number: 4 to 100
 - value: [98, 64, 43, 38, 86, 94, 85, 85, 75, 40, 44, 57, 43, 100, 100, 100, 16, 33, 93, 100, 85, 50, 11, 4, 96, 78, 52]
@@ -85,3 +85,7 @@ The desk's tick script reads its sources, scores and publishes in one run, so it
 - MANIFEST.json: every input and code file with its sha256.
 - desk/: the desk scripts the extract follows, where the kit runs an extract.
 - SHA256SUMS.txt: the sha256 of every file in this folder.
+
+## Note
+
+pypdf 6.21.4 is the version the desk runs, and the text it extracts from each PDF is what the parser reads.

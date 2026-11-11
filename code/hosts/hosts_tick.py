@@ -120,5 +120,5 @@ pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'hosts_li
 with open('history.jsonl', 'a') as f: f.write(json.dumps(dict(t=out['updated'], endpoints=len(eps), problems=len(problems), failed=len(failed))) + '\n')
 print('hosts:', out['top_line'], 'test', out['headline']['outcome'], 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)
 # 10 Nov 2026 (cold read row 5): rebuild the headlines from this read now, so the headline and the page body come from the same read
-try: subprocess.Popen([sys.executable, '-I', os.path.expanduser('~/bones-forge/watch/headlines.py')], stdout=open(os.path.expanduser('~/bones-forge/watch/novatime_jobs.log'), 'a'), stderr=subprocess.STDOUT, start_new_session=True)
+try: _PUBLISH and subprocess.Popen([sys.executable, '-I', os.path.expanduser('~/bones-forge/watch/headlines.py')], stdout=open(os.path.expanduser('~/bones-forge/watch/novatime_jobs.log'), 'a'), stderr=subprocess.STDOUT, start_new_session=True)
 except Exception as e: print('headlines restart failed', type(e).__name__)

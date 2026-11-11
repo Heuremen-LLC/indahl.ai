@@ -277,7 +277,6 @@ main section{padding:7px 0}main section:first-child{padding-top:6px}.hl{padding:
 @media (max-width:640px){.mtx{display:block;max-width:100%;overflow-x:auto}.bench-live{max-width:100%;overflow-x:auto}}
 .ggs::before{content:"\00b7\00a0"}.ggr{display:block;font-size:13px;color:var(--goldink)}.ggnote{display:block;font-size:14px;color:var(--mid);margin-bottom:4px}.ggall a{font-size:15px}
 @media (max-width:640px){.ggpanel{position:static;margin-top:8px;width:auto}}
-@media (max-width:640px){.mtx{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.bench-live{max-width:100%;overflow-x:auto}}
 
 .su{max-width:640px;margin:0 auto 12px;padding:4px 0 12px;border-bottom:1px solid #4a3d24;text-align:left}.su-h{margin:0 0 6px;font-weight:600;color:#efe5cf;font-size:15px}
 .su-row{display:flex;gap:8px;margin:0 0 6px}.su input[type=email]{font:inherit;font-size:15px;padding:6px 8px;border:1px solid #4a3d24;background:#fffaf0;color:#1a1208;flex:1 1 auto;min-width:0;max-width:340px}

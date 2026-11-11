@@ -76,6 +76,6 @@ fp = hashlib.sha256(json.dumps([rows, closures], sort_keys=True).encode()).hexdi
 if prev.get('fp') != fp or now - prev.get('t', 0) > 1500:
     env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
     r = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'airline_live', '--path', os.path.join(H, 'summary_airline.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
-    if r.returncode == 0: json.dump(dict(fp=fp, t=now), open(st, 'w'))
+    if r.returncode == 0 and _PUBLISH: json.dump(dict(fp=fp, t=now), open(st, 'w'))
     print('nas: snapshot', snaps, len(rows), 'airport programs now', 'published' if r.returncode == 0 else 'publish FAILED')
 else: print('nas: snapshot', snaps, len(rows), 'unchanged')

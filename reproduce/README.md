@@ -40,7 +40,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 
 - CADA: The desk asks public DNS resolvers live whether they block fresh abuse listings. A resolver answer cannot be replayed.
 - HOSTS: The headline is the count at the newest poll of OpenRouter, a live service whose answers cannot be replayed, and its flag test reads the 24 hours before the poll by the clock. We keep each poll as parsed rows, not as the service's answers.
-- REVISE: The headline compares the first BLS estimate with the most recent value, read from the BLS flat file on each run. The BLS table of first, second and third estimates is kept with its sha256. Until 10 Nov 2026 the flat file was not kept, so the published values cannot be replayed. From the next read on, each version of the flat file is kept by its sha256, and its sha256 is in the feed.
+- REVISE: The headline compares the first BLS estimate with the most recent value, read from the BLS flat file on each run. The BLS table of first, second and third estimates is kept with its sha256. Until 10 Nov 2026 the flat file was not kept, so the published values cannot be replayed. From the next read on, each version of the flat file is kept by its sha256, and the start of its sha256 is in the feed.
 - TAPE: The headline is a clock, the time since the newest entry was chained.
 - TIME: The desk measures public time servers live against a GPS-disciplined clock. A time reading cannot be replayed.
 - UPTIME: The desk probes vendor services and their status pages live from two networks. A probe answer cannot be replayed.
