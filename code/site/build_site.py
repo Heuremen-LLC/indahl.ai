@@ -709,11 +709,11 @@ def _changes_html():
         title = _rr.search(r'\*\*([^*]+)\*\*', m.group(2)); key = title.group(1) if title else m.group(2)[:30]
         d = ''
         (done if m.group(1) == 'x' else todo).append((d, md(m.group(2))))
-    out = '<section class="legal"><p>What Heuremen LLC has built and shipped, and what is next. Every item has its live page and its plan.</p><h2>Shipped</h2><ul>'
+    out = '<section class="legal"><p>What Heuremen LLC has built and shipped. Every item has its live page and its plan, and a new desk is added automatically when its page goes live.</p><h2>Shipped</h2><ul>'
     out += ''.join(f'<li>{("<b>" + d + "</b>. ") if d else ""}{t}</li>' for d, t in done)
-    out += '</ul><h2>Next</h2><ul>' + ''.join(f'<li>{t}</li>' for d, t in todo) + '</ul><p class="meta">Release notes: <a href="/media">indahl.ai/media</a> &middot; Source: <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/ROADMAP.md">ROADMAP.md</a></p></section>'
+    out += '</ul><p class="meta">Release notes: <a href="/media">indahl.ai/media</a> &middot; Source: <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/ROADMAP.md">ROADMAP.md</a></p></section>'
     return out
-PAGES['/changes'] = page('/changes', 'Changes: Desks and Data Releases Shipped | Heuremen LLC', 'Every desk and data release Heuremen LLC has shipped, and what is next, each with its live page and plan.',
+PAGES['/changes'] = page('/changes', 'Changes: Desks and Data Releases Shipped | Heuremen LLC', 'Every desk and data release Heuremen LLC has shipped, each with its live page and plan.',
  _changes_html(), hero('', 'Changes', ''))
 
 # 29 Oct 2026 (his word): VAULT. Receipts and sealed files with no file stored (a hash and a time are kept). All of it runs in the visitor's browser. Plan: tape_index/PLAN.md Addendum 1.
