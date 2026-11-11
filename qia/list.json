@@ -43439,10 +43439,10 @@
   },
   {
    "study": "The PSI Framework: From Information-Theoretic Foundations to Experimental Quantum Recrystallization.",
-   "link": "https://doi.org/10.5281/zenodo.19687906",
-   "version": "published version",
-   "indexed": "2026-11-01",
-   "read": "Full text",
+   "link": "https://doi.org/10.5281/zenodo.24036699",
+   "version": "Zenodo record 24036699 (7 Nov 2026)",
+   "indexed": "2026-11-11",
+   "read": "Full text and released files",
    "codes": [
     "F1",
     "F4",
@@ -43450,13 +43450,14 @@
    ],
    "basis": {
     "F1": [
-     "channel A reference built from the same setup compared with channel B"
+     "controls are gate-count matched only, in the record's words not a fully hardware-matched control, and no runs vary the compilation"
     ],
     "F4": [
-     "run dates not printed"
+     "IBM job files are released (176 job ids on ibm_marrakesh, ibm_kingston and ibm_fez, April to August 2026) and the counts checked reproduce (515 and 477 from job d7hfpvnb91ec73aumve0)",
+     "IQM Garnet, Rigetti and IonQ counts come from screenshots with no job id or date, 20 of 26 control circuits have no job id, no calibration data from run time (the record says none was available) and no tomography data"
     ],
     "F5": [
-     "printed 99% does not follow from the printed counts (497+497 of 1024 is 97.1%)"
+     "the stated 97.07% from (497+497)/1024 has no raw counterpart. The released runs give 497+486 of 1024 (96.00%) and 515+477 of 1024 (96.88%)"
     ]
    },
    "calibrated": false,

@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T14:29:30Z",
+ "built_utc": "2026-11-11T14:49:23Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 957,
+   "commit": "c6947729599a89bca5c85e454c77d05a2ada332f",
+   "files": 5249,
+   "id": "c6947729599a",
+   "json": "/receipts/stamps/release_c6947729599a.json",
+   "ledger_sha256": "fef047588dc0d2dd911a6534f0433d0e64cb0768c63e5f14cd61f67960490b38",
+   "manifest_sha256": "ecddae7f05aaf74dde459f9a1dca7dc3f00ce64bfc581a315aae46aa53168371",
+   "ots": "/receipts/stamps/release_c6947729599a.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T14:37:37Z",
+   "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
+   "wayback": [],
+   "wayback_waiting": 950
+  },
   {
    "changed": 1530,
    "commit": "34b906590457ebf94ece5563d89efb4738faf981",
@@ -41,7 +56,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 1516
+   "wayback_waiting": 1359
   },
   {
    "changed": 287,
@@ -52,7 +67,7 @@
    "ledger_sha256": "4edf5db4667c8cd4deb32a360f75db4df0a9d8f2e80640af6f6a02b6c36661b7",
    "manifest_sha256": "12abe7dbb13d8e1a1b97000625ffc42a14b7429a89555597f9de863ac9576ae1",
    "ots": "/receipts/stamps/release_83f91a52d17a.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975441",
    "released_at": "2026-11-11T13:46:36Z",
    "sha256": "b263ae13ffaf8e9d67d8a5f1c85c5ed19634ffece76fb9d8cb586791c67e89bf",
    "wayback": [
@@ -307,7 +322,7 @@
      "url": "https://indahl.ai/qia/study/zenodo-22848316"
     }
    ],
-   "wayback_waiting": 14
+   "wayback_waiting": 13
   },
   {
    "changed": 61,
@@ -318,7 +333,7 @@
    "ledger_sha256": "1d559c31734e1bc54190fd00a8f4c4f3c113cffebcd4a5dbde22ee2530e88436",
    "manifest_sha256": "2282663614d60a0499996201cb457abf2a43aa8eecd84c2441fde5fb0838337d",
    "ots": "/receipts/stamps/release_0ad37d62683a.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975441",
    "released_at": "2026-11-11T13:32:11Z",
    "sha256": "fd277174c8bd920392e51d251f1fd0c7832a3ac7c4acc67a059471678f5e3485",
    "wayback": [],
@@ -333,7 +348,7 @@
    "ledger_sha256": "1a2242cc5ae77eeda9f35d446b5066cb057063f423378b76103895db7779e28b",
    "manifest_sha256": "80884e609ec35a9d78cf781842cbaa44230feb23adaf50a9ffa9686f8c910113",
    "ots": "/receipts/stamps/release_1ad2a2347539.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975441",
    "released_at": "2026-11-11T13:27:21Z",
    "sha256": "8476b72633bf9e5338a417808c5387ea515d0cc7290d53ce6b4dcaa2385a7d9b",
    "wayback": [
@@ -588,7 +603,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 661
+   "wayback_waiting": 185
   },
   {
    "changed": 0,
@@ -599,7 +614,7 @@
    "ledger_sha256": "1a2242cc5ae77eeda9f35d446b5066cb057063f423378b76103895db7779e28b",
    "manifest_sha256": "33c3006d7554eab15e6072f86bcad186dc2dadc4ee6e4315fa791115176e558e",
    "ots": "/receipts/stamps/release_e40d0c7177fe.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975441",
    "released_at": "2026-11-11T12:45:19Z",
    "sha256": "9fb9618a5fc6adc480765e11674b926ec765faffdf3351541dc2e540d016a0bd",
    "wayback": [],
@@ -614,7 +629,7 @@
    "ledger_sha256": "071229a921ef3725a2405097389bb8d92d312864e4893d7d304bf83ce7b397a6",
    "manifest_sha256": "33c3006d7554eab15e6072f86bcad186dc2dadc4ee6e4315fa791115176e558e",
    "ots": "/receipts/stamps/release_dd86031ffcfd.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975441",
    "released_at": "2026-11-11T12:28:24Z",
    "sha256": "d490b71966b8489e7dda4d0206a6100210ab642127294bf95943aa2ad64e114c",
    "wayback": [
@@ -869,7 +884,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 119
+   "wayback_waiting": 56
   },
   {
    "changed": 369,
@@ -880,7 +895,7 @@
    "ledger_sha256": "071229a921ef3725a2405097389bb8d92d312864e4893d7d304bf83ce7b397a6",
    "manifest_sha256": "0527ce7e13ee3dc6c16c1f7c7b96695726d7dc541c7ffbcae394fd3541c3e35e",
    "ots": "/receipts/stamps/release_2df9bae63d3c.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975441",
    "released_at": "2026-11-11T12:13:18Z",
    "sha256": "bdcb60329cced8e526355f2798725b0e2f9b23b913528ab79bdfa55bc5d9fbb1",
    "wayback": [
@@ -1135,7 +1150,7 @@
      "url": "https://indahl.ai/brand/adguard.csv"
     }
    ],
-   "wayback_waiting": 28
+   "wayback_waiting": 22
   },
   {
    "changed": 4261,
@@ -1150,7 +1165,7 @@
    "released_at": "2026-11-11T00:30:27Z",
    "sha256": "fde2c29eef40194b0ba4c5184c6d5e677d252f878b60ad34463b3104f7a3c32b",
    "wayback": [],
-   "wayback_waiting": 2220
+   "wayback_waiting": 1974
   },
   {
    "changed": 4233,
