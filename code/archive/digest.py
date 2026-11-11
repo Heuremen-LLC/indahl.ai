@@ -34,7 +34,7 @@ def upgrade():
     return n
 def publish():
     os.makedirs(PUB + '/manifests', exist_ok=True); os.makedirs(PUB + '/stamps', exist_ok=True)
-    rc = [subprocess.run(['cp', 'chain.jsonl', PUB + '/chain.jsonl']).returncode, subprocess.run('cp manifests/* %s/manifests/ && cp stamps/* %s/stamps/ && cp PLAN.md digest.py %s/' % (PUB, PUB, PUB), shell=True).returncode]
+    rc = [subprocess.run(['cp', 'chain.jsonl', PUB + '/chain.jsonl']).returncode, subprocess.run('cp manifests/* %s/manifests/ && for f in stamps/*; do case "$f" in *.bak|*.bak-*) ;; *) cp "$f" %s/stamps/;; esac; done && cp PLAN.md digest.py %s/' % (PUB, PUB, PUB), shell=True).returncode]
     same = os.path.exists(PUB + '/chain.jsonl') and sha(PUB + '/chain.jsonl') == sha('chain.jsonl')   # 29 Oct (audit): read the public copy back
     if any(rc) or not same: print('archive: PUBLIC COPY FAILED', rc, same); return False
     return True

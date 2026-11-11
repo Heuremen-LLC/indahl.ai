@@ -41,7 +41,7 @@ for s in schools:
     assert s['course_titles_total'] == (j['courses_total'] if j['catalog'] == 'readable' else None), s['unitid']
     assert (j['hand']['label'] if j.get('hand') else '') == s['read_in_full_label']
 reads = {s['read_on'] for s in schools}; assert len(reads) == 1; READ_ON = reads.pop(); READ_ON_DATE = READ_ON.split(' (')[0]
-rif = {s['read_in_full_date'] for s in schools if s['read_in_full_date']}; assert rif == {'28 October 2026'}, rif
+rif = {s['read_in_full_date'] for s in schools if s['read_in_full_date']}; assert rif <= {'28 October 2026', '10 November 2026'}, rif   # 11 Nov: browser reads of 10 Nov added
 TEXT = dict({'page': PAGE, 'as_of': AS_OF}, **TX)
 files = {'oy_chatbot_citations.json': {'page': PAGE, 'as_of': AS_OF, 'rows': chat}, 'oy_findings.json': {'page': PAGE, 'as_of': AS_OF, 'findings': find},
          'oy_list.json': {'page': PAGE, 'as_of': AS_OF, 'rows': lst}, 'oy_schools.json': {'page': PAGE, 'read_on': READ_ON, 'schools': schools}, 'oy_text.json': TEXT}

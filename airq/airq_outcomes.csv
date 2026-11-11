@@ -1,12 +1,10 @@
-path,label,outcome,n,of,share,lo,hi,share_lo,share_hi
-"/comparison/Map reading (atm channels, raw)","Map reading (atm channels, raw)",ABOVE,129,139,0.9281,0.8726,0.9605,0.8726,0.9605
-"/comparison/cf_1 channels, raw","cf_1 channels, raw",ABOVE,135,139,0.9712,0.9283,0.9888,0.9283,0.9888
-/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,70,139,0.5036,0.4215,0.5855,0.4215,0.5855
-/headline,headline,CANNOT_TELL,70,139,0.5036,0.4215,0.5855,0.4215,0.5855
-"/previous/comparison/Map reading (atm channels, raw)","Map reading (atm channels, raw)",ABOVE,140,147,0.9524,0.905,0.9767,0.905,0.9767
-"/previous/comparison/cf_1 channels, raw","cf_1 channels, raw",ABOVE,143,147,0.9728,0.9321,0.9894,0.9321,0.9894
-/previous/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,66,147,0.449,0.3709,0.5297,0.3709,0.5297
-/previous/headline,headline,CANNOT_TELL,66,147,0.449,0.3709,0.5297,0.3709,0.5297
-"/live/comparison/Map reading (atm channels, raw)","Map reading (atm channels, raw)",ABOVE,56,61,0.918,0.8221,0.9645,0.8221,0.9645
-"/live/comparison/cf_1 channels, raw","cf_1 channels, raw",ABOVE,56,61,0.918,0.8221,0.9645,0.8221,0.9645
-/live/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,25,61,0.4098,0.2954,0.535,0.2954,0.535
+path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,n_other_tie,share_other_tie,share_other_tie_lo,share_other_tie_hi,outcome_other_tie,monitors_even
+"/comparison/Map reading (atm channels, raw)","Map reading (atm channels, raw)",ABOVE,129,139,0.9281,0.8726,0.9605,0.8726,0.9605,131,0.9424,0.8905,0.9706,ABOVE,21
+"/comparison/cf_1 channels, raw","cf_1 channels, raw",ABOVE,135,139,0.9712,0.9283,0.9888,0.9283,0.9888,136,0.9784,0.9385,0.9926,ABOVE,21
+/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,70,139,0.5036,0.4215,0.5855,0.4215,0.5855,74,0.5324,0.4497,0.6133,CANNOT_TELL,21
+"/previous/comparison/Map reading (atm channels, raw)","Map reading (atm channels, raw)",ABOVE,140,147,0.9524,0.905,0.9767,0.905,0.9767,140,0.9524,0.905,0.9767,ABOVE,22
+"/previous/comparison/cf_1 channels, raw","cf_1 channels, raw",ABOVE,143,147,0.9728,0.9321,0.9894,0.9321,0.9894,143,0.9728,0.9321,0.9894,ABOVE,22
+/previous/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,66,147,0.449,0.3709,0.5297,0.3709,0.5297,66,0.449,0.3709,0.5297,CANNOT_TELL,22
+"/live/comparison/Map reading (atm channels, raw)","Map reading (atm channels, raw)",ABOVE,55,60,0.9167,0.8193,0.9639,0.8193,0.9639,,,,,,
+"/live/comparison/cf_1 channels, raw","cf_1 channels, raw",ABOVE,56,60,0.9333,0.8407,0.9738,0.8407,0.9738,,,,,,
+/live/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,24,60,0.4,0.2857,0.5263,0.2857,0.5263,,,,,,

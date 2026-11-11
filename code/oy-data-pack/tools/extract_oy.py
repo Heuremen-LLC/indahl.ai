@@ -5,6 +5,7 @@ import re, html, os, json
 SITE = os.path.expanduser('~/bones-forge/indahl-ai/')
 
 def T(s):
+    s = re.sub(r'<a class="fb nosig"[^>]*>Follow</a>', '', s)   # 11 Nov: the Follow link entities.py puts beside a name is not page text
     return html.unescape(re.sub(r'<[^>]+>', '', s)).strip()
 
 def tables(page):
@@ -97,7 +98,7 @@ def school_row(c):
             'sentences': None if dash(c[3]) is None else int(T(c[3])), 'course_titles': None if dash(c[4]) is None else int(T(c[4])), 'read_in_full': dash(c[5]) or ''}
 
 def schools_table(tbl):
-    assert heads(tbl) == ['School', 'State', 'Site', 'Sentences', 'Course titles', 'Read in full']
+    assert heads(tbl) in (['School', 'State', 'Site', 'Sentences', 'Course titles', 'Read in full'], ['School', 'State', 'Site', 'Sentences', 'Course titles', 'Read by us'])   # 11 Nov: the page heading is now 'Read by us'
     return [school_row(c) for c in trs(tbl)]
 
 def school_page(page, unitid):
@@ -111,7 +112,7 @@ def school_page(page, unitid):
     site_m = first(r'Site: <a href="([^"]*)">', school_p); fed = first(r'Federal ID <a href="([^"]*)">(\d+)</a>', school_p)
     assert fed.group(2) == unitid
     site_text = T(first(r'<h2>Site</h2><p>(.*?)</p>', sec).group(1))
-    rif = re.search(r'<h2>Read in full</h2><p>Page type: <b>(.*?)</b> (.*?) Read (\d+ \w+ \d{4})\.</p>', sec, re.S)
+    rif = re.search(r'<h2>Read (?:in full|in a browser)</h2><p>Page type: <b>(.*?)</b> (.*?) Read (\d+ \w+ \d{4})\.(?:</p>| [^<]*</p>)', sec, re.S)
     def listing(title, lbl):
         m = re.search(r'<h2>' + title + r'</h2>(.*?)(?=<h2>|<p class="meta">Pages read by script)', sec, re.S); assert m, title
         blk = m.group(1); items = []
