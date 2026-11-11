@@ -13,6 +13,7 @@ bounces to cf-bounce.heuremen.com) on the same path, pacing and guards as newsle
   --feeds DIR      read public feeds and changelog.xml from DIR (path under it as on the site) instead of indahl.ai (a test)
   --now ISO        the time of this pass (a test of the daily and weekly digests)
   --fake-send DIR  write each email to a file in DIR instead of sending it, with no pauses (a test: needs --subs, nothing leaves the machine)
+  --entfeeds DIR   read the desks' feed snapshots for named things from DIR (brands.py snapshot names) instead of fetching them (a test)
 
 What counts as a change: every live_value row live_headlines.py writes after a desk's baseline row. That is an outcome flip, or a new value
 past the desk's material-change rule (outside the previous interval, or a field the plan's rule reads changed). A subscriber gets the rows of the
@@ -36,6 +37,16 @@ run holds both sections. An event is marked seen only when every subscriber who 
     that finds it, 'day' once a day on the first pass after 13:00 UTC, 'week' on Tuesdays on the first pass after 13:00 UTC. Progress stays
     per event and subscriber, so no event reaches anyone twice, and an event found before a subscriber confirmed is never sent to them.
 
+10 Nov 2026 evening (owner: follow any company or named thing): a record's en list holds entity ids (entities_index.json, written by the build).
+  - ENTITY events: for every entity in the index, the rows about it: its brand-page rows read from the desks' feeds (brands.py collect, into a
+    private snapshot folder, at most every ent_every minutes), and the table rows on the published pages whose subject names it (the public
+    mirror, read again only when a new version is published). A row added, a row no longer listed, or a row whose stated figure or outcome
+    moved is one change (read times, running counts and layout are never part of it). An entity seen for the first time is seeded and sends
+    nothing. Rows on TIME, UPTIME and CADA can flip between reads: such a change is sent only once it has held for an hour.
+  - Wired hooks (alert_hooks.py): change rows pass alert_hooks.guarded before they become events (a refused row stays unseen and is tried again
+    on the next pass), and every email accepted for sending records its outcome changes, new desks and page updates on the public alert receipts
+    (alert_hooks.email_sent). Entity events are not put on the public receipts: a receipt per named thing would show which names someone follows.
+
 Order: live_headlines.py run holds ledger/.live_headlines.lock while it writes. This reads the ledger under the same lock, so a row half written
 is never read and a row written while this runs is picked up on the next tick.
 Guards: one run at a time (its own lock); --cap N emails per run (default 60); 25 to 75 s between sends; after every 20 sends it reads
@@ -49,9 +60,10 @@ def arg(k, d=None): return A[A.index(k) + 1] if k in A else d
 DRY, TEST = '--dry' in A, '--test' in A; CAP = int(arg('--cap', 60))
 OUT = os.path.abspath(arg('--state', os.path.join(B, 'outcome_alerts')))
 LEDGER = os.path.abspath(arg('--ledger', os.path.join(B, 'ledger', 'ledger.jsonl')))
-SUBS = arg('--subs'); WEEKSTATE = arg('--weekstate'); FAKE = arg('--fake-send'); MIRROR = os.path.abspath(arg('--mirror', os.path.join(B, 'public_mirror', 'indahl.ai'))); FEEDS = arg('--feeds'); NOW = arg('--now')
+SUBS = arg('--subs'); WEEKSTATE = arg('--weekstate'); FAKE = arg('--fake-send'); ENTFEEDS = arg('--entfeeds'); MIRROR = os.path.abspath(arg('--mirror', os.path.join(B, 'public_mirror', 'indahl.ai'))); FEEDS = arg('--feeds'); NOW = arg('--now')
 SEEN_UP = os.path.join(OUT, 'seen_up.json'); SEEN_CL = os.path.join(OUT, 'seen_cl.json'); UPD = os.path.join(OUT, 'updates_state.json')
 JOURNAL = os.path.join(OUT, 'events.jsonl'); DIGEST = os.path.join(OUT, 'digest_last.json')
+ENT_STATE = os.path.join(OUT, 'entities_state.json'); ENT_FEEDS = os.path.join(OUT, 'ent_feeds'); ENT_INDEX = os.path.join(H, 'entities_index.json')
 SEEN, PROG, LOG, RUNLOCK = os.path.join(OUT, 'seen_rows.json'), os.path.join(OUT, 'sent.progress'), os.path.join(OUT, 'send.log'), os.path.join(OUT, '.run.lock')
 LH_LOCK = os.path.join(B, 'ledger', '.live_headlines.lock')
 MAP = os.path.join(H, 'alerts_map.json')
@@ -185,6 +197,8 @@ def follow_parts(r, m):
     u = [s for s in u if s in m['follow']]; dv = [s for s in dv if s in m['divs']]
     if u: p.append('updates on ' + _names(_uname(m, s) for s in u))
     if dv: p.append('everything in ' + ('the division ' if len(dv) == 1 else 'the divisions ') + _names(m['divs'][s][0] for s in dv))
+    en = [m.get('ents', {})[s]['name'] for s in (r.get('en') or []) if s in m.get('ents', {})]
+    if en: p.append('rows about ' + _names(en))
     if r.get('up'): p.append('new desks and new data')
     return p
 
@@ -195,6 +209,8 @@ def asks(r, m):
     u = [s for s in (r.get('u') or []) if s in m['follow']]; dv = [s for s in (r.get('dv') or []) if s in m['divs']]
     if u: p.append('when the published data changes on ' + _names(_uname(m, s) for s in u))
     if dv: p.append('when anything changes in ' + ('the division ' if len(dv) == 1 else 'the divisions ') + _names(m['divs'][s][0] for s in dv))
+    en = [m.get('ents', {})[s]['name'] for s in (r.get('en') or []) if s in m.get('ents', {})]
+    if en: p.append('when a row about %s changes or a new row about %s appears' % (_names(en), 'it' if len(en) == 1 else 'one of them'))
     if r.get('up'): p.append('when a new desk goes live, a desk publishes its first value or the changelog gains an entry')
     return ', and '.join(p) + ((', ' + FREQ[r['f']]) if FREQ.get(r.get('f') or 'now') else '')
 
@@ -338,6 +354,8 @@ def main_text(doc):
     """The visible text of a page's <main>: tags, scripts, styles, version stamps and the read-time embed block left out, so a change to the
     layout, the menu or the footer is no change. Anything marked class="nosig" (labels the site adds, not data) is left out too."""
     a = doc.find('<main'); b = doc.rfind('</main>'); m = doc[a:b] if a >= 0 and b > a else ''
+    m = re.sub(r'(?s)<a class="fb[^"]*"[^>]*>.*?</a>', '', m)          # a Follow label beside a name (entities.py bells) is not page text
+    m = re.sub(r'(?s)<a class="ent"[^>]*>(.*?)</a>', r'\1', m)         # nor is the link put on a name: the name stays, with no space added
     m = re.sub(r'(?s)<!--emb-->.*?<!--/emb-->', ' ', m)
     m = re.sub(r'(?is)<(script|style|noscript)\b.*?</\1>', ' ', m)
     m = re.sub(r'(?is)<([a-z]+)[^>]*\bclass="[^"]*\bnosig\b[^"]*"[^>]*>.*?</\1>', ' ', m)
@@ -428,6 +446,177 @@ def changelog_events():
     return sorted(out, key=lambda x: x['at'])
 
 
+# ------------------------------------------------------------------------------------------------ entities (companies and named things)
+ENT_CELLS = {'uptime': ('outcome',)}                  # cells whose move is a row change: the stated figure and the outcome (UPTIME: its status line flips)
+ENT_DWELL = {'time': 60, 'uptime': 60, 'cada': 60}    # brand-row desks whose readings flip between reads: a change must hold this many minutes
+
+
+def _ent_index():
+    try: return json.load(open(ENT_INDEX))
+    except Exception: return None
+
+
+def ent_feed_rows(ix, st, now, every):
+    """{entity id: {rowkey: [sig, label, desk key]}} from the desks' feeds through brands.py, or None when not due this pass"""
+    last = st.get('feeds_at')
+    if last and not ENTFEEDS and (now - D.datetime.fromisoformat(last.replace('Z', '+00:00'))).total_seconds() < (every - 2) * 60: return None
+    import brands as BR, shutil
+    BR.FEEDS = ENT_FEEDS; BR.LEDGER = LEDGER; BR._SNAP.clear(); BR._LED = None
+    os.makedirs(ENT_FEEDS, exist_ok=True)
+    if ENTFEEDS:
+        for f in os.listdir(ENTFEEDS):
+            if f.endswith('.json'): shutil.copyfile(os.path.join(ENTFEEDS, f), os.path.join(ENT_FEEDS, f))
+    else:
+        bad = {k: v for k, v in BR.refresh().items() if v.startswith('MISSING')}
+        if bad: print('alerts: named things: no snapshot for %s' % ', '.join(sorted(bad)))
+    rows, _ = BR.collect()
+    ents = ix['entities']; rawmap = {}; pref = []
+    for e in ents.values():
+        if e['kind'] == 'model' and 'key' in e:
+            for n in e['names']: rawmap[n] = e['id']
+        if e.get('item_prefix'): pref.append((e['item_prefix'], e['id']))
+    out = {}
+    for r in rows:
+        ids = [s for s, _ in r['on']] + [rawmap[x] for x in (r.get('raws') or []) if x in rawmap] + [i for pf, i in pref if r['item'].startswith(pf)]
+        cells = ENT_CELLS.get(r['key'], ('stated', 'outcome'))
+        sig = ' | '.join('%s: %s' % (c, r[c]) for c in cells if r.get(c))
+        for i in dict.fromkeys(ids):
+            d = out.setdefault(i, {}); k = 'f|%s|%s' % (r['key'], r['item']); n = 2
+            while k in d: k = 'f|%s|%s#%d' % (r['key'], r['item'], n); n += 1
+            d[k] = [sig, '%s: %s' % (r['desk'], r['item']), r['key']]
+    return out
+
+
+def _mirror_print():
+    h = hashlib.sha256()
+    for dp, dn, fn in os.walk(MIRROR):
+        dn[:] = [x for x in dn if not x.startswith('.')]
+        for f in sorted(fn):
+            if f.endswith('.html'):
+                st = os.stat(os.path.join(dp, f)); h.update(('%s %d %d\n' % (os.path.relpath(os.path.join(dp, f), MIRROR), st.st_size, st.st_mtime_ns)).encode())
+    return h.hexdigest()[:16]
+
+
+def ent_page_rows(ix, st):
+    """{entity id: {rowkey: [sig, label, page]}} from the table rows of the published pages (the public mirror), or None when the mirror has
+    not changed since the last pass"""
+    import entities as EN
+    fp = _mirror_print()
+    if st.get('mirror') == fp: return None, fp
+    pages = {}
+    for dp, dn, fn in os.walk(MIRROR):
+        dn[:] = [x for x in dn if not x.startswith('.')]
+        for f in fn:
+            if not f.endswith('.html'): continue
+            rel = os.path.relpath(os.path.join(dp, f), MIRROR)[:-5]
+            path = '/' if rel == 'index' else '/' + rel
+            if EN.skipped(path): continue
+            try: pages[path] = open(os.path.join(dp, f), encoding='utf-8').read()
+            except Exception: continue
+    ents = ix['entities']; covered = {i: set(e.get('covered') or []) for i, e in ents.items()}
+    found = EN.scan(pages, ents, ix.get('desks') or {}, ix.get('home') or {}, covered)
+    for e in ents.values():
+        if e.get('family'):
+            own = found.get(e['id']) or {}
+            found[e['id']] = {'rows': [r for m in e['family'] for r in (found.get(m) or {}).get('rows', [])], 'named': [],
+                              'sections': own.get('sections', []) + [x for m in e['family'] for x in (found.get(m) or {}).get('sections', []) if x not in own.get('sections', [])]}
+    out = {}
+    for i, f in found.items():
+        d = out.setdefault(i, {})
+        for r in f['rows']:
+            k = 'p|%s|%s|%s' % (r['page'], r['head'], r['cells'][0]); n = 2
+            while k in d: k = 'p|%s|%s|%s#%d' % (r['page'], r['head'], r['cells'][0], n); n += 1
+            d[k] = [EN.sig_text(' | '.join(r['cells'])), '%s on %s' % (r['cells'][0][:90], r['title'] or r['page']), r['page']]
+        for x in f.get('sections', []):
+            k = 's|%s|%s' % (x['page'], x['head']); n = 2
+            while k in d: k = 's|%s|%s#%d' % (x['page'], x['head'], n); n += 1
+            d[k] = [x['sig'], 'the section %s on %s' % (x['head'][:90], x['title'] or x['page']), x['page'], 'section']
+    return out, fp
+
+
+def _shown(x):
+    t = x[0] if x else ''
+    return t if len(t) <= 160 else t[:157] + '...'
+
+
+def _cut(t, n=90):
+    return t if len(t) <= n else t[:n - 3] + '...'
+
+
+def _moved(o, c):
+    """what moved in a row: the parts (cells, or stated and outcome) that differ, each as before, now"""
+    a, b = o[0].split(' | '), c[0].split(' | ')
+    if len(a) == len(b):
+        d = ['%s, now %s' % (_cut(x), _cut(y)) for x, y in zip(a, b) if x != y]
+        if d: return '; '.join(d[:3]) + ('; and more' if len(d) > 3 else '')
+    return '%s, now %s' % (_shown(o) or 'no figure', _shown(c) or 'no figure')
+
+
+def _excerpt(old, new):
+    """the words that changed in a block of text, with the words around them"""
+    i = 0
+    while i < min(len(old), len(new)) and old[i] == new[i]: i += 1
+    j = 0
+    while j < min(len(old), len(new)) - i and old[-1 - j] == new[-1 - j]: j += 1
+    i = old.rfind(' ', 0, max(0, i - 25)) + 1
+    k1, k2 = len(old) - j, len(new) - j
+    e1 = old.find(' ', k1 + 25); e2 = new.find(' ', k2 + 25)
+    return '\u201c%s\u201d now reads \u201c%s\u201d' % (_cut(old[i:e1 if e1 > 0 else len(old)], 160), _cut(new[i:e2 if e2 > 0 else len(new)], 160))
+
+
+def entity_events(m, now):
+    """events for every entity whose rows changed since the last pass, and the new state. Seeds on the first pass and for a new entity."""
+    ix = _ent_index()
+    if not ix: return [], None
+    st = _load(ENT_STATE, None); first = st is None; st = st or {}
+    every = m.get('ent_every', 30); stamp = now.strftime('%Y-%m-%dT%H:%M:%SZ')
+    try: fr = ent_feed_rows(ix, st, now, every)
+    except Exception as ex: print('alerts: named things: the feed rows could not be read (%s), kept as they were' % type(ex).__name__); fr = None
+    try: pr, fp = ent_page_rows(ix, st)
+    except Exception as ex: print('alerts: named things: the page rows could not be read (%s), kept as they were' % type(ex).__name__); pr, fp = None, st.get('mirror')
+    ents = st.get('ents') or {}; new_ents = {}; evs = []
+    for i, e in sorted(ix['entities'].items()):
+        old = ents.get(i)
+        rows = dict((old or {}).get('rows') or {}); cand = dict((old or {}).get('cand') or {})
+        if old is None:   # a new entity (or the first pass): seed whatever this pass read, send nothing
+            if fr is not None: rows.update((fr.get(i) or {}))
+            if pr is not None: rows.update((pr.get(i) or {}))
+            new_ents[i] = {'rows': rows, 'cand': {}, 'fseen': fr is not None, 'pseen': pr is not None}; continue
+        nx = {'rows': rows, 'cand': cand, 'fseen': old.get('fseen') or fr is not None, 'pseen': old.get('pseen') or pr is not None}
+        changed, added, removed = [], [], []
+        for src, cur, pre in ((fr, (fr or {}).get(i) or {}, ('f|',)), (pr, (pr or {}).get(i) or {}, ('p|', 's|'))):
+            if src is None: continue
+            if not old.get('fseen' if pre == ('f|',) else 'pseen'):   # this source read for the first time for this entity: seed it
+                for k in [k for k in rows if k.startswith(pre)]: rows.pop(k)
+                rows.update(cur); continue
+            for k in sorted(set(cur) | {k for k in rows if k.startswith(pre)}):
+                o, c = rows.get(k), cur.get(k)
+                if o and c and o[0] == c[0]: rows[k] = c; cand.pop(k, None); continue
+                hold = ENT_DWELL.get((c or o)[2], 0) if pre == ('f|',) else 0
+                if hold:
+                    cd = cand.get(k); cs = c[0] if c else None
+                    if not (cd and cd[0] == cs and (now - D.datetime.fromisoformat(cd[1].replace('Z', '+00:00'))).total_seconds() >= hold * 60):
+                        cand[k] = [cs, cd[1] if cd and cd[0] == cs else stamp]; continue
+                    cand.pop(k, None)
+                if o and c: changed.append((o, c)); rows[k] = c
+                elif c: added.append(c); rows[k] = c
+                else: removed.append(o); rows.pop(k, None)
+        new_ents[i] = nx
+        if first or not (changed or added or removed): continue
+        sec = lambda x: len(x) > 3 and x[3] == 'section'
+        lines = [('The text of %s changed: %s' % (c[1], _excerpt(o[0], c[0]))) if sec(c) else '%s: %s' % (c[1], _moved(o, c)) for o, c in changed[:8]]
+        lines += [('New: %s' % c[1]) if sec(c) else 'New row: %s%s' % (c[1], (' (%s)' % _shown(c)) if c[0] and c[0] not in c[1] else '') for c in added[:8]]
+        lines += ['No longer listed: %s' % o[1] for o in removed[:4]]
+        more = len(changed) + len(added) + len(removed) - min(len(changed), 8) - min(len(added), 8) - min(len(removed), 4)
+        if more > 0: lines.append('And %d more change%s in rows about it.' % (more, '' if more == 1 else 's'))
+        import entities as EN
+        body = '%s (%s)\nRows about it changed:\n%s\n%s%s' % (e['name'], e.get('kword') or EN.KIND_WORD.get(e['kind'], e['kind']), '\n'.join('  ' + l for l in lines), SITE, e['url'])
+        evs.append(dict(id='ent:%s:%s:%s' % (i, _sig(lines), now.strftime('%Y%m%d%H%M')), kind='ent', key=i, name=e['name'], at=stamp, text=body))
+    new_st = {'ents': new_ents, 'mirror': fp if pr is not None else st.get('mirror'), 'feeds_at': stamp if fr is not None else st.get('feeds_at')}
+    if first: print('alerts: first run for named things, %d seeded, nothing sent' % len(new_ents)); log('first run (named things): %d seeded, nothing sent' % len(new_ents))
+    return evs, new_st
+
+
 # ------------------------------------------------------------------------------------------------ the journal and delivery
 def _now():
     return D.datetime.fromisoformat(NOW.replace('Z', '+00:00')) if NOW else D.datetime.now(D.timezone.utc)
@@ -460,6 +649,7 @@ def wants(ev, r, m):
         k = ev['key']; div = m['follow'].get(k, {}).get('div')
         return k in u or (div in dv)
     if ev['kind'] == 'up': return bool(r.get('up'))
+    if ev['kind'] == 'ent': return ev['key'] in (r.get('en') or [])
     return False
 
 
@@ -475,7 +665,7 @@ def due(r, tok, last):
 
 
 def alert_text(tok, r, evs, m):
-    chs = [e for e in evs if e['kind'] == 'chg']; upd = [e for e in evs if e['kind'] == 'upd']; ups = [e for e in evs if e['kind'] == 'up']
+    chs = [e for e in evs if e['kind'] == 'chg']; upd = [e for e in evs if e['kind'] == 'upd']; ups = [e for e in evs if e['kind'] == 'up']; ent = [e for e in evs if e['kind'] == 'ent']
     o = r.get('o') or []; d = r.get('d') or []
     parts = []
     if chs:
@@ -486,6 +676,8 @@ def alert_text(tok, r, evs, m):
             if not r.get('all') and e['key'] not in d and why: b += '\nYou follow %s, which has rows on this desk.' % _names(why)
             blocks.append(b)
         parts.append(('An outcome changed on a desk you follow on indahl.ai.\n\n' if len(chs) == 1 else 'Outcomes changed on desks you follow on indahl.ai.\n\n') + '\n\n'.join(blocks))
+    if ent:
+        parts.append(('Rows changed about something you follow on indahl.ai.\n\n' if len(ent) == 1 else 'Rows changed about things you follow on indahl.ai.\n\n') + '\n\n'.join(e['text'] for e in ent))
     if upd:
         parts.append(('The published data changed on a page you follow.\n\n' if len(upd) == 1 else 'The published data changed on pages you follow.\n\n') + '\n\n'.join(e['text'] for e in upd))
     if ups:
@@ -495,7 +687,10 @@ def alert_text(tok, r, evs, m):
     elif f == 'week': subject = 'Your weekly indahl.ai digest'
     elif chs:
         names = list(dict.fromkeys(e['name'] for e in chs))
-        subject = ('Outcome change on ' if len(chs) == 1 else 'Outcome changes on ') + _names(names) + (', and more on indahl.ai' if upd or ups else '')
+        subject = ('Outcome change on ' if len(chs) == 1 else 'Outcome changes on ') + _names(names) + (', and more on indahl.ai' if upd or ups or ent else '')
+    elif ent:
+        names = list(dict.fromkeys(e['name'] for e in ent))
+        subject = 'Rows about ' + (_names(names) if len(names) <= 3 else 'things you follow') + ' changed' + (', and more on indahl.ai' if upd or ups else '')
     elif upd:
         names = list(dict.fromkeys(e['name'] for e in upd))
         subject = ('Update on ' if len(names) == 1 else 'Updates on ') + (_names(names) if len(names) <= 3 else 'pages you follow on indahl.ai') + (', and new on indahl.ai' if ups else '')
@@ -510,6 +705,18 @@ def alert_text(tok, r, evs, m):
                'Change what you get or unsubscribe: ' + manage, 'Unsubscribe with one click: ' + unsub, 'Privacy: %s/privacy#alerts' % SITE])
     t, h = wrap(body, foot)
     return subject, t, h, ['List-Unsubscribe:<%s>' % unsub, 'List-Unsubscribe-Post:List-Unsubscribe=One-Click']
+
+
+# the accountability hooks run on the real sender only: never on a dry run, a fake send or a scratch ledger (tests)
+HOOKS = not (DRY or FAKE or SUBS or '--ledger' in A or '--state' in A)
+
+
+def receipt_event(x):
+    """a journal event as alert_receipts.build reads it: an outcome change by its ledger row, anything else as an update"""
+    if x['kind'] == 'chg':
+        return {'type': 'outcome_change', 'id': x['id'], 'desk': x['key'], 'desk_name': x['name'], 'before': x.get('before'), 'now': x.get('now'),
+                'question': x.get('question') or '', 'why': x.get('why') or '', 'recorded_at': x['at']}
+    return {'type': 'update', 'uid': x['id'], 'desk': x['key'], 'desk_name': x['name'], 'at': x['at'], 'title': x['text'].split('\n')[0][:200]}
 
 
 def _load(path, default):
@@ -540,9 +747,16 @@ def detect(m):
     rows = value_rows()
     seen = _read_seen(SEEN, [r['id'] for r in rows], 'change rows')
     new = [r for r in rows if r['id'] not in seen] if seen is not None else []
+    if new and HOOKS:   # alert_hooks.guarded: only rows whose number is published; a refused row stays unseen and is tried again next pass
+        import alert_hooks
+        ok = {c['id'] for c in alert_hooks.guarded([{'id': r['id'], 'desk': r['desk']} for r in new])}
+        if len(ok) < len(new): print('alerts: %d change row(s) held by the guard until their number is published' % (len(new) - len(ok)))
+        new = [r for r in new if r['id'] in ok]
     for r in new:
-        import live_headlines as LH
-        evs.append(dict(id=r['id'], kind='chg', key=r['desk'], name=LH.DESKS.get(r['desk'], {}).get('name', r['desk'].upper()), at=now, text=describe(r)))
+        import live_headlines as LH, changes_feed as CF
+        spec = LH.DESKS.get(r['desk'], {})
+        evs.append(dict(id=r['id'], kind='chg', key=r['desk'], name=spec.get('name', r['desk'].upper()), at=now, text=describe(r),
+                        before=CF._show(r['prev']), now=CF._show(r['cur']), question=LH.H2.get(r['desk'], ''), why=CF._why(spec, r['prev'], r['cur'])))
     try: ups_all = up_events(_ledger_rows())
     except Exception as ex: print('alerts: new desks and new data could not be read (%s), none this run' % type(ex).__name__); ups_all = None
     seen_up = _read_seen(SEEN_UP, [x['uid'] for x in ups_all], 'new desks and new data') if ups_all is not None else None
@@ -556,6 +770,8 @@ def detect(m):
                         text='New on the changelog: %s\nReleased %s.\n%s' % (x['title'], x['at'][:16].replace('T', ' ') + ' UTC', x['link'])))
     upd, new_st = update_events(m)
     evs += upd
+    ent, ent_st = entity_events(m, _now())
+    evs += ent
     keep = journal_read()
     have = {e['id'] for e in keep}; evs = [e for e in evs if e['id'] not in have]
     journal_add(evs, keep)
@@ -564,7 +780,8 @@ def detect(m):
         if new_up: _save_seen(SEEN_UP, seen_up | {x['uid'] for x in new_up})
         if new_cl: _save_seen(SEEN_CL, seen_cl | {x['uid'] for x in new_cl})
         json.dump(new_st, open(UPD + '.tmp', 'w'), indent=0, sort_keys=True); os.replace(UPD + '.tmp', UPD)
-    for k, lab in (('chg', 'change row'), ('up', 'new desk, first value or changelog entry'), ('upd', 'page update')):
+        if ent_st is not None: json.dump(ent_st, open(ENT_STATE + '.tmp', 'w'), sort_keys=True, separators=(',', ':')); os.replace(ENT_STATE + '.tmp', ENT_STATE)
+    for k, lab in (('chg', 'change row'), ('up', 'new desk, first value or changelog entry'), ('upd', 'page update'), ('ent', 'named-thing update')):
         n = sum(1 for e in evs if e['kind'] == k)
         if n: print('alerts: %d new %s(s): %s' % (n, lab, ', '.join(sorted({e['name'] for e in evs if e['kind'] == k}))))
     return keep + evs
@@ -599,6 +816,11 @@ def alerts(m):
         ok, err = send_one(e, subject, t, h, hdr)
         if not ok: log('STOPPED %s %s' % (tok[:12], err)); print('STOPPED at', tok[:12], err); sys.exit(2)
         with open(PROG, 'a') as f: f.write(''.join(pk(x['id'], tok) + '\n' for x in evs))
+        if HOOKS:   # alert_hooks.email_sent: the public alert receipts gain the channel kind email for each event in this email (never subscriber data)
+            try:
+                import alert_hooks
+                alert_hooks.email_sent([receipt_event(x) for x in evs if x['kind'] in ('chg', 'up', 'upd')])
+            except Exception as ex: log('receipts hook failed (%s)' % type(ex).__name__)
         if (r.get('f') or 'now') != 'now':
             last[tok[:12]] = _now().strftime('%Y-%m-%dT%H:%M:%SZ'); json.dump(last, open(DIGEST + '.tmp', 'w')); os.replace(DIGEST + '.tmp', DIGEST)
         log('ok %s (%d event(s), %s)' % (tok[:12], len(evs), r.get('f') or 'now')); recent.append(e)

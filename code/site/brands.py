@@ -508,7 +508,7 @@ def collect():
             if not on: continue
             try: out = {c: render(r[c]) for c in CELLS}
             except Miss as m: skipped.append('%s: %s' % (r['key'], m)); SKIP[r['key']] = SKIP.get(r['key'], 0) + 1; continue
-            out.update({'key': r['key'], 'desk': SRC[r['key']][1], 'question': r['question'][0], 'link': r['link'], 'receipt': r['receipt'] or '',
+            out.update({'key': r['key'], 'desk': SRC[r['key']][1], 'question': r['question'][0], 'link': r['link'], 'receipt': r['receipt'] or '', 'raws': [x for x, _ in r['raws']],
                         'receipt_url': _receipt_url(r['receipt']), 'on': on, 'cells': {c: r[c] for c in CELLS}})
             rows.append(out)
     if skipped: print('  brands: %d rows left off, a field the row needs is not in its feed (first: %s)' % (len(skipped), skipped[0]))
@@ -532,27 +532,41 @@ def _desks_line(names):
     names = list(dict.fromkeys(names))
     return names[0] if len(names) == 1 else ', '.join(names[:-1]) + ' and ' + names[-1]
 
-def _page_body(e, rows, items, csv_href):
+def rows_tables(rows, items, h=2):
+    """the traced rows, grouped by division (10 Nov 2026 evening: a brand page covers every division it appears in), then desk and question"""
+    import entities as EN
+    groups = {}
+    for i, role in items:
+        dv = EN.desk_of(rows[i]['link'], DESKS, HOMEMAP)[2]
+        groups.setdefault(dv, {}).setdefault(rows[i]['desk'], {}).setdefault(rows[i]['question'], []).append((i, role))
+    o = []
+    for dv in sorted(groups, key=lambda d: EN.DIV_ORDER.index(d) if d in EN.DIV_ORDER else 9):
+        o.append(f'<h{h} id="div-{E(dv.strip("/"))}">{E(EN.DIV_NAME.get(dv, dv.strip("/").upper()))}</h{h}>')
+        for desk in sorted(groups[dv]):
+            o.append(f'<h{h + 1} id="{E(desk.lower())}">{E(desk)}</h{h + 1}>')
+            for q, its in groups[dv][desk].items():
+                o.append(f'<h{h + 2}>{E(q)}</h{h + 2}><div class="scroll"><table class="mtx"><thead><tr>' + ''.join(f'<th>{t}</th>' for _, t in COLS) + '<th>Links</th></tr></thead><tbody>')
+                for i, role in its:
+                    r = rows[i]
+                    lk = f'<a href="{E(r["link"])}">{E(r["desk"])}</a>' + (f' &middot; <a href="{E(r["receipt_url"])}">receipt</a>' if r['receipt_url'] else '')
+                    o.append('<tr>' + ''.join('<td>' + E(ROLE[role] if c == 'role' else r[c]) + '</td>' for c, _ in COLS) + f'<td class="lk">{lk}</td></tr>')
+                o.append('</tbody></table></div>')
+    return ''.join(o)
+
+DESKS, HOMEMAP = {}, {}
+
+def _page_body(e, rows, items, csv_href, extra=''):
     s = e['slug']; nm = E(e['name'])
     o = [f'<section class="legal"><p class="meta"><a href="/brand">Brands</a> &middot; Stated against delivered</p>',
          f'<p>Every row the desks of Heuremen LLC publish about {nm}: the desk, the question, what was stated, what was delivered, the outcome the desk gives and when the desk read it. '
          'Each row links to its desk, which holds the current reading.</p>',
-         f'<p><a href="{csv_href}" download>These rows as CSV</a> &middot; Named here and want to answer a row? <a href="/respond?u=brand-{E(s)}">Respond</a></p>']
+         (f'<p><a href="{csv_href}" download>These rows as CSV</a> &middot; ' if items else '<p>') + f'Named here and want to answer a row? <a href="/respond?u=brand-{E(s)}">Respond</a></p>']
     if e.get('note'): o.append(f'<p class="meta">{E(e["note"])}</p>')
     used = {(rows[i]['key']) for i, _ in items}
     al = [a for a in e['aliases'] if a['desk'] in used]
-    o.append('<h2>Names on this page</h2><ul>' + ''.join(f'<li><strong>{E(a["raw"])}</strong> on {E(SRC[a["desk"]][1])}: {E(a["decided"])}.</li>' for a in al) + '</ul>')
-    groups = {}
-    for i, role in items: groups.setdefault(rows[i]['desk'], {}).setdefault(rows[i]['question'], []).append((i, role))
-    for desk in sorted(groups):
-        o.append(f'<h2 id="{E(desk.lower())}">{E(desk)}</h2>')
-        for q, its in groups[desk].items():
-            o.append(f'<h3>{E(q)}</h3><div class="scroll"><table class="mtx"><thead><tr>' + ''.join(f'<th>{t}</th>' for _, t in COLS) + '<th>Links</th></tr></thead><tbody>')
-            for i, role in its:
-                r = rows[i]
-                lk = f'<a href="{E(r["link"])}">{E(r["desk"])}</a>' + (f' &middot; <a href="{E(r["receipt_url"])}">receipt</a>' if r['receipt_url'] else '')
-                o.append('<tr>' + ''.join('<td>' + E(ROLE[role] if c == 'role' else r[c]) + '</td>' for c, _ in COLS) + f'<td class="lk">{lk}</td></tr>')
-            o.append('</tbody></table></div>')
+    if al: o.append('<h2>Names on this page</h2><ul>' + ''.join(f'<li><strong>{E(a["raw"])}</strong> on {E(SRC[a["desk"]][1])}: {E(a["decided"])}.</li>' for a in al) + '</ul>')
+    o.append(rows_tables(rows, items))
+    if extra: o.append(extra)
     o.append('<p class="meta">The outcome is the desk&rsquo;s own word. Above, below, consistent and cannot tell are kept apart and never folded together. '
              'Rows are as each desk last read them when this page was built, and the read time is on every row. No row here is a new reading. '
              'To correct or remove a row, use the <a href="/correction">correction or removal form</a>.</p></section>')
@@ -570,6 +584,10 @@ def _dataset(e, path, csv_href, aliases, desks):
           "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": SITE + csv_href}]}
     return '<script type="application/ld+json">' + json.dumps(ds, ensure_ascii=False).replace('</', '<\\/') + '</script>'
 
+def entity_rows(rows, ns):
+    """brand-page rows on an entity page (a model): the same traced cells, in the same table, grouped by division"""
+    return rows_tables(rows, [(n, 'named') for n in ns]).replace('<td>', '<td class="fr">')
+
 SEARCH_JS = """// Brand index search: filters the list as you type. No tracking, nothing sent.
 (function () {
   var q = document.getElementById('brand-q'), li = document.querySelectorAll('#brand-list li'), n = document.getElementById('brand-none'); if (!q) return;
@@ -581,23 +599,34 @@ SEARCH_JS = """// Brand index search: filters the list as you type. No tracking,
 })();
 """
 
-def add_pages(PAGES, page, hero_slim, HOME=None, FEED=None, refresh_feeds=True):
-    """The one hook build_site.py calls. Refreshes the snapshots, renders every brand page and the index into PAGES, writes the CSVs and rows.json."""
+def add_pages(PAGES, page, hero_slim, HOME=None, FEED=None, refresh_feeds=True, desks=None):
+    """The one hook build_site.py calls. Refreshes the snapshots, renders every brand page and the index into PAGES, writes the CSVs and rows.json.
+    10 Nov 2026 evening: also the entity index (entities.py): rows about each organisation on every served page, the pages that name it, a brand
+    page for an organisation named only on pages (Rigetti, IonQ, Quantinuum, the forecast agencies), and a light page for every other entity."""
+    import entities as EN
+    global DESKS, HOMEMAP
+    DESKS, HOMEMAP = desks or {}, dict(HOME or {})
     if refresh_feeds:
         st = refresh(); bad = {k: v for k, v in st.items() if v.startswith('MISSING')}
         if bad: print('  brands: no snapshot for', bad)
     rows, unmapped = collect(); bb = by_brand(rows)
+    eidx = EN.build(PAGES, rows, DESKS, HOMEMAP)
+    entd = {e['slug']: e for e in entities()['entities']}
+    page_only = sorted(s for s, x in eidx.items() if x['kind'] in EN.BRAND_KINDS and s not in bb and s in entd and (x['page_rows'] or x['named']))
+    for s in page_only: bb[s] = (entd[s], [])
     os.makedirs(CSVDIR, exist_ok=True)
     keep = set()
     idx = []
     for s, (e, items) in sorted(bb.items(), key=lambda x: x[1][0]['name'].lower()):
-        path = '/brand/' + s; csv_href = '/brand/' + s + '.csv'; keep.add(s + '.csv')
-        open(os.path.join(CSVDIR, s + '.csv'), 'w', encoding='utf-8').write(_csv(e, rows, items))
+        path = '/brand/' + s; csv_href = '/brand/' + s + '.csv'
+        if items: keep.add(s + '.csv'); open(os.path.join(CSVDIR, s + '.csv'), 'w', encoding='utf-8').write(_csv(e, rows, items))
         used = {rows[i]['key'] for i, _ in items}
         desks = [rows[i]['desk'] for i, _ in items]
         aliases = [a['raw'] for a in e['aliases'] if a['desk'] in used]
+        x = eidx.get(s) or {}
+        if not desks: desks = [d[1] for d in x.get('desks', [])] or ['the pages that name it']
         desc = f'{e["name"]}: every row the Heuremen LLC desks publish about it, from {_desks_line(desks)}, with the stated figure, the delivered figure, the outcome and the read time.'
-        body = _page_body(e, rows, items, csv_href) + _dataset(e, path, csv_href, aliases, desks)
+        body = _page_body(e, rows, items, csv_href, EN.brand_extra(s, eidx, PAGES, DESKS, HOMEMAP)) + (_dataset(e, path, csv_href, aliases, desks) if items else '')
         PAGES[path] = page(path, f'{e["name"]}: Stated Against Delivered | Brands | Heuremen LLC', desc, body, hero_slim(E(e['name'])))
         if HOME is not None: HOME[path] = '/hermes'
         other = [a for a in aliases if a.lower() != e['name'].lower()]
@@ -622,8 +651,10 @@ def add_pages(PAGES, page, hero_slim, HOME=None, FEED=None, refresh_feeds=True):
     if '/hermes' in PAGES and '</main>' in PAGES['/hermes'] and 'href="/brand"' not in PAGES['/hermes']:
         i = PAGES['/hermes'].rfind('</main>')
         PAGES['/hermes'] = PAGES['/hermes'][:i] + '<p class="meta"><a href="/brand">Brands</a>: one page for each organisation our desks measure, with every row about it.</p>' + PAGES['/hermes'][i:]
-    json.dump({'built': D.datetime.now(D.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'rows': rows, 'unmapped': unmapped}, open(ROWS, 'w'), ensure_ascii=False, default=list)
-    print('brands: %d brand pages and the index' % len(bb))
+    json.dump({'built': D.datetime.now(D.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'rows': rows, 'unmapped': unmapped, 'page_only': page_only}, open(ROWS, 'w'), ensure_ascii=False, default=list)
+    EN.write(eidx, DESKS, HOMEMAP)
+    EN.add_pages(PAGES, page, hero_slim, HOME, eidx, rows, DESKS, HOMEMAP, lambda ns: entity_rows(rows, ns))
+    print('brands: %d brand pages and the index (%d named only on pages)' % (len(bb), len(page_only)))
     return bb
 
 
@@ -676,8 +707,15 @@ def gate():
             for g in got:
                 for c in ('row', 'stated', 'delivered', 'interval', 'outcome', 'note', 'read'):
                     if g[c] and g[c] not in want: errs.append('%s.csv: untraced %s %r' % (s, c, g[c][:60]))
+    po = set(built.get('page_only') or [])
+    for s in po:
+        if s not in slugs: errs.append('page-only brand %s is not in the entity map' % s)
+        elif not os.path.exists(os.path.join(HERE, 'brand', s + '.html')): errs.append('no page brand/%s.html' % s)
+        else:
+            m = open(os.path.join(HERE, 'brand', s + '.html'), encoding='utf-8').read(); m = m[m.find('<main'):m.rfind('</main>')]
+            if re.search(r'<td>', m): errs.append('brand/%s has rows of no desk' % s)   # its rows are page rows (td class pr), traced by the entities gate
     for f in os.listdir(os.path.join(HERE, 'brand')) if os.path.isdir(os.path.join(HERE, 'brand')) else []:
-        if f.endswith('.html') and f[:-5] not in pages: errs.append('stale page brand/%s' % f)
+        if f.endswith('.html') and f[:-5] not in pages and f[:-5] not in po: errs.append('stale page brand/%s' % f)
     for e in errs[:30]: print('  BRANDS', e)
     print(('BRANDS GATE: REFUSED, %d problems' % len(errs)) if errs else 'BRANDS GATE: every brand-page number traces to a desk row or a ledger row (%d rows, %d pages)' % (len(built['rows']), len(pages)))
     return 1 if errs else 0

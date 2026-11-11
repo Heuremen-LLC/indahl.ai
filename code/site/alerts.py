@@ -19,7 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); B = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(B, 'ledger'))
 E = html.escape
 MAP = os.path.join(HERE, 'alerts_map.json'); LIST_JS = os.path.join(HERE, 'alerts_list.js')
-JS_HASH_SRC = 'signup.js v2'   # bump with a change to the script served at /signup.js (alerts.js), so browsers fetch the new one
+JS_HASH_SRC = 'signup.js v3'   # bump with a change to the script served at /signup.js (alerts.js), so browsers fetch the new one
 TICK_BUS = os.path.join(B, 'watch', 'tick_bus.py'); TICKS = os.path.join(B, 'watch', 'ticks.log'); TARGETS = os.path.join(B, 'nodes_repo', 'drift', 'targets.json')
 
 # 10 Nov 2026 (owner's word): ONE sign-up form, in the footer of every page and on /alerts. Boxes: nl (weekly newsletter, at once), up (new desks
@@ -35,6 +35,9 @@ CSS = """
 .su-msg{margin:6px 0 0;font-weight:600;color:#efe5cf;font-size:14px}.su-msg:empty{display:none}.nl-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
 main .su{margin:14px 0 10px;border-bottom:0;border-top:1px solid var(--rule);padding-top:12px}main .su-h,main .su-c label,main .su-msg{color:var(--ink)}main .su-say,main .su-f{color:var(--mid)}main .su input[type=email]{border-color:var(--rule);background:var(--paper)}
 main .su .btn{background:var(--ink);color:var(--paper)}.su-list{list-style:none;padding:0;margin:4px 0 12px}.su-list li{margin:6px 0;line-height:1.4}.su-list input{vertical-align:-2px;margin:0 4px 0 0}
+.ent-q{font:inherit;font-size:15px;padding:6px 8px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);width:100%;max-width:420px;box-sizing:border-box}
+.linkbtn{font:inherit;font-size:13px;padding:1px 8px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer}#ent-picked{margin:6px 0 10px}
+a.fb{display:inline-block;font-size:11.5px;line-height:1.3;padding:0 5px;margin:0 0 0 4px;border:1px solid var(--rule);border-radius:3px;text-decoration:none;color:var(--mid);vertical-align:1px;white-space:nowrap}a.fb:hover{color:var(--ink);border-color:var(--ink)}a.ent{color:inherit}
 .su-div{margin:14px 0 4px}.su-dh{margin:0 0 2px;font-weight:600}.su-dh input{vertical-align:-2px;margin:0 6px 0 0}.su-k{display:block;font-size:13px;color:var(--mid)}
 @media (max-width:520px){.su-f select{font-size:16px}.su-c{flex-direction:column;gap:0}.su-c label{font-size:14px;padding:5px 0}.su-list li{margin:9px 0}}
 """
@@ -200,6 +203,20 @@ def brand_box(slug, name):
     return _box('o', slug, 'Outcome changes on desks with rows about %s' % E(name), True)
 
 
+# 10 Nov 2026 evening (owner: follow any company or named thing): en=<entity id>, one email when a row about it changes or a new row about it
+# appears on any desk. Rows from the desks' feeds are read about every ENT_EVERY minutes; rows on pages change when a new version is published.
+ENT_EVERY = 30
+
+
+def ent_every(e):
+    return ('checked ' + every_label(ENT_EVERY)) if e.get('feed') else 'sent when we publish a new version'
+
+
+def ent_box(i, e, on=True):
+    import entities as EN
+    return _box('en', i, 'Rows about this %s (%s), %s' % (e.get('kword') or EN.KIND_WORD[e['kind']], E(e['name']), ent_every(e)), on)
+
+
 FOOT = '<footer class="foot"><div class="wrap">'
 NO_FOOT_FORM = ('/alerts', '/inquire-ok')   # /alerts carries the form in the page; /inquire-ok is the shell of the worker's answer pages
 
@@ -211,11 +228,16 @@ def script_tag():
 def footer(PAGES):
     """Put the form in every footer (call once, after every page is built). Returns the number of pages."""
     m = json.load(open(MAP)); items, brands = m['follow'], m['brands']; n = 0; tag = script_tag()
+    import entities as EN
+    try: eidx = EN.load()
+    except Exception: eidx = {}
+    by_url = {e['url']: i for i, e in eidx.items()}
     for k in list(PAGES):
         d = PAGES[k]
         if k in NO_FOOT_FORM or FOOT not in d or 'class="su"' in d: continue
         extra = ''; s = k.lstrip('/')
         if s in items: extra = item_box(s, items[s])
+        elif k in by_url: extra = ent_box(by_url[k], eidx[by_url[k]])   # a brand page, an entity page or an OY school page: this company or named thing
         elif k.startswith('/brand/') and k[7:] in brands: extra = brand_box(k[7:], brands[k[7:]][0])
         d = d.replace(FOOT, FOOT + signup_form(extra), 1); n += 1
         PAGES[k] = d
@@ -287,7 +309,11 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
             items[s] = dict(name=nm, what=q, div='', mode='outcome', every=lab, every_min=mn, src=src)
     sig = {s: SIGNALS.get(s, {}) for s, it in items.items() if it['mode'] != 'outcome'}
     dwell = {s: DWELL[s] for s in sig if s in DWELL}
-    json.dump({'desks': out_desks, 'brands': brands, 'follow': items, 'divs': divs, 'signals': sig, 'dwell': dwell, 'tick_min': tmin},
+    import entities as EN
+    try: eidx = EN.load()
+    except Exception: eidx = {}
+    ents = {i: {'name': e['name'], 'kind': e['kind'], 'kword': e.get('kword') or EN.KIND_WORD[e['kind']], 'url': e['url'], 'feed': bool(e['feed'])} for i, e in eidx.items()}
+    json.dump({'desks': out_desks, 'brands': brands, 'follow': items, 'divs': divs, 'signals': sig, 'dwell': dwell, 'tick_min': tmin, 'ents': ents, 'ent_every': ENT_EVERY},
               open(MAP, 'w'), ensure_ascii=False, indent=0, sort_keys=True)
     ups = {s: [it['name'], it['what'], kind_label(it), it['div']] for s, it in items.items() if it['mode'] == 'update'}
     for s, it in items.items():   # a division's own page can be followed alone (u=<division>), as on /alerts
@@ -295,8 +321,9 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
     dvl = {s: [v[0], v[1]] for s, v in divs.items()}
     every = {s: kind_label(it) for s, it in items.items() if it['mode'] == 'outcome'}
     js = ('// Generated by alerts.py at each build: what an alert can follow. Do not edit by hand.\n'
-          'export const ALERT_DESKS = %s;\nexport const ALERT_BRANDS = %s;\nexport const ALERT_UPS = %s;\nexport const ALERT_DIVS = %s;\nexport const ALERT_EVERY = %s;\n'
-          % tuple(json.dumps(x, ensure_ascii=False, sort_keys=k) for x, k in ((out_desks, True), (brands, True), (ups, True), (dvl, False), (every, True))))   # divisions keep the menu order
+          'export const ALERT_DESKS = %s;\nexport const ALERT_BRANDS = %s;\nexport const ALERT_UPS = %s;\nexport const ALERT_DIVS = %s;\nexport const ALERT_EVERY = %s;\nexport const ALERT_ENTS = %s;\n'
+          % tuple(json.dumps(x, ensure_ascii=False, sort_keys=k) for x, k in ((out_desks, True), (brands, True), (ups, True), (dvl, False), (every, True),
+                                                                              ({i: [e['name'], e['kword']] for i, e in ents.items()}, True))))   # divisions keep the menu order
     if not os.path.exists(LIST_JS) or open(LIST_JS, encoding='utf-8').read() != js: open(LIST_JS, 'w', encoding='utf-8').write(js)
     # /alerts: grouped by division, each with its own "everything in this division" box, then its desks
     blocks = []
@@ -310,7 +337,13 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
         blocks.append('<div class="su-div"><p class="su-dh"><label><input type="checkbox" name="dv" value="%s"><a href="/%s">%s</a>: everything in this division</label></p>'
                       '<ul class="su-list"><li><label><input type="checkbox" name="u" value="%s"> <strong>%s main page</strong></label> <span class="su-k">Updates, %s</span></li>%s</ul></div>'
                       % (E(dslug), E(dslug), E(dname), E(dslug), E(dname), E(items[dslug]['page_every'] if items[dslug]['page_every_min'] is not None else 'sent when we publish a new version'), li))
-    listing = '<p class="su-h">The desks and divisions you tick</p>' + ''.join(blocks)
+    listing = ('<p class="su-h" id="named">Companies, models and other named things</p>'
+               '<p class="su-k">One email when a row about it changes or a new row about it appears, on any desk in any division. Rows the desks read from their feeds are '
+               + E(ent_every({'feed': 1})) + '. Rows on other pages are sent when we publish a new version.</p>'
+               '<p><label for="ent-q">Find a company, agency, model, quantum backend, school or package</label><br><input type="search" id="ent-q" class="ent-q" autocomplete="off" placeholder="IBM, Falcon, ibm_kingston, NOAA"></p>'
+               '<div id="ent-picked" class="su-c" hidden></div><div id="ent-res" aria-live="polite"></div>'
+               '<noscript><p class="su-k">Every company and organisation has a <a href="/brand">brand page</a> with its own box in the form at its foot.</p></noscript>'
+               '<p class="su-h">The desks and divisions you tick</p>' + ''.join(blocks))
     body = ('<section class="legal"><p>One form for every email from indahl.ai. The same form sits at the foot of the site&rsquo;s pages.</p>'
             '<p>The weekly newsletter comes every Tuesday and starts at once. New desks and new data sends one email when a new desk goes live, when a desk '
             'publishes its first value under its change rule, and when a release adds an entry to the <a href="/changelog">changelog</a>.</p>'
@@ -322,8 +355,10 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
             '<p>You can have alerts and updates as they happen, in one daily digest or in one weekly digest on Tuesdays. Several changes found together come in one email.</p>'
             '<p>For every box but the newsletter, we email a confirmation link first and send nothing else until you open it. Every email has a link to unsubscribe, '
             'and every alert has a link to change what you get. Each outcome desk&rsquo;s changes are also on its own feed, for example <a href="/airq/changes.xml">/airq/changes.xml</a>, '
-            'and each <a href="/brand">brand page</a> offers the desks with rows about that organisation.</p>'
-            + signup_form('', listing) + '</section>')
+            'and each <a href="/brand">brand page</a> offers the rows about that organisation.</p>'
+            '<p>You can also follow one company, agency, model, model family, quantum backend, school or package: search for it below, or tick the box at the foot of its page. '
+            'One email comes when a row about it changes or a new row about it appears on any desk.</p>'
+            + signup_form('', listing) + '</section><script src="/e/search.js" defer></script>')
     PAGES['/alerts'] = page('/alerts', 'Email Updates | Heuremen LLC', 'The weekly newsletter, new desks and new data, and an email when an outcome or the published data changes on the indahl.ai desks and divisions you follow, with a confirmation link first for alerts.',
                             body, hero_slim('Email Updates'))
     if HOME is not None: HOME['/alerts'] = '/hermes'

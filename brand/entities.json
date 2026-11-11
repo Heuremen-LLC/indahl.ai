@@ -4637,6 +4637,136 @@
      "decided": "the desk names the organisation itself (its own status page)"
     }
    ]
+  },
+  {
+   "slug": "rigetti",
+   "name": "Rigetti Computing",
+   "kind": "company",
+   "note": "Rigetti Computing, Inc. Named on QIA pages: its processors run on Amazon Braket.",
+   "aliases": [],
+   "names": [
+    "Rigetti"
+   ]
+  },
+  {
+   "slug": "ionq",
+   "name": "IonQ",
+   "kind": "company",
+   "note": "IonQ, Inc. Named on QIA pages.",
+   "aliases": [],
+   "names": [
+    "IonQ"
+   ]
+  },
+  {
+   "slug": "quantinuum",
+   "name": "Quantinuum",
+   "kind": "company",
+   "note": "Quantinuum Ltd. Named on QIA pages.",
+   "aliases": [],
+   "names": [
+    "Quantinuum"
+   ]
+  },
+  {
+   "slug": "noaa",
+   "name": "NOAA",
+   "kind": "agency",
+   "note": "National Oceanic and Atmospheric Administration. The National Weather Service, the National Hurricane Center, the Storm Prediction Center, the Space Weather Prediction Center and the Climate Prediction Center are parts of NOAA with their own pages and are not merged here.",
+   "aliases": [],
+   "names": [
+    "NOAA",
+    "National Oceanic and Atmospheric Administration"
+   ]
+  },
+  {
+   "slug": "national-hurricane-center",
+   "name": "National Hurricane Center",
+   "kind": "agency",
+   "note": "National Hurricane Center, part of NOAA.",
+   "aliases": [],
+   "names": [
+    "National Hurricane Center",
+    "NHC"
+   ]
+  },
+  {
+   "slug": "storm-prediction-center",
+   "name": "Storm Prediction Center",
+   "kind": "agency",
+   "note": "Storm Prediction Center, part of NOAA.",
+   "aliases": [],
+   "names": [
+    "Storm Prediction Center",
+    "SPC"
+   ]
+  },
+  {
+   "slug": "space-weather-prediction-center",
+   "name": "Space Weather Prediction Center",
+   "kind": "agency",
+   "note": "Space Weather Prediction Center, part of NOAA.",
+   "aliases": [],
+   "names": [
+    "Space Weather Prediction Center",
+    "SWPC"
+   ]
+  },
+  {
+   "slug": "climate-prediction-center",
+   "name": "Climate Prediction Center",
+   "kind": "agency",
+   "note": "Climate Prediction Center, part of NOAA.",
+   "aliases": [],
+   "names": [
+    "Climate Prediction Center",
+    "CPC"
+   ]
+  },
+  {
+   "slug": "eia",
+   "name": "U.S. Energy Information Administration",
+   "kind": "agency",
+   "note": "U.S. Energy Information Administration, part of the Department of Energy, which has its own page.",
+   "aliases": [],
+   "names": [
+    "EIA",
+    "Energy Information Administration",
+    "U.S. Energy Information Administration"
+   ]
+  },
+  {
+   "slug": "jpl",
+   "name": "NASA Jet Propulsion Laboratory",
+   "kind": "agency",
+   "note": "Jet Propulsion Laboratory, run for NASA.",
+   "aliases": [],
+   "names": [
+    "JPL",
+    "Jet Propulsion Laboratory"
+   ]
+  },
+  {
+   "slug": "us-news",
+   "name": "U.S. News & World Report",
+   "kind": "company",
+   "note": "U.S. News & World Report, publisher of the education rankings the RANK desk reads.",
+   "aliases": [],
+   "names": [
+    "US News",
+    "U.S. News",
+    "U.S. News & World Report"
+   ]
+  },
+  {
+   "slug": "mohela",
+   "name": "MOHELA",
+   "kind": "organisation",
+   "note": "Missouri Higher Education Loan Authority.",
+   "aliases": [],
+   "names": [
+    "MOHELA"
+   ]
   }
  ],
  "excluded": [

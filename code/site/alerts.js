@@ -12,18 +12,31 @@
 //   alpc:<hash>    confirmation emails asked for one address today (3 at most), so the field cannot be used to flood someone.
 // /alerts/confirm?t=  GET one button, POST confirms.   /alerts/manage?t=  GET the desk list, POST saves or unsubscribes.
 // /alerts/unsubscribe?t=  GET one button, POST (the button, or a mail program's one-click List-Unsubscribe-Post) deletes the record.
+//                  en (10 Nov evening): companies, models and other named things (entity ids from entities_index.json, at most MAX_EN): one email
+//                  when a row about one changes or a new row about one appears. The field is en because e holds the address.
+// /alerts?e=<id> (10 Nov evening): /alerts with that named thing ticked in the form, for the Follow links beside names on the site (no script needed).
 // /signup (10 Nov 2026): the one sign-up form in every footer and on /alerts. Boxes nl (weekly newsletter, subscribed at once through
 // newsletter.js subscribeNewsletter, single opt-in as before), up, all, d=<desk>, o=<organisation>. Any box but nl goes through the double
 // opt-in above. /signup.js is the form's script.
 // Nothing here is logged, posted or emailed. Addresses never leave the private KV except to Cloudflare Email Sending at send time.
-import { ALERT_DESKS, ALERT_BRANDS, ALERT_UPS, ALERT_DIVS, ALERT_EVERY } from './alerts_list.js';
+import { ALERT_DESKS, ALERT_BRANDS, ALERT_UPS, ALERT_DIVS, ALERT_EVERY, ALERT_ENTS } from './alerts_list.js';
 import { PRIVACY } from './pages.js';
 import { subscribeNewsletter, NL_OK, nlHas, nlAdd, nlRemove } from './newsletter.js';
 const EMAIL = /^[^\s@<>"(),;:\\[\]]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?)*\.[A-Za-z]{2,24}$/;
 const OK = 'Thank you. We are emailing a confirmation link to this address. Alerts start only after you open it and press Confirm. The link works for two days.';
-const MAX_O = 8;
+const MAX_O = 8, MAX_EN = 50;
 const FREQ = { now: 'as it happens', day: 'in one daily digest', week: 'in one weekly digest on Tuesdays' };
 const JS = `(function () {
+  // a Follow link beside a name: tick that name in the form at the foot of this page and go to the email box (without script the link opens /alerts)
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a.fb[data-e]') : null; if (!a) return;
+    var f = document.querySelector('footer form.su') || document.querySelector('form.su'); if (!f) return;
+    ev.preventDefault(); var id = a.getAttribute('data-e'), box = null;
+    f.querySelectorAll('input[name=en]').forEach(function (x) { if (x.value === id) box = x; });
+    if (!box) { var c = f.querySelector('.su-c'), l = document.createElement('label'); box = document.createElement('input'); box.type = 'checkbox'; box.name = 'en'; box.value = id;
+      l.appendChild(box); l.appendChild(document.createTextNode(' Rows about ' + (a.getAttribute('data-n') || id))); c.insertBefore(l, c.firstChild); }
+    box.checked = true; var em = f.querySelector('input[type=email]'); f.scrollIntoView({ block: 'center' }); if (em) em.focus({ preventScroll: true });
+  });
   document.querySelectorAll('form.al, form.su').forEach(function (f) {
     f.addEventListener('submit', function (ev) {
       if (!window.fetch || !window.FormData) return;
@@ -44,6 +57,7 @@ const deskNames = d => d.filter(s => Object.hasOwn(ALERT_DESKS, s)).map(s => ALE
 const brandNames = o => o.filter(s => Object.hasOwn(ALERT_BRANDS, s)).map(s => ALERT_BRANDS[s][0]);
 const upNames = u => u.filter(s => Object.hasOwn(ALERT_UPS, s)).map(s => ALERT_UPS[s][0]);
 const divNames = v => v.filter(s => Object.hasOwn(ALERT_DIVS, s)).map(s => ALERT_DIVS[s][0]);
+const entNames = v => v.filter(s => Object.hasOwn(ALERT_ENTS, s)).map(s => ALERT_ENTS[s][0]);
 const uniq = (xs, ok) => [...new Set(xs.map(String))].filter(ok).sort();
 function what(d, o, all) {
   const p = [];
@@ -54,23 +68,25 @@ function what(d, o, all) {
 }
 // the sentence for a record: outcome changes, updates, divisions and site updates, and how they come
 function says(r) {
-  const d = r.d || [], o = r.o || [], u = r.u || [], dv = r.dv || [];
+  const d = r.d || [], o = r.o || [], u = r.u || [], dv = r.dv || [], en = r.en || [];
   const w = what(d, o, r.all); const p = [];
+  if (en.length) p.push('when a row about ' + list(entNames(en)) + ' changes or a new row about ' + (en.length === 1 ? 'it' : 'one of them') + ' appears');
   if (w) p.push('when an outcome changes on ' + w);
   if (u.length) p.push('when the published data changes on ' + list(upNames(u)));
   if (dv.length) p.push('when anything changes in ' + (dv.length === 1 ? 'the division ' : 'the divisions ') + list(divNames(dv)));
   if (r.up) p.push('when a new desk goes live, a desk publishes its first value or the changelog gains an entry');
-  return p.join(', and ') + ((d.length || o.length || u.length || dv.length || r.all || r.up) && r.f && r.f !== 'now' ? ', ' + FREQ[r.f] : '');
+  return p.join(', and ') + ((d.length || o.length || u.length || dv.length || en.length || r.all || r.up) && r.f && r.f !== 'now' ? ', ' + FREQ[r.f] : '');
 }
 const pick = f => {
   const d = uniq(f.getAll('d'), s => Object.hasOwn(ALERT_DESKS, s)), o = uniq(f.getAll('o'), s => Object.hasOwn(ALERT_BRANDS, s)).slice(0, MAX_O);
   const u = uniq(f.getAll('u'), s => Object.hasOwn(ALERT_UPS, s)), dv = uniq(f.getAll('dv'), s => Object.hasOwn(ALERT_DIVS, s));
-  const fq = String(f.get('f') || 'now'); return { d, o, u, dv, f: FREQ[fq] ? fq : 'now' };
+  const en = uniq(f.getAll('en'), s => Object.hasOwn(ALERT_ENTS, s)).slice(0, MAX_EN);
+  const fq = String(f.get('f') || 'now'); return { d, o, u, dv, en, f: FREQ[fq] ? fq : 'now' };
 };
 const fits = rec => JSON.stringify(rec).length <= 8000;
 const flag = (f, k) => String(f.get(k) || '') === '1' ? 1 : 0;
 const json = (ok, msg, status) => new Response(JSON.stringify({ ok, msg }), { status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
-const record = (e, s, all, up, at, v) => { const r = { e, d: s.d, o: s.o, u: s.u, dv: s.dv, f: s.f, at, v }; if (all) r.all = 1; if (up) r.up = 1; return r; };
+const record = (e, s, all, up, at, v) => { const r = { e, d: s.d, o: s.o, u: s.u, dv: s.dv, f: s.f, at, v }; if (s.en && s.en.length) r.en = s.en; if (all) r.all = 1; if (up) r.up = 1; return r; };
 
 // The double opt-in step for one sign-up: rate limits, then a pending record that alerts_send.py emails a confirmation link for.
 // Returns {ok, msg, status}. A third confirmation email in a day answers ok and stores nothing, as before.
@@ -109,11 +125,19 @@ function manageForm(r, onNl) {
   const rest = Object.keys(ALERT_DESKS).filter(k => !Object.values(ALERT_DIVS).some(v => v[1].includes(k)))
     .map(k => box('d', k, `<strong>${esc(ALERT_DESKS[k][0])}</strong> <span class="meta">${esc(ALERT_EVERY[k] || 'Outcome changes')}</span>`, d.includes(k))).join('');
   const orgs = (r.o || []).filter(s => Object.hasOwn(ALERT_BRANDS, s)).map(s => box('o', s, `<strong>${esc(ALERT_BRANDS[s][0])}</strong> <span class="meta">on ${esc(list(deskNames(ALERT_BRANDS[s][1])))}</span>`, true)).join('');
-  return `<ul class="al-list">${top}</ul>${sel}${divs}` + (rest ? `<ul class="al-list">${rest}</ul>` : '') + (orgs ? `<p>Organisations</p><ul class="al-list">${orgs}</ul>` : '');
+  const ents = (r.en || []).filter(s => Object.hasOwn(ALERT_ENTS, s)).map(s => box('en', s, `<strong>${esc(ALERT_ENTS[s][0])}</strong> <span class="meta">${esc(ALERT_ENTS[s][1])}, rows about it</span>`, true)).join('');
+  return `<ul class="al-list">${top}</ul>${sel}` + (ents ? `<p>Companies, models and other named things (untick one to stop it)</p><ul class="al-list">${ents}</ul>` : '') + `${divs}` + (rest ? `<ul class="al-list">${rest}</ul>` : '') + (orgs ? `<p>Organisations</p><ul class="al-list">${orgs}</ul>` : '');
 }
 
 export async function handleAlerts(req, env, u, html, PAGES) {
   const p = u.pathname.replace(/\/+$/, '') || '/';
+  if (p === '/alerts' && req.method === 'GET') {   // /alerts?e=<id>: the page with that named thing ticked (the Follow links beside names)
+    const id = u.searchParams.get('e') || '';
+    if (!Object.hasOwn(ALERT_ENTS, id) || !PAGES['/alerts']) return null;
+    const lab = `<label><input type="checkbox" name="en" value="${esc(id)}" checked> Rows about ${esc(ALERT_ENTS[id][0])} <span class="meta">${esc(ALERT_ENTS[id][1])}</span></label>`;
+    const pg = PAGES['/alerts'].replace('<div id="ent-picked" class="su-c" hidden></div>', () => `<div id="ent-picked" class="su-c">${lab}</div>`);
+    return html(pg, 200);
+  }
   if (p === '/alerts.js' || p === '/signup.js') return new Response(JS, { headers: { 'content-type': 'text/javascript; charset=utf-8', 'cache-control': 'public, max-age=3600', 'x-content-type-options': 'nosniff' } });
   if (!p.startsWith('/alerts/') && p !== '/signup') return null;
   const KV = env.INDAHL_INQUIRIES;
@@ -131,7 +155,7 @@ export async function handleAlerts(req, env, u, html, PAGES) {
     const nl = p === '/signup' && flag(f, 'nl');
     const sel = pick(f);
     const all = flag(f, 'all'), up = flag(f, 'up');
-    const alerts = sel.d.length || sel.o.length || sel.u.length || sel.dv.length || all || up;
+    const alerts = sel.d.length || sel.o.length || sel.u.length || sel.dv.length || sel.en.length || all || up;
     if (String(f.get('website') || '')) return out(true, nl && alerts ? BOTH : nl ? NL_OK : OK, 200);   // the bot trap: same answer, nothing stored
     const em = String(f.get('email') || '').trim();
     if (!em || em.length > 160 || !EMAIL.test(em)) return out(false, 'Please enter a full email address, like name@example.org.', 400);
@@ -159,13 +183,13 @@ export async function handleAlerts(req, env, u, html, PAGES) {
     const hk = 'alh:' + (await sha('aladdr|' + r.e)).slice(0, 32);
     let ct = await KV.get(hk), cur = null;
     if (ct) { const cv = await KV.get('al:' + ct); if (cv) { try { cur = JSON.parse(cv); } catch (e) {} } }
-    if (!cur) { ct = tok(); cur = { e: r.e, d: [], o: [], u: [], dv: [], at: r.at, v: r.v }; }
+    if (!cur) { ct = tok(); cur = { e: r.e, d: [], o: [], u: [], dv: [], en: [], at: r.at, v: r.v }; }
     const all = cur.all || r.all ? 1 : 0, up = cur.up || r.up ? 1 : 0;
     const mg = (k, ok, cap) => uniq([...(cur[k] || []), ...(r[k] || [])], ok).slice(0, cap || 999);
     // a second sign-up keeps the chosen delivery unless it picked another one, and keeps the first confirm time, so a digest still owed is not lost
-    let s = { d: mg('d', x => Object.hasOwn(ALERT_DESKS, x)), o: mg('o', x => Object.hasOwn(ALERT_BRANDS, x), MAX_O), u: mg('u', x => Object.hasOwn(ALERT_UPS, x)), dv: mg('dv', x => Object.hasOwn(ALERT_DIVS, x)), f: (r.f && r.f !== 'now' && FREQ[r.f]) ? r.f : (cur.f || 'now') };
+    let s = { d: mg('d', x => Object.hasOwn(ALERT_DESKS, x)), o: mg('o', x => Object.hasOwn(ALERT_BRANDS, x), MAX_O), u: mg('u', x => Object.hasOwn(ALERT_UPS, x)), dv: mg('dv', x => Object.hasOwn(ALERT_DIVS, x)), en: mg('en', x => Object.hasOwn(ALERT_ENTS, x), MAX_EN), f: (r.f && r.f !== 'now' && FREQ[r.f]) ? r.f : (cur.f || 'now') };
     let rec = record(r.e, s, all, up, cur.at, r.v); rec.c = cur.c || new Date().toISOString();
-    if (!fits(rec)) { s = { d: r.d || [], o: r.o || [], u: r.u || [], dv: r.dv || [], f: s.f }; rec = record(r.e, s, all, up, cur.at, r.v); rec.c = cur.c || new Date().toISOString(); }
+    if (!fits(rec)) { s = { d: r.d || [], o: r.o || [], u: r.u || [], dv: r.dv || [], en: r.en || [], f: s.f }; rec = record(r.e, s, all, up, cur.at, r.v); rec.c = cur.c || new Date().toISOString(); }
     await KV.put('al:' + ct, JSON.stringify(rec), { metadata: { at: rec.c } });
     await KV.put(hk, ct);
     await KV.delete('alp:' + t);
@@ -185,8 +209,8 @@ export async function handleAlerts(req, env, u, html, PAGES) {
       // the address in this record is confirmed, so ticking the newsletter here adds it at once
       const nl = flag(f, 'nl'); if (nl) await nlAdd(env, r.e); else await nlRemove(env, r.e);
       const all = flag(f, 'all'), up = flag(f, 'up');
-      const sel = pick(f); sel.o = sel.o.filter(s => (r.o || []).includes(s));
-      if (!sel.d.length && !sel.o.length && !sel.u.length && !sel.dv.length && !all && !up) {
+      const sel = pick(f); sel.o = sel.o.filter(s => (r.o || []).includes(s)); sel.en = sel.en.filter(s => (r.en || []).includes(s));
+      if (!sel.d.length && !sel.o.length && !sel.u.length && !sel.dv.length && !sel.en.length && !all && !up) {
         await drop();
         return page('No alert was ticked, so your alerts are deleted and no further alert will come. ' + (nl ? 'The weekly newsletter still comes every Tuesday.' : 'You are not on the weekly newsletter.'), 200);
       }
