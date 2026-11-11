@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T00:23:37Z",
+ "built_utc": "2026-11-11T02:14:51Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 4261,
+   "commit": "aa6e8b03a732f778eac2ca3e360b16daac269812",
+   "files": 5221,
+   "id": "aa6e8b03a732",
+   "json": "/receipts/stamps/release_aa6e8b03a732.json",
+   "ledger_sha256": "b1db0731830e2b393bfd995f85ea586d5326c46c90ddcfe267bfcf9bba734d84",
+   "manifest_sha256": "11904d164c016c71cc698c7be53d6ebfb23fb73af2c3e78c424c5329ecc87412",
+   "ots": "/receipts/stamps/release_aa6e8b03a732.json.ots",
+   "ots_status": "bitcoin 975368",
+   "released_at": "2026-11-11T00:30:27Z",
+   "sha256": "fde2c29eef40194b0ba4c5184c6d5e677d252f878b60ad34463b3104f7a3c32b",
+   "wayback": [],
+   "wayback_waiting": 4252
+  },
   {
    "changed": 4233,
    "commit": "81c88024790f4b3051c9afac5156d84bc47f0cd0",
@@ -11,11 +26,11 @@
    "ledger_sha256": "b1db0731830e2b393bfd995f85ea586d5326c46c90ddcfe267bfcf9bba734d84",
    "manifest_sha256": "9800be2c0d366667c06feb2f835dabc6c860e779e1c991b86aaf61f1ce5ef087",
    "ots": "/receipts/stamps/release_81c88024790f.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975362",
    "released_at": "2026-11-11T00:23:35Z",
    "sha256": "29335df903a8c0b1f8528dd002f4bf343ae8094f25b893f2bd1bc854b18889b3",
    "wayback": [],
-   "wayback_waiting": 4224
+   "wayback_waiting": 2
   },
   {
    "changed": 86,
@@ -26,7 +41,7 @@
    "ledger_sha256": "b1db0731830e2b393bfd995f85ea586d5326c46c90ddcfe267bfcf9bba734d84",
    "manifest_sha256": "a349a588df04d2388cec3ed1106a382547db902e954c5eaabc463c91bc72d773",
    "ots": "/receipts/stamps/release_859b347c03d3.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975362",
    "released_at": "2026-11-11T00:19:37Z",
    "sha256": "1fac592388ef75b331adfcafd6c7e610457e163c8da751710350cf224877884c",
    "wayback": [
@@ -64,9 +79,224 @@
      "capture": "https://web.archive.org/web/20261110134239/https://indahl.ai/hosts",
      "timestamp": "20261110134239",
      "url": "https://indahl.ai/hosts"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111002330/https://indahl.ai/reproduce",
+     "timestamp": "20261111002330",
+     "url": "https://indahl.ai/reproduce"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111002358/https://indahl.ai/tornado",
+     "timestamp": "20261111002358",
+     "url": "https://indahl.ai/tornado"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000050/https://indahl.ai/water",
+     "timestamp": "20261111000050",
+     "url": "https://indahl.ai/water"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000106/https://indahl.ai/brand/adguard.csv",
+     "timestamp": "20261111000106",
+     "url": "https://indahl.ai/brand/adguard.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000124/https://indahl.ai/brand/anthropic.csv",
+     "timestamp": "20261111000124",
+     "url": "https://indahl.ai/brand/anthropic.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000208/https://indahl.ai/brand/apple.csv",
+     "timestamp": "20261111000208",
+     "url": "https://indahl.ai/brand/apple.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000229/https://indahl.ai/brand/atlassian.csv",
+     "timestamp": "20261111000229",
+     "url": "https://indahl.ai/brand/atlassian.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000250/https://indahl.ai/brand/aws.csv",
+     "timestamp": "20261111000250",
+     "url": "https://indahl.ai/brand/aws.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000309/https://indahl.ai/brand/canonical.csv",
+     "timestamp": "20261111000309",
+     "url": "https://indahl.ai/brand/canonical.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000329/https://indahl.ai/brand/cisco.csv",
+     "timestamp": "20261111000329",
+     "url": "https://indahl.ai/brand/cisco.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000418/https://indahl.ai/brand/cleanbrowsing.csv",
+     "timestamp": "20261111000418",
+     "url": "https://indahl.ai/brand/cleanbrowsing.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000526/https://indahl.ai/brand/cloudflare.csv",
+     "timestamp": "20261111000526",
+     "url": "https://indahl.ai/brand/cloudflare.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000614/https://indahl.ai/brand/datadog.csv",
+     "timestamp": "20261111000614",
+     "url": "https://indahl.ai/brand/datadog.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000639/https://indahl.ai/brand/digitalocean.csv",
+     "timestamp": "20261111000639",
+     "url": "https://indahl.ai/brand/digitalocean.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000744/https://indahl.ai/brand/discord.csv",
+     "timestamp": "20261111000744",
+     "url": "https://indahl.ai/brand/discord.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000800/https://indahl.ai/brand/docker.csv",
+     "timestamp": "20261111000800",
+     "url": "https://indahl.ai/brand/docker.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000819/https://indahl.ai/brand/dropbox.csv",
+     "timestamp": "20261111000819",
+     "url": "https://indahl.ai/brand/dropbox.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111000929/https://indahl.ai/brand/github.csv",
+     "timestamp": "20261111000929",
+     "url": "https://indahl.ai/brand/github.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003011/https://indahl.ai/brand/google.csv",
+     "timestamp": "20261111003011",
+     "url": "https://indahl.ai/brand/google.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003030/https://indahl.ai/brand/ibm.csv",
+     "timestamp": "20261111003030",
+     "url": "https://indahl.ai/brand/ibm.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003048/https://indahl.ai/brand/inrim.csv",
+     "timestamp": "20261111003048",
+     "url": "https://indahl.ai/brand/inrim.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003107/https://indahl.ai/brand/kriss.csv",
+     "timestamp": "20261111003107",
+     "url": "https://indahl.ai/brand/kriss.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003125/https://indahl.ai/brand/linear.csv",
+     "timestamp": "20261111003125",
+     "url": "https://indahl.ai/brand/linear.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003226/https://indahl.ai/brand/meta.csv",
+     "timestamp": "20261111003226",
+     "url": "https://indahl.ai/brand/meta.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003240/https://indahl.ai/brand/metas.csv",
+     "timestamp": "20261111003240",
+     "url": "https://indahl.ai/brand/metas.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003258/https://indahl.ai/brand/microsoft.csv",
+     "timestamp": "20261111003258",
+     "url": "https://indahl.ai/brand/microsoft.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003411/https://indahl.ai/brand/netlify.csv",
+     "timestamp": "20261111003411",
+     "url": "https://indahl.ai/brand/netlify.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003430/https://indahl.ai/brand/netnod.csv",
+     "timestamp": "20261111003430",
+     "url": "https://indahl.ai/brand/netnod.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003544/https://indahl.ai/brand/nict.csv",
+     "timestamp": "20261111003544",
+     "url": "https://indahl.ai/brand/nict.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003601/https://indahl.ai/brand/nist.csv",
+     "timestamp": "20261111003601",
+     "url": "https://indahl.ai/brand/nist.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003620/https://indahl.ai/brand/notion.csv",
+     "timestamp": "20261111003620",
+     "url": "https://indahl.ai/brand/notion.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003639/https://indahl.ai/brand/npm.csv",
+     "timestamp": "20261111003639",
+     "url": "https://indahl.ai/brand/npm.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003859/https://indahl.ai/brand/openai.csv",
+     "timestamp": "20261111003859",
+     "url": "https://indahl.ai/brand/openai.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003918/https://indahl.ai/brand/ptb.csv",
+     "timestamp": "20261111003918",
+     "url": "https://indahl.ai/brand/ptb.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003937/https://indahl.ai/brand/quad9.csv",
+     "timestamp": "20261111003937",
+     "url": "https://indahl.ai/brand/quad9.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111003955/https://indahl.ai/brand/reddit.csv",
+     "timestamp": "20261111003955",
+     "url": "https://indahl.ai/brand/reddit.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111004014/https://indahl.ai/brand/sentry.csv",
+     "timestamp": "20261111004014",
+     "url": "https://indahl.ai/brand/sentry.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111004033/https://indahl.ai/brand/twilio.csv",
+     "timestamp": "20261111004033",
+     "url": "https://indahl.ai/brand/twilio.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111004051/https://indahl.ai/brand/usno.csv",
+     "timestamp": "20261111004051",
+     "url": "https://indahl.ai/brand/usno.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111004224/https://indahl.ai/brand/vercel.csv",
+     "timestamp": "20261111004224",
+     "url": "https://indahl.ai/brand/vercel.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111004242/https://indahl.ai/brand/zoom.csv",
+     "timestamp": "20261111004242",
+     "url": "https://indahl.ai/brand/zoom.csv"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111004301/https://indahl.ai/og/hosts.png",
+     "timestamp": "20261111004301",
+     "url": "https://indahl.ai/og/hosts.png"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111004319/https://indahl.ai/og/tape.png",
+     "timestamp": "20261111004319",
+     "url": "https://indahl.ai/og/tape.png"
     }
    ],
-   "wayback_waiting": 31
+   "wayback_waiting": 2
   },
   {
    "changed": 274,
@@ -77,7 +307,7 @@
    "ledger_sha256": "b1db0731830e2b393bfd995f85ea586d5326c46c90ddcfe267bfcf9bba734d84",
    "manifest_sha256": "61401b32e2e16f2066128029063af8e907d3452e8c4e6e51faedfa5d4a3b4929",
    "ots": "/receipts/stamps/release_84739d916852.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975362",
    "released_at": "2026-11-11T00:01:30Z",
    "sha256": "cc765fa5580bf6805cdc241e58250f1dc817636cf8d57ce514f27b1c5c2ed614",
    "wayback": [],
@@ -92,7 +322,7 @@
    "ledger_sha256": "b1db0731830e2b393bfd995f85ea586d5326c46c90ddcfe267bfcf9bba734d84",
    "manifest_sha256": "230511a87598d39ff7a10d0239f2ae501475e53b1ea74dc270fa954e4b91fc78",
    "ots": "/receipts/stamps/release_66611024ffc0-20261110T235610Z.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975362",
    "released_at": "2026-11-10T23:56:10Z",
    "sha256": "5e163f12d7ef5028f402abef850ebcd999ea83a219ded05625231fe17f7a3139",
    "wayback": [],
@@ -107,7 +337,7 @@
    "ledger_sha256": "b1db0731830e2b393bfd995f85ea586d5326c46c90ddcfe267bfcf9bba734d84",
    "manifest_sha256": "c267f3ab6bb5556ce9c925d898fb46eaddba3477cba39ac1557c2e3e076ed90b",
    "ots": "/receipts/stamps/release_66611024ffc0.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975362",
    "released_at": "2026-11-10T23:53:19Z",
    "sha256": "e1fa693a020ee075e4fe35b172531bd752525d3d509944308602ba67e83125a9",
    "wayback": [
@@ -208,7 +438,7 @@
    "ledger_sha256": "686dc84ff93017f2b07bd2630803933c3d16ceb5be944e748781070e66cdc239",
    "manifest_sha256": "ff985b35337a0424103af6852e7ec718c6c8dbeccb17a33fba052d67bc3bdc1b",
    "ots": "/receipts/stamps/release_4b2f2e1b1e91.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975359",
    "released_at": "2026-11-10T23:02:33Z",
    "sha256": "e5e46481a90bacc4b0b3f8f6cbe85ea9761d1b62bf50eda4f5160dff2fb7ff9f",
    "wayback": [],
@@ -223,7 +453,7 @@
    "ledger_sha256": "8e24afbf2b24a2f1e1dfe1516f1fbccefa1f3715fb455556d8e990f1e94fd2b1",
    "manifest_sha256": "64bb16932a6f0c7a8e3e205f6030d807ad989a51506ef6524cfb7493bcc1aa16",
    "ots": "/receipts/stamps/release_8c43df53be1a.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975359",
    "released_at": "2026-11-10T22:54:24Z",
    "sha256": "87ddfd49f5c0f6202119203fb854059438f8ae4e1dfa705d051d636a0e340ab4",
    "wayback": [],
@@ -238,7 +468,7 @@
    "ledger_sha256": "8e24afbf2b24a2f1e1dfe1516f1fbccefa1f3715fb455556d8e990f1e94fd2b1",
    "manifest_sha256": "c9ab87e8a51e62373dea177bfcb649991c30932e1e4e54801051260db60af393",
    "ots": "/receipts/stamps/release_e16f762f826d.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975359",
    "released_at": "2026-11-10T22:52:14Z",
    "sha256": "21237d4428dd0c0939194e7e701e2c0b4da1cf72699f7f4d5f6cd9d9823e3b28",
    "wayback": [],
