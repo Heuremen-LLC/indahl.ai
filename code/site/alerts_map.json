@@ -7484,7 +7484,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3774,
+"every_min": 3779,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7493,7 +7493,7 @@
 "fedsep": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "FEDSEP",
 "src": "rider",
@@ -7502,7 +7502,7 @@
 "flu": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 138,
+"every_min": 139,
 "mode": "outcome",
 "name": "FLU",
 "src": "rider",
@@ -7549,7 +7549,7 @@
 "hflicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 138,
+"every_min": 139,
 "mode": "update",
 "name": "HFLICENSE",
 "src": "rider",
@@ -7576,7 +7576,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3648,
+"every_min": 3653,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7661,7 +7661,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 604,
+"every_min": 605,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7717,7 +7717,7 @@
 "revise": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "REVISE",
 "src": "rider",
@@ -7753,7 +7753,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 465,
+"every_min": 466,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7816,7 +7816,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 465,
+"every_min": 466,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -7861,7 +7861,7 @@
 "weights": {
 "div": "iris",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "WEIGHTS",
 "src": "rider",
@@ -7870,7 +7870,7 @@
 "wiki": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "update",
 "name": "WIKI",
 "src": "rider",

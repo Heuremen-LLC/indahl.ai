@@ -1278,6 +1278,7 @@
 /r/live.hosts.v20261111T084224Z	2026-11-11
 /r/live.hosts.v20261111T121029Z	2026-11-11
 /r/live.hosts.v20261111T123554Z	2026-11-11
+/r/live.hosts.v20261111T133159Z	2026-11-11
 /r/live.hpt.headline	2026-11-10
 /r/live.hpt.v20261110T120408Z	2026-11-10
 /r/live.launch.headline	2026-11-10
@@ -1494,8 +1495,8 @@
 /r/pack.size.oy-data-pack	2026-11-10
 /r/pack.size.pkginstall-data-pack	2026-11-10
 /r/pack.size.pkglicense-data-pack	2026-11-10
-/r/pack.size.qia-list-pack	2026-11-10
-/r/pack.size.qia-research-package	2026-11-10
+/r/pack.size.qia-list-pack	2026-11-11
+/r/pack.size.qia-research-package	2026-11-11
 /r/pack.size.quake-data-pack	2026-11-10
 /r/pack.size.revise-data-pack	2026-11-10
 /r/pack.size.seat-data-pack	2026-11-10
@@ -3422,7 +3423,7 @@
 /r/desk/paper	2026-11-04
 /r/desk/pkginstall	2026-11-10
 /r/desk/pkglicense	2026-11-10
-/r/desk/qia	2026-11-10
+/r/desk/qia	2026-11-11
 /r/desk/qia-bill	2026-11-10
 /r/desk/quake	2026-11-10
 /r/desk/rank	2026-11-10
