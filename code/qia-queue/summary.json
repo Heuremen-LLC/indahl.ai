@@ -1,14 +1,25 @@
 {
- "updated": "11 Nov 20:16 UTC",
- "reads_held": 11468,
+ "updated": "11 Nov 20:53 UTC",
+ "reads_held": 11531,
  "processors": [
   {
-   "backend": "ibm_pittsburgh",
+   "backend": "ibm_kingston",
    "pending": 0,
-   "change_24h": -17,
+   "change_24h": -5,
    "our_jobs": 20,
-   "our_median_wait": "30 s",
-   "our_longest_wait": "5.3 h",
+   "our_median_wait": "9 s",
+   "our_longest_wait": "15 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
+   "backend": "ibm_marrakesh",
+   "pending": 0,
+   "change_24h": -1,
+   "our_jobs": 20,
+   "our_median_wait": "1 s",
+   "our_longest_wait": "35 min",
    "our_queued_now": 0,
    "our_oldest_queued": null,
    "outcome": "COMMITTED"
@@ -25,31 +36,20 @@
    "outcome": "COMMITTED"
   },
   {
-   "backend": "ibm_kingston",
-   "pending": 2,
-   "change_24h": 0,
+   "backend": "ibm_pittsburgh",
+   "pending": 1,
+   "change_24h": -18,
    "our_jobs": 20,
-   "our_median_wait": "9 s",
-   "our_longest_wait": "15 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
-   "backend": "ibm_marrakesh",
-   "pending": 9,
-   "change_24h": 9,
-   "our_jobs": 20,
-   "our_median_wait": "1 s",
-   "our_longest_wait": "35 min",
+   "our_median_wait": "30 s",
+   "our_longest_wait": "5.3 h",
    "our_queued_now": 0,
    "our_oldest_queued": null,
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_chicago",
-   "pending": 76,
-   "change_24h": -1412,
+   "pending": 91,
+   "change_24h": -1396,
    "our_jobs": 20,
    "our_median_wait": "67 min",
    "our_longest_wait": "18.0 h",
@@ -59,8 +59,8 @@
   },
   {
    "backend": "ibm_boston",
-   "pending": 182,
-   "change_24h": -381,
+   "pending": 186,
+   "change_24h": -380,
    "our_jobs": 9,
    "our_median_wait": "36 min",
    "our_longest_wait": "58 min",
@@ -70,8 +70,8 @@
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 781,
-   "change_24h": -173,
+   "pending": 782,
+   "change_24h": -234,
    "our_jobs": 20,
    "our_median_wait": "23 min",
    "our_longest_wait": "8.9 h",
