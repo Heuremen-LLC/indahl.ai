@@ -55,7 +55,28 @@ packs: P
 - P9: holds: plain lines, no semicolons
 - P10: n/a: no rule set after the data in this record
 ''' % (now, S['generated'], S['generated']) + '\n'.join('cell-record: ' + l for l in lines) + '\n' + '\n'.join('number-record %s: %s' % (i, t) for i, _, t, _ in others) + '\n'
-if '--write' in sys.argv:
+if '--update' in sys.argv:   # 11 Nov: refresh the live census.* rows from a new run (refresh_page.py, ship.sh step 1), ledger before the surface
+    rows = LG.load(); have = [k for k in rows if k.startswith('census.cell.') or k in {i for i, *_ in others}]
+    want = {cid(c) for c in order} | {i for i, *_ in others}
+    if set(have) != want: print('make_rows --update: row set changed (%d live, %d now), run --write by hand' % (len(have), len(want))); sys.exit(2)
+    open('CHECKS.md', 'a').write(blk.replace('CENSUS desk ship record', 'CENSUS desk refresh record'))
+    assert subprocess.run([sys.executable, os.path.expanduser('~/bones-forge/watch/readcheck.py'), 'check', 'CHECKS.md']).returncode == 0
+    ck = LG.checks_ref('census_index/CHECKS.md'); n = 0
+    def upd(rid, **kw):
+        global n
+        r = rows[rid]; old = {k: r.get(k) for k in kw}
+        if any(json.dumps(old[k], sort_keys=True) != json.dumps(v, sort_keys=True) for k, v in kw.items()):
+            r.update(kw); r['checks'] = ck; r.setdefault('history', []).append(dict(at=LG.now(), change='refreshed from the run of %s' % S['generated'], why='desk run moved, page and row rebuilt together', evidence='census_index/CHECKS.md')); n += 1
+    for c, tr, ln in zip(order, trs, lines):
+        txt = CL.norm(tr); assert txt in ptext, txt[:80]
+        upd(cid(c), claim='CENSUS, %s%s, %s: later value inside the stated 90 percent interval, %d of %d scored rows' % (SER[c['series']].lower(), '' if c['geo'] == 'US' else ' ' + c['geo'], STEP[c['step']], c['inside'], c['scored']),
+            value='%.4f' % c['share'] if c['share'] is not None else '', lo='%.4f' % c['lo'], hi='%.4f' % c['hi'], unit='%d of %d' % (c['inside'], c['scored']), outcome=c['outcome'],
+            source=dict(file='census_index/CHECKS.md', grep='cell-record: ' + ln), surfaces=[dict(surface='desk_census', text=txt)])
+    for i, claim, t, oc in others:
+        assert CL.norm(t) in ptext, t[:80]
+        upd(i, value=t[:120], source=dict(file='census_index/CHECKS.md', grep='number-record %s: %s' % (i, t)), surfaces=[dict(surface='desk_census', text=t)])
+    LG.save(rows); print('make_rows --update: %d rows refreshed' % n)
+elif '--write' in sys.argv:
     open('CHECKS.md', 'a').write(blk)
     assert subprocess.run([sys.executable, os.path.expanduser('~/bones-forge/watch/readcheck.py'), 'check', 'CHECKS.md']).returncode == 0
     rows = LG.load(); ck = LG.checks_ref('census_index/CHECKS.md'); n = 0
