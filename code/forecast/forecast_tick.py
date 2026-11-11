@@ -78,7 +78,7 @@ for lo, hi, nm in BINS:
         if not n: cells.append(dict(bin=nm, lead=ln, n=0)); continue
         k = sum(r['event'] for _, r in xs); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)
         oc = 'CANNOT_TELL' if n < 30 else ('ABOVE' if a * 100 > ms else ('BELOW' if b * 100 < ms else 'CONSISTENT'))
-        cells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 1), observed=round(100 * k / n, 1), lo=round(100 * a, 1), hi=round(100 * b, 1), outcome=oc))
+        cells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 2), observed=round(100 * k / n, 2), lo=round(100 * a, 2), hi=round(100 * b, 2), outcome=oc))
 # 10 Nov 2026 (PLAN.md Addendum 2, decided after the data): the NWS event rule, measurable precipitation of 0.01 inch or more, is the primary reading
 # from today. The original rule above (any amount above zero or a present-weather entry) is kept beside it as the original committed rule.
 # The amounts come from the routine hourly METAR totals in the Iowa Environmental Mesonet ASOS archive (measurable.py). Same periods, bins,
@@ -109,7 +109,7 @@ for lo, hi, nm in BINS:
         if not n: mcells.append(dict(bin=nm, lead=ln, n=0)); continue
         k = sum(1 for _, e in xs if e); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)
         oc = 'CANNOT_TELL' if n < 30 else ('ABOVE' if a * 100 > ms else ('BELOW' if b * 100 < ms else 'CONSISTENT'))
-        mcells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 1), observed=round(100 * k / n, 1), lo=round(100 * a, 1), hi=round(100 * b, 1), outcome=oc))
+        mcells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 2), observed=round(100 * k / n, 2), lo=round(100 * a, 2), hi=round(100 * b, 2), outcome=oc))
 measurable_out = dict(rule='Measurable precipitation, 0.01 inch or more, from the routine hourly reports of the station (the NWS definition). Primary from 10 Nov 2026, decided after the data (PLAN.md Addendum 2).',
                       source='Iowa Environmental Mesonet ASOS archive, routine hourly METAR precipitation totals, a trace read as zero',
                       periods_scored=len(_mok), unscorable=len(_mbad - set(_mok)), waiting=len(_mwait - set(_mok) - _mbad), periods_in_no_cell=len(set(_mok) - _mkeys),

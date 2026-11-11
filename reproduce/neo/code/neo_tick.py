@@ -7,6 +7,10 @@ orbit solution beside the latest solution's distance. Writes data/neo.json, summ
 import os, sys, json, time, math, re, gzip, glob, hashlib, statistics, subprocess, urllib.request, urllib.parse, collections as C
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
 import heuremen_kit as K
+import fcntl
+_LK = open(os.path.join(H, '.neo_tick.lock'), 'a')   # 11 Nov 2026: one run at a time (a run takes about 4 minutes and the rider fires every 60 ticks). A held lock is a quiet exit.
+try: fcntl.flock(_LK, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except OSError: sys.exit(0)
 OFF = '--offline' in sys.argv; NOSBDB = '--no-sbdb' in sys.argv; PUB = '--publish' in sys.argv   # --publish: also put neo_live into the site KV (10 Nov 2026, ship)
 UA = 'heuremen-neo/0.1 (+https://indahl.ai/neo)'
 CAD = 'https://ssd-api.jpl.nasa.gov/cad.api'; SBDB = 'https://ssd-api.jpl.nasa.gov/sbdb.api'; SENTRY = 'https://ssd-api.jpl.nasa.gov/sentry.api'
@@ -253,8 +257,9 @@ def med(xs): return round(statistics.median(xs), 3) if xs else None
 def cell(name, rs):
     seen = set(); once = []
     for r in sorted(rs, key=lambda r: r['stated_jd']):          # an object is counted once in a cell, by its earliest approach
-        if r['des'] in seen: continue
-        seen.add(r['des']); once.append(r)
+        k = r.get('latest_des') or r['des']          # 11 Nov 2026 (referee 2, post-seal bookkeeping): one object by the latest record's designation, so a renamed or numbered object is one object
+        if k in seen: continue
+        seen.add(k); once.append(r)
     cnt = C.Counter(oc(r) for r in once); why = C.Counter(r['why'] for r in once if oc(r) == K.CANNOT_TELL and r.get('why'))
     n = cnt[K.CONSISTENT] + cnt[K.ABOVE] + cnt[K.BELOW]; k = cnt[K.CONSISTENT]; o, lo, hi = cell_outcome(k, n)
     km = [abs(r['move_km']) for r in once if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW) and r.get('move_km') is not None]
@@ -270,7 +275,8 @@ aug = cell('approaches in August 2026', [r for r in head if r['approach'].starts
 def once_all(rs):
     seen = set(); out = []
     for r in sorted(rs, key=lambda r: r['stated_jd']):
-        if r['des'] not in seen: seen.add(r['des']); out.append(r)
+        k = r.get('latest_des') or r['des']
+        if k not in seen: seen.add(k); out.append(r)
     return out
 _sc = [r for r in once_all(head) if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW)]
 by_copy = dict(scored=dict(C.Counter(r['stated_copy'][:8] for r in _sc)), outside=dict(C.Counter(r['stated_copy'][:8] for r in _sc if oc(r) != K.CONSISTENT)))   # display only: which copy each scored row was stated in
@@ -297,6 +303,19 @@ def _dep():
                                  against_2d=dict(claim=round(CLAIM_2D, 4), outcome=o2 if GATE else K.CANNOT_TELL), outcome_if_one_outside=one_miss))
     return out
 dependence = _dep()
+# 11 Nov 2026, referee 2 (neo_index_referee/REFEREE_20261111.md 3B, 3A): display only, added after the data, never used for an outcome.
+def _more():
+    sc = [r for r in once_all(head) if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW)]
+    big = dependence['copy'] if dependence else None
+    o365 = [r for r in sc if r['lead_days'] > 365]; o30 = [r for r in sc if r['lead_days'] > 30 and r['stated_copy'] != big]
+    out_rs = [r for r in head if oc(r) in (K.ABOVE, K.BELOW)]
+    nar = [r for r in out_rs if r['stated_max'] is not None and (r['stated_max'] - r['stated_min']) * 149597870.7 < 1000]
+    nom = [r for r in once_all(head) if (oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW) or r.get('why') == 'edge') and r.get('latest') is not None]
+    return dict(over365=dict(scored=len(o365), inside=sum(oc(r) == K.CONSISTENT for r in o365), from_copy=sum(r['stated_copy'] == big for r in o365)),
+                other_copies_over30=dict(scored=len(o30), inside=sum(oc(r) == K.CONSISTENT for r in o30)),
+                outside_rows=len(out_rs), outside_under_1000km_wide=len(nar),
+                nominal_alone=dict(rows=len(nom), inside=sum(r['stated_min'] <= r['latest'] <= r['stated_max'] for r in nom)))
+more = _more()
 for r in rows:
     if r['stated_max'] is not None and r['stated_min'] is not None and r['stated'] is not None and r['stated_max'] > r['stated_min']:
         f = (r['stated'] - r['stated_min']) / (r['stated_max'] - r['stated_min']); r['nominal_position'] = round(f, 4); r['lopsided'] = f < 0.25 or f > 0.75
@@ -340,8 +359,8 @@ summary = dict(
                  statements_outside_frame=outside, statements_copied_after_approach=after),
     rows=dict(total=len(rows), headline=len(head), later_statements=len(later), objects=len(set(r['des'] for r in rows)), outcomes=dict(cnt_all),
               later_statement_outcomes=dict(later_cnt), first_stated_copy=min((r['stated_copy'] for r in rows), default=None), last_stated_copy=max((r['stated_copy'] for r in rows), default=None)),
-    cells=cells, august_2026=aug, by_copy_day=by_copy, dependence=dependence,
-    after_data_note='dependence (each cell read without the copy that supplies the most scored rows, each cell read against 98.9 percent, and the outcome a cell at its floor would take with one row outside) and nominal_position and lopsided on rows were added after the data on 10 Nov 2026 at the outside referee (neo_index_referee/REFEREE.md). Display only. No outcome uses them.',
+    cells=cells, august_2026=aug, by_copy_day=by_copy, dependence=dependence, more=more,
+    after_data_note='dependence (each cell read without the copy that supplies the most scored rows, each cell read against 98.9 percent, and the outcome a cell at its floor would take with one row outside) and nominal_position and lopsided on rows were added after the data on 10 Nov 2026 at the outside referee (neo_index_referee/REFEREE.md). The block more (statements over 365 days ahead, other copies over 30 days ahead, outside ranges under 1,000 km wide, the later nominal distance read alone) was added after the data on 11 Nov 2026 at the second outside referee (neo_index_referee/REFEREE_20261111.md). Display only. No outcome uses them. On 11 Nov 2026 an object in a cell is also counted once by the latest record designation, a bookkeeping fix after the seal (see CHECKS.md).',
     outside_range=[{k: r.get(k) for k in ('des', 'approach', 'lead_days', 'stated_copy', 'stated_url', 'stated_orbit', 'stated', 'stated_min', 'stated_max', 'latest_orbit', 'latest', 'latest_min', 'latest_max', 'z', 'move_km', 'outcome', 'headline', 'latest_solution', 'nominal_position', 'lopsided')}
                    for r in rows if oc(r) in (K.ABOVE, K.BELOW)],
     august_rows=[{k: r.get(k) for k in ('des', 'approach', 'lead_days', 'stated_copy', 'stated_orbit', 'stated', 'stated_min', 'stated_max', 'latest_orbit', 'latest', 'latest_min', 'latest_max', 'z', 'move_km', 'outcome', 'why', 'stated_url', 'nominal_position', 'lopsided')}

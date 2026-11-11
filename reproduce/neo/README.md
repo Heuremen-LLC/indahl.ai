@@ -10,15 +10,15 @@ This kit recomputes the NEO headline number and its outcome label with the desk'
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `85bd43d84b32db972d81ec7a61e50bdd00659eafdcf230a8766525c7f2afc7ce`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `af9e650b727b5e763ee28e91326c4cb76c7a9c7687ef76d7b82df626b403ab31`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/neo/live.json served it at the feed stamp 2026-11-10T20:42:24Z, read by us at 2026-11-11T00:14:00Z. The feed bytes had sha256 `b46c1d204023bd08b97f096d7844c1b2e2ba31c216da4e9b1c97626a43a72e67`.
+The headline as the live feed https://indahl.ai/neo/live.json served it at the feed stamp 2026-11-11T11:55:52Z, read by us at 2026-11-11T11:56:17Z. The feed bytes had sha256 `4cd70557e17dfffa9721878e9744b3146ea13b9e345b510878fd23cd04262b6c`.
 
-- number: 465 of 479
-- value: 0.9708
-- interval: 0.9515 to 0.9825
+- number: 464 of 478
+- value: 0.9707
+- interval: 0.9514 to 0.9825
 - outcome: BELOW
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -132,7 +132,9 @@ As the NEO data pack lists them. Credit each source when you use its values.
 | data/raw/wayback/cdx_cad_api.json | 10,078 | `748fe45916ac58ba794b8e75872fb25370145ec388643d3cac7e02a55f676f3f` |
 | data/snapshots/cad_20261110T111023Z.json.gz | 73,036 | `4264229743c1d209da0aab124a76b2333bca22988b0e69fe929bab5babdce5fd` |
 | data/snapshots/cad_20261110T204224Z.json.gz | 73,346 | `25ce640b3ac449f961ad01d3e02e1a9f7cc26d54cbb9faa97ce94bc1998ff52b` |
-| data/raw/cad_current.json | 3,558,782 | `4bca8b6f2737c4a88f3d91dbf704f04c5f30a21d1b9f20ec446f8b3085080c22` |
+| data/snapshots/cad_20261111T033236Z.json.gz | 72,753 | `5f42970dd8ee9f788b5db392461695bd5092c2acaba55bce64f26d04c86d2bee` |
+| data/snapshots/cad_20261111T095331Z.json.gz | 73,203 | `f1d43e9bac48aef3e61cc9b98a262dc8149b17a04281565388338e5ada4e9cd6` |
+| data/raw/cad_current.json | 3,563,135 | `50f05e05d1a8eb5256a2fc8871aa0f3d4be7cedffe7da44ad9fe49ada1c5248e` |
 | data/cache/des_1998_SH2_2460918.json | 400 | `2c21e4cf49fd81d826f189cf2f793fd4730ea1850174de1d206df7d5ef853b43` |
 | data/cache/des_2003_AY2_2460849.json | 402 | `5db6d168f0ad979a008b2ed8103e168dc3ee2f8e742e62a5a7fc50ecac907ee7` |
 | data/cache/des_2004_MO3_2461058.json | 403 | `537114bf638641c55b9e0880f033779a7dd53c4be4e8ea87e1f1a243b120db17` |
@@ -150,12 +152,16 @@ As the NEO data pack lists them. Credit each source when you use its values.
 | data/cache/des_2020_BP13_2460410.json | 401 | `a6c2516e8abd30bd6ad0f608fac7731027ebf52a231f6fccf757d43569c1b8f7` |
 | data/cache/des_2020_XR_2460649.json | 402 | `6eb172119acbe114d80bd7c712b61151c6b3a544c6374601ffeec12a229eb7f3` |
 | data/cache/des_2022_FR3_2460767.json | 402 | `d17e5e69fe4708b8a0a8c169cbdfee770a643d0ca54069607b5fab0d3f5125dc` |
+| data/cache/des_2023_VF3_2461356.json | 401 | `e7176d1d4b445207fc6edb8ffdce417d27f688ff828a9951a47329303dbed1b0` |
 | data/cache/des_2024_CR9_2460473.json | 403 | `07ab680b31cdf6721d75727f2f04f66fcf5810f3fe88626243860341a19d1d11` |
 | data/cache/des_2026_VK5_2461355.json | 403 | `efa5c92e51b196c73e4e7d5edfb7e0d26bee6664ce66f9eff67b48172d8ff286` |
+| data/cache/des_2026_VL8_2461356.json | 403 | `13c95921270c06ccbcb02a4219ae9b81cf9995003e3f0e4a1b5b049dd9379a3e` |
+| data/cache/des_2026_VN4_2461356.json | 403 | `548c3b11c7b33fd78401b749548118fab683f9cbe2eaac5cccbdef51752b0fa0` |
+| data/cache/des_2026_VO8_2461356.json | 403 | `a4ba275ed6732d6b9f517ee61abba5df992874d35782053e0bc8e5183d800bc7` |
 | data/known_good_rows.json | 546 | `4162db426c14edb02ecee30dfb7ab00c5b264958eea5e4465f5b39c493e2fcb1` |
 | data/plan_seal.json | 241 | `96a924bf3215fcc716f5c763f29f35623a2e7eaec117c1069a3f689d39916900` |
 | PLAN.md | 10,979 | `1a5714047dd33f4aaf83580ad0e57063c60b8be90883af3148aed79099917214` |
-| data/neo_live.json | 33,349 | `b46c1d204023bd08b97f096d7844c1b2e2ba31c216da4e9b1c97626a43a72e67` |
+| data/neo_live.json | 33,969 | `4cd70557e17dfffa9721878e9744b3146ea13b9e345b510878fd23cd04262b6c` |
 
 ## Code
 

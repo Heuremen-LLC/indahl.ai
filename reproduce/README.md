@@ -22,7 +22,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [HPT](hpt/) | included | `dac673f0c2d2251f1f72fbd267e6dd77d98bf8effd0ae09d0deb6bf704e77b56` |
 | [LAUNCH](launch/) | fetch and verify | `4458223a64af0f20788218f8ae587b981879eedfef44caadde985c17f5c61a38` |
 | [LINKROT](linkrot/) | included | `466e6e2647e13ff7fd765b6b6debaad69f46bfc49084232ee60cc0735919aaf2` |
-| [NEO](neo/) | fetch and verify | `85bd43d84b32db972d81ec7a61e50bdd00659eafdcf230a8766525c7f2afc7ce` |
+| [NEO](neo/) | fetch and verify | `af9e650b727b5e763ee28e91326c4cb76c7a9c7687ef76d7b82df626b403ab31` |
 | [PKGINSTALL](pkginstall/) | fetch and verify | `50cd23a1327ebbdd6bf56db81e4b2200c5bb37460a70de0ef4d75659518d6baa` |
 | [PKGLICENSE](pkglicense/) | fetch and verify | `46ab84f4bef32aaa4d529cf50cf780da6697bf1850dab424d7115153b5766933` |
 | [QUAKE](quake/) | included | `04c5991de0c9e183eaec21f81776d2391235f2dc1add25d889efa18f9d79794d` |
