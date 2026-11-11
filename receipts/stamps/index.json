@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T16:31:49Z",
+ "built_utc": "2026-11-11T16:38:45Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 1207,
+   "commit": "1d942fda2ecf608d8c1b1d53707d113600bbeaf6",
+   "files": 5434,
+   "id": "1d942fda2ecf",
+   "json": "/receipts/stamps/release_1d942fda2ecf.json",
+   "ledger_sha256": "fbe5dcdae77776efdb53d213a3b353dea7d1dd7c5a5e92d1ec79648cc922c5e6",
+   "manifest_sha256": "c90d2961738fdedf98a4b8b6822f2cabb36b4ec54cefaf96eb2dff50d5b6c9a1",
+   "ots": "/receipts/stamps/release_1d942fda2ecf.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T16:38:42Z",
+   "sha256": "12370d1c9e100ddf1b9d813a62e1838ed5023c81a7cd61ff123264eb96202f8f",
+   "wayback": [],
+   "wayback_waiting": 1198
+  },
   {
    "changed": 164,
    "commit": "58f6a0c96cf8ed2bbad2f579c84c5df13b0aa809",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-11T16:21:23Z",
    "sha256": "dfececf8f3553277328d3029fee6ecbbf080bdfcecdc6829fbaa0d46a15f4eea",
    "wayback": [],
-   "wayback_waiting": 159
+   "wayback_waiting": 15
   },
   {
    "changed": 162,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-11T16:02:30Z",
    "sha256": "bb1a9a60aca615b5e5cb1f4461130351ad76414274c5515b280014cc9e1267f0",
    "wayback": [],
-   "wayback_waiting": 74
+   "wayback_waiting": 66
   },
   {
    "changed": 206,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-11T15:53:54Z",
    "sha256": "f5305dd3e6bfced13c06067027e82d4eb24772e5c52b968df580fbfc14de5c21",
    "wayback": [],
-   "wayback_waiting": 43
+   "wayback_waiting": 16
   },
   {
    "changed": 928,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-11T15:45:11Z",
    "sha256": "e62a0fa4139a059ee2707917846fae45350fb04e5f47ff4e2457fe40c302491d",
    "wayback": [],
-   "wayback_waiting": 740
+   "wayback_waiting": 11
   },
   {
    "changed": 1112,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-11T14:57:06Z",
    "sha256": "36246cbfb4b1dc38bff8d37418d219e29c2c6d8bb5955ca2d214ff7a86695d17",
    "wayback": [],
-   "wayback_waiting": 737
+   "wayback_waiting": 580
   },
   {
    "changed": 957,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-11T14:37:37Z",
    "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
    "wayback": [],
-   "wayback_waiting": 259
+   "wayback_waiting": 248
   },
   {
    "changed": 1530,
@@ -1225,7 +1240,7 @@
      "url": "https://indahl.ai/brand/adguard.csv"
     }
    ],
-   "wayback_waiting": 21
+   "wayback_waiting": 20
   },
   {
    "changed": 4261,
