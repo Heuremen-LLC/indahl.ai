@@ -7484,7 +7484,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3774,
+"every_min": 3775,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7576,7 +7576,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3648,
+"every_min": 3649,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7753,7 +7753,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 465,
+"every_min": 466,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7816,7 +7816,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 465,
+"every_min": 466,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
