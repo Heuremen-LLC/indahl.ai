@@ -1305,6 +1305,8 @@
 /r/live.cadence.v20261110T120408Z	2026-11-10
 /r/live.campus.headline	2026-11-10
 /r/live.campus.v20261110T120408Z	2026-11-10
+/r/live.census.headline	2026-11-11
+/r/live.census.v20261111T154947Z	2026-11-11
 /r/live.change.headline	2026-11-10
 /r/live.change.v20261110T120408Z	2026-11-10
 /r/live.change.v20261110T145316Z	2026-11-10

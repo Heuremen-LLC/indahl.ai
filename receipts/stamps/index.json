@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T15:41:51Z",
+ "built_utc": "2026-11-11T15:45:13Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 928,
+   "commit": "b4d94faa4e7cd4198814702ca22d72eb71983e27",
+   "files": 5306,
+   "id": "b4d94faa4e7c",
+   "json": "/receipts/stamps/release_b4d94faa4e7c.json",
+   "ledger_sha256": "d44249f042e08d5d4487daed8b3552216a026d91c6a740d92fb190c2d4b0afd5",
+   "manifest_sha256": "0a4074a0e17a780ac2efb5c0b588c6ce22661094aa6c6d0c0fd776a1c7811111",
+   "ots": "/receipts/stamps/release_b4d94faa4e7c.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T15:45:11Z",
+   "sha256": "e62a0fa4139a059ee2707917846fae45350fb04e5f47ff4e2457fe40c302491d",
+   "wayback": [],
+   "wayback_waiting": 918
+  },
   {
    "changed": 1112,
    "commit": "fdc77f6ae477fd9dd001aa624e6a719f807c800b",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-11T14:57:06Z",
    "sha256": "36246cbfb4b1dc38bff8d37418d219e29c2c6d8bb5955ca2d214ff7a86695d17",
    "wayback": [],
-   "wayback_waiting": 1110
+   "wayback_waiting": 795
   },
   {
    "changed": 957,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-11T14:37:37Z",
    "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
    "wayback": [],
-   "wayback_waiting": 276
+   "wayback_waiting": 268
   },
   {
    "changed": 1530,
@@ -71,7 +86,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 1123
+   "wayback_waiting": 590
   },
   {
    "changed": 287,
@@ -337,7 +352,7 @@
      "url": "https://indahl.ai/qia/study/zenodo-22848316"
     }
    ],
-   "wayback_waiting": 9
+   "wayback_waiting": 8
   },
   {
    "changed": 61,
@@ -618,7 +633,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 76
+   "wayback_waiting": 73
   },
   {
    "changed": 0,

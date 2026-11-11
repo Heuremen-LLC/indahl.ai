@@ -1,0 +1,68 @@
+{
+ "cwd": "",
+ "desk": "census",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "geo": "US",
+    "series": "SALES",
+    "step": "S1"
+   },
+   "share"
+  ],
+  "hi": [
+   "cells",
+   {
+    "geo": "US",
+    "series": "SALES",
+    "step": "S1"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "geo": "US",
+    "series": "SALES",
+    "step": "S1"
+   },
+   "lo"
+  ],
+  "n": [
+   "cells",
+   {
+    "geo": "US",
+    "series": "SALES",
+    "step": "S1"
+   },
+   "inside"
+  ],
+  "of": [
+   "cells",
+   {
+    "geo": "US",
+    "series": "SALES",
+    "step": "S1"
+   },
+   "scored"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "geo": "US",
+    "series": "SALES",
+    "step": "S1"
+   },
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "CENSUS",
+ "output": "out.json",
+ "steps": [
+  [
+   "census_score.py"
+  ]
+ ]
+}

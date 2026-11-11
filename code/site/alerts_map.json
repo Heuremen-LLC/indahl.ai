@@ -1503,6 +1503,10 @@
 "CAMPUS",
 "Do the pages schools published stay where they were?"
 ],
+"census": [
+"CENSUS",
+"When the Census Bureau states how uncertain a first print is, does the later value stay inside?"
+],
 "change": [
 "CHANGE",
 "When a vendor says something ends on a date, does the date hold?"
@@ -7463,6 +7467,15 @@
 "src": "rider",
 "what": "The documents behind the OY page, kept over time"
 },
+"census": {
+"div": "",
+"every": "checked about every 2 hours",
+"every_min": 126,
+"mode": "outcome",
+"name": "CENSUS",
+"src": "rider",
+"what": "When the Census Bureau states how uncertain a first print is, does the later value stay inside?"
+},
 "change": {
 "div": "atlas",
 "every": "checked about every hour",
@@ -7484,7 +7497,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3778,
+"every_min": 3773,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7493,7 +7506,7 @@
 "fedsep": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 76,
+"every_min": 75,
 "mode": "outcome",
 "name": "FEDSEP",
 "src": "rider",
@@ -7502,7 +7515,7 @@
 "flu": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 139,
+"every_min": 138,
 "mode": "outcome",
 "name": "FLU",
 "src": "rider",
@@ -7549,7 +7562,7 @@
 "hflicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 139,
+"every_min": 138,
 "mode": "update",
 "name": "HFLICENSE",
 "src": "rider",
@@ -7576,7 +7589,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3652,
+"every_min": 3647,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7661,7 +7674,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 605,
+"every_min": 604,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7708,7 +7721,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 554,
+"every_min": 553,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7717,7 +7730,7 @@
 "revise": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 76,
+"every_min": 75,
 "mode": "outcome",
 "name": "REVISE",
 "src": "rider",
@@ -7726,7 +7739,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 554,
+"every_min": 553,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7753,7 +7766,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 466,
+"every_min": 465,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7780,7 +7793,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 554,
+"every_min": 553,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7816,7 +7829,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 466,
+"every_min": 465,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -7861,7 +7874,7 @@
 "weights": {
 "div": "iris",
 "every": "checked about every hour",
-"every_min": 76,
+"every_min": 75,
 "mode": "outcome",
 "name": "WEIGHTS",
 "src": "rider",
@@ -7870,7 +7883,7 @@
 "wiki": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 76,
+"every_min": 75,
 "mode": "update",
 "name": "WIKI",
 "src": "rider",
