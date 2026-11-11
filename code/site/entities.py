@@ -609,12 +609,13 @@ def bell_gate():
     errs = []
     try: idx = load(); rec = json.load(open(BELLS))
     except Exception as ex: print('BELL GATE: no index or entity_bells.json (%s)' % ex); return 1
-    served = re.findall(r"from '\\./([^']+\\.html)'", open(os.path.join(HERE, 'pages.js')).read())
+    served = re.findall(r"from '\./([^']+\.html)'", open(os.path.join(HERE, 'pages.js')).read())
     n = nb = 0
     for f in served:
         p = '/' + f[:-5]; p = '/' if p == '/index' else p
         doc = open(os.path.join(HERE, f), encoding='utf-8').read(); n += 1
         sec = IDXRE.search(doc); inside = sec.group(0) if sec else ''
+        if sec: errs.append('%s: carries an entity Index, which is off since 11 Nov (desk follows only)' % p); continue
         if len(re.findall(r'<a class="fb nosig"', doc)) != len(re.findall(r'<a class="fb nosig"', inside)): errs.append('%s: a Follow link outside the Index' % p)
         if not sec: continue
         if idx_skipped(p) or p in BELL_SKIP: errs.append('%s: a skipped page carries an Index' % p); continue

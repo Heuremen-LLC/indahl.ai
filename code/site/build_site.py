@@ -2618,7 +2618,8 @@ def main():
     # the snippet the ledger matches on that page (ledger/receipts.py). check_ledger strips these links, so they never change what a snippet reads.
     _sys.path.insert(0, os.path.join(HERE, '..', 'ledger')); import receipts as _rcp
     _rcp.link_pages(PAGES)
-    import entities as _ent; _ent.bell_pass(PAGES)   # 10 Nov 2026 evening: Follow beside the names of companies and other named things, last, on final pages (entities.py; its gate proves nothing else moved)
+    # 11 Nov 2026 night (owner: "let's go back to just desk follows"): the end-of-page entity Index is off; bell_gate checks no page carries one
+    # import entities as _ent; _ent.bell_pass(PAGES)   # 10 Nov 2026 evening: Follow beside the names of companies and other named things, last, on final pages (entities.py; its gate proves nothing else moved)
     for path, doc in PAGES.items():
         name = 'index.html' if path == '/' else path.strip('/') + '.html'
         os.makedirs(os.path.dirname(os.path.join(HERE, name)), exist_ok=True)
