@@ -36,7 +36,8 @@
   // 31 Oct 2026 (his "anything that we label live should look live and not static"): on a desk's own page, a strip under the headline.
   // Reading now: a moving bar with the count and the item being read (desks that report progress, /progress/<desk>.json).
   // Between reads: a clock counting up from the last read, and a bar filling toward the next scheduled read (the desk's rider schedule).
-  var SLUG = (location.pathname.split('/')[1] || ''), ACT = null, PROG = null;
+  var SLUG = (location.pathname.replace(/\/+$/, '') === '/iris/lab' ? 'lab' : (location.pathname.split('/')[1] || '')),   // 11 Nov 2026: the LAB page reads its own training clock
+      ACT = null, PROG = null;
   function dur(ms) { var s = Math.max(0, Math.floor(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
     return ((h ? h + ' h ' : '') + (h || m ? m + ' min ' : '') + (h ? '' : x + ' s')).trim(); }
   function fmt(n) { return Number(n).toLocaleString('en-US'); }
