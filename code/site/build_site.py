@@ -7,8 +7,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MARK = ('<svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/>'
         '<polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>')
 HOME = {'/vault': '/hermes', '/tape': '/hermes', '/receipts/stamps': '/hermes', '/hfsize': '/iris', '/hflicense': '/iris', '/pkglicense': '/iris', '/pkginstall': '/iris', '/uptime': '/atlas', '/time': '/atlas', '/cada': '/atlas', '/secrecords': '/atlas', '/seat': '/atlas', '/support': '/atlas', '/change': '/atlas',
-        '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/rank': '/oy', '/hosts': '/iris', '/water': '/atlas', '/neo': '/atlas', '/seasonal': '/hermes', '/steo': '/hermes', '/solar': '/atlas', '/quake': '/atlas', '/flu': '/hermes', '/tornado': '/hermes', '/credit': '/hermes', '/cone': '/atlas', '/wiki': '/hermes', '/social': '/hermes', '/predictions': '/hermes'}
-NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
+        '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/rank': '/oy', '/hosts': '/iris', '/water': '/atlas', '/neo': '/atlas', '/seasonal': '/hermes', '/steo': '/hermes', '/solar': '/atlas', '/quake': '/atlas', '/flu': '/hermes', '/tornado': '/hermes', '/credit': '/hermes', '/cone': '/atlas', '/wiki': '/hermes', '/social': '/hermes', '/predictions': '/hermes', '/census/revisions': '/census'}
+NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/census', 'CENSUS'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
 DOI = 'https://doi.org/10.5281/zenodo.23169755'
 
 
@@ -44,7 +44,7 @@ def seo_head(path, title, desc):
     import datetime as _dt0
     _today = _dt0.date.today().isoformat(); _org = {"@type": "Organization", "name": "Heuremen LLC", "url": SITE + "/"}
     _short = title.split(' | ')[0]
-    _live = {'predictions','support','pkglicense','hflicense','hfsize','secrecords','pkginstall','linkrot','trials','revise','hpt','hosts','airq','ailuminate','weights','airline','fedsep','time','cada','uptime','forecast','cadence','launch','arxivdrift','campus','seat','change','tape','water','neo','solar','quake','wiki','cone','tornado','credit'}
+    _live = {'predictions','support','pkglicense','hflicense','hfsize','secrecords','pkginstall','linkrot','trials','revise','hpt','hosts','airq','ailuminate','weights','airline','fedsep','time','cada','uptime','forecast','cadence','launch','arxivdrift','campus','seat','change','tape','water','neo','solar','quake','wiki','cone','tornado','credit','census','census/revisions'}
     _slug = path.strip('/')
     if path not in NOINDEX and path not in ('/', '/qia', '/iris') and not path.startswith(('/qia/study/', '/iris/study/')):
         _wp = {"@context": "https://schema.org", "@type": "WebPage", "name": _short, "description": desc, "url": url, "inLanguage": "en", "dateModified": _today, "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": SITE + "/"}, "publisher": _org}
@@ -78,6 +78,7 @@ except Exception: _HLSLUGS = set()
 def _hlslot(path):
     if path == '/social' and globals().get('_SOCIALSLOT'): return _SOCIALSLOT   # 10 Nov 2026: SOCIAL ships one reading per section, so its headline is the one built with the page (social_index/build_social.py)
     if path == '/wiki' and globals().get('_WIKISLOT'): return _WIKISLOT
+    if path == '/census/revisions' and globals().get('_CENSUSSLOT'): return _CENSUSSLOT   # 11 Nov 2026: the CENSUS desk page ships with its headline built in (census_index/build_page.py), the same function as watch/headlines.py census()
     if path == '/predictions' and globals().get('_PREDSLOT'): return _PREDSLOT   # 10 Nov 2026: NOW ships one frozen reading, so its headline is the one built with the page (now_index/build_page.py)
     if path == '/oy' and globals().get('_OYSLOT'): return _OYSLOT   # 10 Nov 2026 (newsletter audit): OY's headline is built with the page from the rows (oy_index/matrix_page/oy_headline.json)   # 10 Nov 2026: WIKI ships one reading, so its headline is the one built with that page (wiki_index/build_page.py), not the feed's
     if path == '/': return _SLOT.replace('class="hl-slot"', 'class="hl-slot hl-home"')
@@ -152,7 +153,7 @@ def page(path, title, desc, body, wide_hero=None):
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
 </div></footer>
-<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL')))}</nav>
+<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/census', 'CENSUS')))}</nav>
 <script src="/pwa.js" defer></script>
 <script src="/live-tags.js?v=35e2ef27" defer></script>
 <script src="/headline.js?v=6e4f48dc" defer></script>
@@ -1546,6 +1547,29 @@ _CONEBODY = _CONEBODY.replace('<p class="meta crumb">Division: <a href="/atlas">
 _CONEBODY = _CONEBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')
 PAGES['/cone'] = page('/cone', 'CONE | The Hurricane Forecast Cone Against Where Storms Went | Heuremen LLC', 'CONE: National Hurricane Center official track forecasts set beside the post-season best track, scored against the cone NHC states holds the storm centre about 60 to 70 percent of the time.', _CONEBODY, hero_slim('CONE &middot; The Hurricane Forecast Cone Against Where Storms Went'))
 _FEED.append(('/cone', 'CONE: The Hurricane Forecast Cone Against Where Storms Went', 'National Hurricane Center official track forecasts against the best track, read against the cone NHC states holds the storm centre about 60 to 70 percent of the time.'))
+# 11 Nov 2026: CENSUS, a division of its own (Wayfinder named it and approved the ship). The division page is short and lists its desks. The first desk is
+# REVISIONS at /census/revisions: the first print of each Census indicator with its stated 90 percent interval against the later value. Plan:
+# census_index/PLAN.md, sealed (af6caae) before any later value was set beside a first print, outside referee census_index_referee/REFEREE.md (FIX THEN SHIP,
+# fixes applied in census_index/build_page.py and census_tick.py, recorded in census_index/CHECKS.md). The body is taken from census_index/census_revisions.html,
+# which build_page.py renders from summary_census.json. The headline is the live one (watch/headlines.py census(), same function as the page).
+# The feed /census/live.json is the summary of the newest run and can be newer than the tables.
+_ce = open(os.path.join(HERE, '..', 'census_index', 'census_revisions.html'), encoding='utf-8').read()
+_ce_main = _ce[_ce.index('<main class="wrap">') + len('<main class="wrap">'):_ce.index('</main>')].lstrip('\n')
+assert _ce_main.startswith('<section id="hl-slot"'), 'CENSUS: the headline block is not where build_page.py puts it'
+_CENSUSSLOT = _ce_main[:_ce_main.index('</section>') + len('</section>')]
+_CENSUSBODY = _ce_main[len(_CENSUSSLOT):]
+assert '<p class="meta crumb">Division: <a href="/census">CENSUS</a></p>' in _CENSUSBODY, 'CENSUS: the division line is not where build_page.py puts it'
+assert 'This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.' in _CENSUSBODY, 'CENSUS: the required Census API line is missing'
+_CENSUSBODY = _CENSUSBODY.replace('<p class="meta crumb">Division: <a href="/census">CENSUS</a></p>', '', 1).lstrip('\n')
+_CENSUSBODY = _CENSUSBODY.replace('<table class="bench">', '<table class="mtx">').replace('<div class="tw">', '<div class="tablewrap">')   # the site's table and scroll styles (no inline style on indahl.ai)
+PAGES['/census/revisions'] = page('/census/revisions', 'CENSUS | Stated Uncertainty Against Later Revisions | Heuremen LLC', 'CENSUS: the first print of new home sales, housing starts, housing completions and advance retail sales with the 90 percent interval Census states for it, set beside the value after one revision, two, and today.', _CENSUSBODY, hero_slim('CENSUS &middot; Stated Uncertainty Against Later Revisions'))
+_FEED.append(('/census/revisions', 'CENSUS: Stated Uncertainty Against Later Revisions', 'The first print of each Census indicator with its stated 90 percent interval against the value after one revision, two, and today.'))
+_CENSUSDIV = ('<section class="legal"><h2>What CENSUS is</h2>'
+  '<p>CENSUS sets what the U.S. Census Bureau states about the uncertainty of its first estimates beside what the record shows later. CENSUS is the name of this division of Heuremen LLC. It is not the U.S. Census Bureau and the Bureau does not endorse it.</p>'
+  '<p>The first desk reads the 90 percent interval Census states for each first print of new home sales, housing starts, housing completions and advance retail sales against the revised values that followed. Its page is <a href="/census/revisions">CENSUS Revisions</a>, and the newest reading is in <a href="/census/live.json">/census/live.json</a>.</p>'
+  '<p class="meta">Sources: U.S. Census Bureau, Economic Indicators Time Series API and explanatory notes. Federal Reserve Bank of St. Louis, ALFRED archival series. This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.</p></section>')
+PAGES['/census'] = page('/census', 'CENSUS | Official Statistics Against Their Revisions | Heuremen LLC', 'CENSUS: what the U.S. Census Bureau states about the uncertainty of its first estimates, set beside the revisions that followed. A division of Heuremen LLC, not the Census Bureau.', _CENSUSDIV, hero_slim('CENSUS &middot; Official Statistics Against Their Revisions'))
+_FEED.append(('/census', 'CENSUS: Official Statistics Against Their Revisions', 'What the Census Bureau states about the uncertainty of its first estimates, set beside the revisions that followed.'))
 # 10 Nov 2026: WIKI, under HERMES. Plan: wiki_index/PLAN.md (committed before any comparison, notes 1 and 2 after the outside referee).
 # The page is one reading: wiki_index/build_page.py renders it from data/wiki_live.json, and its body and headline are taken from that file here,
 # so nav, division line, footer and reference code come from page(). The feed /wiki/live.json is read again about once a week and can be newer.
@@ -2119,14 +2143,15 @@ if '/iris/lab' in PAGES and '</main>' in PAGES['/iris/lab']:   # 30 Oct 2026: th
 
 
 # 29 Oct 2026: DIVISIONS. Each live page has one home division. A division page lists its desks, and a desk page shows its division.
-DESKS = {'/oy': [('/campus', 'CAMPUS', 'The documents behind the OY page, kept over time'), ('/rank', 'RANK', 'US News education rankings against the public record')],
+DESKS = {'/census': [('/census/revisions', 'REVISIONS', 'Stated Census intervals against the revisions that followed')],
+         '/oy': [('/campus', 'CAMPUS', 'The documents behind the OY page, kept over time'), ('/rank', 'RANK', 'US News education rankings against the public record')],
          '/iris': [('/iris/lab', 'LAB', 'Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Faults and Guards across models'), ('/yo', 'YO', 'Our small language model trained on IBM calibration records: live reads and every test'), ('/hfsize', 'HFSIZE', 'Model names against the weights'), ('/hflicense', 'HFLICENSE', 'Stated licenses against license files'), ('/pkglicense', 'PKGLICENSE', 'Package licenses against repository licenses'), ('/pkginstall', 'PKGINSTALL', 'Install commands against pip resolution'), ('/weights', 'WEIGHTS', 'Model names against their weight files, pass after pass'), ('/ailuminate', 'AILUMINATE', 'MLCommons AILuminate Safety results, kept and checked'), ('/hosts', 'HOSTS', 'One open-weight model, many hosts, stated uptime and quantization')],
          '/atlas': [('/atlas/electricity', 'ELECTRICITY', 'Prices, providers and generation by state'), ('/atlas/power-plants', 'POWER PLANTS', 'Every operating plant by fuel and capacity'), ('/atlas/carbon', 'CARBON', 'Pounds of CO2 per megawatthour by state and grid region'), ('/atlas/planned-plants', 'PLANNED PLANTS', 'What is coming, by fuel, stage and year'), ('/water', 'WATER', 'Reservoir forecasts against measured levels'), ('/neo', 'NEO', 'Stated asteroid close-approach distances against the later record'), ('/solar', 'SOLAR', 'Stated flare and storm chances against what happened'), ('/quake', 'QUAKE', 'Stated aftershock odds against the aftershocks that followed'), ('/cone', 'CONE', 'The hurricane forecast cone against where storms went'),
                     ('/uptime', 'UPTIME', 'Vendor status pages against independent probes'), ('/time', 'TIME', 'Public time servers, stated against delivered'), ('/cada', 'CADA', 'Public DNS filters against fresh abuse reports'), ('/secrecords', 'SECRECORDS', 'Security records against their own rules'),
                     ('/seat', 'SEAT', 'An outside seat reads our own pages'), ('/support', 'SUPPORT', 'Stated support windows against release activity'), ('/change', 'CHANGE', 'Announced shutdown dates, kept over time')],
          '/hermes': [('/hermes/model', 'MODEL', 'Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data'), ('/trials', 'TRIALS', 'Results due against results posted, and stopped trials'), ('/hpt', 'HPT', 'Hospital price files against the rule'), ('/airline', 'AIRLINE', 'Scheduled flight time against flown time'), ('/airq', 'AIRQ', 'Air sensors against the EPA\'s own targets'), ('/revise', 'REVISE', 'Stated margin against later revision'), ('/fedsep', 'FEDSEP', 'The Fed\'s stated ranges against outcomes'), ('/cadence', 'CADENCE', 'Stated update schedules against delivered'),
                   ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/seasonal', 'SEASONAL', 'Stated seasonal outlook chances against what was observed'), ('/steo', 'STEO', 'Stated energy price intervals against the spot price'), ('/flu', 'FLU', 'Stated flu forecast intervals against reported admissions'), ('/tornado', 'TORNADO', 'Stated tornado chances and warning goals against the tornadoes that came'), ('/credit', 'CREDIT', 'Stated complaint responses and card terms against the public record'), ('/forecasters', 'FORECASTERS', 'Every forecaster desk on one axis, stated against delivered'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/predictions', 'NOW', 'Public predictions against their deadline, and FORTUNE'), ('/stack', 'STACK', 'Every test side by side')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot
-_DNAME = {'/iris': 'IRIS', '/atlas': 'ATLAS', '/hermes': 'HERMES', '/oy': 'OY'}
+_DNAME = {'/iris': 'IRIS', '/atlas': 'ATLAS', '/hermes': 'HERMES', '/oy': 'OY', '/census': 'CENSUS'}
 for _d, _ds in DESKS.items():
     if _d == '/hermes': continue
     _ds = [x for x in _ds if x[0] in PAGES]
@@ -2143,7 +2168,8 @@ _DIVS = [('/qia', 'QIA', 'Quantum Idle Audit', 'IBM&rsquo;s published calibratio
          ('/iris', 'IRIS', 'Inorganic Research &amp; Intelligence Systems', 'Language models and the software around them, against what is stated about them.', _deskline('/iris')),
          ('/hermes', 'HERMES', 'Held Every Record, Measured Every Statement', 'Public claims by vendors and institutions against the record.', _deskline('/hermes')),
          ('/atlas', 'ATLAS', 'Built Infrastructure', 'Data centers, power plants, electricity and carbon mapped from open sources, and servers, time, DNS, status pages and security records against their own rules.', _deskline('/atlas')),
-         ('/oy', 'OY', 'Learning Research', 'What colleges and universities publish about measuring their own AI policies.', '<a href="/oy">Findings and list</a>' + _deskline('/oy'))]
+         ('/oy', 'OY', 'Learning Research', 'What colleges and universities publish about measuring their own AI policies.', '<a href="/oy">Findings and list</a>' + _deskline('/oy')),
+         ('/census', 'CENSUS', 'Official Statistics', 'What the Census Bureau states about the uncertainty of its first estimates, against the revisions that followed.', _deskline('/census'))]
 _cards = ''.join(f'<div class="hdiv"><h2><a href="{h}">{n}</a></h2><p class="hsub">{full}</p><p class="hwhat">{what}</p><p class="hdesks">{desks}</p></div>' for h, n, full, what, desks in _DIVS)
 PAGES['/'] = page('/', 'Heuremen LLC',
  'Heuremen LLC: Quantum Idle Audit, Inorganic Research & Intelligence Systems, OY Learning Research, ATLAS and HERMES.',
@@ -2154,7 +2180,7 @@ PAGES['/'] = page('/', 'Heuremen LLC',
 _HUB = '<h2>The menu of everything</h2><p>HERMES holds every division and every desk in one place. The name is a goal and not a coverage claim, and each desk states what it covers. Each desk keeps its own plan, code and trend history, and a reading shown below comes from the desk\'s own feed.</p>'
 for _name, _path, _what, _dk in (('QIA', '/qia', 'IBM calibration audited against itself, T1 and T2 runs, the processor queue and the quantum studies indexed', None), ('IRIS', '/iris', 'Language-model evaluations and the studies indexed, with the desks for models and packages', '/iris'),
                                  ('OY', '/oy', 'What colleges publish about measuring their own AI policies', '/oy'), ('ATLAS', '/atlas', 'Built infrastructure, mapped from open sources, with the desks listed below', '/atlas'),
-                                 ('HERMES', '/hermes', 'Claims by vendors and public institutions against the record', '/hermes')):
+                                 ('HERMES', '/hermes', 'Claims by vendors and public institutions against the record', '/hermes'), ('CENSUS', '/census', 'Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed', '/census')):
     _items = [x for x in DESKS.get(_dk, []) if x[0] in PAGES] if _dk else []
     _HUB += '<h3><a href="' + _path + '">' + _name + '</a></h3><p>' + _what + '.</p>' + (('<ul class="desklist">' + ''.join(f'<li><a href="{h}">{n}</a> <span class="deskwhat">{w}</span> <span class="deskread" data-page="{n}"></span></li>' for h, n, w in _items) + '</ul>') if _items else '')
 _HUB += '<h3><a href="/stack">STACK</a></h3><p>Every test side by side, with a random stack.</p><script src="/desks.js" defer></script>'
@@ -2188,7 +2214,7 @@ def _navfor(path):
     home = HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path)
     out = []
     for h, t in NAV:
-        if h not in ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/social'): continue   # 10 Nov: SOCIAL in the banner, STACK under HERMES
+        if h not in ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/social', '/census'): continue   # 10 Nov: SOCIAL in the banner, STACK under HERMES
         cur = ' aria-current=page' if h == home else ''
         ds = [x for x in DESKS.get(h, []) + _NAVEXTRA.get(h, []) if (x[0].split('#')[0] in PAGES or (x[0].endswith('.zip') and os.path.isfile(os.path.join(HERE, '..', 'cloudflare-workers', 'heuremen-door', 'public', x[0].lstrip('/'))))) and x[0] != h]
         _seen = set(); ds = [x for x in ds if not (x[0] in _seen or _seen.add(x[0]))]
@@ -2451,6 +2477,7 @@ def main():
         if p == '/oy' or p.startswith('/oy/'): return 'oy/oy-data-pack.zip', 'OY Data Pack'
         if p == '/hermes/model' or p.startswith('/hermes/model/'): return 'hermes/model-data-pack.zip', 'MODEL Data Pack'
         if p == '/darkwave' or p.startswith('/darkwave/'): return 'darkwave/darkwave-correction-kit.zip', 'Darkwave Correction Kit'
+        if p == '/census/revisions': return 'census/census-data-pack.zip', 'CENSUS Data Pack'
         s = p.strip('/')
         if s and '/' not in s: return f'{s}/{s}-data-pack.zip', s.upper() + ' Data Pack'
         return None

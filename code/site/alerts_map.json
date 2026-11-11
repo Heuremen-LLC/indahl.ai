@@ -7484,7 +7484,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3779,
+"every_min": 3778,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7576,7 +7576,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3653,
+"every_min": 3652,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",

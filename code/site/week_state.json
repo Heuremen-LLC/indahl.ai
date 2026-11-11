@@ -1,6 +1,11 @@
 {
  "desks": [
   [
+   "/census/revisions",
+   "REVISIONS",
+   "Stated Census intervals against the revisions that followed"
+  ],
+  [
    "/campus",
    "CAMPUS",
    "The documents behind the OY page, kept over time"
@@ -263,6 +268,7 @@
   "/cada": null,
   "/cadence": "2026-10-28T23:43:20Z",
   "/campus": "2026-10-29T18:28:01Z",
+  "/census/revisions": "2026-11-11T15:36:20Z",
   "/change": "2026-10-29T11:12:43Z",
   "/cone": "2026-11-10T15:50:55Z",
   "/credit": "2026-11-10T18:12:46Z",

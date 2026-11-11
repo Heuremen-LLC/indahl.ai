@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T14:49:23Z",
+ "built_utc": "2026-11-11T15:41:51Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 1112,
+   "commit": "fdc77f6ae477fd9dd001aa624e6a719f807c800b",
+   "files": 5251,
+   "id": "fdc77f6ae477",
+   "json": "/receipts/stamps/release_fdc77f6ae477.json",
+   "ledger_sha256": "9d6708f86c56a155a8ce9e72902301e38dad84ef3a3047709b7fa2b9e890bcff",
+   "manifest_sha256": "cee06601253ac7e93db4bf62d951714530a1ae76e10d954533e102c3dda0e82b",
+   "ots": "/receipts/stamps/release_fdc77f6ae477.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T14:57:06Z",
+   "sha256": "36246cbfb4b1dc38bff8d37418d219e29c2c6d8bb5955ca2d214ff7a86695d17",
+   "wayback": [],
+   "wayback_waiting": 1110
+  },
   {
    "changed": 957,
    "commit": "c6947729599a89bca5c85e454c77d05a2ada332f",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-11T14:37:37Z",
    "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
    "wayback": [],
-   "wayback_waiting": 950
+   "wayback_waiting": 276
   },
   {
    "changed": 1530,
@@ -26,7 +41,7 @@
    "ledger_sha256": "387b7ce4393bc1a7c350bd65bf58aa42bb60ed399dd1c85f38e13c2ba8ac8b61",
    "manifest_sha256": "cf2c899e6f09ab9edbb7cb96782827fae28ff7344835bcb31b79f2b6bdafde0f",
    "ots": "/receipts/stamps/release_34b906590457.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975445",
    "released_at": "2026-11-11T14:16:29Z",
    "sha256": "a8ed344e3cbefbbb6a2a84777c402d262cd484bae178df6e36ad0aca91389bf7",
    "wayback": [
@@ -56,7 +71,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 1359
+   "wayback_waiting": 1123
   },
   {
    "changed": 287,
@@ -322,7 +337,7 @@
      "url": "https://indahl.ai/qia/study/zenodo-22848316"
     }
    ],
-   "wayback_waiting": 13
+   "wayback_waiting": 9
   },
   {
    "changed": 61,
@@ -337,7 +352,7 @@
    "released_at": "2026-11-11T13:32:11Z",
    "sha256": "fd277174c8bd920392e51d251f1fd0c7832a3ac7c4acc67a059471678f5e3485",
    "wayback": [],
-   "wayback_waiting": 3
+   "wayback_waiting": 1
   },
   {
    "changed": 811,
@@ -603,7 +618,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 185
+   "wayback_waiting": 76
   },
   {
    "changed": 0,
@@ -884,7 +899,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 56
+   "wayback_waiting": 34
   },
   {
    "changed": 369,
