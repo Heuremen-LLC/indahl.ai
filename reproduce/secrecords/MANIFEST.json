@@ -14,31 +14,31 @@
  "desk": "secrecords",
  "inputs": [
   {
-   "bytes": 368085,
+   "bytes": 368119,
    "gzip_added": true,
-   "modified": "2026-11-10T19:09:18Z",
+   "modified": "2026-11-11T12:22:27Z",
    "path": "data/domains.json",
-   "sha256": "ad23f873004af332dfddb5b550f39881dffaf448a21d2dc9599952a594c9f167",
+   "sha256": "6d7ba719d2bdda0a73fbcd9ee00bf3e9142fc1f11a950cc588c9087ee4d78db0",
    "stored": "data/domains.json.gz",
-   "stored_sha256": "511cd1657baac59bc34bda4bc93d670bb397178936abc3115c0e934b7a21a5ff"
+   "stored_sha256": "a20cf4a920cf7644dea48e162d57c7616d70d15c76637bee2f014bc31a5d8036"
   },
   {
-   "bytes": 15162,
+   "bytes": 15164,
    "gzip_added": true,
-   "modified": "2026-11-10T19:09:18Z",
+   "modified": "2026-11-11T12:22:27Z",
    "path": "summary_secrecords.json",
-   "sha256": "08328af2090273071ce33394a74c4485548f79f03df2dd0f11a733c24d4a2561",
+   "sha256": "06bd2c7741a201390982d1a3bf5537cb16af2097d5b18f82875fcfcf455ff4b0",
    "stored": "summary_secrecords.json.gz",
-   "stored_sha256": "acb865d786cfbcc88770a9eafab2b27cad0e699f0d200b79a1ea322e7175b96c"
+   "stored_sha256": "515a1ede5a63b7264c4c1fb9480ba403dd19ef4a4948a8c6afab4cf69a3fcdd2"
   }
  ],
- "made": "2026-11-10T23:47:03Z",
+ "made": "2026-11-11T12:25:18Z",
  "mode": "fetch",
  "name": "SECRECORDS",
  "reference": [
   {
    "path": "desk/secrecords_tick.py",
-   "sha256": "da9f093553e3fad1257bb33d027995b2fbc80f944d4c09909c89e1414d8ede66"
+   "sha256": "6443914b876294a9a3cb08e2164cc7ce21a04ec31ae3fced667d21c3728ce6ba"
   }
  ],
  "sources": [

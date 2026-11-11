@@ -10,15 +10,15 @@ This kit recomputes the SECRECORDS headline number and its outcome label with th
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `143c8e7cbf29f81b88662acb49a55a7073e67f030acfe23a680720cd57ed878b`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `f397b97dc18702fc57548b4902753a352a640f5e7e1ed96301dce9e9f1727456`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 10 Nov 18:23, read by us at 2026-11-10T23:47:03Z. The feed bytes had sha256 `08328af2090273071ce33394a74c4485548f79f03df2dd0f11a733c24d4a2561`.
+The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 11 Nov 11:35, read by us at 2026-11-11T12:25:18Z. The feed bytes had sha256 `06bd2c7741a201390982d1a3bf5537cb16af2097d5b18f82875fcfcf455ff4b0`.
 
 - number: 14%
-- value: 0.1379
-- interval: 0.0911 to 0.2035
+- value: 0.1448
+- interval: 0.0967 to 0.2113
 - outcome: CANNOT_TELL
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -43,8 +43,8 @@ As the SECRECORDS data pack lists them. Credit each source when you use its valu
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/domains.json | 368,085 | `ad23f873004af332dfddb5b550f39881dffaf448a21d2dc9599952a594c9f167` |
-| summary_secrecords.json | 15,162 | `08328af2090273071ce33394a74c4485548f79f03df2dd0f11a733c24d4a2561` |
+| data/domains.json | 368,119 | `6d7ba719d2bdda0a73fbcd9ee00bf3e9142fc1f11a950cc588c9087ee4d78db0` |
+| summary_secrecords.json | 15,164 | `06bd2c7741a201390982d1a3bf5537cb16af2097d5b18f82875fcfcf455ff4b0` |
 
 ## Code
 

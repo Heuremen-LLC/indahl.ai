@@ -27,7 +27,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [PKGLICENSE](pkglicense/) | fetch and verify | `46ab84f4bef32aaa4d529cf50cf780da6697bf1850dab424d7115153b5766933` |
 | [QUAKE](quake/) | included | `04c5991de0c9e183eaec21f81776d2391235f2dc1add25d889efa18f9d79794d` |
 | [SEASONAL](seasonal/) | included | `bc5c500339489235e7034dd1ab3df2971672bbb776d8c74808320075ada0d87f` |
-| [SECRECORDS](secrecords/) | fetch and verify | `143c8e7cbf29f81b88662acb49a55a7073e67f030acfe23a680720cd57ed878b` |
+| [SECRECORDS](secrecords/) | fetch and verify | `f397b97dc18702fc57548b4902753a352a640f5e7e1ed96301dce9e9f1727456` |
 | [SOLAR](solar/) | fetch and verify | `336e3ae79281b594f30b1ad6497dcf7103702986d2f9ee016b672e787bd5fa9c` |
 | [STEO](steo/) | included | `62582754f487e4bbb247ecb496530bfe0811c434a8f16222e973664ae554574d` |
 | [SUPPORT](support/) | fetch and verify | `9fc34e209b7b6fbd8193eb2737e61f188a60a1193cfc1871060a384b73527817` |

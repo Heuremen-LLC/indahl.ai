@@ -1031,6 +1031,12 @@
 "trials"
 ]
 ],
+"shopify": [
+"Shopify",
+[
+"secrecords"
+]
+],
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": [
 "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
 [
@@ -6680,6 +6686,13 @@
 "name": "Shire",
 "url": "/brand/shire"
 },
+"shopify": {
+"feed": true,
+"kind": "company",
+"kword": "company",
+"name": "Shopify",
+"url": "/brand/shopify"
+},
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": {
 "feed": true,
 "kind": "organisation",
@@ -7478,7 +7491,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3767,
+"every_min": 3774,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7570,7 +7583,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3642,
+"every_min": 3648,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7646,7 +7659,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 142,
+"every_min": 143,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -7655,7 +7668,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 603,
+"every_min": 604,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7702,7 +7715,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 553,
+"every_min": 554,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7720,7 +7733,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 553,
+"every_min": 554,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7774,7 +7787,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 553,
+"every_min": 554,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7783,7 +7796,7 @@
 "support": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 100,
+"every_min": 101,
 "mode": "outcome",
 "name": "SUPPORT",
 "src": "rider",
@@ -7819,7 +7832,7 @@
 "trials": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 100,
+"every_min": 101,
 "mode": "outcome",
 "name": "TRIALS",
 "src": "rider",
@@ -7992,5 +8005,5 @@
 ]
 }
 },
-"tick_min": 2.09
+"tick_min": 2.1
 }

@@ -4384,5 +4384,22 @@
   "worse": false,
   "source": "oy_index/BROWSER_REREAD_20261110.md",
   "receipt": "oy.s0_unreached"
+ },
+ {
+  "id": "c20261111-01",
+  "date": "2026-11-11",
+  "desk": "QIA",
+  "page": "/qia/list#doi-10-5281-zenodo-23731577",
+  "stage": "public",
+  "published": "The F2 note on False witnesses for small Shor experiments said the headline combines only the two runs with dynamical decoupling, a combination not pre-registered, and called the run without decoupling a diagnostic run.",
+  "wrong": "The run without decoupling was itself pre-registered, and the paper already labelled the combined value not pre-registered. Each decoupling run was pre-registered and met its own rule.",
+  "now": "The entry points to version 1.3. The F2 note now says the abstract's combined value covers only the two decoupling runs, chosen after the first pre-registered run failed, and that each decoupling run met its own rule. The F1 note now gives the measured to modelled signal ratios with their uncertainty.",
+  "why": "Our note used the wrong word for the first run and described as a finding something the paper said about itself.",
+  "caught_by": "an outside reader",
+  "worse": true,
+  "source": "qia_leads/responses/pogxium_20261111/VERIFY.md",
+  "links": [
+   "https://indahl.ai/qia/list#doi-10-5281-zenodo-23731577"
+  ]
  }
 ]
