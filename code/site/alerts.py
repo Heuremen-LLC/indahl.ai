@@ -237,7 +237,8 @@ def footer(PAGES):
         if k in NO_FOOT_FORM or FOOT not in d or 'class="su"' in d: continue
         extra = ''; s = k.lstrip('/')
         if s in items: extra = item_box(s, items[s])
-        elif k in by_url: extra = ent_box(by_url[k], eidx[by_url[k]])   # a brand page, an entity page or an OY school page: this company or named thing
+        # 11 Nov night: no per-entity box (desk follows only); brand pages keep their brand box below
+        # elif k in by_url: extra = ent_box(by_url[k], eidx[by_url[k]])   # a brand page, an entity page or an OY school page: this company or named thing
         elif k.startswith('/brand/') and k[7:] in brands: extra = brand_box(k[7:], brands[k[7:]][0])
         d = d.replace(FOOT, FOOT + signup_form(extra), 1); n += 1
         PAGES[k] = d
@@ -337,13 +338,8 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
         blocks.append('<div class="su-div"><p class="su-dh"><label><input type="checkbox" name="dv" value="%s"><a href="/%s">%s</a>: everything in this division</label></p>'
                       '<ul class="su-list"><li><label><input type="checkbox" name="u" value="%s"> <strong>%s main page</strong></label> <span class="su-k">Updates, %s</span></li>%s</ul></div>'
                       % (E(dslug), E(dslug), E(dname), E(dslug), E(dname), E(items[dslug]['page_every'] if items[dslug]['page_every_min'] is not None else 'sent when we publish a new version'), li))
-    listing = ('<p class="su-h" id="named">Companies, models and other named things</p>'
-               '<p class="su-k">One email when a row about it changes or a new row about it appears, on any desk in any division. Rows the desks read from their feeds are '
-               + E(ent_every({'feed': 1})) + '. Rows on other pages are sent when we publish a new version.</p>'
-               '<p><label for="ent-q">Find a company, agency, model, quantum backend, school or package</label><br><input type="search" id="ent-q" class="ent-q" autocomplete="off" placeholder="IBM, Falcon, ibm_kingston, NOAA"></p>'
-               '<div id="ent-picked" class="su-c" hidden></div><div id="ent-res" aria-live="polite"></div>'
-               '<noscript><p class="su-k">Every company and organisation has a <a href="/brand">brand page</a> with its own box in the form at its foot.</p></noscript>'
-               '<p class="su-h">The desks and divisions you tick</p>' + ''.join(blocks))
+    # 11 Nov 2026 night (owner: "take off the search box", "back to just desk follows"): no named-thing search on /alerts
+    listing = ('<p class="su-h">The desks and divisions you tick</p>' + ''.join(blocks))
     body = ('<section class="legal"><p>One form for every email from indahl.ai. The same form sits at the foot of the site&rsquo;s pages.</p>'
             '<p>The weekly newsletter comes every Tuesday and starts at once. New desks and new data sends one email when a new desk goes live, when a desk '
             'publishes its first value under its change rule, and when a release adds an entry to the <a href="/changelog">changelog</a>.</p>'
@@ -356,9 +352,7 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
             '<p>For every box but the newsletter, we email a confirmation link first and send nothing else until you open it. Every email has a link to unsubscribe, '
             'and every alert has a link to change what you get. Each outcome desk&rsquo;s changes are also on its own feed, for example <a href="/airq/changes.xml">/airq/changes.xml</a>, '
             'and each <a href="/brand">brand page</a> offers the rows about that organisation.</p>'
-            '<p>You can also follow one company, agency, model, model family, quantum backend, school or package: search for it below, or tick the box at the foot of its page. '
-            'One email comes when a row about it changes or a new row about it appears on any desk.</p>'
-            + signup_form('', listing) + '</section><script src="/e/search.js" defer></script>')
+            + signup_form('', listing) + '</section>')
     PAGES['/alerts'] = page('/alerts', 'Email Updates | Heuremen LLC', 'The weekly newsletter, new desks and new data, and an email when an outcome or the published data changes on the indahl.ai desks and divisions you follow, with a confirmation link first for alerts.',
                             body, hero_slim('Email Updates'))
     if HOME is not None: HOME['/alerts'] = '/hermes'

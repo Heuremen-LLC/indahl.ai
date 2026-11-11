@@ -14,6 +14,9 @@ def onb(v, b): return v is not None and abs(v - b) <= 1e-6 * max(1.0, b)
 out = dict(updated=D.datetime.now(D.timezone.utc).strftime('%d %b %H:%M'), processors=[])
 import glob
 ITEMS = [(b, 'runs/results_%s.json' % b, b) for b in ('ibm_boston', 'ibm_kingston', 'ibm_fez')] + [(os.path.basename(f)[8:-5].replace('_rerun', ' (rerun ') + (')' if '_rerun' in f else ''), f, 'ibm_fez') for f in sorted(glob.glob('runs/results_*_rerun*.json'))]
+# 11 Nov 2026: a repeat run on a processor is saved as runs/results_<backend>_<YYYYMMDD>.json and gets its own rows beside the first run
+import re as _re
+ITEMS += [(b0, f, b0) for f in sorted(glob.glob('runs/results_ibm_*_2???????.json')) for b0 in [_re.match(r'runs/results_(ibm_[a-z]+)_\d{8}\.json$', f).group(1)]]
 for b, f, _bk in ITEMS:
     if not os.path.exists(f): out['processors'].append(dict(backend=b, state='submitted, waiting in the processor queue')); continue
     d = json.load(open(f)); qs = []

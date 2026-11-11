@@ -438,7 +438,7 @@ def add_pages(PAGES, page, hero_slim, HOME, idx, brand_rows, desks, home, render
     for i, e in sorted(idx.items()):
         if e['kind'] in BRAND_KINDS or e.get('own_page') is False: continue
         kw = e.get('kword') or KIND_WORD[e['kind']]; nm = E(e['name'])
-        o = ['<section class="legal"><p class="meta">%s &middot; <a href="/alerts">Follow any named thing</a></p>' % E(KIND_LABEL[e['kind']])]
+        o = ['<section class="legal"><p class="meta">%s</p>' % E(KIND_LABEL[e['kind']])]
         if e.get('family'):
             o.append('<p>Every row the desks of Heuremen LLC publish about a model in the %s family, and every page that names the family or one of its models. Models in the family: %s.</p>'
                      % (E(e['name']), ', '.join('<a href="%s">%s</a>' % (E(idx[m]['url']), E(idx[m]['name'])) for m in e['family'] if m in idx) or 'none with rows yet'))

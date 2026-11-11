@@ -27521,17 +27521,6 @@
    "anchor": "doi-10-1116-5-0285597"
   },
   {
-   "study": "Pedagogical Approach for Quantum Computing in Engineering Education",
-   "link": "https://doi.org/10.1002/cae.70004",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Abstract only",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "doi-10-1002-cae-70004"
-  },
-  {
    "study": "PennyLane–Qiskit Plugin: A Protocol for Integrating Noisy, Fake, and Real Quantum Backends",
    "link": "https://doi.org/10.4108/eettti.12288",
    "version": "published version",
