@@ -7470,7 +7470,7 @@
 "census": {
 "div": "",
 "every": "checked about every 2 hours",
-"every_min": 126,
+"every_min": 125,
 "mode": "outcome",
 "name": "CENSUS",
 "src": "rider",
@@ -7497,7 +7497,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3772,
+"every_min": 3770,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7589,7 +7589,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3647,
+"every_min": 3645,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7665,7 +7665,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 143,
+"every_min": 142,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -7674,7 +7674,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 604,
+"every_min": 603,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -8011,5 +8011,5 @@
 ]
 }
 },
-"tick_min": 2.1
+"tick_min": 2.09
 }

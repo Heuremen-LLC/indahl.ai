@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T15:53:56Z",
+ "built_utc": "2026-11-11T16:13:01Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 162,
+   "commit": "8123eafbb8b867abffbb30765554574170ef3f21",
+   "files": 5314,
+   "id": "8123eafbb8b8",
+   "json": "/receipts/stamps/release_8123eafbb8b8.json",
+   "ledger_sha256": "df527c82778b3884d9514afeaee86362f22b87a6992b37a125ea18dadc167d41",
+   "manifest_sha256": "4c69a9baa15075c67e0e7f42d40f3d1cfc6a6b7dd0523f7dafa3555676ae5be7",
+   "ots": "/receipts/stamps/release_8123eafbb8b8.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T16:02:30Z",
+   "sha256": "bb1a9a60aca615b5e5cb1f4461130351ad76414274c5515b280014cc9e1267f0",
+   "wayback": [],
+   "wayback_waiting": 157
+  },
   {
    "changed": 206,
    "commit": "4f6a355d93af21b7a61331dc2108e347cbb35c77",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-11T15:53:54Z",
    "sha256": "f5305dd3e6bfced13c06067027e82d4eb24772e5c52b968df580fbfc14de5c21",
    "wayback": [],
-   "wayback_waiting": 203
+   "wayback_waiting": 63
   },
   {
    "changed": 928,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-11T15:45:11Z",
    "sha256": "e62a0fa4139a059ee2707917846fae45350fb04e5f47ff4e2457fe40c302491d",
    "wayback": [],
-   "wayback_waiting": 751
+   "wayback_waiting": 745
   },
   {
    "changed": 1112,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-11T14:57:06Z",
    "sha256": "36246cbfb4b1dc38bff8d37418d219e29c2c6d8bb5955ca2d214ff7a86695d17",
    "wayback": [],
-   "wayback_waiting": 775
+   "wayback_waiting": 774
   },
   {
    "changed": 957,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-11T14:37:37Z",
    "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
    "wayback": [],
-   "wayback_waiting": 262
+   "wayback_waiting": 259
   },
   {
    "changed": 1530,
@@ -101,7 +116,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 589
+   "wayback_waiting": 585
   },
   {
    "changed": 287,
@@ -367,7 +382,7 @@
      "url": "https://indahl.ai/qia/study/zenodo-22848316"
     }
    ],
-   "wayback_waiting": 8
+   "wayback_waiting": 5
   },
   {
    "changed": 61,
@@ -648,7 +663,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 73
+   "wayback_waiting": 72
   },
   {
    "changed": 0,
