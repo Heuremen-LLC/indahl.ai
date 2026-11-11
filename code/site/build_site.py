@@ -2269,6 +2269,7 @@ CSS += """
 .ggbtn::after{content:" \\25BE"}.ggbtn:focus-visible{outline:2px solid var(--rule);outline-offset:2px}
 .ggdd{display:block}.dd.ggdd:hover .ggpanel,.dd.ggdd:focus-within .ggpanel{display:flex!important}.ggpanel{left:auto;right:0;width:min(600px,calc(100vw - 32px));min-width:0;padding:12px 16px;gap:6px}.ggpanel ul{list-style:none;margin:0;padding:0}.ggpanel li{padding:6px 0;border-bottom:1px solid rgba(200,144,42,.35);line-height:1.4}
 .ggpanel li:last-child{border-bottom:0}.ggpanel a{white-space:normal;font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.1em;margin-right:8px}.ggw{color:var(--mid)}.ggs{font-size:13px;color:var(--mid);white-space:nowrap}
+@media (max-width:640px){.mtx{display:block;max-width:100%;overflow-x:auto}.bench-live{max-width:100%;overflow-x:auto}}
 .ggs::before{content:"\\00b7\\00a0"}.ggr{display:block;font-size:13px;color:var(--goldink)}.ggnote{display:block;font-size:14px;color:var(--mid);margin-bottom:4px}.ggall a{font-size:15px}
 @media (max-width:640px){.ggpanel{position:static;margin-top:8px;width:auto}}
 """
