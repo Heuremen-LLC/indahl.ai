@@ -64,9 +64,6 @@
 {"id": "ax:2310.03924|DATES", "paper": "ax:2310.03924", "q": "DATES", "pred": "NO", "score": 1.0, "out": "NO"}
 {"id": "ax:2310.03924|LINK", "paper": "ax:2310.03924", "q": "LINK", "pred": "NO", "score": 0.0, "out": "NO"}
 {"id": "ax:2310.03924|REQUEST", "paper": "ax:2310.03924", "q": "REQUEST", "pred": "NO", "score": 1.0, "out": "NO"}
-{"id": "ax:2310.09826|DATES", "paper": "ax:2310.09826", "q": "DATES", "pred": "NO", "score": 1.0, "out": "NO"}
-{"id": "ax:2310.09826|LINK", "paper": "ax:2310.09826", "q": "LINK", "pred": "YES", "score": 1.0, "out": "YES"}
-{"id": "ax:2310.09826|REQUEST", "paper": "ax:2310.09826", "q": "REQUEST", "pred": "NO", "score": 1.0, "out": "NO"}
 {"id": "ax:2310.12448|DATES", "paper": "ax:2310.12448", "q": "DATES", "pred": "NO", "score": 0.0, "out": "NO"}
 {"id": "ax:2310.12448|LINK", "paper": "ax:2310.12448", "q": "LINK", "pred": "YES", "score": 0.0, "out": "YES"}
 {"id": "ax:2310.12448|REQUEST", "paper": "ax:2310.12448", "q": "REQUEST", "pred": "NO", "score": 0.0, "out": "NO"}
