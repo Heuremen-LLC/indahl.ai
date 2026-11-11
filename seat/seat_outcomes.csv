@@ -1,2 +1,2 @@
 path,label,outcome,n,of,share,lo,hi,newest_probe_hours
-"/rolling/Last 24 probes, counted as incidents","Last 24 probes, counted as incidents",CONSISTENT,0,24,,,,0.9
+"/rolling/Last 24 probes, counted as incidents","Last 24 probes, counted as incidents",CONSISTENT,0,24,,,,0.3

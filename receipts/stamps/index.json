@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T21:19:45Z",
+ "built_utc": "2026-11-11T21:44:29Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 730,
+   "commit": "4c9acb056ff8b2a9934406a930b666d29e62eb4b",
+   "files": 5722,
+   "id": "4c9acb056ff8",
+   "json": "/receipts/stamps/release_4c9acb056ff8.json",
+   "ledger_sha256": "aa2b8d5a6ad4d374f20daf5600c208947f958152bb48dad9be54913842248a76",
+   "manifest_sha256": "1f30b90c4304fb720977abf17ac96e74bea22265c127c912ca7c9b327f9c0078",
+   "ots": "/receipts/stamps/release_4c9acb056ff8.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T21:31:50Z",
+   "sha256": "12da3bfe43d8c06007d7f111db38c22deee79ebdd9153ac7f0353d1eca85c661",
+   "wayback": [],
+   "wayback_waiting": 727
+  },
   {
    "changed": 815,
    "commit": "caa59b3ed5cbdb889fdb8fad6d06b5f6d00ea907",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-11T21:19:43Z",
    "sha256": "85fe779cdfaee30d9ea25c4642f75565dba67e96ce1200b47cbedb70e2fff8ff",
    "wayback": [],
-   "wayback_waiting": 812
+   "wayback_waiting": 197
   },
   {
    "changed": 901,
@@ -56,7 +71,7 @@
    "ledger_sha256": "8180b7d4f7e436840b35d4bb3783d35ebd4df8df8070f38095cc46f55e32f610",
    "manifest_sha256": "dd67c63def5aa5c9ba6ca626625c7e6518f01997ab57f2f96855025e032a0ac0",
    "ots": "/receipts/stamps/release_01742bce95df.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975469",
    "released_at": "2026-11-11T19:14:29Z",
    "sha256": "47483d4b553ca13eddbe3a82c2d9d9e89aefb3d36c922853784ac6cf9721a062",
    "wayback": [],
@@ -71,7 +86,7 @@
    "ledger_sha256": "8180b7d4f7e436840b35d4bb3783d35ebd4df8df8070f38095cc46f55e32f610",
    "manifest_sha256": "7b8c80bf4bb393bb8bc1e2e93293c4b29c6ba4fd5c30665f90652317c646cbea",
    "ots": "/receipts/stamps/release_bac6f588e4a1.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975469",
    "released_at": "2026-11-11T19:03:43Z",
    "sha256": "0023b03737a1b257741aef2efa93eee42e73287087a54d6ab8771ba10d5f3334",
    "wayback": [],
@@ -86,7 +101,7 @@
    "ledger_sha256": "8180b7d4f7e436840b35d4bb3783d35ebd4df8df8070f38095cc46f55e32f610",
    "manifest_sha256": "cb807d9b5178382d5ee9adc3c58ec109dd2385de93a57c4bf4a34834015e6642",
    "ots": "/receipts/stamps/release_663012db96ed.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975469",
    "released_at": "2026-11-11T18:49:30Z",
    "sha256": "d85f6ce6ac44611078c38006298e35ba17076e8220e76be5e9278c9f64fb8ec0",
    "wayback": [],
@@ -101,11 +116,11 @@
    "ledger_sha256": "e0beef27b37344f2656c2ed739f9ab9c4f91edc50dc1dea94ed6e84b26ab21fb",
    "manifest_sha256": "592b20c130d5f287af0b20d29bab83266592183ee406d27f2e8382fc81687a11",
    "ots": "/receipts/stamps/release_b572de593986.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975469",
    "released_at": "2026-11-11T18:44:45Z",
    "sha256": "63d3766264cb79e728c72a4850758c2077f0e160d5df2b88623c0a5fff9d1884",
    "wayback": [],
-   "wayback_waiting": 146
+   "wayback_waiting": 43
   },
   {
    "changed": 1172,
@@ -210,7 +225,7 @@
    "released_at": "2026-11-11T14:57:06Z",
    "sha256": "36246cbfb4b1dc38bff8d37418d219e29c2c6d8bb5955ca2d214ff7a86695d17",
    "wayback": [],
-   "wayback_waiting": 12
+   "wayback_waiting": 8
   },
   {
    "changed": 957,
