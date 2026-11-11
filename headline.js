@@ -52,7 +52,7 @@
         fill('hlgrid', list.map(function (s) { var h = pages[s]; var m = /^(.*?[.!?])(\s+.+)$/.exec(h.line || ''); var line = m ? esc(m[1]) + '<span class="hl-rest">' + esc(m[2]) + '</span>' : esc(h.line); return '<a class="hlcard" href="' + esc(h.href) + '"><div class="hl-big">' + esc(h.big) + '</div><p class="hl-line">' + line + '</p><span class="hl-more">' + esc(s.toUpperCase()) + '</span></a>'; }).join(''));
       } else {
         if (path === '/stack') { stackPick(main); return; }
-        var slug = path.split('/')[1]; if (path.split('/').length > 2 && path !== '/hermes/model') return; var h = pages[slug]; if (!h || path === '/hermes/model') return;
+        var slug = path.slice(1); if (!pages[slug]) { slug = path.split('/')[1]; if (path.split('/').length > 2) return; } if (path === '/hermes/model') return; var h = pages[slug]; if (!h) return;   // 11 Nov 2026: a headline keyed by a full path (iris/lab) serves that page
         var hs = fill('hl', block(h)); receipt(hs, slug);
       }
     }).catch(function () {});

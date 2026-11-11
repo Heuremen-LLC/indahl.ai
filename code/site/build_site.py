@@ -90,6 +90,7 @@ def _hlslot(path):
     _parts = path.split('/')
     # 30 Oct 2026 site pass (B-29, I-29): desks whose headline moves within minutes ship an empty slot, so a reader without scripts never gets a stale number
     if len(_parts) == 2 and _parts[1] in ('tape', 'airline', 'hosts', 'qia', 'iris'): return _SLOT
+    if path == '/iris/lab': return _SLOT   # 11 Nov 2026: the LAB headline moves every turn, so it ships an empty slot and headline.js fills it from headlines.json['iris/lab']
     if len(_parts) == 2 and path != '/hermes/model':
         try: _hh = _jsonld.load(open(os.path.expanduser('~/bones-forge/watch/headlines.json')))['pages'].get(_parts[1])
         except Exception: _hh = None

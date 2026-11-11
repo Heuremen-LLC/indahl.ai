@@ -7609,7 +7609,7 @@
 "iris/lab": {
 "div": "iris",
 "every": "checked about every 5 minutes",
-"every_min": 4,
+"every_min": 2,
 "mode": "update",
 "name": "LAB",
 "src": "rider",
