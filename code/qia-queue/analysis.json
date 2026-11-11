@@ -1,0 +1,481 @@
+{
+ "meta": {
+  "rule": "PLAN.md Note 1 + Note 2",
+  "min_joined": 20,
+  "max_age_min": 90,
+  "bootstrap": 4000,
+  "seed": 7,
+  "run_gap_min": 30,
+  "history_first": 1793270795.0,
+  "history_last": 1794421916.0,
+  "jobs_total": 796,
+  "jobs_joined": 600,
+  "jobs_dropped": 196
+ },
+ "processors": {
+  "ibm_boston": {
+   "joined": 37,
+   "dropped": 4,
+   "total": 41,
+   "runs": 37,
+   "pending_min": 0,
+   "pending_max": 707,
+   "span": 707.0,
+   "rho": 0.43764817449027965,
+   "job_ci": [
+    0.1217457574723193,
+    0.6688138576304574
+   ],
+   "run_ci": [
+    0.1217457574723193,
+    0.6688138576304574
+   ],
+   "job_outcome": "CANNOT_TELL",
+   "outcome": "CANNOT_TELL",
+   "undefined_resamples": {
+    "job": 0,
+    "run": 0
+   }
+  },
+  "ibm_chicago": {
+   "joined": 36,
+   "dropped": 1,
+   "total": 37,
+   "runs": 36,
+   "pending_min": 0,
+   "pending_max": 1519,
+   "span": 1519.0,
+   "rho": 0.76438785153427,
+   "job_ci": [
+    0.5460626444338288,
+    0.872368039602309
+   ],
+   "run_ci": [
+    0.5460626444338288,
+    0.872368039602309
+   ],
+   "job_outcome": "ABOVE",
+   "outcome": "ABOVE",
+   "undefined_resamples": {
+    "job": 0,
+    "run": 0
+   }
+  },
+  "ibm_fez": {
+   "joined": 97,
+   "dropped": 79,
+   "total": 176,
+   "runs": 82,
+   "pending_min": 0,
+   "pending_max": 38436,
+   "span": 38436.0,
+   "rho": 0.5892175514292222,
+   "job_ci": [
+    0.41799117813742354,
+    0.7194015759669625
+   ],
+   "run_ci": [
+    0.33504029444039246,
+    0.7930674538592248
+   ],
+   "job_outcome": "ABOVE",
+   "outcome": "ABOVE",
+   "undefined_resamples": {
+    "job": 0,
+    "run": 0
+   }
+  },
+  "ibm_kingston": {
+   "joined": 139,
+   "dropped": 76,
+   "total": 215,
+   "runs": 95,
+   "pending_min": 0,
+   "pending_max": 22666,
+   "span": 22666.0,
+   "rho": 0.47532689976966935,
+   "job_ci": [
+    0.3367444208823662,
+    0.5947702314973797
+   ],
+   "run_ci": [
+    0.26279099104923065,
+    0.6515567447483163
+   ],
+   "job_outcome": "ABOVE",
+   "outcome": "CANNOT_TELL",
+   "undefined_resamples": {
+    "job": 0,
+    "run": 0
+   }
+  },
+  "ibm_marrakesh": {
+   "joined": 135,
+   "dropped": 7,
+   "total": 142,
+   "runs": 93,
+   "pending_min": 0,
+   "pending_max": 66676,
+   "span": 66676.0,
+   "rho": 0.46757095027452833,
+   "job_ci": [
+    0.2982432733394358,
+    0.6165502418965951
+   ],
+   "run_ci": [
+    0.25593602514478747,
+    0.6342551638219217
+   ],
+   "job_outcome": "CANNOT_TELL",
+   "outcome": "CANNOT_TELL",
+   "undefined_resamples": {
+    "job": 0,
+    "run": 0
+   }
+  },
+  "ibm_phoenix": {
+   "joined": 72,
+   "dropped": 2,
+   "total": 74,
+   "runs": 72,
+   "pending_min": 662,
+   "pending_max": 2303,
+   "span": 3.4788519637462234,
+   "rho": 0.022879468772595814,
+   "job_ci": [
+    -0.2203894519177138,
+    0.26086520779064243
+   ],
+   "run_ci": [
+    -0.2203894519177138,
+    0.26086520779064243
+   ],
+   "job_outcome": "CONSISTENT",
+   "outcome": "CONSISTENT",
+   "undefined_resamples": {
+    "job": 0,
+    "run": 0
+   }
+  },
+  "ibm_pittsburgh": {
+   "joined": 84,
+   "dropped": 27,
+   "total": 111,
+   "runs": 83,
+   "pending_min": 0,
+   "pending_max": 357,
+   "span": 357.0,
+   "rho": 0.6010445729936957,
+   "job_ci": [
+    0.4583783081279326,
+    0.7067364242954781
+   ],
+   "run_ci": [
+    0.4667212044392195,
+    0.7035889540350594
+   ],
+   "job_outcome": "ABOVE",
+   "outcome": "ABOVE",
+   "undefined_resamples": {
+    "job": 0,
+    "run": 0
+   }
+  }
+ },
+ "sensitivity_added_after_first_reading": {
+  "ibm_boston": {
+   "10": {
+    "runs": 37,
+    "run_ci": [
+     0.1217457574723193,
+     0.6688138576304574
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "30": {
+    "runs": 37,
+    "run_ci": [
+     0.1217457574723193,
+     0.6688138576304574
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "60": {
+    "runs": 35,
+    "run_ci": [
+     0.11854583289907418,
+     0.6699494736557927
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "120": {
+    "runs": 25,
+    "run_ci": [
+     0.05857473318379268,
+     0.6839227950469914
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "240": {
+    "runs": 21,
+    "run_ci": [
+     0.010089240395323898,
+     0.687004364656258
+    ],
+    "outcome": "CANNOT_TELL"
+   }
+  },
+  "ibm_chicago": {
+   "10": {
+    "runs": 36,
+    "run_ci": [
+     0.5460626444338288,
+     0.872368039602309
+    ],
+    "outcome": "ABOVE"
+   },
+   "30": {
+    "runs": 36,
+    "run_ci": [
+     0.5460626444338288,
+     0.872368039602309
+    ],
+    "outcome": "ABOVE"
+   },
+   "60": {
+    "runs": 34,
+    "run_ci": [
+     0.551475058574352,
+     0.873317438298188
+    ],
+    "outcome": "ABOVE"
+   },
+   "120": {
+    "runs": 25,
+    "run_ci": [
+     0.4877909678220202,
+     0.8678480387153653
+    ],
+    "outcome": "ABOVE"
+   },
+   "240": {
+    "runs": 11,
+    "run_ci": [
+     0.428439272968793,
+     0.8626049628070188
+    ],
+    "outcome": "ABOVE"
+   }
+  },
+  "ibm_fez": {
+   "10": {
+    "runs": 83,
+    "run_ci": [
+     0.3774957753442877,
+     0.7702781760977944
+    ],
+    "outcome": "ABOVE"
+   },
+   "30": {
+    "runs": 82,
+    "run_ci": [
+     0.33504029444039246,
+     0.7930674538592248
+    ],
+    "outcome": "ABOVE"
+   },
+   "60": {
+    "runs": 72,
+    "run_ci": [
+     0.34296964139108177,
+     0.7865996673345714
+    ],
+    "outcome": "ABOVE"
+   },
+   "120": {
+    "runs": 50,
+    "run_ci": [
+     0.3975875441960795,
+     0.7974600265994315
+    ],
+    "outcome": "ABOVE"
+   },
+   "240": {
+    "runs": 34,
+    "run_ci": [
+     0.406054796755083,
+     0.799409802563703
+    ],
+    "outcome": "ABOVE"
+   }
+  },
+  "ibm_kingston": {
+   "10": {
+    "runs": 106,
+    "run_ci": [
+     0.27255451390840685,
+     0.6287978768851524
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "30": {
+    "runs": 95,
+    "run_ci": [
+     0.26279099104923065,
+     0.6515567447483163
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "60": {
+    "runs": 84,
+    "run_ci": [
+     0.26608057674279867,
+     0.6450256101411354
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "120": {
+    "runs": 57,
+    "run_ci": [
+     0.2713182634840712,
+     0.6778960464683863
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "240": {
+    "runs": 33,
+    "run_ci": [
+     0.24936447222454497,
+     0.6757424868004707
+    ],
+    "outcome": "CANNOT_TELL"
+   }
+  },
+  "ibm_marrakesh": {
+   "10": {
+    "runs": 103,
+    "run_ci": [
+     0.27942572138923016,
+     0.6307775024221477
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "30": {
+    "runs": 93,
+    "run_ci": [
+     0.25593602514478747,
+     0.6342551638219217
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "60": {
+    "runs": 79,
+    "run_ci": [
+     0.23280126923741665,
+     0.6506052481508748
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "120": {
+    "runs": 57,
+    "run_ci": [
+     0.23785210065529022,
+     0.663337345346351
+    ],
+    "outcome": "CANNOT_TELL"
+   },
+   "240": {
+    "runs": 31,
+    "run_ci": [
+     0.25292644651955526,
+     0.658446172737003
+    ],
+    "outcome": "CANNOT_TELL"
+   }
+  },
+  "ibm_phoenix": {
+   "10": {
+    "runs": 72,
+    "run_ci": [
+     -0.2203894519177138,
+     0.26086520779064243
+    ],
+    "outcome": "CONSISTENT"
+   },
+   "30": {
+    "runs": 72,
+    "run_ci": [
+     -0.2203894519177138,
+     0.26086520779064243
+    ],
+    "outcome": "CONSISTENT"
+   },
+   "60": {
+    "runs": 66,
+    "run_ci": [
+     -0.22120791139924398,
+     0.25910947517949123
+    ],
+    "outcome": "CONSISTENT"
+   },
+   "120": {
+    "runs": 53,
+    "run_ci": [
+     -0.23303065935397282,
+     0.2549638546765521
+    ],
+    "outcome": "CONSISTENT"
+   },
+   "240": {
+    "runs": 36,
+    "run_ci": [
+     -0.2852401818303822,
+     0.2974280163958892
+    ],
+    "outcome": "CONSISTENT"
+   }
+  },
+  "ibm_pittsburgh": {
+   "10": {
+    "runs": 83,
+    "run_ci": [
+     0.4667212044392195,
+     0.7035889540350594
+    ],
+    "outcome": "ABOVE"
+   },
+   "30": {
+    "runs": 83,
+    "run_ci": [
+     0.4667212044392195,
+     0.7035889540350594
+    ],
+    "outcome": "ABOVE"
+   },
+   "60": {
+    "runs": 72,
+    "run_ci": [
+     0.456466084354883,
+     0.7095785992854441
+    ],
+    "outcome": "ABOVE"
+   },
+   "120": {
+    "runs": 51,
+    "run_ci": [
+     0.4556324101041928,
+     0.7052331801224135
+    ],
+    "outcome": "ABOVE"
+   },
+   "240": {
+    "runs": 36,
+    "run_ci": [
+     0.45512092716363295,
+     0.7138971367683122
+    ],
+    "outcome": "ABOVE"
+   }
+  }
+ }
+}

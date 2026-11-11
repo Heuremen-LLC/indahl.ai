@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T18:42:46Z",
+ "built_utc": "2026-11-11T18:44:47Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 1501,
+   "commit": "b572de59398630f008b89f2912a30888b9d1a56b",
+   "files": 5705,
+   "id": "b572de593986",
+   "json": "/receipts/stamps/release_b572de593986.json",
+   "ledger_sha256": "e0beef27b37344f2656c2ed739f9ab9c4f91edc50dc1dea94ed6e84b26ab21fb",
+   "manifest_sha256": "592b20c130d5f287af0b20d29bab83266592183ee406d27f2e8382fc81687a11",
+   "ots": "/receipts/stamps/release_b572de593986.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T18:44:45Z",
+   "sha256": "63d3766264cb79e728c72a4850758c2077f0e160d5df2b88623c0a5fff9d1884",
+   "wayback": [],
+   "wayback_waiting": 1491
+  },
   {
    "changed": 1172,
    "commit": "059af95ecd48a00a588e37b3ce11f6e8a6538b78",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-11T16:45:30Z",
    "sha256": "55b8fbc93e57a28b34d2c9decadb941cb9ed33ed08a9617994f503a50b076117",
    "wayback": [],
-   "wayback_waiting": 1163
+   "wayback_waiting": 26
   },
   {
    "changed": 1207,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-11T16:38:42Z",
    "sha256": "12370d1c9e100ddf1b9d813a62e1838ed5023c81a7cd61ff123264eb96202f8f",
    "wayback": [],
-   "wayback_waiting": 228
+   "wayback_waiting": 30
   },
   {
    "changed": 164,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-11T16:21:23Z",
    "sha256": "dfececf8f3553277328d3029fee6ecbbf080bdfcecdc6829fbaa0d46a15f4eea",
    "wayback": [],
-   "wayback_waiting": 14
+   "wayback_waiting": 8
   },
   {
    "changed": 162,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-11T16:02:30Z",
    "sha256": "bb1a9a60aca615b5e5cb1f4461130351ad76414274c5515b280014cc9e1267f0",
    "wayback": [],
-   "wayback_waiting": 66
+   "wayback_waiting": 54
   },
   {
    "changed": 206,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-11T15:53:54Z",
    "sha256": "f5305dd3e6bfced13c06067027e82d4eb24772e5c52b968df580fbfc14de5c21",
    "wayback": [],
-   "wayback_waiting": 16
+   "wayback_waiting": 6
   },
   {
    "changed": 928,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-11T15:45:11Z",
    "sha256": "e62a0fa4139a059ee2707917846fae45350fb04e5f47ff4e2457fe40c302491d",
    "wayback": [],
-   "wayback_waiting": 6
+   "wayback_waiting": 5
   },
   {
    "changed": 1112,
@@ -105,7 +120,7 @@
    "released_at": "2026-11-11T14:57:06Z",
    "sha256": "36246cbfb4b1dc38bff8d37418d219e29c2c6d8bb5955ca2d214ff7a86695d17",
    "wayback": [],
-   "wayback_waiting": 580
+   "wayback_waiting": 545
   },
   {
    "changed": 957,
@@ -120,7 +135,7 @@
    "released_at": "2026-11-11T14:37:37Z",
    "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
    "wayback": [],
-   "wayback_waiting": 248
+   "wayback_waiting": 244
   },
   {
    "changed": 1530,
@@ -161,7 +176,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 580
+   "wayback_waiting": 579
   },
   {
    "changed": 287,
@@ -708,7 +723,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 68
+   "wayback_waiting": 66
   },
   {
    "changed": 0,

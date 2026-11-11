@@ -7484,7 +7484,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3772,
+"every_min": 3773,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7576,7 +7576,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3646,
+"every_min": 3647,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7652,7 +7652,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 142,
+"every_min": 143,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -7661,7 +7661,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 603,
+"every_min": 604,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
