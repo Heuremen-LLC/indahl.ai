@@ -50,6 +50,14 @@ SKIP_EXACT = {'/alerts', '/privacy', '/terms', '/conflict-of-interest', '/agree'
 SKIP_PREFIX = ('/r/', '/brand/', '/e/', '/newsletter/', '/week/', '/receipts/')
 
 
+IDX_SKIP_EXACT = SKIP_EXACT - {'/brand'}   # 11 Nov: the end-of-page Index runs on every content page, brand, entity and school pages included
+IDX_SKIP_PREFIX = tuple(x for x in SKIP_PREFIX if x not in ('/brand/', '/e/'))
+
+
+def idx_skipped(path):
+    return path in IDX_SKIP_EXACT or path.startswith(IDX_SKIP_PREFIX)
+
+
 def skipped(path):
     return path in SKIP_EXACT or path.startswith(SKIP_PREFIX)
 
@@ -551,84 +559,74 @@ def _wrap(h, M, idx, page, done, limit_one=False):
     return _unmask(''.join(parts), keep), got
 
 
+IDXRE = re.compile(r'(?s)<section class="entidx">.*?</section>(?=\s*</main>)')
+
+
+def _index(ids, idx):
+    li = ''.join('<li>%s</li>' % _bell(i, idx[i], E(idx[i]['name'])) for i in sorted(ids, key=lambda i: idx[i]['name'].lower()))
+    return ('<section class="entidx"><h2>Index</h2><p class="meta nosig">Every company, organisation and named thing on this page. '
+            'Follow one to get what we publish about it across all desks and divisions.</p><ul class="entidx-l">%s</ul></section>' % li)
+
+
 def bell_pass(PAGES, idx=None):
-    """the Follow links beside names on every served page; records each page's hash without them (entity_bells.json) for the gate"""
+    """11 Nov 2026 (owner: "it's too much to have those follow links on every company ... what about an INDEX at the end"): no Follow beside names.
+    Each served page ends its <main> with one Index of every known name on it (text and every table row), each linked to its page with one Follow.
+    Records each page's hash without the Index (entity_bells.json) for the gate."""
     idx = idx if idx is not None else load()
-    M = Matcher({i: e for i, e in idx.items() if e['kind'] != 'package'})
-    rec = {}; nb = nr = np_ = 0
+    M = Matcher({i: e for i, e in idx.items() if e['kind'] != 'package'}); M_ids = [i for i, e in idx.items() if e['kind'] != 'package']
+    rec = {}; np_ = nb = 0
     for p in sorted(PAGES):
         doc = PAGES[p]
-        if skipped(p) or p in BELL_SKIP or '<main' not in doc: continue
+        if idx_skipped(p) or p in BELL_SKIP or '<main' not in doc: continue
         a = doc.find('<main'); a = doc.find('>', a) + 1; b = doc.rfind('</main>')
-        main = doc[a:b]; done = set(); rows = 0
-        if nested_masks(main): raise SystemExit('BUILD REFUSED: %s has a nested nosig, rcpt, su or quote block the bell pass cannot mask safely' % p)
-        # table rows: the subject cells (the first cell, or a column headed Processor, Model, Vendor and the like)
-        def table(m):
-            nonlocal rows
-            t = m.group(0)
-            ths = [txt(x) for x in re.findall(r'(?is)<thead\b.*?</thead>', t)[:1] for x in re.findall(r'(?is)<th[^>]*>(.*?)</th>', x)]
-            subj = {0} | {j for j, hd in enumerate(ths) if j and SUBJECT.match(hd or '')}
-            def tr(mr):
-                nonlocal rows
-                if rows >= ROW_CAP or '<td' not in mr.group(0): return mr.group(0)
-                cells = list(re.finditer(r'(?is)(<t[dh]\b[^>]*>)(.*?)(</t[dh]>)', mr.group(0)))
-                out = mr.group(0); shift = 0; seen = set()
-                for j, c in enumerate(cells):
-                    if j not in subj: continue
-                    new, got = _wrap(c.group(2), M, idx, p, seen, limit_one=True)
-                    if got:
-                        seen |= set(got); rows += 1
-                        s0, e0 = c.start(2) + shift, c.end(2) + shift
-                        out = out[:s0] + new + out[e0:]; shift += len(new) - (e0 - s0)
-                return out
-            return re.sub(r'(?is)<tr\b[^>]*>.*?</tr>', tr, t)
-        tabs = []
-        def stash(m): tabs.append(table(m)); return '\ue002%d\ue003' % (len(tabs) - 1)
-        body = re.sub(r'(?is)<table\b.*?</table>', stash, main)
-        body, got = _wrap(body, M, idx, p, done)
-        body = re.sub('\ue002(\\d+)\ue003', lambda m: tabs[int(m.group(1))], body)
-        new = doc[:a] + body + doc[b:]
-        if new != doc:
-            if unbell(new) != doc: raise SystemExit('BUILD REFUSED: the bell pass changed more than its links on %s' % p)
-            PAGES[p] = new; np_ += 1; nb += len(got); nr += rows
+        main = doc[a:b]
+        if nested_masks(main): raise SystemExit('BUILD REFUSED: %s has a nested nosig, rcpt, su or quote block the index pass cannot mask safely' % p)
+        # 11 Nov (owner: "apply it to ALL the pages, even OY schools"): the page's own subject is in its Index too, and /brand lists everything
+        found = {i for i in M_ids if idx[i].get('url') == p or idx[i].get('home') == p}
+        if p == '/brand': found |= set(M_ids)
+        while True:   # every known name in the text and in table cells, wherever it sits outside links, headings, quotes, code and forms
+            _, got = _wrap(main, M, idx, p, found)
+            if not got: break
+            found |= set(got)
         rec[p] = hashlib.sha256(doc.encode('utf-8')).hexdigest()[:20]
+        if not found: continue
+        new = doc[:b] + _index(found, idx) + doc[b:]
+        if IDXRE.sub('', new) != doc: raise SystemExit('BUILD REFUSED: the index pass changed more than its Index on %s' % p)
+        PAGES[p] = new; np_ += 1; nb += len(found)
     json.dump(rec, open(BELLS, 'w'), sort_keys=True, separators=(',', ':'))
-    print('entities: Follow beside names on %d pages (%d in text, %d in table rows)' % (np_, nb, nr))
+    print('entities: an Index at the end of %d pages (%d names with Follow)' % (np_, nb))
     return np_
 
 
+def unidx(doc):
+    """the page as built before the index pass"""
+    return IDXRE.sub('', doc)
+
+
 def bell_gate():
-    """every served page: without its Follow links it is byte for byte the page as built before the pass, no Follow link sits outside <main>
-    or in a region it may not enter, every link names a known entity and its page, and skipped pages carry none"""
+    """every served page: without its Index it is byte for byte the page as built before the pass, every Follow link sits in that Index,
+    every link names a known entity and its page, and skipped pages carry none"""
     errs = []
     try: idx = load(); rec = json.load(open(BELLS))
     except Exception as ex: print('BELL GATE: no index or entity_bells.json (%s)' % ex); return 1
-    served = re.findall(r"from '\./([^']+\.html)'", open(os.path.join(HERE, 'pages.js')).read())
+    served = re.findall(r"from '\\./([^']+\\.html)'", open(os.path.join(HERE, 'pages.js')).read())
     n = nb = 0
     for f in served:
         p = '/' + f[:-5]; p = '/' if p == '/index' else p
         doc = open(os.path.join(HERE, f), encoding='utf-8').read(); n += 1
-        pairs = list(PAIR.finditer(doc)); nb += len(pairs)
-        loose = len(re.findall(r'<a class="fb nosig"', doc)) - len(pairs) + len(re.findall(r'<a class="ent"', doc)) - len(pairs)
-        if loose: errs.append('%s: a Follow link or name link outside a pair' % p)
-        if not pairs: continue
-        if nested_masks(doc[doc.find('<main'):doc.rfind('</main>')]): errs.append('%s: a nested nosig, rcpt, su or quote block' % p)
-        if skipped(p) or p in BELL_SKIP: errs.append('%s: a skipped page carries Follow links' % p); continue
+        sec = IDXRE.search(doc); inside = sec.group(0) if sec else ''
+        if len(re.findall(r'<a class="fb nosig"', doc)) != len(re.findall(r'<a class="fb nosig"', inside)): errs.append('%s: a Follow link outside the Index' % p)
+        if not sec: continue
+        if idx_skipped(p) or p in BELL_SKIP: errs.append('%s: a skipped page carries an Index' % p); continue
         if p not in rec: errs.append('%s: no record of the page before the pass' % p); continue
-        if hashlib.sha256(unbell(doc).encode('utf-8')).hexdigest()[:20] != rec[p]: errs.append('%s: without its Follow links the page is not the page as built' % p)
-        a = doc.find('<main'); b = doc.rfind('</main>')
-        for m in pairs:
-            if not (a < m.start() < b): errs.append('%s: a Follow link outside <main>' % p)
+        if hashlib.sha256(unidx(doc).encode('utf-8')).hexdigest()[:20] != rec[p]: errs.append('%s: without its Index the page is not the page as built' % p)
+        for m in PAIR.finditer(inside):
+            nb += 1
             ent = re.match(r'<a class="ent" href="([^"]*)">', m.group(0)).group(1); eid = re.search(r'data-e="([^"]*)"', m.group(0)).group(1)
             if html.unescape(eid) not in idx: errs.append('%s: Follow link for unknown %s' % (p, eid))
             elif html.unescape(ent) != idx[html.unescape(eid)]['url']: errs.append('%s: name link %s is not the page of %s' % (p, ent, eid))
-        # mark each pair, then mask the regions a bell may not enter: a mark inside a masked region is a breach
-        marked = PAIR.sub(lambda m: '\ue010' + m.group(1) + '\ue011', doc[a:b])
-        mh, keep = _masked(marked)
-        if any('\ue010' in k for k in keep): errs.append('%s: a Follow link inside a link, heading, quote, code, form or bill block' % p)
-        if '\ue010' in doc[:a] or '\ue010' in doc[b:]: errs.append('%s: mark outside main' % p)
     for x in errs[:30]: print('  BELLS', x)
-    print(('BELL GATE: REFUSED, %d problems' % len(errs)) if errs else 'BELL GATE: %d served pages read, %d Follow links, each page unchanged without them and none in a forbidden region' % (n, nb))
+    print(('BELL GATE: REFUSED, %d problems' % len(errs)) if errs else 'BELL GATE: %d served pages read, %d names in the end-of-page Index, each page unchanged without it' % (n, nb))
     return 1 if errs else 0
 
 

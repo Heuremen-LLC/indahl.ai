@@ -7484,7 +7484,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3775,
+"every_min": 3776,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7493,7 +7493,7 @@
 "fedsep": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "FEDSEP",
 "src": "rider",
@@ -7576,7 +7576,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3649,
+"every_min": 3651,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7717,7 +7717,7 @@
 "revise": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "REVISE",
 "src": "rider",
@@ -7861,7 +7861,7 @@
 "weights": {
 "div": "iris",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "WEIGHTS",
 "src": "rider",
@@ -7870,7 +7870,7 @@
 "wiki": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "update",
 "name": "WIKI",
 "src": "rider",
