@@ -1926,11 +1926,11 @@
 /r/pack.size.oy-data-pack	2026-11-11
 /r/pack.size.pkginstall-data-pack	2026-11-10
 /r/pack.size.pkglicense-data-pack	2026-11-10
-/r/pack.size.qia-list-pack	2026-11-11
+/r/pack.size.qia-list-pack	2026-11-12
 /r/pack.size.qia-research-package	2026-11-11
 /r/pack.size.quake-data-pack	2026-11-11
 /r/pack.size.revise-data-pack	2026-11-10
-/r/pack.size.seat-data-pack	2026-11-11
+/r/pack.size.seat-data-pack	2026-11-12
 /r/pack.size.secrecords-data-pack	2026-11-12
 /r/pack.size.social-data-pack	2026-11-10
 /r/pack.size.stack-data-pack	2026-11-10
@@ -1941,7 +1941,7 @@
 /r/pack.size.trials-data-pack	2026-11-10
 /r/pack.size.uptime-data-pack	2026-11-10
 /r/pack.size.water-data-pack	2026-11-11
-/r/pack.size.weights-data-pack	2026-11-10
+/r/pack.size.weights-data-pack	2026-11-12
 /r/pack.size.wiki-data-pack	2026-11-10
 /r/paper.conc.d39m1.fez_repeat	2026-10-22
 /r/paper.conc.d39m1.kingston_first	2026-10-22
@@ -2898,7 +2898,7 @@
 /r/quake.prob10.m3	2026-11-12
 /r/quake.prob10.m4up	2026-11-12
 /r/quake.prob10.month	2026-11-12
-/r/quake.prob10.week	2026-11-11
+/r/quake.prob10.week	2026-11-12
 /r/quake.prob10.year	2026-11-12
 /r/rank.checks.edu	2026-11-10
 /r/rank.checks.eng	2026-11-10

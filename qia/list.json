@@ -2554,17 +2554,6 @@
    "anchor": "doi-10-3929-ethz-c-000805819"
   },
   {
-   "study": "AI-Assisted Control Systems for Quantum Hardware Optimization",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/375",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-375"
-  },
-  {
    "study": "AI-Gated Entanglement Assurance: QSOC-FEZ-ENTANGLEMENT-AND-SCALE-02",
    "link": "https://doi.org/10.5281/zenodo.21366437",
    "version": "Zenodo record 21366437 as listed 2026-10-24 (publication_date 2026-07-15)",
@@ -7596,37 +7585,6 @@
    "anchor": "doi-10-5281-zenodo-18274446"
   },
   {
-   "study": "Comparative Study of Classical vs Quantum Algorithms for Combinatorial Problems",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/350",
-   "version": "Published 28 March 2024 (Quantum Frontiers Journal 2024, issue 1); printed DOI 10.5281/zenodo.19185751",
-   "indexed": "2026-11-01",
-   "read": "Full text",
-   "codes": [
-    "F2",
-    "F4",
-    "F5",
-    "F6"
-   ],
-   "basis": {
-    "F2": [
-     "headline is one problem class and size (MaxCut, n = 48) out of six classes with quantum runs; the text reports no quantum advantage for the other five classes",
-     "quantum approximation ratios are the best of 10 circuit runs"
-    ],
-    "F4": [
-     "run dates not printed",
-     "no circuits or counts released: printed data location qccb-benchmark.org did not resolve (host not found) on 1 Nov 2026 and has no Internet Archive capture, and the printed paper DOI 10.5281/zenodo.19185751 returned 'persistent identifier is not registered' (Zenodo) and 404 (doi.org); no circuits or counts could be retrieved"
-    ],
-    "F5": [
-     "28 instances per class per size over 6 classes and 6 sizes is 1,008, printed as 2,016"
-    ],
-    "F6": [
-     "abstract says QAOA at n = 48 outperforms all nine classical algorithms (0.924); Section 4.1 and Table 3 give Gurobi, CPLEX and OR-Tools 1.000 at n = 48, and Section 4.1 itself says 0.924 is 'not an advantage vs. exact solvers'"
-    ]
-   },
-   "calibrated": false,
-   "anchor": "study-openalex-w7220209677"
-  },
-  {
    "study": "Comparação de desempenho do algoritmo de Deutsch-Jozsa nas linguagens quânticas Silq e Qasm",
    "link": "https://doi.org/10.47283/244670492023110147",
    "version": "published version",
@@ -7814,28 +7772,6 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2507.10699"
-  },
-  {
-   "study": "Compiler Design for Quantum Programming Languages",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/360",
-   "version": "Quantum Frontiers Journal 2025(2), published 28 June 2025 (PDF, 9 pages)",
-   "indexed": "2026-11-01",
-   "read": "Full text",
-   "codes": [
-    "F4",
-    "F5"
-   ],
-   "basis": {
-    "F4": [
-     "run dates not printed",
-     "no circuits or counts released: the data statement points to qcde-quantum.org, which does not resolve (NXDOMAIN from three public resolvers, 1 Nov 2026), and the article's own DOI 10.5281/zenodo.19185896 is not registered at doi.org or Zenodo; nothing held at the linked record"
-    ],
-    "F5": [
-     "printed mean CX ratios for BQSKit (0.716) and QCDE-Opt (0.816) differ from the mean of the three family values in Table 3 (0.7387 and 0.8227), while the other four compilers' means equal the mean of their family values; the three families have 16 circuits each"
-    ]
-   },
-   "calibrated": false,
-   "anchor": "study-openalex-w7220250630"
   },
   {
    "study": "Complementarity relations of a delayed-choice quantum eraser in a quantum circuit",
@@ -9922,17 +9858,6 @@
    "anchor": "zenodo-19751407"
   },
   {
-   "study": "Design and Analysis of Quantum Algorithms for Large-Scale Optimization Problems",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/347",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-347"
-  },
-  {
    "study": "Design and Experimental Realization of Various Protocols for Secure Quantum Computation and Communication",
    "link": "https://arxiv.org/abs/2507.09532v1",
    "version": "v1",
@@ -10735,17 +10660,6 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2604.26914"
-  },
-  {
-   "study": "Digital Twin Models for Quantum Hardware Performance Analysis",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/371",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-371"
   },
   {
    "study": "Digitized counterdiabatic quantum algorithms for logistics scheduling",
@@ -19604,28 +19518,6 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2307.16723"
-  },
-  {
-   "study": "Hybrid Quantum-AI Architectures for Intelligent Decision Systems",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/353",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-353"
-  },
-  {
-   "study": "Hybrid Quantum-Classical Algorithms for Complex Computational Tasks",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/348",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-348"
   },
   {
    "study": "Hybrid Quantum-Classical Algorithms for Quantum Computing Applications in Computational Physics",
@@ -31102,17 +30994,6 @@
    "anchor": "arxiv-2509.24213"
   },
   {
-   "study": "Quantum Approximate Optimization Algorithms for Real-World Applications",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/349",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-349"
-  },
-  {
    "study": "Quantum approximate optimization of population-level acetabular screw parameters on gate-based hardware",
    "link": "https://doi.org/10.21203/rs.3.rs-10821375/v1",
    "version": "published version",
@@ -32655,17 +32536,6 @@
    "anchor": "arxiv-2608.05202"
   },
   {
-   "study": "Quantum Error Mitigation Techniques for Reliable Computation",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/358",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-358"
-  },
-  {
    "study": "Quantum Error Mitigation with Attention Graph Transformers for Burgers Equation Solvers on NISQ Hardware",
    "link": "https://arxiv.org/abs/2512.23817v1",
    "version": "v1",
@@ -33422,37 +33292,6 @@
    "anchor": "arxiv-2507.01246"
   },
   {
-   "study": "Quantum Machine Learning Models for High-Dimensional Data Classification",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/352",
-   "version": "Published 28 March 2024 (Quantum Frontiers Journal 2024, issue 1); printed DOI 10.5281/zenodo.19185762",
-   "indexed": "2026-11-01",
-   "read": "Full text",
-   "codes": [
-    "F2",
-    "F3",
-    "F4",
-    "F6"
-   ],
-   "basis": {
-    "F2": [
-     "abstract headline gain (2.4-8.4pp, largest 8.4pp on quantum chemistry) is the maximum over five datasets; the financial dataset, where QKSVM is 3.6pp below RBF-SVM, is outside the stated range"
-    ],
-    "F3": [
-     "'significant' stated for a +6.4pp AUC difference with no test or interval on the difference"
-    ],
-    "F4": [
-     "run dates not printed",
-     "no circuits or counts released: printed data location qhdc-qml.org did not resolve (host not found) on 1 Nov 2026 and has no Internet Archive capture, and the printed paper DOI 10.5281/zenodo.19185762 returned 'persistent identifier is not registered'; no circuits or counts could be retrieved"
-    ],
-    "F6": [
-     "abstract gives the QKSVM AUC gain over RBF-SVM as 2.4-8.4pp across five datasets; Section 4.1 gives +1.6, +0.8, +6.4, -3.6 and +8.4pp",
-     "abstract says QNNC underperforms classical baselines on three of five datasets; Section 4.2 lists QNNC below XGBoost on four datasets (-6.0, -6.4, -2.4, -17.6pp) and above on one (+1.2pp)"
-    ]
-   },
-   "calibrated": false,
-   "anchor": "study-openalex-w7220246743"
-  },
-  {
    "study": "Quantum machine learning of large datasets using randomized measurements",
    "link": "https://arxiv.org/abs/2108.01039v3",
    "version": "v3",
@@ -33707,17 +33546,6 @@
    "basis": {},
    "calibrated": false,
    "anchor": "arxiv-2409.02207"
-  },
-  {
-   "study": "Quantum Neural Networks for Pattern Recognition and Prediction",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/354",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-354"
   },
   {
    "study": "Quantum Noise Analysis Results on Real IBM Quantum Hardware – Compressibility and Predictive Structure",
@@ -35240,17 +35068,6 @@
    },
    "calibrated": false,
    "anchor": "arxiv-2103.12257"
-  },
-  {
-   "study": "Quantum Supremacy in Real-Time Optimization: Benchmarking Performance Against Classical High-Performance Computing Systems",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/34",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-34"
   },
   {
    "study": "Quantum Surface Topological Code for Bell State Stabilization in Superconducting Physical Qubit Systems",
@@ -39003,17 +38820,6 @@
    },
    "calibrated": false,
    "anchor": "doi-10-1109-qcs54837-2021-00013"
-  },
-  {
-   "study": "Scalable Quantum Algorithm Design for Noisy Intermediate-Scale Quantum Devices",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/351",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-351"
   },
   {
    "study": "Scalable Quantum Algorithms for Noisy Quantum Computers",
@@ -46435,17 +46241,6 @@
    "basis": {},
    "calibrated": false,
    "anchor": "doi-10-1155-2021-3511029"
-  },
-  {
-   "study": "Variational Quantum Circuits for Machine Learning Applications",
-   "link": "https://galaxiauniverse.com/index.php/QFJ/article/view/355",
-   "version": "published version",
-   "indexed": "2026-10-24",
-   "read": "Full text",
-   "codes": [],
-   "basis": {},
-   "calibrated": false,
-   "anchor": "study-https-galaxiauniverse-com-index-php-qfj-article-view-355"
   },
   {
    "study": "Variational Quantum Eigensolver Approach to Prime Factorization on IBM's Noisy Intermediate Scale Quantum Computer",

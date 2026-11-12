@@ -7499,7 +7499,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3787,
+"every_min": 3776,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7517,7 +7517,7 @@
 "flu": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 139,
+"every_min": 138,
 "mode": "outcome",
 "name": "FLU",
 "src": "rider",
@@ -7573,7 +7573,7 @@
 "hflicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 139,
+"every_min": 138,
 "mode": "update",
 "name": "HFLICENSE",
 "src": "rider",
@@ -7582,7 +7582,7 @@
 "hfsize": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 135,
+"every_min": 134,
 "mode": "outcome",
 "name": "HFSIZE",
 "src": "rider",
@@ -7600,7 +7600,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3661,
+"every_min": 3650,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7694,7 +7694,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 606,
+"every_min": 604,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7741,7 +7741,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 555,
+"every_min": 554,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7759,7 +7759,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 555,
+"every_min": 554,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7786,7 +7786,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 467,
+"every_min": 466,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7813,7 +7813,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 555,
+"every_min": 554,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7849,7 +7849,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 467,
+"every_min": 466,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
