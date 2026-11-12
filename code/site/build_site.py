@@ -1982,6 +1982,14 @@ PAGES['/record'] = page('/record', 'Record: What We Recounted and What We Correc
                         _rp['body'], hero_slim('Record', 'What we recounted, what we found, and what we corrected'))
 _FEED.append(('/record', 'RECORD: what we recounted and what we corrected', 'Every recount with its codes and finding, and every correction of our own numbers.'))
 
+# 12 Nov 2026 (/tp catch, family I): headlines that got stronger under Faults and Guards 2.0, whose size that matters was named after the data
+# had been read, say so on their own page, with the earlier reading on Corrections.
+_POSTHOC = {'trials': 'The headline', 'hfsize': 'The headline', 'secrecords': 'The HSTS row', 'support': 'The row for products whose every tested cycle is unreleased', 'seat': 'The headline'}
+for _ph, _what in _POSTHOC.items():
+    _tag = '<script src="/%s/live.js" defer></script>' % _ph
+    if '/' + _ph in PAGES and _tag in PAGES['/' + _ph]:
+        PAGES['/' + _ph] = PAGES['/' + _ph].replace(_tag, _tag + '<p class="meta">%s is read under <a href="/standard">Faults and Guards 2.0</a> from 12 November 2026. The size that matters was named after these data were first read, so its outcome is defined after the data. The earlier reading is on <a href="/corrections">Corrections</a>.</p>' % _what, 1)
+
 # 25 Oct 2026: the worker's policy for indahl.ai pages is style-src 'self' (no inline <style>), so matrix styles live in style.css,
 # not in the page bodies. Any <style> block found in a page is moved here and stripped from the page.
 _MOVED = []
