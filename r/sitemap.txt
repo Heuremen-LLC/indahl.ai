@@ -2775,7 +2775,7 @@
 /r/qia.norun.recount_10.5281~2Fzenodo.22050177	2026-10-25
 /r/qia.norun.recount_10.5281~2Fzenodo.22073993	2026-10-30
 /r/qia.norun.recount_10.5281~2Fzenodo.22103070	2026-10-30
-/r/qia.norun.recount_10.5281~2Fzenodo.22172952	2026-10-30
+/r/qia.norun.recount_10.5281~2Fzenodo.22172952	2026-11-12
 /r/qia.norun.recount_10.5281~2Fzenodo.22242711	2026-10-25
 /r/qia.norun.recount_10.5281~2Fzenodo.22644883	2026-10-25
 /r/qia.norun.recount_10.5281~2Fzenodo.22790702	2026-10-25
@@ -3863,7 +3863,7 @@
 /r/desk/paper	2026-11-04
 /r/desk/pkginstall	2026-11-10
 /r/desk/pkglicense	2026-11-10
-/r/desk/qia	2026-11-11
+/r/desk/qia	2026-11-12
 /r/desk/qia-bill	2026-11-10
 /r/desk/quake	2026-11-12
 /r/desk/rank	2026-11-10
