@@ -3771,6 +3771,8 @@
 /r/solar.mid5_1.skill	2026-11-12
 /r/solar.mid6_1.skill	2026-11-12
 /r/solar.x1.skill	2026-11-12
+/r/stan.baseline.base	2026-11-12
+/r/stan.baseline.majority	2026-11-12
 /r/steo.add1.hh.all	2026-11-10
 /r/steo.add1.hh.lead13	2026-11-10
 /r/steo.add1.hh.lead1_2	2026-11-12
