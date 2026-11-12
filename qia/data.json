@@ -1,0 +1,1460 @@
+{
+ "note": "The Index of published qubit and quantum-device datasets beyond IBM: records that release raw measurement files, with a classification for indexing, not an assessment. Companion to the QIA List of IBM quantum studies. First version, built 2026-11-12.",
+ "terms": "Free to download and cite with attribution. All rights reserved. Text and data mining and use as AI training data are not permitted: https://indahl.ai/terms#ai-training",
+ "studies": [
+  {
+   "study": "Data for TI-transmon paper",
+   "link": "https://doi.org/10.5281/zenodo.16749354",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-08-06",
+    "Released files: 8 (csv, txt), total 3.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-16749354"
+  },
+  {
+   "study": "Passive leakage removal unit based on a disordered transmon array figure data",
+   "link": "https://doi.org/10.5281/zenodo.17378132",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-10-17",
+    "Released files: 5 (h5), total 1.5 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found). linked paper funders via Crossref: Oulun Yliopisto, Research Council of Finland, Research Council of Finland, Research Council of Finland, Research Council of Finland, CSC – IT Center for Science",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-17378132"
+  },
+  {
+   "study": "Data underpinning \"Chaotic fluctuations in a universal set of transmon qubit gates\"",
+   "link": "https://doi.org/10.5281/zenodo.19426904",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-04-05",
+    "Released files: 20 (dat), total 2142.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-19426904"
+  },
+  {
+   "study": "Microwave-to-optical conversion with a gallium phosphide photonic crystal cavity",
+   "link": "https://doi.org/10.5281/zenodo.6419115",
+   "classification": "Indexed (company)",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2022-04-14",
+    "Released files: 30 (txt), total 231.1 MB listed, not downloaded",
+    "Funding: European Commission Hybrid Optomechanical Technologies HOT, European Commission OMT - Optomechanical Technologies OMT (no defense, military or intelligence funder found). linked paper has no funder list in Crossref",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-6419115"
+  },
+  {
+   "study": "Flux-tunable transmon incorporating a van der Waals superconductor via an Al/AlOx/4Hb-TaS2 Josephson junction",
+   "link": "https://doi.org/10.5281/zenodo.18772693",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-03-24",
+    "Released files: 1 (npy, pickle), total 35.7 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-18772693"
+  },
+  {
+   "study": "Experimental observation of dynamical blockade between transmon qubits via ZZ interaction engineering",
+   "link": "https://doi.org/10.5281/zenodo.18218904",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 0.5, created 2026-01-27",
+    "Released files: 51 (csv, npz, zip), total 5.1 MB listed, not downloaded",
+    "Funding: Ministero dell'università e della ricerca, Ministero dell'università e della ricerca (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-18218904"
+  },
+  {
+   "study": "Geometric superinductance qubits: Controlling phase delocalization across a single Josephson junction",
+   "link": "https://doi.org/10.5281/zenodo.5592104",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1, created 2021-10-22",
+    "Released files: 2 (txt, zip), total 205.9 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-5592104"
+  },
+  {
+   "study": "High-fidelity QND readout and measurement back-action in a Tantalum-based high-coherence fluxonium qubit",
+   "link": "https://doi.org/10.5281/zenodo.14584494",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-01-01",
+    "Released files: 12 (txt), total 2.4 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)"
+   ],
+   "anchor": "10-5281-zenodo-14584494"
+  },
+  {
+   "study": "Hartree-Fock on a superconducting qubit quantum computer",
+   "link": "https://doi.org/10.5061/dryad.2jm63xsm2",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2020-09-03",
+    "Released files: 6 (npy), total 0.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found). linked paper has no funder list in Crossref",
+    "License: cc-zero"
+   ],
+   "anchor": "10-5061-dryad-2jm63xsm2"
+  },
+  {
+   "study": "Meta data for Probing the memory of a superconducting qubit environment",
+   "link": "https://doi.org/10.5281/zenodo.23083382",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-10-01",
+    "Released files: 1 (npz), total 0.5 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-23083382"
+  },
+  {
+   "study": "Dataset for: Longitudinal and nonlinear coupling for high-fidelity readout of a superconducting qubit",
+   "link": "https://doi.org/10.5281/zenodo.15957274",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-07-16",
+    "Released files: 6 (mat), total 1.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-15957274"
+  },
+  {
+   "study": "Disentangling the Impact of Quasiparticles and Two-Level Systems on the Statistics of Superconducting Qubit Lifetime",
+   "link": "https://doi.org/10.5281/zenodo.16754512",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-08-06",
+    "Released files: 33 (mat), total 139.5 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-16754512"
+  },
+  {
+   "study": "Data and codes for the work: \"Quasiparticle dynamics in a superconducting qubit irradiated by a localized infrared source\"",
+   "link": "https://doi.org/10.5281/zenodo.11548753",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-07-30",
+    "Released files: 2 (h5, zip), total 194.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-11548753"
+  },
+  {
+   "study": "Nonlinear quantum evolution of a dissipative superconducting qubit",
+   "link": "https://doi.org/10.5281/zenodo.23177496",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-10-06",
+    "Released files: 91 (csv, pkl), total 6.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-23177496"
+  },
+  {
+   "study": "Dataset: Observation of Constructive Phase Resonance in a Distributed Superconducting Qubit Network (V-QRAM Experiment)",
+   "link": "https://doi.org/10.5281/zenodo.20532953",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-06-03",
+    "Released files: 30 (json), total 4.9 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-20532953"
+  },
+  {
+   "study": "Source data for 'High-fidelity flopping-mode single-spin operation via triple-dot orbital-band engineering' (selected panels in Figures 1–4)",
+   "link": "https://doi.org/10.5281/zenodo.21878766",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1.0.0, created 2026-10-13",
+    "Released files: 4 (npz), total 0.3 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-21878766"
+  },
+  {
+   "study": "Ancillary Files for Paper: Methods for Measuring Magnetic Flux Crosstalk Between Tunable Transmons",
+   "link": "https://doi.org/10.5281/zenodo.3568431",
+   "classification": "Indexed (company)",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2019-12-10",
+    "Released files: 2 (bz2, txt), total 9.4 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-3568431"
+  },
+  {
+   "study": "Supplementary Data: Differential Population Retention in Multi-Qubit GHZ States — Cross-Platform Benchmarking with Parity Certification (v5.1)",
+   "link": "https://doi.org/10.5281/zenodo.18530247",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 5.1, created 2026-02-09",
+    "Released files: 37 (json), total 1.9 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-18530247"
+  },
+  {
+   "study": "Native qudit entanglement in a trapped ion quantum processor",
+   "link": "https://doi.org/10.5281/zenodo.7688595",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2023-03-02",
+    "Released files: 2 (csv), total 0.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-7688595"
+  },
+  {
+   "study": "Heating of a trapped ion induced by dielectric materials",
+   "link": "https://doi.org/10.5281/zenodo.4600786",
+   "classification": "Indexed (company)",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2021-03-12",
+    "Released files: 4 (csv), total 0.0 MB listed, not downloaded",
+    "Funding: European Commission Quantum Internet Alliance QIA, FWF Austrian Science Fund Quantum Information Systems Beyond Classical Capabilities (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-4600786"
+  },
+  {
+   "study": "Probing surface charge densities on optical fibers with a trapped ion",
+   "link": "https://doi.org/10.5281/zenodo.3759745",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2020-04-21",
+    "Released files: 7 (csv), total 0.0 MB listed, not downloaded",
+    "Funding: FWF Austrian Science Fund Foundations and Applications of Quantum Science, European Commission Cavity-QED Ion Quantum Network ION-QNET, European Commission Quantum Internet Alliance QIA, FWF Austrian Science Fund Quantum Information Systems Beyond Classical Capabilities (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-3759745"
+  },
+  {
+   "study": "Efficient Implementation of a Quantum Algorithm with a Trapped Ion Qudit",
+   "link": "https://doi.org/10.5281/zenodo.17479046",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-10-29",
+    "Released files: 9 (txt), total 0.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-17479046"
+  },
+  {
+   "study": "Experimental Data for \"Individually Addressed Logical Pauli Measurements by QLDPC Surgery on a Trapped Ion Quantum Computer\"",
+   "link": "https://doi.org/10.5281/zenodo.23165109",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-10-30",
+    "Released files: 16 (json), total 2.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-23165109"
+  },
+  {
+   "study": "Dataset for article \"Cavity-assisted Thermometry for Single Trapped Ion\"",
+   "link": "https://doi.org/10.5281/zenodo.15394014",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-07-02",
+    "Released files: 8 (txt), total 1.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-15394014"
+  },
+  {
+   "study": "Experimental Data - Coherent Control of Photon Correlations in Trapped Ion Crystals",
+   "link": "https://doi.org/10.5281/zenodo.15303933",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-04-30",
+    "Released files: 2 (txt, zip), total 8459.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found). linked paper funders via Crossref: Fundação de Amparo à Pesquisa do Estado de São Paulo, Fundação de Amparo à Pesquisa do Estado de São Paulo, Fundação de Amparo à Pesquisa do Estado de São Paulo, Fundação de Amparo à Pesquisa do Estado de São Paulo, Fundação de Amparo à Pesquisa do Estado de São Paulo, Fundação de Amparo à Pesquisa do Estado de São Paulo",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-15303933"
+  },
+  {
+   "study": "Dynamical topological phase realized in a trapped-ion quantum simulator",
+   "link": "https://doi.org/10.5281/zenodo.6514878",
+   "classification": "Indexed (company)",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2022-05-03",
+    "Released files: 11 (json), total 0.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-6514878"
+  },
+  {
+   "study": "Transverse Polarization Gradient Entangling Gates for Trapped-Ion Quantum Computation",
+   "link": "https://doi.org/10.5281/zenodo.17579348",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-11-11",
+    "Released files: 14 (csv), total 0.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-17579348"
+  },
+  {
+   "study": "Data associated with \"Demonstration of the universal intrinsic higher-rank spin Hall effect with a trapped ion\"",
+   "link": "https://doi.org/10.5281/zenodo.17539626",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-11-06",
+    "Released files: 20 (csv), total 0.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-17539626"
+  },
+  {
+   "study": "Data for the paper: \"Effects of the delocalized charge distribution in trapped ion-atom collisions\"",
+   "link": "https://doi.org/10.5281/zenodo.17126614",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-09-15",
+    "Released files: 12 (csv), total 0.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-17126614"
+  },
+  {
+   "study": "Data and code for: \"Simulating the dynamics of an SU(2) matrix model on a trapped-ion quantum computer\"",
+   "link": "https://doi.org/10.5281/zenodo.20498411",
+   "classification": "Indexed (company)",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1.0.0, created 2026-06-01",
+    "Released files: 35 (csv), total 0.3 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-20498411"
+  },
+  {
+   "study": "Research data supporting \"Onset of thermalization of q-deformed SU(2) Yang-Mills theory on a trapped-ion quantum computer\"",
+   "link": "https://doi.org/10.5281/zenodo.18301095",
+   "classification": "Indexed (company)",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-01-19",
+    "Released files: 16 (txt), total 0.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-18301095"
+  },
+  {
+   "study": "Data for An Optical Tweezer Array of Ultracold Molecules",
+   "link": "https://doi.org/10.5281/zenodo.3252152",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "neutral atom",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2019-06-21",
+    "Released files: 21 (csv, txt), total 0.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-3252152"
+  },
+  {
+   "study": "Data for Dipolar spin-exchange and entanglement between molecules in an optical tweezer array",
+   "link": "https://doi.org/10.5281/zenodo.8404386",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "neutral atom",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2023-10-03",
+    "Released files: 40 (bin, csv), total 7217.4 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-8404386"
+  },
+  {
+   "study": "Data for \"Observation of quantum information collapse-and-revival in a strongly-interacting Rydberg atom array\"",
+   "link": "https://doi.org/10.5281/zenodo.19142310",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "neutral atom",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-04-23",
+    "Released files: 1 (txt, xlsx), total 0.7 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-19142310"
+  },
+  {
+   "study": "Quantum gates between nitrogen-vacancy centers in levitated nanodiamond arrays",
+   "link": "https://doi.org/10.5281/zenodo.16917848",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-08-21",
+    "Released files: 4 (csv), total 0.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-16917848"
+  },
+  {
+   "study": "Data for Scanning Nitrogen-Vacancy Magnetometry of Focused-Electron-Beam-Deposited Cobalt Nanomagnets",
+   "link": "https://doi.org/10.5281/zenodo.10576159",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-01-27",
+    "Released files: 18 (dat, txt), total 1.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-10576159"
+  },
+  {
+   "study": "DATA REPOSITORY FOR: All-Optical Nuclear Quantum Sensing Using Nitrogen-Vacancy Centers in Diamond",
+   "link": "https://doi.org/10.5281/zenodo.7802020",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2023-04-06",
+    "Released files: 6 (txt, zip), total 398.7 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-7802020"
+  },
+  {
+   "study": "Filtering and imaging of frequency-degenerate spin waves using nanopositioning of a single-spin sensor",
+   "link": "https://doi.org/10.5281/zenodo.6703953",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2022-10-31",
+    "Released files: 34 (txt), total 13.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found). linked paper funders via Crossref: Nederlandse Organisatie voor Wetenschappelijk Onderzoek, Kavli Institute of NanoScience Delft, Delft University of Technology",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-6703953"
+  },
+  {
+   "study": "Data, analysis scripts, and simulations files for \"Direct formation of nitrogen-vacancy centers in nitrogen doped diamond along the trajectories of swift heavy ions\"",
+   "link": "https://doi.org/10.5281/zenodo.4018144",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1, created 2020-11-07",
+    "Released files: 16 (h5, txt), total 11.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-4018144"
+  },
+  {
+   "study": "Datasets for: Visualizing the Atomic Structure of Nitrogen-vacancy Color Center in Diamond by Multislice Electron Ptychography",
+   "link": "https://doi.org/10.5281/zenodo.14913471",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1, created 2025-07-11",
+    "Released files: 1 (txt), total 5934.3 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-14913471"
+  },
+  {
+   "study": "Microwave-free vector magnetometry and crystal orientation determination with Nitrogen-Vacancy centers using Bayesian inference - dataset",
+   "link": "https://doi.org/10.5281/zenodo.19222211",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-03-25",
+    "Released files: 6 (csv, mat), total 167.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-19222211"
+  },
+  {
+   "study": "Spatially resolved characterization of helium-implanted NV ensembles in seven HPHT type-Ib diamond membranes",
+   "link": "https://doi.org/10.5281/zenodo.22910596",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1.0, created 2026-09-23",
+    "Released files: 9 (csv, txt), total 1.9 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-22910596"
+  },
+  {
+   "study": "Imaging Spin-Wave Damping Underneath Metals Using Electron Spins in Diamond",
+   "link": "https://doi.org/10.5281/zenodo.4726771",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2021-10-19",
+    "Released files: 10 (csv, txt), total 69.5 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-4726771"
+  },
+  {
+   "study": "Data of the publication Hot ion implantation to create dense NV center ensembles in diamond",
+   "link": "https://doi.org/10.5281/zenodo.13748108",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-09-13",
+    "Released files: 10 (csv), total 3.5 MB listed, not downloaded",
+    "Funding: European Commission Rare Earth - Diamond Hybrid Materials for Photonics RareDiamond (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-13748108"
+  },
+  {
+   "study": "Data for \"Determining Strain Components in a Diamond Waveguide from Zero-Field ODMR Spectra of NV- Center Ensembles\"",
+   "link": "https://doi.org/10.5281/zenodo.10629041",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-02-07",
+    "Released files: 2 (txt), total 0.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-10629041"
+  },
+  {
+   "study": "Supporting data for 'Feedback-based active reset of a spin qubit in silicon'",
+   "link": "https://doi.org/10.5281/zenodo.7870621",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2023-04-30",
+    "Released files: 21 (csv), total 0.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-7870621"
+  },
+  {
+   "study": "Quantum control of spin qubits using SOT-driven nanomagnets",
+   "link": "https://doi.org/10.5281/zenodo.23769804",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-10-31",
+    "Released files: 11 (csv, mat, txt), total 241.0 MB listed, not downloaded",
+    "Funding: U.S. National Science Foundation ExpandQISE: Track 1: Energy Efficient Quantum Control of Robust Spin Ensemble Qubits (EQ2) (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-23769804"
+  },
+  {
+   "study": "Robust and fast post-processing of single-shot spin qubit detection events with a neural network",
+   "link": "https://doi.org/10.5281/zenodo.7232127",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2022-10-21",
+    "Released files: 8 (h5, npy, pkl), total 4047.8 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found). linked paper funders via Crossref: Deutsche Forschungsgemeinschaft, Deutsche Forschungsgemeinschaft, Bundesministerium für Bildung und Forschung, RWTH Aachen University",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-7232127"
+  },
+  {
+   "study": "Dataset of \"A hole spin resilient to dipole-induced thermal effects\"",
+   "link": "https://doi.org/10.5281/zenodo.22227953",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "quantum dot",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-09-01",
+    "Released files: 20 (csv, txt), total 5.9 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-22227953"
+  },
+  {
+   "study": "Radiofrequency to Microwave Coherent Manipulation of an Organometallic Electronic Spin Qubit Coupled to a Nuclear Qudit",
+   "link": "https://doi.org/10.5281/zenodo.10214411",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2023-11-29",
+    "Released files: 13 (dat, txt), total 5.8 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-10214411"
+  },
+  {
+   "study": "Supporting Data for \"A hole spin qubit in a fin field-effect transistor above 4 kelvin\"",
+   "link": "https://doi.org/10.5281/zenodo.4579586",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2022-03-04",
+    "Released files: 18 (txt), total 3.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-4579586"
+  },
+  {
+   "study": "Coupling a high-Q resonator to a spin qubit with all-electrical control",
+   "link": "https://doi.org/10.1103/PhysRevResearch.7.013197",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-06-12",
+    "Released files: 26 (csv), total 74.7 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-1103-physrevresearch-7-013197"
+  },
+  {
+   "study": "Ultrafast hole spin qubit with gate-tunable spin-orbit switch functionality",
+   "link": "https://doi.org/10.5281/zenodo.4290131",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2021-02-10",
+    "Released files: 31 (dat), total 2.4 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-4290131"
+  },
+  {
+   "study": "Data for 'Unified evolutionary optimization for high-fidelity spin qubit operations'",
+   "link": "https://doi.org/10.5281/zenodo.23891291",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-11-02",
+    "Released files: 3 (txt, zip), total 3699.9 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-23891291"
+  },
+  {
+   "study": "Data for \"Industry-compatible silicon spin qubit unit cells exceeding 99% fidelity\"",
+   "link": "https://doi.org/10.5281/zenodo.17518472",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-11-04",
+    "Released files: 26 (csv), total 324.5 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-17518472"
+  },
+  {
+   "study": "Isotropic and Anisotropic g-Factor Corrections in GaAs Quantum Dots",
+   "link": "https://doi.org/10.5281/zenodo.3819014",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2021-08-02",
+    "Released files: 5 (dat), total 0.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-3819014"
+  },
+  {
+   "study": "Supporting data for \"Spectroscopy of Quantum Dot Orbitals with In-Plane Magnetic Fields\"",
+   "link": "https://doi.org/10.5281/zenodo.2652371",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1, created 2019-04-29",
+    "Released files: 4 (dat), total 0.5 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-2652371"
+  },
+  {
+   "study": "Supporting data for 'Charge-induced energy shift of a single-spin qubit under a magnetic-field gradient'",
+   "link": "https://doi.org/10.5281/zenodo.15209185",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-04-14",
+    "Released files: 14 (h5), total 107.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-15209185"
+  },
+  {
+   "study": "Supporting Material for \"Simultaneous High-Fidelity Single-Qubit Gates in a Spin Qubit Array\"",
+   "link": "https://doi.org/10.5281/zenodo.21507661",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-10-07",
+    "Released files: 33 (h5), total 0.4 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-21507661"
+  },
+  {
+   "study": "Source data for the publication \"Single-shot latched readout of a quantum dot qubit using barrier gate pulsing\"",
+   "link": "https://doi.org/10.5281/zenodo.13368027",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "quantum dot",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-08-23",
+    "Released files: 2 (hdf5, txt), total 1.7 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-13368027"
+  },
+  {
+   "study": "Dataset: Pyroelectric Influence on Lithium Niobate During the Thermal Transition for Cryogenic Integrated Photonics",
+   "link": "https://doi.org/10.5281/zenodo.10058906",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2023-10-31",
+    "Released files: 7 (txt), total 8.7 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-10058906"
+  },
+  {
+   "study": "Supplementary data for \"Resource-efficient photonic quantum computation with high-dimensional cluster states\"",
+   "link": "https://doi.org/10.5281/zenodo.8358012",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2023-09-19",
+    "Released files: 2 (mat), total 35.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-8358012"
+  },
+  {
+   "study": "Cryogenic feed-forward of a Photonic Quantum State",
+   "link": "https://doi.org/10.5281/zenodo.15148508",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-04-04",
+    "Released files: 24 (csv, txt), total 273.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-15148508"
+  },
+  {
+   "study": "Programmable multi-photon quantum interference in a single spatial mode -- Data and code for simulations",
+   "link": "https://doi.org/10.5281/zenodo.10829208",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-03-18",
+    "Released files: 5 (csv, txt), total 1.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-10829208"
+  },
+  {
+   "study": "Supporting data for \"Quantum and classical processing with photonic quantum machine learning\"",
+   "link": "https://doi.org/10.5281/zenodo.21391092",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-07-20",
+    "Released files: 12 (txt, zip), total 0.3 MB listed, not downloaded",
+    "Funding: European Commission QUantum reservoir cOmputing based on eNgineered DEfect NetworkS in trAnsition meTal dichalcogEnides QUONDENSATE, National Science Centre Sonatina (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-21391092"
+  },
+  {
+   "study": "Free-Space Twin-Field Quantum Key Distribution",
+   "link": "https://doi.org/10.5281/zenodo.19162195",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-03-22",
+    "Released files: 6 (csv), total 0.3 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-19162195"
+  },
+  {
+   "study": "Replication data for fast quantum key distribution",
+   "link": "https://doi.org/10.34810/data190",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-03-01",
+    "Released files: 2 (txt, zip), total 3.4 MB listed, not downloaded",
+    "Funding: Ministerio de Ciencia, Innovación y Universidades MICIU/AEI/10.13039/501100011033 (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-34810-data190"
+  },
+  {
+   "study": "Polarization Correction Device with Liquid Crystals for QKD satellites systems",
+   "link": "https://doi.org/10.5281/zenodo.15348920",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-05-06",
+    "Released files: 3 (csv), total 0.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-15348920"
+  },
+  {
+   "study": "Performance Assessment of Fiber-Optic Railway Infrastructure QKD Testbed by Upper Bounded Deviation Method",
+   "link": "https://doi.org/10.5281/zenodo.15873852",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version v1, created 2026-05-19",
+    "Released files: 2 (txt), total 0.9 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-15873852"
+  },
+  {
+   "study": "Data for: High-dimensional quantum key distribution using a multi-plane light converter",
+   "link": "https://doi.org/10.5281/zenodo.10645760",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-02-11",
+    "Released files: 2 (mat), total 5.8 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-10645760"
+  },
+  {
+   "study": "Data summary for \"Chip-based 16 GBaud Continuous-Variable Quantum Key Distribution\"",
+   "link": "https://doi.org/10.5281/zenodo.19698433",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-04-22",
+    "Released files: 1 (csv), total 0.0 MB listed, not downloaded",
+    "Funding: Danish National Research Foundation bigQ, European Innovation Council CVSTAR, Czech Science Foundation Practical multi-user secure quantum communication, Czech Science Foundation, Ministry of Education Youth and Sports, Ministry of Education Youth and Sports Quantum Engineering and Nanotechnology, E (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-19698433"
+  },
+  {
+   "study": "QKD Network Characterisation and Coexistence Datasets with Standardised Performance Metrics and Experimental Methods",
+   "link": "https://doi.org/10.5281/zenodo.21792844",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-09-02",
+    "Released files: 36 (csv, json, txt), total 2.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-21792844"
+  },
+  {
+   "study": "Data related to publication \"Coherent phase transfer for real-world twin-field quantum key distribution; Supplementary Information\"",
+   "link": "https://doi.org/10.5281/zenodo.5713921",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2021-11-19",
+    "Released files: 10 (txt), total 1.7 MB listed, not downloaded",
+    "Funding: European Commission Clock Network Services - Design Study CLONETS-DS (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-5713921"
+  },
+  {
+   "study": "Data for \"Quantum Communication with Quantum Dots Beyond Telecom Wavelengths via Hollow-Core Fibers\"",
+   "link": "https://doi.org/10.5281/zenodo.18234291",
+   "classification": "Indexed (company)",
+   "indexed": "2026-11-12",
+   "platform": "quantum dot",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2026-01-16",
+    "Released files: 8 (json, txt), total 0.3 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-18234291"
+  },
+  {
+   "study": "250MBaud Gaussian CV-QKD in coexistence with 8x200G PM-16QAM",
+   "link": "https://doi.org/10.5281/zenodo.3813320",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1.6, created 2020-05-07",
+    "Released files: 6 (csv, txt, zip), total 55.5 MB listed, not downloaded",
+    "Funding: European Commission Affordable Quantum Communication for Everyone: Revolutionizing the Quantum Ecosystem from Fabrication to Application UNIQORN (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-3813320"
+  },
+  {
+   "study": "QKD-Forensic-Dataset: Large Dataset Release Version 2.0",
+   "link": "https://doi.org/10.5281/zenodo.18195501",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 2.0.0, created 2026-01-09",
+    "Released files: 1 (csv), total 77.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-18195501"
+  },
+  {
+   "study": "Hardware-biased quantum random numbers",
+   "link": "https://doi.org/10.5281/zenodo.8223863",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version 1.0, created 2023-08-08",
+    "Released files: 1 (dat), total 300.3 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: mit-license"
+   ],
+   "anchor": "10-5281-zenodo-8223863"
+  },
+  {
+   "study": "Q-STAR: Proof Carrying Quantum Classical Randomness with Device Independent Certification",
+   "link": "https://doi.org/10.5281/zenodo.17080273",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2025-09-08",
+    "Released files: 10 (csv, txt), total 0.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-17080273"
+  },
+  {
+   "study": "Verification of shuttling protocols in crossbar spin qubit architectures",
+   "link": "https://doi.org/10.5281/zenodo.14047331",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version not stated, created 2024-11-06",
+    "Released files: 4 (txt), total 0.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-14047331"
+  },
+  {
+   "study": "Deconvolution of Sidereal and Diurnal Periodicities in Quantum Key Distribution Networks: A Dual-Layer Statistical Framework with Gap Robustness Analysis",
+   "link": "https://doi.org/10.5281/zenodo.18768750",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, Zenodo version V 2.0, created 2026-02-25",
+    "Released files: 1 (txt), total 0.6 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: cc-by-4.0"
+   ],
+   "anchor": "10-5281-zenodo-18768750"
+  },
+  {
+   "study": "S17_decoded_data_additional - Further supporting material for \"A hardware-efficient leakage-reduction scheme for quantum error correction with superconducting transmon qubits\"",
+   "link": "https://doi.org/10.4121/14778507.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2021-06-16",
+    "Released files: 2 (txt, zip), total 200.6 MB listed, not downloaded",
+    "Funding: Engineering Quantum Error Correction (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-4121-14778507-v1"
+  },
+  {
+   "study": "data_code_figures_additional - Further supporting material for \"A hardware-efficient leakage-reduction scheme for quantum error correction with superconducting transmon qubits\"",
+   "link": "https://doi.org/10.4121/14778495.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2021-06-16",
+    "Released files: 2 (txt, zip), total 11.6 MB listed, not downloaded",
+    "Funding: Engineering Quantum Error Correction (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-4121-14778495-v1"
+  },
+  {
+   "study": "S17_raw_data_additional - Further supporting material for \"A hardware-efficient leakage-reduction scheme for quantum error correction with superconducting transmon qubits\"",
+   "link": "https://doi.org/10.4121/14769825.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2021-06-16",
+    "Released files: 5 (txt, zip), total 84240.4 MB listed, not downloaded",
+    "Funding: Engineering Quantum Error Correction (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-4121-14769825-v1"
+  },
+  {
+   "study": "S17_raw_data_set2 - Supporting material for \"A hardware-efficient leakage-reduction scheme for quantum error correction with superconducting transmon qubits\"",
+   "link": "https://doi.org/10.4121/14137877.v2",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v2, created 2021-06-15",
+    "Released files: 6 (txt, zip), total 93085.0 MB listed, not downloaded",
+    "Funding: Engineering Quantum Error Correction (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-4121-14137877-v2"
+  },
+  {
+   "study": "S17_raw_data_set1 - Supporting material for \"A hardware-efficient leakage-reduction scheme for quantum error correction with superconducting transmon qubits\"",
+   "link": "https://doi.org/10.4121/14125302.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2021-03-02",
+    "Released files: 11 (txt, zip), total 146529.5 MB listed, not downloaded",
+    "Funding: Engineering Quantum Error Correction (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-4121-14125302-v1"
+  },
+  {
+   "study": "S17_decoded_data - Supporting material for \"A hardware-efficient leakage-reduction scheme for quantum error correction with superconducting transmon qubits\"",
+   "link": "https://doi.org/10.4121/14132193.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2021-03-02",
+    "Released files: 2 (txt, zip), total 809.5 MB listed, not downloaded",
+    "Funding: Engineering Quantum Error Correction (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-4121-14132193-v1"
+  },
+  {
+   "study": "data_code_figures - Supporting material for \"A hardware-efficient leakage-reduction scheme for quantum error correction with superconducting transmon qubits\"",
+   "link": "https://doi.org/10.4121/14132243.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2021-03-02",
+    "Released files: 2 (txt, zip), total 6.9 MB listed, not downloaded",
+    "Funding: Engineering Quantum Error Correction (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-4121-14132243-v1"
+  },
+  {
+   "study": "Fast Microwave-free State Preparation and Measurement of Superconducting Qubits",
+   "link": "https://doi.org/10.6084/m9.figshare.33997593.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2026-09-25",
+    "Released files: 1 (txt), total 0.0 MB listed, not downloaded",
+    "Funding: United States Governme (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-33997593-v1"
+  },
+  {
+   "study": "Supporting data for \"Broadband and high-precision two-level system loss measurement using superconducting multi-wavelength resonators\"",
+   "link": "https://doi.org/10.6084/m9.figshare.30193276.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2025-09-24",
+    "Released files: 28 (csv), total 558.8 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-30193276-v1"
+  },
+  {
+   "study": "Decoherence of a tunable capacitively shunted flux qubit",
+   "link": "https://doi.org/10.6084/m9.figshare.30173908.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2025-09-21",
+    "Released files: 5 (h5), total 0.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-30173908-v1"
+  },
+  {
+   "study": "Datasets for 'Resolving catastrophic error bursts from cosmic rays in large arrays of superconducting qubits'",
+   "link": "https://doi.org/10.6084/m9.figshare.16673851.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2021-09-23",
+    "Released files: 4 (7z, txt), total 940.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: Apache 2.0"
+   ],
+   "anchor": "10-6084-m9-figshare-16673851-v1"
+  },
+  {
+   "study": "Data & Code for \"Verification of a resetting protocol for an uncontrolled superconducting qubit\"",
+   "link": "https://doi.org/10.6084/m9.figshare.12715493.v2",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v2, created 2020-07-25",
+    "Released files: 2 (txt, zip), total 446.5 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-12715493-v2"
+  },
+  {
+   "study": "Supporting data for \"Coupling In-Sensor and In-memory Computing with Diamond Nitrogen-Vacancy Sensors for Intelligent Quantum Sensing\"",
+   "link": "https://doi.org/10.25442/hku.33550153.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "NV center and spin qubit",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2026-10-14",
+    "Released files: 11 (txt, zip), total 28928.7 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: CC BY-NC 4.0"
+   ],
+   "anchor": "10-25442-hku-33550153-v1"
+  },
+  {
+   "study": "Data used in ”Performance Analysis for Crosstalk Errors between Parallel Entangling Gates in Trapped Ion Quantum Error Correction”",
+   "link": "https://doi.org/10.6084/m9.figshare.28218161.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2025-01-16",
+    "Released files: 3 (mat, txt), total 29.8 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-28218161-v1"
+  },
+  {
+   "study": "Coherent coupling and non-destructive measurement of trapped-ion mechanical oscillators",
+   "link": "https://doi.org/10.6084/m9.figshare.25356991.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "trapped ion",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2024-07-30",
+    "Released files: 1 (txt), total 0.0 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found). linked paper funders via Crossref: the Professional Research Experience Program (PREP) operated jointly by NIST andthe Universityof Colorado, United States Department of Commerce | National Institute of Standards and Technology, Colorado University | University of Colorado Boulder",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-25356991-v1"
+  },
+  {
+   "study": "Data for \"Quantum-enhanced simulated annealing using Rydberg atoms\"",
+   "link": "https://doi.org/10.6084/m9.figshare.28254581.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "neutral atom",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2025-01-23",
+    "Released files: 19 (mat), total 10147.9 MB listed, not downloaded",
+    "Funding: National Research Foundation of Korea (RS-2024-00340652) (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-28254581-v1"
+  },
+  {
+   "study": "Fluorescence data, digitized data, Rabi frequency calibration data, trap position data and trap depth data for \"Quantum Computing Dataset of Maximum Independent Set Problem on King’s Lattice of over Hundred Rydberg Atoms\"",
+   "link": "https://doi.org/10.6084/m9.figshare.23828004.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "neutral atom",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2023-11-14",
+    "Released files: 51 (mat), total 780.9 MB listed, not downloaded",
+    "Funding: Samsung Science and Technology Foundation (SSTF-BA1301-52), National Research Foundation of Korea (2017R1E1A1A01074307) (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-6084-m9-figshare-23828004-v1"
+  },
+  {
+   "study": "Data for Pure nanodiamonds for levitated optomechanics in vacuum",
+   "link": "https://doi.org/10.82444/warw.33754477.v1",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "neutral atom",
+   "receipt": [
+    "Read: record metadata and file list, Figshare v1, created 2026-09-14",
+    "Released files: 2 (txt, zip), total 1983.2 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)",
+    "License: CC BY 4.0"
+   ],
+   "anchor": "10-82444-warw-33754477-v1"
+  },
+  {
+   "study": "Raw data for: Supercurrent tuning of the Josephson coupling energy",
+   "link": "https://doi.org/10.5061/dryad.sqv9s4nhx",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Dryad version 2, created 2025-12-30",
+    "Released files: 8 (dat), total 3.1 MB listed, not downloaded",
+    "Funding: U.S. National Science Foundation 2303536 DMR (no defense, military or intelligence funder found). linked paper funder list not reachable",
+    "License: https://spdx.org/licenses/CC0-1.0.html"
+   ],
+   "anchor": "10-5061-dryad-sqv9s4nhx"
+  },
+  {
+   "study": "Quantum supremacy using a programmable superconducting processor",
+   "link": "https://doi.org/10.5061/dryad.k6t1rj8",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "superconducting qubit",
+   "receipt": [
+    "Read: record metadata and file list, Dryad version 11, created 2022-06-13",
+    "Released files: 36 (csv, gz), total 13320.0 MB listed, not downloaded",
+    "Funding:  (no defense, military or intelligence funder found). linked paper has no funder list in Crossref",
+    "License: https://spdx.org/licenses/CC0-1.0.html"
+   ],
+   "anchor": "10-5061-dryad-k6t1rj8"
+  },
+  {
+   "study": "Simultaneous transmission of information and key exchange using the same photonic quantum states",
+   "link": "https://doi.org/10.5061/dryad.n2z34tn70",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Dryad version 4, created 2025-02-06",
+    "Released files: 2 (txt, xlsx), total 0.0 MB listed, not downloaded",
+    "Funding: National Natural Science Foundation of China 12205011, National Natural Science Foundation of China 62471046, State Key Laboratory of Low-Dimensional Quantum Physics KF202205, China Association for Science and Technology 2022QNRC001 Young Elite Scientists Sponsorship Program (no defense, military or intelligence funder found). linked paper has no funder list in Crossref",
+    "License: https://spdx.org/licenses/CC0-1.0.html"
+   ],
+   "anchor": "10-5061-dryad-n2z34tn70"
+  },
+  {
+   "study": "Experimental violation of a Bell-like causal inequality in a photonic quantum switch",
+   "link": "https://doi.org/10.5061/dryad.8kprr4z24",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "photonic",
+   "receipt": [
+    "Read: record metadata and file list, Dryad version 11, created 2026-06-17",
+    "Released files: 16 (csv), total 0.0 MB listed, not downloaded",
+    "Funding: National Natural Science Foundation of China 12025401, National Natural Science Foundation of China 92265209, National Natural Science Foundation of China 12305008, National Natural Science Foundation of China 92476106, China Postdoctoral Science Foundation 2024M750405, National Natural Science Foun (no defense, military or intelligence funder found). linked paper funders via Crossref: National Natural Science Foundation of China, National Natural Science Foundation of China, National Natural Science Foundation of China, National Natural Science Foundation of China, China Postdoctoral Science Foundation, China Postdoctoral Science Foundation",
+    "License: https://spdx.org/licenses/CC0-1.0.html"
+   ],
+   "anchor": "10-5061-dryad-8kprr4z24"
+  },
+  {
+   "study": "Observation of mHz-level cooperative Lamb shifts in an optical atomic clock",
+   "link": "https://doi.org/10.5061/dryad.wpzgmsbtj",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "quantum sensing",
+   "receipt": [
+    "Read: record metadata and file list, Dryad version 3, created 2023-11-28",
+    "Released files: 1 (h5), total 3828.1 MB listed, not downloaded",
+    "Funding: U.S. National Science Foundation QLCI OMA-2016244, U.S. National Science Foundation Phys-1734006, United States Department of Energy Center of Quantum System Accelerator, National Institute of Standards and Technology (no defense, military or intelligence funder found). linked paper has no funder list in Crossref",
+    "License: https://spdx.org/licenses/CC0-1.0.html"
+   ],
+   "anchor": "10-5061-dryad-wpzgmsbtj"
+  },
+  {
+   "study": "Critical calibration tolerance in finite-key decoy-state quantum key distribution",
+   "link": "https://osf.io/zg695/",
+   "classification": "Indexed",
+   "indexed": "2026-11-12",
+   "platform": "QKD and QRNG",
+   "receipt": [
+    "Read: record metadata and file list, OSF modified 2026-05-01, created 2026-05-01",
+    "Released files: 2 (txt, zip), total 0.1 MB listed, not downloaded",
+    "Funding: funding not stated in the record (no defense, military or intelligence funder found)"
+   ],
+   "anchor": "osf-io-zg695"
+  }
+ ]
+}

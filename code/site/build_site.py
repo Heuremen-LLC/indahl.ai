@@ -1912,6 +1912,30 @@ import json as _json
 for _p, _v in _json.load(open(os.path.join(HERE, '..', 'qia_leads', 'matrix_page', 'qia_pages.json'), encoding='utf-8')).items():
     PAGES[_p] = page(_p, _v['title'], _v['desc'], _v['body'], hero_slim(_v['h1'], _v['sub']))
 
+# 12 Nov 2026 (Wayfinder: "start with the qubit data"): QIA QUBIT DATA, the index of published qubit and quantum-device datasets beyond IBM that release
+# raw measurement files (qdata_index/list.json, built by qdata_index/sweep/qdata_sweep.py, hand drops in qdata_index/hand_drops.json). The list is copied
+# to /qia/data.json on every build. Funding screen: defence, military and intelligence funders out, civilian science funders kept.
+def _index_list(path, src, dl, crumb, col):
+    import html as _h
+    d = _json.load(open(src, encoding='utf-8')); rows = sorted(d['studies'], key=lambda r: (r.get(col) or '', r['study'].lower()))
+    shutil.copy(src, os.path.join(HERE, '..', 'cloudflare-workers', 'heuremen-door', 'public', dl.lstrip('/')))
+    E_ = _h.escape
+    tr = ''.join('<tr id="%s"><td><a href="%s">%s</a></td><td>%s</td><td>%s</td><td>%s</td><td><details><summary>receipt</summary><ul>%s</ul></details></td></tr>'
+                 % (E_(r.get('anchor') or ''), E_(r['link']), E_(r['study']), E_(r.get(col) or ''), E_(r.get('classification') or ''), E_(r.get('indexed') or ''), ''.join('<li>%s</li>' % E_(x) for x in r.get('receipt', [])))
+                 for r in rows)
+    return (crumb + ' &middot; <a href="%s">download</a></p><section><div class="scroll"><table class="mtx list"><thead><tr><th>Dataset</th><th>%s</th><th>Classification</th><th>Indexed</th><th>Receipt</th></tr></thead><tbody>%s</tbody></table></div></section>'
+            % (dl, col.capitalize(), tr)), len(rows)
+import shutil
+_qd_body, _qd_n = _index_list('/qia/data', os.path.join(HERE, '..', 'qdata_index', 'list.json'), '/qia/data.json', '<p class="crumb"><a href="/qia">Quantum Idle Audit</a> &middot; <a href="/qia/list">The List</a>', 'platform')
+_qd_intro = ('<section class="legal"><p>Published datasets from qubit and quantum-device experiments beyond IBM: superconducting qubits from other labs and vendors, trapped ions, '
+             'neutral atoms, NV centers and spin qubits, quantum dots, photonics, sensing, and the raw output of quantum key distribution and random number generators. '
+             'A dataset is listed when it releases measurement files. Records with code or figures only, simulations only, or no open files are left out. '
+             'Studies funded by defence, military or intelligence agencies of any country are left out. Civilian science funders are kept. '
+             'The classification is for indexing, not an assessment. IBM device studies are on <a href="/qia/list">The List</a>. Removal on request, any time.</p></section>')
+PAGES['/qia/data'] = page('/qia/data', 'Qubit Data: Published Quantum-Device Datasets | QIA | Heuremen LLC', 'Published datasets from qubit and quantum-device experiments beyond IBM that release raw measurement files, with platform, classification and receipt.',
+                          _qd_intro + _qd_body, hero_slim('Qubit Data', 'Published quantum-device datasets beyond IBM'))
+_FEED.append(('/qia/data', 'QIA: Qubit Data, published quantum-device datasets beyond IBM', 'Published datasets from qubit and quantum-device experiments beyond IBM that release raw measurement files.'))
+
 # 25 Oct 2026: the worker's policy for indahl.ai pages is style-src 'self' (no inline <style>), so matrix styles live in style.css,
 # not in the page bodies. Any <style> block found in a page is moved here and stripped from the page.
 _MOVED = []
@@ -2267,7 +2291,7 @@ CSS += ".dwpage table{border-collapse:collapse;font-size:14.5px;margin:12px 0;di
 # 10 Nov 2026 (Wayfinder: "can the headers get a drop-down menu too?"): every banner header has a dropdown. The panel opens on hover and on
 # keyboard focus with no script, and nav.js makes the first tap on a touch screen open it. The first panel entry is the division's own page,
 # so a touch reader reaches it from the panel too. Filled once in main(), after the package and data-pack pages exist.
-_NAVEXTRA = {'/qia': [('/qia/list', 'The List', ''), ('/qia/key', 'Key', ''), ('/qia/package', 'Research package', '')],
+_NAVEXTRA = {'/qia': [('/qia/list', 'The List', ''), ('/qia/data', 'Qubit Data', ''), ('/qia/key', 'Key', ''), ('/qia/package', 'Research package', '')],
              '/oy': [('/oy/data-pack', 'Data pack', ''), ('/campus', 'CAMPUS', '')],
              '/social': [('/social#social-dsa', 'DSA reports', ''), ('/social#adspend', 'Political ad spend', ''), ('/social#social-tiktok', 'TikTok', ''), ('/social#bluesky', 'Bluesky', ''), ('/social/social-data-pack.zip', 'Data pack (zip)', '')]}
 def _navfor(path):
