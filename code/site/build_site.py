@@ -162,6 +162,7 @@ def page(path, title, desc, body, wide_hero=None):
 <script src="/live-tags.js?v=35e2ef27" defer></script>
 <script src="/headline.js?v=6e4f48dc" defer></script>
 <script src="/nav.js?v=00000000" defer></script>
+<script src="/share.js" defer></script>
 </body>
 </html>
 '''

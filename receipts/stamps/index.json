@@ -1,7 +1,38 @@
 {
- "built_utc": "2026-11-11T23:49:48Z",
+ "built_utc": "2026-11-12T00:22:56Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 420,
+   "commit": "1dce65eda6d576eb6216ad54e96792ed2e57b612",
+   "files": 5731,
+   "id": "1dce65eda6d5",
+   "json": "/receipts/stamps/release_1dce65eda6d5.json",
+   "ledger_sha256": "8c332bc7424b6058e580b5cd4be43e5d2f360e7eebb2f575c0bb2f48f7854819",
+   "manifest_sha256": "29ab2ea72ab6df9b3d9eb4a975c3855253db304b516f828d7bcc905426d3eb7c",
+   "ots": "/receipts/stamps/release_1dce65eda6d5.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-12T00:21:49Z",
+   "sha256": "89be785c64002084bd66fd70bd73fc1d5e113b4489f5a05f5716c257a18fbfa1",
+   "wayback": [
+    {
+     "capture": "https://web.archive.org/web/20261111141827/https://indahl.ai/iris",
+     "timestamp": "20261111141827",
+     "url": "https://indahl.ai/iris"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111141916/https://indahl.ai/oy",
+     "timestamp": "20261111141916",
+     "url": "https://indahl.ai/oy"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261111141945/https://indahl.ai/atlas",
+     "timestamp": "20261111141945",
+     "url": "https://indahl.ai/atlas"
+    }
+   ],
+   "wayback_waiting": 417
+  },
   {
    "changed": 862,
    "commit": "3496c4e6bf84b07fd055a496f0b561f3bcf4b8aa",
@@ -11,11 +42,11 @@
    "ledger_sha256": "1fba02b1c2227da0680e94a3d949773ce080eb6bf9516380806968a9da3bdcea",
    "manifest_sha256": "1b98568c5f36e5e528775ca9828a14bc6df79418e12ce9547703766f7b519b3a",
    "ots": "/receipts/stamps/release_3496c4e6bf84.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975489",
    "released_at": "2026-11-11T23:05:21Z",
    "sha256": "520d76c0c6035b16cecbd6622c3bcdce08fb9bc188086c4831a13513ef93f3e8",
    "wayback": [],
-   "wayback_waiting": 853
+   "wayback_waiting": 731
   },
   {
    "changed": 1140,
@@ -30,7 +61,7 @@
    "released_at": "2026-11-11T22:46:33Z",
    "sha256": "9aa7aac6bb147a8613918ae5f9bea3857a7fdf90b767f837d09e5ca3bc6d2045",
    "wayback": [],
-   "wayback_waiting": 291
+   "wayback_waiting": 87
   },
   {
    "changed": 158,
@@ -45,7 +76,7 @@
    "released_at": "2026-11-11T21:45:46Z",
    "sha256": "22fded5dc7e2bad57d2936862c6e81806735bbaa17d6c1923805b91af9170c41",
    "wayback": [],
-   "wayback_waiting": 50
+   "wayback_waiting": 9
   },
   {
    "changed": 730,
@@ -60,7 +91,7 @@
    "released_at": "2026-11-11T21:31:50Z",
    "sha256": "12da3bfe43d8c06007d7f111db38c22deee79ebdd9153ac7f0353d1eca85c661",
    "wayback": [],
-   "wayback_waiting": 29
+   "wayback_waiting": 5
   },
   {
    "changed": 815,
@@ -75,7 +106,7 @@
    "released_at": "2026-11-11T21:19:43Z",
    "sha256": "85fe779cdfaee30d9ea25c4642f75565dba67e96ce1200b47cbedb70e2fff8ff",
    "wayback": [],
-   "wayback_waiting": 28
+   "wayback_waiting": 9
   },
   {
    "changed": 901,
@@ -165,7 +196,7 @@
    "released_at": "2026-11-11T18:44:45Z",
    "sha256": "63d3766264cb79e728c72a4850758c2077f0e160d5df2b88623c0a5fff9d1884",
    "wayback": [],
-   "wayback_waiting": 19
+   "wayback_waiting": 18
   },
   {
    "changed": 1172,
@@ -195,7 +226,7 @@
    "released_at": "2026-11-11T16:38:42Z",
    "sha256": "12370d1c9e100ddf1b9d813a62e1838ed5023c81a7cd61ff123264eb96202f8f",
    "wayback": [],
-   "wayback_waiting": 6
+   "wayback_waiting": 5
   },
   {
    "changed": 164,
@@ -326,7 +357,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 571
+   "wayback_waiting": 569
   },
   {
    "changed": 287,
@@ -1420,7 +1451,7 @@
      "url": "https://indahl.ai/brand/adguard.csv"
     }
    ],
-   "wayback_waiting": 20
+   "wayback_waiting": 19
   },
   {
    "changed": 4261,
