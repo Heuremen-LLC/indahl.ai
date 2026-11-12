@@ -59,7 +59,7 @@
     var B = d.baseline_gold_dev;
     if (B) {
       box.appendChild(h('h3', 'Baseline on the development half of the answer key'));
-      box.appendChild(h('p', 'Agreement is the share of code calls where the model’s PRESENT or not matches the answer key. The last column is the score for always guessing the most common answer for each code. Seven codes pooled, with the 95% Wilson interval.', 'meta'));
+      box.appendChild(h('p', 'Agreement counts a cannot tell answer as agreeing with every recount that did not flag the code, so it mostly measures how often a model abstains, not skill. Our referee caught this on 12 November. Read it beside the share of calls each model commits to, in the headline above.'));
       var order = ['base', 'llama', 'mistral', 'gemma'].filter(function (k) { return B[k]; }).concat(Object.keys(B).filter(function (k) { return ['base', 'llama', 'mistral', 'gemma'].indexOf(k) < 0; }));
       box.appendChild(table(['Model', 'Agree', 'Of', 'Agreement', '95% interval', 'Always guess the most common answer'],
         order.map(function (k) { var q = (B[k] || {}).pooled || {}; return [nm(k), q.agree, q.n, p3(q.rate), iv(q.wilson95), p3(B[k].majority_class_rate)]; })));

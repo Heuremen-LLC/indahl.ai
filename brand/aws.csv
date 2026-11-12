@@ -1,5 +1,5 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-Amazon Web Services,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.aws.com,Its statement,stated bound 0.41 ms,"offset 3.25 ms, path half-delay 9.61 ms",,CANNOT TELL,,12 Nov 16:59,
+Amazon Web Services,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.aws.com,Its statement,stated bound 0.41 ms,"offset 3.25 ms, path half-delay 9.77 ms",,CANNOT TELL,,12 Nov 17:07,
 Amazon Web Services,SUPPORT,https://indahl.ai/support,Is a cycle that is stated as supported still being released?,amazon-neptune,Its statement,stated as supported: 22 cycles,no release in more than a year: 22 of them,85.1% to 100.0%,CANNOT TELL,,12 Nov 15:38,
 Amazon Web Services,SUPPORT,https://indahl.ai/support,Is a cycle that is stated as supported still being released?,amazon-msk,Its statement,stated as supported: 3 cycles,no release in more than a year: 3 of them,43.9% to 100.0%,CANNOT TELL,,12 Nov 15:38,
 Amazon Web Services,SUPPORT,https://indahl.ai/support,Is a cycle that is stated as supported still being released?,amazon-elasticache-redis,Its statement,stated as supported: 2 cycles,no release in more than a year: 2 of them,34.2% to 100.0%,CANNOT TELL,,12 Nov 15:38,

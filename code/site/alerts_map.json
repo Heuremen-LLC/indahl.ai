@@ -7499,7 +7499,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3753,
+"every_min": 3754,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7694,7 +7694,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 600,
+"every_min": 601,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7741,7 +7741,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 550,
+"every_min": 551,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7759,7 +7759,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 550,
+"every_min": 551,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7813,7 +7813,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 550,
+"every_min": 551,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -8033,5 +8033,5 @@
 ]
 }
 },
-"tick_min": 2.08
+"tick_min": 2.09
 }
