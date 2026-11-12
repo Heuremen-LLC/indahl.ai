@@ -10,15 +10,15 @@ This kit recomputes the SUPPORT headline number and its outcome label with the d
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `9fc34e209b7b6fbd8193eb2737e61f188a60a1193cfc1871060a384b73527817`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `7b50da5963d4ea65bfbfd163b110d6ef3e64f5a9c2ba3bcd3bb25958f1033c95`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/support/live.json served it at the feed stamp 10 Nov 20:50, read by us at 2026-11-11T00:08:43Z. The feed bytes had sha256 `983bdce758766dc48db0c8b1814185c791632e78bc76469f2e6f9ea35f0c6f4b`.
+The headline as the live feed https://indahl.ai/support/live.json served it at the feed stamp 12 Nov 15:38, read by us at 2026-11-12T16:06:19Z. The feed bytes had sha256 `1bcaeeaa89763289e331f1723a304ec48e28bc851d45344ac486dce7c73b23f6`.
 
 - number: 24%
-- value: 0.2407
-- interval: 0.1533 to 0.3354
+- value: 0.2419
+- interval: 0.154 to 0.3375
 - outcome: ABOVE
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -41,8 +41,8 @@ As the SUPPORT data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/cycles.json | 1,920,498 | `c833214792e91eac492175f80336b0af26359e02f9e431249114f979d559eee9` |
-| summary_support.json | 20,245 | `983bdce758766dc48db0c8b1814185c791632e78bc76469f2e6f9ea35f0c6f4b` |
+| data/cycles.json | 1,921,734 | `a9d78aca647a8ef77135506f8cf6905f18b69e6f0fccf2835bfd1d757d6d658f` |
+| summary_support.json | 22,393 | `1bcaeeaa89763289e331f1723a304ec48e28bc851d45344ac486dce7c73b23f6` |
 
 ## Code
 

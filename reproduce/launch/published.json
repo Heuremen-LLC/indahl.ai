@@ -1,17 +1,17 @@
 {
  "feed": "https://indahl.ai/launch/live.json",
- "feed_sha256": "73049cac12f8a8a2b050306f0ea37b11060051cf4ebe1906f15fe1c130abe9f2",
+ "feed_sha256": "67b6490dc00456692c34fc010a49b789c9338552f2a9c65dce6213fb61702179",
  "headline": {
   "desk": "LAUNCH",
-  "display": "9",
+  "display": "11",
   "hi": null,
   "keys": [],
   "lo": null,
   "n": null,
   "of": null,
   "outcome": "CANNOT_TELL",
-  "value": 9
+  "value": 11
  },
- "read_at": "2026-11-11T00:08:46Z",
- "stamp": "10 Nov 23:50"
+ "read_at": "2026-11-12T16:06:22Z",
+ "stamp": "12 Nov 16:04"
 }

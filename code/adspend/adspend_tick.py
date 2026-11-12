@@ -8,6 +8,8 @@ Run: python3 -I adspend_tick.py [--no-fetch] [--selftest]"""
 import os, sys, re, io, csv, json, time, zipfile, bisect, datetime as D, collections as C, urllib.request, shutil, subprocess
 
 H = os.path.dirname(os.path.abspath(__file__)); RAW = os.path.join(H, 'data', 'raw'); os.makedirs(RAW, exist_ok=True)
+sys.path.insert(0, H)
+import heuremen_kit as K   # 12 Nov 2026: REQ-13 counts (K.req13). A byte-identical copy of the shared kit sits in this folder, to be registered in ledger/copies.json
 UA = 'heuremen-adspend/0.1 (+https://indahl.ai/social)'
 CYCLES = (2020, 2022, 2024, 2026)
 GBUNDLE = 'https://storage.googleapis.com/political-csv/google-political-ads-transparency-bundle.zip'
@@ -211,6 +213,11 @@ REASON = dict(
     near='near: outside the band by less than the size that matters',
     band='band: the timing band spans more than a factor of two',
     purpose='purpose: rows of unclear or non-ad purpose decide the side')
+# 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): the closed reason of each CANNOT_TELL. Nothing returned is no longer an outcome, those rows are CANNOT_TELL with NO_INTERVAL_FORMABLE.
+NIF, STR, WIDE = 'NO_INTERVAL_FORMABLE', 'STRADDLES_EDGE', 'TOO_WIDE_TO_RESOLVE'
+RCODE = {REASON['scope']: NIF, REASON['cycle_reg']: NIF, REASON['cycle_cand']: NIF, REASON['nothing']: NIF, REASON['name_nothing']: NIF, REASON['no_spend']: NIF, REASON['estimates']: STR, REASON['unseen']: STR,
+         REASON['agency']: STR, REASON['purpose']: STR, REASON['name_below']: STR, REASON['near']: STR, REASON['band']: WIDE, 'known-good gate failed': NIF}
+def rcode(oc, why): return RCODE[why] if oc == CANNOT_TELL else None
 def core(G_lo, G_hi, d_lo, d_hi, pool, unseen):
     """ABOVE, BELOW or CONSISTENT on the plan's tests, else None."""
     if d_lo - G_hi >= max(SIZE_ABS, SIZE_REL * G_hi): return ABOVE
@@ -227,7 +234,7 @@ def classify(g, f, unseen, ctx, g_noname=None):
     tests = dict(above_margin=round(above_m, 2), above_size=round(above_size, 2), below_margin=round(below_m, 2), below_size=round(below_size, 2), unseen=round(unseen, 2))
     if ctx['scope']: return CANNOT_TELL, REASON['scope'], tests
     if ctx['cycle']: return CANNOT_TELL, REASON[ctx['cycle']], tests
-    if ctx['nothing']: return (CANNOT_TELL, REASON['name_nothing'], tests) if ctx['name_only'] else (NOTHING, REASON['nothing'], tests)
+    if ctx['nothing']: return (CANNOT_TELL, REASON['name_nothing'], tests) if ctx['name_only'] else (CANNOT_TELL, REASON['nothing'], tests)   # was NOTHING, a read that found no figure is NO_INTERVAL_FORMABLE
     o = core(G_lo, G_hi, d_lo, d_hi, pool, unseen)
     if o == ABOVE:
         return (ABOVE, REASON['above'], tests) if ctx['spend_listed'] else (CANNOT_TELL, REASON['no_spend'], tests)
@@ -263,7 +270,7 @@ def selftest():
     zero = dict(lo=0.0, hi=0.0)
     cases = [('ABOVE', classify(gm, F(2e5, 2e5, 0), 0, X())[0], ABOVE), ('BELOW', classify(gs, F(0, 0, 0), 0, X())[0], BELOW),
              ('CONSISTENT', classify(gs, F(gs['pt'], gs['pt'], 5e6), 0, X())[0], CONSISTENT), ('agency', classify(gs, F(1e5, 1e5, 2e6), 0, X())[1][:6], 'agency'),
-             ('band', classify(gl, F(1e6, 1e6, 0), 0, X())[1][:4], 'band'), ('NOTHING', classify(gs, F(0, 0, 0), 0, X(nothing=True))[0], NOTHING),
+             ('band', classify(gl, F(1e6, 1e6, 0), 0, X())[1][:4], 'band'), ('nothing is CANNOT_TELL, not an outcome', (classify(gs, F(0, 0, 0), 0, X(nothing=True))[0], rcode(*classify(gs, F(0, 0, 0), 0, X(nothing=True))[:2])), (CANNOT_TELL, NIF)),
              ('scope', classify(gs, F(0, 0, 0), 0, X(scope=True))[1][:5], 'scope'), ('scope before nothing', classify(gs, F(0, 0, 0), 0, X(scope=True, nothing=True))[1][:5], 'scope'),
              ('unseen blocks BELOW', classify(gs, F(0, 0, 0), 5e6, X())[1][:6], 'unseen'), ('unseen blocks CONSISTENT', classify(gs, F(gs['pt'], gs['pt'], 0), 5e5, X())[1][:6], 'unseen'),
              ('small unseen keeps CONSISTENT', classify(gs, F(gs['pt'], gs['pt'], 0), 100, X())[0], CONSISTENT), ('small unseen keeps BELOW', classify(gs, F(0, 0, 0), 100, X())[0], BELOW),
@@ -636,7 +643,7 @@ def main():
                        fec=dict(fs, source=src_f(c)),
                        gap=dict(d_lo_minus_google_stated=round(fs['d_lo'] - g1['pt'], 2), ratio_d_lo_to_google_stated=(round(fs['d_lo'] / g1['pt'], 3) if g1['pt'] > 0 else None), **tests),
                        interval='Google side: spend that must (lo) or could (hi) have been paid in the window, payments allowed %d days before to %d days after each ad week, 100 dollars either way per listed week. It is a bound, not a confidence interval. FEC side: ad rows to Google, without amounts marked as estimates (lo), to every Google row (hi). The BELOW test adds payments to others for ad, digital or media purposes (pool) and summary disbursements the itemized file does not hold (unseen). CONSISTENT needs every Google row plus unseen inside the band.' % (P1, Q1),
-                       outcome=oc, reason=why, flags=flags, outcome_second_ruler=oc2, timing_sensitive=oc != oc2, outcome_unseen_full=ocf, unseen_rule_sensitive=oc != ocf,
+                       outcome=oc, reason=why, reason_code=rcode(oc, why), flags=flags, outcome_second_ruler=oc2, timing_sensitive=oc != oc2, outcome_unseen_full=ocf, unseen_rule_sensitive=oc != ocf,
                        tp=dict(none='plan %s, dated addenda; match tier %s; gate counts and validity drops in the summary' % (plan_commit, '+'.join(sorted(gv['tiers']))),
                                gap_items='Schedule B Google rows by class with positive and negative counts in fec.sched_b; Schedule E raw %d, deduplicated %d' % (fs['sched_e']['n_raw'], fs['sched_e']['n_dedup']),
                                sign=('+' if fs['d_lo'] > g1['pt'] else ('-' if fs['d_lo'] < g1['pt'] else '0')) + ' (ad payments minus stated spend in the window, signed)',
@@ -653,13 +660,13 @@ def main():
                 rows.append(dict(level='quarter', cycle=c, quarter=qn, window=[iso(qa), iso(qb)], group_key='+'.join(members), committee_id=pid_c, committee_name=info['name'], n_members=len(members), tier=row['tier'],
                                  google=dict(stated_in_window=round(q1['pt'], 2), lo=round(q1['lo'], 2), hi=round(q1['hi'], 2)),
                                  fec=dict(d_lo=fq['d_lo'], d_lo_est=fq['d_lo_est'], d_hi=fq['d_hi'], pool=fq['pool'], sched_e_google_raw=fq['sched_e']['google_raw']),
-                                 gap=dict(d_lo_minus_google_stated=round(fq['d_lo'] - q1['pt'], 2), **qt), outcome=qo, reason=qw))
+                                 gap=dict(d_lo_minus_google_stated=round(fq['d_lo'] - q1['pt'], 2), **qt), outcome=qo, reason=qw, reason_code=rcode(qo, qw)))
 
     # ---- gates that turn every outcome into CANNOT_TELL
     bad_share = bad['field_count'] / max(1, lines_total)
     gate_ok = ok_plant and kg1_ok and bad_share <= 0.001
     if not gate_ok:
-        for r in rows: r['outcome_before_gate'] = r['outcome']; r['outcome'] = CANNOT_TELL; r['reason'] = 'known-good gate failed'
+        for r in rows: r['outcome_before_gate'] = r['outcome']; r['outcome'] = CANNOT_TELL; r['reason'] = 'known-good gate failed'; r['reason_code'] = NIF
     cyc = [r for r in rows if r['level'] == 'cycle']; qtr = [r for r in rows if r['level'] == 'quarter']
     def counts(rs):
         out = C.Counter(r['outcome'] for r in rs); return {k: out.get(k, 0) for k in (ABOVE, BELOW, CONSISTENT, CANNOT_TELL, NOTHING)}
@@ -667,7 +674,7 @@ def main():
     dec_ = [r for r in cyc if r['outcome'] in (ABOVE, BELOW, CONSISTENT)]
     flagc = C.Counter(fl.split(':')[0] for r in cyc for fl in r['flags'])
     summary = dict(
-        updated=time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()), plan_commit=plan_commit, gate_ok=gate_ok,
+        updated=(json.load(open('summary_adspend.json'))['updated'] if '--std2-rewrite' in args else time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())), plan_commit=plan_commit, gate_ok=gate_ok,
         known_good=dict(planted_rows='passed' if ok_plant else 'FAILED', planted_detail={k: list(v) for k, v in plant.items()},
                         google_internal=dict(us_advertisers=len(us), outside_band=len(kg1_out), weekly_sum_equal_total=kg1_eq, weekly_sum_above_total=kg1_above, weekly_sum_below_total=kg1_below, ok=kg1_ok),
                         parser=dict(oppexp_lines=lines_total, dropped=dict(bad), dropped_share=round(bad_share, 6))),
@@ -692,6 +699,8 @@ def main():
                       unseen_full_cycle_rows=dict(C.Counter(r['outcome_unseen_full'] for r in cyc)),
                       second_ruler_cycle_rows=dict(C.Counter(r['outcome_second_ruler'] for r in cyc)),
                       cannot_tell_reasons_cycle={k[1]: v for k, v in reasons.items() if k[0] == CANNOT_TELL},
+                      cannot_tell_by_reason_code_cycle=dict(C.Counter(r['reason_code'] for r in cyc if r['outcome'] == CANNOT_TELL)), req13_cycle=K.req13([(r['outcome'], r['reason_code']) for r in cyc], nothing_returned=0),
+                      req13_quarter=K.req13([(r['outcome'], r['reason_code']) for r in qtr], nothing_returned=0),
                       addendum7_moves_cycle=dict(moved), flags_cycle=dict(flagc),
                       decided_cycle_rows=dict(n=len(dec_), timing_sensitive=sum(r['timing_sensitive'] for r in dec_), unseen_rule_sensitive=sum(r['unseen_rule_sensitive'] for r in dec_),
                                               name_only=sum(r['tier'] == 'name' for r in dec_), flagged=sum(1 for r in dec_ if r['flags']),
@@ -729,7 +738,7 @@ def public_file(s, cyc):
                  google_data_updated_pt=s['google']['report_data_updated_pt'], plan=PLAN_URL, plan_commit=s['plan_commit'],
                  interval=('Band: the Google spend that must have been paid inside the window to the spend that could have been, allowing payments %d days before to %d days after each ad week, '
                            'and 100 dollars either way per listed week for Google\'s rounding. It is a bound, not a confidence interval. Second band: %d and %d days.') % (s['rulers']['primary']['P'], s['rulers']['primary']['Q'], s['rulers']['second']['P'], s['rulers']['second']['Q']),
-                 outcomes='ABOVE, BELOW, CONSISTENT, CANNOT_TELL with a reason, NOTHING_RETURNED. Definitions on the page and in the plan.',
+                 outcomes='ABOVE, BELOW, CONSISTENT, CANNOT_TELL with a closed reason (STRADDLES_EDGE, TOO_WIDE_TO_RESOLVE, NO_INTERVAL_FORMABLE). NOTHING_RETURNED is the status of a failed read and is not an outcome. Definitions on the page and in the plan.',
                  sources=dict(google=GBUNDLE, fec='https://www.fec.gov/data/browse-data/?tab=bulk-data', files_by_cycle=by_cycle), rows=len(cyc),
                  note='Committee disbursements only. No individual contributor file was read. Party appears only as the filed field.')
     return dict(about=about, rows=[row(r) for r in sorted(cyc, key=lambda r: (r['cycle'], -r['google']['stated_in_window']))])
@@ -751,7 +760,7 @@ def cell_name(r):
     return out
 def cell_outcome(r):
     out = OUT_WORD[r['outcome']]
-    if r['outcome'] == CANNOT_TELL: out += ' <span class="by">%s</span>' % esc(r['reason'].split(':')[0])
+    if r['outcome'] == CANNOT_TELL: out += ' (%s) <span class="by">%s</span>' % (r.get('reason_code') or '', esc(r['reason'].split(':')[0]))
     dep = []
     if r.get('timing_sensitive'): dep.append('depends on timing')
     if r.get('unseen_rule_sensitive'): dep.append('depends on the itemization rule')
@@ -764,11 +773,11 @@ def trow(r):
         money(r['fec']['d_lo']), money(r['fec']['d_hi']), money(r['fec']['pool']), cell_outcome(r))
 THEAD = '<thead><tr><th>Committee as filed</th><th>Cycle</th><th>Google stated spend in the window</th><th>Band for payments in the window</th><th>Reported paid to Google: ad rows to all rows</th><th>Paid to others for ads, digital or media</th><th>Outcome</th></tr></thead>'
 def render(s, cyc):
-    oc = s['outcomes']['cycle_rows']; mg = s['match_gate']; cut = pdate(s['fec']['cut_2026']['window_end'])
+    oc = s['outcomes']['cycle_rows']; mg = s['match_gate']; cut = pdate(s['fec']['cut_2026']['window_end']); r13 = s['outcomes']['req13_cycle']
     def line(c):
         k = oc[str(c)]
-        return '<tr><td>%d</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td></tr>' % (
-            c, format(k[ABOVE], ','), format(k[BELOW], ','), format(k[CONSISTENT], ','), format(k[CANNOT_TELL], ','), format(k[NOTHING], ','))
+        return '<tr><td>%d</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td>%s</tr>' % (
+            c, format(k[ABOVE], ','), format(k[BELOW], ','), format(k[CONSISTENT], ','), format(k[CANNOT_TELL], ','), '')
     big = []
     for c in (2024, 2026):
         big += sorted([r for r in cyc if r['cycle'] == c], key=lambda r: -r['google']['stated_in_window'])[:10]
@@ -790,10 +799,10 @@ def render(s, cyc):
 <p>Google states how much each verified election advertiser spent on election ads, week by week. Federal political committees report their payments to the FEC, itemized by payee once a payee&rsquo;s total passes 200 dollars in a year, or in an election cycle for a candidate&rsquo;s committee. We set the two side by side, per two-year cycle, for every committee we can match.</p>
 <p>Of the {s['google']['us_advertisers']:,} US advertisers in Google&rsquo;s file, {cA + cB:,} matched an FEC committee: {cA:,} through the FEC committee or candidate ID that Google lists for them and {cB:,} through a name that equals exactly one committee&rsquo;s name and passes the match checks. The other {unm:,} did not match and carry {money(unm_sp)} of Google&rsquo;s stated spend. Of those, {ein_state:,} list only a tax ID or a state registration and {empty:,} list no ID. They include {nvd:,} name matches we set aside because Google lists the same name under a state registration, because at least two thirds of the advertiser&rsquo;s spend sits in a state other than the committee&rsquo;s, or because the spend began more than 90 days before the committee&rsquo;s first itemized filing.</p>
 <h3>Outcomes by cycle</h3>
-<div class="scroll"><table class="mtx small"><thead><tr><th>Cycle</th><th>Above</th><th>Below</th><th>Consistent</th><th>Cannot tell</th><th>Nothing returned</th></tr></thead><tbody>
+<div class="scroll"><table class="mtx small"><thead><tr><th>Cycle</th><th>Above</th><th>Below</th><th>Consistent</th><th>Cannot tell</th></tr></thead><tbody>
 {''.join(line(c) for c in (2020, 2022, 2024, 2026))}
 </tbody></table></div>
-<p class="bench-note">One row per matched committee, or group of committees that Google&rsquo;s file joins, and cycle. The 2026 cycle runs to {cut}, the end of the last full month in the FEC&rsquo;s itemized file on the day we read it. {why_line} Nothing returned: Google states spend in the window and the FEC files hold no row and no summary for the committee in that cycle.</p>
+<p class="bench-note">One row per matched committee, or group of committees that Google&rsquo;s file joins, and cycle. The 2026 cycle runs to {cut}, the end of the last full month in the FEC&rsquo;s itemized file on the day we read it. {why_line} Cannot tell carries one reason. NO_INTERVAL_FORMABLE covers a committee type that files no operating expenditures, a committee not registered or whose candidate did not run in that cycle, no Google spend listed in the window, and the rows where Google states spend in the window and the FEC files hold no row and no summary for the committee in that cycle. STRADDLES_EDGE covers money or rows that could put the reading on either side of an edge. TOO_WIDE_TO_RESOLVE covers a timing band wider than a factor of two. Beside this count: {r13['line']}</p>
 <h3>Matched committees with the most Google stated spend, 2024 and 2026</h3>
 <div class="scroll"><table class="mtx">{THEAD}<tbody>
 {''.join(trow(r) for r in big)}

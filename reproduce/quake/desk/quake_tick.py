@@ -52,25 +52,28 @@ def km(lat1, lon1, lat2, lon2):
 
 # ---------------- the rules (PLAN.md, Rules) ----------------
 def row_cover(count, nmin, nmax):
-    """Stated 95% range [nmin, nmax] against the count. CONSISTENT inside, ABOVE more than nmax, BELOW fewer than nmin."""
+    """Stated 95% range [nmin, nmax] against the count, ends included (PLAN_ADDENDUM_std2.md). An exact read, an interval of zero width: K.read_exact with the range as the band.
+    CONSISTENT inside, ABOVE more than nmax, BELOW fewer than nmin. Returns the outcome word only. An unreadable row is CANNOT_TELL (reason NO_INTERVAL_FORMABLE)."""
     if count is None or nmin is None or nmax is None or nmin > nmax: return K.CANNOT_TELL
-    if count > nmax: return K.ABOVE
-    if count < nmin: return K.BELOW
-    return K.CONSISTENT
+    return K.read_exact(count, band=(nmin, nmax), edge='closed')[0]
+def read2(lo, hi, figure, band):
+    """PLAN.md names two rules for a cell: ABOVE and BELOW against the stated figure, CONSISTENT inside the tolerance band. Step one is K.read with bound=figure
+    (ABOVE or BELOW), step two is K.read with band=band (CONSISTENT), otherwise CANNOT_TELL with reason STRADDLES_EDGE. No size that matters is named, so no both-alternatives test."""
+    o, r = K.read(lo, hi, bound=figure, edge='closed')
+    if o in (K.ABOVE, K.BELOW): return o, None
+    return K.read(lo, hi, band=band, edge='closed')
 def cover_outcome(lo, hi, n, nb):
-    if n < MIN_ROWS or nb < MIN_BLOCKS: return K.CANNOT_TELL
-    if hi < COVER_CLAIM: return K.BELOW
-    if lo > COVER_CLAIM: return K.ABOVE
-    if lo >= COVER_BAND[0] and hi <= COVER_BAND[1]: return K.CONSISTENT
-    return K.CANNOT_TELL
+    """Returns (outcome, reason). Under 30 rows or 10 blocks: CANNOT_TELL TOO_WIDE_TO_RESOLVE (owner decision O3). No rows or no interval: NO_INTERVAL_FORMABLE."""
+    if n == 0 or lo is None or hi is None: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < MIN_ROWS or nb < MIN_BLOCKS: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return read2(lo, hi, COVER_CLAIM, COVER_BAND)
 def rel_tol(p): return max(0.01, min(0.05, p / 2, (1 - p) / 2))
 def rel_outcome(lo, hi, claim, n, nb):
-    if n < MIN_ROWS or nb < MIN_BLOCKS or claim is None: return K.CANNOT_TELL
-    if lo > claim: return K.ABOVE
-    if hi < claim: return K.BELOW
+    """Returns (outcome, reason). The band is the stated value plus or minus rel_tol (PLAN.md)."""
+    if n == 0 or claim is None or lo is None or hi is None: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < MIN_ROWS or nb < MIN_BLOCKS: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
     t = rel_tol(claim)
-    if lo >= claim - t and hi <= claim + t: return K.CONSISTENT
-    return K.CANNOT_TELL
+    return read2(lo, hi, claim, (claim - t, claim + t))
 def pbin(p):
     for i in range(len(PBINS) - 1):
         if PBINS[i] <= p < PBINS[i + 1] or (i == len(PBINS) - 2 and p == 1.0): return i
@@ -81,11 +84,13 @@ def pbin_name(i):
 def rule_selftest():
     t = [row_cover(5, 2, 8) == K.CONSISTENT, row_cover(9, 2, 8) == K.ABOVE, row_cover(1, 2, 8) == K.BELOW, row_cover(0, 0, 0) == K.CONSISTENT,
          row_cover(None, 0, 1) == K.CANNOT_TELL, row_cover(1, 3, 2) == K.CANNOT_TELL,
-         cover_outcome(0.80, 0.90, 500, 50) == K.BELOW, cover_outcome(0.96, 0.99, 500, 50) == K.ABOVE, cover_outcome(0.93, 0.97, 500, 50) == K.CONSISTENT,
-         cover_outcome(0.90, 0.97, 500, 50) == K.CANNOT_TELL, cover_outcome(0.93, 0.97, 20, 50) == K.CANNOT_TELL, cover_outcome(0.93, 0.97, 500, 5) == K.CANNOT_TELL,
-         rel_outcome(0.30, 0.40, 0.20, 500, 50) == K.ABOVE, rel_outcome(0.05, 0.10, 0.20, 500, 50) == K.BELOW, rel_outcome(0.17, 0.23, 0.20, 500, 50) == K.CONSISTENT,
-         rel_outcome(0.10, 0.26, 0.20, 500, 50) == K.CANNOT_TELL, abs(rel_tol(0.003) - 0.01) < 1e-12, abs(rel_tol(0.5) - 0.05) < 1e-12,
+         cover_outcome(0.80, 0.90, 500, 50)[0] == K.BELOW, cover_outcome(0.96, 0.99, 500, 50)[0] == K.ABOVE, cover_outcome(0.93, 0.97, 500, 50)[0] == K.CONSISTENT,
+         cover_outcome(0.90, 0.97, 500, 50)[0] == K.CANNOT_TELL, cover_outcome(0.93, 0.97, 20, 50)[0] == K.CANNOT_TELL, cover_outcome(0.93, 0.97, 500, 5)[0] == K.CANNOT_TELL,
+         rel_outcome(0.30, 0.40, 0.20, 500, 50)[0] == K.ABOVE, rel_outcome(0.05, 0.10, 0.20, 500, 50)[0] == K.BELOW, rel_outcome(0.17, 0.23, 0.20, 500, 50)[0] == K.CONSISTENT,
+         rel_outcome(0.10, 0.26, 0.20, 500, 50)[0] == K.CANNOT_TELL, abs(rel_tol(0.003) - 0.01) < 1e-12, abs(rel_tol(0.5) - 0.05) < 1e-12,
          pbin(0.0) == 0, pbin(0.0099) == 0, pbin(0.01) == 1, pbin(0.995) == 9, pbin(1.0) == 9, pbin(0.5) == 5,
+         cover_outcome(0.93, 0.97, 20, 50)[1] == K.TOO_WIDE_TO_RESOLVE, cover_outcome(0.90, 0.97, 500, 50)[1] == K.STRADDLES_EDGE, cover_outcome(0.93, 0.97, 0, 0)[1] == K.NO_INTERVAL_FORMABLE,
+         cover_outcome(0.94, 0.96, 500, 50) == (K.CONSISTENT, None), cover_outcome(0.9459, 0.9776, 31894, 82) == (K.CANNOT_TELL, K.STRADDLES_EDGE), K.read_exact(5, band=(5, 5))[0] == K.CONSISTENT,
          abs(km(0, 0, 0, 1) - 111.195) < 0.01]
     return all(t), t
 
@@ -214,10 +219,10 @@ for v in VERS:
             r = dict(seq=v['seq'], block=BLOCK[v['seq']], issued=v['issued'], indexed=v.get('indexed'), us=SEQD[v['seq']]['us'], created=v['created'], window=lab, t0=t0, t1=t1, mag=mag, p=p, nmin=nmin, nmax=nmax, kind=kind,
                      model=v['model'], zone=v['zone'], net=SEQD[v['seq']]['net'], file=v['file'])
             if t0 is None or t1 is None or mag is None or p is None or not (0 <= p <= 1) or (kind == 'bin' and (nmin is None or nmax is None or nmin > nmax)):
-                r.update(status='scored_no', outcome=K.CANNOT_TELL, why='unreadable')
+                r.update(status='scored_no', outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, why='unreadable')
             elif v['issued'] > t0: r.update(status='outside', why='issued after the window opened')
-            elif v['zone'] is None: r.update(status='scored_no', outcome=K.CANNOT_TELL, why=v['zone_why'])
-            elif t1 + SETTLE_DAYS * DAY > NOW_MS: r.update(status='scored_no', outcome=K.NOTHING_RETURNED, why='window not closed')
+            elif v['zone'] is None: r.update(status='scored_no', outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, why=v['zone_why'])
+            elif t1 + SETTLE_DAYS * DAY > NOW_MS: r.update(status='scored_no', outcome=None, read_status=K.NOTHING_RETURNED, why='window not closed')
             else: r.update(status='pending')
             rows.append(r)
 outside = [r for r in rows if r['status'] == 'outside']; rows = [r for r in rows if r['status'] != 'outside']
@@ -279,10 +284,11 @@ json.dump(CIDX, open(CIDX_F + '.tmp', 'w')); os.replace(CIDX_F + '.tmp', CIDX_F)
 for r in rows:
     if r['status'] != 'pending': continue
     ev, fetched = CAT.get(r['seq'], (None, None))
-    if ev is None or fetched is None or fetched < r['t1'] + SETTLE_DAYS * DAY: r.update(status='scored_no', outcome=K.NOTHING_RETURNED, why='catalog not read'); continue
+    if ev is None or fetched is None or fetched < r['t1'] + SETTLE_DAYS * DAY: r.update(status='scored_no', outcome=None, read_status=K.NOTHING_RETURNED, why='catalog not read'); continue
     n = count(ev, r['zone'], r['t0'], r['t1'], r['mag'], set(SEQD[r['seq']]['ids']))
     r['count'] = n; r['occurred'] = n >= 1; r['status'] = 'scored'
     r['outcome'] = row_cover(n, r['nmin'], r['nmax']) if r['kind'] == 'bin' else K.CONSISTENT
+    r['reason'] = None
     r['count_mag_rounded'] = sum(1 for (t, la, lo, m, ids, ty, i, dp) in ev if r['t0'] <= t < r['t1'] and m is not None and round(m + 1e-9, 1) >= r['mag'] and ty == 'earthquake' and not (ids & set(SEQD[r['seq']]['ids'])) and in_zone(r['zone'], la, lo, dp))
 
 # ---------------- 5. known-good gates (PLAN.md) ----------------
@@ -322,7 +328,7 @@ with contextlib.redirect_stdout(io.StringIO()): kg['rule'] = ok and K.selftest()
 GATE = all(kg.values())
 if not GATE:
     for r in rows:
-        if r['status'] == 'scored': r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL
+        if r['status'] == 'scored': r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['reason'] = K.NO_INTERVAL_FORMABLE
 
 # ---------------- 6. cells with a sequence-level block bootstrap ----------------
 SC = [r for r in rows if r['status'] == 'scored']
@@ -342,9 +348,9 @@ def cover_cell(name, rs):
     n = sum(nb); k = sum(kb); wl, wh = K.wilson(k, n); bl, bh = boot(kb, nb) if n else (None, None)
     lo = min(wl, bl) if bl is not None else wl; hi = max(wh, bh) if bh is not None else wh
     nblk = sum(1 for x in nb if x); nseq = len(set(r['seq'] for r in rs))
-    o = cover_outcome(lo, hi, n, nblk) if GATE and bl is not None else K.CANNOT_TELL
+    o, why = cover_outcome(lo, hi, n, nblk) if GATE and bl is not None else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
     return dict(cell=name, scored=n, inside=k, above=cnt[K.ABOVE], below=cnt[K.BELOW], share=round(k / n, 4) if n else None, wilson=[round(wl, 4), round(wh, 4)],
-                boot=[round(bl, 4), round(bh, 4)] if bl is not None else None, lo=round(lo, 4), hi=round(hi, 4), claim=COVER_CLAIM, outcome=o, sequences=nseq, blocks=nblk,
+                boot=[round(bl, 4), round(bh, 4)] if bl is not None else None, lo=round(lo, 4), hi=round(hi, 4), claim=COVER_CLAIM, outcome=o, reason=why, sequences=nseq, blocks=nblk,
                 versions=len(set((r['seq'], r['issued']) for r in rs)), range_zero_zero=sum(1 for r in rs if r['nmax'] == 0))
 def rel_cell(name, rs):
     kb = [0] * NB; nb = [0] * NB
@@ -353,10 +359,10 @@ def rel_cell(name, rs):
     n = sum(nb); k = sum(kb); claim = round(sum(r['p'] for r in rs) / n, 4) if n else None
     wl, wh = K.wilson(k, n); bl, bh = boot(kb, nb) if n else (None, None)
     lo = min(wl, bl) if bl is not None else wl; hi = max(wh, bh) if bh is not None else wh; nblk = sum(1 for x in nb if x)
-    o = rel_outcome(lo, hi, claim, n, nblk) if GATE and bl is not None else K.CANNOT_TELL
+    o, why = rel_outcome(lo, hi, claim, n, nblk) if GATE and bl is not None else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
     return dict(cell=name, scored=n, occurred=k, stated_mean=claim, share=round(k / n, 4) if n else None, wilson=[round(wl, 4), round(wh, 4)],
                 boot=[round(bl, 4), round(bh, 4)] if bl is not None else None, lo=round(lo, 4), hi=round(hi, 4), tol=round(rel_tol(claim), 4) if claim is not None else None,
-                outcome=o, sequences=len(set(r['seq'] for r in rs)), blocks=nblk)
+                outcome=o, reason=why, sequences=len(set(r['seq'] for r in rs)), blocks=nblk)
 BIN = [r for r in SC if r['kind'] == 'bin']
 headline_cell = cover_cell('M3 and above, every window', [r for r in BIN if r['mag'] == 3.0])
 cover_mag = [cover_cell('M%g and above' % m, [r for r in BIN if r['mag'] == m]) for m in (3.0, 4.0, 5.0, 6.0, 7.0)]   # PLAN.md: each magnitude 3 to 7 (a few versions also state M8, counted in the every-magnitude cell)
@@ -400,9 +406,17 @@ if not os.path.exists(seal_f) and K.plan_committed('PLAN.md', NOW):
     json.dump(dict(plan_commit=git('log', '-1', '--format=%H', '--', 'PLAN.md'), plan_commit_time=git('log', '-1', '--format=%cI', '--', 'PLAN.md'),
                    plan_sha256=hashlib.sha256(open('PLAN.md', 'rb').read()).hexdigest(), first_comparison=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(NOW))), open(seal_f, 'w'), indent=1)
 seal = json.load(open(seal_f)) if os.path.exists(seal_f) else None
-nr = C.Counter(r['why'] for r in rows if r.get('outcome') == K.NOTHING_RETURNED)
+nr = C.Counter(r['why'] for r in rows if r.get('read_status') == K.NOTHING_RETURNED)
 ct = C.Counter(r['why'] for r in rows if r['status'] == 'scored_no' and r.get('outcome') == K.CANNOT_TELL)
 vm = C.Counter(v['missing'] for v in VERS if v.get('missing'))
+# REQ-13 (PLAN_ADDENDUM_std2.md): beside each share, the failed reads (apart, outside numerator and denominator) and the CANNOT_TELL rows split by reason, over the rows of the cell.
+def _req(pop): return K.req13([dict(outcome=r['outcome'], reason=r.get('reason')) for r in pop if r.get('outcome')], nothing_returned=sum(1 for r in pop if r.get('read_status') == K.NOTHING_RETURNED))
+_ALLBIN = [r for r in rows if r['kind'] == 'bin']
+headline_cell['req13'] = _req([r for r in _ALLBIN if r['mag'] == 3.0])
+for c, m in zip(cover_mag, (3.0, 4.0, 5.0, 6.0, 7.0)): c['req13'] = _req([r for r in _ALLBIN if r['mag'] == m])
+for c, w in zip(cover_win, WINDOWS): c['req13'] = _req([r for r in _ALLBIN if r['mag'] == 3.0 and r['window'] == w])
+cover_all['req13'] = _req(_ALLBIN)
+REQ13 = _req(rows)   # every row of the desk, including rows with no magnitude or probability that no cell can hold
 summary = dict(
     desk='QUAKE', publisher='Heuremen LLC', generated=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(NOW)), plan='PLAN.md', plan_seal=seal, plan_unchanged_since_commit=K.plan_committed('PLAN.md'),
     claim=dict(source='USGS Operational Aftershock Forecasting, ComCat product type oaf', stated_probability='probability of at least one earthquake at or above the magnitude in the window',
@@ -413,7 +427,8 @@ summary = dict(
                  blocks=NB, catalogs=sum(1 for ev, f in CAT.values() if ev is not None), catalog_events=sum(len(ev) for ev, f in CAT.values() if ev), stale=STALE,
                  first_event=iso(min(s['time'] for s in SEQ)) if SEQ else None, last_event=iso(max(s['time'] for s in SEQ)) if SEQ else None),
     rows=dict(total=len(rows), scored=len(SC), scored_bins=len(BIN), issued_after_window_opened=len(outside), late_versions=LATE, nothing_returned=dict(nr), cannot_tell=dict(ct),
-              outcomes=dict(C.Counter(r.get('outcome') for r in rows))),
+              outcomes=dict(C.Counter(r['outcome'] for r in rows if r.get('outcome'))), failed_reads=sum(nr.values())),
+    req13=REQ13, outcome_rule='PLAN.md with PLAN_ADDENDUM_std2.md (Faults and Guards 2.0, 12 Nov 2026)',
     headline_cell=headline_cell, cover_by_magnitude=cover_mag, cover_by_window=cover_win, cover_all=cover_all, reliability=rel_bins, reliability_above_mainshock=rel_above,
     described=dict(stated_10_percent_or_more=rel10, stated_10_percent_or_more_all=rel10_all, by_region=region, cover_without_zero_ranges=nonzero, indexed_after_window_opened=late_index,
                    after_data_note='stated_10_percent_or_more, by_region, cover_without_zero_ranges and indexed_after_window_opened were added after the data on 10 Nov 2026 at the outside referee (quake_index_referee/REFEREE.md R1, R2, R5, R7). Display only. No outcome uses them.',
@@ -427,7 +442,7 @@ summary = dict(
 # the block indahl.ai/forecasters reads (indahl-ai/forecasters.py, rows 'feed'). Display only, the cells above decide. Range coverage against the stated 95 percent.
 def _fc_row(c):
     return dict(kind='coverage', item=c['cell'], counts='share of stated ranges that held the aftershock count', stated=c['claim'], consistent_within=list(COVER_BAND),
-                n=c['inside'], of=c['scored'], delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'],
+                n=c['inside'], of=c['scored'], delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'], reason=c['reason'], req13=c.get('req13'),
                 interval='union of the Wilson and block bootstrap intervals, as the desk gives it')
 summary['forecasters'] = dict(rows=[_fc_row(c) for c in [cover_all] + cover_win + cover_mag if c['lo'] is not None],
                               note='CONSISTENT also needs the whole interval within two and a half points of the stated share. The interval is the union of a Wilson interval and a block bootstrap.')
@@ -442,7 +457,7 @@ if PUB:
                        cwd=os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'), env=env, capture_output=True, text=True)
     log('quake_live', 'published' if p.returncode == 0 else 'publish FAILED ' + (p.stderr or '')[-200:])
     if p.returncode: STALE.append('publish')
-with open('data/quake_history.jsonl', 'a') as f: f.write(json.dumps(dict(t=summary['generated'], gate=GATE, rows=len(rows), scored=len(SC), headline=[headline_cell['inside'], headline_cell['scored'], headline_cell['outcome']], stale=STALE[:20])) + '\n')
+with open('data/quake_history.jsonl', 'a') as f: f.write(json.dumps(dict(t=summary['generated'], gate=GATE, rows=len(rows), scored=len(SC), headline=[headline_cell['inside'], headline_cell['scored'], headline_cell['outcome'], headline_cell['reason']], stale=STALE[:20])) + '\n')
 log('gates', kg, 'counter', summary['gates']['counter_agree'], 'of', len(g3))
 for c in [headline_cell] + cover_mag + cover_win: log('%-40s scored %6d inside %6d above %5d below %5d share %s wilson %s boot %s  %s' % (c['cell'], c['scored'], c['inside'], c['above'], c['below'], c['share'], c['wilson'], c['boot'], c['outcome']))
 for c in rel_bins + [rel_above]: log('%-40s n %6d occurred %6d stated %s share %s [%s, %s] %s' % (c['cell'], c['scored'], c['occurred'], c['stated_mean'], c['share'], c['lo'], c['hi'], c['outcome']))

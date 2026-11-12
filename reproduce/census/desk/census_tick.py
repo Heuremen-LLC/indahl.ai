@@ -20,12 +20,12 @@ STEPS = ('S1', 'S2', 'S3')
 def mshift(m, k):
     y, mo = int(m[:4]), int(m[5:7]); t = y * 12 + mo - 1 + k; return '%04d-%02d' % (t // 12, t % 12 + 1)
 def outcome(p1, later, half):
-    """pure rule: p1 first print, later value, half-width (None = no width)"""
-    if half is None: return CANNOT_TELL, 'no width'
-    lo, hi = p1 - half, p1 + half
-    if later > hi: return ABOVE, None
-    if later < lo: return BELOW, None
-    return CONSISTENT, None
+    """pure rule: p1 first print, later value, half-width (None = no width). 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): an exact read of one published value
+    against one stated interval is an interval of zero width (owner decision O1), read with K.read_exact against the band, edges included. Same result as before, now with a reason code."""
+    if half is None: return CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    o, r, _d = K.read_exact(later, band=(p1 - half, p1 + half))
+    return o, r
+NIF = K.NO_INTERVAL_FORMABLE
 def annual_vintages(vs, data, thresh=0.0):
     """vintages where any month at least 14 months older than the vintage's newest month changed against the previous vintage (return dict vintage -> max relative change)"""
     out = {}
@@ -106,15 +106,15 @@ def build():
                 row = dict(series=name, geo=geo, alfred=sid, month=m, step=step, first_vintage=v1, first=p1, rse=rse, half=half, width_basis=basis, outcome=None, reason=None)
                 tv = last_v if step == 'S3' else firstseen.get(mshift(m, 1 if step == 'S1' else 2))
                 if tv is None or m not in data.get(tv, {}) or (step == 'S3' and tv <= v1):
-                    row.update(outcome=CANNOT_TELL, reason='missing vintage'); rows.append(row); continue
+                    row.update(outcome=CANNOT_TELL, reason=NIF, reason_detail='missing vintage'); rows.append(row); continue
                 later = data[tv][m]; row.update(target_vintage=tv, later=later)
                 if half is not None:
                     # 11 Nov, after the data, after the outside referee (CHECKS.md R-1 to R-5): extra readings computed here, none changes a rule or an outcome
                     row['out_all'] = outcome(p1, later, half)[0]            # the outcome if no exclusion applied (annual revision or break rows counted in)
                     row['same_release'] = step != 'S3' and tv == v1          # the later print came in the same release as the first print
-                if half is None: row.update(outcome=CANNOT_TELL, reason='no width')
-                elif brk and v1 < brk <= tv: row.update(outcome=CANNOT_TELL, reason='universe break')
-                elif step != 'S3' and any(v1 < a <= tv for a in av): row.update(outcome=CANNOT_TELL, reason='annual revision in window')
+                if half is None: row.update(outcome=CANNOT_TELL, reason=NIF, reason_detail='no width')
+                elif brk and v1 < brk <= tv: row.update(outcome=CANNOT_TELL, reason=NIF, reason_detail='universe break')
+                elif step != 'S3' and any(v1 < a <= tv for a in av): row.update(outcome=CANNOT_TELL, reason=NIF, reason_detail='annual revision in window')
                 else:
                     o, r = outcome(p1, later, half); row.update(outcome=o, reason=r)
                     row['miss_in_half_widths'] = (later - p1) / half if half else None
@@ -131,11 +131,12 @@ def cells(rows):
         n = sum(c.values()); lo, hi = K.wilson(c[CONSISTENT], n)
         why = {}
         for r in rs:
-            if r['outcome'] == CANNOT_TELL: why[r['reason']] = why.get(r['reason'], 0) + 1
-        if n < 10: oc = CANNOT_TELL
-        elif lo > 0.90: oc = ABOVE
-        elif hi < 0.90: oc = BELOW
-        else: oc = CONSISTENT
+            if r['outcome'] == CANNOT_TELL: why[r.get('reason_detail') or r['reason']] = why.get(r.get('reason_detail') or r['reason'], 0) + 1
+        # 12 Nov 2026, PLAN_ADDENDUM_std2.md: 0.90 is a point figure with no tolerance, so only ABOVE, BELOW or CANNOT_TELL. Under ten scored rows is TOO_WIDE_TO_RESOLVE (owner decision O3), no scored row is NO_INTERVAL_FORMABLE.
+        if n == 0: oc, ocr = CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+        elif n < 10: oc, ocr = CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+        else: oc, ocr = K.read(lo, hi, bound=0.90)
+        r13 = K.req13([(r['outcome'], r.get('reason')) for r in rs], nothing_returned=0)
         sc = [r for r in rs if r['outcome'] in (CONSISTENT, ABOVE, BELOW)]
         rv = [abs(r['rel_rev']) for r in sc if r.get('rel_rev') is not None]; mh = [abs(r['miss_in_half_widths']) for r in sc if r.get('miss_in_half_widths') is not None]
         sens = {}
@@ -146,7 +147,7 @@ def cells(rows):
         sc_half = sum(1 for x in mh if x <= 0.5); sc_23 = sum(1 for x in mh if x <= 2 / 3)   # share inside if every stated half-width were cut to half, or to two thirds (display only)
         p90 = statistics.quantiles(mh, n=10, method='inclusive')[8] if len(mh) >= 10 else None
         out.append(dict(series=s, geo=g, step=st, width_basis=b, rows=len(rs), scored=n, inside=c[CONSISTENT], above=c[ABOVE], below=c[BELOW], share=(c[CONSISTENT] / n) if n else None, lo=lo, hi=hi,
-                        outcome=oc, cannot_tell=sum(why.values()), cannot_tell_why=why, median_abs_rev_pct=(100 * statistics.median(rv)) if rv else None, median_abs_miss_half_widths=statistics.median(mh) if mh else None,
+                        outcome=oc, reason=ocr, req13=r13, cannot_tell=sum(why.values()), cannot_tell_why=why, median_abs_rev_pct=(100 * statistics.median(rv)) if rv else None, median_abs_miss_half_widths=statistics.median(mh) if mh else None,
                         share_rse_minus_half=sens['dn'], share_rse_plus_half=sens['up'],
                         p90_abs_miss_half_widths=p90, max_abs_miss_half_widths=max(mh) if mh else None, at_half_width=dict(inside=sc_half, scored=len(mh)), at_two_thirds_width=dict(inside=sc_23, scored=len(mh)),
                         counted_in=dict(scored=ni, inside=ki, share=(ki / ni) if ni else None, lo=li, hi=hi_), same_release_rows=len(sr), without_same_release=dict(scored=len(ssr), inside=ks, lo=ls, hi=hs_) , first_month=min(r['month'] for r in rs), last_month=max(r['month'] for r in rs)))
@@ -156,7 +157,7 @@ def rule_selftest():
     def chk(n, c):
         nonlocal ok; ok &= bool(c); t.append(('ok ' if c else 'FAIL ') + n)
     chk('inside', outcome(100, 105, 10)[0] == CONSISTENT); chk('edge inside', outcome(100, 110, 10)[0] == CONSISTENT)
-    chk('above', outcome(100, 111, 10)[0] == ABOVE); chk('below', outcome(100, 89, 10)[0] == BELOW); chk('no width', outcome(100, 101, None) == (CANNOT_TELL, 'no width'))
+    chk('above', outcome(100, 111, 10)[0] == ABOVE); chk('below', outcome(100, 89, 10)[0] == BELOW); chk('no width', outcome(100, 101, None) == (CANNOT_TELL, K.NO_INTERVAL_FORMABLE))
     chk('mshift', mshift('2025-12', 1) == '2026-01' and mshift('2026-01', -14) == '2024-11')
     d = {'a': {'2020-01': 1.0, '2021-06': 2.0}, 'b': {'2020-01': 1.5, '2021-06': 2.0, '2021-07': 3.0}}
     chk('annual vintage found', list(annual_vintages(['a', 'b'], d)) == ['b'])
@@ -204,13 +205,13 @@ kg['rule'] = rule_selftest()[0] and K.selftest()
 passed = kg['format'] and kg['join'] and kg['reader'] and kg['rule'] and plan_ok
 if not passed:
     for r in rows:
-        if r['outcome'] in (CONSISTENT, ABOVE, BELOW): r['outcome_before_gate'] = r['outcome']; r['outcome'] = CANNOT_TELL; r['reason'] = 'gate failed'
+        if r['outcome'] in (CONSISTENT, ABOVE, BELOW): r['outcome_before_gate'] = r['outcome']; r['outcome'] = CANNOT_TELL; r['reason'] = NIF; r['reason_detail'] = 'gate failed'
 C = cells(rows)
 S = dict(generated=now, plan_seal=seal, plan_matches_file=plan_ok, gates=dict(passed=passed, **kg), series_meta=meta, cells=C,
          rows=dict(total=len(rows), first_month=min(r['month'] for r in rows), last_month=max(r['month'] for r in rows), first_vintage=min(r['first_vintage'] for r in rows)),
          snapshots=dict(files=len(glob.glob('data/snapshots/*.json.gz')), earliest=min(os.path.basename(f)[:16] for f in glob.glob('data/snapshots/*.json.gz')), as_printed_rows=sum(1 for r in rows if r['width_basis'] == 'as printed')),
          same_release_months={sid: sorted({r['month'] for r in rows if r['alfred'] == sid and r['step'] == 'S1' and r.get('same_release')}) for sid in ('HSN1F', 'HOUST', 'COMPUTSA', 'RSAFS')},
-         after_data_note='11 Nov 2026 after the outside referee: p90 miss, shares at half and two thirds of the width, rows counted in with annual revisions, same-release rows, revision detail for the retail vintages. See CHECKS.md R-1 to R-5. No rule, cell or outcome changed.')
+         after_data_note='12 Nov 2026: outcome rule moved to Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md), cell CONSISTENT removed for the point figure 0.90, reason codes and REQ-13 added, no data or row rule changed. 11 Nov 2026 after the outside referee: p90 miss, shares at half and two thirds of the width, rows counted in with annual revisions, same-release rows, revision detail for the retail vintages. See CHECKS.md R-1 to R-5. No rule, cell or outcome changed on 11 Nov.', headline_req13=K.req13([(r['outcome'], r.get('reason')) for r in rows if r['series'] in ('SALES', 'STARTS', 'COMPLETIONS', 'RETAIL') and r['geo'] == 'US' and r['step'] == 'S1'], nothing_returned=0))
 json.dump(rows, open('data/census.json', 'w'), separators=(',', ':'))
 json.dump(S, open('summary_census.json', 'w'), indent=1)
 json.dump([r for r in rows if r['alfred'] in ('HOUST', 'HSN1F') and r['step'] == 'S1' and r['month'] in ('2024-12', '2025-03', '2025-06', '2026-06')], open('data/known_good_rows.json', 'w'), indent=1)

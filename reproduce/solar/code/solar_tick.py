@@ -260,21 +260,21 @@ for row in rows:
 def bin_of(p):
     for a, b in BINS:
         if a <= p <= b: return '%d to %d' % (a, b)
+# 12 Nov 2026: Faults and Guards 2.0 outcome rule (PLAN_ADDENDUM_std2.md). bin_outcome returns (outcome, reason, lo, hi). The mean stated chance is a point figure with no tolerance, so a bin never reads CONSISTENT.
 def bin_outcome(k, n, mean_p):
     lo, hi = K.wilson(k, n)
-    if n < MIN_N: return K.CANNOT_TELL, lo, hi
-    if lo > mean_p: return K.ABOVE, lo, hi
-    if hi < mean_p: return K.BELOW, lo, hi
-    return K.CONSISTENT, lo, hi
+    if not n: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE, lo, hi
+    if n < MIN_N: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE, lo, hi
+    o, r = K.read(lo, hi, bound=mean_p, edge='closed'); return o, r, lo, hi
 def bss(se, os_):
     n = len(os_); f = sum(os_) / n if n else 0
     return None if n == 0 or f in (0, 1) else 1 - (sum(se) / n) / (f * (1 - f))
 def skill_outcome(lo, hi, n, ne):
-    if n < MIN_N or ne < MIN_EVENTS or lo is None or hi is None: return K.CANNOT_TELL
-    if lo > 0: return K.ABOVE
-    if hi < 0: return K.BELOW
-    if lo >= -0.05 and hi <= 0.05: return K.CONSISTENT
-    return K.CANNOT_TELL
+    # returns (outcome, reason). The band of minus 0.05 to plus 0.05 is read as the standard defines it (Addendum std2): ABOVE and BELOW are against the band edges.
+    if not n: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < MIN_N or ne < MIN_EVENTS: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    if lo is None or hi is None: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    return K.read(lo, hi, band=(-0.05, 0.05), edge='closed')
 def block_boot(series, rng):
     """series: [(p, o)] in date order. Moving blocks of BLOCK days. Returns list of resampled index lists."""
     n = len(series)
@@ -295,9 +295,9 @@ def ruler(series, rng):
     for a, b in BINS:
         nm = '%d to %d' % (a, b); ix = by.get(nm, [])
         n = len(ix); k = sum(series[i][1] for i in ix); mp = (sum(series[i][0] for i in ix) / n / 100) if n else None
-        o, lo, hi = bin_outcome(k, n, mp) if n else (K.CANNOT_TELL, 0.0, 1.0)
+        o, rs, lo, hi = bin_outcome(k, n, mp) if n else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE, 0.0, 1.0)
         bins.append(dict(bin=nm, n=n, events=k, mean_stated=round(mp, 4) if mp is not None else None, observed=round(k / n, 4) if n else None,
-                         lo=round(lo, 4), hi=round(hi, 4), outcome=o if GATE else K.CANNOT_TELL))
+                         lo=round(lo, 4), hi=round(hi, 4), outcome=o if GATE else K.CANNOT_TELL, reason=(rs if GATE else K.NO_INTERVAL_FORMABLE) if o == K.CANNOT_TELL or not GATE else None))
     # block bootstrap: skill and (described) each bin's frequency
     se = [(p / 100 - o) ** 2 for p, o, t in series]; os_ = [o for p, o, t in series]
     s0 = bss(se, os_); vals = []; binv = C.defaultdict(list); skipped = 0
@@ -316,10 +316,11 @@ def ruler(series, rng):
         xs = binv.get(bn['bin'], [])
         bn['boot_lo'], bn['boot_hi'] = (round(pct(xs, 0.025), 4), round(pct(xs, 0.975), 4)) if len(xs) >= 100 else (None, None)
     n = len(series); ne = sum(os_); f = ne / n if n else None
+    sk = skill_outcome(lo, hi, n, ne) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
     skill = dict(n=n, events=ne, base_rate=round(f, 4) if f is not None else None, brier=round(sum(se) / n, 5) if n else None,
                  brier_clim=round(f * (1 - f), 5) if f is not None else None, bss=round(s0, 4) if s0 is not None else None,
                  lo=round(lo, 4) if lo is not None else None, hi=round(hi, 4) if hi is not None else None, reps=len(vals), reps_skipped=skipped,
-                 outcome=skill_outcome(lo, hi, n, ne) if GATE else K.CANNOT_TELL)
+                 outcome=sk[0], reason=sk[1])
     return bins, skill
 
 # ---------------- 6. known-good gates ----------------
@@ -348,8 +349,8 @@ join_disagree = [dict(day=d.isoformat(), dsd_m_plus_x=dsd[d], events_m_or_x=(fla
 kg['join'] = K.known_good(lambda _: len(both) > 300 and agree / len(both) >= 0.95, None)[1]
 def g_rule(_):
     # bins: planted frequencies against a stated 30 percent
-    ok = bin_outcome(60, 100, 0.30)[0] == K.ABOVE and bin_outcome(5, 100, 0.30)[0] == K.BELOW and bin_outcome(30, 100, 0.30)[0] == K.CONSISTENT and bin_outcome(9, 29, 0.30)[0] == K.CANNOT_TELL
-    ok &= skill_outcome(0.1, 0.3, 100, 20) == K.ABOVE and skill_outcome(-0.3, -0.1, 100, 20) == K.BELOW and skill_outcome(-0.03, 0.04, 100, 20) == K.CONSISTENT and skill_outcome(-0.2, 0.3, 100, 20) == K.CANNOT_TELL and skill_outcome(0.1, 0.3, 100, 3) == K.CANNOT_TELL
+    ok = bin_outcome(60, 100, 0.30)[:2] == (K.ABOVE, None) and bin_outcome(5, 100, 0.30)[:2] == (K.BELOW, None) and bin_outcome(30, 100, 0.30)[:2] == (K.CANNOT_TELL, K.STRADDLES_EDGE) and bin_outcome(9, 29, 0.30)[:2] == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE) and bin_outcome(0, 0, 0.30)[:2] == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
+    ok &= skill_outcome(0.1, 0.3, 100, 20) == (K.ABOVE, None) and skill_outcome(-0.3, -0.1, 100, 20) == (K.BELOW, None) and skill_outcome(-0.03, 0.04, 100, 20) == (K.CONSISTENT, None) and skill_outcome(-0.2, 0.3, 100, 20) == (K.CANNOT_TELL, K.STRADDLES_EDGE) and skill_outcome(0.02, 0.3, 100, 20) == (K.CANNOT_TELL, K.STRADDLES_EDGE) and skill_outcome(0.1, 0.3, 100, 3) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE) and skill_outcome(None, None, 100, 20) == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
     # a perfect forecaster and a climatology forecaster: skill 1 and 0
     os_ = [1, 0, 0, 1, 0, 0, 0, 1, 0, 0]; ok &= abs(bss([0.0] * 10, os_) - 1) < 1e-9 and abs(bss([(0.3 - o) ** 2 for o in os_], os_)) < 1e-9
     ok &= bin_of(0) == '0 to 2' and bin_of(2) == '0 to 2' and bin_of(3) == '3 to 7' and bin_of(100) == '88 to 100' and all(bin_of(p) for p in range(101))
@@ -379,8 +380,8 @@ for c in cells:
         HELD_FIGURES['%s%d' % (c['event'], c['lead'])] = json.loads(json.dumps(dict(bins=c['bins'], skill=c['skill'])))   # kept in data/solar.json only
         for b in c['bins']:
             for k in ('events', 'observed', 'lo', 'hi', 'boot_lo', 'boot_hi'): b[k] = None
-            b['outcome'] = K.CANNOT_TELL
-        c['skill'] = dict(n=c['skill']['n'], events=None, base_rate=None, brier=None, brier_clim=None, bss=None, lo=None, hi=None, reps=0, reps_skipped=0, outcome=K.CANNOT_TELL)
+            b['outcome'] = K.CANNOT_TELL; b['reason'] = K.NO_INTERVAL_FORMABLE   # held: the planned quantity cannot be formed (Addendum std2)
+        c['skill'] = dict(n=c['skill']['n'], events=None, base_rate=None, brier=None, brier_clim=None, bss=None, lo=None, hi=None, reps=0, reps_skipped=0, outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE)
         c['bin_outcomes'] = dict(C.Counter(b['outcome'] for b in c['bins'] if b['n'] >= MIN_N))
 # described, not scored
 def described(series):
@@ -450,16 +451,24 @@ if not os.path.exists(seal_f) and K.plan_committed('PLAN.md', NOW):
     json.dump(dict(plan_commit=git('log', '-1', '--format=%H', '--', 'PLAN.md'), plan_commit_time=git('log', '-1', '--format=%cI', '--', 'PLAN.md'),
                    plan_sha256=hashlib.sha256(open('PLAN.md', 'rb').read()).hexdigest(), first_comparison=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(NOW))), open(seal_f, 'w'), indent=1)
 seal = json.load(open(seal_f)) if os.path.exists(seal_f) else None
+FAILED_READS = ('no RSGA on file', 'section did not parse', 'no events file', 'no K for the day', 'after the proton list last changed')   # REQ-13: failed reads, outside the counts (Addendum std2)
+def _cell_nr(c): return sum(v for k, v in c['not_scored'].items() if k in FAILED_READS)
 def _hl():
-    # PLAN, Headline row: M-class flares, day one. Bins with MIN_N days or more, how many read consistent, and the Brier skill.
+    # PLAN, Headline row: M-class flares, day one. Bins with MIN_N days or more. Under 2.0 no bin reads consistent. The big number is the count of those bins that read CANNOT_TELL
+    # (their Wilson interval holds the mean stated chance). `consistent` keeps its old name only because the ledger's live-headline row reads that path, and holds the same count.
     c = next(x for x in cells if x['event'] == 'M' and x['lead'] == 1); bs = [b for b in c['bins'] if b['n'] >= MIN_N]
-    return dict(event='M', lead=1, bins=len(bs), consistent=sum(b['outcome'] == K.CONSISTENT for b in bs), above=sum(b['outcome'] == K.ABOVE for b in bs),
-                below=sum(b['outcome'] == K.BELOW for b in bs), share=round(sum(b['outcome'] == K.CONSISTENT for b in bs) / len(bs), 4) if bs else None,
-                bss=c['skill']['bss'], lo=c['skill']['lo'], hi=c['skill']['hi'], outcome=c['skill']['outcome'],
+    holds = sum(b['outcome'] == K.CANNOT_TELL and b['reason'] == K.STRADDLES_EDGE for b in bs)
+    r13 = K.req13([(b['outcome'], b['reason']) for b in bs], nothing_returned=_cell_nr(c))
+    return dict(event='M', lead=1, bins=len(bs), holds_stated=holds, consistent=holds, consistent_note='legacy name, the count of bins whose interval holds the mean stated chance. Under Faults and Guards 2.0 these bins read CANNOT_TELL (STRADDLES_EDGE) and no bin reads CONSISTENT',
+                cannot_tell=sum(b['outcome'] == K.CANNOT_TELL for b in bs), above=sum(b['outcome'] == K.ABOVE for b in bs),
+                below=sum(b['outcome'] == K.BELOW for b in bs), share=round(holds / len(bs), 4) if bs else None,
+                bss=c['skill']['bss'], lo=c['skill']['lo'], hi=c['skill']['hi'], outcome=c['skill']['outcome'], reason=c['skill']['reason'], req13=r13,
                 # display, added at the outside referee (Addendum 2): the same bins read on the block bootstrap interval, and every scored cell's bins together
-                boot_consistent=sum(1 for b in bs if b.get('boot_lo') is not None and b['boot_lo'] <= b['mean_stated'] <= b['boot_hi']),
-                all_bins=C.Counter(b['outcome'] for x in cells if not x.get('held') for b in x['bins'] if b['n'] >= MIN_N),
+                boot_holds_stated=sum(1 for b in bs if b.get('boot_lo') is not None and b['boot_lo'] <= b['mean_stated'] <= b['boot_hi']),
+                all_bins=dict(C.Counter(b['outcome'] for x in cells if not x.get('held') for b in x['bins'] if b['n'] >= MIN_N)),
                 by_event={ev: dict(C.Counter(b['outcome'] for x in cells if x['event'] == ev for b in x['bins'] if b['n'] >= MIN_N)) for ev in ('M', 'X', 'MID5', 'MID6', 'HI5', 'HI6')})
+_all_readings = [(b['outcome'], b['reason']) for x in cells for b in x['bins'] if b['n']] + [(x['skill']['outcome'], x['skill']['reason']) for x in cells]
+REQ13 = K.req13(_all_readings, nothing_returned=sum(_cell_nr(x) for x in cells))   # every bin with a day and every skill reading, held cells included
 summary = dict(
     desk='SOLAR', publisher='Heuremen LLC', generated=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(NOW)), plan='PLAN.md', plan_seal=seal, plan_unchanged_since_commit=K.plan_committed('PLAN.md'),
     claim=dict(source='NOAA SWPC Report and Forecast of Solar and Geophysical Activity (RSGA), as originally published in the SWPC Warehouse',
@@ -470,12 +479,12 @@ summary = dict(
                  events_days=len(events_days), dgd_days=len(kfred), dsd_days=len(dsd), spe_list_changed=SPE_CHANGED, spe_event_days_in_frame=sum(1 for d in spe_days if d >= FIRST_ISSUE),
                  gfz_days=len(kp), stale=STALE, capped_sums=capped, settled_before=SETTLED.isoformat(), issue_days_in_frame=len(issue_days)),
     cells=cells, described=desc,
-    headline_cell=dict(event='M', lead=1), headline=_hl())
+    headline_cell=dict(event='M', lead=1), headline=_hl(), req13=REQ13)
 # the block indahl.ai/forecasters reads (indahl-ai/forecasters.py, rows 'feed'). Display only, the cells above decide. The headline cell, M-class day one, bin by bin.
 def _fc_rows():
     c = next(x for x in cells if x['event'] == 'M' and x['lead'] == 1)
     return [dict(kind='probability', item='M-class flare, day one, stated %s percent' % b['bin'], counts='share of days with one or more flares of M1.0 or more',
-                 stated=b['mean_stated'], n=b['events'], of=b['n'], delivered=b['observed'], lo=b['lo'], hi=b['hi'], outcome=b['outcome'],
+                 stated=b['mean_stated'], n=b['events'], of=b['n'], delivered=b['observed'], lo=b['lo'], hi=b['hi'], outcome=b['outcome'], reason=b['reason'], req13=summary['headline']['req13'],
                  interval='Wilson, days treated as independent, as the desk gives it') for b in c['bins'] if b['lo'] is not None]
 summary['forecasters'] = dict(rows=_fc_rows(), note='The Wilson interval treats days as independent, and they are not, so it can be too narrow. The desk prints a block bootstrap beside it.')
 json.dump(dict(generated=summary['generated'], held_figures=dict(note=HELD['P'], cells=HELD_FIGURES, described_proton_span=DESC_HELD), rows=rows), open('data/solar.json.tmp', 'w')); os.replace('data/solar.json.tmp', 'data/solar.json')
@@ -487,6 +496,6 @@ if PUB:
                        cwd=os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'), env=env, capture_output=True, text=True)
     log('solar_live', 'published' if p.returncode == 0 else 'publish FAILED ' + (p.stderr or '')[-200:])
 with open('data/solar_history.jsonl', 'a') as f:
-    f.write(json.dumps(dict(t=summary['generated'], gate=GATE, cells=[(c['event'], c['lead'], c['scored'], c['bin_outcomes'], c['skill']['bss'], c['skill']['outcome']) for c in cells], stale=STALE)) + '\n')
+    f.write(json.dumps(dict(t=summary['generated'], gate=GATE, cells=[(c['event'], c['lead'], c['scored'], c['bin_outcomes'], c['skill']['bss'], c['skill']['outcome'], c['skill']['reason']) for c in cells], stale=STALE)) + '\n')
 log('gates', kg, 'issue days', len(stated), 'unparsed', len(unparsed))
 for c in cells: log('%-5s day %d scored %5d bins %s skill %s [%s, %s] %s' % (c['event'], c['lead'], c['scored'], c['bin_outcomes'], c['skill']['bss'], c['skill']['lo'], c['skill']['hi'], c['skill']['outcome']))

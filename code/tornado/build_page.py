@@ -3,10 +3,12 @@
 takes the body from this file."""
 import json, os, sys, html, time
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
-from tornado_headline import headline
+from tornado_headline import headline, W as WR
 S = json.load(open('summary_tornado.json'))
 e = html.escape
 WORD = {'ABOVE': 'above', 'BELOW': 'below', 'CONSISTENT': 'consistent', 'CANNOT_TELL': 'cannot tell', None: ''}
+def Wd(c): return WORD[c['outcome']] + (' (%s)' % c['reason'] if c.get('reason') else '')   # 12 Nov 2026: the CANNOT_TELL reason beside the word
+def WL(b): return WORD[b.get('label_reading')] + (' (%s)' % b['label_reason'] if b.get('label_reason') else '')
 def pc(x, d=1):
     if x is None: return ''
     if d == 2 and 0 < x < 0.001: d = 3   # small shares keep three decimals so the interval shows
@@ -22,8 +24,8 @@ def band_table(c):
         if b['band'] == '60 and over': lo_s = '60 and over'
         lev = '' if b['band'] == 'under 2' else pc(b['lo_stated'], 0)
         out.append('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-            e(lo_s), num(b['rows']), num(b['days']), num(b['events']), pc(b['freq'], 2), ('%s to %s' % (pc(b['lo'], 2), pc(b['hi'], 2))) if b['lo'] is not None else '', WORD[b['outcome']],
-            lev, WORD[b.get('label_reading')]))
+            e(lo_s), num(b['rows']), num(b['days']), num(b['events']), pc(b['freq'], 2), ('%s to %s' % (pc(b['lo'], 2), pc(b['hi'], 2))) if b['lo'] is not None else '', Wd(b),
+            lev, WL(b)))
     return ('<div class="tw"><table class="bench"><thead><tr><th>Stated chance, percent</th><th>Point-days</th><th>Days</th><th>With a tornado within 25 miles</th><th>Observed, percent</th>'
             '<th>95% interval, percent</th><th>Reading against the band</th><th>Contour drawn, percent</th><th>Against the contour value</th></tr></thead><tbody>' + ''.join(out) + '</tbody></table></div>')
 def extra_table(cs):
@@ -31,8 +33,8 @@ def extra_table(cs):
     for c in cs:
         h = c['hatched']; br = c['brier']
         out.append('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-            e(c['cell']), num(h['rows']), num(h['days']), pc(h['freq'], 2), ('%s to %s' % (pc(h['lo'], 2), pc(h['hi'], 2))) if h['lo'] is not None else '', WORD[h['outcome']],
-            '' if br['bss'] is None else '%.3f' % br['bss'], ('%.3f to %.3f' % (br['lo'], br['hi'])) if br['lo'] is not None else '', WORD[br['outcome']]))
+            e(c['cell']), num(h['rows']), num(h['days']), pc(h['freq'], 2), ('%s to %s' % (pc(h['lo'], 2), pc(h['hi'], 2))) if h['lo'] is not None else '', Wd(h),
+            '' if br['bss'] is None else '%.3f' % br['bss'], ('%.3f to %.3f' % (br['lo'], br['hi'])) if br['lo'] is not None else '', Wd(br)))
     return ('<div class="tw"><table class="bench"><thead><tr><th>Cell</th><th>Hatched point-days</th><th>Days</th><th>EF2 or stronger within 25 miles, percent</th><th>95% interval, percent</th>'
             '<th>Reading against 10 percent or more</th><th>Brier skill score against climatology</th><th>95% interval</th><th>Reading against zero</th></tr></thead><tbody>' + ''.join(out) + '</tbody></table></div>')
 def year_table():
@@ -40,7 +42,7 @@ def year_table():
     for c in S['years']:
         b = next(x for x in c['bands'] if x['band'] == '10 to 15'); bo = c['band_outcomes']; br = c['brier']
         out.append('<tr><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%s</td><td>%s</td></tr>' % (
-            c['year'], num(c['days']), num(b['rows']), pc(b['freq'], 1), WORD[b['outcome']], bo['CONSISTENT'], bo['ABOVE'], bo['BELOW'], bo['CANNOT_TELL'],
+            c['year'], num(c['days']), num(b['rows']), pc(b['freq'], 1), Wd(b), bo['CONSISTENT'], bo['ABOVE'], bo['BELOW'], bo['CANNOT_TELL'],
             '' if br['bss'] is None else '%.3f' % br['bss'], ('%.3f to %.3f' % (br['lo'], br['hi'])) if br['lo'] is not None else ''))
     return ('<div class="tw"><table class="bench"><thead><tr><th>Year</th><th>Days</th><th>Point-days at 10 to 15</th><th>Observed at 10 to 15, percent</th><th>Reading at 10 to 15</th>'
             '<th>Bands consistent</th><th>Above</th><th>Below</th><th>Cannot tell</th><th>Brier skill score</th><th>95% interval</th></tr></thead><tbody>' + ''.join(out) + '</tbody></table></div>')
@@ -49,9 +51,9 @@ def warn_rows(ws):
     for w in ws:
         out.append('<tr><td>%s%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%s</td></tr>' % (
             e(w['label']), ' (preliminary)' if w['preliminary'] else '', num(w['tornadoes']), num(w['warnings']),
-            pc(w['pod']['value']), pc(w['pod']['lo']), pc(w['pod']['hi']), WORD[w['pod']['outcome']],
-            '' if w['lead_min']['value'] is None else '%.1f' % w['lead_min']['value'], '' if w['lead_min']['lo'] is None else '%.1f' % w['lead_min']['lo'], '' if w['lead_min']['hi'] is None else '%.1f' % w['lead_min']['hi'], WORD[w['lead_min']['outcome']],
-            pc(w['far']['value']), pc(w['far']['lo']), pc(w['far']['hi']), WORD[w['far']['outcome']],
+            pc(w['pod']['value']), pc(w['pod']['lo']), pc(w['pod']['hi']), Wd(w['pod']),
+            '' if w['lead_min']['value'] is None else '%.1f' % w['lead_min']['value'], '' if w['lead_min']['lo'] is None else '%.1f' % w['lead_min']['lo'], '' if w['lead_min']['hi'] is None else '%.1f' % w['lead_min']['hi'], Wd(w['lead_min']),
+            pc(w['far']['value']), pc(w['far']['lo']), pc(w['far']['hi']), Wd(w['far']),
             '' if w['initial_lead_min']['value'] is None else '%.1f' % w['initial_lead_min']['value']))
     return ''.join(out)
 us, ks, al = cell('United States'), cell('Kansas'), cell('Tornado Alley')
@@ -72,7 +74,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <h2>The United States, closed years</h2>
 <p>Outlooks from %s to %s against the SPC tornado database. %s days, %s grid points.</p>
 %s
-<p class="bench-note">Reading: above if the whole 95%% interval is above the band, below if the whole interval is under it, consistent if it lies inside the band, otherwise cannot tell. A band needs 30 days with points in it. A point-day is one grid point on one outlook day.</p>
+<p class="bench-note">Reading: above if the whole 95%% interval is above the band, below if the whole interval is under it, consistent if it lies inside the band, otherwise cannot tell. A band is closed at its lower edge and open at its upper edge. Cannot tell carries one reason. STRADDLES_EDGE means the interval overlaps an edge of the band. TOO_WIDE_TO_RESOLVE means the band has fewer than 30 days with points in it. NO_INTERVAL_FORMABLE means it has none. No size that matters is named for the bands, so the both-alternatives test is not applied. The column against the contour value reads the observed share against the value drawn, which has no tolerance, so it reads above, below or cannot tell and never consistent. A point-day is one grid point on one outlook day.</p>
 <h2>Kansas</h2>
 <p>Grid points inside Kansas, the same outlooks and the same rules. %s grid points.</p>
 %s
@@ -98,7 +100,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <p>The National Weather Service reports three tornado warning measures each fiscal year under the Government Performance and Results Act. The Commerce Inspector General's report OIG-25-026-I (2025) gives the definitions and the goals it calls current: probability of detection, the mean share of each tornado's one-minute segments that fell inside a warning in force, at least 72 percent. Lead time, the mean over each tornado's segments of the time since the warning was issued, with an unwarned segment counted as zero, at least 13 minutes. False alarm ratio, the share of warnings that no tornado verified, at most 71 percent. The same report says the public description of lead time differs from the one computed. The computed one is used here. The lead time of the first segment is shown beside it and decides nothing.</p>
 <p>Warnings are the storm-based tornado warning polygons as issued, from the Iowa Environmental Mesonet archive. Tornadoes are the tracks in the SPC tornado database, cut into one-minute segments along a straight line from start to end. Each fiscal year is read against the current goals. The goals printed for earlier years in each budget were not read. The intervals come from the same day bootstrap. Each issuance polygon is held until the warning expires. The archive also gives the time a polygon was replaced by a later statement, and the replacement polygons are not in the file read. Counting the issuance polygon only until it was replaced gives a floor: detection %s percent, lead %s minutes and false alarms %s percent over the closed years. Detection and lead read below at both ends. The false alarm reading is the most open of the three. When several warnings cover a segment, its lead is taken from the earliest issued.</p>
 <div class="tw"><table class="bench"><thead><tr><th>Fiscal year</th><th>Tornadoes</th><th>Warnings</th><th>Detection, percent</th><th>95%% interval</th><th>Reading against 72</th><th>Lead, minutes</th><th>95%% interval</th><th>Reading against 13</th><th>False alarms, percent</th><th>95%% interval</th><th>Reading against 71</th><th>First-segment lead, minutes</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">Reading for detection and lead time: consistent if the whole interval is at or above the goal, below if the whole interval is under it, otherwise cannot tell. For false alarms: consistent if the whole interval is at or under 71 percent, above if the whole interval is over it, otherwise cannot tell. The first row pools the closed fiscal years. Every warning and every tornado in the files is used, in any state or territory, with no match by forecast office. Fiscal years from FY%d on use the preliminary reports for 2026 and are labelled preliminary. A preliminary report is one point at one time, so it counts as a tornado of one minute.</p>
+<p class="bench-note">REQ13WARN Each goal is a one-sided threshold, so a reading is above, below or cannot tell and never consistent. For detection and lead time, above means the whole interval is at or above the goal, which meets it, and below means the whole interval is under the goal, which misses it. For false alarms, below means the whole interval is at or under 71 percent, which meets the goal, and above means the whole interval is over it, which misses it. Otherwise cannot tell, with the reason STRADDLES_EDGE. No size that matters is named for the goals, so the both-alternatives test is not applied. The first row pools the closed fiscal years. Every warning and every tornado in the files is used, in any state or territory, with no match by forecast office. Fiscal years from FY%d on use the preliminary reports for 2026 and are labelled preliminary. A preliminary report is one point at one time, so it counts as a tornado of one minute.</p>
 <h2>Nothing returned</h2>
 <p>Counted apart and never folded into a reading. Days in the frame with no outlook of the 1300 UTC cycle as the archive labels it: %s. On %s of them the archive holds a product issued for 1300 UTC under another cycle label (%s), which the plan does not score. On %s scored days the 1300 UTC cycle product was issued after 1300 UTC and is scored from 1300 UTC. Outlook days whose tornado layer could not be read: %s. Preliminary days whose file could not be fetched: %s. Fiscal years whose warning file could not be fetched: %s. Contour values outside the stated set: %s%s. Database rows with no start position or time: %s. Tornadoes that started between 1200 and 1300 UTC, the hour no 1300 UTC outlook covers: %s.</p>
 <h2>What this page holds and what it leaves out</h2>
@@ -109,7 +111,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <p class="meta">Data read from: <a href="https://www.spc.noaa.gov/products/outlook/archive/">SPC outlook archive</a> &middot; <a href="https://mesonet.agron.iastate.edu/request/gis/outlooks.phtml">Iowa Environmental Mesonet outlook archive</a> &middot; <a href="https://www.spc.noaa.gov/wcm/">SPC tornado database</a> &middot; <a href="https://www.spc.noaa.gov/climo/reports/">SPC storm reports</a> &middot; <a href="https://mesonet.agron.iastate.edu/vtec/">Iowa Environmental Mesonet warning archive</a> &middot; <a href="https://spc.noaa.gov/publications/mkay/probver">Kay and Brooks, SPC verification</a> &middot; <a href="https://www.oig.doc.gov/wp-content/OIGPublications/OIG-25-026-I_FinalReport-SECURED.pdf">OIG-25-026-I</a>.</p>
 <p class="meta">Named here and want to answer a row? <a href="/respond?u=tornado-all">Respond</a></p>
 <section id="replies" data-prefix="tornado"></section><script src="/replies.js" defer></script>''' % (
-    pc(YB['lo'], 1), pc(YB['hi'], 1), WORD[YB['outcome']], gate_line, day(us['first_day']), day(us['last_day']), num(us['days']), num(us['points']), band_table(us),
+    pc(YB['lo'], 1), pc(YB['hi'], 1), Wd(YB), gate_line, day(us['first_day']), day(us['last_day']), num(us['days']), num(us['points']), band_table(us),
     num(ks['points']), band_table(ks), num(al['points']), band_table(al),
     num(SR['database_unrated_closed']), UNR, pc(us['hatched']['unrated_as_ef2_upper']), pc(ks['hatched']['unrated_as_ef2_upper']), pc(al['hatched']['unrated_as_ef2_upper']), extra_table([us, ks, al]), year_table(),
     y1 + 1, day(pus['first_day']), day(pus['last_day']), num(SR['preliminary_days']), band_table(pus), band_table(pks), band_table(pal),
@@ -118,6 +120,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
     num(nr_days), num(len(NR['no_outlook_other_cycle_1300'])), ', '.join(day(d) for d in NR['no_outlook_other_cycle_1300']), num(len(NR['late_cycle13_scored'])), num(len(NR['outlook_unreadable'])), num(len(NR['prelim_missing'])), num(len(NR['warnings_missing_fy'])), num(sum(SR['threshold_outside_set'].values())), (' (%s, the conditional intensity groups that replaced the hatched SIGN area in March 2026 under NWS notice SCN 26-11, so the 2026 hatched area is not read)' % ' and '.join(sorted(SR['threshold_outside_set']))) if SR['threshold_outside_set'] and all(k.startswith('CIG') for k in SR['threshold_outside_set']) else '',
     num(SR['database_counts'].get('no start position or time', 0)), num(SR['tornado_placement'].get('start between 1200 and 1300 UTC, in no outlook day', 0)),
     y1, e(S['generated'][:10]))
+body = body.replace('REQ13WARN', 'Beside these readings: ' + (W['req13']['line'] if W.get('req13') else '') + ' ')
 TITLE = 'TORNADO | Stated Tornado Chances Against the Tornadoes That Came | Heuremen LLC'
 DESC = 'TORNADO: the Storm Prediction Center Day 1 tornado probabilities and the National Weather Service tornado warning goals, set beside the tornadoes in the SPC tornado database, with Kansas and Tornado Alley apart.'
 page = '''<!doctype html>

@@ -3,7 +3,7 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/pkginstall/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "pkginstall_tick.py lines 112 to 116, the counts, the interval and the comparison block",
@@ -14,40 +14,40 @@
  "desk": "pkginstall",
  "inputs": [
   {
-   "bytes": 158673,
+   "bytes": 157673,
    "gzip_added": true,
-   "modified": "2026-11-10T21:24:17Z",
+   "modified": "2026-11-12T15:14:34Z",
    "path": "data/projects.json",
-   "sha256": "509f97ec77b330f5516159aac883ef04fa64bd7c834d66c1c7224f815028d59f",
+   "sha256": "69c1fd56b2a43d721258baee7adb19233dee709a91204380fef071a0ba248bbe",
    "stored": "data/projects.json.gz",
-   "stored_sha256": "ad26334c00e9a4de812662e50121723b3e2ae5a936ee02aee061f1310159a845"
+   "stored_sha256": "43aea2d2bb1c072bc4e7ceeb846ccb4e07a3eecb53106bd3baffff90f73a21aa"
   },
   {
    "bytes": 19,
    "gzip_added": true,
-   "modified": "2026-11-10T21:24:17Z",
+   "modified": "2026-11-12T15:14:34Z",
    "path": "data/listdate.txt",
    "sha256": "ce00e09e717676959017c3ccf380945489c8e20154f04283a3e6692ba0b6d399",
    "stored": "data/listdate.txt.gz",
    "stored_sha256": "d23e1d3031fea3e62381d44a960e1fd2cc4c5ddb518c54cf3810ab9c34896a96"
   },
   {
-   "bytes": 744,
+   "bytes": 1172,
    "gzip_added": true,
-   "modified": "2026-11-10T21:24:17Z",
+   "modified": "2026-11-12T15:24:27Z",
    "path": "summary_pkginstall.json",
-   "sha256": "61dc7d442a17620ad32e16bcb5fe8e5318360cdc551c8048724a2cf14bde18f5",
+   "sha256": "da4867f008603169a9a3d0aaa4d8a6b30289b07197ea4a85e3665047405b60c2",
    "stored": "summary_pkginstall.json.gz",
-   "stored_sha256": "31e6641e9feb9ff448a880e8d13abbf513c2d3bb5bb15484b6c4e792869efabf"
+   "stored_sha256": "d8684514cf610f4aa98db19daa95c22e868f337c51dd388ac8df7e5d1a5e0962"
   }
  ],
- "made": "2026-11-11T00:08:47Z",
+ "made": "2026-11-12T16:06:22Z",
  "mode": "fetch",
  "name": "PKGINSTALL",
  "reference": [
   {
    "path": "desk/pkginstall_tick.py",
-   "sha256": "fc4ef5cc1c4e84dbeec1f787a2f0a66286689af9354f93d7e4c6cef6ec782b99"
+   "sha256": "96436ae80a8e7318667011f595fc30c55a4212ffaed03e5d1fdc9cb1f35af50d"
   }
  ],
  "sources": [

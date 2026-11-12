@@ -38,14 +38,14 @@ DECIDED = ['ABOVE', 'BELOW', 'CONSISTENT']
 # key, folder, nav label, what one row is, path of the outcome tally in the summary, path of the row count, path of the scored stamp
 SECTIONS = [
     dict(key='dsa', label='EU moderation reports', row='A platform, a half-year and a measure',
-         outcomes='outcomes', rows='comparison_rows', stamp='updated_utc', gate='gate_passed'),
+         outcomes='outcomes', rows='comparison_rows', stamp='updated_utc', gate='gate_passed', req13='req13'),
     dict(key='adspend', label='Political ad spend', row='A matched committee, or group of committees, and an election cycle',
-         outcomes='outcomes.cycle_rows.all', rows='totals.cycle_rows', stamp='updated', gate='gate_ok'),
+         outcomes='outcomes.cycle_rows.all', rows='totals.cycle_rows', stamp='updated', gate='gate_ok', req13='outcomes.req13_cycle'),
     dict(key='tiktok', label='TikTok quarterly report', row='A quarter and a measure, for the EU total or for one market',
-         outcomes='outcomes', rows='rows', stamp='updated', gate='gate_passed'),
+         outcomes='outcomes', rows='rows', stamp='updated', gate='gate_passed', req13='req13_all'),
 ]
 BLUESKY_SEC = dict(key='bluesky', label='Bluesky', row='A figure in Bluesky\'s transparency report and a year',
-                   outcomes='outcomes', rows='row_count', stamp='updated', gate='gate_passed')
+                   outcomes='outcomes', rows='row_count', stamp='updated', gate='gate_passed', req13='req13')
 
 def sha(b): return hashlib.sha256(b).hexdigest()
 def get(d, path):
@@ -66,6 +66,10 @@ def stamp(key, summ, path):
     NUMBERS.append(dict(text=m.group(1), value=s, file=f'{key}/summary_{key}.json', path=path))
     return m.group(1) + ' UTC'
 
+def req13_text(key, summ, path):
+    """12 Nov 2026, Faults and Guards 2.0 REQ-13: the NOTHING_RETURNED count, then the CANNOT_TELL share split by reason, every number read from the section's summary by a recorded path."""
+    r = get(summ, path); sp = ', '.join(f'{num(key, summ, path + ".cannot_tell_by_reason." + k)} {k}' for k in sorted(r['cannot_tell_by_reason'])) or 'none'
+    return f'{num(key, summ, path + ".nothing_returned")} NOTHING_RETURNED. CANNOT_TELL {num(key, summ, path + ".cannot_tell")} of {num(key, summ, path + ".n_readings")} ({sp}).'
 def load(sec):
     k = sec['key']; d = os.path.join(H, k)
     hb = open(os.path.join(d, f'section_{k}.html'), 'rb').read(); sb = open(os.path.join(d, f'summary_{k}.json'), 'rb').read()
@@ -91,7 +95,7 @@ def headline_adspend(s):
             'committee\'s FEC filings, with an outcome that holds under both timing bands, does not turn on the itemization rule set after the data, '
             'rests on an FEC ID match alone and carries no note. '
             f'In all {num("adspend", summ, "outcomes.decided_cycle_rows.n")} read above, below or consistent and '
-            f'{num("adspend", summ, "outcomes.cycle_rows.all.CANNOT_TELL")} read cannot tell.')
+            f'{num("adspend", summ, "outcomes.cycle_rows.all.CANNOT_TELL")} read cannot tell. For all cycle rows, {req13_text("adspend", summ, "outcomes.req13_cycle")}')
     return dict(big=big, line=line, section='adspend')
 # A section without a reader here gives no headline. DSA: summary_dsa.json counts its decided rows but not which of them use no rule set
 # after the data, so it has no reader. TikTok: no row is decided under its committed rules. Bluesky: add a reader once its summary is read.
@@ -130,7 +134,7 @@ parts.append('<p>Large platforms describe their own conduct in more than one pub
              'A regulator&rsquo;s database or a campaign finance file holds entries one by one. SOCIAL reads one public record against another '
              'that covers the same activity over the same period, and prints where the two agree as well as where they differ.</p>')
 parts.append('<p>Each section below is one pair of records, with its own plan, rules, sources and data. Every row reads above, below, consistent '
-             'or cannot tell. Nothing returned marks a row where one side holds no figure. A reading that uses a rule set after the data says so '
+             'or cannot tell, and every cannot tell carries one reason, STRADDLES_EDGE, TOO_WIDE_TO_RESOLVE or NO_INTERVAL_FORMABLE. A row where one side holds no figure reads cannot tell with the reason NO_INTERVAL_FORMABLE. NOTHING_RETURNED is the status of a failed read of a source and is not an outcome. A reading that uses a rule set after the data says so '
              'on its row or in its column. We measure gaps and name no cause.</p>')
 nav = [f'<a href="#{E(s["anchor"])}">{E(s["label"])}</a>' for s in secs]
 nav.append(f'<a href="#{E(bsky["anchor"]) if bsky else "social-bluesky"}">{E(BLUESKY_SEC["label"])}</a>')
@@ -141,14 +145,15 @@ for s in secs + ([bsky] if bsky else []):
     k, summ = s['key'], s['summ']; oc = get(summ, s['outcomes'])
     assert set(oc) <= set(OUTS), f'{k}: an outcome outside the five ({sorted(set(oc) - set(OUTS))})'
     assert sum(oc.values()) == get(summ, s['rows']), f'{k}: outcomes do not add up to the row count'
-    cells = ''.join(f'<td class="n">{num(k, summ, s["outcomes"] + "." + o) if o in oc else "0"}</td>' for o in OUTS)
+    cells = ''.join(f'<td class="n">{num(k, summ, s["outcomes"] + "." + o) if o in oc else "0"}</td>' for o in OUTS[:4])
     rows.append(f'<tr><td><a href="#{E(s["anchor"])}">{E(s["label"])}</a></td><td>{E(s["row"])}</td>{cells}<td>{stamp(k, summ, s["stamp"])}</td></tr>')
-rows.append(f'<tr><td>{E(BLUESKY_SEC["label"])}</td><td colspan="7">Being read</td></tr>' if not bsky else '')
+rows.append(f'<tr><td>{E(BLUESKY_SEC["label"])}</td><td colspan="6">Being read</td></tr>' if not bsky else '')
 parts.append('<h2>Outcomes by section</h2>')
 parts.append('<div class="scroll"><table class="mtx"><thead><tr><th>Section</th><th>One row is</th><th>Above</th><th>Below</th><th>Consistent</th>'
-             '<th>Cannot tell</th><th>Nothing returned</th><th>Scored</th></tr></thead><tbody>\n' + '\n'.join(r for r in rows if r) + '\n</tbody></table></div>')
+             '<th>Cannot tell</th><th>Scored</th></tr></thead><tbody>\n' + '\n'.join(r for r in rows if r) + '\n</tbody></table></div>')
 parts.append('<p class="bench-note">Each count is the outcome printed on the row in its section. Rows read with a rule set after the data say so in '
              'their section and are counted as printed. The TikTok column of readings defined after the data is not counted here.</p>')
+parts.append('<p class="bench-note">Counts beside these rows, with the status NOTHING_RETURNED counted apart and outside every share. ' + ' '.join(f'{s["label"]}: {req13_text(s["key"], s["summ"], s["req13"])}' for s in secs + ([bsky] if bsky else [])) + '</p>')
 
 for s in secs: parts.append(s['frag'])
 if bsky: parts.append(bsky['frag'])
@@ -164,21 +169,27 @@ slot = (f'<section id="hl-slot" class="hl-slot hl"><div class="hl-big">{E(headli
 main = '<main class="wrap">' + slot + '<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>\n' + '\n'.join(parts) + '</main>'
 
 # ------------------------------------------------------------------------------------------------ chrome from launch.html
-src = open(SRC, encoding='utf-8').read()
-head, rest = src.split('<body>', 1)
-old_title = re.search(r'<title>(.*?)</title>', head).group(1)
-old_desc = re.search(r'<meta name="description" content="(.*?)">', head).group(1)
-head = head.replace(old_title, TITLE).replace(old_desc, html.escape(DESC, quote=True))
-head = head.replace('https://indahl.ai/launch/live.json', 'https://indahl.ai' + FEED).replace('https://indahl.ai/launch', 'https://indahl.ai/social')
-head = head.replace('"name": "LAUNCH"', '"name": "SOCIAL"')
-head = re.sub(r'"dateModified": "\d{4}-\d{2}-\d{2}"', '"dateModified": "' + time.strftime('%Y-%m-%d', time.gmtime()) + '"', head)
-head = head.replace(html.escape(old_desc, quote=False), html.escape(DESC, quote=True))
-head = head.replace(old_desc.replace('&#x27;', "'"), DESC.replace('"', '\\"'))      # JSON-LD carries the description unescaped
-assert 'launch' not in head.lower().replace('/launch">launch', ''), 'chrome: the LAUNCH page\'s own words are still in the head'
-hdr = rest.split('<section class="hero slim">', 1)[0]
-foot = rest.split('</main>', 1)[1]
-hero = f'<section class="hero slim"><div class="wrap"><h1>{HERO}</h1></div></section>\n'
-page = head + '<body>' + hdr + hero + main + foot
+# 12 Nov 2026: if the LAUNCH page has moved on since 10 Nov (its head now carries dataset JSON-LD and the page's own words), the chrome is taken from the social.html already built, and only <main> is replaced.
+# indahl-ai/build_site.py takes the <main> of social.html at ship, so the chrome here never reaches the live page.
+try:
+    src = open(SRC, encoding='utf-8').read()
+    head, rest = src.split('<body>', 1)
+    old_title = re.search(r'<title>(.*?)</title>', head).group(1)
+    old_desc = re.search(r'<meta name="description" content="(.*?)">', head).group(1)
+    head = head.replace(old_title, TITLE).replace(old_desc, html.escape(DESC, quote=True))
+    head = head.replace('https://indahl.ai/launch/live.json', 'https://indahl.ai' + FEED).replace('https://indahl.ai/launch', 'https://indahl.ai/social')
+    head = head.replace('"name": "LAUNCH"', '"name": "SOCIAL"')
+    head = re.sub(r'"dateModified": "\d{4}-\d{2}-\d{2}"', '"dateModified": "' + time.strftime('%Y-%m-%d', time.gmtime()) + '"', head)
+    head = head.replace(html.escape(old_desc, quote=False), html.escape(DESC, quote=True))
+    head = head.replace(old_desc.replace('&#x27;', "'"), DESC.replace('"', '\\"'))      # JSON-LD carries the description unescaped
+    assert 'launch' not in head.lower().replace('/launch">launch', ''), 'chrome: the LAUNCH page\'s own words are still in the head'
+    hdr = rest.split('<section class="hero slim">', 1)[0]
+    foot = rest.split('</main>', 1)[1]
+    hero = f'<section class="hero slim"><div class="wrap"><h1>{HERO}</h1></div></section>\n'
+    page = head + '<body>' + hdr + hero + main + foot
+except AssertionError:
+    _old = open(os.path.join(H, 'social.html'), encoding='utf-8').read()
+    page = _old.split('<main class="wrap">', 1)[0] + main + _old.split('</main>', 1)[1]
 open(os.path.join(H, 'social.html'), 'w', encoding='utf-8').write(page)
 
 # ------------------------------------------------------------------------------------------------ summary_social.json
@@ -186,7 +197,7 @@ out = dict(
     desk='social', page='/social', division='/hermes', built_utc=time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()),
     status='complete' if bsky else 'staging: the Bluesky section is being read',
     headline=(dict(big=headline['big'], line=headline['line'], href='/social', section=headline['section'], numbers=HL_NUMBERS) if headline else None),
-    headline_rule=('Only rows that read ABOVE, BELOW or CONSISTENT and do not rest on a rule defined after the data. CANNOT_TELL and NOTHING_RETURNED rows '
+    headline_rule=('Only rows that read ABOVE, BELOW or CONSISTENT and do not rest on a rule defined after the data. CANNOT_TELL rows '
                    'and readings defined after the data give no headline. A section gives one only if its own summary counts those rows.'),
     sections={}, numbers=NUMBERS)
 for s in secs + ([bsky] if bsky else []):

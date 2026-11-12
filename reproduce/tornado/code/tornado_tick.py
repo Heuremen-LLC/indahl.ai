@@ -89,26 +89,16 @@ def inside(paths, xy):
     return (c % 2) == 1
 
 # ---------------- the rules (PLAN.md, Rules) ----------------
-def band_outcome(lo, hi, band, days):
-    if days < MIN_DAYS or lo is None: return K.CANNOT_TELL
-    a, b = band
-    if lo > b: return K.ABOVE
-    if hi < a: return K.BELOW
-    if lo >= a and hi <= b: return K.CONSISTENT
-    return K.CANNOT_TELL
+# 12 Nov 2026: Faults and Guards 2.0 outcome rule (PLAN_ADDENDUM_std2.md). Every rule returns (outcome, reason). The warning goals are one-sided bounds and never print CONSISTENT.
+def band_outcome(lo, hi, band, days, edge='[)'):
+    if days <= 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if days < MIN_DAYS: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, band=band, edge=edge)
 def goal_outcome(lo, hi, goal, kind):
-    """kind 'atleast' (POD, lead) or 'atmost' (FAR)."""
-    if lo is None: return K.CANNOT_TELL
-    if kind == 'atleast':
-        if lo >= goal: return K.CONSISTENT
-        if hi < goal: return K.BELOW
-        return K.CANNOT_TELL
-    if hi <= goal: return K.CONSISTENT
-    if lo > goal: return K.ABOVE
-    return K.CANNOT_TELL
+    """kind 'atleast' (POD, lead): the goal itself counts as met, ABOVE means the interval is at or above it. 'atmost' (FAR): the goal itself counts as met, BELOW means the interval is at or under it."""
+    return K.read(lo, hi, bound=goal, edge='[)' if kind == 'atleast' else '(]')
 def bss_outcome(lo, hi):
-    if lo is None: return K.CANNOT_TELL
-    return K.ABOVE if lo > 0 else K.BELOW if hi < 0 else K.CANNOT_TELL
+    return K.read(lo, hi, bound=0.0, edge='closed')
 def boot_ratio(num, den, seed=SEED, n=NBOOT):
     """num, den: per-day sums. Day-level block bootstrap of sum(num)/sum(den). Returns (value, lo, hi)."""
     num = np.asarray(num, float); den = np.asarray(den, float); D = len(num)
@@ -144,12 +134,15 @@ def warn_tornado(tor, warns):
     return float(warned.mean()), float(lead.mean()), float(lead[0]), ver
 def rule_selftest():
     t = []
-    t.append(band_outcome(0.20, 0.25, (0.10, 0.15), 40) == K.ABOVE); t.append(band_outcome(0.01, 0.04, (0.05, 0.10), 40) == K.BELOW)
-    t.append(band_outcome(0.11, 0.14, (0.10, 0.15), 40) == K.CONSISTENT); t.append(band_outcome(0.09, 0.12, (0.10, 0.15), 40) == K.CANNOT_TELL)
-    t.append(band_outcome(0.11, 0.14, (0.10, 0.15), 29) == K.CANNOT_TELL); t.append(band_outcome(0.003, 0.008, (0.0, 0.02), 400) == K.CONSISTENT)
-    t.append(goal_outcome(0.60, 0.66, 0.72, 'atleast') == K.BELOW); t.append(goal_outcome(0.73, 0.80, 0.72, 'atleast') == K.CONSISTENT); t.append(goal_outcome(0.70, 0.74, 0.72, 'atleast') == K.CANNOT_TELL)
-    t.append(goal_outcome(0.72, 0.78, 0.71, 'atmost') == K.ABOVE); t.append(goal_outcome(0.60, 0.70, 0.71, 'atmost') == K.CONSISTENT); t.append(goal_outcome(0.69, 0.73, 0.71, 'atmost') == K.CANNOT_TELL)
-    t.append(bss_outcome(0.05, 0.2) == K.ABOVE and bss_outcome(-0.3, -0.1) == K.BELOW and bss_outcome(-0.1, 0.1) == K.CANNOT_TELL)
+    t.append(band_outcome(0.20, 0.25, (0.10, 0.15), 40) == (K.ABOVE, None)); t.append(band_outcome(0.01, 0.04, (0.05, 0.10), 40) == (K.BELOW, None))
+    t.append(band_outcome(0.11, 0.14, (0.10, 0.15), 40) == (K.CONSISTENT, None)); t.append(band_outcome(0.09, 0.12, (0.10, 0.15), 40) == (K.CANNOT_TELL, K.STRADDLES_EDGE))
+    t.append(band_outcome(0.11, 0.14, (0.10, 0.15), 29) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE)); t.append(band_outcome(0.003, 0.008, (0.0, 0.02), 400) == (K.CONSISTENT, None))
+    t.append(band_outcome(None, None, (0.10, 0.15), 0) == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)); t.append(band_outcome(0.12, 0.15, (0.10, 0.15), 40) == (K.CANNOT_TELL, K.STRADDLES_EDGE))   # open upper edge
+    t.append(goal_outcome(0.60, 0.66, 0.72, 'atleast') == (K.BELOW, None)); t.append(goal_outcome(0.73, 0.80, 0.72, 'atleast') == (K.ABOVE, None)); t.append(goal_outcome(0.70, 0.74, 0.72, 'atleast') == (K.CANNOT_TELL, K.STRADDLES_EDGE))
+    t.append(goal_outcome(0.72, 0.78, 0.71, 'atmost') == (K.ABOVE, None)); t.append(goal_outcome(0.60, 0.70, 0.71, 'atmost') == (K.BELOW, None)); t.append(goal_outcome(0.69, 0.73, 0.71, 'atmost') == (K.CANNOT_TELL, K.STRADDLES_EDGE))
+    t.append(goal_outcome(0.72, 0.80, 0.72, 'atleast') == (K.ABOVE, None) and goal_outcome(0.60, 0.71, 0.71, 'atmost') == (K.BELOW, None))   # the goal itself counts as met
+    t.append(all(goal_outcome(a, b, g, k)[0] != K.CONSISTENT for a, b, g, k in ((0.7, 0.8, 0.72, 'atleast'), (0.6, 0.7, 0.71, 'atmost'), (0.1, 0.2, 0.15, 'atleast'))))   # a one-sided bound never prints CONSISTENT
+    t.append(bss_outcome(0.05, 0.2) == (K.ABOVE, None) and bss_outcome(-0.3, -0.1) == (K.BELOW, None) and bss_outcome(-0.1, 0.1) == (K.CANNOT_TELL, K.STRADDLES_EDGE) and bss_outcome(None, None) == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE))
     # distance: a point at the origin of the projection, a track 39.9 km and 40.6 km away (gate 3)
     t.append(bool(seg_dist(np.array([0.0]), np.array([0.0]), -50, 39.9, 50, 39.9)[0] <= RADIUS_KM)); t.append(bool(seg_dist(np.array([0.0]), np.array([0.0]), -50, 40.6, 50, 40.6)[0] > RADIUS_KM))
     t.append(day_of(ep('202605011259'), 13) == '20260430' and day_of(ep('202605011300'), 13) == '20260501')
@@ -309,25 +302,25 @@ def cell_read(name, days, mask, prelim=False):
     bands = []
     for j, (a, b) in enumerate(BANDS):
         dj = rows[:, j] > 0; v, lo, hi = boot_ratio(ev[dj, j], rows[dj, j], seed=SEED + j)
-        o = band_outcome(lo, hi, (a, b), int(dj.sum()))
+        o, o_why = band_outcome(lo, hi, (a, b), int(dj.sum()), edge='closed' if j == nb - 1 else '[)')
         # referee R4, display only: the observed share read against the contour level itself (ABOVE if the interval is above it, BELOW if under it)
-        lab = None if j == 0 or lo is None or int(dj.sum()) < MIN_DAYS else (K.ABOVE if lo > a else K.BELOW if hi < a else K.CONSISTENT)
+        lab, lab_why = (None, None) if j == 0 or lo is None or int(dj.sum()) < MIN_DAYS else K.read(lo, hi, bound=a, edge='closed')   # a point figure with no tolerance: never CONSISTENT
         # referee bootstrap note, display only: whole calendar years resampled instead of days
         yv = None
         if j in (3,) and int(dj.sum()) >= MIN_DAYS:
             ys_ = sorted(set(yr_of)); yn = np.array([ev[[k for k in range(len(days)) if yr_of[k] == y_], j].sum() for y_ in ys_]); yd = np.array([rows[[k for k in range(len(days)) if yr_of[k] == y_], j].sum() for y_ in ys_])
-            if len(ys_) >= 5: _, ylo, yhi = boot_ratio(yn, yd, seed=SEED + 50 + j); yv = dict(lo=round(ylo, 5), hi=round(yhi, 5), outcome=band_outcome(ylo, yhi, (a, b), int(dj.sum())))
-        bands.append(dict(label_reading=lab, year_blocks=yv, band=BAND_NAMES[j], lo_stated=a, hi_stated=b, rows=int(rows[:, j].sum()), days=int(dj.sum()), events=int(ev[:, j].sum()),
-                          freq=None if v is None else round(v, 5), lo=None if lo is None else round(lo, 5), hi=None if hi is None else round(hi, 5), outcome=o))
+            if len(ys_) >= 5: _, ylo, yhi = boot_ratio(yn, yd, seed=SEED + 50 + j); yv = dict(lo=round(ylo, 5), hi=round(yhi, 5), **dict(zip(('outcome', 'reason'), band_outcome(ylo, yhi, (a, b), int(dj.sum()), edge='closed' if j == nb - 1 else '[)'))))
+        bands.append(dict(label_reading=lab, label_reason=lab_why, year_blocks=yv, band=BAND_NAMES[j], lo_stated=a, hi_stated=b, rows=int(rows[:, j].sum()), days=int(dj.sum()), events=int(ev[:, j].sum()),
+                          freq=None if v is None else round(v, 5), lo=None if lo is None else round(lo, 5), hi=None if hi is None else round(hi, 5), outcome=o, reason=o_why))
     dj = s_rows > 0; v, lo, hi = boot_ratio(s_ev[dj], s_rows[dj], seed=SEED + 99)
     hatched = dict(rows=int(s_rows.sum()), days=int(dj.sum()), events=int(s_ev.sum()), freq=None if v is None else round(v, 5), lo=None if lo is None else round(lo, 5), hi=None if hi is None else round(hi, 5),
-                   outcome=band_outcome(lo, hi, (0.10, 1.0), int(dj.sum())))
+                   **dict(zip(('outcome', 'reason'), band_outcome(lo, hi, (0.10, 1.0), int(dj.sum()), edge='closed'))))
     hatched['unrated_as_ef2_upper'] = round(float(s_evu.sum() / s_rows.sum()), 5) if s_rows.sum() else None
     if prelim and not any(t['mag'] >= 0 for t in tors if t['src'] == 'prelim'):
-        hatched.update(outcome=K.CANNOT_TELL, why='no preliminary report carries a rating, so an EF2 or stronger tornado cannot be told apart')
+        hatched.update(outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, why='no preliminary report carries a rating, so an EF2 or stronger tornado cannot be told apart')
     v, lo, hi = boot_bss(bs, bc, seed=SEED + 7)
     brier = dict(bs=round(float(bs.sum() / n_rows), 6) if n_rows else None, bs_clim=round(float(bc.sum() / n_rows), 6) if n_rows else None,
-                 bss=None if v is None else round(v, 4), lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), outcome=bss_outcome(lo, hi))
+                 bss=None if v is None else round(v, 4), lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), **dict(zip(('outcome', 'reason'), bss_outcome(lo, hi))))
     cnt = C.Counter(x['outcome'] for x in bands)
     return dict(cell=name, preliminary=prelim, days=len(days), points=int(mask.sum()), rows=n_rows, bands=bands, hatched=hatched, brier=brier,
                 band_outcomes={k: cnt.get(k, 0) for k in K.OUTCOMES}, first_day=days[0] if days else None, last_day=days[-1] if days else None)
@@ -389,7 +382,7 @@ def goals_from(parts, label, pre):
     pod = boot_ratio([dpod[k][0] for k in ks], n, seed=SEED + 11); lead = boot_ratio([dpod[k][1] for k in ks], n, seed=SEED + 12); l0 = boot_ratio([dpod[k][2] for k in ks], n, seed=SEED + 13)
     kf = sorted(dfar); far = boot_ratio([dfar[k][0] for k in kf], [dfar[k][1] for k in kf], seed=SEED + 14)
     def pack(v, kind, goal, nd=4):
-        return dict(value=None if v[0] is None else round(v[0], nd), lo=None if v[1] is None else round(v[1], nd), hi=None if v[2] is None else round(v[2], nd), goal=goal, outcome=goal_outcome(v[1], v[2], goal, kind) if goal is not None else None)
+        return dict(value=None if v[0] is None else round(v[0], nd), lo=None if v[1] is None else round(v[1], nd), hi=None if v[2] is None else round(v[2], nd), goal=goal, **dict(zip(('outcome', 'reason'), goal_outcome(v[1], v[2], goal, kind) if goal is not None else (None, None))))
     return dict(label=label, preliminary=pre, tornadoes=sum(p['tornadoes'] for p in parts), warnings=sum(p['warnings'] for p in parts), verified=sum(p['verified'] for p in parts),
                 tornado_days=len(ks), warning_days=len(kf), pod=pack(pod, 'atleast', GOALS['pod']), lead_min=pack(lead, 'atleast', GOALS['lead'], 2), far=pack(far, 'atmost', GOALS['far']),
                 initial_lead_min=pack(l0, None, None, 2))
@@ -437,12 +430,21 @@ def gate_all(obj):
     if GATE: return obj
     if isinstance(obj, dict):
         o = {k: gate_all(v) for k, v in obj.items()}
-        if 'outcome' in o and o['outcome'] in K.OUTCOMES: o['outcome_before_gate'] = o['outcome']; o['outcome'] = K.CANNOT_TELL
+        if 'outcome' in o and o['outcome'] in K.OUTCOMES: o['outcome_before_gate'] = o['outcome']; o['outcome'] = K.CANNOT_TELL; o['reason'] = K.NO_INTERVAL_FORMABLE   # a failed gate: no reading can be formed (Addendum std2)
         return o
     if isinstance(obj, list): return [gate_all(x) for x in obj]
     return obj
 cells, years, warn_years, warn_pooled = gate_all(cells), gate_all(years), gate_all(warn_years), gate_all(warn_pooled)
 for c in cells + years: cnt = C.Counter(x['outcome'] for x in c['bands']); c['band_outcomes'] = {k: cnt.get(k, 0) for k in K.OUTCOMES}   # counted after the gate
+
+# REQ-13 (standard 6.7, PLAN_ADDENDUM_std2.md). Failed reads are listed apart and are outside the counts: days with no outlook, unreadable outlook layers, preliminary days not fetched, fiscal years whose warning file was not fetched.
+def _rd(x): return (x['outcome'], x.get('reason'))
+NR_BANDS = list(nothing['no_outlook']) + list(nothing['outlook_unreadable']) + list(nothing['prelim_missing']); NR_WARN = list(warn_missing)
+_us_closed = next(c for c in cells if c['cell'] == 'United States' and not c['preliminary'])
+REQ13_HEAD = K.req13([_rd(b) for b in _us_closed['bands']], nothing_returned=NR_BANDS)
+_wr = [_rd(w[k]) for w in [warn_pooled] + warn_years for k in ('pod', 'lead_min', 'far')]
+REQ13_WARN = K.req13(_wr, nothing_returned=NR_WARN)
+REQ13_ALL = K.req13([_rd(b) for c in cells + years for b in c['bands']] + [_rd(c['hatched']) for c in cells] + [_rd(c['brier']) for c in cells] + _wr, nothing_returned=NR_BANDS + NR_WARN)
 
 # ---------------- 8. plan seal and output ----------------
 seal_f = 'data/plan_seal.json'
@@ -464,7 +466,7 @@ summary = dict(
                  tornado_placement=dict(placed), warnings_by_fy={str(fy): len(w) for fy, w in WARN.items()}, warnings_missing_fy=warn_missing, warnings_unreadable=warn_bad, stale=STALE),
     nothing_returned=dict(no_outlook_days=len(nothing['no_outlook']), no_outlook_list=nothing['no_outlook'], outlook_unreadable=nothing['outlook_unreadable'], prelim_missing=nothing['prelim_missing'], warnings_missing_fy=warn_missing,
                           no_outlook_other_cycle_1300=nothing['no_outlook_other_cycle_1300'], late_cycle13_scored=nothing['late_cycle13_scored']),
-    cells=cells, years=years, warnings=dict(pooled=warn_pooled, years=warn_years, polygon_end_floor=warn_floor),
+    cells=cells, years=years, warnings=dict(pooled=warn_pooled, years=warn_years, polygon_end_floor=warn_floor, req13=REQ13_WARN), req13=REQ13_HEAD, req13_all=REQ13_ALL,
     after_data_note='label_reading and year_blocks on bands, hatched unrated_as_ef2_upper, warnings polygon_end_floor and nothing_returned no_outlook_other_cycle_1300 and late_cycle13_scored were added after the data on 10 Nov 2026 at the outside referee (tornado_index_referee/REFEREE.md R2, R2b, R4, R5, R6 and the bootstrap note). Display only. No outcome uses them. The grid rectangle was widened at the referee (R1) to keep every point inside the 48 states, as the plan says.')
 # the block indahl.ai/forecasters reads (indahl-ai/forecasters.py, rows 'feed'). Display only, the cells above decide. The ten to fifteen percent band of the
 # closed years, the headline band, read against the band SPC states. The point is drawn from the band's middle, the outcome is the band rule's.
@@ -472,7 +474,7 @@ def _fc_row(c, b):
     return dict(kind='probability', item='%s, stated band %s percent, %d to %d' % (c['cell'], b['band'], FIRST_YEAR, LAST_CLOSED),
                 counts='share of point-days in the band with a tornado within twenty-five miles',
                 stated=round((b['lo_stated'] + b['hi_stated']) / 2, 4), band=[b['lo_stated'], b['hi_stated']], band_kind='stated',
-                n=b['events'], of=b['rows'], delivered=b['freq'], lo=b['lo'], hi=b['hi'], outcome=b['outcome'],
+                n=b['events'], of=b['rows'], delivered=b['freq'], lo=b['lo'], hi=b['hi'], outcome=b['outcome'], reason=b['reason'], req13=REQ13_HEAD,
                 interval='day-level block bootstrap, as the desk gives it')
 summary['forecasters'] = dict(rows=[_fc_row(c, b) for c in cells if not c['preliminary'] for b in c['bands'] if b['band'] == '10 to 15' and b['lo'] is not None],
                               note='Each row is read against the band SPC states, and its point is drawn from the middle of the band.')

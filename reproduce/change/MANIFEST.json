@@ -11,20 +11,20 @@
   {
    "bytes": 90561,
    "gzip_added": true,
-   "modified": "2026-11-10T22:48:06Z",
+   "modified": "2026-11-12T15:30:19Z",
    "path": "data/rows.json",
-   "sha256": "64a30ffbbac4c3f3db791ae1e25b624b9e5461fcf2519024ea57763e367527cf",
+   "sha256": "a46c6debe08afb0df634c74330106113025061c72a73b2daef968697b810db4c",
    "stored": "data/rows.json.gz",
-   "stored_sha256": "62e738f72f1ab50f4839273c9fbe1952d1e00b0c2fe6f9a3a923a650a9459f30"
+   "stored_sha256": "949f0a59b7eb9de8c3057c45902e4142ba5f93dbc38f072c3b76b9e54bb555f3"
   }
  ],
- "made": "2026-11-11T00:08:45Z",
+ "made": "2026-11-12T16:06:21Z",
  "mode": "fetch",
  "name": "CHANGE",
  "reference": [
   {
    "path": "desk/change_tick.py",
-   "sha256": "8eab09dd24e35ffab0c11c38c77eb388d70f3cf5036a69d51ad37dfcdf2bbd7e"
+   "sha256": "af5c916a66c5e893d828d4a3dd4b0f8bbc4238b5a2bf0185d195225ed85fb795"
   }
  ],
  "sources": [

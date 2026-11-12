@@ -3,7 +3,7 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/census/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "census_tick.py cells() and the outcome rule against 90 percent, for the national total cells",
@@ -14,31 +14,31 @@
  "desk": "census",
  "inputs": [
   {
-   "bytes": 1842818,
+   "bytes": 1934936,
    "gzip_added": true,
-   "modified": "2026-11-11T15:35:43Z",
+   "modified": "2026-11-12T15:21:03Z",
    "path": "data/census.json",
-   "sha256": "42188e2dc0e1fa9bd3dd4a5b45bda9ca83aac676f8f59e5bdf45727feb927057",
+   "sha256": "c1cd20d37deaf3cc4b48876b4fe77c8750dc5a624a40f5ba0b3aef2e2b6dbe40",
    "stored": "data/census.json.gz",
-   "stored_sha256": "d90ce8d8b583774d5a23786398396990c00d8782a2cd486e649baafa0b7ff46b"
+   "stored_sha256": "220ba872bc1bb2dbef6144f1c5866ade1721a4b7fcdadf99720d313af9ccbc38"
   },
   {
-   "bytes": 54003,
+   "bytes": 66668,
    "gzip_added": true,
-   "modified": "2026-11-11T15:35:43Z",
+   "modified": "2026-11-12T15:21:03Z",
    "path": "summary_census.json",
-   "sha256": "0dd525e2e590a27475cb7db5104542f7644a7aac921b6bc87826bba5b17dcd2c",
+   "sha256": "30482f5d28f33ad4aa21d3ae21961d82dccacbe14f7fcd76366fc6cddb814fdb",
    "stored": "summary_census.json.gz",
-   "stored_sha256": "dc12b71678f1d7944957c4ac8ac0ca2c0fb2051f1673e2839fe8c0bfd50a649b"
+   "stored_sha256": "e67d5e8ce49616e4ab7c6ad26d0bf9c5d44f2c20ad645dff2772b7c0ac995cbf"
   }
  ],
- "made": "2026-11-11T15:46:07Z",
+ "made": "2026-11-12T16:06:34Z",
  "mode": "inputs",
  "name": "CENSUS",
  "reference": [
   {
    "path": "desk/census_tick.py",
-   "sha256": "47d62e0ef46b5bf7cbdad017ff9a71b3c1f240472bf2a032f19c01c6541695a5"
+   "sha256": "c7bdf65ef403d926d57410c819219e72e656d12bb444fd352b8d27aa807f116a"
   }
  ]
 }

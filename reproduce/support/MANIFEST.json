@@ -3,7 +3,7 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/support/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "support_tick.py lines 66 to 87, the counts, the product bootstrap and the all cell",
@@ -14,31 +14,31 @@
  "desk": "support",
  "inputs": [
   {
-   "bytes": 1920498,
+   "bytes": 1921734,
    "gzip_added": true,
-   "modified": "2026-11-10T20:50:47Z",
+   "modified": "2026-11-12T15:38:34Z",
    "path": "data/cycles.json",
-   "sha256": "c833214792e91eac492175f80336b0af26359e02f9e431249114f979d559eee9",
+   "sha256": "a9d78aca647a8ef77135506f8cf6905f18b69e6f0fccf2835bfd1d757d6d658f",
    "stored": "data/cycles.json.gz",
-   "stored_sha256": "7e439b88a8755ca3c8c0bda4a34afcb44d06ae9cc8eb26db517a9f3d4a2c0cc1"
+   "stored_sha256": "e92b3846c1f0d80a4fb48ae454b941ff477c915bd1b964d1deeaf5365b12dd37"
   },
   {
-   "bytes": 20245,
+   "bytes": 22393,
    "gzip_added": true,
-   "modified": "2026-11-10T20:50:47Z",
+   "modified": "2026-11-12T15:38:34Z",
    "path": "summary_support.json",
-   "sha256": "983bdce758766dc48db0c8b1814185c791632e78bc76469f2e6f9ea35f0c6f4b",
+   "sha256": "1bcaeeaa89763289e331f1723a304ec48e28bc851d45344ac486dce7c73b23f6",
    "stored": "summary_support.json.gz",
-   "stored_sha256": "f26b72408792078dd56d8bdd1af711ecd13024954ad4b5ec75ddc8dee28eb8f4"
+   "stored_sha256": "e268a9d0b3992076133a12e8a836ec97136c6c82bfc91fcc347ca2afc3cd265a"
   }
  ],
- "made": "2026-11-11T00:08:43Z",
+ "made": "2026-11-12T16:06:19Z",
  "mode": "fetch",
  "name": "SUPPORT",
  "reference": [
   {
    "path": "desk/support_tick.py",
-   "sha256": "92b3b0d103ac15778c312f6ff216995987219d3150a132fd20601f5ffcce3975"
+   "sha256": "c00db475f2665ac93df8578441ef8db0c0cf3025b03b8a8e0e5125840402fb4a"
   }
  ],
  "sources": [

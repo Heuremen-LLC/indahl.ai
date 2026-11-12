@@ -33,15 +33,13 @@ def row_outcome(lo, hi, y, why=None):
     if why: return K.CANNOT_TELL, why
     if lo is None or hi is None or lo > hi: return K.CANNOT_TELL, 'unreadable'
     if y is None: return K.NOTHING_RETURNED, None
-    if y > hi: return K.ABOVE, None
-    if y < lo: return K.BELOW, None
-    return K.CONSISTENT, None
+    o, _r, _d = K.read_exact(y, band=(lo, hi))   # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): a row is an exact read against a published band, zero width, edges closed
+    return o, None
 def cell_outcome(lo, hi, n, months):
-    if n < MIN_ROWS or months < MIN_MONTHS or lo is None: return K.CANNOT_TELL
-    if hi < LEVEL: return K.BELOW
-    if lo > LEVEL: return K.ABOVE
-    if hi - lo <= MAX_W: return K.CONSISTENT
-    return K.CANNOT_TELL
+    # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): 0.95 is a point figure with no tolerance. No CONSISTENT, the 0.15 width cap no longer decides. Returns (outcome, reason).
+    if lo is None or hi is None: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < MIN_ROWS or months < MIN_MONTHS: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, bound=LEVEL)
 def draws(W, reps=REPS, seed=SEED, block=BLOCK):
     rng = np.random.default_rng(seed); M = np.zeros((reps, W))
     if W < block: return M
@@ -57,9 +55,10 @@ def rule_selftest():
          row_outcome(20, 10, 15) == (K.CANNOT_TELL, 'unreadable'), row_outcome(None, 10, 5) == (K.CANNOT_TELL, 'unreadable'), row_outcome(10, 20, None) == (K.NOTHING_RETURNED, None),
          row_outcome(10, 20, 15, 'issue unknown') == (K.CANNOT_TELL, 'issue unknown'), ym_of_serial('42186') == '2015-07', mdiff('2016-01', '2015-11') == 2]
     rng = np.random.default_rng(5); W = 150; M = draws(W, 500, 3); y = rng.standard_normal((W, 20))
-    for half, want in ((1.0, K.CONSISTENT), (0.5, K.BELOW)):
+    for half, want in ((1.0, (K.CANNOT_TELL, K.STRADDLES_EDGE)), (0.5, (K.BELOW, None))):   # 12 Nov 2026: a calibrated world holds 0.95, no tolerance, so STRADDLES_EDGE
         ins = (np.abs(y) <= 1.959964 * half).sum(1).astype(float); lo, hi = boot(ins, np.full(W, 20.0), M); t.append(cell_outcome(lo, hi, W * 20, W) == want)
-    t += [cell_outcome(0.9, 0.99, 20, 50) == K.CANNOT_TELL, cell_outcome(0.9, 0.99, 100, 10) == K.CANNOT_TELL, cell_outcome(0.7, 0.99, 100, 50) == K.CANNOT_TELL, cell_outcome(0.96, 0.99, 100, 50) == K.ABOVE]
+    t += [cell_outcome(0.9, 0.99, 20, 50) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE), cell_outcome(0.9, 0.99, 100, 10) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE), cell_outcome(0.7, 0.99, 100, 50) == (K.CANNOT_TELL, K.STRADDLES_EDGE), cell_outcome(0.96, 0.99, 100, 50) == (K.ABOVE, None),
+          cell_outcome(0.9, 0.96, 100, 50) == (K.CANNOT_TELL, K.STRADDLES_EDGE), cell_outcome(None, None, 100, 50) == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE), cell_outcome(0.8, 0.9, 100, 50) == (K.BELOW, None)]
     return all(t), t
 if '--selftest' in sys.argv:
     ok, t = rule_selftest(); print('rule selftest', 'PASSED' if ok else 'FAILED', t); sys.exit(0 if ok and K.selftest() else 1)
@@ -312,10 +311,12 @@ def make_cells(OK, WK):
             for r in sc: num[MI[r['month']]] += r[OK] == K.CONSISTENT; den[MI[r['month']]] += 1
             lo, hi = boot(num, den, M)
         why = C.Counter(r[WK] for r in rs if r[OK] == K.CANNOT_TELL)
+        oc, rs_ = cell_outcome(lo, hi, n, mo) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
+        r13 = K.req13([(r[OK], K.NO_INTERVAL_FORMABLE if r[OK] == K.CANNOT_TELL else None) for r in rs if r[OK] != K.NOTHING_RETURNED], nothing_returned=cnt[K.NOTHING_RETURNED])   # REQ-13: rows of the cell, rows with no spot price yet apart
         out.append(dict(series=s, cell=nm, stated=LEVEL, rows=len(rs), scored=n, inside=k, above=cnt[K.ABOVE], below=cnt[K.BELOW], cannot_tell=cnt[K.CANNOT_TELL], cannot_tell_why={str(x): y for x, y in why.items()},
                           nothing_returned=cnt[K.NOTHING_RETURNED], months=mo, issues=len({r['issue'] for r in sc}), share=round(k / n, 4) if n else None,
                           share_above=round(cnt[K.ABOVE] / n, 4) if n else None, share_below=round(cnt[K.BELOW] / n, 4) if n else None,
-                          lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), outcome=cell_outcome(lo, hi, n, mo) if GATE else K.CANNOT_TELL))
+                          lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), outcome=oc, reason=rs_, req13=r13))
   return out
 cells = make_cells('outcome', 'why'); cells_add1 = make_cells('outcome_add1', 'why_add1')
 def med(xs): return round(float(np.median(xs)), 4) if xs else None
@@ -333,7 +334,7 @@ seal = json.load(open(seal_f)) if os.path.exists(seal_f) else None
 def fc_row(c):
     return dict(kind='coverage', item='%s, stated %s ahead' % (SNAME[c['series']], c['cell'].replace(' months', ' months').replace('all leads', 'any number of months')),
                 counts='share of monthly average spot prices inside the stated interval', stated=LEVEL, n=c['inside'], of=c['scored'], delivered=c['share'], lo=c['lo'], hi=c['hi'],
-                outcome=c['outcome'], interval='moving-block bootstrap over outcome months, as the desk gives it')
+                outcome=c['outcome'], reason=c['reason'], interval='moving-block bootstrap over outcome months, as the desk gives it')
 # 10 Nov 2026, outside referee (steo_index_referee/REFEREE.md R4 to R7): display only, added after the data, never used for an outcome.
 def _after():
     out = dict(note='Added on 10 Nov 2026 at the outside referee. Display only. No outcome uses them.')
@@ -346,8 +347,9 @@ def _after():
             for r in sc: num[MI[r['month']]] += r[OK] == K.CONSISTENT; den[MI[r['month']]] += 1
             for bl in (6, 12, 24):
                 lo, hi = boot(num, den, draws(len(months), block=bl)) if sc else (None, None)
+                _o, _r = cell_outcome(lo, hi, len(sc), len(months)) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
                 sens.append(dict(reading='plan' if OK == 'outcome' else 'addendum1', series=s, block_months=bl, lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4),
-                                 outcome=cell_outcome(lo, hi, len(sc), len(months)) if GATE else K.CANNOT_TELL))
+                                 outcome=_o, reason=_r))
     out['block_sensitivity'] = sens
     wb = [r for r in rows if r['series'] == 'WTI' and r['outcome'] == K.BELOW]
     out['wti_plan_below_by_year'] = dict(C.Counter(r['month'][:4] for r in wb))
@@ -362,7 +364,7 @@ def _after():
     return out
 summary = dict(desk='STEO', publisher='Heuremen LLC', generated=STAMP, plan='PLAN.md', plan_seal=seal, plan_unchanged_since_commit=K.plan_committed('PLAN.md'),
     claim=dict(source='EIA Short-Term Energy Outlook chart gallery, 95% NYMEX futures price confidence interval', stated='Lower and Upper by month at level 0.95', delivered='EIA monthly average spot price, WTI Cushing (RWTC) and Henry Hub (RNGWHHD)'),
-    frame=dict(level=LEVEL, min_rows=MIN_ROWS, min_months=MIN_MONTHS, max_width=MAX_W, block_months=BLOCK, replicates=REPS, seed=SEED),
+    frame=dict(level=LEVEL, min_rows=MIN_ROWS, min_months=MIN_MONTHS, max_width=MAX_W, outcome_rule='PLAN_ADDENDUM_std2.md (12 Nov 2026): point figure 0.95 with no tolerance, ABOVE, BELOW or CANNOT_TELL with a closed reason, the width cap no longer decides', block_months=BLOCK, replicates=REPS, seed=SEED),
     gates=dict(kg, passed=GATE, same_quantity_detail=same),
     sources=dict(copies_held=len(files), copies=dict(cnt_copy), issues=len(by_issue), first_issue=issues_used[0] if issues_used else None, last_issue=issues_used[-1] if issues_used else None,
                  copies_differing_values=differ, spot_read=spot_read, spot_last_month={s: max(spot[s]) if spot[s] else None for s in SERIES}, releases_listed=len(releases), stale=STALE),

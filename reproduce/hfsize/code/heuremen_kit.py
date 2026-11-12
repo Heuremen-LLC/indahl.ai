@@ -11,7 +11,10 @@ def wilson(k, n, z=1.96):
     """Wilson interval for a share k/n. n == 0 returns the full range."""
     if n <= 0: return (0.0, 1.0)
     p = k / n; d = 1 + z * z / n; c = (p + z * z / (2 * n)) / d; h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return (max(0.0, c - h), min(1.0, c + h))
+    lo, hi = max(0.0, c - h), min(1.0, c + h)
+    if k <= 0: lo = 0.0   # 12 Nov 2026: float error left 6.9e-18 here, which read() takes as 'misses the null at zero'
+    if k >= n: hi = 1.0
+    return (lo, hi)
 
 def classify(lo, hi, bound_lo, bound_hi=None):
     """DEPRECATED 12 Nov 2026 (Faults and Guards 2.0): use read(). Kept unchanged so no desk breaks mid-migration. It has no reason, no both-alternatives
@@ -200,6 +203,8 @@ def selftest():
     def check(name, cond): 
         nonlocal ok; ok &= bool(cond); print(('OK   ' if cond else 'FAIL ') + name)
     check('wilson empty is the full range', wilson(0, 0) == (0.0, 1.0))
+    check('wilson 0 of n has a lower end of exactly 0 and n of n an upper end of exactly 1', wilson(0, 27)[0] == 0.0 and wilson(27, 27)[1] == 1.0)
+    check('read: 0 of 27 at Wilson 95 percent with size 0.05 and band [0,0.15) is TOO_WIDE_TO_RESOLVE', read(*wilson(0, 27), band=(0.0, 0.15), matters=0.05, edge='[)') == (CANNOT_TELL, TOO_WIDE_TO_RESOLVE))
     lo, hi = wilson(50, 100); check('wilson 50 of 100 contains 0.5', lo < 0.5 < hi)
     for name, p, bound_lo, bound_hi, want in (('share well above the bound', 0.5, 0.10, 0.25, ABOVE), ('share at the bound', 0.25, 0.10, 0.25, CANNOT_TELL), ('share well inside', 0.15, 0.10, 0.25, CONSISTENT), ('share well below', 0.02, 0.10, 0.25, BELOW)):
         right = 0

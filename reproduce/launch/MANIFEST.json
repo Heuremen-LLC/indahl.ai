@@ -3,7 +3,7 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/launch/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "launch_tick.py lines 28 to 58, flown_watched and the cells, without the count still waiting",
@@ -14,22 +14,22 @@
  "desk": "launch",
  "inputs": [
   {
-   "bytes": 2163509,
+   "bytes": 2427958,
    "gzip_added": true,
-   "modified": "2026-11-10T23:21:42Z",
+   "modified": "2026-11-12T16:04:32Z",
    "path": "data/snapshots.jsonl",
-   "sha256": "45e914bfbbfeabf63bb5a0f05c003c1a3cf2d0243040461d7e464930825159a8",
+   "sha256": "6b9b362045e35766adcff30ff4cb1833edfce4bc73469b87dcbd9c8e0c7f7f54",
    "stored": "data/snapshots.jsonl.gz",
-   "stored_sha256": "8803278f44281e87ea7e94c3cd0eac8d1e5915966e5cb0ec037a7300c6c690ab"
+   "stored_sha256": "e7c978be3ed65813755f659d463f7a72cbf38900675d534a6afb46639a4c3336"
   }
  ],
- "made": "2026-11-11T00:08:46Z",
+ "made": "2026-11-12T16:06:22Z",
  "mode": "fetch",
  "name": "LAUNCH",
  "reference": [
   {
    "path": "desk/launch_tick.py",
-   "sha256": "dfb9a0348d32dca6f7b42cd01e9685a8a2d785343f5adb726930d25386f28d3f"
+   "sha256": "86b2f3c50f19037e9ef8a297ef4af2b97bf26d6ddea1796da007d35bf2d1dbeb"
   }
  ],
  "sources": [

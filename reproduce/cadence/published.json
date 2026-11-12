@@ -1,9 +1,9 @@
 {
  "feed": "https://indahl.ai/cadence/live.json",
- "feed_sha256": "0dbfb20b236c662318a075fa701520d6bb2e028c009ad2dd7a70cbcb47bccf35",
+ "feed_sha256": "5bf71d8281ccd92db1fa65b38d7e1f2f8e840c726955f3c97f78cfd8fd6f2c37",
  "headline": {
   "desk": "CADENCE",
-  "display": "15.8 years (5,782 days)",
+  "display": "15.8 years (5,784 days)",
   "hi": null,
   "keys": [
    "GC Guidance/Opinions",
@@ -13,8 +13,8 @@
   "n": null,
   "of": null,
   "outcome": null,
-  "value": 5782
+  "value": 5784
  },
- "read_at": "2026-11-11T00:08:50Z",
- "stamp": "11 Nov 00:00"
+ "read_at": "2026-11-12T16:06:25Z",
+ "stamp": "12 Nov 16:04"
 }

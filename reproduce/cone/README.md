@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/cone/live.json served it at the feed stamp 2026-11-10T20:42:24Z, read by us at 2026-11-10T23:47:11Z. The feed bytes had sha256 `dd399cc8c02c359cbd9799e810bda286ee617c0ec3ed7c2a0e9bca125c2509ac`.
+The headline as the live feed https://indahl.ai/cone/live.json served it at the feed stamp 2026-11-12T14:40:02Z, read by us at 2026-11-12T16:06:28Z. The feed bytes had sha256 `6a375090c6a9325af6acafbbb6696e1d9aef1077b00ffe669f19b4ce3e2ebee0`.
 
 - number: 697 of 1,315
 - value: 0.53
@@ -40,7 +40,7 @@ As the CONE data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/cone.json | 17,222,482 | `b26067843e788aa35730fad24ba4c004f5c6209b5bc6002367a82cf7c34e4ab1` |
+| data/cone.json | 19,796,944 | `a266b7e37bf32d1419fb9e46e35086ce573d2fa7a5a55680c96ceff67d05034d` |
 
 ## Code
 

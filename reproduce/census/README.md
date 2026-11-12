@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/census/live.json served it at the feed stamp 2026-11-11T15:35:42Z, read by us at 2026-11-11T15:46:07Z. The feed bytes had sha256 `ad25736426e1f848be929cb5ccf9ce09cf7bbc98178d7ee8fe3d2b6bad527d49`.
+The headline as the live feed https://indahl.ai/census/live.json served it at the feed stamp 2026-11-12T06:37:20Z, read by us at 2026-11-12T16:06:34Z. The feed bytes had sha256 `5b9df188ba16756909d46c6b46e1fd7bc3830b770292c067f23850211b63698f`.
 
 - number: 117 of 117
 - value: 1.0
@@ -38,8 +38,8 @@ As the CENSUS data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/census.json | 1,842,818 | `42188e2dc0e1fa9bd3dd4a5b45bda9ca83aac676f8f59e5bdf45727feb927057` |
-| summary_census.json | 54,003 | `0dd525e2e590a27475cb7db5104542f7644a7aac921b6bc87826bba5b17dcd2c` |
+| data/census.json | 1,934,936 | `c1cd20d37deaf3cc4b48876b4fe77c8750dc5a624a40f5ba0b3aef2e2b6dbe40` |
+| summary_census.json | 66,668 | `30482f5d28f33ad4aa21d3ae21961d82dccacbe14f7fcd76366fc6cddb814fdb` |
 
 ## Code
 

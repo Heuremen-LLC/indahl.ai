@@ -10,15 +10,15 @@ This kit recomputes the SOLAR headline number and its outcome label with the des
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `336e3ae79281b594f30b1ad6497dcf7103702986d2f9ee016b672e787bd5fa9c`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `815650f7fe3e788b8c763be25e95f09e136e9c376d27b5d7209a214f9d26bdf9`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/solar/live.json served it at the feed stamp 2026-11-10T20:42:24Z, read by us at 2026-11-11T00:11:29Z. The feed bytes had sha256 `568bb531c40726e8472a3d7eb7905f50c16f1d247384a767e3fe746634d0480b`.
+The headline as the live feed https://indahl.ai/solar/live.json served it at the feed stamp 2026-11-12T14:40:02Z, read by us at 2026-11-12T16:05:09Z. The feed bytes had sha256 `92ee9a367a8e334bfc30827a77251681a7941033fa9ce79f8b797ac53bff9075`.
 
 - number: 4 of 8
 - value: 0.2683
-- interval: 0.2086 to 0.3225
+- interval: 0.2049 to 0.3209
 - outcome: ABOVE
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -45,18 +45,18 @@ As the SOLAR data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/solar_live.json | 55,968 | `568bb531c40726e8472a3d7eb7905f50c16f1d247384a767e3fe746634d0480b` |
+| data/solar_live.json | 65,393 | `e1e1fba360144b94e00c173f5bf2f2d21aec786e0b3eac3d7e115e486779dadc` |
 | data/raw/SPE.txt | 29,502 | `c75b901b1509ab15635978e11d0fc8ebfc2f02237c05f75c1d96fafab4796c5d` |
-| data/raw/SPE_listing.json | 53 | `cb42785564dbccc37bd4734b185dc15602119507a33e02713456436bfb9fa177` |
-| data/raw/gfz/Kp_ap_Ap_SN_F107_since_1932.txt | 5,512,465 | `83d91dae47f3769da8965c79a241a5fb7c845680249f1cdac6b1704a57f30cd5` |
+| data/raw/SPE_listing.json | 53 | `f71dff6fd46b33cd4cf92449d357606cef328ddea85061e2153bb79dab72f2f8` |
+| data/raw/gfz/Kp_ap_Ap_SN_F107_since_1932.txt | 5,512,783 | `493dde1328c240a9a5095074d4b1f5148259b3a0f0764995fff0b1faf232ff2b` |
 | data/raw/indices/2026Q1_DGD.txt | 10,598 | `16ae9ae600363499d6a3d7f3da34dd5a882783b487265fb92496d83dfbc9034c` |
 | data/raw/indices/2026Q1_DSD.txt | 7,478 | `90ccec9a394f4c3bd3f25f763b1e1e514836488579bcda886177818b8e4ca097` |
 | data/raw/indices/2026Q2_DGD.txt | 10,710 | `d5848aeb96d20ce521feca8dbf8bec8a780d56f539db7a14dda5e6fe51f0e715` |
 | data/raw/indices/2026Q2_DSD.txt | 7,554 | `4e2ff15c167b0e7e004cf2258cbd6f44505cda1d94867d3523a8eab9fde4a061` |
 | data/raw/indices/2026Q3_DGD.txt | 10,822 | `0349ea0cc18e03aec3c4514f33c2e1d9aac55dd543cd4c669d06a74bc4a3e4f7` |
 | data/raw/indices/2026Q3_DSD.txt | 7,630 | `7365132e4283d2d4152e68183e92ea6ff38297e8d95cad49205aab8f92f31e2f` |
-| data/raw/indices/2026Q4_DGD.txt | 5,110 | `2fe004aa45f92f3fe9666d8a7faf1aa286f26d7d4f7af60bf0c9431b8d79f9dd` |
-| data/raw/indices/2026Q4_DSD.txt | 3,678 | `5e151bcd0bd94ea74cc79d6dd8ff682dee22a835a48e6725ce4fc6b3bd9f351f` |
+| data/raw/indices/2026Q4_DGD.txt | 5,334 | `1b36a77b404365c644ef5f50dbd2587b5a778cc1063dbd40b170c3fda20eab3f` |
+| data/raw/indices/2026Q4_DSD.txt | 3,830 | `5c54cc5be461b4cf4906ce98c0d77e83af0ae314725aaf461d75ceef8149a189` |
 | data/raw/warehouse/2021_DGD.txt | 29,707 | `3564c4a3cbca4fb5cfcd58b771e12eae60700d3391e20a4e56f460ebd9ca6678` |
 | data/raw/warehouse/2021_DSD.txt | 28,372 | `2f6120a387d73bd291d4e2775d9e26ace7675382228f60106d739999f51d2c9c` |
 | data/raw/warehouse/2021_RSGA.tar.gz | 70,825 | `912d195d9163ed4bc3f73f891ab90fe75d7c1a7d78e66156dab15ef42e8c43c2` |
@@ -393,6 +393,8 @@ As the SOLAR data pack lists them. Credit each source when you use its values.
 | data/raw/warehouse/2026_RSGA/20261107RSGA.txt | 2,028 | `0766fd517213ecf8d57abd61c60479de5f6042d6428696e2a53160422adc5dd8` |
 | data/raw/warehouse/2026_RSGA/20261108RSGA.txt | 1,938 | `d44128a601e87857ea0bc7018a4b84cd67a2b2a65b7faa7b09c79c8219b2ebc5` |
 | data/raw/warehouse/2026_RSGA/20261109RSGA.txt | 2,085 | `82cf12c8c65d26f16b63dc7901dcdeb9c9d043d159b25817c9f7e3ff2ca315ad` |
+| data/raw/warehouse/2026_RSGA/20261110RSGA.txt | 2,004 | `2e78ca3481790d1d69504a77437afff372e9396c6ea5c55579c298465d73c5a2` |
+| data/raw/warehouse/2026_RSGA/20261111RSGA.txt | 1,851 | `7439da5420157fc24536579a40091ee92546255216ea8354ef6e2f1e422a93bc` |
 | data/raw/warehouse/2026_events/20251229events.txt | 2,871 | `baf5bc34de4c49766199a51ad534858c8a3e254e95fe99c401fa89635474bade` |
 | data/raw/warehouse/2026_events/20251230events.txt | 1,723 | `f57d2dd085e8f706d65df367d8362385253284a03373d5833177ce7af1d71f48` |
 | data/raw/warehouse/2026_events/20251231events.txt | 3,591 | `e60800f552345a3f1be9e60c9f8afdc1dc0ddba6dfeaf468689c09b7e16b2e44` |
@@ -709,8 +711,16 @@ As the SOLAR data pack lists them. Credit each source when you use its values.
 | data/raw/warehouse/2026_events/20261107events.txt | 3,686 | `fe109d6c8ee0951a4fe4ecd588bb8782b55f68bf41d64d9e690b2b7055cde3c7` |
 | data/raw/warehouse/2026_events/20261108events.txt | 4,503 | `5d3f4a03569bd0e085bc0351263d5bed0e3d185a0cca317d31b45af290ac652a` |
 | data/raw/warehouse/2026_events/20261109events.txt | 2,788 | `9219854f7b2aa5f37c4ada0d88db440cb57b50fd3efd852ff82fe6560fa21ad9` |
+| data/raw/warehouse/2026_events/20261110events.txt | 2,624 | `539f054eb2b966e72832d78716068ebbd55004ce774276d40a56628e5adf59e7` |
+| data/raw/warehouse/2026_events/20261111events.txt | 2,134 | `4018353e2cdcfb97ae012f933b8cb904a24757f120a39574dbee7affdd3fb685` |
 | data/snapshots/20261110T142614Z_sgarf.txt.gz | 1,045 | `1cb27619acaf298e1025f476997382ebd4fe07ecacf6f97198b72e86d93bbfc4` |
 | data/snapshots/20261110T204224Z_sgarf.txt.gz | 1,045 | `216db65c6e15cb2f4b8a7f248551ad6643bd0eb575dd1e5da1ba5c04f8c7be1b` |
+| data/snapshots/20261111T033236Z_sgarf.txt.gz | 980 | `d5554c7079447503dd38044614f87f669048d981b0b2461d42b1cf250165174f` |
+| data/snapshots/20261111T095331Z_sgarf.txt.gz | 980 | `3400d6f51f086a428726b180d3a4662a34f782a753ab40210ac6469c4eb1c015` |
+| data/snapshots/20261111T162929Z_sgarf.txt.gz | 980 | `a8f732e7df8a041b9bf2590da65c86db2e064695ebb57e78952556fbb13420b2` |
+| data/snapshots/20261111T230240Z_sgarf.txt.gz | 929 | `491ef23f7345712e2a7915bb5d3e7ca7e913b2d64bbb4a8d138fe90acbc43209` |
+| data/snapshots/20261112T054309Z_sgarf.txt.gz | 929 | `c7cb9f27555efcce19c26b9b204939522e19e3a2d413139eb6329428f7e7ca5f` |
+| data/snapshots/20261112T123040Z_sgarf.txt.gz | 929 | `4d51c55cdf451d8414bb91000df3c0eae62fa12f8177037d5286ccfe6249b35a` |
 | data/known_good_rows.json | 695 | `74319a43d089de3408e43377184d075f20e069284a1131b697494d7bd57725dd` |
 | PLAN.md | 15,226 | `8bfab1ad7806909eadecda292d5c02b59db16f439a80b432e6fd805c5fffb0f6` |
 | data/plan_seal.json | 241 | `df6ae8a62d82f6155cc6b8fb8da02eb128588fb5e296a6db510ed04adf6ddadd` |

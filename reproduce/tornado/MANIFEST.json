@@ -3,12 +3,12 @@
   {
    "path": "tornado_tick.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tornado/tornado_tick.py",
-   "sha256": "76026c4f44b38129397077108fc562413a433711b178ac17bbb4b076e486506a"
+   "sha256": "8b8740e40b7d0f983a62af1228153b73939b6b86529704441574904fbef3d51d"
   },
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tornado/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "path": "shpread.py",
@@ -24,13 +24,13 @@
  "desk": "tornado",
  "inputs": [
   {
-   "bytes": 29041,
+   "bytes": 34892,
    "gzip_added": true,
-   "modified": "2026-11-10T19:52:26Z",
+   "modified": "2026-11-12T15:33:07Z",
    "path": "data/tornado_live.json",
-   "sha256": "053f96211cbe941f2cf415d591da7fa0521581e3a55c653072509cdcfeb3faf6",
+   "sha256": "5ad7f87f765b06d456e4a339d4a5be86c5a8c1080d710e076b2350a235beed3e",
    "stored": "data/tornado_live.json.gz",
-   "stored_sha256": "7c31246ee9608dd94bfff89ee173c6ad90b6ee89b833612de07d2772eb11274e"
+   "stored_sha256": "ebaec2f2ec6213d596a68237217d88be031a8899ff1ccd8d5dbbf81eccbc26ec"
   },
   {
    "bytes": 187671,
@@ -267,13 +267,13 @@
    "stored_sha256": "dd4da36a8f8ae436fdb3e7129d2e8005936208f8876f4c00eb236fa925eb3a6d"
   },
   {
-   "bytes": 1485652,
+   "bytes": 1490595,
    "gzip_added": false,
-   "modified": "2026-11-10T14:44:25Z",
+   "modified": "2026-11-12T14:27:53Z",
    "path": "data/raw/outlooks/day1_2026.zip",
-   "sha256": "472ed8494e21eca59a197d6a95a318c489c0bf0c2083faae78e95f9df3631a80",
+   "sha256": "8effb2cd2ce51c07771ec935b7f3f32d054d315c0fbd3ef108d1acf4038a274e",
    "stored": "data/raw/outlooks/day1_2026.zip",
-   "stored_sha256": "472ed8494e21eca59a197d6a95a318c489c0bf0c2083faae78e95f9df3631a80"
+   "stored_sha256": "8effb2cd2ce51c07771ec935b7f3f32d054d315c0fbd3ef108d1acf4038a274e"
   },
   {
    "bytes": 276,
@@ -2924,7 +2924,7 @@
   {
    "bytes": 276,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:02Z",
+   "modified": "2026-11-11T13:57:57Z",
    "path": "data/raw/prelim/20261022.csv",
    "sha256": "cb0b58b8dc6abee3ee410288ba1ca6ee45d54576c2802894c4c54914d7c9dc6d",
    "stored": "data/raw/prelim/20261022.csv.gz",
@@ -2933,7 +2933,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:03Z",
+   "modified": "2026-11-12T14:27:56Z",
    "path": "data/raw/prelim/20261023.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261023.csv.gz",
@@ -2942,7 +2942,7 @@
   {
    "bytes": 408,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:05Z",
+   "modified": "2026-11-12T14:27:58Z",
    "path": "data/raw/prelim/20261024.csv",
    "sha256": "d98caa1068269623a436afbafb9ca878cd3dc9a4c058e453359f2d858ecf2ee2",
    "stored": "data/raw/prelim/20261024.csv.gz",
@@ -2951,7 +2951,7 @@
   {
    "bytes": 406,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:07Z",
+   "modified": "2026-11-12T14:28:00Z",
    "path": "data/raw/prelim/20261025.csv",
    "sha256": "8b4847ad4aeb352200c17aa72d7bd2d8bf3e08cc5fb1dad4d71bfa0ad66cb79a",
    "stored": "data/raw/prelim/20261025.csv.gz",
@@ -2960,7 +2960,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:09Z",
+   "modified": "2026-11-12T14:28:02Z",
    "path": "data/raw/prelim/20261026.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261026.csv.gz",
@@ -2969,7 +2969,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:11Z",
+   "modified": "2026-11-12T14:28:03Z",
    "path": "data/raw/prelim/20261027.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261027.csv.gz",
@@ -2978,7 +2978,7 @@
   {
    "bytes": 253,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:13Z",
+   "modified": "2026-11-12T14:28:05Z",
    "path": "data/raw/prelim/20261028.csv",
    "sha256": "09f995c1a8cd0051542610fc260f9cb0cf0dd7dd4bedf3d1047379e1c5a841cc",
    "stored": "data/raw/prelim/20261028.csv.gz",
@@ -2987,7 +2987,7 @@
   {
    "bytes": 1166,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:14Z",
+   "modified": "2026-11-12T14:28:07Z",
    "path": "data/raw/prelim/20261029.csv",
    "sha256": "8e5b35dda263371756e6a1588607f0afe4abaf7964bd3de2245b281160776cc6",
    "stored": "data/raw/prelim/20261029.csv.gz",
@@ -2996,7 +2996,7 @@
   {
    "bytes": 271,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:16Z",
+   "modified": "2026-11-12T14:28:09Z",
    "path": "data/raw/prelim/20261030.csv",
    "sha256": "0b0cf97747f8bfa8b6aae3dafe233d6a4f49e7a706f3297fc3f6834852451783",
    "stored": "data/raw/prelim/20261030.csv.gz",
@@ -3005,7 +3005,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:18Z",
+   "modified": "2026-11-12T14:28:10Z",
    "path": "data/raw/prelim/20261031.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261031.csv.gz",
@@ -3014,7 +3014,7 @@
   {
    "bytes": 268,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:20Z",
+   "modified": "2026-11-12T14:28:12Z",
    "path": "data/raw/prelim/20261101.csv",
    "sha256": "5f6854f852f6f8cc3c7dfb8973f88fe21356d6d9984a1d1f6a3596e69b924add",
    "stored": "data/raw/prelim/20261101.csv.gz",
@@ -3023,7 +3023,7 @@
   {
    "bytes": 713,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:22Z",
+   "modified": "2026-11-12T14:28:14Z",
    "path": "data/raw/prelim/20261102.csv",
    "sha256": "e06582bb74f3ccee74a57ac03a953f792230f3e20067ef8acec3e0e584dc9f6a",
    "stored": "data/raw/prelim/20261102.csv.gz",
@@ -3032,7 +3032,7 @@
   {
    "bytes": 490,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:23Z",
+   "modified": "2026-11-12T14:28:16Z",
    "path": "data/raw/prelim/20261103.csv",
    "sha256": "a0da55406faf2ba716791f8a55f27c0d91b9c940f2fe7c6d07765e72743c41f8",
    "stored": "data/raw/prelim/20261103.csv.gz",
@@ -3041,7 +3041,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:25Z",
+   "modified": "2026-11-12T14:28:17Z",
    "path": "data/raw/prelim/20261104.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261104.csv.gz",
@@ -3050,7 +3050,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:27Z",
+   "modified": "2026-11-12T14:28:19Z",
    "path": "data/raw/prelim/20261105.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261105.csv.gz",
@@ -3059,7 +3059,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:28Z",
+   "modified": "2026-11-12T14:28:21Z",
    "path": "data/raw/prelim/20261106.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261106.csv.gz",
@@ -3068,7 +3068,7 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:30Z",
+   "modified": "2026-11-12T14:28:23Z",
    "path": "data/raw/prelim/20261107.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261107.csv.gz",
@@ -3077,10 +3077,19 @@
   {
    "bytes": 52,
    "gzip_added": true,
-   "modified": "2026-11-10T14:40:32Z",
+   "modified": "2026-11-12T14:28:24Z",
    "path": "data/raw/prelim/20261108.csv",
    "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
    "stored": "data/raw/prelim/20261108.csv.gz",
+   "stored_sha256": "8bd2219d4cf628dc278e1ab947d9b4fc6c31711c6539cb3c5e8d40add97d7e1b"
+  },
+  {
+   "bytes": 52,
+   "gzip_added": true,
+   "modified": "2026-11-12T06:11:00Z",
+   "path": "data/raw/prelim/20261109.csv",
+   "sha256": "8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d",
+   "stored": "data/raw/prelim/20261109.csv.gz",
    "stored_sha256": "8bd2219d4cf628dc278e1ab947d9b4fc6c31711c6539cb3c5e8d40add97d7e1b"
   },
   {
@@ -3264,18 +3273,18 @@
    "stored_sha256": "817cdaed06c8ea1a46b2172600bcdc327908a7829f3dd866577bd6b85547605d"
   },
   {
-   "bytes": 79626,
+   "bytes": 80225,
    "gzip_added": true,
-   "modified": "2026-11-10T14:49:08Z",
+   "modified": "2026-11-12T14:28:27Z",
    "path": "data/raw/warnings/to_fy2027.geojson",
-   "sha256": "1f2ee8450149518f39b7f0acfc853a8af8f649a31774a115451488c8e8421d52",
+   "sha256": "bff076169cdb83ba500183cbb8eec0ddabd19428cebec9c824b7c764b0ff5480",
    "stored": "data/raw/warnings/to_fy2027.geojson.gz",
-   "stored_sha256": "a4afd65350f841f196874c9ffda9e23eaee9681ca6958c177044fbeed216caee"
+   "stored_sha256": "fbf245e8cb858b544409edcf977092b6b8448499e2f6097a012a0b7a8d5c3eba"
   },
   {
    "bytes": 71094,
    "gzip_added": true,
-   "modified": "2026-11-10T19:52:08Z",
+   "modified": "2026-11-12T15:32:56Z",
    "path": "data/cache/pointcheck.json",
    "sha256": "3cb9b911d701d60eba2e632275b426acf4f50866ac936d8fa9a21034f140b1b9",
    "stored": "data/cache/pointcheck.json.gz",
@@ -3300,7 +3309,7 @@
    "stored_sha256": "e1458ede2919477c9df59ec715ba544446b0a778ba653a47b6d45460daa4a5f0"
   }
  ],
- "made": "2026-11-11T00:12:56Z",
+ "made": "2026-11-12T16:06:46Z",
  "mode": "fetch",
  "name": "TORNADO",
  "reference": [],

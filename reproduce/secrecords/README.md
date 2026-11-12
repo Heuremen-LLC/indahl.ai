@@ -10,15 +10,15 @@ This kit recomputes the SECRECORDS headline number and its outcome label with th
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `f397b97dc18702fc57548b4902753a352a640f5e7e1ed96301dce9e9f1727456`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `73ae7a2326190eb4a2b8fc9537d11223f609814674fc53b60dcd7e77b6a85cfa`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 11 Nov 11:35, read by us at 2026-11-11T12:25:18Z. The feed bytes had sha256 `06bd2c7741a201390982d1a3bf5537cb16af2097d5b18f82875fcfcf455ff4b0`.
+The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 12 Nov 14:59, read by us at 2026-11-12T16:06:17Z. The feed bytes had sha256 `ea49e64f2ec70100eb10aa9ce93ed06a672fb0962532de4fee19638dce9e0aa8`.
 
-- number: 14%
-- value: 0.1448
-- interval: 0.0967 to 0.2113
+- number: 15%
+- value: 0.1458
+- interval: 0.0974 to 0.2127
 - outcome: CANNOT_TELL
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -43,8 +43,8 @@ As the SECRECORDS data pack lists them. Credit each source when you use its valu
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/domains.json | 368,119 | `6d7ba719d2bdda0a73fbcd9ee00bf3e9142fc1f11a950cc588c9087ee4d78db0` |
-| summary_secrecords.json | 15,164 | `06bd2c7741a201390982d1a3bf5537cb16af2097d5b18f82875fcfcf455ff4b0` |
+| data/domains.json | 367,996 | `77330e00779eb81049f78245d84baf3b779a1b14bc6001ecb7eb3af73d5e2cea` |
+| summary_secrecords.json | 15,911 | `ca7914f713c26f093fe2faeb2b79c3fcda375e0e4e3983286bf596dd7605211a` |
 
 ## Code
 

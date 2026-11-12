@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/water/live.json served it at the feed stamp 2026-11-10 23:45, read by us at 2026-11-10T23:47:10Z. The feed bytes had sha256 `191bbac7e53ef4e224af186706e537d8067cc3a4d3fea1a93744c9fd165c58b7`.
+The headline as the live feed https://indahl.ai/water/live.json served it at the feed stamp 2026-11-12 15:58, read by us at 2026-11-12T16:06:27Z. The feed bytes had sha256 `2fde04377b5b32318be6752e852f96e8ac5aa73ecac5ee321961171711f4a081`.
 
 - number: 42 of 83
 - value: 0.51
@@ -40,8 +40,8 @@ As the WATER data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/water.json | 4,865,707 | `1f76558219068b0eaec7203706e7db1383034432a432e0f1dfdc34adabd49119` |
-| summary_water.json | 176,651 | `21338e3ee82b0c749c3cf15b626d22207d7605637132e7528611f519e0063e9a` |
+| data/water.json | 5,278,423 | `24acba733746253260d2447fa74219eab10bfc593ed07ae9b2a4ccb47c32cde8` |
+| summary_water.json | 228,645 | `2df31d8dbf2f879bffbbb32bab78ce5e6e3a7045ea4c7e0d5903470f03ad4bc3` |
 
 ## Code
 

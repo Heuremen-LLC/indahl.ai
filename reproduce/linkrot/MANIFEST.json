@@ -3,7 +3,7 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/linkrot/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "linkrot_tick.py lines 84 to 92 and 101, the cell and combined functions and the all cell",
@@ -14,31 +14,31 @@
  "desk": "linkrot",
  "inputs": [
   {
-   "bytes": 421524,
+   "bytes": 481569,
    "gzip_added": true,
-   "modified": "2026-11-06T14:39:05Z",
+   "modified": "2026-11-12T03:32:11Z",
    "path": "data/links.json",
-   "sha256": "c12550b30a1bf847e64db5d9501c8ccdee9c239c1306f56f48ba6219f8698f04",
+   "sha256": "2a8951301a1173108a3211c5610084a944ce7557c55915a9e4b7d74ab27592d0",
    "stored": "data/links.json.gz",
-   "stored_sha256": "2cda2f08507a2e9587db055f1c6206cb03dee0709239c0de8b6f453d11ad1ba2"
+   "stored_sha256": "5726c21386ca6b47f3b214789ce8855928e74d38c68bf70825d62553d99e66d5"
   },
   {
-   "bytes": 6855,
+   "bytes": 13656,
    "gzip_added": true,
-   "modified": "2026-11-10T23:50:30Z",
+   "modified": "2026-11-12T16:04:35Z",
    "path": "summary_linkrot.json",
-   "sha256": "01090048b6954d51af096ba875583621598b07fd758d471964fc29bc93afc23f",
+   "sha256": "9334903fdeee2a2acf0f3a94f3eb527ad3dbf5837707e20581e7a09e511348db",
    "stored": "summary_linkrot.json.gz",
-   "stored_sha256": "2b20dc51989793d501de7df7ace264595adb377a0989ba8e2a9281f3573414fa"
+   "stored_sha256": "fe029046eca27de3d2f154e388a7e03fc3f217b1e6bfdee6df77e03411ef9ce7"
   }
  ],
- "made": "2026-11-11T00:08:39Z",
+ "made": "2026-11-12T16:06:15Z",
  "mode": "inputs",
  "name": "LINKROT",
  "reference": [
   {
    "path": "desk/linkrot_tick.py",
-   "sha256": "aeae7fc1404b8d4ae2eda75f93ef7a3b6885a5d58328bfe4d0862b5e7cca6327"
+   "sha256": "50b9bece2832348c4113104486b1c8d267c3054a584bd2bf277bb9803ec71341"
   }
  ]
 }

@@ -29,10 +29,9 @@ def qf(s):
 # ---------------- the rule (PLAN.md, Rules) ----------------
 def row_outcome(lo, hi, y, unreadable=False):
     if unreadable or lo is None or hi is None or lo > hi: return K.CANNOT_TELL, 'unreadable'
-    if y is None: return K.NOTHING_RETURNED, None
-    if y > hi: return K.ABOVE, None
-    if y < lo: return K.BELOW, None
-    return K.CONSISTENT, None
+    if y is None: return K.NOTHING_RETURNED, None   # a status of the read of the source (no reported value yet), listed apart, never a cell outcome (PLAN_ADDENDUM_std2.md)
+    o, _r, _d = K.read_exact(y, band=(lo, hi))   # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): a row is an exact read against a published band, zero width, edges closed
+    return o, None
 def wis(q, y):
     """q: dict level text -> value (all 23). y: reported. (0.5|y-m| + sum (alpha/2) IS_alpha) / 11.5 over the 11 central intervals."""
     m = q['0.5']; tot = 0.5 * abs(y - m)
@@ -41,18 +40,14 @@ def wis(q, y):
         s = (u - l) + (2 / alpha) * max(0.0, l - y) + (2 / alpha) * max(0.0, y - u)
         tot += alpha / 2 * s
     return tot / 11.5
-def cov_outcome(lo, hi, p, n, weeks):
-    if n < MIN_ROWS or weeks < MIN_WEEKS or lo is None: return K.CANNOT_TELL
-    if hi < p: return K.BELOW
-    if lo > p: return K.ABOVE
-    if hi - lo <= MAX_W_COV: return K.CONSISTENT
-    return K.CANNOT_TELL
-def wis_outcome(lo, hi, n, weeks):
-    if n < MIN_ROWS or weeks < MIN_WEEKS or lo is None: return K.CANNOT_TELL
-    if hi < 1: return K.BELOW
-    if lo > 1: return K.ABOVE
-    if hi - lo <= MAX_W_WIS: return K.CONSISTENT
-    return K.CANNOT_TELL
+def _cell_read(lo, hi, bound, n, weeks):
+    # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): a point figure with no tolerance (the stated level, or 1 for the WIS ratio). No CONSISTENT, the width caps no longer decide.
+    # Returns (outcome, reason). No interval is NO_INTERVAL_FORMABLE, under the minimum sample is TOO_WIDE_TO_RESOLVE, otherwise K.read with bound.
+    if lo is None or hi is None: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < MIN_ROWS or weeks < MIN_WEEKS: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, bound=bound)
+def cov_outcome(lo, hi, p, n, weeks): return _cell_read(lo, hi, p, n, weeks)
+def wis_outcome(lo, hi, n, weeks): return _cell_read(lo, hi, 1.0, n, weeks)
 def draws(W, reps=REPS, seed=SEED):
     """Moving-block bootstrap over W sorted target weeks: a (reps x W) matrix of how often each week enters a replicate."""
     rng = np.random.default_rng(seed); M = np.zeros((reps, W), dtype=np.int32)
@@ -73,11 +68,11 @@ def rule_selftest():
     q = {k: 10.0 for k in QS}; t.append(abs(wis(q, 12) - 2.0) < 1e-12); t.append(abs(wis(q, 10) - 0.0) < 1e-12)
     # planted worlds: normal(0,1) outcomes, calibrated intervals vs half-width intervals; weeks of 50 rows, 120 weeks
     rng = np.random.default_rng(7); W = 120; M = draws(W, 500, 3); y = rng.standard_normal((W, 50))
-    for half, want in ((1.0, K.CONSISTENT), (0.5, K.BELOW)):
+    for half, want in ((1.0, (K.CANNOT_TELL, K.STRADDLES_EDGE)), (0.5, (K.BELOW, None))):   # 12 Nov 2026: calibrated intervals hold the stated level, no tolerance, so STRADDLES_EDGE (no CONSISTENT)
         z = 1.959964 * half; ins = (np.abs(y) <= z).sum(1).astype(float); n = np.full(W, 50.0)
         lo, hi = boot_ratio(ins, n, M); t.append(cov_outcome(lo, hi, 0.95, W * 50, W) == want)
-    t += [cov_outcome(0.90, 0.99, 0.95, 20, 20) == K.CANNOT_TELL, cov_outcome(0.90, 0.99, 0.95, 100, 5) == K.CANNOT_TELL, cov_outcome(0.80, 0.99, 0.95, 100, 20) == K.CANNOT_TELL,
-          cov_outcome(0.96, 0.99, 0.95, 100, 20) == K.ABOVE, wis_outcome(0.6, 0.9, 100, 20) == K.BELOW, wis_outcome(1.1, 1.2, 100, 20) == K.ABOVE, wis_outcome(0.9, 1.05, 100, 20) == K.CONSISTENT]
+    t += [cov_outcome(0.90, 0.99, 0.95, 20, 20) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE), cov_outcome(0.90, 0.99, 0.95, 100, 5) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE), cov_outcome(0.80, 0.99, 0.95, 100, 20) == (K.CANNOT_TELL, K.STRADDLES_EDGE),
+          cov_outcome(0.96, 0.99, 0.95, 100, 20) == (K.ABOVE, None), cov_outcome(None, None, 0.95, 100, 20) == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE), wis_outcome(0.6, 0.9, 100, 20) == (K.BELOW, None), wis_outcome(1.1, 1.2, 100, 20) == (K.ABOVE, None), wis_outcome(0.9, 1.05, 100, 20) == (K.CANNOT_TELL, K.STRADDLES_EDGE)]
     return all(t), t
 if '--selftest' in sys.argv:
     ok, t = rule_selftest(); print('rule selftest', 'PASSED' if ok else 'FAILED', t); sys.exit(0 if ok and K.selftest() else 1)
@@ -159,7 +154,8 @@ for (rd, loc, h), v in sorted(stated.items()):
             if side == 'first' and d['first_why'] and d['final'] is not None: o, why = K.CANNOT_TELL, d['first_why']
             else: o, why = row_outcome(lo, hi, None if bad else y, unreadable=bad)
             row['o%s_%s' % (L, side)] = o
-            if why: row['why%s_%s' % (L, side)] = why
+            if why: row['why%s_%s' % (L, side)] = why   # the desk's own words (unreadable, no early release), kept as detail
+            if o == K.CANNOT_TELL: row['r%s_%s' % (L, side)] = K.NO_INTERVAL_FORMABLE   # PLAN_ADDENDUM_std2.md: both causes mean no reading can be formed
     allq = all(q.get(k) is not None for k in QS) and all(q[QS[i]] <= q[QS[i + 1]] for i in range(22)) if all(q.get(k) is not None for k in QS) else False
     bq = (base.get((rd, loc, h)) or {}).get('q', {})
     ball = all(bq.get(k) is not None for k in QS) and all(bq[QS[i]] <= bq[QS[i + 1]] for i in range(22)) if all(bq.get(k) is not None for k in QS) else False
@@ -192,7 +188,7 @@ kg['rule'] = rule_selftest()[0]
 GATE = all(kg.values())
 if not GATE:
     for r in rows:
-        for k in [k for k in r if k.startswith('o') and '_' in k and r[k] in K.OUTCOMES]: r[k + '_before_gate'] = r[k]; r[k] = K.CANNOT_TELL
+        for k in [k for k in r if k.startswith('o') and '_' in k and r[k] in K.OUTCOMES]: r[k + '_before_gate'] = r[k]; r[k] = K.CANNOT_TELL; r['r' + k[1:]] = K.NO_INTERVAL_FORMABLE
 
 # ---------------- 5. cells ----------------
 weeks = sorted({r['week'] for r in rows if r['o95_final'] in (K.CONSISTENT, K.ABOVE, K.BELOW) or r['o95_first'] in (K.CONSISTENT, K.ABOVE, K.BELOW)})
@@ -208,15 +204,18 @@ def cov_cell(name, rs, L, side):
     sc = [r for r in rs if r[key] in (K.CONSISTENT, K.ABOVE, K.BELOW)]; n = len(sc); k = cnt[K.CONSISTENT]; wk = len({r['week'] for r in sc})
     lo, hi = boot_ratio(per_week(sc, lambda r: r[key] == K.CONSISTENT), per_week(sc, lambda r: 1.0), M) if n else (None, None)
     zw = sum(1 for r in sc if r['lo50'] is not None and r['lo50'] == r['hi50'])
+    oc, rs_ = cov_outcome(lo, hi, p, n, wk) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
+    r13 = K.req13([(r[key], r.get('r' + key[1:])) for r in rs if r[key] != K.NOTHING_RETURNED], nothing_returned=cnt[K.NOTHING_RETURNED])   # REQ-13: rows of the cell, failed reads (no reported value yet) apart
     return dict(cell=name, level=L, side=side, stated=p, rows=len(rs), scored=n, inside=k, above=cnt[K.ABOVE], below=cnt[K.BELOW], cannot_tell=cnt[K.CANNOT_TELL], cannot_tell_why={str(a): b for a, b in why.items()},
                 nothing_returned=cnt[K.NOTHING_RETURNED], weeks=wk, share=round(k / n, 4) if n else None, share_above=round(cnt[K.ABOVE] / n, 4) if n else None, share_below=round(cnt[K.BELOW] / n, 4) if n else None,
-                lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), zero_width_50=zw, outcome=cov_outcome(lo, hi, p, n, wk) if GATE else K.CANNOT_TELL)
+                lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), zero_width_50=zw, outcome=oc, reason=rs_, req13=r13)
 def wis_cell(name, rs, side):
     sc = [r for r in rs if ('wis_ens_' + side) in r]; n = len(sc); wk = len({r['week'] for r in sc})
     e = sum(r['wis_ens_' + side] for r in sc); b = sum(r['wis_base_' + side] for r in sc)
     lo, hi = boot_ratio(per_week(sc, lambda r: r['wis_ens_' + side]), per_week(sc, lambda r: r['wis_base_' + side]), M) if n else (None, None)
+    oc, rs_ = wis_outcome(lo, hi, n, wk) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
     return dict(cell=name, side=side, rows=n, weeks=wk, ens_wis_mean=round(e / n, 3) if n else None, base_wis_mean=round(b / n, 3) if n else None, ratio=round(e / b, 4) if b else None,
-                lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), outcome=wis_outcome(lo, hi, n, wk) if GATE else K.CANNOT_TELL)
+                lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), outcome=oc, reason=rs_, req13=K.req13([(oc, rs_)], nothing_returned=0))
 groups = [('all horizons', rows)] + [('horizon %d' % h, [r for r in rows if r['h'] == h]) for h in HORIZONS]
 seasons = sorted({r['season'] for r in rows}); sgroups = [('season ' + s, [r for r in rows if r['season'] == s]) for s in seasons]
 cells = [cov_cell(nm, rs, L, side) for nm, rs in groups + sgroups for L in ('95', '50') for side in ('final', 'first')]
@@ -251,7 +250,8 @@ def _sens():
         for L in ('95', '50'):
             key = 'o%s_final' % L; sc = [r for r in rows if r[key] in (K.CONSISTENT, K.ABOVE, K.BELOW)]
             lo, hi = boot_ratio(per_week(sc, lambda r: r[key] == K.CONSISTENT), per_week(sc, lambda r: 1.0), Mb)
-            out.append(dict(block_weeks=bl, level=L, lo=round(lo, 4), hi=round(hi, 4), outcome=cov_outcome(lo, hi, LEVELS[L][2], len(sc), len({r['week'] for r in sc})) if GATE else K.CANNOT_TELL))
+            _o, _r = cov_outcome(lo, hi, LEVELS[L][2], len(sc), len({r['week'] for r in sc})) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
+            out.append(dict(block_weeks=bl, level=L, lo=round(lo, 4), hi=round(hi, 4), outcome=_o, reason=_r))
     return out
 sensitivity = _sens()
 _nus = [r for r in rows if r['loc'] != 'US' and 'wis_ens_final' in r]
@@ -280,7 +280,7 @@ summary = dict(
     desk='FLU', publisher='Heuremen LLC', generated=STAMP, plan='PLAN.md', plan_seal=seal, plan_unchanged_since_commit=K.plan_committed('PLAN.md'),
     claim=dict(source='CDC FluSight Forecast Hub, FluSight-ensemble, target wk inc flu hosp', stated='quantiles 0.025 and 0.975 (95 percent interval) and 0.25 and 0.75 (50 percent interval)',
                delivered='NHSN weekly confirmed flu admissions in target-data/time-series.csv, final release (primary) and first release within 14 days'),
-    frame=dict(horizons=list(HORIZONS), early_days=EARLY_DAYS, min_rows=MIN_ROWS, min_weeks=MIN_WEEKS, max_width_coverage=MAX_W_COV, max_width_wis=MAX_W_WIS, block_weeks=BLOCK, replicates=REPS, seed=SEED),
+    frame=dict(horizons=list(HORIZONS), early_days=EARLY_DAYS, min_rows=MIN_ROWS, min_weeks=MIN_WEEKS, max_width_coverage=MAX_W_COV, max_width_wis=MAX_W_WIS, outcome_rule='PLAN_ADDENDUM_std2.md (12 Nov 2026): point figure with no tolerance, ABOVE, BELOW or CANNOT_TELL with a closed reason, the width caps no longer decide', block_weeks=BLOCK, replicates=REPS, seed=SEED),
     gates=dict(kg, passed=GATE, join_rows=tot, join_agree=agree),
     sources=dict(hub_commit=HUB_COMMIT, ensemble_files=len(files), first_reference_date=min(ref_dates) if ref_dates else None, last_reference_date=max(ref_dates) if ref_dates else None,
                  baseline_files=len(glob.glob(os.path.join(BASE, '*-FluSight-baseline.csv'))), releases=len({a for d in vals.values() for a in d}),
@@ -294,7 +294,7 @@ summary = dict(
 HW = {'all horizons': 'all horizons', 'horizon 0': 'the current week', 'horizon 1': 'one week ahead', 'horizon 2': 'two weeks ahead', 'horizon 3': 'three weeks ahead'}
 def fc_row(c, label):
     return dict(kind='coverage', item=label, counts='share of reported weekly flu admissions inside the stated interval', stated=c['stated'], n=c['inside'], of=c['scored'],
-                delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'], interval='moving-block bootstrap over target weeks, as the desk gives it')
+                delivered=c['share'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'], reason=c['reason'], interval='moving-block bootstrap over target weeks, as the desk gives it')
 _fc = [fc_row(next(c for c in cells if c['cell'] == nm and c['level'] == L and c['side'] == 'final'), '%s interval, %s, final count' % ('outer' if L == '95' else 'middle', HW[nm]))
        for L in ('95', '50') for nm in ('all horizons', 'horizon 0', 'horizon 1', 'horizon 2', 'horizon 3')]
 summary['forecasters'] = dict(rows=[r for r in _fc if r['lo'] is not None])

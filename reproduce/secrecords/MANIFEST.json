@@ -3,7 +3,7 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/secrecords/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "secrecords_tick.py lines 140 to 145, the grp function and the comparison block",
@@ -14,31 +14,31 @@
  "desk": "secrecords",
  "inputs": [
   {
-   "bytes": 368119,
+   "bytes": 367996,
    "gzip_added": true,
-   "modified": "2026-11-11T12:22:27Z",
+   "modified": "2026-11-12T15:50:51Z",
    "path": "data/domains.json",
-   "sha256": "6d7ba719d2bdda0a73fbcd9ee00bf3e9142fc1f11a950cc588c9087ee4d78db0",
+   "sha256": "77330e00779eb81049f78245d84baf3b779a1b14bc6001ecb7eb3af73d5e2cea",
    "stored": "data/domains.json.gz",
-   "stored_sha256": "a20cf4a920cf7644dea48e162d57c7616d70d15c76637bee2f014bc31a5d8036"
+   "stored_sha256": "4d6ff5ab228a26bb381033a53d50f56cedce9a0bb5dcfa090e7930f3b6845853"
   },
   {
-   "bytes": 15164,
+   "bytes": 15911,
    "gzip_added": true,
-   "modified": "2026-11-11T12:22:27Z",
+   "modified": "2026-11-12T15:52:30Z",
    "path": "summary_secrecords.json",
-   "sha256": "06bd2c7741a201390982d1a3bf5537cb16af2097d5b18f82875fcfcf455ff4b0",
+   "sha256": "ca7914f713c26f093fe2faeb2b79c3fcda375e0e4e3983286bf596dd7605211a",
    "stored": "summary_secrecords.json.gz",
-   "stored_sha256": "515a1ede5a63b7264c4c1fb9480ba403dd19ef4a4948a8c6afab4cf69a3fcdd2"
+   "stored_sha256": "99e956b4b1824b510fbe05a0c4df704c92901e9f56a99727a2762fb35dd77355"
   }
  ],
- "made": "2026-11-11T12:25:18Z",
+ "made": "2026-11-12T16:06:17Z",
  "mode": "fetch",
  "name": "SECRECORDS",
  "reference": [
   {
    "path": "desk/secrecords_tick.py",
-   "sha256": "6443914b876294a9a3cb08e2164cc7ce21a04ec31ae3fced667d21c3728ce6ba"
+   "sha256": "5a47ff1a1d54bd27fa89f37ea441a62d61c664e95bb48ae7ceb365fb5c63f410"
   }
  ],
  "sources": [

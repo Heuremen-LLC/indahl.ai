@@ -10,15 +10,15 @@ This kit recomputes the WEIGHTS headline number and its outcome label with the d
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `4c7210eb6fb63bf4497494951561cbe86b54f11a182c89eccfaaeaf4bdc8eaa8`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `1cfd14205d4d8704128200f6ad4cc73bcd3598bd874decb3f214b8068adb2a4f`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/weights/live.json served it at the feed stamp 10 Nov 22:48, read by us at 2026-11-11T00:08:44Z. The feed bytes had sha256 `af094064636a5528d1caf8b7b9e38470316771c7830c6df355f6fe6af2d03bbf`.
+The headline as the live feed https://indahl.ai/weights/live.json served it at the feed stamp 12 Nov 15:30, read by us at 2026-11-12T16:06:20Z. The feed bytes had sha256 `03a1c126de54bf0bf2e7bdd57d21e71d4a984a420d0024b112e80645950636d8`.
 
-- number: 15 of 1,013
-- value: 0.0148
-- interval: 0.009 to 0.0243
+- number: 18 of 1,033
+- value: 0.0174
+- interval: 0.0111 to 0.0274
 - outcome: CONSISTENT
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -41,7 +41,7 @@ As the WEIGHTS data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/repos.json | 1,774,361 | `d794e486ee773de38f251981b08216bdf39af3068dc72fe1080fd3a4ff8463da` |
+| data/repos.json | 1,833,070 | `e5b59996240bbe3ae3db1e6926514b6506f9c2c31d66444f7c9ab0a180b62917` |
 
 ## Code
 

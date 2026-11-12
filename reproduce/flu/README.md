@@ -14,7 +14,7 @@ Needs Python 3.9 or later with numpy (PyPI). It prints one line of JSON and chec
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/flu/live.json served it at the feed stamp 2026-11-10T21:14:43Z, read by us at 2026-11-11T00:12:28Z. The feed bytes had sha256 `05393ac5b4dc40236750f48103e87b4bf2063a2765a20c66b9245dfafe5300cc`.
+The headline as the live feed https://indahl.ai/flu/live.json served it at the feed stamp 2026-11-12T14:01:52Z, read by us at 2026-11-12T16:05:56Z. The feed bytes had sha256 `a556159250795df5b2ede392e82492b4289614489cfeb6e6524ca9f15478b1b2`.
 
 - number: 16,416 of 18,544
 - value: 0.8852
@@ -37,7 +37,7 @@ As the FLU data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/flu_live.json | 94,778 | `05393ac5b4dc40236750f48103e87b4bf2063a2765a20c66b9245dfafe5300cc` |
+| data/flu_live.json | 156,202 | `1906c876146edf018ba2af9cf6eacf0ae3d0ba3cacc35dd801426f5c036e0d14` |
 | data/raw/hub/model-output/FluSight-ensemble/2023-10-14-FluSight-ensemble.csv | 524,323 | `0495532d8fc3885fb64b62f541a35cc1aa851a6869f82480645a8c58831293bc` |
 | data/raw/hub/model-output/FluSight-ensemble/2023-10-21-FluSight-ensemble.csv | 531,866 | `047c6086ce9ed1bb864c05caf640fb028afa8e22c3151210b43e5f664988e23a` |
 | data/raw/hub/model-output/FluSight-ensemble/2023-10-28-FluSight-ensemble.csv | 524,028 | `9b6e7391ca116c160e0efa34a07cda890dfb5a2bce060f092dbf1f0f30f42071` |

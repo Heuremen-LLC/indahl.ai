@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/seasonal/live.json",
- "feed_sha256": "3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653",
+ "feed_sha256": "4eaf29ded4c8720fd2a4bee1e28bf4f7615ad9b8864a1c0e524907d02045bada",
  "headline": {
   "desk": "SEASONAL",
   "display": "60%",
@@ -12,6 +12,6 @@
   "outcome": "ABOVE",
   "value": 0.6011
  },
- "read_at": "2026-11-11T00:11:28Z",
- "stamp": "2026-11-10T16:32:50Z"
+ "read_at": "2026-11-12T16:05:08Z",
+ "stamp": "2026-11-12T06:37:17Z"
 }

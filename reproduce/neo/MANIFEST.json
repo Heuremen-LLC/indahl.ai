@@ -3,12 +3,12 @@
   {
    "path": "neo_tick.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/neo/neo_tick.py",
-   "sha256": "5097384ae580de3f1090f484c3aeeed5ff2305d721610f07e6eb06219ab3cb6c"
+   "sha256": "20c3eb345afc8f5e918a946072471269bace05916c9ef7e01268eb8cb1a0b86f"
   },
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/neo/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "the clock only. It runs neo_tick.py with --offline --no-sbdb and the clock pinned to the time the published run read (the generated field of data/neo_live.json), which the desk uses to tell a settled or passed row from an open one",
@@ -768,7 +768,7 @@
   {
    "bytes": 10078,
    "gzip_added": true,
-   "modified": "2026-11-11T09:54:18Z",
+   "modified": "2026-11-12T14:40:40Z",
    "path": "data/raw/wayback/cdx_cad_api.json",
    "sha256": "748fe45916ac58ba794b8e75872fb25370145ec388643d3cac7e02a55f676f3f",
    "stored": "data/raw/wayback/cdx_cad_api.json.gz",
@@ -811,13 +811,49 @@
    "stored_sha256": "f1d43e9bac48aef3e61cc9b98a262dc8149b17a04281565388338e5ada4e9cd6"
   },
   {
-   "bytes": 3563135,
+   "bytes": 73339,
+   "gzip_added": false,
+   "modified": "2026-11-11T16:29:39Z",
+   "path": "data/snapshots/cad_20261111T162929Z.json.gz",
+   "sha256": "eeadd51935b09099fcb14143ab2410ee88577b1d244a37f440b3c9c3ea44eb0f",
+   "stored": "data/snapshots/cad_20261111T162929Z.json.gz",
+   "stored_sha256": "eeadd51935b09099fcb14143ab2410ee88577b1d244a37f440b3c9c3ea44eb0f"
+  },
+  {
+   "bytes": 74028,
+   "gzip_added": false,
+   "modified": "2026-11-11T23:03:19Z",
+   "path": "data/snapshots/cad_20261111T230240Z.json.gz",
+   "sha256": "99c73a3510df3fad2007df3cb96bdc7a774a7a563a16fd6206fb59194c8b150e",
+   "stored": "data/snapshots/cad_20261111T230240Z.json.gz",
+   "stored_sha256": "99c73a3510df3fad2007df3cb96bdc7a774a7a563a16fd6206fb59194c8b150e"
+  },
+  {
+   "bytes": 73938,
+   "gzip_added": false,
+   "modified": "2026-11-12T05:43:48Z",
+   "path": "data/snapshots/cad_20261112T054309Z.json.gz",
+   "sha256": "5070e53557f669f6767968545b30294d659856d60742bf0bd0eb8e26632bd9d3",
+   "stored": "data/snapshots/cad_20261112T054309Z.json.gz",
+   "stored_sha256": "5070e53557f669f6767968545b30294d659856d60742bf0bd0eb8e26632bd9d3"
+  },
+  {
+   "bytes": 74090,
+   "gzip_added": false,
+   "modified": "2026-11-12T12:32:22Z",
+   "path": "data/snapshots/cad_20261112T123040Z.json.gz",
+   "sha256": "c6476c4ff150d172c27eec4753e33e09fa434d5f63662c45909b4cd80f0c9447",
+   "stored": "data/snapshots/cad_20261112T123040Z.json.gz",
+   "stored_sha256": "c6476c4ff150d172c27eec4753e33e09fa434d5f63662c45909b4cd80f0c9447"
+  },
+  {
+   "bytes": 3569366,
    "gzip_added": true,
-   "modified": "2026-11-11T09:54:24Z",
+   "modified": "2026-11-12T14:40:47Z",
    "path": "data/raw/cad_current.json",
-   "sha256": "50f05e05d1a8eb5256a2fc8871aa0f3d4be7cedffe7da44ad9fe49ada1c5248e",
+   "sha256": "473e94db20eefbeadeb68b8b16890705c9b2e20469a95dd14a94a2a16b97620a",
    "stored": "data/raw/cad_current.json.gz",
-   "stored_sha256": "483504bad7ccdb5cef9d55a2794b8496320805c3dc3c36a83c99850c81ef6002"
+   "stored_sha256": "d077815e9e390dd9821914de6670472ab433e8998b1796c4ec3e4f3f8eb6c228"
   },
   {
    "bytes": 400,
@@ -991,6 +1027,15 @@
    "stored_sha256": "11c2c1434baf641ee27e56824c3a88b2b0c539a005bc2d96ec2a687643c3b3ea"
   },
   {
+   "bytes": 412,
+   "gzip_added": true,
+   "modified": "2026-11-12T03:32:36Z",
+   "path": "data/cache/des_2026_VC11_2461357.json",
+   "sha256": "ea3e2140fb63c9c32d324b891f8f1029c50856ad6c8f7dd634c09789a20ceaaf",
+   "stored": "data/cache/des_2026_VC11_2461357.json.gz",
+   "stored_sha256": "b6a1e019d66d3368458e85b28161407ec81a48a8827020e996ffcbcb1cea1f5f"
+  },
+  {
    "bytes": 403,
    "gzip_added": true,
    "modified": "2026-11-10T20:43:08Z",
@@ -998,6 +1043,15 @@
    "sha256": "efa5c92e51b196c73e4e7d5edfb7e0d26bee6664ce66f9eff67b48172d8ff286",
    "stored": "data/cache/des_2026_VK5_2461355.json.gz",
    "stored_sha256": "68a2bea853a14c681a4427745c94a81c58a4d70fc4c8c477a7e7082a02dabcde"
+  },
+  {
+   "bytes": 401,
+   "gzip_added": true,
+   "modified": "2026-11-12T14:40:55Z",
+   "path": "data/cache/des_2026_VK8_2461357.json",
+   "sha256": "60d965c7913cc721ade241dfbea840121b260975ad8c18c334b1930e1c619d99",
+   "stored": "data/cache/des_2026_VK8_2461357.json.gz",
+   "stored_sha256": "d3494c76c0eab16ee2acf5919b8445827edd4858cbaf916d04c249be11e92031"
   },
   {
    "bytes": 403,
@@ -1027,6 +1081,42 @@
    "stored_sha256": "f0f571e71caf1877ae277dfac51e67e3c42d1cbd02135752481d576d5b8e53ee"
   },
   {
+   "bytes": 408,
+   "gzip_added": true,
+   "modified": "2026-11-11T14:23:43Z",
+   "path": "data/cache/des_2026_VS8_2461356.json",
+   "sha256": "35378d17c4aaedb66a1e9261704a2ecde0f21fc3665b5a6f04ef1a689cf40857",
+   "stored": "data/cache/des_2026_VS8_2461356.json.gz",
+   "stored_sha256": "30309fcb8d87e9cb33648ffd033d8f1796f81ffdecd3bd05535227bdd7f1b497"
+  },
+  {
+   "bytes": 401,
+   "gzip_added": true,
+   "modified": "2026-11-11T16:29:51Z",
+   "path": "data/cache/des_2026_VX1_2461356.json",
+   "sha256": "56d394580264ae94c04264bccde72f5dc9c0be01e1e88567a58e03b1da4836e2",
+   "stored": "data/cache/des_2026_VX1_2461356.json.gz",
+   "stored_sha256": "8dad9ee79c5deaf9114a528ba5ddf34ebd1258a8424811edc3cdbb5b51f2efd4"
+  },
+  {
+   "bytes": 405,
+   "gzip_added": true,
+   "modified": "2026-11-12T10:25:20Z",
+   "path": "data/cache/des_2026_VY7_2461357.json",
+   "sha256": "eb4c597864c9e5fb16304db5f5977e600a15cefc03aea7fb337ee9d4af990e1d",
+   "stored": "data/cache/des_2026_VY7_2461357.json.gz",
+   "stored_sha256": "588a5d8656f28847621f3b69a4036adc26524e31393dd0a9c96270897de9c464"
+  },
+  {
+   "bytes": 401,
+   "gzip_added": true,
+   "modified": "2026-11-11T12:10:53Z",
+   "path": "data/cache/des_2026_VY_2461356.json",
+   "sha256": "b382abe8b1516d617644390fffb896d44f32d1e3ee358ca25c9fa1ab1da956d8",
+   "stored": "data/cache/des_2026_VY_2461356.json.gz",
+   "stored_sha256": "0fbaa543095df4f051a6c9db19bda9e71e48b4aefc7b8949b699fdb4faaf9065"
+  },
+  {
    "bytes": 546,
    "gzip_added": true,
    "modified": "2026-11-10T11:15:52Z",
@@ -1054,16 +1144,16 @@
    "stored_sha256": "31d106181810e0d7783e9b49e46873c731c4bb03f9d6eb2fa9a887d332be0472"
   },
   {
-   "bytes": 33969,
+   "bytes": 33951,
    "gzip_added": true,
-   "modified": "2026-11-11T11:55:53Z",
+   "modified": "2026-11-12T15:26:06Z",
    "path": "data/neo_live.json",
-   "sha256": "4cd70557e17dfffa9721878e9744b3146ea13b9e345b510878fd23cd04262b6c",
+   "sha256": "00042dc061dd8ba308ea5f95f27e80e67115f9fd8ddb5d7244df5fe9f225c8cc",
    "stored": "data/neo_live.json.gz",
-   "stored_sha256": "e812bc605381143d4accfaad01ad2cb5557886aa97bad0b235725e831fcac913"
+   "stored_sha256": "26fe3c7930fc2a6735e0fde4e8a131b4d595daa8bce1eaa744c8461c8ef81967"
   }
  ],
- "made": "2026-11-11T11:56:17Z",
+ "made": "2026-11-12T16:06:42Z",
  "mode": "fetch",
  "name": "NEO",
  "reference": [],

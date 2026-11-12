@@ -10,7 +10,7 @@ PLAB = {'2025H2': 'Jul to Dec 2025', '2026H1': 'Jan to Jun 2026'}
 ADS_ORDER = ['YouTube (ads)', 'Google Maps (ads)', 'Google Play (ads)']
 
 def n(x): return '{:,}'.format(x) if isinstance(x, int) else ('' if x is None else str(x))
-def word(o): return {'ABOVE': 'above', 'BELOW': 'below', 'CONSISTENT': 'consistent', 'CANNOT_TELL': 'cannot tell', 'NOTHING_RETURNED': 'nothing returned'}.get(o, o or '')
+def word(o): return {'ABOVE': 'above', 'BELOW': 'below', 'CONSISTENT': 'consistent', 'CANNOT_TELL': 'cannot tell'}.get(o, o or '')
 def fr(x):
     if x is None: return 'none'
     if x == 'unbounded' or (isinstance(x, float) and math.isinf(x)): return 'no upper edge'
@@ -29,7 +29,7 @@ def oc_cell(r):
     elif r.get('outcome_without_column_bound'): extra = '<span class="by"> row defined after the data, cannot tell from the column-sum bound alone, without it reads %s</span>' % E(word(r['outcome_without_column_bound']))
     elif r.get('defined_after_data'): extra = '<span class="by"> row defined after the data</span>'
     elif r.get('addendum5') or r.get('addendum6_5'): extra = '<span class="by"> band from the restriction columns, defined after the data</span>'
-    return '<td class="o-%s">%s%s</td>' % (E(o), E(word(o)), extra)
+    return '<td class="o-%s">%s%s%s</td>' % (E(o), E(word(o)), (' (%s)' % E(r['reason_code'])) if o == 'CANNOT_TELL' and r.get('reason_code') else '', extra)   # 12 Nov 2026: Faults and Guards 2.0, the reason sits beside the word
 def ratio_cell(r):
     if r.get('stated') is None:
         why = (r.get('reason') or '').replace('No stated figure: ', '').rstrip('.')
@@ -61,8 +61,8 @@ def render(rows, auto_period, sources, summ):
         for per in PER:
             t = by.get((p, per, 'total'))
             if not t: continue
-            if t['outcome'] == 'NOTHING_RETURNED':
-                o.append('<tr><td>%s</td><td>%s</td><td colspan="6">%s<span class="by"> nothing returned</span></td></tr>' % (E(p), PLAB[per], E(t.get('reason'))))
+            if t.get('status') == 'no stated figure, read succeeded':
+                o.append('<tr><td>%s</td><td>%s</td><td colspan="6">%s<span class="by"> cannot tell (NO_INTERVAL_FORMABLE)</span></td></tr>' % (E(p), PLAB[per], E(t.get('reason'))))
                 continue
             cells = ''.join(ratio_cell(by[(p, per, m)]) + oc_cell(by[(p, per, m)]) for m in ('total', 'solely', 'not'))
             o.append('<tr><td>%s</td><td>%s</td>%s</tr>' % (E(p), PLAB[per], cells))
@@ -86,7 +86,7 @@ def render(rows, auto_period, sources, summ):
         for per in PER:
             for m in ('own', 'own_tc', 'own_illegal', 'own_auto', 'notice', 'notice_tf'):
                 r = by.get((p, per, m))
-                if not r or r['outcome'] == 'NOTHING_RETURNED': continue
+                if not r or r.get('status') == 'no stated figure, read succeeded': continue
                 o.append('<tr><td>%s</td><td>%s</td><td>%s</td>%s%s</tr>' % (E(p), PLAB[per], E(r['measure_label']), ratio_cell(r), oc_cell(r)))
     o.append('</tbody></table></div></details>')
     # second reading B: share

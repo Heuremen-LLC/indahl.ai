@@ -11,7 +11,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [AILUMINATE](ailuminate/) | fetch and verify | `c8b880287c02d1391439b93353357ceb7123096c42b965ae0d9a2aa35398b752` |
 | [AIRLINE](airline/) | included | `f32a4e777ddcb767a5d232aacfb62cb2fdaa988637a2dba251a24714e2230e58` |
 | [AIRQ](airq/) | fetch and verify | `a105a4e665f0c2eef3ebd8bd394bae4a764c41aefc25cd5db23ad288ac8a3aed` |
-| [CADENCE](cadence/) | included | `bd1fa582abf223661c0665a91e2e38bef375cd629fa2b611f126480bb6be114a` |
+| [CADENCE](cadence/) | included | `c02b58f3a52bf8c0d5edd6fec83ad5b45b7ab10e6127dc2cb3a15a0495f8d1c0` |
 | [CAMPUS](campus/) | fetch and verify | `e5f3789d15dfc9987b79a37085319a0f91401da5d9a8a46ef2b2d0b85944f9b8` |
 | [CENSUS](census/) | included | `43f7368f318b9aef23d0af04771a2eb2dcdbc8eb4e81455405b5762fdccc2f1b` |
 | [CHANGE](change/) | fetch and verify | `4aaa2bbf381335f18c0ca16e247bd5122f9ecb01bbe3c93ba392fac653a01749` |
@@ -21,21 +21,21 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [FLU](flu/) | included | `415e3325a57de347e6374fe695bdea772cfdaaeaa4a02ca704ac72e2428c9a8d` |
 | [HFSIZE](hfsize/) | fetch and verify | `308cd3c6ee10384ebb7a7d0439a5415567248201d94eb7646b3e3a5aace37119` |
 | [HPT](hpt/) | included | `dac673f0c2d2251f1f72fbd267e6dd77d98bf8effd0ae09d0deb6bf704e77b56` |
-| [LAUNCH](launch/) | fetch and verify | `4458223a64af0f20788218f8ae587b981879eedfef44caadde985c17f5c61a38` |
-| [LINKROT](linkrot/) | included | `466e6e2647e13ff7fd765b6b6debaad69f46bfc49084232ee60cc0735919aaf2` |
-| [NEO](neo/) | fetch and verify | `af9e650b727b5e763ee28e91326c4cb76c7a9c7687ef76d7b82df626b403ab31` |
+| [LAUNCH](launch/) | fetch and verify | `f91d5f1d0e8633f38789842658885b2448ca3376ff7eeeb0e512841cc7c41ba4` |
+| [LINKROT](linkrot/) | included | `a68001ac446bea6ff9593871ffc5973bdd8316e9bf9c737be39e7873f3fd5858` |
+| [NEO](neo/) | fetch and verify | `ebe615b627d6afc89051f9b1ca060c2ac432eb630f8fdf9ddd13fb9cfae34a8f` |
 | [PKGINSTALL](pkginstall/) | fetch and verify | `50cd23a1327ebbdd6bf56db81e4b2200c5bb37460a70de0ef4d75659518d6baa` |
 | [PKGLICENSE](pkglicense/) | fetch and verify | `46ab84f4bef32aaa4d529cf50cf780da6697bf1850dab424d7115153b5766933` |
-| [QUAKE](quake/) | included | `04c5991de0c9e183eaec21f81776d2391235f2dc1add25d889efa18f9d79794d` |
+| [QUAKE](quake/) | included | `ad1d0ddddf72554eb2d2460f51f4fa3860269cc68e6ddeb4f991a858b3090649` |
 | [SEASONAL](seasonal/) | included | `bc5c500339489235e7034dd1ab3df2971672bbb776d8c74808320075ada0d87f` |
-| [SECRECORDS](secrecords/) | fetch and verify | `f397b97dc18702fc57548b4902753a352a640f5e7e1ed96301dce9e9f1727456` |
-| [SOLAR](solar/) | fetch and verify | `336e3ae79281b594f30b1ad6497dcf7103702986d2f9ee016b672e787bd5fa9c` |
+| [SECRECORDS](secrecords/) | fetch and verify | `73ae7a2326190eb4a2b8fc9537d11223f609814674fc53b60dcd7e77b6a85cfa` |
+| [SOLAR](solar/) | fetch and verify | `815650f7fe3e788b8c763be25e95f09e136e9c376d27b5d7209a214f9d26bdf9` |
 | [STEO](steo/) | included | `62582754f487e4bbb247ecb496530bfe0811c434a8f16222e973664ae554574d` |
-| [SUPPORT](support/) | fetch and verify | `9fc34e209b7b6fbd8193eb2737e61f188a60a1193cfc1871060a384b73527817` |
+| [SUPPORT](support/) | fetch and verify | `7b50da5963d4ea65bfbfd163b110d6ef3e64f5a9c2ba3bcd3bb25958f1033c95` |
 | [TORNADO](tornado/) | fetch and verify | `5ff5d0988b98d09801df2459fa0deb6eb6639eaa2ad0ff222460b5408c325930` |
 | [TRIALS](trials/) | included | `465d4475aaf21301d6efeaaf2a0c76e2e1f11b3d6cced0694da959dd1886c9d8` |
 | [WATER](water/) | included | `9fa82deee3bf63d3989a180ae7ff29fed0d2d341b59a49bcbe5a37f4640537cf` |
-| [WEIGHTS](weights/) | fetch and verify | `4c7210eb6fb63bf4497494951561cbe86b54f11a182c89eccfaaeaf4bdc8eaa8` |
+| [WEIGHTS](weights/) | fetch and verify | `1cfd14205d4d8704128200f6ad4cc73bcd3598bd874decb3f214b8068adb2a4f` |
 
 ## Desks without a kit
 

@@ -472,6 +472,26 @@ def known_good_db(con):
 
 
 # ------------------------------------------------------------------ build
+# 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): Nothing returned is no longer an outcome, every CANNOT_TELL carries one closed reason.
+NIF, WIDE, STR = K.NO_INTERVAL_FORMABLE, K.TOO_WIDE_TO_RESOLVE, K.STRADDLES_EDGE
+FORCED = ('day check', 'database opened', 'More than 1%', 'does not break out', 'holds no TikTok video removal', 'removals were filed for')
+def _rc(oc, gap, forced):
+    if oc != K.CANNOT_TELL: return None
+    if forced or not gap or gap[0] is None or gap[1] is None: return NIF
+    return WIDE if gap[0] <= 0 <= gap[1] else STR
+def std2(rows, gate_as_committed):
+    for r in rows:
+        if r['outcome'] == K.NOTHING_RETURNED: r['outcome'] = K.CANNOT_TELL; r['status'] = 'no figure on one side, read succeeded'
+        if r.get('outcome_plan_as_committed') == K.NOTHING_RETURNED: r['outcome_plan_as_committed'] = K.CANNOT_TELL
+        forced = (r.get('outcome_before_gate') is not None) or any(k in (r.get('reason') or '') for k in FORCED) or (r.get('addendum_4') or {}).get('before', {}).get('outcome') is not None or r['market'] != 'EU'
+        r['reason_code'] = _rc(r['outcome'], r.get('gap_interval'), forced)
+        r['reason_code_plan_as_committed'] = NIF if (r.get('outcome_plan_as_committed') == K.CANNOT_TELL and not gate_as_committed) else _rc(r.get('outcome_plan_as_committed'), r.get('gap_interval'), forced)
+        di, si = r.get('delivered_interval_with_submission_date'), r.get('stated_interval')
+        gsub = [di[0] - si[1], di[1] - si[0]] if di and si and None not in (di[0], di[1], si[0], si[1]) else None
+        r['reason_code_submission_date'] = _rc(r.get('outcome_range_with_submission_date'), gsub, forced)
+        ph = r.get('defined_after_the_data')
+        if ph: ph['reason_code'] = _rc(ph['outcome'], ph.get('gap_interval'), bool(ph.get('reason')) or forced)
+    return rows
 def build(fetch=True):
     if fetch:
         import subprocess
@@ -615,13 +635,14 @@ def build(fetch=True):
                 if a1 is not None and a2 is not None:
                     rev_checked[0] += 1
     rows = K.apply_gate(gate, rows)
+    rows = std2(rows, gate_as_committed)
     # The simple aggregate repeats whole days (Addendum 2.1). Reconcile the scout's proof-run filter (video and removed, by submission date) on both files.
     simple_check = {}
     for q in sorted(set(r['quarter'] for r in rows if r['market'] == 'EU'))[-2:]:
         qi = qinfo(q); w = "created_day between DATE '%s' and DATE '%s' and ct_video and dv_removed" % (qi['a'], qi['b'])
         sv = con.execute('select coalesce(sum(n),0) from s where ' + w).fetchone()[0]; cv = con.execute('select coalesce(sum(n),0) from c where ' + w).fetchone()[0]
         simple_check[q] = dict(filter='video and removed, by submission date (the scout proof-run filter)', simple_aggregate=int(sv), complete_aggregate=int(cv), difference=int(sv - cv))
-    meta = dict(updated=time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()), plan_sha256=plan_hash, known_good=kg_t + kg_d, gate_passed=gate,
+    meta = dict(updated=(json.load(open(os.path.join(H, 'summary_tiktok.json')))['updated'] if '--std2-rewrite' in sys.argv else time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())), plan_sha256=plan_hash, known_good=kg_t + kg_d, gate_passed=gate,
                 gate_passed_as_committed=gate_as_committed, failed_days=failed_days, last_day_read=str(last_day),
                 database_months_read=[os.path.basename(f)[9:16] for f in cfiles], latest_release=latest,
                 sources=load_sources(), materiality=dict(count='5% of the stated point', share='1 percentage point'), revision_cells_checked=rev_checked[0],
@@ -704,6 +725,10 @@ def summarize(rows, revisions, meta, sdet, comps=None):
     return dict(updated=meta['updated'], gate_passed=meta['gate_passed'], gate_passed_as_committed=meta['gate_passed_as_committed'],
                 failed_days=meta['failed_days'], rows=len(rows), outcomes=dict(Counter(r['outcome'] for r in rows)),
                 outcomes_plan_as_committed=dict(Counter(r.get('outcome_plan_as_committed') for r in rows)),
+                cannot_tell_by_reason=dict(Counter(r['reason_code'] for r in rows if r['outcome'] == K.CANNOT_TELL)),
+                cannot_tell_by_reason_plan_as_committed=dict(Counter(r.get('reason_code_plan_as_committed') for r in rows if r.get('outcome_plan_as_committed') == K.CANNOT_TELL)),
+                req13_all=K.req13([(r['outcome'], r.get('reason_code')) for r in rows], nothing_returned=0), req13_eu=K.req13([(r['outcome'], r.get('reason_code')) for r in eu], nothing_returned=0),
+                req13_plan_as_committed=K.req13([(r.get('outcome_plan_as_committed'), r.get('reason_code_plan_as_committed')) for r in rows], nothing_returned=0),
                 eu_rows_outcomes=dict(Counter(r['outcome'] for r in eu)), eu_rows_outcomes_defined_after_the_data=dict(ph),
                 market_rows_outcomes=dict(Counter(r['outcome'] for r in rows if r['market'] != 'EU')),
                 quarters=sorted(set(r['quarter'] for r in rows)), latest_quarter=lq,
@@ -732,7 +757,9 @@ def e(s):
     return HT.escape(str(s), quote=True)
 
 
-OUT_WORD = {'ABOVE': 'Above', 'BELOW': 'Below', 'CONSISTENT': 'Consistent', 'CANNOT_TELL': 'Cannot tell', 'NOTHING_RETURNED': 'Nothing returned'}
+OUT_WORD = {'ABOVE': 'Above', 'BELOW': 'Below', 'CONSISTENT': 'Consistent', 'CANNOT_TELL': 'Cannot tell'}
+def ow(x, oc=None):
+    oc = oc or x['outcome']; return OUT_WORD[oc] + (' (%s)' % x['reason_code'] if oc == 'CANNOT_TELL' and x.get('reason_code') else '')
 
 
 def cellv(ms, v):
@@ -777,7 +804,7 @@ def rng2(ms, iv):
 
 def ph_word(r):
     p = r.get('defined_after_the_data')
-    return OUT_WORD[p['outcome']] if p else ''
+    return ow(p) if p else ''
 
 
 def render(rows, summ, meta, sdet):
@@ -807,7 +834,7 @@ def render(rows, summ, meta, sdet):
             dv = cellv2(ms, r['delivered']) if r['delivered'] is not None else 'see range'
             out.append('<tr><td>%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td>%s</td><td>%s</td></tr>' % (
                 e(MNAME[ms]), cellv2(ms, r['stated']), dv, rng2(ms, r['stated_interval']), rng2(ms, r['delivered_interval']),
-                gapcell(ms, r['gap_interval'], r['stated']), OUT_WORD[r['outcome']], ph_word(r)))
+                gapcell(ms, r['gap_interval'], r['stated']), ow(r), ph_word(r)))
         out.append('</tbody></table></div>')
     # every quarter, one table per measure that carries a reading
     def quarter_table(ms, title, intro, extra_sub=False, listed=False, db_head='Database, by decision date', auto_only=False):
@@ -828,7 +855,7 @@ def render(rows, summ, meta, sdet):
             cells += ['<td class="n">%s</td>' % cellv2(ms, r['stated']), '<td class="n">%s</td>' % cellv2(ms, r['delivered'])]
             if extra_sub:
                 cells.append('<td class="n">%s</td>' % cellv2(ms, r.get('delivered_by_submission_date')))
-            cells += ['<td class="n">%s</td>' % gapcell(ms, r['gap_interval'], r['stated']), '<td>%s</td>' % OUT_WORD[r['outcome']], '<td>%s</td>' % ph_word(r)]
+            cells += ['<td class="n">%s</td>' % gapcell(ms, r['gap_interval'], r['stated']), '<td>%s</td>' % ow(r), '<td>%s</td>' % ph_word(r)]
             if auto_only:
                 cells.append('<td class="n">%s</td>' % (cellv2(ms, r.get('stated_automation_only')) if int(q[:4]) >= 2026 else ''))
             out.append('<tr>%s</tr>' % ''.join(cells))
@@ -870,11 +897,11 @@ def render(rows, summ, meta, sdet):
             rr = {r['measure']: r for r in mrows if r['market'] == nm}
             v = rr.get('videos_removed')
             if v and v['stated'] is None:
-                out.append('<tr><td>%s</td><td colspan="3">Not broken out by TikTok in this quarter</td><td class="n"></td><td>%s</td></tr>' % (e(nm), OUT_WORD[v['outcome']]))
+                out.append('<tr><td>%s</td><td colspan="3">Not broken out by TikTok in this quarter</td><td class="n"></td><td>%s</td></tr>' % (e(nm), ow(v)))
                 continue
             dvv = fnum(v['delivered']) if v and v['delivered'] is not None else '0'
             out.append('<tr><td>%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td>%s</td></tr>' % (
-                e(nm), fnum(v['stated']), fshare(rr['automated_share']['stated']), fshare(rr['proactive_rate']['stated']), dvv, OUT_WORD[v['outcome']]))
+                e(nm), fnum(v['stated']), fshare(rr['automated_share']['stated']), fshare(rr['proactive_rate']['stated']), dvv, ow(v)))
         out.append('</tbody></table></div>')
     out.append('<h3>How we read it</h3>')
     out.append('<p>The report side is TikTok\'s own figure, summed over the EU markets it lists. Its range runs from that sum to the sum plus what the unlisted EU markets, Norway, Iceland and Liechtenstein could hold under TikTok\'s own listing rule. '
@@ -884,7 +911,8 @@ def render(rows, summ, meta, sdet):
     out.append('<p>No range on this page is a statistical interval. Both sides are full counts, and each range shows how far a figure moves across the matching choices we fixed before reading the data. '
                'The gap range is the database range minus the report range, as a share of the report figure for counts and in percentage points for shares. Above means the database figure is higher than the report allows under every choice. Below means it is lower under every choice. '
                'Consistent means the gap range includes zero and stays within 5% for counts or 1 percentage point for shares. Cannot tell means the gap range includes zero and reaches past that size, or a check on the files failed. '
-               'Nothing returned means one side holds no figure for the row. We measure gaps and name no cause.</p>')
+               'A row where one side holds no figure reads Cannot tell with the reason NO_INTERVAL_FORMABLE. Every Cannot tell carries one reason beside the word, and a failed read of a source is a status, NOTHING_RETURNED, not an outcome. We measure gaps and name no cause.</p>')
+    out.append('<p>Counts for the rows on this page. EU rows under the rules after the data are in the tables above. All rows, under the committed rules: %s EU rows only, as read here: %s</p>' % (e(summ['req13_plan_as_committed']['line']), e(summ['req13_eu']['line'])))
     out.append('<p>Removed within 24 hours is compared with the days between the posting date and the decision date. The database keeps both as whole days, so its side is a range.</p>')
     out.append('<p>Some limits we cannot size. %s Restored videos are not among them, because TikTok counts them in both its removal and its restored figures.</p>' % A4_LIMITS)
     out.append('<p>Our plan first let the submission date set one end of the database range. Before we set any figure against another, the files showed that TikTok filed no statement on some days and, from July 2025 to January 2026, '

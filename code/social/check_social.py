@@ -159,7 +159,8 @@ else:
             if bsky_in and tds[0] == 'Bluesky': notes.append('B: the Bluesky row of the outcomes table has no reader in check_social.py yet'); continue
             FAIL('B', f'outcomes table: unknown row {tds[0]!r}'); continue
         seen.add(k); oc = get(SUM[k], CFG[k][1])
-        want = [f'{oc.get(o, 0):,}' for o in OUTS] + [re.match(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}', str(get(SUM[k], CFG[k][3]))).group(0) + ' UTC']
+        want = [f'{oc.get(o, 0):,}' for o in OUTS[:4]] + [re.match(   # 12 Nov 2026: NOTHING_RETURNED is a status, not a column, and is zero beside every section (REQ-13 line)
+r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}', str(get(SUM[k], CFG[k][3]))).group(0) + ' UTC']
         if tds[2:] != want: FAIL('B', f'outcomes table {k}: page {tds[2:]} summary {want}')
         elif sum(oc.values()) != get(SUM[k], CFG[k][2]): FAIL('B', f'{k}: outcomes do not add up to the summary row count')
         else: OK('B', f'outcomes table {k}: five outcome cells and the stamp equal the summary, and add up to {get(SUM[k], CFG[k][2]):,} rows')
@@ -174,13 +175,14 @@ OK('B', f'{len(SS.get("numbers", []))} numbers the builder recorded resolve to t
 print('C  section outcome cells against their summaries')
 f = FRAG['dsa']; oc = SUM['dsa']['outcomes']
 got = {o: len(re.findall(r'<td class="o-%s"' % o, f)) for o in OUTS[:4]}
+got['CANNOT_TELL'] += sum(1 for r_ in json.load(open(os.path.join(H, 'dsa', 'public', 'dsa.json')))['rows'] if r_.get('status') == 'no stated figure, read succeeded')   # 12 Nov 2026: a half-year with no readable report is cannot tell with NO_INTERVAL_FORMABLE. The page shows it as one line and the public file holds every such row
 if got != {o: oc.get(o, 0) for o in OUTS[:4]}: FAIL('C', f'dsa: outcome cells {got} summary {oc}')
 else: OK('C', f'dsa: outcome cells by class equal the summary ({got})')
 f = FRAG['adspend']; t = re.search(r'(?s)<h3>Outcomes by cycle</h3>.*?<tbody>(.*?)</tbody>', f)
 okc = bool(t)
 for tr in (re.findall(r'(?s)<tr>(.*?)</tr>', t.group(1)) if t else []):
     tds = [vis(x).strip() for x in re.findall(r'(?s)<td[^>]*>(.*?)</td>', tr)]; cyc = SUM['adspend']['outcomes']['cycle_rows'].get(tds[0])
-    if not cyc or tds[1:] != [f'{cyc[o]:,}' for o in OUTS]: FAIL('C', f'adspend cycle {tds[0]}: page {tds[1:]} summary {cyc}'); okc = False
+    if not cyc or tds[1:] != [f'{cyc[o]:,}' for o in OUTS[:4]]: FAIL('C', f'adspend cycle {tds[0]}: page {tds[1:]} summary {cyc}'); okc = False
 allc = SUM['adspend']['outcomes']['cycle_rows']
 if any(sum(allc[c][o] for c in allc if c != 'all') != allc['all'][o] for o in OUTS): FAIL('C', 'adspend: cycles do not add up to all'); okc = False
 if okc: OK('C', 'adspend: outcomes by cycle equal the summary, and the cycles add up to the all-cycles tally')
@@ -228,7 +230,8 @@ else:
         if hl['big'] != want_big: FAIL('E', f'headline {hl["big"]!r}, decided rows not resting on a rule after the data {want_big!r}')
         if dec['n'] != sum(allc[o] for o in DECIDED): FAIL('E', 'adspend decided rows are not above plus below plus consistent')
         if not (0 < dec['robust_id_no_flags'] <= dec['n'] - max(dec['unseen_rule_sensitive'], dec['timing_sensitive'])): FAIL('E', 'adspend robust count is outside what the decided rows allow')
-        allowed = {dec['robust_id_no_flags'], SUM[k]['totals']['cycle_rows'], dec['n'], allc['CANNOT_TELL']}
+        r13 = SUM[k]['outcomes']['req13_cycle']
+        allowed = {dec['robust_id_no_flags'], SUM[k]['totals']['cycle_rows'], dec['n'], allc['CANNOT_TELL'], r13['nothing_returned'], r13['cannot_tell'], r13['n_readings']} | set(r13['cannot_tell_by_reason'].values())   # the REQ-13 line beside the headline
     else: FAIL('E', f'headline from {k}: check_social.py has no rule written for that section'); allowed = set()
     extra = [s_ for s_, v, d in tokens(hl['big'] + ' ' + hl['line']) if v not in allowed]
     if extra: FAIL('E', f'headline carries numbers outside its decided-row counts: {extra}')

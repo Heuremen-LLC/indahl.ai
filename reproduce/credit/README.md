@@ -14,7 +14,7 @@ Needs Python 3.9 or later with numpy (PyPI). It prints one line of JSON and chec
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/credit/live.json served it at the feed stamp 2026-11-10T18:10:06Z, read by us at 2026-11-10T23:47:12Z. The feed bytes had sha256 `f5da55d33a36cdb66ca3db1104ac0703446bb656d85376c85734bb5e83650627`.
+The headline as the live feed https://indahl.ai/credit/live.json served it at the feed stamp 2026-11-10T18:10:06Z, read by us at 2026-11-12T16:06:29Z. The feed bytes had sha256 `f5da55d33a36cdb66ca3db1104ac0703446bb656d85376c85734bb5e83650627`.
 
 - number: 99.5%
 - value: 0.995496

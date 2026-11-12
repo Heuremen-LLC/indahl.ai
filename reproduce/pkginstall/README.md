@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/pkginstall/live.json served it at the feed stamp 10 Nov 20:42, read by us at 2026-11-11T00:08:47Z. The feed bytes had sha256 `61dc7d442a17620ad32e16bcb5fe8e5318360cdc551c8048724a2cf14bde18f5`.
+The headline as the live feed https://indahl.ai/pkginstall/live.json served it at the feed stamp 12 Nov 14:40, read by us at 2026-11-12T16:06:22Z. The feed bytes had sha256 `4565f5836a271baba26ecf2c5c140ccd8d14b64c59a078a5eb4b7ade04e09bc0`.
 
 - number: 522 of 523
 - value: 0.0019
@@ -43,9 +43,9 @@ As the PKGINSTALL data pack lists them. Credit each source when you use its valu
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/projects.json | 158,673 | `509f97ec77b330f5516159aac883ef04fa64bd7c834d66c1c7224f815028d59f` |
+| data/projects.json | 157,673 | `69c1fd56b2a43d721258baee7adb19233dee709a91204380fef071a0ba248bbe` |
 | data/listdate.txt | 19 | `ce00e09e717676959017c3ccf380945489c8e20154f04283a3e6692ba0b6d399` |
-| summary_pkginstall.json | 744 | `61dc7d442a17620ad32e16bcb5fe8e5318360cdc551c8048724a2cf14bde18f5` |
+| summary_pkginstall.json | 1,172 | `da4867f008603169a9a3d0aaa4d8a6b30289b07197ea4a85e3665047405b60c2` |
 
 ## Code
 

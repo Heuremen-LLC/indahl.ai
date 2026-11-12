@@ -3,12 +3,12 @@
   {
    "path": "steo_tick.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/steo/steo_tick.py",
-   "sha256": "ae7d2410496b40d1ad238743fc888c3a17e0ad8c87a19f36a51db42dedbe3c16"
+   "sha256": "63c22232c445fd1598613ec772271f37c6299b9c47edeefc01359fd01a6c20f8"
   },
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/steo/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "the clock only. It runs steo_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/steo_live.json), which the desk uses to tell a settled or passed row from an open one",
@@ -19,13 +19,13 @@
  "desk": "steo",
  "inputs": [
   {
-   "bytes": 14172,
+   "bytes": 19759,
    "gzip_added": true,
-   "modified": "2026-11-10T16:19:18Z",
+   "modified": "2026-11-12T15:25:40Z",
    "path": "data/steo_live.json",
-   "sha256": "4d878afd9c2fbcb9d12e660f466b33aa217eb6a9e30c2515d2163a792885b999",
+   "sha256": "72f5378b06ff76858d21400a0aba74c94f6b4b5c6bda7ad213b4359fe9823003",
    "stored": "data/steo_live.json.gz",
-   "stored_sha256": "e84ddf89f5ef1da39f1d48e57934961d1f32816413fca6a62b5554e9163b60ec"
+   "stored_sha256": "53a9033db8307238f3d34f6e1a84b2778d3af6f25183c98904e1441aaa2c6bee"
   },
   {
    "bytes": 1006080,
@@ -813,7 +813,7 @@
   {
    "bytes": 55808,
    "gzip_added": true,
-   "modified": "2026-11-10T14:43:33Z",
+   "modified": "2026-11-11T20:53:41Z",
    "path": "data/raw/spot/RWTCm.xls",
    "sha256": "6f2992d2414b8ba1ec045ba631bb66900fe2f8ae25dab6ed5b2eb2b09011b860",
    "stored": "data/raw/spot/RWTCm.xls.gz",
@@ -822,7 +822,7 @@
   {
    "bytes": 49664,
    "gzip_added": true,
-   "modified": "2026-11-10T14:43:34Z",
+   "modified": "2026-11-11T20:53:42Z",
    "path": "data/raw/spot/RNGWHHDm.xls",
    "sha256": "0426d2d6a14ab697aaa8582f696611f883e12af986bc0194021700f9e451ba28",
    "stored": "data/raw/spot/RNGWHHDm.xls.gz",
@@ -831,7 +831,7 @@
   {
    "bytes": 1087,
    "gzip_added": true,
-   "modified": "2026-11-10T16:19:18Z",
+   "modified": "2026-11-12T15:25:40Z",
    "path": "data/pdf_levels.json",
    "sha256": "2996d5c0b2e9f1708af13a2187f8deab7f40bbacb32abaae9397eb6f827caf3f",
    "stored": "data/pdf_levels.json.gz",
@@ -865,7 +865,7 @@
    "stored_sha256": "03974e973314d362b6a3d67adb349fab24666704090bf9be05ae6b39e6e859aa"
   }
  ],
- "made": "2026-11-11T00:12:47Z",
+ "made": "2026-11-12T16:06:09Z",
  "mode": "inputs",
  "name": "STEO",
  "reference": []

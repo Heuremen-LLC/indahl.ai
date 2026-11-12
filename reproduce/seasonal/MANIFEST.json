@@ -3,12 +3,12 @@
   {
    "path": "seasonal_tick.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/seasonal/seasonal_tick.py",
-   "sha256": "72f7e711106fdb7b47b72f009f0a03433795f98d0551b67d8e52e9d2ef13add5"
+   "sha256": "c4af91f7173475adb6a6e69f26b0de098e12ce08a25cd0d218f05064e1b1b0b3"
   },
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/seasonal/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "the clock only. It runs seasonal_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/seasonal_live.json), which the desk uses to tell a settled or passed row from an open one",
@@ -19,13 +19,13 @@
  "desk": "seasonal",
  "inputs": [
   {
-   "bytes": 13822,
+   "bytes": 16179,
    "gzip_added": true,
-   "modified": "2026-11-10T16:32:50Z",
+   "modified": "2026-11-12T15:18:53Z",
    "path": "data/seasonal_live.json",
-   "sha256": "3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653",
+   "sha256": "046665235f59a85708191c8a0723fce793386616ded8a61bba50bffd62f25dd7",
    "stored": "data/seasonal_live.json.gz",
-   "stored_sha256": "72ffd683e01bd5005d32736a8f8064b1fc4ef1bdd05c1e4120cfbb906002eea0"
+   "stored_sha256": "2ac991527b70d9a16978f8e81ca6e6dfee6190196e4d198107df46f669be7ae5"
   },
   {
    "bytes": 698,
@@ -57,16 +57,16 @@
   {
    "bytes": 20,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:13Z",
+   "modified": "2026-11-11T20:53:58Z",
    "path": "data/raw/cpc_verif_grid/last_fetch",
-   "sha256": "2f1438e74474a62493585d040f7d308073b8149ade54a63b59053c8a11c153cd",
+   "sha256": "19f803b874d757916c330316ec800650f554fa822a33c775ed244c9d01bc0597",
    "stored": "data/raw/cpc_verif_grid/last_fetch.gz",
-   "stored_sha256": "13cda0f60cca73642ddad1603e6a2f9d230b4ab228478cbcf8bd64d821c7ef85"
+   "stored_sha256": "6818905885bb446926a24d79fd1c6e11e2897b331f41a2b4affb11a96b4d58e8"
   },
   {
    "bytes": 11438,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:12Z",
+   "modified": "2026-11-11T20:53:57Z",
    "path": "data/raw/cpc_verif_grid/prec01.heidke.txt",
    "sha256": "800f33f09872fd4ce44dba240a212ee44547e106ec60e2fd2060b9c2d88ae292",
    "stored": "data/raw/cpc_verif_grid/prec01.heidke.txt.gz",
@@ -75,7 +75,7 @@
   {
    "bytes": 1047888,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:09Z",
+   "modified": "2026-11-11T20:53:53Z",
    "path": "data/raw/cpc_verif_grid/prec01_forecast.bi",
    "sha256": "e0d63fd7e4d88e75409f6b2be9e006d204da3c4bf4a970cd842c3adffdaaffc9",
    "stored": "data/raw/cpc_verif_grid/prec01_forecast.bi.gz",
@@ -84,7 +84,7 @@
   {
    "bytes": 1047888,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:06Z",
+   "modified": "2026-11-11T20:53:50Z",
    "path": "data/raw/cpc_verif_grid/prec01_forecast_above.bi",
    "sha256": "ed343013e0faf77f203da9053b291e0a10bc525d8d659982392ed6dac82cbcb8",
    "stored": "data/raw/cpc_verif_grid/prec01_forecast_above.bi.gz",
@@ -93,7 +93,7 @@
   {
    "bytes": 1047888,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:07Z",
+   "modified": "2026-11-11T20:53:51Z",
    "path": "data/raw/cpc_verif_grid/prec01_forecast_below.bi",
    "sha256": "abf0d1c80a5f52edf4e2bdcf49285897c2a49682facf71ef89166cb5dcae339a",
    "stored": "data/raw/cpc_verif_grid/prec01_forecast_below.bi.gz",
@@ -102,7 +102,7 @@
   {
    "bytes": 1039680,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:10Z",
+   "modified": "2026-11-11T20:53:55Z",
    "path": "data/raw/cpc_verif_grid/prec_seas_verif.bi",
    "sha256": "0eade481bba1d20db869222ca3f027c5910c1fa227a9edfe7ab8321c1d556e34",
    "stored": "data/raw/cpc_verif_grid/prec_seas_verif.bi.gz",
@@ -111,7 +111,7 @@
   {
    "bytes": 11438,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:04Z",
+   "modified": "2026-11-11T20:53:48Z",
    "path": "data/raw/cpc_verif_grid/temp01.heidke.txt",
    "sha256": "e8f26b4326b66880dff6b16af5849327253e3c2c7e6b8ad2444dec9e4f49421d",
    "stored": "data/raw/cpc_verif_grid/temp01.heidke.txt.gz",
@@ -120,7 +120,7 @@
   {
    "bytes": 1047888,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:01Z",
+   "modified": "2026-11-11T20:53:45Z",
    "path": "data/raw/cpc_verif_grid/temp01_forecast.bi",
    "sha256": "7a3937f60df5ded28c4a6d72f79af062447375abe22ad990ea8be292bf5ff4e8",
    "stored": "data/raw/cpc_verif_grid/temp01_forecast.bi.gz",
@@ -129,7 +129,7 @@
   {
    "bytes": 1047888,
    "gzip_added": true,
-   "modified": "2026-11-10T15:13:58Z",
+   "modified": "2026-11-11T20:53:41Z",
    "path": "data/raw/cpc_verif_grid/temp01_forecast_above.bi",
    "sha256": "112f29021aba4cb796de3593d39533661221d37ad5a080acc65d739f15a96906",
    "stored": "data/raw/cpc_verif_grid/temp01_forecast_above.bi.gz",
@@ -138,7 +138,7 @@
   {
    "bytes": 1047888,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:00Z",
+   "modified": "2026-11-11T20:53:43Z",
    "path": "data/raw/cpc_verif_grid/temp01_forecast_below.bi",
    "sha256": "59fd36d799fcf540da2f3c655287b6951e76a40fed98407da77aff91bee0bda4",
    "stored": "data/raw/cpc_verif_grid/temp01_forecast_below.bi.gz",
@@ -147,7 +147,7 @@
   {
    "bytes": 1039680,
    "gzip_added": true,
-   "modified": "2026-11-10T15:14:03Z",
+   "modified": "2026-11-11T20:53:47Z",
    "path": "data/raw/cpc_verif_grid/temp_seas_verif.bi",
    "sha256": "5e2ad34f805e7f7bdb2cbd93cfeebbed633b71344cfafe4427d01e10b4902733",
    "stored": "data/raw/cpc_verif_grid/temp_seas_verif.bi.gz",
@@ -172,7 +172,7 @@
    "stored_sha256": "ada93daef99899044cf8d1794d881015cc9e0f48bf7b5bb948e8856b7510308c"
   }
  ],
- "made": "2026-11-11T00:11:28Z",
+ "made": "2026-11-12T16:05:08Z",
  "mode": "inputs",
  "name": "SEASONAL",
  "reference": []

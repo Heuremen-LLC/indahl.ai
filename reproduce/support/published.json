@@ -1,17 +1,17 @@
 {
  "feed": "https://indahl.ai/support/live.json",
- "feed_sha256": "983bdce758766dc48db0c8b1814185c791632e78bc76469f2e6f9ea35f0c6f4b",
+ "feed_sha256": "1bcaeeaa89763289e331f1723a304ec48e28bc851d45344ac486dce7c73b23f6",
  "headline": {
   "desk": "SUPPORT",
   "display": "24%",
-  "hi": 0.3354,
+  "hi": 0.3375,
   "keys": [],
-  "lo": 0.1533,
-  "n": 103,
-  "of": 428,
+  "lo": 0.154,
+  "n": 104,
+  "of": 430,
   "outcome": "ABOVE",
-  "value": 0.2407
+  "value": 0.2419
  },
- "read_at": "2026-11-11T00:08:43Z",
- "stamp": "10 Nov 20:50"
+ "read_at": "2026-11-12T16:06:19Z",
+ "stamp": "12 Nov 15:38"
 }

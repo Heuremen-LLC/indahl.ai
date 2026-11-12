@@ -18,6 +18,9 @@ BIN_WORD = {'MATCHES_CURRENT': 'Matches the current release', 'MATCHES_AN_OLDER_
             'MATCHES_NO_RELEASE_READ': 'Matches no release read', 'SOURCE_UNREADABLE': 'Nothing returned'}
 VERB = {'MATCHES_CURRENT': 'match the current release', 'MATCHES_AN_OLDER_RELEASE': 'match an older release',
         'MATCHES_NO_RELEASE_READ': 'match no release read', 'SOURCE_UNREADABLE': 'returned nothing'}
+def ow(x, key='outcome'):
+    o = x.get(key); w = OUT_WORD.get(o, o)
+    return w + (f' ({x["reason_code"]})' if o == 'CANNOT_TELL' and x.get('reason_code') and key == 'outcome' else '')   # 12 Nov 2026: Faults and Guards 2.0, the reason sits beside the word
 BINS = list(BIN_WORD); OUTS = ['ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL']
 GROUP_ORDER = ['WB-POP', 'WB-GDP', 'WB-GINI', 'WB-UNEMP', 'UIS-LE', 'UIS-TFR']
 SRC_SHORT = {'World Bank WDI': 'World Bank', 'UNESCO Institute for Statistics': 'UIS'}
@@ -77,7 +80,8 @@ hl_big = f'{n(k(pop, "MATCHES_CURRENT") + k(pop, "MATCHES_AN_OLDER_RELEASE"))} o
 hl_line = (f'population figures for countries and territories in Wikidata that cite the World Bank match a World Bank release at the precision '
            f'they are written in. {n(k(pop, "MATCHES_CURRENT"))} match the current release and {n(k(pop, "MATCHES_AN_OLDER_RELEASE"))} an older one.'
            # 10 Nov 2026 (newsletter audit): the share is quoted with the interval over countries, the one the plan says is honest about clustering
-           + (lambda t: f' That is {100 * t["share"]:.1f} percent matching an older release, with a 95 percent interval of {100 * t["country95"][0]:.1f} to {100 * t["country95"][1]:.1f} percent when whole countries are resampled.')(pop['bins']['MATCHES_AN_OLDER_RELEASE']))
+           + (lambda t: f' That is {100 * t["share"]:.1f} percent matching an older release, with a 95 percent interval of {100 * t["country95"][0]:.1f} to {100 * t["country95"][1]:.1f} percent when whole countries are resampled.')(pop['bins']['MATCHES_AN_OLDER_RELEASE'])
+           + f' The share counts every population figure, including those the source returned nothing for, as the plan\'s bins define it. For the size reading of these figures, {pop["req13"]["line"]}')
 
 wbr = pop.get('source_read') or {}; uisr = (s1.get('UIS-LE', {}).get('source_read') or {})
 parts.append('<h2>Cited figures against their source</h2>')
@@ -147,7 +151,8 @@ parts.append('<h3>The size of the gap</h3>')
 parts.append('<p>We also read the gap between each figure and the source\'s current figure for the same country and year. The size that matters, '
              'fixed before the data, is 1 percent of the current figure. Above means the figure as cited is more than 1 percent above the source\'s '
              'current figure, and below means more than 1 percent below. Within 1 percent is a bound, not a claim that the two are equal. Cannot tell '
-             'means the figure\'s written precision leaves its gap on both sides of the 1 percent line, or the source has no current figure for that year.</p>')
+             'carries one reason. STRADDLES_EDGE means the figure\'s gap interval crosses the 1 percent line without holding zero. TOO_WIDE_TO_RESOLVE means its written precision leaves the gap '
+             'interval holding both zero and 1 percent. NO_INTERVAL_FORMABLE means the source has no current figure for that year. The size that matters and the edge of the band are the same 1 percent, and the edges are closed.</p>')
 rows_html = []
 for gid in GROUP_ORDER + ['ALL']:
     g = s1.get(gid)
@@ -155,6 +160,7 @@ for gid in GROUP_ORDER + ['ALL']:
     rows_html.append(f'<tr><td>{"All of the above" if gid == "ALL" else E(g["label"])}</td>' + ''.join(cell(g['size'][o]) for o in OUTS) +
                      f'<td class="n">{pc(g.get("median_abs_gap_not_matching_current"))}</td></tr>')
 parts.append(table(['Figure', 'More than 1% above', 'More than 1% below', 'Within 1%', 'Cannot tell', 'Median absolute gap, figures not matching the current release'], rows_html))
+parts.append('<p class="bench-note">Cannot tell for all figures: ' + ', '.join(f'{n(v)} {k}' for k, v in sorted((allg.get('size_cannot_tell_by_reason') or {}).items())) + f'. Beside that count, for the {n(allg["req13"]["n_readings"])} figures the source returned a value for, {E(allg["req13"]["line"])}</p>')
 line = [(gid, x) for gid in GROUP_ORDER for x in ((s1.get(gid) or {}).get('on_the_line') or [])]
 if line:
     bits = []
@@ -291,7 +297,7 @@ for f in L['section2']:
     elif wb.get('note'): since = E(wb['note'])
     where = f'<a href="{E(f["url"])}">{E(f["page_name"])}</a>' + (', figure card' if f.get('card') else '') + f', read {E(short_date(f["read"] or ""))}'
     rows_html.append(f'<tr><td><span class="quote">&ldquo;{quote_html(f)}&rdquo;</span><br><span class="srckind">{where}</span></td><td>{since}</td>'
-                     f'<td>{E(OUT_WORD.get(f["outcome"], f["outcome"]))}</td></tr>')
+                     f'<td>{E(ow(f))}</td></tr>')
 parts.append(table(['Stated figure', 'How long it has stood', 'Outcome'], rows_html))
 
 ya, bc = mom.get('year_end') or {}, mom.get('before_first_capture') or {}
@@ -309,7 +315,7 @@ for f in L['section2']:
     if not f.get('definitions'): continue
     kind = 'views' if 'views' in f['id'] else ('edits' if 'edits' in f['id'] else 'count')
     rows_html.append(f'<tr><td colspan="5"><span class="quote">&ldquo;{quote_html(f)}&rdquo;</span> <span class="srckind">Stated band {E(band_words(f))}, {E(WIN.get(f["window"], f["window"]))}. '
-                     f'Outcome: {E(OUT_WORD.get(f["outcome"], f["outcome"]))}.</span></td></tr>')
+                     f'Outcome: {E(ow(f))}.</span></td></tr>')
     for d in f['definitions']:
         if d.get('lo') is None: deliv = 'no data'
         elif d['lo'] == d['hi']: deliv = big(d['lo'], kind)
@@ -318,12 +324,12 @@ for f in L['section2']:
         if d.get('source_url'): name += f' <span class="srckind">(<a href="{E(d["source_url"])}">{E(d["source"])}</a>)</span>'
         if d.get('in_outcome') is False: name += ' <span class="srckind">(all projects, not the scope the figure names, shown for reference)</span>'
         pf = d.get('pre_first_capture') or {}
-        rows_html.append(f'<tr><td>{name}</td><td class="n">{deliv}</td><td>{E(OUT_WORD.get(d["outcome"], d["outcome"]))}</td>'
+        rows_html.append(f'<tr><td>{name}</td><td class="n">{deliv}</td><td>{E(ow(d))}</td>'
                          f'<td>{E(OUT_WORD.get(d["mean_reading"], d["mean_reading"])) if not d.get("moment") else ""}</td>'
                          f'<td class="n">{big(pf["mean"], kind) if pf.get("mean") is not None else ""}</td></tr>')
 parts.append(table(['Definition', 'Delivered (monthly low to high)', 'Reading', 'Reading on the mean', 'Mean of the 12 months before it first appeared'], rows_html))
 parts.append('<p class="bench-note">Reading: above means the stated band lies wholly above every delivered month, below means wholly below, consistent '
-             'means every delivered month lies inside the stated band, and cannot tell means they overlap. The reading on the mean, a second ruler fixed '
+             'means every delivered month lies inside the stated band, and cannot tell means they overlap or that no delivered data exists, with the reason beside it. A stated floor, such as over 67 million or 300+, is a one-sided bound and cannot read consistent. It reads below when the delivered figure sits above the floor (the claim holds), and above when the delivered figure sits under it. The reading on the mean, a second ruler fixed '
              'before the data, places the 12-month mean against the band. The last column, for homepage rates, is descriptive and has no outcome. The two view '
              'figures name Wikipedia, so only the Wikipedia definitions decide their outcome (defined after the data). Views come from the Analytics API page '
              'view counts, edits from its edit counts divided by the minutes in each month, articles and files from each wiki\'s site statistics.</p>')
@@ -370,7 +376,7 @@ for h in dsa['harmonised']:
     per = f'{a_.strftime("%B")} to {z_.strftime("%B %Y")}' if a_.year == z_.year else f'{a_.strftime("%B %Y")} to {z_.strftime("%B %Y")}'
     eq = 'equal (difference 0)' if h['difference'] == 0 else f'{n(int(h["difference"]))} apart'
     parts.append(f'<p>Harmonised report for Wikipedia, {E(per)}. The EU total, {n(int(h["total"]))}, against the sum of its {h["member_rows"]} member-state rows, '
-                 f'{n(int(h["member_sum"]))}: {eq}, {E(OUT_WORD.get(h["outcome"], h["outcome"]))} (rounding to the nearest thousand allows up to 13,500). '
+                 f'{n(int(h["member_sum"]))}: {eq}, {E(ow(h))} (rounding to the nearest thousand allows up to 13,500). '
                  + (f'Its member-state rows equal the DSA page\'s figures for the same half-year in {cf["equal"]} of {h["member_rows"]}.' if cf else '') +
                  f' <a href="{E(h.get("url") or "")}">Report file</a>.</p>')
 bd = dsa['bound']

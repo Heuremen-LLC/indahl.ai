@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/airline/live.json served it at the feed stamp 29 Oct 16:35, read by us at 2026-11-11T00:08:49Z. The feed bytes had sha256 `74cb787d3e003caa806302c3de6bbf2ea41e15093e8664cc344918fe0d41961e`.
+The headline as the live feed https://indahl.ai/airline/live.json served it at the feed stamp 12 Nov 15:28, read by us at 2026-11-12T16:06:24Z. The feed bytes had sha256 `105cdd87629fce3342b8912731b04c47a7f8bdd9e28cb3362675db50677b0892`.
 
 - number: 5 of 13
 - value: 5
@@ -37,7 +37,7 @@ As the AIRLINE data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/results.json | 5,463 | `37c29945a6e92913cea3ca181df916237593bef70c38205171d5ff4618a45850` |
+| data/results.json | 15,807 | `19bd037dee3f08dfaa809d0d12c7e8065350b1272a9e3a216579d3ff22ba9e00` |
 
 ## Code
 

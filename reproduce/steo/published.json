@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/steo/live.json",
- "feed_sha256": "4d878afd9c2fbcb9d12e660f466b33aa217eb6a9e30c2515d2163a792885b999",
+ "feed_sha256": "077eb432a50fbeb2ed191780d574001098d7da826ff179a03754e8646db48a4e",
  "headline": {
   "desk": "STEO",
   "display": "392 of 452",
@@ -12,6 +12,6 @@
   "outcome": "CANNOT_TELL",
   "value": 0.8673
  },
- "read_at": "2026-11-11T00:12:47Z",
- "stamp": "2026-11-10T16:19:16Z"
+ "read_at": "2026-11-12T16:06:09Z",
+ "stamp": "2026-11-12T06:37:17Z"
 }

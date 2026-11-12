@@ -39,6 +39,8 @@ BINS = (MATCH, OLDER, NOREL, UNREAD)
 OUTS = (K.ABOVE, K.BELOW, K.CONSISTENT, K.CANNOT_TELL)
 SIZE = 0.01            # PLAN: size that matters, 1 percent of the source's current figure
 F32 = 2.0 ** -24       # PLAN: single-precision storage at the source
+NIF = K.NO_INTERVAL_FORMABLE   # 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): the closed reasons of a CANNOT_TELL are K.STRADDLES_EDGE, K.TOO_WIDE_TO_RESOLVE and NIF
+RESTD2 = '--std2-rewrite' in sys.argv   # rewrite the scored outputs under the 2.0 rule from the cached raw files and keep the reading stamps and the shipped numbers as they were
 
 
 # ----------------------------------------------------------------------------------------------------------- network and cache
@@ -278,12 +280,13 @@ def bin_row(v, u, isos, year, src, m=None):
 
 def size_row(v, u, cur):
     """PLAN size reading: g = (cited - current)/current, interval from the written precision; four outcomes against plus or minus 1 percent."""
-    if cur is None: return dict(outcome=K.CANNOT_TELL, reason='no current value')
-    if cur == 0: return dict(outcome=K.CANNOT_TELL, reason='current value is zero')
+    if cur is None: return dict(outcome=K.CANNOT_TELL, reason='no current value', code=NIF)
+    if cur == 0: return dict(outcome=K.CANNOT_TELL, reason='current value is zero', code=NIF)
     fv, fu = float(v), float(u)
     g = (fv - cur) / cur; a = (fv - fu / 2 - cur) / cur; b = (fv + fu / 2 - cur) / cur
     lo, hi = min(a, b), max(a, b)          # note 2.3: no single-precision widening here, as the plan's size rule states
-    return dict(outcome=K.classify(lo, hi, -SIZE, SIZE), gap=g, gap_lo=lo, gap_hi=hi)
+    o, why = K.read(lo, hi, band=(-SIZE, SIZE), matters=SIZE, null=0.0, direction='both')   # PLAN_ADDENDUM_std2.md: the size that matters is the band edge, edges closed
+    return dict(outcome=o, code=why, gap=g, gap_lo=lo, gap_hi=hi)
 
 
 def refs_of(claim, src):
@@ -464,6 +467,7 @@ def score_s1(srcs, smeta):
             r.update(bin_row(r['v'], r['u'], r['iso'], r['year'], src))
             cur = src.lookup(src.current, r['iso'], r['year']); r['current'] = cur
             s = size_row(r['v'], r['u'], cur); r['outcome'] = s['outcome']; r['gap'] = s.get('gap'); r['gap_lo'] = s.get('gap_lo'); r['gap_hi'] = s.get('gap_hi')
+            r['reason_code'] = s.get('code')
             if 'reason' in s: r['outcome_reason'] = s['reason']
         frame_meta[g['id']] = dict(items_in_frame=len(frame['items']), items_failed=frame.get('failed', []), frame_read=frame.get('read'),
                                    statements_in_frame=n_st, set_aside=dict(aside), rows=len(rows))
@@ -516,6 +520,8 @@ def summarize_s1(rows, frame_meta, smeta):
                     written_whole_size=dict(C.Counter(r['outcome'] for r in rs if '.' not in r['value'])),
                     bins=share_table(rs, lambda r: r['bin'], BINS), size=share_table(rs, lambda r: r['outcome'], OUTS),
                     size_cannot_tell_reasons=dict(C.Counter(r.get('outcome_reason', 'interval crosses 1 percent') for r in rs if r['outcome'] == K.CANNOT_TELL)),
+                    size_cannot_tell_by_reason=dict(C.Counter(r.get('reason_code') for r in rs if r['outcome'] == K.CANNOT_TELL)),
+                    req13=K.req13([(r['outcome'], r.get('reason_code')) for r in rs if r['bin'] != UNREAD], nothing_returned=sum(1 for r in rs if r['bin'] == UNREAD)),
                     median_abs_gap_not_matching_current=medv,
                     newest_matching_release_by_year=dict(sorted(C.Counter(r['last_id'][:4] for r in rs if r['bin'] == OLDER).items())),
                     on_the_line=[dict(item=it, label=LABELS.get(it), rows=len(v), years=[min(x['year'] for x in v), max(x['year'] for x in v)],
@@ -1034,21 +1040,23 @@ def band_of(s):
     if w in ('plus', 'counting'): return dict(lo=X, hi=math.inf, lo_open=False, text=f'{X:,.0f} or more')
     h = s['unit'] / 2; return dict(lo=X - h, hi=X + h, lo_open=False, text=f'{X - h:,.0f} to {X + h:,.0f}' if h >= 1 else f'{X - h:,} to {X + h:,}')
 
-def outcome_band(b, dlo, dhi):
-    """PLAN Section 2: the stated band relative to the delivered interval."""
-    if dlo is None or dhi is None: return K.CANNOT_TELL
-    if b['lo'] > dhi or (b['lo_open'] and b['lo'] >= dhi): return K.ABOVE
-    if b['hi'] < dlo: return K.BELOW
-    inside_lo = (dlo > b['lo']) if b['lo_open'] else (dlo >= b['lo'])
-    if inside_lo and dhi <= b['hi']: return K.CONSISTENT
-    return K.CANNOT_TELL
+def outcome_band2(b, dlo, dhi):
+    """PLAN Section 2: the stated band relative to the delivered interval. 12 Nov 2026 (PLAN_ADDENDUM_std2.md): read with K.read of the delivered interval against the band, and the kit's
+    ABOVE and BELOW swapped to the plan's direction (stated relative to delivered). A floor (over X, X plus, X and counting) is a one-sided bound and never reads CONSISTENT.
+    Returns (outcome, reason)."""
+    if dlo is None or dhi is None: return K.CANNOT_TELL, NIF
+    if b['hi'] == math.inf: o, r = K.read(dlo, dhi, bound=b['lo'], edge='(]' if b['lo_open'] else 'closed')
+    else: o, r = K.read(dlo, dhi, band=(b['lo'], b['hi']))
+    return {K.ABOVE: K.BELOW, K.BELOW: K.ABOVE}.get(o, o), r
+def outcome_band(b, dlo, dhi): return outcome_band2(b, dlo, dhi)[0]
 
 def known_good_s2():
     b = dict(lo=13.5, hi=15, lo_open=False); o = dict(lo=67, hi=math.inf, lo_open=True); p = dict(lo=300, hi=math.inf, lo_open=False)
     cases = [(b, 11, 13, K.ABOVE), (b, 16, 20, K.BELOW), (b, 14, 14.5, K.CONSISTENT), (b, 13, 14, K.CANNOT_TELL), (b, 14, 16, K.CANNOT_TELL),
-             (o, 68.7, 68.7, K.CONSISTENT), (o, 66, 66, K.ABOVE), (o, 67, 67, K.ABOVE), (o, 66, 68, K.CANNOT_TELL), (p, 300, 300, K.CONSISTENT), (p, 299, 299, K.ABOVE)]
+             (o, 68.7, 68.7, K.BELOW), (o, 66, 66, K.ABOVE), (o, 67, 67, K.ABOVE), (o, 66, 68, K.CANNOT_TELL), (p, 300, 300, K.CANNOT_TELL), (p, 299, 299, K.ABOVE), (p, 348, 348, K.BELOW)]
     res = [dict(band=[c[0]['lo'], c[0]['hi']], delivered=[c[1], c[2]], want=c[3], got=outcome_band(c[0], c[1], c[2])) for c in cases]
     for r in res: r['ok'] = r['want'] == r['got']
+    res.append(dict(test='reasons: overlap STRADDLES_EDGE, no data NO_INTERVAL_FORMABLE, a floor never CONSISTENT', ok=outcome_band2(b, 13, 14)[1] == K.STRADDLES_EDGE and outcome_band2(b, None, None) == (K.CANNOT_TELL, NIF) and all(outcome_band(o, x, x) != K.CONSISTENT and outcome_band(p, x, x) != K.CONSISTENT for x in (60, 67, 68.7, 300, 400))))
     nb = band_of(dict(X=15e9, word='nearly')); pb = band_of(dict(X=324, word='plain', unit=1)); vb = band_of(dict(X=250000, word='plain', unit=10000))
     bands_ok = nb['lo'] == 13.5e9 and nb['hi'] == 15e9 and pb['lo'] == 323.5 and pb['hi'] == 324.5 and vb['lo'] == 245000 and vb['hi'] == 255000
     res.append(dict(test='word rules on three figures', ok=bands_ok))
@@ -1125,7 +1133,7 @@ def score_s2():
                                  kind=s['kind'], window=s['window'], wayback=wb.get(s['id'], {}))
         if s['kind'] == 'volunteers':
             w = s['window'] if s['window'] in VB else 'latest12'; own = VB[w][s['scope']]
-            f.update(outcome=K.CANNOT_TELL, reason='The Analytics API counts editors per wiki only. It has no count of people deduplicated across wikis.',
+            f.update(outcome=K.CANNOT_TELL, reason_code=NIF, reason='The Analytics API counts editors per wiki only. It has no count of people deduplicated across wikis.',
                      scope=s['scope'], bounds=dict(all_wikis=VB[w]['all_wikis'], wikipedias=VB[w]['wikipedias'], months=VB[w]['months']),
                      placement=dict(note='defined after the data', one_plus=outcome_band(b, own['1+']['lower_mean'], own['1+']['upper_mean']),
                                     five_plus=outcome_band(b, own['5+']['lower_mean'], own['5+']['upper_mean'])))
@@ -1141,19 +1149,19 @@ def score_s2():
                         m = MOM.get(mid, {}); v = m.get(did); lab = m.get('label', mid)
                         srcn = f"statistics table revision {m.get('revision')} ({(m.get('revision_time') or '')[:16].replace('T', ' ')} UTC)"; url = m.get('url')
                     st = dict(lo=v, hi=v, mean=v) if v is not None else dict(missing=['value'])
-                    o = outcome_band(b, st.get('lo'), st.get('hi'))
+                    o, orc = outcome_band2(b, st.get('lo'), st.get('hi'))
                     defs.append(dict(id=f'{did}@{mid}', base=did, moment=mid, moment_label=lab, name=f'{dname}, {lab}', source=srcn, source_url=url,
-                                     outcome=o, mean_reading=o, in_outcome=True, **st))
+                                     outcome=o, reason_code=orc, mean_reading=o, in_outcome=True, **st))
         else:
             for did, dname in DEF[s['kind']]:
                 if did in POINT:
                     v = POINT[did]; st = dict(lo=v, hi=v, mean=v) if v is not None else dict(missing=['value'])
                 else:
                     st = series_stats(SER[did], months_in(s['window']))
-                o = outcome_band(b, st.get('lo'), st.get('hi')); om = outcome_band(b, st.get('mean'), st.get('mean')) if 'mean' in st else K.CANNOT_TELL
+                o, orc = outcome_band2(b, st.get('lo'), st.get('hi')); om = outcome_band(b, st.get('mean'), st.get('mean')) if 'mean' in st else K.CANNOT_TELL
                 # note 2.4: a figure that names Wikipedia states its scope, so the all-projects candidates are shown for reference only
                 inout = not (s.get('stated_scope') == 'Wikipedia' and did in ('V3', 'V4'))
-                d = dict(id=did, name=dname, outcome=o, mean_reading=om, in_outcome=inout, **st)
+                d = dict(id=did, name=dname, outcome=o, reason_code=orc, mean_reading=om, in_outcome=inout, **st)
                 if s['window'] in ('latest12',) and did in SER and wb.get(s['id'], {}).get('first_with'):
                     d['pre_first_capture'] = series_stats(SER[did], months_in('pre_first', wb[s['id']]['first_with']))
                 defs.append(d)
@@ -1161,6 +1169,9 @@ def score_s2():
         outs = {d['outcome'] for d in used}
         f['definitions'] = defs
         f['outcome'] = outs.pop() if len(outs) == 1 else K.CANNOT_TELL
+        if f['outcome'] == K.CANNOT_TELL:   # PLAN_ADDENDUM_std2.md: disagreement across definitions or moments is STRADDLES_EDGE, all definitions CANNOT_TELL carry their shared reason
+            rc = {d.get('reason_code') for d in used}
+            f['reason_code'] = (rc.pop() if len(rc) == 1 and None not in rc else K.STRADDLES_EDGE) if len(outs) == 1 else K.STRADDLES_EDGE
         if len({d['outcome'] for d in used}) > 1:
             f['reason'] = ('The report does not state the moment its counts describe, and the readings at the three moments disagree (defined after the data).'
                            if s['window'] == 'moments' else 'The Foundation does not state the definition, and the candidate definitions disagree.')
@@ -1187,17 +1198,18 @@ def score_s2():
     off = [dict(table=a, row=b, window=c, value=n) for a, b, c, n in cells if n % 1000]
     # PLAN DSA check 1: CONSISTENT when no cell departs; otherwise the count and the cells are printed, with no outcome label
     dsa['rounding'] = dict(statement="These estimates have been rounded to the nearest '000", cells=len(cells), not_whole_thousands=off,
-                           outcome=(K.CANNOT_TELL if not cells else (K.CONSISTENT if not off else None)), read=dread['read'], url=dread['url'])
+                           outcome=(K.CANNOT_TELL if not cells else None), reason_code=(NIF if not cells else None), difference_from_zero=(len(off) if cells else None),
+                           read=dread['read'], url=dread['url'])   # 12 Nov 2026: a count against zero with no tolerance prints the count and no outcome word (owner decision O1)
     # harmonised reports
     harm = []
     for h in dread.get('harmonised', []):
-        if not h.get('file'): harm.append(dict(title=h['title'], outcome=K.CANNOT_TELL, reason='file not read')); continue
+        if not h.get('file'): harm.append(dict(title=h['title'], outcome=K.CANNOT_TELL, reason_code=NIF, reason='file not read')); continue
         rows, err = read_harmonised(h['file'])
-        if rows is None: harm.append(dict(title=h['title'], outcome=K.CANNOT_TELL, reason=err)); continue
+        if rows is None: harm.append(dict(title=h['title'], outcome=K.CANNOT_TELL, reason_code=NIF, reason=err)); continue
         tot = [r for r in rows if r['scope'] == 'TOTAL']; mem = [r for r in rows if r['scope'] != 'TOTAL']
         period = tot[0]['period'] if tot else None; T = tot[0]['value'] if tot else None; S = sum(r['value'] for r in mem)
         diff = (T - S) if T is not None else None
-        o = K.CANNOT_TELL if diff is None else (K.CONSISTENT if abs(diff) <= 13500 else (K.ABOVE if diff > 0 else K.BELOW))
+        o, orc = (K.CANNOT_TELL, NIF) if diff is None else K.read_exact(diff, band=(-13500, 13500))[:2]   # exact read inside the stated 13,500 band (owner decision O1)
         # cross-filing against the page's member-state column for the same half-year
         col = None
         if ms_tab and period:
@@ -1211,7 +1223,7 @@ def score_s2():
             ne = [dict(code=r['scope'], report=int(r['value']), page=page.get(EU_CODES.get(r['scope']))) for r in mem if page.get(EU_CODES.get(r['scope'])) != int(r['value'])]
             cross = dict(window=ms_tab['head'][col], equal=len(eq), differ=ne)
         harm.append(dict(title=h['title'], url=h.get('url'), sha1=h.get('sha1'), period=period, total=T, member_sum=S, member_rows=len(mem), difference=diff,
-                         outcome=o, codes_not_iso=[r['scope'] for r in mem if r['scope'] in ('SP', 'EL')], cross_filing=cross))
+                         outcome=o, reason_code=orc, codes_not_iso=[r['scope'] for r in mem if r['scope'] in ('SP', 'EL')], cross_filing=cross))
     dsa['harmonised'] = harm
     # bound: stated EU devices against global unique devices
     un = dl['uniques']; bound = []
@@ -1224,10 +1236,10 @@ def score_s2():
                 if not ms or n is None: continue
                 g = [un.get(name, {}).get(m) for m in ms]
                 if any(x is None for x in g):
-                    bound.append(dict(family=name, window=h, stated=n, outcome=K.CANNOT_TELL, reason='global unique devices missing for a month of the window')); continue
+                    bound.append(dict(family=name, window=h, stated=n, outcome=K.CANNOT_TELL, reason_code=NIF, reason='global unique devices missing for a month of the window')); continue
                 gm = sum(g) / len(g); eu = n * factor
                 bound.append(dict(family=name, window=h, stated=n, stated_devices=eu, global_devices_mean=gm, implied_eu_share=eu / gm,
-                                  outcome=K.ABOVE if eu > gm else K.CONSISTENT))
+                                  outcome=K.read_exact(eu, bound=gm)[0], reason_code=None))   # one-sided bound: above, below, or the difference only, never CONSISTENT
     dsa['bound'] = bound
     # repeats in consecutive half-years (descriptive)
     reps = []
@@ -1240,7 +1252,7 @@ def score_s2():
                 if run >= 2 and (i == len(ns) - 1 or ns[i + 1] != ns[i]):
                     reps.append(dict(member_state=name, value=ns[i], half_years=run, windows=[ms_tab['head'][i - run + 1], ms_tab['head'][i]]))
     dsa['repeats'] = reps
-    dsa['figure_itself'] = dict(outcome=K.CANNOT_TELL, reason='The DSA figures are EU unique devices divided by 2.4. EU-only device counts are not published, so the figures cannot be rebuilt from public data.')
+    dsa['figure_itself'] = dict(outcome=K.CANNOT_TELL, reason_code=NIF, reason='The DSA figures are EU unique devices divided by 2.4. EU-only device counts are not published, so the figures cannot be rebuilt from public data.')
     # descriptive (note 2.10): the page revision that set Finland's January to June 2025 figure, and the page's own note on that column
     fr = None
     p = cpath('s2/dsa_revisions_546663_546664.json.gz')
@@ -1287,7 +1299,7 @@ def step_s1_score():
     rows, fmeta = score_s1(srcs, smeta); SRCS_REF.update(srcs)
     passed, msg = K.known_good(lambda c: c, kg_ok)
     if not passed:
-        for r in rows: r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL
+        for r in rows: r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['reason_code'] = NIF; r['outcome_reason'] = 'known-good gate failed'
     summ = summarize_s1(rows, fmeta, {k: v for k, v in smeta.items()})
     sens = sensitivity_s1(rows, srcs)
     for gid, v in sens.items():
@@ -1295,7 +1307,7 @@ def step_s1_score():
         summ[gid]['sensitivity'] = v
     hc = hand_check_s1(rows, srcs)        # first run (query service, uniform draw); kept for the record, note 2.2
     hcp = json.load(open(cpath('s1/handcheck_plan.json'))) if os.path.exists(cpath('s1/handcheck_plan.json')) else None
-    s1 = dict(read=iso_utc(), known_good=dict(passed=kg_ok, planted=kg, scout_cross_check=dict(passed=sc_ok, releases=sc), gate=msg),
+    s1 = dict(read=(json.load(open(cpath('s1/s1_summary.json')))['read'] if RESTD2 else iso_utc()), known_good=dict(passed=kg_ok, planted=kg, scout_cross_check=dict(passed=sc_ok, releases=sc), gate=msg),
               hand_check_first_run=hc, hand_check=hcp, groups=summ, source_meta={f'{a}:{b}': v for (a, b), v in smeta.items()})
     with gzip.open(cpath('s1/rows.json.gz'), 'wt') as f: json.dump([{k: v for k, v in r.items() if k not in ('v',)} for r in rows], f, default=jsonable)
     json.dump(s1, open(cpath('s1/s1_summary.json'), 'w'), indent=1, default=jsonable)
@@ -1308,15 +1320,15 @@ def step_s2_score():
     kg_ok, kg = known_good_s2()
     figs, dsa, meta = score_s2()
     if not kg_ok:
-        for f in figs: f['outcome_before_gate'] = f['outcome']; f['outcome'] = K.CANNOT_TELL
-    s2 = dict(read=iso_utc(), known_good=dict(passed=kg_ok, tests=kg), figures=figs, dsa=dsa, meta=meta)
+        for f in figs: f['outcome_before_gate'] = f['outcome']; f['outcome'] = K.CANNOT_TELL; f['reason_code'] = NIF
+    s2 = dict(read=(json.load(open(cpath('s2/s2_summary.json')))['read'] if RESTD2 else iso_utc()), known_good=dict(passed=kg_ok, tests=kg), figures=figs, dsa=dsa, meta=meta)
     json.dump(s2, open(cpath('s2/s2_summary.json'), 'w'), indent=1, default=jsonable)
     print('s2: ' + '; '.join(f"{f['id']} {f['outcome']}" for f in figs), flush=True)
     return dict(figures=len(figs), known_good=kg_ok)
 
 def step_publish():
     s1 = json.load(open(cpath('s1/s1_summary.json'))); s2 = json.load(open(cpath('s2/s2_summary.json')))
-    full = dict(desk='WIKI', division='HERMES', updated=iso_utc(), plan='PLAN.md', section1=s1, section2=s2,
+    full = dict(desk='WIKI', division='HERMES', updated=(json.load(open(os.path.join(H, 'data', 'wiki.json')))['updated'] if RESTD2 else iso_utc()), plan='PLAN.md', section1=s1, section2=s2,
                 licences=dict(wikidata='CC0', analytics='CC0', worldbank='CC BY 4.0', uis='CC BY-SA 4.0', foundation_pages='CC BY-SA 4.0'))
     json.dump(full, open(os.path.join(H, 'data', 'wiki.json'), 'w'), indent=1)
     live = slim(s1, s2)
@@ -1339,6 +1351,7 @@ def slim(s1, s2):
                        rows=v['rows'], countries=v['countries'], country_years=v['country_years'], years=v['years'], bins=sh(v['bins']), size=sh(v['size']),
                        written_whole=v.get('written_whole'), written_whole_size=v.get('written_whole_size'),
                        on_the_line=v.get('on_the_line') or [],
+                       size_cannot_tell_by_reason=v.get('size_cannot_tell_by_reason'), req13=v.get('req13'),
                        median_abs_gap_not_matching_current=v['median_abs_gap_not_matching_current'], newest_matching_release_by_year=v['newest_matching_release_by_year'],
                        defaults=dict(rows=v['defaults']['rows'], countries=v['defaults']['countries'], bins=sh(v['defaults']['bins']), size=sh(v['defaults']['size'])),
                        notable=v.get('notable', []), set_aside=v.get('frame', {}).get('set_aside'), source_read=v.get('source_read'),
@@ -1348,8 +1361,8 @@ def slim(s1, s2):
     figs = []
     for f in s2['figures']:
         figs.append({k: f.get(k) for k in ('id', 'page_name', 'url', 'read', 'quote', 'found', 'card', 'focus', 'stated', 'word', 'band', 'band_text', 'window', 'outcome',
-                                           'reason', 'straddle', 'bounds', 'scope', 'placement', 'wayback')} |
-                    dict(definitions=[{k: d.get(k) for k in ('id', 'base', 'name', 'moment', 'moment_label', 'source', 'source_url', 'outcome', 'mean_reading', 'in_outcome',
+                                           'reason', 'reason_code', 'straddle', 'bounds', 'scope', 'placement', 'wayback')} |
+                    dict(definitions=[{k: d.get(k) for k in ('id', 'base', 'name', 'moment', 'moment_label', 'source', 'source_url', 'outcome', 'reason_code', 'mean_reading', 'in_outcome',
                                                              'lo', 'hi', 'mean', 'months', 'pre_first_capture')} for d in f.get('definitions', [])]))
     nc = json.load(open(cpath('s1/notable_check.json'))) if os.path.exists(cpath('s1/notable_check.json')) else []
     ncm = {(x['group'], x['statement']): x['all_agree'] for x in nc}
@@ -1374,7 +1387,7 @@ STEPS_S1 = ['s1_frame', 's1_wb', 's1_uis', 's1_score', 's1_handcheck', 's1_notab
 
 def main():
     global OFFLINE
-    ap = argparse.ArgumentParser(); ap.add_argument('--steps', default='all'); ap.add_argument('--offline', action='store_true')
+    ap = argparse.ArgumentParser(); ap.add_argument('--steps', default='all'); ap.add_argument('--offline', action='store_true'); ap.add_argument('--std2-rewrite', action='store_true', help='rewrite the scored outputs under Faults and Guards 2.0, keep the reading stamps')
     ap.add_argument('--publish', action='store_true', help='after the steps, put data/wiki_live.json in the site KV (key wiki_live)')
     ap.add_argument('--due-days', type=float, default=0, help='with --publish: start only when the reading in data/wiki_live.json is at least this many days old')
     a = ap.parse_args(); OFFLINE = a.offline

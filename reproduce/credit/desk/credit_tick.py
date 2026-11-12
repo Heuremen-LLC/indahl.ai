@@ -174,10 +174,16 @@ for name, q in checks:
     g2rows.append(dict(cell=name, ours=o, api=a, ok=a is not None and abs(o - a) <= 0.005 * max(a, 1)))
 json.dump(G2, open(gate_f, 'w'))
 kg['reader'] = all(x['ok'] for x in g2rows)
+def rd(lo, hi, bl, bh, edge='[)'):
+    """PLAN_ADDENDUM_std2.md: every band here comes from the rounding of a printed figure and is half-open, [bl, bh), as PLAN.md states. Returns (outcome, reason) from K.read.
+    No size that matters is named, so no both-alternatives test. No interval gives CANNOT_TELL NO_INTERVAL_FORMABLE."""
+    return K.read(lo, hi, band=(bl, bh), edge=edge)
 def rule_selftest():
     ok = True
-    ok &= K.classify(0.997, 0.998, 0.9955, 0.9965) == K.ABOVE and K.classify(0.990, 0.993, 0.9955, 0.9965) == K.BELOW
-    ok &= K.classify(0.9957, 0.9963, 0.9955, 0.9965) == K.CONSISTENT and K.classify(0.995, 0.997, 0.9955, 0.9965) == K.CANNOT_TELL
+    ok &= rd(0.997, 0.998, 0.9955, 0.9965) == (K.ABOVE, None) and rd(0.990, 0.993, 0.9955, 0.9965) == (K.BELOW, None)
+    ok &= rd(0.9957, 0.9963, 0.9955, 0.9965) == (K.CONSISTENT, None) and rd(0.995, 0.997, 0.9955, 0.9965) == (K.CANNOT_TELL, K.STRADDLES_EDGE)
+    ok &= rd(0.9965, 0.9970, 0.9955, 0.9965) == (K.ABOVE, None) and rd(0.9955, 0.9964, 0.9955, 0.9965) == (K.CONSISTENT, None) and rd(0.9955, 0.9965, 0.9955, 0.9965) == (K.CANNOT_TELL, K.STRADDLES_EDGE)
+    ok &= rd(None, None, 0.9955, 0.9965) == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE) and rd(0.9951, 0.9955, 0.9955, 0.9965) == (K.CANNOT_TELL, K.STRADDLES_EDGE)
     # planted cells: the interval holds its own estimate every time and the planted share in most draws (a single draw can miss by chance, 10 Nov fix of the test)
     cover = 0
     for s_ in range(40):
@@ -197,10 +203,10 @@ for y in YEARS:
     num, den = blocks(lambda co, m, y=y: m.startswith(str(y)))
     e, lo, hi = boot(num, den, 'pooled %d' % y); txt, blo, bhi, sent, senttxt = PRINTED[y]
     ruler1.append(dict(year=y, rows=int(sum(den)), not_timely=int(sum(den) - sum(num)), company_months=len(den), timely=r4(e), lo=r4(lo), hi=r4(hi),
-                       printed=txt, band=[blo, bhi], printed_sent=senttxt, outcome=K.classify(lo, hi, blo, bhi),
+                       printed=txt, band=[blo, bhi], printed_sent=senttxt, outcome=rd(lo, hi, blo, bhi)[0], reason=rd(lo, hi, blo, bhi)[1],
                        at_edge_display=any(abs(v - bd) < 0.0001 for v in (lo, hi) for bd in (blo, bhi)),
                        printed_base_if_unpublished_timely_display=round((sum(num) + max(sent - sum(den), 0)) / max(sent, sum(den)), 6), database_share_of_printed_count=round(sum(den) / sent, 4)))   # referee R7, display only
-    if y == 2025: ruler1[-1]['more_than_99'] = dict(band=[0.99, 1.0], outcome_display=K.classify(lo, hi, 0.99, 1.0))
+    if y == 2025: ruler1[-1]['more_than_99'] = dict(band=[0.99, 1.0], edge='(]', outcome_display=rd(lo, hi, 0.99, 1.0, '(]')[0], reason_display=rd(lo, hi, 0.99, 1.0, '(]')[1])   # PLAN.md: (99, 100]
 # Q1a ruler two: each company per year, not timely share against the share the printed figure leaves
 def nt_band(y): _, blo, bhi, _, _ = PRINTED[y]; return round(1 - bhi, 6), round(1 - blo, 6)
 bycoy = C.defaultdict(list)
@@ -209,13 +215,13 @@ companies = []; tally = {y: C.Counter() for y in YEARS}
 for (co, y), lst in sorted(bycoy.items()):
     n = sum(x[1] for x in lst)
     if n < MIN_ROWS or len(lst) < MIN_MONTHS:
-        tally[y]['too_few'] += 1; continue
+        tally[y]['too_few'] += 1; continue   # reads CANNOT_TELL, reason TOO_WIDE_TO_RESOLVE (owner decision O3), counted not listed (PLAN.md)
     e, lo, hi = boot([x[2] for x in lst], [x[1] for x in lst], 'co %s %d' % (co, y)); bl, bh = nt_band(y)
-    o = K.classify(lo, hi, bl, bh); tally[y][o] += 1
+    o, why = rd(lo, hi, bl, bh); tally[y][o] += 1
     k_ = sum(x[2] for x in lst); wl_, wh_ = K.wilson(k_, n)
     edge = any(v is not None and abs(v - bd) < 0.0001 for v in (lo, hi) for bd in (bl, bh))   # referee R5: within 0.01 points of a band edge, display only
-    companies.append(dict(company=co, year=y, rows=n, not_timely=k_, months=len(lst), share=r4(e), lo=r4(lo), hi=r4(hi), band=[bl, bh], outcome=o, bureau=co in BUREAUS,
-                          wilson=[r4(wl_), r4(wh_)], wilson_reading_display=K.classify(wl_, wh_, bl, bh), at_edge_display=edge))   # after the data (10 Nov): a zero count gives a block interval of zero width, the Wilson interval is shown beside it, display only
+    companies.append(dict(company=co, year=y, rows=n, not_timely=k_, months=len(lst), share=r4(e), lo=r4(lo), hi=r4(hi), band=[bl, bh], outcome=o, reason=why, bureau=co in BUREAUS,
+                          wilson=[r4(wl_), r4(wh_)], wilson_reading_display=rd(wl_, wh_, bl, bh)[0], wilson_reading_display_reason=rd(wl_, wh_, bl, bh)[1], at_edge_display=edge))   # after the data (10 Nov): a zero count gives a block interval of zero width, the Wilson interval is shown beside it, display only
 # company x product family, 2025
 byf = C.defaultdict(list)
 for (co, m, fam), (n, no) in TF.items():
@@ -224,8 +230,8 @@ comp_fam = []; tally_f = C.Counter()
 for (co, fam), lst in sorted(byf.items()):
     n = sum(x[1] for x in lst)
     if n < MIN_ROWS or len(lst) < MIN_MONTHS: tally_f['too_few'] += 1; continue
-    e, lo, hi = boot([x[2] for x in lst], [x[1] for x in lst], 'cf %s %s' % (co, fam)); bl, bh = nt_band(2025); o = K.classify(lo, hi, bl, bh); tally_f[o] += 1
-    comp_fam.append(dict(company=co, family=fam, rows=n, not_timely=sum(x[2] for x in lst), months=len(lst), share=r4(e), lo=r4(lo), hi=r4(hi), outcome=o,
+    e, lo, hi = boot([x[2] for x in lst], [x[1] for x in lst], 'cf %s %s' % (co, fam)); bl, bh = nt_band(2025); o, why = rd(lo, hi, bl, bh); tally_f[o] += 1
+    comp_fam.append(dict(company=co, family=fam, rows=n, not_timely=sum(x[2] for x in lst), months=len(lst), share=r4(e), lo=r4(lo), hi=r4(hi), outcome=o, reason=why,
                          at_edge_display=any(v is not None and abs(v - bd) < 0.0001 for v in (lo, hi) for bd in (bl, bh))))
 # bureaus over the window, display only, against the rows-weighted printed share
 bureau_window = []
@@ -234,7 +240,7 @@ for b in BUREAUS:
     e, lo, hi = boot([x[2] for x in lst], [x[1] for x in lst], 'bw %s' % b)
     w = C.Counter(); [w.update({int(m[:4]): n}) for m, n, no in lst]
     wl = sum(w[y] * nt_band(y)[0] for y in YEARS) / sum(w.values()); wh = sum(w[y] * nt_band(y)[1] for y in YEARS) / sum(w.values())
-    bureau_window.append(dict(company=b, rows=sum(x[1] for x in lst), not_timely=sum(x[2] for x in lst), months=len(lst), share=r4(e), lo=r4(lo), hi=r4(hi), band=[round(wl, 6), round(wh, 6)], outcome_display=K.classify(lo, hi, wl, wh)))
+    bureau_window.append(dict(company=b, rows=sum(x[1] for x in lst), not_timely=sum(x[2] for x in lst), months=len(lst), share=r4(e), lo=r4(lo), hi=r4(hi), band=[round(wl, 6), round(wh, 6)], outcome_display=rd(lo, hi, wl, wh)[0], reason_display=rd(lo, hi, wl, wh)[1]))
 # all-others pooled not timely per year (display beside the bureaus)
 others_nt = []
 for y in YEARS + (None,):
@@ -262,12 +268,12 @@ for y in YEARS + (None,):
                           [resp_cell('all others', lambda co, m, ys=ys: co not in BUREAUS and ys(m))]))
 TABLE1 = {2024: dict(monetary='<1%', non_monetary='52%', explanation='42%', admin='3%', reviewing='2%', not_timely='<1%', all_monetary='0.8%'),
           2025: dict(monetary='<1%', non_monetary='40%', explanation='51%', admin='10%', reviewing='<1%', not_timely='<1%')}
-q1b_table1 = dict(row='Credit or consumer reporting', printed=TABLE1, outcome=K.CANNOT_TELL, why='Table 1 counts complaints closed with an admin response, which the database does not publish, so the bases differ.')
+q1b_table1 = dict(row='Credit or consumer reporting', printed=TABLE1, outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, why='Table 1 counts complaints closed with an admin response, which the database does not publish, so the bases differ.')
 
 # Q1c: CANNOT_TELL by plan, with the forwarding lag and the CFPB flag beside it
 lag = C.defaultdict(C.Counter)
 for co, y, bucket, v in AG['LAG']: lag[(co, y)][bucket] += v
-q1c = dict(outcome=K.CANNOT_TELL, why='The database records the date the CFPB received the complaint and the date it sent it to the company. It records no date of company response, and no date a bureau received a dispute notice under 15 U.S.C. 1681i. A complaint to the CFPB is not by itself the dispute notice the statute counts from.',
+q1c = dict(outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, why='The database records the date the CFPB received the complaint and the date it sent it to the company. It records no date of company response, and no date a bureau received a dispute notice under 15 U.S.C. 1681i. A complaint to the CFPB is not by itself the dispute notice the statute counts from.',
            lag=[dict(company=co, year=y, buckets={k: lag[(co, y)].get(k, 0) for k in ('0 or 1', '2 to 7', '8 to 30', 'over 30')}) for co in BUREAUS for y in YEARS],
            bureau_credit_reporting_not_timely=[])
 for b in BUREAUS:
@@ -283,7 +289,7 @@ for y in YEARS:
     sel = [(a, b, neg) for co, m, a, b, neg in SD if m.startswith(str(y))]
     e, lo, hi = boot([x[0] for x in sel], [x[1] for x in sel], 'sent %d' % y)
     q1d.append(dict(year=y, rows=sum(x[1] for x in sel), within_1_day=sum(x[0] for x in sel), sent_before_received=sum(x[2] for x in sel), share=r4(e), lo=r4(lo), hi=r4(hi),
-                    band=list(SENT_BAND) if y == 2025 else None, outcome=K.classify(lo, hi, *SENT_BAND) if y == 2025 else None))
+                    band=list(SENT_BAND) if y == 2025 else None, outcome=rd(lo, hi, *SENT_BAND)[0] if y == 2025 else None, reason=rd(lo, hi, *SENT_BAND)[1] if y == 2025 else None))
 
 # ---------------- 6. Q2: TCCP stated APRs beside G.19 ----------------
 def num_(v):
@@ -336,7 +342,7 @@ for label, rdate, fn in TCCP:
                    lowest_min=round(min(x for x in mins if x is not None), 2) if any(x is not None for x in mins) else None,
                    highest_max=round(max(x for x in maxs if x is not None), 2) if any(x is not None for x in maxs) else None,
                    late_fee_median=pct(late, 50), late_fee_plans=int(len(late)), plans_with_min=int(sum(1 for x in mins if x is not None)), not_applicable_code_cells=na_code,
-                   g19_quarter=q, g19_all_accounts=ga, g19_assessed_interest=gb, outcome=K.CANNOT_TELL)
+                   g19_quarter=q, g19_all_accounts=ga, g19_assessed_interest=gb, outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE)
         if len(top) and ga is not None: row['display_all_accounts_inside_top25_p10_p90'] = pct(top, 10) <= ga <= pct(top, 90)
         if len(top) and gb is not None: row['display_assessed_inside_top25_p10_p90'] = pct(top, 10) <= gb <= pct(top, 90)
         tccp.append(row)
@@ -359,11 +365,20 @@ def gate_all(obj):
     if GATE: return obj
     if isinstance(obj, dict):
         o = {k: gate_all(v) for k, v in obj.items()}
-        if 'outcome' in o and o['outcome'] in K.OUTCOMES: o['outcome_before_gate'] = o['outcome']; o['outcome'] = K.CANNOT_TELL
+        if 'outcome' in o and o['outcome'] in K.OUTCOMES: o['outcome_before_gate'] = o['outcome']; o['outcome'] = K.CANNOT_TELL; o['reason'] = K.NO_INTERVAL_FORMABLE
         return o
     if isinstance(obj, list): return [gate_all(x) for x in obj]
     return obj
 body = gate_all(body)
+# REQ-13 (PLAN_ADDENDUM_std2.md): beside each year's ruler one reading, the readings of that year's family (the ruler one reading and each company reading under ruler two,
+# a company under the minimum counted as CANNOT_TELL TOO_WIDE_TO_RESOLVE) and the database rows that could not be read as Yes or No with a valid date, listed apart.
+_FAILED = int(AG['counts'].get('timely_other', 0)) + int(AG['counts'].get('bad_date', 0))
+for _r in body['ruler1']:
+    _y = _r['year']
+    _rd = [dict(outcome=_r['outcome'], reason=_r.get('reason'))] + [dict(outcome=c['outcome'], reason=c.get('reason')) for c in body['companies'] if c['year'] == _y]
+    if GATE: _rd += [dict(outcome=K.CANNOT_TELL, reason=K.TOO_WIDE_TO_RESOLVE)] * tally[_y]['too_few']
+    else: _rd += [dict(outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE)] * tally[_y]['too_few']
+    _r['req13'] = K.req13(_rd, nothing_returned=_FAILED)
 if not kg['privacy']: log('PRIVACY GATE FAILED, nothing written'); sys.exit(2)
 t25 = {y: dict(tally[y]) for y in YEARS}
 if not GATE:   # counted after the gate

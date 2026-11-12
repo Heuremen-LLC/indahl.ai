@@ -10,15 +10,15 @@ This kit recomputes the LINKROT headline number and its outcome label with the d
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `466e6e2647e13ff7fd765b6b6debaad69f46bfc49084232ee60cc0735919aaf2`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `a68001ac446bea6ff9593871ffc5973bdd8316e9bf9c737be39e7873f3fd5858`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 10 Nov 23:50, read by us at 2026-11-11T00:08:39Z. The feed bytes had sha256 `01090048b6954d51af096ba875583621598b07fd758d471964fc29bc93afc23f`.
+The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 12 Nov 16:04, read by us at 2026-11-12T16:06:15Z. The feed bytes had sha256 `9334903fdeee2a2acf0f3a94f3eb527ad3dbf5837707e20581e7a09e511348db`.
 
-- number: 3.3%
-- value: 0.0329
-- interval: 0.0259 to 0.0418
+- number: 3.4%
+- value: 0.0339
+- interval: 0.0268 to 0.0429
 - outcome: CONSISTENT
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -38,8 +38,8 @@ As the LINKROT data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/links.json | 421,524 | `c12550b30a1bf847e64db5d9501c8ccdee9c239c1306f56f48ba6219f8698f04` |
-| summary_linkrot.json | 6,855 | `01090048b6954d51af096ba875583621598b07fd758d471964fc29bc93afc23f` |
+| data/links.json | 481,569 | `2a8951301a1173108a3211c5610084a944ce7557c55915a9e4b7d74ab27592d0` |
+| summary_linkrot.json | 13,656 | `9334903fdeee2a2acf0f3a94f3eb527ad3dbf5837707e20581e7a09e511348db` |
 
 ## Code
 

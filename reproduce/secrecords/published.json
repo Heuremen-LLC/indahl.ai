@@ -1,17 +1,17 @@
 {
  "feed": "https://indahl.ai/secrecords/live.json",
- "feed_sha256": "06bd2c7741a201390982d1a3bf5537cb16af2097d5b18f82875fcfcf455ff4b0",
+ "feed_sha256": "ea49e64f2ec70100eb10aa9ce93ed06a672fb0962532de4fee19638dce9e0aa8",
  "headline": {
   "desk": "SECRECORDS",
-  "display": "14%",
-  "hi": 0.2113,
+  "display": "15%",
+  "hi": 0.2127,
   "keys": [],
-  "lo": 0.0967,
+  "lo": 0.0974,
   "n": 21,
-  "of": 145,
+  "of": 144,
   "outcome": "CANNOT_TELL",
-  "value": 0.1448
+  "value": 0.1458
  },
- "read_at": "2026-11-11T12:25:18Z",
- "stamp": "11 Nov 11:35"
+ "read_at": "2026-11-12T16:06:17Z",
+ "stamp": "12 Nov 14:59"
 }

@@ -3,7 +3,7 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/pkglicense/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "pkglicense_tick.py lines 97 to 102, the rows of the listed names, the counts and the disagree block",
@@ -16,47 +16,47 @@
   {
    "bytes": 184496,
    "gzip_added": true,
-   "modified": "2026-11-10T21:45:32Z",
+   "modified": "2026-11-12T15:23:53Z",
    "path": "data/projects.json",
    "sha256": "c0bdf2755068f1754a8b62c0a76aace3e768f333ab38bc1bba907d70bf00e53f",
    "stored": "data/projects.json.gz",
    "stored_sha256": "05531fc1ccf5a9b4969d8cf3425477ab9d5caa2782d4844f8038feb592d6c18a"
   },
   {
-   "bytes": 2671,
+   "bytes": 3070,
    "gzip_added": true,
-   "modified": "2026-11-10T21:45:32Z",
+   "modified": "2026-11-12T15:23:53Z",
    "path": "summary_pkglicense.json",
-   "sha256": "b69f4ac5a377856795f48da2d0a3313fcce51dd486e8bd16eccec53217e3052f",
+   "sha256": "5a326670d020c42a24a570666f09be7946697a1dd818efe93652fad8d7466fdd",
    "stored": "summary_pkglicense.json.gz",
-   "stored_sha256": "71a5b7c3c3ca2da7e7989521e47e3a4c81b180d1dd0aa984198f45b94c914c35"
+   "stored_sha256": "50e974432f4385fe4dc6fce22f16581433045f9b84a044dbe64af4dde27027ea"
   },
   {
-   "bytes": 158673,
+   "bytes": 157673,
    "gzip_added": true,
-   "modified": "2026-11-10T21:24:17Z",
+   "modified": "2026-11-12T15:14:34Z",
    "path": "pkginstall/data/projects.json",
-   "sha256": "509f97ec77b330f5516159aac883ef04fa64bd7c834d66c1c7224f815028d59f",
+   "sha256": "69c1fd56b2a43d721258baee7adb19233dee709a91204380fef071a0ba248bbe",
    "stored": "pkginstall/data/projects.json.gz",
-   "stored_sha256": "ad26334c00e9a4de812662e50121723b3e2ae5a936ee02aee061f1310159a845"
+   "stored_sha256": "43aea2d2bb1c072bc4e7ceeb846ccb4e07a3eecb53106bd3baffff90f73a21aa"
   },
   {
    "bytes": 19,
    "gzip_added": true,
-   "modified": "2026-11-10T21:24:17Z",
+   "modified": "2026-11-12T15:14:34Z",
    "path": "pkginstall/data/listdate.txt",
    "sha256": "ce00e09e717676959017c3ccf380945489c8e20154f04283a3e6692ba0b6d399",
    "stored": "pkginstall/data/listdate.txt.gz",
    "stored_sha256": "d23e1d3031fea3e62381d44a960e1fd2cc4c5ddb518c54cf3810ab9c34896a96"
   }
  ],
- "made": "2026-11-11T00:26:05Z",
+ "made": "2026-11-12T16:06:23Z",
  "mode": "fetch",
  "name": "PKGLICENSE",
  "reference": [
   {
    "path": "desk/pkglicense_tick.py",
-   "sha256": "1ebfd305110452a605d53f77b81897be582b4051567853cb30b231fd2849338a"
+   "sha256": "bea5ce2db00d0f34c410369c70f2a51101f50e6d4d69280a36d46419223813e3"
   }
  ],
  "sources": [

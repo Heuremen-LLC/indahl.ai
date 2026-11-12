@@ -154,13 +154,12 @@ for issue, sc in sorted(by_issue.items()):
                        mp_report=(mp['title'] if mp else None), pmin=r2(a), pmax=r2(b), measured=r2(o))
             if mn and mx and a is not None and b is not None:
                 lo, hi = min(a, b), max(a, b); row.update(band_lo=r2(lo), band_hi=r2(hi), inverted=a > b, mp_outside=(v is not None and not (lo - 0.005 <= v <= hi + 0.005)))
-            if o is None: row['outcome'] = K.NOTHING_RETURNED; row['why'] = 'no measured value for this month yet'
+            if o is None: row['outcome'] = None; row['read_status'] = K.NOTHING_RETURNED; row['why'] = 'no measured value for this month yet'   # a failed read, no outcome (PLAN_ADDENDUM_std2.md)
             elif 'band_lo' not in row:
-                row['outcome'] = K.CANNOT_TELL
+                row['outcome'] = K.CANNOT_TELL; row['reason'] = K.NO_INTERVAL_FORMABLE
                 row['why'] = 'no Probable Minimum and Maximum issued this month' if not (mn and mx) else 'band edge unreadable for this month'
-            elif o > row['band_hi'] + 0.005: row['outcome'] = K.ABOVE
-            elif o < row['band_lo'] - 0.005: row['outcome'] = K.BELOW
-            else: row['outcome'] = K.CONSISTENT
+            else:   # a measured value against the stated band with the plan's 0.005 ft tolerance: an exact read, an interval of zero width (owner decision O1), closed edges
+                row['outcome'], row['reason'], _ = K.read_exact(o, band=(row['band_lo'] - 0.005, row['band_hi'] + 0.005), edge='closed')
             if v is not None and o is not None:
                 e = o - v; row['mp_error'] = r2(e); row['mp_sign'] = 'above' if e > 0.005 else ('below' if e < -0.005 else 'equal')
             elif v is None and mp and t in mpv: row['mp_why'] = 'Most Probable value unreadable'
@@ -174,15 +173,21 @@ for issue, sc in sorted(by_issue.items()):
                 o = measured[key].get(t); vr = dict(issue=issue, res=key, target=t, lead=L, variant='6 maf Lake Powell release', mp=r2(v), measured=r2(o), report=r['title'])
                 if v is not None and o is not None: vr['mp_error'] = r2(o - v); vr['mp_sign'] = 'above' if o - v > 0.005 else ('below' if o - v < -0.005 else 'equal')
                 vrows.append(vr)
-rows = K.apply_gate(GATE, rows)
+_gated = iter(K.apply_gate(GATE, [r for r in rows if not r.get('read_status')]))
+rows = [r if r.get('read_status') else dict(next(_gated), **({} if GATE else {'reason': K.NO_INTERVAL_FORMABLE})) for r in rows]   # a row with no measurement yet has no outcome to gate. A gate failure is NO_INTERVAL_FORMABLE
 
 # ---------------- 5. cells ----------------
-def verdict(lo, hi, claim, band, neff):
-    if neff < 10: return K.CANNOT_TELL
-    if lo > claim: return K.ABOVE
-    if hi < claim: return K.BELOW
-    if lo >= band[0] and hi <= band[1]: return K.CONSISTENT
-    return K.CANNOT_TELL
+def verdict_r(lo, hi, claim, band, neff):
+    """Returns (outcome, reason). PLAN.md names two rules for a cell: ABOVE and BELOW against the claim (0.80 or 0.50), CONSISTENT if the whole interval is inside the band.
+    PLAN_ADDENDUM_std2.md reads them as two K.read steps with closed edges. No water years is NO_INTERVAL_FORMABLE, under 10 water years is TOO_WIDE_TO_RESOLVE (owner decision O3).
+    No size that matters is named, so no both-alternatives test."""
+    if neff == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if neff < 10: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    o, r = K.read(lo, hi, bound=claim, edge='closed')
+    if o in (K.ABOVE, K.BELOW): return o, None
+    return K.read(lo, hi, band=band, edge='closed')
+def verdict(lo, hi, claim, band, neff): return verdict_r(lo, hi, claim, band, neff)[0]
+GATED = (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
 def oc(r): return r.get('outcome_before_gate') or r['outcome']
 def rulers(rs, k, claim, band):
     """Addendum 2, checks added after the data and never used for the outcome: the same count read on three other rulers.
@@ -195,8 +200,9 @@ def rulers(rs, k, claim, band):
     for name, ne in (('rows_as_independent', n), ('kish_weighted_water_years', nk), ('two_water_year_blocks', nb)):
         ke = k if name == 'rows_as_independent' else round(ne * sh)   # the plan's convention: the effective count of successes is rounded
         lo, hi = K.wilson(ke, ne); lo2, hi2 = K.wilson(ne * sh, ne)   # and the same ruler without rounding, since cells near a bound can flip on it
-        out[name] = dict(n=round(ne, 1), k=round(ke, 1), lo=round(lo, 3), hi=round(hi, 3), outcome=verdict(lo, hi, claim, band, ne) if GATE else K.CANNOT_TELL,
-                         lo_unrounded=round(lo2, 3), hi_unrounded=round(hi2, 3), outcome_unrounded=verdict(lo2, hi2, claim, band, ne) if GATE else K.CANNOT_TELL)
+        v1 = verdict_r(lo, hi, claim, band, ne) if GATE else GATED; v2 = verdict_r(lo2, hi2, claim, band, ne) if GATE else GATED
+        out[name] = dict(n=round(ne, 1), k=round(ke, 1), lo=round(lo, 3), hi=round(hi, 3), outcome=v1[0], reason=v1[1],
+                         lo_unrounded=round(lo2, 3), hi_unrounded=round(hi2, 3), outcome_unrounded=v2[0], reason_unrounded=v2[1])
     return out
 def lag1(rs, ok):
     """Addendum 2, after the data: correlation of the per-water-year share between neighbouring water years."""
@@ -220,24 +226,26 @@ for key in ('mead', 'powell'):
         k = sum(1 for r in b if oc(r) == K.CONSISTENT)
         ab = sum(1 for r in b if oc(r) == K.ABOVE); be = sum(1 for r in b if oc(r) == K.BELOW)
         neff = len(set(r['wy'] for r in b)); keff = round(neff * k / len(b)) if b else 0; lo, hi = K.wilson(keff, neff)
-        bo = verdict(lo, hi, 0.80, (0.70, 0.90), neff) if GATE else K.CANNOT_TELL
+        bo, bor = verdict_r(lo, hi, 0.80, (0.70, 0.90), neff) if GATE else GATED
         m = [r for r in rs if r.get('mp_error') is not None]
         s = [r for r in m if r['mp_sign'] != 'equal']; km = sum(1 for r in s if r['mp_sign'] == 'above')
         neff2 = len(set(r['wy'] for r in s)); keff2 = round(neff2 * km / len(s)) if s else 0; lo2, hi2 = K.wilson(keff2, neff2)
-        mo_ = verdict(lo2, hi2, 0.50, (0.40, 0.60), neff2) if GATE else K.CANNOT_TELL
+        mo_, mor = verdict_r(lo2, hi2, 0.50, (0.40, 0.60), neff2) if GATE else GATED
         errs = [r['mp_error'] for r in m]
         widths = [r['band_hi'] - r['band_lo'] for r in b]   # defined after the data: how wide the stated band was, as context for the share inside
-        cells.append(dict(res=key, lead=L, band=dict(n=len(b), inside=k, above=ab, below=be, share=r2(k / len(b)) if b else None, n_wy=neff, k_wy=keff, lo=round(lo, 3), hi=round(hi, 3), outcome=bo,
+        cells.append(dict(res=key, lead=L, band=dict(n=len(b), inside=k, above=ab, below=be, share=r2(k / len(b)) if b else None, n_wy=neff, k_wy=keff, lo=round(lo, 3), hi=round(hi, 3), outcome=bo, reason=bor,
+  req13=K.req13([dict(outcome=r['outcome'], reason=r.get('reason')) for r in rs if r.get('outcome')], nothing_returned=sum(1 for r in rs if r.get('read_status'))),
                                                      median_width_ft=r2(statistics.median(widths)) if widths else None, zero_width=sum(1 for w in widths if w <= 0.005),
                                                      inverted=sum(1 for r in b if r.get('inverted')), wy_lag1_corr=lag1(b, lambda r: oc(r) == K.CONSISTENT),
                                                      checks_after_data=rulers(b, k, 0.80, (0.70, 0.90))),
-                          mp=dict(n=len(s), above=km, below=len(s) - km, ties=len(m) - len(s), share_above=r2(km / len(s)) if s else None, n_wy=neff2, k_wy=keff2, lo=round(lo2, 3), hi=round(hi2, 3), outcome=mo_,
+                          mp=dict(n=len(s), above=km, below=len(s) - km, ties=len(m) - len(s), share_above=r2(km / len(s)) if s else None, n_wy=neff2, k_wy=keff2, lo=round(lo2, 3), hi=round(hi2, 3), outcome=mo_, reason=mor,
+                                  req13=K.req13([dict(outcome=K.ABOVE if r['mp_sign'] == 'above' else K.BELOW) for r in s], nothing_returned=sum(1 for r in rs if r.get('read_status') and r.get('mp') is not None)),
                                   median_error=r2(statistics.median(errs)) if errs else None, median_abs_error=r2(statistics.median([abs(e) for e in errs])) if errs else None,
                                   p10=r2(pct(errs, 0.10)), p90=r2(pct(errs, 0.90)), checks_after_data=rulers(s, km, 0.50, (0.40, 0.60)))))
         bs = [r for r in b if r['issue'] in SENT]; ks = sum(1 for r in bs if oc(r) == K.CONSISTENT)   # Addendum 2, after the data: only months whose two band reports print the 80 percent sentence
         ns = len(set(r['wy'] for r in bs)); kse = round(ns * ks / len(bs)) if bs else 0; los, his = K.wilson(kse, ns)
         sent_cells.append(dict(res=key, lead=L, n=len(bs), inside=ks, above=sum(1 for r in bs if oc(r) == K.ABOVE), below=sum(1 for r in bs if oc(r) == K.BELOW), n_wy=ns, lo=round(los, 3), hi=round(his, 3),
-                               outcome=verdict(los, his, 0.80, (0.70, 0.90), ns) if GATE else K.CANNOT_TELL))
+                               outcome=(verdict_r(los, his, 0.80, (0.70, 0.90), ns) if GATE else GATED)[0], reason=(verdict_r(los, his, 0.80, (0.70, 0.90), ns) if GATE else GATED)[1]))
 def runs(leads):
     out = []; st = None
     for x in sorted(leads):
@@ -387,7 +395,8 @@ for g, par in GAUGES:
     held = sum(1 for k in snap['prov'] if k.startswith(gk + ':'))
     big = [x for x in rr if (abs(x['a'] - x['p']) > 0.1 if par == '62614' else (abs(x['a'] - x['p']) > 0.01 * max(abs(x['p']), 1e-9)))]
     lo, hi = K.wilson(len(big), len(rr))
-    rev.append(dict(site=g, parameter=par, provisional_days_stored=held, approved_since=len(rr), revised_beyond_threshold=len(big), lo=round(lo, 3), hi=round(hi, 3), outcome=K.CANNOT_TELL,
+    rev.append(dict(site=g, parameter=par, provisional_days_stored=held, approved_since=len(rr), revised_beyond_threshold=len(big), lo=round(lo, 3), hi=round(hi, 3), outcome=K.CANNOT_TELL, reason=(K.TOO_WIDE_TO_RESOLVE if len(rr) < 30 else K.NO_INTERVAL_FORMABLE),   # under 30 revised days (PLAN.md), or no stated figure to read against (the plan states none)
+                    
                     threshold='0.1 ft' if par == '62614' else '1 percent'))
 
 # ---------------- 7a. measured-side cross-checks (in the plan as reported, not scored, Addendum 2 puts them on the page) ----------------
@@ -432,14 +441,15 @@ for name, y0, y1 in ERAS:
     era_rate.append(dict(era=name, months_compared=both, misread=dif, rate=round(dif / both, 4) if both else None, print_only_values=po))
 
 # ---------------- 8. outputs ----------------
-cnt = C.Counter((r['res'], r.get('outcome_before_gate') or r['outcome']) for r in rows)
+cnt = C.Counter((r['res'], r.get('outcome_before_gate') or r['outcome']) for r in rows if not r.get('read_status'))
+failed_reads = dict(C.Counter(r['res'] for r in rows if r.get('read_status')))
 reads = C.Counter((k, v) for m in meta.values() for k, v in m.get('read', {}).items())
 hdbdiff = sum(1 for m in meta.values() for k, v in m.get('hdb_check', {}).items() if v.get('differ'))
 unread = sum(1 for (rid, key), vals in stated.items() for t, v in vals.items() if v is None)
 cov = dict(reports=len(reports), by_scenario=dict(C.Counter(r['scenario'] for r in reports)), first_issue=min(r['issue'] for r in reports), last_issue=max(r['issue'] for r in reports),
            band_months=sum(1 for sc in by_issue.values() if 'MIN' in sc and 'MAX' in sc), missing_files=sum(1 for m in meta.values() if m.get('missing')),
            read_from={'%s %s' % k: v for k, v in reads.items()}, hdb_runs_that_differ_from_print=hdbdiff, unreadable_values=unread, duplicates_set_aside=dups,
-           rows=len(rows), rows_by_outcome={'%s %s' % k: v for k, v in sorted(cnt.items())}, variant_rows=len(vrows),
+           rows=len(rows), rows_by_outcome={'%s %s' % k: v for k, v in sorted(cnt.items())}, failed_reads=failed_reads, variant_rows=len(vrows),
            inverted_band_rows=sum(1 for r in rows if r.get('inverted')), mp_outside_own_band_rows=sum(1 for r in rows if r.get('mp_outside')),
            inverted_detail=dict(mead=sum(1 for r in rows if r.get('inverted') and r['res'] == 'mead'), powell=sum(1 for r in rows if r.get('inverted') and r['res'] == 'powell'),
                                 powell_leads_0_to_5=sum(1 for r in rows if r.get('inverted') and r['res'] == 'powell' and r['lead'] <= 5)),
@@ -456,10 +466,10 @@ def notable():
     out = []
     for key in ('mead', 'powell'):
         sc = [r for r in rows if r['res'] == key and r.get('mp_error') is not None and 1 <= r['lead'] <= 12]
-        for r in sorted(sc, key=lambda r: -abs(r['mp_error']))[:5]: out.append(dict(kind='largest Most Probable miss, leads 1 to 12', **{k: r.get(k) for k in ('res', 'issue', 'target', 'lead', 'mp', 'pmin', 'pmax', 'measured', 'mp_error', 'outcome')}))
+        for r in sorted(sc, key=lambda r: -abs(r['mp_error']))[:5]: out.append(dict(kind='largest Most Probable miss, leads 1 to 12', **{k: r.get(k) for k in ('res', 'issue', 'target', 'lead', 'mp', 'pmin', 'pmax', 'measured', 'mp_error', 'outcome', 'reason')}))
         rec = [r for r in rows if r['res'] == key and r['measured'] is not None]
         last_t = max((r['target'] for r in rec), default=None)
-        for r in sorted([r for r in rec if r['target'] == last_t], key=lambda r: r['lead'])[:13]: out.append(dict(kind='latest measured month', **{k: r.get(k) for k in ('res', 'issue', 'target', 'lead', 'mp', 'pmin', 'pmax', 'measured', 'mp_error', 'outcome')}))
+        for r in sorted([r for r in rec if r['target'] == last_t], key=lambda r: r['lead'])[:13]: out.append(dict(kind='latest measured month', **{k: r.get(k) for k in ('res', 'issue', 'target', 'lead', 'mp', 'pmin', 'pmax', 'measured', 'mp_error', 'outcome', 'reason')}))
     return out
 head = {key: dict(band=next(c['band'] for c in cells if c['res'] == key and c['lead'] == 6), mp=next(c['mp'] for c in cells if c['res'] == key and c['lead'] == 6)) for key in ('mead', 'powell')}
 with open('data/water_history.jsonl', 'a') as hf:   # one line per run, so later readings can be traced

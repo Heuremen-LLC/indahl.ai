@@ -75,7 +75,7 @@ def _old_series(rows):
 for n, _ in PORTALS:
     f = f'data/portal_{re.sub("[^a-z0-9]+", "_", n.lower())}.json'
     if not os.path.exists(f): continue
-    P = json.load(open(f)); ok = bad = ct = 0; bycl = C.defaultdict(lambda: [0, 0]); ser = {}
+    P = json.load(open(f)); ok = bad = ct = atb = 0; bycl = C.defaultdict(lambda: [0, 0]); ser = {}; cts = C.Counter(); sr = []
     for r in _old_series(P['rows']):
         d0 = interval_days(r['cadence'], decimals=False); m0 = pdate(r['modified']) if r.get('modified') else None
         if d0 is None or m0 is None: continue
@@ -90,14 +90,20 @@ for n, _ in PORTALS:
     nrec = len(P['rows']); rows_s = [v[0] for v in ser.values()]
     for r in rows_s:
         d = interval_days(r['cadence']); mt = pdate(r['modified']) if r.get('modified') else None
-        if d is None: ct += 1; why[(n, 'cadence not in the table')] += 1; continue
-        if mt is None: ct += 1; why[(n, 'modified missing or unreadable')] += 1; continue
-        I = max(d, 2); age = (P.get('fetched') or now) - mt; k = cls(d); bycl[k][1] += 1   # 29 Oct (audit): age is fetch time minus modified, as the plan says
-        if age <= 2 * I * 86400: ok += 1
+        # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): the margin, twice the stated interval minus the age, is an exact figure (O1). One-sided bound zero, no tolerance, so no CONSISTENT.
+        # ABOVE: margin above zero (changed within twice the interval, the plan's old on-schedule series). BELOW: margin below zero (behind). Zero exactly: no outcome word, counted apart.
+        if d is None: ct += 1; why[(n, 'cadence not in the table')] += 1; cts['cadence not in the table'] += 1; sr.append((_K.CANNOT_TELL, _K.NO_INTERVAL_FORMABLE)); continue
+        if mt is None: ct += 1; why[(n, 'modified missing or unreadable')] += 1; cts['modified missing or unreadable'] += 1; sr.append((_K.CANNOT_TELL, _K.NO_INTERVAL_FORMABLE)); continue
+        I = max(d, 2); age = (P.get('fetched') or now) - mt; k = cls(d)   # 29 Oct (audit): age is fetch time minus modified, as the plan says
+        oc, rs, _diff = _K.read_exact(2 * I * 86400 - age, bound=0.0)
+        if oc is None: atb += 1; continue
+        sr.append((oc, rs)); bycl[k][1] += 1
+        if oc == _K.ABOVE: ok += 1
         else: bad += 1; bycl[k][0] += 1; over.append(dict(portal=n, title=r['title'], agency=r['agency'], cadence=r['cadence'], modified=r['modified'], age_days=round(age / 86400), ratio=round(age / 86400 / I, 1), link=r['landing']))
     hh = [h for h in heads if h['portal'] == n]; ag = [h for h in hh if h['status'] == 200 and h['header_ts'] and h['listed_ts']]; agree = sum(1 for h in ag if abs(h['header_ts'] - h['listed_ts']) <= 2 * 86400)
     out.append(dict(portal=n, read=time.strftime('%d %b %H:%M', time.gmtime(P['fetched'])), datasets_total=P['n_total'], stating_cadence=nrec, series=len(rows_s), readable=ok + bad, consistent=ok, below=bad, cannot_tell=ct, below_share=wil(bad, ok + bad),
-                    by_class={k: dict(n=v[1], below=v[0], share=wil(v[0], v[1])) for k, v in bycl.items()}, heads=dict(sampled=len(hh), reachable=sum(1 for h in hh if h['status'] == 200), comparable=len(ag), agree=agree)))
+                    by_class={k: dict(n=v[1], below=v[0], share=wil(v[0], v[1])) for k, v in bycl.items()}, on_cadence=ok, at_bound=atb, readings=dict(ABOVE=ok, BELOW=bad, CANNOT_TELL=ct),
+                    cannot_tell_by_reason={_K.NO_INTERVAL_FORMABLE: ct} if ct else {}, cannot_tell_causes=dict(cts), req13=_K.req13(sr, nothing_returned=0), outcome_rule='margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)', heads=dict(sampled=len(hh), reachable=sum(1 for h in hh if h['status'] == 200), comparable=len(ag), agree=agree)))
 over.sort(key=lambda x: -x['ratio'])
 # 30 Oct (site pass I-22): each landing page in the list is opened once a day with our own user agent, and the status is kept so the page can say when a link does not open
 lc = json.load(open('data/linkcheck.json')) if os.path.exists('data/linkcheck.json') else {}
@@ -112,8 +118,11 @@ for x in over[:20]:
         lc[u] = [now, code]; time.sleep(0.5)
     x['link_status'] = lc[u][1]
 json.dump(lc, open('data/linkcheck.json', 'w'))
-summ = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), portals=out, most_overdue=over[:20],
-            totals=dict(below=sum(p['below'] for p in out), readable=sum(p['readable'] for p in out), portals=len(out),
+_have = {p['portal'] for p in out}; _failed = [n for n, _ in PORTALS if n not in _have]   # portals with no stored data.json: a failed read, NOTHING_RETURNED, listed apart (12 Nov 2026)
+_allr = [(_K.ABOVE, None)] * sum(p['on_cadence'] for p in out) + [(_K.BELOW, None)] * sum(p['below'] for p in out) + [(_K.CANNOT_TELL, _K.NO_INTERVAL_FORMABLE)] * sum(p['cannot_tell'] for p in out)
+summ = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), portals=out, most_overdue=over[:20], standard='Faults and Guards 2.0.0', nothing_returned=_failed, req13=_K.req13(_allr, nothing_returned=_failed),
+            legacy_fields='consistent in each portal is the count of series the plan labelled CONSISTENT before 12 Nov 2026 and equals on_cadence, which reads ABOVE the bound under 2.0. It is kept so desks that read it do not break.',
+            totals=dict(below=sum(p['below'] for p in out), readable=sum(p['readable'] for p in out), portals=len(out), on_cadence=sum(p['on_cadence'] for p in out), at_bound=sum(p['at_bound'] for p in out), cannot_tell=sum(p['cannot_tell'] for p in out),
                         old_rule=dict(below=old_rule[0], readable=old_rule[1], rule='as the code ran until 10 Nov 2026: whole numbers only in a stated duration, and file order on a tie of newest dates')))
 json.dump(summ, open('summary_cadence.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')

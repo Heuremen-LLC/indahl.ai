@@ -3,12 +3,12 @@
   {
    "path": "solar_tick.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/solar/solar_tick.py",
-   "sha256": "be7d82057a3141f7393253fde55caf1a74715fd732764e4f381c51fe60122c4a"
+   "sha256": "9a09f2354093a94619de6ea471c10b1d368248debc170a950abab0f71835602b"
   },
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/solar/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "the clock only. It runs solar_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/solar_live.json), which the desk uses to tell a settled or passed row from an open one",
@@ -19,18 +19,18 @@
  "desk": "solar",
  "inputs": [
   {
-   "bytes": 55968,
+   "bytes": 65393,
    "gzip_added": true,
-   "modified": "2026-11-10T20:45:22Z",
+   "modified": "2026-11-12T15:27:04Z",
    "path": "data/solar_live.json",
-   "sha256": "568bb531c40726e8472a3d7eb7905f50c16f1d247384a767e3fe746634d0480b",
+   "sha256": "e1e1fba360144b94e00c173f5bf2f2d21aec786e0b3eac3d7e115e486779dadc",
    "stored": "data/solar_live.json.gz",
-   "stored_sha256": "8b845e732c3dc161f858a398477dc948dd2d6a4ff796ac0ccb581df02a54264c"
+   "stored_sha256": "143394b49c7b5c25309e9f840a0566ad04bcf674bc7c6d9c59c2f3ccec8a075b"
   },
   {
    "bytes": 29502,
    "gzip_added": true,
-   "modified": "2026-11-10T20:44:48Z",
+   "modified": "2026-11-12T15:29:37Z",
    "path": "data/raw/SPE.txt",
    "sha256": "c75b901b1509ab15635978e11d0fc8ebfc2f02237c05f75c1d96fafab4796c5d",
    "stored": "data/raw/SPE.txt.gz",
@@ -39,25 +39,25 @@
   {
    "bytes": 53,
    "gzip_added": true,
-   "modified": "2026-11-10T20:44:48Z",
+   "modified": "2026-11-12T15:29:37Z",
    "path": "data/raw/SPE_listing.json",
-   "sha256": "cb42785564dbccc37bd4734b185dc15602119507a33e02713456436bfb9fa177",
+   "sha256": "f71dff6fd46b33cd4cf92449d357606cef328ddea85061e2153bb79dab72f2f8",
    "stored": "data/raw/SPE_listing.json.gz",
-   "stored_sha256": "32d1f1cb753239d3326e312a0efdbb212912f688f785017b542f3b0dc25eda6e"
+   "stored_sha256": "3a911627315107f4fae0e6044301c330ecf36ec2f6bb033d7c211a4d44d1d82b"
   },
   {
-   "bytes": 5512465,
+   "bytes": 5512783,
    "gzip_added": true,
-   "modified": "2026-11-10T20:44:51Z",
+   "modified": "2026-11-12T15:29:40Z",
    "path": "data/raw/gfz/Kp_ap_Ap_SN_F107_since_1932.txt",
-   "sha256": "83d91dae47f3769da8965c79a241a5fb7c845680249f1cdac6b1704a57f30cd5",
+   "sha256": "493dde1328c240a9a5095074d4b1f5148259b3a0f0764995fff0b1faf232ff2b",
    "stored": "data/raw/gfz/Kp_ap_Ap_SN_F107_since_1932.txt.gz",
-   "stored_sha256": "a54e1b072737439e7ed18fe6c9fc4c7b23a6799e86a981a2218770e5cb7c9f57"
+   "stored_sha256": "7d5b913e3c8627b93ca439585f5b428aec2bffaad79b8ae7fd74262f05f01dbd"
   },
   {
    "bytes": 10598,
    "gzip_added": true,
-   "modified": "2026-11-10T20:43:00Z",
+   "modified": "2026-11-12T15:27:49Z",
    "path": "data/raw/indices/2026Q1_DGD.txt",
    "sha256": "16ae9ae600363499d6a3d7f3da34dd5a882783b487265fb92496d83dfbc9034c",
    "stored": "data/raw/indices/2026Q1_DGD.txt.gz",
@@ -66,7 +66,7 @@
   {
    "bytes": 7478,
    "gzip_added": true,
-   "modified": "2026-11-10T20:43:12Z",
+   "modified": "2026-11-12T15:28:01Z",
    "path": "data/raw/indices/2026Q1_DSD.txt",
    "sha256": "90ccec9a394f4c3bd3f25f763b1e1e514836488579bcda886177818b8e4ca097",
    "stored": "data/raw/indices/2026Q1_DSD.txt.gz",
@@ -75,7 +75,7 @@
   {
    "bytes": 10710,
    "gzip_added": true,
-   "modified": "2026-11-10T20:43:24Z",
+   "modified": "2026-11-12T15:28:13Z",
    "path": "data/raw/indices/2026Q2_DGD.txt",
    "sha256": "d5848aeb96d20ce521feca8dbf8bec8a780d56f539db7a14dda5e6fe51f0e715",
    "stored": "data/raw/indices/2026Q2_DGD.txt.gz",
@@ -84,7 +84,7 @@
   {
    "bytes": 7554,
    "gzip_added": true,
-   "modified": "2026-11-10T20:43:36Z",
+   "modified": "2026-11-12T15:28:25Z",
    "path": "data/raw/indices/2026Q2_DSD.txt",
    "sha256": "4e2ff15c167b0e7e004cf2258cbd6f44505cda1d94867d3523a8eab9fde4a061",
    "stored": "data/raw/indices/2026Q2_DSD.txt.gz",
@@ -93,7 +93,7 @@
   {
    "bytes": 10822,
    "gzip_added": true,
-   "modified": "2026-11-10T20:43:48Z",
+   "modified": "2026-11-12T15:28:37Z",
    "path": "data/raw/indices/2026Q3_DGD.txt",
    "sha256": "0349ea0cc18e03aec3c4514f33c2e1d9aac55dd543cd4c669d06a74bc4a3e4f7",
    "stored": "data/raw/indices/2026Q3_DGD.txt.gz",
@@ -102,29 +102,29 @@
   {
    "bytes": 7630,
    "gzip_added": true,
-   "modified": "2026-11-10T20:44:00Z",
+   "modified": "2026-11-12T15:28:49Z",
    "path": "data/raw/indices/2026Q3_DSD.txt",
    "sha256": "7365132e4283d2d4152e68183e92ea6ff38297e8d95cad49205aab8f92f31e2f",
    "stored": "data/raw/indices/2026Q3_DSD.txt.gz",
    "stored_sha256": "bfc0761719af38944d8da8c9e91c1332d2b1f51dd940cfe2b25845f4255f7e78"
   },
   {
-   "bytes": 5110,
+   "bytes": 5334,
    "gzip_added": true,
-   "modified": "2026-11-10T20:44:12Z",
+   "modified": "2026-11-12T15:29:01Z",
    "path": "data/raw/indices/2026Q4_DGD.txt",
-   "sha256": "2fe004aa45f92f3fe9666d8a7faf1aa286f26d7d4f7af60bf0c9431b8d79f9dd",
+   "sha256": "1b36a77b404365c644ef5f50dbd2587b5a778cc1063dbd40b170c3fda20eab3f",
    "stored": "data/raw/indices/2026Q4_DGD.txt.gz",
-   "stored_sha256": "44f45c896ae5e7808a4094e377cc5dc2f760e44cd5abad3fc2bc71781db38150"
+   "stored_sha256": "aa5c48ad5382f4db20652896d1b9473c29f9e3dc543f8ba06df65c5b8117ba95"
   },
   {
-   "bytes": 3678,
+   "bytes": 3830,
    "gzip_added": true,
-   "modified": "2026-11-10T20:44:24Z",
+   "modified": "2026-11-12T15:29:13Z",
    "path": "data/raw/indices/2026Q4_DSD.txt",
-   "sha256": "5e151bcd0bd94ea74cc79d6dd8ff682dee22a835a48e6725ce4fc6b3bd9f351f",
+   "sha256": "5c54cc5be461b4cf4906ce98c0d77e83af0ae314725aaf461d75ceef8149a189",
    "stored": "data/raw/indices/2026Q4_DSD.txt.gz",
-   "stored_sha256": "6755f98a9d977a0f4d92731af873c7fc3feb9cc8a9506a1c4c1a5bc809731634"
+   "stored_sha256": "2c65d3aa22c1d61c89fc4047b7e1b2596d51f8b8d235bda77af8ed5eeabfb7f2"
   },
   {
    "bytes": 29707,
@@ -3151,6 +3151,24 @@
    "stored_sha256": "530e86101bbedcdf11c078d9c8646b4a9c82530da4958e64ebb8799c421cb694"
   },
   {
+   "bytes": 2004,
+   "gzip_added": true,
+   "modified": "2026-11-11T01:21:28Z",
+   "path": "data/raw/warehouse/2026_RSGA/20261110RSGA.txt",
+   "sha256": "2e78ca3481790d1d69504a77437afff372e9396c6ea5c55579c298465d73c5a2",
+   "stored": "data/raw/warehouse/2026_RSGA/20261110RSGA.txt.gz",
+   "stored_sha256": "938fe1c599b1d518fb90932c77c8bcdb8b93efb860de6f3ec7abb7cba1277d75"
+  },
+  {
+   "bytes": 1851,
+   "gzip_added": true,
+   "modified": "2026-11-11T23:03:03Z",
+   "path": "data/raw/warehouse/2026_RSGA/20261111RSGA.txt",
+   "sha256": "7439da5420157fc24536579a40091ee92546255216ea8354ef6e2f1e422a93bc",
+   "stored": "data/raw/warehouse/2026_RSGA/20261111RSGA.txt.gz",
+   "stored_sha256": "537c03cc850146ef4b973a3281db7ac6eb1e52e72c6351ebbb3b6505662390e9"
+  },
+  {
    "bytes": 2871,
    "gzip_added": true,
    "modified": "2026-11-10T14:23:41Z",
@@ -5995,6 +6013,24 @@
    "stored_sha256": "96567f366096eca2ba0109bd20b47cd4b75f8c98411e2b2a3a1be87ed69dfe4e"
   },
   {
+   "bytes": 2624,
+   "gzip_added": true,
+   "modified": "2026-11-11T01:21:53Z",
+   "path": "data/raw/warehouse/2026_events/20261110events.txt",
+   "sha256": "539f054eb2b966e72832d78716068ebbd55004ce774276d40a56628e5adf59e7",
+   "stored": "data/raw/warehouse/2026_events/20261110events.txt.gz",
+   "stored_sha256": "4c517f7045ba3d7de8d80b02310cc3fb7fc04648a8126d15bd2cfe61274f16a1"
+  },
+  {
+   "bytes": 2134,
+   "gzip_added": true,
+   "modified": "2026-11-12T01:18:09Z",
+   "path": "data/raw/warehouse/2026_events/20261111events.txt",
+   "sha256": "4018353e2cdcfb97ae012f933b8cb904a24757f120a39574dbee7affdd3fb685",
+   "stored": "data/raw/warehouse/2026_events/20261111events.txt.gz",
+   "stored_sha256": "43be828f1553396d8abd44abb8785a0102fdbc07496b6d8a7245b3a4d99e2095"
+  },
+  {
    "bytes": 1045,
    "gzip_added": false,
    "modified": "2026-11-10T14:28:43Z",
@@ -6011,6 +6047,60 @@
    "sha256": "216db65c6e15cb2f4b8a7f248551ad6643bd0eb575dd1e5da1ba5c04f8c7be1b",
    "stored": "data/snapshots/20261110T204224Z_sgarf.txt.gz",
    "stored_sha256": "216db65c6e15cb2f4b8a7f248551ad6643bd0eb575dd1e5da1ba5c04f8c7be1b"
+  },
+  {
+   "bytes": 980,
+   "gzip_added": false,
+   "modified": "2026-11-11T03:35:06Z",
+   "path": "data/snapshots/20261111T033236Z_sgarf.txt.gz",
+   "sha256": "d5554c7079447503dd38044614f87f669048d981b0b2461d42b1cf250165174f",
+   "stored": "data/snapshots/20261111T033236Z_sgarf.txt.gz",
+   "stored_sha256": "d5554c7079447503dd38044614f87f669048d981b0b2461d42b1cf250165174f"
+  },
+  {
+   "bytes": 980,
+   "gzip_added": false,
+   "modified": "2026-11-11T09:56:01Z",
+   "path": "data/snapshots/20261111T095331Z_sgarf.txt.gz",
+   "sha256": "3400d6f51f086a428726b180d3a4662a34f782a753ab40210ac6469c4eb1c015",
+   "stored": "data/snapshots/20261111T095331Z_sgarf.txt.gz",
+   "stored_sha256": "3400d6f51f086a428726b180d3a4662a34f782a753ab40210ac6469c4eb1c015"
+  },
+  {
+   "bytes": 980,
+   "gzip_added": false,
+   "modified": "2026-11-11T16:31:59Z",
+   "path": "data/snapshots/20261111T162929Z_sgarf.txt.gz",
+   "sha256": "a8f732e7df8a041b9bf2590da65c86db2e064695ebb57e78952556fbb13420b2",
+   "stored": "data/snapshots/20261111T162929Z_sgarf.txt.gz",
+   "stored_sha256": "a8f732e7df8a041b9bf2590da65c86db2e064695ebb57e78952556fbb13420b2"
+  },
+  {
+   "bytes": 929,
+   "gzip_added": false,
+   "modified": "2026-11-11T23:05:22Z",
+   "path": "data/snapshots/20261111T230240Z_sgarf.txt.gz",
+   "sha256": "491ef23f7345712e2a7915bb5d3e7ca7e913b2d64bbb4a8d138fe90acbc43209",
+   "stored": "data/snapshots/20261111T230240Z_sgarf.txt.gz",
+   "stored_sha256": "491ef23f7345712e2a7915bb5d3e7ca7e913b2d64bbb4a8d138fe90acbc43209"
+  },
+  {
+   "bytes": 929,
+   "gzip_added": false,
+   "modified": "2026-11-12T05:45:37Z",
+   "path": "data/snapshots/20261112T054309Z_sgarf.txt.gz",
+   "sha256": "c7cb9f27555efcce19c26b9b204939522e19e3a2d413139eb6329428f7e7ca5f",
+   "stored": "data/snapshots/20261112T054309Z_sgarf.txt.gz",
+   "stored_sha256": "c7cb9f27555efcce19c26b9b204939522e19e3a2d413139eb6329428f7e7ca5f"
+  },
+  {
+   "bytes": 929,
+   "gzip_added": false,
+   "modified": "2026-11-12T12:33:11Z",
+   "path": "data/snapshots/20261112T123040Z_sgarf.txt.gz",
+   "sha256": "4d51c55cdf451d8414bb91000df3c0eae62fa12f8177037d5286ccfe6249b35a",
+   "stored": "data/snapshots/20261112T123040Z_sgarf.txt.gz",
+   "stored_sha256": "4d51c55cdf451d8414bb91000df3c0eae62fa12f8177037d5286ccfe6249b35a"
   },
   {
    "bytes": 695,
@@ -6040,7 +6130,7 @@
    "stored_sha256": "ad69d9c7867bcaf428d070c2190be5127fec1e367cad84a31886381656347813"
   }
  ],
- "made": "2026-11-11T00:11:29Z",
+ "made": "2026-11-12T16:05:09Z",
  "mode": "fetch",
  "name": "SOLAR",
  "reference": [],

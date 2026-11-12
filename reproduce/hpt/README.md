@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/hpt/live.json served it at the feed stamp 09 Nov 02:11, read by us at 2026-11-12T01:37:49Z. The feed bytes had sha256 `6608dc006ccd67be259e16d590dbde1762f60c4b7d1341f99ca2702d5670c46d`.
+The headline as the live feed https://indahl.ai/hpt/live.json served it at the feed stamp 09 Nov 02:11, read by us at 2026-11-12T16:06:16Z. The feed bytes had sha256 `6608dc006ccd67be259e16d590dbde1762f60c4b7d1341f99ca2702d5670c46d`.
 
 - number: 12 of 506
 - value: 0.0237
@@ -39,7 +39,7 @@ As the HPT data pack lists them. Credit each source when you use its values.
 | File | Bytes | sha256 |
 |---|---|---|
 | data/domains.json | 419,248 | `33228fc36aaf1f0c42aa6b7208f10b7c5cbda952ef810d642db84a057a1be0b2` |
-| summary_hpt.json | 5,812 | `6608dc006ccd67be259e16d590dbde1762f60c4b7d1341f99ca2702d5670c46d` |
+| summary_hpt.json | 6,682 | `dca475723fe49d3edc7be03f539773cf16d0b2e62842e73c9b540522c3b2d19f` |
 
 ## Code
 

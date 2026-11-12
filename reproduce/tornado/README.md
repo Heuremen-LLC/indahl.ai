@@ -14,7 +14,7 @@ Needs Python 3.9 or later with numpy and matplotlib (PyPI). It prints one line o
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/tornado/live.json served it at the feed stamp 2026-11-10T19:51:19Z, read by us at 2026-11-11T00:12:56Z. The feed bytes had sha256 `053f96211cbe941f2cf415d591da7fa0521581e3a55c653072509cdcfeb3faf6`.
+The headline as the live feed https://indahl.ai/tornado/live.json served it at the feed stamp 2026-11-12T14:27:23Z, read by us at 2026-11-12T16:06:46Z. The feed bytes had sha256 `aebf3fe41e1dc31ea240422763d65e7ee765eeacad8f0e41e905373de3297343`.
 
 - number: 17.6%
 - value: 0.17648
@@ -47,7 +47,7 @@ As the TORNADO data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/tornado_live.json | 29,041 | `053f96211cbe941f2cf415d591da7fa0521581e3a55c653072509cdcfeb3faf6` |
+| data/tornado_live.json | 34,892 | `5ad7f87f765b06d456e4a339d4a5be86c5a8c1080d710e076b2350a235beed3e` |
 | data/raw/boundaries/cb_2024_us_state_20m.zip | 187,671 | `7bc773d83c01b6df69b8aada9c2b5983d97f22f4551947cc5c00b87c663223ef` |
 | data/raw/db/1950-2025_actual_tornadoes.csv | 9,023,445 | `2b2679ead1920ab96eaa390baeb41aeeaeef49d067f613dfcc5e233403b82d76` |
 | data/raw/db/SPC_severe_database_description.pdf | 435,348 | `426bd3abc0aa12ff3a7f63f8fdd326d71448119b188f3da8f95b39578fa9779a` |
@@ -74,7 +74,7 @@ As the TORNADO data pack lists them. Credit each source when you use its values.
 | data/raw/outlooks/day1_2023.zip | 1,514,285 | `e9f4cceb1df64d62ccaa1715fab68402a2dca557f9677008c62a4f770b10849d` |
 | data/raw/outlooks/day1_2024.zip | 1,486,215 | `d88b049695a046e354a67d272f6d7ca853e349709c71ee3ffa43341eecfb4089` |
 | data/raw/outlooks/day1_2025.zip | 1,426,738 | `dd4da36a8f8ae436fdb3e7129d2e8005936208f8876f4c00eb236fa925eb3a6d` |
-| data/raw/outlooks/day1_2026.zip | 1,485,652 | `472ed8494e21eca59a197d6a95a318c489c0bf0c2083faae78e95f9df3631a80` |
+| data/raw/outlooks/day1_2026.zip | 1,490,595 | `8effb2cd2ce51c07771ec935b7f3f32d054d315c0fbd3ef108d1acf4038a274e` |
 | data/raw/prelim/20260101.csv | 276 | `03beab4df83d5eb4a36dd4f4f5af8cb86e8972f15d977dca317cd58e20ba2da2` |
 | data/raw/prelim/20260102.csv | 52 | `8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d` |
 | data/raw/prelim/20260103.csv | 52 | `8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d` |
@@ -387,6 +387,7 @@ As the TORNADO data pack lists them. Credit each source when you use its values.
 | data/raw/prelim/20261106.csv | 52 | `8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d` |
 | data/raw/prelim/20261107.csv | 52 | `8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d` |
 | data/raw/prelim/20261108.csv | 52 | `8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d` |
+| data/raw/prelim/20261109.csv | 52 | `8a77826acbbde91de2c791a583e2ddcca48d13cdb012d57f232f1ea166e4621d` |
 | data/raw/warnings/to_2024.geojson | 2,372,705 | `fdd0cbd90ef76f4a1bedf0bd6eb8c6f605c06befb7ee1b50083f10fe670711ed` |
 | data/raw/warnings/to_fy2008.geojson | 3,128,170 | `139981cd6fd41b07f14737188fe293bab6a769c42913696bb944af27a050ac96` |
 | data/raw/warnings/to_fy2009.geojson | 2,076,990 | `58a7de1b6d94c448e8f8743d6de6e0de4b223fce9cb30ef2350f676bef21542b` |
@@ -407,7 +408,7 @@ As the TORNADO data pack lists them. Credit each source when you use its values.
 | data/raw/warnings/to_fy2024.geojson | 2,204,178 | `da78dcd1427c86a54f3c4971c771bac68ad59e9c44971a0cc2fabe706bd988cf` |
 | data/raw/warnings/to_fy2025.geojson | 2,216,822 | `e8374ca32bce18561e5e9c9006a9c337372c6c500ebff6d98ad0285bcd14fe90` |
 | data/raw/warnings/to_fy2026.geojson | 1,838,824 | `a4848048c412c8a956748681680acaf9e1fd6dd8e7bbb1e36389339f47880740` |
-| data/raw/warnings/to_fy2027.geojson | 79,626 | `1f2ee8450149518f39b7f0acfc853a8af8f649a31774a115451488c8e8421d52` |
+| data/raw/warnings/to_fy2027.geojson | 80,225 | `bff076169cdb83ba500183cbb8eec0ddabd19428cebec9c824b7c764b0ff5480` |
 | data/cache/pointcheck.json | 71,094 | `3cb9b911d701d60eba2e632275b426acf4f50866ac936d8fa9a21034f140b1b9` |
 | PLAN.md | 15,369 | `40153979fc0608c821521dd0d7182e468d4c4a342205f92d120df2d6473ea565` |
 | data/plan_seal.json | 241 | `de9e435d49de15344226074552eb46c67ecf6cbf17424b0c004b07d811be9550` |

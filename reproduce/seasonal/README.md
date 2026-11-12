@@ -14,7 +14,7 @@ Needs Python 3.9 or later with numpy (PyPI). It prints one line of JSON and chec
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/seasonal/live.json served it at the feed stamp 2026-11-10T16:32:50Z, read by us at 2026-11-11T00:11:28Z. The feed bytes had sha256 `3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653`.
+The headline as the live feed https://indahl.ai/seasonal/live.json served it at the feed stamp 2026-11-12T06:37:17Z, read by us at 2026-11-12T16:05:08Z. The feed bytes had sha256 `4eaf29ded4c8720fd2a4bee1e28bf4f7615ad9b8864a1c0e524907d02045bada`.
 
 - number: 60%
 - value: 0.6011
@@ -37,11 +37,11 @@ As the SEASONAL data pack lists them. Credit each source when you use its values
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/seasonal_live.json | 13,822 | `3252ba09e3390d5b2d9c8c1311efb4dcf1f730579fbf1c97926583d6f8a03653` |
+| data/seasonal_live.json | 16,179 | `046665235f59a85708191c8a0723fce793386616ded8a61bba50bffd62f25dd7` |
 | data/raw/cpc_verif_grid/90day_Pverif_about.txt | 698 | `a7f72da2d2955c6ccef0e36dd863bfc0b1e73e6f5228c87400a1bcf132788905` |
 | data/raw/cpc_verif_grid/90day_Tverif_about.txt | 690 | `659a3c6b4ea8adbae0c48665a613187d39fadc1f73f442bea6b667f0cd606836` |
 | data/raw/cpc_verif_grid/90day_obs_about.txt | 500 | `88fd12d31a28e0d75841dd28212be9ec80e39c525b7ac7acf03d7f396ea21707` |
-| data/raw/cpc_verif_grid/last_fetch | 20 | `2f1438e74474a62493585d040f7d308073b8149ade54a63b59053c8a11c153cd` |
+| data/raw/cpc_verif_grid/last_fetch | 20 | `19f803b874d757916c330316ec800650f554fa822a33c775ed244c9d01bc0597` |
 | data/raw/cpc_verif_grid/prec01.heidke.txt | 11,438 | `800f33f09872fd4ce44dba240a212ee44547e106ec60e2fd2060b9c2d88ae292` |
 | data/raw/cpc_verif_grid/prec01_forecast.bi | 1,047,888 | `e0d63fd7e4d88e75409f6b2be9e006d204da3c4bf4a970cd842c3adffdaaffc9` |
 | data/raw/cpc_verif_grid/prec01_forecast_above.bi | 1,047,888 | `ed343013e0faf77f203da9053b291e0a10bc525d8d659982392ed6dac82cbcb8` |

@@ -147,19 +147,21 @@ def fr(x):
     if x == math.inf: return 'unbounded'
     return float('%.5g' % x)
 
+RC = {'last': None}
 def classify_floor(S, S_lo, S_hi, D_lo, D_hi, D_app, floor=True):
     """Plan ratio rule, with the Addendum 6.8 floor when floor is True. Returns (outcome, r, rlo, rhi, floored)."""
+    # 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): K.read with the closed band 0.90 to 1.10. A stated zero has the band 0 to 0, since 10 percent of zero is zero.
+    # RC['last'] holds the closed reason of a CANNOT_TELL: STRADDLES_EDGE for a range crossing an edge or clearing it by less than the floor.
+    RC['last'] = None
     if S == 0:
-        if D_hi == 0: return K.CONSISTENT, None, None, None, False
-        if D_lo > 0:
-            if floor and D_lo < FLOOR: return K.CANNOT_TELL, None, None, None, True
-            return K.ABOVE, None, None, None, False
-        return K.CANNOT_TELL, None, None, None, False
+        oc, rc = K.read(D_lo, D_hi, band=(0.0, 0.0))
+        if oc == K.ABOVE and floor and D_lo < FLOOR: RC['last'] = K.STRADDLES_EDGE; return K.CANNOT_TELL, None, None, None, True
+        RC['last'] = rc; return oc, None, None, None, False
     r = D_app / S; rlo = D_lo / S_hi if S_hi > 0 else math.inf; rhi = (D_hi / S_lo) if S_lo > 0 else math.inf
-    oc = K.classify(rlo, rhi, LO_B, HI_B)
-    if floor and oc == K.ABOVE and D_lo - HI_B * S_hi < FLOOR: return K.CANNOT_TELL, r, rlo, rhi, True
-    if floor and oc == K.BELOW and LO_B * S_lo - D_hi < FLOOR: return K.CANNOT_TELL, r, rlo, rhi, True
-    return oc, r, rlo, rhi, False
+    oc, rc = K.read(rlo, rhi, band=(LO_B, HI_B))
+    if floor and oc == K.ABOVE and D_lo - HI_B * S_hi < FLOOR: RC['last'] = K.STRADDLES_EDGE; return K.CANNOT_TELL, r, rlo, rhi, True
+    if floor and oc == K.BELOW and LO_B * S_lo - D_hi < FLOOR: RC['last'] = K.STRADDLES_EDGE; return K.CANNOT_TELL, r, rlo, rhi, True
+    RC['last'] = rc; return oc, r, rlo, rhi, False
 
 def fmt_r(x):
     if x is None: return 'none'
@@ -363,7 +365,7 @@ def main(refresh=True):
                 if any(s_['status'].startswith('no template file') for s_ in here): why = 'The report for this half-year is published as a web page, not in the template files.'
                 elif svc == 'WhatsApp Channels' and per == '2025H2': why = 'No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period.'
                 else: why = 'No report for this half-year was found without a key or a login.'
-                row.update(outcome=K.NOTHING_RETURNED, reason=why); out_rows.append(row); continue
+                row.update(outcome=K.CANNOT_TELL, reason_code=K.NO_INTERVAL_FORMABLE, reason=why, status='no stated figure, read succeeded'); out_rows.append(row); continue
             row['source_url'] = pr['rec']['source_url']; row['published'] = pr['rec']['published']
             if m == 'share':
                 out_rows.append(share_row(row, acc, v, vals)); continue
@@ -381,7 +383,7 @@ def main(refresh=True):
             row['delivered'] = d
             if m in ('notice', 'notice_tf') and v['kind'] == 'main': row['items_notified'] = ival(vals, 'notice_items' if m == 'notice' else 'notice_tf_items')
             if S is None:
-                row.update(stated=None, outcome=K.CANNOT_TELL, reason='No stated figure: %s.' % how); out_rows.append(row); continue
+                row.update(stated=None, outcome=K.CANNOT_TELL, reason_code=K.NO_INTERVAL_FORMABLE, reason='No stated figure: %s.' % how); out_rows.append(row); continue
             O = ival(vals, 'orders_items') or 0 if v['kind'] != 'ads' else 0
             M5 = ival(vals, 'spam_5') or 0; M6 = ival(vals, 'spam_6') or 0
             sub = {'total': O + M5 + M6, 'solely': O + M5 + M6, 'not': O + M5 + M6, 'own': M5 + M6, 'own_auto': M5 + M6, 'own_illegal': M5, 'own_tc': M6}.get(m, 0)
@@ -420,7 +422,7 @@ def main(refresh=True):
                 it = ival(vals, 'notice_items' if m == 'notice' else 'notice_tf_items')
                 if it is not None and it > S: S_hi = it
                 row['items_notified'] = it
-            oc, r, rlo, rhi, floored = classify_floor(S, S_lo, S_hi, d['D_lo'], d['D_hi'], d['D_app'], floor=True)
+            oc, r, rlo, rhi, floored = classify_floor(S, S_lo, S_hi, d['D_lo'], d['D_hi'], d['D_app'], floor=True); row['reason_code'] = RC['last']
             if v['kind'] in ('ads', 'combined') and ('6.4' in rules or '6.5' in rules):   # second referee pass: the reading without the column-sum bound
                 oc_nb = classify_floor(S, S_lo_plan, S, d['D_lo'], d['D_hi'], d['D_app'], floor=True)[0]
                 if oc_nb != oc: row['outcome_without_column_bound'] = oc_nb
@@ -442,7 +444,7 @@ def main(refresh=True):
                 ds = delivered(acc, key, per, 'solely', v['scope'], v['sf']) if key else None; dn = delivered(acc, key, per, 'not', v['scope'], v['sf']) if key else None
                 row['items'] = dict(solely_gap=(ds['D_app'] if ds else 0) - ival(vals, 'solely'), not_gap=(dn['D_app'] if dn else 0) - ival(vals, 'not'), partial_no_report_field=d['partial_app'])
             if months_bad:
-                row['outcome_before_gate'] = row['outcome']; row['outcome'] = K.CANNOT_TELL; row['reason'] = 'Database months missing: %s.' % ', '.join(months_bad)
+                row['outcome_before_gate'] = row['outcome']; row['outcome'] = K.CANNOT_TELL; row['reason_code'] = K.NO_INTERVAL_FORMABLE; row['reason'] = 'Database months missing: %s.' % ', '.join(months_bad)
             out_rows.append(row)
 
     # Addendum 4 and 6.3: platform notes
@@ -455,7 +457,7 @@ def main(refresh=True):
             r.setdefault('platform_notes', []).append(dict(quote=q, field=fk, sheet=ph['sheet'], direction=ph['direction']))
             hit = r['outcome'] in {'inflated': (K.BELOW, K.CONSISTENT), 'deflated': (K.ABOVE, K.CONSISTENT), 'both': (K.ABOVE, K.BELOW, K.CONSISTENT)}[ph['direction']]
             if hit:
-                was = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['note_rule'] = ph.get('addendum', '4')
+                was = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['reason_code'] = K.NO_INTERVAL_FORMABLE; r['note_rule'] = ph.get('addendum', '4')
                 more = {'inflated': 'higher', 'deflated': 'lower', 'both': 'higher or lower'}[ph['direction']]
                 r['reason'] = ('Defined after the data (Addendum %s). The report’s own note says: “%s” The stated figure can be %s than the database count for that reason alone, by an amount the report does not give. Without this note the row reads %s.'
                                % (ph.get('addendum', '4'), q, more, was.replace('_', ' ').lower()))
@@ -471,7 +473,7 @@ def main(refresh=True):
                 mem = []
                 for x in (r, rb):
                     mem.append(dict(measure=x['measure'], measure_label=x['measure_label'], stated=x.get('stated'), D_app=x['delivered']['D_app'], ratio=x.get('ratio'), ratio_lo=x.get('ratio_lo'), ratio_hi=x.get('ratio_hi'), reading_before=x['outcome']))
-                    x['label_split'] = split; was = x['outcome']; x['outcome'] = K.CANNOT_TELL
+                    x['label_split'] = split; was = x['outcome']; x['outcome'] = K.CANNOT_TELL; x['reason_code'] = K.NO_INTERVAL_FORMABLE
                     x['reason'] = 'Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads %s.' % was.replace('_', ' ').lower()
                 labels.append(dict(platform=p, period=per, period_label=PLABEL[per], measure='label_split', measure_label='Split labelled differently in the two filings', split=split, members=mem,
                                    reading='LABELLED_DIFFERENTLY', reading_text='labelled differently in the two filings', outcome=None, defined_after_data='Addendum 6.7',
@@ -488,9 +490,11 @@ def main(refresh=True):
             r['reason'] = 'Defined after the data (Addendum %s). %s The column-sum bound alone makes this row cannot tell. Without it the row reads %s. ' % (', '.join(rs), ' '.join(RULE_TEXT[x] for x in rs), r['outcome_without_column_bound'].replace('_', ' ').lower()) + r['reason']
     gate_ok = all(KG.values()); plan_gate_ok = all(KG_plan.values())
     for r in out_rows:
-        r['outcome_plan_as_committed'] = r['outcome'] if plan_gate_ok else K.CANNOT_TELL
+        r['outcome_plan_as_committed'] = r['outcome'] if plan_gate_ok else K.CANNOT_TELL; r['reason_code_plan_as_committed'] = r.get('reason_code') if plan_gate_ok else K.NO_INTERVAL_FORMABLE
         if not plan_gate_ok: r['plan_as_committed_reason'] = 'Known-good %s failed under the plan as committed. Addendum 1 replaces KG2 and handles KG4.' % ' and '.join(k for k, v in KG_plan.items() if not v)
-    if not gate_ok: out_rows = K.apply_gate(False, out_rows)
+    if not gate_ok:
+        out_rows = K.apply_gate(False, out_rows)
+        for r in out_rows: r['reason_code'] = K.NO_INTERVAL_FORMABLE
     all_rows = out_rows + labels
 
     # second reading A: automation fields per platform per created_at month and per period (ads split for the three services)
@@ -516,10 +520,11 @@ def main(refresh=True):
 
     comp = [r for r in out_rows]
     orig = [r for r in comp if r.get('view') == 'main']
-    summ = dict(updated_utc=time.strftime('%Y-%m-%d %H:%M', time.gmtime()), plan_commit=os.popen('cd "%s" && git log -1 --format=%%H -- PLAN.md 2>/dev/null' % H).read().strip(),
+    summ = dict(updated_utc=(json.load(open(os.path.join(H, 'summary_dsa.json')))['updated_utc'] if '--std2-rewrite' in sys.argv else time.strftime('%Y-%m-%d %H:%M', time.gmtime())), plan_commit=os.popen('cd "%s" && git log -1 --format=%%H -- PLAN.md 2>/dev/null' % H).read().strip(),
                 rows=len(all_rows), comparison_rows=len(comp), label_split_rows=len(labels),
                 outcomes_original_rows=dict(C.Counter(r['outcome'] for r in orig)), outcomes_ads_rows=dict(C.Counter(r['outcome'] for r in comp if r.get('view') == 'ads')),
                 outcomes_combined_rows=dict(C.Counter(r['outcome'] for r in comp if r.get('view') == 'combined')), outcomes=dict(C.Counter(r['outcome'] for r in comp)),
+                cannot_tell_by_reason=dict(C.Counter(r.get('reason_code') for r in comp if r['outcome'] == K.CANNOT_TELL)), req13=K.req13([(r['outcome'], r.get('reason_code')) for r in comp], nothing_returned=0),
                 outcomes_plan_rule_original_rows=dict(C.Counter(r.get('outcome_plan_rule', r['outcome']) for r in orig)),
                 known_good=KG, gate_passed=gate_ok, known_good_plan_as_committed=KG_plan, plan_gate_passed=plan_gate_ok, newest_created_day=newest,
                 platforms_with_template_report=sorted({k[0] for k in parsed}), periods_read=sorted({k for k in parsed}, key=str), shortfall_addendum3=sfs,
@@ -561,7 +566,7 @@ def share_row(row, acc, v, vals):
     row = dict(row); row['measure'] = 'share'; row['measure_label'] = MLABEL['share']; row['filter'] = FILTER['share']
     a, b = vals.get('solely'), vals.get('not')
     if not a or not b or ival(vals, 'solely') is None or ival(vals, 'not') is None or (ival(vals, 'solely') + ival(vals, 'not')) == 0:
-        row.update(outcome=K.CANNOT_TELL, reason='No stated share: the report leaves solely or not automated blank.'); return row
+        row.update(outcome=K.CANNOT_TELL, reason_code=K.NO_INTERVAL_FORMABLE, reason='No stated share: the report leaves solely or not automated blank.'); return row
     so, no = ival(vals, 'solely'), ival(vals, 'not'); T = so + no; s = so / T
     O = (ival(vals, 'orders_items') or 0) if v['kind'] != 'ads' else 0
     E = O + (ival(vals, 'spam_5') or 0) + (ival(vals, 'spam_6') or 0)
@@ -575,12 +580,12 @@ def share_row(row, acc, v, vals):
     ca, cc = acc.get((v['key'], v['per'], 'app', v['scope']), C.Counter()), acc.get((v['key'], v['per'], 'cre', v['scope']), C.Counter())
     ta, tc = cnt(ca, 'all'), cnt(cc, 'all')
     if ta == 0 or tc == 0:
-        row.update(stated_share=s, outcome=K.CANNOT_TELL, reason='The database holds no statements for this platform and period on one date basis.'); return row
+        row.update(stated_share=s, outcome=K.CANNOT_TELL, reason_code=K.NO_INTERVAL_FORMABLE, reason='The database holds no statements for this platform and period on one date basis.'); return row
     d_c = cnt(ca, 'FU') / ta; d_lo = min(cnt(ca, 'FU') / ta, cnt(cc, 'FU') / tc); d_hi = max(cnt(ca, 'FUPA') / ta, cnt(cc, 'FUPA') / tc)
-    lo, hi = d_lo - s_hi, d_hi - s_lo; oc = K.classify(lo, hi, -SH_B, SH_B)
+    lo, hi = d_lo - s_hi, d_hi - s_lo; oc, rcs = K.read(lo, hi, band=(-SH_B, SH_B)); row['reason_code'] = rcs
     if inh and v['kind'] in ('ads', 'combined'):   # second referee pass: the reading without the column-sum bound
         cn = [s] + ([(so - min(E_nb, so)) / (T - E_nb), (so - max(0, E_nb - no)) / (T - E_nb)] if 0 < E_nb < T else [])
-        oc_nb = K.classify(d_lo - max(cn), d_hi - min(cn), -SH_B, SH_B)
+        oc_nb = K.read(d_lo - max(cn), d_hi - min(cn), band=(-SH_B, SH_B))[0]
         if oc_nb != oc: row['outcome_without_column_bound'] = oc_nb
     if v['kind'] == 'main':   # plan rule share (all statements, orders and spam only)
         cap, ccp = acc.get((v['key'], v['per'], 'app', 'all'), C.Counter()), acc.get((v['key'], v['per'], 'cre', 'all'), C.Counter())
@@ -588,7 +593,7 @@ def share_row(row, acc, v, vals):
         tap, tcp = cnt(cap, 'all'), cnt(ccp, 'all')
         if tap and tcp:
             l0 = min(cnt(cap, 'FU') / tap, cnt(ccp, 'FU') / tcp) - max(c0); h0 = max(cnt(cap, 'FUPA') / tap, cnt(ccp, 'FUPA') / tcp) - min(c0)
-            row['outcome_plan_rule'] = K.classify(l0, h0, -SH_B, SH_B)
+            row['outcome_plan_rule'] = K.read(l0, h0, band=(-SH_B, SH_B))[0]
     txt = 'The difference band runs from %+.1f to %+.1f points.' % (lo * 100, hi * 100)
     txt += {K.CONSISTENT: ' It lies inside 5 points either way, so the shares agree.', K.ABOVE: ' Its lower edge is above +5 points. The filings show a larger fully automated share than the report states.',
             K.BELOW: ' Its upper edge is below -5 points. The filings show a smaller automated share than the report states, even counting partially automated statements.', K.CANNOT_TELL: ' It crosses a 5 point edge, so we cannot tell.'}[oc]
@@ -603,7 +608,7 @@ def write_public(rows, auto, summ, sources):
     """Trimmed public files: one row per reading, the stated value cell and indicator instead of the whole verbatim record."""
     pd_ = os.path.join(H, 'public'); os.makedirs(pd_, exist_ok=True)
     keep = ('platform', 'view', 'period', 'measure', 'stated', 'stated_lo', 'stated_hi', 'items_notified', 'ratio', 'ratio_lo', 'ratio_hi', 'gap_signed',
-            'outcome', 'outcome_rule', 'outcome_without_column_bound', 'defined_after_data', 'rules_after_data', 'reason', 'stated_share', 'stated_share_lo', 'stated_share_hi',
+            'outcome', 'reason_code', 'status', 'outcome_rule', 'outcome_without_column_bound', 'defined_after_data', 'rules_after_data', 'reason', 'stated_share', 'stated_share_lo', 'stated_share_hi',
             'delivered_share', 'delivered_share_lo', 'delivered_share_hi', 'diff_points', 'diff_lo_points', 'diff_hi_points', 'split', 'reading_text', 'members')
     out = []; srcmap = {}
     for r in rows:

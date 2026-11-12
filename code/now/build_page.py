@@ -2,7 +2,9 @@
 """build_page.py: the NOW page body (now.html), rendered from the frozen reading data/page_reading.json (written by freeze.py from
 summary_now.json and the log at ship time) and data/fortune.json. Every number on the page comes from those files. build_site.py takes
 the headline block and the body from now.html, so nav, division line, footer and reference code come from page()."""
-import os, json, html, datetime as D
+import os, sys, json, html, datetime as D
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import heuremen_kit as K   # 12 Nov 2026 (Faults and Guards 2.0): the page reads the frozen numbers of 10 Nov under the 2.0 rule, PLAN_ADDENDUM_std2.md. The frozen file itself is not changed.
 
 H = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(os.path.join(H, 'data', 'page_reading.json')))
@@ -17,6 +19,11 @@ KINDW = {'own text': 'own text', 'contemporaneous report': 'report at the time',
 
 
 def n(x): return f'{x:,}'
+def bin_read(b):
+    """2.0 reading of a frozen bin from its own numbers: under 30 is TOO_WIDE_TO_RESOLVE (O3), otherwise the mean stated chance is a bound with no tolerance."""
+    return (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE) if b['n'] < 30 else K.read(b['lo'], b['hi'], bound=b['mean_stated'])
+def rw(o, r): return WORD[o] + (f' ({r})' if o == 'CANNOT_TELL' and r else '')
+NR = [x for x in (S.get('stale') or []) if str(x).startswith('manifold')]
 def pc(x, d=1): return '' if x is None else f'{100 * x:.{d}f}'
 def ld(iso):
     if not iso: return ''
@@ -49,10 +56,12 @@ def table(head, rows):
 
 B = S['binary']; ALL = B['all']; AFT = B['criterion_after']; BEF = B['criterion_before']
 MR = S['probability'].get('manifold_resolved', {})
+R13_HEAD = K.req13([('RIGHT', None)] * ALL['RIGHT'] + [('WRONG', None)] * ALL['WRONG'] + [(K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)] * ALL['CANNOT_TELL'], nothing_returned=NR)['line']
+R13_BINS = K.req13([bin_read(b) for b in MR.get('bins', []) if b['n']], nothing_returned=NR)['line'] if MR else ''
 parts = []
 hl_big = f'{n(ALL["RIGHT"])} of {n(ALL["read"])}'
 hl_line = (f'on-record predictions whose deadline has passed read right against the record. {n(ALL["WRONG"])} read wrong and {n(ALL["CANNOT_TELL"])} cannot be told '
-           f'from the record. The criterion for {"each" if AFT["read"] == ALL["read"] else n(AFT["read"])} of these was written after the deadline, from the quote alone.')
+           f'from the record. The criterion for {"each" if AFT["read"] == ALL["read"] else n(AFT["read"])} of these was written after the deadline, from the quote alone. {R13_HEAD}')
 if MR.get('brier') is not None:
     hl_line += (f' For {n(MR["n"])} resolved Manifold AI markets read 30 days before they closed, the Brier score is {MR["brier"]:.3f}, against {MR["brier_base"]:.3f} '
                 f'for stating the base rate every time.')
@@ -61,7 +70,7 @@ parts.append('<h2>Predictions against their deadline</h2>')
 parts.append(
     '<p>NOW keeps a log of public predictions that name an event and a deadline. Each entry holds the exact words, a link to where they were said, '
     'an archived copy where one could be made, the date said, the deadline and a criterion we wrote in plain words. At the deadline we read the record '
-    'and the entry reads right, wrong or cannot tell. A stated probability is kept as stated and read with others from the same source, by bin. '
+    'and the entry reads right, wrong or cannot tell. A cannot tell carries one reason from a closed list, and for an entry it is always NO_INTERVAL_FORMABLE. No test the record can answer, and so no interval, can be formed. A stated probability is kept as stated and read with others from the same source, by bin. '
     'The log only grows. A correction is a new row, and the old row stays. Every row carries the hash of the row before it, and each version of the log '
     'is stamped with OpenTimestamps. The rules were committed before any entry was collected.</p>')
 parts.append(
@@ -81,7 +90,7 @@ for e in done:
     o = e['outcomes'][-1]
     rows.append(f'<tr><td>{who(e)}</td><td>{ld(e["said"])}</td><td><span class="quote">&ldquo;{E(e["quote"])}&rdquo;</span><br>{src(e)}</td><td>{ld(e["deadline"])}</td>'
                 f'<td>{E(e["criterion"])}{"" if e.get("criterion_before_deadline") else "<br><span class=srckind>written after the deadline</span>"}</td>'
-                f'<td>{WORD[o["outcome"]]}<br><span class="srckind">{E(o.get("reason"))}</span></td><td>{evid(o)}</td></tr>')
+                f'<td>{rw(o["outcome"], "NO_INTERVAL_FORMABLE")}<br><span class="srckind">{E(o.get("reason"))}</span></td><td>{evid(o)}</td></tr>')
 parts.append(table(['Who', 'Said', 'Words', 'Deadline', 'Criterion', 'Reading', 'Record'], rows))
 
 # ---------------------------------------------------------------- calibration
@@ -92,14 +101,17 @@ if MR:
         f'<p>Manifold is a public forecasting platform where a question carries a probability set by its traders. We read every yes-or-no market in its AI topic '
         f'with at least 50 traders that closed or resolved from 1 January 2025 to 31 October 2026 and resolved yes or no. The stated chance is the market probability '
         f'30 days before it closed. The market\'s own resolution is the record. {n(MR["n"])} markets were read. Each bin reads above when the share that resolved yes is '
-        f'higher than the mean stated chance by more than its 95 percent Wilson interval, below when lower, consistent when the stated chance sits inside the interval, '
-        f'and cannot tell under 30 markets. Markets in one topic are not independent, so the intervals are narrower than the markets justify.</p>')
+        f'higher than the mean stated chance by more than its 95 percent Wilson interval and below when lower. The mean stated chance is a figure with no tolerance, so no bin reads consistent. '
+        f'Any other bin reads cannot tell (STRADDLES_EDGE), and so does a bin under 30 markets (TOO_WIDE_TO_RESOLVE). Until 12 November 2026 the plan read a bin consistent when the stated chance sat inside the interval at any width. '
+        f'Three bins were recorded consistent under that rule on 10 November 2026 and are marked below. Markets in one topic are not independent, so the intervals are narrower than the markets justify.</p>')
     rows = []
     for b in MR['bins']:
         if not b['n']: continue
+        o2, r2 = bin_read(b); old = (f'<br><span class="srckind">recorded {WORD[b["outcome"]]} on 10 November 2026 under the plan rule</span>' if b['outcome'] != o2 and (b['outcome'], o2) != ('CANNOT_TELL', 'CANNOT_TELL') else '')
         rows.append(f'<tr><td>{E(b["label"])}</td><td class="n">{n(b["n"])}</td><td class="n">{pc(b["mean_stated"])}</td><td class="n">{n(b["happened"])}</td>'
-                    f'<td class="n">{pc(b["share"])}</td><td class="n">{pc(b["lo"])} to {pc(b["hi"])}</td><td>{WORD[b["outcome"]]}</td></tr>')
+                    f'<td class="n">{pc(b["share"])}</td><td class="n">{pc(b["lo"])} to {pc(b["hi"])}</td><td>{rw(o2, r2)}{old}</td></tr>')
     parts.append(table(['Stated chance', 'Markets', 'Mean stated, %', 'Resolved yes', 'Share yes, %', 'Wilson 95%', 'Reading'], rows))
+    parts.append(f'<p class="bench-note">Bins read: {R13_BINS}</p>')
     if MR.get('brier') is not None:
         parts.append(f'<p class="bench-note">Brier score {MR["brier"]:.3f} (lower is closer). Stating the base rate of {pc(MR["base_rate"])} percent for every market scores '
                      f'{MR["brier_base"]:.3f}. Skill, one minus the ratio of the two, is {MR["skill"]:.3f}, with a 95 percent interval of {MR["skill_lo"]:.3f} to {MR["skill_hi"]:.3f} '
@@ -113,10 +125,10 @@ if MO:
 pd = [ENTS[i] for i in S['pdoom']]
 if pd:
     parts.append('<h3>Stated chances of catastrophe from AI</h3>')
-    parts.append('<p>These are logged with the exact words and their source, and every one reads cannot tell. One outcome cannot test a probability. '
+    parts.append('<p>These are logged with the exact words and their source, and every one reads cannot tell (NO_INTERVAL_FORMABLE). One outcome cannot test a probability. '
                  'Whatever happens, a single event is consistent with any stated chance above zero and below one. Only statements whose words we read in a primary source are logged.</p>')
     rows = [f'<tr><td>{who(e)}</td><td>{ld(e["said"])}</td><td><span class="quote">&ldquo;{E(e["quote"])}&rdquo;</span><br>{src(e)}</td><td>{prob(e.get("probability"))}</td>'
-            f'<td>{ld(e["deadline"]) if e.get("deadline") else "no period stated"}</td><td>cannot tell, by design</td></tr>' for e in pd]
+            f'<td>{ld(e["deadline"]) if e.get("deadline") else "no period stated"}</td><td>cannot tell (NO_INTERVAL_FORMABLE), by design</td></tr>' for e in pd]
     parts.append(table(['Who', 'Said', 'Words', 'Stated chance', 'Period ends', 'Reading'], rows))
 
 # ---------------------------------------------------------------- open

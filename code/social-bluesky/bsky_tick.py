@@ -609,7 +609,7 @@ def build_rows(A, stated, gate_ok):
         r = dict(id=spec['id'], group=spec['group'], what=spec['what'], kind=spec['kind'], stated=spec['printed'], stated_point=spec['point'],
                  stated_range=[spec.get('lo'), spec.get('hi')], quote=stated['quotes'][spec['quote']]['quote'], source=stated['quotes'][spec['quote']]['url'])
         if spec['kind'] == 'absent':
-            r.update(delivered=None, rule=None, interval=None, gap=None, outcome=K.CANNOT_TELL, reason=spec['reason']); out.append(r); continue
+            r.update(delivered=None, rule=None, interval=None, gap=None, outcome=K.CANNOT_TELL, reason_code=K.NO_INTERVAL_FORMABLE, reason=spec['reason']); out.append(r); continue
         R, G = readings(A, spec['V'], spec['Y'], spec.get('subj', 'any'))
         if spec['kind'] in ('count', 'count_wide'):
             tot, lo, hi = count_interval(R, G)
@@ -626,11 +626,16 @@ def build_rows(A, stated, gate_ok):
                      unserved_seq=G, gap=(sh['R1'] - spec['point']) if sh['R1'] is not None else None,
                      gap_interval=[lo - spec['point'], hi - spec['point']] if lo is not None else None)
             zero = all(sum(R[k].values()) == 0 for k in ('R1', 'R2', 'R3', 'R4', 'R5', 'R6'))
-        if zero: oc, why = K.NOTHING_RETURNED, 'The stream served no row of this value in the year under any reading.'
+        # 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): K.read, closed edges. A row the stream never served is CANNOT_TELL NO_INTERVAL_FORMABLE, never an outcome called nothing returned.
+        rc = None; r['zero'] = bool(zero)
+        if zero: oc, rc, why = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE, 'The stream served no row of this value in the year under any reading.'
+        elif spec['kind'] == 'count_wide':
+            o_, _r = K.read(lo, hi, bound=spec['hi'])
+            if o_ == K.ABOVE: oc, why = K.ABOVE, None
+            else: oc, rc, why = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE, WIDE
         else:
-            oc = K.classify(lo, hi, spec['lo'], spec['hi']); why = None
-            if spec['kind'] == 'count_wide' and oc != K.ABOVE: oc, why = K.CANNOT_TELL, WIDE
-            elif oc == K.CANNOT_TELL: why = 'The interval across readings reaches both sides of the stated figure, or past its edge.'
+            oc, rc = K.read(lo, hi, band=(spec['lo'], spec['hi'])); why = None
+            if oc == K.CANNOT_TELL: why = 'The interval across readings reaches both sides of the stated figure, or past its edge.'
         BESIDE = {'val_graphic_media': [('gore', 'shown in the Bluesky app under the same name, Graphic Media')],
                   'val_adult': [('porn(self)', 'a different value name, seen in the stream')], 'val_suggestive': [('sexual(self)', 'a different value name, seen in the stream')],
                   'val_nudity': [('nudity(self)', 'a different value name, seen in the stream')], 'val_rude': [('rude:1714644703844', 'a different value name, seen in the stream')]}
@@ -639,10 +644,10 @@ def build_rows(A, stated, gate_ok):
             for bv, why in BESIDE[spec['id']]:
                 Rg, _ = readings(A, [bv], spec['Y']); r['beside'].append(dict(value=bv, note=why + '. Reported beside the row and not added, as the plan sets.', R1=sum(Rg['R1'].values())))
         r['stated_inside_interval'] = (lo is not None and not (hi < spec['lo'] or lo > spec['hi']))
-        r['outcome'] = oc; r['reason'] = why; out.append(r)
+        r['outcome'] = oc; r['reason'] = why; r['reason_code'] = rc; out.append(r)
     if not gate_ok:
         out = K.apply_gate(False, out)
-        for r in out: r['reason'] = 'The planted-world check failed, so every outcome is cannot tell. ' + (r.get('reason') or '')
+        for r in out: r['reason'] = 'The planted-world check failed, so every outcome is cannot tell. ' + (r.get('reason') or ''); r['reason_code'] = K.NO_INTERVAL_FORMABLE
     return out
 
 # ---------------------------------------------------------------- planted world (known-good for the counter)
@@ -760,10 +765,11 @@ def human(n):
     return '{:,}'.format(int(n))
 
 def pct(x, d=2): return 'none' if x is None else ('%.' + str(d) + 'f%%') % (100 * x)
-WORD = {K.ABOVE: 'above', K.BELOW: 'below', K.CONSISTENT: 'consistent', K.CANNOT_TELL: 'cannot tell', K.NOTHING_RETURNED: 'nothing returned'}
+WORD = {K.ABOVE: 'above', K.BELOW: 'below', K.CONSISTENT: 'consistent', K.CANNOT_TELL: 'cannot tell'}
+def ow(r): return WORD.get(r['outcome'], r['outcome']) + (' (%s)' % r['reason_code'] if r['outcome'] == K.CANNOT_TELL and r.get('reason_code') else '')   # 12 Nov 2026: the reason sits beside the word
 
-def sparkline(series, w=640, h=96):
-    today = time.strftime('%Y-%m-%d', time.gmtime())
+def sparkline(series, w=640, h=96, today=None):
+    today = today or time.strftime('%Y-%m-%d', time.gmtime())
     pts = [(s['day'], s['applied']) for s in series if s['day'] < today]
     if len(pts) < 2: return ''
     mx = max(v for _, v in pts) or 1; n = len(pts); top = 14
@@ -796,7 +802,7 @@ def render(rows, A, sig, fetchinfo, kg_ok, read_at=None):
             bes = [b for b in r.get('beside') or [] if b.get('R1')]
             name = r['what'] + ''.join(' (%s beside it, not added: %s)' % (b['value'], human(b['R1'])) for b in bes)
             trs.append('<tr><td>%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td>%s</td></tr>' % (
-                E(name), E(r['stated']), E(cell_delivered(r)), E(cell_interval(r)), E(WORD.get(r['outcome'], r['outcome']))))
+                E(name), E(r['stated']), E(cell_delivered(r)), E(cell_interval(r)), E(ow(r))))
     series = A['series']; today = time.strftime('%Y-%m-%d', time.gmtime(now))
     full = [s for s in series if s['day'] < today]; latest = full[-1] if full else None
     rec_rows = ''.join('<tr><td>%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td></tr>' % (
@@ -806,7 +812,7 @@ def render(rows, A, sig, fetchinfo, kg_ok, read_at=None):
     yrows = ''.join('<tr><td>%s</td><td class="n">%s</td><td class="n">%s</td></tr>' % (y, human(yr[y]), human(yn[y])) for y in sorted(yr))
     c = C.Counter(r['outcome'] for r in rows); first = series[0]['day'] if series else 'none'
     s25 = next(r for r in rows if r['id'] == 'labels_2025')
-    measured = [r for r in rows if r['kind'] != 'absent' and r['outcome'] != K.NOTHING_RETURNED]
+    measured = [r for r in rows if r['kind'] != 'absent' and not r.get('zero')]
     inside = [r['what'] for r in measured if r.get('stated_inside_interval')]
     above = [r['what'] for r in measured if not r.get('stated_inside_interval') and r['interval'][0] is not None and r['interval'][0] > r['stated_range'][1]]
     below = [r['what'] for r in measured if r['kind'] != 'count_wide' and not r.get('stated_inside_interval') and r['interval'][1] is not None and r['interval'][1] < r['stated_range'][0]]
@@ -822,9 +828,10 @@ def render(rows, A, sig, fetchinfo, kg_ok, read_at=None):
     if sus and sus['delivered'] == 0 and sneg:
         out.append('<p>Temporary suspensions read 0 in the first reading, since every !suspend label dated 2025 that the stream still serves is a negation, and the first reading leaves negations out. The stream serves %s of these negations dated 2025, so the 0 does not mean the stream holds no suspensions for the year.</p>' % human(sneg))
     out.append('<p>The stated figure lies inside our range for: %s. The whole range is above the stated figure for: %s. The whole range is below it for: %s. Takedown rows are left out of that last list, since takedowns can be made outside the stream.</p>' % (E(lst(inside)), E(lst(above)), E(lst(below))))
+    out.append('<p class="bench-note">Cannot tell carries one reason. NO_INTERVAL_FORMABLE covers a figure the stream does not record and a takedown or suspension count the stream can only floor. STRADDLES_EDGE covers a range that crosses an edge of the stated figure. Counts for the rows above: %s</p>' % E(K.req13([(r['outcome'], r.get('reason_code')) for r in rows], nothing_returned=0)['line']))
     out.append('<h3>Labels per day</h3>')
     out.append('<p>Labels the stream serves today, by the UTC day of their creation time, from %s, not counting the two takedown values. The latest full day, %s, has %s labels served and %s negations. A past day can lose labels later, since a label that is negated or applied again moves to the day of the new write.</p>' % (first, latest['day'] if latest else 'none', human(latest['applied']) if latest else 'none', human(latest['negated']) if latest else 'none'))
-    out.append(sparkline(series))
+    out.append(sparkline(series, today=today))
     out.append('<div class="scroll"><table class="mtx small"><thead><tr><th>UTC day</th><th>Labels served</th><th>Negations served</th><th>Sequence numbers used</th></tr></thead><tbody>%s</tbody></table></div>' % rec_rows)
     out.append('<div class="scroll"><table class="mtx small"><thead><tr><th>Year</th><th>Labels served</th><th>Negations served</th></tr></thead><tbody>%s</tbody></table></div>' % yrows)
     out.append('<h3>How we read it</h3>')
@@ -850,7 +857,7 @@ def main():
     stated = json.load(open('data/stated.json')); rows = build_rows(A, stated, gate_ok)
     runs = con.execute('SELECT run, started, ended, cursor_from, last_seq, frames, reconnects, stop, superseded FROM runs ORDER BY run').fetchall()
     first_run = runs[0] if runs else None
-    meta = dict(updated=time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()), stream='wss://%s%s' % (HOST, XRPC), labeler=LABELER, head_seq=A['head_seq'], served_rows=A['served'],
+    meta = dict(updated=(json.load(open('summary_bluesky.json'))['updated'] if '--std2-rewrite' in args else time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())), stream='wss://%s%s' % (HOST, XRPC), labeler=LABELER, head_seq=A['head_seq'], served_rows=A['served'],
                 superseded_rows_held=A['superseded_stored'], rows_other_src=A['other_src'], rows_without_cts=A['nocts'],
                 out_of_order_by_year={str(k): v for k, v in sorted(A['ooo'].items(), key=lambda kv: kv[0] or 0)},
                 year_seq_ranges={str(Y): dict(first_seq=lo, next_year_first_seq=hi, unserved_seq=A['G'][Y]) for Y, (lo, hi) in A['rng'].items()},
@@ -866,13 +873,14 @@ def main():
     A['neg25_suspend'] = n25.get('!suspend', 0)
     meta['values_2025_served'] = dict(sorted(v25.items(), key=lambda kv: -kv[1])); meta['negations_2025_served'] = dict(sorted(n25.items(), key=lambda kv: -kv[1]))
     json.dump(dict(meta=meta, rows=rows, series=A['series']), open('data/bsky.json', 'w'), indent=1, ensure_ascii=False, default=str)
-    oc = C.Counter(r['outcome'] for r in rows); lat = [s for s in A['series'] if s['day'] < time.strftime('%Y-%m-%d', time.gmtime())]
+    read_at = time.time() if fi is not None else ((runs[-1][2] or runs[-1][1]) if runs else None)   # --no-fetch: the stream was last read when the last run ended
+    oc = C.Counter(r['outcome'] for r in rows); lat = [s for s in A['series'] if s['day'] < time.strftime('%Y-%m-%d', time.gmtime(read_at or time.time()))]
     summ = dict(updated=meta['updated'], head_seq=A['head_seq'], served_rows=A['served'], first_day=A['series'][0]['day'] if A['series'] else None,
                 latest_day=lat[-1] if lat else None, signature=dict(sampled=sig['sampled'], passed=sig['passed'], low_s=sig['low_s'], known_good=kg),
-                outcomes=dict(oc), row_count=len(rows), gate_passed=bool(gate_ok), rows=[{k: r.get(k) for k in ('id', 'what', 'stated', 'delivered', 'interval', 'outcome', 'reason')} for r in rows],
+                outcomes=dict(oc), row_count=len(rows), gate_passed=bool(gate_ok), cannot_tell_by_reason=dict(C.Counter(r.get('reason_code') for r in rows if r['outcome'] == K.CANNOT_TELL)), req13=K.req13([(r['outcome'], r.get('reason_code')) for r in rows], nothing_returned=0),
+                rows=[{k: r.get(k) for k in ('id', 'what', 'stated', 'delivered', 'interval', 'outcome', 'reason_code', 'reason')} for r in rows],
                 series=[[s['day'], s['applied'], s['negated'], s['seq_used']] for s in A['series']])
     json.dump(summ, open('summary_bluesky.json', 'w'), indent=1, default=str)
-    read_at = time.time() if fi is not None else ((runs[-1][2] or runs[-1][1]) if runs else None)   # --no-fetch: the stream was last read when the last run ended
     if '--no-render' not in args: open('section_bluesky.html', 'w').write(render(rows, A, sig, fi, kg, read_at))
     log('done in %.0f s: outcomes %s' % (time.time() - t0, dict(oc)))
 
