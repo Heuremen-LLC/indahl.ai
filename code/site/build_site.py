@@ -46,7 +46,7 @@ def seo_head(path, title, desc):
     _short = title.split(' | ')[0]
     _live = {'predictions','support','pkglicense','hflicense','hfsize','secrecords','pkginstall','linkrot','trials','revise','hpt','hosts','airq','ailuminate','weights','airline','fedsep','time','cada','uptime','forecast','cadence','launch','arxivdrift','campus','seat','change','tape','water','neo','solar','quake','wiki','cone','tornado','credit','census','census/revisions','census/fidelity'}
     _slug = path.strip('/')
-    if path not in NOINDEX and path not in ('/', '/qia', '/iris') and not path.startswith(('/qia/study/', '/iris/study/')):
+    if path not in NOINDEX and path not in ('/', '/qia', '/iris') and not path.startswith(('/qia/study/', '/iris/study/', '/sagar/study/')):
         _wp = {"@context": "https://schema.org", "@type": "WebPage", "name": _short, "description": desc, "url": url, "inLanguage": "en", "dateModified": _today, "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": SITE + "/"}, "publisher": _org}
         if path in ('/media', '/media/2026-10-26'):
             _wp["@type"] = "NewsArticle"; _wp["headline"] = _short; _wp["datePublished"] = '2026-10-29' if path == '/media' else '2026-10-26'; _wp["author"] = _org; _wp["mainEntityOfPage"] = url
@@ -59,10 +59,10 @@ def seo_head(path, title, desc):
         _cr = [('Heuremen LLC', SITE + '/')]
         if _div and _div != path: _cr.append((_div.strip('/').upper(), SITE + _div))
         _cr.append((_short, url)); crumb = _cr
-    if path.startswith('/qia/study/') or path.startswith('/iris/study/'):
-        div = 'qia' if path.startswith('/qia/') else 'iris'
+    if path.startswith('/qia/study/') or path.startswith('/iris/study/') or path.startswith('/sagar/study/'):
+        div = 'qia' if path.startswith('/qia/') else ('sagar' if path.startswith('/sagar/') else 'iris')
         crumb = [('Heuremen LLC', SITE + '/'), (div.upper(), SITE + '/' + div), (title.split(' | ')[0], url)]
-        ld.append({"@context": "https://schema.org", "@type": "WebPage", "name": title.split(' | ')[0], "url": url, "datePublished": "2026-10-27", "dateModified": globals().get('_STUDY_MOD', {}).get(path, "2026-10-27"), "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": SITE + "/"}})
+        ld.append({"@context": "https://schema.org", "@type": "WebPage", "name": title.split(' | ')[0], "url": url, "datePublished": ("2026-11-12" if path.startswith('/sagar/') else "2026-10-27"), "dateModified": globals().get('_STUDY_MOD', {}).get(path, "2026-10-27"), "isPartOf": {"@type": "WebSite", "name": "Heuremen LLC", "url": SITE + "/"}})
     elif path in ('/qia', '/iris'):
         crumb = [('Heuremen LLC', SITE + '/'), (path[1:].upper(), url)]
         import datetime as _dt
@@ -1925,6 +1925,42 @@ for _old, _c, _sl in _pairs:
     PAGES[_p] = page(_p, f'{_id} recount | QIA | Heuremen LLC', _desc, _body, hero_slim(f'Recount of {_id}'))
     _FEED.append((_p, f'{_id} recount (QIA)', _desc))
 print('study pages', len(_pairs))
+
+# 12 Nov 2026: SAGAR (Standards Audit of Gravitational and Astrophysical Research). One list page and one page per listed paper, built from the same table cells
+# (sagar/site/sagar_list_body.html, written by sagar/site/make_sagar.py from the record), so a study page cannot drift from its row. No author names, no notice window.
+_SG_DIR = os.path.join(HERE, '..', 'sagar', 'site'); _SG_PATH = os.path.join(_SG_DIR, 'sagar_list_body.html')
+if os.path.exists(_SG_PATH):
+    _SG_BODY = open(_SG_PATH, encoding='utf-8').read(); _SG_PAIRS = []
+    for _m in _r2.finditer(r'<tr id="arxiv-(\d{4}\.\d{4,5})">(.*?)</tr>', _SG_BODY, _r2.S):
+        _cs = _r2.findall(r'<td>(.*?)</td>', _m.group(2), _r2.S)
+        if len(_cs) == 6: _SG_PAIRS.append((_m.group(0), _m.group(1), _cs))
+    assert _SG_PAIRS, 'REFUSED: sagar_list_body.html gave no rows'
+    _SGB = _SG_BODY
+    for _old, _id, _cs in _SG_PAIRS:
+        _SGB = _SGB.replace(_old, _old.replace(_cs[0] + '</td>', _cs[0] + '<br><span class="by"><a href="/sagar/study/' + _id + '">Study page</a></span></td>', 1), 1)
+    _SG_DISC = '<section class="disclose"><p>Papers listed are for information only. Please <a href="/contact">click here to ask to be removed from our index</a>. Heuremen LLC is an independent, private company with no stake, value or interest in any paper listed here. All employees are required to <a href="/conflict-of-interest">certify</a> that they have no business interest in any work indexed here that could pose a conflict of interest.</p></section>'
+    PAGES['/sagar'] = page('/sagar', 'SAGAR: Errata Index for Gravitational-Wave Papers | Heuremen LLC',
+        'Checkable errata in gravitational-wave papers, each with a verbatim quote from the paper and where the paper shows otherwise, confirmed by two independent readers.',
+        _SGB + _SG_DISC, hero_slim('SAGAR', 'Standards Audit of Gravitational and Astrophysical Research'))
+    for _old, _id, _cs in _SG_PAIRS:
+        _w, _vr, _pr, _sh, _ct, _hw = _cs
+        _tx = ' '.join(_h2.unescape(_r2.sub(r'<[^>]+>', ' ', _sh)).split())
+        _p = '/sagar/study/' + _id
+        globals().setdefault('_STUDY_MOD', {})[_p] = '2026-11-12'
+        _body = (f'<section class="legal"><p class="meta">Errata study page. <a href="/sagar">SAGAR</a></p>'
+                 f'<h2>Work</h2><p>{_w}</p><h2>Version Read</h2><p>{_vr}</p>'
+                 f'<h2>What the Paper Prints</h2>{_pr}<h2>What the Paper Shows Elsewhere</h2>{_sh}'
+                 f'<h2>Code and Tier</h2><p>{_ct}</p><h2>How It Was Checked</h2><p>{_hw}</p>'
+                 f'<p class="meta">A classification for indexing, not an assessment of the study or its authors. A correction you can check. To correct or remove this page, use the <a href="/correction">correction or removal form</a>, open to anyone.</p></section>')
+        PAGES[_p] = page(_p, f'arXiv {_id} errata | SAGAR | Heuremen LLC', _meta_desc(_tx), _body, hero_slim(f'Errata in arXiv {_id}'))
+        _FEED.append((_p, f'arXiv {_id} errata (SAGAR)', _meta_desc(_tx)))
+    _RC = os.path.join(HERE, '..', 'sagar', 'receipts')   # the one recompute receipt, text and script as written
+    if os.path.exists(os.path.join(_RC, '2603.29019_sigma.md')):
+        _rp = '/sagar/receipts/2603.29019_sigma'
+        PAGES[_rp] = page(_rp, 'arXiv 2603.29019 recompute receipt | SAGAR | Heuremen LLC', 'Recompute of the sigma_global interval in arXiv 2603.29019 from the authors’ released posterior samples, with the script.',
+            '<section class="legal"><p class="meta"><a href="/sagar/study/2603.29019">Study page</a> &middot; <a href="/sagar">SAGAR</a></p><h2>Receipt</h2><pre style="white-space:pre-wrap">' + _h2.escape(open(os.path.join(_RC, '2603.29019_sigma.md'), encoding='utf-8').read()) +
+            '</pre><h2>Script</h2><pre style="white-space:pre-wrap">' + _h2.escape(open(os.path.join(_RC, '2603.29019_sigma.py'), encoding='utf-8').read()) + '</pre></section>', hero_slim('Recompute receipt for arXiv 2603.29019'))
+    print('sagar pages', len(_SG_PAIRS))
 
 PAGES['/qia'] = page('/qia', 'QIA: IBM hardware deviations and calibrated quantum studies | Heuremen LLC',
  'IBM processors measured against their published calibration, the studies QIA calibrated with the fix for each, and the List of every published study QIA has indexed, with a source for every row.',
