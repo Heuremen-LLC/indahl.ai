@@ -121,8 +121,9 @@ if gate and not SUMMARY_ONLY:
                 c2, why2, body, isz = step2(mrf); time.sleep(0.4); rec.update(s2=c2, why2=why2)
                 if c2 == 'AGREE': rec['s3'] = 'NOT_COMPARABLE' if isz else step3(body); rec['why3'] = 'zip file' if isz else None
         store[host] = rec
-        if i % 100 == 99: json.dump(store, open('data/domains.json.tmp', 'w')); os.replace('data/domains.json.tmp', 'data/domains.json'); print('hpt: read', i + 1, 'of', len(doms), flush=True)
+        if i % 100 == 99: json.dump(store, open('data/domains.partial.json.tmp', 'w')); os.replace('data/domains.partial.json.tmp', 'data/domains.partial.json'); print('hpt: read', i + 1, 'of', len(doms), flush=True)   # 12 Nov: progress goes to a partial file; domains.json is replaced only when the full read is done (a 100-row checkpoint once stood in for the 1,921-row record and stopped a ship)
     json.dump(store, open('data/domains.json.tmp', 'w')); os.replace('data/domains.json.tmp', 'data/domains.json')
+    if os.path.exists('data/domains.partial.json'): os.remove('data/domains.partial.json')
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 rs = list(store.values()); random.Random(7).shuffle(rs := sorted(rs, key=lambda r: r['domain'])); sample1 = {r['domain'] for r in [r for r in rs if r['s1'] == 'DISAGREE'][:10]}
 def grp(key):

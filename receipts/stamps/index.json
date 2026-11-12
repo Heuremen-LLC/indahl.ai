@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-12T00:51:11Z",
+ "built_utc": "2026-11-12T01:23:53Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 1511,
+   "commit": "68d0730a86ae9a81fa14b9591cf72af29019b9b9",
+   "files": 5743,
+   "id": "68d0730a86ae",
+   "json": "/receipts/stamps/release_68d0730a86ae.json",
+   "ledger_sha256": "2a789f77b2736be2354d141b771a2c2cbb87328c10f2469325cdf77434fc8af1",
+   "manifest_sha256": "c2e24f33274bce85cb9b506868c4226fc3ab5456a928978ce958fb555fc94199",
+   "ots": "/receipts/stamps/release_68d0730a86ae.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-12T01:23:51Z",
+   "sha256": "e617293a6e16af010215fddfd29fd6ae9ea7fcd79ad6789f2e3244838046db3b",
+   "wayback": [],
+   "wayback_waiting": 1501
+  },
   {
    "changed": 872,
    "commit": "59736e3727f2f3cf680caeba97671b6a9649a168",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-12T00:34:00Z",
    "sha256": "ad9c5f4168116d6d1c8c295b2468c067ad3a8a31f8a478113e966b45fd609c0c",
    "wayback": [],
-   "wayback_waiting": 862
+   "wayback_waiting": 28
   },
   {
    "changed": 1136,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-12T00:29:04Z",
    "sha256": "c00f69c5c3ad5d42100ada91db5d543c4fedaaadc025c99421534828b676680e",
    "wayback": [],
-   "wayback_waiting": 295
+   "wayback_waiting": 242
   },
   {
    "changed": 420,
@@ -296,7 +311,7 @@
      "url": "https://indahl.ai/airq/airq_outcomes.csv"
     }
    ],
-   "wayback_waiting": 250
+   "wayback_waiting": 62
   },
   {
    "changed": 862,
@@ -311,7 +326,7 @@
    "released_at": "2026-11-11T23:05:21Z",
    "sha256": "520d76c0c6035b16cecbd6622c3bcdce08fb9bc188086c4831a13513ef93f3e8",
    "wayback": [],
-   "wayback_waiting": 12
+   "wayback_waiting": 7
   },
   {
    "changed": 1140,
@@ -326,7 +341,7 @@
    "released_at": "2026-11-11T22:46:33Z",
    "sha256": "9aa7aac6bb147a8613918ae5f9bea3857a7fdf90b767f837d09e5ca3bc6d2045",
    "wayback": [],
-   "wayback_waiting": 86
+   "wayback_waiting": 85
   },
   {
    "changed": 158,
@@ -341,7 +356,7 @@
    "released_at": "2026-11-11T21:45:46Z",
    "sha256": "22fded5dc7e2bad57d2936862c6e81806735bbaa17d6c1923805b91af9170c41",
    "wayback": [],
-   "wayback_waiting": 9
+   "wayback_waiting": 7
   },
   {
    "changed": 730,
@@ -446,7 +461,7 @@
    "released_at": "2026-11-11T18:49:30Z",
    "sha256": "d85f6ce6ac44611078c38006298e35ba17076e8220e76be5e9278c9f64fb8ec0",
    "wayback": [],
-   "wayback_waiting": 850
+   "wayback_waiting": 474
   },
   {
    "changed": 1501,
@@ -491,7 +506,7 @@
    "released_at": "2026-11-11T16:38:42Z",
    "sha256": "12370d1c9e100ddf1b9d813a62e1838ed5023c81a7cd61ff123264eb96202f8f",
    "wayback": [],
-   "wayback_waiting": 5
+   "wayback_waiting": 3
   },
   {
    "changed": 164,
@@ -506,7 +521,7 @@
    "released_at": "2026-11-11T16:21:23Z",
    "sha256": "dfececf8f3553277328d3029fee6ecbbf080bdfcecdc6829fbaa0d46a15f4eea",
    "wayback": [],
-   "wayback_waiting": 5
+   "wayback_waiting": 2
   },
   {
    "changed": 162,
@@ -581,7 +596,7 @@
    "released_at": "2026-11-11T14:37:37Z",
    "sha256": "45a348be7a9884e129a54ed56e1f92c7f46912f753380193b3e4d921a8524ca1",
    "wayback": [],
-   "wayback_waiting": 40
+   "wayback_waiting": 27
   },
   {
    "changed": 1530,
@@ -622,7 +637,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 569
+   "wayback_waiting": 567
   },
   {
    "changed": 287,
@@ -1169,7 +1184,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 66
+   "wayback_waiting": 61
   },
   {
    "changed": 0,
@@ -1450,7 +1465,7 @@
      "url": "https://indahl.ai/brand/google.csv"
     }
    ],
-   "wayback_waiting": 21
+   "wayback_waiting": 19
   },
   {
    "changed": 369,
@@ -1716,7 +1731,7 @@
      "url": "https://indahl.ai/brand/adguard.csv"
     }
    ],
-   "wayback_waiting": 19
+   "wayback_waiting": 17
   },
   {
    "changed": 4261,
@@ -1731,7 +1746,7 @@
    "released_at": "2026-11-11T00:30:27Z",
    "sha256": "fde2c29eef40194b0ba4c5184c6d5e677d252f878b60ad34463b3104f7a3c32b",
    "wayback": [],
-   "wayback_waiting": 1973
+   "wayback_waiting": 1969
   },
   {
    "changed": 4233,

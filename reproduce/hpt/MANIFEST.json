@@ -14,13 +14,13 @@
  "desk": "hpt",
  "inputs": [
   {
-   "bytes": 445357,
+   "bytes": 419248,
    "gzip_added": true,
-   "modified": "2026-11-09T02:12:25Z",
+   "modified": "2026-11-12T01:37:32Z",
    "path": "data/domains.json",
-   "sha256": "c7c27d1c1f16b9971925a7b96897f0036b21fdde9c2ea0ba76a0ce9b19bb76db",
+   "sha256": "33228fc36aaf1f0c42aa6b7208f10b7c5cbda952ef810d642db84a057a1be0b2",
    "stored": "data/domains.json.gz",
-   "stored_sha256": "eadb0347c2363de8559860572867509a1c4837d628e4e6407a7d207365b2135c"
+   "stored_sha256": "b0c29fd0b7abcf4e0e3ebc9776a3a7acff427b5a8fe5d675431d5357edf07b7e"
   },
   {
    "bytes": 5812,
@@ -32,13 +32,13 @@
    "stored_sha256": "1262ed921a3761bb606b54fab0a5e5854beabc7f2dd0a7365650aeb0f582ccf3"
   }
  ],
- "made": "2026-11-11T00:08:40Z",
+ "made": "2026-11-12T01:37:49Z",
  "mode": "inputs",
  "name": "HPT",
  "reference": [
   {
    "path": "desk/hpt_tick.py",
-   "sha256": "444230359cea5936604c3226c74ce2fad5ccdca1cc0489d110e7d498de6b8fbf"
+   "sha256": "ba8e482388dab2c4df6f09ba000690964f72c299a5a5ca5ba642b0eb604cd60d"
   }
  ]
 }
