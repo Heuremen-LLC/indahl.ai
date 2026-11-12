@@ -96,6 +96,11 @@
    "What is coming, by fuel, stage and year"
   ],
   [
+   "/petrol",
+   "PETROL",
+   "OPEC+ required production against delivered output"
+  ],
+  [
    "/water",
    "WATER",
    "Reservoir forecasts against measured levels"
@@ -302,6 +307,7 @@
   "/launch": "2026-10-28T23:54:05Z",
   "/linkrot": "2026-10-29T00:56:18Z",
   "/neo": "2026-11-10T13:59:24Z",
+  "/petrol": "2026-11-12T01:19:59Z",
   "/pkginstall": "2026-10-29T12:16:37Z",
   "/pkglicense": "2026-10-29T02:44:25Z",
   "/predictions": "2026-11-10T16:25:14Z",

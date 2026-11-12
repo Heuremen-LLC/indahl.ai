@@ -1,17 +1,17 @@
 path,label,outcome,n,of,share,lo,hi,bin,lead,mean_stated,observed
-/cells[0],cells[0],ABOVE,488,,,1.41,4.25,0 to 5,under 12 hours,1.15,2.46
-/cells[1],cells[1],ABOVE,459,,,2.16,5.59,0 to 5,12 to 24 hours,0.88,3.49
-/cells[2],cells[2],ABOVE,467,,,3.83,8.03,0 to 5,24 to 48 hours,0.91,5.57
-/cells[3],cells[3],ABOVE,121,,,34.5,51.88,10 to 20,under 12 hours,14.2,42.98
+/cells[0],cells[0],ABOVE,492,,,1.4,4.21,0 to 5,under 12 hours,1.15,2.44
+/cells[1],cells[1],ABOVE,463,,,2.14,5.54,0 to 5,12 to 24 hours,0.87,3.46
+/cells[2],cells[2],ABOVE,471,,,3.79,7.97,0 to 5,24 to 48 hours,0.91,5.52
+/cells[3],cells[3],ABOVE,122,,,34.2,51.49,10 to 20,under 12 hours,14.16,42.62
 /cells[4],cells[4],ABOVE,105,,,32.03,50.52,10 to 20,12 to 24 hours,13.89,40.95
-/cells[5],cells[5],ABOVE,120,,,29.35,46.42,10 to 20,24 to 48 hours,14.18,37.5
-/cells[6],cells[6],ABOVE,47,,,49.54,76.03,30 to 40,under 12 hours,35.19,63.83
-/cells[7],cells[7],ABOVE,46,,,55.19,80.92,30 to 40,12 to 24 hours,34.72,69.57
+/cells[5],cells[5],ABOVE,121,,,29.1,46.07,10 to 20,24 to 48 hours,14.19,37.19
+/cells[6],cells[6],ABOVE,49,,,51.31,77.08,30 to 40,under 12 hours,35.1,65.31
+/cells[7],cells[7],ABOVE,47,,,56.02,81.35,30 to 40,12 to 24 hours,34.74,70.21
 /cells[8],cells[8],ABOVE,63,,,46.42,70.04,30 to 40,24 to 48 hours,34.56,58.73
 /cells[9],cells[9],ABOVE,36,,,81.86,98.46,50 to 60,under 12 hours,55.28,94.44
-/cells[10],cells[10],ABOVE,38,,,72.67,94.25,50 to 60,12 to 24 hours,53.89,86.84
-/cells[11],cells[11],ABOVE,47,,,69.86,91.11,50 to 60,24 to 48 hours,54.3,82.98
-/cells[12],cells[12],CANNOT_TELL,18,,,82.41,100.0,70 to 80,under 12 hours,73.89,100.0
+/cells[10],cells[10],ABOVE,39,,,73.29,94.4,50 to 60,12 to 24 hours,53.79,87.18
+/cells[11],cells[11],ABOVE,48,,,70.42,91.3,50 to 60,24 to 48 hours,54.25,83.33
+/cells[12],cells[12],CANNOT_TELL,20,,,76.39,99.11,70 to 80,under 12 hours,73.5,95.0
 /cells[13],cells[13],CANNOT_TELL,19,,,75.36,99.06,70 to 80,12 to 24 hours,74.53,94.74
 /cells[14],cells[14],CONSISTENT,33,,,72.67,95.18,70 to 80,24 to 48 hours,74.36,87.88
 /cells[15],cells[15],CONSISTENT,34,,,89.85,100.0,90 to 100,under 12 hours,95.21,100.0

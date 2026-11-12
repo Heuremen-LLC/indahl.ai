@@ -2258,6 +2258,9 @@
 /r/paper.zz.revival_fez_plus	2026-10-22
 /r/paper.zz.revival_phoenix_diff	2026-10-22
 /r/paper.zz.revival_phoenix_plus	2026-10-22
+/r/petrol.lead.sep2026	2026-11-11
+/r/petrol.part1.all	2026-11-11
+/r/petrol.part2.eia	2026-11-11
 /r/pkg.test.iris.cross_flips	2026-11-01
 /r/pkg.test.iris.cuda_floor	2026-11-01
 /r/pkg.test.qia.audit_agree	2026-11-01
@@ -3880,4 +3883,4 @@
 /r/desk/weights	2026-11-10
 /r/desk/wiki	2026-11-10
 /r/desk/yo	2026-11-09
-/r/desk/other	2026-11-10
+/r/desk/other	2026-11-11

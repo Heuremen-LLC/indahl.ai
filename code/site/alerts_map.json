@@ -1606,6 +1606,7 @@
 "atlas/power-plants",
 "atlas/carbon",
 "atlas/planned-plants",
+"petrol",
 "water",
 "neo",
 "solar",
@@ -7457,7 +7458,7 @@
 "census": {
 "div": "",
 "every": "checked about every 2 hours",
-"every_min": 125,
+"every_min": 126,
 "mode": "outcome",
 "name": "CENSUS",
 "src": "rider",
@@ -7484,7 +7485,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3766,
+"every_min": 3776,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7493,7 +7494,7 @@
 "fedsep": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "FEDSEP",
 "src": "rider",
@@ -7576,7 +7577,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3640,
+"every_min": 3650,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7640,6 +7641,15 @@
 "src": "release",
 "what": "The division page"
 },
+"petrol": {
+"div": "atlas",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "PETROL",
+"src": "release",
+"what": "OPEC+ required production against delivered output"
+},
 "pkginstall": {
 "div": "iris",
 "every": "checked about every 2 hours",
@@ -7652,7 +7662,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 142,
+"every_min": 143,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -7661,7 +7671,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 603,
+"every_min": 604,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7708,7 +7718,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 554,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7717,7 +7727,7 @@
 "revise": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "REVISE",
 "src": "rider",
@@ -7726,7 +7736,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 554,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7753,7 +7763,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 464,
+"every_min": 466,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7780,7 +7790,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 554,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7789,7 +7799,7 @@
 "support": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 100,
+"every_min": 101,
 "mode": "outcome",
 "name": "SUPPORT",
 "src": "rider",
@@ -7816,7 +7826,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 464,
+"every_min": 466,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -7825,7 +7835,7 @@
 "trials": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 100,
+"every_min": 101,
 "mode": "outcome",
 "name": "TRIALS",
 "src": "rider",
@@ -7861,7 +7871,7 @@
 "weights": {
 "div": "iris",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "WEIGHTS",
 "src": "rider",
@@ -7870,7 +7880,7 @@
 "wiki": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "update",
 "name": "WIKI",
 "src": "rider",
@@ -7927,6 +7937,7 @@
 ]
 },
 "oy": {},
+"petrol": {},
 "predictions": {
 "/predictions/live.json": [
 "resolved",
@@ -7998,5 +8009,5 @@
 ]
 }
 },
-"tick_min": 2.09
+"tick_min": 2.1
 }
