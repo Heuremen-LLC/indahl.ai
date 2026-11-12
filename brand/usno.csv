@@ -1,3 +1,3 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-U.S. Naval Observatory,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,tick.usno.navy.mil,Its statement,stated bound 0.07 ms,"offset 3.19 ms, path half-delay 15.22 ms",,CANNOT TELL,,12 Nov 18:13,
-U.S. Naval Observatory,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,tock.usno.navy.mil,Its statement,stated bound 0.07 ms,"offset 3.07 ms, path half-delay 14.93 ms",,CANNOT TELL,,12 Nov 18:13,
+U.S. Naval Observatory,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,tick.usno.navy.mil,Its statement,stated bound 0.07 ms,"offset 2.89 ms, path half-delay 15.07 ms",,CANNOT TELL,,12 Nov 18:43,
+U.S. Naval Observatory,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,tock.usno.navy.mil,Its statement,stated bound 0.07 ms,"offset 3.04 ms, path half-delay 15.0 ms",,CANNOT TELL,,12 Nov 18:43,
