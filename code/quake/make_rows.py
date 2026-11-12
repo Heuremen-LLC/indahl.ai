@@ -11,6 +11,7 @@ H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, 
 import check_ledger as CL, ledger as LG
 S = json.load(open('summary_quake.json')); page = open('quake.html').read(); ptext = CL.norm(page)
 WORD = {'ABOVE': 'above', 'BELOW': 'below', 'CONSISTENT': 'consistent', 'CANNOT_TELL': 'cannot tell'}
+from quake_headline import rw
 def pc(x): return '' if x is None else '%.1f' % (100 * x)
 def n(x): return '{:,}'.format(x)
 def iv(a): return '' if not a else '%s to %s' % (pc(a[0]), pc(a[1]))
@@ -20,10 +21,10 @@ def find(rx):
 SPEC = []   # (id, claim or None to keep, value, lo, hi, unit, outcome, surface text)
 def cover(rid, c):
     SPEC.append((rid, None, v4(c['share']), v4(c['lo']), v4(c['hi']), '%s of %s' % (n(c['inside']), n(c['scored'])), c['outcome'],
-                 ' '.join([c['cell'], n(c['scored']), n(c['inside']), n(c['above']), n(c['below']), pc(c['share']), iv(c['wilson']), iv(c['boot']), WORD[c['outcome']], n(c['blocks']), n(c['range_zero_zero'])])))
+                 ' '.join([c['cell'], n(c['scored']), n(c['inside']), n(c['above']), n(c['below']), pc(c['share']), iv(c['wilson']), iv(c['boot']), rw(c), n(c['blocks']), n(c['range_zero_zero'])])))
 def rel(rid, c, claim=None):
     SPEC.append((rid, claim, v4(c['share']), v4(c['lo']), v4(c['hi']), '%s of %s' % (n(c['occurred']), n(c['scored'])), c['outcome'],
-                 ' '.join([c['cell'], n(c['scored']), n(c['occurred']), pc(c['stated_mean']), pc(c['share']), iv(c['wilson']), iv(c['boot']), WORD[c['outcome']], n(c['blocks'])])))
+                 ' '.join([c['cell'], n(c['scored']), n(c['occurred']), pc(c['stated_mean']), pc(c['share']), iv(c['wilson']), iv(c['boot']), rw(c), n(c['blocks'])])))
 cover('quake.cover.m3', S['headline_cell'])
 for c in S['cover_by_magnitude']:
     if c['cell'] != 'M3 and above': cover('quake.cover.' + c['cell'].split(' ')[0].lower(), c)
@@ -35,8 +36,8 @@ for c in S['reliability']:
     assert rid in oldclaims, rid
     rel(rid, c, re.sub(r'(mean stated chance )[\d.]+( percent)', lambda m: m.group(1) + pc(c['stated_mean']) + m.group(2), oldclaims[rid]))
 ra = S['reliability_above_mainshock']
-m = find(r'(\d+|[\d,]+) of ([\d,]+) windows saw one against a mean stated chance of ([\d.]+) percent, and the reading is ([a-z ]+?)\.')
-assert m.groups() == (n(ra['occurred']), n(ra['scored']), pc(ra['stated_mean']), WORD[ra['outcome']]), m.group(0)
+m = find(r'(\d+|[\d,]+) of ([\d,]+) windows saw one against a mean stated chance of ([\d.]+) percent, and the reading is ([a-z ]+?(?: \([A-Z_]+\))?)\.')
+assert m.groups() == (n(ra['occurred']), n(ra['scored']), pc(ra['stated_mean']), rw(ra)), m.group(0)
 SPEC.append(('quake.prob.mainshock', None, v4(ra['share']), v4(ra['lo']), v4(ra['hi']), '%s of %s' % (n(ra['occurred']), n(ra['scored'])), ra['outcome'], m.group(0)))
 D = S['described']
 for c in [D['stated_10_percent_or_more_all']] + D['stated_10_percent_or_more']:

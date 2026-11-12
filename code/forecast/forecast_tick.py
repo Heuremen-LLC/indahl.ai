@@ -57,6 +57,10 @@ for p in per:
 so.close(); sc = load('data/scores.jsonl'); sm = {x['id']: x for x in sc}
 BINS = [(0, 5, '0 to 5'), (10, 20, '10 to 20'), (30, 40, '30 to 40'), (50, 60, '50 to 60'), (70, 80, '70 to 80'), (90, 100, '90 to 100')]; LEADS = [(0, 12, 'under 12 hours'), (12, 24, '12 to 24 hours'), (24, 48, '24 to 48 hours')]
 import heuremen_kit as _K
+def _cell_read(n, a, b, ms):
+    # PLAN_ADDENDUM_std2.md: point figure (mean stated chance) with no tolerance, so bound=ms, closed edges, no size that matters. Under 30 periods is TOO_WIDE_TO_RESOLVE.
+    if n < 30: return 'CANNOT_TELL', _K.TOO_WIDE_TO_RESOLVE
+    return _K.read(a * 100, b * 100, bound=ms)
 def wil(k, n): return _K.wilson(k, n)   # 29 Oct: the local copy omitted the division by d; the kit's tested function replaces it
 cells = []
 # 30 Oct (site pass H-10): the counts printed above the table are taken from the set the cells use. A period is a station and a start time, counted once however many forecasts of it were fetched. Only stated chances with a lead from 0 to 48 hours are read (Addendum 1). Rows are counted apart.
@@ -75,10 +79,10 @@ for lo, hi, nm in BINS:
         xs = [(p, sm[p['id']]) for p in per if p['id'] in sm and not sm[p['id']]['unscorable'] and p['stated'] and lo <= p['pop'] <= hi and l0 <= p['lead_h'] < l1]
         _seen = {}; xs = [_seen.setdefault((p['station'], p['start']), (p, o)) for p, o in sorted(xs, key=lambda z: z[0]['fetched'])]; xs = list({(p['station'], p['start']): (p, o) for p, o in xs}.values())   # 29 Oct (audit): one period counts once per cell, the earliest fetch
         n = len(xs); cellkeys.update((p['station'], p['start']) for p, _ in xs)
-        if not n: cells.append(dict(bin=nm, lead=ln, n=0)); continue
+        if not n: cells.append(dict(bin=nm, lead=ln, n=0, outcome='CANNOT_TELL', reason=_K.NO_INTERVAL_FORMABLE)); continue
         k = sum(r['event'] for _, r in xs); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)
-        oc = 'CANNOT_TELL' if n < 30 else ('ABOVE' if a * 100 > ms else ('BELOW' if b * 100 < ms else 'CONSISTENT'))
-        cells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 2), observed=round(100 * k / n, 2), lo=round(100 * a, 2), hi=round(100 * b, 2), outcome=oc))
+        oc, why = _cell_read(n, a, b, ms)   # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): Faults and Guards 2.0 outcome rule
+        cells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 2), observed=round(100 * k / n, 2), lo=round(100 * a, 2), hi=round(100 * b, 2), outcome=oc, reason=why))
 # 10 Nov 2026 (PLAN.md Addendum 2, decided after the data): the NWS event rule, measurable precipitation of 0.01 inch or more, is the primary reading
 # from today. The original rule above (any amount above zero or a present-weather entry) is kept beside it as the original committed rule.
 # The amounts come from the routine hourly METAR totals in the Iowa Environmental Mesonet ASOS archive (measurable.py). Same periods, bins,
@@ -106,19 +110,20 @@ for lo, hi, nm in BINS:
         xs = [(p, e) for p, e in xs if e is not None]
         xs = list({(p['station'], p['start']): (p, e) for p, e in sorted(xs, key=lambda z: -z[0]['fetched'])}.values())   # earliest fetch per period wins
         n = len(xs); _mkeys.update((p['station'], p['start']) for p, _ in xs)
-        if not n: mcells.append(dict(bin=nm, lead=ln, n=0)); continue
+        if not n: mcells.append(dict(bin=nm, lead=ln, n=0, outcome='CANNOT_TELL', reason=_K.NO_INTERVAL_FORMABLE)); continue
         k = sum(1 for _, e in xs if e); ms = sum(p['pop'] for p, _ in xs) / n; a, b = wil(k, n)
-        oc = 'CANNOT_TELL' if n < 30 else ('ABOVE' if a * 100 > ms else ('BELOW' if b * 100 < ms else 'CONSISTENT'))
-        mcells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 2), observed=round(100 * k / n, 2), lo=round(100 * a, 2), hi=round(100 * b, 2), outcome=oc))
+        oc, why = _cell_read(n, a, b, ms)
+        mcells.append(dict(bin=nm, lead=ln, n=n, mean_stated=round(ms, 2), observed=round(100 * k / n, 2), lo=round(100 * a, 2), hi=round(100 * b, 2), outcome=oc, reason=why))
 measurable_out = dict(rule='Measurable precipitation, 0.01 inch or more, from the routine hourly reports of the station (the NWS definition). Primary from 10 Nov 2026, decided after the data (PLAN.md Addendum 2).',
                       source='Iowa Environmental Mesonet ASOS archive, routine hourly METAR precipitation totals, a trace read as zero',
                       periods_scored=len(_mok), unscorable=len(_mbad - set(_mok)), waiting=len(_mwait - set(_mok) - _mbad), periods_in_no_cell=len(set(_mok) - _mkeys),
-                      cell_periods=sum(c['n'] for c in mcells), floor=dict(periods=len(_mlow), with_event=sum(_mlow.values())), cells=mcells)
+                      cell_periods=sum(c['n'] for c in mcells), floor=dict(periods=len(_mlow), with_event=sum(_mlow.values())), cells=mcells,
+                      req13=_K.req13(mcells, nothing_returned=0))   # 12 Nov 2026: REQ-13 beside the primary table. No cell read is a failed read, so none is listed apart
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), stations=len(ST), forecasts_stored=len({(p['station'], p['fetched']) for p in per}), period_rows=len(per), periods_stored=len({(p['station'], p['start']) for p in per}), negative_lead_rows=sum(1 for p in per if p['lead_h'] < 0),
            periods_scored=scored, unscorable=unsc, not_stated=dropped, periods_in_no_cell=len(set(okp) - cellkeys), periods_in_cells=len(cellkeys), cell_periods=sum(c['n'] for c in cells),
            floor=dict(periods=lowev[1], with_event=lowev[0]), cells=cells,
            original_rule='Any hourly amount above zero, or a present-weather entry for rain, drizzle, snow, sleet, hail, showers or thunderstorm (PLAN.md, committed 28 Oct 2026 before any forecast was stored). Kept beside the primary reading, never deleted.',
-           measurable=measurable_out, primary='measurable')
+           measurable=measurable_out, primary='measurable', req13=_K.req13(cells, nothing_returned=0), outcome_rule='PLAN_ADDENDUM_std2.md (12 Nov 2026): point figure, no tolerance, ABOVE, BELOW or CANNOT_TELL, under 30 periods TOO_WIDE_TO_RESOLVE')
 json.dump(out, open('summary_forecast.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 p = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'forecast_live', '--path', os.path.join(H, 'summary_forecast.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

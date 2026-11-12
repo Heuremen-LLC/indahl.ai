@@ -48,8 +48,11 @@ def corrected(cf1, rh): return 0.524 * cf1 - 0.0862 * rh + 5.75
 def ab_ok(a, b):
     d = abs(a - b); return d < 5 or (a + b > 0 and 2 * d / (a + b) * 100 < 61)
 def outcome(n_not, n):
-    if n < 30: return K.CANNOT_TELL if n else 'NOTHING_RETURNED'
-    lo, hi = K.wilson(n_not, n); return K.ABOVE if lo > 0.5 else (K.CONSISTENT if hi < 0.5 else K.CANNOT_TELL)
+    # 12 Nov 2026, PLAN_ADDENDUM_std2.md (Faults and Guards 2.0): one-sided bound 0.50, closed edge, no size that matters. Returns (outcome, reason). Under 30 monitors is TOO_WIDE_TO_RESOLVE, none at all is NO_INTERVAL_FORMABLE. Never CONSISTENT, never NOTHING_RETURNED.
+    if n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    lo, hi = K.wilson(n_not, n); lo = 0.0 if n_not == 0 else lo; hi = 1.0 if n_not == n else hi   # exact ends: K.wilson(0, n) gives 6.9e-18 at the lower end
+    return K.read(lo, hi, bound=0.5)
 def aqsid(site): return site.replace('-', '')
 def parse_airnow(text, want):
     """-> {aqsid: value} for PM2.5 lines of the wanted site ids"""
@@ -155,8 +158,8 @@ for m in mons:
 NAME = {'R1': 'Map reading (atm channels, raw)', 'R2': 'cf_1 channels, raw', 'R3': 'cf_1 corrected for humidity (Barkjohn 2021)'}
 live_cmp = {}
 for k in ('R1', 'R2', 'R3'):
-    ms = [m for m in res[k] if m]; n = len(ms); nn = sum(1 for m in ms if not meets(m)); lo, hi = K.wilson(nn, n) if n else (0, 1)
-    live_cmp[NAME[k]] = dict(of=n, n=nn, share=round(nn / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=outcome(nn, n) if n >= 30 else 'NOTHING_RETURNED')
+    ms = [m for m in res[k] if m]; n = len(ms); nn = sum(1 for m in ms if not meets(m)); lo, hi = K.wilson(nn, n) if n else (0, 1); _o, _w = outcome(nn, n)
+    live_cmp[NAME[k]] = dict(of=n, n=nn, share=round(nn / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=_o, reason=_w, req13=K.req13([(_o, _w)], nothing_returned=PA_N['failed'] + PA_N['out_of_points']))
 # ---- the strip: 10 sensors, last complete hour with an AirNow file
 strip = []; hr = None
 cand = [now.replace(minute=0, second=0, microsecond=0) - datetime.timedelta(hours=k) for k in (1, 2, 3, 4)]

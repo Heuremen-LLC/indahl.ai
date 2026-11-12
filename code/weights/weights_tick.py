@@ -78,8 +78,11 @@ evs = sorted([(i, c) for i, r in store.items() for c in r['changes'] if c['kind'
 evkey = lambda i, c: '%s|%s' % (i, when(c))
 cmp = [r for r in store.values() if r.get('last_pair') in ('SAME', 'CHANGED')]; ch = [r for r in cmp if r['last_pair'] == 'CHANGED']; gone = [i for i, r in store.items() if r.get('last_pair') == 'GONE']
 nc = [i for i, r in store.items() if r.get('files') in ([], None) and r.get('passes')]
-lo, hi = K.wilson(len(ch), len(cmp)) if cmp else (0, 1)
-oc = 'NOTHING_RETURNED' if not cmp else (K.ABOVE if lo > 0.01 else (K.CONSISTENT if hi < 0.01 else K.CANNOT_TELL))
+# 12 Nov 2026, PLAN_ADDENDUM_std2.md (Faults and Guards 2.0): size that matters 0.01, null 0, band [0, 0.01), edge '[)'. No model pair yet is CANNOT_TELL NO_INTERVAL_FORMABLE. NOTHING_RETURNED is a status of a failed read (the UNREADABLE models) and is never an outcome.
+def _wil(k, n):   # exact ends: K.wilson(0, n) gives 6.9e-18 at the lower end, which misses the null at zero in K.read
+    _l, _h = K.wilson(k, n); return (0.0 if k == 0 else _l, 1.0 if k == n else _h)
+lo, hi = _wil(len(ch), len(cmp)) if cmp else (0, 1)
+oc, why = K.read(lo, hi, band=(0.0, 0.01), matters=0.01, edge='[)', null=0.0) if cmp else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
 ever_n = len({i for i, c in evs}); ever_of = len({i for i, r in store.items() if r.get('last_pair') in ('SAME', 'CHANGED')} | {i for i, c in evs}); elo, ehi = K.wilson(ever_n, ever_of) if ever_of else (0, 1)
 hist = [json.loads(l) for l in open('history.jsonl')] if os.path.exists('history.jsonl') else []
 upd = hist[-1]['t'] if SUMMARY_ONLY else time.strftime('%d %b %H:%M', time.gmtime(now))
@@ -88,7 +91,7 @@ def diff(c):
     b = {a: h for a, h in c['before']}; a_ = {a: h for a, h in c['after']}
     return dict(files_before=len(b), files_after=len(a_), added=len(set(a_) - set(b)), removed=len(set(b) - set(a_)), replaced=len([x for x in set(a_) & set(b) if a_[x] != b[x]]))
 out = dict(updated=upd, gate='passed', pass_number=passno, models=len(store), retained=len([i for i, r in store.items() if not r.get('in_top')]), unreadable=unread, not_comparable=len(nc), awaiting=len([1 for i, c in evs if evkey(i, c) not in hc]),
-           headline=dict(of=len(cmp), n=len(ch), share=round(len(ch) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, awaiting=len([1 for i, c in evs if evkey(i, c) not in hc])),
+           headline=dict(of=len(cmp), n=len(ch), share=round(len(ch) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=unread), awaiting=len([1 for i, c in evs if evkey(i, c) not in hc])),
            headline_n=len(ch), headline_of=len(cmp), gone=dict(models=len(gone), list=sorted(gone)[:50]),
            ever=dict(of=ever_of, n=ever_n, events=len(evs), share=round(ever_n / ever_of, 4) if ever_of else None, share_lo=round(elo, 4), share_hi=round(ehi, 4)),
            passes=(hist if SUMMARY_ONLY else hist + [this])[::-1],

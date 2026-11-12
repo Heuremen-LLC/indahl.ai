@@ -13,6 +13,7 @@ def _kv_put(cmd, **kw):
     print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
     return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 from collections import Counter
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import rule as R; K = R.kit()   # 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md)
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H)
 D = json.load(open('data/rank.json', encoding='utf-8'))
 CK = json.load(open('data/checks.json', encoding='utf-8'))['checks']
@@ -25,16 +26,17 @@ NAMES = {'hs': 'High schools (national)', 'nu': 'National Universities', 'nlac':
          'eng': 'Engineering schools', 'edu': 'Education schools', 'med': 'Medical schools, research, Tier 1', 'nj_hs': 'New Jersey high schools',
          'nj_k8': 'New Jersey elementary and middle schools', 'nj_col': 'New Jersey colleges'}
 checks = [dict(key=k, name=n, match=by[(k, 'MATCH')], mismatch=by[(k, 'MISMATCH')], cannot_tell=by[(k, 'CANNOT_TELL')],
-               outcomes=[dict(school=c['school'], figure=c['field'], usnews=c['usn'], public=c['pub'], public_year=c['pub_year'], outcome=c['outcome'], reason=c['reason'])
+               outcomes=[dict(school=c['school'], figure=c['field'], usnews=c['usn'], public=c['pub'], public_year=c['pub_year'], outcome=c['outcome'], reason=R.std2_reason(c['outcome'], c['reason']), reason_detail=c['reason'])
                          for c in allc if c['list'] == k])
           for k, n in NAMES.items() if any(c['list'] == k for c in allc)]
 lists = [dict(key=l['key'], title=l['title'], edition=l['edition'], scope=l['scope'], list_url=l['list_url'], method_url=l['method_url'], schools_listed=len(l['rows']),
               no_national_list=(l['scope'] == 'none'), tiers_only=(l['scope'] == 'tiers')) for l in D['lists']]
+req13 = K.req13([(c['outcome'], R.std2_reason(c['outcome'], c['reason'])) for c in allc], nothing_returned=0)
 m = sum(x['match'] for x in checks); x_ = sum(x['mismatch'] for x in checks); t = sum(x['cannot_tell'] for x in checks)
 mm = [f"{c['school']}, {c['field']}" for c in allc if c['outcome'] == 'MISMATCH']
 live = dict(desk='RANK', updated=time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()), read_at=D['read'], page='https://indahl.ai/rank',
-            headline=dict(big=f'{x_} of {m + x_}', line=f'US News figures that differ from the public record after rounding, among those that could be compared for the same year ({t} more read cannot tell). ' + ('Differs: ' + '; '.join(mm) + '.' if mm else '')),
-            lists=lists, checks=checks, claims=dict(match=sum(1 for c in CL if c['outcome'] == 'MATCH'), mismatch=sum(1 for c in CL if c['outcome'] == 'MISMATCH'), cannot_tell=sum(1 for c in CL if c['outcome'] == 'CANNOT_TELL')),
+            headline=dict(big=f'{x_} of {m + x_}', line=f'US News figures that differ from the public record after rounding, among those that could be compared for the same year ({t} more read cannot tell). ' + ('Differs: ' + '; '.join(mm) + '.' if mm else ''), req13=req13, req13_line=req13['line']),
+            lists=lists, checks=checks, claims=dict(match=sum(1 for c in CL if c['outcome'] == 'MATCH'), mismatch=sum(1 for c in CL if c['outcome'] == 'MISMATCH'), cannot_tell=sum(1 for c in CL if c['outcome'] == 'CANNOT_TELL'), reason='NO_INTERVAL_FORMABLE', req13=K.req13([(c['outcome'], R.std2_reason(c['outcome'], 'claim')) for c in CL], nothing_returned=0)),
             participation_nj=NJ['participation'], note='Rankings, list names and method text belong to US News & World Report. This feed carries only our readings and the figures checked.')
 os.makedirs('data', exist_ok=True)
 json.dump(live, open('data/rank_live.json', 'w'), indent=1, ensure_ascii=False)

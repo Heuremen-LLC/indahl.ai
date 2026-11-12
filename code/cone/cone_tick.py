@@ -181,8 +181,8 @@ def build_stated_errors():
 def circle_outcome(fpos, bpt, radius):
     """fpos (lat, lon) or None. bpt (lat, lon, status) or None. -> (outcome, why, distance)."""
     if fpos is None or radius is None: return K.CANNOT_TELL, 'unreadable', None
-    if bpt is None: return K.NOTHING_RETURNED, 'no best-track point', None
-    if bpt[2] not in TC: return K.NOTHING_RETURNED, 'not a tropical cyclone', None
+    if bpt is None: return None, 'no best-track point', None   # a failed read, no outcome: the row carries read_status NOTHING_RETURNED (PLAN_ADDENDUM_std2.md)
+    if bpt[2] not in TC: return None, 'not a tropical cyclone', None
     d = gc_nmi(fpos[0], fpos[1], bpt[0], bpt[1])
     return (INSIDE if d <= radius else OUTSIDE), None, d
 def path_outcome(fc, bt, dtg, radii):
@@ -191,8 +191,8 @@ def path_outcome(fc, bt, dtg, radii):
     pts = []
     for h in range(12, 121, 6):
         p = bt.get(add_h(dtg, h))
-        if p is None: return K.NOTHING_RETURNED, 'no best-track point', None
-        if p[2] not in TC: return K.NOTHING_RETURNED, 'not a tropical cyclone', None
+        if p is None: return None, 'no best-track point', None
+        if p[2] not in TC: return None, 'not a tropical cyclone', None
         pts.append((h, p))
     for h, p in pts:
         if not in_cone((p[0], p[1]), circles): return OUTSIDE, None, h
@@ -216,25 +216,28 @@ def cell_read(rows, band):
         if r['outcome'] in (INSIDE, OUTSIDE): by[r['storm']][1] += 1; by[r['storm']][0] += (r['outcome'] == INSIDE)
     k, n = cnt[INSIDE], cnt[INSIDE] + cnt[OUTSIDE]; storms = len(by)
     lo, hi = boot(list(by.values())) if n else (None, None)
-    if storms < MIN_STORMS or n < MIN_ROWS: o = K.CANNOT_TELL
-    else: o = K.classify(lo, hi, band[0], band[1])
+    # PLAN_ADDENDUM_std2.md: no rows is NO_INTERVAL_FORMABLE, under 10 storms or 30 rows is TOO_WIDE_TO_RESOLVE (owner decision O3), otherwise K.read on the band with closed edges.
+    if n == 0 or lo is None: o, why_ct = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    elif storms < MIN_STORMS or n < MIN_ROWS: o, why_ct = K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    else: o, why_ct = K.read(lo, hi, band=band, edge='closed')
+    nret = sum(1 for r in rows if r.get('read_status') == K.NOTHING_RETURNED)
     return dict(scored=n, inside=k, outside=cnt[OUTSIDE], storms=storms, share=round(k / n, 4) if n else None, lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4),
-                band=list(band), outcome=o, nothing_returned=cnt[K.NOTHING_RETURNED], nothing_returned_why=dict(why), cannot_tell=cnt[K.CANNOT_TELL])
+                band=list(band), outcome=o, reason=why_ct, nothing_returned=nret, nothing_returned_why=dict(why), cannot_tell=cnt[K.CANNOT_TELL],
+                req13=K.req13([dict(outcome=r['outcome'], reason=r.get('reason')) for r in rows if r['outcome'] in (INSIDE, OUTSIDE, K.CANNOT_TELL)], nothing_returned=nret))
 def ver_outcome(ours, n_ours, stated, n_stated):
     if stated is None or n_stated is None or ours is None: return K.CANNOT_TELL, 'missing'
     if abs(n_ours - n_stated) > max(VER_N_ABS, VER_N_FRAC * n_stated): return K.CANNOT_TELL, 'case counts differ'
     tol = max(VER_TOL_NMI, VER_TOL_FRAC * stated)
-    if ours > stated + tol: return K.ABOVE, None
-    if ours < stated - tol: return K.BELOW, None
-    return K.CONSISTENT, None
+    o, r, _ = K.read_exact(ours, band=(stated - tol, stated + tol), edge='closed')   # a published mean against a published mean with the plan's tolerance: an interval of zero width (owner decision O1)
+    return o, r
 def rule_selftest():
     ok = True
     def check(name, c):
         nonlocal ok; ok &= bool(c); print(('OK   ' if c else 'FAIL ') + name)
     check('inside at 20 n mi with radius 30', circle_outcome((20.0, -60.0), (20.0 + 20 / 60, -60.0, 'HU'), 30)[0] == INSIDE)
     check('outside at 40 n mi with radius 30', circle_outcome((20.0, -60.0), (20.0 + 40 / 60, -60.0, 'HU'), 30)[0] == OUTSIDE)
-    check('no best-track point is nothing returned', circle_outcome((20.0, -60.0), None, 30)[:2] == (K.NOTHING_RETURNED, 'no best-track point'))
-    check('remnant low is nothing returned', circle_outcome((20.0, -60.0), (20.0, -60.0, 'LO'), 30)[:2] == (K.NOTHING_RETURNED, 'not a tropical cyclone'))
+    check('no best-track point is a failed read with no outcome', circle_outcome((20.0, -60.0), None, 30)[:2] == (None, 'no best-track point'))
+    check('remnant low is a failed read with no outcome', circle_outcome((20.0, -60.0), (20.0, -60.0, 'LO'), 30)[:2] == (None, 'not a tropical cyclone'))
     check('unreadable is cannot tell', circle_outcome(None, (20.0, -60.0, 'HU'), 30)[0] == K.CANNOT_TELL)
     check('distance one degree of latitude is 60 n mi', abs(gc_nmi(10, -50, 11, -50) - 60.04) < 0.1)
     circ = [(20.0, -60.0, 0.0), (20.0, -62.0, 30.0), (20.0, -64.0, 60.0)]
@@ -250,12 +253,14 @@ def rule_selftest():
     bt2 = dict(bt); bt2[add_h(dtg, 66)] = (24.0, -65.5, 'HU')
     check('a path that leaves at 66 h is outside at 66', path_outcome(fc, bt2, dtg, rad)[0::2] == (OUTSIDE, 66))
     bt3 = dict(bt); del bt3[add_h(dtg, 114)]
-    check('a path whose track ends is nothing returned', path_outcome(fc, bt3, dtg, rad)[0] == K.NOTHING_RETURNED)
+    check('a path whose track ends is a failed read with no outcome', path_outcome(fc, bt3, dtg, rad)[0] is None)
+    check('cell reads: under 10 storms is TOO_WIDE_TO_RESOLVE, empty is NO_INTERVAL_FORMABLE, straddling is STRADDLES_EDGE', cell_read([], WP_BAND)['reason'] == K.NO_INTERVAL_FORMABLE and cell_read([dict(storm='A', outcome=INSIDE)] * 40, WP_BAND)['reason'] == K.TOO_WIDE_TO_RESOLVE and cell_read([dict(storm='S%d' % (i % 20), outcome=INSIDE if i % 20 < 13 else OUTSIDE) for i in range(400)], WP_BAND)['reason'] == K.STRADDLES_EDGE)
     rng = random.Random(1); g = [(1 if rng.random() < 0.67 else 0, 1) for _ in range(800)]; k = sum(a for a, b in g)
     lo, hi = boot(g); wl, wh = K.wilson(k, 800)
     check('bootstrap with one row per storm is close to Wilson (%.3f %.3f vs %.3f %.3f)' % (lo, hi, wl, wh), abs(lo - wl) < 0.012 and abs(hi - wh) < 0.012)
     check('verification rule: 1 n mi off on 40 is consistent', ver_outcome(41.0, 100, 40.0, 100)[0] == K.CONSISTENT)
     check('verification rule: 5 n mi off on 40 is above', ver_outcome(45.0, 100, 40.0, 100)[0] == K.ABOVE)
+    check('verification rule: ours on the band edge is consistent, closed', ver_outcome(41.0, 100, 40.0, 100)[0] == K.CONSISTENT and ver_outcome(40.0 + 1.0, 100, 40.0, 100)[0] == K.CONSISTENT)
     check('verification rule: case counts 10 percent apart is cannot tell', ver_outcome(40.0, 90, 40.0, 100) == (K.CANNOT_TELL, 'case counts differ'))
     check('heuremen_kit self-test', K.selftest())
     return ok
@@ -345,14 +350,14 @@ for y in SEASONS:
                 o, why, d = circle_outcome(fc[L], bv, rad[str(L)] if rad else 1e9)
                 if rad is None: o, why = 'NO_RADII', 'no cone radii for the season'
                 rows.append(dict(storm=sid, basin=basin, season=y, grp=grp, dtg=dtg, lead=L, fc=fc[L], bt=bv, radius=rad[str(L)] if rad else None, dist=None if d is None else round(d, 2),
-                                 tc_both=bool(bv and bv[2] in TC and d is not None), outcome=o, why=why))
+                                 tc_both=bool(bv and bv[2] in TC and d is not None), outcome=o, why=why, reason=(K.NO_INTERVAL_FORMABLE if o == K.CANNOT_TELL else None), read_status=(K.NOTHING_RETURNED if o is None else None)))
             if 60 in fc:   # display only, added after the data (10 Nov 2026): the 60 h recount, set beside second-ruler rows whose case counts differ
                 v60 = bt.get(add_h(dtg, 60))
                 if v60 and v60[2] in TC: d60[(basin, y)].append(gc_nmi(fc[60][0], fc[60][1], v60[0], v60[1]))
             if rad is None: continue
             if all(L in fc for L in LEADS):
                 o, why, h = path_outcome(fc, bt, dtg, rad)
-                paths.append(dict(storm=sid, basin=basin, season=y, grp=grp, dtg=dtg, outcome=o, why=why, first_outside_h=h))
+                paths.append(dict(storm=sid, basin=basin, season=y, grp=grp, dtg=dtg, outcome=o, why=why, first_outside_h=h, read_status=(K.NOTHING_RETURNED if o is None else None)))
             else: short[basin] += 1
 log('files', files_read, 'rows', len(rows), 'paths', len(paths), 'frame out', dict(frame_out))
 
@@ -391,7 +396,7 @@ GATE = all(kg.values())
 if not GATE:
     log('GATE FAILED', kg)
     for r in rows + paths:
-        if r['outcome'] in (INSIDE, OUTSIDE): r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['why'] = 'gate failed'
+        if r['outcome'] in (INSIDE, OUTSIDE): r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['why'] = 'gate failed'; r['reason'] = K.NO_INTERVAL_FORMABLE
 
 # ---------------- 5. cells ----------------
 BN = {'AL': 'Atlantic', 'EP': 'East Pacific'}
@@ -429,10 +434,11 @@ for b in ('AL', 'EP'):
             ours = round(sum(r['dist'] for r in rs) / len(rs), 1) if rs else None
             st = (yrs.get(str(y)) or {}).get(str(L)) or {}
             o, why = ver_outcome(ours, len(rs), st.get('err'), st.get('n'))
+            vreason = K.NO_INTERVAL_FORMABLE if o == K.CANNOT_TELL else None   # missing value or case counts that differ: the planned comparison cannot be formed
             lo, hi = boot(list(by.values())) if rs else (None, None)
             tol = None if st.get('err') is None else round(max(VER_TOL_NMI, VER_TOL_FRAC * st['err']), 2)
             ver.append(dict(basin=b, season=y, lead=L, ours=ours, n_ours=len(rs), stated=st.get('err'), n_stated=st.get('n'), band=None if tol is None else [round(st['err'] - tol, 2), round(st['err'] + tol, 2)],
-                            ours_lo=None if lo is None else round(lo, 1), ours_hi=None if hi is None else round(hi, 1), outcome=o, why=why))
+                            ours_lo=None if lo is None else round(lo, 1), ours_hi=None if hi is None else round(hi, 1), outcome=o, reason=vreason, why=why))
 ver_tally = {b: dict(C.Counter(v['outcome'] for v in ver if v['basin'] == b)) for b in ('AL', 'EP')}
 for v in ver:   # display only, after the data: our 60 h recount beside each row whose case counts differ. Decides nothing.
     if v['why'] == 'case counts differ':
@@ -456,8 +462,8 @@ summary = dict(
     gates=dict(kg, passed=GATE, tau0_median_nmi=round(statistics.median(tau0), 1) if tau0 else None, tau0_n=len(tau0)),
     sources=dict(hurdat=HURDAT, adeck_files=files_read, radii_years=sorted(RADII), radii_missing=sorted(radius_missing), stated_errors={b: dict(file=v['file'], sha256=v['sha256'], years=[min(v['years']), max(v['years'])]) for b, v in STATED_ERR.items()},
                  duplicate_ofcl_positions=dups, unreadable_lines=bad_lines, stale=STALE, frame_out=dict(frame_out), forecasts_shorter_than_five_days=dict(short), forecasts_without_lead={str(k): v for k, v in missing_lead.items()}),
-    rows=dict(circle=sum(1 for r in rows if r['outcome'] != 'NO_RADII'), second_ruler_only=sum(1 for r in rows if r['outcome'] == 'NO_RADII'), paths=len(paths), storms=len(set(r['storm'] for r in rows)), circle_outcomes=dict(C.Counter(r['outcome'] for r in rows if r['grp'] == 'final' and r['outcome'] != 'NO_RADII')),
-              path_outcomes=dict(C.Counter(p['outcome'] for p in paths if p['grp'] == 'final')), first_forecast=min((r['dtg'] for r in rows), default=None), last_forecast=max((r['dtg'] for r in rows), default=None)),
+    rows=dict(circle=sum(1 for r in rows if r['outcome'] != 'NO_RADII'), second_ruler_only=sum(1 for r in rows if r['outcome'] == 'NO_RADII'), paths=len(paths), storms=len(set(r['storm'] for r in rows)), circle_outcomes=dict(C.Counter(r['outcome'] for r in rows if r['grp'] == 'final' and r['outcome'] not in (None, 'NO_RADII'))), circle_failed_reads=sum(1 for r in rows if r['grp'] == 'final' and r.get('read_status')),
+              path_outcomes=dict(C.Counter(p['outcome'] for p in paths if p['grp'] == 'final' and p['outcome'])), path_failed_reads=sum(1 for p in paths if p['grp'] == 'final' and p.get('read_status')), first_forecast=min((r['dtg'] for r in rows), default=None), last_forecast=max((r['dtg'] for r in rows), default=None)),
     radii=RADII, cells=cells, by_season=by_season, current=current, verification=ver, verification_tally=ver_tally,
     after_data_note='ours_60h on second-ruler rows whose case counts differ was added after the data on 10 Nov 2026 (first read). Display only. No outcome uses it.',
     outside_paths_first_hour=dict(C.Counter(str(p['first_outside_h']) for p in outside_paths)), storm_names={s: NAMES.get(s) for s in sorted(set(r['storm'] for r in rows))})

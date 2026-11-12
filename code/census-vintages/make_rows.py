@@ -22,7 +22,7 @@ items.append(('censusvin.lead', 'CENSUS VINTAGES, lead finding sentence', find(r
 items.append(('censusvin.v2021', 'CENSUS VINTAGES, the same comparison against Vintage 2021', find(r'Against Vintage 2021 the same July 1 2020 comparison reads \d+ ABOVE, \d+ BELOW and \d+ CONSISTENT'), 'COUNT'))
 items.append(('censusvin.v2021sums', 'CENSUS VINTAGES, Vintage 2021 totals check', find(r'add to 331,501,080 and its 51 values for July 1 2021 add to 331,893,745'), 'LEVEL'))
 items.append(('censusvin.d', 'CENSUS VINTAGES, widest gap between base and count against the yardsticks', find(r'The widest gap between the base and the count is [\d.]+ percent, against yardsticks of [\d.]+ percent and up'), 'LEVEL'))
-items.append(('censusvin.nowidth', 'CENSUS VINTAGES, same-base comparisons are read CANNOT_TELL with the reason no width', find(r'every comparison between two Vintages on the same base is read CANNOT_TELL with the reason no width'), 'COUNT'))
+items.append(('censusvin.nowidth', 'CENSUS VINTAGES, same-base comparisons are read CANNOT_TELL with the reason NO_INTERVAL_FORMABLE', find(r'every comparison between two Vintages on the same base is read CANNOT_TELL with the reason NO_INTERVAL_FORMABLE, which here means no width'), 'COUNT'))
 items.append(('censusvin.frame', 'CENSUS VINTAGES, the frame of areas', find(r'The frame is the 50 states and the District of Columbia'), 'COUNT'))
 now = time.strftime('%Y-%m-%d %H:%M')
 blk = '''

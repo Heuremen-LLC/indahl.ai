@@ -2,6 +2,7 @@
 """RANK page body: rank_body.html from data/rank.json. build_site.py wraps it with the shared header, nav, division line and footer.
 Copy rules: plain sentences, no semicolons, no digits in headings, no adjectives about schools or US News, no cause named. Heuremen LLC."""
 import json, os, html, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import rule as R; K = R.kit()   # 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md)
 from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
 D = json.load(open('data/rank.json', encoding='utf-8'))
@@ -54,7 +55,7 @@ def checks_section(l):
         k0 = {'nj_hs': 'hs', 'nj_col': 'nu', 'nj_elem': 'elem', 'nj_middle': 'elem'}.get(k, k)
         if k0 not in RECOMPUTE: RECOMPUTE[k0] = 'Mathematics and reading performance (50 percent) is measured against what a model US News fits would expect.'
     if k in RECOMPUTE or k in ('nj_hs', 'nj_col', 'nj_elem', 'nj_middle'):
-        out.append(f'<p class="bench-note">Can the order be worked again from public inputs? Cannot tell. {e(RECOMPUTE[{"nj_hs": "hs", "nj_col": "nu", "nj_elem": "elem", "nj_middle": "elem"}.get(k, k)])}</p>')
+        out.append(f'<p class="bench-note">Can the order be worked again from public inputs? Cannot tell, NO_INTERVAL_FORMABLE. {e(RECOMPUTE[{"nj_hs": "hs", "nj_col": "nu", "nj_elem": "elem", "nj_middle": "elem"}.get(k, k)])}</p>')
     if k == 'nj_elem': return
     if k == 'nj_middle': k = 'nj_k8'
     rows = [c for c in CK if c['list'] == k and c['outcome'] != 'DISPLAY']
@@ -62,7 +63,7 @@ def checks_section(l):
     out.append(f'<h3>Figures checked</h3>')
     out.append('<div class="tw"><table class="bench"><thead><tr><th>School</th><th>Figure</th><th>US News prints</th><th>Year US News names</th><th>Public record</th><th>Year</th><th>Reading</th><th>Note</th></tr></thead><tbody>')
     for c in rows:
-        rd = READ[c['outcome']] + (f' ({WHY.get(c["reason"], c["reason"])})' if c['outcome'] == 'CANNOT_TELL' else '')
+        rd = READ[c['outcome']] + (f' ({R.std2_reason(c["outcome"], c["reason"])}, {WHY.get(c["reason"], c["reason"])})' if c['outcome'] == 'CANNOT_TELL' else '')
         pub = c['pub'] if c['pub'] not in (None, '') else ''
         if pub and pub.replace('.', '').isdigit() and '.' in pub and len(pub.split('.')[1]) > 2: pub = f'{float(pub):.2f}'
         note = e(c['note'])
@@ -113,6 +114,8 @@ def tally(k):
 NAMES = {'hs': 'High schools', 'nu': 'National Universities', 'nlac': 'National Liberal Arts Colleges', 'law': 'Law schools', 'mba': 'Business schools', 'eng': 'Engineering schools', 'edu': 'Education schools', 'med': 'Medical schools (Tier 1)', 'nj_hs': 'New Jersey high schools', 'nj_k8': 'New Jersey elementary and middle schools', 'nj_col': 'New Jersey colleges'}
 if CK:
     out.append('<p>Figures checked so far: ' + ', '.join(f'{NAMES[k]} {tally(k)}' for k in ('hs', 'nu', 'nlac', 'law', 'mba', 'eng', 'edu', 'med', 'nj_hs', 'nj_k8', 'nj_col') if k in DONE) + '.</p>')
+    _r13 = K.req13([(c['outcome'], R.std2_reason(c['outcome'], c['reason'])) for c in CK if c['outcome'] != 'DISPLAY'], nothing_returned=0)
+    out.append('<p class="bench-note">Over all the figures above: ' + e(_r13['line']) + ' A figure reads cannot tell with NO_INTERVAL_FORMABLE when one of the two values is missing, not for the same year or not the same quantity, and with STRADDLES_EDGE when the public figure is a bin that overlaps the figure US News prints. Match and mismatch are exact comparisons after rounding, with no interval.</p>')
 out.append(f'<p>The lists were read on {e(D["read"])}. A rank is printed as US News prints it. A tie is marked, and a tie at the tenth place is kept whole, so a list can hold more than ten schools. '
            'Only the rank, the stated method and the figures to be checked are shown here. The full lists are on the US News pages linked below.</p>')
 
@@ -187,14 +190,14 @@ if CLAIMS:
                'A statement matches when the rank, the list and the edition it names equal the list. A statement about an edition not read, or naming no edition or list, reads cannot tell.</p>')
     out.append('<div class="tw"><table class="bench"><thead><tr><th>School</th><th>Published by</th><th>Statement</th><th>Date on the page</th><th>What it states</th><th>List read on 2026-11-10</th><th>Reading</th></tr></thead><tbody>')
     for c in CLAIMS:
-        rd = {'MATCH': 'match', 'MISMATCH': 'mismatch', 'CANNOT_TELL': 'cannot tell'}[c['outcome']] + (f' ({c["reason"]})' if c['reason'] else '')
+        rd = {'MATCH': 'match', 'MISMATCH': 'mismatch', 'CANNOT_TELL': 'cannot tell'}[c['outcome']] + (f' (NO_INTERVAL_FORMABLE, {c["reason"]})' if c['reason'] else '')
         rec_ = c['record'].replace(';', ' ').replace('#', 'rank ').strip()
         out.append('<tr>' + ''.join(f'<td>{x}</td>' for x in (e(c['school']), e(c['publisher']), '&ldquo;' + e(c['quote'][:240]) + '&rdquo; <a href="' + e(c['url']) + '">source</a>', e(str(c.get('date_on_page')) if c.get('date_on_page') not in (None, 'null', '') else 'not printed'), e(c['stated']), e(rec_), e(rd))) + '</tr>')
     out.append('</tbody></table></div>')
 out.append('<h2>National Blue Ribbon awards</h2>')
 out.append('<p>The US Department of Education pages for the National Blue Ribbon Schools program, including the award search and the yearly lists at the addresses tried, showed &ldquo;Page not found&rdquo; in a browser on 2026-11-10 and refused automated reads. '
            'Award years below come from state education agency releases and from the National Archives copy of the Department&rsquo;s 2018 list. '
-           'None of these sources states the category of each school&rsquo;s award, so the stated criterion for that category cannot be set against the state assessment data. Each reads cannot tell.</p>')
+           'None of these sources states the category of each school&rsquo;s award, so the stated criterion for that category cannot be set against the state assessment data. Each reads cannot tell, NO_INTERVAL_FORMABLE.</p>')
 BR = []
 for sch in HSP:
     for b in (sch.get('blue_ribbon') or {}).get('official_reads') or []:
@@ -203,7 +206,7 @@ for sch in HSP:
 if BR:
     out.append('<div class="tw"><table class="bench"><thead><tr><th>School</th><th>Award year</th><th>Category</th><th>Source</th><th>Criterion check</th></tr></thead><tbody>')
     for nm, yr, u, rowt in BR:
-        out.append(f'<tr><td>{e(nm)}</td><td>{e(yr)}</td><td>not stated in the source</td><td><a href="{e(u)}">source</a></td><td>cannot tell (category not stated)</td></tr>')
+        out.append(f'<tr><td>{e(nm)}</td><td>{e(yr)}</td><td>not stated in the source</td><td><a href="{e(u)}">source</a></td><td>cannot tell (NO_INTERVAL_FORMABLE, category not stated)</td></tr>')
     out.append('</tbody></table></div>')
 out.append('<p class="bench-note">Earlier or other awards named in school or press pages, without a Department or state agency record read here, are not listed. For the other high schools in the list no award record was read.</p>')
 out.append('<h2>Instructional time</h2>')

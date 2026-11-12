@@ -8,8 +8,11 @@ H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); import sys; sys.pat
 import heuremen_kit as K
 def meets(m): return bool(m and 0.65 <= m['slope'] <= 1.35 and -5 <= m['intercept'] <= 5 and m['r2'] >= 0.70 and (m['rmse'] <= 7 or (m['nrmse'] is not None and m['nrmse'] <= 30)))
 def outcome(n_not, n):
-    if n < 30: return K.CANNOT_TELL
-    lo, hi = K.wilson(n_not, n); return K.ABOVE if lo > 0.5 else (K.CONSISTENT if hi < 0.5 else K.CANNOT_TELL)
+    # 12 Nov 2026, PLAN_ADDENDUM_std2.md (Faults and Guards 2.0): one-sided bound 0.50, closed edge, no size that matters. Returns (outcome, reason). Under 30 monitors is TOO_WIDE_TO_RESOLVE, none at all is NO_INTERVAL_FORMABLE. Never CONSISTENT, never NOTHING_RETURNED.
+    if n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    lo, hi = K.wilson(n_not, n); lo = 0.0 if n_not == 0 else lo; hi = 1.0 if n_not == n else hi   # exact ends: K.wilson(0, n) gives 6.9e-18 at the lower end
+    return K.read(lo, hi, bound=0.5)
 NAME = {'R1': 'Map reading (atm channels, raw)', 'R2': 'cf_1 channels, raw', 'R3': 'cf_1 corrected for humidity (Barkjohn 2021)'}
 TIE = ('At a monitor with an even number of sensors the plan states no rule for the median pair. The code takes the lower of the two middle pairs by RMSE, '
        'for each reading separately. The other tie, the upper middle pair, is printed beside each count. Both were stated on 10 Nov 2026, after the data.')
@@ -21,7 +24,7 @@ def ties(pairs):
     for r, nm in NAME.items():
         unit = [sorted([p for p in ps if p[r]], key=lambda p: p[r]['rmse']) for ps in by.values()]; unit = [u for u in unit if u]
         n = len(unit); hi_not = sum(1 for u in unit if not meets(u[len(u) // 2][r])); lo_, hi_ = K.wilson(hi_not, n)
-        out[nm] = dict(n_other_tie=hi_not, share_other_tie=round(hi_not / n, 4), share_other_tie_lo=round(lo_, 4), share_other_tie_hi=round(hi_, 4), outcome_other_tie=outcome(hi_not, n),
+        out[nm] = dict(n_other_tie=hi_not, share_other_tie=round(hi_not / n, 4), share_other_tie_lo=round(lo_, 4), share_other_tie_hi=round(hi_, 4), outcome_other_tie=outcome(hi_not, n)[0], reason_other_tie=outcome(hi_not, n)[1],
                        monitors_even=sum(1 for u in unit if len(u) % 2 == 0))
     return out
 def apply(S, T):
@@ -37,4 +40,4 @@ _l = open('data/.live.lock', 'w'); fcntl.flock(_l, fcntl.LOCK_EX)   # the live t
 S = apply(json.load(open('summary_airq.json')), t26)
 if S.get('previous'): S['previous'] = apply(S['previous'], t25); S['previous'].pop('tie_rule', None); S['previous'].pop('headline_rule', None)
 json.dump(S, open('summary_airq.json', 'w'), indent=1)
-for nm in NAME.values(): c = S['comparison'][nm]; print('airq-tie:', nm, c['n'], 'or', c['n_other_tie'], 'of', c['of'], c['outcome'], c['outcome_other_tie'])
+for nm in NAME.values(): c = S['comparison'][nm]; print('airq-tie:', nm, c['n'], 'or', c['n_other_tie'], 'of', c['of'], c['outcome'], c.get('reason'), c['outcome_other_tie'], c.get('reason_other_tie'))

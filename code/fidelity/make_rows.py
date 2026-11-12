@@ -20,10 +20,14 @@ def outcome(n, iv, year=None, stated_ok=True):
     if year == 2024: return CT, R_NOSTATED
     if n is None: return CT, R_NOREP
     if iv is None: return CT, R_NOACS
-    if n > iv[1]: return ABOVE, None
-    if n < iv[0]: return BELOW, None
-    return CONSISTENT, None
+    o, _r, _d = K.read_exact(n, band=iv)   # 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): a published count against a published interval is an exact read, interval of zero width (owner decision O1), edges inside
+    return o, None
 
+NIF = K.NO_INTERVAL_FORMABLE
+def cell_reason(c):
+    """12 Nov 2026 (PLAN_ADDENDUM_std2.md): reason for a label that reads CANNOT_TELL. Under 5 scored rows is below the desk's minimum, TOO_WIDE_TO_RESOLVE (owner decision O3). No scored row is NO_INTERVAL_FORMABLE."""
+    sc = c[ABOVE] + c[BELOW] + c[CONSISTENT]
+    return None if sc >= 5 else (NIF if sc == 0 else K.TOO_WIDE_TO_RESOLVE)
 def cell_read(c):
     sc = c[ABOVE] + c[BELOW] + c[CONSISTENT]
     if sc < 5: return CT
@@ -81,7 +85,7 @@ def build(nchs, acs):
                     row.update(acs_women=float(fe) if iv else None, acs_women_moe=float(fm) if iv else None, acs_men=float(me) if ivm else None, acs_men_moe=float(mm) if ivm else None, pop=d['B01003_001E'])
                 else: iv = ivm = iv95 = None
                 oc, rs = outcome(n, iv, y); om, rm = outcome(n, ivm, y); o95, _ = outcome(n, iv95, y)
-                row.update(outcome=oc, reason=rs, outcome_men=om, outcome_95=o95, sex_split=(oc in (ABOVE, BELOW, CONSISTENT) and om in (ABOVE, BELOW, CONSISTENT) and oc != om),
+                row.update(outcome=oc, reason=(NIF if oc == CT else None), reason_detail=rs, outcome_men=om, outcome_95=o95, sex_split=(oc in (ABOVE, BELOW, CONSISTENT) and om in (ABOVE, BELOW, CONSISTENT) and oc != om),
                            ratio=(round(n / row['acs_women'], 3) if n and iv and row.get('acs_women') else None), destination=st in DEST[ev])
                 rows.append(row)
     return rows
@@ -90,8 +94,8 @@ def tally(rows):
     c = {ABOVE: 0, BELOW: 0, CONSISTENT: 0, CT: 0, 'by_reason': {}, 'sex_split': 0, 'rows': len(rows)}
     for r in rows:
         c[r['outcome']] += 1; c['sex_split'] += bool(r['sex_split'])
-        if r['reason']: c['by_reason'][r['reason']] = c['by_reason'].get(r['reason'], 0) + 1
-    c['read'] = cell_read(c); return c
+        if r.get('reason_detail'): c['by_reason'][r['reason_detail']] = c['by_reason'].get(r['reason_detail'], 0) + 1
+    c['read'] = cell_read(c); c['read_reason'] = cell_reason(c); c['req13'] = K.req13([(r['outcome'], r.get('reason')) for r in rows], nothing_returned=0); return c
 
 def cells(rows):
     out = {}
@@ -180,12 +184,16 @@ def main():
     open(lock, 'w').write(str(os.getpid()))
     try:
         nchs = json.load(open('data/nchs_counts.json')); acs = load_acs(); rates = {'divorce': load_rates('raw/state-divorce-rates-90-95-00-24.xlsx'), 'marriage': load_rates('raw/state-marriage-rates-90-95-00-24.xlsx')}
-        seal.setdefault('first_comparison', time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())); json.dump(seal, open('data/plan_seal.json', 'w'), indent=1)
+        keep = '--std2-rewrite' in sys.argv; old = json.load(open('summary_fidelity.json')) if keep else None   # 12 Nov 2026: rewrite the outputs under the 2.0 rule from the same raw files, keeping the run date, the seal and the snapshots as they were
+        if not keep: seal.setdefault('first_comparison', time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())); json.dump(seal, open('data/plan_seal.json', 'w'), indent=1)
         rows = build(nchs, acs); g = gates(nchs, acs, rates, rows)
         passed = all(v['passed'] for v in g.values())
         rows = K.apply_gate(passed, rows)
-        sn = snapshot()
-        summ = dict(plan_seal=seal, run=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), gates=g, gates_passed=passed, rows=len(rows), cells=cells(rows), snapshot_files_copied=sn)
+        for r in rows:
+            if r['outcome'] == CT and r.get('reason') not in K.REASONS: r['reason_detail'] = r.get('reason_detail') or 'known-good gate failed'; r['reason'] = NIF
+        sn = old['snapshot_files_copied'] if keep else snapshot()
+        summ = dict(plan_seal=seal, run=old['run'] if keep else time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), gates=g, gates_passed=passed, rows=len(rows), cells=cells(rows), snapshot_files_copied=sn,
+                    headline_req13=K.req13([(r['outcome'], r.get('reason')) for r in rows if r['event'] == 'DIVORCE' and r['state'] == 'Texas'], nothing_returned=0))
         json.dump(rows, open('data/fidelity.json', 'w')); json.dump(summ, open('summary_fidelity.json', 'w'), indent=1)
         for ev in EV:
             c = summ['cells'][ev]['overall']; print(ev, {k: c[k] for k in (ABOVE, BELOW, CONSISTENT, CT, 'by_reason', 'sex_split')})

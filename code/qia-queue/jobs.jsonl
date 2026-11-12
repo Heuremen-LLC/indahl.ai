@@ -799,3 +799,13 @@
 {"id": "dbqqn76jjaos73ahomn0", "backend": "ibm_marrakesh", "created": "2026-11-12T12:05:48.974316Z", "wait_s": 1.388546}
 {"id": "dbqqn1ejjaos73ahomg0", "backend": "ibm_marrakesh", "created": "2026-11-12T12:05:25.101306Z", "wait_s": 1.63254}
 {"id": "dbqqt7mjjaos73ahot30", "backend": "ibm_marrakesh", "created": "2026-11-12T12:18:38.685404Z", "wait_s": 1.29003}
+{"id": "dbqt80ujjaos73ahtm90", "backend": "ibm_pittsburgh", "created": "2026-11-12T14:58:11.68677Z", "wait_s": 0.853267}
+{"id": "dbqt7vujjaos73ahtm70", "backend": "ibm_marrakesh", "created": "2026-11-12T14:58:08.052349Z", "wait_s": 1.378092}
+{"id": "dbqt7vgk09pc73atse3g", "backend": "ibm_kingston", "created": "2026-11-12T14:58:06.412153Z", "wait_s": 1.967856}
+{"id": "dbqt7v6jjaos73ahtm40", "backend": "ibm_fez", "created": "2026-11-12T14:58:04.696372Z", "wait_s": 1.475609}
+{"id": "dbqt7uhabdes73fososg", "backend": "ibm_chicago", "created": "2026-11-12T14:58:02.895023Z", "wait_s": 1.710596}
+{"id": "dbqt7u6jjaos73ahtm10", "backend": "ibm_boston", "created": "2026-11-12T14:58:01.011602Z", "wait_s": 0.93188}
+{"id": "dbqt7rgk09pc73atsdog", "backend": "ibm_kingston", "created": "2026-11-12T14:57:50.819259Z", "wait_s": 2.916654}
+{"id": "dbqt7f6jjaos73ahtktg", "backend": "ibm_kingston", "created": "2026-11-12T14:57:00.410535Z", "wait_s": 12.435784}
+{"id": "dbqqmuhabdes73fonov0", "backend": "ibm_kingston", "created": "2026-11-12T12:05:14.908424Z", "wait_s": 10270.147866}
+{"id": "dbqtb5ejjaos73ahtqug", "backend": "ibm_kingston", "created": "2026-11-12T15:04:53.717299Z", "wait_s": 65.624734}

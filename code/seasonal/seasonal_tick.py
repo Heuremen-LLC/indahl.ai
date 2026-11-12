@@ -24,18 +24,13 @@ def first_month(i): return '%04d%02d01' % (1995 + i // 12, i % 12 + 1)
 def lonlat(j): return 130 - 2 * (j % NX), 20 + 2 * (j // NX)   # west longitude, north latitude
 
 # ---------------- the rule (PLAN.md, Rules) ----------------
+# 12 Nov 2026: Faults and Guards 2.0 outcome rule (PLAN_ADDENDUM_std2.md). Returns (outcome, reason). The 0.10 width cap is retired: a point figure with no tolerance has no CONSISTENT.
 def cell_outcome(lo, hi, stated, n, seasons):
-    if n < MIN_ROWS or seasons < MIN_SEAS or lo is None: return K.CANNOT_TELL
-    if lo > stated: return K.ABOVE
-    if hi < stated: return K.BELOW
-    if hi - lo <= MAX_W: return K.CONSISTENT
-    return K.CANNOT_TELL
+    if not n or lo is None or stated is None: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < MIN_ROWS or seasons < MIN_SEAS: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, bound=stated, edge='closed')
 def hss_outcome(lo, hi):
-    if lo is None: return K.CANNOT_TELL
-    if lo > HSS_TOL: return K.ABOVE
-    if hi < -HSS_TOL: return K.BELOW
-    if lo >= -HSS_TOL and hi <= HSS_TOL: return K.CONSISTENT
-    return K.CANNOT_TELL
+    return K.read(lo, hi, band=(-HSS_TOL, HSS_TOL), edge='closed')
 def heidke(cat, obs, w=None):
     """cat: CPC categories (1, 2, 3, 0) for cells with an observation, obs: -1, 0, 1. -> (non-EC, all, coverage) in percent, or None."""
     w = np.ones(len(cat)) if w is None else w
@@ -54,15 +49,16 @@ def boot_ratio(num, den, M):
     if ok.sum() < 100: return None, None
     r = a[ok] / b[ok]; return float(np.percentile(r, 2.5)), float(np.percentile(r, 97.5))
 def rule_selftest():
-    t = [cell_outcome(0.5, 0.6, 0.4, 100, 50) == K.ABOVE, cell_outcome(0.2, 0.3, 0.4, 100, 50) == K.BELOW, cell_outcome(0.36, 0.44, 0.4, 100, 50) == K.CONSISTENT,
-         cell_outcome(0.2, 0.6, 0.4, 100, 50) == K.CANNOT_TELL, cell_outcome(0.36, 0.44, 0.4, 20, 50) == K.CANNOT_TELL, cell_outcome(0.36, 0.44, 0.4, 100, 10) == K.CANNOT_TELL,
-         hss_outcome(-1, 1) == K.CONSISTENT, hss_outcome(3, 4) == K.ABOVE, hss_outcome(-4, -3) == K.BELOW, hss_outcome(-1, 3) == K.CANNOT_TELL]
+    t = [cell_outcome(0.5, 0.6, 0.4, 100, 50) == (K.ABOVE, None), cell_outcome(0.2, 0.3, 0.4, 100, 50) == (K.BELOW, None), cell_outcome(0.36, 0.44, 0.4, 100, 50) == (K.CANNOT_TELL, K.STRADDLES_EDGE),
+         cell_outcome(0.2, 0.6, 0.4, 100, 50) == (K.CANNOT_TELL, K.STRADDLES_EDGE), cell_outcome(0.36, 0.44, 0.4, 20, 50) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE), cell_outcome(0.36, 0.44, 0.4, 100, 10) == (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE),
+         cell_outcome(None, None, 0.4, 0, 0) == (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE),
+         hss_outcome(-1, 1) == (K.CONSISTENT, None), hss_outcome(3, 4) == (K.ABOVE, None), hss_outcome(-4, -3) == (K.BELOW, None), hss_outcome(-1, 3) == (K.CANNOT_TELL, K.STRADDLES_EDGE)]
     o = np.array([-1, 0, 1, 1, 0, -1]); t.append(abs(heidke(o + 2, o)[0] - 100) < 1e-9)
     c3 = np.array([1, 2, 3, 1, 2, 3]); ob3 = np.array([-1, 0, -1, 1, -1, 0]); t.append(abs(heidke(c3, ob3)[0] - 0) < 1e-9)   # 2 of 6 right = chance
     # planted: 4 non-EC cells, 3 right, 2 EC cells -> HSS = 100*(3-4/3)/(4-4/3) = 62.5, coverage 66.67, all 41.67
     r = heidke(np.array([1, 2, 3, 3, 0, 0]), np.array([-1, 0, 1, -1, 0, 1])); t.append(abs(r[0] - 62.5) < 1e-9 and abs(r[2] - 66.6667) < 1e-3 and abs(r[1] - 41.6667) < 1e-3)
     rng = np.random.default_rng(9); S = 200; M = draws(S, 500, 3)
-    for p_true, want in ((0.5, K.CONSISTENT), (0.35, K.BELOW)):
+    for p_true, want in ((0.5, (K.CANNOT_TELL, K.STRADDLES_EDGE)), (0.35, (K.BELOW, None))):
         hits = (rng.random((S, 40)) < p_true).sum(1).astype(float); lo, hi = boot_ratio(hits, np.full(S, 40.0), M); t.append(cell_outcome(lo, hi, 0.5, S * 40, S) == want)
     return all(t), t
 if '--selftest' in sys.argv:
@@ -123,8 +119,9 @@ for v, d in D.items():
         seasons = int((den > 0).sum()); stated = ssum / n / 100 if n else None
         lo, hi = boot_ratio(num, den, M) if n else (None, None)
         k = int(num.sum())
+        oc = cell_outcome(lo, hi, stated, n, seasons) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
         return dict(variable=v, cell=name, rows=n, seasons=seasons, mean_stated=None if stated is None else round(stated, 4), observed=round(k / n, 4) if n else None, hits=k,
-                    lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), outcome=(cell_outcome(lo, hi, stated, n, seasons) if GATE else K.CANNOT_TELL) if n else K.CANNOT_TELL)
+                    lo=None if lo is None else round(lo, 4), hi=None if hi is None else round(hi, 4), outcome=oc[0], reason=oc[1])
     summary_cells.append(dict(cell(VARS[v] + ', leaning', lambda c, P: P >= 40), category='any'))
     for cname, P, code in cats:
         for lo_, hi_, bn in BINS:
@@ -150,7 +147,7 @@ for v, d in D.items():
         lo, hi = boot_ratio(num, den, M); mean = float(dd[okd].mean()) if okd.any() else None
         hss_cells.append(dict(variable=v, score=nm, seasons=int(okd.sum()), mean_difference=None if mean is None else round(mean, 3), lo=None if lo is None else round(lo, 3), hi=None if hi is None else round(hi, 3),
                               within_1_point=int((np.abs(dd[okd]) <= 1).sum()), median_abs_difference=round(float(np.median(np.abs(dd[okd]))), 3) if okd.any() else None,
-                              outcome=hss_outcome(lo, hi) if GATE else K.CANNOT_TELL))
+                              outcome=(hss_outcome(lo, hi) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE))[0], reason=(hss_outcome(lo, hi) if GATE else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE))[1]))
 
 # 10 Nov 2026, outside referee (seasonal_index_referee/REFEREE.md R1, R3, R5): display only, added after the data, never used for an outcome.
 after = dict(note='Added on 10 Nov 2026 at the outside referee. Display only. No outcome uses them.', observed_shares={}, leaning_split={}, largest_heidke_gap={})
@@ -175,16 +172,19 @@ if not os.path.exists(seal_f) and K.plan_committed('PLAN.md', NOW):
                    plan_sha256=hashlib.sha256(open('PLAN.md', 'rb').read()).hexdigest(), first_comparison=STAMP), open(seal_f, 'w'), indent=1)
 seal = json.load(open(seal_f)) if os.path.exists(seal_f) else None
 S0 = D['temp']['O'].shape[0]
+# REQ-13 (standard 6.7, PLAN_ADDENDUM_std2.md): every reading of the desk. Failed reads (forecasts still waiting, failed fetches) are listed apart and are outside the counts.
+NR = ['forecast record waiting, %s' % v for v, k in pending.items() for _ in range(k)] + ['fetch failed, %s' % n for n in STALE if n != 'publish']
+REQ13 = K.req13(summary_cells + hss_cells, nothing_returned=NR)
 summary = dict(desk='SEASONAL', publisher='Heuremen LLC', generated=STAMP, plan='PLAN.md', plan_seal=seal, plan_unchanged_since_commit=K.plan_committed('PLAN.md'),
     claim=dict(source='NOAA Climate Prediction Center, 3-month outlooks at 0.5-month lead, 2 by 2 degree grid', stated='chance of above, near and below normal; Heidke skill score per season',
                delivered='observed tercile per grid cell and season (CPC verification archive)'),
-    frame=dict(bins=[b[2] for b in BINS], min_rows=MIN_ROWS, min_seasons=MIN_SEAS, max_width=MAX_W, block_seasons=BLOCK, replicates=REPS, seed=SEED, hss_tolerance_points=HSS_TOL),
+    frame=dict(bins=[b[2] for b in BINS], min_rows=MIN_ROWS, min_seasons=MIN_SEAS, max_width=MAX_W, block_seasons=BLOCK, replicates=REPS, seed=SEED, hss_tolerance_points=HSS_TOL, rule='PLAN_ADDENDUM_std2.md', width_cap_retired=True),
     gates=dict(kg, passed=GATE),
     sources=dict(seasons_scored=S0, first_season=season_name(0), last_season=season_name(S0 - 1), forecasts_waiting=pending, unreadable_rows=unreadable,
                  land_cells=int(D['temp']['mask'].sum()), fetched=open(stamp_f).read() if os.path.exists(stamp_f) else None, stale=STALE),
-    cells=summary_cells, heidke=hss_cells, after_data=after)
+    cells=summary_cells, heidke=hss_cells, req13=dict(REQ13, failed_reads=NR), after_data=after)
 summary['forecasters'] = dict(rows=[dict(kind='probability', item='%s, any category stated at forty percent or more' % VARS[c['variable']], counts='share of grid cells where the leaning category was observed',
-                                         stated=c['mean_stated'], n=c['hits'], of=c['rows'], delivered=c['observed'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'],
+                                         stated=c['mean_stated'], n=c['hits'], of=c['rows'], delivered=c['observed'], lo=c['lo'], hi=c['hi'], outcome=c['outcome'], reason=c['reason'], req13=REQ13,
                                          interval='moving-block bootstrap over seasons, as the desk gives it') for c in summary_cells if c['cell'].endswith('leaning') and c['lo'] is not None])
 json.dump(dict(generated=STAMP, heidke_rows=hss_rows), open('data/seasonal.json.tmp', 'w')); os.replace('data/seasonal.json.tmp', 'data/seasonal.json')
 json.dump(summary, open('summary_seasonal.json.tmp', 'w'), indent=1); os.replace('summary_seasonal.json.tmp', 'summary_seasonal.json')
@@ -195,7 +195,7 @@ if PUB:
                        cwd=os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door'), env=env, capture_output=True, text=True)
     log('seasonal_live', 'published' if p.returncode == 0 else 'publish FAILED ' + (p.stderr or '')[-200:])
     if p.returncode: STALE.append('publish')
-with open('data/seasonal_history.jsonl', 'a') as f: f.write(json.dumps(dict(t=STAMP, gate=GATE, seasons=S0, lean=[(c['variable'], c['rows'], c['observed'], c['outcome']) for c in summary_cells if c['cell'].endswith('leaning')], stale=STALE)) + '\n')
+with open('data/seasonal_history.jsonl', 'a') as f: f.write(json.dumps(dict(t=STAMP, gate=GATE, seasons=S0, lean=[(c['variable'], c['rows'], c['observed'], c['outcome'], c['reason']) for c in summary_cells if c['cell'].endswith('leaning')], stale=STALE)) + '\n')
 log('gates', kg, 'seasons', S0, 'pending', pending, 'unreadable', unreadable)
-for c in summary_cells: log('%-52s rows %6d seasons %3d stated %s observed %s [%s, %s] %s' % (c['cell'], c['rows'], c['seasons'], c['mean_stated'], c['observed'], c['lo'], c['hi'], c['outcome']))
+for c in summary_cells: log('%-52s rows %6d seasons %3d stated %s observed %s [%s, %s] %s' % (c['cell'], c['rows'], c['seasons'], c['mean_stated'], c['observed'], c['lo'], c['hi'], c['outcome'] + (' (%s)' % c['reason'] if c['reason'] else '')))
 for c in hss_cells: log('HSS %s %-12s seasons %d mean diff %s [%s, %s] within 1 pt %d median |d| %s %s' % (c['variable'], c['score'], c['seasons'], c['mean_difference'], c['lo'], c['hi'], c['within_1_point'], c['median_abs_difference'], c['outcome']))

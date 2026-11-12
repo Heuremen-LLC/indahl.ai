@@ -62,6 +62,23 @@ def compare(usn, pub, usn_year, pub_year, same_quantity=True):
         return 'CANNOT_TELL', 'definition'
     return ('MATCH', '') if rnd(pv, decimals(u)) == uv else ('MISMATCH', '')
 
+# 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md): the desk's own reasons map to the closed list. The desk's own word stays as reason_detail.
+STRADDLES_EDGE, NO_INTERVAL_FORMABLE = 'STRADDLES_EDGE', 'NO_INTERVAL_FORMABLE'
+STD2 = {'floor_or_range_unsettled': STRADDLES_EDGE, 'precision': STRADDLES_EDGE}
+def std2_reason(outcome, detail):
+    """The closed CANNOT_TELL reason for a row, or '' for MATCH, MISMATCH and DISPLAY rows. Every desk reason not in STD2 maps to NO_INTERVAL_FORMABLE (the addendum says why)."""
+    if outcome != 'CANNOT_TELL': return ''
+    return STD2.get(detail, NO_INTERVAL_FORMABLE)
+
+def kit():
+    """The Faults and Guards kit. This folder has no copy of its own (not registered in ledger/copies.json), so the canonical one beside it is used."""
+    import os, sys
+    for d in (os.path.dirname(os.path.abspath(__file__)), os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'heuremen_kit')):
+        if os.path.exists(os.path.join(d, 'heuremen_kit.py')):
+            if d not in sys.path: sys.path.insert(0, d)
+            import heuremen_kit; return heuremen_kit
+    raise ImportError('heuremen_kit.py not found')
+
 if __name__ == '__main__':
     T = [  # usn, pub, uy, py, expected
         ('100%', '99.6', '2024', '2024', 'MATCH'), ('100%', '99.4', '2024', '2024', 'MISMATCH'), ('97%', '96.5', '2024', '2024', 'MATCH'),
@@ -76,4 +93,7 @@ if __name__ == '__main__':
     for u, p, uy, py, exp in T:
         got = compare(u, p, uy, py)[0]
         if got != exp: bad += 1; print('FAIL', u, p, uy, py, 'expected', exp, 'got', got)
+    for o, d, want in (('CANNOT_TELL', 'year', 'NO_INTERVAL_FORMABLE'), ('CANNOT_TELL', 'paid_tier', 'NO_INTERVAL_FORMABLE'), ('CANNOT_TELL', 'floor_or_range_unsettled', 'STRADDLES_EDGE'), ('MATCH', '', ''), ('MISMATCH', '', '')):
+        T.append((o, d, 0, 0, want))
+        if std2_reason(o, d) != want: bad += 1; print('FAIL std2_reason', o, d, 'expected', want, 'got', std2_reason(o, d))
     print('rule self-test:', len(T) - bad, 'of', len(T), 'pass'); raise SystemExit(1 if bad else 0)

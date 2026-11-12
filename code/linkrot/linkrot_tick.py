@@ -93,8 +93,9 @@ if gate_ok: subprocess.run([sys.executable, '-I', os.path.join(H, 'linkrot_repos
 def cell(rows):
     c = C.Counter(r for r in rows); live, gone, dns = c['LIVE'], c['GONE'], c['DNS_FAIL']; rd = live + gone + dns; rot = gone + dns
     lo, hi = K.wilson(rot, rd)
-    oc = K.CANNOT_TELL if (rd < 30 or not gate_ok) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
-    return dict(links=len(rows), live=live, gone=gone, dns_fail=dns, blocked=c['BLOCKED'], timeout=c['TIMEOUT'], rot_share=round(rot / rd, 4) if rd else None, lo=round(lo, 4), hi=round(hi, 4), outcome=oc)
+    # Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md, 12 Nov 2026): size that matters 0.10, band [0, 0.05) open at the top, Wilson 95%. NOTHING_RETURNED is the BLOCKED plus TIMEOUT count, outside numerator and denominator.
+    oc, why = (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE) if (not gate_ok or rd == 0) else ((K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE) if rd < 30 else K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)'))
+    return dict(links=len(rows), live=live, gone=gone, dns_fail=dns, blocked=c['BLOCKED'], timeout=c['TIMEOUT'], rot_share=round(rot / rd, 4) if rd else None, lo=round(lo, 4), hi=round(hi, 4), outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=c['BLOCKED'] + c['TIMEOUT']))
 def combined(e):
     a = e['hist'][-1]; b = e.get('seat2'); bad = ('GONE', 'DNS_FAIL')
     if b and abs(a[0] - b[0]) <= 14 * 86400:

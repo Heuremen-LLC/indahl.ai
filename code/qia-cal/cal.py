@@ -116,7 +116,7 @@ def process(s, r, corrects=None):
              rule='qia_cal PLAN.md with Notes 1 and 3 (readout: IBM count out of %d vs ours, both exact 99.9%%, call on non-overlap; T1: 99.99%% interval, 25%% margin)' % kg.get('ibm_readout_shots', 4096),
              known_good=kg['known_good'], counts=counts, off=off, results='/qia/cal/%s.json' % r['id'], results_sha256=sha)
     if corrects: e['corrects'] = corrects
-    head = chain_append(e)
+    head = chain_append(e) or 'already chained'   # 12 Nov: a re-collected job returns None from chain_append; head[:12] crashed every run from 06:15Z and no calibration was sent for 8 h
     print('cal read', r['backend'], r['id'], kg['known_good'], 'off', len(off), 'chain head', head[:12], flush=True)
     return dict(job_id=r['id'], window_utc=win, qubits_read=len(qs), known_good=kg['known_good'], counts=counts, off=len(off),
                 median_readout_measured_over_stated=kg['median_readout_measured_over_stated'], median_t1_measured_over_stated=kg['median_t1_measured_over_stated']), m

@@ -7,8 +7,10 @@ S = json.load(open('summary_fidelity.json')); ROWS = json.load(open('data/fideli
 EVN = {'DIVORCE': 'Divorces and annulments', 'MARRIAGE': 'Marriages'}
 RD = {'ABOVE': 'above', 'BELOW': 'below', 'CONSISTENT': 'inside', 'MIXED': 'mixed', 'CANNOT_TELL': 'cannot tell'}
 def n(x): return '{:,}'.format(int(x))
+def rd(c): return RD[c['read']] + (' (%s)' % c['read_reason'] if c['read'] == 'CANNOT_TELL' and c.get('read_reason') else '')   # 12 Nov 2026: Faults and Guards 2.0, the reason sits beside the word
+def codes(c): return ', '.join('%d %s' % (v, k) for k, v in sorted(c['req13']['cannot_tell_by_reason'].items())) or 'none'
 def trow(label, c, extra=''):
-    return '<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%s</td>%s</tr>' % (e(label), c['ABOVE'], c['BELOW'], c['CONSISTENT'], c['CANNOT_TELL'], RD[c['read']], extra)
+    return '<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%s</td>%s</tr>' % (e(label), c['ABOVE'], c['BELOW'], c['CONSISTENT'], c['CANNOT_TELL'], rd(c), extra)
 TH = '<th>%s</th><th>NCHS above</th><th>NCHS below</th><th>Inside</th><th>Cannot tell</th><th>Reading</th>'
 def why(c): return ', '.join('%d %s' % (v, k) for k, v in sorted(c['by_reason'].items(), key=lambda kv: -kv[1])) or 'none'
 def table(head, body, extra_head=''): return '<div class="tw"><table class="bench"><tr>%s%s</tr>%s</table></div>' % (TH % head, extra_head, body)
@@ -31,8 +33,8 @@ def line(ev):
     o = C[ev]['overall']; x = C[ev]['excluding_destination']; R = sc(ev); m = cnt(R, 'outcome_men'); b = both(R); w = cnt(R, 'outcome')
     assert m['CANNOT_TELL'] == 0 and w['ABOVE'] == o['ABOVE'] and w['BELOW'] == o['BELOW'] and w['CONSISTENT'] == o['CONSISTENT']
     return ('%s: of %d rows, %d are scored. Under the women\'s estimate, the scored reading, the NCHS count sits above the ACS interval in %d, below it in %d and inside it in %d. Under the men\'s estimate it sits above in %d, below in %d and inside in %d. '
-            'Both sexes read below in %d rows, inside in %d and above in %d. Cannot tell holds %d (%s). Without the destination cells the women\'s reading is %d above, %d below and %d inside.') % (
-        EVN[ev], o['rows'], len(R), w['ABOVE'], w['BELOW'], w['CONSISTENT'], m['ABOVE'], m['BELOW'], m['CONSISTENT'], b['BELOW'], b['CONSISTENT'], b['ABOVE'], o['CANNOT_TELL'], why(o), x['ABOVE'], x['BELOW'], x['CONSISTENT'])
+            'Both sexes read below in %d rows, inside in %d and above in %d. Cannot tell holds %d, %s (%s). Without the destination cells the women\'s reading is %d above, %d below and %d inside.') % (
+        EVN[ev], o['rows'], len(R), w['ABOVE'], w['BELOW'], w['CONSISTENT'], m['ABOVE'], m['BELOW'], m['CONSISTENT'], b['BELOW'], b['CONSISTENT'], b['ABOVE'], o['CANNOT_TELL'], codes(o), why(o), x['ABOVE'], x['BELOW'], x['CONSISTENT'])
 C = S['cells']; D, M = C['DIVORCE'], C['MARRIAGE']; g = S['gates']
 BB = both_below('DIVORCE'); TX = srow('DIVORCE', 'Texas'); txb = sum(1 for r in TX if r['outcome'] == 'BELOW' and r['outcome_men'] == 'BELOW')
 assert txb == len(TX) and 'Texas' in BB
@@ -41,7 +43,7 @@ dw, dm = cnt(sc('DIVORCE'), 'outcome'), cnt(sc('DIVORCE'), 'outcome_men')
 HB = '%d of %d' % (txb, len(TX))
 HLINE = ('In Texas the CDC count of divorces and annulments sits below the ACS interval in %d of %d years, under the women\'s estimate and under the men\'s. %s read below under both sexes as well. '
          'These are the jurisdictions where the divorce reading holds whichever sex is used. It says only that the two counts differ by more than the survey\'s stated margin. It cannot show that any records are missing or that either source is mistaken. '
-         'Nationally in 2022 the CDC divorce total was %.2f of the ACS women\'s total and %.2f of the men\'s, so a state reads against that ratio and not against 1.0.') % (txb, len(TX), jn([s for s in BB if s != 'Texas']), bw, bm)
+         'Nationally in 2022 the CDC divorce total was %.2f of the ACS women\'s total and %.2f of the men\'s, so a state reads against that ratio and not against 1.0. For the Texas rows, %s') % (txb, len(TX), jn([s for s in BB if s != 'Texas']), bw, bm, S['headline_req13']['line'])
 HL = 'The CDC and the Census Bureau count different things, so a gap between them is a reading of that difference and not a claim that either number is mistaken. CDC NCHS counts the events that states report, where they happened. The ACS estimates the persons who say they married or divorced in the last year, where they live now.'
 hl = '<section id="hl-slot" class="hl-slot hl"><div class="hl-big">%s</div><p class="hl-line">%s</p></section>' % (e(HB), e(HLINE))
 body = []
@@ -91,9 +93,9 @@ for ev in ('DIVORCE', 'MARRIAGE'):
     A('<p>Texas, ACS women against the NCHS count: %s.</p>' % e(texas(ev)))
     A('<h3>By year</h3>')
     A(table('Year', ''.join(trow(y, v) for y, v in c['by_year'].items())))
-    A('<p>2024 rows are all cannot tell as NCHS has not published 2024 state counts, only rates. The ACS 2024 estimates are in the data file. They stay cannot tell until NCHS publishes 2024 state counts.</p>')
+    A('<p>2024 rows are all cannot tell with the reason NO_INTERVAL_FORMABLE, as NCHS has not published 2024 state counts, only rates. The ACS 2024 estimates are in the data file. They stay cannot tell until NCHS publishes 2024 state counts.</p>')
     A('<h3>By jurisdiction</h3>')
-    A('<p>A jurisdiction reads above, below or inside when at least 5 of its rows are scored and one outcome holds at least 80 percent of them. Otherwise it reads mixed, and with fewer than 5 scored rows it reads cannot tell. The last column is the median of the NCHS count divided by the ACS women\'s estimate.</p>')
+    A('<p>A jurisdiction reads above, below or inside when at least 5 of its rows are scored and one outcome holds at least 80 percent of them. Otherwise it reads mixed. With fewer than 5 scored rows it reads cannot tell with the reason TOO_WIDE_TO_RESOLVE, and with no scored row with the reason NO_INTERVAL_FORMABLE. Each row compares one published count with one published interval, so a row read is exact and carries no sampling of its own. A row that cannot be compared reads cannot tell with the reason NO_INTERVAL_FORMABLE, and the plain cause is in the Cannot tell counts. The last column is the median of the NCHS count divided by the ACS women\'s estimate.</p>')
     A(table('Jurisdiction', ''.join(trow(s, v, '<td>%s</td>' % ('' if v['median_ratio'] is None else '%.2f' % v['median_ratio'])) for s, v in c['by_state'].items()), '<th>Median ratio</th>'))
     GH = '<tr><th>Jurisdiction</th><th>Year</th><th>NCHS count</th><th>ACS women, estimate</th><th>ACS 90 percent margin</th><th>ACS estimate minus NCHS count</th></tr>'
     A('<h3>Largest gaps, NCHS count below the ACS estimate</h3><div class="tw"><table class="bench">%s%s</table></div>' % (GH, gaps(ev, False)))

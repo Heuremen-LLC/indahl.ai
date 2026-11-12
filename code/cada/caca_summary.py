@@ -24,4 +24,9 @@ feeds = [json.loads(l) for l in open('data/feed_reads.jsonl')] if os.path.exists
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), tracked=len(domains), alive={str(c): ALIVE[c] for c in CP}, not_alive={str(c): notalive[c] for c in CP},
            feed_reads=len([f for f in feeds if f.get('status') == 'COMMITTED' and not f.get('baseline')]), resolvers=[
     dict(resolver=n, checkpoints={str(c): dict(k=v[c][0], n=v[c][1], timeouts=v[c][2], wilson=wil(v[c][0], v[c][1]) if v[c][1] else None, state='NOTHING_RETURNED' if (v[c][1] == 0 and v[c][2] > 0) else 'READ') for c in CP}, classes=dict(status[n])) for n, v in sorted(res.items())])
+# 12 Nov 2026 (PLAN_ADDENDUM_std2.md): no outcome word is assigned to any cell, the provider-statement outcomes are removed from the plan. REQ-13: the failed reads are the timed-out queries, listed apart.
+_cells = [c for x in out['resolvers'] for c in x['checkpoints'].values()]; _to = sum(c['timeouts'] for c in _cells)
+out['outcomes_assigned'] = False; out['plan_addendum'] = 'PLAN_ADDENDUM_std2.md'
+out['req13'] = dict(_K.req13([], nothing_returned=_to), cells_with_share=sum(1 for c in _cells if c['state'] == 'READ' and c['n']), cells_returned_nothing=sum(1 for c in _cells if c['state'] == 'NOTHING_RETURNED'), nothing_returned_is='timed-out queries, listed apart')
+out['req13']['line'] = '%d NOTHING_RETURNED (timed-out queries, listed apart). No outcome is assigned to any cell, so CANNOT_TELL is 0 of 0. %d cells hold a share and %d cells returned nothing.' % (_to, out['req13']['cells_with_share'], out['req13']['cells_returned_nothing'])
 json.dump(out, open('summary_caca.json', 'w'), indent=1); print('caca summary:', out['tracked'], 'domains,', out['feed_reads'], 'fresh reads')

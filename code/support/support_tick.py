@@ -77,9 +77,15 @@ def boot_cluster(byprod, n_boot=4000):
     for _ in range(n_boot):
         ch = [rnd.choice(P) for _ in P]; n = sum(len(byprod[p]) for p in ch); k = sum(sum(byprod[p]) for p in ch); est.append(k / n if n else 0)
     est.sort(); return est[int(0.025 * n_boot)], est[int(0.975 * n_boot) - 1]
+def std2(lo, hi, n):
+    """Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md, 12 Nov 2026): size that matters 0.10, band [0, 0.05) open at the top. Under 30 units is TOO_WIDE_TO_RESOLVE, none or a failed gate is NO_INTERVAL_FORMABLE."""
+    if not gate or n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)')
+NR = none if not SUMMARY_ONLY else (json.load(open('summary_support.json')).get('no_cycles', 0) if os.path.exists('summary_support.json') else 0)   # NOTHING_RETURNED: products whose request returned no cycle record (addendum std2 item 6)
 def cell(n, k):
-    lo, hi = K.wilson(k, n); oc = K.CANNOT_TELL if (n < 30 or not gate) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
-    return dict(tested=n, unreleased=k, share=round(k / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc)
+    lo, hi = K.wilson(k, n); oc, why = std2(lo, hi, n)
+    return dict(tested=n, unreleased=k, share=round(k / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why)
 byp = C.defaultdict(list)
 for r in tested: byp[r['product']].append(r)
 products = {p: cell(len(v), sum(1 for r in v if r['unreleased'])) for p, v in byp.items() if sum(1 for r in v if r['unreleased']) > 0}
@@ -90,14 +96,14 @@ silent_list = sorted([dict(product=r['product'], cycle=r['cycle'], last=r['last'
 byprod_all = {p: [bool(r['unreleased']) for r in v] for p, v in byp.items()}
 c_lo, c_hi = boot_cluster(byprod_all) if byprod_all else (0, 1)
 allc = cell(len(tested), len(sil)); allc.update(wilson_lo=allc['share_lo'], wilson_hi=allc['share_hi'], share_lo=round(c_lo, 4), share_hi=round(c_hi, 4), products_tested=len(byprod_all))
-allc['outcome'] = K.CANNOT_TELL if (len(tested) < 30 or not gate) else (K.ABOVE if c_lo > 0.10 else (K.CONSISTENT if c_hi < 0.05 else K.CANNOT_TELL))
+allc['outcome'], allc['reason'] = std2(c_lo, c_hi, len(tested)); allc['req13'] = K.req13([(allc['outcome'], allc['reason'])], nothing_returned=NR)   # the headline reads the product bootstrap interval, as before
 _old = [r for r in rows if r.get('old_rule') is not None]
 old_rule_cell = None   # top level in the feed, since a nested object in 'all' would break the page's flat table
 if _old: old_rule_cell = dict(tested=len(_old), unreleased=sum(1 for r in _old if r['old_rule']), share=round(sum(1 for r in _old if r['old_rule']) / len(_old), 4), rule='the rule the code ran until 10 Nov 2026: a cycle whose stated support end had passed was still tested when its end of life was in the future, and cycles with no release date were tested')
 anyp = sum(1 for v in byprod_all.values() if any(v)); allp = sum(1 for v in byprod_all.values() if v and all(v))
 product_level = {'Products with at least one unreleased supported cycle': cell(len(byprod_all), anyp), 'Products where every tested supported cycle is unreleased': cell(len(byprod_all), allp)}
-for k2 in product_level.values(): k2['tested'] = k2.pop('tested'); 
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed' if gate else 'FAILED', all_old_rule=old_rule_cell, products=len({r['product'] for r in rows}), no_cycles=none, cycles=len(rows), supported_tested=len(tested), all=allc, product_level=product_level, by_product=products, after_eol=after, silent_list=silent_list,
+for k2 in product_level.values(): k2['tested'] = k2.pop('tested'); k2['req13'] = K.req13([(k2['outcome'], k2['reason'])], nothing_returned=NR)
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed' if gate else 'FAILED', all_old_rule=old_rule_cell, products=len({r['product'] for r in rows}), no_cycles=NR, cycles=len(rows), supported_tested=len(tested), all=allc, product_level=product_level, by_product=products, after_eol=after, silent_list=silent_list,
            apart=dict(eol_no_date=sum(1 for r in rows if r['state'] == 'EOL_NO_DATE'), no_release_date=sum(1 for r in rows if r['state'] == 'NO_RELEASE_DATE'), too_new=sum(1 for r in rows if r['state'] == 'SUPPORTED_TOO_NEW'), support_ended_no_eol=sum(1 for r in rows if r['state'] == 'SUPPORT_ENDED_NO_EOL'), support_ended=sum(1 for r in rows if r['state'] == 'SUPPORT_ENDED'), no_cycle_release_date=sum(1 for r in rows if r['state'] == 'NO_CYCLE_RELEASE_DATE')))
 json.dump(out, open('summary_support.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')

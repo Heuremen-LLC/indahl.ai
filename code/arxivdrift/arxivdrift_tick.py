@@ -85,7 +85,9 @@ if gate:
 cur = {i: e['hist'][-1][1] for i, e in studies.items() if e['hist']}
 cls_n = C.Counter(cur.values()); read = sum(v for k, v in cls_n.items() if k not in ('PENDING', 'NOTHING_RETURNED')); change = cls_n['REVISED_NUMBERS'] + cls_n['REVISED_TEXT'] + cls_n['WITHDRAWN']
 lo, hi = K.wilson(change, read)
-classes = {k: dict(n=v, share=round(v / read, 4) if read else None, share_lo=round(K.wilson(v, read)[0], 4), share_hi=round(K.wilson(v, read)[1], 4)) for k, v in sorted(cls_n.items())}
+failed_reads = sorted(i for i, c in cur.items() if c == 'NOTHING_RETURNED'); pending = sorted(i for i, c in cur.items() if c == 'PENDING')   # 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md): a failed read is a status, listed apart, outside every share
+req13 = K.req13([(c, None) for c in cur.values() if c not in ('PENDING', 'NOTHING_RETURNED')], nothing_returned=failed_reads)
+classes = {k: dict(n=v, share=round(v / read, 4) if read else None, share_lo=round(K.wilson(v, read)[0], 4), share_hi=round(K.wilson(v, read)[1], 4)) for k, v in sorted(cls_n.items()) if k != 'NOTHING_RETURNED'}
 bym = C.defaultdict(C.Counter)
 for i, c in cur.items(): bym[(studies[i].get('indexed') or '')[:7]][c] += 1
 mrow = lambda v: dict(n=sum(v.values()), unchanged=v['UNCHANGED'], revised_same=v['REVISED_SAME'], revised_text=v['REVISED_TEXT'], revised_numbers=v['REVISED_NUMBERS'], withdrawn=v['WITHDRAWN'])
@@ -94,7 +96,8 @@ if bym.get(''): by_month['month not recorded'] = mrow(bym[''])   # 30 Oct (site 
 drifted = [dict(title=studies[i]['title'][:110], id=i, read=studies[i]['read_version'], latest=studies[i].get('latest_version'), cls=c, numbers_read=', '.join(studies[i].get('only_read', [])[:8]), numbers_latest=', '.join(studies[i].get('only_latest', [])[:8]), division=studies[i]['division'].upper())
            for i, c in cur.items() if c in ('REVISED_NUMBERS', 'WITHDRAWN')][:200]
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', studies=len(studies), read=read, due=len([i for i, e in studies.items() if not e['hist'] or now - e['hist'][-1][0] > 7 * 86400]),
-           any_change=dict(n=change, of=read, share=round(change / read, 4) if read else None, share_lo=round(lo, 4), share_hi=round(hi, 4)), classes=classes, by_month=by_month, drifted=drifted)
+           any_change=dict(n=change, of=read, share=round(change / read, 4) if read else None, share_lo=round(lo, 4), share_hi=round(hi, 4)), classes=classes, by_month=by_month, drifted=drifted,
+           failed_reads=dict(n=len(failed_reads), ids=failed_reads[:200]), pending=dict(n=len(pending)), req13=req13, req13_line=req13['line'])
 json.dump(out, open('summary_arxivdrift.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 p = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'arxivdrift_live', '--path', os.path.join(H, 'summary_arxivdrift.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

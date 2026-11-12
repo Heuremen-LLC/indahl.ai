@@ -18,7 +18,9 @@ def get(u):
         except Exception as e:
             print('launch: retry', a, e, file=sys.stderr); time.sleep(4 * (a + 1))
 iso = lambda s: D.datetime.fromisoformat(s.replace('Z', '+00:00')).timestamp()
-now = time.time(); up = get(BASE + 'upcoming/?limit=100&mode=normal'); time.sleep(2); pv = get(BASE + 'previous/?limit=100&mode=normal')
+SUMMARY_ONLY = bool(os.environ.get('LAUNCH_SUMMARY_ONLY'))   # 12 Nov 2026: rebuild the summary from the stored snapshots with no request (used to test the Faults and Guards 2.0 outcome rule offline)
+now = time.time(); up = None if SUMMARY_ONLY else get(BASE + 'upcoming/?limit=100&mode=normal'); time.sleep(0 if SUMMARY_ONLY else 2); pv = None if SUMMARY_ONLY else get(BASE + 'previous/?limit=100&mode=normal')
+NR = 0 if SUMMARY_ONLY else (up is None) + (pv is None)   # NOTHING_RETURNED: list reads of this run that returned nothing (PLAN_ADDENDUM_std2.md item 7)
 def load(f): return [json.loads(l) for l in open(f)] if os.path.exists(f) else []
 snaps = load('data/snapshots.jsonl'); last = {}
 for s in snaps: last[s['id']] = s
@@ -55,9 +57,10 @@ def cell(lbl, ll, rows):
     n = len(rows)
     if not n: return None
     sl = sorted(abs(x) for _, x in rows); med = sl[n // 2] if n % 2 else (sl[n // 2 - 1] + sl[n // 2]) / 2; k = sum(1 for _, x in rows if abs(x) > 24); a, b = wil(k, n)
-    oc = 'CANNOT_TELL' if (n < 30 or ll != '7 days') else ('ABOVE' if a > 0.25 else ('CONSISTENT' if b < 0.10 else 'CANNOT_TELL'))
+    # Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md, 12 Nov 2026): size that matters 0.25, band [0, 0.10) open at the top, the same rule at every lead. Under 30 scored launches is TOO_WIDE_TO_RESOLVE.
+    oc, why = _K.read(a, b, band=(0.0, 0.10), matters=0.25, edge='[)') if n >= 30 else (_K.CANNOT_TELL, _K.TOO_WIDE_TO_RESOLVE)
     sg = sorted(x for _, x in rows); msg = sg[n // 2] if n % 2 else (sg[n // 2 - 1] + sg[n // 2]) / 2   # 29 Oct (audit): early and late are shown apart
-    return dict(who=lbl, lead=ll, n=n, median_abs_slip_h=round(med, 1), median_signed_slip_h=round(msg, 1), later_than_24h=sum(1 for _, x in rows if x > 24), earlier_than_24h=sum(1 for _, x in rows if x < -24), over_24h=k, share=round(k / n, 3), lo=round(a, 3), hi=round(b, 3), outcome=oc)
+    return dict(who=lbl, lead=ll, n=n, median_abs_slip_h=round(med, 1), median_signed_slip_h=round(msg, 1), later_than_24h=sum(1 for _, x in rows if x > 24), earlier_than_24h=sum(1 for _, x in rows if x < -24), over_24h=k, share=round(k / n, 3), lo=round(a, 3), hi=round(b, 3), outcome=oc, reason=why, req13=_K.req13([(oc, why)], nothing_returned=NR))
 for L, ll in LEADS:
     c = cell('All providers', ll, scored[L]); cells.append(c) if c else None
     byp = C.defaultdict(list)

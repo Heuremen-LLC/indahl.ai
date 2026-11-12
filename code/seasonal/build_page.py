@@ -2,7 +2,7 @@
 """build_page.py: writes seasonal.html, the desk's page draft, from summary_seasonal.json. Reads no network. The live page is built by the site build from this body."""
 import json, os, sys, html
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
-from seasonal_headline import headline, cell, WORD, pc, f
+from seasonal_headline import headline, cell, WORD, W, pc, f
 S = json.load(open('summary_seasonal.json')); e = html.escape
 src = S['sources']; g = S['gates']; FR = S['frame']
 def iv(c): return 'too few seasons' if c['lo'] is None or c['seasons'] < FR['min_seasons'] or c['rows'] < FR['min_rows'] else '%s to %s' % (pc(c['lo']), pc(c['hi']))
@@ -11,15 +11,15 @@ def rel_table(var):
     for c in S['cells']:
         if c['variable'] != var or c['cell'].endswith('leaning') or not c['rows']: continue
         rows.append('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-            e(c['category']), e(c['bin']), f(c['rows']), f(c['seasons']), pc(c['mean_stated']), pc(c['observed']), iv(c), WORD[c['outcome']]))
+            e(c['category']), e(c['bin']), f(c['rows']), f(c['seasons']), pc(c['mean_stated']), pc(c['observed']), iv(c), W(c)))
     return ('<div class="tw"><table class="bench"><thead><tr><th>Category</th><th>Stated chance, percent</th><th>Rows</th><th>Seasons</th><th>Mean stated, percent</th><th>Observed, percent</th>'
             '<th>95%% interval, percent</th><th>Reading</th></tr></thead><tbody>'.replace('%%', '%') + ''.join(rows) + '</tbody></table></div>')
 lean = [c for c in S['cells'] if c['cell'].endswith('leaning')]
 lean_rows = ''.join('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-    e(c['cell'].split(',')[0].capitalize()), f(c['rows']), f(c['seasons']), pc(c['mean_stated']), pc(c['observed']), iv(c), WORD[c['outcome']]) for c in lean)
+    e(c['cell'].split(',')[0].capitalize()), f(c['rows']), f(c['seasons']), pc(c['mean_stated']), pc(c['observed']), iv(c), W(c)) for c in lean)
 VN = {'temp': 'Temperature', 'prec': 'Precipitation'}
 hss_rows = ''.join('<tr><td>%s</td><td>%s</td><td>%s</td><td>%+.3f</td><td>%+.3f to %+.3f</td><td>%s</td><td>%.3f</td><td>%s</td></tr>' % (
-    VN[h['variable']], e(h['score']), f(h['seasons']), h['mean_difference'], h['lo'], h['hi'], f(h['within_1_point']), h['median_abs_difference'], WORD[h['outcome']]) for h in S['heidke'])
+    VN[h['variable']], e(h['score']), f(h['seasons']), h['mean_difference'], h['lo'], h['hi'], f(h['within_1_point']), h['median_abs_difference'], W(h)) for h in S['heidke'])
 gate_line = 'All four known-good checks passed on this run.' if g['passed'] else 'A known-good check did not pass on this run, so every outcome reads cannot tell.'
 HL_BIG, HL_LINE = headline(S)
 hl = '<section id="hl-slot" class="hl-slot hl"><div class="hl-big">%s</div><p class="hl-line">%s</p></section>' % (e(HL_BIG), e(HL_LINE))
@@ -32,7 +32,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <h2>When the outlook leans</h2>
 <p>Every row in which any category was stated at 40 percent or more.</p>
 <div class="tw"><table class="bench"><thead><tr><th>Variable</th><th>Rows</th><th>Seasons</th><th>Mean stated, percent</th><th>Observed, percent</th><th>95%% interval, percent</th><th>Reading</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">One row is one season, one grid cell and one category, with the chance stated for that category. Rows are not independent. Every cell in a season shares one weather pattern, and neighbouring 3-month seasons share two of their months. So the interval is a moving-block bootstrap over seasons, in blocks of 12 consecutive seasons, 2,000 draws, and it is much wider than one that treats cells as independent. Reading: above if the whole interval is over the mean stated chance (the category happened more often than stated), below if it is under, consistent if the mean stated chance is inside an interval no wider than 10 points, otherwise cannot tell. A cell needs 30 rows and 24 seasons.</p>
+<p class="bench-note">One row is one season, one grid cell and one category, with the chance stated for that category. Rows are not independent. Every cell in a season shares one weather pattern, and neighbouring 3-month seasons share two of their months. So the interval is a moving-block bootstrap over seasons, in blocks of 12 consecutive seasons, 2,000 draws, and it is much wider than one that treats cells as independent. Reading: above if the whole interval is over the mean stated chance (the category happened more often than stated), below if it is under, otherwise cannot tell. The mean stated chance is a point figure with no tolerance, so a cell never reads consistent. Cannot tell carries one reason. STRADDLES_EDGE means the interval holds the mean stated chance. TOO_WIDE_TO_RESOLVE means the cell has fewer than 30 rows or 24 seasons. NO_INTERVAL_FORMABLE means the cell has no rows. No size that matters is named for these cells, so the both-alternatives test is not applied.</p>
 <h2>Temperature by stated chance</h2>
 %s
 <h2>Precipitation by stated chance</h2>
@@ -41,7 +41,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <h2>Our recompute of CPC&rsquo;s skill score</h2>
 <p>CPC defines its score as &ldquo;HSS (%%) = 100 * (H - E) / (T - E) where H = Number of correct forecasts, E = Expected number of correct forecasts (1/3 of total), and T = Total number of valid forecast-observation pairs&rdquo;, and the score with equal chances as &ldquo;HSS withEC (%%) = HSS * coverage&rdquo;. We used CPC&rsquo;s categorical outlook file, counted only cells with a favoured category for the first score, left out the few cells whose category in that file is not a whole number, did not weight cells by area, and set the result beside the score CPC states for the same season. The difference is ours minus CPC&rsquo;s, in points.</p>
 <div class="tw"><table class="bench"><thead><tr><th>Variable</th><th>Score</th><th>Seasons</th><th>Mean difference</th><th>95%% interval</th><th>Within 1 point</th><th>Median absolute difference</th><th>Reading</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">Reading: consistent if the interval of the mean difference lies inside minus 2 to plus 2 points, above or below if it lies wholly beyond that, otherwise cannot tell. For precipitation the first score covers %s of %s seasons. In the other %s every cell was equal chances. CPC lists no first score for them and an all score of 0, and ours is the same. The largest gap is %s points, in %s for precipitation, where %s cells with a category that is not a whole number were left out. This check shows that our reading of the archive pairs each outlook with the right season. It does not test the chances themselves.</p>
+<p class="bench-note">Reading: consistent if the interval of the mean difference lies inside minus 2 to plus 2 points, above or below if it lies wholly beyond that, otherwise cannot tell (STRADDLES_EDGE). For precipitation the first score covers %s of %s seasons. In the other %s every cell was equal chances. CPC lists no first score for them and an all score of 0, and ours is the same. The largest gap is %s points, in %s for precipitation, where %s cells with a category that is not a whole number were left out. This check shows that our reading of the archive pairs each outlook with the right season. It does not test the chances themselves.</p>
 <h2>What this page holds and what it leaves out</h2>
 <p>Every season in the archive with an observed category is read, and every grid cell with an observed category, %s cells. Outlooks still waiting for their season: %s for temperature and %s for precipitation. Set aside: longer leads (kept only as map contours from 2007), monthly outlooks, Alaska and Hawaii, and climate divisions, for which no archive of past outlooks with observed categories was found.</p>
 <p class="meta">Sources: NOAA Climate Prediction Center 3-month outlook verification files and stated Heidke scores, read without a key. NOAA/NWS information is in the public domain. Our counts and readings are ours and are not NWS material. Generated %s. Heuremen LLC.</p>

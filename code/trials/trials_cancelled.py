@@ -39,8 +39,12 @@ def reason(t):
 known = next((r for r in R if r['id'] == 'NCT05935592'), None); gate = bool(known and known['status'] == 'TERMINATED' and known['why'] and known['enrolled'] == 40) and total > 10000 and len(R) > 500 and reason('') == 'No reason given' and reason('Slow recruitment') == 'Recruitment' and reason('Study was never started') == 'Never started or never approved' and reason('zzz qqq') == 'Matches none of the words' and reason('Sponsor decision') == 'Funding or sponsor decision'
 print('trials cancelled: gate', 'passed' if gate else 'FAILED', 'population', total, 'stopped', len(R))
 def wil(k, n):
-    lo, hi = K.wilson(k, n); oc = K.CANNOT_TELL if (n < 30 or not gate) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
-    return dict(of=n, n=k, share=round(k / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc)
+    # 12 Nov 2026, PLAN_ADDENDUM_std2.md (Faults and Guards 2.0): size that matters 0.10, null 0, band [0, 0.05), edge '[)'. Under 30 records is TOO_WIDE_TO_RESOLVE, a failed known-good gate is NO_INTERVAL_FORMABLE.
+    lo, hi = K.wilson(k, n); lo = 0.0 if k == 0 else lo; hi = 1.0 if k == n else hi   # exact ends of the Wilson interval, so zero events reaches the null
+    if not gate: oc, why = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    elif n < 30: oc, why = K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    else: oc, why = K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)', null=0.0)
+    return dict(of=n, n=k, share=round(k / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=0))
 bystat = C.Counter(r['status'] for r in R); cls = C.defaultdict(C.Counter)
 for r in R: cls[r['cls']][r['status']] += 1
 def quarter(d): return d[:4] + ' Q' + str((int(d[5:7]) - 1) // 3 + 1) if len(d) >= 7 else 'no date'

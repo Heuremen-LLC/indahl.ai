@@ -155,11 +155,15 @@ def state(r):
     if not r.get('present') and r.get('removed_on') and r['removed_on'] < r['shutdown']: return 'REMOVED_EARLY'
     return 'HELD' if len({h[1] for h in r['history']}) == 1 else 'MOVED'
 cnt = C.Counter(state(r) for r in tested); nh = cnt['MOVED'] + cnt['REMOVED_EARLY']; lo, hi = K.wilson(nh, len(tested))
-oc = K.CANNOT_TELL if len(tested) < 30 else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
+# Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md, 12 Nov 2026): size that matters 0.10, band [0, 0.05) open at the top, Wilson 95%. Under 30 rows is TOO_WIDE_TO_RESOLVE, none is NO_INTERVAL_FORMABLE.
+# A failed read stops the pass and nothing is published, so a published summary carries 0 NOTHING_RETURNED.
+if not tested: oc, why = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+elif len(tested) < 30: oc, why = K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+else: oc, why = K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)')
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 byv = C.Counter(r['vendor'] for r in rows if r.get('present'))
 out = dict(updated=store.get('last_pass') or time.strftime('%d %b %H:%M', time.gmtime(now)), first_snapshot=first, rows=len(rows), sources=[dict(vendor=v, rows=byv[v], url=SRC[v]) for v in SRC],
-           test=dict(of=len(tested), held=cnt['HELD'], moved=cnt['MOVED'], removed_early=cnt['REMOVED_EARLY'], share=round(nh / len(tested), 4) if tested else None, share_lo=round(lo, 4) if tested else None, share_hi=round(hi, 4) if tested else None, outcome=oc),
+           test=dict(of=len(tested), held=cnt['HELD'], moved=cnt['MOVED'], removed_early=cnt['REMOVED_EARLY'], share=round(nh / len(tested), 4) if tested else None, share_lo=round(lo, 4) if tested else None, share_hi=round(hi, 4) if tested else None, outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=0)),
            upcoming=[dict(vendor=r['vendor'], url=SRC[r['vendor']], item=r['name'], shutdown=r['shutdown'] + (' (not sooner than)' if r['tentative'] else ''), days_left=days(today, r['shutdown']), deprecated=r['deprecated'] or '', notice=days(r['deprecated'], r['shutdown']) if r['deprecated'] else None) for r in upcoming],
            notice={v: x for v, x in nrows.items()}, lifespan=lifespan, changes={k: dict(n=n) for k, n in sorted(kinds.items())},
            change_list=[dict(url=SRC[c['key'].split('|')[0]], date=c['t'], kind=c['kind'], item=c['key'].split('|', 1)[1], vendor=c['key'].split('|')[0], was=c.get('old') or c.get('shutdown') or '', now=c.get('new') or '', note=hc.get(c['key'] + '|' + c['t'], '')) for c in chg[-40:][::-1]])

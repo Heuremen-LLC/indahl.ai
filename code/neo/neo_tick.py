@@ -56,24 +56,28 @@ def row_outcome(s, d, now_jd):
     """s: stated dict (orbit_id, jd, dist, dist_min, dist_max). d: delivered dict or None. Returns (outcome, why)."""
     lo, hi = s.get('dist_min'), s.get('dist_max')
     if s.get('dist') is None or lo is None or hi is None or lo > hi or s.get('jd') is None: return K.CANNOT_TELL, 'unreadable'
-    if s['jd'] > now_jd: return K.NOTHING_RETURNED, 'approach not yet passed'
+    if s['jd'] > now_jd: return None, 'approach not yet passed'   # no outcome: the read has not happened, a NOTHING_RETURNED status of the row (PLAN_ADDENDUM_std2.md)
     if d is None: return K.CANNOT_TELL, 'no record'
     a, b = d.get('dist_min'), d.get('dist_max')
     if d.get('dist') is None or a is None or b is None or a > b: return K.CANNOT_TELL, 'unreadable'
     if str(d.get('orbit_id')) == str(s.get('orbit_id')): return K.CANNOT_TELL, 'same solution'
     if hi - lo > WIDE: return K.CANNOT_TELL, 'wide range'
-    if a > hi: return K.ABOVE, None
-    if b < lo: return K.BELOW, None
-    if a >= lo and b <= hi: return K.CONSISTENT, None
+    o, _ = K.read(a, b, band=(lo, hi), edge='closed')   # the delivered 3-sigma range against the stated range, both published, ends included
+    if o != K.CANNOT_TELL: return o, None
     return K.CANNOT_TELL, 'edge'
-def cell_outcome(k, n):
+# PLAN_ADDENDUM_std2.md: the plan's own CANNOT_TELL causes onto the closed reasons of Faults and Guards 2.0 section 6.3
+REASON_OF = {'same solution': K.NO_INTERVAL_FORMABLE, 'no record': K.NO_INTERVAL_FORMABLE, 'unreadable': K.NO_INTERVAL_FORMABLE, 'wide range': K.TOO_WIDE_TO_RESOLVE, 'edge': K.STRADDLES_EDGE}
+def cell_read(k, n):
+    """Returns (outcome, lo, hi, reason). PLAN.md names two rules for a cell: ABOVE and BELOW against our 99.7 percent reading, CONSISTENT if the lower bound is 0.98 or more.
+    PLAN_ADDENDUM_std2.md writes the second as the band [0.98, 1.0], closed edges. Step one K.read with bound=CLAIM, step two K.read with band. No size that matters is named."""
     lo, hi = K.wilson(k, n)
-    if n < MIN_ROWS: o = K.CANNOT_TELL
-    elif hi < CLAIM: o = K.BELOW
-    elif lo > CLAIM: o = K.ABOVE
-    elif lo >= CONSISTENT_FLOOR: o = K.CONSISTENT
-    else: o = K.CANNOT_TELL
-    return o, lo, hi
+    if n == 0: return K.CANNOT_TELL, lo, hi, K.NO_INTERVAL_FORMABLE
+    if n < MIN_ROWS: return K.CANNOT_TELL, lo, hi, K.TOO_WIDE_TO_RESOLVE
+    o, r = K.read(lo, hi, bound=CLAIM, edge='closed')
+    if o not in (K.ABOVE, K.BELOW): o, r = K.read(lo, hi, band=(CONSISTENT_FLOOR, 1.0), edge='closed')
+    return o, lo, hi, r
+def cell_outcome(k, n):
+    o, lo, hi, _ = cell_read(k, n); return o, lo, hi
 def rule_selftest():
     S = dict(orbit_id='3', jd=100.0, dist=0.015, dist_min=0.010, dist_max=0.020)
     def D(lo, hi, oid='7'): return dict(orbit_id=oid, jd=100.0, dist=(lo + hi) / 2, dist_min=lo, dist_max=hi)
@@ -83,7 +87,8 @@ def rule_selftest():
          (row_outcome(dict(S, dist_min=0.001, dist_max=0.060), D(0.012, 0.013), 200) == (K.CANNOT_TELL, 'wide range')),
          (row_outcome(dict(S, dist_min=None), D(0.012, 0.013), 200) == (K.CANNOT_TELL, 'unreadable')),
          (row_outcome(dict(S, dist_min=0.03), D(0.012, 0.013), 200) == (K.CANNOT_TELL, 'unreadable')),
-         (row_outcome(S, D(0.012, 0.013), 50) == (K.NOTHING_RETURNED, 'approach not yet passed')),
+         (row_outcome(S, D(0.012, 0.013), 50) == (None, 'approach not yet passed')),
+         cell_read(5, 5)[3] == K.TOO_WIDE_TO_RESOLVE, cell_read(0, 0)[3] == K.NO_INTERVAL_FORMABLE, cell_read(100, 100) == (K.CANNOT_TELL,) + K.wilson(100, 100) + (K.STRADDLES_EDGE,), cell_read(200, 200)[::3] == (K.CONSISTENT, None),
          cell_outcome(200, 200)[0] == K.CONSISTENT, cell_outcome(150, 200)[0] == K.BELOW, cell_outcome(40, 40)[0] == K.CANNOT_TELL, cell_outcome(5, 5)[0] == K.CANNOT_TELL,
          tsig_minutes('2_09:08') == 3428, tsig_minutes('13:02') == 782, tsig_minutes('< 00:01') is None]
     return all(t), t
@@ -214,7 +219,7 @@ for (des, g, oid), s in sorted(first.items(), key=lambda kv: (kv[1]['jd'], kv[0]
         if d is None: d = by_designation(des, s['jd'])
     o, why = row_outcome(s, d, NOW_JD)
     row = dict(des=des, fullname=s['fullname'], approach=iso_of_jd(s['jd']), group=round(g, 3), lead_days=round(s['jd'] - s['copy_jd'], 2), stated_copy=s['copy_ts'], stated_src=s['copy_src'], stated_url=s['copy_url'],
-               stated_orbit=oid, stated_jd=s['jd'], stated=s['dist'], stated_min=s['dist_min'], stated_max=s['dist_max'], stated_tsig=s['t_sigma_f'], h=s['h'], outcome=o, why=why)
+               stated_orbit=oid, stated_jd=s['jd'], stated=s['dist'], stated_min=s['dist_min'], stated_max=s['dist_max'], stated_tsig=s['t_sigma_f'], h=s['h'], outcome=o, why=why, reason=(REASON_OF[why] if o == K.CANNOT_TELL else None), read_status=(K.NOTHING_RETURNED if o is None else None))
     if d:
         row.update(latest_orbit=d['orbit_id'], latest_des=d['des'], latest_jd=d['jd'], latest=d['dist'], latest_min=d['dist_min'], latest_max=d['dist_max'])
         if s['dist_min'] is not None and s['dist_max'] is not None and s['dist_max'] > s['dist_min'] and d['dist'] is not None and s['dist'] is not None:
@@ -247,7 +252,7 @@ agree = [r for r in same if abs(r['latest'] - r['stated']) <= 1e-5 * r['stated']
 kg['join'] = len(same) >= 5 and len(agree) / len(same) >= 0.95
 kg['rule'] = rule_selftest()[0]
 GATE = all(kg.values())
-rows = [r for r in rows if r['outcome'] == K.NOTHING_RETURNED] + K.apply_gate(GATE, [r for r in rows if r['outcome'] != K.NOTHING_RETURNED])   # a row with no approach yet has no outcome to gate
+rows = [r for r in rows if r['read_status']] + [dict(r, reason=(r['reason'] if GATE else K.NO_INTERVAL_FORMABLE)) for r in K.apply_gate(GATE, [r for r in rows if not r['read_status']])]   # a row with no approach yet has no outcome to gate. A gate failure is NO_INTERVAL_FORMABLE (PLAN_ADDENDUM_std2.md)
 rows.sort(key=lambda r: (r['stated_jd'], r['des'], -r['lead_days']))
 def oc(r): return r['outcome']
 
@@ -260,13 +265,16 @@ def cell(name, rs):
         k = r.get('latest_des') or r['des']          # 11 Nov 2026 (referee 2, post-seal bookkeeping): one object by the latest record's designation, so a renamed or numbered object is one object
         if k in seen: continue
         seen.add(k); once.append(r)
-    cnt = C.Counter(oc(r) for r in once); why = C.Counter(r['why'] for r in once if oc(r) == K.CANNOT_TELL and r.get('why'))
-    n = cnt[K.CONSISTENT] + cnt[K.ABOVE] + cnt[K.BELOW]; k = cnt[K.CONSISTENT]; o, lo, hi = cell_outcome(k, n)
+    cnt = C.Counter(oc(r) for r in once if oc(r)); why = C.Counter(r['why'] for r in once if oc(r) == K.CANNOT_TELL and r.get('why'))
+    n = cnt[K.CONSISTENT] + cnt[K.ABOVE] + cnt[K.BELOW]; k = cnt[K.CONSISTENT]; o, lo, hi, why_ct = cell_read(k, n)
+    nyet = sum(1 for r in once if r.get('read_status'))
+    if not GATE: o, why_ct = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
     km = [abs(r['move_km']) for r in once if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW) and r.get('move_km') is not None]
     zs = [abs(r['z']) for r in once if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW) and r.get('z') is not None]
     ts = [r for r in once if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW) and r.get('tsig_min') and r.get('dt_min') is not None]
     return dict(cell=name, rows=len(once), scored=n, inside=k, above=cnt[K.ABOVE], below=cnt[K.BELOW], cannot_tell=cnt[K.CANNOT_TELL], cannot_tell_why=dict(why),
-                not_yet=cnt[K.NOTHING_RETURNED], share=round(k / n, 4) if n else None, lo=round(lo, 4), hi=round(hi, 4), claim=CLAIM, outcome=o if GATE else K.CANNOT_TELL,
+                not_yet=nyet, share=round(k / n, 4) if n else None, lo=round(lo, 4), hi=round(hi, 4), claim=CLAIM, outcome=o, reason=why_ct,
+                req13=K.req13([dict(outcome=r['outcome'], reason=r.get('reason')) for r in once if r['outcome']], nothing_returned=nyet),
                 median_abs_move_km=med(km), median_abs_shift_sigma=med(zs), share_beyond_1_sigma=round(sum(z > 1 for z in zs) / len(zs), 3) if zs else None, shift_rows=len(zs),
                 time_rows=len(ts), time_inside_3_sigma=sum(abs(r['dt_min']) <= r['tsig_min'] for r in ts))
 head = [r for r in rows if r['headline']]
@@ -281,7 +289,7 @@ def once_all(rs):
 _sc = [r for r in once_all(head) if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW)]
 by_copy = dict(scored=dict(C.Counter(r['stated_copy'][:8] for r in _sc)), outside=dict(C.Counter(r['stated_copy'][:8] for r in _sc if oc(r) != K.CONSISTENT)))   # display only: which copy each scored row was stated in
 later = [r for r in rows if not r['headline']]
-later_cnt = C.Counter(oc(r) for r in later)
+later_cnt = C.Counter(oc(r) for r in later if oc(r))
 # 10 Nov 2026, referee (neo_index_referee/REFEREE.md R1, R4, R5): display only, added after the data, never used for an outcome.
 # (a) the copy that supplies the most scored rows, and every cell read again without it. (b) every cell read against 98.9 percent, the share of a
 # two-dimensional normal inside its 3-sigma ellipse (1 - exp(-4.5)), the floor the CNEOS target-plane wording gives. (c) lopsided stated ranges.
@@ -294,13 +302,14 @@ def _dep():
     out = dict(copy=big, copy_day=big[:8], copy_url=next((r['stated_url'] for r in sc if r['stated_copy'] == big), None), cells=[])
     for nm, a, b in LEADS:
         c_all = cell(nm, lead_rs(a, b, head)); rs = lead_rs(a, b, [r for r in head if r['stated_copy'] != big])
-        c_wo = cell(nm, rs); o2, lo2, hi2 = cell_outcome(c_all['inside'], c_all['scored'])
-        o2 = (K.BELOW if hi2 < CLAIM_2D else o2) if c_all['scored'] >= MIN_ROWS else K.CANNOT_TELL
+        c_wo = cell(nm, rs); o2, lo2, hi2, r2 = cell_read(c_all['inside'], c_all['scored'])
+        if c_all['scored'] >= MIN_ROWS and hi2 < CLAIM_2D: o2, r2 = K.BELOW, None
         sc_c = [r for r in once_all(lead_rs(a, b, head)) if oc(r) in (K.CONSISTENT, K.ABOVE, K.BELOW)]
-        one_miss = cell_outcome(c_all['inside'] - 1, c_all['scored'])[0] if c_all['scored'] and c_all['inside'] == c_all['scored'] else None
+        _om = cell_read(c_all['inside'] - 1, c_all['scored']) if c_all['scored'] and c_all['inside'] == c_all['scored'] else None
+        one_miss = _om[0] if _om else None
         out['cells'].append(dict(cell=nm, from_copy_scored=sum(r['stated_copy'] == big for r in sc_c), from_copy_outside=sum(r['stated_copy'] == big and oc(r) != K.CONSISTENT for r in sc_c),
-                                 without=dict(scored=c_wo['scored'], inside=c_wo['inside'], lo=c_wo['lo'], hi=c_wo['hi'], outcome=c_wo['outcome']),
-                                 against_2d=dict(claim=round(CLAIM_2D, 4), outcome=o2 if GATE else K.CANNOT_TELL), outcome_if_one_outside=one_miss))
+                                 without=dict(scored=c_wo['scored'], inside=c_wo['inside'], lo=c_wo['lo'], hi=c_wo['hi'], outcome=c_wo['outcome'], reason=c_wo['reason']),
+                                 against_2d=dict(claim=round(CLAIM_2D, 4), outcome=o2 if GATE else K.CANNOT_TELL, reason=r2 if GATE else K.NO_INTERVAL_FORMABLE), outcome_if_one_outside=one_miss, reason_if_one_outside=_om[3] if _om else None))
     return out
 dependence = _dep()
 # 11 Nov 2026, referee 2 (neo_index_referee/REFEREE_20261111.md 3B, 3A): display only, added after the data, never used for an outcome.
@@ -348,7 +357,8 @@ if not os.path.exists(seal_f) and K.plan_committed('PLAN.md', NOW):
     json.dump(dict(plan_commit=git('log', '-1', '--format=%H', '--', 'PLAN.md'), plan_commit_time=git('log', '-1', '--format=%cI', '--', 'PLAN.md'),
                    plan_sha256=hashlib.sha256(open('PLAN.md', 'rb').read()).hexdigest(), first_comparison=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(NOW))), open(seal_f, 'w'), indent=1)
 seal = json.load(open(seal_f)) if os.path.exists(seal_f) else None
-cnt_all = C.Counter(oc(r) for r in rows)
+cnt_all = C.Counter(oc(r) for r in rows if oc(r))
+REQ13 = K.req13([dict(outcome=r['outcome'], reason=r.get('reason')) for r in head if r['outcome']], nothing_returned=sum(1 for r in head if r.get('read_status')))   # the headline rows of every approach, failed reads apart
 summary = dict(
     desk='NEO', publisher='Heuremen LLC', generated=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(NOW)), plan='PLAN.md', plan_seal=seal, plan_unchanged_since_commit=K.plan_committed('PLAN.md'),
     claim=dict(source='NASA/JPL CNEOS, SBDB Close-Approach Data API ' + str(cur_version), stated='dist_min and dist_max: minimum and maximum (3-sigma) approach distance (au)',
@@ -357,7 +367,7 @@ summary = dict(
     gates=dict(kg, passed=GATE, same_solution_rows=len(same), same_solution_agree=len(agree)),
     sources=dict(wayback_index_copies=len(cdx), wayback=dict(wb), own_copies=own, own_first_copy=min((c['ts'] for c in copies if c['src'] == 'own'), default=None), current_record_rows=len(cur_rows or []), sentry_stored=sentry_now, stale=STALE,
                  statements_outside_frame=outside, statements_copied_after_approach=after),
-    rows=dict(total=len(rows), headline=len(head), later_statements=len(later), objects=len(set(r['des'] for r in rows)), outcomes=dict(cnt_all),
+    rows=dict(total=len(rows), headline=len(head), later_statements=len(later), objects=len(set(r['des'] for r in rows)), outcomes=dict(cnt_all), failed_reads=sum(1 for r in rows if r.get('read_status')), req13=REQ13,
               later_statement_outcomes=dict(later_cnt), first_stated_copy=min((r['stated_copy'] for r in rows), default=None), last_stated_copy=max((r['stated_copy'] for r in rows), default=None)),
     cells=cells, august_2026=aug, by_copy_day=by_copy, dependence=dependence, more=more,
     after_data_note='dependence (each cell read without the copy that supplies the most scored rows, each cell read against 98.9 percent, and the outcome a cell at its floor would take with one row outside) and nominal_position and lopsided on rows were added after the data on 10 Nov 2026 at the outside referee (neo_index_referee/REFEREE.md). The block more (statements over 365 days ahead, other copies over 30 days ahead, outside ranges under 1,000 km wide, the later nominal distance read alone) was added after the data on 11 Nov 2026 at the second outside referee (neo_index_referee/REFEREE_20261111.md). Display only. No outcome uses them. On 11 Nov 2026 an object in a cell is also counted once by the latest record designation, a bookkeeping fix after the seal (see CHECKS.md).',

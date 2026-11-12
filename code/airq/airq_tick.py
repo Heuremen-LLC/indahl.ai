@@ -43,8 +43,11 @@ def ab_ok(a, b):
 def haversine(la1, lo1, la2, lo2):
     p = math.pi / 180; a = math.sin((la2 - la1) * p / 2) ** 2 + math.cos(la1 * p) * math.cos(la2 * p) * math.sin((lo2 - lo1) * p / 2) ** 2; return 12742000 * math.asin(math.sqrt(a))
 def outcome(n_not, n):
-    if n < 30: return K.CANNOT_TELL
-    lo, hi = K.wilson(n_not, n); return K.ABOVE if lo > 0.5 else (K.CONSISTENT if hi < 0.5 else K.CANNOT_TELL)
+    # 12 Nov 2026, PLAN_ADDENDUM_std2.md (Faults and Guards 2.0): one-sided bound 0.50, closed edge, no size that matters. Returns (outcome, reason). Under 30 monitors is TOO_WIDE_TO_RESOLVE, none at all is NO_INTERVAL_FORMABLE. Never CONSISTENT, never NOTHING_RETURNED.
+    if n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    lo, hi = K.wilson(n_not, n); lo = 0.0 if n_not == 0 else lo; hi = 1.0 if n_not == n else hi   # exact ends: K.wilson(0, n) gives 6.9e-18 at the lower end
+    return K.read(lo, hi, bound=0.5)
 def gate():
     rnd = random.Random(5); xs = [rnd.uniform(2, 60) for _ in range(80)]
     ok = meets(metrics(xs, xs)); ok &= not meets(metrics(xs, [2 * v for v in xs])); ok &= not meets(metrics(xs, [v + 8 for v in xs])); ok &= not meets(metrics(xs, [rnd.uniform(2, 60) for _ in xs]))
@@ -155,8 +158,8 @@ for r in ('R1', 'R2', 'R3'):
     for k, ps in by_mon.items():
         ps = [p for p in ps if p[r]]; 
         if ps: unit.append(sorted(ps, key=lambda p: p[r]['rmse'])[(len(ps) - 1) // 2])
-    n = len(unit); n_not = sum(1 for p in unit if not meets(p[r])); lo, hi = K.wilson(n_not, n) if n else (0, 1)
-    comparison[NAME[r]] = dict(of=n, n=n_not, share=round(n_not / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=outcome(n_not, n))
+    n = len(unit); n_not = sum(1 for p in unit if not meets(p[r])); lo, hi = K.wilson(n_not, n) if n else (0, 1); _o, _w = outcome(n_not, n)
+    comparison[NAME[r]] = dict(of=n, n=n_not, share=round(n_not / n, 4) if n else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=_o, reason=_w, req13=K.req13([(_o, _w)], nothing_returned=len(unread) + len(AQS_FAILED if WIN == '2026' else []) + len(AQS_DAYS_REFUSED if WIN == '2026' else [])))
     ms = [p[r] for p in unit]
     medians[NAME[r]] = dict(monitors=n, slope=round(statistics.median([m['slope'] for m in ms]), 2) if ms else None, intercept=round(statistics.median([m['intercept'] for m in ms]), 2) if ms else None, r2=round(statistics.median([m['r2'] for m in ms]), 2) if ms else None, rmse=round(statistics.median([m['rmse'] for m in ms]), 2) if ms else None)
     srt = sorted(unit, key=lambda p: p[r]['rmse']) if r == 'R3' else []

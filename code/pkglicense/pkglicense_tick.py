@@ -116,11 +116,20 @@ if gate:
             if projects[n]['cls'] == 'NOT_COMPARABLE': projects[n]['why'] = 'repository license not detected' if spdx in (None, 'NOASSERTION') else ('repository not found' if spdx == 'NOT_FOUND' else 'no stated license')
     json.dump(projects, open('data/projects.json.tmp', 'w')); os.replace('data/projects.json.tmp', 'data/projects.json')
 rows = {n: projects[n] for n in names if n in projects and projects[n].get('cls')}; cnt = C.Counter(r['cls'] for r in rows.values()); comp = cnt['AGREE'] + cnt['DISAGREE']
-lo, hi = K.wilson(cnt['DISAGREE'], comp); oc = K.CANNOT_TELL if (comp < 30 or not gate) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
+lo, hi = K.wilson(cnt['DISAGREE'], comp)
+# 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md): K.read with the size that matters 0.10 and the band [0, 0.05), a reason beside every CANNOT_TELL, and the REQ-13 block
+def read_share(k, n, gate):
+    lo, hi = K.wilson(k, n); lo = 0.0 if k == 0 else lo; hi = 1.0 if k == n else hi
+    if not gate or n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)')
+FAILED_READS = ('not found on PyPI', 'repository not found')   # failed reads of a source (NOTHING_RETURNED), outside numerator and denominator. Names with no class at all (a GitHub batch that did not return) are failed reads too
+failed = [r for r in rows.values() if r.get('why') in FAILED_READS]; unread = [n for n in names if not (n in projects and projects[n].get('cls'))]
+oc, oc_why = read_share(cnt['DISAGREE'], comp, gate); r13 = K.req13([(oc, oc_why)], nothing_returned=len(failed) + len(unread))
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 dis = [n for n, r in rows.items() if r['cls'] == 'DISAGREE']
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed' if gate else 'FAILED', list_date=listdate, projects=len(names), read=len(rows), comparable=comp,
-           classes={k: dict(n=v) for k, v in sorted(cnt.items())}, disagree=dict(n=cnt['DISAGREE'], of=comp, share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, hand_checked=len([n for n in dis if n in hc]), awaiting=len([n for n in dis if n not in hc])),
+           classes={k: dict(n=v) for k, v in sorted(cnt.items())}, disagree=dict(n=cnt['DISAGREE'], of=comp, share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=oc_why, req13=r13, req13_line=r13['line'], failed_reads=dict(not_found_on_pypi=len([r for r in failed if r['why'] == FAILED_READS[0]]), repository_not_found=len([r for r in failed if r['why'] == FAILED_READS[1]]), no_class_read=len(unread)), hand_checked=len([n for n in dis if n in hc]), awaiting=len([n for n in dis if n not in hc])),
            disagree_list=[dict(project=n, stated='; '.join(rows[n]['stated'])[:90], repo='%s/%s' % tuple(rows[n]['repo']), repo_license=rows[n].get('repo_license'), reason=hc[n]) for n in dis if n in hc][:150], not_comparable_reasons={k: dict(n=v) for k, v in C.Counter(r.get('why') for r in rows.values() if r['cls'] == 'NOT_COMPARABLE').most_common()})
 json.dump(out, open('summary_pkglicense.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')

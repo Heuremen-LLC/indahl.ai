@@ -15,10 +15,10 @@ SEQN = {s['id']: s for s in S['sequences']}
 def iv(a): return '' if not a else '%s to %s' % (pc(a[0]), pc(a[1]))
 def cover_rows(cs):
     return ''.join('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-        e(c['cell']), n(c['scored']), n(c['inside']), n(c['above']), n(c['below']), pc(c['share']), iv(c['wilson']), iv(c['boot']), WORD[c['outcome']], n(c['blocks']), n(c['range_zero_zero'])) for c in cs)
+        e(c['cell']), n(c['scored']), n(c['inside']), n(c['above']), n(c['below']), pc(c['share']), iv(c['wilson']), iv(c['boot']), rw(c), n(c['blocks']), n(c['range_zero_zero'])) for c in cs)
 def rel_rows(cs):
     return ''.join('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-        e(c['cell']), n(c['scored']), n(c['occurred']), pc(c['stated_mean']), pc(c['share']), iv(c['wilson']), iv(c['boot']), WORD[c['outcome']], n(c['blocks'])) for c in cs if c['scored'])
+        e(c['cell']), n(c['scored']), n(c['occurred']), pc(c['stated_mean']), pc(c['share']), iv(c['wilson']), iv(c['boot']), rw(c), n(c['blocks'])) for c in cs if c['scored'])
 def miss_rows(ms):
     out = []
     for m in ms:
@@ -28,12 +28,12 @@ def miss_rows(ms):
     return ''.join(out)
 def reasons(d, names):
     return ', '.join('%s %s' % (n(d[k]), t) for k, t in names if d.get(k))
-from quake_headline import headline
+from quake_headline import headline, rw
 NZ = D['cover_without_zero_ranges'][0]
 def _reg(g):
     c, r = g['cover'], g['rel10']
     return ('%s (%s events): M3 and above %s of %s inside, %s percent, %s, and at least one happened in %s of %s windows stated at 10 percent or more, %s percent against %s stated, %s'
-            % (g['region'], n(g['sequences']), n(c['inside']), n(c['scored']), pc(c['share']), WORD[c['outcome']], n(r['occurred']), n(r['scored']), pc(r['share']), pc(r['stated_mean']), WORD[r['outcome']]))
+            % (g['region'], n(g['sequences']), n(c['inside']), n(c['scored']), pc(c['share']), rw(c), n(r['occurred']), n(r['scored']), pc(r['share']), pc(r['stated_mean']), rw(r)))
 REG = ', and '.join(e(_reg(g)) for g in D['by_region'])
 HL_BIG, HL_LINE = headline(S)
 hl = '<section id="hl-slot" class="hl-slot hl"><div class="hl-big">%s</div><p class="hl-line">%s</p></section>' % (e(HL_BIG), e(HL_LINE))
@@ -47,10 +47,10 @@ body = hl + '''<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>
 <p>Windows from one sequence overlap. Every version of one forecast counts the same aftershocks, and the day, week, month and year windows of one version are nested. So every interval here is given two ways. The Wilson interval treats rows as independent. The second resamples whole groups of sequences, where sequences within 100 km and a year of each other form one group. The reading uses the wider of the two. A count outside the range is a count outside the range. This page does not say why. The plan, with the rules and the known-good checks, was fixed before any stated figure was set beside a count.</p>
 <h2>How often the count fell inside the stated range</h2>
 <div class="tw"><table class="bench"><thead><tr><th>Cell</th><th>Scored</th><th>Inside</th><th>Above the range</th><th>Below the range</th><th>Inside, percent</th><th>Wilson 95%% interval</th><th>Sequence 95%% interval</th><th>Reading</th><th>Groups of sequences</th><th>Rows with a range of 0 to 0</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">One row is one forecast version, one window and one magnitude. Reading against the stated 95 percent: below if the upper bound is under 95 percent, above if the lower bound is over 95 percent, consistent if the interval lies within 92.5 to 97.5 percent, otherwise cannot tell. Fewer than 30 rows or fewer than 10 separate groups of nearby sequences is cannot tell. A range of 0 to 0 is a statement that none is likely, and a single event breaks it. Most rows at M5 and above have a range of 0 to 0, and those rows are inside unless one such earthquake happens. Without them, M3 and above holds %s of %s inside (%s percent, %s, %s).</p>
+<p class="bench-note">One row is one forecast version, one window and one magnitude. Reading against the stated 95 percent: below if the upper bound is under 95 percent, above if the lower bound is over 95 percent, consistent if the interval lies within 92.5 to 97.5 percent, otherwise cannot tell with the reason STRADDLES_EDGE. Fewer than 30 rows or fewer than 10 separate groups of nearby sequences is cannot tell with the reason TOO_WIDE_TO_RESOLVE. A cell with no rows or no interval is cannot tell with the reason NO_INTERVAL_FORMABLE. Edges are closed, so an interval end equal to a stated figure is neither above nor below it. No size that matters is named for these cells, so the check for an interval that holds both zero and a size that matters is not applied. A range of 0 to 0 is a statement that none is likely, and a single event breaks it. Most rows at M5 and above have a range of 0 to 0, and those rows are inside unless one such earthquake happens. Without them, M3 and above holds %s of %s inside (%s percent, %s, %s).</p>
 <h2>How often at least one happened, by stated chance</h2>
 <div class="tw"><table class="bench"><thead><tr><th>Stated chance</th><th>Scored</th><th>At least one happened</th><th>Stated, mean percent</th><th>Happened, percent</th><th>Wilson 95%% interval</th><th>Sequence 95%% interval</th><th>Reading</th><th>Groups of sequences</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">Every magnitude and window together. Reading: above if the lower bound is over the mean stated chance, below if the upper bound is under it, consistent if the whole interval lies within a tolerance of it, otherwise cannot tell. The tolerance is 5 points, or half the stated chance or half its complement when that is smaller, and never under 1 point. The chance of an earthquake as large as the mainshock is read on its own: %s of %s windows saw one against a mean stated chance of %s percent, and the reading is %s.</p>
+<p class="bench-note">Every magnitude and window together. Reading: above if the lower bound is over the mean stated chance, below if the upper bound is under it, consistent if the whole interval lies within a tolerance of it, otherwise cannot tell with the reason STRADDLES_EDGE. Fewer than 30 rows or 10 groups is cannot tell with the reason TOO_WIDE_TO_RESOLVE. The tolerance is 5 points, or half the stated chance or half its complement when that is smaller, and never under 1 point. The chance of an earthquake as large as the mainshock is read on its own: %s of %s windows saw one against a mean stated chance of %s percent, and the reading is %s.</p>
 <h2>Higher stated chances, by magnitude and by window</h2>
 <p>The same rows, stated at 10 percent or more, pooled and then split by magnitude and by window. This split was added after the data, at the outside review, and decides nothing.</p>
 <div class="tw"><table class="bench"><thead><tr><th>Rows</th><th>Scored</th><th>At least one happened</th><th>Stated, mean percent</th><th>Happened, percent</th><th>Wilson 95%% interval</th><th>Sequence 95%% interval</th><th>Reading</th><th>Groups of sequences</th></tr></thead><tbody>%s</tbody></table></div>
@@ -70,8 +70,8 @@ body = hl + '''<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>
 <p class="meta">Named here and want to answer a row? <a href="/respond?u=quake-all">Respond</a></p>
 <section id="replies" data-prefix="quake"></section><script src="/replies.js" defer></script>''' % (
     e(src['first_event'][:10]), e(src['last_event'][:10]), gate_line,
-    cover_rows([S['headline_cell']] + [c for c in S['cover_by_magnitude'] if c['cell'] != 'M3 and above'] + S['cover_by_window'] + [S['cover_all']]), n(NZ['inside']), n(NZ['scored']), pc(NZ['share']), 'interval %s to %s percent' % (pc(NZ['lo']), pc(NZ['hi'])), WORD[NZ['outcome']],
-    rel_rows(S['reliability']), n(ra['occurred']), n(ra['scored']), pc(ra['stated_mean']), WORD[ra['outcome']],
+    cover_rows([S['headline_cell']] + [c for c in S['cover_by_magnitude'] if c['cell'] != 'M3 and above'] + S['cover_by_window'] + [S['cover_all']]), n(NZ['inside']), n(NZ['scored']), pc(NZ['share']), 'interval %s to %s percent' % (pc(NZ['lo']), pc(NZ['hi'])), rw(NZ),
+    rel_rows(S['reliability']), n(ra['occurred']), n(ra['scored']), pc(ra['stated_mean']), rw(ra),
     rel_rows([D['stated_10_percent_or_more_all']] + D['stated_10_percent_or_more']),
     miss_rows(S['biggest_misses'][:15]),
     n(fc['inside']), n(fc['scored']), pc(fc['share']), iv(fc['boot']),

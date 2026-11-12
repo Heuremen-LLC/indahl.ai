@@ -105,14 +105,17 @@ for k in wcur:
     if polls_n >= 100 and wcur[k]['u1'] is not None and u5: rows[k] = (agree(wcur[k]['u1'], sum(u5) / len(u5), polls_n, absent), wcur[k]['u1'], sum(u5) / len(u5), polls_n)
     else: rows[k] = ('NOT_COMPARABLE', wcur[k]['u1'], None, polls_n)
 cmp = [k for k, v in rows.items() if v[0] in ('AGREE', 'DISAGREE')]; nd = [k for k in cmp if rows[k][0] == 'DISAGREE']
-lo, hi = K.wilson(len(nd), len(cmp)) if cmp else (0, 1)
-oc = 'NOTHING_RETURNED' if not cmp else (K.ABOVE if lo > 0.05 else (K.CONSISTENT if hi < 0.15 else K.CANNOT_TELL))
+# 12 Nov 2026, PLAN_ADDENDUM_std2.md (Faults and Guards 2.0): size that matters 0.05, null 0, band [0, 0.15), edge '[)'. No comparable endpoint yet is CANNOT_TELL NO_INTERVAL_FORMABLE. NOTHING_RETURNED is a status of a failed read and is never an outcome.
+def _wil(k, n):   # exact ends: K.wilson(0, n) gives 6.9e-18 at the lower end, which misses the null at zero in K.read
+    _l, _h = K.wilson(k, n); return (0.0 if k == 0 else _l, 1.0 if k == n else _h)
+lo, hi = _wil(len(nd), len(cmp)) if cmp else (0, 1)
+oc, why = K.read(lo, hi, band=(0.0, 0.15), matters=0.05, edge='[)', null=0.0) if cmp else (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE)
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 samp = random.Random(7).sample(sorted(nd), min(10, len(nd))) if nd else []
 json.dump(dict(sample_seed7=samp, disagree=sorted(nd)), open('data/hand_check.json', 'w'), indent=1)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed', polls_kept=allp, first_poll=time.strftime('%d %b %H:%M UTC', time.gmtime(first)), models=len({e['m'] for e in eps}), hosts=len({e['h'] for e in eps}), endpoints=len(eps), failed_models=len(failed),
            problems_now=len(problems), below_100_now=below_100_now, flagged_now=flagged_now, problems=problems, quantization=quant, models_by_hosts=dict(b),
-           headline=dict(of=len(cmp), n=len(nd), share=round(len(nd) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, span_end=time.strftime('%d %b %H:%M', time.gmtime(wend)) if wend else None, span_polls=len(wpolls) if wend else len(polls), polls_24h=len(polls)), headline_n=len(nd), headline_of=len(cmp),
+           headline=dict(of=len(cmp), n=len(nd), share=round(len(nd) / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=failed), failed_models_list=sorted(failed), span_end=time.strftime('%d %b %H:%M', time.gmtime(wend)) if wend else None, span_polls=len(wpolls) if wend else len(polls), polls_24h=len(polls)), headline_n=len(nd), headline_of=len(cmp),
            top_line='%d endpoints on %d hosts for %d open-weight models. %d are flagged by OpenRouter or show a 5-minute uptime below 100 now.' % (len(eps), len({e['h'] for e in eps}), len({e['m'] for e in eps}), len(problems)))
 json.dump(out, open('summary_hosts.json', 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')

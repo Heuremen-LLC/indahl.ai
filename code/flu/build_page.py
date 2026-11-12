@@ -2,7 +2,7 @@
 """build_page.py: writes flu.html, the desk's page draft, from summary_flu.json. Reads no network. The live page is built by the site build from this body."""
 import json, os, sys, html
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
-from flu_headline import headline, cell, WORD, pc, f
+from flu_headline import headline, cell, WORD, pc, f, ow
 S = json.load(open('summary_flu.json')); e = html.escape
 src = S['sources']; g = S['gates']; R = S['rows']; FR = S['frame']
 def iv(c):
@@ -10,7 +10,7 @@ def iv(c):
     return '%s to %s' % (pc(c['lo']), pc(c['hi']))
 def cov_row(label, c):
     return '<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-        e(label), f(c['scored']), f(c['inside']), pc(c['share']), iv(c), WORD[c['outcome']], pc(c['share_above']), pc(c['share_below']), f(c['cannot_tell']), f(c['nothing_returned']))
+        e(label), f(c['scored']), f(c['inside']), pc(c['share']), iv(c), ow(c), pc(c['share_above']), pc(c['share_below']), f(c['cannot_tell']), f(c['nothing_returned']))
 COVH = '<thead><tr><th>Cell</th><th>Scored</th><th>Inside</th><th>Inside, percent</th><th>95% interval, percent</th><th>Reading</th><th>Above, percent</th><th>Below, percent</th><th>Cannot tell</th><th>Not reported yet</th></tr></thead>'
 def cov_table(names, level, side):
     return '<div class="tw"><table class="bench">%s<tbody>%s</tbody></table></div>' % (COVH, ''.join(cov_row(n.replace('season ', 'Season ').replace('horizon ', 'Horizon ').replace('all horizons', 'All horizons'), cell(S, n, level, side)) for n in names))
@@ -24,13 +24,13 @@ def wis_rows():
             out.append('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
                 e(n.replace('season ', 'Season ').replace('horizon ', 'Horizon ').replace('all horizons', 'All horizons')), 'latest' if side == 'final' else 'first reported', f(c['rows']),
                 '' if c['ens_wis_mean'] is None else '%.1f' % c['ens_wis_mean'], '' if c['base_wis_mean'] is None else '%.1f' % c['base_wis_mean'], '' if c['ratio'] is None else '%.2f' % c['ratio'],
-                'too few weeks' if c['lo'] is None or c['weeks'] < FR['min_weeks'] else '%.2f to %.2f' % (c['lo'], c['hi']), WORD[c['outcome']]))
+                'too few weeks' if c['lo'] is None or c['weeks'] < FR['min_weeks'] else '%.2f to %.2f' % (c['lo'], c['hi']), ow(c)))
     return ''.join(out)
 def loc_rows():
     out = []
     for b in S['by_location']:
         c9 = next(x for x in b['cells'] if x['level'] == '95' and x['side'] == 'final'); c5 = next(x for x in b['cells'] if x['level'] == '50' and x['side'] == 'final')
-        out.append('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (e(b['name']), f(c9['scored']), pc(c9['share']), iv(c9), WORD[c9['outcome']], pc(c5['share']), iv(c5), WORD[c5['outcome']]))
+        out.append('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (e(b['name']), f(c9['scored']), pc(c9['share']), iv(c9), ow(c9), pc(c5['share']), iv(c5), ow(c5)))
     return ''.join(out)
 def loc_count(level, o): return sum(1 for b in S['by_location'] for x in b['cells'] if x['level'] == level and x['side'] == 'final' and x['outcome'] == o)
 AD = S['after_data']; SB = {(x['block_weeks'], x['level']): x for x in AD['block_sensitivity']}
@@ -46,7 +46,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <h2>By horizon, against the latest count</h2>
 <h3>Outer interval</h3>%s
 <h3>Middle interval</h3>%s
-<p class="bench-note">One row is one forecast: a place, a week and a horizon. The places are the United States as a whole, the 50 states, Washington DC and Puerto Rico. Inside means the reported count is at or between the two stated quantiles. Above and below are printed apart, and a well-calibrated interval leaves about the same share on each side. Cannot tell is never folded into either side. Rows are not independent. Every place in a week shares one flu season, and forecasts made at different horizons share target weeks. So the interval is a moving-block bootstrap over target weeks, in blocks of 4 consecutive weeks, 2,000 draws, and it is much wider than an interval that treats rows as independent. Reading: below if the whole interval is under the stated level, above if it is over it, consistent if the stated level is inside an interval no wider than 10 points, otherwise cannot tell. A cell needs 30 scored rows and 8 target weeks. The block length was fixed in the plan. Tried after the data, longer blocks widen the all-horizons interval for the outer interval to %s to %s percent with blocks of 8 weeks and %s to %s percent with blocks of 13 weeks, which read %s and %s.</p>
+<p class="bench-note">One row is one forecast: a place, a week and a horizon. The places are the United States as a whole, the 50 states, Washington DC and Puerto Rico. Inside means the reported count is at or between the two stated quantiles. Above and below are printed apart, and a well-calibrated interval leaves about the same share on each side. Cannot tell is never folded into either side. Rows are not independent. Every place in a week shares one flu season, and forecasts made at different horizons share target weeks. So the interval is a moving-block bootstrap over target weeks, in blocks of 4 consecutive weeks, 2,000 draws, and it is much wider than an interval that treats rows as independent. Reading: below if the whole interval is under the stated level, above if it is over it, otherwise cannot tell (STRADDLES_EDGE) because the interval holds the stated level. The plan named no tolerance around the stated level, so no cell reads consistent (plan addendum of 12 November 2026, Faults and Guards 2.0). A cell needs 30 scored rows and 8 target weeks, and with fewer it reads cannot tell (TOO_WIDE_TO_RESOLVE). The block length was fixed in the plan. Tried after the data, longer blocks widen the all-horizons interval for the outer interval to %s to %s percent with blocks of 8 weeks and %s to %s percent with blocks of 13 weeks, which read %s and %s.</p>
 <h2>By horizon, against the first reported count</h2>
 <h3>Outer interval</h3>%s
 <h3>Middle interval</h3>%s
@@ -57,9 +57,9 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <h2>Against the hub&rsquo;s baseline model</h2>
 <p>The weighted interval score is a common score for quantile forecasts. It is the distance from the reported count to the median plus a penalty for each interval&rsquo;s width and for counts outside it, and lower is closer. The hub runs a baseline model on the same weeks. Below is the ensemble&rsquo;s total score over the baseline&rsquo;s on the rows where both stated all 23 quantiles. The hub states no number for this ratio. Comparing it with 1 is our ruler. Below means the ensemble scored lower than the baseline. The ratio adds raw scores, so places with more admissions weigh more. The United States row carries %s percent of the ensemble&rsquo;s total score. Without it the ratio is %.2f (%.2f to %.2f), and in %d of %d places the ratio is under 1. The hub&rsquo;s own season rankings use a relative score on log-transformed counts, which this page does not reproduce.</p>
 <div class="tw"><table class="bench"><thead><tr><th>Cell</th><th>Count</th><th>Rows</th><th>Ensemble mean score</th><th>Baseline mean score</th><th>Ratio</th><th>95%% interval</th><th>Reading</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">The interval is the same block bootstrap. Reading: below if the whole interval is under 1, above if over 1, consistent if 1 is inside an interval no wider than 0.20, otherwise cannot tell.</p>
+<p class="bench-note">The interval is the same block bootstrap. Reading: below if the whole interval is under 1, above if over 1, otherwise cannot tell (STRADDLES_EDGE). The plan named no tolerance around 1, so no cell reads consistent.</p>
 <h2>By place, all horizons, latest count</h2>
-<p>For the stated 95 percent interval, %d places read below, %d consistent, %d above and %d cannot tell. For the stated 50 percent interval, %d read below, %d consistent, %d above and %d cannot tell. A single place has fewer weeks, so its interval is wide.</p>
+<p>For the stated 95 percent interval, %d places read below, %d above and %d cannot tell. For the stated 50 percent interval, %d read below, %d above and %d cannot tell. A single place has fewer weeks, so its interval is wide.</p>
 <div class="tw"><table class="bench"><thead><tr><th>Place</th><th>Scored</th><th>Inside 95, percent</th><th>95%% interval</th><th>Reading</th><th>Inside 50, percent</th><th>95%% interval</th><th>Reading</th></tr></thead><tbody>%s</tbody></table></div>
 <h2>What this page holds and what it leaves out</h2>
 <p>Every ensemble file in the hub is read, every place in it and horizons 0 to 3. The week before the reference date (horizon -1) is not scored. Its count can be released before the forecast is due. That leaves out %s rows. Described and not scored: the median distance from the stated median to the latest count, as a share of the 95 percent interval&rsquo;s width, is %s at horizon 0 and %s at horizon 3, where a positive value means the count came in higher. Set aside: rate-change categories, peak week and peak size, emergency department visit shares, sample trajectories, individual team models and seasons before 2023-24.</p>
@@ -71,11 +71,11 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <p class="meta">Named here and want to answer a row? <a href="/respond?u=flu-all">Respond</a></p>
 <section id="replies" data-prefix="flu"></section><script src="/replies.js" defer></script>''' % (
     src['first_reference_date'], src['last_reference_date'], AD['longest_release_gap_days'], gate_line,
-    cov_table(NAMES, '95', 'final'), cov_table(NAMES, '50', 'final'), pc(SB[(8, '95')]['lo']), pc(SB[(8, '95')]['hi']), pc(SB[(13, '95')]['lo']), pc(SB[(13, '95')]['hi']), WORD[SB[(8, '95')]['outcome']], WORD[SB[(13, '95')]['outcome']],
+    cov_table(NAMES, '95', 'final'), cov_table(NAMES, '50', 'final'), pc(SB[(8, '95')]['lo']), pc(SB[(8, '95')]['hi']), pc(SB[(13, '95')]['lo']), pc(SB[(13, '95')]['hi']), ow(SB[(8, '95')]), ow(SB[(13, '95')]),
     cov_table(NAMES, '95', 'first'), cov_table(NAMES, '50', 'first'),
     f(rv['rows']), f(rv['differ']), '' if rv['median_abs_change_where_differ'] is None else '%g' % rv['median_abs_change_where_differ'], f(a95f['cannot_tell']),
     cov_table(SEAS, '95', 'final'), cov_table(SEAS, '50', 'final'), pc(AD['wis_without_us']['us_share_of_ensemble_total']), AD['wis_without_us']['ratio'], AD['wis_without_us']['lo'], AD['wis_without_us']['hi'], AD['wis_places_under_1'], len(AD['wis_by_location']), wis_rows(),
-    loc_count('95', 'BELOW'), loc_count('95', 'CONSISTENT'), loc_count('95', 'ABOVE'), loc_count('95', 'CANNOT_TELL'), loc_count('50', 'BELOW'), loc_count('50', 'CONSISTENT'), loc_count('50', 'ABOVE'), loc_count('50', 'CANNOT_TELL'), loc_rows(),
+    loc_count('95', 'BELOW'), loc_count('95', 'ABOVE'), loc_count('95', 'CANNOT_TELL'), loc_count('50', 'BELOW'), loc_count('50', 'ABOVE'), loc_count('50', 'CANNOT_TELL'), loc_rows(),
     f(src['horizon_minus1_rows_not_scored']), '%.2f' % off[0]['median_offset_over_width95'], '%.2f' % off[-1]['median_offset_over_width95'],
     src['releases'], src['latest_release'], e(src['hub_commit'][:7]), e(S['generated'][:10]))
 TITLE = 'FLU | Stated Flu Forecast Intervals Against Reported Admissions | Heuremen LLC'

@@ -72,8 +72,9 @@ def pooled(hz, alt=False):
     for _ in range(4000):
         sm = [t for y in (rnd.choice(yrs) for _ in yrs) for t in by[y]]; bs.append(sum(t[flag] for t in sm) / len(sm))
     bs.sort(); lo, hi = bs[int(0.025 * 4000)], bs[int(0.975 * 4000)]
-    oc = K.ABOVE if lo > 0.30 else (K.BELOW if hi < 0.30 else (K.CONSISTENT if (hi - lo) <= 0.45 else K.CANNOT_TELL))
-    return dict(triples=len(ts), years=len(yrs), outside=k, share=round(k / len(ts), 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc)
+    # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): 0.30 is a point figure with no tolerance, read as a bound. CONSISTENT is not available, the 0.45 width cap is not a tolerance.
+    ok = len(ts) > 0 and len(yrs) >= 2; oc, why = K.read(lo if ok else None, hi if ok else None, bound=0.30)
+    return dict(triples=len(ts), years=len(yrs), outside=k, share=round(k / len(ts), 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=0), rule='bound 0.30, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)', interval='percentile bootstrap over September years, 4000 resamples, seed 7, 95 percent')
 pool = {'This year, September projection': pooled(0), 'Next year, September projection': pooled(1)}
 sens = {'This year, funds rate scored at year-end': pooled(0, True), 'Next year, funds rate scored at year-end': pooled(1, True)}
 per = {}
@@ -81,13 +82,15 @@ for hz in (0, 1):
     for v in VARS:
         ts = [t for t in trip if t['horizon'] == hz and t['var'] == v]
         if not ts: continue
-        k = sum(t['outside'] for t in ts); lo, hi = K.wilson(k, len(ts)); oc = K.ABOVE if lo > 0.30 else (K.BELOW if hi < 0.30 else (K.CONSISTENT if (hi - lo) <= 0.45 else K.CANNOT_TELL))
+        k = sum(t['outside'] for t in ts); lo, hi = K.wilson(k, len(ts)); oc, why = K.read(lo if len(ts) >= 2 else None, hi if len(ts) >= 2 else None, bound=0.30)   # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): bound 0.30, no tolerance
         miss = max((abs(t['err']) - t['rng'] for t in ts), default=0)
-        per['%s, %s' % (v, 'this year' if hz == 0 else 'next year')] = dict(n=len(ts), outside=k, share=round(k / len(ts), 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, mean_error=round(S.mean(t['err'] for t in ts), 2), range_typical=round(S.median(t['rng'] for t in ts), 2))
+        per['%s, %s' % (v, 'this year' if hz == 0 else 'next year')] = dict(n=len(ts), outside=k, share=round(k / len(ts), 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=0), rule='bound 0.30, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)', interval='Wilson 95 percent over years', mean_error=round(S.mean(t['err'] for t in ts), 2), range_typical=round(S.median(t['rng'] for t in ts), 2))
 hand = [dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note=('Outside by 0.02 beyond a range printed to one decimal. ' if abs(abs(t['err']) - t['rng']) <= 0.03 else '') + ('Scored on the fourth-quarter average. At the year-end target midpoint it is inside. ' if t['var'] == 'Federal funds rate' and not t['outside_alt'] else '') + 'Median and range read from the SEP page, outcome from BEA, BLS or the Federal Reserve Board')  for t in trip if t['horizon'] == 0 and t['outside']]
 import collections as _C
 skipped = dict(_C.Counter(r for *_, r in SK))
-out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', not_comparable=dict(n=len(SK), reasons=skipped), horizon1_misses=[dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note='Not yet read in full') for t in trip if t['horizon'] == 1 and t['outside']], septs=len(SEPT), triples=len(trip), claim='about 70 percent inside, so about 30 percent outside', pooled=pool, sensitivity=sens, per_variable=per, misses=sorted(hand, key=lambda x: (x['year'], x['variable'])))
+REQ13 = K.req13([v for v in list(pool.values()) + list(sens.values()) + list(per.values())], nothing_returned=0); REQ13['not_comparable'] = len(SK)   # the plan's NOT_COMPARABLE triples are listed apart and are not readings
+for _v in list(pool.values()) + list(sens.values()) + list(per.values()): _v['req13']['not_comparable'] = len(SK)
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), req13=REQ13, standard='Faults and Guards 2.0.0', gate='passed', not_comparable=dict(n=len(SK), reasons=skipped), horizon1_misses=[dict(year=t['target'], variable=t['var'], median=t['median'], outcome_value=t['outcome'], stated_range=t['rng'], miss=round(abs(t['err']) - t['rng'], 2), note='Not yet read in full') for t in trip if t['horizon'] == 1 and t['outside']], septs=len(SEPT), triples=len(trip), claim='about 70 percent inside, so about 30 percent outside', pooled=pool, sensitivity=sens, per_variable=per, misses=sorted(hand, key=lambda x: (x['year'], x['variable'])))
 json.dump(out, open('summary_fedsep.json', 'w'), indent=1); json.dump(trip, open('data/triples.json', 'w'))
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'fedsep_live', '--path', os.path.join(H, 'summary_fedsep.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)

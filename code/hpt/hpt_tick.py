@@ -126,10 +126,21 @@ if gate and not SUMMARY_ONLY:
     if os.path.exists('data/domains.partial.json'): os.remove('data/domains.partial.json')
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 rs = list(store.values()); random.Random(7).shuffle(rs := sorted(rs, key=lambda r: r['domain'])); sample1 = {r['domain'] for r in [r for r in rs if r['s1'] == 'DISAGREE'][:10]}
+def _no_answer(r, key):
+    """Addendum std2 item 6 (12 Nov 2026): a domain is NOTHING_RETURNED in a step when no usable answer came back: unreachable, a server error of HTTP 500 or more, or a redirect not followed. A refusal (400, 401, 403, 429) is an answer and stays NOT_COMPARABLE."""
+    if key == 's3' or r.get(key) != 'NOT_COMPARABLE': return False
+    w = (r.get('why1') if key == 's1' else r.get('why2')) or ''
+    if 'could not be reached' in w or 'redirect not followed' in w or 'no connection (None)' in w: return True
+    m = re.search(r'\((?:HTTP )?(\d{3})\)', w)
+    return bool(m and int(m.group(1)) >= 500)
 def grp(key):
     cnt = C.Counter(r.get(key, 'NOT_RUN') for r in store.values()); comp = cnt['AGREE'] + cnt['DISAGREE']; lo, hi = K.wilson(cnt['DISAGREE'], comp)
-    oc = K.CANNOT_TELL if (comp < 30 or not gate or key == 's1') else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))   # addendum 1: step 1 stays CANNOT_TELL, the full read found non-subjects in the population
-    return cnt, dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc)
+    # Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md, 12 Nov 2026): size that matters 0.10, band [0, 0.05) open at the top, Wilson 95%. Step 1 stays CANNOT_TELL (the population holds non-subjects, addendum 1) and maps to NO_INTERVAL_FORMABLE.
+    if key == 's1' or not gate or comp == 0: oc, why = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    elif comp < 30: oc, why = K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    else: oc, why = K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)')
+    nr = sum(1 for r in store.values() if _no_answer(r, key))
+    return cnt, dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why, nothing_returned=nr, req13=K.req13([(oc, why)], nothing_returned=nr))
 c1, g1 = grp('s1'); c2, g2 = grp('s2'); c3, g3 = grp('s3')
 why = C.Counter(r.get('why1') for r in store.values() if r['s1'] == 'NOT_COMPARABLE')
 shown = [dict(domain=r['domain'], step='1 no file at the root' if k == 's1' else ('2 link' if k == 's2' else '3 template header'), found=r.get('why1') if k == 's1' else (r.get('why2') or 'header names missing'), file=r.get('mrf'), txt=r.get('txt'), reason=hc.get(k[1] + '|' + r['domain'])) for k in ('s1', 's2', 's3') for r in store.values() if r.get(k) == 'DISAGREE' and (k[1] + '|' + r['domain']) in hc]

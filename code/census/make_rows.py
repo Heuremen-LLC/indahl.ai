@@ -16,7 +16,7 @@ us = [c for c in cells if c['geo'] == 'US' and c['series'] != 'PERMITS']; ot = [
 order = us + ot
 def cid(c): return 'census.cell.%s.%s.%s' % (c['series'].lower(), c['geo'].lower(), c['step'].lower())
 lines = []
-for c in order: lines.append('cell %s %s %s: %d of %d inside, %d above, %d below, %d cannot tell, share %.4f, interval %.4f to %.4f, %s' % (c['series'], c['geo'], c['step'], c['inside'], c['scored'], c['above'], c['below'], c['cannot_tell'], c['share'] if c['share'] is not None else 0, c['lo'], c['hi'], c['outcome']))
+for c in order: lines.append('cell %s %s %s: %d of %d inside, %d above, %d below, %d cannot tell, share %.4f, interval %.4f to %.4f, %s' % (c['series'], c['geo'], c['step'], c['inside'], c['scored'], c['above'], c['below'], c['cannot_tell'], c['share'] if c['share'] is not None else 0, c['lo'], c['hi'], c['outcome'] + (' ' + c['reason'] if c.get('reason') else '')))
 def cl(s, st): return next(c for c in cells if c['series'] == s and c['geo'] == 'US' and c['step'] == st)
 det = S['series_meta']['RSAFS']['annual_revision_detail']; brk = S['series_meta']['RSAFS']['retail_break_vintage']
 # the other printed numbers, each as the page prints it

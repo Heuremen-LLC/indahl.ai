@@ -24,4 +24,4 @@ for d in sorted(glob.glob('records/ibm_*')):
         A = {(i, e['name']): (e['value'], e['date']) for i, q in enumerate(json.load(gzip.open(f1))['qubits']) for e in q}
         B = {(i, e['name']): (e['value'], e['date']) for i, q in enumerate(json.load(gzip.open(f2))['qubits']) for e in q}
         ch.append('CHANGED' if any(A[k] != B[k] for k in A.keys() & B.keys()) else 'NO_CHANGE')
-    print(d.split('/')[-1], 'records', len(fs), '| A ABOVE', na, 'CANNOT_TELL', nc, '| B mismatch', nb, '| >24h', a24, '>7d', a7, 'of', n, '| restamps', {k: ch.count(k) for k in set(ch)})
+    print(d.split('/')[-1], 'records', len(fs), '| A ratio_above_2_5', na, 'ratio_2_to_2_5', nc, '| B mismatch', nb, '| >24h', a24, '>7d', a7, 'of', n, '| restamps', {k: ch.count(k) for k in set(ch)})

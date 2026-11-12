@@ -91,9 +91,11 @@ def calib(items):
         n = len(xs)
         if not n: bins.append(dict(bin=b, label=BIN_WORD[b], n=0)); continue
         k = sum(y for _, y in xs); mean = sum(p for p, _ in xs) / n; lo, hi = K.wilson(k, n)
-        out = K.CANNOT_TELL if n < MIN_BIN else (K.ABOVE if lo > mean else K.BELOW if hi < mean else K.CONSISTENT)
-        bins.append(dict(bin=b, label=BIN_WORD[b], n=n, happened=k, mean_stated=round(mean, 4), share=round(k / n, 4), lo=round(lo, 4), hi=round(hi, 4), outcome=out))
-    res = dict(n=len(items), bins=bins)
+        # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): the mean stated chance is a point figure with no tolerance, read as a bound, so no CONSISTENT.
+        # A bin under the plan's 30-entry minimum is CANNOT_TELL with reason TOO_WIDE_TO_RESOLVE (owner decision O3), whatever its interval.
+        out, why = (K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE) if n < MIN_BIN else K.read(lo, hi, bound=mean)
+        bins.append(dict(bin=b, label=BIN_WORD[b], n=n, happened=k, mean_stated=round(mean, 4), share=round(k / n, 4), lo=round(lo, 4), hi=round(hi, 4), outcome=out, reason=why))
+    res = dict(n=len(items), bins=bins, req13=K.req13([(b['outcome'], b['reason']) for b in bins if b.get('n')], nothing_returned=[x for x in STALE if x.startswith('manifold')]))
     if len(items) >= MIN_BRIER:
         def brier(xs):
             base = sum(y for _, y in xs) / len(xs)
@@ -117,6 +119,9 @@ def score(ents, now):
     for lab, f in (('all', lambda e: True), ('criterion_before', lambda e: e.get('criterion_before_deadline')), ('criterion_after', lambda e: not e.get('criterion_before_deadline'))):
         xs = [e for e in ents if e['kind'] == 'binary' and e['outcomes'] and f(e)]
         S['binary'][lab] = dict(read=len(xs), **{o: sum(1 for e in xs if e['outcomes'][-1]['outcome'] == o) for o in BINARY})
+        # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): a CANNOT_TELL entry has no test the record can answer, so its closed reason is NO_INTERVAL_FORMABLE. The plan's own sentence stays in the log row.
+        S['binary'][lab]['cannot_tell_reason'] = K.NO_INTERVAL_FORMABLE
+        S['binary'][lab]['req13'] = K.req13([(e['outcomes'][-1]['outcome'], K.NO_INTERVAL_FORMABLE if e['outcomes'][-1]['outcome'] == 'CANNOT_TELL' else None) for e in xs], nothing_returned=[x for x in STALE if x.startswith('manifold')])
     S['binary']['by_set'] = {}
     for st in sorted({e['set'] for e in ents if e['kind'] == 'binary'}):
         xs = [e for e in ents if e['kind'] == 'binary' and e['set'] == st and e['outcomes']]
@@ -129,6 +134,8 @@ def score(ents, now):
                                    waiting=sum(1 for e in xs if not e['outcomes']))
         S['probability'][st] = c
     S['pdoom'] = [e['id'] for e in ents if e['kind'] == 'pdoom']
+    S['pdoom_reading'] = dict(outcome='CANNOT_TELL', reason=K.NO_INTERVAL_FORMABLE, n=len(S['pdoom']), why='one outcome cannot test a stated probability, by design (PLAN.md)')
+    S['standard'] = 'Faults and Guards 2.0.0'
     for e in ents:
         dl = deadline_dt(e.get('deadline'))
         if not e['outcomes'] and e['kind'] != 'pdoom' and dl is not None:
@@ -141,7 +148,7 @@ def score(ents, now):
         for b in c['bins']:
             if b['n'] >= 1:
                 fc.append(dict(kind='probability', item='%s, stated chance %s' % (SET_WORD.get(st, st), b['label']), counts='share of questions that resolved yes',
-                               stated=b['mean_stated'], n=b['happened'], of=b['n'], delivered=b['share'], lo=b['lo'], hi=b['hi'], outcome=b['outcome'], interval='Wilson, as the desk gives it'))
+                               stated=b['mean_stated'], n=b['happened'], of=b['n'], delivered=b['share'], lo=b['lo'], hi=b['hi'], outcome=b['outcome'], reason=b['reason'], interval='Wilson, as the desk gives it'))
         if c.get('skill') is not None and fc:
             fc[-1].update(brier_skill=c['skill'], brier_skill_lo=c['skill_lo'], brier_skill_hi=c['skill_hi'])
     S['forecasters'] = dict(rows=fc)
@@ -165,7 +172,7 @@ def main():
              stamps=stamps[-5:], stale=STALE, fortune=len(json.load(open(FORTUNE))) if os.path.exists(FORTUNE) else 0)
     json.dump(S, open(os.path.join(H, 'summary_now.json.tmp'), 'w'), indent=1); os.replace(os.path.join(H, 'summary_now.json.tmp'), os.path.join(H, 'summary_now.json'))
     keep = ('id', 'set', 'kind', 'who', 'quote', 'source_url', 'archive_url', 'said', 'deadline', 'criterion', 'criterion_before_deadline', 'probability')
-    live = dict(S, entries_list=[dict({k: e.get(k) for k in keep}, outcome=(e['outcomes'][-1]['outcome'] if e['outcomes'] else None)) for e in ents])
+    live = dict(S, entries_list=[dict({k: e.get(k) for k in keep}, outcome=(e['outcomes'][-1]['outcome'] if e['outcomes'] else None), reason=(K.NO_INTERVAL_FORMABLE if e['outcomes'] and e['outcomes'][-1]['outcome'] == 'CANNOT_TELL' else None)) for e in ents])
     json.dump(live, open(os.path.join(H, 'data', 'now_live.json.tmp'), 'w'), separators=(',', ':'), ensure_ascii=False); os.replace(os.path.join(H, 'data', 'now_live.json.tmp'), os.path.join(H, 'data', 'now_live.json'))
     if PUB:
         env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
@@ -181,12 +188,13 @@ def selftest():
         nonlocal ok; ok &= bool(c); print(('OK   ' if c else 'FAIL ') + n)
     check('bin edges', bin_of(0) == 0 and bin_of(0.1) == 1 and bin_of(0.0999) == 0 and bin_of(1.0) == 9 and bin_of(0.95) == 9)
     rng = random.Random(1); items = [(p, 1 if rng.random() < p else 0) for p in [rng.random() for _ in range(3000)]]
-    c = calib(items); cons = sum(1 for b in c['bins'] if b.get('outcome') == 'CONSISTENT')
-    check('calibrated world reads CONSISTENT in most bins (%d of 10)' % cons, cons >= 8)
+    c = calib(items); cons = sum(1 for b in c['bins'] if b.get('outcome') == 'CANNOT_TELL' and b.get('reason') == 'STRADDLES_EDGE')   # 12 Nov 2026 (2.0): a point figure has no CONSISTENT
+    check('calibrated world reads CANNOT_TELL STRADDLES_EDGE in most bins and never CONSISTENT (%d of 10)' % cons, cons >= 8 and not any(b.get('outcome') == 'CONSISTENT' for b in c['bins']))
     items2 = [(p, 1 if rng.random() < min(1, p + 0.3) else 0) for p, _ in items]; c2 = calib(items2)
     check('under-stated world reads ABOVE in low bins', sum(1 for b in c2['bins'][:6] if b.get('outcome') == 'ABOVE') >= 5)
     check('skill near zero or above for calibrated world', c['skill'] is not None and c['skill'] > 0)
-    check('small bin is CANNOT_TELL', calib([(0.3, 1)] * 10)['bins'][3]['outcome'] == 'CANNOT_TELL')
+    check('small bin is CANNOT_TELL with reason TOO_WIDE_TO_RESOLVE', (lambda b: b['outcome'] == 'CANNOT_TELL' and b['reason'] == 'TOO_WIDE_TO_RESOLVE')(calib([(0.3, 1)] * 10)['bins'][3]))
+    check('an interval wholly above the stated chance reads ABOVE with no reason', (lambda b: b['outcome'] == 'ABOVE' and b['reason'] is None)(calib([(0.05, 1)] * 100)['bins'][0]))
     check('no Brier under 30', 'brier' not in calib([(0.3, 1)] * 29))
     e = dict(id='X', kind='binary', set='onrecord', deadline='2020-12-31', outcomes=[], dues=[])
     r = due_rows([e], utcnow(), {}); check('passed deadline without reading writes one due row', len(r) == 1 and r[0]['kind'] == 'due')

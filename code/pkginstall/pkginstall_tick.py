@@ -120,10 +120,18 @@ if gate and not SUMMARY_ONLY:
     json.dump(store, open('data/projects.json.tmp', 'w')); os.replace('data/projects.json.tmp', 'data/projects.json'); open('data/listdate.txt', 'w').write(listdate)
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 rs = list(store.values()); cnt = C.Counter(r['cls'] for r in rs); comp = cnt['AGREE'] + cnt['DISAGREE']; lo, hi = K.wilson(cnt['DISAGREE'], comp)
-oc = K.CANNOT_TELL if (comp < 30 or not gate) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
+# 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md): K.read with the size that matters 0.10 and the band [0, 0.05), a reason beside every CANNOT_TELL, and the REQ-13 block
+def read_share(k, n, gate):
+    lo, hi = K.wilson(k, n); lo = 0.0 if k == 0 else lo; hi = 1.0 if k == n else hi
+    if not gate or n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)')
+FAILED_READS = ('description not readable', 'pip timed out', 'pip failed in a way the plan does not name')   # failed reads (NOTHING_RETURNED, matched by prefix), outside numerator and denominator
+failed = [r for r in rs if r['cls'] == 'NOT_COMPARABLE' and (r.get('why') or '').startswith(FAILED_READS)]
+oc, oc_why = read_share(cnt['DISAGREE'], comp, gate); r13 = K.req13([(oc, oc_why)], nothing_returned=failed)
 dis = [r for r in rs if r['cls'] == 'DISAGREE']; why = C.Counter(r['why'] for r in rs if r['cls'] == 'NOT_COMPARABLE')
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', projects=len(rs), pip=subprocess.run([VPY, '-m', 'pip', '--version'], capture_output=True, text=True).stdout.split()[1],
-           comparison=dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, awaiting=len([r for r in dis if r['project'] not in hc])),
+           comparison=dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=oc_why, req13=r13, req13_line=r13['line'], failed_reads={w: len([r for r in failed if r['why'].startswith(w)]) for w in FAILED_READS}, awaiting=len([r for r in dis if r['project'] not in hc])),
            classes={c: dict(n=cnt[c]) for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, not_comparable_reasons={w: dict(n=n) for w, n in sorted(why.items(), key=lambda x: -x[1])},
            disagree_list=[dict(project=r['project'], command='pip install ' + ' '.join(r['targets']), error=r['detail'], reason=hc[r['project']]) for r in dis if r['project'] in hc])
 json.dump(out, open('summary_pkginstall.json', 'w'), indent=1)

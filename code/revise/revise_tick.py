@@ -56,16 +56,19 @@ def yblock(rs, key, reps=4000):
     bs.sort(); return len(ys), round(bs[int(0.025 * reps)], 4), round(bs[int(0.975 * reps)], 4)
 def block(rs, key):
     prs = [(r['first'], r[key]) for r in rs]; n = len(prs); k = count(prs); lo, hi = K.wilson(k, n); rev = [b - a for a, b in prs]
-    oc = K.ABOVE if lo > 0.10 else (K.BELOW if hi < 0.10 else (K.CONSISTENT if (hi - lo) <= 0.12 else K.CANNOT_TELL))
+    # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): 0.10 is a point figure with no tolerance, read as a bound. CONSISTENT is not available, the 0.12 width cap is not a tolerance.
+    oc, why = K.read(lo if n else None, hi if n else None, bound=0.10)
     yb, ylo, yhi = yblock(rs, key)
     # 30 Oct (site pass I-10): the same outcome rule applied to the interval over years, shown beside the fixed outcome so the two can be read together. Descriptive, defined after the first read.
-    ocy = K.ABOVE if ylo > 0.10 else (K.BELOW if yhi < 0.10 else (K.CONSISTENT if (yhi - ylo) <= 0.12 else K.CANNOT_TELL))
-    return dict(outcome_y=ocy, years=yb, share_y=round(k / n, 4), share_y_lo=ylo, share_y_hi=yhi, months=n, first=rs[0]['m'], last=rs[-1]['m'], exceed=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, median_signed=round(S.median(rev), 1), mean_signed=round(S.mean(rev), 1), median_abs=round(S.median([abs(x) for x in rev]), 1), largest=round(max(rev, key=abs), 1))
+    ocy, whyy = K.read(ylo if yb >= 2 else None, yhi if yb >= 2 else None, bound=0.10)
+    r13 = K.req13([(oc, why), (ocy, whyy)], nothing_returned=0)   # the two readings printed for this count. Failed reads stop the pass before this point, so none is counted here.
+    return dict(outcome_y=ocy, reason_y=whyy, req13=r13, years=yb, share_y=round(k / n, 4), share_y_lo=ylo, share_y_hi=yhi, months=n, first=rs[0]['m'], last=rs[-1]['m'], exceed=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=why, rule='bound 0.10, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)', interval='Wilson 95 percent over months', interval_y='percentile bootstrap over calendar years, 4000 resamples, seed 7, 95 percent', median_signed=round(S.median(rev), 1), mean_signed=round(S.mean(rev), 1), median_abs=round(S.median([abs(x) for x in rev]), 1), largest=round(max(rev, key=abs), 1))
 a = block(t3, 'third'); b = block(mr, 'recent')
+REQ13 = K.req13([(a['outcome'], a['reason']), (a['outcome_y'], a['reason_y']), (b['outcome'], b['reason']), (b['outcome_y'], b['reason_y'])], nothing_returned=0)
 HC = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 big = [dict(url=URL, month=r['m'], first=r['first'], third=r['third'], most_recent=r['recent'], note=HC.get(r['m'], 'Not yet read in full')) for r in {x['m']: x for x in t3 + mr}.values() if max(abs((r['third'] or r['first']) - r['first']), abs((r['recent'] or r['first']) - r['first']) if r['m'] <= last_bench else 0) > 300]
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), gate='passed', stated=int(STATED), file_updated=updated_file, sha=sha[:16], flat_sha=flat_sha[:16], checked_months=len(KG),
-           counts={'Third release against first': a, 'Most recent, after the annual benchmark, against first': b}, large=sorted(big, key=lambda x: x['month']))
+           counts={'Third release against first': a, 'Most recent, after the annual benchmark, against first': b}, req13=REQ13, standard='Faults and Guards 2.0.0', large=sorted(big, key=lambda x: x['month']))
 json.dump(out, open('summary_revise.json', 'w'), indent=1)
 with open('data/history.jsonl', 'a') as f: f.write(json.dumps(dict(t=time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime()), sha=sha[:16], flat_sha=flat_sha[:16], third=a, recent=b), sort_keys=True) + '\n')
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')

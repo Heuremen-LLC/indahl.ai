@@ -70,20 +70,24 @@ def g_width(_):
     except Exception as ex: gd['width'] = dict(error=type(ex).__name__); return False
     mism = [a for a in AREAS if api.get(a) != PES[a]]; gd['width'] = dict(api_rows=len(api), mismatch=mism, min_se=min(PES.values())); return not mism and min(PES.values()) > 0 and len(PES) == 51
 # rule
+NIF = K.NO_INTERVAL_FORMABLE; DETAIL = {}
 def read_row(anchor, later, se, cls):
-    """returns (outcome, reason, half_width)"""
-    if cls == 'A': return (K.CANNOT_TELL, 'no width', None)
-    if anchor is None or later is None: return (K.CANNOT_TELL, 'no stated or later value', None)
-    if se is None or se <= 0: return (K.CANNOT_TELL, 'no PES width', None)
+    """returns (outcome, reason, half_width). 12 Nov 2026, Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md): a row is an exact read of one published value against one stated interval,
+    an interval of zero width (owner decision O1), read with K.read_exact against the band, edges included. Each desk cause of CANNOT_TELL is NO_INTERVAL_FORMABLE, the plain cause is in DETAIL."""
+    DETAIL['d'] = ''
+    if cls == 'A': DETAIL['d'] = 'no width'; return (K.CANNOT_TELL, NIF, None)
+    if anchor is None or later is None: DETAIL['d'] = 'no stated or later value'; return (K.CANNOT_TELL, NIF, None)
+    if se is None or se <= 0: DETAIL['d'] = 'no PES width'; return (K.CANNOT_TELL, NIF, None)
     h = MULT * se / 100.0 * anchor
-    if later > anchor + h: return (K.ABOVE, '', h)
-    if later < anchor - h: return (K.BELOW, '', h)
-    return (K.CONSISTENT, '', h)
+    o, r, _d = K.read_exact(later, band=(anchor - h, anchor + h))
+    return (o, r, h)
 def g_rule(_):
     t = [(('B', 1000, 1100, 3.0), 'ABOVE'), (('B', 1000, 900, 3.0), 'BELOW'), (('B', 1000, 1000, 3.0), 'CONSISTENT'), (('C', 1000, 1000 + 1.645 * 3.0 * 10, 3.0), 'CONSISTENT'),
          (('D', 1000, 1000 - 1.645 * 3.0 * 10 - 1, 3.0), 'BELOW'), (('A', 1000, 1000, 3.0), 'CANNOT_TELL'), (('B', None, 1000, 3.0), 'CANNOT_TELL'), (('B', 1000, 1000, 0.0), 'CANNOT_TELL'), (('B', 1000, 1000, None), 'CANNOT_TELL')]
     ok = all(read_row(a, l, s, c)[0] == w for (c, a, l, s), w in t)
-    reasons = [read_row(1000, 1000, 3.0, 'A')[1], read_row(None, 1, 3.0, 'B')[1], read_row(1000, 1, 0, 'B')[1]] == ['no width', 'no stated or later value', 'no PES width']
+    reasons = []
+    for a_, l_, s_, c_ in ((1000, 1000, 3.0, 'A'), (None, 1, 3.0, 'B'), (1000, 1, 0, 'B')): reasons.append((read_row(a_, l_, s_, c_)[1], DETAIL['d']))
+    reasons = reasons == [(NIF, 'no width'), (NIF, 'no stated or later value'), (NIF, 'no PES width')]
     return ok and reasons and K.selftest.__name__ == 'selftest'
 gates = {}
 for name, fn in (('format', g_format), ('join', g_join), ('width', g_width), ('rule', g_rule)):
@@ -95,7 +99,7 @@ passed = all(g['passed'] for g in gates.values()) and plan_ok
 ROWS = []
 def add(cls, cell, area, year, stated, later, anchor_label, note=''):
     o, why, h = read_row(stated, later, PES[area], cls)
-    ROWS.append(dict(cls=cls, cell=cell, area=area, year=year, stated=stated, later=later, se=PES[area], half=h, outcome=o, reason=why))
+    ROWS.append(dict(cls=cls, cell=cell, area=area, year=year, stated=stated, later=later, se=PES[area], half=h, outcome=o, reason=why, reason_detail=DETAIL['d']))
 for a in AREAS:
     for (va, vb) in [('V2019', 'V2020')] + [('V%d' % i, 'V%d' % j) for i in range(2021, 2026) for j in range(i + 1, 2026)]:
         for y in range(2010, 2026):
@@ -104,7 +108,7 @@ for a in AREAS:
     add('C', 'V2020 April 1 2020 to the census count', a, 2020, APR20.get(a), CEN.get(a), 'stated')
     for vb in ('V2022', 'V2023', 'V2024', 'V2025'): add('D', 'census count to %s estimates base' % vb, a, 2020, CEN.get(a), BASE[vb].get(a), 'count')
 if not passed:
-    for r in ROWS: r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['reason'] = 'gate failed'
+    for r in ROWS: r['outcome_before_gate'] = r['outcome']; r['outcome'] = K.CANNOT_TELL; r['reason'] = NIF; r['reason_detail'] = 'gate failed'
 # cells
 cells = []
 order = []
@@ -117,13 +121,13 @@ for cls, cell in order:
     c = {o: sum(1 for r in rs if r['outcome'] == o) for o in K.OUTCOMES}
     why = {}
     for r in rs:
-        if r['outcome'] == K.CANNOT_TELL: why[r['reason']] = why.get(r['reason'], 0) + 1
+        if r['outcome'] == K.CANNOT_TELL: why[r.get('reason_detail') or r['reason']] = why.get(r.get('reason_detail') or r['reason'], 0) + 1
     ok = [r for r in rs if r['stated'] and r['later'] is not None]
     pct = [100.0 * (r['later'] - r['stated']) / r['stated'] for r in ok]
     hw = [abs(r['later'] - r['stated']) / (MULT * r['se'] / 100.0 * r['stated']) for r in ok if r['se'] and r['se'] > 0]
     neg = sum(1 for p in pct if p < 0); pos = sum(1 for p in pct if p > 0)
     big = max(ok, key=lambda r: abs(r['later'] - r['stated']) / r['stated']) if ok else None
-    cells.append(dict(cls=cls, cell=cell, rows=len(rs), counts=c, cannot_tell_why=why, median_abs_pct=med([abs(p) for p in pct]), median_signed_pct=med(pct), n_negative=neg, n_positive=pos, n_zero=len(pct) - neg - pos, n_compared=len(pct), median_abs_in_yardstick_half_widths=med(hw),
+    cells.append(dict(cls=cls, cell=cell, rows=len(rs), counts=c, cannot_tell_why=why, req13=K.req13([(r['outcome'], r['reason']) for r in rs], nothing_returned=0), median_abs_pct=med([abs(p) for p in pct]), median_signed_pct=med(pct), n_negative=neg, n_positive=pos, n_zero=len(pct) - neg - pos, n_compared=len(pct), median_abs_in_yardstick_half_widths=med(hw),
                       largest=dict(area=big['area'], year=big['year'], stated=big['stated'], later=big['later'], pct=100.0 * (big['later'] - big['stated']) / big['stated']) if big else None,
                       years=sorted(set(r['year'] for r in rs))))
     if cls in 'BCD':
@@ -151,7 +155,7 @@ byclass = {cl: {o: sum(1 for r in ROWS if r['cls'] == cl and r['outcome'] == o) 
 S = dict(generated=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), plan_sha256=plan_sha, plan_sha256_sealed=seal['plan_sha256'], plan_matches_seal=plan_ok,
          plan_commit=seal['plan_commit'], plan_commit_time=seal['plan_commit_time'], multiplier=MULT,
          frame='50 states and the District of Columbia (51 areas), July 1 estimates of V2019 to V2025, the April 1 2020 estimate of V2020, the 2020 Census count and ESTIMATESBASE2020',
-         frame_rows=len(ROWS), frame_areas=len(AREAS), counts=tot, counts_by_class=byclass, cells=cells, gates=gates, gates_all_passed=passed, gate_details=gd,
+         frame_rows=len(ROWS), frame_areas=len(AREAS), counts=tot, req13=K.req13([(r['outcome'], r['reason']) for r in ROWS], nothing_returned=0), counts_by_class=byclass, cells=cells, gates=gates, gates_all_passed=passed, gate_details=gd,
          second_ruler=SECOND, nce={a: NCE[a] for a in AREAS}, pes_se={a: PES[a] for a in AREAS},
          rows=[{k: v for k, v in r.items()} for r in ROWS])
 json.dump(S, open('summary_vintages.json', 'w'), indent=1); print('rows', len(ROWS), tot, byclass, 'gates', {k: v['passed'] for k, v in gates.items()}, 'plan_ok', plan_ok)

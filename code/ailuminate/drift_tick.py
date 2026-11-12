@@ -6,7 +6,6 @@ H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, 
 import heuremen_kit as K
 CATS = ['Violent Crimes', 'Sex-Related Crimes', 'Child Sexual Exploitation', 'Suicide and Self-Harm', 'Indiscriminate Weapons', 'Intellectual Property', 'Defamation', 'Non-Violent Crimes', 'Hate', 'Privacy', 'Specialized Advice', 'Sexual Content']
 KEYS = ['overall'] + CATS
-NR = K.NOTHING_RETURNED
 LABEL_RX = re.compile(r'Technical labels\s*:?\s*AILuminate\s+(\w+)\s+(\d+(?:\.\d+)*)\s*·\s*Problem Set\s+([\d.]+)[^·]*·\s*evaluator\s+v([\d.]+)')
 STMT_RX = [('Technical labels', r'Technical labels\s*:?\s*AILuminate Safety.*?English \(US\)\.'),
            ('Release notes (new components)', r'The Safety 1\.\d(?:\.\d)? benchmark introduces three new components.*?single reference system\.'),
@@ -26,15 +25,21 @@ def page_statements(raw):
     for n, rx in STMT_RX:
         m = re.search(rx, t); out[n] = m.group(0).strip() if m else None
     return out
-def oc_share(lo, hi): return K.ABOVE if lo > 0.05 else (K.CONSISTENT if hi < 0.15 else K.CANNOT_TELL)
+# 12 Nov 2026, PLAN_ADDENDUM_std2.md (Faults and Guards 2.0). Shares: size that matters 0.05, null 0, band [0, 0.15), edge '[)'. G: null 0.5, band [0.35, 0.65], size that matters 0.15 either way, fewer than 30 moved pairs is TOO_WIDE_TO_RESOLVE.
+# A reading that cannot be computed yet is CANNOT_TELL NO_INTERVAL_FORMABLE. NOTHING_RETURNED is a status of a failed read and is never an outcome.
+def wil(k, n):   # exact ends: K.wilson(0, n) gives 6.9e-18 at the lower end, which misses the null at zero
+    lo, hi = K.wilson(k, n); return (0.0 if k == 0 else lo, 1.0 if k == n else hi)
+def oc_share(lo, hi): return K.read(lo, hi, band=(0.0, 0.15), matters=0.05, edge='[)', null=0.0)
+def with_req13(d, failed=0):
+    d['req13'] = K.req13([(d['outcome'], d.get('reason'))], nothing_returned=failed); return d
 def share_block(k, n):
-    if n == 0: return dict(of=0, n=0, share=None, share_lo=0.0, share_hi=1.0, outcome=NR)
-    lo, hi = K.wilson(k, n); return dict(of=n, n=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc_share(lo, hi))
+    if n == 0: return with_req13(dict(of=0, n=0, share=None, share_lo=0.0, share_hi=1.0, outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, why='no unit to read yet'))
+    lo, hi = wil(k, n); o, why = oc_share(lo, hi); return with_req13(dict(of=n, n=k, share=round(k / n, 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=o, reason=why))
 def oc_dir(up, down):
     n = up + down
-    if n < 30: return K.CANNOT_TELL
-    lo, hi = K.wilson(up, n)
-    return K.ABOVE if lo > 0.5 else (K.BELOW if hi < 0.5 else (K.CONSISTENT if lo >= 0.35 and hi <= 0.65 else K.CANNOT_TELL))
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    lo, hi = wil(up, n)
+    return K.read(lo, hi, band=(0.35, 0.65), matters=0.15, direction='both', null=0.5)
 
 def analyse(reads, labels, pages):
     """reads: list of dict(stamp, t, systems{name: dict(release, overall, cats)}). labels: {(stamp, name): label or None}. pages: {stamp: {statement: sentence or None}}.
@@ -70,10 +75,10 @@ def analyse(reads, labels, pages):
             if x is None or y is None: continue
             d = 'up' if y > x else ('down' if y < x else 'same'); c[d] += 1; per_cat[k][d] += 1; tot[d] += 1
         per_sys[n] = dict(from_label=l0, to_label=l1, from_read=s[0][0], to_read=s[-1][0], **c)
-    if not per_sys: G = dict(outcome=NR, systems=0, why='no system has been read under two label tuples')
+    if not per_sys: G = with_req13(dict(outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, systems=0, why='no system has been read under two label tuples'))
     else:
-        moved = tot['up'] + tot['down']; lo, hi = K.wilson(tot['up'], moved) if moved else (0.0, 1.0)
-        G = dict(outcome=oc_dir(tot['up'], tot['down']), systems=len(per_sys), up=tot['up'], down=tot['down'], same=tot['same'], moved=moved, share_up=round(tot['up'] / moved, 4) if moved else None, share_up_lo=round(lo, 4), share_up_hi=round(hi, 4), per_system=per_sys, per_category=per_cat)
+        moved = tot['up'] + tot['down']; lo, hi = wil(tot['up'], moved) if moved else (0.0, 1.0); _og, _wg = oc_dir(tot['up'], tot['down'])
+        G = dict(outcome=_og, reason=_wg, systems=len(per_sys), up=tot['up'], down=tot['down'], same=tot['same'], moved=moved, share_up=round(tot['up'] / moved, 4) if moved else None, share_up_lo=round(lo, 4), share_up_hi=round(hi, 4), per_system=per_sys, per_category=per_cat); with_req13(G)
     # H: unit = system and label tuple, at least two reads under it
     units = {}
     for n, s in seq.items():
@@ -87,7 +92,7 @@ def analyse(reads, labels, pages):
     # I: earlier tuples are all tuples except the newest one (the one first seen last)
     dropped = sorted(n for n in seq if latest and n not in latest['systems'])
     order = sorted(tuples, key=lambda t: (tuples[t]['first_read'], t)); earlier = order[:-1]
-    if not earlier: I = dict(outcome=NR, why='only one label tuple has been seen', earlier_tuples=[], dropped_systems=dropped, dropped_n=len(dropped))
+    if not earlier: I = with_req13(dict(outcome=K.CANNOT_TELL, reason=K.NO_INTERVAL_FORMABLE, why='only one label tuple has been seen', earlier_tuples=[], dropped_systems=dropped, dropped_n=len(dropped)))
     else:
         wd = [t for t in earlier if tuples[t]['latest_systems'] == 0]; I = share_block(len(wd), len(earlier))
         I.update(earlier_tuples=[dict(label=t, status='WITHDRAWN' if tuples[t]['latest_systems'] == 0 else 'STILL_PUBLISHED', first_read=tuples[t]['first_read'], last_read=tuples[t]['last_read'], systems_in_latest_read=tuples[t]['latest_systems']) for t in earlier], dropped_systems=dropped, dropped_n=len(dropped))
@@ -100,6 +105,7 @@ def analyse(reads, labels, pages):
             J['statements'][n] = dict(status='CHANGED' if ch else 'KEPT', now=cur.get(n) or 'not found', **(dict(first=f0.get(n) or 'not found', first_read=stamps[0], now_read=stamps[-1]) if ch else {}))
         J['changed'] = sum(1 for v in J['statements'].values() if v['status'] == 'CHANGED')
     else: J['changed'] = None
+    for _t in (F, G, H_, I): _t['req13'] = K.req13([(_t['outcome'], _t.get('reason'))], nothing_returned=unreadable)   # unreadable labels are failed reads: outside numerator and denominator
     return dict(F=F, G=G, H=H_, I=I, J=J)
 
 # ---- real data
@@ -152,8 +158,10 @@ def gate():
     chk('I planted still published', r['I']['earlier_tuples'][0]['status'] == 'STILL_PUBLISHED' and r['I']['outcome'] == K.CANNOT_TELL and r['I']['dropped_systems'] == ['S4'])
     reads2 = [dict(rd, systems={n: v for n, v in rd['systems'].items() if not (rd['stamp'] == 'r3' and n == 'S3')}) for rd in reads]; r2 = analyse(reads2, labels, {})
     chk('I planted withdrawn', r2['I']['outcome'] == K.ABOVE and r2['I']['earlier_tuples'][0]['status'] == 'WITHDRAWN' and r2['I']['earlier_tuples'][0]['label'] == L1 and r2['I']['dropped_systems'] == ['S3', 'S4'])
-    nul = [dict(stamp='a%d' % i, t=i, systems={'N%d' % j: sysv(50 + j % 40) for j in range(27)}) for i in range(2)]; lab = {(rd['stamp'], n): L1 for rd in nul for n in rd['systems']}; rn = analyse(nul, lab, {})
-    chk('null F H', rn['F']['outcome'] == K.CONSISTENT and rn['H']['outcome'] == K.CONSISTENT and rn['G']['outcome'] == NR and rn['I']['outcome'] == NR)
+    nul = [dict(stamp='a%d' % i, t=i, systems={'N%d' % j: sysv(50 + j % 40) for j in range(80)}) for i in range(2)]; lab = {(rd['stamp'], n): L1 for rd in nul for n in rd['systems']}; rn = analyse(nul, lab, {})   # 12 Nov: 80 systems, because 0 of 27 reads TOO_WIDE_TO_RESOLVE under 2.0 and CONSISTENT needs an upper end below 0.05
+    n27 = [dict(stamp='b%d' % i, t=i, systems={'N%d' % j: sysv(50 + j % 40) for j in range(27)}) for i in range(2)]; r27 = analyse(n27, {(rd['stamp'], n): L1 for rd in n27 for n in rd['systems']}, {})
+    chk('worked example 6.8, 0 of 27', r27['F']['outcome'] == K.CANNOT_TELL and r27['F']['reason'] == K.TOO_WIDE_TO_RESOLVE and r27['H']['reason'] == K.TOO_WIDE_TO_RESOLVE and r27['F']['req13']['cannot_tell_share'] == '1 of 1')
+    chk('null F H', rn['F']['outcome'] == K.CONSISTENT and rn['H']['outcome'] == K.CONSISTENT and rn['G']['outcome'] == K.CANNOT_TELL and rn['G']['reason'] == K.NO_INTERVAL_FORMABLE and rn['I']['outcome'] == K.CANNOT_TELL and rn['I']['reason'] == K.NO_INTERVAL_FORMABLE)
     for mode, want in (('up', K.ABOVE), ('down', K.BELOW), ('half', K.CONSISTENT)):
         def mk(i, base): return dict(release='x', overall=base, cats={c: base for c in CATS})
         def moved(i, k):

@@ -63,11 +63,17 @@ if gate:
     json.dump(store, open('data/repos.json.tmp', 'w')); os.replace('data/repos.json.tmp', 'data/repos.json')
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 rs = list(store.values()); cnt = C.Counter(r['cls'] for r in rs); comp = cnt['AGREE'] + cnt['DISAGREE']; lo, hi = K.wilson(cnt['DISAGREE'], comp)
-oc = K.CANNOT_TELL if (comp < 30 or not gate) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
+# 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md): K.read with the size that matters 0.10 and the band [0, 0.05), a reason beside every CANNOT_TELL, and the REQ-13 block
+def read_share(k, n, gate):
+    lo, hi = K.wilson(k, n); lo = 0.0 if k == 0 else lo; hi = 1.0 if k == n else hi
+    if not gate or n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)')
+oc, oc_why = read_share(cnt['DISAGREE'], comp, gate); r13 = K.req13([(oc, oc_why)], nothing_returned=0)
 dis = [r for r in rs if r['cls'] == 'DISAGREE']; why = C.Counter(r['why'] for r in rs if r['cls'] == 'NOT_COMPARABLE')
 def fmt(x): return ('%.2f B' % (x / 1e9)) if x >= 1e9 else ('%.0f M' % (x / 1e6))
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', models=len(rs),
-           comparison=dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, organizations=len({r['id'].split('/')[0] for r in dis}), awaiting=len([r for r in dis if r['id'] not in hc])),
+           comparison=dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=oc_why, req13=r13, req13_line=r13['line'], organizations=len({r['id'].split('/')[0] for r in dis}), awaiting=len([r for r in dis if r['id'] not in hc])),
            classes={c: dict(n=cnt[c]) for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, not_comparable_reasons={w: dict(n=n) for w, n in sorted(why.items(), key=lambda x: -x[1])},
            api_mismatch=[dict(repo=r['id'], total=r['total'], breakdown=r['psum'], stated=fmt(r['stated']) if r.get('stated') else None) for r in rs if r.get('why') == 'Hugging Face total does not match its own breakdown'],
            disagree_list=[dict(repo=r['id'], stated=fmt(r['stated']), actual=fmt(r['total']), ratio=r['ratio'], reason=hc[r['id']]) for r in dis if r['id'] in hc])

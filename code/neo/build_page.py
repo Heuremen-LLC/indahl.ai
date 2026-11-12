@@ -18,7 +18,7 @@ def cell_rows():
     for c in cells:
         why = c['cannot_tell_why']
         out.append('<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-            e(c['cell']), c['scored'], c['inside'], c['above'], c['below'], pc(c['share']), pc(c['lo']), pc(c['hi']), WORD[c['outcome']], c['cannot_tell'],
+            e(c['cell']), c['scored'], c['inside'], c['above'], c['below'], pc(c['share']), pc(c['lo']), pc(c['hi']), rw(c), c['cannot_tell'],
             '' if c['median_abs_shift_sigma'] is None else '%.2f' % c['median_abs_shift_sigma'], pc(c['share_beyond_1_sigma']), '' if c.get('median_abs_move_km') is None else '{:,.0f}'.format(c['median_abs_move_km'])))
     return ''.join(out)
 def why_line():
@@ -32,7 +32,7 @@ def out_rows(rs):
         link = '<a href="%s" rel="nofollow">%s</a>' % (e(r['stated_url']), day(r['stated_copy'])) if r.get('stated_url') else day(r['stated_copy'])
         out.append('<tr><td>%s</td><td>%s</td><td>%s</td><td>%.0f</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
             e(r['des']), e(r['approach'][:10]), link, r['lead_days'], au(r['stated']), au(r['stated_min']), au(r['stated_max']), au(r.get('latest')), au(r.get('latest_min')), au(r.get('latest_max')),
-            '' if r.get('z') is None else '%+.1f' % r['z'], '' if r.get('move_km') is None else '{:+,.0f}'.format(r['move_km']), WORD.get(r['outcome'], e(r['outcome'].lower().replace('_', ' '))) + ((' (' + e(r['why']) + ')') if r.get('why') else ''),
+            '' if r.get('z') is None else '%+.1f' % r['z'], '' if r.get('move_km') is None else '{:+,.0f}'.format(r['move_km']), WORD.get(r['outcome'], e((r['outcome'] or r.get('read_status') or 'nothing returned').lower().replace('_', ' '))) + ((' (' + e(r['why']) + (', ' + e(r['reason']) if r.get('reason') else '') + ')') if r.get('why') else ''),
             e('%s to %s' % (r.get('stated_orbit'), r.get('latest_orbit'))) + ((', arc %s d' % e(str(ls.get('data_arc')))) if ls.get('data_arc') else '')))
     return ''.join(out)
 outside = [r for r in S['outside_range'] if r['headline']]
@@ -49,7 +49,7 @@ def without_line():
     a, n = DC.get('all leads'), DC.get('0 to 7 days')
     if not (a and n and DEP.get('copy') and BIG == DEP['copy_day']): return ''
     return (' Without that copy %d of %d scored rows are inside and the first row reads %s, and the 0 to 7 day cell holds %d of %d and reads %s. These readings without the copy were added after the data and decide nothing.'
-            % (a['without']['inside'], a['without']['scored'], WORD[a['without']['outcome']], n['without']['inside'], n['without']['scored'], WORD[n['without']['outcome']]))
+            % (a['without']['inside'], a['without']['scored'], rw(a['without']), n['without']['inside'], n['without']['scored'], rw(n['without'])))
 NA = MORE['nominal_alone']
 nom_line = 'Judged on the later nominal distance alone, counting the rows that cross an edge, %d of %d are inside, which reads the same. This was added after the data.' % (NA['inside'], NA['rows'])
 small = sum(1 for r in outside if r.get('move_km') is not None and abs(r['move_km']) < 2000)
@@ -57,7 +57,7 @@ more_line = more_line.replace('%s', BIGDAY) if o365['from_copy'] == o365['scored
 aug = S['august_2026']; augr = S['august_rows']
 gate_line = 'All four known-good checks passed on this run.' if g['passed'] else 'A known-good check did not pass on this run, so every outcome reads cannot tell.'
 need = 'At this sample size a cell can read consistent only if nearly every row is inside. It takes about 190 scored rows, all inside, for the lower bound to reach 98 percent.'
-from neo_headline import headline
+from neo_headline import headline, rw
 DEP = S.get('dependence') or {}; DC = {c['cell']: c for c in DEP.get('cells', [])}
 HL_BIG, HL_LINE = headline(S)
 hl = '<section id="hl-slot" class="hl-slot hl"><div class="hl-big">%s</div><p class="hl-line">%s</p></section>' % (e(HL_BIG), e(HL_LINE))
@@ -68,7 +68,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>
 <p>JPL does not state how often a later distance should fall inside the range. Reading a 3-sigma range as one that holds about 99.7 percent of later values comes from a normal distribution and is our reading. CNEOS bases the minimum on a 3-sigma ellipse in the target plane. Under a normal distribution a point falls inside such an ellipse about 98.9 percent of the time, and every cell reads the same against 98.9 percent as against 99.7 percent. This page does not say why it moved. The plan, with the rules and the known-good checks, was fixed before any stated distance was set beside a later one. %s</p>
 <h2>By how long before the approach the range was stated</h2>
 <div class="tw"><table class="bench"><thead><tr><th>Stated before the approach</th><th>Scored</th><th>Inside</th><th>Farther</th><th>Closer</th><th>Inside, percent</th><th>95%% interval, percent</th><th>Reading</th><th>Cannot tell</th><th>Median shift, stated sigma</th><th>Beyond one sigma, percent</th><th>Median move, km</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">One row is one object and one approach inside 0.05 au since 1 January 2024, taken from the earliest copy that shows it before the approach. An object is counted once in a cell. Inside means the whole 3-sigma range of the latest solution lies inside the range stated earlier. Farther and closer mean the whole latest range lies outside it. %s Cannot tell is never folded into either side. In the first row it holds %s. The interval is a 95%% Wilson interval. Reading: below if the upper bound is under 99.7 percent, consistent if the lower bound is 98 percent or more, otherwise cannot tell. %s The interval treats rows as independent. Rows from one copy share one moment of JPL\'s data, so the interval can be too narrow. The shift is the move of the nominal distance divided by one sixth of the stated range. It describes the move and is not a test.</p>
+<p class="bench-note">One row is one object and one approach inside 0.05 au since 1 January 2024, taken from the earliest copy that shows it before the approach. An object is counted once in a cell. Inside means the whole 3-sigma range of the latest solution lies inside the range stated earlier. Farther and closer mean the whole latest range lies outside it. %s Cannot tell is never folded into either side. In the first row it holds %s. The interval is a 95%% Wilson interval. Reading: above if the lower bound is over 99.7 percent, below if the upper bound is under it, consistent if the whole interval lies from 98 to 100 percent, otherwise cannot tell with the reason STRADDLES_EDGE. Fewer than 10 scored rows is cannot tell with the reason TOO_WIDE_TO_RESOLVE. For a row, a stated solution that is still the latest, no current record and an unreadable value are cannot tell with the reason NO_INTERVAL_FORMABLE, a stated range wider than 0.05 au is TOO_WIDE_TO_RESOLVE, and a latest range that crosses an edge is STRADDLES_EDGE. Edges are closed, so an interval end equal to 99.7 percent is neither above nor below it. No size that matters is named for these cells, so the check for an interval that holds both zero and a size that matters is not applied. Failed reads and the rest of the cannot tell rows, cell by cell: %s %s The interval treats rows as independent. Rows from one copy share one moment of JPL\'s data, so the interval can be too narrow. The shift is the move of the nominal distance divided by one sixth of the stated range. It describes the move and is not a test.</p>
 <h2>Approaches where the latest solution is outside the stated range</h2>
 <div class="tw"><table class="bench"><thead><tr><th>Object</th><th>Approach</th><th>Stated copy</th><th>Days before</th><th>Stated nominal, au</th><th>Stated range, au</th><th>Latest nominal, au</th><th>Latest range, au</th><th>Shift, stated sigma</th><th>Move, km</th><th>Reading</th><th>Solution</th></tr></thead><tbody>%s</tbody></table></div>
 <p class="bench-note">In %d of these %d rows the nominal distance moved by less than 2,000 km. %d of the %d stated ranges were under 1,000 km wide. Each stated copy links to the archived response. Solution shows the orbit ID the range was stated from and the latest orbit ID, with the latest solution's data arc in days where it was read.%s</p>
@@ -85,12 +85,12 @@ body = hl + '''<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>
 <p class="meta">Data read from: <a href="https://cneos.jpl.nasa.gov/ca/">NASA/JPL CNEOS close approaches</a> &middot; <a href="https://ssd-api.jpl.nasa.gov/doc/cad.html">JPL SBDB Close-Approach Data API</a> &middot; <a href="https://ssd-api.jpl.nasa.gov/doc/sbdb.html">JPL SBDB API</a> &middot; <a href="https://web.archive.org/">Internet Archive Wayback Machine</a>.</p>
 <p class="meta">Named here and want to answer a row? <a href="/respond?u=neo-all">Respond</a></p>
 <section id="replies" data-prefix="neo"></section><script src="/replies.js" defer></script>''' % (
-    day(src['own_first_copy']) if src.get('own_first_copy') else 'its first run', first, last, gate_line, cell_rows(), nom_line, why_line(), need,
+    day(src['own_first_copy']) if src.get('own_first_copy') else 'its first run', first, last, gate_line, cell_rows(), nom_line, why_line(), ' '.join('%s: %s' % (c['cell'], c['req13']['line']) for c in cells) if all(c.get('req13') for c in cells) else '', need,
     out_rows(sorted(outside, key=lambda r: -abs(r.get('z') or 0))), small, len(outside), MORE['outside_under_1000km_wide'], MORE['outside_rows'], lop_note(),
-    aug['scored'], aug['inside'], aug['above'], aug['below'], aug['cannot_tell'], 'With fewer than 10 scored rows the subset has no reading of its own.' if aug['scored'] < 10 else 'The subset reads %s, with a 95%% interval of %s to %s percent.' % (WORD[aug['outcome']], pc(aug['lo']), pc(aug['hi'])),
+    aug['scored'], aug['inside'], aug['above'], aug['below'], aug['cannot_tell'], 'With fewer than 10 scored rows the subset has no reading of its own.' if aug['scored'] < 10 else 'The subset reads %s, with a 95%% interval of %s to %s percent.' % (rw(aug), pc(aug['lo']), pc(aug['hi'])),
     out_rows(sorted(augr, key=lambda r: r['approach'])),
     BIGDAY, BC['scored'].get(BIG, 0), allc['scored'], BC['outside'].get(BIG, 0), allc['above'] + allc['below'], without_line(), more_line,
-    R['later_statements'], e(S['claim']['source'].split()[-1]), src['wayback_index_copies'], src['wayback'].get('used', 0), src['own_copies'], '{:,}'.format(R['total']), '{:,}'.format(R['outcomes'].get('NOTHING_RETURNED', 0)), e(S['generated'][:10]), e(S['generated'][:10]))
+    R['later_statements'], e(S['claim']['source'].split()[-1]), src['wayback_index_copies'], src['wayback'].get('used', 0), src['own_copies'], '{:,}'.format(R['total']), '{:,}'.format(R.get('failed_reads', 0)), e(S['generated'][:10]), e(S['generated'][:10]))
 page = '''<!doctype html>
 <html lang="en">
 <head>

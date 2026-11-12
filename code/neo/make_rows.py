@@ -9,6 +9,7 @@ Called by refresh_page.py (ship.sh step 1) after build_page.py. Heuremen LLC."""
 import json, os, re, sys, subprocess, time
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); L = os.path.expanduser('~/bones-forge/ledger'); sys.path.insert(0, L)
 import check_ledger as CL, ledger as LG
+from neo_headline import rw
 S = json.load(open('summary_neo.json')); page = open('neo.html').read(); ptext = CL.norm(page)
 WORD = {'ABOVE': 'above', 'BELOW': 'below', 'CONSISTENT': 'consistent', 'CANNOT_TELL': 'cannot tell'}
 def pc(x): return '' if x is None else '%.1f' % (100 * x)
@@ -20,7 +21,7 @@ SPEC = []   # (id, claim or None to keep, value, lo, hi, unit, outcome, surface 
 for rid, name in (('neo.cell.all', 'all leads'), ('neo.cell.lead0_7', '0 to 7 days'), ('neo.cell.lead8_30', '8 to 30 days'), ('neo.cell.lead30', 'more than 30 days')):
     c = cells[name]
     SPEC.append((rid, None, v4(c['share']), v4(c['lo']), v4(c['hi']), '%d of %d' % (c['inside'], c['scored']), c['outcome'],
-                 '%s %d %d %d %d %s %s to %s %s %d' % (name, c['scored'], c['inside'], c['above'], c['below'], pc(c['share']), pc(c['lo']), pc(c['hi']), WORD[c['outcome']], c['cannot_tell'])))
+                 '%s %d %d %d %d %s %s to %s %s %d' % (name, c['scored'], c['inside'], c['above'], c['below'], pc(c['share']), pc(c['lo']), pc(c['hi']), rw(c), c['cannot_tell'])))
 a = S['august_2026']
 m = find(r'(\d+) rows are scored, (\d+) inside, (\d+) farther and (\d+) closer, and (\d+) cannot tell\.')
 assert tuple(map(int, m.groups())) == (a['scored'], a['inside'], a['above'], a['below'], a['cannot_tell']), m.group(0)
@@ -34,8 +35,8 @@ assert m.group(1) == BIG and tuple(map(int, m.groups()[1:])) == (dc['from_copy_s
 SPEC.append(('neo.dep.copy20240209', 'NEO: the archived copy of %s gives %d of the %d scored rows and %d of the %d outside the range (display, after the data)' % (BIG, dc['from_copy_scored'], allc['scored'], dc['from_copy_outside'], allc['above'] + allc['below']),
              str(dc['from_copy_scored']), None, None, 'of %d scored, %d of %d outside' % (allc['scored'], dc['from_copy_outside'], allc['above'] + allc['below']), 'COUNT', m.group(0)))
 w = dc['without']; n7 = DC['0 to 7 days']['without']
-m = find(r'Without that copy (\d+) of (\d+) scored rows are inside and the first row reads ([a-z ]+?), and the 0 to 7 day cell holds (\d+) of (\d+) and reads ([a-z ]+?)\.')
-assert m.groups() == (str(w['inside']), str(w['scored']), WORD[w['outcome']], str(n7['inside']), str(n7['scored']), WORD[n7['outcome']]), m.group(0)
+m = find(r'Without that copy (\d+) of (\d+) scored rows are inside and the first row reads ([a-z ]+?(?: \([A-Z_]+\))?), and the 0 to 7 day cell holds (\d+) of (\d+) and reads ([a-z ]+?(?: \([A-Z_]+\))?)\.')
+assert m.groups() == (str(w['inside']), str(w['scored']), rw(w), str(n7['inside']), str(n7['scored']), rw(n7)), m.group(0)
 SPEC.append(('neo.dep.without', 'NEO: without the copy of %s, all leads %d of %d inside (%s) and 0 to 7 days %d of %d (%s), after the data, decides nothing' % (BIG, w['inside'], w['scored'], WORD[w['outcome']], n7['inside'], n7['scored'], WORD[n7['outcome']]),
              v4(w['inside'] / w['scored']), v4(w['lo']), v4(w['hi']), '%d of %d' % (w['inside'], w['scored']), w['outcome'], m.group(0)))
 m = find(r'(\d+) of the (\d+) stated ranges were under 1,000 km wide\.')

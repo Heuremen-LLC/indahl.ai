@@ -26,8 +26,8 @@ try:
         sh([sys.executable, os.path.join(H, 'check_time_t1.py'), 'github-azure', os.path.join(H, 'data', 'probe_azure.jsonl')], 120)
         az = json.load(open(os.path.join(H, 'summary_time.json'))); pi = json.load(open(os.path.join(H, 'summary_time_pi.json'))); azs = {x['server']: x for x in az['servers']}
         for x in pi['servers']:
-            y = azs.get(x['server'], {}); x['offset_ms_2'] = y.get('offset_ms'); x['half_delay_ms_2'] = y.get('half_delay_ms'); x['outcome_2'] = y.get('outcome'); x['stated_bound_ms_2'] = y.get('stated_bound_ms'); x['rounds_2'] = y.get('rounds'); x['counts_2'] = y.get('counts')   # 30 Oct (H-15): the runner's own bound and rounds travel with its outcome
-        pi['seat2'] = dict(name='GitHub runner network', seat_part_ms=az.get('seat_part_ms'), updated=az.get('updated'))
+            y = azs.get(x['server'], {}); x['offset_ms_2'] = y.get('offset_ms'); x['half_delay_ms_2'] = y.get('half_delay_ms'); x['outcome_2'] = y.get('outcome'); x['reason_2'] = y.get('reason'); x['status_2'] = y.get('status'); x['outcome_raw_2'] = y.get('outcome_raw'); x['reason_raw_2'] = y.get('reason_raw'); x['outcome_seat_removed_2'] = y.get('outcome_seat_removed'); x['reason_seat_removed_2'] = y.get('reason_seat_removed'); x['stated_bound_ms_2'] = y.get('stated_bound_ms'); x['rounds_2'] = y.get('rounds'); x['counts_2'] = y.get('counts')   # 30 Oct (H-15): the runner's own bound and rounds travel with its outcome
+        pi['seat2'] = dict(name='GitHub runner network', seat_part_ms=az.get('seat_part_ms'), updated=az.get('updated'), totals=az.get('totals'), req13=az.get('req13'), failed_reads=az.get('failed_reads'))   # 12 Nov 2026 (PLAN_ADDENDUM_std2.md): REQ-13 for the second seat too
         json.dump(pi, open(os.path.join(H, 'summary_time.json'), 'w'), indent=1)
     sh([GH, 'api', 'repos/Heuremen-LLC/nodes/dispatches', '-f', 'event_type=time-probe'], 60)
 except Exception as e: print('time: second seat step failed', type(e).__name__)

@@ -146,10 +146,18 @@ if os.environ.get('SECRECORDS_SPF_REREAD') and gate:
 hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
 UL = set(json.load(open('data/unlisted.json'))) if os.path.exists('data/unlisted.json') else set()   # 9 Nov 2026: house-only list of domains never named on a public page (legal caution). They stay in the counts, never in disagree_list
 rs = list(store.values())
+# 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md): K.read with the size that matters 0.10 and the band [0, 0.05), a reason beside every CANNOT_TELL, and the REQ-13 block
+def read_share(k, n, gate):
+    lo, hi = K.wilson(k, n); lo = 0.0 if k == 0 else lo; hi = 1.0 if k == n else hi
+    if not gate or n == 0: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    if n < 30: return K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE
+    return K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)')
+FAILED_READS = {'hsts': ('HTTPS request failed',), 'spf': ('DNS read failed', 'count cut short')}   # failed reads of a source (NOTHING_RETURNED), outside numerator and denominator
 def grp(key, kind):
     cnt = C.Counter(r[key + '_cls'] for r in rs); comp = cnt['AGREE'] + cnt['DISAGREE']; lo, hi = K.wilson(cnt['DISAGREE'], comp)
-    oc = K.CANNOT_TELL if (comp < 30 or not gate) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
-    return cnt, dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, awaiting=len([r for r in rs if r[key + '_cls'] == 'DISAGREE' and kind + '|' + r['domain'] not in hc]))
+    oc, oc_why = read_share(cnt['DISAGREE'], comp, gate)   # 12 Nov 2026 (Faults and Guards 2.0, PLAN_ADDENDUM_std2.md)
+    failed = [r for r in rs if r[key + '_cls'] == 'NOT_COMPARABLE' and r.get(key + '_why') in FAILED_READS[key]]; r13 = K.req13([(oc, oc_why)], nothing_returned=failed)
+    return cnt, dict(of=comp, n=cnt['DISAGREE'], share=round(cnt['DISAGREE'] / comp, 4) if comp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc, reason=oc_why, req13=r13, req13_line=r13['line'], failed_reads={w: len([r for r in failed if r.get(key + '_why') == w]) for w in FAILED_READS[key]}, awaiting=len([r for r in rs if r[key + '_cls'] == 'DISAGREE' and kind + '|' + r['domain'] not in hc]))
 ch, cmp_h = grp('hsts', 'hsts'); cs, cmp_s = grp('spf', 'spf'); dm = C.Counter(('p=' + r['dmarc'] if r['dmarc'] in ('none', 'quarantine', 'reject') else r['dmarc']) for r in rs); anyh = len([r for r in rs if r.get('hsts')]); anys = len([r for r in rs if r.get('spf_cls') in ('AGREE', 'DISAGREE') or r.get('spf_why') == 'count cut short'])
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed' if gate else 'FAILED', domains=len(rs), awaiting=cmp_h['awaiting'] + cmp_s['awaiting'], listdate=open('data/listdate.txt').read() if os.path.exists('data/listdate.txt') else '',
            comparison={'HSTS preload header': cmp_h, 'SPF lookup limit': cmp_s}, classes={'HSTS preload header': {c: ch[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}, 'SPF lookup limit': {c: cs[c] for c in ('AGREE', 'DISAGREE', 'NOT_COMPARABLE')}},

@@ -23,7 +23,7 @@ for ev in ('divorce', 'marriage'):
 assert i == len(trs) and len({x[0] for x in items}) == len(items)
 def find(rx):
     m = re.search(rx, ptext); assert m, rx; return m.group(0)
-O = [('fid.headline', 'FIDELITY, headline: Texas divorce below the ACS interval under both sexes, the other both-sexes jurisdictions and the 2022 national ratio', r'13 of 13 In Texas the CDC count of divorces and annulments sits below.*?not against 1\.0\.', 'COUNT'),
+O = [('fid.headline', 'FIDELITY, headline: Texas divorce below the ACS interval under both sexes, the other both-sexes jurisdictions and the 2022 national ratio', r'13 of 13 In Texas the CDC count of divorces and annulments sits below.*?CANNOT_TELL \d+ of \d+ \([^)]*\)\.', 'COUNT'),
      ('fid.line.divorce', 'FIDELITY, divorces: women, men and both-sexes counts', r"Divorces and annulments: of \d+ rows.*?Without the destination cells the women's reading is \d+ above, \d+ below and \d+ inside\.", 'COUNT'),
      ('fid.line.marriage', 'FIDELITY, marriages: women, men and both-sexes counts', r"Marriages: of \d+ rows.*?Without the destination cells the women's reading is \d+ above, \d+ below and \d+ inside\.", 'COUNT'),
      ('fid.scored', 'FIDELITY, the women reading is the scored one, below counts under women and men', r"The women's reading is the scored one.*?under the men's\.", 'COUNT'),

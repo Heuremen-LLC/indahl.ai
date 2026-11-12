@@ -2,7 +2,7 @@
 """build_page.py: writes solar.html, the desk's page draft, from summary_solar.json. Reads no network. The live page is built by the site build from this file."""
 import json, os, sys, html
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
-from solar_headline import headline, WORD, SKILL, pc
+from solar_headline import headline, WORD, SKILL, pc, W
 S = json.load(open('summary_solar.json'))
 e = html.escape
 MINN = S['frame']['min_n']; src = S['sources']; g = S['gates']
@@ -20,8 +20,8 @@ def summary_rows():
         if held:
             out.append('<tr><td>%s</td><td>%d</td><td>%s</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>held</td></tr>' % (e(c['name']), c['lead'], '{:,}'.format(c['scored']))); continue
         out.append('<tr><td>%s</td><td>%d</td><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s to %s</td><td>%s</td></tr>' % (
-            e(c['name']), c['lead'], '{:,}'.format(c['scored']), k['events'] or 0, len(bs), cnt('CONSISTENT'), cnt('ABOVE'), cnt('BELOW'), pc(k['base_rate']), f3(k['brier']), f3(k['bss']), f3(k['lo']), f3(k['hi']),
-            'held' if held else WORD[k['outcome']]))
+            e(c['name']), c['lead'], '{:,}'.format(c['scored']), k['events'] or 0, len(bs), cnt('CANNOT_TELL'), cnt('ABOVE'), cnt('BELOW'), pc(k['base_rate']), f3(k['brier']), f3(k['bss']), f3(k['lo']), f3(k['hi']),
+            'held' if held else W(k)))
     return ''.join(out)
 def bin_table(bins):
     rows = []
@@ -29,7 +29,7 @@ def bin_table(bins):
         if not b['n']: continue
         rows.append('<tr><td>%s</td><td>%d</td><td>%s</td><td>%d</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%s</td></tr>' % (
             e(b['bin']), b['n'], pc(b['mean_stated']), b['events'], pc(b['observed']), pc(b['lo']), pc(b['hi']),
-            '' if b.get('boot_lo') is None else '%s to %s' % (pc(b['boot_lo']), pc(b['boot_hi'])), WORD[b['outcome']]))
+            '' if b.get('boot_lo') is None else '%s to %s' % (pc(b['boot_lo']), pc(b['boot_hi'])), W(b)))
     return ('<div class="tw"><table class="bench"><thead><tr><th>Stated chance, percent</th><th>Days</th><th>Mean stated, percent</th><th>Days with the event</th>'
             '<th>Happened, percent</th><th>95%% Wilson interval, percent</th><th>Block bootstrap interval, percent</th><th>Reading</th></tr></thead><tbody>%s</tbody></table></div>' % ''.join(rows))
 def ns_line(c):
@@ -67,7 +67,7 @@ def drow(name, key):
     if not d: return ''
     bs = [b for b in d['bins'] if b['n'] >= MINN]; k = d['skill']
     return '<tr><td>%s</td><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%s</td><td>%s to %s</td></tr>' % (
-        e(name), '{:,}'.format(k['n']), sum(b['outcome'] == 'CONSISTENT' for b in bs), sum(b['outcome'] == 'ABOVE' for b in bs), sum(b['outcome'] == 'BELOW' for b in bs), f3(k['bss']), f3(k['lo']), f3(k['hi']))
+        e(name), '{:,}'.format(k['n']), sum(b['outcome'] == 'CANNOT_TELL' for b in bs), sum(b['outcome'] == 'ABOVE' for b in bs), sum(b['outcome'] == 'BELOW' for b in bs), f3(k['bss']), f3(k['lo']), f3(k['hi']))
 desc_rows = (drow('M-class read as M only, flares from M1.0 to M9.9', 'M only, day one') +
              drow('SWPC estimated planetary K of 5- or more against the middle latitude storm chance', 'SWPC estimated planetary K 5 or more against the middle latitude storm chance, day one') +
              drow('SWPC estimated planetary K of 6- or more against the middle latitude major or severe chance', 'SWPC estimated planetary K 6 or more against the middle latitude major-severe chance, day one') +
@@ -82,8 +82,8 @@ body = hl + '''<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>
 <p>The stated chances are read from the reports as first published, kept in the SWPC Warehouse, and from copies this desk stores. A corrected or amended report is never used, and a forecast counts only if it was issued before its day began. What happened is read from SWPC&rsquo;s own records: the edited solar event lists for flares, and the daily geomagnetic data for the eight 3-hour K values a day at Fredericksburg and at College. The report does not name its middle and high latitude stations. Reading them as Fredericksburg and College, the stations SWPC lists under those headings, is our reading. An M-class day is a day with a flare of M1.0 or more at its peak, and reading Class M as M or greater is also ours.</p>
 <p>The frame starts with forecasts issued on 1 January 2021, more than a year after SWPC moved its main X-ray input to GOES-16 and stopped scaling flare classes, so every day is on one flare scale. Scored days run from %s to %s. %s The plan, with the bins, events and rules, was fixed before any stated chance was set beside an outcome. One addendum was made after the first read and is marked where it applies.</p>
 <h2>Every event and day ahead</h2>
-<div class="tw"><table class="bench"><thead><tr><th>Event</th><th>Day ahead</th><th>Days scored</th><th>Days with the event</th><th>Bins with %d days or more</th><th>Consistent</th><th>Above</th><th>Below</th><th>Base rate, percent</th><th>Brier score</th><th>Brier skill</th><th>95%% block bootstrap interval</th><th>Skill reading</th></tr></thead><tbody>%s</tbody></table></div>
-<p class="bench-note">A bin is a range of stated chance. Above means the event came more often than the mean stated chance in the bin, and below means less often, each by more than the 95%% Wilson interval. Consistent means the mean stated chance is inside the interval. A bin with fewer than %d days reads cannot tell. The Brier score is the mean squared gap between the stated chance and what happened. The skill compares it with always stating the base rate of the same days. Above zero is better than the base rate, and the skill reads consistent if its whole interval is within 0.05 of zero.</p>
+<div class="tw"><table class="bench"><thead><tr><th>Event</th><th>Day ahead</th><th>Days scored</th><th>Days with the event</th><th>Bins with %d days or more</th><th>Cannot tell</th><th>Above</th><th>Below</th><th>Base rate, percent</th><th>Brier score</th><th>Brier skill</th><th>95%% block bootstrap interval</th><th>Skill reading</th></tr></thead><tbody>%s</tbody></table></div>
+<p class="bench-note">A bin is a range of stated chance. Above means the event came more often than the mean stated chance in the bin, and below means less often, each by more than the 95%% Wilson interval. If the mean stated chance is inside the interval the bin reads cannot tell, with the reason STRADDLES_EDGE. A stated chance is a point figure with no tolerance, so no bin reads consistent. A bin with fewer than %d days reads cannot tell with the reason TOO_WIDE_TO_RESOLVE, and no size that matters is named for the bins, so the both-alternatives test is not applied. The Brier score is the mean squared gap between the stated chance and what happened. The skill compares it with always stating the base rate of the same days. The skill reads above if its whole interval is over 0.05, below if it is under minus 0.05, consistent if the whole interval is within 0.05 of zero, and otherwise cannot tell with the reason STRADDLES_EDGE.</p>
 <p class="bench-note">The Wilson interval treats days as independent. They are not. Active regions and storms last for days, and the three days of one forecast share most of what the forecaster knew, so the Wilson interval can be too narrow. The effect is not the same everywhere. It is largest for M-class flares and high latitude storms, where the interval may be about one and a half times too narrow, and small for X-class flares and middle latitude storms. The skill interval is a moving block bootstrap over blocks of 27 days, one solar rotation, which keeps runs of days together. Each bin table also shows a block bootstrap interval beside the Wilson interval, as a description. The plan&rsquo;s reading uses the Wilson interval.</p>
 <h2>Bin by bin, the day after the forecast</h2>
 %s
@@ -91,7 +91,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>
 <h2>Proton events are held</h2>
 <p>The report also states a chance of a proton event, at least 10 pfu above 10 MeV. The plan scored it against the SWPC list of solar proton events. That list leaves out events SWPC&rsquo;s own daily reports record. The report of 23 March 2024 says protons above 10 MeV &ldquo;reached a peak level of 955 pfu&rdquo;, and the list has no event in March 2024. Scored against that list a stated chance would look too high, so the proton rows read cannot tell. Their figures stay in the data, marked as held, until a complete record is set in a later plan.</p>
 <h2>Other readings, described and not scored</h2>
-<div class="tw"><table class="bench"><thead><tr><th>Reading, the day after the forecast</th><th>Days</th><th>Consistent bins</th><th>Above</th><th>Below</th><th>Brier skill</th><th>95%% block bootstrap interval</th></tr></thead><tbody>%s</tbody></table></div>
+<div class="tw"><table class="bench"><thead><tr><th>Reading, the day after the forecast</th><th>Days</th><th>Bins that cannot tell</th><th>Above</th><th>Below</th><th>Brier skill</th><th>95%% block bootstrap interval</th></tr></thead><tbody>%s</tbody></table></div>
 <p class="bench-note">These rows decide nothing. The report names no station or index for its geomagnetic chances. Against SWPC&rsquo;s estimated planetary K and against the planetary Kp from GFZ Potsdam the middle latitude storm chances sit closer to what happened than against Fredericksburg K. That does not say which index SWPC means. The most recent GFZ values are nowcast values and may be replaced by definitive ones.</p>
 <h2>What this page holds and what it leaves out</h2>
 <p>The delivered records are SWPC&rsquo;s preliminary records. SWPC says it does not encourage the use of preliminary data for research. The edited event lists are read once a day has been over for at least three days. A flare that begins before midnight and peaks after it counts on the day of its peak. SWPC&rsquo;s Daily Solar Data counts it on the day it began, and the two records agree on whether a day had an M-class or larger flare on JOINAGREE of JOINDAYS days. Days with no report, no event list or a missing K value are counted apart and are never read as days with or without an event. Reports refused as a correction or amendment, or that did not parse: %d.</p>

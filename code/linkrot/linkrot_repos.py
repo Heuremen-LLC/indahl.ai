@@ -37,10 +37,11 @@ if gate_ok:
     json.dump(repos, open('data/repos.json.tmp', 'w')); os.replace('data/repos.json.tmp', 'data/repos.json')
 def cell(rs):
     c = C.Counter(r['state'] for r in rs); read = c['EMPTY'] + c['STUB'] + c['CODE']; lo, hi = K.wilson(c['EMPTY'], read)
-    oc = K.CANNOT_TELL if (read < 30 or not gate_ok) else (K.ABOVE if lo > 0.10 else (K.CONSISTENT if hi < 0.05 else K.CANNOT_TELL))
+    # Faults and Guards 2.0 (PLAN_ADDENDUM_std2.md, 12 Nov 2026): size that matters 0.10, band [0, 0.05) open at the top, Wilson 95%. NOTHING_RETURNED is the NOT_FOUND count, outside numerator and denominator.
+    oc, why = (K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE) if (not gate_ok or read == 0) else ((K.CANNOT_TELL, K.TOO_WIDE_TO_RESOLVE) if read < 30 else K.read(lo, hi, band=(0.0, 0.05), matters=0.10, edge='[)'))
     stale = sum(1 for r in rs if r['state'] != 'NOT_FOUND' and r.get('pushed') and time.mktime(time.strptime(r['pushed'][:10], '%Y-%m-%d')) < now - 365 * 86400)
     nolic = sum(1 for r in rs if r['state'] in ('CODE', 'STUB') and not r.get('license')); nl_lo, nl_hi = K.wilson(nolic, read)   # addendum 1, descriptive
-    return dict(no_license=nolic, no_license_share=round(nolic / read, 4) if read else None, no_license_share_lo=round(nl_lo, 4), no_license_share_hi=round(nl_hi, 4), repos=read, empty=c['EMPTY'], stub=c['STUB'], code=c['CODE'], not_found=c['NOT_FOUND'], archived=sum(1 for r in rs if r.get('archived')), stale=stale, empty_share=round(c['EMPTY'] / read, 4) if read else None, lo=round(lo, 4), hi=round(hi, 4), outcome=oc)
+    return dict(no_license=nolic, no_license_share=round(nolic / read, 4) if read else None, no_license_share_lo=round(nl_lo, 4), no_license_share_hi=round(nl_hi, 4), repos=read, empty=c['EMPTY'], stub=c['STUB'], code=c['CODE'], not_found=c['NOT_FOUND'], archived=sum(1 for r in rs if r.get('archived')), stale=stale, empty_share=round(c['EMPTY'] / read, 4) if read else None, lo=round(lo, 4), hi=round(hi, 4), outcome=oc, reason=why, req13=K.req13([(oc, why)], nothing_returned=c['NOT_FOUND']))
 yrs = {}
 for u, r in repos.items():
     for y in {min(links[u]['years'])} if u in links else []: yrs.setdefault(str(y), []).append(r)
