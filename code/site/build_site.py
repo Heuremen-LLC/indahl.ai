@@ -8,7 +8,7 @@ MARK = ('<svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon poi
         '<polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>')
 HOME = {'/vault': '/hermes', '/tape': '/hermes', '/receipts/stamps': '/hermes', '/hfsize': '/iris', '/hflicense': '/iris', '/pkglicense': '/iris', '/pkginstall': '/iris', '/uptime': '/atlas', '/time': '/atlas', '/cada': '/atlas', '/secrecords': '/atlas', '/seat': '/atlas', '/support': '/atlas', '/change': '/atlas',
         '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/rank': '/oy', '/hosts': '/iris', '/water': '/atlas', '/neo': '/atlas', '/seasonal': '/hermes', '/steo': '/hermes', '/solar': '/atlas', '/quake': '/atlas', '/flu': '/hermes', '/tornado': '/hermes', '/credit': '/hermes', '/cone': '/atlas', '/wiki': '/hermes', '/social': '/hermes', '/predictions': '/hermes', '/census/revisions': '/census', '/census/coverage': '/census', '/census/fidelity': '/census', '/census/vintages': '/census'}
-NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/census', 'CENSUS'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
+NAV = [('/sagar', 'SAGAR'), ('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/census', 'CENSUS'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
 DOI = 'https://doi.org/10.5281/zenodo.23169755'
 
 
@@ -119,10 +119,14 @@ def fit_title(title, cap=70):
     words = parts[0][:cap].split(' ')[:-1]
     while words and words[-1].lower().strip(',:;-') in ('and', 'or', 'of', 'the', 'a', 'an', 'to', 'in', 'on', 'for', 'with', 'than', 'at', 'by', 'from'): words.pop()
     return ' '.join(words).rstrip(' ,:;-')
+_PARENT = {'/oy': '/hermes', '/census': '/hermes', '/social': '/hermes'}   # 12 Nov (Wayfinder): OY, SOCIAL and CENSUS sit under HERMES in the menu
+def _menuhome(path, home):
+    if path.startswith('/sagar/'): return '/sagar'
+    return _PARENT.get(home, home)
 def page(path, title, desc, body, wide_hero=None):
     # 29 Oct 2026: the main menu is the five divisions and STACK. Every other live page has one home division and is reached from it.
     _TOP = ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/stack')
-    _home = HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path)
+    _home = _menuhome(path, HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path))
     _a = lambda h, t: f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>'
     nav = '@@NAV:' + path + '@@'   # filled after every page exists, so each dropdown lists only pages that were built
     hero = wide_hero or ''
@@ -160,7 +164,7 @@ def page(path, title, desc, body, wide_hero=None):
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
 </div></footer>
-<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/census', 'CENSUS')))}</nav>
+<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/sagar', 'SAGAR'), ('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS')))}</nav>
 <script src="/pwa.js" defer></script>
 <script src="/live-tags.js?v=35e2ef27" defer></script>
 <script src="/headline.js?v=6e4f48dc" defer></script>
@@ -2332,7 +2336,7 @@ DESKS = {'/census': [('/census/revisions', 'REVISIONS', 'Stated Census intervals
                     ('/uptime', 'UPTIME', 'Vendor status pages against independent probes'), ('/time', 'TIME', 'Public time servers, stated against delivered'), ('/cada', 'CADA', 'Public DNS filters against fresh abuse reports'), ('/secrecords', 'SECRECORDS', 'Security records against their own rules'),
                     ('/seat', 'SEAT', 'An outside seat reads our own pages'), ('/support', 'SUPPORT', 'Stated support windows against release activity'), ('/change', 'CHANGE', 'Announced shutdown dates, kept over time')],
          '/hermes': [('/hermes/datapapers', 'DATA PAPERS', 'Papers in four data journals, each listed with the files its repository serves'), ('/hermes/model', 'MODEL', 'Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data'), ('/trials', 'TRIALS', 'Results due against results posted, and stopped trials'), ('/hpt', 'HPT', 'Hospital price files against the rule'), ('/airline', 'AIRLINE', 'Scheduled flight time against flown time'), ('/airq', 'AIRQ', 'Air sensors against the EPA\'s own targets'), ('/revise', 'REVISE', 'Stated margin against later revision'), ('/fedsep', 'FEDSEP', 'The Fed\'s stated ranges against outcomes'), ('/cadence', 'CADENCE', 'Stated update schedules against delivered'),
-                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/seasonal', 'SEASONAL', 'Stated seasonal outlook chances against what was observed'), ('/steo', 'STEO', 'Stated energy price intervals against the spot price'), ('/flu', 'FLU', 'Stated flu forecast intervals against reported admissions'), ('/tornado', 'TORNADO', 'Stated tornado chances and warning goals against the tornadoes that came'), ('/credit', 'CREDIT', 'Stated complaint responses and card terms against the public record'), ('/forecasters', 'FORECASTERS', 'Every forecaster desk on one axis, stated against delivered'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/predictions', 'NOW', 'Public predictions against their deadline, and FORTUNE'), ('/stack', 'STACK', 'Every test side by side')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot
+                  ('/forecast', 'FORECAST', 'Stated chance against what happened'), ('/seasonal', 'SEASONAL', 'Stated seasonal outlook chances against what was observed'), ('/steo', 'STEO', 'Stated energy price intervals against the spot price'), ('/flu', 'FLU', 'Stated flu forecast intervals against reported admissions'), ('/tornado', 'TORNADO', 'Stated tornado chances and warning goals against the tornadoes that came'), ('/credit', 'CREDIT', 'Stated complaint responses and card terms against the public record'), ('/forecasters', 'FORECASTERS', 'Every forecaster desk on one axis, stated against delivered'), ('/launch', 'LAUNCH', 'Stated launch time against the time it flew'), ('/tape', 'TAPE', 'Every page and live feed, hashed and chained, with a beacon'), ('/vault', 'VAULT', 'A receipt for any file, or a file sealed until a date, no file stored'),  ('/arxivdrift', 'ARXIVDRIFT', 'Studies read, then revised'), ('/linkrot', 'LINKROT', 'Stated code links against live'), ('/wiki', 'WIKI', 'Cited figures against their source'), ('/social', 'SOCIAL', 'Platform reports against the filings'), ('/predictions', 'NOW', 'Public predictions against their deadline, and FORTUNE'), ('/stack', 'STACK', 'Every test side by side'), ('/oy', 'OY', 'Education policy studies and school data against the public record'), ('/census', 'CENSUS', 'Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed')]}   # 10 Nov (Wayfinder): STACK moves from the banner into HERMES; SOCIAL takes its banner slot. 12 Nov (Wayfinder): SAGAR leads the banner; OY, SOCIAL and CENSUS fold under HERMES
 _DNAME = {'/iris': 'IRIS', '/atlas': 'ATLAS', '/hermes': 'HERMES', '/oy': 'OY', '/census': 'CENSUS'}
 for _d, _ds in DESKS.items():
     if _d == '/hermes': continue
@@ -2346,12 +2350,11 @@ for _p, _d in list(HOME.items()) + [(k, '/hermes') for k in PAGES if k.startswit
 # 29 Oct 2026 (his word): the home page is organised under the five divisions, desks listed inside each, built from DESKS so it cannot drift from the menu.
 def _deskline(d):
     return ''.join(f'<a href="{h}">{n}</a>' for h, n, w in DESKS.get(d, []) if h in PAGES)
-_DIVS = [('/qia', 'QIA', 'Quantum Idle Audit', 'IBM&rsquo;s published calibration checked against itself, line by line.', '<a href="/qia#audit">QIA Audit</a><a href="/qia">Studies and key</a>'),
+_DIVS = [('/sagar', 'SAGAR', 'Standards Audit of Gravitational and Astrophysical Research', 'Checkable errata in gravitational-wave papers, each with a verbatim quote and where the paper shows otherwise.', '<a href="/sagar">Errata list</a>'),
+         ('/qia', 'QIA', 'Quantum Idle Audit', 'IBM&rsquo;s published calibration checked against itself, line by line.', '<a href="/qia#audit">QIA Audit</a><a href="/qia">Studies and key</a>'),
          ('/iris', 'IRIS', 'Inorganic Research &amp; Intelligence Systems', 'Language models and the software around them, against what is stated about them.', _deskline('/iris')),
-         ('/hermes', 'HERMES', 'Held Every Record, Measured Every Statement', 'Public claims by vendors and institutions against the record.', _deskline('/hermes')),
-         ('/atlas', 'ATLAS', 'Built Infrastructure', 'Data centers, power plants, electricity and carbon mapped from open sources, and servers, time, DNS, status pages and security records against their own rules.', _deskline('/atlas')),
-         ('/oy', 'OY', 'Learning Research', 'What colleges and universities publish about measuring their own AI policies.', '<a href="/oy">Findings and list</a>' + _deskline('/oy')),
-         ('/census', 'CENSUS', 'Official Statistics', 'What the Census Bureau states about the uncertainty of its first estimates, against the revisions that followed.', _deskline('/census'))]
+         ('/hermes', 'HERMES', 'Held Every Record, Measured Every Statement', 'Public claims by vendors and institutions against the record, with the OY, SOCIAL and CENSUS desks.', _deskline('/hermes')),
+         ('/atlas', 'ATLAS', 'Built Infrastructure', 'Data centers, power plants, electricity and carbon mapped from open sources, and servers, time, DNS, status pages and security records against their own rules.', _deskline('/atlas'))]
 _cards = ''.join(f'<div class="hdiv"><h2><a href="{h}">{n}</a></h2><p class="hsub">{full}</p><p class="hwhat">{what}</p><p class="hdesks">{desks}</p></div>' for h, n, full, what, desks in _DIVS)
 PAGES['/'] = page('/', 'Heuremen LLC',
  'Heuremen LLC recounts published claims about AI benchmarks, quantum hardware and public data from the material released with them, with receipts anyone can rerun. Open benchmark verification and an open record of every correction.',
@@ -2393,14 +2396,14 @@ _NAVEXTRA = {'/qia': [('/qia/list', 'The List', ''), ('/qia/data', 'Qubit Data',
              '/oy': [('/oy/data-pack', 'Data pack', ''), ('/campus', 'CAMPUS', '')],
              '/social': [('/social#social-dsa', 'DSA reports', ''), ('/social#adspend', 'Political ad spend', ''), ('/social#social-tiktok', 'TikTok', ''), ('/social#bluesky', 'Bluesky', ''), ('/social/social-data-pack.zip', 'Data pack (zip)', '')]}
 def _navfor(path):
-    home = HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path)
+    home = _menuhome(path, HOME.get(path) or ('/hermes' if path == '/hermes' or path.startswith('/hermes/') else path))
     out = []
     for h, t in NAV:
-        if h not in ('/qia', '/iris', '/oy', '/atlas', '/hermes', '/social', '/census'): continue   # 10 Nov: SOCIAL in the banner, STACK under HERMES
+        if h not in ('/sagar', '/qia', '/iris', '/atlas', '/hermes'): continue   # 12 Nov: SAGAR leads, OY SOCIAL and CENSUS live inside the HERMES dropdown
         cur = ' aria-current=page' if h == home else ''
         ds = [x for x in DESKS.get(h, []) + _NAVEXTRA.get(h, []) if (x[0].split('#')[0] in PAGES or (x[0].endswith('.zip') and os.path.isfile(os.path.join(HERE, '..', 'cloudflare-workers', 'heuremen-door', 'public', x[0].lstrip('/'))))) and x[0] != h]
         _seen = set(); ds = [x for x in ds if not (x[0] in _seen or _seen.add(x[0]))]
-        if ds: out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel"><a href="' + h + '">' + t + ' main page</a>' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
+        if ds or h == '/sagar': out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel"><a href="' + h + '">' + t + ' main page</a>' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
         else: out.append('<a href="' + h + '"' + cur + '>' + t + '</a>')
     out.append('<a class="dw" href="/darkwave"' + (' aria-current=page' if path == '/darkwave' else '') + '>DARKWAVE</a>')   # 31 Oct: the Darkwave page on heuremen.org (countdown, then the paper page)
     return ''.join(out)
@@ -2413,6 +2416,8 @@ CSS += """
 .livemenu summary::-webkit-details-marker{display:none}.livemenu summary::after{content:" \\25BE"}.livemenu summary:hover,.livemenu summary[aria-current]{color:var(--ink);border-bottom-color:var(--rule)}
 .livepanel{position:absolute;right:0;top:100%;margin-top:10px;background:var(--paper);border:1px solid var(--rule);padding:12px 18px;display:flex;flex-direction:column;gap:10px;min-width:170px;z-index:6}
 .livepanel a{white-space:nowrap}
+.livetag.lt-own{background:#1f7a3a;color:#fff;box-shadow:0 0 0 1px #1f7a3a}.livetag.lt-own:before{background:#9be7b0;animation:livepulse 1.6s ease-in-out infinite}@media (prefers-color-scheme:dark){.livetag.lt-own{background:#4cc27a;color:#08210f;box-shadow:0 0 0 1px #4cc27a}.livetag.lt-own:before{background:#08210f}}@media (prefers-reduced-motion:reduce){.livetag.lt-own:before{animation:none}}
+#livestrip .livetag.lt-own{margin-left:0}
 """
 
 def _page_dates(docs):
@@ -2785,7 +2790,7 @@ def main():
            '## Divisions',
            '- [QIA](https://indahl.ai/qia): IBM processors measured against their published calibration, the studies calibrated, and the List of every indexed study with its receipt.',
            '- [IRIS](https://indahl.ai/iris): Recount Matrix for language models, live Faults and Guards runs on open models, and the List of indexed evaluation studies.',
-           '- [OY](https://indahl.ai/oy): Learning research, school AI policy and data, recounted with a source per row.',
+           '- [OY](https://indahl.ai/oy): A HERMES desk. Learning research, school AI policy and data, recounted with a source per row.',
            '- [ATLAS](https://indahl.ai/atlas): Built infrastructure. A map of United States data centers from OpenStreetMap and Epoch AI, with a source and pull date for every dot.',
            '- [HERMES](https://indahl.ai/hermes): Held Every Record, Measured Every Statement. The menu of every division and desk.',
            '- [STACK](https://indahl.ai/stack): Every test side by side, live.', '',

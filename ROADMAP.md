@@ -41,6 +41,7 @@ Every item has its live page and its plan. A desk is added here automatically wh
 - [x] **FIDELITY** ([live](https://indahl.ai/census/fidelity)). State marriage and divorce counts from the CDC against the Census survey estimates. Live since 2026-11-11.
 - [x] **VINTAGES** ([live](https://indahl.ai/census/vintages)). State population estimates across Vintages and against the 2020 Census count. Live since 2026-11-11.
 - [x] **PETROL** ([live](https://indahl.ai/petrol)). OPEC+ required production against delivered output. Live since 2026-11-11.
+- [x] **CENSUS** ([live](https://indahl.ai/census)). Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed. Live since 2026-11-11.
 - [x] **RANK** ([live](https://indahl.ai/rank)). US News education rankings against the public record. Live since 2026-11-10.
 - [x] **NEO** ([live](https://indahl.ai/neo)). Stated asteroid close-approach distances against the later record. Live since 2026-11-10.
 - [x] **SOLAR** ([live](https://indahl.ai/solar)). Stated flare and storm chances against what happened. Live since 2026-11-10.
@@ -70,5 +71,6 @@ Every item has its live page and its plan. A desk is added here automatically wh
 - [x] **FORECAST** ([live](https://indahl.ai/forecast)). Stated chance against what happened.
 - [x] **LAUNCH** ([live](https://indahl.ai/launch)). Stated launch time against the time it flew.
 - [x] **LINKROT** ([live](https://indahl.ai/linkrot)). Stated code links against live.
+- [x] **OY** ([live](https://indahl.ai/oy)). Education policy studies and school data against the public record.
 <!-- /auto -->
 Built and live: see `code/README.md` for every page and its folder.

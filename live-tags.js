@@ -3,13 +3,16 @@
 // 31 Oct 2026: a desk whose feed is current on its schedule but was not read just now says when it was last read ("read 3 h ago"),
 // counted from the feed's own stamp and updated every minute, instead of a bare "live".
 (function () {
-  var HREF = { model: '/hermes/model' }, TAGGED = [], WORD = { reading: 'live', 'just read': 'live', 'on schedule': 'read', evaluating: 'eval', training: 'train' };
+  var HREF = { model: '/hermes/model', lab: '/iris/lab' }, MORE = { lab: ['/iris/lab/live'] }, OWN = { lab: 1 }, TAGGED = [], WORD = { reading: 'live', 'just read': 'live', 'on schedule': 'read', evaluating: 'eval', training: 'train' };
   var TITLE = { live: 'Being read now', eval: 'A model evaluation is running now', train: 'A training run is going now' };
   var MODE_TITLE = { reading: 'Being read now', 'just read': 'Read in the last few minutes' };
   var READ = {};
   // 9 Nov 2026 (site pass M1): a tag sits only in the menus, the desk lists and the Division line, never inside a sentence, a licence or a table note.
   var IN = 'nav, header, .hdesks, .ddpanel, .desklist, .hmore, .crumb';
   function href(slug) { return HREF[slug] || '/' + slug; }
+  // 12 Nov 2026 (Wayfinder): LAB is our own training and was the one entry with no mark, because its feed key is "lab" and the link is /iris/lab.
+  // Our own lab gets its own green tag (lt-own). Outside sources keep the dark tag.
+  function sel(slug) { return [href(slug)].concat(MORE[slug] || []).map(function (h) { return 'a[href="' + h + '"]'; }).join(','); }
   function ago(iso) {
     var m = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 60000));
     if (m < 1) return 'read just now'; if (m < 60) return 'read ' + m + ' min ago';
@@ -17,6 +20,7 @@
   }
   function mark(a, word, mode, slug) {
     if (a.querySelector('.livetag')) return; var t = document.createElement('span'); t.className = 'livetag lt-' + word;
+    if (OWN[slug]) { t.className = 'livetag lt-own'; t.textContent = 'Live: Heuremen In-House Lab'; t.title = 'Live: Heuremen In-House Lab'; t.setAttribute('aria-label', t.textContent); a.appendChild(t); TAGGED.push(t); return; }
     if (word === 'read' && READ[slug]) { t.setAttribute('data-read', READ[slug]); t.textContent = ago(READ[slug]); t.title = 'Last read ' + new Date(READ[slug]).toUTCString().replace(' GMT', ' UTC'); }
     else { if (word === 'read') { word = 'live'; t.className = 'livetag lt-live'; } t.textContent = word; t.title = MODE_TITLE[mode] || TITLE[word]; }
     t.setAttribute('aria-label', t.textContent); a.appendChild(t); TAGGED.push(t);
@@ -28,7 +32,7 @@
       clear(); if (!d || (d.updated && (Date.now() - Date.parse(d.updated)) > 45 * 60 * 1000)) return;
       var live = d.live || {}, divs = d.divisions || {}; READ = d.read || {};
       Object.keys(live).forEach(function (slug) {
-        var m = live[slug], w = WORD[m] || 'live'; document.querySelectorAll('a[href="' + href(slug) + '"]').forEach(function (a) { if (!(slug in divs)) { if (a.closest(IN)) mark(a, w, m, slug); } else if (a.closest('.hdesks, .ddpanel, .desklist, .hmore')) mark(a, w, m, slug); });
+        var m = live[slug], w = WORD[m] || 'live'; document.querySelectorAll(sel(slug)).forEach(function (a) { if (!(slug in divs)) { if (a.closest(IN)) mark(a, w, m, slug); } else if (a.closest('.hdesks, .ddpanel, .desklist, .hmore')) mark(a, w, m, slug); });
       });
       Object.keys(divs).forEach(function (dv) { document.querySelectorAll('a[href="/' + dv + '"]').forEach(function (a) { if (a.closest(IN)) mark(a, divs[dv]); }); });
     }).catch(function () {});
@@ -52,7 +56,7 @@
   function paint() {
     if (!ACT || !SLUG) return; var mode = (ACT.live || {})[SLUG], read = (ACT.read || {})[SLUG], every = (ACT.every_min || {})[SLUG];
     if (!mode && !read) { var o = document.getElementById('livestrip'); if (o) o.parentNode.removeChild(o); return; }
-    var s = stripEl(); if (!s) return; var txt = s.querySelector('.lsp-txt'), fill = s.querySelector('.lsp-fill'), now = Date.now();
+    var s = stripEl(); if (!s) return; if (OWN[SLUG] && !s.querySelector('.livetag')) { var ot = document.createElement('span'); ot.className = 'livetag lt-own'; ot.textContent = 'Live: Heuremen In-House Lab'; s.insertBefore(ot, s.firstChild); } var txt = s.querySelector('.lsp-txt'), fill = s.querySelector('.lsp-fill'), now = Date.now();
     var running = PROG && PROG.running && PROG.total && (now - Date.parse(PROG.t)) < 180000;
     if (running) {
       s.className = 'livestrip lsp-reading'; fill.style.width = (100 * PROG.done / PROG.total).toFixed(1) + '%';

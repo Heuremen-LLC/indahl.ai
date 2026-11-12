@@ -3920,14 +3920,16 @@
 /r/desk/atlas-power-plants	2026-10-30
 /r/desk/cadence	2026-11-10
 /r/desk/campus	2026-11-10
+/r/desk/census-coverage	2026-11-12
+/r/desk/census-fidelity	2026-11-12
+/r/desk/census-revisions	2026-11-12
+/r/desk/census-vintages	2026-11-12
 /r/desk/change	2026-11-10
 /r/desk/cone	2026-11-12
-/r/desk/census-coverage	2026-11-12
 /r/desk/credit	2026-11-12
 /r/desk/darkwave	2026-11-09
 /r/desk/faults-guards	2026-11-08
 /r/desk/fedsep	2026-11-12
-/r/desk/census-fidelity	2026-11-12
 /r/desk/flu	2026-11-12
 /r/desk/forecast	2026-11-12
 /r/desk/forecasters	2026-11-10
@@ -3948,8 +3950,8 @@
 /r/desk/neo	2026-11-12
 /r/desk/newsletter-0	2026-11-10
 /r/desk/predictions	2026-11-10
-/r/desk/oy-data-pack	2026-11-10
 /r/desk/oy	2026-11-12
+/r/desk/oy-data-pack	2026-11-10
 /r/desk/paper	2026-11-04
 /r/desk/pkginstall	2026-11-10
 /r/desk/pkglicense	2026-11-10
@@ -3958,7 +3960,6 @@
 /r/desk/quake	2026-11-12
 /r/desk/rank	2026-11-10
 /r/desk/revise	2026-11-10
-/r/desk/census-revisions	2026-11-12
 /r/desk/seasonal	2026-11-12
 /r/desk/secrecords	2026-11-12
 /r/desk/security-self	2026-11-10
@@ -3970,7 +3971,6 @@
 /r/desk/tornado	2026-11-12
 /r/desk/trials	2026-11-12
 /r/desk/verify	2026-11-10
-/r/desk/census-vintages	2026-11-12
 /r/desk/water	2026-11-10
 /r/desk/weights	2026-11-10
 /r/desk/wiki	2026-11-12

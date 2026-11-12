@@ -279,6 +279,16 @@
    "/stack",
    "STACK",
    "Every test side by side"
+  ],
+  [
+   "/oy",
+   "OY",
+   "Education policy studies and school data against the public record"
+  ],
+  [
+   "/census",
+   "CENSUS",
+   "Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed"
   ]
  ],
  "first_seen": {
@@ -293,6 +303,7 @@
   "/cada": null,
   "/cadence": "2026-10-28T23:43:20Z",
   "/campus": "2026-10-29T18:28:01Z",
+  "/census": "2026-11-11T15:44:37Z",
   "/census/coverage": "2026-11-11T16:35:13Z",
   "/census/fidelity": "2026-11-11T16:41:08Z",
   "/census/revisions": "2026-11-11T15:36:20Z",
@@ -313,6 +324,7 @@
   "/launch": "2026-10-28T23:54:05Z",
   "/linkrot": "2026-10-29T00:56:18Z",
   "/neo": "2026-11-10T13:59:24Z",
+  "/oy": "2026-11-12T22:42:18Z",
   "/petrol": "2026-11-12T01:19:59Z",
   "/pkginstall": "2026-10-29T12:16:37Z",
   "/pkglicense": "2026-10-29T02:44:25Z",
