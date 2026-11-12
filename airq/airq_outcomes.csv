@@ -7,4 +7,4 @@ path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,n_other_tie,share_other_ti
 /previous/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,66,147,0.449,0.3709,0.5297,0.3709,0.5297,66,0.449,0.3709,0.5297,CANNOT_TELL,22
 "/live/comparison/Map reading (atm channels, raw)","Map reading (atm channels, raw)",ABOVE,54,59,0.9153,0.8165,0.9633,0.8165,0.9633,,,,,,
 "/live/comparison/cf_1 channels, raw","cf_1 channels, raw",ABOVE,55,59,0.9322,0.8382,0.9733,0.8382,0.9733,,,,,,
-/live/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,24,59,0.4068,0.2909,0.5341,0.2909,0.5341,,,,,,
+/live/comparison/cf_1 corrected for humidity (Barkjohn 2021),cf_1 corrected for humidity (Barkjohn 2021),CANNOT_TELL,23,59,0.3898,0.2758,0.5173,0.2758,0.5173,,,,,,
