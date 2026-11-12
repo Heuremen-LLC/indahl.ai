@@ -64,7 +64,7 @@ SPECS = {
      sources=['Every external source cited on https://indahl.ai/oy, read pass after pass. The newest line of data/reads.jsonl holds the status of each address on the newest pass, with the pass time.'], inputs=['data/reads.jsonl'], code=[], extract='campus_score.py',
      extract_of='campus_tick.py lines 126 to 138, the stnow function and the state_now block', ref=['campus_tick.py'], steps=[['campus_score.py']], output='out.json'),
  'secrecords': dict(folder='secrecords_index', mode='fetch', inputs=['data/domains.json', 'summary_secrecords.json'], code=['heuremen_kit.py'], extract='secrecords_score.py',
-     extract_of='secrecords_tick.py lines 140 to 145, the grp function and the comparison block', ref=['secrecords_tick.py'], steps=[['secrecords_score.py']], output='out.json',
+     extract_of='secrecords_tick.py lines 150 to 162, read_share, the grp function and the comparison block', ref=['secrecords_tick.py'], steps=[['secrecords_score.py']], output='out.json',
      sources=['The domain list: the top 1,000 rows of the Tranco list of the date in data/listdate.txt of the desk, https://tranco-list.eu/', 'For each domain, the first HTTPS response of https://DOMAIN/ (no redirect followed) and its SPF record read through DNS over HTTPS, as secrecords_tick.py does. Each row of data/domains.json carries the time it was read in its read field.']),
  'hfsize': dict(folder='hfsize_index', mode='fetch', inputs=['data/repos.json', 'summary_hfsize.json'], code=['heuremen_kit.py'], extract='hfsize_score.py',
      extract_of='hfsize_tick.py lines 56 to 57 and 63, the counts, the interval and the comparison block', ref=['hfsize_tick.py'], steps=[['hfsize_score.py']], output='out.json',

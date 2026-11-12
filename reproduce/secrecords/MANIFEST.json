@@ -6,33 +6,33 @@
    "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
-   "extract_of": "secrecords_tick.py lines 140 to 145, the grp function and the comparison block",
+   "extract_of": "secrecords_tick.py lines 150 to 162, read_share, the grp function and the comparison block",
    "path": "secrecords_score.py",
-   "sha256": "df06339628dc4b32adebb67da7b5d40034231425b23324259407e279049acb9c"
+   "sha256": "c195bf62ca5afe000d71ffa731fdcfb872d40d9e8f9a2c3e16c58ee0da98107c"
   }
  ],
  "desk": "secrecords",
  "inputs": [
   {
-   "bytes": 367996,
+   "bytes": 368898,
    "gzip_added": true,
-   "modified": "2026-11-12T15:50:51Z",
+   "modified": "2026-11-12T17:52:32Z",
    "path": "data/domains.json",
-   "sha256": "77330e00779eb81049f78245d84baf3b779a1b14bc6001ecb7eb3af73d5e2cea",
+   "sha256": "ae46b1177eec51da286c1a7483a3dc46f65edce1832ece3de2a93cb28ed9bf4a",
    "stored": "data/domains.json.gz",
-   "stored_sha256": "4d6ff5ab228a26bb381033a53d50f56cedce9a0bb5dcfa090e7930f3b6845853"
+   "stored_sha256": "539f30d9d232fdb52a86d5d61920193a7f12943fd2df89e2b00a7c8c09c184d2"
   },
   {
    "bytes": 15911,
    "gzip_added": true,
-   "modified": "2026-11-12T15:52:30Z",
+   "modified": "2026-11-12T17:52:32Z",
    "path": "summary_secrecords.json",
-   "sha256": "ca7914f713c26f093fe2faeb2b79c3fcda375e0e4e3983286bf596dd7605211a",
+   "sha256": "621adff6ec9d583356de1c803a9bdfeddad5039a6fc1974985bd9725e1eeb0e6",
    "stored": "summary_secrecords.json.gz",
-   "stored_sha256": "99e956b4b1824b510fbe05a0c4df704c92901e9f56a99727a2762fb35dd77355"
+   "stored_sha256": "5c7772fa3a9989db64db1fa5d27b2e7b730e8967aceec53996f2a1503d870225"
   }
  ],
- "made": "2026-11-12T16:06:17Z",
+ "made": "2026-11-12T18:17:48Z",
  "mode": "fetch",
  "name": "SECRECORDS",
  "reference": [

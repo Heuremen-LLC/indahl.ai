@@ -82,7 +82,8 @@
       box.appendChild(table(['Reading', 'Value'], [
         ['Claims in the test half', P.n_items], ['Base agreement', p3(((P.base || {}).pooled || {}).rate)], ['STAN agreement', p3(((P.stan || {}).pooled || {}).rate)],
         ['STAN minus base, mean over seven codes', p3(pp.mean)], ['95% paired bootstrap interval', pp.ci95 ? '[' + p3(pp.ci95[0]) + ', ' + p3(pp.ci95[1]) + ']' : '-'],
-        ["Band reading", P.band_reading], ['Kept', P.kept ? 'yes' : 'no']]));
+        ["Band reading", P.band_reading], ['Kept', P.kept ? 'yes' : 'no']].concat(P.base_conversion && P.base_conversion.base ? [['Base answers turned into CANNOT_TELL by the quote rule (no word-for-word quote)', P.base_conversion.base.ct_by_quote_rule + ' of ' + P.base_conversion.base.calls], ['STAN answers that chose CANNOT_TELL itself', P.base_conversion.stan.ct_chosen_by_model + ' of ' + P.base_conversion.stan.calls]] : [])));
+      if (P.base_conversion) box.appendChild(h('p', 'The base model never chose CANNOT_TELL. Our quote rule made most of its answers CANNOT_TELL. STAN chose it every time, so the two columns do not measure the same act.'));
     }
     var L = d.plan;
     if (L) {

@@ -1733,8 +1733,9 @@
 /r/live.revise.v20261110T120408Z	2026-11-10
 /r/live.seasonal.headline	2026-11-10
 /r/live.seasonal.v20261110T163810Z	2026-11-10
-/r/live.secrecords.headline	2026-11-10
+/r/live.secrecords.headline	2026-11-12
 /r/live.secrecords.v20261110T120408Z	2026-11-12
+/r/live.secrecords.v20261112T180000Z	2026-11-12
 /r/live.solar.headline	2026-11-12
 /r/live.solar.v20261110T162303Z	2026-11-10
 /r/live.steo.headline	2026-11-10
@@ -3771,6 +3772,7 @@
 /r/solar.mid5_1.skill	2026-11-12
 /r/solar.mid6_1.skill	2026-11-12
 /r/solar.x1.skill	2026-11-12
+/r/stan.base.ct_by_rule	2026-11-12
 /r/stan.base.decided	2026-11-12
 /r/stan.baseline.base	2026-11-12
 /r/stan.baseline.majority	2026-11-12

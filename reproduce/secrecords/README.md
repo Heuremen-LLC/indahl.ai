@@ -10,16 +10,16 @@ This kit recomputes the SECRECORDS headline number and its outcome label with th
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `73ae7a2326190eb4a2b8fc9537d11223f609814674fc53b60dcd7e77b6a85cfa`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `c342ceb2fb98509c4a38b267921be087c660320aa8b793e565244e244be7cc65`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 12 Nov 14:59, read by us at 2026-11-12T16:06:17Z. The feed bytes had sha256 `ea49e64f2ec70100eb10aa9ce93ed06a672fb0962532de4fee19638dce9e0aa8`.
+The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 12 Nov 17:06, read by us at 2026-11-12T18:17:48Z. The feed bytes had sha256 `621adff6ec9d583356de1c803a9bdfeddad5039a6fc1974985bd9725e1eeb0e6`.
 
 - number: 15%
-- value: 0.1458
-- interval: 0.0974 to 0.2127
-- outcome: CANNOT_TELL
+- value: 0.1469
+- interval: 0.0981 to 0.2141
+- outcome: ABOVE
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
 
@@ -43,12 +43,12 @@ As the SECRECORDS data pack lists them. Credit each source when you use its valu
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/domains.json | 367,996 | `77330e00779eb81049f78245d84baf3b779a1b14bc6001ecb7eb3af73d5e2cea` |
-| summary_secrecords.json | 15,911 | `ca7914f713c26f093fe2faeb2b79c3fcda375e0e4e3983286bf596dd7605211a` |
+| data/domains.json | 368,898 | `ae46b1177eec51da286c1a7483a3dc46f65edce1832ece3de2a93cb28ed9bf4a` |
+| summary_secrecords.json | 15,911 | `621adff6ec9d583356de1c803a9bdfeddad5039a6fc1974985bd9725e1eeb0e6` |
 
 ## Code
 
-The desk's tick script reads its sources, scores and publishes in one run, so it never runs in a kit. code/secrecords_score.py is the scoring step of that script and nothing else: secrecords_tick.py lines 140 to 145, the grp function and the comparison block. The desk files it follows are under desk/, byte for byte, to read beside it. The scripts that run: code/secrecords_score.py. Before every release the gate checks that this extract prints the number the desk published.
+The desk's tick script reads its sources, scores and publishes in one run, so it never runs in a kit. code/secrecords_score.py is the scoring step of that script and nothing else: secrecords_tick.py lines 150 to 162, read_share, the grp function and the comparison block. The desk files it follows are under desk/, byte for byte, to read beside it. The scripts that run: code/secrecords_score.py. Before every release the gate checks that this extract prints the number the desk published.
 
 ## Files
 

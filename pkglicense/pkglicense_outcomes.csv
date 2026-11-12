@@ -1,2 +1,2 @@
-path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,hand_checked,awaiting
-/disagree,disagree,CONSISTENT,7,704,0.0099,0.0048,0.0204,0.0048,0.0204,7,0
+path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,reason,hand_checked,awaiting
+/disagree,disagree,CONSISTENT,7,704,0.0099,0.0048,0.0204,0.0048,0.0204,,7,0
