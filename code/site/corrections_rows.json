@@ -4401,5 +4401,203 @@
   "links": [
    "https://indahl.ai/qia/list#doi-10-5281-zenodo-23731577"
   ]
+ },
+ {
+  "id": "c20261112-std2-01",
+  "date": "2026-11-12",
+  "desk": "TRIALS",
+  "page": "/trials",
+  "stage": "public",
+  "published": "Headline: 4,772 of 22,210 registered trials with results due had none posted, 95 percent interval 20.95 to 22.03 percent, CANNOT_TELL.",
+  "wrong": "Under the 1.0 rule the interval sat between the plan's two bounds, so it could not be called.",
+  "now": "ABOVE under Faults and Guards 2.0, with the size that matters at 10 percent. Defined after the data.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": false,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/trials",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-02",
+  "date": "2026-11-12",
+  "desk": "HFSIZE",
+  "page": "/hfsize",
+  "stage": "public",
+  "published": "12 of 135 compared models whose name and weights disagree, 95 percent interval 5.2 to 14.9 percent, CANNOT_TELL.",
+  "wrong": "Under the 1.0 rule the interval sat between the plan's two bounds.",
+  "now": "ABOVE under 2.0 (band 0 to 5 percent, size that matters 10 percent). Defined after the data.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": false,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/hfsize",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-03",
+  "date": "2026-11-12",
+  "desk": "SECRECORDS",
+  "page": "/secrecords",
+  "stage": "public",
+  "published": "HSTS row: 21 of 144, 95 percent interval 9.7 to 21.3 percent, CANNOT_TELL.",
+  "wrong": "Under the 1.0 rule the interval sat between the plan's two bounds.",
+  "now": "ABOVE under 2.0. Defined after the data.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": false,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/secrecords",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-04",
+  "date": "2026-11-12",
+  "desk": "SUPPORT",
+  "page": "/support",
+  "stage": "public",
+  "published": "Products where every tested cycle is unreleased, 20 of 228, CANNOT_TELL.",
+  "wrong": "Under the 1.0 rule the interval sat between the plan's two bounds.",
+  "now": "ABOVE under 2.0. Defined after the data.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": false,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/support",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-05",
+  "date": "2026-11-12",
+  "desk": "SEAT",
+  "page": "/seat",
+  "stage": "public",
+  "published": "Headline: 1 incident in 24 probes, CANNOT_TELL.",
+  "wrong": "The 1.0 rule had no one-sided reading for a low count.",
+  "now": "BELOW under 2.0 (0 to 2 incidents read BELOW). Defined after the data.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": false,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/seat",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-06",
+  "date": "2026-11-12",
+  "desk": "AILUMINATE",
+  "page": "/ailuminate",
+  "stage": "public",
+  "published": "Test A: 0 of 27 systems disagree between page and report, 95 percent interval 0 to 12.5 percent, CONSISTENT. Drift tests F and H read CONSISTENT the same way.",
+  "wrong": "27 systems cannot separate zero from the 5 percent that matters. CONSISTENT folded that into agreement.",
+  "now": "CANNOT_TELL (TOO_WIDE_TO_RESOLVE) under 2.0. Drift tests G and I read CANNOT_TELL (NO_INTERVAL_FORMABLE) until a second label exists.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/ailuminate",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-07",
+  "date": "2026-11-12",
+  "desk": "REVISE",
+  "page": "/revise",
+  "stage": "public",
+  "published": "Third release: 13 of 120, CONSISTENT.",
+  "wrong": "The rule was a point figure with a width cap and no tolerance.",
+  "now": "CANNOT_TELL (STRADDLES_EDGE) under 2.0.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/revise",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-08",
+  "date": "2026-11-12",
+  "desk": "FEDSEP",
+  "page": "/fedsep",
+  "stage": "public",
+  "published": "Five cells read CONSISTENT: pooled next year, its sensitivity row, and GDP, PCE and the funds rate this year.",
+  "wrong": "The intervals overlapped the 30 percent edge.",
+  "now": "CANNOT_TELL (STRADDLES_EDGE) under 2.0.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/fedsep",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-09",
+  "date": "2026-11-12",
+  "desk": "FORECAST",
+  "page": "/forecast",
+  "stage": "public",
+  "published": "11 of 18 primary cells read CONSISTENT.",
+  "wrong": "The intervals overlapped the band edges.",
+  "now": "CANNOT_TELL (STRADDLES_EDGE) under 2.0.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/forecast",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-10",
+  "date": "2026-11-12",
+  "desk": "CENSUS",
+  "page": "/census/coverage",
+  "stage": "public",
+  "published": "37 of 51 areas, the US cell, the DA cell and 101 component readings read CONSISTENT.",
+  "wrong": "They read CONSISTENT only because each interval held zero at any width.",
+  "now": "CANNOT_TELL (STRADDLES_EDGE) under 2.0.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/census/coverage",
+   "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261112-std2-11",
+  "date": "2026-11-12",
+  "desk": "AIRLINE",
+  "page": "/airline",
+  "stage": "public",
+  "published": "2025 against 2019: SkyWest read CONSISTENT and Delta CANNOT_TELL.",
+  "wrong": "Both changed only because the bootstrap seed changed with the 2.0 run, so these two rows sit on the seed floor.",
+  "now": "SkyWest CANNOT_TELL and Delta CONSISTENT under 2.0 with seed 20261112. The earlier readings are kept beside them.",
+  "why": "Faults and Guards 2.0 changed the outcome rule on every desk. The size that matters, the band and the edge were named on 12 November, after these data had been read, so the new reading is defined after the data.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "faultsguards/conformance_2_0/AUDIT.md",
+  "links": [
+   "https://indahl.ai/airline",
+   "https://indahl.ai/standard"
+  ]
  }
 ]
