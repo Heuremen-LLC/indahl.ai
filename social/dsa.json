@@ -265,6 +265,7 @@
 "ratio_hi":1.7414,
 "gap_signed":11906835,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -308,6 +309,7 @@
 "ratio_hi":2.1038,
 "gap_signed":-148985779,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -345,6 +347,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-13040414,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -382,6 +385,7 @@
 "ratio_hi":1.7396,
 "gap_signed":11719468,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.4"
 ],
@@ -425,6 +429,7 @@
 "ratio_hi":1906.2,
 "gap_signed":-90856,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6"
@@ -458,6 +463,7 @@
 "ratio_hi":1.7412,
 "gap_signed":11810324,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6",
 "6.4"
@@ -496,6 +502,7 @@
 "ratio_hi":1.2233,
 "gap_signed":-148985779,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0 to 1.22. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -537,6 +544,7 @@
 "ratio_hi":1185.9,
 "gap_signed":32154,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,186. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -574,6 +582,7 @@
 "ratio_hi":164940.0,
 "gap_signed":-306,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 164,938. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":810,
@@ -602,6 +611,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -648,6 +658,7 @@
 "ratio_hi":1.921,
 "gap_signed":32894400,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.5"
@@ -692,6 +703,7 @@
 "ratio_hi":2.1542,
 "gap_signed":-167908195,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -729,6 +741,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-8978475,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -766,6 +779,7 @@
 "ratio_hi":1.9193,
 "gap_signed":32696073,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.4"
@@ -810,6 +824,7 @@
 "ratio_hi":1280.9,
 "gap_signed":-148112,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6"
@@ -843,6 +858,7 @@
 "ratio_hi":1.9221,
 "gap_signed":32844185,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.6",
@@ -882,6 +898,7 @@
 "ratio_hi":1.2866,
 "gap_signed":-167908195,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0 to 1.29. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -923,6 +940,7 @@
 "ratio_hi":1180.4,
 "gap_signed":15546,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,180. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":198327,
@@ -959,6 +977,7 @@
 "ratio_hi":192980.0,
 "gap_signed":409,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 192,975. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -988,6 +1007,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -1034,6 +1054,7 @@
 "ratio_hi":2.3804,
 "gap_signed":-2786824,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "rules_after_data":[
 "6.5"
@@ -1078,6 +1099,7 @@
 "ratio_hi":4.4549,
 "gap_signed":-45002810,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -1115,6 +1137,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-8589055,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -1152,6 +1175,7 @@
 "ratio_hi":2.3766,
 "gap_signed":-2868468,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "rules_after_data":[
 "6.4"
@@ -1196,6 +1220,7 @@
 "ratio_hi":3373.3,
 "gap_signed":-14212,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6"
@@ -1229,6 +1254,7 @@
 "ratio_hi":2.3782,
 "gap_signed":-2854256,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "rules_after_data":[
 "6.6",
@@ -1268,6 +1294,7 @@
 "ratio_hi":1.2704,
 "gap_signed":-45002810,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0 to 1.27. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -1309,6 +1336,7 @@
 "ratio_hi":595.66,
 "gap_signed":-7631,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 596. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -1346,6 +1374,7 @@
 "ratio_hi":111720.0,
 "gap_signed":-268,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 111,718. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":208,
@@ -1374,6 +1403,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -1420,6 +1450,7 @@
 "ratio_hi":1.9066,
 "gap_signed":-15439837,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.5"
@@ -1464,6 +1495,7 @@
 "ratio_hi":2.2323,
 "gap_signed":-59620901,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.5"
@@ -1502,6 +1534,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-2532836,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -1539,6 +1572,7 @@
 "ratio_hi":1.9013,
 "gap_signed":-15574166,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.4"
@@ -1583,6 +1617,7 @@
 "ratio_hi":61.884,
 "gap_signed":-785816,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6"
@@ -1616,6 +1651,7 @@
 "ratio_hi":1.9614,
 "gap_signed":-14788350,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6",
@@ -1655,6 +1691,7 @@
 "ratio_hi":0.85814,
 "gap_signed":-59620901,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.3). The report\u2019s own note says: \u201cVisibility restriction removal contains some actions for Facebook and Instagram combined due to technical and product limitations.\u201d The stated figure can be higher or lower than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "database":{
@@ -1697,6 +1734,7 @@
 "ratio_hi":717.68,
 "gap_signed":66182,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 718. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -1734,6 +1772,7 @@
 "ratio_hi":58784.0,
 "gap_signed":-217,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 58,784. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":615,
@@ -1762,6 +1801,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -1808,6 +1848,7 @@
 "ratio_hi":1.1799,
 "gap_signed":42017049,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.72 to 1.18. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":277109009,
@@ -1843,6 +1884,7 @@
 "ratio_hi":1.1621,
 "gap_signed":35416877,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.71 to 1.16. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":255634496,
@@ -1872,6 +1914,7 @@
 "ratio_hi":1.4625,
 "gap_signed":6596654,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.89 to 1.46. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":21470995,
@@ -1894,6 +1937,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":276971787,
@@ -1922,6 +1966,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":293,
@@ -1951,6 +1996,7 @@
 "ratio_hi":2.3663,
 "gap_signed":18279972,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6",
 "6.4"
@@ -1982,6 +2028,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":255631648,
@@ -2018,6 +2065,7 @@
 "ratio_hi":2889.6,
 "gap_signed":15171,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 2,890. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":111164,
@@ -2054,6 +2102,7 @@
 "ratio_hi":2311500.0,
 "gap_signed":166,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 2,311,509. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -2207,6 +2256,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":249214615,
@@ -2235,6 +2285,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":10135,
@@ -2264,6 +2315,7 @@
 "ratio_hi":3.3194,
 "gap_signed":-41889314,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6",
 "6.4"
@@ -2295,6 +2347,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":232329671,
@@ -2331,6 +2384,7 @@
 "ratio_hi":3876.1,
 "gap_signed":46694,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 3,876. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -2368,6 +2422,7 @@
 "ratio_hi":1788000.0,
 "gap_signed":23,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,787,957. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -2509,6 +2564,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-1723286,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.1",
@@ -2536,6 +2592,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":2513314,
@@ -2564,6 +2621,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -2620,6 +2678,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":176038,
@@ -2656,6 +2715,7 @@
 "ratio_hi":124.21,
 "gap_signed":-229456,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -2695,6 +2755,7 @@
 "ratio_hi":619230.0,
 "gap_signed":-84,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -2726,6 +2787,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.5"
@@ -2841,6 +2903,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-1662535,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.1",
@@ -2868,6 +2931,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":2757951,
@@ -2896,6 +2960,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -2952,6 +3017,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":169809,
@@ -2988,6 +3054,7 @@
 "ratio_hi":100.31,
 "gap_signed":-231524,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -3027,6 +3094,7 @@
 "ratio_hi":112600.0,
 "gap_signed":-376,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.1"
@@ -3059,6 +3127,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.5"
@@ -3187,6 +3256,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":0,
@@ -3215,6 +3285,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -3274,6 +3345,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":0,
@@ -3351,6 +3423,7 @@
 "ratio_hi":238.68,
 "gap_signed":-922,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 239. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -3550,6 +3623,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -3616,6 +3690,7 @@
 "ratio_hi":1.439e-05,
 "gap_signed":-146700384,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 4). The report\u2019s own note says: \u201cIncludes the number of measures taken after automated detection, including AI-based content moderation systems, automated enforcement systems for content removal, automated account-level enforcement for specific policy violations, auto-closed moderation cases, and automated advertising policy review decisions.\u201d The stated figure can be higher than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "database":{
@@ -3658,6 +3733,7 @@
 "ratio_hi":2.5204,
 "gap_signed":-519849,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 2.52. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -3694,6 +3770,7 @@
 "ratio_hi":644.81,
 "gap_signed":-2032,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 645. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -3898,6 +3975,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -3999,6 +4077,7 @@
 "ratio_hi":371.59,
 "gap_signed":24080,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 372. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -4033,6 +4112,7 @@
 "items_notified":17,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -4239,6 +4319,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -4339,6 +4420,7 @@
 "ratio_hi":141.91,
 "gap_signed":-2726,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 142. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":4,
@@ -4372,6 +4454,7 @@
 "items_notified":1,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -4441,6 +4524,7 @@
 "ratio_hi":0.036321,
 "gap_signed":-66771240,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 4). The report\u2019s own note says: \u201cTab 8 captures a broader set of actions executed by automated means\u2014including both content restrictions and content approvals\u2014regardless of whether the initial detection came from automated systems or user reports. The inclusion of automated content approvals primarily accounts for the significantly higher volume reported in Tab 8.\u201d The stated figure can be higher than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "database":{
@@ -4482,6 +4566,7 @@
 "ratio_hi":0.0071995,
 "gap_signed":-65507018,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 4). The report\u2019s own note says: \u201cTab 8 captures a broader set of actions executed by automated means\u2014including both content restrictions and content approvals\u2014regardless of whether the initial detection came from automated systems or user reports. The inclusion of automated content approvals primarily accounts for the significantly higher volume reported in Tab 8.\u201d The stated figure can be higher than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "database":{
@@ -4517,6 +4602,7 @@
 "ratio_hi":1.3677,
 "gap_signed":-1264222,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.61 to 1.37. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":1986807,
@@ -4592,6 +4678,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -4698,6 +4785,7 @@
 "ratio_hi":827.02,
 "gap_signed":1752970,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 827. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -4740,6 +4828,7 @@
 "ratio_hi":6016.7,
 "gap_signed":-17,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 6,017. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":390,
@@ -4776,6 +4865,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 4). The report\u2019s own note says: \u201cTab 8 captures a broader set of actions executed by automated means\u2014including both content restrictions and content approvals\u2014regardless of whether the initial detection came from automated systems or user reports. The inclusion of automated content approvals primarily accounts for the significantly higher volume reported in Tab 8.\u201d The stated figure can be higher than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "stated_share":0.953,
@@ -4820,6 +4910,7 @@
 "ratio_hi":0.033153,
 "gap_signed":-82822581,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 4). The report\u2019s own note says: \u201cTab 8 captures a broader set of actions executed by automated means\u2014including both content restrictions and content approvals\u2014regardless of whether the initial detection came from automated systems or user reports. The inclusion of automated content approvals primarily accounts for the significantly higher volume reported in Tab 8.\u201d The stated figure can be higher than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "database":{
@@ -4864,6 +4955,7 @@
 "ratio_hi":0.0078054,
 "gap_signed":-81269808,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 4). The report\u2019s own note says: \u201cTab 8 captures a broader set of actions executed by automated means\u2014including both content restrictions and content approvals\u2014regardless of whether the initial detection came from automated systems or user reports. The inclusion of automated content approvals primarily accounts for the significantly higher volume reported in Tab 8.\u201d The stated figure can be higher than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "database":{
@@ -4899,6 +4991,7 @@
 "ratio_hi":1.3218,
 "gap_signed":-1552773,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.58 to 1.32. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":2145812,
@@ -4977,6 +5070,7 @@
 "stated_hi":0,
 "gap_signed":1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.6",
@@ -5085,6 +5179,7 @@
 "ratio_hi":655.65,
 "gap_signed":1787827,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 656. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -5122,6 +5217,7 @@
 "ratio_hi":4367.2,
 "gap_signed":429,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 4,367. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -5156,6 +5252,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 4). The report\u2019s own note says: \u201cTab 8 captures a broader set of actions executed by automated means\u2014including both content restrictions and content approvals\u2014regardless of whether the initial detection came from automated systems or user reports. The inclusion of automated content approvals primarily accounts for the significantly higher volume reported in Tab 8.\u201d The stated figure can be higher than the database count for that reason alone, by an amount the report does not give. Without this note the row reads below.",
 "stated_share":0.9568,
@@ -5203,6 +5300,7 @@
 "ratio_hi":0.90809,
 "gap_signed":-19556272,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.89629 to 0.91. It crosses 0.90, so we cannot tell.",
 "database":{
 "D_app":169004790,
@@ -5238,6 +5336,7 @@
 "ratio_hi":0.91759,
 "gap_signed":-184627316,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.0084 to 0.92. It crosses 0.90, so we cannot tell.",
 "database":{
 "D_app":1562112,
@@ -5267,6 +5366,7 @@
 "ratio_hi":1549.2,
 "gap_signed":-1965888,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.17 to 1,549. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":405746,
@@ -5289,6 +5389,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":168510335,
@@ -5317,6 +5418,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -5346,6 +5448,7 @@
 "ratio_hi":1.7995,
 "gap_signed":-15831217,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "rules_after_data":[
 "6.4"
@@ -5372,6 +5475,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":1562100,
@@ -5408,6 +5512,7 @@
 "ratio_hi":124210.0,
 "gap_signed":-1027,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 124,211. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":335,
@@ -5444,6 +5549,7 @@
 "ratio_hi":467340.0,
 "gap_signed":-362,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 467,335. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -5472,6 +5578,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The difference band runs from -99.0 to +1.0 points. It crosses a 5 point edge, so we cannot tell.",
 "stated_share":0.9874,
 "stated_share_lo":0.9873,
@@ -5545,6 +5652,7 @@
 "ratio_hi":0.94568,
 "gap_signed":-157533237,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.028 to 0.95. It crosses 0.90, so we cannot tell.",
 "database":{
 "D_app":4461965,
@@ -5574,6 +5682,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":37957,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 1.08 to unbounded. It crosses 1.10, so we cannot tell.",
 "database":{
 "D_app":534692,
@@ -5596,6 +5705,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":151116207,
@@ -5624,6 +5734,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":3,
@@ -5653,6 +5764,7 @@
 "ratio_hi":1.763,
 "gap_signed":-9750737,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "rules_after_data":[
 "6.6",
@@ -5680,6 +5792,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":4461857,
@@ -5716,6 +5829,7 @@
 "ratio_hi":3836.9,
 "gap_signed":-39184,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 3,837. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":386,
@@ -5752,6 +5866,7 @@
 "ratio_hi":629990.0,
 "gap_signed":-241,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 629,991. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -5780,6 +5895,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The difference band runs from -97.1 to -0.0 points. It crosses a 5 point edge, so we cannot tell.",
 "stated_share":0.9969,
 "stated_share_lo":0.9969,
@@ -5818,6 +5934,7 @@
 "ratio_hi":1.8165,
 "gap_signed":121376940,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.97 to 1.82. It crosses 1.10, so we cannot tell.",
 "database":{
 "D_app":272812437,
@@ -5853,6 +5970,7 @@
 "ratio_hi":11.433,
 "gap_signed":255638,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 1.00 to 11.4. It crosses 1.10, so we cannot tell.",
 "database":{
 "D_app":24320485,
@@ -5882,6 +6000,7 @@
 "ratio_hi":1.9688,
 "gap_signed":-127370512,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 1.1e-06 to 1.97. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":138,
@@ -5904,6 +6023,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":271708433,
@@ -5932,6 +6052,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -5966,6 +6087,7 @@
 "ratio_hi":1.1143,
 "gap_signed":-130996055,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6",
@@ -5998,6 +6120,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":23851275,
@@ -6034,6 +6157,7 @@
 "ratio_hi":3841.3,
 "gap_signed":859737,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 3,841. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -6071,6 +6195,7 @@
 "ratio_hi":122260.0,
 "gap_signed":-2176,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 122,257. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":74,
@@ -6099,6 +6224,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The difference band runs from -7.0 to +84.1 points. It crosses a 5 point edge, so we cannot tell.",
 "stated_share":0.1589,
 "stated_share_lo":0.1589,
@@ -6137,6 +6263,7 @@
 "ratio_hi":1.1016,
 "gap_signed":-163771285,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.5"
@@ -6176,6 +6303,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-924825,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -6208,6 +6336,7 @@
 "ratio_hi":1.1177,
 "gap_signed":-411301270,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.5"
@@ -6234,6 +6363,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":273230109,
@@ -6262,6 +6392,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -6296,6 +6427,7 @@
 "ratio_hi":1.104,
 "gap_signed":-163960056,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6",
@@ -6328,6 +6460,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":25459741,
@@ -6364,6 +6497,7 @@
 "ratio_hi":385.4,
 "gap_signed":-16820,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 385. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":700281,
@@ -6400,6 +6534,7 @@
 "ratio_hi":29911.0,
 "gap_signed":-16,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 29,911. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":9224,
@@ -6428,6 +6563,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -6533,6 +6669,7 @@
 "ratio_hi":13.108,
 "gap_signed":-103193,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.94 to 13.1. It crosses 1.10, so we cannot tell.",
 "database":{
 "D_app":1533093,
@@ -6697,6 +6834,7 @@
 "ratio_hi":781.85,
 "gap_signed":-227558,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 782. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":166439,
@@ -6730,6 +6868,7 @@
 "items_notified":3,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -6758,6 +6897,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The difference band runs from -5.9 to +0.2 points. It crosses a 5 point edge, so we cannot tell.",
 "stated_share":0.9927,
 "stated_share_lo":0.9927,
@@ -7027,6 +7167,7 @@
 "ratio_hi":823.93,
 "gap_signed":16834,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 824. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":246994,
@@ -7063,6 +7204,7 @@
 "ratio_hi":1755900.0,
 "gap_signed":-108,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,755,889. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -7164,6 +7306,7 @@
 "ratio_hi":0.15422,
 "gap_signed":-557547640,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads below.",
 "database":{
@@ -7194,6 +7337,7 @@
 "ratio_hi":16.65,
 "gap_signed":30586735,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads above.",
 "database":{
@@ -7262,6 +7406,7 @@
 "ratio_hi":4908.6,
 "gap_signed":-27127,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -7363,6 +7508,7 @@
 "ratio_hi":492.23,
 "gap_signed":-270165,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 492. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":3582,
@@ -7399,6 +7545,7 @@
 "ratio_hi":22458000.0,
 "gap_signed":-6,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 22,457,658. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -7529,6 +7676,7 @@
 "ratio_hi":0.9538,
 "gap_signed":-548255,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.29 to 0.95. It crosses 0.90, so we cannot tell.",
 "database":{
 "D_app":224773,
@@ -7596,6 +7744,7 @@
 "ratio_hi":1732.0,
 "gap_signed":-73059,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -7697,6 +7846,7 @@
 "ratio_hi":1388.8,
 "gap_signed":-82651,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,389. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":9568,
@@ -7733,6 +7883,7 @@
 "ratio_hi":2561500.0,
 "gap_signed":-50,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 2,561,531. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -7799,6 +7950,7 @@
 "ratio_hi":1.1122,
 "gap_signed":74356,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.032 to 1.11. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":2892039,
@@ -7860,6 +8012,7 @@
 "ratio_hi":1.1101,
 "gap_signed":61672,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.027 to 1.11. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":2879355,
@@ -7889,6 +8042,7 @@
 "ratio_hi":1.1298,
 "gap_signed":79753,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.4"
 ],
@@ -7959,6 +8113,7 @@
 "ratio_hi":1.1545,
 "gap_signed":12359,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6",
 "6.4"
@@ -8025,6 +8180,7 @@
 "ratio_hi":655.8,
 "gap_signed":12816,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 656. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -8062,6 +8218,7 @@
 "ratio_hi":522120.0,
 "gap_signed":-6,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 522,122. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -8090,6 +8247,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The difference band runs from +0.2 to +14.1 points. It crosses a 5 point edge, so we cannot tell.",
 "stated_share":0.0,
 "stated_share_lo":0.0,
@@ -8128,6 +8286,7 @@
 "ratio_hi":1.5023,
 "gap_signed":124730,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 1.02 to 1.50. It crosses 1.10, so we cannot tell.",
 "database":{
 "D_app":5138953,
@@ -8160,6 +8319,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -8189,6 +8349,7 @@
 "ratio_hi":1.5023,
 "gap_signed":22973,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 1.00 to 1.50. It crosses 1.10, so we cannot tell.",
 "database":{
 "D_app":5037196,
@@ -8218,6 +8379,7 @@
 "ratio_hi":1.513,
 "gap_signed":135463,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.4"
 ],
@@ -8288,6 +8450,7 @@
 "ratio_hi":1.5265,
 "gap_signed":9814,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6",
 "6.4"
@@ -8318,6 +8481,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -8354,6 +8518,7 @@
 "ratio_hi":1623.6,
 "gap_signed":8071,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,624. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -8388,6 +8553,7 @@
 "items_notified":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -8454,6 +8620,7 @@
 "ratio_hi":1.0997,
 "gap_signed":-164,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -8492,6 +8659,7 @@
 "ratio_hi":3.0664,
 "gap_signed":9,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -8524,6 +8692,7 @@
 "ratio_hi":1.1248,
 "gap_signed":-173,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -8549,6 +8718,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":3150,
@@ -8577,6 +8747,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -8606,6 +8777,7 @@
 "ratio_hi":1.1318,
 "gap_signed":-122,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.4"
 ],
@@ -8631,6 +8803,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":738,
@@ -8667,6 +8840,7 @@
 "ratio_hi":7.5178,
 "gap_signed":-42,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 7.52. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":435,
@@ -8695,6 +8869,7 @@
 "period":"2025H2",
 "measure":"notice_tf",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":0,
@@ -8723,6 +8898,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -8764,6 +8940,7 @@
 "ratio_hi":1.9621,
 "gap_signed":-76,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -8802,6 +8979,7 @@
 "ratio_hi":2.3601,
 "gap_signed":-7,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -8834,6 +9012,7 @@
 "ratio_hi":1.9876,
 "gap_signed":-69,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -8859,6 +9038,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":3134,
@@ -8887,6 +9067,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -8916,6 +9097,7 @@
 "ratio_hi":2.0846,
 "gap_signed":-48,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.4"
 ],
@@ -8941,6 +9123,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":821,
@@ -8977,6 +9160,7 @@
 "ratio_hi":17.092,
 "gap_signed":-28,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 17.1. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -9010,6 +9194,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -9165,6 +9350,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":742639,
@@ -9193,6 +9379,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -9222,6 +9409,7 @@
 "ratio_hi":1.0287,
 "gap_signed":-59698,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.4"
 ],
@@ -9247,6 +9435,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":2,
@@ -9275,6 +9464,7 @@
 "period":"2025H2",
 "measure":"notice",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":687,
@@ -9308,6 +9498,7 @@
 "period":"2025H2",
 "measure":"notice_tf",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":1,
@@ -9379,6 +9570,7 @@
 "ratio_hi":0.91494,
 "gap_signed":-174517,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.86 to 0.91. It crosses 0.90, so we cannot tell.",
 "database":{
 "D_app":1084442,
@@ -9443,6 +9635,7 @@
 "ratio_hi":1.2218,
 "gap_signed":83706,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 1.09 to 1.22. It crosses 1.10, so we cannot tell.",
 "database":{
 "D_app":1007191,
@@ -9507,6 +9700,7 @@
 "ratio_hi":1088800.0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -9564,6 +9758,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":24171,
@@ -9592,6 +9787,7 @@
 "period":"2026H1",
 "measure":"notice",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":645,
@@ -9625,6 +9821,7 @@
 "period":"2026H1",
 "measure":"notice_tf",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":3,
@@ -9833,6 +10030,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -9933,6 +10131,7 @@
 "ratio_hi":252.48,
 "gap_signed":-426,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 252. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -9970,6 +10169,7 @@
 "ratio_hi":11951.0,
 "gap_signed":-9,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 11,951. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -9998,6 +10198,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.5"
@@ -10177,6 +10378,7 @@
 "stated_hi":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -10277,6 +10479,7 @@
 "ratio_hi":31.5,
 "gap_signed":-1615,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 31.5. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -10314,6 +10517,7 @@
 "ratio_hi":50872.0,
 "gap_signed":-1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 50,872. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -10342,6 +10546,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -10457,6 +10662,7 @@
 "ratio_hi":2.1859,
 "gap_signed":-173677,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.1",
@@ -10484,6 +10690,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":26082262,
@@ -10512,6 +10719,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -10568,6 +10776,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":24559507,
@@ -10604,6 +10813,7 @@
 "ratio_hi":30.407,
 "gap_signed":23899,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -10643,6 +10853,7 @@
 "ratio_hi":15739000.0,
 "gap_signed":-2,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -10788,6 +10999,7 @@
 "ratio_hi":2.0877,
 "gap_signed":-397574,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.1",
@@ -10815,6 +11027,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":20793461,
@@ -10843,6 +11056,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -10898,6 +11112,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":19911189,
@@ -10934,6 +11149,7 @@
 "ratio_hi":27.431,
 "gap_signed":15344,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"CONSISTENT",
 "rules_after_data":[
 "6.1"
@@ -10974,6 +11190,7 @@
 "ratio_hi":12776000.0,
 "gap_signed":-2,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -11046,6 +11263,7 @@
 "ratio_hi":1.1427,
 "gap_signed":-2997910,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1",
 "6.5"
@@ -11085,6 +11303,7 @@
 "ratio_hi":1.1009,
 "gap_signed":-3054868,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1",
 "6.5"
@@ -11144,6 +11363,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":1233187,
@@ -11172,6 +11392,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -11201,6 +11422,7 @@
 "ratio_hi":1.1396,
 "gap_signed":-3000656,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1",
 "6.4"
@@ -11227,6 +11449,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":1062151,
@@ -11263,6 +11486,7 @@
 "ratio_hi":2644.1,
 "gap_signed":2335,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.1"
@@ -11303,6 +11527,7 @@
 "ratio_hi":1515100.0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -11334,6 +11559,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -11375,6 +11601,7 @@
 "ratio_hi":1.072,
 "gap_signed":-3251452,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1",
 "6.5"
@@ -11414,6 +11641,7 @@
 "ratio_hi":1.0655,
 "gap_signed":-3265962,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1",
 "6.5"
@@ -11473,6 +11701,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":1075828,
@@ -11501,6 +11730,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -11530,6 +11760,7 @@
 "ratio_hi":1.0683,
 "gap_signed":-3254892,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1",
 "6.4"
@@ -11556,6 +11787,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":945315,
@@ -11592,6 +11824,7 @@
 "ratio_hi":1144.4,
 "gap_signed":2637,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.1"
@@ -11632,6 +11865,7 @@
 "ratio_hi":71399.0,
 "gap_signed":1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.1"
 ],
@@ -11663,6 +11897,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -11799,6 +12034,7 @@
 "period":"2025H2",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":2182695320,
@@ -11827,6 +12063,7 @@
 "period":"2025H2",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -11882,6 +12119,7 @@
 "period":"2025H2",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":918559248,
@@ -11918,6 +12156,7 @@
 "ratio_hi":4069900.0,
 "gap_signed":1251532,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 4,069,907. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -11955,6 +12194,7 @@
 "ratio_hi":2189600000.0,
 "gap_signed":-1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 2,189,610,087. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -12062,6 +12302,7 @@
 "ratio_hi":1.0172,
 "gap_signed":5240574,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.5"
 ],
@@ -12119,6 +12360,7 @@
 "period":"2026H1",
 "measure":"own",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":1705725110,
@@ -12147,6 +12389,7 @@
 "period":"2026H1",
 "measure":"own_illegal",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves this field blank.",
 "database":{
 "D_app":0,
@@ -12202,6 +12445,7 @@
 "period":"2026H1",
 "measure":"own_auto",
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves sheet 5 or sheet 6 TOTAL blank.",
 "database":{
 "D_app":646176143,
@@ -12238,6 +12482,7 @@
 "ratio_hi":1552700.0,
 "gap_signed":1216559,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,552,678. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -12272,6 +12517,7 @@
 "items_notified":4,
 "gap_signed":219,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
@@ -12342,6 +12588,7 @@
 "ratio_hi":0.9561,
 "gap_signed":-27681,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.86 to 0.96. It crosses 0.90, so we cannot tell.",
 "database":{
 "D_app":171902,
@@ -12377,6 +12624,7 @@
 "ratio_hi":34.996,
 "gap_signed":38366,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads above.",
 "database":{
@@ -12407,6 +12655,7 @@
 "ratio_hi":0.71853,
 "gap_signed":-66057,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads below.",
 "database":{
@@ -12437,6 +12686,7 @@
 "ratio_hi":0.92216,
 "gap_signed":-51908,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0.75 to 0.92. It crosses 0.90, so we cannot tell.",
 "database":{
 "D_app":154997,
@@ -12472,6 +12722,7 @@
 "ratio_hi":9.82,
 "gap_signed":-8946,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6"
@@ -12505,6 +12756,7 @@
 "ratio_hi":0.99868,
 "gap_signed":-42962,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6"
 ],
@@ -12572,6 +12824,7 @@
 "ratio_hi":14.469,
 "gap_signed":-13169,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 14.5. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":19,
@@ -12608,6 +12861,7 @@
 "ratio_hi":38164.0,
 "gap_signed":-5,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 38,164. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -12802,6 +13056,7 @@
 "ratio_hi":29.016,
 "gap_signed":896,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.6",
@@ -12903,6 +13158,7 @@
 "ratio_hi":12.058,
 "gap_signed":-22535,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 12.1. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":104,
@@ -12939,6 +13195,7 @@
 "ratio_hi":272990.0,
 "gap_signed":-1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 272,988. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -13040,6 +13297,7 @@
 "ratio_hi":0.037981,
 "gap_signed":-229270,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads below.",
 "database":{
@@ -13070,6 +13328,7 @@
 "ratio_hi":16.877,
 "gap_signed":562061,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads above.",
 "database":{
@@ -13100,6 +13359,7 @@
 "ratio_hi":3.0309,
 "gap_signed":-166200,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6",
@@ -13172,6 +13432,7 @@
 "ratio_hi":2.9452,
 "gap_signed":-192020,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6",
@@ -13242,6 +13503,7 @@
 "ratio_hi":62.081,
 "gap_signed":511373,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 62.1. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -13276,6 +13538,7 @@
 "items_notified":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -13377,6 +13640,7 @@
 "ratio_hi":0.18983,
 "gap_signed":-171250,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads below.",
 "database":{
@@ -13407,6 +13671,7 @@
 "ratio_hi":23.79,
 "gap_signed":568813,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads above.",
 "database":{
@@ -13508,6 +13773,7 @@
 "ratio_hi":3.3086,
 "gap_signed":16297,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "rules_after_data":[
 "6.6",
 "6.4"
@@ -13577,6 +13843,7 @@
 "ratio_hi":49.89,
 "gap_signed":366671,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 49.9. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -13611,6 +13878,7 @@
 "items_notified":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -13712,6 +13980,7 @@
 "ratio_hi":0.002455,
 "gap_signed":-185333,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads below.",
 "database":{
@@ -13742,6 +14011,7 @@
 "ratio_hi":9.0327,
 "gap_signed":81744,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads above.",
 "database":{
@@ -13811,6 +14081,7 @@
 "ratio_hi":10.887,
 "gap_signed":2842,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.6"
@@ -13844,6 +14115,7 @@
 "ratio_hi":0.38779,
 "gap_signed":-167702,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6",
@@ -13914,6 +14186,7 @@
 "ratio_hi":5.3568,
 "gap_signed":50331,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 5.36. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -13948,6 +14221,7 @@
 "items_notified":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -14049,6 +14323,7 @@
 "ratio_hi":0.0059123,
 "gap_signed":-162037,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads below.",
 "database":{
@@ -14079,6 +14354,7 @@
 "ratio_hi":15.112,
 "gap_signed":110395,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.7). The two filings label this split differently: the other half of the same split reads the opposite way. Without this rule the row reads above.",
 "database":{
@@ -14148,6 +14424,7 @@
 "ratio_hi":25.299,
 "gap_signed":7070,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.6"
@@ -14181,6 +14458,7 @@
 "ratio_hi":0.57601,
 "gap_signed":-110590,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6",
@@ -14251,6 +14529,7 @@
 "ratio_hi":6.6854,
 "gap_signed":37286,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 6.69. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -14285,6 +14564,7 @@
 "items_notified":0,
 "gap_signed":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The report states zero and the band reaches zero.",
 "database":{
 "D_app":0,
@@ -14343,7 +14623,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"total",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14351,7 +14633,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"solely",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14359,7 +14643,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"not",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14367,7 +14653,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14375,7 +14663,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own_illegal",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14383,7 +14673,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own_tc",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14391,7 +14683,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own_auto",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14399,7 +14693,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"notice",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14407,7 +14703,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"notice_tf",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"The report for this half-year is published as a web page, not in the template files."
 },
 {
@@ -14415,7 +14713,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"total",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14423,7 +14723,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"solely",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14431,7 +14733,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"not",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14439,7 +14743,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"own",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14447,7 +14753,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"own_illegal",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14455,7 +14763,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"own_tc",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14463,7 +14773,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"own_auto",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14471,7 +14783,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"notice",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14479,7 +14793,9 @@
 "view":"main",
 "period":"2026H1",
 "measure":"notice_tf",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report for this half-year was found without a key or a login."
 },
 {
@@ -14487,7 +14803,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"total",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14495,7 +14813,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"solely",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14503,7 +14823,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"not",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14511,7 +14833,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14519,7 +14843,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own_illegal",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14527,7 +14853,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own_tc",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14535,7 +14863,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"own_auto",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14543,7 +14873,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"notice",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14551,7 +14883,9 @@
 "view":"main",
 "period":"2025H2",
 "measure":"notice_tf",
-"outcome":"NOTHING_RETURNED",
+"outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
+"status":"no stated figure, read succeeded",
 "reason":"No report as a very large platform covers this half-year. The January to June 2026 report gives 26 January 2026 as the start of that period."
 },
 {
@@ -14707,6 +15041,7 @@
 "ratio_hi":0.22361,
 "gap_signed":-886271,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"BELOW",
 "rules_after_data":[
 "6.6"
@@ -14740,6 +15075,7 @@
 "ratio_hi":3.4915,
 "gap_signed":95700,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "outcome_rule":"ABOVE",
 "rules_after_data":[
 "6.4"
@@ -14809,6 +15145,7 @@
 "ratio_hi":1787.4,
 "gap_signed":104,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"ABOVE",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 1,787. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -14846,6 +15183,7 @@
 "ratio_hi":49600.0,
 "gap_signed":-4,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_rule":"BELOW",
 "reason":"Defined after the data (Addendum 6.2). The two filings label notice sources differently, so the database band runs from zero to every statement the platform filed, and the report\u2019s notified items set the stated upper edge. The ratio band runs from 0 to 49,600. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -14916,6 +15254,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0 to unbounded. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -14977,6 +15316,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0 to unbounded. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -15116,6 +15456,7 @@
 "measure":"notice",
 "items_notified":309,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":0,
@@ -15145,6 +15486,7 @@
 "measure":"notice_tf",
 "items_notified":0,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":0,
@@ -15180,6 +15522,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0 to unbounded. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -15241,6 +15584,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-1,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "reason":"The ratio band runs from 0 to unbounded. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
 "D_app":0,
@@ -15380,6 +15724,7 @@
 "measure":"notice",
 "items_notified":497,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":0,
@@ -15409,6 +15754,7 @@
 "measure":"notice_tf",
 "items_notified":11,
 "outcome":"CANNOT_TELL",
+"reason_code":"NO_INTERVAL_FORMABLE",
 "reason":"No stated figure: the report leaves the actions on notices blank.",
 "database":{
 "D_app":0,
@@ -15444,6 +15790,7 @@
 "ratio_hi":2.3558,
 "gap_signed":9120011,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
@@ -15496,6 +15843,7 @@
 "ratio_hi":3.365,
 "gap_signed":-193988589,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.5"
@@ -15535,6 +15883,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-21629469,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.5"
@@ -15574,6 +15923,7 @@
 "ratio_hi":2.353,
 "gap_signed":8851000,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
@@ -15626,6 +15976,7 @@
 "ratio_hi":2.3553,
 "gap_signed":8956068,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
@@ -15666,6 +16017,7 @@
 "ratio_hi":1.2336,
 "gap_signed":-193988589,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "reason":"The ratio band runs from 0 to 1.23. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -15707,6 +16059,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.5"
@@ -15761,6 +16114,7 @@
 "ratio_hi":2.4576,
 "gap_signed":17454563,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.5"
@@ -15812,6 +16166,7 @@
 "ratio_hi":2.9134,
 "gap_signed":-227529096,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.5"
@@ -15851,6 +16206,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-11511311,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.5"
@@ -15890,6 +16246,7 @@
 "ratio_hi":2.4545,
 "gap_signed":17121907,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.4"
@@ -15941,6 +16298,7 @@
 "ratio_hi":2.4725,
 "gap_signed":18055835,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.4"
@@ -15980,6 +16338,7 @@
 "ratio_hi":1.1793,
 "gap_signed":-227529096,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "reason":"The ratio band runs from 0 to 1.18. It crosses 0.90 and 1.10, so we cannot tell.",
 "database":{
@@ -16021,6 +16380,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.3",
 "rules_after_data":[
 "6.5"
@@ -16114,6 +16474,7 @@
 "ratio_hi":1.213,
 "gap_signed":232003,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16148,6 +16509,7 @@
 "ratio_hi":1.1676,
 "gap_signed":260917,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16289,6 +16651,7 @@
 "ratio_hi":1.1692,
 "gap_signed":372980,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16323,6 +16686,7 @@
 "ratio_hi":1.2502,
 "gap_signed":127395,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16425,6 +16789,7 @@
 "ratio_hi":1.1237,
 "gap_signed":60085,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16465,6 +16830,7 @@
 "ratio_hi":1.1846,
 "gap_signed":35036,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16499,6 +16865,7 @@
 "ratio_hi":1.3698,
 "gap_signed":25049,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16533,6 +16900,7 @@
 "ratio_hi":1.1233,
 "gap_signed":57392,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16560,6 +16928,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16603,6 +16972,7 @@
 "ratio_hi":1.1645,
 "gap_signed":42848,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16643,6 +17013,7 @@
 "ratio_hi":1.2303,
 "gap_signed":37242,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16677,6 +17048,7 @@
 "ratio_hi":2.0222,
 "gap_signed":5606,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16711,6 +17083,7 @@
 "ratio_hi":1.1639,
 "gap_signed":38586,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16738,6 +17111,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16781,6 +17155,7 @@
 "ratio_hi":1.2251,
 "gap_signed":-22,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16821,6 +17196,7 @@
 "ratio_hi":1.2925,
 "gap_signed":5739,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16855,6 +17231,7 @@
 "ratio_hi":"unbounded",
 "gap_signed":-5761,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"BELOW",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16889,6 +17266,7 @@
 "ratio_hi":1.2251,
 "gap_signed":-1044,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16916,6 +17294,7 @@
 "period":"2025H2",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16959,6 +17338,7 @@
 "ratio_hi":1.2237,
 "gap_signed":-302,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -16999,6 +17379,7 @@
 "ratio_hi":1.3101,
 "gap_signed":3143,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -17033,6 +17414,7 @@
 "ratio_hi":17.98,
 "gap_signed":-3445,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
 "6.5"
@@ -17066,6 +17448,7 @@
 "ratio_hi":1.2237,
 "gap_signed":-2111,
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[
@@ -17093,6 +17476,7 @@
 "period":"2026H1",
 "measure":"share",
 "outcome":"CANNOT_TELL",
+"reason_code":"STRADDLES_EDGE",
 "outcome_without_column_bound":"CONSISTENT",
 "defined_after_data":"Addendum 6.1",
 "rules_after_data":[

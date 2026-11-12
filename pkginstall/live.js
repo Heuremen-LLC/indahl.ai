@@ -9,10 +9,10 @@
     return c;
   }
   function pct(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
-  var TABLES = [{"title": "Failure among commands that could be compared", "path": "comparison", "first": "", "cols": [["Compared", "of", "n"], ["Fail", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "By class", "path": "classes", "first": "Class", "cols": [["Projects", "n", "n"]]}, {"title": "Why projects were not comparable", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Projects", "n", "n"]]}, {"title": "Read in full: commands that fail", "path": "disagree_list", "link": "https://pypi.org/project/{project}/", "first": "Project", "firstkey": "project", "cols": [["Command", "command", "t"], ["Pip said", "error", "t"], ["Found on a full read", "reason", "t"]]}], TOP = "{projects} projects read with pip {pip}. Controls: {gate}. Updated {updated} UTC.";
+  var TABLES = [{"title": "Failure among commands that could be compared", "path": "comparison", "first": "", "cols": [["Compared", "of", "n"], ["Fail", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"], ["Failed reads and cannot tell", "req13_line", "t"]]}, {"title": "By class", "path": "classes", "first": "Class", "cols": [["Projects", "n", "n"]]}, {"title": "Why projects were not comparable", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Projects", "n", "n"]]}, {"title": "Read in full: commands that fail", "path": "disagree_list", "link": "https://pypi.org/project/{project}/", "first": "Project", "firstkey": "project", "cols": [["Command", "command", "t"], ["Pip said", "error", "t"], ["Found on a full read", "reason", "t"]]}], TOP = "{projects} projects read with pip {pip}. Controls: {gate}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
-    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td(OC[v] || v);
+    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td((OC[v] || v) + (row.reason ? ' (' + row.reason + ')' : ''));   // 12 Nov 2026 (Faults and Guards 2.0): the reason beside every cannot tell
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);
@@ -22,7 +22,7 @@
     box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{(\w+)\}/g, function (m, k) { return d[k] == null ? '' : d[k]; }); box.appendChild(top);
     TABLES.forEach(function (T) {
       var src = d; T.path.split('.').forEach(function (k) { src = src && src[k]; }); if (!src) return;
-      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object'; });
+      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return k === 'req13' || k === 'failed_reads' || src[k] === null || typeof src[k] !== 'object'; });
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var nolab = flat && !T.label && !T.first; var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr>' + (nolab ? '' : '<th>' + T.first + '</th>') + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';

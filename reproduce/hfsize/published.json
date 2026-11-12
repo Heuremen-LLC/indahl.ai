@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/hfsize/live.json",
- "feed_sha256": "efb0c84072b9b2fcba1ccd3036e0ed8b768e26f0fab950f7ac1908914e7f2787",
+ "feed_sha256": "f3af053b95d70ae5a5d94f780793c3edddb6e003a7042b92acea6e435c372b63",
  "headline": {
   "desk": "HFSIZE",
   "display": "12 of 135",
@@ -9,9 +9,9 @@
   "lo": 0.0516,
   "n": 12,
   "of": 135,
-  "outcome": "CANNOT_TELL",
+  "outcome": "ABOVE",
   "value": 0.0889
  },
- "read_at": "2026-11-11T00:08:42Z",
- "stamp": "10 Nov 22:07"
+ "read_at": "2026-11-12T16:25:51Z",
+ "stamp": "12 Nov 15:30"
 }

@@ -11,11 +11,11 @@
     box.textContent = ''; box.appendChild(top);
     if (!d.cells || !d.cells.length) { var p = document.createElement('p'); p.textContent = 'No launch we were watching has flown yet with a stored time far enough ahead. Rows appear here as they do.'; box.appendChild(p); return; }
     var t = document.createElement('table'); t.className = 'mtx';
-    t.innerHTML = '<thead><tr><th>Provider</th><th>Lead</th><th>Launches</th><th>Median slip, hours</th><th>Slipped over 24 hours, 95% interval</th><th>Outcome</th></tr></thead>';
+    t.innerHTML = '<thead><tr><th>Provider</th><th>Lead</th><th>Launches</th><th>Median slip, hours</th><th>Slipped over 24 hours, 95% interval</th><th>Outcome</th><th>REQ-13</th></tr></thead>';
     var b = document.createElement('tbody');
     d.cells.forEach(function (c) {
       var r = document.createElement('tr'); r.appendChild(td(c.who)); r.appendChild(td(c.lead)); r.appendChild(td(c.n, 1)); r.appendChild(td(c.median_abs_slip_h, 1));
-      r.appendChild(td(c.over_24h + ' of ' + c.n + ', ' + (100 * c.share).toFixed(1) + '% [' + (100 * c.lo).toFixed(1) + ', ' + (100 * c.hi).toFixed(1) + ']', 1)); r.appendChild(td(W(c.outcome))); b.appendChild(r);
+      r.appendChild(td(c.over_24h + ' of ' + c.n + ', ' + (100 * c.share).toFixed(1) + '% [' + (100 * c.lo).toFixed(1) + ', ' + (100 * c.hi).toFixed(1) + ']', 1)); r.appendChild(td(W(c.outcome) + (c.outcome === 'CANNOT_TELL' && c.reason ? ' (' + c.reason + ')' : ''))); r.appendChild(td(c.req13 && c.req13.line ? c.req13.line : '')); b.appendChild(r);
     });
     t.appendChild(b); box.appendChild(t);
   }).catch(function () { box.textContent = 'The snapshot could not be loaded just now.'; });

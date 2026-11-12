@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/ailuminate/live.json",
- "feed_sha256": "6b1353f3c24141d9cf780db88a71c4504dbd3b336085250b72ec5f5445eab960",
+ "feed_sha256": "55bf53b9714a68363273ad08f9d378618a3a298f26123c6728efdbe2c94d3447",
  "headline": {
   "desk": "AILUMINATE",
   "display": "4 to 100",
@@ -39,7 +39,7 @@
   "lo": null,
   "n": null,
   "of": null,
-  "outcome": "CONSISTENT",
+  "outcome": "CANNOT_TELL",
   "value": [
    98,
    64,
@@ -70,6 +70,6 @@
    52
   ]
  },
- "read_at": "2026-11-11T00:26:08Z",
- "stamp": "10 Nov 22:48"
+ "read_at": "2026-11-12T16:25:56Z",
+ "stamp": "12 Nov 16:17"
 }

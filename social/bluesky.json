@@ -212,9 +212,11 @@
     125451
    ],
    "gap_rel": -0.03621406913280778,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "labels_2024",
@@ -252,9 +254,11 @@
     894196
    ],
    "gap_rel": 0.0019449090909091638,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "adult_detection",
@@ -292,9 +296,11 @@
     372369
    ],
    "gap_rel": -0.024665633802816944,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_adult",
@@ -332,6 +338,7 @@
     588846
    ],
    "gap_rel": -0.012398053753475469,
+   "zero": false,
    "beside": [
     {
      "value": "porn(self)",
@@ -341,7 +348,8 @@
    ],
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "a different value name, seen in the stream"
+   "reason": "a different value name, seen in the stream",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_suggestive",
@@ -379,6 +387,7 @@
     496144
    ],
    "gap_rel": -0.06622134502923982,
+   "zero": false,
    "beside": [
     {
      "value": "sexual(self)",
@@ -388,7 +397,8 @@
    ],
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "a different value name, seen in the stream"
+   "reason": "a different value name, seen in the stream",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_spam",
@@ -426,9 +436,11 @@
     693235
    ],
    "gap_rel": -0.03857594812082388,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_nudity",
@@ -466,6 +478,7 @@
     714484
    ],
    "gap_rel": -0.020894104354971188,
+   "zero": false,
    "beside": [
     {
      "value": "nudity(self)",
@@ -475,7 +488,8 @@
    ],
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "a different value name, seen in the stream"
+   "reason": "a different value name, seen in the stream",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_needs_review",
@@ -513,9 +527,11 @@
     552954
    ],
    "gap_rel": -0.45838601610201546,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_rude",
@@ -553,6 +569,7 @@
     720318
    ],
    "gap_rel": -0.007796736407339688,
+   "zero": false,
    "beside": [
     {
      "value": "rude:1714644703844",
@@ -562,7 +579,8 @@
    ],
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "a different value name, seen in the stream"
+   "reason": "a different value name, seen in the stream",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_sexual_figurative",
@@ -600,9 +618,11 @@
     720512
    ],
    "gap_rel": -0.013822257176563157,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_graphic_media",
@@ -640,6 +660,7 @@
     716624
    ],
    "gap_rel": -0.04705005491919034,
+   "zero": false,
    "beside": [
     {
      "value": "gore",
@@ -649,7 +670,8 @@
    ],
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "shown in the Bluesky app under the same name, Graphic Media"
+   "reason": "shown in the Bluesky app under the same name, Graphic Media",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_hide",
@@ -687,9 +709,11 @@
     712183
    ],
    "gap_rel": -0.15291532376208616,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_intolerant",
@@ -727,9 +751,11 @@
     721912
    ],
    "gap_rel": -0.011777408637873799,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_self_harm",
@@ -767,9 +793,11 @@
     721574
    ],
    "gap_rel": -0.05004780114722751,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "val_threat",
@@ -807,9 +835,11 @@
     722424
    ],
    "gap_rel": -0.012421185372005095,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "share_content",
@@ -879,9 +909,11 @@
     -0.03100373445776461,
     0.012487170483666099
    ],
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "share_intolerant",
@@ -951,9 +983,11 @@
     -0.9049851683646332,
     0.01895027822102202
    ],
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "share_threat",
@@ -1023,9 +1057,11 @@
     -0.9787927139149704,
     -8.126953855103203e-06
    ],
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "share_rude",
@@ -1095,9 +1131,11 @@
     -0.7025818894986502,
     0.0088707273224915
    ],
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge."
+   "reason": "The interval across readings reaches both sides of the stated figure, or past its edge.",
+   "reason_code": "STRADDLES_EDGE"
   },
   {
    "id": "share_needs_review",
@@ -1167,9 +1205,11 @@
     -0.7837533338966562,
     -0.0009283994912760996
    ],
+   "zero": false,
    "stated_inside_interval": false,
    "outcome": "BELOW",
-   "reason": null
+   "reason": null,
+   "reason_code": null
   },
   {
    "id": "takedown_items",
@@ -1207,9 +1247,11 @@
     674680
    ],
    "gap_rel": -0.019597078730868356,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read."
+   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read.",
+   "reason_code": "NO_INTERVAL_FORMABLE"
   },
   {
    "id": "takedown_accounts_2025",
@@ -1247,9 +1289,11 @@
     680827
    ],
    "gap_rel": -0.020093269230769262,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read."
+   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read.",
+   "reason_code": "NO_INTERVAL_FORMABLE"
   },
   {
    "id": "takedown_accounts_2024",
@@ -1287,9 +1331,11 @@
     -602449
    ],
    "gap_rel": -0.8365254901960785,
+   "zero": false,
    "stated_inside_interval": false,
    "outcome": "CANNOT_TELL",
-   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read."
+   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read.",
+   "reason_code": "NO_INTERVAL_FORMABLE"
   },
   {
    "id": "suspensions_2025",
@@ -1327,9 +1373,11 @@
     709429
    ],
    "gap_rel": -1.0,
+   "zero": false,
    "stated_inside_interval": true,
    "outcome": "CANNOT_TELL",
-   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read."
+   "reason": "Takedowns and suspensions can be carried out on Bluesky servers outside this label stream, so the stated figure may cover more than the stream. Only a stream count above the stated figure can be read.",
+   "reason_code": "NO_INTERVAL_FORMABLE"
   },
   {
    "id": "automated_share",
@@ -1349,6 +1397,7 @@
    "interval": null,
    "gap": null,
    "outcome": "CANNOT_TELL",
+   "reason_code": "NO_INTERVAL_FORMABLE",
    "reason": "The stream does not record whether a person or a system applied a label. The same holds for the report's \"% Applied Manually\" column."
   },
   {
@@ -1369,6 +1418,7 @@
    "interval": null,
    "gap": null,
    "outcome": "CANNOT_TELL",
+   "reason_code": "NO_INTERVAL_FORMABLE",
    "reason": "The stream carries labels only. Reports are not published in it."
   }
  ],
@@ -11835,7 +11885,7 @@
    "negated": 256,
    "takedown_values": 1225,
    "seq_used": null,
-   "partial": true
+   "partial": false
   }
  ]
 }

@@ -23,6 +23,15 @@ LEDGER = os.path.join(B, 'ledger', 'ledger.jsonl'); SITE = 'https://indahl.ai'; 
 E = html.escape
 CELLS = ('desk', 'item', 'counts', 'stated', 'delivered', 'interval', 'outcome', 'read')
 LAKE = {'mead': 'Lake Mead', 'powell': 'Lake Powell'}   # labels for feed keys that are codes; no digits
+# 12 Nov 2026 (Faults and Guards 2.0, REQ-13): the reason beside each outcome is the one the desk gives next to its outcome, and one line counts failed reads and CANNOT_TELL by reason.
+REASONS = ('STRADDLES_EDGE', 'TOO_WIDE_TO_RESOLVE', 'NO_INTERVAL_FORMABLE')
+NO_REASON = 'reason not yet in the desk feed'
+def _kit():
+    sys.path.insert(0, os.path.join(B, 'heuremen_kit')); import heuremen_kit; return heuremen_kit
+def req13_line(rows, held):
+    """The kit's REQ-13 line over the rows shown. A member whose feed or rows could not be read is a failed read. A member that has no forecasters block yet has not joined and is not counted."""
+    failed = [h for h in held if not str(h.get('why', '')).startswith('feed has no forecasters block')]
+    return _kit().req13([(r['text']['outcome'], r['text']['reason'] if r['text']['reason'] in REASONS else None) for r in rows], nothing_returned=failed)['line']
 
 
 def members(): return json.load(open(MEMBERS))['members']
@@ -186,6 +195,17 @@ def _expand(m):
     return out
 
 
+def _reason_cell(outcome_cell):
+    """The reason cell of a row: a reference to the field named reason beside the outcome field in the desk feed. Not a CANNOT_TELL, no reason in the feed, or a value outside the closed list print as plain words."""
+    t, refs = outcome_cell
+    if render(outcome_cell) != 'CANNOT_TELL': return ('not applicable', [])
+    try:
+        if len(refs) == 1 and refs[0][0] == 'f' and refs[0][-1] == 'outcome':
+            ref = list(refs[0][:-1]) + ['reason']
+            if resolve(tuple(ref)) in REASONS: return ('{0}', [ref])
+    except Miss: pass
+    return (NO_REASON, [])
+
 def collect():
     """Every row the page shows, sorted by desk name then the desk's own order, plus the members held off and why."""
     rows, held = [], []
@@ -199,7 +219,8 @@ def collect():
                          'stated': _cell(sp['stated'], m['slug'], base, key), 'delivered': _cell(sp['delivered'], m['slug'], base, key),
                          'interval': _cell(sp['interval'], m['slug'], base, key), 'outcome': _cell(sp['outcome'], m['slug'], base, key), 'read': stamp}
                 if sp.get('brier'): cells['brier'] = _cell(sp['brier'], m['slug'], base, key)
-                nums = {k: _ref(v, m['slug'], base) for k, v in sp['num'].items()}
+                cells['reason'] = _reason_cell(cells['outcome'])
+                nums ={k: _ref(v, m['slug'], base) for k, v in sp['num'].items()}
                 r = {'desk': m['desk'], 'slug': m['slug'], 'page': m['page'], 'source': m['source'], 'kind': sp['kind'], 'scale': sp.get('scale', 1),
                      'note': sp.get('note', ''), 'ours': bool(m.get('our_reading')), 'cells': cells, 'nums': nums}
                 r['text'] = {c: render(v) for c, v in cells.items()}
@@ -249,7 +270,7 @@ INTRO = (
  'The bar is the desk&rsquo;s own interval, moved by the same stated share. '
  'Each desk&rsquo;s section says what its share counts, inside the range for some and outside it for others, so a point right of zero means that thing happened more often than stated.</p>'
  '<p>The label beside each point is the desk&rsquo;s own outcome, exactly as the desk gives it. ABOVE means the whole interval sits above the stated share and BELOW that it sits below. '
- 'CONSISTENT means the interval holds the stated share and meets that desk&rsquo;s rule for width or size. CANNOT_TELL means it does not, so a point clear of zero can still read CANNOT_TELL when its cell is small or its interval wide.</p>'
+ 'CONSISTENT means the whole interval lies inside a two-sided band the plan named before the read. A stated chance with no tolerance can read only ABOVE, BELOW or CANNOT_TELL. CANNOT_TELL carries one reason, STRADDLES_EDGE, TOO_WIDE_TO_RESOLVE or NO_INTERVAL_FORMABLE.</p>'
  '<p>Some desks read their outcome against a band rather than one share, because the forecaster states a band or because the desk reads a single share as one. '
  'On those rows the band is drawn as a shaded span, the point is measured from the middle of the band, and ABOVE, BELOW and CONSISTENT are read against the band, as that desk&rsquo;s rule says.</p>'
  '<p>The members measure unlike things: precipitation at airports, lake levels, economic projections, payroll revisions and asteroid distances. '
@@ -308,11 +329,11 @@ def chart(rows):
 
 def table(rows):
     brier = any('brier' in r['text'] for r in rows)
-    h = ['Desk', 'Cell', 'What the share counts', 'Stated', 'Delivered', 'Interval', 'Outcome'] + (['Brier skill'] if brier else []) + ['Read']
+    h = ['Desk', 'Cell', 'What the share counts', 'Stated', 'Delivered', 'Interval', 'Outcome', 'Reason'] + (['Brier skill'] if brier else []) + ['Read']
     body = []
     for r in rows:
         t = r['text']
-        cells = [f'<a href="{r["page"]}">{E(t["desk"])}</a>', E(t['item']), E(t['counts']), E(t['stated']), E(t['delivered']), E(t['interval']), E(t['outcome'])]
+        cells = [f'<a href="{r["page"]}">{E(t["desk"])}</a>', E(t['item']), E(t['counts']), E(t['stated']), E(t['delivered']), E(t['interval']), E(t['outcome']), E(t['reason'])]
         if brier: cells.append(E(t.get('brier', 'not published')))
         cells.append(E(t['read']))  # UTC, as the desk stamps it
         body.append('<tr>' + ''.join(f'<td>{c}</td>' for c in cells) + '</tr>')
@@ -325,8 +346,8 @@ def table(rows):
             + ''.join(f'<p class="meta">{E(n)}</p>' for n in notes)
             + '<p class="meta">Read is the stamp of the desk&rsquo;s own feed, in UTC and in the desk&rsquo;s own format, when this page was built. The live figures are on each desk&rsquo;s page.</p></section>')
 
-def body(rows):
-    return INTRO + '<section>' + chart(rows) + '</section>' + table(rows) + (
+def body(rows, held=()):
+    return INTRO + '<section>' + chart(rows) + '</section>' + '<p class="meta fcx-r13">' + E(req13_line(rows, held)) + ' Each outcome and each reason is the one the desk gives in its own feed.</p>' + table(rows) + (
         '<section class="legal"><h2>How a desk joins</h2><p>A desk joins this page when its feed carries its stated figure beside the delivered one, with an interval and an outcome. '
         'Desks being built join on the first build after they ship. Every number here comes from a desk feed or a ledger row, and the page is checked against both before it is released.</p></section>')
 
@@ -361,7 +382,7 @@ def add_pages(PAGES, page, hero_slim, HOME=None, refresh_feeds=True):
     if not rows: raise SystemExit('BUILD REFUSED: forecasters: no member rows')
     shown = sorted({r['desk'] for r in rows})
     desc = 'Every public forecaster the Heuremen LLC desks score, on one axis: stated coverage or stated chance against what happened, with each desk\'s interval and its own outcome label.'
-    PAGES[PATH] = page(PATH, 'FORECASTERS | Stated Against Delivered, One Axis | Heuremen LLC', desc, body(rows), hero_slim('FORECASTERS &middot; Stated Against Delivered, One Axis'))
+    PAGES[PATH] = page(PATH, 'FORECASTERS | Stated Against Delivered, One Axis | Heuremen LLC', desc, body(rows, held), hero_slim('FORECASTERS &middot; Stated Against Delivered, One Axis'))
     if HOME is not None: HOME[PATH] = '/hermes'
     pages = sorted({r['page'] for r in rows})
     for p in pages:
@@ -427,7 +448,7 @@ def gate():
             for x in tag:
                 if x and re.search(r'\d', html.unescape(x)): errs.append('digit in title or description %r' % x[:60])
         brier = any('brier' in r['text'] for r in fresh)
-        cols = ['desk', 'item', 'counts', 'stated', 'delivered', 'interval', 'outcome'] + (['brier'] if brier else []) + ['read']
+        cols = ['desk', 'item', 'counts', 'stated', 'delivered', 'interval', 'outcome', 'reason'] + (['brier'] if brier else []) + ['read']
         want = [[_txt(E(r['text'].get(c, 'not published'))) for c in cols] for r in fresh]
         got = [[_txt(td) for td in re.findall(r'<td>(.*?)</td>', tr, re.S)] for tr in re.findall(r'<tr><td>(.*?)</tr>', main, re.S)]
         got = [[_txt(x) for x in re.findall(r'<td>(.*?)</td>', '<tr><td>' + tr + '</tr>', re.S)] for tr in re.findall(r'<tr><td>(.*?)</tr>', main, re.S)]
@@ -458,6 +479,9 @@ def gate():
         rest = re.sub(r'<figure class="fcx".*?</figure>', '', main, flags=re.S)
         rest = re.sub(r'<table.*?</table>', '', rest, flags=re.S)
         rest = re.sub(r'<(script|style|textarea)[^>]*>.*?</\1>', '', rest, flags=re.S)
+        r13 = re.findall(r'<p class="meta fcx-r13">(.*?)</p>', rest, re.S)   # the REQ-13 line is counted from the re-derived rows and compared, then taken out of the digit check
+        if [_txt(x) for x in r13] != [_txt(E(req13_line(fresh, held))) + ' Each outcome and each reason is the one the desk gives in its own feed.']: errs.append('the REQ-13 line differs from the re-derived rows')
+        rest = re.sub(r'<p class="meta fcx-r13">.*?</p>', '', rest, flags=re.S)
         for blk in SITE_BLOCKS: rest = re.sub(blk, '', rest, flags=re.S)
         for m in re.finditer(r'\d', _txt(rest)):
             t = _txt(rest); errs.append('untraced digit in copy: %r' % t[max(0, m.start() - 50): m.end() + 20]); break

@@ -1,43 +1,44 @@
-path,label,outcome,n,of,share,lo,hi,series,cell,stated,rows,scored,inside,above,below,cannot_tell,nothing_returned,months,issues,share_above,share_below,reading,block_months,kind,item,counts,delivered,interval
-/cells[0],cells[0],CANNOT_TELL,,,0.8673,0.7311,0.9736,WTI,all leads,0.95,890,452,392,0,60,438,0,113,37,0.0,0.1327,,,,,,,
-/cells[1],cells[1],CANNOT_TELL,,,0.8378,0.6667,0.9767,WTI,1 to 2 months,0.95,78,37,31,0,6,41,0,37,37,0.0,0.1622,,,,,,,
-/cells[2],cells[2],CANNOT_TELL,,,0.8562,0.6917,0.9739,WTI,3 to 6 months,0.95,306,146,125,0,21,160,0,89,37,0.0,0.1438,,,,,,,
-/cells[3],cells[3],CANNOT_TELL,,,0.8708,0.7129,0.9855,WTI,7 to 12 months,0.95,352,178,155,0,23,174,0,93,37,0.0,0.1292,,,,,,,
-/cells[4],cells[4],CANNOT_TELL,,,0.8901,0.7078,1.0,WTI,13 months or more,0.95,154,91,81,0,10,63,0,47,34,0.0,0.1099,,,,,,,
-/cells[5],cells[5],CONSISTENT,,,0.9392,0.8932,0.9774,HH,all leads,0.95,1371,1036,973,24,39,323,12,168,60,0.0232,0.0376,,,,,,,
-/cells[6],cells[6],CONSISTENT,,,0.9417,0.9189,0.9837,HH,1 to 2 months,0.95,156,120,113,1,6,36,0,95,60,0.0083,0.05,,,,,,,
-/cells[7],cells[7],CONSISTENT,,,0.9583,0.9299,0.9923,HH,3 to 6 months,0.95,312,240,230,4,6,72,0,128,60,0.0167,0.025,,,,,,,
-/cells[8],cells[8],CONSISTENT,,,0.9611,0.9259,0.9886,HH,7 to 12 months,0.95,465,360,346,2,12,105,0,145,60,0.0056,0.0333,,,,,,,
-/cells[9],cells[9],CANNOT_TELL,,,0.8987,0.7703,0.9881,HH,13 months or more,0.95,438,316,284,17,15,110,12,112,55,0.0538,0.0475,,,,,,,
-/cells_addendum1[0],cells_addendum1[0],CONSISTENT,,,0.9097,0.8282,0.9677,WTI,all leads,0.95,890,875,796,19,60,9,6,176,76,0.0217,0.0686,,,,,,,
-/cells_addendum1[1],cells_addendum1[1],CANNOT_TELL,,,0.8831,0.7816,0.9565,WTI,1 to 2 months,0.95,78,77,68,3,6,1,0,77,76,0.039,0.0779,,,,,,,
-/cells_addendum1[2],cells_addendum1[2],CANNOT_TELL,,,0.9172,0.8237,0.9778,WTI,3 to 6 months,0.95,306,302,277,4,21,4,0,149,76,0.0132,0.0695,,,,,,,
-/cells_addendum1[3],cells_addendum1[3],CANNOT_TELL,,,0.9112,0.8174,0.9771,WTI,7 to 12 months,0.95,352,349,318,8,23,3,0,154,76,0.0229,0.0659,,,,,,,
-/cells_addendum1[4],cells_addendum1[4],CANNOT_TELL,,,0.9048,0.7734,0.9857,WTI,13 months or more,0.95,154,147,133,4,10,1,6,62,70,0.0272,0.068,,,,,,,
-/cells_addendum1[5],cells_addendum1[5],CANNOT_TELL,,,0.8801,0.7878,0.9649,HH,all leads,0.95,1371,1359,1196,116,47,0,12,179,78,0.0854,0.0346,,,,,,,
-/cells_addendum1[6],cells_addendum1[6],CONSISTENT,,,0.9103,0.8696,0.9658,HH,1 to 2 months,0.95,156,156,142,7,7,0,0,117,78,0.0449,0.0449,,,,,,,
-/cells_addendum1[7],cells_addendum1[7],CONSISTENT,,,0.9103,0.8444,0.9767,HH,3 to 6 months,0.95,312,312,284,21,7,0,0,149,78,0.0673,0.0224,,,,,,,
-/cells_addendum1[8],cells_addendum1[8],CANNOT_TELL,,,0.9011,0.816,0.9729,HH,7 to 12 months,0.95,465,465,419,30,16,0,0,164,78,0.0645,0.0344,,,,,,,
-/cells_addendum1[9],cells_addendum1[9],CANNOT_TELL,,,0.8239,0.6394,0.9647,HH,13 months or more,0.95,438,426,351,58,17,0,12,133,72,0.1362,0.0399,,,,,,,
-/after_data/block_sensitivity[0],block_sensitivity[0],CANNOT_TELL,,,,0.7549,0.9599,WTI,,,,,,,,,,,,,,plan,6,,,,,
-/after_data/block_sensitivity[1],block_sensitivity[1],CANNOT_TELL,,,,0.7311,0.9736,WTI,,,,,,,,,,,,,,plan,12,,,,,
-/after_data/block_sensitivity[2],block_sensitivity[2],CANNOT_TELL,,,,0.7217,0.9745,WTI,,,,,,,,,,,,,,plan,24,,,,,
-/after_data/block_sensitivity[3],block_sensitivity[3],CONSISTENT,,,,0.8946,0.9739,HH,,,,,,,,,,,,,,plan,6,,,,,
-/after_data/block_sensitivity[4],block_sensitivity[4],CONSISTENT,,,,0.8932,0.9774,HH,,,,,,,,,,,,,,plan,12,,,,,
-/after_data/block_sensitivity[5],block_sensitivity[5],CONSISTENT,,,,0.8901,0.976,HH,,,,,,,,,,,,,,plan,24,,,,,
-/after_data/block_sensitivity[6],block_sensitivity[6],CONSISTENT,,,,0.8407,0.9587,WTI,,,,,,,,,,,,,,addendum1,6,,,,,
-/after_data/block_sensitivity[7],block_sensitivity[7],CONSISTENT,,,,0.8282,0.9677,WTI,,,,,,,,,,,,,,addendum1,12,,,,,
-/after_data/block_sensitivity[8],block_sensitivity[8],CANNOT_TELL,,,,0.8082,0.9679,WTI,,,,,,,,,,,,,,addendum1,24,,,,,
-/after_data/block_sensitivity[9],block_sensitivity[9],BELOW,,,,0.7988,0.9472,HH,,,,,,,,,,,,,,addendum1,6,,,,,
-/after_data/block_sensitivity[10],block_sensitivity[10],CANNOT_TELL,,,,0.7878,0.9649,HH,,,,,,,,,,,,,,addendum1,12,,,,,
-/after_data/block_sensitivity[11],block_sensitivity[11],CANNOT_TELL,,,,0.7722,0.9648,HH,,,,,,,,,,,,,,addendum1,24,,,,,
-/forecasters/rows[0],"WTI crude oil, stated any number of months ahead",CANNOT_TELL,392,452,,0.7311,0.9736,,,0.95,,,,,,,,,,,,,,coverage,"WTI crude oil, stated any number of months ahead",share of monthly average spot prices inside the stated interval,0.8673,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[1],"WTI crude oil, stated 1 to 2 months ahead",CANNOT_TELL,31,37,,0.6667,0.9767,,,0.95,,,,,,,,,,,,,,coverage,"WTI crude oil, stated 1 to 2 months ahead",share of monthly average spot prices inside the stated interval,0.8378,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[2],"WTI crude oil, stated 3 to 6 months ahead",CANNOT_TELL,125,146,,0.6917,0.9739,,,0.95,,,,,,,,,,,,,,coverage,"WTI crude oil, stated 3 to 6 months ahead",share of monthly average spot prices inside the stated interval,0.8562,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[3],"WTI crude oil, stated 7 to 12 months ahead",CANNOT_TELL,155,178,,0.7129,0.9855,,,0.95,,,,,,,,,,,,,,coverage,"WTI crude oil, stated 7 to 12 months ahead",share of monthly average spot prices inside the stated interval,0.8708,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[4],"WTI crude oil, stated 13 months or more ahead",CANNOT_TELL,81,91,,0.7078,1.0,,,0.95,,,,,,,,,,,,,,coverage,"WTI crude oil, stated 13 months or more ahead",share of monthly average spot prices inside the stated interval,0.8901,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[5],"Henry Hub natural gas, stated any number of months ahead",CONSISTENT,973,1036,,0.8932,0.9774,,,0.95,,,,,,,,,,,,,,coverage,"Henry Hub natural gas, stated any number of months ahead",share of monthly average spot prices inside the stated interval,0.9392,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[6],"Henry Hub natural gas, stated 1 to 2 months ahead",CONSISTENT,113,120,,0.9189,0.9837,,,0.95,,,,,,,,,,,,,,coverage,"Henry Hub natural gas, stated 1 to 2 months ahead",share of monthly average spot prices inside the stated interval,0.9417,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[7],"Henry Hub natural gas, stated 3 to 6 months ahead",CONSISTENT,230,240,,0.9299,0.9923,,,0.95,,,,,,,,,,,,,,coverage,"Henry Hub natural gas, stated 3 to 6 months ahead",share of monthly average spot prices inside the stated interval,0.9583,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[8],"Henry Hub natural gas, stated 7 to 12 months ahead",CONSISTENT,346,360,,0.9259,0.9886,,,0.95,,,,,,,,,,,,,,coverage,"Henry Hub natural gas, stated 7 to 12 months ahead",share of monthly average spot prices inside the stated interval,0.9611,"moving-block bootstrap over outcome months, as the desk gives it"
-/forecasters/rows[9],"Henry Hub natural gas, stated 13 months or more ahead",CANNOT_TELL,284,316,,0.7703,0.9881,,,0.95,,,,,,,,,,,,,,coverage,"Henry Hub natural gas, stated 13 months or more ahead",share of monthly average spot prices inside the stated interval,0.8987,"moving-block bootstrap over outcome months, as the desk gives it"
+path,label,outcome,n,of,share,lo,hi,level,min_rows,min_months,max_width,outcome_rule,block_months,replicates,seed,series,cell,stated,rows,scored,inside,above,below,cannot_tell,nothing_returned,months,issues,share_above,share_below,reason,reading,kind,item,counts,delivered,interval
+/frame,frame,,,,,,,0.95,30,24,0.15,"PLAN_ADDENDUM_std2.md (12 Nov 2026): point figure 0.95 with no tolerance, ABOVE, BELOW or CANNOT_TELL with a closed reason, the width cap no longer decides",12,2000,20261110,,,,,,,,,,,,,,,,,,,,,
+/cells[0],cells[0],CANNOT_TELL,,,0.8673,0.7311,0.9736,,,,,,,,,WTI,all leads,0.95,890,452,392,0,60,438,0,113,37,0.0,0.1327,STRADDLES_EDGE,,,,,,
+/cells[1],cells[1],CANNOT_TELL,,,0.8378,0.6667,0.9767,,,,,,,,,WTI,1 to 2 months,0.95,78,37,31,0,6,41,0,37,37,0.0,0.1622,STRADDLES_EDGE,,,,,,
+/cells[2],cells[2],CANNOT_TELL,,,0.8562,0.6917,0.9739,,,,,,,,,WTI,3 to 6 months,0.95,306,146,125,0,21,160,0,89,37,0.0,0.1438,STRADDLES_EDGE,,,,,,
+/cells[3],cells[3],CANNOT_TELL,,,0.8708,0.7129,0.9855,,,,,,,,,WTI,7 to 12 months,0.95,352,178,155,0,23,174,0,93,37,0.0,0.1292,STRADDLES_EDGE,,,,,,
+/cells[4],cells[4],CANNOT_TELL,,,0.8901,0.7078,1.0,,,,,,,,,WTI,13 months or more,0.95,154,91,81,0,10,63,0,47,34,0.0,0.1099,STRADDLES_EDGE,,,,,,
+/cells[5],cells[5],CANNOT_TELL,,,0.9392,0.8932,0.9774,,,,,,,,,HH,all leads,0.95,1371,1036,973,24,39,323,12,168,60,0.0232,0.0376,STRADDLES_EDGE,,,,,,
+/cells[6],cells[6],CANNOT_TELL,,,0.9417,0.9189,0.9837,,,,,,,,,HH,1 to 2 months,0.95,156,120,113,1,6,36,0,95,60,0.0083,0.05,STRADDLES_EDGE,,,,,,
+/cells[7],cells[7],CANNOT_TELL,,,0.9583,0.9299,0.9923,,,,,,,,,HH,3 to 6 months,0.95,312,240,230,4,6,72,0,128,60,0.0167,0.025,STRADDLES_EDGE,,,,,,
+/cells[8],cells[8],CANNOT_TELL,,,0.9611,0.9259,0.9886,,,,,,,,,HH,7 to 12 months,0.95,465,360,346,2,12,105,0,145,60,0.0056,0.0333,STRADDLES_EDGE,,,,,,
+/cells[9],cells[9],CANNOT_TELL,,,0.8987,0.7703,0.9881,,,,,,,,,HH,13 months or more,0.95,438,316,284,17,15,110,12,112,55,0.0538,0.0475,STRADDLES_EDGE,,,,,,
+/cells_addendum1[0],cells_addendum1[0],CANNOT_TELL,,,0.9097,0.8282,0.9677,,,,,,,,,WTI,all leads,0.95,890,875,796,19,60,9,6,176,76,0.0217,0.0686,STRADDLES_EDGE,,,,,,
+/cells_addendum1[1],cells_addendum1[1],CANNOT_TELL,,,0.8831,0.7816,0.9565,,,,,,,,,WTI,1 to 2 months,0.95,78,77,68,3,6,1,0,77,76,0.039,0.0779,STRADDLES_EDGE,,,,,,
+/cells_addendum1[2],cells_addendum1[2],CANNOT_TELL,,,0.9172,0.8237,0.9778,,,,,,,,,WTI,3 to 6 months,0.95,306,302,277,4,21,4,0,149,76,0.0132,0.0695,STRADDLES_EDGE,,,,,,
+/cells_addendum1[3],cells_addendum1[3],CANNOT_TELL,,,0.9112,0.8174,0.9771,,,,,,,,,WTI,7 to 12 months,0.95,352,349,318,8,23,3,0,154,76,0.0229,0.0659,STRADDLES_EDGE,,,,,,
+/cells_addendum1[4],cells_addendum1[4],CANNOT_TELL,,,0.9048,0.7734,0.9857,,,,,,,,,WTI,13 months or more,0.95,154,147,133,4,10,1,6,62,70,0.0272,0.068,STRADDLES_EDGE,,,,,,
+/cells_addendum1[5],cells_addendum1[5],CANNOT_TELL,,,0.8801,0.7878,0.9649,,,,,,,,,HH,all leads,0.95,1371,1359,1196,116,47,0,12,179,78,0.0854,0.0346,STRADDLES_EDGE,,,,,,
+/cells_addendum1[6],cells_addendum1[6],CANNOT_TELL,,,0.9103,0.8696,0.9658,,,,,,,,,HH,1 to 2 months,0.95,156,156,142,7,7,0,0,117,78,0.0449,0.0449,STRADDLES_EDGE,,,,,,
+/cells_addendum1[7],cells_addendum1[7],CANNOT_TELL,,,0.9103,0.8444,0.9767,,,,,,,,,HH,3 to 6 months,0.95,312,312,284,21,7,0,0,149,78,0.0673,0.0224,STRADDLES_EDGE,,,,,,
+/cells_addendum1[8],cells_addendum1[8],CANNOT_TELL,,,0.9011,0.816,0.9729,,,,,,,,,HH,7 to 12 months,0.95,465,465,419,30,16,0,0,164,78,0.0645,0.0344,STRADDLES_EDGE,,,,,,
+/cells_addendum1[9],cells_addendum1[9],CANNOT_TELL,,,0.8239,0.6394,0.9647,,,,,,,,,HH,13 months or more,0.95,438,426,351,58,17,0,12,133,72,0.1362,0.0399,STRADDLES_EDGE,,,,,,
+/after_data/block_sensitivity[0],block_sensitivity[0],CANNOT_TELL,,,,0.7549,0.9599,,,,,,6,,,WTI,,,,,,,,,,,,,,STRADDLES_EDGE,plan,,,,,
+/after_data/block_sensitivity[1],block_sensitivity[1],CANNOT_TELL,,,,0.7311,0.9736,,,,,,12,,,WTI,,,,,,,,,,,,,,STRADDLES_EDGE,plan,,,,,
+/after_data/block_sensitivity[2],block_sensitivity[2],CANNOT_TELL,,,,0.7217,0.9745,,,,,,24,,,WTI,,,,,,,,,,,,,,STRADDLES_EDGE,plan,,,,,
+/after_data/block_sensitivity[3],block_sensitivity[3],CANNOT_TELL,,,,0.8946,0.9739,,,,,,6,,,HH,,,,,,,,,,,,,,STRADDLES_EDGE,plan,,,,,
+/after_data/block_sensitivity[4],block_sensitivity[4],CANNOT_TELL,,,,0.8932,0.9774,,,,,,12,,,HH,,,,,,,,,,,,,,STRADDLES_EDGE,plan,,,,,
+/after_data/block_sensitivity[5],block_sensitivity[5],CANNOT_TELL,,,,0.8901,0.976,,,,,,24,,,HH,,,,,,,,,,,,,,STRADDLES_EDGE,plan,,,,,
+/after_data/block_sensitivity[6],block_sensitivity[6],CANNOT_TELL,,,,0.8407,0.9587,,,,,,6,,,WTI,,,,,,,,,,,,,,STRADDLES_EDGE,addendum1,,,,,
+/after_data/block_sensitivity[7],block_sensitivity[7],CANNOT_TELL,,,,0.8282,0.9677,,,,,,12,,,WTI,,,,,,,,,,,,,,STRADDLES_EDGE,addendum1,,,,,
+/after_data/block_sensitivity[8],block_sensitivity[8],CANNOT_TELL,,,,0.8082,0.9679,,,,,,24,,,WTI,,,,,,,,,,,,,,STRADDLES_EDGE,addendum1,,,,,
+/after_data/block_sensitivity[9],block_sensitivity[9],BELOW,,,,0.7988,0.9472,,,,,,6,,,HH,,,,,,,,,,,,,,,addendum1,,,,,
+/after_data/block_sensitivity[10],block_sensitivity[10],CANNOT_TELL,,,,0.7878,0.9649,,,,,,12,,,HH,,,,,,,,,,,,,,STRADDLES_EDGE,addendum1,,,,,
+/after_data/block_sensitivity[11],block_sensitivity[11],CANNOT_TELL,,,,0.7722,0.9648,,,,,,24,,,HH,,,,,,,,,,,,,,STRADDLES_EDGE,addendum1,,,,,
+/forecasters/rows[0],"WTI crude oil, stated any number of months ahead",CANNOT_TELL,392,452,,0.7311,0.9736,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"WTI crude oil, stated any number of months ahead",share of monthly average spot prices inside the stated interval,0.8673,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[1],"WTI crude oil, stated 1 to 2 months ahead",CANNOT_TELL,31,37,,0.6667,0.9767,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"WTI crude oil, stated 1 to 2 months ahead",share of monthly average spot prices inside the stated interval,0.8378,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[2],"WTI crude oil, stated 3 to 6 months ahead",CANNOT_TELL,125,146,,0.6917,0.9739,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"WTI crude oil, stated 3 to 6 months ahead",share of monthly average spot prices inside the stated interval,0.8562,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[3],"WTI crude oil, stated 7 to 12 months ahead",CANNOT_TELL,155,178,,0.7129,0.9855,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"WTI crude oil, stated 7 to 12 months ahead",share of monthly average spot prices inside the stated interval,0.8708,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[4],"WTI crude oil, stated 13 months or more ahead",CANNOT_TELL,81,91,,0.7078,1.0,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"WTI crude oil, stated 13 months or more ahead",share of monthly average spot prices inside the stated interval,0.8901,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[5],"Henry Hub natural gas, stated any number of months ahead",CANNOT_TELL,973,1036,,0.8932,0.9774,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"Henry Hub natural gas, stated any number of months ahead",share of monthly average spot prices inside the stated interval,0.9392,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[6],"Henry Hub natural gas, stated 1 to 2 months ahead",CANNOT_TELL,113,120,,0.9189,0.9837,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"Henry Hub natural gas, stated 1 to 2 months ahead",share of monthly average spot prices inside the stated interval,0.9417,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[7],"Henry Hub natural gas, stated 3 to 6 months ahead",CANNOT_TELL,230,240,,0.9299,0.9923,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"Henry Hub natural gas, stated 3 to 6 months ahead",share of monthly average spot prices inside the stated interval,0.9583,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[8],"Henry Hub natural gas, stated 7 to 12 months ahead",CANNOT_TELL,346,360,,0.9259,0.9886,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"Henry Hub natural gas, stated 7 to 12 months ahead",share of monthly average spot prices inside the stated interval,0.9611,"moving-block bootstrap over outcome months, as the desk gives it"
+/forecasters/rows[9],"Henry Hub natural gas, stated 13 months or more ahead",CANNOT_TELL,284,316,,0.7703,0.9881,,,,,,,,,,,0.95,,,,,,,,,,,,STRADDLES_EDGE,,coverage,"Henry Hub natural gas, stated 13 months or more ahead",share of monthly average spot prices inside the stated interval,0.8987,"moving-block bootstrap over outcome months, as the desk gives it"

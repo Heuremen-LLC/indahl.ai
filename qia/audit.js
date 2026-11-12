@@ -12,15 +12,18 @@
   fetch('/qia/audit.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     var ps = d.processors || []; if (!ps.length) { box.textContent = 'Waiting for the first read.'; return; }
     var t = document.createElement('table'); t.className = 'mtx';
-    t.innerHTML = '<thead><tr><th>Processor</th><th>Record stamped (UTC)</th><th>Qubits with T2 above 2.5 times T1</th><th>Qubits between 2 and 2.5 times</th><th>Qubits with T1 and T2 dated over a day apart</th><th>Longest gap, hours</th><th>Entries older than a day</th><th>Entries older than 7 days</th><th>Entries in record</th><th>Restamps with no qubit entry changed</th><th>Restamps with a change</th></tr></thead>';
+    t.innerHTML = '<thead><tr><th>Processor</th><th>Record stamped (UTC)</th><th>Qubits with a point T2 over T1 above 2.5</th><th>Qubits with a point ratio between 2 and 2.5</th><th>Qubits with T1 and T2 dated over a day apart</th><th>Longest gap, hours</th><th>Entries older than a day</th><th>Entries older than 7 days</th><th>Entries in record</th><th>Restamps with no qubit entry changed</th><th>Restamps with a change</th></tr></thead>';
     var b = document.createElement('tbody');
     ps.forEach(function (p) {
       var r = document.createElement('tr'); r.appendChild(td(p.backend)); r.appendChild(td(dt(p.stamp)));
-      [p.above, p.cannot_tell, p.mismatch, p.max_gap_h, p.age24, p.age7d, p.entries, p.restamps_no_change, p.restamps_changed].forEach(function (v) { r.appendChild(td(v, 1)); }); b.appendChild(r);
+      [p.ratio_above_2_5, p.ratio_2_to_2_5, p.mismatch, p.max_gap_h, p.age24, p.age7d, p.entries, p.restamps_no_change, p.restamps_changed].forEach(function (v) { r.appendChild(td(v, 1)); }); b.appendChild(r);
     });
-    t.appendChild(b); box.textContent = ''; box.appendChild(t);
+    t.appendChild(b); box.textContent = '';
+    var rd = document.createElement('p'); rd.className = 'bench-note';
+    rd.textContent = 'T2 over T1 reading: ' + (d.outcome || 'CANNOT_TELL') + ' (' + (d.reason || 'NO_INTERVAL_FORMABLE') + ') for every entry. IBM publishes one T1 and one T2 value with no fit uncertainty, so the ratio has no interval. The counts below are counts of point ratios, not outcomes. ' + ((d.req13 && d.req13.line) || '');
+    box.appendChild(rd); box.appendChild(t);
     if ((d.flagged || []).length) {
-      var h = document.createElement('h3'); h.textContent = 'Qubits marked above, as IBM published them'; box.appendChild(h);
+      var h = document.createElement('h3'); h.textContent = 'Qubits with a point T2 over T1 above 2.5, as IBM published them'; box.appendChild(h);
       var f = document.createElement('table'); f.className = 'mtx';
       f.innerHTML = '<thead><tr><th>Processor</th><th>Qubit</th><th>T1, µs and date (UTC)</th><th>T2, µs and date (UTC)</th><th>T2 over T1</th><th>Records marked, of saved</th></tr></thead>';
       var fb = document.createElement('tbody');

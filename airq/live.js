@@ -8,7 +8,7 @@
   function cell(kind, row, key, T) {
     var v = row[key];
     if (kind === 'url') { var uc = td(''); if (typeof v === 'string' && /^https?:\/\//.test(v)) { var ua = document.createElement('a'); ua.href = v; ua.textContent = 'open'; uc.appendChild(ua); } return uc; }
-    if (kind === 'n') return td(v == null && T.nullword ? T.nullword : v, 1); if (kind === 'oc') return td(OC[v] || v);
+    if (kind === 'n') return td(v == null && T.nullword ? T.nullword : v, 1); if (kind === 'oc') { var rs = row[key.replace('outcome', 'reason')]; return td((OC[v] || v) + (v === 'CANNOT_TELL' && rs ? ' (' + rs + ')' : '')); }
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);
@@ -25,13 +25,15 @@
     box.textContent = ''; var top = document.createElement('p'); top.className = 'bench-note'; top.textContent = TOP.replace(/\{(\w+)\}/g, function (m, k) { return d[k] == null ? '' : d[k]; }); box.appendChild(top);
     TABLES.forEach(function (T) {
       var src = d; T.path.split('.').forEach(function (k) { src = src && src[k]; }); if (!src) return;
-      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return src[k] === null || typeof src[k] !== 'object' || Array.isArray(src[k]); });
+      var flat = !Array.isArray(src) && Object.keys(src).every(function (k) { return k === 'req13' || src[k] === null || typeof src[k] !== 'object' || Array.isArray(src[k]); });
       var rows = flat ? [Object.assign({ _key: T.label || '' }, src)] : (Array.isArray(src) ? src : Object.keys(src).map(function (k) { var o = src[k]; o = Object.assign({ _key: k }, o); return o; }));
       if (!rows.length) return; var h = document.createElement('h3'); h.textContent = T.title; box.appendChild(h);
       var nolab = flat && !T.label && !T.first;   // 1 Nov: a one-row table with no row label drops the empty first column
       var t = document.createElement('table'); t.className = 'mtx'; t.innerHTML = '<thead><tr>' + (nolab ? '' : '<th>' + T.first + '</th>') + T.cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>';
       var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); if (!nolab) tr.appendChild(lab(T, r)); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1], T)); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
+      var rl = rows.filter(function (r) { return r.req13 && r.req13.line; }).map(function (r) { return (flat ? '' : r._key + ': ') + r.req13.line; });
+      if (rl.length) { var rp = document.createElement('p'); rp.className = 'bench-note'; rp.textContent = rl.join(' '); box.appendChild(rp); }
     });
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });
 })();

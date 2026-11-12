@@ -3,42 +3,42 @@
   {
    "path": "heuremen_kit.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/hfsize/heuremen_kit.py",
-   "sha256": "1d4be40a53045bb0f543e9d9241d037811176aac9a3f0fe0851288c8b237d6c9"
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   },
   {
    "extract_of": "hfsize_tick.py lines 56 to 57 and 63, the counts, the interval and the comparison block",
    "path": "hfsize_score.py",
-   "sha256": "574e46a4704dee8c78648ee55bfe3e9681d084d7e1e87029e013aa768efcee22"
+   "sha256": "d27caa339a10aae829765b7da5bb1477d82496867a5cd39bd58d7585f096dc1d"
   }
  ],
  "desk": "hfsize",
  "inputs": [
   {
-   "bytes": 217150,
+   "bytes": 216279,
    "gzip_added": true,
-   "modified": "2026-11-10T22:07:35Z",
+   "modified": "2026-11-12T15:30:15Z",
    "path": "data/repos.json",
-   "sha256": "28b1118fd2e4f3974be0b0e107ae7f84534434b9534ad84ba29a421dce132932",
+   "sha256": "8991f49eb8a1ad0da382e7502ddbef5d8640aa88c92ff89f2ac67303af1ee7c3",
    "stored": "data/repos.json.gz",
-   "stored_sha256": "a76e36d2ea80c86d356f2f183d2768e4a3dc1ba417231ae9670b0ec931397d23"
+   "stored_sha256": "d9fc73cd89a2d351f44f393eed4e2834f562ac8ad862688c93f2f22e6764eca0"
   },
   {
-   "bytes": 4478,
+   "bytes": 4767,
    "gzip_added": true,
-   "modified": "2026-11-10T22:07:35Z",
+   "modified": "2026-11-12T15:30:15Z",
    "path": "summary_hfsize.json",
-   "sha256": "efb0c84072b9b2fcba1ccd3036e0ed8b768e26f0fab950f7ac1908914e7f2787",
+   "sha256": "f3af053b95d70ae5a5d94f780793c3edddb6e003a7042b92acea6e435c372b63",
    "stored": "summary_hfsize.json.gz",
-   "stored_sha256": "c98bf5a55456644795e7f645d4d9cf2a74ceff8b8973ee9c0e9ae1dcd076255b"
+   "stored_sha256": "fc43846b5eb616ebdba829b77b2678d03d41729fa897b90c3a8c0608ac8e9c53"
   }
  ],
- "made": "2026-11-11T00:08:42Z",
+ "made": "2026-11-12T16:25:51Z",
  "mode": "fetch",
  "name": "HFSIZE",
  "reference": [
   {
    "path": "desk/hfsize_tick.py",
-   "sha256": "8166cae9740b221bb8859d5a7c585008e62bd655622c9470907b0dc89d17f0da"
+   "sha256": "b22713abc2df7b70e0257384c97544f1f171a56bfd530ce9f1f98642333bb748"
   }
  ],
  "sources": [

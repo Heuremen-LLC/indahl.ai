@@ -3,31 +3,36 @@
   {
    "path": "trials_summary.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/trials/trials_summary.py",
-   "sha256": "1aebcc82c959d9a6bce371d6f4d66c5d458a090e2331fabeb5f5025a072cc319"
+   "sha256": "3c82ed08d93f6a52580f0a2300b7a11e068dd2c8663517c465331785a24a346b"
+  },
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/trials/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
   }
  ],
  "desk": "trials",
  "inputs": [
   {
-   "bytes": 7086998,
+   "bytes": 7088103,
    "gzip_added": true,
-   "modified": "2026-11-10T20:43:20Z",
+   "modified": "2026-11-12T15:31:07Z",
    "path": "data/records.jsonl",
-   "sha256": "6b9aea11d1bac0ebeb6bc16d0ee7b78dc0c7b6e9f878ab43292c3136c457f590",
+   "sha256": "b1eb2b32cfbbea14b243c88f1c506b454a18214c3029d6ce27a8db803d8e50de",
    "stored": "data/records.jsonl.gz",
-   "stored_sha256": "43a76ad0225feb3579808947a1cd0f71f29e252b2d7d2a69454398ecd76e24c3"
+   "stored_sha256": "da69ae9ec1ad2c637f120bedcf231ad90945d30f8140e2a5d4211c96cb0c6d9d"
   },
   {
    "bytes": 55,
    "gzip_added": true,
-   "modified": "2026-11-10T20:43:20Z",
+   "modified": "2026-11-12T15:31:07Z",
    "path": "data/read_at.txt",
-   "sha256": "7a89b133aca86185aa54ff9c70099fb9fe52b7fb27726f610e372509d48a78d6",
+   "sha256": "c53514a34e1193b6802a3df2279b6735252047d207aad4ef7c8df49a53fa98c6",
    "stored": "data/read_at.txt.gz",
-   "stored_sha256": "79415e1a9f980ac2bb20e6961af40711ba825f4763405a0df78402315b08b657"
+   "stored_sha256": "34dba3c7b76bcf4983c1ef5088b1c61300df086180a8083177182388d596bad0"
   }
  ],
- "made": "2026-11-10T23:47:25Z",
+ "made": "2026-11-12T16:25:58Z",
  "mode": "inputs",
  "name": "TRIALS",
  "reference": []

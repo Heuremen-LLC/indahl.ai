@@ -10,16 +10,16 @@ This kit recomputes the HFSIZE headline number and its outcome label with the de
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `308cd3c6ee10384ebb7a7d0439a5415567248201d94eb7646b3e3a5aace37119`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `b7864ec3b1b652803e643594f90ff123fc5a681fabb7a029b1f2c25c67cb85ad`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/hfsize/live.json served it at the feed stamp 10 Nov 22:07, read by us at 2026-11-11T00:08:42Z. The feed bytes had sha256 `efb0c84072b9b2fcba1ccd3036e0ed8b768e26f0fab950f7ac1908914e7f2787`.
+The headline as the live feed https://indahl.ai/hfsize/live.json served it at the feed stamp 12 Nov 15:30, read by us at 2026-11-12T16:25:51Z. The feed bytes had sha256 `f3af053b95d70ae5a5d94f780793c3edddb6e003a7042b92acea6e435c372b63`.
 
 - number: 12 of 135
 - value: 0.0889
 - interval: 0.0516 to 0.1489
-- outcome: CANNOT_TELL
+- outcome: ABOVE
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
 
@@ -42,8 +42,8 @@ As the HFSIZE data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/repos.json | 217,150 | `28b1118fd2e4f3974be0b0e107ae7f84534434b9534ad84ba29a421dce132932` |
-| summary_hfsize.json | 4,478 | `efb0c84072b9b2fcba1ccd3036e0ed8b768e26f0fab950f7ac1908914e7f2787` |
+| data/repos.json | 216,279 | `8991f49eb8a1ad0da382e7502ddbef5d8640aa88c92ff89f2ac67303af1ee7c3` |
+| summary_hfsize.json | 4,767 | `f3af053b95d70ae5a5d94f780793c3edddb6e003a7042b92acea6e435c372b63` |
 
 ## Code
 

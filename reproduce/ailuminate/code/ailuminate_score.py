@@ -54,6 +54,6 @@ for name in sorted(set(page) | set(systems)):
     dis = [k for k, a, b in (('overall', pg['overall'], pd['overall']), ('release', pg['release'], pd['release']), ('type', pg['type'], pd['type'])) if a != b]
     rows.append(dict(name=name, cls='DISAGREE' if dis else 'AGREE', overall_pdf=pd['overall']))
 cmp = [r for r in rows if r['cls'] in ('AGREE', 'DISAGREE')]; nd = sum(1 for r in cmp if r['cls'] == 'DISAGREE'); lo, hi = K.wilson(nd, len(cmp)) if cmp else (0, 1)
-def oc(lo, hi): return K.ABOVE if lo > 0.05 else (K.CONSISTENT if hi < 0.15 else K.CANNOT_TELL)
+def oc(lo, hi): return K.read(0.0 if nd == 0 else lo, 1.0 if cmp and nd == len(cmp) else hi, band=(0.0, 0.15), matters=0.05, edge='[)', null=0.0)[0]   # 12 Nov 2026: Faults and Guards 2.0, as ailuminate_tick.py
 A = dict(of=len(cmp), n=nd, share=round(nd / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc(lo, hi) if cmp else 'NOTHING_RETURNED')
 json.dump(dict(read=last['stamp'], headline=A, table={r['name']: dict(overall=r['overall_pdf'], agree=r['cls']) for r in cmp}), open('out.json', 'w'), indent=1)

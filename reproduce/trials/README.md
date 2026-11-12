@@ -10,16 +10,16 @@ This kit recomputes the TRIALS headline number and its outcome label with the de
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `465d4475aaf21301d6efeaaf2a0c76e2e1f11b3d6cced0694da959dd1886c9d8`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `1b18b25916c0caf76c90a0f35d185455a85e83d7411d31301aaf52f22e752213`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/trials/live.json served it at the feed stamp 2026-11-10 20:43 UTC, read by us at 2026-11-10T23:47:25Z. The feed bytes had sha256 `b0def2b0e36f55f04324e16b3a64cad9b7eb2ea653737e1a7802263c3ecdf471`.
+The headline as the live feed https://indahl.ai/trials/live.json served it at the feed stamp 2026-11-12 15:31 UTC, read by us at 2026-11-12T16:25:58Z. The feed bytes had sha256 `af589b3274b2fdf5d6eb5978437e57195d3b3ee6fd6d9d93a51c0bcf4e98f681`.
 
 - number: 21.5%
-- value: 0.2147
-- interval: 0.2094 to 0.2202
-- outcome: CANNOT_TELL
+- value: 0.2149
+- interval: 0.2095 to 0.2203
+- outcome: ABOVE
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
 
@@ -37,8 +37,8 @@ As the TRIALS data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/records.jsonl | 7,086,998 | `6b9aea11d1bac0ebeb6bc16d0ee7b78dc0c7b6e9f878ab43292c3136c457f590` |
-| data/read_at.txt | 55 | `7a89b133aca86185aa54ff9c70099fb9fe52b7fb27726f610e372509d48a78d6` |
+| data/records.jsonl | 7,088,103 | `b1eb2b32cfbbea14b243c88f1c506b454a18214c3029d6ce27a8db803d8e50de` |
+| data/read_at.txt | 55 | `c53514a34e1193b6802a3df2279b6735252047d207aad4ef7c8df49a53fa98c6` |
 
 ## Code
 

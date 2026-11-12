@@ -112,9 +112,18 @@ for name in sorted(set(page) | set(systems)):
     rows.append(dict(name=name, cls='DISAGREE' if dis else 'AGREE', differs=dis, type=pd['type'], release=pd['release'], overall_page=pg['overall'], overall_pdf=pd['overall'], mean_cats=round(mean, 1), diff=round(pd['overall'] - mean, 1), min_cat=min(cats.values()), max_cat=max(cats.values()), cats=cats))
 open('data/reads.jsonl', 'a').write(json.dumps(dict(t=now, stamp=stamp, hashes=hashes, systems={r['name']: dict(release=r.get('release'), overall=r.get('overall_pdf'), cats=r.get('cats')) for r in rows if r['cls'] != 'NOTHING_RETURNED'}, unread=unread)) + '\n')
 reads = [json.loads(l) for l in open('data/reads.jsonl')]
-cmp = [r for r in rows if r['cls'] in ('AGREE', 'DISAGREE')]; nd = sum(1 for r in cmp if r['cls'] == 'DISAGREE'); lo, hi = K.wilson(nd, len(cmp)) if cmp else (0, 1)
-def oc(lo, hi): return K.ABOVE if lo > 0.05 else (K.CONSISTENT if hi < 0.15 else K.CANNOT_TELL)
-A = dict(of=len(cmp), n=nd, share=round(nd / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc(lo, hi) if cmp else 'NOTHING_RETURNED')
+def wil(k, n):   # 12 Nov 2026: the Wilson interval with its exact ends. K.wilson(0, n) returns 6.9e-18 for the lower end, which misses the null at zero in K.read, so zero events give exactly 0 and all events give exactly 1.
+    lo, hi = K.wilson(k, n); return (0.0 if k == 0 else lo, 1.0 if k == n else hi)
+cmp = [r for r in rows if r['cls'] in ('AGREE', 'DISAGREE')]; nd = sum(1 for r in cmp if r['cls'] == 'DISAGREE'); lo, hi = wil(nd, len(cmp)) if cmp else (0, 1)
+# 12 Nov 2026, PLAN_ADDENDUM_std2.md: Faults and Guards 2.0. Size that matters 0.05, null 0, band [0, 0.15), edge '[)'. A test that cannot be computed yet is CANNOT_TELL NO_INTERVAL_FORMABLE, never NOTHING_RETURNED.
+def oc(lo, hi): return K.read(lo, hi, band=(0.0, 0.15), matters=0.05, edge='[)', null=0.0)
+def share_read(k, n, lo, hi):
+    if not n: o, why = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    else: o, why = oc(lo, hi)
+    return o, why
+failed_reads = [r['name'] for r in rows if r['cls'] == 'NOTHING_RETURNED']   # on the page only, or report only: failed reads, outside numerator and denominator
+_oA, _wA = share_read(nd, len(cmp), lo, hi)
+A = dict(of=len(cmp), n=nd, share=round(nd / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=_oA, reason=_wA, req13=K.req13([(_oA, _wA)], nothing_returned=failed_reads), failed_reads=failed_reads)
 first = {}
 for rd in reads:
     for n, v in rd['systems'].items(): first.setdefault(n, (v, rd['stamp'], 0))
@@ -126,8 +135,9 @@ for n, v in reads[-1]['systems'].items():
     if count.get(n, 0) >= 2:
         seen2.append(n)
         if v != first[n][0]: chg.append(n)
-lo2, hi2 = K.wilson(len(chg), len(seen2)) if seen2 else (0, 1)
-B = dict(of=len(seen2), n=len(chg), share=round(len(chg) / len(seen2), 4) if seen2 else None, share_lo=round(lo2, 4), share_hi=round(hi2, 4), outcome=oc(lo2, hi2) if seen2 else 'NOTHING_RETURNED', reads=len(reads), first_read=reads[0]['stamp'], changed=sorted(chg))
+lo2, hi2 = wil(len(chg), len(seen2)) if seen2 else (0, 1)
+_oB, _wB = share_read(len(chg), len(seen2), lo2, hi2)
+B = dict(of=len(seen2), n=len(chg), share=round(len(chg) / len(seen2), 4) if seen2 else None, share_lo=round(lo2, 4), share_hi=round(hi2, 4), outcome=_oB, reason=_wB, req13=K.req13([(_oB, _wB)], nothing_returned=failed_reads), reads=len(reads), first_read=reads[0]['stamp'], changed=sorted(chg))
 rs = sorted([r for r in rows if r['cls'] == 'DISAGREE'] + [], key=lambda r: r['name'])
 samp = random.Random(7).sample([r['name'] for r in cmp], min(10, len(cmp))) if cmp else []
 json.dump(dict(sample_seed7=samp, disagree=[r['name'] for r in rs], unread=unread), open('data/hand_check.json', 'w'), indent=1)

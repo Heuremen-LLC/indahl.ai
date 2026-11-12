@@ -3,11 +3,10 @@
  "comparison_rows": 519,
  "label_split_rows": 9,
  "outcomes_original_rows": {
-  "CANNOT_TELL": 292,
+  "CANNOT_TELL": 319,
   "CONSISTENT": 35,
   "ABOVE": 39,
-  "BELOW": 82,
-  "NOTHING_RETURNED": 27
+  "BELOW": 82
  },
  "outcomes_ads_rows": {
   "CONSISTENT": 6,

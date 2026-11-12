@@ -1,2 +1,2 @@
-path,label,outcome,n,of,share,lo,hi,held,moved,removed_early,share_lo,share_hi
-/test,test,CANNOT_TELL,,1,1.0,0.2065,1.0,0,1,0,0.2065,1.0
+path,label,outcome,n,of,share,lo,hi,held,moved,removed_early,share_lo,share_hi,reason
+/test,test,CANNOT_TELL,,1,1.0,0.2065,1.0,0,1,0,0.2065,1.0,TOO_WIDE_TO_RESOLVE

@@ -17,8 +17,8 @@
       var b = document.createElement('tbody');
       cells.forEach(function (c) {
         var r = document.createElement('tr'); r.appendChild(td(c.bin)); r.appendChild(td(c.lead));
-        if (!c.n) { r.appendChild(td('')); r.appendChild(td('')); r.appendChild(td(0, 1)); r.appendChild(td('cannot tell')); }
-        else { r.appendChild(td(c.mean_stated + '%', 1)); r.appendChild(td(c.observed + '% [' + c.lo + ', ' + c.hi + ']', 1)); r.appendChild(td(c.n, 1)); r.appendChild(td(W(c.outcome))); }
+        if (!c.n) { r.appendChild(td('')); r.appendChild(td('')); r.appendChild(td(0, 1)); r.appendChild(td('cannot tell' + (c.reason ? ' (' + c.reason + ')' : ''))); }
+        else { r.appendChild(td(c.mean_stated + '%', 1)); r.appendChild(td(c.observed + '% [' + c.lo + ', ' + c.hi + ']', 1)); r.appendChild(td(c.n, 1)); r.appendChild(td(W(c.outcome) + (c.outcome === 'CANNOT_TELL' && c.reason ? ' (' + c.reason + ')' : ''))); }
         b.appendChild(r);
       });
       t.appendChild(b); return t;
@@ -32,9 +32,11 @@
       var mf = m.floor || {};
       box.appendChild(note(fmt(m.periods_scored) + ' periods scored under this rule' + (m.unscorable ? ', ' + fmt(m.unscorable) + ' unscorable for missing hourly totals' : '') + (m.waiting ? ', ' + fmt(m.waiting) + ' waiting for the archive' : '') + '. Chance floor: of ' + fmt(mf.periods) + ' distinct periods with a stated chance of 0 or 5, ' + fmt(mf.with_event) + ' had 0.01 inch or more.'));
       box.appendChild(table(m.cells));
+      if (m.req13) box.appendChild(note(m.req13.line));
       box.appendChild(head('Original committed rule: any amount above zero or a reported precipitation type, kept beside the primary reading'));
       box.appendChild(note('Chance floor under this rule: of ' + fmt(f.periods) + ' distinct periods with a stated chance of 0 or 5, ' + fmt(f.with_event) + ' had an event.'));
     }
     box.appendChild(table(d.cells));
+    if (d.req13) box.appendChild(note(d.req13.line));
   }).catch(function () { box.textContent = 'The round could not be read just now.'; });
 })();

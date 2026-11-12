@@ -88,8 +88,9 @@
       var rs = d.rounds || []; if (!rs.length) return; res.textContent = ''; rs.forEach(function (rd) { done[rd.round] = 1; }); hideDone();
       res.appendChild(drawIndex(rs));
       var p = document.createElement('p'); p.className = 'bench-note';
-      p.textContent = 'Each cell gives the lowest and highest share of readable replies that commit the Fault, across the rounds in which that cell could be read. Bare is the plain prompt. Guard adds the Fault and Guard wording. Every round used different questions. Intervals in the round grids are 95% Wilson intervals, and each rate says how many replies were read. Cannot tell means the round\u2019s repeat or control checks failed, or fewer than 10 replies could be read. The index and the grids say which. No ranking.';
+      p.textContent = 'Each cell gives the lowest and highest share of readable replies that commit the Fault, across the rounds in which that cell could be read. Bare is the plain prompt. Guard adds the Fault and Guard wording. Every round used different questions. Intervals in the round grids are 95% Wilson intervals, and each rate says how many replies were read. Cannot tell carries one reason. NO_INTERVAL_FORMABLE means the round\u2019s repeat or control checks failed, so no interval was formed. TOO_WIDE_TO_RESOLVE means fewer than 10 replies could be read. The index and the grids say which. No ranking.';
       res.appendChild(p);
+      if (d.req13 && d.req13.line) { var q = document.createElement('p'); q.className = 'bench-note'; q.textContent = 'Guard effect readings, all cells: ' + d.req13.line + ' A cell reads ABOVE or BELOW only when its 95% interval lies wholly beyond 10 points of fault share, CONSISTENT when it lies inside 10 points either way.'; res.appendChild(q); }
       rs.forEach(function (rd) { var dt = document.createElement('details'); dt.className = 'bench-round'; var s = document.createElement('summary'); s.textContent = 'Round ' + rd.round + ', full grid with intervals'; dt.appendChild(s); dt.appendChild(drawRound(rd)); res.appendChild(dt); });
     }).catch(function () {});
   }

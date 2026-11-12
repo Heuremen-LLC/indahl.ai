@@ -19,13 +19,13 @@
     var c = d.control || {}, top = document.createElement('p'); top.className = 'bench-note';
     var targets = (c.targets || []).map(function (x) { return String(x).replace(/^control:\s*/, ''); }).join(' and ');
     var ub = typeof d.floor_upper_bound === 'number' ? (100 * d.floor_upper_bound).toFixed(1) + '%' : null;
-    top.textContent = 'Seats: home and cloud. ' + d.buckets + ' ten-minute rounds so far. A vendor\'s Rounds are the ones where both seats made a request and its status page was read. Control targets with no status page, ' + targets + ', are counted per target, so each round counts once for each. Both seats failed on them in ' + c.misses + ' of ' + c.rounds + ' control rounds' + (ub ? ', so the instrument floor is at most ' + ub + ' (upper end of the 95% interval)' : '') + '. Updated ' + d.updated + ' UTC.';
+    top.textContent = 'Seats: home and cloud. ' + d.buckets + ' ten-minute rounds so far. A vendor\'s Rounds are the ones where both seats made a request and its status page was read. Control targets with no status page, ' + targets + ', are counted per target, so each round counts once for each. Both seats failed on them in ' + c.misses + ' of ' + c.rounds + ' control rounds' + (ub ? ', so the instrument floor is at most ' + ub + ' (upper end of the 95% interval)' : '') + '. Updated ' + d.updated + ' UTC. ' + (d.req13 ? d.req13.line + ' A round where the status page could not be read is a failed read, listed apart and outside the rounds counted.' : '');
     var t = document.createElement('table'); t.className = 'mtx';
     t.innerHTML = '<thead><tr><th>Vendor</th><th>Its page says now</th><th>Rounds</th><th>Page said operational, both seats failed</th><th>Page said trouble, both seats failed</th><th>One seat failed</th><th>Reachable, by seat (home shows the lower of its two machines)</th><th>Outcome</th></tr></thead>';
     var b = document.createElement('tbody');
     vs.forEach(function (v) {
       var r = document.createElement('tr');
-      r.appendChild(td(v.vendor)); r.appendChild(td(v.indicator_now === 'none' ? 'operational' : (v.indicator_now || ''))); r.appendChild(td(v.rounds, 1)); r.appendChild(td(v.disagree, 1)); r.appendChild(td(v.confirm, 1)); r.appendChild(td(v.blips, 1)); r.appendChild(td(seatsText(v.reach))); r.appendChild(td(W(v.outcome))); b.appendChild(r);
+      r.appendChild(td(v.vendor)); r.appendChild(td(v.indicator_now === 'none' ? 'operational' : (v.indicator_now || ''))); r.appendChild(td(v.rounds, 1)); r.appendChild(td(v.disagree, 1)); r.appendChild(td(v.confirm, 1)); r.appendChild(td(v.blips, 1)); r.appendChild(td(seatsText(v.reach))); r.appendChild(td(W(v.outcome) + (v.reason ? ' (' + v.reason + ')' : ''))); b.appendChild(r);
     });
     t.appendChild(b); box.textContent = ''; box.appendChild(top); box.appendChild(t);
   }).catch(function () { box.textContent = 'The round could not be read just now.'; });

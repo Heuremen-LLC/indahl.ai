@@ -1,5 +1,4 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-NIST,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,utcnist.colorado.edu,Its statement,,,,NOTHING RETURNED,,12 Nov 14:40,
-NIST,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time-a-g.nist.gov,Its statement,stated bound 0.61 ms,"offset 2.56 ms, path half-delay 12.38 ms",,CANNOT TELL,,12 Nov 14:40,
-NIST,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time-b-g.nist.gov,Its statement,stated bound 0.61 ms,"offset 2.77 ms, path half-delay 11.76 ms",,CANNOT TELL,,12 Nov 14:40,
-NIST,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.nist.gov,Its statement,stated bound 0.61 ms,"offset 3.0 ms, path half-delay 28.53 ms",,CANNOT TELL,,12 Nov 14:40,
+NIST,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time-a-g.nist.gov,Its statement,stated bound 0.61 ms,"offset 2.73 ms, path half-delay 12.5 ms",,CANNOT TELL,,12 Nov 16:23,
+NIST,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time-b-g.nist.gov,Its statement,stated bound 0.61 ms,"offset 2.81 ms, path half-delay 11.82 ms",,CANNOT TELL,,12 Nov 16:23,
+NIST,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.nist.gov,Its statement,stated bound 0.61 ms,"offset 2.98 ms, path half-delay 28.47 ms",,CANNOT TELL,,12 Nov 16:23,

@@ -8,7 +8,7 @@
   fetch('/cada/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     var rs = d.resolvers || [];
     var top = document.createElement('p'); top.className = 'bench-note';
-    top.textContent = fmt(d.tracked) + ' fresh domains tracked from ' + fmt(d.feed_reads) + ' feed reads. Updated ' + d.updated + ' UTC. Domains the controls cannot resolve are left out of each rate.';
+    top.textContent = fmt(d.tracked) + ' fresh domains tracked from ' + fmt(d.feed_reads) + ' feed reads. Updated ' + d.updated + ' UTC. Domains the controls cannot resolve are left out of each rate. ' + (d.req13 ? d.req13.line : '');
     if (!rs.length) { box.textContent = 'Waiting for the first fresh listings. The feeds are read about every 17 minutes and each new domain is asked about at first sight, then after 1 hour, 6 hours and 24 hours.'; box.appendChild(top); return; }
     var t = document.createElement('table'); t.className = 'mtx';
     t.innerHTML = '<thead><tr><th>Resolver</th><th>At first sight</th><th>After 1 hour</th><th>After 6 hours</th><th>After 24 hours</th><th>Other answers</th></tr></thead>';

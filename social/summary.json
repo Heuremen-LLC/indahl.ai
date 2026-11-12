@@ -2,11 +2,11 @@
  "desk": "social",
  "page": "/social",
  "division": "/hermes",
- "built_utc": "2026-11-10 12:34 UTC",
+ "built_utc": "2026-11-12 15:55 UTC",
  "status": "complete",
  "headline": {
   "big": "31 of 6,160",
-  "line": "matched political committees and election cycles read above, below or consistent, on Google's stated election ad spend against the committee's FEC filings, with an outcome that holds under both timing bands, does not turn on the itemization rule set after the data, rests on an FEC ID match alone and carries no note. In all 80 read above, below or consistent and 6,056 read cannot tell.",
+  "line": "matched political committees and election cycles read above, below or consistent, on Google's stated election ad spend against the committee's FEC filings, with an outcome that holds under both timing bands, does not turn on the itemization rule set after the data, rests on an FEC ID match alone and carries no note. In all 80 read above, below or consistent and 6,080 read cannot tell. For all cycle rows, 0 NOTHING_RETURNED. CANNOT_TELL 6,080 of 6,160 (497 NO_INTERVAL_FORMABLE, 3,261 STRADDLES_EDGE, 2,322 TOO_WIDE_TO_RESOLVE).",
   "href": "/social",
   "section": "adspend",
   "numbers": [
@@ -29,22 +29,58 @@
     "path": "outcomes.decided_cycle_rows.n"
    },
    {
-    "text": "6,056",
-    "value": 6056,
+    "text": "6,080",
+    "value": 6080,
     "file": "adspend/summary_adspend.json",
     "path": "outcomes.cycle_rows.all.CANNOT_TELL"
+   },
+   {
+    "text": "497",
+    "value": 497,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+   },
+   {
+    "text": "3,261",
+    "value": 3261,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell_by_reason.STRADDLES_EDGE"
+   },
+   {
+    "text": "2,322",
+    "value": 2322,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+   },
+   {
+    "text": "0",
+    "value": 0,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.nothing_returned"
+   },
+   {
+    "text": "6,080",
+    "value": 6080,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell"
+   },
+   {
+    "text": "6,160",
+    "value": 6160,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.n_readings"
    }
   ]
  },
- "headline_rule": "Only rows that read ABOVE, BELOW or CONSISTENT and do not rest on a rule defined after the data. CANNOT_TELL and NOTHING_RETURNED rows and readings defined after the data give no headline. A section gives one only if its own summary counts those rows.",
+ "headline_rule": "Only rows that read ABOVE, BELOW or CONSISTENT and do not rest on a rule defined after the data. CANNOT_TELL rows and readings defined after the data give no headline. A section gives one only if its own summary counts those rows.",
  "sections": {
   "dsa": {
    "status": "cleared",
    "anchor": "social-dsa",
    "section_file": "dsa/section_dsa.html",
-   "section_sha256": "1e6b2e6c88bb75ea966c3a7a2d069e2a258b9727a396daf31bd58e11652a3aac",
+   "section_sha256": "d9c56c253701c30c41a0b06446f37d05292445533c61ce2969e5254f2013681e",
    "summary_file": "dsa/summary_dsa.json",
-   "summary_sha256": "ff9fb8e811231390f225e7c8dffe7ee9e5c55a6f89c1340216f59a8ad0d7dd87",
+   "summary_sha256": "70415f2e27b859c3340fa57b16ba3414902c593412abfd2c086754804335d58a",
    "scored": "2026-11-10 04:19",
    "gate_passed": true,
    "rows": 519,
@@ -52,8 +88,8 @@
     "ABOVE": 39,
     "BELOW": 82,
     "CONSISTENT": 41,
-    "CANNOT_TELL": 330,
-    "NOTHING_RETURNED": 27
+    "CANNOT_TELL": 357,
+    "NOTHING_RETURNED": 0
    },
    "decided_as_printed": {
     "ABOVE": 39,
@@ -68,9 +104,9 @@
    "status": "cleared",
    "anchor": "adspend",
    "section_file": "adspend/section_adspend.html",
-   "section_sha256": "ad256b220c86da165515f51137cf6ad261198f7a1c3064300ab88f5bde942496",
+   "section_sha256": "ce7a8d00e4c8bbb5d320a2d091309f04b5bc25d87390314bcb084f0936154c5d",
    "summary_file": "adspend/summary_adspend.json",
-   "summary_sha256": "d6323a0d3bcef4ee825be6c1fee83120b862c7ad1cc3471909c12b25fb262ec8",
+   "summary_sha256": "d8174ab30ee41e972ca35fa1559f98f836e9280d3c5ee61e0054ca16fa5c381b",
    "scored": "2026-11-10 03:50 UTC",
    "gate_passed": true,
    "rows": 6160,
@@ -78,8 +114,8 @@
     "ABOVE": 28,
     "BELOW": 26,
     "CONSISTENT": 26,
-    "CANNOT_TELL": 6056,
-    "NOTHING_RETURNED": 24
+    "CANNOT_TELL": 6080,
+    "NOTHING_RETURNED": 0
    },
    "decided_as_printed": {
     "ABOVE": 28,
@@ -94,9 +130,9 @@
    "status": "cleared",
    "anchor": "social-tiktok",
    "section_file": "tiktok/section_tiktok.html",
-   "section_sha256": "cf569a638675604bbddfabfdb9ff7f85f673b27bd0a9f452d32e09204d0f3090",
+   "section_sha256": "d5d3d1ef41b9cc0bc4892b98faed941bdf976d2c4b488233c8e5ee3da8f94a97",
    "summary_file": "tiktok/summary_tiktok.json",
-   "summary_sha256": "bf1691ad8d60e05b57d9b7835a9203c3e9e169be939ae5a2f4c7b6cf891dbe53",
+   "summary_sha256": "b76b3ea8fef300b1f249319ee21e284f5dea3227a2b20478ffdf23a050b104d5",
    "scored": "2026-11-10 09:52 UTC",
    "gate_passed": true,
    "rows": 828,
@@ -104,8 +140,8 @@
     "ABOVE": 0,
     "BELOW": 0,
     "CONSISTENT": 0,
-    "CANNOT_TELL": 330,
-    "NOTHING_RETURNED": 498
+    "CANNOT_TELL": 828,
+    "NOTHING_RETURNED": 0
    },
    "decided_as_printed": {
     "ABOVE": 0,
@@ -123,9 +159,9 @@
    "status": "cleared",
    "anchor": "bluesky",
    "section_file": "bluesky/section_bluesky.html",
-   "section_sha256": "a0b94202e211fbcda0d87fc2db06a71ec8d525d713d57e685e40c3d4dd2dea6c",
+   "section_sha256": "5d37716b05c5b513bb0e8840e597aa62b7742d982dbdfb42ce8483b803d05644",
    "summary_file": "bluesky/summary_bluesky.json",
-   "summary_sha256": "6fc170c5c612ec3681b9c2c4b6c82200898d5ae64de6ac4eebded32f1d8068e2",
+   "summary_sha256": "fee938ec388a6a8c0239d04cc32b83a0ad89816a211241d3672461e7125798c7",
    "scored": "2026-11-10 12:33 UTC",
    "gate_passed": true,
    "rows": 26,
@@ -166,10 +202,46 @@
    "path": "outcomes.decided_cycle_rows.n"
   },
   {
-   "text": "6,056",
-   "value": 6056,
+   "text": "6,080",
+   "value": 6080,
    "file": "adspend/summary_adspend.json",
    "path": "outcomes.cycle_rows.all.CANNOT_TELL"
+  },
+  {
+   "text": "497",
+   "value": 497,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "3,261",
+   "value": 3261,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "2,322",
+   "value": 2322,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.nothing_returned"
+  },
+  {
+   "text": "6,080",
+   "value": 6080,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell"
+  },
+  {
+   "text": "6,160",
+   "value": 6160,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.n_readings"
   },
   {
    "text": "39",
@@ -190,16 +262,10 @@
    "path": "outcomes.CONSISTENT"
   },
   {
-   "text": "330",
-   "value": 330,
+   "text": "357",
+   "value": 357,
    "file": "dsa/summary_dsa.json",
    "path": "outcomes.CANNOT_TELL"
-  },
-  {
-   "text": "27",
-   "value": 27,
-   "file": "dsa/summary_dsa.json",
-   "path": "outcomes.NOTHING_RETURNED"
   },
   {
    "text": "2026-11-10 04:19",
@@ -226,16 +292,10 @@
    "path": "outcomes.cycle_rows.all.CONSISTENT"
   },
   {
-   "text": "6,056",
-   "value": 6056,
+   "text": "6,080",
+   "value": 6080,
    "file": "adspend/summary_adspend.json",
    "path": "outcomes.cycle_rows.all.CANNOT_TELL"
-  },
-  {
-   "text": "24",
-   "value": 24,
-   "file": "adspend/summary_adspend.json",
-   "path": "outcomes.cycle_rows.all.NOTHING_RETURNED"
   },
   {
    "text": "2026-11-10 03:50",
@@ -244,16 +304,10 @@
    "path": "updated"
   },
   {
-   "text": "330",
-   "value": 330,
+   "text": "828",
+   "value": 828,
    "file": "tiktok/summary_tiktok.json",
    "path": "outcomes.CANNOT_TELL"
-  },
-  {
-   "text": "498",
-   "value": 498,
-   "file": "tiktok/summary_tiktok.json",
-   "path": "outcomes.NOTHING_RETURNED"
   },
   {
    "text": "2026-11-10 09:52",
@@ -278,6 +332,132 @@
    "value": "2026-11-10 12:33 UTC",
    "file": "bluesky/summary_bluesky.json",
    "path": "updated"
+  },
+  {
+   "text": "120",
+   "value": 120,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "237",
+   "value": 237,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.nothing_returned"
+  },
+  {
+   "text": "357",
+   "value": 357,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.cannot_tell"
+  },
+  {
+   "text": "519",
+   "value": 519,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.n_readings"
+  },
+  {
+   "text": "497",
+   "value": 497,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "3,261",
+   "value": 3261,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "2,322",
+   "value": 2322,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.nothing_returned"
+  },
+  {
+   "text": "6,080",
+   "value": 6080,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell"
+  },
+  {
+   "text": "6,160",
+   "value": 6160,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.n_readings"
+  },
+  {
+   "text": "796",
+   "value": 796,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "32",
+   "value": 32,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.nothing_returned"
+  },
+  {
+   "text": "828",
+   "value": 828,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.cannot_tell"
+  },
+  {
+   "text": "828",
+   "value": 828,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.n_readings"
+  },
+  {
+   "text": "6",
+   "value": 6,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "19",
+   "value": 19,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.nothing_returned"
+  },
+  {
+   "text": "25",
+   "value": 25,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.cannot_tell"
+  },
+  {
+   "text": "26",
+   "value": 26,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.n_readings"
   }
  ]
 }

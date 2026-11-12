@@ -27,7 +27,7 @@ def pooled(hz, alt=False):
     for _ in range(4000):
         sm = [t for y in (rnd.choice(yrs) for _ in yrs) for t in by[y]]; bs.append(sum(t[flag] for t in sm) / len(sm))
     bs.sort(); lo, hi = bs[int(0.025 * 4000)], bs[int(0.975 * 4000)]
-    oc = K.ABOVE if lo > 0.30 else (K.BELOW if hi < 0.30 else (K.CONSISTENT if (hi - lo) <= 0.45 else K.CANNOT_TELL))
+    ok_ = len(ts) > 0 and len(yrs) >= 2; oc = K.read(lo if ok_ else None, hi if ok_ else None, bound=0.30)[0]   # 12 Nov 2026: Faults and Guards 2.0, as fedsep_tick.py
     return dict(triples=len(ts), years=len(yrs), outside=k, share=round(k / len(ts), 4), share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=oc)
 pool = {'This year, September projection': pooled(0), 'Next year, September projection': pooled(1)}
 json.dump(dict(pooled=pool), open('out.json', 'w'), indent=1)

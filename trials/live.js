@@ -1,12 +1,12 @@
 // TRIALS: ClinicalTrials.gov results posted against the one year due date. Reads /trials/live.json, written by the tick bus.
 (function () {
   var box = document.getElementById('trials-live'); if (!box) return;
-  function W(o) { return { CONSISTENT: 'consistent', ABOVE: 'above', CANNOT_TELL: 'cannot tell' }[o] || o; }
+  function W(o, why) { return ({ CONSISTENT: 'consistent', ABOVE: 'above', BELOW: 'below', CANNOT_TELL: 'cannot tell' }[o] || o) + (o === 'CANNOT_TELL' && why ? ' (' + why + ')' : ''); }
   function fmt(x) { return String(x).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = (n && typeof t === 'number') ? fmt(t) : t; return c; }
   // 30 Oct 2026 (site pass H-14): a cannot tell row says which kind it is, a share resolved between the two thresholds or an interval that reaches a threshold or too few records.
-  function WC(o, lo, hi, lowT, highT, n) {
-    if (o !== 'CANNOT_TELL') return W(o);
+  function WC(o, lo, hi, lowT, highT, n, why) {
+    if (why || o !== 'CANNOT_TELL') return W(o, why);   // 12 Nov 2026 (Faults and Guards 2.0): the feed carries the reason, printed beside the word
     if (n != null && n < 30) return 'cannot tell, fewer than 30 records';
     if (lo != null && hi != null && lo >= lowT && hi <= highT) return 'cannot tell, the whole interval sits between the thresholds';
     return 'cannot tell, the interval reaches a threshold';
@@ -20,14 +20,14 @@
     var b = document.createElement('tbody');
     rows.forEach(function (r) {
       var g = r[1], tr = document.createElement('tr'); tr.appendChild(td(r[0])); tr.appendChild(td(g.n, 1)); tr.appendChild(td(g.posted, 1)); tr.appendChild(td(g.no_results, 1));
-      tr.appendChild(td(pct(g.share_no_results) + ' [' + pct(g.lo) + ', ' + pct(g.hi) + ']', 1)); tr.appendChild(td(plain ? W(g.outcome) : WC(g.outcome, g.lo, g.hi, 0.10, 0.25, g.posted + g.no_results))); b.appendChild(tr);
+      tr.appendChild(td(pct(g.share_no_results) + ' [' + pct(g.lo) + ', ' + pct(g.hi) + ']', 1)); tr.appendChild(td(plain ? W(g.outcome, g.reason) : WC(g.outcome, g.lo, g.hi, 0.10, 0.25, g.posted + g.no_results, g.reason))); b.appendChild(tr);
     });
     t.appendChild(b); var f = document.createDocumentFragment(); f.appendChild(h); f.appendChild(t); return f;
   }
   function gtable(title, rows, first, cols) {
     var h = document.createElement('h3'); h.textContent = title; var t = document.createElement('table'); t.className = 'mtx';
     t.innerHTML = '<thead><tr><th>' + first + '</th>' + cols.map(function (c) { return '<th>' + c[0] + '</th>'; }).join('') + '</tr></thead>'; var b = document.createElement('tbody');
-    rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r[0])); cols.forEach(function (c) { var v = r[1][c[1]]; tr.appendChild(c[2] === 'pct' ? td(v == null ? '' : pct(v) + ' [' + pct(r[1][c[1] + '_lo']) + ', ' + pct(r[1][c[1] + '_hi']) + ']', 1) : (c[2] === 'oc' ? td(WC(v, r[1].share_lo, r[1].share_hi, 0.05, 0.10, r[1].of)) : td(v == null ? '' : v, c[2] === 'n'))); }); b.appendChild(tr); });
+    rows.forEach(function (r) { var tr = document.createElement('tr'); tr.appendChild(td(r[0])); cols.forEach(function (c) { var v = r[1][c[1]]; tr.appendChild(c[2] === 'pct' ? td(v == null ? '' : pct(v) + ' [' + pct(r[1][c[1] + '_lo']) + ', ' + pct(r[1][c[1] + '_hi']) + ']', 1) : (c[2] === 'oc' ? td(WC(v, r[1].share_lo, r[1].share_hi, 0.05, 0.10, r[1].of, r[1].reason)) : td(v == null ? '' : v, c[2] === 'n'))); }); b.appendChild(tr); });
     t.appendChild(b); var f = document.createDocumentFragment(); f.appendChild(h); f.appendChild(t); return f;
   }
   function cancelled(c) {
@@ -41,7 +41,7 @@
     var rn = document.createElement('p'); rn.className = 'bench-note'; rn.textContent = 'The six classes marked defined after the data were added after the first read left 31 percent of the stopped records in one unsorted class. They are tried in order after the first five, so no record already in a class moved. The texts that match none of the words are published in the public data folder.'; box.appendChild(rn);
     box.appendChild(gtable('Two tests against the registry\'s own rules', k(c.tests), 'Test', [['Records', 'of', 'n'], ['Failing', 'n', 'n'], ['Share, 95% interval', 'share', 'pct'], ['Outcome', 'outcome', 'oc']]));
     var tn = document.createElement('p'); tn.className = 'bench-note'; var t1 = (c.tests || {})['Stopped records with no reason given'] || {};
-    tn.textContent = 'For these two tests above means the lower end of the 95% interval is above 10 percent, consistent means the upper end is below 5 percent, and fewer than 30 records reads cannot tell. The intervals treat records as independent although sponsors and programs cluster, so they are narrower than the records justify.' + (t1.largest_sponsor_n ? ' Of the ' + t1.n + ' records in the first test, ' + t1.largest_sponsor_n + ' have the same lead sponsor.' : ''); box.appendChild(tn);
+    tn.textContent = (function () { var q = []; Object.keys(c.tests || {}).forEach(function (k) { var t = c.tests[k]; if (t.req13) q.push(k + ': ' + t.req13.line); }); return q.length ? q.join(' ') + ' ' : ''; })() + 'For these two tests the band is 0 to 5 percent, open at 5, and 10 percent is the size that matters. Above means the whole 95% interval lies at or above 5 percent, consistent means it sits inside the band and does not reach both 0 and 10 percent, and fewer than 30 records reads cannot tell (TOO_WIDE_TO_RESOLVE). The intervals treat records as independent although sponsors and programs cluster, so they are narrower than the records justify.' + (t1.largest_sponsor_n ? ' Of the ' + t1.n + ' records in the first test, ' + t1.largest_sponsor_n + ' have the same lead sponsor.' : ''); box.appendChild(tn);
     if (c.hand_check && c.hand_check.length) {
       var hh = document.createElement('h3'); hh.textContent = 'Ten records of the first test, read in full'; box.appendChild(hh);
       var ht = document.createElement('table'); ht.className = 'mtx'; ht.innerHTML = '<thead><tr><th>Record</th><th>Status</th><th>Lead sponsor</th><th>What the record says</th></tr></thead>'; var hb = document.createElement('tbody');
@@ -58,6 +58,7 @@
     box.textContent = ''; cancelled(d.cancelled); box.appendChild(top);
     // 10 Nov 2026 (TRIALS Addendum 5, newsletter audit): the plan's lag zone is shown apart and not scored, and a sponsor-clustered interval sits beside the Wilson one
     if (d.lag_zone) { var lz = document.createElement('p'); lz.className = 'bench-note'; lz.textContent = 'Lag zone, not scored: ' + fmt(d.lag_zone.n) + ' records completed after ' + d.lag_zone.completed_after + ', 13 to 15 months before the read, as the plan sets apart. ' + fmt(d.lag_zone.no_results) + ' of them have no results on the record yet. Until 10 Nov 2026 these records were scored, which the plan never allowed.'; box.appendChild(lz); }
+    if (d.all.req13) { var rq = document.createElement('p'); rq.className = 'bench-note'; rq.textContent = 'Headline share, REQ-13: ' + d.all.req13.line; box.appendChild(rq); }
     var sc = d.all.sponsor_clustered; if (sc) { var cn = document.createElement('p'); cn.className = 'bench-note'; cn.textContent = 'All scored records: ' + fmt(d.all.no_results) + ' of ' + fmt(d.all.n) + ' have no results on the record, ' + pct(d.all.share_no_results) + '. The plan\'s Wilson interval is ' + pct(d.all.lo) + ' to ' + pct(d.all.hi) + ' and treats each record as independent. Counting the ' + fmt(sc.sponsors) + ' lead sponsors as the units, the interval is ' + pct(sc.lo) + ' to ' + pct(sc.hi) + '. That second interval was defined on 10 Nov 2026, after the data. The outcome is read on the plan\'s interval.'; box.appendChild(cn); }
     var cls = { INDUSTRY: 'Industry', NIH: 'NIH', FED: 'Other federal', OTHER_GOV: 'State, local and non-US public bodies (registry class Other government)', NETWORK: 'Network', OTHER: 'Other (universities, hospitals, nonprofits)', INDIV: 'Individual', UNKNOWN: 'Unknown' };
     box.appendChild(table('By sponsor class', Object.keys(d.by_class).map(function (k) { return [cls[k] || k, d.by_class[k]]; }), 'Sponsor class'));

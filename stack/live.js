@@ -11,6 +11,7 @@
     var t = el('table', null, 'mtx'), th = el('thead'), tr = el('tr'); head.forEach(function (h) { tr.appendChild(el('th', h)); }); th.appendChild(tr); t.appendChild(th);
     var b = el('tbody'); rows.forEach(function (r) { var x = el('tr'); r.forEach(function (c, i) { if (c && c.nodeType) { var d = el('td'); d.appendChild(c); x.appendChild(d); } else x.appendChild(td(c, nums && nums.indexOf(i) >= 0)); }); b.appendChild(x); }); t.appendChild(b); return t;
   }
+  function oc(r) { return (OC[r.outcome] || r.outcome) + (r.outcome === 'CANNOT_TELL' ? ' (' + (r.reason || 'reason not yet in the desk feed') + ')' : ''); }
   function link(href, txt) { var a = el('a', txt); a.href = href; return a; }
   function svg(n, attrs) { var e = document.createElementNS(NS, n); Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); }); return e; }
   function forest(rows, title, fixedMax) {
@@ -26,12 +27,12 @@
       var y = T + i * 24 + 8, c = COL[r.outcome] || '#6b7280', lab = svg('text', { x: L - 8, y: y + 4, 'text-anchor': 'end', 'font-size': 12, fill: 'currentColor' });
       lab.textContent = (r.page + ': ' + r.test).slice(0, 52); s.appendChild(lab);
       s.appendChild(svg('line', { x1: x(r.share_lo != null ? r.share_lo : r.share), x2: x(r.share_hi != null ? r.share_hi : r.share), y1: y, y2: y, stroke: c, 'stroke-width': 3 }));
-      var dot = svg('circle', { cx: x(r.share), cy: y, r: 5, fill: c }); var tt = svg('title'); tt.textContent = r.page + ': ' + r.test + ' | ' + r.n + ' of ' + r.of + ' | ' + pc(r.share) + ' [' + pc(r.share_lo) + ', ' + pc(r.share_hi) + '] | ' + (OC[r.outcome] || r.outcome); dot.appendChild(tt); s.appendChild(dot);
+      var dot = svg('circle', { cx: x(r.share), cy: y, r: 5, fill: c }); var tt = svg('title'); tt.textContent = r.page + ': ' + r.test + ' | ' + r.n + ' of ' + r.of + ' | ' + pc(r.share) + ' [' + pc(r.share_lo) + ', ' + pc(r.share_hi) + '] | ' + oc(r); dot.appendChild(tt); s.appendChild(dot);
     });
     return s;
   }
   fetch('/stack/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
-    box.textContent = ''; box.appendChild(el('p', d.tests + ' tests listed. Updated ' + d.updated + ' UTC.', 'bench-note'));
+    box.textContent = ''; box.appendChild(el('p', d.tests + ' tests listed. Updated ' + d.updated + ' UTC. ' + (d.req13_line || '') + ' Each outcome and each reason is the one the desk gives in its own feed.', 'bench-note'));
     // 1 divisions
     box.appendChild(el('h3', 'Every division'));
     box.appendChild(table(['Division', 'What it holds', 'Reading now'], (d.divisions || []).map(function (v) { return [link(v.link, v.name), v.holds, v.reading]; })));
@@ -48,16 +49,17 @@
     // 4 themed stacks
     box.appendChild(el('h3', 'Stacked by the question they ask'));
     Object.keys(d.stacks || {}).sort().forEach(function (g) {
-      box.appendChild(el('h4', g)); box.appendChild(table(['Page', 'Test', 'Compared', 'Failed', 'Share, 95% interval', 'Outcome'], d.stacks[g].map(function (r) { return [r.page, r.test, r.of, r.n, pc(r.share) + ' [' + pc(r.share_lo) + ', ' + pc(r.share_hi) + ']', OC[r.outcome] || r.outcome]; }), [2, 3, 4]));
+      box.appendChild(el('h4', g)); box.appendChild(table(['Page', 'Test', 'Compared', 'Failed', 'Share, 95% interval', 'Outcome'], d.stacks[g].map(function (r) { return [r.page, r.test, r.of, r.n, pc(r.share) + ' [' + pc(r.share_lo) + ', ' + pc(r.share_hi) + ']', oc(r)]; }), [2, 3, 4]));
     });
     // 5 all tests table
     box.appendChild(el('h3', 'All tests, by outcome'));
-    box.appendChild(table(['Page', 'Test', 'Compared', 'Failed', 'Share, 95% interval', 'Outcome'], tests.map(function (r) { return [r.page, r.test, r.of, r.n, r.share == null ? '' : pc(r.share) + ' [' + pc(r.share_lo) + ', ' + pc(r.share_hi) + ']', OC[r.outcome] || r.outcome]; }), [2, 3, 4]));
+    box.appendChild(table(['Page', 'Test', 'Compared', 'Failed', 'Share, 95% interval', 'Outcome'], tests.map(function (r) { return [r.page, r.test, r.of, r.n, r.share == null ? '' : pc(r.share) + ' [' + pc(r.share_lo) + ', ' + pc(r.share_hi) + ']', oc(r)]; }), [2, 3, 4]));
+    if ((d.failed_reads || []).length) { box.appendChild(el('h4', 'Failed reads, outside every tally')); box.appendChild(table(['Page', 'Test', 'Status', 'Cause'], d.failed_reads.map(function (r) { return [r.page, r.test, r.status, r.why]; }))); }
     // 6 running + items
     box.appendChild(el('h3', 'Running measurements'));
     box.appendChild(table(['Page', 'What is measured', 'Reading', 'State'], (d.running || []).map(function (r) { return [r.page, r.what, r.reading, OC[r.state] || r.state]; })));
     box.appendChild(el('h3', 'Pages that report many separate items, by the outcome of each item'));
-    box.appendChild(table(['Page', 'Above', 'Below', 'Consistent', 'Cannot tell'], Object.keys(d.items || {}).map(function (k) { var v = d.items[k]; return [k, v.ABOVE, v.BELOW, v.CONSISTENT, v.CANNOT_TELL]; }), [1, 2, 3, 4]));
+    box.appendChild(table(['Page', 'Above', 'Below', 'Consistent', 'Cannot tell', 'Cannot tell, by reason'], Object.keys(d.items || {}).map(function (k) { var v = d.items[k], by = v.cannot_tell_by_reason || {}; return [k, v.ABOVE, v.BELOW, v.CONSISTENT, v.CANNOT_TELL, Object.keys(by).sort().map(function (q) { return by[q] + ' ' + q; }).join(', ') || 'none']; }), [1, 2, 3, 4]));
     var p = el('p', 'Pages of static tables: ', 'bench-note'); [['/iris', 'IRIS'], ['/hermes', 'HERMES'], ['/atlas', 'ATLAS'], ['/oy', 'OY']].forEach(function (x, i) { if (i) p.appendChild(document.createTextNode(', ')); p.appendChild(link(x[0], x[1])); }); p.appendChild(document.createTextNode('.')); box.appendChild(p);
   }).catch(function () { box.textContent = 'The read could not be loaded just now.'; });
 })();

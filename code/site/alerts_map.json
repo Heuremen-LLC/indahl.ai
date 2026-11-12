@@ -1031,6 +1031,12 @@
 "trials"
 ]
 ],
+"shopify": [
+"Shopify",
+[
+"secrecords"
+]
+],
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": [
 "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
 [
@@ -6679,6 +6685,13 @@
 "name": "Shire",
 "url": "/brand/shire"
 },
+"shopify": {
+"feed": true,
+"kind": "company",
+"kword": "company",
+"name": "Shopify",
+"url": "/brand/shopify"
+},
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": {
 "feed": true,
 "kind": "organisation",
@@ -7450,7 +7463,7 @@
 "campus": {
 "div": "oy",
 "every": "checked about every 3 hours",
-"every_min": 151,
+"every_min": 150,
 "mode": "outcome",
 "name": "CAMPUS",
 "src": "rider",
@@ -7477,7 +7490,7 @@
 "cone": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 126,
+"every_min": 125,
 "mode": "outcome",
 "name": "CONE",
 "src": "rider",
@@ -7486,7 +7499,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3766,
+"every_min": 3756,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7587,7 +7600,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3641,
+"every_min": 3631,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7634,7 +7647,7 @@
 "neo": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 126,
+"every_min": 125,
 "mode": "outcome",
 "name": "NEO",
 "src": "rider",
@@ -7663,7 +7676,7 @@
 "pkginstall": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 126,
+"every_min": 125,
 "mode": "outcome",
 "name": "PKGINSTALL",
 "src": "rider",
@@ -7681,7 +7694,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 603,
+"every_min": 601,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7719,7 +7732,7 @@
 "quake": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 126,
+"every_min": 125,
 "mode": "outcome",
 "name": "QUAKE",
 "src": "rider",
@@ -7728,7 +7741,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 551,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7746,7 +7759,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 551,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7764,7 +7777,7 @@
 "secrecords": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 130,
+"every_min": 129,
 "mode": "outcome",
 "name": "SECRECORDS",
 "src": "rider",
@@ -7773,7 +7786,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 465,
+"every_min": 463,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7782,7 +7795,7 @@
 "solar": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 126,
+"every_min": 125,
 "mode": "outcome",
 "name": "SOLAR",
 "src": "rider",
@@ -7800,7 +7813,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 551,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7836,7 +7849,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 465,
+"every_min": 463,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",

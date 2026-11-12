@@ -10,16 +10,16 @@ This kit recomputes the FEDSEP headline number and its outcome label with the de
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `680a854c4505ecb81bdc0636b200e87c996e7ee0b9ed1ac8b7d7dc322cb1492d`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `c6978bc2ff30064c0bfe7edb79752a04b912fb7edaf9ed88a8f1bb9571bea7c0`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/fedsep/live.json served it at the feed stamp 10 Nov 22:48, read by us at 2026-11-11T00:08:50Z. The feed bytes had sha256 `a597069318580396105f05ce649a286f7e55ac3b1c7074883dcbd4425b37b147`.
+The headline as the live feed https://indahl.ai/fedsep/live.json served it at the feed stamp 12 Nov 15:30, read by us at 2026-11-12T16:25:53Z. The feed bytes had sha256 `b23dcea0388ab67c7a03b78ead8b9350b9fa6be062570e17162a946972af8207`.
 
 - number: 10 of 37
 - value: 0.2703
 - interval: 0.0811 to 0.4872
-- outcome: CONSISTENT
+- outcome: CANNOT_TELL
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
 
@@ -41,7 +41,7 @@ As the FEDSEP data pack lists them. Credit each source when you use its values.
 | File | Bytes | sha256 |
 |---|---|---|
 | data/projections.json | 4,223 | `389aa46dd55e746079d0426e73bf4de42b087088ec596c0fd7cc821e6b031c3b` |
-| data/outcomes_day.json | 2,431 | `0bdf9cc7e86e810e0906027f425f2b194bd44e3f4b9ab6992cbe14da57357587` |
+| data/outcomes_day.json | 2,431 | `f8072447ce5f745e1602e54b9cc954a312f2f0849d864f952f72775efb6c8eb0` |
 
 ## Code
 

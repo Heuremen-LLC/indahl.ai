@@ -127,7 +127,7 @@ SPECS = {
      extract_of='airq_tick.py run with AIRQ_WINDOW=2026: the constants and metrics, meets, corrected, ab_ok, haversine and outcome as written, stage A over the kept AQS files and stage E as written. airq_promote.py and airq_tie.py, which run after it, leave these fields as they are',
      ref=['airq_tick.py', 'airq_promote.py', 'airq_tie.py'], steps=[['airq_score.py']], output='out.json',
      sources=['EPA Air Quality System hourly PM2.5 (parameter 88101), https://aqs.epa.gov/data/api/sampleData/byState for each state, 1 March to 30 June 2026, read month by month. data/w2026/aqs_NN.json keeps the daily means the read built from those rows.', 'PurpleAir outdoor sensors within 200 metres of each monitor, https://api.purpleair.com/v1/sensors (data/w2026/pa_near.json), and each sensor\'s daily history, https://api.purpleair.com/v1/sensors/ID/history with average=1440 (data/w2026/pa_ID.json, the answer as served, with its time_stamp). A PurpleAir read needs a PurpleAir key.']),
- 'trials': dict(folder='trials_index', mode='inputs', inputs=['data/records.jsonl', 'data/read_at.txt'], code=['trials_summary.py'],
+ 'trials': dict(folder='trials_index', mode='inputs', inputs=['data/records.jsonl', 'data/read_at.txt'], code=['trials_summary.py', 'heuremen_kit.py'],
      steps=[['trials_summary.py']], output='data/summary.json'),
 }
 NOKIT = {
