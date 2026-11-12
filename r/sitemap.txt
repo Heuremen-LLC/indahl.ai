@@ -929,6 +929,8 @@
 /r/darkwave.kit.v11.r1	2026-11-01
 /r/darkwave.kit.v11.r2a	2026-11-01
 /r/darkwave.kit.v11.r2b	2026-11-01
+/r/datapapers.zenodo.dib	2026-11-12
+/r/datapapers.zenodo.essd	2026-11-12
 /r/decay.repeat_range	2026-10-30
 /r/direct.fez.knowngood	2026-10-25
 /r/direct.fez.ratio	2026-10-23
@@ -1777,10 +1779,10 @@
 /r/neo.cell.lead0_7	2026-11-12
 /r/neo.cell.lead30	2026-11-11
 /r/neo.cell.lead8_30	2026-11-10
-/r/neo.dep.copy20240209	2026-11-11
-/r/neo.dep.without	2026-11-11
+/r/neo.dep.copy20240209	2026-11-12
+/r/neo.dep.without	2026-11-12
 /r/neo.more.narrow	2026-11-11
-/r/neo.more.nominal	2026-11-11
+/r/neo.more.nominal	2026-11-12
 /r/neo.more.other30	2026-11-11
 /r/neo.more.over365	2026-11-11
 /r/neo.outside.small	2026-11-10
@@ -1913,7 +1915,7 @@
 /r/pack.size.forecast-data-pack	2026-11-11
 /r/pack.size.hflicense-data-pack	2026-11-10
 /r/pack.size.hfsize-data-pack	2026-11-10
-/r/pack.size.hosts-data-pack	2026-11-11
+/r/pack.size.hosts-data-pack	2026-11-12
 /r/pack.size.hpt-data-pack	2026-11-10
 /r/pack.size.iris-list-pack	2026-11-10
 /r/pack.size.iris-research-package	2026-11-11
@@ -2874,7 +2876,7 @@
 /r/quake.cover.m3.day	2026-11-12
 /r/quake.cover.m3.month	2026-11-12
 /r/quake.cover.m3.week	2026-11-12
-/r/quake.cover.m3.year	2026-11-11
+/r/quake.cover.m3.year	2026-11-12
 /r/quake.cover.m4	2026-11-12
 /r/quake.cover.m5	2026-11-12
 /r/quake.cover.m6	2026-11-12
@@ -2897,7 +2899,7 @@
 /r/quake.prob10.m4up	2026-11-12
 /r/quake.prob10.month	2026-11-12
 /r/quake.prob10.week	2026-11-11
-/r/quake.prob10.year	2026-11-11
+/r/quake.prob10.year	2026-11-12
 /r/rank.checks.edu	2026-11-10
 /r/rank.checks.eng	2026-11-10
 /r/rank.checks.hs	2026-11-10
@@ -3845,7 +3847,7 @@
 /r/desk/home	2026-11-03
 /r/desk/hosts	2026-11-11
 /r/desk/hpt	2026-11-10
-/r/desk/iris	2026-11-11
+/r/desk/iris	2026-11-12
 /r/desk/iris-paper	2026-10-31
 /r/desk/iris-lab	2026-11-08
 /r/desk/launch	2026-11-10
@@ -3883,4 +3885,4 @@
 /r/desk/weights	2026-11-10
 /r/desk/wiki	2026-11-10
 /r/desk/yo	2026-11-09
-/r/desk/other	2026-11-11
+/r/desk/other	2026-11-12

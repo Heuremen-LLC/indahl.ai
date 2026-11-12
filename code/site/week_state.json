@@ -161,6 +161,11 @@
    "Announced shutdown dates, kept over time"
   ],
   [
+   "/hermes/datapapers",
+   "DATA PAPERS",
+   "Papers in four data journals, each listed with the files its repository serves"
+  ],
+  [
    "/hermes/model",
    "MODEL",
    "Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data"
@@ -298,6 +303,7 @@
   "/fedsep": "2026-10-29T12:56:10Z",
   "/flu": "2026-11-10T15:50:55Z",
   "/forecast": "2026-10-28T23:43:20Z",
+  "/hermes/datapapers": "2026-11-12T10:21:03Z",
   "/hermes/model": "2026-10-29T13:11:24Z",
   "/hflicense": "2026-10-29T03:36:56Z",
   "/hfsize": "2026-10-29T11:02:15Z",

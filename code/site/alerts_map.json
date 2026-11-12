@@ -1031,12 +1031,6 @@
 "trials"
 ]
 ],
-"shopify": [
-"Shopify",
-[
-"secrecords"
-]
-],
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": [
 "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
 [
@@ -1630,6 +1624,7 @@
 "hermes": [
 "HERMES",
 [
+"hermes/datapapers",
 "hermes/model",
 "trials",
 "hpt",
@@ -6684,13 +6679,6 @@
 "name": "Shire",
 "url": "/brand/shire"
 },
-"shopify": {
-"feed": true,
-"kind": "company",
-"kword": "company",
-"name": "Shopify",
-"url": "/brand/shopify"
-},
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": {
 "feed": true,
 "kind": "organisation",
@@ -7361,7 +7349,7 @@
 "ailuminate": {
 "div": "iris",
 "every": "checked about every hour",
-"every_min": 50,
+"every_min": 51,
 "mode": "outcome",
 "name": "AILUMINATE",
 "src": "rider",
@@ -7462,7 +7450,7 @@
 "campus": {
 "div": "oy",
 "every": "checked about every 3 hours",
-"every_min": 151,
+"every_min": 152,
 "mode": "outcome",
 "name": "CAMPUS",
 "src": "rider",
@@ -7471,7 +7459,7 @@
 "census": {
 "div": "",
 "every": "checked about every 2 hours",
-"every_min": 126,
+"every_min": 127,
 "mode": "outcome",
 "name": "CENSUS",
 "src": "rider",
@@ -7480,7 +7468,7 @@
 "change": {
 "div": "atlas",
 "every": "checked about every hour",
-"every_min": 50,
+"every_min": 51,
 "mode": "outcome",
 "name": "CHANGE",
 "src": "rider",
@@ -7498,7 +7486,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3775,
+"every_min": 3793,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7507,7 +7495,7 @@
 "fedsep": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "FEDSEP",
 "src": "rider",
@@ -7516,7 +7504,7 @@
 "flu": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 138,
+"every_min": 139,
 "mode": "outcome",
 "name": "FLU",
 "src": "rider",
@@ -7551,6 +7539,15 @@
 "src": "release",
 "what": "The division page"
 },
+"hermes/datapapers": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "DATA PAPERS",
+"src": "release",
+"what": "Papers in four data journals, each listed with the files its repository serves"
+},
 "hermes/model": {
 "div": "hermes",
 "every": "when we publish a new version",
@@ -7563,7 +7560,7 @@
 "hflicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 138,
+"every_min": 139,
 "mode": "update",
 "name": "HFLICENSE",
 "src": "rider",
@@ -7572,7 +7569,7 @@
 "hfsize": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 134,
+"every_min": 135,
 "mode": "outcome",
 "name": "HFSIZE",
 "src": "rider",
@@ -7590,7 +7587,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3649,
+"every_min": 3667,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7684,7 +7681,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 604,
+"every_min": 607,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7731,7 +7728,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 554,
+"every_min": 556,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7740,7 +7737,7 @@
 "revise": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "REVISE",
 "src": "rider",
@@ -7749,7 +7746,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 554,
+"every_min": 556,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7767,7 +7764,7 @@
 "secrecords": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 130,
+"every_min": 131,
 "mode": "outcome",
 "name": "SECRECORDS",
 "src": "rider",
@@ -7776,7 +7773,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 466,
+"every_min": 468,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7803,7 +7800,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 554,
+"every_min": 556,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7839,7 +7836,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 466,
+"every_min": 468,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -7884,7 +7881,7 @@
 "weights": {
 "div": "iris",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "outcome",
 "name": "WEIGHTS",
 "src": "rider",
@@ -7893,7 +7890,7 @@
 "wiki": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 75,
+"every_min": 76,
 "mode": "update",
 "name": "WIKI",
 "src": "rider",
@@ -7934,6 +7931,7 @@
 },
 "forecasters": {},
 "hermes": {},
+"hermes/datapapers": {},
 "hermes/model": {},
 "hflicense": {
 "/hflicense/live.json": [
@@ -8022,5 +8020,5 @@
 ]
 }
 },
-"tick_min": 2.1
+"tick_min": 2.11
 }
