@@ -1,7 +1,7 @@
 path,label,outcome,n,of,share,lo,hi,bin,lead,mean_stated,observed
-/cells[0],cells[0],ABOVE,510,,,1.5,4.31,0 to 5,under 12 hours,1.14,2.55
-/cells[1],cells[1],ABOVE,483,,,2.37,5.81,0 to 5,12 to 24 hours,0.88,3.73
-/cells[2],cells[2],ABOVE,494,,,4.12,8.3,0 to 5,24 to 48 hours,0.94,5.87
+/cells[0],cells[0],ABOVE,513,,,1.49,4.29,0 to 5,under 12 hours,1.13,2.53
+/cells[1],cells[1],ABOVE,486,,,2.36,5.78,0 to 5,12 to 24 hours,0.87,3.7
+/cells[2],cells[2],ABOVE,497,,,4.09,8.25,0 to 5,24 to 48 hours,0.94,5.84
 /cells[3],cells[3],ABOVE,130,,,33.43,50.13,10 to 20,under 12 hours,14.2,41.54
 /cells[4],cells[4],ABOVE,113,,,31.27,49.04,10 to 20,12 to 24 hours,14.03,39.82
 /cells[5],cells[5],ABOVE,130,,,28.4,44.7,10 to 20,24 to 48 hours,14.17,36.15
@@ -17,21 +17,21 @@ path,label,outcome,n,of,share,lo,hi,bin,lead,mean_stated,observed
 /cells[15],cells[15],CONSISTENT,35,,,90.11,100.0,90 to 100,under 12 hours,95.17,100.0
 /cells[16],cells[16],CANNOT_TELL,29,,,88.3,100.0,90 to 100,12 to 24 hours,95.69,100.0
 /cells[17],cells[17],CONSISTENT,39,,,86.82,99.55,90 to 100,24 to 48 hours,94.64,97.44
-/measurable/cells[0],cells[0],CONSISTENT,500,,,0.43,2.32,0 to 5,under 12 hours,1.14,1.0
-/measurable/cells[1],cells[1],CONSISTENT,472,,,0.45,2.46,0 to 5,12 to 24 hours,0.86,1.06
-/measurable/cells[2],cells[2],ABOVE,480,,,0.99,3.52,0 to 5,24 to 48 hours,0.9,1.88
-/measurable/cells[3],cells[3],CONSISTENT,123,,,11.45,24.69,10 to 20,under 12 hours,14.17,17.07
-/measurable/cells[4],cells[4],CONSISTENT,106,,,11.79,26.31,10 to 20,12 to 24 hours,13.9,17.92
-/measurable/cells[5],cells[5],CONSISTENT,122,,,8.24,20.25,10 to 20,24 to 48 hours,14.21,13.11
-/measurable/cells[6],cells[6],CONSISTENT,49,,,30.02,56.73,30 to 40,under 12 hours,35.1,42.86
-/measurable/cells[7],cells[7],CONSISTENT,47,,,23.97,50.46,30 to 40,12 to 24 hours,34.74,36.17
-/measurable/cells[8],cells[8],CONSISTENT,63,,,24.33,47.25,30 to 40,24 to 48 hours,34.56,34.92
-/measurable/cells[9],cells[9],ABOVE,36,,,61.91,88.28,50 to 60,under 12 hours,55.28,77.78
-/measurable/cells[10],cells[10],ABOVE,39,,,58.92,85.43,50 to 60,12 to 24 hours,53.79,74.36
-/measurable/cells[11],cells[11],ABOVE,48,,,56.82,81.76,50 to 60,24 to 48 hours,54.25,70.83
-/measurable/cells[12],cells[12],CANNOT_TELL,20,,,69.9,97.21,70 to 80,under 12 hours,73.5,90.0
-/measurable/cells[13],cells[13],CANNOT_TELL,19,,,68.61,97.06,70 to 80,12 to 24 hours,74.53,89.47
-/measurable/cells[14],cells[14],CONSISTENT,33,,,62.25,89.32,70 to 80,24 to 48 hours,74.36,78.79
-/measurable/cells[15],cells[15],CONSISTENT,34,,,89.85,100.0,90 to 100,under 12 hours,95.21,100.0
+/measurable/cells[0],cells[0],CONSISTENT,504,,,0.42,2.3,0 to 5,under 12 hours,1.14,0.99
+/measurable/cells[1],cells[1],CONSISTENT,476,,,0.45,2.44,0 to 5,12 to 24 hours,0.89,1.05
+/measurable/cells[2],cells[2],ABOVE,487,,,1.12,3.74,0 to 5,24 to 48 hours,0.94,2.05
+/measurable/cells[3],cells[3],CONSISTENT,128,,,11.63,24.65,10 to 20,under 12 hours,14.21,17.19
+/measurable/cells[4],cells[4],CONSISTENT,111,,,11.98,26.2,10 to 20,12 to 24 hours,13.95,18.02
+/measurable/cells[5],cells[5],CONSISTENT,128,,,8.46,20.24,10 to 20,24 to 48 hours,14.18,13.28
+/measurable/cells[6],cells[6],CONSISTENT,51,,,28.75,54.83,30 to 40,under 12 hours,35.16,41.18
+/measurable/cells[7],cells[7],CONSISTENT,50,,,22.44,47.85,30 to 40,12 to 24 hours,34.74,34.0
+/measurable/cells[8],cells[8],CONSISTENT,68,,,22.44,44.16,30 to 40,24 to 48 hours,34.51,32.35
+/measurable/cells[9],cells[9],ABOVE,37,,,59.88,86.64,50 to 60,under 12 hours,55.16,75.68
+/measurable/cells[10],cells[10],ABOVE,40,,,57.16,83.89,50 to 60,12 to 24 hours,53.73,72.5
+/measurable/cells[11],cells[11],ABOVE,49,,,55.47,80.48,50 to 60,24 to 48 hours,54.16,69.39
+/measurable/cells[12],cells[12],CANNOT_TELL,22,,,66.66,95.25,70 to 80,under 12 hours,73.45,86.36
+/measurable/cells[13],cells[13],CANNOT_TELL,21,,,65.36,95.02,70 to 80,12 to 24 hours,74.38,85.71
+/measurable/cells[14],cells[14],CONSISTENT,34,,,63.2,89.65,70 to 80,24 to 48 hours,74.41,79.41
+/measurable/cells[15],cells[15],CONSISTENT,35,,,90.11,100.0,90 to 100,under 12 hours,95.17,100.0
 /measurable/cells[16],cells[16],CANNOT_TELL,29,,,88.3,100.0,90 to 100,12 to 24 hours,95.69,100.0
 /measurable/cells[17],cells[17],CONSISTENT,39,,,83.11,98.58,90 to 100,24 to 48 hours,94.64,94.87

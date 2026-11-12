@@ -1970,9 +1970,9 @@ _FEED.append(('/hermes/datapapers', 'HERMES: Data Papers, published datasets and
 # 12 Nov 2026 (Wayfinder: "Standards V1 is fucking lit"): STANDARD, Faults and Guards version 1.0 (faultsguards/standard_v1, concept DOI 10.5281/zenodo.24164029, 1.0.1 is 24164207),
 # rendered by faultsguards/standard_v1/web/build_page.py, files served at /standard/*.
 _sp = _json.load(open(os.path.join(HERE, '..', 'faultsguards', 'standard_v1', 'web', 'standard_page.json'), encoding='utf-8'))
-PAGES['/standard'] = page('/standard', 'Faults and Guards 1.0: An Open Standard for Checking Measurement Claims | Heuremen LLC', 'Faults and Guards version 1.0, an open standard for checking a claim about an AI or quantum measurement result and publishing the check so anyone can rerun it. Codes, tests, a conformance checklist and a NIST AI RMF crosswalk.',
-                          _sp['body'], hero_slim('Faults and Guards 1.0', 'An open standard for checking measurement claims'))
-_FEED.append(('/standard', 'STANDARD: Faults and Guards 1.0', 'An open standard for checking measurement claims, with a checklist and a NIST AI RMF crosswalk.'))
+PAGES['/standard'] = page('/standard', 'Faults and Guards 2.0: An Open Standard for Checking Measurement Claims | Heuremen LLC', 'Faults and Guards version 2.0, an open standard for checking a claim about an AI or quantum measurement result and publishing the check so anyone can rerun it. Codes, tests, a conformance checklist and a NIST AI RMF crosswalk.',
+                          _sp['body'], hero_slim('Faults and Guards 2.0', 'An open standard for checking measurement claims'))
+_FEED.append(('/standard', 'STANDARD: Faults and Guards 2.0', 'An open standard for checking measurement claims, with a checklist and a NIST AI RMF crosswalk.'))
 
 # 12 Nov 2026 (Wayfinder: "go for all of it"): RECORD, what we recounted, what we found, and every public number of ours that changed after it went out.
 # Built by trackrecord/build_trackrecord.py + trackrecord/build_page.py (codes from the QIA List, never the ledger's default outcome label). Ledger row record.f4.share.
@@ -2303,7 +2303,7 @@ _DIVS = [('/qia', 'QIA', 'Quantum Idle Audit', 'IBM&rsquo;s published calibratio
 _cards = ''.join(f'<div class="hdiv"><h2><a href="{h}">{n}</a></h2><p class="hsub">{full}</p><p class="hwhat">{what}</p><p class="hdesks">{desks}</p></div>' for h, n, full, what, desks in _DIVS)
 PAGES['/'] = page('/', 'Heuremen LLC',
  'Heuremen LLC recounts published claims about AI benchmarks, quantum hardware and public data from the material released with them, with receipts anyone can rerun. Open benchmark verification and an open record of every correction.',
- '<section class="hdivs">' + _cards + '</section><section class="hmore"><a href="/standard">STANDARD &middot; Faults and Guards 1.0</a><a href="/record">RECORD &middot; What we recounted and corrected</a><a href="/stack">STACK &middot; Every test, side by side</a><a href="/api">API &middot; Data and MCP</a><a href="https://github.com/Heuremen-LLC/indahl.ai">Plans, code and trend history &middot; GitHub</a><a href="https://huggingface.co/indahl">Datasets and models &middot; Hugging Face</a></section>',
+ '<section class="hdivs">' + _cards + '</section><section class="hmore"><a href="/standard">STANDARD &middot; Faults and Guards 2.0</a><a href="/record">RECORD &middot; What we recounted and corrected</a><a href="/stack">STACK &middot; Every test, side by side</a><a href="/api">API &middot; Data and MCP</a><a href="https://github.com/Heuremen-LLC/indahl.ai">Plans, code and trend history &middot; GitHub</a><a href="https://huggingface.co/indahl">Datasets and models &middot; Hugging Face</a></section>',
  hero_slim('Heuremen LLC'))
 
 # 29 Oct 2026 (his word): HERMES is the menu of everything. The old SAD material is the MODEL desk at /hermes/model.
@@ -2726,7 +2726,7 @@ def main():
            '- [RECORD](https://indahl.ai/record): every published claim we recounted, with fault codes and the finding, and every public number of ours corrected after it went out. Open benchmark and hardware verification with receipts.',
            '- [Corrections](https://indahl.ai/corrections): each catch and fix, with what was wrong, what it is now and who caught it.',
            '- [Key](https://indahl.ai/qia/key): the claim-level fault codes F1 to F7 used in every recount.',
-           '- [STANDARD](https://indahl.ai/standard): Faults and Guards 1.0, an open standard for checking measurement claims, with a conformance checklist, a NIST AI RMF crosswalk and a JSON version. DOI 10.5281/zenodo.24164029 (all versions).', '',
+           '- [STANDARD](https://indahl.ai/standard): Faults and Guards 2.0, an open standard for checking measurement claims, with a conformance checklist, a NIST AI RMF crosswalk and a JSON version. DOI 10.5281/zenodo.24164029 (all versions).', '',
            '## API and MCP',
            '- [MCP server](https://indahl.ai/mcp): read-only tools over every live desk, for Claude and other agents. Add it as a remote MCP server at https://indahl.ai/mcp.',
            '- [REST API](https://indahl.ai/api): the same tools as JSON at /api/v1, with an OpenAPI file at /api/openapi.json. Retrieval and answering are permitted, training is not.', '',

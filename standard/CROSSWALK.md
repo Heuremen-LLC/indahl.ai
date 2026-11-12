@@ -1,20 +1,20 @@
 # Crosswalk to NIST AI RMF 1.0
 
-Every mapping below is a closest category. None is an equivalence. A closest category is the place in the other document where a reader would most likely look for related material. Where the subcategory or control could not be confirmed, the cell is left empty.
+Every mapping below is a closest category. None is an equivalence. A closest category is the place in the other document where a reader would most likely look for related material. An empty cell means no close fit.
 
-Sources. NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RMF 1.0), January 2023, read from https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf. Subcategory names below are shortened from the text of that document. An ISO/IEC 42001 column will be added once it can be checked against the licensed standard.
+Source. NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RMF 1.0), January 2023, https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf. Notes on how the crosswalk was made are in section 11 of STANDARD.md. Faults and Guards version 1.1.0.
 
 ## Claim-level codes
 
 | ID | Name | NIST AI RMF closest category |
 |---|---|---|
 | QIA-F1 | Self-built reference | MAP 2.3, MEASURE 2.1, MEASURE 2.13 |
-| QIA-F2 | Selected result | MAP 2.3, MEASURE 2.5 |
+| QIA-F2 | Selected result | MEASURE 2.5 |
 | QIA-F3 | Reading without a width | MEASURE 1.1, MEASURE 2.5 |
 | QIA-F4 | Reading not released | MEASURE 2.1, MEASURE 2.8 |
 | QIA-F5 | Number recomputes differently | MEASURE 2.5, MEASURE 2.13 |
 | QIA-F6 | Text differs from own table | MEASURE 2.8, MEASURE 2.9 |
-| QIA-F7 | Classical comparison available | MAP 2.3, MEASURE 1.2 |
+| QIA-F7 | Classical comparison available |  |
 
 ## Process-level faults
 
@@ -39,9 +39,9 @@ Sources. NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RM
 | FLT-17 | Asking which way a sign points instead of whether it holds | MEASURE 2.13 |
 | FLT-18 | A snapshot that keeps the value and throws away the trajectory | MEASURE 2.13 |
 | FLT-19 | A ruler that cannot say “I cannot tell” lies at scale | MEASURE 1.1, MEASURE 3.2 |
-| FLT-20 | The two-answer question that has three answers | MEASURE 2.13 |
-| FLT-21 | Four outcomes collapsed into two | MEASURE 2.13 |
-| FLT-22 | You will report a count about yourself from memory | MEASURE 1.2 |
+| FLT-20 | The two-answer question that has three answers |  |
+| FLT-21 | Four outcomes collapsed into two |  |
+| FLT-22 | You will report a count about yourself from memory |  |
 | FLT-23 | Your own checker will be wrong, and all in one direction | MEASURE 1.2 |
 | FLT-24 | Every count has a ruler hidden inside it, and the rulers disagree | MEASURE 2.1 |
 | FLT-25 | A verdict without a width is not a verdict | MEASURE 2.5, MEASURE 2.9 |
@@ -55,7 +55,7 @@ Sources. NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RM
 | FLT-33 | Computing the significance before checking the literature | MAP 2.3 |
 | FLT-34 | A pattern found twice is a pattern, not a law |  |
 | FLT-35 | The correspondence with the deepest history proves the least |  |
-| FLT-36 | The relationship the whole structure rests on is not a constant | MEASURE 3.1 |
+| FLT-36 | The relationship the whole structure rests on is not a constant |  |
 | FLT-37 | Something long-lived is holding an old copy of what you just changed |  |
 | FLT-38 | The absence of a process is not the absence of work |  |
 | FLT-39 | Your test data will become a finding about innocent work |  |
@@ -77,12 +77,4 @@ Sources. NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RM
 - MEASURE 2.8. Risks associated with transparency and accountability are examined and documented.
 - MEASURE 2.9. The model is explained, validated and documented, and output is interpreted within its context.
 - MEASURE 2.13. Effectiveness of the employed TEVV metrics and processes is evaluated and documented.
-- MEASURE 3.1. Approaches are in place to regularly identify and track existing, unanticipated and emergent AI risks.
 - MEASURE 3.2. Risk tracking approaches are considered where risks are difficult to assess with available measurement techniques.
-
-## What could not be confirmed
-
-- The NIST names are shortened. Use the full text of the subcategory in AI 100-1 when citing.
-- The NIST Playbook text was read only for MEASURE 1.1 to 2.11 on the web page. The IDs for all other functions were confirmed from the PDF.
-- Faults left with no NIST mapping: FLT-31, 34, 35, 37 to 43, 45. No subcategory was a close enough fit to name.
-- Many faults map to MEASURE 2.13 because it is the subcategory on the effectiveness of TEVV methods. That reflects the subject of the faults and is not a finding about NIST.
