@@ -162,7 +162,7 @@ def page(path, title, desc, body, wide_hero=None):
 <script src="/live-tags.js?v=35e2ef27" defer></script>
 <script src="/headline.js?v=6e4f48dc" defer></script>
 <script src="/nav.js?v=00000000" defer></script>
-<script src="/share.js" defer></script>
+<script src="/share.js?v=00000000" defer></script>
 </body>
 </html>
 '''
@@ -2494,7 +2494,7 @@ def main():
         _place(_home, _box(_t, _pg, _txt, _z, tested=_TESTED[_pg][0]))
     if _sha('iris/iris-list-pack.zip') and '/iris/package' in PAGES:
         PAGES['/iris'] = PAGES['/iris'].replace('<a href="/iris/package">What is in it</a></p></aside>', '<a href="/iris/package">What is in it</a></p><p class="pkgalso">Also: <a href="/iris/iris-list-pack.zip" download>IRIS List Pack</a> (every study on the List, CSV and BibTeX)</p><p class="pkgalso">Checker alone: <code>pip install iris-check</code> (<a href="https://pypi.org/project/iris-check/">PyPI</a>)</p></aside>', 1)
-    for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('nav.js', r'/nav\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
+    for _js, _pat in (('headline.js', r'/headline\.js\?v=[0-9a-f]{8}'), ('nav.js', r'/nav\.js\?v=[0-9a-f]{8}'), ('share.js', r'/share\.js\?v=[0-9a-f]{8}'), ('live-tags.js', r'/live-tags\.js\?v=[0-9a-f]{8}'), ('stack/live.js', r'/stack/live\.js\?v=[0-9a-f]{8}')):
         _hv = _hh.sha256(open(os.path.join(_pub, _js), 'rb').read()).hexdigest()[:8]
         for _pp in PAGES: PAGES[_pp] = _re.sub(_pat, '/' + _js + '?v=' + _hv, PAGES[_pp])
     for _pp in PAGES: PAGES[_pp] = PAGES[_pp].replace('@@CSSV@@', _cv)   # 9 Nov 2026 (site pass L14): the package pages are built after the first replace
