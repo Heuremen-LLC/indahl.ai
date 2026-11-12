@@ -1901,7 +1901,7 @@
 /r/pack.size.ailuminate-data-pack	2026-11-10
 /r/pack.size.airline-data-pack	2026-11-10
 /r/pack.size.airq-data-pack	2026-11-11
-/r/pack.size.arxivdrift-data-pack	2026-11-10
+/r/pack.size.arxivdrift-data-pack	2026-11-11
 /r/pack.size.atlas-data-pack	2026-11-10
 /r/pack.size.cada-data-pack	2026-11-10
 /r/pack.size.cadence-data-pack	2026-11-11
@@ -1928,7 +1928,7 @@
 /r/pack.size.qia-research-package	2026-11-11
 /r/pack.size.quake-data-pack	2026-11-11
 /r/pack.size.revise-data-pack	2026-11-10
-/r/pack.size.seat-data-pack	2026-11-10
+/r/pack.size.seat-data-pack	2026-11-11
 /r/pack.size.secrecords-data-pack	2026-11-11
 /r/pack.size.social-data-pack	2026-11-10
 /r/pack.size.stack-data-pack	2026-11-10
