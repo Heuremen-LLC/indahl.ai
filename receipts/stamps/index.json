@@ -1,7 +1,28 @@
 {
- "built_utc": "2026-11-12T13:14:21Z",
+ "built_utc": "2026-11-12T14:05:00Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 239,
+   "commit": "23f35a3ac97760d870d8862a83c887cafd1f3594",
+   "files": 5777,
+   "id": "23f35a3ac977",
+   "json": "/receipts/stamps/release_23f35a3ac977.json",
+   "ledger_sha256": "7b7af25c11e6c6b5a8c10c6ee9a75bbfe104cbe8655d9ac67505c28997ef7d54",
+   "manifest_sha256": "403e7d0df7113cd3cccc05f0fa123f348cf7b84bf9572c006a253ba9fa7b885a",
+   "ots": "/receipts/stamps/release_23f35a3ac977.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-12T13:49:32Z",
+   "sha256": "d67f08415fa6875ea1ab6ac057d5ea1ac824139d771f366368b92d4a58ac2d56",
+   "wayback": [
+    {
+     "capture": "https://web.archive.org/web/20261112102753/https://indahl.ai/",
+     "timestamp": "20261112102753",
+     "url": "https://indahl.ai/"
+    }
+   ],
+   "wayback_waiting": 234
+  },
   {
    "changed": 582,
    "commit": "1d07f61b2f00fd5b91438ff086ebe937c825a8e2",
@@ -21,7 +42,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 579
+   "wayback_waiting": 407
   },
   {
    "changed": 184,
@@ -36,7 +57,7 @@
    "released_at": "2026-11-12T11:35:01Z",
    "sha256": "4e94492bbbe21596ae63506fc5df9d931093362ef3dae876f58073192cada8ec",
    "wayback": [],
-   "wayback_waiting": 46
+   "wayback_waiting": 2
   },
   {
    "changed": 154,
@@ -57,7 +78,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 7
+   "wayback_waiting": 3
   },
   {
    "changed": 919,
@@ -72,7 +93,7 @@
    "released_at": "2026-11-12T10:40:50Z",
    "sha256": "281ef7ef6a051c43e7cfd63adcb55fcef437b1098a93b429760487136c23606f",
    "wayback": [],
-   "wayback_waiting": 562
+   "wayback_waiting": 558
   },
   {
    "changed": 1259,
@@ -98,7 +119,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 636
+   "wayback_waiting": 634
   },
   {
    "changed": 441,
@@ -540,7 +561,7 @@
    "released_at": "2026-11-12T02:35:01Z",
    "sha256": "52d7e135bfc1b877bc9696c3bd6311a965b21158b6ac4fd4a40bf32d5a547a6d",
    "wayback": [],
-   "wayback_waiting": 173
+   "wayback_waiting": 172
   },
   {
    "changed": 227,

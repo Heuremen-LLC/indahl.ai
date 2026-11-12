@@ -1,0 +1,31 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://indahl.ai/faultsguards/standard_v1.schema.json",
+ "title": "Faults and Guards standard, version 1",
+ "type": "object",
+ "required": ["standard","outcomes","read_statuses","claim_codes","faults","guards","families","guard_parts","recount_requirements"],
+ "additionalProperties": false,
+ "$defs": {
+  "idref": {"type":"string"},
+  "mapping": {"type":"object","required":["relation","ids"],"additionalProperties":false,
+    "properties":{"relation":{"const":"closest category"},"ids":{"type":"array","items":{"type":"object","required":["id","name"],"additionalProperties":false,"properties":{"id":{"type":"string"},"name":{"type":"string"}}}}}},
+  "crosswalk": {"type":"object","required":["nist_ai_rmf_1_0"],"additionalProperties":false,
+    "properties":{"nist_ai_rmf_1_0":{"$ref":"#/$defs/mapping"}}},
+  "idname": {"type":"object","required":["id","definition"],"properties":{"id":{"type":"string"},"definition":{"type":"string"}}}
+ },
+ "properties": {
+  "standard": {"type":"object","required":["title","version","status","author","date"],
+    "properties":{"title":{"type":"string"},"version":{"type":"string","pattern":"^[0-9]+\\.[0-9]+\\.[0-9]+$"},"status":{"enum":["draft","released","retired"]},"author":{"type":"string"},"date":{"type":"string","format":"date"},"schema":{"type":"string"},"doi":{"type":"string"},"url":{"type":"string"}}},
+  "outcomes": {"type":"array","minItems":4,"maxItems":4,"items":{"$ref":"#/$defs/idname"}},
+  "read_statuses": {"type":"array","items":{"$ref":"#/$defs/idname"}},
+  "families": {"type":"array","items":{"type":"object","required":["id","title"],"properties":{"id":{"type":"string"},"title":{"type":"string"}}}},
+  "guard_parts": {"type":"array","items":{"type":"object","required":["id","title"],"properties":{"id":{"type":"string"},"title":{"type":"string"}}}},
+  "claim_codes": {"type":"array","items":{"type":"object","required":["id","code","name","definition","test","present_when","absent_when","cannot_tell_when","related_faults","crosswalk","source"],
+    "properties":{"id":{"type":"string","pattern":"^QIA-F[0-9]+$"},"code":{"type":"string","pattern":"^F[0-9]+$"},"name":{"type":"string"},"definition":{"type":"string"},"test":{"type":"string"},"present_when":{"type":"string"},"absent_when":{"type":"string"},"cannot_tell_when":{"type":"string"},"related_faults":{"type":"array","items":{"type":"string","pattern":"^FLT-[0-9]{2}$"}},"crosswalk":{"$ref":"#/$defs/crosswalk"},"source":{"type":"string"}}}},
+  "faults": {"type":"array","items":{"type":"object","required":["id","number","family","name","definition","published_text","test","needs","evidence_kind","present_when","absent_when","cannot_tell_when","guards","crosswalk","source"],
+    "properties":{"id":{"type":"string","pattern":"^FLT-[0-9]{2}$"},"number":{"type":"integer","minimum":1},"family":{"enum":["I","II","III","IV","V","VI","VII","VIII"]},"name":{"type":"string"},"definition":{"type":"string"},"published_text":{"type":"array","items":{"type":"string"}},"test":{"type":"string"},"needs":{"type":"string"},"evidence_kind":{"enum":["released material","process record"]},"present_when":{"type":"string"},"absent_when":{"type":"string"},"cannot_tell_when":{"type":"string"},"guards":{"type":"array","items":{"type":"string","pattern":"^GRD-[0-9]{2}$"}},"crosswalk":{"$ref":"#/$defs/crosswalk"},"source":{"type":"string"}}}},
+  "guards": {"type":"array","items":{"type":"object","required":["id","number","part","name","published_text","addresses","test","applied_when","not_applied_when","cannot_tell_when","source"],
+    "properties":{"id":{"type":"string","pattern":"^GRD-[0-9]{2}$"},"number":{"type":"integer","minimum":1},"part":{"enum":["I","II","III","IV"]},"name":{"type":"string"},"published_text":{"type":"array","items":{"type":"string"}},"addresses":{"type":"array","items":{"type":"string","pattern":"^FLT-[0-9]{2}$"}},"test":{"type":"string"},"applied_when":{"type":"string"},"not_applied_when":{"type":"string"},"cannot_tell_when":{"type":"string"},"source":{"type":"string"}}}},
+  "recount_requirements": {"type":"array","items":{"type":"object","required":["id","name","text","guards"],"properties":{"id":{"type":"string","pattern":"^REQ-[0-9]{2}$"},"name":{"type":"string"},"text":{"type":"string"},"guards":{"type":"array","items":{"type":"string"}}}}}
+ }
+}
