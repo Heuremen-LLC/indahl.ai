@@ -1,13 +1,13 @@
 path,label,outcome,n,of,share,lo,hi,page,test,share_lo,share_hi
 /rows[0],"PurpleAir sensors near EPA monitors: monitors whose sensor misses the EPA targets, map reading",ABOVE,129,139,0.9281,0.8726,0.9605,AIRQ,"PurpleAir sensors near EPA monitors: monitors whose sensor misses the EPA targets, map reading",0.8726,0.9605
-/rows[1],Supported cycles that had stopped releasing,ABOVE,104,429,0.2424,0.1566,0.3378,SUPPORT,Supported cycles that had stopped releasing,0.1566,0.3378
+/rows[1],Supported cycles that had stopped releasing,ABOVE,103,429,0.2401,0.1547,0.337,SUPPORT,Supported cycles that had stopped releasing,0.1547,0.337
 /rows[2],Payroll: first estimate moved by more than the stated margin by the benchmarked value,ABOVE,25,120,0.2083,0.1453,0.2895,REVISE,Payroll: first estimate moved by more than the stated margin by the benchmarked value,0.1453,0.2895
-/rows[3],Products with at least one such cycle,ABOVE,42,227,0.185,0.1399,0.2406,SUPPORT,Products with at least one such cycle,0.1399,0.2406
+/rows[3],Products with at least one such cycle,ABOVE,41,227,0.1806,0.136,0.2358,SUPPORT,Products with at least one such cycle,0.136,0.2358
 /rows[4],"Federal Reserve projections: outcome outside the stated 70% range, this year",BELOW,6,41,0.1463,0.0256,0.275,FEDSEP,"Federal Reserve projections: outcome outside the stated 70% range, this year",0.0256,0.275
 /rows[5],"Federal Reserve projections: outcome outside the stated 70% range, next year",CONSISTENT,10,37,0.2703,0.0811,0.4872,FEDSEP,"Federal Reserve projections: outcome outside the stated 70% range, next year",0.0811,0.4872
 /rows[6],Payroll: first estimate moved by more than the stated margin by the third release,CONSISTENT,13,120,0.1083,0.0644,0.1766,REVISE,Payroll: first estimate moved by more than the stated margin by the third release,0.0644,0.1766
-/rows[7],"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",CONSISTENT,30,809,0.0371,0.0261,0.0524,HOSTS,"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",0.0261,0.0524
-/rows[8],Stated code links that are gone,CONSISTENT,65,1980,0.0329,0.0259,0.0418,LINKROT,Stated code links that are gone,0.0259,0.0418
+/rows[7],Stated code links that are gone,CONSISTENT,65,1980,0.0329,0.0259,0.0418,LINKROT,Stated code links that are gone,0.0259,0.0418
+/rows[8],"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",CONSISTENT,26,811,0.0321,0.022,0.0466,HOSTS,"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",0.022,0.0466
 /rows[9],SPF record against the 10-lookup limit,CONSISTENT,20,764,0.0262,0.017,0.0401,SECRECORDS,SPF record against the 10-lookup limit,0.017,0.0401
 /rows[10],Hospital price file: the linked file resolves to data,CONSISTENT,12,506,0.0237,0.0136,0.041,HPT,Hospital price file: the linked file resolves to data,0.0136,0.041
 /rows[11],Stopped records with no reason given,CONSISTENT,25,1661,0.0151,0.0102,0.0221,TRIALS,Stopped records with no reason given,0.0102,0.0221
@@ -18,12 +18,12 @@ path,label,outcome,n,of,share,lo,hi,page,test,share_lo,share_hi
 /rows[16],Withdrawn records that list participants enrolled,CONSISTENT,0,1094,0.0,0.0,0.0035,TRIALS,Withdrawn records that list participants enrolled,0.0,0.0035
 /rows[17],AILuminate results page against its own reports: disagreements,CONSISTENT,0,27,0.0,0.0,0.1246,AILUMINATE,AILuminate results page against its own reports: disagreements,0.0,0.1246
 /rows[18],AILuminate published scores that changed between reads,CONSISTENT,0,27,0.0,0.0,0.1246,AILUMINATE,AILuminate published scores that changed between reads,0.0,0.1246
-/rows[19],Open-weight models: weight files changed between passes,CONSISTENT,0,1028,0.0,0.0,0.0037,WEIGHTS,Open-weight models: weight files changed between passes,0.0,0.0037
+/rows[19],Open-weight models: weight files changed between passes,CONSISTENT,0,1027,0.0,0.0,0.0037,WEIGHTS,Open-weight models: weight files changed between passes,0.0,0.0037
 /rows[20],Hospital website: a cms-hpt.txt at the root,CANNOT_TELL,462,980,0.4714,0.4403,0.5027,HPT,Hospital website: a cms-hpt.txt at the root,0.4403,0.5027
 /rows[21],"PurpleAir sensors near EPA monitors: monitors whose sensor misses the EPA targets, humidity-corrected",CANNOT_TELL,70,139,0.5036,0.4215,0.5855,AIRQ,"PurpleAir sensors near EPA monitors: monitors whose sensor misses the EPA targets, humidity-corrected",0.4215,0.5855
 /rows[22],Results due against results posted: records with no results,CANNOT_TELL,4768,22197,0.2148,0.2095,0.2203,TRIALS,Results due against results posted: records with no results,0.2095,0.2203
 /rows[23],"Airlines whose scheduled minus flown time grew, 2026 against 2025 (count, no pooled rule)",CANNOT_TELL,5,13,0.3846,0.1771,0.6448,AIRLINE,"Airlines whose scheduled minus flown time grew, 2026 against 2025 (count, no pooled rule)",0.1771,0.6448
-/rows[24],HSTS preload header against its own requirements,CANNOT_TELL,21,144,0.1458,0.0974,0.2127,SECRECORDS,HSTS preload header against its own requirements,0.0974,0.2127
+/rows[24],HSTS preload header against its own requirements,CANNOT_TELL,19,144,0.1319,0.0861,0.1969,SECRECORDS,HSTS preload header against its own requirements,0.0861,0.1969
 /rows[25],Size in the name against the weights,CANNOT_TELL,12,135,0.0889,0.0516,0.1489,HFSIZE,Size in the name against the weights,0.0516,0.1489
 /rows[26],Datasets: stated license against the license file,CANNOT_TELL,0,24,0.0,0.0,0.138,HFLICENSE,Datasets: stated license against the license file,0.0,0.138
 /stacks/A stated number against its record[0],"PurpleAir sensors near EPA monitors: monitors whose sensor misses the EPA targets, map reading",ABOVE,129,139,0.9281,0.8726,0.9605,AIRQ,"PurpleAir sensors near EPA monitors: monitors whose sensor misses the EPA targets, map reading",0.8726,0.9605
@@ -33,10 +33,10 @@ path,label,outcome,n,of,share,lo,hi,page,test,share_lo,share_hi
 /stacks/A stated number against its record[4],Results due against results posted: records with no results,CANNOT_TELL,4768,22197,0.2148,0.2095,0.2203,TRIALS,Results due against results posted: records with no results,0.2095,0.2203
 /stacks/A stated number against its record[5],Payroll: first estimate moved by more than the stated margin by the benchmarked value,ABOVE,25,120,0.2083,0.1453,0.2895,REVISE,Payroll: first estimate moved by more than the stated margin by the benchmarked value,0.1453,0.2895
 /stacks/A stated number against its record[6],"Federal Reserve projections: outcome outside the stated 70% range, this year",BELOW,6,41,0.1463,0.0256,0.275,FEDSEP,"Federal Reserve projections: outcome outside the stated 70% range, this year",0.0256,0.275
-/stacks/A stated number against its record[7],HSTS preload header against its own requirements,CANNOT_TELL,21,144,0.1458,0.0974,0.2127,SECRECORDS,HSTS preload header against its own requirements,0.0974,0.2127
+/stacks/A stated number against its record[7],HSTS preload header against its own requirements,CANNOT_TELL,19,144,0.1319,0.0861,0.1969,SECRECORDS,HSTS preload header against its own requirements,0.0861,0.1969
 /stacks/A stated number against its record[8],Payroll: first estimate moved by more than the stated margin by the third release,CONSISTENT,13,120,0.1083,0.0644,0.1766,REVISE,Payroll: first estimate moved by more than the stated margin by the third release,0.0644,0.1766
 /stacks/A stated number against its record[9],Size in the name against the weights,CANNOT_TELL,12,135,0.0889,0.0516,0.1489,HFSIZE,Size in the name against the weights,0.0516,0.1489
-/stacks/A stated number against its record[10],"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",CONSISTENT,30,809,0.0371,0.0261,0.0524,HOSTS,"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",0.0261,0.0524
+/stacks/A stated number against its record[10],"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",CONSISTENT,26,811,0.0321,0.022,0.0466,HOSTS,"OpenRouter hosts: stated one-day uptime against our own 5-minute record, disagreements",0.022,0.0466
 /stacks/A stated number against its record[11],SPF record against the 10-lookup limit,CONSISTENT,20,764,0.0262,0.017,0.0401,SECRECORDS,SPF record against the 10-lookup limit,0.017,0.0401
 /stacks/A stated number against its record[12],Stopped records with no reason given,CONSISTENT,25,1661,0.0151,0.0102,0.0221,TRIALS,Stopped records with no reason given,0.0102,0.0221
 /stacks/A stated number against its record[13],Stated license against the repository license,CONSISTENT,7,704,0.0099,0.0048,0.0204,PKGLICENSE,Stated license against the repository license,0.0048,0.0204
@@ -44,10 +44,10 @@ path,label,outcome,n,of,share,lo,hi,page,test,share_lo,share_hi
 /stacks/A stated number against its record[15],Withdrawn records that list participants enrolled,CONSISTENT,0,1094,0.0,0.0,0.0035,TRIALS,Withdrawn records that list participants enrolled,0.0,0.0035
 /stacks/A stated number against its record[16],AILuminate results page against its own reports: disagreements,CONSISTENT,0,27,0.0,0.0,0.1246,AILUMINATE,AILuminate results page against its own reports: disagreements,0.0,0.1246
 /stacks/A stated number against its record[17],AILuminate published scores that changed between reads,CONSISTENT,0,27,0.0,0.0,0.1246,AILUMINATE,AILuminate published scores that changed between reads,0.0,0.1246
-/stacks/A stated number against its record[18],Open-weight models: weight files changed between passes,CONSISTENT,0,1028,0.0,0.0,0.0037,WEIGHTS,Open-weight models: weight files changed between passes,0.0,0.0037
+/stacks/A stated number against its record[18],Open-weight models: weight files changed between passes,CONSISTENT,0,1027,0.0,0.0,0.0037,WEIGHTS,Open-weight models: weight files changed between passes,0.0,0.0037
 /stacks/A stated number against its record[19],Datasets: stated license against the license file,CANNOT_TELL,0,24,0.0,0.0,0.138,HFLICENSE,Datasets: stated license against the license file,0.0,0.138
-/stacks/A stated date or window[0],Supported cycles that had stopped releasing,ABOVE,104,429,0.2424,0.1566,0.3378,SUPPORT,Supported cycles that had stopped releasing,0.1566,0.3378
-/stacks/A stated date or window[1],Products with at least one such cycle,ABOVE,42,227,0.185,0.1399,0.2406,SUPPORT,Products with at least one such cycle,0.1399,0.2406
+/stacks/A stated date or window[0],Supported cycles that had stopped releasing,ABOVE,103,429,0.2401,0.1547,0.337,SUPPORT,Supported cycles that had stopped releasing,0.1547,0.337
+/stacks/A stated date or window[1],Products with at least one such cycle,ABOVE,41,227,0.1806,0.136,0.2358,SUPPORT,Products with at least one such cycle,0.136,0.2358
 /stacks/A promised file or link[0],Hospital website: a cms-hpt.txt at the root,CANNOT_TELL,462,980,0.4714,0.4403,0.5027,HPT,Hospital website: a cms-hpt.txt at the root,0.4403,0.5027
 /stacks/A promised file or link[1],Stated code links that are gone,CONSISTENT,65,1980,0.0329,0.0259,0.0418,LINKROT,Stated code links that are gone,0.0259,0.0418
 /stacks/A promised file or link[2],Hospital price file: the linked file resolves to data,CONSISTENT,12,506,0.0237,0.0136,0.041,HPT,Hospital price file: the linked file resolves to data,0.0136,0.041

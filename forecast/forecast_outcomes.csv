@@ -1,13 +1,13 @@
 path,label,outcome,n,of,share,lo,hi,bin,lead,mean_stated,observed
-/cells[0],cells[0],ABOVE,479,,,1.44,4.33,0 to 5,under 12 hours,1.15,2.51
-/cells[1],cells[1],ABOVE,449,,,2.21,5.71,0 to 5,12 to 24 hours,0.88,3.56
-/cells[2],cells[2],ABOVE,457,,,3.91,8.21,0 to 5,24 to 48 hours,0.91,5.69
-/cells[3],cells[3],ABOVE,119,,,35.12,52.67,10 to 20,under 12 hours,14.2,43.7
-/cells[4],cells[4],ABOVE,104,,,32.35,50.95,10 to 20,12 to 24 hours,13.87,41.35
-/cells[5],cells[5],ABOVE,118,,,29.88,47.14,10 to 20,24 to 48 hours,14.18,38.14
-/cells[6],cells[6],ABOVE,45,,,52.07,78.64,30 to 40,under 12 hours,35.38,66.67
-/cells[7],cells[7],ABOVE,45,,,56.63,82.27,30 to 40,12 to 24 hours,34.82,71.11
-/cells[8],cells[8],ABOVE,62,,,47.25,70.98,30 to 40,24 to 48 hours,34.55,59.68
+/cells[0],cells[0],ABOVE,488,,,1.41,4.25,0 to 5,under 12 hours,1.15,2.46
+/cells[1],cells[1],ABOVE,459,,,2.16,5.59,0 to 5,12 to 24 hours,0.88,3.49
+/cells[2],cells[2],ABOVE,467,,,3.83,8.03,0 to 5,24 to 48 hours,0.91,5.57
+/cells[3],cells[3],ABOVE,121,,,34.5,51.88,10 to 20,under 12 hours,14.2,42.98
+/cells[4],cells[4],ABOVE,105,,,32.03,50.52,10 to 20,12 to 24 hours,13.89,40.95
+/cells[5],cells[5],ABOVE,120,,,29.35,46.42,10 to 20,24 to 48 hours,14.18,37.5
+/cells[6],cells[6],ABOVE,47,,,49.54,76.03,30 to 40,under 12 hours,35.19,63.83
+/cells[7],cells[7],ABOVE,46,,,55.19,80.92,30 to 40,12 to 24 hours,34.72,69.57
+/cells[8],cells[8],ABOVE,63,,,46.42,70.04,30 to 40,24 to 48 hours,34.56,58.73
 /cells[9],cells[9],ABOVE,36,,,81.86,98.46,50 to 60,under 12 hours,55.28,94.44
 /cells[10],cells[10],ABOVE,38,,,72.67,94.25,50 to 60,12 to 24 hours,53.89,86.84
 /cells[11],cells[11],ABOVE,47,,,69.86,91.11,50 to 60,24 to 48 hours,54.3,82.98

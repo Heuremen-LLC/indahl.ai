@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-11T23:02:59Z",
+ "built_utc": "2026-11-11T23:49:48Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 862,
+   "commit": "3496c4e6bf84b07fd055a496f0b561f3bcf4b8aa",
+   "files": 5730,
+   "id": "3496c4e6bf84",
+   "json": "/receipts/stamps/release_3496c4e6bf84.json",
+   "ledger_sha256": "1fba02b1c2227da0680e94a3d949773ce080eb6bf9516380806968a9da3bdcea",
+   "manifest_sha256": "1b98568c5f36e5e528775ca9828a14bc6df79418e12ce9547703766f7b519b3a",
+   "ots": "/receipts/stamps/release_3496c4e6bf84.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-11T23:05:21Z",
+   "sha256": "520d76c0c6035b16cecbd6622c3bcdce08fb9bc188086c4831a13513ef93f3e8",
+   "wayback": [],
+   "wayback_waiting": 853
+  },
   {
    "changed": 1140,
    "commit": "a631f8bb6d5265cd48dca35bc78bdd2a401dfc86",
@@ -11,11 +26,11 @@
    "ledger_sha256": "1fba02b1c2227da0680e94a3d949773ce080eb6bf9516380806968a9da3bdcea",
    "manifest_sha256": "dea1e489e1b22879fca52d3a0a804990301c89dc786b358704f139786fc88b69",
    "ots": "/receipts/stamps/release_a631f8bb6d52.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975487",
    "released_at": "2026-11-11T22:46:33Z",
    "sha256": "9aa7aac6bb147a8613918ae5f9bea3857a7fdf90b767f837d09e5ca3bc6d2045",
    "wayback": [],
-   "wayback_waiting": 1131
+   "wayback_waiting": 291
   },
   {
    "changed": 158,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-11T21:45:46Z",
    "sha256": "22fded5dc7e2bad57d2936862c6e81806735bbaa17d6c1923805b91af9170c41",
    "wayback": [],
-   "wayback_waiting": 51
+   "wayback_waiting": 50
   },
   {
    "changed": 730,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-11T21:31:50Z",
    "sha256": "12da3bfe43d8c06007d7f111db38c22deee79ebdd9153ac7f0353d1eca85c661",
    "wayback": [],
-   "wayback_waiting": 30
+   "wayback_waiting": 29
   },
   {
    "changed": 815,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-11T21:19:43Z",
    "sha256": "85fe779cdfaee30d9ea25c4642f75565dba67e96ce1200b47cbedb70e2fff8ff",
    "wayback": [],
-   "wayback_waiting": 34
+   "wayback_waiting": 28
   },
   {
    "changed": 901,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-11T20:18:32Z",
    "sha256": "4a0bf2915b8f479811ff9f468a37a6ddd9a4a34dcf9486a0675391b21449e2d1",
    "wayback": [],
-   "wayback_waiting": 3
+   "wayback_waiting": 2
   },
   {
    "changed": 138,
@@ -105,7 +120,7 @@
    "released_at": "2026-11-11T19:14:29Z",
    "sha256": "47483d4b553ca13eddbe3a82c2d9d9e89aefb3d36c922853784ac6cf9721a062",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 119,
@@ -3753,7 +3768,7 @@
      "url": "https://indahl.ai/weights"
     }
    ],
-   "wayback_waiting": 232
+   "wayback_waiting": 231
   }
  ],
  "site": "https://indahl.ai"

@@ -1,7 +1,7 @@
 path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,wilson_lo,wilson_hi,products_tested
-/all,all,ABOVE,,,0.2424,0.1566,0.3378,429,104,0.1566,0.3378,0.2043,0.2851,227
-/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.185,0.1399,0.2406,227,42,0.1399,0.2406,,,
-/product_level/Products where every tested supported cycle is unreleased,Products where every tested supported cycle is unreleased,CANNOT_TELL,,,0.0925,0.0613,0.1373,227,21,0.0613,0.1373,,,
+/all,all,ABOVE,,,0.2401,0.1547,0.337,429,103,0.1547,0.337,0.2021,0.2827,227
+/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.1806,0.136,0.2358,227,41,0.136,0.2358,,,
+/product_level/Products where every tested supported cycle is unreleased,Products where every tested supported cycle is unreleased,CANNOT_TELL,,,0.0881,0.0578,0.1322,227,20,0.0578,0.1322,,,
 /by_product/amazon-neptune,amazon-neptune,CANNOT_TELL,,,1.0,0.8513,1.0,22,22,0.8513,1.0,,,
 /by_product/jira-service-management,jira-service-management,CANNOT_TELL,,,0.875,0.5291,0.9776,8,7,0.5291,0.9776,,,
 /by_product/jira-software,jira-software,CANNOT_TELL,,,0.875,0.5291,0.9776,8,7,0.5291,0.9776,,,
@@ -26,7 +26,6 @@ path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,wilson_l
 /by_product/vmware-cloud-foundation,vmware-cloud-foundation,CANNOT_TELL,,,0.5,0.15,0.85,4,2,0.15,0.85,,,
 /by_product/apache-couchdb,apache-couchdb,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,,,
 /by_product/apache-lucene,apache-lucene,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,,,
-/by_product/bootstrap,bootstrap,CANNOT_TELL,,,1.0,0.2065,1.0,1,1,0.2065,1.0,,,
 /by_product/cachet,cachet,CANNOT_TELL,,,1.0,0.2065,1.0,1,1,0.2065,1.0,,,
 /by_product/checkmk,checkmk,CANNOT_TELL,,,1.0,0.2065,1.0,1,1,0.2065,1.0,,,
 /by_product/consul,consul,CANNOT_TELL,,,1.0,0.2065,1.0,1,1,0.2065,1.0,,,

@@ -18,4 +18,4 @@ path,label,outcome,n,of,share,lo,hi,vendor,expected_from_floor,episodes,rounds,d
 /vendors[16],Reddit,CANNOT_TELL,,,,,,Reddit,1.85,0,60,0,0,0,60
 /vendors[17],Linear,CANNOT_TELL,,,,,,Linear,1.88,0,61,0,0,0,61
 /vendors[18],Sentry,CANNOT_TELL,,,,,,Sentry,1.88,0,61,0,0,0,61
-/vendors[19],Notion,CANNOT_TELL,,,,,,Notion,1.88,0,61,0,0,1,60
+/vendors[19],Notion,CANNOT_TELL,,,,,,Notion,1.88,0,61,0,0,0,61
