@@ -1,7 +1,28 @@
 {
- "built_utc": "2026-11-12T12:30:50Z",
+ "built_utc": "2026-11-12T13:14:21Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 582,
+   "commit": "1d07f61b2f00fd5b91438ff086ebe937c825a8e2",
+   "files": 5771,
+   "id": "1d07f61b2f00",
+   "json": "/receipts/stamps/release_1d07f61b2f00.json",
+   "ledger_sha256": "788d2192ccb04828b274edc30f67b01d42b10f26ce350643e28e0017ca501d9c",
+   "manifest_sha256": "d33dd8de7dedc91f59cbb3794c60494adfaccf5a22a38d2b5f20d8bb32461888",
+   "ots": "/receipts/stamps/release_1d07f61b2f00.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-12T12:58:56Z",
+   "sha256": "ea85136a1657337eeee0f4f5ee856c4ee66e8c8d1f0f6b9668fe568d1dacbc76",
+   "wayback": [
+    {
+     "capture": "https://web.archive.org/web/20261112102825/https://indahl.ai/qia",
+     "timestamp": "20261112102825",
+     "url": "https://indahl.ai/qia"
+    }
+   ],
+   "wayback_waiting": 579
+  },
   {
    "changed": 184,
    "commit": "f59e5c9f683ff098c32df1c7a818d6dd3d96ef1b",
@@ -15,7 +36,7 @@
    "released_at": "2026-11-12T11:35:01Z",
    "sha256": "4e94492bbbe21596ae63506fc5df9d931093362ef3dae876f58073192cada8ec",
    "wayback": [],
-   "wayback_waiting": 181
+   "wayback_waiting": 46
   },
   {
    "changed": 154,
@@ -36,7 +57,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 42
+   "wayback_waiting": 7
   },
   {
    "changed": 919,
@@ -51,7 +72,7 @@
    "released_at": "2026-11-12T10:40:50Z",
    "sha256": "281ef7ef6a051c43e7cfd63adcb55fcef437b1098a93b429760487136c23606f",
    "wayback": [],
-   "wayback_waiting": 756
+   "wayback_waiting": 562
   },
   {
    "changed": 1259,
@@ -77,7 +98,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 841
+   "wayback_waiting": 636
   },
   {
    "changed": 441,
@@ -333,7 +354,7 @@
      "url": "https://indahl.ai/feeds.opml"
     }
    ],
-   "wayback_waiting": 21
+   "wayback_waiting": 20
   },
   {
    "changed": 348,
@@ -504,7 +525,7 @@
      "url": "https://indahl.ai/changelog.xml"
     }
    ],
-   "wayback_waiting": 12
+   "wayback_waiting": 11
   },
   {
    "changed": 1035,
@@ -519,7 +540,7 @@
    "released_at": "2026-11-12T02:35:01Z",
    "sha256": "52d7e135bfc1b877bc9696c3bd6311a965b21158b6ac4fd4a40bf32d5a547a6d",
    "wayback": [],
-   "wayback_waiting": 174
+   "wayback_waiting": 173
   },
   {
    "changed": 227,
@@ -966,7 +987,7 @@
      "url": "https://indahl.ai/pkglicense"
     }
    ],
-   "wayback_waiting": 403
+   "wayback_waiting": 402
   },
   {
    "changed": 872,
@@ -1307,7 +1328,7 @@
    "released_at": "2026-11-11T21:45:46Z",
    "sha256": "22fded5dc7e2bad57d2936862c6e81806735bbaa17d6c1923805b91af9170c41",
    "wayback": [],
-   "wayback_waiting": 6
+   "wayback_waiting": 5
   },
   {
    "changed": 730,
@@ -1322,7 +1343,7 @@
    "released_at": "2026-11-11T21:31:50Z",
    "sha256": "12da3bfe43d8c06007d7f111db38c22deee79ebdd9153ac7f0353d1eca85c661",
    "wayback": [],
-   "wayback_waiting": 4
+   "wayback_waiting": 1
   },
   {
    "changed": 815,

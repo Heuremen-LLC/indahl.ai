@@ -80,6 +80,7 @@ def _hlslot(path):
     if path == '/wiki' and globals().get('_WIKISLOT'): return _WIKISLOT
     if path == '/census/fidelity' and globals().get('_FIDSLOT'): return _FIDSLOT   # 11 Nov 2026: CENSUS FIDELITY is a one-time desk, its headline is built with the page (fidelity_index/build_page.py)
     if path == '/hermes/datapapers' and globals().get('_DPSLOT'): return _DPSLOT   # 12 Nov 2026: DATA PAPERS ships its headline built with the page from datapaper_index/summary.json
+    if path == '/record' and globals().get('_RECSLOT'): return _RECSLOT   # 12 Nov 2026: RECORD ships its headline built with the page (trackrecord/build_page.py)
     if path == '/petrol' and globals().get('_PETSLOT'): return _PETSLOT   # 12 Nov 2026: ATLAS PETROL ships its headline built with the page (petrol_index/build_page.py)
     if path == '/census/vintages' and globals().get('_VINSLOT'): return _VINSLOT   # 11 Nov 2026: CENSUS VINTAGES is a one-time desk, its headline is built with the page (census_index/census_vintages/build_page.py)
     if path == '/census/coverage' and globals().get('_COVSLOT'): return _COVSLOT   # 11 Nov 2026: CENSUS COVERAGE is a one-time desk, its headline is the one built with the page (census_coverage/build_page.py)
@@ -1163,6 +1164,18 @@ _AILUMINATEBODY = ('<h2>Do the published results stay what they say?</h2><p>MLCo
   '<div id="ailuminate-live" class="bench-live">Loading.</div><script src="/ailuminate/live.js" defer></script>'
   '<p class="meta">Named here and want to answer a row? <a href="/respond?u=ailuminate-all">Respond</a></p>'
   '<p>Source: <a href="https://mlcommons.org/ailuminate/safety/results/">mlcommons.org/ailuminate/safety/results/</a> and the public folder of Detailed Results it links. The page is checked against the reports: a disagreement is ABOVE when the lower end of the 95 percent interval is above 5 percent and CONSISTENT when the upper end is below 15 percent. Published scores kept: a system is changed when any of its 13 percentiles or its release month differs from the first value we stored. MLCommons states that the overall score weights all 12 categories equally. The table of overall against category percentiles sets each overall percentile beside the mean of its 12 category percentiles. <a href="https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/ailuminate/PLAN.md">Plan, notes and code</a>.</p>')
+# 12 Nov 2026: AILUMINATE drift tests F to J (ailuminate_index/PLAN_ADDENDUM_drift.md, committed 3f671fc before any second label), read from summary_drift.json at build. Ledger rows ailuminate.drift.F and .H.
+try:
+    _dr = _jsonld.load(open(os.path.join(HERE, '..', 'ailuminate_index', 'summary_drift.json'), encoding='utf-8')); _dt = _dr['tests']
+    _lab = list(_dt['F']['label_tuples'].keys())
+    _AILUMINATEBODY += ('<h2>Versions and the evaluator</h2><p>MLCommons labels every result with its benchmark version, prompt set and evaluator version. Its release notes say it will not change what a score means without changing the label, and that results under an earlier label are not comparable. '
+        'They also announce evaluator updates and margins of error for November and December under the current label.</p>'
+        '<p>Labels seen since our first read on 29 October: %s. Systems whose label changed: %d of %d, %s (upper end %s percent). Systems whose scores changed under an unchanged label: %d of %d, %s. '
+        'How scores move between labels, item by item, and whether results under an earlier label stay published: these return nothing until a second label appears, and then run on their own. '
+        'The tests were fixed and committed before any second label was read.</p>'
+        % (', '.join(_lab) or 'none', _dt['F']['n'], _dt['F']['of'], _dt['F']['outcome'], round(100 * _dt['F']['share_hi'], 1), _dt['H']['n'], _dt['H']['of'], _dt['H']['outcome']))
+except Exception as _dexc:
+    print('ailuminate drift section skipped:', _dexc)
 PAGES['/ailuminate'] = page('/ailuminate', "AILUMINATE | MLCommons Safety Results, Kept and Checked | Heuremen LLC", "AILUMINATE: the MLCommons AILuminate Safety results page against its own reports, and whether published scores stay as published.", _AILUMINATEBODY, hero_slim("AILUMINATE &middot; MLCommons Safety Results, Kept and Checked"))
 _FEED.append(('/ailuminate', "AILUMINATE : MLCommons Safety Results, Kept and Checked", "MLCommons AILuminate Safety results, kept and checked, live."))
 
@@ -1954,6 +1967,14 @@ PAGES['/hermes/datapapers'] = page('/hermes/datapapers', 'Data Papers: Published
                                    _dp_intro + _dp_body, hero_slim('Data Papers', 'Published datasets and the files their repositories serve'))
 _FEED.append(('/hermes/datapapers', 'HERMES: Data Papers, published datasets and their files', 'Papers in four data journals, each listed with the files its repository serves.'))
 
+# 12 Nov 2026 (Wayfinder: "go for all of it"): RECORD, what we recounted, what we found, and every public number of ours that changed after it went out.
+# Built by trackrecord/build_trackrecord.py + trackrecord/build_page.py (codes from the QIA List, never the ledger's default outcome label). Ledger row record.f4.share.
+_rp = _json.load(open(os.path.join(HERE, '..', 'trackrecord', 'record_page.json'), encoding='utf-8')); _RECSLOT = _rp['slot']
+shutil.copy(os.path.join(HERE, '..', 'trackrecord', 'record.json'), os.path.join(HERE, '..', 'cloudflare-workers', 'heuremen-door', 'public', 'record.json'))
+PAGES['/record'] = page('/record', 'Record: What We Recounted and What We Corrected | Heuremen LLC', 'Every published claim Heuremen LLC recounted, with the fault codes and the finding, and every public number of ours that was corrected after it went out. An open recount record for benchmark and hardware verification.',
+                        _rp['body'], hero_slim('Record', 'What we recounted, what we found, and what we corrected'))
+_FEED.append(('/record', 'RECORD: what we recounted and what we corrected', 'Every recount with its codes and finding, and every correction of our own numbers.'))
+
 # 25 Oct 2026: the worker's policy for indahl.ai pages is style-src 'self' (no inline <style>), so matrix styles live in style.css,
 # not in the page bodies. Any <style> block found in a page is moved here and stripped from the page.
 _MOVED = []
@@ -2274,8 +2295,8 @@ _DIVS = [('/qia', 'QIA', 'Quantum Idle Audit', 'IBM&rsquo;s published calibratio
          ('/census', 'CENSUS', 'Official Statistics', 'What the Census Bureau states about the uncertainty of its first estimates, against the revisions that followed.', _deskline('/census'))]
 _cards = ''.join(f'<div class="hdiv"><h2><a href="{h}">{n}</a></h2><p class="hsub">{full}</p><p class="hwhat">{what}</p><p class="hdesks">{desks}</p></div>' for h, n, full, what, desks in _DIVS)
 PAGES['/'] = page('/', 'Heuremen LLC',
- 'Heuremen LLC: Quantum Idle Audit, Inorganic Research & Intelligence Systems, OY Learning Research, ATLAS and HERMES.',
- '<section class="hdivs">' + _cards + '</section><section class="hmore"><a href="/stack">STACK &middot; Every test, side by side</a><a href="/api">API &middot; Data and MCP</a><a href="https://github.com/Heuremen-LLC/indahl.ai">Plans, code and trend history &middot; GitHub</a><a href="https://huggingface.co/indahl">Datasets and models &middot; Hugging Face</a></section>',
+ 'Heuremen LLC recounts published claims about AI benchmarks, quantum hardware and public data from the material released with them, with receipts anyone can rerun. Open benchmark verification and an open record of every correction.',
+ '<section class="hdivs">' + _cards + '</section><section class="hmore"><a href="/record">RECORD &middot; What we recounted and corrected</a><a href="/stack">STACK &middot; Every test, side by side</a><a href="/api">API &middot; Data and MCP</a><a href="https://github.com/Heuremen-LLC/indahl.ai">Plans, code and trend history &middot; GitHub</a><a href="https://huggingface.co/indahl">Datasets and models &middot; Hugging Face</a></section>',
  hero_slim('Heuremen LLC'))
 
 # 29 Oct 2026 (his word): HERMES is the menu of everything. The old SAD material is the MODEL desk at /hermes/model.
@@ -2694,6 +2715,10 @@ def main():
            "Language-model evaluation studies are recounted from their own released files (IRIS). University AI policy documents are indexed against their own published numbers (OY). "
            "Built infrastructure is mapped from public data, with a source for every dot (ATLAS). Vendor statements about AI hardware are held against published MLPerf® results "
            "(the MODEL desk of HERMES). Every live desk is listed below with one line. Every row has a source. Data downloads are free.", '',
+           '## Recount record and verification',
+           '- [RECORD](https://indahl.ai/record): every published claim we recounted, with fault codes and the finding, and every public number of ours corrected after it went out. Open benchmark and hardware verification with receipts.',
+           '- [Corrections](https://indahl.ai/corrections): each catch and fix, with what was wrong, what it is now and who caught it.',
+           '- [Key](https://indahl.ai/qia/key): the claim-level fault codes F1 to F7 used in every recount.', '',
            '## API and MCP',
            '- [MCP server](https://indahl.ai/mcp): read-only tools over every live desk, for Claude and other agents. Add it as a remote MCP server at https://indahl.ai/mcp.',
            '- [REST API](https://indahl.ai/api): the same tools as JSON at /api/v1, with an OpenAPI file at /api/openapi.json. Retrieval and answering are permitted, training is not.', '',

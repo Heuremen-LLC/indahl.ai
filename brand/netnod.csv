@@ -1,3 +1,3 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-Netnod,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,nts.netnod.se,Its statement,,,,NOTHING RETURNED,,12 Nov 12:50,
-Netnod,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,gbg1.ntp.netnod.se,Its statement,stated bound 0.03 ms,"offset 2.14 ms, path half-delay 58.65 ms",,CANNOT TELL,,12 Nov 12:50,
+Netnod,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,nts.netnod.se,Its statement,,,,NOTHING RETURNED,,12 Nov 13:43,
+Netnod,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,gbg1.ntp.netnod.se,Its statement,stated bound 0.03 ms,"offset 2.32 ms, path half-delay 58.72 ms",,CANNOT TELL,,12 Nov 13:43,

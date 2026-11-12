@@ -1031,12 +1031,6 @@
 "trials"
 ]
 ],
-"shopify": [
-"Shopify",
-[
-"secrecords"
-]
-],
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": [
 "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
 [
@@ -6684,13 +6678,6 @@
 "kword": "company",
 "name": "Shire",
 "url": "/brand/shire"
-},
-"shopify": {
-"feed": true,
-"kind": "company",
-"kword": "company",
-"name": "Shopify",
-"url": "/brand/shopify"
 },
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": {
 "feed": true,

@@ -6,6 +6,8 @@
 /r/abs.measure2_ratio	2026-10-25
 /r/abs.packed_far	2026-10-25
 /r/abs.rigetti_shift	2026-10-22
+/r/ailuminate.drift.F	2026-11-12
+/r/ailuminate.drift.H	2026-11-12
 /r/airq.w2026.corrected	2026-11-10
 /r/airq.w2026.corrected.other_tie	2026-11-10
 /r/airq.w2026.map.other_tie	2026-11-10
@@ -2925,6 +2927,7 @@
 /r/rank.list.nj_middle	2026-11-10
 /r/rank.list.nlac	2026-11-10
 /r/rank.list.nu	2026-11-10
+/r/record.f4.share	2026-11-12
 /r/reproduce.kits	2026-11-10
 /r/restart.vs_none	2026-10-22
 /r/revise.bench.years	2026-11-10
