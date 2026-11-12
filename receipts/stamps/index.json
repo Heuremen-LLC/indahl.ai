@@ -1,7 +1,28 @@
 {
- "built_utc": "2026-11-12T14:22:27Z",
+ "built_utc": "2026-11-12T14:47:15Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 140,
+   "commit": "429713c5f77df37dade666abd763c786f5d4e03e",
+   "files": 5789,
+   "id": "429713c5f77d",
+   "json": "/receipts/stamps/release_429713c5f77d.json",
+   "ledger_sha256": "822ccf516f77db89c7c86e16b72838caac91964d8b1b0d74e87727ba308d4d64",
+   "manifest_sha256": "83b7b771cc16d277f8970c6ad7c04733a2f7e988f2a886576eb9d01bbff1f797",
+   "ots": "/receipts/stamps/release_429713c5f77d.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-12T14:31:49Z",
+   "sha256": "c884f63159a52e532c75fd121363c69f49213a741f1ef1973aa6fe714795a05c",
+   "wayback": [
+    {
+     "capture": "https://web.archive.org/web/20261112102753/https://indahl.ai/",
+     "timestamp": "20261112102753",
+     "url": "https://indahl.ai/"
+    }
+   ],
+   "wayback_waiting": 137
+  },
   {
    "changed": 322,
    "commit": "449ef312e5a3f78a4c8c3fc3a89ec1e4c7ef9ca2",
@@ -21,7 +42,7 @@
      "url": "https://indahl.ai/"
     }
    ],
-   "wayback_waiting": 318
+   "wayback_waiting": 202
   },
   {
    "changed": 239,
@@ -42,7 +63,7 @@
      "url": "https://indahl.ai/"
     }
    ],
-   "wayback_waiting": 98
+   "wayback_waiting": 82
   },
   {
    "changed": 582,
@@ -53,7 +74,7 @@
    "ledger_sha256": "788d2192ccb04828b274edc30f67b01d42b10f26ce350643e28e0017ca501d9c",
    "manifest_sha256": "d33dd8de7dedc91f59cbb3794c60494adfaccf5a22a38d2b5f20d8bb32461888",
    "ots": "/receipts/stamps/release_1d07f61b2f00.json.ots",
-   "ots_status": "pending",
+   "ots_status": "bitcoin 975557",
    "released_at": "2026-11-12T12:58:56Z",
    "sha256": "ea85136a1657337eeee0f4f5ee856c4ee66e8c8d1f0f6b9668fe568d1dacbc76",
    "wayback": [
@@ -63,7 +84,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 237
+   "wayback_waiting": 235
   },
   {
    "changed": 184,
@@ -99,7 +120,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 3
+   "wayback_waiting": 2
   },
   {
    "changed": 919,

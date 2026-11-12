@@ -144,7 +144,7 @@ path,label,outcome,n,of,share,lo,hi,label_reading,year_blocks,band,lo_stated,hi_
 /warnings/years[18]/initial_lead_min,initial_lead_min,,,,,7.7,10.47,,,,,,,,,,,,,,,9.11,,,,,,,,
 /warnings/years[19]/pod,pod,CANNOT_TELL,,,,0.2632,0.8397,,,,,,,,,,,,,,,0.6508,0.72,,,,,,,
 /warnings/years[19]/lead_min,lead_min,BELOW,,,,3.14,11.0,,,,,,,,,,,,,,,8.37,13.0,,,,,,,
-/warnings/years[19]/far,far,CANNOT_TELL,,,,0.6406,0.8987,,,,,,,,,,,,,,,0.7419,0.71,,,,,,,
+/warnings/years[19]/far,far,CANNOT_TELL,,,,0.6397,0.9017,,,,,,,,,,,,,,,0.744,0.71,,,,,,,
 /warnings/years[19]/initial_lead_min,initial_lead_min,,,,,3.09,10.95,,,,,,,,,,,,,,,8.37,,,,,,,,
 /warnings/polygon_end_floor/pod,pod,,,,,0.3401,0.3548,,,,,,,,,,,,,,,0.3473,0.72,,,,,,,
 /warnings/polygon_end_floor/lead_min,lead_min,,,,,2.52,2.76,,,,,,,,,,,,,,,2.64,13.0,,,,,,,
