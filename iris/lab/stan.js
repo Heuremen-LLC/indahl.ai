@@ -28,10 +28,33 @@
     var tb = h('tbody'); rows.forEach(function (r) { var x = h('tr'); r.forEach(function (c) { x.appendChild(h('td', c)); }); tb.appendChild(x); }); t.appendChild(tb);
     var w = h('div', null, 'tablewrap'); w.appendChild(t); return w;
   }
+  var DESK = { sagar: 'SAGAR, gravitational-wave papers', brands: 'BRANDS, papers by authors at named companies', quant: 'Quant desk' };
+  var MACH = { arm: 'Armature GPU', mac: 'Mac seat' };
+  function drawLive(d) {
+    box.appendChild(h('h3', 'STAN A, full text'));
+    var A = d.stan_a;
+    if (A) box.appendChild(h('p', 'The teacher route is ' + A.stage + '. ' + A.cells_passed + ' of ' + A.cells + ' teacher-code cells passed the keep line written before the run.'));
+    var E = d.stan_e;
+    if (E) {
+      box.appendChild(h('h3', 'STAN-E, errata drafted by local models'));
+      box.appendChild(h('p', 'Each model is graded against findings that two independent readers confirmed. Confirmed papers so far: ' + E.verified_positive_papers + '. A hit is a confirmed finding the model also drafted.', 'meta'));
+      if (E.runs && E.runs.length) box.appendChild(table(['Run', 'Papers seen', 'Papers flagged', 'Confirmed papers seen', 'Hits', 'Recall, 95% interval', 'Unreadable replies'],
+        E.runs.map(function (r) { return [r.model, r.papers_seen, r.papers_flagged, r.verified_positive_papers_seen, r.hits, iv(r.recall_wilson95), r.parse_fail]; })));
+      if (E.running_now && E.running_now.length) box.appendChild(h('p', 'Running now: ' + E.running_now.map(function (j) { return j.model + ' on the ' + MACH[j.machine]; }).join(', ') + '.'));
+    }
+    var P2 = d.pipelines;
+    if (P2) {
+      box.appendChild(h('h3', 'Where the confirmed findings come from'));
+      Object.keys(P2).forEach(function (k) { var x = P2[k]; box.appendChild(h('p', (DESK[k] || k) + ': ' + x.findings_confirmed + ' findings confirmed, ' + x.batches_merged + ' batches merged, ' + x.queue_left + ' papers still queued.')); });
+    }
+    box.appendChild(h('p', 'Feed written ' + utc(d.updated) + ' (' + ago(d.updated) + '). Updated again every minute.', 'meta'));
+  }
   function draw(d) {
     box.textContent = '';
     if (!d || !d.stage) { box.appendChild(h('p', 'The live feed has not been written yet.')); return; }
-    box.appendChild(h('p', 'Feed written ' + utc(d.updated) + ' (' + ago(d.updated) + '). This section reads it again every minute.', 'meta'));
+    drawLive(d);
+    box.appendChild(h('h3', 'The closed abstract lane'));
+    box.appendChild(h('p', 'The record of the first STAN run, on titles and abstracts, stays below. Its last stage was: ' + d.stage + '.', 'meta'));
     var si = STAGES.indexOf(d.stage); if (si < 0) si = STAGES.length;
     box.appendChild(h('h3', 'Where the run is'));
     box.appendChild(h('p', STAGE_TEXT[d.stage] || ''));
