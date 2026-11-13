@@ -21,6 +21,13 @@ Built by build_bundle.py from the plugins beside it; the parts and their version
 - cannot-tell 1.0.0
 - both 1.0.0
 - outside-ruler 1.0.0
+- number-check 1.0.0
+- quote-check 1.0.0
+- source-check 1.0.0
+- controls 1.0.0
+- slack 1.0.0
+- correct 1.0.0
+- clause 1.0.0
 
 ## Services this bundle contacts
 

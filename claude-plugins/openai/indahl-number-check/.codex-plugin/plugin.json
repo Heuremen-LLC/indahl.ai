@@ -1,0 +1,40 @@
+{
+  "name": "indahl-number-check",
+  "version": "1.0.0",
+  "description": "Check every number in a report, memo, deck, dashboard or another skill's output against its source: each figure traced, then marked HELD, MOVED, NO_SOURCE or CANNOT_TELL with the source line beside it. Use after any research, finance, analytics or business-report skill, or before sending anything with numbers in it. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "verification",
+    "numbers",
+    "reports",
+    "finance",
+    "receipts"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Number Check",
+    "shortDescription": "Trace every figure",
+    "longDescription": "Check every number in a report, memo, deck, dashboard or another skill's output against its source: each figure traced, then marked HELD, MOVED, NO_SOURCE or CANNOT_TELL with the source line beside it. Use after any research, finance, analytics or business-report skill, or before sending anything with numbers in it. Nothing is sent outside your session.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Check every number in this report against its source.",
+      "Run number check on this.",
+      "Show number check on an example."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

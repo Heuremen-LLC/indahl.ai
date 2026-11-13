@@ -8,7 +8,7 @@ Never edit openai/ by hand.   python3 build_openai.py"""
 import json, os, re, shutil, urllib.request, zipfile
 H = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(H, 'plugins'); O = os.path.join(H, 'openai')
 ICONS = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door/public/icons')
-ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler']
+ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'slack', 'correct', 'clause']
 SUB = {   # subtitle (30 characters or fewer) and three starter prompts per listing
  'indahl': ('Stated vs. delivered, measured', ['What does indahl.ai measure?', "Is IBM's published T1 for ibm_kingston current?", 'Check this paper against the Standards.']),
  'indahl-data': ('Query every indahl.ai desk', ['List the indahl.ai divisions.', 'Do top Hugging Face licenses match their files?', 'Show every live test side by side.']),
@@ -23,12 +23,19 @@ SUB = {   # subtitle (30 characters or fewer) and three starter prompts per list
  'cannot-tell': ("Say can't-tell, usefully", ["Is this claim right, or can't we tell yet?", 'Apply cannot tell to this.', 'Show cannot tell on an example.']),
  'both': ('Keep two explanations alive', ['Hold both explanations and tell me what separates them.', 'Apply both to this.', 'Show both on an example.']),
  'outside-ruler': ('Referee it before it ships', ['Referee this draft before I publish it.', 'Apply outside ruler to this.', 'Show outside ruler on an example.']),
+ 'number-check': ('Trace every figure', ['Check every number in this report against its source.', 'Run number check on this.', 'Show number check on an example.']),
+ 'quote-check': ('Every quote, verbatim', ['Check every quote in this draft against its source.', 'Run quote check on this.', 'Show quote check on an example.']),
+ 'source-check': ('Do the citations say it?', ['Check that every citation in this exists and says what is claimed.', 'Run source check on this.', 'Show source check on an example.']),
+ 'controls': ('Can your test actually fail?', ['Audit the controls of this study before we run it.', 'Run controls on this.', 'Show controls on an example.']),
+ 'slack': ('How far before it breaks?', ['How much slack does this prediction have?', 'Run slack on this.', 'Show slack on an example.']),
+ 'correct': ('Fix it beside, not over', ['Log this correction properly.', 'Run correct on this.', 'Show correct on an example.']),
+ 'clause': ('The sentence reviewers catch', ['Check the claims in this results paragraph.', 'Run clause on this.', 'Show clause on an example.']),
  'readcheck': ('Check blocks for readings', ['Make a check block for this reading.', 'Verify the check block in this folder.', 'List staged readings without a check block.']),
 }
 CAT = 'Education & Research'
 
 def listing_name(p):
-    return 'Indahl' if p == 'indahl' else ('Indahl ' + {'indahl-data': 'Data', 'qia-calibration': 'QIA Calibration', 'darkwave-correction': 'Darkwave', 'eval-check': 'Eval Check', 'cannot-tell': 'Cannot Tell', 'outside-ruler': 'Outside Ruler'}.get(p, p.replace('-', ' ').title()))
+    return 'Indahl' if p == 'indahl' else ('Indahl ' + {'indahl-data': 'Data', 'qia-calibration': 'QIA Calibration', 'darkwave-correction': 'Darkwave', 'eval-check': 'Eval Check', 'cannot-tell': 'Cannot Tell', 'outside-ruler': 'Outside Ruler', 'number-check': 'Number Check', 'quote-check': 'Quote Check', 'source-check': 'Source Check'}.get(p, p.replace('-', ' ').title()))
 
 def build(p):
     src = os.path.join(P, p); m = json.load(open(os.path.join(src, '.claude-plugin', 'plugin.json')))

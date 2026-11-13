@@ -1,0 +1,20 @@
+{
+  "name": "indahl-controls",
+  "version": "1.0.0",
+  "description": "Audit a study's, benchmark's or check's positive and negative controls before it runs: was each control chosen independently of the value the rule reads, can the rule fire on it at all, and is the hardest known positive reachable under the rule's own limits. Returns a control table and READY, FIX_CONTROLS or CANNOT_TELL. Use when designing an experiment, an eval, a detector or any test whose silence will be read as a result. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "experiment-design",
+    "controls",
+    "evaluation",
+    "research",
+    "preregistration"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

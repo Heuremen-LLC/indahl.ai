@@ -128,6 +128,62 @@
       "version": "1.0.0",
       "category": "research",
       "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-number-check",
+      "source": "./src/number-check",
+      "description": "Check every number in a report, memo, deck, dashboard or another skill's output against its source: each figure traced, then marked HELD, MOVED, NO_SOURCE or CANNOT_TELL with the source line beside it",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-quote-check",
+      "source": "./src/quote-check",
+      "description": "Check every quotation in a draft, article, report or another skill's output against its source, word for word: VERBATIM, ALTERED, PARAPHRASE_IN_QUOTES, MISATTRIBUTED, NOT_FOUND or CANNOT_TELL, with th",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-source-check",
+      "source": "./src/source-check",
+      "description": "Check every citation, reference or link in a paper, report, answer or another skill's output: does it exist, does it say what the text claims, which version was read. Marks each SUPPORTS, PARTIAL, CON",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-controls",
+      "source": "./src/controls",
+      "description": "Audit a study's, benchmark's or check's positive and negative controls before it runs: was each control chosen independently of the value the rule reads, can the rule fire on it at all, and is the har",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-slack",
+      "source": "./src/slack",
+      "description": "For a sharp prediction, design or result, find how far its key parameter can move before the conclusion fails, and compare that slack with the parameter's own stated uncertainty. Returns ROBUST, FRAGI",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-correct",
+      "source": "./src/correct",
+      "description": "Record a correction beside the original, never over it: what was wrong, who caught it, when, the evidence, the corrected text, and whether every place that cited the original was reached. Produces a c",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-clause",
+      "source": "./src/clause",
+      "description": "Check the sentences that report a result for wording that claims more than the comparison showed: an item that is wrong on its own described as if the paired comparison moved, a CONSISTENT reported as",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
     }
   ]
 }
