@@ -7729,7 +7729,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 551,
+"every_min": 552,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7747,7 +7747,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 551,
+"every_min": 552,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7801,7 +7801,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 551,
+"every_min": 552,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
