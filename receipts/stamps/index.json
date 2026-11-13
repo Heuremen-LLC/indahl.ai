@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-13T14:29:15Z",
+ "built_utc": "2026-11-13T14:35:58Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 120,
+   "commit": "4b64f0a84a48cf8ef266c362bdfaa5c9f328c113",
+   "files": 5925,
+   "id": "4b64f0a84a48",
+   "json": "/receipts/stamps/release_4b64f0a84a48.json",
+   "ledger_sha256": "8d8a0c5bd65eec1c9bfab277b2da736888c2f78080161350a2471418c42ae509",
+   "manifest_sha256": "b314d1721fccee0d0bc3512ca17cfa578fef4c2d5e9d00dcaf74fa5742980f50",
+   "ots": "/receipts/stamps/release_4b64f0a84a48.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-13T14:35:57Z",
+   "sha256": "7a694deba45c258f647d1d632c6772dae4a89953a741354a0e63d21ce4f10c3d",
+   "wayback": [],
+   "wayback_waiting": 118
+  },
   {
    "changed": 184,
    "commit": "1509897b8ba47304fca9e1a4cefdba434e6027d7",
@@ -14,8 +29,84 @@
    "ots_status": "pending",
    "released_at": "2026-11-13T14:29:12Z",
    "sha256": "f84ea5d25c34660e43744813c2552de37c2c7bd9ba89ff4fb8798092a760bbaf",
-   "wayback": [],
-   "wayback_waiting": 182
+   "wayback": [
+    {
+     "capture": "https://web.archive.org/web/20261113054557/https://indahl.ai/iris",
+     "timestamp": "20261113054557",
+     "url": "https://indahl.ai/iris"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113054632/https://indahl.ai/oy",
+     "timestamp": "20261113054632",
+     "url": "https://indahl.ai/oy"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113054709/https://indahl.ai/atlas",
+     "timestamp": "20261113054709",
+     "url": "https://indahl.ai/atlas"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113054739/https://indahl.ai/hermes",
+     "timestamp": "20261113054739",
+     "url": "https://indahl.ai/hermes"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113054812/https://indahl.ai/tape",
+     "timestamp": "20261113054812",
+     "url": "https://indahl.ai/tape"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055008/https://indahl.ai/airline",
+     "timestamp": "20261113055008",
+     "url": "https://indahl.ai/airline"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055039/https://indahl.ai/airq",
+     "timestamp": "20261113055039",
+     "url": "https://indahl.ai/airq"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055110/https://indahl.ai/arxivdrift",
+     "timestamp": "20261113055110",
+     "url": "https://indahl.ai/arxivdrift"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055312/https://indahl.ai/cada",
+     "timestamp": "20261113055312",
+     "url": "https://indahl.ai/cada"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055344/https://indahl.ai/cadence",
+     "timestamp": "20261113055344",
+     "url": "https://indahl.ai/cadence"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113090508/https://indahl.ai/changelog",
+     "timestamp": "20261113090508",
+     "url": "https://indahl.ai/changelog"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055547/https://indahl.ai/cone",
+     "timestamp": "20261113055547",
+     "url": "https://indahl.ai/cone"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055652/https://indahl.ai/flu",
+     "timestamp": "20261113055652",
+     "url": "https://indahl.ai/flu"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055725/https://indahl.ai/forecast",
+     "timestamp": "20261113055725",
+     "url": "https://indahl.ai/forecast"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261113055756/https://indahl.ai/forecasters",
+     "timestamp": "20261113055756",
+     "url": "https://indahl.ai/forecasters"
+    }
+   ],
+   "wayback_waiting": 67
   },
   {
    "changed": 858,
@@ -30,7 +121,7 @@
    "released_at": "2026-11-13T14:13:30Z",
    "sha256": "bbe02d71e655215af4717d749aa2202826823b24bdf1f6a75e004a2c64784149",
    "wayback": [],
-   "wayback_waiting": 746
+   "wayback_waiting": 745
   },
   {
    "changed": 5026,
