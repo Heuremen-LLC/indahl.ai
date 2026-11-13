@@ -7451,7 +7451,7 @@
 "campus": {
 "div": "oy",
 "every": "checked about every 3 hours",
-"every_min": 151,
+"every_min": 150,
 "mode": "outcome",
 "name": "CAMPUS",
 "src": "rider",
@@ -7487,7 +7487,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3765,
+"every_min": 3760,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7588,7 +7588,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3639,
+"every_min": 3635,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7729,7 +7729,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 551,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7747,7 +7747,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 551,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7801,7 +7801,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 552,
+"every_min": 551,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",

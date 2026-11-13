@@ -154,12 +154,13 @@ def page(path, title, desc, body, wide_hero=None):
 <a class="brand" href="/">{MARK}<span>Heuremen LLC</span></a>
 <nav class="links">{nav}</nav>
 </div></header>
+<div class="stdbar"><div class="wrap"><a href="/standard"><b>The standard we hold ourselves to:</b> Faults and Guards 2.0, open to read and cite &rarr;</a></div></div>
 {hero}
 <main class="wrap">{_hlslot(path)}
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/standard">Standard</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
@@ -2058,6 +2059,7 @@ CSS += '\n'.join(_MOVED) + """
 """
 # 25 Oct 2026 (his word): smaller type and tighter spacing sitewide; these rules come last so they win.
 CSS += """
+.stdbar{background:var(--lit);color:var(--cave);font-size:15px;line-height:1.35;padding:7px 0}.stdbar a{color:var(--cave);text-decoration:none;display:block}.stdbar a:hover{text-decoration:underline}.stdbar b{font-weight:700}
 .hero.slim{padding:16px 0 14px}.hero.slim h1{font-size:clamp(22px,2.4vw,28px)}.hero.slim .sub{font-size:14px;margin-top:4px}
 .mtx{font-size:13.5px;line-height:1.4}.mtx th{font-size:10.5px;letter-spacing:.06em;padding:6px 8px}.mtx td{padding:6px 8px}
 /* 29 Oct 2026 (his word): home headlines stacked like data, the number and one line, the rest opens on hover */
