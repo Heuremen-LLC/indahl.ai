@@ -7500,7 +7500,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3745,
+"every_min": 3747,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7601,7 +7601,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3620,
+"every_min": 3622,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7686,7 +7686,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 141,
+"every_min": 142,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -7695,7 +7695,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 599,
+"every_min": 600,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7742,7 +7742,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 549,
+"every_min": 550,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7760,7 +7760,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 549,
+"every_min": 550,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7814,7 +7814,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 549,
+"every_min": 550,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
