@@ -486,11 +486,11 @@ path,label,outcome,n,of,share,lo,hi,inside,above,below,n_wy,k_wy,reason,median_w
 /notable[33],notable[33],CANNOT_TELL,,,,,,,,,,,NO_INTERVAL_FORMABLE,,,,,,,,,,,,,,,,powell,,,10,latest measured month,2025-12,2026-10,3525.62,3489.27,,3531.9,6.28,,,,,,
 /notable[34],notable[34],CANNOT_TELL,,,,,,,,,,,NO_INTERVAL_FORMABLE,,,,,,,,,,,,,,,,powell,,,11,latest measured month,2025-11,2026-10,3538.72,3497.37,,3531.9,-6.82,,,,,,
 /notable[35],notable[35],CONSISTENT,,,,,,,,,,,,,,,,,,,,,,,,,,,powell,,,12,latest measured month,2025-10,2026-10,3537.26,3488.49,3610.87,3531.9,-5.36,,,,,,
-/usgs_revisions/gauges[0],gauges[0],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09379900,62614,148,0,0,0.1 ft
-/usgs_revisions/gauges[1],gauges[1],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09380000,00060,138,0,0,1 percent
-/usgs_revisions/gauges[2],gauges[2],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09402500,00060,267,0,0,1 percent
-/usgs_revisions/gauges[3],gauges[3],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09404200,00060,259,0,0,1 percent
-/usgs_revisions/gauges[4],gauges[4],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09415000,00060,100,0,0,1 percent
-/usgs_revisions/gauges[5],gauges[5],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09180500,00060,163,0,0,1 percent
-/usgs_revisions/gauges[6],gauges[6],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09315000,00060,301,0,0,1 percent
-/usgs_revisions/gauges[7],gauges[7],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09379500,00060,111,0,0,1 percent
+/usgs_revisions/gauges[0],gauges[0],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09379900,62614,149,0,0,0.1 ft
+/usgs_revisions/gauges[1],gauges[1],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09380000,00060,139,0,0,1 percent
+/usgs_revisions/gauges[2],gauges[2],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09402500,00060,268,0,0,1 percent
+/usgs_revisions/gauges[3],gauges[3],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09404200,00060,260,0,0,1 percent
+/usgs_revisions/gauges[4],gauges[4],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09415000,00060,101,0,0,1 percent
+/usgs_revisions/gauges[5],gauges[5],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09180500,00060,164,0,0,1 percent
+/usgs_revisions/gauges[6],gauges[6],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09315000,00060,302,0,0,1 percent
+/usgs_revisions/gauges[7],gauges[7],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09379500,00060,112,0,0,1 percent
