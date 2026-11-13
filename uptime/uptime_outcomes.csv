@@ -18,4 +18,4 @@ path,label,outcome,n,of,share,lo,hi,vendor,expected_from_floor,status_unread,epi
 /vendors[16],Reddit,CANNOT_TELL,,,,,,Reddit,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[17],Linear,CANNOT_TELL,,,,,,Linear,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[18],Sentry,CANNOT_TELL,,,,,,Sentry,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
-/vendors[19],Notion,CANNOT_TELL,,,,,,Notion,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
+/vendors[19],Notion,CANNOT_TELL,,,,,,Notion,1.86,0,0,60,0,0,1,59,TOO_WIDE_TO_RESOLVE

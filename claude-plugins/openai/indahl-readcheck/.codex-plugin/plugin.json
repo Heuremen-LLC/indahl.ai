@@ -1,0 +1,40 @@
+{
+  "name": "indahl-readcheck",
+  "version": "1.1.0",
+  "description": "Refuse a git commit that adds a reading (results, outcomes, readings files) without a complete check block keyed to the Heuremen LLC Standards recount requirements REQ-01 to REQ-13.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "reproducibility",
+    "git",
+    "hooks",
+    "standards"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Readcheck",
+    "shortDescription": "Check blocks for readings",
+    "longDescription": "Refuse a git commit that adds a reading (results, outcomes, readings files) without a complete check block keyed to the Heuremen LLC Standards recount requirements REQ-01 to REQ-13.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Make a check block for this reading.",
+      "Verify the check block in this folder.",
+      "List staged readings without a check block."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

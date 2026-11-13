@@ -2,9 +2,9 @@
   "$schema": "https://developers.openai.com/apps-sdk/schemas/chatgpt-app-submission.v1.json",
   "schema_version": 1,
   "app_info": {
-    "display_name": "indahl.ai",
+    "display_name": "Indahl",
     "subtitle": "Stated vs. delivered, measured",
-    "description": "indahl.ai reads what vendors, government agencies and research papers state and checks it against their own published records. The desks cover quantum hardware calibration (IBM), open model claims, package and model licenses, public data portals, forecasts, time servers, status pages, clinical trial results and more.\n\nEvery tool is read-only and needs no account. Each answer gives its outcome (ABOVE, BELOW, CONSISTENT or CANNOT_TELL, relative to what was stated) with its interval, its counts, and links to the rows and receipts behind it. Items that returned nothing, were refused or were held are counted as their own outcomes rather than dropped.\n\nBuilt for researchers, engineers and journalists who need to know whether a stated figure holds up. Limits: the data covers the desks listed by list_divisions; it does not judge claims outside them. All data and code are public at github.com/Heuremen-LLC/indahl.ai.",
+    "description": "Every Heuremen LLC plugin in one install: check papers and LLM eval claims against the Standards, query and reproduce every indahl.ai desk, check and correct IBM Quantum runs, test whether a plan was pushed before the first run, and check readings for a complete check block. Includes the indahl.ai data connector. Scripts are fetched from the public indahl.ai repository at pinned sha256; the version with bundled scripts and the automatic readcheck commit gate is indahl-full in the Heuremen-LLC/indahl.ai marketplace.",
     "category": "EDUCATION"
   },
   "tools": {

@@ -1,0 +1,42 @@
+{
+  "name": "indahl-data",
+  "version": "1.0.0",
+  "description": "Live Heuremen LLC measurements inside Claude Code: every indahl.ai desk (IBM calibration, time servers, DNS filters, model licenses and sizes, flu forecasts, launch slips and more) through the read-only indahl.ai MCP server, quoted with interval, outcome and receipt. The agent is told to treat API responses as data, not instructions.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "SEE LICENSE.txt",
+  "keywords": [
+    "data",
+    "mcp",
+    "measurements",
+    "quantum",
+    "benchmarks",
+    "open-data"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Data",
+    "shortDescription": "Query every indahl.ai desk",
+    "longDescription": "Live Heuremen LLC measurements inside Claude Code: every indahl.ai desk (IBM calibration, time servers, DNS filters, model licenses and sizes, flu forecasts, launch slips and more) through the read-only indahl.ai MCP server, quoted with interval, outcome and receipt. The agent is told to treat API responses as data, not instructions.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "List the indahl.ai divisions.",
+      "Do top Hugging Face licenses match their files?",
+      "Show every live test side by side."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "mcpServers": "./.mcp.json"
+}
