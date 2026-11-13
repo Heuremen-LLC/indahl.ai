@@ -1,2 +1,2 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-METAS,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp.metas.ch,Its statement,stated bound 0.15 ms,"offset 2.36 ms, path half-delay 55.9 ms",,CANNOT TELL,,13 Nov 14:08,
+METAS,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp.metas.ch,Its statement,stated bound 0.15 ms,"offset 2.4 ms, path half-delay 55.98 ms",,CANNOT TELL,,13 Nov 14:19,
