@@ -24,9 +24,10 @@ def manifest():
             if os.path.isfile(p): files[os.path.relpath(p, R)] = dict(sha256=sha(p), bytes=os.path.getsize(p))
     return files
 chain = [json.loads(l) for l in open('chain.jsonl')] if os.path.exists('chain.jsonl') else []
-def stamp(path):
-    r = subprocess.run([OTS, 'stamp', path], capture_output=True, text=True, timeout=180); return r.returncode == 0
+def stamp(path):   # 13 Nov 2026 (Wayfinder: 'i just would prefer to not be a part of that chain'): no OpenTimestamps, no Bitcoin, from today. Past .ots files stay as they were.
+    return None
 def upgrade():
+    return 0   # no chain (13 Nov 2026)
     n = 0
     for p in sorted(glob.glob('stamps/*.ots')):
         r = subprocess.run([OTS, 'upgrade', p], capture_output=True, text=True, timeout=180)
@@ -50,6 +51,7 @@ if '--verify' in sys.argv:
     bad = []
     for e in chain:
         st = 'stamps/%s.digest.ots' % e['id']
+        if e['id'] >= '20261113T18': continue   # no OpenTimestamps from 13 Nov 2026; the hash chain itself is verified above
         if not os.path.exists(st): bad.append(e['id']); continue
         r = subprocess.run([OTS, 'info', st], capture_output=True, text=True)
         if r.returncode: bad.append(e['id'])
@@ -70,4 +72,4 @@ with open('chain.jsonl', 'a') as f: f.write(json.dumps(entry) + '\n')
 open('stamps/%s.digest' % t, 'w').write(digest + '\n'); ok = stamp('stamps/%s.digest' % t)
 n = upgrade(); publish()
 ok2 = True
-print('archive: digest', digest[:16], 'files', len(m), 'changed', changed, 'removed', len(removed), 'stamp', 'ok' if ok else 'FAILED', 'upgraded', n)
+print('archive: digest', digest[:16], 'files', len(m), 'changed', changed, 'removed', len(removed), 'stamp', 'none (no chain since 13 Nov 2026)' if ok is None else ('ok' if ok else 'FAILED'), 'upgraded', n)
