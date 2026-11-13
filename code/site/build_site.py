@@ -154,13 +154,13 @@ def page(path, title, desc, body, wide_hero=None):
 <a class="brand" href="/">{MARK}<span>Heuremen LLC</span></a>
 <nav class="links">{nav}</nav>
 </div></header>
-<div class="stdbar"><div class="wrap"><a href="/standard"><b>The standard we hold ourselves to:</b> Faults and Guards 2.0, open to read and cite &rarr;</a></div></div>
+<div class="stdbar"><div class="wrap"><a href="/standard"><b>STANDARDS</b></a></div></div>
 {hero}
 <main class="wrap">{_hlslot(path)}
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p class="fl"><a href="/standard">Standard</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/standard">Standards</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
@@ -2018,10 +2018,27 @@ _FEED.append(('/hermes/datapapers', 'HERMES: Data Papers, published datasets and
 
 # 12 Nov 2026 (Wayfinder: "Standards V1 is fucking lit"): STANDARD, Faults and Guards version 1.0 (faultsguards/standard_v1, concept DOI 10.5281/zenodo.24164029, 1.0.1 is 24164207),
 # rendered by faultsguards/standard_v1/web/build_page.py, files served at /standard/*.
-_sp = _json.load(open(os.path.join(HERE, '..', 'faultsguards', 'standard_v1', 'web', 'standard_page.json'), encoding='utf-8'))
-PAGES['/standard'] = page('/standard', 'Faults and Guards 2.0: An Open Standard for Checking Measurement Claims | Heuremen LLC', 'Faults and Guards version 2.0, an open standard for checking a claim about an AI or quantum measurement result and publishing the check so anyone can rerun it. Codes, tests, a conformance checklist and a NIST AI RMF crosswalk.',
-                          _sp['body'], hero_slim('Faults and Guards 2.0', 'An open standard for checking measurement claims'))
-_FEED.append(('/standard', 'STANDARD: Faults and Guards 2.0', 'An open standard for checking measurement claims, with a checklist and a NIST AI RMF crosswalk.'))
+# 13 Nov 2026 (Wayfinder: "just STANDARDS ... just list the standards without the explanation, a separate collapsed link for the process"):
+# the page is the list, read straight from faultsguards/standard_v1/standard_v1.json; process and files sit in one collapsed block.
+import html as _hS
+_sd = _json.load(open(os.path.join(HERE, '..', 'faultsguards', 'standard_v1', 'standard_v1.json'), encoding='utf-8'))
+_e = _hS.escape
+def _sl(items, key):
+    return '<ul class="stdlist">' + ''.join('<li id="%s"><b>%s</b> %s</li>' % (_e(x['id']), _e(x[key]), _e(x['name'])) for x in items) + '</ul>'
+_fam = {f['id']: f['title'] for f in _sd['families']}; _gp = {g['id']: g['title'] for g in _sd['guard_parts']}
+_flt = ''.join('<h3>%s</h3>%s' % (_e(_fam[k]), _sl([x for x in _sd['faults'] if x['family'] == k], 'id')) for k in _fam if any(x['family'] == k for x in _sd['faults']))
+_grd = ''.join('<h3>%s</h3>%s' % (_e(_gp[k]), _sl([x for x in _sd['guards'] if x['part'] == k], 'id')) for k in _gp if any(x['part'] == k for x in _sd['guards']))
+_codes = '<ul class="stdlist">' + ''.join('<li id="%s"><b>%s</b> %s. %s</li>' % (_e(x['id']), _e(x['code']), _e(x['name']), _e(x['definition'])) for x in _sd['claim_codes']) + '</ul>'
+_reqs = _sl(_sd['recount_requirements'], 'id')
+_proc = ('<details class="stdproc"><summary>Process</summary>'
+         '<p>Each code and fault is read as ' + ', '.join(_e(x['id']) for x in _sd['statuses']) + '. Each reading is ' + ', '.join(_e(x['id']) for x in _sd['reading_outcomes']) + '.</p>'
+         '<p>Full text with every test: <a href="/standard/STANDARD.md">STANDARD.md</a>. Machine-readable: <a href="/standard/standard_v1.json">standard_v1.json</a> (<a href="/standard/standard_v1.schema.json">schema</a>). '
+         'NIST AI RMF crosswalk: <a href="/standard/CROSSWALK.md">CROSSWALK.md</a>. Version ' + _e(_sd['standard']['version']) + ', <a href="https://doi.org/' + _e(_sd['standard']['doi']) + '">doi:' + _e(_sd['standard']['doi']) + '</a>. '
+         '<a href="/standard/SHA256SUMS.txt">Checksums</a>.</p></details>')
+_std_body = ('<section class="legal std"><h2>Claim Codes</h2>' + _codes + '<h2>Faults</h2>' + _flt + '<h2>Guards</h2>' + _grd + '<h2>Recount Requirements</h2>' + _reqs + _proc + '</section>')
+PAGES['/standard'] = page('/standard', 'Standards | Heuremen LLC', 'The standards Heuremen LLC holds its work to: claim codes, faults, guards and recount requirements.',
+                          _std_body, hero_slim('STANDARDS'))
+_FEED.append(('/standard', 'STANDARDS', 'The standards Heuremen LLC holds its work to.'))
 
 # 12 Nov 2026 (Wayfinder: "go for all of it"): RECORD, what we recounted, what we found, and every public number of ours that changed after it went out.
 # Built by trackrecord/build_trackrecord.py + trackrecord/build_page.py (codes from the QIA List, never the ledger's default outcome label). Ledger row record.f4.share.
@@ -2059,7 +2076,7 @@ CSS += '\n'.join(_MOVED) + """
 """
 # 25 Oct 2026 (his word): smaller type and tighter spacing sitewide; these rules come last so they win.
 CSS += """
-.stdbar{background:var(--lit);color:var(--cave);font-size:15px;line-height:1.35;padding:7px 0}.stdbar a{color:var(--cave);text-decoration:none;display:block}.stdbar a:hover{text-decoration:underline}.stdbar b{font-weight:700}
+.stdbar{background:var(--lit);color:var(--cave);font-size:15px;line-height:1.35;padding:7px 0}.stdbar a{color:var(--cave);text-decoration:none;display:block}.stdbar a:hover{text-decoration:underline}.stdbar b{font-weight:700;letter-spacing:.08em}.stdlist{list-style:none;padding:0;margin:6px 0 18px}.stdlist li{padding:3px 0}.stdlist b{display:inline-block;min-width:5.2em}.stdproc{margin:28px 0}.stdproc summary{cursor:pointer;font-weight:600}
 .hero.slim{padding:16px 0 14px}.hero.slim h1{font-size:clamp(22px,2.4vw,28px)}.hero.slim .sub{font-size:14px;margin-top:4px}
 .mtx{font-size:13.5px;line-height:1.4}.mtx th{font-size:10.5px;letter-spacing:.06em;padding:6px 8px}.mtx td{padding:6px 8px}
 /* 29 Oct 2026 (his word): home headlines stacked like data, the number and one line, the rest opens on hover */

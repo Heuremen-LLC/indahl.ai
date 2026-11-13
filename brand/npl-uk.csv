@@ -1,2 +1,2 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-National Physical Laboratory (UK),TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp1.npl.co.uk,Its statement,stated bound 0.02 ms,"offset 3.5 ms, path half-delay 42.82 ms",,CANNOT TELL,,13 Nov 13:30,
+National Physical Laboratory (UK),TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp1.npl.co.uk,Its statement,stated bound 0.02 ms,"offset 3.78 ms, path half-delay 42.84 ms",,CANNOT TELL,,13 Nov 13:48,

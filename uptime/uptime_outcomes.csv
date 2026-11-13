@@ -3,7 +3,7 @@ path,label,outcome,n,of,share,lo,hi,vendor,expected_from_floor,status_unread,epi
 /vendors[1],Cloudflare,CANNOT_TELL,,,,,,Cloudflare,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[2],Discord,CANNOT_TELL,,,,,,Discord,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[3],npm,CANNOT_TELL,,,,,,npm,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
-/vendors[4],PyPI,CANNOT_TELL,,,,,,PyPI,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
+/vendors[4],PyPI,CANNOT_TELL,,,,,,PyPI,1.86,0,0,60,0,0,1,59,TOO_WIDE_TO_RESOLVE
 /vendors[5],Docker,CANNOT_TELL,,,,,,Docker,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[6],Netlify,CANNOT_TELL,,,,,,Netlify,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[7],Vercel,CANNOT_TELL,,,,,,Vercel,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE

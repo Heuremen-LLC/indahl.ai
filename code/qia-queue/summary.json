@@ -1,11 +1,11 @@
 {
- "updated": "13 Nov 13:48 UTC",
- "reads_held": 15479,
+ "updated": "13 Nov 13:57 UTC",
+ "reads_held": 15493,
  "processors": [
   {
    "backend": "ibm_marrakesh",
    "pending": 0,
-   "change_24h": -5,
+   "change_24h": -4,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "41 min",
@@ -15,8 +15,8 @@
   },
   {
    "backend": "ibm_fez",
-   "pending": 1,
-   "change_24h": -2,
+   "pending": 2,
+   "change_24h": 0,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "4 min",
@@ -26,8 +26,8 @@
   },
   {
    "backend": "ibm_chicago",
-   "pending": 2,
-   "change_24h": -38,
+   "pending": 3,
+   "change_24h": -3,
    "our_jobs": 20,
    "our_median_wait": "14 s",
    "our_longest_wait": "2.2 h",
@@ -37,46 +37,46 @@
   },
   {
    "backend": "ibm_pittsburgh",
-   "pending": 36,
-   "change_24h": 33,
+   "pending": 38,
+   "change_24h": 36,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "9 min",
    "our_queued_now": 1,
-   "our_oldest_queued": "58 min",
+   "our_oldest_queued": "67 min",
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_kingston",
    "pending": 105,
-   "change_24h": 60,
+   "change_24h": 59,
    "our_jobs": 20,
    "our_median_wait": "81 s",
    "our_longest_wait": "2.9 h",
    "our_queued_now": 2,
-   "our_oldest_queued": "95 min",
+   "our_oldest_queued": "105 min",
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_boston",
-   "pending": 122,
+   "pending": 123,
    "change_24h": 118,
    "our_jobs": 12,
    "our_median_wait": "33 min",
    "our_longest_wait": "2.6 h",
    "our_queued_now": 1,
-   "our_oldest_queued": "10.9 h",
+   "our_oldest_queued": "11.1 h",
    "outcome": "COMMITTED"
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 821,
-   "change_24h": -219,
+   "pending": 868,
+   "change_24h": -175,
    "our_jobs": 12,
    "our_median_wait": "98 min",
    "our_longest_wait": "5.8 h",
    "our_queued_now": 1,
-   "our_oldest_queued": "86 min",
+   "our_oldest_queued": "95 min",
    "outcome": "COMMITTED"
   }
  ]
