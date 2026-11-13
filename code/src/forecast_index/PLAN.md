@@ -1,0 +1,38 @@
+# FORECAST: stated chance of precipitation against what happened (28 Oct 2026, his word)
+Written and committed before any forecast was stored or scored.
+
+## What is stated
+The National Weather Service gridpoint forecast (api.weather.gov), probabilityOfPrecipitation for each 12 hour period, at the location of each of 30 major United States airports (stations.json). A forecast is fetched for a station at most once every 6 hours, on HST ticks. Each stored forecast keeps every period up to 48 hours ahead with its stated chance and its lead in hours (start of period minus the time fetched). A period whose chance is null is not stated and is dropped and counted. Our user agent names this site.
+
+## What is delivered
+The hourly observations of the same station (api.weather.gov observations): an event occurred in a period if any observation in it reports precipitation in the last hour above zero, or a present-weather entry for rain, drizzle, snow, sleet, hail, showers or thunderstorm. A period is unscorable if observations are missing for more than 25% of its hours, and is counted as unscorable. A period is scored after it has ended and the observations for it are held.
+
+## Calibration (the reading)
+Stated chances are grouped into bins: 0 to 5, 10 to 20, 30 to 40, 50 to 60, 70 to 80, 90 to 100, and by lead: under 12 hours, 12 to 24, 24 to 48. Per bin and lead: the mean stated chance, the number of scored periods n, the observed event frequency with a Wilson 95% interval. Outcome per bin: ABOVE if the interval lies above the mean stated chance (it rained more often than stated), BELOW if it lies below (less often), CONSISTENT if the stated chance sits inside it, CANNOT_TELL while n is under 30.
+
+## Known limits, stated up front
+Hourly reports can miss a short shower between observations, so observed frequency is a floor. The floor is measured: the share of periods with a stated chance of 0 or 5 that nevertheless had an event is published beside every table. Periods from the same storm and neighbouring stations are not independent, so n is not the number of independent events and intervals are read with that in mind. Forecasts for the same period at different leads are separate rows. One forecaster is read, the National Weather Service, and no other is compared in this plan.
+
+## Not claimed
+No ranking of forecasters, no claim about any person. A bin that reads above or below says the stated chance and the observed frequency differ for these stations and this method.
+
+## Addendum 1 (28 Oct, after the first round, before any period was scored)
+A period that had already started when the forecast was fetched (negative lead) is stored but is not read: part of it was already known. Only periods with a lead from 0 to 48 hours enter the bins.
+
+## Addendum (29 Oct 2026, after publication): Wilson interval corrected
+The local Wilson function in this corner omitted the division of the half-width by d = 1 + z squared over n, so published 95% intervals were wider than the Wilson interval this plan names (up to 38% wider at n = 10, about 5% at n = 100). It was found on a read of the code while moving corners onto the shared kit, whose function is tested against planted worlds. The corner now uses the kit function and the page was republished. No verdict changed: FORECAST had no scored cell yet, so no outcome rested on an interval.
+
+## Note 2 (29 Oct, from the internal audit)
+Each fetch round stored every period again under its own fetch time, and each stored row was scored, so one period fetched twice in the same lead bin counted twice in that cell. That overstates n and understates every interval. From 29 Oct a period (station and start time) counts once per cell, from its earliest fetch in that cell. The stated-chance bins leave gaps (6 to 9, 21 to 29 and so on) and a period whose stated chance falls in a gap is in no cell. That is stated here, and the gap periods are not scored. The plan's sentence that n is not the number of independent events stays true: periods from one storm are still dependent. No rule or threshold changed.
+
+## Correction (30 Oct 2026, site pass H-10)
+The counts printed above the table counted rows: 1,053 fetched period rows, 347 scored rows and a chance floor of 113 rows, while the cells hold each period once per cell and read only stated chances with a lead from 0 to 48 hours (Addendum 1 and Note 2). The counts above the table now come from the same set. A period is a station and a start time. Periods stored, scored, unscorable and without a stated chance are distinct periods, the rows are counted apart, and the rows stored after their period had begun are counted and not read. The chance floor is taken over distinct scored periods with a stated chance of 0 or 5 and a lead from 0 to 48 hours (26 periods, 1 with an event, where the earlier line read 113 rows and 0). The periods whose stated chance falls in a gap between the bins are counted as in no cell. No rule, bin or threshold changed.
+
+## Addendum 2 (10 Nov 2026, decided after the data): the NWS event rule is primary
+The National Weather Service states its chance of precipitation for measurable precipitation, 0.01 inch or more. The rule in "What is delivered" counts any hourly amount above zero or any present-weather entry, which also counts a trace and a report of light rain with no measured amount. It is wider than the chance it is scored against. This was raised in our cold read of the page on 10 November, after the original rule had been read on 704 scored periods (stated 14 percent in the 10 to 20 bin under 12 hours, happened 43.9 percent). The change below is decided after the data and is said so on the page.
+
+From 10 November 2026 the primary reading counts a period as having an event when the routine hourly reports of the station inside the period (valid after its start and up to its end) sum to 0.01 inch or more. A trace is read as zero. The totals come from the routine hourly METAR reports of the same station as kept in the Iowa Environmental Mesonet ASOS archive, because api.weather.gov keeps only about seven days of observations and the earlier periods can no longer be read there. A period is unscorable under this rule when fewer than 75 percent of its hours have a routine report with a total. Periods, bins, leads, one count per period per cell, the Wilson 95 percent interval, the outcome rule and the chance floor are unchanged. The code is measurable.py beside this plan.
+
+Checks run before the reading was used. Seven planted cases (no rain, a trace, one hour at 0.01 inch, two hours summing to 0.01, two summing to 0.009, too few hours, reports outside the period) read as planted. On the 1,715 periods both rules could score, no period had measurable precipitation without an event under the original rule (290 both, 152 original only, 1,273 neither). On seven recent periods the archive totals matched the totals api.weather.gov reports for the same routine observations to within 0.04 inch, with the same event reading.
+
+The original committed rule is not deleted. Its table stays on the page beside the primary one, labelled as the original committed rule, and the feed keeps it under its original key. At adoption the two read: original rule, 12 of 18 cells above, 3 consistent, 3 cannot tell, chance floor 14 of 368. NWS rule, 3 of 18 above (all three in the 50 to 60 bin), 12 consistent, 3 cannot tell, chance floor 5 of 368.

@@ -1,0 +1,10 @@
+## Addendum 18 (14:10Z 7 Nov; Sage's 14:1xZ conditions on A17; before any round-2 eval row exists). Last plan change before the evals.
+V1. Cutoffs, said once so nobody reads them as a typo: "mostly" (U3) is STRICTLY above 50%; "base gets is_max right" (U4) is AT LEAST 50%.
+    A tie at exactly 50% (e.g. 45 of 90 is_max rows) is "base right": the is_max arm is then called uninformative.
+V2. U5 extends to is_max: if UNREAD > 50% of an arm's is_max rows, that arm's signature test reads CAN'T TELL.
+V3. Gates: round2_gates_v2.txt (A14, A15, A16, A17, A18, P4M) is hashed here. round2_queue4.sh snapshots it at launch; at every check, and again
+    right before the first eval, it HALTS (logs and exits, no eval) if any line present at launch is missing or changed. Appending lines is allowed.
+V4. Right before the first eval, queue4 runs shasum -a 256 -c on SHA256SUMS_A14, A15, A16, A17, A18 and round2_p4max/SHA256SUMS_P4M and logs the
+    full output to round2_queue.log. Any mismatch HALTS: a block proves a stamp existed, not that the live files still match it.
+V5. One queue only: queue4 HALTS at launch if any other round2_queue*.sh process is alive. queue3 is stopped before queue4 starts; the
+    process list is logged. (round2_gates.txt from A17 stays as it was, so SHA256SUMS_A17 still verifies.)

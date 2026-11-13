@@ -1,0 +1,12 @@
+## Addendum 11 (02:46Z 7 Nov, read from the clock; Bones; before the freeze and before any training row is read)
+L1. Both eval arms use the same Qwen3 chat template with thinking OFF (enable_thinking=False), so neither arm is cut off mid-think at 1,200 tokens.
+    Training pairs carry no think block. Unread rates are still printed per arm.
+L2. Code, hashed here before it reads a flock row: build_set.py (set builder, refuses flock.db before the freeze), train_round1.py (fixed budget,
+    exactly ceil(rows/4) iters, --mask-prompt, seed 61), eval_round1.py (r15+r16, 3 samples, temp 0.7, 1,200 tokens, own cls()), read_eval.py.
+L3. mlx_lm needs a valid.jsonl; it holds the first 4 training rows and is never used to stop or choose anything (steps_per_eval > iters).
+L4. Disclosure: the eval script was smoke-tested on the first 4 r15 items (1 sample, a 3-step adapter trained on a synthetic fixture). Bones saw
+    those 8 replies' first 80 characters and their classes. The rows were deleted; the real eval runs once on all 340 with the real adapter.
+L5. Order: freeze at 06:00Z -> freeze_record.py (refuses unless A7..A11 are in blocks before it) -> make_habit_drop.py -> build_set.py ->
+    train_round1.py -> eval_round1.py -> read_eval.py once. Bones hand-scores 30 per arm blind afterwards (plan). Nothing re-run.
+L6. freeze_record.py was edited after A10 was stamped (stamp list + verify list), so A10's hash of it no longer matches. A10 still proves
+    ADDENDUM_10.txt. A11 now carries ADDENDUM_10.txt and the current freeze_record.py; the freeze record verifies A9b and A11 against the live files.

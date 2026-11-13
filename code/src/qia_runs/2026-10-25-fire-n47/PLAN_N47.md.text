@@ -1,0 +1,15 @@
+# Free calibration run (Kumar): Zenodo 10.5281/zenodo.21938548, N47Lab -- committed before any job
+Their registered prediction 4 (verbatim): 'Under an extended allocation (100k+ shots per circuit), the 3-qubit peak should persist at MI ~ 0.16 +/- 0.01.
+Falsified if the peak collapses to the finite-shot floor.' Their 3-qubit value: 0.1588 +/- 0.008 (8192 shots, kingston).
+Their protocol as printed: H on all, CP(phi) on all pairs, H on all, measure; 'separate' control P(phi/N) per qubit; PASM-H extra H before CP in place of the final H.
+MI between the first two qubits with the Miller-Madow correction; opt level 1; SamplerV2.
+ZERO-QPU CHECK FIRST (before this plan): the noiseless printed circuit gives MI = 0 at phi = pi for N = 2..6, PASM-H MI = 0 at every phi, and N=2 phi = pi/4
+MI = 0.0822. Their hardware values (0.06-0.16 at phi = pi; 0.722 PASM-H) are therefore not what the printed circuit makes noiselessly. Their hardware circuits
+are not released, so this run tests the protocol AS PRINTED.
+Arms (one job, kingston): P3_PI (N=3, phi=pi, 100,000 shots: their prediction), P2_PI (20k), P2_PI4 (N=2, phi=pi/4, ideal 0.0822, 20k), H2_PI2 (PASM-H N=2 phi=pi/2, 20k),
+S3_PI (separate control N=3, 20k). Layout chosen by the transpiler (their effect is stated to be distance independent); recorded in dry_run_n47.text.
+DECIDER: P3_PI MI with a 400-resample bootstrap 95% interval vs their band [0.15, 0.17]: CONSISTENT / BELOW / ABOVE; 'collapsed to the floor' reported as their own
+falsification wording (floor ~2.2e-5 bit at 100k).
+KNOWN-GOOD: the separate control (no two-body interaction; their own result <= 1e-4; ideal 0) must read MI < 0.002 in this job, or the run reads nothing.
+Synthetic: synth_results_n47.text (their world, QM world, half world land as planted; broken-control world fails known-good).
+Budget: cap 150 s; refuses below 300 s reserve.

@@ -1,0 +1,14 @@
+import json, subprocess, glob, tempfile, os, sys
+d = tempfile.mkdtemp(); X = os.path.join(os.path.dirname(sys.executable), 'qia-check')
+N = lambda n, v, t, u='': {'name': n, 'value': v, 'date': t, 'unit': u}
+R = lambda qs, s='2026-11-01T12:00:00Z', b='ibm_kingston': {'backend_name': b, 'last_update_date': s, 'qubits': qs}
+def before(rec):
+    p = os.path.join(d, 'r%d.json' % len(os.listdir(d))); json.dump(rec, open(p, 'w')); o = p + '_out'
+    r = subprocess.run([X, 'before', p, '--out', o], capture_output=True, text=True)
+    return r.returncode, (r.stderr.strip().splitlines() or [''])[-1][:110], (json.load(open(glob.glob(o + '/*.json')[0]))['flags'] if r.returncode == 0 else None)
+F = '2026-11-01T09:00:00Z'   # fresh: 3 h before the stamp
+qs = [[N('T2', 120.0, F, 'us')], [N('T1', None, F, 'us'), N('T2', 120.0, F, 'us')],
+      [N('T1', float('nan'), F, 'us'), N('T2', 120.0, F, 'us')],
+      [N('T1', -150.0, '2026-10-31T06:00:00Z', 'us'), N('T2', 400.0, F, 'us')]]   # q3 T1/T2 dates 27 h apart
+rc, err, fl = before(R(qs)); print('flags:', fl)
+print('HOLE' if not [f for f in fl if f['qubit'] < 3 or f['check'] == 'PAIR'] else 'fixed')

@@ -1,0 +1,94 @@
+# PLAN -- Aqcel 1-step QPS re-test for arXiv 2509.04761v4 (Kaji, Terashi, Sawada; ICEPP, The University of Tokyo), on ibm_fez
+Written and committed BEFORE any job (24 Oct 2026). Book-side free run (LANE row, triage rank 5); nothing published or sent; no contact.
+Paper read: arXiv v4 (4 Aug 2026; "Published in Journal of Physics Communications"), full text saved in src/paper.txt (pypdf extraction;
+figure text garbled in places). Not read: figure images (Fig. 4 and Fig. 6 data are images only), the 2-step hardware details beyond the text.
+Their repository (github.com/UTokyo-ICEPP/aqcel, tags v1 and v2.0.0) cloned into scratchpad/fire_2509.04761/dl/ and READ, never run.
+
+## What they print (verbatim, v4)
+- Table 2: "Number of two-qubit gates and the fidelity for the optimized 1-step QPS circuit on ideal topology with full connectivity and the
+  ibm_fez backend. The optimization by Aqcel was performed with the noise threshold = 0.01 (0.05)."
+  Qiskit 115 | 246 | 0.46;  Aqcel-v1 41 (23) | 48 (24) | 0.99 (0.96);  Aqcel-v2 25 (11) | 36 (16) | 0.99 (0.96)   [ideal CX | fez CZ | fidelity]
+- Sec. 4.2: fidelity = Hellinger fidelity of the optimized circuit's output vs the ORIGINAL circuit's noiseless output (eq. 1); "a quantum
+  circuit is transpiled with the optimization level 3"; SamplerV2, skip_transpilation, rep_delay 0.0005; "We apply M3 ... No other error
+  mitigation techniques are used"; footnote 1: dynamical decoupling and Pauli twirling tried, "not used in the final hardware experiments";
+  "10k times the number of measurement qubits for the M3 calibration, while 100k for each experiment". No intervals, no dates, no job ids.
+- Code availability: "some execution scripts available on GitHub differ from those used in the paper".
+
+## The question (triage): their 0.99 vs 0.46 gap has no control separating the fewer-CZ circuit from a nearly-uniform guess.
+Free part, done before the job (zero QPU, dry_run_aqcel.text): the ideal output has 4 strings (0.627 / 0.141 / 0.131 / 0.101);
+uniform over all 64 strings scores F = 0.053; uniform over the 4 support strings scores 0.853; the CZ-removed control (below) scores 0.272
+noiseless. So a high score is NOT free from the output space unless the support is known; the job measures what the hardware gives.
+
+## Construction (our code; python -I; nothing of theirs executed)
+aqcel_rebuild.py: 1-step QPS circuit rebuilt from the released generator's construction (eps 0.001, gL 2, gR 1, g12 1, phi->ffbar on,
+registers p0 p1 h1 e phi a b, measure p0 p1); Aqcel decomposition (RCCX ladder on ancillas + singly-controlled U), adjacent-pair
+cancellation, control-state removal rules (v1 judge rules), and for v2 the CX-pair removal under the paper's three sufficient conditions.
+Difference from theirs (stated): control-state probabilities are EXACT (statevector of the optimized prefix), not sampled shots; we do not
+emulate the label manager (with exact probabilities it only skips reads). arms.py: four arms, threshold 0.01 (Table 2 main entries):
+  Q    original circuit             -> fez, generate_preset_pass_manager(optimization_level=3, seed_transpiler=11): 199 CZ (paper 246)
+  V1   our Aqcel-v1, thr 0.01       -> 49 CZ (paper 48)
+  V2   our Aqcel-v2, thr 0.01       -> 31 CZ (paper 36)
+  CTRL the V2 ISA circuit with every cz deleted (same physical qubits, same single-qubit layer, same measurements) -> 0 CZ
+  noiseless F vs ideal: Q 1.0000, V1 1.0000, V2 1.0000, CTRL 0.2718. Measured physical qubits: Q [111,109,112,98,14,91];
+  V1 [25,142,84,5,50,6]; V2 and CTRL [25,142,84,3,50,6] (dry run 16:52Z record). CTRL is CZ-removed, NOT duration-matched (depth 48 vs 95).
+Readout: CAL0 / CAL1 (all 13 measured physical qubits prepared 0 / 1) inside the same job; tensored per-qubit correction (stands in for
+their M3, whose default calibration is also per qubit); quasi-distribution not renormalised.
+Job: ONE SamplerV2 job, 24 pubs = 4 rounds x [CAL0, CAL1, Q, V1, V2, CTRL]; arms 5,000 shots per copy (20,000 per arm), calibration
+2,500 per copy; 100,000 shots. Circuits frozen in circuits_aqcel.qpy (sha256 in meta_aqcel.json) and submitted as built (no runtime
+transpile). Options set explicitly: twirling.enable_gates False, twirling.enable_measure False, dynamical_decoupling.enable False;
+rep_delay = backend default (theirs 0.0005 s; stated difference). Estimate 100,000 x 0.30 ms + 3 s = 33 s; HARD CAP 60 s (fire_aqcel.py
+refuses above it); usage_remaining_seconds 2761 at the dry run (stop if < 600). Records saved before and after the job. One restart on an
+IBM-side ERROR, then HOLD.
+
+KNOWN-GOOD: their published numbers from their RELEASED code outputs (tutorial_aqcel.ipynb at tag v2.0.0, AerSimulator, and v4 Table 2) reproduced through our committed rebuild (known_good_aqcel.py, zero QPU): ideal 1-step distribution vs both printed 10k-shot draws chi2 p = 0.632 and 0.162 (rule p > 0.001); Aqcel-v2 CX 25 (thr 0.01) and 11 (thr 0.05) = printed 25 and 11 exactly (rule: exact); F_sim(v2, 0.05) 0.9618 vs printed 0.9598 / 0.9629 (rule |diff| <= 0.01) -> PASS. NOT reproduced and reported, not in the rule (rule written after we saw our counts -- stated): Qiskit-only 123 CX vs 115 (Qiskit 2.5.2 here vs 1.2.2 / 2.3.0 theirs); Aqcel-v1 33 / 18 CX vs 41 / 23 (our exact-probability v1 keeps fewer controls; their v1 read control states with finite shots and hardware noise, Fig. 4 text -- that cause is a hypothesis, CANNOT_TELL). A real-hardware known-good is none possible -- their hardware counts and job ids are not released.
+
+## Readings (analyze_aqcel.py, fixed now)
+F_k = Hellinger fidelity (their eq. 1) of arm k's readout-corrected output vs the exact ideal of the ORIGINAL circuit; also the raw F.
+95 % percentile bootstrap, B = 2000 (arm counts multinomial, calibration binomial per qubit). D3 = F_V2 - F_CTRL; D2 = F_V2 - F_Q.
+Drift guard: between-copy variance of F (4 copies) over single-copy shot variance > 5.42 (chi2_3 0.999 / 3) flags that arm.
+PRIMARY outcome, rules applied in this order (four outcomes of the triage):
+  CANNOT_TELL  drift flag on V2 or CTRL
+  GAP          D3 upper < 0 (control beats Aqcel-v2)
+  CANNOT_TELL  D3 lower <= 0 (control scores as high as Aqcel-v2: small output space)
+  GAP          F_V2 upper < 0.985 (Aqcel-v2 below its printed 0.99 beyond the interval; 0.985 = rounding edge of "0.99")
+  GAP          D2 lower <= 0 (no advantage over Qiskit-only)
+  CLEAN        D2 interval overlaps [0.52, 0.54] (their printed 0.99 - 0.46 gap reproduces, with the control far below)
+  FILL         otherwise (advantage beyond control and Qiskit-only holds; its size differs from the printed 0.53: we print it with width)
+SECONDARY (reported; ABOVE / BELOW / CONSISTENT vs printed band, CANNOT_TELL if that arm's drift flag is set):
+  F_V2 vs [0.985, 0.995]; F_V1 vs [0.985, 0.995]; F_Q vs [0.455, 0.465]. Three secondary readings at 95 % -> ~5 % false resolution each.
+Descriptive, not scored: raw F per arm, per-copy F, calibration errors, CZ counts, record changes on the used qubits during the window.
+
+## Synthetic (synth_aqcel.py, 200 draws per world, B 400; synth_results_aqcel.text)
+Worlds planted: CLEAN (their numbers) 1.000; FILL (Q 0.70) 0.995; GAPLOW (V2 0.95) 1.000; GAPCTRL (control above V2) 1.000;
+BOTH (control = V2 = 0.97) CANNOT_TELL 1.000; NOADV (neither: V2 = Q = 0.99) GAP 0.965; DRIFT (V2 copies 0.99/0.95) CANNOT_TELL 1.000;
+CALSHIFT (artefact: arms' readout 0.003 worse than the calibration) CLEAN 1.000. Max false-call 3.5 % (NOADV), mean 0.5 %.
+Reported only: CALSHIFT10 (0.01 mismatch) GAP 40 % -- the GAP-vs-0.99 rule is sensitive to a 1 % calibration mismatch (theirs is too);
+EDGE (V2 planted 0.985) CLEAN 96.5 %, GAP 2.5 %. FIRST attempt failed (BOTH 12 % false; clipping+renormalising biased F by -0.002):
+estimator fixed BEFORE any job (receipt synth_results_aqcel_FIRST_attempt_clip_bias.text).
+
+## Four outcomes, what each would say
+CLEAN: today's fez with our rebuild gives their printed 0.99 / 0.46 gap within width, and a CZ-free circuit on the same qubits does not.
+FILL: the Aqcel-v2 advantage holds beyond the control, at a size we print with its width (their table has none).
+GAP: Aqcel-v2 scores below 0.99 beyond the width, or does not beat Qiskit-only, or the control beats it.
+CANNOT_TELL: the control scores as high as Aqcel-v2, or drift beyond shot noise; the deciding run is a repeat with duration-matched control.
+It cannot say anything about their run day, their M3 calibration, their v1 circuits (ours differ), or the 2-step results.
+
+## /q (run on this plan before firing; ~/.claude/commands/q.md, A-G)
+FIRED:
+- #1 (name the figure): their 0.99 / 0.46 are Hellinger fidelities (M3-corrected) vs a noiseless output; NO stated IBM figure is used, so
+  our Part 0 factors have nothing to rescale (none applied).
+- #4 (a model is not the number): ideal = exact statevector; their printed ideal is a 10k-shot Aer draw -> compared by chi2, not equality.
+- #8/#9 (like-for-like; instruments differ in more than the named variable): CTRL removes CZs but also shortens the schedule (depth 48 vs 95);
+  Q sits on other physical qubits than V1/V2 (per-qubit readout corrected; gate quality differs); our V1 is not their V1 (33 vs 41 CX ideal);
+  our compile gives 199 / 49 / 31 CZ vs their 246 / 48 / 36; rep_delay default vs 0.0005; tensored correction vs M3. Every reading is
+  "our rebuild on fez today", never "their circuit".
+- #14 (known-good): from their released Aer outputs, not hardware (hardware counts not released) -- said in the KNOWN-GOOD line.
+- #16 (floor): null/neither worlds measured (max 3.5 %); three secondary readings carry ~5 % each.
+- #18 (the rule is the rule): known-good rule covers only what reproduced; v1 and Qiskit counts did not and are reported as such.
+- #22 (units): one chip, one job, one day = one instance; copies are drift checks, not independent units.
+- #26 (post-hoc): two desk readings below were found while building, not planned: (a) F_sim(v2, 0.05) = 0.962 noiseless, so Table 2's
+  "(0.96)" is the threshold's approximation error, not hardware loss; (b) v1's printed 41 / 23 CX vs our 33 / 18. Both labelled desk.
+- #3 / #33: record saved before and after; usage checked (2761 s; stop below 600); cap 60 s enforced in code.
+HELD: #2, #5-#7 (no stated-figure comparison), #10 (all shots, no selection, both arms), #11-#13 (same job, interleaved), #15 (all worlds
+incl. both/neither/artefact planted), #17 (sign: D = V2 - other; bit order checked by the known-good chi2 on their printed keys),
+#19-#21, #23-#25, #27, #28, #29 (no earlier run on this paper in the night log or qia_runs), #30-#32 (no referee out on it), #34-#37 (book side).

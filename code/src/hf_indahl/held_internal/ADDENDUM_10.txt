@@ -1,0 +1,7 @@
+## Addendum 10 (02:39Z 7 Nov, read from the clock; written by Bones on Wayfinder's challenge; before the freeze and before any training row is read)
+K1. Freeze backstop (b) moves from 2026-11-08 12:00Z to 2026-11-07 06:00Z. Rule (a) (1,500 eligible questions) is unchanged and still wins if first.
+    Reason: (b) was an arbitrary backstop picked by Bones; nothing in the plan depends on it. Moving it EARLIER, before any training row is read,
+    cannot select on the data. Eligible count at writing: 882 (freeze_count.py, 02:40Z).
+K2. The training script is built and tested before the freeze on a synthetic fixture only (no flock rows). Its hash is stamped before it reads a row.
+K3. Everything else in PLAN_TRAIN_v1.md (as verified by A9b) and FREEZE_RECORD_NOTES.md stands, including: no training read until the stamp covering
+    this addendum is in a Bitcoin block whose time precedes the read.

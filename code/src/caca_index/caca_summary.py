@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+"""caca_summary.py: reads data/queries.jsonl and writes summary_caca.json per PLAN.md. Share blocked of alive domains per resolver and checkpoint with Wilson 95%."""
+import json, os, math, time, collections as C
+H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H)
+import heuremen_kit as _K
+def wil(k, n):   # 29 Oct: kit's tested Wilson; the cadence copy omitted the division by d
+    if not n: return None
+    p = k / n; lo, hi = _K.wilson(k, n); return [round(100 * p, 1), round(100 * lo, 1), round(100 * hi, 1)]   # 30 Oct (site pass I-31): one decimal, so a count of zero shows its upper end (0 of 1,087 reads 0.0 to 0.4) and not 0 to 0
+rows = [json.loads(l) for l in open('data/queries.jsonl')] if os.path.exists('data/queries.jsonl') else []
+by = C.defaultdict(dict)
+for r in rows: by[(r['domain'], r['cp'])][r['resolver']] = r
+res = {}; CP = [0, 3600, 21600, 86400]; ALIVE = C.Counter(); notalive = C.Counter(); status = C.defaultdict(C.Counter); domains = set()
+for (d, cp), rs in by.items():
+    domains.add(d); ctl = [r for r in rs.values() if r['group'] == 'control' and r['cls'] == 'ANSWERED']
+    sets = C.Counter(tuple(sorted(r['ips'])) for r in ctl); alive = bool(sets) and max(sets.values()) >= 2
+    if not alive: notalive[cp] += 1; continue
+    ALIVE[cp] += 1
+    for n, r in rs.items():
+        if r['group'] != 'filtered': continue
+        x = res.setdefault(n, {c: [0, 0, 0] for c in CP}); status[n][r['cls']] += 1
+        if r['cls'] == 'TIMEOUT': x[cp][2] += 1; continue          # 29 Oct (internal audit): a query that got no answer says nothing about the filter, so it is counted apart and is not in the denominator
+        x[cp][1] += 1; x[cp][0] += r['cls'] in ('NXDOMAIN', 'REFUSED', 'SINK')
+feeds = [json.loads(l) for l in open('data/feed_reads.jsonl')] if os.path.exists('data/feed_reads.jsonl') else []
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), tracked=len(domains), alive={str(c): ALIVE[c] for c in CP}, not_alive={str(c): notalive[c] for c in CP},
+           feed_reads=len([f for f in feeds if f.get('status') == 'COMMITTED' and not f.get('baseline')]), resolvers=[
+    dict(resolver=n, checkpoints={str(c): dict(k=v[c][0], n=v[c][1], timeouts=v[c][2], wilson=wil(v[c][0], v[c][1]) if v[c][1] else None, state='NOTHING_RETURNED' if (v[c][1] == 0 and v[c][2] > 0) else 'READ') for c in CP}, classes=dict(status[n])) for n, v in sorted(res.items())])
+# 12 Nov 2026 (PLAN_ADDENDUM_std2.md): no outcome word is assigned to any cell, the provider-statement outcomes are removed from the plan. REQ-13: the failed reads are the timed-out queries, listed apart.
+_cells = [c for x in out['resolvers'] for c in x['checkpoints'].values()]; _to = sum(c['timeouts'] for c in _cells)
+out['outcomes_assigned'] = False; out['plan_addendum'] = 'PLAN_ADDENDUM_std2.md'
+out['req13'] = dict(_K.req13([], nothing_returned=_to), cells_with_share=sum(1 for c in _cells if c['state'] == 'READ' and c['n']), cells_returned_nothing=sum(1 for c in _cells if c['state'] == 'NOTHING_RETURNED'), nothing_returned_is='timed-out queries, listed apart')
+out['req13']['line'] = '%d NOTHING_RETURNED (timed-out queries, listed apart). No outcome is assigned to any cell, so CANNOT_TELL is 0 of 0. %d cells hold a share and %d cells returned nothing.' % (_to, out['req13']['cells_with_share'], out['req13']['cells_returned_nothing'])
+json.dump(out, open('summary_caca.json', 'w'), indent=1); print('caca summary:', out['tracked'], 'domains,', out['feed_reads'], 'fresh reads')

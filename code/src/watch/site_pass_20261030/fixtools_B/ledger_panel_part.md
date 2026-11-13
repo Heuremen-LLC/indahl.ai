@@ -1,0 +1,25 @@
+
+## Part 2. New rows for the static sentences of the live panels (B-30)
+These sentences are printed by scripts in cloudflare-workers/heuremen-door/public/qia/ and no ledger row tracks them. ledger.py SURFACES needs five keys first (paths relative to ~/bones-forge):
+```
+'qia_cal_js': 'cloudflare-workers/heuremen-door/public/qia/cal.js',
+'qia_ibm_js': 'cloudflare-workers/heuremen-door/public/qia/ibm.js',
+'qia_t1t2_js': 'cloudflare-workers/heuremen-door/public/qia/t1t2.js',
+'qia_stability_js': 'cloudflare-workers/heuremen-door/public/qia/stability.js',
+'qia_offchain_js': 'cloudflare-workers/heuremen-door/public/qia/offchain.js',
+```
+`add` now needs --checks (a CHECKS.md whose last entry is complete). Every snippet below is a contiguous literal in its script, every grep was found in its source file (checked by script).
+```
+CK=<path to the CHECKS.md of this batch>
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.cal.shots --claim 'cal.js: IBM readout figures are counts out of 4,096 or 1,024 shots, read from each record' --value text --outcome RECORD --source qia_cal/PLAN.md --grep 'n = 1,024 when every readout figure in that' --on qia_cal_js 'IBM’s readout figures are counts out of 4,096 or 1,024 shots, depending on the processor’s record' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.cal.t1margin --claim 'cal.js: IBM publishes no fit uncertainty for T1, so T1 is off only beyond a 25% margin' --value text --outcome RECORD --source qia_cal/PLAN.md --grep 'IBM publishes no fit uncertainty, as for T2 in the audit' --on qia_cal_js 'IBM publishes no fit uncertainty for T1, so T1 is off only beyond a 25% margin past our interval.' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.cal.rules_after_aachen --claim 'cal.js: the two interval rules were set after the first aachen run and before any US run' --value text --outcome RECORD --source qia_cal/PLAN.md --grep 'after the first aachen run was read and before any US run is read' --on qia_cal_js 'The two interval rules were set after the first aachen run was read and before any US run was read.' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.cal.shots_rule_after_fez --claim 'cal.js: the shot-count rule was set after the fez and marrakesh readings were published' --value text --outcome RECORD --source qia_cal/PLAN.md --grep 'during the 30 Oct site pass, after fez and marrakesh' --on qia_cal_js 'The rule for the shot count behind IBM’s readout figures was set on 30 Oct after the fez and marrakesh readings were published.' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.cal.synth_null --claim 'cal.js: in 40 planted runs where IBM is exactly right the rules called nothing off' --value 0 --outcome COUNT --source qia_cal/synth_results.text --grep 'NULL world (IBM exactly right), 40 runs x 156 qubits: false calls per run p10 0.00, p01 0.00, t1 0.00' --on qia_cal_js 'In 40 planted runs where IBM is exactly right, these rules called nothing off.' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.t1t2.notes_after_results --claim 't1t2.js: Notes 3, 4 and 6 were written after some results were read' --value text --outcome RECORD --source t1t2_check/PLAN.md --grep '## Note 3 (29 Oct, 21:55 EDT, after the fez and kingston results were read)' --on qia_t1t2_js 'Note 3 followed the fez and kingston results. Note 4 set a second fez run after the first fez result. Note 6 followed the boston, kingston and fez results.' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.stability.wilson --claim 'stability.js: shares are printed with their Wilson 95% interval' --value text --outcome RECORD --source qia_mirror/STABILITY_PLAN.md --grep 'Shares carry Wilson 95% intervals' --on qia_stability_js 'A share is printed as a count, then its Wilson 95% interval in brackets.' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.offchain.usable --claim 'offchain.js: every usable qubit is read in each hourly run' --value text --outcome RECORD --source qia_cal/PLAN.md --grep 'every usable qubit' --on qia_offchain_js 'Every usable qubit is read in each hourly run, and every reading is in the run file linked in the hourly table above.' --checks $CK
+python3 ~/bones-forge/ledger/ledger.py add qia.panel.ibm.cadence --claim 'ibm.js: the mirror reads IBM'"'"'s properties about every half hour (every 5 of her ticks, median gap 28 minutes in polls.jsonl)' --value text --outcome RECORD --source watch/tick_bus.py --grep 'every 5 of HER ticks, saving each record that changes' --on qia_ibm_js 'Read from IBM’s published properties for each processor about every half hour.' --checks $CK
+```
+Not added, and why: the queue section sentence ("about every 12 minutes") lives in build_site.py and only becomes true on the page after BUILD_SITE_TODO_B.md item 3 is applied. The tape decision in B-30 (whether the qia feeds join indahl.ai/tape) is yours. drift/targets.json lacks t1t2, which is a one-off with no feed.
+

@@ -1,0 +1,154 @@
+{
+ "slug": "ailuminate",
+ "nav": "AILUMINATE",
+ "h1": "AILUMINATE &middot; MLCommons Safety Results, Kept and Checked",
+ "title": "AILUMINATE | MLCommons Safety Results, Kept and Checked | Heuremen LLC",
+ "desc": "AILUMINATE: the MLCommons AILuminate Safety results page against its own reports, and whether published scores stay as published.",
+ "intro_html": "<h2>Do the published results stay what they say?</h2><p>MLCommons publishes percentile scores for AI systems on its AILuminate Safety benchmark, with a Detailed Results report for each system. It states that the reference set is fixed so that adding systems does not shift the scores of those already tested. We read the results page and every report, compare the page with its own reports, and keep every read so that any later change to a published score shows up.</p>",
+ "note_html": "<p>This page says nothing about how safe any system is and does not rank systems. Source: mlcommons.org/ailuminate/safety/results/ and the public folder of Detailed Results it links. The page is checked against the reports: the band is 0 to 15 percent, open at 15, and the size that matters is 5 percent. A share of disagreements is CONSISTENT when the whole 95 percent interval sits inside the band and does not reach both 0 and 5 percent, ABOVE when the lower end is at or above 15 percent, and otherwise cannot tell with the reason beside it. Published scores kept: a system is changed when any of its 13 percentiles or its release month differs from the first value we stored. MLCommons states that the overall score weights all 12 categories equally. A percentile of an average is not the average of percentiles, so the last table only prints the arithmetic and gives no verdict. <a href=\"https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/ailuminate/PLAN.md\">Plan, notes and code</a>.</p>",
+ "kv": "ailuminate_live",
+ "api_name": "ailuminate",
+ "api_desc": "AILUMINATE: the MLCommons AILuminate Safety results against their own reports, with every read kept.",
+ "every": 144,
+ "rider": "~/bones-forge/ailuminate_index/ailuminate_tick.py",
+ "folder": "ailuminate",
+ "live_desc": "MLCommons AILuminate Safety results, kept and checked, live.",
+ "top": "Systems read: {systems_on_page}. Reads kept: {reads}. Updated {updated}.",
+ "tables": [
+  {
+   "title": "The page against its own reports",
+   "path": "headline",
+   "first": "",
+   "cols": [
+    [
+     "Compared",
+     "of",
+     "n"
+    ],
+    [
+     "Disagree",
+     "n",
+     "n"
+    ],
+    [
+     "Share, 95% interval",
+     "share",
+     "pct"
+    ],
+    [
+     "Outcome",
+     "outcome",
+     "oc"
+    ]
+   ]
+  },
+  {
+   "title": "Published scores kept",
+   "path": "stability",
+   "first": "",
+   "cols": [
+    [
+     "Systems read at least twice",
+     "of",
+     "n"
+    ],
+    [
+     "Changed",
+     "n",
+     "n"
+    ],
+    [
+     "Share, 95% interval",
+     "share",
+     "pct"
+    ],
+    [
+     "Outcome",
+     "outcome",
+     "oc"
+    ]
+   ]
+  },
+  {
+   "title": "Overall percentile beside the mean of the 12 category percentiles (arithmetic only)",
+   "path": "table",
+   "first": "System",
+   "cols": [
+    [
+     "Type",
+     "type",
+     "t"
+    ],
+    [
+     "Released",
+     "release",
+     "t"
+    ],
+    [
+     "Overall",
+     "overall",
+     "n"
+    ],
+    [
+     "Mean of the 12",
+     "mean_cats",
+     "n"
+    ],
+    [
+     "Overall minus mean",
+     "diff",
+     "n"
+    ],
+    [
+     "Lowest category",
+     "lowest",
+     "n"
+    ],
+    [
+     "Highest category",
+     "highest",
+     "n"
+    ]
+   ]
+  },
+  {
+   "title": "Candela, MLCommons' paid testing service: stated prices per test, as printed",
+   "path": "candela.prices",
+   "first": "Benchmark and tier",
+   "cols": [
+    [
+     "Member",
+     "member",
+     "t"
+    ],
+    [
+     "Non-member",
+     "nonmember",
+     "t"
+    ]
+   ]
+  },
+  {
+   "title": "Candela terms that differ from our first read",
+   "path": "candela.changed",
+   "first": "Item",
+   "firstkey": "item",
+   "cols": [
+    [
+     "First read",
+     "first",
+     "t"
+    ],
+    [
+     "Now",
+     "now",
+     "t"
+    ]
+   ]
+  }
+ ],
+ "files": [
+  "~/bones-forge/ailuminate_index/PLAN.md",
+  "~/bones-forge/ailuminate_index/ailuminate_tick.py"
+ ]
+}

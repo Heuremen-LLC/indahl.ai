@@ -1,0 +1,18 @@
+R = '/experiments/2026-10-22-length-repeat/'
+PAIRS = [
+("""<h2>Result: ibm_kingston, not decided</h2>""", """<h2>Result: ibm_kingston, not decided in this run</h2>"""),
+("""Idle minus readout P(1) of the measured qubits after 8 readouts is above 0 on ibm_fez,""",
+ """Idle minus readout P(1) of the measured qubits after 8 readouts is above 0 on ibm_fez,"""),
+("""it is above 0 at 4 readouts too. ibm_kingston is not decided.""",
+ """it is above 0 at 4 readouts too. ibm_kingston is not decided in this run. In both kingston repeats and the fez repeat below, this reading is above 0 at 4 and 8 readouts with both instructions."""),
+("""<p>Data tables and recounts:""",
+ f"""<h2>Repeats on ibm_kingston and ibm_fez, 22 October, night</h2>
+<p>Two repeats ran the unchanged run_len.py, fetch_len.py and analyze_len.py from their own folder, each plan pushed before its jobs (<a href="{R}PLAN_LENGTH_REPEAT.md.text">repeat plan</a>, <a href="{R}PLAN_LENGTH_REPEAT.sha256.text">hash</a>, <a href="{R}ADDENDUM_LENGTH_REPEAT2.md.text">second-repeat addendum</a>, <a href="{R}ADDENDUM_LENGTH_REPEAT2.sha256.text">hash</a>, <a href="{R}CODE_LENGTH_REPEAT.sha256.text">code hashes</a>). Only the shot count changed. The known-good check is the plan&rsquo;s: the <code>measure</code> kick at 8 readouts must read below zero, with an interval overlapping the control run&rsquo;s kick (fez &minus;1.62 [&minus;2.08, &minus;1.18], kingston &minus;2.86 [&minus;3.55, &minus;2.09]). Each run alone decides its processor, and the runs are printed side by side, never pooled. The ratio is the shorter instruction&rsquo;s kick over the longer one&rsquo;s, and the outcome words are those the committed analysis prints.</p>
+<ul>
+<li><b>ibm_kingston, first repeat</b>, job dbdc0s8c77vs73etknb0, 1000 shots (<a href="{R}job_ibm_kingston.json">job record</a>, <a href="{R}raw_ibm_kingston.npz">raw</a>, <a href="{R}backend_properties_ibm_kingston.json">IBM calibration</a>, <a href="{R}results_kingston_repeat.text">output</a>). Ratio 1.007 [0.811, 1.203] at 4 readouts, CANNOT_TELL, because the <code>measure</code> kick&rsquo;s two copies disagree (copy gap [+0.038, +0.441]). Ratio 1.008 [0.799, 1.372] at 8 readouts, PER-READOUT (the length ratio is 0.633). Known-good value: &minus;2.685 [&minus;3.488, &minus;1.877], below zero and overlapping the control run&rsquo;s interval.</li>
+<li><b>ibm_kingston, second repeat</b>, job dbdc41ni0auc73cqr2c0, 2000 shots (<a href="{R}job_ibm_kingston_r2.json">job record</a>, <a href="{R}raw_ibm_kingston_r2.npz">raw</a>, <a href="{R}results_kingston_r2.text">output</a>). Ratio 0.946 [0.750, 1.171] at 4 readouts and 0.981 [0.773, 1.284] at 8, PER-READOUT at both. Known-good value: &minus;2.812 [&minus;3.790, &minus;2.093], below zero and overlapping the control run&rsquo;s interval.</li>
+<li><b>ibm_fez, repeat</b>, job dbdc44vi0auc73cqr2gg, 4000 shots (<a href="{R}job_ibm_fez_r2.json">job record</a>, <a href="{R}raw_ibm_fez_r2.npz">raw</a>, <a href="{R}results_fez_r2.text">output</a>). Ratio 0.938 [0.802, 1.173] at 4 readouts and 0.879 [0.710, 1.103] at 8, CANNOT_TELL at both, because 1 and the length ratio 0.807 both lie inside. Known-good value: &minus;1.531 [&minus;2.034, &minus;1.214], below zero and overlapping the control run&rsquo;s interval.</li>
+</ul>
+<p>Repeat code, as run: <a href="{R}run_len.py">run_len.py</a> &middot; <a href="{R}fetch_len.py">fetch_len.py</a> &middot; <a href="{R}analyze_len.py">analyze_len.py</a> &middot; <a href="{R}fire_key3.py">fire_key3.py</a> &middot; <a href="{R}fetch_key3.py">fetch_key3.py</a> &middot; <a href="{R}synth_len_results.text">synthetic results</a></p>
+<p>Data tables and recounts:"""),
+]

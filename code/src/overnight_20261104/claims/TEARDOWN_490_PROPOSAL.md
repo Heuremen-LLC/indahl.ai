@@ -1,0 +1,118 @@
+# Teardown of the 490 OURS rows with no job record or stamp beside them (Bones, 4 Nov 2026). PROPOSAL for Sage; no ledger row changed.
+
+Counts: 85 cite a file that holds IBM job ids; 26 have a stamp or job file one folder up; 87 have raw data beside them (now covered by RAW_MANIFEST_20261104_v2.txt, 55,941 files, 2.97 GB, OTS stamped 4 Nov: proves existence as of 4 Nov only); 292 have nothing beside them (iris_index 130, heuremen.org 107, yo 22, watch 10, oy_index 7, qia_leads 5, qia_cal 5, other 6).
+
+Proposed: (1) the 111 linkable rows get a "witness" field naming the job ids or stamp found (list below); (2) the 87 get the manifest as witness, labelled "stamped 4 Nov, after the fact"; (3) the 292 are sorted next: heuremen.org rows are page copies and should cite the run folder they copy; iris_index rows are model runs, whose witness is the output jsonl plus its hash, not an IBM job.
+
+## The 111 linkable rows
+- abs.coherence_range | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- abs.fez_equal_elapsed | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- abs.rigetti_shift | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- bill.coh_fez4_corrected | heuremen.org/experiments/readout-mitigation-check/iq/out1.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- bill.coh_marrakesh_n4 | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- bill.r9.coherence_iq | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- flip2.kingston_knowngood | heuremen.org/experiments/2026-10-22-flip-check-run2/results_flip.text | job ids inside the cited file | e.g. dbd1cqfi0auc7394gq30, dbd1e7424mrc73ckiic0, dbd1fcfi0auc7394gstg
+- jobindex.ibm_total | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.decay.pitts_levels | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.flip.floor_gap | heuremen.org/experiments/2026-10-22-flip-check/results_flip.text | job ids inside the cited file | e.g. dbcvu6s24mrc73ckgfcg, dbcvvcpgv2cc738h4770, dbd00jhgv2cc738h49ng
+- paper.gate.equator | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.iq.fez_n2 | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.fez_n4 | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.kingston_n2 | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.marrakesh_n2 | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.marrakesh_n4 | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.marrakesh_n4_n8 | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.outside_fez_kingston | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.outside_marrakesh | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.iq.shots_kept | heuremen.org/experiments/2026-10-21-iq-run/results_iq.text | job ids inside the cited file | e.g. dbcm4e9gv2cc73eakl5g, dbcm5aoc77vs7386ibag, dbcm6moc77vs7386ideg
+- paper.jobindex.repull26 | heuremen.org/experiments/job-index/index.html | stamp or job one level up
+- paper.method.grid | heuremen.org/experiments/2026-10-07-equal-idle/results_oct07.text | job ids inside the cited file | e.g. db32pe42ljfc73d5et60, db32umk7f06c73aqr20g, db333v42ljfc73d5fd7g
+- paper.method.phoenix_dur | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.chi2 | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- paper.mq.conv.aachen | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.boston | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.days | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.fez | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.group_gap | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.kingston | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.marrakesh | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.phoenix | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.pittsburgh | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.range_high | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.range_low | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.conv.single_reads | heuremen.org/experiments/2026-10-21-measurements/measured_qubit/results.text | job ids inside the cited file | e.g. db15r4bid5ic73eqmhs0, db15s4pb694s73drrg10, db15skrid5ic73eqmkvg
+- paper.mq.exponent | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- paper.mq.fez_k12 | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- paper.mq.fez_k24 | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- paper.mq.fez_k6 | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- paper.mq.fez_longer12 | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- paper.mq.half | heuremen.org/experiments/2026-10-21-measurements/cost/results.text | job ids inside the cited file | e.g. db16hravog1s73fhnml0, db16iaavog1s73fhnn9g, db16llbid5ic73eqnp8g
+- paper.oct07.fez_corner_coh | heuremen.org/experiments/2026-10-07-equal-idle/results_oct07.text | job ids inside the cited file | e.g. db32pe42ljfc73d5et60, db32umk7f06c73aqr20g, db333v42ljfc73d5fd7g
+- paper.oct07.sign_check | heuremen.org/experiments/2026-10-07-equal-idle/results_oct07.text | job ids inside the cited file | e.g. db32pe42ljfc73d5et60, db32umk7f06c73aqr20g, db333v42ljfc73d5fd7g
+- paper.rig.28sep | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.4oct | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.chi2 | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.diff | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.far101 | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.pairs22 | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.q0_in_1 | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.q1 | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.rest_clock_rounds | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.rest_rounds | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.rig.rise | heuremen.org/experiments/2026-10-21-measurements/rigetti_extra/results.text | job ids inside the cited file
+- paper.runs.oct11 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.oct2 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.oct4 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.oct5 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.oct6 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.oct7 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.rig_oct4 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.rig_oct5 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.rig_total | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.sep24 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.runs.sep28 | heuremen.org/experiments/job-index/results_count.text | stamp or job one level up
+- paper.seeds.fez_n1m0 | heuremen.org/experiments/2026-10-22-deciding-runs/referee_seeds/seeds2.text | stamp or job one level up
+- paper.seeds.kingston_fez_gate | heuremen.org/experiments/2026-10-22-deciding-runs/referee_seeds/seeds2.text | stamp or job one level up
+- paper.seeds.marr_plus | heuremen.org/experiments/2026-10-22-deciding-runs/referee_seeds/seeds2.text | stamp or job one level up
+- paper.xt.bb_4oct | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.bb_marrakesh_vs_pitts | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.curve_marrakesh | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.curve_within | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.kingston_2oct | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.marr_minus_pitts | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.marrakesh_2oct | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.overcorrect | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.pitts_2oct | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.pitts_4th | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.pitts_bb_4oct | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.resid_kingston | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.resid_marrakesh | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.start1_kingston | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.start1_marrakesh | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.start1_pitts | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.sweep30_kingston | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.xt.sweep30_marrakesh | heuremen.org/experiments/2026-10-21-measurements/gate_trains/results_xtrain.text | job ids inside the cited file | e.g. davuanc92g1c7399i8kg, davveh04oijs73e88tsg, davvf7c92g1c7399k1h0
+- paper.zz.fez_sim | heuremen.org/experiments/2026-10-22-one-neighbour-revival/referee/synth_fez_s10.text | stamp or job one level up
+- paper.zz.fez_sim_hi | heuremen.org/experiments/2026-10-22-one-neighbour-revival/referee/synth_fez_s10.text | stamp or job one level up
+- qia.co.bq_bracket | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.co.kingston_factors | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.arizona_anomaly | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.cern_bern_lmu_marrakesh | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.cuhk_mcm | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.kaist_fez | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.kingston_phase_diagram | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.nikhef_lhcb_velo | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.qusoft_kingston | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.run_boussahi | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.run_geopump | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.ucf_lbnl_mcm | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.uiu_dhaka | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- qia.res.und_fez | qia_leads/THE_BOOK.md | job ids inside the cited file | e.g. dbek4h0m94ac738rvg60, dbemgl7gdj9s73fm2vs0
+- tally.coh3of25 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up
+- tally.errored3 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up
+- tally.kick13of14 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up
+- tally.oct07_32 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up
+- tally.oct12 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up
+- tally.oct21_4 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up
+- tally.oct305 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up
+- tally.rigetti563 | heuremen.org/experiments/job-index/tallies.text | stamp or job one level up

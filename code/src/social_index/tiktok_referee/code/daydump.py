@@ -1,0 +1,17 @@
+import duckdb, sys
+con = duckdb.connect()
+g = sys.argv[1]
+con.execute("create view t as select * from read_csv('%s/*.csv', header=true, all_varchar=true, union_by_name=true)" % g)
+print('rows', con.execute('select count(*) from t').fetchone())
+print('removed by content_type:')
+for r in con.execute("select content_type, count(*) n from t where decision_visibility like '%CONTENT_REMOVED%' group by 1 order by n desc limit 12").fetchall(): print('  ', r)
+print('removed & OTHER: content_type_other values:')
+for r in con.execute("select content_type, content_type_other, count(*) n from t where decision_visibility like '%CONTENT_REMOVED%' and content_type like '%OTHER%' group by 1,2 order by n desc limit 15").fetchall(): print('  ', r)
+print('removed & IMAGE (no video): top grounds:')
+for r in con.execute("select incompatible_content_ground, count(*) n from t where decision_visibility like '%CONTENT_REMOVED%' and content_type like '%IMAGE%' and content_type not like '%VIDEO%' group by 1 order by n desc limit 8").fetchall(): print('  ', r)
+print('removed video: source_type x automated_decision:')
+for r in con.execute("select source_type, automated_decision, count(*) n from t where decision_visibility like '%CONTENT_REMOVED%' and content_type like '%VIDEO%' group by 1,2 order by n desc").fetchall(): print('  ', r)
+print('removed video: application_date vs created_at:')
+for r in con.execute("select application_date, count(*) n from t where decision_visibility like '%CONTENT_REMOVED%' and content_type like '%VIDEO%' group by 1 order by n desc limit 5").fetchall(): print('  ', r)
+print('decision_visibility_other for OTHER removals (sample):')
+for r in con.execute("select decision_visibility, decision_visibility_other, count(*) n from t where content_type like '%OTHER%' group by 1,2 order by n desc limit 8").fetchall(): print('  ', r)

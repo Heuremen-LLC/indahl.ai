@@ -1,0 +1,17 @@
+# Free calibration run (Kumar): Zenodo 10.5281/zenodo.22856763, Dr Akshay Honrao, Quantum Ocean Part 93 -- committed before any job
+Their claim: on ibm_fez, drain-direction qubits Q41-45 show the lowest entanglement penalty (GHZ err / basis err = 1.79x) vs anti-drain
+Q29-33 (6.01x); 'entanglement works best toward black holes'. Their job danqk4opqrnc73994i9g, 2026-09-20, 4 groups x (basis, GHZ) x 8 reps x 500 shots.
+ZERO-QPU CHECK FIRST (done before this plan, recorded here): the fez record in force on 2026-09-20 (asked in UTC at 00/08/16/23 h) marks coupler
+32-33 failed (error 1.0) and 31-32 at 4.3-4.9% inside ANTI_DRAIN, and couplers 71-72 and 72-73 failed plus q72 readout 0.29-0.37 inside CONTROL_1;
+DRAIN and CONTROL_2 couplers are 0.15-0.40%. DRAIN has the worst readout of the four (record all-zero success 0.80-0.83). Their own table:
+CONTROL_2 has the lowest GHZ error (0.1475) and the lowest delta (0.0705); DRAIN is lowest only on the ratio, whose denominator is the readout error.
+This run: their exact design (same groups, same circuits, 500 shots, 8 reps, fez, one job) plus ANTI_HEALTHY [28,29,30,31,18]: three of their
+anti-drain qubits, in the anti-drain region, on couplers the record calls healthy (0.21-0.40%). Compiled: every GHZ circuit 4 CZ, no swaps; measured on
+exactly the group's qubits. Calibration record saved before and after the job.
+DECIDER: delta(ANTI_HEALTHY) - delta(DRAIN), 95% interval with t(df 14) = 2.145 on the rep SEMs. Direction hypothesis predicts ~ +0.30 (their
+anti-minus-drain); coupler health predicts ~0. ABOVE / BELOW / CONSISTENT (a bound) / CANNOT_TELL if the interval is wider than 0.10.
+Also reported: replication of their ranking (penalty and delta), and the delta ordering against the record's coupler health.
+KNOWN-GOOD: CONTROL_1 [70-74] has two couplers the record marks failed; their published GHZ error there is 0.8907. In this same job it must read GHZ error
+> 0.70, or the run reads nothing (the known answer on real hardware: a chain through failed couplers does not make GHZ).
+Synthetic: synth_results_ocean.text (health / direction / reverse / noise-only worlds land as planted; broken-instrument world fails known-good; floor 13/300 = 4.3%).
+Budget: cap 150 s (their budget for 64 circuits was 73 s); refuses below 300 s reserve.

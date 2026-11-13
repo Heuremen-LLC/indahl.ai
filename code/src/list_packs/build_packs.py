@@ -1,0 +1,152 @@
+"""build_packs.py: builds the QIA List Pack and the IRIS List Pack from the published list.json files.
+Output: dist/qia-list-pack.zip and dist/iris-list-pack.zip (+ .sha256). Local only, nothing is deployed.
+Refuses if any file names a local path, a key file or a token."""
+import os, re, csv, json, html, shutil, zipfile, hashlib, datetime, urllib.parse
+B = os.path.expanduser('~/bones-forge/'); H = os.path.dirname(os.path.abspath(__file__))
+SRC = B + 'cloudflare-workers/heuremen-door/public/'; SITE = B + 'indahl-ai/'
+TODAY = datetime.date.today().isoformat()
+LOGO = ('<svg viewBox="0 0 200 200" width="44" height="44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="9">'
+        '<polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5" fill="currentColor"/></svg>')
+REPO = 'https://github.com/Heuremen-LLC/indahl.ai'
+shutil.rmtree(H + '/dist', ignore_errors=True); os.makedirs(H + '/dist')
+
+def tex(s):  # escape BibTeX/LaTeX specials
+    s = re.sub(r'\s+', ' ', s).strip(); out = ''
+    for c in s:
+        out += {'\\': r'\textbackslash{}', '{': r'\{', '}': r'\}', '%': r'\%', '&': r'\&', '#': r'\#', '_': r'\_', '$': r'\$', '^': r'\^{}', '~': r'\~{}'}.get(c, c)
+    return out
+def https(u): return re.sub(r'^http://', 'https://', u)
+def flat(s): return re.sub(r'\s+', ' ', s).strip()
+def strip_tags(s): return flat(html.unescape(re.sub(r'<[^>]+>', '', s)))
+
+def key_rows(division):
+    t = open(SITE + division + '/key.html', encoding='utf-8').read().split('<main', 1)[1]
+    rows = []
+    for tr in re.findall(r'<tr>(.*?)</tr>', t, re.S):
+        cells = re.findall(r'<td>(.*?)</td>', tr, re.S)
+        if len(cells) >= 3: rows.append([strip_tags(c) for c in cells])
+    return rows
+
+def ids(link):
+    m = re.match(r'https://arxiv\.org/abs/(.+)$', link); a = m.group(1) if m else None
+    m = re.match(r'https://(?:dx\.)?doi\.org/(10\..+)$', link); d = urllib.parse.unquote(m.group(1)) if m else None
+    return a, d
+
+def build(div, NAME, other_cols):
+    d = json.load(open(SRC + div + '/list.json', encoding='utf-8')); S = d['studies']
+    slug = div + '-list-pack'; P = H + '/dist/' + slug; os.makedirs(P)
+    PAGE = f'https://indahl.ai/{div}/list'; KEY = f'https://indahl.ai/{div}/key'
+    shutil.copy(SRC + div + '/list.json', P + '/list.json')
+    shutil.copy(B + 'public_mirror/indahl.ai/LICENSE.txt', P + '/LICENSE.txt')
+    shutil.copy(H + '/src/verify.py', P + '/verify.py'); shutil.copy(H + '/src/TESTED.md', P + '/TESTED.md')
+    for s in S:  # anchor: the data carries one for QIA, IRIS rows get one from the arXiv id
+        if 'anchor' not in s:
+            a, dd = ids(s['link']); assert a, s['link']; s['_anchor'] = 'arxiv-' + re.sub(r'v\d+$', '', a)
+        else: s['_anchor'] = s['anchor']
+        assert re.fullmatch(r'[A-Za-z0-9._-]+', s['_anchor']), s['_anchor']
+    assert len({s['_anchor'] for s in S}) == len(S), 'anchors not unique'
+    # list.csv
+    if div == 'qia': cols = ['study', 'link', 'version', 'indexed', 'read', 'codes', 'basis', 'calibrated', 'anchor', 'indahl_url']
+    else: cols = ['study', 'link', 'classification', 'indexed', 'receipt', 'anchor', 'indahl_url']
+    with open(P + '/list.csv', 'w', encoding='utf-8', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(cols)
+        for s in S:
+            r = {'study': flat(s['study']), 'link': https(s['link']), 'indexed': s['indexed'], 'anchor': s['_anchor'], 'indahl_url': f'{PAGE}#{s["_anchor"]}'}
+            if div == 'qia':
+                r.update(version=flat(s['version']), read=flat(s['read']), codes=' '.join(s['codes']), calibrated=str(s['calibrated']).lower(),
+                         basis=' | '.join(f'{c}: {t}' for c, ts in s['basis'].items() for t in ts))
+            else: r.update(classification=s['classification'], receipt=' | '.join(flat(x) for x in s['receipt']))
+            w.writerow([r[c] for c in cols])
+    # KEY.csv
+    kr = key_rows(div)
+    with open(P + '/KEY.csv', 'w', encoding='utf-8', newline='') as f:
+        w = csv.writer(f, lineterminator='\n')
+        if div == 'qia':
+            w.writerow(['code', 'name', 'meaning', 'reference']); [w.writerow(r[:4] + [''] * (4 - len(r[:4]))) for r in kr]
+        else:
+            w.writerow(['code', 'name', 'meaning', 'measured', 'indexed_studies_touched']); [w.writerow(r[:5]) for r in kr]
+    # references.bib / .ris
+    bib, ris = [], []
+    for s in S:
+        a, dd = ids(https(s['link'])); k = f'{div}-{s["_anchor"]}'; note = f'Listed on the Heuremen LLC {NAME}, {PAGE}#{s["_anchor"]}'
+        e = [f'@misc{{{k},', f'  title = {{{{{tex(s["study"])}}}}},', f'  url = {{{https(s["link"])}}},']
+        if a: e += [f'  eprint = {{{a}}},', '  archivePrefix = {arXiv},']
+        if dd: e += [f'  doi = {{{dd}}},']
+        e += [f'  note = {{{tex(note)}}}', '}']; bib.append('\n'.join(e))
+        r = ['TY  - GEN', f'ID  - {k}', f'TI  - {flat(s["study"])}', f'UR  - {https(s["link"])}']
+        if dd: r.append(f'DO  - {dd}')
+        r += [f'N1  - {note}', 'ER  - ']; ris.append('\n'.join(r))
+    open(P + '/references.bib', 'w', encoding='utf-8').write('\n\n'.join(bib) + '\n')
+    open(P + '/references.ris', 'w', encoding='utf-8').write('\n\n'.join(ris) + '\n')
+    open(P + '/CITE_THE_LIST.bib', 'w', encoding='utf-8').write(
+        f'@misc{{heuremen-{div}-list,\n  author = {{{{Heuremen LLC}}}},\n  title = {{{NAME}}},\n  year = {{{TODAY[:4]}}},\n  url = {{{PAGE}}},\n'
+        f'  note = {{Data downloaded from the list pack built {TODAY}}}\n}}\n')
+    open(P + '/CITATION.cff', 'w').write(
+        f'cff-version: 1.2.0\nmessage: "If you use this list, please cite it."\ntitle: "{NAME}"\nauthors:\n  - name: "Heuremen LLC"\n'
+        f'version: "{TODAY}"\ndate-released: {TODAY}\nurl: "{PAGE}"\nrepository-code: "{REPO}"\nlicense-url: "https://indahl.ai/terms"\n')
+    # README
+    files = [('list.json', f'The List as published at {PAGE}, unchanged. Top-level keys are note, terms and studies.'),
+             ('list.csv', f'One row per study, with every field of list.json. ' + (
+                 'Codes are joined with spaces. Basis is written as CODE: text, with several entries separated by a vertical bar. ' if div == 'qia' else
+                 'The receipt lines are joined with a vertical bar. ') + f'The column indahl_url points to the study on the List page. ' + (
+                 '' if div == 'qia' else 'The list.json rows carry no anchor, so the anchor column is built from the arXiv number as arxiv-<number> without the version.')),
+             ('KEY.csv', f'The codes and what they mean, copied from {KEY}.'),
+             ('references.bib', 'One BibTeX entry for each study on the List. These are other people\'s papers. Each entry carries the title and link as listed, the arXiv number or DOI when the link holds one, and a note that points to the List. No authors or years are given because the List does not carry them.'),
+             ('references.ris', 'The same entries in RIS format.'),
+             ('CITE_THE_LIST.bib', f'One BibTeX entry for the {NAME} itself.'),
+             ('CITATION.cff', 'Citation file for the List.'), ('TESTED.md', 'What was tested before release and what was not.'),
+             ('verify.py', 'Checks that the files agree with each other. Run python3 verify.py in this folder.'),
+             ('LICENSE.txt', 'Terms for this data.'), ('START_HERE.html', 'This page.')]
+
+    nonascii = sum(any(ord(c) > 127 for c in s['study']) for s in S)
+    nobasis = sum(1 for s in S if s.get('codes') and not any(s.get('basis', {}).values()))
+    more = ''
+    if div == 'qia':
+        more += (f'The version column holds free text as the List records it, for example "published version" or "as read 2026-11-01". It is not only an arXiv version number.\n\n'
+                 f'Some studies have codes and no basis text. In this data {nobasis} studies have codes and an empty basis. The List records no basis text for those rows.\n\n')
+    compile_ = (f'## Compile\n\nreferences.bib is written for biblatex with biber and LuaLaTeX or XeLaTeX. ' + (f'{nonascii} titles hold characters outside ASCII, such as Cyrillic, Greek, subscripts and dashes, so classic bibtex with pdflatex will stop on them.' if nonascii else 'No title in this pack holds characters outside ASCII, but the same recipe works for all of the packs.') + f' A minimal example:\n\n'
+        '```\n\\documentclass{article}\n\\usepackage[backend=biber]{biblatex}\n\\addbibresource{references.bib}\n\\begin{document}\n'
+        f'Text \\cite{{{div}-{S[0]["_anchor"]}}}.\n\\printbibliography\n\\end{{document}}\n```\n\n'
+        'Run `lualatex main`, then `biber main`, then `lualatex main` twice more. Replace lualatex with xelatex if you prefer.\n\n')
+    md = (f'# {NAME} Pack\n\nHeuremen LLC. The {NAME} in files you can open in a spreadsheet, a reference manager or a LaTeX project. Page: {PAGE}\n\n'
+          f'## Files\n\n' + '\n'.join(f'- `{n}`: {t}' for n, t in files) + '\n\n' + more
+          + (f'A few links that list.json gives as http are written as https in the other files, because their host serves https.\n\n' if any(st['link'].startswith('http://') for st in S) else '')
+          + (f'{sum(1 for st in S if not st.get("indexed"))} rows have no indexed date in the source, so that cell is blank.\n\n' if any(not st.get('indexed') for st in S) else '')
+          + (f'In list.csv, codes are separated by spaces and the reasons in the basis column are separated by " | ". A few reasons contain that sequence themselves, so read list.json when you need each reason exactly. ' if div == 'qia' else '')
+          + 'A title that starts with a minus sign can be read as a formula by a spreadsheet, so import list.csv as text.\n\n'
+          f'## Codes\n\nThe codes are explained in KEY.csv and at the key page: {KEY}\n\n'
+          f'## Import\n\n- Zotero: choose File, then Import, and select references.bib or references.ris.\n'
+          f'- BibTeX or LaTeX: copy references.bib next to your document and cite an entry with its key, for example `\\cite{{{div}-{S[0]["_anchor"]}}}`. To cite the List itself use CITE_THE_LIST.bib. Titles are UTF-8 and some hold Greek, Cyrillic or math characters, so use biber with LuaLaTeX or XeLaTeX, or a recent LaTeX with UTF-8 input.\n'
+          f'- Spreadsheet: open list.csv. It is UTF-8 with a header row. In Excel use Data, then From Text/CSV, and pick UTF-8.\n\n'
+          f'## Terms\n\n{d["terms"]}\n\nEach listed study keeps its own terms. Names appear as published. To have a name or a study removed: https://indahl.ai/contact\n\n'
+          + compile_ + f'## Check\n\nRun `python3 verify.py` in this folder. It compares the row counts of list.json, list.csv, references.bib and references.ris, checks the BibTeX braces and keys, and checks that every link starts with https://\n\n'
+          f'## More\n\nThe site: https://indahl.ai\n\nCode: {REPO}\n\nBuilt {TODAY}.\n')
+    assert ';' not in md.replace('&', ''), 'semicolon in README'
+    open(P + '/README.md', 'w').write(md)
+    # START_HERE.html
+    body = []
+    for blk in md.split('\n\n'):
+        b = html.escape(blk.strip()); b = re.sub(r'`([^`]+)`', r'<code>\1</code>', b)
+        b = re.sub(r'(?<![\w/"])(https://[^\s<]*[^\s<.,:)])', r'<a href="\1">\1</a>', b)
+        if b.startswith('# '): continue
+        if b.startswith('## '): body.append('<h2>' + b[3:] + '</h2>')
+        elif b.startswith('- '): body.append('<ul>' + ''.join('<li>' + l[2:] + '</li>' for l in b.split('\n')) + '</ul>')
+        else: body.append('<p>' + b.replace('\n', ' ') + '</p>')
+    css = ('body{font:16px/1.55 Georgia,serif;background:#f6efe2;color:#1c1712;margin:0}main{max-width:860px;margin:0 auto;padding:24px 16px}header{display:flex;gap:12px;align-items:center;'
+           'border-bottom:2px solid #c9a227;padding-bottom:12px}header b{font-size:24px}code{background:#efe4cf;padding:1px 4px;font-size:14px;word-break:break-all}a{color:#7a5a12}.note{color:#5a4d3a;font-size:14px}')
+    open(P + '/START_HERE.html', 'w', encoding='utf-8').write(
+        f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{NAME} Pack</title><style>{css}</style><main>'
+        f'<header>{LOGO}<div><b>{NAME} Pack</b><br><span class="note">Heuremen LLC &middot; <a href="{PAGE}">indahl.ai/{div}/list</a></span></div></header>' + '\n'.join(body) + '</main></html>')
+    # gate: nothing private
+    bad = re.compile(r'bones-forge|/Users/|\.ibm_quantum_key|\.ibm_.*crn|wrangler|IBM_QUANTUM_TOKEN="?[A-Za-z0-9]{10}|hf_[A-Za-z0-9]{20}|pypi-[A-Za-z0-9]{20}|ghp_[A-Za-z0-9]{20}|sk-[A-Za-z0-9]{20}')
+    for r, _, fs in os.walk(P):
+        for f in fs:
+            m = bad.search(open(os.path.join(r, f), encoding='utf-8', errors='replace').read())
+            assert not m, f'REFUSED: {f} contains {m.group(0)!r}'
+    z = H + f'/dist/{slug}.zip'
+    with zipfile.ZipFile(z, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for r, _, fs in os.walk(P):
+            for f in sorted(fs): p = os.path.join(r, f); zf.write(p, os.path.relpath(p, H + '/dist'))
+    h = hashlib.sha256(open(z, 'rb').read()).hexdigest(); open(z + '.sha256', 'w').write(f'{h}  {slug}.zip\n')
+    print(slug, len(S), 'studies |', sorted(os.listdir(P)), '|', os.path.getsize(z), 'bytes |', h)
+build('qia', 'QIA List', None); build('iris', 'IRIS List', None)

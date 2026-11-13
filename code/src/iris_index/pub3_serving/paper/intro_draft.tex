@@ -1,0 +1,13 @@
+\section{Introduction}
+Our previous manuscript \citep{pub2} ran five small open-weight models, with the same manifest digests, at temperature zero and a fixed
+seed, on two of our machines: a Mac on its Apple GPU and a workstation with an NVIDIA RTX 3080. The bare replies were byte-identical on
+only 71 to 120 of 170 items across the machines, fewer than either machine's own exact repeat, and the scored answer changed on 11 of 391
+items read in all four runs. The two setups differed in more than the hardware: the operating system and GPU backend, the Ollama version
+(0.34.2 against 0.34.3), how the server was built (a Homebrew bottle against the official release), the number of parallel slots the
+server was started with (one against four), and the day. That manuscript read the comparison at the level of the whole setup. An outside
+review of it named the version and the slot count as differences that travel with the hardware.
+
+Here we take the stack apart one piece at a time, with the same bench, models and request settings, and ask which change moves the
+replies. Inference engines can return different numbers for the same request when the order of floating-point reductions changes with
+batch composition or kernel choice; we do not test a mechanism here, only which configuration change is followed by a change in the bytes
+and in the scored answer.

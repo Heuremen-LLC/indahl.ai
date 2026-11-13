@@ -1,0 +1,16 @@
+## Addendum 12 (02:48Z 7 Nov, read from the clock; Sage's conditions of ~02:42Z accepting Addendum 10; before the freeze, before any training row is read)
+M1. The reason for 06:00Z, plainly: sooner is better for the schedule. Wayfinder asked why round 1 waited ~35 h on a date Bones had picked
+    arbitrarily; 06:00Z lets the trainer be built, stamped and in a block first, and puts the round-1 result in front of him by his morning.
+    It is not better on any data ground. Bones had seen eligible counts of 840 (01:30Z) and 882 (02:40Z) when choosing it; that is a degree of freedom, disclosed.
+M2. No silent second move. If any stamp in freeze_record.py's list (A7..A12) is pending or its block is not before the record, the record refuses and waits.
+    The freeze date does not move again in either direction without a new stamped addendum.
+M3. The trainer stamp follows the same rule: its block time must precede the first real row read; a pending calendar receipt never counts.
+M4. Post-read fixes: if build_set.py, train_round1.py, eval_round1.py or read_eval.py is changed after the first real row is read, the change is
+    restamped and logged in POST_READ_CHANGES.md as a post-read change, never folded in quietly.
+M5. fixture_test.py (synthetic, expected result written in the file before the run) covers integrator copies and follows, a parameter twin,
+    UNREAD and MISS turns, habit-cell ids, P2 and P3 rows, a v1 row and a row after the freeze. Result before this stamp: FIXTURE PASS.
+M6. make_habit_drop.py is re-run at the freeze; build_set.py also re-runs the same SQL inline.
+M7. freeze_record.py prints raw and eligible side by side, "Round 1 trained on the pool as of 2026-11-07T06:00Z", the 30-hour cut against the old
+    date, and how many minutes after 06:00Z the counts were taken. It now verifies A9b and A12 against the live files (A12 carries every file
+    changed since A9b). A10/A11's hash of freeze_record.py is superseded here; A10 and A11 still prove their addendum texts.
+M8. freeze_record.py line 1 docstring updated to 7 Nov 06:00Z (Sage's read at 02:42Z found the old date still there). Restamped here.

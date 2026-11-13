@@ -1,0 +1,8 @@
+## Addendum 14 (13:48Z 7 Nov; Bones on Wayfinder's go; Sage's VERDICT 13:45Z named a second training seed as round 2's most valuable buy)
+S1. Seed replication of round 1: the SAME frozen set (round1_data/train.jsonl, hash below), the SAME budget (LoRA 16 layers, rank 8, lr 1e-5, batch 4,
+    exactly 470 iters, mask-prompt), seed 62 instead of 61. Config = round1_adapters/lora_config.yaml with only seed and adapter_path changed.
+S2. Eval exactly as round 1 (eval_round1.py, r15+r16, 3 samples, temp 0.7, 1,200 tokens, thinking off), once, into round1s62_eval/. The base arm is re-run
+    by the script; its rows are kept and compared to round 1's base rows as a check that sampling is reproducible.
+S3. Readings, fixed now: read_eval.py on seed 62 alone, then the seed-to-seed gap (trained61 minus trained62 mean fault rate, both rulers) printed beside
+    the base rerun floor. If |seed gap| is as large as the round-1 effect (0.150), the round-1 WIN is CANNOT_TELL across seeds. P1 OK flips per seed.
+S4. Training may start before this stamp is in a block (training produces no reading). Eval waits until SHA256SUMS_A14 is in a block.

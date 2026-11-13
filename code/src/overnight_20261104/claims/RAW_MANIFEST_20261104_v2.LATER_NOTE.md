@@ -1,0 +1,1 @@
+Correction (4 Nov, after the fact, kept apart from the stamped file): the manifest's line 'proves the files existed as of then' holds only once a Bitcoin block attests the stamp; while calendar-pending it proves nothing outside the house.

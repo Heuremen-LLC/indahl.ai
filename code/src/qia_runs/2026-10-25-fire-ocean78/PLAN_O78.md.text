@@ -1,0 +1,17 @@
+# Free calibration run (Kumar): Zenodo 10.5281/zenodo.22737706, Dr Akshay Honrao, Quantum Ocean Part 78 'First Light' -- committed before any job
+Their Experiment 1 (fez, job dajggdr9k43c73ah6pfg): RY to S = 0 / 0.5 / 1, 150 identity gates, return, error = P(1): 0.475 / 0.525 / 0.575 %, slope +0.001 per S;
+bound |g1| < 0.001 (95% CL). The paper does not state the compile.
+ZERO-QPU (before this plan): Qiskit 2.5.2 (their version) at opt 1, 2, 3 and at the default preset reduces RY(t) id^150 RY(-t) to a bare measurement: all three S
+become the SAME circuit. Only opt 0 keeps the idle. Whether their run kept it: CANNOT_TELL from the text.
+This run, one job, ibm_fez, 40 qubits per circuit in parallel (record-healthy at plan time), 10,000 shots:
+  COLLAPSED x 3 S: their logical circuit through the default preset (compiled: measure only, 415 dt, identical for all S);
+  REAL x 3 S: opt 0, 150 id kept per qubit (+924 dt idle = 3.7 us); KG: RY(pi/2) with no return.
+Readings (units = qubits, bootstrap over the 40, D22): COLLAPSED slope vs 0; REAL slope vs 0; REAL slope minus the record-model slope (T1, T2,
+prob_meas1_prep0 of each qubit at submission, amplitude damping + dephasing over the idle) = the room left for g1. 95% intervals; ABOVE / BELOW /
+CONSISTENT (a bound) / CANNOT_TELL if wider than 0.004. Their +0.001 reported as inside or outside each arm's interval.
+/q before firing: A3 record in force = the record saved at submission (props_before.json). B8 the idle is checked in the compiled schedule (dry_run_o78.text).
+C16 floor measured in synth (residual resolves 1/60 in a standard world). D22 units are qubits, not shots. E25 a residual off the record model does not by itself
+name g1: a stale or wrong record T2 (our own Hahn-T2 line found record T2 off) predicts the same; that alternative stays live and is printed beside it.
+KNOWN-GOOD: RY(pi/2) with no return gives P(1) = 0.5 by construction; mean over the 40 qubits must read 0.5 +/- 0.03 in this job, or the run reads nothing.
+Synthetic: synth_results_o78.text (standard / g1 / collapsed-with-slope worlds land as planted; broken decoder fails known-good; floor line kept).
+Budget: cap 90 s; refuses below 300 s reserve.

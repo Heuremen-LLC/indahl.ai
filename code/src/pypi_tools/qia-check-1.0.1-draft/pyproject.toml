@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qia-check"
+version = "1.0.2"
+description = "Checks on IBM Quantum calibration records before and after a run, from Heuremen LLC. Standard library only."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Heuremen LLC" }]
+keywords = ["quantum computing", "calibration", "IBM Quantum", "T1", "T2", "reproducibility"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Intended Audience :: Science/Research",
+  "License :: Other/Proprietary License",
+]
+dependencies = []
+
+[project.optional-dependencies]
+ibm = ["qiskit-ibm-runtime"]
+
+[project.urls]
+Homepage = "https://indahl.ai/qia"
+Documentation = "https://indahl.ai/qia/package"
+Source = "https://github.com/Heuremen-LLC/indahl.ai"
+
+[project.scripts]
+qia-check = "qia_check:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/qia_check.py"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"TESTED.md" = "share/doc/qia-check/TESTED.md"
+"CITATION.cff" = "share/doc/qia-check/CITATION.cff"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/qia_check.py", "README.md", "LICENSE", "TESTED.md", "CITATION.cff", "pyproject.toml"]

@@ -1,0 +1,36 @@
+# SEAT: the outside seat that reads our live pages. Plan, as committed in the nodes repository (drift/PLAN.md) before the first probe.
+
+## What it does
+A GitHub runner, which is not our Mac and not our network, fetches the live site and compares it with what we publish elsewhere. Our own release script checks drift from the same machine that built the pages, which is one seat. This is a second seat that does not share our machine, our network or our clock.
+
+## Reads (fixed now)
+1. Page against repository. For each page in drift/targets.json the runner fetches the served page from indahl.ai and the same file from the main branch of github.com/Heuremen-LLC/indahl.ai, and compares SHA-256. MATCH or DIFFER. A release writes the site first and the repository after, so a single DIFFER can be a deploy in progress. A page counts as DRIFT only when it DIFFERs in two consecutive probes.
+2. Feed freshness. For each live feed in drift/targets.json the runner fetches the JSON, reads its updated or read stamp, and computes its age in hours. Each feed has a limit set from its rider's cadence at three times the cadence, with a floor of 1.5 hours. FRESH when younger than the limit, STALE when older, UNREACHABLE when the fetch fails or the stamp cannot be read. The stamps are in UTC.
+3. Archive chain. The runner downloads chain.jsonl and the manifests from code/archive in the repository and recomputes every digest. OK or BROKEN, with the number of entries.
+
+## Rolling reading
+Over the last 24 probes: the number of probes with any DRIFT page, any STALE or UNREACHABLE feed, and a BROKEN chain. Outcome against the claim that the live site is the published site and its feeds are current: CONSISTENT if none of the three occurred in 24 or more probes, ABOVE if any occurred in at least 3 of the last 24, otherwise CANNOT_TELL. Fewer than 24 probes: CANNOT_TELL.
+
+## Probes
+Triggered by the HST tick bus through repository_dispatch, never on a schedule. Every probe is saved whole to data/drift/history.jsonl in this repository by the runner, with the run's own timestamp from the runner's clock.
+
+## Known-good
+The probe fetches one page it knows is current (the front page) and one URL it knows is missing, and must read MATCH and UNREACHABLE for them. A probe that fails this saves a row marked CONTROL_FAILED and no reading.
+
+## Not claimed
+That the content is true. That nothing changed between probes. That the runner's view is the view from everywhere: one runner is one seat.
+
+## Note 1 (29 Oct, at the first probe)
+The first row of data/drift/history.jsonl, stamped before the first dispatch, was written by running the probe on the author's own Mac to test it. It is not a reading from the outside seat and should be ignored. Every later row is written by the GitHub runner. The plan and the probe were committed in the same commit, before the first runner probe.
+
+## Addendum 1 (29 Oct, from the internal audit)
+1. Limits. The plan sets each feed's limit at three times its rider's cadence with a floor of 1.5 hours. Feeds added after the plan took a default of 40 hours, so a fast feed could be a day stale and read FRESH. Every limit is now set from its rider's cadence in HST ticks at 6.5 minutes a tick (REVISE 78 hours, FEDSEP 234, STACK 3.9, SEAT 2.9, CADA 1.5, COIN 7.8, and so on), and the target list is regenerated from the tick bus cadences.
+2. Incidents. A feed that stays stale, or a broken chain that is not repaired, was flagged on every probe, so one incident seen by three probes read ABOVE. The rolling reading now counts incidents, which are runs of consecutive flagged probes. ABOVE is three or more incidents in the last 24 probes, CONSISTENT is none, otherwise CANNOT_TELL.
+3. Age. The reading covered the last 24 probes however old they were, so if probing stopped the last good reading would stand for ever. If the newest probe is more than three hours old the reading is CANNOT_TELL and the page shows how old it is.
+
+Note (29 Oct). The rider read the target list from one line of the site builder that no longer holds the menu, so new pages were never added and /sad stayed after the rename. It now reads every menu and desk entry in the builder. The list was also corrected by hand (see the drift addendum in the nodes repository). No outcome rule changed.
+
+Note (29 Oct, second). The new rider read /hermes as a page with a live feed and the probe reported /hermes/live.json unreachable. HERMES is a menu page, its desks have the feeds. It is now skipped like the other division pages and its feed is removed from the target list. This cleared one false incident.
+
+## Addendum 2 (30 Oct 2026, from the site pass)
+The page now lists each incident of the rolling reading with its first and last probe, the number of probes that saw it and what they saw, and states the incident rule of Addendum 1 in its note. The one incident in the first 24 probes was four consecutive probes in which /vault/live.json was unreachable, a target that has no feed and is no longer probed. The probes are triggered by our scheduler. No rule changed.

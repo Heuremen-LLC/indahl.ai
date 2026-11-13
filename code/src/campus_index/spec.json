@@ -1,0 +1,111 @@
+{
+ "slug": "campus",
+ "nav": "CAMPUS",
+ "h1": "CAMPUS &middot; The Documents Behind OY, Kept",
+ "title": "CAMPUS | The Documents Behind OY, Kept | Heuremen LLC",
+ "desc": "CAMPUS: every external source cited on the OY page, read and kept pass after pass so that a moved, changed or removed page shows.",
+ "intro_html": "<h2>Do the pages schools published stay where they were?</h2><p>The OY page lists what colleges and universities have published about their own AI policies and about measuring them, with a source link for every row. Those sources are web pages and PDFs that their owners can move, rewrite or remove. We read every external source on the OY page, keep what each one said, and read it again on later passes, so that a change shows and so that the OY Matrix can be kept right.</p>",
+ "note_html": "<p>This is a record, not a test. It never ranks or judges a school. A page changed when the overlap of its three-word sequences with the previous read is below 0.90, so dates, menus and counters can move it a little. A page that is not found may have been moved. A blocked page refused our request, which names this site and does not disguise itself, and tells us nothing about the page. Why a page changed is not measured here. Every gone page and every page rewritten past one half is read in full and listed. <a href=\"https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/campus/PLAN.md\">Plan, addenda and code</a>.</p>",
+ "kv": "campus_live",
+ "api_name": "campus",
+ "api_desc": "CAMPUS: the sources behind the OY page, read pass after pass, so that a moved, changed or removed page shows.",
+ "every": 720,
+ "rider": "~/bones-forge/campus_index/campus_tick.py",
+ "folder": "campus",
+ "live_desc": "The documents behind the OY page, kept over time, live.",
+ "top": "Pass {pass_number}. Sources read: {sources}, cited for {institutions} institutions. Updated {updated}.",
+ "tables": [
+  {
+   "title": "State now",
+   "path": "state_now",
+   "first": "",
+   "cols": [
+    [
+     "Opens (HTTP 200)",
+     "Opens (HTTP 200)",
+     "n"
+    ],
+    [
+     "Blocked (401, 403, 429)",
+     "Blocked (401, 403, 429)",
+     "n"
+    ],
+    [
+     "Not found (404, 410)",
+     "Not found (404, 410)",
+     "n"
+    ],
+    [
+     "Other error or no answer",
+     "Other error or no answer",
+     "n"
+    ]
+   ]
+  },
+  {
+   "title": "Since the previous read",
+   "path": "since_previous",
+   "first": "",
+   "cols": [
+    [
+     "Same text",
+     "Same text",
+     "n"
+    ],
+    [
+     "Text changed",
+     "Text changed",
+     "n"
+    ],
+    [
+     "Moved address",
+     "Moved address (resolves)",
+     "n"
+    ],
+    [
+     "Gone",
+     "Gone",
+     "n"
+    ],
+    [
+     "Blocked",
+     "Blocked",
+     "n"
+    ],
+    [
+     "Error",
+     "Error",
+     "n"
+    ]
+   ]
+  },
+  {
+   "title": "Read in full",
+   "path": "listed",
+   "first": "Source",
+   "firstkey": "source",
+   "cols": [
+    [
+     "School",
+     "school",
+     "t"
+    ],
+    [
+     "Found",
+     "found",
+     "t"
+    ],
+    [
+     "What we saw",
+     "note",
+     "t"
+    ]
+   ]
+  }
+ ],
+ "files": [
+  "~/bones-forge/campus_index/PLAN.md",
+  "~/bones-forge/campus_index/campus_tick.py",
+  "~/bones-forge/campus_index/history.jsonl"
+ ]
+}

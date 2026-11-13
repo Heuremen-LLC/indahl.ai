@@ -1,0 +1,187 @@
+\documentclass[reprint,amsmath,amssymb,aps,superscriptaddress,nofootinbib]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{tabularx,array}
+\hypersetup{pdftitle={Papers Against Themselves: A Two-Reader Errata Index}}
+\newcommand{\pend}[1]{\textbf{[PENDING: #1]}}
+
+\begin{document}
+
+\title{Papers Against Themselves: A Two-Reader Errata Index}
+
+\author{K. Indahl}
+\email{Indahl@heuremen.com}
+\affiliation{Heuremen LLC}
+
+\date{November 13, 2026}
+
+\begin{abstract}
+Published papers can contradict themselves. A caption interval may not match the paper's own released samples, table percentages may not follow from the table's own counts, and a table row may disagree with the text. Replication does not look for these, because finding them needs no outside data. We index them. Every paper with an arXiv identifier among the gravitational-wave papers that cite the open-data releases of the Gravitational Wave Open Science Center was read under one procedure, with the readers not told the authors' group. Of these, 277 of 942 outside papers (0.29, 95\% interval 0.27 to 0.32) and 9 of 34 papers from the LIGO--Virgo--KAGRA collaboration (0.26, 0.15 to 0.43) carry at least one erratum candidate that two automated readers confirmed, or 0.32 and 0.28 counting only papers whose tables could be read. The collaboration rate is lower by 0.03, with a 95\% interval from $-0.15$ to $+0.14$, so whether the groups differ cannot be told; the index is a list of corrections and not a ranking of authors. Text that contradicts the paper's own table, caption or file is the most common finding, and the only code theory papers can carry; counting it alone, 0.15 of outside theory papers carry one, against 0.22 of reanalysis and 0.23 of methods papers. The rate depends on the procedure: on 126 papers read both ways, an earlier procedure finds 15 papers (0.12) and the full-slice procedure 43 (0.34), and run twice on 24 papers one procedure changes its call on 4. In one worked example the paper's headline bound recomputes from its released posterior samples while its stated 90\% interval does not. A further automated re-read against the paper text of all 190 findings on the 159 outside papers from the later batches whose authors could be emailed confirmed 164 (0.86, 0.81 to 0.90) and kept 144 papers (0.91, 0.85 to 0.94); the other 118 counted outside papers and every control paper have no such re-read, and the drafting reader's recall is not measured.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Two bodies of work set the current standard for checking empirical results against data. Chen and Zimmermann built a public set of code and data that reproduces nearly all of the cross-sectional stock return predictors they study \cite{ChenZimmermann2022}. Jensen, Kelly and Pedersen studied factors across 93 countries and report that the majority of asset pricing factors can be replicated \cite{JKP2023}. Each takes a paper's claim, rebuilds the result from public data and compares the rebuilt number with the printed one.
+
+A paper can also disagree with itself before any data is touched. A percentage in a table can fail to follow from the counts printed beside it. An interval in a caption can differ from the interval the paper's own released posterior gives. A row's components can fail to sum to the row's total. An abstract can headline the best of many runs with no spread beside it. Replication checks whether a result rebuilds from data. It does not check whether a paper's text, tables and captions agree with each other.
+
+Several groups check papers for internal errors of this kind. statcheck recomputes reported $p$-values from their test statistics in psychology papers \cite{Nuijten2016}. The GRIM test asks whether a reported mean is possible given integer data and the sample size \cite{BrownHeathers2017}, and SPRITE reconstructs possible samples from summary statistics \cite{Heathers2018}. Two projects use language models to look for errors in published papers. As reported in 2025, the Black Spatula Project had analysed about 500 papers and contacts authors privately rather than publishing, and YesNoError, funded by its own cryptocurrency, had analysed more than 37,000 papers in two months according to its founder \cite{Gibney2025}.
+
+\paragraph*{What this work adds.} We define a small set of internal-consistency codes, freeze which code may fire on which type of paper before reading, and apply them to every paper with an arXiv identifier in a defined slice of physics papers, with a control arm drawn from the same slice. Each listed finding needs two readers to agree and, for findings from the full slice, a third re-read against the paper text; it carries a verbatim quote and location, and, for arithmetic, a recompute from the paper's own printed numbers or released data. We call a place where a paper disagrees with itself an erratum candidate. The label is for indexing. It is not an assessment of the study or its authors, and we do not claim that any paper's conclusions are wrong.
+
+\section{Methods}
+
+\subsection{The slice}
+
+The slice is the set of papers that cite the open-data papers of the Gravitational Wave Open Science Center \cite{GWOSC2021,GWOSC2023,Vallisneri2015}, taken from NASA ADS for publication dates from September 2015 to the freeze date. It holds 1,042 papers in two arms. The outside arm holds 1,003 papers. The control arm holds 39 papers from the LIGO--Virgo--KAGRA (LVK) collaboration, defined as papers with more than 100 authors or with a LIGO, Virgo or KAGRA collaboration author. Papers are indexed by arXiv identifier and DOI. Every paper in the slice with an arXiv identifier is read, 976 of the 1,042, under one fixed procedure in which the readers are not told a paper's arm: 942 outside papers and 34 control papers. The other 66 have no arXiv identifier (61 of 1,003 outside, 0.06, and 5 of 39 control, 0.13) and are not read.
+
+\subsection{Paper types and codes}
+
+Each paper is assigned a type from its title and abstract before any code is read: R, reanalysis (re-derives event or population numbers from public strain or released posteriors); M, methods (a new search, pipeline or classifier benchmarked on public strain); or T, theory and other (cites the open data but headlines no number recomputed from it). The map of which code may fire on which type was frozen on 12 November 2026, before any paper in the slice was read. Table~\ref{tab:codes} lists the four codes that are counted and published.
+
+\begin{table}[t]
+\caption{The counted codes and the paper types they may fire on.}
+\label{tab:codes}
+\centering\small
+\begin{tabularx}{\linewidth}{l>{\raggedright\arraybackslash}X l}
+\hline\hline
+Code & Reads as & Types \\ \hline
+F2 & A single favourable value is headlined with the distribution not beside it (``up to'', best event, best run). A median with a 90\% credible interval is the convention and is not F2. & R, M \\
+F3 & A detection, tension or new-signal claim with no significance or interval. & R, M \\
+F5 & A printed number does not follow from the paper's own printed numbers, or a headline does not recompute from released data. & R, M \\
+F6 & Text against the paper's own table, caption, appendix or released file. & R, M, T \\
+\hline\hline
+\end{tabularx}
+\end{table}
+
+Three further codes are drafted and not counted: F1 (a reference built from the paper's own pipeline or injections), F4 (posteriors, samples, code or trigger list not released) and F7 (a simpler model or the standard pipeline does as well). F1 fires on 7 of 8 non-T control papers, because a paper's own background estimate is standard practice, so it does not sort papers. The convention form of F2, a standard upper-limit or continuous-wave headline, is excluded from the pages and the counts. Every paper receives one of PRESENT, ABSENT, CANNOT\_TELL or NOT\_APPLICABLE per code, and every ABSENT records the scope that was searched. Text against text, with no table, caption or file on either side, is CANNOT\_TELL under F6.
+
+\subsection{Readers}
+
+A drafting reader reads the paper text and proposes a cell for each code with verbatim quotes, machine-checked as substrings of the extracted text. A second reader, blind to the drafting verdict and not told the arm, receives one neutral task per drafted PRESENT, for example ``Compare the value stated in the text with the value in Table I'', and returns a verdict, quotes, its arithmetic, the innocent explanations it checked and a confidence. A finding counts when the second reader returns the matching verdict with high or medium confidence. Neither reader is told the paper's arm, but the extracted text keeps the author list, which names the collaboration on control papers. Both instructions and the counting rule were committed to our own code repository (self-witnessed) at 17:05 EST on 12 November 2026, before the full read and before the comparison in Sec.~\ref{sec:full}; the one later change to the drafting instructions (20:01) replaced the file used as a format example. The notes file the drafter reads changed once during the run (19:05), in the tier wording and not in the counted codes. This is the full-slice procedure, and Sec.~\ref{sec:full} reports it.
+
+Author reachability defines a further stage. From batch 11 onward the outside papers were drafted in two queues: papers for which an author email address was found (on NASA ADS or in the arXiv PDF, with a mail-server check), 586 papers, and the rest, 236 papers. The two queues differ little in type (type T 0.23 and 0.27) and in arXiv year (median 2023 and 2022), and their full-slice rates are 0.27 and 0.32; this comparison is descriptive, not a test of selection. Every full-slice finding on the 159 papers of the first queue with a finding (190 items) was then re-read against the paper text by a third automated reader, which saw the drafted item, the second reader's verdict, quotes and arithmetic, and the paper text; outside papers only, so arm blinding does not arise. It located each quote and redid each recompute. During this full-slice re-read we set a materiality rule (defined after the data): a slip of at most one unit in the last printed digit, or inside an explicit approximation, is not counted; an F2 headline that names its own regime is not counted; an F3 claim that carries an interval or statistic is not counted. Only these 159 papers' findings are listed in the index from the full slice.
+
+Outside batches 1 to 10 and the newest 12 control papers were also read under an earlier procedure, and the rates from it use 96 of these papers (84 outside papers in batches 1 to 7 and the 12 control papers). Every drafted PRESENT was re-read against the paper (the hand re-read), not blind to arm, and the blind second reader then audited the survivors; no materiality rule was used. The tiers and worked examples come from this hand-checked subset (Sec.~\ref{sec:rates}). All readers are automated; the Acknowledgments name them.
+
+\subsection{Severity tiers}
+
+In the hand-checked subset each confirmed finding takes its highest tier; rows listed from the full slice carry the drafting reader's tier, not re-checked. T1, arithmetic or typo: a printed number does not follow from the paper's own printed numbers and no claim is built on it. T2, contradiction: the text and the paper's own table, caption, appendix or file disagree. T3, headline-affecting: the error sits in, or sets, a number the abstract states or a result the conclusion states as the paper's main result. F2 and F3 are T3 when the claim is in the abstract and T2 otherwise. The tiers were defined after the first 23 PRESENT rows had been read, and the T3 wording was narrowed after Example A was tiered (Sec.~\ref{sec:examples}); the tier was not changed.
+
+\subsection{Receipts and flow}
+
+A receipt states the data used, what the paper states, what was recomputed, the width of the recompute, the scope checked and a script that reproduces it. No paper is listed without a verbatim quote and, for F5, a receipt. A page is published only for findings that passed both the blind second reader and a re-read against the paper text; the tier on rows listed from the full slice is the drafting reader's and is labelled so. Findings on papers without a reachable author are not listed. No listed paper's authors have been emailed yet; each will be sent the link to its page after two earlier outreach queues finish. Each page carries a correction and removal form and changes on request.
+
+\section{Results}
+
+A paper counts when at least one of F2 (non-convention), F3, F5 or F6 is confirmed on it. Intervals are 95\% Wilson score intervals, and differences between rates carry Newcombe 95\% intervals.
+
+\subsection{The full slice}
+\label{sec:full}
+
+All 976 papers with an arXiv identifier were read under the full-slice procedure (Table~\ref{tab:full}). Of 942 outside papers, 277 carry a confirmed finding (0.29, [0.27, 0.32]), and so do 9 of 34 control papers (0.26, [0.15, 0.43]). The control rate minus the outside rate is $-0.03$ ($-0.15$ to $+0.14$). The interval contains zero and differences of 0.1 in either direction, so whether the arms differ cannot be told.
+
+\begin{table}[t]
+\caption{Full slice: papers with at least one confirmed counted finding, by arm and paper type. Unreadable: papers whose drafting reader marked a table or file it needed as unreadable.}
+\label{tab:full}
+\centering\small\setlength{\tabcolsep}{2pt}
+\begin{tabular}{llccccc}
+\hline\hline
+Arm & Type & Read & Found & Rate & 95\% interval & Unreadable \\ \hline
+Outside & R & 314 & 102 & 0.32 & [0.28, 0.38] & 54 \\
+ & M & 385 & 138 & 0.36 & [0.31, 0.41] & 82 \\
+ & T & 243 & 37 & 0.15 & [0.11, 0.20] & 39 \\
+ & All & 942 & 277 & 0.29 & [0.27, 0.32] & 175 \\ \hline
+Control & R & 8 & 0 & 0.00 & [0.00, 0.32] & 0 \\
+ & M & 14 & 6 & 0.43 & [0.21, 0.67] & 1 \\
+ & T & 11 & 3 & 0.27 & [0.10, 0.57] & 1 \\
+ & All$^a$ & 34 & 9 & 0.26 & [0.15, 0.43] & 2 \\
+\hline\hline
+\end{tabular}
+\\[2pt]{\footnotesize $^a$ Includes one control paper with no type assigned, with no finding.}
+\end{table}
+
+The rates differ by type more than by arm. Outside theory papers, which can carry only F6, have a rate of 0.15, against 0.32 for reanalysis and 0.36 for methods papers. Within types the control-minus-outside differences are $-0.33$ ($-0.38$ to $+0.003$) for R, $+0.07$ ($-0.15$ to $+0.32$) for M and $+0.12$ ($-0.06$ to $+0.42$) for T. A type-weighted (Mantel--Haenszel) difference is $-0.01$. Type T papers can carry only F6, and R and M papers can carry four codes. Counting F6 alone, the outside rates are 0.22 for R ([0.18, 0.27]), 0.23 for M ([0.19, 0.27]) and 0.15 for T ([0.11, 0.20]), so part of the gap by type is the number of codes that can fire. Rates by type were planned before the full read; the R comparison rests on 8 control papers with no finding and its interval reaches zero. Among the outside papers with a finding, 194 carry an F6, 80 an F5, 40 a non-convention F2 and 15 an F3. F6 is the most common in part because it is the only code that can fire on type T papers. The nine control papers carry 5 F6 and 5 F5, and no F2 or F3.
+
+The unreadable-table filter does not fall equally on the arms: 175 of 942 outside papers (0.19) and 2 of 34 control papers (0.06) had a table or file the drafting reader could not read. Unreadable papers stay in the denominators. Counting only readable papers gives 244 of 767 outside (0.32) and 9 of 32 control (0.28), a difference of $-0.04$ ($-0.17$ to $+0.14$), the same reading.
+
+The second reader returned the matching verdict on 339 of the 372 drafted items it was given ([0.88, 0.94]). Of the 33 it did not confirm, 22 were the matching verdict at low confidence, 10 were CANNOT\_TELL and 1 was a different verdict. Counting the 22 low-confidence matches as well adds 16 outside papers, because the other items sit on papers already counted, and no control paper: 293 of 942 outside (0.31) and 9 of 34 control (0.26), a difference of $-0.05$ ($-0.17$ to $+0.12$). The full-slice re-read (Sec.~II) covered the 190 items on the 159 reachable-author outside papers with a finding. 164 were confirmed (0.86, [0.81, 0.90]), 22 were not counted and 4 were CANNOT\_TELL; 144 of the 159 papers kept at least one confirmed finding ([0.85, 0.94]). These 22 are a different set from the 22 low-confidence matches above. By reason, 12 were slips at the last printed digit or inside an explicit approximation, 5 were F2 headlines that name their own regime, 4 were F3 claims that carry an interval or statistic, and 1 was a true statement that understates the paper's own numbers. The materiality rule was set during the re-read. Without any of its three parts, 185 of 190 items (0.97, [0.94, 0.99]) and 156 of 159 papers would be confirmed; without only its last-digit part, 176 of 190 (0.93, [0.88, 0.96]). Each of the 22 was checked individually by the same re-reader that made the call, one model with no second look; in the 12 slips the discrepancy is in the paper but small, and in the other 10 the quoted text is as stated and the call was on scope. This check speaks to precision on those papers. Of the 277 counted outside papers, 118 have no such re-read: 43 from batches 1 to 10 and 75 without a reachable author; none of the control papers was re-read this way. The 277 also include the 15 re-read papers whose findings were not confirmed. Recall is not measured.
+
+\subsection{The two procedures paper by paper}
+
+The 132 papers of outside batches 1 to 10 and the 12 control papers, less six papers named in the rule changes, 126 in all, were read under both procedures. Both procedures found something on 11 papers, neither on 79, only the earlier procedure on 4, and only the full-slice procedure on 32. An exact McNemar test on the 36 discordant papers gives $p = 2\times10^{-6}$. To see how far one procedure disagrees with itself, the full-slice procedure was run a second time on 24 papers (two batches of 12). The two runs agreed on 20 papers and split 2 and 2 on the other four, so the call on a single paper changes on 4 of 24 reruns (0.17, [0.07, 0.36]). Run twice, the procedure flips papers in both directions. Run against the earlier procedure, the flips go 32 to 4 in one direction, so the earlier procedure's rate (Sec.~\ref{sec:rates}) is lower than the full slice's and not a second estimate of the same quantity. The procedures differ in drafting rules, in the strictness of the check and in whether the checker knew the arm, and this comparison does not say which of these drives the gap. On these 126 papers the earlier procedure finds 15 papers (0.12) and the full-slice procedure 43 (0.34). The 32 papers returned only by the full-slice procedure are findings the earlier drafting run did not propose. They sit in batches 1 to 10, outside the full-slice re-read, so no third reader has re-read them; they may be misses of the earlier procedure or over-calls of the full one.
+
+\subsection{The hand-checked subset}
+\label{sec:rates}
+
+Table~\ref{tab:rates} gives the counts from the earlier procedure on the first 96 papers. The tiers, the reader audit and the worked examples below come from this subset.
+
+\begin{table}[t]
+\caption{Papers with at least one confirmed counted finding, by arm.}
+\label{tab:rates}
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\hline\hline
+Arm & Read & Found & Rate & 95\% interval \\ \hline
+Outside & 84 & 12 & 0.14 & [0.08, 0.23] \\
+LVK control & 12 & 3 & 0.25 & [0.09, 0.53] \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+In this subset the control rate minus the outside rate is $+0.11$ ($-0.08$ to $+0.40$); the full slice (Sec.~\ref{sec:full}) supersedes it for rates, not for tiers or the worked examples. The control papers with a finding are 2610.29436 (F6), 2506.21021 (F5) and 2410.16565 (F5). Our prediction, written before any paper was read, was near-zero findings on F1, F2, F3 and F6 in the control arm. It failed for errors of the errata kind, and two of the three control findings are F5, a code the prediction did not name.
+
+Two outside papers, 2409.16196 and 2503.09731, carry only convention-form F2 rows. An earlier draft counted them (14 of 84). Removing them applies to the outside arm the exclusion already applied to the control paper 2410.16565; the correction was made after the counts had been seen and it lowers the outside rate. Six F2 rows were confirmed in the re-read across the outside papers and the control batch, including papers read before the drafting instructions carried a convention flag, and each was judged for the convention form at the re-read. Three were convention form and leave the counts. The other three (2507.02335, 2507.01294, 2311.06416) received a selected-headline verdict from the blind second reader. No control count rests on an F2 row.
+
+\subsection{Tiers and types of finding}
+
+All 12 outside papers with a finding have a tier: 1 T1, 4 T2 and 7 T3. The 3 control papers are 2 T1 and 1 T3. The control T3, 2610.29436, is provisional, because its limit, set by one table row, has not yet been checked against the abstract and conclusion. By the re-read, six of the 12 outside papers carry an F6 finding, three an F3, three a non-convention F2 and one an F5; one of the six F6 findings (2507.21566) was dropped by the second reader, leaving five. Paper types differ between groups and batches (34 of 84 outside papers in the first seven batches are type T, which can only carry F6), and the full slice reports rates by type (Table~\ref{tab:full}). No tier comparison between the arms is supported at three control papers.
+
+\subsection{Agreement between the readers}
+
+The 20 audited items are every PRESENT re-read in the first ten outside batches and the control batch, excluding F1, F4 and convention-form F2 (Table~\ref{tab:agree}). The second reader agreed on 19. Those 19 are the findings in the index. The disagreement, on 2507.21566, was a value stated as 3.75 in the text and 3.76 in Table I, which the second reader read as rounding; it was dropped, and the paper stays in the index through a separate F3 that both readers confirmed. The full-slice re-read would also have left it out, under its materiality rule; the two stages reach the same call here by different rules. The Wilson interval for 19 of 20 is 0.76 to 0.99. Every audited item had already survived the re-read, so this is agreement among surviving items. It is not a recall or precision of the method.
+
+\begin{table}[t]
+\caption{Audited items and second-reader agreement. Outside batches 8 to 10 are outside the rates of Table~\ref{tab:rates}.}
+\label{tab:agree}
+\centering\small
+\begin{tabular}{lccc}
+\hline\hline
+Group & Counted & Items (papers) & Agreed \\ \hline
+Outside, batches 1--7 & 12 & 13 (12) & 12 \\
+LVK control & 3 & 3 (3) & 3 \\
+Outside, batches 8--10 & --- & 4 (4) & 4 \\
+Total & 15 & 20 (19) & 19 \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\subsection{Three worked examples}
+\label{sec:examples}
+
+Quotes are verbatim from the text extraction the readers used.
+
+\paragraph*{Example A: an interval that differs from the released samples (2603.29019, F6 and F5, T2).} The abstract and body state ``$\sigma < 19.7$ km/s (95\% credible upper bound)'' with a median of 3.9 km/s. The Figure 5 caption and the conclusions state ``$3.9^{+19.7}_{-3.3}$ km/s (90\% HDI)''. Read as offsets, as the paper's own entry ``$0.16^{+0.31}_{-0.16}$ (90\% HDI)'' confirms, the caption interval runs from 0.6 to 23.6 km/s. If 19.7 is the 95th percentile, a 90\% highest-density interval of the same single-peaked posterior with median 3.9 cannot reach 23.6. The authors released the samples (Zenodo 10.5281/zenodo.21221337, file \texttt{sigma\_posterior.h5}, 6,560 samples). Treating them as equally weighted, the median is 3.85 km/s and the 95th percentile 19.67 km/s, matching the paper, while the equal-tailed 90\% interval is 0.45 to 19.67 km/s and the 90\% HDI is 0.00 to 15.08 km/s. A bootstrap (2,000 resamples) gives [19.10, 20.42] km/s for the 95th percentile and [14.58, 15.52] km/s for the HDI upper edge; no draw reaches 23.6. If the samples are correlated draws these widths are understated, but the gap remains large. The headline bound recomputes, so the abstract is unaffected; the conclusions repeat the caption interval. Only the one released file was checked.
+
+\paragraph*{Example B: percentages that do not follow from the counts (2510.14291, F5, T1).} The text states ``In this study, Omicron detected 45,345 glitch noises.'' Table 2 lists counts and percentages for eight classes. The counts sum to 45,345. Six rows recompute to rounding. Class 6 is printed ``60 (1.3\%)'' and class 7 ``27 (0.6\%)'', where 60/45,345 is 0.13\% and 27/45,345 is 0.06\%, each a factor of ten. The printed percentages sum to 101.7\%. Counts that would match the printed percentages (about 590 and 272) would break the stated total. No claim is built on the two values.
+
+\paragraph*{Example C: a table row against the text (2303.17628, F6, T2).} The text states that the collaboration ``presents this population in Table 1 with 76 events consisting of 70 BHBH, 4 BHNS, and 2 NSNS mergers''. The paper's Table 1 row reads ``76 69 4 2''. The row's reference marker and its asterisk note, which says the population is a subset of a catalogue, explain neither 70 against 69 nor the row summing to 75.
+
+\section{Discussion}
+
+The codes we count are ones a reader can check from the paper alone: a printed number against the paper's own printed numbers, and text against the paper's own table, caption or file. They find errata in the collaboration's own papers and in outside papers, and nothing here ranks either group. Whether they discriminate between kinds of paper beyond the counts in Table~\ref{tab:full} is not tested here. A quantitative-finance slice is in progress.
+
+\paragraph*{Limitations.} (i) The full-slice findings are two-reader agreement between automated readers; the full-slice re-read covered only the 159 reachable-author papers from batch 11 onward, and the hand re-read that sets Table~\ref{tab:rates} was not blind to arm. (ii) Under the earlier procedure the drafting instructions changed during the run, all on 12 November 2026: F1 was narrowed and a version field added (batch 4); F6 was restricted to text against the paper's own table, caption or file and arithmetic on printed numbers was allowed under F5 (batches 5 and 6 and the control batch); F2 and F3 wording was tightened and a convention flag added (batches 7 to 10). The frozen code-type map did not change, and the rates of Table~\ref{tab:rates} mix instruction versions. (iii) Errors run both ways. Only drafted PRESENT cells are checked, and the drafting reader's recall is unmeasured; the counted full-slice findings rest on two automated readers that agreed on 339 of 372 items, with a re-read on the 159 reachable-author papers from batch 11 onward (144 kept a finding), whose headline rises from 0.86 to 0.97 without its post-hoc materiality rule. On the same papers the two procedures return 15 and 43 papers with a finding, and 32 papers are returned only by the full-slice procedure. (iv) The tiers were defined after the first rows were seen, and the text-against-text finding is post hoc and kept out of the rates. (v) The second reader is a model of the same family as the drafting reader, so the two can share a blind spot, and 19 of 20 measures consistency, not accuracy against an outside standard. (vi) The slice is papers with arXiv identifiers citing one set of open-data papers, and is not a sample of physics; the intervals treat papers as independent, though control papers cluster by catalogue and observing run; the control arm is small (34 papers), and the hand-checked control papers are the newest 12 of 34, not a random draw; the full-slice re-read and the index cover only papers with a reachable author, a selection by contact, not at random. (vii) The full slice drafts every paper under one instruction set apart from the two dated changes in Sec.~II, neither of which touched the counted codes; Table~\ref{tab:rates} mixes instruction versions.
+
+\paragraph*{Data and code.} The live index holds the 19 hand-checked findings of Table~\ref{tab:agree} and the full-slice findings on the 144 reachable-author papers that the third reader confirmed, each row with its verbatim quotes, the re-read arithmetic and how it was checked: \url{https://indahl.ai/sagar}. Full-slice findings on other papers are not listed. Each page carries a correction and removal form. Code and receipt scripts, including the recompute for Example A: the Heuremen-LLC organisation on GitHub.
+
+\begin{acknowledgments}
+The findings were drafted and checked by automated readers: drafting and blind second reading by Claude Sonnet agents, and the re-read of every drafted finding in the hand-checked subset, and of the 190 full-slice items on reachable-author papers, by Claude Code (Opus 5.5). No human has re-read the findings; the author set the scope and rules and is responsible for the content. This work was done in collaboration with inorganic intelligences, one of them named Bones. An AI assistant, Claude Code (Opus 5.5), was used.
+\end{acknowledgments}
+
+\bibliography{refs}
+
+\end{document}

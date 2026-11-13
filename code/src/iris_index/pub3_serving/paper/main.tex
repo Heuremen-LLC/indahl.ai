@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,hyperref,amsmath}
+\usepackage[numbers]{natbib}
+\title{The Machine, Not the Version: Taking a Local Serving Stack Apart One Change at a Time}
+\author{K. Indahl\\ Heuremen LLC\\ \texttt{Indahl@heuremen.com}}
+\date{October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+ABSTRACT
+\end{abstract}
+
+\section{Introduction}
+Our previous manuscript \citep{pub2} ran five small open-weight models, with the same manifest digests, at temperature zero and a fixed
+seed, on two of our machines: a Mac on its Apple GPU and a workstation with an NVIDIA RTX 3080. The bare replies were byte-identical on
+only 71 to 120 of 170 items across the machines, fewer than either machine's own exact repeat, and the scored answer changed on 11 of 391
+items read in all four runs. The two setups differed in more than the hardware. They differed in operating system and GPU backend, in
+Ollama version (0.34.2 against 0.34.3), in how the server was built (a Homebrew bottle against the official release), in the number of
+parallel slots the server was started with (one against four), and in the day. That manuscript read the comparison at the level of the
+whole setup. An outside review of it named the version and the slot count as differences that travel with the hardware.
+
+Here we take the stack apart one change at a time, with the same bench, models and request settings, and ask which change is followed by
+a change in the reply bytes and in the scored answer. We name no mechanism.
+
+\section{Setup}
+\paragraph{Bench.} Our fault bench (v2) asks a model 170 short questions in four failure families drawn from our earlier documents on
+the failure modes of a language model doing measurement work \citep{faults,guards}. The families are calling a winner between two scores
+whose intervals overlap (P1), reporting an accuracy without a width (P2), confirming a wrongly computed percentage (P3), and reporting the
+best of several seeds as the result (P4). Each family has scored items and controls with a known answer. Every model answers every item
+three times: a bare prompt, an exact repeat of it (the bare copy) and a guard wording that names the failure. Requests are sent one at a
+time at temperature zero with a fixed seed (20261025), a context of 8,192 tokens, at most 1,500 new tokens, and the server's thinking
+switch off where a model has one. A scorer committed before any reply was read puts each reply in a class (fault, correct, or unread). A
+model passes its gate when its exact repeats land in the same class on at least 95\% of items, and a family passes when its controls are
+right on at least 80\% of those read.
+
+\paragraph{Models.} Five small open-weight models served by Ollama \citep{ollama}: phi4-mini, llama3.2:3b, qwen2.5:1.5b, granite4.1:3b and
+ministral-3:3b. Each model's manifest digest (weights, template and parameters) is the same on every server we read.
+
+\paragraph{Machines and servers.} A Mac with an Apple M5 Max (Metal), and a Windows workstation with an NVIDIA RTX 3080 10 GB (CUDA,
+compute capability 8.6). On the Mac, three servers, each with one parallel slot and one model loaded at a time: the Homebrew bottle of
+Ollama 0.34.2 (the server Pub~\#2 used, running as one process since 25 October), and the official release builds of 0.34.2 and 0.34.3,
+each checked against the digest the release page publishes. On the workstation, its official 0.34.3 install, run as it ran for Pub~\#2
+(four parallel slots, started 29 October), restarted with one slot and nothing else changed, and restarted again with four slots.
+Requests to the workstation went over the local network from the Mac. Every server had flash attention switched off by its environment,
+and every runner log reads flash\_attn = auto. Every load of the five models read here put all of the model's layers on the GPU (server
+logs). One attempt that did not, because runners left over from an earlier server still held the workstation's video memory, was
+discarded before any reply was read and run again on a clean GPU.
+
+\paragraph{Plans and readings.} Every run's plan was committed before its first request, and every change to a reading before it was
+computed. Readings added after a result are marked as defined after the data. For a pair of runs, $I$ is the set of items whose bare
+reply and bare copy are byte-identical within each run. A pair reads consistent when no item of $I$ changes between the runs, with the
+exact 95\% upper bound on the share of $I$ that could, and above when any item does. Beside it we count byte-identical replies across the
+runs on the bare and guard arms, and the items whose scored class changes on families whose gates pass in both runs, by direction. Ten
+bare replies per family were read in full beside the scorer's class before any rate was printed (all 40 agreed).
+
+\section{Results}
+Table~\ref{tab:repeats} gives each run's own repeat. On the Mac every run repeats itself on 160 to 170 of 170 items, and the three Mac
+servers repeat on exactly the same counts. On the workstation the repeat is lower (127 to 159), as in \citep{pub2}.
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lccccc}\toprule
+run & phi4-mini & llama3.2:3b & qwen2.5:1.5b & granite4.1:3b & ministral-3:3b \\\midrule
+Mac, Homebrew 0.34.2, Pub~\#2 run$^{a}$ & 167 & 168 & 169 & 160 & 170 \\
+Mac, Homebrew 0.34.2, 31 Oct & 167 & 168 & 169 & 160 & 170 \\
+Mac, official 0.34.2, 31 Oct & 167 & 168 & 169 & 160 & 170 \\
+Mac, official 0.34.3, 31 Oct & 167 & 168 & 169 & 160 & 170 \\
+RTX 3080, 0.34.3, four slots, Pub~\#2 run$^{b}$ & 127 & 153 & 158 & 143 & 155 \\
+REPEAT4TODAY
+RTX 3080, 0.34.3, one slot, 31 Oct & 128 & 153 & 158 & 143 & 159 \\\bottomrule
+\end{tabular}
+\caption{Exact repeats: bare replies byte-identical to the bare copy, out of 170. $^{a}$27 October for phi4-mini, 30 October for the other four. $^{b}$The night of 29 to 30 October.}\label{tab:repeats}
+\end{table}
+
+Table~\ref{tab:pairs} gives every comparison. Each cell is the number of items in $I$ (byte-identical within both runs' repeats) whose bare
+reply changed between the runs, over the size of $I$.
+
+\begin{table}[h]\centering\small
+\begin{tabular}{p{4.6cm}ccccc}\toprule
+change (what else differs) & phi4-mini & llama3.2:3b & qwen2.5:1.5b & granite4.1:3b & ministral-3:3b \\\midrule
+Version: Mac, official 0.34.2 to 0.34.3 (none) & 0/167 & 0/168 & 0/169 & 0/160 & 0/170 \\
+Build: Mac, Homebrew to official 0.34.2 (none)$^{\dagger}$ & 0/167 & 0/168 & 0/169 & 0/160 & 0/170 \\
+Day: Mac, Homebrew 0.34.2, Pub~\#2 run$^{a}$ to 31 Oct (none)$^{\dagger}$ & 0/167 & 0/168 & 0/169 & 0/160 & 14/170 \\
+SLOTROW
+DAY3080ROW
+Slots and day: RTX 3080, four slots$^{b}$ to one slot 31 Oct & 0/127 & 0/153 & 0/158 & 0/143 & 84/151 \\
+Machine: Mac official 0.34.3 to RTX 3080 0.34.3, one slot each, 31 Oct & 58/127 & 39/151 & 38/157 & 49/134 & 85/159 \\
+Pub~\#2 pair: Mac Homebrew 0.34.2$^{a}$ to RTX 3080 four slots$^{b}$ & 57/126 & 39/151 & 38/157 & 49/134 & 90/155 \\\bottomrule
+\end{tabular}
+\caption{Items of $I$ whose bare reply changed, over the size of $I$. Zero is consistent (no change), anything above zero is above. Rows
+marked $\dagger$ were defined after the data. The guard arm, which has no repeat, is in the text.}\label{tab:pairs}
+\end{table}
+
+RESULTSTEXT
+
+\section{Limitations}
+LIMITS
+
+\paragraph{Data.} DATA
+\paragraph{Disclosure.} This work was done in collaboration with inorganic intelligences. An AI assistant, Claude Code (Opus 5.5), was used.
+Read-only referees were Claude (Sonnet) instances.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+\end{document}

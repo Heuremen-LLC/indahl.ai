@@ -1,0 +1,33 @@
+
+## 2026-11-09 21:45 SOCIAL section 3: TikTok CGER against DSA statements of reasons, every row of data/tiktok.json and section_tiktok.html
+packs: P,O
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: plan with mapping, intervals and outcome rule committed (d891e97) before any comparison; Addendum 2 rule changes committed (6d22b3b) before any comparison row; like for like named per side (TikTok: short video incl. photo posts and stories, closed cases, uploader market; database: video content, removal, not ads, decision date). Gate drops counted by arm: stated side drops unlisted markets (LU, MT and NO/IS/LI in 2026, 19-23 EU markets before 2026) carried as an allowance; delivered side drops text 34.8M, image 2.4M, other 5.3M, account 138k, audio 137k removals, and video statements that are not removals: 200k disabled, 425k age restricted and 52.2M visibility "other" in Apr-Jun 2026 (data/components.json; the last two added in Addendum 4.6). Share denominators do not depend on the automation or source flag.
+- II: holds: items before nets in data/components.json (stated: 25 market values per 2026 quarter; delivered: by decision month, filing lag, content type, scope, automated decision, source, days posted to decision, late filings). Instrument floor: TikTok's own published daily totals equal the aggregate on every day both cover (1,137) except 46, and on 41 of the matching days neither side holds a statement (Addendum 4.5); differing days listed and carried in the post hoc reading. No repeat runs exist (census on both sides).
+- III: holds: automated share negative in both 2026 quarters (-8.4, -5.4 points) and mixed small signs before 2026 inside wide ranges; removed-before-report positive in all 12 quarters (+0.7 to +5.5 points); video removals database at or above the report point in every comparable quarter (2026: +9.8%, +3.3%). Counts are sums of market items, shares are removal-weighted means.
+- V: holds: counts read as gap in % of the report figure, shares in percentage points; complement (not automated, reported) printed beside every share row as the second ruler and it agrees in direction (Apr-Jun 2026 not automated 1.6% report vs 7.0% database). Every interval is a range across fixed matching choices, said so in data and on the page.
+- VI: holds: outcome tests zero and the material size (5% counts, 1 point shares) and carries material yes/no/cannot tell. Committed after Addendum 4: 60 CANNOT_TELL EU rows (the 8 earlier ABOVE on removed before any report moved by Addendum 4.1, kept under addendum_4.before); defined after the data: 1 ABOVE (videos removed, Jan-Mar 2026, limits stated), 59 CANNOT_TELL; 498 NOTHING_RETURNED and 270 CANNOT_TELL market rows. outcome_plan_as_committed (CANNOT_TELL everywhere, KG3 failed) and outcome_range_with_submission_date kept on every row.
+- R: holds: every count read from the release CSVs (sha256 in data/sources.json), the complete aggregates (sha1 receipts in data/raw/dsa_receipts), TikTok's and the Commission's listing pages (saved in data/raw/dsa_pages); plan hashes in data/plan_receipt.json. Post hoc labelled: Addenda 3 and 4 and the 'Reading defined after the data' column; the Automation-only report share is printed on the page in its own column marked defined after the data (Addendum 4.2).
+- P1: holds: PLAN.md quotes checked against TikTok's ReadMe, dashboard notes and narrative PDF and the database API documentation; the page carries no quotation marks of either source.
+- P2: holds: every table column says TikTok report or Database and which date basis; sources line links each quarter's zip and names the CSV file pattern, the aggregate files, months read and update time.
+- P3: holds: Automation plus AI Moderation labelled as TikTok counts it; Proactive removal rate shown as Removed before any report with TikTok's definition; database labels follow the codebook (fully automated, own voluntary initiative).
+- P4: holds: the page says we measure gaps and name no cause; limits we cannot size are stated as limits (Addendum 4.3), and the Automation-only share is shown as a figure with no mechanism named.
+- P5: holds: the page states no range is a statistical interval and what each range spans; JSON rows carry interval_kind.
+- P6: holds: description makes no finding claim; committed outcomes shown first, post hoc readings only in their labelled column.
+- P7: n/a: this agent does not touch the ledger or ship; numbers for the ledger are in summary_tiktok.json for Bones, release through ledger/ship.sh is his.
+- P8: holds: fragment rendered with indahl.ai style.css at 1280 px and 390 px (no page-level horizontal scroll, tables scroll in .scroll), no scripts or inline styles, HTML well formed; live check after Bones ships.
+- P9: holds: no semicolons in text, no counts of our things in headings, no AI statements, plain sentences, we pronouns, no apparatus.
+- P10: holds: every reading defined after the data is labelled so on the page and in PLAN.md Addenda 3 and 4.
+- O1: n/a: no timer or rider installed, as instructed; tiktok_tick.py is rerunnable and Bones decides whether it rides the tick bus.
+- O2: holds: KG3 failure and the day-check failures are reported as failures in data/tiktok.json and on the page, and the rows they touch read Cannot tell.
+- O3: n/a: no GPU used; duckdb on CPU with 4 threads.
+- O4: holds: summary_tiktok.json carries updated time, last database day read and months read, all from completed work.
+- O5: holds: scripts resolve paths from their own location and run with the desk venv (.venv/bin/python -I); no launchd job, so no PATH needed.
+- O6: n/a: no GPU job.
+
+## 2026-11-10 09:55 referee fixes (FIX THEN SHIP, tiktok_referee/REFEREE.md), applied through tiktok_tick.py and rebuilt with --no-fetch
+- B1: fixed: every proactive_rate EU row reads CANNOT_TELL in every column with the definitions reason; table retitled, database column "Database, own voluntary initiative"; ABOVE headline gone from summary_tiktok.json (Addendum 4.1).
+- B2: fixed: 2026Q1 and 2026Q2 automated_share after the data read CANNOT_TELL (Automation alone flips them to ABOVE); 88.4% and 89.0% printed beside them (Addendum 4.2).
+- B3: fixed: page reads up to 97%; Addendum 2.3's 94% and about 36 million corrected in Addendum 4.4, original text left as written.
+- B4: fixed: limits paragraph in How we read it; limits reason on the Jan-Mar 2026 videos removed row and its reading defined after the data (Addendum 4.3).
+- Figures: no figure changed (every EU row's stated, delivered, ranges and gaps compared with the backup, 0 differ).

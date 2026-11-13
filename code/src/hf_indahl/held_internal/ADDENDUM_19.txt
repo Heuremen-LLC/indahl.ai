@@ -1,0 +1,13 @@
+## Addendum 19 (14:34Z 7 Nov; Bones; pre-data: no round-2 eval row exists). Instrument fault found before the evals, by the pre-eval adapter hashes.
+W1. Finding: s63 and s64 adapters had IDENTICAL hashes because both trained to loss NaN (s63 from iter 20, s64 from iter 260); their weights are NaN.
+    A step-by-step rerun of seed 63 (diag/, 25 iters, same config) matched the original token counts exactly through iter 20 and stayed finite, so the
+    NaN is not in the data or config: it is a non-deterministic numeric fault. Likely cause: the flock's Mac seats (Mesa, Prism on :11500, Metal) ran on
+    the same GPU during training, breaking our own one-GPU-job-per-machine rule (PACK O.6). s61 (round 1) logged loss NaN at iter 30 too, with the
+    "Trained Tokens" jump; it recovered and its eval rows are coherent, so round 1 stands as measured, with this fault disclosed beside it. s62: no NaN.
+W2. Fix: s63 and s64 are retrained from scratch with the SAME seeds and config while the flock is parked (sage_flock/STOP), one GPU job only.
+    The old NaN adapters are kept, renamed *_NaN, never evaluated.
+W3. NaN rule, fixed now: a training log with any "loss nan" line makes that run FAILED. A FAILED run is retrained once with the same seed under W2's
+    conditions; a second FAILED run makes that seed FAILED in the report (counted in T1 as not clearing (a)). No run is ever picked by its loss.
+W4. Gates: A18 hashes round2_gates_v2.txt, so ANY append would make queue4's pre-eval shasum -c halt (V3's "appends allowed" conflicts with V4;
+    found before use). The gate file stays exactly as A18 hashed it. queue4 is restarted only after SHA256SUMS_A19 is in a Bitcoin block, checked by
+    hand and logged in POST_READ_CHANGES.md with the ots info output.

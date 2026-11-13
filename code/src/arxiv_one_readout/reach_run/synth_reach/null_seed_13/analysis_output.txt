@@ -1,0 +1,102 @@
+====================================================================================================
+reach ibm_fez job SYNTH-null-13 plan SYNTH
+  distance check: 0 of 351 units sit at a different distance on the props couplers (readings use the build distances)
+  coherence: N=0 baseline median 0.626 (all 156 qubits); N=8 idle median 0.625, readout median 0.603; guard threshold 0.0559 (5 x 1/sqrt(8000))
+  dead-clock guard, units LEFT OUT per bin: d=3 1 of 42, d=4 1 of 38, d=5 0 of 39, d=6 0 of 38, d=7 0 of 38, d>=8 3 of 88, d<=2 1 of 68
+  units per bin (distinct physical qubits): d=3 41 (41), d=4 37 (37), d=5 39 (39), d=6 38 (38), d=7 38 (38), d>=8 85 (54)
+  RR0 kick per readout, all untouched units, all layouts     +0.01417 [-0.008631, +0.03684] deg n=345 -> CONSISTENT   (copy gap -0.01688 [-0.04862, +0.04123])
+  sign of the kick (carried, never folded): +1; size = kick x sign.  [beside: sign of the d<=2 median -1]
+  RR1 kick size at d=3                                       -0.005408 [-0.0473, +0.05862] deg n=41 -> CONSISTENT   (copy gap -0.02367 [-0.1623, +0.1246])
+  RR1 kick size at d=4                                       +0.005868 [-0.07751, +0.08311] deg n=37 -> CONSISTENT   (copy gap -0.001246 [-0.1564, +0.1305])
+  RR1 kick size at d=5                                       -0.02324 [-0.05766, +0.01124] deg n=39 -> CONSISTENT   (copy gap +0.1593 [-0.03287, +0.2576])
+  RR1 kick size at d=6                                       +0.03364 [-0.01202, +0.08174] deg n=38 -> CONSISTENT   (copy gap +0.01447 [-0.2219, +0.1847])
+  RR1 kick size at d=7                                       copies shifted -0.1191 [-0.2465, -0.05583] | copy0 -0.1117 copy1 +0.03455 -> CANNOT TELL
+  RR1 kick size at d>=8                                      +0.07993 [+0.03226, +0.124] deg n=85 -> ABOVE   (copy gap +0.04925 [-0.006071, +0.1579])
+  RR2 size(d=3) - size(d=4)                                  -0.01128 [-0.08965, +0.1042] deg -> CONSISTENT   (copy gap -0.02243 [-0.2048, +0.2451])
+  RR2 size(d=4) - size(d=5)                                  +0.02911 [-0.05959, +0.1101] deg -> CONSISTENT   (copy gap -0.1605 [-0.3708, +0.02943])
+  RR2 size(d=5) - size(d=6)                                  -0.05688 [-0.1205, -0.005398] deg -> BELOW   (copy gap +0.1448 [-0.08595, +0.402])
+  RR2 size(d=6) - size(d=7)                                  copies shifted -> CANNOT TELL   (copy gap of the difference +0.1335 [-0.1063, +0.3187])
+  RR2 size(d=7) - size(d>=8)                                 copies shifted -> CANNOT TELL   (copy gap of the difference -0.1683 [-0.3142, -0.08264])
+  RR3 this chip: reach edge (unbroken ABOVE from d=3) none; first bin past it d=3 CONSISTENT, size -0.005 [-0.047, +0.059] deg (the bound); ISOLATED ABOVE beyond the edge: d>=8   (bins in order: d=3 CONSISTENT, d=4 CONSISTENT, d=5 CONSISTENT, d=6 CONSISTENT, d=7 CANNOT TELL, d>=8 ABOVE)
+  context, not a reading: per-layout median size per bin: centre 69: d=3 +0.05 d=4 +0.08 d=5 -0.02 d=6 +0.06 d=7 +0.01 d>=8 +0.03 | centre 71: d=3 +0.03 d=4 +0.01 d=5 -0.04 d=6 +0.07 d=7 -0.04 d>=8 +0.13 | centre 90: d=3 -0.03 d=4 -0.03 d=5 -0.01 d=6 -0.05 d=7 -0.01 d>=8 +0.06
+====================================================================================================
+reach ibm_kingston job SYNTH-null-13 plan SYNTH
+  distance check: 0 of 351 units sit at a different distance on the props couplers (readings use the build distances)
+  coherence: N=0 baseline median 0.647 (all 156 qubits); N=8 idle median 0.641, readout median 0.623; guard threshold 0.0559 (5 x 1/sqrt(8000))
+  dead-clock guard, units LEFT OUT per bin: d=3 1 of 42, d=4 1 of 38, d=5 1 of 39, d=6 1 of 38, d=7 0 of 38, d>=8 1 of 88, d<=2 2 of 68
+  units per bin (distinct physical qubits): d=3 41 (41), d=4 37 (37), d=5 38 (38), d=6 37 (37), d=7 38 (38), d>=8 87 (54)
+  RR0 kick per readout, all untouched units, all layouts     +0.005002 [-0.01692, +0.03121] deg n=344 -> CONSISTENT   (copy gap -0.007856 [-0.03464, +0.0373])
+  sign of the kick (carried, never folded): +1; size = kick x sign.  [beside: sign of the d<=2 median -1]
+  RR1 kick size at d=3                                       +0.01546 [-0.01961, +0.08572] deg n=41 -> CONSISTENT   (copy gap -0.009374 [-0.06254, +0.07759])
+  RR1 kick size at d=4                                       +0.02289 [-0.07783, +0.07838] deg n=37 -> CONSISTENT   (copy gap -0.01045 [-0.1658, +0.148])
+  RR1 kick size at d=5                                       -0.002407 [-0.07137, +0.05061] deg n=38 -> CONSISTENT   (copy gap -0.07844 [-0.2266, +0.1147])
+  RR1 kick size at d=6                                       +0.01025 [-0.07911, +0.08145] deg n=37 -> CONSISTENT   (copy gap +0.03814 [-0.09875, +0.1599])
+  RR1 kick size at d=7                                       -0.03027 [-0.07125, +0.06878] deg n=38 -> CONSISTENT   (copy gap +0.003202 [-0.196, +0.09315])
+  RR1 kick size at d>=8                                      +0.03139 [-0.04087, +0.05862] deg n=87 -> CONSISTENT   (copy gap -0.02404 [-0.1189, +0.04998])
+  RR2 size(d=3) - size(d=4)                                  -0.007433 [-0.05263, +0.115] deg -> CONSISTENT   (copy gap +0.001075 [-0.1972, +0.2034])
+  RR2 size(d=4) - size(d=5)                                  +0.0253 [-0.08494, +0.0994] deg -> CONSISTENT   (copy gap +0.06799 [-0.1632, +0.3511])
+  RR2 size(d=5) - size(d=6)                                  -0.01265 [-0.1154, +0.09664] deg -> CONSISTENT   (copy gap -0.1166 [-0.3185, +0.1159])
+  RR2 size(d=6) - size(d=7)                                  +0.04051 [-0.1123, +0.1136] deg -> CONSISTENT   (copy gap +0.03494 [-0.1197, +0.2408])
+  RR2 size(d=7) - size(d>=8)                                 -0.06166 [-0.111, +0.05714] deg -> CONSISTENT   (copy gap +0.02724 [-0.1777, +0.1563])
+  RR3 this chip: reach edge (unbroken ABOVE from d=3) none; first bin past it d=3 CONSISTENT, size +0.015 [-0.020, +0.086] deg (the bound)   (bins in order: d=3 CONSISTENT, d=4 CONSISTENT, d=5 CONSISTENT, d=6 CONSISTENT, d=7 CONSISTENT, d>=8 CONSISTENT)
+  context, not a reading: per-layout median size per bin: centre 69: d=3 +0.01 d=4 +0.04 d=5 -0.07 d=6 -0.01 d=7 +0.07 d>=8 +0.04 | centre 71: d=3 +0.02 d=4 -0.04 d=5 +0.03 d=6 -0.14 d=7 +0.04 d>=8 +0.05 | centre 90: d=3 +0.01 d=4 -0.01 d=5 -0.06 d=6 +0.08 d=7 -0.08 d>=8 -0.05
+====================================================================================================
+reach ibm_marrakesh job SYNTH-null-13 plan SYNTH
+  distance check: 0 of 351 units sit at a different distance on the props couplers (readings use the build distances)
+  coherence: N=0 baseline median 0.634 (all 156 qubits); N=8 idle median 0.637, readout median 0.621; guard threshold 0.0559 (5 x 1/sqrt(8000))
+  dead-clock guard, units LEFT OUT per bin: d=3 0 of 42, d=4 1 of 38, d=5 1 of 39, d=6 0 of 38, d=7 1 of 38, d>=8 0 of 88, d<=2 2 of 68
+  units per bin (distinct physical qubits): d=3 42 (42), d=4 37 (37), d=5 38 (38), d=6 38 (38), d=7 37 (37), d>=8 88 (55)
+  RR0 kick per readout, all untouched units, all layouts     -0.005305 [-0.02679, +0.01733] deg n=346 -> CONSISTENT   (copy gap +0.01565 [-0.03114, +0.05344])
+  sign of the kick (carried, never folded): -1; size = kick x sign.  [beside: sign of the d<=2 median +1]
+  RR1 kick size at d=3                                       -0.0297 [-0.08504, +0.05053] deg n=42 -> CONSISTENT   (copy gap -0.1495 [-0.1918, +0.04594])
+  RR1 kick size at d=4                                       +0.0133 [-0.02895, +0.1014] deg n=37 -> CONSISTENT   (copy gap -0.04345 [-0.1043, +0.1328])
+  RR1 kick size at d=5                                       +0.01704 [-0.082, +0.04214] deg n=38 -> CONSISTENT   (copy gap -0.07826 [-0.2563, +0.04128])
+  RR1 kick size at d=6                                       +0.03235 [-0.02295, +0.06352] deg n=38 -> CONSISTENT   (copy gap -0.00212 [-0.09877, +0.1152])
+  RR1 kick size at d=7                                       +0.06102 [-0.05224, +0.1371] deg n=37 -> CONSISTENT   (copy gap -0.002506 [-0.1387, +0.2412])
+  RR1 kick size at d>=8                                      +0.001219 [-0.04105, +0.05077] deg n=88 -> CONSISTENT   (copy gap +0.05567 [-0.01813, +0.1075])
+  RR2 size(d=3) - size(d=4)                                  -0.043 [-0.1676, +0.05001] deg -> CONSISTENT   (copy gap -0.106 [-0.2785, +0.06707])
+  RR2 size(d=4) - size(d=5)                                  -0.003747 [-0.05672, +0.1309] deg -> CONSISTENT   (copy gap +0.0348 [-0.09155, +0.2678])
+  RR2 size(d=5) - size(d=6)                                  -0.01531 [-0.1167, +0.0494] deg -> CONSISTENT   (copy gap -0.07614 [-0.2719, +0.06538])
+  RR2 size(d=6) - size(d=7)                                  -0.02866 [-0.129, +0.0953] deg -> CONSISTENT   (copy gap +0.0003858 [-0.2538, +0.2027])
+  RR2 size(d=7) - size(d>=8)                                 +0.0598 [-0.07133, +0.1593] deg -> CONSISTENT   (copy gap -0.05817 [-0.2177, +0.1905])
+  RR3 this chip: reach edge (unbroken ABOVE from d=3) none; first bin past it d=3 CONSISTENT, size -0.030 [-0.085, +0.051] deg (the bound)   (bins in order: d=3 CONSISTENT, d=4 CONSISTENT, d=5 CONSISTENT, d=6 CONSISTENT, d=7 CONSISTENT, d>=8 CONSISTENT)
+  context, not a reading: per-layout median size per bin: centre 69: d=3 -0.01 d=4 +0.11 d=5 +0.03 d=6 +0.05 d=7 +0.00 d>=8 +0.06 | centre 71: d=3 -0.03 d=4 -0.01 d=5 -0.06 d=6 -0.05 d=7 +0.11 d>=8 -0.04 | centre 90: d=3 -0.08 d=4 -0.01 d=5 +0.01 d=6 +0.04 d=7 +0.10 d>=8 -0.00
+====================================================================================================
+ACROSS CHIPS (values and widths; a chip whose copies shifted is listed and left out of the combination)
+  RR0 kick per readout, all untouched units, all layouts
+      fez +0.01417 [-0.008631, +0.03684] | kingston +0.005002 [-0.01692, +0.03121] | marrakesh -0.005305 [-0.02679, +0.01733]
+      combined +0.004398 [-0.008827, +0.01762] -> CONSISTENT | chip-to-chip spread chi2/dof 0.73 (dof 2)
+  RR1 kick size at d=3
+      fez -0.005408 [-0.0473, +0.05862] | kingston +0.01546 [-0.01961, +0.08572] | marrakesh -0.0297 [-0.08504, +0.05053]
+      combined -0.003017 [-0.03573, +0.02969] -> CONSISTENT | chip-to-chip spread chi2/dof 0.54 (dof 2)
+  RR1 kick size at d=4
+      fez +0.005868 [-0.07751, +0.08311] | kingston +0.02289 [-0.07783, +0.07838] | marrakesh +0.0133 [-0.02895, +0.1014]
+      combined +0.01406 [-0.02842, +0.05653] -> CONSISTENT | chip-to-chip spread chi2/dof 0.04 (dof 2)
+  RR1 kick size at d=5
+      fez -0.02324 [-0.05766, +0.01124] | kingston -0.002407 [-0.07137, +0.05061] | marrakesh +0.01704 [-0.082, +0.04214]
+      combined -0.01153 [-0.03854, +0.01548] -> CONSISTENT | chip-to-chip spread chi2/dof 0.67 (dof 2)
+  RR1 kick size at d=6
+      fez +0.03364 [-0.01202, +0.08174] | kingston +0.01025 [-0.07911, +0.08145] | marrakesh +0.03235 [-0.02295, +0.06352]
+      combined +0.02987 [+0.0003173, +0.05942] -> ABOVE | chip-to-chip spread chi2/dof 0.13 (dof 2)
+  RR1 kick size at d=7
+      fez copies shifted | kingston -0.03027 [-0.07125, +0.06878] | marrakesh +0.06102 [-0.05224, +0.1371]
+      combined +0.002 [-0.05429, +0.0583] -> CONSISTENT | chip-to-chip spread chi2/dof 2.31 (dof 1)
+  RR1 kick size at d>=8
+      fez +0.07993 [+0.03226, +0.124] | kingston +0.03139 [-0.04087, +0.05862] | marrakesh +0.001219 [-0.04105, +0.05077]
+      combined +0.03787 [+0.01069, +0.06504] -> ABOVE | chip-to-chip spread chi2/dof 2.87 (dof 2)
+  RR2 size(d=3) - size(d=4)
+      fez -0.01128 [-0.08965, +0.1042] | kingston -0.007433 [-0.05263, +0.115] | marrakesh -0.043 [-0.1676, +0.05001]
+      combined -0.01768 [-0.07246, +0.03711] -> CONSISTENT | chip-to-chip spread chi2/dof 0.14 (dof 2)
+  RR2 size(d=4) - size(d=5)
+      fez +0.02911 [-0.05959, +0.1101] | kingston +0.0253 [-0.08494, +0.0994] | marrakesh -0.003747 [-0.05672, +0.1309]
+      combined +0.01781 [-0.03415, +0.06978] -> CONSISTENT | chip-to-chip spread chi2/dof 0.15 (dof 2)
+  RR2 size(d=5) - size(d=6)
+      fez -0.05688 [-0.1205, -0.005398] | kingston -0.01265 [-0.1154, +0.09664] | marrakesh -0.01531 [-0.1167, +0.0494]
+      combined -0.03829 [-0.08148, +0.004906] -> CONSISTENT | chip-to-chip spread chi2/dof 0.46 (dof 2)
+  RR2 size(d=6) - size(d=7)
+      fez copies shifted | kingston +0.04051 [-0.1123, +0.1136] | marrakesh -0.02866 [-0.129, +0.0953]
+      combined +0.005689 [-0.07389, +0.08527] -> CONSISTENT | chip-to-chip spread chi2/dof 0.73 (dof 1)
+  RR2 size(d=7) - size(d>=8)
+      fez copies shifted | kingston -0.06166 [-0.111, +0.05714] | marrakesh +0.0598 [-0.07133, +0.1593]
+      combined -0.01952 [-0.08744, +0.0484] -> CONSISTENT | chip-to-chip spread chi2/dof 2.78 (dof 1)
+  RR3 combined: reach edge (unbroken ABOVE from d=3) none; first bin past it d=3 CONSISTENT, size -0.003 [-0.036, +0.030] deg (the bound); ISOLATED ABOVE beyond the edge: d=6, d>=8   (bins in order: d=3 CONSISTENT, d=4 CONSISTENT, d=5 CONSISTENT, d=6 ABOVE, d=7 CONSISTENT, d>=8 ABOVE)

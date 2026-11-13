@@ -1,0 +1,26 @@
+\section{Setup}
+\paragraph{Bench.} Our fault bench (v2) asks a model 170 short questions in four failure families drawn from our earlier documents on
+the failure modes of a language model doing measurement work \citep{faults,guards}: calling a winner between two scores whose intervals
+overlap (P1), reporting an accuracy without a width (P2), confirming a wrongly computed percentage (P3), and reporting the best of several
+seeds as the result (P4). Each family has scored items and controls with a known answer. Every model answers every item three times: a bare
+prompt, an exact repeat of it (bare copy) and a guard wording that names the failure. Requests are sent one at a time at temperature zero
+with a fixed seed (20261025), a context of 8,192 tokens and at most 1,500 new tokens, with the server's thinking switch off where a model has
+one. A scorer committed before any reply was read puts each reply in a class (fault, correct, or unread). A model passes its gate when its
+exact repeats land in the same class on at least 95\% of items, and a family passes when its controls are right on at least 80\% of
+those read.
+
+\paragraph{Models.} Five small open-weight models served by Ollama: phi4-mini, llama3.2:3b, qwen2.5:1.5b, granite4.1:3b and
+ministral-3:3b. Each model's manifest digest (weights, template and parameters) is the same on every server we read.
+
+\paragraph{Machines and servers.} A Mac with an Apple M5 Max (Metal), and a Windows workstation with an NVIDIA RTX 3080 10 GB (CUDA,
+compute capability 8.6). Every server ran with flash attention off. On the Mac, three servers in turn, each with one parallel slot and one
+model loaded at a time: the Homebrew bottle of Ollama 0.34.2 (the server Pub~\#2 used), and the official release builds of 0.34.2 and
+0.34.3 from the Ollama repository, each checked against the digest the repository publishes. On the workstation, its official 0.34.3
+install, once as it ran for Pub~\#2 (four parallel slots, started 29 October) and once restarted with one slot and nothing else changed.
+Requests to the workstation went over the local network from the Mac.
+
+\paragraph{Plans and readings.} Every run's plan was committed before its first request, and every change to a reading before it was
+computed. For a pair of runs, $I$ is the set of items whose bare reply and bare copy are byte-identical within each run. A pair reads
+consistent when no item of $I$ changes between the runs (with the exact 95\% upper bound on the share that could), above when any does,
+and cannot tell when $I$ holds fewer than 100 items. Beside it we count byte-identical replies across the runs on the bare and guard arms,
+and, on families whose gates pass in both runs, the items whose scored class changes, by direction.

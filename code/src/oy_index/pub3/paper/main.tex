@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,hyperref,amsmath,xcolor}
+\usepackage[numbers]{natbib}
+\newcommand{\proof}[1]{{\color{red}\textsf{[#1]}}}
+\title{A Policy Is Not a Measurement:\\ Recounting the Evidence on Language Models in Learning}
+\author{Wayfinder and Bones\\ Heuremen LLC}
+\date{October 2026}
+\begin{document}
+\maketitle
+\begin{center}\proof{FORMATTING PROOF, INTERNAL. Same layout as Pub \#2. Text in red is a placeholder or a status tag. Numbers shown are the 25 Oct working counts from PUB3.md and WALL\_S0.md; items not yet refereed are tagged. Institutions are named only to show the table layout. Not for release.}\end{center}
+\begin{abstract}
+\proof{Abstract to be written after the referee passes. It will state: what we rebuilt from released files and what rebuilt to the printed digit; what the institutions on the list had measured about their own policies, with the search scope stated; what we could not read; and what the outside referees changed.}
+\end{abstract}
+
+\section{Introduction}
+\proof{Stub. Three moves, as in Pub \#2: rebuild printed numbers from released files with our own code; price selected claims with a question committed before the data were read; turn the same checks on our own record. Credit what each source already showed.}
+
+\section{Method}
+\paragraph{Sources.} \proof{Stub. Institutional pages, committee and task-force reports, senate minutes and teaching-centre guidance, read from the institutions' own sites; faculty studies with released files. Government-funded studies are cards only. Receipts: every quote is kept with its URL and a dated local copy.}
+\paragraph{List.} \proof{148 rows including our own row 0; walked from research universities down through liberal arts colleges, not a sample. Nothing here is a rate for higher education.}
+\paragraph{Bins.} \proof{Four outcomes everywhere; ``consistent'' is a bound. Policy level: measured-policy / trial reported without numbers / planned only / usage-or-attitude only / none found. Pilots are counted only when their results were read.}
+
+\section{What institutions had measured about their own policy}
+Table~\ref{tab:tally} gives the policy-level bins. \proof{Tags: P3-09 refereed; the three measured-policy rows are not all refereed (P3-16 detector audits and P3-18 implementation study pending).}
+\begin{table}[h]\centering\small
+\begin{tabular}{lr}\toprule
+Policy-level bin & Rows\\\midrule
+Measured policy (detector accuracy $\times$2; implementation $\times$1) & 3\\
+Trial reported without numbers & 3\\
+Planned only & 47\\
+Usage or attitude only & 74\\
+None found (includes our row 0) & 21\\\midrule
+Learning outcome of an institution's own AI policy measured & 0\\\bottomrule
+\end{tabular}
+\caption{S0, policy level, 25 October 2026 (script-computed from the table; search scope in Section~\ref{sec:lim}).}\label{tab:tally}
+\end{table}
+
+\section{Pilots whose results we read}
+\proof{From P3-14; refereed except the last three rows. Reading: on subject-learning outcomes one result is below in a subsample, one above with a confound, and the rest cannot tell.}
+\begin{table}[h]\centering\footnotesize
+\begin{tabular}{p{2.3cm}p{3.4cm}p{1.6cm}p{2.2cm}p{4.2cm}}\toprule
+School & Design & $n$ & Outcome & Our reading\\\midrule
+UMD & RCT, instructor-level & 2{,}379 (exact-match 1{,}353) & final grade & below in the exact-match sample\\
+Harvard & crossover & 194 (122 with both) & post-test & above, topic and week confounded\\
+CMU (GAITAR@Scale 1) & course-randomized & 1{,}368 & AI competency & above on three outcomes, cannot tell on two\\
+MSU & regression within one course & 87 & math grade & cannot tell (no bound printed)\\
+Pitt & non-randomized cohorts & 129 & final grade & cannot tell (no bound printed)\\
+Gatech \proof{pending} & assigned to Unit 3 or 4, optional & 173 of 579 & quiz / tests & quiz above (self-selected); tests cannot tell\\
+Pomona \proof{pending} & human vs AI feedback, pre/post & 10 & test gain & cannot tell\\
+Berkeley \proof{pending} & observational vs prior terms & $>2{,}000$ & homework time & time saved, not learning\\\bottomrule
+\end{tabular}
+\caption{Measured pilots, results read, no pooling and no score.}\label{tab:pilots}
+\end{table}
+
+\section{The data an institution released}
+\proof{P3-15, pending referee: of 114 institutions extracted, none released microdata from a survey or evaluation of AI use or outcomes; 38 released summary tables or an instrument only; 76 released nothing. Faculty studies with released files are listed separately.}
+
+\section{A chatbot cited as the source}
+\proof{P3-17, pending referee. Kept apart: disclosed drafting, demonstrated use, how-to-cite guides. Counted: a chatbot's answer cited for a factual claim (two institutions), or published as the institution's own guidance with the chatbot named (six). A floor, not a census: pages behind logins were not read.}
+
+\section{Limitations}\label{sec:lim}
+\proof{Stub. What was and was not read, stated per row; agent-built counts versus hand recounts (about 100 evidence-naming counts are agent counts); search budget (96 rows owe a web-search pass); pages blocking scripts; the ordering of the list; rulings made under one rule and listed in full.}
+
+\end{document}

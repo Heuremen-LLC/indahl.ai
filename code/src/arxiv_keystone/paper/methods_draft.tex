@@ -1,0 +1,44 @@
+\section{Methods}
+
+\subsection{Devices, roles and the look}
+Two IBM Heron processors, ibm\_kingston and ibm\_marrakesh (156 qubits each). On each we reuse the roles of our earlier control run
+\cite{readout}: a pack $E$ of 39 qubits whose mid-circuit readout is the \emph{look}, and the 117 qubits $S$ that are never measured or
+gated during a look, which we call untouched. A look step reads out all of $E$ with the default \texttt{measure}. Its idle counterpart holds
+every qubit of $E$ idle for exactly the scheduled readout length $L$ (545\,dt on ibm\_kingston, 671\,dt on ibm\_marrakesh). Barriers on all qubits
+surround every step, and the untouched qubits receive no gates during a step.
+
+\subsection{The correction}
+After every look step each untouched target $q$ receives a virtual $R_z(-k_q)$, where $k_q$ is its kick in degrees per readout. A virtual
+$R_z$ is a change of frame and takes no time. Every untouched qubit is corrected with its own point value and none is selected or dropped
+by the size of its kick. Two tables are used. The committed table comes from our control run of 21 October, ten days before this run, read with
+the committed estimator (phase $\phi=\mathrm{atan2}(\langle Y\rangle,\langle X\rangle)$, kick $=(\phi_M-\phi_D)/N$) and unwrapped per qubit
+across $N=2,4,8$ readouts of that run so that a total phase near $180^\circ$ is not read on the wrong branch. The fresh table is measured in a
+calibration job on the same chip minutes before the main jobs (idle and look, $N=4$ and $8$, $X$ and $Y$, 4{,}000 shots). Each table is applied
+at the dose it was read at ($N=4$ or $N=8$).
+
+\subsection{Arms}
+Six arms run interleaved in the same job: idle (D), idle with a symmetric echo (DE), look (M), look with the committed correction (MC), look with
+the fresh correction (MF), and look with the echo (ME). The echo is an $X$ on every untouched target after step $N/2$ and after step $N$, a net
+identity. It also refocuses each qubit's own precession during the idle, so the echo arm is compared with the idle-echo arm and every other
+look arm with the plain idle. Scheduled durations on the untouched qubits are identical for D, M, MC and MF, and for DE and ME (the two $X$
+gates add 16\,dt on ibm\_kingston and 18\,dt on ibm\_marrakesh).
+
+\subsection{Setups}
+\emph{Spectators.} All 117 untouched qubits are put on the equator ($\sqrt{X}$), see $N=8$ steps, and are read in $X$, in $Y$, and after
+$\sqrt{X}^\dagger$ in $Z$, where a qubit that kept its state reads 0 (2{,}000 shots). \emph{Pairs.} 48 coupled untouched pairs are prepared in
+$|\Phi^+\rangle$ (the remaining 21 untouched qubits on the equator), see $N=4$ steps and are read in $ZZ$, $XX$, $YY$, $XY$, $YX$ (2{,}500 shots).
+\emph{Clock.} A Page--Wootters history state of two clock qubits $c_0,c_1$ and a system qubit $s$,
+$|\Psi\rangle=\tfrac12\sum_{t=0}^{3}|t\rangle\otimes R_y(t\theta)|0\rangle$ with $t=c_0+2c_1$ and $\theta=\pi/4$, is built as $H$ on both clock
+qubits, a controlled $R_y(\theta)$ from $c_0$ to $s$, the look block ($N=4$), and a controlled $R_y(2\theta)$ from $c_1$ to $s$. The look sits in
+the middle of the build, so a phase it leaves on $s$ is acted on by the second controlled rotation and cannot be removed afterwards. All 27
+Pauli settings are read (1{,}000 shots). The clock qubits are $(c_0,s,c_1)=(3,16,23)$ on ibm\_kingston, as in our run of 24 October, and
+$(104,105,106)$ on ibm\_marrakesh, chosen by a rule fixed before any job from the committed table and the day's calibration record.
+
+\subsection{Jobs, readings and rulers}
+Per chip: the calibration job, then the main job with the 210 circuits in order and again reversed, giving two copies. Dynamical decoupling and
+twirling are off; circuits are transpiled once with the trivial layout. Every classical register is saved per shot, including the pack's own
+readouts. The plan, code, synthetic test and their hashes were fixed and timestamped before the first job. Each reading has four outcomes
+(above, below, consistent, cannot tell), is read on each copy and pooled, and is reported as the pooled outcome only when the two copies agree.
+Spectator and pair readings use the median over qubits (pairs) with a 2{,}000-draw bootstrap over qubits and a 99\,\% band; clock readings use a
+400-draw shot bootstrap and a 99\,\% band. The share of the kick that a correction gives back is read with a per-qubit regression of the residual
+phase on the kick measured in the other copy (Theil--Sen slope): a slope of 0 means all of it is given back, 1 means none.

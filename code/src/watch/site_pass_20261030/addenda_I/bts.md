@@ -1,0 +1,3 @@
+
+## Addendum 4 (30 Oct 2026, from the site pass)
+The live display counted every item of the FAA feed as an airport with a program, closures included. The closures the FAA lists are notices to non-scheduled general aviation that can run for months, and the feed prints their dates without a year. The count of airports with a program now covers the delay programs, ground stops and general arrival and departure delays only. Closures are shown under their own heading, with the year taken from the notice's own dates when they agree with the dates the FAA prints. The keeper still stores every item as published. The later test in Addendum 3 is unchanged.

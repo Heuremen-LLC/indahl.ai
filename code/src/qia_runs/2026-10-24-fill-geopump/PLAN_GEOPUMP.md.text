@@ -1,0 +1,85 @@
+PLAN -- free calibration run for arXiv 2610.09062v2, "Geometric heat pumping on a quantum processor"
+G. J. Caselli, L. O. Manuel (Universidad Nacional de Rosario / Instituto de Fisica Rosario, CONICET), L. Arrachea, P. S. Cornaglia (Centro Atomico
+Bariloche, CNEA / Instituto Balseiro), Argentina. Their data: Zenodo 10.5281/zenodo.23339851 (CC BY 4.0), copied to theirs/. Written 24 Oct 2026,
+BEFORE any job. Internal; nothing published or sent before Monday; no contact. Unheld by Wayfinder 24 Oct (register row run_geopump was HELD on
+"simulation described two ways"; the experiment itself is described one way and reproduces).
+
+THEIR QUESTION, their words (theirs/paper_v2.txt): the working qubit is "particularly affected during the waiting intervals associated with ancilla
+measurement and reset"; "Reducing these waiting times ... promising routes towards net heat extraction"; SM Table 1: "The simulation reproduces 70-90%
+of the measured even part for T >= 40, and 33-72% for T <= 20", and "readout assignment and reset errors alone produce changes below 0.01 T". Their
+noise model treats a measurement as 2.1 us of T1/T2 plus an assignment error: an idle with a label.
+OUR QUESTION FOR THEM: does a readout cost the working qubit more than the waiting time it occupies (a readout is not an idle)?
+
+DESIGN (ibm_kingston, Darkwave Disco; delta_B = 0.45; tau = 20 and 60, the short and the headline period):
+  A   their circuits exactly (reset, R_y(prep), MEASURE b_in, XXPlusYY(2 varphi), measure b_out), 4 circuits x 3000 shots per tau.
+  Ap  b_in drawn at random (bit 0 w.p. p_exc) and PREPARED as a basis state (reset, X if 1), then MEASURED, then XXPlusYY, measure b_out.
+  Bp  identical to Ap but the incoming measurement is replaced by a delay of its scheduled length (545 dt = 2.18 us on kingston).
+      Measuring a basis state ideally does nothing, so Ap = Bp ideally; Ap - Bp is what 4N = 192 incoming readouts cost beyond their waiting time.
+  K = 12 realizations of the incoming bits per (direction, branch), 250 shots each, Ap_k and Bp_k on the SAME bits, next to each other in the job.
+  Heat: Q = 2 B_j (b_in - b_out) per collision, their estimator (branch-weighted; odd = (fwd - rev)/2, even = (fwd + rev)/2), our own code.
+  In R2 both Ap and Bp use the PREPARED b_in (Bp has no measured one); their common uncancelled b_out assignment bias cancels in the difference.
+  Ap_rec = Ap scored with its MEASURED b_in (exactly their estimator) is the control against A.
+  Two copies (jobs) of 200 circuits; copy 2 runs copy 1's order reversed (ABBA) with its own fresh realizations; same structure as the synthetic.
+  Layout: their (47, 48, 46) unless, in the record saved before the job, a CZ error on S-aL or S-aR or a readout error on any of the three exceeds
+  3x the chip median, or a T1/T2 is missing (then STOP and choose by addendum). Dry run 24 Oct: CZ 0.00321 / 0.00429 vs median 0.00174 (1.8x, 2.5x),
+  readout 0.0098 / 0.0037 / 0.0060 vs median 0.0091: PASS.
+  Transpile: their settings (optimization_level 3, seed_transpiler 0, fixed initial layout). CHECK 8 (equal idle): for every k the ASAP start times
+  (target durations) of all 1320 operations on S are identical in Ap_k and Bp_k -- dry run PASS on all 96 pairs of both copies; Bp has 193
+  measurements + 192 delays where Ap has 385 measurements; circuits 0.679-0.684 ms (theirs: about 0.69 ms). Same compiled circuits are fired.
+  Estimate 134 s (2 x 67 s; shots x (duration + 250 us)); cap 220 s; remaining 3,430 s at the dry run. Record saved before every job; one restart,
+  then HOLD, on an IBM-side ERROR.
+
+KNOWN-GOOD: their released raw ancilla bits (12 ibm_kingston jobs, Sept 2026) through OUR independent estimator and OUR own implementation of their model (geopump.py, known_good.py) must reproduce their published odd heats to <= 1e-8 and their SM Table 1 hardware even-part noise contributions to the printed 2 decimals. Result (known_good_geopump.text): max |odd diff| 4.3e-11 over 12 jobs (e.g. tau 60 job dap8pvopqrnc739b0oi0 QL_odd +0.280493 vs +0.28049), Table 1 even rows 6/6 matched: PASS. A hardware known-good on today's device is not possible (the device changed since Sept). Our committed kingston readout kick is not measured by any arm here (see DOSE below).
+
+DOSE (coordinator /q check 9, 24 Oct, before any job): their circuit reads ONE ancilla at a time, so our kick applies at dose K = 1: on kingston at most
+0.09 deg per readout (main.tex: "one of 39 read out leaves at most 0.15 deg on fez and marrakesh and 0.09 deg on kingston"), NOT the full-pack 2.86 deg.
+Across 385 readouts that is at most ~35 deg, and only if every kick adds coherently with the same sign. No prediction or synthetic world is scaled from
+the full-pack value. AND (measured on the synthetic, 24 Oct): the heat is essentially blind to phase-type costs on S -- dephasing up to 10 % or a
+coherent kick up to 5 deg per incoming readout moves Qtot_even by < 0.03 T. So this run decides POPULATION-changing readout costs (extra relaxation or
+excitation of S, or readout-induced transitions of the ancilla beyond the idle), and says nothing about the phase kick; that stays CANNOT_TELL here.
+
+READINGS (all four outcomes; bootstrap over shots, realizations resampled jointly for Ap, Ap_rec and Bp; 2,000 draws; 99 % band):
+  R2 PRIMARY  Ap - Bp, Qtot_even = QL_even + QR_even, at tau 20 and at tau 60 (two primary readings). Secondary: QL_even, QR_even, QL_odd, QR_odd.
+  R4 CONTROL  A - Ap_rec, every key: random-basis preparation equivalent to their protocol (expected CONSISTENT).
+  R1          A today minus their published value at the same point (their tau-scan job at tau 20 and tau 60, their raw bits through our estimator,
+              their bootstrap width added): device change since Sept, reported as a bound.
+  R3          PROJECTION, labelled: 2 x R2 even part per bath (all 384 ancilla readouts, assuming the outgoing ones cost the same, linear) divided by
+              their missing even part (SM Table 1 hw - sim: tau 20 L 0.83, R 0.48; tau 60 L 0.36, R 1.35 T). Not a measurement of their device or date.
+  DIAGNOSTIC  incoming-readout assignment P(1|0), P(0|1) on aL, aR from Ap (recorded vs prepared b_in), beside the stated values in the saved record.
+  FINAL per reading: CANNOT_TELL if the copy-gap interval excludes 0; otherwise the outcome of the pooled interval (ABOVE / BELOW / CONSISTENT, a
+  CONSISTENT printed as its bound). A missing copy makes every reading CANNOT_TELL.
+
+SYNTHETIC (synth_geopump.py; shot-by-shot trajectories of S through the published circuit with T1/T2 of q47 over each collision interval and
+assignment flips common to all arms; planted readout cost on S at every incoming readout of A and Ap; 40 draws per world, 2 copies, same shots):
+  W0 none | W1 extra relaxation 0.0063 per incoming readout (= the T1 cost of 2.18 us more idle) | W2 coherent kick 1 deg per readout (> 10x the K=1
+  bound; invisible to the heat by the measurement above; planted to show the run does NOT call it) | W3 W1+W2 | W4 relaxation 0.0006 (below resolution).
+  At the 95 % band the control R4 made up to 4/40 false calls (10 %) -> band set to 99 % before any job. At 99 % (synth_results_geopump_band99.text):
+  false-call rate over every reading where the truth in the heat is zero (all of W0 and W2, R4 in every world): mean 0.002, max 0.025 per reading;
+  W1 and W3 called ABOVE 40/40 on every even-part R2 reading at both taus; W2 CONSISTENT 40/40; W4 called on 0-3 of 40 (below resolution, as planted).
+  First catch on the synthetic (before any job): Ap scored with PREPARED b_in is biased against A by ~-1.1 T per bath (b_out assignment error no
+  longer cancels against b_in); hence R4 uses Ap_rec, and Ap with prepared b_in appears only in R2 where Bp carries the identical bias.
+  Loader test: simulated bits written in the job format (meta + raw npz) through run_real.py recover a planted W1 as ABOVE, R4 CONSISTENT.
+
+CODE: geopump.py (model, circuits, estimator), analyze_geopump.py (readings), known_good.py, synth_geopump.py, fire_geopump.py, run_real.py;
+hashes in CODE_GEOPUMP.sha256.text. Their code is never run.
+
+## /q (Dr. Bonefish the Third, run on this plan before any job)
+Checks that fired:
+- 1 (name the stated figure): no IBM stated figure is compared to a delivered one in the readings; the diagnostic prints stated readout beside our
+  incoming-readout assignment, labelled a diagnostic (a mid-circuit readout of a freshly prepared basis state, not IBM's terminal benchmark).
+- 4 (a model built from IBM's numbers is not IBM's number): R3 divides by THEIR simulation's shortfall; labelled projection, never a bill line.
+- 5 (test the rebuttal): their rebuttal to our reading would be "a readout is just its waiting time"; Bp IS that rebuttal built into the job.
+- 8 (equal idle of the stated length, and does the compiled schedule equal it?): ASAP start times of all 1320 S operations identical, 96/96 pairs.
+- 9 (two instruments differ in more than the variable named): measure vs delay also differ on the ANCILLA (readout-induced transitions of aL/aR);
+  R2 therefore reads "readout cost on the pump" (S and ancilla together), named so in the result; the dose correction is above.
+- 10 (heralded vs unheralded, same in both arms): every shot kept in every arm; no selection.
+- 12 / 13 (selection; sequential vs simultaneous): Ap_k and Bp_k adjacent in one job, same bits; copies are a drift reading (copy gap), ABBA.
+- 15 (plant every alternative): none / relaxation / phase / both / below resolution planted; the phase world is the NEITHER the heat cannot see.
+- 16 (floor): false-call rate measured (99 % band) and quoted.
+- 18 (known-good rule is the rule): fixed above; band fixed at 99 % before any job.
+- 19 / 21 (four outcomes; copies by gap): FINAL rule above; CONSISTENT printed as a bound.
+- 25 (more than two answers): an ABOVE in R2 rules out "a readout is only its waiting time" for this pump; it does not say which mechanism (S
+  relaxation, measurement-induced transitions, ancilla excitation); a CONSISTENT bounds the population-type cost and says nothing about phase.
+- 26 (post-hoc): R3's choice of their Table 1 as denominator is written here before any job; anything else after the data is labelled.
+- 33 (budget): 134 s estimated against 3,430 s remaining; cap 220 s.
+- 36 (literature from papers read): every quote above is from their v2 text saved in theirs/paper_v2.txt.

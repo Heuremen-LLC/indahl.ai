@@ -1,0 +1,14 @@
+% Draft, 30 Oct 2026: goes into main.tex after "The judge and the gold" once round S1L (the card's own tool) is read. Not public.
+\section{The card's number, rerun}
+Model cards print benchmark numbers, often without the harness, prompts or extraction rule that produced them. For three open-weight models
+(SmolLM2-1.7B-Instruct, Phi-4-mini-instruct, Granite 4.1 3B) we reran on our Mac, with the original weights, every card number that has a matching
+task in EleutherAI's lm-evaluation-harness, with the claim list and the outcome rule committed before any run. Of 17 claims read, 5 are consistent
+with our interval and 12 cannot tell, because the card's harness differs from ours or is not named. The gaps behind those twelve are not small:
+Phi-4-mini's card gives ARC-Challenge 83.7 and OpenBookQA 79.2 from Microsoft's internal platform, and our log-likelihood reading gives 58.0 and
+46.8. A gap that size can come from the question format alone, which is why it is printed as cannot tell with its direction beside it, not as
+below. Our first pass on one card did print a below and an above. The plan's own harness clause, applied at the hand recount, moved both to cannot
+tell. The extraction rule also moves the number on the same replies: on Phi-4-mini's chat-format GSM8K replies, strict matching gives 56.3 and
+flexible extraction 81.8, and hand-reading ten replies, strict matching missed two correct answers that did not end in the expected phrase. Granite
+4.1's chat-format BBH replies were sometimes cut by the task's own blank-line stop before the answer.
+% S1L (card's own tool, lighteval at the vendor's pinned commit, their task file): known-good passed exactly; two of the card's datasets no longer
+% load as pinned (HellaSwag's source URL is gone, IFEval's card is unreadable to the 2024 library); result sentence goes here when read.

@@ -1,0 +1,59 @@
+# PLAN -- free run for arXiv 2608.13614v1 (Ahmad, Mohammadisiahroudi, Biswas, Hoffman; UMBC, US state university -- allowed), ibm_kingston. Written and committed BEFORE any job. Heuremen LLC / QIA, internal. BUILT, NOT FIRED at commit.
+
+Source: arXiv 2608.13614v1 (the only version; abs page lists [v1] only), full text in src/paper_v1.txt (extracted from the PDF, sha256 in src/SHA256_theirs.text).
+Released code: github Jalilahmad4/Quantum-Opt.-for-Parameter-Estimation-in-Dynamical-Systems, commit b72fd06 (2026-09-09), SIS_IBM_Annealer.py READ AS TEXT ONLY,
+never executed, not copied here (it carries an embedded credential string, masked on read, never printed). The circuit builder (sis_qubo.py) is my own.
+Triage: qia_leads/inventory_since_2024jul/FIRE_QUEUE_TRIAGED.md #6 and FREE_T1_RESULTS_chunk5.jsonl.
+
+## Their question, verbatim (v1)
+Sec. 4.1: "Table 2 reports the SIS parameter estimates obtained from the IBM simulator, IBM Kingston QPU, and SQA. All three implementations recover parameter values close to the true generating parameters."
+Sec. 4 common settings: "For each optimization procedure, the returned low-energy bitstring is decoded on the refined parameter grid to obtain the corresponding parameter estimate."
+Table 2: IBM Simulator and IBM QPU beta 0.659677 (1.48%), gamma 0.256774 (2.70%); SQA beta 0.653226 (0.49%), gamma 0.252258 (0.90%).
+Abstract: "illustrating a viable pathway for integrating quantum optimization into data-driven parameter estimation".
+The run decides: does the kingston QAOA sample put more weight on low-energy states than uniform random bitstrings do? (For a 10-bit QUBO, 4096 uniform draws contain any given state with P = 1-(1-1/1024)^4096 = 98.17%, so the table's lowest-energy pick cannot show it.)
+
+## KNOWN-GOOD
+KNOWN-GOOD: their printed Table 2 values reproduced from the paper's stated construction through my committed sis_qubo.py (known_good.py -> known_good.text/json, rule written in known_good.py before it ran): both printed QAOA values sit on my refined grid at index (17,17) and both SQA values at (16,16); my variant-P QUBO minimum IS (16,16) = the printed SQA row exactly (0.653226, 0.252258), and the printed simulator/QPU row (17,17) is my rank-2 state (energy +2e-5 of a [0,1] range); QUBO fit MSE 1.4e-30 (paper: "near machine precision"); circuit Statevector equals my QAOA statevector to 2e-17 (bit order checked). PASS. A real-hardware known-good for "QAOA vs random on kingston" is none possible -- no counts, no results files released (one job id sits in the script, on their account, not readable by us); the instrument is checked on planted data (synth_results_2608.13614.text) instead.
+
+## Run (ONE job, ibm_kingston, Darkwave Disco via sweep_run/sweep.py service())
+- Two PUBs in one job: variant P = the paper's stated construction (lambda=8, fractions, mu_I 0.5, domain [0.55,0.75]x[0.18,0.32], 8x8 coarse, 32x32 refined, 200 obs on [0,40]); variant S = the released script's construction (lambda_weight=2.0, N=8000, mu_I 5, 300 times, local box around the coarse min, 32x32 local DA grid). They differ in MORE than lambda (every listed setting) -- the reading is per variant, never "the lambda effect".
+- Not stated in the paper, chosen by me: nudged initial state = true initial state; RK45 rtol 1e-8 atol 1e-10.
+- Circuit: final p=4 QAOA, H, per layer rz(2g h_i), cx-rz(2g J_ij)-cx for all 45 pairs, rx(2b), measure(i, n-1-i): their published construction, rebuilt by me. Angles: MY noiseless optimisation by their stated recipe (COBYLA rhobeg 0.5, maxiter 300, 3 starts, numpy default_rng seeds 0,1,2) -- NOT their hardware angles (not released). Flagged.
+- Transpile ONCE, preset optimization_level 3 (as their script), seed_transpiler 2608; dry run: depth 689/697, 602 CZ each (logical 360 CX), layout [52,39,53,54,55,59,75,79,74,73]. Circuits saved to circuits.qpy at fire time with sha256.
+- SamplerV2, 4096 shots per PUB (their script), twirling OFF (enable_gates False, enable_measure False), dynamical decoupling OFF, max_execution_time 60 s. Their script uses SamplerV2 defaults (no twirling/DD options set).
+- Before the job: usage_remaining_seconds checked (stop if < 600; dry run 2761 s), backend record (properties) saved to props_before_<attempt>.json; after: props_after.json.
+- Seconds: estimate 4.3 s (2 x 4096 x (25.5 us + 250 us rep delay) + 2 s); triage ~8 s; HARD CAP 30 s (fire.py refuses above it). One restart on an IBM-side ERROR, then HOLD.
+
+## Readings (analyze.py, committed; all pre-registered here)
+- R1 (primary): k/n in the 10 lowest-energy states of 1024 (the "lowest 1%") vs uniform null 10/1024 = 0.009766; Clopper-Pearson 95%.
+- R1b: share of the noiseless-QAOA excess (f-null)/(ideal-null) with CP ends (ideal: P 0.02177, S 0.01910 from known_good.json).
+- R2: same k vs the product-of-own-marginals null (separates bit bias such as decay toward 0 from low-energy concentration).
+- R3 (descriptive): mean QUBO energy of shots vs uniform mean (bootstrap 95%); lowest-energy sampled state, its rank; optimum sampled yes/no.
+- Combined over P and S: same outcome -> that outcome; different -> CANNOT_TELL.
+
+## Four outcomes (per variant, R1 read WITH R2)
+- ABOVE: R1 lower CP end > 0.009766 AND R2 ABOVE -> the kingston sample concentrates on low-energy states beyond random and beyond its own bit bias. (R1 ABOVE with R2 CONSISTENT is reported as "ABOVE explained by bit bias", not as QAOA signal.)
+- BELOW: R1 upper end < 0.009766 -> the sample avoids low-energy states (worse than random).
+- CONSISTENT: null inside the interval -> print the bound: upper end / null and the upper excess share (how much of a perfect device's excess is ruled out).
+- CANNOT_TELL: n < 4000, the noiseless ceiling would not itself read ABOVE at this n, the two variants disagree, or the job errors twice. Deciding run if so: same circuits, 4 x 4096 shots more per PUB, ~12 s.
+
+## Synthetic (synth.py -> synth_results_2608.13614.text, run on planted data BEFORE any job)
+Worlds per variant: null, ideal QAOA, decohered (0.3 ideal), below (low states 0.2x), bias artefact (P(bit=0)=0.62), both (P ideal + S below), neither (null+null).
+False-call rate: R1 null 4.0% (worst variant), R2 null and bias 4.2%; combined neither -> wrong ABOVE/BELOW 0.4%, CANNOT_TELL 5.6% (variants split). Ideal -> ABOVE 100%; below -> BELOW 100%; both -> CANNOT_TELL 100%; bias world: R1 ABOVE 56% on P but R2 CONSISTENT 95.8% (why R1 is read with R2). Decohered 0.3: ABOVE 54% (P) / 33% (S) -- power at 4096 shots is limited; a CONSISTENT reading is a bound, not "nothing".
+SYNTH PASS under its rule. No widening needed.
+
+## Book relevance (not a bill line; the paper uses NO stated IBM figure, so our Part-0 factors have nothing to rescale)
+CONSIST finding from the known-good, zero QPU: the paper says the same QUBO was solved by each solver and the lowest-energy bitstring returned; in my rebuild the SQA row is the QUBO minimum and the QAOA row is the 2nd-lowest state. Two solvers "minimising" one 10-bit QUBO returning different states means at least one row is not the lowest-energy state of the QUBO (exhaustive search: 1,024 states, microseconds). Under my unstated-setting choices; the gap is 2e-5 of the range, so a different unstated setting can flip it -- quote as CANNOT_TELL on which row, not on the disagreement itself.
+Script vs paper mismatches (read as text): lambda 2.0 vs 8; N=8000 counts vs fractions; mu_I 5 vs 0.5; domain [0.35,0.95]x[0.10,0.45] + local box vs [0.55,0.75]x[0.18,0.32]; 1,088 DA solves (64 + 1,024 local) vs the paper's "8^2 = 64 data-assimilation solves"; 300 vs 200 times. One QPU job id is in the released script (T1 row said "NO job ids").
+
+## /q (Dr. Bonefish the Third, run on this plan before commit)
+Fired:
+- A1: the paper uses no stated IBM figure -> no rescaling, no bill line; the reading is QPU vs random, not delivered vs stated.
+- A5: IBM's/authors' rebuttal "your angles/QUBO are not ours": TESTED where free (two variants: paper text and released script; Table 2 grid values reproduced); untestable part (their hardware angles, their counts) stated -> the result reads "this construction on kingston today", never "their run".
+- B9: P and S differ in every listed setting, not only lambda -> no lambda claim.
+- C14: no real-hardware known-good possible (no counts released) -> stated as such; classical chain + planted data carry the instrument check.
+- C16: floor measured: 4.0% / 4.2% per reading; two variants x two readings -> about one false resolution in ~6 readings is expected under null; a lone R1 ABOVE without R2 is not a finding.
+- E25: CONSISTENT rules out an excess above the printed upper share of a noiseless device; it does not say the QPU "did nothing" or name a cause (noise, depth 689, 602 CZ).
+- E26: R1b and R2 written into the plan before any job (not post-hoc).
+- Known-good sensitivity (A5/E25): the SQA-vs-QAOA rank finding rests on an unstated nudged initial state -> labelled CANNOT_TELL on which row.
+Held: A2, A3 (record saved before the job, same job both PUBs), A4 (no AerSimulator.from_backend model used anywhere), A6, A7, B8 (null is like for like: same shots, same pick rule; R2 from the same job), B10 (all shots, no selection), B11, B12, B13 (both variants in ONE job), C15, C17 (bit order checked by Statevector vs mine), C18, D19, D20, D21 (one chip, one date; no chip combining), D22 (shots are not processors: one reading of one circuit on one chip-date), D23, D24, E27, E28, F29, F30 (times from job record), F31 (plan committed before job), F32 (no referee out), F33 (2761 s remaining at dry run, cap 30 s), G34-G37 n/a (nothing published).

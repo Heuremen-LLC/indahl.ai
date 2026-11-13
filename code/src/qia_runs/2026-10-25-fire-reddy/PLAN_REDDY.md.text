@@ -1,0 +1,15 @@
+# Free calibration run (Kumar): Zenodo 10.5281/zenodo.23123273, Dhanunjay Reddy, Andhra University -- committed before any job
+Their question, in their words: the fez spot-check "does not show the noise model fits other chips, topologies, or conditions".
+Their numbers: t-shape Bell route, physical [16,3,2,4,5], Bell on logical 0 and 4 (distance 3), 2000 shots per correlator, F = 0.921 +/- 0.004
+on ibm_fez (2026-10-03) vs their Aer model F = 0.9203.
+This run: the same circuit (H on logical 0, CX 0->4, opt level 3, seed 42, initial_layout [16,3,2,4,5]) and their correlator construction, on the
+same physical T of ibm_fez, ibm_kingston, ibm_boston (Heron r3), ibm_pittsburgh (Heron r3), then ibm_fez again (drift bracket).
+One SamplerV2 job per chip, pubs ZZ/XX/YY, 2000 shots. Calibration record saved before and after each job.
+Compiled (dry run, all chips): 7 CZ, two-qubit depth 4, depth 13/14/15 (ZZ/XX/YY); their record lists 13 for all three -- disclosed.
+Analysis (theirs): correlator = P(same) - P(diff); F = (1+XX-YY+ZZ)/4; se from sqrt((1-c^2)/n) in quadrature.
+Outcome per chip vs their model 0.9203: ABOVE / BELOW / CONSISTENT on the 95% interval of (F - 0.9203); CANNOT_TELL if the 95% width exceeds 0.05.
+Drift: fez arm 0 vs fez arm 4, same rule on the difference. Floor (synthetic, model-true world): 20/400 = 5% resolve, so ~1 of 5 arms can resolve by chance.
+KNOWN-GOOD: their released fez counts (job db0e7hal7guc73cgblgg, theirs/tshape_real_backend.json) through this analysis read F 0.9210 +/- 0.0043, XX 0.921, YY -0.866, ZZ 0.897 = their printed values: PASS (known_good_reddy.text).
+Synthetic: synth_results_reddy.text (ideal / model-true / worse / better / product-state all land as planted).
+Budget: cap 60 s total (their fez job billed 4 s); refuses below 300 s reserve.
+Not claimed: anything about the hyperbolic or 127-qubit topologies (simulation only in their work).

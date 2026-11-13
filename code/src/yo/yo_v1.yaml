@@ -1,0 +1,14 @@
+model: Qwen/Qwen3-1.7B
+train: true
+data: /Users/heuremen/bones-forge/yo/data
+fine_tune_type: lora
+batch_size: 4
+iters: 600
+learning_rate: 1.0e-4
+steps_per_report: 20
+steps_per_eval: 100
+save_every: 100
+adapter_path: /Users/heuremen/bones-forge/yo/adapters/v1
+max_seq_length: 1024
+num_layers: 16
+seed: 7

@@ -1,0 +1,28 @@
+# BOOK_TODO_B (lane B), 30 Oct 2026
+For Bones. Nothing here was appended or edited. THE_BOOK.md, qia_offchain/entries.jsonl and qia_cal/ were not touched.
+
+## 1. B-3: two chain entries read under two rules (proposal)
+The chain holds T1 readings under two rules. Entries 1 to 8 were called under t1t2_check/PLAN.md Note 6 (95% interval, no margin). The hourly runs are called under qia_cal/PLAN.md Note 1 (ABOVE only when IBM's T1 is above 1.25 times the top of our interval). Read under the hourly rule:
+- Entry 3 (ibm_kingston q121 T1): IBM 16.237, our 95% interval [11.943, 14.736]. 1.25 x 14.736 = 18.420, so 16.237 is outside the interval and inside the margin: CANNOT_TELL.
+- Entry 7 (ibm_boston q85 T1): IBM 8.393, our 95% interval [6.723, 8.35]. 1.25 x 8.35 = 10.4375, so 8.393 is outside the interval by 0.043 and inside the margin: CANNOT_TELL.
+- Entries 1 and 5 (ibm_fez q148 T1, IBM 5.863 against tops 0.945 and 1.226) stay ABOVE under both rules. Entries 2, 4, 6 and 8 are T2 readings under the 2 x T1 bound and do not change.
+Proposed entries to append (n, prev and hash filled by chain.py). Write the plan note first (a new note in t1t2_check/PLAN.md, dated, before the append: "Entries 3 and 7 are re-read under the hourly 25% margin rule of qia_cal Note 1. Both read CANNOT_TELL. The 95% interval and the Note 6 rule are unchanged for the page's T1 and T2 table."):
+```
+{"added": "<append time>", "processor": "ibm_kingston", "qubits": [121], "window_utc": ["2026-10-29T01:41:25Z", "2026-10-29T01:44:58Z"], "job_id": "dbha894dgr2s73ct4r3g", "rule": "t1t2-check PLAN.md Note 6 interval, read under qia_cal PLAN.md Note 1 (25% margin on T1)", "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check", "quantity": "T1", "ibm_stated": 16.237, "unit": "us", "ibm_date": "2026-10-28 20:16", "outcome": "CANNOT_TELL", "measured": {"what": "T1, single-exponential fit, 95% interval", "value": 13.245, "interval": [11.943, 14.736]}, "corrects": 3}
+{"added": "<append time>", "processor": "ibm_boston", "qubits": [85], "window_utc": ["2026-10-30T01:49:24Z", "2026-10-30T01:50:32Z"], "job_id": "dbh9a81q260s73bur7mg", "rule": "t1t2-check PLAN.md Note 6 interval, read under qia_cal PLAN.md Note 1 (25% margin on T1)", "source": "https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/t1t2-check", "quantity": "T1", "ibm_stated": 8.393, "unit": "us", "ibm_date": "2026-10-27 15:13", "outcome": "CANNOT_TELL", "measured": {"what": "T1, single-exponential fit, 95% interval", "value": 7.544, "interval": [6.723, 8.35]}, "corrects": 7}
+```
+Page side (done in public/qia/offchain.js): the Reading column prints the rule name and level beside every entry ("T1 and T2 check, Note 6, no margin" for entries 1 to 8, "hourly run, Notes 1 and 3, 25% margin on T1" for the hourly runs), an entry named by another entry's `corrects` leaves the lookup and shows "(superseded by entry N)" in the whole-chain table, and the lookup shows CANNOT_TELL as "cannot tell". Once you append these two entries the old entries 3 and 7 drop out of the lookup by themselves.
+
+## 2. B-6: the duplicate fez entry
+Already done by you: entry 75 (type correction, corrects 29). The page marks entry 29 "superseded by entry 75" and keeps entry 28 (itself superseded by the Note 3 re-read, entry 81). The note row of entry 75 renders in the whole-chain table (quantity "correction", the note in the Measured column). cal.py `process()` guard is yours.
+
+## 3. Rows changed on the page that THE_BOOK.md still carries in the old wording
+book_sync_B.json (this folder) lists every changed field of the calibrated rows as [row id, field, old text, new text]: 364 fields on 186 rows (organisation 45, study 9, published 23, measured 168, qia_calibration 103, how 16). The format is the one qia_leads/recheck_published/apply_edits.py reads, so a copy of that script pointed at THE_BOOK.md alone can apply it (book_calibrated.json already holds the new text, so skip that step). The Book sections that name the changed rows are the C-entries with "row id: <id>".
+The changes that carry a changed claim and not only wording, for your read of the Book:
+- zenodo.21479684 (C113): "-0.0010 +- 0.0007 (1.4 sigma)" became "-0.0010 for the critical circuit, +0.0007 for the trivial circuit, 0.13 sigma at 1/sqrt(16384)". Both agents read the record's Table 17.1 columns (<Z>_critical, <Z>_trivial).
+- fire_reddy, fire_ktn, fire_2508.16895, fire_ffzne, fresh_lums_2609.13669, so_2609.15411, k2025_ufsm_2502.01824, fill_2607.20377, fire_2608.04486, fill_2605.30676: rewritten from their run files (see FIXLOG_B). Codes changed: fire_reddy Q17 to Q18, fire_2508.16895 Q17 to Q19, fire_2608.04486 Q17 to F3 (qia_key.py CODE_OVR and the List classification follow).
+- 12 cut cells and 11 headless cells rebuilt from the Register lines in THE_BOOK.md itself (the register file is gone), internal tags removed.
+Two Book notes from the lane B read, not mine to edit: section U3 lists QuSoft, KAIST and Zhukov as "not part of any calibration" while all three are public calibrated rows, and section U2 says Kumar is "BUILT, NOT FIRED" while the public row shows his run.
+
+## 4. Plan files
+Nothing in a plan file was edited. The Cauca row (fill_2605.30676) now prints 17 to 20% under one ruler (medians of three kingston sessions). That figure is a new computation of the existing twin code (fixtools_B/agent_out/R2_cauca_medians.py, it reproduces the saved 13 and 21% rows from the old ruler). It needs a dated addendum in qia_runs/2026-10-24-fill-cauca before the cell is published, and the sent and public gift README for Cauca still say 13 to 21%.

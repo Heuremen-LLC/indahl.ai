@@ -1,0 +1,13 @@
+# Free calibration run (Kumar): Zenodo 10.5281/zenodo.22009070 (Lasky Design) -- DRIFT CALIBRATION of their gain -- committed before any job
+Their numbers (fez): 3q GHZ + 1000 dt delay, baseline 904/1024 (job da2ltveaa69c739hlts0) vs optimized 943/1024 (job da2ltvk3jnrc73ae3kpg): +3.81 pp;
+5q GHZ + 1200 dt, 820 vs 855: +3.42 pp. Each arm is ONE separately submitted 1024-shot job.
+Our calibration finding applied (new hotness, not a bug check): job-to-job drift on fez exceeds shot noise within minutes (Lima 25 Oct, Kyiv/Cauca 24 Oct).
+ZERO-QPU first: at 1024 shots per arm, shot noise alone gives their 5q gain z ~ 2.0 and 3q gain z ~ 2.9 (two-proportion), before any drift.
+This run: their BASELINE circuits (H + CX chain + delay on all qubits, physical 0-2 and 0-4 as their Q0..Q4 labels, opt 1, delays kept: compiled
+GHZ3 2 CZ / 3 delay / 1467 dt, GHZ5 4 CZ / 5 delay / 1713 dt), four back-to-back jobs on fez, two copies of each circuit per job, 1024 shots, record per job.
+Reading: success = P(0..0)+P(1..1) (their definition); between-job sd of the job means, its excess over binomial (drift), and the sd of a difference between two
+single-copy jobs = sqrt(2 (binomial^2 + drift^2)). Their gain / that sd = z: ABOVE (z > 1.96: their gain exceeds what two baseline jobs differ by) or
+CONSISTENT (a bound: their gain is not separable from job-to-job difference at their design). Their baseline levels printed beside ours (chip and day differ).
+KNOWN-GOOD: the two copies inside every job agree within 2.58 binomial sd for both circuits (same circuit, same job: the answer is known); synth false-fail
+rate of this check is 16/200 = 8% with honest copies (8 checks), disclosed.
+Synthetic: synth_results_lasky.text. Budget: cap 40 s; refuses below 300 s reserve. Not tested: their optimized circuit (engine not released).

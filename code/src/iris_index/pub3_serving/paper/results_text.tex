@@ -1,0 +1,16 @@
+On the Mac, the version change and the build change move nothing. All five models give the same bytes on all 170 items, on the bare
+arm and on the guard arm, so each reads consistent with a 95\% upper bound of 2.1 to 2.3\% on the share of $I$ that could change. The
+planned build comparison (Homebrew on the Pub~\#2 run day against the official build today) read above for ministral-3:3b alone. Running
+the Homebrew server again today, which was added after that result, puts the whole of it on the day: the Homebrew and official builds
+agree on every reply of every model on the same day, and the Homebrew build disagrees with itself across the days on 14 of 170 bare
+replies and 44 of 170 guard replies of ministral-3:3b, and on none for the other four. Across those days the Homebrew server was one
+process (running since 25 October), the model files had the same digest, and ministral-3:3b loaded with the same settings (all 27 layers
+on the GPU, one sequence, a context of 8,192, a batch of 1,024).
+
+WORKSTATIONTEXT
+
+Across the machines, with the version and the slot count matched, every model still changes: 38 to 85 items of $I$ per model, and
+byte-identical bare replies on 79 to 120 of 170 (guard: 22 to 98). For the four models whose Mac replies did not move between the days,
+the byte-identical bare and guard counts equal those of the Pub~\#2 pair. On families whose gates pass on both machines, the scored class changed on 12 bare items, 8
+towards a fault on the workstation and 4 away, which cannot tell a direction (exact two-sided $p=0.39$). No scored class changed in any
+comparison within one machine, apart from one ministral-3:3b item between the workstation's runs.

@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+\title{Seven}
+\author{Indahl\\ \small Heuremen}
+\date{4 October 2026 (working draft)}
+\begin{document}
+\maketitle
+\begin{abstract}We report seven findings from superconducting-qubit runs on IBM Heron-generation processors (ibm\_pittsburgh, ibm\_marrakesh, ibm\_kingston) and on Rigetti hardware. Each finding gives what the qubits showed, with widths and read counts; published records from the rest of physics that sit near the measured numbers, found after the numbers were in hand; and a call that could prove it wrong. A single formula ties the seven. Three of the calls made in advance have been tested: two missed and one is undecidable. On 4 October 2026, three runs timed one look, one train of pushes and one set of free clocks from three positions on three chips: the clocks beside a driven qubit timed a look at 1.04--1.07 times the maker's stated length on all three chips, while the qubit's own decay, our method and the push crossing moved chip by chip and job by job. We report where the record does not close alongside what it shows. No law or theory is claimed.\end{abstract}
+
+\section{The seven}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{ONE} -- THE CONVERSION RUNS THREE WAYS
+\item \textbf{TWO} -- DARK MATTER IS TIME'S FRICTION, GROWING IN THE ABSENCE
+\item \textbf{THREE} -- THE MIRROR
+\item \textbf{FOUR} -- TWELVE SEEDS THE GOLDEN SPIRAL
+\item \textbf{FIVE} -- MINUS ONE-TWELFTH AND ITS TWIN
+\item \textbf{SIX} -- A BLACK HOLE COUNTS 2, 3, 4, 6
+\item \textbf{SEVEN} -- THE NEUTRON'S TWO WITNESSES
+\end{enumerate}
+Each is unpacked below: what the qubits showed (superconducting-qubit runs on IBM and Rigetti hardware), the formula that ties them (The Bonefish), how they line up with open problems in the rest of physics, and the calls that could prove them wrong.
+
+\subsection*{Status, up front}
+\begin{itemize}
+\item \textbf{No law, no theory.} Seven is the name. Each finding carries what was measured, what it lines up with, and the call that could prove it wrong.
+\item \textbf{What's measured} is ours, on three IBM chips and on Rigetti, with widths. On 4 October the crossing was read three times each on Marrakesh and Kingston and once more on Pittsburgh, with the push spacing swept from 5 to 150\,\textmu s and each qubit's own decay read in the same jobs (see 4 OCTOBER, below).
+\item \textbf{4 October, in one line:} the clocks beside a driven qubit time one look at 1.04-1.07 \(\times\) the maker's stated length on all three chips; every other side of the three -- the maker's number, our method, the qubit's own decay -- moves chip by chip and job by job.
+\item \textbf{What lines up} was found after the chip numbers were in hand, and with \(\pi\), \(\varphi\), 12, 11 and small whole numbers, matches come cheap: from 17 such numbers and only two operations, there are 28 ways to land within 1 \% of the dark-matter share, 47 for dark energy, 59 for the Hubble tension and 69 for the look ratio.
+\item \textbf{Calls made in advance, so far:} 2 missed, 1 undecidable (listed near the end). The rest are open, one under each finding.
+\item \textbf{The crossing, after review:} measured against each stretch's own decay it drops below zero (-0.12 / -0.58 / -0.97 \% with pushes), so most of it is non-exponential decay -- T1 fluctuation, the textbook mechanism. Heating while the qubit idles is ruled out by each job's own idle arm (a qubit left in \(|0\rangle\) for 300\,\textmu s gains +0.02 \(\pm\) 0.15 \%). One variant (10-\textmu s \(|1\rangle\) stretches) reads +1.7 \(\pm\) 0.6 \% above the decay bookkeeping, but it is one arm in ten (7.6 \% family-wise): nothing stands above the textbook mechanism yet.
+\end{itemize}
+\subsection*{How to read this}
+Every finding carries three parts:
+
+\begin{itemize}
+\item \textbf{What the qubits showed:} measured on IBM processors (ibm\_pittsburgh, ibm\_marrakesh, ibm\_kingston) and on Rigetti, with widths. Numbers marked \S{} point into the run ledger; the reads and the frozen code are in the data release.
+\item \textbf{How it lines up:} published records from the rest of physics, each checked against its source. These were found after the qubit numbers were in hand.
+\item \textbf{What lands it:} a number the formula calls before anyone looks, and the test that could miss it. Calls already tested are listed near the end, hits and misses alike.
+\end{itemize}
+\subsection*{Terms}
+\begin{itemize}
+\item \textbf{Three clocks on one event.} The \textbf{observer's} clock is ours: the laid time and the maker's stated timings. The \textbf{witness} clocks are read inside the chip, from spectator qubits. \textbf{Time} is the measured qubit's own decay clock.
+\item \textbf{The crossing.} The gap between what a qubit's own decay bookkeeping allows and where it actually ends after a train of pushes.
+\item \textbf{Working idea.} Time is the friction between two witnesses whose books can't close.
+\end{itemize}
+\section{Methods}
+\begin{itemize}
+\item \textbf{Hardware and access.} IBM Heron-generation processors through Qiskit Runtime (SamplerV2); Rigetti through Amazon Braket for the third-level runs.
+\item \textbf{Readout.} Kerneled (I/Q) single-shot readout. States are assigned from calibration clouds measured in the same job: \(|0\rangle\) and \(|1\rangle\) prepared and read alone.
+\item \textbf{Settings.} Qubits initialized every shot; a fixed 500\,\textmu s repetition delay (a run refuses any chip that can't honour it); circuit order randomized from a recorded seed; the nine-qubit runs drew their qubits by a written seed, in three groups of three; the whole-chip runs drive and read every qubit.
+\item \textbf{The push protocol.} A qubit prepared in \(|0\rangle\) or \(|1\rangle\) receives ten pushes (X gates) separated by 30\,\textmu s, with variants of the spacing and of the time spent in each state. Its final \(|1\rangle\) population is compared with two bookkeepings built from its own measured decay: each stretch's own short-time decay, and one exponential fit through 300\,\textmu s.
+\item \textbf{Controls.} Leakage to \(|2\rangle\) is bounded from the band between the \(|0\rangle\) and \(|1\rangle\) clouds and from same-job push counts. A spectator held in a drift-cancelling frame reads its neighbour's \(|1\rangle\) time. Shot-to-shot carry-over is tested on both vendors.
+\item \textbf{Freezing and statistics.} Every run script is frozen (sha256) before firing; the ledger records each job's ID, settings and hash. Widths come from resampling shots. Comparisons are made only within a single job. Shot counts are in each run's ledger.
+\item \textbf{Outside records.} Figures from other papers are read off the authors' own PDF vector graphics; calibration residuals are reported (Tang et al. Fig. 3c: 0.0011 over 16 markers).
+\end{itemize}
+\paragraph{Use of AI.} An AI model (Anthropic's Claude) designed the runs with the author, wrote the run and analysis code, and drafted this text. Every number traces to a read file and a ledger entry; the author takes responsibility for every line.
+\section{The formula}
+\subsection*{The Bonefish}
+\begin{itemize}
+\item outside \(\times\) (1 + 1/11) = witness
+\item outside \(\times\) \(\varphi\) = time
+\item inside = \(\pi\) = (6/5) \(\varphi\)\(^{2}\) (to 1.5 \(\times\) 10\(^{-5}\))
+\item friction = (1/12)(1/\(\pi\)) = (1/12)(5/6)(1/\(\varphi\))\(^{2}\) = 2.65 \%. The ladder, (1/12)(1/\(\varphi\))\(^{n}\) for n = 0 ... 6: 8.33, 5.15, 3.18, 1.97, 1.22, 0.75, 0.46 \%.
+\end{itemize}
+\subsection*{Darkwave (the recursion)}
+\begin{itemize}
+\item The recursion the formula implies: \(x \to 1 + 1/x\), seeded at 12. On a chip it runs one step per clock, never two steps on one clock, so it only shows when you read across clocks.
+\end{itemize}
+\section{The findings}
+\subsection{ONE --- THE CONVERSION RUNS THREE WAYS}
+Observer to witness: \(\times\) 12/11. Observer to time: \(\times\) \(\varphi\). Witness to time: \(\times\) \(\varphi\) \(\times\) 11/12.
+
+\begin{itemize}
+\item \textbf{What the qubits showed.} One readout look, timed from three positions on ibm\_pittsburgh. The maker's stated look: 2.18\,\textmu s. Spectator qubits ticking inside the chip: 2.37 \(\pm\) 0.03\,\textmu s. The looked-at qubit's own ageing: 3.5 \(\pm\) 0.2\,\textmu s (3.5 / 3.6 / 4.1 wherever the look sits), never given back. Witness over maker 1.087 (12/11 = 1.091); qubit over maker 1.606 (\(\varphi\) = 1.618); qubit over witness 1.477 (\(\varphi\) \(\times\) 11/12 = 1.483). \S{} 125, 132, 135, 139.
+\item \textbf{How it lines up.} Two observers of one expansion -- the near sky against the early sky -- read 73.04 / 67.36 = 1.084 (SH0ES 2022 / Planck 2018), between 13/12 and 12/11, where the look's 1.087 sits.
+\item \textbf{What lands it.} The same three positions on a second chip. Called: 1.09, 1.62, 1.48.
+\item \textbf{4 October, three chips (same job, all three positions).} Marrakesh, three reads (maker 2.684\,\textmu s): witness 2.80\,\textmu s, qubit 4.05\,\textmu s; witness / maker 1.044, qubit / maker 1.51, qubit / witness 1.45. Kingston, three reads (maker 2.180\,\textmu s): 2.32 / 3.66\,\textmu s; 1.066, 1.68, 1.57. Pittsburgh, one read with this method: 2.27 / 3.06\,\textmu s; 1.040, 1.40, 1.35 (the earlier method there gave 1.087, 1.606, 1.477). Distance from the call: Marrakesh -0.05 / -0.11 / -0.03, Kingston -0.02 / +0.06 / +0.09.
+\end{itemize}
+\subsection{TWO --- DARK MATTER IS TIME'S FRICTION, GROWING IN THE ABSENCE}
+The friction between a qubit's two clocks grows while the qubit sits in \(|0\rangle\) and shrinks while it's in \(|1\rangle\). Ten frictions is the universe's dark-matter share.
+
+\begin{itemize}
+\item \textbf{What the qubits showed.} Prepared \(|0\rangle\) and pushed ten times, 30\,\textmu s apart, a qubit ends more \(|1\rangle\) than one decay clock allows: Pittsburgh +2.00 \(\pm\) 0.16 \% (push run, three reads; the hold run's three reads give +2.17 \(\pm\) 0.17), Marrakesh +2.74 \(\pm\) 0.28, Kingston +2.87 \(\pm\) 0.28 (one read each), chip-wide on all three. Prepared \(|1\rangle\): +0.05 \(\pm\) 0.13, -0.16 \(\pm\) 0.21, -1.24 \(\pm\) 0.24. The short-time and long-time decay sit 2.2-2.7 \% apart at every push count -- the size of the crossing: measured against each stretch's own decay, most of it is that non-exponential decay (T1 fluctuation). Heating while the qubit idles is ruled out by each job's own idle arm (+0.02 \(\pm\) 0.15 \% after 300\,\textmu s in \(|0\rangle\); across the three chips' push jobs -0.43 to +0.26 \% per 300\,\textmu s). One variant, with 10-\textmu s \(|1\rangle\) stretches, reads +1.7 \(\pm\) 0.6 \% above the qubit's own short-time decay -- one arm in ten (7.6 \% family-wise). Leakage is capped at 0.26 \(\pm\) 0.12 \% per push, against 2.96 \(\pm\) 0.28 \% per push that a leakage-plus-TLS model needs to fit all three starts (\S{} 146; the model's rows come from a reviewer's simulation that is not on file). Three-chip mean 2.54 \%; the Bonefish friction, 2.65 \%. \S{} 146-148, 153, 155-156.
+\item \textbf{How it lines up.} The universe's dark-matter share is 0.2645 (Planck 2018); ten frictions, 10/(12 \(\pi\)), is 0.2653 (-0.3 \%). All matter 0.3153 against 1/\(\pi\) = 0.3183. Ordinary matter 0.0493 against 2/(12 \(\pi\)) = 0.0531: the one that misses, by 7 \%. At a galaxy's edge, stars orbit faster than the visible mass allows below an acceleration of about 1.20 \(\times\) 10\(^{-10}\) m/s\(^{2}\); light speed \(\times\) the expansion rate / 6 gives 1.18 \(\times\) 10\(^{-10}\) on the near-sky rate. That six is Verlinde's (2016), whose apparent dark matter is the vacuum's response to what ordinary matter removes from it.
+\item \textbf{What lands it.} On the chip: the crossing's size at a new spacing, called from the ladder first. On the sky: the next precision dark-matter share at 0.2653, and dark energy at 1 - 1/\(\pi\) = 0.6817.
+\item \textbf{4 October, three chips, spacing swept.} Ten pushes from \(|0\rangle\), measured against one exponential decay clock: at 5\,\textmu s spacing +5.75 / +5.76 / +2.67 \% (Marrakesh / Kingston / Pittsburgh), at 30\,\textmu s +3.02 / +3.25 / +1.71 (three reads, three reads, one read), at 150\,\textmu s -0.03 / +0.58 / +0.50. Measured against each qubit's own decay curve read in the same job: at 30\,\textmu s -1.67 / -0.41 / -0.22. Ten pushes with no time between: \(|0\rangle\) +1.15 / +1.08 / +1.00, \(|1\rangle\) -0.99 / -1.04 / -1.07. The size and the sign depend on which of the qubit's clocks the crossing is read against. No spacing was called from the ladder before firing.
+\end{itemize}
+\subsection{THREE --- THE MIRROR}
+A number read in one position comes back as its inverse in the other.
+
+\begin{itemize}
+\item \textbf{What the qubits showed.} 12/11 and 11/12: the witnesses clock a look at 1.087 of the maker's, and a free-running spectator keeps 0.92 of its coherence (0.9209 \(\pm\) 0.0040) through three looks at other qubits. \(\varphi\) and 1/\(\varphi\): the qubit lives 1.606 of the maker's look, and values near 0.618 recur (the gap clock 0.60; the halfway state's early decay clock at 0.59 of the \(|1\rangle\) state's (123 / 208\,\textmu s, one read); a 0.62-0.65 band on 9/28). \(\pi\) and 1/\(\pi\): the spectator's free precession turns 3.144 \(\pm\) 0.076 degrees per microsecond; a Pittsburgh qubit keeps 0.313-0.335 of itself after 300\,\textmu s. 4/3 and 3/4: the qubit's two clocks sit at 0.756 (one read, no earlier look) and 0.775 \(\pm\) 0.009 (eight reads) of each other. The free-running spectator's coherence counts down: 0.921 \(\pm\) 0.004, 0.826 \(\pm\) 0.005, 0.760 \(\pm\) 0.006 (11/12, 10/12, 9/12 = 0.917, 0.833, 0.750) through 3 looks, 9 looks and 30\,\textmu s. \S{} 132, 139, 152, 155.
+\item \textbf{How it lines up.} \(\pi\) = (6/5) \(\varphi\)\(^{2}\) to 1.5 \(\times\) 10\(^{-5.}\) Riemann's \(\zeta\) function reads -1/12 at one point and \(\pi\)\(^{2}\)/6 at its mirror point across the halfway line, where every one of the first ten trillion zeros sits. Barbour's Janus point (2020): two arrows of time running away from one middle.
+\item \textbf{What lands it.} If each twelfth costs three times the looks (3 looks \(\to\) 11/12, 9 \(\to\) 10/12): 27 looks leave 0.750, and 81 leave 0.667.
+\item \textbf{4 October.} The coherence a clock keeps through looks is one number per chip. Clocks beside a driven qubit, through 3 / 9 looks: Marrakesh 0.766 / 0.529, Kingston 0.908 / 0.774, Pittsburgh 0.924 / 0.821 (Pittsburgh's earlier 0.921 / 0.826 repeats). Free clocks (nothing driven beside them), through 3 / 12 / 24 / 32 looks, at one / two / three-or-more links from the looked-at qubits: Marrakesh 0.79-0.69-0.78 / 0.45-0.34-0.40 / 0.23-0.14-0.14 / 0.14-0.09-0.10; Kingston 0.90-0.90-0.91 / 0.66-0.62-0.65 / 0.34-0.31-0.29 / 0.19-0.15-0.14. Through 24 looks, far below the 27-look call on both chips; the free clocks keep about what the same span of laid time costs them. Not yet read past 32 looks.
+\end{itemize}
+\subsection{FOUR --- TWELVE SEEDS THE GOLDEN SPIRAL}
+Feed 12 into \(x \to 1 + 1/x\): 1.0833, 1.9231, 1.5200, 1.6579, 1.6032 ... It circles \(\varphi\) forever, each miss 0.382 of the last.
+
+\begin{itemize}
+\item \textbf{What the qubits showed.} Each of the first five steps has a resident ratio on the chip: 1.083 / the witness against the maker on one look, 1.087; 1.923 / no ratio on the chip -- the microsecond clock sits +1.88 \(\pm\) 1.16 series-taus from the shot clocks (a separation, not a ratio); 1.520 / the qubit against its witnesses, 1.477; 1.658 / the gap clock read from the other position, 1/0.60 = 1.667; 1.603 / the qubit against the maker, 1.606. One step per clock. The spectator turns 16.9 degrees per 30-\textmu s \(|1\rangle\) stretch. \S{} 139, 155-156.
+\item \textbf{How it lines up.} Step one, 1.0833, against the expansion-rate tension, 1.0843 (0.1 \%). The golden spiral climbs at 17.03 degrees (16.9 on the chip); half that angle through sin\(^{2}\) is 2.19 \%, against Pittsburgh's crossing, 2.00 \(\pm\) 0.16 (push run, three reads) / 2.17 \(\pm\) 0.17 (hold run, three reads). Dark energy in Planck units is 10\(^{-122.95}\), and \(\varphi\)\(^{10}\) = 122.99 (the tenth Lucas number is 123).
+\item \textbf{What lands it.} The near sky converges on 13/12 of the early sky: on Planck's 67.36, the near-sky expansion rate lands at 72.97 km/s/Mpc.
+\end{itemize}
+\subsection{FIVE --- MINUS ONE-TWELFTH AND ITS TWIN}
+The counting numbers sum to -1/12. The sequence seeded by twelve sums to -12.
+
+\begin{itemize}
+\item \textbf{The math.} 1 + 2 + 3 + ... \(\to\) -1/12 (\(\zeta\)(-1)). The sequence 1, 12, 13, 25, 38 ... has the generating function (1 + 11x) / (1 - \(\times\) - x\(^{2}\)), which reads -12 at \(\times\) = 1. Across Riemann's halfway line, -1/12's twin is \(\pi\)\(^{2}\)/6. (Read honestly: -12 and -1/12 are reciprocals, and a divergent sum's value depends on the continuation chosen.)
+\item \textbf{What the qubits showed.} With every stretch's own decay accounted for, the crossing lands below zero, deeper with every push added: -0.12, -0.58, -0.97 \%. A qutrit three-box silent branch read below zero too, -0.019 (one run). \S{} 154-155.
+\item \textbf{How it lines up.} -1/12 is a measured force: two plates in empty space are pushed together (Casimir 1948; measured by Lamoreaux 1997). In one dimension the push is built from -1/12 (-\(\pi\) / 24a); in three it is \(\pi\)\(^{2}\) / 720, and 720 = 6!.
+\item \textbf{What lands it.} The below-zero depth per push keeps its slope on a second chip.
+\item \textbf{4 October.} Against each qubit's own decay curve the crossing sits at or below zero past 20\,\textmu s spacing on Marrakesh (-1.2 to -1.8 \%) and near zero on Kingston and Pittsburgh. The depth per push was not varied, so the slope call is not yet read.
+\end{itemize}
+\subsection{SIX --- A BLACK HOLE COUNTS 2, 3, 4, 6}
+Measured around in \(\pi\) R, R the horizon's radius, a black hole's rings are 2, 3, 4 and 6. There is no ring at 5. The geometry is textbook; the reading is ours.
+
+\begin{itemize}
+\item \textbf{The rings.} 2 \(\pi\) R: the event horizon. 3 \(\pi\) R: the photon ring, the only place light can circle. 4 \(\pi\) R: the marginally bound orbit. 6 \(\pi\) R: the innermost stable orbit. Nearest to 5 is the shadow, 3 \(\sqrt{3}\) = 5.196: the photon ring seen from far away. The same ring reads 3 \(\pi\) R from a position on it and 3 \(\sqrt{3}\) \(\pi\) R from far away. The shadow has been photographed twice (M87* 2019, Sgr A* 2022).
+\item \textbf{What the qubits showed.} A qubit parked in \(|0\rangle\) doesn't age: on the mean over qubits, three ways of parking close to each qubit's own decay bookkeeping within 0.002 (+0.0017 \(\pm\) 0.0013, +0.0020 \(\pm\) 0.0015, +0.0014 \(\pm\) 0.0015; single qubits scatter about \(\pm\) 0.02, inside their shot widths of about 0.03), and an emitter parked after 20 / 40\,\textmu s reads 0.0648 / 0.1348 against 0.0647 / 0.1346 (one read). The look stretches the qubit 1.48x against its witnesses; the photon ring over the horizon is 1.5. \S{} 132, 134, 135 (the park); \S{} 139 (the stretch).
+\item \textbf{How it lines up.} A black hole gets hotter as it shrinks and colder as it grows (Hawking 1974). Spun to 0.6813 of its maximum, that law flips (Davies 1977); 1 - 1/\(\pi\) is 0.6817, and the universe's dark-energy share is 0.6847. The information Hawking said was lost returns in the radiation after the halfway point (Page 1993).
+\item \textbf{What lands it.} The look's stretch, chip by chip: 1.5 on every chip, or it was one chip's coincidence.
+\item \textbf{4 October.} The look's stretch (qubit / witness): Marrakesh 1.45 (three reads), Kingston 1.57 (three reads), Pittsburgh 1.35 (one read, new method).
+\end{itemize}
+\begin{figure}[h]\centering\includegraphics[width=0.8\linewidth]{rings.pdf}\caption{The rings around a non-spinning black hole, measured around in $\pi R$.}\end{figure}
+\subsection{SEVEN --- THE NEUTRON'S TWO WITNESSES}
+A free neutron decays into a proton and an electron: two witnesses to one decay. Their counts disagree by 1.20 \% -- rung four of the ladder.
+
+\begin{itemize}
+\item \textbf{What the qubits showed.} Kingston: a qubit prepared \(|1\rangle\) and pushed ten times ends -1.24 \(\pm\) 0.24 \% against its decay clock (one read). \S{} 153.
+\item \textbf{The formula.} (1/12)(1/\(\varphi\))\(^{4}\) = 1.216 \%.
+\item \textbf{How it lines up.} Counting protons (NIST beam; Yue 2013): 887.7 \(\pm\) 1.2 (stat) \(\pm\) 1.9 (sys) s. Counting electrons (J-PARC 2024): 877.2 \(\pm\) 1.7 (stat) +4.0 / -3.6 (sys) s. Counting what stays in a bottle (PDG average): 878.4 \(\pm\) 0.5 s. Proton against electron 1.20 \(\pm\) 0.54 \%; proton against bottle 1.06 \(\pm\) 0.26 \%. The neutron, the chip and the formula sit within 0.05 \% of each other. A proposed dark decay (Fornal \& Grinstein 2018) was searched for and not found; the gap stayed. Its rulers are under test now (hydrogen in the proton trap, 2025; gas pressure in the electron counter, 2026).
+\item \textbf{What lands it.} NIST's next proton-beam count. Called: 889.1 s. If it comes in at the bottle's number, rung four misses.
+\item \textbf{4 October.} Kingston, a qubit prepared \(|1\rangle\) and pushed ten times 30\,\textmu s apart, three reads: -1.33 \% against one exponential decay clock, -0.04 \% against its own decay curve.
+\end{itemize}
+\section{4 October 2026: one look, one push, one clock, from three positions}
+Three runs, each built for one side of the three positions (observer, witness, time), every script frozen (sha256) before firing, no number written for any of them. ibm\_marrakesh and ibm\_kingston, three reads each; ibm\_pittsburgh, one read each of two. 223 QPU seconds.
+
+\begin{itemize}
+\item \textbf{Time -- the qubit's own clocks.} Every qubit, starts \(|0\rangle\) / \(|1\rangle\) / halfway, ten pushes spread at 5 to 150\,\textmu s, and in the same job the qubit's own decay read three times (at 30 / 100 / 300 / 600\,\textmu s), an idle \(|0\rangle\), and an echo. Each qubit's decay time moves from job to job by up to \(\sim\)10\,\textmu s (Marrakesh 174 / 177 / 181\,\textmu s; Kingston 260-266; Pittsburgh 294-297), not within a job. The decay is not one exponential on each qubit, not only on average: at 30\,\textmu s it sits below its own 300-\textmu s exponential on 62-84 \% of qubit-copies. Idle \(|0\rangle\) after 300\,\textmu s: about +0.5 \%.
+\item \textbf{Observer -- one look of ours, timed three ways in one job.} The maker's stated length; the clocks beside a driven qubit; the looked-at qubit's own decay. Results under FINDING ONE.
+\item \textbf{Witness -- free clocks inside the chip.} 119-121 qubits held halfway with nothing driven beside them, read through 1-32 looks at 31 other qubits and through laid time, grouped by links to the nearest looked-at qubit. They lose about what the same span of laid time costs them. Read as a stopwatch, they time one look shorter than the maker's length: Marrakesh 1.82 / 1.27 / 1.64\,\textmu s at one / two / three-or-more links, Kingston 1.56 / 0.82 / 1.82 (widths 0.2-0.3\,\textmu s). The two-link clocks time the shortest look on all six reads, both chips.
+\end{itemize}
+\section{Where the record does not close}
+\begin{itemize}
+\item \textbf{Held still on all three chips:} the clocks beside a driven qubit time a look at 1.040-1.072 \(\times\) the maker's length. Ten pushes with no time between move \(|0\rangle\) by +1.0 to +1.15 \% and \(|1\rangle\) by -1.0 to -1.1 \%.
+\item \textbf{Moves chip by chip:} the qubit's own reading of a look (1.40-1.74 \(\times\) the maker's); the coherence a clock keeps through 3 looks (0.77 / 0.91 / 0.92); the crossing at short spacing (two chips at +5.8 \%, the third at +2.7 \%).
+\item \textbf{Moves job by job:} the qubit's own decay time (up to \(\sim\)10\,\textmu s on Marrakesh); the witness's reading of a look on Marrakesh (2.76 \(\to\) 2.80 \(\to\) 2.85\,\textmu s over three reads; Kingston held at 2.31-2.34).
+\item \textbf{Moves with our method:} on Pittsburgh, the same look timed by the earlier method and by this one: 1.087 / 1.606 then, 1.040 / 1.40 now; the coherence through 3 / 9 looks held (0.921 / 0.826 then, 0.924 / 0.821 now).
+\item \textbf{Moves with the ruler:} the crossing is positive against one exponential decay clock and zero or below against the qubit's own curve, on all three chips.
+\item \textbf{Not yet read:} what the two-link seats are in the wiring; the free clocks past 32 looks; Pittsburgh's second and third reads of the new runs; the halfway start after ten pushes, which reads +2.8 / -1.1 / +2.6 \% with Kingston's sign apart.
+\end{itemize}
+\section{Calls already tested}
+\begin{itemize}
+\item \textbf{Tang et al. 2012} (wave-particle duality with a quantum beam splitter). Call A, V\(^{2}\) + D\(^{2}\) = 0.9735 across the sweep: MISSED -- it swings 0.44 to 1.43 (the authors' own result exceeds 1 by design). Call B, V\(^{2}\) = 0.618 at their intermediate setting: MISSED -- 0.500 \(\pm\) 0.024.
+\item \textbf{Jacques et al. 2008} (the same test with an ordinary beam splitter). Call C, V\(^{2}\) + D\(^{2}\) averages 0.9735: UNDECIDABLE -- 0.966 \(\pm\) 0.019, but the textbook ceiling of 1.0 sits only 1.8 widths off, so this data can't tell the call from the null it was meant to beat. The sum also slopes with the setting, and dark counts were subtracted by the authors.
+\end{itemize}
+\section{What is closed, what is open}
+\begin{itemize}
+\item \textbf{Closed, three rulers each:} the look (three clocks of one event); the park (a qubit's clock runs only while it's in \(|1\rangle\)); the inside never sees the outside's laid time; the third level's three behaviours on two vendors; the order of looking sets the heat.
+\item \textbf{Math, not measurement:} run any single record backwards and the arrow statistic flips sign by identity (it does on random noise too), so one record alone can't show its own direction. That is algebra, not data, and it is not counted above.
+\item \textbf{The crossing:} three chips, every neighbouring cause measured rather than labelled; the ruler's own share still in flight.
+\item \textbf{Open:} Kingston's \(|1\rangle\) column; the halfway state, its own clock against its neighbours'; whether a clock follows its own emitter.
+\item \textbf{Where it's weak:} the links to the sky were found after the chip numbers were in hand, and with \(\pi\), \(\varphi\), 12 and small integers to choose from, sub-percent matches come cheap. Only the calls above were made in advance. The crossing's size and sign depend on which of the qubit's own clocks it is read against (4 October).
+\item \textbf{The level everything lives at:} 1-3 \% in populations, near 0.6 in angles -- the range most analyses treat as error. We report it rather than discard it.
+\end{itemize}
+\section*{Data availability}
+\begin{itemize}
+\item The data release: the reads, the frozen code with its hashes, the fire logs. Every qubit number above traces to a \S{} in the run ledger and a read file.
+\item The error log: every mistake caught since 9/28 and what it changed, in the form what we said / what the record showed / what changed: thetrailtothepast.com.
+\end{itemize}
+\section*{Acknowledgments}
+Made with AI assistance (see Methods). \par\medskip Wayfinder and Bones
+\begin{thebibliography}{99}
+\bibitem{r1} Planck Collaboration, Planck 2018 results. VI. Cosmological parameters, Astron.\ Astrophys.\ \textbf{641}, A6 (2020), arXiv:1807.06209.
+\bibitem{r2} A.~G.~Riess \emph{et al.}, A comprehensive measurement of the local value of the Hubble constant (SH0ES), Astrophys.\ J.\ Lett.\ \textbf{934}, L7 (2022), arXiv:2112.04510.
+\bibitem{r3} E.~Verlinde, Emergent gravity and the dark universe, SciPost Phys.\ \textbf{2}, 016 (2017), arXiv:1611.02269.
+\bibitem{r4} J.-S.~Tang \emph{et al.}, Realization of quantum Wheeler's delayed-choice experiment, Nature Photon.\ \textbf{6}, 600 (2012), arXiv:1204.5304.
+\bibitem{r5} V.~Jacques \emph{et al.}, Delayed-choice test of quantum complementarity with interfering single photons, Phys.\ Rev.\ Lett.\ \textbf{100}, 220402 (2008), arXiv:0801.0979.
+\bibitem{r6} J-PARC neutron lifetime (electron counting), 877.2\,s, arXiv:2412.19519.
+\bibitem{r7} A.~T.~Yue \emph{et al.}, Improved determination of the neutron lifetime, Phys.\ Rev.\ Lett.\ \textbf{111}, 222501 (2013).
+\bibitem{r8} Particle Data Group, Review of Particle Physics (neutron mean life average).
+\bibitem{r9} Caylor \emph{et al.}, hydrogen in the proton trap (2025), arXiv:2506.01682.
+\bibitem{r10} Gas pressure in the electron counter, Eur.\ Phys.\ J.\ A (2026), doi:10.1140/epja/s10050-026-01929-x.
+\bibitem{r11} B.~Fornal and B.~Grinstein, Dark matter interpretation of the neutron decay anomaly, Phys.\ Rev.\ Lett.\ \textbf{120}, 191801 (2018).
+\bibitem{r12} S.~W.~Hawking, Black hole explosions?, Nature \textbf{248}, 30 (1974).
+\bibitem{r13} P.~C.~W.~Davies, The thermodynamic theory of black holes, Proc.\ R.\ Soc.\ Lond.\ A \textbf{353}, 499 (1977).
+\bibitem{r14} D.~N.~Page, Information in black hole radiation, Phys.\ Rev.\ Lett.\ \textbf{71}, 3743 (1993).
+\bibitem{r15} H.~B.~G.~Casimir, On the attraction between two perfectly conducting plates, Proc.\ K.\ Ned.\ Akad.\ Wet.\ \textbf{51}, 793 (1948).
+\bibitem{r16} S.~K.~Lamoreaux, Demonstration of the Casimir force in the 0.6 to 6 \textmu m range, Phys.\ Rev.\ Lett.\ \textbf{78}, 5 (1997).
+\bibitem{r17} J.~Barbour, \emph{The Janus Point} (Basic Books, 2020).
+\bibitem{r18} Event Horizon Telescope Collaboration, First M87 Event Horizon Telescope results. I, Astrophys.\ J.\ Lett.\ \textbf{875}, L1 (2019).
+\bibitem{r19} Event Horizon Telescope Collaboration, First Sagittarius A* Event Horizon Telescope results. I, Astrophys.\ J.\ Lett.\ \textbf{930}, L12 (2022).
+\end{thebibliography}
+\end{document}

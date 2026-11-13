@@ -1,0 +1,40 @@
+# PLAN -- free run for arXiv 2512.14280v3 (Saba Arife Bozpolat, Physics Department, Marmara University, Istanbul, Turkiye), ibm_fez, n = 6
+Written and committed BEFORE any job (24 Oct 2026). Book-side free run; nothing published or sent before Monday; no contact.
+Desk audit: audits/k2025_marmara_2512.14280/KNOWN_GOOD.md. Her borderline claim: at n = 6 the one-bit advantage over n - 1 classical bits
+holds "only after mitigation" (her counts: shortfall n - I = 1.279 raw, 0.700 with her mitigation; our mitigation from her stored record
+0.762). Her run: ibm_fez, 21 Apr 2026, qubits 0..5, 4096 shots, one job, mitigation recipe and DD/twirl settings not recorded. Today is a
+re-run of HER experiment on her chip and qubits, not a calibration of her April data. Part 0 fez: sx 1.450/1.417, CZ 1.244/1.269, readout CONSISTENT.
+Construction: her Eq. 1 fan-out U and her Algorithm 1 encoding exactly, plus a barrier between encode and decode (her transpiled stats record
+one barrier per circuit; without it level 3 cancels U^dagger U for 000000). Ideal read-back 64/64 in simulation. Transpile level 3, layout
+[0..5], seed 7 -> 17 CZ per message (hers 8..22, mean 19.7; her settings are not recorded and none of levels 1-3 x five seeds x two barrier
+placements reproduced her counts -- stated). A nearest-neighbour chain (10 CZ) was considered and NOT used (kept in marmara.py as circ_chain).
+Jobs: J1 DD OFF, J2 DD ON (XY4), J3 DD ON, J4 DD OFF (ABBA over arms); each 2 brackets (all |0>, all |1>) + 64 messages (J2, J4 reversed) +
+2 brackets; 1024 shots; each arm pools 2048 shots per message. DD arm added because the UFSM run today (same day, kingston) showed DD can
+move a result by 45 pp; her DD setting is unknown. Estimate 84 s (cap 100).
+KNOWN-GOOD: her Zenodo n=6 counts (raw and her mitigated, ibm_fez, 21 Apr 2026) through OUR committed mi() must give shortfalls 1.279 and 0.701 within 0.001 (known_good_marmara.text: PASS, 1.279 / 0.700; our mitigation from her record 0.762).
+Mitigation (ours, stated): tensor-product inversion of per-qubit 2x2 confusion matrices from the brackets in the same job, clip negatives,
+renormalise. Estimator: plug-in mutual information with a uniform message prior, bootstrap bias-corrected (2 theta - mean theta*), bootstrap sd.
+READINGS (four outcomes, 99 % band), per arm:
+  R1 mitigated shortfall vs 1 bit: BELOW = the advantage holds today; ABOVE = lost; CONSISTENT = cannot be placed on either side (bound).
+  R2 raw shortfall vs 1 bit (same outcomes).
+  CANNOT_TELL for an arm if its two jobs' raw shortfalls disagree beyond 99 % (instance variance / drift between jobs).
+  R3 DESCRIPTIVE ONLY (compiled circuits differ: 17 CZ vs her 8..22): raw shortfall today minus her raw 1.279.
+  R4 mitigated shortfall DD ON minus DD OFF.
+SYNTHETIC (synth_marmara.py, 40 draws/world, truth = her own mitigated distributions mixed toward uniform, readout from her record;
+synth_results_marmara.text; FIRST version kept as synth_results_marmara_FIRST_attempt_estimator_bias.text: EDGE read ABOVE 10-17 %, fixed by
+the bias correction before any job): ADV (0.70) OFF BELOW 97.5 %; EDGE (1.00) CONSISTENT 92.5 % (directional false 3/40 OFF, 1/40 ON);
+LOST (1.30) ABOVE 100 %; VAR (jobs 0.85 / 1.15) CANNOT_TELL 100 %; DDHELP R4 BELOW 97.5 %; DDSAME R4 CONSISTENT 100 %.
+Null-world false calls: 4/80 on the arm readings planted at 1.00 (5.0 %), 6/160 on R4 planted equal (3.75 %).
+
+## /q (run on this plan before firing)
+FIRED:
+- #9 (instruments differ): our compile (17 CZ) is not hers (8..22); R3 is descriptive, not a like-for-like comparison; R1/R2 are about her
+  protocol on today's fez with this compile.
+- #4 (a model built from numbers is not the number): mitigation is our tensor-product model from our brackets; the raw reading is kept.
+- #16 (floor) / #24 (estimator near a bound): the first synthetic showed estimator bias at the 1-bit line -> bootstrap bias correction,
+  re-measured; false calls ~5 % stated.
+- #13 (sequential vs drift): arms ABBA across jobs; within-arm copy gap gates CANNOT_TELL; R4 is a cross-job reading, said so.
+- #22 (units): one chip, six qubits, one day = one instance; 64 messages are not 64 independent tests.
+- #14/#18: known-good on her real-hardware counts; rule fixed.
+HELD: #1-#3 (no stated IBM figure compared; records saved before each job), #5-#8, #10-#12, #15, #17 (ideal read-back 64/64), #19-#21, #23,
+#25-#37.

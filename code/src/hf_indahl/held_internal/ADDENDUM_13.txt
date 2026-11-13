@@ -1,0 +1,9 @@
+## Addendum 13 (03:06Z 7 Nov, read from the clock; Sage's checks of ~03:05Z; before the freeze, before any training row is read)
+N1. The record names the eval smoke-test items (A11 L4): r15 P1_00, P1_01, P1_02, P1_03 (line added to FREEZE_RECORD_NOTES.md, printed in the record).
+N2. M4's clock: build_set.py appends "FIRST READ: build_set.py opened flock.db at <UTC>" to POST_READ_CHANGES.md before it opens any row
+    (real runs only, not --fixture). It is the first program that reads training rows; any later change to the four training/eval scripts is post-read.
+    (freeze_count.py and freeze_record.py count rows for the record; they never read reply text into a set.)
+N3. Twin check, Sage's ask: r3 P1_07 equals r16 P1_00 on every field except id ({fam P1, undecidable, truth CT, a 0.81, b 0.81, ha 0.03, hb 0.03}),
+    so the fixture's twin row is a real twin. fixture_test.py re-run after N2: FIXTURE PASS.
+N4. Stamp list: freeze_record.py checks A7..A12 for blocks; A13 is checked too. The record verifies A9b and A13 against the live files (A13 carries
+    every file changed since A9b).

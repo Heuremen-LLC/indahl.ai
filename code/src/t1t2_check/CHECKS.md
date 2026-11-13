@@ -1,0 +1,19 @@
+## 2026-11-11 21:40 Boston qubit 85, second joint T1/T2 run (job dbqbqpmjjaos73ah0o20), published beside the 30 Oct run and as the QIA headline
+- I: holds: the bound is our own T1 from the same job as the T2, control qubit 31 in the same job passed its known-good gate; IBM's figure is the record in force at the job
+- II: holds: two runs on qubit 85 are shown side by side (30 Oct ceiling 16.7, 11 Nov ceiling 20.5); neither is netted or averaged into the other
+- III: holds: the comparison is one-sided by physics, T2 at most 2 x T1, so only a published T2 above 2 x the top of our T1 interval reads ABOVE
+- V: holds: rulers are the 95% bootstrap interval on T1 and T2 and the 2 x T1 ceiling; both runs printed with their intervals
+- VI: holds: IBM T2 47.9 against ceiling 20.5 reads ABOVE; our own T2-over-T1 ratio interval [1.55, 3.47] spans 2 and is printed CANNOT_TELL, not folded
+- R: holds: job id, run time 2026-11-11 21:16 UTC, IBM T2 date 2026-10-14 23:08 US Eastern and T1 8.92 read from runs/results_ibm_boston_20261111.json
+- QA: holds: IBM's T2 field for qubit 85 is the same quantity class, any T2 echo or Ramsey is bounded by 2 x T1, IBM does not state which kind
+- QB: n/a: no idle comparison in this check, it is a direct T1 and T2 measurement on one qubit with a control
+- QC: holds: control qubit 31 known-good passed in this job, as printed by run_check.py in log_ibm_boston_20261111.txt
+- QD: holds: four outcomes kept: T2 ABOVE, our ratio CANNOT_TELL, IBM T1 CONSISTENT this run (ABOVE on 30 Oct), units microseconds
+- QE: holds: no mechanism is named for the published figure, only that it exceeds what the qubit could hold when measured
+- QF: holds: the plan (PLAN.md) predates both jobs; the dated-file publisher change was made after reading and is labelled in publish_results.py
+- QG: holds: the raw counts are in the results file published with the code; page, headline and ledger read the same summary_t1t2.json
+- P1: n/a: no quotes in this headline, numbers only from the summary file
+- P2: holds: every figure names the job date and processor and qubit, the table rows carry the run time in UTC
+- P5: holds: intervals are named 95% bootstrap intervals in the table header
+- P7: holds: ledger rows are added before the release, one release path through ship.sh, checked live after
+- P9: holds: plain sentences, no semicolons, no counts of our things in the heading

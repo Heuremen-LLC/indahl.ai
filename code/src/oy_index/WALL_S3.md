@@ -1,0 +1,124 @@
+# The Wall (OY) - S3 data released (extracted from rows/*.md by rows/extract_s3.py, rebuilt 25 Oct after referee: earlier build missed 12 rows). Class = first word(s) after "S3 ...:"; others READ BY HAND.
+
+
+- asu: [NONE (institutional)] - S3: NONE for AI-in-learning (no microdata, no instrument, no aggregates beyond news percentages). Unrelated to own learning: ASU Library
+- auburn: [NONE (institutional)] - S3: Institutional documents: NONE (no microdata, instrument or codebook released for the Copilot survey; no integrity statistics).
+- baylor: [NONE (institutional)] - S3: NONE. No microdata, aggregates, instrument or codebook found for the Feb 2024 undergraduate survey or the Feb 2026 faculty survey.
+- berkeley: [AGGREGATES / INSTRUMENT ONLY] ### S3 data released: AGGREGATES (partial)
+- brandeis: [NONE (institutional)] ## S3 data released: NONE
+- brown: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: AGGREGATES ONLY
+- bu: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: PARTIAL
+- buffalo: [AGGREGATES / INSTRUMENT ONLY] - S3: PARTIAL - aggregates + instrument in the Task Force report PDF (faculty Q2-Q34 and student SQ1-SQ10 question lists; count/percent
+- caltech: [NONE (institutional)] - S3 data released: NONE (no survey, microdata, aggregates or instrument found).
+- case: [AGGREGATES / INSTRUMENT ONLY] - S3: aggregates/microdata: NONE for any outcome. Released: doc 6 posts each faculty response verbatim (course, instructor, statement,
+- clemson: [AGGREGATES / INSTRUMENT ONLY] - S3 data released: AGGREGATES ONLY: the four syllabus counts on slide p33 (doc 10). No microdata, codebook or instrument found. Instructor survey: nothing released found.
+- cmu: [AGGREGATES / INSTRUMENT ONLY] - S3 data released: AGGREGATES on study pages (means, SEs, F/t statistics; e.g. "F(1,1364.58) = 45.87, p <.001"). No institutional microdata or
+- colostate: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES. Needs survey: group-level tables with n per cell (AI item n = 99); no microdata, no instrument in report (appendix =
+- columbia: [NONE (institutional)] ## S3 data released: NONE FOUND (no microdata, aggregates or instrument on any page read).
+- cu-boulder: [AGGREGATES / INSTRUMENT ONLY] - S3: PARTIAL - aggregates + instrument for ETRA survey: Appendix A statistical tests, Appendix B data tables by college, Appendix C
+- dartmouth: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: AGGREGATES + INSTRUMENT (question text) only; no microdata
+- duke: [NONE (institutional)] ## S3 data released: NONE
+- emory: [NONE (institutional)] ### S3 data released: NONE
+- fsu: [NONE (institutional)] - S3: NONE (no microdata, instrument or codebook for the AIEAC surveys or the AI Sparks survey). Aggregates only in news text
+- gatech: [NONE (institutional)] - S3 data released: NONE at institution level (no survey, microdata, aggregates or instrument found). Playbook: CC BY-NC-SA text only; one article links code
+- georgetown: [AGGREGATES / INSTRUMENT ONLY] - S3 data released: AGGREGATES ONLY. IPAI writing report: post-survey counts and % for 2 items (Figures 3-4, n=46 each); pre-survey bar charts (Figures 1-2)
+- gsu: [NONE (institutional)] - S3: NONE. No microdata, instrument, codebook or aggregate table for any AI-in-learning survey, pilot or evaluation found on pages read or
+- harvard: [NO S3 LINE]
+- iastate: [NONE (institutional)] - S3: none found (no survey results, microdata, instrument or codebook located).
+- indiana: [NONE (institutional)] - S3: NONE. No microdata, aggregates table, instrument or codebook found for any AI-in-learning survey, pilot or course. The pilot
+- jhu: [NONE (institutional)] ## S3 data released: NONE (no microdata, aggregates, instrument or codebook found for any institutional document).
+- kstate: [AGGREGATES / INSTRUMENT ONLY] - S3: aggregates only - Honor & Integrity annual reports (PDF tables: cases/students per year 2014-15 to 2025-26; GenAI-alleged case
+- ku: [NONE (institutional)] - S3: none found (no microdata, aggregates, instrument or codebook from a KU AI-in-learning survey or pilot found).
+- lsu: [NONE (institutional)] - S3: none found (no microdata, aggregates, instrument or codebook from the Spring 2024 faculty survey or the Spring 2026 student GAI survey found on lsu.edu).
+- miami: [READ BY HAND] - S3: Institutional AI documents: NONE (no microdata, aggregates or instruments).
+- mit: [NONE (institutional)] - S3: NONE (no microdata, instrument or codebook; charts labelled "N>30" per row).
+- mizzou: [NONE (institutional)] - S3: NONE FOUND. Only aggregates in prose (2023 faculty survey percentages: "Just over half expressed interest in AI detection software,
+- montanastate: [NONE (institutional)] - S3: NONE. No microdata, aggregates, instrument or codebook released by MSU on AI in learning on pages read.
+- msstate: [NONE (institutional)] - S3: NONE. No microdata, aggregates, instrument or codebook for any AI survey or evaluation found. Honor Code annual reports publish
+- msu: [NONE (institutional)] - S3: NONE (microdata). AGGREGATES only inside Doc 15 (counts, means, SDs, medians, one t-test: [v] "t(76.16) = -2.97, p = .004");
+- ncsu: [NONE (institutional)] ## S3 data released: NONE FOUND
+- northeastern: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: AGGREGATES ONLY (percentages on pages/abstracts); no instrument, no codebook, no microdata found
+- northwestern: [NONE (institutional)] - S3 data released: NONE (no microdata, aggregates, instrument or codebook found for the Canvas survey, GenAI 101 evaluations,
+- notre-dame: [NONE (institutional)] - S3 data released: NONE FOUND (no microdata, aggregates or instrument for the student surveys; LAITL examples are teaching materials on CurateND, e.g. https://curate.nd.edu/articles/educational_resource/AI-Powered_Coding_Practice_System/33990757 , record type "educational_resource").
+- nyu: [READ BY HAND] - S3: Institutional: NONE FOUND (no survey, instrument or aggregate published by the Provost or a school).
+- okstate: [NONE (institutional)] - S3: none found (survey slides, microdata, instrument or codebook not located).
+- olemiss: [NONE (institutional)] - S3: none found (no microdata, aggregates table, instrument or codebook for the AIG faculty AI survey or the Spring 2026 AI surveys;
+- oregonstate: [AGGREGATES / INSTRUMENT ONLY] - S3: INSTRUMENT + AGGREGATES (no microdata, no codebook). Doc 11 p.37: "The survey questions can be found in the Appendix A."; contents list
+- osu: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES (integrity cases only); no microdata, no instrument, no codebook, no AI-in-learning survey data.
+- ou: [NONE (institutional)] - S3: none found (no microdata, aggregates, instrument or codebook from an OU AI-in-learning survey or pilot found; SERU/ECAR OU
+- penn: [NONE (institutional)] ## S3 data released: NONE (institutional documents)
+- pitt: [AGGREGATES / INSTRUMENT ONLY] - S3 data released: AGGREGATES only (printed percentages: RESI "Most faculty don't use GenAI in their professional activities at all (63.9%)."; LSET
+- princeton: [NONE (institutional)] ## S3 data released: NONE FOUND
+- psu: [AGGREGATES / INSTRUMENT ONLY] - S3: PARTIAL - instrument only: "ChatGPT_AI_perceptions survey items" (.docx, HTTP 200) at https://sites.psu.edu/aistudy/home-page/ .
+- purdue: [NONE (institutional)] - S3: NONE FOUND. No microdata, aggregates, instrument or codebook for any AI-in-learning survey or pilot on pages read. (Only
+- rice: [NONE (institutional)] - S3: NONE (no microdata, aggregates, instrument or codebook in any document).
+- rochester: [NONE (institutional)] ### S3 data released: NONE (AI-specific)
+- rpi: [NONE (institutional)] - S3 data released: NONE. No microdata, aggregates or instrument on AI found.
+- rutgers: [AGGREGATES / INSTRUMENT ONLY] - S3: PARTIAL - instrument only (Senate ITC drafts, faculty/staff 49+ items and student version). Draft states: "Data will be aggregated
+- smu: [NONE (institutional)] - S3: NONE (Coalition survey: two percentages only; no instrument, aggregates table or microdata found).
+- stanford: [NONE (institutional)] ### S3 data released: NONE (no microdata, aggregates or instrument found for AIWG surveys, first-year survey, or AIMES).
+- stonybrook: [NONE (institutional)] - S3: NONE (no microdata, aggregates or instrument found for any AI survey or pilot).
+- syracuse: [NONE (institutional)] - S3: NONE (no microdata, aggregate file or instrument found for any AI survey, tool or pilot; usage counts appear in prose only).
+- tamu: [NONE (institutional)] - S3: NONE for documents 1-10 (no microdata, aggregates file, instrument or codebook). Faculty survey instrument released in a technical
+- tcu: [NONE (institutional)] - S3: NONE. No microdata, aggregates or instruments from any TCU AI-in-learning document. Neeley faculty survey: results and instrument not published. CarePilot paper (S7): 27-item instrument described, not attached; no data availability statement or supplementary files in the PMC record.
+- temple: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES ONLY (Turnitin report: per-category counts of 30; addendum: no counts). No per-sample scores, texts or instrument released.
+- ttu: [NONE (institutional)] - S3: NONE for documents 1-12 (no microdata, aggregates file, instrument or codebook). S7 course items: none released (aggregate counts
+- tufts: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: AGGREGATES ONLY
+- tulane: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES ONLY (integrity counts in docs 7-8, e.g. 2023-24: "88 Reports* alleging the prohibited use of GenAI tools in academic
+- ua: [AGGREGATES / INSTRUMENT ONLY] - S3 (data released): aggregates only (A&S survey: 14% overall, 30% / 13% / 9% by division); no microdata, no instrument, no codebook found.
+- uark: [NONE (institutional)] - S3 (data released): none (no survey results, microdata, instrument or codebook found).
+- ucdavis: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES ONLY (3 survey percentages on doc 1). Microdata, instrument, codebook: none found on readable pages; CEE survey page UNREAD.
+- ucf: [NONE (institutional)] - S3: NONE found (no microdata, aggregates, codebook or instrument document for the RITE GenAI survey; only live Qualtrics forms).
+- uchicago: [NONE (institutional)] ## S3 data released: NONE FOUND
+- uci: [NONE (institutional)] ## S3 data released: NONE (institutional)
+- ucla: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES. Public Tableau dashboard (StudentAI_Dashboard_Public, UNREAD) and percentages in docs 7/8 and the insights page.
+- uconn: [NONE (institutional)] - S3: NONE (no dataset, instrument or codebook found). Two aggregate figures appear only in text: AI4ALL percentages (news, no n) and
+- ucr: [NONE (institutional)] ## S3 data released: NONE (institutional)
+- ucsb: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES ONLY. UCUES percentages (7 figures) on AI 101; Figure 1 bar chart on /ai. No microdata, no instrument, no codebook found
+- ucsc: [NONE (institutional)] - S3: NONE (public). AI Council survey report = Google Drive, sign-in required; dashboard on visualizedata.ucop.edu "UCSCPrivate" (login).
+- ucsd: [AGGREGATES / INSTRUMENT ONLY] - S3: AGGREGATES ONLY. AIO annual/data reports (case counts by violation type, PDF); TritonAI pilot (3 percentages, n = 68). No
+- udel: [AGGREGATES / INSTRUMENT ONLY] - S3 data released (institutional): PARTIAL - instruments + codebook only.
+- ufl: [NONE (institutional)] - S3: NONE for AI-in-learning data (no microdata, instrument or codebook). Only aggregates published: adoption counts (doc 7) and an
+- uga: [NONE (institutional)] - S3 data released: NONE FOUND (no microdata, aggregates or instrument). SERU page describes item topics only: https://instruction.uga.edu/units/assessment/your-uga-experience-survey/ "Emerging technologies: Frequency, ethics, and appropriateness of generative AI tool usage in academic coursework"
+- uh: [NONE (institutional)] - S3: NONE (no microdata, aggregates, instrument or codebook in any document).
+- uiowa: [NONE (institutional)] - S3: none found. Student-study results published as percentages in news posts only ("Of those surveyed, 35% say that AI is changing
+- uiuc: [AGGREGATES / INSTRUMENT ONLY] - S3: aggregates only: doc 1 gives percentages in the post; full quantitative results are in a Power BI dashboard, "restricted to UIUC
+- uky: [NONE (institutional)] - S3: none found (no microdata, aggregates, instrument or codebook from a UK AI-in-learning survey or pilot found; TII project files
+- umd: [NONE (institutional)] - S3 data released (institutional): NONE.
+- umich: [AGGREGATES / INSTRUMENT ONLY] - S3 data released: AGGREGATES ONLY, in-report (percentages and figures in 2026 WG Report pp.7-16, 57-66; GAIA Appendix A).
+- umn: [NONE (institutional)] - S3: NONE for UMN institutional AI documents (no microdata, aggregates, instrument or codebook public). SERU AI items: aggregates behind
+- unc: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: AGGREGATES ONLY (public); dashboards behind campus login; no microdata, no instrument found
+- unh: [NONE (institutional)] - S3 data released: NONE FOUND (no microdata, aggregates table, instrument or codebook located; E3 pre/post instrument not published; Senate inventory gives two zero counts only).
+- unl: [NONE (institutional)] - S3: NONE FOUND for any institution-run AI-in-learning survey or pilot (no microdata, aggregates, instrument or codebook on pages read; NU inventory
+- unlv: [NONE (institutional)] - S3: none (no microdata, instrument or codebook for any institution-run AI survey or pilot found).
+- unm: [AGGREGATES / INSTRUMENT ONLY] - S3: aggregates only: detector audit counts printed on the CTL page (84/3, 63/42). No microdata, text set, instrument or codebook
+- unt: [READ BY HAND] - S3: Institutional AI documents: NONE (no microdata, aggregates or instruments on any page read). Faculty survey report: UNREAD (instrument/aggregates unknown).
+- uoregon: [NONE (institutional)] - S3: NONE. No microdata, instrument, codebook or AI-survey aggregates with n released on pages read. Live recruitment survey link only
+- uri: [NONE (institutional)] ### S3 data released: NONE (2024 survey: aggregate frequency table of one item in report only, no microdata or instrument; AEC tutoring data, focus group, 2026 "direct input": nothing released).
+- usc: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: AGGREGATES ONLY (partial)
+- usf: [NONE (institutional)] - S3: NONE (no microdata, aggregates, instrument or codebook for any AI-in-learning survey or pilot found).
+- usu: [NONE (institutional)] - S3: NONE. No microdata, aggregates, instrument or codebook for any AI-in-learning survey, pilot or evaluation found. Only number
+- uta: [NONE (institutional)] - S3: NONE (no microdata, aggregates, instrument or codebook found for any document or pilot).
+- utah: [NONE (institutional)] - S3: none found (no microdata, instrument or codebook for any institution-run AI pilot or survey). Zenodo record for doc 9 lists
+- utd: [NONE (institutional)] - S3: NONE (no microdata, aggregates file, instrument or codebook on any page read).
+- utexas: [NONE (institutional)] - S3: NONE for documents 1-12 (no microdata, aggregates file, instrument or codebook). Doc 4 prints percentages only. Doc 10 expert
+- utk: [NONE (institutional)] - S3: NONE FOUND (no microdata, aggregates, instrument or codebook released by the institution; no institution-run AI survey found).
+- uva: [NONE (institutional)] - S3 data released (institutional): NONE. 2023 survey: percentages printed in report text only; no instrument, tables, codebook or microdata found.
+- uvm: [AGGREGATES / INSTRUMENT ONLY] - S3 data released: PARTIAL - aggregates only. UWC slides print syllabus-policy percentages ("No Policy, 67%", "No AI, 14%", "No GenAI, 9%", "Supplemental AI, 9%", "AI Encouraged, 1%"; 1000-level:
+- uw-madison: [NONE (institutional)] - S3: NONE (no microdata, aggregates, instrument or codebook in any document).
+- uw-seattle: [AGGREGATES / INSTRUMENT ONLY] ## S3 data released: AGGREGATES + INSTRUMENT (no microdata)
+- vanderbilt: [NONE (institutional)] - S3 data released (institutional): NONE (no microdata, aggregates, instrument or codebook for any institutional figure).
+- vt: [AGGREGATES / INSTRUMENT ONLY] - S3 data released: PARTIAL - aggregates printed in the framework report (pilot percentages, p44-46); one survey instrument printed (Kim et al. 2025:
+- wfu: [AGGREGATES / INSTRUMENT ONLY] - S3: PARTIAL - instrument item wording and scale means in the slide text (e.g. "Most okay to use AI for Studying (3.98)"); no microdata,
+- wsu: [NONE (institutional)] ## S3 data released: NONE FOUND
+- wustl: [NONE (institutional)] - S3: NONE (no microdata, aggregates, instrument or codebook from any WashU survey or pilot found).
+- wvu: [NONE (institutional)] - S3 data released: NONE FOUND (no survey, aggregate, instrument or microdata on any page read).
+- yale: [AGGREGATES / INSTRUMENT ONLY] ### S3 data released: instrument only (inside PDF); no microdata, no aggregate files
+
+Counts: {'NONE (institutional)': 72, 'AGGREGATES / INSTRUMENT ONLY': 37, 'NO S3 LINE': 1, 'READ BY HAND': 3}
+READ BY HAND: ['harvard', 'miami', 'nyu', 'unt']
+
+Hand-read: harvard -> NONE (Library survey page "Download data is not yet available"); miami, nyu, unt -> NONE (their S3 lines say NONE). unm -> AGGREGATES only.
+cornell (row in WALL.md, not rows/): AGGREGATES + instruments (CSV of group counts). case: per-response (8 syllabus-statement submissions posted verbatim; not use or outcomes), counted under aggregates/instrument.
+Totals (113 row files + cornell = 114 institutions): no institution released microdata from a survey or evaluation of AI use or outcomes; aggregates or instrument only 38; none 76.
+Faculty studies with released data are S7, separate (e.g. Harvard Kestin, Penn Bastani, CMU Oppenheimer, Berkeley Pardos, UChicago Jabarian & Imas, Taipei mj4bu).

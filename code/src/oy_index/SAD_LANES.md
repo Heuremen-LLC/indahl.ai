@@ -1,0 +1,38 @@
+# SAD lanes (28 Oct 2026). Items are the numbered list from the chat. Status per target: TODO, DONE (shipped, date), NOT REACHED, TERMS BAR, DRY.
+Data in hand: mlperf_index/raw/inf_5.0.json, inf_5.1.json, inf_6.0.json, inf_6.1.json, training_v60/ (clone), training_v60_times.json (229 result sets, 24 submitters).
+
+## ODD LANE
+1. MLPerf Training v6.0 vendor posts (already done: NVIDIA, Supermicro). DONE 28 Oct: AMD (blog, 8 rows; rounds 5.0 and 5.1 cloned and parsed too). Also DONE 28 Oct: Lambda blog (8 rows), CoreWeave whitepaper page (3 rows). TODO: Azure (the azurefeeds.com Llama 405B 8K-GPU post returned 404, see BLOCKED_URLS.md), Google, Oracle, Nebius, Supermicro training posts if they exist; AMD ROCm reproducing post. No Dell, HPE, Cisco or Lenovo Training 6.0 post found. Scores come from training_v60_times.json (olympic average, scaling factor).
+3. Older rounds, v5.0 and v5.1 inference vendor posts. DONE 28 Oct: Lambda v5.1 (7 rows), Nebius v5.1 (8 rows). Lenovo v5.1 post fetched (raw/lenovo_v51.txt, lp2330) and not yet checked: next odd target. TODO: Red Hat v5.0 (redhat.com/en/blog/mlperf-inference-v50-results), HPE, Dell, Cisco, Supermicro, Google, Intel. Round files are in raw/. The v5.1 NVIDIA and AMD and Intel posts are already live, so skip those three.
+5. Top500 and Green500 "fastest" and "most efficient" claims. TODO: read the terms of use first. If they bar copying, log TERMS BAR.
+
+## EVEN LANE
+2. MLPerf Inference v6.1 vendor blog posts (NVIDIA, AMD, Intel, Lambda, Nebius, Supermicro, Google, Red Hat, Cisco, HPE, Oracle, CoreWeave). Done: Dell (three posts), the MLCommons v6.1 supplement. DONE 28 Oct: NVIDIA Vera Rubin blog (8 rows), AMD v6.1 blog (14 rows), Crusoe v6.1 blog (5 rows). DONE 28 Oct: Lambda v6.1 blog (17 rows). Intel newsroom v6.1 post returned 403 (BLOCKED_URLS). TODO: AMD ROCm technical and reproduce posts for v6.1,  Supermicro, Google, Red Hat, Cisco, HPE, Oracle, CoreWeave posts. Data: raw/inf_6.1.json. Helper for ledger rows: mlperf_index/ledger_sad_source.py KEY PREFIX RAWFILE.
+4. Other MLCommons suites that publish result files: MLPerf Storage, MLPerf Client, MLPerf Power, Automotive. TODO: find the result files and licence, write a parser, then the vendor posts.
+6. SPEC and TPC results vs vendor claims. TODO: read the terms first. If they bar copying, log TERMS BAR.
+
+## WANTS FROM WAYFINDER (batched, answer whenever)
+- Dell Info Hub posts and any page that shows a bot check: paste the text.
+
+## LOG
+- 28 Oct iteration 25 (odd): item 1, AMD Training 6.0 blog shipped: 8 statements, 1 BELOW (partner results within 6%: largest 6.9%). Next odd target: HPE, Dell, Cisco, Lenovo, Google Training posts (search by name), then item 3.
+- 28 Oct iteration 26 (even): item 2, NVIDIA v6.1 blog shipped: 8 statements (1 BELOW: WAN 2.2 latency 5.7 s vs 5.81 s on GB300; 3 CANNOT_TELL). Next even target: AMD v6.1 ROCm blog, Intel, Lambda, Nebius, Supermicro.
+- 28 Oct iteration 27 (odd): item 1, Lambda blog and CoreWeave whitepaper page shipped (11 statements; 2 CANNOT_TELL: 'among the fastest' ranks last of six within 1.7%, and 'eight teams' vs ten GB300 submitters in the file).
+- 28 Oct iteration 28 (even): item 2, AMD v6.1 blog and Crusoe v6.1 blog shipped (19 statements; 3 CANNOT_TELL: model-family count, Crusoe's 'over 90% of ideal' needs its own 8-GPU baseline which is not in the file, latency percentiles). Next even target: Intel, Lambda, Nebius, Supermicro v6.1 posts.
+- 28 Oct iteration 29 (odd): item 3, Lambda v5.1 and Nebius v5.1 blogs shipped (15 statements; LV4 ABOVE: SDXL '1.07x faster than the best 8xH200' is 1.70x/1.54x in the file, and 1.07x is the gain over the v5.0 B200 best; 2 CANNOT_TELL). Next odd target: Lenovo v5.1 (fetched), then Red Hat v5.0.
+
+- 28 Oct iteration 30 (even): item 2, Lambda v6.1 blog shipped: 17 statements (1 ABOVE: Qwen3-VL Server rank, file shows first not second; 1 BELOW: field spread 0.49 q/s not a few hundredths; 2 CANNOT_TELL: datacenter-hardware claim, B200 baseline for the 1.54x/1.42x speedups). Next even target: Nebius v6.1 (text saved).
+
+- 28 Oct iteration 31 (odd): item 3, Lenovo v5.1 (LP2330) shipped: 9 statements (5 BELOW: edge SE100 no-competitors label and 12 firsts, fifteen-firsts total, SR780a thirds, SDXL field size; 1 CANNOT_TELL: twenty-seven organizations). Next odd target: Red Hat v5.0 (redhat.com/en/blog/mlperf-inference-v50-results).
+
+- 28 Oct iteration 32 (even): item 2, Nebius v6.1 blog shipped: 17 statements, all CONSISTENT (rank rule: same accelerator model and count reproduces all 17 printed ranks). Build fix: DESC rows are now scoped to the source that owns them, which also corrects Apple Mac M3 that had shown a Dell description. Next even target: Supermicro, Google, Red Hat, Cisco, HPE, Oracle, CoreWeave v6.1 posts, AMD ROCm posts.
+
+- 28 Oct iteration 33 (odd): item 3, Red Hat v5.0 blog shipped: 6 statements (4 CONSISTENT, 2 CANNOT_TELL: first OpenShift on GH200 needs earlier rounds, under 2 percent overhead needs a RHEL run that is not a file entry). The file lists the entry under Supermicro in the open division. Next odd target: HPE, Dell, Cisco, Supermicro, Google, Intel v5.x posts.
+
+- 28 Oct iteration 34 (even, plus bench step A): Red Hat v6.0 blog shipped, 20 statements (ABOVE: Whisper H200 gain 13.85 percent vs stated 13; BELOW: table H200 Qwen 18.02 vs 18.218, table llama-2-70b figures 91,933 and 89,019 not in the file (text gives 80,478 and 76,393, which match), vLLM submitter counts 20 and 5 vs 10 and 13 by our field rule; 3 CANNOT_TELL). Azure v6.1 (argonsys mirror) 202 challenge, logged. Next even: Google, Cisco, HPE, Oracle, CoreWeave v6.1 posts, Cisco C240 M8 white paper, AMD ROCm posts.
+
+- 28 Oct iteration 35/36 (odd and even together, five posts): CoreWeave v6.1 blog (11 rows, all CONSISTENT), Intel v6.1 newsroom (9 rows: BELOW partner count 29 in v6.0 is 20 in the file, BELOW CPU results 35 is 33), Azure v6.1 (7 rows: BELOW the highest Interactive among all submissions is beaten by a preview Vera Rubin entry), Cisco X210c v5.1 white paper (3 rows, all CONSISTENT), Cisco C845A white paper (10 rows: BELOW most datasets submitted is 2 of 7 models, BELOW Retinanet first holds in Server only, BELOW figure 16 system name, BELOW CPU model). SAD at 348 statements, live drift 0. Queued with raw text pasted by Wayfinder: HPE v5.1 community post, Supermicro v5.0 press release. Next odd: HPE v5.1, Supermicro v5.0.
+
+- 28 Oct iteration 38 (even): Cisco multi-vendor v6.1 blog shipped: 6 statements (4 CONSISTENT, 2 CANNOT_TELL: standalone baseline of 70,085.48 is not a file entry, which group ran prefill is not a file field). Also this day: HPE v5.1 (16 rows), Supermicro v5.0 (7), Azure training v6.0 (6), AMD ROCm reproduce v6.0 (6). Google v6.x and Oracle v6.1 posts not found by search. Remaining even: item 4 MLPerf Storage/Client/Power/Automotive (parsers and licence check), item 6 SPEC/TPC (terms first). Remaining odd: Dell v5.x posts (not found), Intel v5.0, item 5 Top500/Green500 (terms first).
+
+- 28 Oct iteration 40: item 4 MLPerf Storage v2.0 read: the results repo holds per-run summary.json files under closed/<submitter>/results/ (about 43,000 files, list cut short by the API). Accelerators supported need an aggregator over those runs. Deferred, not started. Item 5 TOP500: no reuse licence text found, nothing copied (TERMS UNCLEAR). Item 6 SPEC: Fair Use Rule found (compliant results compared with compliant results, sources listed), full text not yet read, nothing copied. TPC terms not read. Vendor post searches for Google v6.x, Oracle v6.1, Dell v5.x, HPE v6.1 and Red Hat v6.1 found nothing readable. Both lanes are dry until a post or a pasted text arrives, so the loop moves to STEP B.

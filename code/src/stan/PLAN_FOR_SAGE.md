@@ -1,0 +1,11 @@
+STAN v1, plan summary for Sage
+
+STAN is a small open model (Qwen3 1.7B, Apache-2.0, LoRA) that reads a title and abstract and drafts the seven claim-level codes of Faults and Guards 2.0, one code at a time, each as PRESENT, ABSENT, CANNOT_TELL with a reason, or NOT_APPLICABLE, with a verbatim quote for PRESENT and ABSENT. It sorts for a person to confirm. It is never a gate.
+
+Data. Gold is the 196 recounts, split 98 dev and the rest test with seed 20261112 before any model saw them. Gold never trains anything. The pool is 100 List studies with held text, not gold, not removed at request, and not duplicates of gold under a contamination matcher that was scored on 112 real twins and a synthetic paraphrase control. Input is the OpenAlex or arXiv abstract only. The gold labels came from full text, so many codes cannot be tested from an abstract and CANNOT_TELL will be common.
+
+Teachers. Llama 3.1 8B, Mistral 7B v0.3 and Gemma 3 4B label every pool item blind with the definitions in context. Quotes are checked by code, and an ungrounded label becomes CANNOT_TELL METHOD_UNSTATED. Where they disagree each sees the other two once and may revise. Only pairs of item and code on which all three agree with grounded quotes become silver rows. Two of three go to a review queue and are never trained on. A class cap stops one class passing half of a code's rows. The teachers share training text and may share blind spots, so the gold recounts are the only independent check. No Sage memory is in any prompt.
+
+Test. Baseline: the untrained base and each teacher on gold dev, per code, with 95 percent Wilson intervals and CANNOT_TELL counted by reason. Paired test: STAN against the base on gold test item by item, flips counted both ways, paired bootstrap of 2000 resamples seed 7 on the pooled per-code agreement difference. Kept only if the whole 95 percent interval is above zero, otherwise reported as not kept. Gold test is read once. A 40-row hand spot-check of three-way agreements (seed 4242) asks whether each quote supports its label. STAN is also scored on gold dev split by teacher agreement.
+
+The plan, its sha256 and its OpenTimestamps receipt were committed before the first teacher call. This summary and PLAN_ADDENDUM_1.md were written afterward and carry no label-dependent choices.

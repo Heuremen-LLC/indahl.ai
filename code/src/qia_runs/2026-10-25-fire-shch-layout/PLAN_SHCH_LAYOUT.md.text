@@ -1,0 +1,10 @@
+# Free calibration run 2 (Kumar): Zenodo 10.5281/zenodo.22770646, Vitaly Shcherbak -- is LAYOUT the carrier of their S spread? -- committed before any job
+Their S: 2.6627 (fez), 2.7185 and 2.4047 (marrakesh, ~20 min apart); spread 0.31; their notebook: least_busy backend, opt 1, NO initial_layout.
+Run 1 (25 Oct, results committed in ../2026-10-25-fire-shcherbak): with the layout pinned, drift within a chip <= 0.06 over ~5 min (bound).
+New hotness applied: our finding that layout and record quality move numbers more than drift at minute cadence; the open alternative in run 1 was layout.
+This run, one fez job: their circuit (shch.py, unchanged) on four triples fixed by a rule BEFORE the job (layouts_chosen.json: best, 25th, 50th, 75th percentile of
+record worst-CZ + worst-readout over 236 eligible centre-neighbour triples, disjoint), the best triple twice; 8 circuits per arm (4 singlet + 4 product), 8000 shots.
+Reading: S per layout; weighted chi2 across the four layouts (dof 3): ABOVE (layout spread resolves, p < 0.05) / CONSISTENT (a bound); range as a share of their 0.31.
+KNOWN-GOOD: the best triple twice in one job agrees within 2.58 se, and every product arm sits under the bound 2.
+Synthetic: synth_results_shch_layout.text (no-layout CONSISTENT, layout-0.3 ABOVE, broken copies fail KG; floor 11/200 = 5.5%). Budget: cap 120 s; reserve 300 s.
+Record: props_before.json at submission (A3). Units: layouts (D22).

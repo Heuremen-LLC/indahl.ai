@@ -1,0 +1,29 @@
+# PLAN (committed before any job): resilience-0 deciding run, arXiv 2608.04486v3 (Roy; Jadavpur / Presidency, Kolkata), ibm_kingston
+Written 24 Oct 2026 by Bones on Wayfinder's order ("find another cheap Kumar we can fire and package for"). Free run, eligible
+(no government money, no grant, no military in the paper). Supersedes nothing: the STOP note's priced row "res 0 only, 2 states, 4,000/basis".
+
+QUESTION (theirs): does IBM hardware separate the label variance Var C2 = <C2^2> - <C2>^2 of the MIXED state (exact 240) from the
+SOLVABLE state (exact 0)? Their resilience-2 run (job db2u5su8v0ts73c3i75g, 7 Oct 2026): mixed 236 +- 78, solvable 36 +- 136,
+difference 1.28 sigma.
+
+DESIGN: one EstimatorV2 job on ibm_kingston, resilience_level 0 (no TREX, no ZNE), default_shots 4,000 per basis (theirs), PUBs =
+(solvable state on their physical qubits [73,79,72,74], [C2, C2^2]) and (mixed state |0000> on [148,60,47,21], [C2, C2^2]).
+States and operators from OUR rebuild pds.py (sympy CG), not their code. State prep: StatePreparation(w) transpiled at opt 3
+(their compile had 15 two-qubit gates; ours is recorded and may differ: apparatus note, /q 9).
+Cost: 2 x 41 bases x 4,000 = 328,000 shots, 98-115 s. Refuses if kingston is not active or if the run would leave < 300 s for
+Kumar's run (his order: save seconds for Kumar).
+
+READING (fixed now): Var per state with error propagated as independent (as their record states); difference D = mixed - solvable,
+sigma = quadrature sum; 95% interval D +- 1.96 sigma. Outcome for "mixed above solvable": ABOVE if the interval is above 0, BELOW if
+below 0, CONSISTENT otherwise; CANNOT_TELL if the 95% width exceeds the exact gap (240). Also printed beside theirs, never folded.
+Record the job ran under = properties at job start (props_before/after kept; /q 3).
+
+KNOWN-GOOD: their released kingston_device_N3.json through our known_good.py reproduces all 10 printed numbers (known_good.text,
+PASS 10/10: 236.39 +- 77.95, 36.05 +- 135.69, ratio 6.56, 1.28 sigma, mixed nonzero 3.03 sigma; rebuild gives exact Var 240 and 0,
+128/39 and 136/41 Pauli terms/groups). On this run, the analysis must read the ideal-state synthetic as ABOVE with width ~41.6.
+
+SYNTHETIC (synth_res0_results.text, run before this plan was committed): IDEAL -> ABOVE (226.0 +- 41.6); NULL (both states mixed) ->
+CONSISTENT; NOISY (+200 bias on solvable C2^2) -> CONSISTENT.
+
+NOT CLAIMED: no mechanism; a resilience-0 reading includes device bias that their ZNE arm tried to remove (the trade the STOP note
+priced). Post-hoc readings, if any, are labelled post-hoc.

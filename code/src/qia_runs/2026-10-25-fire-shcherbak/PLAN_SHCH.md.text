@@ -1,0 +1,13 @@
+# Free calibration run (Kumar): Zenodo 10.5281/zenodo.22770646, Vitaly Shcherbak (Montenegro) -- Local Friendliness test -- committed before any job
+Their record: three runs, 8000 shots per circuit, 4 circuits: fez S = 2.6627 (job id not retained), marrakesh 2.7185, marrakesh 2.4047; 'visible run-to-run
+variation (2.40-2.72) reflecting normal drift in gate calibration on real devices over time'. Chip and drift are not separated in their record.
+Their circuit, verbatim from local_friendliness_experiment_en.ipynb (code read with credential-bearing lines filtered; the saved copy in theirs/ has them dropped):
+singlet on q0,q1; friend CX q0->q2; PEEK = measure q2; REVERSE3 = CX q0->q2 again, RY(-pi/2) q0, measure; Bob RY(-beta) q1; S = -E1 + E2 - E3 - E4.
+This run: A1 fez, B1 kingston, B2 kingston, A2 fez in one session, same physical qubits [109,110,118] (q0 = centre; healthiest triple shared by both chips at
+plan time), opt level 1 as theirs, 8000 shots. Compiled: singlet PEEK 2 CZ, REVERSE 1 CZ (the back-to-back friend CX pair cancels at opt 1, as in their run).
+Each job also carries the PRODUCT arm (|01>, no entanglement, same settings).
+Readings: drift within fez (A2 - A1), drift within kingston (B2 - B1), chip (fez mean - kingston mean); 95% intervals; ABOVE / BELOW / CONSISTENT (a bound) /
+CANNOT_TELL if wider than 0.2. Also: violation (S - 1.96 se > 2) in every job; their spread 0.31 printed beside.
+KNOWN-GOOD: the product arm cannot exceed the bound in any classical or quantum world: S_product + 1.96 se < 2.0 in every job, or the run reads nothing.
+Synthetic: synth_results_shch.text (stable / chip-only / drift-on-fez / both worlds land as planted; broken-instrument world fails the known-good; floor 13/300 = 4.3%).
+Budget: cap 80 s; refuses below 300 s reserve.

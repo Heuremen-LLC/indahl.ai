@@ -1,0 +1,14 @@
+# THAT SCHOOL (his category, 25 Oct): small private schools whose OWN people ran a real comparison of AI in their own courses/policy - "like the Kumars of schools". Internal list for future work; leads are not cards until the source is read.
+| school | what they did | status |
+|---|---|---|
+| St. John Fisher (NY, small private) | institution coded 3,300+ syllabi over 5 semesters to track its own AI syllabus policy; article read in full | WALL ROW (rows/stjohnfisher.md), MEASURED-POLICY (implementation); P3-18 |
+| Elon (NC, private, ~6,200 UG) | 4 instructors, paired sections, "must cite" vs "no AI" policy, survey n = 72 / 47; coding scores collected, not shown | CARD Q-5 (slides read); not a Wall row yet |
+| Bates (ME) + Clemson authors | Klawa, Rajpal, Thomas, "Gen AI in Proof-based Math Courses: A Pilot Study" (arXiv 2509.13570): 3 proof-based math courses where policy permitted some AI; survey + interviews | LEAD, abstract read only (perceptions, exploratory) |
+| Saint Joseph's / others | none verified | - |
+| American University of Paris (AUP) | "Acting on AI at AUP", AMICAL 2024 session: AI@AUP initiative started Spring 2024 "beginning with surveys of students, faculty and staff"; results not in the abstract | LEAD (session description only; results unread; recording behind login) |
+| Ohio Wesleyan (OH) | Smith Center "AI Syllabus Guidelines | 2026-27 (vetted by faculty)" for campus-wide consistency | NOT YET (news blurb, no measurement found) |
+| Denison (OH) | professor-run repeated student AI surveys posted openly (53% fall 2024 -> 78% spring 2025 -> ~80% Oct 2025; ~420 of >2,300 in the last) | CARD Q-6 |
+| Clarkson (NY) | 4 faculty, ChatGPT writing coach in first-year seminar UNIV190: no change in writing confidence; paper = Computers and Composition, June 2025, doi 10.1016/j.compcom.2025.102923 (abstract read: pre/post surveys n = 64 and 53 + reflective essays; self-efficacy "did not improve"; body paywalled) | CARD Q-7 |
+Not "That School" (public or large, seen in searches): UMass Amherst economics two-section AI-allowed vs prohibited experiment (public; instructor blog post); App State "Macro Buddy" (public); CMU GAITAR instructors (already CMU).
+Rule for membership: a named small private institution + its own faculty/office measured something in its own courses or policy + the source is open + we read it.
+Also seen 25 Oct: UChicago Data Science Clinic (student project, spring 2026): 1,249 UChicago syllabi organised with a language-model-assisted classifier; "AI policy language rose sharply after 2023" (one-pager, no validation of the classifier shown; not the university evaluating its own policy; UChicago is a large research university and already a Wall row). Searches run for That School so far (8, standard mode): leads above; the St. John Fisher paper is the only one found whose institution measured its own AI policy.

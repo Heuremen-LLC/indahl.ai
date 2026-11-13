@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iris-check"
+version = "1.0.0"
+description = "Checks on language-model evaluation outputs before you trust them: reading sheets, flips between repeats and paired comparison. From Heuremen LLC. Standard library only."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Heuremen LLC" }]
+keywords = ["LLM evaluation", "benchmark", "reproducibility", "McNemar", "bootstrap"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Intended Audience :: Science/Research",
+  "License :: Other/Proprietary License",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://indahl.ai/iris"
+Documentation = "https://indahl.ai/iris/package"
+Source = "https://github.com/Heuremen-LLC/indahl.ai"
+
+[project.scripts]
+iris-check = "iris_check:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/iris_check.py"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"TESTED.md" = "share/doc/iris-check/TESTED.md"
+"CITATION.cff" = "share/doc/iris-check/CITATION.cff"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/iris_check.py", "README.md", "LICENSE", "TESTED.md", "CITATION.cff", "pyproject.toml", "tests"]

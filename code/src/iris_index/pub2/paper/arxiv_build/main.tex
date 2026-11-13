@@ -1,0 +1,238 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,hyperref,amsmath}
+\usepackage[numbers]{natbib}
+\title{A Pinned Model Is Not a Stable Tool:\\ Recounting Published LLM Evaluations From Their Own Files}
+\author{K. Indahl\\ Heuremen LLC\\ \texttt{Indahl@heuremen.com}}
+\date{October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Several recent evaluations of language models release the per-item outputs behind their tables. We rebuilt the printed headline numbers of eleven
+such papers with our own code from their own files. Nine rebuild to the printed digit, one to within 0.02 F1, and one only under a
+scoring rule we fixed after seeing the data. We then asked what else those files could say, adding intervals,
+known-good copies and carriers the designs did not hold fixed, and crediting what each paper already showed. In one judge release, where the
+authors report that reruns at temperature zero change one outcome in five, verdicts changed more often when the reported serving backend
+changed (an association in one run pair). In one long-context release, identical runs on one host agree item for item while a different
+host and GPU changes about one item in a hundred (one model). A published audit's finding that the readout token set moves one benchmark's
+F1 by 3 to 6 points across its splits rebuilds, with an interval. Three of four frontier judges, run once each under different provider code, flip
+the verdict on about three prompts in ten when the two answers swap position, with paired differences consistent with zero. On the reading
+side, we price a match read from overlapping intervals, a count of mean leads against seed spread, and a gold set built by reviewing the
+labeller it then scores. We ran the same checks on our own published record and on stock open-weight models on our own hardware. On two of our machines the same
+model files at temperature zero gave byte-identical replies on 42 to 71\% of bare-arm items (12 to 58\% under a guard wording), and the scored answer
+changed on about 3\% of items, against a repeat floor of 0.3 to 1\% on each machine, while net fault rates stayed within their widths.
+We report what the outside referees changed.
+\end{abstract}
+
+\section{Introduction}
+Evaluations of language models increasingly release the outputs behind their tables: judge calls, predictions, generations. That makes a
+published number checkable without a model call. We did three things with such releases. We rebuilt the printed numbers with our own code.
+We priced selected headline claims with a question committed before we read the data (a paired interval the paper did not print, a known-good
+copy the release already contained, a carrier the design did not hold fixed). And we turned the same procedure on ourselves. Several of the
+effects we price are already known in general: temperature zero does not make hosted inference deterministic \citep{r2610_30512}, and
+judges are known to be sensitive to answer position (the same paper cites earlier work). Our contribution is the specific intervals, copies and carriers, in each paper's own terms. Every plan,
+recount script and result is committed in order, with the plan's commit preceding the result's. Analyses added after the data or at
+referee are marked post hoc where they appear.
+
+\section{Method}
+\paragraph{Selection.} arXiv cs.CL submissions with benchmark, evaluate or evaluation in the abstract, submitted 11--22 October 2026 (922,
+the start date is where the arXiv API's result cap ended). Of these, 185 link a repository and 39 hold files whose names suggest per-item
+outputs. Acknowledgements and repositories were read in full for 21 of the 39. The record does not state why the other 18 were not taken forward. One defence-linked paper and one at an institution excluded by our location rule
+were dropped. Six company or vendor papers and one with a government-agency grant were indexed but not worked. One released aggregate scores
+only. Eleven were recounted (Table~\ref{tab:book}).
+\paragraph{Recount.} Our own code, written from the paper's definitions, on the authors' released files.
+\paragraph{Pricing.} A question committed before reading: a paired interval where the paper printed an unpaired one or none, a known-good where
+the release contained identical copies, a carrier the design varied without holding fixed. Four outcomes (above, below, consistent, cannot
+tell). Consistent is a bound, not an equality. We did not correct intervals for multiplicity across the roughly two dozen we report. Results
+with a bound near zero are called marginal.
+\paragraph{Referees.} Findings went to read-only referees: instances of a smaller model of the same family as the writer (Claude Sonnet),
+given the raw files and told to refute, each seeing each finding once. Section~\ref{sec:self} gives what they changed.
+
+\section{The setup moves the number}
+\paragraph{Serving backend behind a pinned name.} The authors of \citep{r2610_30512} released 17,000 GPT-4.1 judge calls at temperature zero
+on a pinned version and report that rerunning an unchanged setup changes the outcome on 21.2\% of prompts. Every printed table cell rebuilds to
+two decimals. Each call also records the provider's backend fingerprint, which the paper does not analyse. In the one pair of default-setup
+runs in which fingerprints overlap, prompts whose reported fingerprint was the same in both runs changed outcome (order-averaged win, tie or
+loss) 17.5\% of the time, and prompts whose fingerprint changed, 27.3\% ($+9.8$ points, 95\% interval $[+2.1,+17.6]$, one-sided permutation
+$p<0.01$). This is an association, not an intervention. Prompts with a changed backend sat somewhat nearer the decision boundary. Within margin
+bands (post hoc) the gap is $+8.0$ [$+0.7$, $+15.3$]. The other two run pairs share no fingerprint, so they cannot tell.
+\paragraph{Host and GPU behind a fixed seed.} A long-context position study \citep{r2610_31135} discloses the GPU used in each phase and labels
+its ten-document results exploratory. Separate runs of the same model on the same host agree on all 8,000 position items. The same model (Mamba-2.8B)
+on a different GPU and host changes the score of 76 of the 8,000 (0.95\%). The study's prompt variants
+ran on other GPUs, so the share of the family gap across prompts that is due to the hardware cannot be separated from the release. Within one
+GPU, the interactions we could test all span zero (post hoc), which leaves the authors' prompt-sensitivity statement untested rather than
+contradicted. In a second long-context study, \citet{r2608_03297} show that the way a context is cut decides whether a shorter context
+reads as harm. \citet{r2607_25451} measure how a small open model's verbatim recall of its training data changes with numeric precision.
+\paragraph{Batching.} In a calibration of 64 records that the authors fixed in advance \citep{r2610_24999}, labelling four or eight records per
+call agrees with single-record labelling 0.026 [0.007, 0.047] micro-F1 less than two single-record runs agree with each other. The paper
+reports 0.97 against 0.94 and chose single records. We add only the interval, which rests on one pair of single-record runs shared by the
+contrasts. A related protocol effect, batched chat annotation against one comment per call, is the headline of \citep{r2610_15732}.
+Below the prompt, \citet{r2609_00363} show that swapping one INT8 GPU kernel for another that implements the same interface changes
+greedy token sequences while each kernel repeats itself. \citet{r2609_32042} trace where weight quantization breaks agentic tool use
+in three open models from 8-bit to 2-bit.
+\paragraph{The readout token set.} \citet{r2610_25964} found that a two-token yes/no readout never matches the token LLaVA-1.5-7B emits, and
+that an eight-token readout moves its POPE F1 by 6.13 points on the adversarial split (5.37 popular, 3.16 random, the difference of the rounded F1s, 3.15 unrounded). Every figure rebuilds. We add
+the paired question-bootstrap interval, [4.43, 7.83] on the adversarial split, from the same single 4-bit model. The authors note the shift
+exceeds the adversarial gain of five of the six papers they survey and that the comparison stays unresolved until readout and precision are
+matched. Against this interval, four of those six gains lie below the lower bound, one inside, one above. The six gains come from other
+models and carry no widths, and this does not say any of those papers used the two-token rule. \citet{r2608_04355} split the
+accuracy change after self-revision into answers that change and answers that only become readable, and force a readable answer to test it.
+\citet{r2610_02142} show that a keyword-matching tool-use harness credits a small model with calls it never makes, and replace
+it with a ladder of strict structural checks.
+\paragraph{Answer position, across vendors.} The same judge repository holds an earlier experiment, run once per judge under each provider's
+own code \citep{r2610_30512}, in which each judge saw both answer orders. GPT-4.1, Claude Sonnet 4.5 and Gemini 2.5 Flash flip the verdict on
+31.0\%, 31.3\% and 30.9\% of prompts when the answers swap position. Paired differences between the three are all consistent with zero within
+about $\pm 6$ points (Gemini 2.5 Pro, run on 129 prompts, 21.7\% [14.7, 28.7]). In the pinned October runs, GPT-4.1's order flip is 28.1\%,
+12.5 points [8.0, 16.7] above its own copy floor of 15.5\% (single round-one verdict between identical runs). The earlier runs have no floor. \citet{r2610_01243} meet the same sensitivity in a
+vision-language judge choosing among images, and act only where its choice agrees across orders. \citet{r2608_15428} show that models
+still pick among a legal exam's options with the question hidden, with letter habits that differ by vendor.
+
+\section{The reading moves the claim}
+\paragraph{Unpaired intervals and a paired reading.} \citet{r2610_31256} print bootstrap intervals for every row, and read the frontier GPT-4o
+as matched by the smaller Llama-3.1-8B under five-shot prompting because the intervals overlap. Paired over the same 137 items, Llama leads by
+5.24 F1 [0.91, 9.81], a marginal and uncorrected result. On item wins the two are near even (55 and 52, 30 ties). This is in the direction
+of the authors' own reading that the smaller model is not behind. Their few-shot gains all hold on the paired ruler. \citet{r2608_22659}
+makes the general case for more than two models on one question set, and shows on MMLU-Pro that pairwise ranking claims hold only once
+question-level pairing and multiple comparisons are both handled. \citet{r2608_11403} report a pooled contrast across sampled answers
+that does not hold when paired within problem.
+\paragraph{A count of leads against seed spread.} \citet{r2610_25626} report that their method ``achieves the highest mean accuracy in 12 of
+18'' settings, a correct count of means, and describe the benefits as varying by benchmark and scale. With seeds as the unit (three per
+method, Welch interval), the method's lead over the best other method resolves in 2 of the 18 settings (lower bounds $+0.03$ and $+0.06$,
+uncorrected for 18 tests), is consistent with zero in 15, and in one another method is ahead, as the authors state. Seeds do not capture
+item sampling, so these are bounds on a coarse ruler. \citet{r2609_25010} rerun a subset under three seeds and average several draws
+per prediction because their rank coefficient moves between seeds.
+
+\section{The judge and the gold}
+\paragraph{A reviewed gold set cannot score its labeller.} In \citep{r2610_25159} two reviewers built the gold set by checking an LLM's silver
+labels, and the authors note this may have introduced anchoring. The classifiers they compare are trained on those silver labels. Because the
+gold is the silver label with 8 of 200 corrected, the labeller's own accuracy on it (0.96) is one minus the correction rate, ahead of every
+trained classifier by 11.5 to 14.5 accuracy points. With a gold set built by reviewing that labeller's output, the lead cannot be
+separated from anchoring. This changes none of the paper's classifier comparisons. It is a reason to
+read the labeller's score on this gold as uninformative. \citet{r2608_15980} compare two predefined annotator pools on the
+same preference items and find item-level disagreement that a six-model ranking does not show.
+\paragraph{Forced choice and the none outcome.} \citet{r2610_15732} show that a forced-choice schema cannot recover the 39\% of gold comments
+with no persona and that allowing abstention raises macro-F1 by 0.20 to 0.27 for every vendor tested. This rebuilds, paired. On the 184
+comments that do carry a persona (post hoc), abstain minus forced macro-F1 is $-0.077$ [$-0.117$, $-0.040$] for GPT, $-0.051$ [$-0.085$,
+$-0.019$] for Claude and $0.000$ [$-0.021$, $+0.020$] for Gemini, so the gain is the none class, not better persona labels. The release also
+gives each vendor's two failure rates under abstention (one prompt): over-attribution on the 116 comments with no persona is 26.7\% [19.0,
+34.5] for Claude, 16.4\% [10.3, 23.3] for Gemini and 11.2\% [6.0, 17.2] for GPT, and false abstention on the 184 is 8.2\%, 4.9\% and 15.8\%.
+We did not test these differences pairwise. \citet{r2610_31657} price an explicit defer option against a wrong route for prompted
+ticket classifiers, and \citet{r2610_29812} show that how an agent retrieves turns wrong answers into abstentions on a claim-verification
+benchmark. \citet{r2608_14329} test a judge's choice between passing and escalating against keyword-stuffed inputs and a second judge
+from another model family. \citet{r2609_06444} rank which items a judge should send for expert labels by the part of its uncertainty that
+more labels would reduce. \citet{r2607_14399} give a player model a third verdict in an honesty evaluation and find that it takes most of
+the outcomes the two-verdict grammar had recorded as strong claims.
+\paragraph{Pairing the judge with readers.} The authors of \citep{r2610_21468} note that a formal test would pair item-level decisions, and
+that the graph's preference gain over no graph disappears after length adjustment. Paired on items decisive for both, the judge's agreement with the readers' majority is
+0.66 [0.49, 0.80] ($n=35$) on one contrast, consistent with chance and so supporting the authors' statement that the judge does not track
+readers there, and 0.84 [0.71, 0.97] ($n=31$) on another. The difference, $+0.18$ [$-0.03$, $+0.39$], does not resolve. Readers who judged an
+item twice agreed with themselves on 93\% of items decisive both times. The judge shares a family with one of the generators. \citet{r2607_29274}
+ask the same question across many models at once and find that the models agree with each other more than with readers.
+\citet{r2607_10626} pair judges on the same candidate answer to separate a judge's leniency toward its own model from differences between
+answers.
+
+\section{Open-weight models on our own setup}
+We ran stock open-weight models locally (Table~\ref{tab:matrix}, temperature zero, fixed seed, one model loaded at a time, the server's JSON mode) on public items with
+gold answers: the persona gold set above, with the authors' abstention prompt, and 200 two-option questions from ToMi and BigToM as released in
+\citep{r2610_18610}. Exact repeats were identical for every model that answered, which shows the setup is deterministic, not that it has no
+floor. At two options a flip under option reversal cannot be separated from a fallback to a preferred letter, and for the three models we
+checked (gemma3, mistral, phi4) the flips land almost entirely on that model's preferred letter. A four-option run with a position-defined
+positive control is in progress. \citet{r2608_15428} meet the same hazard at four options on a legal exam, where a small open model's
+preferred letter accounts for nearly all of its above-chance score with the question hidden, and correct each model's score for its own
+position habit. One model echoed the input instead of answering under our JSON settings, so its question cells are not scored.
+gemma3's 76\% false ``none'' may be driven by our prompt or format. We report it as measured.
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lp{3.2cm}p{3.2cm}p{3.2cm}}\toprule
+model & over-attribution (no-persona items) & false ``none'' (persona items) & flip under option reversal \\\midrule
+gemma3:4b & 0.026 [0.000, 0.052] & 0.755 [0.696, 0.815] & 0.145 [0.100, 0.200] \\
+phi4-mini & 0.103 [0.052, 0.164] & 0.495 [0.424, 0.565] & 0.075 [0.040, 0.115] \\
+mistral:7b & cannot tell (rule-dependent) & rule-dependent, not checked & 0.217 [0.162, 0.278] \\
+llama3.1:8b & cannot tell (rule-dependent) & rule-dependent, not checked & 0.150 [0.105, 0.200] \\
+qwen3:4b & 0.388 [0.302, 0.474] & 0.049 [0.022, 0.082] & not scored (no answer field) \\\bottomrule
+\end{tabular}
+\caption{Our setup, first five models. A reply counts as ``none'' only when its no-persona flag is set (rule defined after the replies were
+seen). Where a second reasonable rule differs by more than 0.10 the cell is marked cannot tell. Flips are at two options (see text).}\label{tab:matrix}
+\end{table}
+
+\paragraph{The same model files on two of our machines.} We ran our fault bench (four failure families, 170 items, a bare arm, an exact
+repeat of it and a guard wording) for five models on two setups: a Mac on its Apple GPU (Ollama 0.34.2, one parallel slot) and a workstation with
+an NVIDIA RTX 3080 (CUDA, driver 610.88, Ollama 0.34.3, started with four parallel slots, requests still sent one at a time), at temperature zero
+with a fixed seed and identical request settings. Each model's full manifest (weights, template, parameters) has the same digest on both
+machines, read after the runs. Other CUDA server settings were not recorded at run time. Repeats on the Mac matched byte for byte on 160 to 170 of
+170 items, and on the CUDA machine on 127 to 158, so the CUDA setup does not reproduce itself. \citet{r2608_20438} also run small open models through Ollama, with a fixed seed per request
+and four requests in parallel. Across the two setups only 71 to 120 of 170 bare
+replies matched, fewer than either machine's own repeats, and 21 to 98 of 170 under the guard wording, which has no repeat on either machine
+(Table~\ref{tab:seats}). The scored comparison, committed before the runs, pairs each item's bare reply across machines and requires each
+machine's exact repeats to agree on the scored class on at least 95\% of items. In the 14 model and family cells that could be read, net fault
+rates showed no difference we could detect. Ten of those cells sit at 0\% or 100\% on both machines. In the four that do not, the intervals
+reach $+17$ to $+27$ points (for example $+0.115$, 95\% interval $[0.000, +0.269]$), so moderate shifts are not excluded. The third family's
+controls failed on both machines for all five models, so it cannot tell. Net rates also hide items that move in both directions. Counted item
+by item on the 391 gated items read in all four runs (29 of 420 were unread in at least one run, 27 in each run on each machine, all counts defined after the data), the scored class changed between machines on 11 items, and on
+10 when the two repeats are compared, against 1 between repeats on the Mac and 4 between repeats on the CUDA machine. The flips lean towards a
+fault on the CUDA machine (8 against 3, exact two-sided $p=0.23$, so the direction cannot be told). Nine of 550 items were readable on one
+machine only and are not in the paired comparison. The text of a pinned model differed between these two setups, and so did its scored
+answer on a few items in a hundred, above either machine's own repeat floor, while net rates stayed within their widths. On hosted
+services, \citet{r2608_28875} rerun a transcription pipeline and find its run-to-run variability larger than the differences their
+preregistered test compared, and \citet{r2608_20432} release three replicates of six proof judges and report that a rerun changes many
+of a judge's verdicts.
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lccccc}\toprule
+model & repeat, Mac & repeat, CUDA & across, bare & across, guard & families consistent / cannot tell \\\midrule
+phi4-mini & 167 & 127 & 84 & 55 & 3 / 1 \\
+llama3.2:3b & 168 & 153 & 120 & 94 & 3 / 1 \\
+qwen2.5:1.5b & 169 & 158 & 120 & 98 & 2 / 2 \\
+granite4.1:3b & 160 & 143 & 90 & 29 & 3 / 1 \\
+ministral-3:3b & 170 & 155 & 71 & 21 & 3 / 1 \\\bottomrule
+\end{tabular}
+\caption{Byte-identical replies out of 170, same model files, temperature zero, fixed seed. ``Across'' compares the Mac and the CUDA
+machine. The last column is the scored comparison between machines, per failure family (the third family's controls failed for every model).}\label{tab:seats}
+\end{table}
+
+\section{The same checks on our own record}\label{sec:self}
+Our earlier documents on the failure modes of a language model doing measurement work \citep{faults,guards} rebuild from their own ledger and
+logs, and the same checks narrowed them. The corrections were committed to the published documents on 25 October 2026. A rate printed as two-option frames
+counted every pushback (frames alone: 27.5\%, not 32.5\%). A claim that context cuts the frame rate by two fifths compared groups that barely overlap
+in length, and is now ``cannot tell''. A score printed as $+15.4$ widths treated a bar measured on 26 instances as exact. Against that bar's
+own interval it is borderline. Our own scanner, carried to three other judges' text, found real two-option reductions in 2 of 60 hits (3 of 60
+on the referee's reading), against 4 to 7 of 20 on the text of the model it was written from. Of the twelve findings about other papers that
+went to referee, four held, six were narrowed, one moved to ``cannot tell'', and one was withdrawn outright: we had called a reversal in
+\citep{r2610_18610} unrebuildable, and it rebuilds from a category field we had not read. Of seven findings about our own record, four were
+narrowed, two withdrawn, and one was not separately refereed. Three corrections we had made to that record were themselves withdrawn. These
+are the counts of what one referee pass changed, not an estimate of an error rate. Our bench scorer was caught the same way. The full read of scored replies that our plan requires before any rate is read found
+the first scorer dropping ``equivalent'' answers and reading ``A is not better than B'' as a verdict (5 of 10 replies on one model), so that
+family from that scorer reads ``cannot tell''. Every bench reading we published uses the second scorer, which reads both correctly.
+
+\section{Limitations}
+One submission window. English-language abstracts and search terms only (recounted releases include Indonesian and Nepali
+data). Selection made by reading file names and repositories. Every label we assigned was read by a model of the same
+family as the writer, and every referee was such a model, seeing each finding once. Releases without per-item outputs are out of reach. Several
+readings are bounds, not effects, and intervals are uncorrected. Our local models are small, quantised and prompted one way.
+
+\paragraph{Data.} Plans, recount scripts, outputs and referee reports are released at
+\url{https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/pub2}, whose MAP.md gives the files behind each section and table.
+The scripts behind two checks on our own record call an internal scanner that is not released, and their plans, samples and outputs are.
+Third-party data are linked to their own repositories, not redistributed.
+\paragraph{Disclosure.} This work was done in collaboration with inorganic intelligences. An AI assistant, Claude Code (Opus 5.5), was used.
+Read-only referees and scanning agents were Claude (Sonnet) instances.
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lp{10cm}}\toprule
+paper & recount \\\midrule
+\citet{r2610_30512} & rebuilds (17,000 calls, every cell of the paper's Table 1) \\
+\citet{r2610_25964} & rebuilds (9,000 questions) \\
+\citet{r2610_31256} & EM rebuilds on all 22 files. F1 to the printed digit on 18, four differ by 0.01--0.02 (cause not found) \\
+\citet{r2610_31135} & rebuilds (229,700 records) \\
+\citet{r2610_25159} & rebuilds \\
+\citet{r2610_15732} & rebuilds \\
+\citet{r2610_18610} & rebuilds, including the no-controls figures they report (69.1 vs 70.9) \\
+\citet{r2610_21468} & rebuilds \\
+\citet{r2610_17203} & author agreement (69.6\%) rebuilds. Judge scores only under a favourite-answer rule defined after the data (74.5 exactly, 74.3 against 74.0 printed) \\
+\citet{r2610_25626} & rebuilds from per-run files (answer keys not released) \\
+\citet{r2610_24999} & rebuilds \\\bottomrule
+\end{tabular}\caption{Every recounted paper.}\label{tab:book}\end{table}
+
+\bibliographystyle{plainnat}
+\bibliography{refs,refs_cited}
+\end{document}

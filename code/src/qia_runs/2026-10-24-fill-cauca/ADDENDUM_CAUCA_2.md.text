@@ -1,0 +1,12 @@
+ADDENDUM 2 -- 30 Oct 2026, written after the data (a correction, zero QPU).
+The public QIA line for 2605.30676 said: "Our kingston CZ delivered is 1.21 to 1.39 times stated; as an upper bound it closes about half of the
+N=9 gap and widens the N=2 gap by about 40%." That is wrong. Recomputed with our own twin code (twin_cauca.py, the paper's twin, their record
+theirs/properties_L2.json, their published hardware means), rescale_check.py -> rescale_check.text:
+  CZ factor alone 1.21 to 1.39: closes 9 to 16% of the N=9 gap; moves the N=2 gap by about 1% (widens it, the twin sits below hardware at N=2).
+  CZ 1.21 to 1.39 with single-qubit 1.306 to 1.366: closes 13 to 21% of the N=9 gap; widens the N=2 gap by about 2%.
+This agrees with the PLAN's own figure (about 17%, 13 to 22%, "not half"). The "about half" line was carried into the public matrix from an
+earlier estimate and never rechecked. Corrected line goes out through the ledger and ship.sh.
+
+Addendum 2 continued (30 Oct, after the data, zero QPU): q1_record_check.py -> q1_record_check.text. Their L2 record lists q1 P(0|1) 0.1028, P(1|0) 0.2185
+(others 0.001-0.042). With q1 set to the median of the others, the paper twin's gap at N=2..4 goes from -0.096/-0.104/-0.095 to -0.015/-0.026/-0.018 and
+is positive from N=5 on. The lost TWIN_RESCALE.md s.6 statement ('small-N twin gap ~0') is re-derived here, as 'about -0.02'.

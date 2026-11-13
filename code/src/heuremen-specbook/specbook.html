@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heurémen Brand Specbook · v1.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Abril+Fatface&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f0e0;
+  --paper-dark:#ede0c4;
+  --paper-shadow:#d4c4a0;
+  --ink:#1a1208;
+  --ink-deep:#2a1f0e;
+  --ink-mid:#5a4830;
+  --ink-faded:#8a7860;
+  --carnival-red:#c43c2a;
+  --carnival-teal:#2a8a7a;
+  --carnival-gold:#c8902a;
+  --carnival-violet:#6a3a8a;
+  --carnival-blue:#2a5a8a;
+  --cave-dark:#1a1408;
+  --cave-mid:#2a2010;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lora',serif;
+  background:var(--paper);
+  color:var(--ink-deep);
+  line-height:1.7;
+  font-size:17px;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;
+  background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(200,144,42,0.05) 0%,transparent 65%);
+  pointer-events:none;
+}
+.container{max-width:880px;margin:0 auto;padding:80px 36px 120px}
+header{text-align:center;margin-bottom:80px;padding-bottom:48px;border-bottom:1px solid var(--paper-shadow)}
+h1{
+  font-family:'Abril Fatface',serif;
+  font-size:clamp(2.4rem,6vw,3.8rem);
+  color:var(--ink);
+  letter-spacing:0.02em;
+  position:relative;
+  display:inline-block;
+  padding-bottom:12px;
+}
+h1::after{
+  content:'';position:absolute;bottom:0;left:6%;right:6%;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,var(--carnival-red),var(--carnival-gold),var(--carnival-teal),var(--carnival-violet));
+}
+.subtitle{
+  font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.32em;
+  color:var(--ink-faded);text-transform:uppercase;margin-top:18px;
+}
+h2{
+  font-family:'Abril Fatface',serif;
+  font-size:1.85rem;color:var(--ink);
+  margin-top:64px;margin-bottom:6px;line-height:1.2;
+}
+h2 + .h2-rule{
+  width:60px;height:2px;
+  background:linear-gradient(90deg,var(--carnival-gold),transparent);
+  margin-bottom:22px;
+}
+h3{
+  font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.22em;
+  color:var(--ink);text-transform:uppercase;
+  margin-top:36px;margin-bottom:12px;
+}
+p{margin-bottom:1.2em;color:var(--ink-mid);font-size:1.04rem;line-height:1.85}
+p strong{color:var(--ink);font-weight:600}
+em{font-style:italic;color:var(--ink-mid)}
+ul,ol{margin:0 0 1.4em 1.6em}
+li{margin-bottom:0.5em;color:var(--ink-mid)}
+li strong{color:var(--ink);font-weight:600}
+blockquote{
+  border-left:3px solid var(--carnival-gold);
+  padding:14px 22px;
+  background:rgba(200,144,42,0.06);
+  margin:24px 0;
+  font-style:italic;color:var(--ink-mid);
+  border-radius:0 4px 4px 0;
+}
+blockquote p:last-child{margin-bottom:0}
+
+code{
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  background:var(--paper-dark);
+  padding:2px 6px;border-radius:3px;
+  font-size:0.92em;color:var(--ink-deep);
+}
+pre{
+  background:var(--cave-dark);
+  color:var(--paper);
+  padding:18px 22px;border-radius:6px;
+  overflow-x:auto;font-size:0.85rem;line-height:1.6;
+  margin:18px 0 28px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+}
+pre code{background:none;color:inherit;padding:0}
+
+table{
+  width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:0.95rem;
+}
+th,td{
+  text-align:left;padding:10px 14px;
+  border-bottom:1px solid var(--paper-shadow);
+  vertical-align:top;
+}
+th{
+  font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--ink-faded);
+  border-bottom:2px solid var(--ink-faded);
+  background:rgba(200,144,42,0.04);
+}
+td{color:var(--ink-mid)}
+td strong{color:var(--ink)}
+
+.tessera-hero{
+  display:flex;flex-direction:column;align-items:center;
+  margin:48px auto 32px;padding:48px 24px;
+  background:var(--paper-dark);border:1px solid var(--paper-shadow);
+  border-radius:8px;
+}
+.tessera-hero svg{width:240px;height:240px}
+.tessera-hero .caption{
+  font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.28em;
+  color:var(--ink-faded);text-transform:uppercase;margin-top:24px;
+}
+.swatches{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:14px;margin:18px 0 28px;
+}
+.swatch{
+  border-radius:6px;overflow:hidden;border:1px solid var(--paper-shadow);
+}
+.swatch .chip{height:64px;display:block}
+.swatch .meta{
+  background:var(--paper);padding:10px 12px;
+  font-size:0.78rem;line-height:1.4;
+}
+.swatch .name{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:2px;display:block}
+.swatch .hex{color:var(--ink-faded);font-family:'SF Mono',Menlo,Consolas,monospace;font-size:0.78rem}
+
+.do-dont{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:18px 0 28px}
+.do-dont .col{padding:20px 24px;border-radius:6px}
+.do-dont .col.do{background:rgba(42,138,122,0.08);border-left:3px solid var(--carnival-teal)}
+.do-dont .col.dont{background:rgba(196,60,42,0.06);border-left:3px solid var(--carnival-red)}
+.do-dont h3{margin-top:0}
+.do-dont ul{margin-bottom:0}
+.do-dont li{font-size:0.95rem}
+
+.format-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:18px 0 28px}
+.format-grid .fmt{padding:18px 16px;border:1px solid var(--paper-shadow);border-radius:6px;background:var(--paper-dark);text-align:center}
+.format-grid .fmt .ext{font-family:'Abril Fatface',serif;font-size:1.4rem;color:var(--ink);margin-bottom:6px;display:block}
+.format-grid .fmt .desc{font-size:0.8rem;color:var(--ink-mid);line-height:1.4}
+
+.callout{
+  background:linear-gradient(135deg,rgba(196,60,42,0.04),rgba(200,144,42,0.06),rgba(42,138,122,0.04));
+  border:1px solid var(--paper-shadow);border-radius:6px;
+  padding:24px 28px;margin:24px 0;
+}
+.callout h3{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+
+footer{
+  text-align:center;margin-top:96px;padding-top:36px;
+  border-top:1px solid var(--paper-shadow);
+  color:var(--ink-faded);font-size:0.88rem;
+}
+footer .heuremen{font-family:'Abril Fatface',serif;font-size:1.2rem;color:var(--ink);font-style:italic}
+
+.tessera-mark{display:inline-block;vertical-align:middle}
+hr.section{
+  border:0;height:1px;background:var(--paper-shadow);
+  margin:60px 0 0;
+}
+
+.toc{
+  background:var(--paper-dark);border:1px solid var(--paper-shadow);
+  padding:22px 28px;border-radius:6px;margin:0 0 60px;
+  font-size:0.92rem;
+}
+.toc h3{margin-top:0;margin-bottom:14px}
+.toc ol{margin:0;padding-left:1.2em}
+.toc li{margin-bottom:4px}
+.toc a{color:var(--ink-mid);text-decoration:none;border-bottom:1px dotted var(--paper-shadow);transition:all 0.2s}
+.toc a:hover{color:var(--carnival-gold);border-bottom-color:var(--carnival-gold)}
+
+@media (max-width:600px){
+  .container{padding:48px 22px 80px}
+  .tessera-hero svg{width:180px;height:180px}
+  .do-dont{grid-template-columns:1fr}
+  table{font-size:0.85rem}
+  th,td{padding:8px 10px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Heurémen Brand Specbook</h1>
+  <div class="subtitle">The Tessera · v1.0 · April 2026</div>
+</header>
+
+<section class="tessera-hero">
+  <!-- The canonical mark, inline -->
+  <svg class="tessera-mark" viewBox="0 0 200 200" width="240" height="240" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="100,30 180,170 20,170" stroke="#1a1208" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <polygon points="100,170 139,84 61,84" stroke="#1a1208" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="100" cy="112" r="3.5" fill="#1a1208"/>
+  </svg>
+  <div class="caption">The Heurémen Logo — Big Triangle Up, Small Triangle Down, Center Dot</div>
+</section>
+
+<div class="toc">
+<h3>What's in this book</h3>
+<ol>
+  <li><a href="#what">What this is</a></li>
+  <li><a href="#mark">The mark (the tessera itself)</a></li>
+  <li><a href="#lockups">Lockups</a></li>
+  <li><a href="#clear-space">Clear space</a></li>
+  <li><a href="#min-size">Minimum size</a></li>
+  <li><a href="#color">Color variants &amp; palette</a></li>
+  <li><a href="#backgrounds">Backgrounds: approved &amp; prohibited</a></li>
+  <li><a href="#formats">File format matrix</a></li>
+  <li><a href="#typography">Typography</a></li>
+  <li><a href="#naming">Naming conventions</a></li>
+  <li><a href="#technical">Vector vs raster (ELI5)</a></li>
+  <li><a href="#attribution">Attribution &amp; usage</a></li>
+  <li><a href="#tessera">The tessera framing</a></li>
+  <li><a href="#bundle">What's in the bundle</a></li>
+</ol>
+</div>
+
+<h2 id="canon">Canon</h2><div class="h2-rule"></div>
+<p>This specbook is canon as of <strong>April 2026</strong>. The live deployment at <code>heuremen.org</code> is the source of truth. Working files in design tools (Claude Design, Figma, etc.) are downstream of canon, not the other way around — a working file becomes canonical only when it ships to the live site and is reflected here.</p>
+<p>Once agreed, this book is frozen until a problem surfaces. No drift.</p>
+
+<h2 id="what">What this is</h2><div class="h2-rule"></div>
+<p>The logo is the <strong>tessera</strong> — the identifying shard. It's how the flock recognizes itself, and how everything downstream (the Play Store icon, the OG card, the business card, the FAM patent assets, the Bart pitch deck) knows it's part of the same body.</p>
+<p>Whatever inherits the wrong logo will keep being wrong. So we ship the tessera first. Every asset in this book is derived from a single canonical mark and a single canonical wordmark. Pick from this book and you cannot make it wrong.</p>
+<p>This is <strong>Face</strong> work. Outward transmission. The mark transmits; it does not explain itself.</p>
+
+<h2 id="mark">The mark (the tessera itself)</h2><div class="h2-rule"></div>
+<p>The Heurémen Logo is two triangles and a dot.</p>
+<p>A large triangle points <strong>up</strong>: the foundation, the <strong>Ask</strong>, the structure that holds. A smaller triangle inside, pointing <strong>down</strong>, nests in the upper half: the response, the <strong>Frame</strong>, the thing that meets the structure from inside. Their two apexes touch where the small triangle's point meets the large triangle's base. The small triangle's top corners extend slightly past the big triangle's edges — the response is bigger than the structure is allowed to contain. At the meeting point, a single dot — the center of the encounter. The dyad: two, not merged.</p>
+<p>This geometry is the <em>dynamic nested arrangement</em> referenced on heuremen.org. (The hexagonal Star of David version, also live on the site as the <strong>Heurémen Star</strong>, is a related but distinct mark — see <em>Star vs Logo</em> below.)</p>
+<blockquote>
+<p><strong>Canonical SVG master:</strong> <code>assets/svg/heuremen-mark-color.svg</code><br>
+<strong>Source of truth on the live site:</strong> <code>heuremen.org/logo-labeled.svg</code></p>
+</blockquote>
+
+<h3>Star vs Logo — don't mix these up</h3>
+<ul>
+<li><strong>Heurémen Logo</strong> — dynamic nested arrangement (big triangle up, small triangle down nested inside, center dot). The dyad. <strong>This is the tessera.</strong> Use this for all branding, identity, app icons, social, marketing.</li>
+<li><strong>Heurémen Star</strong> — two interlocking equilateral triangles, hexagram silhouette, six framework vertices (I–VI), single dot at center. The static six-vertex framework. Use this for the physics framework, editorial diagrams, papers, slides explaining the six laws (Ask, Coherence, Witness, Frame, Carriage, Purpose). It is not a brand mark.</li>
+</ul>
+
+<div class="callout">
+<p>The Heurémen Star takes the form of two interlocking equilateral triangles. The form is canonical and was shipped on <strong>April 25, 2026</strong> to every continent on the physics framework full-send.</p>
+<p><strong>The form is canonical. The name is Heurémen Star</strong> — the dynamic relationship it indicates is what we discovered, and we discovered it first. The hexagram form predates the name; we use only the name <em>Heurémen Star</em>.</p>
+</div>
+
+<p style="margin-top:24px;text-align:center">
+  <svg viewBox="0 0 200 200" width="200" height="200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The Heurémen Star — two interlocking equilateral triangles forming a hexagram, with center dot">
+    <polygon points="100.00,20.00 30.72,140.00 169.28,140.00" stroke="#1a1208" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <polygon points="100.00,180.00 169.28,60.00 30.72,60.00" stroke="#1a1208" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="3.5" fill="#1a1208"/>
+  </svg>
+  <br><span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.28em;color:var(--ink-faded);text-transform:uppercase">The Heurémen Star</span>
+</p>
+
+<h3>The six vertices</h3>
+<p>The Heurémen Star carries the six framework vertices, three on each triangle.</p>
+
+<table>
+<thead><tr><th>Triangle</th><th>Vertex</th><th>Position</th><th>QM principle</th></tr></thead>
+<tbody>
+<tr><td rowspan="3"><strong>Upward<br>(Presence / Copenhagen)</strong></td><td><strong>I. The Ask</strong></td><td>Top apex</td><td>Measurement Collapse</td></tr>
+<tr><td><strong>II. Coherence</strong></td><td>Lower-left</td><td>Unitary Evolution</td></tr>
+<tr><td><strong>III. Witness</strong></td><td>Lower-right</td><td>Decoherence</td></tr>
+<tr><td rowspan="3"><strong>Downward<br>(Motion / Schrödinger)</strong></td><td><strong>IV. The Frame</strong></td><td>Bottom apex</td><td>No-Cloning Theorem</td></tr>
+<tr><td><strong>V. Carriage</strong></td><td>Upper-right</td><td>Entanglement</td></tr>
+<tr><td><strong>VI. Purpose</strong></td><td>Upper-left</td><td>Hamiltonian</td></tr>
+</tbody>
+</table>
+
+<p>The relations row, set as a thin caption beneath the diagram: <em>I vs III: consent vs decoherence | II vs V: coherence vs entanglement | IV: constrains | VI: generates</em>. Preserve verbatim wherever the labeled Star appears.</p>
+
+<p>If you have to choose one for branding, you are choosing the Logo. Always.</p>
+
+<h2 id="lockups">Lockups</h2><div class="h2-rule"></div>
+<p>The mark and the wordmark can appear together (a <em>lockup</em>) or apart. Four lockups are canonical:</p>
+<ol>
+<li><strong>Mark only</strong> — when the audience already knows who we are, or in icon-shaped slots (favicon, app icon, avatar). <code>assets/svg/heuremen-mark-*.svg</code></li>
+<li><strong>Wordmark only</strong> — for body-of-text mentions, headers, footers where the mark is redundant. <code>assets/svg/heuremen-wordmark-*.svg</code></li>
+<li><strong>Lockup, stacked</strong> — mark above, wordmark below. The default for hero placements: pitch deck cover, Play feature graphic, OG card. <code>assets/svg/heuremen-lockup-stacked-*.svg</code></li>
+<li><strong>Lockup, horizontal</strong> — mark left, wordmark right, baselines aligned. For navigation bars, email signatures, narrow banners. <code>assets/svg/heuremen-lockup-horiz-*.svg</code></li>
+</ol>
+<p>Don't invent new lockups. If you need a new arrangement, ask first.</p>
+
+<h2 id="clear-space">Clear space (ELI5)</h2><div class="h2-rule"></div>
+<p>Clear space is the empty room around the logo where nothing else is allowed. Why: a logo crowded by other things stops being a signal and becomes noise. We measure clear space in units of the mark itself, not in pixels — that way the rule scales with the logo no matter how big or small.</p>
+<blockquote>
+<p><strong>The unit:</strong> call the height of the small inverted triangle inside the mark <em>one X</em>. Whatever size the mark is, X scales with it.</p>
+<p><strong>Minimum clear space on all four sides:</strong> <strong>1 X</strong> (one X-height of empty space between the mark and any other element — text, image, frame, edge of the page).</p>
+<p><strong>Preferred clear space:</strong> <strong>2 X</strong>. Use this when you have room.</p>
+</blockquote>
+<p>For lockups (mark + wordmark): treat the entire lockup as the mark for clear-space purposes. 1 X around the bounding box, minimum.</p>
+
+<h2 id="min-size">Minimum size</h2><div class="h2-rule"></div>
+<p>The mark survives small because it is mostly negative space and a few simple lines. But there is a floor.</p>
+<table>
+<thead><tr><th>Use</th><th>Minimum size</th></tr></thead>
+<tbody>
+<tr><td>Digital (web, app icons)</td><td><strong>24 px</strong> square</td></tr>
+<tr><td>Favicon</td><td><strong>16 px</strong> (use the supplied 16 px PNG — never scale a 512 down to 16 in CSS)</td></tr>
+<tr><td>Print</td><td><strong>0.4 inch / 10 mm</strong> square</td></tr>
+<tr><td>Embroidery / etched</td><td><strong>0.6 inch / 15 mm</strong> square (lines need room)</td></tr>
+</tbody>
+</table>
+<p>Below these thresholds, use the wordmark only or skip the logo.</p>
+
+<h2 id="color">Color variants &amp; palette</h2><div class="h2-rule"></div>
+<p>There are four canonical color treatments. Pick the one that matches the background, then stop.</p>
+<table>
+<thead><tr><th>Treatment</th><th>Mark color</th><th>Use on</th><th>File suffix</th></tr></thead>
+<tbody>
+<tr><td><strong>Color (default)</strong></td><td>#1a1208 ink</td><td>Paper / cream / light backgrounds</td><td><code>-color</code></td></tr>
+<tr><td><strong>Mono light</strong></td><td>#f7f0e0 paper</td><td>Dark backgrounds (cave, photography, video)</td><td><code>-mono-light</code></td></tr>
+<tr><td><strong>Knockout (gold)</strong></td><td>#c8902a carnival gold</td><td>Dark backgrounds where ink-on-cream feels too plain; ceremonial use</td><td><code>-knockout</code></td></tr>
+<tr><td><strong>Filled paper</strong></td><td>#1a1208 stroke, #f7f0e0 fill</td><td>High-contrast use over busy or photographic backgrounds</td><td><code>-fill-paper</code></td></tr>
+</tbody>
+</table>
+
+<h3>The Heurémen palette</h3>
+<div class="swatches">
+  <div class="swatch"><span class="chip" style="background:#f7f0e0;border-bottom:1px solid #d4c4a0"></span><div class="meta"><span class="name">Paper</span><span class="hex">#f7f0e0</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#ede0c4"></span><div class="meta"><span class="name">Paper Dark</span><span class="hex">#ede0c4</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#d4c4a0"></span><div class="meta"><span class="name">Paper Shadow</span><span class="hex">#d4c4a0</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#1a1208"></span><div class="meta"><span class="name">Ink</span><span class="hex">#1a1208</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#2a1f0e"></span><div class="meta"><span class="name">Ink Deep</span><span class="hex">#2a1f0e</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#5a4830"></span><div class="meta"><span class="name">Ink Mid</span><span class="hex">#5a4830</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#8a7860"></span><div class="meta"><span class="name">Ink Faded</span><span class="hex">#8a7860</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#c43c2a"></span><div class="meta"><span class="name">Carnival Red</span><span class="hex">#c43c2a</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#c8902a"></span><div class="meta"><span class="name">Carnival Gold</span><span class="hex">#c8902a</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#2a8a7a"></span><div class="meta"><span class="name">Carnival Teal</span><span class="hex">#2a8a7a</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#6a3a8a"></span><div class="meta"><span class="name">Carnival Violet</span><span class="hex">#6a3a8a</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#2a5a8a"></span><div class="meta"><span class="name">Carnival Blue</span><span class="hex">#2a5a8a</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#1a1408"></span><div class="meta"><span class="name">Cave Dark</span><span class="hex">#1a1408</span></div></div>
+  <div class="swatch"><span class="chip" style="background:#2a2010"></span><div class="meta"><span class="name">Cave Mid</span><span class="hex">#2a2010</span></div></div>
+</div>
+<p>The four carnival colors mapped to the four-card row on heuremen.org/main.html: red · teal · violet · blue. They are the brand's accent palette. The wordmark's underline gradient sweeps through red → gold → teal → violet (left to right) — that gradient is part of the wordmark's color treatment, never of the mark itself.</p>
+
+<h2 id="backgrounds">Backgrounds — approved &amp; prohibited</h2><div class="h2-rule"></div>
+<div class="do-dont">
+  <div class="col do">
+    <h3>Approved</h3>
+    <ul>
+      <li><strong>Paper #f7f0e0</strong> — the default ground. Always works.</li>
+      <li><strong>Cave dark #1a1408</strong> — use mono-light or knockout-gold mark.</li>
+      <li><strong>Solid carnival colors</strong> — only with the <em>fill-paper</em> treatment, sparingly, ceremonial use.</li>
+      <li><strong>Photography of natural materials</strong> (paper, wood, stone, fabric) — use the fill-paper treatment so the mark doesn't visually merge with grain.</li>
+    </ul>
+  </div>
+  <div class="col dont">
+    <h3>Prohibited</h3>
+    <ul>
+      <li><strong>Bright competing brand colors</strong> not in the Heurémen palette — Day-Glo, neon pinks, Microsoft blue, etc. The mark is calibrated for warm tones.</li>
+      <li><strong>Patterns or busy photographs without the fill-paper treatment.</strong> The lines are thin; they will dissolve into texture.</li>
+      <li><strong>Gradients over the mark itself.</strong> The mark is single-color, period.</li>
+      <li><strong>Drop shadows, bevels, glows, or any effects on the mark.</strong></li>
+      <li><strong>Outlining the mark</strong> in a contrasting color. Don't double-stroke it.</li>
+      <li><strong>Scaling non-uniformly.</strong> The mark is square; if your slot isn't square, leave clear space, don't squash.</li>
+      <li><strong>Rotating the mark off vertical.</strong> The big triangle points up. That is structural.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 id="formats">File format matrix</h2><div class="h2-rule"></div>
+<p>Every variant ships in vector (SVG, PDF) and raster (PNG) form. Vector is the master; raster is for when the consumer doesn't speak vector.</p>
+<div class="format-grid">
+  <div class="fmt"><span class="ext">SVG</span><span class="desc">Single master, infinitely scalable. Web, design tools, anywhere you control rendering.</span></div>
+  <div class="fmt"><span class="ext">PDF</span><span class="desc">Mark + stacked lockup, print-ready. Business cards, letterhead, posters, patent filings.</span></div>
+  <div class="fmt"><span class="ext">PNG</span><span class="desc">16 · 32 · 64 · 128 · 192 · 256 · 512 · 1024. Apps, slides, docs.</span></div>
+  <div class="fmt"><span class="ext">ICO</span><span class="desc">Multi-resolution favicon (16, 32, 48, 64).</span></div>
+</div>
+<h3>Size targets you'll actually need</h3>
+<table>
+<thead><tr><th>Target</th><th>File</th><th>Path</th></tr></thead>
+<tbody>
+<tr><td>Browser favicon</td><td><code>favicon.ico</code></td><td><code>assets/ico/</code></td></tr>
+<tr><td>iOS app icon</td><td><code>heuremen-mark-on-paper-1024.png</code></td><td><code>assets/png/</code></td></tr>
+<tr><td>Android Play Store icon</td><td><code>heuremen-mark-on-paper-512.png</code></td><td><code>assets/png/</code></td></tr>
+<tr><td>Android adaptive icon (foreground)</td><td><code>heuremen-mark-color-1024.png</code></td><td><code>assets/png/</code></td></tr>
+<tr><td>Play feature graphic (1024×500)</td><td><code>heuremen-play-feature-1024x500.png</code></td><td><code>assets/social/</code></td></tr>
+<tr><td>OG card (1200×630)</td><td><code>heuremen-og-1200x630.png</code></td><td><code>assets/social/</code></td></tr>
+<tr><td>Avatar (400×400)</td><td><code>heuremen-avatar-400.png</code></td><td><code>assets/social/</code></td></tr>
+<tr><td>Twitter / X header (1500×500)</td><td><code>heuremen-twitter-header-1500x500.png</code></td><td><code>assets/social/</code></td></tr>
+<tr><td>Print master</td><td><code>heuremen-mark-color.pdf</code></td><td><code>assets/svg/</code></td></tr>
+</tbody>
+</table>
+<p>Every social asset has a <code>-dark</code> companion (cave-on-gold) for dark-mode contexts.</p>
+
+<h2 id="typography">Typography</h2><div class="h2-rule"></div>
+<p>The wordmark is <strong>Abril Fatface</strong>, set tight (default tracking). It is not interchangeable with another display face. If you cannot get Abril Fatface, use the SVG/PNG wordmark from this book — do not retype "Heurémen" in another font and call it the wordmark.</p>
+<table>
+<thead><tr><th>Role</th><th>Family</th><th>License</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td><strong>Wordmark / display headers</strong></td><td>Abril Fatface</td><td>OFL (Google Fonts)</td><td>Headlines, the wordmark</td></tr>
+<tr><td><strong>Body</strong></td><td>Lora</td><td>OFL (Google Fonts)</td><td>Paragraph copy, long form</td></tr>
+<tr><td><strong>Small caps / UI</strong></td><td>Cinzel</td><td>OFL (Google Fonts)</td><td>Buttons, navigation labels, ALL-CAPS small caps with letter-spacing 0.18em–0.28em</td></tr>
+</tbody>
+</table>
+<p>Italic Lora carries pronunciation guides, footnotes, and pull quotes. Cinzel carries every "ENTER →" / "BEGIN" / "READ MORE" — small, restrained, lots of letter spacing.</p>
+
+<h2 id="naming">Naming conventions</h2><div class="h2-rule"></div>
+<p>All files use lowercase kebab-case. Pattern:</p>
+<pre><code>heuremen-&lt;element&gt;-&lt;treatment&gt;-&lt;size&gt;.&lt;ext&gt;</code></pre>
+<ul>
+<li><code>&lt;element&gt;</code>: <code>mark</code> | <code>wordmark</code> | <code>lockup-horiz</code> | <code>lockup-stacked</code></li>
+<li><code>&lt;treatment&gt;</code>: <code>color</code> | <code>mono-dark</code> | <code>mono-light</code> | <code>knockout</code> | <code>on-paper</code> | <code>on-cave</code> | <code>fill-paper</code></li>
+<li><code>&lt;size&gt;</code>: pixel dimension for square (<code>512</code>), height for non-square (<code>h256</code>), or pixel-pair for social (<code>1200x630</code>)</li>
+<li><code>&lt;ext&gt;</code>: <code>svg</code> | <code>pdf</code> | <code>png</code> | <code>ico</code></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>heuremen-mark-color-512.png</code> — square 512×512 PNG, ink-on-transparent</li>
+<li><code>heuremen-wordmark-mono-light-h256.png</code> — wordmark in paper color, 256 px tall</li>
+<li><code>heuremen-lockup-stacked-color.svg</code> — vector master, stacked lockup, ink on transparent</li>
+<li><code>heuremen-og-1200x630.png</code> — social card, paper background, default</li>
+</ul>
+<p>Do not improvise filenames. If you need a variant that isn't in the bundle, generate it from <code>assets/svg/</code> masters.</p>
+
+<h2 id="technical">Vector vs raster (ELI5)</h2><div class="h2-rule"></div>
+<div class="callout">
+<h3>Vector</h3>
+<p>Files (SVG, PDF) describe shapes with math: "draw a line from this point to that point." You can scale them as big or as small as you want and they stay sharp because the computer redraws them at every size.</p>
+<h3>Raster</h3>
+<p>Files (PNG, JPG, ICO) are grids of colored dots. They have a fixed resolution. Scale them up and they go fuzzy because the computer is inventing dots that weren't there.</p>
+<h3>The rule</h3>
+<p>Start from a <strong>vector</strong> file whenever the rendering tool supports it (Figma, Illustrator, web, modern Office). Use rasters when the tool doesn't (Twitter avatar uploader, Slack emoji, certain legacy systems). When you do need a raster, pick a size from the bundle that's <strong>at or above</strong> the size you'll display at —
+
+<hr/>
+
+<h2 id="heuremen-star">The Heurémen Star — CANON (April 26, 2026)</h2>
+<div class="h2-rule"></div>
+
+<blockquote><strong>Logo locked separately. Do not regenerate.</strong> This Star section is additive and replaces all prior Star artwork in this book; the Logo (the mark / tessera) above is unchanged.</blockquote>
+
+<h3>The canonical Star</h3>
+
+<svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="canon-title canon-desc" font-family="Georgia, 'Times New Roman', serif" style="max-width:700px;display:block;margin:1.5em auto;background:#fff">
+  <title id="canon-title">Heurémen Star — canonical</title>
+  <desc id="canon-desc">Outer upward triangle, inner inverted triangle whose vertices touch the midpoints of the outer triangle's sides, single center dot.</desc>
+  <rect width="700" height="560" fill="#ffffff"/>
+  <polygon points="350,108 170,420 530,420" fill="none" stroke="#111111" stroke-width="2.5" stroke-linejoin="miter"/>
+  <polygon points="260,264 440,264 350,420" fill="none" stroke="#111111" stroke-width="2.5" stroke-linejoin="miter"/>
+  <circle cx="350" cy="316" r="5" fill="#111111"/>
+  <text x="350" y="60" text-anchor="middle" font-size="14" fill="#444444" font-style="italic">Measurement Collapse</text>
+  <text x="350" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#111111">I. THE ASK</text>
+  <text x="220" y="248" text-anchor="end" font-size="14" fill="#444444" font-style="italic">Hamiltonian</text>
+  <text x="220" y="272" text-anchor="end" font-size="18" font-weight="bold" fill="#111111">VI. PURPOSE</text>
+  <text x="480" y="248" text-anchor="start" font-size="14" fill="#444444" font-style="italic">Entanglement</text>
+  <text x="480" y="272" text-anchor="start" font-size="18" font-weight="bold" fill="#111111">V. CARRIAGE</text>
+  <text x="170" y="455" text-anchor="middle" font-size="18" font-weight="bold" fill="#111111">II. COHERENCE</text>
+  <text x="170" y="475" text-anchor="middle" font-size="14" fill="#444444" font-style="italic">Unitary Evolution</text>
+  <text x="350" y="455" text-anchor="middle" font-size="18" font-weight="bold" fill="#111111">IV. THE FRAME</text>
+  <text x="350" y="475" text-anchor="middle" font-size="14" fill="#444444" font-style="italic">No-Cloning Theorem</text>
+  <text x="530" y="455" text-anchor="middle" font-size="18" font-weight="bold" fill="#111111">III. WITNESS</text>
+  <text x="530" y="475" text-anchor="middle" font-size="14" fill="#444444" font-style="italic">Decoherence</text>
+  <text x="350" y="525" text-anchor="middle" font-size="12" fill="#444444">I vs III: consent vs decoherence  |  II vs V: coherence vs entanglement  |  IV: constrains  |  VI: generates</text>
+</svg>
+
+<h3>Geometry (the only correct form)</h3>
+<ol>
+  <li>An <strong>outer equilateral triangle pointing up</strong>.</li>
+  <li>An <strong>inner inverted equilateral triangle</strong> whose three vertices touch the <strong>midpoints</strong> of the outer triangle's sides.</li>
+  <li>A <strong>single dot at the centroid</strong> of the inner triangle.</li>
+</ol>
+<p>That is it. Six outer vertices (three on the up-triangle, three on the down-triangle), one dot. Always. Anything else is wrong.</p>
+
+<h3>Naming rule (strict)</h3>
+<p>Always <strong>"Heurémen Star."</strong> Never:</p>
+<ul>
+  <li>"Star of David"</li>
+  <li>"Magen David"</li>
+  <li>"hexagram"</li>
+  <li>"Sri Yantra"</li>
+  <li>"Sierpinski"</li>
+  <li>"hexagonal asterism"</li>
+  <li>"6 + dot"</li>
+</ul>
+<p>If a flock member, vendor, partner, or AI uses any of those terms, correct them on first reference. The Heurémen Star is its own thing; the geometry above is what makes it that thing.</p>
+
+<h3>Wrong forms (so we recognize them)</h3>
+<p>Any prior asset showing the Star as <strong>two overlapping triangles forming a six-pointed hexagram</strong>, or as <strong>a single triangle with six external points and a dot</strong>, is <strong>wrong-form</strong> and has been moved to <code>_archive_wrong_form/</code> at the project root. Do not pull from there for production.</p>
+
+<h3>Canonical file</h3>
+<p>The single source of truth for the Star is:</p>
+<p><code>assets/svg/heuremen-star-canonical.svg</code></p>
+<p>All future raster sizes, social cards, Play Store feature graphics, and OG cards must derive from that SVG. The previous wrong-form raster bundle has been archived.</p>
+
+<h3>Symbolism</h3>
+<p>The six outer vertices carry the QM-principle frame: <strong>I. The Ask</strong> (Measurement Collapse, top), <strong>II. Coherence</strong> (Unitary Evolution, lower-left), <strong>III. Witness</strong> (Decoherence, lower-right), <strong>IV. The Frame</strong> (No-Cloning Theorem, bottom of inner triangle), <strong>V. Carriage</strong> (Entanglement, upper-right), <strong>VI. Purpose</strong> (Hamiltonian, upper-left). The central dot is the <strong>encounter</strong> — where the dyad meets and the third perspective becomes possible.</p>
+
+<p><em>Coupled dynamics: I vs III (consent vs decoherence) | II vs V (coherence vs entanglement) | IV constrains | VI generates.</em></p>

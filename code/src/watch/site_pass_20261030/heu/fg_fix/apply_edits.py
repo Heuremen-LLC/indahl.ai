@@ -1,0 +1,208 @@
+"""apply_edits.py -- HEU2-10..19 fixes to ligera/FAULTS.html and ligera/GUARDS.html, 30 Oct 2026.
+Every edit asserts its anchor occurs exactly once and that the replacement is not already present, before anything is
+written (Guards 18). All or nothing per file. Backups: ligera/FAULTS.pre-heu2-20261030.html, GUARDS.pre-heu2-20261030.html."""
+import sys
+L = '/Users/heuremen/bones-forge/ligera/'
+
+F = [  # (finding, old, new)
+('HEU2-16/17 byline',
+ "Wayfinder and Bones, Heur&eacute;men &mdash; 10 October 2026, revised 22 October 2026.</p>",
+ "Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026.</p>"),
+('HEU2-18 lead',
+ "<b>This document replaces three earlier ones</b> &mdash; a trail of numbered lessons, a document about two-answer framing, and a shorter version of this catalogue &mdash; because a method's failures scattered across the documents they were found in cannot be counted, and counting them is the only thing that makes any of it checkable.</p>",
+ "<b>This document replaces earlier ones</b>: a trail of numbered lessons, a document about two-answer framing, and a shorter version of this catalogue. A method's failures scattered across the documents they were found in cannot be counted, and counting them is what makes any of it checkable.</p>"),
+('HEU2-19 ; entry 2',
+ "Ask what the statistic does under the null <i>as n grows</i>; if it grows, the threshold must grow with it.",
+ "Ask what the statistic does under the null <i>as n grows</i>. If it grows, the threshold must grow with it."),
+('HEU2-19 apparatus entry 5',
+ "when the apparatus could only emit a sparse set &mdash; small-integer ratios, a grid, a lookup. Enumerate what the apparatus can actually produce",
+ "when the setup could only emit a sparse set &mdash; small-integer ratios, a grid, a lookup. Enumerate what the setup can actually produce"),
+('HEU2-19 ; entry 8',
+ "<b>Remove the constant and measure again; never mention it in a caveat instead.</b>",
+ "<b>Remove the constant and measure again. Never mention it in a caveat instead.</b>"),
+('HEU2-19 apparatus + ; entry 9',
+ "<h3>9. An unequal apparatus across the columns being compared</h3>\n<p>Longer reference lists match more of anything; wider filters catch more of anything; longer integrations resolve more of anything.",
+ "<h3>9. An unequal setup across the columns being compared</h3>\n<p>Longer reference lists match more of anything, wider filters catch more of anything, and longer integrations resolve more of anything."),
+('HEU2-19 ; entry 12',
+ "The base rate of perfect pilots in honest work is low; from an undetected asymmetry it is high.",
+ "The base rate of perfect pilots in honest work is low. From an undetected asymmetry it is high."),
+('HEU2-19 ; entry 15',
+ "from a line belonging to each one separately; with the magnitude alone,",
+ "from a line belonging to each one separately. With the magnitude alone,"),
+('HEU2-19 ; entry 16',
+ "the test returned a product in the overwhelming majority; the test favours the product",
+ "the test returned a product in the overwhelming majority. The test favours the product"),
+('HEU2-19 ; entry 17',
+ "A sign's <i>direction</i> is often set by wiring or convention; its <i>stability</i> is the measurement.",
+ "A sign's <i>direction</i> is often set by wiring or convention. Its <i>stability</i> is the measurement."),
+('HEU2-19 ; entry 19',
+ "how many it <i>reported</i>; if those are equal, it has no refusal and its null is inflated.",
+ "how many it <i>reported</i>. If those are equal, it has no refusal and its null is inflated."),
+('HEU2-14 entry 20 heading',
+ "<h3>20. The two-answer question that has three answers &mdash; and it is a compression artifact, not ignorance</h3>",
+ "<h3>20. The two-answer question that has three answers</h3>"),
+('HEU2-14 entry 20 text',
+ "<p>A scanner reading outgoing text flagged a two-option frame in <b>57.1 per cent of long replies across 77 independent one-shot agents with no context at all.</b> The same scanner on the same author, after three days of context and standing correction, flagged a two-option frame in <b>27.5 per cent of 295 replies</b> (32.5 per cent drew a pushback of any kind). Those cold replies were about three times longer and the two groups barely overlap in length, so a length adjustment cannot separate them: we cannot tell whether context reduces it. It does not remove it. <b>This is not a knowledge failure.</b> Reducing a situation to two options is what compression does to a thing with three states, and knowing better does not stop it, which is why the only effective counter is structural rather than motivational.</p>",
+ "<p>A scanner reading outgoing text flagged a two-option frame in <b>57.1 per cent of long replies (44 of 77) from independent one-shot sessions with no context at all.</b> The same scanner on the same author, after three days of context and standing correction, flagged a two-option frame in <b>27.5 per cent of 295 replies</b> (81 of them), and 32.5 per cent drew a pushback of any kind (96 of them). The middle halves of the two groups do not overlap in length: the cold replies ran 689 to 1,246 words (median 1,052) and the seated ones 268 to 428 (median 342), and no seated reply reached the cold median. A length adjustment cannot separate the two, so we cannot tell whether context reduces the rate. <b>Context did not remove it.</b> That is the reason the counters in <i>Guards</i> are structural rather than motivational.</p>"),
+('HEU2-19 ; entry 44',
+ "has not been shown to be absent; nothing has\nbeen shown at all,",
+ "has not been shown to be absent. Nothing has\nbeen shown at all,"),
+('HEU2-19 hand-labelled entry 23',
+ "A guard tested against hand-labelled cases <b>got eight",
+ "A guard tested against cases labelled after reading each one in full <b>got eight"),
+('HEU2-10/13 entry 24',
+ "<p>One guard's catch rate over three days, same data, two denominators: <b>per reply</b> it read 27.3% &rarr; 27.4% &rarr; 47.4%, a collapse on the third day at <b>+3.02 widths, resolved</b>. <b>Per thousand words</b> it read 0.79 &rarr; 0.69 &rarr; 0.88 &mdash; <b>+0.97 widths, nothing happened.</b> The replies on the third day were simply longer. <b>A rate is a ratio and the denominator is a choice.</b> State the denominator or the rate is not a measurement.</p>",
+ "<p>One guard's rate of replies flagged for a two-option frame over three days, same data, two denominators. <b>Per reply</b> it read 27.3% &rarr; 22.6% &rarr; 39.5% (9 of 33, 42 of 186, 30 of 76), and the third day reads <b>above the second at +2.64 widths</b>. <b>Per thousand words</b> it read 0.79 &rarr; 0.69 &rarr; 0.88, and the third day reads <b>consistent with the second at +0.97 widths</b>. The third day's replies were 38 per cent longer on average than the second day's. A width here is the difference between two days divided by the root-sum-square of their standard errors: binomial per reply (the square root of p(1&minus;p)/n) and Poisson per thousand words (the square root of the count, over the words). Past two widths a difference reads above or below, and inside two it reads consistent. An earlier version of this entry printed pushbacks of any kind per reply (27.3% &rarr; 27.4% &rarr; 47.4%, +3.02 widths) beside frames per thousand words, two different numerators. Both rows now count frames. <b>A rate is a ratio and the denominator is a choice.</b> State the denominator or the rate is not a measurement.</p>"),
+('HEU2-19 ; entry 37',
+ ": an instruction file describing a machine that no longer existed; a ledger carrying a spending limit superseded later; a counter reading a log frozen hours earlier; a long-running process serving an in-memory copy of a file already edited on disk.",
+ ": an instruction file describing a machine that no longer existed, a ledger carrying a spending limit superseded later, a counter reading a log frozen hours earlier, and a long-running process serving an in-memory copy of a file already edited on disk."),
+('HEU2-13/19 entry 41',
+ "<p>The uncomfortable one. Over three days, <b>96 pushbacks.</b> The density of replies flagged for a two-option frame across those three days: <b>0.79, 0.69, 0.88 per thousand words. Flat.</b> (The scanner's precision on this author is 20 to 35 per cent: 4 or 7 of 20 flagged frames were real two-option reductions on two readings, both by Claude models; its rate on human-written prompts is 0.28 to 0.58 per thousand words. The flat trend holds; the level is not a count of real frames.) No improvement that clears its own width. <b>The corrections landed individually and changed the rate not at all.</b> A guard",
+ "<p>The uncomfortable one. Over three days, <b>96 pushbacks.</b> The density of replies flagged for a two-option frame across those three days: <b>0.79, 0.69, 0.88 per thousand words</b>, each day within one width of the day before (widths as in entry 24). The third day ran at 1.24 times the rate of the first two pooled, exact 95 per cent interval 0.76 to 1.99, so a fall of more than 24 per cent by the third day is outside what was measured. (The scanner's precision on this author is 20 to 35 per cent: 4 or 7 of 20 flagged frames were real two-option reductions, on two separate readings. Its rate on human-written prompts is 0.28 to 0.58 per thousand words. The level is not a count of real frames, and the comparison across days assumes the precision held steady across them.) <b>The corrections landed one at a time, and the rate shows no change that clears its own width.</b> A guard"),
+('HEU2-19 ; entry 45',
+ "Shown the corrected voice, the writer could produce it; it could not hear the wrong one in its own draft.",
+ "Shown the corrected voice, the writer could produce it. It could not hear the wrong one in its own draft."),
+('HEU2-15 entry 45 word counts',
+ "<p>Measured on the same six pages, with the same offer and the same form: <b>about 1,805 words of copy before, 542 after.</b> Nothing a client needs was removed.",
+ "<p>On the same six pages, with the same offer and the same form, <b>most of the copy was cut.</b> Nothing a client needs was removed."),
+('HEU2-16/17/18 footer',
+ "<p class=\"foot\">Faults &mdash; a running list of failure modes in eight families, with the number from the day each was found, where there was one. Wayfinder and Bones, Heur&eacute;men, 10 October 2026, revised 22 October 2026. Companion: <b>Guards</b>, the procedures and the only score either document has. This document supersedes the three earlier ones it was assembled from.",
+ "<p class=\"foot\">Faults &mdash; a running list of failure modes grouped in families, with the number from the day each was found, where there was one. Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion: <b>Guards</b>, the procedures and the only score either document has. This document supersedes the earlier ones it was assembled from."),
+]
+
+G = [
+('HEU2-16/17 byline',
+ "Wayfinder and Bones, Heur&eacute;men &mdash; 10 October 2026, revised 22 October 2026.</p>",
+ "Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026.</p>"),
+('HEU2-18 lead',
+ "<b>Every procedure here exists because the corresponding failure happened first</b>, and two of them are recorded as having been removed for making things worse. Both documents replace three earlier ones, because",
+ "<b>Every procedure here exists because the corresponding failure happened first</b>, and the guards we removed for making things worse are recorded in the last part. Both documents replace earlier ones, because"),
+('HEU2-11/18 organising principle',
+ "So the guards are not thirty-eight separate checks &mdash; they are mostly one check, applied at the one moment it can still work, which is <i>before the number is stated</i>.</div>",
+ "So the guards are not a list of separate checks. They are mostly one check, applied at the one moment it can still work, which is <i>before the number is stated</i>.</div>"),
+('HEU2-13 first principle heading',
+ "<h2>The first principle: structure, because discipline was measured and it does not improve</h2>",
+ "<h2>The first principle: structure rather than discipline</h2>"),
+('HEU2-13 first principle text',
+ "<b>That was measured and it does not work.</b> Over three days, <b>96 pushbacks</b>, and the rate of replies flagged for a two-option frame across those days ran <b>0.79, 0.69, 0.88 per thousand words. Flat.</b> No improvement clearing its own width. The corrections landed individually and changed the rate not at all.</p>",
+ "<b>That was measured.</b> Over three days, <b>96 pushbacks</b>, and the rate of replies flagged for a two-option frame across those days ran <b>0.79, 0.69, 0.88 per thousand words</b>, each day within one width of the day before. The third day ran at 1.24 times the rate of the first two pooled, exact 95 per cent interval 0.76 to 1.99, so a fall of more than 24 per cent by the third day is outside what was measured. The corrections landed one at a time, and the rate shows no change that clears its own width.</p>"),
+('HEU2-14 not-ignorance paragraph',
+ "<p>And it is not ignorance. The same scanner reads a two-option frame in <b>57.1 per cent of long replies from fresh instances with no context</b>, against <b>27.5 per cent</b> for the same author after three days of standing correction. The fresh replies were about three times longer and the two groups barely overlap in length, so a length adjustment cannot separate them: we cannot tell whether context reduces it. It never removes it, because <b>reducing three states to two is what compression does</b>, and knowing better does not stop it.</p>",
+ "<p>Context did not remove it. The same scanner reads a two-option frame in <b>57.1 per cent of long replies from fresh sessions with no context (44 of 77)</b>, against <b>27.5 per cent</b> for the same author after three days of standing correction (81 of 295). The middle halves of the two groups do not overlap in length (689 to 1,246 words for the fresh replies, 268 to 428 for the seated ones), so a length adjustment cannot separate them, and we cannot tell whether context reduces the rate.</p>"),
+('HEU2-13 filter not teacher',
+ "Expecting it to improve the underlying rate is how it gets removed for failing at a job it never had &mdash; and the flat rate above is the evidence that it never had it.</p>",
+ "Expecting it to improve the underlying rate is how it gets removed for failing at a job it never had, and the three-day rate above shows no change that clears its own width.</p>"),
+('HEU2-19 apparatus item 1',
+ "the separation of apparatus from signal,",
+ "the separation of setup from signal,"),
+('HEU2-19 ; item 2',
+ "A summary of a method drifts; the drift is invisible",
+ "A summary of a method drifts, and the drift is invisible"),
+('HEU2-19 apparatus item 3',
+ "and what the apparatus could physically have emitted.",
+ "and what the setup could physically have emitted."),
+('HEU2-19 ; item 4 proxies',
+ "were later shown to be measuring proxies; every one of them would have been caught",
+ "were later shown to be measuring proxies. Every one of them would have been caught"),
+('HEU2-19 ; item 4 rule',
+ "thousands of times per million words; the rule was rewritten and",
+ "thousands of times per million words. The rule was rewritten and"),
+('HEU2-19 ; item 4 floor',
+ "A floor is not paperwork; it changes decisions.",
+ "A floor is not paperwork. It changes decisions."),
+('HEU2-19 apparatus item 6 heading',
+ "<h3>6. The apparatus is equalised across every column being compared</h3>",
+ "<h3>6. The setup is equalised across every column being compared</h3>"),
+('HEU2-19 ; item 7',
+ "A shuffle estimates the null; an enumeration <b>is</b> the null,",
+ "A shuffle estimates the null. An enumeration <b>is</b> the null,"),
+('HEU2-19 apparatus item 8',
+ "Nothing-returned is attributed to the apparatus and never to the subject",
+ "Nothing-returned is attributed to the setup and never to the subject"),
+('HEU2-19 ; item 17',
+ "<p>The value; what happens next; confidence from inside the work; and a rating from outside it &mdash;",
+ "<p>The value, what happens next, confidence from inside the work, and a rating from outside it &mdash;"),
+('HEU2-19 ; item 21',
+ "the answer given from memory was sixteen; the log in the same directory said thirty-six.",
+ "the answer given from memory was sixteen. The log in the same directory said thirty-six."),
+('HEU2-10/13 item 22',
+ "<p>One guard's catch rate over three days read as a collapse on the third day at <b>+3.02 widths, resolved</b>, measured per reply &mdash; and as <b>nothing happened, +0.97 widths</b>, measured per thousand words on the same data. The replies had simply got longer. <b>A rate is a ratio",
+ "<p>One guard's rate of replies flagged for a two-option frame over three days read as a rise on the third day measured per reply (22.6% to 39.5%, <b>above the second day at +2.64 widths</b>) and as consistent with no change measured per thousand words on the same data (0.69 to 0.88, <b>+0.97 widths</b>). The third day's replies were 38 per cent longer on average. The width is defined in Faults, entry 24. <b>A rate is a ratio"),
+('HEU2-15 item 25',
+ "An independent reviewer that correctly rejects deliberate faults four times in five <b>inverted both",
+ "An independent reviewer that rejects deliberate faults when it has the evidence <b>inverted both"),
+('HEU2-19 ; item 27',
+ "An equals sign is a claim; it is checked numerically",
+ "An equals sign is a claim. It is checked numerically"),
+('HEU2-19 ; item 34',
+ "price the fix; if it is cheaper than the sentence, do it instead.",
+ "price the fix. If it is cheaper than the sentence, do it instead."),
+('HEU2-19 apparatus item 35 group',
+ "<b>apparatus</b> are declared in a separate group",
+ "<b>setup</b> are declared in a separate group"),
+('HEU2-19 apparatus item 35 share',
+ "<b>14.6 per cent about the apparatus and therefore silent about the subject</b>",
+ "<b>14.6 per cent about the setup and therefore silent about the subject</b>"),
+('HEU2-12 item 36 modes',
+ "<p>The eight family headings &mdash; not the forty-four modes &mdash; are injected",
+ "<p>The eight family headings &mdash; not the individual modes &mdash; are injected"),
+('HEU2-13 item 36 rate',
+ "reading has been measured: 96 pushbacks over three days moved the\nunderlying rate not at all.</p>",
+ "reading has been measured: over three days and 96 pushbacks, the\nunderlying rate showed no change that clears its own width.</p>"),
+('HEU2-19 apparatus item 38',
+ "<i>a separation into\napparatus and signal</i>",
+ "<i>a separation into\nsetup and signal</i>"),
+('HEU2-19 ; item 39 list',
+ "and the like); a page header carrying a second line under its headline; and one content word used twice inside a header.",
+ "and the like), a page header carrying a second line under its headline, and one content word used twice inside a header."),
+('HEU2-19 ; item 39 rule',
+ "<b>state what it is, what is received and on what terms; never why the reader should want it.</b>",
+ "<b>state what it is, what is received and on what terms, and never why the reader should want it.</b>"),
+('HEU2-19 ; item 39 narrowed',
+ "where the repeats are section and step names; it was narrowed to the header",
+ "where the repeats are section and step names. It was narrowed to the header"),
+('HEU2-19 ; score table cell',
+ "<td>above the point bar; borderline against the bar&rsquo;s own interval (2 of 26, exact 95% 0.9&ndash;25.1%; Fisher p 0.06 two-sided)</td>",
+ "<td>above the point bar, and borderline against the bar&rsquo;s own interval (2 of 26, exact 95% 0.9&ndash;25.1%, Fisher p 0.06 two-sided)</td>"),
+('HEU2-19 ; families',
+ "44 the zeroed-gap family and 55 the discarded-half family; 35 carry other tags",
+ "44 the zeroed-gap family and 55 the discarded-half family. Another 35 carry other tags"),
+('HEU2-19 ; caveat',
+ "<b>The 24.3 per cent above counts only the unaided ones; checks and outside referees caught another 6.1 per cent before the reading was stated.</b>",
+ "<b>The 24.3 per cent above counts only the unaided ones. Checks and outside referees caught another 6.1 per cent before the reading was stated.</b>"),
+('HEU2-19 ; not guarded',
+ "The guards are built to catch individual errors; nothing above measures a standing bias",
+ "The guards are built to catch individual errors, and nothing above measures a standing bias"),
+('HEU2-16/17 footer',
+ "Guards &mdash; the procedures, and their score. Wayfinder and Bones, Heur&eacute;men, 10 October 2026, revised 22 October 2026.",
+ "Guards &mdash; the procedures, and their score. Wayfinder and Bones, Heuremen LLC, 10 October 2026, revised 30 October 2026."),
+]
+
+def apply(path, edits, write):
+    s = open(path, encoding='utf-8').read(); bad = 0
+    for tag, old, new in edits:
+        n = s.count(old)
+        if n != 1: print(f'  REFUSED {path.split("/")[-1]} [{tag}]: anchor occurs {n} times'); bad += 1; continue
+        if new != old and new in s: print(f'  REFUSED {path.split("/")[-1]} [{tag}]: replacement already present'); bad += 1; continue
+        s = s.replace(old, new)
+    if bad: print(f'{path}: {bad} refused, NOTHING WRITTEN'); return False
+    if write: open(path, 'w', encoding='utf-8').write(s)
+    print(f'{path}: {len(edits)} edits {"written" if write else "verified (dry run)"}'); return True
+
+write = '--write' in sys.argv
+ok = apply(L + 'FAULTS.html', F, False) and apply(L + 'GUARDS.html', G, False)
+if ok and write:
+    apply(L + 'FAULTS.html', F, True); apply(L + 'GUARDS.html', G, True)
+# Second pass (run once, same day): Faults entry 32 semicolon missed in the first list.
+#   '<b>The third rung is a time; the first two are counts.</b>' -> '<b>The third rung is a time, and the first two are counts.</b>'
+# Third pass (run once): Faults entry 20, middle-half wording made explicit:
+#   'the cold replies ran 689 to 1,246 words (median 1,052) and the seated ones 268 to 428 (median 342), and no seated reply reached the cold median.'
+#   -> '689 to 1,246 words for the cold replies (median 1,052) and 268 to 428 for the seated ones (median 342). No seated reply reached the cold median.'
+# Fourth pass (run once), Guards wording after proofreading the diff:
+#   'filter, not a teacher' paragraph: trailing clause ', and the three-day rate above shows no change that clears its own width' dropped (repeated the line above).
+#   'What is not guarded': 'errors, and nothing above measures' -> 'errors. Nothing above measures' (double 'and').
+#   item 25: 'rejects deliberate faults when it has the evidence' -> 'rejects deliberate faults with the evidence in hand'.
+#   first-principle second paragraph: 'Context did not remove it.' -> 'Context did not remove it either.'
+# Fifth pass (run once), both files, P10 post-hoc label on the pooled comparison:
+#   'The third day ran at 1.24 times the rate of the first two pooled, exact 95 per cent interval 0.76 to 1.99,'
+#   -> 'Against the first two days pooled, a comparison chosen after the data, the third day ran at 1.24 times the rate, exact 95 per cent interval 0.76 to 1.99,'

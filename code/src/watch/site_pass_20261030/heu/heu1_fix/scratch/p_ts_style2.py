@@ -1,0 +1,43 @@
+PAIRS = [
+("""(per-chip means of three reads, seven processors, 4 to 6 October; individual reads 1.2&ndash;1.8; the conversion assumes single-exponential decay, which these qubits do not follow, so it is approximate).""",
+ """(per-chip means of three reads, seven processors, 4 to 6 October, individual reads 1.2&ndash;1.8). The conversion assumes single-exponential decay, which these qubits do not follow, so it is approximate."""),
+("""ibm_fez, 11 October, three jobs (of 14 that day; the other 11 are a three-box probe-strength sweep), N = 1&ndash;128 readouts of a qubit prepared in 1: population falls""",
+ """On ibm_fez on 11 October, in three jobs (of 14 that day, the other 11 being a three-box probe-strength sweep), with N = 1&ndash;128 readouts of a qubit prepared in 1, the population falls"""),
+("""(&chi;&sup2;/dof 2.22, p = 0.038). <a href="/experiments/2026-10-04-three-positions/verify_output.text">verify.py output</a> This ratio mixes""",
+ """(&chi;&sup2;/dof 2.22, p = 0.038). This ratio mixes"""),
+("""This fitted-rate reading is superseded by the equal-idle design. <a href="/experiments/2026-10-04-three-positions/">verify.py</a></p>""",
+ """This fitted-rate reading is superseded by the equal-idle design. <a href="/experiments/2026-10-04-three-positions/">verify.py</a> &middot; <a href="/experiments/2026-10-04-three-positions/verify_output.text">output</a></p>"""),
+# 5
+("""are kicked by 0.81, 1.77 and 1.30&deg; per readout (fez, kingston, marrakesh; 15 qubits, every interval above 0); at five or more couplings (92 qubits) the kick is consistent with zero on all three (+0.0039 [&minus;0.029, +0.037] combined; that pool is dominated""",
+ """are kicked by 0.81, 1.77 and 1.30&deg; per readout (fez, kingston, marrakesh, over 15 qubits, every interval above 0). At five or more couplings (92 qubits) the kick is consistent with zero on all three (+0.0039 [&minus;0.029, +0.037] combined). That pool is dominated"""),
+("""at the false-reading floor). The reach run (three packed layouts)""",
+ """at the false-reading floor. The reach run (three packed layouts)"""),
+("""about a tenth of the kick next to a measured qubit; fez +0.19, kingston +0.13, marrakesh +0.40) and at 3 couplings on fez and marrakesh singly; kingston at 3 couplings reads""",
+ """about a tenth of the kick next to a measured qubit, with fez +0.19, kingston +0.13, marrakesh +0.40) and at 3 couplings on fez and marrakesh singly. Kingston at 3 couplings reads"""),
+("""both consistent with zero. 5 couplings is resolved combined (+0.055 [+0.002, +0.108]) and by no processor alone; 6 couplings and beyond are consistent""",
+ """both consistent with zero. At 5 couplings the kick is resolved combined and by no processor alone, as 5 couplings is resolved combined (+0.055 [+0.002, +0.108]) and by no processor alone, while 6 couplings and beyond are consistent"""),
+("""The committed edge rule names no combined edge; by processor the unbroken edge""",
+ """The committed edge rule names no combined edge. By processor the unbroken edge"""),
+# 6
+("""&minus;0.0002279 [&minus;0.0003419, &minus;0.0001139]; the train does not see""",
+ """&minus;0.0002279 [&minus;0.0003419, &minus;0.0001139]. The train does not see"""),
+("""so it is not a gate cost there; no extra-gate test exists on boston or pittsburgh.""",
+ """so it is not a gate cost there. No extra-gate test exists on boston or pittsburgh."""),
+# 7
+("""(26 jobs, 4 to 7 October); the test cannot separate""",
+ """(26 jobs, 4 to 7 October). The test cannot separate"""),
+("""(five of them under two widths); at 600&thinsp;&micro;s three jobs are at or below zero""",
+ """(five of them under two widths), while at 600&thinsp;&micro;s three jobs are at or below zero"""),
+("""11.5&thinsp;&micro;s between copies inside one job; compared like with like, the range""",
+ """11.5&thinsp;&micro;s between copies inside one job. Compared like with like, the range"""),
+("""(marrakesh job 301: 10.4 against 8.9&thinsp;&micro;s); the simulation takes""",
+ """(marrakesh job 301: 10.4 against 8.9&thinsp;&micro;s). The simulation takes"""),
+# 8
+("""(0.5&ndash;2&thinsp;&micro;s fit windows; shot noise only; the dates differ by 16.3 &plusmn; 2.1&thinsp;&deg;/&micro;s). The pair is the same on both dates; between them the pulse amplitude""",
+ """(0.5&ndash;2&thinsp;&micro;s fit windows, shot noise only), and the dates differ by 16.3 &plusmn; 2.1&thinsp;&deg;/&micro;s. The pair is the same on both dates. Between them the pulse amplitude"""),
+("""From 24 September data, not used in the paper: temporal and spatial correlators follow cos&thinsp;&theta;; the three-box weak measurement gives a negative value for the negative box (see the <a href="/experiments/2026-10-22-three-box-run/">three-box page</a>); the earlier figures were""",
+ """From 24 September data, not used in the paper: temporal and spatial correlators follow cos&thinsp;&theta;, and the three-box weak measurement gives a negative value for the negative box (see the <a href="/experiments/2026-10-22-three-box-run/">three-box page</a>). The earlier figures were"""),
+# closing
+("""were hashed locally but not externally timestamped; the readout-instruction run&rsquo;s pre-registered split of the kick into a per-readout and a per-microsecond part is not reported, because its interval resamples the two instructions independently, an error found after the data; the later runs&rsquo; plans were pushed""",
+ """were hashed locally but not externally timestamped. The readout-instruction run&rsquo;s pre-registered split of the kick into a per-readout and a per-microsecond part is not reported, because its interval resamples the two instructions independently, an error found after the data. The later runs&rsquo; plans were pushed"""),
+]

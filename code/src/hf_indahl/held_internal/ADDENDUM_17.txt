@@ -1,0 +1,12 @@
+## Addendum 17 (14:06Z 7 Nov; Sage's 14:05Z conditions on A16; before any round-2 eval row exists). Pins every word that had no number.
+U1. "The 4" seeds are s61, s62, s63, s64. s61's r15/r16 rows are already seen, but its gap is part of the claim and enters every test.
+U2. T1 counting: first apply (a) per seed. Let K = the seeds that clear (a). Then compute (b) over K only: min over K of gap_s > max over pairs in K of
+    |trained_s - trained_t|. 4 of 4 clear (a) and (b) holds over all 4: STANDS ACROSS SEEDS. Exactly 3 clear (a) and (b) holds over those 3:
+    "seed-dependent". Any other case, including (b) failing over K: CANNOT_TELL across seeds.
+U3. "Mostly" (T3) = more than half of that arm's scored rows (items x 3 samples) in that class: OK > 50% of rows, or FAULT > 50% of rows.
+    Always-max signature for an arm: is_max OK > 50% AND is_min FAULT-via-max > 50% AND is_median FAULT-via-max > 50%.
+    (FAULT-via-max = the reply's last number within 0.0015 of the item's max; counted from the stored text by the same rule as score.py line 16.)
+U4. "Base gets is_max right" (T4) = base OK on >= 50% of is_max rows. Then the is_max arm is called uninformative about training.
+U5. UNREAD: if UNREAD > 50% of an arm's rows on is_min or is_median, that arm's habit check reads CAN'T TELL, never "no habit".
+U6. From A17 on, round2_queue3.sh reads the stamps it waits on from round2_gates.txt at every check (A14, A15, A16, A17, P4M), so a later addendum
+    adds a line there instead of restarting the queue. A queue restart, if ever needed again, is logged in POST_READ_CHANGES.md.

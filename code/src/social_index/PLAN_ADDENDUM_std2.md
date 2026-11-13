@@ -1,0 +1,9 @@
+# SOCIAL: addendum for Faults and Guards 2.0, 12 November 2026
+
+This addendum covers the assembled SOCIAL page. The four sections, adspend, DSA, TikTok and Bluesky, each carry their own PLAN_ADDENDUM_std2.md in their folders, and those hold the outcome rules, the sizes that matter, the bands, the edge conventions and the maps of each desk's own causes of CANNOT_TELL. The page is assembled from the sections as they are and prints no figure of its own, so the assembler has no rule to set. It changes the way it prints outcomes.
+
+- Every row reads above, below, consistent or cannot tell. A cannot tell carries one closed reason, STRADDLES_EDGE, TOO_WIDE_TO_RESOLVE or NO_INTERVAL_FORMABLE. The reason sits beside the word in each section.
+- NOTHING_RETURNED is the status of a failed read of a source. It is never an outcome. The outcomes table no longer has a Nothing returned column. A row where one side holds no figure reads cannot tell with the reason NO_INTERVAL_FORMABLE and counts in the cannot tell column and in its denominator.
+- Under the table the page prints the REQ-13 line of each section: the NOTHING_RETURNED count, then the CANNOT_TELL share split by reason. Every number in those lines is read from the section's summary by a recorded path.
+- The headline is unchanged in its rule. It reads the rows of Google's political ad spend that read above, below or consistent on the robust rule, with an outcome that holds under both timing bands, does not turn on a rule defined after the data and carries no note. The REQ-13 line of the cycle rows sits beside it.
+- Outcomes recorded earlier stand under the rules they named. No above, below or consistent outcome changed. The rows that read Nothing returned, 24 in adspend, 27 in DSA and 498 in TikTok, read cannot tell with the reason NO_INTERVAL_FORMABLE.

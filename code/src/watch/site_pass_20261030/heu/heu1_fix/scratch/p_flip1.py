@@ -1,0 +1,4 @@
+PAIRS = [
+("""<li><b>Cause, found in the committed plan for run 2:</b> the floor was built from heralded shots (first read verified 0) while the idle arm used all shots, so thermal population sat in one and not the other. The readout arm of the decision reading had the same asymmetry.</li>""",
+ """<li><b>One cause, found in the committed plan for run 2:</b> the floor was built from heralded shots (first read verified 0) while the idle arm used all shots, so thermal population sat in one and not the other. The readout arm of the decision reading had the same asymmetry. Run 2 builds the floor like for like, and kingston&rsquo;s known-good check still fails there (+0.1541 and +0.1835 percentage points above the floor at N = 0 and 4), so this asymmetry accounts for part of run 1&rsquo;s failure at most.</li>"""),
+]

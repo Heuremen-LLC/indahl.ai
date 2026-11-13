@@ -1,0 +1,19 @@
+# FALCON_TRAIN_PLAN.md settings, fixed before any run: rank 16, learning rate 1e-4, 600 steps, 400 items per family.
+model: models/Falcon3-3B-Instruct
+train: true
+fine_tune_type: lora
+num_layers: 16
+batch_size: 4
+iters: 600
+learning_rate: 1.0e-4
+max_seq_length: 768
+mask_prompt: true
+grad_checkpoint: true
+seed: 20280007
+steps_per_report: 10
+steps_per_eval: 100
+save_every: 200
+lora_parameters:
+  rank: 16
+  scale: 20.0
+  dropout: 0.0

@@ -1,0 +1,153 @@
+#!/usr/bin/env python3
+"""ailuminate_tick.py: AILUMINATE per PLAN.md. Reads the AILuminate Safety results page and the Detailed Results PDF of each system, keeps every read."""
+import os, sys, re, json, time, html, hashlib, subprocess, urllib.request, urllib.error, statistics, random, io, datetime
+import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
+_PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
+if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec
+def _kv_put(cmd, **kw):
+    if _PUBLISH: return _pg_sp.run(cmd, **kw)
+    print('publish guard: %s not put to the site KV (run with --publish, or from the tick bus)' % cmd[5], file=_pg_sys.stderr)
+    return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
+H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data/raw', exist_ok=True)
+import heuremen_kit as K
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('ailuminate: plan not committed'); sys.exit(0)
+import pypdf
+PAGE = 'https://mlcommons.org/ailuminate/safety/results/'; FOLDER = '1hRjh2gALmmlpNMIDuoASBKMHUO7V0T95'
+CATS = ['Violent Crimes', 'Sex-Related Crimes', 'Child Sexual Exploitation', 'Suicide and Self-Harm', 'Indiscriminate Weapons', 'Intellectual Property', 'Defamation', 'Non-Violent Crimes', 'Hate', 'Privacy', 'Specialized Advice', 'Sexual Content']
+UA = {'User-Agent': 'heuremen-ailuminate/0.1 (+https://indahl.ai/ailuminate)'}; W = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door')
+def fetch(u, n=3, to=60):
+    for i in range(n):
+        try: return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=to).read()
+        except Exception: time.sleep(3 * (i + 1))
+def ordinal(s):
+    m = re.fullmatch(r'\s*(\d+)(st|nd|rd|th)\s*', s)
+    if not m: return None
+    n = int(m.group(1)); suf = 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+    return n if suf == m.group(2) else None
+def ord_str(n): return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
+def parse_page(htmltext):
+    t = re.sub(r'<script.*?</script>|<style.*?</style>', '', htmltext, flags=re.S); t = re.sub(r'<[^>]+>', '\n', t); t = html.unescape(re.sub(r'\n\s*\n+', '\n', t))
+    g = t.find('Guardrail systems'); out = {}
+    for m in re.finditer(r'\n([^\n]+)\nReleased ([A-Z][a-z]+ \d{4})\n(\d+(?:st|nd|rd|th)) percentile', t):
+        out[m.group(1).strip()] = dict(type='Guardrail system' if g >= 0 and m.start() > g else 'Open-weight model', release=m.group(2), overall=ordinal(m.group(3)))
+    return out
+def parse_pdf(text):
+    """-> dict(name, release, type, overall, cats) or None"""
+    nm = re.search(r'ENGLISH \(US\)\s*\n(.+?)\s*\nOfficial result', text); rel = re.search(r'RELEASED\s+([A-Z][a-z]+ \d{4})', text); ty = re.search(r'SYSTEM TYPE\s+(.+)', text)
+    ov = re.search(r'All Hazard Categories\s+(\d+(?:st|nd|rd|th)) percentile', text); cats = {}
+    for c in CATS:
+        m = re.search(re.escape(c) + r'\s+(\d+(?:st|nd|rd|th)) percentile', text)
+        if m and ordinal(m.group(1)) is not None: cats[c] = ordinal(m.group(1))
+    if not (nm and rel and ov and ordinal(ov.group(1)) is not None) or len(cats) != 12: return None
+    return dict(name=nm.group(1).strip(), release=rel.group(1), type=(ty.group(1).strip() if ty else None), overall=ordinal(ov.group(1)), cats=cats)
+def pdf_text(b):
+    r = pypdf.PdfReader(io.BytesIO(b)); return '\n'.join((p.extract_text() or '') for p in r.pages)
+CAND = 'https://mlcommons.org/candela/candela-getting-started/'
+CAND_STMTS = [('Holdback set', r'Official tests are run with an exclusive holdback set of prompts\.'), ('Run time', r"The full test run takes about an hour, depending on your system.s speed\."), ('Annotated results', r'These may not be publicly referenced\.'), ('Official results', r'These are the only ones that can be cited publicly\.'), ('Signup', r'Automated signup and billing[^.]*\.[^.]*\.')]
+def parse_candela(htmltext):
+    """-> (prices {label: (member, nonmember)}, statements {name: sentence or None})"""
+    t = re.sub(r'<script.*?</script>|<style.*?</style>', '', htmltext, flags=re.S); prices = {}; grp = None
+    for tr in re.findall(r'<tr[^>]*>(.*?)</tr>', t, flags=re.S):
+        g = re.search(r'class="cdl-gname">(.*?)<', tr)
+        if g: grp = html.unescape(g.group(1)).strip(); continue
+        cells = [html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', c))).strip() for c in re.findall(r'<td[^>]*>(.*?)</td>', tr, flags=re.S)]
+        if grp and len(cells) == 4: prices['%s, %s' % (grp, cells[0])] = (cells[2].replace('Free', '').strip(), cells[3])
+    txt = html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', t)))
+    return prices, {n: (re.search(rx, txt).group(0).strip() if re.search(rx, txt) else None) for n, rx in CAND_STMTS}
+# ---- known-good
+def gate():
+    ok = all(ordinal(a) == v for a, v in (('1st', 1), ('2nd', 2), ('3rd', 3), ('11th', 11), ('12th', 12), ('13th', 13), ('21st', 21), ('100th', 100)))
+    ok &= ordinal('11st') is None and ordinal('2th') is None
+    rows = ''.join('%s %s percentile\n' % (c, ord_str(50 + i)) for i, c in enumerate(CATS))
+    good = 'AILUMINATE ™ SAFETY 1.2.1 · OFFICIAL DETAILED RESULTS · ENGLISH (US)  \nTest System X\nOfficial result · published October 29, 2026\nSYSTEM  Test System X RELEASED  May 2026\nSYSTEM TYPE  Open-weight model\nAll Hazard Categories 77th percentile\n' + rows
+    p = parse_pdf(good); ok &= bool(p and p['overall'] == 77 and p['cats']['Hate'] == 58 and p['name'] == 'Test System X' and p['release'] == 'May 2026')
+    ok &= parse_pdf(good.replace('Hate 58th percentile\n', '')) is None
+    pg = parse_page('<h2>Open-weight models</h2><p>Name</p>\n<p>Alpha</p>\n<p>Released June 2025</p>\n<p>86th percentile</p><h2>Guardrail systems</h2><p>Beta</p>\n<p>Released May 2024</p>\n<p>100th percentile</p>')
+    ok &= pg == {'Alpha': dict(type='Open-weight model', release='June 2025', overall=86), 'Beta': dict(type='Guardrail system', release='May 2024', overall=100)}
+    tb = '<tr class="cdl-group"><td colspan="4"><span class="cdl-gname">Safety Benchmark</span></td></tr>' + ''.join('<tr><td class="cdl-tier">T%d</td><td class="cdl-what">x</td><td class="cdl-price cdl-member">$%d</td><td class="cdl-price">$%d</td></tr>' % (i, i, i + 1) for i in range(9))
+    pr_, st_ = parse_candela('<table>' + tb + '</table>'); ok &= len(pr_) == 9 and all(len(v) == 2 for v in pr_.values()) and parse_candela('<p>no table</p>')[0] == {}
+    print('ailuminate: gate', 'passed' if ok else 'FAILED', flush=True); return bool(ok)
+if not gate(): sys.exit(1)
+# ---- read
+now = time.time(); stamp = time.strftime('%Y%m%dT%H%M', time.gmtime(now)); rawd = 'data/raw/' + stamp; os.makedirs(rawd, exist_ok=True)
+pb = fetch(PAGE)
+if not pb: print('ailuminate: results page not read'); sys.exit(1)
+open(rawd + '/page.html', 'wb').write(pb); hashes = {'page.html': hashlib.sha256(pb).hexdigest()}
+page = parse_page(pb.decode('utf8', 'replace')); print('ailuminate: page systems', len(page), flush=True)
+fb = fetch('https://drive.google.com/embeddedfolderview?id=' + FOLDER)
+items = re.findall(r'<a href="https://drive\.google\.com/file/d/([^/]+)/view[^"]*"[^>]*>.*?<div class="flip-entry-title">(.*?)</div>', (fb or b'').decode('utf8', 'replace'), flags=re.S)
+systems = {}; unread = []; fids = {}   # 30 Oct (site pass H-19): the Drive file of each system's Detailed Results report, so each table row can link its report
+for fid, title in items:
+    title = html.unescape(title); m = re.match(r'\d+ - (.+?) - AILuminate Safety', title)
+    name = m.group(1) if m else title; b = fetch('https://drive.google.com/uc?export=download&id=' + fid, to=120); time.sleep(1)
+    if not b or b[:4] != b'%PDF': unread.append(name); continue
+    open(rawd + '/%s.pdf' % re.sub(r'[^A-Za-z0-9]+', '_', name), 'wb').write(b); hashes[name] = hashlib.sha256(b).hexdigest()
+    try: p = parse_pdf(pdf_text(b))
+    except Exception: p = None
+    if not p: unread.append(name); continue
+    systems[name] = p; fids[name] = fid
+print('ailuminate: reports parsed', len(systems), 'unread', len(unread), flush=True)
+cb = fetch(CAND); cand = None
+if cb:
+    open(rawd + '/candela.html', 'wb').write(cb); cp, cs = parse_candela(cb.decode('utf8', 'replace'))
+    if cp and any(cs.values()):
+        cand = dict(t=now, stamp=stamp, prices={k: list(v) for k, v in cp.items()}, statements=cs); open('data/candela.jsonl', 'a').write(json.dumps(cand) + '\n')
+creads = [json.loads(l) for l in open('data/candela.jsonl')] if os.path.exists('data/candela.jsonl') else []
+cand_out = None
+if creads:
+    f0, cur = creads[0], creads[-1]; changes = []
+    for k in sorted(set(f0['prices']) | set(cur['prices'])):
+        a, b = f0['prices'].get(k), cur['prices'].get(k)
+        if a != b: changes.append(dict(item='Price: ' + k, first=str(a), now=str(b)))
+    for k in f0['statements']:
+        if f0['statements'][k] != cur['statements'].get(k): changes.append(dict(item='Statement: ' + k, first=str(f0['statements'][k]), now=str(cur['statements'].get(k))))
+    cand_out = dict(reads=len(creads), first_read=f0['stamp'], changed=changes,
+                    prices={k: dict(member=v[0], nonmember=v[1]) for k, v in cur['prices'].items()}, statements={k: (v or 'not found') for k, v in cur['statements'].items()})
+rows = []
+for name in sorted(set(page) | set(systems)):
+    pg, pd = page.get(name), systems.get(name)
+    if not pg or not pd: rows.append(dict(name=name, cls='NOTHING_RETURNED', why='on the page only' if pg and not pd else 'report only')); continue
+    dis = [k for k, a, b in (('overall', pg['overall'], pd['overall']), ('release', pg['release'], pd['release']), ('type', pg['type'], pd['type'])) if a != b]
+    cats = pd['cats']; mean = sum(cats.values()) / 12
+    rows.append(dict(name=name, cls='DISAGREE' if dis else 'AGREE', differs=dis, type=pd['type'], release=pd['release'], overall_page=pg['overall'], overall_pdf=pd['overall'], mean_cats=round(mean, 1), diff=round(pd['overall'] - mean, 1), min_cat=min(cats.values()), max_cat=max(cats.values()), cats=cats))
+open('data/reads.jsonl', 'a').write(json.dumps(dict(t=now, stamp=stamp, hashes=hashes, systems={r['name']: dict(release=r.get('release'), overall=r.get('overall_pdf'), cats=r.get('cats')) for r in rows if r['cls'] != 'NOTHING_RETURNED'}, unread=unread)) + '\n')
+reads = [json.loads(l) for l in open('data/reads.jsonl')]
+def wil(k, n):   # 12 Nov 2026: the Wilson interval with its exact ends. K.wilson(0, n) returns 6.9e-18 for the lower end, which misses the null at zero in K.read, so zero events give exactly 0 and all events give exactly 1.
+    lo, hi = K.wilson(k, n); return (0.0 if k == 0 else lo, 1.0 if k == n else hi)
+cmp = [r for r in rows if r['cls'] in ('AGREE', 'DISAGREE')]; nd = sum(1 for r in cmp if r['cls'] == 'DISAGREE'); lo, hi = wil(nd, len(cmp)) if cmp else (0, 1)
+# 12 Nov 2026, PLAN_ADDENDUM_std2.md: Faults and Guards 2.0. Size that matters 0.05, null 0, band [0, 0.15), edge '[)'. A test that cannot be computed yet is CANNOT_TELL NO_INTERVAL_FORMABLE, never NOTHING_RETURNED.
+def oc(lo, hi): return K.read(lo, hi, band=(0.0, 0.15), matters=0.05, edge='[)', null=0.0)
+def share_read(k, n, lo, hi):
+    if not n: o, why = K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE
+    else: o, why = oc(lo, hi)
+    return o, why
+failed_reads = [r['name'] for r in rows if r['cls'] == 'NOTHING_RETURNED']   # on the page only, or report only: failed reads, outside numerator and denominator
+_oA, _wA = share_read(nd, len(cmp), lo, hi)
+A = dict(of=len(cmp), n=nd, share=round(nd / len(cmp), 4) if cmp else None, share_lo=round(lo, 4), share_hi=round(hi, 4), outcome=_oA, reason=_wA, req13=K.req13([(_oA, _wA)], nothing_returned=failed_reads), failed_reads=failed_reads)
+first = {}
+for rd in reads:
+    for n, v in rd['systems'].items(): first.setdefault(n, (v, rd['stamp'], 0))
+count = {}
+for rd in reads:
+    for n in rd['systems']: count[n] = count.get(n, 0) + 1
+chg = []; seen2 = []
+for n, v in reads[-1]['systems'].items():
+    if count.get(n, 0) >= 2:
+        seen2.append(n)
+        if v != first[n][0]: chg.append(n)
+lo2, hi2 = wil(len(chg), len(seen2)) if seen2 else (0, 1)
+_oB, _wB = share_read(len(chg), len(seen2), lo2, hi2)
+B = dict(of=len(seen2), n=len(chg), share=round(len(chg) / len(seen2), 4) if seen2 else None, share_lo=round(lo2, 4), share_hi=round(hi2, 4), outcome=_oB, reason=_wB, req13=K.req13([(_oB, _wB)], nothing_returned=failed_reads), reads=len(reads), first_read=reads[0]['stamp'], changed=sorted(chg))
+rs = sorted([r for r in rows if r['cls'] == 'DISAGREE'] + [], key=lambda r: r['name'])
+samp = random.Random(7).sample([r['name'] for r in cmp], min(10, len(cmp))) if cmp else []
+json.dump(dict(sample_seed7=samp, disagree=[r['name'] for r in rs], unread=unread), open('data/hand_check.json', 'w'), indent=1)
+hc = json.load(open('data/hand_checked.json')) if os.path.exists('data/hand_checked.json') else {}
+out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), gate='passed', systems_on_page=len(page), reports_parsed=len(systems), reports_not_read=len(unread), reads=len(reads), headline=A, headline_n=A['n'], headline_of=A['of'],
+           stability=B, awaiting_hand_check=len([r for r in rs if r['name'] not in hc]),
+           table={r['name']: dict(type=r['type'], release=r['release'], overall=r['overall_pdf'], mean_cats=r['mean_cats'], diff=r['diff'], lowest=r['min_cat'], highest=r['max_cat'], agree=r['cls'], report=('https://drive.google.com/file/d/%s/view' % fids[r['name']]) if r['name'] in fids else None) for r in cmp},
+           candela=cand_out, candela_changed=(len(cand_out['changed']) if cand_out else None), candela_reads=(cand_out['reads'] if cand_out else 0),
+           disagree_list=[dict(system=r['name'], differs=', '.join(r['differs']), note=hc.get(r['name'])) for r in rs if r['name'] in hc])
+json.dump(out, open('summary_ailuminate.json', 'w'), indent=1)
+env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
+pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'ailuminate_live', '--path', os.path.join(H, 'summary_ailuminate.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
+print('ailuminate: A', A, '| B', {k: B[k] for k in ('of', 'n', 'outcome', 'reads')}, 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

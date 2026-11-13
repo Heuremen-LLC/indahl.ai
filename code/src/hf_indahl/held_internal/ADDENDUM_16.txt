@@ -1,0 +1,16 @@
+## Addendum 16 (14:01Z 7 Nov; Sage's conditions of ~13:59Z on round 2; before any round-2 eval row exists). Supersedes A15 R3 where they differ.
+T1. Seed rule, in numbers. Per seed s in {61,62,63,64}: gap_s = base mean fault rate - trained_s mean fault rate (scored-only ruler, 3 samples each).
+    STANDS ACROSS SEEDS only if (a) every gap_s > the base rerun floor, and (b) min_s gap_s > max over seed pairs |trained_s - trained_t| (the largest
+    seed-to-seed difference). The same two tests are printed on the all-items ruler beside it. If exactly 3 of 4 seeds pass (a): "seed-dependent".
+    If fewer: CANNOT_TELL across seeds. In every case the claim stays the round-1 narrowed claim; no seed result widens it.
+T2. Headline = P1 OK-flip tables per seed (sample 0, base vs trained_s: up / down / exact p). Both fault-rate rulers sit beside them, never above.
+T3. P4M readings, fixed now. Per arm (base, s61..s64) and per kind (original P4, is_max, is_min, is_median): counts of OK / FAULT / UNREAD, 3 samples.
+    "Always-max habit" signature = is_max mostly OK while is_min and is_median are mostly FAULT through the max-answer rule. is_min / is_median are
+    a habit check, not a rate: counts only, no percentage. A pass means the model read the question in this template, never "the model checks".
+T4. If base already answers is_max correctly, the is_max arm is uninformative about training; the report says so, from base's counts.
+T5. Freeze of instruments: no change to eval items, score.py, eval_round1.py, eval_p4m.py or read_eval.py after any round-2 seed row is read. Seed 61's
+    r15/r16 results already exist and count as seen; seeds 62-64 are the fresh test.
+T6. Known scorer behaviour, noted before data: P4M score.py reads the LAST number, so "0.686 (n=7)" scores UNREAD, not OK or FAULT.
+T7. Median control (Sage's ask) lives in p4m_median_control.py, outside score.py, so score.py's stamped hash is unchanged.
+T8. The first eval waits until A14, A15, A16 and SHA256SUMS_P4M are all in a Bitcoin block. The queue is restarted to check A16 too; seed 64 training
+    continues untouched. Seed 61's 1.07e9 "Trained Tokens" stays labelled a counter glitch (seed 62 read 67,129 at iter 240).

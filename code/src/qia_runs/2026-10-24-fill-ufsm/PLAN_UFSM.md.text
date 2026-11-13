@@ -1,0 +1,51 @@
+# PLAN -- free run for arXiv 2502.01824v3 (Victor P. Brasil, Diego S. Starke, Jonas Maziero; Federal University of Santa Maria, Brazil), ibm_kingston
+Written and committed BEFORE any job (24 Oct 2026). Book-side free run; nothing published or sent before Monday; no contact.
+Desk audit: audits/k2025_ufsm_2502.01824/KNOWN_GOOD.md. Their Fig 8: the ideal-outcome deficit grows with each measure+reset "blocker":
+their counts give (a) 1.245 pp, (b) 4.673 pp, extra 3.428 pp. The paper says "reasonable agreement" without a width; their Fig 8 jobs ran on
+ibm_kingston (undated; the only calibration snapshot is 2025-09-15, for Fig 7). Today's kingston is a re-run of THEIR experiment, not a
+calibration of their run's data. Part 0 kingston: sx 1.306/1.366/1.344, CZ 1.302/1.311/1.345 delivered/stated, readout CONSISTENT.
+Circuits: their Fig 8(a) and 8(b), rebuilt from their published construction (ufsm.py docstring), ideal checked in simulation
+((a) 01/10 0.500/0.500; (b) 001/100 0.501/0.499). Plus a 4-state readout bracket on the same two qubits, so the readout share is measured.
+Two jobs (copies), ABBA across them: copy 1 = bracket, a b b a; copy 2 = b a a b, bracket. 8192 shots per circuit (theirs). Estimate 39 s
+(cap 70). Pair by the rule in fire_ufsm.py, fixed now (dry run today: [81, 82]); transpile level 3 (theirs), seed 7, no twirling, no DD.
+KNOWN-GOOD: their released Fig 8 counts (notebook output text, 5 jobs x 8192 per configuration, ibm_kingston) through OUR committed deficit() must give (a) 1.24 pp and (b) 4.67 pp within 0.01 pp (known_good_ufsm.text: PASS, 1.245 / 4.673, extra 3.428).
+READINGS (four outcomes, 99 % band, bootstrap over shots of every circuit incl. the bracket, 400 resamples):
+  R1 raw extra deficit D = deficit(b) - deficit(a) today minus their 3.428 pp (their pooled binomial sd 0.12 pp): ABOVE / BELOW / CONSISTENT (bound).
+  R2 extra deficit beyond the readout it adds: Dc = D - [ro(b) - ro(a)], ro from our bracket (independent per-qubit flips; the mid-circuit
+     read of mode B is given its terminal flips -- an approximation, stated): ABOVE = measure+reset costs more than its readout;
+     CONSISTENT = the extra readout explains it (printed as a bound); BELOW = the bracket over-corrects.
+  CANNOT_TELL on R1 and R2 if the 4 same-circuit instances of (a) or (b) spread beyond binomial (chi-square p < 0.005).
+  Descriptive: the (a) 01-minus-10 asymmetry (theirs +1.86 pp) and the flips; each copy alone (copy gap, not scored).
+SYNTHETIC (synth_ufsm.py, 200 draws/world, synth_results_ufsm.text; first version kept as synth_results_ufsm_FIRST_attempt_gate_too_loose.text --
+its variance-ratio gate fired 13 % in NULL and its THEIRS world was mis-planted; both fixed before any job): NULL R2 CONSISTENT 99.0 %
+(false 1.0 %); EXTRA (+2 pp beyond readout) ABOVE 99.5 %; OVERCORR (mid read 0.4x terminal flips) BELOW 93.5 %; THEIRS (raw 3.428 pp) R1
+CONSISTENT 98.5 %; VAR (per-circuit loss sd 0.6 pp) CANNOT_TELL 91.0 %.
+What it can say: whether today's kingston reproduces their extra deficit, and whether that extra deficit is more than the extra readout.
+What it cannot: name the cause beyond readout (reset error, the measurement pulse, idle during it) -- check 25; their Fig 11.
+
+## /q (run on this plan before firing)
+FIRED:
+- #9 (instruments differ in more than the named variable): (b) adds a measurement AND a reset AND their duration; Dc can only say "beyond
+  the readout's share", not which of the rest -> stated in R2 and "cannot".
+- #10/#12 (same shots, selection): no post-selection anywhere; all shots kept in both configurations.
+- #13 (sequential vs simultaneous): (a) and (b) interleaved inside each job, ABBA across jobs; the copy gap is reported.
+- #14/#18: known-good on their real-hardware counts; pass rule fixed.
+- #15/#16: every alternative planted incl. over-correction and instance variance; NULL false rate measured (1.0 %).
+- #4 (a model built from numbers is not the number): ro() is our model from our bracket; labelled as the readout share, not IBM's figure.
+- #3: no stated IBM figure is compared; records saved before each job anyway.
+HELD: #1, #2, #5-#7, #8, #11, #17 (keys checked in simulation: c2 c1 c0 order), #19-#24, #26-#37.
+
+## ADDENDUM 1 (24 Oct 2026, DEFINED AFTER run 1's data, committed before its jobs) -- the DD question
+Run 1 (DD OFF) gave (b) deficit 52 pp vs their 4.67 pp; the transpiled circuit is ideal in noiseless simulation. Their Fig 8 DD setting is
+unknown (option cell commented out; Fig 7 used XY4). Follow-up: the SAME transpiled circuits (run 1 copy 1, from circuits_ufsm.qpy), same
+pair, two jobs back to back: J1 DD ON (XY4), J2 DD OFF. ~38 s. Readings (fire_ufsm_dd.py / analyze_ufsm_dd.py):
+  R2' = Dc with DD ON, same rule as R2.   R4 = deficit(b) DD ON minus DD OFF (J1 vs J2), 99 % bootstrap band; the drift scale between
+  back-to-back jobs is run 1's copy gap (D 49.95 vs 49.45 pp, 26 s apart).
+  If R4 is BELOW (DD restores the interference), their 4.67 pp is consistent with a DD-on run and the 52 pp is a DD-off effect on today's
+  pair; if CONSISTENT, DD does not explain it (date/pair/calibration remain). Labelled defined after the data in every result line.
+
+ADDENDUM 2 (24 Oct 2026, after run 1 and addendum 1 results, BEFORE its job; labelled defined after the data): their Fig 8 notebook has DD
+commented out (DD off) and their layout is not recorded (transpiled against a simulator); IBM's 13 Sep 2025 kingston record is not better
+than today's (median T1 264 vs 241 us, T2 123 vs 149 us, readout 0.87 vs 0.91 %, CZ 0.20 vs 0.17 %). So the 52 pp DD-off deficit may be
+pair-specific (check 9). Run: same circuits and transpile settings, DD off, pairs ranked 2-4 by the committed PAIR RULE on the record saved
+before the job, one job (fire_ufsm_pairs.py); read per pair with analyze_ufsm_pairs.py (rule inside, fixed now).

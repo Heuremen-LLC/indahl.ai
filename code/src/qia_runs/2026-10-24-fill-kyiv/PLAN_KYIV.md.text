@@ -1,0 +1,17 @@
+# PLAN -- free calibration run for arXiv:2607.20377 (R. Sipakov, KNUBA Kyiv; ibm_fez). Written and committed BEFORE any job. Heuremen LLC / QIA, one-for-one side.
+Why: the author writes (Sec. 5) that "any drift in device conditions over that interval is a competing explanation for the observed ordering that the
+recorded data cannot exclude"; layout, seed and calibration table "were not persisted". Our record: on fez, 15.4 % of qubits show between-job
+variance beyond shot noise within 4.5 min (presence, not size). This run measures the size for THEIR circuits.
+Design: their 300 public H0 circuits (identical logical circuits to H2), transpiled ONCE on ibm_fez (optimization_level=1, seed_transpiler=24),
+sent unchanged in four jobs in the order H0, H2, H0, H2, 1024 shots per circuit (their shot count), their runtime options per regime.
+Each job is submitted after the previous one finishes. The backend record is saved before every job and after the last; the layout is saved.
+Readings (kyiv.py, fixed now; four outcomes each, 95 %, shot-noise null by binomial resampling, 2000 draws):
+  R1 DRIFT: dH0 = RMSE(H0, job 3) - RMSE(H0, job 1). ABOVE/BELOW if outside the shot-noise null; CONSISTENT inside (bound printed);
+     CANNOT_TELL if the null half-width exceeds their published H0-H2 gap 0.0451.
+  R2 ORDERING: RMSE(H0 job k) - RMSE(H2 job k+1) for both pairs vs null; and |dH0| / 0.0451 = the share of their gap job-to-job drift covers.
+  Neither R1 nor R2 is a finding about their 9 May 2026 jobs: it is the size of the drift term on this chip, today, for their circuits.
+KNOWN-GOOD: the author's published raw counts (hardware_results/zz4_H*_raw_results.json) must reproduce their published RMSE H0 0.08777, H1 0.08643, H2 0.04273 to 1e-4 through kyiv.py -- PASSED (R3 line in synth output and `python3 kyiv.py`).
+Synthetic: synth_kyiv.py plants TWIRL / DRIFT / BOTH / NEITHER worlds built from the author's own kernels; all four return the expected outcomes
+(synth_results_kyiv.text). One rule was fixed on synthetic data before any job: R1's resolvability scale is their PUBLISHED gap, not the measured one.
+Cost: ~336 QPU s on Darkwave Disco (their jobs billed 80, 80, 84 s). Remaining at plan time: 2244 s.
+Results go to the book (FILL entry) and, when the portfolio launches, to the author as a free calibration. Nothing is published before then.

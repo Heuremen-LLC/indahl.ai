@@ -1,0 +1,17 @@
+# Darkwave Correction Kit version 1.1 -- known-good run on IBM hardware, second fire. Plan, committed and public before any job. Heuremen LLC, 2 Nov 2026.
+
+Why: the first fire (../2026-11-02-darkwave-kit-check, plan PLAN_KITCHECK.md.text) read the kit against the study's code in the same job
+(R1 CONSISTENT, +0.025 [-0.063, +0.143] deg per readout) and its correction gave back 0.264 [0.248, 0.285] of the turn (R2b BELOW 0.5): the
+kit failed. The cause, found after that result from the kit's code: version 1.0 merged readouts separated by barriers into one group, so the
+four readouts of each circuit got one correction instead of four. Version 1.1 starts a new group whenever a qubit is read again.
+
+Design, readings, settings and rule: exactly as PLAN_KITCHECK.md.text (same chip ibm_kingston, same E and S, same circuits and shots, same R1,
+R2a, R2b, margins and bands, no dynamical decoupling, no twirling), with darkwave_kit.py version 1.1 (hash in CODE_KITCHECK2.sha256.text).
+Rule: the kit passes if R1 is CONSISTENT, R2a is CONSISTENT and R2b is ABOVE. One fire. Any result is published as it reads, with the first fire.
+
+KNOWN-GOOD: the study's own calibration code (keystone.circ_S + fresh_from_cal) in the same job on the same qubits, as in the first fire, where the kit and that code read the same turn (R1 CONSISTENT).
+
+Synthetic test (synth_kitcheck.py, output synth_kitcheck2_results.text): the corrected arm now uses the kit's own apply on the real job-2 circuit,
+counting the corrections each target receives (version 1.1: 4 per target, version 1.0: 1). Six planted worlds, each read as planted, including
+version 1.0's grouping, which reads R2b 0.252, close to the 0.264 the first fire read on hardware.
+Cost estimate: the first fire charged 20 s and 9 s.

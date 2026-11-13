@@ -1,0 +1,115 @@
+# AMD ROCm technical dive on MLPerf Inference v6.1, held against the v5.0 to v6.1 result files and the v6.1 summary spreadsheet. python3 -I check_claims_amd_techdive_v61.py
+import json,hashlib,re,statistics
+FILES=['raw/inf_5.0.json','raw/inf_5.1.json','raw/inf_6.0.json','raw/inf_6.1.json','raw/v61_ids.json','raw/older_rounds_systems.json']; RAW={f:open(f,'rb').read() for f in FILES}
+V5=json.loads(RAW[FILES[0]]); V51=json.loads(RAW[FILES[1]]); V0=json.loads(RAW[FILES[2]]); B=list(json.loads(RAW[FILES[3]]).values()); D=json.loads(RAW[FILES[4]]); OLD=json.loads(RAW[FILES[5]]); s=str; pc=lambda x,y:100*(x/y-1)
+import re as _re
+_KEEP={'bert','rgat','retinanet','resnet','dlrm','unet','sdxl'}
+def _and(L): return L[0] if len(L)==1 else ', '.join(L[:-1])+' and '+L[-1]
+def _pl(s,prose=False):   # a table cell as plain text: no semicolons, and in the data cells no Python list, True/False or None
+    if not isinstance(s,str): return s
+    if not prose:
+        s=_re.sub(r"\[((?:'[^']*'(?:, )?)+)\]",lambda m:_and(_re.findall(r"'([^']*)'",m.group(1))),s).replace('[]','none')
+        s=_re.sub(r'\bTrue\b','yes',s); s=_re.sub(r'\bFalse\b','no',s); s=_re.sub(r'\bNone\b','none',s)
+    return _re.sub(r'; ([a-z]+)\b(?![-_./])',lambda m:'. '+(m.group(1) if m.group(1) in _KEEP else m.group(1).capitalize()),s).replace('; ','. ')
+def mk(i,q,calc,st,got,out,note): return dict(id=i,quote=q,calc=_pl(calc),stated=_pl(st),delivered=_pl(got),outcome=out,note=_pl(note,True),label_mismatch=False)
+def nums(v): return v
+def dv(i,m,sc): return D[i]['results'].get(f'{m}|{sc}')
+def bb(org,sysn,m,sc,n=None,div='closed'):
+    r=[x for x in B if x['Organization']==org and sysn in x['SystemName'] and x['Model']==m and x['Scenario']==sc and x['Division']==div and (n is None or x['total_accelerators']==n)]; assert len(r)==1,(org,sysn,m,sc,n,len(r)); return r[0]['Result']
+AX=[]
+# AX1 partners
+named={'Crusoe','Dell','HPE','MangoBoost','MiTAC','Oracle','Supermicro'}
+orgs=set()
+for x in B:
+    if 'MI3' in s(x['accelerator_model_name']) and x['Organization']!='AMD':
+        for p in x['Organization'].replace('_AMD','').split('_'): orgs.add(p)
+AX.append(mk('AX1','Seven partners submitted results across multiple AMD Instinct GPUs that closely tracked results by AMD','v6.1 file entries on AMD Instinct accelerators from submitters other than AMD, combined names split','seven partners: Crusoe, Dell, HPE, MangoBoost, MiTAC, Oracle and Supermicro',f'organizations with AMD Instinct entries: {sorted(orgs)}','CONSISTENT' if named<=orgs else 'BELOW',f'All seven named partners have AMD Instinct entries. Cisco also has one, a mixed H200 and MI350X system, and is not named in the post.'))
+a_g=bb('AMD','smci355','gpt-oss-120b','Offline',8),bb('AMD','smci355','gpt-oss-120b','Server',8)
+a_l=bb('AMD','smci355','llama2-70b-99.9','Offline',8),bb('AMD','smci355','llama2-70b-99.9','Server',8)
+rows=[]
+for org,sysn in(('Dell','XE9785L_8xMI355X'),('HPE','XD685'),('MiTAC','G4826'),('Oracle','8xMI355X'),('Supermicro','AS-4126GS-NMR-LCC')):
+    for m,ref in(('gpt-oss-120b',a_g),('llama2-70b-99.9',a_l)):
+        for k,sc in enumerate(('Offline','Server')): rows.append((org,m,sc,100*bb(org,sysn,m,sc,8)/ref[k]))
+rr=[r[3] for r in rows]
+AX.append(mk('AX2','The results are within a few percent of AMD own scores.','eight-GPU MI355X partner entries (Dell, HPE, MiTAC, Oracle, Supermicro) against the AMD eight-GPU MI355X entry, GPT-OSS-120B and Llama 2 70B 99.9, Offline and Server','within a few percent of AMD',f'{len(rr)} comparisons, from {min(rr):.1f}% to {max(rr):.1f}% of the AMD value; mean {statistics.mean(rr):.1f}%','CONSISTENT' if max(round(abs(r-100)) for r in rr)<=5 else 'BELOW','Our rule: a few percent is read as up to 5 whole percent, with each difference rounded to a whole percent. The lowest comparison is 5.1% below.'))
+# AX3 results table
+T=[('6.1-0003','dlrm-v3','Server',12198.80),('6.1-0003','dlrm-v3','Offline',13027.70),('6.1-0003','llama2-70b-99.9','Server',103275),('6.1-0003','llama2-70b-99.9','Offline',106517),('6.1-0003','llama2-70b-99.9','Interactive',73191.5),('6.1-0003','text_to_video','SingleStream',16.124),('6.1-0003','text_to_video','Offline',0.073),('6.1-0003','gpt-oss-120b','Server',113241),('6.1-0003','gpt-oss-120b','Offline',121818),('6.1-0004','gpt-oss-120b','Server',964468),('6.1-0004','gpt-oss-120b','Offline',1039900),
+('6.1-0040','dlrm-v3','Server',4503.53),('6.1-0040','dlrm-v3','Offline',4837.63),('6.1-0040','llama2-70b-99.9','Server',41830.00),('6.1-0040','llama2-70b-99.9','Offline',42286.20),('6.1-0040','llama2-70b-99.9','Interactive',22860.50),('6.1-0040','llama3.1-8b','Server',72305.10),('6.1-0040','llama3.1-8b','Offline',73643),('6.1-0040','llama3.1-8b','Interactive',62723.70),('6.1-0040','text_to_video','SingleStream',41.838),('6.1-0040','text_to_video','Offline',0.035),('6.1-0040','gpt-oss-120b','Server',40867.90),('6.1-0040','gpt-oss-120b','Offline',48971.10),
+('6.1-0001','dlrm-v3','Server',9297.78),('6.1-0001','dlrm-v3','Offline',10891.10),('6.1-0002','text_to_video','SingleStream',20.603),('6.1-0002','text_to_video','Offline',0.057),('6.1-0026','deepseek-r1','Server',2405310),('6.1-0026','deepseek-r1','Offline',2901950),('6.1-0027','gpt-oss-120b','Server',5392930),('6.1-0027','gpt-oss-120b','Offline',5749440)]
+def tol(v): return 0.5*10**-(len(s(v).split('.')[1]) if '.' in s(v) else 0)*1.0001
+bad=[];miss=[]
+for i,m,sc,v in T:
+    f=dv(i,m,sc)
+    if f is None: miss.append((i,m,sc)); continue
+    if abs(f-v)>max(tol(v),abs(v)*1e-6+0.5*(1 if v>1000 else 0)): bad.append((i,m,sc,v,f))
+AX.append(mk('AX3','Performance Results table in the post, 31 values with entry IDs','v6.1 summary spreadsheet, entry ID and result columns','31 values with entry IDs',f'{len(T)-len(miss)-len(bad)} of {len(T)} match the spreadsheet to the digits printed; mismatches {bad or "none"}; not found {miss or "none"}','CONSISTENT' if not bad and not miss else 'BELOW','The post also lists 6.1-0109 for an eight-GPU MI355X DLRM-v3 entry with 16,194.40 Server and 16,363.00 Offline. That ID is not in the spreadsheet. See the next row.'))
+# AX4 roundover
+v6=lambda i,m,sc:[x for x in V0 if x['ID']==i and x['Model']==m and x['Scenario']==sc and x['Category']=='closed']
+o0=v6('6.0-0002','llama2-70b-99','Offline')[0]['Performance_Result']; s0=v6('6.0-0002','llama2-70b-99','Server')[0]['Performance_Result']; go0=v6('6.0-0002','gpt-oss-120b','Offline')[0]['Performance_Result']; gs0=v6('6.0-0002','gpt-oss-120b','Server')[0]['Performance_Result']
+ow=[x for x in V0 if x['Model']=='wan-2.2-t2v-a14b' and x['Submitter']=='AMD' and x['Scenario']=='SingleStream']
+w0=ow[0]['Performance_Result']; w0id=ow[0]['ID']; w1=dv('6.1-0003','text_to_video','SingleStream')
+imp=[pc(dv('6.1-0003','llama2-70b-99.9','Offline'),o0),pc(dv('6.1-0003','llama2-70b-99.9','Server'),s0),pc(dv('6.1-0003','gpt-oss-120b','Offline'),go0),pc(dv('6.1-0003','gpt-oss-120b','Server'),gs0),pc(w0/w1,1)]
+AX.append(mk('AX4','Generational Improvement table in the post, five improvement percentages','AMD eight-GPU MI355X entries in v6.0 (6.0-0002) and v6.1 (6.1-0003), same model and scenario','2.9%, 3%, 28%, 38%, 70%',', '.join(f'{x:+.1f}%' for x in imp)+f'; v6.0 scores {o0:,.0f}, {s0:,.2f}, {go0:,.0f}, {gs0:,.1f}, Wan {w0} s','CONSISTENT' if [round(x) for x in imp]==[3,3,28,38,70] else 'BELOW','The Wan figure is the speed gain (27.38 s over 16.124 s). The time falls 41%.'))
+AX.append(mk('AX5','Entry IDs in the Generational Improvement table','entry IDs of the eight-GPU MI355X entries in the v6.0 file and the v6.1 spreadsheet','6.0-0003 and 6.1-0004 for the eight-GPU rows, 6.0-0102 for Wan',f'eight-GPU entry in v6.0 is 6.0-0002 and 6.0-0003 is the {[x["Total Accelerators"] for x in V0 if x["ID"]=="6.0-0003"][0]}-GPU entry; eight-GPU entry in v6.1 is 6.1-0003 and 6.1-0004 is the {int(D["6.1-0004"]["total_accelerators"])}-GPU GPT-OSS-120B entry with no Llama 2 70B row; the Wan Single Stream v6.0 entry is {w0id}','CONSISTENT' if (w0id=='6.0-0102') and False else 'BELOW','The values in the table match the eight-GPU entries. The IDs point to the multi-GPU entries.'))
+# AX6 scaling
+e8o,e8s,e72o,e72s=dv('6.1-0003','gpt-oss-120b','Offline'),dv('6.1-0003','gpt-oss-120b','Server'),dv('6.1-0004','gpt-oss-120b','Offline'),dv('6.1-0004','gpt-oss-120b','Server')
+AX.append(mk('AX6','Scaling efficiency table in the post for GPT-OSS 120B','AMD eight-GPU and 72-GPU GPT-OSS-120B entries, 9 times the eight-GPU value','94.9% Offline and 94.6% Server',f'{e72o:,.0f} over {9*e8o:,.0f} = {100*e72o/(9*e8o):.1f}%, {e72s:,.0f} over {9*e8s:,.0f} = {100*e72s/(9*e8s):.1f}%','CONSISTENT' if (round(9*e8o),round(9*e8s),round(100*e72o/(9*e8o),1),round(100*e72s/(9*e8s),1))==(1096362,1019169,94.9,94.6) else 'BELOW',''))
+# AX7 fifth round
+rd=[r[1:] for r,v in OLD.items() if 'AMD' in v['submitters']]+[n for L,n in((V5,'5.0'),(V51,'5.1'),(V0,'6.0')) if any(x['Submitter']=='AMD' for x in L)]+['6.1']
+AX.append(mk('AX7','Fifth MLPerf appearance: Fifth consecutive MLPerf Inference for AMD round reflects our sustained investment in transparent, standards-based benchmarking.','rounds with an AMD closed division submission in the v3.1 to v6.1 sources','fifth consecutive round',f'AMD appears in {sorted(rd)}','CONSISTENT' if len(rd)==5 else 'BELOW','Rounds v3.1 and v4.0 were read from system description files with a cut-short list, where AMD would sort first.'))
+# AX8 partner table
+P=[('6.1-0037','Dell','MI355X',8,'llama3.1-8b, llama2-70b-99.9, deepseek-r1, gpt-oss-120b'),('6.1-0040','Dell + AMD','MI350P',8,'dlrm-v3, llama3.1-8b, llama2-70b-99.9, deepseek-r1, text_to_video, gpt-oss-120b'),('6.1-0041','Dell + MangoBoost','MI300X + MI355X',32,'gpt-oss-120b'),('6.1-0042','Dell + MangoBoost','MI355X',8,'gpt-oss-120b'),('6.1-0043','Dell + MangoBoost','MI355X',8,'gpt-oss-120b'),('6.1-0026','Crusoe','MI355X',512,'deepseek-r1'),('6.1-0027','Crusoe','MI355X',512,'gpt-oss-120b'),('6.1-0050','HPE','MI355X',8,'llama3.1-8b, llama2-70b-99.9, deepseek-r1, text_to_video, gpt-oss-120b'),('6.1-0066','MangoBoost','MI355X',16,'gpt-oss-120b'),('6.1-0067','MangoBoost','MI300X',8,'gpt-oss-120b'),('6.1-0068','MiTAC','MI350X',8,'llama3.1-8b, llama2-70b-99.9, gpt-oss-120b'),('6.1-0069','MiTAC','MI355X',8,'llama3.1-8b, llama2-70b-99.9, gpt-oss-120b'),('6.1-0084','Oracle','MI355X',8,'llama3.1-8b, llama2-70b-99.9, deepseek-r1, text_to_video, gpt-oss-120b'),('6.1-0099','Supermicro','MI355X',8,'llama3.1-8b, llama2-70b-99.9, deepseek-r1, gpt-oss-120b')]
+alias={'text_to_video':'text_to_video'}
+cnt=[];dsx=[];ok_sub=0
+for i,sub,gpu,n,bm in P:
+    d=D[i]; have={k.split('|')[0] for k in d['results']}; said=[b.strip() for b in bm.split(',')]
+    extra=[b for b in said if b not in have]; ok_sub+=(int(d['total_accelerators'])==n and gpu.split(' + ')[-1].split(' ')[0] in d['accelerator'])
+    if extra: dsx.append((i,extra))
+AX.append(mk('AX8','Partner submissions table in the post','v6.1 summary spreadsheet, submitter, accelerator, accelerator count and the models with results for each entry ID','14 entries with the listed benchmarks',f'submitter, accelerator and count match for {ok_sub} of 14 entries; benchmarks listed in the post with no result in the spreadsheet: {_and([f"{i} ({_and(m)})" for i,m in dsx]) or "none"}','CONSISTENT' if not dsx and ok_sub==14 else 'BELOW','DeepSeek-R1 is listed for 6.1-0037, 6.1-0040, 6.1-0050, 6.1-0084 and 6.1-0099. In the v6.1 file the only AMD Instinct DeepSeek-R1 entry is the Crusoe 512-GPU system.'))
+# AX9 NVIDIA comparisons
+nv=lambda m,sc,f:[x for x in B if x['Division']=='closed' and x['Model']==m and x['Scenario']==sc and x['Organization']=='NVIDIA' and f(x)]
+b300w=nv('wan-2.2-t2v-a14b','Offline',lambda x:x['total_accelerators']==8); b300s=nv('wan-2.2-t2v-a14b','SingleStream',lambda x:x['total_accelerators']==8)
+wo,ws=dv('6.1-0003','text_to_video','Offline'),dv('6.1-0003','text_to_video','SingleStream')
+AX.append(mk('AX9','AMD Instinct MI355X GPU leading Nvidia B300 by 18% and 11%, respectively, for Offline and SingleStream scenarios','AMD eight-GPU Wan 2.2 entry against the NVIDIA eight-GPU B300 entry','+18% Offline, +11% SingleStream',f'Offline {wo:.4f} against {b300w[0]["Result"]:.4f} ({pc(wo,b300w[0]["Result"]):+.1f}%); SingleStream {ws:.3f} s against {b300s[0]["Result"]:.3f} s ({pc(b300s[0]["Result"]/ws,1):+.1f}% faster)','CONSISTENT' if round(pc(wo,b300w[0]['Result']))==18 and round(pc(b300s[0]['Result']/ws,1))==11 else 'BELOW','Another B300 entry from a partner is above the AMD Offline value.'))
+nv8=lambda m,sc,a:max([x['Result'] for x in B if x['Division']=='closed' and x['Model']==m and x['Scenario']==sc and x['total_accelerators']==8 and a in s(x['accelerator_model_name']) and 'GB' not in s(x['accelerator_model_name'])[:9]]+[0])
+def nvo(m,sc,a):
+    f=lambda orgf:[x['Result'] for x in B if x['Division']=='closed' and x['Model']==m and x['Scenario']==sc and orgf(x) and x['total_accelerators']==8 and a in s(x['accelerator_model_name']) and 'GB' not in s(x['accelerator_model_name'])[:9]]
+    r=f(lambda x:x['Organization']=='NVIDIA'); return max(r) if r else max(f(lambda x:True)+[0])
+g=[(sc,dv('6.1-0003','gpt-oss-120b',sc),nvo('gpt-oss-120b',sc,'B200'),nvo('gpt-oss-120b',sc,'B300')) for sc in('Offline','Server')]
+AX.append(mk('AX10','In the GPT-OSS-120B test, AMD Instinct MI355X GPU is leading both Nvidia B200 and B300 across Offline and Server scenarios','AMD eight-GPU GPT-OSS-120B entry against the NVIDIA eight-GPU B200 and B300 entries','ahead of B200 and B300 in Offline and Server','; '.join(f'{sc}: AMD {a:,.0f}, NVIDIA B200 {b:,.0f}, B300 {c:,.0f}' for sc,a,b,c in g),'CONSISTENT' if all(a>b and a>c for sc,a,b,c in g) else 'BELOW','NVIDIA submissions are used where they exist, the best partner entry otherwise, as the post states.'))
+gb=lambda sc:max([x['Result'] for x in B if x['Division']=='closed' and x['Model']=='gpt-oss-120b' and x['Scenario']==sc and x['total_accelerators']==72 and 'GB200' in s(x['accelerator_model_name']) and x['Organization']=='NVIDIA']+[0])
+AX.append(mk('AX11','AMD maintains its lead and is ahead by 18% in Offline and 7% in Server scenarios','AMD 72-GPU GPT-OSS-120B entry against the NVIDIA 72-GPU GB200 entry','+18% Offline, +7% Server',f'Offline {e72o:,.0f} against {gb("Offline"):,.0f} ({pc(e72o,gb("Offline")):+.1f}%); Server {e72s:,.0f} against {gb("Server"):,.0f} ({pc(e72s,gb("Server")):+.1f}%)','CONSISTENT' if round(pc(e72o,gb('Offline')))==18 and round(pc(e72s,gb('Server')))==7 else 'BELOW','The NVIDIA GB300 72-GPU entry is higher than the AMD value.'))
+l=[(sc,dv('6.1-0003','llama2-70b-99.9',sc),nvo('llama2-70b-99.9',sc,'B200'),nvo('llama2-70b-99.9',sc,'B300')) for sc in('Offline','Server','Interactive')]
+def cmp(a,b):
+    if not b: return 'no entry'
+    d=pc(a,b); return 'ahead' if d>3 else ('tie' if d>=-3 else 'behind')
+exp_b={'Offline':'ahead','Server':'tie'}; exp_c={'Offline':'tie','Server':'tie'}
+ok12=all(cmp(a,b)==exp_b[sc] and cmp(a,c)==exp_c[sc] for sc,a,b,c in l if sc!='Interactive'); intr=[x for x in l if x[0]=='Interactive'][0]
+AX.append(mk('AX12','Here AMD Instinct MI355X GPU achieves leadership in Offline and Interactive categories against B200 and in Interactive vs B300. All other performance tests are tied (we define a tie as being within 3%).','AMD eight-GPU Llama 2 70B 99.9 entry against the NVIDIA eight-GPU B200 and B300 entries, with a 3% tie rule','leadership in Offline and Interactive vs B200, Interactive vs B300, all else tied','; '.join(f'{sc}: AMD {a:,.0f}, B200 {b:,.0f} ({cmp(a,b)}), B300 {c:,.0f} ({cmp(a,c)})' for sc,a,b,c in l),('CANNOT_TELL' if ok12 and intr[2]==0 else ('CONSISTENT' if ok12 else 'BELOW')),'Our reading: ahead means more than 3% higher, tie means within 3% either way. NVIDIA entries are used where they exist, the best partner entry otherwise. The v6.1 file has no Interactive entry on eight B200 or B300 for this model, so the Interactive parts cannot be compared. Offline and Server agree with the post.' if ok12 else 'Our reading: ahead means more than 3% higher, tie means within 3% either way. The Offline and Server comparisons do not all agree with the post.'))
+# AX13 DLRM
+d6=[x for x in V0 if x['Model']=='dlrm-v3' and x['Category']=='closed']
+dl=sorted([(x['Performance_Result'],x['Submitter'],x['Scenario'],x['Total Accelerators']) for x in d6],reverse=True)[:4]
+amd_dl=bb('AMD','smci355','dlrm-v3','Server',8); amd_do=bb('AMD','smci355','dlrm-v3','Offline',8); op_s=bb('AMD','8xMI355X_2xEPYC_9575F','dlrm-v3','Server',8,'open'); op_o=bb('AMD','8xMI355X_2xEPYC_9575F','dlrm-v3','Offline',8,'open')
+nvd={sc:max([x['Performance_Result'] for x in d6 if x['Submitter']=='NVIDIA' and x['Scenario']==sc and int(x['Total Accelerators'])==8]+[0]) for sc in('Server','Offline')}
+AX.append(mk('AX13','In this benchmark, AMD is the only submitter. To facilitate a comparison, we use the previous round, 6.0, in which Nvidia submitted DLRM v3 scores on 8xB200 GPUs. The comparison shows AMD Instinct MI355X GPU leadership by over 20%.','v6.1 DLRM-v3 entries by organization; AMD eight-GPU MI355X entry against NVIDIA DLRM-v3 entries in v6.0','AMD the only submitter, over 20% ahead of NVIDIA v6.0',f'v6.1 organizations with DLRM-v3: {sorted({x["Organization"] for x in B if x["Model"]=="dlrm-v3"})}; AMD Server {amd_dl:,.0f}, Offline {amd_do:,.0f}; NVIDIA v6.0 eight-B200 Server {nvd["Server"]:,.0f}, Offline {nvd["Offline"]:,.0f}; {pc(amd_dl,nvd["Server"]):+.1f}% and {pc(amd_do,nvd["Offline"]):+.1f}%','CONSISTENT' if nvd['Server'] and pc(amd_dl,nvd['Server'])>20 and pc(amd_do,nvd['Offline'])>20 else 'BELOW','The Dell and AMD joint MI350P entry is also in the v6.1 DLRM-v3 results. AMD is the only submitter in the sense of the post if that joint entry is counted as AMD.'))
+# AX14 MI350P
+p_g=bb('Dell_AMD','8xMI350P','gpt-oss-120b','Offline'),bb('Dell_AMD','8xMI350P','gpt-oss-120b','Server')
+rtx=lambda m,sc:max([x['Result'] for x in B if x['Division']=='closed' and x['Model']==m and x['Scenario']==sc and x['total_accelerators']==8 and 'RTX PRO 6000' in s(x['accelerator_model_name'])]+[0])
+AX.append(mk('AX14','AMD Instinct MI350P GPU leads the competition by a remarkable 211% and 176%','Dell and AMD MI350P eight-GPU GPT-OSS-120B entry against the best eight-GPU RTX PRO 6000 entry','+211% and +176%',f'Offline {p_g[0]:,.0f} against {rtx("gpt-oss-120b","Offline"):,.0f} ({pc(p_g[0],rtx("gpt-oss-120b","Offline")):+.1f}%); Server {p_g[1]:,.0f} against {rtx("gpt-oss-120b","Server"):,.0f} ({pc(p_g[1],rtx("gpt-oss-120b","Server")):+.1f}%)','CONSISTENT' if {round(pc(p_g[0],rtx('gpt-oss-120b','Offline'))),round(pc(p_g[1],rtx('gpt-oss-120b','Server')))}=={211,176} else 'BELOW','The post does not say which percentage is Offline. The two values match in the order 211% Offline and 176% Server.'))
+# AX15 MI350X 80%
+mi=[('gpt-oss-120b','Offline'),('gpt-oss-120b','Server'),('llama2-70b-99.9','Offline'),('llama2-70b-99.9','Server')]
+rat=[100*bb('MiTAC','G8825Z5',m,sc,8)/bb('MiTAC','G4826',m,sc,8) for m,sc in mi]
+rat+= [100*dv('6.1-0001','dlrm-v3','Server')/amd_dl,100*dv('6.1-0001','dlrm-v3','Offline')/amd_do,100*dv('6.1-0003','text_to_video','SingleStream')/dv('6.1-0002','text_to_video','SingleStream')]
+AX.append(mk('AX15','With results on llama2-70b, gpt-oss-120b, WAN text-to-video, and DLRM benchmarks (submissions by AMD and MiTAC), it delivers about 80% of the performance of AMD Instinct MI355X GPU','MI350X entries (AMD 6.1-0001 and 6.1-0002, MiTAC G8825Z5) against MI355X entries (AMD, MiTAC G4826), same model and scenario','about 80% of MI355X','; '.join(f'{x:.1f}%' for x in rat)+' (MiTAC GPT-OSS Offline and Server, Llama 2 70B Offline and Server, AMD DLRM-v3 Server and Offline, Wan SingleStream)','CONSISTENT' if all(70<=x<=90 for x in rat) else 'BELOW','Our rule: about 80% is read as 70 to 90%. The DLRM-v3 ratios and the Wan one are listed. The MiTAC pair is two different vendors systems with the same model.'))
+# AX16 Crusoe records
+allt=[(x['Result'],x['Organization']) for x in B if s(x['Units']).startswith('Tokens')]; prevt=max(x['Performance_Result'] for L in(V5,V51,V0) for x in L if 'oken' in s(x.get('Performance_Units')))
+c1,c2,c3,c4=dv('6.1-0027','gpt-oss-120b','Offline'),dv('6.1-0026','deepseek-r1','Offline'),dv('6.1-0026','deepseek-r1','Server'),max(allt)
+dsmax=max(x['Result'] for x in B if x['Model']=='deepseek-r1' and x['Organization']!='Crusoe')
+AX.append(mk('AX16','GPT-OSS-120b Offline score of 5.75M/s tokens is the absolute highest token throughput ever achieved in an MLPerf submission. ... throughput of 2.90M and 2.41M for Offline and Server scenarios, respectively.','Crusoe 512-GPU entries against the largest tokens-per-second values in the v5.0 to v6.1 files','5.75M tokens/s the highest ever, DeepSeek-R1 2.90M and 2.41M the highest',f'Crusoe GPT-OSS-120b Offline {c1:,.0f}; largest in v6.1 {c4[0]:,.0f} ({c4[1]}); largest in v5.0 to v6.0 {prevt:,.0f}; DeepSeek-R1 Crusoe {c2:,.0f} and {c3:,.0f}, largest other DeepSeek-R1 {dsmax:,.0f}','CONSISTENT' if c1==c4[0] and c1>prevt and c2>dsmax else 'BELOW','Rounds before v5.0 are not in the summary files.'))
+# AX17 MangoBoost scaling
+m41=[dv('6.1-0041','gpt-oss-120b',sc) for sc in('Offline','Server')]
+AX.append(mk('AX17','a joint MangoBoost/Dell submission (6.1-0041) employs two different types of AMD Instinct GPUs ... they achieve a remarkably high scaling efficiency of 97% for Offline and 94% for Server in GPT-OSS-120B','entry 6.1-0041 in the v6.1 summary spreadsheet, system name and accelerators','scaling efficiency 97% Offline and 94% Server',f'{D["6.1-0041"]["system"]}; {int(D["6.1-0041"]["total_accelerators"])} accelerators; Offline {m41[0]:,.0f}, Server {m41[1]:,.0f}; the standalone entries it is scaled against are not named','CANNOT_TELL','The efficiency needs the standalone measurements of each cluster. They are not entries in the file. The locations are not file fields.'))
+AX.append(mk('AX19','Results table row for entry 6.1-0109 in the post','AMD DLRM-v3 entries in the v6.1 file, division field, and the closed datacenter tab of the summary spreadsheet','two closed division results of 16,194.40 and 16,363.00',f'file: AMD eight-GPU MI355X DLRM-v3 Server {op_s:,.2f} and Offline {op_o:,.2f} are in the open division; the closed division entry for the same hardware is Server {amd_dl:,.2f} and Offline {amd_do:,.2f} (6.1-0003); the ID 6.1-0109 is not in the closed tab','BELOW','The post says AMD participated in the closed division. The values match the open division entry.'))
+AX.append(mk('AX18','yielding an 8% end-to-end improvement in Offline and a 5% improvement in the Server scenario','optimization increments are not result file fields','8% Offline and 5% Server from MoE kernel tuning','no entry isolates a single optimization','CANNOT_TELL','The same applies to the other optimization gains in the post: attention 25 to 28%, scheduler 8%, DeepSeek-R1 steps of 4 to 15%.'))
+json.dump(dict(source=FILES,sha256=[hashlib.sha256(RAW[f]).hexdigest() for f in FILES],claims=AX),open('claims_amd_techdive_v61.json','w'),indent=1)
+for c in AX: print(c['id'],c['outcome'],'|',c['stated'][:44],'|',c['delivered'][:300])

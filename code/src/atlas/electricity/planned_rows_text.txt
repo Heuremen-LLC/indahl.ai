@@ -1,0 +1,85 @@
+FUEL Natural gas 13.1 5.5 12.7 39.7 71.1 24.5
+FUEL Nuclear 0.0 0.0 0.5 4.5 5.0 1.7
+FUEL Hydro 0.0 0.0 0.2 0.2 0.4 0.1
+FUEL Wind 14.4 1.6 3.7 3.8 23.5 8.1
+FUEL Solar 46.7 14.4 31.8 29.3 122.2 42.1
+FUEL Storage 23.3 5.4 15.8 22.8 67.3 23.2
+FUEL Petroleum 0.0 0.0 0.0 0.1 0.2 0.1
+FUEL Other 0.2 0.1 0.1 0.1 0.5 0.2
+YEAR 2026 or earlier 2.7 0.0 0.0 0.0 3.2 23.7 9.6 0.0 0.0 39.3
+YEAR 2027 10.7 0.0 0.0 0.0 9.9 44.1 27.4 0.2 0.2 92.5
+YEAR 2028 19.7 0.0 0.0 0.2 3.7 32.2 17.2 0.0 0.1 73.1
+YEAR 2029 15.7 0.0 0.0 0.1 2.2 16.2 9.1 0.0 0.2 43.5
+YEAR 2030 18.1 0.0 0.5 0.1 0.2 4.8 2.7 0.0 0.0 26.4
+YEAR 2031 and later 4.1 0.0 4.5 0.0 4.4 1.3 1.2 0.0 0.0 15.5
+PLANT Project Matador Gas Plant (PMG) TX Fermi America Natural gas 11,679 2027
+PLANT Project Matador Nuclear TX Fermi Nuclear Nuclear 4,468 2031
+PLANT Homer City Generating Station PA Homer City Generation, L.P. Natural gas 4,396 2028
+PLANT Chokecherry and Sierra Madre Wind WY Power Company of Wyoming LLC Wind 3,550 2031
+PLANT Coastal Virginia Offshore Wind (CVOW) Commercial Project VA Dominion Energy Inc. Wind 2,640 2027
+PLANT Pepper Hammock Solar and Storage GA BrightNight Power Solar 2,500 2029
+PLANT Sunstone Solar OR Sunstone Solar, LLC Storage 2,400 2027
+PLANT Pointe Coupee Power Station LA Entergy Louisiana LLC Natural gas 2,341 2031
+PLANT Deschutes Solar and BESS OR DECH bn, LLC Solar 2,000 2029
+PLANT Kingston TN Tennessee Valley Authority Natural gas 1,831 2027
+PLANT Franklin Farms 1&2 LA Entergy Louisiana LLC Natural gas 1,561 2028
+PLANT Richland Parish Power Station 1&2 LA Entergy Louisiana LLC Natural gas 1,561 2030
+PLANT Cumberland (TN) TN Tennessee Valley Authority Natural gas 1,556 2029
+PLANT Bison Generation Station ND Basin Electric Power Coop Natural gas 1,518 2029
+PLANT Yates GA Georgia Power Co Natural gas 1,448 2027
+PLANT CPV Basin Ranch Energy Center TX CPV Basin Ranch Natural gas 1,445 2029
+PLANT Libra Solar NV Libra Solar LLC Storage 1,400 2027
+PLANT Comanche (OK) OK Public Service Co of Oklahoma Natural gas 1,373 2029
+PLANT Orange County Advanced Power Station TX Entergy Texas Inc. Natural gas 1,306 2026
+PLANT Sandow Lakes Energy Station TX SL Energy Power Plant I, LLC Natural gas 1,290 2028
+STATE Alabama 0.4 0.0 0.0 0.0 0.0 1.1 0.4 0.0 0.0 1.9
+STATE Alaska 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+STATE Arizona 2.2 0.0 0.0 0.0 0.0 6.2 6.6 0.0 0.0 14.9
+STATE Arkansas 1.4 0.0 0.0 0.0 0.2 3.5 1.1 0.0 0.0 6.2
+STATE California 0.1 0.0 0.0 0.0 0.2 7.8 12.0 0.0 0.1 20.3
+STATE Colorado 1.2 0.0 0.0 0.0 1.0 3.2 1.9 0.0 0.0 7.3
+STATE Connecticut 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.6
+STATE Delaware 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.2
+STATE District of Columbia 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+STATE Florida 0.6 0.0 0.0 0.0 0.0 1.6 0.2 0.0 0.0 2.4
+STATE Georgia 2.5 0.0 0.0 0.0 0.0 3.8 0.5 0.0 0.0 6.9
+STATE Hawaii 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0 0.1 0.5
+STATE Idaho 0.0 0.0 0.0 0.0 0.4 0.5 0.1 0.0 0.0 1.0
+STATE Illinois 1.3 0.0 0.0 0.0 2.3 3.5 0.2 0.0 0.0 7.3
+STATE Indiana 1.4 0.0 0.0 0.0 0.4 3.6 0.0 0.0 0.0 5.4
+STATE Iowa 0.0 0.0 0.0 0.0 0.3 0.8 0.0 0.0 0.0 1.1
+STATE Kansas 1.6 0.0 0.0 0.0 0.5 0.3 0.1 0.0 0.0 2.4
+STATE Kentucky 1.0 0.0 0.0 0.0 0.0 2.1 0.1 0.0 0.0 3.3
+STATE Louisiana 9.5 0.0 0.0 0.0 0.0 1.6 0.2 0.0 0.0 11.3
+STATE Maine 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.6
+STATE Maryland 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+STATE Massachusetts 0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.0 0.0 0.7
+STATE Michigan 1.0 0.0 0.0 0.0 0.2 3.9 0.4 0.0 0.0 5.5
+STATE Minnesota 0.4 0.0 0.0 0.0 0.4 0.1 0.8 0.0 0.0 1.8
+STATE Mississippi 3.0 0.0 0.0 0.0 0.0 1.4 0.4 0.0 0.0 4.8
+STATE Missouri 2.5 0.0 0.0 0.0 0.2 2.1 0.4 0.0 0.0 5.3
+STATE Montana 0.0 0.0 0.0 0.0 0.7 0.2 0.2 0.0 0.0 1.2
+STATE Nebraska 1.9 0.0 0.0 0.0 0.1 0.3 0.1 0.0 0.0 2.4
+STATE Nevada 0.4 0.0 0.0 0.0 0.0 3.7 2.9 0.0 0.0 7.1
+STATE New Hampshire 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+STATE New Jersey 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.1
+STATE New Mexico 1.1 0.0 0.0 0.0 0.2 1.7 0.9 0.0 0.0 4.0
+STATE New York 0.0 0.0 0.0 0.0 2.6 3.7 0.8 0.0 0.0 7.1
+STATE North Carolina 0.0 0.0 0.0 0.0 0.0 1.6 0.4 0.0 0.0 2.0
+STATE North Dakota 1.5 0.0 0.0 0.0 0.6 0.3 0.2 0.0 0.0 2.7
+STATE Ohio 0.0 0.0 0.0 0.0 0.3 2.7 0.3 0.0 0.0 3.3
+STATE Oklahoma 2.7 0.0 0.0 0.0 0.0 1.7 0.7 0.0 0.0 5.0
+STATE Oregon 0.0 0.0 0.0 0.0 0.3 4.5 2.9 0.0 0.0 7.8
+STATE Pennsylvania 4.4 0.0 0.0 0.1 0.0 2.0 0.0 0.0 0.0 6.6
+STATE Rhode Island 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.7
+STATE South Carolina 0.0 0.0 0.0 0.0 0.0 1.7 0.4 0.1 0.0 2.2
+STATE South Dakota 0.3 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.4
+STATE Tennessee 3.4 0.0 0.0 0.0 0.0 0.5 0.1 0.0 0.0 4.0
+STATE Texas 20.7 0.0 4.5 0.0 4.8 37.3 25.3 0.0 0.0 92.7
+STATE Utah 0.0 0.0 0.0 0.0 0.0 1.8 1.7 0.0 0.1 3.6
+STATE Vermont 0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.1
+STATE Virginia 1.0 0.0 0.0 0.0 2.6 3.5 0.2 0.0 0.0 7.4
+STATE Washington 0.0 0.0 0.0 0.0 0.3 1.6 1.7 0.0 0.1 3.6
+STATE West Virginia 0.6 0.0 0.0 0.1 0.0 0.3 0.2 0.0 0.0 1.2
+STATE Wisconsin 2.7 0.0 0.0 0.0 0.1 3.1 0.3 0.0 0.0 6.2
+STATE Wyoming 0.1 0.0 0.5 0.0 4.1 1.4 1.1 0.0 0.0 7.2

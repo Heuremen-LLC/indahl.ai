@@ -1,0 +1,76 @@
+# PLAN -- free calibration run for arXiv 2609.13669v1 (Muhammad Faryad, LUMS, Lahore, Pakistan; single author), ibm_fez
+Written 24 Oct 2026 BEFORE any job. Internal; nothing published or sent before Monday; no contact. Desk legwork:
+~/bones-forge/qia_leads/audits/fresh_lums_2609.13669/KNOWN_GOOD.md. His data: theirs/ (sha256 in theirs/SHA256.text).
+
+## His question (verbatim, paper)
+"The drift control of Sec. VI is a single paired repeat per instance, which cannot separate drift from shot noise; it bounds the effect at
+a few hundredths of a CVaR unit and no more than that." and "COBYLA's successive evaluations sit in different jobs, minutes apart, and carry
+that drift on top of shot noise." His jobs ran with dynamical decoupling AND Pauli twirling of gates and measurement, so a row and its
+repeat also differ in twirl instance: a shift between them can be drift, twirl instance variance, or shot noise.
+
+## Design (fixed)
+- Chip ibm_fez (his), Darkwave Disco. His first batched job (bps1: his parameter rows, his shots per row) for n = 8 (13 rows x 1102 shots,
+  chain 124,123,136,143,144,145,146,147, p = 3) and n = 10 (17 rows x 2168 shots, chain 107,106,105,117,125,124,123,122,121,120, p = 4).
+  Circuits rebuilt with OUR code (circuits_lums.py) from his published swap-network construction; Ising mapping asserts his stored
+  E_offset / E_scale; transpiled ONCE with his settings (preset level 1, initial_layout = his chain, seed_transpiler 42) and sent unchanged.
+  Dry run (dry_run_lums.text): two-qubit count, two-qubit depth and depth EQUAL to his for both sizes (252/72/334, 540/120/548).
+- 12 jobs, both sizes as two PUBs in each job, order T O O T T O O T T O O T (ABBA over arms):
+  T = his settings (dynamical decoupling + twirling of gates and measurement, runtime defaults otherwise); O = dynamical decoupling only.
+  Each job submitted after the previous finishes (minutes apart, as his); backend record and job state saved before every job.
+- Estimate from HIS metering of these exact jobs: 8.33 + 17.18 - 3 = 22.5 s per job, 270 s total; hard stop at 320 s.
+- IBM-side ERROR: one restart of that job; a second ERROR holds the run (HELD.md.text), not refired.
+- Rule fixed before looking: his chains are used as published; no qubit substitution (today's record: no chain readout above 0.025,
+  no chain CZ edge missing).
+
+KNOWN-GOOD: (1) his published drift-control numbers recomputed from HIS released counts through OUR committed lums.py: every stored per-row CVaR of the first job and the repeat and every stored shift, all four sizes, to 1e-9 -- PASS (known_good_lums.text: max diff 8.4e-15, shifts -0.03358 / +0.04265 / -0.04986 / +0.02837 equal); (2) our rebuilt logical circuit, exact statevector at his stored incumbent after job 1, against his stored noiseless ideal CVaR -- PASS to 1e-9 for n = 8 and 10 (known_good_circuit_lums.text; a first attempt compared at the wrong point and is kept as known_good_circuit_lums_FIRST_attempt.text).
+
+## Readings (lums.analyse, per size; four outcomes; 99% bands)
+CVaR_0.5 per row per job (his energies and normalisation). d_j = job mean deviation from the arm's row means.
+- R1  DRIFT (O arm, no twirl): variance of d_j over the 6 O jobs against a shot-noise parametric null (each job x row re-drawn from the
+      arm's pooled row distribution, his shots). ABOVE = job-to-job spread beyond shot noise without twirling. Excess job SD with an upper bound.
+- R1b T ARM: the same on the 6 T jobs (drift and/or job-level twirl instance variance).
+  ABOVE on R1/R1b -> CANNOT_TELL if either half of the run (jobs 1-6 / 7-12) sits below its own null median.
+- R2  TWIRL, JOB LEVEL: var(d_T) - var(d_O), exact permutation test over all 924 6/6 relabelings of the 12 jobs (calibrated under drift,
+      which both arms share).
+- R2b TWIRL, ROW LEVEL: mean row-specific residual sum, T minus O, same permutation test.
+- DECISION RULE for his question (per size, fixed now): CANNOT_TELL if R1 or R1b is CANNOT_TELL; else R1 ABOVE -> DRIFT (instance
+  variance not separated; R2 reported); else R1b ABOVE and R2 not BELOW -> TWIRL-ONLY SPREAD; else NEITHER RESOLVED (bounds printed).
+- R3 his single-pair shift (n=8 +0.0426, n=10 -0.0499) against today's T-arm job-mean SD (95% from chi2 on 5 dof; a pair has sqrt2 x the
+  SD): ABOVE if |his shift| > 2.576 sqrt2 x upper; else CONSISTENT. Different day: this asks whether today's spread could produce his shift.
+- Context only: mean CVaR today (T, O) vs his bps1 mean.
+Resolvability scale fixed from HIS numbers: one-pair shift 0.0426 (n=8) = sqrt2 x a job SD of about 0.03 -> planted size 0.03.
+
+## Synthetic (synth_lums.py -> synth_results_lums.text; his own row distributions as base, 12 jobs in ORDER, his shots)
+40 draws per world per size (n = 8, 10), worlds: neither | drift (common job SD 0.03, both arms) | instance_rows (row-specific job SD 0.03,
+T only) | instance_job (common job SD 0.03, T only) | both (drift + instance_rows) | below (drift SD 0.005). Realised job-mean SDs printed.
+FALSE CALLS (any ABOVE/BELOW/CANNOT_TELL where the planted truth is none): R1 7/320 (2.2 %), R1b 10/240 (4.2 %), R2 11/400 (2.8 %),
+R2b 8/320 (2.5 %); TOTAL 36/1280 = 2.8 % (<= ~5 %: band kept at 99 %, no widening needed).
+POWER at his scale (planted 0.03): R1 drift 91/160 = 57 %; R1b 155/240 = 65 %; R2 job-level twirl 7/80 = 9 %; R2b row-level twirl 13/160 = 8 %.
+So: the run CAN tell drift of his size (about one time in two to three per size) and a T-only spread; it CANNOT separate twirl instance
+variance of 0.02-0.03 by the T-minus-O tests -- R2/R2b will mostly print CONSISTENT bounds, and the decision rule says so.
+Expected false resolutions over the 8 readings of the real run: about 0.25.
+
+## Limits stated now
+Today is not 20 Aug 2026: the run measures whether jobs minutes apart on these chains drift, and whether twirling adds spread, under
+today's calibration; it does not re-measure his day. R2/R2b resolve only large twirl instance variance at this job count (see synthetic).
+
+## /q (Dr. Bonefish the Third, on this plan, before any job)
+FIRED:
+- 8/9 (unequal apparatus: T and O differ in more than "twirling"): twirling also moves the MEAN CVaR (randomised compiling turns coherent
+  error into stochastic) and splits each job's shots over randomisations. CORRECTED: every reading uses deviations from each arm's own
+  row means, never T-mean minus O-mean; a T job's counts are a sum over randomisations, which is no MORE dispersed than one multinomial,
+  so the shot-noise null is conservative for T (stated).
+- 15 (plant every alternative): first synthetic planted only "instance" as row-specific; a job-common twirl component was missing and the
+  truth table scored R1b wrongly. CORRECTED before any job: instance_rows and instance_job worlds, R1b true for instance_job.
+- 16 (floor and multiplicity): 2 sizes x 4 readings. Per-reading false-call rates from the synthetic are printed below; the expected number
+  of false resolutions over the 8 readings is their sum (stated with the results). The decision rule leans on R1/R1b, which have the power.
+- 25 (more than two answers): drift / twirl instance variance / shot noise / both, plus readout-assignment drift versus gate drift, which this
+  design does NOT separate (stated as a limit).
+- 5 (test the rebuttal): the obvious rebuttal to "his shifts are drift" is "they are twirl instance variance"; R1 (no twirl) and R2
+  (permutation, drift-robust) are the test. Untestable part (his day, 20 Aug) is CANNOT_TELL by construction, stated.
+- 33 (budget): Darkwave remaining 3,747 s at the dry run; this run 270 s estimated, cap 320 s.
+- Design fixes found by running the synthetic BEFORE any job (kept as receipts in this plan): CVaR is not linear in the mixing weight
+  (slope now by central difference, realised SD printed); 8 jobs gave too little power, raised to 12 (ABBA extended); the T-minus-O
+  difference against a shot-noise null false-called under drift, replaced by the exact permutation test.
+HELD (ran, nothing found): 1, 2, 3, 4, 6, 7, 10-14, 17-24, 26-32, 34-37 (no stated IBM figure is used; record saved before every job;
+known-good on his data and on our circuit; jobs, not rows or shots, are the units; plan before jobs).
