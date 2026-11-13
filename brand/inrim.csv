@@ -1,2 +1,2 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-INRiM,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp.inrim.it,Its statement,stated bound 29.92 ms,"offset 8.04 ms, path half-delay 56.08 ms",,CANNOT TELL,,13 Nov 15:06,
+INRiM,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp.inrim.it,Its statement,stated bound 28.54 ms,"offset 8.04 ms, path half-delay 55.33 ms",,CANNOT TELL,,13 Nov 15:36,
