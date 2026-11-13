@@ -139,7 +139,9 @@ def cmd_measure(a):
         c, s = p1_from(r.data.fin.get_counts(), len(targets)); counts[k] = (c, s)
     tab = analyse(counts, targets, a.margin)
     p = save_table(a.out, a.backend, readout, targets, L_dt, a.shots, job.job_id(), tab, a.margin)
-    for q, v in tab.items(): print(f'q{q}: {v["deg_per_readout"]:+.3f} deg per readout [{v["band95"][0]:+.3f}, {v["band95"][1]:+.3f}] {v["outcome"]}, coherence kept {v["coherence_kept"]:.3f}')
+    for q, v in tab.items():   # 1.1.1 (13 Nov 2026, Sage's catch): coherence_kept is None when idle coherence is 0; v1.1 raised TypeError here after the paid job
+        ck = v["coherence_kept"]
+        print(f'q{q}: {v["deg_per_readout"]:+.3f} deg per readout [{v["band95"][0]:+.3f}, {v["band95"][1]:+.3f}] {v["outcome"]}, coherence kept ' + ('n/a (idle coherence 0)' if ck is None else f'{ck:.3f}'))
     print('table:', p)
 def corrected(qc, readout, kicks, notes=None):
     R = set(readout); out = qc.copy_empty_like(); pending = set()

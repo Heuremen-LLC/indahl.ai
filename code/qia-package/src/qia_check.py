@@ -54,7 +54,9 @@ def check_record(S, Q, qubits):
                 rows.append(dict(qubit=q, check='STALE', field=f, detail=f'measured {when(e[f][1]):%Y-%m-%d %H:%M} UTC, {(S - when(e[f][1])).total_seconds() / 3600:.1f} h before the stamp'))
         for f in ERRS:
             if e.get(f) and e[f][0] == 0: rows.append(dict(qubit=q, check='ZERO', field=f, detail='published value exactly 0'))
-        if t1 and t2 and t1[0] and t2[0] is not None and t1[0] > 0:
+        if t1 and t2 and t1[0] and t2[0] is not None and t1[0] > 0 and len(t1) > 2 and len(t2) > 2 and t1[2] != t2[2]:   # 1.0.1: units must match
+            rows.append(dict(qubit=q, check='T2>2T1', field='T2/T1', detail=f'units differ ({t1[2]}, {t2[2]}), ratio not formed', outcome='CANNOT_TELL'))
+        elif t1 and t2 and t1[0] and t2[0] is not None and t1[0] > 0:
             r = t2[0] / t1[0]
             if r > 2.0: rows.append(dict(qubit=q, check='T2>2T1', field='T2/T1', detail=f'ratio {r:.3f} (T1 {t1[0]:.4g}, T2 {t2[0]:.4g})', outcome='ABOVE' if r > 2.5 else 'CANNOT_TELL'))
             if t1[1] and t2[1]:
@@ -101,9 +103,10 @@ def pull(backend, dest):
 def main():
     ap = argparse.ArgumentParser(description=NAME + ', ' + ORG); sub = ap.add_subparsers(dest='cmd', required=True)
     a1 = sub.add_parser('before'); a1.add_argument('record', nargs='?'); a1.add_argument('--qubits'); a1.add_argument('--pull'); a1.add_argument('--out', default='heuremen_report')
-    a2 = sub.add_parser('after'); a2.add_argument('records'); a2.add_argument('--start', required=True); a2.add_argument('--end', required=True); a2.add_argument('--qubits'); a2.add_argument('--out', default='heuremen_report')
+    a2 = sub.add_parser('after'); a2.add_argument('records'); a2.add_argument('--start', required=True); a2.add_argument('--end', required=True); a2.add_argument('--qubits'); a2.add_argument('--out', default='heuremen_report'); a2.add_argument('--backend', help='which backend to read when the folder holds records from several')
     a = ap.parse_args()
     if a.cmd == 'before':
+        if a.record and a.pull: sys.exit('give RECORD.json or --pull BACKEND, not both')
         rec = a.record or (pull(a.pull, os.path.join(a.out, 'records')) if a.pull else sys.exit('give RECORD.json or --pull BACKEND'))
         h0 = sha(rec)
         try: b, S, Q = load(rec)
@@ -128,8 +131,14 @@ def main():
             if (r[0], r[1]) in seen: skipped.append(os.path.basename(p) + ' (same stamp as another file)'); continue
             seen.add((r[0], r[1])); recs.append(r + (p,))
         recs.sort(key=lambda r: r[1])
+        bk = sorted({r[0] for r in recs})   # 1.0.1 (13 Nov 2026): records from different backends are never diffed against each other
+        if a.backend:
+            other = [x for x in bk if x != a.backend]; recs = [r for r in recs if r[0] == a.backend]
+            if not recs: sys.exit(f'no records from {a.backend} in {a.records} (backends found: {", ".join(bk)})')
+        elif len(bk) > 1: sys.exit(f'{a.records} holds records from several backends ({", ".join(bk)}); give --backend NAME')
+        else: other = []
         under = [r for r in recs if r[1] <= st]; during = [r for r in recs if st < r[1] <= en]
-        meta = [f'Run window {st:%Y-%m-%d %H:%M} to {en:%Y-%m-%d %H:%M} UTC. Records read: {len(recs)}.'] + ([f'Not read as records: {", ".join(skipped)}.'] if skipped else [])
+        meta = [f'Run window {st:%Y-%m-%d %H:%M} to {en:%Y-%m-%d %H:%M} UTC. Records read: {len(recs)}.'] + ([f'Records from other backends were ignored: {", ".join(other)}.'] if other else []) + ([f'Not read as records: {", ".join(skipped)}.'] if skipped else [])
         secs = []; data = {}
         if not under: meta.append('No record in the folder is stamped at or before the run start, so the record in force at the start is not here. Save the record right before you submit.')
         else:
