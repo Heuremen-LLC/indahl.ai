@@ -91,8 +91,7 @@ try:
             hh.update((ln + '\n').encode()); n += 1
             if hh.hexdigest() == sh: anch = dict(archive_id=a['id'], covers_n=n, attested=False); break
         if anch['archive_id']: 
-            r = subprocess.run([R + '/archive/venv/bin/ots', 'info', R + '/archive/stamps/%s.digest.ots' % a['id']], capture_output=True, text=True)
-            anch['attested'] = 'BitcoinBlockHeaderAttestation' in (r.stdout + r.stderr); anch['digest'] = a['digest']; break
+            anch['digest'] = a['digest']; anch.pop('attested', None); break   # 13 Nov 2026 (Wayfinder): no Bitcoin; the anchor is our own archive hash chain
 except Exception as ex: anch['note'] = type(ex).__name__
 last = chain[-1]; bq = [e for e in chain if e['kind'] == 'beacon'][-1]
 lf = [e for e in chain if e['kind'] == 'feeds'][-1]; lfl = json.load(open('leaves/%d.json' % lf['n']))['leaves']
