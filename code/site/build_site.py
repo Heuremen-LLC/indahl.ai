@@ -8,7 +8,7 @@ MARK = ('<svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon poi
         '<polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg>')
 HOME = {'/vault': '/hermes', '/tape': '/hermes', '/receipts/stamps': '/hermes', '/hfsize': '/iris', '/hflicense': '/iris', '/pkglicense': '/iris', '/pkginstall': '/iris', '/uptime': '/atlas', '/time': '/atlas', '/cada': '/atlas', '/secrecords': '/atlas', '/seat': '/atlas', '/support': '/atlas', '/change': '/atlas',
         '/trials': '/hermes', '/hpt': '/hermes', '/revise': '/hermes', '/fedsep': '/hermes', '/cadence': '/hermes', '/forecast': '/hermes', '/launch': '/hermes', '/arxivdrift': '/hermes', '/linkrot': '/hermes', '/airline': '/hermes', '/weights': '/iris', '/ailuminate': '/iris', '/airq': '/hermes', '/campus': '/oy', '/rank': '/oy', '/hosts': '/iris', '/water': '/atlas', '/neo': '/atlas', '/seasonal': '/hermes', '/steo': '/hermes', '/solar': '/atlas', '/quake': '/atlas', '/flu': '/hermes', '/tornado': '/hermes', '/credit': '/hermes', '/cone': '/atlas', '/wiki': '/hermes', '/social': '/hermes', '/predictions': '/hermes', '/census/revisions': '/census', '/census/coverage': '/census', '/census/fidelity': '/census', '/census/vintages': '/census'}
-NAV = [('/sagar', 'SAGAR'), ('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/census', 'CENSUS'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
+NAV = [('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/sagar', 'SAGAR'), ('/oy', 'OY'), ('/social', 'SOCIAL'), ('/census', 'CENSUS'), ('/time', 'TIME'), ('/cada', 'CADA'), ('/uptime', 'UPTIME'), ('/forecast', 'FORECAST'), ('/cadence', 'CADENCE'), ('/trials', 'TRIALS'), ('/launch', 'LAUNCH'), ('/linkrot', 'LINKROT'), ('/arxivdrift', 'ARXIVDRIFT'), ('/support', 'SUPPORT'), ('/pkglicense', 'PKGLICENSE'), ('/hflicense', 'HFLICENSE'), ('/hfsize', 'HFSIZE'), ('/change', 'CHANGE'), ('/secrecords', 'SECRECORDS'), ('/seat', 'SEAT'), ('/pkginstall', 'PKGINSTALL'), ('/stack', 'STACK'), ('/revise', 'REVISE'), ('/fedsep', 'FEDSEP')]
 DOI = 'https://doi.org/10.5281/zenodo.23169755'
 
 
@@ -165,7 +165,7 @@ def page(path, title, desc, body, wide_hero=None):
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
 </div></footer>
-<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/sagar', 'SAGAR'), ('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS')))}</nav>
+<nav class="tabbar" aria-label="Divisions">{''.join(f'<a href="{h}"{" aria-current=page" if h == _home else ""}>{t}</a>' for h, t in (('/qia', 'QIA'), ('/iris', 'IRIS'), ('/hermes', 'HERMES'), ('/atlas', 'ATLAS'), ('/sagar', 'SAGAR')))}</nav>
 <script src="/pwa.js" defer></script>
 <script src="/live-tags.js?v=35e2ef27" defer></script>
 <script src="/headline.js?v=6e4f48dc" defer></script>
@@ -2496,7 +2496,7 @@ CSS += """
 .dpkrow{display:flex;justify-content:flex-end;margin:0 0 6px}.dpk-l{float:none;margin:0;color:var(--ink)!important;border-color:var(--rule)}.dpk-l:hover{background:var(--rule);color:var(--paper)!important}
 @media (max-width:640px){.dpk{font-size:11px;padding:5px 8px;margin-left:10px;letter-spacing:.1em}}
 @media print{.dpk{display:none}}
-.dpkdd{float:right;position:relative}.dpkdd .dpk{float:none;background:none;cursor:pointer}.dpkdd .ggpanel{right:0;left:auto;min-width:min(520px,92vw);text-transform:none;letter-spacing:0}.dd.dpkdd:hover .ggpanel,.dd.dpkdd:focus-within .ggpanel{display:flex!important}.dpkdd .ggpanel{color:var(--ink);font-family:Lora,Georgia,serif;font-size:15px;font-weight:400}.dpkdd .ggpanel a{color:var(--goldink)!important}
+.dpkdd{float:right;position:relative}.dpkdd .dpk{float:none;background:none;cursor:pointer}.dpkdd .ggpanel{right:0;left:auto;min-width:min(520px,92vw);text-transform:none;letter-spacing:0}.ggtxt{display:block;font-size:14px;line-height:1.4;color:var(--ink);margin:4px 0 2px}.ggcal{padding-bottom:8px}.dd.dpkdd:hover .ggpanel,.dd.dpkdd:focus-within .ggpanel{display:flex!important}.dpkdd .ggpanel{color:var(--ink);font-family:Lora,Georgia,serif;font-size:15px;font-weight:400}.dpkdd .ggpanel a{color:var(--goldink)!important}
 .gg{margin:10px 0 2px}.ggbtn{font:inherit;font-family:Cinzel,Georgia,serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:6px 12px;cursor:pointer}
 .ggbtn::after{content:" \\25BE"}.ggbtn:focus-visible{outline:2px solid var(--rule);outline-offset:2px}
 .ggdd{display:block}.dd.ggdd:hover .ggpanel,.dd.ggdd:focus-within .ggpanel{display:flex!important}.ggpanel{left:auto;right:0;width:min(600px,calc(100vw - 32px));min-width:0;padding:12px 16px;gap:6px}.ggpanel ul{list-style:none;margin:0;padding:0}.ggpanel li{padding:6px 0;border-bottom:1px solid rgba(200,144,42,.35);line-height:1.4}
@@ -2755,6 +2755,13 @@ def main():
         if _pp in _DPK_NONE or _pp.startswith('/media/') or _pp == '/downloads': continue
         _doc = PAGES[_pp]; _items = []
         if _pp in _GD: _items = list(_GD[_pp]) + ([f'<li class="ggnote"><a href="{_GW[_pp]}">What is in each pack</a></li>'] if _GW.get(_pp) else [])
+        if _pp == '/qia':   # 13 Nov 2026 (Wayfinder): QIA in the spotlight, the calibration pack first with the text of the former package box
+            _qz = _PS.get('qia/qia-research-package.zip', {}).get('size', '')
+            _items = [x for x in _items if 'All of QIA' not in x]
+            _items.insert(0, '<li class="ggcal"><a href="/qia/qia-research-package.zip" download>QIA Calibration Pack</a> <span class="ggs">' + _qz + '</span>'
+                '<span class="ggtxt">For runs on IBM quantum hardware, check the calibration record your run depends on, before the run and after it. The pack holds a record checker, '
+                '<a href="/yo">YO</a> (our small language model, Qwen3-1.7B tuned with LoRA on IBM&rsquo;s calibration records to flag stale qubit data), the <a href="/standard">Standards</a>, and a same-job T1 and T2 check. '
+                'Tested on real IBM records and a live run (<a href="/qia/package#tested">how</a>). Checker alone: <code>pip install qia-check</code>.</span></li>')
         else:
             _d = _dpk_for(_pp)
             if _d and _d[0] in _PS:

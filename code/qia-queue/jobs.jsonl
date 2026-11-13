@@ -965,3 +965,5 @@
 {"id": "dbrg20ujjaos73aj0fjg", "backend": "ibm_kingston", "created": "2026-11-13T12:22:27.477272Z", "wait_s": 9066.536156}
 {"id": "dbrftjejjaos73aj0aeg", "backend": "ibm_kingston", "created": "2026-11-13T12:13:01.898159Z", "wait_s": 9631.046901}
 {"id": "dbri9rejjaos73aj4120", "backend": "ibm_kingston", "created": "2026-11-13T14:55:41.790597Z", "wait_s": 14.041627}
+{"id": "dbrigo7v5hds73dht4d0", "backend": "ibm_marrakesh", "created": "2026-11-13T15:10:24.466068Z", "wait_s": 1.375008}
+{"id": "dbrign9abdes73fq3es0", "backend": "ibm_fez", "created": "2026-11-13T15:10:21.556703Z", "wait_s": 1.413946}
