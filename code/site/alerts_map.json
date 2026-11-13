@@ -7463,7 +7463,7 @@
 },
 "campus": {
 "div": "oy",
-"every": "checked about every 2 hours",
+"every": "checked about every 3 hours",
 "every_min": 150,
 "mode": "outcome",
 "name": "CAMPUS",
@@ -7500,7 +7500,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3750,
+"every_min": 3751,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7518,7 +7518,7 @@
 "flu": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 137,
+"every_min": 138,
 "mode": "outcome",
 "name": "FLU",
 "src": "rider",
@@ -7574,7 +7574,7 @@
 "hflicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 137,
+"every_min": 138,
 "mode": "update",
 "name": "HFLICENSE",
 "src": "rider",
@@ -7601,7 +7601,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3625,
+"every_min": 3626,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7787,7 +7787,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 462,
+"every_min": 463,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7850,7 +7850,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 462,
+"every_min": 463,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
