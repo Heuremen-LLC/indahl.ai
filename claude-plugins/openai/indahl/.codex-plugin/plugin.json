@@ -1,0 +1,41 @@
+{
+  "name": "indahl",
+  "version": "1.0.0",
+  "description": "indahl.ai reads what vendors, government agencies and research papers state and checks it against their own published records. The desks cover quantum hardware calibration (IBM), open model claims, package and model licenses, public data portals, forecasts, time servers, status pages, clinical trial results and more.\n\nEvery tool is read-only and needs no account. Each answer gives its outcome (ABOVE, BELOW, CONSISTENT or CANNOT_TELL, relative to what was stated) with its interval, its counts, and links to the rows and receipts behind it. Items that returned nothing, were refused or were held are counted as their own outcomes rather than dropped.\n\nBuilt for researchers, engineers and journalists who need to know whether a stated figure holds up. Limits: the data covers the desks listed by list_divisions; it does not judge claims outside them. All data and code are public at github.com/Heuremen-LLC/indahl.ai.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/api",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "SEE LICENSE-STANDARD.txt AND LICENSE.txt",
+  "keywords": [
+    "research",
+    "data",
+    "measurement",
+    "quantum",
+    "evaluation"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "indahl.ai",
+    "shortDescription": "Stated vs. delivered, measured",
+    "longDescription": "indahl.ai reads what vendors, government agencies and research papers state and checks it against their own published records. The desks cover quantum hardware calibration (IBM), open model claims, package and model licenses, public data portals, forecasts, time servers, status pages, clinical trial results and more.\n\nEvery tool is read-only and needs no account. Each answer gives its outcome (ABOVE, BELOW, CONSISTENT or CANNOT_TELL, relative to what was stated) with its interval, its counts, and links to the rows and receipts behind it. Items that returned nothing, were refused or were held are counted as their own outcomes rather than dropped.\n\nBuilt for researchers, engineers and journalists who need to know whether a stated figure holds up. Limits: the data covers the desks listed by list_divisions; it does not judge claims outside them. All data and code are public at github.com/Heuremen-LLC/indahl.ai.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "What does indahl.ai measure?",
+      "Is IBM's published T1 for ibm_kingston current?",
+      "Do top Hugging Face models' licenses match their files?"
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

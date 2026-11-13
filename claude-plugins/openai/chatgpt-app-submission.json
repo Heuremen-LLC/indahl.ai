@@ -1,0 +1,548 @@
+{
+  "$schema": "https://developers.openai.com/apps-sdk/schemas/chatgpt-app-submission.v1.json",
+  "schema_version": 1,
+  "app_info": {
+    "display_name": "indahl.ai",
+    "subtitle": "Stated vs. delivered, measured",
+    "description": "indahl.ai reads what vendors, government agencies and research papers state and checks it against their own published records. The desks cover quantum hardware calibration (IBM), open model claims, package and model licenses, public data portals, forecasts, time servers, status pages, clinical trial results and more.\n\nEvery tool is read-only and needs no account. Each answer gives its outcome (ABOVE, BELOW, CONSISTENT or CANNOT_TELL, relative to what was stated) with its interval, its counts, and links to the rows and receipts behind it. Items that returned nothing, were refused or were held are counted as their own outcomes rather than dropped.\n\nBuilt for researchers, engineers and journalists who need to know whether a stated figure holds up. Limits: the data covers the desks listed by list_divisions; it does not judge claims outside them. All data and code are public at github.com/Heuremen-LLC/indahl.ai.",
+    "category": "EDUCATION"
+  },
+  "tools": {
+    "list_divisions": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "time_servers": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "dns_filters": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "ibm_calibration": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "find_study": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "bench_results": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "uptime_vendors": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "forecast_calibration": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "data_cadence": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "trials_results": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "launch_slip": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "link_rot": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "ibm_queue": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "ibm_stability": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "ibm_audit": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "arxiv_version_drift": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "support_windows": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "package_license_claims": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "huggingface_license_claims": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "huggingface_model_sizes": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "announced_shutdown_dates": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "security_record_claims": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "outside_seat_drift": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "pypi_install_commands": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "all_tests_side_by_side": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "payroll_revision_against_stated_margin": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "fed_projection_ranges_against_outcomes": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "airline": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "weights": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "hpt": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "ailuminate": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "airq": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "campus": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "hosts": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "tape": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "water": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "wiki": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "social": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "model_claims_round": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    }
+  },
+  "test_cases": [
+    {
+      "description": "Start with the list of what the app covers.",
+      "user_prompt": "What does indahl.ai measure? List its divisions.",
+      "file_attachment_urls": null,
+      "tools_triggered": "list_divisions",
+      "expected_output": "Lists each division with a one-line description and its page, and explains the four outcomes.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Read IBM's published calibration for one processor.",
+      "user_prompt": "What is the median T1 and T2 on ibm_kingston right now?",
+      "file_attachment_urls": null,
+      "tools_triggered": "ibm_calibration",
+      "expected_output": "Returns the newest record stamp, qubit count and median T1, T2, readout and two-qubit error for ibm_kingston, with the record time.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Check license claims for popular models.",
+      "user_prompt": "How often do the most downloaded Hugging Face models state a license that differs from their license file?",
+      "file_attachment_urls": null,
+      "tools_triggered": "huggingface_license_claims",
+      "expected_output": "Returns the disagreement share with its 95% interval and outcome, the counts by class, and examples read in full.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Search the indexed studies.",
+      "user_prompt": "Find studies on quantum error mitigation that QIA has indexed.",
+      "file_attachment_urls": null,
+      "tools_triggered": "find_study",
+      "expected_output": "Returns matching studies with title, link, classification codes, date indexed and the receipt of what was read.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Compare all live tests side by side.",
+      "user_prompt": "Show every live test on indahl.ai in one table, ordered by outcome.",
+      "file_attachment_urls": null,
+      "tools_triggered": "all_tests_side_by_side",
+      "expected_output": "Returns one row per live page with what was compared, failures, share with 95% interval and outcome, ordered by outcome.",
+      "expected_output_url": null
+    }
+  ],
+  "negative_test_cases": [
+    {
+      "description": "Do not trigger for general coding help.",
+      "user_prompt": "Write a Python function that sorts a list of dictionaries by date.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is outside indahl.ai's published measurements.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for personal scheduling.",
+      "user_prompt": "What meetings do I have tomorrow, and can you move the 3pm?",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is outside indahl.ai's published measurements.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for stock trading advice.",
+      "user_prompt": "Should I buy IBM stock this week?",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is outside indahl.ai's published measurements.",
+      "expected_output_url": null
+    }
+  ]
+}
