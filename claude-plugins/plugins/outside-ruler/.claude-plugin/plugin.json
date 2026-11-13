@@ -1,0 +1,20 @@
+{
+  "name": "indahl-outside-ruler",
+  "version": "1.0.0",
+  "description": "Check your own work against a ruler you did not build before it goes out: a referee pass on the raw material, ten checks drawn from mistakes that cost real corrections, and a STANDS / MOVES / HOLD verdict with exact changes. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "review",
+    "referee",
+    "publishing",
+    "quality",
+    "receipts"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

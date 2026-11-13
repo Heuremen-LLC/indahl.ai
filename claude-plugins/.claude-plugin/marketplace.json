@@ -96,6 +96,38 @@
       "version": "1.0.0",
       "category": "research",
       "homepage": "https://indahl.ai/plugins"
+    },
+    {
+      "name": "indahl-batch",
+      "source": "./src/batch",
+      "description": "Run a check or audit over something too big for one context window (a whole site, a large repo, a folder of papers) without losing the instructions: short brief, item list, batches with fresh workers,",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-cannot-tell",
+      "source": "./src/cannot-tell",
+      "description": "Permission and a procedure for answering 'I can't tell yet' instead of forcing an answer: the range of what is possible, the facts that would decide it, and the cheapest next step",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-both",
+      "source": "./src/both",
+      "description": "Hold two competing explanations open instead of collapsing to one too early: two evidence ledgers, four states (A, B, BOTH, NEITHER), and the test that would separate them",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-outside-ruler",
+      "source": "./src/outside-ruler",
+      "description": "Check your own work against a ruler you did not build before it goes out: a referee pass on the raw material, ten checks drawn from mistakes that cost real corrections, and a STANDS / MOVES / HOLD ver",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
     }
   ]
 }

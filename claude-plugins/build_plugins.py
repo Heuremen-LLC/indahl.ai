@@ -15,7 +15,7 @@ matching published copy keeps its old pin and is reported STALE (ship first, the
 import hashlib, json, os, re, shutil, subprocess, sys, urllib.request, filecmp
 H = os.path.dirname(os.path.abspath(__file__)); SRC = os.path.join(H, 'src'); P = os.path.join(H, 'plugins'); PINS = os.path.join(H, 'pins.json')
 REPO = 'Heuremen-LLC/indahl.ai'; RAW = 'https://raw.githubusercontent.com/' + REPO + '/{commit}/{path}'
-PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate']
+PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler']
 SKIPDIR = {'__pycache__'}; LIC = {'LICENSE', 'LICENSE.txt', 'LICENSE-STANDARD.txt', 'NOTICE.txt'}
 sha = lambda b: hashlib.sha256(b).hexdigest()
 

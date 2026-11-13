@@ -8,7 +8,7 @@ Never edit openai/ by hand.   python3 build_openai.py"""
 import json, os, re, shutil, urllib.request, zipfile
 H = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(H, 'plugins'); O = os.path.join(H, 'openai')
 ICONS = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door/public/icons')
-ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate']
+ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler']
 SUB = {   # subtitle (30 characters or fewer) and three starter prompts per listing
  'indahl': ('Stated vs. delivered, measured', ['What does indahl.ai measure?', "Is IBM's published T1 for ibm_kingston current?", 'Check this paper against the Standards.']),
  'indahl-data': ('Query every indahl.ai desk', ['List the indahl.ai divisions.', 'Do top Hugging Face licenses match their files?', 'Show every live test side by side.']),
@@ -19,12 +19,16 @@ SUB = {   # subtitle (30 characters or fewer) and three starter prompts per list
  'darkwave-correction': ('Correct IBM Quantum readout', ['Check my backend for the Darkwave kit.', 'What would the Darkwave measurement cost?', 'Correct these counts with the kit.']),
  'prereg': ('Was the plan pushed first?', ['Was my plan pushed before the first run?', 'List what ran that the plan did not cover.', 'Check this repository for a pre-registration.']),
  'triangulate': ('Three blind reads, one verdict', ['Triangulate: is this claim right?', 'Get three independent reads on this decision.', 'Check this number against three seats.']),
+ 'batch': ('Big audits, batched', ['Audit every page of this site in batches.', 'Apply batch to this.', 'Show batch on an example.']),
+ 'cannot-tell': ("Say can't-tell, usefully", ["Is this claim right, or can't we tell yet?", 'Apply cannot tell to this.', 'Show cannot tell on an example.']),
+ 'both': ('Keep two explanations alive', ['Hold both explanations and tell me what separates them.', 'Apply both to this.', 'Show both on an example.']),
+ 'outside-ruler': ('Referee it before it ships', ['Referee this draft before I publish it.', 'Apply outside ruler to this.', 'Show outside ruler on an example.']),
  'readcheck': ('Check blocks for readings', ['Make a check block for this reading.', 'Verify the check block in this folder.', 'List staged readings without a check block.']),
 }
 CAT = 'Education & Research'
 
 def listing_name(p):
-    return 'Indahl' if p == 'indahl' else ('Indahl ' + {'indahl-data': 'Data', 'qia-calibration': 'QIA Calibration', 'darkwave-correction': 'Darkwave', 'eval-check': 'Eval Check'}.get(p, p.replace('-', ' ').title()))
+    return 'Indahl' if p == 'indahl' else ('Indahl ' + {'indahl-data': 'Data', 'qia-calibration': 'QIA Calibration', 'darkwave-correction': 'Darkwave', 'eval-check': 'Eval Check', 'cannot-tell': 'Cannot Tell', 'outside-ruler': 'Outside Ruler'}.get(p, p.replace('-', ' ').title()))
 
 def build(p):
     src = os.path.join(P, p); m = json.load(open(os.path.join(src, '.claude-plugin', 'plugin.json')))

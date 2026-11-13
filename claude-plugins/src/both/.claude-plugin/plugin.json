@@ -1,0 +1,19 @@
+{
+  "name": "indahl-both",
+  "version": "1.0.0",
+  "description": "Hold two competing explanations open instead of collapsing to one too early: two evidence ledgers, four states (A, B, BOTH, NEITHER), and the test that would separate them. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "reasoning",
+    "hypotheses",
+    "analysis",
+    "research"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

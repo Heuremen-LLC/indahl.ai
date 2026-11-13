@@ -17,6 +17,10 @@ Built by build_bundle.py from the plugins beside it; the parts and their version
 - prereg 1.0.0
 - readcheck 1.1.0
 - triangulate 1.0.0
+- batch 1.0.0
+- cannot-tell 1.0.0
+- both 1.0.0
+- outside-ruler 1.0.0
 
 ## Services this bundle contacts
 

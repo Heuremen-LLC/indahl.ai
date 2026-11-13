@@ -1,0 +1,19 @@
+{
+  "name": "indahl-cannot-tell",
+  "version": "1.0.0",
+  "description": "Permission and a procedure for answering 'I can't tell yet' instead of forcing an answer: the range of what is possible, the facts that would decide it, and the cheapest next step. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "uncertainty",
+    "honesty",
+    "decision",
+    "verification"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}
