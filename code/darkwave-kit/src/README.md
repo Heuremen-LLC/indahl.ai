@@ -2,7 +2,7 @@
 
 Heuremen LLC · https://indahl.ai/darkwave
 
-A mid-circuit readout can turn the phase of the untouched qubits next to it. This kit measures that turn on your own IBM Quantum account,
+This kit measures the phase turn on untouched qubits after a mid-circuit readout, on your own IBM Quantum account,
 one value per untouched qubit in degrees per readout, and adds the matching virtual-Z correction to your own circuits. The method is the
 one in our study "A Readout's Kick Is a Turn" (data and code: https://doi.org/10.5281/zenodo.23843468). The kit names no mechanism for the turn.
 
@@ -29,7 +29,7 @@ We tested the kit on ibm_kingston on 2 November 2026 under plans committed and p
 - Version 1.0 read the same turn as the study's code (kit minus study +0.025 [-0.063, +0.143] degrees per readout) but its correction gave back
   only 0.264 [0.248, 0.285] of the turn, and it failed the test. Its apply step merged readouts separated by barriers into one group, so a
   circuit with four readouts got one correction instead of four.
-- Version 1.1, this one, read the same turn as the study's code (kit minus study -0.041 [-0.231, +0.101] degrees per readout) and its correction
+- Version 1.1 read the same turn as the study's code (kit minus study -0.041 [-0.231, +0.101] degrees per readout) and its correction
   gave back 1.012 [0.993, 1.027] of the turn over 113 targets. The turn left after the correction was +0.086 [-0.007, +0.180] degrees per readout,
   against -3.223 uncorrected. It passed the test, on one chip and one calibration snapshot, on the second attempt after the fix.
 - The share given back is a median over the targets. A tail keeps part of the turn: 12 % of targets kept more than 1 degree per readout,
@@ -39,13 +39,19 @@ We tested the kit on ibm_kingston on 2 November 2026 under plans committed and p
 Brackets are 95 % bootstrap bands over the target qubits. Every number was recomputed from the raw arrays with separate code. Both runs, with their plans, raw data and code, are in `hardware-check/` and at
 https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/darkwave-kit/hardware-check
 
+Version 1.1.1 (13 November 2026), this one, is version 1.1 with three changes and the same measurement and correction code: a target
+whose idle coherence is exactly 0 no longer crashes the printout after the job has run (its coherence prints as n/a); a paid submit
+(`measure --yes`) runs only from a terminal you type in yourself, never from a script or an assistant's shell; and the opening line now
+says what the kit measures, the phase turn on untouched qubits after a mid-circuit readout, without naming a cause. The hardware results
+above were made with version 1.1.
+
 ## 2. Measure your table
 
 `python darkwave_kit.py measure --backend ibm_kingston --readout 5,6,7 --targets 4,8,9 --check`
 
 `--readout` is the set of qubits your circuits measure mid-circuit. `--targets` is the untouched qubits you want corrected. `--check`
 builds the circuits, checks that the layout is unmoved and that the idle and readout arms take the same time on every target, and submits
-nothing. Run it again with `--yes` to submit one job of 8 circuits (4,000 shots each by default). IBM bills the job by its quantum seconds,
+nothing. Run it again with `--yes`, from your own terminal, to submit one job of 8 circuits (4,000 shots each by default). IBM bills the job by its quantum seconds,
 which your plan shows after the job. The table is written to `kicks/` as JSON with, for each target, the turn per readout with a 95 % band, one of four outcomes
 against zero (ABOVE, BELOW, CONSISTENT within plus or minus 0.5 degrees, or CANNOT_TELL) and the coherence kept beside the idle comparison.
 
