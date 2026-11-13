@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-13T14:24:14Z",
+ "built_utc": "2026-11-13T14:29:15Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 184,
+   "commit": "1509897b8ba47304fca9e1a4cefdba434e6027d7",
+   "files": 5923,
+   "id": "1509897b8ba4",
+   "json": "/receipts/stamps/release_1509897b8ba4.json",
+   "ledger_sha256": "8d8a0c5bd65eec1c9bfab277b2da736888c2f78080161350a2471418c42ae509",
+   "manifest_sha256": "06f73691246e1becbe2f9ec323ecd29b9f2358bb9c14e765aff4c9e95e22cf5d",
+   "ots": "/receipts/stamps/release_1509897b8ba4.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-13T14:29:12Z",
+   "sha256": "f84ea5d25c34660e43744813c2552de37c2c7bd9ba89ff4fb8798092a760bbaf",
+   "wayback": [],
+   "wayback_waiting": 182
+  },
   {
    "changed": 858,
    "commit": "875c5f39a07aaa886177e6a03dfceb1500b2e6bb",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-13T14:13:30Z",
    "sha256": "bbe02d71e655215af4717d749aa2202826823b24bdf1f6a75e004a2c64784149",
    "wayback": [],
-   "wayback_waiting": 854
+   "wayback_waiting": 746
   },
   {
    "changed": 5026,
@@ -281,7 +296,7 @@
      "url": "https://indahl.ai/pkglicense"
     }
    ],
-   "wayback_waiting": 4201
+   "wayback_waiting": 4156
   },
   {
    "changed": 4835,
@@ -311,7 +326,7 @@
    "released_at": "2026-11-13T13:32:29Z",
    "sha256": "d40dfe7c25dc39e4fb6dc31cd33a8bd09a04870f6c2a4b065e7bd7ffb038247f",
    "wayback": [],
-   "wayback_waiting": 13
+   "wayback_waiting": 11
   },
   {
    "changed": 459,
@@ -562,7 +577,7 @@
      "url": "https://indahl.ai/changelog.xml"
     }
    ],
-   "wayback_waiting": 45
+   "wayback_waiting": 29
   },
   {
    "changed": 1138,
@@ -793,7 +808,7 @@
      "url": "https://indahl.ai/changelog.xml"
     }
    ],
-   "wayback_waiting": 7
+   "wayback_waiting": 4
   },
   {
    "changed": 460,
@@ -1059,7 +1074,7 @@
      "url": "https://indahl.ai/airline/airline-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 18
+   "wayback_waiting": 17
   },
   {
    "changed": 4865,
