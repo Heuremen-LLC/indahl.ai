@@ -13,6 +13,8 @@ Nothing else is contacted. The plugin reads no personal data and stores nothing 
 
 Privacy: https://indahl.ai/privacy. Terms: https://indahl.ai/terms.
 
+Refereed before release by Sage, the outside referee at Heuremen LLC (13 Nov 2026): every fix from her review was applied before this version shipped.
+
 ## How the scripts arrive
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/Heuremen-LLC/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
