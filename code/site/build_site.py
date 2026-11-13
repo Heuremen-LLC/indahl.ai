@@ -2423,6 +2423,12 @@ def _navfor(path):
         _seen = set(); ds = [x for x in ds if not (x[0] in _seen or _seen.add(x[0]))]
         if ds or h == '/sagar': out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel"><a href="' + h + '">' + t + ' main page</a>' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
         else: out.append('<a href="' + h + '"' + cur + '>' + t + '</a>')
+    _top = [('qia/qia-research-package.zip', 'All of QIA'), ('qia/qia-list-pack.zip', 'QIA LIST'), ('iris/iris-research-package.zip', 'All of IRIS'), ('iris/iris-list-pack.zip', 'IRIS LIST'),
+            ('atlas/atlas-data-pack.zip', 'All of ATLAS'), ('oy/oy-data-pack.zip', 'All of OY'), ('social/social-data-pack.zip', 'SOCIAL'), ('hermes/model-data-pack.zip', 'MODEL')]
+    _PSg = globals().get('_PS') or {}; _dg = globals().get('_dpk_for')
+    _mine = _dg(path) if _dg else None
+    _gl = ([f'<a href="/{_mine[0]}" download>This page: {_mine[1]}</a>'] if (_mine and _mine[0] in _PSg) else []) + [f'<a href="/{z}" download>{n}</a>' for z, n in _top if z in _PSg and not (_mine and _mine[0] == z)]
+    out.append('<span class="dd grab"><a href="/downloads"' + (' aria-current=page' if path == '/downloads' else '') + '>GRAB AND GO</a><span class="ddpanel">' + ''.join(_gl) + '<a href="/downloads">Every pack</a></span></span>')
     out.append('<a class="dw" href="/darkwave"' + (' aria-current=page' if path == '/darkwave' else '') + '>DARKWAVE</a>')   # 31 Oct: the Darkwave page on heuremen.org (countdown, then the paper page)
     return ''.join(out)
 
@@ -2496,6 +2502,7 @@ CSS += """
 .dpkrow{display:flex;justify-content:flex-end;margin:0 0 6px}.dpk-l{float:none;margin:0;color:var(--ink)!important;border-color:var(--rule)}.dpk-l:hover{background:var(--rule);color:var(--paper)!important}
 @media (max-width:640px){.dpk{font-size:11px;padding:5px 8px;margin-left:10px;letter-spacing:.1em}}
 @media print{.dpk{display:none}}
+.dpkdd{float:right;position:relative}.dpkdd .dpk{float:none;background:none;cursor:pointer}.dpkdd .ggpanel{right:0;left:auto;min-width:min(520px,92vw);text-transform:none;letter-spacing:0}.dd.dpkdd:hover .ggpanel,.dd.dpkdd:focus-within .ggpanel{display:flex!important}.dpkdd .ggpanel{color:var(--ink);font-family:Lora,Georgia,serif;font-size:15px;font-weight:400}.dpkdd .ggpanel a{color:var(--goldink)!important}
 .gg{margin:10px 0 2px}.ggbtn{font:inherit;font-family:Cinzel,Georgia,serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:6px 12px;cursor:pointer}
 .ggbtn::after{content:" \\25BE"}.ggbtn:focus-visible{outline:2px solid var(--rule);outline-offset:2px}
 .ggdd{display:block}.dd.ggdd:hover .ggpanel,.dd.ggdd:focus-within .ggpanel{display:flex!important}.ggpanel{left:auto;right:0;width:min(600px,calc(100vw - 32px));min-width:0;padding:12px 16px;gap:6px}.ggpanel ul{list-style:none;margin:0;padding:0}.ggpanel li{padding:6px 0;border-bottom:1px solid rgba(200,144,42,.35);line-height:1.4}
@@ -2694,9 +2701,7 @@ def main():
         if not _d or not _sha(_d[0]): continue
         _a = (f'<a class="dpk" href="/{_d[0]}" download aria-label="Data pack: download the {_d[1]} (zip)" title="{_d[1]} (zip)">'
               '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9M4 6.5 8 10.5 12 6.5M2 14h12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Data pack</a>')
-        _h = '<section class="hero slim"><div class="wrap">'
-        if _h in PAGES[_pp]: PAGES[_pp] = PAGES[_pp].replace(_h, _h + _a, 1)
-        elif '<main class="wrap">' in PAGES[_pp]: PAGES[_pp] = PAGES[_pp].replace('<main class="wrap">', '<main class="wrap"><p class="dpkrow">' + _a.replace('class="dpk"', 'class="dpk dpk-l"', 1) + '</p>', 1)
+        pass   # 13 Nov 2026 (Wayfinder): no per-page Data pack button; every pack is in the GRAB AND GO menu in the header and on /downloads
     # 10 Nov 2026 (Wayfinder): on each division page, where the division pack sits, a "grab and go" list of every pack in that division: the
     # division pack first, then one line per desk with its zip and size. Same no-script dropdown as the banner (.dd/.ddpanel, hover or focus).
     # Sizes come from tools/desk_packs/pack_sizes.json (tools/desk_pack.py sizes), the file the ledger rows pack.size.* cite.
@@ -2710,6 +2715,7 @@ def main():
               '/hermes': 'hermes/model-data-pack.zip', '/social': 'social/social-data-pack.zip'}
     _SECT = [('DSA', 'EU moderation reports against the DSA Transparency Database', ''), ('AD SPEND', "Google's political ad library against FEC filings", 'results'),
              ('TIKTOK', "TikTok's quarterly report against its EU filings", 'results'), ('BLUESKY', "Bluesky's transparency report against its signed label stream", 'results')]
+    _GRAB = []
     for _dv, _top in _DIVPK.items():
         if _dv not in PAGES: continue
         _li = []
@@ -2737,11 +2743,18 @@ def main():
         _zr = {'/hermes': 'HERMES Desk Packs', '/iris': 'IRIS Desk Packs', '/social': 'SOCIAL Data Pack', '/atlas': 'ATLAS Desk Packs', '/oy': 'OY Desk Packs'}.get(_dv)   # 10 Nov evening: ATLAS and OY desk records
         if _zr and _cite(_zr): _box += _cite(_zr).replace('Cite: ', ('Desk packs on Zenodo: ' if _dv != '/social' else 'Cite: '), 1)
         _doc = PAGES[_dv]; _hd = f'<a class="pkghead" href="{ {"/atlas": "/atlas/data-pack", "/iris": "/iris/package", "/oy": "/oy/data-pack", "/qia": "/qia/package"}.get(_dv, "") }">'
-        if _dv in ('/atlas', '/iris', '/oy', '/qia') and _hd in _doc:
-            _i = _doc.index('</aside>', _doc.index(_hd)); PAGES[_dv] = _doc[:_i] + _box + _doc[_i:]
-        else:
-            _m = '<main class="wrap">' + _hlslot(_dv); _m = _m if _m in _doc else '<main class="wrap">'
-            PAGES[_dv] = _doc.replace(_m, _m + '<aside class="pkgbox ggbox"><span class="pkghead">' + _MARK + ('HERMES desk packs' if _dv == '/hermes' else 'SOCIAL Data Pack') + '</span>' + _box + '</aside>', 1)
+        # 13 Nov 2026 (Wayfinder): the package box is gone; every pack is in the GRAB AND GO menu and on /downloads
+        PAGES[_dv] = _pr.sub(r'<aside class="pkgbox[^"]*">.*?</aside>', '', _doc, flags=_pr.S)
+        if _zr and _cite(_zr):   # each division page still cites its Zenodo record (ledger rows zenodo.*_desks.concept, zenodo.social.concept)
+            _m = '<main class="wrap">' + _hlslot(_dv); _m = _m if _m in PAGES[_dv] else '<main class="wrap">'
+            PAGES[_dv] = PAGES[_dv].replace(_m, _m + _cite(_zr).replace('Cite: ', ('Desk packs on Zenodo: ' if _dv != '/social' else 'Cite: '), 1), 1)
+        if _zr and _cite(_zr): _li.append('<li class="ggnote">' + _cite(_zr)[len('<p class="pkgalso">'):-len('</p>')] + '</li>')
+        _GRAB.append((_dv, _DNAME.get(_dv, _dv.strip('/').upper()), _li, {'/atlas': '/atlas/data-pack', '/iris': '/iris/package', '/oy': '/oy/data-pack', '/qia': '/qia/package'}.get(_dv)))
+    # 13 Nov 2026 (Wayfinder): GRAB AND GO, one page with every pack, division by division (the header menu links here)
+    _gb = ''.join(f'<h2>{_n}</h2><ul class="desklist">' + ''.join(_l) + (f'<li><a href="{_w}">What is in each pack</a></li>' if _w else '') + '</ul>' for _d0, _n, _l, _w in _GRAB)
+    PAGES['/downloads'] = page('/downloads', 'Grab and Go: Every Data Pack | Heuremen LLC', 'Every Heuremen LLC data pack and research package, division by division, each a zip with its README, sources and tests.',
+                               '<section class="legal grab">' + _gb + '</section>', hero_slim('GRAB AND GO'))
+    globals()['_PS'] = _PS; globals()['_dpk_for'] = _dpk_for   # the header menu (_navfor) reads these
     # 10 Nov 2026 (Zenodo packs): each desk page whose pack is deposited on Zenodo says where, under the page, from ledger/zenodo_dois.json.
     # 10 Nov evening: the ATLAS version that holds the ATLAS desks is published (10.5281/zenodo.24110654), so those desks say their data is inside it.
     try: _ZD = _jsonld.load(open(os.path.join(HERE, '..', 'ledger', 'zenodo_dois.json')))['desks']
