@@ -124,6 +124,15 @@ function openapi() {
   const paths = {}; for (const t of TOOLS) paths[`/api/v1/${t.name}`] = { get: { operationId: t.name, summary: t.description, parameters: Object.entries(t.params || {}).map(([n, p]) => ({ name: n, in: 'query', required: (t.required || []).includes(n), schema: { type: p.type, ...(p.enum ? { enum: p.enum } : {}) }, description: p.description })), responses: { 200: { description: 'JSON with source, read_at, terms, use and data.' } } } };
   return { openapi: '3.1.0', info: { title: 'indahl.ai data API', version: '1.0.0', description: 'Read-only. ' + OUTCOMES + ' ' + USE, termsOfService: TERMS }, servers: [{ url: 'https://indahl.ai' }], paths };
 }
+// 13 Nov 2026 (Wayfinder: "Quantum is WIDE fucking open"): focused connectors on the same server, one URL each, each its own directory listing.
+const GROUPS = {
+  quantum: { title: 'Heuremen LLC quantum data', note: 'IBM Quantum published calibration checked against itself and the QIA index of quantum hardware studies.',
+    tools: ['list_divisions', 'ibm_calibration', 'ibm_audit', 'ibm_stability', 'ibm_queue', 'find_study', 'all_tests_side_by_side'] },
+  models: { title: 'Heuremen LLC model and package data', note: 'Open models, packages and AI benchmarks: stated against delivered.',
+    tools: ['list_divisions', 'huggingface_license_claims', 'huggingface_model_sizes', 'package_license_claims', 'pypi_install_commands', 'hosts', 'weights', 'ailuminate', 'bench_results', 'model_claims_round', 'announced_shutdown_dates', 'arxiv_version_drift', 'link_rot', 'find_study', 'all_tests_side_by_side'] },
+  public: { title: 'Heuremen LLC public data checks', note: 'Forecasts, agencies, public services and infrastructure: stated against delivered.',
+    tools: ['list_divisions', 'forecast_calibration', 'fed_projection_ranges_against_outcomes', 'payroll_revision_against_stated_margin', 'water', 'launch_slip', 'trials_results', 'data_cadence', 'support_windows', 'time_servers', 'dns_filters', 'uptime_vendors', 'security_record_claims', 'airline', 'airq', 'hpt', 'wiki', 'social', 'campus', 'tape', 'outside_seat_drift', 'all_tests_side_by_side'] },
+};
 export async function handleApi(req, env, u) {
   if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
   const p = u.pathname;
@@ -136,7 +145,9 @@ export async function handleApi(req, env, u) {
     const r = await callTool(env, req, m[1], args); if (!r) return jsonR({ error: 'unknown tool', see: 'https://indahl.ai/api/v1' }, 404);
     return jsonR(r, 200, { 'cache-control': 'public, max-age=60' });
   }
-  if (p === '/mcp') {
+  const gm = /^\/mcp(?:\/(quantum|models|public))?\/?$/.exec(p);
+  if (gm) {
+    const G = gm[1] ? GROUPS[gm[1]] : null; const TL = G ? TOOLS.filter(t => G.tools.includes(t.name)) : TOOLS;
     if (req.method === 'GET') return new Response('This is an MCP server. POST JSON-RPC to this URL.', { status: 405, headers: { allow: 'POST, OPTIONS', ...CORS } });
     if (req.method !== 'POST') return new Response(null, { status: 405, headers: { allow: 'POST, OPTIONS', ...CORS } });
     const raw = await req.text(); if (raw.length > 65536) return jsonR({ jsonrpc: '2.0', id: null, error: { code: -32600, message: 'request too large' } }, 413);
@@ -145,10 +156,10 @@ export async function handleApi(req, env, u) {
       const id = msg.id, has = Object.prototype.hasOwnProperty.call(msg, 'id'); const ok = (result) => ({ jsonrpc: '2.0', id, result }), err = (code, message) => ({ jsonrpc: '2.0', id, error: { code, message } });
       if (!has) return null;
       switch (msg.method) {
-        case 'initialize': { const pv = (msg.params && msg.params.protocolVersion) || '2025-06-18'; return ok({ protocolVersion: pv, capabilities: { tools: { listChanged: false } }, serverInfo: { name: 'indahl-ai', title: 'Heuremen LLC data', version: '1.0.0' }, instructions: 'Read-only measurements of published claims against the data behind them. Start with list_divisions. ' + OUTCOMES + ' ' + USE }); }
+        case 'initialize': { const pv = (msg.params && msg.params.protocolVersion) || '2025-06-18'; return ok({ protocolVersion: pv, capabilities: { tools: { listChanged: false } }, serverInfo: { name: G ? 'indahl-' + gm[1] : 'indahl-ai', title: G ? G.title : 'Heuremen LLC data', version: '1.0.0' }, instructions: (G ? G.note + ' ' : '') + 'Read-only measurements of published claims against the data behind them. Start with list_divisions. ' + OUTCOMES + ' ' + USE }); }
         case 'ping': return ok({});
-        case 'tools/list': return ok({ tools: TOOLS.map(t => { const title = t.title || toolTitle(t.name); return { name: t.name, title, description: t.description, inputSchema: schema(t), annotations: { title, readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false } }; }) });   // 13 Nov: every tool carries a title and explicit read-only, non-destructive, closed-world hints (Anthropic and OpenAI directory requirements: our own published data only)
-        case 'tools/call': { const n = msg.params && msg.params.name; const r = await callTool(env, req, n, (msg.params && msg.params.arguments) || {}).catch(() => 'ERR'); if (r === null) return err(-32602, 'unknown tool'); if (r === 'ERR') return ok({ content: [{ type: 'text', text: 'The source could not be read just now.' }], isError: true }); return ok({ content: [{ type: 'text', text: JSON.stringify(r) }], isError: false }); }
+        case 'tools/list': return ok({ tools: TL.map(t => { const title = t.title || toolTitle(t.name); return { name: t.name, title, description: t.description, inputSchema: schema(t), annotations: { title, readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false } }; }) });   // 13 Nov: every tool carries a title and explicit read-only, non-destructive, closed-world hints (Anthropic and OpenAI directory requirements: our own published data only)
+        case 'tools/call': { const n = msg.params && msg.params.name; if (!TL.some(t => t.name === n)) return err(-32602, 'unknown tool'); const r = await callTool(env, req, n, (msg.params && msg.params.arguments) || {}).catch(() => 'ERR'); if (r === null) return err(-32602, 'unknown tool'); if (r === 'ERR') return ok({ content: [{ type: 'text', text: 'The source could not be read just now.' }], isError: true }); return ok({ content: [{ type: 'text', text: JSON.stringify(r) }], isError: false }); }
         default: return err(-32601, 'method not found');
       }
     };
