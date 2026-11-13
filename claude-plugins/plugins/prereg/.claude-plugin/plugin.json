@@ -1,0 +1,19 @@
+{
+  "name": "indahl-prereg",
+  "version": "1.0.0",
+  "description": "Show that a plan was written before the first run, using your git host's own record of the push (no outside timestamp chain), and list what ran that the plan did not cover.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "repository": "https://github.com/Heuremen-LLC/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "preregistration",
+    "reproducibility",
+    "research",
+    "git"
+  ],
+  "homepage": "https://indahl.ai/plugins",
+  "icon": ".claude-plugin/icon.png"
+}

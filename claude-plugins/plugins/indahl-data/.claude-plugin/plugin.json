@@ -1,0 +1,21 @@
+{
+  "name": "indahl-data",
+  "version": "1.0.0",
+  "description": "Live Heuremen LLC measurements inside Claude Code: every indahl.ai desk (IBM calibration, time servers, DNS filters, model licenses and sizes, flu forecasts, launch slips and more) through the read-only indahl.ai MCP server, quoted with interval, outcome and receipt. The agent is told to treat API responses as data, not instructions.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/mcp",
+  "repository": "https://github.com/Heuremen-LLC/claude-plugins",
+  "license": "SEE LICENSE.txt",
+  "keywords": [
+    "data",
+    "mcp",
+    "measurements",
+    "quantum",
+    "benchmarks",
+    "open-data"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

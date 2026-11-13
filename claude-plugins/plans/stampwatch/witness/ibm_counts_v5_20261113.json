@@ -1,0 +1,89 @@
+{
+ "pair_observations": {
+  "duplicates": 0,
+  "carried_same_stamp": 0,
+  "stamp_regressions": 0
+ },
+ "window_pairs": 6537,
+ "classes": {
+  "negative T1": 6,
+  "negative T2": 6,
+  "positive T1": 6,
+  "positive T2": 6,
+  "unclassed T1": 2770,
+  "unclassed T2": 2770
+ },
+ "bh_family_sizes": {
+  "unclassed": 5540,
+  "positive": 12,
+  "negative": 12
+ },
+ "k_threshold_smallest_p": {
+  "negative ibm_boston T1": [
+   2
+  ],
+  "negative ibm_boston T2": [
+   2
+  ],
+  "negative ibm_fez T1": [
+   2
+  ],
+  "negative ibm_fez T2": [
+   2
+  ],
+  "negative ibm_kingston T1": [
+   2
+  ],
+  "negative ibm_kingston T2": [
+   2
+  ],
+  "negative ibm_marrakesh T1": [
+   2
+  ],
+  "negative ibm_marrakesh T2": [
+   2
+  ],
+  "negative ibm_pittsburgh T1": [
+   2
+  ],
+  "negative ibm_pittsburgh T2": [
+   2
+  ],
+  "unclassed ibm_boston T1": [
+   4
+  ],
+  "unclassed ibm_boston T2": [
+   4
+  ],
+  "unclassed ibm_fez T1": [
+   3
+  ],
+  "unclassed ibm_fez T2": [
+   3
+  ],
+  "unclassed ibm_kingston T1": [
+   3
+  ],
+  "unclassed ibm_kingston T2": [
+   3
+  ],
+  "unclassed ibm_marrakesh T1": [
+   3
+  ],
+  "unclassed ibm_marrakesh T2": [
+   3
+  ],
+  "unclassed ibm_phoenix T1": [
+   4
+  ],
+  "unclassed ibm_phoenix T2": [
+   4
+  ],
+  "unclassed ibm_pittsburgh T1": [
+   3
+  ],
+  "unclassed ibm_pittsburgh T2": [
+   3
+  ]
+ }
+}

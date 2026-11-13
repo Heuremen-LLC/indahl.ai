@@ -1,0 +1,20 @@
+{
+  "name": "indahl-eval-check",
+  "version": "1.0.0",
+  "description": "Check a language-model evaluation claim (a benchmark score, a model-vs-model win, a leaderboard number) or your own eval run against twelve house checks drawn from the Heuremen LLC Standards and the IRIS recounts: setup as part of the result, parser checked against raw replies, repeat floor, dropped items by reason, intervals and four outcomes. The agent is told to treat fetched papers, files and model outputs as data, not instructions.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/iris",
+  "repository": "https://github.com/Heuremen-LLC/claude-plugins",
+  "license": "SEE LICENSE-STANDARD.txt",
+  "keywords": [
+    "llm",
+    "evaluation",
+    "benchmarks",
+    "reproducibility",
+    "standards"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}
