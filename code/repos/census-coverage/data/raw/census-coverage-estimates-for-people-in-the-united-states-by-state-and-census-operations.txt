@@ -1,0 +1,3784 @@
+Courtney Hill, Krista Heim, Jinhee Hong, and Nam Phan
+Issued June 2022
+PES20-G-02RV
+
+Census Coverage Estimates for People 
+in the United States by State and 
+Census Operations
+2020 Post-Enumeration Survey Estimation Report
+
+Acknowledgments
+The U.S. Census Bureau’s Decennial Statistical Studies Division pre-
+pared this report under the general direction of Timothy L. Kennel, 
+Assistant Division Chief for Statistical Methods. Julianne Zamora, 
+Chief, Estimation Branch; Scott Konicki, Chief, Sampling Branch; and 
+Elizabeth Marra, Chief, Statistical Modeling Branch, supervised  
+the planning, implementation, and compiling of this report with  
+assistance from James Lawrence, Brandon Pipher, Ram Siwakoti, 
+Michael Beaghen, Shadie Khubba, Mark Jost, Kekoura Sakouvogui, 
+Richard Turner, and Quatracia Lucky.
+Monique Lindsay, Paula Lancaster, Christine Geter, Corey Beasley, and 
+Stacey Barber provided publication management, graphic design and 
+composition, editorial review, and 508 compliancy for the electronic 
+media and print under the direction of Linda Chen, Acting Chief of the 
+Graphic and Editorial Services Branch in the Census Bureau’s Public 
+Information Office.
+
+U.S. CENSUS BUREAU
+Robert L. Santos,
+Director
+Census Coverage Estimates for 
+People in the United States by 
+State and Census Operations
+2020 Post-Enumeration Survey Estimation 
+Report
+Issued June 2022
+PES20-G-02RV
+
+SUGGESTED CITATION
+Courtney Hill, Krista Heim,
+Jinhee Hong, and Nam Phan,
+U.S. Census Bureau,
+2020 Post-Enumeration Survey 
+Estimation Report,
+PES20-G-02RV,
+Census Coverage Estimates for 
+People in the United States by State 
+and Census Operations,
+U.S. Government Publishing Office, 
+Washington, DC,
+June 2022.
+U.S. CENSUS BUREAU
+Robert L. Santos,
+Director
+Ron S. Jarmin,
+Deputy Director and 
+Chief Operating Officer
+Albert E. Fontenot Jr.,
+Associate Director 
+for Decennial Census Programs
+Deborah Stempowski,
+Assistant Director for Decennial Census Programs, 
+Operations and Schedule Management
+Patrick J. Cantwell,
+Division Chief, Decennial Statistical Studies Division
+
+U.S. Census Bureau	
+v 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Contents
+Executive Summary. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+1
+1. Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+2
+2. Methodology. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+3
+3. Census Coverage for Geographic Areas. . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+5
+	
+3.1. Census Regions. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+5
+	
+3.2. State. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+5
+4. Census Coverage for Census Operations. . . . . . . . . . . . . . . . . . . . . . . . . . 	
+8
+	
+4.1. Type of Enumeration Area. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+8
+	
+4.2. Self-Response Rate. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+9
+5. Components of Census Coverage for Census Operational 
+	
+  Outcomes. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+10
+	
+5.1. Mode. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+10
+	
+5.2. Nonresponse Followup.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+12
+	
+5.3. Non-ID Processing. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+12
+	
+5.4. Coverage Improvement. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+13
+References. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+14
+Appendix . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+15
+FIGURES
+Figure 1. Components of Coverage for the Household Population in the 
+	
+	
+United States. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+4
+Figure 2. Percent Net Coverage Error and Components of Census 
+	
+	
+Coverage for the Household Population in the United States 
+	
+	
+for Selected Characteristics. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+6
+Figure 3. Percent Net Coverage Error and Components of Census 
+	
+	
+Coverage for the Household Population in the United States 
+	
+	
+by State. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+7
+Figure 4. Percent Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Census Operational 
+	
+	
+Outcomes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+11
+APPENDIX TABLES
+Appendix Table 1. Net Coverage Error Rates for the Household 
+	
+	
+Population in the United States by Census Regions . . . . . . . . . 	
+15
+Appendix Table 2. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Census Regions . . . . . . . . . 	
+15
+Appendix Table 3. Net Coverage Error Rates for the Household 
+	
+	
+Population in the United States by State . . . . . . . . . . . . . . . . . . 	
+16
+Appendix Table 4. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by State . . . . . . . . . . . . . . . . . . 	
+17
+Appendix Table 5. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Type of 
+	
+	
+Enumeration Area . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+19
+Appendix Table 6. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Census Tract 
+	
+	
+Self-Response Rate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+19
+Appendix Table 7. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Mode . . . . . . . . . . . . . . . . . . 	
+20
+Appendix Table 8. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Nonresponse Followup 
+	
+	
+(NRFU) Universe . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+20
+Appendix Table 9. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Nonresponse Followup 
+	
+	
+(NRFU) Respondent Type . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+21
+Appendix Table 10. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Non-ID Operation . . . . . . . 	
+21
+Appendix Table 11. Components of Census Coverage for the Household 
+	
+	
+Population in the United States by Coverage 
+	
+	
+Improvement Operation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+22
+
+vi	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+ 
+ 
+2020CENSUS.GOV 
+ 
+May 19, 2022 
+ 
+DSSD 2020 CENSUS POST‐ENUMERATION SURVEY MEMORANDUM SERIES #2020‐G‐02 
+ 
+ 
+MEMORANDUM FOR  
+Patrick J. Cantwell 
+    
+ 
+ 
+ 
+Chief, Decennial Statistical Studies Division    
+ 
+ 
+ 
+ 
+From:   
+ 
+ 
+Timothy L. Kennel 
+ 
+ 
+ 
+ 
+Assistant Division Chief, Statistical Methods 
+ 
+ 
+ 
+ 
+Decennial Statistical Studies Division 
+ 
+ 
+Prepared by:   
+ 
+Courtney Hill 
+ 
+ 
+ 
+ 
+Krista Heim 
+ 
+ 
+ 
+ 
+Jinhee Hong 
+ 
+ 
+ 
+ 
+Nam Phan 
+ 
+ 
+ 
+ 
+Decennial Statistical Studies Division 
+ 
+Subject: 
+2020 Post‐Enumeration Survey Estimation Report: Census Coverage 
+Estimates for People in the United States by State and Census 
+Operations 
+ 
+This report provides United States coverage results for people in households by state and 
+census operations. 
+ 
+For more information, contact Courtney Hill at (301) 763‐4547, Timothy Kennel at (301) 763‐
+6795, Scott Konicki at (301) 763‐4292, Elizabeth Marra at (301) 763‐7760, or Julianne Zamora 
+at (301) 763‐7994. 
+  
+cc: 
+DSSD PES Contacts List 
+ 
+
+U.S. Census Bureau	
+1 
+Census Coverage Estimates for People in the United States by State and Census Operations
+EXECUTIVE SUMMARY
+This document provides survey-based coverage 
+estimates of the 2020 Census for the household 
+population living in the United States, excluding 
+Remote Alaska areas. The estimates are broken down 
+by region, state, and census operation. The Post-
+Enumeration Survey (PES) program estimated net 
+coverage error rates using a statistical technique 
+called dual-system estimation. 
+The PES program also estimated the components of 
+coverage for people. These components include cor­
+rect enumerations, erroneous enumerations, omis­
+sions, and whole-person imputations.
+Coverage by Census Region
+We estimated an undercount for the South region 
+and an overcount for the Northeast region. For these 
+two regions, the magnitude of the net coverage error 
+rates increased compared to the 2010 Census.
+Coverage by State
+We estimated undercounts for Arkansas, Florida, 
+Illinois, Mississippi, Tennessee, and Texas. We 
+estimated overcounts for Delaware, Hawaii, 
+Massachusetts, Minnesota, New York, Ohio, 
+Rhode Island, and Utah.
+Coverage by Self-Response Rate
+We estimated undercounts of people living in census 
+tracts that had the lowest self-response rates. 
+Specifically, we estimated a statistically significant 
+net undercount among people living in the 20 
+percent of tracts with the lowest self-response rates. 
+
+2	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+1. INTRODUCTION
+As part of the 2020 Census, the U.S. Census Bureau 
+conducted the Post-Enumeration Survey (PES) to 
+estimate the coverage of the decennial census.1
+The major goals2 of the PES (Kennel, 2019) were to:
+•	 Provide measures of net coverage error.
+•	 Produce measures of the components of census 
+coverage, including correct enumerations, errone­
+ous enumerations, whole-person imputations, and 
+omissions.
+•	 Produce measures of coverage for demographic 
+groups and key census operations.
+This document presents additional 2020 PES esti­
+mates of coverage for the 2020 Census.3 An earlier 
+report (Khubba et al., 2022) provided a summary of 
+PES estimates of coverage for demographic char­
+acteristics. As with the earlier report, the coverage 
+estimates here are for the household population 
+excluding people living in Remote Alaska areas.4 
+1 In addition to operational assessments and evaluations, the 
+Census Bureau has relied on two principal methods to evaluate the 
+coverage of the decennial census. One method is the survey-based 
+approach, which is the topic of this report. The other method is 
+Demographic Analysis.
+2 There are no plans to use PES results to produce adjusted pop­
+ulation estimates for the purposes of apportionment or redistricting, 
+and there will be no such recommendation.
+3 The Census Bureau’s Disclosure Review Board has reviewed 
+this product for unauthorized disclosure of confidential information 
+and has approved the disclosure avoidance practices applied to this 
+release. CBDRB-FY22-136 and CBDRB-FY22-218.
+4 Remote Alaska refers to the Remote Alaska enumeration area 
+as defined by the 2020 Census. A map of the Remote Alaska enu­
+meration area is available in the “2020 Census: Type of Enumeration 
+Area (TEA) Viewer” located at <www.census.gov/newsroom/press-
+releases/2019/tea-viewer.html>.
+The PES did not produce estimates of coverage for 
+the population living in group quarters (e.g., college 
+dormitories and correctional facilities). Group quar­
+ters are out of scope because their populations can 
+change significantly between census and PES 
+enumeration interviews. Remote Alaska has histori­
+cally been out of scope for Census Bureau post-
+enumeration surveys because of the seasonal move­
+ment of people throughout the year, which makes it 
+infeasible to accurately conduct the matching and 
+follow-up operations necessary for dual-system 
+estimation. 
+Section 2 provides background on the methodol­
+ogy of the estimation of census coverage. Section 3 
+discusses the coverage results for geographic areas. 
+Section 4 discusses the coverage results for census 
+operations. Section 5 discusses the coverage results 
+for census operational outcomes.
+Note: This report was originally published on May 19, 
+2022. Figure 2 and Appendix Table 6 were revised 
+to clarify a label as “Census tract self-response rate.” 
+In the previously published report, the label read 
+“Self-response rate.” This did not make clear the geo­
+graphic level at which the self-response rates were 
+calculated. None of the estimates were revised.
+
+U.S. Census Bureau	
+3 
+Census Coverage Estimates for People in the United States by State and Census Operations
+2. METHODOLOGY
+This section provides a brief overview of the method­
+ology used to estimate net coverage and the compo­
+nents of census coverage.5 
+Like the 1980, 1990, 2000, and 2010 post-
+enumeration surveys, the 2020 PES estimated the 
+number of people in the population using dual-sys­
+tem estimation. Estimates of net coverage are calcu­
+lated by comparing census counts to these estimates. 
+As with the 2010 post-enumeration survey (called the 
+Census Coverage Measurement survey or CCM), the 
+2020 PES used logistic regression modeling to pro­
+duce synthetic estimates of net coverage.6
+As part of this estimation, we implemented opera­
+tions to account for missing data and to reduce the 
+sampling and nonsampling errors in the estimates. 
+This included imputation of missing characteris­
+tics, imputation of unresolved statuses, a weighting 
+adjustment for noninterviewed PES housing units, 
+and an adjustment to make PES estimates of sex 
+ratios agree with those from Demographic Analysis. 
+We estimated the components of coverage for both 
+the total census household population count and the 
+estimate of the population total. The census house­
+hold population count is distributed among correct 
+5 More information is available in the Source and Accuracy 
+Statement (Marra and Kennel, 2022) and forthcoming estimation 
+design document (Zamora, 2022).
+6 The forthcoming estimation design document will contain more 
+information on the synthetic estimator (Zamora, 2022).
+enumerations, erroneous enumerations, and whole-
+person imputations. For national-level domains, the 
+estimate of correct enumerations allows a person to 
+be enumerated correctly in a housing unit anywhere 
+in the nation. For state-level estimates, we require 
+that the person was counted in the correct state. 
+Correct enumerations refer to people counted in the 
+census who were living in the United States on April 1, 
+2020. According to the PES, the people should have 
+been, and were, counted in the census. Erroneous 
+enumerations include duplicates as well as people 
+who were but should not have been counted. For 
+example, they may have been born after April 1, 2020, 
+or just visiting the country. To estimate correct and 
+erroneous enumerations, we used a design-based 
+estimator with a calibration adjustment.7 Whole-
+person imputations are census records for which all 
+the person characteristics were imputed.
+The PES dual-system estimate (DSE) is divided into 
+the people who were correctly counted in the cen­
+sus and omissions. Omissions are people who should 
+have been correctly counted in the census but were 
+not. 
+=
+− 
+ 
+ 
+7 More detail on individual components and methods is available 
+in the forthcoming estimation design document (Zamora, 2022).
+In documentation from recent post-enumeration surveys, the U.S. Census Bureau defined the net under­
+count as the PES dual-system estimate (DSE) minus the census count. For this 2020 report, to be con­
+sistent with other programs, we reverse the sign and define the net coverage error as the census count 
+minus the DSE:
+𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁 𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑁𝑁𝑁𝑁𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑁𝑁𝑁𝑁 𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁 = 𝐶𝐶𝐶𝐶𝑁𝑁𝑁𝑁𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒−𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷 
+A positive estimate indicates a net overcount (meaning the census count was higher than the estimated 
+population size), while a negative estimate indicates a net undercount (meaning the census count was 
+lower than the estimated population size).
+
+4	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Figure 1 shows the totals for the components of cov­
+erage for the census and PES. The net coverage error 
+is the difference in the height of the 2020 Census and 
+PES bars.
+In this report, all estimates of the three components 
+of the census count are presented as a percentage 
+of the census total for various domains. The two 
+components of the PES estimate (DSE Correct and 
+Omissions) are presented as a percentage of the DSE 
+for various domains.
+The 2020 Census faced many challenges such as 
+conducting fieldwork during the COVID-19 pandemic. 
+Other challenges to the 2020 Census included con­
+troversy around a proposed citizenship question and 
+changes in the duration of the Nonresponse Followup 
+operation.
+The PES estimates are subject to sampling and 
+nonsampling errors. Like the 2020 Census, the 
+PES also faced challenges driven by the COVID-19 
+pandemic and general trends of decreasing response 
+to surveys. In many circumstances, the PES made 
+operational changes to mitigate or overcome these 
+issues. The Source and Accuracy of the 2020 
+Post-Enumeration Survey Person Estimates (Marra 
+and Kennel, 2022), as well as forthcoming methodol­
+ogy memos, quality assessments, and reports about 
+the quality of the PES, will document specific mea­
+sures the Census Bureau took to ensure the quality of 
+the PES.
+Figure 1.
+Components of Coverage for the 
+Household Population in the United States
+Source: U.S. Census Bureau, Decennial Statistical Studies 
+Division, 2020 Post-Enumeration Survey (March 2022 Release).
+(In millions)
+0
+50
+100
+150
+200
+250
+300
+350
+Post-Enumeration Survey
+2020 Census
+Omissions
+Whole-person census 
+imputations
+Erroneous enumerations
+Correct enumerations
+10.9
+305.1
+18.8
+7.2
+305.1
+
+U.S. Census Bureau	
+5 
+Census Coverage Estimates for People in the United States by State and Census Operations
+3. CENSUS COVERAGE FOR GEOGRAPHIC AREAS
+This section summarizes the net coverage error and 
+components of census coverage for geographic 
+areas, including census regions and states. 
+3.1. Census Regions
+We estimated the net coverage error for the four 
+regions: Northeast, Midwest, South, and West. 
+A reference map for the census regions of the 
+United States is available at <https://www2.census.
+gov/geo/pdfs/maps-data/maps/reference/us_regdiv.
+pdf>. 
+For the 2020 Census, we estimated a net overcount 
+for the Northeast region and a net undercount for the 
+South region (Figure 2, Appendix Table 1). For these 
+two regions, the magnitude of the net coverage error 
+rates increased compared to the 2010 Census.
+For census regions, we take a national perspective 
+when estimating correct enumerations. That is, a 
+person is a correct enumeration if they were counted 
+once in the nation, regardless of the region in which 
+they should have been counted. For example, if 
+someone was counted in New York, but should have 
+been counted in California, they were included in the 
+Northeast region as a correct enumeration. Figure 
+2 and Appendix Table 2 provide the components of 
+census coverage by region.
+3.2. State
+The 2020 PES calculated the net coverage error of 
+the 50 states and the District of Columbia (Figure 3 
+and Appendix Table 3). Census coverage estimates 
+for Puerto Rico are scheduled for release in the 
+summer of 2022. 
+For the 2020 Census, we estimated net undercounts 
+for Arkansas, Florida, Illinois, Mississippi, Tennessee, 
+and Texas. We estimated net overcounts for 
+Delaware, Hawaii, Massachusetts, Minnesota, 
+Information on the Net Coverage Error Estimates for States 
+For the 2020 PES, the synthetic bias1 of estimates of net coverage for states was reduced through 
+enhancements to the logistic regression modeling. Namely, we included state indicators as covariates in 
+the models, which improved the accuracy of the estimates though it added variability. This also allows 
+for standard errors (instead of root mean squared errors) to be presented for the 2020 results. For 
+more information on the net coverage error for states, refer to Heim (2022). The 2010 post-enumeration 
+survey estimates of net coverage error for the states may have included more synthetic bias than the 
+2020 PES estimates because the 2010 post-enumeration survey models did not include state covariates.
+There were other changes from 2010 to 2020 that affected the variance estimation. The 2020 PES 
+sample size was lower than the 2010 sample size because of increased nonresponse and differences 
+between the expected and actual number of housing units in sample blocks. Also, the 2020 PES vari­
+ance method changed (Marra and Kennel, 2022). While standard errors were produced for the 2020 
+PES state estimates of net coverage error, for the 2010 estimates (Appendix Table 3) we display the 
+measure of uncertainty that was available, the root mean squared error. The root mean squared error 
+attempts to capture the potential bias introduced in synthetic estimation. Based on the root mean 
+squared error estimates in 2010, the estimated percent net coverage error of people for each state 
+and the District of Columbia was not statistically different from zero. Because of these differences in 
+the point and variance estimation methodologies, caution should be used when making comparisons 
+between the 2020 and 2010 state estimates of net coverage error.
+1 Synthetic bias refers to the difference, if any, in a domain’s population estimate one would obtain by applying the synthetic 
+estimator from a model fit on the true population versus by simply tabulating over the true population (if it were known). Because of 
+this synthetic bias, the 2010 state estimates of net coverage error are more closely clustered around the national net coverage error 
+rate. The forthcoming estimation design document will contain more information on the synthetic estimator (Zamora, 2022).
+Sources: Heim, K., “2020 Post-Enumeration Survey Estimation Methods: Net Coverage Estimation,” DSSD 2020 Census Post-
+Enumeration Survey Memorandum Series #2020-J-07, U.S. Census Bureau, 2022; Marra, E. and T. Kennel, “Source and Accuracy of 
+the 2020 Post-Enumeration Survey Person Estimates,” U.S. Census Bureau, 2022; and Zamora, J., “2020 Post-Enumeration Survey 
+Estimation Design,” DSSD 2020 Post-Enumeration Survey Memorandum Series #2020-J-03, U.S. Census Bureau, 2022.
+
+6	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+New York, Ohio, Rhode Island, and Utah. For the 
+remaining states and the District of Columbia, the 
+estimated net coverage error rates were not signifi­
+cantly different from zero. 
+The 2020 PES produced direct estimates of cor­
+rect and erroneous enumerations and benchmarked 
+them to national totals. We take a state perspective 
+when estimating correct enumerations. A person 
+is a correct enumeration if they were counted cor­
+rectly in the given state. For example, if a person was 
+counted in New York, but should have been counted 
+in California, they were included in New York as an 
+erroneous enumeration. Figure 3 and Appendix Table 
+4 provide the components of census coverage by 
+state.
+Figure 2.
+Percent Net Coverage Error and Components of Census Coverage for the 
+Household Population in the United States for Selected Characteristics
+1 The percent net coverage error ﬁgure in the middle displays the 90 percent conﬁdence interval for the estimated percent net 
+coverage error. If the 90 percent conﬁdence interval includes zero, then the area does not have a statistically signiﬁcant undercount or 
+overcount.
+Note: Standard errors and other related estimates are available in the appendix tables. 
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+0%
+2%
+4%
+6%
+8%
+10%
+90 to 100th percentile
+80 to 90th percentile
+70 to 80th percentile
+60 to 70th percentile
+50 to 60th percentile
+40 to 50th percentile
+30 to 40th percentile
+20 to 30th percentile
+10 to 20th percentile
+0 to 10th percentile
+Update Leave and
+Update Enumerate
+Self-Response
+West
+South
+Midwest
+Northeast
+–6%
+–4%
+–2%
+0%
+2%
+4% 0%
+2%
+4%
+6%
+8%
+10%
+12%
+Percentage of 
+Dual-system Estimate
+Percent Net 
+Coverage Error1
+Percentage of 
+Census Count
+Erroneous 
+enumerations 
+due to 
+duplication
+Erroneous 
+enumerations 
+for other 
+reasons
+Whole-
+person
+census 
+imputations
+Omissions
+Undercount
+Region
+Type of
+enumeration area
+Census tract
+self-response rate
+Overcount
+
+U.S. Census Bureau	
+7 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Figure 3.
+Percent Net Coverage Error and Components of Census Coverage for the 
+Household Population in the United States by State
+1 The percent net coverage error ﬁgure in the middle displays the 90 percent conﬁdence interval for the estimated percent net 
+coverage error. If the 90 percent conﬁdence interval includes zero, then the state does not have a statistically signiﬁcant undercount 
+or overcount.
+Note: Standard errors and other related estimates are available in the appendix tables.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+0%
+2%
+4%
+6%
+8%
+10%
+Wyoming
+Wisconsin
+West Virginia
+Washington
+Virginia
+Vermont
+Utah
+Texas
+Tennessee
+South Dakota
+South Carolina
+Rhode Island
+Pennsylvania
+Oregon
+Oklahoma
+Ohio
+North Dakota
+North Carolina
+New York
+New Mexico
+New Jersey
+New Hampshire
+Nevada
+Nebraska
+Montana
+Missouri
+Mississippi
+Minnesota
+Michigan
+Massachusetts
+Maryland
+Maine
+Louisiana
+Kentucky
+Kansas
+Iowa
+Indiana
+Illinois
+Idaho
+Hawaii
+Georgia
+Florida
+District of Columbia
+Delaware
+Connecticut
+Colorado
+California
+Arkansas
+Arizona
+Alaska
+Alabama
+-12% -8%
+-4%
+0%
+4%
+8%
+12%
+0%
+2%
+4%
+6%
+8%
+10%
+12%
+Percentage of 
+Dual-system Estimate
+Percent Net 
+Coverage Error1
+Percentage of Census Count
+Omissions
+Erroneous enumerations 
+due to wrong state
+Erroneous enumerations 
+due to duplication
+Erroneous enumerations 
+for other reasons
+Whole-person
+census imputations
+Undercount
+Overcount
+
+8	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+4. CENSUS COVERAGE FOR CENSUS OPERATIONS
+This section summarizes the coverage results for 
+geographic areas associated with how the census 
+was conducted. This includes type of enumeration 
+area and self-response rates for census tracts. Dual-
+system estimation requires characteristics that can be 
+identified for people who were and were not included 
+in the census. For this reason, we can produce dual-
+system estimates for census operations that apply 
+to geographic areas rather than specific people or 
+addresses. We also provide the components of cen­
+sus coverage estimates.
+4.1. Type of Enumeration Area
+Type of enumeration areas (TEAs) were used to 
+efficiently enumerate people in different areas of 
+the country. TEAs account for how we obtained 
+addresses and enumerated people in the census. 
+Estimates are shown for the Self-Response TEA and 
+the combined Update Leave and Update Enumerate 
+TEAs. Update Leave and Update Enumerate were 
+combined because of insufficient sample size in the 
+Update Enumerate areas. The Island Areas TEA and 
+Remote Alaska TEA are out of scope for the PES. 
+A reference map for the census TEAs is available 
+at <www.census.gov/library/visualizations/2019/
+dec/2020-tea-map.html>.
+The net coverage error was not significantly differ­
+ent from zero for either TEA group (Figure 2 and 
+Appendix Table 5). Figure 2 and Appendix Table 5 
+provide the components of census coverage by TEA.
+Type of Enumeration Areas 
+Self-Response was designed to occur in areas where the majority of housing units have mail delivered 
+to the physical location of the housing unit. The United States Postal Service delivered an invitation to 
+complete the census on the internet or a questionnaire along with the internet invitation. Self-Response 
+is the primary enumeration methodology for the 2020 Census, accounting for about 95 percent of 
+households.1
+Update Leave was designed to occur in areas where, for the majority of housing units, either mail is 
+not delivered to the physical location of the housing unit, or the mail delivery information for the hous­
+ing unit cannot be verified. A census worker updated the address list and left a questionnaire at each 
+address on the updated list. Respondents could return the questionnaire by mail or respond online or by 
+phone. About 5 percent of households were in Update Leave areas. 
+Update Enumerate was designed to occur in areas where the initial visit required enumerating while 
+updating the address frame. This occurred in areas that were part of the 2010 Census Remote Update 
+Enumerate operation, such as northern parts of Maine and southeast Alaska, as well as select American 
+Indian areas that requested to be enumerated in person during the initial visit. Less than 1 percent of 
+households were in Update Enumerate areas.
+1 The size of the TEAs reflects the anticipated size as of February 2019, as noted in press release number CB19-TPS.10 available at 
+<www.census.gov/newsroom/press-releases/2019/tea-viewer.html>.
+
+U.S. Census Bureau	
+9 
+Census Coverage Estimates for People in the United States by State and Census Operations
+4.2. Self-Response Rate
+There are many ways the census enumerates the 
+population including Self-Response and Nonresponse 
+Followup (NRFU). This section shows estimates by 
+self-response rates for census tracts. Note that cen­
+sus tracts with low self-response rates do not neces­
+sarily indicate undercoverage because the population 
+could have been enumerated a different way (i.e., 
+NRFU).
+The self-response rates include the final self-
+responses for all self-response modes—internet, 
+paper, and phone—and are calculated for each census 
+tract. Census tracts are small statistical subdivisions 
+of a county that generally have a population of 1,200 
+to 8,000 people and mostly follow visible and iden­
+tifiable features. The percentiles are determined by 
+ordering the tracts by the final self-response rate and 
+dividing the ordered list into ten equally sized groups 
+of tracts. Because the percentiles are determined 
+using a tract-level self-response rate, the number 
+of people in each group can vary. These percentiles 
+exclude a small number of people in about 200 
+census tracts for which we could not determine the 
+self-response rate because of differences between 
+the planned 2020 boundaries used to calculate the 
+self-response rates and the final 2020 Census tabula­
+tion geography. 
+We estimated net undercounts for the two lowest 
+response percentiles and a net overcount for the 80th 
+to 90th percentile (Figure 2 and Appendix Table 6). 
+When estimating correct enumerations for the self-
+response rate percentiles, a person is correct if they 
+were counted anywhere in the nation. Figure 2 and 
+Appendix Table 6 provide the components of census 
+coverage by self-response rate percentile.
+
+10	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+5. COMPONENTS OF CENSUS COVERAGE FOR CENSUS OPERATIONAL 
+OUTCOMES
+This section summarizes the components of cen­
+sus coverage for people based on the results of the 
+census operations. This includes response mode, the 
+NRFU universe, Non-ID Processing, and Coverage 
+Improvement. The components of census cover­
+age discussed are correct enumerations, erroneous 
+enumerations, and whole-person census imputations. 
+Because operational outcomes are characteristics 
+of census records only (i.e., not the PES records), 
+we cannot measure these outcomes for people who 
+were not in the census, and we cannot generate dual-
+system estimates for census operational outcomes. 
+Therefore, this section does not show estimates of net 
+coverage or omissions.
+5.1. Mode
+People responded to the 2020 Census by a variety of 
+modes. These included internet self-response, phone, 
+paper response, NRFU, and others. Internet response 
+was a new mode for the 2020 Census. High internet 
+response can reduce costs and improve data quality, 
+so the Census Bureau tried to minimize the amount of 
+other self-response modes. However, alternate modes 
+were available for respondents who did not have 
+internet access or want to respond that way. There 
+were two contact strategies for self-response. One 
+encouraged households to use the internet response 
+option by sending a letter with instructions to respond 
+online. If an internet response was not received after 
+a few weeks, the housing unit was mailed a paper 
+questionnaire. The other strategy gave households 
+the immediate choice of responding online or with the 
+paper questionnaire. People could also self-respond 
+via the internet using the Non-ID Processing approach 
+(refer to section 5.3). In addition to the internet and 
+paper questionnaires, people could also respond to 
+the 2020 Census by calling a toll-free number pro­
+vided (as part of our Census Questionnaire Assistance 
+operation).
+Most people responded to the census via the internet, 
+paper questionnaire, or phone. However, if people 
+didn’t respond, the Census Bureau sent census tak­
+ers to knock on doors and enumerate the people 
+at the address for NRFU. The NRFU operation used 
+in-person interviews to enumerate housing units 
+that did not self-respond in the Self-Response TEA 
+and Update Leave TEA. Other types of enumera­
+tions were grouped together, including responses 
+from Update Leave and Update Enumerate, Coverage 
+Improvement, and administrative records. Count 
+imputations are whole-person census imputations in 
+occupied (observed or imputed as occupied) house­
+holds for which we did not know the population 
+count. A household population count was imputed 
+and all characteristics were imputed for these per­
+son records. For more information on the different 
+modes for the 2020 Census, refer to the 2020 Census 
+Operational Plan (U.S. Census Bureau, 2022).
+Figure 4 and Appendix Table 7 provide the compo­
+nents of census coverage by mode.
+
+U.S. Census Bureau	
+11 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Figure 4.
+Percent Components of Census Coverage for the Household Population in the 
+United States by Census Operational Outcomes
+Note: Some rows from the corresponding tables have been removed from this ﬁgure because of large values of whole-person 
+census imputations. Refer to the corresponding tables in the appendix for the complete set of categories in each section as well 
+as additional notes about the information in this ﬁgure. Standard errors and other related estimates are available in the appendix 
+tables.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+Erroneous enumerations 
+due to duplication
+Erroneous enumerations 
+for other reasons
+Whole-person
+census imputations
+Mode
+Non-ID operation
+NRFU universe
+NRFU respondent type
+Coverage Improvement operation
+Percentage of Census Count
+0%
+5%
+10%
+15%
+20%
+25%
+Not selected for Coverage Improvement
+Not completed
+Completed
+Selected for Coverage Improvement
+Other
+Non-ID response
+ID response
+Not in NRFU universe
+Self-response in NRFU universe
+Administrative record enumerations
+Proxy interview
+Other household member
+Head of household
+Household interview
+NRFU enumerations
+In NRFU universe
+Not in NRFU universe
+Self-response in NRFU universe
+Administrative record enumerations
+Completed in October
+Completed in September
+Completed in August
+Completed in July
+NRFU enumerations
+In NRFU universe
+Other types of responses
+Nonresponse Followup (NRFU) enumerations
+Paper-based response
+Census Questionnaire Assistance operation
+Internet Self-Response
+
+12	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+5.2. Nonresponse Followup
+As previously stated, the NRFU operation enumerated 
+people at addresses in the Self-Response and Update 
+Leave TEAs that did not respond to the 2020 Census 
+online, on the paper questionnaire, or on the phone. 
+NRFU started on July 16, 2020, in a few select areas 
+of the country, and all remaining areas began NRFU 
+by August 11, 2020. The NRFU operation continued 
+through October 15, 2020. For more information on 
+NRFU, refer to the 2020 Census Operational Plan 
+(U.S. Census Bureau, 2022). 
+Cases in the NRFU universe were completed in sev­
+eral ways. At the beginning of NRFU, we knocked on 
+doors to count the households that hadn’t responded. 
+We tried several times to get a response from the 
+householder or another member of the household. 
+If these attempts were unsuccessful, we asked a 
+neighbor, building manager, or landlord to help us 
+count the nonresponding household. We call these 
+respondents “proxies.”  Proxy respondents may not 
+have as much knowledge about the household. Cases 
+completed by these in-person interviews, either with a 
+household member or a proxy, are labeled as “NRFU 
+enumerations” in the tables and figures. Figure 4 and 
+Appendix Table 9 provide the components of census 
+coverage by NRFU respondent type.
+We also provide components of census coverage esti­
+mates for NRFU enumerations by month of comple­
+tion (Figure 4 and Appendix Table 8). There are some 
+cases that did not capture the date on which the data 
+were obtained because the case did not close out at 
+that time. These are labeled as “No close-out date.” 
+Many of these cases are the “population count only” 
+responses, and therefore this group shows a high rate 
+of whole-person census imputations.
+For some addresses that didn’t respond, we used 
+government administrative records to provide the 
+count of people living at the address and their demo­
+graphic characteristics (Mulry et al., 2021). These 
+records were used to complete a NRFU case only 
+after a census enumerator attempted contact with 
+the address at least once. 
+Some households in the NRFU universe ultimately 
+responded by internet, paper questionnaire, or 
+phone rather than the in-person interview. These 
+self-responses in NRFU may have been motivated by 
+a census enumerator attempting an interview or leav­
+ing a notice of visit at the address. 
+The “Other enumerations” include Coverage 
+Improvement (refer to section 5.4) and count imputa­
+tion cases in the NRFU universe. Khubba et al. (2022) 
+provides more information on count imputation 
+cases.
+5.3. Non-ID Processing
+Households were sent postcards and letters in the 
+mail to participate in the 2020 Census. These mail­
+ings had a unique identification number (ID) for the 
+household, and respondents were asked to pro­
+vide this ID when responding online or by phone. 
+However, for households that did not receive or lost 
+the mailings, the respondent could respond online 
+without the unique ID by providing the household 
+address. The Non-ID Processing operation took these 
+responses and searched for the address in the census 
+database to see if the address had to be added to 
+Nonresponse Followup Respondent Types 
+The householder is usually the primary owner or renter of a housing unit, or, if not, an adult living in the 
+unit. The person designated as the householder is the “reference person” to whom the relationship of all 
+other household members is recorded. This is self-identified in Nonresponse Followup. 
+A household member is someone else in the housing unit such as a family member or roommate.
+A proxy is someone not living in the housing unit such as a neighbor, building manager, or landlord.
+
+U.S. Census Bureau	
+13 
+Census Coverage Estimates for People in the United States by State and Census Operations
+the census or to get a unique ID if the address was 
+already in the census address database. A person 
+could have responded without an ID using the inter­
+net or phone. For more information on the Non-ID 
+Processing operation, refer to the 2020 Census 
+Operational Plan (U.S. Census Bureau, 2022). 
+Figure 4 and Appendix Table 10 provide the compo­
+nents of census coverage for Non-ID Processing. The 
+ID and Non-ID response rows include both internet 
+and phone responses. Other types of enumera­
+tions are grouped together, including responses 
+from the paper questionnaire, NRFU, Update Leave, 
+Update Enumerate, count imputation, Coverage 
+Improvement, and administrative records.
+5.4. Coverage Improvement
+The Coverage Improvement operation identified 
+people who might have been missed from or counted 
+in error on a census response. It also collected miss­
+ing demographic data for all people in the household. 
+Examples of Coverage Improvement cases include 
+the following: 
+•	 Count discrepancy: This occurred when there was 
+a discrepancy between the reported population 
+count and the number of valid people listed on the 
+questionnaire.
+•	 Possible undercount: This occurred when a respon­
+dent indicated that a person might not have been 
+included in the census response.
+•	 Possible overcount: This occurred when a respon­
+dent indicated that a person usually lives or stays 
+at college, in the military, at their job, in jail, at a 
+nursing home, with relatives, at a seasonal home, 
+or other places.
+Not all the households identified for Coverage 
+Improvement were called; of those called, many did 
+not respond. For households identified for Coverage 
+Improvement, we report results by whether the inter­
+view was a completed or a noncompleted case. 
+The Coverage Improvement operation prioritized 
+certain types of cases, and that prioritization may 
+explain some of the results. For example, many non­
+completed cases were “low count discrepancy” cases 
+in which the population count for the household was 
+higher than the number of complete person records. 
+Therefore, this group will contain more whole-person 
+census imputations. Figure 4 and Appendix Table 11 
+provide the components of census coverage for 
+Coverage Improvement.
+
+14	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+REFERENCES
+Heim, K., “2020 Post-Enumeration Survey Estimation 
+Methods: Net Coverage Estimation,” DSSD 2020 
+Census Post-Enumeration Survey Memorandum 
+Series #2020-J-07, U.S. Census Bureau, 2022.
+Kennel, T., “The Design of the Post-Enumeration 
+Survey for the 2020 Census,” DSSD 2020 
+Post-Enumeration Survey Memorandum Series 
+#2020-B-01, U.S. Census Bureau, 2019.
+Khubba, S., J. Hong, and K. Heim, “2020 
+Post-Enumeration Survey Estimation Report: 
+Summary of Estimates of Coverage for People 
+in the United States,” DSSD 2020 Census 
+Post-Enumeration Survey Memorandum Series 
+#2020-G-01, U.S. Census Bureau, 2022.
+Marra, E., and T. Kennel, “2020 Post-Enumeration 
+Survey: Source and Accuracy Statement for 2020 
+Post-Enumeration Survey,” DSSD 2020 Post-
+Enumeration Survey Memorandum Series #J-01, 
+U.S. Census Bureau, 2022.
+Mulry, M., T. Mule, A. Keller, and S. Konicki, 
+“Administrative Record Modeling in the 2020 
+Census,” 2020 Census Program Memorandum 
+Series: 2021.10, U.S. Census Bureau, 2021.
+U.S. Census Bureau, “2020 Census Operational Plan 
+v5.0,” 2022.
+Zamora, J., “2020 Post-Enumeration Survey 
+Estimation Design,” DSSD 2020 Post-Enumeration 
+Survey Memorandum Series #2020-J-03, 
+U.S. Census Bureau, 2022.
+
+U.S. Census Bureau	
+15 
+Census Coverage Estimates for People in the United States by State and Census Operations
+APPENDIX
+Appendix Table 1.
+Net Coverage Error Rates for the Household Population in the United States by Census Regions
+(In percent)
+Region
+Census 
+count
+2020
+2010
+2000
+Estimate
+Standard 
+error
+Estimate
+Standard 
+error
+Estimate
+Standard 
+error
+Total. . . . . . . . . . . 
+ 
+323,200,000 
+–0.24
+0.25
+0.01
+0.14
+*0.49
+0.20
+Northeast. . . . . . . 
+ 55,910,000 
+*1.71
+0.48
+0.36
+0.33
+*0.66
+0.25
+Midwest. . . . . . . . . 
+ 67,260,000 
+0.04
+0.32
+*0.57
+0.24
+*1.38
+0.20
+South. . . . . . . . . . . 
+ 
+123,200,000 
+*–1.85
+0.37
+–0.46
+0.29
+0.16
+0.23
+West. . . . . . . . . . . . 
+ 76,800,000 
+0.75
+0.49
+–0.02
+0.24
+–0.02
+0.27
+* Denotes a (percent) net coverage error that is significantly different from zero.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown. The census count for the West region includes 
+additional rounding to protect the count of the resident population in the Remote Alaska Type of Enumeration Area. The Post-Enumeration 
+Survey did not evaluate the coverage of the population living in Remote Alaska. A negative (positive) estimate of net coverage error indicates 
+an undercount (overcount). A reference map for the census regions of the United States is available at <https://www2.census.gov/geo/pdfs/
+maps-data/maps/reference/us_regdiv.pdf>.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release), 2010 Census 
+Coverage Measurement Survey, and 2000 Accuracy and Coverage Evaluation Revision II.
+Appendix Table 2.
+Components of Census Coverage for the Household Population in the United States by 
+Census Regions
+Region
+Census
+count
+Correct
+enumera­
+tions
+Erroneous enumerations
+Whole-
+person
+census
+imputations
+DSE1
+correct
+Omissions
+Net
+coverage 
+error
+Duplication
+Other
+reasons
+Per­
+cent
+Stan­
+dard 
+error
+Per­
+cent
+Stan­
+dard 
+error
+Per­
+cent
+Stan­
+dard 
+error
+Per­
+cent
+Stan­
+dard 
+error
+Per­
+cent
+Stan­
+dard 
+error
+Per­
+cent
+Stan­
+dard 
+error
+Per­
+cent
+Stan­
+dard 
+error
+Total. . . . . . 
+323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+94.2
+0.2
+5.8
+0.2
+–0.24
+0.25
+Northeast. . 
+55,910,000
+93.3
+0.1
+2.2
+0.1
+0.6
+Z
+3.9
+X
+94.9
+0.4
+5.1
+0.4
+*1.71
+0.48
+Midwest. . . . 
+67,260,000
+95.0
+0.1
+1.4
+0.1
+0.6
+Z
+3.0
+X
+95.1
+0.3
+4.9
+0.3
+0.04
+0.32
+South. . . . . . 
+123,200,000
+94.6
+0.1
+1.5
+0.1
+0.7
+Z
+3.3
+X
+92.8
+0.3
+7.2
+0.3 *–1.85
+0.37
+West. . . . . . . 
+76,800,000
+94.5
+0.1
+1.5
+0.1
+0.5
+Z
+3.4
+X
+95.2
+0.5
+4.8
+0.5
+0.75
+0.49
+* Denotes a (percent) net coverage error that is significantly different from zero.
+X Not applicable.
+Z Represents or rounds to zero.
+1 Dual-system estimate.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown. The census count for the West region includes 
+additional rounding to protect the count of the resident population in the Remote Alaska Type of Enumeration Area. The Post-Enumeration 
+Survey did not evaluate the coverage of the population living in Remote Alaska. A negative (positive) estimate of net coverage error indicates 
+an undercount (overcount). A reference map for the census regions of the United States is available at <https://www2.census.gov/geo/pdfs/
+maps-data/maps/reference/us_regdiv.pdf>.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+
+16	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Appendix Table 3.
+Net Coverage Error Rates for the Household Population in the United States by State
+(In percent)
+State
+Census count
+2020
+2010
+Estimate
+Standard
+error
+Estimate
+Root mean
+squared error1
+Total . . . . . . . . . . . . . . . . .
+323,200,000
+–0.24
+0.25
+0.01
+0.14
+Alabama . . . . . . . . . . . . . . 
+ 4,896,000 
+–1.05
+1.22
+–0.13
+1.24
+Alaska. . . . . . . . . . . . . . . . . 
+ 700,000 
+1.12
+2.45
+0.85
+2.22
+Arizona . . . . . . . . . . . . . . . 
+ 6,991,000 
+–0.16
+1.59
+0.42
+1.19
+Arkansas . . . . . . . . . . . . . . 
+ 2,929,000 
+*–5.04
+2.21
+0.41
+1.45
+California . . . . . . . . . . . . . . 
+ 38,620,000 
+0.47
+0.65
+–0.26
+0.73
+Colorado . . . . . . . . . . . . . . 
+ 5,647,000 
+2.19
+1.45
+0.29
+1.23
+Connecticut . . . . . . . . . . . 
+ 3,498,000 
+–0.13
+1.71
+0.45
+1.34
+Delaware . . . . . . . . . . . . . . 
+ 967,000 
+*5.45
+2.82
+–0.55
+1.93
+District of Columbia . . . . 
+ 649,000 
+4.59
+4.93
+–2.23
+2.20
+Florida . . . . . . . . . . . . . . . . 
+ 21,070,000 
+*–3.48
+0.91
+–0.45
+0.86
+Georgia . . . . . . . . . . . . . . . 
+ 10,460,000 
+0.31
+1.11
+–0.91
+1.04
+Hawaii. . . . . . . . . . . . . . . . . 
+ 1,415,000 
+*6.79
+1.68
+0.44
+2.08
+Idaho . . . . . . . . . . . . . . . . . 
+ 1,789,000 
+–1.55
+1.62
+0.03
+1.70
+Illinois . . . . . . . . . . . . . . . . . 
+ 12,540,000 
+*–1.97
+0.89
+0.48
+1.02
+Indiana . . . . . . . . . . . . . . . . 
+ 6,607,000 
+0.21
+0.94
+0.67
+1.14
+Iowa . . . . . . . . . . . . . . . . . . 
+ 3,092,000 
+–2.04
+3.25
+0.28
+1.41
+Kansas . . . . . . . . . . . . . . . . 
+ 2,851,000 
+–0.81
+1.42
+0.67
+1.44
+Kentucky . . . . . . . . . . . . . . 
+ 4,381,000 
+–1.18
+1.50
+0.13
+1.28
+Louisiana . . . . . . . . . . . . . . 
+ 4,534,000 
+–3.73
+2.36
+0.38
+1.31
+Maine . . . . . . . . . . . . . . . . . 
+ 1,326,000 
+2.20
+1.90
+–0.65
+1.99
+Maryland . . . . . . . . . . . . . . 
+ 6,052,000 
+–1.17
+1.41
+–0.94
+1.19
+Massachusetts . . . . . . . . . 
+ 6,784,000 
+*2.24
+1.06
+0.52
+1.15
+Michigan . . . . . . . . . . . . . . 
+ 9,856,000 
+0.14
+0.68
+0.66
+1.02
+Minnesota . . . . . . . . . . . . . 
+ 5,568,000 
+*3.84
+0.97
+0.56
+1.20
+Mississippi . . . . . . . . . . . . . 
+ 2,868,000 
+*–4.11
+1.63
+–0.24
+1.45
+Missouri . . . . . . . . . . . . . . . 
+ 5,986,000 
+–1.05
+0.97
+0.66
+1.19
+Montana . . . . . . . . . . . . . . . 
+ 1,055,000 
+–4.39
+3.70
+0.65
+2.01
+Nebraska . . . . . . . . . . . . . . 
+ 1,912,000 
+–0.73
+1.35
+0.54
+1.61
+Nevada . . . . . . . . . . . . . . . . 
+ 3,068,000 
+4.42
+3.44
+0.04
+1.46
+New Hampshire . . . . . . . . 
+ 1,335,000 
+0.53
+1.58
+–0.60
+2.07
+New Jersey . . . . . . . . . . . . 
+ 9,109,000 
+–0.12
+0.93
+0.36
+1.07
+New Mexico. . . . . . . . . . . . 
+ 2,075,000 
+0.10
+2.42
+0.16
+1.58
+New York . . . . . . . . . . . . . . 
+ 19,590,000 
+*3.44
+0.94
+0.79
+0.92
+North Carolina . . . . . . . . . 
+ 10,150,000 
+–1.59
+1.09
+–0.52
+1.03
+North Dakota . . . . . . . . . . 
+ 753,000 
+–0.35
+1.86
+–0.09
+2.17
+Ohio . . . . . . . . . . . . . . . . . . 
+ 11,500,000 
+*1.49
+0.67
+0.83
+1.00
+Oklahoma . . . . . . . . . . . . . 
+ 3,842,000 
+2.41
+1.89
+1.08
+1.40
+Oregon . . . . . . . . . . . . . . . . 
+ 4,140,000 
+1.00
+1.22
+–0.02
+1.32
+Pennsylvania . . . . . . . . . . . 
+ 12,600,000 
+0.48
+0.67
+–0.14
+0.97
+Rhode Island . . . . . . . . . . . 
+ 1,052,000 
+*5.05
+1.43
+0.81
+1.91
+South Carolina . . . . . . . . . 
+ 4,980,000 
+–1.36
+1.26
+–0.41
+1.25
+South Dakota . . . . . . . . . . 
+ 855,000 
+–0.42
+1.87
+–0.10
+2.05
+Tennessee . . . . . . . . . . . . . 
+ 6,754,000 
+*–4.78
+1.51
+–0.12
+1.15
+Texas . . . . . . . . . . . . . . . . . . 
+ 28,540,000 
+*–1.92
+0.82
+–0.97
+0.85
+Utah . . . . . . . . . . . . . . . . . . 
+ 3,216,000 
+*2.59
+1.23
+0.48
+1.44
+Vermont . . . . . . . . . . . . . . . 
+ 618,000 
+1.48
+1.83
+–1.29
+2.43
+Virginia . . . . . . . . . . . . . . . . 
+ 8,395,000 
+–0.35
+1.11
+–0.57
+1.06
+Washington . . . . . . . . . . . . 
+ 7,545,000 
+0.29
+1.08
+0.10
+1.14
+West Virginia . . . . . . . . . . 
+ 1,742,000 
+1.53
+4.40
+1.43
+1.70
+Wisconsin . . . . . . . . . . . . . 
+ 5,742,000 
+0.85
+0.86
+0.17
+1.20
+Wyoming . . . . . . . . . . . . . . 
+ 564,000 
+–2.60
+2.01
+0.51
+2.31
+* Denotes a (percent) net coverage error that is signiﬁ cantly diﬀ erent from zero.
+1 The 2010 post-enumeration survey provided estimates of the root mean squared error to account for the potential synthetic bias in the state estimates of net 
+coverage error. For 2020, we produced unbiased estimates for states through enhancements in the logistic regression modeling.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown. The census count for the state of Alaska includes additional rounding to protect 
+the count of the resident population in the Remote Alaska Type of Enumeration Area. The Post-Enumeration Survey did not evaluate the coverage of the population living 
+in Remote Alaska. A negative (positive) estimate of net coverage error indicates an undercount (overcount).
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release) and 2010 Census Coverage Measurement 
+Survey.
+
+U.S. Census Bureau	
+17 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Appendix Table 4.
+Components of Census Coverage for the Household Population in the United States by State—Con.
+State
+Census 
+count
+Correct enumerations
+Erroneous enumerations
+Whole-
+person census 
+imputations
+DSE1
+correct
+Omissions
+Net
+coverage 
+error
+Same
+county
+Diﬀ erent
+county
+Diﬀ erent 
+state
+Duplication
+Other
+reasons
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Alabama . . . . . . . . .
+4,896,000
+94.0
+0.3
+0.3
+0.1
+0.3
+0.1
+1.8
+0.3
+0.5
+0.1
+3.0
+X
+93.4
+1.1
+6.6
+1.1
+–1.05
+1.22
+Alaska. . . . . . . . . . . .
+700,000
+92.4
+0.8
+0.7
+0.2
+0.5
+0.1
+2.5
+0.7
+0.6
+0.2
+3.3
+X
+94.2
+2.3
+5.8
+2.3
+1.12
+2.45
+Arizona . . . . . . . . . .
+6,991,000
+94.3
+0.2
+0.2
+0.1
+0.4
+0.1
+1.4
+0.1
+0.6
+0.1
+3.1
+X
+94.4
+1.5
+5.7
+1.5
+–0.16
+1.59
+Arkansas . . . . . . . . .
+2,929,000
+94.5
+0.4
+0.2
+0.1
+0.4
+0.1
+1.4
+0.3
+0.8
+0.2
+2.8
+X
+89.9
+2.0
+10.1
+2.0
+*–5.04
+2.21
+California . . . . . . . . .
+38,620,000
+94.0
+0.2
+0.2
+Z
+0.2
+Z
+1.4
+0.1
+0.6
+0.1
+3.6
+X
+94.7
+0.6
+5.3
+0.6
+0.47
+0.65
+Colorado . . . . . . . . .
+5,647,000
+92.9
+0.9
+0.7
+0.1
+0.4
+0.1
+2.5
+0.8
+0.4
+0.1
+3.2
+X
+95.5
+1.0
+4.4
+1.0
+2.19
+1.45
+Connecticut . . . . . .
+3,498,000
+92.7
+0.6
+0.3
+0.1
+0.4
+0.1
+2.6
+0.6
+0.6
+0.1
+3.5
+X
+92.8
+1.3
+7.2
+1.3
+–0.13
+1.71
+Delaware . . . . . . . . .
+967,000
+94.1
+0.5
+0.1
+Z
+0.7
+0.2
+1.3
+0.4
+0.4
+0.1
+3.4
+X
+99.3
+2.6
+0.7
+2.6
+*5.45
+2.82
+District of
+ Columbia . . . . . . .
+649,000
+90.7
+0.8
+X
+X
+1.0
+0.2
+2.5
+0.6
+1.2
+0.3
+4.6
+X
+94.9
+3.9
+5.1
+3.9
+4.59
+4.93
+Florida . . . . . . . . . . .
+21,070,000
+93.9
+0.2
+0.3
+Z
+0.3
+0.1
+1.3
+0.1
+0.6
+0.1
+3.6
+X
+90.8
+0.8
+9.2
+0.8
+*–3.48
+0.91
+Georgia . . . . . . . . . .
+10,460,000
+93.8
+0.2
+0.4
+0.1
+0.3
+Z
+1.4
+0.2
+0.8
+0.1
+3.4
+X
+94.5
+1.0
+5.5
+1.0
+0.31
+1.11
+Hawaii. . . . . . . . . . . .
+1,415,000
+90.1
+0.7
+0.2
+0.1
+0.5
+0.1
+5.5
+0.7
+0.5
+0.1
+3.1
+X
+96.5
+1.3
+3.5
+1.3
+*6.79
+1.68
+Idaho . . . . . . . . . . . .
+1,789,000
+95.6
+0.5
+0.3
+0.1
+0.2
+0.1
+0.7
+0.4
+0.5
+0.1
+2.9
+X
+94.3
+1.5
+5.6
+1.5
+–1.55
+1.62
+Illinois . . . . . . . . . . . .
+12,540,000
+93.9
+0.2
+0.2
+Z
+0.2
+0.1
+1.6
+0.2
+0.4
+0.1
+3.7
+X
+92.2
+0.8
+7.8
+0.8
+*–1.97
+0.89
+Indiana . . . . . . . . . . .
+6,607,000
+94.6
+0.3
+0.3
+0.1
+0.3
+0.1
+1.5
+0.2
+0.4
+0.1
+2.8
+X
+95.1
+0.9
+4.9
+0.9
+0.21
+0.94
+Iowa . . . . . . . . . . . . .
+3,092,000
+95.0
+0.4
+0.4
+0.2
+0.6
+0.2
+1.1
+0.2
+0.2
+0.1
+2.6
+X
+93.5
+3.1
+6.5
+3.1
+–2.04
+3.25
+Kansas . . . . . . . . . . .
+2,851,000
+94.9
+0.4
+0.1
+0.1
+0.2
+0.1
+1.6
+0.3
+0.5
+0.2
+2.7
+X
+94.3
+1.4
+5.7
+1.4
+–0.81
+1.42
+Kentucky . . . . . . . . .
+4,381,000
+94.0
+0.4
+0.4
+0.1
+0.2
+0.1
+1.7
+0.3
+0.9
+0.2
+2.7
+X
+93.4
+1.4
+6.6
+1.4
+–1.18
+1.50
+Louisiana . . . . . . . . .
+4,534,000
+92.7
+0.4
+0.4
+0.1
+0.2
+Z
+2.3
+0.4
+0.7
+0.1
+3.8
+X
+89.6
+2.3
+10.4
+2.3
+–3.73
+2.36
+Maine . . . . . . . . . . . .
+1,326,000
+93.9
+0.5
+0.6
+0.2
+0.1
+Z
+2.0
+0.5
+0.6
+0.2
+2.8
+X
+96.6
+1.9
+3.4
+1.9
+2.20
+1.90
+Maryland . . . . . . . . .
+6,052,000
+94.2
+0.2
+0.3
+0.1
+0.4
+0.1
+1.0
+0.2
+0.6
+0.2
+3.4
+X
+93.5
+1.3
+6.6
+1.3
+–1.17
+1.41
+Massachusetts . . . .
+6,784,000
+92.7
+0.4
+0.3
+0.1
+0.3
+0.1
+2.2
+0.3
+0.9
+0.2
+3.5
+X
+95.1
+0.9
+4.9
+0.9
+*2.24
+1.06
+Michigan . . . . . . . . .
+9,856,000
+94.5
+0.2
+0.4
+0.1
+0.3
+0.1
+1.3
+0.1
+0.6
+0.1
+2.9
+X
+95.0
+0.7
+5.0
+0.7
+0.14
+0.68
+Minnesota . . . . . . . .
+5,568,000
+94.2
+0.4
+0.3
+0.1
+0.3
+0.1
+1.4
+0.2
+1.2
+0.3
+2.5
+X
+98.2
+0.9
+1.8
+0.9
+*3.84
+0.97
+Mississippi . . . . . . . .
+2,868,000
+93.7
+0.7
+0.3
+0.1
+0.3
+0.1
+1.9
+0.6
+0.8
+0.3
+3.1
+X
+90.1
+1.5
+9.9
+1.5
+*–4.11
+1.63
+Missouri . . . . . . . . . .
+5,986,000
+94.6
+0.3
+0.3
+0.1
+0.4
+0.1
+1.2
+0.2
+0.4
+0.1
+3.1
+X
+93.9
+0.9
+6.1
+0.9
+–1.05
+0.97
+Montana . . . . . . . . . .
+1,055,000
+92.7
+0.7
+0.3
+0.1
+0.3
+0.1
+3.3
+0.7
+0.5
+0.2
+2.9
+X
+89.0
+3.7
+11.1
+3.7
+–4.39
+3.70
+Nebraska . . . . . . . . .
+1,912,000
+94.7
+0.4
+0.3
+0.1
+0.5
+0.2
+1.4
+0.3
+0.5
+0.1
+2.7
+X
+94.2
+1.1
+5.8
+1.1
+–0.73
+1.35
+Nevada . . . . . . . . . . .
+3,068,000
+94.8
+0.4
+0.1
+Z
+0.2
+0.1
+0.7
+0.3
+0.4
+0.1
+3.8
+X
+99.1
+3.3
+0.9
+3.3
+4.42
+3.44
+New Hampshire . . .
+1,335,000
+94.8
+0.4
+0.2
+0.1
+0.4
+0.1
+1.2
+0.3
+0.5
+0.2
+2.8
+X
+95.5
+1.6
+4.5
+1.6
+0.53
+1.58
+New Jersey . . . . . . .
+9,109,000
+93.1
+0.3
+0.2
+Z
+0.4
+0.1
+1.9
+0.3
+0.5
+0.2
+3.8
+X
+93.2
+0.9
+6.8
+0.9
+–0.12
+0.93
+New Mexico. . . . . . .
+2,075,000
+92.4
+0.7
+0.2
+0.1
+0.4
+0.2
+2.9
+0.7
+0.5
+0.1
+3.7
+X
+92.7
+2.1
+7.3
+2.1
+0.10
+2.42
+New York . . . . . . . . .
+19,590,000
+90.7
+0.3
+0.3
+Z
+0.5
+0.1
+3.0
+0.2
+0.6
+0.1
+4.9
+X
+94.1
+0.8
+5.9
+0.8
+*3.44
+0.94
+North Carolina . . . .
+10,150,000
+94.0
+0.2
+0.5
+0.1
+0.3
+0.1
+1.3
+0.2
+0.7
+0.1
+3.2
+X
+92.9
+1.1
+7.0
+1.1
+–1.59
+1.09
+North Dakota . . . . .
+753,000
+94.2
+0.4
+0.4
+0.1
+0.6
+0.2
+1.5
+0.3
+0.5
+0.2
+2.8
+X
+94.3
+1.7
+5.7
+1.7
+–0.35
+1.86
+Ohio . . . . . . . . . . . . .
+11,500,000
+94.7
+0.2
+0.3
+Z
+0.3
+0.1
+1.3
+0.1
+0.6
+0.1
+2.9
+X
+96.4
+0.7
+3.7
+0.7
+*1.49
+0.67
+Oklahoma . . . . . . . .
+3,842,000
+94.3
+0.6
+0.4
+0.1
+0.2
+0.1
+1.9
+0.6
+0.4
+0.1
+2.8
+X
+96.9
+1.5
+3.1
+1.5
+2.41
+1.89
+Oregon . . . . . . . . . . .
+4,140,000
+94.4
+0.4
+0.6
+0.1
+0.4
+0.1
+1.3
+0.4
+0.5
+0.1
+3.0
+X
+95.9
+1.1
+4.1
+1.1
+1.00
+1.22
+Pennsylvania . . . . . .
+12,600,000
+94.9
+0.2
+0.3
+Z
+0.2
+Z
+1.2
+0.1
+0.5
+0.1
+2.9
+X
+95.6
+0.6
+4.4
+0.6
+0.48
+0.67
+Rhode Island . . . . . .
+1,052,000
+92.7
+0.6
+0.3
+0.1
+0.4
+0.2
+2.2
+0.4
+0.5
+0.2
+3.9
+X
+97.7
+1.2
+2.3
+1.2
+*5.05
+1.43
+ Footnotes provided at end of table.
+
+18	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Appendix Table 4.
+Components of Census Coverage for the Household Population in the United States by State—Con.
+State
+Census 
+count
+Correct enumerations
+Erroneous enumerations
+Whole-
+person census 
+imputations
+DSE1
+correct
+Omissions
+Net
+coverage 
+error
+Same
+county
+Diﬀ erent
+county
+Diﬀ erent 
+state
+Duplication
+Other
+reasons
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+Per-
+cent
+Stan-
+dard 
+error
+South Carolina . . . .
+4,980,000
+94.2
+0.4
+0.5
+0.1
+0.2
+Z
+1.2
+0.2
+0.9
+0.2
+3.0
+X
+93.4
+1.1
+6.6
+1.1
+–1.36
+1.26
+South Dakota . . . . .
+855,000
+94.5
+0.9
+0.5
+0.1
+0.3
+0.1
+1.1
+0.3
+1.1
+0.8
+2.5
+X
+94.6
+1.6
+5.4
+1.6
+–0.42
+1.87
+Tennessee . . . . . . . .
+6,754,000
+94.2
+0.3
+0.2
+0.1
+0.2
+0.1
+1.7
+0.3
+0.7
+0.1
+3.0
+X
+89.9
+1.4
+10.1
+1.4
+*–4.78
+1.51
+Texas . . . . . . . . . . . . .
+28,540,000
+93.7
+0.2
+0.5
+Z
+0.3
+Z
+1.5
+0.1
+0.6
+0.1
+3.5
+X
+92.3
+0.8
+7.6
+0.8
+*–1.92
+0.82
+Utah . . . . . . . . . . . . .
+3,216,000
+94.5
+0.3
+0.2
+0.1
+0.2
+0.1
+1.1
+0.2
+0.4
+0.1
+3.6
+X
+97.2
+1.2
+2.8
+1.2
+*2.59
+1.23
+Vermont . . . . . . . . . .
+618,000
+92.7
+0.9
+0.1
+0.1
+0.6
+0.2
+3.1
+0.8
+0.6
+0.2
+2.8
+X
+94.2
+1.6
+5.8
+1.6
+1.48
+1.83
+Virginia . . . . . . . . . . .
+8,395,000
+94.4
+0.5
+0.4
+0.1
+0.3
+0.1
+0.9
+0.1
+1.1
+0.5
+2.8
+X
+94.5
+0.9
+5.5
+0.9
+–0.35
+1.11
+Washington . . . . . . .
+7,545,000
+94.7
+0.3
+0.3
+0.1
+0.2
+0.1
+1.0
+0.2
+0.6
+0.2
+3.2
+X
+95.2
+1.0
+4.8
+1.0
+0.29
+1.08
+West Virginia . . . . .
+1,742,000
+93.8
+0.5
+0.4
+0.1
+0.2
+0.1
+2.2
+0.4
+0.8
+0.3
+2.6
+X
+95.7
+3.9
+4.3
+3.9
+1.53
+4.40
+Wisconsin . . . . . . . .
+5,742,000
+94.2
+0.3
+0.4
+0.1
+0.4
+0.1
+1.3
+0.2
+0.9
+0.3
+2.9
+X
+95.4
+0.8
+4.6
+0.8
+0.85
+0.86
+Wyoming . . . . . . . . .
+564,000
+94.6
+0.4
+0.2
+0.1
+0.5
+0.2
+1.2
+0.3
+0.2
+0.1
+3.3
+X
+92.4
+1.9
+7.6
+1.9
+–2.60
+2.01
+* Denotes a (percent) net coverage error that is signiﬁ cantly diﬀ erent from zero.
+X Not applicable.
+Z Represents or rounds to zero.
+1 Dual-system estimate.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown. The census count for the state of Alaska includes additional rounding to protect the count of the resident 
+population in the Remote Alaska Type of Enumeration Area. The Post-Enumeration Survey did not evaluate the coverage of the population living in Remote Alaska. A negative (positive) 
+estimate of net coverage error indicates an undercount (overcount).
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+
+U.S. Census Bureau	
+19 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Appendix Table 5.
+Components of Census Coverage for the Household Population in the United States by Type of Enumeration Area
+Type of
+enumeration area
+Census 
+count
+Correct
+enumerations
+Erroneous enumerations
+Whole-person
+census
+imputations
+DSE1 correct
+Omissions
+Net
+coverage
+error
+Duplication
+Other reasons
+Percent
+Stan-
+dard 
+error
+Percent
+Stan-
+dard 
+error
+Percent
+Stan-
+dard 
+error
+Percent
+Stan-
+dard 
+error
+Percent
+Stan-
+dard 
+error
+Percent
+Stan-
+dard 
+error
+Percent
+Stan-
+dard 
+error
+Total . . . . . . . . . . 
+323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+94.2
+0.2
+5.8
+0.2
+–0.24
+0.25
+Self-Response . . .
+316,600,000
+94.5
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+94.3
+0.2
+5.7
+0.2
+–0.19
+0.25
+Update Leave
+ and Update 
+ Enumerate . . . . .
+6,524,000
+91.7
+0.4
+4.0
+0.4
+0.6
+0.1
+3.6
+X
+89.4
+1.6
+10.6
+1.6
+–2.58
+1.84
+X Not applicable.
+Z Represents or rounds to zero.
+1 Dual-system estimate.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown. A negative (positive) estimate of net coverage error indicates an undercount (overcount).
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+Appendix Table 6.
+Components of Census Coverage for the Household Population in the United States by Census Tract Self-Response Rate
+Census tract 
+self-response
+rate
+Census
+count
+Correct
+enumerations
+Erroneous enumerations
+Whole-person
+census
+imputations
+DSE1 correct
+Omissions
+Net
+coverage
+error
+Duplication
+Other reasons
+Percent
+Stan-
+dard 
+error Percent
+Stan-
+dard 
+error Percent
+Stan-
+dard 
+error Percent
+Stan-
+dard 
+error Percent
+Stan-
+dard 
+error Percent
+Stan-
+dard 
+error Percent
+Stan-
+dard 
+error
+Total . . . . . . . . . . . . . . . . .
+323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+94.2
+0.2
+5.8
+0.2
+–0.24
+0.25
+0 to 10th percentile . . . . . .
+21,210,000
+91.8
+0.2
+3.1
+0.2
+0.8
+0.1
+4.3
+X
+89.3
+1.1
+10.7
+1.1
+*–2.69
+1.23
+10 to 20th percentile . . . . .
+26,520,000
+92.7
+0.2
+2.3
+0.2
+0.7
+0.1
+4.3
+X
+91.3
+0.8
+8.7
+0.8
+*–1.51
+0.84
+20 to 30th percentile . . . . .
+29,570,000
+93.1
+0.2
+2.4
+0.2
+0.5
+0.1
+4.0
+X
+93.4
+0.8
+6.7
+0.8
+0.29
+0.93
+30 to 40th percentile . . . . .
+31,440,000
+93.7
+0.2
+1.8
+0.1
+0.7
+0.1
+3.7
+X
+93.5
+0.6
+6.5
+0.6
+–0.23
+0.69
+40 to 50th percentile . . . . .
+33,630,000
+94.2
+0.2
+1.6
+0.2
+0.7
+0.1
+3.5
+X
+94.2
+0.6
+5.8
+0.6
+–0.07
+0.71
+50 to 60th percentile . . . . .
+34,670,000
+94.7
+0.2
+1.4
+0.1
+0.6
+0.1
+3.3
+X
+94.4
+0.5
+5.6
+0.5
+–0.33
+0.58
+60 to 70th percentile . . . . .
+34,670,000
+94.9
+0.1
+1.4
+0.1
+0.6
+0.1
+3.1
+X
+94.2
+0.5
+5.8
+0.5
+–0.68
+0.56
+70 to 80th percentile . . . . .
+37,160,000
+95.3
+0.1
+1.1
+0.1
+0.6
+0.1
+3.0
+X
+95.5
+0.5
+4.5
+0.5
+0.24
+0.49
+80 to 90th percentile . . . . .
+37,400,000
+95.7
+0.1
+1.0
+0.1
+0.6
+0.1
+2.7
+X
+96.4
+0.4
+3.6
+0.4
+*0.80
+0.45
+90 to 100th percentile. . . .
+36,810,000
+96.2
+0.1
+0.8
+0.1
+0.5
+0.1
+2.5
+X
+96.7
+0.3
+3.3
+0.3
+0.52
+0.37
+* Denotes a (percent) net coverage error that is signiﬁ cantly diﬀ erent from zero.
+X Not applicable.
+Z Represents or rounds to zero.
+1 Dual-system estimate.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown. A negative (positive) estimate of net coverage error indicates an undercount (overcount). This table 
+does not include some geographies for which a response rate could not be calculated because of diﬀ erences between the planned 2020 boundaries used to calculate the self-response rates 
+and the ﬁ nal 2020 Census tabulation geography.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+
+20	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Appendix Table 7.
+Components of Census Coverage for the Household Population in the United States by Mode
+Mode
+Census
+count
+Correct
+enumerations
+Erroneous enumerations
+Whole-person
+census
+imputations
+Duplication
+Other reasons
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Total . . . . . . . . . . . . . . . . . . . . .
+323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+Internet Self-Response . . . . . . .
+206,600,000
+96.1
+Z
+1.1
+Z
+0.5
+Z
+2.4
+X
+Census Questionnaire 
+ Assistance operation1 . . . . . .
+3,635,000
+96.5
+0.3
+1.6
+0.3
+0.4
+0.1
+1.5
+X
+Paper-based response . . . . . . .
+37,340,000
+97.1
+0.1
+1.3
+0.1
+0.6
+0.1
+1.0
+X
+Nonresponse Followup
+ enumerations . . . . . . . . . . . . .
+55,930,000
+89.4
+0.2
+3.2
+0.2
+1.0
+0.1
+6.3
+X
+Other types of responses2 . . . .
+ 17,820,000 
+ 94.9 
+ 0.2 
+ 3.5 
+ 0.2 
+ 1.4 
+ 0.1 
+ 0.1 
+X
+Count imputations . . . . . . . . . . .
+ 1,860,000 
+ X 
+ X 
+ X 
+ X 
+ X 
+ X 
+ 100.0 
+X
+X Not applicable.
+Z Represents or rounds to zero.
+1 Census Questionnaire Assistance was the telephone response operation for the 2020 Census.
+2 This row includes responses from Update Leave and Update Enumerate, Coverage Improvement, and administrative records.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+Appendix Table 8.
+Components of Census Coverage for the Household Population in the United States by 
+Nonresponse Followup (NRFU) Universe
+NRFU ﬁ eld
+operation status
+Census
+count
+Correct
+enumerations
+Erroneous enumerations
+Whole-person
+census
+imputations
+Duplication
+Other reasons
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Total . . . . . . . . . . . . . . . . . . . . . . 
+323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+In NRFU universe . . . . . . . . . . . . . .
+90,340,000
+90.3
+0.1
+3.1
+0.1
+0.9
+0.1
+5.7
+X
+ NRFU enumerations . . . . . . . . .
+55,930,000
+89.4
+0.2
+3.2
+0.2
+1.0
+0.1
+6.3
+X
+  Completed in July . . . . . . . . .
+531,000
+95.7
+0.8
+2.5
+0.7
+1.0
+0.4
+0.9
+X
+  Completed in August . . . . . .
+25,890,000
+94.9
+0.2
+3.0
+0.2
+0.8
+0.1
+1.3
+X
+  Completed in September . . .
+24,280,000
+93.8
+0.3
+3.8
+0.3
+1.4
+0.2
+1.1
+X
+  Completed in October . . . . .
+2,197,000
+93.6
+0.6
+3.9
+0.6
+1.7
+0.3
+0.9
+X
+  No close-out date1 . . . . . . . . .
+3,030,000
+2.6
+0.1
+0.3
+0.1
+Z
+Z
+97.1
+X
+ Administrative record
+enumerations . . . . . . . . . . . . .
+10,110,000
+94.5
+0.3
+4.3
+0.3
+1.3
+0.1
+X
+X
+ Self-response in NRFU
+universe . . . . . . . . . . . . . . . . . .
+22,420,000
+95.7
+0.1
+2.2
+0.1
+0.6
+0.1
+1.5
+X
+ Other enumerations2 . . . . . . . . .
+1,883,000
+33.1
+0.3
+0.8
+0.2
+0.4
+0.2
+65.7
+X
+Not in NRFU universe . . . . . . . . . .
+232,800,000
+96.0
+Z
+1.0
+Z
+0.5
+Z
+2.5
+X
+X Not applicable.
+Z Represents or rounds to zero.
+1 This row includes occupied housing units where a population count or other limited response data were obtained and the case was not 
+closed out until the end of NRFU operations.
+2 This row includes Coverage Improvement and count imputation cases in the NRFU universe. 
+Note: Census counts are rounded. As a result, counts may not sum to totals shown.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+
+U.S. Census Bureau	
+21 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Appendix Table 9.
+Components of Census Coverage for the Household Population in the United States by 
+Nonresponse Followup (NRFU) Respondent Type
+NRFU respondent type
+Census
+count
+Correct
+enumerations
+Erroneous enumerations
+Whole-person
+census
+imputations
+Duplication
+Other reasons
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Total . . . . . . . . . . . . . . . . . . . . . . . . 323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+In NRFU universe . . . . . . . . . . . . . . .
+90,340,000
+90.3
+0.1
+3.1
+0.1
+0.9
+0.1
+5.7
+X
+ NRFU enumerations . . . . . . . . . .
+55,930,000
+89.4
+0.2
+3.2
+0.2
+1.0
+0.1
+6.3
+X
+  Household interview . . . . . . . .
+40,800,000
+90.1
+0.2
+3.1
+0.2
+0.8
+0.1
+6.1
+X
+   Head of household . . . . . . . .
+31,510,000
+94.0
+0.2
+3.3
+0.2
+0.8
+0.1
+1.8
+X
+   Other household member . .
+9,295,000
+76.6
+0.3
+2.2
+0.2
+0.5
+0.1
+20.7
+X
+  Proxy interview . . . . . . . . . . . . .
+15,130,000
+87.4
+0.4
+3.7
+0.3
+1.8
+0.3
+7.0
+X
+ Administrative record
+enumerations . . . . . . . . . . . . . .
+10,110,000
+94.5
+0.3
+4.3
+0.3
+1.3
+0.1
+X
+X
+ Self-response in NRFU
+universe . . . . . . . . . . . . . . . . . . .
+22,420,000
+95.7
+0.1
+2.2
+0.1
+0.6
+0.1
+1.5
+X
+ Other enumerations1 . . . . . . . . . .
+1,883,000
+33.1
+0.3
+0.8
+0.2
+0.4
+0.2
+65.7
+X
+Not in NRFU universe . . . . . . . . . . .
+232,800,000
+96.0
+Z
+1.0
+Z
+0.5
+Z
+2.5
+X
+X Not applicable.
+Z Represents or rounds to zero.
+1 This row includes Coverage Improvement and count imputation cases in the NRFU universe. 
+Note: Census counts are rounded. As a result, counts may not sum to totals shown.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+Appendix Table 10.
+Components of Census Coverage for the Household Population in the United States by Non-ID 
+Operation
+Non-ID 
+operation
+Census 
+count
+Correct 
+enumerations
+Erroneous enumerations
+Whole-person
+census imputations
+Duplication
+Other reasons
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Total . . . . . . . . . . . . 
+323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+ID response1 . . . . . . .
+179,700,000
+96.9
+Z
+0.9
+Z
+0.4
+Z
+1.9
+X
+Non-ID response1 . . .
+30,500,000
+91.6
+0.1
+2.3
+0.1
+0.6
+0.1
+5.6
+X
+Other . . . . . . . . . . . . .
+112,900,000
+91.3
+0.1
+2.6
+0.1
+0.9
+0.1
+5.1
+X
+X Not applicable.
+Z Represents or rounds to zero.
+1 The ID and Non-ID response rows include both internet and phone responses.  
+Note: Census counts are rounded. As a result, counts may not sum to totals shown.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).
+
+22	
+U.S. Census Bureau 
+Census Coverage Estimates for People in the United States by State and Census Operations
+Appendix Table 11. 
+Components of Census Coverage for the Household Population in the United States by Coverage 
+Improvement Operation
+Coverage Improvement 
+operation
+Census
+ count
+Correct 
+enumerations
+Erroneous enumerations
+Whole-person 
+census 
+imputations
+Duplication
+Other reasons
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Percent
+Standard 
+error
+Total . . . . . . . . . . . . . . . . . . . .
+323,200,000
+94.4
+Z
+1.6
+Z
+0.6
+Z
+3.4
+X
+Selected for 
+ Coverage Improvement . . .
+40,270,000
+89.2
+0.1
+3.1
+0.1
+1.2
+0.1
+6.6
+X
+  Completed . . . . . . . . . . . . .
+5,493,000
+95.8
+0.3
+2.3
+0.2
+1.7
+0.2
+0.1
+X
+  Not completed . . . . . . . . .
+34,780,000
+88.1
+0.1
+3.2
+0.1
+1.1
+0.1
+7.6
+X
+Not selected for 
+ Coverage Improvement . . .
+282,900,000
+95.2
+Z
+1.4
+Z
+0.5
+Z
+2.9
+X
+X Not applicable.
+Z Represents or rounds to zero.
+Note: Census counts are rounded. As a result, counts may not sum to totals shown.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (May 2022 Release).

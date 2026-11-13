@@ -1,0 +1,18 @@
+# Free calibration run (Kumar fill): Zenodo 10.5281/zenodo.20538557, Jesus Perez Expolio -- GHZ scaling on Heron r2 -- committed before any job
+Their numbers: N = 12 GHZ on ibm_fez, two runs hours apart, F = 0.692 and 0.503 (Delta 0.189), read as device temporal drift and used as a uniform
+sigma_device = 0.095 on every point. Their F is P(0..0) + P(1..1), the population only (book row: GAP, 25 Oct). Their circuit: H + CX chain, opt 1,
+NO initial layout, 8,192 shots. Today at opt 1 with no layout the transpiler places N = 12 on physical 0-11 (dry_run_ghz.text).
+New hotness applied, in their circuit, same session:
+  LAYOUT  four 12-qubit paths fixed by rule before the job (layouts_chosen.json: best, 25th, 50th, 75th percentile of record worst-CZ + worst-readout
+          over 4,393 scored paths, disjoint) plus their unpinned placement, all in ONE fez job. Every arm compiles to depth 48 with 11 CZ.
+  DRIFT   job B (best path + unpinned) submitted as soon as job A returns: job-to-job gap at minute spacing, against their 0.189 at hours.
+  FIDELITY on the best path: 8 parity settings (rz(phi) + h on every qubit, ideal parity cos(N phi), checked by statevector) give the coherence C;
+          F = (P + C)/2 beside their F = P.
+  RECORD  props_before.json at submission.
+Readings: LAYOUT weighted chi2 over best_a, q25, q50, q75 (dof 3): ABOVE if p < 0.05, else CONSISTENT with the range a bound; range as a share of 0.189.
+DRIFT and P - F with both widths, four outcomes. What this can rule out: a layout range at or above 0.189 inside one job means their 0.189 does not need
+time to be explained; it cannot say which qubits their two runs used (CANNOT_TELL) or test hours-scale drift (we test minutes).
+KNOWN-GOOD: best_a and best_b are the identical circuit on the identical path in one job; they must agree within 2.58 sd of shot noise, or the run is NOT DECIDED.
+Synthetic: synth_results_ghz.text (noisy-flat, layout, drift, broken copies, coherence zero, both). Floors over 200 nulls: LAYOUT ABOVE 9/200 = 4.5%;
+KG false fail 2/200 = 1%.
+Units: shots within an arm; layouts (4) for the layout test. Budget: cap 60 s, reserve 300 s, remaining 2,075 s at plan time. Chip: ibm_fez.

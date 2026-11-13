@@ -1,0 +1,17 @@
+ibm_marrakesh: 8 circuits (their Tier A), 8192 shots, 4 jobs A1 B1 B2 A2, physical qubits [(5, 6, 7), (6, 98, 153)], depth and 2Q count both equal to his transpile in 3/8, 2Q count equal in 7/8, est 80 s (cap 300), remaining 973
+   ladder_n3_M1_r2 {'layout': [5, 7, 6], 'depth': 144, 'two_q': 39, 'his_depth': 139, 'his_two_q': 39, 'reproduces_his': False}
+   ladder_n3_M1_r1 {'layout': [5, 6, 7], 'depth': 75, 'two_q': 20, 'his_depth': 71, 'his_two_q': 19, 'reproduces_his': False}
+   readout_n3_zeros {'layout': [6, 98, 153], 'depth': 1, 'two_q': 0, 'his_depth': 1, 'his_two_q': 0, 'reproduces_his': True}
+   ladder_n3_M1_r4 {'layout': [5, 7, 6], 'depth': 286, 'two_q': 79, 'his_depth': 281, 'his_two_q': 79, 'reproduces_his': False}
+   echo_n3_M1_r2 {'layout': [5, 7, 6], 'depth': 289, 'two_q': 79, 'his_depth': 283, 'his_two_q': 79, 'reproduces_his': False}
+   ladder_n3_M1_r3 {'layout': [5, 7, 6], 'depth': 210, 'two_q': 57, 'his_depth': 206, 'his_two_q': 57, 'reproduces_his': False}
+   readout_n3_ones {'layout': [6, 98, 153], 'depth': 2, 'two_q': 0, 'his_depth': 2, 'his_two_q': 0, 'reproduces_his': True}
+   ladder_n3_M1_r0 {'layout': [6, 98, 153], 'depth': 4, 'two_q': 0, 'his_depth': 4, 'his_two_q': 0, 'reproduces_his': True}
+SUBMITTED job A1 dbe8blvgdj9s73flbv20 2026-10-24T10:17:59Z (remaining before 973)
+Traceback (most recent call last):
+  File "/Users/heuremen/bones-forge/qia_runs/2026-10-24-fill-qfim/fire_qfim.py", line 74, in <module>
+    res = job.result(); raw = {c: {str(k): int(v) for k, v in pr.data.c.get_counts().items()} for c, pr in zip(order, res)}
+          ^^^^^^^^^^^^
+  File "/Users/heuremen/bones-forge/qvenv/lib/python3.12/site-packages/qiskit_ibm_runtime/runtime_job_v2.py", line 153, in result
+    raise RuntimeInvalidStateError(
+qiskit_ibm_runtime.exceptions.RuntimeInvalidStateError: 'Unable to retrieve result for job dbe8blvgdj9s73flbv20. Job was cancelled.'

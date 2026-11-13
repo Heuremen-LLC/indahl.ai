@@ -1,0 +1,7 @@
+# ADDENDUM 2 -- extension planned and committed BEFORE any result was read (2026-10-24T02:44Z; raw files for jobs 1-2 exist on disk, unopened).
+Two more jobs after job 4: job 5 = H2, job 6 = H0, the same transpiled circuits and layout (fire_kyiv_ext.py asserts both), so jobs 3-6 run
+H0 H2 H2 H0 (ABBA). R5 = mean RMSE(H0 jobs 3,6) - mean RMSE(H2 jobs 4,5): cancels drift linear in job number and a single step at the
+midpoint. Four outcomes vs a shot-noise null built from the pooled kernel. Synthetic (synth_results_kyiv.text): ABBA LINEAR world reads
++0.0315 against a true mean gap of 0.0305 over jobs 3-6 (ABOVE); ABBA NEITHER reads +0.00004 (CONSISTENT).
+R5 supersedes R2/R4 for the SIZE of the twirl gap if all six jobs complete; R1 (drift, jobs 1 vs 3) and dH0(6-3) are both reported.
+Cost: ~168 QPU s more (two jobs at ~84 s). Fires only after job 4 completes and only if remaining seconds allow.

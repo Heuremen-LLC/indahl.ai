@@ -1,0 +1,41 @@
+# RESULT -- free calibration run for arXiv 2609.13669v1 (M. Faryad, LUMS, Pakistan), ibm_fez, 24 Oct 2026 12:40-12:47Z
+Plan 47c2d3e committed before any job (plan_gate PASS). Internal; nothing published or sent before Monday.
+Jobs: 12 (job_lums.json, order T O O T T O O T T O O T), no IBM-side errors, one fez record in force throughout (stamp 2026-10-24 08:22:25 EDT).
+IBM metered usage: 204 s (18 s per T job, 16 s per O job). (fire_lums.py printed 22.5 s per job: that was its fallback estimate, because the
+usage key is qpu_charge_time_seconds; data unaffected; the per-job IBM figures are in job_lums.json.)
+KNOWN-GOOD: PASS (his counts through our code, all four sizes to 8.4e-15; our circuit vs his stored noiseless CVaR to 1e-9; transpiled
+counts equal his: 252/72/334 and 540/120/548). Synthetic false-call rate 2.8 % (36/1280).
+
+## Readings (results_lums.text; pre-registered)
+n = 8 (13 rows x 1102 shots):
+- R1 DRIFT, no twirl: ABOVE. O-arm job-mean SD 0.326 against a shot-noise job SD of 0.0155 (CM 1.06e-01 vs null 99 % hi 7.8e-04); halves agree.
+- R1b twirled (his settings): ABOVE. T-arm job-mean SD 0.0476 [95 % 0.030, 0.117] against shot noise ~0.015.
+- R2 twirl job-level, T minus O: BELOW (permutation p_upper 1.000): untwirled jobs spread MORE than twirled ones.
+- R2b twirl row-level: CONSISTENT.
+- DECISION: DRIFT -- job-to-job spread beyond shot noise without twirling; twirl instance variance not separated (R2 BELOW).
+- R3 his one-pair shift +0.0426 against today's twirled job SD 0.0476 [0.030, 0.117]: CONSISTENT (today's spread produces shifts of his size).
+n = 10 (17 rows x 2168 shots):
+- R1 CONSISTENT (O job SD 0.0123, excess <= 0.0117); R1b CONSISTENT (T job SD 0.0170, excess <= 0.0163); R2 CONSISTENT; R2b CONSISTENT.
+- DECISION: NEITHER RESOLVED -- both arms within shot noise today; bounds as printed.
+- R3 his shift -0.0499 against today's twirled job SD 0.0170 [0.011, 0.042]: CONSISTENT (inside 2.58 x sqrt2 x the upper bound; today's
+  point value would make his shift about a 2-sigma pair).
+
+## POST HOC (defined after the data, not in the plan; posthoc_lums.text)
+- n = 8 untwirled: the spread is one step. J02O reads -2.835 (at the twirled level); the five later O jobs read -1.97 to -2.10, the first of
+  them (J03O) 25 s after J02O, same calibration stamp. Without J02O the O-arm job SD is 0.049, still about 3x shot noise.
+- n = 8 twirled: a slow creep, +0.0107 CVaR per job slot (-2.79 to -2.67 over 6 min); n = 10 twirled: -0.0029 per slot.
+- The twirled-minus-untwirled mean CVaR flips sign between sizes (n=8: twirled better by ~0.55; n=10: untwirled better by ~0.20). Context only.
+
+## What this hands the author (his math, not ours)
+Twelve same-day repeats of his own first batched job on his own chains, twirling on and off, ABBA, raw counts per row, the record before
+every job. On today's fez: at n = 8 jobs minutes apart move beyond shot noise with AND without twirling (untwirled by a step, twirled by a
+slow creep), so a single paired repeat cannot bound drift at "a few hundredths" there; at n = 10 neither arm resolves spread today
+(twirled job SD <= 0.042). His day (20 Aug) is not re-measured: CANNOT_TELL for that day by construction.
+
+## /q on the readings
+- 13/22 (units): jobs are the units; the n = 8 R1 ABOVE rests on 6 jobs and is dominated by one step (stated above; it holds without it).
+- 16 (multiplicity): 8 readings, expected ~0.25 false resolutions from the synthetic; the n = 8 R1 margin (CM 137x the null 99 % point) is
+  far outside that.
+- 25: a step between two jobs 25 s apart with no record change can be a coherent-error change (TLS / frequency), a control glitch, or a
+  readout-assignment change; this run does not separate them.
+- 30 (times from job records): times and usage from IBM job records; the fire log's 22.5 s figures corrected above.

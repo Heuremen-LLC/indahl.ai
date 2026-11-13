@@ -1,0 +1,23 @@
+                 How to read temperature forecasts
+
+File Names:
+
+temp01_forecast_above.bi - Archive of lead 01 seasonal above normal
+temperature probabilities
+temp01_forecast_below.bi - Archive of lead 01 seasonal below normal
+temperature probabilities
+temp01_forecast.bi - Archive of lead 01 seasonal temperature categories
+
+Beginning of Record: Seasonal forecast issued in December 1994
+
+Type of File: Gridded Binary File
+
+Grid Resolution: 2x2
+
+Grid Domain: 130W to 60W longitude, 20N to 56N latitude
+
+Grid Values: 1-below normal;2-near normal;3-above normal;0-equal
+chances  (categorical files)
+
+Note: Probability files are expressed in total probabilities... not
+probability anomalies.

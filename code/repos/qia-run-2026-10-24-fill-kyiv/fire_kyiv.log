@@ -1,0 +1,10 @@
+ibm_fez: 300 circuits, layouts [(0, 1, 2, 3)] (1 distinct), est 336 s, remaining 2244
+SUBMITTED job 1 H0 dbe1l6fgdj9s73fl1g8g 2026-10-24T02:40:26Z
+DONE job 1 H0 usage {'qpu_charge_time_seconds': 83, 'value': 1.371152, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 1.371152, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 83}}]}
+SUBMITTED job 2 H2 dbe1lugm94ac738r2sdg 2026-10-24T02:42:02Z
+DONE job 2 H2 usage {'qpu_charge_time_seconds': 92, 'value': 1.521814, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 1.521814, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 92}}]}
+SUBMITTED job 3 H0 dbe1msvpc3tc739kullg 2026-10-24T02:44:03Z
+DONE job 3 H0 usage {'qpu_charge_time_seconds': 83, 'value': 1.371152, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 1.371152, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 83}}]}
+SUBMITTED job 4 H2 dbe1nl0m94ac738r2uug 2026-10-24T02:45:40Z
+DONE job 4 H2 usage {'qpu_charge_time_seconds': 92, 'value': 1.521814, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 1.521814, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 92}}]}
+ALL DONE

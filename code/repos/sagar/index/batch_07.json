@@ -1,0 +1,98 @@
+[
+ {
+  "bibcode": "2025A&A...698A..85L",
+  "arxiv": "2501.10295",
+  "doi": "10.1051/0004-6361/202553941",
+  "pubdate": "2025-06-00",
+  "title": "No evidence that the binary black hole mass distribution evolves with redshift",
+  "abstract": "Context. The mass distribution of merging binary black holes is generically predicted to evolve with redshift and to reflect systematic changes in their astrophysical environment, stellar progenitors, and/or dominant formation channels over cosmic time. Whether this effect is observed in gravitational-wave data remains an open question, however, and some contradictory results have been reported. Aims. We study the ensemble of binary black holes within the latest GWTC-3 catalog released by the LIGO-Virgo-KAGRA Collaboration. We systematically searched for a possible evolution of their mass distribution with redshift. Methods. We specifically focused on two key features in the primary mass distribution of a binary black hole: (1) an excess of 35 M<SUB>\u2299</SUB> black holes, and (2) a broad power-law continuum ranging from 10 to \u227380 M<SUB>\u2299</SUB>. We determined whether one or both of these features were observed to vary with redshift. Results. We found no evidence that either the Gaussian peak or power-law continuum components of the mass distribution change with redshift. In some cases, we placed somewhat stringent bounds on the degree of the allowed redshift evolution. Most notably, we found that the mean location of the 35 M<SUB>\u2299</SUB> peak and the slope of the power-law continuum are constrained to remain approximately constant below redshift z\u224d1. The data remain more agnostic about other forms of a dependence on redshift, such as the evolution in the height of the 35 M<SUB>\u2299</SUB> excess or the minimum and maximum black hole masses. We conclude that a redshift-dependent mass spectrum remains possible for all cases, but it is not required by the current data."
+ },
+ {
+  "bibcode": "2025ApJ...986..202M",
+  "arxiv": "2503.09731",
+  "doi": "10.3847/1538-4357/add5f5",
+  "pubdate": "2025-06-00",
+  "title": "Results from an Einstein@Home Search for Continuous Gravitational Waves from Cassiopeia A and Vela Jr. Using LIGO O2 Data",
+  "abstract": "We conduct two searches for continuous, nearly monochromatic gravitational waves originating from the central compact objects in the supernova remnants Cassiopeia A (Cas A) and Vela Jr. using public LIGO data. The search for Cas A targets signal frequencies between 20 Hz and 400 Hz, and the Vela Jr. search covers between 400 and 1700 Hz. They both investigate the broadest set of waveforms ever considered with highly sensitive deterministic search methods. Above 1500 Hz, the Vela Jr. search is the most sensitive carried out thus far, improving on previous results by over 300%. Above 976 Hz these results improve on existing ones by 50%. In all, we investigate over 10<SUP>18</SUP> waveforms, leveraging the computational power donated by thousands of Einstein@Home volunteers. We perform a four-stage follow-up on more than 6 million waveforms. None of the considered waveforms survives the follow-up scrutiny, indicating no significant detection candidate. Our null results constrain the maximum amplitude of continuous signals as a function of signal frequency from the targets. The most stringent 90% confidence upper limit for Cas A is <inline-formula> <mml:math><mml:msubsup><mml:mrow><mml:mi>h</mml:mi></mml:mrow><mml:mrow><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:mn>90</mml:mn><mml:mo>%</mml:mo></mml:mrow></mml:msubsup><mml:mo>\u224d</mml:mo><mml:mn>7.3</mml:mn><mml:mo>\u00d7</mml:mo><mml:mn>1</mml:mn><mml:msup><mml:mrow><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>26</mml:mn></mml:mrow></mml:msup></mml:math> </inline-formula> near 200 Hz, and for Vela Jr. it is <inline-formula> <mml:math><mml:msubsup><mml:mrow><mml:mi>h</mml:mi></mml:mrow><mml:mrow><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:mn>90</mml:mn><mml:mo>%</mml:mo></mml:mrow></mml:msubsup><mml:mo>\u224d</mml:mo><mml:mn>8.9</mml:mn><mml:mo>\u00d7</mml:mo><mml:mn>1</mml:mn><mml:msup><mml:mrow><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>26</mml:mn></mml:mrow></mml:msup></mml:math> </inline-formula> near 400 Hz. Translated into upper limits on the ellipticity and r-mode amplitude, our results probe physically interesting regions: for example, the ellipticity of Vela Jr. is constrained to be smaller than 10<SUP>\u22127</SUP> across the frequency band, with a tighter constraint of less than 2 \u00d7 10<SUP>\u22128</SUP> at the highest frequencies."
+ },
+ {
+  "bibcode": "2025JCAP...05..029A",
+  "arxiv": "2409.04545",
+  "doi": "10.1088/1475-7516/2025/05/029",
+  "pubdate": "2025-05-00",
+  "title": "Gravitational waves and black holes from the phase transition in models of dynamical symmetry breaking",
+  "abstract": "Theories of dynamical electroweak symmetry breaking predict a strong first order cosmological phase transition: we compute the resulting signals, primordial black holes and gravitational waves. These theories employ one SM-neutral scalar, plus some extra model-dependent particle to get the desired quantum potential out of classical scale invariance. We consider models where the extra particle is a scalar singlet, or vectors of an extended U(1) or SU(2) gauge sector. In models where the extra particle is stable, it provides a particle Dark Matter candidate with freeze-out abundance that tends to dominate over primordial black holes. These can instead be DM in models without a particle DM candidate. Gravitational waves arise at a level observable in future searches, even in regions where DM cannot be directly tested."
+ },
+ {
+  "bibcode": "2025ApJ...984...61K",
+  "arxiv": "2412.05369",
+  "doi": "10.3847/1538-4357/adc9a5",
+  "pubdate": "2025-05-00",
+  "title": "A Search for Low-mass Neutron Stars in the Third Observing Run of Advanced LIGO and Virgo",
+  "abstract": "Most observed neutron stars have masses around 1.4 M<SUB>\u2299</SUB>, consistent with current formation mechanisms. To date, no subsolar-mass neutron star has been observed. Observing one would provide crucial constraints on the nuclear equation of state, unveil a new neutron star population, and advance understanding of their formation mechanisms. We present the first targeted search for tidally deformed subsolar-mass binary neutron stars (BNSs), with primary masses ranging from 0.1 to 2 M<SUB>\u2299</SUB> and secondary masses from 0.1 to 1 M<SUB>\u2299</SUB>, using data from the third observing run of the Advanced LIGO and Virgo gravitational-wave detectors. We account for the tidal deformabilities of up to O(10<SUP>4</SUP>) of these systems, as low-mass neutron stars are more easily distorted by their companions. Previous searches that neglect tidal deformability lose sensitivity to low-mass sources, potentially missing more than \u223c30% of detectable signals from a system with a chirp mass of 0.6 M<SUB>\u2299</SUB> binaries. No statistically significant detections were made. In the absence of a detection, we place a 90% confidence upper limit on the local merger rate for subsolar BNSs, constraining it to be &lt;6.4 \u00d7 10<SUP>4</SUP> Gpc<SUP>\u22123</SUP> yr<SUP>\u22121</SUP> for a chirp mass of 0.2 M<SUB>\u2299</SUB> and &lt;2.2 \u00d7 10<SUP>3</SUP> Gpc<SUP>\u22123</SUP> yr<SUP>\u22121</SUP> for 0.7 M<SUB>\u2299</SUB>. With future upgrades to detector sensitivity, development of next-generation detectors, and ongoing improvements in search pipelines, constraints on the minimum mass of neutron stars will improve, providing the potential to constrain the nuclear equation of state, reveal new insights into neutron star formation channels, and potentially identify new classes of stars."
+ },
+ {
+  "bibcode": "2025CQGra..42j5012W",
+  "arxiv": "2401.08709",
+  "doi": "10.1088/1361-6382/add233",
+  "pubdate": "2025-05-00",
+  "title": "Beyond GWTC-3: analyzing and verifying new gravitational-wave events from community catalogues",
+  "abstract": "The public release of data from the LIGO and Virgo detectors has enabled the identification of potential gravitational wave signals by independent teams using alternative methodologies. In addition to the LIGO-Virgo-KAGRA (LVK) collaboration's GWTC-3 catalogue there have been several additional works claiming the detection of signals in the data from the first three observing runs. In this paper we present an analysis of these new signals using the same analysis workflow which was used to generate the GWTC-2.1 and GWTC-3 catalogues published by the LVK, matching the analysis configuration as closely as possible, and we provide our parameter estimation results in a format comparable to those of the GWTC-3 data release for 57 events not previously analyzed in LVK analyses. We find our results to be broadly consistent with those published by other groups. We also include a discussion of the workflow developed for this analysis."
+ },
+ {
+  "bibcode": "2025JCAP...05..084M",
+  "arxiv": "2503.00520",
+  "doi": "10.1088/1475-7516/2025/05/084",
+  "pubdate": "2025-05-00",
+  "title": "Spherical black hole perturbations in EFT of scalar-tensor gravity with timelike scalar profile",
+  "abstract": "We study linear even-parity perturbations of static and spherically symmetric black holes with a timelike scalar profile by use of the effective field theory (EFT) approach. For illustrative purposes, we consider a simple subclass of the EFT that accommodates ghost condensate, namely the k-essence model along with the so-called scordatura term, and focus on the spherical (monopole) perturbations about an approximately stealth Schwarzschild solution. The scordatura effect is introduced to avoid the strong coupling problem that typically happens in the scalar sector around stealth solutions with a timelike scalar profile. We argue that the scalar perturbation is decoupled from the metric perturbations at the leading order in the scordatura effect under a particular gauge choice. We stress that this is an important step in understanding the dynamics of even-parity perturbations, paving the way towards deriving a set of master equations \u2014 the generalized Zerilli and the scalar-field equations \u2014 for generic multipoles."
+ },
+ {
+  "bibcode": "2025PhLB..86339392K",
+  "arxiv": "2408.11410",
+  "doi": "10.1016/j.physletb.2025.139392",
+  "pubdate": "2025-04-00",
+  "title": "Superradiant scattering of massive scalar field due to magnetically charged rotating black hole",
+  "abstract": "Rotating black holes are well known to amplify the perturbing bosonic fields in certain parameter spaces. This phenomenon is popularly known as superradiance. In addition to rotation in the spacetime, charge plays a crucial role in the amplification process. In the present study, we have considered the spacetime of a magnetically charged rotating black hole emerging from the coupling of nonlinear electromagnetic field configuration to gravity. Due to this black hole spacetime, we have studied the scattering states of a massive scalar field and investigated the superradiant amplification process. We find that the magnetic charge of the spacetime affects the magnitude of the amplification and significantly enlarges the allowed frequency ranges for which superradiance happens. In comparison, our analysis reveals that some of the behaviours are quite similar to what has been found in the case of the Kerr-Newmann black hole. Moreover, we observe exact similarities in specific parameter spaces, which could imply a probable correspondence between the magnetically charged black hole and the Kerr-Newman black hole in certain scenarios. Such similarities could have important implications for observing the effects of the non-linear nature of electromagnetic fields in the vicinity of spinning black holes. In addition, we have investigated the superradiant instability regime due to the massive potential barrier and compared our results with that of the Kerr-Newmann black hole."
+ },
+ {
+  "bibcode": "2025MLS&T...6a5054K",
+  "arxiv": "2407.07820",
+  "doi": "10.1088/2632-2153/adb5ed",
+  "pubdate": "2025-03-00",
+  "title": "New gravitational wave discoveries enabled by machine learning",
+  "abstract": "The detection of gravitational waves (GWs) has revolutionized our understanding of the Universe, offering unprecedented insights into its dynamics. A major goal of GW data analysis is to speed up the detection and parameter estimation process using machine learning (ML) techniques, in light of an anticipated surge in detected events that would render traditional methods impractical. Here, we present new GW candidate events, the first to be identified in data from a network of interferometric detectors through ML. We discuss several new enhancements of our ResNet-based deep learning code, AresGW, that increased its sensitivity, including a new hierarchical classification of triggers, based on different noise and frequency filters. The enhancements resulted in a significant reduction in the false alarm rate, allowing AresGW to surpass traditional pipelines in the number of detected events in its effective training range (single source masses between 7 and 50 solar masses and source chirp masses between 10 and 40 solar masses), when the new detections are included. We calculate the astrophysical significance of events detected with AresGW using a logarithmic ranking statistic and injections into O3 data. Furthermore, we present spectrograms, parameter estimation, and reconstruction in the time domain for our new candidate events and discuss the distribution of their properties. In addition, the AresGW code exhibited very good performance when tested across various two-detector setups and on observational data from the O1 and O2 observing periods. Our findings underscore the remarkable potential of AresGW as a fast and sensitive detection algorithm for GW astronomy, paving the way for a larger number of future discoveries."
+ },
+ {
+  "bibcode": "2025EPJC...85..251L",
+  "arxiv": "2412.07172",
+  "doi": "10.1140/epjc/s10052-025-13953-0",
+  "pubdate": "2025-03-00",
+  "title": "Probing black holes via quasinormal modes in a dark energy-induced dark matter",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2025CQGra..42e5017T",
+  "arxiv": "2406.16898",
+  "doi": "10.1088/1361-6382/adae4a",
+  "pubdate": "2025-03-00",
+  "title": "Detecting kHz gravitons from a neutron star merger with a multi-mode resonant mass detector",
+  "abstract": "We propose a multi-mode bar consisting of mass elements of decreasing size for the implementation of a gravitational version of the photo-electric effect through the stimulated absorption of up to kHz gravitons from a binary neutron star merger and post-merger. We find that the multi-mode detector has normal modes that retain the coupling strength to the gravitational wave of the largest mass-element, while only having an effective mass comparable to the mass of the smallest element. This allows the normal modes to have graviton absorption rates due to the tonne-scale largest mass, while the single graviton absorption process in the normal mode could be resolved through energy measurements of a mass-element in-principle smaller than pico-gram scale. We argue the feasibility of directly counting gravito-phonons in the bar through energy measurements of the end mass. This improves the transduction of the single-graviton signal, enhancing the feasibility of detecting single gravitons."
+ },
+ {
+  "bibcode": "2025ApJ...980...76P",
+  "arxiv": "2404.16729",
+  "doi": "10.3847/1538-4357/ada38e",
+  "pubdate": "2025-02-00",
+  "title": "Tidal Reconstruction of Neutron Star Mergers from Their Late Inspiral",
+  "abstract": "We investigate the measurement correlation between the effective spin and the effective tidal deformability in gravitational-wave signals from binary neutron star mergers. To efficiently measure the effective tidal deformability parameter, we exploit the fact that the tidal effects in a binary system are prominent when the components are closer, during the late inspiral. Thus, we indicate a computationally efficient strategy of extracting the tidal information compressed within the seconds before the merger. We report our observations for GW170817 and explore the suitability of our approach for the upcoming observation scenarios of the current and future ground-based observatories. Fast and accurate measurements of the tidal deformability parameters can be used to inform astronomers when prioritizing the electromagnetic follow-up efforts for such sources."
+ },
+ {
+  "bibcode": "2025EPJC...85..155D",
+  "arxiv": "2408.10296",
+  "doi": "10.1140/epjc/s10052-025-13872-0",
+  "pubdate": "2025-02-00",
+  "title": "Star shearing season: transient signals in wave-like dark matter experiments from black hole formation",
+  "abstract": ""
+ }
+]

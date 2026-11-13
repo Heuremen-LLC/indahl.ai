@@ -1,0 +1,17 @@
+SECOND RULERS (PLAN_CLOCK Addendum 3), ibm_marrakesh, fire 20261107_1223 UTC. Planned before this fire's data existed (Addendum 3 public 12:08:49 UTC 1 Nov, this fire's first job ran 12:25:29 UTC).
+(a) pooled clock reading over 20 bootstrap seeds: CANNOT_TELL 20 | lower end -0.1173 to -0.1128, upper end +0.0281 to +0.0299
+(b) qubits where the 31 Oct table leaves a larger |residual| than today's table: 71, smaller: 46, of 117; exact two-sided sign test p = 0.026
+(c) signed median kick M: -1.697 [-2.191, -1.094] deg/readout
+(c) signed median residual MC: +1.031 [+0.561, +1.550] deg/readout
+(c) signed median residual M31: +0.138 [-0.061, +0.258] deg/readout
+(c) signed median residual MT: +0.039 [-0.064, +0.142] deg/readout
+(d) M31: median |residual| pooled 0.332 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.168
+(d) MT: median |residual| pooled 0.335 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.209
+ADDENDUM 4 lines: planned before this fire.
+(e) share M31 minus share MT over seeds 1-20: pooled label CANNOT_TELL 20 | the plan's rule (pooled if the copies agree) CANNOT_TELL 20
+(e) share MC minus share MT over seeds 1-20: pooled label BELOW 20 | the plan's rule (pooled if the copies agree) BELOW 20
+(e) share MC minus share M31 over seeds 1-20: pooled label BELOW 20 | the plan's rule (pooled if the copies agree) BELOW 20
+(f) share M31 minus share MT at the plan's draw: copy A -0.0283 [-0.1072, +0.0762] CANNOT_TELL | copy B -0.0697 [-0.1736, -0.0069] BELOW
+(f) share MC minus share MT at the plan's draw: copy A -0.5104 [-0.7546, -0.3733] BELOW | copy B -0.6088 [-0.8743, -0.4195] BELOW
+(f) share MC minus share M31 at the plan's draw: copy A -0.4821 [-0.7505, -0.3574] BELOW | copy B -0.5391 [-0.8077, -0.3330] BELOW
+(g) today's table (job C) created 12:23:25, ran 12:25:29 to 12:26:34 UTC; copy A ran from 12:26:43, 9 s after job C finished; copy B from 12:27:12

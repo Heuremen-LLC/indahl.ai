@@ -1,0 +1,4 @@
+UNROUNDED POOLED BANDS, ibm_kingston fire 20261108_1303. Recomputed by running analyze_clock.py's own code up to C.final (same rng seed 31), printing 5 decimals; matches results_clock.text to 3 decimals. Written 9 Nov 2026 when the fire was read in full.
+share M31 minus share MT (margin 0.05): -0.02815 [-0.07639, +0.00584] | A BELOW B CANNOT_TELL | FINAL CANNOT_TELL
+share MC minus share MT (margin 0.05): -0.03245 [-0.07838, +0.00967] | A BELOW B CANNOT_TELL | FINAL CANNOT_TELL
+share MC minus share M31 (margin 0.05): -0.00430 [-0.04914, +0.04943] | A CONSISTENT B CANNOT_TELL | FINAL CANNOT_TELL

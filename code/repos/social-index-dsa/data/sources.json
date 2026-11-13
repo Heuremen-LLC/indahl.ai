@@ -1,0 +1,2983 @@
+[
+ {
+  "service": "AliExpress",
+  "dir": "data/raw/reports/aliexpress/2025H2",
+  "source_url": "https://files.alicdn.com/tpsservice/cba5b0012fe122c8a95cdb823aed69da.zip",
+  "page_url": "https://www.aliexpress.com/p/transparencycenter/transparencyReport.html",
+  "files": [
+   {
+    "path": "data/raw/reports/aliexpress/2025H2/cba5b0012fe122c8a95cdb823aed69da.zip",
+    "sha256": "aa4f94735f78c63b813e2c226ed77d6f857997304be1a6e25a7c61a87581e6bc",
+    "bytes": 60249
+   },
+   {
+    "path": "data/raw/reports/aliexpress/2025H2/companion_pdf/de6109e379ae31c376c5e2dfecfbfdd6.pdf",
+    "sha256": "ecdc11d4d3d2c86ab427ca64bafeb7f6eb23bcd0a86ab2621403c726576aa5c6",
+    "bytes": 525013
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-28",
+  "published_verbatim": "2026/2/28",
+  "published_quote": "All,Aliexpress,Date of the publication of the report,2026/2/28",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "cba5b0012fe122c8a95cdb823aed69da.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-27 20:46:26"
+   },
+   "3": {
+    "member": "3_member_states_order.csv",
+    "container": "cba5b0012fe122c8a95cdb823aed69da.zip!3_member_states_order.csv",
+    "kind": "csv",
+    "when": "2026-02-26 19:05:34"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "cba5b0012fe122c8a95cdb823aed69da.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-27 17:45:38"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "cba5b0012fe122c8a95cdb823aed69da.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-27 15:54:00"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "cba5b0012fe122c8a95cdb823aed69da.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-26 23:16:04"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "cba5b0012fe122c8a95cdb823aed69da.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-27 12:36:16"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "AliExpress",
+  "dir": "data/raw/reports/aliexpress/2026H1",
+  "source_url": "https://files.alicdn.com/tpsservice/474273ced7af5400e2be5c4d371ad158.zip",
+  "page_url": "https://www.aliexpress.com/p/transparencycenter/transparencyReport.html",
+  "files": [
+   {
+    "path": "data/raw/reports/aliexpress/2026H1/474273ced7af5400e2be5c4d371ad158.zip",
+    "sha256": "4478810d549e3805faa234ef534213fd0acc00a9ae8ad979ce0f48deabc57017",
+    "bytes": 65830
+   },
+   {
+    "path": "data/raw/reports/aliexpress/2026H1/companion_pdf/6b8e1ea454e8e4906b882f6a536fd247.pdf",
+    "sha256": "cc888e81df5abbe058b919b4497392e27d292fd40da50a61261be3a75e9a9cb4",
+    "bytes": 1301717
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026/8/31",
+  "published_quote": "All,Aliexpress,Date of the publication of the report,2026/8/31",
+  "sheets": {
+   "1": {
+    "member": "DSA_TransparencyReport_20260830_csv_final/1_report_identification.csv",
+    "container": "474273ced7af5400e2be5c4d371ad158.zip!DSA_TransparencyReport_20260830_csv_final/1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-27 18:31:46"
+   },
+   "8": {
+    "member": "DSA_TransparencyReport_20260830_csv_final/8_automated_means.csv",
+    "container": "474273ced7af5400e2be5c4d371ad158.zip!DSA_TransparencyReport_20260830_csv_final/8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-27 18:35:48"
+   },
+   "5": {
+    "member": "DSA_TransparencyReport_20260830_csv_final/5_own_initiative_illegal.csv",
+    "container": "474273ced7af5400e2be5c4d371ad158.zip!DSA_TransparencyReport_20260830_csv_final/5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-27 18:34:20"
+   },
+   "6": {
+    "member": "DSA_TransparencyReport_20260830_csv_final/6_own_initiative_TC.csv",
+    "container": "474273ced7af5400e2be5c4d371ad158.zip!DSA_TransparencyReport_20260830_csv_final/6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-27 18:34:54"
+   },
+   "4": {
+    "member": "DSA_TransparencyReport_20260830_csv_final/4_notices.csv",
+    "container": "474273ced7af5400e2be5c4d371ad158.zip!DSA_TransparencyReport_20260830_csv_final/4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-27 18:33:22"
+   },
+   "3": {
+    "member": "DSA_TransparencyReport_20260830_csv_final/3_member_states_order.csv",
+    "container": "474273ced7af5400e2be5c4d371ad158.zip!DSA_TransparencyReport_20260830_csv_final/3_member_states_order.csv",
+    "kind": "csv",
+    "when": "2026-08-27 18:32:42"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Amazon Store",
+  "dir": "data/raw/reports/amazon/2025H2",
+  "source_url": "https://trustworthyshopping.aboutamazon.com/eu-transparency-report-amazon-jul-dec-2025",
+  "page_url": "https://trustworthyshopping.aboutamazon.com/resources/digital-services-act-dsa",
+  "files": [
+   {
+    "path": "data/raw/reports/amazon/2025H2/eu-transparency-report-amazon-jul-dec-2025.zip",
+    "sha256": "32acf03ed58d3922c11b14e1003cfe85138fb8bac5a316601585545993d6b3ae",
+    "bytes": 361476
+   },
+   {
+    "path": "data/raw/reports/amazon/2025H2/superseded_original_wayback_2026-03-03/eu-transparency-report-amazon-jul-dec-2025.zip",
+    "sha256": "6bb2979b75dead7d5a53a1e3e9f304c379c6c36a9eb282165518b6eabf02664d",
+    "bytes": 358562
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27 00:00:00",
+  "published_quote": "All,Amazon Store,Date of the publication of the report,2026-02-27 00:00:00",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "eu-transparency-report-amazon-jul-dec-2025.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-26 09:18:00"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "eu-transparency-report-amazon-jul-dec-2025.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-26 09:18:00"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "eu-transparency-report-amazon-jul-dec-2025.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-26 09:18:00"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "eu-transparency-report-amazon-jul-dec-2025.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-26 09:18:00"
+   },
+   "6": {
+    "member": "6_own_initiative_TC_version2.csv",
+    "container": "eu-transparency-report-amazon-jul-dec-2025.zip!6_own_initiative_TC_version2.csv",
+    "kind": "csv",
+    "when": "2026-04-29 13:18:42"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "eu-transparency-report-amazon-jul-dec-2025.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-26 09:18:00"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Amazon Store",
+  "dir": "data/raw/reports/amazon/2026H1",
+  "source_url": "https://trustworthyshopping.aboutamazon.com/eu-transparency-report-amazon-jan-jun-2026",
+  "page_url": "https://trustworthyshopping.aboutamazon.com/resources/digital-services-act-dsa",
+  "files": [
+   {
+    "path": "data/raw/reports/amazon/2026H1/eu-transparency-report-amazon-jan-jun-2026.zip",
+    "sha256": "7634d9cb8aeba45361a91d46b90aa9de91d2fc8ac7bbb1ef5f685d86cd77da7a",
+    "bytes": 31495
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026-08-31 00:00:00",
+  "published_quote": "All,Amazon Store,Date of the publication of the report,2026-08-31 00:00:00",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "eu-transparency-report-amazon-jan-jun-2026.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:54:20"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "eu-transparency-report-amazon-jan-jun-2026.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:54:14"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "eu-transparency-report-amazon-jan-jun-2026.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:58:02"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "eu-transparency-report-amazon-jan-jun-2026.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:54:14"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "eu-transparency-report-amazon-jan-jun-2026.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:54:14"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "eu-transparency-report-amazon-jan-jun-2026.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:54:14"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Apple App Store",
+  "dir": "data/raw/reports/apple_app_store/2025H2",
+  "source_url": "https://www.apple.com/legal/dsa/transparency/eu/App-Store-February-2026.xlsx",
+  "page_url": "https://www.apple.com/legal/dsa/",
+  "files": [
+   {
+    "path": "data/raw/reports/apple_app_store/2025H2/App-Store-February-2026.xlsx",
+    "sha256": "4e5301fd00c13b6c9c0120f6f8be59aed00fd7bc9a2f4f14464806e41685c524",
+    "bytes": 110932
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-13",
+  "published_verbatim": "46066",
+  "published_quote": "XLSX sheet \"1_report_identification\" row 3: All | App Store | Date of the publication of the report | 46066",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification",
+    "container": "App-Store-February-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:05"
+   },
+   "3": {
+    "member": "3_member_states_orders",
+    "container": "App-Store-February-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:05"
+   },
+   "4": {
+    "member": "4_notices",
+    "container": "App-Store-February-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:05"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal",
+    "container": "App-Store-February-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:05"
+   },
+   "6": {
+    "member": "6_own_initiative_TC",
+    "container": "App-Store-February-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:05"
+   },
+   "8": {
+    "member": "8_automated_means",
+    "container": "App-Store-February-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:05"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Apple App Store",
+  "dir": "data/raw/reports/apple_app_store/2026H1",
+  "source_url": "https://www.apple.com/legal/dsa/transparency/eu/App-Store-August-2026.xlsx",
+  "page_url": "https://www.apple.com/legal/dsa/",
+  "files": [
+   {
+    "path": "data/raw/reports/apple_app_store/2026H1/App-Store-August-2026.xlsx",
+    "sha256": "d21075c6b40f2fc8c32778050ffd8523f63fbd76acd67aee293563240c5327ea",
+    "bytes": 106790
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-13",
+  "published_verbatim": "2026-08-13",
+  "published_quote": "XLSX sheet \"1_report_identification\" row 3: All | App Store | Date of the publication of the report | 2026-08-13",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification",
+    "container": "App-Store-August-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:06"
+   },
+   "3": {
+    "member": "3_member_state_orders",
+    "container": "App-Store-August-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:06"
+   },
+   "4": {
+    "member": "4_notices",
+    "container": "App-Store-August-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:06"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal",
+    "container": "App-Store-August-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:06"
+   },
+   "6": {
+    "member": "6_own_initiative_TC",
+    "container": "App-Store-August-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:06"
+   },
+   "8": {
+    "member": "8_automated_means",
+    "container": "App-Store-August-2026.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:57:06"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Booking.com",
+  "dir": "data/raw/reports/booking/2025H2",
+  "source_url": "https://q-xx.bstatic.com/data/mobile/DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip",
+  "page_url": "https://www.booking.com/content/dsa.en-gb.html",
+  "files": [
+   {
+    "path": "data/raw/reports/booking/2025H2/DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip",
+    "sha256": "9a32403be57d06c20f8969fdb77972e6445ae76e8b0e777a5222c8a6c731df09",
+    "bytes": 36971
+   },
+   {
+    "path": "data/raw/reports/booking/2025H2/superseded_original_wayback_2026-03-03/DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip",
+    "sha256": "0629538c38228eeda057ff21ddb71d48070eba6d9e24c7d661ae74c643067772",
+    "bytes": 36273
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27",
+  "published_quote": "All,Booking.com,Date of the publication of the report,2026-02-27",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-24 14:34:04"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-24 14:33:56"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-24 14:33:52"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-24 14:33:48"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-24 14:33:44"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "DSA_Transparency_Report_-_6th_report_-_27_February_2026.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-24 14:33:36"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Booking.com",
+  "dir": "data/raw/reports/booking/2026H1",
+  "source_url": "https://q-xx.bstatic.com/data/mobile/DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip",
+  "page_url": "https://www.booking.com/content/dsa.en-gb.html",
+  "files": [
+   {
+    "path": "data/raw/reports/booking/2026H1/DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip",
+    "sha256": "ffe93dfbfa93893fcec97edcc939d4ca3c5a77c84883de9400cce79065a59e9c",
+    "bytes": 19311
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,Booking.com,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-25 12:46:52"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-25 12:47:10"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-25 12:47:18"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-25 12:47:28"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-25 12:47:36"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "DSA_Transparency_Report_-_7th_report_-_28_August_2026.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-25 12:47:54"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Facebook",
+  "dir": "data/raw/reports/facebook/2025H2",
+  "source_url": "https://scontent-lga3-1.xx.fbcdn.net/m1/v/t0.84174-6/AQPbVJkffM5yrtTLtdwpL8uHgIsZ9o4GcQOg9Yds2ssOkPOQVjZmf_r368PPsdoRscd0KlVZcmv5PVi6wEwP_HarIFUq-mgXofAsOiL2Xl561XGkEbPMq140m8oU4MGmdRGJmpmv0d6ilysQ5CHESe8PWgPAuKuvzpGI3WikLQ?_nc_gid=HNTwYvUcNlVUV4xEMtwWDw&_nc_oc=Adr59bGve-t4W1UIkTqj9iHGaGtWLH_gxuGWQKdO9Y4mv9SciUeriYIX7DRDSUUMk2I&ccb=10-5&oh=00_AQSjfv-rcdKRKJ5IeNaI2qcs96HqtpxWudGLZliPaGRhPg&oe=6AF449A6&_nc_sid=68f2c3",
+  "page_url": "https://transparency.meta.com/reports/regulatory-transparency-reports/",
+  "files": [
+   {
+    "path": "data/raw/reports/facebook/2025H2/report.zip",
+    "sha256": "c26f917b953a897fce8c9974da31f2d112e8615967821c76ef9b09d8c21eb9b5",
+    "bytes": 143100
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-28",
+  "published_verbatim": "2026-02-28",
+  "published_quote": "All,Facebook,Date of the publication of the report,2026-02-28",
+  "sheets": {
+   "5": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 5_own_initiative_illegal.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:38:10"
+   },
+   "4": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 4_notices.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:37:42"
+   },
+   "3": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 3_member_states_orders.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:37:58"
+   },
+   "1": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 1_report_identification.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:37:22"
+   },
+   "8": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 8_automated_means.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:37:10"
+   },
+   "6": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 6_own_initiative_TC.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 February 2026/[Facebook] DSA VLOP Transparency Report - 28 February 2026 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:37:16"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Facebook",
+  "dir": "data/raw/reports/facebook/2026H1",
+  "source_url": "https://scontent-lga3-1.xx.fbcdn.net/m1/v/t0.84174-6/AQNtikH73l6VUUtsNPE90B4F7YOoRVaVL7y0OIVzC20y1gt4DFgUcgg7NDZFeMQdH8hX1DYOSeBWdmuRw2xb-nG6L0jcrSIsdWFTthuMMm2nc3LX_oCOiKNpORD_9Ura49ZsGcTFYjYFsxyLAwRzfofje_SU1wYI397Bck1Qow?_nc_gid=HNTwYvUcNlVUV4xEMtwWDw&_nc_oc=Adp4clvDdxgIACgp6jQj17CVhAR7bMXRDrojUviXjRqAFRgRukoCjUfNciXbnIf54V8&ccb=10-5&oh=00_AQSvzcMF18Qh0xOoJ1EcSmT33ixEVb8Hf2rC66N-a3Wh_A&oe=6AF4570C&_nc_sid=68f2c3",
+  "page_url": "https://transparency.meta.com/reports/regulatory-transparency-reports/",
+  "files": [
+   {
+    "path": "data/raw/reports/facebook/2026H1/report.zip",
+    "sha256": "0430ee2417f642e56d204c55aa942aa4ee1c375de6e2a0b0790ba9d4638b9eb9",
+    "bytes": 129424
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,Facebook,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "8": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 August 2026 - 8_automated_means.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 August 2026 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:24"
+   },
+   "6": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 August 2026 - 6_own_initiative_TC.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 August 2026 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:26"
+   },
+   "5": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 August 2026 - 5_own_initiative_illegal.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 August 2026 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:28"
+   },
+   "4": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 August 2026 - 4_notices.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 August 2026 - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:30"
+   },
+   "3": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 August 2026 - 3_member_states_orders.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 August 2026 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:32"
+   },
+   "1": {
+    "member": "[Facebook] DSA VLOP Transparency Report - 28 August 2026 - 1_report_identification.csv",
+    "container": "report.zip![Facebook] DSA VLOP Transparency Report - 28 August 2026 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:36"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Google Maps",
+  "dir": "data/raw/reports/google/Google_Maps__DSA_Aug_2026_2026-1-1_2026-6-30",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/Google%20Maps%20-%20DSA%20Aug%202026_2026-1-1_2026-6-30.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/Google_Maps__DSA_Aug_2026_2026-1-1_2026-6-30/report.zip",
+    "sha256": "40a0cc9a1bbb3895811d8374c16c88167af8d112a31c66eda5471caa77a45d8b",
+    "bytes": 304196
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,Google Maps,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   },
+   "6a": {
+    "member": "6_own_initiative_TC_Ads.csv",
+    "container": "report.zip!6_own_initiative_TC_Ads.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   },
+   "8a": {
+    "member": "8_automated_means_Ads.csv",
+    "container": "report.zip!8_automated_means_Ads.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:28"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Google Maps",
+  "dir": "data/raw/reports/google/Google_Maps__DSA_Feb_2026_2025-7-1_2025-12-31",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/Google%20Maps%20-%20DSA%20Feb%202026_2025-7-1_2025-12-31.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/Google_Maps__DSA_Feb_2026_2025-7-1_2025-12-31/report.zip",
+    "sha256": "260d8c3acf6e11ad5c47bd05427092ee14d50740fdc157e9232dc3bd19deba9a",
+    "bytes": 306547
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27",
+  "published_quote": "All,Google Maps,Date of the publication of the report,2026-02-27",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   },
+   "6a": {
+    "member": "6_own_initiative_TC_Ads.csv",
+    "container": "report.zip!6_own_initiative_TC_Ads.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   },
+   "8a": {
+    "member": "8_automated_means_Ads.csv",
+    "container": "report.zip!8_automated_means_Ads.csv",
+    "kind": "csv",
+    "when": "2026-02-26 20:58:30"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Google Play",
+  "dir": "data/raw/reports/google/Google_Play__DSA_Aug_2026_2026-1-1_2026-6-30",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/Google%20Play%20-%20DSA%20Aug%202026_2026-1-1_2026-6-30.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/Google_Play__DSA_Aug_2026_2026-1-1_2026-6-30/report.zip",
+    "sha256": "d289aff2129f06423a01ba2709f1066705d41bc224111cc9e6ccf3428b583467",
+    "bytes": 306142
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,Google Play,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   },
+   "6a": {
+    "member": "6_own_initiative_TC_Ads.csv",
+    "container": "report.zip!6_own_initiative_TC_Ads.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   },
+   "8a": {
+    "member": "8_automated_means_Ads.csv",
+    "container": "report.zip!8_automated_means_Ads.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:13:44"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Google Play",
+  "dir": "data/raw/reports/google/Google_Play__DSA_Feb_2026_2025-7-1_2025-12-31",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/Google%20Play%20-%20DSA%20Feb%202026_2025-7-1_2025-12-31.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/Google_Play__DSA_Feb_2026_2025-7-1_2025-12-31/report.zip",
+    "sha256": "aea364db0cf97c0364f498ce01b7d9d1aa9ce1bf5f1ff733b0f4324515ef427a",
+    "bytes": 299275
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27",
+  "published_quote": "All,Google Play,Date of the publication of the report,2026-02-27",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   },
+   "6a": {
+    "member": "6_own_initiative_TC_Ads.csv",
+    "container": "report.zip!6_own_initiative_TC_Ads.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   },
+   "8a": {
+    "member": "8_automated_means_Ads.csv",
+    "container": "report.zip!8_automated_means_Ads.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:02"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Google Shopping",
+  "dir": "data/raw/reports/google/Google_Shopping__DSA_Aug_2026_2026-1-1_2026-6-30",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/Google%20Shopping%20-%20DSA%20Aug%202026_2026-1-1_2026-6-30.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/Google_Shopping__DSA_Aug_2026_2026-1-1_2026-6-30/report.zip",
+    "sha256": "4290f5d200e855d3321ece915038a57c5f82cc60a06cb56e077afd34db1533ea",
+    "bytes": 276645
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,Google Shopping,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:02"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:02"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:02"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:02"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:02"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:02"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Google Shopping",
+  "dir": "data/raw/reports/google/Google_Shopping__DSA_Feb_2026_2025-7-1_2025-12-31",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/Google%20Shopping%20-%20DSA%20Feb%202026_2025-7-1_2025-12-31.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/Google_Shopping__DSA_Feb_2026_2025-7-1_2025-12-31/report.zip",
+    "sha256": "bf9c2ef634ce5d731c1602309a2212bccd9a2d957c2ab5af57259d88165a84a8",
+    "bytes": 275540
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27",
+  "published_quote": "All,Google Shopping,Date of the publication of the report,2026-02-27",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:14"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:14"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:14"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:14"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:14"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:14"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "YouTube",
+  "dir": "data/raw/reports/google/YouTube__DSA_Aug_2026_2026-1-1_2026-6-30",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/YouTube%20-%20DSA%20Aug%202026_2026-1-1_2026-6-30.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/YouTube__DSA_Aug_2026_2026-1-1_2026-6-30/report.zip",
+    "sha256": "b7e39781d2b161837f0a356c8972f3d2dc01e7e03edfb35b37f8bcd302e0a20a",
+    "bytes": 261034
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,YouTube,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   },
+   "6a": {
+    "member": "6_own_initiative_TC_Ads.csv",
+    "container": "report.zip!6_own_initiative_TC_Ads.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   },
+   "8a": {
+    "member": "8_automated_means_Ads.csv",
+    "container": "report.zip!8_automated_means_Ads.csv",
+    "kind": "csv",
+    "when": "2026-08-26 23:14:20"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "YouTube",
+  "dir": "data/raw/reports/google/YouTube__DSA_Feb_2026_2025-7-1_2025-12-31",
+  "source_url": "https://storage.googleapis.com/transparencyreport/report-downloads/YouTube%20-%20DSA%20Feb%202026_2025-7-1_2025-12-31.zip",
+  "page_url": null,
+  "files": [
+   {
+    "path": "data/raw/reports/google/YouTube__DSA_Feb_2026_2025-7-1_2025-12-31/report.zip",
+    "sha256": "a6355c6d3dd2920cf2aabacbdb6a581156bb4ae5eb92d9180f4e202efef45079",
+    "bytes": 259037
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27",
+  "published_quote": "All,YouTube,Date of the publication of the report,2026-02-27",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "report.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   },
+   "6a": {
+    "member": "6_own_initiative_TC_Ads.csv",
+    "container": "report.zip!6_own_initiative_TC_Ads.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   },
+   "8a": {
+    "member": "8_automated_means_Ads.csv",
+    "container": "report.zip!8_automated_means_Ads.csv",
+    "kind": "csv",
+    "when": "2026-02-25 21:03:28"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Instagram",
+  "dir": "data/raw/reports/instagram/2025H2",
+  "source_url": "https://scontent-lga3-1.xx.fbcdn.net/m1/v/t0.84174-6/AQNV0JXklwMfWViwy-AGCjVv80YS6BrtYam04HRwrk3B6qwxKFVUJ12YyYvlpgxBEV54A3Y7FcCmTmWpPN1fYZF86OzEzIeNUPclsVZGLKdCRmAJoIpvM1-3G16NuG3-dQGLnlew3Ch9erSry9ZSQDgqvcYkS2lu7xmIhM4QdQ?_nc_gid=HNTwYvUcNlVUV4xEMtwWDw&_nc_oc=Ado-17tLFMiDuSJ9U5Ofjbq2SvlLijVjC4WMLNoxZGRkXFTIHjZdj73dm_Gg9E160XA&ccb=10-5&oh=00_AQRFdRDn2h89Fvv8JRMblM1p5mENYR6lB2v_n3iM_XCHtQ&oe=6AF45890&_nc_sid=68f2c3",
+  "page_url": "https://transparency.meta.com/reports/regulatory-transparency-reports/",
+  "files": [
+   {
+    "path": "data/raw/reports/instagram/2025H2/report.zip",
+    "sha256": "5e5028ce39798e5d0f123820375537c73a72f6ac1b305201870bd1fe281e2e24",
+    "bytes": 138648
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-28",
+  "published_verbatim": "2026-02-28",
+  "published_quote": "All,Instagram,Date of the publication of the report,2026-02-28",
+  "sheets": {
+   "1": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 1_report_identification.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:48:14"
+   },
+   "6": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 6_own_initiative_TC.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:47:32"
+   },
+   "4": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 4_notices.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:48:10"
+   },
+   "5": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 5_own_initiative_illegal.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:47:44"
+   },
+   "8": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 8_automated_means.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:47:24"
+   },
+   "3": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 3_member_states_orders.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 February 2026/[Instagram] DSA VLOP Transparency Report - 28 February 2026 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-05-07 07:47:38"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Instagram",
+  "dir": "data/raw/reports/instagram/2026H1",
+  "source_url": "https://scontent-lga3-1.xx.fbcdn.net/m1/v/t0.84174-6/AQMqjAHLmcmN2IYunfaTUZ-ooLcOIJeHWsrLe6r-d7GdD9ZuGK3fl2kKWKvEVIH5Fx2PC2iEuMHTaINvbYXo2iTh560I19BUG6MI86Hp2ENeq_bmSMpJ4UU5DavJHPJrprbPuhbLgDw2lbJZivLA8WeMVbEAT4Kt-tSph02bdA?_nc_gid=HNTwYvUcNlVUV4xEMtwWDw&_nc_oc=AdraJQknWD8JAxD_yrhPRL6hYxrtjSXnk6oGdzL8L5S5siE4y2WRBgMvEHwqfyZ55F8&ccb=10-5&oh=00_AQTmnphu3FKa0bfCkQf0UGOaQTFZMERxsRmNXGKaLMosuQ&oe=6AF43BE1&_nc_sid=68f2c3",
+  "page_url": "https://transparency.meta.com/reports/regulatory-transparency-reports/",
+  "files": [
+   {
+    "path": "data/raw/reports/instagram/2026H1/report.zip",
+    "sha256": "1afcd2ca6d1017db3f859f6ada84de5fe4c7a3c1f56665de120154f01e8fe629",
+    "bytes": 128874
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,Instagram,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "8": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 August 2026 - 8_automated_means.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 August 2026 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:54"
+   },
+   "6": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 August 2026 - 6_own_initiative_TC.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 August 2026 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:21:58"
+   },
+   "5": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 August 2026 - 5_own_initiative_illegal.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 August 2026 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:22:00"
+   },
+   "4": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 August 2026 - 4_notices.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 August 2026 - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:22:02"
+   },
+   "3": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 August 2026 - 3_member_states_orders.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 August 2026 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:22:04"
+   },
+   "1": {
+    "member": "[Instagram] DSA VLOP Transparency Report - 28 August 2026 - 1_report_identification.csv",
+    "container": "report.zip![Instagram] DSA VLOP Transparency Report - 28 August 2026 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:22:08"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "LinkedIn",
+  "dir": "data/raw/reports/linkedin/2025H2",
+  "source_url": "https://content.linkedin.com/content/dam/help/tns/en/report/LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip",
+  "page_url": "https://www.linkedin.com/help/linkedin/answer/a1678508",
+  "files": [
+   {
+    "path": "data/raw/reports/linkedin/2025H2/LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip",
+    "sha256": "c5a556e241dc41c79a46f31911b4c506fa1bc2f9c827b24af84bb812265d64e0",
+    "bytes": 57824
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-26",
+  "published_verbatim": "2026-02-26",
+  "published_quote": "All,LinkedIn,Date of the publication of the report,2026-02-26",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-26 12:13:52"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-26 12:15:26"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-26 12:14:38"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-26 12:14:30"
+   },
+   "4": {
+    "member": "4_article_16_notices.csv",
+    "container": "LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip!4_article_16_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-26 12:14:22"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "LinkedIn-February-2026-Digital-Services-Act-Transparency-Report.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-26 12:14:18"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "LinkedIn",
+  "dir": "data/raw/reports/linkedin/2026H1",
+  "source_url": "https://delivery-p143253-e1476319.adobeaemcloud.com/adobe/assets/urn:aaid:aem:5a48363c-f3e8-494e-8373-d3719fe2e64b/original/as/LinkedIn-August-2026-Digital-Services-Act-Transparency-Report%201.zip",
+  "page_url": "https://www.linkedin.com/help/linkedin/answer/a1678508",
+  "files": [
+   {
+    "path": "data/raw/reports/linkedin/2026H1/LinkedIn-August-2026-Digital-Services-Act-Transparency-Report_1.zip",
+    "sha256": "cd3663da1dbbaf49bfa40dd8d4e99887d7c6fa813b33e34a1a478e0a9a1f4789",
+    "bytes": 41989
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026-08-31",
+  "published_quote": "All,LinkedIn,Date of the publication of the report,2026-08-31,",
+  "sheets": {
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "LinkedIn-August-2026-Digital-Services-Act-Transparency-Report_1.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:44:56"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "LinkedIn-August-2026-Digital-Services-Act-Transparency-Report_1.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-28 13:32:52"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "LinkedIn-August-2026-Digital-Services-Act-Transparency-Report_1.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 12:07:00"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "LinkedIn-August-2026-Digital-Services-Act-Transparency-Report_1.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-31 08:15:38"
+   },
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "LinkedIn-August-2026-Digital-Services-Act-Transparency-Report_1.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-28 16:52:32"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "LinkedIn-August-2026-Digital-Services-Act-Transparency-Report_1.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 14:00:38"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Pinterest",
+  "dir": "data/raw/reports/pinterest/2025H2",
+  "source_url": "https://cdn.sanity.io/files/26f0hyrt/pinpolicy_prod/2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip",
+  "page_url": "https://policy.pinterest.com/en/digital-services-act-transparency",
+  "files": [
+   {
+    "path": "data/raw/reports/pinterest/2025H2/2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip",
+    "sha256": "73a61d33cd918df386dd168e0e6a589ff0d1cf89030d3e9770d2f7057f1ec08b",
+    "bytes": 289385
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-26",
+  "published_verbatim": "2026-02-26",
+  "published_quote": "All,Pinterest,Date of the publication of the report,2026-02-26",
+  "sheets": {
+   "6": {
+    "member": "Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 6. Own initiative TC.csv",
+    "container": "2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip!Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 6. Own initiative TC.csv",
+    "kind": "csv",
+    "when": "2026-02-24 13:46:38"
+   },
+   "3": {
+    "member": "Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 3. Member states orders.csv",
+    "container": "2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip!Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 3. Member states orders.csv",
+    "kind": "csv",
+    "when": "2026-02-24 13:38:22"
+   },
+   "1": {
+    "member": "Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 1. Report identification.csv",
+    "container": "2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip!Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 1. Report identification.csv",
+    "kind": "csv",
+    "when": "2026-02-24 12:47:50"
+   },
+   "5": {
+    "member": "Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 5. Own initiative illegal.csv",
+    "container": "2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip!Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 5. Own initiative illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-24 13:46:26"
+   },
+   "8": {
+    "member": "Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 8. Automated means.csv",
+    "container": "2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip!Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 8. Automated means.csv",
+    "kind": "csv",
+    "when": "2026-02-24 13:47:00"
+   },
+   "4": {
+    "member": "Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 4. Notices.csv",
+    "container": "2c552b2ce80a75c1f9e9741e83da8bdbb5028579.zip!Pinterest - H2 DSA Transparency Report/Pinterest - H2 DSA Transparency Report - 4. Notices.csv",
+    "kind": "csv",
+    "when": "2026-02-24 13:46:02"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Pinterest",
+  "dir": "data/raw/reports/pinterest/2026H1",
+  "source_url": "https://cdn.sanity.io/files/26f0hyrt/pinpolicy_prod/a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip",
+  "page_url": "https://policy.pinterest.com/en/digital-services-act-transparency",
+  "files": [
+   {
+    "path": "data/raw/reports/pinterest/2026H1/a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip",
+    "sha256": "5e88535dc3fc18a146ab13a46b0ec05df00f3e717610a0b078eeb8124ad4f72c",
+    "bytes": 274303
+   },
+   {
+    "path": "data/raw/reports/pinterest/2026H1/earlier_versions/original_published_2026-08-28/a3222c3ee1b4b5a9385fc4194174751ec71d1cbb.zip",
+    "sha256": "0bb59f84de69480d59e1c0af92f90fb2be18d37744375fa33f9e41819ba9bd22",
+    "bytes": 269395
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-10-08",
+  "published_verbatim": "2026-10-08 (This is an updated version of the H1 2026 DSA Transparency Report which was originally published on 2026-08-28)",
+  "published_quote": "All,Pinterest,Date of the publication of the report,2026-10-08 (This is an updated version of the H1 2026 DSA Transparency Report which was originally published on 2026-08-28)",
+  "sheets": {
+   "1": {
+    "member": "Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 1. Report identification.csv",
+    "container": "a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip!Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 1. Report identification.csv",
+    "kind": "csv",
+    "when": "2026-10-07 10:06:30"
+   },
+   "8": {
+    "member": "Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 8. Automated means.csv",
+    "container": "a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip!Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 8. Automated means.csv",
+    "kind": "csv",
+    "when": "2026-10-07 10:10:00"
+   },
+   "6": {
+    "member": "Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 6. Own initiative TC.csv",
+    "container": "a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip!Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 6. Own initiative TC.csv",
+    "kind": "csv",
+    "when": "2026-10-07 10:09:06"
+   },
+   "4": {
+    "member": "Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 4. Notices.csv",
+    "container": "a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip!Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 4. Notices.csv",
+    "kind": "csv",
+    "when": "2026-10-07 10:08:18"
+   },
+   "3": {
+    "member": "Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 3. Member states.csv",
+    "container": "a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip!Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 3. Member states.csv",
+    "kind": "csv",
+    "when": "2026-10-07 10:07:52"
+   },
+   "5": {
+    "member": "Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 5. Own initiative illegal.csv",
+    "container": "a3dd2803e31ee2c0cd00f198d9b96ff2bc3ef7b1.zip!Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08)/Pinterest - H1 2026 DSA Transparency Report (Updated 2026-10-08) - 5. Own initiative illegal.csv",
+    "kind": "csv",
+    "when": "2026-10-07 10:08:36"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Pornhub",
+  "dir": "data/raw/reports/pornhub/2025H2",
+  "source_url": "https://ei.phncdn.com/static/misc/legal/PH_DSA_Transparency_Report_FH26_1776436263.zip",
+  "page_url": "https://help.pornhub.com/hc/en-us/articles/49455391263891-DSA-Transparency-Report-February-2026",
+  "files": [
+   {
+    "path": "data/raw/reports/pornhub/2025H2/PH_DSA_Transparency_Report_FH26_1776436263.zip",
+    "sha256": "dac514e571d15a0e1e32f00fa20c1dbb2bb691dde9f756e94274d287d1096f0d",
+    "bytes": 22786
+   },
+   {
+    "path": "data/raw/reports/pornhub/2025H2/earlier_versions/original_2026-02-27/Pornhub_DSA_Transparency_Report_February_2026_1772231277_ORIGINAL.zip",
+    "sha256": "ebc4f47483e22a5aa800793ba761c90a1a9427138beff94985768344815b4c29",
+    "bytes": 22792
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-04-17",
+  "published_verbatim": "17/04/2026",
+  "published_quote": "All,PornHub,Date of the publication of the report,17/04/2026",
+  "sheets": {
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "PH_DSA_Transparency_Report_FH26_1776436263.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-04-17 15:05:52"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "PH_DSA_Transparency_Report_FH26_1776436263.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-04-17 15:05:52"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "PH_DSA_Transparency_Report_FH26_1776436263.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-04-17 15:12:08"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "PH_DSA_Transparency_Report_FH26_1776436263.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-04-17 15:05:52"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "PH_DSA_Transparency_Report_FH26_1776436263.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-04-17 15:05:52"
+   },
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "PH_DSA_Transparency_Report_FH26_1776436263.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-04-17 15:16:26"
+   }
+  },
+  "problems": [
+   "8: two Total rows for solely with different values (1407, 0); the first is read"
+  ]
+ },
+ {
+  "service": "Pornhub",
+  "dir": "data/raw/reports/pornhub/2026H1",
+  "source_url": "https://ei.phncdn.com/static/misc/legal/Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip",
+  "page_url": "https://help.pornhub.com/hc/en-us/articles/54750446230163-DSA-Transparency-report-August-2026",
+  "files": [
+   {
+    "path": "data/raw/reports/pornhub/2026H1/Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip",
+    "sha256": "58892d8ed1f7460bb2c0c841a80a374351e32d18007f831e920a154fe92c18ab",
+    "bytes": 20065
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28 00:00:00",
+  "published_quote": "All,Pornhub,Date of the publication of the report,2026-08-28 00:00:00",
+  "sheets": {
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:43:42"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:43:42"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:43:42"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:43:42"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:43:42"
+   },
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "Pornhub_DSA_Transparency_Report_August_2026_1787935691.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:43:42"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Shein",
+  "dir": "data/raw/reports/shein/2025H2",
+  "source_url": "https://shein.ltwebstatic.com/tinypic/2026/08/07/17860934362319086038.xlsx",
+  "page_url": "https://euqs.shein.com/digital-service-act-a-1994.html",
+  "files": [
+   {
+    "path": "data/raw/reports/shein/2025H2/17860934362319086038.xlsx",
+    "sha256": "5d99da411c2fa0ee44e0a6e2dbd209303e6603c9c42c63eefe40feb9394860cf",
+    "bytes": 142186
+   },
+   {
+    "path": "data/raw/reports/shein/2025H2/superseded_original_2026-02/2025.7.1-2025.12.31_Transparency_reports.xlsx",
+    "sha256": "02cf528e7c0eb169c2a35616e6cdedb905c579611c5f4a1cd4ef58b266ada113",
+    "bytes": 514004
+   },
+   {
+    "path": "data/raw/reports/shein/2025H2/superseded_2026-04-30/17775144301132099807.xlsx",
+    "sha256": "bb53fb4176c054c06771d9de30ba84df18be8a9dce48b7edf37aa432f54cdc26",
+    "bytes": 150041
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-28",
+  "published_verbatim": "2026/2/28 [see Note 1]",
+  "published_quote": "XLSX sheet \"1_report_identification\" row 3: All | SHEIN Marketplace | Date of the publication of the report | 2026/2/28 [see Note 1]",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification",
+    "container": "17860934362319086038.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "3": {
+    "member": "3_member_states_orders",
+    "container": "17860934362319086038.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "4": {
+    "member": "4_notices",
+    "container": "17860934362319086038.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal",
+    "container": "17860934362319086038.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "6": {
+    "member": "6_own_initiative_TC",
+    "container": "17860934362319086038.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "8": {
+    "member": "8_automated_means",
+    "container": "17860934362319086038.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Shein",
+  "dir": "data/raw/reports/shein/2026H1",
+  "source_url": "https://shein.ltwebstatic.com/tinypic/2026/09/02/17883154343995654501.xlsx",
+  "page_url": "https://euqs.shein.com/digital-service-act-a-1994.html",
+  "files": [
+   {
+    "path": "data/raw/reports/shein/2026H1/17883154343995654501.xlsx",
+    "sha256": "e1975e9daf94b1d3e3d54a2b08c33255022905de1b313d7ac87b2139fdcda3ea",
+    "bytes": 245768
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "46265",
+  "published_quote": "XLSX sheet \"1_report_identification\" row 3: All | SHEIN Marketplace | Date of the publication of the report | 46265",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification",
+    "container": "17883154343995654501.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "3": {
+    "member": "3_member_states_orders",
+    "container": "17883154343995654501.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "4": {
+    "member": "4_notices",
+    "container": "17883154343995654501.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal",
+    "container": "17883154343995654501.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "6": {
+    "member": "6_own_initiative_TC",
+    "container": "17883154343995654501.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   },
+   "8": {
+    "member": "8_automated_means",
+    "container": "17883154343995654501.xlsx",
+    "kind": "xlsx",
+    "when": "2026-11-09 20:53:36"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Snapchat",
+  "dir": "data/raw/reports/snapchat/2025H2",
+  "source_url": "Snap_DSA_TR_H2_2025_V2.xlsx\thttps://assets.ctfassets.net/kw9k15zxztrs/1N9o3L0eQwQwgbUvylARsq/4a760b0dd56176843cf8fa95b145dfce/Snap_DSA_TR_H2_2025_V2.xlsx\n1_report_identification.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/32Hv3am8gmVOQrxgdNmTYG/0b6fce2a2b963567e7997fd84be754c5/1_report_identification.csv\n2_categories_names.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/1LdsDTFZ8D5NTvikNqK5oe/49b13b0b65498fb51e60bc5d9c956726/2_categories_names.csv\n3_member_states_orders.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/1WN52GpHkaCq4hBvlBNcbe/979512dd31f505f92fb0f87a53a1a4d6/3_member_states_orders.csv\n4_notices.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/4hAIuq94jkB32nrIRuhhjo/910d54d688d3f9c1f8890f432994c006/4_notices.csv\n5_own_initiative_illegal.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/1AObQObVLACdXGC3Ht8L7G/612ad50daac9d45405f59918b9b52eb8/5_own_initiative_illegal.csv\n6_own_initiative_TC.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/7oMIdxmZYzDZiohgfZZJE6/4b6f45738f995b1d3312bb5c814779bb/6_own_initiative_TC.csv\n7_appeals_and_recidivism.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/5bB5wIIwcvNxOjK7Mk8VYV/a74fd986c623282ac912400ff0b6d5ae/7_appeals_and_recidivism.csv\n8_automated_means.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/7B9cyDAxbeVYTpU8gxLkMq/b366c59eba9598dd9b87290c5c86e363/8_automated_means.csv\n9_human_resources.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/4PcJGMgsdzeloWiZsJwoKW/59bbc1c2cdf7b62a72b024ec327c6e18/9_human_resources.csv\n10_AMAR.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/5rVNcptavZ3BNpxIf6QSdJ/aa8f7108eccabfcf472908ecb88bc024/10_AMAR.csv\n11_qualitative.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/7r2JBjTfUEjmDzK7usOsJs/0d0dd86f435167d8ea127c633f0f6919/11_qualitative.csv",
+  "page_url": "https://values.snap.com/privacy/transparency/european-union-h2-2025",
+  "files": [
+   {
+    "path": "data/raw/reports/snapchat/2025H2/11_qualitative.csv",
+    "sha256": "88fa23525a1a098b0ea8b2bba8fd262d17f582df2c27998ffe90cd9d1ead9a85",
+    "bytes": 20763
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/1_report_identification.csv",
+    "sha256": "e9b711369e02ba9f40ce2063b9188d886448335435160d14df80e91450558e1c",
+    "bytes": 324
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/8_automated_means.csv",
+    "sha256": "85f6f35cf18263c382787790407ebcf7bed32cc6503041f46a498291ea16a46c",
+    "bytes": 26369
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/5_own_initiative_illegal.csv",
+    "sha256": "3dbc7e13da751d7f3f1130aa7461b45c216c637d3533fa1b0b79ebf637ee2563",
+    "bytes": 11069
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/6_own_initiative_TC.csv",
+    "sha256": "1b18721e77c080f3eafaeec87dda79e97ab6268cb57173aa19b61ac330c4b381",
+    "bytes": 17077
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/3_member_states_orders.csv",
+    "sha256": "4349d347fafac06c97d0217cd57addc2748db7425961df454c24afb566e5d42b",
+    "bytes": 241433
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/4_notices.csv",
+    "sha256": "e87d8b6600e007bf71c7805165336aeb288f48560bfed8fc9035130b79ccad93",
+    "bytes": 19811
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/Snap_DSA_TR_H2_2025_V2.xlsx",
+    "sha256": "3f9acff9da01a5f01075a31b2af79f3315b8cb71014ebd2a99c95b5e83d7f97a",
+    "bytes": 550433
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/9_human_resources.csv",
+    "sha256": "49c6c742beb0f518cc0951dab1f0341ffb662f8c4567a55e842a414fba42b97e",
+    "bytes": 4457
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/2_categories_names.csv",
+    "sha256": "89435e61156a237a21dc09c53eebd728ed7a799ea4aa0011a59244266cc40dd4",
+    "bytes": 10552
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/10_AMAR.csv",
+    "sha256": "fe9a93889390dcdd93588c65d8b45f1a48d858c28b116a9f658068c7e244a586",
+    "bytes": 4114
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/7_appeals_and_recidivism.csv",
+    "sha256": "aad08b5321e3bc24afcf1f58c0c2533200e14bfd3145fa857f62ffee8051f4e1",
+    "bytes": 12831
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/11_qualitative.csv",
+    "sha256": "365d521c4de8e0e9a3760f60b4688c6457fd7f11efbeca21d8dc78da44b61a44",
+    "bytes": 19205
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/1_report_identification.csv",
+    "sha256": "3ed527afca0ffcbc366849a7070c12068fa62e341c9c7c3df6cac0ad580bad8f",
+    "bytes": 304
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/8_automated_means.csv",
+    "sha256": "e660fd0967b77a736e396a99bb6473a97e591beb687612ac4259c42120469ee6",
+    "bytes": 25916
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/5_own_initiative_illegal.csv",
+    "sha256": "408f8feb96f0015df10693e67d83fc753527f91a3fb0b92665a2e79ba59a3581",
+    "bytes": 10804
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/6_own_initiative_TC.csv",
+    "sha256": "45fc1672d3a350c2d781801e276732bdc96da66ea819c0321625a4799ada0683",
+    "bytes": 16632
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/3_member_states_orders.csv",
+    "sha256": "022b5c7827975c1d1c2a55c816b2d12566112db0ec9245cd45dc1b0e3e0617a0",
+    "bytes": 233612
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/4_notices.csv",
+    "sha256": "ad66e240a5dd3c444a4c1c0c0656e67da28d4d6a75cce95c7d866b7ac7e04dbe",
+    "bytes": 19425
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/9_human_resources.csv",
+    "sha256": "475c8051104b2a8289a6712fafdc69e7e222833ddf4f635972b9c68c3b459d63",
+    "bytes": 4401
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/Snap_DSA_TR_H2_2025.xlsx",
+    "sha256": "1e1f17ae8cbbf2f7b2b6454819c56a040ba40562a52d401b582f2a6b326a0888",
+    "bytes": 546549
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/2_categories_names.csv",
+    "sha256": "ce1f80280d31da5e7cf4b85bc8da788760991e30696658bab18995c8829efb7b",
+    "bytes": 8310
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/10_AMAR.csv",
+    "sha256": "bdbffce8ef19f4c55acaa2b9f5430fe37c1250a123fd174ece88398c439693fc",
+    "bytes": 4002
+   },
+   {
+    "path": "data/raw/reports/snapchat/2025H2/earlier_versions/v1.0_2026-02-27/7_appeals_and_recidivism.csv",
+    "sha256": "635e1d7ea6b79739084beca64732fbc1080cff40005b1adea87a519f76016c45",
+    "bytes": 12715
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-04-01",
+  "published_verbatim": "2026/04/01",
+  "published_quote": "All,Snap,Date of the publication of the report,2026/04/01",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:23"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:24"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "4_notices.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:25"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:25"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:25"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:26"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Snapchat",
+  "dir": "data/raw/reports/snapchat/2026H1",
+  "source_url": "Snap_DSA_TR_H1_2026.xlsx\thttps://assets.ctfassets.net/kw9k15zxztrs/6x5387aq1lqbPysLxLJ2dd/1a6a4bf6918b6f98e41250d5f0fe570f/Snap_DSA_TR_H1_2026.xlsx\n1_report_identification.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/2pzeQB4lmmoQqFNbPNyUPE/33b636c8d51d0fdbe8f567725cee3b43/1_report_identification.csv\n2_category_names.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/1nv0vEuQ6TaWnoQu55DBiE/4273f0049fe0c963e5f1ed34cff18b2a/2_category_names.csv\n3_member_states_orders.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/7whxDwLOolCPozkza7b8SU/697373e29b0d6cbb2c5475ed77bcc08a/3_member_states_orders.csv\n4_notices.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/6hH64DDDu5YjbrzWO9VHji/eeef68fb841d5a32a84a7d346dc13b4f/4_notices.csv\n5_own_initiative_illegal.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/3qLAIx1R8E96L49CER1Ias/38e21a7cd148e93257d5048dc024867f/5_own_initiative_illegal.csv\n6_own_initiative_TC.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/85MPqcSDU8aZkRdlBZOMH/0482d25631f9286e6399fa5466c3b627/6_own_initiative_TC.csv\n7_appeals_and_recidivism.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/1E5vWfap56OMcwRjgL59Al/a09b961a50937a9bbd42a6c0b0258398/7_appeals_and_recidivism.csv\n8_automated_means.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/2S5dmu5AsRb0LCJlwJqREn/a4477fb60b572aa539dd1113d332c029/8_automated_means.csv\n9_human_resources.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/3Ax1ZCH5XmCUQlnI5KiiGL/92ab4e73b8fcc5d8b036f44b0340aa8c/9_human_resources.csv\n10_AMAR.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/4rQU30IQtPldbzELPWuiT8/4f7b4c0f21d54ff66d87d7e99a48dbe0/10_AMAR.csv\n11_qualitative.csv\thttps://assets.ctfassets.net/kw9k15zxztrs/2ckDA3t6jxm8BeNHuCOwj/99413c8a09cab540394e4418696e5d04/11_qualitative.csv",
+  "page_url": "https://values.snap.com/privacy/transparency/european-union-h1-2026",
+  "files": [
+   {
+    "path": "data/raw/reports/snapchat/2026H1/11_qualitative.csv",
+    "sha256": "78b4daff1287f7a250e537759b759f4b6d99994c9d504e6e76ae343fda1b51c6",
+    "bytes": 18872
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/1_report_identification.csv",
+    "sha256": "7a058e28e00d5cd9f5e998e0f3d0c95a1e2d3fcf5d1fc4d42c5e2fa3ac72a140",
+    "bytes": 328
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/8_automated_means.csv",
+    "sha256": "bd136b68d8a27957b0ba6ba8b0c40bc7575c737cce3121ad5f17aa3a87432042",
+    "bytes": 27116
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/5_own_initiative_illegal.csv",
+    "sha256": "e5891e1f5f5aa834555757ef10bae5646938c072d46a6820397aea66934dad34",
+    "bytes": 11600
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/6_own_initiative_TC.csv",
+    "sha256": "814da722bf08e7850b797a39c7747362255a62cd5a43de2830c278cb68c2e697",
+    "bytes": 23211
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/3_member_states_orders.csv",
+    "sha256": "2f151f7a04a79e848f2ddb6948df28f36c2a7e90ee8b2a3aff533a1ac62ac88b",
+    "bytes": 248847
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/4_notices.csv",
+    "sha256": "48834036170b56b6caa864fb6130cd3f91888b016514f734e1261457bd522f0f",
+    "bytes": 20355
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/Snap_DSA_TR_H1_2026.xlsx",
+    "sha256": "10d15e51e2c8da2026743f85214022b449f00cfaab4dab8ec71211c6687cb37d",
+    "bytes": 564051
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/2_category_names.csv",
+    "sha256": "af90cfeb7f3d2c0bf97ba1a89fc506ffff72210a7fd2127e1267c9cdbd6e00e2",
+    "bytes": 8265
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/9_human_resources.csv",
+    "sha256": "02c70a9127d38fae588a08a67a698e3f9b04c014e71546211ef4a77c5975b561",
+    "bytes": 4760
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/10_AMAR.csv",
+    "sha256": "3d174c1478bbaaa92a5ff27e608ca10560b5f62a37a03cd362f24689d656c5ec",
+    "bytes": 4192
+   },
+   {
+    "path": "data/raw/reports/snapchat/2026H1/7_appeals_and_recidivism.csv",
+    "sha256": "cf81c9799152049d9f9b872195c400fee08674b53fe1ecfa9c23d7ad2283578f",
+    "bytes": 12988
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026/08/31",
+  "published_quote": "All,Snap,Date of the publication of the report,2026/08/31",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:23"
+   },
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:24"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "4_notices.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:25"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:25"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:26"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-11-09 20:55:26"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Stripchat",
+  "dir": "data/raw/reports/stripchat/2025H2",
+  "source_url": "https://support.stripchat.com/api/v2/help_center/en-us/articles/44195482301457.json",
+  "page_url": "https://support.stripchat.com/hc/en-us/articles/44195482301457-DSA-TRANSPARENCY-REPORT-FEBRUARY-2026",
+  "files": [],
+  "status": "no template file (PDF or HTML only)"
+ },
+ {
+  "service": "Temu",
+  "dir": "data/raw/reports/temu/2025H2",
+  "source_url": "https://dl.kwcdn.com/legal-report/212a0cb8ac/9f91ff7c63416eaefdc0eaf244b28e64.zip",
+  "page_url": "https://www.temu.com/transparency-center-reports.html",
+  "files": [
+   {
+    "path": "data/raw/reports/temu/2025H2/9f91ff7c63416eaefdc0eaf244b28e64.zip",
+    "sha256": "3d10ca7099c6a06caa098ebeba5161297d73f3c7d93dd9783ab0508c9d90f534",
+    "bytes": 33910
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-28",
+  "published_verbatim": "2026/2/28",
+  "published_quote": "All,Temu,Date of the publication of the report,2026/2/28",
+  "sheets": {
+   "1": {
+    "member": "Temu - DSA Transparency Report_202602/1_report_identification.csv",
+    "container": "9f91ff7c63416eaefdc0eaf244b28e64.zip!Temu - DSA Transparency Report_202602/1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-27 15:47:10"
+   },
+   "3": {
+    "member": "Temu - DSA Transparency Report_202602/3_member_states_orders.csv",
+    "container": "9f91ff7c63416eaefdc0eaf244b28e64.zip!Temu - DSA Transparency Report_202602/3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-27 21:59:52"
+   },
+   "4": {
+    "member": "Temu - DSA Transparency Report_202602/4_notices.csv",
+    "container": "9f91ff7c63416eaefdc0eaf244b28e64.zip!Temu - DSA Transparency Report_202602/4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-27 20:59:24"
+   },
+   "5": {
+    "member": "Temu - DSA Transparency Report_202602/5_own_initiative_illegal.csv",
+    "container": "9f91ff7c63416eaefdc0eaf244b28e64.zip!Temu - DSA Transparency Report_202602/5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-26 10:39:18"
+   },
+   "6": {
+    "member": "Temu - DSA Transparency Report_202602/6_own_initiative_TC.csv",
+    "container": "9f91ff7c63416eaefdc0eaf244b28e64.zip!Temu - DSA Transparency Report_202602/6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-27 21:57:06"
+   },
+   "8": {
+    "member": "Temu - DSA Transparency Report_202602/8_automated_means.csv",
+    "container": "9f91ff7c63416eaefdc0eaf244b28e64.zip!Temu - DSA Transparency Report_202602/8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-27 21:32:18"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Temu",
+  "dir": "data/raw/reports/temu/2026H1",
+  "source_url": "https://dl.kwcdn.com/legal-report/21f0664dd0/303ede23995f97168c5ffb17c96bd260.zip",
+  "page_url": "https://www.temu.com/transparency-center-reports.html",
+  "files": [
+   {
+    "path": "data/raw/reports/temu/2026H1/303ede23995f97168c5ffb17c96bd260.zip",
+    "sha256": "6a619928a902e6ba6ff27b58961184a15e334ea1c667a56e9c3c50ff29f4dd55",
+    "bytes": 32382
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026/8/31",
+  "published_quote": "All,Temu,Date of the publication of the report,2026/8/31",
+  "sheets": {
+   "1": {
+    "member": "Temu - DSA Transparency Report_202608/1_report_identification.csv",
+    "container": "303ede23995f97168c5ffb17c96bd260.zip!Temu - DSA Transparency Report_202608/1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-27 14:39:18"
+   },
+   "3": {
+    "member": "Temu - DSA Transparency Report_202608/3_member_states_orders.csv",
+    "container": "303ede23995f97168c5ffb17c96bd260.zip!Temu - DSA Transparency Report_202608/3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-27 23:54:26"
+   },
+   "4": {
+    "member": "Temu - DSA Transparency Report_202608/4_notices.csv",
+    "container": "303ede23995f97168c5ffb17c96bd260.zip!Temu - DSA Transparency Report_202608/4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-27 15:52:44"
+   },
+   "5": {
+    "member": "Temu - DSA Transparency Report_202608/5_own_initiative_illegal.csv",
+    "container": "303ede23995f97168c5ffb17c96bd260.zip!Temu - DSA Transparency Report_202608/5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-30 17:39:24"
+   },
+   "6": {
+    "member": "Temu - DSA Transparency Report_202608/6_own_initiative_TC.csv",
+    "container": "303ede23995f97168c5ffb17c96bd260.zip!Temu - DSA Transparency Report_202608/6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-30 14:39:08"
+   },
+   "8": {
+    "member": "Temu - DSA Transparency Report_202608/8_automated_means.csv",
+    "container": "303ede23995f97168c5ffb17c96bd260.zip!Temu - DSA Transparency Report_202608/8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-30 14:04:32"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "TikTok",
+  "dir": "data/raw/reports/tiktok/2025H2",
+  "source_url": "https://sf16-va.tiktokcdn.com/obj/eden-va2/zayvwlY_fjulyhwzuhy%5B/ljhwZthlaukjlkulzlp/DSA_H2_2025/DSA_Corrected_Data_8_28_2026/DSA_Transparency_Report_TikTok_July_December_2025%20_%20updated.zip",
+  "page_url": "https://www.tiktok.com/safety/en/transparency/dsa-transparency",
+  "files": [
+   {
+    "path": "data/raw/reports/tiktok/2025H2/DSA_Transparency_Report_TikTok_July_December_2025___updated.zip",
+    "sha256": "40657ab454cdf5822d316bb7c24d97ffcddb6604780067e2dfd8ed9aabcbb310",
+    "bytes": 603380
+   },
+   {
+    "path": "data/raw/reports/tiktok/2025H2/earlier_versions/original_2026-02-27/DSA_Transparency_Report_TikTok_July_December_2025.zip",
+    "sha256": "5133a718289ca4ae4f1addc20ed09ffb55456375e4f69fb1b0a7fcc3cd2315d4",
+    "bytes": 453863
+   },
+   {
+    "path": "data/raw/reports/tiktok/2025H2/earlier_versions/original_in_all_files_bundle_2026-04-16/TikTok-DSATransparencyReports-Nov2025.zip",
+    "sha256": "10a448f2b75cd90b5ceda2aeeddb47c222a99c2bae77de16db7e4d10e1c9f7af",
+    "bytes": 19045583
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27",
+  "published_quote": "All,TikTok,Date of the publication of the report,2026-02-27,,,,,,,,,,,,,,,,",
+  "sheets": {
+   "1": {
+    "member": "DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 1_report_identification.csv",
+    "container": "DSA_Transparency_Report_TikTok_July_December_2025___updated.zip!DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:03:26"
+   },
+   "3": {
+    "member": "DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 3_member_states_orders.csv",
+    "container": "DSA_Transparency_Report_TikTok_July_December_2025___updated.zip!DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:03:26"
+   },
+   "4": {
+    "member": "DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 4_notices_updated_28082026.csv",
+    "container": "DSA_Transparency_Report_TikTok_July_December_2025___updated.zip!DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 4_notices_updated_28082026.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:03:28"
+   },
+   "5": {
+    "member": "DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 5_own_initiative_illegal.csv",
+    "container": "DSA_Transparency_Report_TikTok_July_December_2025___updated.zip!DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:03:28"
+   },
+   "6": {
+    "member": "DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 6_own_initiative_TC.csv",
+    "container": "DSA_Transparency_Report_TikTok_July_December_2025___updated.zip!DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:03:28"
+   },
+   "8": {
+    "member": "DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 8_automated_means.csv",
+    "container": "DSA_Transparency_Report_TikTok_July_December_2025___updated.zip!DSA_Transparency_Report_TikTok_July_December_2025 _ updated/DSA_Transparency_Report_TikTok_July_December_2025 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 10:03:30"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "TikTok",
+  "dir": "data/raw/reports/tiktok/2026H1",
+  "source_url": "https://sf16-va.tiktokcdn.com/obj/eden-va2/zayvwlY_fjulyhwzuhy%5B/ljhwZthlaukjlkulzlp/DSA_H1_2026/TikTok%20DSA%20Transparency%20Report%20Jan-June%202026_.zip",
+  "page_url": "https://www.tiktok.com/safety/en/transparency/dsa-transparency",
+  "files": [
+   {
+    "path": "data/raw/reports/tiktok/2026H1/TikTok_DSA_Transparency_Report_Jan-June_2026_.zip",
+    "sha256": "ac2f09718d479ddb058c678ebe7a6e4987d568988ad89d43c539be313b9af995",
+    "bytes": 458570
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026-08-31",
+  "published_quote": "All,TikTok,Date of the publication of the report,2026-08-31,,,,,,,,,,,,,,,,",
+  "sheets": {
+   "1": {
+    "member": "DSA_Transparency_Report_TikTok_January_June_2026 - 1_report_identification.csv",
+    "container": "TikTok_DSA_Transparency_Report_Jan-June_2026_.zip!DSA_Transparency_Report_TikTok_January_June_2026 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-31 09:11:04"
+   },
+   "3": {
+    "member": "DSA_Transparency_Report_TikTok_January_June_2026 - 3_member_states_orders.csv",
+    "container": "TikTok_DSA_Transparency_Report_Jan-June_2026_.zip!DSA_Transparency_Report_TikTok_January_June_2026 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-31 09:11:06"
+   },
+   "4": {
+    "member": "DSA_Transparency_Report_TikTok_January_June_2026 - 4_notices.csv",
+    "container": "TikTok_DSA_Transparency_Report_Jan-June_2026_.zip!DSA_Transparency_Report_TikTok_January_June_2026 - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-31 09:11:06"
+   },
+   "5": {
+    "member": "DSA_Transparency_Report_TikTok_January_June_2026 - 5_own_initiative_illegal.csv",
+    "container": "TikTok_DSA_Transparency_Report_Jan-June_2026_.zip!DSA_Transparency_Report_TikTok_January_June_2026 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-31 09:11:06"
+   },
+   "6": {
+    "member": "DSA_Transparency_Report_TikTok_January_June_2026 - 6_own_initiative_TC.csv",
+    "container": "TikTok_DSA_Transparency_Report_Jan-June_2026_.zip!DSA_Transparency_Report_TikTok_January_June_2026 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-31 09:11:06"
+   },
+   "8": {
+    "member": "DSA_Transparency_Report_TikTok_January_June_2026 - 8_automated_means.csv",
+    "container": "TikTok_DSA_Transparency_Report_Jan-June_2026_.zip!DSA_Transparency_Report_TikTok_January_June_2026 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-31 09:11:08"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "WhatsApp Channels",
+  "dir": "data/raw/reports/whatsapp_channels/2026H1",
+  "source_url": "https://scontent.xx.fbcdn.net/v/t39.8562-6/785288006_1058383626593386_1193214887815902920_n.zip?_nc_cat=110&ccb=1-7&_nc_sid=e280be&_nc_ohc=zh29WPwttzAQ7kNvwFlxCbf&_nc_oc=AdqVRAROj3da5clDzYtxwu6MI4K2TlyP59BtxjgVMN66McEw-cFKjK85RN0VvxNwI6A&_nc_zt=14&_nc_ht=scontent.xx&_nc_gid=8L1gRll9AhawHpdIgru8mg&_nc_ss=70289&oh=00_AQS-x1gkrDYhPwp5kZcDbdeoiOEdh30KWoWwiy1Hxg7w2A&oe=6AF85073",
+  "page_url": "https://www.whatsapp.com/legal/transparencyreports",
+  "files": [
+   {
+    "path": "data/raw/reports/whatsapp_channels/2026H1/report.zip",
+    "sha256": "af236d055597b071fa3824a8a11323fb56cb010ddd15f3a759a5108f93bd2e97",
+    "bytes": 94612
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-28",
+  "published_verbatim": "2026-08-28",
+  "published_quote": "All,WhatsApp Channels,Date of the publication of the report,2026-08-28",
+  "sheets": {
+   "1": {
+    "member": "WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 1_report_identification.csv",
+    "container": "report.zip!WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-27 15:16:16"
+   },
+   "3": {
+    "member": "WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 3_member_states_orders.csv",
+    "container": "report.zip!WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-27 15:21:26"
+   },
+   "4": {
+    "member": "WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 4_notices.csv",
+    "container": "report.zip!WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-27 15:21:36"
+   },
+   "5": {
+    "member": "WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 5_own_initiative_illegal.csv",
+    "container": "report.zip!WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-27 15:21:44"
+   },
+   "6": {
+    "member": "WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 6_own_initiative_TC.csv",
+    "container": "report.zip!WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-27 15:21:50"
+   },
+   "8": {
+    "member": "WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 8_automated_means.csv",
+    "container": "report.zip!WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026/WhatsApp Channels DSA VLOP Transparency Report - 28 August 2026 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-27 15:22:02"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Wikipedia",
+  "dir": "data/raw/reports/wikipedia/2025H2",
+  "source_url": "https://upload.wikimedia.org/wikipedia/foundation/8/8a/Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+  "page_url": "https://foundation.wikimedia.org/wiki/File:Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+  "files": [
+   {
+    "path": "data/raw/reports/wikipedia/2025H2/Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+    "sha256": "21e984bdcbae075b77bd5751996385b783cc907d9f9b0ed91bc123bd7e1dd3d4",
+    "bytes": 997888
+   },
+   {
+    "path": "data/raw/reports/wikipedia/2025H2/earlier_versions/original_2026-02-28/Wikipedia_-_DSA_transparency_report_2026-02-28_ORIGINAL_archived_20260707191333.xls",
+    "sha256": "c0ecc9b006ec38b09a1dcc1005e12c894b7a6e8bb0dbaa5655a873c3b0ae29c5",
+    "bytes": 943616
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-06-29",
+  "published_verbatim": "46202",
+  "published_quote": "XLS sheet \"1_report_identification\" row 3: All |  | Date of the publication of the report | 46202",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification",
+    "container": "Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:57"
+   },
+   "3": {
+    "member": "3_member_states_orders",
+    "container": "Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:57"
+   },
+   "4": {
+    "member": "4_notices",
+    "container": "Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:57"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal",
+    "container": "Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:57"
+   },
+   "6": {
+    "member": "6_own_initiative_TC",
+    "container": "Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:57"
+   },
+   "8": {
+    "member": "8_automated_means",
+    "container": "Wikipedia_-_DSA_transparency_report_2026-02-28.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:57"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Wikipedia",
+  "dir": "data/raw/reports/wikipedia/2026H1",
+  "source_url": "https://upload.wikimedia.org/wikipedia/foundation/7/71/Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+  "page_url": "https://foundation.wikimedia.org/wiki/File:Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+  "files": [
+   {
+    "path": "data/raw/reports/wikipedia/2026H1/Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+    "sha256": "f6051b1e15d7e931418979be0fc14e3cda81c7b8f8afc2da7aca725823caf597",
+    "bytes": 995840
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "46265",
+  "published_quote": "XLS sheet \"1_report_identification\" row 3: All | Wikipedia | Date of the publication of the report | 46265",
+  "sheets": {
+   "1": {
+    "member": "1_report_identification",
+    "container": "Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:56"
+   },
+   "3": {
+    "member": "3_member_states_orders",
+    "container": "Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:56"
+   },
+   "4": {
+    "member": "4_notices",
+    "container": "Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:56"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal",
+    "container": "Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:56"
+   },
+   "6": {
+    "member": "6_own_initiative_TC",
+    "container": "Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:56"
+   },
+   "8": {
+    "member": "8_automated_means",
+    "container": "Wikipedia_-_DSA_transparency_report_template_2026-08-31.xls",
+    "kind": "xls",
+    "when": "2026-11-09 20:51:56"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "X",
+  "dir": "data/raw/reports/x/2025H2",
+  "source_url": "https://transparency.x.com/content/dam/transparency-twitter/dsa/transparency-report/X-H2-2025-DSA-Transparency-Report.zip",
+  "page_url": "https://transparency.x.com/en/reports/dsa-transparency-report",
+  "files": [
+   {
+    "path": "data/raw/reports/x/2025H2/X-H2-2025-DSA-Transparency-Report.zip",
+    "sha256": "fb407b6e3e7a47ac96a53a3581996e6fe6f4759da51975c6e7df84745014d1c4",
+    "bytes": 67942
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-03-02",
+  "published_verbatim": "2026-03-02",
+  "published_quote": "All,X,Date of the publication of the report,2026-03-02",
+  "sheets": {
+   "6": {
+    "member": "X-H2-2025-DSA-Transparency-Report/06. X H2 2025 DSA Transparency Report_Corrected.xlsx - 6_own_initiative_TC.csv",
+    "container": "X-H2-2025-DSA-Transparency-Report.zip!X-H2-2025-DSA-Transparency-Report/06. X H2 2025 DSA Transparency Report_Corrected.xlsx - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-09-01 22:49:28"
+   },
+   "1": {
+    "member": "X-H2-2025-DSA-Transparency-Report/01. X H2 2025 DSA Transparency Report.xlsx - 1_report_identification.csv",
+    "container": "X-H2-2025-DSA-Transparency-Report.zip!X-H2-2025-DSA-Transparency-Report/01. X H2 2025 DSA Transparency Report.xlsx - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-03-02 16:58:20"
+   },
+   "3": {
+    "member": "X-H2-2025-DSA-Transparency-Report/03. X H2 2025 DSA Transparency Report.xlsx - 3_member_states_orders.csv",
+    "container": "X-H2-2025-DSA-Transparency-Report.zip!X-H2-2025-DSA-Transparency-Report/03. X H2 2025 DSA Transparency Report.xlsx - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-03-02 16:58:38"
+   },
+   "8": {
+    "member": "X-H2-2025-DSA-Transparency-Report/08. X H2 2025 DSA Transparency Report.xlsx - 8_automated_means.csv",
+    "container": "X-H2-2025-DSA-Transparency-Report.zip!X-H2-2025-DSA-Transparency-Report/08. X H2 2025 DSA Transparency Report.xlsx - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-03-02 16:59:06"
+   },
+   "4": {
+    "member": "X-H2-2025-DSA-Transparency-Report/04. X H2 2025 DSA Transparency Report.xlsx - 4_notices.csv",
+    "container": "X-H2-2025-DSA-Transparency-Report.zip!X-H2-2025-DSA-Transparency-Report/04. X H2 2025 DSA Transparency Report.xlsx - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-03-02 16:58:42"
+   },
+   "5": {
+    "member": "X-H2-2025-DSA-Transparency-Report/05. X H2 2025 DSA Transparency Report.xlsx - 5_own_initiative_illegal.csv",
+    "container": "X-H2-2025-DSA-Transparency-Report.zip!X-H2-2025-DSA-Transparency-Report/05. X H2 2025 DSA Transparency Report.xlsx - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-03-02 16:58:48"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "X",
+  "dir": "data/raw/reports/x/2026H1",
+  "source_url": "https://transparency.x.com/content/dam/transparency-twitter/dsa/transparency-report/DSA-Transparency-Report-H1-2026.zip",
+  "page_url": "https://transparency.x.com/en/reports/dsa-transparency-report",
+  "files": [
+   {
+    "path": "data/raw/reports/x/2026H1/DSA-Transparency-Report-H1-2026.zip",
+    "sha256": "c502ddecdb59a7e86441ff8e4e32ae2945770a758cea0c5995832a35f18e3a6b",
+    "bytes": 90985
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026-08-31",
+  "published_quote": "All,X,Date of the publication of the report,2026-08-31",
+  "sheets": {
+   "6": {
+    "member": "DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 6_own_initiative_TC.csv",
+    "container": "DSA-Transparency-Report-H1-2026.zip!DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-09-01 17:27:40"
+   },
+   "4": {
+    "member": "DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 4_notices.csv",
+    "container": "DSA-Transparency-Report-H1-2026.zip!DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-09-18 13:09:24"
+   },
+   "1": {
+    "member": "DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL.xlsx - 1_report_identification.csv",
+    "container": "DSA-Transparency-Report-H1-2026.zip!DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL.xlsx - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-31 13:26:32"
+   },
+   "8": {
+    "member": "DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 8_automated_means 9:18:26.csv",
+    "container": "DSA-Transparency-Report-H1-2026.zip!DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 8_automated_means 9:18:26.csv",
+    "kind": "csv",
+    "when": "2026-09-18 13:09:28"
+   },
+   "3": {
+    "member": "DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 3_member_states_orders.csv",
+    "container": "DSA-Transparency-Report-H1-2026.zip!DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL_Corrected.xlsx - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-09-01 17:27:26"
+   },
+   "5": {
+    "member": "DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL.xlsx - 5_own_initiative_illegal.csv",
+    "container": "DSA-Transparency-Report-H1-2026.zip!DSA Transparency Report H1 2026 2/H1 2026 DSA Transparency Report_FINAL.xlsx - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-31 13:28:14"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "XNXX",
+  "dir": "data/raw/reports/xnxx/2025H2",
+  "source_url": "https://public-assets.xnxx-cdn.com/transparency/XNXX+-+Transparency+report+-+July-December+2025.zip",
+  "page_url": "https://info.xnxx.com/legal/mandatory-information",
+  "files": [
+   {
+    "path": "data/raw/reports/xnxx/2025H2/XNXX_-_Transparency_report_-_July-December_2025.zip",
+    "sha256": "d42483b6b9528257834a4e0a27d959fb360675c85c7765b001114af6b44e4ffa",
+    "bytes": 20588
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-28",
+  "published_verbatim": "2026/02/28",
+  "published_quote": "All,XNXX.COM,\"Date of the publication of the report\",2026/02/28",
+  "sheets": {
+   "3": {
+    "member": "3_member_state_orders.csv",
+    "container": "XNXX_-_Transparency_report_-_July-December_2025.zip!3_member_state_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:36:18"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "XNXX_-_Transparency_report_-_July-December_2025.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:36:18"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "XNXX_-_Transparency_report_-_July-December_2025.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:36:18"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "XNXX_-_Transparency_report_-_July-December_2025.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:36:18"
+   },
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "XNXX_-_Transparency_report_-_July-December_2025.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:36:18"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "XNXX_-_Transparency_report_-_July-December_2025.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:36:18"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "XNXX",
+  "dir": "data/raw/reports/xnxx/2026H1",
+  "source_url": "https://public-assets.xnxx-cdn.com/transparency/XNXX+-+Transparency+report+-+January-June+2026.zip",
+  "page_url": "https://info.xnxx.com/legal/mandatory-information",
+  "files": [
+   {
+    "path": "data/raw/reports/xnxx/2026H1/XNXX_-_Transparency_report_-_January-June_2026.zip",
+    "sha256": "27c9a6635f30082419c4025173698f398cb24411db2e68ab45a5e6489f6b938e",
+    "bytes": 21556
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-06-08",
+  "published_verbatim": "6/8/2026",
+  "published_quote": "All,XNXX.COM,Date of the publication of the report,,6/8/2026",
+  "sheets": {
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "XNXX_-_Transparency_report_-_January-June_2026.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:06:02"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "XNXX_-_Transparency_report_-_January-June_2026.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:06:16"
+   },
+   "5": {
+    "member": "5_own_initiative_illeg.csv",
+    "container": "XNXX_-_Transparency_report_-_January-June_2026.zip!5_own_initiative_illeg.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:06:22"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "XNXX_-_Transparency_report_-_January-June_2026.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:06:28"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "XNXX_-_Transparency_report_-_January-June_2026.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:06:42"
+   },
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "XNXX_-_Transparency_report_-_January-June_2026.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-19 00:36:32"
+   }
+  },
+  "problems": [],
+  "published_display": "6/8/2026",
+  "published_note": "the cell reads 6/8/2026, which as month/day falls before the period ends"
+ },
+ {
+  "service": "XVideos",
+  "dir": "data/raw/reports/xvideos/2025H2",
+  "source_url": "https://public-assets.xvideos-cdn.com/transparency/XVideos+-+Transparency+report+-+July-December+2025.zip",
+  "page_url": "https://info.xvideos.net/legal/mandatory-information",
+  "files": [
+   {
+    "path": "data/raw/reports/xvideos/2025H2/XVideos_-_Transparency_report_-_July-December_2025.zip",
+    "sha256": "7f4997e9e7c7d7f068cf34ade2b6eb719d5e828ea268ee1f7cff748ccd810f20",
+    "bytes": 22353
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-28",
+  "published_verbatim": "2026/02/28",
+  "published_quote": "All,XVIDEOS.COM,\"Date of the publication of the report\",2026/02/28",
+  "sheets": {
+   "4": {
+    "member": "4_notices.csv",
+    "container": "XVideos_-_Transparency_report_-_July-December_2025.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:25:52"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "XVideos_-_Transparency_report_-_July-December_2025.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:25:52"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "XVideos_-_Transparency_report_-_July-December_2025.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:25:52"
+   },
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "XVideos_-_Transparency_report_-_July-December_2025.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:25:52"
+   },
+   "3": {
+    "member": "3_member_state_orders.csv",
+    "container": "XVideos_-_Transparency_report_-_July-December_2025.zip!3_member_state_orders.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:25:52"
+   },
+   "5": {
+    "member": "5_own_initiative_illegal.csv",
+    "container": "XVideos_-_Transparency_report_-_July-December_2025.zip!5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-02-28 21:25:52"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "XVideos",
+  "dir": "data/raw/reports/xvideos/2026H1",
+  "source_url": "https://public-assets.xvideos-cdn.com/transparency/XVideos+-+Transparency+report+-+January-June+2026.zip",
+  "page_url": "https://info.xvideos.net/legal/mandatory-information",
+  "files": [
+   {
+    "path": "data/raw/reports/xvideos/2026H1/XVideos_-_Transparency_report_-_January-June_2026.zip",
+    "sha256": "aa70d1cc796afc57007a366b9f107159f96dea85e7024098819fdefe48d904ba",
+    "bytes": 23114
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-06-08",
+  "published_verbatim": "6/8/2026",
+  "published_quote": "All,XVIDEOS.COM,Date of the publication of the report,6/8/2026",
+  "sheets": {
+   "3": {
+    "member": "3_member_states_orders.csv",
+    "container": "XVideos_-_Transparency_report_-_January-June_2026.zip!3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:04:06"
+   },
+   "4": {
+    "member": "4_notices.csv",
+    "container": "XVideos_-_Transparency_report_-_January-June_2026.zip!4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:04:16"
+   },
+   "5": {
+    "member": "5_own_initiative_il.csv",
+    "container": "XVideos_-_Transparency_report_-_January-June_2026.zip!5_own_initiative_il.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:04:24"
+   },
+   "6": {
+    "member": "6_own_initiative_TC.csv",
+    "container": "XVideos_-_Transparency_report_-_January-June_2026.zip!6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:04:32"
+   },
+   "8": {
+    "member": "8_automated_means.csv",
+    "container": "XVideos_-_Transparency_report_-_January-June_2026.zip!8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-06 12:04:44"
+   },
+   "1": {
+    "member": "1_report_identification.csv",
+    "container": "XVideos_-_Transparency_report_-_January-June_2026.zip!1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-19 00:36:24"
+   }
+  },
+  "problems": [],
+  "published_display": "6/8/2026",
+  "published_note": "the cell reads 6/8/2026, which as month/day falls before the period ends"
+ },
+ {
+  "service": "Zalando",
+  "dir": "data/raw/reports/zalando/2025H2",
+  "source_url": "https://corporate.zalando.com/public/media-download/zalando-se_dsa-transparency-report-february-2026_updated.zip?VersionId=ixPon_qEN3VXLjNZIsnyS_OMJrNnFXYd",
+  "page_url": "https://corporate.zalando.com/en/investor-relations/corporate-governance/transparency-hub",
+  "files": [
+   {
+    "path": "data/raw/reports/zalando/2025H2/zalando-se_dsa-transparency-report-february-2026_updated.zip",
+    "sha256": "23176d394a6c8f3497004488b44fe368ce531fb88ce2bb580879e5b973042700",
+    "bytes": 61745
+   },
+   {
+    "path": "data/raw/reports/zalando/2025H2/superseded_original_2026-02/zalando-transparency-report-february-2026.zip",
+    "sha256": "152c0b8757bd6089ff1868cd48921728af65c7112bcff1ec96782664dd4af196",
+    "bytes": 60007
+   },
+   {
+    "path": "data/raw/reports/zalando/2025H2/companion_explanatory_note_pdf/dsa-explanatory-note-february-2026.pdf",
+    "sha256": "7db5b87505ce78a98cc106870c72193a7eb66f5734e142d0b377493a0d1602c0",
+    "bytes": 172458
+   }
+  ],
+  "status": "read",
+  "period": "2025H2",
+  "start": "2025-07-01",
+  "end": "2025-12-31",
+  "published": "2026-02-27",
+  "published_verbatim": "2026-02-27",
+  "published_quote": "All,Zalando,Date of the publication of the report,2026-02-27",
+  "sheets": {
+   "5": {
+    "member": "DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 5_own_initiative_illegal.csv",
+    "container": "zalando-se_dsa-transparency-report-february-2026_updated.zip!DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-28 00:59:06"
+   },
+   "1": {
+    "member": "DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 1_report_identification.csv",
+    "container": "zalando-se_dsa-transparency-report-february-2026_updated.zip!DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-28 00:59:32"
+   },
+   "3": {
+    "member": "DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 3_member_states_orders.csv",
+    "container": "zalando-se_dsa-transparency-report-february-2026_updated.zip!DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 00:59:20"
+   },
+   "6": {
+    "member": "DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 6_own_initiative_TC.csv",
+    "container": "zalando-se_dsa-transparency-report-february-2026_updated.zip!DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 00:59:00"
+   },
+   "8": {
+    "member": "DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 8_automated_means.csv",
+    "container": "zalando-se_dsa-transparency-report-february-2026_updated.zip!DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 00:58:48"
+   },
+   "4": {
+    "member": "DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 4_notices.csv",
+    "container": "zalando-se_dsa-transparency-report-february-2026_updated.zip!DSA Transparency Report, February 2026/Zalando_Transparency_Report_February_2026_CSV_File - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-28 00:59:14"
+   }
+  },
+  "problems": []
+ },
+ {
+  "service": "Zalando",
+  "dir": "data/raw/reports/zalando/2026H1",
+  "source_url": "https://corporate.zalando.com/public/media-download/zalando-se_dsa-transparency-report-august-2026.zip?VersionId=QfyQdQ6sQXmE1Tlc_Zs_EJ6LHMH5406L",
+  "page_url": "https://corporate.zalando.com/en/investor-relations/corporate-governance/transparency-hub",
+  "files": [
+   {
+    "path": "data/raw/reports/zalando/2026H1/zalando-se_dsa-transparency-report-august-2026.zip",
+    "sha256": "a696909b5a8a86d82101a870723031e552ea357accf02f20a9fd29b9d5ae9aad",
+    "bytes": 94788
+   },
+   {
+    "path": "data/raw/reports/zalando/2026H1/companion_explanatory_note_pdf/zalando-se_dsa-explanatory-note_august-2026.pdf",
+    "sha256": "b5e54fa68549d7391f8c8fdde8d3046d1f6e3735f21acb4aa901fd0aca214f10",
+    "bytes": 169136
+   }
+  ],
+  "status": "read",
+  "period": "2026H1",
+  "start": "2026-01-01",
+  "end": "2026-06-30",
+  "published": "2026-08-31",
+  "published_verbatim": "2026-08-31",
+  "published_quote": "All,Zalando,Date of the publication of the report,2026-08-31",
+  "sheets": {
+   "6": {
+    "member": "DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 6_own_initiative_TC.csv",
+    "container": "zalando-se_dsa-transparency-report-august-2026.zip!DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 6_own_initiative_TC.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:10:12"
+   },
+   "1": {
+    "member": "DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 1_report_identification.csv",
+    "container": "zalando-se_dsa-transparency-report-august-2026.zip!DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 1_report_identification.csv",
+    "kind": "csv",
+    "when": "2026-08-30 23:37:14"
+   },
+   "4": {
+    "member": "DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 4_notices.csv",
+    "container": "zalando-se_dsa-transparency-report-august-2026.zip!DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 4_notices.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:10:02"
+   },
+   "5": {
+    "member": "DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 5_own_initiative_illegal.csv",
+    "container": "zalando-se_dsa-transparency-report-august-2026.zip!DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 5_own_initiative_illegal.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:10:08"
+   },
+   "8": {
+    "member": "DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 8_automated_means.csv",
+    "container": "zalando-se_dsa-transparency-report-august-2026.zip!DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 8_automated_means.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:10:22"
+   },
+   "3": {
+    "member": "DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 3_member_states_orders.csv",
+    "container": "zalando-se_dsa-transparency-report-august-2026.zip!DSA Transparency Report, August 2026/Zalando_Transparency_Report_August_2026 - 3_member_states_orders.csv",
+    "kind": "csv",
+    "when": "2026-08-28 01:09:58"
+   }
+  },
+  "problems": []
+ }
+]

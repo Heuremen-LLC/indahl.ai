@@ -1,0 +1,7 @@
+none        false calls 2/200  misses 0  R1:{'ABOVE': 1, 'BELOW': 1, 'CANNOT_TELL': 13, 'CONSISTENT': 25}  R2:{'CANNOT_TELL': 16, 'CONSISTENT': 24}  R2b:{'CANNOT_TELL': 35, 'CONSISTENT': 5}  R3:{'CANNOT_TELL': 37, 'CONSISTENT': 3}  R3b:{'CANNOT_TELL': 38, 'CONSISTENT': 2}
+linear      false calls 0/200  misses 31  R1:{'BELOW': 37, 'CANNOT_TELL': 3}  R2:{'BELOW': 39, 'CANNOT_TELL': 1}  R2b:{'CANNOT_TELL': 34, 'CONSISTENT': 6}  R3:{'BELOW': 26, 'CANNOT_TELL': 14}  R3b:{'BELOW': 27, 'CANNOT_TELL': 13}
+saturating  false calls 0/200  misses 21  R1:{'BELOW': 34, 'CANNOT_TELL': 6}  R2:{'BELOW': 25, 'CANNOT_TELL': 15}  R2b:{'CANNOT_TELL': 30, 'CONSISTENT': 10}  R3:{'CANNOT_TELL': 37, 'CONSISTENT': 3}  R3b:{'CANNOT_TELL': 39, 'CONSISTENT': 1}
+ringdown    false calls 1/200  misses 7  R1:{'BELOW': 39, 'CANNOT_TELL': 1}  R2:{'ABOVE': 1, 'CANNOT_TELL': 23, 'CONSISTENT': 16}  R2b:{'BELOW': 34, 'CANNOT_TELL': 6}  R3:{'CANNOT_TELL': 39, 'CONSISTENT': 1}  R3b:{'CANNOT_TELL': 36, 'CONSISTENT': 4}
+below       false calls 1/200  misses 0  R1:{'BELOW': 1, 'CANNOT_TELL': 19, 'CONSISTENT': 20}  R2:{'CANNOT_TELL': 23, 'CONSISTENT': 17}  R2b:{'CANNOT_TELL': 35, 'CONSISTENT': 5}  R3:{'CANNOT_TELL': 35, 'CONSISTENT': 5}  R3b:{'CANNOT_TELL': 40}
+TOTAL false calls 4/1000 = 0.4 %   (worst world 1.0 %)
+KNOWN-GOOD rule on planted -1.6 deg/readout pack: PASS 40/40

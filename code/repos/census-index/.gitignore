@@ -1,0 +1,12 @@
+__pycache__/
+*.part
+*.tmp
+*.bak-*
+.census_snap.lock
+.census_tick.lock
+data/raw/
+data/cache/
+data/census.json
+data/census_history.jsonl
+# data/snapshots/ is tracked: our own copies cannot be fetched again
+census_revisions.html

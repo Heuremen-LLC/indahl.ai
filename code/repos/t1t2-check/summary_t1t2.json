@@ -1,0 +1,245 @@
+{
+ "updated": "30 Oct 01:50",
+ "processors": [
+  {
+   "backend": "ibm_boston",
+   "state": "ran",
+   "ran": "2026-10-30 01:50",
+   "known_good": "passed",
+   "qubits": [
+    {
+     "qubit": 85,
+     "control": false,
+     "printed": "CANNOT_TELL",
+     "reading": "CANNOT_TELL",
+     "fit_on_bound": false,
+     "t1": 7.544,
+     "t1_ci": [
+      6.723,
+      8.35
+     ],
+     "t2": 9.397,
+     "t2_ci": [
+      5.404,
+      16.167
+     ],
+     "ratio": 1.246,
+     "ratio_ci": [
+      0.72,
+      2.275
+     ],
+     "pub_t1": 8.393,
+     "pub_t2": 47.871,
+     "pub_t1_date": "2026-10-27 15:13",
+     "pub_t2_date": "2026-10-14 23:08"
+    },
+    {
+     "qubit": 17,
+     "control": true,
+     "printed": "CONSISTENT",
+     "reading": "CONSISTENT",
+     "fit_on_bound": false,
+     "t1": 280.467,
+     "t1_ci": [
+      263.006,
+      298.375
+     ],
+     "t2": 343.445,
+     "t2_ci": [
+      295.32,
+      401.357
+     ],
+     "ratio": 1.225,
+     "ratio_ci": [
+      1.041,
+      1.45
+     ],
+     "pub_t1": 272.129,
+     "pub_t2": 272.257,
+     "pub_t1_date": "2026-10-27 15:13",
+     "pub_t2_date": "2026-10-27 15:13"
+    }
+   ]
+  },
+  {
+   "backend": "ibm_kingston",
+   "state": "ran",
+   "ran": "2026-10-29 01:44",
+   "known_good": "passed",
+   "qubits": [
+    {
+     "qubit": 121,
+     "control": false,
+     "printed": "CANNOT_TELL",
+     "reading": "CANNOT_TELL",
+     "fit_on_bound": false,
+     "t1": 13.245,
+     "t1_ci": [
+      11.943,
+      14.736
+     ],
+     "t2": 14.614,
+     "t2_ci": [
+      8.566,
+      25.853
+     ],
+     "ratio": 1.103,
+     "ratio_ci": [
+      0.647,
+      2.038
+     ],
+     "pub_t1": 16.237,
+     "pub_t2": 53.333,
+     "pub_t1_date": "2026-10-28 20:16",
+     "pub_t2_date": "2026-10-27 19:36"
+    },
+    {
+     "qubit": 19,
+     "control": true,
+     "printed": "CONSISTENT",
+     "reading": "CONSISTENT",
+     "fit_on_bound": false,
+     "t1": 294.194,
+     "t1_ci": [
+      274.443,
+      314.833
+     ],
+     "t2": 195.817,
+     "t2_ci": [
+      177.375,
+      223.64
+     ],
+     "ratio": 0.666,
+     "ratio_ci": [
+      0.592,
+      0.768
+     ],
+     "pub_t1": 263.404,
+     "pub_t2": 271.399,
+     "pub_t1_date": "2026-10-28 20:16",
+     "pub_t2_date": "2026-10-28 20:16"
+    }
+   ]
+  },
+  {
+   "backend": "ibm_fez",
+   "state": "ran",
+   "ran": "2026-10-29 01:42",
+   "known_good": "passed",
+   "qubits": [
+    {
+     "qubit": 148,
+     "control": false,
+     "printed": "CONSISTENT",
+     "reading": "CANNOT_TELL",
+     "fit_on_bound": true,
+     "t1": 0.818,
+     "t1_ci": [
+      0.678,
+      0.945
+     ],
+     "t2": 0.117,
+     "t2_ci": [
+      0.117,
+      1.301
+     ],
+     "ratio": 0.143,
+     "ratio_ci": [
+      0.127,
+      1.619
+     ],
+     "pub_t1": 5.863,
+     "pub_t2": 15.469,
+     "pub_t1_date": "2026-10-25 19:20",
+     "pub_t2_date": "2026-10-25 19:20"
+    },
+    {
+     "qubit": 95,
+     "control": true,
+     "printed": "CONSISTENT",
+     "reading": "CONSISTENT",
+     "fit_on_bound": false,
+     "t1": 175.958,
+     "t1_ci": [
+      164.74,
+      186.995
+     ],
+     "t2": 144.54,
+     "t2_ci": [
+      126.322,
+      172.763
+     ],
+     "ratio": 0.821,
+     "ratio_ci": [
+      0.691,
+      1.008
+     ],
+     "pub_t1": 163.158,
+     "pub_t2": 163.514,
+     "pub_t1_date": "2026-10-28 19:40",
+     "pub_t2_date": "2026-10-28 19:40"
+    }
+   ]
+  },
+  {
+   "backend": "ibm_fez (rerun 1)",
+   "state": "ran",
+   "ran": "2026-10-29 02:17",
+   "known_good": "passed",
+   "qubits": [
+    {
+     "qubit": 148,
+     "control": false,
+     "printed": "CANNOT_TELL",
+     "reading": "CANNOT_TELL",
+     "fit_on_bound": true,
+     "t1": 1.052,
+     "t1_ci": [
+      0.887,
+      1.226
+     ],
+     "t2": 0.017,
+     "t2_ci": [
+      0.017,
+      0.087
+     ],
+     "ratio": 0.016,
+     "ratio_ci": [
+      0.014,
+      0.087
+     ],
+     "pub_t1": 5.863,
+     "pub_t2": 15.469,
+     "pub_t1_date": "2026-10-25 19:20",
+     "pub_t2_date": "2026-10-25 19:20"
+    },
+    {
+     "qubit": 95,
+     "control": true,
+     "printed": "CONSISTENT",
+     "reading": "CONSISTENT",
+     "fit_on_bound": false,
+     "t1": 171.47,
+     "t1_ci": [
+      160.86,
+      180.755
+     ],
+     "t2": 191.599,
+     "t2_ci": [
+      167.082,
+      230.052
+     ],
+     "ratio": 1.117,
+     "ratio_ci": [
+      0.949,
+      1.362
+     ],
+     "pub_t1": 163.158,
+     "pub_t2": 163.514,
+     "pub_t1_date": "2026-10-28 19:40",
+     "pub_t2_date": "2026-10-28 19:40"
+    }
+   ]
+  }
+ ]
+}

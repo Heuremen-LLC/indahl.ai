@@ -1,0 +1,1819 @@
+{
+ "plan_seal": {
+  "plan_commit": "1b571f2ee3404632c8d3e36c22bdd6599d4495ce",
+  "plan_commit_time": "2026-11-11T11:22:31-05:00",
+  "plan_sha256": "dfe856e849df25b3e21742cc8eba9eb9e12e239d20491eae11ffb6115ec7ed92",
+  "first_comparison": "2026-11-11T16:23:26Z"
+ },
+ "run": "2026-11-11T16:23:26Z",
+ "gates": {
+  "1_format": {
+   "passed": true,
+   "detail": {
+    "divorce": {
+     "entries": 52,
+     "bad_length": [],
+     "us_sum_mismatch_years": []
+    },
+    "marriage": {
+     "entries": 52,
+     "bad_length": [],
+     "us_sum_mismatch_years": []
+    }
+   }
+  },
+  "2_reader": {
+   "passed": true,
+   "hand_rows": [
+    {
+     "row": "Texas 2022 DIVORCE",
+     "equal": true
+    },
+    {
+     "row": "Florida 2023 DIVORCE",
+     "equal": true
+    },
+    {
+     "row": "New York 2022 MARRIAGE",
+     "equal": true
+    },
+    {
+     "row": "Pennsylvania 2023 MARRIAGE",
+     "equal": true
+    }
+   ],
+   "rate_check": {
+    "compared": 1242,
+    "within_tenth": 1183,
+    "share": 0.9525
+   }
+  },
+  "3_join": {
+   "passed": true,
+   "compared": 1020,
+   "equal": 1020
+  },
+  "4_rule": {
+   "passed": true,
+   "detail": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  }
+ },
+ "gates_passed": true,
+ "rows": 1428,
+ "cells": {
+  "DIVORCE": {
+   "overall": {
+    "ABOVE": 25,
+    "BELOW": 265,
+    "CONSISTENT": 303,
+    "CANNOT_TELL": 121,
+    "by_reason": {
+     "no stated count": 51,
+     "state does not report": 69,
+     "no ACS interval": 1
+    },
+    "sex_split": 246,
+    "rows": 714,
+    "read": "MIXED"
+   },
+   "excluding_destination": {
+    "ABOVE": 19,
+    "BELOW": 265,
+    "CONSISTENT": 296,
+    "CANNOT_TELL": 120,
+    "by_reason": {
+     "no stated count": 50,
+     "state does not report": 69,
+     "no ACS interval": 1
+    },
+    "sex_split": 242,
+    "rows": 700,
+    "read": "MIXED"
+   },
+   "destination": {
+    "ABOVE": 6,
+    "BELOW": 0,
+    "CONSISTENT": 7,
+    "CANNOT_TELL": 1,
+    "by_reason": {
+     "no stated count": 1
+    },
+    "sex_split": 4,
+    "rows": 14,
+    "read": "MIXED"
+   },
+   "by_state": {
+    "Alabama": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.823
+    },
+    "Alaska": {
+     "ABOVE": 4,
+     "BELOW": 1,
+     "CONSISTENT": 8,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.23
+    },
+    "Arizona": {
+     "ABOVE": 0,
+     "BELOW": 6,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.9
+    },
+    "Arkansas": {
+     "ABOVE": 0,
+     "BELOW": 6,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.822
+    },
+    "California": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 14,
+     "by_reason": {
+      "state does not report": 13,
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "CANNOT_TELL",
+     "median_ratio": null
+    },
+    "Colorado": {
+     "ABOVE": 0,
+     "BELOW": 3,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 6,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.968
+    },
+    "Connecticut": {
+     "ABOVE": 1,
+     "BELOW": 5,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 6,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.935
+    },
+    "Delaware": {
+     "ABOVE": 0,
+     "BELOW": 5,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 2,
+     "by_reason": {
+      "no ACS interval": 1,
+      "no stated count": 1
+     },
+     "sex_split": 8,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.778
+    },
+    "District of Columbia": {
+     "ABOVE": 2,
+     "BELOW": 0,
+     "CONSISTENT": 11,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.952
+    },
+    "Florida": {
+     "ABOVE": 0,
+     "BELOW": 2,
+     "CONSISTENT": 11,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 12,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 1.016
+    },
+    "Georgia": {
+     "ABOVE": 0,
+     "BELOW": 5,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 8,
+     "by_reason": {
+      "state does not report": 7,
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.696
+    },
+    "Hawaii": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 14,
+     "by_reason": {
+      "state does not report": 13,
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "CANNOT_TELL",
+     "median_ratio": null
+    },
+    "Idaho": {
+     "ABOVE": 0,
+     "BELOW": 3,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.933
+    },
+    "Illinois": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.707
+    },
+    "Indiana": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 14,
+     "by_reason": {
+      "state does not report": 13,
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "CANNOT_TELL",
+     "median_ratio": null
+    },
+    "Iowa": {
+     "ABOVE": 0,
+     "BELOW": 12,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.628
+    },
+    "Kansas": {
+     "ABOVE": 0,
+     "BELOW": 12,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.683
+    },
+    "Kentucky": {
+     "ABOVE": 0,
+     "BELOW": 10,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 6,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.814
+    },
+    "Louisiana": {
+     "ABOVE": 0,
+     "BELOW": 9,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 4,
+     "by_reason": {
+      "state does not report": 3,
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.581
+    },
+    "Maine": {
+     "ABOVE": 1,
+     "BELOW": 2,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.849
+    },
+    "Maryland": {
+     "ABOVE": 0,
+     "BELOW": 10,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.748
+    },
+    "Massachusetts": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 9,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.667
+    },
+    "Michigan": {
+     "ABOVE": 0,
+     "BELOW": 10,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.88
+    },
+    "Minnesota": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 14,
+     "by_reason": {
+      "state does not report": 13,
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "CANNOT_TELL",
+     "median_ratio": null
+    },
+    "Mississippi": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.829
+    },
+    "Missouri": {
+     "ABOVE": 0,
+     "BELOW": 9,
+     "CONSISTENT": 4,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.855
+    },
+    "Montana": {
+     "ABOVE": 1,
+     "BELOW": 3,
+     "CONSISTENT": 9,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.81
+    },
+    "Nebraska": {
+     "ABOVE": 0,
+     "BELOW": 2,
+     "CONSISTENT": 11,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.9
+    },
+    "Nevada": {
+     "ABOVE": 6,
+     "BELOW": 0,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.149
+    },
+    "New Hampshire": {
+     "ABOVE": 0,
+     "BELOW": 4,
+     "CONSISTENT": 9,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.87
+    },
+    "New Jersey": {
+     "ABOVE": 2,
+     "BELOW": 1,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.032
+    },
+    "New Mexico": {
+     "ABOVE": 0,
+     "BELOW": 3,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 8,
+     "by_reason": {
+      "state does not report": 7,
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.828
+    },
+    "New York": {
+     "ABOVE": 2,
+     "BELOW": 4,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 11,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.953
+    },
+    "North Carolina": {
+     "ABOVE": 0,
+     "BELOW": 5,
+     "CONSISTENT": 8,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.907
+    },
+    "North Dakota": {
+     "ABOVE": 0,
+     "BELOW": 1,
+     "CONSISTENT": 12,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.902
+    },
+    "Ohio": {
+     "ABOVE": 0,
+     "BELOW": 11,
+     "CONSISTENT": 2,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 9,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.875
+    },
+    "Oklahoma": {
+     "ABOVE": 0,
+     "BELOW": 4,
+     "CONSISTENT": 9,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.95
+    },
+    "Oregon": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 9,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.794
+    },
+    "Pennsylvania": {
+     "ABOVE": 0,
+     "BELOW": 9,
+     "CONSISTENT": 4,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.873
+    },
+    "Rhode Island": {
+     "ABOVE": 3,
+     "BELOW": 0,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.922
+    },
+    "South Carolina": {
+     "ABOVE": 0,
+     "BELOW": 11,
+     "CONSISTENT": 2,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 6,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.775
+    },
+    "South Dakota": {
+     "ABOVE": 0,
+     "BELOW": 1,
+     "CONSISTENT": 12,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.877
+    },
+    "Tennessee": {
+     "ABOVE": 0,
+     "BELOW": 7,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 9,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.898
+    },
+    "Texas": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.669
+    },
+    "Utah": {
+     "ABOVE": 1,
+     "BELOW": 4,
+     "CONSISTENT": 8,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.944
+    },
+    "Vermont": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 13,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 1.079
+    },
+    "Virginia": {
+     "ABOVE": 1,
+     "BELOW": 5,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 6,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.906
+    },
+    "Washington": {
+     "ABOVE": 0,
+     "BELOW": 7,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 8,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.886
+    },
+    "West Virginia": {
+     "ABOVE": 0,
+     "BELOW": 1,
+     "CONSISTENT": 12,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 6,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.896
+    },
+    "Wisconsin": {
+     "ABOVE": 0,
+     "BELOW": 7,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.876
+    },
+    "Wyoming": {
+     "ABOVE": 1,
+     "BELOW": 2,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.0
+    }
+   },
+   "by_year": {
+    "2010": {
+     "ABOVE": 2,
+     "BELOW": 24,
+     "CONSISTENT": 19,
+     "CANNOT_TELL": 6,
+     "by_reason": {
+      "state does not report": 6
+     },
+     "sex_split": 21,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2011": {
+     "ABOVE": 1,
+     "BELOW": 20,
+     "CONSISTENT": 24,
+     "CANNOT_TELL": 6,
+     "by_reason": {
+      "state does not report": 6
+     },
+     "sex_split": 20,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2012": {
+     "ABOVE": 1,
+     "BELOW": 26,
+     "CONSISTENT": 18,
+     "CANNOT_TELL": 6,
+     "by_reason": {
+      "state does not report": 6
+     },
+     "sex_split": 17,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2013": {
+     "ABOVE": 2,
+     "BELOW": 22,
+     "CONSISTENT": 22,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 20,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2014": {
+     "ABOVE": 3,
+     "BELOW": 23,
+     "CONSISTENT": 20,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 22,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2015": {
+     "ABOVE": 1,
+     "BELOW": 16,
+     "CONSISTENT": 29,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 19,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2016": {
+     "ABOVE": 0,
+     "BELOW": 16,
+     "CONSISTENT": 29,
+     "CANNOT_TELL": 6,
+     "by_reason": {
+      "state does not report": 6
+     },
+     "sex_split": 13,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2017": {
+     "ABOVE": 1,
+     "BELOW": 20,
+     "CONSISTENT": 25,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 22,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2018": {
+     "ABOVE": 4,
+     "BELOW": 18,
+     "CONSISTENT": 23,
+     "CANNOT_TELL": 6,
+     "by_reason": {
+      "state does not report": 5,
+      "no ACS interval": 1
+     },
+     "sex_split": 14,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2019": {
+     "ABOVE": 3,
+     "BELOW": 15,
+     "CONSISTENT": 28,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 19,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2021": {
+     "ABOVE": 3,
+     "BELOW": 15,
+     "CONSISTENT": 28,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 18,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2022": {
+     "ABOVE": 3,
+     "BELOW": 25,
+     "CONSISTENT": 18,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 23,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2023": {
+     "ABOVE": 1,
+     "BELOW": 25,
+     "CONSISTENT": 20,
+     "CANNOT_TELL": 5,
+     "by_reason": {
+      "state does not report": 5
+     },
+     "sex_split": 18,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2024": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 51,
+     "by_reason": {
+      "no stated count": 51
+     },
+     "sex_split": 0,
+     "rows": 51,
+     "read": "CANNOT_TELL"
+    }
+   }
+  },
+  "MARRIAGE": {
+   "overall": {
+    "ABOVE": 95,
+    "BELOW": 313,
+    "CONSISTENT": 253,
+    "CANNOT_TELL": 53,
+    "by_reason": {
+     "no stated count": 51,
+     "state does not report": 2
+    },
+    "sex_split": 85,
+    "rows": 714,
+    "read": "MIXED"
+   },
+   "excluding_destination": {
+    "ABOVE": 69,
+    "BELOW": 313,
+    "CONSISTENT": 253,
+    "CANNOT_TELL": 51,
+    "by_reason": {
+     "no stated count": 49,
+     "state does not report": 2
+    },
+    "sex_split": 85,
+    "rows": 686,
+    "read": "MIXED"
+   },
+   "destination": {
+    "ABOVE": 26,
+    "BELOW": 0,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 2,
+    "by_reason": {
+     "no stated count": 2
+    },
+    "sex_split": 0,
+    "rows": 28,
+    "read": "ABOVE"
+   },
+   "by_state": {
+    "Alabama": {
+     "ABOVE": 2,
+     "BELOW": 0,
+     "CONSISTENT": 11,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 1.048
+    },
+    "Alaska": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.743
+    },
+    "Arizona": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.826
+    },
+    "Arkansas": {
+     "ABOVE": 10,
+     "BELOW": 0,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.195
+    },
+    "California": {
+     "ABOVE": 0,
+     "BELOW": 11,
+     "CONSISTENT": 2,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.923
+    },
+    "Colorado": {
+     "ABOVE": 0,
+     "BELOW": 11,
+     "CONSISTENT": 2,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.842
+    },
+    "Connecticut": {
+     "ABOVE": 0,
+     "BELOW": 3,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.936
+    },
+    "Delaware": {
+     "ABOVE": 0,
+     "BELOW": 4,
+     "CONSISTENT": 9,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.829
+    },
+    "District of Columbia": {
+     "ABOVE": 2,
+     "BELOW": 1,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 7,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.877
+    },
+    "Florida": {
+     "ABOVE": 12,
+     "BELOW": 0,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "ABOVE",
+     "median_ratio": 1.156
+    },
+    "Georgia": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 3,
+     "by_reason": {
+      "state does not report": 2,
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.856
+    },
+    "Hawaii": {
+     "ABOVE": 13,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "ABOVE",
+     "median_ratio": 2.11
+    },
+    "Idaho": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 13,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.988
+    },
+    "Illinois": {
+     "ABOVE": 0,
+     "BELOW": 9,
+     "CONSISTENT": 4,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.903
+    },
+    "Indiana": {
+     "ABOVE": 0,
+     "BELOW": 11,
+     "CONSISTENT": 2,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.88
+    },
+    "Iowa": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.858
+    },
+    "Kansas": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.763
+    },
+    "Kentucky": {
+     "ABOVE": 0,
+     "BELOW": 7,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.907
+    },
+    "Louisiana": {
+     "ABOVE": 0,
+     "BELOW": 6,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.926
+    },
+    "Maine": {
+     "ABOVE": 5,
+     "BELOW": 1,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.121
+    },
+    "Maryland": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.85
+    },
+    "Massachusetts": {
+     "ABOVE": 0,
+     "BELOW": 11,
+     "CONSISTENT": 2,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.895
+    },
+    "Michigan": {
+     "ABOVE": 0,
+     "BELOW": 9,
+     "CONSISTENT": 4,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.871
+    },
+    "Minnesota": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.802
+    },
+    "Mississippi": {
+     "ABOVE": 0,
+     "BELOW": 6,
+     "CONSISTENT": 7,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.9
+    },
+    "Missouri": {
+     "ABOVE": 0,
+     "BELOW": 9,
+     "CONSISTENT": 4,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.856
+    },
+    "Montana": {
+     "ABOVE": 4,
+     "BELOW": 0,
+     "CONSISTENT": 9,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.11
+    },
+    "Nebraska": {
+     "ABOVE": 0,
+     "BELOW": 7,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.856
+    },
+    "Nevada": {
+     "ABOVE": 13,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "ABOVE",
+     "median_ratio": 3.807
+    },
+    "New Hampshire": {
+     "ABOVE": 1,
+     "BELOW": 0,
+     "CONSISTENT": 12,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 1.043
+    },
+    "New Jersey": {
+     "ABOVE": 0,
+     "BELOW": 7,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.923
+    },
+    "New Mexico": {
+     "ABOVE": 3,
+     "BELOW": 0,
+     "CONSISTENT": 10,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.001
+    },
+    "New York": {
+     "ABOVE": 10,
+     "BELOW": 0,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.119
+    },
+    "North Carolina": {
+     "ABOVE": 0,
+     "BELOW": 8,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 5,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.925
+    },
+    "North Dakota": {
+     "ABOVE": 0,
+     "BELOW": 9,
+     "CONSISTENT": 4,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.705
+    },
+    "Ohio": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.877
+    },
+    "Oklahoma": {
+     "ABOVE": 0,
+     "BELOW": 12,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.807
+    },
+    "Oregon": {
+     "ABOVE": 0,
+     "BELOW": 7,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.9
+    },
+    "Pennsylvania": {
+     "ABOVE": 0,
+     "BELOW": 11,
+     "CONSISTENT": 2,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.884
+    },
+    "Rhode Island": {
+     "ABOVE": 2,
+     "BELOW": 0,
+     "CONSISTENT": 11,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 1,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 1.101
+    },
+    "South Carolina": {
+     "ABOVE": 2,
+     "BELOW": 2,
+     "CONSISTENT": 9,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 3,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.048
+    },
+    "South Dakota": {
+     "ABOVE": 0,
+     "BELOW": 2,
+     "CONSISTENT": 11,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.914
+    },
+    "Tennessee": {
+     "ABOVE": 6,
+     "BELOW": 1,
+     "CONSISTENT": 6,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.074
+    },
+    "Texas": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.888
+    },
+    "Utah": {
+     "ABOVE": 2,
+     "BELOW": 8,
+     "CONSISTENT": 3,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.879
+    },
+    "Vermont": {
+     "ABOVE": 8,
+     "BELOW": 0,
+     "CONSISTENT": 5,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 1.264
+    },
+    "Virginia": {
+     "ABOVE": 0,
+     "BELOW": 12,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.894
+    },
+    "Washington": {
+     "ABOVE": 0,
+     "BELOW": 13,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.8
+    },
+    "West Virginia": {
+     "ABOVE": 0,
+     "BELOW": 2,
+     "CONSISTENT": 11,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 2,
+     "rows": 14,
+     "read": "CONSISTENT",
+     "median_ratio": 0.945
+    },
+    "Wisconsin": {
+     "ABOVE": 0,
+     "BELOW": 12,
+     "CONSISTENT": 1,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 0,
+     "rows": 14,
+     "read": "BELOW",
+     "median_ratio": 0.839
+    },
+    "Wyoming": {
+     "ABOVE": 0,
+     "BELOW": 4,
+     "CONSISTENT": 9,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "no stated count": 1
+     },
+     "sex_split": 4,
+     "rows": 14,
+     "read": "MIXED",
+     "median_ratio": 0.801
+    }
+   },
+   "by_year": {
+    "2010": {
+     "ABOVE": 9,
+     "BELOW": 23,
+     "CONSISTENT": 19,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 4,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2011": {
+     "ABOVE": 9,
+     "BELOW": 18,
+     "CONSISTENT": 24,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 10,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2012": {
+     "ABOVE": 8,
+     "BELOW": 24,
+     "CONSISTENT": 19,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 6,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2013": {
+     "ABOVE": 9,
+     "BELOW": 22,
+     "CONSISTENT": 19,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "state does not report": 1
+     },
+     "sex_split": 7,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2014": {
+     "ABOVE": 7,
+     "BELOW": 21,
+     "CONSISTENT": 22,
+     "CANNOT_TELL": 1,
+     "by_reason": {
+      "state does not report": 1
+     },
+     "sex_split": 9,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2015": {
+     "ABOVE": 6,
+     "BELOW": 26,
+     "CONSISTENT": 19,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 8,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2016": {
+     "ABOVE": 6,
+     "BELOW": 25,
+     "CONSISTENT": 20,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 6,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2017": {
+     "ABOVE": 8,
+     "BELOW": 24,
+     "CONSISTENT": 19,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 4,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2018": {
+     "ABOVE": 8,
+     "BELOW": 22,
+     "CONSISTENT": 21,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 10,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2019": {
+     "ABOVE": 7,
+     "BELOW": 28,
+     "CONSISTENT": 16,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 7,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2021": {
+     "ABOVE": 8,
+     "BELOW": 21,
+     "CONSISTENT": 22,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 6,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2022": {
+     "ABOVE": 6,
+     "BELOW": 28,
+     "CONSISTENT": 17,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 3,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2023": {
+     "ABOVE": 4,
+     "BELOW": 31,
+     "CONSISTENT": 16,
+     "CANNOT_TELL": 0,
+     "by_reason": {},
+     "sex_split": 5,
+     "rows": 51,
+     "read": "MIXED"
+    },
+    "2024": {
+     "ABOVE": 0,
+     "BELOW": 0,
+     "CONSISTENT": 0,
+     "CANNOT_TELL": 51,
+     "by_reason": {
+      "no stated count": 51
+     },
+     "sex_split": 0,
+     "rows": 51,
+     "read": "CANNOT_TELL"
+    }
+   }
+  }
+ },
+ "snapshot_files_copied": 3
+}

@@ -1,0 +1,21 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:30:20,463: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 22:30:24,495: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (pay-as-you-go, open), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:30:24,496: Loading account with the given token. A saved account will not be used.
+ibm_kingston: 8 circuits (their Tier A), 8192 shots, 4 jobs A1 B1 B2 A2, physical qubits [(5, 6, 7), (6, 98, 153)], depth and 2Q count both equal to his transpile in 3/8, 2Q count equal in 7/8, est 80 s (cap 300), remaining 2501
+   ladder_n3_M1_r2 {'layout': [5, 7, 6], 'depth': 144, 'two_q': 39, 'his_depth': 139, 'his_two_q': 39, 'reproduces_his': False}
+   ladder_n3_M1_r1 {'layout': [5, 6, 7], 'depth': 75, 'two_q': 20, 'his_depth': 71, 'his_two_q': 19, 'reproduces_his': False}
+   readout_n3_zeros {'layout': [6, 98, 153], 'depth': 1, 'two_q': 0, 'his_depth': 1, 'his_two_q': 0, 'reproduces_his': True}
+   ladder_n3_M1_r4 {'layout': [5, 7, 6], 'depth': 286, 'two_q': 79, 'his_depth': 281, 'his_two_q': 79, 'reproduces_his': False}
+   echo_n3_M1_r2 {'layout': [5, 7, 6], 'depth': 290, 'two_q': 79, 'his_depth': 283, 'his_two_q': 79, 'reproduces_his': False}
+   ladder_n3_M1_r3 {'layout': [5, 7, 6], 'depth': 210, 'two_q': 57, 'his_depth': 206, 'his_two_q': 57, 'reproduces_his': False}
+   readout_n3_ones {'layout': [6, 98, 153], 'depth': 2, 'two_q': 0, 'his_depth': 2, 'his_two_q': 0, 'reproduces_his': True}
+   ladder_n3_M1_r0 {'layout': [6, 98, 153], 'depth': 4, 'two_q': 0, 'his_depth': 4, 'his_two_q': 0, 'reproduces_his': True}
+SUBMITTED job A1 dbemjhnsstms73fcc6mg 2026-10-25T02:30:30Z (remaining before 2501)
+DONE job A1 usage 20 s (total 20)
+SUBMITTED job B1 dbemjsvpc3tc739m0b70 2026-10-25T02:31:15Z (remaining before 2458)
+DONE job B1 usage 20 s (total 40)
+SUBMITTED job B2 dbemk3fgdj9s73fm38p0 2026-10-25T02:31:41Z (remaining before 2412)
+DONE job B2 usage 20 s (total 60)
+SUBMITTED job A2 dbemk9vpc3tc739m0cng 2026-10-25T02:32:07Z (remaining before 2379)
+DONE job A2 usage 20 s (total 80)
+ALL DONE 80 s

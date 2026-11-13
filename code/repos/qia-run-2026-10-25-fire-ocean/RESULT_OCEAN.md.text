@@ -1,0 +1,14 @@
+# RESULT -- Zenodo 22856763 (Honrao, Quantum Ocean Part 93) on ibm_fez, job dbemgl7gdj9s73fm2vs0, 2026-10-25 02:24Z, 13 s
+OUTCOME: NOT DECIDED. The pre-set KNOWN-GOOD failed: CONTROL_1 read GHZ error 0.6315, rule > 0.70. By the plan's own rule the run reads nothing.
+Why it failed (my error, logged in tp_score): the known answer assumed the IBM record's cz gate_error = 1.0 marks a dead coupler. Couplers 71-72 and
+72-73 carried 1.0 in the record at submission (props_before.json), yet the chain made GHZ 37% of the time. The record value 1.0 is a flag, not a
+measured dead link.
+The same lesson reaches the zero-QPU check written into the plan: ANTI_DRAIN today, with 32-33 still flagged 1.0 and 31-32 at 3.4%, delivered delta
+0.080 (theirs on 2026-09-20: 0.396). So the record flag does not explain their Sep-20 anti-drain number: that explanation is CANNOT_TELL, withdrawn.
+What still stands without this run: their own table has CONTROL_2 at the lowest GHZ error (0.1475) and lowest delta (0.0705); DRAIN is lowest only on
+the ratio GHZ/basis, whose denominator is the readout error, and DRAIN has the largest basis error of the three working groups (0.1192).
+Descriptive only (not readings, the instrument check failed): delta DRAIN 0.035, ANTI_DRAIN 0.080, CONTROL_2 0.045, ANTI_HEALTHY 0.086, CONTROL_1 0.476;
+penalty DRAIN 1.28 (lowest), CONTROL_2 1.68, ANTI_DRAIN 1.90, ANTI_HEALTHY 2.86, CONTROL_1 4.07; decider ANTI_HEALTHY - DRAIN +0.051 [0.028, 0.074].
+Raw counts: raw_counts_ocean.json; records props_before.json / props_after.json.
+Next run that could decide it: a known-good whose answer is measured on hardware, not read from a record flag (e.g. a group run twice in the same job,
+or a group with a coupler we break deliberately by inserting a reset), then the same decider. Not fired tonight.

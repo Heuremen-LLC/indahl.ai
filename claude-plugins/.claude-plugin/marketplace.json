@@ -1,0 +1,77 @@
+{
+  "name": "heuremen",
+  "owner": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "metadata": {
+    "description": "Heuremen LLC plugins: check papers and LLM eval claims against our Standards, gate readings with a check block, query and reproduce every indahl.ai desk, and check and correct IBM Quantum runs.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "indahl-standards",
+      "source": "./plugins/standards",
+      "description": "Check a paper or claim against the Standards claim codes and return a recount card with quotes, scope and four-state statuses. The agent is told to treat fetched paper text as data, not instructions.",
+      "version": "1.0.1",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-readcheck",
+      "source": "./plugins/readcheck",
+      "description": "Refuse a git commit that adds a reading (results, outcomes) without a complete check block keyed to the Standards recount requirements.",
+      "version": "1.1.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-qia-calibration",
+      "source": "./plugins/qia-calibration",
+      "description": "Check the IBM Quantum calibration record a run depends on, before the run and after it. Read-only, standard library only, and measure T1 and T2 together on chosen qubits in one job.",
+      "version": "1.1.1",
+      "category": "research",
+      "homepage": "https://indahl.ai/qia"
+    },
+    {
+      "name": "indahl-data",
+      "source": "./plugins/indahl-data",
+      "description": "Every live indahl.ai desk inside Claude Code through the read-only indahl.ai MCP server, quoted with interval, outcome and receipt. The agent is told to treat API responses as data, not instructions.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/mcp"
+    },
+    {
+      "name": "indahl-reproduce",
+      "source": "./plugins/reproduce",
+      "description": "Recompute an indahl.ai desk headline that has a reproduce kit, with the kit's own code, and check the published sha256. Nothing runs without a go bound to the commit you reviewed.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/reproduce"
+    },
+    {
+      "name": "indahl-darkwave",
+      "source": "./plugins/darkwave-correction",
+      "description": "Measure the phase turn on untouched qubits after a mid-circuit readout on IBM Quantum hardware and add the matching virtual-Z correction.",
+      "version": "1.1.1",
+      "category": "research",
+      "homepage": "https://indahl.ai/darkwave"
+    },
+    {
+      "name": "indahl-eval-check",
+      "source": "./plugins/eval-check",
+      "description": "Check an LLM evaluation claim or your own eval run: setup as part of the result, parser checked against raw replies, repeat floor, dropped items, intervals and four outcomes. The agent is told to treat fetched papers, files and model outputs as data, not instructions.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/iris"
+    },
+    {
+      "name": "indahl-prereg",
+      "source": "./plugins/prereg",
+      "description": "Show that a plan was pushed before the first run, from your git host's own push record (no outside timestamp chain), and list what ran that the plan did not cover.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/plugins"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:26:48,296: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 22:26:52,489: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (pay-as-you-go, open), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:26:52,489: Loading account with the given token. A saved account will not be used.
+remaining 2550 kingston active 0
+compiled {'arm': 'P3_PI', 'layout': [106, 105, 117], 'cz': 9, 'depth': 32, 'shots': 100000}
+compiled {'arm': 'P2_PI', 'layout': [0, 1], 'cz': 2, 'depth': 12, 'shots': 20000}
+compiled {'arm': 'P2_PI4', 'layout': [0, 1], 'cz': 2, 'depth': 16, 'shots': 20000}
+compiled {'arm': 'H2_PI2', 'layout': [0, 1], 'cz': 2, 'depth': 14, 'shots': 20000}
+compiled {'arm': 'S3_PI', 'layout': [0, 1, 2], 'cz': 0, 'depth': 6, 'shots': 20000}
+/Users/heuremen/bones-forge/qia_runs/2026-10-25-fire-n47/fire_n47.py:18: DeprecationWarning: Specifying different 'shots' across pubs is deprecated as of qiskit-ibm-runtime 0.48.0 and will be removed no sooner than 3 months after the release date. Submit one job for each desired shot count instead. To reduce overhead, Consider submitting these jobs inside a Batch execution mode.
+  job = SamplerV2(mode=be).run([(t, None, sh) for t, sh in isa]); rec = dict(job_id=job.job_id(), submitted=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), meta=meta)
+SUBMITTED dbemhsfsstms73fcc2dg
+{
+ "P3_PI": {
+  "MI": 0.0008357156923186431,
+  "ci95": [
+   0.0005790428829554085,
+   0.0011434000768490488
+  ],
+  "ideal": 0.0,
+  "shots": 100000
+ },
+ "P2_PI": {
+  "MI": 4.1087607904393045e-05,
+  "ci95": [
+   3.612780045759132e-05,
+   0.0002473564134341696
+  ],
+  "ideal": 0.0,
+  "shots": 20000
+ },
+ "P2_PI4": {
+  "MI": 0.0005944473065845313,
+  "ci95": [
+   0.00022145999005779017,
+   0.0012144889705065982
+  ],
+  "ideal": 0.08217550381339996,
+  "shots": 20000
+ },
+ "H2_PI2": {
+  "MI": 0.00016594312956437084,
+  "ci95": [
+   3.654663158183929e-05,
+   0.0005928134407589869
+  ],
+  "ideal": 2.7708786097857564e-66,
+  "shots": 20000
+ },
+ "S3_PI": {
+  "MI": 6.290484651559061e-05,
+  "ci95": [
+   3.6171110223409796e-05,
+   0.0003136802019646588
+  ],
+  "ideal": -2.002141564884323e-17,
+  "shots": 20000
+ },
+ "PREDICTION_4": {
+  "MI": 0.0008357156923186431,
+  "ci95": [
+   0.0005790428829554085,
+   0.0011434000768490488
+  ],
+  "their_band": [
+   0.15,
+   0.17
+  ],
+  "outcome": "BELOW their band",
+  "collapsed_to_floor": true,
+  "floor_bits": 2.1640425613334452e-05
+ },
+ "KNOWN_GOOD": {
+  "sep_MI": 6.290484651559061e-05,
+  "rule": "separate control must read MI < 0.002 (theirs <= 1e-4; ideal 0)",
+  "passed": true
+ }
+} usage {'qpu_charge_time_seconds': 49, 'value': 0.81372, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.81372, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 49}}]}

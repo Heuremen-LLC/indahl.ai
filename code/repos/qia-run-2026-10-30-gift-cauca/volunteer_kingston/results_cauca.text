@@ -1,0 +1,54 @@
+Legend. Jobs on ibm_kingston, 24 Oct 2026, in the order A B B A (A = your level 2 circuits, B = your level 0 circuits), about 7 minutes in all.
+R3 KNOWN-GOOD: your released counts through our code against your published means.
+R1 DRIFT: job 4 minus job 1 (same level 2 circuits). R2 LEVEL: level 2 minus level 0, ABBA-averaged.
+R4 TWIN: your paper's twin, rebuilt from the record saved before job 1, minus our hardware. R5: |drift| as a share of your published twin gap.
+A reading is CANNOT_TELL where our job-to-job noise is larger than the size it is judged against (your published numbers, fixed before the run).
+
+R3 KNOWN-GOOD L2: mine [0.9647 0.9374 0.9164 0.8691 0.8033 0.7099 0.5871 0.5075] published [0.9647 0.9374 0.9164 0.8691 0.8033 0.7099 0.5871 0.5075] max|diff| 0.0e+00
+R3 KNOWN-GOOD L0: mine [0.9641 0.9346 0.9083 0.8571 0.7802 0.5896 0.5136 0.4615] published [0.9641 0.9346 0.9083 0.8571 0.7802 0.5896 0.5136 0.4615] max|diff| 0.0e+00
+R3 -> PASS
+N                        2       3       4       5       6       7       8       9
+P job 1 (A)       0.8625  0.6427  0.5735  0.5860  0.6082  0.6138  0.5915  0.5762
+P job 2 (B)       0.8599  0.6411  0.5768  0.5916  0.6150  0.6249  0.6066  0.5759
+P job 3 (B)       0.8523  0.6421  0.5817  0.5966  0.6184  0.6216  0.6039  0.5624
+P job 4 (A)       0.8551  0.6530  0.5810  0.5832  0.6072  0.6157  0.5996  0.5637
+R1 DRIFT dA=P4-P1  -0.0074  0.0102  0.0075 -0.0028 -0.0010  0.0019  0.0081 -0.0125
+   interval lo     -0.0134  0.0015 -0.0008 -0.0112 -0.0101 -0.0070 -0.0006 -0.0211
+   interval hi     -0.0011  0.0187  0.0161  0.0066  0.0074  0.0105  0.0169 -0.0039
+   null half-width  0.0059  0.0083  0.0090  0.0088  0.0085  0.0085  0.0087  0.0087
+   scale S_gap      0.0926  0.1051  0.0947  0.0687  0.0253  0.0316  0.1139  0.1601
+   outcome         CONSIST CONSIST CONSIST CONSIST CONSIST CONSIST CONSIST CONSIST
+R2 LEVEL g=L2-L0     0.0026  0.0063 -0.0020 -0.0095 -0.0090 -0.0085 -0.0097  0.0008
+   interval lo     -0.0016  0.0004 -0.0082 -0.0156 -0.0154 -0.0147 -0.0162 -0.0054
+   interval hi      0.0069  0.0121  0.0042 -0.0032 -0.0032 -0.0026 -0.0036  0.0071
+   their published  0.0006  0.0028  0.0081  0.0119  0.0230  0.1204  0.0735  0.0460
+   outcome         CANNOT_ CANNOT_ CONSIST CONSIST CONSIST CONSIST CONSIST CONSIST
+R4 TWIN G=twin-hw     0.113   0.301   0.344   0.310   0.267   0.237   0.217   0.198
+   interval lo      0.1104  0.2962  0.3397  0.3050  0.2626  0.2325  0.2130  0.1934
+   interval hi      0.1165  0.3048  0.3483  0.3140  0.2711  0.2410  0.2217  0.2020
+   their g0        -0.0926 -0.1051 -0.0947 -0.0687 -0.0253  0.0316  0.1139  0.1601
+   outcome           ABOVE   ABOVE   ABOVE   ABOVE   ABOVE   ABOVE   ABOVE   ABOVE
+   sign change of gap (neg to pos) between N = None-None   (theirs: 6-7);  twin_4 - twin_1 (record movement):  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+R5 SHARE |dA|/S_gap   0.080   0.097   0.079   0.041   0.040   0.059   0.071   0.078   max 0.097
+
+== Twin checks from your own files (30 Oct, zero QPU) ==
+fidelity keys ['raw', 'corrected', 'digital_twin']
+N               2       3       4       5       6       7       8       9
+hardware   0.9647  0.9374  0.9164  0.8691  0.8033  0.7099  0.5871  0.5075
+twin f2=1  0.8686  0.8334  0.8209  0.7978  0.7759  0.7405  0.7031  0.6683
+twin f2=1.21  0.8679  0.8316  0.8182  0.7940  0.7706  0.7338  0.6938  0.6542 | share of gap closed  -0.01  -0.02  -0.03  -0.05  -0.19  +0.22  +0.08  +0.09
+twin f2=1.3  0.8676  0.8307  0.8170  0.7924  0.7684  0.7309  0.6899  0.6482 | share of gap closed  -0.01  -0.03  -0.04  -0.08  -0.27  +0.31  +0.11  +0.12
+twin f2=1.31  0.8676  0.8307  0.8169  0.7922  0.7681  0.7306  0.6894  0.6476 | share of gap closed  -0.01  -0.03  -0.04  -0.08  -0.28  +0.32  +0.12  +0.13
+twin f2=1.39  0.8673  0.8299  0.8159  0.7908  0.7661  0.7281  0.6860  0.6423 | share of gap closed  -0.01  -0.03  -0.05  -0.10  -0.36  +0.41  +0.15  +0.16
+their digital_twin column  0.7745  0.7601  0.7537  0.7277  0.7105  0.6936  0.6458  0.6212
+twin f2=1.21 f1=1.306  0.8673  0.8303  0.8163  0.7905  0.7656  0.7276  0.6871  0.6471 | closed  -0.01  -0.03  -0.05  -0.10  -0.37  +0.42  +0.14  +0.13
+twin f2=1.3 f1=1.31  0.8670  0.8295  0.8151  0.7888  0.7633  0.7247  0.6831  0.6411 | closed  -0.02  -0.04  -0.06  -0.13  -0.46  +0.52  +0.17  +0.17
+twin f2=1.39 f1=1.366  0.8665  0.8284  0.8136  0.7866  0.7602  0.7207  0.6780  0.6340 | closed  -0.02  -0.05  -0.08  -0.16  -0.57  +0.65  +0.22  +0.21
+
+keys in P ['T1', 'T2', 'P01', 'P10', 'ge', 'gt', 'gates', 'date']
+P01 (meas0|prep1) q0..q9 [0.0251, 0.1028, 0.03, 0.0056, 0.0129, 0.0066, 0.0249, 0.0239, 0.0049]
+P10 (meas1|prep0) q0..q9 [0.0034, 0.2185, 0.0054, 0.0039, 0.0244, 0.0054, 0.0139, 0.0417, 0.0012]
+N                     2       3       4       5       6       7       8       9
+hardware         0.9647  0.9374  0.9164  0.8691  0.8033  0.7099  0.5871  0.5075
+twin as printed  0.8686  0.8334  0.8209  0.7978  0.7759  0.7405  0.7031  0.6683 | gap  -0.096  -0.104  -0.095  -0.071  -0.027  +0.031  +0.116  +0.161
+twin q1 median   0.9500  0.9116  0.8979  0.8726  0.8486  0.8099  0.7690  0.7309 | gap  -0.015  -0.026  -0.018  +0.003  +0.045  +0.100  +0.182  +0.223

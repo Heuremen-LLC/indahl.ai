@@ -1,0 +1,188 @@
+{
+  "variables": {
+    "H_STATES_010A": {
+      "label": "Annotation of Omissions (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_011A": {
+      "label": "Annotation of Net Coverage Error (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_002A": {
+      "label": "Annotation of Census Count",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_005A": {
+      "label": "Annotation of Erroneous Enumerations - Different State (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_006A": {
+      "label": "Annotation of Erroneous Enumerations - Duplication (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_003A": {
+      "label": "Annotation of Correct Enumerations - Same County (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_004A": {
+      "label": "Annotation of Correct Enumerations - Different County (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_002": {
+      "label": "Census Count",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_003": {
+      "label": "Correct Enumerations - Same County (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_004": {
+      "label": "Correct Enumerations - Different County (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_005": {
+      "label": "Erroneous Enumerations - Different State (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_001": {
+      "label": "Estimate Type",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_009A": {
+      "label": "Annotation of DSE Correct Enumerations (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_006": {
+      "label": "Erroneous Enumerations - Duplication (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_007": {
+      "label": "Erroneous Enumerations - Other (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_008": {
+      "label": "Whole-Person Census Imputations (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_009": {
+      "label": "DSE Correct Enumerations (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_010": {
+      "label": "Omissions (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_011": {
+      "label": "Net Coverage Error (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "float",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_007A": {
+      "label": "Annotation of Erroneous Enumerations - Other (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "H_STATES_008A": {
+      "label": "Annotation of Whole-Person Census Imputations (%)",
+      "concept": "Components of Coverage for the Household Population by State",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "NAME": {
+      "label": "Geographic Area Name",
+      "concept": "Net Coverage Error for the Puerto Rico Household Population;Net Coverage Error for the United States Household Population;Components of Coverage for the Puerto Rico Household Population;Components of Coverage for the United States Household Popluation (in Thousands);Net Coverage Error for the Household Population in Puerto Rico by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Age and Sex;Net Coverage Error for the Household Population in the United States by Age and Sex;Net Coverage Error for the Household Population in the United States by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Net Coverage Error for the Household Population in the United States by Race and Hispanic Origin;Net Coverage Error for the Household Population in the United States by Census Tract Self-Response Rate;Net Coverage Error for the Household Population in Puerto Rico by Sex;Net Coverage Error for the Household Population in the United States by Sex;Net Coverage Error for the Household Population in the United States by Type of Enumeration Area;Net Coverage Error for the Household Population in Puerto Rico by Tenure;Net Coverage Error for the Household Population in the United States by Tenure;Components of Coverage for the Household Population in Puerto Rico by Age;Components of Coverage for the Household Population in Puerto Rico by Age and Sex;Components of Coverage for the Household Population in the United States by Age and Sex;Components of Coverage for the Household Population in the United States by Age;Components of Coverage for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Components of Census Coverage for the Household Population in the United States by Mode;Components of Census Coverage for the Household Population in the United States by Non-ID;Components of Coverage for the Household Population in the United States by Race and Hispanic Origin;Components of Census Coverage for the Household Population in the United States by Relationship to Householder;Components of Coverage for the Household Population in the United States by Census Tract Self-Response Rate;Components of Coverage for the Household Population in Puerto Rico by Sex;Components of Coverage for the Household Population in the United States by Sex;Components of Coverage for the Household Population in the United States by Type of Enumeration Area;Components of Coverage for the Household Population in Puerto Rico by Tenure;Components of Coverage for the Household Population in the United States by Tenure;Net Coverage Error for the Household Population in the United States by Census Region: 2020;Components of Coverage for the Household Population in the United States by Census Region;Net Coverage Error for the Household Population in the United States by States: 2020;Net Coverage Error for Housing Units in Puerto Rico by Occupancy;Net Coverage Error for Housing Units in the United States by Occupancy;Components of Coverage for Housing Units in Puerto Rico;Components of Coverage for Housing Units in the United States;Net Coverage Error for Housing Units in the United States by American Indian Area;Net Coverage Error for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Net Coverage Error for Housing Units in Puerto Rico by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure;Net Coverage Error for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by American Indian Area;Components of Coverage for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Components of Coverage for Housing Units in Puerto Rico by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure;Components of Coverage for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Census Region;Net Coverage Error for Housing Units in the United States by Census Region, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Census Region;Components of Coverage for Housing Units in the United States by Census Region, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by State and Occupancy;Components of Coverage for Housing Units in the United States by State;Components of Coverage for the Household Population by State;Puerto Rico Whole-Person Imputations By Type;United States Whole-Person Imputations by Type;Components of Census Coverage for the Household Population in the United States by Coverage Improvement Operation;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Universe;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Respondent Type",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "GEO_ID": {
+      "label": "Geography",
+      "concept": "Net Coverage Error for the Puerto Rico Household Population;Net Coverage Error for the United States Household Population;Components of Coverage for the Puerto Rico Household Population;Components of Coverage for the United States Household Popluation (in Thousands);Net Coverage Error for the Household Population in Puerto Rico by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Age and Sex;Net Coverage Error for the Household Population in the United States by Age and Sex;Net Coverage Error for the Household Population in the United States by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Net Coverage Error for the Household Population in the United States by Race and Hispanic Origin;Net Coverage Error for the Household Population in the United States by Census Tract Self-Response Rate;Net Coverage Error for the Household Population in Puerto Rico by Sex;Net Coverage Error for the Household Population in the United States by Sex;Net Coverage Error for the Household Population in the United States by Type of Enumeration Area;Net Coverage Error for the Household Population in Puerto Rico by Tenure;Net Coverage Error for the Household Population in the United States by Tenure;Components of Coverage for the Household Population in Puerto Rico by Age;Components of Coverage for the Household Population in Puerto Rico by Age and Sex;Components of Coverage for the Household Population in the United States by Age and Sex;Components of Coverage for the Household Population in the United States by Age;Components of Coverage for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Components of Census Coverage for the Household Population in the United States by Mode;Components of Census Coverage for the Household Population in the United States by Non-ID;Components of Coverage for the Household Population in the United States by Race and Hispanic Origin;Components of Census Coverage for the Household Population in the United States by Relationship to Householder;Components of Coverage for the Household Population in the United States by Census Tract Self-Response Rate;Components of Coverage for the Household Population in Puerto Rico by Sex;Components of Coverage for the Household Population in the United States by Sex;Components of Coverage for the Household Population in the United States by Type of Enumeration Area;Components of Coverage for the Household Population in Puerto Rico by Tenure;Components of Coverage for the Household Population in the United States by Tenure;Net Coverage Error for the Household Population in the United States by Census Region: 2020;Components of Coverage for the Household Population in the United States by Census Region;Net Coverage Error for the Household Population in the United States by States: 2020;Net Coverage Error for Housing Units in Puerto Rico by Occupancy;Net Coverage Error for Housing Units in the United States by Occupancy;Components of Coverage for Housing Units in Puerto Rico;Components of Coverage for Housing Units in the United States;Net Coverage Error for Housing Units in the United States by American Indian Area;Net Coverage Error for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Net Coverage Error for Housing Units in Puerto Rico by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure;Net Coverage Error for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by American Indian Area;Components of Coverage for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Components of Coverage for Housing Units in Puerto Rico by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure;Components of Coverage for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Census Region;Net Coverage Error for Housing Units in the United States by Census Region, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Census Region;Components of Coverage for Housing Units in the United States by Census Region, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by State and Occupancy;Components of Coverage for Housing Units in the United States by State;Components of Coverage for the Household Population by State;Puerto Rico Whole-Person Imputations By Type;United States Whole-Person Imputations by Type;Components of Census Coverage for the Household Population in the United States by Coverage Improvement Operation;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Universe;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Respondent Type",
+      "predicateType": "string",
+      "group": "H_STATES",
+      "limit": 0,
+      "predicateOnly": true
+    }
+  }
+}

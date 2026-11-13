@@ -1,0 +1,11 @@
+us-central1 Iowa 430.0 412.7 285.8 1.50 1.44 above, above
+us-central2 Oklahoma not published 372.2 293.6 not published 1.27 cannot tell, above
+us-east1 South Carolina 560.0 575.8 252.7 2.22 2.28 above, above
+us-east2 Georgia not published 340.4 323.8 not published 1.05 cannot tell, consistent
+us-east4 Northern Virginia, Virginia 322.0 323.1 243.5 1.32 1.33 above, above
+us-east5 Columbus, Ohio 322.0 323.1 482.6 0.67 0.67 below, below
+us-south1 Dallas, Texas 321.0 302.9 348.5 0.92 0.87 consistent, consistent
+us-west1 Oregon 94.0 79.2 165.2 0.57 0.48 below, below
+us-west2 Los Angeles, California 198.0 169.3 178.5 1.11 0.95 consistent, consistent
+us-west3 Salt Lake City, Utah 588.0 555.2 640.9 0.92 0.87 consistent, consistent
+us-west4 Las Vegas, Nevada 373.0 357.3 291.4 1.28 1.23 above, consistent

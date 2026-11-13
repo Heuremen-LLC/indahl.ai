@@ -1,0 +1,2215 @@
+{
+ "generated": "2026-11-11T16:25:01Z",
+ "plan_sha256": "04aaab1bf3f78be446b401e06b2f96392b5764887cceb2fdb97a737d81987eba",
+ "plan_sha256_sealed": "04aaab1bf3f78be446b401e06b2f96392b5764887cceb2fdb97a737d81987eba",
+ "plan_matches_seal": true,
+ "plan_commit": "ed9e74d051852c27d8301ee26b217cfe38acc9f3",
+ "plan_commit_time": "2026-11-11T11:23:30-05:00",
+ "first_computed_reading": "2026-11-11T16:24:38Z",
+ "multiplier": 1.645,
+ "frame": "50 states and the District of Columbia (51 areas), household population, excludes group quarters and Remote Alaska",
+ "counts": {
+  "ABOVE": 8,
+  "BELOW": 6,
+  "CONSISTENT": 37,
+  "CANNOT_TELL": 0
+ },
+ "cannot_tell_why": {},
+ "below": [
+  "Arkansas",
+  "Florida",
+  "Illinois",
+  "Mississippi",
+  "Tennessee",
+  "Texas"
+ ],
+ "above": [
+  "Delaware",
+  "Hawaii",
+  "Massachusetts",
+  "Minnesota",
+  "New York",
+  "Ohio",
+  "Rhode Island",
+  "Utah"
+ ],
+ "floor": {
+  "expected": 5.1000000000000005,
+  "exceeds": 9.616635916254488,
+  "observed": 14,
+  "above_chance": true
+ },
+ "us_pes": {
+  "household_count_thousands": 323200.0,
+  "nce": -0.24,
+  "se": 0.25,
+  "lo90": -0.65125,
+  "hi90": 0.17125,
+  "outcome": "CONSISTENT"
+ },
+ "da": {
+  "low": 0.22,
+  "middle": -0.35,
+  "high": -1.21,
+  "outcome": "CONSISTENT",
+  "pes_national_point_inside_range": true,
+  "pes_national_interval_inside_range": true,
+  "source": "Census Bureau release CB22-CN.02, 10 March 2022, Table 1"
+ },
+ "components": {
+  "national": {
+   "omissions": {
+    "est": 5.8,
+    "se": 0.24
+   },
+   "duplication": {
+    "est": 1.6,
+    "se": 0.04
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.03
+   }
+  },
+  "counts": {
+   "omissions": {
+    "ABOVE": 7,
+    "BELOW": 8,
+    "CONSISTENT": 36,
+    "CANNOT_TELL": 0
+   },
+   "duplication": {
+    "ABOVE": 8,
+    "BELOW": 16,
+    "CONSISTENT": 27,
+    "CANNOT_TELL": 0
+   },
+   "other_erroneous": {
+    "ABOVE": 3,
+    "BELOW": 10,
+    "CONSISTENT": 38,
+    "CANNOT_TELL": 0
+   }
+  },
+  "cannot_tell_why": {
+   "omissions": {},
+   "duplication": {},
+   "other_erroneous": {}
+  }
+ },
+ "gates": {
+  "reader": {
+   "passed": true,
+   "message": "passed"
+  },
+  "census_flags": {
+   "passed": true,
+   "message": "passed"
+  },
+  "join": {
+   "passed": true,
+   "message": "passed"
+  },
+  "hand_five_states": {
+   "passed": true,
+   "message": "passed"
+  },
+  "da_source": {
+   "passed": true,
+   "message": "passed"
+  },
+  "rule": {
+   "passed": true,
+   "message": "rule selftest PASSED"
+  }
+ },
+ "gate_details": {
+  "reader_areas_compared": 51,
+  "reader_mismatch": [],
+  "asterisk_undercount": [
+   "Arkansas",
+   "Florida",
+   "Illinois",
+   "Mississippi",
+   "Tennessee",
+   "Texas"
+  ],
+  "asterisk_overcount": [
+   "Delaware",
+   "Hawaii",
+   "Massachusetts",
+   "Minnesota",
+   "New York",
+   "Ohio",
+   "Rhode Island",
+   "Utah"
+  ],
+  "join_h_states_mismatch": [],
+  "arkansas_pdf_table4_tokens": [
+   "2,929,000",
+   "94.5",
+   "0.4",
+   "0.2",
+   "0.1",
+   "0.4",
+   "0.1",
+   "1.4",
+   "0.3",
+   "0.8",
+   "0.2",
+   "2.8",
+   "X",
+   "89.9",
+   "2.0",
+   "10.1",
+   "2.0",
+   "*\u20135.04",
+   "2.21"
+  ]
+ },
+ "gates_all_passed": true,
+ "areas": [
+  {
+   "area": "Alabama",
+   "fips": "01",
+   "household_count": 4896000.0,
+   "resident_total": 5024279,
+   "nce": -1.05,
+   "se": 1.22,
+   "lo90": -3.0568999999999997,
+   "hi90": 0.9568999999999999,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Alaska",
+   "fips": "02",
+   "household_count": 700000.0,
+   "resident_total": 733391,
+   "nce": 1.12,
+   "se": 2.45,
+   "lo90": -2.9102500000000004,
+   "hi90": 5.150250000000001,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Arizona",
+   "fips": "04",
+   "household_count": 6991000.0,
+   "resident_total": 7151502,
+   "nce": -0.16,
+   "se": 1.59,
+   "lo90": -2.7755500000000004,
+   "hi90": 2.45555,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Arkansas",
+   "fips": "05",
+   "household_count": 2929000.0,
+   "resident_total": 3011524,
+   "nce": -5.04,
+   "se": 2.21,
+   "lo90": -8.67545,
+   "hi90": -1.40455,
+   "outcome": "BELOW",
+   "reason": ""
+  },
+  {
+   "area": "California",
+   "fips": "06",
+   "household_count": 38620000.0,
+   "resident_total": 39538223,
+   "nce": 0.47,
+   "se": 0.65,
+   "lo90": -0.5992500000000001,
+   "hi90": 1.53925,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Colorado",
+   "fips": "08",
+   "household_count": 5647000.0,
+   "resident_total": 5773714,
+   "nce": 2.19,
+   "se": 1.45,
+   "lo90": -0.19525000000000015,
+   "hi90": 4.5752500000000005,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Connecticut",
+   "fips": "09",
+   "household_count": 3498000.0,
+   "resident_total": 3605944,
+   "nce": -0.13,
+   "se": 1.71,
+   "lo90": -2.9429499999999997,
+   "hi90": 2.68295,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Delaware",
+   "fips": "10",
+   "household_count": 967000.0,
+   "resident_total": 989948,
+   "nce": 5.45,
+   "se": 2.82,
+   "lo90": 0.8111000000000006,
+   "hi90": 10.088899999999999,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "District of Columbia",
+   "fips": "11",
+   "household_count": 649000.0,
+   "resident_total": 689545,
+   "nce": 4.59,
+   "se": 4.93,
+   "lo90": -3.51985,
+   "hi90": 12.69985,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Florida",
+   "fips": "12",
+   "household_count": 21070000.0,
+   "resident_total": 21538187,
+   "nce": -3.48,
+   "se": 0.91,
+   "lo90": -4.97695,
+   "hi90": -1.98305,
+   "outcome": "BELOW",
+   "reason": ""
+  },
+  {
+   "area": "Georgia",
+   "fips": "13",
+   "household_count": 10460000.0,
+   "resident_total": 10711908,
+   "nce": 0.31,
+   "se": 1.11,
+   "lo90": -1.5159500000000001,
+   "hi90": 2.1359500000000002,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Hawaii",
+   "fips": "15",
+   "household_count": 1415000.0,
+   "resident_total": 1455271,
+   "nce": 6.79,
+   "se": 1.68,
+   "lo90": 4.026400000000001,
+   "hi90": 9.5536,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "Idaho",
+   "fips": "16",
+   "household_count": 1789000.0,
+   "resident_total": 1839106,
+   "nce": -1.55,
+   "se": 1.62,
+   "lo90": -4.2149,
+   "hi90": 1.1149000000000002,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Illinois",
+   "fips": "17",
+   "household_count": 12540000.0,
+   "resident_total": 12812508,
+   "nce": -1.97,
+   "se": 0.89,
+   "lo90": -3.43405,
+   "hi90": -0.5059499999999999,
+   "outcome": "BELOW",
+   "reason": ""
+  },
+  {
+   "area": "Indiana",
+   "fips": "18",
+   "household_count": 6607000.0,
+   "resident_total": 6785528,
+   "nce": 0.21,
+   "se": 0.94,
+   "lo90": -1.3363,
+   "hi90": 1.7563,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Iowa",
+   "fips": "19",
+   "household_count": 3092000.0,
+   "resident_total": 3190369,
+   "nce": -2.04,
+   "se": 3.25,
+   "lo90": -7.38625,
+   "hi90": 3.3062500000000004,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Kansas",
+   "fips": "20",
+   "household_count": 2851000.0,
+   "resident_total": 2937880,
+   "nce": -0.81,
+   "se": 1.42,
+   "lo90": -3.1459,
+   "hi90": 1.5259,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Kentucky",
+   "fips": "21",
+   "household_count": 4381000.0,
+   "resident_total": 4505836,
+   "nce": -1.18,
+   "se": 1.5,
+   "lo90": -3.6475,
+   "hi90": 1.2875000000000003,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Louisiana",
+   "fips": "22",
+   "household_count": 4534000.0,
+   "resident_total": 4657757,
+   "nce": -3.73,
+   "se": 2.36,
+   "lo90": -7.6122,
+   "hi90": 0.15219999999999967,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Maine",
+   "fips": "23",
+   "household_count": 1326000.0,
+   "resident_total": 1362359,
+   "nce": 2.2,
+   "se": 1.9,
+   "lo90": -0.9254999999999995,
+   "hi90": 5.3255,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Maryland",
+   "fips": "24",
+   "household_count": 6052000.0,
+   "resident_total": 6177224,
+   "nce": -1.17,
+   "se": 1.41,
+   "lo90": -3.4894499999999997,
+   "hi90": 1.1494499999999999,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Massachusetts",
+   "fips": "25",
+   "household_count": 6784000.0,
+   "resident_total": 7029917,
+   "nce": 2.24,
+   "se": 1.06,
+   "lo90": 0.4963000000000002,
+   "hi90": 3.9837000000000002,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "Michigan",
+   "fips": "26",
+   "household_count": 9856000.0,
+   "resident_total": 10077331,
+   "nce": 0.14,
+   "se": 0.68,
+   "lo90": -0.9786,
+   "hi90": 1.2586,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Minnesota",
+   "fips": "27",
+   "household_count": 5568000.0,
+   "resident_total": 5706494,
+   "nce": 3.84,
+   "se": 0.97,
+   "lo90": 2.24435,
+   "hi90": 5.43565,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "Mississippi",
+   "fips": "28",
+   "household_count": 2868000.0,
+   "resident_total": 2961279,
+   "nce": -4.11,
+   "se": 1.63,
+   "lo90": -6.7913499999999996,
+   "hi90": -1.4286500000000006,
+   "outcome": "BELOW",
+   "reason": ""
+  },
+  {
+   "area": "Missouri",
+   "fips": "29",
+   "household_count": 5986000.0,
+   "resident_total": 6154913,
+   "nce": -1.05,
+   "se": 0.97,
+   "lo90": -2.64565,
+   "hi90": 0.54565,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Montana",
+   "fips": "30",
+   "household_count": 1055000.0,
+   "resident_total": 1084225,
+   "nce": -4.39,
+   "se": 3.7,
+   "lo90": -10.4765,
+   "hi90": 1.6965000000000003,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Nebraska",
+   "fips": "31",
+   "household_count": 1912000.0,
+   "resident_total": 1961504,
+   "nce": -0.73,
+   "se": 1.35,
+   "lo90": -2.95075,
+   "hi90": 1.4907500000000002,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Nevada",
+   "fips": "32",
+   "household_count": 3068000.0,
+   "resident_total": 3104614,
+   "nce": 4.42,
+   "se": 3.44,
+   "lo90": -1.2388000000000003,
+   "hi90": 10.078800000000001,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "New Hampshire",
+   "fips": "33",
+   "household_count": 1335000.0,
+   "resident_total": 1377529,
+   "nce": 0.53,
+   "se": 1.58,
+   "lo90": -2.0690999999999997,
+   "hi90": 3.1291,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "New Jersey",
+   "fips": "34",
+   "household_count": 9109000.0,
+   "resident_total": 9288994,
+   "nce": -0.12,
+   "se": 0.93,
+   "lo90": -1.6498500000000003,
+   "hi90": 1.40985,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "New Mexico",
+   "fips": "35",
+   "household_count": 2075000.0,
+   "resident_total": 2117522,
+   "nce": 0.1,
+   "se": 2.42,
+   "lo90": -3.8809,
+   "hi90": 4.0809,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "New York",
+   "fips": "36",
+   "household_count": 19590000.0,
+   "resident_total": 20201249,
+   "nce": 3.44,
+   "se": 0.94,
+   "lo90": 1.8937,
+   "hi90": 4.9863,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "North Carolina",
+   "fips": "37",
+   "household_count": 10150000.0,
+   "resident_total": 10439388,
+   "nce": -1.59,
+   "se": 1.09,
+   "lo90": -3.3830500000000003,
+   "hi90": 0.20305000000000017,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "North Dakota",
+   "fips": "38",
+   "household_count": 753000.0,
+   "resident_total": 779094,
+   "nce": -0.35,
+   "se": 1.86,
+   "lo90": -3.4097000000000004,
+   "hi90": 2.7097,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Ohio",
+   "fips": "39",
+   "household_count": 11500000.0,
+   "resident_total": 11799448,
+   "nce": 1.49,
+   "se": 0.67,
+   "lo90": 0.3878499999999998,
+   "hi90": 2.59215,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "Oklahoma",
+   "fips": "40",
+   "household_count": 3842000.0,
+   "resident_total": 3959353,
+   "nce": 2.41,
+   "se": 1.89,
+   "lo90": -0.6990499999999997,
+   "hi90": 5.51905,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Oregon",
+   "fips": "41",
+   "household_count": 4140000.0,
+   "resident_total": 4237256,
+   "nce": 1.0,
+   "se": 1.22,
+   "lo90": -1.0069,
+   "hi90": 3.0069,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Pennsylvania",
+   "fips": "42",
+   "household_count": 12600000.0,
+   "resident_total": 13002700,
+   "nce": 0.48,
+   "se": 0.67,
+   "lo90": -0.6221500000000002,
+   "hi90": 1.5821500000000002,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Rhode Island",
+   "fips": "44",
+   "household_count": 1052000.0,
+   "resident_total": 1097379,
+   "nce": 5.05,
+   "se": 1.43,
+   "lo90": 2.69765,
+   "hi90": 7.40235,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "South Carolina",
+   "fips": "45",
+   "household_count": 4980000.0,
+   "resident_total": 5118425,
+   "nce": -1.36,
+   "se": 1.26,
+   "lo90": -3.4327000000000005,
+   "hi90": 0.7127000000000001,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "South Dakota",
+   "fips": "46",
+   "household_count": 855000.0,
+   "resident_total": 886667,
+   "nce": -0.42,
+   "se": 1.87,
+   "lo90": -3.49615,
+   "hi90": 2.6561500000000002,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Tennessee",
+   "fips": "47",
+   "household_count": 6754000.0,
+   "resident_total": 6910840,
+   "nce": -4.78,
+   "se": 1.51,
+   "lo90": -7.26395,
+   "hi90": -2.29605,
+   "outcome": "BELOW",
+   "reason": ""
+  },
+  {
+   "area": "Texas",
+   "fips": "48",
+   "household_count": 28540000.0,
+   "resident_total": 29145505,
+   "nce": -1.92,
+   "se": 0.82,
+   "lo90": -3.2689,
+   "hi90": -0.5710999999999999,
+   "outcome": "BELOW",
+   "reason": ""
+  },
+  {
+   "area": "Utah",
+   "fips": "49",
+   "household_count": 3216000.0,
+   "resident_total": 3271616,
+   "nce": 2.59,
+   "se": 1.23,
+   "lo90": 0.5666499999999997,
+   "hi90": 4.6133500000000005,
+   "outcome": "ABOVE",
+   "reason": ""
+  },
+  {
+   "area": "Vermont",
+   "fips": "50",
+   "household_count": 618000.0,
+   "resident_total": 643077,
+   "nce": 1.48,
+   "se": 1.83,
+   "lo90": -1.5303500000000003,
+   "hi90": 4.49035,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Virginia",
+   "fips": "51",
+   "household_count": 8395000.0,
+   "resident_total": 8631393,
+   "nce": -0.35,
+   "se": 1.11,
+   "lo90": -2.1759500000000003,
+   "hi90": 1.47595,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Washington",
+   "fips": "53",
+   "household_count": 7545000.0,
+   "resident_total": 7705281,
+   "nce": 0.29,
+   "se": 1.08,
+   "lo90": -1.4866000000000001,
+   "hi90": 2.0666,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "West Virginia",
+   "fips": "54",
+   "household_count": 1742000.0,
+   "resident_total": 1793716,
+   "nce": 1.53,
+   "se": 4.4,
+   "lo90": -5.708,
+   "hi90": 8.768,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Wisconsin",
+   "fips": "55",
+   "household_count": 5742000.0,
+   "resident_total": 5893718,
+   "nce": 0.85,
+   "se": 0.86,
+   "lo90": -0.5647000000000001,
+   "hi90": 2.2647,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  },
+  {
+   "area": "Wyoming",
+   "fips": "56",
+   "household_count": 564000.0,
+   "resident_total": 576851,
+   "nce": -2.6,
+   "se": 2.01,
+   "lo90": -5.9064499999999995,
+   "hi90": 0.7064499999999998,
+   "outcome": "CONSISTENT",
+   "reason": ""
+  }
+ ],
+ "component_rows": [
+  {
+   "area": "Alabama",
+   "omissions": {
+    "est": 6.6,
+    "se": 1.1,
+    "lo90": 4.7905,
+    "hi90": 8.4095,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.8,
+    "se": 0.3,
+    "lo90": 1.3065,
+    "hi90": 2.2935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.1,
+    "lo90": 0.3355,
+    "hi90": 0.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -1.05
+  },
+  {
+   "area": "Alaska",
+   "omissions": {
+    "est": 5.8,
+    "se": 2.3,
+    "lo90": 2.0165,
+    "hi90": 9.583499999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.5,
+    "se": 0.7,
+    "lo90": 1.3485,
+    "hi90": 3.6515,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.2,
+    "lo90": 0.27099999999999996,
+    "hi90": 0.929,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 1.12
+  },
+  {
+   "area": "Arizona",
+   "omissions": {
+    "est": 5.7,
+    "se": 1.5,
+    "lo90": 3.2325,
+    "hi90": 8.1675,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.4,
+    "se": 0.1,
+    "lo90": 1.2354999999999998,
+    "hi90": 1.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.16
+  },
+  {
+   "area": "Arkansas",
+   "omissions": {
+    "est": 10.1,
+    "se": 2.0,
+    "lo90": 6.81,
+    "hi90": 13.39,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.4,
+    "se": 0.3,
+    "lo90": 0.9064999999999999,
+    "hi90": 1.8935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.8,
+    "se": 0.2,
+    "lo90": 0.47100000000000003,
+    "hi90": 1.129,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -5.04
+  },
+  {
+   "area": "California",
+   "omissions": {
+    "est": 5.3,
+    "se": 0.6,
+    "lo90": 4.313,
+    "hi90": 6.287,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.4,
+    "se": 0.1,
+    "lo90": 1.2354999999999998,
+    "hi90": 1.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 0.47
+  },
+  {
+   "area": "Colorado",
+   "omissions": {
+    "est": 4.4,
+    "se": 1.0,
+    "lo90": 2.7550000000000003,
+    "hi90": 6.045,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.5,
+    "se": 0.8,
+    "lo90": 1.184,
+    "hi90": 3.816,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": 2.19
+  },
+  {
+   "area": "Connecticut",
+   "omissions": {
+    "est": 7.2,
+    "se": 1.3,
+    "lo90": 5.0615000000000006,
+    "hi90": 9.3385,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.6,
+    "se": 0.6,
+    "lo90": 1.613,
+    "hi90": 3.587,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.13
+  },
+  {
+   "area": "Delaware",
+   "omissions": {
+    "est": 0.7,
+    "se": 2.6,
+    "lo90": -3.577,
+    "hi90": 4.977,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.3,
+    "se": 0.4,
+    "lo90": 0.642,
+    "hi90": 1.9580000000000002,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": 5.45
+  },
+  {
+   "area": "District of Columbia",
+   "omissions": {
+    "est": 5.1,
+    "se": 3.9,
+    "lo90": -1.3155000000000001,
+    "hi90": 11.5155,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.5,
+    "se": 0.6,
+    "lo90": 1.513,
+    "hi90": 3.487,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 1.2,
+    "se": 0.3,
+    "lo90": 0.7064999999999999,
+    "hi90": 1.6935,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "nce_h_states": 4.59
+  },
+  {
+   "area": "Florida",
+   "omissions": {
+    "est": 9.2,
+    "se": 0.8,
+    "lo90": 7.8839999999999995,
+    "hi90": 10.516,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.3,
+    "se": 0.1,
+    "lo90": 1.1355,
+    "hi90": 1.4645000000000001,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -3.48
+  },
+  {
+   "area": "Georgia",
+   "omissions": {
+    "est": 5.5,
+    "se": 1.0,
+    "lo90": 3.855,
+    "hi90": 7.145,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.4,
+    "se": 0.2,
+    "lo90": 1.071,
+    "hi90": 1.7289999999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.8,
+    "se": 0.1,
+    "lo90": 0.6355000000000001,
+    "hi90": 0.9645,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "nce_h_states": 0.31
+  },
+  {
+   "area": "Hawaii",
+   "omissions": {
+    "est": 3.5,
+    "se": 1.3,
+    "lo90": 1.3615,
+    "hi90": 5.6385000000000005,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 5.5,
+    "se": 0.7,
+    "lo90": 4.3485,
+    "hi90": 6.6515,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.1,
+    "lo90": 0.3355,
+    "hi90": 0.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 6.79
+  },
+  {
+   "area": "Idaho",
+   "omissions": {
+    "est": 5.6,
+    "se": 1.5,
+    "lo90": 3.1324999999999994,
+    "hi90": 8.067499999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 0.7,
+    "se": 0.4,
+    "lo90": 0.041999999999999926,
+    "hi90": 1.358,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.1,
+    "lo90": 0.3355,
+    "hi90": 0.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -1.55
+  },
+  {
+   "area": "Illinois",
+   "omissions": {
+    "est": 7.8,
+    "se": 0.8,
+    "lo90": 6.484,
+    "hi90": 9.116,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.6,
+    "se": 0.2,
+    "lo90": 1.2710000000000001,
+    "hi90": 1.929,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": -1.97
+  },
+  {
+   "area": "Indiana",
+   "omissions": {
+    "est": 4.9,
+    "se": 0.9,
+    "lo90": 3.4195,
+    "hi90": 6.3805000000000005,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.5,
+    "se": 0.2,
+    "lo90": 1.171,
+    "hi90": 1.829,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": 0.21
+  },
+  {
+   "area": "Iowa",
+   "omissions": {
+    "est": 6.5,
+    "se": 3.1,
+    "lo90": 1.4005,
+    "hi90": 11.599499999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.1,
+    "se": 0.2,
+    "lo90": 0.7710000000000001,
+    "hi90": 1.429,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.2,
+    "se": 0.1,
+    "lo90": 0.035500000000000004,
+    "hi90": 0.36450000000000005,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": -2.04
+  },
+  {
+   "area": "Kansas",
+   "omissions": {
+    "est": 5.7,
+    "se": 1.4,
+    "lo90": 3.3970000000000002,
+    "hi90": 8.003,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.6,
+    "se": 0.3,
+    "lo90": 1.1065,
+    "hi90": 2.0935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.2,
+    "lo90": 0.17099999999999999,
+    "hi90": 0.829,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.81
+  },
+  {
+   "area": "Kentucky",
+   "omissions": {
+    "est": 6.6,
+    "se": 1.4,
+    "lo90": 4.297,
+    "hi90": 8.902999999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.7,
+    "se": 0.3,
+    "lo90": 1.2065,
+    "hi90": 2.1935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.9,
+    "se": 0.2,
+    "lo90": 0.571,
+    "hi90": 1.229,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -1.18
+  },
+  {
+   "area": "Louisiana",
+   "omissions": {
+    "est": 10.4,
+    "se": 2.3,
+    "lo90": 6.6165,
+    "hi90": 14.1835,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.3,
+    "se": 0.4,
+    "lo90": 1.642,
+    "hi90": 2.9579999999999997,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.7,
+    "se": 0.1,
+    "lo90": 0.5355,
+    "hi90": 0.8644999999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -3.73
+  },
+  {
+   "area": "Maine",
+   "omissions": {
+    "est": 3.4,
+    "se": 1.9,
+    "lo90": 0.2745000000000002,
+    "hi90": 6.525499999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.0,
+    "se": 0.5,
+    "lo90": 1.1775,
+    "hi90": 2.8225,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.2,
+    "lo90": 0.27099999999999996,
+    "hi90": 0.929,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 2.2
+  },
+  {
+   "area": "Maryland",
+   "omissions": {
+    "est": 6.6,
+    "se": 1.3,
+    "lo90": 4.461499999999999,
+    "hi90": 8.7385,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.0,
+    "se": 0.2,
+    "lo90": 0.671,
+    "hi90": 1.329,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.2,
+    "lo90": 0.27099999999999996,
+    "hi90": 0.929,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -1.17
+  },
+  {
+   "area": "Massachusetts",
+   "omissions": {
+    "est": 4.9,
+    "se": 0.9,
+    "lo90": 3.4195,
+    "hi90": 6.3805000000000005,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.2,
+    "se": 0.3,
+    "lo90": 1.7065000000000001,
+    "hi90": 2.6935000000000002,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.9,
+    "se": 0.2,
+    "lo90": 0.571,
+    "hi90": 1.229,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 2.24
+  },
+  {
+   "area": "Michigan",
+   "omissions": {
+    "est": 5.0,
+    "se": 0.7,
+    "lo90": 3.8485,
+    "hi90": 6.1515,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.3,
+    "se": 0.1,
+    "lo90": 1.1355,
+    "hi90": 1.4645000000000001,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 0.14
+  },
+  {
+   "area": "Minnesota",
+   "omissions": {
+    "est": 1.8,
+    "se": 0.9,
+    "lo90": 0.3194999999999999,
+    "hi90": 3.2805,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.4,
+    "se": 0.2,
+    "lo90": 1.071,
+    "hi90": 1.7289999999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 1.2,
+    "se": 0.3,
+    "lo90": 0.7064999999999999,
+    "hi90": 1.6935,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "nce_h_states": 3.84
+  },
+  {
+   "area": "Mississippi",
+   "omissions": {
+    "est": 9.9,
+    "se": 1.5,
+    "lo90": 7.4325,
+    "hi90": 12.3675,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.9,
+    "se": 0.6,
+    "lo90": 0.9129999999999999,
+    "hi90": 2.887,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.8,
+    "se": 0.3,
+    "lo90": 0.30650000000000005,
+    "hi90": 1.2935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -4.11
+  },
+  {
+   "area": "Missouri",
+   "omissions": {
+    "est": 6.1,
+    "se": 0.9,
+    "lo90": 4.6194999999999995,
+    "hi90": 7.5805,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.2,
+    "se": 0.2,
+    "lo90": 0.871,
+    "hi90": 1.529,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": -1.05
+  },
+  {
+   "area": "Montana",
+   "omissions": {
+    "est": 11.1,
+    "se": 3.7,
+    "lo90": 5.0135,
+    "hi90": 17.1865,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 3.3,
+    "se": 0.7,
+    "lo90": 2.1485,
+    "hi90": 4.451499999999999,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.2,
+    "lo90": 0.17099999999999999,
+    "hi90": 0.829,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -4.39
+  },
+  {
+   "area": "Nebraska",
+   "omissions": {
+    "est": 5.8,
+    "se": 1.1,
+    "lo90": 3.9905,
+    "hi90": 7.6095,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.4,
+    "se": 0.3,
+    "lo90": 0.9064999999999999,
+    "hi90": 1.8935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.1,
+    "lo90": 0.3355,
+    "hi90": 0.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.73
+  },
+  {
+   "area": "Nevada",
+   "omissions": {
+    "est": 0.9,
+    "se": 3.3,
+    "lo90": -4.528499999999999,
+    "hi90": 6.3285,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 0.7,
+    "se": 0.3,
+    "lo90": 0.20649999999999996,
+    "hi90": 1.1935,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": 4.42
+  },
+  {
+   "area": "New Hampshire",
+   "omissions": {
+    "est": 4.5,
+    "se": 1.6,
+    "lo90": 1.8679999999999999,
+    "hi90": 7.132,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.2,
+    "se": 0.3,
+    "lo90": 0.7064999999999999,
+    "hi90": 1.6935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.2,
+    "lo90": 0.17099999999999999,
+    "hi90": 0.829,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 0.53
+  },
+  {
+   "area": "New Jersey",
+   "omissions": {
+    "est": 6.8,
+    "se": 0.9,
+    "lo90": 5.3195,
+    "hi90": 8.2805,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.9,
+    "se": 0.3,
+    "lo90": 1.4064999999999999,
+    "hi90": 2.3935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.2,
+    "lo90": 0.17099999999999999,
+    "hi90": 0.829,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.12
+  },
+  {
+   "area": "New Mexico",
+   "omissions": {
+    "est": 7.3,
+    "se": 2.1,
+    "lo90": 3.8454999999999995,
+    "hi90": 10.7545,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.9,
+    "se": 0.7,
+    "lo90": 1.7485,
+    "hi90": 4.0515,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.1,
+    "lo90": 0.3355,
+    "hi90": 0.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 0.1
+  },
+  {
+   "area": "New York",
+   "omissions": {
+    "est": 5.9,
+    "se": 0.8,
+    "lo90": 4.5840000000000005,
+    "hi90": 7.216,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 3.0,
+    "se": 0.2,
+    "lo90": 2.671,
+    "hi90": 3.329,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 3.44
+  },
+  {
+   "area": "North Carolina",
+   "omissions": {
+    "est": 7.0,
+    "se": 1.1,
+    "lo90": 5.1905,
+    "hi90": 8.8095,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.3,
+    "se": 0.2,
+    "lo90": 0.9710000000000001,
+    "hi90": 1.629,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.7,
+    "se": 0.1,
+    "lo90": 0.5355,
+    "hi90": 0.8644999999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -1.59
+  },
+  {
+   "area": "North Dakota",
+   "omissions": {
+    "est": 5.7,
+    "se": 1.7,
+    "lo90": 2.9035,
+    "hi90": 8.496500000000001,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.5,
+    "se": 0.3,
+    "lo90": 1.0065,
+    "hi90": 1.9935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.2,
+    "lo90": 0.17099999999999999,
+    "hi90": 0.829,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.35
+  },
+  {
+   "area": "Ohio",
+   "omissions": {
+    "est": 3.7,
+    "se": 0.7,
+    "lo90": 2.5485,
+    "hi90": 4.8515,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.3,
+    "se": 0.1,
+    "lo90": 1.1355,
+    "hi90": 1.4645000000000001,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 1.49
+  },
+  {
+   "area": "Oklahoma",
+   "omissions": {
+    "est": 3.1,
+    "se": 1.5,
+    "lo90": 0.6324999999999998,
+    "hi90": 5.567500000000001,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.9,
+    "se": 0.6,
+    "lo90": 0.9129999999999999,
+    "hi90": 2.887,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": 2.41
+  },
+  {
+   "area": "Oregon",
+   "omissions": {
+    "est": 4.1,
+    "se": 1.1,
+    "lo90": 2.2904999999999998,
+    "hi90": 5.9094999999999995,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.3,
+    "se": 0.4,
+    "lo90": 0.642,
+    "hi90": 1.9580000000000002,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.1,
+    "lo90": 0.3355,
+    "hi90": 0.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 1.0
+  },
+  {
+   "area": "Pennsylvania",
+   "omissions": {
+    "est": 4.4,
+    "se": 0.6,
+    "lo90": 3.4130000000000003,
+    "hi90": 5.3870000000000005,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.2,
+    "se": 0.1,
+    "lo90": 1.0354999999999999,
+    "hi90": 1.3645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.1,
+    "lo90": 0.3355,
+    "hi90": 0.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 0.48
+  },
+  {
+   "area": "Rhode Island",
+   "omissions": {
+    "est": 2.3,
+    "se": 1.2,
+    "lo90": 0.32599999999999985,
+    "hi90": 4.274,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.2,
+    "se": 0.4,
+    "lo90": 1.5420000000000003,
+    "hi90": 2.858,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.5,
+    "se": 0.2,
+    "lo90": 0.17099999999999999,
+    "hi90": 0.829,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 5.05
+  },
+  {
+   "area": "South Carolina",
+   "omissions": {
+    "est": 6.6,
+    "se": 1.1,
+    "lo90": 4.7905,
+    "hi90": 8.4095,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.2,
+    "se": 0.2,
+    "lo90": 0.871,
+    "hi90": 1.529,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.9,
+    "se": 0.2,
+    "lo90": 0.571,
+    "hi90": 1.229,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -1.36
+  },
+  {
+   "area": "South Dakota",
+   "omissions": {
+    "est": 5.4,
+    "se": 1.6,
+    "lo90": 2.7680000000000002,
+    "hi90": 8.032,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.1,
+    "se": 0.3,
+    "lo90": 0.6065,
+    "hi90": 1.5935000000000001,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 1.1,
+    "se": 0.8,
+    "lo90": -0.21599999999999997,
+    "hi90": 2.4160000000000004,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.42
+  },
+  {
+   "area": "Tennessee",
+   "omissions": {
+    "est": 10.1,
+    "se": 1.4,
+    "lo90": 7.797,
+    "hi90": 12.402999999999999,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.7,
+    "se": 0.3,
+    "lo90": 1.2065,
+    "hi90": 2.1935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.7,
+    "se": 0.1,
+    "lo90": 0.5355,
+    "hi90": 0.8644999999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -4.78
+  },
+  {
+   "area": "Texas",
+   "omissions": {
+    "est": 7.6,
+    "se": 0.8,
+    "lo90": 6.284,
+    "hi90": 8.916,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.5,
+    "se": 0.1,
+    "lo90": 1.3355,
+    "hi90": 1.6645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.1,
+    "lo90": 0.4355,
+    "hi90": 0.7645,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -1.92
+  },
+  {
+   "area": "Utah",
+   "omissions": {
+    "est": 2.8,
+    "se": 1.2,
+    "lo90": 0.8259999999999998,
+    "hi90": 4.774,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.1,
+    "se": 0.2,
+    "lo90": 0.7710000000000001,
+    "hi90": 1.429,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.4,
+    "se": 0.1,
+    "lo90": 0.23550000000000001,
+    "hi90": 0.5645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": 2.59
+  },
+  {
+   "area": "Vermont",
+   "omissions": {
+    "est": 5.8,
+    "se": 1.6,
+    "lo90": 3.1679999999999997,
+    "hi90": 8.432,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 3.1,
+    "se": 0.8,
+    "lo90": 1.784,
+    "hi90": 4.416,
+    "outcome": "ABOVE",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.2,
+    "lo90": 0.27099999999999996,
+    "hi90": 0.929,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 1.48
+  },
+  {
+   "area": "Virginia",
+   "omissions": {
+    "est": 5.5,
+    "se": 0.9,
+    "lo90": 4.0195,
+    "hi90": 6.9805,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 0.9,
+    "se": 0.1,
+    "lo90": 0.7355,
+    "hi90": 1.0645,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 1.1,
+    "se": 0.5,
+    "lo90": 0.2775000000000001,
+    "hi90": 1.9225,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": -0.35
+  },
+  {
+   "area": "Washington",
+   "omissions": {
+    "est": 4.8,
+    "se": 1.0,
+    "lo90": 3.155,
+    "hi90": 6.445,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.0,
+    "se": 0.2,
+    "lo90": 0.671,
+    "hi90": 1.329,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.6,
+    "se": 0.2,
+    "lo90": 0.27099999999999996,
+    "hi90": 0.929,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 0.29
+  },
+  {
+   "area": "West Virginia",
+   "omissions": {
+    "est": 4.3,
+    "se": 3.9,
+    "lo90": -2.1155,
+    "hi90": 10.715499999999999,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 2.2,
+    "se": 0.4,
+    "lo90": 1.5420000000000003,
+    "hi90": 2.858,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.8,
+    "se": 0.3,
+    "lo90": 0.30650000000000005,
+    "hi90": 1.2935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 1.53
+  },
+  {
+   "area": "Wisconsin",
+   "omissions": {
+    "est": 4.6,
+    "se": 0.8,
+    "lo90": 3.284,
+    "hi90": 5.9159999999999995,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.3,
+    "se": 0.2,
+    "lo90": 0.9710000000000001,
+    "hi90": 1.629,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.9,
+    "se": 0.3,
+    "lo90": 0.40650000000000003,
+    "hi90": 1.3935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "nce_h_states": 0.85
+  },
+  {
+   "area": "Wyoming",
+   "omissions": {
+    "est": 7.6,
+    "se": 1.9,
+    "lo90": 4.4745,
+    "hi90": 10.7255,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "duplication": {
+    "est": 1.2,
+    "se": 0.3,
+    "lo90": 0.7064999999999999,
+    "hi90": 1.6935,
+    "outcome": "CONSISTENT",
+    "reason": ""
+   },
+   "other_erroneous": {
+    "est": 0.2,
+    "se": 0.1,
+    "lo90": 0.035500000000000004,
+    "hi90": 0.36450000000000005,
+    "outcome": "BELOW",
+    "reason": ""
+   },
+   "nce_h_states": -2.6
+  }
+ ]
+}

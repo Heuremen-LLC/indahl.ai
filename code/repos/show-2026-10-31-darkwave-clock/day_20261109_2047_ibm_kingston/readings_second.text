@@ -1,0 +1,17 @@
+SECOND RULERS (PLAN_CLOCK Addendum 3), ibm_kingston, fire 20261109_2047 UTC. Planned before this fire's data existed (Addendum 3 public 12:08:49 UTC 1 Nov, this fire's first job ran 20:49:31 UTC).
+(a) pooled clock reading over 20 bootstrap seeds: CONSISTENT 6, CANNOT_TELL 14 | lower end -0.0513 to -0.0494, upper end +0.0263 to +0.0285
+(b) qubits where the 31 Oct table leaves a larger |residual| than today's table: 62, smaller: 55, of 117; exact two-sided sign test p = 0.579
+(c) signed median kick M: -2.839 [-3.846, -1.786] deg/readout
+(c) signed median residual MC: +0.094 [-0.070, +0.242] deg/readout
+(c) signed median residual M31: +0.058 [+0.008, +0.234] deg/readout
+(c) signed median residual MT: -0.016 [-0.100, +0.063] deg/readout
+(d) M31: median |residual| pooled 0.275 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.124
+(d) MT: median |residual| pooled 0.236 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.140
+ADDENDUM 4 lines: planned before this fire.
+(e) share M31 minus share MT over seeds 1-20: pooled label CONSISTENT 7, CANNOT_TELL 13 | the plan's rule (pooled if the copies agree) CONSISTENT 7, CANNOT_TELL 13
+(e) share MC minus share MT over seeds 1-20: pooled label CANNOT_TELL 20 | the plan's rule (pooled if the copies agree) CANNOT_TELL 20
+(e) share MC minus share M31 over seeds 1-20: pooled label CANNOT_TELL 20 | the plan's rule (pooled if the copies agree) CANNOT_TELL 20
+(f) share M31 minus share MT at the plan's draw: copy A -0.0385 [-0.0701, +0.0099] CANNOT_TELL | copy B -0.0115 [-0.0593, +0.0254] CANNOT_TELL
+(f) share MC minus share MT at the plan's draw: copy A -0.0487 [-0.0988, -0.0010] BELOW | copy B -0.0158 [-0.0874, +0.0153] CANNOT_TELL
+(f) share MC minus share M31 at the plan's draw: copy A -0.0101 [-0.0677, +0.0364] CANNOT_TELL | copy B -0.0043 [-0.0726, +0.0392] CANNOT_TELL
+(g) today's table (job C) created 20:47:52, ran 20:49:31 to 20:49:55 UTC; copy A ran from 20:50:10, 15 s after job C finished; copy B from 20:50:45

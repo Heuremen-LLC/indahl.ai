@@ -1,0 +1,7 @@
+pair [58, 71]; record changed during window: False
+E00 +0.6864 E01 +0.6509 E10 +0.6472 E11 -0.6945
+R1 S_fez 2.6791 +- 0.0121 vs their table 2.7320 +- 0.0119: D -0.0529 (99% half-width 0.0438) -> BELOW
+R2 S - 2 = +0.6791 (99% half-width 0.0312) -> ABOVE
+R3 cycle spread / shot noise 1.18 (CANNOT_TELL on R1 if > 1.5); cycle S [2.765, 2.713, 2.731, 2.647, 2.632, 2.637, 2.691, 2.637, 2.669, 2.668]
+DESCRIPTIVE (not scored): bracket flip sums {0: 0.02, 1: 0.019333333333333334}; bracket-corrected S 2.7876357885098297
+their printed S 2.725 +- 0.042 for reference (Table 1); this is a RE-TEST on ibm_fez, not a calibration of their ibm_torino data

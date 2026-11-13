@@ -1,0 +1,13 @@
+dape8akak42c73cieed0 tau=15 dB=0.450  QL_odd ours +0.182267 theirs +0.182267  QR_odd ours -0.082841 theirs -0.082841  |diff| 2.5e-11  | dQ_even hw ours L 1.999 R 1.655 vs Table 1 2.00 1.66 -> MATCH
+dape8d318flc739m4ing tau=20 dB=0.450  QL_odd ours +0.246306 theirs +0.246306  QR_odd ours -0.228828 theirs -0.228828  |diff| 3.8e-11  | dQ_even hw ours L 2.082 R 1.732 vs Table 1 2.08 1.73 -> MATCH
+dap8pttr85ps73fg9o5g tau=40 dB=0.450  QL_odd ours +0.254698 theirs +0.254698  QR_odd ours -0.266348 theirs -0.266348  |diff| 2.7e-11  | dQ_even hw ours L 3.529 R 4.415 vs Table 1 3.53 4.42 -> MATCH
+dape88318flc739m4ii0 tau=5 dB=0.450  QL_odd ours +0.056313 theirs +0.056313  QR_odd ours -0.026000 theirs -0.026000  |diff| 4.4e-12  | dQ_even hw ours L 1.562 R 1.124 vs Table 1 1.56 1.12 -> MATCH
+dap8pvopqrnc739b0oi0 tau=60 dB=0.450  QL_odd ours +0.280493 theirs +0.280493  QR_odd ours -0.276808 theirs -0.276808  |diff| 4.3e-11  | dQ_even hw ours L 3.568 R 4.562 vs Table 1 3.57 4.56 -> MATCH
+dap8q278gn2s739osqr0 tau=80 dB=0.450  QL_odd ours +0.259009 theirs +0.259009  QR_odd ours -0.359347 theirs -0.359347  |diff| 3.3e-11  | dQ_even hw ours L 3.669 R 4.697 vs Table 1 3.67 4.70 -> MATCH
+da8om7ce74ec73aitgn0 tau=60 dB=0.000  QL_odd ours +0.059027 theirs +0.059027  QR_odd ours +0.027202 theirs +0.027202  |diff| 2.8e-12
+dao8a0o2fm4c73f52t3g tau=60 dB=0.000  QL_odd ours +0.043486 theirs +0.043486  QR_odd ours +0.019488 theirs +0.019488  |diff| 4.2e-12
+da8oq94e74ec73aitko0 tau=60 dB=0.225  QL_odd ours +0.153760 theirs +0.153760  QR_odd ours -0.157570 theirs -0.157570  |diff| 4.0e-11
+da8om01qtnsc73d0nrqg tau=60 dB=0.450  QL_odd ours +0.317324 theirs +0.317324  QR_odd ours -0.255792 theirs -0.255792  |diff| 3.4e-11
+dao8em0pqrnc7399kku0 tau=60 dB=0.450  QL_odd ours +0.270100 theirs +0.270100  QR_odd ours -0.273489 theirs -0.273489  |diff| 4.2e-11
+dao9epv8gn2s739ni2eg tau=60 dB=0.550  QL_odd ours +0.367784 theirs +0.367784  QR_odd ours -0.352639 theirs -0.352639  |diff| 3.7e-11
+KNOWN-GOOD: max |odd diff| over 12 published jobs 4.3e-11 (must be <= 1e-8); Table 1 even rows matched 6/6 -> PASS

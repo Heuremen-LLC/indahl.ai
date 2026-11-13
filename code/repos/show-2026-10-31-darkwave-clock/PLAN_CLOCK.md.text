@@ -1,0 +1,75 @@
+DARKWAVE CLOCK -- plan (written 31 Oct 2026 ~18:30 EDT, before any job of this run). Wayfinder and Bones.
+QUESTION. On 31 Oct the keystone run measured, per untouched qubit, the phase a mid-circuit readout of a 39-qubit pack adds (the kick), and
+gave most of it back with rz(-kick) on every untouched qubit after every look. How long does a table measured on one day keep giving the
+phase back? Each fire of this run is one point on that clock: the 31 Oct table's age at the fire, against a table measured minutes before.
+
+SETUP (circuits from keystone.py, copied byte for byte). Setup S: all 117 untouched qubits on the equator, N = 8 looks of the pack E, settings
+X and Y, 2,000 shots per circuit. Chips ibm_kingston and ibm_marrakesh. Arms in the same job, interleaved: D (the pack idles exactly the readout
+length per look) | M (the pack is read out, no correction) | MC (+ the committed 21 Oct table) | M31 (+ the table measured in the keystone
+run's job C on 31 Oct, held fixed for every later fire) | MT (+ today's table, from this fire's own calibration job C, the keystone's 8
+circuits, minutes before). Job order: C, then A (keys in order), then B (keys reversed). Level-1 transpile, trivial layout, seed 31, no
+dynamical decoupling, no twirling. The dry run checks equal scheduled durations on the untouched qubits for every arm (kingston 4,921 dt,
+marrakesh 6,057 dt on 31 Oct), no CZ, and that the corrected arms add rz gates.
+
+READINGS (per chip per fire; 99 % bootstrap over the 117 qubits; FINAL = the pooled reading if copies A and B agree, else CANNOT_TELL):
+ R1 share given back, MC, M31, MT: 1 - median|residual of the arm| / median|kick of M|, vs 0.5 (the keystone's S7 ruler, unchanged).
+ R2 THE CLOCK: share(M31) minus share(MT), paired on the same resampled qubits. ABOVE if the band sits above 0, BELOW if below 0,
+    CONSISTENT only if the whole band sits inside [-0.05, +0.05], otherwise CANNOT_TELL. BELOW = the 31 Oct table gives back less than
+    a table measured minutes before (it has aged). CONSISTENT = it still gives back as much, within 0.05.
+ R3 share(MC) minus share(MT) and R4 share(MC) minus share(M31), same ruler (the 21 Oct table on the same clock, older start).
+ The age of each table at the fire is printed beside every reading. Day 0 is the keystone's own reading (31 Oct, pooled S7 MF: kingston
+ 0.928, marrakesh 0.795). No time constant, fit or curve is claimed by this plan; a later dated addendum, written before the reading it
+ applies to, can add one.
+KNOWN-GOOD: the readout kick itself, per chip per fire: the pooled median signed kick of M (deg per readout, 99 % qubit bootstrap) must sit
+ below 0 and within 0.5 to 2 times the committed 21 Oct median (kingston -2.864, marrakesh -2.393), the keystone's rule unchanged. On
+ 31 Oct real hardware it read kingston -2.424 and marrakesh -1.683, both inside. A chip-fire that fails it is "not decided" and none of its
+ readings are read.
+SYNTHETIC (synth_clock.py through the unchanged readers, both chips, real tables and coherences): first pass (synth_results_clock_FIRST.text)
+ put a 0.25 deg per-qubit jitter inside the no-change world and read BELOW in 2 of 10 marrakesh draws. The no-change world now carries only
+ the table's own calibration noise (0.15 deg), and the 0.25 deg jitter is its own probe. Second pass (synth_results_clock.text, 20 draws per
+ world per chip): no change -> CONSISTENT or CANNOT_TELL 40 of 40; aged (0.7 x table + 1 deg) and moved (+1.5 deg per qubit) -> BELOW
+ 79 of 80, the one other draw a marrakesh known-good refusal (0.7 x a table already at about half the committed kick falls outside the
+ known-good window); null -> known-good fails 40 of 40. RESOLUTION: a change of about 0.25 deg per qubit is mostly below this ruler
+ (jitter probe: kingston CONSISTENT 5 / CANNOT_TELL 15, marrakesh BELOW 1 / CANNOT_TELL 19); changes of 1 deg read BELOW.
+BUDGET. Estimate about 31 s per chip per fire (cap 60 s per chip-fire in fire_clock.py); instance remaining 2,107 s at the dry run.
+ First fire: both chips tonight. Later fires during the week as seconds allow, each on the same code and plan.
+WHAT IT CANNOT SAY. No mechanism is named. A BELOW says the 31 Oct table no longer matches today's kick on these qubits; it does not say why.
+ One fire is one point; the copies A and B are the only repeat inside a fire.
+
+ADDENDUM 1 (31 Oct 2026 ~19:00 EDT, after the first fire was read, before any later fire). The FINAL rule compares the two copies' LABELS.
+From the next fire on, analyze_clock.py also prints the copy GAP of the clock reading with its width: (share M31 - share MT) in copy A minus
+the same in copy B, 99 % bootstrap over qubits. The FINAL rule is unchanged. For the first fire this gap was computed after the data:
+kingston +0.009 [-0.038, +0.050], marrakesh +0.045 [-0.053, +0.133]; neither resolves, and on marrakesh the copies differ in sign.
+
+ADDENDUM 2 (31 Oct 2026, written after the outside referee read the first fire, before any later fire). (1) Times corrected from the git and
+job records: the plan was committed at 18:06:44 EDT (22:06:44 UTC, commit c37242a, plan sha256 starting 13157ff0f8210f8a), the first job (kingston C) was
+created at 22:06:58.9 UTC, the analysis script was committed at 22:07:10 UTC (f682ff4) before any result existed, and Addendum 1 at
+18:15:24 EDT. The "~18:30" and "~19:00" written above were wrong. There is no outside timestamp of the plan before the jobs, only git.
+(2) From the next fire on, every bootstrap band uses 20,000 draws instead of 2,000: at 2,000 the kingston first-fire label flipped with the
+draw (CANNOT_TELL in 18 of 20 seeds, readings_after_referee.text). The FINAL rule is unchanged.
+
+ADDENDUM 2, implementation note (1 Nov 2026, written before the second fire's jobs). The code drew 20,000 resamples only for R2 to R4.
+The R1 share bands, the known-good band and the Addendum 1 copy gap were still drawn 2,000 times. clock.py and analyze_clock.py now draw
+20,000 for every band, as Addendum 2 says. Re-run on a copy of the first ibm_kingston fire, every label is unchanged. The known-good band's
+upper end moves from -1.926 to -1.826 deg per readout and no other band end moves by more than 0.006. The FINAL rule is unchanged.
+Later fires, one per chip per day while seconds allow, run the same code and plan.
+
+ADDENDUM 3 (1 Nov 2026, written after the second ibm_marrakesh fire was read, before any 2 November fire). post_clock.py prints second
+rulers beside every chip-fire into readings_second.text: (a) the pooled clock reading over bootstrap seeds 1 to 20, (b) the per-qubit count
+of qubits where the 31 Oct table leaves a larger |residual| than today's table, with an exact sign test, (c) the signed median residual of
+each arm (positive = over-correction), (d) the shot-noise floor of the residual. Why: on 1 Nov ibm_marrakesh the FINAL clock reading was
+BELOW with the band's upper end at -0.0002, BELOW in 3 of 20 seeds; the share folds the sign of the residual; the fresh table's residual sits
+near the floor. The setup, the shots and the FINAL rule are unchanged, so every fire stays comparable. For the 1 November fires these
+readings were defined after the data.
+
+CORRECTION to the Addendum 2 implementation note (1 Nov 2026, after the outside referee of the second ibm_kingston fire). "Every label is
+unchanged" is wrong: that check compared the numbers and cut the labels off. Read at 20,000 draws, the first ibm_kingston fire's clock reading
+goes from FINAL CONSISTENT (the committed 2,000-draw file) to CANNOT_TELL, because copy B's band reaches the margin, and its 21 Oct table minus
+today's table goes from copy B BELOW to CANNOT_TELL (FINAL CANNOT_TELL both ways). The page has printed that clock reading as cannot tell since
+31 Oct, after the first referee read it across draws.
+
+ADDENDUM 4 (1 Nov 2026, after the outside referee of the second ibm_kingston fire, before any 2 November fire). post_clock.py also prints,
+for R2, R3 and R4, the pooled label and the plan's FINAL rule applied at each bootstrap seed 1 to 20 (copies A, B and pooled read on one
+generator, as analyze_clock.py reads them), each copy's band at the plan's own draw, and when today's table was measured relative to the
+copies. Addendum 3's "defined after the data" label now keys off when the fire's first job ran. The FINAL rule, setup and shots are unchanged.
+For the 1 November fires these lines were defined after the data.

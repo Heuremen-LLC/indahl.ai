@@ -1,0 +1,8156 @@
+{
+ "updated": "2026-11-10 04:02",
+ "stale_sources": [],
+ "plan_sha256": "e798519ac09d2103f85e2be2b3128d92ded9c94711f01aba8210b58437aee4a3",
+ "known_good": {
+  "hdb_model_read": true,
+  "text_read": true,
+  "measured_read": true
+ },
+ "gate": "passed",
+ "coverage": {
+  "reports": 530,
+  "by_scenario": {
+   "MP": 325,
+   "MAX": 86,
+   "MIN": 119
+  },
+  "first_issue": "2000-01",
+  "last_issue": "2026-10",
+  "band_months": 86,
+  "missing_files": 0,
+  "read_from": {
+   "mead text": 120,
+   "powell text": 121,
+   "mead hdb": 410,
+   "powell hdb": 409
+  },
+  "hdb_runs_that_differ_from_print": 27,
+  "unreadable_values": 126,
+  "duplicates_set_aside": [],
+  "rows": 15222,
+  "rows_by_outcome": {
+   "mead ABOVE": 430,
+   "mead BELOW": 493,
+   "mead CANNOT_TELL": 5470,
+   "mead CONSISTENT": 945,
+   "mead NOTHING_RETURNED": 276,
+   "powell ABOVE": 190,
+   "powell BELOW": 550,
+   "powell CANNOT_TELL": 5466,
+   "powell CONSISTENT": 1126,
+   "powell NOTHING_RETURNED": 276
+  },
+  "variant_rows": 144,
+  "inverted_band_rows": 117,
+  "mp_outside_own_band_rows": 273,
+  "inverted_detail": {
+   "mead": 8,
+   "powell": 109,
+   "powell_leads_0_to_5": 98
+  },
+  "zero_width_band_rows": 48,
+  "zero_width_lead0": {
+   "mead": [
+    16,
+    86
+   ],
+   "powell": [
+    10,
+    86
+   ]
+  },
+  "print_vs_hdb": {
+   "months_compared": 19862,
+   "months_agree": 19632,
+   "runs_used": 819,
+   "runs_below_60": 9,
+   "misread_rate_in_used_runs": 0.0026
+  },
+  "measured_last": {
+   "mead": "2026-10",
+   "powell": "2026-10"
+  }
+ },
+ "headline_lead6": {
+  "mead": {
+   "band": {
+    "n": 83,
+    "inside": 42,
+    "above": 19,
+    "below": 22,
+    "share": 0.51,
+    "n_wy": 20,
+    "k_wy": 10,
+    "lo": 0.299,
+    "hi": 0.701,
+    "outcome": "BELOW",
+    "median_width_ft": 4.96,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": -0.13,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 42,
+      "lo": 0.401,
+      "hi": 0.611,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.401,
+      "hi_unrounded": 0.611,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.2,
+      "k": 8,
+      "lo": 0.276,
+      "hi": 0.714,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.286,
+      "hi_unrounded": 0.724,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.25,
+      "hi_unrounded": 0.759,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 315,
+    "above": 180,
+    "below": 135,
+    "ties": 0,
+    "share_above": 0.57,
+    "n_wy": 28,
+    "k_wy": 16,
+    "lo": 0.391,
+    "hi": 0.735,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.7,
+    "median_abs_error": 3.06,
+    "p10": -5.8,
+    "p90": 8.97,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 315,
+      "k": 180,
+      "lo": 0.516,
+      "hi": 0.625,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.516,
+      "hi_unrounded": 0.625,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.6,
+      "k": 15,
+      "lo": 0.38,
+      "hi": 0.732,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.386,
+      "hi_unrounded": 0.738,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.326,
+      "hi_unrounded": 0.786,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  "powell": {
+   "band": {
+    "n": 83,
+    "inside": 49,
+    "above": 8,
+    "below": 26,
+    "share": 0.59,
+    "n_wy": 20,
+    "k_wy": 12,
+    "lo": 0.387,
+    "hi": 0.781,
+    "outcome": "BELOW",
+    "median_width_ft": 26.46,
+    "zero_width": 0,
+    "inverted": 5,
+    "wy_lag1_corr": -0.06,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 49,
+      "lo": 0.483,
+      "hi": 0.69,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.483,
+      "hi_unrounded": 0.69,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.2,
+      "k": 10,
+      "lo": 0.381,
+      "hi": 0.808,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.357,
+      "hi_unrounded": 0.789,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.316,
+      "hi_unrounded": 0.818,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 314,
+    "above": 110,
+    "below": 204,
+    "ties": 0,
+    "share_above": 0.35,
+    "n_wy": 28,
+    "k_wy": 10,
+    "lo": 0.207,
+    "hi": 0.542,
+    "outcome": "CANNOT_TELL",
+    "median_error": -3.77,
+    "median_abs_error": 6.87,
+    "p10": -14.64,
+    "p90": 11.49,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 314,
+      "k": 110,
+      "lo": 0.3,
+      "hi": 0.405,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.3,
+      "hi_unrounded": 0.405,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.6,
+      "k": 9,
+      "lo": 0.19,
+      "hi": 0.528,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.199,
+      "hi_unrounded": 0.54,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.159,
+      "hi_unrounded": 0.606,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  }
+ },
+ "cells": [
+  {
+   "res": "mead",
+   "lead": 0,
+   "band": {
+    "n": 86,
+    "inside": 27,
+    "above": 24,
+    "below": 35,
+    "share": 0.31,
+    "n_wy": 21,
+    "k_wy": 7,
+    "lo": 0.172,
+    "hi": 0.546,
+    "outcome": "BELOW",
+    "median_width_ft": 0.33,
+    "zero_width": 16,
+    "inverted": 6,
+    "wy_lag1_corr": 0.42,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 86,
+      "k": 27,
+      "lo": 0.226,
+      "hi": 0.418,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.226,
+      "hi_unrounded": 0.418,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.7,
+      "k": 5,
+      "lo": 0.135,
+      "hi": 0.538,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.145,
+      "hi_unrounded": 0.552,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 3,
+      "lo": 0.097,
+      "hi": 0.566,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.121,
+      "hi_unrounded": 0.603,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 320,
+    "above": 129,
+    "below": 191,
+    "ties": 1,
+    "share_above": 0.4,
+    "n_wy": 28,
+    "k_wy": 11,
+    "lo": 0.236,
+    "hi": 0.576,
+    "outcome": "CANNOT_TELL",
+    "median_error": -0.11,
+    "median_abs_error": 0.39,
+    "p10": -0.76,
+    "p90": 0.88,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 320,
+      "k": 129,
+      "lo": 0.351,
+      "hi": 0.458,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.351,
+      "hi_unrounded": 0.458,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 27.1,
+      "k": 11,
+      "lo": 0.244,
+      "hi": 0.591,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.242,
+      "hi_unrounded": 0.588,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 6,
+      "lo": 0.214,
+      "hi": 0.674,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.195,
+      "hi_unrounded": 0.653,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 1,
+   "band": {
+    "n": 77,
+    "inside": 17,
+    "above": 30,
+    "below": 30,
+    "share": 0.22,
+    "n_wy": 20,
+    "k_wy": 4,
+    "lo": 0.081,
+    "hi": 0.416,
+    "outcome": "BELOW",
+    "median_width_ft": 0.74,
+    "zero_width": 10,
+    "inverted": 2,
+    "wy_lag1_corr": 0.2,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 77,
+      "k": 17,
+      "lo": 0.143,
+      "hi": 0.325,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.143,
+      "hi_unrounded": 0.325,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.4,
+      "k": 4,
+      "lo": 0.099,
+      "hi": 0.485,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.086,
+      "hi_unrounded": 0.462,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 2,
+      "lo": 0.051,
+      "hi": 0.477,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.07,
+      "hi_unrounded": 0.516,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 310,
+    "above": 151,
+    "below": 159,
+    "ties": 2,
+    "share_above": 0.49,
+    "n_wy": 28,
+    "k_wy": 14,
+    "lo": 0.326,
+    "hi": 0.674,
+    "outcome": "CANNOT_TELL",
+    "median_error": -0.06,
+    "median_abs_error": 0.83,
+    "p10": -1.34,
+    "p90": 2.21,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 310,
+      "k": 151,
+      "lo": 0.432,
+      "hi": 0.543,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.432,
+      "hi_unrounded": 0.543,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 27.0,
+      "k": 13,
+      "lo": 0.307,
+      "hi": 0.66,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.312,
+      "hi_unrounded": 0.665,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 7,
+      "lo": 0.268,
+      "hi": 0.732,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.258,
+      "hi_unrounded": 0.722,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 2,
+   "band": {
+    "n": 83,
+    "inside": 21,
+    "above": 31,
+    "below": 31,
+    "share": 0.25,
+    "n_wy": 21,
+    "k_wy": 5,
+    "lo": 0.106,
+    "hi": 0.451,
+    "outcome": "BELOW",
+    "median_width_ft": 1.3,
+    "zero_width": 1,
+    "inverted": 0,
+    "wy_lag1_corr": -0.28,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 21,
+      "lo": 0.172,
+      "hi": 0.356,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.172,
+      "hi_unrounded": 0.356,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 17.1,
+      "k": 4,
+      "lo": 0.095,
+      "hi": 0.471,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.107,
+      "hi_unrounded": 0.49,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 3,
+      "lo": 0.097,
+      "hi": 0.566,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.087,
+      "hi_unrounded": 0.547,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 314,
+    "above": 161,
+    "below": 153,
+    "ties": 0,
+    "share_above": 0.51,
+    "n_wy": 28,
+    "k_wy": 14,
+    "lo": 0.326,
+    "hi": 0.674,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.07,
+    "median_abs_error": 1.17,
+    "p10": -2.06,
+    "p90": 3.29,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 314,
+      "k": 161,
+      "lo": 0.458,
+      "hi": 0.568,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.458,
+      "hi_unrounded": 0.568,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 27.0,
+      "k": 14,
+      "lo": 0.34,
+      "hi": 0.693,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.335,
+      "hi_unrounded": 0.688,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 7,
+      "lo": 0.268,
+      "hi": 0.732,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.278,
+      "hi_unrounded": 0.742,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 3,
+   "band": {
+    "n": 84,
+    "inside": 28,
+    "above": 29,
+    "below": 27,
+    "share": 0.33,
+    "n_wy": 20,
+    "k_wy": 7,
+    "lo": 0.181,
+    "hi": 0.567,
+    "outcome": "BELOW",
+    "median_width_ft": 2.28,
+    "zero_width": 1,
+    "inverted": 0,
+    "wy_lag1_corr": -0.18,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 84,
+      "k": 28,
+      "lo": 0.242,
+      "hi": 0.439,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.242,
+      "hi_unrounded": 0.439,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.4,
+      "k": 5,
+      "lo": 0.138,
+      "hi": 0.546,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.157,
+      "hi_unrounded": 0.573,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 4,
+      "lo": 0.152,
+      "hi": 0.646,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.133,
+      "hi_unrounded": 0.62,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 317,
+    "above": 170,
+    "below": 147,
+    "ties": 0,
+    "share_above": 0.54,
+    "n_wy": 28,
+    "k_wy": 15,
+    "lo": 0.358,
+    "hi": 0.705,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.16,
+    "median_abs_error": 1.51,
+    "p10": -2.85,
+    "p90": 4.67,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 317,
+      "k": 170,
+      "lo": 0.481,
+      "hi": 0.59,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.481,
+      "hi_unrounded": 0.59,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.9,
+      "k": 14,
+      "lo": 0.341,
+      "hi": 0.694,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.355,
+      "hi_unrounded": 0.708,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.297,
+      "hi_unrounded": 0.76,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 4,
+   "band": {
+    "n": 83,
+    "inside": 26,
+    "above": 31,
+    "below": 26,
+    "share": 0.31,
+    "n_wy": 20,
+    "k_wy": 6,
+    "lo": 0.145,
+    "hi": 0.519,
+    "outcome": "BELOW",
+    "median_width_ft": 2.65,
+    "zero_width": 1,
+    "inverted": 0,
+    "wy_lag1_corr": 0.24,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 26,
+      "lo": 0.224,
+      "hi": 0.419,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.224,
+      "hi_unrounded": 0.419,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.5,
+      "k": 5,
+      "lo": 0.137,
+      "hi": 0.543,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.144,
+      "hi_unrounded": 0.553,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 3,
+      "lo": 0.097,
+      "hi": 0.566,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.121,
+      "hi_unrounded": 0.602,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 316,
+    "above": 173,
+    "below": 143,
+    "ties": 1,
+    "share_above": 0.55,
+    "n_wy": 28,
+    "k_wy": 15,
+    "lo": 0.358,
+    "hi": 0.705,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.41,
+    "median_abs_error": 1.97,
+    "p10": -3.86,
+    "p90": 5.9,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 316,
+      "k": 173,
+      "lo": 0.492,
+      "hi": 0.601,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.492,
+      "hi_unrounded": 0.601,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.8,
+      "k": 15,
+      "lo": 0.376,
+      "hi": 0.728,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.365,
+      "hi_unrounded": 0.718,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.306,
+      "hi_unrounded": 0.768,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 5,
+   "band": {
+    "n": 71,
+    "inside": 29,
+    "above": 21,
+    "below": 21,
+    "share": 0.41,
+    "n_wy": 21,
+    "k_wy": 9,
+    "lo": 0.245,
+    "hi": 0.635,
+    "outcome": "BELOW",
+    "median_width_ft": 4.05,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": -0.4,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 71,
+      "k": 29,
+      "lo": 0.302,
+      "hi": 0.525,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.302,
+      "hi_unrounded": 0.525,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.2,
+      "k": 7,
+      "lo": 0.228,
+      "hi": 0.662,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.21,
+      "hi_unrounded": 0.642,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 4,
+      "lo": 0.152,
+      "hi": 0.646,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.181,
+      "hi_unrounded": 0.683,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 305,
+    "above": 174,
+    "below": 131,
+    "ties": 0,
+    "share_above": 0.57,
+    "n_wy": 28,
+    "k_wy": 16,
+    "lo": 0.391,
+    "hi": 0.735,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.62,
+    "median_abs_error": 2.55,
+    "p10": -4.68,
+    "p90": 7.07,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 305,
+      "k": 174,
+      "lo": 0.514,
+      "hi": 0.625,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.514,
+      "hi_unrounded": 0.625,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.7,
+      "k": 15,
+      "lo": 0.378,
+      "hi": 0.73,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.386,
+      "hi_unrounded": 0.737,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.325,
+      "hi_unrounded": 0.786,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 6,
+   "band": {
+    "n": 83,
+    "inside": 42,
+    "above": 19,
+    "below": 22,
+    "share": 0.51,
+    "n_wy": 20,
+    "k_wy": 10,
+    "lo": 0.299,
+    "hi": 0.701,
+    "outcome": "BELOW",
+    "median_width_ft": 4.96,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": -0.13,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 42,
+      "lo": 0.401,
+      "hi": 0.611,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.401,
+      "hi_unrounded": 0.611,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.2,
+      "k": 8,
+      "lo": 0.276,
+      "hi": 0.714,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.286,
+      "hi_unrounded": 0.724,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.25,
+      "hi_unrounded": 0.759,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 315,
+    "above": 180,
+    "below": 135,
+    "ties": 0,
+    "share_above": 0.57,
+    "n_wy": 28,
+    "k_wy": 16,
+    "lo": 0.391,
+    "hi": 0.735,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.7,
+    "median_abs_error": 3.06,
+    "p10": -5.8,
+    "p90": 8.97,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 315,
+      "k": 180,
+      "lo": 0.516,
+      "hi": 0.625,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.516,
+      "hi_unrounded": 0.625,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.6,
+      "k": 15,
+      "lo": 0.38,
+      "hi": 0.732,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.386,
+      "hi_unrounded": 0.738,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.326,
+      "hi_unrounded": 0.786,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 7,
+   "band": {
+    "n": 81,
+    "inside": 41,
+    "above": 17,
+    "below": 23,
+    "share": 0.51,
+    "n_wy": 19,
+    "k_wy": 10,
+    "lo": 0.317,
+    "hi": 0.727,
+    "outcome": "BELOW",
+    "median_width_ft": 6.67,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": -0.12,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 81,
+      "k": 41,
+      "lo": 0.4,
+      "hi": 0.612,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.4,
+      "hi_unrounded": 0.612,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.9,
+      "k": 8,
+      "lo": 0.282,
+      "hi": 0.724,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.284,
+      "hi_unrounded": 0.726,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.25,
+      "hi_unrounded": 0.759,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 307,
+    "above": 172,
+    "below": 135,
+    "ties": 0,
+    "share_above": 0.56,
+    "n_wy": 28,
+    "k_wy": 16,
+    "lo": 0.391,
+    "hi": 0.735,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.84,
+    "median_abs_error": 3.48,
+    "p10": -6.51,
+    "p90": 9.97,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 307,
+      "k": 172,
+      "lo": 0.504,
+      "hi": 0.615,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.504,
+      "hi_unrounded": 0.615,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.4,
+      "k": 15,
+      "lo": 0.382,
+      "hi": 0.736,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.376,
+      "hi_unrounded": 0.73,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.317,
+      "hi_unrounded": 0.778,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 8,
+   "band": {
+    "n": 74,
+    "inside": 39,
+    "above": 14,
+    "below": 21,
+    "share": 0.53,
+    "n_wy": 19,
+    "k_wy": 10,
+    "lo": 0.317,
+    "hi": 0.727,
+    "outcome": "BELOW",
+    "median_width_ft": 8.66,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.04,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 74,
+      "k": 39,
+      "lo": 0.415,
+      "hi": 0.637,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.415,
+      "hi_unrounded": 0.637,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.2,
+      "k": 8,
+      "lo": 0.296,
+      "hi": 0.745,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.297,
+      "hi_unrounded": 0.746,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.266,
+      "hi_unrounded": 0.774,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 305,
+    "above": 179,
+    "below": 126,
+    "ties": 1,
+    "share_above": 0.59,
+    "n_wy": 28,
+    "k_wy": 16,
+    "lo": 0.391,
+    "hi": 0.735,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.86,
+    "median_abs_error": 4.09,
+    "p10": -8.2,
+    "p90": 11.8,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 305,
+      "k": 179,
+      "lo": 0.531,
+      "hi": 0.641,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.531,
+      "hi_unrounded": 0.641,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.3,
+      "k": 15,
+      "lo": 0.385,
+      "hi": 0.739,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.4,
+      "hi_unrounded": 0.752,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.339,
+      "hi_unrounded": 0.797,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 9,
+   "band": {
+    "n": 82,
+    "inside": 45,
+    "above": 15,
+    "below": 22,
+    "share": 0.55,
+    "n_wy": 20,
+    "k_wy": 11,
+    "lo": 0.342,
+    "hi": 0.742,
+    "outcome": "BELOW",
+    "median_width_ft": 9.04,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.33,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 82,
+      "k": 45,
+      "lo": 0.441,
+      "hi": 0.652,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.441,
+      "hi_unrounded": 0.652,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.4,
+      "k": 8,
+      "lo": 0.292,
+      "hi": 0.738,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.317,
+      "hi_unrounded": 0.761,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.283,
+      "hi_unrounded": 0.79,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 312,
+    "above": 179,
+    "below": 133,
+    "ties": 0,
+    "share_above": 0.57,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.94,
+    "median_abs_error": 4.54,
+    "p10": -9.68,
+    "p90": 12.9,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 312,
+      "k": 179,
+      "lo": 0.518,
+      "hi": 0.627,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.518,
+      "hi_unrounded": 0.627,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.2,
+      "k": 15,
+      "lo": 0.387,
+      "hi": 0.741,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.387,
+      "hi_unrounded": 0.742,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.328,
+      "hi_unrounded": 0.788,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 10,
+   "band": {
+    "n": 81,
+    "inside": 47,
+    "above": 14,
+    "below": 20,
+    "share": 0.58,
+    "n_wy": 19,
+    "k_wy": 11,
+    "lo": 0.363,
+    "hi": 0.769,
+    "outcome": "BELOW",
+    "median_width_ft": 11.7,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.45,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 81,
+      "k": 47,
+      "lo": 0.472,
+      "hi": 0.682,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.472,
+      "hi_unrounded": 0.682,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.4,
+      "k": 9,
+      "lo": 0.348,
+      "hi": 0.79,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.343,
+      "hi_unrounded": 0.785,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.308,
+      "hi_unrounded": 0.811,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 310,
+    "above": 177,
+    "below": 133,
+    "ties": 0,
+    "share_above": 0.57,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.2,
+    "median_abs_error": 5.0,
+    "p10": -11.08,
+    "p90": 15.13,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 310,
+      "k": 177,
+      "lo": 0.515,
+      "hi": 0.625,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.515,
+      "hi_unrounded": 0.625,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.1,
+      "k": 15,
+      "lo": 0.387,
+      "hi": 0.742,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.384,
+      "hi_unrounded": 0.739,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.326,
+      "hi_unrounded": 0.786,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 11,
+   "band": {
+    "n": 81,
+    "inside": 45,
+    "above": 14,
+    "below": 22,
+    "share": 0.56,
+    "n_wy": 19,
+    "k_wy": 11,
+    "lo": 0.363,
+    "hi": 0.769,
+    "outcome": "BELOW",
+    "median_width_ft": 14.97,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.53,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 81,
+      "k": 45,
+      "lo": 0.447,
+      "hi": 0.659,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.447,
+      "hi_unrounded": 0.659,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.5,
+      "k": 9,
+      "lo": 0.344,
+      "hi": 0.785,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.323,
+      "hi_unrounded": 0.766,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.288,
+      "hi_unrounded": 0.794,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 308,
+    "above": 173,
+    "below": 135,
+    "ties": 0,
+    "share_above": 0.56,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.85,
+    "median_abs_error": 6.18,
+    "p10": -11.66,
+    "p90": 15.96,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 308,
+      "k": 173,
+      "lo": 0.506,
+      "hi": 0.616,
+      "outcome": "ABOVE",
+      "lo_unrounded": 0.506,
+      "hi_unrounded": 0.616,
+      "outcome_unrounded": "ABOVE"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.1,
+      "k": 15,
+      "lo": 0.387,
+      "hi": 0.742,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.376,
+      "hi_unrounded": 0.732,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.318,
+      "hi_unrounded": 0.779,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 12,
+   "band": {
+    "n": 81,
+    "inside": 43,
+    "above": 17,
+    "below": 21,
+    "share": 0.53,
+    "n_wy": 20,
+    "k_wy": 11,
+    "lo": 0.342,
+    "hi": 0.742,
+    "outcome": "BELOW",
+    "median_width_ft": 17.6,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.65,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 81,
+      "k": 43,
+      "lo": 0.423,
+      "hi": 0.636,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.423,
+      "hi_unrounded": 0.636,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.7,
+      "k": 8,
+      "lo": 0.285,
+      "hi": 0.728,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.304,
+      "hi_unrounded": 0.746,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.269,
+      "hi_unrounded": 0.777,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 308,
+    "above": 169,
+    "below": 139,
+    "ties": 0,
+    "share_above": 0.55,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.21,
+    "median_abs_error": 6.41,
+    "p10": -11.55,
+    "p90": 17.09,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 308,
+      "k": 169,
+      "lo": 0.493,
+      "hi": 0.603,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.493,
+      "hi_unrounded": 0.603,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.1,
+      "k": 14,
+      "lo": 0.353,
+      "hi": 0.711,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.364,
+      "hi_unrounded": 0.721,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.307,
+      "hi_unrounded": 0.769,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 13,
+   "band": {
+    "n": 72,
+    "inside": 40,
+    "above": 13,
+    "below": 19,
+    "share": 0.56,
+    "n_wy": 19,
+    "k_wy": 11,
+    "lo": 0.363,
+    "hi": 0.769,
+    "outcome": "BELOW",
+    "median_width_ft": 21.61,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.72,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 72,
+      "k": 40,
+      "lo": 0.441,
+      "hi": 0.665,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.441,
+      "hi_unrounded": 0.665,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.4,
+      "k": 9,
+      "lo": 0.346,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.322,
+      "hi_unrounded": 0.767,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.288,
+      "hi_unrounded": 0.794,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 299,
+    "above": 162,
+    "below": 137,
+    "ties": 0,
+    "share_above": 0.54,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.9,
+    "median_abs_error": 7.53,
+    "p10": -13.17,
+    "p90": 17.2,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 299,
+      "k": 162,
+      "lo": 0.485,
+      "hi": 0.597,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.485,
+      "hi_unrounded": 0.597,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.0,
+      "k": 14,
+      "lo": 0.354,
+      "hi": 0.712,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.358,
+      "hi_unrounded": 0.715,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.301,
+      "hi_unrounded": 0.764,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 14,
+   "band": {
+    "n": 78,
+    "inside": 44,
+    "above": 14,
+    "below": 20,
+    "share": 0.56,
+    "n_wy": 20,
+    "k_wy": 11,
+    "lo": 0.342,
+    "hi": 0.742,
+    "outcome": "BELOW",
+    "median_width_ft": 23.96,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.4,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 78,
+      "k": 44,
+      "lo": 0.454,
+      "hi": 0.669,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.454,
+      "hi_unrounded": 0.669,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.1,
+      "k": 9,
+      "lo": 0.33,
+      "hi": 0.766,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.334,
+      "hi_unrounded": 0.77,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.284,
+      "hi_unrounded": 0.808,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 300,
+    "above": 163,
+    "below": 137,
+    "ties": 0,
+    "share_above": 0.54,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.98,
+    "median_abs_error": 7.92,
+    "p10": -15.2,
+    "p90": 20.69,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 300,
+      "k": 163,
+      "lo": 0.487,
+      "hi": 0.599,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.487,
+      "hi_unrounded": 0.599,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.0,
+      "k": 14,
+      "lo": 0.355,
+      "hi": 0.713,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.359,
+      "hi_unrounded": 0.717,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.303,
+      "hi_unrounded": 0.765,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 15,
+   "band": {
+    "n": 79,
+    "inside": 47,
+    "above": 14,
+    "below": 18,
+    "share": 0.59,
+    "n_wy": 19,
+    "k_wy": 11,
+    "lo": 0.363,
+    "hi": 0.769,
+    "outcome": "BELOW",
+    "median_width_ft": 26.32,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.51,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 79,
+      "k": 47,
+      "lo": 0.485,
+      "hi": 0.696,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.485,
+      "hi_unrounded": 0.696,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.4,
+      "k": 9,
+      "lo": 0.346,
+      "hi": 0.788,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.356,
+      "hi_unrounded": 0.796,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.309,
+      "hi_unrounded": 0.829,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 303,
+    "above": 168,
+    "below": 135,
+    "ties": 1,
+    "share_above": 0.55,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.39,
+    "median_abs_error": 9.4,
+    "p10": -16.6,
+    "p90": 21.72,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 303,
+      "k": 168,
+      "lo": 0.498,
+      "hi": 0.609,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.498,
+      "hi_unrounded": 0.609,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.9,
+      "k": 14,
+      "lo": 0.356,
+      "hi": 0.715,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.369,
+      "hi_unrounded": 0.726,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.312,
+      "hi_unrounded": 0.774,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 16,
+   "band": {
+    "n": 78,
+    "inside": 48,
+    "above": 14,
+    "below": 16,
+    "share": 0.62,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 28.82,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.75,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 78,
+      "k": 48,
+      "lo": 0.504,
+      "hi": 0.716,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.504,
+      "hi_unrounded": 0.716,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.5,
+      "k": 10,
+      "lo": 0.401,
+      "hi": 0.831,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.375,
+      "hi_unrounded": 0.81,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.325,
+      "hi_unrounded": 0.842,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 303,
+    "above": 168,
+    "below": 135,
+    "ties": 0,
+    "share_above": 0.55,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.48,
+    "median_abs_error": 10.0,
+    "p10": -18.32,
+    "p90": 22.82,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 303,
+      "k": 168,
+      "lo": 0.498,
+      "hi": 0.609,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.498,
+      "hi_unrounded": 0.609,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.8,
+      "k": 14,
+      "lo": 0.358,
+      "hi": 0.716,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.368,
+      "hi_unrounded": 0.726,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.312,
+      "hi_unrounded": 0.774,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 17,
+   "band": {
+    "n": 65,
+    "inside": 40,
+    "above": 13,
+    "below": 12,
+    "share": 0.62,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 31.56,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.63,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 65,
+      "k": 40,
+      "lo": 0.494,
+      "hi": 0.724,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.494,
+      "hi_unrounded": 0.724,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.5,
+      "k": 9,
+      "lo": 0.371,
+      "hi": 0.818,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.367,
+      "hi_unrounded": 0.815,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.325,
+      "hi_unrounded": 0.842,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 291,
+    "above": 158,
+    "below": 133,
+    "ties": 0,
+    "share_above": 0.54,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.3,
+    "median_abs_error": 10.71,
+    "p10": -20.71,
+    "p90": 23.04,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 291,
+      "k": 158,
+      "lo": 0.486,
+      "hi": 0.599,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.486,
+      "hi_unrounded": 0.599,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.7,
+      "k": 14,
+      "lo": 0.359,
+      "hi": 0.719,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.358,
+      "hi_unrounded": 0.717,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.302,
+      "hi_unrounded": 0.765,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 18,
+   "band": {
+    "n": 77,
+    "inside": 47,
+    "above": 15,
+    "below": 15,
+    "share": 0.61,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 34.04,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.45,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 77,
+      "k": 47,
+      "lo": 0.499,
+      "hi": 0.712,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.499,
+      "hi_unrounded": 0.712,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.9,
+      "k": 9,
+      "lo": 0.361,
+      "hi": 0.807,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.366,
+      "hi_unrounded": 0.81,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.321,
+      "hi_unrounded": 0.838,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 302,
+    "above": 162,
+    "below": 140,
+    "ties": 0,
+    "share_above": 0.54,
+    "n_wy": 27,
+    "k_wy": 14,
+    "lo": 0.34,
+    "hi": 0.693,
+    "outcome": "CANNOT_TELL",
+    "median_error": 2.21,
+    "median_abs_error": 11.04,
+    "p10": -22.54,
+    "p90": 23.57,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 302,
+      "k": 162,
+      "lo": 0.48,
+      "hi": 0.592,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.48,
+      "hi_unrounded": 0.592,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.6,
+      "k": 14,
+      "lo": 0.361,
+      "hi": 0.721,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.351,
+      "hi_unrounded": 0.712,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.297,
+      "hi_unrounded": 0.76,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 19,
+   "band": {
+    "n": 76,
+    "inside": 46,
+    "above": 13,
+    "below": 17,
+    "share": 0.61,
+    "n_wy": 18,
+    "k_wy": 11,
+    "lo": 0.386,
+    "hi": 0.797,
+    "outcome": "BELOW",
+    "median_width_ft": 39.24,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.45,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 76,
+      "k": 46,
+      "lo": 0.493,
+      "hi": 0.708,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.493,
+      "hi_unrounded": 0.708,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.7,
+      "k": 9,
+      "lo": 0.367,
+      "hi": 0.813,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.36,
+      "hi_unrounded": 0.807,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.317,
+      "hi_unrounded": 0.835,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 294,
+    "above": 159,
+    "below": 135,
+    "ties": 0,
+    "share_above": 0.54,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.46,
+    "median_abs_error": 11.63,
+    "p10": -24.46,
+    "p90": 23.27,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 294,
+      "k": 159,
+      "lo": 0.484,
+      "hi": 0.597,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.484,
+      "hi_unrounded": 0.597,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.4,
+      "k": 14,
+      "lo": 0.363,
+      "hi": 0.724,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.355,
+      "hi_unrounded": 0.716,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.301,
+      "hi_unrounded": 0.763,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 20,
+   "band": {
+    "n": 68,
+    "inside": 43,
+    "above": 12,
+    "below": 13,
+    "share": 0.63,
+    "n_wy": 18,
+    "k_wy": 11,
+    "lo": 0.386,
+    "hi": 0.797,
+    "outcome": "BELOW",
+    "median_width_ft": 46.64,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.48,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 68,
+      "k": 43,
+      "lo": 0.514,
+      "hi": 0.737,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.514,
+      "hi_unrounded": 0.737,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 13.8,
+      "k": 9,
+      "lo": 0.393,
+      "hi": 0.842,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.377,
+      "hi_unrounded": 0.83,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.339,
+      "hi_unrounded": 0.852,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 292,
+    "above": 160,
+    "below": 132,
+    "ties": 0,
+    "share_above": 0.55,
+    "n_wy": 27,
+    "k_wy": 15,
+    "lo": 0.373,
+    "hi": 0.724,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.93,
+    "median_abs_error": 12.62,
+    "p10": -25.4,
+    "p90": 24.09,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 292,
+      "k": 160,
+      "lo": 0.491,
+      "hi": 0.604,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.491,
+      "hi_unrounded": 0.604,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.3,
+      "k": 14,
+      "lo": 0.366,
+      "hi": 0.727,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.361,
+      "hi_unrounded": 0.722,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 8,
+      "lo": 0.326,
+      "hi": 0.786,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.306,
+      "hi_unrounded": 0.769,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 21,
+   "band": {
+    "n": 77,
+    "inside": 48,
+    "above": 14,
+    "below": 15,
+    "share": 0.62,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 46.74,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.41,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 77,
+      "k": 48,
+      "lo": 0.512,
+      "hi": 0.723,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.512,
+      "hi_unrounded": 0.723,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.2,
+      "k": 9,
+      "lo": 0.381,
+      "hi": 0.829,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.372,
+      "hi_unrounded": 0.822,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.332,
+      "hi_unrounded": 0.847,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 300,
+    "above": 156,
+    "below": 144,
+    "ties": 0,
+    "share_above": 0.52,
+    "n_wy": 26,
+    "k_wy": 14,
+    "lo": 0.355,
+    "hi": 0.712,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.98,
+    "median_abs_error": 13.79,
+    "p10": -27.64,
+    "p90": 25.38,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 300,
+      "k": 156,
+      "lo": 0.464,
+      "hi": 0.576,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.464,
+      "hi_unrounded": 0.576,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.2,
+      "k": 13,
+      "lo": 0.333,
+      "hi": 0.697,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.335,
+      "hi_unrounded": 0.699,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 13,
+      "k": 7,
+      "lo": 0.291,
+      "hi": 0.768,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.277,
+      "hi_unrounded": 0.754,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 22,
+   "band": {
+    "n": 76,
+    "inside": 47,
+    "above": 15,
+    "below": 14,
+    "share": 0.62,
+    "n_wy": 18,
+    "k_wy": 11,
+    "lo": 0.386,
+    "hi": 0.797,
+    "outcome": "BELOW",
+    "median_width_ft": 50.12,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.56,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 76,
+      "k": 47,
+      "lo": 0.506,
+      "hi": 0.719,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.506,
+      "hi_unrounded": 0.719,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.2,
+      "k": 9,
+      "lo": 0.383,
+      "hi": 0.831,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.367,
+      "hi_unrounded": 0.819,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.328,
+      "hi_unrounded": 0.844,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 298,
+    "above": 156,
+    "below": 142,
+    "ties": 0,
+    "share_above": 0.52,
+    "n_wy": 26,
+    "k_wy": 14,
+    "lo": 0.355,
+    "hi": 0.712,
+    "outcome": "CANNOT_TELL",
+    "median_error": 1.41,
+    "median_abs_error": 14.26,
+    "p10": -28.75,
+    "p90": 25.44,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 298,
+      "k": 156,
+      "lo": 0.467,
+      "hi": 0.58,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.467,
+      "hi_unrounded": 0.58,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.1,
+      "k": 13,
+      "lo": 0.333,
+      "hi": 0.697,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.339,
+      "hi_unrounded": 0.702,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 13,
+      "k": 7,
+      "lo": 0.291,
+      "hi": 0.768,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.28,
+      "hi_unrounded": 0.757,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "mead",
+   "lead": 23,
+   "band": {
+    "n": 75,
+    "inside": 45,
+    "above": 17,
+    "below": 13,
+    "share": 0.6,
+    "n_wy": 18,
+    "k_wy": 11,
+    "lo": 0.386,
+    "hi": 0.797,
+    "outcome": "BELOW",
+    "median_width_ft": 51.46,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.46,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 75,
+      "k": 45,
+      "lo": 0.487,
+      "hi": 0.703,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.487,
+      "hi_unrounded": 0.703,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.2,
+      "k": 9,
+      "lo": 0.382,
+      "hi": 0.831,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.351,
+      "hi_unrounded": 0.806,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.313,
+      "hi_unrounded": 0.832,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 293,
+    "above": 150,
+    "below": 143,
+    "ties": 0,
+    "share_above": 0.51,
+    "n_wy": 26,
+    "k_wy": 13,
+    "lo": 0.321,
+    "hi": 0.679,
+    "outcome": "CANNOT_TELL",
+    "median_error": 0.92,
+    "median_abs_error": 14.92,
+    "p10": -30.12,
+    "p90": 26.59,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 293,
+      "k": 150,
+      "lo": 0.455,
+      "hi": 0.569,
+      "outcome": "CONSISTENT",
+      "lo_unrounded": 0.455,
+      "hi_unrounded": 0.569,
+      "outcome_unrounded": "CONSISTENT"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.0,
+      "k": 13,
+      "lo": 0.335,
+      "hi": 0.699,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.328,
+      "hi_unrounded": 0.693,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 13,
+      "k": 7,
+      "lo": 0.291,
+      "hi": 0.768,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.27,
+      "hi_unrounded": 0.748,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 0,
+   "band": {
+    "n": 86,
+    "inside": 26,
+    "above": 24,
+    "below": 36,
+    "share": 0.3,
+    "n_wy": 21,
+    "k_wy": 6,
+    "lo": 0.138,
+    "hi": 0.5,
+    "outcome": "BELOW",
+    "median_width_ft": 0.17,
+    "zero_width": 10,
+    "inverted": 32,
+    "wy_lag1_corr": 0.16,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 86,
+      "k": 26,
+      "lo": 0.215,
+      "hi": 0.406,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.215,
+      "hi_unrounded": 0.406,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.7,
+      "k": 5,
+      "lo": 0.135,
+      "hi": 0.538,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.137,
+      "hi_unrounded": 0.541,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 3,
+      "lo": 0.097,
+      "hi": 0.566,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.114,
+      "hi_unrounded": 0.593,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 318,
+    "above": 121,
+    "below": 197,
+    "ties": 2,
+    "share_above": 0.38,
+    "n_wy": 28,
+    "k_wy": 11,
+    "lo": 0.236,
+    "hi": 0.576,
+    "outcome": "CANNOT_TELL",
+    "median_error": -0.25,
+    "median_abs_error": 0.65,
+    "p10": -1.65,
+    "p90": 1.59,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 318,
+      "k": 121,
+      "lo": 0.329,
+      "hi": 0.435,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.329,
+      "hi_unrounded": 0.435,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 27.1,
+      "k": 10,
+      "lo": 0.215,
+      "hi": 0.556,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.224,
+      "hi_unrounded": 0.567,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.179,
+      "hi_unrounded": 0.633,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 1,
+   "band": {
+    "n": 77,
+    "inside": 27,
+    "above": 21,
+    "below": 29,
+    "share": 0.35,
+    "n_wy": 20,
+    "k_wy": 7,
+    "lo": 0.181,
+    "hi": 0.567,
+    "outcome": "BELOW",
+    "median_width_ft": 0.44,
+    "zero_width": 8,
+    "inverted": 25,
+    "wy_lag1_corr": -0.45,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 77,
+      "k": 27,
+      "lo": 0.253,
+      "hi": 0.462,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.253,
+      "hi_unrounded": 0.462,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.4,
+      "k": 6,
+      "lo": 0.18,
+      "hi": 0.602,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.169,
+      "hi_unrounded": 0.589,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 4,
+      "lo": 0.152,
+      "hi": 0.646,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.143,
+      "hi_unrounded": 0.635,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 312,
+    "above": 106,
+    "below": 206,
+    "ties": 1,
+    "share_above": 0.34,
+    "n_wy": 28,
+    "k_wy": 10,
+    "lo": 0.207,
+    "hi": 0.542,
+    "outcome": "CANNOT_TELL",
+    "median_error": -0.73,
+    "median_abs_error": 1.4,
+    "p10": -3.46,
+    "p90": 2.44,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 312,
+      "k": 106,
+      "lo": 0.289,
+      "hi": 0.394,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.289,
+      "hi_unrounded": 0.394,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 27.0,
+      "k": 9,
+      "lo": 0.186,
+      "hi": 0.521,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.191,
+      "hi_unrounded": 0.528,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.152,
+      "hi_unrounded": 0.597,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 2,
+   "band": {
+    "n": 83,
+    "inside": 23,
+    "above": 22,
+    "below": 38,
+    "share": 0.28,
+    "n_wy": 21,
+    "k_wy": 6,
+    "lo": 0.138,
+    "hi": 0.5,
+    "outcome": "BELOW",
+    "median_width_ft": 1.38,
+    "zero_width": 1,
+    "inverted": 25,
+    "wy_lag1_corr": -0.13,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 23,
+      "lo": 0.192,
+      "hi": 0.382,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.192,
+      "hi_unrounded": 0.382,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 17.1,
+      "k": 5,
+      "lo": 0.132,
+      "hi": 0.529,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.122,
+      "hi_unrounded": 0.514,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 3,
+      "lo": 0.097,
+      "hi": 0.566,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.1,
+      "hi_unrounded": 0.57,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 314,
+    "above": 102,
+    "below": 212,
+    "ties": 0,
+    "share_above": 0.32,
+    "n_wy": 28,
+    "k_wy": 9,
+    "lo": 0.179,
+    "hi": 0.507,
+    "outcome": "CANNOT_TELL",
+    "median_error": -1.13,
+    "median_abs_error": 2.13,
+    "p10": -5.52,
+    "p90": 3.87,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 314,
+      "k": 102,
+      "lo": 0.275,
+      "hi": 0.378,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.275,
+      "hi_unrounded": 0.378,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 27.0,
+      "k": 9,
+      "lo": 0.187,
+      "hi": 0.522,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.18,
+      "hi_unrounded": 0.513,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.142,
+      "hi_unrounded": 0.583,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 3,
+   "band": {
+    "n": 84,
+    "inside": 38,
+    "above": 14,
+    "below": 32,
+    "share": 0.45,
+    "n_wy": 20,
+    "k_wy": 9,
+    "lo": 0.258,
+    "hi": 0.658,
+    "outcome": "BELOW",
+    "median_width_ft": 5.31,
+    "zero_width": 0,
+    "inverted": 7,
+    "wy_lag1_corr": 0.35,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 84,
+      "k": 38,
+      "lo": 0.35,
+      "hi": 0.559,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.35,
+      "hi_unrounded": 0.559,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.4,
+      "k": 7,
+      "lo": 0.225,
+      "hi": 0.656,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.244,
+      "hi_unrounded": 0.678,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 5,
+      "lo": 0.213,
+      "hi": 0.72,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.211,
+      "hi_unrounded": 0.718,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 318,
+    "above": 104,
+    "below": 214,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 28,
+    "k_wy": 9,
+    "lo": 0.179,
+    "hi": 0.507,
+    "outcome": "CANNOT_TELL",
+    "median_error": -1.86,
+    "median_abs_error": 3.18,
+    "p10": -7.71,
+    "p90": 5.33,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 318,
+      "k": 104,
+      "lo": 0.278,
+      "hi": 0.38,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.278,
+      "hi_unrounded": 0.38,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.9,
+      "k": 9,
+      "lo": 0.187,
+      "hi": 0.523,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.181,
+      "hi_unrounded": 0.516,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.143,
+      "hi_unrounded": 0.585,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 4,
+   "band": {
+    "n": 83,
+    "inside": 43,
+    "above": 12,
+    "below": 28,
+    "share": 0.52,
+    "n_wy": 20,
+    "k_wy": 10,
+    "lo": 0.299,
+    "hi": 0.701,
+    "outcome": "BELOW",
+    "median_width_ft": 11.82,
+    "zero_width": 0,
+    "inverted": 5,
+    "wy_lag1_corr": -0.11,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 43,
+      "lo": 0.412,
+      "hi": 0.622,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.412,
+      "hi_unrounded": 0.622,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.5,
+      "k": 9,
+      "lo": 0.32,
+      "hi": 0.753,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.298,
+      "hi_unrounded": 0.732,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.259,
+      "hi_unrounded": 0.768,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 317,
+    "above": 104,
+    "below": 213,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 28,
+    "k_wy": 9,
+    "lo": 0.179,
+    "hi": 0.507,
+    "outcome": "CANNOT_TELL",
+    "median_error": -2.4,
+    "median_abs_error": 4.58,
+    "p10": -9.91,
+    "p90": 6.5,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 317,
+      "k": 104,
+      "lo": 0.279,
+      "hi": 0.382,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.279,
+      "hi_unrounded": 0.382,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.8,
+      "k": 9,
+      "lo": 0.188,
+      "hi": 0.525,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.182,
+      "hi_unrounded": 0.517,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.144,
+      "hi_unrounded": 0.586,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 5,
+   "band": {
+    "n": 69,
+    "inside": 38,
+    "above": 7,
+    "below": 24,
+    "share": 0.55,
+    "n_wy": 21,
+    "k_wy": 12,
+    "lo": 0.365,
+    "hi": 0.755,
+    "outcome": "BELOW",
+    "median_width_ft": 14.15,
+    "zero_width": 0,
+    "inverted": 4,
+    "wy_lag1_corr": 0.07,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 69,
+      "k": 38,
+      "lo": 0.434,
+      "hi": 0.662,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.434,
+      "hi_unrounded": 0.662,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.0,
+      "k": 9,
+      "lo": 0.331,
+      "hi": 0.768,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.322,
+      "hi_unrounded": 0.76,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.284,
+      "hi_unrounded": 0.791,
+      "outcome_unrounded": "BELOW"
+     }
+    }
+   },
+   "mp": {
+    "n": 300,
+    "above": 100,
+    "below": 200,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 28,
+    "k_wy": 9,
+    "lo": 0.179,
+    "hi": 0.507,
+    "outcome": "CANNOT_TELL",
+    "median_error": -3.2,
+    "median_abs_error": 5.47,
+    "p10": -12.17,
+    "p90": 8.03,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 300,
+      "k": 100,
+      "lo": 0.282,
+      "hi": 0.388,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.282,
+      "hi_unrounded": 0.388,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.7,
+      "k": 9,
+      "lo": 0.189,
+      "hi": 0.527,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.186,
+      "hi_unrounded": 0.523,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.148,
+      "hi_unrounded": 0.591,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 6,
+   "band": {
+    "n": 83,
+    "inside": 49,
+    "above": 8,
+    "below": 26,
+    "share": 0.59,
+    "n_wy": 20,
+    "k_wy": 12,
+    "lo": 0.387,
+    "hi": 0.781,
+    "outcome": "BELOW",
+    "median_width_ft": 26.46,
+    "zero_width": 0,
+    "inverted": 5,
+    "wy_lag1_corr": -0.06,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 83,
+      "k": 49,
+      "lo": 0.483,
+      "hi": 0.69,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.483,
+      "hi_unrounded": 0.69,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.2,
+      "k": 10,
+      "lo": 0.381,
+      "hi": 0.808,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.357,
+      "hi_unrounded": 0.789,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 6,
+      "lo": 0.28,
+      "hi": 0.787,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.316,
+      "hi_unrounded": 0.818,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 314,
+    "above": 110,
+    "below": 204,
+    "ties": 0,
+    "share_above": 0.35,
+    "n_wy": 28,
+    "k_wy": 10,
+    "lo": 0.207,
+    "hi": 0.542,
+    "outcome": "CANNOT_TELL",
+    "median_error": -3.77,
+    "median_abs_error": 6.87,
+    "p10": -14.64,
+    "p90": 11.49,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 314,
+      "k": 110,
+      "lo": 0.3,
+      "hi": 0.405,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.3,
+      "hi_unrounded": 0.405,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.6,
+      "k": 9,
+      "lo": 0.19,
+      "hi": 0.528,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.199,
+      "hi_unrounded": 0.54,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.159,
+      "hi_unrounded": 0.606,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 7,
+   "band": {
+    "n": 81,
+    "inside": 52,
+    "above": 7,
+    "below": 22,
+    "share": 0.64,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 31.25,
+    "zero_width": 0,
+    "inverted": 4,
+    "wy_lag1_corr": -0.13,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 81,
+      "k": 52,
+      "lo": 0.533,
+      "hi": 0.738,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.533,
+      "hi_unrounded": 0.738,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.9,
+      "k": 10,
+      "lo": 0.39,
+      "hi": 0.819,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.401,
+      "hi_unrounded": 0.828,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 7,
+      "lo": 0.354,
+      "hi": 0.848,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.359,
+      "hi_unrounded": 0.852,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 307,
+    "above": 108,
+    "below": 199,
+    "ties": 0,
+    "share_above": 0.35,
+    "n_wy": 28,
+    "k_wy": 10,
+    "lo": 0.207,
+    "hi": 0.542,
+    "outcome": "CANNOT_TELL",
+    "median_error": -4.46,
+    "median_abs_error": 8.88,
+    "p10": -18.19,
+    "p90": 12.43,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 307,
+      "k": 108,
+      "lo": 0.301,
+      "hi": 0.407,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.301,
+      "hi_unrounded": 0.407,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.4,
+      "k": 9,
+      "lo": 0.191,
+      "hi": 0.531,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.199,
+      "hi_unrounded": 0.542,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.16,
+      "hi_unrounded": 0.608,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 8,
+   "band": {
+    "n": 74,
+    "inside": 50,
+    "above": 7,
+    "below": 17,
+    "share": 0.68,
+    "n_wy": 19,
+    "k_wy": 13,
+    "lo": 0.46,
+    "hi": 0.846,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 38.77,
+    "zero_width": 0,
+    "inverted": 2,
+    "wy_lag1_corr": -0.14,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 74,
+      "k": 50,
+      "lo": 0.563,
+      "hi": 0.771,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.563,
+      "hi_unrounded": 0.771,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.2,
+      "k": 10,
+      "lo": 0.41,
+      "hi": 0.841,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.427,
+      "hi_unrounded": 0.853,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 7,
+      "lo": 0.354,
+      "hi": 0.848,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.388,
+      "hi_unrounded": 0.873,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 305,
+    "above": 102,
+    "below": 203,
+    "ties": 1,
+    "share_above": 0.33,
+    "n_wy": 28,
+    "k_wy": 9,
+    "lo": 0.179,
+    "hi": 0.507,
+    "outcome": "CANNOT_TELL",
+    "median_error": -5.44,
+    "median_abs_error": 10.34,
+    "p10": -22.58,
+    "p90": 15.51,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 305,
+      "k": 102,
+      "lo": 0.284,
+      "hi": 0.389,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.284,
+      "hi_unrounded": 0.389,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.3,
+      "k": 9,
+      "lo": 0.192,
+      "hi": 0.533,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.186,
+      "hi_unrounded": 0.525,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.148,
+      "hi_unrounded": 0.592,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 9,
+   "band": {
+    "n": 82,
+    "inside": 57,
+    "above": 7,
+    "below": 18,
+    "share": 0.7,
+    "n_wy": 20,
+    "k_wy": 14,
+    "lo": 0.481,
+    "hi": 0.855,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 42.61,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.03,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 82,
+      "k": 57,
+      "lo": 0.589,
+      "hi": 0.784,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.589,
+      "hi_unrounded": 0.784,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.4,
+      "k": 11,
+      "lo": 0.464,
+      "hi": 0.877,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.447,
+      "hi_unrounded": 0.865,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 8,
+      "lo": 0.434,
+      "hi": 0.903,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.405,
+      "hi_unrounded": 0.884,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 312,
+    "above": 105,
+    "below": 207,
+    "ties": 0,
+    "share_above": 0.34,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -6.52,
+    "median_abs_error": 12.6,
+    "p10": -26.28,
+    "p90": 17.81,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 312,
+      "k": 105,
+      "lo": 0.286,
+      "hi": 0.391,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.286,
+      "hi_unrounded": 0.391,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.2,
+      "k": 9,
+      "lo": 0.193,
+      "hi": 0.535,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.187,
+      "hi_unrounded": 0.528,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.15,
+      "hi_unrounded": 0.594,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 10,
+   "band": {
+    "n": 80,
+    "inside": 56,
+    "above": 5,
+    "below": 19,
+    "share": 0.7,
+    "n_wy": 19,
+    "k_wy": 13,
+    "lo": 0.46,
+    "hi": 0.846,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 45.35,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.18,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 80,
+      "k": 56,
+      "lo": 0.592,
+      "hi": 0.789,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.592,
+      "hi_unrounded": 0.789,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.2,
+      "k": 11,
+      "lo": 0.471,
+      "hi": 0.883,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.45,
+      "hi_unrounded": 0.869,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 8,
+      "lo": 0.434,
+      "hi": 0.903,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.409,
+      "hi_unrounded": 0.887,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 309,
+    "above": 103,
+    "below": 206,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -8.14,
+    "median_abs_error": 14.37,
+    "p10": -29.17,
+    "p90": 18.56,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 309,
+      "k": 103,
+      "lo": 0.283,
+      "hi": 0.388,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.283,
+      "hi_unrounded": 0.388,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.1,
+      "k": 9,
+      "lo": 0.193,
+      "hi": 0.536,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.185,
+      "hi_unrounded": 0.525,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.148,
+      "hi_unrounded": 0.591,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 11,
+   "band": {
+    "n": 81,
+    "inside": 56,
+    "above": 6,
+    "below": 19,
+    "share": 0.69,
+    "n_wy": 19,
+    "k_wy": 13,
+    "lo": 0.46,
+    "hi": 0.846,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 51.29,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.2,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 81,
+      "k": 56,
+      "lo": 0.584,
+      "hi": 0.781,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.584,
+      "hi_unrounded": 0.781,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.5,
+      "k": 11,
+      "lo": 0.461,
+      "hi": 0.874,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.444,
+      "hi_unrounded": 0.863,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 8,
+      "lo": 0.434,
+      "hi": 0.903,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.402,
+      "hi_unrounded": 0.882,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 308,
+    "above": 103,
+    "below": 205,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -10.31,
+    "median_abs_error": 16.0,
+    "p10": -31.99,
+    "p90": 19.78,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 308,
+      "k": 103,
+      "lo": 0.284,
+      "hi": 0.389,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.284,
+      "hi_unrounded": 0.389,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.1,
+      "k": 9,
+      "lo": 0.193,
+      "hi": 0.536,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.185,
+      "hi_unrounded": 0.526,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.148,
+      "hi_unrounded": 0.592,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 12,
+   "band": {
+    "n": 81,
+    "inside": 56,
+    "above": 5,
+    "below": 20,
+    "share": 0.69,
+    "n_wy": 20,
+    "k_wy": 14,
+    "lo": 0.481,
+    "hi": 0.855,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 54.79,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.26,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 81,
+      "k": 56,
+      "lo": 0.584,
+      "hi": 0.781,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.584,
+      "hi_unrounded": 0.781,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.7,
+      "k": 11,
+      "lo": 0.453,
+      "hi": 0.867,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.446,
+      "hi_unrounded": 0.862,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 8,
+      "lo": 0.434,
+      "hi": 0.903,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.402,
+      "hi_unrounded": 0.882,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 308,
+    "above": 103,
+    "below": 205,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -11.96,
+    "median_abs_error": 17.7,
+    "p10": -35.03,
+    "p90": 21.78,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 308,
+      "k": 103,
+      "lo": 0.284,
+      "hi": 0.389,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.284,
+      "hi_unrounded": 0.389,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.1,
+      "k": 9,
+      "lo": 0.193,
+      "hi": 0.536,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.185,
+      "hi_unrounded": 0.526,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.148,
+      "hi_unrounded": 0.592,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 13,
+   "band": {
+    "n": 72,
+    "inside": 48,
+    "above": 4,
+    "below": 20,
+    "share": 0.67,
+    "n_wy": 19,
+    "k_wy": 13,
+    "lo": 0.46,
+    "hi": 0.846,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 57.21,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.33,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 72,
+      "k": 48,
+      "lo": 0.552,
+      "hi": 0.765,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.552,
+      "hi_unrounded": 0.765,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.4,
+      "k": 10,
+      "lo": 0.403,
+      "hi": 0.834,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.42,
+      "hi_unrounded": 0.847,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 11,
+      "k": 7,
+      "lo": 0.354,
+      "hi": 0.848,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.38,
+      "hi_unrounded": 0.867,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 299,
+    "above": 102,
+    "below": 197,
+    "ties": 0,
+    "share_above": 0.34,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -12.28,
+    "median_abs_error": 20.22,
+    "p10": -37.77,
+    "p90": 23.5,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 299,
+      "k": 102,
+      "lo": 0.29,
+      "hi": 0.397,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.29,
+      "hi_unrounded": 0.397,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.0,
+      "k": 9,
+      "lo": 0.194,
+      "hi": 0.537,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.19,
+      "hi_unrounded": 0.533,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.153,
+      "hi_unrounded": 0.598,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 14,
+   "band": {
+    "n": 78,
+    "inside": 50,
+    "above": 5,
+    "below": 23,
+    "share": 0.64,
+    "n_wy": 20,
+    "k_wy": 13,
+    "lo": 0.433,
+    "hi": 0.819,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 63.23,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.24,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 78,
+      "k": 50,
+      "lo": 0.53,
+      "hi": 0.739,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.53,
+      "hi_unrounded": 0.739,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 16.1,
+      "k": 10,
+      "lo": 0.384,
+      "hi": 0.812,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.402,
+      "hi_unrounded": 0.826,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.346,
+      "hi_unrounded": 0.858,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 300,
+    "above": 100,
+    "below": 200,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -12.67,
+    "median_abs_error": 21.52,
+    "p10": -40.2,
+    "p90": 26.01,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 300,
+      "k": 100,
+      "lo": 0.282,
+      "hi": 0.388,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.282,
+      "hi_unrounded": 0.388,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 26.0,
+      "k": 9,
+      "lo": 0.194,
+      "hi": 0.538,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.184,
+      "hi_unrounded": 0.525,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.148,
+      "hi_unrounded": 0.591,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 15,
+   "band": {
+    "n": 79,
+    "inside": 50,
+    "above": 5,
+    "below": 24,
+    "share": 0.63,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 67.1,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.26,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 79,
+      "k": 50,
+      "lo": 0.523,
+      "hi": 0.731,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.523,
+      "hi_unrounded": 0.731,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.4,
+      "k": 10,
+      "lo": 0.404,
+      "hi": 0.834,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.389,
+      "hi_unrounded": 0.823,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.339,
+      "hi_unrounded": 0.853,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 304,
+    "above": 100,
+    "below": 204,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -12.38,
+    "median_abs_error": 23.06,
+    "p10": -43.44,
+    "p90": 26.35,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 304,
+      "k": 100,
+      "lo": 0.279,
+      "hi": 0.384,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.279,
+      "hi_unrounded": 0.384,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.9,
+      "k": 9,
+      "lo": 0.195,
+      "hi": 0.539,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.181,
+      "hi_unrounded": 0.521,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.145,
+      "hi_unrounded": 0.587,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 16,
+   "band": {
+    "n": 78,
+    "inside": 52,
+    "above": 4,
+    "below": 22,
+    "share": 0.67,
+    "n_wy": 19,
+    "k_wy": 13,
+    "lo": 0.46,
+    "hi": 0.846,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 71.72,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.1,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 78,
+      "k": 52,
+      "lo": 0.556,
+      "hi": 0.761,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.556,
+      "hi_unrounded": 0.761,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.5,
+      "k": 10,
+      "lo": 0.401,
+      "hi": 0.831,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.421,
+      "hi_unrounded": 0.846,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 7,
+      "lo": 0.397,
+      "hi": 0.892,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.368,
+      "hi_unrounded": 0.873,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 303,
+    "above": 99,
+    "below": 204,
+    "ties": 0,
+    "share_above": 0.33,
+    "n_wy": 27,
+    "k_wy": 9,
+    "lo": 0.186,
+    "hi": 0.522,
+    "outcome": "CANNOT_TELL",
+    "median_error": -12.48,
+    "median_abs_error": 23.49,
+    "p10": -46.48,
+    "p90": 26.48,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 303,
+      "k": 99,
+      "lo": 0.276,
+      "hi": 0.381,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.276,
+      "hi_unrounded": 0.381,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.8,
+      "k": 8,
+      "lo": 0.166,
+      "hi": 0.503,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.179,
+      "hi_unrounded": 0.519,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 5,
+      "lo": 0.163,
+      "hi": 0.612,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.143,
+      "hi_unrounded": 0.585,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 17,
+   "band": {
+    "n": 63,
+    "inside": 40,
+    "above": 5,
+    "below": 18,
+    "share": 0.63,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 76.96,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.17,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 63,
+      "k": 40,
+      "lo": 0.511,
+      "hi": 0.743,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.511,
+      "hi_unrounded": 0.743,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.3,
+      "k": 9,
+      "lo": 0.377,
+      "hi": 0.825,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.383,
+      "hi_unrounded": 0.83,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 6,
+      "lo": 0.313,
+      "hi": 0.832,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.341,
+      "hi_unrounded": 0.854,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 289,
+    "above": 89,
+    "below": 200,
+    "ties": 0,
+    "share_above": 0.31,
+    "n_wy": 27,
+    "k_wy": 8,
+    "lo": 0.159,
+    "hi": 0.485,
+    "outcome": "BELOW",
+    "median_error": -12.85,
+    "median_abs_error": 24.12,
+    "p10": -48.75,
+    "p90": 25.8,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 289,
+      "k": 89,
+      "lo": 0.258,
+      "hi": 0.363,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.258,
+      "hi_unrounded": 0.363,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.7,
+      "k": 8,
+      "lo": 0.167,
+      "hi": 0.504,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.165,
+      "hi_unrounded": 0.501,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 4,
+      "lo": 0.117,
+      "hi": 0.546,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.131,
+      "hi_unrounded": 0.567,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 18,
+   "band": {
+    "n": 78,
+    "inside": 51,
+    "above": 5,
+    "below": 22,
+    "share": 0.65,
+    "n_wy": 19,
+    "k_wy": 12,
+    "lo": 0.41,
+    "hi": 0.809,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 80.64,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.11,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 78,
+      "k": 51,
+      "lo": 0.543,
+      "hi": 0.75,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.543,
+      "hi_unrounded": 0.75,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 15.0,
+      "k": 10,
+      "lo": 0.418,
+      "hi": 0.849,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.405,
+      "hi_unrounded": 0.84,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 7,
+      "lo": 0.397,
+      "hi": 0.892,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.357,
+      "hi_unrounded": 0.865,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 301,
+    "above": 94,
+    "below": 207,
+    "ties": 0,
+    "share_above": 0.31,
+    "n_wy": 27,
+    "k_wy": 8,
+    "lo": 0.159,
+    "hi": 0.485,
+    "outcome": "BELOW",
+    "median_error": -13.52,
+    "median_abs_error": 23.48,
+    "p10": -51.16,
+    "p90": 21.77,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 301,
+      "k": 94,
+      "lo": 0.263,
+      "hi": 0.367,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.263,
+      "hi_unrounded": 0.367,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.6,
+      "k": 8,
+      "lo": 0.168,
+      "hi": 0.506,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.168,
+      "hi_unrounded": 0.506,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 4,
+      "lo": 0.117,
+      "hi": 0.546,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.134,
+      "hi_unrounded": 0.572,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 19,
+   "band": {
+    "n": 76,
+    "inside": 50,
+    "above": 4,
+    "below": 22,
+    "share": 0.66,
+    "n_wy": 18,
+    "k_wy": 12,
+    "lo": 0.437,
+    "hi": 0.837,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 79.95,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.08,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 76,
+      "k": 50,
+      "lo": 0.546,
+      "hi": 0.755,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.546,
+      "hi_unrounded": 0.755,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.7,
+      "k": 10,
+      "lo": 0.429,
+      "hi": 0.86,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.406,
+      "hi_unrounded": 0.844,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 7,
+      "lo": 0.397,
+      "hi": 0.892,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.36,
+      "hi_unrounded": 0.868,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 293,
+    "above": 86,
+    "below": 207,
+    "ties": 0,
+    "share_above": 0.29,
+    "n_wy": 27,
+    "k_wy": 8,
+    "lo": 0.159,
+    "hi": 0.485,
+    "outcome": "BELOW",
+    "median_error": -12.47,
+    "median_abs_error": 22.06,
+    "p10": -53.17,
+    "p90": 20.94,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 293,
+      "k": 86,
+      "lo": 0.244,
+      "hi": 0.348,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.244,
+      "hi_unrounded": 0.348,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.4,
+      "k": 7,
+      "lo": 0.14,
+      "hi": 0.469,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.153,
+      "hi_unrounded": 0.488,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 4,
+      "lo": 0.117,
+      "hi": 0.546,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.122,
+      "hi_unrounded": 0.554,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 20,
+   "band": {
+    "n": 69,
+    "inside": 48,
+    "above": 4,
+    "below": 17,
+    "share": 0.7,
+    "n_wy": 18,
+    "k_wy": 13,
+    "lo": 0.491,
+    "hi": 0.875,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 79.34,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.1,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 69,
+      "k": 48,
+      "lo": 0.579,
+      "hi": 0.792,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.579,
+      "hi_unrounded": 0.792,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.0,
+      "k": 10,
+      "lo": 0.455,
+      "hi": 0.884,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.436,
+      "hi_unrounded": 0.871,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 7,
+      "lo": 0.397,
+      "hi": 0.892,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.393,
+      "hi_unrounded": 0.89,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 294,
+    "above": 87,
+    "below": 207,
+    "ties": 0,
+    "share_above": 0.3,
+    "n_wy": 27,
+    "k_wy": 8,
+    "lo": 0.159,
+    "hi": 0.485,
+    "outcome": "BELOW",
+    "median_error": -12.96,
+    "median_abs_error": 21.75,
+    "p10": -55.67,
+    "p90": 20.48,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 294,
+      "k": 87,
+      "lo": 0.247,
+      "hi": 0.35,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.247,
+      "hi_unrounded": 0.35,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.3,
+      "k": 7,
+      "lo": 0.141,
+      "hi": 0.471,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.155,
+      "hi_unrounded": 0.491,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 14,
+      "k": 4,
+      "lo": 0.117,
+      "hi": 0.546,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.124,
+      "hi_unrounded": 0.556,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 21,
+   "band": {
+    "n": 77,
+    "inside": 55,
+    "above": 3,
+    "below": 19,
+    "share": 0.71,
+    "n_wy": 19,
+    "k_wy": 14,
+    "lo": 0.512,
+    "hi": 0.882,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 81.98,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.23,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 77,
+      "k": 55,
+      "lo": 0.605,
+      "hi": 0.803,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.605,
+      "hi_unrounded": 0.803,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.2,
+      "k": 10,
+      "lo": 0.445,
+      "hi": 0.875,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.455,
+      "hi_unrounded": 0.882,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 7,
+      "lo": 0.397,
+      "hi": 0.892,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.41,
+      "hi_unrounded": 0.9,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 300,
+    "above": 88,
+    "below": 212,
+    "ties": 0,
+    "share_above": 0.29,
+    "n_wy": 26,
+    "k_wy": 8,
+    "lo": 0.165,
+    "hi": 0.5,
+    "outcome": "BELOW",
+    "median_error": -13.29,
+    "median_abs_error": 20.91,
+    "p10": -57.7,
+    "p90": 19.21,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 300,
+      "k": 88,
+      "lo": 0.245,
+      "hi": 0.347,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.245,
+      "hi_unrounded": 0.347,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.2,
+      "k": 7,
+      "lo": 0.142,
+      "hi": 0.473,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.153,
+      "hi_unrounded": 0.489,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 13,
+      "k": 4,
+      "lo": 0.127,
+      "hi": 0.576,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.118,
+      "hi_unrounded": 0.563,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 22,
+   "band": {
+    "n": 76,
+    "inside": 56,
+    "above": 3,
+    "below": 17,
+    "share": 0.74,
+    "n_wy": 18,
+    "k_wy": 13,
+    "lo": 0.491,
+    "hi": 0.875,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 82.45,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.19,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 76,
+      "k": 56,
+      "lo": 0.628,
+      "hi": 0.823,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.628,
+      "hi_unrounded": 0.823,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.2,
+      "k": 10,
+      "lo": 0.447,
+      "hi": 0.877,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.477,
+      "hi_unrounded": 0.896,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 7,
+      "lo": 0.397,
+      "hi": 0.892,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.43,
+      "hi_unrounded": 0.912,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 295,
+    "above": 85,
+    "below": 210,
+    "ties": 0,
+    "share_above": 0.29,
+    "n_wy": 26,
+    "k_wy": 7,
+    "lo": 0.137,
+    "hi": 0.461,
+    "outcome": "BELOW",
+    "median_error": -14.16,
+    "median_abs_error": 21.3,
+    "p10": -61.86,
+    "p90": 18.44,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 295,
+      "k": 85,
+      "lo": 0.239,
+      "hi": 0.342,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.239,
+      "hi_unrounded": 0.342,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.1,
+      "k": 7,
+      "lo": 0.142,
+      "hi": 0.474,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.149,
+      "hi_unrounded": 0.484,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 13,
+      "k": 4,
+      "lo": 0.127,
+      "hi": 0.576,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.115,
+      "hi_unrounded": 0.558,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  },
+  {
+   "res": "powell",
+   "lead": 23,
+   "band": {
+    "n": 76,
+    "inside": 55,
+    "above": 3,
+    "below": 18,
+    "share": 0.72,
+    "n_wy": 18,
+    "k_wy": 13,
+    "lo": 0.491,
+    "hi": 0.875,
+    "outcome": "CANNOT_TELL",
+    "median_width_ft": 82.96,
+    "zero_width": 0,
+    "inverted": 0,
+    "wy_lag1_corr": 0.26,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 76,
+      "k": 55,
+      "lo": 0.614,
+      "hi": 0.812,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.614,
+      "hi_unrounded": 0.812,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "kish_weighted_water_years": {
+      "n": 14.3,
+      "k": 10,
+      "lo": 0.442,
+      "hi": 0.872,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.465,
+      "hi_unrounded": 0.887,
+      "outcome_unrounded": "CANNOT_TELL"
+     },
+     "two_water_year_blocks": {
+      "n": 10,
+      "k": 7,
+      "lo": 0.397,
+      "hi": 0.892,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.418,
+      "hi_unrounded": 0.905,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   },
+   "mp": {
+    "n": 296,
+    "above": 81,
+    "below": 215,
+    "ties": 0,
+    "share_above": 0.27,
+    "n_wy": 26,
+    "k_wy": 7,
+    "lo": 0.137,
+    "hi": 0.461,
+    "outcome": "BELOW",
+    "median_error": -14.29,
+    "median_abs_error": 21.0,
+    "p10": -63.34,
+    "p90": 16.22,
+    "checks_after_data": {
+     "rows_as_independent": {
+      "n": 296,
+      "k": 81,
+      "lo": 0.226,
+      "hi": 0.327,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.226,
+      "hi_unrounded": 0.327,
+      "outcome_unrounded": "BELOW"
+     },
+     "kish_weighted_water_years": {
+      "n": 25.1,
+      "k": 7,
+      "lo": 0.142,
+      "hi": 0.474,
+      "outcome": "BELOW",
+      "lo_unrounded": 0.139,
+      "hi_unrounded": 0.469,
+      "outcome_unrounded": "BELOW"
+     },
+     "two_water_year_blocks": {
+      "n": 13,
+      "k": 4,
+      "lo": 0.127,
+      "hi": 0.576,
+      "outcome": "CANNOT_TELL",
+      "lo_unrounded": 0.106,
+      "hi_unrounded": 0.544,
+      "outcome_unrounded": "CANNOT_TELL"
+     }
+    }
+   }
+  }
+ ],
+ "flagged": {
+  "cells": 96,
+  "flagged": 34,
+  "groups": [
+   {
+    "res": "mead",
+    "test": "band",
+    "outcome": "BELOW",
+    "n": 20,
+    "leads": "0 to 15, 19 to 20, 22 to 23"
+   },
+   {
+    "res": "powell",
+    "test": "band",
+    "outcome": "BELOW",
+    "n": 7,
+    "leads": "0 to 6"
+   },
+   {
+    "res": "powell",
+    "test": "mp",
+    "outcome": "BELOW",
+    "n": 7,
+    "leads": "17 to 23"
+   }
+  ],
+  "note": "Neighbouring cells share reports and target months, so these are not separate results."
+ },
+ "band_sentence_months": {
+  "note": "Added after the data: band cells restricted to the issue months whose Probable Minimum and Probable Maximum reports both print the 80 percent sentence.",
+  "months": [
+   "2010-01",
+   "2010-04",
+   "2010-08",
+   "2010-10",
+   "2011-01",
+   "2011-04",
+   "2011-08",
+   "2011-10",
+   "2012-01",
+   "2012-04",
+   "2012-08",
+   "2012-10",
+   "2013-01",
+   "2013-04",
+   "2013-08",
+   "2013-10",
+   "2014-01",
+   "2014-04",
+   "2014-08",
+   "2014-10",
+   "2015-01",
+   "2015-04",
+   "2015-08",
+   "2015-10",
+   "2016-01",
+   "2016-04",
+   "2016-08",
+   "2017-01",
+   "2017-04",
+   "2017-08",
+   "2017-10",
+   "2018-01",
+   "2018-04",
+   "2018-08",
+   "2018-10",
+   "2019-01",
+   "2019-04",
+   "2019-08",
+   "2019-10",
+   "2020-01",
+   "2020-04",
+   "2020-08",
+   "2020-10",
+   "2021-01",
+   "2021-02",
+   "2021-03",
+   "2021-04",
+   "2021-05",
+   "2021-06",
+   "2021-07",
+   "2021-08",
+   "2021-09",
+   "2021-10",
+   "2021-11",
+   "2021-12",
+   "2022-01",
+   "2022-02",
+   "2022-04",
+   "2022-06",
+   "2022-07",
+   "2022-08",
+   "2022-10",
+   "2023-01",
+   "2023-04",
+   "2023-08",
+   "2024-01",
+   "2024-04",
+   "2024-05",
+   "2024-08",
+   "2024-10",
+   "2025-01",
+   "2025-04",
+   "2025-08",
+   "2025-10",
+   "2026-01",
+   "2026-04",
+   "2026-05",
+   "2026-08",
+   "2026-10"
+  ],
+  "cells": [
+   {
+    "res": "mead",
+    "lead": 0,
+    "n": 79,
+    "inside": 23,
+    "above": 23,
+    "below": 33,
+    "n_wy": 18,
+    "lo": 0.125,
+    "hi": 0.509,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 1,
+    "n": 70,
+    "inside": 14,
+    "above": 27,
+    "below": 29,
+    "n_wy": 17,
+    "lo": 0.062,
+    "hi": 0.41,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 2,
+    "n": 76,
+    "inside": 19,
+    "above": 27,
+    "below": 30,
+    "n_wy": 18,
+    "lo": 0.09,
+    "hi": 0.452,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 3,
+    "n": 77,
+    "inside": 26,
+    "above": 25,
+    "below": 26,
+    "n_wy": 17,
+    "lo": 0.173,
+    "hi": 0.587,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 4,
+    "n": 76,
+    "inside": 23,
+    "above": 28,
+    "below": 25,
+    "n_wy": 17,
+    "lo": 0.133,
+    "hi": 0.531,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 5,
+    "n": 64,
+    "inside": 26,
+    "above": 18,
+    "below": 20,
+    "n_wy": 18,
+    "lo": 0.203,
+    "hi": 0.614,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 6,
+    "n": 76,
+    "inside": 37,
+    "above": 17,
+    "below": 22,
+    "n_wy": 18,
+    "lo": 0.29,
+    "hi": 0.71,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 7,
+    "n": 74,
+    "inside": 35,
+    "above": 16,
+    "below": 23,
+    "n_wy": 17,
+    "lo": 0.262,
+    "hi": 0.69,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 8,
+    "n": 67,
+    "inside": 33,
+    "above": 13,
+    "below": 21,
+    "n_wy": 17,
+    "lo": 0.262,
+    "hi": 0.69,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 9,
+    "n": 75,
+    "inside": 39,
+    "above": 14,
+    "below": 22,
+    "n_wy": 17,
+    "lo": 0.31,
+    "hi": 0.738,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 10,
+    "n": 74,
+    "inside": 41,
+    "above": 13,
+    "below": 20,
+    "n_wy": 16,
+    "lo": 0.332,
+    "hi": 0.769,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 11,
+    "n": 74,
+    "inside": 40,
+    "above": 13,
+    "below": 21,
+    "n_wy": 16,
+    "lo": 0.332,
+    "hi": 0.769,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 12,
+    "n": 74,
+    "inside": 37,
+    "above": 16,
+    "below": 21,
+    "n_wy": 17,
+    "lo": 0.262,
+    "hi": 0.69,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 13,
+    "n": 65,
+    "inside": 34,
+    "above": 12,
+    "below": 19,
+    "n_wy": 16,
+    "lo": 0.28,
+    "hi": 0.72,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 14,
+    "n": 71,
+    "inside": 39,
+    "above": 13,
+    "below": 19,
+    "n_wy": 17,
+    "lo": 0.31,
+    "hi": 0.738,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 15,
+    "n": 72,
+    "inside": 41,
+    "above": 14,
+    "below": 17,
+    "n_wy": 16,
+    "lo": 0.332,
+    "hi": 0.769,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 16,
+    "n": 71,
+    "inside": 41,
+    "above": 14,
+    "below": 16,
+    "n_wy": 16,
+    "lo": 0.332,
+    "hi": 0.769,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 17,
+    "n": 59,
+    "inside": 34,
+    "above": 13,
+    "below": 12,
+    "n_wy": 16,
+    "lo": 0.332,
+    "hi": 0.769,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 18,
+    "n": 71,
+    "inside": 41,
+    "above": 15,
+    "below": 15,
+    "n_wy": 17,
+    "lo": 0.36,
+    "hi": 0.784,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 19,
+    "n": 70,
+    "inside": 40,
+    "above": 13,
+    "below": 17,
+    "n_wy": 16,
+    "lo": 0.332,
+    "hi": 0.769,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 20,
+    "n": 62,
+    "inside": 37,
+    "above": 12,
+    "below": 13,
+    "n_wy": 16,
+    "lo": 0.386,
+    "hi": 0.815,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "mead",
+    "lead": 21,
+    "n": 71,
+    "inside": 42,
+    "above": 14,
+    "below": 15,
+    "n_wy": 16,
+    "lo": 0.332,
+    "hi": 0.769,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "mead",
+    "lead": 22,
+    "n": 70,
+    "inside": 41,
+    "above": 15,
+    "below": 14,
+    "n_wy": 15,
+    "lo": 0.357,
+    "hi": 0.802,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "mead",
+    "lead": 23,
+    "n": 69,
+    "inside": 39,
+    "above": 17,
+    "below": 13,
+    "n_wy": 15,
+    "lo": 0.301,
+    "hi": 0.752,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 0,
+    "n": 79,
+    "inside": 24,
+    "above": 24,
+    "below": 31,
+    "n_wy": 18,
+    "lo": 0.125,
+    "hi": 0.509,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 1,
+    "n": 70,
+    "inside": 25,
+    "above": 21,
+    "below": 24,
+    "n_wy": 17,
+    "lo": 0.173,
+    "hi": 0.587,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 2,
+    "n": 76,
+    "inside": 21,
+    "above": 21,
+    "below": 34,
+    "n_wy": 18,
+    "lo": 0.125,
+    "hi": 0.509,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 3,
+    "n": 77,
+    "inside": 35,
+    "above": 14,
+    "below": 28,
+    "n_wy": 17,
+    "lo": 0.262,
+    "hi": 0.69,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 4,
+    "n": 76,
+    "inside": 39,
+    "above": 12,
+    "below": 25,
+    "n_wy": 17,
+    "lo": 0.31,
+    "hi": 0.738,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 5,
+    "n": 62,
+    "inside": 34,
+    "above": 7,
+    "below": 21,
+    "n_wy": 18,
+    "lo": 0.337,
+    "hi": 0.754,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 6,
+    "n": 76,
+    "inside": 45,
+    "above": 7,
+    "below": 24,
+    "n_wy": 18,
+    "lo": 0.386,
+    "hi": 0.797,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 7,
+    "n": 74,
+    "inside": 46,
+    "above": 7,
+    "below": 21,
+    "n_wy": 17,
+    "lo": 0.413,
+    "hi": 0.827,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 8,
+    "n": 67,
+    "inside": 44,
+    "above": 7,
+    "below": 16,
+    "n_wy": 17,
+    "lo": 0.413,
+    "hi": 0.827,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 9,
+    "n": 75,
+    "inside": 50,
+    "above": 7,
+    "below": 18,
+    "n_wy": 17,
+    "lo": 0.413,
+    "hi": 0.827,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 10,
+    "n": 73,
+    "inside": 49,
+    "above": 5,
+    "below": 19,
+    "n_wy": 16,
+    "lo": 0.444,
+    "hi": 0.858,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 11,
+    "n": 74,
+    "inside": 49,
+    "above": 6,
+    "below": 19,
+    "n_wy": 16,
+    "lo": 0.444,
+    "hi": 0.858,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 12,
+    "n": 74,
+    "inside": 49,
+    "above": 5,
+    "below": 20,
+    "n_wy": 17,
+    "lo": 0.413,
+    "hi": 0.827,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 13,
+    "n": 65,
+    "inside": 41,
+    "above": 4,
+    "below": 20,
+    "n_wy": 16,
+    "lo": 0.386,
+    "hi": 0.815,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 14,
+    "n": 71,
+    "inside": 43,
+    "above": 5,
+    "below": 23,
+    "n_wy": 17,
+    "lo": 0.36,
+    "hi": 0.784,
+    "outcome": "BELOW"
+   },
+   {
+    "res": "powell",
+    "lead": 15,
+    "n": 72,
+    "inside": 44,
+    "above": 5,
+    "below": 23,
+    "n_wy": 16,
+    "lo": 0.386,
+    "hi": 0.815,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 16,
+    "n": 71,
+    "inside": 46,
+    "above": 4,
+    "below": 21,
+    "n_wy": 16,
+    "lo": 0.386,
+    "hi": 0.815,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 17,
+    "n": 57,
+    "inside": 36,
+    "above": 5,
+    "below": 16,
+    "n_wy": 16,
+    "lo": 0.386,
+    "hi": 0.815,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 18,
+    "n": 72,
+    "inside": 47,
+    "above": 5,
+    "below": 20,
+    "n_wy": 17,
+    "lo": 0.413,
+    "hi": 0.827,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 19,
+    "n": 70,
+    "inside": 46,
+    "above": 4,
+    "below": 20,
+    "n_wy": 16,
+    "lo": 0.444,
+    "hi": 0.858,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 20,
+    "n": 63,
+    "inside": 44,
+    "above": 4,
+    "below": 15,
+    "n_wy": 16,
+    "lo": 0.444,
+    "hi": 0.858,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 21,
+    "n": 71,
+    "inside": 51,
+    "above": 3,
+    "below": 17,
+    "n_wy": 16,
+    "lo": 0.444,
+    "hi": 0.858,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 22,
+    "n": 70,
+    "inside": 52,
+    "above": 3,
+    "below": 15,
+    "n_wy": 15,
+    "lo": 0.48,
+    "hi": 0.891,
+    "outcome": "CANNOT_TELL"
+   },
+   {
+    "res": "powell",
+    "lead": 23,
+    "n": 70,
+    "inside": 52,
+    "above": 2,
+    "below": 16,
+    "n_wy": 15,
+    "lo": 0.48,
+    "hi": 0.891,
+    "outcome": "CANNOT_TELL"
+   }
+  ]
+ },
+ "misread_by_era": [
+  {
+   "era": "2000 to 2005",
+   "months_compared": 790,
+   "misread": 8,
+   "rate": 0.0101,
+   "print_only_values": 3997
+  },
+  {
+   "era": "2006 to 2011",
+   "months_compared": 1702,
+   "misread": 2,
+   "rate": 0.0012,
+   "print_only_values": 4508
+  },
+  {
+   "era": "2012 to 2017",
+   "months_compared": 5704,
+   "misread": 22,
+   "rate": 0.0039,
+   "print_only_values": 36
+  },
+  {
+   "era": "2018 to 2026",
+   "months_compared": 11459,
+   "misread": 20,
+   "rate": 0.0017,
+   "print_only_values": 72
+  }
+ ],
+ "measured_cross_checks": {
+  "mead_hdb_vs_lc_table": {
+   "months_compared_since_1990": 432,
+   "differ_since_1990": 9,
+   "differ_since_2000": 3,
+   "largest_since_2000": {
+    "month": "2002-06",
+    "hdb": 1159.19,
+    "lc_table": 1160.19,
+    "gap": -1.0
+   },
+   "months_since_2000": [
+    {
+     "month": "2002-06",
+     "hdb": 1159.19,
+     "lc_table": 1160.19
+    },
+    {
+     "month": "2023-12",
+     "hdb": 1068.05,
+     "lc_table": 1068.18
+    },
+    {
+     "month": "2024-07",
+     "hdb": 1061.38,
+     "lc_table": 1061.49
+    }
+   ]
+  },
+  "powell_usgs_daily_mean_minus_hdb_end_of_day": {
+   "days": 2761,
+   "median": -0.36,
+   "p10": -0.57,
+   "p90": -0.21
+  }
+ },
+ "checks_after_data_note": "Added after the data and never used for any outcome. Each cell carries the same count read on three other rulers: rows_as_independent (Wilson on rows), kish_weighted_water_years (water years weighted by row count, n = (sum m) squared over sum of m squared), two_water_year_blocks (water years paired 2000-2001, 2002-2003 and so on). The effective count of successes is rounded as the plan rounds it, and the unrounded reading is given beside it. wy_lag1_corr is the correlation of the per-water-year share between neighbouring water years.",
+ "variants": [
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2026-08",
+   "lead": 0,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1040.04,
+   "measured": 1038.83,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": -1.21,
+   "mp_sign": "below"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2026-09",
+   "lead": 1,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1038.8,
+   "measured": 1037.8,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": -1.0,
+   "mp_sign": "below"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2026-10",
+   "lead": 2,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1037.88,
+   "measured": 1038.85,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 0.97,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2026-11",
+   "lead": 3,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1035.56,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2026-12",
+   "lead": 4,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1034.74,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-01",
+   "lead": 5,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1034.36,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-02",
+   "lead": 6,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1033.57,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-03",
+   "lead": 7,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1026.72,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-04",
+   "lead": 8,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1018.28,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-05",
+   "lead": 9,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1011.16,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-06",
+   "lead": 10,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1006.46,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-07",
+   "lead": 11,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1005.63,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-08",
+   "lead": 12,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1007.83,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-09",
+   "lead": 13,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1008.53,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-10",
+   "lead": 14,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1009.52,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-11",
+   "lead": 15,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1009.22,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2027-12",
+   "lead": 16,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1011.59,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2028-01",
+   "lead": 17,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1015.25,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2028-02",
+   "lead": 18,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1017.89,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2028-03",
+   "lead": 19,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1013.95,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2028-04",
+   "lead": 20,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1007.16,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2028-05",
+   "lead": 21,
+   "variant": "6 maf Lake Powell release",
+   "mp": 999.07,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2028-06",
+   "lead": 22,
+   "variant": "6 maf Lake Powell release",
+   "mp": 993.32,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "mead",
+   "target": "2028-07",
+   "lead": 23,
+   "variant": "6 maf Lake Powell release",
+   "mp": 991.68,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2026-08",
+   "lead": 0,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3518.6,
+   "measured": 3517.87,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": -0.73,
+   "mp_sign": "below"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2026-09",
+   "lead": 1,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3515.89,
+   "measured": 3518.08,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 2.19,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2026-10",
+   "lead": 2,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3515.8,
+   "measured": 3531.9,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 16.1,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2026-11",
+   "lead": 3,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3515.28,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2026-12",
+   "lead": 4,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3513.96,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-01",
+   "lead": 5,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3512.53,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-02",
+   "lead": 6,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3511.7,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-03",
+   "lead": 7,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3511.8,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-04",
+   "lead": 8,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3514.05,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-05",
+   "lead": 9,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3527.82,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-06",
+   "lead": 10,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3542.29,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-07",
+   "lead": 11,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3541.18,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-08",
+   "lead": 12,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3535.8,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-09",
+   "lead": 13,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3533.24,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-10",
+   "lead": 14,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3532.59,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-11",
+   "lead": 15,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3531.23,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2027-12",
+   "lead": 16,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3527.71,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2028-01",
+   "lead": 17,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3523.03,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2028-02",
+   "lead": 18,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3520.06,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2028-03",
+   "lead": 19,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3518.6,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2028-04",
+   "lead": 20,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3521.9,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2028-05",
+   "lead": 21,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3539.1,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2028-06",
+   "lead": 22,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3558.78,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-08",
+   "res": "powell",
+   "target": "2028-07",
+   "lead": 23,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3558.57,
+   "measured": null,
+   "report": "August 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2026-09",
+   "lead": 0,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1038.4,
+   "measured": 1037.8,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": -0.6,
+   "mp_sign": "below"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2026-10",
+   "lead": 1,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1035.16,
+   "measured": 1038.85,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 3.69,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2026-11",
+   "lead": 2,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1034.88,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2026-12",
+   "lead": 3,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1034.18,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-01",
+   "lead": 4,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1033.98,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-02",
+   "lead": 5,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1033.37,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-03",
+   "lead": 6,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1026.94,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-04",
+   "lead": 7,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1019.05,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-05",
+   "lead": 8,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1012.55,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-06",
+   "lead": 9,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1008.13,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-07",
+   "lead": 10,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1007.38,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-08",
+   "lead": 11,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1009.66,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-09",
+   "lead": 12,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1010.51,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-10",
+   "lead": 13,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1011.64,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-11",
+   "lead": 14,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1011.46,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2027-12",
+   "lead": 15,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1013.89,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-01",
+   "lead": 16,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1017.74,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-02",
+   "lead": 17,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1020.51,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-03",
+   "lead": 18,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1017.11,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-04",
+   "lead": 19,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1011.02,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-05",
+   "lead": 20,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1003.71,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-06",
+   "lead": 21,
+   "variant": "6 maf Lake Powell release",
+   "mp": 998.42,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-07",
+   "lead": 22,
+   "variant": "6 maf Lake Powell release",
+   "mp": 996.96,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "mead",
+   "target": "2028-08",
+   "lead": 23,
+   "variant": "6 maf Lake Powell release",
+   "mp": 998.4,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2026-09",
+   "lead": 0,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3514.98,
+   "measured": 3518.08,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 3.1,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2026-10",
+   "lead": 1,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3515.05,
+   "measured": 3531.9,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 16.85,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2026-11",
+   "lead": 2,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3514.64,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2026-12",
+   "lead": 3,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3513.51,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-01",
+   "lead": 4,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3512.26,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-02",
+   "lead": 5,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3511.43,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-03",
+   "lead": 6,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3511.57,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-04",
+   "lead": 7,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3513.99,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-05",
+   "lead": 8,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3527.85,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-06",
+   "lead": 9,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3542.4,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-07",
+   "lead": 10,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3541.26,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-08",
+   "lead": 11,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3535.88,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-09",
+   "lead": 12,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3533.32,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-10",
+   "lead": 13,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3532.68,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-11",
+   "lead": 14,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3531.3,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2027-12",
+   "lead": 15,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3527.62,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-01",
+   "lead": 16,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3522.73,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-02",
+   "lead": 17,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3519.56,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-03",
+   "lead": 18,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3518.08,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-04",
+   "lead": 19,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3521.47,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-05",
+   "lead": 20,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3538.49,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-06",
+   "lead": 21,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3558.44,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-07",
+   "lead": 22,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3558.22,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-09",
+   "res": "powell",
+   "target": "2028-08",
+   "lead": 23,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3554.64,
+   "measured": null,
+   "report": "September 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2026-10",
+   "lead": 0,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1035.29,
+   "measured": 1038.85,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 3.56,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2026-11",
+   "lead": 1,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1033.97,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2026-12",
+   "lead": 2,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1034.52,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-01",
+   "lead": 3,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1034.33,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-02",
+   "lead": 4,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1033.64,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-03",
+   "lead": 5,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1027.24,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-04",
+   "lead": 6,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1019.35,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-05",
+   "lead": 7,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1012.87,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-06",
+   "lead": 8,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1008.47,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-07",
+   "lead": 9,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1007.73,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-08",
+   "lead": 10,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1010.01,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-09",
+   "lead": 11,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1010.85,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-10",
+   "lead": 12,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1011.99,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-11",
+   "lead": 13,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1011.81,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2027-12",
+   "lead": 14,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1014.25,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-01",
+   "lead": 15,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1019.95,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-02",
+   "lead": 16,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1024.22,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-03",
+   "lead": 17,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1022.58,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-04",
+   "lead": 18,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1018.2,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-05",
+   "lead": 19,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1012.74,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-06",
+   "lead": 20,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1009.36,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-07",
+   "lead": 21,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1009.85,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-08",
+   "lead": 22,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1013.16,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "mead",
+   "target": "2028-09",
+   "lead": 23,
+   "variant": "6 maf Lake Powell release",
+   "mp": 1014.81,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2026-10",
+   "lead": 0,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3519.23,
+   "measured": 3531.9,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF",
+   "mp_error": 12.67,
+   "mp_sign": "above"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2026-11",
+   "lead": 1,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3519.44,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2026-12",
+   "lead": 2,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3518.29,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-01",
+   "lead": 3,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3517.0,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-02",
+   "lead": 4,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3516.28,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-03",
+   "lead": 5,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3516.53,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-04",
+   "lead": 6,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3519.97,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-05",
+   "lead": 7,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3533.28,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-06",
+   "lead": 8,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3548.86,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-07",
+   "lead": 9,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3547.97,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-08",
+   "lead": 10,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3543.09,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-09",
+   "lead": 11,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3540.65,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-10",
+   "lead": 12,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3540.09,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-11",
+   "lead": 13,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3538.87,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2027-12",
+   "lead": 14,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3535.54,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-01",
+   "lead": 15,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3529.21,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-02",
+   "lead": 16,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3524.68,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-03",
+   "lead": 17,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3521.54,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-04",
+   "lead": 18,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3523.29,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-05",
+   "lead": 19,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3538.63,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-06",
+   "lead": 20,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3557.16,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-07",
+   "lead": 21,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3555.35,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-08",
+   "lead": 22,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3549.95,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  },
+  {
+   "issue": "2026-10",
+   "res": "powell",
+   "target": "2028-09",
+   "lead": 23,
+   "variant": "6 maf Lake Powell release",
+   "mp": 3546.58,
+   "measured": null,
+   "report": "October 2026 Most Probable 24-Month Study - 6MAF"
+  }
+ ],
+ "notable": [
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "mead",
+   "issue": "2010-12",
+   "target": "2011-12",
+   "lead": 12,
+   "mp": 1082.67,
+   "pmin": null,
+   "pmax": null,
+   "measured": 1132.83,
+   "mp_error": 50.16,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "mead",
+   "issue": "2001-04",
+   "target": "2002-04",
+   "lead": 12,
+   "mp": 1118.84,
+   "pmin": null,
+   "pmax": null,
+   "measured": 1167.49,
+   "mp_error": 48.65,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "mead",
+   "issue": "2010-12",
+   "target": "2011-11",
+   "lead": 11,
+   "mp": 1078.57,
+   "pmin": null,
+   "pmax": null,
+   "measured": 1125.82,
+   "mp_error": 47.25,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "mead",
+   "issue": "2022-12",
+   "target": "2023-12",
+   "lead": 12,
+   "mp": 1021.05,
+   "pmin": 1016.18,
+   "pmax": null,
+   "measured": 1068.05,
+   "mp_error": 47.0,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "mead",
+   "issue": "2022-09",
+   "target": "2023-09",
+   "lead": 12,
+   "mp": 1018.88,
+   "pmin": 1015.71,
+   "pmax": null,
+   "measured": 1065.82,
+   "mp_error": 46.94,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-10",
+   "target": "2026-10",
+   "lead": 0,
+   "mp": 1035.29,
+   "pmin": 1034.98,
+   "pmax": 1035.47,
+   "measured": 1038.85,
+   "mp_error": 3.56,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-09",
+   "target": "2026-10",
+   "lead": 1,
+   "mp": 1035.16,
+   "pmin": 1034.83,
+   "pmax": null,
+   "measured": 1038.85,
+   "mp_error": 3.69,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-08",
+   "target": "2026-10",
+   "lead": 2,
+   "mp": 1037.88,
+   "pmin": 1036.98,
+   "pmax": 1038.1,
+   "measured": 1038.85,
+   "mp_error": 0.97,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-07",
+   "target": "2026-10",
+   "lead": 3,
+   "mp": 1037.26,
+   "pmin": 1036.73,
+   "pmax": null,
+   "measured": 1038.85,
+   "mp_error": 1.59,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-06",
+   "target": "2026-10",
+   "lead": 4,
+   "mp": 1036.92,
+   "pmin": 1035.56,
+   "pmax": null,
+   "measured": 1038.85,
+   "mp_error": 1.93,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-05",
+   "target": "2026-10",
+   "lead": 5,
+   "mp": 1037.99,
+   "pmin": 1036.12,
+   "pmax": 1040.14,
+   "measured": 1038.85,
+   "mp_error": 0.86,
+   "outcome": "CONSISTENT"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-04",
+   "target": "2026-10",
+   "lead": 6,
+   "mp": 1056.63,
+   "pmin": 1054.32,
+   "pmax": 1059.45,
+   "measured": 1038.85,
+   "mp_error": -17.78,
+   "outcome": "BELOW"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-03",
+   "target": "2026-10",
+   "lead": 7,
+   "mp": 1057.1,
+   "pmin": 1054.46,
+   "pmax": null,
+   "measured": 1038.85,
+   "mp_error": -18.25,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-02",
+   "target": "2026-10",
+   "lead": 8,
+   "mp": 1057.54,
+   "pmin": 1053.88,
+   "pmax": null,
+   "measured": 1038.85,
+   "mp_error": -18.69,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2026-01",
+   "target": "2026-10",
+   "lead": 9,
+   "mp": 1057.99,
+   "pmin": 1052.67,
+   "pmax": 1061.5,
+   "measured": 1038.85,
+   "mp_error": -19.14,
+   "outcome": "BELOW"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2025-12",
+   "target": "2026-10",
+   "lead": 10,
+   "mp": 1057.33,
+   "pmin": 1053.31,
+   "pmax": null,
+   "measured": 1038.85,
+   "mp_error": -18.48,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2025-11",
+   "target": "2026-10",
+   "lead": 11,
+   "mp": 1054.83,
+   "pmin": 1050.31,
+   "pmax": null,
+   "measured": 1038.85,
+   "mp_error": -15.98,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "mead",
+   "issue": "2025-10",
+   "target": "2026-10",
+   "lead": 12,
+   "mp": 1052.95,
+   "pmin": 1047.92,
+   "pmax": 1059.48,
+   "measured": 1038.85,
+   "mp_error": -14.1,
+   "outcome": "BELOW"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "powell",
+   "issue": "2026-04",
+   "target": "2026-10",
+   "lead": 6,
+   "mp": 3479.67,
+   "pmin": 3472.43,
+   "pmax": 3509.03,
+   "measured": 3531.9,
+   "mp_error": 52.23,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "powell",
+   "issue": "2020-07",
+   "target": "2021-07",
+   "lead": 12,
+   "mp": 3600.67,
+   "pmin": null,
+   "pmax": null,
+   "measured": 3553.88,
+   "mp_error": -46.79,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "powell",
+   "issue": "2022-06",
+   "target": "2023-06",
+   "lead": 12,
+   "mp": 3537.89,
+   "pmin": 3522.78,
+   "pmax": 3564.61,
+   "measured": 3583.47,
+   "mp_error": 45.58,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "powell",
+   "issue": "2024-09",
+   "target": "2025-09",
+   "lead": 12,
+   "mp": 3589.88,
+   "pmin": 3553.45,
+   "pmax": null,
+   "measured": 3544.69,
+   "mp_error": -45.19,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "largest Most Probable miss, leads 1 to 12",
+   "res": "powell",
+   "issue": "2019-01",
+   "target": "2019-08",
+   "lead": 7,
+   "mp": 3573.6,
+   "pmin": 3559.46,
+   "pmax": 3597.6,
+   "measured": 3618.55,
+   "mp_error": 44.95,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-10",
+   "target": "2026-10",
+   "lead": 0,
+   "mp": 3519.23,
+   "pmin": 3519.23,
+   "pmax": 3519.5,
+   "measured": 3531.9,
+   "mp_error": 12.67,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-09",
+   "target": "2026-10",
+   "lead": 1,
+   "mp": 3515.05,
+   "pmin": 3515.05,
+   "pmax": null,
+   "measured": 3531.9,
+   "mp_error": 16.85,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-08",
+   "target": "2026-10",
+   "lead": 2,
+   "mp": 3515.8,
+   "pmin": 3515.8,
+   "pmax": 3516.11,
+   "measured": 3531.9,
+   "mp_error": 16.1,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-07",
+   "target": "2026-10",
+   "lead": 3,
+   "mp": 3514.8,
+   "pmin": 3514.13,
+   "pmax": null,
+   "measured": 3531.9,
+   "mp_error": 17.1,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-06",
+   "target": "2026-10",
+   "lead": 4,
+   "mp": 3512.31,
+   "pmin": 3510.23,
+   "pmax": null,
+   "measured": 3531.9,
+   "mp_error": 19.59,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-05",
+   "target": "2026-10",
+   "lead": 5,
+   "mp": 3508.98,
+   "pmin": 3511.24,
+   "pmax": 3519.37,
+   "measured": 3531.9,
+   "mp_error": 22.92,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-04",
+   "target": "2026-10",
+   "lead": 6,
+   "mp": 3479.67,
+   "pmin": 3472.43,
+   "pmax": 3509.03,
+   "measured": 3531.9,
+   "mp_error": 52.23,
+   "outcome": "ABOVE"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-03",
+   "target": "2026-10",
+   "lead": 7,
+   "mp": 3495.18,
+   "pmin": 3478.18,
+   "pmax": null,
+   "measured": 3531.9,
+   "mp_error": 36.72,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-02",
+   "target": "2026-10",
+   "lead": 8,
+   "mp": 3495.31,
+   "pmin": 3477.33,
+   "pmax": null,
+   "measured": 3531.9,
+   "mp_error": 36.59,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2026-01",
+   "target": "2026-10",
+   "lead": 9,
+   "mp": 3518.63,
+   "pmin": 3497.68,
+   "pmax": 3567.84,
+   "measured": 3531.9,
+   "mp_error": 13.27,
+   "outcome": "CONSISTENT"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2025-12",
+   "target": "2026-10",
+   "lead": 10,
+   "mp": 3525.62,
+   "pmin": 3489.27,
+   "pmax": null,
+   "measured": 3531.9,
+   "mp_error": 6.28,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2025-11",
+   "target": "2026-10",
+   "lead": 11,
+   "mp": 3538.72,
+   "pmin": 3497.37,
+   "pmax": null,
+   "measured": 3531.9,
+   "mp_error": -6.82,
+   "outcome": "CANNOT_TELL"
+  },
+  {
+   "kind": "latest measured month",
+   "res": "powell",
+   "issue": "2025-10",
+   "target": "2026-10",
+   "lead": 12,
+   "mp": 3537.26,
+   "pmin": 3488.49,
+   "pmax": 3610.87,
+   "measured": 3531.9,
+   "mp_error": -5.36,
+   "outcome": "CONSISTENT"
+  }
+ ],
+ "live": {
+  "mead": {
+   "name": "Lake Mead",
+   "daily_date": "2026-11-08",
+   "daily_ft": 1039.66,
+   "hourly_time": "2026-11-09T19",
+   "hourly_ft": 1039.85,
+   "change_1d": 0.11,
+   "change_7d": 0.73,
+   "change_30d": 2.06,
+   "largest_rise_60d": {
+    "1": {
+     "rise_ft": 0.49,
+     "start": "2026-10-23",
+     "end": "2026-10-24"
+    },
+    "2": {
+     "rise_ft": 0.81,
+     "start": "2026-10-23",
+     "end": "2026-10-25"
+    },
+    "7": {
+     "rise_ft": 1.44,
+     "start": "2026-10-23",
+     "end": "2026-10-30"
+    }
+   },
+   "lowest_daily_since_dec_1999": {
+    "date": "2026-10-22",
+    "ft": 1037.16
+   },
+   "source": "Reclamation HDB, sdi 1930 (lchdb), daily end-of-day and hourly readings, Mountain Standard Time"
+  },
+  "powell": {
+   "name": "Lake Powell",
+   "daily_date": "2026-11-08",
+   "daily_ft": 3538.84,
+   "hourly_time": "2026-11-08T23",
+   "hourly_ft": 3538.84,
+   "change_1d": 0.28,
+   "change_7d": 6.42,
+   "change_30d": 19.87,
+   "largest_rise_60d": {
+    "1": {
+     "rise_ft": 1.83,
+     "start": "2026-10-21",
+     "end": "2026-10-22"
+    },
+    "2": {
+     "rise_ft": 3.24,
+     "start": "2026-10-21",
+     "end": "2026-10-23"
+    },
+    "7": {
+     "rise_ft": 9.32,
+     "start": "2026-10-20",
+     "end": "2026-10-27"
+    }
+   },
+   "lowest_daily_since_dec_1999": {
+    "date": "2026-09-15",
+    "ft": 3516.62
+   },
+   "source": "Reclamation HDB, sdi 1928 (uchdb2), daily end-of-day and hourly readings, Mountain Standard Time"
+  },
+  "powell_usgs": {
+   "time": "2026-11-09T20:45:00.000-07:00",
+   "ft": 3538.8,
+   "qualifiers": [
+    "P"
+   ],
+   "datum": "NGVD 1929",
+   "site": "USGS 09379900 Lake Powell at Glen Canyon Dam, AZ"
+  },
+  "others": [
+   {
+    "name": "Lake Mead",
+    "agency": "Reclamation",
+    "date": "2026-11-08",
+    "storage_af": 6954289,
+    "stated_capacity_af": 26120000,
+    "share": 0.266,
+    "capacity_label": "content at the bottom of exclusive flood control space",
+    "source": "Reclamation Lower Colorado daily report and its JSON feed"
+   },
+   {
+    "name": "Lake Mohave",
+    "agency": "Reclamation",
+    "date": "2026-11-08",
+    "storage_af": 1653231,
+    "stated_capacity_af": 1873648,
+    "share": 0.882,
+    "capacity_label": "available capacity",
+    "source": "Reclamation Lower Colorado daily report and its JSON feed"
+   },
+   {
+    "name": "Lake Havasu",
+    "agency": "Reclamation",
+    "date": "2026-11-08",
+    "storage_af": 538299,
+    "stated_capacity_af": 570253,
+    "share": 0.944,
+    "capacity_label": "available capacity",
+    "source": "Reclamation Lower Colorado daily report and its JSON feed"
+   },
+   {
+    "name": "Blue Mesa",
+    "agency": "Reclamation",
+    "date": "2026-11-08",
+    "storage_af": 172052,
+    "stated_capacity_af": 827472,
+    "share": 0.208,
+    "capacity_label": "maximum storage",
+    "source": "Reclamation Lower Colorado daily report and its JSON feed"
+   },
+   {
+    "name": "Flaming Gorge",
+    "agency": "Reclamation",
+    "date": "2026-11-08",
+    "storage_af": 2402961,
+    "stated_capacity_af": 3749000,
+    "share": 0.641,
+    "capacity_label": "maximum storage",
+    "source": "Reclamation Lower Colorado daily report and its JSON feed"
+   },
+   {
+    "name": "Lake Powell",
+    "agency": "Reclamation",
+    "date": "2026-11-08",
+    "storage_af": 6376114,
+    "stated_capacity_af": 23314000,
+    "share": 0.273,
+    "capacity_label": "maximum storage",
+    "source": "Reclamation Lower Colorado daily report and its JSON feed"
+   },
+   {
+    "name": "Navajo",
+    "agency": "Reclamation",
+    "date": "2026-11-08",
+    "storage_af": 1417399,
+    "stated_capacity_af": 1696000,
+    "share": 0.836,
+    "capacity_label": "maximum storage",
+    "source": "Reclamation Lower Colorado daily report and its JSON feed"
+   },
+   {
+    "name": "Shasta",
+    "agency": "California CDEC",
+    "date": "2026-11-08",
+    "storage_af": 2250016,
+    "stated_capacity_af": 4552000,
+    "share": 0.494,
+    "capacity_label": "capacity",
+    "source": "CDEC daily reservoir storage summary (RES)"
+   },
+   {
+    "name": "Oroville",
+    "agency": "California CDEC",
+    "date": "2026-11-08",
+    "storage_af": 1446531,
+    "stated_capacity_af": 3424753,
+    "share": 0.422,
+    "capacity_label": "capacity",
+    "source": "CDEC daily reservoir storage summary (RES)"
+   }
+  ],
+  "thresholds": [
+   {
+    "doc": "2007 Interim Guidelines Record of Decision",
+    "url": "https://www.usbr.gov/lc/region/programs/strategies/RecordofDecision.pdf",
+    "res": "mead",
+    "ft": 1075,
+    "section": "2.D.1.a",
+    "governs": "governed calendar year 2026",
+    "quote": "In years when Lake Mead content is projected to be at or below elevation 1,075 feet and at or above 1,050 feet on January 1, a quantity of 7.167 maf shall be apportioned for consumptive use in the Lower Division States ...",
+    "current_minus_threshold_ft": -35.34
+   },
+   {
+    "doc": "2007 Interim Guidelines Record of Decision",
+    "url": "https://www.usbr.gov/lc/region/programs/strategies/RecordofDecision.pdf",
+    "res": "mead",
+    "ft": 1050,
+    "section": "2.D.1.b",
+    "governs": "in force through 2026, not the tier that governed 2026",
+    "quote": "In years when Lake Mead content is projected to be below elevation 1,050 feet and at or above 1,025 feet on January 1, a quantity of 7.083 maf shall be apportioned ...",
+    "current_minus_threshold_ft": -10.34
+   },
+   {
+    "doc": "2007 Interim Guidelines Record of Decision",
+    "url": "https://www.usbr.gov/lc/region/programs/strategies/RecordofDecision.pdf",
+    "res": "mead",
+    "ft": 1025,
+    "section": "2.D.1.c",
+    "governs": "in force through 2026, not the tier that governed 2026",
+    "quote": "In years when Lake Mead content is projected to be below elevation 1,025 feet on January 1, a quantity of 7.0 maf shall be apportioned ...",
+    "current_minus_threshold_ft": 14.66
+   },
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "res": "mead",
+    "ft": 1125,
+    "section": "5.3.A.5",
+    "governs": "2027 and 2028",
+    "quote": "Should the Most Probable projection indicate a likelihood of achieving Lake Mead elevation 1,125 feet or above during 2027 or 2028, the Secretary will consult with the Lower Division States regarding the potential to increase apportionments.",
+    "current_minus_threshold_ft": -85.34
+   },
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "res": "mead",
+    "ft": 1010,
+    "section": "5.3.A.4",
+    "governs": "2027 and 2028",
+    "quote": "Should the Most Probable projection of any 24-Month Study show Lake Mead falling below 1,010 feet at any time in the subsequent 12-month period, the Secretary shall consult and coordinate with the Basin States and Basin Tribes, and other affected parties as appropriate, to consider potential actions throughout the Basin to respond to and address hydrologic and operational conditions.",
+    "current_minus_threshold_ft": 29.66
+   },
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "res": "mead",
+    "ft": 950,
+    "section": "5.3",
+    "governs": "2027 and 2028",
+    "quote": "Below elevation 950 feet, Lake Mead releases are restricted to only the upper penstock outlet works, which would reduce operational flexibility and severely constrain releases, and below this elevation hydropower can no longer be produced.",
+    "current_minus_threshold_ft": 89.66
+   },
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "res": "powell",
+    "ft": 3565,
+    "section": "5.1.A.1",
+    "governs": "water years 2027 and 2028",
+    "quote": "In Water Years when the projected October 1 Lake Powell elevation is at or above 3,565 feet, the initial Water Year release will be determined by performing an incremental modeling approach using Exhibit Runs. Reclamation shall first evaluate a Water Year release of 8.23 maf and, if necessary, successively evaluate releases of 8.0 maf and 7.5 maf. The initial Water Year release shall be the first release evaluated that is projected to maintain a minimum Lake Powell elevation of 3,510 feet throughout the Water Year.",
+    "current_minus_threshold_ft": -26.16
+   },
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "res": "powell",
+    "ft": 3540,
+    "section": "5.1.C.1",
+    "governs": "water years 2027 and 2028",
+    "quote": "In Water Years when the projected October 1 Lake Powell elevation is below 3,540 feet, the initial Water Year release will be determined by performing a modeling approach using an Exhibit Run.",
+    "current_minus_threshold_ft": -1.16
+   },
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "res": "powell",
+    "ft": 3510,
+    "section": "5.1",
+    "governs": "water years 2027 and 2028",
+    "quote": "These operations are designed to protect a minimum Lake Powell elevation of 3,500 feet by initially seeking to maintain a minimum elevation of 3,510 feet.",
+    "current_minus_threshold_ft": 28.84
+   },
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "res": "powell",
+    "ft": 3490,
+    "section": "5.1",
+    "governs": "water years 2027 and 2028",
+    "quote": "There are additional impacts to hydropower associated with operating below 3,490 feet, as this is the minimum power pool.",
+    "current_minus_threshold_ft": 48.84
+   }
+  ],
+  "threshold_notes": [
+   {
+    "doc": "2027-2028 Operating Guidelines (August 2026)",
+    "url": "https://www.usbr.gov/ColoradoRiverBasin/post2026/decision-doc/2027-2028OperatingGuidelines_Final.pdf",
+    "section": "5.3.A.1",
+    "what": "a shortage provision for 2027 and 2028 that names no elevation",
+    "quote": "The Secretary will determine that a Shortage Condition exists for the applicable Year for purposes of the apportionment of Colorado River water among the Lower Division States and will apportion 6.25 maf for consumptive use in the Lower Division States."
+   },
+   {
+    "doc": "October 2026 Most Probable 24-Month Study (7 maf)",
+    "url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/OCT26_7_508.pdf",
+    "section": "page 2",
+    "what": "which 2007 tier governed 2026, and other documents that also governed Lake Mead in 2026 and are not listed in the table",
+    "quote": "Consistent with Section 2.D.1 of the 2007 Interim Guidelines, a Shortage Condition consistent with Section 2.D.1.a governs the operation of Lake Mead for CY 2026. In addition, Section III.B of Exhibit 1 to the Lower Basin Drought Contingency Plan (DCP) Agreement and provisions in IBWC Minutes No. 323 and 330 also governs the operation of Lake Mead for CY 2026."
+   }
+  ],
+  "added_after_plan": [
+   "largest_rise_60d",
+   "lowest_daily_since_dec_1999",
+   "datum notes",
+   "measured-side cross-checks"
+  ],
+  "datum": {
+   "mead": "RISE names the USGS 1912 datum, \"Locally known at Hoover Dam as \u201cPower House Datum.\u201d Add 0.55 foot to convert to National Geodetic Vertical Datum of 1929 (NVGD 1929), leveling of 1935.\"",
+   "powell": "RISE lists EGM96 for the Lake Powell site and gives no definition."
+  }
+ },
+ "usgs_revisions": {
+  "first_read": "2026-11-10",
+  "gauges": [
+   {
+    "site": "09379900",
+    "parameter": "62614",
+    "provisional_days_stored": 145,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "0.1 ft"
+   },
+   {
+    "site": "09380000",
+    "parameter": "00060",
+    "provisional_days_stored": 137,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "1 percent"
+   },
+   {
+    "site": "09402500",
+    "parameter": "00060",
+    "provisional_days_stored": 264,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "1 percent"
+   },
+   {
+    "site": "09404200",
+    "parameter": "00060",
+    "provisional_days_stored": 256,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "1 percent"
+   },
+   {
+    "site": "09415000",
+    "parameter": "00060",
+    "provisional_days_stored": 97,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "1 percent"
+   },
+   {
+    "site": "09180500",
+    "parameter": "00060",
+    "provisional_days_stored": 160,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "1 percent"
+   },
+   {
+    "site": "09315000",
+    "parameter": "00060",
+    "provisional_days_stored": 298,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "1 percent"
+   },
+   {
+    "site": "09379500",
+    "parameter": "00060",
+    "provisional_days_stored": 108,
+    "approved_since": 0,
+    "revised_beyond_threshold": 0,
+    "lo": 0.0,
+    "hi": 1.0,
+    "outcome": "CANNOT_TELL",
+    "threshold": "1 percent"
+   }
+  ]
+ }
+}

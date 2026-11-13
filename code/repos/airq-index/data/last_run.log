@@ -1,0 +1,85 @@
+airq: gate passed
+airq: aqs 01 Success 44319
+airq: aqs 02 Success 12181
+airq: aqs 04 Success 53184
+airq: aqs 05 Success 6358
+airq: aqs 06 Success 356053
+airq: aqs 08 Success 82009
+airq: aqs 09 Success 24304
+airq: aqs 10 Success 23606
+airq: aqs 11 Success 14681
+airq: aqs 12 Success 103412
+airq: aqs 13 Success 43020
+airq: aqs 15 Success 46900
+airq: aqs 16 Success 3518
+airq: aqs 17 Success 105554
+airq: aqs 18 Success 91774
+airq: aqs 19 Success 41014
+airq: aqs 20 Success 26392
+airq: aqs 21 Success 58722
+airq: aqs 22 Success 30063
+airq: aqs 23 Success 36845
+airq: aqs 24 Success 35283
+airq: aqs 25 Success 67472
+airq: aqs 26 Success 76744
+airq: aqs 27 Success 77231
+airq: aqs 28 Success 23487
+airq: aqs 29 Success 55664
+airq: aqs 30 Success 58640
+airq: aqs 31 Success 20616
+airq: aqs 32 Success 61668
+airq: aqs 33 Success 17668
+airq: aqs 34 Success 58436
+airq: aqs 35 Success 41273
+airq: aqs 36 Success 59125
+airq: aqs 37 Success 75705
+airq: aqs 38 Success 32288
+airq: aqs 39 Success 113598
+airq: aqs 40 Success 41199
+airq: aqs 41 Success 52764
+airq: aqs 42 Success 171418
+airq: aqs 44 Success 17667
+airq: aqs 45 Success 32435
+airq: aqs 46 Success 26394
+airq: aqs 47 Success 61765
+airq: aqs 48 Success 168019
+airq: aqs 49 Success 84078
+airq: aqs 50 Success 8844
+airq: aqs 51 Success 49421
+airq: aqs 53 Success 68722
+airq: aqs 54 Success 15182
+airq: aqs 55 Success 55754
+airq: aqs 56 Success 48125
+airq: aqs 66 No data matched your selection 0
+airq: aqs 72 Success 3148
+airq: aqs 78 No data matched your selection 0
+airq: aqs 80 Success 2928
+airq: aqs CC no response 0
+airq: monitors with >= 30 valid UTC days: 892; sites with only filter samples: 106
+airq: pa near 50 of 892
+airq: pa near 100 of 892
+airq: pa near 150 of 892
+airq: pa near 200 of 892
+airq: pa near 250 of 892
+airq: pa near 300 of 892
+airq: pa near 350 of 892
+airq: pa near 400 of 892
+airq: pa near 450 of 892
+airq: pa near 500 of 892
+airq: pa near 550 of 892
+airq: pa near 600 of 892
+airq: pa near 650 of 892
+airq: pa near 700 of 892
+airq: pa near 750 of 892
+airq: pa near 800 of 892
+airq: pa near 850 of 892
+airq: sensors near monitors: 414
+airq: pa history 50 of 414
+airq: pa history 100 of 414
+airq: pa history 150 of 414
+airq: pa history 200 of 414
+airq: pa history 250 of 414
+airq: pa history 300 of 414
+airq: pa history 350 of 414
+airq: pa history 400 of 414
+airq: monitors 892 with sensors 147 pairs 211 | comparison {'Map reading (atm channels, raw)': (140, 147, 'ABOVE'), 'cf_1 channels, raw': (143, 147, 'ABOVE'), 'cf_1 corrected for humidity (Barkjohn 2021)': (66, 147, 'CANNOT_TELL')}

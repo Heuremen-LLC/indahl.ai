@@ -1,0 +1,44 @@
+{
+ "GHZ3": {
+  "job_means": [
+   0.80078125,
+   0.79931640625,
+   0.78369140625,
+   0.802734375
+  ],
+  "mean": 0.796630859375,
+  "their_baseline": 0.8828125,
+  "between_job_sd": 0.008739188644960155,
+  "binomial_sd_job": 0.008894184076350583,
+  "drift_excess_sd": 0.0,
+  "max_job_range": 0.01904296875,
+  "their_gain": 0.0381,
+  "sd_of_two_job_difference": 0.017788368152701167,
+  "z_of_their_gain": 2.141849082104505,
+  "outcome": "ABOVE",
+  "known_good_copies": true
+ },
+ "GHZ5": {
+  "job_means": [
+   0.7392578125,
+   0.7421875,
+   0.73681640625,
+   0.75732421875
+  ],
+  "mean": 0.743896484375,
+  "their_baseline": 0.80078125,
+  "between_job_sd": 0.0092171843325311,
+  "binomial_sd_job": 0.009644929268810078,
+  "drift_excess_sd": 0.0,
+  "max_job_range": 0.0205078125,
+  "their_gain": 0.0342,
+  "sd_of_two_job_difference": 0.019289858537620153,
+  "z_of_their_gain": 1.7729523486811094,
+  "outcome": "CONSISTENT",
+  "known_good_copies": true
+ },
+ "KNOWN_GOOD": {
+  "rule": "both copies inside every job agree within 2.58 binomial sd, both circuits",
+  "passed": true
+ }
+}

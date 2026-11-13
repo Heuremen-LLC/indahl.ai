@@ -1,0 +1,9 @@
+ibm_kingston: circuits 10 x 2 jobs + cal 8; checks PASS; durations (dt) {'D': 4921, 'M': 4921, 'MC': 4921, 'M31': 4921, 'MT': 4921}; est 31 s (cap 60), remaining 1981
+SUBMITTED C attempt 1 job dbjij4hkdqps7390lufg 2026-11-01T11:59:14Z
+DONE C usage {'qpu_charge_time_seconds': 11, 'value': 0.174895, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 0.174895, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 11}}]}
+SUBMITTED A attempt 1 job dbjjdvonceqs73ak4op0 2026-11-01T12:56:31Z
+DONE A usage {'qpu_charge_time_seconds': 8, 'value': 0.121553, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 0.121553, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 8}}]}
+SUBMITTED B attempt 1 job dbjje3onceqs73ak4p00 2026-11-01T12:56:47Z
+DONE B usage {'qpu_charge_time_seconds': 8, 'value': 0.121553, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 0.121553, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 8}}]}
+ALL DONE ibm_kingston 27 s
+EXIT ibm_kingston 

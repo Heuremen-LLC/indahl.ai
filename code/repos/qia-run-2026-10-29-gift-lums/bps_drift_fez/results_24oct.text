@@ -1,0 +1,16 @@
+=== n=8 (rows 13, shots 1102, 12 jobs TOOTTOOTTOOT)
+  R1_drift_O_CM: job-mean SD 0.3260; CM 1.06e-01 vs shot-noise null median 2.42e-04 (99% hi 7.76e-04) -> ABOVE; excess job SD 0.3257 (upper 0.3260)
+  R1b_T_CM: job-mean SD 0.0476; CM 2.26e-03 vs shot-noise null median 2.09e-04 (99% hi 7.34e-04) -> ABOVE; excess job SD 0.0453 (upper 0.0474)
+  R2_twirl_job_var_T_minus_O: -1.040e-01 permutation 99% [-1.015e-01, +1.015e-01] p_upper 1.000 -> BELOW
+  R2b_twirl_rows_T_minus_O: -5.841e-02 permutation 99% [-7.177e-02, +7.177e-02] p_upper 0.919 -> CONSISTENT
+  DECISION (pre-registered rule): DRIFT: job-to-job spread beyond shot noise WITHOUT twirling (twirl instance variance not separated, R2 BELOW)
+  R3 his single-pair shift +0.0426 vs today T-arm job-mean SD 0.0476 [95% 0.0297, 0.1167] (pair SD = sqrt2 x): -> CONSISTENT
+  context: mean CVaR today T -2.7218, O -2.1758; his bps1 mean -2.7845 (different day/device state)
+=== n=10 (rows 17, shots 2168, 12 jobs TOOTTOOTTOOT)
+  R1_drift_O_CM: job-mean SD 0.0123; CM 1.52e-04 vs shot-noise null median 1.08e-04 (99% hi 4.36e-04) -> CONSISTENT; excess job SD 0.0067 (upper 0.0117)
+  R1b_T_CM: job-mean SD 0.0170; CM 2.91e-04 vs shot-noise null median 1.17e-04 (99% hi 4.74e-04) -> CONSISTENT; excess job SD 0.0132 (upper 0.0163)
+  R2_twirl_job_var_T_minus_O: +1.386e-04 permutation 99% [-2.972e-04, +2.972e-04] p_upper 0.289 -> CONSISTENT
+  R2b_twirl_rows_T_minus_O: +2.173e-03 permutation 99% [-1.168e-02, +1.168e-02] p_upper 0.339 -> CONSISTENT
+  DECISION (pre-registered rule): NEITHER RESOLVED: both arms within shot noise; bounds above
+  R3 his single-pair shift -0.0499 vs today T-arm job-mean SD 0.0170 [95% 0.0106, 0.0418] (pair SD = sqrt2 x): -> CONSISTENT
+  context: mean CVaR today T -3.5677, O -3.7652; his bps1 mean -3.2659 (different day/device state)

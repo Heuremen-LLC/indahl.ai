@@ -1,0 +1,12 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-25 05:07:27,155: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-25 05:07:31,255: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open, pay-as-you-go), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-25 05:07:31,255: Loading account with the given token. A saved account will not be used.
+remaining 1757 kingston active 0
+{"jobA_circuits": 198, "jobA_shots": 567000, "jobA_est_s": 149.7, "jobB_circuits": 54, "jobB_shots": 162000, "jobB_est_s": 42.8}
+/Users/heuremen/bones-forge/qia_runs/2026-10-25-fire-tehran/fire_tele.py:44: DeprecationWarning: Specifying different 'shots' across pubs is deprecated as of qiskit-ibm-runtime 0.48.0 and will be removed no sooner than 3 months after the release date. Submit one job for each desired shot count instead. To reduce overhead, Consider submitting these jobs inside a Batch execution mode.
+  job = sm.run([(t, None, sh) for _, t, sh in arms]); jid = job.job_id(); t0 = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+SUBMITTED A dbesdm7pc3tc739ma9c0 2026-10-25T09:07:36Z
+DONE A usage {'qpu_charge_time_seconds': 152, 'value': 2.527776, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 2.527776, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 152}}]}
+SUBMITTED B dbesf8vsstms73fcm9i0 2026-10-25T09:10:59Z
+DONE B usage {'qpu_charge_time_seconds': 45, 'value': 0.742389, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.742389, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 45}}]}
+ANALYSED

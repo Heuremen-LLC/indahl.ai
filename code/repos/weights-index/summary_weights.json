@@ -1,0 +1,24 @@
+{
+ "updated": "29 Oct 15:00",
+ "gate": "passed",
+ "pass_number": 1,
+ "models": 1000,
+ "unreadable": 8,
+ "not_comparable": 90,
+ "headline": {
+  "of": 0,
+  "n": 0,
+  "share": null,
+  "share_lo": 0,
+  "share_hi": 1,
+  "outcome": "NOTHING_RETURNED",
+  "awaiting": 0
+ },
+ "headline_n": 0,
+ "headline_of": 0,
+ "gone": {
+  "models": 0,
+  "list": []
+ },
+ "changed_list": []
+}

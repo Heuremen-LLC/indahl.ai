@@ -1,0 +1,98 @@
+[
+ {
+  "bibcode": "2026CQGra..43m5017S",
+  "arxiv": "2604.15500",
+  "doi": "10.1088/1361-6382/ae8119",
+  "pubdate": "2026-07-00",
+  "title": "Joint detection and characterization of the standing accretion shock instability for core-collapse supernovae with cWB XP",
+  "abstract": "The most sensitive to-date multimessenger detection of the standing accretion shock instability (SASI) in real interferometric data is presented, which quantitatively identifies the presence of the SASI in core-collapse supernovae using neutrino and gravitational-wave (GW) signals. In the GW channel, the coherent WaveBurst software on its version XP is implemented, among with real LIGO data from the O3 and O4 observing runs. With this, a more accurate estimation of parameters, such as the central frequency and signal duration, is obtained for both sets of data. The SASI identification probability versus false alarm rates is presented in the form of receiver operating characteristic (ROC) curves. For O3, the new study for the combined GW and neutrino detection condition, labeled as <inline-formula> <mml:math><mml:mrow><mml:mi>x</mml:mi><mml:mo>+</mml:mo><mml:mi>y</mml:mi></mml:mrow></mml:math></inline-formula>, shows an identification probability (previous best results from Lin et al 2023 Phys. Rev. D 107 083017) of 1 (1), 0.90 (0.70) and 0.37 (0.34) at 1, 5 and 10 kpc for a false identification probability of 0.10. On the other hand, using O4 shows that the GW channel by itself is sensitive enough to provide almost perfect identification probability scores, with identification probability values of 1, 0.99 and 0.97 for a false identification probability of 0.01 at 1, 5 and 10 kpc, respectively."
+ },
+ {
+  "bibcode": "2026ApJ..1005L..55R",
+  "arxiv": "2603.17987",
+  "doi": "10.3847/2041-8213/ae80cb",
+  "pubdate": "2026-07-00",
+  "title": "On the Astrophysical Origin of Binary Black Hole Subpopulations: A Tale of Three Channels?",
+  "abstract": "There is increasing evidence for multiple binary black hole (BBH) subpopulations in the cumulative gravitational-wave catalog of the LIGO\u2500Virgo\u2500KAGRA Collaboration. The astrophysical interpretation of this complex underlying population is subject to theoretical uncertainties in treatments of binary stellar evolution, core collapse, and host environments. In this Letter, using parameterized mixture models, we show that the BBH detection sample comprises three astrophysical subpopulations that are likely dominated by specific formation channels. In particular, we show that the 10M<SUB>\u2299</SUB> peak and the 35M<SUB>\u2299</SUB> feature in the BBH mass spectrum correspond to distinct mass-ratio, spin alignment, spin precession, and redshift evolution properties. We show that mass-based transitions reported in the distribution of BBH parameters naturally emerge from our inferred distributions without explicit modeling. Our results are consistent with the current observed population arising from specific relative abundances of isolated binary evolution, dynamical formation in globular clusters, and higher-generation BBH mergers. Under this interpretation, we constrain the relative underlying fractions of these channels to be <inline-formula> <mml:math><mml:mn>79</mml:mn><mml:mo>.</mml:mo><mml:msubsup><mml:mrow><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>10.9</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>11.5</mml:mn></mml:mrow></mml:msubsup><mml:mo>%</mml:mo></mml:math> </inline-formula>, <inline-formula> <mml:math><mml:mn>14</mml:mn><mml:mo>.</mml:mo><mml:msubsup><mml:mrow><mml:mn>5</mml:mn></mml:mrow><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>8.0</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>11.6</mml:mn></mml:mrow></mml:msubsup><mml:mo>%</mml:mo></mml:math> </inline-formula>, and <inline-formula> <mml:math><mml:mn>2</mml:mn><mml:mo>.</mml:mo><mml:msubsup><mml:mrow><mml:mn>5</mml:mn></mml:mrow><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>1.8</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>5.5</mml:mn></mml:mrow></mml:msubsup><mml:mo>%</mml:mo></mml:math> </inline-formula>, respectively, and find these relative fractions to be evolving over cosmic time with more than 1\u03c3 confidence. Our interpretation relies on simple theoretical predictions that are mostly robust against uncertainties in BBH formation, with more definite conclusions expected in the near future."
+ },
+ {
+  "bibcode": "2026CQGra..43m5024A",
+  "arxiv": "2411.12524",
+  "doi": "10.1088/1361-6382/ae82ac",
+  "pubdate": "2026-07-00",
+  "title": "Assessing a template-based approach for core-collapse supernova gravitational-wave detection",
+  "abstract": "Gravitational waves (GWs) from core-collapse supernovae are a promising yet challenging target for detection due to the stochastic and complex nature of these signals. Conventional detection methods for core-collapse supernovae rely on excess energy searches because matched filtering has been hindered by the lack of well-defined waveform templates. However, numerical simulations of core-collapse supernovae have improved our understanding of the gravitational wave signals they emit, which enables us, for the first time, to construct a set of templates that closely resemble predictions from numerical simulations. In this study, we investigate the possibility of detecting GWs from core-collapse supernovae using template-based methods. We construct a theoretically-informed template bank and use it to recover core-collapse supernova signals injected into real LIGO-Virgo-KAGRA detector data. We consider the signals from three state-of-the-art numerical models, simulated with three different codes. We evaluate the detection efficiency of the template-filtering approach and how well the injected signal is reconstructed. For signals whose structure is well captured by our template bank, we recover <inline-formula> <mml:math><mml:mrow><mml:mo>\u223c</mml:mo><mml:mn>90</mml:mn><mml:mi>%</mml:mi></mml:mrow></mml:math></inline-formula> of injections at a distance of 1 kpc and <inline-formula> <mml:math><mml:mrow><mml:mo>\u223c</mml:mo><mml:mn>30</mml:mn><mml:mi>%</mml:mi></mml:mrow></mml:math></inline-formula>\u2500<inline-formula> <mml:math><mml:mrow><mml:mn>60</mml:mn><mml:mi>%</mml:mi></mml:mrow></mml:math></inline-formula> at 2 kpc. In contrast, a model whose signal differs significantly from the templates is recovered less efficiently. For many of the recovered events, the underlying signal characteristics can be reconstructed with an accuracy of <inline-formula> <mml:math><mml:mrow><mml:mo>\u223c</mml:mo><mml:mn>10</mml:mn><mml:mi>%</mml:mi><mml:mo>\u2212</mml:mo><mml:mn>20</mml:mn></mml:mrow></mml:math></inline-formula>%. We discuss the strengths and limitations of this approach and identify areas for further improvements for template-based methods for supernova gravitational-wave detection. We also present the open-source Python package SYNTHGRAV used to generate the template bank."
+ },
+ {
+  "bibcode": "2026MNRAS.549ag834S",
+  "arxiv": "2602.05169",
+  "doi": "10.1093/mnras/stag834",
+  "pubdate": "2026-06-00",
+  "title": "Searching for gravitational waves from compact binary mergers powering long gamma-ray bursts during LIGO\u2500Virgo\u2500KAGRA's O3 run",
+  "abstract": "Neutron star binary mergers are often associated with short gamma-ray bursts (GRBs), but the recent detection of kilonovae coincident with long GRBs suggest that some mergers may produce long GRBs. Motivated by these developments, we perform a search for binary neutron star and neutron star-black hole gravitational-wave signals coincident with long GRBs using data from the third LIGO\u2500Virgo\u2500KAGRA (LVK) observing run. We analyse LVK data coincident with long GRBs detected by Fermi's GRB Monitor and Swift's Burst Alert Telescope when at least two gravitational-wave observatories were running. We find no evidence of a coincident gravitational-wave signal and set limits on the luminosity distance to each of these long GRBs under the assumption that they were powered by binary mergers."
+ },
+ {
+  "bibcode": "2026EPJC...86..667D",
+  "arxiv": "2507.21566",
+  "doi": "10.1140/epjc/s10052-026-15938-z",
+  "pubdate": "2026-06-00",
+  "title": "Probing missing physics from inspiralling compact binaries via time-frequency tracks",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2026ApJ..1004...65M",
+  "arxiv": "2512.15672",
+  "doi": "10.3847/1538-4357/ae6e41",
+  "pubdate": "2026-06-00",
+  "title": "Observational Constraints on the Spin/Anisotropy of the Central Compact Objects of Cassiopeia A, Vela Jr., and G347.3\u25000.5 and a Single Surviving Continuous Gravitational Wave Candidate",
+  "abstract": "We carry out the deepest and broadest search for continuous gravitational-wave signals from three neutron stars at the center of the supernova remnants Cassiopeia A, Vela Jr., and G347.3-0.5. This search was made possible by the computing power shared by thousands of Einstein@Home volunteers. After the initial Einstein@Home search, which used O3a data, we perform a multistage follow-up of the most promising \u224d45 million signal candidates. In the last stages, we use independent data (O3b and O4a) to further investigate the remaining candidates from the previous stages. We set the most stringent constraints to date on the gravitational-wave amplitude, equatorial ellipticity, r-mode saturation amplitude, and\u2014for the first time\u2014the neutron-star crustal anisotropy. For spin periods lower than 2 ms, we constrain the ellipticity to be smaller than 4 \u00d7 10<SUP>\u22127</SUP> for all targets. We exclude crustal anisotropy values larger than 5 \u00d7 10<SUP>\u22123</SUP> for spin periods between 1.3 and 100 ms. Only one candidate\u2014from the G347.3 search\u2014survives all follow-ups. We illustrate the properties of this candidate. Investigations of new data will aid in clarifying its nature. Such \"new\" data already exist, O4b and O4c, and would be optimal for this purpose, but they are not publicly accessible at the time of writing. In the appendix, we provide our estimate of the candidate phase parameters, which are useful for others to carry out checks on the new data."
+ },
+ {
+  "bibcode": "2026ApJ..1001..130C",
+  "arxiv": "2507.02335",
+  "doi": "10.3847/1538-4357/ae5493",
+  "pubdate": "2026-04-00",
+  "title": "A Search for Extra Polarizations Using a Gaussian Process in Gravitational-wave Transient Catalog 3",
+  "abstract": "General relativity predicts that gravitational waves are described by two polarization states: the plus + state and cross \u00d7 state. However, alternate theories of gravity allow up to six polarizations. We employ the gravitational-wave null stream, a linear combination of three or more detectors where the + and \u00d7 signals add to zero, leaving behind noise and\u2014potentially\u2014gravitational waves in nonstandard polarization states. We develop a Gaussian process model to search for extra polarizations beyond general relativity. Using data from 42 three-detector events from LIGO\u2500Virgo\u2500KAGRA's third Gravitational-wave Transient Catalog, we find no significant evidence of nonstandard polarization, as the highest natural log Bayes factor, comparing a signal model against a no-signal model, is 1.5, which we show is insignificant when compared with a background distribution. We set 90% credible upper limits on the fractional deviation in gravitational-wave strain, ranging from 0.28 to 11.30 with a median of 1.32."
+ },
+ {
+  "bibcode": "2026MNRAS.547ag406T",
+  "arxiv": "2602.20811",
+  "doi": "10.1093/mnras/stag406",
+  "pubdate": "2026-04-00",
+  "title": "Pulsar discoveries from the TRAPUM UHF survey of Fermi-LAT sources",
+  "abstract": "The Fermi Large Area Telescope (LAT) provides advantages for radio pulsar searches by enabling efficient target selection. We can confidently point radio telescopes to the positions of Fermi unidentified gamma-ray sources that have a high probability of hosting a pulsar. As part of Transients and Pulsars with MeerKAT (TRAPUM), we conducted a survey of Fermi-LAT sources using the Ultra High Frequency (UHF; 544\u25001088 MHz) receiver of the MeerKAT radio telescope. We observed 79 sources that were identified as pulsar-like candidates using a random forest technique from the Fermi-LAT Fourth Source Catalogue. We observed each target for 10 min at two separate epochs. As a result, we discovered nine new millisecond pulsars (MSPs) and six slow pulsars. Based on the radio discoveries, we also searched for gamma-ray pulsations, confirming that seven of the newly discovered MSPs are associated with Fermi-LAT sources, and performed joint radio and gamma-ray pulsar timing. Companion mass estimates and evidence of radio eclipses indicate that among the nine MSPs there are three black widows and three redbacks. Lastly, we compared the discovered pulsars in the MeerKAT UHF survey against the previous Fermi sources TRAPUM survey at L band, concluding the superiority of UHF observations in sensitivity to fainter pulsars and in detection rate than L band for finding new gamma-ray MSPs."
+ },
+ {
+  "bibcode": "2026CQGra..43e5016M",
+  "arxiv": "2510.21411",
+  "doi": "10.1088/1361-6382/ae4717",
+  "pubdate": "2026-03-00",
+  "title": "Optimizing searches for gravitational wave bursts using coherent WaveBurst-2G",
+  "abstract": "The most general searches for gravitational wave transients (GWTs) rely on data analysis methods that do not assume prior knowledge of the signal's waveform, direction, and arrival time on Earth. These searches provide data-driven signal reconstructions that are crucial both for testing available GW emission models and for discovering yet-to-be-unveiled sources. Here, we discuss the progresses in detection performances of the coherent WaveBurst second generation pipeline (cWB-2G), which is highly adaptable to minimally\u2500modeled as well as model\u2500informed searches for GWTs. Several search configurations for GWTs are examined using approximately 14.8 d of observation time from the third observing run by LIGO-Virgo-KAGRA (LVK). Recent enhancements include a ranking statistic fully based on multivariate classification with eXtreme gradient boosting, a thorough validation of the accuracy of the statistical significance of GWT candidates, and the measurement of the correlations of false alarms and simulated detections between different concurrent searches. For the first time, we provide a comprehensive comparison of cWB-2G performances on data from networks made of two and three detectors, and we demonstrate the advantage of combining concurrent searches for GWTs of generic morphology in a global observatory. This work offers essential insights for assessing our data analysis strategies in the ongoing and future LVK searches for generic GWTs."
+ },
+ {
+  "bibcode": "2026CQGra..43f5014H",
+  "arxiv": "2512.08164",
+  "doi": "10.1088/1361-6382/ae5208",
+  "pubdate": "2026-03-00",
+  "title": "Estimation of the Hubble parameter from unedited compact object merger catalogues",
+  "abstract": "In recent years, constraints on the Hubble parameter using multiple dark sirens have been made, relying on a galaxy catalogue, correlations between the mass and redshift distributions, or both. Those studies have typically used only significant gravitational wave candidates. In this work, we present a framework for cosmological inference that bypasses per-candidate parameter estimation, uses only detection-level information. This allows the population inference from a candidate list produced directly by a search pipeline, without additional selection cuts. Our method is particularly suited to extracting information from marginal candidates, which are essential for probing the distant Universe. The goal of this work is not to present a constraint of the Hubble constant at this time, our primary goal is to explain the framework. To this end we present worked examples of the application of the technique to synthetic data to exhibit its performance and the novel challenges it brings."
+ },
+ {
+  "bibcode": "2026JHEP...03..245D",
+  "arxiv": "2511.01779",
+  "doi": "10.1007/JHEP03(2026)245",
+  "pubdate": "2026-03-00",
+  "title": "Gravitational wave spectral shapes as a probe of long lived right-handed neutrinos, leptogenesis and dark matter. Global versus local B \u2212 L cosmic strings",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2026ApJ..1000L...2M",
+  "arxiv": "2503.15393",
+  "doi": "10.3847/2041-8213/ae474c",
+  "pubdate": "2026-03-00",
+  "title": "Orbital Eccentricity in a Neutron Star\u2500Black Hole Merger",
+  "abstract": "The observation of gravitational waves (GWs) from merging black holes and neutron stars provides a unique opportunity to discern information about their astrophysical environment. Two signatures that are considered powerful tracers to distinguish between different binary formation channels are general relativistic spin-induced orbital precession and orbital eccentricity. Both effects leave characteristic imprints in the GW signal that can be extracted from observations. To date, neither precession nor eccentricity has been confidently discerned in merging neutron star\u2500black hole binaries. Here we report the measurement of orbital eccentricity in a neutron star\u2500black hole merger. Using, for the first time, a waveform model that incorporates precession and eccentricity, we perform Bayesian inference on the GW event GW200105 and infer a median orbital eccentricity of e<SUB>20</SUB> \u223c 0.145 at an orbital period of 0.1 s, ruling out eccentricities smaller than 0.028 with 99.5% confidence. We find inconclusive evidence for the presence of precession, consistent with previous, noneccentric results, but a more unequal mass ratio. Our result implies a fraction of these binaries will exhibit orbital eccentricity even at small separations, suggesting formation through mechanisms involving dynamical interactions beyond isolated binary evolution. Future observations will reveal the contribution of eccentric neutron star\u2500black hole binaries to the total merger rate across cosmic time."
+ }
+]

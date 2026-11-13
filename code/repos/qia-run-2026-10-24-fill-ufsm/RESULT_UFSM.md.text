@@ -1,0 +1,32 @@
+RESULT -- UFSM free run (arXiv 2502.01824, Brasil, Starke, Maziero), ibm_kingston, read under plan 5838ab1 (committed 14:25:24Z).
+Jobs: copy 1 dbebvofs created 14:25:37.98Z, copy 2 dbebvv7p created 14:26:04.58Z (both after the plan); 19 + 19 = 38 QPU s; no errors.
+Pair [81, 82] by the committed rule (stated cz 8.69e-4). No twirling, DD OFF (set explicitly, as planned).
+KNOWN-GOOD: PASS (their Fig 8 counts through our code: (a) 1.245 pp, (b) 4.673 pp).
+Deficits today: (a) 2.286 pp, (b) 51.984 pp; readout-only share from our bracket (a) 1.480 pp, (b) 1.757 pp.
+R1  raw extra deficit D = +49.698 pp +- 0.289 vs their +3.428 pp -> ABOVE
+R2  extra deficit beyond the readout it adds, Dc = +49.421 pp +- 0.294 -> ABOVE
+R3  instance spread: chi-square min p 0.14 (gate 0.005 not crossed); copies agree (D 49.95 / 49.45 pp)
+Descriptive: (a) 01-minus-10 asymmetry +2.15 pp (theirs +1.86 pp); bracket flips q81 0.004/0.012, q82 0.001/0.013.
+Checks made after the data (not scored, labelled):
+ - the exact transpiled (b) circuit run through a noiseless simulator gives the ideal 001 0.501 / 100 0.499 -> not a compile error
+   (check 17); our logical (b) gives the same.
+ - the (b) outcome pattern on hardware is 000 0.25, 001 0.21, 100 0.26, 101 0.25 in all four instances: the final mode-A bit (c1) is still
+   right (~99 %), but the final mode-B bit (c2) has lost its correlation with the mid-circuit bit (c0) -- the interference after the
+   measure+reset does not survive on this pair today.
+ - their Fig 8 run kept that correlation (their (b) deficit 4.67 pp). A known difference: we set dynamical decoupling OFF; their Fig 8
+   sampler option cell is commented out in the notebook, so their setting is unknown (their Fig 7 used XY4). Other differences: date, pair,
+   calibration. None is tested by this run. Cause not named (check 25).
+
+## ADDENDUM 1 RESULT (defined after run 1's data; addendum committed 09b138a at 14:28:13Z; jobs ddon dbec14np created 14:28:35Z, ddoff
+## dbec1bns created 14:29:02Z; 19 + 19 QPU s; no errors). Same transpiled circuits, same pair [81, 82].
+DD ON (XY4): deficit (a) 2.631 pp, (b) 6.598 pp; raw extra deficit D = +3.967 +- 0.234 pp vs their +3.428 -> R1 CONSISTENT
+             beyond its readout share: Dc = +3.062 +- 0.244 pp -> R2' ABOVE
+DD OFF:      deficit (a) 2.094 pp, (b) 51.782 pp; D = +49.689 pp -> ABOVE (repeats run 1: 49.95 / 49.45 pp)
+R4 deficit(b) DD ON minus DD OFF = -45.184 +- 0.479 pp -> BELOW
+(b) outcome pattern: DD ON 001 0.452 / 100 0.483 (their pattern); DD OFF 000 0.24 / 001 0.21 / 100 0.27 / 101 0.25 (mid bit and final
+mode-B bit decorrelated).
+What it says (all labelled defined after the data): on today's kingston pair, mode A idling through mode B's mid-circuit measure+reset
+loses the relation the interferometer needs unless dynamical decoupling is on; with XY4 the run reproduces their extra deficit (3.97 vs
+3.43 pp, CONSISTENT), so their Fig 8 is consistent with a DD-on run. With DD on, the measure+reset still costs 3.06 pp beyond the readout
+it adds (their question: it is more than the extra readout). What the echo removes is not named (check 25); that an echo removes it rules
+out a pure population loss for the DD-off effect.

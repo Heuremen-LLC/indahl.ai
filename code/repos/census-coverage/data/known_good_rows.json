@@ -1,0 +1,35 @@
+{
+ "hand_five": {
+  "Arkansas": [
+   2929000,
+   -5.04,
+   2.21,
+   "BELOW"
+  ],
+  "Texas": [
+   28540000,
+   -1.92,
+   0.82,
+   "BELOW"
+  ],
+  "California": [
+   38620000,
+   0.47,
+   0.65,
+   "CONSISTENT"
+  ],
+  "Hawaii": [
+   1415000,
+   6.79,
+   1.68,
+   "ABOVE"
+  ],
+  "Florida": [
+   21070000,
+   -3.48,
+   0.91,
+   "BELOW"
+  ]
+ },
+ "pdf_appendix3_areas": 52
+}

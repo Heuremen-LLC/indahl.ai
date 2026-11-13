@@ -1,0 +1,11 @@
+PASS mixed Var C2 (printed 236 +- 78): 236.3877 +- 77.952
+PASS solvable Var C2 (printed 36 +- 136): 36.0542 +- 135.694
+PASS ratio (printed 6.6): 6.5565
+PASS direct difference sigma (printed ~1.3): 1.2802
+PASS mixed nonzero sigma (printed ~3): 3.0325
+PASS rebuild: mixed k=0 exact Var (printed 240): 240.0000
+PASS rebuild: mixed k=0 is |0000> (printed): 1.0000
+PASS rebuild: solvable k=1 exact Var (printed 0; released exact_labvar 2.3e-12): -0.0000
+PASS rebuild: C2 terms/groups (printed 128 in 39): 128039.0000
+PASS rebuild: C2^2 terms/groups (printed 136 in 41): 136041.0000
+KNOWN-GOOD PASS

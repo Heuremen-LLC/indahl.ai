@@ -1,0 +1,24 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 23:07:08,191: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 23:07:12,027: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open, pay-as-you-go), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 23:07:12,028: Loading account with the given token. A saved account will not be used.
+remaining 2122 fez active 1
+rule-chosen chains {'best': [143, 144, 145, 146], 'q50': [87, 88, 89, 90], 'q75': [60, 61, 76, 81]}
+measured qubits {'default_a': [(0, 1, 2, 3), (21, 22, 23, 24)], 'default_b': [(0, 1, 2, 3), (21, 22, 23, 24)], 'best': [(143, 144, 145, 146)], 'q50': [(87, 88, 89, 90)], 'q75': [(60, 61, 76, 81)]} woven cz 23
+SUBMITTED {'job_id': 'dben4p7sstms73fcd5og', 'submitted': '2026-10-25T03:07:16Z'}
+{
+ "contrasts": {
+  "default_a": 0.23538362011567854,
+  "default_b": 0.2633020477162073,
+  "best": 0.26092932642810784,
+  "q50": 0.27861900111616816,
+  "q75": 0.2224718447198965
+ },
+ "min": 0.2224718447198965,
+ "max": 0.27861900111616816,
+ "theirs_hw": 0.2601,
+ "theirs_headline": 0.34,
+ "exact": 0.3362,
+ "headline_inside_hw_range": false,
+ "theirs_hw_inside_range": true,
+ "default_copy_gap": -0.02791842760052876
+} {'rule': 'aligned |0011> raw Z diagonal within 0.06 of [1,1,0,0] in every arm (a computational basis state; the answer is known)', 'passed': False}

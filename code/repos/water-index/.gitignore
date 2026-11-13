@@ -1,0 +1,15 @@
+data/raw/24ms/
+data/cache/
+scratch/
+__pycache__/
+*.part
+*.tmp
+# rewritten on every run of the rider (raw pulls, rows, the live feed, the USGS snapshot store, the run history)
+data/raw/
+data/water.json
+data/water_live.json
+data/usgs_snapshots.json
+data/water_history.jsonl
+# the desk's first page draft: the live page is built by indahl-ai/build_site.py
+water.html
+*.bak-*

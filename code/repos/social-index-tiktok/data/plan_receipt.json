@@ -1,0 +1,24 @@
+{
+ "entries": [
+  {
+   "utc": "2026-11-10T02:04:30Z",
+   "sha256": "cdfc094f74546697d1a3755eede9cc706693eb3089197176328e7a8868af5a23",
+   "note": "plan before the first comparison run; no stated-against-delivered figure computed yet"
+  },
+  {
+   "utc": "2026-11-10T02:07:58Z",
+   "sha256": "209b1c569458b59a813fc879ef37441cd7adcb22f4baa0f4d8c5d13287cf8bdc",
+   "note": "addendum 1, before the first comparison run"
+  },
+  {
+   "utc": "2026-11-10T02:18:17Z",
+   "sha256": "7144d14419fa8fa383f07e0e47fdc9214c32d25f94d3341593f98ea52f6a1cb1",
+   "note": "addendum 2, after the known-good run, before any comparison row"
+  },
+  {
+   "utc": "2026-11-10T02:42:32Z",
+   "sha256": "a84b35f85d34f5536bf34ee2a7e5c7b03799ddec1d7563871b3a471eea537d7e",
+   "note": "addendum 3, defined after the data; committed outcomes unchanged"
+  }
+ ]
+}

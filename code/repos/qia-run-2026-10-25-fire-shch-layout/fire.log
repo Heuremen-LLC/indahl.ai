@@ -1,0 +1,55 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:55:41,351: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 22:55:45,855: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open, pay-as-you-go), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:55:45,856: Loading account with the given token. A saved account will not be used.
+remaining 2207 fez active 1
+measured qubits per arm {'best_a': [58, 70, 71], 'best_b': [58, 70, 71], 'q25': [18, 30, 31], 'q50': [103, 104, 105], 'q75': [126, 127, 137]}
+SUBMITTED {'job_id': 'dbemvdvsstms73fccth0', 'submitted': '2026-10-25T02:55:51Z'}
+{
+ "best_a": {
+  "S": 2.68475,
+  "se": 0.016571287998749525,
+  "S_product": 1.3415
+ },
+ "best_b": {
+  "S": 2.67425,
+  "se": 0.016625295815037397,
+  "S_product": 1.3399999999999999
+ },
+ "q25": {
+  "S": 2.503,
+  "se": 0.01743820787093674,
+  "S_product": 1.2664999999999997
+ },
+ "q50": {
+  "S": 2.5287499999999996,
+  "se": 0.017320211053491814,
+  "S_product": 1.3455
+ },
+ "q75": {
+  "S": 2.40075,
+  "se": 0.017883303359908093,
+  "S_product": 1.24675
+ },
+ "KNOWN_GOOD": {
+  "rule": "best layout run twice in one job: copies agree within 2.58 se, and every product arm S + 1.96 se < 2",
+  "copy_diff": 0.010500000000000398,
+  "copy_sd": 0.023473560592185413,
+  "passed": true
+ },
+ "LAYOUT": {
+  "S": [
+   2.68475,
+   2.503,
+   2.5287499999999996,
+   2.40075
+  ],
+  "range": 0.28400000000000025,
+  "chi2": 141.51489920657104,
+  "dof": 3,
+  "p": 1.7815919380340154e-30,
+  "their_spread": 0.3138,
+  "drift_bound_run1": 0.06,
+  "outcome": "ABOVE (layout spread resolves)",
+  "share_of_their_spread": 0.9050350541746343
+ }
+}

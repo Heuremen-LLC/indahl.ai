@@ -1,0 +1,11 @@
+# RESULT -- Zenodo 22009070 (Lasky Design) drift calibration on ibm_fez, 4 back-to-back jobs, 2026-10-25
+Jobs: dbemubvpc3tc739m0vm0, dbemudnsstms73fccs20, dbemufvgdj9s73fm3t60, dbemuhngdj9s73fm3t90 (their baseline circuits, 2 copies each, 1024 shots).
+KNOWN-GOOD: copies agree inside every job (both circuits): PASS.
+GHZ3: job means 0.801 / 0.799 / 0.784 / 0.803; between-job sd 0.0087 vs binomial 0.0089: no drift excess at this cadence (a bound). sd of a difference between two
+  single-copy jobs 0.0178. Their +3.81 pp: z = 2.14 -> ABOVE (separable, at the edge; ~5% floor per reading).
+GHZ5: job means 0.739 / 0.742 / 0.737 / 0.757; between-job sd 0.0092 vs binomial 0.0096: no drift excess. sd of a two-job difference 0.0193. Their +3.42 pp:
+  z = 1.77 -> CONSISTENT (a bound: not separable from two baseline jobs at 1024 shots; shot noise alone covers it).
+What this gives the author: at their own design (one 1024-shot job per arm, back-to-back), the 3-qubit gain clears the job-to-job difference of the baseline
+against itself by a hair and the 5-qubit gain does not. Interleaving the two arms inside one job, with several copies, is the design that separates them.
+Defined after the data (post-hoc, labelled): our baseline level today (GHZ3 0.797, GHZ5 0.744) sits 8.6 and 5.7 pp below their printed baselines; the level moves
+with day and layout by more than either gain, so arms must share a session (theirs did: adjacent job ids).

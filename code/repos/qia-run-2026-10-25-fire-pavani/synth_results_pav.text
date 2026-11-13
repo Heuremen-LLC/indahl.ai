@@ -1,0 +1,75 @@
+{
+ "ideal_statevector_P1": 0.12499999999999989,
+ "IDEAL": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (no layout spread beyond shot noise; range is a bound)",
+  "COMPILE": {
+   "best_opt0": "CONSISTENT",
+   "best_opt3": "CONSISTENT"
+  },
+  "DRIFT": "CONSISTENT",
+  "THEIRS_best": "CONSISTENT"
+ },
+ "NOISY_FLAT": {
+  "KG": true,
+  "LAYOUT": "ABOVE (layout carries the number)",
+  "COMPILE": {
+   "best_opt0": "CONSISTENT",
+   "best_opt3": "CONSISTENT"
+  },
+  "DRIFT": "CONSISTENT",
+  "THEIRS_best": "ABOVE"
+ },
+ "LAYOUT": {
+  "KG": true,
+  "LAYOUT": "ABOVE (layout carries the number)",
+  "COMPILE": {
+   "best_opt0": "CONSISTENT",
+   "best_opt3": "CONSISTENT"
+  },
+  "DRIFT": "BELOW",
+  "THEIRS_best": "ABOVE"
+ },
+ "COMPILE": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (no layout spread beyond shot noise; range is a bound)",
+  "COMPILE": {
+   "best_opt0": "ABOVE",
+   "best_opt3": "CONSISTENT"
+  },
+  "DRIFT": "CONSISTENT",
+  "THEIRS_best": "ABOVE"
+ },
+ "DRIFT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (no layout spread beyond shot noise; range is a bound)",
+  "COMPILE": {
+   "best_opt0": "CONSISTENT",
+   "best_opt3": "CONSISTENT"
+  },
+  "DRIFT": "ABOVE",
+  "THEIRS_best": "ABOVE"
+ },
+ "BROKEN_COPIES": {
+  "KG": false,
+  "LAYOUT": "ABOVE (layout carries the number)",
+  "COMPILE": {
+   "best_opt0": "CONSISTENT",
+   "best_opt3": "CONSISTENT"
+  },
+  "DRIFT": "BELOW",
+  "THEIRS_best": "ABOVE"
+ },
+ "BOTH": {
+  "KG": true,
+  "LAYOUT": "ABOVE (layout carries the number)",
+  "COMPILE": {
+   "best_opt0": "ABOVE",
+   "best_opt3": "CONSISTENT"
+  },
+  "DRIFT": "CONSISTENT",
+  "THEIRS_best": "ABOVE"
+ },
+ "FLOOR_layout_above_in_200_nulls": 7,
+ "FLOOR_kg_fail_in_200_nulls": 0
+}

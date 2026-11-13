@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.tmp
+*.bak-*
+# rewritten on every run (raw pulls and caches, the full and live feeds, run state, logs and the run lock)
+data/raw/
+data/wiki.json
+data/wiki_live.json
+data/state.json
+data/*.log
+data/run.lock

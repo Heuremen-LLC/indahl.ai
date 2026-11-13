@@ -1,0 +1,413 @@
+{
+ "t": "2026-10-29T14:54Z",
+ "months": "January to August",
+ "rows": {
+  "2019": 4951828,
+  "2025": 4680482,
+  "2026": 4728732
+ },
+ "c25_19": {
+  "AA": {
+   "outcome": "CONSISTENT",
+   "routes": 703,
+   "change": 0.5,
+   "lo": 0.0,
+   "hi": 1.0,
+   "flown_change": 0.0
+  },
+  "AS": {
+   "outcome": "CONSISTENT",
+   "routes": 277,
+   "change": -1.0,
+   "lo": -1.0,
+   "hi": 0.0,
+   "flown_change": 2.0
+  },
+  "B6": {
+   "outcome": "CONSISTENT",
+   "routes": 261,
+   "change": 0.0,
+   "lo": -1.0,
+   "hi": 0.0,
+   "flown_change": 2.5
+  },
+  "DL": {
+   "outcome": "CANNOT_TELL",
+   "routes": 772,
+   "change": -1.0,
+   "lo": -1.25,
+   "hi": -1.0,
+   "flown_change": 2.0
+  },
+  "F9": {
+   "outcome": "CONSISTENT",
+   "routes": 353,
+   "change": 1.0,
+   "lo": 0.0,
+   "hi": 1.0,
+   "flown_change": 3.0
+  },
+  "G4": {
+   "outcome": "CONSISTENT",
+   "routes": 549,
+   "change": 0.0,
+   "lo": 0.0,
+   "hi": 1.0,
+   "flown_change": 5.0
+  },
+  "HA": {
+   "outcome": "CANNOT_TELL",
+   "routes": 66,
+   "change": 0.75,
+   "lo": 0.0,
+   "hi": 3.0,
+   "flown_change": -3.5
+  },
+  "MQ": {
+   "outcome": "CONSISTENT",
+   "routes": 308,
+   "change": 0.0,
+   "lo": 0.0,
+   "hi": 1.0,
+   "flown_change": 2.0
+  },
+  "NK": {
+   "outcome": "CONSISTENT",
+   "routes": 319,
+   "change": 0.0,
+   "lo": 0.0,
+   "hi": 1.0,
+   "flown_change": 1.0
+  },
+  "OH": {
+   "outcome": "CONSISTENT",
+   "routes": 266,
+   "change": 0.0,
+   "lo": -1.0,
+   "hi": 0.0,
+   "flown_change": 5.0
+  },
+  "OO": {
+   "outcome": "CONSISTENT",
+   "routes": 956,
+   "change": 0.0,
+   "lo": -0.5,
+   "hi": 0.0,
+   "flown_change": 3.0
+  },
+  "UA": {
+   "outcome": "CANNOT_TELL",
+   "routes": 682,
+   "change": 1.0,
+   "lo": 1.0,
+   "hi": 1.75,
+   "flown_change": 4.5
+  },
+  "WN": {
+   "outcome": "CONSISTENT",
+   "routes": 1213,
+   "change": -1.0,
+   "lo": -1.0,
+   "hi": -1.0,
+   "flown_change": 2.0
+  },
+  "YX": {
+   "outcome": "CONSISTENT",
+   "routes": 352,
+   "change": 0.5,
+   "lo": 0.0,
+   "hi": 1.0,
+   "flown_change": 1.0
+  }
+ },
+ "c26_25": {
+  "AA": {
+   "outcome": "ABOVE",
+   "routes": 906,
+   "change": 3.0,
+   "lo": 2.0,
+   "hi": 3.0,
+   "flown_change": 1.0
+  },
+  "AS": {
+   "outcome": "ABOVE",
+   "routes": 346,
+   "change": 5.0,
+   "lo": 4.0,
+   "hi": 5.0,
+   "flown_change": -3.0
+  },
+  "B6": {
+   "outcome": "CONSISTENT",
+   "routes": 323,
+   "change": -1.0,
+   "lo": -1.0,
+   "hi": -0.5,
+   "flown_change": 0.0
+  },
+  "DL": {
+   "outcome": "CONSISTENT",
+   "routes": 906,
+   "change": 0.0,
+   "lo": 0.0,
+   "hi": 0.5,
+   "flown_change": 0.0
+  },
+  "F9": {
+   "outcome": "CONSISTENT",
+   "routes": 542,
+   "change": 1.0,
+   "lo": 0.5,
+   "hi": 1.0,
+   "flown_change": 0.0
+  },
+  "G4": {
+   "outcome": "CONSISTENT",
+   "routes": 799,
+   "change": -0.5,
+   "lo": -1.0,
+   "hi": 0.0,
+   "flown_change": 1.0
+  },
+  "MQ": {
+   "outcome": "ABOVE",
+   "routes": 542,
+   "change": 4.0,
+   "lo": 3.75,
+   "hi": 4.5,
+   "flown_change": 0.0
+  },
+  "NK": {
+   "outcome": "CONSISTENT",
+   "routes": 262,
+   "change": -1.0,
+   "lo": -1.0,
+   "hi": 0.0,
+   "flown_change": 1.0
+  },
+  "OH": {
+   "outcome": "ABOVE",
+   "routes": 390,
+   "change": 4.0,
+   "lo": 3.5,
+   "hi": 4.0,
+   "flown_change": 0.0
+  },
+  "OO": {
+   "outcome": "CANNOT_TELL",
+   "routes": 1224,
+   "change": 2.0,
+   "lo": 1.0,
+   "hi": 2.0,
+   "flown_change": 1.0
+  },
+  "UA": {
+   "outcome": "CONSISTENT",
+   "routes": 822,
+   "change": 1.0,
+   "lo": 0.0,
+   "hi": 1.0,
+   "flown_change": 1.0
+  },
+  "WN": {
+   "outcome": "CONSISTENT",
+   "routes": 1573,
+   "change": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "flown_change": 0.0
+  },
+  "YX": {
+   "outcome": "ABOVE",
+   "routes": 519,
+   "change": 2.0,
+   "lo": 2.0,
+   "hi": 3.0,
+   "flown_change": 0.5
+  }
+ },
+ "late15": {
+  "2019": {
+   "OO": [
+    108659,
+    541473
+   ],
+   "AS": [
+    32461,
+    174922
+   ],
+   "9E": [
+    31961,
+    166382
+   ],
+   "AA": [
+    142381,
+    611693
+   ],
+   "MQ": [
+    46806,
+    208556
+   ],
+   "WN": [
+    166245,
+    884330
+   ],
+   "G4": [
+    15637,
+    73616
+   ],
+   "OH": [
+    38046,
+    187057
+   ],
+   "B6": [
+    52785,
+    194807
+   ],
+   "NK": [
+    28283,
+    133635
+   ],
+   "DL": [
+    102225,
+    659367
+   ],
+   "YV": [
+    31696,
+    145852
+   ],
+   "EV": [
+    23121,
+    85008
+   ],
+   "F9": [
+    23201,
+    84391
+   ],
+   "YX": [
+    43609,
+    209638
+   ],
+   "UA": [
+    94564,
+    411852
+   ],
+   "HA": [
+    6363,
+    55581
+   ]
+  },
+  "2025": {
+   "AA": [
+    170366,
+    635644
+   ],
+   "AS": [
+    39049,
+    161086
+   ],
+   "B6": [
+    39337,
+    153356
+   ],
+   "DL": [
+    139941,
+    672697
+   ],
+   "YX": [
+    44642,
+    219468
+   ],
+   "OH": [
+    46436,
+    158634
+   ],
+   "OO": [
+    118182,
+    552146
+   ],
+   "UA": [
+    114988,
+    516956
+   ],
+   "NK": [
+    29560,
+    139492
+   ],
+   "WN": [
+    197058,
+    916826
+   ],
+   "F9": [
+    38316,
+    129612
+   ],
+   "G4": [
+    23224,
+    91628
+   ],
+   "HA": [
+    8743,
+    53420
+   ],
+   "MQ": [
+    42403,
+    191401
+   ]
+  },
+  "2026": {
+   "AA": [
+    169042,
+    647028
+   ],
+   "AS": [
+    45124,
+    224414
+   ],
+   "B6": [
+    46481,
+    157870
+   ],
+   "DL": [
+    131828,
+    678984
+   ],
+   "F9": [
+    40931,
+    143642
+   ],
+   "G4": [
+    23390,
+    86467
+   ],
+   "MQ": [
+    40500,
+    212099
+   ],
+   "NK": [
+    15355,
+    43601
+   ],
+   "OH": [
+    42416,
+    152537
+   ],
+   "WN": [
+    236686,
+    915341
+   ],
+   "YX": [
+    48892,
+    232394
+   ],
+   "OO": [
+    125585,
+    564302
+   ],
+   "UA": [
+    119588,
+    550185
+   ]
+  }
+ }
+}

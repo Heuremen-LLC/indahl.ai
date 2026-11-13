@@ -1,0 +1,5 @@
+n= 6 rows  9 shots 568: max|CVaR ours-stored| first 8.9e-16 repeat 8.9e-16; shift ours -0.03358 stored -0.03358 -> PASS | context on his pair: CM obs 5.64e-04 null median 2.40e-04 99% [2.52e-08,3.47e-03] -> CONSISTENT; TOT -> ABOVE
+n= 8 rows 13 shots 1102: max|CVaR ours-stored| first 2.2e-15 repeat 1.8e-15; shift ours +0.04265 stored +0.04265 -> PASS | context on his pair: CM obs 9.09e-04 null median 9.95e-05 99% [6.48e-09,1.77e-03] -> CONSISTENT; TOT -> CONSISTENT
+n=10 rows 17 shots 2168: max|CVaR ours-stored| first 8.4e-15 repeat 7.5e-15; shift ours -0.04986 stored -0.04986 -> PASS | context on his pair: CM obs 1.24e-03 null median 7.62e-05 99% [2.26e-09,1.10e-03] -> ABOVE; TOT -> CONSISTENT
+n=12 rows 21 shots 2145: max|CVaR ours-stored| first 8.9e-15 repeat 8.9e-15; shift ours +0.02837 stored +0.02837 -> PASS | context on his pair: CM obs 4.02e-04 null median 5.64e-05 99% [6.70e-09,9.33e-04] -> CONSISTENT; TOT -> CONSISTENT
+KNOWN-GOOD PASS

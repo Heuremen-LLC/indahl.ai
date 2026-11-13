@@ -1,0 +1,22 @@
+secrecords: gate passed True True True
+secrecords: read 50
+secrecords: read 100
+secrecords: read 150
+secrecords: read 200
+secrecords: read 250
+secrecords: read 300
+secrecords: read 350
+secrecords: read 400
+secrecords: read 450
+secrecords: read 500
+secrecords: read 550
+secrecords: read 600
+secrecords: read 650
+secrecords: read 700
+secrecords: read 750
+secrecords: read 800
+secrecords: read 850
+secrecords: read 900
+secrecords: read 950
+secrecords: read 1000
+secrecords: 1000 domains; {'NOT_COMPARABLE': 814, 'DISAGREE': 36, 'AGREE': 150} {'AGREE': 736, 'NOT_COMPARABLE': 243, 'DISAGREE': 21} published

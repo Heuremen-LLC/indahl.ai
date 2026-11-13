@@ -1,0 +1,89 @@
+{
+ "header": [
+  "Date received",
+  "Product",
+  "Sub-product",
+  "Issue",
+  "Sub-issue",
+  "Company public response",
+  "Company",
+  "State",
+  "ZIP code",
+  "Tags",
+  "Submitted via",
+  "Date sent to company",
+  "Company response to consumer",
+  "Timely response?",
+  "Complaint ID"
+ ],
+ "rows_by_year": {
+  "2011": 2536,
+  "2012": 72368,
+  "2013": 108214,
+  "2014": 152908,
+  "2015": 168272,
+  "2016": 191292,
+  "2017": 242745,
+  "2018": 257130,
+  "2019": 277239,
+  "2020": 444212,
+  "2021": 495940,
+  "2022": 800245,
+  "2023": 1292043,
+  "2024": 2734252,
+  "2025": 5442927,
+  "2026": 6362899
+ },
+ "bad_rows": 0,
+ "products": [
+  "Bank account or service",
+  "Checking or savings account",
+  "Consumer Loan",
+  "Credit card",
+  "Credit card or prepaid card",
+  "Credit reporting",
+  "Credit reporting or other personal consumer reports",
+  "Credit reporting, credit repair services, or other personal consumer reports",
+  "Debt collection",
+  "Debt or credit management",
+  "Money transfer, virtual currency, or money service",
+  "Money transfers",
+  "Mortgage",
+  "Other financial service",
+  "Payday loan",
+  "Payday loan, title loan, or personal loan",
+  "Payday loan, title loan, personal loan, or advance loan",
+  "Prepaid card",
+  "Student loan",
+  "Vehicle loan or lease",
+  "Virtual currency"
+ ],
+ "responses": [
+  "",
+  "Closed",
+  "Closed with explanation",
+  "Closed with monetary relief",
+  "Closed with non-monetary relief",
+  "Closed with relief",
+  "Closed without relief",
+  "In progress",
+  "Untimely response"
+ ],
+ "timely_values": [
+  "No",
+  "Yes"
+ ],
+ "submitted_via": [
+  "Email",
+  "Fax",
+  "Phone",
+  "Postal mail",
+  "Referral",
+  "Web"
+ ],
+ "bureau_like_names": [
+  "EQUIFAX, INC.",
+  "Experian Information Solutions Inc.",
+  "TRANSUNION INTERMEDIATE HOLDINGS, INC."
+ ]
+}

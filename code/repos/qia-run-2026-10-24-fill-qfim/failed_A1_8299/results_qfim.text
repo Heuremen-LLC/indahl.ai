@@ -1,0 +1,2 @@
+R0 KNOWN-GOOD (their raw counts, 5 jobs x 8 circuits): means equal to 6 decimals 8/8, sds equal to 6 decimals 8/8, max |mean diff| 0.0e+00, max |sd diff| 0.0e+00, max |t95 CI end diff| 0.0e+00 (e.g. echo 0.670972 sd 0.009316, published 0.670972 0.009316) -> PASS
+INCOMPLETE: missing jobs ['A1', 'B1', 'B2', 'A2']

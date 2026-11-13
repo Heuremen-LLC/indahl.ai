@@ -1,0 +1,14 @@
+# RESULT -- Perez Expolio GHZ fill (Zenodo 10.5281/zenodo.20538557), ibm_fez, 25 Oct 2026 UTC. Plan commit 6ab32de (before any job).
+Jobs: A dbenk8npc3tc739m1sk0 (submitted 03:40:18Z, 32 s), B dbenkifsstms73fcdpg0 (03:40:57Z, 6 s). 8,192 shots per arm. Record: props_before.json.
+KNOWN-GOOD: PASSED. best_a 0.6677, best_b 0.6681 (population P, N = 12); diff -0.0004 +- 0.0074.
+Their number, P(0^12) + P(1^12) at N = 12 (their 'fidelity'; their two runs 0.692 and 0.503):
+  best path   0.668    q25 path 0.609    q50 path 0.542    q75 path 0.460    unpinned (their setting, lands on physical 0-11) 0.646
+LAYOUT: ABOVE. chi2 = 827 on 3 dof; range 0.207 inside ONE job = 1.10x their 0.189. The rule's record score ordered the paths as delivered here.
+  Both of their values (0.692, 0.503) fall inside the span our four paths deliver in one job.
+DRIFT (job B ~40 s after job A): best path +0.023 +- 0.006 (ABOVE; ci [+0.011, +0.035]); unpinned +0.003 +- 0.007 (CONSISTENT, bound +-0.018).
+  Job-to-job drift is real at minute spacing on one path and is a ninth of their 0.189.
+FIDELITY on the best path: coherence C = 0.426 +- 0.005 from 8 parity settings; F = (P + C)/2 = 0.547 +- 0.003. Their estimator (P) reads 0.668:
+  it overstates fidelity by 0.121 +- 0.003 here. GME (F > 0.5) holds at N = 12 on this path (15 widths).
+What this rules out and what it does not: their 0.189 does not need hours of time to appear; a change of qubits gives it in one job. Which qubits their
+  two runs used is CANNOT_TELL (no layouts released), and hours-scale drift was not tested. Their fit's uniform sigma_device = 0.095 mixes layout and time.
+Single session, one chip; floors 4.5% (layout), 1% (KG) over 200 planted nulls.

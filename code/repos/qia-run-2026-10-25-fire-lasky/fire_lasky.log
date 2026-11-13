@@ -1,0 +1,54 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:53:27,537: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 22:53:30,862: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open, pay-as-you-go), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:53:30,863: Loading account with the given token. A saved account will not be used.
+remaining 2219 fez active 1
+compiled GHZ3 {'rz': 10, 'sx': 5, 'delay': 3, 'measure': 3, 'cz': 2} duration_dt 1467
+compiled GHZ5 {'rz': 18, 'sx': 9, 'delay': 5, 'measure': 5, 'cz': 4} duration_dt 1713
+SUBMITTED 0 dbemubvpc3tc739m0vm0
+SUBMITTED 1 dbemudnsstms73fccs20
+SUBMITTED 2 dbemufvgdj9s73fm3t60
+SUBMITTED 3 dbemuhngdj9s73fm3t90
+{
+ "GHZ3": {
+  "job_means": [
+   0.80078125,
+   0.79931640625,
+   0.78369140625,
+   0.802734375
+  ],
+  "mean": 0.796630859375,
+  "their_baseline": 0.8828125,
+  "between_job_sd": 0.008739188644960155,
+  "binomial_sd_job": 0.008894184076350583,
+  "drift_excess_sd": 0.0,
+  "max_job_range": 0.01904296875,
+  "their_gain": 0.0381,
+  "sd_of_two_job_difference": 0.017788368152701167,
+  "z_of_their_gain": 2.141849082104505,
+  "outcome": "ABOVE",
+  "known_good_copies": true
+ },
+ "GHZ5": {
+  "job_means": [
+   0.7392578125,
+   0.7421875,
+   0.73681640625,
+   0.75732421875
+  ],
+  "mean": 0.743896484375,
+  "their_baseline": 0.80078125,
+  "between_job_sd": 0.0092171843325311,
+  "binomial_sd_job": 0.009644929268810078,
+  "drift_excess_sd": 0.0,
+  "max_job_range": 0.0205078125,
+  "their_gain": 0.0342,
+  "sd_of_two_job_difference": 0.019289858537620153,
+  "z_of_their_gain": 1.7729523486811094,
+  "outcome": "CONSISTENT",
+  "known_good_copies": true
+ },
+ "KNOWN_GOOD": {
+  "rule": "both copies inside every job agree within 2.58 binomial sd, both circuits",
+  "passed": true
+ }
+}

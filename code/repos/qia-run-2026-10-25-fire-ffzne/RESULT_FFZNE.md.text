@@ -1,0 +1,19 @@
+# RESULT -- FF-ZNE fill (arXiv 2603.13949, IISc Bangalore), ibm_fez, 25 Oct 2026 UTC. Plan commit e2ae8b7 (before any job).
+Jobs: A dbeo29vgdj9s73fm5gng (submitted 04:10:15Z, 27 s), B dbeo2nfsstms73fceftg (04:11:09Z, 13 s). Their options: resilience 0, TREX, gate twirling
+auto, DD XY4, 10,000 shots; their 50-qubit QIC r=1 (ideal <Z> = 1). Record: props_choice.json (scores), props_before.json (submission).
+KNOWN-GOOD: PASSED. s1 twice in one job: 0.8665 and 0.8660 (+-0.0012 each).
+Delivered <Z> by layout (their score): s1 0.866 (0.205), q25 0.849 (0.262), mid 0.811 (0.373), q75 0.840 (0.381), worst 0.776 (0.541).
+THEIR FF-ZNE ON FEZ: E0 = 0.922 +- 0.002 from (s1, mid, worst): 7.8% from ideal (raw best layout 13.4%). Their '~6%' was on torino, which was not run:
+  this is a different chip, so it narrows their number to 'torino, that day', not a contradiction of it. (Defined after the data: the three points
+  alone are not collinear, chi2 27 on 1 dof.)
+LINEAR: ABOVE. Over five layouts, chi2 152 on 3 dof (p ~ 1e-32): the record score does not carry the delivered value linearly.
+PAIR: BELOW. mid (0.373) and q75 (0.381) have nearly the same score, yet deliver 0.811 vs 0.840: 0.031 beyond the slope's prediction (12 widths).
+  Which qubits carry the circuit moves the number at a fixed record score.
+ALT TRIPLES: E0 = 0.922 / 0.896 / 0.916 from three different triples of the same five layouts; the choice of triple moves the 'mitigated' answer
+  by 0.026 (defined after the data: a third of the 0.078 residual left after extrapolation).
+DRIFT: BELOW. job B (s1, ~1 min later) 0.858 vs in-job 0.866: -0.008 +- 0.0015 (5.4 widths), small beside the layout effects.
+What this does not say: which record term (CZ, readout or idle) misranks the layouts is CANNOT_TELL from five points; torino itself was not run.
+Single session, one chip; floors 5% (linear), 1.5% (KG) over 200 planted nulls.
+
+/q pass 25 Oct (after the result): record used for scoring = record at submission (last_update 2026-10-24 23:04:21 EDT, A3 holds). Arms differ in depth
+(158-166) as well as qubits (B9, listed in the plan). Two post-hoc readings labelled; the cross-chip comparison narrowed.

@@ -1,0 +1,6 @@
+ibm_fez: 300 circuits, layouts [(0, 1, 2, 3)] (1 distinct), est 168 s, remaining 1894
+SUBMITTED job 5 H2 dbe1oq7gdj9s73fl1la0 2026-10-24T02:48:08Z
+DONE job 5 H2 usage {'qpu_charge_time_seconds': 92, 'value': 1.521814, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 1.521814, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 92}}]}
+SUBMITTED job 6 H0 dbe1pr7gdj9s73fl1mrg 2026-10-24T02:50:20Z
+DONE job 6 H0 usage {'qpu_charge_time_seconds': 83, 'value': 1.371152, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 1.371152, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 83}}]}
+ALL DONE

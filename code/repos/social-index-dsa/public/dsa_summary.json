@@ -1,0 +1,31 @@
+{
+ "updated_utc": "2026-11-10 04:19",
+ "comparison_rows": 519,
+ "label_split_rows": 9,
+ "outcomes_original_rows": {
+  "CANNOT_TELL": 292,
+  "CONSISTENT": 35,
+  "ABOVE": 39,
+  "BELOW": 82,
+  "NOTHING_RETURNED": 27
+ },
+ "outcomes_ads_rows": {
+  "CONSISTENT": 6,
+  "CANNOT_TELL": 24
+ },
+ "outcomes_combined_rows": {
+  "CANNOT_TELL": 14
+ },
+ "known_good": {
+  "KG1": true,
+  "KG1all": true,
+  "KG3": true
+ },
+ "known_good_plan_as_committed": {
+  "KG1": true,
+  "KG2": false,
+  "KG3": true,
+  "KG4": false
+ },
+ "newest_created_day": "2026-11-07"
+}

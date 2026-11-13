@@ -1,0 +1,39 @@
+R1 reference (their raw bits, our estimator): {"20.0": {"QL_odd": [0.2454, 0.043], "QR_odd": [-0.2282, 0.0432], "QL_even": [2.2816, 0.0437], "QR_even": [1.9299, 0.0422], "Qtot_even": [4.2115, 0.0604]}, "60.0": {"QL_odd": [0.2799, 0.0416], "QR_odd": [-0.2764, 0.0429], "QL_even": [3.6622, 0.0423], "QR_even": [4.6588, 0.0433], "Qtot_even": [8.3209, 0.0602]}}
+=== tau 20, delta_B 0.45 (band 99%)
+   R2_Ap_minus_Bp                     QL_odd    -0.0099 [-0.2107, +0.1808]  copy gap [-0.455, +0.288] -> CONSISTENT
+   R2_Ap_minus_Bp                     QR_odd    -0.0221 [-0.2603, +0.2468]  copy gap [-0.474, +0.545] -> CONSISTENT
+   R2_Ap_minus_Bp                     QL_even   +0.4824 [+0.2957, +0.6597]  copy gap [-0.390, +0.371] -> ABOVE
+   R2_Ap_minus_Bp                     QR_even   +2.4426 [+2.1750, +2.7024]  copy gap [+0.593, +1.577] -> CANNOT_TELL
+   R2_Ap_minus_Bp                     Qtot_even +2.9208 [+2.5836, +3.2396]  copy gap [+0.423, +1.714] -> CANNOT_TELL
+   R4_A_minus_Aprec                   QL_odd    -0.0833 [-0.3380, +0.1466]  copy gap [-0.473, +0.492] -> CONSISTENT
+   R4_A_minus_Aprec                   QR_odd    -0.1065 [-0.4902, +0.2528]  copy gap [-0.580, +0.944] -> CONSISTENT
+   R4_A_minus_Aprec                   QL_even   -0.0883 [-0.3502, +0.1821]  copy gap [-0.634, +0.423] -> CONSISTENT
+   R4_A_minus_Aprec                   QR_even   +0.1659 [-0.2293, +0.5804]  copy gap [-1.680, -0.158] -> CANNOT_TELL
+   R4_A_minus_Aprec                   Qtot_even +0.0755 [-0.3980, +0.6044]  copy gap [-2.052, -0.060] -> CANNOT_TELL
+   R1_A_today_minus_published         QL_odd    -0.3044 [-0.4390, -0.1604] -> BELOW
+   R1_A_today_minus_published         QR_odd    +0.1410 [-0.0014, +0.2773] -> CONSISTENT
+   R1_A_today_minus_published         QL_even   +2.4847 [+2.3559, +2.6251] -> ABOVE
+   R1_A_today_minus_published         QR_even   +6.6880 [+6.5512, +6.8376] -> ABOVE
+   R1_A_today_minus_published         Qtot_even +9.1742 [+8.9713, +9.3602] -> ABOVE
+   R3_projection_2xR2_over_missing    QL_even   +1.1624 [+0.7125, +1.5895] -> PROJECTION
+   R3_projection_2xR2_over_missing    QR_even   +10.1774 [+9.0623, +11.2599] -> PROJECTION
+   diag_incoming_assignment: copy1 aL P(1|0) 0.0133 P(0|1) 0.0144, aR P(1|0) 0.0133 P(0|1) 0.0196; copy2 aL P(1|0) 0.0136 P(0|1) 0.0146, aR P(1|0) 0.0130 P(0|1) 0.0199
+=== tau 60, delta_B 0.45 (band 99%)
+   R2_Ap_minus_Bp                     QL_odd    -0.0589 [-0.2965, +0.1848]  copy gap [-0.631, +0.232] -> CONSISTENT
+   R2_Ap_minus_Bp                     QR_odd    +0.0303 [-0.2214, +0.2787]  copy gap [-0.535, +0.460] -> CONSISTENT
+   R2_Ap_minus_Bp                     QL_even   +0.5733 [+0.3407, +0.7979]  copy gap [-0.272, +0.611] -> ABOVE
+   R2_Ap_minus_Bp                     QR_even   +3.0310 [+2.7782, +3.2847]  copy gap [-0.295, +0.695] -> ABOVE
+   R2_Ap_minus_Bp                     Qtot_even +3.5997 [+3.2688, +3.9399]  copy gap [-0.338, +1.030] -> ABOVE
+   R4_A_minus_Aprec                   QL_odd    +0.0907 [-0.2262, +0.4368]  copy gap [-0.797, +0.579] -> CONSISTENT
+   R4_A_minus_Aprec                   QR_odd    +0.0681 [-0.3755, +0.5003]  copy gap [-1.120, +0.585] -> CONSISTENT
+   R4_A_minus_Aprec                   QL_even   -0.4783 [-0.8102, -0.1596]  copy gap [-0.939, +0.478] -> BELOW
+   R4_A_minus_Aprec                   QR_even   -0.4717 [-0.8943, -0.0423]  copy gap [-1.101, +0.598] -> BELOW
+   R4_A_minus_Aprec                   Qtot_even -0.9508 [-1.5384, -0.4445]  copy gap [-1.578, +0.597] -> BELOW
+   R1_A_today_minus_published         QL_odd    +0.1463 [+0.0050, +0.2764] -> ABOVE
+   R1_A_today_minus_published         QR_odd    +0.2312 [+0.0647, +0.3806] -> ABOVE
+   R1_A_today_minus_published         QL_even   +1.8648 [+1.7289, +1.9993] -> ABOVE
+   R1_A_today_minus_published         QR_even   +4.4845 [+4.3291, +4.6425] -> ABOVE
+   R1_A_today_minus_published         Qtot_even +6.3476 [+6.1399, +6.5489] -> ABOVE
+   R3_projection_2xR2_over_missing    QL_even   +3.1851 [+1.8927, +4.4329] -> PROJECTION
+   R3_projection_2xR2_over_missing    QR_even   +4.4904 [+4.1159, +4.8662] -> PROJECTION
+   diag_incoming_assignment: copy1 aL P(1|0) 0.0135 P(0|1) 0.0143, aR P(1|0) 0.0135 P(0|1) 0.0198; copy2 aL P(1|0) 0.0131 P(0|1) 0.0140, aR P(1|0) 0.0131 P(0|1) 0.0194

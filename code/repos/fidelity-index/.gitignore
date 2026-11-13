@@ -1,0 +1,6 @@
+__pycache__/
+data/raw/
+raw/
+fidelity.html
+.run.lock
+.fidelity_snap.lock

@@ -1,0 +1,6 @@
+STABLE, same chips                     drift fez CONSISTENT, drift kingston CONSISTENT, chip CONSISTENT; known-good True -> PASS
+CHIP difference only (0.3)             drift fez CONSISTENT, drift kingston CONSISTENT, chip ABOVE; known-good True -> PASS
+DRIFT on fez (-0.3)                    drift fez BELOW, drift kingston CONSISTENT, chip CONSISTENT; known-good True -> PASS
+BOTH (drift kingston + chip)           drift fez CONSISTENT, drift kingston BELOW, chip ABOVE; known-good True -> PASS
+BROKEN instrument (product reads 2.4)  drift fez CONSISTENT, drift kingston CONSISTENT, chip BELOW; known-good False -> PASS
+FLOOR: stable world, 300 draws, fez drift resolves 13 times (expect ~5%)

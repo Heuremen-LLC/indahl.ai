@@ -1,0 +1,3 @@
+R0 KNOWN-GOOD (A) their 18 published fidelities from their raw counts through this file: 18/18 equal at 4 decimals (source_data_full.csv), 18/18 equal at 3 decimals (Table 2); mean full protocol 0.9454 (published 0.9454 / 0.945) -> PASS
+R0 KNOWN-GOOD (B) their model value by their convention (A) from their own 14 Jun stamp, exact density matrix: full 0.9516 vs their Table 3 0.953 (|diff| 0.0014); no-ent 0.7544 vs 0.752; no-ff 0.5000 vs 0.496; rule fixed before any job: |diff| <= 0.005, their README: "version-dependent to ~0.005" (theirs is a shot-noise qiskit-aer draw, ours is exact) -> PASS
+SCALES from their numbers: S_F = |0.953 - 0.9454| = 0.0076; S_psi = |pooled apparent Z-rotation of their full-protocol received state| = 1.79 deg (signed -1.79)

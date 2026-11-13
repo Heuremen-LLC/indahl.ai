@@ -1,0 +1,11 @@
+PRIMARY FILL -- advantage beyond control and Qiskit-only; size differs from printed 0.53
+Q    CZ 199  F 0.4981 [0.4906, 0.5056]  raw 0.4908  copies [0.4954, 0.5025, 0.4971, 0.4969]  drift ratio 0.18  shots 20000
+V1   CZ  49  F 0.9889 [0.9853, 0.9923]  raw 0.9692  copies [0.9893, 0.9865, 0.9892, 0.9903]  drift ratio 0.44  shots 20000
+V2   CZ  31  F 0.9867 [0.9829, 0.9902]  raw 0.9655  copies [0.9871, 0.984, 0.988, 0.9872]  drift ratio 0.45  shots 20000
+CTRL CZ   0  F 0.3141 [0.2713, 0.3433]  raw 0.4236  copies [0.2947, 0.3132, 0.3241, 0.3222]  drift ratio 0.38  shots 20000
+D3 = F_V2 - F_CTRL +0.6726 [+0.6430, +0.7159]
+D2 = F_V2 - F_Q    +0.4886 [+0.4805, +0.4968]   (printed 0.99 - 0.46 = 0.53)
+SECONDARY {'V2_vs_099': 'CONSISTENT', 'V1_vs_099': 'CONSISTENT', 'Q_vs_046': 'ABOVE'}
+calibration e0 [0.032, 0.0101, 0.0015, 0.0014, 0.0172, 0.0069, 0.0005, 0.0107, 0.0047, 0.0027, 0.0023, 0.0098, 0.0007] e1 [0.0331, 0.0147, 0.0064, 0.0045, 0.0199, 0.0075, 0.0082, 0.0138, 0.0101, 0.0129, 0.0087, 0.007, 0.0066] (union [3, 5, 6, 14, 25, 50, 84, 91, 98, 109, 111, 112, 142])
+record last_update_date before 2026-10-24 12:32:27-04:00 after 2026-10-24 12:32:27-04:00
+record changes on the 13 measured qubits between before/after: 0 []

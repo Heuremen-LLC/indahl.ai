@@ -1,0 +1,18 @@
+# RESULT -- free calibration run for the Eritrea Institute of Technology teleportation benchmark (Sci. Reports 2026, Zenodo 20767111), ibm_fez,
+24 Oct 2026 06:05-06:09Z. Read under PLAN + ADDENDUM 1 (commit 2ef2b8a, before any job). Jobs A1 B1 B2 A2, 33 s each, 132 s total.
+KNOWN-GOOD: their 18 published fidelities 18/18 from their raw counts; their model value 0.9516 vs 0.953 (rule |diff| <= 0.005, theirs) -> PASS.
+Record: stamps 23:13:38 (before jobs 1-3) and 01:48:02 (after) carry IDENTICAL values (sx, cz01 0.0093, cz12 0.0030, readout) -- restamp, no change.
+   job:        A1      B1      B2      A2
+   hardware  0.9350  0.9183  0.9200  0.9205
+   model A   0.9622 (their convention)     model B 0.9579 (correct conversion)
+R1 LINK-A hw - model(A) = -0.0388 [-0.0407, -0.0371]  -> BELOW   (their scale 0.0076)
+R2 LINK-B hw - model(B) = -0.0344 [-0.0362, -0.0325]  -> BELOW
+   record bracket (model from the record saved AFTER each job): same outcomes.
+R3 DRIFT F(A2) - F(A1) = -0.0144 [-0.0197, -0.0091], shot-null +-0.0068 -> BELOW (fidelity fell over ~5 min with the record unchanged)
+R4 KICK (dose-scaled Ramsey arm) = -0.37 [-0.90, +0.17] deg per readout -> CONSISTENT; bound |kick| <~ 0.9 deg per readout at their dose.
+Reported, not scored: STEP -0.0064 (BELOW), SLOT +0.0086 (ABOVE).
+READING FOR THE AUTHORS: their question was the link from device calibration to measured fidelity. On their day the calibration model bracketed
+the hardware (0.9408-0.9516 vs 0.9454). Today, on the same qubits 0-2, the model built from the same day's record over-predicts the hardware by
+0.034-0.039 under either conversion, and the hardware moved by 0.014 between jobs ~5 min apart while the record did not change. The record
+alone does not carry the fidelity on this chip today.
+BILL-TRACK NOTE: ibm_fez record restamped 23:13:38 -> 01:48:02 with every value unchanged on qubits 0-2 (L4 pattern, seen live).

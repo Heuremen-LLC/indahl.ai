@@ -1,0 +1,10 @@
+# RESULT -- Zenodo 22770646 (Shcherbak) run 2: layout as the carrier of their S spread, ibm_fez, job dbemvdvsstms73fccth0, 2026-10-25 02:55Z
+KNOWN-GOOD: best triple twice in one job: 2.6848 vs 2.6742 (diff 0.011, sd 0.023); every product arm 1.25-1.35 (< 2): PASS.
+S by layout, same job (rule-chosen before the job): best [71,58,70] 2.685 +/- 0.017; 25th pct [31,18,30] 2.503; median [104,103,105] 2.529; 75th pct [127,126,137] 2.401.
+Layout spread: range 0.284, chi2 141.5 on 3 dof (p ~ 2e-30): ABOVE. The range is 0.90 of their printed spread (0.31).
+With run 1 (layout pinned: drift within a chip <= 0.06 over ~5 min), this closes the alternative left open: at the cadence of their runs, layout choice moves S
+by about as much as their whole spread, while drift moves it by at most a fifth of it (run 1 window ~5 min; their marrakesh pair was ~20 min apart, B13).
+/q E25 + D21, narrowed after the result: this shows layout CAN carry a spread of their size on fez; it does not show their runs actually moved layout -- their
+notebook (least_busy, no initial_layout) records no layout, and two of their three runs were on marrakesh: CANNOT_TELL which layouts they got. The design
+that removes the question is a pinned initial_layout. The violation itself holds on every layout tested (all S > 2.4 with se ~0.017).
+The order follows record quality only loosely (25th and 50th percentile swap), so the record ranks layouts roughly, not exactly -- descriptive, not a reading.

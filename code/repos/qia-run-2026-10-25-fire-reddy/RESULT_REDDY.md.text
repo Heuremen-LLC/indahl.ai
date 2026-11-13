@@ -1,0 +1,13 @@
+# RESULT -- Zenodo 23123273 (Dhanunjay Reddy, Andhra University) t-shape Bell route on four chips, 2026-10-25, 5 jobs x 4 s = 20 s
+Their circuit (opt 3, seed 42, physical [16,3,2,4,5]; sx/cz identical to their record), 2000 shots per correlator. Their model F = 0.9203; their fez 2026-10-03 F = 0.921 +/- 0.004.
+KNOWN-GOOD: their released fez counts through our analysis: F 0.9210 +/- 0.0043, as printed: PASS.
+  arm 0 ibm_fez        F 0.8992 +/- 0.0048   vs model -0.021 [-0.031, -0.012] BELOW      job dbemab7sstms73fcbiig
+  arm 1 ibm_kingston   F 0.9470 +/- 0.0036   vs model +0.027 [+0.020, +0.034] ABOVE      job dbemadnsstms73fcbilg
+  arm 2 ibm_boston     F 0.9450 +/- 0.0036   vs model +0.025 [+0.018, +0.032] ABOVE      job dbemaj7gdj9s73fm2jog
+  arm 3 ibm_pittsburgh F 0.9393 +/- 0.0038   vs model +0.019 [+0.011, +0.026] ABOVE      job dbemgc7pc3tc739m029g
+  arm 4 ibm_fez        F 0.9205 +/- 0.0043   vs model +0.000 [-0.008, +0.009] CONSISTENT job dbemqangdj9s73fm3kig
+DRIFT (fez arm 4 - arm 0, ~50 min apart in the queue): +0.021 [+0.009, +0.034]: ABOVE. The two fez copies disagree by more than their widths (D20), so the fez
+  chip reading is CANNOT_TELL; the first fez BELOW is drift, not the chip. The closing fez arm matches their 0.9203 model and their own 0.921.
+What this answers for the author ('it does not show the noise model fits other chips'): on kingston, boston and pittsburgh the hardware sits ABOVE their model by
+0.019-0.027 at this route (three chips, each resolved; floor ~5% per reading); on fez the model fits at one time and misses by 0.021 at another inside one hour.
+/q B13/D20: an earlier summary line 'their model fits none of the chips' went out before the fez bracket landed; narrowed here.

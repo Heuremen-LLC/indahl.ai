@@ -1,0 +1,19 @@
+# Free calibration run (Kumar fill): Zenodo 10.5281/zenodo.23382139, Patnaik / Saragadam / Chowdary (Raghu Engineering College, Miracle Education
+# Society, India) -- VQC cancer benchmark -- committed before any job
+Their numbers (wisconsin, z1 encoding, split seed 42, ibm_fez, 10 Oct 2026, opt 3, physical [144, 143, 142, 141], 1,024 shots, 84 test rows):
+exact accuracy 0.893, hardware 0.845 (drop 0.048, their CI [-0.095, -0.012]), label agreement 0.952. Their headline is the ENCODING effect:
+exact z1 0.893 vs exact zz2 0.643 on the same 84 rows (gap 0.25). Book row: CLEAN (9 of 9 runs rebuild from their released predictions).
+Their circuit, weights and test rows are vendored from their release (vqc.py); our exact P(class 1) rebuilds theirs on all 84 rows to 1.1e-15.
+New hotness applied, in their circuit, same session:
+  LAYOUT  their placement [144-141] and three rule-chosen 4-qubit paths (layouts_chosen.json: best, 50th, 75th percentile of record worst-CZ +
+          worst-readout over 281 paths not touching theirs), all in ONE fez job; every arm compiles to depth 40-41 with 9 CZ (theirs: 40 and 9).
+  DRIFT   job B (their placement) submitted as soon as job A returns.
+  RECORD  props_before.json at submission. 'today_drop' vs their 10 Oct drop is a day-to-day reading, labelled as such (different record).
+Readings, per arm: the contraction lam and offset c from p_b - 1/2 = c + lam (p_e - 1/2) (weighted LS, widths floored at reduced chi2 >= 1);
+accuracy and label agreement vs exact (descriptive, Wilson). LAYOUT: chi2 of lam over theirs_a, best, q50, q75 (dof 3): ABOVE if p < 0.05, else
+CONSISTENT (a bound); the same for the offset (second reading, reported with its p). The layout range in accuracy is priced against their 0.25
+encoding gap. Note from the synth: an even contraction toward 1/2 flips no labels; label flips need an offset or row-level scatter.
+KNOWN-GOOD: theirs_a and theirs_b are the identical PUB in one job; lam must agree within 2.58 sd, or the run is NOT DECIDED.
+Synthetic: synth_results_vqc.text (exact, flat, layout, offset-layout, drift, broken copies). Floors over 200 flat nulls: LAYOUT ABOVE 10/200 = 5%;
+KG false fail 1/200.
+Units: rows within an arm; layouts (4) for the layout test. Budget: cap 220 s, reserve 300 s, remaining 2,037 s at plan time. Chip: ibm_fez.

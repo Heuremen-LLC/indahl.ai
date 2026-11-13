@@ -1,0 +1,341 @@
+{
+ "updated": "29 Oct 19:14",
+ "gate": "passed",
+ "polls_kept": 1,
+ "first_poll": "29 Oct 19:14 UTC",
+ "models": 176,
+ "hosts": 70,
+ "endpoints": 869,
+ "failed_models": 0,
+ "problems_now": 44,
+ "problems": {
+  "deepseek/deepseek-v4.1-flash-1017 | OpenInference | open-inference/fp4": {
+   "quantization": "fp4",
+   "uptime_5m": 80,
+   "uptime_30m": 96.7,
+   "uptime_1d": 99.9
+  },
+  "deepseek/deepseek-v4.1-flash-1017 | DeepInfra | deepinfra/fp8/flex": {
+   "quantization": "fp8",
+   "uptime_5m": 60,
+   "uptime_30m": 66.7,
+   "uptime_1d": 91.2
+  },
+  "deepseek/deepseek-v4.1-flash-1017 | GMICloud | gmicloud/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 50,
+   "uptime_30m": 38.1,
+   "uptime_1d": 98.7
+  },
+  "reflection/beam-1.0-501b-a23b | Together | together": {
+   "quantization": "unknown",
+   "uptime_5m": null,
+   "uptime_30m": 83.3,
+   "uptime_1d": 99.7
+  },
+  "nvidia/nemotron-3.5-super-vl | Io Net | io-net/nvfp4": {
+   "quantization": "nvfp4",
+   "uptime_5m": 80,
+   "uptime_30m": 93.1,
+   "uptime_1d": 96.0
+  },
+  "xiaomi/mimo-v2.6-pro | GMICloud | gmicloud/bf16": {
+   "quantization": "bf16",
+   "uptime_5m": 100,
+   "uptime_30m": 96.7,
+   "uptime_1d": 86.1
+  },
+  "xiaomi/mimo-v2.6-pro | StreamLake | streamlake": {
+   "quantization": "unknown",
+   "uptime_5m": null,
+   "uptime_30m": 75,
+   "uptime_1d": 94.6
+  },
+  "deepseek/deepseek-v4.1-flash | DeepInfra | deepinfra/fp8/priority": {
+   "quantization": "fp8",
+   "uptime_5m": 0,
+   "uptime_30m": 0,
+   "uptime_1d": 27.2
+  },
+  "deepseek/deepseek-v4.1-flash | BaseTen | baseten/fast": {
+   "quantization": "unknown",
+   "uptime_5m": 0,
+   "uptime_30m": 0,
+   "uptime_1d": 19.6
+  },
+  "nex-agi/nex-n2.5-mini | Nex AGI | nex-agi/bf16": {
+   "quantization": "bf16",
+   "uptime_5m": 100,
+   "uptime_30m": 96.7,
+   "uptime_1d": 99.2
+  },
+  "z-ai/glm-5.3-flash | SiliconFlow | siliconflow/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 96.7,
+   "uptime_1d": 90.3
+  },
+  "z-ai/glm-5.3 | Amazon Bedrock | amazon-bedrock/us-east-1": {
+   "quantization": "unknown",
+   "uptime_5m": 50,
+   "uptime_30m": 92.3,
+   "uptime_1d": 58.1
+  },
+  "z-ai/glm-5.3 | BaseTen | baseten/us/fast": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 83.3,
+   "uptime_1d": 98.2
+  },
+  "z-ai/glm-5.3 | BaseTen | baseten/fast": {
+   "quantization": "fp8",
+   "uptime_5m": null,
+   "uptime_30m": 83.3,
+   "uptime_1d": 98.2
+  },
+  "qwen/qwen3.8-27b | Darkbloom | darkbloom/fp4": {
+   "quantization": "fp4",
+   "uptime_5m": 75,
+   "uptime_30m": 95,
+   "uptime_1d": 97.3
+  },
+  "deepseek/deepseek-v4-pro-0813 | CoreWeave | coreweave/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 96.4,
+   "uptime_1d": 99.4
+  },
+  "deepseek/deepseek-v4-pro-0813 | SiliconFlow | siliconflow/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 92.3,
+   "uptime_1d": 99.2
+  },
+  "inclusionai/ling-3.0-flash | DeepInfra | deepinfra/bf16": {
+   "quantization": "bf16",
+   "uptime_5m": 0,
+   "uptime_30m": 73.3,
+   "uptime_1d": 93.5
+  },
+  "moonshotai/kimi-k2.7-code | StreamLake | streamlake": {
+   "quantization": "unknown",
+   "uptime_5m": null,
+   "uptime_30m": 100,
+   "uptime_1d": 99.4
+  },
+  "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free | Nvidia | nvidia": {
+   "quantization": "unknown",
+   "uptime_5m": 20,
+   "uptime_30m": 20,
+   "uptime_1d": 12.8
+  },
+  "deepseek/deepseek-v4-flash | Fireworks | fireworks": {
+   "quantization": "unknown",
+   "uptime_5m": 40,
+   "uptime_30m": 86.7,
+   "uptime_1d": 73.9
+  },
+  "xiaomi/mimo-v2.5-pro | GMICloud | gmicloud/bf16": {
+   "quantization": "bf16",
+   "uptime_5m": 0,
+   "uptime_30m": 0,
+   "uptime_1d": 0
+  },
+  "xiaomi/mimo-v2.5-pro | DigitalOcean | digitalocean": {
+   "quantization": "unknown",
+   "uptime_5m": 100,
+   "uptime_30m": 76.7,
+   "uptime_1d": 97.3
+  },
+  "xiaomi/mimo-v2.5 | GMICloud | gmicloud/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 0,
+   "uptime_30m": 0,
+   "uptime_1d": 0
+  },
+  "xiaomi/mimo-v2.5 | Venice | venice/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 80,
+   "uptime_30m": 70,
+   "uptime_1d": 90.4
+  },
+  "moonshotai/kimi-k2.6 | CoreWeave | coreweave/fp4": {
+   "quantization": "fp4",
+   "uptime_5m": 100,
+   "uptime_30m": 80,
+   "uptime_1d": 98.0
+  },
+  "moonshotai/kimi-k2.6 | Crusoe | crusoe/bf16": {
+   "quantization": "bf16",
+   "uptime_5m": 100,
+   "uptime_30m": 76,
+   "uptime_1d": 98.2
+  },
+  "moonshotai/kimi-k2.6 | Venice | venice/int4": {
+   "quantization": "int4",
+   "uptime_5m": null,
+   "uptime_30m": 72.7,
+   "uptime_1d": 95.7
+  },
+  "moonshotai/kimi-k2.6 | GMICloud | gmicloud/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": null,
+   "uptime_30m": 0,
+   "uptime_1d": 0
+  },
+  "google/gemma-4-26b-a4b-it | Google | google-vertex/global": {
+   "quantization": "unknown",
+   "uptime_5m": 60,
+   "uptime_30m": 73.3,
+   "uptime_1d": 91.2
+  },
+  "google/gemma-4-31b-it | Chutes | chutes/fp4": {
+   "quantization": "fp4",
+   "uptime_5m": 60,
+   "uptime_30m": 85,
+   "uptime_1d": 97.5
+  },
+  "google/gemma-4-31b-it | SambaNova | sambanova": {
+   "quantization": "unknown",
+   "uptime_5m": 100,
+   "uptime_30m": 88.9,
+   "uptime_1d": 78.5
+  },
+  "minimax/minimax-m2.7 | GMICloud | gmicloud/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 90.9,
+   "uptime_1d": 98.3
+  },
+  "qwen/qwen3.5-9b | Darkbloom | darkbloom/fp4": {
+   "quantization": "fp4",
+   "uptime_5m": 80,
+   "uptime_30m": 96.7,
+   "uptime_1d": 99.9
+  },
+  "qwen/qwen3.5-397b-a17b | Phala | phala": {
+   "quantization": "unknown",
+   "uptime_5m": 80,
+   "uptime_30m": 96.4,
+   "uptime_1d": 98.9
+  },
+  "stepfun/step-3.5-flash | SiliconFlow | siliconflow/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 95.2,
+   "uptime_1d": 99.0
+  },
+  "z-ai/glm-4.7-flash | Novita | novita/bf16": {
+   "quantization": "bf16",
+   "uptime_5m": 0,
+   "uptime_30m": 0,
+   "uptime_1d": 1.5
+  },
+  "deepseek/deepseek-chat-v3.1 | Mara | mara": {
+   "quantization": "unknown",
+   "uptime_5m": 100,
+   "uptime_30m": 88.5,
+   "uptime_1d": 96.7
+  },
+  "openai/gpt-oss-120b | Google | google-vertex/global": {
+   "quantization": "unknown",
+   "uptime_5m": 0,
+   "uptime_30m": 0,
+   "uptime_1d": 1.8
+  },
+  "openai/gpt-oss-20b | SiliconFlow | siliconflow/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 40,
+   "uptime_30m": 68,
+   "uptime_1d": 74.7
+  },
+  "qwen/qwen3-coder | Venice | venice/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 75,
+   "uptime_1d": 80.6
+  },
+  "qwen/qwen3-32b | SiliconFlow | siliconflow/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": null,
+   "uptime_30m": 85.7,
+   "uptime_1d": 92.7
+  },
+  "meta-llama/llama-4-scout | DeepInfra | deepinfra/fp8/priority": {
+   "quantization": "fp8",
+   "uptime_5m": 100,
+   "uptime_30m": 90,
+   "uptime_1d": 59.9
+  },
+  "google/gemma-3-27b-it | Nebius | nebius/fp8": {
+   "quantization": "fp8",
+   "uptime_5m": 80,
+   "uptime_30m": 96.7,
+   "uptime_1d": 90.1
+  }
+ },
+ "quantization": {
+  "bf16": {
+   "endpoints": 63,
+   "readings": 63,
+   "at_100": 0.9524
+  },
+  "fp16": {
+   "endpoints": 7,
+   "readings": 7,
+   "at_100": 1.0
+  },
+  "fp32": {
+   "endpoints": 1,
+   "readings": 1,
+   "at_100": 1.0
+  },
+  "fp4": {
+   "endpoints": 106,
+   "readings": 106,
+   "at_100": 0.9623
+  },
+  "fp8": {
+   "endpoints": 255,
+   "readings": 255,
+   "at_100": 0.9725
+  },
+  "int4": {
+   "endpoints": 14,
+   "readings": 14,
+   "at_100": 1.0
+  },
+  "mxfp4": {
+   "endpoints": 14,
+   "readings": 14,
+   "at_100": 1.0
+  },
+  "nvfp4": {
+   "endpoints": 13,
+   "readings": 13,
+   "at_100": 0.9231
+  },
+  "unknown": {
+   "endpoints": 188,
+   "readings": 188,
+   "at_100": 0.9628
+  }
+ },
+ "models_by_hosts": {
+  "1 host": 77,
+  "10 or more hosts": 24,
+  "5 to 9 hosts": 23,
+  "2 to 4 hosts": 52
+ },
+ "headline": {
+  "of": 0,
+  "n": 0,
+  "share": null,
+  "share_lo": 0,
+  "share_hi": 1,
+  "outcome": "NOTHING_RETURNED"
+ },
+ "headline_n": 0,
+ "headline_of": 0,
+ "top_line": "869 endpoints on 70 hosts for 176 open-weight models. 44 with a 5-minute uptime below 100 now."
+}

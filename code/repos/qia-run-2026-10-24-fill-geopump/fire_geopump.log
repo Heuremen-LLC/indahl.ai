@@ -1,0 +1,10 @@
+ibm_kingston: layout (47, 48, 46) rule check {"cz_S_aL": 0.0032079011583657224, "cz_S_aR": 0.004285781011793416, "chip_median_cz": 0.001744492470798234, "chip_median_readout": 0.00909423828125, "readout": {"47": 0.009765625, "48": 0.003662109375, "46": 0.0059814453125}, "failed": []}; remaining 3354
+copy 1: 200 circuits, CHECK 8 (S timeline Ap_k == Bp_k) PASS at optimization_level 3, circuit duration 0.679-0.684 ms, est 67 s, compile 3 s
+copy 2: 200 circuits, CHECK 8 (S timeline Ap_k == Bp_k) PASS at optimization_level 3, circuit duration 0.679-0.684 ms, est 67 s, compile 3 s
+TOTAL estimate 134 s (cap 220), remaining 3354
+  job = SamplerV2(mode=b).run([(c, None, m['shots']) for c, m in zip(tq, meta)])
+SUBMITTED copy 1 try 1 dbeafongdj9s73fleo0g 2026-10-24T12:43:14Z
+DONE copy 1 usage 70 s
+SUBMITTED copy 2 try 1 dbeaggfpc3tc739lboq0 2026-10-24T12:44:49Z
+DONE copy 2 usage 70 s
+ALL DONE

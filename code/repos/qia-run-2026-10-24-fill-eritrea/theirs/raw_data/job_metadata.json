@@ -1,0 +1,69 @@
+{
+  "backend": "ibm_fez",
+  "runs": [
+    {
+      "backend": "ibm_fez",
+      "job_id": "d8ne35032u0s73fcb6sg",
+      "submitted_utc": "2026-06-14T17:15:00.480811",
+      "shots": 8192,
+      "optimization_level": 1,
+      "physical_qubits": [
+        0,
+        1,
+        2
+      ],
+      "calibration_last_update": "2026-06-14 16:47:45+00:00",
+      "run": "main_tomography",
+      "calibration_file": "main_calibration.json"
+    },
+    {
+      "backend": "ibm_fez",
+      "job_id": "d8pa06i01fac73d1d560",
+      "submitted_utc": "2026-06-17T13:25:40.672620+00:00",
+      "shots": 8192,
+      "optimization_level": 1,
+      "angles": [
+        "0",
+        "pi/6",
+        "pi/3",
+        "pi/2",
+        "2pi/3",
+        "pi"
+      ],
+      "figure_angle": "pi/3",
+      "requested_physical_qubits": [
+        0,
+        1,
+        2
+      ],
+      "final_index_layout": [
+        0,
+        1,
+        2
+      ],
+      "calibration_last_update": "2026-06-17 12:54:04+00:00",
+      "analysis": "branch_resolved_feedforward",
+      "run": "branch_resolved",
+      "calibration_file": "branch_calibration.json"
+    },
+    {
+      "backend": "ibm_fez",
+      "job_id": "d8pa1cmkodhs7381h880",
+      "submitted_utc": "2026-06-17T13:27:36.376661+00:00",
+      "shots": 8192,
+      "optimization_level": 1,
+      "requested_physical_qubits": [
+        1,
+        2
+      ],
+      "final_index_layout": [
+        1,
+        2
+      ],
+      "calibration_last_update": "2026-06-17 12:54:04+00:00",
+      "analysis": "bell_resource_verification",
+      "run": "bell_resource",
+      "calibration_file": "bell_calibration.json"
+    }
+  ]
+}

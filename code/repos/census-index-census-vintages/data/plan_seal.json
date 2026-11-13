@@ -1,0 +1,6 @@
+{
+ "plan_commit": "b11e6aa9b837c2a4ee66af22d3f5e21ed5442905",
+ "plan_commit_time": "2026-11-11T13:22:43-05:00",
+ "plan_sha256": "c99073f19d0b173c701ea5341b2206cee6e1dea49996054647320811ea4d93db",
+ "pre_seal_look": "raw files copied, headers printed, first rows of the two API pulls printed (Alabama 2019 API, five states in 2021 API, Alabama census count), scout table of CA TX AR; no difference, outcome or count computed. Logged in CHECKS.md."
+}

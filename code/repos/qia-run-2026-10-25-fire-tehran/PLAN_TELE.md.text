@@ -1,0 +1,44 @@
+# PLAN -- Tehran teleportation fill (Zenodo 23634581, Abdolhosseini, University of Tehran), ibm_kingston
+Committed before any job. Wayfinder's order: Kumar fires are FILLS -- price the author's number against our findings in their circuit.
+
+## Their number
+Recovered fraction f = (F_corr - F_none)/(F_native - F_none): 1.057 [0.952, 1.177] (product_HT), 0.975 [0.934, 1.017] (bell_30_70),
+"f = 1 lies inside both intervals: the correction recovered the whole injected loss". Our recount (qia_leads/recounts/10.5281_zenodo.23634581_recount.md)
+rebuilt all 21 block F to 4 decimals. F_corr is from job db175bj (Round 2, 15:37 UTC); F_none and F_native from job db16p1b (Round 1, 15:11 UTC).
+The interval is shot noise only. Their open question: H8 failed -- the crosstalk detector fired on the device alone; device fingerprint 0.108 / 0.159 rad.
+
+## Circuits
+Rebuilt from their protocol (tele.py; version A, Pauli frame in software, barriers as theirs), injected noise N1 = their NOMINAL_NOISE, correction =
+their Round 2 N1 angles (8d_round2.json corr.N1), fixed. check_rebuild.text: our estimators on THEIR Round 1 counts give 0.8751 / 0.8608 / 0.7109 /
+0.5217 and fingerprint 0.1084 / 0.1593 exactly; our circuits noiseless give N1none 0.790 / 0.607 (their step 2) and native 1.
+Compiled by us (opt 1, seed 7, fixed angles); theirs were parametric ISA circuits. So our F beside their 4 Oct F is cross-day AND cross-compile: printed, labelled, never a reading.
+
+## Arms
+Job A (ibm_kingston, SamplerV2, no DD, no twirling): for each chain theirs (21-36-41-42-43-44), best (147-152, rank 0), q50 (32-33-34-35-19-15, rank 483)
+[layouts_chosen.json, rule in choose_layouts.py, record 2026-10-25 04:47 EDT; theirs ranks 649 of 968 today]: native / N1none / N1corr x two messages x
+9 bases, 3000 shots; TOMO-9 fingerprint probes 9 x 2000; last: known-good copy of their-chain native product_HT. 198 circuits, 567,000 shots, est 150 s (cap 240).
+Job B (submitted when A returns): their chain, the 6 blocks, 162,000 shots, est 43 s (cap 80). Total est 193 s of 1,757 remaining; reserve 300.
+
+## Readings (tele_fill.py, four outcomes each; CONSISTENT is a bound, printed with its interval)
+THEIRS: f on their chain with all three terms in ONE job; f - 1. The correction is their 4 Oct correction, fixed: f today measures that fixed correction.
+DRIFT: job B - job A native / N1none / N1corr F on their chain (minute spacing, a bound); f_cross (their construction across jobs) - f_one_job = what one
+job-to-job step alone puts into f, as a share of their interval half-width.
+LAYOUT: native F and f across the three chains, weighted chi2 dof 2. f cancels a pure depolarising difference by construction (synth LAYOUT world), so a
+layout ABOVE on f is a non-depolarising difference; we name what it rules out, never a mechanism.
+FINGER: fingerprint angle per chain per leg vs the measured null floor (finger_floor.json: 0.050 / 0.054 rad); chi2 across chains; their chain today vs
+their 4 Oct 0.108 / 0.159 is a cross-day reading, labelled.
+
+KNOWN-GOOD: their-chain native product_HT in-block vs its identical copy at the end of job A (same circuit, same job, same qubits): |F diff| / sd < 2.58. If it fails, NOT DECIDED.
+
+## Synth (synth_results_tele.text) and floors
+Worlds NULL, LAYOUT, DRIFT, FINGER, BOTH, NEITHER_but_rotated, each read as planted except power-limited cells. Null floor over 30 replicates: layout ABOVE
+3/30 (product) and 1-2/30 (bell); drift ABOVE/BELOW 1/30 each; fingerprint chi2 ABOVE 0/30; known-good fails 0/30. f - 1 BELOW 4-5/30 in NULL is NOT a floor:
+the planted truth is f = 0.967 / 0.979 (their correction is not the exact inverse), so that is power. Power for a 0.0225 drop in native F: 12/20 (product), 18/20 (bell).
+Fingerprint: six angle readings at a 95th-percentile floor -> about 0.3 false resolutions expected.
+
+## /q pass (before fire)
+A1 f is their quantity, same estimator (verified on their counts). A3 their 4 Oct record vs today's: cross-day, labelled. B8/B13 every primary reading is
+within one job; job B is the drift reading by design. C14 known-good scaled to the apparatus (identical copy, same job). C15 every alternative planted incl.
+BOTH and NEITHER. C16 floors measured, not assumed. C18 the known-good rule is the rule. D19 four outcomes. E25 a z-like fingerprint is not named as any
+mechanism. E26 anything not in this plan is labelled post-hoc. E27 f is a ratio; the depolarising split is shown in synth. F31 plan committed before jobs;
+IBM job list checked (no jobs since 25 Oct 04:18 UTC). Catch logged: fingerprint 'resolved' rule (angle > 2 sd) false-resolved in null worlds; replaced by the measured floor.

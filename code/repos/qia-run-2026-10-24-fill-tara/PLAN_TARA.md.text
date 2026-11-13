@@ -1,0 +1,36 @@
+# PLAN -- CHSH RE-TEST for arXiv 2512.04016v1 (Davut Emre Tasar, Ceren Ocal Tasar; "Independent Researchers, Madrid, Spain"), on ibm_fez
+Written and committed BEFORE any job (24 Oct 2026). Book-side free run; nothing published or sent before Monday; no contact.
+Their chip, ibm_torino, is retired (2026-04-01). This is a RE-TEST of the same construction on a calibrated Heron chip (ibm_fez, Part 0:
+sx 1.450/1.417, CZ 1.244/1.269 delivered/stated, readout CONSISTENT), NOT a calibration of their Torino data.
+Their question (paper + desk audit audits/k2025_tara_2512.04016/KNOWN_GOOD.md): do shots from a real device read as quantum (S well above 2),
+and is their S reproducible. Printed: S = 2.725 +- 0.042 (Table 1); their released 60,000-shot table gives 2.7320 +- 0.0119 (our code).
+Construction: their angles and qubits are not printed; we use the standard optimal CHSH settings (a0 0, a1 pi/2, b0 pi/4, b1 -pi/4,
+measurement in the XZ plane by RY(-theta) then Z), which reproduce their printed sign pattern (E00, E01, E10 > 0, E11 < 0). Bell pair H, CX.
+Shots like theirs: 10 cycles x 4 settings x 1500, settings interleaved per cycle; plus a 4-state readout bracket (|00>,|01>,|10>,|11>,
+1500 each) at the start and the end of the same job (descriptive only). One job, 48 circuits, 72,000 shots, estimate 22 s (cap 40).
+Pair: rule in fire_tara.py, fixed now (lowest stated cz among edges whose two qubits have stated readout_error <= chip median, from the
+record saved just before the job). Dry run today picks [58, 71]. Transpile once, level 1, seed 7; no twirling, no DD.
+KNOWN-GOOD: their released ibm_torino 60,000-shot table (QCE-main/P1_TARA_Conformal_Quantum/data/ibm_hardware_real.csv) through OUR committed analyze() must give S = 2.7320 +- 0.0119 within 5e-4 (known_good_tara.text: PASS, S 2.7320 +- 0.0119, cycle spread ratio 1.00).
+READINGS (four outcomes, 99 % band, z = 2.576):
+  R1 S_fez - 2.7320, combined sd sqrt(se_fez^2 + 0.0119^2): ABOVE / BELOW beyond the band, CONSISTENT inside (printed as a bound);
+     CANNOT_TELL if the between-cycle spread exceeds 1.5 x shot noise (instance variance) or the pair's record changes during the window.
+  R2 S_fez - 2 (Bell violation on fez today): ABOVE / BELOW / CONSISTENT, 99 % band.
+  R3 between-cycle spread / shot noise (reported; gates R1).
+  Descriptive, not scored: bracket flips per qubit and a bracket-corrected S.
+SYNTHETIC (synth_tara.py, 400 draws per world, synth_results_tara.text): NULL (their E) reads CONSISTENT 98.0 % (false calls 2.0 %, all
+CANNOT_TELL, 0 directional); ABOVE (S 2.83) 99.5 %; BELOW (S 2.63) 98.5 %; NEAR (S 2.745) CONSISTENT 98.0 %; VAR (cycle sd 0.03)
+CANNOT_TELL 74.8 % (power to see instance variance of that size; 1.75 % directional calls); CLASSICAL (S 1.9) R2 BELOW 100 %.
+What it can say: whether today's fez, with the standard construction, gives their S, and whether it violates CHSH. It cannot say anything
+about their Torino day or their detector (TARA-k etc.), which needs their code and null data.
+
+## /q (run on this plan before firing)
+FIRED:
+- #9 (two instruments differ in more than the named variable): their angles/qubits unknown; ours are the standard optimum -> R1 compares S
+  values, not circuits; any difference is chip + construction, stated.
+- #14/#18 (known-good on real hardware, the rule is the rule): their own hardware table through our code; pass rule fixed above.
+- #16 (floor): NULL false-call rate measured (2.0 %), not assumed.
+- #22 (units): one pair, one chip, one job = one instance; R1 is a one-chip re-test, never "the hardware".
+- #26 (post-hoc): their cycle grouping assumes file order = acquisition order (labelled in the desk file); our cycles are by construction.
+- #3 (record the job ran under): record saved before and after; a change on the pair makes R1 CANNOT_TELL.
+HELD: #1, #2, #4-#7 (no stated IBM figure is compared), #8, #10-#13, #15, #17 (sign: E = <(-1)^(a+b)>, checked on their table: E11 < 0),
+#19-#21, #23-#25, #27, #28, #29-#37.

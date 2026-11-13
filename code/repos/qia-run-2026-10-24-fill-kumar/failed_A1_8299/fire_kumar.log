@@ -1,0 +1,9 @@
+ibm_marrakesh: FIRING, est 236 s, cap 280, remaining 1081
+SUBMITTED job A1 dbe5fdnsstms73fbh4j0 2026-10-24T07:01:10Z (remaining before 1081)
+Traceback (most recent call last):
+  File "/Users/heuremen/bones-forge/qia_runs/2026-10-24-fill-kumar/fire_kumar.py", line 50, in <module>
+    res = job.result(); ents = []
+          ^^^^^^^^^^^^
+  File "/Users/heuremen/bones-forge/qvenv/lib/python3.12/site-packages/qiskit_ibm_runtime/runtime_job_v2.py", line 151, in result
+    raise RuntimeJobFailureError(f"Unable to retrieve job result. {error_message}")
+qiskit_ibm_runtime.exceptions.RuntimeJobFailureError: 'Unable to retrieve job result. Error code 8299; Failed to execute program: A control instrument error occurred. -- https://ibm.biz/error_codes#8299'

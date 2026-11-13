@@ -1,0 +1,8 @@
+# RESULT -- Zenodo 22770646 (Shcherbak, Montenegro) Local Friendliness, fez/kingston A B B A, 2026-10-25, 76 s
+Jobs: A1 fez dbemkr0m94ac738s45sg, B1 kingston dbeml18m94ac738s464g, B2 kingston dbeml7nsstms73fccb3g, A2 fez dbemldgm94ac738s472g. Same physical qubits [109,110,118] on both chips; their circuit; 8000 shots.
+KNOWN-GOOD: product arm S 1.36-1.37 in every job (bound 2): PASS. Violation (S - 1.96 se > 2) in every job: S = 2.632 / 2.665 / 2.653 / 2.619.
+Drift within fez (~5 min): -0.013 [-0.060, +0.034] CONSISTENT; within kingston: -0.012 [-0.058, +0.035] CONSISTENT (bounds).
+Chip (fez - kingston): -0.033 [-0.066, -0.0004] BELOW (one reading at the edge; floor ~5%).
+Their spread 0.31 (2.40 to 2.72, two of them on one chip ~20 min apart) is ~5x the drift bound here with the layout pinned. Their notebook uses least_busy and
+no initial_layout, so each of their runs could sit on different qubits: whether their spread is layout or longer-window drift is CANNOT_TELL from their
+record (run 1 job id not retained); drift at this cadence does not reach it.

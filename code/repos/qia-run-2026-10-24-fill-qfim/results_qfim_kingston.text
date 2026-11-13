@@ -1,0 +1,15 @@
+R0 KNOWN-GOOD (their raw counts, 5 jobs x 8 circuits): means equal to 6 decimals 8/8, sds equal to 6 decimals 8/8, max |mean diff| 0.0e+00, max |sd diff| 0.0e+00, max |t95 CI end diff| 0.0e+00 (e.g. echo 0.670972 sd 0.009316, published 0.670972 0.009316) -> PASS
+R1 JOB-SD (RMS)                            = 0.00433 [0.00268, 0.00613] shot-null [0.00248, 0.00596] their published 0.00509 -> CONSISTENT
+R2 STEP (RMS)                              = 0.00360 [0.00116, 0.00683] shot-null [0.00191, 0.00645] their published 0.00509 -> CONSISTENT
+R3 SLOT (RMS)                              = 0.00319 [0.00093, 0.00603] shot-null [0.00199, 0.00665] their published 0.00509 -> CONSISTENT
+R4 SINCE (RMS, not drift)                  = 0.06478 [0.06290, 0.06660] shot-null [0.00126, 0.00428] their published 0.00509 -> ABOVE
+R1c ladder_n3_M1_r0                        = 0.00371 [0.00049, 0.00764] shot-null [0.00054, 0.00741] their published 0.00541 -> CONSISTENT
+R1c ladder_n3_M1_r1                        = 0.00376 [-0.00053, 0.00890] shot-null [0.00079, 0.01077] their published 0.00436 -> CANNOT_TELL
+R1c ladder_n3_M1_r2                        = 0.00335 [-0.00042, 0.00853] shot-null [0.00081, 0.01044] their published 0.00550 -> CONSISTENT
+R1c ladder_n3_M1_r3                        = 0.00402 [0.00022, 0.00876] shot-null [0.00089, 0.00961] their published 0.00361 -> CANNOT_TELL
+R1c ladder_n3_M1_r4                        = 0.00200 [-0.00013, 0.00497] shot-null [0.00050, 0.00605] their published 0.00226 -> CANNOT_TELL
+R1c echo_n3_M1_r2                          = 0.00890 [0.00319, 0.01493] shot-null [0.00090, 0.01114] their published 0.00932 -> CONSISTENT
+R1c readout_n3_zeros                       = 0.00079 [-0.00038, 0.00244] shot-null [0.00027, 0.00367] their published 0.00136 -> CANNOT_TELL
+R1c readout_n3_ones                        = 0.00325 [0.00103, 0.00579] shot-null [0.00043, 0.00489] their published 0.00467 -> CONSISTENT
+SHARE  R1 / their RMS published sd 0.00509 = 0.850  (shot-noise floor 0.794)
+per-circuit job-sd / binomial sd at our pooled p: M1_r0 1.03, M1_r1 0.70, M1_r2 0.66, M1_r3 0.85, M1_r4 0.69, M1_r2 1.62, zeros 0.46, ones 1.36

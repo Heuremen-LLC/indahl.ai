@@ -1,0 +1,4 @@
+NO layout effect   range 0.021 p 0.8058 -> CONSISTENT (no layout spread beyond shot noise; a bound) | KG True -> PASS
+LAYOUT spread 0.3  range 0.285 p 0.0000 -> ABOVE (layout spread resolves) | KG True -> PASS
+BROKEN copies (best_b off by 0.3): KG False (want False) PASS
+FLOOR: no-layout world, 200 draws, layout resolves 11 (expect ~5%)

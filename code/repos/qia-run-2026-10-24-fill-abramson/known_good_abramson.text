@@ -1,0 +1,9 @@
+measured qubits [51, 53, 55, 69, 71, 73, 75, 89, 91, 93] CZ per cycle (arm B) [6, 4, 4, 4, 6, 6, 4, 4, 4, 6]
+A period us 4.864
+B period us 4.864
+median persistent-state lifetime  A (no CZ) 40.35 us   B (CZ) 32.01 us   paired B-A onset per CZ 0.0898 %
+present A [True, True, True, True, True, True, True, True, True, True] present B [True, True, True, True, True, True, True, True, True, True]
+onset A [0.0008, 0.0033, 0.0001, 0.0026, 0.0018, 0.004, 0.0004, 0.0026, 0.0037, 0.0037]
+onset B [0.0058, 0.0073, 0.0027, 0.0074, 0.009, 0.0097, 0.0035, 0.0058, 0.0069, 0.0105]
+qubit-bootstrap 95%:  A [28.6, 69.9] us  B [24.3, 42.1] us  per-CZ [0.0794, 0.1146] %
+published (rounded as printed): A 40 us, B 32 us, 0.09 % per CZ; agree within rounding: True ; published inside my qubit-bootstrap interval: True

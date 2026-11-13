@@ -1,0 +1,17 @@
+ibm_fez: 12 teleportation circuits (4 angles x X/Y/Z, 8192 shots) + 4 Ramsey circuits (4900 shots), 4 jobs A1 B1 B2 A2, physical qubits [0, 1, 2], est 141.5 s (35.4 s per job at 300 us/shot; cap 200), remaining 1415; Ramsey idle = measure duration 1660 ns = 416 dt
+   tele|pi/6|X {'depth': 21, 'two_q': 2, 'ops': {'rz': 16, 'sx': 9, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/6|Y {'depth': 20, 'two_q': 2, 'ops': {'rz': 15, 'sx': 9, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/6|Z {'depth': 18, 'two_q': 2, 'ops': {'rz': 14, 'sx': 8, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/3|X {'depth': 21, 'two_q': 2, 'ops': {'rz': 16, 'sx': 9, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/3|Y {'depth': 20, 'two_q': 2, 'ops': {'rz': 15, 'sx': 9, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/3|Z {'depth': 18, 'two_q': 2, 'ops': {'rz': 14, 'sx': 8, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/2|X {'depth': 21, 'two_q': 2, 'ops': {'rz': 16, 'sx': 8, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/2|Y {'depth': 20, 'two_q': 2, 'ops': {'rz': 15, 'sx': 8, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|pi/2|Z {'depth': 18, 'two_q': 2, 'ops': {'rz': 14, 'sx': 7, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|2pi/3|X {'depth': 21, 'two_q': 2, 'ops': {'rz': 16, 'sx': 9, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|2pi/3|Y {'depth': 20, 'two_q': 2, 'ops': {'rz': 15, 'sx': 9, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   tele|2pi/3|Z {'depth': 18, 'two_q': 2, 'ops': {'rz': 14, 'sx': 8, 'barrier': 3, 'measure': 3, 'cz': 2, 'if_else': 2}, 'shots': 8192}
+   ram|R|X {'depth': 8, 'two_q': 0, 'ops': {'measure': 5, 'rz': 4, 'x': 2, 'sx': 2, 'barrier': 2}, 'shots': 4900}
+   ram|R|Y {'depth': 7, 'two_q': 0, 'ops': {'measure': 5, 'rz': 3, 'x': 2, 'sx': 2, 'barrier': 2}, 'shots': 4900}
+   ram|I|X {'depth': 8, 'two_q': 0, 'ops': {'rz': 4, 'delay': 3, 'measure': 3, 'x': 2, 'sx': 2, 'barrier': 2}, 'shots': 4900}
+   ram|I|Y {'depth': 7, 'two_q': 0, 'ops': {'rz': 3, 'delay': 3, 'measure': 3, 'x': 2, 'sx': 2, 'barrier': 2}, 'shots': 4900}

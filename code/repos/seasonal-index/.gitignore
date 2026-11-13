@@ -1,0 +1,8 @@
+__pycache__/
+*.part
+*.tmp
+*.bak-*
+data/raw/cpc_gis/
+data/seasonal_history.jsonl
+seasonal.html
+# data/raw/cpc_verif_grid/ is tracked: a dated copy of what CPC served

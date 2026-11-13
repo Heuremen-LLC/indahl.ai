@@ -1,0 +1,2 @@
+ibm_fez: qubits used [0, 1, 2, 3, 4, 5]; CZ per message [17]; 4 jobs x 68 circuits x 1024; est 84 s (cap 100); remaining 2841
+DRY RUN, nothing submitted

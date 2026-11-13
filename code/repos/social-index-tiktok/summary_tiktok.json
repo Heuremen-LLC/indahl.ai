@@ -1,0 +1,2089 @@
+{
+ "updated": "2026-11-10 02:49 UTC",
+ "gate_passed": true,
+ "gate_passed_as_committed": false,
+ "failed_days": [
+  "2026-02-11",
+  "2026-09-30",
+  "2026-10-01",
+  "2026-10-02"
+ ],
+ "rows": 828,
+ "outcomes": {
+  "CANNOT_TELL": 322,
+  "NOTHING_RETURNED": 498,
+  "ABOVE": 8
+ },
+ "outcomes_plan_as_committed": {
+  "CANNOT_TELL": 828
+ },
+ "eu_rows_outcomes": {
+  "CANNOT_TELL": 52,
+  "ABOVE": 8
+ },
+ "eu_rows_outcomes_defined_after_the_data": {
+  "CANNOT_TELL": 47,
+  "ABOVE": 11,
+  "BELOW": 2
+ },
+ "market_rows_outcomes": {
+  "NOTHING_RETURNED": 498,
+  "CANNOT_TELL": 270
+ },
+ "quarters": [
+  "2023Q3",
+  "2023Q4",
+  "2024Q1",
+  "2024Q2",
+  "2024Q3",
+  "2024Q4",
+  "2025Q1",
+  "2025Q2",
+  "2025Q3",
+  "2025Q4",
+  "2026Q1",
+  "2026Q2"
+ ],
+ "latest_quarter": "2026Q2",
+ "eu_markets_listed": {
+  "2023Q3": 7,
+  "2023Q4": 8,
+  "2024Q1": 8,
+  "2024Q2": 7,
+  "2024Q3": 6,
+  "2024Q4": 5,
+  "2025Q1": 4,
+  "2025Q2": 4,
+  "2025Q3": 5,
+  "2025Q4": 7,
+  "2026Q1": 25,
+  "2026Q2": 25
+ },
+ "eu_markets_not_listed_latest": [
+  "Luxembourg",
+  "Malta"
+ ],
+ "revisions": 0,
+ "revision_cells_checked": 397,
+ "latest_release": "2026Q2",
+ "latest_scope": [
+  [
+   "EEA_no_IS",
+   11965517.0
+  ],
+  [
+   "EEA",
+   6494267.0
+  ]
+ ],
+ "posthoc": {
+  "days": 1138,
+  "exact": 1091,
+  "first": "2023-09-25",
+  "last": "2026-11-08",
+  "biggest_excess": [
+   "2026-05-08",
+   858890
+  ],
+  "biggest_shortfall": [
+   "2026-09-30",
+   184124
+  ]
+ },
+ "simple_file_check": {
+  "2026Q1": {
+   "filter": "video and removed, by submission date (the scout proof-run filter)",
+   "simple_aggregate": 33869605,
+   "complete_aggregate": 32956870,
+   "difference": 912735
+  },
+  "2026Q2": {
+   "filter": "video and removed, by submission date (the scout proof-run filter)",
+   "simple_aggregate": 18928826,
+   "complete_aggregate": 18459847,
+   "difference": 468979
+  }
+ },
+ "eu_rows": [
+  {
+   "quarter": "2023Q3",
+   "measure": "videos_removed",
+   "stated": 8220553.0,
+   "stated_interval": [
+    8220553.0,
+    17257713.0
+   ],
+   "delivered": 646501,
+   "delivered_interval": [
+    501030,
+    1903642
+   ],
+   "delivered_by_submission_date": 645604,
+   "ratio": 0.07864446588933859,
+   "difference_pp": null,
+   "gap": [
+    -16756683.0,
+    -6316911.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -16756683.0,
+     -6316911.0
+    ]
+   },
+   "reason": "The database opened in late September 2023, so it holds the last days of this quarter only. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 7,858,400 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2023Q3",
+   "measure": "automated_removals",
+   "stated": 3975518.0,
+   "stated_interval": [
+    3975518.0,
+    13012678.0
+   ],
+   "delivered": 356177,
+   "delivered_interval": [
+    262310,
+    1466245
+   ],
+   "delivered_by_submission_date": 355696,
+   "ratio": 0.0895926015175884,
+   "difference_pp": null,
+   "gap": [
+    -12750368.0,
+    -2509273.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -12750368.0,
+     -2509273.0
+    ]
+   },
+   "reason": "The database opened in late September 2023, so it holds the last days of this quarter only. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 7,858,400 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2023Q3",
+   "measure": "automated_share",
+   "stated": 0.48360712472749706,
+   "stated_interval": [
+    0.23036180981802165,
+    0.754020999190333
+   ],
+   "delivered": 0.5509303156530307,
+   "delivered_interval": [
+    0.5235415045007284,
+    0.7702314826001948
+   ],
+   "delivered_by_submission_date": 0.5509507376038563,
+   "ratio": null,
+   "difference_pp": 6.732319092553368,
+   "gap": [
+    -0.2304794946896046,
+    0.5398696727821731
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.2304794946896046,
+     0.5398696727821731
+    ]
+   },
+   "reason": "The database opened in late September 2023, so it holds the last days of this quarter only. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 7,858,400 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2023Q3",
+   "measure": "proactive_rate",
+   "stated": 0.9573814414918315,
+   "stated_interval": [
+    0.45580168151481026,
+    0.9799372116977492
+   ],
+   "delivered": 0.9828136383393065,
+   "delivered_interval": [
+    0.9826497415324432,
+    0.9929734687509522
+   ],
+   "delivered_by_submission_date": 0.9828253852206615,
+   "ratio": null,
+   "difference_pp": 2.5432196847474997,
+   "gap": [
+    0.002712529834694055,
+    0.5371717872361419
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     0.002712529834694055,
+     0.5371717872361419
+    ]
+   },
+   "reason": "The database opened in late September 2023, so it holds the last days of this quarter only. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 7,858,400 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2023Q3",
+   "measure": "within_24h_rate",
+   "stated": 0.9085486562765304,
+   "stated_interval": [
+    0.43254063302014584,
+    0.9566761632030848
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.4938104638346673,
+    0.9336696498344298
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.4628656993684175,
+    0.5011290168142839
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.4628656993684175,
+     0.5011290168142839
+    ]
+   },
+   "reason": "The database opened in late September 2023, so it holds the last days of this quarter only. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 7,858,400 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2023Q4",
+   "measure": "videos_removed",
+   "stated": 9031696.0,
+   "stated_interval": [
+    9031696.0,
+    20749072.0
+   ],
+   "delivered": 10137310,
+   "delivered_interval": [
+    10137268,
+    28706713
+   ],
+   "delivered_by_submission_date": 9201464,
+   "ratio": 1.1224148819889421,
+   "difference_pp": null,
+   "gap": [
+    -10611804.0,
+    19675017.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -10626980.0,
+     19675017.0
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 10,119,552 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2023Q4",
+   "measure": "automated_removals",
+   "stated": 4707356.0,
+   "stated_interval": [
+    4707356.0,
+    16424732.0
+   ],
+   "delivered": 5919130,
+   "delivered_interval": [
+    5911986,
+    23401089
+   ],
+   "delivered_by_submission_date": 5374711,
+   "ratio": 1.25742136350002,
+   "difference_pp": null,
+   "gap": [
+    -10512746.0,
+    18693733.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -10521996.0,
+     18693733.0
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 10,119,552 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2023Q4",
+   "measure": "automated_share",
+   "stated": 0.5212039909226351,
+   "stated_interval": [
+    0.22687067643314363,
+    0.7915887515354904
+   ],
+   "delivered": 0.5838955304711013,
+   "delivered_interval": [
+    0.5831932232629147,
+    0.8152467971321581
+   ],
+   "delivered_by_submission_date": 0.584114766954476,
+   "ratio": null,
+   "difference_pp": 6.269153954846618,
+   "gap": [
+    -0.20839552827257568,
+    0.5883761206990145
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.2087762012418396,
+     0.5886212644342171
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 10,119,552 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2023Q4",
+   "measure": "proactive_rate",
+   "stated": 0.9289406419348039,
+   "stated_interval": [
+    0.40413342977459427,
+    0.9692867868018388
+   ],
+   "delivered": 0.9840606630358547,
+   "delivered_interval": [
+    0.9839873947801714,
+    0.9942128109623031
+   ],
+   "delivered_by_submission_date": 0.9843632491525262,
+   "ratio": null,
+   "difference_pp": 5.512002110105085,
+   "gap": [
+    0.014700607978332614,
+    0.5900793811877088
+   ],
+   "outcome": "ABOVE",
+   "material": "yes",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "yes",
+    "gap": [
+     0.014676882237985134,
+     0.5901095587172858
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 10,119,552 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2023Q4",
+   "measure": "within_24h_rate",
+   "stated": 0.8611952221376804,
+   "stated_interval": [
+    0.3746450730423028,
+    0.9397984300695472
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.43977739807366134,
+    0.9288005407374058
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.5000210319958859,
+    0.554155467695103
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.5004135147190786,
+     0.5542996120532926
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 10,119,552 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q1",
+   "measure": "videos_removed",
+   "stated": 8185284.0,
+   "stated_interval": [
+    8185284.0,
+    19510972.0
+   ],
+   "delivered": 10535369,
+   "delivered_interval": [
+    10494688,
+    25417483
+   ],
+   "delivered_by_submission_date": 11471773,
+   "ratio": 1.2871109908953677,
+   "difference_pp": null,
+   "gap": [
+    -9016284.0,
+    17232199.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -9102935.0,
+     17232199.0
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 9,781,276 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q1",
+   "measure": "automated_removals",
+   "stated": 5137005.0,
+   "stated_interval": [
+    5137005.0,
+    16462693.0
+   ],
+   "delivered": 6185617,
+   "delivered_interval": [
+    6158380,
+    20139231
+   ],
+   "delivered_by_submission_date": 6730343,
+   "ratio": 1.2041290596368897,
+   "difference_pp": null,
+   "gap": [
+    -10304313.0,
+    15002226.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -10342822.0,
+     15002226.0
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 9,781,276 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q1",
+   "measure": "automated_share",
+   "stated": 0.6275903194073658,
+   "stated_interval": [
+    0.26328801045893563,
+    0.8437659077159252
+   ],
+   "delivered": 0.5871286520671464,
+   "delivered_interval": [
+    0.5868092505465622,
+    0.7925080105786151
+   ],
+   "delivered_by_submission_date": 0.5866872540103435,
+   "ratio": null,
+   "difference_pp": -4.046166734021939,
+   "gap": [
+    -0.256956657169363,
+    0.5292200001196794
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.25847839494476854,
+     0.5316070605692693
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 9,781,276 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q1",
+   "measure": "proactive_rate",
+   "stated": 0.9636612233613396,
+   "stated_interval": [
+    0.4040674217050796,
+    0.9849648410648121
+   ],
+   "delivered": 0.9994984513594161,
+   "delivered_interval": [
+    0.9993762609269274,
+    0.9997688889140738
+   ],
+   "delivered_by_submission_date": 0.9979953403889704,
+   "ratio": null,
+   "difference_pp": 3.5837227998076426,
+   "gap": [
+    0.01441141986211536,
+    0.5957014672089942
+   ],
+   "outcome": "ABOVE",
+   "material": "yes",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "yes",
+    "gap": [
+     0.014406254146116182,
+     0.5957186994591894
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 9,781,276 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2024Q1",
+   "measure": "within_24h_rate",
+   "stated": 0.881070321933851,
+   "stated_interval": [
+    0.36941871307077884,
+    0.9503161324305113
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.4404000594679164,
+    0.9065004936882226
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.5099160729625949,
+    0.5370817806174437
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.5119673402169147,
+     0.539284461328621
+    ]
+   },
+   "reason": "TikTok lists 8 of the 27 EU markets in this release, and the 19 it does not list could hold up to 9,781,276 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q2",
+   "measure": "videos_removed",
+   "stated": 6572804.0,
+   "stated_interval": [
+    6572804.0,
+    19765029.0
+   ],
+   "delivered": 9870546,
+   "delivered_interval": [
+    9863576,
+    31028195
+   ],
+   "delivered_by_submission_date": 9870544,
+   "ratio": 1.5017252910629924,
+   "difference_pp": null,
+   "gap": [
+    -9901453.0,
+    24455391.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -9901453.0,
+     24455391.0
+    ]
+   },
+   "reason": "TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 11,471,500 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q2",
+   "measure": "automated_removals",
+   "stated": 3763502.0,
+   "stated_interval": [
+    3763502.0,
+    16955727.0
+   ],
+   "delivered": 5192334,
+   "delivered_interval": [
+    5183904,
+    25269259
+   ],
+   "delivered_by_submission_date": 5192341,
+   "ratio": 1.3796549065205759,
+   "difference_pp": null,
+   "gap": [
+    -11771823.0,
+    21505757.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -11771823.0,
+     21505757.0
+    ]
+   },
+   "reason": "TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 11,471,500 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q2",
+   "measure": "automated_share",
+   "stated": 0.5725869811422948,
+   "stated_interval": [
+    0.19041216686299828,
+    0.8578650200816806
+   ],
+   "delivered": 0.5260432401611825,
+   "delivered_interval": [
+    0.525560303889786,
+    0.8143966801807195
+   ],
+   "delivered_by_submission_date": 0.5260440559304532,
+   "ratio": null,
+   "difference_pp": -4.654374098111225,
+   "gap": [
+    -0.3323047161918946,
+    0.6239845133177213
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.3323047161918946,
+     0.6239845133177213
+    ]
+   },
+   "reason": "TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 11,471,500 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q2",
+   "measure": "proactive_rate",
+   "stated": 0.9593558773394125,
+   "stated_interval": [
+    0.3188647861837187,
+    0.9866501865491825
+   ],
+   "delivered": 0.9998283782882933,
+   "delivered_interval": [
+    0.9997791404088028,
+    0.9999186502100877
+   ],
+   "delivered_by_submission_date": 0.9998283782535188,
+   "ratio": null,
+   "difference_pp": 4.047250094888078,
+   "gap": [
+    0.013128953859620318,
+    0.681053864026369
+   ],
+   "outcome": "ABOVE",
+   "material": "yes",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "yes",
+    "gap": [
+     0.013128953859620318,
+     0.681053864026369
+    ]
+   },
+   "reason": "TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 11,471,500 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2024Q2",
+   "measure": "within_24h_rate",
+   "stated": 0.9026675341300303,
+   "stated_interval": [
+    0.30001323939367863,
+    0.9677986397591424
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.3380745802325917,
+    0.9034560082469076
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.6297240595265508,
+    0.603442768853229
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.6297240595265508,
+     0.603442768853229
+    ]
+   },
+   "reason": "TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 11,471,500 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q3",
+   "measure": "videos_removed",
+   "stated": 6871500.0,
+   "stated_interval": [
+    6871500.0,
+    18683292.0
+   ],
+   "delivered": 10515922,
+   "delivered_interval": [
+    10502047,
+    39331800
+   ],
+   "delivered_by_submission_date": 10515848,
+   "ratio": 1.5303677508549807,
+   "difference_pp": null,
+   "gap": [
+    -8181245.0,
+    32460300.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -8181245.0,
+     32460300.0
+    ]
+   },
+   "reason": "TikTok lists 6 of the 27 EU markets in this release, and the 21 it does not list could hold up to 10,335,318 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q3",
+   "measure": "automated_removals",
+   "stated": 3770225.0,
+   "stated_interval": [
+    3770225.0,
+    15582017.0
+   ],
+   "delivered": 5636078,
+   "delivered_interval": [
+    5628244,
+    33219111
+   ],
+   "delivered_by_submission_date": 5636085,
+   "ratio": 1.4948916841833046,
+   "difference_pp": null,
+   "gap": [
+    -9953773.0,
+    29448886.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -9953773.0,
+     29448886.0
+    ]
+   },
+   "reason": "TikTok lists 6 of the 27 EU markets in this release, and the 21 it does not list could hold up to 10,335,318 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q3",
+   "measure": "automated_share",
+   "stated": 0.5486756894418977,
+   "stated_interval": [
+    0.20179661057590922,
+    0.8340081073506747
+   ],
+   "delivered": 0.5359566189250928,
+   "delivered_interval": [
+    0.5359187594570849,
+    0.8445865940536665
+   ],
+   "delivered_by_submission_date": 0.5359610561126407,
+   "ratio": null,
+   "difference_pp": -1.2719070516804876,
+   "gap": [
+    -0.29808934789358976,
+    0.6427899834777573
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.29808934789358976,
+     0.6427899834777573
+    ]
+   },
+   "reason": "TikTok lists 6 of the 27 EU markets in this release, and the 21 it does not list could hold up to 10,335,318 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q3",
+   "measure": "proactive_rate",
+   "stated": 0.9535097236411263,
+   "stated_interval": [
+    0.35050601981706436,
+    0.983085305095055
+   ],
+   "delivered": 0.9944008713643939,
+   "delivered_interval": [
+    0.9943662974978842,
+    0.9984792793671233
+   ],
+   "delivered_by_submission_date": 0.9944008319633376,
+   "ratio": null,
+   "difference_pp": 4.089114772326763,
+   "gap": [
+    0.011280992402829204,
+    0.6479732595500589
+   ],
+   "outcome": "ABOVE",
+   "material": "yes",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "yes",
+    "gap": [
+     0.011280992402829204,
+     0.6479732595500589
+    ]
+   },
+   "reason": "TikTok lists 6 of the 27 EU markets in this release, and the 21 it does not list could hold up to 10,335,318 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2024Q3",
+   "measure": "within_24h_rate",
+   "stated": 0.8847230818598559,
+   "stated_interval": [
+    0.3252070837944405,
+    0.957786369072431
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.2839742782965054,
+    0.8825429305277951
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.6738120907759255,
+    0.5573358467333546
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.6738120907759255,
+     0.5573358467333546
+    ]
+   },
+   "reason": "TikTok lists 6 of the 27 EU markets in this release, and the 21 it does not list could hold up to 10,335,318 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q4",
+   "measure": "videos_removed",
+   "stated": 6357363.0,
+   "stated_interval": [
+    6357363.0,
+    19674638.0
+   ],
+   "delivered": 10943575,
+   "delivered_interval": [
+    10913439,
+    34269015
+   ],
+   "delivered_by_submission_date": 10883355,
+   "ratio": 1.7214016251706878,
+   "difference_pp": null,
+   "gap": [
+    -8761199.0,
+    27911652.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -8761199.0,
+     27911652.0
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 11,719,202 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q4",
+   "measure": "automated_removals",
+   "stated": 3640387.0,
+   "stated_interval": [
+    3640387.0,
+    16957662.0
+   ],
+   "delivered": 6482184,
+   "delivered_interval": [
+    6438310,
+    28462112
+   ],
+   "delivered_by_submission_date": 6433654,
+   "ratio": 1.780630465936726,
+   "difference_pp": null,
+   "gap": [
+    -10519352.0,
+    24821725.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -10519352.0,
+     24821725.0
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 11,719,202 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q4",
+   "measure": "automated_share",
+   "stated": 0.5726253165030847,
+   "stated_interval": [
+    0.18502942722503968,
+    0.8619046510538084
+   ],
+   "delivered": 0.5923278270583424,
+   "delivered_interval": [
+    0.5899432800238311,
+    0.8305494628310734
+   ],
+   "delivered_by_submission_date": 0.5911462044562545,
+   "ratio": null,
+   "difference_pp": 1.9702510555257735,
+   "gap": [
+    -0.2719613710299773,
+    0.6455200356060338
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.2719613710299773,
+     0.6455200356060338
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 11,719,202 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2024Q4",
+   "measure": "proactive_rate",
+   "stated": 0.949423029800249,
+   "stated_interval": [
+    0.306620541607932,
+    0.983818890212872
+   ],
+   "delivered": 0.9961190013318317,
+   "delivered_interval": [
+    0.9960440579824879,
+    0.9987328714294642
+   ],
+   "delivered_by_submission_date": 0.9960979863286643,
+   "ratio": null,
+   "difference_pp": 4.6695971531582785,
+   "gap": [
+    0.012225167769615797,
+    0.6921123298215321
+   ],
+   "outcome": "ABOVE",
+   "material": "yes",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "yes",
+    "gap": [
+     0.012225167769615797,
+     0.6921123298215321
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 11,719,202 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2024Q4",
+   "measure": "within_24h_rate",
+   "stated": 0.8311952860014442,
+   "stated_interval": [
+    0.26841822835571355,
+    0.9456165769606536
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.34482666046864785,
+    0.851051524858435
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.6007899164920057,
+    0.5826332965027214
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.6007899164920057,
+     0.5826332965027214
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 11,719,202 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q1",
+   "measure": "videos_removed",
+   "stated": 5983363.0,
+   "stated_interval": [
+    5983363.0,
+    24260219.0
+   ],
+   "delivered": 18608463,
+   "delivered_interval": [
+    18516669,
+    25669932
+   ],
+   "delivered_by_submission_date": 18605201,
+   "ratio": 3.110034106237579,
+   "difference_pp": null,
+   "gap": [
+    -5743550.0,
+    19686569.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -5743550.0,
+     19686569.0
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,167,988 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q1",
+   "measure": "automated_removals",
+   "stated": 4308594.0,
+   "stated_interval": [
+    4308594.0,
+    22585450.0
+   ],
+   "delivered": 13321718,
+   "delivered_interval": [
+    13268649,
+    17495265
+   ],
+   "delivered_by_submission_date": 13323395,
+   "ratio": 3.0918944788021334,
+   "difference_pp": null,
+   "gap": [
+    -9316801.0,
+    13186671.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -9316801.0,
+     13186671.0
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,167,988 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q1",
+   "measure": "automated_share",
+   "stated": 0.7200957053750542,
+   "stated_interval": [
+    0.17759913873819524,
+    0.9309664517043312
+   ],
+   "delivered": 0.715895665321741,
+   "delivered_interval": [
+    0.6815469943590033,
+    0.7165832362650362
+   ],
+   "delivered_by_submission_date": 0.7161113174751512,
+   "ratio": null,
+   "difference_pp": -0.4200040053313203,
+   "gap": [
+    -0.2494194573453279,
+    0.538984097526841
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.2494194573453279,
+     0.538984097526841
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,167,988 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q1",
+   "measure": "proactive_rate",
+   "stated": 0.9642731101221838,
+   "stated_interval": [
+    0.23769795184041825,
+    0.9913118974935881
+   ],
+   "delivered": 0.9999172956949749,
+   "delivered_interval": [
+    0.9998604296035858,
+    0.9999333115330541
+   ],
+   "delivered_by_submission_date": 0.999916582465301,
+   "ratio": null,
+   "difference_pp": 3.5644185572791143,
+   "gap": [
+    0.00854853210999773,
+    0.7622353596926359
+   ],
+   "outcome": "ABOVE",
+   "material": "cannot tell",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "cannot tell",
+    "gap": [
+     0.00854853210999773,
+     0.7622353596926359
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,167,988 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2025Q1",
+   "measure": "within_24h_rate",
+   "stated": 0.9055744324721733,
+   "stated_interval": [
+    0.22322093924626155,
+    0.9768348848994314
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.8420412255085055,
+    0.9168198124619499
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.1347936593909259,
+    0.6935988732156884
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.1347936593909259,
+     0.6935988732156884
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,167,988 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q2",
+   "measure": "videos_removed",
+   "stated": 5297860.0,
+   "stated_interval": [
+    5297860.0,
+    24044614.0
+   ],
+   "delivered": 15207091,
+   "delivered_interval": [
+    14981621,
+    23155378
+   ],
+   "delivered_by_submission_date": 15270531,
+   "ratio": 2.8704214531905334,
+   "difference_pp": null,
+   "gap": [
+    -9062993.0,
+    17857518.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -9068362.0,
+     17857522.0
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,583,667 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q2",
+   "measure": "automated_removals",
+   "stated": 4061911.0,
+   "stated_interval": [
+    4061911.0,
+    22808665.0
+   ],
+   "delivered": 11506608,
+   "delivered_interval": [
+    11350051,
+    17483355
+   ],
+   "delivered_by_submission_date": 11553502,
+   "ratio": 2.832806528749645,
+   "difference_pp": null,
+   "gap": [
+    -11458614.0,
+    13421444.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -11463983.0,
+     13421448.0
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,583,667 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q2",
+   "measure": "automated_share",
+   "stated": 0.7667078782753791,
+   "stated_interval": [
+    0.16893226067176625,
+    0.948597677633752
+   ],
+   "delivered": 0.7566606920416271,
+   "delivered_interval": [
+    0.7550451130618554,
+    0.7578708287867777
+   ],
+   "delivered_by_submission_date": 0.7565880976895958,
+   "ratio": null,
+   "difference_pp": -1.0047186233752003,
+   "gap": [
+    -0.19355256457189662,
+    0.5889385681150114
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.19360950548888112,
+     0.5891173245297542
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,583,667 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q2",
+   "measure": "proactive_rate",
+   "stated": 0.9747270018460285,
+   "stated_interval": [
+    0.2146559002361194,
+    0.9945416517811431
+   ],
+   "delivered": 0.9999151053939245,
+   "delivered_interval": [
+    0.9999151053939245,
+    0.9999500615296932
+   ],
+   "delivered_by_submission_date": 0.9999152616238427,
+   "ratio": null,
+   "difference_pp": 2.5188103547896024,
+   "gap": [
+    0.005373453612781409,
+    0.7852941612935738
+   ],
+   "outcome": "ABOVE",
+   "material": "cannot tell",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "cannot tell",
+    "gap": [
+     0.005373160523722831,
+     0.7852951430106925
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,583,667 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2025Q2",
+   "measure": "within_24h_rate",
+   "stated": 0.9219030897381207,
+   "stated_interval": [
+    0.20301696558738688,
+    0.9829027171324105
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.8439748701414763,
+    0.9117712356166008
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.1389278469909342,
+    0.7087542700292139
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.13898291224378434,
+     0.7089692907336316
+    ]
+   },
+   "reason": "TikTok lists 4 of the 27 EU markets in this release, and the 23 it does not list could hold up to 16,583,667 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q3",
+   "measure": "videos_removed",
+   "stated": 7120223.0,
+   "stated_interval": [
+    7120223.0,
+    26304948.0
+   ],
+   "delivered": 11363452,
+   "delivered_interval": [
+    11362960,
+    21775049
+   ],
+   "delivered_by_submission_date": 7611396,
+   "ratio": 1.5959404642242245,
+   "difference_pp": null,
+   "gap": [
+    -14941988.0,
+    14654826.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -14945028.0,
+     14654830.0
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 16,882,558 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q3",
+   "measure": "automated_removals",
+   "stated": 5294484.0,
+   "stated_interval": [
+    5294484.0,
+    24479209.0
+   ],
+   "delivered": 8574408,
+   "delivered_interval": [
+    8573916,
+    18198285
+   ],
+   "delivered_by_submission_date": 5609640,
+   "ratio": 1.6194983307155144,
+   "difference_pp": null,
+   "gap": [
+    -15905293.0,
+    12903801.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -15908333.0,
+     12903805.0
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 16,882,558 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q3",
+   "measure": "automated_share",
+   "stated": 0.7435840141523657,
+   "stated_interval": [
+    0.20127331177389135,
+    0.9305933241152957
+   ],
+   "delivered": 0.7545601459838085,
+   "delivered_interval": [
+    0.7532870642905426,
+    0.8363823339185069
+   ],
+   "delivered_by_submission_date": 0.7370054061042153,
+   "ratio": null,
+   "difference_pp": 1.0976131831442748,
+   "gap": [
+    -0.17730625982475312,
+    0.6351090221446156
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.1773721345240551,
+     0.6352265317780361
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 16,882,558 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q3",
+   "measure": "proactive_rate",
+   "stated": 0.9742885461592986,
+   "stated_interval": [
+    0.26358507165648076,
+    0.9931757639855436
+   ],
+   "delivered": 0.9999041664451964,
+   "delivered_interval": [
+    0.9998545906812834,
+    0.9999396543981143
+   ],
+   "delivered_by_submission_date": 0.9999085581672534,
+   "ratio": null,
+   "difference_pp": 2.561562028589781,
+   "gap": [
+    0.006678826695739715,
+    0.7363545827416336
+   ],
+   "outcome": "ABOVE",
+   "material": "cannot tell",
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "cannot tell",
+    "gap": [
+     0.00667862222586646,
+     0.736356594164763
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 16,882,558 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2025Q3",
+   "measure": "within_24h_rate",
+   "stated": 0.9050420526154869,
+   "stated_interval": [
+    0.24484143163864078,
+    0.9744321239677036
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.7692900889624034,
+    0.8750180079962162
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.20514203500530026,
+    0.6301765763575754
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.20520404288334892,
+     0.6302987770320044
+    ]
+   },
+   "reason": "TikTok lists 5 of the 27 EU markets in this release, and the 22 it does not list could hold up to 16,882,558 more removals by TikTok's own listing rule. The gap range reaches zero and passes the material size, so the two filings neither agree nor disagree on this rule."
+  },
+  {
+   "quarter": "2025Q4",
+   "measure": "videos_removed",
+   "stated": 9097360.0,
+   "stated_interval": [
+    9097360.0,
+    26504956.0
+   ],
+   "delivered": 15751207,
+   "delivered_interval": [
+    15445282,
+    27347569
+   ],
+   "delivered_by_submission_date": 6908282,
+   "ratio": 1.7314041656040873,
+   "difference_pp": null,
+   "gap": [
+    -11059674.0,
+    18250209.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -11062574.0,
+     18250209.0
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 15,137,040 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2025Q4",
+   "measure": "automated_removals",
+   "stated": 7520360.0,
+   "stated_interval": [
+    7520360.0,
+    24927956.0
+   ],
+   "delivered": 13395021,
+   "delivered_interval": [
+    13095111,
+    24196476
+   ],
+   "delivered_by_submission_date": 5433251,
+   "ratio": 1.7811675238951328,
+   "difference_pp": null,
+   "gap": [
+    -11832845.0,
+    16676116.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -11835745.0,
+     16676116.0
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 15,137,040 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2025Q4",
+   "measure": "automated_share",
+   "stated": 0.8266530070262142,
+   "stated_interval": [
+    0.2837341061799914,
+    0.9405016933436902
+   ],
+   "delivered": 0.850412352526381,
+   "delivered_interval": [
+    0.8478389064052052,
+    0.884776120319872
+   ],
+   "delivered_by_submission_date": 0.7864836727857953,
+   "ratio": null,
+   "difference_pp": 2.3759345500166784,
+   "gap": [
+    -0.09266278693848495,
+    0.6010420141398806
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.09269136201009154,
+     0.6011358478136005
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 15,137,040 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2025Q4",
+   "measure": "proactive_rate",
+   "stated": 0.9745657660024447,
+   "stated_interval": [
+    0.33433094312625916,
+    0.991441762702794
+   ],
+   "delivered": 0.9993650645312452,
+   "delivered_interval": [
+    0.9993313154226157,
+    0.9995161635133777
+   ],
+   "delivered_by_submission_date": 0.9998765250173632,
+   "ratio": null,
+   "difference_pp": 2.4799298528800473,
+   "gap": [
+    0.007889552719821613,
+    0.6651852203871185
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "cannot tell",
+    "gap": [
+     0.007889432943726904,
+     0.6652011228978567
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 15,137,040 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2025Q4",
+   "measure": "within_24h_rate",
+   "stated": 0.9163834903752297,
+   "stated_interval": [
+    0.3143609002784234,
+    0.9714717198549584
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.8319518050137183,
+    0.9170495922324943
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.13951991484124004,
+    0.6026886919540708
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.1395514711033784,
+     0.6027859483449773
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 7 of the 27 EU markets in this release, and the 20 it does not list could hold up to 15,137,040 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q1",
+   "measure": "videos_removed",
+   "stated": 18545004.0,
+   "stated_interval": [
+    18545004.0,
+    19190569.0
+   ],
+   "delivered": 20361489,
+   "delivered_interval": [
+    20072530,
+    30886195
+   ],
+   "delivered_by_submission_date": 32956870,
+   "ratio": 1.0979501001994931,
+   "difference_pp": null,
+   "gap": [
+    881961.0,
+    12341191.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "cannot tell",
+    "gap": [
+     874363.0,
+     12341191.0
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q1",
+   "measure": "automated_removals",
+   "stated": 18220878.0,
+   "stated_interval": [
+    18220878.0,
+    18863852.0
+   ],
+   "delivered": 18302071,
+   "delivered_interval": [
+    18026736,
+    28245518
+   ],
+   "delivered_by_submission_date": 29228674,
+   "ratio": 1.004456042129254,
+   "difference_pp": null,
+   "gap": [
+    -837116.0,
+    10024640.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -844714.0,
+     10024640.0
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q1",
+   "measure": "automated_share",
+   "stated": 0.9825221930391603,
+   "stated_interval": [
+    0.9725535496107489,
+    0.9829751270011848
+   ],
+   "delivered": 0.8988572004729124,
+   "delivered_interval": [
+    0.8980799131947991,
+    0.9145030004505249
+   ],
+   "delivered_by_submission_date": 0.8868765146690204,
+   "ratio": null,
+   "difference_pp": -8.366499256624794,
+   "gap": [
+    -0.08489521380638576,
+    -0.05805054916022401
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "BELOW",
+    "material": "yes",
+    "gap": [
+     -0.08493380794762417,
+     -0.05782552618403691
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q1",
+   "measure": "proactive_rate",
+   "stated": 0.9918543165587885,
+   "stated_interval": [
+    0.9810958776938818,
+    0.9925070335069273
+   ],
+   "delivered": 0.9993676788568852,
+   "delivered_interval": [
+    0.9993366285923835,
+    0.9994511899648121
+   ],
+   "delivered_by_submission_date": 0.9993198383220251,
+   "ratio": null,
+   "difference_pp": 0.7513362298096626,
+   "gap": [
+    0.006829595085456219,
+    0.018355312270930235
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "ABOVE",
+    "material": "cannot tell",
+    "gap": [
+     0.006829349629714598,
+     0.018407376950753007
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q1",
+   "measure": "within_24h_rate",
+   "stated": 0.9519937664613067,
+   "stated_interval": [
+    0.9412992277873575,
+    0.9527485547601442
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.9130605995132642,
+    0.9556735293583591
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.03968795524687996,
+    0.014374301571001613
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.03970969740257191,
+     0.014727912764181283
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-02-11, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q2",
+   "measure": "videos_removed",
+   "stated": 17864150.0,
+   "stated_interval": [
+    17864150.0,
+    18462424.0
+   ],
+   "delivered": 18459784,
+   "delivered_interval": [
+    18450080,
+    25758526
+   ],
+   "delivered_by_submission_date": 18459847,
+   "ratio": 1.0333424204342216,
+   "difference_pp": null,
+   "gap": [
+    -12344.0,
+    7894376.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -207342.0,
+     8078500.0
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-09-30, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q2",
+   "measure": "automated_removals",
+   "stated": 17570762.0,
+   "stated_interval": [
+    17570762.0,
+    18169465.0
+   ],
+   "delivered": 17168737,
+   "delivered_interval": [
+    17165131,
+    24154377
+   ],
+   "delivered_by_submission_date": 17168795,
+   "ratio": 0.9771196604905353,
+   "difference_pp": null,
+   "gap": [
+    -1004334.0,
+    6583615.0
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -1186890.0,
+     6767739.0
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-09-30, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q2",
+   "measure": "automated_share",
+   "stated": 0.9835767164964468,
+   "stated_interval": [
+    0.9732995515648433,
+    0.9841321486279375
+   ],
+   "delivered": 0.9300616410246187,
+   "delivered_interval": [
+    0.9297231007970885,
+    0.938080502979945
+   ],
+   "delivered_by_submission_date": 0.9300616088529878,
+   "ratio": null,
+   "difference_pp": -5.35150754718281,
+   "gap": [
+    -0.05440904783084899,
+    -0.035219048584898216
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "BELOW",
+    "material": "yes",
+    "gap": [
+     -0.06436477930347573,
+     -0.03413760523271592
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-09-30, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q2",
+   "measure": "proactive_rate",
+   "stated": 0.9924502954800536,
+   "stated_interval": [
+    0.9813030454722523,
+    0.9931248099382831
+   ],
+   "delivered": 0.9998258917872496,
+   "delivered_interval": [
+    0.9997084848721546,
+    0.9998258917872496
+   ],
+   "delivered_by_submission_date": 0.9998258923814483,
+   "ratio": null,
+   "difference_pp": 0.7375596307195975,
+   "gap": [
+    0.006583674933871464,
+    0.018522846314997232
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.0032846646828387227,
+     0.018537758335497423
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-09-30, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  },
+  {
+   "quarter": "2026Q2",
+   "measure": "within_24h_rate",
+   "stated": 0.9392905597523531,
+   "stated_interval": [
+    0.9287226136178002,
+    0.9405443780838312
+   ],
+   "delivered": null,
+   "delivered_interval": [
+    0.919895577688552,
+    0.9512779574421301
+   ],
+   "delivered_by_submission_date": null,
+   "ratio": null,
+   "difference_pp": null,
+   "gap": [
+    -0.020648800395279165,
+    0.022555343824329888
+   ],
+   "outcome": "CANNOT_TELL",
+   "material": null,
+   "outcome_plan_as_committed": "CANNOT_TELL",
+   "defined_after_the_data": {
+    "outcome": "CANNOT_TELL",
+    "material": null,
+    "gap": [
+     -0.030625257858760246,
+     0.023330879236681756
+    ]
+   },
+   "reason": "The database files fail our day check on 2026-09-30, inside the window this quarter is read from. TikTok lists 25 of the 27 EU markets in this release, and the 2 it does not list could hold up to 99,998 more removals by TikTok's own listing rule."
+  }
+ ]
+}

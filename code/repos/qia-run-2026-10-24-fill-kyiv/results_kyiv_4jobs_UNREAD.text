@@ -1,0 +1,10 @@
+R3 KNOWN-GOOD (their published data): {'H0': 0.08777, 'H1': 0.08643, 'H2': 0.04273} published {'H0': 0.08777, 'H1': 0.08643, 'H2': 0.04273} -> PASS
+  job 1 (H0): RMSE 0.07035
+  job 2 (H2): RMSE 0.04184
+  job 3 (H0): RMSE 0.06963
+  job 4 (H2): RMSE 0.04331
+R1 DRIFT  dH0 = -0.00072 [-0.00293, +0.00164] shot-null [-0.00237, +0.00222] -> CONSISTENT
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = +0.02851 [+0.02634, +0.03076] null [-0.00234, +0.00221] -> ABOVE
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.02632 [+0.02409, +0.02851] null [-0.00226, +0.00228] -> ABOVE
+R4 ADDENDUM twirl-gap size: R2 mean +0.02741 | R4 linear-corrected +0.02705 | differ by 0.00036 vs null width 0.00458 -> size read +0.02723; defined after submission, before results
+R2 share: |dH0| / their published gap 0.0450 = 0.016; mean measured gap +0.02741

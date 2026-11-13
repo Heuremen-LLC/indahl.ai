@@ -1,0 +1,3 @@
+NEITHER (same truth both dates)          200 runs: {'CONSISTENT': 200} ; expected CONSISTENT in 100% ; median D -0.1, median half-width 5.7
+PHASE +25 deg on date 2                  40 runs: {'ABOVE': 40} ; expected ABOVE in 100% ; median D +25.0, median half-width 5.7
+DRIFT within each date, none between     40 runs: {'CONSISTENT': 40} ; expected CONSISTENT in 100% ; median D -0.1, median half-width 6.0

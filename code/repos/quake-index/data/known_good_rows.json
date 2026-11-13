@@ -1,0 +1,50 @@
+[
+ {
+  "file": "data/raw/forecast/ak024frlusae_us_1733692989873.json",
+  "raw": {
+   "magnitude": 3.0,
+   "probability": 0.8748,
+   "p95minimum": 0.0,
+   "p95maximum": 165.0
+  },
+  "parsed": {
+   "magnitude": 3.0,
+   "probability": 0.8748,
+   "p95minimum": 0,
+   "p95maximum": 165
+  },
+  "same": true
+ },
+ {
+  "file": "data/raw/forecast/us6000rhss_us_1786723131396.json",
+  "raw": {
+   "magnitude": 3.0,
+   "probability": 0.0009902,
+   "p95minimum": 0.0,
+   "p95maximum": 0.0
+  },
+  "parsed": {
+   "magnitude": 3.0,
+   "probability": 0.0009902,
+   "p95minimum": 0,
+   "p95maximum": 0
+  },
+  "same": true
+ },
+ {
+  "file": "data/raw/forecast/uw714136981_us_1794318783522.json",
+  "raw": {
+   "magnitude": 3.0,
+   "probability": 0.1808,
+   "p95minimum": 0.0,
+   "p95maximum": 2.0
+  },
+  "parsed": {
+   "magnitude": 3.0,
+   "probability": 0.1808,
+   "p95minimum": 0,
+   "p95maximum": 2
+  },
+  "same": true
+ }
+]

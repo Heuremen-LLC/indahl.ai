@@ -1,0 +1,76 @@
+== TWIRL (expect R1 CONSISTENT, R2 ABOVE x2)
+  job 1 (H0): RMSE 0.08759
+  job 2 (H2): RMSE 0.04293
+  job 3 (H0): RMSE 0.08939
+  job 4 (H2): RMSE 0.04333
+R1 DRIFT  dH0 = +0.00179 [-0.00044, +0.00398] shot-null [-0.00218, +0.00226] -> CONSISTENT
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = +0.04466 [+0.04234, +0.04688] null [-0.00230, +0.00223] -> ABOVE
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.04605 [+0.04374, +0.04821] null [-0.00220, +0.00227] -> ABOVE
+R4 ADDENDUM twirl-gap size: R2 mean +0.04536 | R4 linear-corrected +0.04625 | differ by 0.00090 vs null width 0.00443 -> size read +0.04581; defined after submission, before results
+R2 share: |dH0| / their published gap 0.0450 = 0.040; mean measured gap +0.04536
+== DRIFT (expect R1 BELOW, R2 CONSISTENT x2)
+  job 1 (H0): RMSE 0.08893
+  job 2 (H2): RMSE 0.08910
+  job 3 (H0): RMSE 0.04299
+  job 4 (H2): RMSE 0.04290
+R1 DRIFT  dH0 = -0.04594 [-0.04811, -0.04382] shot-null [-0.00227, +0.00226] -> BELOW
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = -0.00017 [-0.00235, +0.00204] null [-0.00223, +0.00207] -> CONSISTENT
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.00009 [-0.00213, +0.00231] null [-0.00215, +0.00217] -> CONSISTENT
+R4 ADDENDUM twirl-gap size: R2 mean -0.00004 | R4 linear-corrected -0.02301 | differ by 0.02297 vs null width 0.00453 -> size CANNOT_TELL (drift shape decides: step vs linear); defined after submission, before results
+R2 share: |dH0| / their published gap 0.0450 = 1.020; mean measured gap -0.00004
+== BOTH (expect R1 BELOW, R2 ABOVE x2)
+  job 1 (H0): RMSE 0.08940
+  job 2 (H2): RMSE 0.06514
+  job 3 (H0): RMSE 0.06405
+  job 4 (H2): RMSE 0.04377
+R1 DRIFT  dH0 = -0.02535 [-0.02756, -0.02313] shot-null [-0.00221, +0.00228] -> BELOW
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = +0.02426 [+0.02203, +0.02645] null [-0.00225, +0.00224] -> ABOVE
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.02028 [+0.01797, +0.02247] null [-0.00227, +0.00223] -> ABOVE
+R4 ADDENDUM twirl-gap size: R2 mean +0.02227 | R4 linear-corrected +0.00960 | differ by 0.01267 vs null width 0.00449 -> size CANNOT_TELL (drift shape decides: step vs linear); defined after submission, before results
+R2 share: |dH0| / their published gap 0.0450 = 0.563; mean measured gap +0.02227
+== NEITHER (expect all CONSISTENT)
+  job 1 (H0): RMSE 0.08838
+  job 2 (H2): RMSE 0.08929
+  job 3 (H0): RMSE 0.08886
+  job 4 (H2): RMSE 0.08755
+R1 DRIFT  dH0 = +0.00049 [-0.00159, +0.00262] shot-null [-0.00217, +0.00231] -> CONSISTENT
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = -0.00092 [-0.00306, +0.00125] null [-0.00218, +0.00218] -> CONSISTENT
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.00131 [-0.00089, +0.00342] null [-0.00210, +0.00214] -> CONSISTENT
+R4 ADDENDUM twirl-gap size: R2 mean +0.00020 | R4 linear-corrected +0.00044 | differ by 0.00024 vs null width 0.00447 -> size read +0.00032; defined after submission, before results
+R2 share: |dH0| / their published gap 0.0450 = 0.011; mean measured gap +0.00020
+== LINEAR DRIFT + TWIRL (twirl gap = K0->K2 at job 1; drift step s per job toward K2; true instantaneous gaps 0.0450, 0.0427, 0.0393, 0.0345, mean 0.0404; expect R4 nearer that mean than the raw pair gap)
+  job 1 (H0): RMSE 0.08981
+  job 2 (H2): RMSE 0.03942
+  job 3 (H0): RMSE 0.07506
+  job 4 (H2): RMSE 0.03235
+R1 DRIFT  dH0 = -0.01475 [-0.01700, -0.01256] shot-null [-0.00227, +0.00217] -> BELOW
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = +0.05039 [+0.04819, +0.05251] null [-0.00238, +0.00228] -> ABOVE
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.04271 [+0.04061, +0.04473] null [-0.00211, +0.00228] -> ABOVE
+R4 ADDENDUM twirl-gap size: R2 mean +0.04655 | R4 linear-corrected +0.03917 | differ by 0.00738 vs null width 0.00444 -> size CANNOT_TELL (drift shape decides: step vs linear); defined after submission, before results
+R2 share: |dH0| / their published gap 0.0450 = 0.328; mean measured gap +0.04655
+== ABBA LINEAR (6 jobs; same linear drift; jobs 3-6 true gaps 0.0393, 0.0345, ~0.029, ~0.022 by RMSE nonlinearity; expect R5 ABOVE, near their mean)
+  job 1 (H0): RMSE 0.09019
+  job 2 (H2): RMSE 0.03955
+  job 3 (H0): RMSE 0.07438
+  job 4 (H2): RMSE 0.03258
+  job 5 (H2): RMSE 0.03128
+  job 6 (H0): RMSE 0.05250
+R1 DRIFT  dH0 = -0.01581 [-0.01813, -0.01358] shot-null [-0.00227, +0.00228] -> BELOW
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = +0.05064 [+0.04839, +0.05277] null [-0.00230, +0.00224] -> ABOVE
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.04180 [+0.03972, +0.04390] null [-0.00217, +0.00217] -> ABOVE
+R4 ADDENDUM twirl-gap size: R2 mean +0.04622 | R4 linear-corrected +0.03832 | differ by 0.00790 vs null width 0.00455 -> size CANNOT_TELL (drift shape decides: step vs linear); defined after submission, before results
+R5 ABBA (jobs 3-6) twirl gap RMSE(H0) - RMSE(H2) = +0.03152 [+0.03013, +0.03299] null [-0.00150, +0.00161] -> ABOVE; dH0(6-3) -0.02188
+R2 share: |dH0| / their published gap 0.0450 = 0.351; mean measured gap +0.04622
+== ABBA NEITHER (6 jobs, all K0; expect R5 CONSISTENT)
+  job 1 (H0): RMSE 0.08883
+  job 2 (H2): RMSE 0.08782
+  job 3 (H0): RMSE 0.08875
+  job 4 (H2): RMSE 0.08857
+  job 5 (H2): RMSE 0.08837
+  job 6 (H0): RMSE 0.08826
+R1 DRIFT  dH0 = -0.00008 [-0.00233, +0.00202] shot-null [-0.00211, +0.00205] -> CONSISTENT
+R2 ORDER pair 1: RMSE(H0) - RMSE(H2) = +0.00101 [-0.00118, +0.00313] null [-0.00211, +0.00219] -> CONSISTENT
+R2 ORDER pair 2: RMSE(H0) - RMSE(H2) = +0.00019 [-0.00190, +0.00222] null [-0.00204, +0.00212] -> CONSISTENT
+R4 ADDENDUM twirl-gap size: R2 mean +0.00060 | R4 linear-corrected +0.00056 | differ by 0.00004 vs null width 0.00416 -> size read +0.00058; defined after submission, before results
+R5 ABBA (jobs 3-6) twirl gap RMSE(H0) - RMSE(H2) = +0.00004 [-0.00142, +0.00160] null [-0.00151, +0.00158] -> CONSISTENT; dH0(6-3) -0.00049
+R2 share: |dH0| / their published gap 0.0450 = 0.002; mean measured gap +0.00060

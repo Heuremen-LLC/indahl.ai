@@ -1,0 +1,57 @@
+site_lock: waiting for the lock (OY browser re-read (pid 72463) since 13:17:08, via site_lock.py)
+site_lock: held after 244s as "CREDIT desk pack"
+ok set pack.size.credit-data-pack
+== 1 BUILD
+  faults: up to date
+  guards: up to date
+  paper: up to date
+  paper source: synced to the public repo
+  bill: up to date
+oy school pages 389
+iris study pages 9
+study pages 197
+brands: 317 brand pages and the index
+alerts: sign-up box on 29 desk pages and 245 brand pages, /alerts built
+  forecasters feeds: cone fresh, fedsep fresh, flu fresh, forecast fresh, neo fresh, predictions fresh, quake fresh, revise fresh, seasonal fresh, solar fresh, steo fresh, tornado fresh, water fresh
+forecasters: 60 rows from FEDSEP, FLU, FORECAST, NEO, NOW, REVISE, SEASONAL, STEO, WATER, held CONE, QUAKE, SOLAR, TORNADO
+findable: 40 desk pages with data links or embed, 29 change feeds
+receipts: 2654 of 2654 live snippets on indahl.ai pages carry a receipt link (3222 links on 130 pages, 0 sit only where a link cannot go, 0 not found on their page, 113 share one spot and link to their desk receipts)
+built 1083 pages + style.css + pages.js
+receipts: 3357 rows, 62 index pages, 19 written, 0 stale files removed
+== 2 COPY
+copies: 132 files in 67 sets; drift: 0
+== 3 GATES
+ledger: 3357 rows (3303 live, 30 live headlines read against their feeds); drift: 0
+copies: 132 files in 67 sets; drift: 0
+site gate: 127 pages, 1156 served files read for wording; breaches: 0
+source gate: 197 rows, 0 fail
+receipts gate: 3357 ledger rows, 3121 receipt links on served pages; breaches: 0
+jsonld gate: 1084 pages, 375 datasets; breaches: 0
+corrections gate: ok, every row links to a real file or commit
+BRANDS GATE: every brand-page number traces to a desk row or a ledger row (1698 rows, 317 pages)
+FORECASTERS GATE: every number on /forecasters traces to a desk feed or a ledger row (60 rows from FEDSEP, FLU, FORECAST, NEO, NOW, REVISE, SEASONAL, STEO, WATER)
+email gate: 5108 files read, 0 addresses found
+== 4 COMMIT
+  heuremen.org: nothing to commit
+ledger: 3357 rows (3303 live, 30 live headlines read against their feeds); drift: 0
+  indahl-ai: 380c14a4f CREDIT desk pack and live headline
+== 5 DEPLOY
+
+  heuremen.org pushed
+✨ Success! Uploaded 69 files (4344 already uploaded) (2.18 sec)
+Uploaded heuremen-door (14.66 sec)
+No targets deployed for heuremen-door (0.46 sec)
+  stamps: manifest 5143 files, sha256 0959d2e71276d643
+== 5b PUBLIC REPOS
+  public: site pages mirrored (local build = deployed build cf996c335f208817)
+  public desks: 0 file(s) re-synced from the working folders
+  public indahl.ai: fe78b221b CREDIT desk pack and live headline
+  public heuremen.org: current
+== 5c INDEXNOW
+indexnow: sent 59 urls, status 200
+== 6 VERIFY
+live drift: 0
+== 7 STAMPS
+  stamps: release fe78b221b24f manifest 0959d2e71276d643 file e0d8b642a6b8023f changed 72 removed 0 ots pending queued 71
+  stamps: wayback: started in the background (log ledger/stamps/wayback_run.log)
+site_lock: released, command exit 0

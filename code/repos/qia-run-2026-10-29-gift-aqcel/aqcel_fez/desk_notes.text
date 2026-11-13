@@ -1,0 +1,7 @@
+## Desk readings found while building (post-hoc, labelled; from their own released outputs, zero QPU)
+- Table 2's "(0.96)" at threshold 0.05 is the threshold's approximation error, not a hardware fidelity loss: the noiseless fidelity of the
+  v2 thr-0.05 circuit is 0.9618 ours, 0.9598 / 0.9629 in their tutorial printout (F_sim), and their tutorial's hardware run printed F_meas 0.9639.
+- v1 counts: our exact-probability v1 gives 33 / 18 CX (ideal topology) vs their 41 / 23; v2 reproduces exactly (25 / 11). So the printed
+  v2/v1 ratios (25/41 = 61 %, 11/23 = 48 %) include whatever made their v1 keep more controls; with exact control reads the ratios are
+  25/33 = 76 % and 11/18 = 61 %. Cause (noisy finite-shot control reads in v1, Fig. 4 text) is a hypothesis: CANNOT_TELL.
+- Readout correction carries ~0.02 of the 0.99: raw F_V2 0.966 vs corrected 0.987 (their 0.99 is post-M3; stated in their Sec. 4.2).

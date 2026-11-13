@@ -1,0 +1,3 @@
+n=8: noiseless CVaR at x0 ours -3.4594029279 his stored -4.0267523405 -> FAIL
+n=10: noiseless CVaR at x0 ours -4.9966613221 his stored -5.4532464316 -> FAIL
+CIRCUIT KNOWN-GOOD FAIL

@@ -1,0 +1,121 @@
+{
+ "updated": "2026-11-10 05:04 UTC",
+ "section1": {
+  "WB-POP": {
+   "rows": 8967,
+   "countries": 186,
+   "MATCHES_CURRENT": 1274,
+   "MATCHES_AN_OLDER_RELEASE": 7662,
+   "MATCHES_NO_RELEASE_READ": 16,
+   "SOURCE_UNREADABLE": 15,
+   "size_ABOVE": 2302,
+   "size_BELOW": 3594,
+   "size_CONSISTENT": 3054,
+   "size_CANNOT_TELL": 17
+  },
+  "WB-GDP": {
+   "rows": 1407,
+   "countries": 199,
+   "MATCHES_CURRENT": 703,
+   "MATCHES_AN_OLDER_RELEASE": 700,
+   "MATCHES_NO_RELEASE_READ": 2,
+   "SOURCE_UNREADABLE": 2,
+   "size_ABOVE": 60,
+   "size_BELOW": 254,
+   "size_CONSISTENT": 1081,
+   "size_CANNOT_TELL": 12
+  },
+  "WB-GINI": {
+   "rows": 186,
+   "countries": 154,
+   "MATCHES_CURRENT": 123,
+   "MATCHES_AN_OLDER_RELEASE": 58,
+   "MATCHES_NO_RELEASE_READ": 4,
+   "SOURCE_UNREADABLE": 1,
+   "size_ABOVE": 13,
+   "size_BELOW": 6,
+   "size_CONSISTENT": 145,
+   "size_CANNOT_TELL": 22
+  },
+  "WB-UNEMP": {
+   "rows": 203,
+   "countries": 138,
+   "MATCHES_CURRENT": 92,
+   "MATCHES_AN_OLDER_RELEASE": 109,
+   "MATCHES_NO_RELEASE_READ": 2,
+   "SOURCE_UNREADABLE": 0,
+   "size_ABOVE": 71,
+   "size_BELOW": 31,
+   "size_CONSISTENT": 31,
+   "size_CANNOT_TELL": 70
+  },
+  "UIS-LE": {
+   "rows": 3490,
+   "countries": 205,
+   "MATCHES_CURRENT": 684,
+   "MATCHES_AN_OLDER_RELEASE": 56,
+   "MATCHES_NO_RELEASE_READ": 2749,
+   "SOURCE_UNREADABLE": 1,
+   "size_ABOVE": 881,
+   "size_BELOW": 840,
+   "size_CONSISTENT": 1764,
+   "size_CANNOT_TELL": 5
+  },
+  "UIS-TFR": {
+   "rows": 3176,
+   "countries": 204,
+   "MATCHES_CURRENT": 739,
+   "MATCHES_AN_OLDER_RELEASE": 117,
+   "MATCHES_NO_RELEASE_READ": 2320,
+   "SOURCE_UNREADABLE": 0,
+   "size_ABOVE": 965,
+   "size_BELOW": 970,
+   "size_CONSISTENT": 1012,
+   "size_CANNOT_TELL": 229
+  },
+  "ALL": {
+   "rows": 17429,
+   "countries": 214,
+   "MATCHES_CURRENT": 3615,
+   "MATCHES_AN_OLDER_RELEASE": 8702,
+   "MATCHES_NO_RELEASE_READ": 5093,
+   "SOURCE_UNREADABLE": 19,
+   "size_ABOVE": 4292,
+   "size_BELOW": 5695,
+   "size_CONSISTENT": 7087,
+   "size_CANNOT_TELL": 355
+  }
+ },
+ "section2": {
+  "home_views": "CANNOT_TELL",
+  "home_volunteers": "CANNOT_TELL",
+  "home_edits": "CANNOT_TELL",
+  "home_articles": "CONSISTENT",
+  "home_languages": "CONSISTENT",
+  "home_built_by": "CANNOT_TELL",
+  "projects_commons": "CONSISTENT",
+  "ar_edits_more": "CANNOT_TELL",
+  "ar_articles_more": "CANNOT_TELL",
+  "ar_articles": "CANNOT_TELL",
+  "ar_languages": "CONSISTENT",
+  "ar_commons": "CANNOT_TELL",
+  "ar_edits": "CANNOT_TELL",
+  "ar_volunteer_editors": "CANNOT_TELL",
+  "ar_volunteers_more": "CANNOT_TELL",
+  "ar_views": "CANNOT_TELL"
+ },
+ "dsa": {
+  "rounding": null,
+  "harmonised": [
+   "CONSISTENT",
+   "CONSISTENT"
+  ],
+  "bound_above": 0,
+  "bound_cells": 88
+ },
+ "known_good": {
+  "s1": true,
+  "s1_scout": true,
+  "s2": true
+ }
+}

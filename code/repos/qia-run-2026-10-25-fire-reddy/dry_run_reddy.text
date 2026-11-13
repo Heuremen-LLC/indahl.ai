@@ -1,0 +1,107 @@
+[
+ {
+  "arm": 0,
+  "backend": "ibm_fez",
+  "p0": 3,
+  "p1": 4,
+  "depth": {
+   "ZZ": 13,
+   "XX": 16,
+   "YY": 17
+  },
+  "cz": {
+   "ZZ": 7,
+   "XX": 7,
+   "YY": 7
+  },
+  "two_q_depth": {
+   "ZZ": 4,
+   "XX": 4,
+   "YY": 4
+  }
+ },
+ {
+  "arm": 1,
+  "backend": "ibm_kingston",
+  "p0": 3,
+  "p1": 4,
+  "depth": {
+   "ZZ": 13,
+   "XX": 16,
+   "YY": 17
+  },
+  "cz": {
+   "ZZ": 7,
+   "XX": 7,
+   "YY": 7
+  },
+  "two_q_depth": {
+   "ZZ": 4,
+   "XX": 4,
+   "YY": 4
+  }
+ },
+ {
+  "arm": 2,
+  "backend": "ibm_boston",
+  "p0": 3,
+  "p1": 4,
+  "depth": {
+   "ZZ": 13,
+   "XX": 16,
+   "YY": 17
+  },
+  "cz": {
+   "ZZ": 7,
+   "XX": 7,
+   "YY": 7
+  },
+  "two_q_depth": {
+   "ZZ": 4,
+   "XX": 4,
+   "YY": 4
+  }
+ },
+ {
+  "arm": 3,
+  "backend": "ibm_pittsburgh",
+  "p0": 3,
+  "p1": 4,
+  "depth": {
+   "ZZ": 13,
+   "XX": 16,
+   "YY": 17
+  },
+  "cz": {
+   "ZZ": 7,
+   "XX": 7,
+   "YY": 7
+  },
+  "two_q_depth": {
+   "ZZ": 4,
+   "XX": 4,
+   "YY": 4
+  }
+ },
+ {
+  "arm": 4,
+  "backend": "ibm_fez",
+  "p0": 3,
+  "p1": 4,
+  "depth": {
+   "ZZ": 13,
+   "XX": 16,
+   "YY": 17
+  },
+  "cz": {
+   "ZZ": 7,
+   "XX": 7,
+   "YY": 7
+  },
+  "two_q_depth": {
+   "ZZ": 4,
+   "XX": 4,
+   "YY": 4
+  }
+ }
+]

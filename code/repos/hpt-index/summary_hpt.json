@@ -1,0 +1,187 @@
+{
+ "updated": "29 Oct 15:29",
+ "gate": "passed",
+ "domains": 1921,
+ "hospitals": 1484,
+ "listdate": "2026-10-29",
+ "comparison": {
+  "1 A cms-hpt.txt at the root of the domain": {
+   "of": 1028,
+   "n": 517,
+   "share": 0.5029,
+   "share_lo": 0.4724,
+   "share_hi": 0.5334,
+   "outcome": "CANNOT_TELL"
+  },
+  "2 The file it links resolves to data": {
+   "of": 500,
+   "n": 13,
+   "share": 0.026,
+   "share_lo": 0.0153,
+   "share_hi": 0.044,
+   "outcome": "CONSISTENT"
+  },
+  "3 The file starts with the template header": {
+   "of": 329,
+   "n": 2,
+   "share": 0.0061,
+   "share_lo": 0.0017,
+   "share_hi": 0.0219,
+   "outcome": "CONSISTENT"
+  }
+ },
+ "classes": {
+  "1 A cms-hpt.txt at the root of the domain": {
+   "AGREE": 511,
+   "DISAGREE": 517,
+   "NOT_COMPARABLE": 893
+  },
+  "2 The file it links resolves to data": {
+   "AGREE": 487,
+   "DISAGREE": 13,
+   "NOT_COMPARABLE": 11
+  },
+  "3 The file starts with the template header": {
+   "AGREE": 327,
+   "DISAGREE": 2,
+   "NOT_COMPARABLE": 158
+  }
+ },
+ "not_comparable_reasons": {
+  "website is a page on a shared site": {
+   "n": 475
+  },
+  "site could not be reached": {
+   "n": 269
+  },
+  "blocked or server error (HTTP 403)": {
+   "n": 109
+  },
+  "blocked or server error (HTTP 202)": {
+   "n": 15
+  },
+  "blocked or server error (HTTP 400)": {
+   "n": 7
+  },
+  "blocked or server error (HTTP 522)": {
+   "n": 7
+  },
+  "blocked or server error (HTTP 429)": {
+   "n": 3
+  },
+  "blocked or server error (HTTP 521)": {
+   "n": 2
+  },
+  "blocked or server error (HTTP 503)": {
+   "n": 1
+  },
+  "blocked or server error (HTTP 502)": {
+   "n": 1
+  },
+  "blocked or server error (HTTP 504)": {
+   "n": 1
+  },
+  "blocked or server error (HTTP 500)": {
+   "n": 1
+  },
+  "blocked or server error (HTTP 702)": {
+   "n": 1
+  },
+  "blocked or server error (HTTP 401)": {
+   "n": 1
+  }
+ },
+ "disagree_list": [
+  {
+   "domain": "alicepeckday.org",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "atholhospital.org",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "blythedale.org",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "cheshiremed.org",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "choa.org",
+   "step": "2 link",
+   "found": "a web page came back, not a data file (text/html)",
+   "reason": "the address returns a web page (gzip-compressed HTML, decoded by hand), not a data file"
+  },
+  {
+   "domain": "ghcares.org",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "hughston.com",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "islandhospital.org",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "mptf.com",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "mvhealth.org",
+   "step": "2 link",
+   "found": "a web page came back, not a data file (text/html)",
+   "reason": "the address returns a web page, not a data file"
+  },
+  {
+   "domain": "onslow.org",
+   "step": "2 link",
+   "found": "a web page came back, not a data file (text/html)",
+   "reason": "the address returns a web page (a price index viewer), not a data file"
+  },
+  {
+   "domain": "slhn.org",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "weisshospital.com",
+   "step": "2 link",
+   "found": "the linked file is gone (HTTP 404)",
+   "reason": "the linked address returns HTTP 404 when opened by hand on 29 Oct"
+  },
+  {
+   "domain": "childrens.com",
+   "step": "3 template header",
+   "found": "header names missing",
+   "reason": "a CSV whose first line is description, CDM, CPT, HCPCS and so on, with no hospital_name, last_updated_on or version"
+  },
+  {
+   "domain": "claxtonhepburn.org",
+   "step": "3 template header",
+   "found": "header names missing",
+   "reason": "a CSV whose first line is a list of CPT and price columns, with no hospital_name, last_updated_on or version"
+  }
+ ],
+ "awaiting": 0
+}

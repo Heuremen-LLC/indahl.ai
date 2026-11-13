@@ -1,0 +1,8 @@
+DD OFF: mean success 0.5951; raw shortfall 2.396 +- 0.007 (plug-in 2.380); mitigated 2.006 +- 0.017 (plug-in 2.000)
+         R1 mitigated vs 1 bit -> CANNOT_TELL;  R2 raw vs 1 bit -> CANNOT_TELL;  copy gap raw +0.071 (99 % half-width 0.031)  GATED
+         R3 (descriptive, not like-for-like: ours 17 CZ per message vs theirs 8-22) raw today minus their raw 1.279 -> CANNOT_TELL
+DD ON : mean success 0.6480; raw shortfall 2.223 +- 0.007 (plug-in 2.209); mitigated 1.808 +- 0.017 (plug-in 1.804)
+         R1 mitigated vs 1 bit -> ABOVE;  R2 raw vs 1 bit -> ABOVE;  copy gap raw +0.003 (99 % half-width 0.035)
+         R3 (descriptive, not like-for-like: ours 17 CZ per message vs theirs 8-22) raw today minus their raw 1.279 -> ABOVE
+R4 mitigated shortfall DD ON minus DD OFF = -0.197 +- 0.025 -> CANNOT_TELL
+bracket flips (DD OFF arm) P(1|0) [0.0054, 0.0547, 0.0024, 0.0393, 0.0063, 0.0051]  P(0|1) [0.0315, 0.0483, 0.0059, 0.0305, 0.0085, 0.0078]

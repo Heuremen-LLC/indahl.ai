@@ -1,0 +1,98 @@
+[
+ {
+  "bibcode": "2025ChJPh..98.1069L",
+  "arxiv": "2511.20731",
+  "doi": "10.1016/j.cjph.2025.11.013",
+  "pubdate": "2025-12-00",
+  "title": "Denoising gravitational wave with deep learning in the time-frequency domain",
+  "abstract": "Gravitational wave denoising is an ongoing task for revealing the events of compact binary objects in the universe. Recently, with the aid of deep learning, gravitational waves have been efficiently and delicately extracted from the noisy data compared with the traditional match-filtering. While most of the relevant studies adopt the data in the time series only, the time-frequency data processing is also in progress due to its several advantages for the waveform denoising. Here, we target the gravitational waves events emitted by binary black hole (BBH) mergers, with their total mass larger than 30 solar masses. For denoising, we propose a deep learning model utilizing the Griffin-Lim algorithm, an existing numerical approach to restore the phase information from the related amplitude spectrogram. This design allows extra attention on the phase recovery by using a priorly denoised amplitude spectrogram. The denoising results fit well in both the amplitude and the phase alignments of the mock injected waveforms. We also apply our model to the real detected events and discover a nice consistency with the simulated template waveforms, especially the high accuracy around the merger stage. Our work suggests the possibility of a better methodological design for gravitational wave data analysis."
+ },
+ {
+  "bibcode": "2025EPJC...85.1485G",
+  "arxiv": "2508.02619",
+  "doi": "10.1140/epjc/s10052-025-15057-1",
+  "pubdate": "2025-12-00",
+  "title": "Impact of non-thermal leptogenesis with early matter domination on gravitational waves from first-order phase transition",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2025CQGra..42w5023T",
+  "arxiv": "2508.11091",
+  "doi": "10.1088/1361-6382/ae1ac7",
+  "pubdate": "2025-12-00",
+  "title": "Inference with finite time series: II. The window strikes back",
+  "abstract": "Smooth window functions are often applied to strain data when inferring the parameters describing the astrophysical sources of gravitational-wave transients. Within the LIGO-Virgo-KAGRA collaboration, it is conventional to include a term to account for power loss due to this window in the likelihood function. We show that the inclusion of this factor leads to biased inference. The simplest solution to this, omitting the factor, leads to unbiased posteriors and Bayes factor estimates provided the window does not suppress the signal for signal-to-noise ratios (SNRs) <inline-formula> <mml:math><mml:mrow><mml:mrow><mml:mo>\u2272</mml:mo></mml:mrow><mml:mi>O</mml:mi><mml:mo>(</mml:mo><mml:mn>100</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula>, but unreliable estimates of the absolute likelihood. Instead, we propose a multi-stage method that yields consistent estimates for the absolute likelihood in addition to unbiased posterior distributions and Bayes factors for SNRs <inline-formula> <mml:math><mml:mrow><mml:mrow><mml:mo>\u2272</mml:mo></mml:mrow><mml:mi>O</mml:mi><mml:mo>(</mml:mo><mml:mn>1000</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula>. Additionally, we demonstrate that the commonly held wisdom that using rectangular windows necessarily leads to biased inference is incorrect."
+ },
+ {
+  "bibcode": "2025A&A...704A..54M",
+  "arxiv": "2506.13870",
+  "doi": "10.1051/0004-6361/202555951",
+  "pubdate": "2025-12-00",
+  "title": "Black hole\u2500neutron star and binary neutron star mergers from Population III and II stars",
+  "abstract": "Population III (Pop. III) stars are expected to be massive and to undergo minimal mass loss due to their lack of metals, making them ideal progenitors of black holes and neutron stars. Here, we investigate the formation and properties of binary neutron star (BNS) and black hole-neutron star (BHNS) mergers originating from Pop. III stars, and compare them to their metal-enriched Population II (Pop. II) counterparts, focusing on their merger rate densities (MRDs), primary masses, and delay times. We find that, despite the high merger efficiency of Pop. III BNSs and BHNSs, their low star formation rate results in a MRD at least one order of magnitude lower than that of Pop. II stars. The MRD of Pop. III BNSs peaks at redshift z ~ 15, attaining a value R<SUB>BNS</SUB>(z ~ 15) ~ 15 Gpc<SUP>\u22123</SUP> yr<SUP>\u22121</SUP>, while the MRD of Pop. III BHNSs is maximum at z ~ 13, reaching a value of R<SUB>BHNS</SUB>(z ~ 13) ~ 2Gpc<SUP>\u22123</SUP> yr<SUP>\u22121</SUP>. Finally, we observe that the black hole masses of Pop. III BHNS mergers have a nearly flat distribution, with a peak at \u223c20 M<SUB>\u2299</SUB> and extending up to \u223c50 M<SUB>\u2299</SUB>. Black holes in Pop. II BHNS mergers instead show a peak at \u2272 15 M<SUB>\u2299</SUB>. We consider these predictions in light of recent gravitational-wave observations in the local Universe, finding that a Pop. III origin is preferred relative to Pop. II for some events."
+ },
+ {
+  "bibcode": "2025ApJ...995...48T",
+  "arxiv": "2509.26152",
+  "doi": "10.3847/1538-4357/ae1d74",
+  "pubdate": "2025-12-00",
+  "title": "Testing the Nature of GW200105 by Probing the Frequency Evolution of Eccentricity",
+  "abstract": "GW200105 is a compact binary coalescence event, consisting of a neutron star and a black hole, observed in LIGO\u2500Virgo\u2500KAGRA's third observing run. Recent reanalyses of the event using state-of-the-art waveform models have claimed observation of signatures of an eccentric orbit. It has nevertheless been pointed out in the literature that certain physical or modified gravity effects could mimic eccentricity by producing a spurious nonzero eccentricity value, at a given reference frequency, when recovered with an eccentric waveform model. We recently developed a waveform-model-independent eccentricity evolution consistency test (EECT) to identify such mimickers, by comparing the measured frequency evolution of eccentricity, e(f), with that expected from general relativity (GR). In this paper, we apply EECT to GW200105 and find that it satisfies EECT within 68% confidence. Our analysis therefore lends complementary support in favor of the eccentricity hypothesis, while also providing a novel test of the consistency of e(f) with GR."
+ },
+ {
+  "bibcode": "2025ApJ...995L...6C",
+  "arxiv": "2509.09161",
+  "doi": "10.3847/2041-8213/ae1a5f",
+  "pubdate": "2025-12-00",
+  "title": "Machine Learning Confirms GW231123 is a \"Lite\" Intermediate Mass Black Hole Merger",
+  "abstract": "The LIGO\u2500Virgo\u2500KAGRA Collaboration recently reported GW231123, a black hole merger with total mass of around 190\u2500265 M<SUB>\u2299</SUB>. This event adds to the growing evidence of \"lite\" intermediate mass black hole (IMBH) discoveries of postmerger black holes \u2273100 M<SUB>\u2299</SUB>. GW231123 posed several data analysis challenges owing to waveform-model systematics and the presence of noise artifacts called glitches. We present the first comprehensive machine learning analysis to further validate this event, strengthen its astrophysical inference, and characterize instrumental noise in its vicinity. Our approach uses a combination of tools tailored for specific analyses: GW-WHISPER, an adaptation of OpenAI's audio transformer; ARCHGEM, a Gaussian mixture model\u2500based soft clustering and density approximation software; and AWARE, a convolutional autoencoder. We identify the data segment containing the merger with &gt;70% confidence in both detectors and verify its astrophysical origin. We then characterize the scattered light glitch around the event, providing the first physically interpretable parameters for the glitch. We also reconstruct the real waveforms from the data with slightly better agreement to model-agnostic reconstructions than to quasi-circular models, hinting at possible astrophysics beyond current waveform families (such as noncircular orbits or environmental imprints). Finally, by demonstrating high-fidelity waveform reconstructions for simulated mergers with total masses between 100 and 1000 M<SUB>\u2299</SUB>, we show that our method can confidently probe the IMBH regime. Our integrated framework offers a powerful complementary tool to traditional pipelines for rapid, robust analysis of massive, glitch-contaminated events."
+ },
+ {
+  "bibcode": "2025ApJ...994..149C",
+  "arxiv": "2509.21307",
+  "doi": "10.3847/1538-4357/ae0b5c",
+  "pubdate": "2025-12-00",
+  "title": "Einstein@Home Searches for Gamma-Ray Pulsars in the Inner Galaxy",
+  "abstract": "The Fermi Large Area Telescope (LAT) has revealed a mysterious extended excess of GeV gamma-ray emission around the Galactic Center (GC), which can potentially be explained by unresolved emission from a population of pulsars, particularly millisecond pulsars (MSPs), in the Galactic bulge. We used the distributed volunteer computing system Einstein@Home to search the Fermi-LAT data for gamma-ray pulsations from sources in the inner Galaxy, to try to identify the brightest members of this putative population. We discovered four new pulsars, including one new MSP and one young pulsar whose angular separation to the GC of 0<inline-formula> <mml:math><mml:mover><mml:mrow><mml:mi>.</mml:mi></mml:mrow><mml:mrow><mml:mi>\u00b0</mml:mi></mml:mrow></mml:mover></mml:math> </inline-formula>93 is the smallest of any known gamma-ray pulsar. We demonstrate a phase-resolved difference imaging technique that allows the flux from this pulsar to be disentangled from the diffuse GC emission. No radio pulsations were detected from the four new pulsars in archival radio observations or during the MPIfR-MeerKAT Galactic Plane Survey. While the distances to these pulsars remain uncertain, we find that it is more likely that they are all foreground sources from the Galactic disk, rather than pulsars originating from the predicted bulge population. Nevertheless, our results are not incompatible with an MSP explanation for the GC excess, as only one or two members of this population would have been detectable in our searches."
+ },
+ {
+  "bibcode": "2025JCAP...12..029S",
+  "arxiv": "2505.13420",
+  "doi": "10.1088/1475-7516/2025/12/029",
+  "pubdate": "2025-12-00",
+  "title": "Scalar-Induced Gravitational Waves in Palatini f(R) gravity",
+  "abstract": "Primordial scalar perturbations that reenter the horizon after inflation may induce a second-order Gravitational Wave spectrum with information about the primordial Universe on scales inaccessible to Cosmic Microwave Background experiments. In this work, we develop a general framework for the study of Scalar-Induced Gravitational Waves in Palatini f(R) gravity, a theory that was proven to successfully realise inflation and quintessence, and consider the case of the Starobinsky-like model as an example. A regime of radiation domination with a subdominant matter component is assumed, allowing for a well-motivated perturbative approach to the gravity modifications. We calculate the kernel function and the density spectrum numerically and find accurate analytical expressions. The spectral density, which may be tested across a wide range of frequencies by upcoming Gravitational Wave experiments, is shown to differ from the General Relativity and metric f(R) gravity predictions under certain conditions. We comment on previous results in the literature regarding the metric formulation and make special emphasis on the potential of these distinctive features of the spectrum to probe the two formalisms of gravity."
+ },
+ {
+  "bibcode": "2025MNRAS.544.4576R",
+  "arxiv": "2412.12086",
+  "doi": "10.1093/mnras/staf1896",
+  "pubdate": "2025-12-00",
+  "title": "Black hole merger rates in AGN: contribution from gas-captured binaries",
+  "abstract": "Merging black hole (BH) binaries in active galactic nucleus (AGN) discs formed through two-body scatterings via the 'gas-capture' process may explain a significant fraction of BH mergers in AGN and a non-negligible contribution to the observed rate from LIGO-VIRGO-KAGRA. We perform Monte Carlo simulations of binary BH formation, evolution, and mergers across the observed AGN mass function using a novel physically motivated treatment for the gas-capture process derived from hydrodynamical simulations of BH\u2500BH encounters in AGN. Our models suggest that gas-captured binaries could result in merger rates of <inline-formula><tex-math>$0.73-7.1$</tex-math></inline-formula> Gpc<inline-formula><tex-math>$^{-3}$</tex-math></inline-formula> yr<inline-formula><tex-math>$^{-1}$</tex-math></inline-formula>. Mergers from AGN are dominated by AGN with supermassive BH masses of <inline-formula><tex-math>$\\sim 10^{7}\\, \\mathrm{M}_{\\odot }$</tex-math></inline-formula>, with 90 per cent of mergers occurring in the range <inline-formula><tex-math>$\\sim 10^{6}\\, \\mathrm{M}_{\\odot }-10^{8}\\, \\mathrm{M}_{\\odot }$</tex-math></inline-formula>. The merging mass distribution is flatter than the initial BH mass power law by a factor <inline-formula><tex-math>$\\Delta \\xi =1.1-1.2$</tex-math></inline-formula>, as larger BHs align with the disc and form binaries more efficiently. Similarly, the merging mass ratio distribution is flatter therefore the AGN channel could explain high mass and unequal mass ratio detections such as GW190521 and GW190814. Using a simpler dynamical friction treatment for the binary formation process, the results are similar, where the primary bottleneck is the alignment time with the disc. The most influential parameters are the anticipated number of BHs and their mass function. Given the many uncertainties that remain in the AGN channel, we expect the true uncertainty extends beyond our predicted rates. None the less, we conclude that AGN remain an important channel for consideration, particularly for gravitational wave detections involving one or two high mass BHs."
+ },
+ {
+  "bibcode": "2025CQGra..42r5003R",
+  "arxiv": "2506.06838",
+  "doi": "10.1088/1361-6382/adfffa",
+  "pubdate": "2025-12-00",
+  "title": "AthenaK simulations of the binary black hole merger GW150914",
+  "abstract": "We present new binary black hole simulations targeted to GW150914 using the GPU-accelerated code AthenaK. We compute the properties of the final remnant with the isolated horizon formalism and obtain gravitational-waveforms at future null infinity via Cauchy characteristic extraction. We compare our results with those obtained by the Simulating eXtreme Spacetimes (SXS) and Rochester Institute of Technology (RIT) groups, targeted to the same event. We find excellent agreement with the SXS and RIT results in the remnant mass, spin, and recoil velocity. For the dominant <inline-formula> <mml:math><mml:mrow><mml:mo>(</mml:mo><mml:mi>\u2113</mml:mi><mml:mo>,</mml:mo><mml:mi>m</mml:mi><mml:mo>)</mml:mo><mml:mo>=</mml:mo><mml:mo>(</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula> mode of the gravitational-wave signal we find maximum dephasing of <inline-formula> <mml:math><mml:mrow><mml:mi>\u2206</mml:mi><mml:mi>\u03d5</mml:mi><mml:mo>\u2243</mml:mo><mml:mn>0.35</mml:mn></mml:mrow></mml:math></inline-formula> and amplitude difference of <inline-formula> <mml:math><mml:mrow><mml:mi>\u2206</mml:mi><mml:mi>A</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mi>A</mml:mi><mml:mo>\u2243</mml:mo><mml:mn>0.4</mml:mn><mml:mi>%</mml:mi></mml:mrow></mml:math></inline-formula>. We use our newly computed waveform to re-analyze the GW150914 data and find posteriors for chirp mass, luminosity distance, and inclination that are broadely consistent with those obtained using semi-analytic waveform models. This work demonstrates the viability of AthenaK for many-orbits binary black hole merger simulations. A step-by-step tutorial, including all necessary input files and analysis scripts to reproduce our results, is available on GitHub."
+ },
+ {
+  "bibcode": "2025PhLB..87039938O",
+  "arxiv": "2510.14291",
+  "doi": "10.1016/j.physletb.2025.139938",
+  "pubdate": "2025-11-00",
+  "title": "Glitch noise classification in KAGRA O3GK observing data using unsupervised machine learning",
+  "abstract": "Gravitational wave interferometers are disrupted by various types of nonstationary noise, referred to as glitch noise, that affect data analysis and interferometer sensitivity. The accurate identification and classification of glitch noise are essential for improving the reliability of gravitational wave observations. In this study, we demonstrated the effectiveness of unsupervised machine learning for classifying images with nonstationary noise in the KAGRA O3GK data. Using a variational autoencoder (VAE) combined with spectral clustering, we identified eight distinct glitch noise categories. The latent variables obtained from VAE were dimensionally compressed, visualized in three-dimensional space, and classified using spectral clustering to better understand the glitch noise characteristics of KAGRA during the O3GK period. Our results highlight the potential of unsupervised learning for efficient glitch noise classification, which may in turn potentially facilitate interferometer upgrades and the development of future third-generation gravitational wave observatories."
+ },
+ {
+  "bibcode": "2025EPJC...85.1359G",
+  "arxiv": "2506.12870",
+  "doi": "10.1140/epjc/s10052-025-15085-x",
+  "pubdate": "2025-11-00",
+  "title": "Gravitational wave propagation in generalized hybrid metric-Palatini gravity",
+  "abstract": ""
+ }
+]

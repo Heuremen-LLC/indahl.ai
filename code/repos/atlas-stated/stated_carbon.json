@@ -1,0 +1,137 @@
+{
+ "eGRID_year": 2023,
+ "rows": [
+  {
+   "region": "us-central1",
+   "location": "Iowa",
+   "state": "IA",
+   "google_2023": 430.0,
+   "google_2024": 412.72,
+   "epa_g_kwh": 285.8,
+   "ratio_2023": 1.5,
+   "ratio_2024": 1.44,
+   "outcome_2023": "above",
+   "outcome_2024": "above"
+  },
+  {
+   "region": "us-central2",
+   "location": "Oklahoma",
+   "state": "OK",
+   "google_2023": null,
+   "google_2024": 372.23,
+   "epa_g_kwh": 293.6,
+   "ratio_2023": null,
+   "ratio_2024": 1.27,
+   "outcome_2023": "cannot tell",
+   "outcome_2024": "above"
+  },
+  {
+   "region": "us-east1",
+   "location": "South Carolina",
+   "state": "SC",
+   "google_2023": 560.0,
+   "google_2024": 575.77,
+   "epa_g_kwh": 252.7,
+   "ratio_2023": 2.22,
+   "ratio_2024": 2.28,
+   "outcome_2023": "above",
+   "outcome_2024": "above"
+  },
+  {
+   "region": "us-east2",
+   "location": "Georgia",
+   "state": "GA",
+   "google_2023": null,
+   "google_2024": 340.42,
+   "epa_g_kwh": 323.8,
+   "ratio_2023": null,
+   "ratio_2024": 1.05,
+   "outcome_2023": "cannot tell",
+   "outcome_2024": "consistent"
+  },
+  {
+   "region": "us-east4",
+   "location": "Northern Virginia",
+   "state": "VA",
+   "google_2023": 322.0,
+   "google_2024": 323.05,
+   "epa_g_kwh": 243.5,
+   "ratio_2023": 1.32,
+   "ratio_2024": 1.33,
+   "outcome_2023": "above",
+   "outcome_2024": "above"
+  },
+  {
+   "region": "us-east5",
+   "location": "Columbus",
+   "state": "OH",
+   "google_2023": 322.0,
+   "google_2024": 323.05,
+   "epa_g_kwh": 482.6,
+   "ratio_2023": 0.67,
+   "ratio_2024": 0.67,
+   "outcome_2023": "below",
+   "outcome_2024": "below"
+  },
+  {
+   "region": "us-south1",
+   "location": "Dallas",
+   "state": "TX",
+   "google_2023": 321.0,
+   "google_2024": 302.95,
+   "epa_g_kwh": 348.5,
+   "ratio_2023": 0.92,
+   "ratio_2024": 0.87,
+   "outcome_2023": "consistent",
+   "outcome_2024": "consistent"
+  },
+  {
+   "region": "us-west1",
+   "location": "Oregon",
+   "state": "OR",
+   "google_2023": 94.0,
+   "google_2024": 79.23,
+   "epa_g_kwh": 165.2,
+   "ratio_2023": 0.57,
+   "ratio_2024": 0.48,
+   "outcome_2023": "below",
+   "outcome_2024": "below"
+  },
+  {
+   "region": "us-west2",
+   "location": "Los Angeles",
+   "state": "CA",
+   "google_2023": 198.0,
+   "google_2024": 169.28,
+   "epa_g_kwh": 178.5,
+   "ratio_2023": 1.11,
+   "ratio_2024": 0.95,
+   "outcome_2023": "consistent",
+   "outcome_2024": "consistent"
+  },
+  {
+   "region": "us-west3",
+   "location": "Salt Lake City",
+   "state": "UT",
+   "google_2023": 588.0,
+   "google_2024": 555.17,
+   "epa_g_kwh": 640.9,
+   "ratio_2023": 0.92,
+   "ratio_2024": 0.87,
+   "outcome_2023": "consistent",
+   "outcome_2024": "consistent"
+  },
+  {
+   "region": "us-west4",
+   "location": "Las Vegas",
+   "state": "NV",
+   "google_2023": 373.0,
+   "google_2024": 357.3,
+   "epa_g_kwh": 291.4,
+   "ratio_2023": 1.28,
+   "ratio_2024": 1.23,
+   "outcome_2023": "above",
+   "outcome_2024": "consistent"
+  }
+ ]
+}

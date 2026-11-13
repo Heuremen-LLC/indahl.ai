@@ -1,0 +1,9 @@
+# RESULT -- Zenodo 23122648 (Yaounde, Cameroon) woven/aligned fill on ibm_fez, job dben4p7sstms73fcd5og, 2026-10-25 03:07Z
+OUTCOME: NOT DECIDED. Pre-set KNOWN-GOOD failed on one arm: q75 chain [60,61,76,81] aligned |0011> raw Z diagonal read [0.961, 0.963, 0.014, 0.072] (rule: within
+0.06 of [1,1,0,0] in every arm). My design error (logged): the q75 arm was chosen FOR its worse record, then held to a readout tolerance it could fail.
+Descriptive only (not readings): contrast default_a 0.235, default_b 0.263 (their own compile, run twice; copy gap -0.028), best 0.261, q50 0.279, q75 0.222.
+Their recorded 0.2601 sits inside 0.222-0.279; their headline '+0.34 on real hardware' sits outside every arm (0.34 matches their exact reference 0.3362 or their separate SSH-chain hardware contrast 0.3365, not woven/aligned on hardware; /q A6 correction).
+WITHDRAWN (fairness, before any line goes to the author): the suspicion that their aligned arm was simulated (UUID job id). Our hardware aligned scores read
+-0.072 to -0.080 against the exact -0.0693; their aligned -0.0778 is hardware-like, not exact. Whether it ran on hardware is CANNOT_TELL from the id alone.
+Stands without this run (their own artifacts): woven/aligned hardware contrast 0.2601 vs the preprint's '+0.34 on real hardware'; the 0.34 matches the exact reference or the SSH-chain run (booked as an attribution gap).
+Next run that could decide it: same design with the known-good scaled to each chain's recorded readout error, or q75 dropped. Not fired tonight.

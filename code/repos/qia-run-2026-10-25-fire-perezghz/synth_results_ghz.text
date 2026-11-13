@@ -1,0 +1,58 @@
+{
+ "NOISY_FLAT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT_best": "CONSISTENT",
+  "DRIFT_unpinned": "CONSISTENT",
+  "F": 0.5499,
+  "C": 0.4976,
+  "C_se": 0.005
+ },
+ "LAYOUT": {
+  "KG": true,
+  "LAYOUT": "ABOVE (layout carries the number)",
+  "DRIFT_best": "CONSISTENT",
+  "DRIFT_unpinned": "CONSISTENT",
+  "F": 0.605,
+  "C": 0.5067,
+  "C_se": 0.0049
+ },
+ "DRIFT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT_best": "BELOW",
+  "DRIFT_unpinned": "BELOW",
+  "F": 0.5517,
+  "C": 0.4986,
+  "C_se": 0.005
+ },
+ "BROKEN_COPIES": {
+  "KG": false,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT_best": "ABOVE",
+  "DRIFT_unpinned": "CONSISTENT",
+  "F": 0.5294,
+  "C": 0.4951,
+  "C_se": 0.005
+ },
+ "COHERENCE_ZERO": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT_best": "CONSISTENT",
+  "DRIFT_unpinned": "CONSISTENT",
+  "F": 0.3009,
+  "C": 0.0064,
+  "C_se": 0.0055
+ },
+ "BOTH": {
+  "KG": true,
+  "LAYOUT": "ABOVE (layout carries the number)",
+  "DRIFT_best": "BELOW",
+  "DRIFT_unpinned": "CONSISTENT",
+  "F": 0.6002,
+  "C": 0.5025,
+  "C_se": 0.005
+ },
+ "FLOOR_layout_above_200": 9,
+ "FLOOR_kg_fail_200": 2
+}

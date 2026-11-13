@@ -1,0 +1,17 @@
+# PLAN -- free calibration run for arXiv:2605.08251 (Scavino Alfaro, independent researcher, Lima, Peru; ibm_marrakesh). Written and committed BEFORE any job. Heuremen LLC / QIA, one-for-one side.
+Why: the author writes (Sec. 7.4) that his 95% interval "comes from a basic (pivotal) multinomial bootstrap of the counts, so it reflects shot noise within each job rather than drift between jobs."
+Our record: on fez, 15.4 % of qubits show between-job variance beyond shot noise within 4.5 min (a presence rate, no size); T2 on marrakesh moved ~3.5 sigma beyond shot noise between jobs minutes apart.
+This run measures the size of the between-job term for HIS circuits: his protocol P (both ZNE scale factors in one job) against the same 20 circuits split across two jobs S.
+Design: his 10 held-out QAOA MaxCut graphs (seeds 606..1506, n=5, p=1) at noise scales 1 and 3, rebuilt from his published construction without running his code (theirs/src), transpiled ONCE
+on ibm_marrakesh (optimization_level=0, routing seed per circuit chosen to reproduce his published gate counts: 20 of 20 match, physical qubits 0-4), sent unchanged in six jobs, 4000 shots per circuit (his count),
+order ABBA over arms: P1 | S1 (l=1 then l=3) | S2 (l=3 then l=1) | P2. Each job is submitted after the previous finishes; backend properties and the planned job are saved before every job. Layout saved.
+Readings (lima.py, fixed now; four outcomes each, 95 %, shot-noise null = same statistic on resamples of the pooled counts, 2000 draws; rule = value outside the null range):
+  R1 DRIFT  MAE(l=1, P2) - MAE(l=1, P1).   R2 SPLIT  A, B = S1, S2 ZNE estimate minus the mean of P1, P2, mean over graphs; R2C = (A+B)/2 (cancels drift linear in job number and a midpoint step).
+  R3 GAIN   gain(P2) - gain(P1), gain = MAE(l=1) - MAE(ZNE).   R4 SHARE  D_k = mean per-graph |ZNE(S_k) - ZNE(P mean)| as a share of HIS PUBLISHED GAIN 0.06445 - 0.02810 = 0.03635, next to its shot-noise floor.
+  Resolvability scale fixed in advance from the author's PUBLISHED number: a reading is CANNOT_TELL if its null half-width exceeds 0.03635. The measured gain is never used for that.
+  None of this is a finding about his 5 May 2026 jobs: it is the size of the between-job term on this chip, today, for his circuits.
+KNOWN-GOOD: the author's published raw counts (theirs/raw, 20 files from Zenodo 10.5281/zenodo.23405717, hashes match his SHA256SUMS) must reproduce his published MAE 0.06445 before ZNE, 0.02810 after, 9 of 10 graphs improved, through lima.py -- PASSED (known_good_lima.text).
+Synthetic: synth_lima.py plants NEITHER / EFFECT only / DRIFT step / DRIFT linear / BOTH / SMALL linear / LOW SHOTS worlds from his own distributions, 40 runs each, expected outcomes scored by a rule fixed in the file;
+all seven worlds pass (synth_results_lima.text). Lessons from the Kyiv run applied: scale from the published number, ABBA arm order, every world planted incl. linear drift.
+Cost: dry run estimate 110 QPU s on Darkwave Disco (his 20-circuit job billed 27 s; the four 10-circuit jobs are estimated at 14 s each), hard cap 300 s inside fire_lima.py. Remaining at plan time: 1719 s. The fez arm of the sketch is not used.
+Results go to the book (FILL or CLEAN entry) and, when the portfolio launches, to the author as a free calibration. Nothing is published or sent before then.

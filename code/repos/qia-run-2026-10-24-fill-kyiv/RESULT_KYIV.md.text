@@ -1,0 +1,14 @@
+# RESULT -- free calibration run for arXiv:2607.20377 (KNUBA Kyiv), ibm_fez, 24 Oct 2026 02:40-02:52Z. Read under PLAN + ADDENDA 1-2 (committed before any result).
+Jobs: H0 dbe1l6fg, H2 dbe1lugm, H0 dbe1msvp, H2 dbe1nl0m, H2 dbe1oq7g, H0 dbe1pr7g (300 circuits x 1024 shots each, one transpiled set, physical qubits 0-3).
+KNOWN-GOOD: their published raw counts reproduce their published RMSE H0 0.08777 / H1 0.08643 / H2 0.04273 -> PASS.
+Per job RMSE vs statevector: 0.07035 (H0), 0.04184 (H2), 0.06963 (H0), 0.04331 (H2), 0.04461 (H2), 0.06503 (H0).
+R1 DRIFT (jobs 1 -> 3, 3.6 min): dH0 -0.00072 [-0.00293, +0.00164], shot-null [-0.00237, +0.00222] -> CONSISTENT. Bound: |drift| <= 0.0029 RMSE,
+   i.e. <= 6.5 % of their published H0-H2 gap 0.0451 over an interval shorter than theirs (~11 min across three jobs).
+R2 ORDERING: twirling lowers RMSE in both pairs: +0.02851 [+0.02634, +0.03076] and +0.02632 [+0.02409, +0.02851] -> ABOVE, ABOVE.
+R4 (addendum 1): R2 mean +0.02741 and linear-corrected +0.02705 agree (0.00036 < null width 0.00458) -> size read +0.0272.
+R5 ABBA (addendum 2, jobs 3-6): twirl gap +0.02337 [+0.02180, +0.02501], null [-0.00153, +0.00169] -> ABOVE.
+Also reported (planned, no outcome assigned): dH0 jobs 3 -> 6 (~6.3 min) = -0.00460; a single-pair shot-null is about +-0.0023.
+READING FOR THE AUTHOR: on ibm_fez today, with their circuits, drift between jobs minutes apart is within shot noise over 3.6 min and at most
+6.5 % of their gap; twirling lowers the kernel error by 0.023 (ABBA) -- their ordering holds and drift does not explain it. The SIZE moved:
+their 9 May gap was 0.0451, ours 0.023, with our H0 error lower (0.065-0.070 vs their 0.088) and H2 the same (0.042-0.045 vs 0.043).
+Not a measurement of their 9 May jobs, layout or calibration (theirs not persisted). Cost: 6 jobs, billed 80-92 s each.

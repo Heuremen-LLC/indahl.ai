@@ -1,0 +1,98 @@
+[
+ {
+  "bibcode": "2025ApJ...979..102M",
+  "arxiv": "2410.14663",
+  "doi": "10.3847/1538-4357/ad9f36",
+  "pubdate": "2025-02-00",
+  "title": "On the Use of Galaxy Catalogs in Gravitational-wave Parameter Estimation",
+  "abstract": "A major challenge in gravitational-wave (GW) multimessenger astrophysics is the imprecise localization of GW compact binary mergers. We investigate the use of a method to include galaxy catalog information in performing parameter estimation of these events. We test its effectiveness with the GW events GW170817, GW190425, and GW190814, as well as with simulated binary neutron star mergers. For GW170817, we recover the true host galaxy as the most probable galaxy after a straightforward mass reweighting, with significantly decreased localization area and volume. On the simulated sample, however, we do not find improvement compared to performing a simple galaxy catalog crossmatch with a regular GW localization. Future investigations into sampling methods may yield improvements that increase the viability of this method."
+ },
+ {
+  "bibcode": "2025LRR....28....2C",
+  "arxiv": "2412.15046",
+  "doi": "10.1007/s41114-024-00055-8",
+  "pubdate": "2025-02-00",
+  "title": "Applications of machine learning in gravitational-wave research with current interferometric detectors: Applications of machine learning in gravitational-wave...",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2025RScI...96a4504K",
+  "arxiv": "2408.10477",
+  "doi": "10.1063/5.0236965",
+  "pubdate": "2025-01-00",
+  "title": "Low-vibration cryogenic test facility for next generation of ground-based gravitational-wave observatories",
+  "abstract": "We present the design and commissioning of a cryogenic low-vibration test facility that measures displacement noise from a gram-scale silicon cantilever at the level of 10-16m/Hz at 1 kHz. This sensitivity is necessary for future tests of thermal noise models on cross sections of silicon suspension samples proposed for future gravitational-wave detectors. A volume of \u223c36 l is enclosed by radiation shields cooling an optical test cavity that is suspended from a multi-stage pendulum chain providing isolation from acoustic and environmental noise. This 3 kg test cavity housing a crystalline silicon cantilever is radiatively cooled to 123 K in 41 h and held at that temperature over many months with a relative temperature stability of \u00b11 mK. The facility housing the test cavity is sensitive to cavity length changes, which can resolve thermal fluctuations at the desired sensitivity. It is capable of interferometrically measuring temperature-dependent broadband displacement noise directly between 50 Hz and 10 kHz, where current and future ground-based gravitational wave observatories are the most sensitive. With a suitable cantilever design, the cryogenic facility we describe here will allow for the measurement of broadband thermal noise in crystalline silicon at 123 K. This will guide the design of suspensions in planned future cryogenic ground-based gravitational-wave detectors such as LIGO Voyager and may have implications for suspensions in the Einstein Telescope. This facility is also suitable for the testing of new mirror coatings at cryogenic temperatures."
+ },
+ {
+  "bibcode": "2025ApJ...978...69S",
+  "arxiv": "2409.11317",
+  "doi": "10.3847/1538-4357/ad96b4",
+  "pubdate": "2025-01-00",
+  "title": "Hierarchical Searches for Subsolar-mass Binaries and the Third-generation Gravitational Wave Detector Era",
+  "abstract": "Detecting gravitational waves (GWs) from coalescing compact binaries has become routine with ground-based detectors like Advanced LIGO and Advanced Virgo. However, beyond standard sources such as binary black holes and neutron stars and neutron star black holes, no exotic sources revealing new physics have been discovered. Detecting ultracompact objects, such as subsolar mass (SSM), offers a promising opportunity to explore diverse astrophysical populations. However, searching for these objects using standard matched-filtering techniques is computationally intensive due to the dense parameter space involved. This increasing computational demand not only challenges current search methodologies but also poses a significant obstacle for third-generation (3G) ground-based GW detectors. In the 3G detectors, signals are expected to be observed for tens of minutes and detection rates to reach one per minute. This requires efficient search strategies to manage the computational load of long-duration signal search. In this paper, we demonstrate how hierarchical search strategies can address the computational challenges associated with detecting long-duration signals in current detectors and the 3G era. Using SSM searches as an example, we show that optimizing data sampling rates and adjusting the number of templates in matched filtering at each stage of low-frequency searches can improve the signal-to-noise ratio by 6% and detection volume by 10%\u250020%. This sensitivity improvement is achieved with a 2.5-fold reduction in computational time compared to standard PyCBC searches. We also discuss how this approach could be adapted and refined for searches involving eccentric and precessing binaries with future detectors."
+ },
+ {
+  "bibcode": "2025MNRAS.536.3112V",
+  "arxiv": "2405.05318",
+  "doi": "10.1093/mnras/stae2787",
+  "pubdate": "2025-01-00",
+  "title": "AGN flares as counterparts to LIGO/Virgo mergers: no confident causal connection in spatial correlation analysis",
+  "abstract": "The primary formation channel for the stellar-mass Binary Black Holes which have been detected merging by the LIGO-Virgo-KAGRA (LVK) collaboration is yet to be discerned. One of the main reason is that the detection of an Electromagnetic counterpart to such Gravitational Wave (GW) events, which could signpost their formation site, has so far been elusive. Recently, 20 Active Galactic Nuclei flaring activities detected by the Zwicky Transient Facility have been investigated as potential counterparts of GW events by Graham et al. We present the results of a spatial correlation analysis that involves such events and uses the up-to-date posterior samples of 78 mergers, detected during the third observing run of the LVK collaboration. We apply a likelihood method which takes into account the exact position of the flares within the 3D sky map of the GW events. We place an upper limit of 0.155 at a 90 per cent credibility level on the fraction of the detected coalescences that are physically related to an observed flare, whose posterior probability distribution peaks at a null value. Finally, we show that the typically larger values of the masses of the GW-events, which host at least one flare in their localization volume, are also consistent with the no-connection hypothesis. This is because of a positive correlation between binary masses and the size of the localization uncertainties."
+ },
+ {
+  "bibcode": "2025JCAP...01..085M",
+  "arxiv": "2407.15123",
+  "doi": "10.1088/1475-7516/2025/01/085",
+  "pubdate": "2025-01-00",
+  "title": "Bridging dark energy and black holes with EFT: frame transformation and gravitational wave speed",
+  "abstract": "Typically, constraints on parameters of the effective field theory (EFT) of dark energy have been obtained in the Jordan frame, where matter fields are minimally coupled to gravity. To connect these constraints with those of the EFT of black hole perturbations with a timelike scalar profile, it is necessary to perform a frame transformation on the EFT in general. In this paper, we study the conformal/disformal transformation of EFT parameters on an arbitrary background. Furthermore, we explore the effect of an EFT operator M <SUB>6</SUB>(r) \u03c3\u0305 <SUP> \u03bc </SUP> <SUB> \u03bd </SUB> \u03b4K <SUP> \u03bd </SUP> <SUB> \u03b1 </SUB> \u03b4K <SUP> \u03b1 </SUP> <SUB> \u03bc </SUB>, which is elusive to the LIGO/Virgo bound on gravitational-wave speed, on the dynamics of odd-parity black hole perturbations. Intriguingly, a deviation from luminal propagation shows up only in the vicinity of the black hole, and the speeds of perturbations in the radial and angular directions are different in general due to the traceless part \u03c3\u0305 <SUP> \u03bc </SUP> <SUB> \u03bd </SUB> of the background extrinsic curvature. This study establishes an important link between cosmological constraints and those obtained in the black hole regime."
+ },
+ {
+  "bibcode": "2025SCPMA..6810414G",
+  "arxiv": "2404.11505",
+  "doi": "10.1007/s11433-024-2505-1",
+  "pubdate": "2025-01-00",
+  "title": "Sky location of massive black hole binaries in the foreground of Galactic white dwarf binaries",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2024JHEP...12..196C",
+  "arxiv": "2401.09411",
+  "doi": "10.1007/JHEP12(2024)196",
+  "pubdate": "2024-12-00",
+  "title": "Slaying axion-like particles via gravitational waves and primordial black holes from supercooled phase transition",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2024JHEP...12..150G",
+  "arxiv": "2405.06741",
+  "doi": "10.1007/JHEP12(2024)150",
+  "pubdate": "2024-12-00",
+  "title": "Primordial gravitational waves as probe of dark matter in interferometer missions: Fisher forecast and MCMC",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2024MLS&T...5d5030C",
+  "arxiv": "2407.19048",
+  "doi": "10.1088/2632-2153/ad8982",
+  "pubdate": "2024-12-00",
+  "title": "Rapid likelihood free inference of compact binary coalescences using accelerated hardware",
+  "abstract": "We report a gravitational-wave parameter estimation algorithm, AMPLFI, based on likelihood-free inference using normalizing flows. The focus of AMPLFI is to perform real-time parameter estimation for candidates detected by machine-learning based compact binary coalescence search, Aframe. We present details of our algorithm and optimizations done related to data-loading and pre-processing on accelerated hardware. We train our model using binary black-hole (BBH) simulations on real LIGO-Virgo detector noise. Our model has [ image ] million trainable parameters with training times [ image ] h. Based on online deployment on a mock data stream of LIGO-Virgo data, Aframe + AMPLFI is able to pick up BBH candidates and infer parameters for real-time alerts from data acquisition with a net latency of [ image ] s."
+ },
+ {
+  "bibcode": "2024PDU....4601582P",
+  "arxiv": "2311.16085",
+  "doi": "10.1016/j.dark.2024.101582",
+  "pubdate": "2024-12-00",
+  "title": "Analysis of the subsolar-mass black hole candidate SSM200308 from the second part of the third observing run of Advanced LIGO-Virgo",
+  "abstract": "We present a follow-up study of a subsolar black hole candidate identified in the second part of the third observing run of the LIGO-Virgo-KAGRA collaboration. The candidate was identified by the GstLAL search pipeline in the Hanford and Livingston LIGO detectors with a network signal-to-noise ratio of 8.90 and a false-alarm-rate of 1 per 5 years. It is the most significant of the three candidates found below the O3b subsolar mass false-alarm rate threshold of 2 per year, but still not significant enough above the background to claim a clear gravitational wave origin. A Bayesian parameter estimation of this candidate, denoted SSM200308, reveals that if the signal originates from a compact binary coalescence, the component masses are <mml:math altimg=\"si1.svg\" display=\"inline\" id=\"d1e1825\"><mml:mrow><mml:msub><mml:mrow><mml:mi>m</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo linebreak=\"goodbreak\" linebreakstyle=\"after\">=</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>6</mml:mn><mml:msubsup><mml:mrow><mml:mn>2</mml:mn></mml:mrow><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>20</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>46</mml:mn></mml:mrow></mml:msubsup><mml:msub><mml:mrow><mml:mi>M</mml:mi></mml:mrow><mml:mrow><mml:mo>\u2299</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:math> and <mml:math altimg=\"si2.svg\" display=\"inline\" id=\"d1e1873\"><mml:mrow><mml:msub><mml:mrow><mml:mi>m</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub><mml:mo linebreak=\"goodbreak\" linebreakstyle=\"after\">=</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>2</mml:mn><mml:msubsup><mml:mrow><mml:mn>7</mml:mn></mml:mrow><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>12</mml:mn></mml:mrow></mml:msubsup><mml:msub><mml:mrow><mml:mi>M</mml:mi></mml:mrow><mml:mrow><mml:mo>\u2299</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:math> (90% credible intervals) with at least one component being firmly subsolar, below the minimum mass of a neutron star. This discards the hypothesis that the signal comes from a standard binary neutron star. The signal coherence test between the two LIGO detectors is consistent with, but does not necessarily imply, a compact object coalescence origin."
+ },
+ {
+  "bibcode": "2024NatCo..15.7229T",
+  "arxiv": "2308.15440",
+  "doi": "10.1038/s41467-024-51420-8",
+  "pubdate": "2024-12-00",
+  "title": "Detecting single gravitons with quantum sensing",
+  "abstract": ""
+ }
+]

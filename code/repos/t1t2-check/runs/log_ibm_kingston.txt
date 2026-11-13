@@ -1,0 +1,5 @@
+qubits [121, 19] control 19 circuits 64 estimated QPU seconds about 30
+job dbha894dgr2s73ct4r3g submitted
+known-good: passed
+q 121 CANNOT_TELL {'t1_us': 13.245, 't2_us': 14.614, 'ratio': 1.103, 'published_t1_us': 16.237, 'published_t2_us': 53.333}
+q 19 CONSISTENT {'t1_us': 294.194, 't2_us': 195.817, 'ratio': 0.666, 'published_t1_us': 263.404, 'published_t2_us': 271.399}

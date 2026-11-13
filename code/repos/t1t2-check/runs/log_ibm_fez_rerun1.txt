@@ -1,0 +1,5 @@
+qubits [148, 95] control 95 circuits 64 estimated QPU seconds about 24
+job dbhap08te5oc738jqoug submitted
+known-good: passed
+q 148 CANNOT_TELL {'t1_us': 1.052, 't2_us': 0.017, 'ratio': 0.016, 'published_t1_us': 5.863, 'published_t2_us': 15.469}
+q 95 CONSISTENT {'t1_us': 171.47, 't2_us': 191.599, 'ratio': 1.117, 'published_t1_us': 163.158, 'published_t2_us': 163.514}

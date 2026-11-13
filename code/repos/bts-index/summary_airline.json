@@ -1,0 +1,329 @@
+{
+ "updated": "29 Oct 16:35",
+ "read": "2026-10-29T14:54Z",
+ "months": "January to August",
+ "gate": "passed",
+ "rows": {
+  "2019": 4951828,
+  "2025": 4680482,
+  "2026": 4728732
+ },
+ "now_vs_2025": {
+  "American (AA)": {
+   "routes": 906,
+   "outcome": "ABOVE",
+   "change": 3.0,
+   "change_ci": [
+    2.0,
+    3.0
+   ],
+   "flown_change": 1.0,
+   "late": "26.8% then 26.1%"
+  },
+  "Alaska (AS)": {
+   "routes": 346,
+   "outcome": "ABOVE",
+   "change": 5.0,
+   "change_ci": [
+    4.0,
+    5.0
+   ],
+   "flown_change": -3.0,
+   "late": "24.2% then 20.1%"
+  },
+  "JetBlue (B6)": {
+   "routes": 323,
+   "outcome": "CONSISTENT",
+   "change": -1.0,
+   "change_ci": [
+    -1.0,
+    -0.5
+   ],
+   "flown_change": 0.0,
+   "late": "25.7% then 29.4%"
+  },
+  "Delta (DL)": {
+   "routes": 906,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    0.0,
+    0.5
+   ],
+   "flown_change": 0.0,
+   "late": "20.8% then 19.4%"
+  },
+  "Frontier (F9)": {
+   "routes": 542,
+   "outcome": "CONSISTENT",
+   "change": 1.0,
+   "change_ci": [
+    0.5,
+    1.0
+   ],
+   "flown_change": 0.0,
+   "late": "29.6% then 28.5%"
+  },
+  "Allegiant (G4)": {
+   "routes": 799,
+   "outcome": "CONSISTENT",
+   "change": -0.5,
+   "change_ci": [
+    -1.0,
+    0.0
+   ],
+   "flown_change": 1.0,
+   "late": "25.3% then 27.1%"
+  },
+  "Envoy (MQ)": {
+   "routes": 542,
+   "outcome": "ABOVE",
+   "change": 4.0,
+   "change_ci": [
+    3.75,
+    4.5
+   ],
+   "flown_change": 0.0,
+   "late": "22.2% then 19.1%"
+  },
+  "Spirit (NK)": {
+   "routes": 262,
+   "outcome": "CONSISTENT",
+   "change": -1.0,
+   "change_ci": [
+    -1.0,
+    0.0
+   ],
+   "flown_change": 1.0,
+   "late": "21.2% then 35.2%"
+  },
+  "PSA (OH)": {
+   "routes": 390,
+   "outcome": "ABOVE",
+   "change": 4.0,
+   "change_ci": [
+    3.5,
+    4.0
+   ],
+   "flown_change": 0.0,
+   "late": "29.3% then 27.8%"
+  },
+  "SkyWest (OO)": {
+   "routes": 1224,
+   "outcome": "CANNOT_TELL",
+   "change": 2.0,
+   "change_ci": [
+    1.0,
+    2.0
+   ],
+   "flown_change": 1.0,
+   "late": "21.4% then 22.3%"
+  },
+  "United (UA)": {
+   "routes": 822,
+   "outcome": "CONSISTENT",
+   "change": 1.0,
+   "change_ci": [
+    0.0,
+    1.0
+   ],
+   "flown_change": 1.0,
+   "late": "22.2% then 21.7%"
+  },
+  "Southwest (WN)": {
+   "routes": 1573,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    0.0,
+    0.0
+   ],
+   "flown_change": 0.0,
+   "late": "21.5% then 25.9%"
+  },
+  "Republic (YX)": {
+   "routes": 519,
+   "outcome": "ABOVE",
+   "change": 2.0,
+   "change_ci": [
+    2.0,
+    3.0
+   ],
+   "flown_change": 0.5,
+   "late": "20.3% then 21.0%"
+  }
+ },
+ "y2025_vs_2019": {
+  "American (AA)": {
+   "routes": 703,
+   "outcome": "CONSISTENT",
+   "change": 0.5,
+   "change_ci": [
+    0.0,
+    1.0
+   ],
+   "flown_change": 0.0,
+   "late": "23.3% then 26.8%"
+  },
+  "Alaska (AS)": {
+   "routes": 277,
+   "outcome": "CONSISTENT",
+   "change": -1.0,
+   "change_ci": [
+    -1.0,
+    0.0
+   ],
+   "flown_change": 2.0,
+   "late": "18.6% then 24.2%"
+  },
+  "JetBlue (B6)": {
+   "routes": 261,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    -1.0,
+    0.0
+   ],
+   "flown_change": 2.5,
+   "late": "27.1% then 25.7%"
+  },
+  "Delta (DL)": {
+   "routes": 772,
+   "outcome": "CANNOT_TELL",
+   "change": -1.0,
+   "change_ci": [
+    -1.25,
+    -1.0
+   ],
+   "flown_change": 2.0,
+   "late": "15.5% then 20.8%"
+  },
+  "Frontier (F9)": {
+   "routes": 353,
+   "outcome": "CONSISTENT",
+   "change": 1.0,
+   "change_ci": [
+    0.0,
+    1.0
+   ],
+   "flown_change": 3.0,
+   "late": "27.5% then 29.6%"
+  },
+  "Allegiant (G4)": {
+   "routes": 549,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    0.0,
+    1.0
+   ],
+   "flown_change": 5.0,
+   "late": "21.2% then 25.3%"
+  },
+  "Hawaiian (HA)": {
+   "routes": 66,
+   "outcome": "CANNOT_TELL",
+   "change": 0.75,
+   "change_ci": [
+    0.0,
+    3.0
+   ],
+   "flown_change": -3.5,
+   "late": "11.4% then 16.4%"
+  },
+  "Envoy (MQ)": {
+   "routes": 308,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    0.0,
+    1.0
+   ],
+   "flown_change": 2.0,
+   "late": "22.4% then 22.2%"
+  },
+  "Spirit (NK)": {
+   "routes": 319,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    0.0,
+    1.0
+   ],
+   "flown_change": 1.0,
+   "late": "21.2% then 21.2%"
+  },
+  "PSA (OH)": {
+   "routes": 266,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    -1.0,
+    0.0
+   ],
+   "flown_change": 5.0,
+   "late": "20.3% then 29.3%"
+  },
+  "SkyWest (OO)": {
+   "routes": 956,
+   "outcome": "CONSISTENT",
+   "change": 0.0,
+   "change_ci": [
+    -0.5,
+    0.0
+   ],
+   "flown_change": 3.0,
+   "late": "20.1% then 21.4%"
+  },
+  "United (UA)": {
+   "routes": 682,
+   "outcome": "CANNOT_TELL",
+   "change": 1.0,
+   "change_ci": [
+    1.0,
+    1.75
+   ],
+   "flown_change": 4.5,
+   "late": "23.0% then 22.2%"
+  },
+  "Southwest (WN)": {
+   "routes": 1213,
+   "outcome": "CONSISTENT",
+   "change": -1.0,
+   "change_ci": [
+    -1.0,
+    -1.0
+   ],
+   "flown_change": 2.0,
+   "late": "18.8% then 21.5%"
+  },
+  "Republic (YX)": {
+   "routes": 352,
+   "outcome": "CONSISTENT",
+   "change": 0.5,
+   "change_ci": [
+    0.0,
+    1.0
+   ],
+   "flown_change": 1.0,
+   "late": "20.8% then 20.3%"
+  }
+ },
+ "headline_n": 5,
+ "headline_of": 13,
+ "headline": {
+  "of": 13,
+  "n": 5,
+  "share": 0.3846,
+  "share_lo": 0.1771,
+  "share_hi": 0.6448,
+  "outcome": "CANNOT_TELL",
+  "above": [
+   "American (AA)",
+   "Alaska (AS)",
+   "Envoy (MQ)",
+   "PSA (OH)",
+   "Republic (YX)"
+  ]
+ }
+}

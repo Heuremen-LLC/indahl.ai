@@ -1,0 +1,2 @@
+KNOWN-GOOD their n=6 counts: raw shortfall 1.279, their mitigated 0.700; our mitigation from their record 0.762; raw mean success 0.8376
+PASS

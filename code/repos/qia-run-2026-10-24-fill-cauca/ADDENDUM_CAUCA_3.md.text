@@ -1,0 +1,11 @@
+# Addendum 3 (30 Oct 2026, defined after the data)
+
+The calibration sentence on our QIA row put a CZ range built from interval ends (1.21 to 1.39) beside a single-qubit range built from medians
+(1.31 to 1.37), so one sentence carried two rulers (found in the 30 Oct site pass, C-14). Both gates now use the same ruler: the medians of our three
+ibm_kingston sweep sessions on 23 and 24 Oct 2026 (CZ 1.302, 1.311 and 1.345, single-qubit 1.306, 1.366 and 1.344).
+
+twin_medians.py runs the saved twin code (twin_cauca.py) on their record and their circuits. As a known-good it first reproduces the two rows the old
+sentence rested on: (CZ 1.21, single 1.306) closes 13.2% of the N=9 gap and (1.39, 1.366) closes 21.3%. With medians for both gates the N=9 gap
+closes 16.9% to 19.5%, and the N=2 gap widens by 1.7% to 2.0%. The QIA row now says "17 to 20%" and "about 2%". Output: twin_medians.text.
+
+This is a reading of the same saved twin under a consistent ruler. No new job ran. Heuremen LLC, Wayfinder and Bones.

@@ -1,0 +1,9 @@
+ibm_marrakesh: 20 circuits (10 graphs x lambda 1,3), 4000 shots, 6 jobs P1 S1(l1,l3) S2(l3,l1) P2, physical qubits [(0, 1, 2, 3, 4)] (1 distinct), gate counts equal to his transpile in 20/20, est 110 s (cap 300), remaining 1719
+SUBMITTED job P1 dbe1s6fsstms73fbascg 2026-10-24T02:55:21Z
+Traceback (most recent call last):
+  File "/Users/heuremen/bones-forge/qia_runs/2026-10-24-fill-lima/fire_lima.py", line 69, in <module>
+    res = job.result(); ents = [dict(graph_seed=CI[i][0], scale=CI[i][1], counts=counts_of(pr)) for i, pr in zip(idx, res)]
+          ^^^^^^^^^^^^
+  File "/Users/heuremen/bones-forge/qvenv/lib/python3.12/site-packages/qiskit_ibm_runtime/runtime_job_v2.py", line 151, in result
+    raise RuntimeJobFailureError(f"Unable to retrieve job result. {error_message}")
+qiskit_ibm_runtime.exceptions.RuntimeJobFailureError: 'Unable to retrieve job result. Error code 9703; Failed to execute program: Temporary Internal Error. Try again or contact support. -- https://ibm.biz/error_codes#9703'

@@ -1,0 +1,2 @@
+n=8: shot-noise job SD (O-arm null median) 0.0155; O arm job SD all 0.3260, without J02 0.0491; T arm job SD 0.0476; T-arm linear trend +0.0107 CVaR per job slot (x11 slots = +0.118)
+n=10: shot-noise job SD (O-arm null median) 0.0104; O arm job SD all 0.0123, without J02 0.0099; T arm job SD 0.0170; T-arm linear trend -0.0029 CVaR per job slot (x11 slots = -0.032)

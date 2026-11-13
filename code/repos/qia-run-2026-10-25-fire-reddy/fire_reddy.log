@@ -1,0 +1,19 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:10:43,759: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 22:10:47,641: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open, pay-as-you-go), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:10:47,641: Loading account with the given token. A saved account will not be used.
+remaining 2575
+compiled {'arm': 0, 'backend': 'ibm_fez', 'p0': 3, 'p1': 4, 'depth': {'ZZ': 13, 'XX': 14, 'YY': 14}, 'cz': {'ZZ': 7, 'XX': 7, 'YY': 7}, 'two_q_depth': {'ZZ': 4, 'XX': 4, 'YY': 4}}
+SUBMITTED ibm_fez dbemab7sstms73fcbiig
+RESULT ibm_fez F 0.8992 +/- 0.0048 {'diff': -0.021050000000000013, 'ci95': [-0.030530980864341, -0.011569019135659024], 'outcome': 'BELOW'} usage {'qpu_charge_time_seconds': 4, 'value': 0.054321, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.054321, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 4}}]}
+compiled {'arm': 1, 'backend': 'ibm_kingston', 'p0': 3, 'p1': 4, 'depth': {'ZZ': 13, 'XX': 14, 'YY': 14}, 'cz': {'ZZ': 7, 'XX': 7, 'YY': 7}, 'two_q_depth': {'ZZ': 4, 'XX': 4, 'YY': 4}}
+SUBMITTED ibm_kingston dbemadnsstms73fcbilg
+RESULT ibm_kingston F 0.9470 +/- 0.0036 {'diff': 0.026700000000000057, 'ci95': [0.019697747412439397, 0.03370225258756072], 'outcome': 'ABOVE'} usage {'qpu_charge_time_seconds': 4, 'value': 0.054587, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.054587, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 4}}]}
+compiled {'arm': 2, 'backend': 'ibm_boston', 'p0': 3, 'p1': 4, 'depth': {'ZZ': 13, 'XX': 14, 'YY': 14}, 'cz': {'ZZ': 7, 'XX': 7, 'YY': 7}, 'two_q_depth': {'ZZ': 4, 'XX': 4, 'YY': 4}}
+SUBMITTED ibm_boston dbemaj7gdj9s73fm2jog
+RESULT ibm_boston F 0.9450 +/- 0.0036 {'diff': 0.024700000000000055, 'ci95': [0.017584447491585827, 0.03181555250841428], 'outcome': 'ABOVE'} usage {'qpu_charge_time_seconds': 4, 'value': 0.054587, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.054587, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 4}}]}
+compiled {'arm': 3, 'backend': 'ibm_pittsburgh', 'p0': 3, 'p1': 4, 'depth': {'ZZ': 13, 'XX': 14, 'YY': 14}, 'cz': {'ZZ': 7, 'XX': 7, 'YY': 7}, 'two_q_depth': {'ZZ': 4, 'XX': 4, 'YY': 4}}
+SUBMITTED ibm_pittsburgh dbemgc7pc3tc739m029g
+RESULT ibm_pittsburgh F 0.9393 +/- 0.0038 {'diff': 0.018950000000000022, 'ci95': [0.011468267997983379, 0.026431732002016664], 'outcome': 'ABOVE'} usage {'qpu_charge_time_seconds': 4, 'value': 0.054595, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.054595, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 4}}]}
+compiled {'arm': 4, 'backend': 'ibm_fez', 'p0': 3, 'p1': 4, 'depth': {'ZZ': 13, 'XX': 14, 'YY': 14}, 'cz': {'ZZ': 7, 'XX': 7, 'YY': 7}, 'two_q_depth': {'ZZ': 4, 'XX': 4, 'YY': 4}}
+SUBMITTED ibm_fez dbemqangdj9s73fm3kig
+RESULT ibm_fez F 0.9205 +/- 0.0043 {'diff': 0.000200000000000089, 'ci95': [-0.00830026431941963, 0.008700264319419808], 'outcome': 'CONSISTENT'} usage {'qpu_charge_time_seconds': 4, 'value': 0.054321, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.054321, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 4}}]}

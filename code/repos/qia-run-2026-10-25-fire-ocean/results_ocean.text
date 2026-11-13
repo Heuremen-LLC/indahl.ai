@@ -1,0 +1,60 @@
+{
+ "DRAIN": {
+  "basis": 0.12525,
+  "ghz": 0.16025,
+  "delta": 0.03500000000000002,
+  "delta_sem": 0.008684962373468948,
+  "penalty": 1.2794411177644711
+ },
+ "ANTI_DRAIN": {
+  "basis": 0.08824999999999998,
+  "ghz": 0.16800000000000004,
+  "delta": 0.07975000000000004,
+  "delta_sem": 0.0055476829139998254,
+  "penalty": 1.903682719546743
+ },
+ "CONTROL_1": {
+  "basis": 0.15525000000000003,
+  "ghz": 0.6315,
+  "delta": 0.47624999999999995,
+  "delta_sem": 0.008119091258086889,
+  "penalty": 4.067632850241545
+ },
+ "CONTROL_2": {
+  "basis": 0.06599999999999999,
+  "ghz": 0.11099999999999999,
+  "delta": 0.045,
+  "delta_sem": 0.005140872632984733,
+  "penalty": 1.6818181818181819
+ },
+ "ANTI_HEALTHY": {
+  "basis": 0.04625000000000004,
+  "ghz": 0.13225,
+  "delta": 0.08599999999999997,
+  "delta_sem": 0.006335839103296201,
+  "penalty": 2.859459459459457
+ },
+ "DECIDER": {
+  "value": 0.05099999999999995,
+  "sem": 0.010750415274370966,
+  "ci95": [
+   0.027940359236474227,
+   0.07405964076352567
+  ],
+  "outcome": "ABOVE",
+  "direction_predicts": "~+0.30 (their anti-minus-drain delta)",
+  "health_predicts": "~0"
+ },
+ "KNOWN_GOOD": {
+  "control1_ghz_err": 0.6315,
+  "rule": "> 0.70 (two couplers marked failed; theirs 0.8907)",
+  "passed": false
+ },
+ "REPLICATION": {
+  "drain_penalty": 1.2794411177644711,
+  "anti_penalty": 1.903682719546743,
+  "drain_lower": true,
+  "lowest_delta": "DRAIN",
+  "lowest_ghz_err": "CONTROL_2"
+ }
+}

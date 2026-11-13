@@ -1,0 +1,23 @@
+KNOWN-GOOD: their Table II (first valid batch, ibm_kingston) from their released counts through this code
+   readout   10    printed 0.975 ours 0.9746 PASS
+   readout   11    printed 0.983 ours 0.9834 PASS
+   readout   0111  printed 0.942 ours 0.9424 PASS
+   readout   0110  printed 0.955 ours 0.9551 PASS
+   Qiskit    10    printed 0.958 ours 0.9580 PASS
+   Qiskit    11    printed 0.963 ours 0.9629 PASS
+   Qiskit    0111  printed 0.523 ours 0.5234 PASS
+   Qiskit    0110  printed 0.543 ours 0.5430 PASS
+   PennyLane 10    printed 0.954 ours 0.9541 PASS
+   PennyLane 11    printed 0.952 ours 0.9521 PASS
+   PennyLane 0111  printed 0.451 ours 0.4512 PASS
+   PennyLane 0110  printed 0.384 ours 0.3838 PASS
+   Cirq      10    printed 0.958 ours 0.9580 PASS
+   Cirq      11    printed 0.944 ours 0.9443 PASS
+   Cirq      0111  printed 0.481 ours 0.4814 PASS
+   Cirq      0110  printed 0.457 ours 0.4570 PASS
+   Table II cells: 16/16 PASS
+   their own text: Qiskit - PennyLane on 0110, batch 1 = +0.159 (printed 0.16)
+   record/set A (their batches [0]): Qiskit - PennyLane, mean of 4q cases +0.116
+   record/set B (their batches [1, 2, 3]): Qiskit - PennyLane, mean of 4q cases +0.093
+   record/set C (their batches [4, 5, 6]): Qiskit - PennyLane, mean of 4q cases +0.000
+KNOWN-GOOD: PASS

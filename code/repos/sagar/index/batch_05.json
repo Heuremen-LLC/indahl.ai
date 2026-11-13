@@ -1,0 +1,98 @@
+[
+ {
+  "bibcode": "2025ApJ...993..215W",
+  "arxiv": "2508.05018",
+  "doi": "10.3847/1538-4357/ae0f1b",
+  "pubdate": "2025-11-00",
+  "title": "Search for Gravitational Waves from Eccentric Binary Black Holes with an Effective-one-body Template",
+  "abstract": "As gravitational wave (GW) astronomy has entered an era of routine detections, it becomes increasingly important to precisely measure the physical parameters of individual events and infer population properties. Eccentricity is a key observable, suggesting that binaries form in a dense stellar environment through dynamical encounters. This work performs the first matched-filtering search for GWs from eccentric binary black holes (BBHs) covering the mass range [5, 200] M<SUB>\u2299</SUB>and eccentricity at 20 Hz up to 0.5 with a newly developed effective-one-body waveform model. Throughout the third observation run of LIGO, Virgo, and KAGRA, we identify 28 BBH events with a false alarm rate (FAR) below once per 100 yr, all of which were previously reported in the third Gravitational-wave Transient Catalog and fourth Open Gravitational-wave Catalog. Additional candidates with FARs between once per 1 and 100 yr are also reported. We perform an injection campaign to characterize the sensitive volume time of our search pipeline. Assuming that none of the eccentric BBH events were missed by previous searches, our results provide constraints on the event rate of eccentric BBHs in the mass range [5, 30] M<SUB>\u2299</SUB>. For a 30\u250030 M<SUB>\u2299</SUB> BBH with eccentricity 0.5, the event rate is limited to less than 0.06 Gpc<SUP>\u22123</SUP> yr<SUP>\u22121</SUP>; this marks a 1 order of magnitude improvement for sensitive volume compared with the previous search with a minimally modeled algorithm without using templates."
+ },
+ {
+  "bibcode": "2025PhLB..87039951K",
+  "arxiv": "2408.05310",
+  "doi": "10.1016/j.physletb.2025.139951",
+  "pubdate": "2025-11-00",
+  "title": "A comparative study of the absorption cross section of static regular black holes for electromagnetic field",
+  "abstract": "In this article, we report our study on the absorption cross section for the electromagnetic field due to static spherically symmetric regular black holes of two distinct categories: the Fan-Wang generic class and the Simpson-Visser class. Existing studies on these two categories have relied on the WKB method, which applies to the low-frequency regime. In our analysis, we have numerically evaluated the absorption cross section for the electromagnetic field across all frequency ranges. To compute the absorption cross section, we followed a gauge-invariant approach, which avoids the need for gauge fixing for the electromagnetic field, thereby simplifying the methodology further. To emphasize the usefulness of this gauge invariant approach we have performed the same analysis for Simpson-Visser class black holes, which is more general in terms of the structure of the metric. For both types of regular black holes, the influence of regularization parameters on the absorption cross section reveals fundamental properties of their spacetime and their interactions with the surrounding astrophysical environment. Moreover, certain similarities observed between the Reissner-Nordstr\u00f6m black hole and regular black holes of the Fan-Wang generic class indicate potential scenarios of correspondence between linear and nonlinear electrodynamics when coupled with gravity."
+ },
+ {
+  "bibcode": "2025A&A...702A..20C",
+  "arxiv": "2505.23896",
+  "doi": "10.1051/0004-6361/202555582",
+  "pubdate": "2025-10-00",
+  "title": "Excess of substructure due to primordial black holes",
+  "abstract": "Context. In this paper we explore the impact of primordial black holes (PBHs) on the abundance of low mass haloes and subhaloes in the dark and low stellar mass regime, and examine how these effects can be measured through fluctuations in strong lensing and brightness fluctuations in clusters of galaxies, providing potential ways to constrain the fraction of dark matter in PBHs. Aims. Various dark matter candidates leave unique imprints on the low mass range of the halo mass function that can be challenging to detect. Among these are the hot and warm dark matter models that predict a reduced abundance of low mass structures compared to the cold dark matter with a cosmological constant (\u039bCDM) model. Models with PBHs also affect this mass range, but in the opposite direction, producing an increase in these low mass objects. By examining lensing perturbations in galaxy clusters, constraints can be placed on the low mass subhalo abundance and, therefore, on these different models for dark matter. We aim to provide predictions useful for this type of perturbations for the PBH case. Additionally, we examine the abundance of haloes and subhaloes in the range where the stellar mass to halo mass relation is steeply increases, which could be compared to brightness fluctuations in clusters of galaxies due to low mass satellites with low luminosities. Methods. We ran cosmological simulations using the SWIFT code, comparing a fiducial model with alternative inflationary models both with and without PBHs. Results. We find a significant excess of substructure in the presence of PBHs compared to the \u039bCDM model, without altering the abundance of high mass haloes at redshift zero. This increase is of up to a factor of six for extended PBH mass functions with an exponential cut-off at M<SUB>PBH</SUB> = 10<SUP>2</SUP> M<SUB>\u2299</SUB> in the range of parameter space where they could make up all of the dark matter. Similar increases are also produced when this fraction is smaller, even at sub-percent levels, for PBHs that show an exponential cut-off in their mass function at masses M<SUB>PBH</SUB> = 10<SUP>4</SUP> M<SUB>\u2299</SUB>."
+ },
+ {
+  "bibcode": "2025MNRAS.542.3346B",
+  "arxiv": "2505.14077",
+  "doi": "10.1093/mnras/staf1432",
+  "pubdate": "2025-10-00",
+  "title": "A Hubble constant estimation with dark standard sirens and galaxy cluster catalogues",
+  "abstract": "In this paper, we explore the possibility of using galaxy cluster catalogues to provide redshift support for a gravitational-wave dark standard siren measurement of the Hubble constant <inline-formula><tex-math>$H_0$</tex-math></inline-formula>. We adapt the cosmology inference pipeline gwcosmo to handle galaxy cluster catalogues. Together with binary black holes from the Third Gravitational-Wave Transient Catalogue (GWTC-3), we use galaxy cluster data from the Second Planck Catalogue of Sunyaev\u2500Zel'dovich Sources (PSZ2) and the eROSITA All Sky Survey (eRASS) catalogues. With these catalogues, we obtain <inline-formula><tex-math>$H_0 = 77^{+10}_{-10}$</tex-math></inline-formula> and <inline-formula><tex-math>$81^{+8}_{-8} \\, \\text{km} \\, \\text{s}^{-1} \\,\\text{Mpc}^{-1}$</tex-math></inline-formula>, respectively, which demonstrates improvements on precision by factors of 10 per cent and 38 per cent, respectively over the traditional galaxy catalogue result. This exploratory work paves the way towards precise and accurate cosmography making use of distant compact binary mergers from upcoming observing runs of the LIGO\u2500Virgo\u2500KAGRA detector network and future gravitational-wave observatories."
+ },
+ {
+  "bibcode": "2025MNRAS.543.1479W",
+  "arxiv": "2506.18977",
+  "doi": "10.1093/mnras/staf1458",
+  "pubdate": "2025-10-00",
+  "title": "Validating sequential Monte Carlo for gravitational-wave inference",
+  "abstract": "Nested sampling (NS) is the preferred stochastic sampling algorithm for gravitational-wave inference for compact binary coalescences. It can handle the complex nature of the gravitational-wave likelihood surface and provides an estimate of the Bayesian model evidence. However, there is another class of algorithms that meets the same requirements, but has not been used for gravitational-wave analyses: sequential Monte Carlo (SMC), an extension of importance sampling that maps samples from an initial density to a target density via a series of intermediate densities. In this work, we validate a type of SMC algorithm, called persistent sampling (PS), for gravitational-wave inference. We consider a range of different scenarios including binary black holes and binary neutron stars and real and simulated data and show that PS produces results that are consistent with NS whilst being, on average, 2 times more efficient and 2.74 times faster. This demonstrates that PS is a viable alternative to NS that should be considered for future gravitational-wave analyses."
+ },
+ {
+  "bibcode": "2025EPJC...85.1191K",
+  "arxiv": "2310.01548",
+  "doi": "10.1140/epjc/s10052-025-14891-7",
+  "pubdate": "2025-10-00",
+  "title": "Superradiant scattering of electromagnetic fields from ringing black holes",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2025ApJS..280...71P",
+  "arxiv": "2507.14827",
+  "doi": "10.3847/1538-4365/adfbea",
+  "pubdate": "2025-10-00",
+  "title": "Radio Afterglow Detection and AI-driven Response (RADAR): A Federated Framework for Gravitational-wave Event Follow-up",
+  "abstract": "The landmark detection of both gravitational waves (GWs) and electromagnetic (EM) radiation from the binary neutron star merger GW170817 has spurred efforts to streamline the follow-up of GW alerts in current and future observing runs of ground-based GW detectors. Within this context, the radio band of the EM spectrum presents unique challenges. Sensitive radio facilities capable of detecting the faint radio afterglow seen in GW170817, and with sufficient angular resolution, have small fields of view compared to typical GW localization areas. Additionally, theoretical models predict that the radio emission from binary neutron star mergers can evolve over weeks to years, necessitating long-term monitoring to probe the physics of the various postmerger ejecta components. These constraints, combined with limited radio observing resources, make the development of more coordinated follow-up strategies essential\u2014especially as the next generation of GW detectors promises a dramatic increase in detection rates. Here, we present RADAR, a framework designed to address these challenges by promoting community-driven information sharing, federated data analysis, and system resilience, while integrating AI methods for both GW signal identification and radio data aggregation. We show that it is possible to preserve data rights while sharing models that can help design and/or update follow-up strategies. We demonstrate our approach through a case study of GW170817, and discuss future directions for refinement and broader application."
+ },
+ {
+  "bibcode": "2025JHEP...10..128M",
+  "arxiv": "2507.02066",
+  "doi": "10.1007/JHEP10(2025)128",
+  "pubdate": "2025-10-00",
+  "title": "Effective field theory of perturbations on arbitrary black hole backgrounds with spacelike scalar profile",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2025EPJC...85.1109K",
+  "arxiv": "2501.16829",
+  "doi": "10.1140/epjc/s10052-025-14849-9",
+  "pubdate": "2025-10-00",
+  "title": "Multi-messenger and cosmological constraints on dark matter through two-fluid neutron star modeling",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2025CQGra..42t5008N",
+  "arxiv": "2507.03232",
+  "doi": "10.1088/1361-6382/ae1094",
+  "pubdate": "2025-10-00",
+  "title": "Inferring the neutron star equation of state with nuclear-physics informed semiparametric models",
+  "abstract": "Over the past decade, an abundance of information from neutron-star observations, nuclear experiments and theory has transformed our efforts to elucidate the properties of dense matter. However, at high densities relevant to the cores of neutron stars (NSs), substantial uncertainty about the dense matter equation of state (EoS) remains. In this work, we present a semiparametric EoS framework aimed at better integrating knowledge across these domains in astrophysical inference. We use a meta-model and realistic crust at low densities, and Gaussian process (GP) extensions at high densities. Comparisons between our semiparametric framework to fully nonparametric EoS representations show that imposing nuclear theoretical and experimental constraints through the meta-model up to nuclear saturation density results in constraints on the pressure up to twice nuclear saturation density. We also show that our GP trained on EoS models with nucleonic, hyperonic, and quark compositions extends the range of EoS explored at high density compared to a piecewise polytropic extension schema, under the requirements of causality of matter and of supporting the existence of heavy pulsars (PSRs). We find that maximum Tolman\u2500Oppenheimer\u2500Volkoff masses above <inline-formula> <mml:math><mml:mrow><mml:mn>3.2</mml:mn><mml:mstyle></mml:mstyle><mml:msub><mml:mrow><mml:mi>M</mml:mi></mml:mrow><mml:mrow><mml:mo>\u2299</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula> can be supported by causal EoS compatible with nuclear constraints at low densities. We then combine information from existing observations of heavy PSR masses, gravitational waves emitted from binary NS mergers, and x-ray pulse profile modeling of millisecond PSRs within a Bayesian inference scheme using our semiparametric EoS prior. With information from all public NS Interior Composition ExploRer PSRs (including PSR J0030+0451, PSR J0740+6620, PSR J0437\u25004715, and PSR J0614\u25003329), we find an astrophysically favored pressure at two times nuclear saturation density of <inline-formula> <mml:math><mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mn>2</mml:mn><mml:msub><mml:mi>\u03c1</mml:mi><mml:mrow><mml:mrow><mml:mi>nuc</mml:mi></mml:mrow></mml:mrow></mml:msub><mml:mo>)</mml:mo><mml:mo>=</mml:mo><mml:msubsup><mml:mn>1.98</mml:mn><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>1.08</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>2.13</mml:mn></mml:mrow></mml:msubsup><mml:mo>\u00d7</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mn>34</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math></inline-formula> dyn cm<SUP>\u22122</SUP>, a radius of a <inline-formula> <mml:math><mml:mrow><mml:mn>1.4</mml:mn><mml:mstyle></mml:mstyle><mml:msub><mml:mrow><mml:mi>M</mml:mi></mml:mrow><mml:mrow><mml:mo>\u2299</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula> NS value of <inline-formula> <mml:math><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mn>1.4</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msubsup><mml:mn>11.4</mml:mn><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>0.60</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>0.98</mml:mn></mml:mrow></mml:msubsup></mml:mrow></mml:math></inline-formula> km, and <inline-formula> <mml:math><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mrow><mml:mrow><mml:mi>max</mml:mi></mml:mrow></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msubsup><mml:mn>2.31</mml:mn><mml:mrow><mml:mo>\u2212</mml:mo><mml:mn>0.23</mml:mn></mml:mrow><mml:mrow><mml:mo>+</mml:mo><mml:mn>0.35</mml:mn></mml:mrow></mml:msubsup><mml:mstyle></mml:mstyle><mml:msub><mml:mrow><mml:mi>M</mml:mi></mml:mrow><mml:mrow><mml:mo>\u2299</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula> at the 90% credible level (C.L)."
+ },
+ {
+  "bibcode": "2025MNRAS.542..998L",
+  "arxiv": "2311.06416",
+  "doi": "10.1093/mnras/staf1259",
+  "pubdate": "2025-09-00",
+  "title": "TESLA-X: an effective method to search for subthreshold lensed gravitational waves with a targeted population model",
+  "abstract": "Strong gravitational lensing can produce copies of gravitational-wave signals from the same source with the same waveform morphologies but different amplitudes and arrival times. Some of these strongly lensed gravitational-wave signals can be demagnified and become subthreshold. We present TESLA-X, an enhanced approach to the original GstLAL-based TargetEd Subthreshold Lensing seArch (TESLA) method, for improving the detection efficiency of these potential subthreshold lensed signals. TESLA-X utilizes lensed injections to generate a targeted population model and a targeted template bank. We compare the performance of a full template bank search, TESLA, and TESLA-X methods via a simulation campaign, and demonstrate the performance of TESLA-X in recovering lensed injections, particularly targeting a mock event. Our results show that the TESLA-X method achieves a maximum of <inline-formula><tex-math>$\\sim 10\\%$</tex-math></inline-formula> higher search sensitivity compared to the TESLA method within the subthreshold regime, presenting a step towards detecting the first lensed gravitational wave. TESLA-X will be employed for the LIGO\u2500Virgo\u2500KAGRA's collaboration-wide analysis to search for lensing signatures in gravitational waves in the fourth observing run."
+ },
+ {
+  "bibcode": "2025ApJ...990..211S",
+  "arxiv": "2403.05625",
+  "doi": "10.3847/1538-4357/ad9f3d",
+  "pubdate": "2025-09-00",
+  "title": "Gravitational-wave Phase Shifts in Eccentric Black Hole Mergers as a Probe of Dynamical Formation Environments",
+  "abstract": "We here quantify the gravitational-wave (GW) phase shift appearing in the waveform of eccentric binary black hole (BBH) mergers formed dynamically in 3-body systems. For this, we have developed a novel numerical method where we construct a reference binary, by evolving the post-Newtonian (<inline-formula> <mml:math><mml:mi>P</mml:mi><mml:mi>N</mml:mi></mml:math> </inline-formula>) evolution equations backwards from a point near merger without the inclusion of the third object, that can be compared to the perturbed binary that evolves under the influence from the third BH. From this, we quantify how the interplay between dynamical tides, <inline-formula> <mml:math><mml:mi>P</mml:mi><mml:mi>N</mml:mi></mml:math> </inline-formula>-effects, and the time-dependent Doppler shift of the eccentric GW source results in unique observable GW phase shifts that can be used to probe the dynamical assembly mechanism of individual GW sources. We further find an analytical expression for the GW phase shift, which has a universal functional form that only depends on the time-evolving BBH eccentricity. The normalization scales with the BH masses and initial separation, which can be linked to the underlying astrophysical environment. GW phase shifts from a chaotic 3-body BH scattering taking place in a cluster, and from a BBH inspiraling in a disk migration trap near a supermassive BH, are also shown for illustration."
+ }
+]

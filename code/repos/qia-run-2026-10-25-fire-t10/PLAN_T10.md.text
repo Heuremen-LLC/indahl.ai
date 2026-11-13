@@ -1,0 +1,15 @@
+# Free calibration run (Kumar fill): arXiv 2510.17692 (N. P. Nedev, N. V. Vitanov, Sofia University; no funder named) -- committed before any job
+Their reading (ibm_torino, one qubit, one session, Ramsey readout): free T2* 238.3 us, XY4 274.0, CPMG 312.6, UR10 318.4, T10 344.6 us; T10 - CPMG = +32.0 us.
+Book row: CLEAN (25 Oct). Sequences built from their text and Table I (t10.py); every sequence is the identity in the ideal limit (checked: P1 = 1).
+New hotness applied, in their sequences, one fez job (torino is not on our list):
+  LAYOUT  four qubits fixed by rule before the job (qubits_chosen.json: best, 25th, 50th, 75th percentile of record T2 among 140 qubits with readout < 5%,
+          pairwise distance >= 3): 3 (record T2 255 us), 92 (128), 117 (94), 70 (52). All four carry the same sequence in one circuit.
+  Their ranking priced: dT = T(T10) - T(CPMG) per qubit, four outcomes; chi2 of dT across the four (dof 3): ABOVE = the T10 margin depends on the qubit;
+          POOLED weighted mean dT (read only if LAYOUT is CONSISTENT) beside their +32; RANK: on how many qubits T10 > CPMG > free with both gaps resolved.
+  DRIFT   job B (T10, CPMG) as soon as job A returns. RECORD: props_before.json.
+  Free, CPMG and T10 interleaved by delay in job A; delays 0-600 us (8 points), 4,000 shots, opt 0, no runtime DD or twirling.
+Fit: P1(t) = 0.5 + A exp(-t/T) per qubit and arm (weighted). Their free-evolution fit may include an oscillation; ours does not, so 'free' is descriptive.
+KNOWN-GOOD: the T10 set runs twice in job A (copies a, b); T must agree within 2.58 sd on every qubit, or the run is NOT DECIDED.
+Synthetic: synth_results_t10.text (same, theirs-everywhere, qubit-dependent, broken copies, drift). Floors over 100 nulls: LAYOUT ABOVE 6/100; KG false
+fail 6/100 (four copy tests). Power: their +32 us resolves per qubit on about 2 of 4 in the planted world; the pooled reading has ~8 us width.
+Units: qubits (4). Budget: cap 300 s, reserve 300 s, remaining 1,857 s at plan time. Chip: ibm_fez.

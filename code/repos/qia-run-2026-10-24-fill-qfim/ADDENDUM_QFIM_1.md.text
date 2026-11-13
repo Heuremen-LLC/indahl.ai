@@ -1,0 +1,4 @@
+# ADDENDUM 1 -- before any job (2026-10-24T03:40Z). Found by /q check 16 (the floor) at Bones' review.
+R1's null band widened from the 2.5-97.5 to the 0.5-99.5 percentile of the shot-noise null: in the NEITHER world R1 had made 6 false calls in 40.
+After the change (synth_results_qfim.text, 40 runs per world): R1 NEITHER 39/40 correct (1 BELOW); every drift/effect world still 40/40 ABOVE; all 8 worlds PASS.
+Floors carried into the result as measured, not hidden: in NEITHER, R2 STEP 36/40, R3 SLOT 38/40, R4 38/40 correct. R2 is reported beside this 10 % floor.

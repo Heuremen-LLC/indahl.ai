@@ -1,0 +1,11 @@
+# Free calibration fill (Kumar): Zenodo 10.5281/zenodo.23122648, Independent Researcher, Yaounde, Cameroon (RATISS Labs) -- committed before any job
+Their record (artifacts/ktn_phase5_qpu.json @ cb0e00a): woven arm ibm_fez job da81b5m0ukec7383sf20, score 0.1823; aligned arm job 'dcc12f86-2895-42a4-9fbd-3f0fb6b6810b'
+(a UUID, the form a local simulator returns; no backend field), score -0.0778; 'hardware' contrast 0.2601. Their preprint text: '+0.34 on real hardware' (0.3362 = exact).
+ZERO-QPU KNOWN-GOOD (done, known_good_ktn.text): their exact references rebuild through their vendored metric: woven 0.266865, aligned -0.069315, contrast 0.336180.
+This run, one fez job, their circuits (initialize woven / X X aligned, Z/XX/YY, post-selection on Z as theirs) and metric verbatim, 4096 shots:
+  default_a, default_b: their compile (opt 1, no layout) -- compiled, woven lands on [21-24] and aligned on [0-3]: their arms sit on different qubits by default;
+  best [143-146], q50 [87-90], q75 [60,61,76,81]: rule-chosen 4-qubit chains (record worst-CZ + worst-readout; best / median / 75th pct), both arms pinned together.
+Readings: woven, aligned and contrast per arm; range across arms; whether their 0.2601 and their 0.34 headline sit inside the hardware range; default copy gap.
+KNOWN-GOOD: (hardware) the aligned |0011> raw Z diagonal reads within 0.06 of [1,1,0,0] in every arm.
+Synthetic: synth_results_ktn.text (noiseless ~0.33 +/- 0.01 across arms; 2% readout keeps ~0.32-0.34; 10% readout fails KG). Budget: cap 60 s; reserve 300 s.
+The question for the author: on real hardware, with both arms really on hardware and in one session, what is the contrast, and how much of it is layout?

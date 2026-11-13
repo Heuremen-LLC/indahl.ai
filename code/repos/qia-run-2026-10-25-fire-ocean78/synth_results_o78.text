@@ -1,0 +1,5 @@
+STANDARD physics (no g1)                             collapsed slope -0.00020 CONSISTENT | real slope +0.0145 model +0.0150 residual BELOW | KG 0.502 True -> FAIL
+G1 = +0.003 in the real idle                         collapsed slope -0.00027 CONSISTENT | real slope +0.0180 model +0.0150 residual ABOVE | KG 0.499 True -> PASS
+COLLAPSED shows their 0.001 (impossible if identical) collapsed slope +0.00105 ABOVE | real slope +0.0152 model +0.0150 residual CONSISTENT | KG 0.500 True -> PASS
+BROKEN decoder (KG reads 0.3)                        collapsed slope +0.00002 CONSISTENT | real slope +0.0152 model +0.0150 residual CONSISTENT | KG 0.301 False -> PASS
+FLOOR: standard world, 60 draws, residual resolves 1 (first STANDARD draw above resolved at ~2.3 sigma: a floor hit, kept, not reseeded)

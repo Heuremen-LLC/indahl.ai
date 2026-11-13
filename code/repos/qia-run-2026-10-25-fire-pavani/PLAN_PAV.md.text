@@ -1,0 +1,18 @@
+# Free calibration run (Kumar fill): Zenodo 10.5281/zenodo.21206538, Roberto Pavani -- "When does MWI branching occur?" -- committed before any job
+Their number: P(detector = 1) = 12.5% (Born) vs 50% (equal branch counting), 4,096 shots on ibm_brisbane (now retired). Their Results table is the
+expectation (~512 of 4,096) under "to be filled after execution"; no measured count is printed. Book row: GAP (25 Oct).
+Circuit: built from their description (supplementary code not in the record): H on q0-3, CX q0->q1,q2,q3, 3-control X (ctrl 000) onto q4, measure q4 only.
+Ideal P(1) = 0.125 (statevector), and every compiled arm below simulates to 0.125 exactly (checked before the job).
+New hotness applied (our findings, priced in their circuit, same session):
+  LAYOUT  as a carrier: the same circuit on four 5-qubit paths fixed by rule before the job (layouts_chosen.json: best, 25th, 50th, 75th percentile of
+          record worst-CZ + worst-readout over 402 scored paths, disjoint), all in ONE fez job, opt 1.
+  COMPILE the best path at opt 0 and opt 3 beside opt 1 (opt 0: depth 156, 41 CZ, measures physical 144; opt 1: depth 121, 41 CZ, measures 143;
+          opt 3: depth 91, 29 CZ, measures 143). Known differences listed: depth, CZ count, and for opt 0 the measured physical qubit.
+  DRIFT   job B (best path, opt 1) submitted as soon as job A returns: job-to-job gap vs the two in-job copies.
+  RECORD  props_before.json at submission; delivered P(1) beside their 0.125.
+Readings: each arm P(1) vs 0.125 (ABOVE / BELOW / CONSISTENT at 1.96 se) and z vs 0.5; LAYOUT weighted chi2 over best_a, q25, q50, q75 (dof 3):
+ABOVE if p < 0.05, else CONSISTENT with the range as a bound; COMPILE and DRIFT differences with both widths, four outcomes.
+KNOWN-GOOD: best_a and best_b are the identical circuit on the identical path in one job; they must agree within 2.58 sd of shot noise. If not, the run is NOT DECIDED.
+Synthetic: synth_results_pav.text (ideal, flat-noisy, layout, compile, drift, broken copies, both). Floors over 200 null worlds: LAYOUT ABOVE 7/200 = 3.5%;
+KG false fail 0/200. Single planted draws also show stray ABOVE/BELOW at about that rate: one reading at 5% is not a finding.
+Units: shots within an arm; layouts (4) for the layout test (D22). Budget: cap 40 s, reserve 300 s, remaining 2,088 s at plan time. Chip: ibm_fez.

@@ -1,0 +1,7 @@
+hpt: gate passed
+hpt: reread steps 2 and 3, 100
+hpt: reread steps 2 and 3, 200
+hpt: reread steps 2 and 3, 300
+hpt: reread steps 2 and 3, 400
+hpt: reread steps 2 and 3, 500
+hpt: 1921 domains; {'NOT_COMPARABLE': 893, 'DISAGREE': 517, 'AGREE': 511} {'NOT_RUN': 1410, 'AGREE': 487, 'DISAGREE': 13, 'NOT_COMPARABLE': 11} {'NOT_RUN': 1434, 'NOT_COMPARABLE': 158, 'AGREE': 327, 'DISAGREE': 2} published

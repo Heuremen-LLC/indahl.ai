@@ -1,0 +1,916 @@
+{
+  "variables": {
+    "B_TOTUS_COL4_R12A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R13A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R14A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R10A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R11A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R10A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R14A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R13A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R12A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R11A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R5A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R12A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R6A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R11A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R3A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R10A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R4A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R9A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R7A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R8A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R1A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R11": {
+      "label": "Percent!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R10": {
+      "label": "Percent!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R13": {
+      "label": "Percent!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R12": {
+      "label": "Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R14": {
+      "label": "Percent!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R2A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R9": {
+      "label": "Estimate!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R4": {
+      "label": "Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R3": {
+      "label": "Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R2": {
+      "label": "Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R1": {
+      "label": "Estimate!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R8": {
+      "label": "Estimate!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R7": {
+      "label": "Estimate!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R6": {
+      "label": "Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R5": {
+      "label": "Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R14A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R13A": {
+      "label": "Annotation of Percent!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R9A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R7A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R8A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R1": {
+      "label": "Standard Error!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R5": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R4": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R3": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R2": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R9": {
+      "label": "Standard Error!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R8": {
+      "label": "Standard Error!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R7": {
+      "label": "Standard Error!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R6": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R1A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R14": {
+      "label": "Standard Error!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R13": {
+      "label": "Standard Error!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R12": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R11": {
+      "label": "Standard Error!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R10": {
+      "label": "Standard Error!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R2A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R5A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R6A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R3A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R4A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R2A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R1A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R14": {
+      "label": "Estimate!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R11": {
+      "label": "Estimate!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R10": {
+      "label": "Estimate!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R13": {
+      "label": "Estimate!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R12": {
+      "label": "Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R4A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R3A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R6A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R5A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R8A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R7A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL1_R9A": {
+      "label": "Annotation of Estimate!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R12": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R11": {
+      "label": "Standard Error!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R10": {
+      "label": "Standard Error!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R14": {
+      "label": "Standard Error!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R13": {
+      "label": "Standard Error!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "int",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R1A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R2A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R5A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R6A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R3A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R4A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R11A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Estimate of Population from the Post-Enumeration Survey<sup>5</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R9A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R10A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Whole-Person Census Imputations<sup>4</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R13A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Omissions<sup>6</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R7A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R12A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R8A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL2_R14A": {
+      "label": "Annotation of Standard Error!!Components of Coverage!!Net Coverage Error <sup>7</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "NAME": {
+      "label": "Geographic Area Name",
+      "concept": "Net Coverage Error for the Puerto Rico Household Population;Net Coverage Error for the United States Household Population;Components of Coverage for the Puerto Rico Household Population;Components of Coverage for the United States Household Popluation (in Thousands);Net Coverage Error for the Household Population in Puerto Rico by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Age and Sex;Net Coverage Error for the Household Population in the United States by Age and Sex;Net Coverage Error for the Household Population in the United States by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Net Coverage Error for the Household Population in the United States by Race and Hispanic Origin;Net Coverage Error for the Household Population in the United States by Census Tract Self-Response Rate;Net Coverage Error for the Household Population in Puerto Rico by Sex;Net Coverage Error for the Household Population in the United States by Sex;Net Coverage Error for the Household Population in the United States by Type of Enumeration Area;Net Coverage Error for the Household Population in Puerto Rico by Tenure;Net Coverage Error for the Household Population in the United States by Tenure;Components of Coverage for the Household Population in Puerto Rico by Age;Components of Coverage for the Household Population in Puerto Rico by Age and Sex;Components of Coverage for the Household Population in the United States by Age and Sex;Components of Coverage for the Household Population in the United States by Age;Components of Coverage for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Components of Census Coverage for the Household Population in the United States by Mode;Components of Census Coverage for the Household Population in the United States by Non-ID;Components of Coverage for the Household Population in the United States by Race and Hispanic Origin;Components of Census Coverage for the Household Population in the United States by Relationship to Householder;Components of Coverage for the Household Population in the United States by Census Tract Self-Response Rate;Components of Coverage for the Household Population in Puerto Rico by Sex;Components of Coverage for the Household Population in the United States by Sex;Components of Coverage for the Household Population in the United States by Type of Enumeration Area;Components of Coverage for the Household Population in Puerto Rico by Tenure;Components of Coverage for the Household Population in the United States by Tenure;Net Coverage Error for the Household Population in the United States by Census Region: 2020;Components of Coverage for the Household Population in the United States by Census Region;Net Coverage Error for the Household Population in the United States by States: 2020;Net Coverage Error for Housing Units in Puerto Rico by Occupancy;Net Coverage Error for Housing Units in the United States by Occupancy;Components of Coverage for Housing Units in Puerto Rico;Components of Coverage for Housing Units in the United States;Net Coverage Error for Housing Units in the United States by American Indian Area;Net Coverage Error for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Net Coverage Error for Housing Units in Puerto Rico by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure;Net Coverage Error for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by American Indian Area;Components of Coverage for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Components of Coverage for Housing Units in Puerto Rico by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure;Components of Coverage for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Census Region;Net Coverage Error for Housing Units in the United States by Census Region, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Census Region;Components of Coverage for Housing Units in the United States by Census Region, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by State and Occupancy;Components of Coverage for Housing Units in the United States by State;Components of Coverage for the Household Population by State;Puerto Rico Whole-Person Imputations By Type;United States Whole-Person Imputations by Type;Components of Census Coverage for the Household Population in the United States by Coverage Improvement Operation;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Universe;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Respondent Type",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R1": {
+      "label": "Percent!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R2": {
+      "label": "Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R7": {
+      "label": "Percent!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R8": {
+      "label": "Percent!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R9": {
+      "label": "Percent!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R3": {
+      "label": "Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R4": {
+      "label": "Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R5": {
+      "label": "Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL3_R6": {
+      "label": "Percent!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R1": {
+      "label": "Standard Error!!Components of Coverage!!Census Count",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R2": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R3": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same basic collection unit<sup>2</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R8": {
+      "label": "Standard Error!!Components of Coverage!!Erroneous enumerations!!Due to duplication",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R9": {
+      "label": "Standard Error!!Components of Coverage!!Erroneous enumerations!!For other reasons<sup>3</sup>",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R4": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same county, though in a different basic collection unit",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R5": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in the same state, though in a different county",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R6": {
+      "label": "Standard Error!!Components of Coverage!!Correct enumerations<sup>1</sup>!!Enumerated in a different state",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "B_TOTUS_COL4_R7": {
+      "label": "Standard Error!!Components of Coverage!!Erroneous enumerations",
+      "concept": "Components of Coverage for the United States Household Popluation (in Thousands)",
+      "predicateType": "float",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "GEO_ID": {
+      "label": "Geography",
+      "concept": "Net Coverage Error for the Puerto Rico Household Population;Net Coverage Error for the United States Household Population;Components of Coverage for the Puerto Rico Household Population;Components of Coverage for the United States Household Popluation (in Thousands);Net Coverage Error for the Household Population in Puerto Rico by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Age and Sex;Net Coverage Error for the Household Population in the United States by Age and Sex;Net Coverage Error for the Household Population in the United States by Age Group;Net Coverage Error for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Net Coverage Error for the Household Population in the United States by Race and Hispanic Origin;Net Coverage Error for the Household Population in the United States by Census Tract Self-Response Rate;Net Coverage Error for the Household Population in Puerto Rico by Sex;Net Coverage Error for the Household Population in the United States by Sex;Net Coverage Error for the Household Population in the United States by Type of Enumeration Area;Net Coverage Error for the Household Population in Puerto Rico by Tenure;Net Coverage Error for the Household Population in the United States by Tenure;Components of Coverage for the Household Population in Puerto Rico by Age;Components of Coverage for the Household Population in Puerto Rico by Age and Sex;Components of Coverage for the Household Population in the United States by Age and Sex;Components of Coverage for the Household Population in the United States by Age;Components of Coverage for the Household Population in Puerto Rico by Combined Statistical Area (CSA);Components of Census Coverage for the Household Population in the United States by Mode;Components of Census Coverage for the Household Population in the United States by Non-ID;Components of Coverage for the Household Population in the United States by Race and Hispanic Origin;Components of Census Coverage for the Household Population in the United States by Relationship to Householder;Components of Coverage for the Household Population in the United States by Census Tract Self-Response Rate;Components of Coverage for the Household Population in Puerto Rico by Sex;Components of Coverage for the Household Population in the United States by Sex;Components of Coverage for the Household Population in the United States by Type of Enumeration Area;Components of Coverage for the Household Population in Puerto Rico by Tenure;Components of Coverage for the Household Population in the United States by Tenure;Net Coverage Error for the Household Population in the United States by Census Region: 2020;Components of Coverage for the Household Population in the United States by Census Region;Net Coverage Error for the Household Population in the United States by States: 2020;Net Coverage Error for Housing Units in Puerto Rico by Occupancy;Net Coverage Error for Housing Units in the United States by Occupancy;Components of Coverage for Housing Units in Puerto Rico;Components of Coverage for Housing Units in the United States;Net Coverage Error for Housing Units in the United States by American Indian Area;Net Coverage Error for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Net Coverage Error for Housing Units in Puerto Rico by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Occupancy and Tenure;Net Coverage Error for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Type of Structure;Net Coverage Error for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by American Indian Area;Components of Coverage for Housing Units in Puerto Rico by Combined Statistical Area (CSA), Occupancy, and Tenure;Components of Coverage for Housing Units in Puerto Rico by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Occupancy and Tenure;Components of Coverage for Housing Units in the United States by Race and Hispanic Origin of the Householder and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Type of Structure;Components of Coverage for Housing Units in the United States by Type of Enumeration Area, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by Census Region;Net Coverage Error for Housing Units in the United States by Census Region, Occupancy, and Tenure;Components of Coverage for Housing Units in the United States by Census Region;Components of Coverage for Housing Units in the United States by Census Region, Occupancy, and Tenure;Net Coverage Error for Housing Units in the United States by State and Occupancy;Components of Coverage for Housing Units in the United States by State;Components of Coverage for the Household Population by State;Puerto Rico Whole-Person Imputations By Type;United States Whole-Person Imputations by Type;Components of Census Coverage for the Household Population in the United States by Coverage Improvement Operation;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Universe;Components of Census Coverage for the Household Population in the United States by Nonresponse Followup (NRFU) Respondent Type",
+      "predicateType": "string",
+      "group": "B_TOTUS",
+      "limit": 0,
+      "predicateOnly": true
+    }
+  }
+}

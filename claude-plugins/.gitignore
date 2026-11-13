@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+heuremen_report/
+.DS_Store

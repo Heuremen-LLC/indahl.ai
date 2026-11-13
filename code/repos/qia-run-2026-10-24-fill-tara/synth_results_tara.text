@@ -1,0 +1,6 @@
+NULL      R1 {'CONSISTENT': 392, 'CANNOT_TELL': 8}  R2 {'ABOVE': 400}  planted->CONSISTENT rate 0.980
+ABOVE     R1 {'ABOVE': 398, 'CANNOT_TELL': 2}  R2 {'ABOVE': 400}  planted->ABOVE rate 0.995
+BELOW     R1 {'BELOW': 394, 'CANNOT_TELL': 6}  R2 {'ABOVE': 400}  planted->BELOW rate 0.985
+NEAR      R1 {'CONSISTENT': 392, 'CANNOT_TELL': 7, 'ABOVE': 1}  R2 {'ABOVE': 400}  planted->CONSISTENT rate 0.980
+VAR       R1 {'CANNOT_TELL': 299, 'CONSISTENT': 94, 'BELOW': 5, 'ABOVE': 2}  R2 {'ABOVE': 400}  planted->CANNOT_TELL rate 0.748
+CLASSICAL R1 {'BELOW': 394, 'CANNOT_TELL': 6}  R2 {'BELOW': 400}  planted->None rate nan

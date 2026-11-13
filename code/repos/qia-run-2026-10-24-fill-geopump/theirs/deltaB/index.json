@@ -1,0 +1,80 @@
+[
+ {
+  "delta_B": 0.0,
+  "tau": 60.0,
+  "job_id": "dao8a0o2fm4c73f52t3g",
+  "file": "dB+0.000_dao8a0o2fm4c73f52t3g.npz",
+  "backend": "ibm_kingston",
+  "layout_S_aL_aR": [
+   47,
+   48,
+   46
+  ],
+  "note": ""
+ },
+ {
+  "delta_B": 0.45,
+  "tau": 60.0,
+  "job_id": "dao8em0pqrnc7399kku0",
+  "file": "dB+0.450_dao8em0pqrnc7399kku0.npz",
+  "backend": "ibm_kingston",
+  "layout_S_aL_aR": [
+   47,
+   48,
+   46
+  ],
+  "note": ""
+ },
+ {
+  "delta_B": 0.55,
+  "tau": 60.0,
+  "job_id": "dao9epv8gn2s739ni2eg",
+  "file": "dB+0.550_dao9epv8gn2s739ni2eg.npz",
+  "backend": "ibm_kingston",
+  "layout_S_aL_aR": [
+   47,
+   48,
+   46
+  ],
+  "note": ""
+ },
+ {
+  "delta_B": 0.0,
+  "tau": 60.0,
+  "job_id": "da8om7ce74ec73aitgn0",
+  "file": "dB+0.000_da8om7ce74ec73aitgn0.npz",
+  "backend": "ibm_kingston",
+  "note": "theta0 and delta_theta entered as 0.7854 and 0.6981 (four decimals)",
+  "layout_S_aL_aR": [
+   47,
+   48,
+   46
+  ]
+ },
+ {
+  "delta_B": 0.225,
+  "tau": 60.0,
+  "job_id": "da8oq94e74ec73aitko0",
+  "file": "dB+0.225_da8oq94e74ec73aitko0.npz",
+  "backend": "ibm_kingston",
+  "note": "theta0 and delta_theta entered as 0.7854 and 0.6981 (four decimals)",
+  "layout_S_aL_aR": [
+   47,
+   48,
+   46
+  ]
+ },
+ {
+  "delta_B": 0.45,
+  "tau": 60.0,
+  "job_id": "da8om01qtnsc73d0nrqg",
+  "file": "dB+0.450_da8om01qtnsc73d0nrqg.npz",
+  "backend": "ibm_kingston",
+  "note": "theta0 and delta_theta entered as 0.7854 and 0.6981 (four decimals)",
+  "layout_S_aL_aR": [
+   47,
+   48,
+   46
+  ]
+ }
+]

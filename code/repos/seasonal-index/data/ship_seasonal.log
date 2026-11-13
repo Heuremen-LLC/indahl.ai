@@ -1,0 +1,71 @@
+site_lock: waiting for the lock (SOLAR desk pack (pid 65377) since 11:21:19, via site_lock.py)
+site_lock: held after 690s as "SEASONAL desk (forecaster desks agent)"
+  patched indahl-ai/build_site.py
+  patched cloudflare-workers/heuremen-door/worker.js
+  patched watch/headlines.py
+  patched ledger/receipts.py
+  patched ledger/push_public.sh
+  unchanged ledger/ledger.py
+done seasonal
+  patched watch/tick_bus.py
+  tick_bus compile ok
+  patched ledger/live_headlines.py
+  patched tools/desk_pack.py
+seasonal: seasonal_live published
+seasonal: gates {'format': True, 'orientation': True, 'alignment': True, 'rule': True} seasons 380 pending {'temp': 3, 'prec': 3} unreadable {'temp': 0, 'prec': 0}
+seasonal.html 15107
+headlines: 33 pages published
+== 1 BUILD
+  faults: up to date
+  guards: up to date
+  paper: up to date
+  paper source: synced to the public repo
+  bill: up to date
+oy school pages 389
+iris study pages 9
+study pages 197
+brands: 313 brand pages and the index
+alerts: sign-up box on 28 desk pages and 241 brand pages, /alerts built
+  forecasters feeds: cone fresh, fedsep fresh, flu fresh, forecast fresh, neo fresh, predictions fresh, quake fresh, revise fresh, seasonal none, solar fresh, steo fresh, tornado fresh, water fresh
+forecasters: 58 rows from FEDSEP, FLU, FORECAST, NEO, NOW, REVISE, STEO, WATER, held CONE, QUAKE, SEASONAL, SOLAR, TORNADO
+findable: 39 desk pages with data links or embed, 28 change feeds
+receipts: 2623 of 2623 live snippets on indahl.ai pages carry a receipt link (3186 links on 129 pages, 0 sit only where a link cannot go, 0 not found on their page, 113 share one spot and link to their desk receipts)
+built 1078 pages + style.css + pages.js
+receipts: 3322 rows, 61 index pages, 33 written, 0 stale files removed
+== 2 COPY
+copies: 124 files in 63 sets; drift: 0
+== 3 GATES
+ledger: 3322 rows (3271 live, 28 live headlines read against their feeds); drift: 0
+copies: 124 files in 63 sets; drift: 0
+site gate: 126 pages, 1151 served files read for wording; breaches: 0
+source gate: 197 rows, 0 fail
+receipts gate: 3322 ledger rows, 3085 receipt links on served pages; breaches: 0
+jsonld gate: 1079 pages, 370 datasets; breaches: 0
+corrections gate: ok, every row links to a real file or commit
+BRANDS GATE: every brand-page number traces to a desk row or a ledger row (1690 rows, 313 pages)
+FORECASTERS GATE: every number on /forecasters traces to a desk feed or a ledger row (58 rows from FEDSEP, FLU, FORECAST, NEO, NOW, REVISE, STEO, WATER)
+email gate: 5047 files read, 0 addresses found
+== 4 COMMIT
+  heuremen.org: nothing to commit
+ledger: 3322 rows (3271 live, 28 live headlines read against their feeds); drift: 0
+  indahl-ai: b06f0fa51 SEASONAL desk: NOAA CPC 3-month outlook chances against the observed tercile, with a recompute of the CPC Heidke score, beside FORECAST under HERMES
+== 5 DEPLOY
+
+  heuremen.org pushed
+✨ Success! Uploaded 48 files (4293 already uploaded) (2.25 sec)
+Uploaded heuremen-door (12.84 sec)
+No targets deployed for heuremen-door (0.68 sec)
+  stamps: manifest 5070 files, sha256 9bdcd38adb73e7b5
+== 5b PUBLIC REPOS
+  public: site pages mirrored (local build = deployed build 51139883453b4eca)
+  public desks: 14 file(s) re-synced from the working folders
+  public indahl.ai: c15b3739f SEASONAL desk: NOAA CPC 3-month outlook chances against the observed tercile, with a recompute of the CPC Heidke score, beside FORECAST under HERMES
+  public heuremen.org: current
+== 5c INDEXNOW
+indexnow: sent 1104 urls, status 200
+== 6 VERIFY
+live drift: 0
+== 7 STAMPS
+  stamps: release c15b3739fe4b manifest 9bdcd38adb73e7b5 file 406b9d743b79fd19 changed 815 removed 0 ots pending queued 804
+  stamps: wayback: started in the background (log ledger/stamps/wayback_run.log)
+site_lock: released, command exit 0

@@ -1,0 +1,29 @@
+# RESULT -- Tehran teleportation fill (Zenodo 23634581), ibm_kingston, 25 Oct 2026
+Jobs: A dbesdm7pc3tc739ma9c0 (ran 09:07:38-09:10:57 UTC, 152 s), B dbesf8vsstms73fcm9i0 (ran 09:11:01-09:12:27 UTC, 45 s). Plan commit 4a23689, before both.
+KNOWN-GOOD: their-chain native product_HT in-block 0.8556 vs identical copy at end of job A 0.8664: diff +0.0108 +- 0.0085, z 1.28 < 2.58. PASSED.
+
+## Their number, priced
+THEIRS (one job, their chain 21-36-41-42-43-44, their 4 Oct correction fixed): f = 1.045 +- 0.060 (product_HT), 1.043 +- 0.025 (bell_30_70).
+  f - 1: +0.045 [-0.073, +0.164] CONSISTENT; +0.043 [-0.006, +0.092] CONSISTENT. Their claim f = 1 holds on their chain within one job (a bound).
+DRIFT (job B - job A, their chain, about 3.5 min apart; theirs were 26 min apart):
+  native F +0.0242 [+0.0069, +0.0415] ABOVE (product_HT); +0.0263 [+0.0122, +0.0403] ABOVE (bell_30_70).
+  N1none +0.010 / +0.013, N1corr +0.015 / +0.004: CONSISTENT (bounds).
+  Their construction across jobs moves f by +0.094 (product_HT, 0.83 of their interval half-width) and +0.012 (bell_30_70, 0.28 of it).
+LAYOUT (one job, three disjoint chains: theirs, best by record 147-152, median by record 32-33-34-35-19-15):
+  f: 1.045 / 0.883 / 0.856 (product_HT, chi2 6.6 dof 2, p 0.037, ABOVE); 1.043 / 0.941 / 0.890 (bell_30_70, chi2 16.6, p 0.00025, ABOVE).
+  native F: 0.856 / 0.843 / 0.823 (chi2 13.0, p 0.0015, ABOVE); 0.829 / 0.781 / 0.765 (chi2 72, ABOVE).
+  The synth null floor for a layout ABOVE was 3/30 (product_HT) and 1-2/30 (bell_30_70); the product_HT f reading (p 0.037) sits near that floor, the bell one does not.
+  f cancels a pure depolarising difference by construction (synth LAYOUT world), so the f spread rules out "the chains differ only by depolarising noise".
+FINGER (TOMO-9, nearest-rotation angle, rad; null floor 0.050 / 0.054):
+  leg q2: 0.406 +- 0.016 (theirs) / 0.185 +- 0.020 (best) / 0.300 +- 0.019 (q50): all resolved; chi2 72.9, ABOVE -- the q2-leg rotation rides the chain.
+  leg q3: 0.092 +- 0.017 / 0.124 +- 0.017 / 0.123 +- 0.019: all resolved; chi2 2.1, p 0.34, CONSISTENT -- range 0.032 rad is a bound; the q3-leg rotation
+  is the same on three disjoint chains, which rules out that it belongs to their particular qubits.
+  Their chain today vs their 4 Oct 0.108 / 0.159: cross-day and cross-compile, labelled, not a reading.
+
+## Defined after the data (post-hoc, labelled)
+- The record ranks their chain 649 of 968 and the rule's best chain rank 0, yet their chain delivered the highest native F and f of the three.
+- Read together: their correction recovers the whole injected loss on the chain it was learned on and 86-94 % of it on the other two chains.
+
+## Four outcomes, in one line each
+Their f = 1: CONSISTENT on their chain in one job. Job-to-job step: native F ABOVE at 3.5 min, enough to move their cross-job f by 0.83 of its half-width (product_HT).
+Layout: ABOVE for f and native F. Device fingerprint: q2 leg layout-carried (ABOVE), q3 leg not (CONSISTENT).

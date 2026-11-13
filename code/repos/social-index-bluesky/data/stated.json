@@ -1,0 +1,66 @@
+{
+ "source": "Bluesky 2025 Transparency Report, published by Bluesky on 29 January 2026",
+ "fetched": "2026-11-10 UTC",
+ "files": [
+  "data/source/bsky_2025_report_20261110.html",
+  "data/source/bsky_2025_overview_20261110.html"
+ ],
+ "quotes": {
+  "labels_total": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "In 2025, Bluesky applied 16.49M labels across both accounts and individual pieces of content — a 200% increase from 2024's 5.5M labels."
+  },
+  "labels_total_overview": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-overview",
+   "quote": "We maintained 24/7 moderation coverage, reviewed 9.97 million user reports, applied 16.49 million labels, and removed 2.45 million pieces of violating content."
+  },
+  "top_labels_table": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "Top Labels Label Category Total Applied % Applied Manually adult 10.79M 1% suggestive 3.42M 3% spam 761.77K 1% nudity 389.44K 18% needs-review 370.14K 0% rude 295.38K 100% sexual-figurative 152.58K 0% graphic-media 127.46K 3% !hide 68.26K 2% intolerant 60.20K 100% self-harm 20.92K 8% threat 15.86K 100%"
+  },
+  "adult_detection": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "While automation handles high-confidence signals (14.2M labels for adult content detection alone) human moderators concentrate on assessments requiring cultural competency and contextual understanding."
+  },
+  "adult_vs_takedowns": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "Adult content generated 14.2M labels compared to less than 2K takedowns, since consensual adult content is allowed on Bluesky with proper labeling."
+  },
+  "content_share": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "In 96.57% of cases, we label specific content rather than marking entire accounts."
+  },
+  "level_shares": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "Categories like intolerance (98% at the content-level and 2% account-level), threat (100% content-level), and rude (99% content-level) target individual posts because one problematic post doesn't define an entire account."
+  },
+  "needs_review_account": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "Our operational label (needs-review) works exclusively at the account level by design."
+  },
+  "needs_review_count": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "Applied automatically to combat large-scale spam attacks and bulk abuse patterns (370.14K accounts in 2025)."
+  },
+  "automated_share": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "The majority of labels applied (95.34%) come from automated systems."
+  },
+  "takedowns_items": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "In 2025, we removed 2,446,334 items, covering both accounts and content."
+  },
+  "account_takedowns": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "At the same time, account takedowns grew just 104% (from 1.02M to 2.08M)."
+  },
+  "temporary_suspensions": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "We issued 13,192 temporary suspensions in 2025, with 69% lasting 24 hours, 29% lasting 72 hours, and just 2% extending to seven days."
+  },
+  "reports": {
+   "url": "https://bsky.social/about/blog/01-29-2026-transparency-report-2025",
+   "quote": "In 2025, users submitted 9.97M reports (a 54% increase from 2024's 6.48M reports)."
+  }
+ }
+}

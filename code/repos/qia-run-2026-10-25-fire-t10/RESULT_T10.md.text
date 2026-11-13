@@ -1,0 +1,23 @@
+# RESULT -- T10 fill (arXiv 2510.17692, Nedev & Vitanov, Sofia University), ibm_fez, 25 Oct 2026 UTC. Plan commit d511e9a (before any job).
+Job A dbeo59fpc3tc739m2p1g (submitted 04:16:37Z, finished 04:18:13Z, 66 s): read from the IBM record by read_jobA.py (zero QPU) while job B
+(dbeo61npc3tc739m2qgg, submitted 04:18:15Z) was still running; DRIFT is appended when B returns. 4,000 shots, delays 0-600 us, opt 0, no runtime DD.
+KNOWN-GOOD: PASSED. T10 copies a / b in one job: q3 217.5 / 229.2, q92 181.1 / 172.0, q117 174.2 / 169.5, q70 74.2 / 75.8 us (all within 1.7 sd).
+Fitted T (us, +- fit width), copy a:      qubit 3     qubit 92    qubit 117   qubit 70   (record T2: 255 / 128 / 94 / 52)
+  CPMG10                                  220.9 +-5   174.3 +-4   175.6 +-4   69.3 +-2
+  T10                                     217.5 +-5   181.1 +-4   174.2 +-4   74.2 +-2
+  free (exp fit, no oscillation term)     49.3        133.9       15.3        1.0 (fit at its bound)   descriptive only, as planned
+THEIR RANKING, priced: dT = T10 - CPMG = -3.4 +- 7.2, +6.8 +- 5.6, -1.5 +- 5.3, +4.9 +- 2.7 us: CONSISTENT on all four.
+LAYOUT: CONSISTENT (chi2 2.4 on 3 dof, p 0.50): the margin does not depend on the qubit here; a bound.
+POOLED: dT = +3.4 +- 2.1 us (95% [-0.8, +7.6]): CONSISTENT with zero, and BELOW their +32.0 us. On fez, with sequences built from their text,
+  T10 and CPMG10 protect equally to within ~8 us; their 32 us margin was one torino qubit in one session (torino not run, so this narrows it, it
+  does not contradict it). Both sequences extend coherence far past free evolution on every qubit, as they report.
+RANK: T10 > CPMG > free with both gaps resolved on 0 of 4 qubits (T10 - CPMG never resolves).
+Built from their text: our CPMG10 is ten pi_y pulses; their CPMG pulse count and spacing are not stated in the part read (CANNOT_TELL if identical).
+Single session, one chip; floors 6% (layout), 6% (KG, four copy tests) over 100 planted nulls.
+
+ADDENDUM (job B landed): dbeo61npc3tc739m2qgg created 04:18:15Z, finished 05:28:26Z (34 s charged). It was submitted as soon as job A returned, but
+its finish stamp is ~70 min after job A: the spacing of this drift reading is up to ~70 min, not the minutes the plan intended (stated, not hidden).
+DRIFT (T10, job B - job A copy a): qubit 3 -115.2 +- 5.7 us (BELOW), qubit 92 -30.9 +- 5.4 (BELOW), qubit 117 -2.5 +- 5.2 (CONSISTENT), qubit 70
+  -10.6 +- 2.7 (BELOW). CPMG moved with it: qubit 3 220.9 -> 108.6 us. In job B, T10 - CPMG = -6.3, -4.9, -6.6, -1.7 us: the margin stays near zero
+  while T itself halves on qubit 3. Defined after the data: the session-to-session change on one qubit (115 us) is 3.6x their whole T10-over-CPMG
+  margin (32 us), so a one-qubit, one-session ranking at that margin cannot separate sequence from session.

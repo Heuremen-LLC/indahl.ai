@@ -1,0 +1,48 @@
+{
+ "COLLAPSED": {
+  "mean_err": [
+   0.0039,
+   0.00392,
+   0.0038399999999999997
+  ],
+  "slope": -6.000000000000009e-05,
+  "slope_ci95": [
+   -0.0003625,
+   0.0002500624999999996
+  ],
+  "outcome_vs_zero": "CONSISTENT",
+  "their_0.001_inside": false
+ },
+ "REAL": {
+  "mean_err": [
+   0.0054375000000000005,
+   0.031177500000000004,
+   0.0709075
+  ],
+  "slope": 0.06547,
+  "slope_ci95": [
+   0.050556937499999996,
+   0.0831678125
+  ],
+  "record_model_slope": 0.014839983277555096,
+  "residual_over_record": {
+   "mean": 0.050630016722444895,
+   "ci95": [
+    0.035109622789907334,
+    0.06854376472579854
+   ],
+   "outcome": "CANNOT_TELL"
+  },
+  "outcome_vs_zero": "CANNOT_TELL",
+  "their_0.001_inside": false
+ },
+ "THEIRS": {
+  "slope": 0.001,
+  "bound_g1": 0.001
+ },
+ "KNOWN_GOOD": {
+  "mean_P1": 0.5076775,
+  "rule": "mean P(1) of RY(pi/2) over 40 qubits within 0.5 +/- 0.03",
+  "passed": true
+ }
+}

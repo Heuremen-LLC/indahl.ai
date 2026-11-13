@@ -1,0 +1,57 @@
+remaining 1857 fez active 1 qubits [3, 92, 117, 70]
+measured [3, 70, 92, 117] x/delay counts {"('free', 'a', 0)": (0, 0), "('cpmg', 'a', 0)": (40, 0), "('t10', 'a', 0)": (40, 0), "('t10', 'b', 0)": (40, 0), "('free', 'a', 1)": (0, 4), "('cpmg', 'a', 1)": (40, 44), "('t10', 'a', 1)": (40, 44), "('t10', 'b', 1)": (40, 44)}
+SUBMITTED {'job_id': 'dbeo59fpc3tc739m2p1g', 'submitted': '2026-10-25T04:16:37Z'}
+SUBMITTED {'job_id': 'dbeo61npc3tc739m2qgg', 'submitted': '2026-10-25T04:18:15Z'}
+{
+ "KNOWN_GOOD": {
+  "rule": "T10 copies a and b agree within 2.58 sd on every qubit",
+  "copies": [
+   {
+    "diff": -11.707446634320462,
+    "sd": 7.1795474370965024,
+    "z": -1.630666380700884,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "diff": 9.052984082084464,
+    "sd": 5.530183144358501,
+    "z": 1.6370134307974362,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "diff": 4.685332966364598,
+    "sd": 5.192409034298187,
+    "z": 0.9023428114803506,
+    "outcome": "CONSISTENT"
+   },
+   {
+    "diff": -1.5440069027538357,
+    "sd": 2.8396848922511886,
+    "z": -0.5437247305033935,
+    "outcome": "CONSISTENT"
+   }
+  ],
+  "passed": true
+ },
+ "LAYOUT": {
+  "dT": [
+   -3.4221697471881214,
+   6.750996219186419,
+   -1.4643226497134663,
+   4.910539737974418
+  ],
+  "weighted_mean": 3.4097455134737213,
+  "chi2": 2.3857611166466315,
+  "p": 0.49629069009001403,
+  "outcome": "CONSISTENT (a bound)"
+ },
+ "POOLED": {
+  "dT": 3.4097455134737213,
+  "se": 2.139981472599096,
+  "outcome": "CONSISTENT",
+  "their_dT": 32.0,
+  "vs_theirs": "BELOW",
+  "note": "read only if LAYOUT is CONSISTENT"
+ },
+ "RANK": 0
+}

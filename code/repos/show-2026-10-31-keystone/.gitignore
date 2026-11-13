@@ -1,0 +1,5 @@
+*.npz
+*.qpy
+__pycache__/
+*.log
+synth_quick.log

@@ -1,0 +1,13 @@
+RESULT -- CHSH re-test of arXiv 2512.04016 (Tasar & Ocal Tasar, independent, Madrid) on ibm_fez, read under plan e55e6cc (committed 14:21:49Z;
+job dbebu2vg created 14:22:03Z). 21 QPU s, one job, no error. Pair [58, 71] by the committed rule (stated cz 1.49e-3); record unchanged
+on the pair during the window. RE-TEST on a different chip, not a calibration of their ibm_torino data.
+KNOWN-GOOD: PASS (their 60,000-shot table through our code: S 2.7320 +- 0.0119).
+E00 +0.6864  E01 +0.6509  E10 +0.6472  E11 -0.6945 (sign pattern as theirs)
+R1  S_fez 2.6791 +- 0.0121 vs their table 2.7320 +- 0.0119: D = -0.0529, 99 % half-width 0.0438 -> BELOW
+R2  S_fez - 2 = +0.6791, 99 % half-width 0.0312 -> ABOVE (fez violates CHSH clearly today)
+R3  between-cycle spread / shot noise 1.18 (gate 1.5 not crossed)
+Descriptive, not scored: bracket flip sums q0 0.020, q1 0.019; bracket-corrected S 2.788.
+Defined after the data, not scored: cycle S runs 2.765, 2.713, 2.731 then 2.647, 2.632, 2.637, 2.691, 2.637, 2.669, 2.668 -- the first three
+cycles sit higher than the last seven; the spread ratio stayed under the gate, so this is a pattern noted, not a drift call.
+What it says: the standard construction on today's fez gives a CHSH S below their Torino table by 0.053 (resolved at 99 %) and well above
+the classical 2; their printed 2.725 +- 0.042 is wide enough to hold both. Nothing about their detector (TARA-k) or their Torino day.

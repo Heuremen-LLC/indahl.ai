@@ -1,0 +1,5 @@
+qubits [148, 95] control 95 circuits 64 estimated QPU seconds about 24
+job dbha880te5oc738jpvrg submitted
+known-good: passed
+q 148 CONSISTENT {'t1_us': 0.818, 't2_us': 0.117, 'ratio': 0.143, 'published_t1_us': 5.863, 'published_t2_us': 15.469}
+q 95 CONSISTENT {'t1_us': 175.958, 't2_us': 144.54, 'ratio': 0.821, 'published_t1_us': 163.158, 'published_t2_us': 163.514}

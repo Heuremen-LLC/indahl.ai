@@ -1,0 +1,3 @@
+NOISELESS sampling: contrasts {'default_a': 0.336, 'default_b': 0.331, 'best': 0.329, 'q50': 0.316, 'q75': 0.33}, KG True
+READOUT 2%: contrasts {'default_a': 0.324, 'default_b': 0.319, 'best': 0.336, 'q50': 0.326, 'q75': 0.323}, KG True
+BROKEN readout 10%: KG False (want False) PASS

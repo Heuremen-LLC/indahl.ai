@@ -1,0 +1,6 @@
+# Addendum 1 -- before any job (the first --fire submitted nothing: IBM refused a non-native gate at validation; 0 s used)
+Their correlator construction appends H / S-dagger after routing; the runtime rejects non-native gates. Their own record shows only native
+sx/rz/cz, so their circuits were translated after the correlator rotations. Fix: each correlator circuit is passed once more through the
+transpiler at optimization level 1 with the identity layout (translation + single-qubit merge; no routing, no layout change).
+Result on fez and boston: ZZ sx13 rz11 cz7; XX sx13 rz13 cz7; YY sx14 rz13 cz7 vs their record ZZ sx13 rz11 cz7; XX sx13 rz11 cz7; YY sx14 rz11 cz7.
+sx and cz identical; 2 extra rz (virtual frame changes, zero duration). Measured qubits 3 and 4 on every chip. Analysis, outcome rule and order unchanged.

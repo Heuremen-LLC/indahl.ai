@@ -1,0 +1,8 @@
+pair [81, 82]
+deficit (a) 2.286 pp, (b) 51.984 pp; readout-only from our bracket (a) 1.480, (b) 1.757 pp
+R1 raw extra deficit D = +49.698 pp +- 0.289 vs theirs +3.428 pp -> ABOVE
+R2 extra deficit beyond the readout it adds, Dc = +49.421 pp +- 0.294 (99 % band) -> ABOVE
+R3 instance spread: chi-square min p 0.1405 (gate 0.005); sd ratio 1.35
+descriptive: (a) 01 minus 10 asymmetry +2.151 pp (theirs +1.86 pp); bracket flips {0: {'0': 0.004058837890625, '1': 0.01202392578125}, 1: {'0': 0.001068115234375, '1': 0.01251220703125}}
+copy 1 alone: D +49.951 pp, Dc +49.683 pp
+copy 2 alone: D +49.445 pp, Dc +49.158 pp

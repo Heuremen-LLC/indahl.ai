@@ -1,0 +1,4 @@
+ADDENDUM 2 (24 Oct 2026, before any hardware result read; none exists)
+Job A1 dbe2hfngdj9s73fl35lg (submitted 2026-10-24T03:40:46Z) ended ERROR 8299 "A control instrument error occurred" on IBM's side; no counts; billed 2 s.
+The R0 known-good line in the moved results file is on THEIR published counts only (PASS) and is unaffected. Pre-job record, job file, log kept in failed_A1_8299/.
+Restart from A1, same code, same design, same order. Rebuilt circuits_qfim.qpy hash compared to the failed attempt's (3cc848dd408662a4f1d8d4cac3d7abf4ae724ba17f02f5c1311525d0a8a6d34c) and reported either way.

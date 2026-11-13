@@ -1,0 +1,56 @@
+{
+ "A": {
+  "job_id": "dbesdm7pc3tc739ma9c0",
+  "submitted": "2026-10-25T09:07:36Z",
+  "cap": 240,
+  "circuits": 198,
+  "usage": {
+   "qpu_charge_time_seconds": 152,
+   "value": 2.527776,
+   "unit": "resource_units",
+   "status": "complete",
+   "details": [
+    {
+     "value": 2.527776,
+     "unit": "resource_units",
+     "metric": {
+      "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+      "value": 152
+     }
+    }
+   ]
+  },
+  "timestamps": {
+   "created": "2026-10-25T09:07:36.420704Z",
+   "finished": "2026-10-25T09:10:57.259617Z",
+   "running": "2026-10-25T09:07:37.644997Z"
+  }
+ },
+ "B": {
+  "job_id": "dbesf8vsstms73fcm9i0",
+  "submitted": "2026-10-25T09:10:59Z",
+  "cap": 80,
+  "circuits": 54,
+  "usage": {
+   "qpu_charge_time_seconds": 45,
+   "value": 0.742389,
+   "unit": "resource_units",
+   "status": "complete",
+   "details": [
+    {
+     "value": 0.742389,
+     "unit": "resource_units",
+     "metric": {
+      "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+      "value": 45
+     }
+    }
+   ]
+  },
+  "timestamps": {
+   "created": "2026-10-25T09:10:59.552425Z",
+   "finished": "2026-10-25T09:12:27.176219Z",
+   "running": "2026-10-25T09:11:00.927972Z"
+  }
+ }
+}

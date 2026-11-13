@@ -1,0 +1,6 @@
+HEALTH world (anti-healthy like drain)           decider -0.006 [-0.029, 0.017] -> CONSISTENT (want CONSISTENT) PASS | known-good True
+DIRECTION world (anti-healthy like their anti)   decider 0.300 [0.280, 0.320] -> ABOVE (want ABOVE) PASS | known-good True
+REVERSE world (anti-healthy better)              decider -0.071 [-0.097, -0.045] -> BELOW (want BELOW) PASS | known-good True
+NOISE-ONLY world (all groups equal 0.1/0.2)      decider -0.006 [-0.026, 0.014] -> CONSISTENT (want CONSISTENT) PASS | known-good True
+BROKEN-INSTRUMENT world (CONTROL_1 does not fail): known-good False (want False) PASS
+FLOOR: equal-delta world, 300 draws: 13 resolve (expect ~5%)

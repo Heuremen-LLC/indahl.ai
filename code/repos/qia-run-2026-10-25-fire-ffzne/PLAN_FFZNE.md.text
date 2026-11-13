@@ -1,0 +1,16 @@
+# Free calibration run (Kumar fill): arXiv 2603.13949 (IISc Bangalore, both authors; no funder named) -- FF-ZNE -- committed before any job
+Their method: noise amplification by LAYOUT. Three 50-qubit layouts are ranked by a record-built error score (their cost_func: gate, readout and
+T1/T2 idle errors at opt 0) and the delivered <Z> is extrapolated linearly to score 0. Their 50-qubit QIC r=1 on ibm_torino: raw 0.9329 on the best
+layout (their 'unmitigated', run with TREX + twirling + DD), FF-ZNE 0.96687; paper prints mitigated deviations of '~6%' (notebook: 7.1%, r=3 omitted).
+Book row: GAP (25 Oct). Their circuit, observable, cost function and options are vendored from their released notebook (ffzne.py).
+New hotness applied, priced in their circuit on ibm_fez (torino is not on our list; same Heron family), same session, one job:
+  LAYOUT AS THEIR KNOB: their own selection rule on fez's record (props_choice.json): s1 best 0.205, equidistant mid 0.373, worst 0.541, plus our
+          q25 0.262 and q75 0.381 from the same scored list (930 paths; qubit 72 excluded, no record T2). Every arm compiles to 49 CZ, depth 158-166.
+  LINEAR: is the record score a linear carrier of the delivered <Z>? Weighted fit over five layouts, chi2 on 3 dof: ABOVE if p < 0.05, else CONSISTENT.
+  PAIR:   mid vs q75 have near-equal scores on different qubits: their gap minus the slope's prediction, both widths.
+  ALT:    E0 from two other triples of the five; the spread of E0 is priced against their ~6% claim.
+  DRIFT:  job B (s1) right after job A returns. RECORD: props_before.json at submission.
+KNOWN-GOOD: s1_a and s1_b are the identical PUB in one job; they must agree within 2.58 sd, or the run is NOT DECIDED.
+Synthetic: synth_results_ffzne.text (linear, linear+offset, layout-not-score, broken copies, drift). Floors over 200 linear nulls: LINEAR ABOVE 10/200
+= 5%; KG false fail 3/200 = 1.5%. What this rules out: a linear failure means extrapolating along the record score can land anywhere; it does not
+say which record term fails (CANNOT_TELL from five points). Units: layouts (5) for the fit. Budget: cap 200 s, reserve 300 s, remaining 1,897 s at plan time.

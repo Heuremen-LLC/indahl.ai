@@ -1,0 +1,4 @@
+weights: gate passed True True True
+weights: read 100 of 1000
+weights: read 200 of 1000
+weights: read 300 of 1000

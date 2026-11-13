@@ -1,0 +1,1 @@
+R0 KNOWN-GOOD (his raw counts): MAE lambda=1 0.06445 (published 0.06445), MAE after ZNE 0.02810 (published 0.0281), improved 9/10 (published 9/10), max |mean - his checkpoint mean| 1.7e-16 -> PASS

@@ -1,0 +1,4 @@
+data/labels.sqlite*
+data/*.sqlite-journal
+__pycache__/
+*.log

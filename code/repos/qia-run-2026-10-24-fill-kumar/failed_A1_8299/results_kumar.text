@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/heuremen/bones-forge/qia_runs/2026-10-24-fill-kumar/analyze_kumar.py", line 15, in <module>
+    X = SET_OF[l]; raw = json.load(open(f'{D}/raw_kumar_{l}.json'))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/heuremen/bones-forge/qia_runs/2026-10-24-fill-kumar/raw_kumar_A1.json'

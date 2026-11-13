@@ -1,0 +1,92 @@
+{
+ "updated": "29 Oct 02:03",
+ "gate": "passed",
+ "studies": 992,
+ "read": 992,
+ "due": 0,
+ "any_change": {
+  "n": 4,
+  "of": 992,
+  "share": 0.004,
+  "share_lo": 0.0016,
+  "share_hi": 0.0103
+ },
+ "classes": {
+  "REVISED_NUMBERS": {
+   "n": 3,
+   "share": 0.003,
+   "share_lo": 0.001,
+   "share_hi": 0.0089
+  },
+  "REVISED_SAME": {
+   "n": 2,
+   "share": 0.002,
+   "share_lo": 0.0006,
+   "share_hi": 0.0073
+  },
+  "UNCHANGED": {
+   "n": 986,
+   "share": 0.994,
+   "share_lo": 0.9869,
+   "share_hi": 0.9972
+  },
+  "WITHDRAWN": {
+   "n": 1,
+   "share": 0.001,
+   "share_lo": 0.0002,
+   "share_hi": 0.0057
+  }
+ },
+ "by_month": {
+  "2026-10": {
+   "n": 979,
+   "unchanged": 973,
+   "revised_same": 2,
+   "revised_text": 0,
+   "revised_numbers": 3,
+   "withdrawn": 1
+  }
+ },
+ "drifted": [
+  {
+   "title": "A Compilation Framework for Quantum Circuits with Mid-Circuit Measurement Error Awareness",
+   "id": "2511.10921",
+   "read": "v1",
+   "latest": "v2",
+   "cls": "REVISED_NUMBERS",
+   "numbers_read": "27, 52.00%",
+   "numbers_latest": "24, 80.48%",
+   "division": "QIA"
+  },
+  {
+   "title": "Decision Kernels for Quantum Error Mitigation: Why Accuracy Gains Need Not Improve Downstream Decisions",
+   "id": "2607.02888",
+   "read": "v1",
+   "latest": "v2",
+   "cls": "REVISED_NUMBERS",
+   "numbers_read": "",
+   "numbers_latest": "0.2333, 0.3083, 0.4719, 20, 48",
+   "division": "QIA"
+  },
+  {
+   "title": "On the encoding complexity of quantum numerical integration: an angle-structure characterization",
+   "id": "2604.24289",
+   "read": "v2",
+   "latest": "v2",
+   "cls": "WITHDRAWN",
+   "numbers_read": "",
+   "numbers_latest": "",
+   "division": "QIA"
+  },
+  {
+   "title": "QPredSGG: Hybrid Quantum Predicate Learning for Long-Tailed Scene Graph Generation",
+   "id": "2606.04689",
+   "read": "v1",
+   "latest": "v2",
+   "cls": "REVISED_NUMBERS",
+   "numbers_read": "256",
+   "numbers_latest": "0.19, 100, 128, 2048",
+   "division": "QIA"
+  }
+ ]
+}

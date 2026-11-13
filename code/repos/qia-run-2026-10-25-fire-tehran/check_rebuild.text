@@ -1,0 +1,42 @@
+{
+ "theirs_data": {
+  "R1_nativeA_product_HT": 0.8751,
+  "R1_nativeA_bell_30_70": 0.8608,
+  "R1_N1none_product_HT": 0.7109,
+  "R1_N1none_bell_30_70": 0.5217,
+  "fingerprint_rad": {
+   "2": 0.1084,
+   "3": 0.1593
+  }
+ },
+ "noiseless": {
+  "native_product_HT": 1.0,
+  "native_bell_30_70": 1.0,
+  "N1none_product_HT": 0.789767,
+  "N1none_bell_30_70": 0.607412,
+  "N1corr_product_HT": 0.993081,
+  "N1corr_bell_30_70": 0.991966,
+  "fingerprint_rad": {
+   "2": 0.0,
+   "3": 0.0
+  }
+ },
+ "their_printed": {
+  "R1_nativeA": [
+   0.8751,
+   0.8608
+  ],
+  "R1_N1none": [
+   0.7109,
+   0.5217
+  ],
+  "fingerprint": [
+   0.1084,
+   0.1593
+  ],
+  "noiseless_N1none": [
+   0.79,
+   0.607
+  ]
+ }
+}

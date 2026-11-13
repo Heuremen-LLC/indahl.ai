@@ -1,0 +1,1 @@
+Copied from github.com/GermanDarDiaz/Quantum-Volunteer-s-Dilemma (head 37276cf, CC BY 4.0) experiments/: run_03 = optimization level 2 (job d7p75nr9ak2c739rcuqg), run_01 = level 0 (d7p70cedvl0c738olqbg), run_04 = level 3; processed/figures_data_{0,2,3}.json. Data only; nothing of theirs is executed.

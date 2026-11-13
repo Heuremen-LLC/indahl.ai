@@ -1,0 +1,17 @@
+RESULT -- Marmara free run (arXiv 2512.14280v3, Saba Arife Bozpolat), ibm_fez qubits 0..5, n = 6, read under plan 3ca29b0 (committed 14:38:35Z).
+Jobs (all created after the plan): J1 DD OFF dbec5vfs 14:38:53.97Z, J2 DD ON dbec87fg 14:43:42.05Z, J3 DD ON dbec8mng 14:44:42.99Z,
+J4 DD OFF dbec937g 14:45:32.92Z; 20 QPU s each, 80 s in all; no errors. Their fan-out + barrier, 17 CZ per message.
+KNOWN-GOOD: PASS (her counts through our mi(): raw 1.279, her mitigated 0.700).
+DD OFF arm: mean success 0.595; raw shortfall 2.396 +- 0.007; mitigated 2.006 +- 0.017.
+  copy gap J1 - J4 raw +0.071 > 99 % half-width 0.031 -> arm GATED: R1 CANNOT_TELL, R2 CANNOT_TELL (rule as planned; both jobs sit far
+  above 1 bit, but the two jobs disagree beyond shot noise).
+DD ON arm:  mean success 0.648; raw shortfall 2.223 +- 0.007; mitigated 1.808 +- 0.017; copy gap +0.003 (half-width 0.035).
+  R1 mitigated vs 1 bit -> ABOVE (the one-bit advantage is NOT reached today with this compile)
+  R2 raw vs 1 bit -> ABOVE
+  R3 descriptive only (17 CZ vs her 8..22): raw today minus her raw 1.279 -> ABOVE
+R4 mitigated DD ON minus DD OFF = -0.197 +- 0.025 -> CANNOT_TELL (the OFF arm is gated).
+Noticed after the data, not scored: bracket flips on her qubits today are uneven -- q1 P(1|0) 0.055 / P(0|1) 0.048 and q3 0.039 / 0.031,
+the others <= 0.032; mean success 0.60-0.65 against her raw 0.84 in April. Her layout (0..5) was used as-is for like-for-like; whether a
+different six-qubit set today would reach the line is not tested.
+What it says: on today's fez, her n = 6 protocol on her qubits with this compile does not reach the one-bit advantage even after mitigation
+(DD on: 1.81 bits short); the DD-off arm moved between jobs minutes apart and is undecided. It does not re-judge her April result.

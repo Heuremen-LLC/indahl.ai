@@ -1,0 +1,98 @@
+[
+ {
+  "bibcode": "2024MNRAS.535.2019D",
+  "arxiv": "2410.11830",
+  "doi": "10.1093/mnras/stae2388",
+  "pubdate": "2024-12-00",
+  "title": "Compact object populations over cosmic time - I. BOSSA: a binary object environment-sensitive sampling algorithm",
+  "abstract": "Binary population synthesis (BPS) is an essential tool for extracting information about massive binary evolution from gravitational-wave detections of compact object mergers. It has been successfully used to constrain the most likely permutations of evolution models among hundreds of alternatives, while initial condition models, in contrast, have not yet received the same level of attention. Here, we introduce BOSSA, a detailed initial sampling code including a set of 192 initial condition permutations for BPS, that captures both 'invariant' and 'varying' models, the latter accounting for a possible metallicity- and star formation rate-dependence of the initial mass function (IMF), as well as correlations between the initial primary mass, orbital period, mass ratio, and eccentricity of binaries. We include 24 metallicity-specific cosmic star formation history models and propose two alternate models for the mass-dependent binary fraction. We build a detailed pipeline for time-evolving BPS, such that each binary has well-defined initial conditions, and we are able to distinguish the contributions from populations of different ages. We discuss the meaning of the IMF for binaries and introduce a refined initial sampling procedure for component masses. We also discuss the treatment of higher order multiple systems when normalizing a binary sample. In particular, we argue for how a consistent interpretation of the IMF implies that this is not the distribution from which any set of component masses should be independently drawn, and show how the individual IMF of primaries and companions is expected to deviate from the full IMF."
+ },
+ {
+  "bibcode": "2024ApJ...977..220A",
+  "arxiv": "2404.00720",
+  "doi": "10.3847/1538-4357/ad90a9",
+  "pubdate": "2024-12-00",
+  "title": "Kicking Time Back in Black Hole Mergers: Ancestral Masses, Spins, Birth Recoils, and Hierarchical-formation Viability of GW190521",
+  "abstract": "A pair-instability supernova (PISN) prevents black hole (BH) formation from stellar collapse within the approximate mass range M \u2208 [65, 130] M <SUB>\u2299</SUB>. However, such BHs may form hierarchically through merging ancestral BHs, whose properties determine those of the \"child\" one: mass, spin, and recoil velocity. Crucially, the child will leave its host environment if its birth recoil exceeds the corresponding escape velocity, preventing further mergers. We exploit relations between the final recoil and spin of quasi-circular BH mergers to obtain posterior probability distributions for the hypothetical ancestral masses, spins, and birth recoils of the component BHs of GW190521. To this, we present a Bayesian framework applicable to existing estimates for the components of BH merger observations. We consider both the quasi-circular (generically spinning) analysis performed by the LIGO\u2500Virgo\u2500KAGRA collaboration and the eccentric (aligned-spin) one performed by Romero-Shaw et al. We evaluate the probability p <SUB>2g </SUB> that the GW190521 components inferred by these analyses formed from the merger of stellar-origin BHs and were retained by their environment. For the primary component, which populates the PISN gap, such scenario is strongly suppressed if GW190521 happened in a globular cluster with p <SUB>2g </SUB> \u223c 10<SUP>\u22123</SUP> unless it was quasi circular and its ancestors had aligned spins, uncharacteristic of hierarchical formation channels, or small spins, which yields p <SUB>2g </SUB> \u2243 10<SUP>\u22122</SUP>. If GW190521 was eccentric, we obtain p <SUB>2g </SUB> \u2243 0.1 for any host other than an active galactic nucleus, and zero for a globular cluster. If GW190521 was quasi circular, a nuclear star cluster origin is possible with p <SUB>2g </SUB> \u2208 (\u223c0.4, \u223c0.8)."
+ },
+ {
+  "bibcode": "2024CQGra..41x5009C",
+  "arxiv": "2209.00640",
+  "doi": "10.1088/1361-6382/ad84ae",
+  "pubdate": "2024-12-00",
+  "title": "Estimating false alarm rates of sub-dominant quasi-normal modes in GW190521",
+  "abstract": "A major aim of gravitational wave astronomy is to test observationally the Kerr nature of black holes. The strongest such test, with minimal additional assumptions, is provided by observations of multiple ringdown modes, also known as black hole spectroscopy. For the gravitational wave merger event GW190521, we have previously claimed the detection of two ringdown modes emitted by the remnant black hole. In this paper we provide further evidence for the detection of multiple ringdown modes from this event. We analyse the recovery of simulated gravitational wave signals designed to replicate the ringdown properties of GW190521. We quantify how often our detection statistic reports strong evidence for a sub-dominant [ image ] ringdown mode, even when no such mode is present in the simulated signal. We find this only occurs with a probability \u223c0.02, which is consistent with a Bayes factor of [ image ] (1\u03c3 uncertainty) found for GW190521. We also quantify our agnostic analysis of GW190521, in which no relationship is assumed between ringdown modes, and find that only 1 in 250 simulated signals without a [ image ] mode yields a result as significant as GW190521. Conversely, we verify that when simulated signals do have an observable [ image ] mode they consistently yield a strong evidence and significant agnostic results. We also find that constraints on deviations from the [ image ] mode on GW190521-like signals with a [ image ] mode are consistent with what was obtained from our previous analysis of GW190521. Our results support our previous conclusion that the gravitational wave signal from GW190521 contains an observable sub-dominant [ image ] mode."
+ },
+ {
+  "bibcode": "2024EPJC...84.1237D",
+  "arxiv": "2406.03846",
+  "doi": "10.1140/epjc/s10052-024-13623-7",
+  "pubdate": "2024-11-00",
+  "title": "Non-Kerr constraints using binary black hole inspirals considering phase modifications up to 4 PN order",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2024MNRAS.535..990M",
+  "arxiv": "2403.02994",
+  "doi": "10.1093/mnras/stae2408",
+  "pubdate": "2024-11-00",
+  "title": "SLICK: Strong Lensing Identification of Candidates Kindred in gravitational wave data",
+  "abstract": "By the end of the next decade, we hope to have detected strongly lensed gravitational waves by galaxies or clusters. Although there exist optimal methods for identifying lensed signal, it is shown that machine learning (ML) algorithms can give comparable performance but are orders of magnitude faster than non-ML methods. We present the SLICK pipeline which comprises a parallel network based on deep learning. We analyse the Q-transform maps (QT maps) and the Sine-Gaussian projection (SGP) maps generated for the binary black hole signals injected in Gaussian as well as real noise. We compare our network performance with the previous work and find that the efficiency of our model is higher by a factor of 5 at a false positive rate of 0.001. Further, we show that including SGP maps with QT maps data result in a better performance than analysing QT maps alone. When combined with sky localization constraints, we hope to get unprecedented accuracy in the predictions than previously possible. We also evaluate our model on the real events detected by the LIGO-Virgo collaboration and find that, at a threshold of 0.75 our network correctly classifies all of them, consistent with non-detection of lensing."
+ },
+ {
+  "bibcode": "2024SCPMA..6711013F",
+  "arxiv": "2401.07513",
+  "doi": "10.1007/s11433-024-2458-9",
+  "pubdate": "2024-11-00",
+  "title": "Detector performance of the Gamma-ray Transient Monitor onboard DRO-A satellite",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2024EPJC...84.1023M",
+  "arxiv": "2106.09499",
+  "doi": "10.1140/epjc/s10052-024-13400-6",
+  "pubdate": "2024-10-00",
+  "title": "Maximum entropy spectral analysis: an application to gravitational waves data analysis",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2024CQGra..41s5024S",
+  "arxiv": "2306.11366",
+  "doi": "10.1088/1361-6382/ad708a",
+  "pubdate": "2024-10-00",
+  "title": "Demonstration of machine learning-assisted low-latency noise regression in gravitational wave detectors",
+  "abstract": "Low-latency noise regression algorithms are crucial for maximizing the science outcomes of the LIGO, Virgo, and KAGRA gravitational-wave detectors. This includes improvements in the detectability, source localization and pre-merger detectability of signals thereby enabling rapid multi-messenger follow-up. In this paper, we demonstrate the effectiveness of DeepClean, a convolutional neural network architecture that uses witness sensors to estimate and subtract non-linear and non-stationary noise from gravitational-wave strain data. Our study uses LIGO data from the third observing run with injected compact binary signals. As a demonstration, we use DeepClean to subtract the noise at 60 Hz due to the power mains and their sidebands arising from non-linear coupling with other instrumental noise sources. Our parameter estimation study on the injected signals shows that DeepClean does not do any harm to the underlying astrophysical signals in the data while it can enhance the signal-to-noise ratio of potential signals. We show that DeepClean can be used for low-latency noise regression to produce cleaned output data at latencies ~1-2 s. We also discuss various considerations that may be made while training DeepClean for low latency applications."
+ },
+ {
+  "bibcode": "2024JCAP...10..070Z",
+  "arxiv": "2407.19654",
+  "doi": "10.1088/1475-7516/2024/10/070",
+  "pubdate": "2024-10-00",
+  "title": "Quasi-normal modes of loop quantum black holes formed from gravitational collapse",
+  "abstract": "In this paper, we study the quasi-normal modes (QNMs) of a scalar field in the background of a large class of quantum black holes that can be formed from gravitational collapse of a dust fluid in the framework of effective loop quantum gravity. The loop quantum black holes (LQBHs) are characterized by three free parameters, one of which is the mass parameter, while the other two are purely due to quantum geometric effects. Among these two quantum parameters, one is completely fixed by black hole thermodynamics and its effects are negligible for macroscopic black holes, while the second parameter is completely free (in principle). In the studies of the QNMs of such LQBHs, we pay particular attention to the difference of the QNMs between LQBHs and classical ones, so that they can be observed for the current and forthcoming gravitational wave observations, whereby place the LQBH theory directly under the test of observations."
+ },
+ {
+  "bibcode": "2024CQGra..41r5001C",
+  "arxiv": "2404.04761",
+  "doi": "10.1088/1361-6382/ad694d",
+  "pubdate": "2024-09-00",
+  "title": "Technical noise, data quality, and calibration requirements for next-generation gravitational-wave science",
+  "abstract": "The next generation of ground-based gravitational-wave interferometers is expected to generate a bounty of new astrophysical discoveries, with sensitivities and bandwidths greatly improved compared to current-generation detectors. These detectors will allow us to make exceptional advancements in our understanding of fundamental physics, the dynamics of dense matter, and the cosmic history of compact objects. The fundamental design aspects of these planned interferometers will enable these new discoveries; however, challenges in technical noise, data quality, and calibration have the potential to limit the scientific reach of these instruments. In this work, we evaluate the requirements of these elements for next-generation gravitational-wave science, focusing on how these areas may impact the proposed Cosmic Explorer observatory. We highlight multiple aspects of these fields where additional research and development is required to ensure Cosmic Explorer reaches its full potential."
+ },
+ {
+  "bibcode": "2024GReGr..56..104P",
+  "arxiv": "2209.15014",
+  "doi": "10.1007/s10714-024-03282-0",
+  "pubdate": "2024-09-00",
+  "title": "Critical gravitational inspiral of two massless particles",
+  "abstract": ""
+ },
+ {
+  "bibcode": "2024ApJ...972...65I",
+  "arxiv": "2208.01766",
+  "doi": "10.3847/1538-4357/ad5ff6",
+  "pubdate": "2024-09-00",
+  "title": "Eccentricity Estimation for Five Binary Black Hole Mergers with Higher-order Gravitational-wave Modes",
+  "abstract": "The detection of orbital eccentricity for a binary black hole system via gravitational waves is a key signature to distinguish between the possible binary origins. The identification of eccentricity has been difficult so far due to the limited availability of eccentric gravitational waveforms over the full range of black hole masses and eccentricities. Here we evaluate the eccentricity of five black hole mergers detected by the LIGO and Virgo observatories using the TEOBResumS-DALI, TEOBResumS-GIOTTO, and TEOBResumSP models. This analysis studies eccentricities up to 0.6 at the reference frequency of 5 Hz and incorporates higher-order gravitational-wave modes critical to model emission from highly eccentric orbits. The binaries have been selected due to previous hints of eccentricity or due to their unusual mass and spin. While other studies found marginal evidence for eccentricity for some of these events, our analyses do not favor the incorporation of eccentricity compared to the quasi-circular case. While lacking the eccentric evidence of other analyses, we find our analyses marginally shifts the posterior in multiple parameters for several events when allowing eccentricity to be nonzero."
+ }
+]

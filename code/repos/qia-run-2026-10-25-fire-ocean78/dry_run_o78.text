@@ -1,0 +1,90 @@
+[
+ {
+  "tag": [
+   "COLLAPSED",
+   "0.0"
+  ],
+  "id_per_qubit": 0.0,
+  "ops": {
+   "measure": 40
+  },
+  "duration_dt": 415
+ },
+ {
+  "tag": [
+   "COLLAPSED",
+   "0.5"
+  ],
+  "id_per_qubit": 0.0,
+  "ops": {
+   "measure": 40
+  },
+  "duration_dt": 415
+ },
+ {
+  "tag": [
+   "COLLAPSED",
+   "1.0"
+  ],
+  "id_per_qubit": 0.0,
+  "ops": {
+   "measure": 40
+  },
+  "duration_dt": 415
+ },
+ {
+  "tag": [
+   "REAL",
+   "0.0"
+  ],
+  "id_per_qubit": 150.0,
+  "ops": {
+   "id": 6000,
+   "rz": 240,
+   "sx": 160,
+   "measure": 40
+  },
+  "duration_dt": 1339
+ },
+ {
+  "tag": [
+   "REAL",
+   "0.5"
+  ],
+  "id_per_qubit": 150.0,
+  "ops": {
+   "id": 6000,
+   "rz": 240,
+   "sx": 160,
+   "measure": 40
+  },
+  "duration_dt": 1339
+ },
+ {
+  "tag": [
+   "REAL",
+   "1.0"
+  ],
+  "id_per_qubit": 150.0,
+  "ops": {
+   "id": 6000,
+   "rz": 240,
+   "sx": 160,
+   "measure": 40
+  },
+  "duration_dt": 1339
+ },
+ {
+  "tag": [
+   "KG",
+   "KG"
+  ],
+  "id_per_qubit": 0.0,
+  "ops": {
+   "rz": 80,
+   "sx": 40,
+   "measure": 40
+  },
+  "duration_dt": 421
+ }
+]

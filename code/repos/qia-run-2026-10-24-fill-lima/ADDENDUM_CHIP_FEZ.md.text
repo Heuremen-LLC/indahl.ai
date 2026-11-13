@@ -1,0 +1,4 @@
+# Addendum 2 -- chip moved to ibm_fez, before any job (25 Oct 2026)
+His runner (optimization level 0) places the five qubits on physical 0-4. On ibm_kingston, physical qubit 0 delivered ~78% wrong reads in our job
+dbemhsfsstms73fcc2dg (N47Lab run) against a record readout_error of 0.0127. Moving to ibm_fez: identical coupling map (checked live), same physical
+qubits 0-4, everything else unchanged. Nothing has run on kingston for this plan.

@@ -1,0 +1,1136 @@
+
+2020 Post-Enumeration Survey Methodology Report
+Elizabeth Marra and Timothy Kennel
+Issued March 2022
+PES20-J-01
+
+Acknowledgments
+The U.S. Census Bureau’s Decennial Statistical Studies Division prepared 
+this report with assistance from Scott Konicki, Chief, Sampling Branch, 
+and Julianne Zamora, Chief, Estimation Branch. Support was provided 
+by Michael Beaghen, Shadie Khubba, Mark Jost, Kekoura Sakouvogui, 
+Richard Turner, Quatracia Lucky, Courtney Hill, James Lawrence, Nam 
+Phan, Brandon Pipher, Krista Heim, Jinhee Hong, and Ram Siwakoti.
+Monique Lindsay, Paula Lancaster, Christine Geter, Corey Beasley, and 
+Stacey Barber provided publication management, graphic design and 
+composition, editorial review, and 508 compliancy for the electronic 
+media and print under the direction of Linda Chen, Acting Chief of the 
+Graphic and Editorial Services Branch, Public Information Office. 
+
+U.S. CENSUS BUREAU
+Robert L. Santos,
+Director
+U.S. Census Bureau Logo
+Source and Accuracy of the 
+2020 Post-Enumeration 
+Survey Person Estimates
+2020 Post-Enumeration Survey 
+Methodology Report
+Issued March 2022
+PES20-J-01
+
+SUGGESTED CITATION
+Elizabeth Marra and Timothy Kennel,
+U.S. Census Bureau,
+2020 Post-Enumeration Survey 
+Methodology Report,
+PES20-J-01,
+Source and Accuracy of the 
+2020 Post-Enumeration Survey 
+Person Estimates,
+U.S. Government Publishing Office,
+ Washington, DC, 
+March 2022.
+U.S. Census Bureau Logo
+U.S. CENSUS BUREAU
+Robert L. Santos,
+Director
+Ron S. Jarmin,
+Deputy Director and 
+Chief Operating Officer
+Albert Fontenot, Jr.
+Associate Director for Decennial Census Programs
+Deborah Stempowski
+Assistant Director for Decennial Census Programs, 
+Operations and Schedule Management
+Patrick J. Cantwell
+Division Chief, Decennial Statistical Studies Division
+
+U.S. Census Bureau	
+v 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+Contents
+DSSD 2020 Post-Enumeration Survey Memorandum Series #2020-J-01. . . . vi
+1. Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  1
+2. Source of the Post-Enumeration Survey (PES) Estimates. . . . . . . . . . . . . .  2
+	
+Target Population. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+	
+The Population-Sample People. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+	
+The Enumeration-Sample People. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+3. Post-Enumeration Survey (PES) Coverage Estimation. . . . . . . . . . . . . . . . .  4
+	
+Dual-System Estimation for People. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  4
+	
+Component Estimation for Coverage of People.. . . . . . . . . . . . . . . . . . . . . . .  5
+4. Accuracy of the Post-Enumeration Survey (PES) Estimates. . . . . . . . . . . .  6
+	
+Sampling Error. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  6
+	
+Nonsampling Error. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  6
+	 	
+Coverage Error in the P Sample. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  6
+	 	
+Nonresponse Error. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  7
+	 	
+Measurement Error. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  8
+	 	
+Processing Error. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  9
+	 	
+Analysis Error. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  9
+References. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  11
+TABLES
+Table 1. Classification for Dual-System Estimation . . . . . . . . . . . . . . . . . . . . . . . 4 
+Table 2. Post-Enumeration Survey (PES) Person Interview Response 
+	
+Rates (Unweighted) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+Table 3. Unresolved Rates for Match and Enumeration Status 
+	
+	
+(Unweighted) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+Table 4. Completed Interviews by Type (Unweighted) . . . . . . . . . . . . . . . . . . . . 9
+
+vi	
+U.S. Census Bureau 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+March 10, 2022 
+DSSD 2020 POST-ENUMERATION SURVEY MEMORANDUM SERIES #2020-J-01 
+MEMORANDUM FOR 
+From: 
+Prepared by: 
+Subject: 
+Patrick J. Cantwell 
+Chief, Decennial Statistical Studies Division 
+Timothy L. Kennel 
+Assistant Division Chief, Statistical Methods 
+Decennial Statistical Studies Division 
+Elizabeth Marra and Timothy L. Kennel 
+Decennial Statistical Studies Division 
+Source and Accuracy Statement of 2020 Post-Enumeration 
+Survey Person Estimates
+This memorandum documents the Source and Accuracy Statement of person estimates for the 
+2020 Post-Enumeration Survey. Please direct any inquiries to Elizabeth Marra at (301) 763-7760 or 
+Timothy L. Kennel at (301) 763-6795.
+
+U.S. Census Bureau	
+1 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+1. INTRODUCTION
+This document describes the source of the data 
+collected and the accuracy of the person estimates 
+produced by the 2020 Post-Enumeration Survey 
+(PES).1 Another source and accuracy statement cov­
+ers PES housing unit estimates. The 2020 PES was 
+an independent evaluation of the 2020 Census. Its 
+primary objective was to estimate the amount of net 
+coverage error and the components of coverage of 
+the 2020 Census. 
+Net coverage error refers to the difference between 
+the census count and the true population size. To 
+estimate the true population size, the 2020 PES used 
+a technique called “dual-system estimation,” with the 
+two systems being the survey and the census. With 
+this technique, the survey independently interviewed 
+people, asked where they lived on April 1, 2020 (the 
+reference day for the census), and then matched that 
+information to the census results. The survey took 
+more than 2 years and involved enumerating housing 
+units and people in about 10,000 blocks across the 
+country. 
+After we matched these people to the list of people 
+in the census, we were able to determine who was 
+counted:
+•	 In the census only.
+•	 In the PES only.
+•	 In both the census and the PES.
+We used this information to estimate how many peo­
+ple were in the United States and how many people 
+were correctly counted in the census.
+1 The Census Bureau’s Disclosure Review Board has reviewed 
+this product for unauthorized disclosure of confidential information 
+and has approved the disclosure avoidance practices applied to this 
+release. CBDRB-FY22-137.
+In fact, we used data from both the PES and the 
+census in the estimation process. One of the advan­
+tageous aspects of dual-system estimation is that 
+two imperfect sources are combined to estimate the 
+population size more accurately than either could on 
+their own.
+Through PES fieldwork, follow-up, and analysis, we 
+also estimated the proportions of census records that 
+were correct, wrong, or lacking enough information 
+to confirm whether they were correct or wrong. The 
+PES report included these “components of coverage,” 
+which broke final census counts into the following 
+three groups:
+•	 Correct enumerations. These referred to people 
+counted in the census who were living in the 
+United States on April 1, 2020. According to the 
+PES, the individuals should have been and were 
+counted in the census.
+•	 Erroneous enumerations. According to the PES, 
+these included duplicate records of people who 
+were already counted in the census, as well as peo­
+ple who were counted but should not have been. 
+For example, they may have died before April 1, 
+2020, or were just visiting the country.
+•	 Whole-person census imputations. For some 
+records in the census, the enumeration did not 
+include enough characteristics, so the U.S. Census 
+Bureau used a statistical technique called whole-
+person imputation to create a valid person record.
+To determine the size of the three categories, we 
+counted how many census records needed whole-
+person imputation and used the PES follow-up to 
+estimate the correct and erroneous enumerations.
+
+2	
+U.S. Census Bureau 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+2. SOURCE OF THE POST-ENUMERATION SURVEY (PES) ESTIMATES
+In this section we introduce the target population 
+of the PES. We also provide a description of the 
+Population (P) and Enumeration (E) samples.
+Target Population
+The target population for the 2020 PES was slightly 
+different from that of the 2020 Census. While both 
+programs aimed to count all people in the United 
+States and Puerto Rico as of Census Day (April 1, 
+2020), the PES excluded people living in Remote 
+Alaska areas2 or in group quarters. Remote Alaska 
+areas were out of scope because the PES could not 
+accurately conduct the matching and follow-up 
+operations necessary for dual-system estimation. This 
+was due to the seasonal nature of the addresses and 
+population in these areas. For example, people living 
+in Remote Alaska areas during the census might not 
+be living there during the PES interviews. People liv­
+ing in group quarters were out of scope because the 
+populations often change between census enumera­
+tions and PES enumeration operations. Group quar­
+ters include jails, nursing homes, college dormitories, 
+homeless shelters, and military personnel living in 
+barracks or on ships (U.S. Census Bureau, 2020). 
+The Population-Sample People
+The P sample was made up of independent enumera­
+tions in sample areas across the country. It provided 
+information about people who were missed in the 
+census. To create the P sample, we began with a 
+probability sample of blocks.3 Using a stratified, 
+three-stage, systematic sample design, we aimed to 
+achieve a target housing unit sample size of 171,000 
+housing units across the 50 states and the District of 
+Columbia, and 9,000 housing units in Puerto Rico. In 
+the first stage, we selected an initial sample of blocks. 
+Within these blocks, the PES conducted a listing of 
+the housing unit addresses without referring to any 
+address lists used in the census enumeration. In the 
+second phase, we removed a subsample of small 
+blocks based on additional information collected 
+during the independent listing. Small blocks were 
+2 Remote Alaska refers to the Remote Alaska enumeration area 
+as defined by the 2020 Census. A map of the Remote Alaska enu­
+meration area is available in the “2020 Census: Type of Enumeration 
+Area (TEA) Viewer” located at <www.census.gov/newsroom
+/press-releases/2019/tea-viewer.html>.
+3 Technically, the PES sampled Basic Collection Units or BCUs, 
+which roughly corresponded to a block. 
+defined as having zero, one, or two housing units. 
+Traveling to small blocks could be an inefficient use 
+of time and resources, so they were subsampled to 
+reduce travel costs and save time. In the third sam­
+pling phase, we subsampled segments of housing 
+units from large blocks. Our final sample size was 
+roughly 160,000 housing units across the 50 states 
+and the District of Columbia, and roughly 7,000 
+housing units in Puerto Rico (Hill, 2022).
+Once sampling for the P sample was completed, we 
+started the Person Interview field data collection. 
+The date of the PES person interview was referred 
+to as “Interview Day” and could have occurred any 
+time during the Person Interview field data collec­
+tion operation. In this operation, in-person interviews 
+were attempted at each sample housing unit. We 
+rostered each person in the P-sample household on 
+Interview Day and asked where they were living on 
+Census Day. The interview also asked respondents 
+about who was living at the housing unit on Census 
+Day.
+Since the PES Interview Day took place months after 
+Census Day, we had to account for changes to the 
+population that occurred between these two dates. 
+For example, babies born after April 1, 2020, were not 
+part of the target population. However, this may have 
+caused confusion for the respondent if their baby was 
+born between Census Day and Interview Day. During 
+the Person Interview operation, it could have been 
+unclear to them as to whether they should include 
+their child. Our goal was to include the people who 
+were part of the target population described above. 
+That is, we wanted to include the household popula­
+tion outside of Remote Alaska areas on April 1, 2020. 
+Nevertheless, the issues like the one described above 
+and the time between Census Day and Interview Day 
+made it harder for the PES to do this. 
+One important issue that the PES dealt with was 
+the treatment of movers. Between Census Day and 
+Interview Day, people moved into and out of hous­
+ing units in the PES sample blocks. We rostered 
+every person living at the P-sample housing unit on 
+Interview Day. Using the answers to the Interview Day 
+questions, we made determinations as to whether 
+these people were inmovers or nonmovers. Between 
+Census Day and Interview Day, those who moved into 
+
+U.S. Census Bureau	
+3 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+a P-sample housing unit were referred to as “inmov­
+ers.” People who did not move at all were referred 
+to as “nonmovers.” The third class of people, called 
+“outmovers,” moved out of a P-sample housing unit 
+between Census Day and Interview Day. Generally, 
+whole households of outmovers could only be cap­
+tured through proxy interviews, because they were 
+not available for interviews at the P-sample housing 
+units. 
+We used Procedure B (United Nations Secretariat, 
+2010) to determine how movers should be handled 
+in the P sample. Procedure B says that the P sample 
+should include inmovers and nonmovers but exclude 
+outmovers. Although outmovers were not included 
+in the P sample, information about them was col­
+lected during the Person Interview operation for use 
+in the E sample. Procedure B relies on a balance in 
+the population between inmovers and outmovers. 
+That is, every inmover to a P-sample housing unit was 
+typically an outmover from another block, and every 
+outmover from a P-sample housing unit was also an 
+inmover to another block. There were exceptions, for 
+example, when one considers movement between 
+housing units and group quarters.
+Once the Person Interview operation finished, we 
+reviewed the P-sample rosters, removing any dupli­
+cates and erroneously included people. Examples of 
+erroneous inclusions were people who were in scope, 
+but were rostered at the wrong address, duplicates 
+of people, or even fictitious people. An example of 
+an out-of-scope person would be a baby born after 
+Census Day or a person who lived outside the coun­
+try on Census Day. Then, the people rostered during 
+the Person Interview operation were matched to the 
+census. 
+The final P sample was a dataset of in-scope real 
+people and housing units. For each person in the 
+P sample, computer and clerical matching opera­
+tions determined whether the person was found in 
+the census or not, which we referred to as their match 
+status. If we were unable to determine match status, 
+we imputed a match probability. 
+The Enumeration-Sample People
+The E sample provided information about correct 
+and erroneous enumerations in the census. For 
+dual-system estimation, the main function of the 
+E sample was to identify people who were correctly 
+enumerated in the census. To be correctly enumer­
+ated, a person must have been enumerated at the 
+location where they were living most of the time on 
+April 1, 2020. Hogan (2003) proposed four dimen­
+sions that define the concept of correct enumeration:
+•	 Appropriateness: A person should be included in 
+the census. For example, it is not appropriate to 
+include a tourist or family pet in the census. We 
+also exclude people who are born after Census Day 
+or who die before Census Day.
+•	 Uniqueness: This refers to the concept of “counted 
+once and only once.” It is possible for a person 
+to be counted in the census two or more times. 
+For purposes of the dual-system estimation, we 
+removed these duplicates.
+•	 Completeness: The enumeration must have enough 
+identifying characteristics to identify a real person 
+and confirm whether the person was also counted 
+in the P sample. 
+•	 Geographic correctness: A person’s geographic 
+location in the census is where they reside. There 
+are two dimensions that define geographic 
+correctness:
+	◦
+Correct location. 
+	◦
+Area of search around the correct location. 
+The E sample contained census enumerations in the 
+same sample blocks as the P sample. While it was 
+not necessary to overlap the E and P samples in this 
+manner, it was a feature of our sampling framework 
+for the 2020 PES. It improved cost-effectiveness by 
+consolidating the P-sample and E-sample follow-up 
+interviews in the same areas. Once data collection in 
+the census was completed, we determined whether 
+each census enumeration in the E sample met the 
+four dimensions for correct enumeration. We began 
+by attaching any matching information from the 
+P sample to the E sample. From there, we determined 
+whether each enumeration was correct or errone­
+ous, or needed field follow-up. Finally, each follow-
+up case was interviewed to determine enumeration 
+status. The final E-sample sizes were roughly 180,000 
+housing units across the 50 states and the District of 
+Columbia, and roughly 7,500 housing units for Puerto 
+Rico (Phan, 2022).
+
+4	
+U.S. Census Bureau 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+3. POST-ENUMERATION SURVEY (PES) COVERAGE ESTIMATION
+In this section we discuss dual-system estimation and 
+components of coverage. 
+Dual-System Estimation for People
+The PES estimated the size of the true population 
+using dual-system estimation at national and state 
+geographies and for various estimation domains like 
+race and sex. People in the E sample made up one 
+system, while people in the P sample made up the 
+second system. As previously described, the 
+E sample was a sample of the census housing units 
+and person enumerations; the P sample was derived 
+from a PES listing of housing units, independent of 
+the census, in the same sample geographies as the 
+E sample. Everyone in the target population was 
+either: 
+•	 Correctly enumerated in only the census.
+•	 Correctly enumerated in only the PES.
+•	 Correctly enumerated in both the census and the 
+PES.
+•	 Enumerated in neither the census nor the PES.
+These groups are shown in Table 1.
+In theory, all cells are observable, except those 
+highlighted in gray (N22, N2+, N+2, and N++). Note that 
+N++ represents the true population total. Under the 
+assumption of statistical independence between the 
+PES and the census, we can estimate the total popu­
+lation, N++, in the following way:
+hat sub plus sign plus sign is
+ approximately equal
+This is the classic formation of the dual-system 
+estimate (DSE) (Wolter, 1986), also known as the 
+Petersen (1896) or Sekar-Deming (1949) estimator. 
+Note that (N1+/N11) is the inverse of the match rate 
+for the PES, and N+1 is the number of correctly enu­
+merated people in the census. In 2010 and 2020, the 
+post-enumeration surveys applied a dual-system esti­
+mator that was motivated by the Petersen or Sekar-
+Deming estimator, but was more flexible and robust, 
+namely a synthetic DSE (Wolter, 1986). We used 
+logistic regression models developed on the P and E 
+samples to predict the probability of being a match 
+and correct enumeration, respectively. Additionally, 
+we modeled the probability that a census enumera­
+tion was data-defined (i.e., not a whole-person impu­
+tation). Finally, to each census enumeration—based 
+on its characteristics—we applied these modeled 
+probabilities as in the following equation to calculate 
+a Coverage Correction Factor (CCF):
+he Coverage Corr ection Factor sub j eq uals pi sub d d comma j 
+times the ratio of l
+where
+•	 j is the census enumeration.
+•	 πdd,j is the predicted probability that the census 
+enumeration is data-defined.
+•	 πce,j is the predicted probability that the census 
+enumeration is a correct enumeration.
+•	 πm,j is the predicted probability that the census 
+enumeration is a match.
+Table 1.
+Classiﬁ cation for Dual-System Estimation
+System
+P Sample: Correctly included in the 
+post-enumeration survey?
+YES
+NO
+TOTAL
+E Sample: Correctly 
+enumerated in the 
+census?
+YES
+N11
+N21
+N+1
+NO
+N12
+N22
+N+2
+TOTAL
+N1+
+N2+
+N++
+
+U.S. Census Bureau	
+5 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+Component Estimation for Coverage of People
+We estimated four components of coverage: 
+•	 Correct enumerations.
+•	 Erroneous enumerations.
+•	 Whole-person census imputations.
+•	 Omissions.
+Every enumeration in the census was either a cor­
+rect enumeration, erroneous enumeration, or whole-
+person census imputation. Omissions were people 
+who were not correctly counted in the census but 
+should have been. Everyone in the target population 
+was either correctly enumerated in the census or a 
+census omission. The census might have accounted 
+for most of these omissions as whole-person imputa­
+tions, while others may have been missed altogether. 
+To estimate the rates of correct enumeration and 
+erroneous enumeration, we used the E sample and a 
+design-based estimator.4
+A whole-person census imputation was a census 
+record for which all the person characteristics were 
+imputed. This occurred when very little information 
+about the household or the people in the household 
+was obtained. For example, a household or proxy 
+respondent might have reported the number of 
+people in the household, but no other information 
+about the people. In such cases, the census imputa­
+tion methods used characteristics of other people to 
+impute this missing information. The total number of 
+whole-person census imputations was a known quan­
+tity and did not require estimation for the compo­
+nents of coverage results. We calculated this total by 
+tallying these imputations on the census files. 
+To estimate the total number of omissions, we sub­
+tracted the estimated number of correct enumera­
+tions in the census from the estimated population 
+total (the DSE).
+4 A design-based estimator uses sampling weights to make 
+inferences.
+The data-defined probability predicted the chance 
+that the census enumeration did not have to be 
+imputed. In fact, census processing was able to tell 
+us whether each census enumeration was a data-
+defined enumeration or not. However, we used the 
+predicted probability of this status to better estimate 
+domains that may have had small numbers of data-
+defined enumerations. 
+To calculate final CCFs, we applied a sex-ratio adjust­
+ment to adult male and female CCFs. This adjust­
+ment aligned adult male-to-female ratios with those 
+from the 2020 Demographic Analysis by age and 
+race groups. More information on this adjustment 
+can be found in Zamora (2022). More information on 
+Demographic Analysis can be found in Jensen et al. 
+(2020).
+By summing the final CCFs for the desired estimation 
+domain, we produced the DSE of the population for 
+that domain. We then calculated the net coverage 
+error rate in the following manner: 
+The Net coverage error rate is equal to the quantity left parenthesis census total mi nus the DSE right parenthesis divided by DSE and m ultiplied by 
+100.
+The census total was calculated by summing the 
+target population from a file of edited census data. 
+These data edits ensured that each person on the file 
+had valid values and consistency across character­
+istics. It also included whole-person census imputa­
+tions. This sum excluded people located in Remote 
+Alaska areas and those living in group quarters. In 
+general, net coverage error rates were calculated 
+from unrounded numerators and denominators and 
+then rounded. Exceptions were made in tables that 
+include rounded totals. For such tables, we used the 
+rounded numbers to calculate the rates.
+
+6	
+U.S. Census Bureau 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+4. ACCURACY OF THE POST-ENUMERATION SURVEY (PES) ESTIMATES
+As a sample survey, the PES contained two types 
+of error: sampling and nonsampling. These errors 
+affected the accuracy and precision of the estimates 
+produced by the survey. When possible, their effects 
+should be included in any analysis performed using 
+the survey data. In the following sections we discuss 
+both sampling and nonsampling errors for the 2020 
+PES. We highlight many of the most noteworthy 
+errors—for a more complete and detailed discus­
+sion of the many possible errors, we refer to previous 
+articles (Wolter, 1986; Hogan and Wolter, 1988; Mulry 
+and Spencer, 1991; and Hogan, 2003).
+It should also be noted that the 2020 PES survey 
+cycle coincided with the COVID-19 pandemic. This 
+caused delays and errors throughout the life of the 
+survey.
+Sampling Error
+The PES estimates were based on a sample. As such, 
+they differed somewhat from what would have been 
+obtained if all housing units and people had been 
+included in the survey. This difference is known as 
+sampling error and was estimated from the survey 
+data. 
+Due to the complex, systematic sample design of 
+the PES and the intricate nature of the dual-system 
+estimator, unbiased, design-based variance estima­
+tors do not exist. The PES used the successive dif­
+ference replication (SDR) method, introduced in Fay 
+and Train (1995) and discussed in U.S. Census Bureau 
+(2014b), to estimate sampling errors. The American 
+Community Survey (ACS) also uses SDR to pro­
+duce estimates of variance. In fact, the PES used the 
+replicate factors produced by the ACS. We created 
+replicates by multiplying the PES sample weights by 
+the ACS replicate factors within each sample BCU. 
+We did this for both the P and the E samples. Then, 
+for each of the 80 replicates, we performed the same 
+weighting adjustments that were made to the full 
+samples. For the P sample, this included the nonin­
+terview adjustment, weight trimming, and unresolved 
+status imputation. For the E sample, we also applied 
+weight trimming and unresolved status imputa­
+tion, as well as a ratio adjustment to known census 
+totals. This resulted in each person having one final 
+full weight and 80 replicate weights. The variance 
+estimate was then calculated as a function of the dif­
+ference between the estimate for each replicate and 
+the estimate for the full sample. Finally, we calculated 
+standard errors by taking the square root of these 
+variances. More information on SDR and how it was 
+applied to the 2020 PES can be found in Hill et al. 
+(2019).
+When comparing estimates of sampling error from 
+2020 to those from 2010, it is important to note that 
+the 2010 post-enumeration survey used jackknife 
+variance estimators. Successive difference replica­
+tion has two main advantages over jackknife and 
+other variance estimators used in the past. First, this 
+method better accounts for the sample design by 
+capturing some of the implicit stratification of sys­
+tematic sampling. Second, repeating the nonresponse 
+adjustment, imputation, and dual-system estimation 
+for each of the 80 replicates captured variability 
+introduced by these post-processing steps. 
+The PES performed statistical testing for estimates 
+of net coverage error rates and certain components 
+of coverage. Statements of comparison were statisti­
+cally significant at the 90 percent confidence level 
+(α = 0.10) using a two-sided test. For any PES release, 
+estimated net coverage error rates that were statisti­
+cally significantly different from zero were identified 
+by an asterisk (*). 
+Nonsampling Error
+For a given estimator, the difference between the 
+estimate that would result if the sample were to 
+include the entire population and the true popula­
+tion value being estimated is known as nonsampling 
+error. There are many kinds of nonsampling error, 
+and, unlike sampling error, they are difficult to quan­
+tify. Also, nonsampling errors could be random or 
+systematic. In this document we discuss various 
+nonsampling errors.
+Coverage Error in the P Sample
+Coverage error refers to differences between the tar­
+get population and people eligible to be included in 
+the sample. In the P sample, missed housing units or 
+people could cause undercoverage, while undetected 
+duplicates or erroneous inclusions could cause over­
+coverage. Efforts were taken to remove erroneous 
+
+U.S. Census Bureau	
+7 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+inclusions such as duplicates and people outside 
+the target population from the P sample, but some 
+unmeasured amount of overcoverage in the P sample 
+was still present. 
+To quantify undercoverage in the P sample, we 
+estimated the P-sample omission rate. The national 
+P-sample person omission rate was 13.05 percent 
+(0.86 percent standard error). This omission rate 
+is the ratio of the difference between the national 
+DSE and the weighted P-sample total to the national 
+DSE. The omission rate quantifies how much of the 
+true population was not correctly included in the P 
+sample. The PES aimed to have a P-sample omission 
+rate close to 0. We calculated this rate in the follow­
+ing manner:  
+The P -sample omission rate is equal to DSE hat minus P hat divided by DSE hat
+where
+P hat is equal t
+o th
+e su
+mm
+and 
+•	 i is a person that was included in the P sample.
+•	 wi is the final P-sample weight.
+•	 N is the total number of people included on the 
+P sample.
+It should be noted that the final P-sample weight, wi, 
+included the noninterview adjustment. This adjust­
+ment shifted weights from noninterviewed housing 
+units to interviewed housing units through propensity 
+modeling and stratification. More information on the 
+noninterview adjustment can be found in Zamora 
+(2022).
+Because the PES was used to estimate the true popu­
+lation size, there was no weighting adjustment to 
+correct for coverage errors in the P sample. However, 
+undercoverage in the P sample was not a primary 
+concern because dual-system estimation is robust 
+to coverage errors in each system. If coverage errors 
+in the two systems for dual-system estimation are 
+independent, the dual-system estimates will not be 
+biased because of the coverage errors. Increases in 
+coverage errors in the P sample and census put more 
+reliance on the independence assumption, but would 
+not bias the DSEs, as long as independence between 
+the P and E samples holds. There are many things 
+that could violate this independence assumption. An 
+example of an operational violation of independence 
+would be if an interviewer worked the same block for 
+both the census and the PES. Their prior knowledge 
+of the block from their census work could affect the 
+performance of their PES enumeration work. Causal 
+violations of independence could exist if the fact that 
+a person was captured in the census affects his or her 
+probability of being captured in the PES. More discus­
+sion on errors related to violations of independence 
+are in the analysis error section. 
+Nonresponse Error
+Unit nonresponse refers to noninterviewed hous­
+ing units in the PES. The PES performed a nonin­
+terview adjustment to help correct for nonresponse 
+error. Using propensity modeling and stratification, 
+we transferred the weights from noninterviewed 
+households to interviewed households. Note that 
+even with this adjustment, bias might still exist if 
+noninterviewed households were inherently different 
+from interviewed households. For the 2020 PES, the 
+survey relied more heavily on this adjustment than 
+it has in the past because, as seen in Table 2, nonin­
+terview rates were higher compared to the previous 
+post-enumeration survey.
+To analyze the circumstances around noninterviews, 
+we split them into two categories. The first category 
+represented noninterviews in which no interview 
+was conducted for the housing unit. In the second 
+category, contact was made with either a household 
+member or a proxy respondent, and an interview did 
+take place. However, the information provided by 
+the respondent was not complete enough for survey 
+processing, so we converted these interviews into 
+noninterviews. For the 2020 PES, a larger proportion 
+of noninterviews fell into this second category, con­
+tributing to the increase in overall noninterview rate. 
+More information on the noninterview adjustment can 
+be found in Zamora (2022). 
+Item nonresponse refers to missing data on com­
+pleted interviews. For dual-system estimation, the key 
+items were the match and enumeration status. Item 
+nonresponse could result if the respondent refused 
+to answer specific questions or if the quality of 
+
+8	
+U.S. Census Bureau 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+information was too low to determine a match or enu­
+meration status. A statistical procedure called impu­
+tation was used to assign a match or enumeration 
+status if none could be determined through clerical 
+efforts. In the 2020 PES, the higher amount of miss­
+ing characteristic data (e.g., age, sex, etc.) and higher 
+rates of incomplete follow-up interviews, relative to 
+the 2010 PES, caused the rates of unresolved match 
+and enumeration status to be higher as well (Table 3). 
+More information on missing data in the PES can be 
+found in Beaghen et al. (2022). 
+Measurement Error
+Measurement error refers to the accuracy of the 
+reported data. One of the features of the PES was 
+that the data collection was performed entirely by 
+in-person interview. In-person surveys are subject 
+to interview effects. While the PES provided high-
+quality training to all it’s field representatives, it was 
+still possible that field representatives misinterpreted 
+their training or did not follow survey procedures as 
+specified. Such errors could lead to added variability 
+or bias in the reported data. 
+There could also be a social desirability effect related 
+to in-person interviewing. For example, respondents 
+might be less likely to give their honest responses in 
+person, perhaps preferring a written or anonymous 
+response. We allowed for either a household member 
+or a proxy respondent to answer the survey. This 
+alone could invite measurement error into the survey. 
+In general, proxy respondents tend to be less knowl­
+edgeable about the sample household than a house­
+hold member. Often proxy respondents knew general 
+details, like sex and a rough estimate of age, but were 
+unable to provide more accurate details like specific 
+date of birth—which are extremely helpful when 
+matching—or dates when someone moved into or out 
+of a household. Table 4 shows the proxy counts and 
+rates for both the 2020 and 2010 post-enumeration 
+surveys.
+Another feature that could affect the accuracy of 
+the data was the length of time between Census 
+Day and the PES Interview Day. Due to the COVID-
+19 pandemic, some activities in the PES schedule—
+including the Person Interview operation—had to be 
+delayed. The expanded interval between Census Day 
+and Interview Day increased the potential for recall 
+bias. Recall bias is the phenomenon where, as the 
+interview occurs further from the target event, the 
+respondent may be less likely to remember specific 
+details about the event. These could be details such 
+as specific move dates, the place where they were 
+staying most of the time, or even the birth date of 
+a child. If a respondent couldn’t pinpoint whether 
+events like these occurred before, on, or after Census 
+Day, this could create error in the response data. 
+Table 3.
+Unresolved Rates for Match and Enumeration Status (Unweighted)
+(In percent)
+Status
+2020
+2010
+Unresolved match status rate . . . . . . . . . . . . . . . . .
+6.4
+3.7
+Unresolved enumeration status rate . . . . . . . . . . .
+11.6
+4.8
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (March 2022 Release) and 2010 Census 
+Coverage Measurement Survey.
+Table 2.
+Post-Enumeration Survey (PES) Person Interview Response Rates (Unweighted)
+Interview outcome
+2020
+2010
+Number
+Percent
+Number
+Percent
+Total . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+161,000
+100.0
+171,000
+100.0
+Interview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+114,000
+70.8
+140,000
+81.9
+Noninterview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23,000
+14.3
+5,300
+3.1
+ Interview not conducted . . . . . . . . . . . . . . . . . . .
+4,900
+3.0
+2,300
+1.4
+ Interview not suﬃ  cient . . . . . . . . . . . . . . . . . . . . .
+18,500
+11.5
+3,000
+1.8
+Vacant . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19,000
+11.8
+21,500
+12.6
+Nonexistent . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5,200
+3.2
+4,700
+2.8
+Note: Counts may not sum to totals shown because of rounding.
+Source: U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (March 2022 Release) and 2010 Census 
+Coverage Measurement Survey.
+
+U.S. Census Bureau	
+9 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+Further, this phenomenon could become exacerbated 
+when a proxy responded for the household. 
+Processing Error
+Processing error refers to any errors that occur during 
+the editing and coding of response data. For the PES, 
+this could include errors in the way we implemented 
+our data edits, or our computer and clerical matching 
+operations. 
+The PES employed an edit system to correct for 
+contradictory or implausible reported data. However, 
+the quality of our edits could be compromised if the 
+design of the system was flawed or if the edits were 
+fed unreliable information. For example, if the PES 
+recorded the relationship between two people as 
+parent and child, but the parent’s age is lower than 
+the child’s, the PES edited the data to correct for this. 
+PES would have based its edit on other information 
+provided, like date of birth. However, if the date of 
+birth was also incorrect for either person, this could 
+create errors within our edit system. 
+Matching error occurred when the PES incorrectly 
+coded a nonmatch as a match or incorrectly coded a 
+match as a nonmatch. There were numerous activi­
+ties in the PES that could have led to matching error, 
+including the way we defined the search area for 
+matching, computer matching operations, and clerical 
+matching operations. 
+During the matching operations, the PES searched 
+the entire nation for matches. However, we restricted 
+the final match determination to those found within 
+the search area for dual-system estimation. In gen­
+eral, as the size of the search area increases, the 
+potential for incorrectly finding a match for a person 
+who was not in the census also increases. For the 
+PES, we defined the search area as the block where 
+the P-sample person was living on Census Day plus 
+the set of surrounding blocks. If, in the census, we 
+found a match to the P-sample person in the search 
+area, then their final status was considered a match, 
+even if the census had the person in a surround­
+ing block rather than the block where the person 
+was found in the P sample. More information on the 
+search area is in Hogan, 2003.
+Computer matching could be a source of error if the 
+thresholds used to determine whether two different 
+person records referred to the same person were 
+not set properly. One benefit of the PES was that 
+during clerical matching, technicians and analysts 
+reviewed all matches and nonmatches from computer 
+matching, removing false matches and adding new 
+matches. However, there still could have been false 
+matches because of clerical error. While we tried to 
+mitigate clerical matching error with training, prac­
+tice, and ultimately a qualifying test, there could have 
+been errors in the training, or the clerical matching 
+staff may not have followed procedures correctly. 
+The PES clerical matching operations also included a 
+robust quality control process where each matching 
+technician’s work was routinely reviewed by an expert 
+analyst.
+Measurement errors and item nonresponse could 
+also contribute to matching errors. For example, if a 
+person’s date of birth or name was recorded incor­
+rectly, or not at all, the PES might not have been able 
+to match that person to the census enumeration. 
+Analysis Error
+Analysis error, also called adjustment or estimation 
+error, arises from various efforts after data collection, 
+usually to improve inference and correct for other 
+errors in the survey life cycle. The PES estimation 
+process used many statistical techniques, such as 
+weighting adjustments and imputation, to correct for 
+errors in the data. Although these techniques were 
+intended to improve the data, they may also have 
+introduced some errors. 
+Table 4. 
+Completed Interviews by Type (Unweighted)
+Respondent type
+2020
+2010
+Number
+Percent
+Number
+Percent
+Total . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+114,000
+100.0
+ 140,000 
+100.0
+Proxy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8,000
+7.0
+5,200
+3.7
+Household respondent . . . . . . . . . . . . . . . . . . . . . . . .
+106,000
+93.0
+135,000
+96.4
+Note: Counts may not sum to totals shown because of rounding.
+Source:  U.S. Census Bureau, Decennial Statistical Studies Division, 2020 Post-Enumeration Survey (March 2022 Release) and 2010 Census 
+Coverage Measurement Survey.
+
+10	
+U.S. Census Bureau 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+The PES employed a noninterview weighting adjust­
+ment that applied propensity stratification to correct 
+for unit nonresponse (Zamora, 2022). Errors in the 
+propensity models or creation of cells could add vari­
+ance or bias to DSEs. 
+Imputation was used to reduce errors resulting from 
+item nonresponse (Zamora, 2022). This included 
+imputing person characteristics, as well as match and 
+correct or erroneous enumeration status. Violations 
+of assumptions underlying the imputation procedures 
+could add systematic and random errors to coverage 
+estimates. Estimates of sampling error should include 
+many of the random errors resulting from imputing 
+P-sample match status and E-sample enumeration 
+status; however, errors from characteristic imputa­
+tion and systematic bias in the imputation procedures 
+were not estimated. Nevertheless, well-researched 
+and robust imputation procedures were used to fill 
+in missing data in the PES. The imputation models fit 
+the data very well and likely reduced the impact of 
+item nonresponse.
+Some estimators are inherently biased. For example, 
+it is well known that the ratio estimator, as a nonlinear 
+estimator, is biased. This means that it differs on aver­
+age from the ratio it is estimating. This bias becomes 
+very small as the sample size increases, so it usually 
+is not a concern. Like the ratio estimator, the dual-
+system estimator is also biased. Fortunately, the PES 
+sample sizes are large enough that the bias of the 
+synthetic DSE is negligible.
+Synthetic error is the difference between the popu­
+lation estimate calculated from the synthetic mod­
+els and the true population total. For dual-system 
+estimation, synthetic estimation error could have 
+occurred if we produced estimates for domains that 
+were not included as covariates in our models for 
+dual-system estimation. For the 2020 PES, we tried 
+to mitigate this error by ensuring that all desired 
+estimation domains were included in the DSE models. 
+For example, in the 2020 PES we included Tenure as 
+a covariate in the DSE models so that we could pro­
+duce estimates for owners and renters.
+A final source of analysis error could arise from 
+violations of the assumptions on which dual-system 
+estimation is based. Mulry and Spencer (1991) and 
+Wolter (1986) discuss many of the assumptions and 
+models supporting dual-system estimation. First, 
+although dual-system estimation did not require com­
+plete coverage and response from the census and the 
+PES, it relied on the statistical independence of the 
+enumerations between the two. Violations to statisti­
+cal independence could arise from correlation bias. 
+Correlation bias occurs when the probability of being 
+included in one system influences the probability of 
+being included in the other system. 
+Correlation bias also exists when there is heterogene­
+ity in the capture probabilities of similar individuals, 
+that is, when similar people have different probabili­
+ties of being included in either the census or the PES 
+(Sekar and Deming, 1949; Wolter, 1986; and Mulry 
+and Spencer, 1991). For example, in previous post-
+enumeration surveys, it was noted that some adult 
+males were systematically missing from the census 
+and the PES at higher rates than females (Bell, 1993).
+The 2010 PES and the 2020 PES tried to reduce het­
+erogeneity of capture probabilities by modeling spe­
+cific capture probabilities for each person. However, 
+missing covariates or interaction terms in the models 
+could result in heterogeneity and add to the variance 
+or the bias of the DSEs.
+In conclusion, while every survey must deal with a 
+multitude of errors, and the PES is no different, we 
+implemented many measures to mitigate the impact 
+of these errors on our estimates. The PES estimates 
+provide helpful insights about the quality of the 2020 
+Census and should be useful when informing plans 
+for the 2030 Census.
+
+U.S. Census Bureau	
+11 
+Source and Accuracy of the 2020 Post-Enumeration Survey Person Estimates
+REFERENCES
+Beaghen, M., R. Turner, and M. Jost,  “2020 Post-
+Enumeration Survey Estimation Methods and 
+Results: Missing Data,” 2020 Post-Enumeration 
+Survey Memorandum series #2020-J-05, 
+U.S. Census Bureau, 2022.
+Bell, W. R., “Using Information From Demographic 
+Analysis in Post-Enumeration Survey Estimation,” 
+Journal of the American Statistical Association, 
+88(423), 1993, pp. 1106–1118.
+Fay, R. and G. Train, “Aspects of Survey and Model-
+Based Postcensal Estimation of Income and 
+Poverty Characteristics for States and Counties,” 
+Proceedings of the Government Statistics Section, 
+American Statistical Association, Alexandria, VA, 
+1995, pp. 154–159.
+Jensen, E., A. Knapp, H. King, D. Armstrong, 
+S. Johnson, L. Sink, and E. Miller, “Methodology 
+for the 2020 Demographic Analysis Estimates,” 
+Population Division, U.S. Census Bureau, 2020, 
+<https://www2.census.gov/programs-surveys
+/popest/technical-documentation/methodology
+/2020da_methodology.pdf>.
+Hill, C., L. Davis, J. Lawrence, and T. Nguyen, 
+“Methods for Calculating Direct Variance 
+Estimates,” 2020 Census Post-Enumeration Survey 
+Memorandum Series #2020-E-63, U.S. Census 
+Bureau, 2019.
+Hill, C., “2020 Post-Enumeration Survey: Person 
+Interview Sample Identification Results,” 2020 
+Census Post-Enumeration Survey Memorandum 
+Series #2020-C-20, U.S. Census Bureau, 2022.
+Hogan, H., “The Accuracy and Coverage Evaluation: 
+Theory and Design,” Survey Methodology, 29, 
+U.S. Census Bureau, 2003, pp. 129–138.
+Hogan, H., and K. Wolter, “Measuring Accuracy in a 
+Post-Enumeration Survey,” Survey Methodology, 
+14(1), 1988, pp. 99–116.
+Mulry, M. H., and B. D. Spencer, “Total error in PES 
+estimates of population,” Journal of the American 
+Statistical Association, 86(416), 1991, pp. 839–855.
+Petersen, C. G. J., “The Yearly Immigration of Young 
+Plaice into the Limfjord From the German Sea,” 
+Report of the Danish Biological Station, 6, 1896, 
+pp. 1–48.
+Phan, N., “2020 Post-Enumeration Survey: E-Sample 
+Identification Results,” 2020 Census Post-
+Enumeration Survey Memorandum series 
+#2020-C-21, U.S. Census Bureau, 2022.
+Sekar, C. C. and W. E. Deming, “On a Method of 
+Estimating Birth and Death Rates and the Extent 
+of Registration,” Journal of the American Statistical 
+Association, 44, 1949, pp. 101–115.
+United Nations Secretariat, “Post Enumeration 
+Surveys, Operational guidelines,” Chapter 6, 
+“Overview of methodologies and procedures for 
+evaluating coverage and content error,” April 2010, 
+retrieved from <https://unstats.un.org/unsd
+/demographic/standmeth/handbooks/Manual
+_PESen.pdf>.
+U.S. Census Bureau, “American Community Survey 
+Design and Methodology, (January 2014), Chapter 
+12: Variance Estimation,” 2014, retrieved from 
+<https://www2.census.gov/programs-surveys/acs
+/methodology/design_and_methodology/acs
+_design_methodology_ch12_2014.pdf>.
+U.S. Census Bureau, “Supporting Statement B 2020 
+PIPFU, 2020 Census Post-Enumeration Survey 
+Person Interview and Person Followup,” 2020, 
+retrieved from <https://omb.report
+/icr/202104-0607-004/doc/111172900>. 
+Viehdorfer, C., M. Seiss, and G. Diffendal, “2010 
+Census Coverage Measurement Estimation Report:  
+Missing Data for Net Coverage Estimation,” 
+DSSD 2010 Census Coverage Measurement 
+Memorandum Series #2010-G-08, U.S. Census 
+Bureau, 2012.
+Wolter, K. M., “Some Coverage Error Models for 
+Census Data,” Journal of the American Statistical 
+Association, 81, 1986, pp. 338–353.
+Zamora, J., “2020 Post-Enumeration Survey 
+Estimation Design,” 2020 Post-Enumeration 
+Survey Memorandum series #2020-J-03, 
+U.S. Census Bureau, 2022.

@@ -1,0 +1,54 @@
+airline: gate {'plus5': 'ABOVE', 'zero': 'CONSISTENT', 'minus5': 'BELOW', 'noisy_zero': 'CANNOT_TELL'}
+airline: read 2019 1 583985
+airline: read 2019 2 533175
+airline: read 2019 3 632074
+airline: read 2019 4 612023
+airline: read 2019 5 636390
+airline: read 2019 6 636691
+airline: read 2019 7 659029
+airline: read 2019 8 658461
+airline: read 2025 1 539747
+airline: read 2025 2 504884
+airline: read 2025 3 600872
+airline: read 2025 4 583950
+airline: read 2025 5 605648
+airline: read 2025 6 611575
+airline: read 2025 7 631428
+airline: read 2025 8 602378
+airline: read 2026 1 544003
+airline: read 2026 2 515037
+airline: read 2026 3 612102
+airline: read 2026 4 597919
+airline: read 2026 5 611735
+airline: read 2026 6 607577
+airline: read 2026 7 631970
+airline: read 2026 8 608389
+c25_19
+  AA CONSISTENT 703 chg 0.50 [0.00,1.00]
+  AS CONSISTENT 277 chg -1.00 [-1.00,0.00]
+  B6 CONSISTENT 261 chg 0.00 [-1.00,0.00]
+  DL CANNOT_TELL 772 chg -1.00 [-1.25,-1.00]
+  F9 CONSISTENT 353 chg 1.00 [0.00,1.00]
+  G4 CONSISTENT 549 chg 0.00 [0.00,1.00]
+  HA CANNOT_TELL 66 chg 0.75 [0.00,3.00]
+  MQ CONSISTENT 308 chg 0.00 [0.00,1.00]
+  NK CONSISTENT 319 chg 0.00 [0.00,1.00]
+  OH CONSISTENT 266 chg 0.00 [-1.00,0.00]
+  OO CONSISTENT 956 chg 0.00 [-0.50,0.00]
+  UA CANNOT_TELL 682 chg 1.00 [1.00,1.75]
+  WN CONSISTENT 1213 chg -1.00 [-1.00,-1.00]
+  YX CONSISTENT 352 chg 0.50 [0.00,1.00]
+c26_25
+  AA ABOVE 906 chg 3.00 [2.00,3.00]
+  AS ABOVE 346 chg 5.00 [4.00,5.00]
+  B6 CONSISTENT 323 chg -1.00 [-1.00,-0.50]
+  DL CONSISTENT 906 chg 0.00 [0.00,0.50]
+  F9 CONSISTENT 542 chg 1.00 [0.50,1.00]
+  G4 CONSISTENT 799 chg -0.50 [-1.00,0.00]
+  MQ ABOVE 542 chg 4.00 [3.75,4.50]
+  NK CONSISTENT 262 chg -1.00 [-1.00,0.00]
+  OH ABOVE 390 chg 4.00 [3.50,4.00]
+  OO CANNOT_TELL 1224 chg 2.00 [1.00,2.00]
+  UA CONSISTENT 822 chg 1.00 [0.00,1.00]
+  WN CONSISTENT 1573 chg 0.00 [0.00,0.00]
+  YX ABOVE 519 chg 2.00 [2.00,3.00]

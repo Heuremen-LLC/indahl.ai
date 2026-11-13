@@ -1,0 +1,98 @@
+[
+ {
+  "bibcode": "2026JCAP...03..069B",
+  "arxiv": "2511.08384",
+  "doi": "10.1088/1475-7516/2026/03/069",
+  "pubdate": "2026-03-00",
+  "title": "Evading the BBN bound with a soft stiff period",
+  "abstract": "Cosmic inflation is the leading theory to explain early Universe history and structure formation. Non-oscillatory inflation is a class of models which can naturally introduce a post-inflationary stiff period of the Universe's evolution which boosts the signal of primordial gravitational waves (GWs), making it possible to observe them in forthcoming GW experiments. However, this pushes the GW energy density high enough to destabilise the process of Big Bang Nucleosynthesis (BBN). This problem can be overcome by \"softening\" the stiff period, so that the field is gradually tending towards freefall from a frozen start. Here, we consider a modified hybrid inflation model where the stiff period is driven by the waterfall field, allowing the barotropic parameter of the Universe to vary, so that it does not violate the \u2206N <SUB>eff</SUB> constraint but produces a characteristic gravitational wave spectrum soon to be observable."
+ },
+ {
+  "bibcode": "2026CQGra..43e5015R",
+  "arxiv": "2506.15984",
+  "doi": "10.1088/1361-6382/ae49d9",
+  "pubdate": "2026-03-00",
+  "title": "Direct inference of nuclear equation-of-state parameters from gravitational-wave observations",
+  "abstract": "The observation of neutron star mergers with gravitational waves (GWs) has provided a new method to constrain the dense-matter equation of state (EOS) and to better understand its nuclear physics. However, inferring nuclear microphysics from GW observations necessitates the sampling of EOS model parameters that serve as input for each EOS used during the GW data analysis. The sampling of the EOS parameters requires solving the Tolman\u2500Oppenheimer\u2500Volkoff (TOV) equations a large number of times\u2014a process that slows down each likelihood evaluation in the analysis on the order of a few seconds. Here, we employ emulators for the TOV equations built using multilayer perceptron neural networks to enable direct inference of nuclear EOS parameters from GW strain data. Our emulators allow us to rapidly solve the TOV equations, taking in EOS parameters and outputting the associated tidal deformability of a neutron star in only a few tens of milliseconds. We implement these emulators in PyCBC to directly infer the EOS parameters using the event GW170817, providing posteriors on these parameters informed solely by GWs. We benchmark these runs against analyses performed using the full TOV solver and find that the emulators achieve speed ups of nearly two orders of magnitude, with negligible differences in the recovered posteriors. Additionally, we constrain the slope and curvature of the symmetry energy at the 90% upper credible interval to be <inline-formula> <mml:math><mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mtext>sym</mml:mtext></mml:msub><mml:mo>\u2272</mml:mo><mml:mn>106</mml:mn></mml:mrow></mml:math></inline-formula> MeV and <inline-formula> <mml:math><mml:mrow><mml:msub><mml:mi>K</mml:mi><mml:mtext>sym</mml:mtext></mml:msub><mml:mo>\u2272</mml:mo><mml:mn>26</mml:mn></mml:mrow></mml:math></inline-formula> MeV."
+ },
+ {
+  "bibcode": "2026JCAP...03..008L",
+  "arxiv": "2509.07831",
+  "doi": "10.1088/1475-7516/2026/03/008",
+  "pubdate": "2026-03-00",
+  "title": "Is GW190521 a gravitational wave echo of wormhole remnant from another universe?",
+  "abstract": "A particularly compelling aspect of the GW190521 event detected by the LIGO-Virgo-KAGRA (LVK) collaboration is that it has an extremely short duration, and lacks a clearly identifiable inspiral phase usually observed in the binary black holes (BBHs) coalescence. In this work, we hypothesize that GW190521 might represent a single, isolated gravitational wave (GW) echo pulse from the wormhole, which is the postmerger remnant of BBHs in another universe and connected to our universe through a throat. The ringdown signal after BBHs merged in another universe can pass through the throat of wormhole and be detected in our universe as a short-duration echo pulse. Our analysis results indicate that our model yields a network signal-to-noise ratio comparable to that of the standard BBHs merger model reported by the LVK collaboration. For GW190521, Bayesian model selection yields ln \u212c<SUP>Echo</SUP> <SUB>BBH</SUB> \u2243 -2.9, indicating that the data favor the BBH hypothesis over our echo-for-wormhole model."
+ },
+ {
+  "bibcode": "2026MNRAS.546f2145N",
+  "arxiv": "2509.17606",
+  "doi": "10.1093/mnras/staf2145",
+  "pubdate": "2026-02-00",
+  "title": "Neural likelihood estimators for flexible Gravitational wave data analysis",
+  "abstract": "In this paper, we develop a Neural Likelihood Estimator and apply it to analyse real gravitational-wave (GW) data for the first time. We assess the usability of neural likelihood for GW parameter estimation and report the parameter space where neural likelihood performs as a robust estimator to output posterior probability distributions using modest computational resources. In addition, we demonstrate that the trained Neural likelihood can also be used in further analysis, enabling us to obtain the evidence corresponding to a hypothesis, making our method a complete tool for parameter estimation. Particularly, our method requires around 100 times fewer likelihood evaluations than standard Bayesian algorithms to infer properties of a GW signal from a binary black hole system as observed by current generation ground-based detectors. The fairly simple neural network architecture chosen makes for cheap training, which allows our method to be used on-the-fly without the need for special hardware and ensures our method is flexible to use any waveform model, noise model, or prior. We show results from simulations as well as results from GW150914 as proof of the effectiveness of our algorithm."
+ },
+ {
+  "bibcode": "2026CQGra..43d5016G",
+  "arxiv": "2507.04628",
+  "doi": "10.1088/1361-6382/ae44e3",
+  "pubdate": "2026-02-00",
+  "title": "Improved binary black hole search discriminator from the singular value decomposition of non-Gaussian noise transients",
+  "abstract": "The sensitivity of current gravitational wave (GW) detectors to transient GW signals is severely affected by a variety of non-Gaussian and non-stationary noise transients, such as the blip, tomte, koi fish, and low-frequency blip 'glitches'. These glitches share some time\u2500frequency resemblance with GW signals from binary black holes. In earlier works (Joshi 2021 Phys. Rev. D 103 044035), (Choudhary 2024 et al Phys. Rev. D 110 044051), the authors presented a method for constructing a \u03c7<SUP>2</SUP>-distributed optimized statistic, based on the unified formalism of \u03c7<SUP>2</SUP> discriminators (Dhurandhar 2017 Phys. Rev. D 96 103018), to distinguish the blip glitches from the compact binary coalescence signals. Unlike past works, the new \u03c7<SUP>2</SUP> discriminator is constructed from the most significant singular vectors obtained from the singular value decomposition of different classes of glitches in real detector data. We find that the chi-square developed in this work performs as efficiently as in (Choudhary 2024 et al Phys. Rev. D 110 044051), which used sine-Gaussian basis vectors. This result supports past empirical findings that these glitches are reasonably well-modeled by sine-Gaussians. It also introduces a method for constructing signal- and glitch-based \u03c7<SUP>2</SUP> discriminators by directly using real data containing the glitches and, thus, holds promise for extensions to glitches that are captured less well by sine-Gaussians or other analytical functions."
+ },
+ {
+  "bibcode": "2026MNRAS.545f2176B",
+  "arxiv": "2508.15965",
+  "doi": "10.1093/mnras/staf2176",
+  "pubdate": "2026-01-00",
+  "title": "Methods for estimating neutron star parameters using multiple mechanisms for gravitational wave emission associated with pulsar glitches",
+  "abstract": "Several mechanisms for gravitational wave (GW) emission are believed to be associated with pulsar glitches. This emission may be split between long-duration continuous waves and short-duration bursts. In the Advanced LIGO era, searches for GWs associated with pulsar glitches have only considered continuous wave emission. The increasing sensitivity of the detectors and the prospects for future detectors suggest that astrophysically motivated analyses involving multiple mechanisms may be possible. Here, we present a framework for combining two simple models for GW emission \u2500 long-duration continuous waves and short-duration bursts \u2500 to derive more constraining astrophysical implications than a single model would allow. The best limits arise from using models that predict a specific amount of GW emission; however, there are relatively few models that make such predictions. We apply these methods to the 2016 December Vela pulsar glitch and make predictions for how well future observing runs and detectors would improve results. As part of this analysis, we performed a targeted search for GW bursts associated with this glitch and find no signal."
+ },
+ {
+  "bibcode": "2026JCAP...01..053L",
+  "arxiv": "2508.10673",
+  "doi": "10.1088/1475-7516/2026/01/053",
+  "pubdate": "2026-01-00",
+  "title": "Time-dependent deflection reconstruction: new technique to search for gravitational waves with the cosmic microwave background",
+  "abstract": "Gravitational waves (GWs) passing through the Earth cause a correlated pattern of time-dependent deflections of the apparent position of astronomical sources. We build upon standard lensing reconstruction techniques to develop a new time-dependent optimal quadratic estimator, providing a novel technique to search for the deflections produced by GWs using observations of the cosmic microwave background (CMB). We find that the time-dependent deflection reconstruction is many orders of magnitude more sensitive than the ordinary static lensing estimator, and that it can be employed with the data collected by existing and future CMB surveys, without requiring any modification to the experimental or survey design. We demonstrate that CMB surveys offer sensitivity to GWs across a broad frequency range: while the sensitivity will not be competitive over the frequency range covered by pulsar timing arrays, the coverage band extend to both lower and higher frequencies. Finally, we discuss how our methods can be adapted to search for other time-varying signals, and also how they can be applied to surveys at other wavelengths."
+ },
+ {
+  "bibcode": "2025ApJ...995...47P",
+  "arxiv": "2506.01760",
+  "doi": "10.3847/1538-4357/ae1d7d",
+  "pubdate": "2025-12-00",
+  "title": "First Eccentric Inspiral\u2500Merger\u2500Ringdown Analysis of Neutron Star\u2500Black Hole Mergers",
+  "abstract": "The gravitational wave event GW200105 was the first confident neutron star\u2500black hole (NSBH) merger identified by the LIGO\u2500Virgo\u2500KAGRA collaboration. A recent analysis with an eccentric precessing waveform model that describes the inspiral phase of the l = 2 and m = {0, \u00b12} modes has identified this event as the first NSBH merger with strong evidence of orbital eccentricity. In this paper we perform the first analysis of this event with an aligned-spin eccentric waveform model that describes the full inspiral, merger, and ringdown, includes subdominant harmonics, and is partially calibrated to numerical relativity simulations. This analysis confirms the results and finds evidence in favor of eccentricity even with a log-uniform prior in eccentricity. We also analyze the NSBH events GW200115 and GW230529, completing the analysis of all NSBHs with IMRPHENOMTEHM, and find that these signal are consistent with vanishing eccentricity. Finally, we briefly discuss computational challenges when performing the analysis with time-domain eccentric waveform models."
+ },
+ {
+  "bibcode": "2025PhLB..87139974G",
+  "arxiv": "2411.09193",
+  "doi": "10.1016/j.physletb.2025.139974",
+  "pubdate": "2025-12-00",
+  "title": "Birkhoff's theorem and uniqueness: A peek beyond general relativity",
+  "abstract": "In General Relativity, Birkhoff's theorem asserts that any spherically symmetric vacuum solution must be static and asymptotically flat. In this paper, we study the validity of Birkhoff's theorem for a broad class of modified gravity theories in four spacetime dimensions, including quadratic and higher-order gravity models. We demonstrate that the Schwarzschild spacetime remains the unique Einstein branch solution outside any spherically symmetric configuration of these theories. Consequently, unlike black holes, the breakdown of junction conditions at the surface of the star further implies that the actual spacetime metric outside a horizonless star in these modified theories cannot simultaneously be spherically symmetric and remain within the Einstein branch. This insight offers a unique observational probe for theories beyond General Relativity."
+ },
+ {
+  "bibcode": "2025CQGra..42r5011M",
+  "arxiv": "2505.10199",
+  "doi": "10.1088/1361-6382/ae008a",
+  "pubdate": "2025-12-00",
+  "title": "Constraining dirty black holes and pseudo-complex general relativity with the gravitational waves transient catalog 3.0",
+  "abstract": "We use data from the gravitational wave (GW) transient catalog 3.0 to update constraints on parameterized deviations from general relativity (GR), as encountered in pseudo-complex GR (pcGR) theory and models of dirty black holes (BHs). The pcGR framework extends Einstein's theory of GR by introducing additional parameters that diverge from standard predictions in the strong-field regime, potentially excluding BH horizons for specific parameter choices. We analyze GW signals from coalescing compact objects to obtain new bounds on these parameters. Our results modify existing constraints and identify previously unexplored regions of parameter space, exploring the observational viability of dirty BHs and horizonless solutions in pcGR. We confirm the exclusion of 1PN deviations sufficient to avoid a horizon, and for the first time rule out 1.5PN as well. We also discuss implications for current and future GW observations in refining these constraints"
+ },
+ {
+  "bibcode": "2025MLS&T...6d0702T",
+  "arxiv": "2509.06445",
+  "doi": "10.1088/2632-2153/ae2dbc",
+  "pubdate": "2025-12-00",
+  "title": "Learning to detect continuous gravitational waves: an open data-analysis competition",
+  "abstract": "We report results of a public data-analysis challenge, hosted on the open data-science platform Kaggle, to detect simulated continuous gravitational-wave signals (CWs). These are weak signals from rapidly spinning neutron stars that remain undetected despite extensive searches. The competition dataset consisted of a population of CW signals using both simulated and real LIGO detector data matching the conditions of actual CW searches. The competition attracted more than 1000 participants to develop realistic CW search algorithms. We describe the top 10 approaches and discuss their applicability as a pre-processing step compared to standard CW-search approaches. For the competition's dataset, we find that top approaches can reduce the computing cost by 1 to 3 orders of magnitude at a false-dismissal probability comparable to standard CW searches. Additionally, the competition drove the development of new GPU-accelerated detection pipelines, which facilitated their adoption in other areas of gravitational-wave data analysis. We release the associated dataset, which constitutes the first open standardized benchmark for CW detection, to enable reproducible method comparisons and to encourage further developments toward the first detection of these elusive signals."
+ },
+ {
+  "bibcode": "2025ApJ...994..202P",
+  "arxiv": "2507.01294",
+  "doi": "10.3847/1538-4357/ae13b0",
+  "pubdate": "2025-12-00",
+  "title": "A Gaussian Process Framework for Testing General Relativity with Gravitational Waves",
+  "abstract": "Gravitational-wave astronomy provides a promising avenue for the discovery of new physics beyond general relativity as it probes extreme curvature and ultrarelativistic dynamics. However, in the absence of a compelling alternative to general relativity, it is difficult to carry out an analysis that allows for a wide range of deviations. To that end, we introduce a Gaussian process framework to search for deviations from general relativity in gravitational-wave signals from binary black hole mergers with minimal assumptions. We employ a kernel that enforces our prior beliefs that\u2014if gravitational waveforms deviate from the predictions of general relativity\u2014the deviation is likely to be localised in time near the merger with some characteristic frequency. We demonstrate this formalism with simulated data and apply it to events from the Gravitational-Wave Transient Catalog 3. We find no evidence for a deviation from general relativity. We limit the fractional deviation in gravitational-wave strain to as low as 7% (90% credibility) of the strain of GW190701_203306."
+ }
+]

@@ -1,0 +1,44 @@
+{
+ "LINEAR": {
+  "KG": true,
+  "THEIRS_E0": 0.9937,
+  "LINEAR": "CONSISTENT (linear within widths; a bound)",
+  "PAIR": "CONSISTENT",
+  "E0_spread": 0.0112,
+  "DRIFT": "CONSISTENT"
+ },
+ "LINEAR_OFFSET": {
+  "KG": true,
+  "THEIRS_E0": 0.9468,
+  "LINEAR": "CONSISTENT (linear within widths; a bound)",
+  "PAIR": "CONSISTENT",
+  "E0_spread": 0.0026,
+  "DRIFT": "CONSISTENT"
+ },
+ "LAYOUT_NOT_SCORE": {
+  "KG": true,
+  "THEIRS_E0": 1.0213,
+  "LINEAR": "ABOVE (record score is not a linear carrier)",
+  "PAIR": "ABOVE",
+  "E0_spread": 0.1889,
+  "DRIFT": "CONSISTENT"
+ },
+ "BROKEN_COPIES": {
+  "KG": false,
+  "THEIRS_E0": 1.0011,
+  "LINEAR": "CONSISTENT (linear within widths; a bound)",
+  "PAIR": "CONSISTENT",
+  "E0_spread": 0.014,
+  "DRIFT": "ABOVE"
+ },
+ "DRIFT": {
+  "KG": true,
+  "THEIRS_E0": 0.9926,
+  "LINEAR": "CONSISTENT (linear within widths; a bound)",
+  "PAIR": "CONSISTENT",
+  "E0_spread": 0.0044,
+  "DRIFT": "BELOW"
+ },
+ "FLOOR_linear_above_200": 10,
+ "FLOOR_kg_fail_200": 3
+}

@@ -1,0 +1,1296 @@
+{
+ "updated_utc": "2026-11-10 04:19",
+ "plan_commit": "54baba48a5eee4a62270700e62c014f83fa7624c",
+ "rows": 528,
+ "comparison_rows": 519,
+ "label_split_rows": 9,
+ "outcomes_original_rows": {
+  "CANNOT_TELL": 292,
+  "CONSISTENT": 35,
+  "ABOVE": 39,
+  "BELOW": 82,
+  "NOTHING_RETURNED": 27
+ },
+ "outcomes_ads_rows": {
+  "CONSISTENT": 6,
+  "CANNOT_TELL": 24
+ },
+ "outcomes_combined_rows": {
+  "CANNOT_TELL": 14
+ },
+ "outcomes": {
+  "CANNOT_TELL": 330,
+  "CONSISTENT": 41,
+  "ABOVE": 39,
+  "BELOW": 82,
+  "NOTHING_RETURNED": 27
+ },
+ "outcomes_plan_rule_original_rows": {
+  "CANNOT_TELL": 207,
+  "BELOW": 114,
+  "ABOVE": 88,
+  "CONSISTENT": 39,
+  "NOTHING_RETURNED": 27
+ },
+ "known_good": {
+  "KG1": true,
+  "KG1all": true,
+  "KG3": true
+ },
+ "gate_passed": true,
+ "known_good_plan_as_committed": {
+  "KG1": true,
+  "KG2": false,
+  "KG3": true,
+  "KG4": false
+ },
+ "plan_gate_passed": false,
+ "newest_created_day": "2026-11-07",
+ "platforms_with_template_report": [
+  "AliExpress",
+  "Amazon Store",
+  "Apple App Store",
+  "Booking.com",
+  "Facebook",
+  "Google Maps",
+  "Google Play",
+  "Google Shopping",
+  "Instagram",
+  "LinkedIn",
+  "Pinterest",
+  "Pornhub",
+  "Shein",
+  "Snapchat",
+  "Temu",
+  "TikTok",
+  "WhatsApp Channels",
+  "Wikipedia",
+  "X",
+  "XNXX",
+  "XVideos",
+  "YouTube",
+  "Zalando"
+ ],
+ "periods_read": [
+  [
+   "AliExpress",
+   "2025H2"
+  ],
+  [
+   "AliExpress",
+   "2026H1"
+  ],
+  [
+   "Amazon Store",
+   "2025H2"
+  ],
+  [
+   "Amazon Store",
+   "2026H1"
+  ],
+  [
+   "Apple App Store",
+   "2025H2"
+  ],
+  [
+   "Apple App Store",
+   "2026H1"
+  ],
+  [
+   "Booking.com",
+   "2025H2"
+  ],
+  [
+   "Booking.com",
+   "2026H1"
+  ],
+  [
+   "Facebook",
+   "2025H2"
+  ],
+  [
+   "Facebook",
+   "2026H1"
+  ],
+  [
+   "Google Maps",
+   "2025H2"
+  ],
+  [
+   "Google Maps",
+   "2026H1"
+  ],
+  [
+   "Google Play",
+   "2025H2"
+  ],
+  [
+   "Google Play",
+   "2026H1"
+  ],
+  [
+   "Google Shopping",
+   "2025H2"
+  ],
+  [
+   "Google Shopping",
+   "2026H1"
+  ],
+  [
+   "Instagram",
+   "2025H2"
+  ],
+  [
+   "Instagram",
+   "2026H1"
+  ],
+  [
+   "LinkedIn",
+   "2025H2"
+  ],
+  [
+   "LinkedIn",
+   "2026H1"
+  ],
+  [
+   "Pinterest",
+   "2025H2"
+  ],
+  [
+   "Pinterest",
+   "2026H1"
+  ],
+  [
+   "Pornhub",
+   "2025H2"
+  ],
+  [
+   "Pornhub",
+   "2026H1"
+  ],
+  [
+   "Shein",
+   "2025H2"
+  ],
+  [
+   "Shein",
+   "2026H1"
+  ],
+  [
+   "Snapchat",
+   "2025H2"
+  ],
+  [
+   "Snapchat",
+   "2026H1"
+  ],
+  [
+   "Temu",
+   "2025H2"
+  ],
+  [
+   "Temu",
+   "2026H1"
+  ],
+  [
+   "TikTok",
+   "2025H2"
+  ],
+  [
+   "TikTok",
+   "2026H1"
+  ],
+  [
+   "WhatsApp Channels",
+   "2026H1"
+  ],
+  [
+   "Wikipedia",
+   "2025H2"
+  ],
+  [
+   "Wikipedia",
+   "2026H1"
+  ],
+  [
+   "X",
+   "2025H2"
+  ],
+  [
+   "X",
+   "2026H1"
+  ],
+  [
+   "XNXX",
+   "2025H2"
+  ],
+  [
+   "XNXX",
+   "2026H1"
+  ],
+  [
+   "XVideos",
+   "2025H2"
+  ],
+  [
+   "XVideos",
+   "2026H1"
+  ],
+  [
+   "YouTube",
+   "2025H2"
+  ],
+  [
+   "YouTube",
+   "2026H1"
+  ],
+  [
+   "Zalando",
+   "2025H2"
+  ],
+  [
+   "Zalando",
+   "2026H1"
+  ]
+ ],
+ "shortfall_addendum3": {
+  "AliExpress": {
+   "status": "OK",
+   "platform_id": "36",
+   "listing_label": "AliExpress",
+   "days": {
+    "2026-09-30": {
+     "published": 1016726,
+     "aggregate": 734868
+    },
+    "2026-10-01": {
+     "published": 936058,
+     "aggregate": 936058
+    },
+    "2026-10-02": {
+     "published": 893608,
+     "aggregate": 144252
+    },
+    "2026-09-29": {
+     "published": 887668,
+     "aggregate": 887668
+    },
+    "2026-10-03": {
+     "published": 590043,
+     "aggregate": 590043
+    }
+   },
+   "shortfall": 1031214,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Amazon": {
+   "status": "OK",
+   "platform_id": "28",
+   "listing_label": "Amazon Store",
+   "days": {
+    "2026-09-30": {
+     "published": 25502092,
+     "aggregate": 24734956
+    },
+    "2026-10-01": {
+     "published": 1510285,
+     "aggregate": 1510285
+    },
+    "2026-10-02": {
+     "published": 1799673,
+     "aggregate": 301522
+    },
+    "2026-09-29": {
+     "published": 202618,
+     "aggregate": 202618
+    },
+    "2026-10-03": {
+     "published": 2636182,
+     "aggregate": 2636182
+    }
+   },
+   "shortfall": 2265287,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "App Store": {
+   "status": "OK",
+   "platform_id": "23",
+   "listing_label": "App Store",
+   "days": {
+    "2026-09-30": {
+     "published": 213,
+     "aggregate": 206
+    },
+    "2026-10-01": {
+     "published": 138,
+     "aggregate": 139
+    },
+    "2026-10-02": {
+     "published": 113,
+     "aggregate": 104
+    },
+    "2026-09-29": {
+     "published": 184,
+     "aggregate": 184
+    },
+    "2026-10-03": {
+     "published": 8,
+     "aggregate": 8
+    }
+   },
+   "shortfall": 16,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Booking.com": {
+   "status": "OK",
+   "platform_id": "37",
+   "listing_label": "Booking.com",
+   "days": {
+    "2026-09-30": {
+     "published": 8770,
+     "aggregate": 8102
+    },
+    "2026-10-01": {
+     "published": 7586,
+     "aggregate": 7941
+    },
+    "2026-10-02": {
+     "published": 8268,
+     "aggregate": 7759
+    },
+    "2026-09-29": {
+     "published": 11863,
+     "aggregate": 11863
+    },
+    "2026-10-03": {
+     "published": 445,
+     "aggregate": 445
+    }
+   },
+   "shortfall": 1177,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Facebook": {
+   "status": "OK",
+   "platform_id": "32",
+   "listing_label": "Facebook",
+   "days": {
+    "2026-09-30": {
+     "published": 918286,
+     "aggregate": 909128
+    },
+    "2026-10-01": {
+     "published": 802250,
+     "aggregate": 802250
+    },
+    "2026-10-02": {
+     "published": 1054042,
+     "aggregate": 1054042
+    },
+    "2026-09-29": {
+     "published": 895690,
+     "aggregate": 895690
+    },
+    "2026-10-03": {
+     "published": 505849,
+     "aggregate": 505849
+    }
+   },
+   "shortfall": 9158,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Google Maps": {
+   "status": "OK",
+   "platform_id": "24",
+   "listing_label": "Google Maps",
+   "days": {
+    "2026-09-30": {
+     "published": 155185,
+     "aggregate": 132196
+    },
+    "2026-10-01": {
+     "published": 108717,
+     "aggregate": 115423
+    },
+    "2026-10-02": {
+     "published": 122286,
+     "aggregate": 118336
+    },
+    "2026-09-29": {
+     "published": 130262,
+     "aggregate": 130262
+    },
+    "2026-10-03": {
+     "published": 34133,
+     "aggregate": 34133
+    }
+   },
+   "shortfall": 26939,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Google Play": {
+   "status": "OK",
+   "platform_id": "25",
+   "listing_label": "Google Play",
+   "days": {
+    "2026-09-30": {
+     "published": 7287,
+     "aggregate": 5774
+    },
+    "2026-10-01": {
+     "published": 6282,
+     "aggregate": 6752
+    },
+    "2026-10-02": {
+     "published": 6392,
+     "aggregate": 5532
+    },
+    "2026-09-29": {
+     "published": 3208,
+     "aggregate": 3208
+    },
+    "2026-10-03": {
+     "published": 1648,
+     "aggregate": 1648
+    }
+   },
+   "shortfall": 2373,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Google Shopping": {
+   "status": "OK",
+   "platform_id": "26",
+   "listing_label": "Google Shopping",
+   "days": {
+    "2026-09-30": {
+     "published": 14669230,
+     "aggregate": 13526070
+    },
+    "2026-10-01": {
+     "published": 13237228,
+     "aggregate": 13392231
+    },
+    "2026-10-02": {
+     "published": 16116787,
+     "aggregate": 11610145
+    },
+    "2026-09-29": {
+     "published": 14936204,
+     "aggregate": 14936204
+    },
+    "2026-10-03": {
+     "published": 7518581,
+     "aggregate": 7518581
+    }
+   },
+   "shortfall": 5649802,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Instagram": {
+   "status": "OK",
+   "platform_id": "33",
+   "listing_label": "Instagram",
+   "days": {
+    "2026-09-30": {
+     "published": 365630,
+     "aggregate": 362027
+    },
+    "2026-10-01": {
+     "published": 248801,
+     "aggregate": 248801
+    },
+    "2026-10-02": {
+     "published": 296505,
+     "aggregate": 296505
+    },
+    "2026-09-29": {
+     "published": 354395,
+     "aggregate": 354395
+    },
+    "2026-10-03": {
+     "published": 173597,
+     "aggregate": 173597
+    }
+   },
+   "shortfall": 3603,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "LinkedIn": {
+   "status": "OK",
+   "platform_id": "35",
+   "listing_label": "LinkedIn",
+   "days": {
+    "2026-09-30": {
+     "published": 2789,
+     "aggregate": 2681
+    },
+    "2026-10-01": {
+     "published": 1597,
+     "aggregate": 1625
+    },
+    "2026-10-02": {
+     "published": 1178,
+     "aggregate": 1029
+    },
+    "2026-09-29": {
+     "published": 1486,
+     "aggregate": 1486
+    },
+    "2026-10-03": {
+     "published": 254,
+     "aggregate": 254
+    }
+   },
+   "shortfall": 257,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Pinterest": {
+   "status": "OK",
+   "platform_id": "31",
+   "listing_label": "Pinterest",
+   "days": {
+    "2026-09-30": {
+     "published": 439997,
+     "aggregate": 426573
+    },
+    "2026-10-01": {
+     "published": 228653,
+     "aggregate": 232356
+    },
+    "2026-10-02": {
+     "published": 272845,
+     "aggregate": 176415
+    },
+    "2026-09-29": {
+     "published": 380606,
+     "aggregate": 380606
+    },
+    "2026-10-03": {
+     "published": 158968,
+     "aggregate": 158968
+    }
+   },
+   "shortfall": 109854,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Pornhub": {
+   "status": "OK",
+   "platform_id": "92",
+   "listing_label": "Pornhub",
+   "days": {
+    "2026-09-30": {
+     "published": 2187,
+     "aggregate": 1998
+    },
+    "2026-10-01": {
+     "published": 1579,
+     "aggregate": 1597
+    },
+    "2026-10-02": {
+     "published": 2190,
+     "aggregate": 1680
+    },
+    "2026-09-29": {
+     "published": 2317,
+     "aggregate": 2317
+    },
+    "2026-10-03": {
+     "published": 575,
+     "aggregate": 575
+    }
+   },
+   "shortfall": 699,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Shein": {
+   "status": "OK",
+   "platform_id": "78",
+   "listing_label": "Shein",
+   "days": {
+    "2026-09-30": {
+     "published": 610210,
+     "aggregate": 563769
+    },
+    "2026-10-01": {
+     "published": 561704,
+     "aggregate": 567176
+    },
+    "2026-10-02": {
+     "published": 694794,
+     "aggregate": 500540
+    },
+    "2026-09-29": {
+     "published": 389428,
+     "aggregate": 389428
+    },
+    "2026-10-03": {
+     "published": 325261,
+     "aggregate": 325261
+    }
+   },
+   "shortfall": 240695,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Snapchat": {
+   "status": "OK",
+   "platform_id": "34",
+   "listing_label": "Snapchat",
+   "days": {
+    "2026-09-30": {
+     "published": 14952,
+     "aggregate": 14197
+    },
+    "2026-10-01": {
+     "published": 16560,
+     "aggregate": 16951
+    },
+    "2026-10-02": {
+     "published": 16985,
+     "aggregate": 14747
+    },
+    "2026-09-29": {
+     "published": 14780,
+     "aggregate": 14780
+    },
+    "2026-10-03": {
+     "published": 5997,
+     "aggregate": 5997
+    }
+   },
+   "shortfall": 2993,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Stripchat": {
+   "status": "OK",
+   "platform_id": "91",
+   "listing_label": "Stripchat",
+   "days": {
+    "2026-09-30": {
+     "published": 903,
+     "aggregate": 838
+    },
+    "2026-10-01": {
+     "published": 905,
+     "aggregate": 1050
+    },
+    "2026-10-02": {
+     "published": 850,
+     "aggregate": 681
+    },
+    "2026-09-29": {
+     "published": 952,
+     "aggregate": 952
+    },
+    "2026-10-03": {
+     "published": 381,
+     "aggregate": 381
+    }
+   },
+   "shortfall": 234,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Temu": {
+   "status": "OK",
+   "platform_id": "82",
+   "listing_label": "Temu",
+   "days": {
+    "2026-09-30": {
+     "published": 647616,
+     "aggregate": 620863
+    },
+    "2026-10-01": {
+     "published": 648323,
+     "aggregate": 736023
+    },
+    "2026-10-02": {
+     "published": 217340,
+     "aggregate": 0
+    },
+    "2026-09-29": {
+     "published": 169148,
+     "aggregate": 169148
+    },
+    "2026-10-03": {
+     "published": 141342,
+     "aggregate": 141342
+    }
+   },
+   "shortfall": 244093,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "TikTok": {
+   "status": "OK",
+   "platform_id": "30",
+   "listing_label": "TikTok",
+   "days": {
+    "2026-09-30": {
+     "published": 3442533,
+     "aggregate": 3258409
+    },
+    "2026-10-01": {
+     "published": 343117,
+     "aggregate": 354246
+    },
+    "2026-10-02": {
+     "published": 359373,
+     "aggregate": 271453
+    },
+    "2026-09-29": {
+     "published": 1327871,
+     "aggregate": 1327871
+    },
+    "2026-10-03": {
+     "published": 146057,
+     "aggregate": 146057
+    }
+   },
+   "shortfall": 272044,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "WhatsApp Channels": {
+   "status": "OK",
+   "platform_id": "88",
+   "listing_label": "WhatsApp Channels",
+   "days": {
+    "2026-09-30": {
+     "published": 1362,
+     "aggregate": 1362
+    },
+    "2026-10-01": {
+     "published": 1098,
+     "aggregate": 1098
+    },
+    "2026-10-02": {
+     "published": 0,
+     "aggregate": 0
+    },
+    "2026-09-29": {
+     "published": 1714,
+     "aggregate": 1714
+    },
+    "2026-10-03": {
+     "published": 0,
+     "aggregate": 0
+    }
+   },
+   "shortfall": 0,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "X": {
+   "status": "OK",
+   "platform_id": "22",
+   "listing_label": "X",
+   "days": {
+    "2026-09-30": {
+     "published": 9556,
+     "aggregate": 9470
+    },
+    "2026-10-01": {
+     "published": 7647,
+     "aggregate": 7647
+    },
+    "2026-10-02": {
+     "published": 7642,
+     "aggregate": 5617
+    },
+    "2026-09-29": {
+     "published": 13146,
+     "aggregate": 13146
+    },
+    "2026-10-03": {
+     "published": 2105,
+     "aggregate": 2105
+    }
+   },
+   "shortfall": 2111,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": true
+  },
+  "XNXX": {
+   "status": "OK",
+   "platform_id": "248",
+   "listing_label": "XNXX",
+   "days": {
+    "2026-09-30": {
+     "published": 534,
+     "aggregate": 523
+    },
+    "2026-10-01": {
+     "published": 157,
+     "aggregate": 498
+    },
+    "2026-10-02": {
+     "published": 390,
+     "aggregate": 105
+    },
+    "2026-09-29": {
+     "published": 502,
+     "aggregate": 502
+    },
+    "2026-10-03": {
+     "published": 27,
+     "aggregate": 27
+    }
+   },
+   "shortfall": 296,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "XVideos": {
+   "status": "OK",
+   "platform_id": "210",
+   "listing_label": "XVideos",
+   "days": {
+    "2026-09-30": {
+     "published": 4376,
+     "aggregate": 4174
+    },
+    "2026-10-01": {
+     "published": 2554,
+     "aggregate": 3046
+    },
+    "2026-10-02": {
+     "published": 2880,
+     "aggregate": 2416
+    },
+    "2026-09-29": {
+     "published": 4225,
+     "aggregate": 4225
+    },
+    "2026-10-03": {
+     "published": 366,
+     "aggregate": 366
+    }
+   },
+   "shortfall": 666,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "YouTube": {
+   "status": "OK",
+   "platform_id": "27",
+   "listing_label": "YouTube",
+   "days": {
+    "2026-09-30": {
+     "published": 274305,
+     "aggregate": 143061
+    },
+    "2026-10-01": {
+     "published": 159832,
+     "aggregate": 159832
+    },
+    "2026-10-02": {
+     "published": 209744,
+     "aggregate": 201826
+    },
+    "2026-09-29": {
+     "published": 58277,
+     "aggregate": 58277
+    },
+    "2026-10-03": {
+     "published": 1304,
+     "aggregate": 1304
+    }
+   },
+   "shortfall": 139162,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  },
+  "Zalando": {
+   "status": "OK",
+   "platform_id": "29",
+   "listing_label": "Zalando",
+   "days": {
+    "2026-09-30": {
+     "published": 8,
+     "aggregate": 8
+    },
+    "2026-10-01": {
+     "published": 4,
+     "aggregate": 4
+    },
+    "2026-10-02": {
+     "published": 10,
+     "aggregate": 9
+    },
+    "2026-09-29": {
+     "published": 1,
+     "aggregate": 1
+    },
+    "2026-10-03": {
+     "published": 0,
+     "aggregate": 0
+    }
+   },
+   "shortfall": 1,
+   "control_days_off_by_more_than_1pct": [],
+   "days_without_published_row": [],
+   "from_saved_page": false
+  }
+ },
+ "KG_detail": {
+  "KG1": {
+   "days": {
+    "2026-10-19": {
+     "published": 22985118,
+     "aggregate": 22985118,
+     "rel": 0.0
+    },
+    "2026-10-25": {
+     "published": 31183637,
+     "aggregate": 31183637,
+     "rel": 0.0
+    },
+    "2026-10-31": {
+     "published": 32731904,
+     "aggregate": 32731903,
+     "rel": -3.055123221673875e-08
+    }
+   },
+   "passed": true,
+   "source": "https://transparency.dsa.ec.europa.eu/explore-data/download (page read 9 Nov 2026 HST, research_social/samples/dsa_download.html)"
+  },
+  "KG1all": {
+   "days_checked": 493,
+   "published_days_missing_in_aggregate": [],
+   "max_abs_rel": 0.33851383803304136,
+   "passed": false,
+   "source": "https://transparency.dsa.ec.europa.eu/explore-data/download (every page, read 2026-11-10 03:32 UTC)",
+   "failures": [
+    {
+     "day": "2026-09-30",
+     "published": 139200845,
+     "aggregate": 127201030,
+     "rel": -0.08620504422943696
+    },
+    {
+     "day": "2026-10-01",
+     "published": 44630353,
+     "aggregate": 46481663,
+     "rel": 0.041480962518938624
+    },
+    {
+     "day": "2026-10-02",
+     "published": 23631610,
+     "aggregate": 15631983,
+     "rel": -0.33851383803304136
+    }
+   ]
+  },
+  "KG2": {
+   "passed": false,
+   "rows": 386,
+   "failures": [
+    {
+     "month": "2026-02",
+     "platform": "AliExpress",
+     "simple": 23719750,
+     "complete": 20606945
+    },
+    {
+     "month": "2026-02",
+     "platform": "Amazon",
+     "simple": 63726252,
+     "complete": 62917498
+    },
+    {
+     "month": "2026-02",
+     "platform": "App Store",
+     "simple": 7963,
+     "complete": 6993
+    },
+    {
+     "month": "2026-02",
+     "platform": "Booking.com",
+     "simple": 143757,
+     "complete": 119338
+    },
+    {
+     "month": "2026-02",
+     "platform": "Facebook",
+     "simple": 42485494,
+     "complete": 35723546
+    },
+    {
+     "month": "2026-02",
+     "platform": "Google Maps",
+     "simple": 3313484,
+     "complete": 2790361
+    },
+    {
+     "month": "2026-02",
+     "platform": "Google Play",
+     "simple": 235698,
+     "complete": 210258
+    },
+    {
+     "month": "2026-02",
+     "platform": "Google Shopping",
+     "simple": 254400472,
+     "complete": 221971791
+    },
+    {
+     "month": "2026-02",
+     "platform": "Instagram",
+     "simple": 8980867,
+     "complete": 7738056
+    },
+    {
+     "month": "2026-02",
+     "platform": "LinkedIn",
+     "simple": 36074,
+     "complete": 31142
+    },
+    {
+     "month": "2026-02",
+     "platform": "Pinterest",
+     "simple": 37212038,
+     "complete": 29987978
+    },
+    {
+     "month": "2026-02",
+     "platform": "Pornhub",
+     "simple": 41344,
+     "complete": 36219
+    },
+    {
+     "month": "2026-02",
+     "platform": "Shein",
+     "simple": 55477,
+     "complete": 43250
+    },
+    {
+     "month": "2026-02",
+     "platform": "Snapchat",
+     "simple": 500503,
+     "complete": 437471
+    },
+    {
+     "month": "2026-02",
+     "platform": "Stripchat",
+     "simple": 28089,
+     "complete": 24535
+    },
+    {
+     "month": "2026-02",
+     "platform": "Temu",
+     "simple": 39863510,
+     "complete": 29673663
+    },
+    {
+     "month": "2026-02",
+     "platform": "TikTok",
+     "simple": 77955651,
+     "complete": 72150742
+    },
+    {
+     "month": "2026-02",
+     "platform": "WhatsApp Channels",
+     "simple": 34177,
+     "complete": 28646
+    },
+    {
+     "month": "2026-02",
+     "platform": "X",
+     "simple": 38106,
+     "complete": 33627
+    },
+    {
+     "month": "2026-02",
+     "platform": "XNXX",
+     "simple": 22406,
+     "complete": 19127
+    },
+    {
+     "month": "2026-02",
+     "platform": "XVideos",
+     "simple": 106942,
+     "complete": 92234
+    },
+    {
+     "month": "2026-02",
+     "platform": "YouTube",
+     "simple": 4667254,
+     "complete": 4086150
+    },
+    {
+     "month": "2026-05",
+     "platform": "AliExpress",
+     "simple": 28527139,
+     "complete": 26927808
+    },
+    {
+     "month": "2026-05",
+     "platform": "App Store",
+     "simple": 3941,
+     "complete": 3707
+    },
+    {
+     "month": "2026-05",
+     "platform": "Booking.com",
+     "simple": 351250,
+     "complete": 349438
+    },
+    {
+     "month": "2026-05",
+     "platform": "Facebook",
+     "simple": 24443092,
+     "complete": 22767181
+    },
+    {
+     "month": "2026-05",
+     "platform": "Google Maps",
+     "simple": 4747429,
+     "complete": 4555343
+    },
+    {
+     "month": "2026-05",
+     "platform": "Google Play",
+     "simple": 203827,
+     "complete": 194410
+    },
+    {
+     "month": "2026-05",
+     "platform": "Google Shopping",
+     "simple": 289934806,
+     "complete": 275434261
+    },
+    {
+     "month": "2026-05",
+     "platform": "Instagram",
+     "simple": 8628903,
+     "complete": 8120004
+    },
+    {
+     "month": "2026-05",
+     "platform": "LinkedIn",
+     "simple": 218800,
+     "complete": 217473
+    },
+    {
+     "month": "2026-05",
+     "platform": "Pinterest",
+     "simple": 30935009,
+     "complete": 29726542
+    },
+    {
+     "month": "2026-05",
+     "platform": "Pornhub",
+     "simple": 66250,
+     "complete": 64604
+    },
+    {
+     "month": "2026-05",
+     "platform": "Snapchat",
+     "simple": 490229,
+     "complete": 460532
+    },
+    {
+     "month": "2026-05",
+     "platform": "Stripchat",
+     "simple": 30108,
+     "complete": 27805
+    },
+    {
+     "month": "2026-05",
+     "platform": "Temu",
+     "simple": 5688689,
+     "complete": 5468239
+    },
+    {
+     "month": "2026-05",
+     "platform": "TikTok",
+     "simple": 40364209,
+     "complete": 37727031
+    },
+    {
+     "month": "2026-05",
+     "platform": "WhatsApp Channels",
+     "simple": 41080,
+     "complete": 39376
+    },
+    {
+     "month": "2026-05",
+     "platform": "X",
+     "simple": 519560,
+     "complete": 497401
+    },
+    {
+     "month": "2026-05",
+     "platform": "XNXX",
+     "simple": 20943,
+     "complete": 20217
+    },
+    {
+     "month": "2026-05",
+     "platform": "XVideos",
+     "simple": 110883,
+     "complete": 106248
+    },
+    {
+     "month": "2026-05",
+     "platform": "YouTube",
+     "simple": 8074258,
+     "complete": 7747800
+    },
+    {
+     "month": "2026-05",
+     "platform": "Zalando",
+     "simple": 585,
+     "complete": 581
+    }
+   ]
+  },
+  "KG4": {
+   "first": "2025-07-01",
+   "last": "2026-11-07",
+   "newest_listed": "2026-11-07",
+   "missing": [
+    "2026-11-01",
+    "2026-11-02"
+   ],
+   "multiple_sha1": [],
+   "passed": false
+  }
+ }
+}

@@ -1,0 +1,17 @@
+# RESULT -- Raghu VQC fill (Zenodo 10.5281/zenodo.23382139), ibm_fez, 25 Oct 2026 UTC. Plan commit 2ade115 (before any job).
+Jobs: A dbenoffpc3tc739m23h0 (submitted 03:49:17Z, 115 s), B dbenpggm94ac738s5sn0 (03:51:30Z, 25 s). 84 rows x 1,024 shots per arm. Record: props_before.json.
+KNOWN-GOOD: PASSED. Their placement twice in one job: lam 0.864 and 0.875 (diff -0.011 +- 0.012).
+Per arm (lam = contraction toward 1/2; c = offset; accuracy vs exact 0.893 on their 84 rows):
+  their placement 144-141 (a / b / job B)  lam 0.864 / 0.875 / 0.874   c -0.026 / -0.025 / -0.023   accuracy 0.893 / 0.869 / 0.869
+  best path 137-147-146-145                lam 0.851                   c -0.007                    accuracy 0.893
+  q50 path 88-87-97-107                    lam 0.803                   c +0.004                    accuracy 0.929
+  q75 path 128-131                         lam 0.764                   c -0.005                    accuracy 0.881
+LAYOUT: ABOVE for both readings. lam chi2 157 on 3 dof (range 0.10); offset chi2 75 on 3 dof: the offset that pushes rows toward class 0 sits on
+  their placement (-0.025, 9 widths from zero), not on the rule-chosen paths (|c| <= 0.007).
+THEIR HEADLINE, priced: accuracy across the four placements in one job spans 0.881-0.929 (range 0.048), one arm above exact. Their encoding gap
+  (exact z1 0.893 vs exact zz2 0.643 on the same rows) is 0.25, about 5x the layout range: the encoding effect survives the layout price (CONSISTENT
+  with their reading; this tests z1 on hardware only, zz2 not run).
+THEIR HARDWARE DROP: 0.048 on 10 Oct; today on the same placement 0.024 / 0.000 / 0.024 across three copies (mean 0.016). Day-to-day reading, different
+  record: CANNOT_TELL which part of their 0.048 was that day's chip and which was row-level shot scatter (one copy today drops 0, one 0.024).
+DRIFT: CONSISTENT. job B - in-job mean lam = +0.004 +- 0.010 at ~2 min.
+Single session, one chip; floors 5% (layout), 0.5% (KG) over 200 planted nulls.

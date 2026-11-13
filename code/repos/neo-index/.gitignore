@@ -1,0 +1,13 @@
+__pycache__/
+*.part
+*.tmp
+*.bak-*
+# refetchable pulls and per-run outputs
+data/raw/
+data/cache/
+data/neo.json
+data/neo_history.jsonl
+# data/snapshots/ is tracked: our own copies cannot be fetched again
+# the desk page draft, rebuilt by build_page.py: the live page is built by the site build
+neo.html
+.neo_tick.lock

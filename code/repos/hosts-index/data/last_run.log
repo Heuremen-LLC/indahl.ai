@@ -1,0 +1,3 @@
+hosts: gate passed
+hosts: poll 176 models 869 endpoints, 0 failed
+hosts: 869 endpoints on 70 hosts for 176 open-weight models. 44 with a 5-minute uptime below 100 now. test NOTHING_RETURNED published

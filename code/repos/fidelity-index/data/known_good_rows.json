@@ -1,0 +1,38 @@
+[
+ {
+  "event": "DIVORCE",
+  "state": "Texas",
+  "year": 2022,
+  "nchs": 56269,
+  "acs_women": 89194,
+  "acs_moe": 6115,
+  "source": "NCHS PDF text lines read by hand (raw/div23.pdf.txt, mar23.pdf.txt); ACS from table-based summary file raw/YYYY-b12503|b12501.dat (scout read, re-read here)"
+ },
+ {
+  "event": "DIVORCE",
+  "state": "Florida",
+  "year": 2023,
+  "nchs": 66958,
+  "acs_women": 79000,
+  "acs_moe": 5982,
+  "source": "NCHS PDF text lines read by hand (raw/div23.pdf.txt, mar23.pdf.txt); ACS from table-based summary file raw/YYYY-b12503|b12501.dat (scout read, re-read here)"
+ },
+ {
+  "event": "MARRIAGE",
+  "state": "New York",
+  "year": 2022,
+  "nchs": 123526,
+  "acs_women": 123941,
+  "acs_moe": 5834,
+  "source": "NCHS PDF text lines read by hand (raw/div23.pdf.txt, mar23.pdf.txt); ACS from table-based summary file raw/YYYY-b12503|b12501.dat (scout read, re-read here)"
+ },
+ {
+  "event": "MARRIAGE",
+  "state": "Pennsylvania",
+  "year": 2023,
+  "nchs": 69242,
+  "acs_women": 85201,
+  "acs_moe": 5871,
+  "source": "NCHS PDF text lines read by hand (raw/div23.pdf.txt, mar23.pdf.txt); ACS from table-based summary file raw/YYYY-b12503|b12501.dat (scout read, re-read here)"
+ }
+]

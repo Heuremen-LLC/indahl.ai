@@ -1,0 +1,78 @@
+{
+ "2603.29019": {
+  "tier": "T2",
+  "arm": "outside"
+ },
+ "2506.15984": {
+  "tier": "T2",
+  "arm": "outside"
+ },
+ "2507.21566": {
+  "tier": "T3",
+  "arm": "outside"
+ },
+ "2507.02335": {
+  "tier": "T3",
+  "arm": "outside"
+ },
+ "2507.01294": {
+  "tier": "T3",
+  "arm": "outside"
+ },
+ "2510.25579": {
+  "tier": "T3",
+  "arm": "outside"
+ },
+ "2510.14291": {
+  "tier": "T1",
+  "arm": "outside"
+ },
+ "2506.13870": {
+  "tier": "T3",
+  "arm": "outside"
+ },
+ "2506.06838": {
+  "tier": "T2",
+  "arm": "outside"
+ },
+ "2311.06416": {
+  "tier": "T3",
+  "arm": "outside"
+ },
+ "2504.00198": {
+  "tier": "T3",
+  "arm": "outside"
+ },
+ "2412.05369": {
+  "tier": "T2",
+  "arm": "outside"
+ },
+ "2610.29436": {
+  "tier": "T3",
+  "arm": "control_LVK"
+ },
+ "2506.21021": {
+  "tier": "T1",
+  "arm": "control_LVK"
+ },
+ "2410.16565": {
+  "tier": "T1",
+  "arm": "control_LVK"
+ },
+ "2311.16085": {
+  "tier": "T1",
+  "arm": "outside"
+ },
+ "2403.03982": {
+  "tier": "T1",
+  "arm": "outside"
+ },
+ "2303.17628": {
+  "tier": "T2",
+  "arm": "outside"
+ },
+ "2208.01766": {
+  "tier": "T1",
+  "arm": "outside"
+ }
+}

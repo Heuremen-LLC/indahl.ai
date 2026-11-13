@@ -1,0 +1,7 @@
+# Cells that need a direct PDF table or figure read (extraction scrambles them)
+- 2506.22835 F6 (Table 7 network columns)
+- 2507.01294 F6 (Table 1 event count, 59 vs 60)
+- 2505.13420 F6 (Eqs 3.88, 3.139)
+- 2506.01760 F6 (Table 1 per-event Bayes factors)
+- 2404.11505 F6 (Table IV lg columns, ~20x/~40x claim)
+- 2509.07831 F6 (Table 3 lnB vs Eq 3.3)

@@ -1,0 +1,42 @@
+site_lock: waiting for the lock (free (last: RANK step two, released 11:53:43))
+site_lock: held after 0s as "CREDIT desk"
+patched /Users/heuremen/bones-forge/indahl-ai/build_site.py
+patched /Users/heuremen/bones-forge/ledger/ledger.py
+patched /Users/heuremen/bones-forge/ledger/push_public.sh
+patched /Users/heuremen/bones-forge/ledger/receipts.py
+code/credit mirrored
+patched /Users/heuremen/bones-forge/cloudflare-workers/heuremen-door/worker.js
+patched /Users/heuremen/bones-forge/watch/headlines.py
+patched /Users/heuremen/bones-forge/ledger/live_headlines.py
+patched /Users/heuremen/bones-forge/tools/desk_pack.py
+patched /Users/heuremen/bones-forge/indahl-ai/brands.py
+patched /Users/heuremen/bones-forge/brands/entities.json
+live 13
+== 1 BUILD
+  faults: up to date
+  guards: up to date
+  paper: up to date
+  paper source: synced to the public repo
+  bill: up to date
+oy school pages 389
+iris study pages 9
+study pages 197
+  brands: no snapshot for {'credit': 'MISSING: HTTP Error 404: Not Found'}
+Traceback (most recent call last):
+  File "/Users/heuremen/bones-forge/indahl-ai/build_site.py", line 2582, in <module>
+    main()
+    ~~~~^^
+  File "/Users/heuremen/bones-forge/indahl-ai/build_site.py", line 2508, in main
+    import brands as _brd; _bb = _brd.add_pages(PAGES, page, hero_slim, HOME); [PAGES.__setitem__(_p, PAGES[_p].replace('@@CSSV@@', _cv)) for _p in PAGES if _p.startswith('/brand')]
+                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/heuremen/bones-forge/indahl-ai/brands.py", line 588, in add_pages
+    rows, unmapped = collect(); bb = by_brand(rows)
+                     ~~~~~~~^^
+  File "/Users/heuremen/bones-forge/indahl-ai/brands.py", line 499, in collect
+    try: got = fn()
+               ~~^^
+  File "/Users/heuremen/bones-forge/indahl-ai/brands.py", line 463, in ex_credit
+    for i, r in enumerate(d.get('ruler1', [])):
+                          ^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+site_lock: released, command exit 1

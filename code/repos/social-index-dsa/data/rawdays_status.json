@@ -1,0 +1,24 @@
+{
+ "2026-10-02": {
+  "status": "OK",
+  "sha1": "12d17c20b58743ad845adadceb02ee322a378327",
+  "rows": 15631983,
+  "mapped_rows": 14413193,
+  "names_not_in_aggregate_june": [
+   "Amazon Store",
+   "CHECK24",
+   "DATEV Community",
+   "Docplanner Italy Srl",
+   "Doctoralia",
+   "HomeToGo Plattform",
+   "IMVU",
+   "Jameda",
+   "LEGO Play",
+   "MYM",
+   "Pokec",
+   "Reservix",
+   "Tumblr",
+   "Xiaomi Community"
+  ]
+ }
+}

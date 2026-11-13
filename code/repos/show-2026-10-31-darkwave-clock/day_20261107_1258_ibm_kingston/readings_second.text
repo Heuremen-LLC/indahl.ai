@@ -1,0 +1,17 @@
+SECOND RULERS (PLAN_CLOCK Addendum 3), ibm_kingston, fire 20261107_1258 UTC. Planned before this fire's data existed (Addendum 3 public 12:08:49 UTC 1 Nov, this fire's first job ran 13:26:11 UTC).
+(a) pooled clock reading over 20 bootstrap seeds: CONSISTENT 14, CANNOT_TELL 6 | lower end -0.0510 to -0.0487, upper end +0.0040 to +0.0051
+(b) qubits where the 31 Oct table leaves a larger |residual| than today's table: 67, smaller: 50, of 117; exact two-sided sign test p = 0.139
+(c) signed median kick M: -2.729 [-3.925, -1.718] deg/readout
+(c) signed median residual MC: +0.168 [+0.038, +0.305] deg/readout
+(c) signed median residual M31: +0.235 [+0.070, +0.318] deg/readout
+(c) signed median residual MT: +0.090 [-0.062, +0.172] deg/readout
+(d) M31: median |residual| pooled 0.314 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.136
+(d) MT: median |residual| pooled 0.250 deg/readout, shot-noise floor scale (copy-to-copy half-difference median) 0.149
+ADDENDUM 4 lines: planned before this fire.
+(e) share M31 minus share MT over seeds 1-20: pooled label CONSISTENT 17, CANNOT_TELL 3 | the plan's rule (pooled if the copies agree) CANNOT_TELL 20
+(e) share MC minus share MT over seeds 1-20: pooled label BELOW 4, CANNOT_TELL 16 | the plan's rule (pooled if the copies agree) CANNOT_TELL 20
+(e) share MC minus share M31 over seeds 1-20: pooled label CONSISTENT 4, CANNOT_TELL 16 | the plan's rule (pooled if the copies agree) CONSISTENT 4, CANNOT_TELL 16
+(f) share M31 minus share MT at the plan's draw: copy A -0.0493 [-0.0903, -0.0053] BELOW | copy B -0.0199 [-0.0603, +0.0103] CANNOT_TELL
+(f) share MC minus share MT at the plan's draw: copy A -0.0464 [-0.0874, +0.0081] CANNOT_TELL | copy B -0.0343 [-0.0815, -0.0029] BELOW
+(f) share MC minus share M31 at the plan's draw: copy A +0.0029 [-0.0426, +0.0602] CANNOT_TELL | copy B -0.0144 [-0.0614, +0.0265] CANNOT_TELL
+(g) today's table (job C) created 12:59:11, ran 13:26:11 to 13:26:53 UTC; copy A ran from 13:27:16, 22 s after job C finished; copy B from 13:28:58

@@ -1,0 +1,29 @@
+n=8: {'chain': [124, 123, 136, 143, 144, 145, 146, 147], 'rows': 13, 'shots': 1102, 'n2q': 252, 'd2q': 72, 'depth': 334, 'his': {'n2q': 252, 'd2q': 72, 'depth': 334}, 'his_pred_s': 8.3274611936}
+n=10: {'chain': [107, 106, 105, 117, 125, 124, 123, 122, 121, 120], 'rows': 17, 'shots': 2168, 'n2q': 540, 'd2q': 120, 'depth': 548, 'his': {'n2q': 540, 'd2q': 120, 'depth': 548}, 'his_pred_s': 17.1788275328}
+ibm_fez: 12 jobs x 2 PUBs, est 22.5 s/job (his predicted metering), total 270 s (cap 320), remaining 3430
+  job = sm.run([pubs[8], pubs[10]]); sub = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+SUBMITTED J01T dbeaejgm94ac738rfohg 2026-10-24T12:40:46Z
+DONE J01T usage 22.5062887264 s (total 23)
+SUBMITTED J02O dbeaergm94ac738rfoqg 2026-10-24T12:41:18Z
+DONE J02O usage 22.5062887264 s (total 45)
+SUBMITTED J03O dbeaf1vpc3tc739lbn6g 2026-10-24T12:41:43Z
+DONE J03O usage 22.5062887264 s (total 68)
+SUBMITTED J04T dbeaf8fpc3tc739lbndg 2026-10-24T12:42:09Z
+DONE J04T usage 22.5062887264 s (total 90)
+SUBMITTED J05T dbeaffvsstms73fbnnb0 2026-10-24T12:42:40Z
+DONE J05T usage 22.5062887264 s (total 113)
+SUBMITTED J06O dbeafnnpc3tc739lbnu0 2026-10-24T12:43:10Z
+DONE J06O usage 22.5062887264 s (total 135)
+SUBMITTED J07O dbeag1vgdj9s73fleob0 2026-10-24T12:43:51Z
+DONE J07O usage 22.5062887264 s (total 158)
+SUBMITTED J08T dbeag87sstms73fbno4g 2026-10-24T12:44:17Z
+DONE J08T usage 22.5062887264 s (total 180)
+SUBMITTED J09T dbeagfngdj9s73fleopg 2026-10-24T12:44:46Z
+DONE J09T usage 22.5062887264 s (total 203)
+SUBMITTED J10O dbeagmngdj9s73flep3g 2026-10-24T12:45:14Z
+DONE J10O usage 22.5062887264 s (total 225)
+SUBMITTED J11O dbeagsom94ac738rfqs0 2026-10-24T12:45:39Z
+DONE J11O usage 22.5062887264 s (total 248)
+SUBMITTED J12T dbeahffsstms73fbnpbg 2026-10-24T12:46:53Z
+DONE J12T usage 22.5062887264 s (total 270)
+ALL DONE 270 s

@@ -1,0 +1,3 @@
+n=8: noiseless CVaR at his trace x[0] ours -4.0267523405 his stored -4.0267523405 -> PASS
+n=10: noiseless CVaR at his trace x[0] ours -5.4532464316 his stored -5.4532464316 -> PASS
+CIRCUIT KNOWN-GOOD PASS

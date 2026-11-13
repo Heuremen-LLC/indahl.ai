@@ -1,0 +1,17 @@
+# RESULT -- Zenodo 21938548 (N47Lab) prediction 4 on ibm_kingston, job dbemhsfsstms73fcc2dg, 2026-10-25, 49 s
+PREDICTION 4 (theirs: 3-qubit MI ~ 0.16 +/- 0.01 at 100k+ shots; 'falsified if the peak collapses to the finite-shot floor'):
+  P3_PI (N=3, phi=pi, 100,000 shots, physical [106,105,117]): MI = 0.00084, bootstrap 95% [0.00058, 0.00114] -> BELOW their band [0.15, 0.17],
+  (Miller-Madow floor 2.2e-5 bit; noiseless value of the printed circuit 0). /q C16 narrowed: 0.00084 is ~40x their literal finite-shot floor, so 'collapsed to
+  the floor' is our pre-set threshold (10x floor + 0.002), not their wording; the reading is BELOW their band at ~0.5% of their 0.16. The arm itself is healthy: its 8-outcome
+  distribution is 0.042 TVD from the printed circuit's noiseless distribution (post-hoc check, defined after the data).
+KNOWN-GOOD (pre-set): separate control MI 6.3e-5 < 0.002: PASS. Disclosed weakness, found after the data: the control sat on physical [0,1,2], and a qubit
+that flips adds no MI, so this check could not catch the fault below.
+UNREADABLE ARMS (post-hoc, defined after the data): every arm the transpiler placed on physical qubit 0 (P2_PI, P2_PI4, H2_PI2, S3_PI) shows q0 reading '1'
+~72-80% where the printed circuit gives ~0-25% (H2_PI2 should be |00> 100%: q0 read 1 in 75%), while q1/q2 in the same arms read their noiseless values
+(S3: q1 0.242, q2 0.251 vs 0.25). The record at submission gives q0 readout_error 0.0127, prob_meas1_prep0 0.0112. /q A1+A5 (narrowed before any bill line): this job cannot tell a
+misread q0 from a q0 that was not in |0> (excited / not reset); IBM's rebuttal ('q0 was excited, not misread') is untestable here. Bill line: CANNOT_TELL
+until a prep-0 / prep-1 readout pair runs on q0 (~4 s). Logged as a lead for the IBM bill track, not a line.
+My catch (tp_score): opt level 1 with no initial_layout put four arms on q0-q2; the known-good could not see a flipping qubit. Next time: pin layouts and
+add a known-good that reads a fixed bitstring.
+What this decides for the authors: the printed protocol, run at the shots they asked for on healthy qubits, gives no 3-qubit MI peak (0.0008 vs 0.16).
+Their hardware circuits are not released, so whether their hardware runs differed from the printed protocol is CANNOT_TELL.

@@ -1,0 +1,112 @@
+{
+ "OFFSET_LAYOUT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT": "CONSISTENT",
+  "lam": [
+   0.806,
+   0.804,
+   0.805,
+   0.8
+  ],
+  "acc": [
+   0.8928571428571429,
+   0.8928571428571429,
+   0.9047619047619048,
+   0.9285714285714286
+  ],
+  "offset_p": 0.0
+ },
+ "EXACT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT": "CONSISTENT",
+  "lam": [
+   0.996,
+   1.006,
+   0.998,
+   1.004
+  ],
+  "acc": [
+   0.9047619047619048,
+   0.9047619047619048,
+   0.8928571428571429,
+   0.8928571428571429
+  ],
+  "offset_p": 0.7133
+ },
+ "FLAT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT": "CONSISTENT",
+  "lam": [
+   0.807,
+   0.809,
+   0.806,
+   0.801
+  ],
+  "acc": [
+   0.9047619047619048,
+   0.9166666666666666,
+   0.9047619047619048,
+   0.9047619047619048
+  ],
+  "offset_p": 0.9721
+ },
+ "LAYOUT": {
+  "KG": true,
+  "LAYOUT": "ABOVE (layout carries the number)",
+  "DRIFT": "CONSISTENT",
+  "lam": [
+   0.852,
+   0.757,
+   0.596,
+   0.45
+  ],
+  "acc": [
+   0.9047619047619048,
+   0.9047619047619048,
+   0.8928571428571429,
+   0.8928571428571429
+  ],
+  "offset_p": 0.1319
+ },
+ "DRIFT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT": "BELOW",
+  "lam": [
+   0.794,
+   0.799,
+   0.795,
+   0.798
+  ],
+  "acc": [
+   0.8809523809523809,
+   0.9047619047619048,
+   0.9047619047619048,
+   0.9047619047619048
+  ],
+  "offset_p": 0.6387
+ },
+ "BROKEN_COPIES": {
+  "KG": false,
+  "LAYOUT": "CONSISTENT (range is a bound)",
+  "DRIFT": "ABOVE",
+  "lam": [
+   0.803,
+   0.809,
+   0.804,
+   0.803
+  ],
+  "acc": [
+   0.9166666666666666,
+   0.9047619047619048,
+   0.9047619047619048,
+   0.9166666666666666
+  ],
+  "offset_p": 0.9347
+ },
+ "FLOOR_layout_above_200": 10,
+ "FLOOR_kg_fail_200": 1
+}

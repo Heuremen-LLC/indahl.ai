@@ -1,0 +1,44 @@
+[
+ {
+  "tau": 5.0,
+  "job_id": "dape88318flc739m4ii0",
+  "file": "tau5_dape88318flc739m4ii0.npz",
+  "readout": "complementary",
+  "submitted_utc": "2026-09-22T20:25:05Z"
+ },
+ {
+  "tau": 15.0,
+  "job_id": "dape8akak42c73cieed0",
+  "file": "tau15_dape8akak42c73cieed0.npz",
+  "readout": "complementary",
+  "submitted_utc": "2026-09-22T20:25:15Z"
+ },
+ {
+  "tau": 20.0,
+  "job_id": "dape8d318flc739m4ing",
+  "file": "tau20_dape8d318flc739m4ing.npz",
+  "readout": "complementary",
+  "submitted_utc": "2026-09-22T20:25:26Z"
+ },
+ {
+  "tau": 40.0,
+  "job_id": "dap8pttr85ps73fg9o5g",
+  "file": "tau40_dap8pttr85ps73fg9o5g.npz",
+  "readout": "standard",
+  "submitted_utc": "2026-09-22T14:13:11Z"
+ },
+ {
+  "tau": 60.0,
+  "job_id": "dap8pvopqrnc739b0oi0",
+  "file": "tau60_dap8pvopqrnc739b0oi0.npz",
+  "readout": "standard",
+  "submitted_utc": "2026-09-22T14:13:19Z"
+ },
+ {
+  "tau": 80.0,
+  "job_id": "dap8q278gn2s739osqr0",
+  "file": "tau80_dap8q278gn2s739osqr0.npz",
+  "readout": "standard",
+  "submitted_utc": "2026-09-22T14:13:28Z"
+ }
+]

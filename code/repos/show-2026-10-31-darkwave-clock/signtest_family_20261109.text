@@ -1,0 +1,22 @@
+SIGN TESTS ON FILE (readings_second.text line (b)), defined after the data, 9 Nov 2026 (rebuilt with the 8 and 9 Nov fires)
+  day_20261101_1159_ibm_kingston 63 vs 54 p = 0.460
+  day_20261101_1159_ibm_marrakesh 71 vs 46 p = 0.026
+  day_20261102_1205_ibm_kingston 64 vs 53 p = 0.355
+  day_20261102_1206_ibm_marrakesh 69 vs 48 p = 0.064
+  day_20261103_1211_ibm_kingston 60 vs 57 p = 0.853
+  day_20261103_1211_ibm_marrakesh 66 vs 51 p = 0.195
+  day_20261104_1312_ibm_marrakesh 66 vs 51 p = 0.195
+  day_20261104_1345_ibm_kingston 68 vs 49 p = 0.096
+  day_20261105_1232_ibm_marrakesh 65 vs 52 p = 0.267
+  day_20261105_1339_ibm_kingston 77 vs 40 p = 0.001
+  day_20261106_1747_ibm_kingston 65 vs 52 p = 0.267
+  day_20261106_1747_ibm_marrakesh 62 vs 55 p = 0.579
+  day_20261107_1223_ibm_marrakesh 71 vs 46 p = 0.026
+  day_20261107_1258_ibm_kingston 67 vs 50 p = 0.139
+  day_20261108_1230_ibm_marrakesh 65 vs 52 p = 0.267
+  day_20261108_1303_ibm_kingston 67 vs 50 p = 0.139
+  day_20261109_2022_ibm_marrakesh 59 vs 58 p = 1.000
+  day_20261109_2047_ibm_kingston 62 vs 55 p = 0.579
+sign tests on file: 18
+smallest: exact two-sided p = 0.000800
+chance under no change that at least one of 18 is this low: 0.0143 (about 1 in 70)

@@ -1,0 +1,2464 @@
+{
+ "generated": "2026-11-11T15:35:42Z",
+ "plan_seal": {
+  "plan_commit": "af6caaeeb0f8bb894a3f623a86ff4a274b0f64ea",
+  "plan_commit_time": "2026-11-11T07:23:14-05:00",
+  "plan_sha256": "c07faa251dd02ef7410077459d215104dd10c228889f569c059b8979343301aa",
+  "first_comparison": "2026-11-11T12:41:15Z"
+ },
+ "plan_matches_file": true,
+ "gates": {
+  "passed": true,
+  "format": true,
+  "join": true,
+  "join_detail": {
+   "compared": 60,
+   "equal": 60,
+   "mismatches": []
+  },
+  "reader": true,
+  "reader_detail": [
+   {
+    "series": "HSN1F",
+    "vintage": "2026-10-27",
+    "month": "2026-09",
+    "release_text": 676,
+    "parsed": 676.0,
+    "equal": true
+   },
+   {
+    "series": "HSN1F",
+    "vintage": "2026-10-27",
+    "month": "2026-08",
+    "release_text": 680,
+    "parsed": 680.0,
+    "equal": true
+   },
+   {
+    "series": "HSN1F",
+    "vintage": "2026-10-27",
+    "month": "2025-09",
+    "release_text": 714,
+    "parsed": 714.0,
+    "equal": true
+   },
+   {
+    "series": "HOUST",
+    "vintage": "2026-10-20",
+    "month": "2026-09",
+    "release_text": 1221,
+    "parsed": 1221.0,
+    "equal": true
+   },
+   {
+    "series": "HOUST",
+    "vintage": "2026-10-20",
+    "month": "2026-08",
+    "release_text": 1288,
+    "parsed": 1288.0,
+    "equal": true
+   },
+   {
+    "series": "HOUST",
+    "vintage": "2026-10-20",
+    "month": "2025-09",
+    "release_text": 1319,
+    "parsed": 1319.0,
+    "equal": true
+   },
+   {
+    "series": "COMPUTSA",
+    "vintage": "2026-10-20",
+    "month": "2026-09",
+    "release_text": 1192,
+    "parsed": 1192.0,
+    "equal": true
+   },
+   {
+    "series": "COMPUTSA",
+    "vintage": "2026-10-20",
+    "month": "2026-08",
+    "release_text": 1166,
+    "parsed": 1166.0,
+    "equal": true
+   },
+   {
+    "series": "PERMIT",
+    "vintage": "2026-10-20",
+    "month": "2026-09",
+    "release_text": 1400,
+    "parsed": 1400.0,
+    "equal": true
+   },
+   {
+    "series": "PERMIT",
+    "vintage": "2026-10-20",
+    "month": "2026-08",
+    "release_text": 1403,
+    "parsed": 1403.0,
+    "equal": true
+   }
+  ],
+  "rule": true
+ },
+ "series_meta": {
+  "HSN1F": {
+   "vintages": 127,
+   "first_vintage": "2016-01-27",
+   "last_vintage": "2026-10-27",
+   "annual_revision_vintages": [
+    "2016-05-24",
+    "2017-05-23",
+    "2018-05-23",
+    "2019-05-23",
+    "2020-05-26",
+    "2021-05-25",
+    "2022-05-24",
+    "2023-05-23",
+    "2024-05-23",
+    "2025-05-23",
+    "2026-05-28"
+   ],
+   "retail_break_vintage": null
+  },
+  "HOUST": {
+   "vintages": 127,
+   "first_vintage": "2016-01-20",
+   "last_vintage": "2026-10-20",
+   "annual_revision_vintages": [
+    "2016-05-17",
+    "2017-05-16",
+    "2018-05-16",
+    "2019-05-16",
+    "2020-05-19",
+    "2021-05-18",
+    "2022-05-18",
+    "2023-05-17",
+    "2024-05-16",
+    "2025-05-16",
+    "2026-05-21"
+   ],
+   "retail_break_vintage": null
+  },
+  "HSN1FNE": {
+   "vintages": 127,
+   "first_vintage": "2016-01-27",
+   "last_vintage": "2026-10-27",
+   "annual_revision_vintages": [
+    "2016-05-24",
+    "2017-05-23",
+    "2018-05-23",
+    "2019-05-23",
+    "2020-05-26",
+    "2021-05-25",
+    "2022-05-24",
+    "2023-05-23",
+    "2024-05-23",
+    "2025-05-23",
+    "2026-05-28"
+   ],
+   "retail_break_vintage": null
+  },
+  "HOUSTNE": {
+   "vintages": 127,
+   "first_vintage": "2016-01-20",
+   "last_vintage": "2026-10-20",
+   "annual_revision_vintages": [
+    "2016-05-17",
+    "2017-05-16",
+    "2018-05-16",
+    "2019-05-16",
+    "2020-05-19",
+    "2021-05-18",
+    "2022-05-18",
+    "2023-05-17",
+    "2024-05-16",
+    "2025-05-16",
+    "2026-05-21"
+   ],
+   "retail_break_vintage": null
+  },
+  "HSN1FMW": {
+   "vintages": 127,
+   "first_vintage": "2016-01-27",
+   "last_vintage": "2026-10-27",
+   "annual_revision_vintages": [
+    "2016-05-24",
+    "2017-05-23",
+    "2018-05-23",
+    "2019-05-23",
+    "2020-05-26",
+    "2021-05-25",
+    "2022-05-24",
+    "2023-05-23",
+    "2024-05-23",
+    "2025-05-23",
+    "2026-05-28"
+   ],
+   "retail_break_vintage": null
+  },
+  "HOUSTMW": {
+   "vintages": 127,
+   "first_vintage": "2016-01-20",
+   "last_vintage": "2026-10-20",
+   "annual_revision_vintages": [
+    "2016-05-17",
+    "2017-05-16",
+    "2018-05-16",
+    "2019-05-16",
+    "2020-05-19",
+    "2021-05-18",
+    "2022-05-18",
+    "2023-05-17",
+    "2024-05-16",
+    "2025-05-16",
+    "2026-05-21"
+   ],
+   "retail_break_vintage": null
+  },
+  "HSN1FS": {
+   "vintages": 127,
+   "first_vintage": "2016-01-27",
+   "last_vintage": "2026-10-27",
+   "annual_revision_vintages": [
+    "2016-05-24",
+    "2017-05-23",
+    "2018-05-23",
+    "2019-05-23",
+    "2020-05-26",
+    "2021-05-25",
+    "2022-05-24",
+    "2023-05-23",
+    "2024-05-23",
+    "2025-05-23",
+    "2026-05-28"
+   ],
+   "retail_break_vintage": null
+  },
+  "HOUSTS": {
+   "vintages": 127,
+   "first_vintage": "2016-01-20",
+   "last_vintage": "2026-10-20",
+   "annual_revision_vintages": [
+    "2016-05-17",
+    "2017-05-16",
+    "2018-05-16",
+    "2019-05-16",
+    "2020-05-19",
+    "2021-05-18",
+    "2022-05-18",
+    "2023-05-17",
+    "2024-05-16",
+    "2025-05-16",
+    "2026-05-21"
+   ],
+   "retail_break_vintage": null
+  },
+  "HSN1FW": {
+   "vintages": 127,
+   "first_vintage": "2016-01-27",
+   "last_vintage": "2026-10-27",
+   "annual_revision_vintages": [
+    "2016-05-24",
+    "2017-05-23",
+    "2018-05-23",
+    "2019-05-23",
+    "2020-05-26",
+    "2021-05-25",
+    "2022-05-24",
+    "2023-05-23",
+    "2024-05-23",
+    "2025-05-23",
+    "2026-05-28"
+   ],
+   "retail_break_vintage": null
+  },
+  "HOUSTW": {
+   "vintages": 127,
+   "first_vintage": "2016-01-20",
+   "last_vintage": "2026-10-20",
+   "annual_revision_vintages": [
+    "2016-05-17",
+    "2017-05-16",
+    "2018-05-16",
+    "2019-05-16",
+    "2020-05-19",
+    "2021-05-18",
+    "2022-05-18",
+    "2023-05-17",
+    "2024-05-16",
+    "2025-05-16",
+    "2026-05-21"
+   ],
+   "retail_break_vintage": null
+  },
+  "COMPUTSA": {
+   "vintages": 127,
+   "first_vintage": "2016-01-20",
+   "last_vintage": "2026-10-20",
+   "annual_revision_vintages": [
+    "2016-05-17",
+    "2017-05-16",
+    "2018-05-16",
+    "2019-05-16",
+    "2020-05-19",
+    "2021-05-18",
+    "2022-05-18",
+    "2023-05-17",
+    "2024-05-16",
+    "2025-05-16",
+    "2026-05-21"
+   ],
+   "retail_break_vintage": null
+  },
+  "PERMIT": {
+   "vintages": 240,
+   "first_vintage": "2016-01-20",
+   "last_vintage": "2026-10-27",
+   "annual_revision_vintages": [
+    "2016-05-17",
+    "2017-05-16",
+    "2018-05-16",
+    "2019-07-17",
+    "2020-05-19",
+    "2021-05-18",
+    "2022-05-18",
+    "2023-05-17",
+    "2024-04-23",
+    "2024-05-16",
+    "2025-05-16",
+    "2026-05-21"
+   ],
+   "retail_break_vintage": null
+  },
+  "RSAFS": {
+   "vintages": 137,
+   "first_vintage": "2016-01-15",
+   "last_vintage": "2026-10-15",
+   "annual_revision_vintages": [
+    "2016-05-13",
+    "2016-06-14",
+    "2016-07-15",
+    "2017-05-12",
+    "2018-05-25",
+    "2019-07-16",
+    "2020-05-15",
+    "2021-04-26",
+    "2022-04-25",
+    "2023-04-24",
+    "2024-04-23",
+    "2025-04-25",
+    "2026-09-28"
+   ],
+   "retail_break_vintage": "2026-09-28",
+   "annual_revision_detail": {
+    "2016-05-13": {
+     "all_changed": 51,
+     "all_median_changed_pct": 0.1033332811448075,
+     "all_max_pct": 0.49785565080636207,
+     "months": 38,
+     "changed": 38,
+     "median_pct": 0.09937659088887896,
+     "median_changed_pct": 0.09937659088887896,
+     "max_pct": 0.49785565080636207
+    },
+    "2016-06-14": {
+     "all_changed": 6,
+     "all_median_changed_pct": 0.022645771546310037,
+     "all_max_pct": 0.044317864823763375,
+     "months": 39,
+     "changed": 1,
+     "median_pct": 0.0,
+     "median_changed_pct": 0.015665333978109396,
+     "max_pct": 0.015665333978109396
+    },
+    "2016-07-15": {
+     "all_changed": 6,
+     "all_median_changed_pct": 0.016948966924021636,
+     "all_max_pct": 0.28201841788764914,
+     "months": 40,
+     "changed": 1,
+     "median_pct": 0.0,
+     "median_changed_pct": 0.015667788389487593,
+     "max_pct": 0.015667788389487593
+    },
+    "2017-05-12": {
+     "all_changed": 63,
+     "all_median_changed_pct": 0.12891373692957947,
+     "all_max_pct": 0.7854706905754685,
+     "months": 50,
+     "changed": 50,
+     "median_pct": 0.08150777228923538,
+     "median_changed_pct": 0.08150777228923538,
+     "max_pct": 0.5154880317223405
+    },
+    "2018-05-25": {
+     "all_changed": 76,
+     "all_median_changed_pct": 0.06004203554834304,
+     "all_max_pct": 0.37534041379724753,
+     "months": 62,
+     "changed": 62,
+     "median_pct": 0.06004203554834304,
+     "median_changed_pct": 0.06004203554834304,
+     "max_pct": 0.37534041379724753
+    },
+    "2019-07-16": {
+     "all_changed": 89,
+     "all_median_changed_pct": 0.06741543034628837,
+     "all_max_pct": 0.6850417323131881,
+     "months": 76,
+     "changed": 76,
+     "median_pct": 0.055790012358559106,
+     "median_changed_pct": 0.055790012358559106,
+     "max_pct": 0.45252523620767293
+    },
+    "2020-05-15": {
+     "all_changed": 87,
+     "all_median_changed_pct": 0.041796135171089495,
+     "all_max_pct": 0.6364732948826508,
+     "months": 86,
+     "changed": 74,
+     "median_pct": 0.024882684904621664,
+     "median_changed_pct": 0.029321671331830158,
+     "max_pct": 0.6364732948826508
+    },
+    "2021-04-26": {
+     "all_changed": 111,
+     "all_median_changed_pct": 0.1221063816896354,
+     "all_max_pct": 0.8755916408418046,
+     "months": 97,
+     "changed": 97,
+     "median_pct": 0.11183913239945775,
+     "median_changed_pct": 0.11183913239945775,
+     "max_pct": 0.5886870711318927
+    },
+    "2022-04-25": {
+     "all_changed": 123,
+     "all_median_changed_pct": 0.05127010020974132,
+     "all_max_pct": 1.4283909896571958,
+     "months": 109,
+     "changed": 109,
+     "median_pct": 0.04618248817776409,
+     "median_changed_pct": 0.04618248817776409,
+     "max_pct": 1.1764179721930794
+    },
+    "2023-04-24": {
+     "all_changed": 135,
+     "all_median_changed_pct": 0.06215605718357261,
+     "all_max_pct": 1.6233812932394274,
+     "months": 121,
+     "changed": 121,
+     "median_pct": 0.05614797397484112,
+     "median_changed_pct": 0.05614797397484112,
+     "max_pct": 1.6233812932394274
+    },
+    "2024-04-23": {
+     "all_changed": 147,
+     "all_median_changed_pct": 0.034638032559750606,
+     "all_max_pct": 0.959392868764818,
+     "months": 133,
+     "changed": 133,
+     "median_pct": 0.027722707693167866,
+     "median_changed_pct": 0.027722707693167866,
+     "max_pct": 0.959392868764818
+    },
+    "2025-04-25": {
+     "all_changed": 159,
+     "all_median_changed_pct": 1.8438568699305835,
+     "all_max_pct": 2.245423212255562,
+     "months": 145,
+     "changed": 145,
+     "median_pct": 1.8473505104521146,
+     "median_changed_pct": 1.8473505104521146,
+     "max_pct": 2.245423212255562
+    },
+    "2026-09-28": {
+     "all_changed": 140,
+     "all_median_changed_pct": 0.08796448546337936,
+     "all_max_pct": 4.675255540754083,
+     "months": 162,
+     "changed": 126,
+     "median_pct": 0.046747419510307864,
+     "median_changed_pct": 0.07038643434570367,
+     "max_pct": 4.062207405603537
+    }
+   }
+  }
+ },
+ "cells": [
+  {
+   "series": "SALES",
+   "geo": "US",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 117,
+   "inside": 117,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9682096231761248,
+   "hi": 1.0,
+   "outcome": "ABOVE",
+   "cannot_tell": 12,
+   "cannot_tell_why": {
+    "annual revision in window": 11,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 3.1377899045020468,
+   "median_abs_miss_half_widths": 0.22481610042984843,
+   "share_rse_minus_half": 0.9914529914529915,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.5443378109205506,
+   "max_abs_miss_half_widths": 0.9645515541042845,
+   "at_half_width": {
+    "inside": 100,
+    "scored": 117
+   },
+   "at_two_thirds_width": {
+    "inside": 111,
+    "scored": 117
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 128,
+    "share": 1.0,
+    "lo": 0.9708620041018919,
+    "hi": 0.9999999999999999
+   },
+   "same_release_rows": 3,
+   "without_same_release": {
+    "scored": 114,
+    "inside": 114,
+    "lo": 0.9674003068525885,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "US",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 105,
+   "inside": 105,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9647046717431569,
+   "hi": 0.9999999999999998,
+   "outcome": "ABOVE",
+   "cannot_tell": 24,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 3.819918144611187,
+   "median_abs_miss_half_widths": 0.2896088350001931,
+   "share_rse_minus_half": 0.9809523809523809,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.6521599227278967,
+   "max_abs_miss_half_widths": 0.9763143779348246,
+   "at_half_width": {
+    "inside": 79,
+    "scored": 105
+   },
+   "at_two_thirds_width": {
+    "inside": 95,
+    "scored": 105
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 127,
+    "share": 1.0,
+    "lo": 0.9706393073762475,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 105,
+    "inside": 105,
+    "lo": 0.9647046717431569,
+    "hi": 0.9999999999999998
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "US",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 128,
+   "inside": 126,
+   "above": 1,
+   "below": 1,
+   "share": 0.984375,
+   "lo": 0.9448179261814565,
+   "hi": 0.9957046402922513,
+   "outcome": "ABOVE",
+   "cannot_tell": 1,
+   "cannot_tell_why": {
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 3.579928434717484,
+   "median_abs_miss_half_widths": 0.26922342207401184,
+   "share_rse_minus_half": 0.96875,
+   "share_rse_plus_half": 0.984375,
+   "p90_abs_miss_half_widths": 0.6515362562752067,
+   "max_abs_miss_half_widths": 1.224030959170244,
+   "at_half_width": {
+    "inside": 103,
+    "scored": 128
+   },
+   "at_two_thirds_width": {
+    "inside": 117,
+    "scored": 128
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 126,
+    "share": 0.984375,
+    "lo": 0.9448179261814565,
+    "hi": 0.9957046402922513
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 128,
+    "inside": 126,
+    "lo": 0.9448179261814565,
+    "hi": 0.9957046402922513
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "Northeast",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 117,
+   "inside": 113,
+   "above": 4,
+   "below": 0,
+   "share": 0.9658119658119658,
+   "lo": 0.9153808812238059,
+   "hi": 0.9866263745556608,
+   "outcome": "ABOVE",
+   "cannot_tell": 12,
+   "cannot_tell_why": {
+    "annual revision in window": 11,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 12.0,
+   "median_abs_miss_half_widths": 0.2554213174631555,
+   "share_rse_minus_half": 0.9658119658119658,
+   "share_rse_plus_half": 0.9658119658119658,
+   "p90_abs_miss_half_widths": 0.6397267035564906,
+   "max_abs_miss_half_widths": 3.312290546333099,
+   "at_half_width": {
+    "inside": 98,
+    "scored": 117
+   },
+   "at_two_thirds_width": {
+    "inside": 106,
+    "scored": 117
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 123,
+    "share": 0.9609375,
+    "lo": 0.9118117730873819,
+    "hi": 0.9832016369440498
+   },
+   "same_release_rows": 3,
+   "without_same_release": {
+    "scored": 114,
+    "inside": 110,
+    "lo": 0.9132402851480909,
+    "hi": 0.986272280872737
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "Northeast",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 105,
+   "inside": 97,
+   "above": 8,
+   "below": 0,
+   "share": 0.9238095238095239,
+   "lo": 0.8568122391570511,
+   "hi": 0.9608898159395297,
+   "outcome": "CONSISTENT",
+   "cannot_tell": 24,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 14.583333333333334,
+   "median_abs_miss_half_widths": 0.3117449925960564,
+   "share_rse_minus_half": 0.9238095238095239,
+   "share_rse_plus_half": 0.9238095238095239,
+   "p90_abs_miss_half_widths": 0.7147867330238149,
+   "max_abs_miss_half_widths": 3.896812407450705,
+   "at_half_width": {
+    "inside": 80,
+    "scored": 105
+   },
+   "at_two_thirds_width": {
+    "inside": 92,
+    "scored": 105
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 118,
+    "share": 0.9291338582677166,
+    "lo": 0.8707960129490254,
+    "hi": 0.9622723689723208
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 105,
+    "inside": 97,
+    "lo": 0.8568122391570511,
+    "hi": 0.9608898159395297
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "Northeast",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 128,
+   "inside": 119,
+   "above": 9,
+   "below": 0,
+   "share": 0.9296875,
+   "lo": 0.871763878213073,
+   "hi": 0.9625706565619905,
+   "outcome": "CONSISTENT",
+   "cannot_tell": 1,
+   "cannot_tell_why": {
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 14.760348583877997,
+   "median_abs_miss_half_widths": 0.30907325578521916,
+   "share_rse_minus_half": 0.9296875,
+   "share_rse_plus_half": 0.9296875,
+   "p90_abs_miss_half_widths": 0.8378146676019016,
+   "max_abs_miss_half_widths": 4.091653027823241,
+   "at_half_width": {
+    "inside": 89,
+    "scored": 128
+   },
+   "at_two_thirds_width": {
+    "inside": 110,
+    "scored": 128
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 119,
+    "share": 0.9296875,
+    "lo": 0.871763878213073,
+    "hi": 0.9625706565619905
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 128,
+    "inside": 119,
+    "lo": 0.871763878213073,
+    "hi": 0.9625706565619905
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "Midwest",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 117,
+   "inside": 117,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9682096231761248,
+   "hi": 1.0,
+   "outcome": "ABOVE",
+   "cannot_tell": 12,
+   "cannot_tell_why": {
+    "annual revision in window": 11,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 5.263157894736842,
+   "median_abs_miss_half_widths": 0.15547384541235548,
+   "share_rse_minus_half": 1.0,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.45252657481209724,
+   "max_abs_miss_half_widths": 0.8237934266965885,
+   "at_half_width": {
+    "inside": 107,
+    "scored": 117
+   },
+   "at_two_thirds_width": {
+    "inside": 111,
+    "scored": 117
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 128,
+    "share": 1.0,
+    "lo": 0.9708620041018919,
+    "hi": 0.9999999999999999
+   },
+   "same_release_rows": 3,
+   "without_same_release": {
+    "scored": 114,
+    "inside": 114,
+    "lo": 0.9674003068525885,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "Midwest",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 105,
+   "inside": 105,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9647046717431569,
+   "hi": 0.9999999999999998,
+   "outcome": "ABOVE",
+   "cannot_tell": 24,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 6.422018348623854,
+   "median_abs_miss_half_widths": 0.19274024589800573,
+   "share_rse_minus_half": 0.9904761904761905,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.581814023218954,
+   "max_abs_miss_half_widths": 0.994233446013124,
+   "at_half_width": {
+    "inside": 90,
+    "scored": 105
+   },
+   "at_two_thirds_width": {
+    "inside": 99,
+    "scored": 105
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 127,
+    "share": 1.0,
+    "lo": 0.9706393073762475,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 105,
+    "inside": 105,
+    "lo": 0.9647046717431569,
+    "hi": 0.9999999999999998
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "Midwest",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 128,
+   "inside": 126,
+   "above": 2,
+   "below": 0,
+   "share": 0.984375,
+   "lo": 0.9448179261814565,
+   "hi": 0.9957046402922513,
+   "outcome": "ABOVE",
+   "cannot_tell": 1,
+   "cannot_tell_why": {
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 5.985074626865671,
+   "median_abs_miss_half_widths": 0.18405855482190425,
+   "share_rse_minus_half": 0.984375,
+   "share_rse_plus_half": 0.984375,
+   "p90_abs_miss_half_widths": 0.5639136819691654,
+   "max_abs_miss_half_widths": 2.3182731440935553,
+   "at_half_width": {
+    "inside": 110,
+    "scored": 128
+   },
+   "at_two_thirds_width": {
+    "inside": 119,
+    "scored": 128
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 126,
+    "share": 0.984375,
+    "lo": 0.9448179261814565,
+    "hi": 0.9957046402922513
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 128,
+    "inside": 126,
+    "lo": 0.9448179261814565,
+    "hi": 0.9957046402922513
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "South",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 117,
+   "inside": 117,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9682096231761248,
+   "hi": 1.0,
+   "outcome": "ABOVE",
+   "cannot_tell": 12,
+   "cannot_tell_why": {
+    "annual revision in window": 11,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 4.600484261501211,
+   "median_abs_miss_half_widths": 0.22953051299186844,
+   "share_rse_minus_half": 1.0,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.5443813627119682,
+   "max_abs_miss_half_widths": 0.9282465422816298,
+   "at_half_width": {
+    "inside": 101,
+    "scored": 117
+   },
+   "at_two_thirds_width": {
+    "inside": 113,
+    "scored": 117
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 128,
+    "share": 1.0,
+    "lo": 0.9708620041018919,
+    "hi": 0.9999999999999999
+   },
+   "same_release_rows": 3,
+   "without_same_release": {
+    "scored": 114,
+    "inside": 114,
+    "lo": 0.9674003068525885,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "South",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 105,
+   "inside": 104,
+   "above": 1,
+   "below": 0,
+   "share": 0.9904761904761905,
+   "lo": 0.9480124705673876,
+   "hi": 0.9983168740949471,
+   "outcome": "ABOVE",
+   "cannot_tell": 24,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 4.943820224719101,
+   "median_abs_miss_half_widths": 0.2522916491464133,
+   "share_rse_minus_half": 0.9809523809523809,
+   "share_rse_plus_half": 0.9904761904761905,
+   "p90_abs_miss_half_widths": 0.6236175031578799,
+   "max_abs_miss_half_widths": 1.0385710616849122,
+   "at_half_width": {
+    "inside": 84,
+    "scored": 105
+   },
+   "at_two_thirds_width": {
+    "inside": 97,
+    "scored": 105
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 126,
+    "share": 0.9921259842519685,
+    "lo": 0.9567449252236082,
+    "hi": 0.9986087237687615
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 105,
+    "inside": 104,
+    "lo": 0.9480124705673876,
+    "hi": 0.9983168740949471
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "South",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 128,
+   "inside": 126,
+   "above": 1,
+   "below": 1,
+   "share": 0.984375,
+   "lo": 0.9448179261814565,
+   "hi": 0.9957046402922513,
+   "outcome": "ABOVE",
+   "cannot_tell": 1,
+   "cannot_tell_why": {
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 4.529513053607151,
+   "median_abs_miss_half_widths": 0.23879857367368934,
+   "share_rse_minus_half": 0.9765625,
+   "share_rse_plus_half": 0.9921875,
+   "p90_abs_miss_half_widths": 0.6170392912384026,
+   "max_abs_miss_half_widths": 1.1714924941711882,
+   "at_half_width": {
+    "inside": 104,
+    "scored": 128
+   },
+   "at_two_thirds_width": {
+    "inside": 117,
+    "scored": 128
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 126,
+    "share": 0.984375,
+    "lo": 0.9448179261814565,
+    "hi": 0.9957046402922513
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 128,
+    "inside": 126,
+    "lo": 0.9448179261814565,
+    "hi": 0.9957046402922513
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "West",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 117,
+   "inside": 116,
+   "above": 1,
+   "below": 0,
+   "share": 0.9914529914529915,
+   "lo": 0.9531693460245405,
+   "hi": 0.9984896853024199,
+   "outcome": "ABOVE",
+   "cannot_tell": 12,
+   "cannot_tell_why": {
+    "annual revision in window": 11,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 4.639175257731959,
+   "median_abs_miss_half_widths": 0.22005528889133394,
+   "share_rse_minus_half": 0.9914529914529915,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.5687088953265739,
+   "max_abs_miss_half_widths": 1.0131712259371835,
+   "at_half_width": {
+    "inside": 99,
+    "scored": 117
+   },
+   "at_two_thirds_width": {
+    "inside": 112,
+    "scored": 117
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 127,
+    "share": 0.9921875,
+    "lo": 0.9570726816506786,
+    "hi": 0.998619603637121
+   },
+   "same_release_rows": 3,
+   "without_same_release": {
+    "scored": 114,
+    "inside": 113,
+    "lo": 0.9519784746833306,
+    "hi": 0.9984498969613178
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "West",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 105,
+   "inside": 105,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9647046717431569,
+   "hi": 0.9999999999999998,
+   "outcome": "ABOVE",
+   "cannot_tell": 24,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 4.827586206896552,
+   "median_abs_miss_half_widths": 0.22890366589220928,
+   "share_rse_minus_half": 1.0,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.5866219396605432,
+   "max_abs_miss_half_widths": 0.8183306055646481,
+   "at_half_width": {
+    "inside": 86,
+    "scored": 105
+   },
+   "at_two_thirds_width": {
+    "inside": 97,
+    "scored": 105
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 127,
+    "share": 1.0,
+    "lo": 0.9706393073762475,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 105,
+    "inside": 105,
+    "lo": 0.9647046717431569,
+    "hi": 0.9999999999999998
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "SALES",
+   "geo": "West",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 128,
+   "inside": 125,
+   "above": 3,
+   "below": 0,
+   "share": 0.9765625,
+   "lo": 0.9333551190997279,
+   "hi": 0.9919977285598879,
+   "outcome": "ABOVE",
+   "cannot_tell": 1,
+   "cannot_tell_why": {
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 6.5875120540019285,
+   "median_abs_miss_half_widths": 0.28000071421695394,
+   "share_rse_minus_half": 0.96875,
+   "share_rse_plus_half": 0.984375,
+   "p90_abs_miss_half_widths": 0.7981439019139653,
+   "max_abs_miss_half_widths": 1.0965056557761723,
+   "at_half_width": {
+    "inside": 92,
+    "scored": 128
+   },
+   "at_two_thirds_width": {
+    "inside": 109,
+    "scored": 128
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 125,
+    "share": 0.9765625,
+    "lo": 0.9333551190997279,
+    "hi": 0.9919977285598879
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 128,
+    "inside": 125,
+    "lo": 0.9333551190997279,
+    "hi": 0.9919977285598879
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "US",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 117,
+   "inside": 117,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9682096231761248,
+   "hi": 1.0,
+   "outcome": "ABOVE",
+   "cannot_tell": 12,
+   "cannot_tell_why": {
+    "annual revision in window": 11,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 1.1842105263157896,
+   "median_abs_miss_half_widths": 0.1360976273646963,
+   "share_rse_minus_half": 1.0,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.4043899504559012,
+   "max_abs_miss_half_widths": 0.7078319523670733,
+   "at_half_width": {
+    "inside": 111,
+    "scored": 117
+   },
+   "at_two_thirds_width": {
+    "inside": 116,
+    "scored": 117
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 128,
+    "share": 1.0,
+    "lo": 0.9708620041018919,
+    "hi": 0.9999999999999999
+   },
+   "same_release_rows": 3,
+   "without_same_release": {
+    "scored": 114,
+    "inside": 114,
+    "lo": 0.9674003068525885,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "US",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 105,
+   "inside": 104,
+   "above": 1,
+   "below": 0,
+   "share": 0.9904761904761905,
+   "lo": 0.9480124705673876,
+   "hi": 0.9983168740949471,
+   "outcome": "ABOVE",
+   "cannot_tell": 24,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 1.6845329249617151,
+   "median_abs_miss_half_widths": 0.18912529550827425,
+   "share_rse_minus_half": 0.9904761904761905,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.48774638572516704,
+   "max_abs_miss_half_widths": 1.0630529408541876,
+   "at_half_width": {
+    "inside": 95,
+    "scored": 105
+   },
+   "at_two_thirds_width": {
+    "inside": 102,
+    "scored": 105
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 126,
+    "share": 0.9921259842519685,
+    "lo": 0.9567449252236082,
+    "hi": 0.9986087237687615
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 105,
+    "inside": 104,
+    "lo": 0.9480124705673876,
+    "hi": 0.9983168740949471
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "US",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 128,
+   "inside": 127,
+   "above": 1,
+   "below": 0,
+   "share": 0.9921875,
+   "lo": 0.9570726816506786,
+   "hi": 0.998619603637121,
+   "outcome": "ABOVE",
+   "cannot_tell": 1,
+   "cannot_tell_why": {
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 2.046906131873452,
+   "median_abs_miss_half_widths": 0.2447375488892285,
+   "share_rse_minus_half": 0.9921875,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.5344434822298229,
+   "max_abs_miss_half_widths": 1.0630529408541876,
+   "at_half_width": {
+    "inside": 109,
+    "scored": 128
+   },
+   "at_two_thirds_width": {
+    "inside": 122,
+    "scored": 128
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 127,
+    "share": 0.9921875,
+    "lo": 0.9570726816506786,
+    "hi": 0.998619603637121
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 128,
+    "inside": 127,
+    "lo": 0.9570726816506786,
+    "hi": 0.998619603637121
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "Northeast",
+   "step": "S1",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "Northeast",
+   "step": "S2",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 127,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "Northeast",
+   "step": "S3",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "Midwest",
+   "step": "S1",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "Midwest",
+   "step": "S2",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 127,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "Midwest",
+   "step": "S3",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "South",
+   "step": "S1",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "South",
+   "step": "S2",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 127,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "South",
+   "step": "S3",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "West",
+   "step": "S1",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "West",
+   "step": "S2",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 127,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "STARTS",
+   "geo": "West",
+   "step": "S3",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "COMPLETIONS",
+   "geo": "US",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 117,
+   "inside": 115,
+   "above": 1,
+   "below": 1,
+   "share": 0.9829059829059829,
+   "lo": 0.9398087235860804,
+   "hi": 0.9952997158917152,
+   "outcome": "ABOVE",
+   "cannot_tell": 12,
+   "cannot_tell_why": {
+    "annual revision in window": 11,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 1.4892032762472078,
+   "median_abs_miss_half_widths": 0.15517277820004394,
+   "share_rse_minus_half": 0.9829059829059829,
+   "share_rse_plus_half": 0.9914529914529915,
+   "p90_abs_miss_half_widths": 0.4621540948952048,
+   "max_abs_miss_half_widths": 1.3521264127365877,
+   "at_half_width": {
+    "inside": 107,
+    "scored": 117
+   },
+   "at_two_thirds_width": {
+    "inside": 114,
+    "scored": 117
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 126,
+    "share": 0.984375,
+    "lo": 0.9448179261814565,
+    "hi": 0.9957046402922513
+   },
+   "same_release_rows": 3,
+   "without_same_release": {
+    "scored": 114,
+    "inside": 112,
+    "lo": 0.9382807541193635,
+    "hi": 0.9951756823173447
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "COMPLETIONS",
+   "geo": "US",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 105,
+   "inside": 105,
+   "above": 0,
+   "below": 0,
+   "share": 1.0,
+   "lo": 0.9647046717431569,
+   "hi": 0.9999999999999998,
+   "outcome": "ABOVE",
+   "cannot_tell": 24,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 1.6170212765957446,
+   "median_abs_miss_half_widths": 0.1721616356732682,
+   "share_rse_minus_half": 0.9904761904761905,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.4719120012453901,
+   "max_abs_miss_half_widths": 0.9641723054940433,
+   "at_half_width": {
+    "inside": 96,
+    "scored": 105
+   },
+   "at_two_thirds_width": {
+    "inside": 102,
+    "scored": 105
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 127,
+    "share": 1.0,
+    "lo": 0.9706393073762475,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 105,
+    "inside": 105,
+    "lo": 0.9647046717431569,
+    "hi": 0.9999999999999998
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "COMPLETIONS",
+   "geo": "US",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 128,
+   "inside": 124,
+   "above": 3,
+   "below": 1,
+   "share": 0.96875,
+   "lo": 0.9224011964206393,
+   "hi": 0.9877819324248844,
+   "outcome": "ABOVE",
+   "cannot_tell": 1,
+   "cannot_tell_why": {
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 2.2625736362169144,
+   "median_abs_miss_half_widths": 0.2381515349996165,
+   "share_rse_minus_half": 0.96875,
+   "share_rse_plus_half": 1.0,
+   "p90_abs_miss_half_widths": 0.5453196182001607,
+   "max_abs_miss_half_widths": 1.073897577018592,
+   "at_half_width": {
+    "inside": 113,
+    "scored": 128
+   },
+   "at_two_thirds_width": {
+    "inside": 121,
+    "scored": 128
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 124,
+    "share": 0.96875,
+    "lo": 0.9224011964206393,
+    "hi": 0.9877819324248844
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 128,
+    "inside": 124,
+    "lo": 0.9224011964206393,
+    "hi": 0.9877819324248844
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "RETAIL",
+   "geo": "US",
+   "step": "S1",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 115,
+   "inside": 112,
+   "above": 3,
+   "below": 0,
+   "share": 0.9739130434782609,
+   "lo": 0.9260981308647812,
+   "hi": 0.9910891166983616,
+   "outcome": "ABOVE",
+   "cannot_tell": 14,
+   "cannot_tell_why": {
+    "annual revision in window": 12,
+    "universe break": 1,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": 0.2301655528132886,
+   "median_abs_miss_half_widths": 0.1907566894483618,
+   "share_rse_minus_half": 0.9652173913043478,
+   "share_rse_plus_half": 0.9739130434782609,
+   "p90_abs_miss_half_widths": 0.4642432741701019,
+   "max_abs_miss_half_widths": 1.7410351035030625,
+   "at_half_width": {
+    "inside": 105,
+    "scored": 115
+   },
+   "at_two_thirds_width": {
+    "inside": 110,
+    "scored": 115
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 124,
+    "share": 0.96875,
+    "lo": 0.9224011964206393,
+    "hi": 0.9877819324248844
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 115,
+    "inside": 112,
+    "lo": 0.9260981308647812,
+    "hi": 0.9910891166983616
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "RETAIL",
+   "geo": "US",
+   "step": "S2",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 104,
+   "inside": 99,
+   "above": 5,
+   "below": 0,
+   "share": 0.9519230769230769,
+   "lo": 0.8923565255405173,
+   "hi": 0.9792922630531236,
+   "outcome": "CONSISTENT",
+   "cannot_tell": 25,
+   "cannot_tell_why": {
+    "annual revision in window": 22,
+    "universe break": 1,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": 0.25619915872007903,
+   "median_abs_miss_half_widths": 0.20030972814665024,
+   "share_rse_minus_half": 0.9519230769230769,
+   "share_rse_plus_half": 0.9711538461538461,
+   "p90_abs_miss_half_widths": 0.5677781637422468,
+   "max_abs_miss_half_widths": 1.7793661196867916,
+   "at_half_width": {
+    "inside": 89,
+    "scored": 104
+   },
+   "at_two_thirds_width": {
+    "inside": 98,
+    "scored": 104
+   },
+   "counted_in": {
+    "scored": 127,
+    "inside": 118,
+    "share": 0.9291338582677166,
+    "lo": 0.8707960129490254,
+    "hi": 0.9622723689723208
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 104,
+    "inside": 99,
+    "lo": 0.8923565255405173,
+    "hi": 0.9792922630531236
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "RETAIL",
+   "geo": "US",
+   "step": "S3",
+   "width_basis": "as served 2026",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "universe break": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 128,
+    "inside": 4,
+    "share": 0.03125,
+    "lo": 0.012218067575115642,
+    "hi": 0.07759880357936064
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "PERMITS",
+   "geo": "US",
+   "step": "S1",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 128,
+    "missing vintage": 1
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "PERMITS",
+   "geo": "US",
+   "step": "S2",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 127,
+    "missing vintage": 2
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  },
+  {
+   "series": "PERMITS",
+   "geo": "US",
+   "step": "S3",
+   "width_basis": "none",
+   "rows": 129,
+   "scored": 0,
+   "inside": 0,
+   "above": 0,
+   "below": 0,
+   "share": null,
+   "lo": 0.0,
+   "hi": 1.0,
+   "outcome": "CANNOT_TELL",
+   "cannot_tell": 129,
+   "cannot_tell_why": {
+    "no width": 129
+   },
+   "median_abs_rev_pct": null,
+   "median_abs_miss_half_widths": null,
+   "share_rse_minus_half": null,
+   "share_rse_plus_half": null,
+   "p90_abs_miss_half_widths": null,
+   "max_abs_miss_half_widths": null,
+   "at_half_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "at_two_thirds_width": {
+    "inside": 0,
+    "scored": 0
+   },
+   "counted_in": {
+    "scored": 0,
+    "inside": 0,
+    "share": null,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "same_release_rows": 0,
+   "without_same_release": {
+    "scored": 0,
+    "inside": 0,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "first_month": "2016-01",
+   "last_month": "2026-09"
+  }
+ ],
+ "rows": {
+  "total": 5031,
+  "first_month": "2016-01",
+  "last_month": "2026-09",
+  "first_vintage": "2016-02-12"
+ },
+ "snapshots": {
+  "files": 18,
+  "earliest": "20261111T121453Z",
+  "as_printed_rows": 0
+ },
+ "same_release_months": {
+  "HSN1F": [
+   "2025-09",
+   "2025-11",
+   "2026-02"
+  ],
+  "HOUST": [
+   "2025-09",
+   "2025-11",
+   "2026-02"
+  ],
+  "COMPUTSA": [
+   "2025-09",
+   "2025-11",
+   "2026-02"
+  ],
+  "RSAFS": []
+ },
+ "after_data_note": "11 Nov 2026 after the outside referee: p90 miss, shares at half and two thirds of the width, rows counted in with annual revisions, same-release rows, revision detail for the retail vintages. See CHECKS.md R-1 to R-5. No rule, cell or outcome changed."
+}

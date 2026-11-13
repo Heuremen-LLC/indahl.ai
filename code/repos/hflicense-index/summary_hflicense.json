@@ -1,0 +1,111 @@
+{
+ "updated": "29 Oct 16:35",
+ "gate": "passed",
+ "models": 505,
+ "datasets": 512,
+ "comparison": {
+  "Models": {
+   "of": 86,
+   "n": 0,
+   "share": 0.0,
+   "share_lo": 0.0,
+   "share_hi": 0.0428,
+   "outcome": "CONSISTENT",
+   "awaiting": 0
+  },
+  "Datasets": {
+   "of": 19,
+   "n": 0,
+   "share": 0.0,
+   "share_lo": 0.0,
+   "share_hi": 0.1682,
+   "outcome": "CANNOT_TELL",
+   "awaiting": 0
+  }
+ },
+ "classes": {
+  "AGREE": {
+   "models": 86,
+   "datasets": 19
+  },
+  "DISAGREE": {
+   "models": 0,
+   "datasets": 0
+  },
+  "NOT_COMPARABLE": {
+   "models": 419,
+   "datasets": 493
+  }
+ },
+ "not_comparable_reasons": {
+  "either side is a custom or named license": {
+   "models": 31,
+   "datasets": 15
+  },
+  "license file not readable": {
+   "models": 0,
+   "datasets": 2
+  },
+  "no license file in the repository root": {
+   "models": 356,
+   "datasets": 302
+  },
+  "no stated license tag": {
+   "models": 32,
+   "datasets": 174
+  }
+ },
+ "stated_without_file": {
+  "Models": {
+   "stated": 473,
+   "no_file": 356,
+   "share": 0.7526,
+   "share_lo": 0.7118,
+   "share_hi": 0.7894
+  },
+  "Datasets": {
+   "stated": 338,
+   "no_file": 302,
+   "share": 0.8935,
+   "share_lo": 0.8561,
+   "share_hi": 0.9221
+  }
+ },
+ "other_breakdown": {
+  "blank_or_other": {
+   "models": 47,
+   "datasets": 51,
+   "file_side": 28
+  },
+  "named_custom": {
+   "models": 16,
+   "datasets": 1,
+   "file_side": 7
+  },
+  "unrecognised": {
+   "models": 3,
+   "datasets": 24,
+   "file_side": 1
+  }
+ },
+ "mixed": {
+  "Tag names a standard license, file is a custom or unnamed text": {
+   "models": 1,
+   "datasets": 0
+  },
+  "Tag is other or a custom name, file is a standard license": {
+   "models": 8,
+   "datasets": 1
+  }
+ },
+ "mixed_list": [
+  {
+   "repo": "Qwen/Qwen2.5-VL-7B-Instruct-AWQ",
+   "kind": "model",
+   "tag": "apache-2.0",
+   "file": "LICENSE",
+   "note": "The tag says apache-2.0. The LICENSE file is the Qwen License Agreement, a different license."
+  }
+ ],
+ "disagree_list": []
+}

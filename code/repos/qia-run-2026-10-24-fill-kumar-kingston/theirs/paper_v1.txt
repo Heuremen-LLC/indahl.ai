@@ -1,0 +1,1975 @@
+Separability does not certify zero-noise extrapolation:
+Factorial diagnostics in dynamic quantum circuits
+Aryan Kumar1
+1Amity International School, Sector-46, Gurugram, India
+Separately amplifying gate, latency, and mid-circuit measurement errors can simplify zero-noise
+extrapolation, but a weak interaction between amplification knobs does not establish an accurate
+zero-noise limit. We distinguish observable separability, response-model adequacy, and calibration of
+that limit, and test them in a pre-specified 23 factorial experiment on three IBM dynamic circuits.
+For the primary echoed spectator observable, the latency–measurement coefficient is bLM = +0.0007
+with a nominal 95% bootstrap interval [−0.0033, +0.0049]. A separately planned follow-up meets a
+±0.005 equivalence criterion and recovers two injected interactions; both repeat runs nevertheless
+trigger the drift rule. Multi-knob extrapolations have smaller median absolute errors than the
+single-knob comparisons, yet all five original strategies exclude the known ideal value for three of six
+observables. Duration controls support a model-dependent contribution to the spectator deficit from
+unequal decay rates in native padding and added delay. We give an explicit construction showing
+why measurements at two measurement-knob levels cannot identify the extrapolated limit without
+response assumptions. A post-hoc precision analysis and an additive full-factorial estimator expose
+a further bias–variance trade-off hidden by point-error comparisons. The experiment provides a
+diagnostic of the implemented response surface, not a certification of physical channel independence
+or mitigation accuracy.
+I.
+INTRODUCTION
+Zero-noise extrapolation (ZNE) estimates an ideal quan-
+tum observable from deliberately noisier circuit execu-
+tions [1, 2]. Its validity depends on the response to noise
+amplification and on whether the extrapolated coordi-
+nate corresponds to the intended noise-free circuit. Noise
+can be increased by stretching control pulses [2] or, more
+conveniently, by “folding” gates: a gate U is replaced by
+UU †U, which ideally does the same thing but roughly
+triples the gate noise [3, 4].
+When a circuit contains several kinds of noise, a natural
+generalization is to amplify each kind separately and fit
+a function of several noise parameters [5, 6]. Whether
+the extra work pays off is debated: a published Comment
+argues that conventional extrapolation with a single noise
+parameter already works when the noise is not identically
+distributed [7].
+Time-correlated noise adds a further
+complication: it is hard to amplify such noise without
+also changing its spectrum, especially when individual
+gates are amplified, although global folding can remain
+reliable [8].
+Dynamic circuits raise this question in a sharp form.
+In a dynamic circuit some qubits are measured partway
+through, and later operations are chosen according to
+the outcomes, which classical hardware computes in real
+time [9, 10]. Such circuits suffer, among other errors, from
+three physically distinct kinds of noise: errors in the gates,
+decoherence of every qubit while it waits for the classical
+decision (the feedforward latency), and errors caused by
+the mid-circuit measurements (MCMs) themselves. We
+will call these G, L and M. Folding the gates reaches
+only the first.
+Several groups have begun to amplify the other two.
+The idea of adding idle time, in the form of identity or
+delay pulses, to increase the noise before extrapolating
+goes back at least to Tomkins and de Sousa [11]. Carrera
+Vazquez et al. stretched the latency of conditional opera-
+tions with delays inside a staggered dynamical-decoupling
+sequence and extrapolated linearly to zero delay; without
+the decoupling, they observed oscillations that prevented
+an accurate extrapolation [9]. Santos and Uzdin ampli-
+fied measurement errors by repeating each measurement
+and acting on the parity of the outcomes [12]. Bar, San-
+tos and Uzdin extended layered gate mitigation to dy-
+namic circuits while leaving the mid-circuit measurements
+unscaled [13], and Uzdin has proposed a virtual noise-
+scaling method described as compatible with dynamic
+circuits [14]. Shirgure and Niu pointed out that globally
+folding the dynamic parts of a circuit scales all three
+kinds of noise together, with a single scale factor [15].
+And Farrell et al., running a 139-qubit dissipative pro-
+tocol with mid-circuit resets on ibm boston, used ZNE
+that amplified only two-qubit gates and idling, and found
+that it did not effectively mitigate the increased noise
+sensitivity of their circuits with fewer environment qubits;
+they identify imperfect mid-circuit resets as a secondary
+source of noise [16].
+Other work characterizes or cancels dynamic-circuit
+noise instead of extrapolating it, through probabilistic
+error cancellation [17], readout mitigation for mid-circuit
+measurements [18], learning and characterization of the
+noise of measurements and feedforward [19–21], error-
+aware compilation [22] and learned dynamical decou-
+pling [23]. In a study of decoupling, Rahman, Egger and
+Arenz used repeated mid-circuit measurements to amplify
+measurement-induced noise on neighbouring qubits [24].
+Suppose, then, that we can amplify G, L and M sep-
+arately. Must we amplify them jointly and fit a model
+with many parameters, or may we amplify one at a time
+and simply combine the results? The answer depends on
+whether the three kinds of noise are separable: whether
+arXiv:2610.28705v1  [quant-ph]  20 Oct 2026
+
+2
+each one reduces an observable by a factor that does not
+depend on the others. If they are, the effects multiply, the
+logarithm of the observable is a sum of separate terms,
+and separate one-dimensional extrapolations can be com-
+bined, provided each extrapolation is itself valid. If they
+are not — if, for example, the tones used to measure one
+qubit also dephase an idle neighbour while it waits for
+the feedforward — then the effects do not multiply, and
+omitting the resulting interactions can bias the combined
+extrapolation. Separability in this sense is a property of
+the observable and the knobs, not of the physical channels:
+channels that act quite independently need not combine
+multiplicatively, as Sec. II E will show. Our focus is a di-
+rect factorial diagnostic of this assumption for separately
+controlled gate, latency, and measurement operations in
+small dynamic circuits; we do not claim that multivariate
+extrapolation or factorial interaction analysis is new.
+We separate three questions that are often conflated:
+whether the observable is separable over the settings mea-
+sured, whether the extrapolation model remains valid
+outside those settings, and whether its zero coordinate
+removes the relevant noise. We do not propose a new
+way of amplifying noise; our three amplification “knobs”
+are adapted from the work cited above. Instead we ask,
+with an experiment designed for the purpose, whether
+the noise they amplify is separable on real hardware. The
+experiment is a factorial design: each knob is set low or
+high, in all eight combinations, on three small dynamic
+circuits whose ideal outputs are known exactly, and the
+analysis was fixed in advance.
+Along the way we de-
+rive simple formulas for the bias of one-at-a-time and of
+uniform extrapolation in terms of the interactions, and
+we point out that coherent phase errors can masquerade
+as interactions — a pitfall that our own first trial run
+illustrates.
+In brief, we find that once the idle periods are echoed,
+the interaction we considered most likely is consistent
+with zero at the resolution of the experiment; two later
+runs, under different calibrations, also found it small, and
+the analysis recovered interactions of known size that we
+injected on the hardware. Simple one-at-a-time or uni-
+form extrapolation does about as well as a full joint fit,
+and in two of our three circuits, amplifying every kind of
+noise matters far more than how the amplifications are
+combined. But separability is not accuracy: for half of
+our observables, all five original extrapolation strategies
+exclude the ideal value. Duration controls support a con-
+tribution from the latency knob under an explicit slot-cost
+model. An additional post-hoc analysis gives a construc-
+tive identifiability limit, exact estimator weights, and an
+additive fit using the complete cube. These additions
+sharpen the interpretation of the existing experiment;
+they are not new confirmatory hardware tests.
+We begin in Sec. II with a simple model of how the
+three kinds of noise might combine, and work out what
+goes wrong when they do not combine multiplicatively.
+Section III describes how each kind of noise is amplified,
+the circuits, and the plan of the experiment. Section IV
+reports what we found: first in trial runs that test the
+knobs, then in the main experiment, with a positive con-
+trol, in a comparison of extrapolation strategies and in
+two repeat runs, and finally in two checks, made after the
+main runs, on our error bars and on the latency knob.
+Section V discusses what the results do and do not show,
+and Sec. VI contains concluding comments.
+II.
+OBSERVABLE RESPONSE, INTERACTIONS,
+AND IDENTIFIABILITY
+A.
+A simple model
+Consider first a circuit with only one kind of noise,
+amplified by a factor λ, where λ = 1 is the native circuit.
+If each unit of noise multiplies the expectation value
+E of an observable by the same factor, then E(λ) =
+E(0) e−γλ, and the extrapolated value E(0) follows from
+a straight-line fit of ln E against λ. A sufficient condition
+is that the measured observable is an eigenoperator of
+the adjoint noise channel, with a positive eigenvalue, and
+amplification repeats that channel without changing the
+ideal operation. A single Markovian decay mode also has
+this form. An arbitrary observable under a Pauli channel,
+or a sum of decay modes, need not follow one exponential.
+Now let there be three kinds of noise, amplified by
+λG, λL and λM. The simplest possibility is that each
+reduces the observable by a factor of its own, whatever
+the other knobs are doing. Then f = ln E is additive:
+f = f0 + P
+i hi(λi), with hi(0) = 0.
+This is observ-
+able separability. The stronger log-linear model takes
+hi(λi) = −γiλi. We use that stronger model for two-
+point extrapolation; separability alone does not rule out
+curvature. The logarithmic formulation requires a posi-
+tive observable throughout the fitted region. The analysis
+uses E > 0.05 as a numerical guard and discards boot-
+strap values that fail it; this does not extend the model to
+zero crossings or negative expectations. It is a statement
+about how the knobs act on an observable, not about
+the physical channels: channels that act independently
+need not combine this way in general, although multi-
+plicative attenuation holds in suitable Pauli-eigenoperator
+settings. Independent physical operations alone do not
+guarantee it, particularly after averaging over measure-
+ment branches. Here f0 = ln E∗, where E∗is the value
+the knobs extrapolate to at λ = 0. We write E∗rather
+than Eid, the ideal value, because the knobs reach only
+the noise they amplify; single-qubit gates, state prepara-
+tion, terminal readout and, in our circuits, echo pulses are
+amplified by no knob, so in general E∗̸ = Eid. Under the
+log-linear separable model, each rate γ can be measured
+by turning one knob at a time. But nothing guarantees
+separability. Suppose, for instance, that measuring one
+qubit also dephases its idle neighbour [24], and that this
+extra dephasing acts only during the feedforward window.
+Then the rate of decay during the window grows with
+λM, and the total damage grows with the product λLλM.
+
+3
+To allow for such effects we add products of the knobs to
+the exponent:
+f(λ) = f0 −
+X
+i
+γiλi −
+X
+i<j
+γijλiλj −γGLM λGλLλM, (1)
+where i, j ∈{G, L, M}. The coefficients γij and γGLM
+measure interactions, and the noise is separable if they
+all vanish.
+In a factorial experiment each knob takes two values,
+which we choose to be 1 and 3. It is then convenient to
+centre the knobs, xi = λi −2 = ±1, and to write
+f = b0 +
+X
+i
+bixi +
+X
+i<j
+bijxixj + bGLM xGxLxM.
+(2)
+The eight coefficients b are simply contrasts between the
+eight corners of a cube. The coefficient bLM, for exam-
+ple, is one quarter of the change in the effect of latency
+when the measurement knob is turned up: if latency and
+measurement noise are separable, stretching the window
+costs the same, on the logarithmic scale, whether or not
+the measurements are repeated, and bLM = 0. Substi-
+tuting λi = 2 + xi into Eq. (1) gives bGLM = −γGLM
+and bij = −γij −2γGLM, so the interactions in Eq. (1)
+vanish exactly when those in Eq. (2) do. Note, however,
+that with two levels per knob the eight coefficients fit the
+eight corners exactly, whatever the data. They measure
+non-additivity between the levels actually run, 1 and 3;
+that the same description holds down to λ = 0, where we
+extrapolate, is an assumption, which the centre points of
+Sec. II F test only in part.
+B.
+What goes wrong when the noise is not separable
+How much does an interaction matter? Consider the
+simplest component-resolved strategy, which we call one-
+at-a-time (OAT) extrapolation. Starting from the native
+circuit, it turns up each knob alone to λi = 3, reads off
+the slope ˆγi = −[f(ei) −f(1, 1, 1)]/2, where ei denotes
+the setting with knob i at 3 and the other two at 1,
+and estimates ˆf0 = f(1, 1, 1) + P
+i ˆγi. For a log-linear
+separable response this is exact at the population level;
+exponentiating a noisy log estimate introduces additional
+finite-sample bias. Otherwise each measured slope also
+picks up the interactions that involve its knob, ˆγi =
+γi + P
+j̸=i γij + γGLM, and the estimate is off by
+ˆf OAT
+0
+−f0 =
+X
+i<j
+γij + 2γGLM
+= −(bGL + bGM + bLM) + 4bGLM.
+(3)
+A second strategy, uniform scaling, turns all three knobs
+up together, λG = λL = λM = λ, as global folding of
+dynamic circuits does [15], and extrapolates exponentially
+from λ = 1 and 3. Its error is
+ˆf unif
+0
+−f0 = 3
+X
+i<j
+γij + 12γGLM
+= −3(bGL + bGM + bLM) + 6bGLM.
+(4)
+Within Eq. (1), both strategies are exact at the population
+level when the interactions vanish, and Eqs. (3) and (4)
+tell us exactly how they fail when they do not; uniform
+scaling is three times as sensitive to pairwise interactions.
+A third strategy, joint component-resolved ZNE (joint
+CR-ZNE), fits all eight coefficients of Eq. (2) to the eight
+corners and evaluates Eq. (1) at λ = 0; it is exact for
+any interactions of the form (1), at the price of measuring
+all eight corners. For comparison we will also try two
+strategies that amplify only one kind of noise, latency-only
+and gate-only extrapolation, which fit a straight line to E
+over several levels of a single knob, the first as in Ref. [9].
+These leave other noise sources unscaled and therefore do
+not, in general, recover the ideal value. Their observed
+error also includes response-model and fitting effects; it
+cannot be attributed solely to the unscaled noise. We will
+call the first three, which amplify every kind of noise, the
+multi-knob strategies. The derivations are in Appendix A.
+One caution is in order. Because Eqs. (3) and (4) are
+algebraic identities on the same eight corners, comparing
+two strategies on one data set merely reproduces them.
+To test whether interactions predict bias, we will estimate
+the interactions from one half of the data and the biases
+from the other.
+C.
+What a factorial contrast identifies
+At the eight corners, the contrast coefficients in Eq. (2)
+are defined without assuming a physical noise model. All
+four mixed coefficients must vanish for additivity on that
+cube. A small bLM alone is weaker. At a fixed gate setting
+xG, define
+RLM(xG) = E(xG, +1, +1)E(xG, −1, −1)
+E(xG, +1, −1)E(xG, −1, +1).
+(5)
+The exact corner identity is
+1
+4 ln RLM(xG) = bLM + xGbGLM.
+(6)
+Thus bLM is the gate-averaged log interaction.
+Op-
+posite conditional interactions can cancel in it.
+Its
+±0.005 margin corresponds to a geometric-mean ratio
+p
+RLM(−1)RLM(+1) between e−0.02 and e0.02, approxi-
+mately 0.980 and 1.020; it does not impose that margin
+on either ratio separately.
+Even perfect corner additivity does not identify the
+target. Let f(λ) be any response compatible with mea-
+surements made only at λM ∈{1, 3}. For any constant c,
+the response
+fc(λ) = f(λ) + c(λM −1)(λM −3)
+(7)
+
+4
+agrees at every sampled setting, including the latency
+scans and mixed gate centre points, but satisfies fc(0) =
+f(0) + 3c. The added term is univariate, so it changes no
+mixed interaction anywhere.
+This is a response-level
+identifiability limitation, not a claim that every con-
+tinuation is generated by the same microscopic device
+model. Physical range constraints alone do not remove
+it:
+f = −0.05(λG + λL + λM) and its continuation
+with c = −0.02 both give 0 < E ≤1 for nonnegative
+knobs, agree at both measurement levels, and have zero-
+coordinate values 1 and e−0.06 ≃0.942. No amount of
+additional shots at these levels separates them. These
+illustrative responses are not hardware fits.
+The construction is an elementary consequence of finite-
+node extrapolation, the interpolation setting also under-
+lying layerwise Richardson methods [6]. Its role here is to
+distinguish an experimentally estimable interaction from
+an assumed continuation to zero. Additional physical
+measurement levels can test the quadratic ambiguity; a
+finite grid still requires a response class or regularity as-
+sumption to determine the unsampled limit. Calibration
+of what the zero coordinate means remains a separate
+requirement.
+D.
+Extrapolation weights and statistical cost
+Write a log estimate as ˆf0 = P
+s ws ˆf(s).
+Joint ex-
+trapolation is tensor-product interpolation with one-axis
+weights w(1) = 3/2 and w(3) = −1/2, so ws = Q
+i w(si).
+OAT assigns weight 5/2 to (1, 1, 1) and −1/2 to each of
+its three single-knob neighbours. Uniform extrapolation
+assigns 3/2 and −1/2 to the two diagonal corners.
+For a comparison that also uses all eight corners but
+imposes additivity, we introduce an unweighted additive
+log fit,
+ˆf add
+0
+= b0−2(bG+bL+bM),
+wadd
+s
+= 1 −2 P
+i xi
+8
+. (8)
+This standard factorial main-effects projection was not in
+the original analysis plan. Within the multilinear model
+its error is
+ˆf add
+0
+−f0 = −4
+X
+i<j
+bij + 8bGLM.
+(9)
+Reducing variance by omitting interactions therefore in-
+troduces an explicit bias, rather than making interactions
+irrelevant.
+For independent settings with per-shot log-variance
+factor vs, the delta method gives
+Var( ˆf0) ≃
+X
+s
+w2
+svs
+Ns
+.
+(10)
+For independent ±1 shots, vs = (1 −E2
+s)/E2
+s; clustered
+twirls or drift require a corresponding covariance model.
+At fixed total shots Ntot, allocation Ns ∝|ws|√vs mini-
+mizes this variance and gives (P
+s |ws|√vs)2/Ntot. These
+TABLE I. Analytic log-variance factors under independent set-
+tings and equal per-shot factor v. K is the number of required
+settings. Feq = K P w2 and Fopt = (P |w|)2 multiply v/Ntot.
+This post-hoc comparison excludes setting-dependent runtime
+and drift.
+Estimator
+K Feq Fopt
+Joint
+8 125
+64
+OAT
+4
+28
+16
+Uniform
+2
+5
+4
+Additive cube
+8
+13
+9
+are shot-budget statements, not equal-QPU-time compar-
+isons: circuit durations differ.
+Table I isolates the design cost under equal vs = v.
+Equal shots per required setting give factors 125, 28, 5,
+and 13 multiplying v/Ntot for joint, OAT, uniform, and
+additive fits, respectively. The 25-fold joint-to-uniform
+variance ratio is conditional on this homogeneous model,
+not an empirical performance ratio. Heterogeneous re-
+sponses and the risk of model bias matter in practice.
+E.
+When nothing interacts but something seems to
+There is a subtlety that will turn out to matter. Sup-
+pose an idle qubit accumulates a coherent phase φ, so that
+E ∝cos φ, and suppose each knob adds to the phase inde-
+pendently, φ = φ0 + P
+i aixi. Nothing here interacts; the
+phases simply add. Yet ln cos φ = −φ2/2 −φ4/12 −. . .
+contains the cross term −aLaMxLxM, so to leading order
+bLM = −aLaM,
+(11)
+and likewise for every pair of knobs that both shift the
+phase. On the logarithmic scale, independent coherent
+errors produce interactions, and an apparent interaction
+is therefore not, by itself, evidence that the noise channels
+interact physically. An ideal echo that fully refocuses a
+static latency-dependent phase sets aL →0 and removes
+this contribution. Real echoes can leave residual phase,
+pulse errors, and time-dependent coupling; suppression of
+a contrast is not a unique diagnosis of its physical source.
+F.
+Curvature
+Finally, the knobs need not act linearly even when
+nothing interacts; non-Markovian dephasing, for instance,
+makes noise grow non-linearly with the length of a de-
+lay [8]. If a knob also enters quadratically, f ⊃kiλ2
+i , then
+each multi-knob strategy, which sees only the levels 1 and
+3, extrapolates the quadratic term as if it were linear,
+and misses by −3ki. A centre point, with λG = λL = 2,
+reveals such curvature. The curvature c, the difference
+between f at the centre and the mean of f over the four
+
+5
+corners with the same λM, equals −(kG + kL), because
+all interaction terms cancel in this contrast. The three
+multi-knob estimates are therefore shifted by
+∆ˆf0 = 3c −3kM,
+(12)
+where kM cannot be determined with only two levels of
+λM (Appendix A).
+III.
+THE EXPERIMENT
+A.
+Turning up one kind of noise at a time
+How can each kind of noise be amplified without dis-
+turbing the others? Our knobs manage this only approx-
+imately, and throughout, λ denotes a knob’s nominal
+setting: how many times a CZ is applied, how far the
+window is stretched, how many times a measurement is
+repeated. That the noise grows in proportion to it is an
+assumption, which Sec. IV A shows to fail for the measure-
+ment knob. For the gates, the standard method is folding.
+We replace each CZ gate by CZλG, an odd number of
+repetitions that ideally acts as a single CZ but multiplies
+the gate noise roughly λG-fold, with every CZ randomly
+Pauli-twirled and with barriers that stop the compiler
+from cancelling the repetitions. Folding also lengthens
+the time before the measurement, during which the other
+qubits wait, so the gate knob amplifies some idle noise as
+well; we did not compensate for this.
+For the latency, we lengthen the window during which
+the qubits wait for the feedforward. Following Carrera
+Vazquez et al. [9], who stretch a duration τ by a factor
+c = (τ + δ)/τ and extrapolate to c = 0, we add free
+evolution of length (λL−1)τw, so that its nominal duration
+coordinate is λLτw. Identifying λL = 0 with a physical
+zero-length window requires the assumed baseline timing
+and scaling model. Here τw = 3tslot + τff, where tslot =
+tmeas + 2tX is the length of one measurement slot and τff
+is the feedforward latency. Because τff is not published
+for each device, we assume τff = 1.0 µs. This choice
+changes what λL = 0 means in physical time, but not
+the interaction estimates, which compare only the two
+levels that were actually run; Sec. IV C shows how much
+it matters for the extrapolations. More generally, the
+interaction estimates rest only on the levels run, whereas
+every extrapolation to λL = 0 also assumes that the
+window as run decoheres at the same rate as the free
+evolution added to stretch it (Sec. V).
+A first trial run, described in Sec. IV A, showed that an
+unprotected window lets an idle qubit rotate coherently,
+which by Eq. (11) is exactly what we must avoid. Every
+window therefore carries a fixed staggered echo [Fig. 1(b)],
+similar in spirit to the staggered decoupling sequence of
+Ref. [9]: qubits at even positions along the chain receive X
+pulses at d/2 and d, and those at odd positions at d/4 and
+3d/4, where d is the total free evolution. For ideal pulses,
+this refocuses static Z rotations on every qubit and static
+ZZ coupling between neighbours. Each qubit receives two
+pulses in each explicit delay sequence at every setting, so
+their count does not scale with λL. The knob changes the
+programmed free-evolution duration; finite pulse widths
+and residual coherent or time-dependent errors need not
+obey a pure dephasing-and-relaxation model.
+For the measurements, we follow Santos and Uzdin [12]:
+each mid-circuit measurement that feeds a decision is
+repeated λM times, and the correction is conditioned
+on the parity of the outcomes.
+Here there is a trap.
+Repeating a measurement takes time, so turning up λM
+would also lengthen the window, and measurement noise
+would secretly carry latency noise with it. To prevent
+this, we pad every λM = 1 window with 2tslot of echoed
+idling. This matches the nominal slot-duration budget
+at each latency setting, making the measurement knob
+compare measurement operations with padded waiting.
+It is not a measurement of the backend’s realized schedule.
+Conditional control latency, twirl-dependent pulses, and
+compiler scheduling can leave timing differences, especially
+in circuits with several measurements and conditions. The
+records validate inserted delays and instruction counts,
+not the full executed pulse timeline; all separability claims
+therefore concern the implemented knobs.
+All twirling was applied by hand and recorded, because
+IBM’s built-in measurement twirling does not cover mea-
+surements that feed conditions. Mid-circuit measurements
+use the dedicated instruction measure 2, and terminal
+measurements the standard measure.
+B.
+Three circuits with known answers
+Mitigation can be judged only against a known answer,
+so we chose three small dynamic circuits whose ideal
+expectation values are all exactly +1. The primary one,
+the spectator probe of Fig. 1(a), is built to expose the
+interaction we considered most likely. Three qubits sit in
+a row: a target t, an ancilla a and a spectator s, with a
+and s prepared in |+⟩. A CZ gate between a and t, ideally
+the identity because t starts in |0⟩, exposes gate noise.
+The ancilla is then measured mid-circuit, the window
+runs, and an X correction is applied to t according to
+the outcome. The spectator’s only job is to record how
+much it dephases while its neighbour is measured and the
+feedforward is computed. We measure ⟨Xs⟩, the primary
+observable, and ⟨ZtZa⟩, which tests the feedforward itself.
+The second circuit teleports a qubit twice: an Ry(π/3)
+state on q0 is passed to q2 and then to q4 through two Bell
+pairs, with two feeding measurements and conditional X
+and Z corrections per hop, and is then rotated back, so
+that ideally ⟨Z4⟩= 1; a spectator q5 sits in |+⟩, and
+we measure its ⟨X5⟩. The third prepares a four-qubit
+GHZ state in constant depth, using measured parities
+and corrections conditioned on their running XOR [10],
+with a spectator at the end of the chain; we measure the
+parity ⟨X⊗4⟩and the spectator’s ⟨X⟩. In all, there are
+six observables.
+
+6
+t |0⟩
+CZλG
+W(λL)
+Xv
+⟨ZtZa⟩
+a |0⟩
+H
+×λM
+s |0⟩
+H
+H
+⟨Xs⟩
+(a)
+t (even)
+a (odd)
+s (even)
+X
+X
+X
+X
+X
+X
+time
+0
+d/4
+d/2
+3d/4
+d
+(b)
+FIG. 1. (a) The spectator probe, our primary circuit. A CZ gate, folded λG times, exposes gate noise. The ancilla a is
+measured λM times, and the parity v of the outcomes conditions an X correction on t. The box W(λL) stands for the rest
+of the feedforward window, during which all three qubits wait; the nominal window coordinate is λLτw, excluding fixed pulse
+overhead and any unmeasured scheduling latency. The spectator s takes no part in the computation; ⟨Xs⟩records how much it
+dephases. (b) The staggered echo inside the window: qubits at even and odd positions along the chain receive their X pulses at
+different times, which refocuses static Z rotations and static ZZ coupling.
+C.
+Design
+Each knob takes the values 1 and 3, and all eight
+combinations, the corners of a cube, are run for each
+circuit. Two centre points, (2, 2, 1) and (2, 2, 3), test for
+curvature. Because λM must be odd (for even λM the
+parity of identical outcomes would always be zero), it has
+no centre level, so the centre point is repeated at both
+of its levels. The value λG = 2 is realized by folding
+all the CZs of a twirled instance of the circuit, or none
+of them, each with probability 1/2. This is a mixture
+of endpoint circuits, not a physical intermediate gate-
+noise level. It is linear in E, not in ln E, and therefore
+cannot identify gate-axis curvature. To first order in the
+gate contrast and under the quadratic response model, the
+centre contrast measures c ≃−kL, giving the approximate
+shift 3c −3kG −3kM. Mixture imbalance and the log-
+of-mixture correction are quantified in Appendix A; a
+measured centre contrast should not be read as a model-
+free estimate of latency curvature. A comparison set adds
+the latency-only settings (1, 2, 1), (1, 4, 1) and (1, 5, 1) and
+the gate-only setting (2, 1, 1). Each setting of the main
+experiment used 2 × 104 shots, divided among 20 random
+twirls; the trial runs used 5 × 103 shots per setting, on
+the probe alone.
+How small an interaction could this detect? An ob-
+servable with values ±1, estimated from N shots, has a
+standard error of at most 1/
+√
+N. A coded coefficient such
+as bLM is half the difference between the mean values on
+two halves of the cube, so at N = 2 × 104 its standard
+error is at most 0.0025, or 0.0025/Emin on the logarithmic
+scale, where Emin is the smallest of the eight values. The
+trial run on the main device, scaled to the same number
+of shots, gave a standard error of 0.0016 for bLM. From
+this we computed, before the main experiment, that an
+interaction of 0.0044 would be detected with 80% proba-
+bility in a two-sided test at the 5% level (0.0052 at the
+most stringent Holm level); we call 0.0044 the minimum
+detectable effect.
+D.
+Pre-specified analysis
+The analysis was specified before collecting the confir-
+matory data; the trial runs informed the design. The plan
+named one primary hypothesis, H1: that bLM is non-zero
+for the probe spectator, judged by a bootstrap 95% confi-
+dence interval together with a Holm correction over the
+four interaction terms. Three secondary hypotheses asked
+whether bLM exceeds the other pairwise interactions (H2),
+whether the extra bias of uniform over joint extrapolation
+grows with the size of the interactions across the six ob-
+servables (H3, using independent halves of the data), and
+whether bLM is stable across days (H4). An exploratory
+comparison (E1) asked how much the echo reduces the
+apparent interaction. The plan also fixed the logarithmic
+scale as primary; bootstrap intervals with at least 2000
+replicates, resampling twirls and shots; a drift rule that
+sets aside, for separate analysis, any later run in which
+the reported readout or CZ error of a qubit in use changes
+by more than a factor of two, its T1 or T2 falls by more
+than half, or the value at the native setting (1, 1, 1) shifts
+by more than five standard errors; and an automatic
+trial-run validation on the trial runs.
+E.
+Hardware and follow-up design
+The experiment ran on IBM Quantum processors
+through Qiskit Runtime (Qiskit 2.5.2, qiskit-ibm-runtime
+0.50.0). The first two trial runs used ibm kingston. The
+main experiment used ibm marrakesh, preceded by an
+echoed trial run with the same validation criteria except
+for the measurement-knob tests, whose circuits were not
+repeated. On ibm marrakesh the circuits used physical
+qubits 4–11 in chain order: 4–6 for the probe, 4–9 for tele-
+portation and 4–11 for the GHZ state. Each circuit was
+compiled onto this fixed chain, and an automatic check
+confirmed that compilation added no two-qubit gates and
+kept every measurement, conditional operation and delay.
+After analysing these runs, we planned a follow-up on
+the probe with three aims: to repeat the primary test
+
+7
+days later, to inject interactions of known size, and to
+measure the cost of the padding at two settings of the
+latency knob. In one batch, in random order, it ran the
+eight corners as in the main experiment; the same corners
+with two doses of an injected interaction (Sec. IV B), at
+104 shots per setting; and the settings (1, 1, 1) and (1, 3, 1)
+without padding, at 2 × 104. The follow-up analysis was
+specified before data collection, and the experiment used
+the same qubits more than four days after the main run.
+Calibration details are given in Appendix B.
+F.
+A check in simulation
+Before the hardware experiment, we ran the analysis
+on simulated data (Qiskit Aer) from a noise model with
+known coefficients; the numbers in this subsection are
+therefore simulated. With separable noise the analysis
+found bLM = −0.0008 [−0.0048, +0.0032], against a true
+value of zero, and raised no false alarm in 20 repeti-
+tions. With a synthetic latency × measurement interac-
+tion added, it found −0.0581 [−0.0633, −0.0533], against
+the true −0.0562, and detected the interaction in all
+20 repetitions; the simulated estimators also reproduced
+Eqs. (3) and (4) to four decimal places. The simulation
+also shows how an interaction misleads uniform scaling:
+with the synthetic interaction, uniform extrapolation over-
+shot the ideal value (1.0745, against 0.9014 for the joint
+fit), as Eq. (4) predicts for a negative bLM.
+IV.
+WHAT WE FOUND
+The empirical results in this section are from IBM
+Quantum hardware; Sec. IV G presents a post-hoc reanal-
+ysis and an analytic variance comparison. Uncertainties
+are 95% bootstrap confidence intervals; the hypothesis
+tests and the figures use separate bootstrap runs on the
+same data, so a few bounds differ in the last digit. For
+the follow-up, as its plan specified, they come from the
+instance-level bootstrap of Sec. IV E.
+A.
+Do the knobs do what we intend?
+The trial runs taught us two lessons. The first concerns
+the measurement knob. If each repetition of a measure-
+ment misreported the outcome independently with prob-
+ability p, the parity of λM repetitions would be wrong
+with probability [1 −(1 −2p)λM ]/2, nearly three times
+as often for λM = 3 as for a single measurement. To
+check this, the first trial run, on ibm kingston, included
+circuits that prepare the ancilla in |0⟩or |1⟩and measure
+it once or three times. A single measurement erred with
+probability 0.0209, but the parity of three repetitions was
+wrong only 0.0309 of the time, far less than the 0.0601
+that independence predicts, a difference of 6.8 standard
+errors [Fig. 2(a)]. Moreover, each successive repetition
+disagreed with the prepared state more often than the last
+(0.0192, 0.0253 and 0.0306). These observations reject
+the identical independent bit-flip model; correlated errors,
+repetition-dependent error rates, or measurement-induced
+state changes can contribute, consistent with the back-
+action studied in Ref. [20]. The measurement knob thus
+amplifies the effect of the measurement process as a whole,
+not simply readout error, and, as our plan specified, we
+interpret interactions involving M accordingly.
+The second lesson concerns the latency knob. The first
+trial run deliberately had no echo, so that stretching the
+window would add nothing but idle time, and it showed
+what Carrera Vazquez et al. had warned of [9]. As the win-
+dow was stretched five-fold, the spectator’s ⟨Xs⟩fell from
+0.97 to 0.29, but not exponentially, as Eq. (1) assumes; it
+followed a cosine almost perfectly [Fig. 2(b); χ2 = 0.6 for
+a cosine with 2 degrees of freedom, against 349.5 for an ex-
+ponential with 3]. The spectator was rotating coherently,
+by about 0.27 rad per step of λL, presumably because of
+a static frequency offset or ZZ coupling of the kind the
+echo is designed to cancel. A straight-line extrapolation
+of this curve to zero latency gives the impossible value
+1.20. And, as Eq. (11) warns, the run also showed an
+apparent interaction, bLM = +0.0198 [+0.0113, +0.0283],
+which, to leading order, Eq. (11) alone would explain
+with aM ≈−0.07 rad, given aL ≈0.27 rad (we did not
+measure aM independently).
+The echo suppressed both problems. On the same de-
+vice and qubits, ⟨Xs⟩now decayed slowly and smoothly,
+from 0.97 to 0.90 over the same range; an exponential
+fitted well (χ2 = 4.0 for 3 degrees of freedom; a co-
+sine fits about as well, χ2 = 2.5 for 2, but only with
+a rotation five times slower than before, 0.054 rad per
+step); and the interaction became consistent with zero,
+bLM = −0.0014 [−0.0055, +0.0026]. When the main ex-
+periment moved to ibm marrakesh, a repeat of the echoed
+trial run there showed no rotation either (bLM = +0.0029
+[−0.0032, +0.0090]), although the decay flattened at the
+longest window and the exponential fit was less good
+(χ2 = 19.6 for 3 degrees of freedom). (These trial-run
+intervals come from the 500-replicate bootstrap of the
+trial-run validation.)
+The trial runs also confirmed that duration matching
+was necessary. On ibm marrakesh, padding a λM = 1
+window with 2tslot of echoed idling lowered ⟨Xs⟩by 0.064,
+ten times its standard error; without the padding, the
+measurement knob would have carried this much latency
+noise with it. (Section IV F returns to this number.)
+B.
+Is the noise separable?
+With the knobs understood, the main experiment asked
+the central question. If latency and measurement noise
+are separable for the spectator, then on a logarithmic
+scale stretching the window must cost the same whether
+or not the measurement is repeated: the two lines in each
+panel of Fig. 3 should be parallel within uncertainty. The
+
+8
+1
+2
+3
+MCM repetitions λM
+0.02
+0.03
+0.04
+0.05
+0.06
+parity error
+(a) flip law: ̂p = 0.0209, z = -6.8
+independent flips, (1−(1−2̂p)λ)/2
+observed parity error
+0
+1
+2
+3
+4
+5
+latency knob λL
+0.4
+0.6
+0.8
+1.0
+⟨Xs⟩, λG =λM =1
+(b) latency scan; dashed: best of cosine / exponential fit
+no echo
+echo
+FIG. 2. What the trial runs on ibm kingston revealed. (a) For an ancilla prepared in |0⟩or |1⟩, the parity of λM repeated
+measurements is wrong far less often than independent errors would imply (dashed line), rejecting the identical independent
+bit-flip model . (b) Without an echo (orange), the spectator’s ⟨Xs⟩follows a cosine as the feedforward window is stretched, the
+signature of a coherent rotation; with the echo (blue) it decays slowly. Dashed lines show the fits drawn by our analysis: a
+cosine for the un-echoed trial and an exponential for the echoed trial (a slow cosine fits the echoed trial about as well).
+probe spectator is compatible with this condition at the
+present resolution. The interaction is bLM = +0.0007
+[−0.0033, +0.0049], and after the Holm correction none
+of the four interaction terms comes close to significance
+(adjusted p values of 1, 0.8, 1 and 1 for bGL, bGM, bLM
+and bGLM). The half-width of the interval, 0.0041, is
+smaller than the minimum detectable effect of 0.0044,
+which is the condition our plan set for declaring this
+interaction negligible. That rule is not a formal test of
+equivalence, however, and the interval does not exclude an
+interaction as large as +0.0044 itself. The nominal 95%
+interval is contained in (−0.005, +0.005) for this single,
+gate-averaged contrast. This is not a simultaneous bound
+on all interactions, a fixed-gate bound, or a bound on
+total extrapolation error. Under Eq. (1), the contribution
+of this coefficient alone to the OAT log error is smaller
+than 0.005; the other coefficients, curvature, and target
+mismatch remain unconstrained by that statement. Nor is
+bLM larger than the other interactions, as H2 conjectured:
+|bLM| −|bGL| = −0.0009 [−0.0045, +0.0036] and |bLM| −
+|bGM| = −0.0019 [−0.0055, +0.0035].
+Would the analysis have seen an interaction if there
+had been one? The minimum detectable effect answers
+this only on paper, so in the follow-up we injected in-
+teractions of known size. Just before the spectator is
+read out, we apply a virtual rotation about the z axis,
+which IBM implements as a change of the reference frame
+for later pulses: by θ = a(xL + xM) in half of the in-
+stances and by −θ in the other half.
+For a common
+pre-rotation state averaged equally over the two signs,
+this multiplies ⟨Xs⟩by exactly cos θ, whatever phase that
+state carries: it is the mechanism of Sec. II E, made ex-
+act in expectation. In finite samples, random twirls and
+temporal state variation can prevent exact cancellation
+of the sine term. It shifts b0 and bLM by 1
+2 ln cos 2a and
+leaves the other six coefficients unchanged. We chose two
+doses, a = 0.0997 and 0.1405 rad, which shift bLM by
+−0.010 and −0.020, two and four times the bound above.
+The measured shifts were −0.0104 [−0.0148, −0.0058] and
+−0.0213 [−0.0253, −0.0172], that is, 1.04 [0.58, 1.48] and
+1.06 [0.86, 1.26] times the injected sizes, so the criterion
+fixed in the plan, that each interval exclude zero and
+contain the prediction, was met. At the corners where
+the rotation acted, ln⟨Xs⟩fell by 0.022 and 0.016 for the
+smaller dose and by 0.038 and 0.040 for the larger, against
+0.020 and 0.040 predicted, and none of the other six coef-
+ficients moved significantly, or by as much as 0.005. The
+analysis thus recovers interactions of this size, at the size
+injected.
+One result of this run was unexpected. The feedfor-
+ward observable ⟨ZtZa⟩, which the rotation does not
+touch, should not have changed at all, yet its bLM
+was larger in the two rotated blocks than in the unro-
+tated one, by +0.0056 [−0.0010, +0.0124] and +0.0080
+[+0.0019, +0.0144]. In a check made after the run, ran-
+domly exchanging instances between the blocks produced
+a difference as large as that of the two rotated blocks
+together, +0.0068, only 2% of the time. The rotation
+can hardly be the cause. It changes only the reference
+frame of another qubit, after the last feedforward opera-
+tion, and three quarters of the difference comes from the
+corners with (λL, λM) = (3, 1), where θ = 0, so that the
+rotated circuits there differ from the unrotated ones only
+in their random twirls; at those corners the spectator, too,
+differs between blocks, by +0.0105 [−0.0002, +0.0204]
+for the larger dose. Nor is it a steady drift, although
+ln⟨ZtZa⟩did rise by about 0.02 over the two minutes of
+the run; removing that trend leaves the difference intact.
+The exploratory permutation p value is conditional on
+exchangeability of the instances and is not the probability
+that the discrepancy arose by chance. Because several
+post-hoc diagnostics were examined, it is a warning about
+
+9
+reproducibility rather than a separately confirmed physi-
+cal effect. Differences of this size between independently
+built circuit sets call for caution.
+The echo appears to have made the difference. With-
+out it, in the first trial run, |bLM| was 0.0198; with it,
+in the main experiment, 0.0007, a reduction of 0.0191
+[0.0092, 0.0272]. Because these two runs also differ in
+device, calibration and number of shots, the cleaner com-
+parison is between the two trial runs on the same device,
+in which |bLM| fell from 0.0198 to 0.0014.
+Figure 4 puts this result in context by showing every
+coefficient of Eq. (2) but the constant b0, for all six observ-
+ables. The latency effect is the largest main effect for every
+observable, and it exceeds every interaction, by more than
+a factor of ten for all but the poorly determined GHZ
+spectator. Of the 24 interaction coefficients, two have
+intervals that exclude zero without correction: bGM for
+the teleportation spectator (−0.0068 [−0.0126, −0.0009])
+and bLM for the probe’s feedforward observable (−0.0056
+[−0.0097, −0.0012]). About 1.2 such intervals would be
+expected by chance if all 24 coefficients were zero, and
+the two do not form a pattern; the second did not recur
+consistently in later runs (Sec. IV D). Because the gate
+knob also adds idle time, interactions involving G mix the
+effects of gates and of idling; the latency × measurement
+interaction, our primary target, does not suffer from this.
+The GHZ intervals are too wide (up to about ±0.05) to
+say much at the scale of the primary test.
+One main effect deserves comment, because its sign is
+surprising. For the probe, turning up the measurement
+knob raises both observables (bM = +0.0326 for ⟨Xs⟩
+and +0.0186 for ⟨ZtZa⟩). Because of duration matching,
+however, the knob compares two extra measurements
+with an equal time of echoed idling, so a positive bM
+means only that, on this device, the idling did more harm
+than the measurements; the duration control had already
+shown that the padding alone lowers ⟨Xs⟩by 0.064. For
+the teleportation observables and the GHZ parity, bM is
+negative, and for the GHZ spectator it is consistent with
+zero.
+Finally, the centre points show that Eq. (1) is not ex-
+actly linear in λL for every observable. For the probe spec-
+tator the curvature excludes zero at both centre points,
+with nearly equal values (−0.0144 [−0.0282, −0.0004]
+and −0.0143 [−0.0261, −0.0030]); for the teleportation
+spectator it excludes zero at one of them (+0.0188
+[+0.0055, +0.0329]) and has the same sign at the other
+(+0.0160 [−0.0023, +0.0348]); and for the GHZ par-
+ity it only just excludes zero at (2, 2, 1) (−0.0575
+[−0.1145, −0.0000]), with the opposite sign at the other
+centre point. We return to the consequences in Secs. IV F
+and V.
+C.
+Which extrapolation should one use?
+With the interactions known, we can ask the practical
+question: how well do the different strategies recover the
+ideal value? Figure 5 shows the five estimates for each
+observable.
+The original multi-knob strategies gave similar median
+point errors over these six observables. This descriptive
+comparison does not establish statistical equivalence or
+equal-budget performance. Their median absolute biases
+over the six observables were 0.0502 for the joint fit, 0.0625
+for one-at-a-time and 0.0525 for uniform scaling. These
+errors are compatible with small interactions in several
+observables, but the medians conceal observable-specific
+differences and uncertainty. The two strategies that am-
+plify only one kind of noise did worse, with median biases
+of 0.1366 (latency-only) and 0.1828 (gate-only), 2.6 to 3.6
+times those of the joint and uniform estimates, and their
+intervals never contained the ideal value. (Our analysis
+also fitted both exponentially; latency-only extrapolation
+then has a median bias of 0.102, about twice that of the
+joint and uniform estimates, and gate-only extrapolation
+is almost unchanged.) For the teleportation and GHZ cir-
+cuits, then, what matters most is not how the components
+are combined, but that all of them are amplified.
+The probe is the exception. Its measured gate-knob
+effect is small, and here the multi-knob strategies gain
+nothing from the measurement knob: because turning
+that knob up raised the probe’s observables, extrapolating
+it to zero lowers the estimate, by 0.036 on the logarith-
+mic scale for the one-at-a-time ⟨Xs⟩, about half of that
+estimate’s shortfall. For both probe observables, latency-
+only extrapolation did about as well as the multi-knob
+strategies.
+Even the best strategies are not accurate everywhere,
+however. Their intervals include the ideal value for both
+teleportation observables, but for the probe spectator,
+the probe’s feedforward observable and the GHZ parity,
+the 95% intervals of every strategy lie below 1, and the
+multi-knob strategies miss by 0.04 to 0.25. (For the GHZ
+spectator, the joint and one-at-a-time intervals are too
+wide to judge.) With only six observables, the test of
+whether the extra bias of uniform scaling tracks the size
+of the interactions (H3) is uninformative: the Spearman
+correlation is +0.14, with interval [−1, +1].
+How much does the assumed feedforward latency mat-
+ter? Our plan called for repeating the extrapolations
+with τff = 0.5 and 2 µs, and because the length of every
+window that was run is recorded, this needs no new data.
+On ibm marrakesh, tslot = 1.956 µs and τw = 6.868 µs,
+so a different latency moves the zero-window target from
+λL = 0 to λL = 1 −(3tslot + τff)/τw, that is, to +0.07 for
+0.5 µs and to −0.15 for 2 µs. The joint and one-at-a-time
+estimates then move by at most 0.032, or 0.046 for the
+poorly determined GHZ spectator; the median biases of
+the multi-knob strategies stay between 0.050 and 0.067,
+against 0.126 to 0.142 for latency-only extrapolation; and
+no interval, computed with the pre-specified bootstrap,
+moves across the ideal value. Gate-only extrapolation
+does not involve λL, and uniform scaling, which extrapo-
+lates all three knobs along a single line in nominal units,
+cannot be retargeted without separate information about
+
+10
+1
+3
+λL
+−0.2
+−0.1
+ln E (mean over λG)
+probe ⟨Xs⟩
+bLM = +0.0007 [-0.0032, +0.0049]
+λM = 1
+λM = 3
+1
+3
+λL
+−0.2
+−0.1
+probe ⟨ZtZa⟩
+bLM = -0.0056 [-0.0097, -0.0012]
+1
+3
+λL
+−0.8
+−0.6
+−0.4
+teleport ⟨Z4⟩
+bLM = +0.0098 [-0.0038, +0.0229]
+1
+3
+λL
+−0.4
+−0.3
+−0.2
+−0.1
+ln E (mean over λG)
+teleport ⟨X5⟩
+bLM = +0.0012 [-0.0048, +0.0071]
+1
+3
+λL
+−1.5
+−1.0
+GHZ ⟨X ⊗4⟩
+bLM = -0.0074 [-0.0345, +0.0179]
+1
+3
+λL
+−0.7
+−0.6
+−0.5
+GHZ ⟨Xs⟩
+bLM = +0.0098 [-0.0397, +0.0625]
+FIG. 3. The test of separability. Each panel shows ln E against the latency knob λL, with the measurement knob at λM = 1
+(blue) and λM = 3 (orange), averaged over λG (main experiment, ibm marrakesh). If latency and measurement noise are
+separable, the two lines are parallel; their slopes differ by 2bLM, which is given with its 95% interval above each panel.
+−0.050 −0.025 0.000
+0.025
+coded coefficient (log scale)
+bG
+bL
+bM
+bGL
+bGM
+bLM
+bGLM
+probe ⟨Xs⟩
+Holm p: bGL 1, bGM 0.8, bLM 1, bGLM 1
+−0.075 −0.050 −0.025 0.000
+0.025
+coded coefficient (log scale)
+bG
+bL
+bM
+bGL
+bGM
+bLM
+bGLM
+probe ⟨ZtZa⟩
+−0.20
+−0.15
+−0.10
+−0.05
+0.00
+coded coefficient (log scale)
+bG
+bL
+bM
+bGL
+bGM
+bLM
+bGLM
+teleport ⟨Z4⟩
+−0.075 −0.050 −0.025
+0.000
+coded coefficient (log scale)
+bG
+bL
+bM
+bGL
+bGM
+bLM
+bGLM
+teleport ⟨X5⟩
+−0.2
+−0.1
+0.0
+coded coefficient (log scale)
+bG
+bL
+bM
+bGL
+bGM
+bLM
+bGLM
+GHZ ⟨X ⊗4⟩
+−0.1
+0.0
+coded coefficient (log scale)
+bG
+bL
+bM
+bGL
+bGM
+bLM
+bGLM
+GHZ ⟨Xs⟩
+FIG. 4. Every coefficient of Eq. (2) except b0, with 95% intervals, for the six observables (main experiment, ibm marrakesh).
+Main effects are grey and interactions blue. Except for the poorly determined GHZ spectator, the interactions are small
+compared with the latency effect bL. The probe ⟨Xs⟩panel lists the Holm-adjusted p values of the primary test.
+the latency axis.
+D.
+Does the result hold up in repeat runs?
+A repeat of the probe experiment on the same qubits,
+2 h 37 min later, gave bLM = −0.0031 [−0.0056, −0.0004].
+Taken alone, this interval narrowly excludes zero, although
+
+11
+0.90
+0.95
+1.00
+extrapolated ̂E (line: Eid = 1)
+joint CR-ZNE
+one-at-a-time
+uniform
+latency-only (lin.)
+gate-only (lin.)
+probe ⟨Xs⟩
+0.90
+0.95
+1.00
+extrapolated ̂E (line: Eid = 1)
+joint CR-ZNE
+one-at-a-time
+uniform
+latency-only (lin.)
+gate-only (lin.)
+probe ⟨ZtZa⟩
+0.8
+1.0
+extrapolated ̂E (line: Eid = 1)
+joint CR-ZNE
+one-at-a-time
+uniform
+latency-only (lin.)
+gate-only (lin.)
+teleport ⟨Z4⟩
+0.9
+1.0
+extrapolated ̂E (line: Eid = 1)
+joint CR-ZNE
+one-at-a-time
+uniform
+latency-only (lin.)
+gate-only (lin.)
+teleport ⟨X5⟩
+0.6
+0.8
+1.0
+extrapolated ̂E (line: Eid = 1)
+joint CR-ZNE
+one-at-a-time
+uniform
+latency-only (lin.)
+gate-only (lin.)
+GHZ ⟨X ⊗4⟩
+0.5
+1.0
+1.5
+extrapolated ̂E (line: Eid = 1)
+joint CR-ZNE
+one-at-a-time
+uniform
+latency-only (lin.)
+gate-only (lin.)
+GHZ ⟨Xs⟩
+FIG. 5. Five ways to extrapolate to zero noise, compared with the exactly known ideal value Eid = 1 (vertical line) for each
+observable (main experiment and comparison set, ibm marrakesh). The three multi-knob strategies (joint, one-at-a-time and
+uniform) broadly agree with one another. Latency-only and gate-only extrapolation fall well short for the teleportation and
+GHZ circuits; for the probe, latency-only extrapolation does about as well as the multi-knob strategies.
+it is a single uncorrected interval outside the family of the
+primary test. Its difference from the main run, −0.0038
+[−0.0088, +0.0011], is consistent with zero, which meets
+the plan’s non-rejection rule for H4 (but see Sec. IV E).
+Failure to reject a change is not evidence of stability
+without a stated equivalence margin.
+But the repeat
+run’s baseline value had risen from 0.9058 to 0.9619, a
+shift of 15.7 standard errors, and the device’s reported
+T1 and T2 had changed, which suggests a recalibration in
+between. The baseline shift alone triggers the drift rule,
+so, as planned, we report the repeat run separately rather
+than pooling it.
+The follow-up measured the same eight corners again,
+with the same number of shots, more than four days after
+the main run. It gave bLM = −0.0014 [−0.0040, +0.0012],
+or [−0.0050, +0.0023] with the bootstrap of our origi-
+nal plan, and its difference from the main run, −0.0021
+[−0.0061, +0.0020], is consistent with zero.
+For this
+run we had fixed a test of equivalence in advance: if
+its 90% interval lay inside ±0.005, the bound of the
+main run would be confirmed at the 5% level. The in-
+terval, [−0.0035, +0.0008], does lie inside, and so does
+the 90% interval from the bootstrap of our original plan,
+[−0.0044, +0.0017]. This run, too, was flagged for drift:
+the ancilla’s reported readout error had more than dou-
+bled since the main run, its reported error for mid-circuit
+measurements had grown from 0.0020 to 0.0186, and the
+baseline had shifted by 5.6 standard errors. As planned,
+we do not pool it with the others.
+In three runs un-
+der three calibrations, then, the primary interaction was
++0.0007 [−0.0024, +0.0038], −0.0031 [−0.0049, −0.0013]
+and −0.0014 [−0.0040, +0.0012], all three intervals from
+the instance-level bootstrap: small each time, though
+the first two differ by more than chance easily explains
+(Sec. IV E).
+The feedforward observable fared differently. Its bLM,
+which excluded zero in the main run, was +0.0017
+[−0.0026, +0.0064] in the repeat run; in the follow-up
+it was −0.0054 [−0.0096, −0.0013] in the unrotated cir-
+cuits but +0.0014 [−0.0021, +0.0049] in the rotated ones,
+which for this observable should be equivalent (Sec. IV B).
+The like-for-like repeat in the follow-up thus matched the
+main run, but the repeat run and the rotated circuits did
+not, and we do not regard that interaction as consistently
+reproduced.
+E.
+A check on the error bars
+One choice in our plan deserves a second look. The
+bootstrap resamples the twirled instances of each circuit
+and then redraws the shots within each instance. But the
+spread between instances already contains the shot noise,
+so the second step counts it twice, and the intervals come
+out too wide: here by 20 to 40%, except for the GHZ
+spectator, whose values vary between instances far more
+than shot noise alone would explain. As a check that was
+not part of the plan, we reran our analysis code with only
+that step removed, resampling whole instances, and with
+two different random seeds. Resampling whole instances
+is the usual bootstrap for data that come in clusters, and
+we regard it as the better estimate of the uncertainties;
+
+12
+but because it was not in our plan, the pre-specified inter-
+vals remain primary for the trial runs, main experiment,
+comparison set, and first repeat throughout this paper,
+and we use the narrower intervals to strengthen none of
+our conclusions about them. (The plan for the follow-up,
+written afterwards, adopted the instance-level bootstrap;
+its main conclusion holds with either, Sec. IV D.)
+The primary result does not change: bLM = +0.0007
+[−0.0022, +0.0037]. Nor do the effect of the echo or the
+comparison of extrapolation strategies, where no interval
+moves across the ideal value. Three secondary statements
+do change. Four of the 24 interaction coefficients now
+exclude zero before correction, or five with one of the
+seeds: besides the two above, bGLM for the probe’s feed-
+forward observable (+0.0039 [+0.0008, +0.0071]), bGL for
+the teleportation observable (+0.0111 [+0.0005, +0.0213])
+and, marginally, bGLM for the GHZ spectator; about 1.2
+would be expected by chance. The difference between the
+repeat run and the main run, −0.0038 [−0.0073, −0.0003],
+no longer contains zero, so H4 would fail by its own rule,
+in line with the drift flag on the repeat run. And the
+curvature now excludes zero at both centre points for the
+teleportation spectator, and clearly so at (2, 2, 1) for the
+GHZ parity.
+F.
+Does the latency knob stretch the window
+faithfully?
+Extrapolation to λL = 0 assumes that the window as
+it is run, padding and feedforward wait included, decays
+at the same rate as the free evolution that the latency
+knob adds to stretch it.
+If the window decays faster,
+the extrapolation removes too little of its noise, and the
+estimates come out low.
+Two kinds of data test this
+assumption for the probe: the shape of the latency axis,
+which we analysed after the runs, outside our plan, and
+the cost of the padding, which a trial run measured and
+the follow-up measured again, as planned.
+The first is the shape of the latency axis. Together, the
+main experiment and comparison set ran every circuit
+at five latency levels, λL = 1 to 5, with λG = λM =
+1. For the probe spectator, ln⟨Xs⟩fell by 0.073, 0.054,
+0.039 and 0.034 in successive steps: the decay slows as
+the window grows, as the centre points had suggested.
+A quadratic through the five levels has the curvature
+kL = +0.0065 [+0.0028, +0.0098]. Because the five levels
+come from two experimental runs, we use this coefficient,
+which, unlike a contrast between three of the levels, is not
+affected by a constant offset between the main experiment
+and comparison set. The echoed trial run on the same
+device, which ran all five levels in a single run, gives
++0.012 [+0.004, +0.019]. By Eq. (12), curvature of this
+size shifts the multi-knob estimates by −3kL, that is, by
+−0.020 or −0.035, against −0.043 (roughly −0.085 to
+−0.001) from the centre points; curvature along λG and
+λM would add to this. For the other observables the
+scans add little. They show no curvature for the probe’s
+feedforward observable, the teleportation observable or
+the GHZ parity; for the GHZ spectator they agree in sign
+with the centre points; and for the teleportation spectator
+they show curvature of the opposite sign.
+The second is the duration control, which measures
+the cost of the padding directly, by running the circuit
+with and without it. The trial run on ibm marrakesh did
+this at one setting, and the follow-up at λL = 1 and 3,
+with four times as many shots. In the trial run, the 2tslot
+of padding lowered ⟨Xs⟩by 0.064 (Sec. IV A), that is,
+ln⟨Xs⟩by 0.068 [0.050, 0.087], or 0.017 [0.013, 0.022] per
+microsecond. In the main experiment, the free evolution
+added by the latency knob cost only 0.0095 [0.0089, 0.0101]
+per microsecond (−bL/τw). The padding, which is part of
+the native window, thus decayed 1.8 [1.3, 2.4] times as fast
+as the stretch. In the follow-up it cost 0.055 [0.049, 0.061]
+at λL = 1, and decayed 1.5 [1.3, 1.7] times as fast as the
+stretch of the same run. If each slot of padding costs p on
+the logarithmic scale and the stretch costs r per unit time,
+every multi-knob estimate falls short of the value without
+a window by 3(p −rtslot), plus a similar term for the
+feedforward wait, which we cannot vary (Appendix A). For
+the spectator, the first term alone is 0.046 [0.019, 0.075]
+from the trial run and 0.027 [0.017, 0.038] from the follow-
+up. On ibm kingston, by contrast, the echoed padding
+lowered ln⟨Xs⟩by only 0.007 [−0.007, 0.022], close to the
+0.009 that the rate of the stretch there predicts. And for
+the probe’s feedforward observable, the follow-up found
+no excess at all: its padding decayed 0.97 [0.83, 1.11]
+times as fast as its stretch, against 1.2 to 1.7 times in the
+trial run, depending on which run supplies the rate of the
+stretch.
+For the spectator, the duration control directly estab-
+lishes a higher average cost per unit time for the tested
+padding than for the stretch. The latency scan indepen-
+dently shows a nonconstant decay rate over the sampled
+range.
+Neither measurement separately identifies the
+unvaried feedforward wait, and interpreting them as a
+native-window mismatch requires the response assump-
+tions stated above. For the feedforward observable the
+evidence is mixed. They are two estimates of the same
+shortfall, not corrections to be added. Under those mod-
+els, the point estimates imply log shifts of 0.020 to 0.046,
+compared with an observed log deficit of 0.067 to 0.084.
+These are model-dependent scales, not an identified causal
+fraction of the total bias: the estimates span different runs
+and the wait contribution is unmeasured. The two more
+precise point estimates are 0.020 from the main latency
+scan and 0.027 from the follow-up duration control.
+Why does the padding decay so fast? The simplest
+explanation would be that the first microseconds of any
+echoed delay decay fastest. That would also create an
+interaction. If only the total length of echoed delay mat-
+tered, the order within it would not: with one measure-
+ment the stretch adds to the 2tslot of padding, whereas
+with three it starts from no delay at all, and it would
+then cost more. In that case bLM = (c3 −c1)/4, where
+c1 and c3 are the costs of the padding at λL = 1 and 3
+
+13
+(Appendix A); and if, in addition, the decay is fastest at
+first, c3 can be no larger than the cost 2rtslot of the same
+length of stretch, so that bLM ≤−(p −rtslot)/2. Before
+the follow-up we could test only this bound, taking p from
+the trial run and r from the main experiment. For the
+spectator it is −0.008 [−0.013, −0.003], whereas the main
+experiment found +0.0007, which seemed to rule the expla-
+nation out. The follow-up measured both costs in a single
+run. At λL = 3 the padding cost 0.042 [0.031, 0.054]:
+less than at λL = 1, but a little more than the 0.037
+that the rate of the stretch implies. The total-length
+prediction, −0.0031 [−0.0063, +0.0002], agrees with the
+−0.0014 measured in the same run (difference +0.0017
+[−0.0017, +0.0052]), and so does that for the feedforward
+observable (−0.0026 [−0.0083, +0.0030], against −0.0054).
+But the spectator’s measured value exceeds the bound
+for a decay that is fastest at first, −0.0045, by 0.0031
+[0.0003, 0.0058], or [−0.0007, +0.0070] with the bootstrap
+of our original plan. The follow-up thus shrinks the earlier
+contradiction, from 0.008 to 0.003, but does not clearly
+remove it, and the difference between the two costs, 0.012
+[−0.001, +0.025], is too uncertain to settle the matter:
+why the padding decays so fast remains open. If decay
+did depend only on the total length of delay, duration
+matching itself would contribute about −0.003 to the
+measured bLM of both probe observables. That would
+cut both ways. It would make the feedforward observ-
+able’s −0.0056 in the main run, together with the spread
+between runs (Sec. IV D), weak evidence that latency and
+measurement noise interact physically; and it would put
+the spectator’s interaction in the main run, net of this
+artifact, at +0.0038 [−0.0024, +0.0103] with the boot-
+strap of our original plan, or [−0.0006, +0.0085] with the
+instance-level one. The bound of Sec. IV B applies to the
+knobs as built, duration matching included.
+G.
+Precision and an additive full-cube fit
+For a post-hoc comparison of estimator precision, we
+resampled the 20 complete twirled instances within each
+setting, independently across settings, using 20,000 repli-
+cates and seed 20261012. All 20,000 replicates were re-
+tained for each observable under the E > 0.05 guard.
+This post-hoc analysis assumes exchangeable instances
+within a setting and does not model unobserved temporal
+correlation. It preserves the original outcomes and does
+not replace the pre-specified intervals. Figure 6 shows
+the resulting estimator intervals and the separate analytic
+shot-cost comparison.
+The additive cube fit gives 0.941 [0.931, 0.951] for the
+probe spectator, 0.969 [0.958, 0.980] for probe feedforward,
+0.976 [0.942, 1.016] for teleportation, 1.004 [0.989, 1.019]
+for its spectator, and 0.819 [0.771, 0.870] for GHZ parity.
+The GHZ spectator is a counterexample to adopting it in-
+discriminately: its additive estimate is 0.597 [0.498, 0.711],
+whereas the original joint point estimate is 0.970. Its triple
+contrast, bGLM = −0.0473, contributes strongly through
+Eq. (9). Fitting only main effects therefore trades vari-
+ance for potentially large misspecification error. Choosing
+an estimator after looking at agreement with the known
+answer would require independent validation; these six
+outcomes do not establish an estimator-selection rule.
+V.
+DISCUSSION
+What have we learned? Within the resolution of the
+experiment, and once the idle periods are echoed, the pri-
+mary interaction is consistent with zero: with the knobs as
+built, the latency × measurement interaction seen by the
+spectator is smaller than 0.005 on the logarithmic scale.
+Elsewhere a few small interactions may be present. Two
+of the 24 interaction coefficients exclude zero in the pre-
+specified analysis, and four or five with the instance-level
+bootstrap of Sec. IV E, against 1.2 expected by chance;
+except for the poorly determined GHZ spectator, every
+interaction is smaller in magnitude than the latency main
+effect. Accordingly, the simple strategies, one knob at a
+time or all knobs together, do about as well as the full
+joint fit. For these circuits, this agrees with the argument
+of Ref. [7] that a single global parameter can suffice, pro-
+vided that every kind of noise that matters is amplified.
+In the teleportation and GHZ circuits, amplifying latency
+or gates alone left a much larger bias, which illustrates the
+risk of leaving a source of noise unamplified; in Ref. [16],
+for example, ZNE amplified gates and idling but not the
+mid-circuit resets. Our single-knob strategies leave gate
+or latency noise unamplified as well. In the probe, whose
+measured gate-knob effect is small, latency-only extrapo-
+lation did as well as any. Note also that uniform scaling
+needs the same three knobs as component-resolved scaling;
+what it saves is circuit settings, not instrumentation.
+The clearest lesson may be methodological. Without
+the echo, our first trial run showed a log-scale interaction
+of 0.02, which could easily have been read as a physical ef-
+fect; on the same device, the echo suppressed the rotation
+and reduced the interaction to a value consistent with
+zero. Carrera Vazquez et al. had already seen that coher-
+ent oscillations spoil extrapolation in the latency [9]; what
+Eq. (11) adds is that they also masquerade as interactions.
+Indeed the effect is generic: whenever two knobs both
+shift a coherent phase, the logarithm of the observable
+acquires a cross term. Studies that look for interactions
+between amplified noise channels should therefore refocus
+static phases, or fit a model that allows for them, be-
+fore interpreting the interactions. (Because the trial runs
+shaped our design, this comparison is exploratory.) The
+echo refocuses only the window, however. Phases picked
+up during the measurement slots do not depend on λL,
+so by Eq. (11) they can contribute to bGM, if gate folding
+also shifts the phase, but not to bLM. Whether this ex-
+plains the one bGM whose interval excludes zero, for the
+teleportation spectator, we have not tested. The other
+interval that excludes zero, bLM for the probe’s feedfor-
+ward observable, did not recur consistently in later runs,
+
+14
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+extrapolated ̂E (line: Eid =1)
+probe ⟨Xs⟩
+probe ⟨ZtZa⟩
+teleport ⟨Z4⟩
+teleport ⟨X5⟩
+GHZ ⟨X ⊗4⟩
+GHZ ⟨Xs⟩
+(a) Whole-instance bootstrap
+joint
+one-at-
+a-time
+uniform
+additive
+0
+20
+40
+60
+80
+100
+120
+140
+variance factor at fixed total shots
+125
+28
+5
+13
+(b) Equal shots per setting
+joint CR-ZNE
+one-at-a-time
+uniform
+additive cube
+FIG. 6. Post-hoc precision analysis. (a) Extrapolated expectations from the main experiment; bars are 95% whole-instance
+percentile bootstrap intervals with 20,000 replicates. The vertical line is the known ideal value, 1. These intervals describe
+within-run resampling uncertainty, not uncertainty from drift or response-model choice. (b) Analytic variance factors at a
+fixed total shot budget, with equal shots per required setting and a common per-shot log-variance factor. Panel (b) is a design
+calculation, not a rescaling of the intervals in (a).
+and part of it may come from the design of the knobs:
+if decay depends only on the total length of echoed de-
+lay, which the follow-up neither confirms nor excludes,
+duration matching alone produces an interaction of about
+−0.003 (Secs. IV D and IV F). The coherent mechanism
+also supplies a cheap positive control. A virtual rotation
+applied with both signs injects an interaction of exactly
+known size, whatever phase the qubit already carries; our
+analysis recovered it at the size injected, at the cost of
+about one more set of the eight corners. But the same
+run carried a warning: two sets of circuits that should be
+equivalent for the feedforward observable gave values of its
+bLM that differ by 0.007, a difference that a permutation
+test made after the run puts at p = 0.02 (Sec. IV B).
+The measurement knob also departed from the textbook
+picture. Three repetitions raised the parity error by a
+factor of about 1.5 rather than 3, and later repetitions
+erred more often than earlier ones. Extrapolation along
+λM assumes that each repetition adds the same amount
+of noise; on this hardware it apparently does not, so the
+effective amplification factor differs from the nominal one.
+Why, then, do the multi-knob estimates still fall short
+for half of the observables? We can offer three candidate
+explanations. The simplest is the gap between E∗and
+Eid: noise that no knob amplifies, such as that of single-
+qubit gates, state preparation, terminal readout and the
+echo pulses themselves. Readout alone is too small to
+explain the probe’s deficit, however; the reported readout
+errors of its qubits, 0.0020 to 0.0046, would lower ⟨Xs⟩by
+only about 0.004 and ⟨ZtZa⟩by about 0.018. A second
+candidate, and for the probe spectator the best supported,
+is that the latency knob does not stretch the window faith-
+fully. As Sec. IV F showed, the tested spectator padding
+has a higher average decay cost than the added stretch,
+and the latency scan is curved, with model-dependent log
+shifts comparable to part of the observed deficit. This
+does not identify a causal share of the shortfall. A non-
+constant decay rate is one possible explanation, but the
+specific fastest-at-first model is in mild tension with one
+of the post-hoc intervals and is not established. For the
+GHZ parity, though, the latency scan shows no curvature,
+the two centre points disagree in sign, and we have no
+duration control for that circuit; curvature along λG and
+λM we could not measure at all. A third candidate is
+the measurement knob itself. If it amplifies measurement
+errors by less than its nominal factor on ibm marrakesh
+too (we measured this only on ibm kingston), extrapola-
+tion along λM removes only part of the feedforward error,
+which biases low the observables that depend on correc-
+tions but not the spectators; the teleportation observable,
+however, shows no such bias. Finally, the retargeting
+sensitivity analysis within the assumed range does not
+remove the shortfalls: changing it from 1 to 0.5 or 2 µs
+moves the probe’s multi-knob estimates by less than 0.01
+and the GHZ parity’s by less than 0.025 (Sec. IV C).
+Agreement with the ideal value is not proof of correct-
+ness either. The teleportation spectator sits on qubit 9,
+whose reported readout error is 0.0156. No knob amplifies
+readout error, and because our terminal measurements are
+twirled, it acts as a symmetric bit flip, so by itself it should
+
+15
+cap the extrapolated ⟨X⟩at about 1 −2 × 0.0156 ≈0.969.
+Yet the multi-knob estimates are 1.002 to 1.004, above the
+cap: clearly so for uniform scaling, only just for one-at-
+a-time, and within the uncertainty for the joint fit. The
+positive curvature of this observable at both centre points
+would push the estimates upward, so the extrapolations
+may over-correct here; but the latency scan shows curva-
+ture of the opposite sign (Sec. IV F), and the cap rests on
+a single calibration value, so the evidence is weak.
+Our study has several limitations. The analysis was not
+registered externally, and the trial runs shaped the design.
+The main experiment ran on a different device from two
+of the trial runs. The circuits are small, with at most
+eight qubits, and come from a single family of devices.
+The measurement knob has only two levels and the gate
+knob’s centre level is a mixture, so curvature along either
+cannot be seen. The extrapolations to λL = 0 depend on
+the assumed feedforward latency, which we varied only
+over the range our plan specified, 0.5 to 2 µs. The padding
+needed for duration matching raises the baseline idle noise,
+and on ibm marrakesh it decays faster than the stretch,
+which our extrapolations do not correct; the two runs
+give model-dependent contributions of 0.046 and 0.027
+to the log deficit. And folding lengthens the idle time
+before the measurement, which we did not compensate.
+Both repeat runs were flagged for drift, and the reported
+calibration values may not describe the device at the time
+of the runs (Appendix B). With two levels per knob, our
+interactions describe non-additivity between the levels
+tested, not the whole response surface. Our decision rule
+for the primary interaction in the main run compared its
+uncertainty with the minimum detectable effect rather
+than testing equivalence; the test of equivalence in the
+follow-up used a margin fixed in advance, but chosen
+after the main run had produced it. The positive control
+injects a coherent interaction after the window; it shows
+that the analysis recovers an interaction of known size
+on this hardware, not that every physical mechanism
+of that size would appear in the same way. Two sets
+of circuits that should be equivalent for one observable
+gave values of its bLM that differ by 0.007 (Sec. IV B).
+And our bound on bLM applies to the knobs as built: if
+echoed delay decays according to its total length, part of
+any bLM measured with duration matching is an artifact
+of the design (Sec. IV F). Above all, a small primary
+coefficient supports only a small value of that contrast at
+the tested settings. Observable separability requires all
+relevant mixed contrasts to be small; accurate mitigation
+additionally requires response and target assumptions.
+VI.
+CONCLUSION
+A factorial experiment can diagnose the observable
+response to separately implemented noise-amplification
+knobs, but it cannot by itself certify a zero-noise estimate.
+The primary gate-averaged latency–measurement contrast
+is small on the echoed probe, and the planned follow-up
+meets its stated equivalence criterion while recovering
+injected interactions. The result concerns the knobs as
+implemented, including duration matching. It does not
+establish independence of physical channels, equivalence
+of every conditional contrast, or stability between calibra-
+tions.
+The distinction matters experimentally: all five original
+estimators miss the known ideal value for three of six
+observables. Padding controls and latency scans reveal
+departures from a faithful scaling coordinate, while the
+two-level measurement design leaves its zero coordinate
+unidentifiable without further assumptions. A full joint
+fit pays a substantial variance cost, and the additive full-
+cube fit illustrates how reducing that cost can expose
+model bias. Neither complexity nor a small interaction
+coefficient is an accuracy guarantee.
+A stronger next experiment would use additional phys-
+ically realized amplification levels, an independently cali-
+brated latency origin, contemporaneous padding controls
+for each circuit, and repeated randomized blocks spanning
+calibration changes. It should pre-specify an error toler-
+ance for the total estimator-relevant contrast and allocate
+shots according to the chosen estimator’s variance, be-
+fore measuring ideal-value agreement on withheld circuits.
+The experiment establishes a reproducible diagnostic case
+study and identifies what those further measurements
+must resolve.
+DATA AND CODE AVAILABILITY
+The ancillary files contain circuit and analysis code,
+raw counts, calibration snapshots, and code and inputs
+for the post-hoc analyses.
+USE OF AI TOOLS
+Under the author’s direction, Claude (Anthropic) as-
+sisted with editing, independent numerical checks, post-
+hoc analysis, and paraphrasing. The author takes respon-
+sibility for scientific content.
+ACKNOWLEDGMENTS
+We acknowledge the use of IBM Quantum services for
+this work. The views expressed are those of the author,
+and do not reflect the official policy or position of IBM
+or the IBM Quantum team.
+Appendix A: Derivations
+Here we derive Eqs. (3)–(12) from the model of Eq. (1),
+and the results about the padding used in Sec. IV F.
+
+16
+Coded coefficients.
+Inserting λi = 2 + xi into Eq. (1)
+and collecting terms, the coefficient of xixj (i̸ = j) is
+−γij −2γGLM; the factor 2 is the constant part of the
+third knob, λk = 2+xk, in the triple term. The coefficient
+of xGxLxM is −γGLM.
+One-at-a-time.
+At ei only λi changes from 1 to 3. The
+linear term changes by −2γi, each pair term containing
+i by −2γij, and the triple term by −2γGLM.
+Hence
+ˆγi = γi + P
+j̸=i γij + γGLM. Summing,
+ˆf OAT
+0
+= f(1, 1, 1) +
+X
+i
+ˆγi = f0 +
+X
+i<j
+γij + 2γGLM,
+because f(1, 1, 1) = f0 −P
+i γi −P
+i<j γij −γGLM and
+each pair appears twice in P
+i
+P
+j̸=i γij.
+Substituting
+γij = −bij + 2bGLM and γGLM = −bGLM gives Eq. (3).
+Uniform.
+Along the diagonal, f(λ) = f0 −Γλ−Sλ2 −
+γGLMλ3 with Γ = P
+i γi and S = P
+i<j γij. The two-
+point slope is [f(3) −f(1)]/2 = −Γ −4S −13γGLM, so
+ˆf unif
+0
+= f(1) −[f(3) −f(1)]/2 = f0 + 3S + 12γGLM,
+which is Eq. (4) after the same substitution.
+Coherent phase.
+With φ = φ0 + P
+i aixi, −φ2/2 con-
+tains −1
+2 · 2aLaMxLxM. Higher orders of ln cos φ add
+terms of order φ4, so Eq. (11) is the leading-order contri-
+bution.
+Curvature.
+Add pure quadratic terms to the model,
+f →f + P
+i kiλ2
+i . On two levels, kiλ2
+i takes the values ki
+and 9ki at λi = 1 and 3. Every multi-knob estimator ex-
+trapolates it linearly to λi = 0, which gives ki−4ki = −3ki
+instead of 0, so each estimate of f0 is shifted by −3 P
+i ki.
+At the centre point (2, 2, 1) the quadratic terms contribute
+4kG + 4kL + kM; the mean of the four λM = 1 corners
+contributes 5kG + 5kL + kM, while linear and interac-
+tion terms contribute equally to both. The curvature is
+therefore c = −(kG + kL), and the shift is 3c −3kM.
+Mixed centre point.
+If λG = 2 is realized as an equal
+mixture of λG = 1 and λG = 3 circuits, as in our experi-
+ment, then to first order the centre point sees the average
+of kG and 9kG, that is 5kG, just as the corners do. At
+this order the curvature is c ≃−kL, and the inferred
+shift is approximately 3c −3kG −3kM. In the experiment
+the mixtures were not always equal: by chance, 7 of the
+20 instances of the probe’s (2, 2, 1) circuit were folded,
+and 8 of 20 for the teleportation circuit at (2, 2, 3). The
+linear gate terms then shift c by bG δxG + bGM δxG xM,
+where δxG is the departure of the mean λG from 2; for
+our observables this is at most about 0.004, well within
+the uncertainties. Beyond first order, the logarithm of
+an average exceeds the average of the logarithms: for an
+equal mixture, fmix = (f1 + f3)/2 + ln cosh(∆/2), where
+f1 and f3 are the values of f for the two components
+and ∆= f3 −f1 = 2(bG + bGMxM) at the centre. This
+raises c by about (bG + bGMxM)2/2, at most 0.002 for
+our observables (the GHZ parity at (2, 2, 3)), again well
+within the uncertainties.
+Padding.
+Let one slot of padding cost p on the loga-
+rithmic scale, a measurement slot m and the feedforward
+wait w, and let the free evolution added by the latency
+knob cost r per unit time. With duration matching, the
+window at (λL, λM) holds λM measurement slots, 3 −λM
+slots of padding, the wait and (λL −1)τw of added evolu-
+tion, so that f = fnw−mλM −p(3−λM)−w−rτw(λL−1),
+where fnw is the value without a window.
+This is
+linear in each knob, so every multi-knob strategy ex-
+trapolates it exactly, to fnw −3p −w + rτw. Because
+τw = 3tslot + τff, the estimate falls short of fnw by
+3(p−rtslot)+(w−rτff), which vanishes if the padding and
+the wait decay at the rate of the stretch; the cost m of
+the measurements drops out. The duration control mea-
+sures 2p. If instead f depended only on the total length
+D = (3 −λM)tslot + (λL −1)τw of echoed free evolution
+in the window, the four corners at either λG would give
+4bLM = [f(2tslot) −f(0)] −[f(2tslot + 2τw) −f(2τw)], the
+change caused by the padding at the start of the delay
+minus the change caused by the same length of delay
+after 2τw of it. Taking the first from the duration control,
+−2p, and the second at the rate of the stretch, −2rtslot,
+gives bLM = −(p −rtslot)/2. If the decay is fastest at
+first, the cost of the later delay can be no larger than
+2rtslot, and this value is an upper bound on bLM. The
+follow-up measured both changes directly, as the costs
+c1 and c3 of the padding at λL = 1 and 3, which gives
+bLM = (c3 −c1)/4.
+Appendix B: Device calibration
+The text quotes a few values from the calibration snap-
+shots recorded at submission.
+For the main run, the
+reported terminal-readout errors were 0.0020 to 0.0046 on
+the probe’s qubits (4–6 on ibm marrakesh) and 0.0156
+on qubit 9, which carries the teleportation spectator. For
+the repeat run, T1 and T2 changed, notably on qubit 8 (T1
+from 214 to 33 µs and T2 from 148 to 59 µs), which the
+probe does not use; but the reported readout and gate
+errors were identical to those of the main run, so they
+may not have been refreshed. Before the follow-up, the
+reported readout errors of qubits 4 and 5 were 0.0081 and
+0.0096, against 0.0046 and 0.0043 for the main run; the
+error of mid-circuit measurements on qubit 5 was 0.0186,
+against 0.0020; and the reported CZ errors had fallen by
+about a third. The readout error reported for qubit 11
+(0.2708) is inconsistent with our data: the GHZ spectator
+measured on that qubit gave ⟨X⟩= 0.6215 in the native
+circuit, whereas a twirled readout error of 0.2708 alone
+would cap it at 1 −2 × 0.2708 ≈0.46. We do not use that
+value. The full snapshots are part of the data set.
+
+17
+[1] K. Temme, S. Bravyi, and J. M. Gambetta, Error mitiga-
+tion for short-depth quantum circuits, Phys. Rev. Lett.
+119, 180509 (2017).
+[2] A. Kandala et al., Error mitigation extends the computa-
+tional reach of a noisy quantum processor, Nature 567,
+491 (2019).
+[3] T. Giurgica-Tiron, Y. Hindy, R. LaRose, A. Mari, and
+W. J. Zeng, Digital zero noise extrapolation for quantum
+error mitigation, in Proc. IEEE QCE 2020, pp. 306–316;
+arXiv:2005.10921.
+[4] R. LaRose et al., Mitiq: A software package for error
+mitigation on noisy quantum computers, Quantum 6, 774
+(2022); arXiv:2009.04417.
+[5] M. Otten and S. K. Gray, Recovering noise-free quantum
+observables, Phys. Rev. A 99, 012338 (2019).
+[6] V. Russo and A. Mari, Quantum error mitigation by
+layerwise Richardson extrapolation, Phys. Rev. A 110,
+062420 (2024); arXiv:2402.04000.
+[7] J. Etxezarreta Martinez, O. Sanz Larrarte, J. Oliva del
+Moral, R. Dastbasteh, and R. M. Otxoa, Comment on
+“Recovering noise-free quantum observables”, Phys. Rev.
+A 110, 046401 (2024); arXiv:2405.00037.
+[8] K. Schultz et al., Impact of time-correlated noise on zero-
+noise extrapolation, Phys. Rev. A 106, 052406 (2022);
+arXiv:2201.11792.
+[9] A. Carrera Vazquez, C. Tornow, D. Rist`e, S. Wo-
+erner, M. Takita, and D. J. Egger, Combining quan-
+tum processors with real-time classical communication,
+Nature 636, 75 (2024); doi:10.1038/s41586-024-08178-2;
+arXiv:2402.17833.
+[10] E. B¨aumer, V. Tripathi, D. S. Wang, P. Rall, E. H. Chen,
+S. Majumder, A. Seif, and Z. K. Minev, Efficient long-
+range entanglement using dynamic circuits, PRX Quan-
+tum 5, 030339 (2024).
+[11] S. Tomkins and R. de Sousa, Noise mitigation with delay
+pulses in the IBM Quantum Experience, in Proc. IEEE
+QCE 2020, p. 413, doi:10.1109/QCE49297.2020.00058;
+arXiv:2005.12520.
+[12] J. P. Santos and R. Uzdin, Drift-resilient mid-circuit
+measurement and state preparation error mitigation for
+dynamic circuits, arXiv:2506.11270 (2025).
+[13] B. Bar, J. P. Santos, and R. Uzdin, Layered KIK quantum
+error mitigation for dynamic circuits, npj Quantum Inf.
+12, 79 (2026); doi:10.1038/s41534-026-01207-0.
+[14] R. Uzdin, Orders of magnitude sampling overhead re-
+duction in quantum error mitigation, arXiv:2601.22785
+(2026).
+[15] S. Shirgure and S. Niu, Error mitigation in dynamic cir-
+cuits for Hamiltonian simulation, in Proc. Great Lakes
+Symposium on VLSI (GLSVLSI 2026), pp. 843–849,
+doi:10.1145/3787109.3816384; arXiv:2605.05256.
+[16] R. C. Farrell, Y. Zhan, L. Katschke, L. Pollet, I. T. Rosen,
+and J. C. Halimeh, Preparing thermal states of frustrated
+quantum spin systems using 139 qubits, arXiv:2605.26245
+(2026).
+[17] R. S. Gupta, E. van den Berg, M. Takita, D. Rist`e, K.
+Temme, and A. Kandala, Probabilistic error cancellation
+for dynamic quantum circuits, Phys. Rev. A 109, 062617
+(2024).
+[18] J. M. Koh, D. E. Koh, and J. Thompson, Readout error
+mitigation for mid-circuit measurements and feedforward,
+PRX Quantum 7, 010317 (2026); doi:10.1103/cj89-4h5t.
+[19] J. Hines and T. Proctor, Pauli noise learning for mid-
+circuit measurements, Phys. Rev. Lett. 134, 020602
+(2025).
+[20] C.-T. Chu, S.-u. Lee, H. Zheng, S. Chen, B. Pokharel,
+A. Seif, and L. Jiang, Learning mid-circuit measure-
+ment backaction from three repeated measurements,
+arXiv:2606.00433 (2026); doi:10.1103/y6x3-348l.
+[21] M. Edwards and P. Mishra, Branch-resolved characteri-
+zation of feed-forward error in dynamic teleportation via
+classical Choi shadows, arXiv:2604.28037 (2026).
+[22] M. Zhong, Z. Zhang, X. Ren, C. Zhu, S. Niu, and Z. Liang,
+A compilation framework for quantum circuits with mid-
+circuit measurement error awareness, arXiv:2511.10921
+(2025).
+[23] C. Tong, L. Shirizly, E. H. Chen, D. S. Wang, and B.
+Pokharel, Learning error suppression strategies for dy-
+namic quantum circuits, arXiv:2604.18734 (2026).
+[24] A. Rahman, D. J. Egger, and C. Arenz, Learning how
+to dynamically decouple by optimizing rotational gates,
+Phys. Rev. Appl. 22, 054074 (2024); arXiv:2405.08689.

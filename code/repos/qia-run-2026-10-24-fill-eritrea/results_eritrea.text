@@ -1,0 +1,26 @@
+R0 KNOWN-GOOD (A) their 18 published fidelities from their raw counts through this file: 18/18 equal at 4 decimals (source_data_full.csv), 18/18 equal at 3 decimals (Table 2); mean full protocol 0.9454 (published 0.9454 / 0.945) -> PASS
+R0 KNOWN-GOOD (B) their model value by their convention (A) from their own 14 Jun stamp, exact density matrix: full 0.9516 vs their Table 3 0.953 (|diff| 0.0014); no-ent 0.7544 vs 0.752; no-ff 0.5000 vs 0.496; rule fixed before any job: |diff| <= 0.005, their README: "version-dependent to ~0.005" (theirs is a shot-noise qiskit-aer draw, ours is exact) -> PASS
+SCALES from their numbers: S_F = |0.953 - 0.9454| = 0.0076; S_psi = |pooled apparent Z-rotation of their full-protocol received state| = 1.79 deg (signed -1.79)
+stamp 2026-10-23 23:13:38-04:00: sx [0.00172, 0.00028, 0.00024] cz01 0.0093 cz12 0.0030 ro [0.0216, 0.0258, 0.007]
+stamp 2026-10-23 23:13:38-04:00: sx [0.00172, 0.00028, 0.00024] cz01 0.0093 cz12 0.0030 ro [0.0216, 0.0258, 0.007]
+stamp 2026-10-23 23:13:38-04:00: sx [0.00172, 0.00028, 0.00024] cz01 0.0093 cz12 0.0030 ro [0.0216, 0.0258, 0.007]
+stamp 2026-10-24 01:48:02-04:00: sx [0.00172, 0.00028, 0.00024] cz01 0.0093 cz12 0.0030 ro [0.0216, 0.0258, 0.007]
+R1 LINK-A (hw F - model F, their convention)         = -0.03877 [-0.04068, -0.03705]  shot-null [-0.00212, +0.00210] their scale 0.0076 -> BELOW
+R2 LINK-B (hw F - model F, converted)                = -0.03441 [-0.03624, -0.03250]  shot-null [-0.00224, +0.00205] their scale 0.0076 -> BELOW
+R3 DRIFT (F(A2) - F(A1))                             = -0.01444 [-0.01969, -0.00906]  shot-null [-0.00660, +0.00689] their scale 0.0076 -> BELOW
+R4 KICK (deg per readout, (psi_R - psi_I)/2)         = -0.36690 [-0.90162, +0.17368] deg shot-null [-0.74213, +0.74318] their scale 1.7911 -> CONSISTENT
+STEP (F jobs 3,4 minus 1,2)/2                        = -0.00635 [-0.01006, -0.00254]  shot-null [-0.00499, +0.00507] their scale 0.0076 -> BELOW  [reported, not scored]
+SLOT (F A minus B)/2                                 = +0.00863 [+0.00508, +0.01238]  shot-null [-0.00497, +0.00487] their scale 0.0076 -> ABOVE  [reported, not scored]
+  job A1: hardware F 0.93498   model A 0.96221   model B 0.95785   D_A -0.02723   D_B -0.02287
+  job B1: hardware F 0.91826   model A 0.96221   model B 0.95785   D_A -0.04395   D_B -0.03959
+  job B2: hardware F 0.92000   model A 0.96221   model B 0.95785   D_A -0.04222   D_B -0.03785
+  job A2: hardware F 0.92054   model A 0.96221   model B 0.95785   D_A -0.04167   D_B -0.03731
+  job A1: kick -1.102 deg per readout
+  job B1: kick +0.276 deg per readout
+  job B2: kick -0.685 deg per readout
+  job A2: kick +0.049 deg per readout
+RECORD BRACKET (each job modelled from the record saved AFTER it instead of BEFORE it):
+R1 LINK-A (hw F - model F, their convention)         = -0.03877 [-0.04069, -0.03687]  shot-null [-0.00208, +0.00205] their scale 0.0076 -> BELOW
+R2 LINK-B (hw F - model F, converted)                = -0.03441 [-0.03624, -0.03261]  shot-null [-0.00234, +0.00217] their scale 0.0076 -> BELOW
+   R1 LINK-A: before-record BELOW, after-record BELOW -> same
+   R2 LINK-B: before-record BELOW, after-record BELOW -> same

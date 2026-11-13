@@ -1,0 +1,93 @@
+{
+ "best_a": {
+  "depth": 121,
+  "ops": {
+   "sx": 80,
+   "rz": 59,
+   "cz": 41,
+   "x": 2,
+   "measure": 1
+  },
+  "measured": [
+   143
+  ]
+ },
+ "q25": {
+  "depth": 121,
+  "ops": {
+   "sx": 80,
+   "rz": 59,
+   "cz": 41,
+   "x": 2,
+   "measure": 1
+  },
+  "measured": [
+   69
+  ]
+ },
+ "best_opt0": {
+  "depth": 156,
+  "ops": {
+   "rz": 95,
+   "sx": 88,
+   "cz": 41,
+   "x": 6,
+   "measure": 1
+  },
+  "measured": [
+   144
+  ]
+ },
+ "q50": {
+  "depth": 121,
+  "ops": {
+   "sx": 80,
+   "rz": 59,
+   "cz": 41,
+   "x": 2,
+   "measure": 1
+  },
+  "measured": [
+   49
+  ]
+ },
+ "best_opt3": {
+  "depth": 91,
+  "ops": {
+   "sx": 68,
+   "rz": 50,
+   "cz": 29,
+   "x": 2,
+   "measure": 1
+  },
+  "measured": [
+   143
+  ]
+ },
+ "q75": {
+  "depth": 121,
+  "ops": {
+   "sx": 80,
+   "rz": 59,
+   "cz": 41,
+   "x": 2,
+   "measure": 1
+  },
+  "measured": [
+   131
+  ]
+ },
+ "best_b": {
+  "depth": 121,
+  "ops": {
+   "sx": 80,
+   "rz": 59,
+   "cz": 41,
+   "x": 2,
+   "measure": 1
+  },
+  "measured": [
+   143
+  ]
+ }
+}

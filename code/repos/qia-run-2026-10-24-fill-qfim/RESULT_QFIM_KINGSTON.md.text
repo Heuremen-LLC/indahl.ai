@@ -1,0 +1,7 @@
+# RESULT -- QFIM-bench (Vellore Institute of Technology) free calibration run, ibm_kingston (moved from marrakesh by addendum), 25 Oct 2026, 80 s
+Jobs: A1 dbemjhnsstms73fcc6mg, B1 dbemjsvpc3tc739m0b70, B2 dbemk3fgdj9s73fm38p0, A2 dbemk9vpc3tc739m0cng (A B B A, 8 circuits each, 8192 shots, same physical qubits and one fixed compile). Full readout: results_qfim_kingston.text.
+KNOWN-GOOD: their raw counts through our code reproduce all 8 published means and sds to 6 decimals: PASS.
+Their line: drift between jobs is 'not claimable'. Our reading on kingston: job-to-job sd RMS 0.00433 [0.00268, 0.00613] vs shot-only null [0.00248, 0.00596]:
+CONSISTENT (a bound: between-job drift within ~2 min is not separable from shot noise here; R2 step and R3 slot also CONSISTENT).
+Share: our job-sd is 0.85 of their published sd (shot floor 0.79), so most of their published sd is shot noise at this cadence.
+R4 (our level vs their published level) ABOVE by 0.065: chip and day differ (kingston today vs marrakesh then); NOT read as drift, as the plan says.

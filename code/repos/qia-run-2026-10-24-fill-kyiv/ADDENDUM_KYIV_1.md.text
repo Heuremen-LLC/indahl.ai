@@ -1,0 +1,11 @@
+# ADDENDUM 1 -- written after the four jobs were submitted and BEFORE any result was read (2026-10-24T02:41Z). Found by /q check 13/15.
+The order H0, H2, H0, H2 does not cancel a drift that is linear in job number (ABBA would have). Under a step s per job both pair gaps
+carry -s, and dH0 = 2s, so R4 = mean pair gap + dH0/2 is the linear-drift-corrected twirl gap. RMSE is not linear in the kernel, so R4 is
+approximate: in a planted world (true instantaneous gaps 0.0450 -> 0.0345, mean 0.0404) R4 read 0.0392 and the raw pair gap 0.0466
+(synth_results_kyiv.text, world LINEAR DRIFT + TWIRL). R4 is labelled "defined after submission, before results" wherever it is printed.
+Also noted (/q 15): the shot-noise null treats H2's twirled shots as 1024 independent shots; across randomizations they are overdispersed,
+so the H2 null is a floor. It does not touch R1 (H0 only). R1 is one interval on one chip: a reading of drift size today, n = 1 interval.
+AMENDED (same addendum, still before any result): R4 is right only for drift LINEAR in job number. For a STEP between the two pairs it
+misleads (synth DRIFT world: R4 -0.023 vs true 0; BOTH world: R4 +0.0096 vs true ~0.022). So the twirl-gap size is reported as the pair
+[R2 mean gap, R4] side by side, never R4 alone: if they differ by less than the null width (~0.0045) the size is read; if more, the drift's
+SHAPE decides it and the size is CANNOT_TELL from this run (the ordering R2 per pair still stands on its own).

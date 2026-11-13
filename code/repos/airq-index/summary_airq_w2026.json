@@ -1,0 +1,79 @@
+{
+ "updated": "10 Nov 02:09",
+ "gate": "passed",
+ "window": "1 March to 30 June 2026",
+ "monitors_read": 902,
+ "monitors_with_sensor": 139,
+ "sensors": 245,
+ "sensors_not_read": 0,
+ "pairs": 176,
+ "days_kept": 16901,
+ "days_removed_ab": 1986,
+ "filter_only_sites": 103,
+ "comparison": {
+  "Map reading (atm channels, raw)": {
+   "of": 139,
+   "n": 129,
+   "share": 0.9281,
+   "share_lo": 0.8726,
+   "share_hi": 0.9605,
+   "outcome": "ABOVE"
+  },
+  "cf_1 channels, raw": {
+   "of": 139,
+   "n": 135,
+   "share": 0.9712,
+   "share_lo": 0.9283,
+   "share_hi": 0.9888,
+   "outcome": "ABOVE"
+  },
+  "cf_1 corrected for humidity (Barkjohn 2021)": {
+   "of": 139,
+   "n": 70,
+   "share": 0.5036,
+   "share_lo": 0.4215,
+   "share_hi": 0.5855,
+   "outcome": "CANNOT_TELL"
+  }
+ },
+ "medians": {
+  "Map reading (atm channels, raw)": {
+   "monitors": 139,
+   "slope": 1.5,
+   "intercept": -1.92,
+   "r2": 0.75,
+   "rmse": 3.28
+  },
+  "cf_1 channels, raw": {
+   "monitors": 139,
+   "slope": 1.59,
+   "intercept": -2.26,
+   "r2": 0.74,
+   "rmse": 3.61
+  },
+  "cf_1 corrected for humidity (Barkjohn 2021)": {
+   "monitors": 139,
+   "slope": 0.83,
+   "intercept": 0.18,
+   "r2": 0.71,
+   "rmse": 1.99
+  }
+ },
+ "headline_n": 70,
+ "headline_of": 139,
+ "headline": {
+  "of": 139,
+  "n": 70,
+  "share": 0.5036,
+  "share_lo": 0.4215,
+  "share_hi": 0.5855,
+  "outcome": "CANNOT_TELL"
+ },
+ "aqs_states_not_answered": [],
+ "aqs_state_days_refused": [
+  "02 20260306"
+ ],
+ "source_line": "Monitor values are the EPA Air Quality System hourly record as the monitoring agencies submitted it, not yet certified for 2026. The record ends at 30 June 2026, so no later window can be read yet.",
+ "max_daily_ref": 86.5,
+ "pairs_with_a_day_of_25_or_more": 20
+}

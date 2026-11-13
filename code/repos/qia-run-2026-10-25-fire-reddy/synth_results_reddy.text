@@ -1,0 +1,6 @@
+IDEAL chip (F=1.0)           F 1.0000 se 0.0000 -> ABOVE (want ABOVE) PASS
+MODEL holds (F=0.9203)       F 0.9168 se 0.0044 -> CONSISTENT (want CONSISTENT) PASS
+WORSE chip (F=0.85)          F 0.8505 se 0.0058 -> BELOW (want BELOW) PASS
+BETTER chip (F=0.96)         F 0.9623 se 0.0030 -> ABOVE (want ABOVE) PASS
+NULL product state (F=0.25)  F 0.2450 se 0.0097 -> BELOW (want BELOW) PASS
+FLOOR: model-true world, 400 draws: 20 resolve ABOVE/BELOW (expect ~5%)

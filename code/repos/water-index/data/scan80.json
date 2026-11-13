@@ -1,0 +1,3728 @@
+{
+"APR07_508.pdf": {
+"issue": "2007-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR06_508.pdf": {
+"issue": "2006-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR05_508.pdf": {
+"issue": "2005-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR04_508.pdf": {
+"issue": "2004-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR03_508.pdf": {
+"issue": "2003-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR02_508.pdf": {
+"issue": "2002-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR01_508.pdf": {
+"issue": "2001-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR00_508.pdf": {
+"issue": "2000-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL07_508.pdf": {
+"issue": "2007-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL06_508.pdf": {
+"issue": "2006-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL05_508.pdf": {
+"issue": "2005-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL04_508.pdf": {
+"issue": "2004-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL03_508.pdf": {
+"issue": "2003-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL02_508.pdf": {
+"issue": "2002-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL01_508.pdf": {
+"issue": "2001-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL00_508.pdf": {
+"issue": "2000-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG07_508.pdf": {
+"issue": "2007-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG06_508.pdf": {
+"issue": "2006-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG05_508.pdf": {
+"issue": "2005-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG04_508.pdf": {
+"issue": "2004-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG03_508.pdf": {
+"issue": "2003-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG02_508.pdf": {
+"issue": "2002-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG01_508.pdf": {
+"issue": "2001-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG00_508.pdf": {
+"issue": "2000-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP03.pdf": {
+"issue": "2003-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV05.pdf": {
+"issue": "2005-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN10_MAX_508.pdf": {
+"issue": "2010-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minirm.lm and maxirm.lm inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falli"
+}
+},
+"JAN10_MIN_508.pdf": {
+"issue": "2010-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minirm.lm and maxirm.lm inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falli"
+}
+},
+"JAN00_508_0.pdf": {
+"issue": "2000-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB00_508.pdf": {
+"issue": "2000-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR00.pdf": {
+"issue": "2000-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY00.pdf": {
+"issue": "2000-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN00.pdf": {
+"issue": "2000-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP00.pdf": {
+"issue": "2000-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT00.pdf": {
+"issue": "2000-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV00.pdf": {
+"issue": "2000-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC00.pdf": {
+"issue": "2000-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN01_508_0.pdf": {
+"issue": "2001-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB01_508.pdf": {
+"issue": "2001-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR01.pdf": {
+"issue": "2001-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY01.pdf": {
+"issue": "2001-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN01.pdf": {
+"issue": "2001-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP01.pdf": {
+"issue": "2001-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT01.pdf": {
+"issue": "2001-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV01.pdf": {
+"issue": "2001-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC01.pdf": {
+"issue": "2001-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN02_508_0.pdf": {
+"issue": "2002-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB02_508.pdf": {
+"issue": "2002-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR02.pdf": {
+"issue": "2002-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY02.pdf": {
+"issue": "2002-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN02.pdf": {
+"issue": "2002-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP02.pdf": {
+"issue": "2002-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT02.pdf": {
+"issue": "2002-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV02.pdf": {
+"issue": "2002-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC02.pdf": {
+"issue": "2002-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN03_508_0.pdf": {
+"issue": "2003-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB03_508.pdf": {
+"issue": "2003-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR03.pdf": {
+"issue": "2003-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY03.pdf": {
+"issue": "2003-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN03.pdf": {
+"issue": "2003-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT03.pdf": {
+"issue": "2003-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV03.pdf": {
+"issue": "2003-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC03.pdf": {
+"issue": "2003-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN04_508.pdf": {
+"issue": "2004-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB04_508.pdf": {
+"issue": "2004-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR04.pdf": {
+"issue": "2004-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY04.pdf": {
+"issue": "2004-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN04.pdf": {
+"issue": "2004-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP04.pdf": {
+"issue": "2004-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT04.pdf": {
+"issue": "2004-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV04.pdf": {
+"issue": "2004-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC04.pdf": {
+"issue": "2004-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN05_508.pdf": {
+"issue": "2005-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB05_508.pdf": {
+"issue": "2005-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR05.pdf": {
+"issue": "2005-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY05.pdf": {
+"issue": "2005-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN05.pdf": {
+"issue": "2005-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP05.pdf": {
+"issue": "2005-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT05.pdf": {
+"issue": "2005-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC05.pdf": {
+"issue": "2005-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN06_508.pdf": {
+"issue": "2006-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB06_508.pdf": {
+"issue": "2006-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR06.pdf": {
+"issue": "2006-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY06.pdf": {
+"issue": "2006-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN06.pdf": {
+"issue": "2006-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP06.pdf": {
+"issue": "2006-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT06.pdf": {
+"issue": "2006-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV06.pdf": {
+"issue": "2006-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC06.pdf": {
+"issue": "2006-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN07_508.pdf": {
+"issue": "2007-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB07_508.pdf": {
+"issue": "2007-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR07.pdf": {
+"issue": "2007-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY07.pdf": {
+"issue": "2007-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN07.pdf": {
+"issue": "2007-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP07.pdf": {
+"issue": "2007-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT07.pdf": {
+"issue": "2007-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV07.pdf": {
+"issue": "2007-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC07.pdf": {
+"issue": "2007-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN08_508.pdf": {
+"issue": "2008-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB08_508.pdf": {
+"issue": "2008-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR16_508.pdf": {
+"issue": "2016-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR15_508.pdf": {
+"issue": "2015-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR14_508.pdf": {
+"issue": "2014-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR13_508.pdf": {
+"issue": "2013-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR12_508.pdf": {
+"issue": "2012-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR11_508.pdf": {
+"issue": "2011-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR10_508.pdf": {
+"issue": "2010-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR09_508.pdf": {
+"issue": "2009-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR08_508.pdf": {
+"issue": "2008-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL15_508.pdf": {
+"issue": "2015-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL14_508.pdf": {
+"issue": "2014-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL13_508.pdf": {
+"issue": "2013-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL12_508.pdf": {
+"issue": "2012-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL11_508.pdf": {
+"issue": "2011-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL10_508.pdf": {
+"issue": "2010-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL09_508.pdf": {
+"issue": "2009-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL08_508.pdf": {
+"issue": "2008-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG15_508.pdf": {
+"issue": "2015-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG14_508.pdf": {
+"issue": "2014-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG13_508.pdf": {
+"issue": "2013-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG12_508.pdf": {
+"issue": "2012-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG11_508.pdf": {
+"issue": "2011-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG10_508.pdf": {
+"issue": "2010-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG09_508.pdf": {
+"issue": "2009-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG08_508.pdf": {
+"issue": "2008-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY16.pdf": {
+"issue": "2016-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR08.pdf": {
+"issue": "2008-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY08.pdf": {
+"issue": "2008-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN08.pdf": {
+"issue": "2008-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP08.pdf": {
+"issue": "2008-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT08.pdf": {
+"issue": "2008-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV08.pdf": {
+"issue": "2008-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC08.pdf": {
+"issue": "2008-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN09_508.pdf": {
+"issue": "2009-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB09_508.pdf": {
+"issue": "2009-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR09.pdf": {
+"issue": "2009-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY09.pdf": {
+"issue": "2009-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN09.pdf": {
+"issue": "2009-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP09.pdf": {
+"issue": "2009-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT09.pdf": {
+"issue": "2009-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV09.pdf": {
+"issue": "2009-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC09.pdf": {
+"issue": "2009-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN10_508.pdf": {
+"issue": "2010-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB10_508.pdf": {
+"issue": "2010-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR10.pdf": {
+"issue": "2010-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY10.pdf": {
+"issue": "2010-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN10.pdf": {
+"issue": "2010-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP10.pdf": {
+"issue": "2010-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT10.pdf": {
+"issue": "2010-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV10.pdf": {
+"issue": "2010-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC10.pdf": {
+"issue": "2010-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN11_508.pdf": {
+"issue": "2011-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB11_508.pdf": {
+"issue": "2011-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR11.pdf": {
+"issue": "2011-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY11.pdf": {
+"issue": "2011-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN11.pdf": {
+"issue": "2011-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP11.pdf": {
+"issue": "2011-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT11.pdf": {
+"issue": "2011-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV11.pdf": {
+"issue": "2011-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC11.pdf": {
+"issue": "2011-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN12_508.pdf": {
+"issue": "2012-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB12_508.pdf": {
+"issue": "2012-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR12.pdf": {
+"issue": "2012-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY12.pdf": {
+"issue": "2012-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN12.pdf": {
+"issue": "2012-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP12.pdf": {
+"issue": "2012-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT12.pdf": {
+"issue": "2012-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV12.pdf": {
+"issue": "2012-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC12.pdf": {
+"issue": "2012-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN13_508.pdf": {
+"issue": "2013-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB13_508.pdf": {
+"issue": "2013-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR13.pdf": {
+"issue": "2013-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY13.pdf": {
+"issue": "2013-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN13.pdf": {
+"issue": "2013-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP13.pdf": {
+"issue": "2013-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT13.pdf": {
+"issue": "2013-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV13.pdf": {
+"issue": "2013-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC13.pdf": {
+"issue": "2013-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN14_508.pdf": {
+"issue": "2014-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB14_508.pdf": {
+"issue": "2014-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR14.pdf": {
+"issue": "2014-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY14.pdf": {
+"issue": "2014-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN14.pdf": {
+"issue": "2014-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP14.pdf": {
+"issue": "2014-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT14.pdf": {
+"issue": "2014-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV14.pdf": {
+"issue": "2014-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC14.pdf": {
+"issue": "2014-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN15_508_0.pdf": {
+"issue": "2015-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB15_508.pdf": {
+"issue": "2015-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR15.pdf": {
+"issue": "2015-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY15.pdf": {
+"issue": "2015-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN15.pdf": {
+"issue": "2015-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP15.pdf": {
+"issue": "2015-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT15.pdf": {
+"issue": "2015-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV15.pdf": {
+"issue": "2015-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC15.pdf": {
+"issue": "2015-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN16_508.pdf": {
+"issue": "2016-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB16_508.pdf": {
+"issue": "2016-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR16.pdf": {
+"issue": "2016-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN16.pdf": {
+"issue": "2016-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR11_MIN_508.pdf": {
+"issue": "2011-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR13_MIN_508.pdf": {
+"issue": "2013-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR14_MIN_508.pdf": {
+"issue": "2014-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR15_MIN_508.pdf": {
+"issue": "2015-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR12_MIN_508.pdf": {
+"issue": "2012-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR10_MIN_508.pdf": {
+"issue": "2010-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minirrn.1m and maxirrn.1m inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations fal"
+}
+},
+"APR22_508.pdf": {
+"issue": "2022-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR21_508.pdf": {
+"issue": "2021-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR20_508.pdf": {
+"issue": "2020-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR19_508.pdf": {
+"issue": "2019-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR18_508.pdf": {
+"issue": "2018-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR17_508.pdf": {
+"issue": "2017-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL22_508.pdf": {
+"issue": "2022-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL21_508.pdf": {
+"issue": "2021-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL20_508.pdf": {
+"issue": "2020-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL19_508.pdf": {
+"issue": "2019-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL18_508.pdf": {
+"issue": "2018-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL17_508.pdf": {
+"issue": "2017-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL16_508.pdf": {
+"issue": "2016-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG22_508.pdf": {
+"issue": "2022-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG21_508.pdf": {
+"issue": "2021-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG20_508.pdf": {
+"issue": "2020-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG19_508.pdf": {
+"issue": "2019-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG18_508.pdf": {
+"issue": "2018-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG17_508.pdf": {
+"issue": "2017-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG16_508.pdf": {
+"issue": "2016-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG15_MIN_508.pdf": {
+"issue": "2015-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG14_MIN_508.pdf": {
+"issue": "2014-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG13_MIN_508.pdf": {
+"issue": "2013-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG12_MIN_508.pdf": {
+"issue": "2012-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG11_MIN_508.pdf": {
+"issue": "2011-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG10_MIN_508.pdf": {
+"issue": "2010-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN21_508.pdf": {
+"issue": "2021-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR19.pdf": {
+"issue": "2019-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP16.pdf": {
+"issue": "2016-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT16.pdf": {
+"issue": "2016-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV16.pdf": {
+"issue": "2016-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC16.pdf": {
+"issue": "2016-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN17_508.pdf": {
+"issue": "2017-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB17_508.pdf": {
+"issue": "2017-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR17.pdf": {
+"issue": "2017-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY17.pdf": {
+"issue": "2017-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN17.pdf": {
+"issue": "2017-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP17.pdf": {
+"issue": "2017-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT17.pdf": {
+"issue": "2017-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV17.pdf": {
+"issue": "2017-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC17.pdf": {
+"issue": "2017-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN18_508.pdf": {
+"issue": "2018-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB18_508.pdf": {
+"issue": "2018-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR18.pdf": {
+"issue": "2018-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY18.pdf": {
+"issue": "2018-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN18.pdf": {
+"issue": "2018-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP18.pdf": {
+"issue": "2018-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT18.pdf": {
+"issue": "2018-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV18.pdf": {
+"issue": "2018-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC18.pdf": {
+"issue": "2018-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN19_508.pdf": {
+"issue": "2019-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB19_508.pdf": {
+"issue": "2019-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY19.pdf": {
+"issue": "2019-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN19.pdf": {
+"issue": "2019-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP19.pdf": {
+"issue": "2019-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT19.pdf": {
+"issue": "2019-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV19.pdf": {
+"issue": "2019-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC19.pdf": {
+"issue": "2019-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN20_508.pdf": {
+"issue": "2020-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB20_508.pdf": {
+"issue": "2020-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR20.pdf": {
+"issue": "2020-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY20.pdf": {
+"issue": "2020-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN20.pdf": {
+"issue": "2020-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP20.pdf": {
+"issue": "2020-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT20.pdf": {
+"issue": "2020-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV20.pdf": {
+"issue": "2020-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC20.pdf": {
+"issue": "2020-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB21_508.pdf": {
+"issue": "2021-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR21.pdf": {
+"issue": "2021-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY21.pdf": {
+"issue": "2021-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN21.pdf": {
+"issue": "2021-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP21.pdf": {
+"issue": "2021-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT21.pdf": {
+"issue": "2021-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV21.pdf": {
+"issue": "2021-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC21.pdf": {
+"issue": "2021-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN22_508.pdf": {
+"issue": "2022-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB22_508_0.pdf": {
+"issue": "2022-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR22.pdf": {
+"issue": "2022-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY22.pdf": {
+"issue": "2022-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN22.pdf": {
+"issue": "2022-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP22.pdf": {
+"issue": "2022-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT22.pdf": {
+"issue": "2022-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT10_MIN.pdf": {
+"issue": "2010-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN11_MIN_508.pdf": {
+"issue": "2011-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT11_MIN.pdf": {
+"issue": "2011-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN12_MIN_508.pdf": {
+"issue": "2012-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT12_MIN.pdf": {
+"issue": "2012-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN13_MIN_508.pdf": {
+"issue": "2013-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT13_MIN.pdf": {
+"issue": "2013-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN14_MIN_508.pdf": {
+"issue": "2014-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT14_MIN.pdf": {
+"issue": "2014-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN15_MIN_508.pdf": {
+"issue": "2015-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT15_MIN.pdf": {
+"issue": "2015-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN16_MIN_508.pdf": {
+"issue": "2016-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reseNoir elevations falling out"
+}
+},
+"APR16_MIN_508.pdf": {
+"issue": "2016-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR17_MIN_508.pdf": {
+"issue": "2017-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR18_MIN_508.pdf": {
+"issue": "2018-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR19_MIN_508.pdf": {
+"issue": "2019-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR20_MIN_508.pdf": {
+"issue": "2020-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR10_MAX_508.pdf": {
+"issue": "2010-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the mini1TU.1m and maxi1TU.1m inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations fal"
+}
+},
+"APR11_MAX_508.pdf": {
+"issue": "2011-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR15_MAX_508.pdf": {
+"issue": "2015-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR16_MAX_508.pdf": {
+"issue": "2016-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR12_MAX_508.pdf": {
+"issue": "2012-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR13_MAX_508.pdf": {
+"issue": "2013-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR14_MAX_508.pdf": {
+"issue": "2014-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR17_MAX_508.pdf": {
+"issue": "2017-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR18_MAX_508.pdf": {
+"issue": "2018-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR19_MAX_508.pdf": {
+"issue": "2019-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"APR20_MAX_508.pdf": {
+"issue": "2020-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR21__MIN_508.pdf": {
+"issue": "2021-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR22_MIN_508.pdf": {
+"issue": "2022-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR21_MAX_508.pdf": {
+"issue": "2021-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR22_MAX_508.pdf": {
+"issue": "2022-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUL22_MIN_508.pdf": {
+"issue": "2022-07",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUL21_MIN_508.pdf": {
+"issue": "2021-07",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability th at a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reseNoir elevatio"
+}
+},
+"JUL21_MAX_508.pdf": {
+"issue": "2021-07",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reseNoir elevatio"
+}
+},
+"AUG22_MIN_508.pdf": {
+"issue": "2022-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG21_MIN_508.pdf": {
+"issue": "2021-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reservoir eleva"
+}
+},
+"AUG21_MAX_508.pdf": {
+"issue": "2021-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reservoir eleva"
+}
+},
+"AUG20_MIN_508.pdf": {
+"issue": "2020-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevati"
+}
+},
+"AUG20_MAX_508.pdf": {
+"issue": "2020-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevati"
+}
+},
+"AUG19_MIN_508.pdf": {
+"issue": "2019-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG19_MAX_508.pdf": {
+"issue": "2019-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG18_MIN_508.pdf": {
+"issue": "2018-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reseNoir elevations falling out"
+}
+},
+"AUG18_MAX_508.pdf": {
+"issue": "2018-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"AUG17_MIN_508.pdf": {
+"issue": "2017-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reseNoir elevations falling out"
+}
+},
+"AUG17_MAX_508.pdf": {
+"issue": "2017-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"AUG16_MIN_508.pdf": {
+"issue": "2016-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reseNoir elevations falling out"
+}
+},
+"AUG16_MAX_508.pdf": {
+"issue": "2016-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"AUG15_MAX_508.pdf": {
+"issue": "2015-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG14_MAX_508.pdf": {
+"issue": "2014-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG13_MAX_508.pdf": {
+"issue": "2013-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG12_MAX_508.pdf": {
+"issue": "2012-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG11_MAX_508.pdf": {
+"issue": "2011-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"AUG10_MAX_508.pdf": {
+"issue": "2010-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT16_MIN.pdf": {
+"issue": "2016-10",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"JAN17_MIN_508.pdf": {
+"issue": "2017-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT17_MIN.pdf": {
+"issue": "2017-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN18_MIN_508.pdf": {
+"issue": "2018-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT18_MIN.pdf": {
+"issue": "2018-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN19_MIN_508.pdf": {
+"issue": "2019-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT19_MIN.pdf": {
+"issue": "2019-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN20_MIN_508.pdf": {
+"issue": "2020-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT20_MIN.pdf": {
+"issue": "2020-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT10_MAX.pdf": {
+"issue": "2010-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN11_MAX_508.pdf": {
+"issue": "2011-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT11_MAX.pdf": {
+"issue": "2011-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN12_MAX_508.pdf": {
+"issue": "2012-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT12_MAX.pdf": {
+"issue": "2012-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN13_MAX_508.pdf": {
+"issue": "2013-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT13_MAX.pdf": {
+"issue": "2013-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN14_MAX_508.pdf": {
+"issue": "2014-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT14_MAX.pdf": {
+"issue": "2014-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN15_MAX_508.pdf": {
+"issue": "2015-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"OCT15_MAX.pdf": {
+"issue": "2015-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN16_MAX_508.pdf": {
+"issue": "2016-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reseNoir elevations falling out"
+}
+},
+"OCT16_MAX_0.pdf": {
+"issue": "2016-10",
+"scenario": "MAX",
+"variant": null,
+"hit": null
+},
+"JAN17_MAX_508.pdf": {
+"issue": "2017-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT17_MAX.pdf": {
+"issue": "2017-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN18_MAX_508.pdf": {
+"issue": "2018-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT18_MAX.pdf": {
+"issue": "2018-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN19_MAX_508.pdf": {
+"issue": "2019-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT19_MAX.pdf": {
+"issue": "2019-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling o"
+}
+},
+"JAN20_MAX_508.pdf": {
+"issue": "2020-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. There are possible inflow scenarios that would result in reservoir elevations falling ou"
+}
+},
+"OCT20_MAX.pdf": {
+"issue": "2020-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN21_MIN_508.pdf": {
+"issue": "2021-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB21_MIN_508_0.pdf": {
+"issue": "2021-02",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAR21_MIN.pdf": {
+"issue": "2021-03",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY21_MIN.pdf": {
+"issue": "2021-05",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUN21_MIN.pdf": {
+"issue": "2021-06",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"SEP21_MIN.pdf": {
+"issue": "2021-09",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT21_MIN.pdf": {
+"issue": "2021-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"NOV21_MIN.pdf": {
+"issue": "2021-11",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reservoir eleva"
+}
+},
+"DEC21_MIN.pdf": {
+"issue": "2021-12",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reservoir eleva"
+}
+},
+"JAN22_MIN_508.pdf": {
+"issue": "2022-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reservoir elevat"
+}
+},
+"FEB22_MIN_508_0.pdf": {
+"issue": "2022-02",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reseNoir elevati"
+}
+},
+"MAR22_MIN.pdf": {
+"issue": "2022-03",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY22_MIN.pdf": {
+"issue": "2022-05",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUN22_MIN.pdf": {
+"issue": "2022-06",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"SEP22_MIN.pdf": {
+"issue": "2022-09",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT22_MIN.pdf": {
+"issue": "2022-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN21_MAX_508.pdf": {
+"issue": "2021-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB21_MAX_508.pdf": {
+"issue": "2021-02",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAR21_MAX.pdf": {
+"issue": "2021-03",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY21_MAX.pdf": {
+"issue": "2021-05",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUN21_MAX.pdf": {
+"issue": "2021-06",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"SEP21_MAX.pdf": {
+"issue": "2021-09",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT21_MAX.pdf": {
+"issue": "2021-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"NOV21_MAX.pdf": {
+"issue": "2021-11",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reservoir eleva"
+}
+},
+"DEC21_MAX.pdf": {
+"issue": "2021-12",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would results in reservoir eleva"
+}
+},
+"JAN22_MAX_508.pdf": {
+"issue": "2022-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB22_MAX_508_0.pdf": {
+"issue": "2022-02",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reseNoir elevatio"
+}
+},
+"JUN22_MAX.pdf": {
+"issue": "2022-06",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY26_508.pdf": {
+"issue": "2026-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY26_MIN_508.pdf": {
+"issue": "2026-05",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR26_508.pdf": {
+"issue": "2026-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR26_MAX_508.pdf": {
+"issue": "2026-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR26_MIN_508.pdf": {
+"issue": "2026-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAR26_508.pdf": {
+"issue": "2026-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR26_MIN_508.pdf": {
+"issue": "2026-03",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB26_508.pdf": {
+"issue": "2026-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB26_MIN_508.pdf": {
+"issue": "2026-02",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN26_508.pdf": {
+"issue": "2026-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN26_MIN_508.pdf": {
+"issue": "2026-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN26_MAX_508.pdf": {
+"issue": "2026-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"DEC25_508.pdf": {
+"issue": "2025-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC25_MIN_508.pdf": {
+"issue": "2025-12",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"NOV25_MIN_508.pdf": {
+"issue": "2025-11",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"NOV25_508.pdf": {
+"issue": "2025-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT25_MIN_508.pdf": {
+"issue": "2025-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT25_508.pdf": {
+"issue": "2025-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT25_MAX_508.pdf": {
+"issue": "2025-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"SEP25_508.pdf": {
+"issue": "2025-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP25_MIN_508.pdf": {
+"issue": "2025-09",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG25_508.pdf": {
+"issue": "2025-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG25_MIN_508_0.pdf": {
+"issue": "2025-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG25_MAX_508_0.pdf": {
+"issue": "2025-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUL25_508_0.pdf": {
+"issue": "2025-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL25_MIN_508.pdf": {
+"issue": "2025-07",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUN25_508.pdf": {
+"issue": "2025-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN25_MIN_508.pdf": {
+"issue": "2025-06",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY25_508.pdf": {
+"issue": "2025-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY25_MIN_508.pdf": {
+"issue": "2025-05",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG06_MIN_508.pdf": {
+"issue": "2006-08",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"AUG06_MAX_508.pdf": {
+"issue": "2006-08",
+"scenario": "MAX",
+"variant": null,
+"hit": null
+},
+"AUG09_MAX_508.pdf": {
+"issue": "2009-08",
+"scenario": "MAX",
+"variant": null,
+"hit": null
+},
+"AUG09_MIN_508.pdf": {
+"issue": "2009-08",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"JUL24_MIN_508.pdf": {
+"issue": "2024-07",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUL24_508.pdf": {
+"issue": "2024-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG24_508.pdf": {
+"issue": "2024-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG24_MIN_508.pdf": {
+"issue": "2024-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG24_MAX_508.pdf": {
+"issue": "2024-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR08_MAX_508.pdf": {
+"issue": "2008-04",
+"scenario": "MAX",
+"variant": null,
+"hit": null
+},
+"APR09_MAX_508.pdf": {
+"issue": "2009-04",
+"scenario": "MAX",
+"variant": null,
+"hit": null
+},
+"APR08_MIN_508.pdf": {
+"issue": "2008-04",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"APR09_MIN_508.pdf": {
+"issue": "2009-04",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"APR25_MAX_508.pdf": {
+"issue": "2025-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN25_508.pdf": {
+"issue": "2025-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN25_MAX_508.pdf": {
+"issue": "2025-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN25_MIN_508.pdf": {
+"issue": "2025-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB25_MIN_508.pdf": {
+"issue": "2025-02",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB25_508.pdf": {
+"issue": "2025-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR25_508.pdf": {
+"issue": "2025-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR25_MIN_508.pdf": {
+"issue": "2025-03",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR25_MIN_508.pdf": {
+"issue": "2025-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR25_508.pdf": {
+"issue": "2025-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR23_508.pdf": {
+"issue": "2023-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR23_MIN_508.pdf": {
+"issue": "2023-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR23_MAX_508.pdf": {
+"issue": "2023-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR24_508.pdf": {
+"issue": "2024-04",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"APR24_MIN_508.pdf": {
+"issue": "2024-04",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"APR24_MAX_508.pdf": {
+"issue": "2024-04",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUL23_MIN_508.pdf": {
+"issue": "2023-07",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUL23_508.pdf": {
+"issue": "2023-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL22_MAX_508.pdf": {
+"issue": "2022-07",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG23_508.pdf": {
+"issue": "2023-08",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"AUG23_MIN_508.pdf": {
+"issue": "2023-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reseNoir elevatio"
+}
+},
+"AUG23_MAX_508.pdf": {
+"issue": "2023-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevati"
+}
+},
+"AUG22_MAX_508.pdf": {
+"issue": "2022-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG08_MAX_508.pdf": {
+"issue": "2008-08",
+"scenario": "MAX",
+"variant": null,
+"hit": null
+},
+"AUG08_MIN_508.pdf": {
+"issue": "2008-08",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"OCT22_MAX.pdf": {
+"issue": "2022-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"NOV22_MIN.pdf": {
+"issue": "2022-11",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"NOV22.pdf": {
+"issue": "2022-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC22.pdf": {
+"issue": "2022-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC22_MIN.pdf": {
+"issue": "2022-12",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"JAN23_508.pdf": {
+"issue": "2023-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN23_MIN_508.pdf": {
+"issue": "2023-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN23_MAX_508.pdf": {
+"issue": "2023-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": "fthe time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB23_508_0.pdf": {
+"issue": "2023-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB23_MIN_508_0.pdf": {
+"issue": "2023-02",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range ofthe minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevati"
+}
+},
+"MAR23.pdf": {
+"issue": "2023-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR23_MIN.pdf": {
+"issue": "2023-03",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"MAY23.pdf": {
+"issue": "2023-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY23_MIN.pdf": {
+"issue": "2023-05",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"JUN23.pdf": {
+"issue": "2023-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN23_MIN.pdf": {
+"issue": "2023-06",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"MAR24.pdf": {
+"issue": "2024-03",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAR24_MIN.pdf": {
+"issue": "2024-03",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"SEP23.pdf": {
+"issue": "2023-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP23_MIN.pdf": {
+"issue": "2023-09",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"OCT23.pdf": {
+"issue": "2023-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT23_MIN.pdf": {
+"issue": "2023-10",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"OCT23_MAX.pdf": {
+"issue": "2023-10",
+"scenario": "MAX",
+"variant": null,
+"hit": null
+},
+"NOV23.pdf": {
+"issue": "2023-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV23_MIN.pdf": {
+"issue": "2023-11",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"DEC23.pdf": {
+"issue": "2023-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC23_MIN.pdf": {
+"issue": "2023-12",
+"scenario": "MIN",
+"variant": null,
+"hit": null
+},
+"JAN24_508.pdf": {
+"issue": "2024-01",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JAN24_MIN_508.pdf": {
+"issue": "2024-01",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JAN24_MAX_508.pdf": {
+"issue": "2024-01",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"FEB24_508_0.pdf": {
+"issue": "2024-02",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"FEB24_MIN_508.pdf": {
+"issue": "2024-02",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT26_6_508.pdf": {
+"issue": "2026-10",
+"scenario": "MP",
+"variant": "6maf",
+"hit": null
+},
+"OCT26_7_508.pdf": {
+"issue": "2026-10",
+"scenario": "MP",
+"variant": "7maf",
+"hit": null
+},
+"OCT26_MIN_508.pdf": {
+"issue": "2026-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT26_MAX_508.pdf": {
+"issue": "2026-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"NOV24_508.pdf": {
+"issue": "2024-11",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"NOV24_MIN_508.pdf": {
+"issue": "2024-11",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"DEC24_508.pdf": {
+"issue": "2024-12",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"DEC24_MIN_508.pdf": {
+"issue": "2024-12",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY24_508.pdf": {
+"issue": "2024-05",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"MAY24_MIN_508.pdf": {
+"issue": "2024-05",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY24_MAX_508.pdf": {
+"issue": "2024-05",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUN24_508.pdf": {
+"issue": "2024-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN24_MIN_508.pdf": {
+"issue": "2024-06",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"SEP24_508.pdf": {
+"issue": "2024-09",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"SEP24_MIN_508.pdf": {
+"issue": "2024-09",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT24_508.pdf": {
+"issue": "2024-10",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"OCT24_MIN_508.pdf": {
+"issue": "2024-10",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"OCT24_MAX_508.pdf": {
+"issue": "2024-10",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"SEP26_MIN_508.pdf": {
+"issue": "2026-09",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"SEP26_7_508.pdf": {
+"issue": "2026-09",
+"scenario": "MP",
+"variant": "7maf",
+"hit": null
+},
+"SEP26_6_508.pdf": {
+"issue": "2026-09",
+"scenario": "MP",
+"variant": "6maf",
+"hit": null
+},
+"AUG26_6_508.pdf": {
+"issue": "2026-08",
+"scenario": "MP",
+"variant": "6maf",
+"hit": null
+},
+"AUG26_7_508.pdf": {
+"issue": "2026-08",
+"scenario": "MP",
+"variant": "7maf",
+"hit": null
+},
+"AUG26_MIN_508.pdf": {
+"issue": "2026-08",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"AUG26_MAX_508.pdf": {
+"issue": "2026-08",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUL26_508.pdf": {
+"issue": "2026-07",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUL26_MIN_508.pdf": {
+"issue": "2026-07",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"JUN26.pdf": {
+"issue": "2026-06",
+"scenario": "MP",
+"variant": null,
+"hit": null
+},
+"JUN26_MIN.pdf": {
+"issue": "2026-06",
+"scenario": "MIN",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+},
+"MAY26_MAX_508.pdf": {
+"issue": "2026-05",
+"scenario": "MAX",
+"variant": null,
+"hit": {
+"page": 1,
+"text": " the time. There is approximately an 80% probability that a future elevation will fall inside the range of the minimum and maximum inflow scenarios. Additionally, there are possible inflow scenarios that would result in reservoir elevat"
+}
+}
+}

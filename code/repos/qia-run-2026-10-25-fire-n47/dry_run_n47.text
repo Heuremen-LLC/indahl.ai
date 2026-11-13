@@ -1,0 +1,54 @@
+[
+ {
+  "arm": "P3_PI",
+  "layout": [
+   106,
+   105,
+   117
+  ],
+  "cz": 9,
+  "depth": 32,
+  "shots": 100000
+ },
+ {
+  "arm": "P2_PI",
+  "layout": [
+   0,
+   1
+  ],
+  "cz": 2,
+  "depth": 12,
+  "shots": 20000
+ },
+ {
+  "arm": "P2_PI4",
+  "layout": [
+   0,
+   1
+  ],
+  "cz": 2,
+  "depth": 16,
+  "shots": 20000
+ },
+ {
+  "arm": "H2_PI2",
+  "layout": [
+   0,
+   1
+  ],
+  "cz": 2,
+  "depth": 14,
+  "shots": 20000
+ },
+ {
+  "arm": "S3_PI",
+  "layout": [
+   0,
+   1,
+   2
+  ],
+  "cz": 0,
+  "depth": 6,
+  "shots": 20000
+ }
+]

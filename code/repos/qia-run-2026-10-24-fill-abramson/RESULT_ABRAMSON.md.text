@@ -1,0 +1,12 @@
+# RESULT -- free calibration run for Nadav Abramson (independent), raw-IQ persistence on ibm_kingston, 24 Oct 2026 06:16-06:18Z.
+Read under PLAN (commit 59b3ad3, before any job). His exp3-1 (A, reference) and exp3-2 (B, + two CZs per partner) unchanged, same ten qubits
+[51,53,55,69,71,73,75,89,91,93], kerneled Executor, 1000 shots/item, jobs A1 B1 B2 A2 (dbe4qhng, dbe4qm7g, dbe4r6fg, dbe4rafp), 4 s each, 16 s total.
+KNOWN-GOOD: our estimator on his raw IQ gives 40.35 / 32.01 us and 0.0898 % per CZ vs his 40 / 32 / 0.09 (same estimator as his; disclosed in the plan).
+R1 CZ ARM - REFERENCE (ABBA, drift-cancelled; his unit, % onset per CZ per cycle; ten qubits as units):
+   +0.063 % per CZ, shot-noise half-width 0.006, scored net of the step guard 0.005 -> ABOVE
+R2 DRIFT A2 - A1 (~1.6 min apart): -0.002, half-width 0.008 -> CONSISTENT
+Per-qubit note: qubit 8 of 10 (q91) carries an outlier onset in job A1 (4.88 %) that fell to 0.40 % by A2; medians over qubits are the reading.
+READING FOR THE AUTHOR: his stated confound was that the CZ arm "ran about eight minutes after the reference arm, leaving temporal drift
+confounded with the change". Interleaved A B B A on the same ten qubits today, the CZ-containing arm still sits above the reference arm,
++0.063 % per CZ (his 14 Oct figure 0.09 %, a different date and record), and drift between the two reference jobs is within shot noise.
+The CZ effect is not drift. Not a replication of his 14 Oct numbers.

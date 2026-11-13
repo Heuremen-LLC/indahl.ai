@@ -1,0 +1,14 @@
+DEFINED AFTER THE DATA (1 Nov 2026, after the outside referee). Both fires of one chip side by side; committed readings unchanged.
+day_20261031_2207_ibm_marrakesh: sign count pooled 64 against 53 p=0.355 | copy A 57 against 60 p=0.853 | copy B 61 against 56 p=0.712
+day_20261031_2207_ibm_marrakesh: median |residual| M31 0.344 MT 0.302 | signed median MC +0.858 M31 +0.020 | median kick M -1.752 deg/readout
+day_20261031_2207_ibm_marrakesh: M31 residual opposite in sign to the kick (over-correction) on 59 of 117 qubits
+day_20261031_2207_ibm_marrakesh: shot-noise scale (copy-to-copy half-difference median) M31 0.178 MT 0.179 deg/readout
+day_20261101_1159_ibm_marrakesh: sign count pooled 71 against 46 p=0.026 | copy A 68 against 49 p=0.096 | copy B 65 against 52 p=0.267
+day_20261101_1159_ibm_marrakesh: median |residual| M31 0.349 MT 0.245 | signed median MC +0.932 M31 +0.169 | median kick M -1.474 deg/readout
+day_20261101_1159_ibm_marrakesh: M31 residual opposite in sign to the kick (over-correction) on 64 of 117 qubits
+day_20261101_1159_ibm_marrakesh: shot-noise scale (copy-to-copy half-difference median) M31 0.189 MT 0.172 deg/readout
+IBM records: the 31 Oct table ran under 2026-10-31 14:56:12-04:00, the second fire under 2026-11-01 06:37:21-05:00
+  T1 changed on 103 of 115 untouched qubits
+  T2 changed on 110 of 115 untouched qubits
+  readout_error changed on 115 of 117 untouched qubits
+  readout_length changed on 0 of 117 untouched qubits

@@ -1,0 +1,258 @@
+{
+ "NULL": {
+  "KG": true,
+  "product_HT": {
+   "f_theirs": 0.94,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": -0.025,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "bell_30_70": {
+   "f_theirs": 0.976,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": 0.037,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "finger_leg3": {
+   "theirs": [
+    0.02,
+    false
+   ],
+   "best": [
+    0.03,
+    false
+   ],
+   "q50": [
+    0.055,
+    true
+   ]
+  },
+  "finger_chi2_leg3": "CONSI"
+ },
+ "LAYOUT": {
+  "KG": true,
+  "product_HT": {
+   "f_theirs": 0.874,
+   "f_minus_1": "BELOW",
+   "drift_native": "CONSISTENT",
+   "f_shift": 0.065,
+   "layout_native": "ABOVE",
+   "layout_f": "CONSI"
+  },
+  "bell_30_70": {
+   "f_theirs": 0.967,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": 0.021,
+   "layout_native": "ABOVE",
+   "layout_f": "CONSI"
+  },
+  "finger_leg3": {
+   "theirs": [
+    0.01,
+    false
+   ],
+   "best": [
+    0.025,
+    false
+   ],
+   "q50": [
+    0.053,
+    false
+   ]
+  },
+  "finger_chi2_leg3": "CONSI"
+ },
+ "DRIFT": {
+  "KG": true,
+  "product_HT": {
+   "f_theirs": 0.951,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": -0.114,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "bell_30_70": {
+   "f_theirs": 0.97,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": -0.027,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "finger_leg3": {
+   "theirs": [
+    0.039,
+    false
+   ],
+   "best": [
+    0.043,
+    false
+   ],
+   "q50": [
+    0.041,
+    false
+   ]
+  },
+  "finger_chi2_leg3": "CONSI"
+ },
+ "FINGER": {
+  "KG": true,
+  "product_HT": {
+   "f_theirs": 0.957,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": -0.053,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "bell_30_70": {
+   "f_theirs": 0.961,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": 0.022,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "finger_leg3": {
+   "theirs": [
+    0.153,
+    true
+   ],
+   "best": [
+    0.009,
+    false
+   ],
+   "q50": [
+    0.039,
+    false
+   ]
+  },
+  "finger_chi2_leg3": "ABOVE"
+ },
+ "BOTH": {
+  "KG": true,
+  "product_HT": {
+   "f_theirs": 0.996,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "BELOW",
+   "f_shift": -0.263,
+   "layout_native": "ABOVE",
+   "layout_f": "CONSI"
+  },
+  "bell_30_70": {
+   "f_theirs": 0.968,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "BELOW",
+   "f_shift": -0.058,
+   "layout_native": "ABOVE",
+   "layout_f": "CONSI"
+  },
+  "finger_leg3": {
+   "theirs": [
+    0.02,
+    false
+   ],
+   "best": [
+    0.017,
+    false
+   ],
+   "q50": [
+    0.011,
+    false
+   ]
+  },
+  "finger_chi2_leg3": "CONSI"
+ },
+ "NEITHER_but_rotated": {
+  "KG": true,
+  "product_HT": {
+   "f_theirs": 1.038,
+   "f_minus_1": "CONSISTENT",
+   "drift_native": "CONSISTENT",
+   "f_shift": 0.013,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "bell_30_70": {
+   "f_theirs": 0.95,
+   "f_minus_1": "BELOW",
+   "drift_native": "CONSISTENT",
+   "f_shift": -0.003,
+   "layout_native": "CONSI",
+   "layout_f": "CONSI"
+  },
+  "finger_leg3": {
+   "theirs": [
+    0.169,
+    true
+   ],
+   "best": [
+    0.14,
+    true
+   ],
+   "q50": [
+    0.149,
+    true
+   ]
+  },
+  "finger_chi2_leg3": "CONSI"
+ },
+ "FLOOR_30_null_reps": {
+  "product_HT.f_minus_1": {
+   "CONSISTENT": 25,
+   "BELOW": 5
+  },
+  "product_HT.drift_native": {
+   "CONSISTENT": 29,
+   "BELOW": 1
+  },
+  "product_HT.layout_native": {
+   "ABOVE": 3,
+   "CONSI": 27
+  },
+  "product_HT.layout_f": {
+   "ABOVE": 3,
+   "CONSI": 27
+  },
+  "bell_30_70.f_minus_1": {
+   "CONSISTENT": 26,
+   "BELOW": 4
+  },
+  "bell_30_70.drift_native": {
+   "ABOVE": 1,
+   "CONSISTENT": 29
+  },
+  "bell_30_70.layout_native": {
+   "CONSI": 29,
+   "ABOVE": 1
+  },
+  "bell_30_70.layout_f": {
+   "CONSI": 28,
+   "ABOVE": 2
+  },
+  "finger_chi2_leg3": {
+   "CONSI": 30
+  },
+  "KG_fail": 0,
+  "finger_null_angle_p95": {
+   "2": 0.04974170888046725,
+   "3": 0.05438689636308041
+  }
+ },
+ "POWER_DRIFT_e+0.03_20reps": {
+  "product_HT": {
+   "CONSISTENT": 8,
+   "BELOW": 12
+  },
+  "bell_30_70": {
+   "CONSISTENT": 2,
+   "BELOW": 18
+  }
+ }
+}

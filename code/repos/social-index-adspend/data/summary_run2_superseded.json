@@ -1,0 +1,324 @@
+{
+ "updated": "2026-11-10 02:11 UTC",
+ "plan_commit": "19773ae 2026-11-09T21:10:14-05:00",
+ "gate_ok": true,
+ "known_good": {
+  "planted_rows": "passed",
+  "planted_detail": {
+   "ABOVE": [
+    "ABOVE",
+    "ABOVE"
+   ],
+   "BELOW": [
+    "BELOW",
+    "BELOW"
+   ],
+   "CONSISTENT": [
+    "CONSISTENT",
+    "CONSISTENT"
+   ],
+   "agency": [
+    "agency",
+    "agency"
+   ],
+   "band": [
+    "band",
+    "band"
+   ],
+   "NOTHING": [
+    "NOTHING_RETURNED",
+    "NOTHING_RETURNED"
+   ],
+   "scope": [
+    "scope",
+    "scope"
+   ],
+   "class GOOGLE LLC / DIGITAL ADVERTISING": [
+    "AD",
+    "AD"
+   ],
+   "class GOOGLE / SOFTWARE": [
+    "NONAD",
+    "NONAD"
+   ],
+   "class GOOGLE GSUITE / ADVERTISING": [
+    "UNCLEAR",
+    "UNCLEAR"
+   ],
+   "class GOOGLE ADS / ": [
+    "AD",
+    "AD"
+   ],
+   "class GOOGLE WORKSPACE / ": [
+    "NONAD",
+    "NONAD"
+   ],
+   "class GOOGLE / DIGITAL SERVICES": [
+    "UNCLEAR",
+    "UNCLEAR"
+   ],
+   "class FB/YOUTUBE/GOOGLE ADS / ADS": [
+    "MIXED",
+    "MIXED"
+   ],
+   "class YOUTUBE TV / ": [
+    "NONAD",
+    "NONAD"
+   ],
+   "class GOOGLE *ADS2583901760 / ": [
+    "AD",
+    "AD"
+   ],
+   "class GOOGLE ADS / SOFTWARE": [
+    "UNCLEAR",
+    "UNCLEAR"
+   ],
+   "payee WOODSPRING SUITES": [
+    false,
+    false
+   ],
+   "payee TOP OF GOOGLE-YAHOO-BING": [
+    false,
+    false
+   ],
+   "payee G SUITE": [
+    true,
+    true
+   ],
+   "payee GOOGLE, INC.": [
+    true,
+    true
+   ],
+   "payee URBAN HANG SUITE": [
+    false,
+    false
+   ]
+  },
+  "google_internal": {
+   "us_advertisers": 18039,
+   "outside_band": 0,
+   "weekly_sum_equal_total": 6634,
+   "weekly_sum_above_total": 8804,
+   "weekly_sum_below_total": 2601,
+   "ok": true
+  },
+  "parser": {
+   "oppexp_lines": 8268689,
+   "dropped": {
+    "bad_date": 15
+   },
+   "dropped_share": 0.0
+  }
+ },
+ "google": {
+  "report_data_updated_pt": "2026-11-09 14:04:54",
+  "us_advertisers": 18039,
+  "us_stated_spend": 3402881600.0,
+  "advertisers_in_more_than_one_region_with_us": 1
+ },
+ "match_gate": {
+  "counts": {
+   "unmatched_no_id_no_name": 9603,
+   "B_name": 1010,
+   "unmatched_state_registration": 3981,
+   "A_id": 3239,
+   "A_candidate_id": 112,
+   "unmatched_ambiguous_name": 73,
+   "unmatched_fec_id_not_in_cm": 21
+  },
+  "stated_spend": {
+   "unmatched_no_id_no_name": 959245800.0,
+   "B_name": 300551000.0,
+   "unmatched_state_registration": 342114300.0,
+   "A_id": 1758755000.0,
+   "A_candidate_id": 12765000.0,
+   "unmatched_ambiguous_name": 27470400.0,
+   "unmatched_fec_id_not_in_cm": 1980100.0
+  },
+  "groups": 3698,
+  "unmatched_public_id_forms": {
+   "empty": 1249,
+   "EIN": 8427,
+   "state registration": 3981,
+   "FEC ID not in cm": 21
+  },
+  "unmatched_public_id_forms_spend": {
+   "empty": 46260800.0,
+   "EIN": 940455400.0,
+   "state registration": 342114300.0,
+   "FEC ID not in cm": 1980100.0
+  },
+  "groups_with_more_than_one_committee": 11,
+  "largest_group_members": 36
+ },
+ "fec": {
+  "sched_b_rows_kept_google": 63780,
+  "sched_b_rows_kept_pool": 374103,
+  "amendment_duplicates_dropped": 171,
+  "memo_rows_with_google_parent_dropped": 1,
+  "ie_rows_total": 267180,
+  "ie_rows_matched": 155272,
+  "ie_google_rows_raw": 5013,
+  "ie_google_rows_dedup": 4710,
+  "cut_2026": {
+   "last_complete_month": "2026-06",
+   "window_end": "2026-06-30",
+   "month_rows": {
+    "2025-01": 57268,
+    "2025-02": 55949,
+    "2025-03": 65311,
+    "2025-04": 66560,
+    "2025-05": 66894,
+    "2025-06": 71484,
+    "2025-07": 78760,
+    "2025-08": 76962,
+    "2025-09": 84418,
+    "2025-10": 100211,
+    "2025-11": 83069,
+    "2025-12": 98515,
+    "2026-01": 90377,
+    "2026-02": 100415,
+    "2026-03": 115572,
+    "2026-04": 114361,
+    "2026-05": 114852,
+    "2026-06": 121024,
+    "2026-07": 72393,
+    "2026-08": 53551,
+    "2026-09": 44829,
+    "2026-10": 6157,
+    "2026-11": 13,
+    "2026-12": 15
+   }
+  }
+ },
+ "rulers": {
+  "primary": {
+   "P": 31,
+   "Q": 92
+  },
+  "second": {
+   "P": 92,
+   "Q": 183
+  },
+  "size_that_matters": "at least 1000 dollars and at least 10 percent of the Google bound",
+  "band_factor": 2.0
+ },
+ "outcomes": {
+  "cycle_rows": {
+   "all": {
+    "ABOVE": 49,
+    "BELOW": 103,
+    "CONSISTENT": 41,
+    "CANNOT_TELL": 6013,
+    "NOTHING_RETURNED": 191
+   },
+   "2020": {
+    "ABOVE": 18,
+    "BELOW": 25,
+    "CONSISTENT": 12,
+    "CANNOT_TELL": 1088,
+    "NOTHING_RETURNED": 21
+   },
+   "2022": {
+    "ABOVE": 11,
+    "BELOW": 27,
+    "CONSISTENT": 12,
+    "CANNOT_TELL": 1616,
+    "NOTHING_RETURNED": 63
+   },
+   "2024": {
+    "ABOVE": 13,
+    "BELOW": 29,
+    "CONSISTENT": 14,
+    "CANNOT_TELL": 1606,
+    "NOTHING_RETURNED": 57
+   },
+   "2026": {
+    "ABOVE": 7,
+    "BELOW": 22,
+    "CONSISTENT": 3,
+    "CANNOT_TELL": 1703,
+    "NOTHING_RETURNED": 50
+   }
+  },
+  "cycle_rows_by_tier": {
+   "candidate id": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 3,
+    "CANNOT_TELL": 60,
+    "NOTHING_RETURNED": 6
+   },
+   "candidate id+id": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 1,
+    "CANNOT_TELL": 96,
+    "NOTHING_RETURNED": 4
+   },
+   "candidate id+id+name": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 37,
+    "NOTHING_RETURNED": 2
+   },
+   "candidate id+name": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 13,
+    "NOTHING_RETURNED": 1
+   },
+   "id": {
+    "ABOVE": 45,
+    "BELOW": 69,
+    "CONSISTENT": 33,
+    "CANNOT_TELL": 4285,
+    "NOTHING_RETURNED": 107
+   },
+   "id+name": {
+    "ABOVE": 2,
+    "BELOW": 18,
+    "CONSISTENT": 1,
+    "CANNOT_TELL": 830,
+    "NOTHING_RETURNED": 15
+   },
+   "name": {
+    "ABOVE": 2,
+    "BELOW": 16,
+    "CONSISTENT": 3,
+    "CANNOT_TELL": 692,
+    "NOTHING_RETURNED": 56
+   }
+  },
+  "quarter_rows": {
+   "ABOVE": 108,
+   "BELOW": 7,
+   "CONSISTENT": 0,
+   "CANNOT_TELL": 19395,
+   "NOTHING_RETURNED": 178
+  },
+  "timing_sensitive_cycle_rows": 65,
+  "second_ruler_cycle_rows": {
+   "CANNOT_TELL": 6076,
+   "NOTHING_RETURNED": 191,
+   "BELOW": 66,
+   "CONSISTENT": 19,
+   "ABOVE": 45
+  },
+  "cannot_tell_reasons_cycle": {
+   "scope": 391,
+   "band": 2413,
+   "agency": 2279,
+   "purpose": 913,
+   "near": 17
+  }
+ },
+ "totals": {
+  "cycle_rows": 6397,
+  "quarter_rows": 19688,
+  "committees_matched": 3752
+ },
+ "runtime_s": 28.5
+}

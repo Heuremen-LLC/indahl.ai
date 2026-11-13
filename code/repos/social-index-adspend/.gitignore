@@ -1,0 +1,5 @@
+data/raw/
+__pycache__/
+*.pyc
+data/adspend.json
+data/adspend_run*_superseded.json

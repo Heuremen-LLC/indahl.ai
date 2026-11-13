@@ -1,0 +1,58 @@
+RESULT -- free calibration run for arXiv 2610.09062v2 (Caselli, Manuel, Arrachea, Cornaglia; Rosario + Bariloche, Argentina), ibm_kingston
+Plan 89006a0 (committed before any job). Jobs: copy 1 dbeafongdj9s73fleo0g (submitted 2026-10-24T12:43:14Z, 70 s), copy 2 dbeaggfpc3tc739lboq0
+(12:44:49Z, 70 s); 140 QPU s against the 134 s estimate. Layout (47, 48, 46) passed the 3x rule; record 2026-10-24 08:26:11 EDT saved before each job.
+CHECK 8 PASS (S timeline identical in all 96 Ap_k/Bp_k pairs). Analysis: run_real.py, 99 % band, 2,000 bootstrap draws (results_geopump.text).
+Internal; nothing published or sent before Monday.
+
+PRIMARY (R2, Ap - Bp, readout vs a delay of the same scheduled length, total even heat per cycle, units of T):
+  tau 60: +3.60 [+3.27, +3.94], copy gap [-0.34, +1.03] -> ABOVE
+  tau 20: +2.92 [+2.58, +3.24], copy gap [+0.42, +1.71] -> CANNOT_TELL (both copies positive; the copies disagree on the SIZE, a drift reading)
+  So on today's device, 192 incoming ancilla readouts per cycle cost the pump more heat than the waiting time they occupy, by about 3.6 T per cycle at
+  tau 60 -- against a measured even part of about 14.7 T today (their Sept value 8.3 T). "The readout is only its waiting time" is ruled out for
+  this pump at tau 60.
+Secondary (R2): QL_even tau 20 +0.48 [+0.30, +0.66] ABOVE, tau 60 +0.57 [+0.34, +0.80] ABOVE; QR_even tau 60 +3.03 [+2.78, +3.28] ABOVE, tau 20
+  +2.44 CANNOT_TELL (copy gap [+0.59, +1.58]). ODD (pumped) parts, both baths, both taus: CONSISTENT, bound |Ap - Bp| <= 0.30 T -- the readout cost
+  is direction-symmetric and cancels in their pumped-heat estimator, as their own SM says of the noise background. Their headline (the odd part) is
+  not touched by this finding.
+
+CONTROL (R4, A - Ap_rec, their protocol vs our random-basis surrogate, same estimator):
+  tau 60 Qtot_even -0.95 [-1.54, -0.44] -> BELOW (QL_even -0.48 BELOW, QR_even -0.47 BELOW; odd parts CONSISTENT); tau 20 even parts CANNOT_TELL
+  (copy gap), odd parts CONSISTENT. The surrogate is NOT shown equivalent to their exact protocol in the even part at tau 60 (it runs about 1 T
+  hotter). So R2 is a clean readout-vs-delay contrast ON THE SURROGATE; how much of the 3.6 T applies to their exact circuit is CANNOT_TELL from
+  this run. The synthetic had R4 at mean false-call 0.2 % (max 2.5 %), so this BELOW is a reading, not a fluke of the band.
+
+R1 (A today minus their Sept job at the same point, bound): even parts ABOVE at both taus (tau 60 Qtot_even +6.35 [+6.14, +6.55]; tau 20 +9.17);
+  odd parts: tau 60 QL +0.15 [+0.005, +0.28] ABOVE, QR +0.23 [+0.06, +0.38] ABOVE; tau 20 QL -0.30 [-0.44, -0.16] BELOW, QR CONSISTENT. The device
+  on these three qubits is not the device of 22 Sept (record today: q46 T1 148 us, T2 93 us; q48 T2 29 us).
+
+R3 (PROJECTION, not a measurement of their device or date): 2 x R2 even per bath / their Sept missing even part gives 1.2-10x. The numerator is
+  today's device and the denominator is Sept's; the ratio says only that, on today's device, the readout cost alone is of the order of (or larger
+  than) the whole shortfall of their simulation in Sept. Not comparable across dates; not a bill line.
+
+DEFINED AFTER THE DATA (post-hoc, labelled; outgoing-bit change by prepared state, pooled over collisions and copies, Ap minus Bp):
+  aR (physical q46): prepared 0 +0.038 (tau 20), +0.029 (tau 60); prepared 1 +0.033, +0.037 (each +- about 0.001, shots x collisions, not
+  independent within a shot). aL (q48): -0.0005 / +0.004 (tau 20), -0.002 / +0.005 (tau 60). The excess appears on ONE ancilla, in BOTH directions;
+  S couples to both ancillas, so a cost on S would show on both. Reading: most of the R2 cost is the q46 incoming readout disturbing q46's own state
+  (a mid-circuit readout that is not quantum-non-demolition at the 3-4 % level), with a smaller relaxation-like cost on q48. Ruled out: "the readout
+  is only its waiting time". Not ruled out: which physical process (readout-induced transitions, leakage, measurement-pulse heating).
+DIAGNOSTIC (incoming readout of a freshly prepared basis state, includes reset and X error; NOT IBM's terminal benchmark, check 1):
+  recorded-vs-prepared P(1|0) aL 0.013, aR 0.013; P(0|1) aL 0.014, aR 0.020 (both copies, both taus). Stated in the record: q48 prob_meas1_prep0
+  0.00098, prob_meas0_prep1 0.0063; q46 0.0022, 0.0098. Diagnostic only; reset error is inside the delivered number.
+
+FOR THEM (the deciding next step, in their own terms): their noise model treats each measurement as 2.1 us of T1/T2 plus an assignment error and
+finds "readout assignment and reset errors alone produce changes below 0.01 T". On today's kingston the incoming readouts cost the even part about
+3.6 T per cycle beyond that idle at tau 60 on our surrogate, concentrated on the aR ancilla's readout. Adding a non-QND readout term on the ancilla
+(state change ~3-4 % per readout on q46) is the missing ingredient to test; their pumped (odd) result is unaffected.
+
+FOUR OUTCOMES, per primary: tau 60 ABOVE; tau 20 CANNOT_TELL. Control: tau 60 BELOW (transfer to their protocol not established), tau 20 CANNOT_TELL.
+Phase kick (dose K = 1, <= 0.09 deg per readout on kingston): not readable by this run (the heat is blind to phase), CANNOT_TELL.
+
+## /q (on this result)
+- 1: the diagnostic is not IBM's stated quantity (reset inside it); kept as a diagnostic, off any bill.
+- 3: record in force saved before each job (08:26 EDT); R1 compares to Sept, labelled a bound on device change.
+- 9: measure vs delay differ on the ancilla too; the post-hoc split assigns most of R2 to the ancilla (q46), named so.
+- 13: copies minutes apart; tau 20 copy gap excludes 0 -> CANNOT_TELL by the plan's rule, not relabelled.
+- 18: the control R4 failed (BELOW) at tau 60; the rule is the rule -- transfer to their protocol is stated as not established.
+- 19: four outcomes kept; CONSISTENT odd parts printed with their bound.
+- 25: ABOVE rules out "only its waiting time"; mechanism not named.
+- 26: the per-ancilla split and the stated-vs-diagnostic comparison are labelled defined after the data.

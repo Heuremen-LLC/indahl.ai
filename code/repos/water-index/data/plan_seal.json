@@ -1,0 +1,30 @@
+{
+ "file": "PLAN.md",
+ "sha256": "78ba2f9a7248233fbb2c7bbd160a19ef1ffb04184148cbbbaaac8f3c8012144b",
+ "sealed_utc": "2026-11-10T02:16:18Z",
+ "note": "Sealed before the first comparison of any projection with a measurement. Resealed 2 minutes after the first seal to remove two semicolons, no rule changed. Not committed to git (commits are for Bones).",
+ "addendum_1": {
+  "sha256": "1d24d13b5faef26e3aa0abcacf416f12debe02a0a8b15beb806c47de626ffd85",
+  "sealed_utc": "2026-11-10T02:47:39Z",
+  "note": "Addendum 1 added before the first comparison, after reading the stated side only."
+ },
+ "wording_edit_1": {
+  "sha256": "b16bf6a1346ff23475b00d2d45a6643452645516df6db9f5544b284ac60c4e01",
+  "utc": "2026-11-10T02:53:12Z",
+  "note": "After the first comparison: \"by eye\" replaced with \"directly from the page text\" (house wording). No rule, number or threshold changed."
+ },
+ "corrections": {
+  "utc": "2026-11-10T03:37:47Z",
+  "note": "The first write of PLAN.md at 02:16:06Z had sha256 316cab8ad4bf1466c442003a04c2acb03f86d2c304f34726e5599d512c0184af (printed in the session, not stored here before). The reseal that removed two semicolons came 12 seconds later (02:16:18Z), not 2 minutes as the note above says."
+ },
+ "addendum_2": {
+  "sha256": "5790d5815ef83685b1f85cc86935bfc22a54b3a3834b9c3b585f397a62fcfc33",
+  "sealed_utc": "2026-11-10T03:37:47Z",
+  "note": "Addendum 2 added after the first comparison and after the referee pass. No rule or threshold changed. One stated-side reader fix (Lake Powell headings) adds rows.",
+  "revised": {
+   "sha256": "e798519ac09d2103f85e2be2b3128d92ded9c94711f01aba8210b58437aee4a3",
+   "utc": "2026-11-10T03:42:59Z",
+   "note": "Addendum 2 items 4 and 6 aligned with our own recomputation before publication (era rates 1.0 and 0.12 to 0.39 percent, Lake Powell ruler sensitivity). No rule changed."
+  }
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "updated": "29 Oct 18:20",
+ "gate": "passed",
+ "window": "1 June to 29 September 2025",
+ "monitors_read": 892,
+ "monitors_with_sensor": 147,
+ "sensors": 414,
+ "sensors_not_read": 0,
+ "pairs": 211,
+ "days_kept": 18213,
+ "days_removed_ab": 2609,
+ "filter_only_sites": 106,
+ "comparison": {
+  "Map reading (atm channels, raw)": {
+   "of": 147,
+   "n": 140,
+   "share": 0.9524,
+   "share_lo": 0.905,
+   "share_hi": 0.9767,
+   "outcome": "ABOVE"
+  },
+  "cf_1 channels, raw": {
+   "of": 147,
+   "n": 143,
+   "share": 0.9728,
+   "share_lo": 0.9321,
+   "share_hi": 0.9894,
+   "outcome": "ABOVE"
+  },
+  "cf_1 corrected for humidity (Barkjohn 2021)": {
+   "of": 147,
+   "n": 66,
+   "share": 0.449,
+   "share_lo": 0.3709,
+   "share_hi": 0.5297,
+   "outcome": "CANNOT_TELL"
+  }
+ },
+ "medians": {
+  "Map reading (atm channels, raw)": {
+   "monitors": 147,
+   "slope": 1.61,
+   "intercept": -1.17,
+   "r2": 0.79,
+   "rmse": 4.75
+  },
+  "cf_1 channels, raw": {
+   "monitors": 147,
+   "slope": 1.81,
+   "intercept": -2.19,
+   "r2": 0.79,
+   "rmse": 5.37
+  },
+  "cf_1 corrected for humidity (Barkjohn 2021)": {
+   "monitors": 147,
+   "slope": 1.0,
+   "intercept": -0.17,
+   "r2": 0.82,
+   "rmse": 1.95
+  }
+ },
+ "headline_n": 66,
+ "headline_of": 147,
+ "headline": {
+  "of": 147,
+  "n": 66,
+  "share": 0.449,
+  "share_lo": 0.3709,
+  "share_hi": 0.5297,
+  "outcome": "CANNOT_TELL"
+ }
+}

@@ -1,0 +1,14 @@
+# RESULT -- Zenodo 22737706 (Honrao, Quantum Ocean Part 78) Experiment 1, ibm_fez, job dbemn7vpc3tc739m0j4g, 2026-10-25 02:38Z, 20 s
+KNOWN-GOOD: RY(pi/2) with no return, mean P(1) over 40 qubits 0.5077 (rule 0.5 +/- 0.03): PASS.
+COLLAPSED (their logical circuit through the default preset; compiled to a bare measurement, identical for all S): errors 0.390 / 0.392 / 0.384 %,
+  slope -0.00006 [-0.00036, +0.00025] per S: CONSISTENT with 0 (a bound). Their printed +0.001 is OUTSIDE this interval.
+REAL (opt 0, 150 id kept, 3.7 us idle): errors 0.54 / 3.12 / 7.09 %, slope +0.0655 [+0.0506, +0.0832] per S. Pre-set outcome: CANNOT_TELL (interval wider
+  than the 0.004 rule; not relaxed). Descriptive: the interval excludes 0 and excludes their +0.001 (65x larger).
+  Record model (T1, T2, prob_meas1_prep0 at submission): slope +0.0148; residual +0.0506 [+0.0351, +0.0685]; pre-set outcome CANNOT_TELL (width rule).
+  Per E25 the residual does not name g1: a record T2 that is off, or idle-time interactions among 40 simultaneously superposed qubits, predict the same direction;
+  this run cannot tell them apart.
+What this decides for the author: their printed slope (+0.001) matches neither way their circuit can compile -- with the default compile every S is the same
+circuit and the slope is 0 within +/-0.0003; with the idle kept the slope is ~0.065. Their bound |g1| < 0.001 is derived from their Experiment 2 (marrakesh, 'highest-statistics fair comparison'), not Experiment 1; Experiment 2 is the same
+circuit family (S levels at delay 150) but its compile was not tested here: whether the bound inherits the same problem is CANNOT_TELL (/q E25, narrowed 25 Oct). How their own job was compiled is not in the paper: CANNOT_TELL; their job id is printed (retrievable only by them).
+IBM bill track (lead, defined after the data): REAL idle error is 4.4x the record-dephasing prediction on 40 record-healthy qubits; same direction as our Hahn-T2
+line (delivered T2 below stated). A dedicated T2 run would decide it; not a bill line from this job.

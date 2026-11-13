@@ -1,0 +1,2 @@
+ibm_kingston: pair [81, 82] (stated cz 8.69e-04, readout median 0.0091); physical used [81, 82]; transpiled ops {'a': {'rz': 10, 'sx': 8, 'cz': 2, 'measure': 2}, 'b': {'rz': 17, 'sx': 14, 'cz': 4, 'measure': 3, 'reset': 1}}; 2 jobs x 8 circuits x 8192; est 39 s (cap 70); remaining 2917
+DRY RUN, nothing submitted

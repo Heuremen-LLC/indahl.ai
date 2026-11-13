@@ -1,0 +1,213 @@
+{
+ "compared": 1242,
+ "within_tenth": 1183,
+ "misses": 59,
+ "misses_by_event_year": {
+  "DIVORCE 2016": 7,
+  "DIVORCE 2017": 5,
+  "MARRIAGE 2010": 1,
+  "MARRIAGE 2015": 1,
+  "MARRIAGE 2016": 1,
+  "MARRIAGE 2023": 44
+ },
+ "divorce_2016_17_misses": [
+  [
+   "Illinois",
+   2016
+  ],
+  [
+   "Iowa",
+   2016
+  ],
+  [
+   "Kansas",
+   2016
+  ],
+  [
+   "Maine",
+   2016
+  ],
+  [
+   "Maryland",
+   2016
+  ],
+  [
+   "Massachusetts",
+   2016
+  ],
+  [
+   "Texas",
+   2016
+  ],
+  [
+   "Iowa",
+   2017
+  ],
+  [
+   "Kansas",
+   2017
+  ],
+  [
+   "Louisiana",
+   2017
+  ],
+  [
+   "Maine",
+   2017
+  ],
+  [
+   "Maryland",
+   2017
+  ]
+ ],
+ "swap_test": [
+  {
+   "state": "Illinois",
+   "swapped_counts_fit_both_rates": false,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    }
+   ]
+  },
+  {
+   "state": "Iowa",
+   "swapped_counts_fit_both_rates": true,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    }
+   ]
+  },
+  {
+   "state": "Kansas",
+   "swapped_counts_fit_both_rates": true,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "CONSISTENT",
+     "read_swapped": "BELOW"
+    }
+   ]
+  },
+  {
+   "state": "Louisiana",
+   "swapped_counts_fit_both_rates": true,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    }
+   ]
+  },
+  {
+   "state": "Maine",
+   "swapped_counts_fit_both_rates": true,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "CONSISTENT",
+     "read_swapped": "CONSISTENT"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "CONSISTENT",
+     "read_swapped": "BELOW"
+    }
+   ]
+  },
+  {
+   "state": "Maryland",
+   "swapped_counts_fit_both_rates": true,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    }
+   ]
+  },
+  {
+   "state": "Massachusetts",
+   "swapped_counts_fit_both_rates": true,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "BELOW",
+     "read_swapped": "CONSISTENT"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    }
+   ]
+  },
+  {
+   "state": "Texas",
+   "swapped_counts_fit_both_rates": false,
+   "years": [
+    {
+     "year": 2016,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    },
+    {
+     "year": 2017,
+     "read_as_printed": "BELOW",
+     "read_swapped": "BELOW"
+    }
+   ]
+  }
+ ],
+ "flips_if_swapped": [
+  {
+   "state": "Kansas",
+   "year": 2017,
+   "as_printed": "CONSISTENT",
+   "swapped": "BELOW"
+  },
+  {
+   "state": "Maine",
+   "year": 2017,
+   "as_printed": "CONSISTENT",
+   "swapped": "BELOW"
+  },
+  {
+   "state": "Massachusetts",
+   "year": 2016,
+   "as_printed": "BELOW",
+   "swapped": "CONSISTENT"
+  }
+ ]
+}

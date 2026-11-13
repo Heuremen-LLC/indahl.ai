@@ -1,0 +1,9 @@
+ibm_marrakesh: circuits 10 x 2 jobs + cal 8; checks PASS; durations (dt) {'D': 6057, 'M': 6057, 'MC': 6057, 'M31': 6057, 'MT': 6057}; est 31 s (cap 60), remaining 1981
+SUBMITTED C attempt 1 job dbjij51kdqps7390luh0 2026-11-01T11:59:16Z
+DONE C usage {'qpu_charge_time_seconds': 11, 'value': 0.180913, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 0.180913, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 11}}]}
+SUBMITTED A attempt 1 job dbjij9onceqs73ak3e00 2026-11-01T11:59:36Z
+DONE A usage {'qpu_charge_time_seconds': 8, 'value': 0.12565, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 0.12565, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 8}}]}
+SUBMITTED B attempt 1 job dbjijdl6p51s73ckt1t0 2026-11-01T11:59:51Z
+DONE B usage {'qpu_charge_time_seconds': 8, 'value': 0.12565, 'unit': 'resource_units', 'status': 'pending', 'details': [{'value': 0.12565, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 8}}]}
+ALL DONE ibm_marrakesh 27 s
+EXIT ibm_marrakesh 

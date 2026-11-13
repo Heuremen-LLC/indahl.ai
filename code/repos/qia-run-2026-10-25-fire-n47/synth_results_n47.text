@@ -1,0 +1,5 @@
+THEIRS world (MI ~0.16 at N=3)               P3 MI 0.1510 [0.1473, 0.1550] -> CONSISTENT with their 0.16 +/- 0.01 ; known-good True PASS
+QM world (ideal 0 at N=3, phi=pi)            P3 MI 0.0000 [0.0000, 0.0001] -> BELOW their band ; known-good True PASS
+HALF world (MI ~0.04)                        P3 MI 0.0387 [0.0367, 0.0407] -> BELOW their band ; known-good True PASS
+BROKEN-CONTROL world (separate shows MI)     P3 MI 0.1508 [0.1471, 0.1546] -> CONSISTENT with their 0.16 +/- 0.01 ; known-good False PASS
+IDEAL (printed circuit): P3_PI 0.0000  P2_PI 0.0000  P2_PI4 0.0822  H2_PI2 0.0000  S3_PI -0.0000

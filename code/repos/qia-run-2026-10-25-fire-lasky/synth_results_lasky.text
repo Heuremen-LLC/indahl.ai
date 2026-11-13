@@ -1,0 +1,4 @@
+NO DRIFT (gain separable)            GHZ3 z 2.69 ABOVE | GHZ5 z 1.91 CONSISTENT | KG True -> PASS
+DRIFT sd 0.03 (gain not separable)   GHZ3 z 1.70 CONSISTENT | GHZ5 z 0.75 CONSISTENT | KG True -> PASS
+BROKEN copies (copy 2 off by 0.08): KG False (want False) PASS
+FLOOR: known-good false-fail rate with honest copies, 200 draws: 16 (expect ~2 per check x 8 checks ~ 8%)

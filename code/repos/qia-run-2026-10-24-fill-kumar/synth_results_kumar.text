@@ -1,0 +1,41 @@
+TRUE planted values: set A = his job2 means (baseline 0.9058); set B = his job4 means (baseline 0.9619) in SET worlds; shift 0.0561 over the run (linear 0,1/3,2/3,1 or step after job 1); twirl sd on baseline 0.0036; b_LM worlds add +0.0038 / +0.0114 on B (log scale, L x M); STATED OFF 0.0168; band t(19) at alpha 0.01; scales S: shift 0.0561, b_LM 0.0044, DP 0.0168
+
+world                                              runs        DA A/B/C/T       SET A/B/C/T       BLM A/B/C/T        DP A/B/C/T   ok DA/SET/BLM/DP        result
+NEITHER                                             400    5/ 1/394/  0       0/ 0/400/  0       0/ 0/  0/400       1/ 2/397/  0      0.98/1.00/1.00/0.99   PASS
+      NEITHER false-resolution rate per scored reading: DA 1.5 %  SET 0.0 %  BLM 0.0 %  DP 0.7 %  (target <= about 5 %, gate <= 8 % observed)
+      median DA 0.0003 (h 0.0118)  SET 0.0001 (h 0.0090, guard 0.0074)  BLM -0.0000 (h 0.0048, guard 0.0035)  DP -0.0000 (h 0.0045)
+      SET unguarded false ABOVE/BELOW: 0/2
+SET (his job4-job2 pattern)                         100    0/ 2/ 98/  0     100/ 0/  0/  0       0/ 1/  0/ 99     100/ 0/  0/  0      0.98/1.00/  - /  -    PASS
+      median DA 0.0003 (h 0.0122)  SET 0.0564 (h 0.0079, guard 0.0074)  BLM -0.0039 (h 0.0043, guard 0.0033)  DP 0.0278 (h 0.0040)
+      SET unguarded false ABOVE/BELOW: 100/0
+DRIFT linear only (his shift over the run)          100  100/ 0/  0/  0       0/ 0/100/  0       0/ 0/  0/100     100/ 0/  0/  0      1.00/1.00/1.00/  -    PASS
+      median DA 0.0566 (h 0.0101)  SET 0.0003 (h 0.0078, guard 0.0335)  BLM -0.0002 (h 0.0042, guard 0.0042)  DP 0.0280 (h 0.0039)
+      SET unguarded false ABOVE/BELOW: 0/0
+DRIFT step only (after job 1)                       100  100/ 0/  0/  0       0/ 0/100/  0       0/ 0/  0/100     100/ 0/  0/  0      1.00/1.00/1.00/  -    PASS
+      median DA 0.0565 (h 0.0103)  SET 0.0280 (h 0.0071, guard 0.0335)  BLM -0.0017 (h 0.0040, guard 0.0044)  DP 0.0419 (h 0.0036)
+      SET unguarded false ABOVE/BELOW: 100/0
+BOTH (linear drift + SET)                           100  100/ 0/  0/  0     100/ 0/  0/  0       0/ 0/  0/100     100/ 0/  0/  0      1.00/1.00/  - /  -    PASS
+      median DA 0.0567 (h 0.0102)  SET 0.0556 (h 0.0061, guard 0.0334)  BLM -0.0032 (h 0.0037, guard 0.0042)  DP 0.0556 (h 0.0031)
+      SET unguarded false ABOVE/BELOW: 100/0
+BOTH (step drift + SET)                             100  100/ 0/  0/  0     100/ 0/  0/  0       0/ 3/  0/ 97     100/ 0/  0/  0      1.00/1.00/  - /  -    PASS
+      median DA 0.0562 (h 0.0102)  SET 0.0653 (h 0.0055, guard 0.0334)  BLM -0.0050 (h 0.0033, guard 0.0042)  DP 0.0605 (h 0.0028)
+      SET unguarded false ABOVE/BELOW: 100/0
+b_LM on B at his size (0.0038)                      100    1/ 0/ 99/  0       0/ 0/100/  0       0/ 0/  0/100       7/ 0/ 93/  0      0.99/  - /1.00/  -    PASS
+      median DA 0.0001 (h 0.0119)  SET 0.0040 (h 0.0091, guard 0.0074)  BLM 0.0035 (h 0.0048, guard 0.0035)  DP 0.0014 (h 0.0045)
+      SET unguarded false ABOVE/BELOW: 8/0
+b_LM on B at 3x his size (0.0114)                   100    0/ 0/100/  0      10/ 0/ 90/  0      96/ 0/  0/  4      71/ 0/ 29/  0      1.00/  - /0.96/  -    PASS
+      median DA 0.0005 (h 0.0121)  SET 0.0105 (h 0.0087, guard 0.0076)  BLM 0.0111 (h 0.0048, guard 0.0035)  DP 0.0051 (h 0.0044)
+      SET unguarded false ABOVE/BELOW: 69/0
+STATED OFF (delivered above projection by 0.0168)   100    0/ 0/100/  0       0/ 0/100/  0       0/ 0/  0/100     100/ 0/  0/  0      1.00/1.00/1.00/1.00   PASS
+      median DA -0.0001 (h 0.0121)  SET 0.0005 (h 0.0088, guard 0.0073)  BLM 0.0001 (h 0.0048, guard 0.0034)  DP 0.0168 (h 0.0044)
+      SET unguarded false ABOVE/BELOW: 0/0
+NEITHER, twirl variance heavy (T = 3)               400    2/ 3/395/  0       0/ 0/400/  0       0/ 0/  0/400       1/ 1/398/  0      0.99/1.00/1.00/0.99   PASS
+      NEITHER false-resolution rate per scored reading: DA 1.2 %  SET 0.0 %  BLM 0.0 %  DP 0.5 %  (target <= about 5 %, gate <= 8 % observed)
+      median DA 0.0002 (h 0.0122)  SET 0.0003 (h 0.0167, guard 0.0076)  BLM -0.0004 (h 0.0080, guard 0.0034)  DP -0.0001 (h 0.0084)
+      SET unguarded false ABOVE/BELOW: 3/3
+LOW SHOTS (NEITHER at 100 shots)                    400    0/ 2/397/  1       0/ 0/318/ 82       0/ 0/  0/400       0/ 0/392/  8      0.99/1.00/1.00/1.00   PASS
+      NEITHER false-resolution rate per scored reading: DA 0.5 %  SET 0.0 %  BLM 0.0 %  DP 0.0 %  (target <= about 5 %, gate <= 8 % observed)
+      median DA 0.0000 (h 0.0373)  SET -0.0005 (h 0.0271, guard 0.0238)  BLM -0.0001 (h 0.0128, guard 0.0109)  DP -0.0002 (h 0.0135)
+      SET unguarded false ABOVE/BELOW: 0/0
+
+ALL WORLDS PASS

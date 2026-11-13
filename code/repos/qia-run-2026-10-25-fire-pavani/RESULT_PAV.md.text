@@ -1,0 +1,18 @@
+# RESULT -- Pavani fill (Zenodo 10.5281/zenodo.21206538), ibm_fez, 25 Oct 2026 UTC. Plan commit 9a97daa (before any job).
+Jobs: A dbenfpnsstms73fcdja0 (submitted 03:30:47Z, 10 s), B dbenftfsstms73fcdje0 (03:31:01Z, 3 s). 4,096 shots per arm. Record: props_before.json.
+KNOWN-GOOD: PASSED. best_a 641/4096 = 0.1565, best_b 648/4096 = 0.1582; diff -0.0017 +- 0.0080 (z -0.21).
+Their number, P(detector = 1), ideal 0.125 (every compiled arm simulates to 0.125 exactly):
+  best path  (142-146) opt 1   0.1565 [0.146, 0.168]   ABOVE 0.125 by 0.031
+  q25 path   (68-88)   opt 1   0.1667 [0.156, 0.178]   ABOVE by 0.042
+  q50 path   (38-57)   opt 1   0.3838 [0.369, 0.399]   ABOVE by 0.259
+  q75 path   (130-150) opt 1   0.2166 [0.204, 0.229]   ABOVE by 0.092
+  best opt 0 / opt 3           0.1428 / 0.1584          ABOVE by 0.018 / 0.033
+  best, job B                  0.1577                   ABOVE by 0.033
+LAYOUT: ABOVE. Weighted chi2 = 668 on 3 dof (p ~ 1e-144); range 0.227 across four rule-chosen paths in ONE job. The layout moves their number
+  by 1.8x their whole Born-rule value (0.227 vs 0.125). The rule's record score did not order the delivered values (q50 read worse than q75);
+  which record figure tracks it is CANNOT_TELL from four paths (q50's hub qubit 49 has record T1 33 us; q75 holds q150 with record T2 5 us).
+COMPILE: CONSISTENT for both. opt 0 - opt 1 = -0.014 +- 0.008 (z -1.73; bound [-0.029, +0.002]); opt 3 - opt 1 = +0.002 +- 0.008.
+DRIFT: CONSISTENT. job B - in-job mean = +0.0004 +- 0.0070 (bound [-0.013, +0.014]) at ~14 s spacing.
+Their question: 50% (equal branch counting) is excluded on every arm (z 15 to 65 below 0.5). Their 12.5% is not what the chip delivers on any arm
+  (ABOVE on all eight), and which qubits carry the circuit sets the delivered value from 0.143 to 0.384. Their printed result was the expectation.
+Single reading: one chip, one session; floors 3.5% (layout), 0% KG over 200 planted nulls.

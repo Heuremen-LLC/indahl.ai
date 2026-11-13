@@ -1,0 +1,51 @@
+{
+ "slug": "weights",
+ "nav": "WEIGHTS",
+ "h1": "WEIGHTS &middot; A Model Name Against Its Weights",
+ "title": "WEIGHTS | A Model Name Against Its Weights | Heuremen LLC",
+ "desc": "WEIGHTS: whether the most downloaded open-weight models on Hugging Face keep the same weight files behind the same name, pass after pass.",
+ "intro_html": "<h2>Does a model name keep the same weights?</h2><p>A Hugging Face repository name is a pointer. Anyone who pins a model by name expects the weight files behind it to stay the same. We read the weight files of the 1,000 most downloaded models and read them again on later passes. A model is the same when its weight files are identical on two passes, changed when a weight file was replaced, added or removed, and gone when the repository no longer resolves.</p>",
+ "note_html": "<p>Source: the Hugging Face API, root folder of the main branch, content hashes recorded by Hugging Face. Changed is ABOVE when the lower end of the 95 percent interval of the changed share is above 1 percent, CONSISTENT when the upper end is below 1 percent. The first pass has nothing to compare with. Why a file changed is not measured here. Weights in subfolders and gated repositories are not read. Every changed model is listed after it is opened by hand. <a href=\"https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/weights/PLAN.md\">Plan, addenda and code</a>.</p>",
+ "kv": "weights_live",
+ "api_name": "weights",
+ "api_desc": "WEIGHTS: whether open-weight models keep the same weight files behind the same name, pass after pass.",
+ "every": 720,
+ "rider": "~/bones-forge/weights_index/weights_tick.py",
+ "folder": "weights",
+ "live_desc": "Open-weight model names against their weight files, pass after pass, live.",
+ "top": "Pass {pass_number}. Models read: {models}. Could not be read: {unreadable}. Updated {updated}.",
+ "tables": [
+  {
+   "title": "Weight files between passes",
+   "path": "headline",
+   "first": "",
+   "cols": [
+    [
+     "Compared",
+     "of",
+     "n"
+    ],
+    [
+     "Changed",
+     "n",
+     "n"
+    ],
+    [
+     "Share, 95% interval",
+     "share",
+     "pct"
+    ],
+    [
+     "Outcome",
+     "outcome",
+     "oc"
+    ]
+   ]
+  }
+ ],
+ "files": [
+  "~/bones-forge/weights_index/PLAN.md",
+  "~/bones-forge/weights_index/weights_tick.py",
+  "~/bones-forge/weights_index/history.jsonl"
+ ]
+}

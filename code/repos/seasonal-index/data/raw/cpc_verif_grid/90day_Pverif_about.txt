@@ -1,0 +1,24 @@
+                 How to read precipitation forecasts
+
+File Names:
+
+prec01_forecast_above.bi - Archive of lead 01 seasonal above normal
+precipitation probabilities
+prec01_forecast_below.bi - Archive of lead 01 seasonal below normal
+precipitation probabilities
+prec01_forecast.bi - Archive of lead 01 seasonal precipitation
+categories
+
+Beginning of Record: Seasonal forecast issued in December 1994
+
+Type of File: Gridded Binary File
+
+Grid Resolution: 2x2
+
+Grid Domain: 130W to 60W longitude, 20N to 56N latitude
+
+Grid Values: 1-below normal;2-near normal;3-above normal;0-equal
+chances  (categorical files)
+
+Note: Probability files are expressed in total probabilities... not
+probability anomalies.

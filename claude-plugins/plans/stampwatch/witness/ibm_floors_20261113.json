@@ -1,0 +1,242 @@
+[
+ {
+  "backend": "ibm_boston",
+  "field": "T1",
+  "identical": 0,
+  "moves": 13432,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.00027459596154829843
+  ],
+  "others": [
+   0,
+   72163
+  ],
+  "others_interval": [
+   0.0,
+   5.1117403270697914e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_fez",
+  "field": "T1",
+  "identical": 0,
+  "moves": 17377,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.00021226264226589277
+  ],
+  "others": [
+   0,
+   68218
+  ],
+  "others_interval": [
+   0.0,
+   5.4073407599322846e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_kingston",
+  "field": "T1",
+  "identical": 0,
+  "moves": 17676,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.0002086724687364273
+  ],
+  "others": [
+   0,
+   67919
+  ],
+  "others_interval": [
+   0.0,
+   5.4311448596127505e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_marrakesh",
+  "field": "T1",
+  "identical": 0,
+  "moves": 16384,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.0002251259892016937
+  ],
+  "others": [
+   0,
+   69211
+  ],
+  "others_interval": [
+   0.0,
+   5.329761376376182e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_phoenix",
+  "field": "T1",
+  "identical": 0,
+  "moves": 4280,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.0008615164044166259
+  ],
+  "others": [
+   0,
+   81315
+  ],
+  "others_interval": [
+   0.0,
+   4.536427204045881e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_pittsburgh",
+  "field": "T1",
+  "identical": 0,
+  "moves": 16446,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.00022427737880706487
+  ],
+  "others": [
+   0,
+   69149
+  ],
+  "others_interval": [
+   0.0,
+   5.3345399948158696e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_boston",
+  "field": "T2",
+  "identical": 0,
+  "moves": 13482,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.00027357772091788203
+  ],
+  "others": [
+   0,
+   73916
+  ],
+  "others_interval": [
+   0.0,
+   4.990512750072453e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_fez",
+  "field": "T2",
+  "identical": 0,
+  "moves": 17863,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.00020648819266209933
+  ],
+  "others": [
+   0,
+   69535
+  ],
+  "others_interval": [
+   0.0,
+   5.3049278900880906e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_kingston",
+  "field": "T2",
+  "identical": 0,
+  "moves": 17981,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.00020513325650018066
+  ],
+  "others": [
+   0,
+   69417
+  ],
+  "others_interval": [
+   0.0,
+   5.313945350293378e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_marrakesh",
+  "field": "T2",
+  "identical": 0,
+  "moves": 17151,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.0002150593420957433
+  ],
+  "others": [
+   0,
+   70247
+  ],
+  "others_interval": [
+   0.0,
+   5.251160335974324e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_phoenix",
+  "field": "T2",
+  "identical": 0,
+  "moves": 4331,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.0008513758761477938
+  ],
+  "others": [
+   0,
+   83067
+  ],
+  "others_interval": [
+   0.0,
+   4.44074969437377e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ },
+ {
+  "backend": "ibm_pittsburgh",
+  "field": "T2",
+  "identical": 0,
+  "moves": 16590,
+  "share": 0.0,
+  "interval": [
+   0.0,
+   0.00022233088383820425
+  ],
+  "others": [
+   0,
+   70808
+  ],
+  "others_interval": [
+   0.0,
+   5.209557349462543e-05
+  ],
+  "leave_one_backend_out": "CANNOT_TELL"
+ }
+]

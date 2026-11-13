@@ -1,0 +1,20 @@
+                 How to read temperature and precipitation observations
+				 
+File Names:
+
+temp_seas_verif.bi - Archive of seasonal temperature categories
+prec_seas_verif.bi - Archive of seasonal precipitation categories
+
+Number of Records:  169
+
+Beginning of Record: Valid Period JFM 1995
+
+End of Record: Valid Period JFM 2009
+
+Type of File: Gridded Binary File
+
+Grid Resolution: 2x2
+
+Grid Domain: 130W to 60W longitude, 20N to 56N latitude
+
+Grid Values: -1-below normal;0-near normal;1-above normal

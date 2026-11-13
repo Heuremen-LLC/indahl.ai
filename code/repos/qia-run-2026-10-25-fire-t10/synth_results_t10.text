@@ -1,0 +1,119 @@
+{
+ "SAME": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (a bound)",
+  "dT": [
+   5.1,
+   6.7,
+   -10.2,
+   11.5
+  ],
+  "THEIRS": [
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT"
+  ],
+  "RANK": 0,
+  "DRIFT": [
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT"
+  ]
+ },
+ "THEIRS_EVERYWHERE": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (a bound)",
+  "dT": [
+   22.0,
+   17.6,
+   14.4,
+   45.0
+  ],
+  "THEIRS": [
+   "ABOVE",
+   "CONSISTENT",
+   "CONSISTENT",
+   "ABOVE"
+  ],
+  "RANK": 2,
+  "DRIFT": [
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT"
+  ]
+ },
+ "QUBIT_DEPENDENT": {
+  "KG": true,
+  "LAYOUT": "ABOVE (T10 margin depends on the qubit)",
+  "dT": [
+   73.7,
+   -10.6,
+   -24.3,
+   38.5
+  ],
+  "THEIRS": [
+   "ABOVE",
+   "CONSISTENT",
+   "BELOW",
+   "ABOVE"
+  ],
+  "RANK": 2,
+  "DRIFT": [
+   "BELOW",
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT"
+  ]
+ },
+ "BROKEN_COPIES": {
+  "KG": false,
+  "LAYOUT": "CONSISTENT (a bound)",
+  "dT": [
+   -11.1,
+   8.5,
+   5.3,
+   -2.8
+  ],
+  "THEIRS": [
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT"
+  ],
+  "RANK": 0,
+  "DRIFT": [
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT"
+  ]
+ },
+ "DRIFT": {
+  "KG": true,
+  "LAYOUT": "CONSISTENT (a bound)",
+  "dT": [
+   -6.8,
+   6.5,
+   -1.4,
+   7.4
+  ],
+  "THEIRS": [
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT",
+   "CONSISTENT"
+  ],
+  "RANK": 0,
+  "DRIFT": [
+   "BELOW",
+   "BELOW",
+   "BELOW",
+   "BELOW"
+  ]
+ },
+ "FLOOR_layout_above_100": 6,
+ "FLOOR_kg_fail_100": 6
+}

@@ -1,0 +1,1945 @@
+{
+ "updated": "2026-11-10 03:50 UTC",
+ "plan_commit": "16ea552 2026-11-09T22:38:40-05:00",
+ "gate_ok": true,
+ "known_good": {
+  "planted_rows": "passed",
+  "planted_detail": {
+   "ABOVE": [
+    "ABOVE",
+    "ABOVE"
+   ],
+   "BELOW": [
+    "BELOW",
+    "BELOW"
+   ],
+   "CONSISTENT": [
+    "CONSISTENT",
+    "CONSISTENT"
+   ],
+   "agency": [
+    "agency",
+    "agency"
+   ],
+   "band": [
+    "band",
+    "band"
+   ],
+   "NOTHING": [
+    "NOTHING_RETURNED",
+    "NOTHING_RETURNED"
+   ],
+   "scope": [
+    "scope",
+    "scope"
+   ],
+   "scope before nothing": [
+    "scope",
+    "scope"
+   ],
+   "unseen blocks BELOW": [
+    "unseen",
+    "unseen"
+   ],
+   "unseen blocks CONSISTENT": [
+    "unseen",
+    "unseen"
+   ],
+   "small unseen keeps CONSISTENT": [
+    "CONSISTENT",
+    "CONSISTENT"
+   ],
+   "small unseen keeps BELOW": [
+    "BELOW",
+    "BELOW"
+   ],
+   "cycle": [
+    "cycle",
+    "cycle"
+   ],
+   "cycle before nothing": [
+    "cycle",
+    "cycle"
+   ],
+   "name only nothing": [
+    "name",
+    "name"
+   ],
+   "no spend blocks ABOVE": [
+    "no Google spen",
+    "no Google spen"
+   ],
+   "estimates block ABOVE": [
+    "estimates",
+    "estimates"
+   ],
+   "name cannot decide BELOW": [
+    "name",
+    "name"
+   ],
+   "name with id spend keeps BELOW": [
+    "BELOW",
+    "BELOW"
+   ],
+   "class GOOGLE LLC / DIGITAL ADVERTISING": [
+    "AD",
+    "AD"
+   ],
+   "class GOOGLE / SOFTWARE": [
+    "NONAD",
+    "NONAD"
+   ],
+   "class GOOGLE GSUITE / ADVERTISING": [
+    "UNCLEAR",
+    "UNCLEAR"
+   ],
+   "class GOOGLE ADS / ": [
+    "AD",
+    "AD"
+   ],
+   "class GOOGLE WORKSPACE / ": [
+    "NONAD",
+    "NONAD"
+   ],
+   "class GOOGLE / DIGITAL SERVICES": [
+    "UNCLEAR",
+    "UNCLEAR"
+   ],
+   "class FB/YOUTUBE/GOOGLE ADS / ADS": [
+    "MIXED",
+    "MIXED"
+   ],
+   "class YOUTUBE TV / ": [
+    "NONAD",
+    "NONAD"
+   ],
+   "class GOOGLE *ADS2583901760 / ": [
+    "AD",
+    "AD"
+   ],
+   "class GOOGLE ADS / SOFTWARE": [
+    "UNCLEAR",
+    "UNCLEAR"
+   ],
+   "payee WOODSPRING SUITES": [
+    false,
+    false
+   ],
+   "payee TOP OF GOOGLE-YAHOO-BING": [
+    false,
+    false
+   ],
+   "payee G SUITE": [
+    true,
+    true
+   ],
+   "payee GOOGLE, INC.": [
+    true,
+    true
+   ],
+   "payee URBAN HANG SUITE": [
+    false,
+    false
+   ],
+   "purpose flag ADS - NOT CANDIDATE SPECIFIC": [
+    [
+     "not candidate-specific"
+    ],
+    [
+     "not candidate-specific"
+    ]
+   ],
+   "purpose flag DIGITAL ADVERTISING - NO EXPRESS ADVOC": [
+    [
+     "no express advocacy"
+    ],
+    [
+     "no express advocacy"
+    ]
+   ],
+   "purpose flag AD BUY (NON IE)": [
+    [
+     "not an independent expenditure"
+    ],
+    [
+     "not an independent expenditure"
+    ]
+   ],
+   "purpose flag NONFEDERAL DIGITAL ADVERTISING": [
+    [
+     "nonfederal"
+    ],
+    [
+     "nonfederal"
+    ]
+   ],
+   "purpose flag DIGITAL ADVERTISING": [
+    [],
+    []
+   ],
+   "stem CASA IN ACTION PAC": [
+    "CASA IN ACTION",
+    "CASA IN ACTION"
+   ],
+   "stem CASA IN ACTION, INC.": [
+    "CASA IN ACTION",
+    "CASA IN ACTION"
+   ],
+   "stem THE PAC": [
+    null,
+    null
+   ]
+  },
+  "google_internal": {
+   "us_advertisers": 18039,
+   "outside_band": 0,
+   "weekly_sum_equal_total": 6634,
+   "weekly_sum_above_total": 8804,
+   "weekly_sum_below_total": 2601,
+   "ok": true
+  },
+  "parser": {
+   "oppexp_lines": 8268689,
+   "dropped": {
+    "bad_date": 15
+   },
+   "dropped_share": 0.0
+  }
+ },
+ "google": {
+  "report_data_updated_pt": "2026-11-09 14:04:54",
+  "us_advertisers": 18039,
+  "us_stated_spend": 3402881600.0,
+  "advertisers_in_more_than_one_region_with_us": 1
+ },
+ "match_gate": {
+  "counts": {
+   "unmatched_no_id_no_name": 9603,
+   "unmatched_state_registration": 3981,
+   "unmatched_name_geo": 143,
+   "unmatched_ambiguous_name": 73,
+   "unmatched_fec_id_not_in_cm": 21,
+   "unmatched_name_collision": 29,
+   "unmatched_name_first_activity": 38,
+   "A_id": 3239,
+   "B_name": 800,
+   "A_candidate_id": 112
+  },
+  "stated_spend": {
+   "unmatched_no_id_no_name": 959245800.0,
+   "unmatched_state_registration": 342114300.0,
+   "unmatched_name_geo": 31156900.0,
+   "unmatched_ambiguous_name": 27470400.0,
+   "unmatched_fec_id_not_in_cm": 1980100.0,
+   "unmatched_name_collision": 7798400.0,
+   "unmatched_name_first_activity": 5172500.0,
+   "A_id": 1758755000.0,
+   "B_name": 256423200.0,
+   "A_candidate_id": 12765000.0
+  },
+  "groups": 3550,
+  "unmatched_public_id_forms": {
+   "empty": 1250,
+   "EIN": 8636,
+   "state registration": 3981,
+   "FEC ID not in cm": 21
+  },
+  "unmatched_public_id_forms_spend": {
+   "empty": 46268700.0,
+   "EIN": 984575300.0,
+   "state registration": 342114300.0,
+   "FEC ID not in cm": 1980100.0
+  },
+  "name_validity_drops": {
+   "geo": 143,
+   "collision": 29,
+   "first activity": 38
+  },
+  "name_validity_drop_list": [
+   {
+    "advertiser": "AR01011533517684736001",
+    "name": "RSLC PAC",
+    "committee": "C00779595",
+    "test": "geo",
+    "detail": "84% of spend in PA, committee home state DC"
+   },
+   {
+    "advertiser": "AR05587190739093159937",
+    "name": "Saving Arizona PAC",
+    "committee": "C00777185",
+    "test": "geo",
+    "detail": "83% of spend in AZ, committee home state VA"
+   },
+   {
+    "advertiser": "AR17345806731539644417",
+    "name": "ARTICLE ONE PAC",
+    "committee": "C00931774",
+    "test": "geo",
+    "detail": "93% of spend in NH, committee home state DC"
+   },
+   {
+    "advertiser": "AR12215088415200247809",
+    "name": "PALMETTO LEADERSHIP FUND",
+    "committee": "C00956425",
+    "test": "geo",
+    "detail": "95% of spend in SC, committee home state MD"
+   },
+   {
+    "advertiser": "AR11510831623968915457",
+    "name": "SENATE MAJORITY FUND",
+    "committee": "C00810762",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR08371595737619759105",
+    "name": "GRANITE STATE LEADERSHIP FUND",
+    "committee": "C00818161",
+    "test": "geo",
+    "detail": "100% of spend in NH, committee home state MA"
+   },
+   {
+    "advertiser": "AR12830267653432016897",
+    "name": "STATE DEMOCRACY DEFENDERS PAC",
+    "committee": "C00812495",
+    "test": "geo",
+    "detail": "73% of spend in NV, committee home state DC"
+   },
+   {
+    "advertiser": "AR05836694743756570625",
+    "name": "A SAFER STRONGER OREGON PAC",
+    "committee": "C00876656",
+    "test": "geo",
+    "detail": "97% of spend in OR, committee home state VA"
+   },
+   {
+    "advertiser": "AR13670244225805975553",
+    "name": "CLEAR VOICE MINNESOTA",
+    "committee": "C00912477",
+    "test": "geo",
+    "detail": "77% of spend in MN, committee home state AZ"
+   },
+   {
+    "advertiser": "AR07351711094114615297",
+    "name": "Freedom Project USA",
+    "committee": "C90023995",
+    "test": "geo",
+    "detail": "83% of spend in AR, committee home state MD"
+   },
+   {
+    "advertiser": "AR05114956997543854081",
+    "name": "AMERICAN CENTER PAC",
+    "committee": "C00962860",
+    "test": "geo",
+    "detail": "93% of spend in NH, committee home state DC"
+   },
+   {
+    "advertiser": "AR12700475116136431617",
+    "name": "ACLU Voter Education Fund",
+    "committee": "C00872655",
+    "test": "geo",
+    "detail": "100% of spend in WI, committee home state NY"
+   },
+   {
+    "advertiser": "AR10863598134274031617",
+    "name": "Evangelicals for a better future",
+    "committee": "C00887968",
+    "test": "geo",
+    "detail": "73% of spend in TX, committee home state DC"
+   },
+   {
+    "advertiser": "AR00793108935757266945",
+    "name": "HOUSE REPUBLICAN CAMPAIGN COMMITTEE",
+    "committee": "C00487678",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR06761441120011419649",
+    "name": "Let America Work",
+    "committee": "C00582700",
+    "test": "geo",
+    "detail": "93% of spend in CO, committee home state VA"
+   },
+   {
+    "advertiser": "AR10327922743600742401",
+    "name": "FRECKA PAC",
+    "committee": "C00886804",
+    "test": "geo",
+    "detail": "99% of spend in OH, committee home state AL"
+   },
+   {
+    "advertiser": "AR12237221240669995009",
+    "name": "CALIFORNIA BLUE PAC",
+    "committee": "C00948216",
+    "test": "geo",
+    "detail": "91% of spend in CA, committee home state TX"
+   },
+   {
+    "advertiser": "AR14597007106386165761",
+    "name": "Mills for Maine",
+    "committee": "C00923144",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR14884872169799548929",
+    "name": "AMERICAN HOSPITAL ASSOCIATION PAC",
+    "committee": "C00106146",
+    "test": "geo",
+    "detail": "100% of spend in MA, committee home state DC"
+   },
+   {
+    "advertiser": "AR06098349296799711233",
+    "name": "E PLURIBUS PAC",
+    "committee": "C00756973",
+    "test": "geo",
+    "detail": "79% of spend in PA, committee home state AZ"
+   },
+   {
+    "advertiser": "AR02671669545889955841",
+    "name": "Fields of Change PAC",
+    "committee": "C00895482",
+    "test": "geo",
+    "detail": "89% of spend in GA, committee home state DC"
+   },
+   {
+    "advertiser": "AR14789727657666805761",
+    "name": "Independent PAC",
+    "committee": "C00884924",
+    "test": "geo",
+    "detail": "99% of spend in MT, committee home state VA"
+   },
+   {
+    "advertiser": "AR04111465995099439105",
+    "name": "REAL RESULTS PAC",
+    "committee": "C00899187",
+    "test": "geo",
+    "detail": "93% of spend in PA, committee home state GA"
+   },
+   {
+    "advertiser": "AR17887928696325537793",
+    "name": "PLANNED PARENTHOOD VOTES",
+    "committee": "C00489799",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR00625529654148595713",
+    "name": "FLIP THE 40TH",
+    "committee": "C00865717",
+    "test": "geo",
+    "detail": "91% of spend in CA, committee home state VA"
+   },
+   {
+    "advertiser": "AR02315325609808494593",
+    "name": "STAND FOR AMERICA INC",
+    "committee": "C90020819",
+    "test": "geo",
+    "detail": "79% of spend in SC, committee home state NY"
+   },
+   {
+    "advertiser": "AR10177612967143538689",
+    "name": "CONSERVATIVE LEADERSHIP FOR FLORIDA",
+    "committee": "C00916924",
+    "test": "geo",
+    "detail": "90% of spend in FL, committee home state MA"
+   },
+   {
+    "advertiser": "AR16724419624887648257",
+    "name": "Ohio Democratic Party",
+    "committee": "C00016899",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR13096344064284950529",
+    "name": "ANIMAL WELLNESS ACTION",
+    "committee": "C90018227",
+    "test": "geo",
+    "detail": "75% of spend in CO, committee home state CA"
+   },
+   {
+    "advertiser": "AR16300689936854548481",
+    "name": "American Leadership PAC",
+    "committee": "C00824292",
+    "test": "geo",
+    "detail": "98% of spend in IN, committee home state GA"
+   },
+   {
+    "advertiser": "AR07584537173831974913",
+    "name": "AMERICANS FOR ALL",
+    "committee": "C00754705",
+    "test": "geo",
+    "detail": "87% of spend in MT, committee home state CA"
+   },
+   {
+    "advertiser": "AR01258278856263991297",
+    "name": "WARREN COUNTY REPUBLICAN COMMITTEE",
+    "committee": "C00963199",
+    "test": "geo",
+    "detail": "69% of spend in NJ, committee home state OH"
+   },
+   {
+    "advertiser": "AR18012191308608700417",
+    "name": "AFSCME Working Families Fund",
+    "committee": "C90011172",
+    "test": "geo",
+    "detail": "88% of spend in PA, committee home state DC"
+   },
+   {
+    "advertiser": "AR16388313858172780545",
+    "name": "PROTECT OUR FUTURE PAC",
+    "committee": "C00801514",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR17217933589358837761",
+    "name": "REPRODUCTIVE FREEDOM FOR ALL",
+    "committee": "C90022245",
+    "test": "geo",
+    "detail": "99% of spend in MI, committee home state DC"
+   },
+   {
+    "advertiser": "AR00679758357904490497",
+    "name": "BlueGreen Alliance, Inc.",
+    "committee": "C90020025",
+    "test": "geo",
+    "detail": "81% of spend in AZ, committee home state MN"
+   },
+   {
+    "advertiser": "AR11030969444976295937",
+    "name": "PA VICTORY",
+    "committee": "C00890913",
+    "test": "geo",
+    "detail": "94% of spend in PA, committee home state AL"
+   },
+   {
+    "advertiser": "AR07350940362233348097",
+    "name": "ADAMS FOR SENATE",
+    "committee": "C00635490",
+    "test": "geo",
+    "detail": "76% of spend in VA, committee home state CA"
+   },
+   {
+    "advertiser": "AR12389183050527801345",
+    "name": "FRIENDS OF NICK",
+    "committee": "C00910216",
+    "test": "geo",
+    "detail": "100% of spend in PA, committee home state CA"
+   },
+   {
+    "advertiser": "AR14109118784568557569",
+    "name": "CONSERVATIVE LOUISIANA",
+    "committee": "C00632679",
+    "test": "geo",
+    "detail": "100% of spend in LA, committee home state AL"
+   },
+   {
+    "advertiser": "AR05328233760519356417",
+    "name": "UNITE PAC",
+    "committee": "C00824912",
+    "test": "geo",
+    "detail": "70% of spend in PA, committee home state DC"
+   },
+   {
+    "advertiser": "AR16037840034283388929",
+    "name": "NRA VICTORY FUND INC",
+    "committee": "C00741710",
+    "test": "geo",
+    "detail": "97% of spend in TX, committee home state VA"
+   },
+   {
+    "advertiser": "AR08696926281792487425",
+    "name": "FAMILY FRIENDLY ACTION FUND",
+    "committee": "C90018524",
+    "test": "geo",
+    "detail": "71% of spend in VA, committee home state NH"
+   },
+   {
+    "advertiser": "AR13881053169292673025",
+    "name": "DMFI PAC",
+    "committee": "C00710848",
+    "test": "geo",
+    "detail": "81% of spend in AL, committee home state DC"
+   },
+   {
+    "advertiser": "AR15591937311296716801",
+    "name": "LEGISLATIVE MAJORITY PAC",
+    "committee": "C00627075",
+    "test": "geo",
+    "detail": "100% of spend in VA, committee home state DC"
+   },
+   {
+    "advertiser": "AR12061115203438247937",
+    "name": "1820 PAC",
+    "committee": "C00698126",
+    "test": "geo",
+    "detail": "95% of spend in ME, committee home state WI"
+   },
+   {
+    "advertiser": "AR06884558539394646017",
+    "name": "MICHIGAN SENATE VICTORY 2024",
+    "committee": "C00891150",
+    "test": "geo",
+    "detail": "100% of spend in MI, committee home state DC"
+   },
+   {
+    "advertiser": "AR17759090474993319937",
+    "name": "NO KINGS PAC",
+    "committee": "C00898064",
+    "test": "geo",
+    "detail": "94% of spend in NH, committee home state TX"
+   },
+   {
+    "advertiser": "AR08138479927998545921",
+    "name": "ELECT EDUCATORS EVERYWHERE",
+    "committee": "C00755348",
+    "test": "geo",
+    "detail": "100% of spend in MA, committee home state DC"
+   },
+   {
+    "advertiser": "AR15236299175780941825",
+    "name": "American Leadership Action",
+    "committee": "C00794891",
+    "test": "geo",
+    "detail": "89% of spend in PA, committee home state VA"
+   },
+   {
+    "advertiser": "AR08440221103032369153",
+    "name": "NEVADA STATE DEMOCRATIC PARTY",
+    "committee": "C00208991",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR03730126809644138497",
+    "name": "Service Employees International Union",
+    "committee": "C70003124",
+    "test": "geo",
+    "detail": "100% of spend in NV, committee home state DC"
+   },
+   {
+    "advertiser": "AR16866948114605408257",
+    "name": "END CITIZENS UNITED ACTION FUND",
+    "committee": "C90023607",
+    "test": "geo",
+    "detail": "95% of spend in ME, committee home state DC"
+   },
+   {
+    "advertiser": "AR12556511162449002497",
+    "name": "ALASKA DEMOCRATIC PARTY",
+    "committee": "C00191247",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR04055581564271067137",
+    "name": "Fight for Working People",
+    "committee": "C00960245",
+    "test": "geo",
+    "detail": "85% of spend in IA, committee home state OR"
+   },
+   {
+    "advertiser": "AR04669463052364546049",
+    "name": "AMERICA LEADS ACTION INC",
+    "committee": "C00864926",
+    "test": "geo",
+    "detail": "99% of spend in TX, committee home state DE"
+   },
+   {
+    "advertiser": "AR15407289726574526465",
+    "name": "JUSTICE 2020",
+    "committee": "C00715938",
+    "test": "geo",
+    "detail": "75% of spend in WV, committee home state DC"
+   },
+   {
+    "advertiser": "AR04950650077287809025",
+    "name": "UltraViolet Action",
+    "committee": "C90016247",
+    "test": "geo",
+    "detail": "68% of spend in FL, committee home state DC"
+   },
+   {
+    "advertiser": "AR06442904157539008513",
+    "name": "Outrider PAC",
+    "committee": "C00816876",
+    "test": "geo",
+    "detail": "82% of spend in WY, committee home state WI"
+   },
+   {
+    "advertiser": "AR12724040527947759617",
+    "name": "COMMITTEE FOR AMERICAN LEADERSHIP",
+    "committee": "C00957175",
+    "test": "geo",
+    "detail": "98% of spend in AR, committee home state AL"
+   },
+   {
+    "advertiser": "AR15432810181729189889",
+    "name": "OHIO CONSERVATIVE PROJECT INC",
+    "committee": "C00870584",
+    "test": "geo",
+    "detail": "100% of spend in OH, committee home state VA"
+   },
+   {
+    "advertiser": "AR17363728496194486273",
+    "name": "PANHANDLE PATRIOTS PAC",
+    "committee": "C00939124",
+    "test": "geo",
+    "detail": "98% of spend in FL, committee home state AL"
+   },
+   {
+    "advertiser": "AR05532687337818947585",
+    "name": "Cut the Bull PAC",
+    "committee": "C00691626",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR11547572981832089601",
+    "name": "Alliance for a Better Minnesota State PAC",
+    "committee": "C90022484",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR17609767304063614977",
+    "name": "All For Our Country",
+    "committee": "C00787432",
+    "test": "geo",
+    "detail": "99% of spend in NV, committee home state VA"
+   },
+   {
+    "advertiser": "AR05369053232779755521",
+    "name": "Put New Hampshire First",
+    "committee": "C30003412",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR16341182098247254017",
+    "name": "LIBERTY ACTION PAC",
+    "committee": "C00956797",
+    "test": "geo",
+    "detail": "94% of spend in OH, committee home state WA"
+   },
+   {
+    "advertiser": "AR09021172990968070145",
+    "name": "MAIN STREET FUND",
+    "committee": "C00957928",
+    "test": "geo",
+    "detail": "95% of spend in KS, committee home state MA"
+   },
+   {
+    "advertiser": "AR18252804103904165889",
+    "name": "ASSOCIATED BUILDERS & CONTRACTORS, INC.",
+    "committee": "C90013798",
+    "test": "geo",
+    "detail": "92% of spend in WV, committee home state DC"
+   },
+   {
+    "advertiser": "AR05594413035839029249",
+    "name": "FEARLESS PAC",
+    "committee": "C00540955",
+    "test": "geo",
+    "detail": "93% of spend in MO, committee home state CO"
+   },
+   {
+    "advertiser": "AR16275323370378100737",
+    "name": "Lead the Way PAC",
+    "committee": "C00782144",
+    "test": "geo",
+    "detail": "87% of spend in WA, committee home state VA"
+   },
+   {
+    "advertiser": "AR11493661650389565441",
+    "name": "NEW AMERICAN JOBS FUND",
+    "committee": "C00625533",
+    "test": "geo",
+    "detail": "90% of spend in NC, committee home state DC"
+   },
+   {
+    "advertiser": "AR11650594859122688001",
+    "name": "VOTEPROCHOICE PAC",
+    "committee": "C00571117",
+    "test": "geo",
+    "detail": "100% of spend in VA, committee home state NY"
+   },
+   {
+    "advertiser": "AR18121688587832393729",
+    "name": "Public Land Warriors Fund",
+    "committee": "C90023722",
+    "test": "geo",
+    "detail": "100% of spend in MN, committee home state MT"
+   },
+   {
+    "advertiser": "AR03399364437512028161",
+    "name": "CHOOSE FREEDOM PAC",
+    "committee": "C00961656",
+    "test": "geo",
+    "detail": "96% of spend in TN, committee home state AL"
+   },
+   {
+    "advertiser": "AR13813518210177171457",
+    "name": "IOWA DEMOCRATIC PARTY",
+    "committee": "C00035600",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR15375490458729840641",
+    "name": "New Yorkers for Lower Costs",
+    "committee": "C00948851",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR05726974950867206145",
+    "name": "Justice & Public Safety PAC",
+    "committee": "C00651505",
+    "test": "geo",
+    "detail": "100% of spend in ME, committee home state DC"
+   },
+   {
+    "advertiser": "AR05538923278145421313",
+    "name": "HOOSIER VALUES",
+    "committee": "C00812347",
+    "test": "geo",
+    "detail": "96% of spend in IN, committee home state TX"
+   },
+   {
+    "advertiser": "AR11887088566032924673",
+    "name": "Center for Democratic Priorities Inc",
+    "committee": "C90023847",
+    "test": "geo",
+    "detail": "96% of spend in MI, committee home state VA"
+   },
+   {
+    "advertiser": "AR00515068764652306433",
+    "name": "FRIENDS OF KENNEDY",
+    "committee": "C00835751",
+    "test": "geo",
+    "detail": "77% of spend in OH, committee home state LA"
+   },
+   {
+    "advertiser": "AR08533817030346801153",
+    "name": "AMERICA NEXT INC",
+    "committee": "C90015439",
+    "test": "geo",
+    "detail": "72% of spend in MI, committee home state LA"
+   },
+   {
+    "advertiser": "AR16689066572253233153",
+    "name": "FUTURE NOW FUND",
+    "committee": "C00654053",
+    "test": "geo",
+    "detail": "92% of spend in IA, committee home state DC"
+   },
+   {
+    "advertiser": "AR01083482440460140545",
+    "name": "TEAM MARSHALL",
+    "committee": "C00632950",
+    "test": "geo",
+    "detail": "93% of spend in KS, committee home state VA"
+   },
+   {
+    "advertiser": "AR00463380525462061057",
+    "name": "NOAH TAYLOR FOR KANSAS",
+    "committee": "C00943803",
+    "test": "geo",
+    "detail": "100% of spend in CO, committee home state KS"
+   },
+   {
+    "advertiser": "AR04291828259022176257",
+    "name": "BETO FOR TEXAS",
+    "committee": "C00501197",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR00173240838778781697",
+    "name": "Faith in Public Life Action Fund",
+    "committee": "C90018250",
+    "test": "geo",
+    "detail": "87% of spend in WI, committee home state DC"
+   },
+   {
+    "advertiser": "AR08862672101992038401",
+    "name": "LETS GO BRANDON PAC",
+    "committee": "C00793471",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR04183710153926770689",
+    "name": "CHAMPIONS OF FREEDOM PAC",
+    "committee": "C00873638",
+    "test": "geo",
+    "detail": "100% of spend in VA, committee home state NJ"
+   },
+   {
+    "advertiser": "AR04878938004778909697",
+    "name": "MOMSRISING PAC",
+    "committee": "C00878025",
+    "test": "geo",
+    "detail": "71% of spend in NH, committee home state DC"
+   },
+   {
+    "advertiser": "AR07098202255785984001",
+    "name": "STAND FOR US PAC",
+    "committee": "C00873174",
+    "test": "geo",
+    "detail": "74% of spend in WV, committee home state TX"
+   },
+   {
+    "advertiser": "AR14288087151215116289",
+    "name": "Independent Alaska",
+    "committee": "C00757294",
+    "test": "geo",
+    "detail": "74% of spend in AK, committee home state DC"
+   },
+   {
+    "advertiser": "AR02404235289716326401",
+    "name": "Defending Our Values PAC",
+    "committee": "C00928390",
+    "test": "geo",
+    "detail": "81% of spend in TX, committee home state AZ"
+   },
+   {
+    "advertiser": "AR17420398760009138177",
+    "name": "WALKER 4 NC",
+    "committee": "C00543231",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR01288623607664082945",
+    "name": "Elect Liberty",
+    "committee": "C00828665",
+    "test": "geo",
+    "detail": "95% of spend in NH, committee home state UT"
+   },
+   {
+    "advertiser": "AR09378804369266311169",
+    "name": "JOBS & PROSPERITY PAC",
+    "committee": "C00820357",
+    "test": "geo",
+    "detail": "67% of spend in OH, committee home state VA"
+   },
+   {
+    "advertiser": "AR10982201766367461377",
+    "name": "Constitutional Conservatives",
+    "committee": "C00620120",
+    "test": "geo",
+    "detail": "89% of spend in SC, committee home state VA"
+   },
+   {
+    "advertiser": "AR06309306064470802433",
+    "name": "LEADERSHIP FOR OHIO FUND",
+    "committee": "C00845685",
+    "test": "geo",
+    "detail": "88% of spend in OH, committee home state VA"
+   },
+   {
+    "advertiser": "AR14750319992696209409",
+    "name": "LEADERS WE DESERVE",
+    "committee": "C00843110",
+    "test": "geo",
+    "detail": "93% of spend in CA, committee home state DC"
+   },
+   {
+    "advertiser": "AR17797940541539745793",
+    "name": "STOP SOCIALISM IN OC",
+    "committee": "C00802009",
+    "test": "geo",
+    "detail": "72% of spend in CA, committee home state VA"
+   },
+   {
+    "advertiser": "AR08795305574314016769",
+    "name": "Fire House PAC",
+    "committee": "C00948059",
+    "test": "geo",
+    "detail": "94% of spend in WA, committee home state DC"
+   },
+   {
+    "advertiser": "AR18250844653924384769",
+    "name": "HOUSE VICTORY FUND",
+    "committee": "C00750083",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR13526668726140665857",
+    "name": "WinSenate",
+    "committee": "C00865444",
+    "test": "geo",
+    "detail": "90% of spend in KS, committee home state DC"
+   },
+   {
+    "advertiser": "AR05386780555675172865",
+    "name": "COLORADO DEMOCRATIC PARTY",
+    "committee": "C00161786",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR02202304765184966657",
+    "name": "Common Sense New York",
+    "committee": "C00877191",
+    "test": "geo",
+    "detail": "97% of spend in NY, committee home state DC"
+   },
+   {
+    "advertiser": "AR12403388775118405633",
+    "name": "ESAFUND",
+    "committee": "C00489856",
+    "test": "geo",
+    "detail": "79% of spend in GA, committee home state FL"
+   },
+   {
+    "advertiser": "AR08862136330591666177",
+    "name": "Restoration PAC",
+    "committee": "C00571588",
+    "test": "geo",
+    "detail": "84% of spend in WI, committee home state FL"
+   },
+   {
+    "advertiser": "AR16411592443478147073",
+    "name": "CAREER EDUCATION PAC",
+    "committee": "C00763870",
+    "test": "geo",
+    "detail": "83% of spend in GA, committee home state VA"
+   },
+   {
+    "advertiser": "AR02342973594193100801",
+    "name": "CFF",
+    "committee": "C00927426",
+    "test": "geo",
+    "detail": "98% of spend in CA, committee home state AL"
+   },
+   {
+    "advertiser": "AR10461563210816290817",
+    "name": "Planned Parenthood Advocates of Wisconsin Political Fund",
+    "committee": "C90016510",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR05756858036232650753",
+    "name": "PROGRESSIVE PROMISE",
+    "committee": "C00897926",
+    "test": "geo",
+    "detail": "70% of spend in MI, committee home state DC"
+   },
+   {
+    "advertiser": "AR09171492972267569153",
+    "name": "CASA IN ACTION PAC",
+    "committee": "C00685693",
+    "test": "geo",
+    "detail": "85% of spend in PA, committee home state MD"
+   },
+   {
+    "advertiser": "AR05097705754593329153",
+    "name": "OHIO PROSPERITY FUND",
+    "committee": "C00708545",
+    "test": "geo",
+    "detail": "90% of spend in OH, committee home state DC"
+   },
+   {
+    "advertiser": "AR08943529293745487873",
+    "name": "BOLD America",
+    "committee": "C00854299",
+    "test": "geo",
+    "detail": "91% of spend in TX, committee home state DC"
+   },
+   {
+    "advertiser": "AR07101891426534817793",
+    "name": "Susan B. Anthony List, Inc.",
+    "committee": "C90011313",
+    "test": "geo",
+    "detail": "94% of spend in MI, committee home state VA"
+   },
+   {
+    "advertiser": "AR16608498689496842241",
+    "name": "United For Better",
+    "committee": "C00824276",
+    "test": "geo",
+    "detail": "90% of spend in CO, committee home state NY"
+   },
+   {
+    "advertiser": "AR14656891886933901313",
+    "name": "Victory 2024",
+    "committee": "C00766972",
+    "test": "geo",
+    "detail": "93% of spend in NJ, committee home state VA"
+   },
+   {
+    "advertiser": "AR12474452316155543553",
+    "name": "True Values PAC",
+    "committee": "C00963231",
+    "test": "geo",
+    "detail": "73% of spend in TX, committee home state WI"
+   },
+   {
+    "advertiser": "AR03080937546461478913",
+    "name": "GUN OWNERS ACTION FUND",
+    "committee": "C00764522",
+    "test": "geo",
+    "detail": "89% of spend in GA, committee home state FL"
+   },
+   {
+    "advertiser": "AR14126400066520350721",
+    "name": "For Our Freedom",
+    "committee": "C00888081",
+    "test": "geo",
+    "detail": "97% of spend in CA, committee home state DC"
+   },
+   {
+    "advertiser": "AR02117275536689463297",
+    "name": "CALIFORNIA CONSERVATIVES PAC",
+    "committee": "C00947275",
+    "test": "geo",
+    "detail": "96% of spend in CA, committee home state MA"
+   },
+   {
+    "advertiser": "AR05376388701913874433",
+    "name": "FORWARD PAC",
+    "committee": "C00788836",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR17010571193918423041",
+    "name": "TERM LIMITS SUPERPAC",
+    "committee": "C00688580",
+    "test": "geo",
+    "detail": "86% of spend in TX, committee home state PA"
+   },
+   {
+    "advertiser": "AR04962653505857781761",
+    "name": "314 ACTION VICTORY FUND",
+    "committee": "C00689828",
+    "test": "geo",
+    "detail": "91% of spend in ME, committee home state DC"
+   },
+   {
+    "advertiser": "AR05904172158900240385",
+    "name": "Reproductive Freedom for All",
+    "committee": "C90022245",
+    "test": "geo",
+    "detail": "75% of spend in AZ, committee home state DC"
+   },
+   {
+    "advertiser": "AR14430073109253980161",
+    "name": "No Nonsense PAC",
+    "committee": "C00760397",
+    "test": "geo",
+    "detail": "80% of spend in ME, committee home state WI"
+   },
+   {
+    "advertiser": "AR00399401412720590849",
+    "name": "Florida Trust",
+    "committee": "C00814327",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR03435575332554407937",
+    "name": "MICHIGANWORKS",
+    "committee": "C00750943",
+    "test": "geo",
+    "detail": "89% of spend in MI, committee home state DC"
+   },
+   {
+    "advertiser": "AR13143108939514118145",
+    "name": "America's Credit Unions",
+    "committee": "C90023565",
+    "test": "geo",
+    "detail": "72% of spend in NH, committee home state DC"
+   },
+   {
+    "advertiser": "AR07570893411352313857",
+    "name": "AMERICAN DEMOCRACY COMMITTEE",
+    "committee": "C00951269",
+    "test": "geo",
+    "detail": "87% of spend in NH, committee home state DC"
+   },
+   {
+    "advertiser": "AR12443213266665078785",
+    "name": "THE PUBLIC TRUST PAC",
+    "committee": "C00960021",
+    "test": "geo",
+    "detail": "92% of spend in VA, committee home state DC"
+   },
+   {
+    "advertiser": "AR02225350314154786817",
+    "name": "Progressive Champions PAC",
+    "committee": "C00950352",
+    "test": "geo",
+    "detail": "76% of spend in NY, committee home state CO"
+   },
+   {
+    "advertiser": "AR10011797156156932097",
+    "name": "PROTECT OUR KIDS PAC",
+    "committee": "C00799528",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR06863961233452695553",
+    "name": "ONE COUNTRY FUND",
+    "committee": "C00746560",
+    "test": "geo",
+    "detail": "71% of spend in MS, committee home state DC"
+   },
+   {
+    "advertiser": "AR09562596602661568513",
+    "name": "FRESH START SC PAC",
+    "committee": "C00948869",
+    "test": "geo",
+    "detail": "97% of spend in SC, committee home state TX"
+   },
+   {
+    "advertiser": "AR13242711971297492993",
+    "name": "PENNSYLVANIA CONSERVATIVE FUND",
+    "committee": "C00802793",
+    "test": "geo",
+    "detail": "97% of spend in PA, committee home state GA"
+   },
+   {
+    "advertiser": "AR05767334724187979777",
+    "name": "FRIENDS OF JEVIN D. HODGE",
+    "committee": "C00778464",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR01274233508717395969",
+    "name": "Cooper for North Carolina",
+    "committee": "C00913566",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR10984754892496699393",
+    "name": "NEWSOM FOR CALIFORNIA GOVERNOR 2022",
+    "committee": "C00836353",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR08810268853826224129",
+    "name": "FRIENDS OF THE EARTH-ACTION-INC",
+    "committee": "C90018383",
+    "test": "geo",
+    "detail": "69% of spend in MT, committee home state DC"
+   },
+   {
+    "advertiser": "AR08880093906683822081",
+    "name": "AMERICAN CENTER",
+    "committee": "C90019639",
+    "test": "geo",
+    "detail": "67% of spend in IA, committee home state DC"
+   },
+   {
+    "advertiser": "AR16093159213055868929",
+    "name": "State + Local Election Alliance",
+    "committee": "C00812495",
+    "test": "geo",
+    "detail": "91% of spend in MS, committee home state DC"
+   },
+   {
+    "advertiser": "AR07234124621946028033",
+    "name": "LATINO VICTORY PROJECT",
+    "committee": "C90015181",
+    "test": "geo",
+    "detail": "75% of spend in AZ, committee home state DC"
+   },
+   {
+    "advertiser": "AR08205680712888614913",
+    "name": "Stronger Together PA",
+    "committee": "C00936153",
+    "test": "geo",
+    "detail": "95% of spend in PA, committee home state DC"
+   },
+   {
+    "advertiser": "AR16908617054087544833",
+    "name": "SENATE LEADERSHIP FUND",
+    "committee": "C00571703",
+    "test": "geo",
+    "detail": "78% of spend in KS, committee home state DC"
+   },
+   {
+    "advertiser": "AR08206036473619677185",
+    "name": "DSCC",
+    "committee": "C00042366",
+    "test": "geo",
+    "detail": "86% of spend in MI, committee home state DC"
+   },
+   {
+    "advertiser": "AR05404853382919749633",
+    "name": "NRDC ACTION VOTES",
+    "committee": "C00740225",
+    "test": "geo",
+    "detail": "88% of spend in CA, committee home state NY"
+   },
+   {
+    "advertiser": "AR06186245699433136129",
+    "name": "MAKE THE ROAD ACTION INC",
+    "committee": "C90016577",
+    "test": "geo",
+    "detail": "99% of spend in PA, committee home state NY"
+   },
+   {
+    "advertiser": "AR14543973451510579201",
+    "name": "PEOPLE OVER MONOPOLIES",
+    "committee": "C00907188",
+    "test": "geo",
+    "detail": "100% of spend in VA, committee home state DC"
+   },
+   {
+    "advertiser": "AR10250668153235308545",
+    "name": "MI FAMILIA VOTA",
+    "committee": "C90017906",
+    "test": "geo",
+    "detail": "86% of spend in TX, committee home state AZ"
+   },
+   {
+    "advertiser": "AR13581851050075226113",
+    "name": "Advance Progress",
+    "committee": "C00922096",
+    "test": "geo",
+    "detail": "98% of spend in MA, committee home state AZ"
+   },
+   {
+    "advertiser": "AR06790107930768179201",
+    "name": "PROJECT DEMOCRACY",
+    "committee": "C00807321",
+    "test": "geo",
+    "detail": "83% of spend in WI, committee home state DC"
+   },
+   {
+    "advertiser": "AR03075253466482868225",
+    "name": "MAGA INC",
+    "committee": "C00892471",
+    "test": "geo",
+    "detail": "98% of spend in TX, committee home state MA"
+   },
+   {
+    "advertiser": "AR16488275665754259457",
+    "name": "Middle Ground",
+    "committee": "C00952028",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR16897981203234160641",
+    "name": "UNITED WE DREAM ACTION",
+    "committee": "C90018045",
+    "test": "geo",
+    "detail": "89% of spend in AZ, committee home state DC"
+   },
+   {
+    "advertiser": "AR11641835866027982849",
+    "name": "UNITED FUTURES",
+    "committee": "C00899096",
+    "test": "geo",
+    "detail": "81% of spend in KS, committee home state CA"
+   },
+   {
+    "advertiser": "AR13828754623839600641",
+    "name": "Democrats Serve",
+    "committee": "C00774463",
+    "test": "geo",
+    "detail": "85% of spend in NH, committee home state DC"
+   },
+   {
+    "advertiser": "AR16855255152041394177",
+    "name": "Think Big",
+    "committee": "C00923417",
+    "test": "geo",
+    "detail": "84% of spend in IL, committee home state NV"
+   },
+   {
+    "advertiser": "AR02655128080644833281",
+    "name": "CONSERVATIVES FOR A BETTER TOMORROW INC",
+    "committee": "C90023490",
+    "test": "geo",
+    "detail": "84% of spend in TX, committee home state MA"
+   },
+   {
+    "advertiser": "AR04544607425356890113",
+    "name": "PRESERVE PROTECT AND DEFEND PAC",
+    "committee": "C00676213",
+    "test": "geo",
+    "detail": "79% of spend in KY, committee home state DC"
+   },
+   {
+    "advertiser": "AR17383165104404561921",
+    "name": "Organizing Empowerment PAC",
+    "committee": "C00763409",
+    "test": "geo",
+    "detail": "87% of spend in NV, committee home state WI"
+   },
+   {
+    "advertiser": "AR06634878191963996161",
+    "name": "RE-COOP ARIZONA PAC",
+    "committee": "C00822486",
+    "test": "geo",
+    "detail": "85% of spend in AZ, committee home state NV"
+   },
+   {
+    "advertiser": "AR07296681421907689473",
+    "name": "CAMPAIGN FOR DEMOCRACY GROUP",
+    "committee": "C00836338",
+    "test": "geo",
+    "detail": "83% of spend in TN, committee home state CA"
+   },
+   {
+    "advertiser": "AR06674810049103134721",
+    "name": "RGA RIGHT DIRECTION PAC",
+    "committee": "C00490730",
+    "test": "geo",
+    "detail": "68% of spend in MT, committee home state DC"
+   },
+   {
+    "advertiser": "AR06394829824090701825",
+    "name": "REPUBLICAN LEADERSHIP FUND INC",
+    "committee": "C00838169",
+    "test": "geo",
+    "detail": "97% of spend in NV, committee home state DC"
+   },
+   {
+    "advertiser": "AR06079574311121715201",
+    "name": "JOBS FOR OUR FUTURE PAC",
+    "committee": "C00751032",
+    "test": "geo",
+    "detail": "69% of spend in PA, committee home state MA"
+   },
+   {
+    "advertiser": "AR03418707518514266113",
+    "name": "KANSAS DEMOCRATIC PARTY",
+    "committee": "C00019380",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR07298558597493948417",
+    "name": "Accountability Virginia PAC",
+    "committee": "C00783746",
+    "test": "geo",
+    "detail": "98% of spend in VA, committee home state DC"
+   },
+   {
+    "advertiser": "AR17177204380131131393",
+    "name": "PROTECTING OHIO ACTION FUND",
+    "committee": "C00718668",
+    "test": "geo",
+    "detail": "85% of spend in OH, committee home state DC"
+   },
+   {
+    "advertiser": "AR10058507158883926017",
+    "name": "MUELLER FOR SENATE 2024",
+    "committee": "C90021254",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR00955238522342604801",
+    "name": "COALITION TO GROW SAN FRANCISCO - GROW SF PAC",
+    "committee": "C90021387",
+    "test": "collision",
+    "detail": "a Google advertiser of the same name carries a state registration"
+   },
+   {
+    "advertiser": "AR11779248955206926337",
+    "name": "VETERANS FOR RESPONSIBLE LEADERSHIP",
+    "committee": "C00648808",
+    "test": "geo",
+    "detail": "82% of spend in PA, committee home state NC"
+   },
+   {
+    "advertiser": "AR03405196719632154625",
+    "name": "WOMEN'S MARCH, INC",
+    "committee": "C90019720",
+    "test": "first activity",
+    "detail": "spend from 2021-02-28, committee first itemized row 2024-07-23"
+   },
+   {
+    "advertiser": "AR09273387034095910913",
+    "name": "ECONOMIC SECURITY PROJECT ACTION INC.",
+    "committee": "C90021536",
+    "test": "first activity",
+    "detail": "spend from 2021-02-28, committee first itemized row 2022-08-03"
+   },
+   {
+    "advertiser": "AR16632268825219301377",
+    "name": "COMMONWEALTH COMMUNICATIONS",
+    "committee": "C90019670",
+    "test": "first activity",
+    "detail": "spend from 2020-03-22, committee first itemized row 2020-09-15"
+   },
+   {
+    "advertiser": "AR13425705890531508225",
+    "name": "UNITING MISSOURI PAC",
+    "committee": "C00753392",
+    "test": "first activity",
+    "detail": "spend from 2020-03-29, committee first itemized row 2020-08-21"
+   },
+   {
+    "advertiser": "AR02333340008317976577",
+    "name": "FLIC VOTES, INC",
+    "committee": "C90020447",
+    "test": "first activity",
+    "detail": "spend from 2020-05-31, committee first itemized row 2020-10-22"
+   },
+   {
+    "advertiser": "AR01284001295140651009",
+    "name": "AN AMERICA UNITED",
+    "committee": "C90021783",
+    "test": "first activity",
+    "detail": "spend from 2020-03-22, committee first in the 2022 committee file"
+   },
+   {
+    "advertiser": "AR05575931740024733697",
+    "name": "CASE ACTION FUND",
+    "committee": "C90016627",
+    "test": "first activity",
+    "detail": "spend from 2020-03-15, committee first itemized row 2020-06-23"
+   },
+   {
+    "advertiser": "AR01387584086570172417",
+    "name": "AMERICAN ENCORE",
+    "committee": "C90022369",
+    "test": "first activity",
+    "detail": "spend from 2022-10-23, committee first itemized row 2024-07-19"
+   },
+   {
+    "advertiser": "AR17840463329110261761",
+    "name": "Energy Engaged Inc",
+    "committee": "C90023938",
+    "test": "first activity",
+    "detail": "spend from 2022-06-12, committee first in the 2026 committee file"
+   },
+   {
+    "advertiser": "AR00329238174138105857",
+    "name": "Coloradans for Responsible Energy Development",
+    "committee": "C30003503",
+    "test": "first activity",
+    "detail": "spend from 2019-11-03, committee first in the 2024 committee file"
+   },
+   {
+    "advertiser": "AR16555707631554002945",
+    "name": "HERITAGE ACTION FOR AMERICA",
+    "committee": "C90013525",
+    "test": "first activity",
+    "detail": "spend from 2021-04-11, committee first itemized row 2025-09-06"
+   },
+   {
+    "advertiser": "AR04370361839108751361",
+    "name": "UNITED FOR DEMOCRACY",
+    "committee": "C90022310",
+    "test": "first activity",
+    "detail": "spend from 2023-06-11, committee first itemized row 2024-06-27"
+   },
+   {
+    "advertiser": "AR01382319899774287873",
+    "name": "Democratic Majority for Israel",
+    "committee": "C90022864",
+    "test": "first activity",
+    "detail": "spend from 2022-01-16, committee first in the 2024 committee file"
+   },
+   {
+    "advertiser": "AR00658585663783829505",
+    "name": "Allred for Texas",
+    "committee": "C00929844",
+    "test": "first activity",
+    "detail": "spend from 2025-06-29, committee first itemized row 2025-12-15"
+   },
+   {
+    "advertiser": "AR00442965266003918849",
+    "name": "Progress North Carolina Action",
+    "committee": "C90022427",
+    "test": "first activity",
+    "detail": "spend from 2022-10-23, committee first itemized row 2024-08-16"
+   },
+   {
+    "advertiser": "AR06727571179713855489",
+    "name": "Faith Voters for Good",
+    "committee": "C90022393",
+    "test": "first activity",
+    "detail": "spend from 2024-04-07, committee first itemized row 2024-10-26"
+   },
+   {
+    "advertiser": "AR03386337896192540673",
+    "name": "NATIONAL SECURITY ACTION",
+    "committee": "C90019563",
+    "test": "first activity",
+    "detail": "spend from 2019-11-10, committee first itemized row 2020-08-19"
+   },
+   {
+    "advertiser": "AR04931916993310752769",
+    "name": "SAM FOR SENATE",
+    "committee": "C00788000",
+    "test": "first activity",
+    "detail": "spend from 2020-07-05, committee first in the 2022 committee file"
+   },
+   {
+    "advertiser": "AR14362147351064215553",
+    "name": "Institute For Middle East Understanding Policy Project",
+    "committee": "C90023482",
+    "test": "first activity",
+    "detail": "spend from 2026-01-25, committee first itemized row 2026-06-18"
+   },
+   {
+    "advertiser": "AR15992757678132690945",
+    "name": "MOVE TEXAS ACTION FUND",
+    "committee": "C90024050",
+    "test": "first activity",
+    "detail": "spend from 2021-07-11, committee first in the 2026 committee file"
+   },
+   {
+    "advertiser": "AR14619159791784689665",
+    "name": "COMMITTEE TO ELECT DAN FOREST",
+    "committee": "C00827956",
+    "test": "first activity",
+    "detail": "spend from 2019-10-27, committee first in the 2022 committee file"
+   },
+   {
+    "advertiser": "AR01620568367112912897",
+    "name": "Citizens Alliance of Pennsylvania PAC",
+    "committee": "C90022922",
+    "test": "first activity",
+    "detail": "spend from 2024-04-14, committee first itemized row 2024-10-25"
+   },
+   {
+    "advertiser": "AR08083457067609751553",
+    "name": "NIDA FOR NC",
+    "committee": "C00930271",
+    "test": "first activity",
+    "detail": "spend from 2022-04-10, committee first in the 2026 committee file"
+   },
+   {
+    "advertiser": "AR10454925184241500161",
+    "name": "The Alaska Center",
+    "committee": "C90023615",
+    "test": "first activity",
+    "detail": "spend from 2022-10-09, committee first in the 2026 committee file"
+   },
+   {
+    "advertiser": "AR00107717367466819585",
+    "name": "RISE INC",
+    "committee": "C90021890",
+    "test": "first activity",
+    "detail": "spend from 2020-02-23, committee first in the 2022 committee file"
+   },
+   {
+    "advertiser": "AR01792063628103385089",
+    "name": "TRUTH AND LIBERTY COALITION, INC.",
+    "committee": "C90019845",
+    "test": "first activity",
+    "detail": "spend from 2020-03-29, committee first itemized row 2020-10-05"
+   },
+   {
+    "advertiser": "AR15999513077573746689",
+    "name": "FREEDOM PA",
+    "committee": "C00902189",
+    "test": "first activity",
+    "detail": "spend from 2021-05-30, committee first in the 2026 committee file"
+   },
+   {
+    "advertiser": "AR05244917167413002241",
+    "name": "CULINARY WORKERS UNION, LOCAL 226",
+    "committee": "C70004627",
+    "test": "first activity",
+    "detail": "spend from 2020-10-04, committee first in the 2024 committee file"
+   },
+   {
+    "advertiser": "AR15614455309433569281",
+    "name": "MARCH ON",
+    "committee": "C90020421",
+    "test": "first activity",
+    "detail": "spend from 2020-04-19, committee first itemized row 2020-10-24"
+   },
+   {
+    "advertiser": "AR03711441494293348353",
+    "name": "March for Our Lives Action Fund",
+    "committee": "C90022740",
+    "test": "first activity",
+    "detail": "spend from 2020-10-25, committee first in the 2024 committee file"
+   },
+   {
+    "advertiser": "AR18271566101601058817",
+    "name": "Earthjustice Action",
+    "committee": "C90022781",
+    "test": "first activity",
+    "detail": "spend from 2022-09-11, committee first in the 2024 committee file"
+   },
+   {
+    "advertiser": "AR01887483645208297473",
+    "name": "SARAH FOR IOWA",
+    "committee": "C00904086",
+    "test": "first activity",
+    "detail": "spend from 2020-05-03, committee first in the 2026 committee file"
+   },
+   {
+    "advertiser": "AR07197306598916620289",
+    "name": "STAND UP AMERICA, INC.",
+    "committee": "C90022120",
+    "test": "first activity",
+    "detail": "spend from 2020-05-03, committee first in the 2024 committee file"
+   },
+   {
+    "advertiser": "AR09372145168502751233",
+    "name": "Ohio Citizen Action",
+    "committee": "C90021726",
+    "test": "first activity",
+    "detail": "spend from 2022-04-10, committee first itemized row 2022-10-07"
+   },
+   {
+    "advertiser": "AR12901036533942845441",
+    "name": "NATIONAL WOMEN'S LAW CENTER ACTION FUND",
+    "committee": "C90021155",
+    "test": "first activity",
+    "detail": "spend from 2021-04-11, committee first itemized row 2024-07-22"
+   },
+   {
+    "advertiser": "AR01413845097165881345",
+    "name": "CARE IN ACTION INC",
+    "committee": "C70006580",
+    "test": "first activity",
+    "detail": "spend from 2021-09-26, committee first in the 2024 committee file"
+   },
+   {
+    "advertiser": "AR05649128325029822465",
+    "name": "AMERICAN PETROLEUM INSTITUTE",
+    "committee": "C90023920",
+    "test": "first activity",
+    "detail": "spend from 2023-10-01, committee first in the 2026 committee file"
+   },
+   {
+    "advertiser": "AR17260573200039804929",
+    "name": "SOLUTIONS FOR ARIZONA",
+    "committee": "C90021817",
+    "test": "first activity",
+    "detail": "spend from 2022-07-17, committee first itemized row 2022-10-26"
+   }
+  ],
+  "groups_with_more_than_one_committee": 11,
+  "largest_group_members": 36
+ },
+ "fec": {
+  "sched_b_rows_kept_google": 63713,
+  "sched_b_rows_kept_pool": 373542,
+  "sched_b_rows_kept_card_or_reimbursement": 564700,
+  "amendment_duplicates_dropped": 719,
+  "memo_rows_with_google_parent_dropped": 1,
+  "ie_rows_total": 267180,
+  "ie_rows_matched": 152689,
+  "ie_google_rows_raw": 5011,
+  "ie_google_rows_mixed": 0,
+  "ie_google_rows_estimates": 629,
+  "ie_transaction_id_drops": 354,
+  "ie_google_rows_dedup": 4656,
+  "cut_2026": {
+   "last_complete_month": "2026-06",
+   "window_end": "2026-06-30",
+   "month_rows": {
+    "2025-01": 57268,
+    "2025-02": 55949,
+    "2025-03": 65311,
+    "2025-04": 66560,
+    "2025-05": 66894,
+    "2025-06": 71484,
+    "2025-07": 78760,
+    "2025-08": 76962,
+    "2025-09": 84418,
+    "2025-10": 100211,
+    "2025-11": 83069,
+    "2025-12": 98515,
+    "2026-01": 90377,
+    "2026-02": 100415,
+    "2026-03": 115572,
+    "2026-04": 114361,
+    "2026-05": 114852,
+    "2026-06": 121024,
+    "2026-07": 72393,
+    "2026-08": 53551,
+    "2026-09": 44829,
+    "2026-10": 6157,
+    "2026-11": 13,
+    "2026-12": 15
+   }
+  }
+ },
+ "rulers": {
+  "primary": {
+   "P": 31,
+   "Q": 92
+  },
+  "second": {
+   "P": 92,
+   "Q": 183
+  },
+  "size_that_matters": "at least 1000 dollars and at least 10 percent of the Google bound",
+  "band_factor": 2.0,
+  "unitemized_cap": 400.0,
+  "unseen_coverage": 0.9,
+  "geo_share": 0.6667,
+  "first_activity_days": 90
+ },
+ "outcomes": {
+  "cycle_rows": {
+   "all": {
+    "ABOVE": 28,
+    "BELOW": 26,
+    "CONSISTENT": 26,
+    "CANNOT_TELL": 6056,
+    "NOTHING_RETURNED": 24
+   },
+   "2020": {
+    "ABOVE": 12,
+    "BELOW": 3,
+    "CONSISTENT": 11,
+    "CANNOT_TELL": 1091,
+    "NOTHING_RETURNED": 6
+   },
+   "2022": {
+    "ABOVE": 8,
+    "BELOW": 8,
+    "CONSISTENT": 7,
+    "CANNOT_TELL": 1627,
+    "NOTHING_RETURNED": 8
+   },
+   "2024": {
+    "ABOVE": 8,
+    "BELOW": 10,
+    "CONSISTENT": 8,
+    "CANNOT_TELL": 1624,
+    "NOTHING_RETURNED": 7
+   },
+   "2026": {
+    "ABOVE": 0,
+    "BELOW": 5,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 1714,
+    "NOTHING_RETURNED": 3
+   }
+  },
+  "cycle_rows_by_tier": {
+   "candidate id": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 1,
+    "CANNOT_TELL": 68,
+    "NOTHING_RETURNED": 1
+   },
+   "candidate id+id": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 1,
+    "CANNOT_TELL": 103,
+    "NOTHING_RETURNED": 0
+   },
+   "candidate id+id+name": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 34,
+    "NOTHING_RETURNED": 0
+   },
+   "candidate id+name": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 12,
+    "NOTHING_RETURNED": 0
+   },
+   "id": {
+    "ABOVE": 27,
+    "BELOW": 26,
+    "CONSISTENT": 21,
+    "CANNOT_TELL": 4551,
+    "NOTHING_RETURNED": 23
+   },
+   "id+name": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 1,
+    "CANNOT_TELL": 731,
+    "NOTHING_RETURNED": 0
+   },
+   "name": {
+    "ABOVE": 1,
+    "BELOW": 0,
+    "CONSISTENT": 2,
+    "CANNOT_TELL": 557,
+    "NOTHING_RETURNED": 0
+   }
+  },
+  "quarter_rows": {
+   "ABOVE": 30,
+   "BELOW": 0,
+   "CONSISTENT": 0,
+   "CANNOT_TELL": 19221,
+   "NOTHING_RETURNED": 36
+  },
+  "timing_sensitive_cycle_rows": 29,
+  "unseen_rule_sensitive_cycle_rows": 21,
+  "unseen_full_cycle_rows": {
+   "CANNOT_TELL": 6077,
+   "BELOW": 24,
+   "ABOVE": 28,
+   "CONSISTENT": 7,
+   "NOTHING_RETURNED": 24
+  },
+  "second_ruler_cycle_rows": {
+   "CANNOT_TELL": 6083,
+   "BELOW": 12,
+   "ABOVE": 27,
+   "CONSISTENT": 14,
+   "NOTHING_RETURNED": 24
+  },
+  "cannot_tell_reasons_cycle": {
+   "band": 2322,
+   "cycle": 134,
+   "agency": 2245,
+   "purpose": 911,
+   "near": 33,
+   "scope": 315,
+   "unseen": 69,
+   "name": 6,
+   "no Google spend": 19,
+   "estimates": 2
+  },
+  "addendum7_moves_cycle": {
+   "BELOW to CANNOT_TELL (cycle)": 17,
+   "BELOW to CANNOT_TELL (name)": 3,
+   "ABOVE to CANNOT_TELL (no Google spend)": 19,
+   "ABOVE to CANNOT_TELL (estimates)": 2,
+   "BELOW to NOTHING_RETURNED (the FEC files hold no row and no summary for the committee in this cycle)": 1
+  },
+  "flags_cycle": {
+   "purpose text": 5,
+   "a related advertiser states spend in the window": 1,
+   "card payments or reimbursements could close the gap": 8
+  },
+  "decided_cycle_rows": {
+   "n": 80,
+   "timing_sensitive": 28,
+   "unseen_rule_sensitive": 21,
+   "name_only": 3,
+   "flagged": 13,
+   "robust_id_no_flags": 31,
+   "above_with_google_zero_in_window": 0
+  }
+ },
+ "totals": {
+  "cycle_rows": 6160,
+  "quarter_rows": 19287,
+  "committees_matched": 3604
+ },
+ "runtime_s": 53.4
+}

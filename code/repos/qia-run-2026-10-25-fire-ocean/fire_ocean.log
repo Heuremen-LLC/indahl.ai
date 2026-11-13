@@ -1,0 +1,75 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:24:11,525: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2026-10-24 22:24:15,556: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (pay-as-you-go, open), the available account instances are: open-instance, Quaker Instance, Darkwave Disco. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService(). Alternatively, pass instance='auto' or save it to your account for auto-selection without warning.
+qiskit_runtime_service._discover_account:WARNING:2026-10-24 22:24:15,556: Loading account with the given token. A saved account will not be used.
+remaining 2563 fez active 0
+compiled ('DRAIN', 'basis') {(0, (41, 42, 43, 44, 45))}
+compiled ('DRAIN', 'ghz') {(4, (41, 42, 43, 44, 45))}
+compiled ('ANTI_DRAIN', 'basis') {(0, (29, 30, 31, 32, 33))}
+compiled ('ANTI_DRAIN', 'ghz') {(4, (29, 30, 31, 32, 33))}
+compiled ('CONTROL_1', 'basis') {(0, (70, 71, 72, 73, 74))}
+compiled ('CONTROL_1', 'ghz') {(4, (70, 71, 72, 73, 74))}
+compiled ('CONTROL_2', 'basis') {(0, (130, 131, 132, 133, 134))}
+compiled ('CONTROL_2', 'ghz') {(4, (130, 131, 132, 133, 134))}
+compiled ('ANTI_HEALTHY', 'basis') {(0, (18, 28, 29, 30, 31))}
+compiled ('ANTI_HEALTHY', 'ghz') {(4, (18, 28, 29, 30, 31))}
+SUBMITTED {'job_id': 'dbemgl7gdj9s73fm2vs0', 'submitted': '2026-10-25T02:24:20Z'}
+{
+ "DRAIN": {
+  "basis": 0.12525,
+  "ghz": 0.16025,
+  "delta": 0.03500000000000002,
+  "delta_sem": 0.008684962373468948,
+  "penalty": 1.2794411177644711
+ },
+ "ANTI_DRAIN": {
+  "basis": 0.08824999999999998,
+  "ghz": 0.16800000000000004,
+  "delta": 0.07975000000000004,
+  "delta_sem": 0.0055476829139998254,
+  "penalty": 1.903682719546743
+ },
+ "CONTROL_1": {
+  "basis": 0.15525000000000003,
+  "ghz": 0.6315,
+  "delta": 0.47624999999999995,
+  "delta_sem": 0.008119091258086889,
+  "penalty": 4.067632850241545
+ },
+ "CONTROL_2": {
+  "basis": 0.06599999999999999,
+  "ghz": 0.11099999999999999,
+  "delta": 0.045,
+  "delta_sem": 0.005140872632984733,
+  "penalty": 1.6818181818181819
+ },
+ "ANTI_HEALTHY": {
+  "basis": 0.04625000000000004,
+  "ghz": 0.13225,
+  "delta": 0.08599999999999997,
+  "delta_sem": 0.006335839103296201,
+  "penalty": 2.859459459459457
+ },
+ "DECIDER": {
+  "value": 0.05099999999999995,
+  "sem": 0.010750415274370966,
+  "ci95": [
+   0.027940359236474227,
+   0.07405964076352567
+  ],
+  "outcome": "ABOVE",
+  "direction_predicts": "~+0.30 (their anti-minus-drain delta)",
+  "health_predicts": "~0"
+ },
+ "KNOWN_GOOD": {
+  "control1_ghz_err": 0.6315,
+  "rule": "> 0.70 (two couplers marked failed; theirs 0.8907)",
+  "passed": false
+ },
+ "REPLICATION": {
+  "drain_penalty": 1.2794411177644711,
+  "anti_penalty": 1.903682719546743,
+  "drain_lower": true,
+  "lowest_delta": "DRAIN",
+  "lowest_ghz_err": "CONTROL_2"
+ }
+} usage {'qpu_charge_time_seconds': 13, 'value': 0.203486, 'unit': 'resource_units', 'status': 'complete', 'details': [{'value': 0.203486, 'unit': 'resource_units', 'metric': {'id': 'caffe3ca-729c-5750-8777-df63bbf8bfd9', 'value': 13}}]}

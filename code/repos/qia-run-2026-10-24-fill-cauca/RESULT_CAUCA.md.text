@@ -1,0 +1,18 @@
+# RESULT -- free calibration run for arXiv:2605.30676 (Universidad del Cauca, Colombia), ibm_kingston, 24 Oct 2026 03:52-04:01Z.
+Read under PLAN (0ca6d3d) + ADDENDUM 1 (f399f1e), both committed before any job. Jobs A B B A (their L2 / L0 submitted circuits, unchanged,
+physical qubits 0..N-1, 12 reps x 2048 shots per N), 54 s each, 216 s total. Record saved before every job (22:49 EDT stamp; unchanged across the four).
+KNOWN-GOOD (R3): their released counts reproduce their published L2 and L0 means exactly (max diff 0.0) -> PASS.
+R1 DRIFT (job 4 - job 1, same circuits, ~7 min): CONSISTENT at every N=2..9; |dA| <= 0.0125; share of their published twin gap |dA|/S_gap <= 0.097.
+   Their sentence "does not reproduce ... temporal calibration drift": over minutes, drift is at most ~10 % of their gap on this chip today.
+R2 LEVEL (L2 - L0, ABBA): CONSISTENT at N=4..9 (bounds printed in results_cauca.text), CANNOT_TELL at N=2,3 (their published difference is below our null).
+R4 TWIN - HARDWARE (twin from today's record): ABOVE at every N, both twin variants (ADDENDUM 1, side by side):
+   N             2      3      4      5      6      7      8      9
+   hardware   0.8625 0.6427 0.5735 0.5860 0.6082 0.6138 0.5915 0.5762  (job 1)
+   twin PAPER 0.9722 0.9484 0.9213 0.8942 0.8744 0.8513 0.8130 0.7676
+   twin NOTBK 0.9784 0.9601 0.9479 0.9302 0.9181 0.9006 0.8749 0.8382
+   Their gap changed sign between N=6 and 7 (twin below hardware at small N); today the twin sits above hardware at every N, by 0.11-0.34.
+POST-HOC (defined after the data, not in the plan): at N=2, physical q0 read 0 on 2,658 of 24,576 shots meant to read 1 (0.108), physical q1 on
+   832 (0.034); today's record lists q0 prob_meas0_prep1 = 0.0129. One session, one qubit -- a record-vs-delivered candidate for the BILL track
+   (kingston q0), not a statement about their device or date.
+READING FOR THE AUTHOR: drift between jobs minutes apart is small next to the twin-hardware gap (<= ~10 %). The twin-hardware gap itself is not
+stable across dates: today the record-built twin over-predicts hardware at every N on qubits 0..8, with most of the N=2 gap on one qubit.

@@ -1,0 +1,68 @@
+site_lock: waiting for the lock (free (last: CREDIT desk, released 13:12:47))
+site_lock: held after 0s as "CREDIT desk, retry"
+already /Users/heuremen/bones-forge/indahl-ai/build_site.py
+already /Users/heuremen/bones-forge/ledger/ledger.py
+already /Users/heuremen/bones-forge/ledger/push_public.sh
+already /Users/heuremen/bones-forge/ledger/receipts.py
+code/credit mirrored
+already /Users/heuremen/bones-forge/cloudflare-workers/heuremen-door/worker.js
+already /Users/heuremen/bones-forge/watch/headlines.py
+already /Users/heuremen/bones-forge/ledger/live_headlines.py
+already /Users/heuremen/bones-forge/tools/desk_pack.py
+already /Users/heuremen/bones-forge/indahl-ai/brands.py
+already /Users/heuremen/bones-forge/brands/entities.json
+live 13
+== 1 BUILD
+  faults: up to date
+  guards: up to date
+  paper: up to date
+  paper source: synced to the public repo
+  bill: up to date
+oy school pages 389
+iris study pages 9
+study pages 197
+brands: 317 brand pages and the index
+alerts: sign-up box on 29 desk pages and 245 brand pages, /alerts built
+  forecasters feeds: cone fresh, fedsep fresh, flu fresh, forecast fresh, neo fresh, predictions fresh, quake fresh, revise fresh, seasonal fresh, solar fresh, steo fresh, tornado fresh, water fresh
+forecasters: 60 rows from FEDSEP, FLU, FORECAST, NEO, NOW, REVISE, SEASONAL, STEO, WATER, held CONE, QUAKE, SOLAR, TORNADO
+findable: 40 desk pages with data links or embed, 29 change feeds
+receipts: 2641 of 2641 live snippets on indahl.ai pages carry a receipt link (3204 links on 130 pages, 0 sit only where a link cannot go, 0 not found on their page, 113 share one spot and link to their desk receipts)
+built 1083 pages + style.css + pages.js
+receipts: 3342 rows, 62 index pages, 94 written, 0 stale files removed
+== 2 COPY
+copies: 130 files in 66 sets; drift: 0
+== 3 GATES
+ledger: 3355 rows (3290 live, 29 live headlines read against their feeds); drift: 0
+copies: 130 files in 66 sets; drift: 0
+site gate: 127 pages, 1156 served files read for wording; breaches: 0
+source gate: 197 rows, 0 fail
+receipts gate: 3342 ledger rows, 3103 receipt links on served pages; breaches: 0
+jsonld gate: 1084 pages, 375 datasets; breaches: 0
+corrections gate: ok, every row links to a real file or commit
+BRANDS GATE: every brand-page number traces to a desk row or a ledger row (1698 rows, 317 pages)
+FORECASTERS GATE: every number on /forecasters traces to a desk feed or a ledger row (60 rows from FEDSEP, FLU, FORECAST, NEO, NOW, REVISE, SEASONAL, STEO, WATER)
+email gate: 5089 files read, 0 addresses found
+== 4 COMMIT
+  heuremen.org: nothing to commit
+ledger: 3355 rows (3290 live, 29 live headlines read against their feeds); drift: 0
+  indahl-ai: 0758e84bd CREDIT desk
+== 5 DEPLOY
+
+  heuremen.org pushed
+✨ Success! Uploaded 158 files (4232 already uploaded) (2.94 sec)
+Uploaded heuremen-door (14.74 sec)
+No targets deployed for heuremen-door (1.06 sec)
+  stamps: manifest 5120 files, sha256 094c087dc057646f
+== 5b PUBLIC REPOS
+  public: site pages mirrored (local build = deployed build b4488f47ab49d1d0)
+  public desks: 9 file(s) re-synced from the working folders
+  public indahl.ai: b6f4d1339 CREDIT desk
+  public heuremen.org: current
+== 5c INDEXNOW
+indexnow: sent 1109 urls, status 200
+== 6 VERIFY
+live drift: 0
+== 7 STAMPS
+  stamps: release b6f4d1339734 manifest 094c087dc057646f file 8a49846dab9e8350 changed 926 removed 0 ots pending queued 915
+  stamps: wayback: started in the background (log ledger/stamps/wayback_run.log)
+site_lock: released, command exit 0
