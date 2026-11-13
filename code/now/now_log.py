@@ -68,14 +68,11 @@ def stamp():
     h = head_sha(); dst = os.path.join(ST, 'log_%s.jsonl' % h[:16])
     if os.path.exists(dst + '.ots'): return dst + '.ots'
     shutil.copy2(LOG, dst)
-    try:
-        r = subprocess.run([OTS, 'stamp', dst], capture_output=True, text=True, timeout=120)
-        ok = r.returncode == 0 and os.path.exists(dst + '.ots')
-    except Exception as e: ok = False; r = None
+    ok = None   # 13 Nov 2026 (Wayfinder: 'i just would prefer to not be a part of that chain'): no OpenTimestamps, no Bitcoin, from today. Past .ots files stay as they were. The copy and its sha256 are still kept.
     idx = os.path.join(ST, 'index.json'); d = json.load(open(idx)) if os.path.exists(idx) else []
-    d.append(dict(file=os.path.basename(dst), sha256=h, rows=len(lines()), at=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), ots='pending' if ok else 'failed'))
+    d.append(dict(file=os.path.basename(dst), sha256=h, rows=len(lines()), at=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), ots='none' if ok is None else ('pending' if ok else 'failed')))
     json.dump(d, open(idx, 'w'), indent=1)
-    return dst + '.ots' if ok else None
+    return dst if ok is None else (dst + '.ots' if ok else None)
 
 
 def ots_state(p):
@@ -90,6 +87,7 @@ def ots_state(p):
 
 
 def upgrade():
+    return 0   # no chain since 13 Nov 2026
     idx = os.path.join(ST, 'index.json'); d = json.load(open(idx)) if os.path.exists(idx) else []; n = 0
     for s in d:
         if str(s.get('ots', '')).startswith('bitcoin') or s.get('ots') == 'failed': continue

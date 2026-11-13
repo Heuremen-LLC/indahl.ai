@@ -8,6 +8,7 @@
   function when(t) { return t ? t.replace('T', ' ').replace('Z', ' UTC') : ''; }
   function wts(ts) { return ts && ts.length === 14 ? ts.slice(0, 4) + '-' + ts.slice(4, 6) + '-' + ts.slice(6, 8) + ' ' + ts.slice(8, 10) + ':' + ts.slice(10, 12) + ' UTC' : ''; }
   function otsText(s) {
+    if (s === 'none') return 'Chained to the release before it (no outside stamp since 13 Nov 2026)';
     if (!s || s === 'pending') return 'Sent to the calendars, waiting for a Bitcoin block';
     if (s.indexOf('bitcoin ') === 0) return 'In Bitcoin block ' + s.slice(8);
     if (s === 'failed') return 'Stamp failed at release time';

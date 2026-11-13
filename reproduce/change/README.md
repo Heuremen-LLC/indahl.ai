@@ -10,13 +10,13 @@ This kit recomputes the CHANGE headline number and its outcome label with the de
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `4aaa2bbf381335f18c0ca16e247bd5122f9ecb01bbe3c93ba392fac653a01749`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `3da1b7f2707fa3cff0dab7ba2eb91494b96fadb45ee93ef03eeadccd7041c4a8`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/change/live.json served it at the feed stamp 12 Nov 15:30, read by us at 2026-11-12T16:06:21Z. The feed bytes had sha256 `2c3338bf86fb36a439b7d75b1cba2f8f0b57dda5fedffe3e326731ac95950616`.
+The headline as the live feed https://indahl.ai/change/live.json served it at the feed stamp 13 Nov 18:01, read by us at 2026-11-13T18:11:01Z. The feed bytes had sha256 `026839a7474fd5f6a4c3854a0f81e757f3dac52882264c2c5887924ce12c2e4e`.
 
-- number: 10 of 34
+- number: 10 of 33
 - value: 10
 - outcome: none, this headline carries no outcome label
 
@@ -34,7 +34,7 @@ The input files are what the desk kept from its reads of the sources, with the t
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/rows.json | 90,561 | `a46c6debe08afb0df634c74330106113025061c72a73b2daef968697b810db4c` |
+| data/rows.json | 116,248 | `ef7d26bb554f9294cb1de7fbcdc88304febc4751c7dd060fc36dc53264c8f7e2` |
 
 ## Code
 

@@ -9,16 +9,16 @@
  "desk": "change",
  "inputs": [
   {
-   "bytes": 90561,
+   "bytes": 116248,
    "gzip_added": true,
-   "modified": "2026-11-12T15:30:19Z",
+   "modified": "2026-11-13T18:01:45Z",
    "path": "data/rows.json",
-   "sha256": "a46c6debe08afb0df634c74330106113025061c72a73b2daef968697b810db4c",
+   "sha256": "ef7d26bb554f9294cb1de7fbcdc88304febc4751c7dd060fc36dc53264c8f7e2",
    "stored": "data/rows.json.gz",
-   "stored_sha256": "949f0a59b7eb9de8c3057c45902e4142ba5f93dbc38f072c3b76b9e54bb555f3"
+   "stored_sha256": "769a9e15b72459065e1b5059324c2f7783d670752b54ba2bd608a0a2c6772014"
   }
  ],
- "made": "2026-11-12T16:06:21Z",
+ "made": "2026-11-13T18:11:01Z",
  "mode": "fetch",
  "name": "CHANGE",
  "reference": [

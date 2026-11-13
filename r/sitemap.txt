@@ -1690,9 +1690,10 @@
 /r/live.campus.v20261110T120408Z	2026-11-10
 /r/live.census.headline	2026-11-11
 /r/live.census.v20261111T154947Z	2026-11-11
-/r/live.change.headline	2026-11-10
+/r/live.change.headline	2026-11-13
 /r/live.change.v20261110T120408Z	2026-11-10
-/r/live.change.v20261110T145316Z	2026-11-10
+/r/live.change.v20261110T145316Z	2026-11-13
+/r/live.change.v20261113T181115Z	2026-11-13
 /r/live.cone.headline	2026-11-10
 /r/live.cone.v20261110T162303Z	2026-11-10
 /r/live.credit.headline	2026-11-10
@@ -3924,7 +3925,7 @@
 /r/desk/census-fidelity	2026-11-12
 /r/desk/census-revisions	2026-11-12
 /r/desk/census-vintages	2026-11-12
-/r/desk/change	2026-11-10
+/r/desk/change	2026-11-13
 /r/desk/cone	2026-11-12
 /r/desk/credit	2026-11-12
 /r/desk/darkwave	2026-11-09

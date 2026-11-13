@@ -153,12 +153,9 @@ def release():
     fn = 'release_%s.json' % rid; fp = S + '/' + fn
     with open(fp, 'w') as f: json.dump(doc, f, sort_keys=True, indent=1)
     fsha = sha_file(fp)
-    try:
-        r = subprocess.run([OTS, 'stamp', fp], capture_output=True, text=True, timeout=120); ok = r.returncode == 0 and os.path.exists(fp + '.ots')
-        if not ok: log('release: ots stamp FAILED', (r.stdout + r.stderr).strip()[-200:])
-    except Exception as e: ok = False; log('release: ots stamp FAILED', e)
+    ok = None   # 13 Nov 2026 (Wayfinder: 'i just would prefer to not be a part of that chain'): no OpenTimestamps, no Bitcoin, from today. Past .ots files stay as they were. The release record still chains to the previous release by sha256.
     row = {'id': rid, 'file': fn, 'sha256': fsha, 'commit': commit, 'released_at': doc['released_at'], 'manifest_sha256': msha,
-           'ledger_sha256': lsha, 'files': len(files), 'changed': len(changed), 'removed': len(removed), 'ots': 'pending' if ok else 'failed'}
+           'ledger_sha256': lsha, 'files': len(files), 'changed': len(changed), 'removed': len(removed), 'ots': 'none' if ok is None else ('pending' if ok else 'failed')}
     with open(S + '/releases.jsonl', 'a') as f: f.write(json.dumps(row, sort_keys=True) + '\n')
     st = jload(S + '/ots_status.json', {}); st[rid] = row['ots']; jdump(S + '/ots_status.json', st)
     # queue every changed public URL (pages first, then data files), newest release ahead of older leftovers
@@ -244,6 +241,7 @@ def wayback():
 
 # ---- upgrade (tick-bus rider)
 def upgrade():
+    return   # no chain since 13 Nov 2026; past proofs are left as they are
     lk = lock('upgrade')
     if not lk: return
     st = jload(S + '/ots_status.json', {}); n = 0

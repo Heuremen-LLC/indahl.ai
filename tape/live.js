@@ -17,7 +17,7 @@
     h.appendChild(el('p', d.head.entry, 'hashline')); h.appendChild(el('p', 'Entry ' + d.head.n + ', ' + when(d.head.t) + '. ' + d.count + ' entries in all.', 'bench-note'));
     var a = el('div', null, 'tape-card'); a.appendChild(el('h3', 'Anchor'));
     var an = d.anchor || {};
-    a.appendChild(el('p', an.archive_id ? ('Stamped through entry ' + an.covers_n + (an.attested ? ', attested in Bitcoin.' : ', waiting for its Bitcoin attestation.')) : 'No stamp covers the tape yet.', 'bench-note'));
+    a.appendChild(el('p', an.archive_id ? ('Anchored through entry ' + an.covers_n + ' in our archive hash chain (' + an.archive_id + ').') : 'No archive digest covers the tape yet.', 'bench-note'));
     if (an.archive_id) a.appendChild(el('p', 'Entries ' + (an.covers_n + 1) + ' to ' + d.head.n + ' are chained and not yet stamped.', 'bench-note'));
     top.appendChild(b); top.appendChild(h); top.appendChild(a); box.appendChild(top);
     box.appendChild(el('h3', 'The tape, newest first'));
