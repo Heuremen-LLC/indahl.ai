@@ -5,3 +5,4 @@ base: hand 9/27 pos, 1/30 neg; pipeline 6/23 pos, 0/39 neg
 | time | model | test_hand | test_pipeline | route |
 |---|---|---|---|---|
 | 15:29 | lora_v3 | 0/27 pos, 0/30 neg | 0/23 pos, 0/39 neg | collapse | next lora_v4: data_short, lr 1e-5, 600 iters
+| 16:22 | lora_v4 | 19/27 pos, 5/30 neg | 15/23 pos, 4/39 neg | partial | next lora_v5: data_bal, lr 2e-5, 1200 iters

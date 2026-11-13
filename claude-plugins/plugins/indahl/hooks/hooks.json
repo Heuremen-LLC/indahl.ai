@@ -1,0 +1,17 @@
+{
+  "description": "Readcheck gate: a git commit that stages a reading needs a complete CHECK.json beside it.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/readcheck.py\" hook",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
