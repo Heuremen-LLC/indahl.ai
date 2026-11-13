@@ -750,482 +750,626 @@ import P747 from './qia/study/2607.06971.html';
 import P748 from './qia/study/2609.14424.html';
 import P749 from './sagar.html';
 import P750 from './sagar/study/2610.29436.html';
-import P751 from './sagar/study/2603.29019.html';
-import P752 from './sagar/study/2510.25579.html';
-import P753 from './sagar/study/2510.14291.html';
-import P754 from './sagar/study/2507.21566.html';
-import P755 from './sagar/study/2507.02335.html';
-import P756 from './sagar/study/2507.01294.html';
-import P757 from './sagar/study/2506.21021.html';
-import P758 from './sagar/study/2506.15984.html';
-import P759 from './sagar/study/2506.13870.html';
-import P760 from './sagar/study/2506.06838.html';
-import P761 from './sagar/study/2504.00198.html';
-import P762 from './sagar/study/2412.05369.html';
-import P763 from './sagar/study/2410.16565.html';
-import P764 from './sagar/study/2403.03982.html';
-import P765 from './sagar/study/2311.16085.html';
-import P766 from './sagar/study/2311.06416.html';
-import P767 from './sagar/study/2303.17628.html';
-import P768 from './sagar/study/2208.01766.html';
-import P769 from './sagar/receipts/2603.29019_sigma.html';
-import P770 from './qia.html';
-import P771 from './qia/list.html';
-import P772 from './qia/key.html';
-import P773 from './qia/data.html';
-import P774 from './hermes/datapapers.html';
-import P775 from './standard.html';
-import P776 from './record.html';
-import P777 from './correction.html';
-import P778 from './corrections.html';
-import P779 from './newsletter/1.html';
-import P780 from './newsletter/0.html';
-import P781 from './newsletter.html';
-import P782 from './respond.html';
-import P783 from './now.html';
-import P784 from './hermes.html';
-import P785 from './darkwave.html';
-import P786 from './qia/package.html';
-import P787 from './darkwave/kit.html';
-import P788 from './iris/package.html';
-import P789 from './atlas/data-pack.html';
-import P790 from './oy/data-pack.html';
-import P791 from './hermes/model/data-pack.html';
-import P792 from './week/2026-44.html';
-import P793 from './week/2026-45.html';
-import P794 from './week.html';
-import P795 from './brand/abbott-medical-devices.html';
-import P796 from './brand/abbvie.html';
-import P797 from './brand/acadia-pharmaceuticals-inc.html';
-import P798 from './brand/aclaris-therapeutics-inc.html';
-import P799 from './brand/adguard.html';
-import P800 from './brand/ain-shams-university.html';
-import P801 from './brand/alaska-airlines.html';
-import P802 from './brand/albert-einstein-college-of-medicine.html';
-import P803 from './brand/alcon-research.html';
-import P804 from './brand/aldeyra-therapeutics-inc.html';
-import P805 from './brand/alexion-pharmaceuticals-inc.html';
-import P806 from './brand/aliexpress.html';
-import P807 from './brand/allegiant-air.html';
-import P808 from './brand/allergan.html';
-import P809 from './brand/amazon.html';
-import P810 from './brand/aws.html';
-import P811 from './brand/amd.html';
-import P812 from './brand/american-airlines.html';
-import P813 from './brand/amgen.html';
-import P814 from './brand/anthropic.html';
-import P815 from './brand/apple.html';
-import P816 from './brand/applovin.html';
-import P817 from './brand/arcutis-biotherapeutics-inc.html';
-import P818 from './brand/astellas-pharma-global-development-inc.html';
-import P819 from './brand/astrazeneca.html';
-import P820 from './brand/asus.html';
-import P821 from './brand/atlassian.html';
-import P822 from './brand/automattic.html';
-import P823 from './brand/axsome-therapeutics-inc.html';
-import P824 from './brand/bausch-and-lomb-incorporated.html';
-import P825 from './brand/bayer.html';
-import P826 from './brand/baylor-college-of-medicine.html';
-import P827 from './brand/bbc.html';
-import P828 from './brand/beigene.html';
-import P829 from './brand/beth-israel-deaconess-medical-center.html';
-import P830 from './brand/biogen.html';
-import P831 from './brand/biontech-se.html';
-import P832 from './brand/bluehost.html';
-import P833 from './brand/bluesky.html';
-import P834 from './brand/boehringer-ingelheim.html';
-import P835 from './brand/booking-com.html';
-import P836 from './brand/boston-children-s-hospital.html';
-import P837 from './brand/boston-scientific-corporation.html';
-import P838 from './brand/branch.html';
-import P839 from './brand/brigham-and-women-s-hospital.html';
-import P840 from './brand/bristol-myers-squibb.html';
-import P841 from './brand/broadcom.html';
-import P842 from './brand/btl-industries-ltd.html';
-import P843 from './brand/bureau-of-labor-statistics.html';
-import P844 from './brand/bureau-of-reclamation.html';
-import P845 from './brand/cairo-university.html';
-import P846 from './brand/canonical.html';
-import P847 from './brand/case-comprehensive-cancer-center.html';
-import P848 from './brand/cedars-sinai-medical-center.html';
-import P849 from './brand/celgene.html';
-import P850 from './brand/cdc.html';
-import P851 from './brand/cms.html';
-import P852 from './brand/children-s-hospital-medical-center-cincinnati.html';
-import P853 from './brand/cisco.html';
-import P854 from './brand/cleanbrowsing.html';
-import P855 from './brand/climate-prediction-center.html';
-import P856 from './brand/cloudflare.html';
-import P857 from './brand/colgate-palmolive.html';
-import P858 from './brand/columbia-university.html';
-import P859 from './brand/consumer-financial-protection-bureau.html';
-import P860 from './brand/control-d.html';
-import P861 from './brand/coopervision-inc.html';
-import P862 from './brand/coreweave.html';
-import P863 from './brand/corewell-health-east.html';
-import P864 from './brand/crusoe.html';
-import P865 from './brand/npl-india.html';
-import P866 from './brand/cz-nic.html';
-import P867 from './brand/daiichi-sankyo.html';
-import P868 from './brand/dana-farber-cancer-institute.html';
-import P869 from './brand/datadog.html';
-import P870 from './brand/deep-cogito.html';
-import P871 from './brand/deepseek.html';
-import P872 from './brand/dell.html';
-import P873 from './brand/delta-air-lines.html';
-import P874 from './brand/doe.html';
-import P875 from './brand/hhs.html';
-import P876 from './brand/dol.html';
-import P877 from './brand/va.html';
-import P878 from './brand/digitalocean.html';
-import P879 from './brand/discord.html';
-import P880 from './brand/docker.html';
-import P881 from './brand/dropbox.html';
-import P882 from './brand/duke-university.html';
-import P883 from './brand/ebay.html';
-import P884 from './brand/eisai-inc.html';
-import P885 from './brand/eleutherai.html';
-import P886 from './brand/eli-lilly-and-company.html';
-import P887 from './brand/elsevier.html';
-import P888 from './brand/emd-serono-research-and-development-institute-inc.html';
-import P889 from './brand/emory-university.html';
-import P890 from './brand/epa.html';
-import P891 from './brand/envoy-air.html';
-import P892 from './brand/equifax.html';
-import P893 from './brand/etsy.html';
-import P894 from './brand/experian.html';
-import P895 from './brand/federal-reserve.html';
-import P896 from './brand/fred-hutchinson-cancer-center.html';
-import P897 from './brand/frontier-airlines.html';
-import P898 from './brand/fujitsu.html';
-import P899 from './brand/galderma-r-and-d.html';
-import P900 from './brand/genentech-inc.html';
-import P901 from './brand/gigacomputing.html';
-import P902 from './brand/gilead-sciences.html';
-import P903 from './brand/github.html';
-import P904 from './brand/glaxosmithkline.html';
-import P905 from './brand/google.html';
-import P906 from './brand/gov-uk.html';
-import P907 from './brand/h-lee-moffitt-cancer-center-and-research-institute.html';
-import P908 from './brand/hawaiian-airlines.html';
-import P909 from './brand/henry-ford-health-system.html';
-import P910 from './brand/hkust.html';
-import P911 from './brand/hoffmann-la-roche.html';
-import P912 from './brand/hospital-for-special-surgery-new-york.html';
-import P913 from './brand/hostgator.html';
-import P914 from './brand/hpe.html';
-import P915 from './brand/hugging-face.html';
-import P916 from './brand/ibm.html';
-import P917 from './brand/icahn-school-of-medicine-at-mount-sinai.html';
-import P918 from './brand/iiko.html';
-import P919 from './brand/inclusionai.html';
-import P920 from './brand/incyte-corporation.html';
-import P921 from './brand/indiana-university.html';
-import P922 from './brand/inmobi.html';
-import P923 from './brand/inrim.html';
-import P924 from './brand/intel.html';
-import P925 from './brand/ionis-pharmaceuticals-inc.html';
-import P926 from './brand/ionq.html';
-import P927 from './brand/janssen-research-and-development-llc.html';
-import P928 from './brand/janssen-vaccines-and-prevention-b-v.html';
-import P929 from './brand/jazz-pharmaceuticals.html';
-import P930 from './brand/jetblue.html';
-import P931 from './brand/johns-hopkins-university.html';
-import P932 from './brand/johnson-and-johnson-vision-care-inc.html';
-import P933 from './brand/k-veritas.html';
-import P934 from './brand/kriss.html';
-import P935 from './brand/lambda.html';
-import P936 from './brand/lenovo.html';
-import P937 from './brand/leo-pharma.html';
-import P938 from './brand/library-of-congress.html';
-import P939 from './brand/linear.html';
-import P940 from './brand/linkedin.html';
-import P941 from './brand/loma-linda-university.html';
-import P942 from './brand/m-d-anderson-cancer-center.html';
-import P943 from './brand/mangoboost.html';
-import P944 from './brand/markmonitor.html';
-import P945 from './brand/masimo-corporation.html';
-import P946 from './brand/masonic-cancer-center-university-of-minnesota.html';
-import P947 from './brand/massachusetts-general-hospital.html';
-import P948 from './brand/mayo-clinic.html';
-import P949 from './brand/medical-college-of-wisconsin.html';
-import P950 from './brand/medical-university-of-south-carolina.html';
-import P951 from './brand/medtronic-minimed-inc.html';
-import P952 from './brand/memorial-sloan-kettering-cancer-center.html';
-import P953 from './brand/merck-sharp-and-dohme-llc.html';
-import P954 from './brand/meta.html';
-import P955 from './brand/metas.html';
-import P956 from './brand/microsoft.html';
-import P957 from './brand/milton-s-hershey-medical-center.html';
-import P958 from './brand/mistral-ai.html';
-import P959 from './brand/mlcommons.html';
-import P960 from './brand/modernatx-inc.html';
-import P961 from './brand/mohela.html';
-import P962 from './brand/montefiore-medical-center.html';
-import P963 from './brand/moonshot-ai.html';
-import P964 from './brand/jpl.html';
-import P965 from './brand/national-cancer-institute-nci.html';
-import P966 from './brand/national-heart-lung-and-blood-institute-nhlbi.html';
-import P967 from './brand/national-hurricane-center.html';
-import P968 from './brand/national-institute-of-allergy-and-infectious-diseases-niaid.html';
-import P969 from './brand/npl-uk.html';
-import P970 from './brand/national-weather-service.html';
-import P971 from './brand/nebius.html';
-import P972 from './brand/netlify.html';
-import P973 from './brand/netnod.html';
-import P974 from './brand/neurocrine-biosciences.html';
-import P975 from './brand/new-york-state-psychiatric-institute.html';
-import P976 from './brand/nexus-mods.html';
-import P977 from './brand/ngenix.html';
-import P978 from './brand/nict.html';
-import P979 from './brand/nist.html';
-import P980 from './brand/noaa.html';
-import P981 from './brand/northwell-health.html';
-import P982 from './brand/northwestern-university.html';
-import P983 from './brand/notion.html';
-import P984 from './brand/novartis-pharmaceuticals.html';
-import P985 from './brand/novo-nordisk-a-s.html';
-import P986 from './brand/npm.html';
-import P987 from './brand/ntp-pool-project.html';
-import P988 from './brand/nvidia.html';
-import P989 from './brand/nyu-langone-health.html';
-import P990 from './brand/observatoire-de-paris.html';
-import P991 from './brand/ohio-state-university.html';
-import P992 from './brand/openai.html';
-import P993 from './brand/openbmb.html';
-import P994 from './brand/opencv.html';
-import P995 from './brand/oracle.html';
-import P996 from './brand/oregon-health-and-science-university.html';
-import P997 from './brand/orrick-industries.html';
-import P998 from './brand/otsuka-pharmaceutical-development-and-commercialization-inc.html';
-import P999 from './brand/outbrain.html';
-import P1000 from './brand/pfizer.html';
-import P1001 from './brand/pikabu.html';
-import P1002 from './brand/pinterest.html';
-import P1003 from './brand/aylo.html';
-import P1004 from './brand/psa-airlines.html';
-import P1005 from './brand/ptb.html';
-import P1006 from './brand/pubmatic.html';
-import P1007 from './brand/purpleair.html';
-import P1008 from './brand/python-software-foundation.html';
-import P1009 from './brand/quad9.html';
-import P1010 from './brand/quantinuum.html';
-import P1011 from './brand/qwen.html';
-import P1012 from './brand/red-hat.html';
-import P1013 from './brand/reddit.html';
-import P1014 from './brand/regeneron-pharmaceuticals.html';
-import P1015 from './brand/reka.html';
-import P1016 from './brand/republic-airways.html';
-import P1017 from './brand/rigetti.html';
-import P1018 from './brand/roswell-park-cancer-institute.html';
-import P1019 from './brand/rush-university-medical-center.html';
-import P1020 from './brand/rutgers-the-state-university-of-new-jersey.html';
-import P1021 from './brand/sage-publishing.html';
-import P1022 from './brand/salesforce.html';
-import P1023 from './brand/sanofi.html';
-import P1024 from './brand/sanofi-pasteur-a-sanofi-company.html';
-import P1025 from './brand/scitix.html';
-import P1026 from './brand/seedtag.html';
-import P1027 from './brand/sentry.html';
-import P1028 from './brand/shein.html';
-import P1029 from './brand/shire.html';
-import P1030 from './brand/sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins.html';
-import P1031 from './brand/skywest-airlines.html';
-import P1032 from './brand/snap.html';
-import P1033 from './brand/sonova-ag.html';
-import P1034 from './brand/southwest-airlines.html';
-import P1035 from './brand/space-weather-prediction-center.html';
-import P1036 from './brand/speakleash.html';
-import P1037 from './brand/spirit-airlines.html';
-import P1038 from './brand/st-jude-children-s-research-hospital.html';
-import P1039 from './brand/stanford-university.html';
-import P1040 from './brand/storm-prediction-center.html';
-import P1041 from './brand/stripchat.html';
-import P1042 from './brand/sun-pharmaceutical-industries-limited.html';
-import P1043 from './brand/supermicro.html';
-import P1044 from './brand/supernus-pharmaceuticals-inc.html';
-import P1045 from './brand/takeda.html';
-import P1046 from './brand/teads.html';
-import P1047 from './brand/temu.html';
-import P1048 from './brand/tencent.html';
-import P1049 from './brand/teva-branded-pharmaceutical-products-r-and-d-inc.html';
-import P1050 from './brand/the-cleveland-clinic.html';
-import P1051 from './brand/the-university-of-texas-health-science-center-at-san-antonio.html';
-import P1052 from './brand/the-university-of-texas-health-science-center-houston.html';
-import P1053 from './brand/the-university-of-texas-medical-branch-galveston.html';
-import P1054 from './brand/thomas-jefferson-university.html';
-import P1055 from './brand/tiktok.html';
-import P1056 from './brand/transunion.html';
-import P1057 from './brand/trend-micro.html';
-import P1058 from './brand/tufts-medical-center.html';
-import P1059 from './brand/twilio.html';
-import P1060 from './brand/eia.html';
-import P1061 from './brand/usgs.html';
-import P1062 from './brand/usno.html';
-import P1063 from './brand/us-news.html';
-import P1064 from './brand/ucb-biopharma-srl.html';
-import P1065 from './brand/unc-lineberger-comprehensive-cancer-center.html';
-import P1066 from './brand/unesco-uis.html';
-import P1067 from './brand/united-airlines.html';
-import P1068 from './brand/university-hospitals-cleveland-medical-center.html';
-import P1069 from './brand/university-of-alabama-at-birmingham.html';
-import P1070 from './brand/university-of-arizona.html';
-import P1071 from './brand/university-of-arkansas.html';
-import P1072 from './brand/university-of-california-davis.html';
-import P1073 from './brand/university-of-california-irvine.html';
-import P1074 from './brand/university-of-california-los-angeles.html';
-import P1075 from './brand/university-of-california-san-diego.html';
-import P1076 from './brand/university-of-california-san-francisco.html';
-import P1077 from './brand/university-of-chicago.html';
-import P1078 from './brand/university-of-colorado-denver.html';
-import P1079 from './brand/university-of-florida.html';
-import P1080 from './brand/university-of-iowa.html';
-import P1081 from './brand/university-of-kansas-medical-center.html';
-import P1082 from './brand/university-of-maryland-baltimore.html';
-import P1083 from './brand/university-of-miami.html';
-import P1084 from './brand/university-of-michigan.html';
-import P1085 from './brand/university-of-michigan-rogel-cancer-center.html';
-import P1086 from './brand/university-of-minnesota.html';
-import P1087 from './brand/university-of-missouri-columbia.html';
-import P1088 from './brand/university-of-nebraska.html';
-import P1089 from './brand/university-of-new-mexico.html';
-import P1090 from './brand/university-of-north-carolina-chapel-hill.html';
-import P1091 from './brand/university-of-oklahoma.html';
-import P1092 from './brand/university-of-pennsylvania.html';
-import P1093 from './brand/university-of-rochester.html';
-import P1094 from './brand/university-of-southern-california.html';
-import P1095 from './brand/university-of-texas-southwestern-medical-center.html';
-import P1096 from './brand/university-of-utah.html';
-import P1097 from './brand/university-of-virginia.html';
-import P1098 from './brand/university-of-washington.html';
-import P1099 from './brand/university-of-wisconsin-madison.html';
-import P1100 from './brand/unsplash.html';
-import P1101 from './brand/va-office-of-research-and-development.html';
-import P1102 from './brand/vanderbilt-university-medical-center.html';
-import P1103 from './brand/vercel.html';
-import P1104 from './brand/vertex-pharmaceuticals-incorporated.html';
-import P1105 from './brand/vibehpc.html';
-import P1106 from './brand/viiv-healthcare.html';
-import P1107 from './brand/virginia-commonwealth-university.html';
-import P1108 from './brand/vox-media.html';
-import P1109 from './brand/wake-forest-university-health-sciences.html';
-import P1110 from './brand/washington-university-school-of-medicine.html';
-import P1111 from './brand/weill-medical-college-of-cornell-university.html';
-import P1112 from './brand/wikimedia-foundation.html';
-import P1113 from './brand/wildberries.html';
-import P1114 from './brand/wiwynn.html';
-import P1115 from './brand/world-bank.html';
-import P1116 from './brand/who.html';
-import P1117 from './brand/x.html';
-import P1118 from './brand/xiaomi.html';
-import P1119 from './brand/xnxx.html';
-import P1120 from './brand/xvideos.html';
-import P1121 from './brand/yale-university.html';
-import P1122 from './brand/z-ai.html';
-import P1123 from './brand/zalando.html';
-import P1124 from './brand/zoom.html';
-import P1125 from './brand.html';
-import P1126 from './e/backend/amazon-braket.html';
-import P1127 from './e/backend/ibm-aachen.html';
-import P1128 from './e/backend/ibm-algiers.html';
-import P1129 from './e/backend/ibm-auckland.html';
-import P1130 from './e/backend/ibm-belem.html';
-import P1131 from './e/backend/ibm-boston.html';
-import P1132 from './e/backend/ibm-brisbane.html';
-import P1133 from './e/backend/ibm-cairo.html';
-import P1134 from './e/backend/ibm-cleveland.html';
-import P1135 from './e/backend/ibm-fez.html';
-import P1136 from './e/backend/ibm-guadalupe.html';
-import P1137 from './e/backend/ibm-hanoi.html';
-import P1138 from './e/backend/ibm-kawasaki.html';
-import P1139 from './e/backend/ibm-kingston.html';
-import P1140 from './e/backend/ibm-kyiv.html';
-import P1141 from './e/backend/ibm-kyoto.html';
-import P1142 from './e/backend/ibm-lagos.html';
-import P1143 from './e/backend/ibm-manhattan.html';
-import P1144 from './e/backend/ibm-manila.html';
-import P1145 from './e/backend/ibm-marrakesh.html';
-import P1146 from './e/backend/ibm-miami.html';
-import P1147 from './e/backend/ibm-nairobi.html';
-import P1148 from './e/backend/ibm-osaka.html';
-import P1149 from './e/backend/ibm-oslo.html';
-import P1150 from './e/backend/ibm-peekskill.html';
-import P1151 from './e/backend/ibm-perth.html';
-import P1152 from './e/backend/ibm-phoenix.html';
-import P1153 from './e/backend/ibm-pittsburgh.html';
-import P1154 from './e/backend/ibm-quito.html';
-import P1155 from './e/backend/ibm-sherbrooke.html';
-import P1156 from './e/backend/ibm-strasbourg.html';
-import P1157 from './e/backend/ibm-tokyo.html';
-import P1158 from './e/backend/ibm-torino.html';
-import P1159 from './e/backend/ionq-aria-1.html';
-import P1160 from './e/backend/ionq-aria1.html';
-import P1161 from './e/backend/quantinuum-h1-1.html';
-import P1162 from './e/backend/rigetti-ankaa-3.html';
-import P1163 from './e/backend/rigetti-cepheus-1-108q.html';
-import P1164 from './e/model/deep-cogito-cogito-v2-1-671b.html';
-import P1165 from './e/model/deepseek-r1-1-5b.html';
-import P1166 from './e/model/falcon-family.html';
-import P1167 from './e/model/falcon3-3b.html';
-import P1168 from './e/model/gemma-family.html';
-import P1169 from './e/model/gemma3-4b.html';
-import P1170 from './e/model/gemma3n-e4b.html';
-import P1171 from './e/model/gpt-oss120b.html';
-import P1172 from './e/model/granite-family.html';
-import P1173 from './e/model/granite3-3-2b.html';
-import P1174 from './e/model/granite4-1-3b.html';
-import P1175 from './e/model/granite4-2-30b.html';
-import P1176 from './e/model/granite4-2-3b.html';
-import P1177 from './e/model/granite4-2-8b.html';
-import P1178 from './e/model/inclusionai-ling2-6-1t.html';
-import P1179 from './e/model/inclusionai-ling3-0-flash.html';
-import P1180 from './e/model/inclusionai-ling3-0-flash-fin.html';
-import P1181 from './e/model/inclusionai-ling3-0-flash-vl.html';
-import P1182 from './e/model/llama-family.html';
-import P1183 from './e/model/llama-guard2-8b.html';
-import P1184 from './e/model/llama-guard3-8b.html';
-import P1185 from './e/model/llama-guard4-12b.html';
-import P1186 from './e/model/llama3-1-8b.html';
-import P1187 from './e/model/medium-family.html';
-import P1188 from './e/model/medium3-5.html';
-import P1189 from './e/model/mistral-family.html';
-import P1190 from './e/model/mistral7b.html';
-import P1191 from './e/model/moonshot-ai-kimi-k2-7-code.html';
-import P1192 from './e/model/nemotron-family.html';
-import P1193 from './e/model/nemotron3-5-content-safety.html';
-import P1194 from './e/model/nemotron3-ultra550b-a55b.html';
-import P1195 from './e/model/olmo-family.html';
-import P1196 from './e/model/olmo2-7b.html';
-import P1197 from './e/model/phi-family.html';
-import P1198 from './e/model/phi4-mini.html';
-import P1199 from './e/model/qwen-family.html';
-import P1200 from './e/model/qwen3-1-7b.html';
-import P1201 from './e/model/qwen3-235b-a22b-instruct2507.html';
-import P1202 from './e/model/qwen3-4b.html';
-import P1203 from './e/model/smollm-family.html';
-import P1204 from './e/model/smollm2-1-7b.html';
-import P1205 from './e/model/speakleash-bielik11b-v3-0.html';
-import P1206 from './e/model/tencent-hy4-preview.html';
-import P1207 from './e/model/v4-flash.html';
-import P1208 from './e/model/v4-flash-vision-exp.html';
-import P1209 from './e/model/xiaomi-mimo-v2-5-pro.html';
-import P1210 from './e/model/z-ai-glm5-3-flash-bf16.html';
-import P1211 from './e/package/opencv-python.html';
-import P1212 from './e/package/opencv-python-headless.html';
-import P1213 from './e/package/pandas-gbq.html';
-import P1214 from './e/package/redshift-connector.html';
-import P1215 from './forecasters.html';
-import P1216 from './alerts.html';
-import P1217 from './changelog.html';
-import P1218 from './follow.html';
-import P1219 from './webhooks.html';
-import P1220 from './verify.html';
-import P1221 from './reproduce.html';
-import P1222 from './transparency.html';
-import P1223 from './security/self.html';
-import P1224 from './security/policy.html';
-import P1225 from './security/thanks.html';
-import P1226 from './mydata.html';
+import P751 from './sagar/study/2610.29384.html';
+import P752 from './sagar/study/2609.39583.html';
+import P753 from './sagar/study/2609.06211.html';
+import P754 from './sagar/study/2609.01568.html';
+import P755 from './sagar/study/2608.29295.html';
+import P756 from './sagar/study/2608.07237.html';
+import P757 from './sagar/study/2607.23119.html';
+import P758 from './sagar/study/2607.21924.html';
+import P759 from './sagar/study/2607.17439.html';
+import P760 from './sagar/study/2607.16135.html';
+import P761 from './sagar/study/2607.10816.html';
+import P762 from './sagar/study/2607.08466.html';
+import P763 from './sagar/study/2606.25304.html';
+import P764 from './sagar/study/2606.18081.html';
+import P765 from './sagar/study/2604.23793.html';
+import P766 from './sagar/study/2604.22450.html';
+import P767 from './sagar/study/2604.15129.html';
+import P768 from './sagar/study/2604.14290.html';
+import P769 from './sagar/study/2604.13839.html';
+import P770 from './sagar/study/2604.07668.html';
+import P771 from './sagar/study/2603.29019.html';
+import P772 from './sagar/study/2602.04497.html';
+import P773 from './sagar/study/2512.10344.html';
+import P774 from './sagar/study/2512.04516.html';
+import P775 from './sagar/study/2511.16879.html';
+import P776 from './sagar/study/2511.06536.html';
+import P777 from './sagar/study/2510.25579.html';
+import P778 from './sagar/study/2510.23829.html';
+import P779 from './sagar/study/2510.20891.html';
+import P780 from './sagar/study/2510.14291.html';
+import P781 from './sagar/study/2510.08764.html';
+import P782 from './sagar/study/2510.05029.html';
+import P783 from './sagar/study/2509.03579.html';
+import P784 from './sagar/study/2509.03480.html';
+import P785 from './sagar/study/2509.02047.html';
+import P786 from './sagar/study/2509.00907.html';
+import P787 from './sagar/study/2509.00274.html';
+import P788 from './sagar/study/2508.19331.html';
+import P789 from './sagar/study/2508.17103.html';
+import P790 from './sagar/study/2508.04172.html';
+import P791 from './sagar/study/2508.00179.html';
+import P792 from './sagar/study/2507.21566.html';
+import P793 from './sagar/study/2507.21315.html';
+import P794 from './sagar/study/2507.20778.html';
+import P795 from './sagar/study/2507.16022.html';
+import P796 from './sagar/study/2507.09099.html';
+import P797 from './sagar/study/2507.08318.html';
+import P798 from './sagar/study/2507.02335.html';
+import P799 from './sagar/study/2507.01294.html';
+import P800 from './sagar/study/2506.21021.html';
+import P801 from './sagar/study/2506.15984.html';
+import P802 from './sagar/study/2506.13870.html';
+import P803 from './sagar/study/2506.12126.html';
+import P804 from './sagar/study/2506.06838.html';
+import P805 from './sagar/study/2505.15399.html';
+import P806 from './sagar/study/2504.00198.html';
+import P807 from './sagar/study/2503.14179.html';
+import P808 from './sagar/study/2503.09773.html';
+import P809 from './sagar/study/2503.04916.html';
+import P810 from './sagar/study/2412.06433.html';
+import P811 from './sagar/study/2412.05369.html';
+import P812 from './sagar/study/2412.01058.html';
+import P813 from './sagar/study/2410.23541.html';
+import P814 from './sagar/study/2410.16565.html';
+import P815 from './sagar/study/2410.16416.html';
+import P816 from './sagar/study/2409.05068.html';
+import P817 from './sagar/study/2409.00179.html';
+import P818 from './sagar/study/2407.08538.html';
+import P819 from './sagar/study/2406.17832.html';
+import P820 from './sagar/study/2406.11742.html';
+import P821 from './sagar/study/2406.01784.html';
+import P822 from './sagar/study/2405.18934.html';
+import P823 from './sagar/study/2405.02286.html';
+import P824 from './sagar/study/2404.03721.html';
+import P825 from './sagar/study/2403.17186.html';
+import P826 from './sagar/study/2403.17179.html';
+import P827 from './sagar/study/2403.10804.html';
+import P828 from './sagar/study/2403.03982.html';
+import P829 from './sagar/study/2402.15336.html';
+import P830 from './sagar/study/2402.04172.html';
+import P831 from './sagar/study/2312.17491.html';
+import P832 from './sagar/study/2312.03860.html';
+import P833 from './sagar/study/2311.16085.html';
+import P834 from './sagar/study/2311.15695.html';
+import P835 from './sagar/study/2311.06630.html';
+import P836 from './sagar/study/2311.06416.html';
+import P837 from './sagar/study/2311.06061.html';
+import P838 from './sagar/study/2311.03556.html';
+import P839 from './sagar/study/2310.05823.html';
+import P840 from './sagar/study/2309.04303.html';
+import P841 from './sagar/study/2309.01894.html';
+import P842 from './sagar/study/2308.08639.html';
+import P843 from './sagar/study/2307.13099.html';
+import P844 from './sagar/study/2306.03827.html';
+import P845 from './sagar/study/2305.08257.html';
+import P846 from './sagar/study/2304.14820.html';
+import P847 from './sagar/study/2304.09977.html';
+import P848 from './sagar/study/2304.09025.html';
+import P849 from './sagar/study/2303.17628.html';
+import P850 from './sagar/study/2303.10847.html';
+import P851 from './sagar/study/2303.08399.html';
+import P852 from './sagar/study/2302.12158.html';
+import P853 from './sagar/study/2302.09651.html';
+import P854 from './sagar/study/2302.08042.html';
+import P855 from './sagar/study/2302.04881.html';
+import P856 from './sagar/study/2212.14283.html';
+import P857 from './sagar/study/2212.02026.html';
+import P858 from './sagar/study/2210.16278.html';
+import P859 from './sagar/study/2210.09592.html';
+import P860 from './sagar/study/2210.09425.html';
+import P861 from './sagar/study/2209.14321.html';
+import P862 from './sagar/study/2208.12872.html';
+import P863 from './sagar/study/2208.02291.html';
+import P864 from './sagar/study/2208.01766.html';
+import P865 from './sagar/study/2207.14286.html';
+import P866 from './sagar/study/2207.10410.html';
+import P867 from './sagar/study/2207.01654.html';
+import P868 from './sagar/study/2204.13495.html';
+import P869 from './sagar/study/2203.08998.html';
+import P870 from './sagar/study/2202.07399.html';
+import P871 from './sagar/study/2202.05092.html';
+import P872 from './sagar/study/2201.05220.html';
+import P873 from './sagar/study/2201.02543.html';
+import P874 from './sagar/study/2201.01817.html';
+import P875 from './sagar/study/2201.01526.html';
+import P876 from './sagar/study/2112.11300.html';
+import P877 from './sagar/study/2111.07219.html';
+import P878 from './sagar/study/2111.00111.html';
+import P879 from './sagar/study/2107.03516.html';
+import P880 from './sagar/study/2106.13785.html';
+import P881 from './sagar/study/2105.04263.html';
+import P882 from './sagar/study/2103.12976.html';
+import P883 from './sagar/study/2012.03963.html';
+import P884 from './sagar/study/2011.09570.html';
+import P885 from './sagar/study/2011.04414.html';
+import P886 from './sagar/study/2010.09751.html';
+import P887 from './sagar/study/2010.05830.html';
+import P888 from './sagar/study/2010.04848.html';
+import P889 from './sagar/study/2009.12260.html';
+import P890 from './sagar/study/2008.00509.html';
+import P891 from './sagar/study/2007.12709.html';
+import P892 from './sagar/study/2007.04176.html';
+import P893 from './sagar/study/2006.11293.html';
+import P894 from './sagar/study/2006.00714.html';
+import P895 from './sagar/study/2004.05128.html';
+import P896 from './sagar/study/2003.04513.html';
+import P897 from './sagar/study/2002.05528.html';
+import P898 from './sagar/study/2001.03833.html';
+import P899 from './sagar/study/1910.09138.html';
+import P900 from './sagar/study/1909.11873.html';
+import P901 from './sagar/study/1909.11801.html';
+import P902 from './sagar/study/1905.12669.html';
+import P903 from './sagar/study/1904.07214.html';
+import P904 from './sagar/study/1904.06020.html';
+import P905 from './sagar/study/1903.10159.html';
+import P906 from './sagar/study/1903.02823.html';
+import P907 from './sagar/study/1903.01998.html';
+import P908 from './sagar/study/1902.09496.html';
+import P909 from './sagar/study/1808.05453.html';
+import P910 from './sagar/study/1807.07660.html';
+import P911 from './sagar/study/1806.10610.html';
+import P912 from './sagar/study/1711.09073.html';
+import P913 from './sagar/receipts/2603.29019_sigma.html';
+import P914 from './qia.html';
+import P915 from './qia/list.html';
+import P916 from './qia/key.html';
+import P917 from './qia/data.html';
+import P918 from './hermes/datapapers.html';
+import P919 from './standard.html';
+import P920 from './record.html';
+import P921 from './correction.html';
+import P922 from './corrections.html';
+import P923 from './newsletter/1.html';
+import P924 from './newsletter/0.html';
+import P925 from './newsletter.html';
+import P926 from './respond.html';
+import P927 from './now.html';
+import P928 from './hermes.html';
+import P929 from './darkwave.html';
+import P930 from './qia/package.html';
+import P931 from './darkwave/kit.html';
+import P932 from './iris/package.html';
+import P933 from './atlas/data-pack.html';
+import P934 from './oy/data-pack.html';
+import P935 from './hermes/model/data-pack.html';
+import P936 from './week/2026-44.html';
+import P937 from './week/2026-45.html';
+import P938 from './week.html';
+import P939 from './brand/abbott-medical-devices.html';
+import P940 from './brand/abbvie.html';
+import P941 from './brand/acadia-pharmaceuticals-inc.html';
+import P942 from './brand/aclaris-therapeutics-inc.html';
+import P943 from './brand/adguard.html';
+import P944 from './brand/ain-shams-university.html';
+import P945 from './brand/alaska-airlines.html';
+import P946 from './brand/albert-einstein-college-of-medicine.html';
+import P947 from './brand/alcon-research.html';
+import P948 from './brand/aldeyra-therapeutics-inc.html';
+import P949 from './brand/alexion-pharmaceuticals-inc.html';
+import P950 from './brand/aliexpress.html';
+import P951 from './brand/allegiant-air.html';
+import P952 from './brand/allergan.html';
+import P953 from './brand/amazon.html';
+import P954 from './brand/aws.html';
+import P955 from './brand/amd.html';
+import P956 from './brand/american-airlines.html';
+import P957 from './brand/amgen.html';
+import P958 from './brand/anthropic.html';
+import P959 from './brand/apple.html';
+import P960 from './brand/applovin.html';
+import P961 from './brand/arcutis-biotherapeutics-inc.html';
+import P962 from './brand/astellas-pharma-global-development-inc.html';
+import P963 from './brand/astrazeneca.html';
+import P964 from './brand/asus.html';
+import P965 from './brand/atlassian.html';
+import P966 from './brand/automattic.html';
+import P967 from './brand/axsome-therapeutics-inc.html';
+import P968 from './brand/bausch-and-lomb-incorporated.html';
+import P969 from './brand/bayer.html';
+import P970 from './brand/baylor-college-of-medicine.html';
+import P971 from './brand/bbc.html';
+import P972 from './brand/beigene.html';
+import P973 from './brand/beth-israel-deaconess-medical-center.html';
+import P974 from './brand/biogen.html';
+import P975 from './brand/biontech-se.html';
+import P976 from './brand/bluehost.html';
+import P977 from './brand/bluesky.html';
+import P978 from './brand/boehringer-ingelheim.html';
+import P979 from './brand/booking-com.html';
+import P980 from './brand/boston-children-s-hospital.html';
+import P981 from './brand/boston-scientific-corporation.html';
+import P982 from './brand/branch.html';
+import P983 from './brand/brigham-and-women-s-hospital.html';
+import P984 from './brand/bristol-myers-squibb.html';
+import P985 from './brand/broadcom.html';
+import P986 from './brand/btl-industries-ltd.html';
+import P987 from './brand/bureau-of-labor-statistics.html';
+import P988 from './brand/bureau-of-reclamation.html';
+import P989 from './brand/cairo-university.html';
+import P990 from './brand/canonical.html';
+import P991 from './brand/case-comprehensive-cancer-center.html';
+import P992 from './brand/cedars-sinai-medical-center.html';
+import P993 from './brand/celgene.html';
+import P994 from './brand/cdc.html';
+import P995 from './brand/cms.html';
+import P996 from './brand/children-s-hospital-medical-center-cincinnati.html';
+import P997 from './brand/cisco.html';
+import P998 from './brand/cleanbrowsing.html';
+import P999 from './brand/climate-prediction-center.html';
+import P1000 from './brand/cloudflare.html';
+import P1001 from './brand/colgate-palmolive.html';
+import P1002 from './brand/columbia-university.html';
+import P1003 from './brand/consumer-financial-protection-bureau.html';
+import P1004 from './brand/control-d.html';
+import P1005 from './brand/coopervision-inc.html';
+import P1006 from './brand/coreweave.html';
+import P1007 from './brand/corewell-health-east.html';
+import P1008 from './brand/crusoe.html';
+import P1009 from './brand/npl-india.html';
+import P1010 from './brand/cz-nic.html';
+import P1011 from './brand/daiichi-sankyo.html';
+import P1012 from './brand/dana-farber-cancer-institute.html';
+import P1013 from './brand/datadog.html';
+import P1014 from './brand/deep-cogito.html';
+import P1015 from './brand/deepseek.html';
+import P1016 from './brand/dell.html';
+import P1017 from './brand/delta-air-lines.html';
+import P1018 from './brand/doe.html';
+import P1019 from './brand/hhs.html';
+import P1020 from './brand/dol.html';
+import P1021 from './brand/va.html';
+import P1022 from './brand/digitalocean.html';
+import P1023 from './brand/discord.html';
+import P1024 from './brand/docker.html';
+import P1025 from './brand/dropbox.html';
+import P1026 from './brand/duke-university.html';
+import P1027 from './brand/ebay.html';
+import P1028 from './brand/eisai-inc.html';
+import P1029 from './brand/eleutherai.html';
+import P1030 from './brand/eli-lilly-and-company.html';
+import P1031 from './brand/elsevier.html';
+import P1032 from './brand/emd-serono-research-and-development-institute-inc.html';
+import P1033 from './brand/emory-university.html';
+import P1034 from './brand/epa.html';
+import P1035 from './brand/envoy-air.html';
+import P1036 from './brand/equifax.html';
+import P1037 from './brand/etsy.html';
+import P1038 from './brand/experian.html';
+import P1039 from './brand/federal-reserve.html';
+import P1040 from './brand/fred-hutchinson-cancer-center.html';
+import P1041 from './brand/frontier-airlines.html';
+import P1042 from './brand/fujitsu.html';
+import P1043 from './brand/galderma-r-and-d.html';
+import P1044 from './brand/genentech-inc.html';
+import P1045 from './brand/gigacomputing.html';
+import P1046 from './brand/gilead-sciences.html';
+import P1047 from './brand/github.html';
+import P1048 from './brand/glaxosmithkline.html';
+import P1049 from './brand/google.html';
+import P1050 from './brand/gov-uk.html';
+import P1051 from './brand/h-lee-moffitt-cancer-center-and-research-institute.html';
+import P1052 from './brand/hawaiian-airlines.html';
+import P1053 from './brand/henry-ford-health-system.html';
+import P1054 from './brand/hkust.html';
+import P1055 from './brand/hoffmann-la-roche.html';
+import P1056 from './brand/hospital-for-special-surgery-new-york.html';
+import P1057 from './brand/hostgator.html';
+import P1058 from './brand/hpe.html';
+import P1059 from './brand/hugging-face.html';
+import P1060 from './brand/ibm.html';
+import P1061 from './brand/icahn-school-of-medicine-at-mount-sinai.html';
+import P1062 from './brand/iiko.html';
+import P1063 from './brand/inclusionai.html';
+import P1064 from './brand/incyte-corporation.html';
+import P1065 from './brand/indiana-university.html';
+import P1066 from './brand/inmobi.html';
+import P1067 from './brand/inrim.html';
+import P1068 from './brand/intel.html';
+import P1069 from './brand/ionis-pharmaceuticals-inc.html';
+import P1070 from './brand/ionq.html';
+import P1071 from './brand/janssen-research-and-development-llc.html';
+import P1072 from './brand/janssen-vaccines-and-prevention-b-v.html';
+import P1073 from './brand/jazz-pharmaceuticals.html';
+import P1074 from './brand/jetblue.html';
+import P1075 from './brand/johns-hopkins-university.html';
+import P1076 from './brand/johnson-and-johnson-vision-care-inc.html';
+import P1077 from './brand/k-veritas.html';
+import P1078 from './brand/kriss.html';
+import P1079 from './brand/lambda.html';
+import P1080 from './brand/lenovo.html';
+import P1081 from './brand/leo-pharma.html';
+import P1082 from './brand/library-of-congress.html';
+import P1083 from './brand/linear.html';
+import P1084 from './brand/linkedin.html';
+import P1085 from './brand/loma-linda-university.html';
+import P1086 from './brand/m-d-anderson-cancer-center.html';
+import P1087 from './brand/mangoboost.html';
+import P1088 from './brand/markmonitor.html';
+import P1089 from './brand/masimo-corporation.html';
+import P1090 from './brand/masonic-cancer-center-university-of-minnesota.html';
+import P1091 from './brand/massachusetts-general-hospital.html';
+import P1092 from './brand/mayo-clinic.html';
+import P1093 from './brand/medical-college-of-wisconsin.html';
+import P1094 from './brand/medical-university-of-south-carolina.html';
+import P1095 from './brand/medtronic-minimed-inc.html';
+import P1096 from './brand/memorial-sloan-kettering-cancer-center.html';
+import P1097 from './brand/merck-sharp-and-dohme-llc.html';
+import P1098 from './brand/meta.html';
+import P1099 from './brand/metas.html';
+import P1100 from './brand/microsoft.html';
+import P1101 from './brand/milton-s-hershey-medical-center.html';
+import P1102 from './brand/mistral-ai.html';
+import P1103 from './brand/mlcommons.html';
+import P1104 from './brand/modernatx-inc.html';
+import P1105 from './brand/mohela.html';
+import P1106 from './brand/montefiore-medical-center.html';
+import P1107 from './brand/moonshot-ai.html';
+import P1108 from './brand/jpl.html';
+import P1109 from './brand/national-cancer-institute-nci.html';
+import P1110 from './brand/national-heart-lung-and-blood-institute-nhlbi.html';
+import P1111 from './brand/national-hurricane-center.html';
+import P1112 from './brand/national-institute-of-allergy-and-infectious-diseases-niaid.html';
+import P1113 from './brand/npl-uk.html';
+import P1114 from './brand/national-weather-service.html';
+import P1115 from './brand/nebius.html';
+import P1116 from './brand/netlify.html';
+import P1117 from './brand/netnod.html';
+import P1118 from './brand/neurocrine-biosciences.html';
+import P1119 from './brand/new-york-state-psychiatric-institute.html';
+import P1120 from './brand/nexus-mods.html';
+import P1121 from './brand/ngenix.html';
+import P1122 from './brand/nict.html';
+import P1123 from './brand/nist.html';
+import P1124 from './brand/noaa.html';
+import P1125 from './brand/northwell-health.html';
+import P1126 from './brand/northwestern-university.html';
+import P1127 from './brand/notion.html';
+import P1128 from './brand/novartis-pharmaceuticals.html';
+import P1129 from './brand/novo-nordisk-a-s.html';
+import P1130 from './brand/npm.html';
+import P1131 from './brand/ntp-pool-project.html';
+import P1132 from './brand/nvidia.html';
+import P1133 from './brand/nyu-langone-health.html';
+import P1134 from './brand/observatoire-de-paris.html';
+import P1135 from './brand/ohio-state-university.html';
+import P1136 from './brand/openai.html';
+import P1137 from './brand/openbmb.html';
+import P1138 from './brand/opencv.html';
+import P1139 from './brand/oracle.html';
+import P1140 from './brand/oregon-health-and-science-university.html';
+import P1141 from './brand/orrick-industries.html';
+import P1142 from './brand/otsuka-pharmaceutical-development-and-commercialization-inc.html';
+import P1143 from './brand/outbrain.html';
+import P1144 from './brand/pfizer.html';
+import P1145 from './brand/pikabu.html';
+import P1146 from './brand/pinterest.html';
+import P1147 from './brand/aylo.html';
+import P1148 from './brand/psa-airlines.html';
+import P1149 from './brand/ptb.html';
+import P1150 from './brand/pubmatic.html';
+import P1151 from './brand/purpleair.html';
+import P1152 from './brand/python-software-foundation.html';
+import P1153 from './brand/quad9.html';
+import P1154 from './brand/quantinuum.html';
+import P1155 from './brand/qwen.html';
+import P1156 from './brand/red-hat.html';
+import P1157 from './brand/reddit.html';
+import P1158 from './brand/regeneron-pharmaceuticals.html';
+import P1159 from './brand/reka.html';
+import P1160 from './brand/republic-airways.html';
+import P1161 from './brand/rigetti.html';
+import P1162 from './brand/roswell-park-cancer-institute.html';
+import P1163 from './brand/rush-university-medical-center.html';
+import P1164 from './brand/rutgers-the-state-university-of-new-jersey.html';
+import P1165 from './brand/sage-publishing.html';
+import P1166 from './brand/salesforce.html';
+import P1167 from './brand/sanofi.html';
+import P1168 from './brand/sanofi-pasteur-a-sanofi-company.html';
+import P1169 from './brand/scitix.html';
+import P1170 from './brand/seedtag.html';
+import P1171 from './brand/sentry.html';
+import P1172 from './brand/shein.html';
+import P1173 from './brand/shire.html';
+import P1174 from './brand/sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins.html';
+import P1175 from './brand/skywest-airlines.html';
+import P1176 from './brand/snap.html';
+import P1177 from './brand/sonova-ag.html';
+import P1178 from './brand/southwest-airlines.html';
+import P1179 from './brand/space-weather-prediction-center.html';
+import P1180 from './brand/speakleash.html';
+import P1181 from './brand/spirit-airlines.html';
+import P1182 from './brand/st-jude-children-s-research-hospital.html';
+import P1183 from './brand/stanford-university.html';
+import P1184 from './brand/storm-prediction-center.html';
+import P1185 from './brand/stripchat.html';
+import P1186 from './brand/sun-pharmaceutical-industries-limited.html';
+import P1187 from './brand/supermicro.html';
+import P1188 from './brand/supernus-pharmaceuticals-inc.html';
+import P1189 from './brand/takeda.html';
+import P1190 from './brand/teads.html';
+import P1191 from './brand/temu.html';
+import P1192 from './brand/tencent.html';
+import P1193 from './brand/teva-branded-pharmaceutical-products-r-and-d-inc.html';
+import P1194 from './brand/the-cleveland-clinic.html';
+import P1195 from './brand/the-university-of-texas-health-science-center-at-san-antonio.html';
+import P1196 from './brand/the-university-of-texas-health-science-center-houston.html';
+import P1197 from './brand/the-university-of-texas-medical-branch-galveston.html';
+import P1198 from './brand/thomas-jefferson-university.html';
+import P1199 from './brand/tiktok.html';
+import P1200 from './brand/transunion.html';
+import P1201 from './brand/trend-micro.html';
+import P1202 from './brand/tufts-medical-center.html';
+import P1203 from './brand/twilio.html';
+import P1204 from './brand/eia.html';
+import P1205 from './brand/usgs.html';
+import P1206 from './brand/usno.html';
+import P1207 from './brand/us-news.html';
+import P1208 from './brand/ucb-biopharma-srl.html';
+import P1209 from './brand/unc-lineberger-comprehensive-cancer-center.html';
+import P1210 from './brand/unesco-uis.html';
+import P1211 from './brand/united-airlines.html';
+import P1212 from './brand/university-hospitals-cleveland-medical-center.html';
+import P1213 from './brand/university-of-alabama-at-birmingham.html';
+import P1214 from './brand/university-of-arizona.html';
+import P1215 from './brand/university-of-arkansas.html';
+import P1216 from './brand/university-of-california-davis.html';
+import P1217 from './brand/university-of-california-irvine.html';
+import P1218 from './brand/university-of-california-los-angeles.html';
+import P1219 from './brand/university-of-california-san-diego.html';
+import P1220 from './brand/university-of-california-san-francisco.html';
+import P1221 from './brand/university-of-chicago.html';
+import P1222 from './brand/university-of-colorado-denver.html';
+import P1223 from './brand/university-of-florida.html';
+import P1224 from './brand/university-of-iowa.html';
+import P1225 from './brand/university-of-kansas-medical-center.html';
+import P1226 from './brand/university-of-maryland-baltimore.html';
+import P1227 from './brand/university-of-miami.html';
+import P1228 from './brand/university-of-michigan.html';
+import P1229 from './brand/university-of-michigan-rogel-cancer-center.html';
+import P1230 from './brand/university-of-minnesota.html';
+import P1231 from './brand/university-of-missouri-columbia.html';
+import P1232 from './brand/university-of-nebraska.html';
+import P1233 from './brand/university-of-new-mexico.html';
+import P1234 from './brand/university-of-north-carolina-chapel-hill.html';
+import P1235 from './brand/university-of-oklahoma.html';
+import P1236 from './brand/university-of-pennsylvania.html';
+import P1237 from './brand/university-of-rochester.html';
+import P1238 from './brand/university-of-southern-california.html';
+import P1239 from './brand/university-of-texas-southwestern-medical-center.html';
+import P1240 from './brand/university-of-utah.html';
+import P1241 from './brand/university-of-virginia.html';
+import P1242 from './brand/university-of-washington.html';
+import P1243 from './brand/university-of-wisconsin-madison.html';
+import P1244 from './brand/unsplash.html';
+import P1245 from './brand/va-office-of-research-and-development.html';
+import P1246 from './brand/vanderbilt-university-medical-center.html';
+import P1247 from './brand/vercel.html';
+import P1248 from './brand/vertex-pharmaceuticals-incorporated.html';
+import P1249 from './brand/vibehpc.html';
+import P1250 from './brand/viiv-healthcare.html';
+import P1251 from './brand/virginia-commonwealth-university.html';
+import P1252 from './brand/vox-media.html';
+import P1253 from './brand/wake-forest-university-health-sciences.html';
+import P1254 from './brand/washington-university-school-of-medicine.html';
+import P1255 from './brand/weill-medical-college-of-cornell-university.html';
+import P1256 from './brand/wikimedia-foundation.html';
+import P1257 from './brand/wildberries.html';
+import P1258 from './brand/wiwynn.html';
+import P1259 from './brand/world-bank.html';
+import P1260 from './brand/who.html';
+import P1261 from './brand/x.html';
+import P1262 from './brand/xiaomi.html';
+import P1263 from './brand/xnxx.html';
+import P1264 from './brand/xvideos.html';
+import P1265 from './brand/yale-university.html';
+import P1266 from './brand/z-ai.html';
+import P1267 from './brand/zalando.html';
+import P1268 from './brand/zoom.html';
+import P1269 from './brand.html';
+import P1270 from './e/backend/amazon-braket.html';
+import P1271 from './e/backend/ibm-aachen.html';
+import P1272 from './e/backend/ibm-algiers.html';
+import P1273 from './e/backend/ibm-auckland.html';
+import P1274 from './e/backend/ibm-belem.html';
+import P1275 from './e/backend/ibm-boston.html';
+import P1276 from './e/backend/ibm-brisbane.html';
+import P1277 from './e/backend/ibm-cairo.html';
+import P1278 from './e/backend/ibm-cleveland.html';
+import P1279 from './e/backend/ibm-fez.html';
+import P1280 from './e/backend/ibm-guadalupe.html';
+import P1281 from './e/backend/ibm-hanoi.html';
+import P1282 from './e/backend/ibm-kawasaki.html';
+import P1283 from './e/backend/ibm-kingston.html';
+import P1284 from './e/backend/ibm-kyiv.html';
+import P1285 from './e/backend/ibm-kyoto.html';
+import P1286 from './e/backend/ibm-lagos.html';
+import P1287 from './e/backend/ibm-manhattan.html';
+import P1288 from './e/backend/ibm-manila.html';
+import P1289 from './e/backend/ibm-marrakesh.html';
+import P1290 from './e/backend/ibm-miami.html';
+import P1291 from './e/backend/ibm-nairobi.html';
+import P1292 from './e/backend/ibm-osaka.html';
+import P1293 from './e/backend/ibm-oslo.html';
+import P1294 from './e/backend/ibm-peekskill.html';
+import P1295 from './e/backend/ibm-perth.html';
+import P1296 from './e/backend/ibm-phoenix.html';
+import P1297 from './e/backend/ibm-pittsburgh.html';
+import P1298 from './e/backend/ibm-quito.html';
+import P1299 from './e/backend/ibm-sherbrooke.html';
+import P1300 from './e/backend/ibm-strasbourg.html';
+import P1301 from './e/backend/ibm-tokyo.html';
+import P1302 from './e/backend/ibm-torino.html';
+import P1303 from './e/backend/ionq-aria-1.html';
+import P1304 from './e/backend/ionq-aria1.html';
+import P1305 from './e/backend/quantinuum-h1-1.html';
+import P1306 from './e/backend/rigetti-ankaa-3.html';
+import P1307 from './e/backend/rigetti-cepheus-1-108q.html';
+import P1308 from './e/model/deep-cogito-cogito-v2-1-671b.html';
+import P1309 from './e/model/deepseek-r1-1-5b.html';
+import P1310 from './e/model/falcon-family.html';
+import P1311 from './e/model/falcon3-3b.html';
+import P1312 from './e/model/gemma-family.html';
+import P1313 from './e/model/gemma3-4b.html';
+import P1314 from './e/model/gemma3n-e4b.html';
+import P1315 from './e/model/gpt-oss120b.html';
+import P1316 from './e/model/granite-family.html';
+import P1317 from './e/model/granite3-3-2b.html';
+import P1318 from './e/model/granite4-1-3b.html';
+import P1319 from './e/model/granite4-2-30b.html';
+import P1320 from './e/model/granite4-2-3b.html';
+import P1321 from './e/model/granite4-2-8b.html';
+import P1322 from './e/model/inclusionai-ling2-6-1t.html';
+import P1323 from './e/model/inclusionai-ling3-0-flash.html';
+import P1324 from './e/model/inclusionai-ling3-0-flash-fin.html';
+import P1325 from './e/model/inclusionai-ling3-0-flash-vl.html';
+import P1326 from './e/model/llama-family.html';
+import P1327 from './e/model/llama-guard2-8b.html';
+import P1328 from './e/model/llama-guard3-8b.html';
+import P1329 from './e/model/llama-guard4-12b.html';
+import P1330 from './e/model/llama3-1-8b.html';
+import P1331 from './e/model/medium-family.html';
+import P1332 from './e/model/medium3-5.html';
+import P1333 from './e/model/mistral-family.html';
+import P1334 from './e/model/mistral7b.html';
+import P1335 from './e/model/moonshot-ai-kimi-k2-7-code.html';
+import P1336 from './e/model/nemotron-family.html';
+import P1337 from './e/model/nemotron3-5-content-safety.html';
+import P1338 from './e/model/nemotron3-ultra550b-a55b.html';
+import P1339 from './e/model/olmo-family.html';
+import P1340 from './e/model/olmo2-7b.html';
+import P1341 from './e/model/phi-family.html';
+import P1342 from './e/model/phi4-mini.html';
+import P1343 from './e/model/qwen-family.html';
+import P1344 from './e/model/qwen3-1-7b.html';
+import P1345 from './e/model/qwen3-235b-a22b-instruct2507.html';
+import P1346 from './e/model/qwen3-4b.html';
+import P1347 from './e/model/smollm-family.html';
+import P1348 from './e/model/smollm2-1-7b.html';
+import P1349 from './e/model/speakleash-bielik11b-v3-0.html';
+import P1350 from './e/model/tencent-hy4-preview.html';
+import P1351 from './e/model/v4-flash.html';
+import P1352 from './e/model/v4-flash-vision-exp.html';
+import P1353 from './e/model/xiaomi-mimo-v2-5-pro.html';
+import P1354 from './e/model/z-ai-glm5-3-flash-bf16.html';
+import P1355 from './e/package/opencv-python.html';
+import P1356 from './e/package/opencv-python-headless.html';
+import P1357 from './e/package/pandas-gbq.html';
+import P1358 from './e/package/redshift-connector.html';
+import P1359 from './forecasters.html';
+import P1360 from './alerts.html';
+import P1361 from './changelog.html';
+import P1362 from './follow.html';
+import P1363 from './webhooks.html';
+import P1364 from './verify.html';
+import P1365 from './reproduce.html';
+import P1366 from './transparency.html';
+import P1367 from './security/self.html';
+import P1368 from './security/policy.html';
+import P1369 from './security/thanks.html';
+import P1370 from './mydata.html';
 import FEED_STATIC from './feed-entries.html';
 import GATE_UI from './gate-ui.txt';
 import CSS from './style.css';
@@ -1981,482 +2125,626 @@ export const PAGES = {
   '/qia/study/2609.14424': P748,
   '/sagar': P749,
   '/sagar/study/2610.29436': P750,
-  '/sagar/study/2603.29019': P751,
-  '/sagar/study/2510.25579': P752,
-  '/sagar/study/2510.14291': P753,
-  '/sagar/study/2507.21566': P754,
-  '/sagar/study/2507.02335': P755,
-  '/sagar/study/2507.01294': P756,
-  '/sagar/study/2506.21021': P757,
-  '/sagar/study/2506.15984': P758,
-  '/sagar/study/2506.13870': P759,
-  '/sagar/study/2506.06838': P760,
-  '/sagar/study/2504.00198': P761,
-  '/sagar/study/2412.05369': P762,
-  '/sagar/study/2410.16565': P763,
-  '/sagar/study/2403.03982': P764,
-  '/sagar/study/2311.16085': P765,
-  '/sagar/study/2311.06416': P766,
-  '/sagar/study/2303.17628': P767,
-  '/sagar/study/2208.01766': P768,
-  '/sagar/receipts/2603.29019_sigma': P769,
-  '/qia': P770,
-  '/qia/list': P771,
-  '/qia/key': P772,
-  '/qia/data': P773,
-  '/hermes/datapapers': P774,
-  '/standard': P775,
-  '/record': P776,
-  '/correction': P777,
-  '/corrections': P778,
-  '/newsletter/1': P779,
-  '/newsletter/0': P780,
-  '/newsletter': P781,
-  '/respond': P782,
-  '/now': P783,
-  '/hermes': P784,
-  '/darkwave': P785,
-  '/qia/package': P786,
-  '/darkwave/kit': P787,
-  '/iris/package': P788,
-  '/atlas/data-pack': P789,
-  '/oy/data-pack': P790,
-  '/hermes/model/data-pack': P791,
-  '/week/2026-44': P792,
-  '/week/2026-45': P793,
-  '/week': P794,
-  '/brand/abbott-medical-devices': P795,
-  '/brand/abbvie': P796,
-  '/brand/acadia-pharmaceuticals-inc': P797,
-  '/brand/aclaris-therapeutics-inc': P798,
-  '/brand/adguard': P799,
-  '/brand/ain-shams-university': P800,
-  '/brand/alaska-airlines': P801,
-  '/brand/albert-einstein-college-of-medicine': P802,
-  '/brand/alcon-research': P803,
-  '/brand/aldeyra-therapeutics-inc': P804,
-  '/brand/alexion-pharmaceuticals-inc': P805,
-  '/brand/aliexpress': P806,
-  '/brand/allegiant-air': P807,
-  '/brand/allergan': P808,
-  '/brand/amazon': P809,
-  '/brand/aws': P810,
-  '/brand/amd': P811,
-  '/brand/american-airlines': P812,
-  '/brand/amgen': P813,
-  '/brand/anthropic': P814,
-  '/brand/apple': P815,
-  '/brand/applovin': P816,
-  '/brand/arcutis-biotherapeutics-inc': P817,
-  '/brand/astellas-pharma-global-development-inc': P818,
-  '/brand/astrazeneca': P819,
-  '/brand/asus': P820,
-  '/brand/atlassian': P821,
-  '/brand/automattic': P822,
-  '/brand/axsome-therapeutics-inc': P823,
-  '/brand/bausch-and-lomb-incorporated': P824,
-  '/brand/bayer': P825,
-  '/brand/baylor-college-of-medicine': P826,
-  '/brand/bbc': P827,
-  '/brand/beigene': P828,
-  '/brand/beth-israel-deaconess-medical-center': P829,
-  '/brand/biogen': P830,
-  '/brand/biontech-se': P831,
-  '/brand/bluehost': P832,
-  '/brand/bluesky': P833,
-  '/brand/boehringer-ingelheim': P834,
-  '/brand/booking-com': P835,
-  '/brand/boston-children-s-hospital': P836,
-  '/brand/boston-scientific-corporation': P837,
-  '/brand/branch': P838,
-  '/brand/brigham-and-women-s-hospital': P839,
-  '/brand/bristol-myers-squibb': P840,
-  '/brand/broadcom': P841,
-  '/brand/btl-industries-ltd': P842,
-  '/brand/bureau-of-labor-statistics': P843,
-  '/brand/bureau-of-reclamation': P844,
-  '/brand/cairo-university': P845,
-  '/brand/canonical': P846,
-  '/brand/case-comprehensive-cancer-center': P847,
-  '/brand/cedars-sinai-medical-center': P848,
-  '/brand/celgene': P849,
-  '/brand/cdc': P850,
-  '/brand/cms': P851,
-  '/brand/children-s-hospital-medical-center-cincinnati': P852,
-  '/brand/cisco': P853,
-  '/brand/cleanbrowsing': P854,
-  '/brand/climate-prediction-center': P855,
-  '/brand/cloudflare': P856,
-  '/brand/colgate-palmolive': P857,
-  '/brand/columbia-university': P858,
-  '/brand/consumer-financial-protection-bureau': P859,
-  '/brand/control-d': P860,
-  '/brand/coopervision-inc': P861,
-  '/brand/coreweave': P862,
-  '/brand/corewell-health-east': P863,
-  '/brand/crusoe': P864,
-  '/brand/npl-india': P865,
-  '/brand/cz-nic': P866,
-  '/brand/daiichi-sankyo': P867,
-  '/brand/dana-farber-cancer-institute': P868,
-  '/brand/datadog': P869,
-  '/brand/deep-cogito': P870,
-  '/brand/deepseek': P871,
-  '/brand/dell': P872,
-  '/brand/delta-air-lines': P873,
-  '/brand/doe': P874,
-  '/brand/hhs': P875,
-  '/brand/dol': P876,
-  '/brand/va': P877,
-  '/brand/digitalocean': P878,
-  '/brand/discord': P879,
-  '/brand/docker': P880,
-  '/brand/dropbox': P881,
-  '/brand/duke-university': P882,
-  '/brand/ebay': P883,
-  '/brand/eisai-inc': P884,
-  '/brand/eleutherai': P885,
-  '/brand/eli-lilly-and-company': P886,
-  '/brand/elsevier': P887,
-  '/brand/emd-serono-research-and-development-institute-inc': P888,
-  '/brand/emory-university': P889,
-  '/brand/epa': P890,
-  '/brand/envoy-air': P891,
-  '/brand/equifax': P892,
-  '/brand/etsy': P893,
-  '/brand/experian': P894,
-  '/brand/federal-reserve': P895,
-  '/brand/fred-hutchinson-cancer-center': P896,
-  '/brand/frontier-airlines': P897,
-  '/brand/fujitsu': P898,
-  '/brand/galderma-r-and-d': P899,
-  '/brand/genentech-inc': P900,
-  '/brand/gigacomputing': P901,
-  '/brand/gilead-sciences': P902,
-  '/brand/github': P903,
-  '/brand/glaxosmithkline': P904,
-  '/brand/google': P905,
-  '/brand/gov-uk': P906,
-  '/brand/h-lee-moffitt-cancer-center-and-research-institute': P907,
-  '/brand/hawaiian-airlines': P908,
-  '/brand/henry-ford-health-system': P909,
-  '/brand/hkust': P910,
-  '/brand/hoffmann-la-roche': P911,
-  '/brand/hospital-for-special-surgery-new-york': P912,
-  '/brand/hostgator': P913,
-  '/brand/hpe': P914,
-  '/brand/hugging-face': P915,
-  '/brand/ibm': P916,
-  '/brand/icahn-school-of-medicine-at-mount-sinai': P917,
-  '/brand/iiko': P918,
-  '/brand/inclusionai': P919,
-  '/brand/incyte-corporation': P920,
-  '/brand/indiana-university': P921,
-  '/brand/inmobi': P922,
-  '/brand/inrim': P923,
-  '/brand/intel': P924,
-  '/brand/ionis-pharmaceuticals-inc': P925,
-  '/brand/ionq': P926,
-  '/brand/janssen-research-and-development-llc': P927,
-  '/brand/janssen-vaccines-and-prevention-b-v': P928,
-  '/brand/jazz-pharmaceuticals': P929,
-  '/brand/jetblue': P930,
-  '/brand/johns-hopkins-university': P931,
-  '/brand/johnson-and-johnson-vision-care-inc': P932,
-  '/brand/k-veritas': P933,
-  '/brand/kriss': P934,
-  '/brand/lambda': P935,
-  '/brand/lenovo': P936,
-  '/brand/leo-pharma': P937,
-  '/brand/library-of-congress': P938,
-  '/brand/linear': P939,
-  '/brand/linkedin': P940,
-  '/brand/loma-linda-university': P941,
-  '/brand/m-d-anderson-cancer-center': P942,
-  '/brand/mangoboost': P943,
-  '/brand/markmonitor': P944,
-  '/brand/masimo-corporation': P945,
-  '/brand/masonic-cancer-center-university-of-minnesota': P946,
-  '/brand/massachusetts-general-hospital': P947,
-  '/brand/mayo-clinic': P948,
-  '/brand/medical-college-of-wisconsin': P949,
-  '/brand/medical-university-of-south-carolina': P950,
-  '/brand/medtronic-minimed-inc': P951,
-  '/brand/memorial-sloan-kettering-cancer-center': P952,
-  '/brand/merck-sharp-and-dohme-llc': P953,
-  '/brand/meta': P954,
-  '/brand/metas': P955,
-  '/brand/microsoft': P956,
-  '/brand/milton-s-hershey-medical-center': P957,
-  '/brand/mistral-ai': P958,
-  '/brand/mlcommons': P959,
-  '/brand/modernatx-inc': P960,
-  '/brand/mohela': P961,
-  '/brand/montefiore-medical-center': P962,
-  '/brand/moonshot-ai': P963,
-  '/brand/jpl': P964,
-  '/brand/national-cancer-institute-nci': P965,
-  '/brand/national-heart-lung-and-blood-institute-nhlbi': P966,
-  '/brand/national-hurricane-center': P967,
-  '/brand/national-institute-of-allergy-and-infectious-diseases-niaid': P968,
-  '/brand/npl-uk': P969,
-  '/brand/national-weather-service': P970,
-  '/brand/nebius': P971,
-  '/brand/netlify': P972,
-  '/brand/netnod': P973,
-  '/brand/neurocrine-biosciences': P974,
-  '/brand/new-york-state-psychiatric-institute': P975,
-  '/brand/nexus-mods': P976,
-  '/brand/ngenix': P977,
-  '/brand/nict': P978,
-  '/brand/nist': P979,
-  '/brand/noaa': P980,
-  '/brand/northwell-health': P981,
-  '/brand/northwestern-university': P982,
-  '/brand/notion': P983,
-  '/brand/novartis-pharmaceuticals': P984,
-  '/brand/novo-nordisk-a-s': P985,
-  '/brand/npm': P986,
-  '/brand/ntp-pool-project': P987,
-  '/brand/nvidia': P988,
-  '/brand/nyu-langone-health': P989,
-  '/brand/observatoire-de-paris': P990,
-  '/brand/ohio-state-university': P991,
-  '/brand/openai': P992,
-  '/brand/openbmb': P993,
-  '/brand/opencv': P994,
-  '/brand/oracle': P995,
-  '/brand/oregon-health-and-science-university': P996,
-  '/brand/orrick-industries': P997,
-  '/brand/otsuka-pharmaceutical-development-and-commercialization-inc': P998,
-  '/brand/outbrain': P999,
-  '/brand/pfizer': P1000,
-  '/brand/pikabu': P1001,
-  '/brand/pinterest': P1002,
-  '/brand/aylo': P1003,
-  '/brand/psa-airlines': P1004,
-  '/brand/ptb': P1005,
-  '/brand/pubmatic': P1006,
-  '/brand/purpleair': P1007,
-  '/brand/python-software-foundation': P1008,
-  '/brand/quad9': P1009,
-  '/brand/quantinuum': P1010,
-  '/brand/qwen': P1011,
-  '/brand/red-hat': P1012,
-  '/brand/reddit': P1013,
-  '/brand/regeneron-pharmaceuticals': P1014,
-  '/brand/reka': P1015,
-  '/brand/republic-airways': P1016,
-  '/brand/rigetti': P1017,
-  '/brand/roswell-park-cancer-institute': P1018,
-  '/brand/rush-university-medical-center': P1019,
-  '/brand/rutgers-the-state-university-of-new-jersey': P1020,
-  '/brand/sage-publishing': P1021,
-  '/brand/salesforce': P1022,
-  '/brand/sanofi': P1023,
-  '/brand/sanofi-pasteur-a-sanofi-company': P1024,
-  '/brand/scitix': P1025,
-  '/brand/seedtag': P1026,
-  '/brand/sentry': P1027,
-  '/brand/shein': P1028,
-  '/brand/shire': P1029,
-  '/brand/sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins': P1030,
-  '/brand/skywest-airlines': P1031,
-  '/brand/snap': P1032,
-  '/brand/sonova-ag': P1033,
-  '/brand/southwest-airlines': P1034,
-  '/brand/space-weather-prediction-center': P1035,
-  '/brand/speakleash': P1036,
-  '/brand/spirit-airlines': P1037,
-  '/brand/st-jude-children-s-research-hospital': P1038,
-  '/brand/stanford-university': P1039,
-  '/brand/storm-prediction-center': P1040,
-  '/brand/stripchat': P1041,
-  '/brand/sun-pharmaceutical-industries-limited': P1042,
-  '/brand/supermicro': P1043,
-  '/brand/supernus-pharmaceuticals-inc': P1044,
-  '/brand/takeda': P1045,
-  '/brand/teads': P1046,
-  '/brand/temu': P1047,
-  '/brand/tencent': P1048,
-  '/brand/teva-branded-pharmaceutical-products-r-and-d-inc': P1049,
-  '/brand/the-cleveland-clinic': P1050,
-  '/brand/the-university-of-texas-health-science-center-at-san-antonio': P1051,
-  '/brand/the-university-of-texas-health-science-center-houston': P1052,
-  '/brand/the-university-of-texas-medical-branch-galveston': P1053,
-  '/brand/thomas-jefferson-university': P1054,
-  '/brand/tiktok': P1055,
-  '/brand/transunion': P1056,
-  '/brand/trend-micro': P1057,
-  '/brand/tufts-medical-center': P1058,
-  '/brand/twilio': P1059,
-  '/brand/eia': P1060,
-  '/brand/usgs': P1061,
-  '/brand/usno': P1062,
-  '/brand/us-news': P1063,
-  '/brand/ucb-biopharma-srl': P1064,
-  '/brand/unc-lineberger-comprehensive-cancer-center': P1065,
-  '/brand/unesco-uis': P1066,
-  '/brand/united-airlines': P1067,
-  '/brand/university-hospitals-cleveland-medical-center': P1068,
-  '/brand/university-of-alabama-at-birmingham': P1069,
-  '/brand/university-of-arizona': P1070,
-  '/brand/university-of-arkansas': P1071,
-  '/brand/university-of-california-davis': P1072,
-  '/brand/university-of-california-irvine': P1073,
-  '/brand/university-of-california-los-angeles': P1074,
-  '/brand/university-of-california-san-diego': P1075,
-  '/brand/university-of-california-san-francisco': P1076,
-  '/brand/university-of-chicago': P1077,
-  '/brand/university-of-colorado-denver': P1078,
-  '/brand/university-of-florida': P1079,
-  '/brand/university-of-iowa': P1080,
-  '/brand/university-of-kansas-medical-center': P1081,
-  '/brand/university-of-maryland-baltimore': P1082,
-  '/brand/university-of-miami': P1083,
-  '/brand/university-of-michigan': P1084,
-  '/brand/university-of-michigan-rogel-cancer-center': P1085,
-  '/brand/university-of-minnesota': P1086,
-  '/brand/university-of-missouri-columbia': P1087,
-  '/brand/university-of-nebraska': P1088,
-  '/brand/university-of-new-mexico': P1089,
-  '/brand/university-of-north-carolina-chapel-hill': P1090,
-  '/brand/university-of-oklahoma': P1091,
-  '/brand/university-of-pennsylvania': P1092,
-  '/brand/university-of-rochester': P1093,
-  '/brand/university-of-southern-california': P1094,
-  '/brand/university-of-texas-southwestern-medical-center': P1095,
-  '/brand/university-of-utah': P1096,
-  '/brand/university-of-virginia': P1097,
-  '/brand/university-of-washington': P1098,
-  '/brand/university-of-wisconsin-madison': P1099,
-  '/brand/unsplash': P1100,
-  '/brand/va-office-of-research-and-development': P1101,
-  '/brand/vanderbilt-university-medical-center': P1102,
-  '/brand/vercel': P1103,
-  '/brand/vertex-pharmaceuticals-incorporated': P1104,
-  '/brand/vibehpc': P1105,
-  '/brand/viiv-healthcare': P1106,
-  '/brand/virginia-commonwealth-university': P1107,
-  '/brand/vox-media': P1108,
-  '/brand/wake-forest-university-health-sciences': P1109,
-  '/brand/washington-university-school-of-medicine': P1110,
-  '/brand/weill-medical-college-of-cornell-university': P1111,
-  '/brand/wikimedia-foundation': P1112,
-  '/brand/wildberries': P1113,
-  '/brand/wiwynn': P1114,
-  '/brand/world-bank': P1115,
-  '/brand/who': P1116,
-  '/brand/x': P1117,
-  '/brand/xiaomi': P1118,
-  '/brand/xnxx': P1119,
-  '/brand/xvideos': P1120,
-  '/brand/yale-university': P1121,
-  '/brand/z-ai': P1122,
-  '/brand/zalando': P1123,
-  '/brand/zoom': P1124,
-  '/brand': P1125,
-  '/e/backend/amazon-braket': P1126,
-  '/e/backend/ibm-aachen': P1127,
-  '/e/backend/ibm-algiers': P1128,
-  '/e/backend/ibm-auckland': P1129,
-  '/e/backend/ibm-belem': P1130,
-  '/e/backend/ibm-boston': P1131,
-  '/e/backend/ibm-brisbane': P1132,
-  '/e/backend/ibm-cairo': P1133,
-  '/e/backend/ibm-cleveland': P1134,
-  '/e/backend/ibm-fez': P1135,
-  '/e/backend/ibm-guadalupe': P1136,
-  '/e/backend/ibm-hanoi': P1137,
-  '/e/backend/ibm-kawasaki': P1138,
-  '/e/backend/ibm-kingston': P1139,
-  '/e/backend/ibm-kyiv': P1140,
-  '/e/backend/ibm-kyoto': P1141,
-  '/e/backend/ibm-lagos': P1142,
-  '/e/backend/ibm-manhattan': P1143,
-  '/e/backend/ibm-manila': P1144,
-  '/e/backend/ibm-marrakesh': P1145,
-  '/e/backend/ibm-miami': P1146,
-  '/e/backend/ibm-nairobi': P1147,
-  '/e/backend/ibm-osaka': P1148,
-  '/e/backend/ibm-oslo': P1149,
-  '/e/backend/ibm-peekskill': P1150,
-  '/e/backend/ibm-perth': P1151,
-  '/e/backend/ibm-phoenix': P1152,
-  '/e/backend/ibm-pittsburgh': P1153,
-  '/e/backend/ibm-quito': P1154,
-  '/e/backend/ibm-sherbrooke': P1155,
-  '/e/backend/ibm-strasbourg': P1156,
-  '/e/backend/ibm-tokyo': P1157,
-  '/e/backend/ibm-torino': P1158,
-  '/e/backend/ionq-aria-1': P1159,
-  '/e/backend/ionq-aria1': P1160,
-  '/e/backend/quantinuum-h1-1': P1161,
-  '/e/backend/rigetti-ankaa-3': P1162,
-  '/e/backend/rigetti-cepheus-1-108q': P1163,
-  '/e/model/deep-cogito-cogito-v2-1-671b': P1164,
-  '/e/model/deepseek-r1-1-5b': P1165,
-  '/e/model/falcon-family': P1166,
-  '/e/model/falcon3-3b': P1167,
-  '/e/model/gemma-family': P1168,
-  '/e/model/gemma3-4b': P1169,
-  '/e/model/gemma3n-e4b': P1170,
-  '/e/model/gpt-oss120b': P1171,
-  '/e/model/granite-family': P1172,
-  '/e/model/granite3-3-2b': P1173,
-  '/e/model/granite4-1-3b': P1174,
-  '/e/model/granite4-2-30b': P1175,
-  '/e/model/granite4-2-3b': P1176,
-  '/e/model/granite4-2-8b': P1177,
-  '/e/model/inclusionai-ling2-6-1t': P1178,
-  '/e/model/inclusionai-ling3-0-flash': P1179,
-  '/e/model/inclusionai-ling3-0-flash-fin': P1180,
-  '/e/model/inclusionai-ling3-0-flash-vl': P1181,
-  '/e/model/llama-family': P1182,
-  '/e/model/llama-guard2-8b': P1183,
-  '/e/model/llama-guard3-8b': P1184,
-  '/e/model/llama-guard4-12b': P1185,
-  '/e/model/llama3-1-8b': P1186,
-  '/e/model/medium-family': P1187,
-  '/e/model/medium3-5': P1188,
-  '/e/model/mistral-family': P1189,
-  '/e/model/mistral7b': P1190,
-  '/e/model/moonshot-ai-kimi-k2-7-code': P1191,
-  '/e/model/nemotron-family': P1192,
-  '/e/model/nemotron3-5-content-safety': P1193,
-  '/e/model/nemotron3-ultra550b-a55b': P1194,
-  '/e/model/olmo-family': P1195,
-  '/e/model/olmo2-7b': P1196,
-  '/e/model/phi-family': P1197,
-  '/e/model/phi4-mini': P1198,
-  '/e/model/qwen-family': P1199,
-  '/e/model/qwen3-1-7b': P1200,
-  '/e/model/qwen3-235b-a22b-instruct2507': P1201,
-  '/e/model/qwen3-4b': P1202,
-  '/e/model/smollm-family': P1203,
-  '/e/model/smollm2-1-7b': P1204,
-  '/e/model/speakleash-bielik11b-v3-0': P1205,
-  '/e/model/tencent-hy4-preview': P1206,
-  '/e/model/v4-flash': P1207,
-  '/e/model/v4-flash-vision-exp': P1208,
-  '/e/model/xiaomi-mimo-v2-5-pro': P1209,
-  '/e/model/z-ai-glm5-3-flash-bf16': P1210,
-  '/e/package/opencv-python': P1211,
-  '/e/package/opencv-python-headless': P1212,
-  '/e/package/pandas-gbq': P1213,
-  '/e/package/redshift-connector': P1214,
-  '/forecasters': P1215,
-  '/alerts': P1216,
-  '/changelog': P1217,
-  '/follow': P1218,
-  '/webhooks': P1219,
-  '/verify': P1220,
-  '/reproduce': P1221,
-  '/transparency': P1222,
-  '/security/self': P1223,
-  '/security/policy': P1224,
-  '/security/thanks': P1225,
-  '/mydata': P1226
+  '/sagar/study/2610.29384': P751,
+  '/sagar/study/2609.39583': P752,
+  '/sagar/study/2609.06211': P753,
+  '/sagar/study/2609.01568': P754,
+  '/sagar/study/2608.29295': P755,
+  '/sagar/study/2608.07237': P756,
+  '/sagar/study/2607.23119': P757,
+  '/sagar/study/2607.21924': P758,
+  '/sagar/study/2607.17439': P759,
+  '/sagar/study/2607.16135': P760,
+  '/sagar/study/2607.10816': P761,
+  '/sagar/study/2607.08466': P762,
+  '/sagar/study/2606.25304': P763,
+  '/sagar/study/2606.18081': P764,
+  '/sagar/study/2604.23793': P765,
+  '/sagar/study/2604.22450': P766,
+  '/sagar/study/2604.15129': P767,
+  '/sagar/study/2604.14290': P768,
+  '/sagar/study/2604.13839': P769,
+  '/sagar/study/2604.07668': P770,
+  '/sagar/study/2603.29019': P771,
+  '/sagar/study/2602.04497': P772,
+  '/sagar/study/2512.10344': P773,
+  '/sagar/study/2512.04516': P774,
+  '/sagar/study/2511.16879': P775,
+  '/sagar/study/2511.06536': P776,
+  '/sagar/study/2510.25579': P777,
+  '/sagar/study/2510.23829': P778,
+  '/sagar/study/2510.20891': P779,
+  '/sagar/study/2510.14291': P780,
+  '/sagar/study/2510.08764': P781,
+  '/sagar/study/2510.05029': P782,
+  '/sagar/study/2509.03579': P783,
+  '/sagar/study/2509.03480': P784,
+  '/sagar/study/2509.02047': P785,
+  '/sagar/study/2509.00907': P786,
+  '/sagar/study/2509.00274': P787,
+  '/sagar/study/2508.19331': P788,
+  '/sagar/study/2508.17103': P789,
+  '/sagar/study/2508.04172': P790,
+  '/sagar/study/2508.00179': P791,
+  '/sagar/study/2507.21566': P792,
+  '/sagar/study/2507.21315': P793,
+  '/sagar/study/2507.20778': P794,
+  '/sagar/study/2507.16022': P795,
+  '/sagar/study/2507.09099': P796,
+  '/sagar/study/2507.08318': P797,
+  '/sagar/study/2507.02335': P798,
+  '/sagar/study/2507.01294': P799,
+  '/sagar/study/2506.21021': P800,
+  '/sagar/study/2506.15984': P801,
+  '/sagar/study/2506.13870': P802,
+  '/sagar/study/2506.12126': P803,
+  '/sagar/study/2506.06838': P804,
+  '/sagar/study/2505.15399': P805,
+  '/sagar/study/2504.00198': P806,
+  '/sagar/study/2503.14179': P807,
+  '/sagar/study/2503.09773': P808,
+  '/sagar/study/2503.04916': P809,
+  '/sagar/study/2412.06433': P810,
+  '/sagar/study/2412.05369': P811,
+  '/sagar/study/2412.01058': P812,
+  '/sagar/study/2410.23541': P813,
+  '/sagar/study/2410.16565': P814,
+  '/sagar/study/2410.16416': P815,
+  '/sagar/study/2409.05068': P816,
+  '/sagar/study/2409.00179': P817,
+  '/sagar/study/2407.08538': P818,
+  '/sagar/study/2406.17832': P819,
+  '/sagar/study/2406.11742': P820,
+  '/sagar/study/2406.01784': P821,
+  '/sagar/study/2405.18934': P822,
+  '/sagar/study/2405.02286': P823,
+  '/sagar/study/2404.03721': P824,
+  '/sagar/study/2403.17186': P825,
+  '/sagar/study/2403.17179': P826,
+  '/sagar/study/2403.10804': P827,
+  '/sagar/study/2403.03982': P828,
+  '/sagar/study/2402.15336': P829,
+  '/sagar/study/2402.04172': P830,
+  '/sagar/study/2312.17491': P831,
+  '/sagar/study/2312.03860': P832,
+  '/sagar/study/2311.16085': P833,
+  '/sagar/study/2311.15695': P834,
+  '/sagar/study/2311.06630': P835,
+  '/sagar/study/2311.06416': P836,
+  '/sagar/study/2311.06061': P837,
+  '/sagar/study/2311.03556': P838,
+  '/sagar/study/2310.05823': P839,
+  '/sagar/study/2309.04303': P840,
+  '/sagar/study/2309.01894': P841,
+  '/sagar/study/2308.08639': P842,
+  '/sagar/study/2307.13099': P843,
+  '/sagar/study/2306.03827': P844,
+  '/sagar/study/2305.08257': P845,
+  '/sagar/study/2304.14820': P846,
+  '/sagar/study/2304.09977': P847,
+  '/sagar/study/2304.09025': P848,
+  '/sagar/study/2303.17628': P849,
+  '/sagar/study/2303.10847': P850,
+  '/sagar/study/2303.08399': P851,
+  '/sagar/study/2302.12158': P852,
+  '/sagar/study/2302.09651': P853,
+  '/sagar/study/2302.08042': P854,
+  '/sagar/study/2302.04881': P855,
+  '/sagar/study/2212.14283': P856,
+  '/sagar/study/2212.02026': P857,
+  '/sagar/study/2210.16278': P858,
+  '/sagar/study/2210.09592': P859,
+  '/sagar/study/2210.09425': P860,
+  '/sagar/study/2209.14321': P861,
+  '/sagar/study/2208.12872': P862,
+  '/sagar/study/2208.02291': P863,
+  '/sagar/study/2208.01766': P864,
+  '/sagar/study/2207.14286': P865,
+  '/sagar/study/2207.10410': P866,
+  '/sagar/study/2207.01654': P867,
+  '/sagar/study/2204.13495': P868,
+  '/sagar/study/2203.08998': P869,
+  '/sagar/study/2202.07399': P870,
+  '/sagar/study/2202.05092': P871,
+  '/sagar/study/2201.05220': P872,
+  '/sagar/study/2201.02543': P873,
+  '/sagar/study/2201.01817': P874,
+  '/sagar/study/2201.01526': P875,
+  '/sagar/study/2112.11300': P876,
+  '/sagar/study/2111.07219': P877,
+  '/sagar/study/2111.00111': P878,
+  '/sagar/study/2107.03516': P879,
+  '/sagar/study/2106.13785': P880,
+  '/sagar/study/2105.04263': P881,
+  '/sagar/study/2103.12976': P882,
+  '/sagar/study/2012.03963': P883,
+  '/sagar/study/2011.09570': P884,
+  '/sagar/study/2011.04414': P885,
+  '/sagar/study/2010.09751': P886,
+  '/sagar/study/2010.05830': P887,
+  '/sagar/study/2010.04848': P888,
+  '/sagar/study/2009.12260': P889,
+  '/sagar/study/2008.00509': P890,
+  '/sagar/study/2007.12709': P891,
+  '/sagar/study/2007.04176': P892,
+  '/sagar/study/2006.11293': P893,
+  '/sagar/study/2006.00714': P894,
+  '/sagar/study/2004.05128': P895,
+  '/sagar/study/2003.04513': P896,
+  '/sagar/study/2002.05528': P897,
+  '/sagar/study/2001.03833': P898,
+  '/sagar/study/1910.09138': P899,
+  '/sagar/study/1909.11873': P900,
+  '/sagar/study/1909.11801': P901,
+  '/sagar/study/1905.12669': P902,
+  '/sagar/study/1904.07214': P903,
+  '/sagar/study/1904.06020': P904,
+  '/sagar/study/1903.10159': P905,
+  '/sagar/study/1903.02823': P906,
+  '/sagar/study/1903.01998': P907,
+  '/sagar/study/1902.09496': P908,
+  '/sagar/study/1808.05453': P909,
+  '/sagar/study/1807.07660': P910,
+  '/sagar/study/1806.10610': P911,
+  '/sagar/study/1711.09073': P912,
+  '/sagar/receipts/2603.29019_sigma': P913,
+  '/qia': P914,
+  '/qia/list': P915,
+  '/qia/key': P916,
+  '/qia/data': P917,
+  '/hermes/datapapers': P918,
+  '/standard': P919,
+  '/record': P920,
+  '/correction': P921,
+  '/corrections': P922,
+  '/newsletter/1': P923,
+  '/newsletter/0': P924,
+  '/newsletter': P925,
+  '/respond': P926,
+  '/now': P927,
+  '/hermes': P928,
+  '/darkwave': P929,
+  '/qia/package': P930,
+  '/darkwave/kit': P931,
+  '/iris/package': P932,
+  '/atlas/data-pack': P933,
+  '/oy/data-pack': P934,
+  '/hermes/model/data-pack': P935,
+  '/week/2026-44': P936,
+  '/week/2026-45': P937,
+  '/week': P938,
+  '/brand/abbott-medical-devices': P939,
+  '/brand/abbvie': P940,
+  '/brand/acadia-pharmaceuticals-inc': P941,
+  '/brand/aclaris-therapeutics-inc': P942,
+  '/brand/adguard': P943,
+  '/brand/ain-shams-university': P944,
+  '/brand/alaska-airlines': P945,
+  '/brand/albert-einstein-college-of-medicine': P946,
+  '/brand/alcon-research': P947,
+  '/brand/aldeyra-therapeutics-inc': P948,
+  '/brand/alexion-pharmaceuticals-inc': P949,
+  '/brand/aliexpress': P950,
+  '/brand/allegiant-air': P951,
+  '/brand/allergan': P952,
+  '/brand/amazon': P953,
+  '/brand/aws': P954,
+  '/brand/amd': P955,
+  '/brand/american-airlines': P956,
+  '/brand/amgen': P957,
+  '/brand/anthropic': P958,
+  '/brand/apple': P959,
+  '/brand/applovin': P960,
+  '/brand/arcutis-biotherapeutics-inc': P961,
+  '/brand/astellas-pharma-global-development-inc': P962,
+  '/brand/astrazeneca': P963,
+  '/brand/asus': P964,
+  '/brand/atlassian': P965,
+  '/brand/automattic': P966,
+  '/brand/axsome-therapeutics-inc': P967,
+  '/brand/bausch-and-lomb-incorporated': P968,
+  '/brand/bayer': P969,
+  '/brand/baylor-college-of-medicine': P970,
+  '/brand/bbc': P971,
+  '/brand/beigene': P972,
+  '/brand/beth-israel-deaconess-medical-center': P973,
+  '/brand/biogen': P974,
+  '/brand/biontech-se': P975,
+  '/brand/bluehost': P976,
+  '/brand/bluesky': P977,
+  '/brand/boehringer-ingelheim': P978,
+  '/brand/booking-com': P979,
+  '/brand/boston-children-s-hospital': P980,
+  '/brand/boston-scientific-corporation': P981,
+  '/brand/branch': P982,
+  '/brand/brigham-and-women-s-hospital': P983,
+  '/brand/bristol-myers-squibb': P984,
+  '/brand/broadcom': P985,
+  '/brand/btl-industries-ltd': P986,
+  '/brand/bureau-of-labor-statistics': P987,
+  '/brand/bureau-of-reclamation': P988,
+  '/brand/cairo-university': P989,
+  '/brand/canonical': P990,
+  '/brand/case-comprehensive-cancer-center': P991,
+  '/brand/cedars-sinai-medical-center': P992,
+  '/brand/celgene': P993,
+  '/brand/cdc': P994,
+  '/brand/cms': P995,
+  '/brand/children-s-hospital-medical-center-cincinnati': P996,
+  '/brand/cisco': P997,
+  '/brand/cleanbrowsing': P998,
+  '/brand/climate-prediction-center': P999,
+  '/brand/cloudflare': P1000,
+  '/brand/colgate-palmolive': P1001,
+  '/brand/columbia-university': P1002,
+  '/brand/consumer-financial-protection-bureau': P1003,
+  '/brand/control-d': P1004,
+  '/brand/coopervision-inc': P1005,
+  '/brand/coreweave': P1006,
+  '/brand/corewell-health-east': P1007,
+  '/brand/crusoe': P1008,
+  '/brand/npl-india': P1009,
+  '/brand/cz-nic': P1010,
+  '/brand/daiichi-sankyo': P1011,
+  '/brand/dana-farber-cancer-institute': P1012,
+  '/brand/datadog': P1013,
+  '/brand/deep-cogito': P1014,
+  '/brand/deepseek': P1015,
+  '/brand/dell': P1016,
+  '/brand/delta-air-lines': P1017,
+  '/brand/doe': P1018,
+  '/brand/hhs': P1019,
+  '/brand/dol': P1020,
+  '/brand/va': P1021,
+  '/brand/digitalocean': P1022,
+  '/brand/discord': P1023,
+  '/brand/docker': P1024,
+  '/brand/dropbox': P1025,
+  '/brand/duke-university': P1026,
+  '/brand/ebay': P1027,
+  '/brand/eisai-inc': P1028,
+  '/brand/eleutherai': P1029,
+  '/brand/eli-lilly-and-company': P1030,
+  '/brand/elsevier': P1031,
+  '/brand/emd-serono-research-and-development-institute-inc': P1032,
+  '/brand/emory-university': P1033,
+  '/brand/epa': P1034,
+  '/brand/envoy-air': P1035,
+  '/brand/equifax': P1036,
+  '/brand/etsy': P1037,
+  '/brand/experian': P1038,
+  '/brand/federal-reserve': P1039,
+  '/brand/fred-hutchinson-cancer-center': P1040,
+  '/brand/frontier-airlines': P1041,
+  '/brand/fujitsu': P1042,
+  '/brand/galderma-r-and-d': P1043,
+  '/brand/genentech-inc': P1044,
+  '/brand/gigacomputing': P1045,
+  '/brand/gilead-sciences': P1046,
+  '/brand/github': P1047,
+  '/brand/glaxosmithkline': P1048,
+  '/brand/google': P1049,
+  '/brand/gov-uk': P1050,
+  '/brand/h-lee-moffitt-cancer-center-and-research-institute': P1051,
+  '/brand/hawaiian-airlines': P1052,
+  '/brand/henry-ford-health-system': P1053,
+  '/brand/hkust': P1054,
+  '/brand/hoffmann-la-roche': P1055,
+  '/brand/hospital-for-special-surgery-new-york': P1056,
+  '/brand/hostgator': P1057,
+  '/brand/hpe': P1058,
+  '/brand/hugging-face': P1059,
+  '/brand/ibm': P1060,
+  '/brand/icahn-school-of-medicine-at-mount-sinai': P1061,
+  '/brand/iiko': P1062,
+  '/brand/inclusionai': P1063,
+  '/brand/incyte-corporation': P1064,
+  '/brand/indiana-university': P1065,
+  '/brand/inmobi': P1066,
+  '/brand/inrim': P1067,
+  '/brand/intel': P1068,
+  '/brand/ionis-pharmaceuticals-inc': P1069,
+  '/brand/ionq': P1070,
+  '/brand/janssen-research-and-development-llc': P1071,
+  '/brand/janssen-vaccines-and-prevention-b-v': P1072,
+  '/brand/jazz-pharmaceuticals': P1073,
+  '/brand/jetblue': P1074,
+  '/brand/johns-hopkins-university': P1075,
+  '/brand/johnson-and-johnson-vision-care-inc': P1076,
+  '/brand/k-veritas': P1077,
+  '/brand/kriss': P1078,
+  '/brand/lambda': P1079,
+  '/brand/lenovo': P1080,
+  '/brand/leo-pharma': P1081,
+  '/brand/library-of-congress': P1082,
+  '/brand/linear': P1083,
+  '/brand/linkedin': P1084,
+  '/brand/loma-linda-university': P1085,
+  '/brand/m-d-anderson-cancer-center': P1086,
+  '/brand/mangoboost': P1087,
+  '/brand/markmonitor': P1088,
+  '/brand/masimo-corporation': P1089,
+  '/brand/masonic-cancer-center-university-of-minnesota': P1090,
+  '/brand/massachusetts-general-hospital': P1091,
+  '/brand/mayo-clinic': P1092,
+  '/brand/medical-college-of-wisconsin': P1093,
+  '/brand/medical-university-of-south-carolina': P1094,
+  '/brand/medtronic-minimed-inc': P1095,
+  '/brand/memorial-sloan-kettering-cancer-center': P1096,
+  '/brand/merck-sharp-and-dohme-llc': P1097,
+  '/brand/meta': P1098,
+  '/brand/metas': P1099,
+  '/brand/microsoft': P1100,
+  '/brand/milton-s-hershey-medical-center': P1101,
+  '/brand/mistral-ai': P1102,
+  '/brand/mlcommons': P1103,
+  '/brand/modernatx-inc': P1104,
+  '/brand/mohela': P1105,
+  '/brand/montefiore-medical-center': P1106,
+  '/brand/moonshot-ai': P1107,
+  '/brand/jpl': P1108,
+  '/brand/national-cancer-institute-nci': P1109,
+  '/brand/national-heart-lung-and-blood-institute-nhlbi': P1110,
+  '/brand/national-hurricane-center': P1111,
+  '/brand/national-institute-of-allergy-and-infectious-diseases-niaid': P1112,
+  '/brand/npl-uk': P1113,
+  '/brand/national-weather-service': P1114,
+  '/brand/nebius': P1115,
+  '/brand/netlify': P1116,
+  '/brand/netnod': P1117,
+  '/brand/neurocrine-biosciences': P1118,
+  '/brand/new-york-state-psychiatric-institute': P1119,
+  '/brand/nexus-mods': P1120,
+  '/brand/ngenix': P1121,
+  '/brand/nict': P1122,
+  '/brand/nist': P1123,
+  '/brand/noaa': P1124,
+  '/brand/northwell-health': P1125,
+  '/brand/northwestern-university': P1126,
+  '/brand/notion': P1127,
+  '/brand/novartis-pharmaceuticals': P1128,
+  '/brand/novo-nordisk-a-s': P1129,
+  '/brand/npm': P1130,
+  '/brand/ntp-pool-project': P1131,
+  '/brand/nvidia': P1132,
+  '/brand/nyu-langone-health': P1133,
+  '/brand/observatoire-de-paris': P1134,
+  '/brand/ohio-state-university': P1135,
+  '/brand/openai': P1136,
+  '/brand/openbmb': P1137,
+  '/brand/opencv': P1138,
+  '/brand/oracle': P1139,
+  '/brand/oregon-health-and-science-university': P1140,
+  '/brand/orrick-industries': P1141,
+  '/brand/otsuka-pharmaceutical-development-and-commercialization-inc': P1142,
+  '/brand/outbrain': P1143,
+  '/brand/pfizer': P1144,
+  '/brand/pikabu': P1145,
+  '/brand/pinterest': P1146,
+  '/brand/aylo': P1147,
+  '/brand/psa-airlines': P1148,
+  '/brand/ptb': P1149,
+  '/brand/pubmatic': P1150,
+  '/brand/purpleair': P1151,
+  '/brand/python-software-foundation': P1152,
+  '/brand/quad9': P1153,
+  '/brand/quantinuum': P1154,
+  '/brand/qwen': P1155,
+  '/brand/red-hat': P1156,
+  '/brand/reddit': P1157,
+  '/brand/regeneron-pharmaceuticals': P1158,
+  '/brand/reka': P1159,
+  '/brand/republic-airways': P1160,
+  '/brand/rigetti': P1161,
+  '/brand/roswell-park-cancer-institute': P1162,
+  '/brand/rush-university-medical-center': P1163,
+  '/brand/rutgers-the-state-university-of-new-jersey': P1164,
+  '/brand/sage-publishing': P1165,
+  '/brand/salesforce': P1166,
+  '/brand/sanofi': P1167,
+  '/brand/sanofi-pasteur-a-sanofi-company': P1168,
+  '/brand/scitix': P1169,
+  '/brand/seedtag': P1170,
+  '/brand/sentry': P1171,
+  '/brand/shein': P1172,
+  '/brand/shire': P1173,
+  '/brand/sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins': P1174,
+  '/brand/skywest-airlines': P1175,
+  '/brand/snap': P1176,
+  '/brand/sonova-ag': P1177,
+  '/brand/southwest-airlines': P1178,
+  '/brand/space-weather-prediction-center': P1179,
+  '/brand/speakleash': P1180,
+  '/brand/spirit-airlines': P1181,
+  '/brand/st-jude-children-s-research-hospital': P1182,
+  '/brand/stanford-university': P1183,
+  '/brand/storm-prediction-center': P1184,
+  '/brand/stripchat': P1185,
+  '/brand/sun-pharmaceutical-industries-limited': P1186,
+  '/brand/supermicro': P1187,
+  '/brand/supernus-pharmaceuticals-inc': P1188,
+  '/brand/takeda': P1189,
+  '/brand/teads': P1190,
+  '/brand/temu': P1191,
+  '/brand/tencent': P1192,
+  '/brand/teva-branded-pharmaceutical-products-r-and-d-inc': P1193,
+  '/brand/the-cleveland-clinic': P1194,
+  '/brand/the-university-of-texas-health-science-center-at-san-antonio': P1195,
+  '/brand/the-university-of-texas-health-science-center-houston': P1196,
+  '/brand/the-university-of-texas-medical-branch-galveston': P1197,
+  '/brand/thomas-jefferson-university': P1198,
+  '/brand/tiktok': P1199,
+  '/brand/transunion': P1200,
+  '/brand/trend-micro': P1201,
+  '/brand/tufts-medical-center': P1202,
+  '/brand/twilio': P1203,
+  '/brand/eia': P1204,
+  '/brand/usgs': P1205,
+  '/brand/usno': P1206,
+  '/brand/us-news': P1207,
+  '/brand/ucb-biopharma-srl': P1208,
+  '/brand/unc-lineberger-comprehensive-cancer-center': P1209,
+  '/brand/unesco-uis': P1210,
+  '/brand/united-airlines': P1211,
+  '/brand/university-hospitals-cleveland-medical-center': P1212,
+  '/brand/university-of-alabama-at-birmingham': P1213,
+  '/brand/university-of-arizona': P1214,
+  '/brand/university-of-arkansas': P1215,
+  '/brand/university-of-california-davis': P1216,
+  '/brand/university-of-california-irvine': P1217,
+  '/brand/university-of-california-los-angeles': P1218,
+  '/brand/university-of-california-san-diego': P1219,
+  '/brand/university-of-california-san-francisco': P1220,
+  '/brand/university-of-chicago': P1221,
+  '/brand/university-of-colorado-denver': P1222,
+  '/brand/university-of-florida': P1223,
+  '/brand/university-of-iowa': P1224,
+  '/brand/university-of-kansas-medical-center': P1225,
+  '/brand/university-of-maryland-baltimore': P1226,
+  '/brand/university-of-miami': P1227,
+  '/brand/university-of-michigan': P1228,
+  '/brand/university-of-michigan-rogel-cancer-center': P1229,
+  '/brand/university-of-minnesota': P1230,
+  '/brand/university-of-missouri-columbia': P1231,
+  '/brand/university-of-nebraska': P1232,
+  '/brand/university-of-new-mexico': P1233,
+  '/brand/university-of-north-carolina-chapel-hill': P1234,
+  '/brand/university-of-oklahoma': P1235,
+  '/brand/university-of-pennsylvania': P1236,
+  '/brand/university-of-rochester': P1237,
+  '/brand/university-of-southern-california': P1238,
+  '/brand/university-of-texas-southwestern-medical-center': P1239,
+  '/brand/university-of-utah': P1240,
+  '/brand/university-of-virginia': P1241,
+  '/brand/university-of-washington': P1242,
+  '/brand/university-of-wisconsin-madison': P1243,
+  '/brand/unsplash': P1244,
+  '/brand/va-office-of-research-and-development': P1245,
+  '/brand/vanderbilt-university-medical-center': P1246,
+  '/brand/vercel': P1247,
+  '/brand/vertex-pharmaceuticals-incorporated': P1248,
+  '/brand/vibehpc': P1249,
+  '/brand/viiv-healthcare': P1250,
+  '/brand/virginia-commonwealth-university': P1251,
+  '/brand/vox-media': P1252,
+  '/brand/wake-forest-university-health-sciences': P1253,
+  '/brand/washington-university-school-of-medicine': P1254,
+  '/brand/weill-medical-college-of-cornell-university': P1255,
+  '/brand/wikimedia-foundation': P1256,
+  '/brand/wildberries': P1257,
+  '/brand/wiwynn': P1258,
+  '/brand/world-bank': P1259,
+  '/brand/who': P1260,
+  '/brand/x': P1261,
+  '/brand/xiaomi': P1262,
+  '/brand/xnxx': P1263,
+  '/brand/xvideos': P1264,
+  '/brand/yale-university': P1265,
+  '/brand/z-ai': P1266,
+  '/brand/zalando': P1267,
+  '/brand/zoom': P1268,
+  '/brand': P1269,
+  '/e/backend/amazon-braket': P1270,
+  '/e/backend/ibm-aachen': P1271,
+  '/e/backend/ibm-algiers': P1272,
+  '/e/backend/ibm-auckland': P1273,
+  '/e/backend/ibm-belem': P1274,
+  '/e/backend/ibm-boston': P1275,
+  '/e/backend/ibm-brisbane': P1276,
+  '/e/backend/ibm-cairo': P1277,
+  '/e/backend/ibm-cleveland': P1278,
+  '/e/backend/ibm-fez': P1279,
+  '/e/backend/ibm-guadalupe': P1280,
+  '/e/backend/ibm-hanoi': P1281,
+  '/e/backend/ibm-kawasaki': P1282,
+  '/e/backend/ibm-kingston': P1283,
+  '/e/backend/ibm-kyiv': P1284,
+  '/e/backend/ibm-kyoto': P1285,
+  '/e/backend/ibm-lagos': P1286,
+  '/e/backend/ibm-manhattan': P1287,
+  '/e/backend/ibm-manila': P1288,
+  '/e/backend/ibm-marrakesh': P1289,
+  '/e/backend/ibm-miami': P1290,
+  '/e/backend/ibm-nairobi': P1291,
+  '/e/backend/ibm-osaka': P1292,
+  '/e/backend/ibm-oslo': P1293,
+  '/e/backend/ibm-peekskill': P1294,
+  '/e/backend/ibm-perth': P1295,
+  '/e/backend/ibm-phoenix': P1296,
+  '/e/backend/ibm-pittsburgh': P1297,
+  '/e/backend/ibm-quito': P1298,
+  '/e/backend/ibm-sherbrooke': P1299,
+  '/e/backend/ibm-strasbourg': P1300,
+  '/e/backend/ibm-tokyo': P1301,
+  '/e/backend/ibm-torino': P1302,
+  '/e/backend/ionq-aria-1': P1303,
+  '/e/backend/ionq-aria1': P1304,
+  '/e/backend/quantinuum-h1-1': P1305,
+  '/e/backend/rigetti-ankaa-3': P1306,
+  '/e/backend/rigetti-cepheus-1-108q': P1307,
+  '/e/model/deep-cogito-cogito-v2-1-671b': P1308,
+  '/e/model/deepseek-r1-1-5b': P1309,
+  '/e/model/falcon-family': P1310,
+  '/e/model/falcon3-3b': P1311,
+  '/e/model/gemma-family': P1312,
+  '/e/model/gemma3-4b': P1313,
+  '/e/model/gemma3n-e4b': P1314,
+  '/e/model/gpt-oss120b': P1315,
+  '/e/model/granite-family': P1316,
+  '/e/model/granite3-3-2b': P1317,
+  '/e/model/granite4-1-3b': P1318,
+  '/e/model/granite4-2-30b': P1319,
+  '/e/model/granite4-2-3b': P1320,
+  '/e/model/granite4-2-8b': P1321,
+  '/e/model/inclusionai-ling2-6-1t': P1322,
+  '/e/model/inclusionai-ling3-0-flash': P1323,
+  '/e/model/inclusionai-ling3-0-flash-fin': P1324,
+  '/e/model/inclusionai-ling3-0-flash-vl': P1325,
+  '/e/model/llama-family': P1326,
+  '/e/model/llama-guard2-8b': P1327,
+  '/e/model/llama-guard3-8b': P1328,
+  '/e/model/llama-guard4-12b': P1329,
+  '/e/model/llama3-1-8b': P1330,
+  '/e/model/medium-family': P1331,
+  '/e/model/medium3-5': P1332,
+  '/e/model/mistral-family': P1333,
+  '/e/model/mistral7b': P1334,
+  '/e/model/moonshot-ai-kimi-k2-7-code': P1335,
+  '/e/model/nemotron-family': P1336,
+  '/e/model/nemotron3-5-content-safety': P1337,
+  '/e/model/nemotron3-ultra550b-a55b': P1338,
+  '/e/model/olmo-family': P1339,
+  '/e/model/olmo2-7b': P1340,
+  '/e/model/phi-family': P1341,
+  '/e/model/phi4-mini': P1342,
+  '/e/model/qwen-family': P1343,
+  '/e/model/qwen3-1-7b': P1344,
+  '/e/model/qwen3-235b-a22b-instruct2507': P1345,
+  '/e/model/qwen3-4b': P1346,
+  '/e/model/smollm-family': P1347,
+  '/e/model/smollm2-1-7b': P1348,
+  '/e/model/speakleash-bielik11b-v3-0': P1349,
+  '/e/model/tencent-hy4-preview': P1350,
+  '/e/model/v4-flash': P1351,
+  '/e/model/v4-flash-vision-exp': P1352,
+  '/e/model/xiaomi-mimo-v2-5-pro': P1353,
+  '/e/model/z-ai-glm5-3-flash-bf16': P1354,
+  '/e/package/opencv-python': P1355,
+  '/e/package/opencv-python-headless': P1356,
+  '/e/package/pandas-gbq': P1357,
+  '/e/package/redshift-connector': P1358,
+  '/forecasters': P1359,
+  '/alerts': P1360,
+  '/changelog': P1361,
+  '/follow': P1362,
+  '/webhooks': P1363,
+  '/verify': P1364,
+  '/reproduce': P1365,
+  '/transparency': P1366,
+  '/security/self': P1367,
+  '/security/policy': P1368,
+  '/security/thanks': P1369,
+  '/mydata': P1370
 };
 export const STYLE = CSS;
 export const GATE_JS = GATE_UI;
@@ -2464,6 +2752,6 @@ export const FEED = FEED_STATIC;
 export const NDA = { version: '1.2' };
 export const PRIVACY = { version: '2026-11-11a' };
 export const BUILT = '2026-11-13';
-export const LASTMOD = {"/":"2026-11-12T22:46:12Z","/agree":"2026-11-11T21:28:03Z","/contact":"2026-11-11T21:28:03Z","/inquiry":"2026-10-28T23:10:02Z","/privacy":"2026-11-11T21:28:03Z","/terms":"2026-10-30T15:42:52Z","/conflict-of-interest":"2026-10-28T23:10:02Z","/media":"2026-11-10T15:50:57Z","/media/2026-10-26":"2026-10-29T20:44:30Z","/community":"2026-11-09T12:16:12Z","/changes":"2026-11-13T13:12:57Z","/vault":"2026-10-29T21:51:28Z","/security":"2026-11-10T22:02:13Z","/inquire-ok":"2026-10-28T23:10:02Z","/inquire-error":"2026-10-28T23:10:02Z","/404":"2026-11-09T02:20:41Z","/oy/school/101912":"2026-10-30T15:42:52Z","/oy/school/106342":"2026-10-30T15:42:52Z","/oy/school/107080":"2026-10-30T15:42:52Z","/oy/school/107512":"2026-10-30T15:42:52Z","/oy/school/112260":"2026-10-30T15:42:52Z","/oy/school/115409":"2026-10-30T15:42:52Z","/oy/school/116846":"2026-10-30T15:42:52Z","/oy/school/120254":"2026-11-10T18:17:15Z","/oy/school/121257":"2026-10-30T15:42:52Z","/oy/school/121345":"2026-10-30T15:42:52Z","/oy/school/123165":"2026-11-10T18:17:15Z","/oy/school/123457":"2026-10-30T15:42:52Z","/oy/school/124292":"2026-10-30T15:42:52Z","/oy/school/125727":"2026-10-30T15:42:52Z","/oy/school/125763":"2026-10-30T15:42:52Z","/oy/school/126678":"2026-10-30T15:42:52Z","/oy/school/128902":"2026-10-30T15:42:52Z","/oy/school/130590":"2026-10-30T15:42:52Z","/oy/school/130697":"2026-10-30T15:42:52Z","/oy/school/132602":"2026-11-10T18:17:15Z","/oy/school/133492":"2026-10-30T15:42:52Z","/oy/school/138600":"2026-10-30T15:42:52Z","/oy/school/139153":"2026-10-30T15:42:52Z","/oy/school/139393":"2026-10-30T15:42:52Z","/oy/school/140553":"2026-10-30T15:42:52Z","/oy/school/140696":"2026-10-30T15:42:52Z","/oy/school/140720":"2026-10-30T15:42:52Z","/oy/school/141060":"2026-10-30T15:42:52Z","/oy/school/141361":"2026-10-30T15:42:52Z","/oy/school/143084":"2026-11-10T18:17:15Z","/oy/school/144883":"2026-10-30T15:42:52Z","/oy/school/145497":"2026-10-30T15:42:52Z","/oy/school/145691":"2026-11-10T18:17:15Z","/oy/school/146427":"2026-10-30T15:42:52Z","/oy/school/146481":"2026-10-30T15:42:52Z","/oy/school/147341":"2026-11-10T18:17:15Z","/oy/school/148016":"2026-10-30T15:42:52Z","/oy/school/149781":"2026-10-30T15:42:52Z","/oy/school/150400":"2026-10-30T15:42:52Z","/oy/school/150455":"2026-10-30T15:42:52Z","/oy/school/150604":"2026-10-30T15:42:52Z","/oy/school/150756":"2026-10-30T15:42:52Z","/oy/school/150774":"2026-10-30T15:42:52Z","/oy/school/151810":"2026-10-30T15:42:52Z","/oy/school/152390":"2026-11-10T18:17:15Z","/oy/school/152673":"2026-11-10T18:17:15Z","/oy/school/153108":"2026-10-30T15:42:52Z","/oy/school/153144":"2026-10-30T15:42:52Z","/oy/school/153162":"2026-10-30T15:42:52Z","/oy/school/153241":"2026-10-30T15:42:52Z","/oy/school/153384":"2026-10-30T15:42:52Z","/oy/school/153834":"2026-10-30T15:42:52Z","/oy/school/154527":"2026-10-30T15:42:52Z","/oy/school/156295":"2026-10-30T15:42:52Z","/oy/school/156408":"2026-10-30T15:42:52Z","/oy/school/156745":"2026-10-30T15:42:52Z","/oy/school/157030":"2026-10-30T15:42:52Z","/oy/school/157818":"2026-11-10T18:17:15Z","/oy/school/158477":"2026-10-30T15:42:52Z","/oy/school/158802":"2026-11-10T18:17:15Z","/oy/school/160959":"2026-10-30T15:42:52Z","/oy/school/160977":"2026-10-30T15:42:52Z","/oy/school/161004":"2026-10-30T15:42:52Z","/oy/school/161086":"2026-10-30T15:42:52Z","/oy/school/162654":"2026-10-30T15:42:52Z","/oy/school/163976":"2026-10-30T15:42:52Z","/oy/school/164216":"2026-10-30T15:42:52Z","/oy/school/164465":"2026-10-30T15:42:52Z","/oy/school/165671":"2026-10-30T15:42:52Z","/oy/school/165936":"2026-10-30T15:42:52Z","/oy/school/166018":"2026-10-30T15:42:52Z","/oy/school/166054":"2026-10-30T15:42:52Z","/oy/school/166124":"2026-11-10T18:17:15Z","/oy/school/166939":"2026-11-10T18:17:15Z","/oy/school/167835":"2026-10-30T15:42:52Z","/oy/school/167996":"2026-11-10T18:17:15Z","/oy/school/168218":"2026-10-30T15:42:52Z","/oy/school/168281":"2026-10-30T15:42:52Z","/oy/school/168342":"2026-10-30T15:42:52Z","/oy/school/168546":"2026-10-30T15:42:52Z","/oy/school/168786":"2026-10-30T15:42:52Z","/oy/school/170286":"2026-10-30T15:42:52Z","/oy/school/170301":"2026-10-30T15:42:52Z","/oy/school/170532":"2026-10-30T15:42:52Z","/oy/school/172033":"2026-10-30T15:42:52Z","/oy/school/173142":"2026-10-30T15:42:52Z","/oy/school/173258":"2026-10-30T15:42:52Z","/oy/school/173300":"2026-10-30T15:42:52Z","/oy/school/173647":"2026-11-10T18:17:15Z","/oy/school/173902":"2026-10-30T15:42:52Z","/oy/school/174747":"2026-10-30T15:42:52Z","/oy/school/174792":"2026-10-30T15:42:52Z","/oy/school/174844":"2026-10-30T15:42:52Z","/oy/school/175980":"2026-10-30T15:42:52Z","/oy/school/176318":"2026-10-30T15:42:52Z","/oy/school/176406":"2026-11-10T18:17:15Z","/oy/school/179946":"2026-10-30T15:42:52Z","/oy/school/183239":"2026-10-30T15:42:52Z","/oy/school/183275":"2026-10-30T15:42:52Z","/oy/school/184348":"2026-10-30T15:42:52Z","/oy/school/189088":"2026-10-30T15:42:52Z","/oy/school/189097":"2026-10-30T15:42:52Z","/oy/school/190099":"2026-10-30T15:42:52Z","/oy/school/191515":"2026-10-30T15:42:52Z","/oy/school/191533":"2026-10-30T15:42:52Z","/oy/school/191630":"2026-10-30T15:42:52Z","/oy/school/191676":"2026-10-30T15:42:52Z","/oy/school/192864":"2026-10-30T15:42:52Z","/oy/school/195216":"2026-11-10T18:17:15Z","/oy/school/195304":"2026-11-10T18:17:15Z","/oy/school/195526":"2026-10-30T15:42:52Z","/oy/school/196866":"2026-11-10T18:17:15Z","/oy/school/197133":"2026-11-10T18:17:15Z","/oy/school/197993":"2026-10-30T15:42:52Z","/oy/school/198385":"2026-10-30T15:42:52Z","/oy/school/198613":"2026-10-30T15:42:52Z","/oy/school/198756":"2026-10-30T15:42:52Z","/oy/school/198950":"2026-10-30T15:42:52Z","/oy/school/199607":"2026-11-10T18:17:15Z","/oy/school/199865":"2026-10-30T15:42:52Z","/oy/school/202523":"2026-10-30T15:42:52Z","/oy/school/203535":"2026-10-30T15:42:52Z","/oy/school/204501":"2026-10-30T15:42:52Z","/oy/school/204909":"2026-10-30T15:42:52Z","/oy/school/205027":"2026-10-30T15:42:52Z","/oy/school/206525":"2026-10-30T15:42:52Z","/oy/school/206589":"2026-10-30T15:42:52Z","/oy/school/207157":"2026-10-30T15:42:52Z","/oy/school/209056":"2026-11-10T18:17:15Z","/oy/school/209065":"2026-11-10T18:17:15Z","/oy/school/209922":"2026-10-30T15:42:52Z","/oy/school/210401":"2026-10-30T15:42:52Z","/oy/school/210492":"2026-10-30T15:42:52Z","/oy/school/210571":"2026-11-10T18:17:15Z","/oy/school/210669":"2026-10-30T15:42:52Z","/oy/school/211273":"2026-11-10T18:17:15Z","/oy/school/211291":"2026-11-10T18:17:15Z","/oy/school/212009":"2026-11-10T18:17:15Z","/oy/school/212577":"2026-10-30T15:42:52Z","/oy/school/212674":"2026-10-30T15:42:52Z","/oy/school/212911":"2026-10-30T15:42:52Z","/oy/school/213251":"2026-10-30T15:42:52Z","/oy/school/213385":"2026-10-30T15:42:52Z","/oy/school/213668":"2026-10-30T15:42:52Z","/oy/school/214175":"2026-10-30T15:42:52Z","/oy/school/215798":"2026-10-30T15:42:52Z","/oy/school/216278":"2026-10-30T15:42:52Z","/oy/school/216287":"2026-10-30T15:42:52Z","/oy/school/216524":"2026-10-30T15:42:52Z","/oy/school/216667":"2026-10-30T15:42:52Z","/oy/school/216807":"2026-10-30T15:42:52Z","/oy/school/217624":"2026-10-30T15:42:52Z","/oy/school/217873":"2026-11-10T18:17:15Z","/oy/school/218070":"2026-10-30T15:42:52Z","/oy/school/218539":"2026-10-30T15:42:52Z","/oy/school/218973":"2026-10-30T15:42:52Z","/oy/school/220181":"2026-10-30T15:42:52Z","/oy/school/220598":"2026-10-30T15:42:52Z","/oy/school/220710":"2026-10-30T15:42:52Z","/oy/school/221351":"2026-10-30T15:42:52Z","/oy/school/221519":"2026-10-30T15:42:52Z","/oy/school/222983":"2026-11-10T18:17:15Z","/oy/school/228343":"2026-11-10T18:17:15Z","/oy/school/229267":"2026-10-30T15:42:52Z","/oy/school/230816":"2026-10-30T15:42:52Z","/oy/school/230959":"2026-10-30T15:42:52Z","/oy/school/231059":"2026-11-09T02:47:11Z","/oy/school/231581":"2026-10-30T15:42:52Z","/oy/school/232256":"2026-11-10T18:17:15Z","/oy/school/232308":"2026-10-30T15:42:52Z","/oy/school/233295":"2026-10-30T15:42:52Z","/oy/school/233301":"2026-10-30T15:42:52Z","/oy/school/233374":"2026-11-10T18:17:15Z","/oy/school/233426":"2026-10-30T15:42:52Z","/oy/school/233611":"2026-10-30T15:42:52Z","/oy/school/233718":"2026-10-30T15:42:52Z","/oy/school/234164":"2026-10-30T15:42:52Z","/oy/school/234173":"2026-11-10T18:17:15Z","/oy/school/234207":"2026-10-30T15:42:52Z","/oy/school/236328":"2026-10-30T15:42:52Z","/oy/school/237057":"2026-10-30T15:42:52Z","/oy/school/237181":"2026-10-30T15:42:52Z","/oy/school/238333":"2026-10-30T15:42:52Z","/oy/school/239017":"2026-10-30T15:42:52Z","/oy/school/239628":"2026-10-30T15:42:52Z","/oy/school/239716":"2026-11-10T18:17:15Z","/oy/school/245652":"2026-10-30T15:42:52Z","/oy/school/399911":"2026-10-30T15:42:52Z","/oy/school/439862":"2026-11-10T18:17:15Z","/oy/school/440396":"2026-10-30T15:42:52Z","/oy/school/440794":"2026-11-10T18:17:15Z","/oy/school/446048":"2026-10-30T15:42:52Z","/oy/school/449870":"2026-10-30T15:42:52Z","/oy/school/451927":"2026-10-30T15:42:52Z","/oy/school/455770":"2026-11-10T18:17:15Z","/oy/school/461759":"2026-10-30T15:42:52Z","/oy/school/483018":"2026-10-30T15:42:52Z","/oy/school/101435":"2026-11-10T18:17:15Z","/oy/school/101675":"2026-10-30T15:42:52Z","/oy/school/102234":"2026-10-30T15:42:52Z","/oy/school/102270":"2026-10-30T15:42:52Z","/oy/school/102298":"2026-10-30T15:42:52Z","/oy/school/102669":"2026-10-30T15:42:52Z","/oy/school/104586":"2026-10-30T15:42:52Z","/oy/school/105899":"2026-10-30T15:42:52Z","/oy/school/106713":"2026-10-30T15:42:52Z","/oy/school/106810":"2026-11-10T18:17:15Z","/oy/school/107558":"2026-10-30T15:42:52Z","/oy/school/107600":"2026-10-30T15:42:52Z","/oy/school/107877":"2026-11-10T18:17:15Z","/oy/school/110060":"2026-10-30T15:42:52Z","/oy/school/117104":"2026-11-10T18:17:15Z","/oy/school/117575":"2026-10-30T15:42:52Z","/oy/school/120865":"2026-10-30T15:42:52Z","/oy/school/129774":"2026-11-10T18:17:15Z","/oy/school/132408":"2026-10-30T15:42:52Z","/oy/school/133526":"2026-10-30T15:42:52Z","/oy/school/133711":"2026-10-30T15:42:52Z","/oy/school/133979":"2026-11-10T18:17:15Z","/oy/school/134510":"2026-11-10T18:17:15Z","/oy/school/137953":"2026-11-10T18:17:15Z","/oy/school/137962":"2026-11-10T18:17:15Z","/oy/school/138293":"2026-10-30T15:42:52Z","/oy/school/138868":"2026-10-30T15:42:52Z","/oy/school/139205":"2026-11-10T18:17:15Z","/oy/school/139630":"2026-10-30T15:42:52Z","/oy/school/140234":"2026-11-10T18:17:15Z","/oy/school/140340":"2026-10-30T15:42:52Z","/oy/school/140872":"2026-10-30T15:42:52Z","/oy/school/141185":"2026-10-30T15:42:52Z","/oy/school/141237":"2026-11-10T18:17:15Z","/oy/school/141325":"2026-11-10T18:17:15Z","/oy/school/142294":"2026-10-30T15:42:52Z","/oy/school/142522":"2026-10-30T15:42:52Z","/oy/school/143288":"2026-10-30T15:42:52Z","/oy/school/144971":"2026-10-30T15:42:52Z","/oy/school/145646":"2026-10-30T15:42:52Z","/oy/school/147244":"2026-10-30T15:42:52Z","/oy/school/148131":"2026-10-30T15:42:52Z","/oy/school/149505":"2026-11-10T18:17:15Z","/oy/school/150668":"2026-10-30T15:42:52Z","/oy/school/152530":"2026-10-30T15:42:52Z","/oy/school/152567":"2026-10-30T15:42:52Z","/oy/school/153302":"2026-11-10T18:17:15Z","/oy/school/153320":"2026-11-10T18:17:15Z","/oy/school/153825":"2026-10-30T15:42:52Z","/oy/school/154350":"2026-10-30T15:42:52Z","/oy/school/154590":"2026-10-30T15:42:52Z","/oy/school/154712":"2026-10-30T15:42:52Z","/oy/school/154721":"2026-10-30T15:42:52Z","/oy/school/154749":"2026-10-30T15:42:52Z","/oy/school/154855":"2026-10-30T15:42:52Z","/oy/school/155070":"2026-11-10T18:17:15Z","/oy/school/155414":"2026-10-30T15:42:52Z","/oy/school/155511":"2026-10-30T15:42:52Z","/oy/school/155627":"2026-10-30T15:42:52Z","/oy/school/155900":"2026-10-30T15:42:52Z","/oy/school/155937":"2026-10-30T15:42:52Z","/oy/school/155973":"2026-10-30T15:42:52Z","/oy/school/156189":"2026-10-30T15:42:52Z","/oy/school/156356":"2026-10-30T15:42:52Z","/oy/school/157076":"2026-10-30T15:42:52Z","/oy/school/157100":"2026-10-30T15:42:52Z","/oy/school/165574":"2026-11-10T18:17:15Z","/oy/school/165802":"2026-11-10T18:17:15Z","/oy/school/166911":"2026-11-10T18:17:15Z","/oy/school/168528":"2026-10-30T15:42:52Z","/oy/school/168591":"2026-10-30T15:42:52Z","/oy/school/170000":"2026-10-30T15:42:52Z","/oy/school/170091":"2026-10-30T15:42:52Z","/oy/school/170967":"2026-10-30T15:42:52Z","/oy/school/171599":"2026-10-30T15:42:52Z","/oy/school/171881":"2026-10-30T15:42:52Z","/oy/school/174437":"2026-10-30T15:42:52Z","/oy/school/174525":"2026-10-30T15:42:52Z","/oy/school/175430":"2026-10-30T15:42:52Z","/oy/school/176789":"2026-10-30T15:42:52Z","/oy/school/176947":"2026-10-30T15:42:52Z","/oy/school/177144":"2026-11-10T18:17:15Z","/oy/school/177542":"2026-10-30T15:42:52Z","/oy/school/178369":"2026-10-30T15:42:52Z","/oy/school/178697":"2026-10-30T15:42:52Z","/oy/school/179955":"2026-10-30T15:42:52Z","/oy/school/180106":"2026-10-30T15:42:52Z","/oy/school/181127":"2026-11-10T18:17:15Z","/oy/school/181738":"2026-10-30T15:42:52Z","/oy/school/181853":"2026-11-10T18:17:15Z","/oy/school/182634":"2026-11-10T18:17:15Z","/oy/school/188340":"2026-10-30T15:42:52Z","/oy/school/189413":"2026-11-10T18:17:15Z","/oy/school/190372":"2026-11-10T18:17:15Z","/oy/school/190983":"2026-10-30T15:42:52Z","/oy/school/191621":"2026-10-30T15:42:52Z","/oy/school/193399":"2026-10-30T15:42:52Z","/oy/school/194392":"2026-10-30T15:42:52Z","/oy/school/195173":"2026-10-30T15:42:52Z","/oy/school/197142":"2026-10-30T15:42:52Z","/oy/school/197911":"2026-10-30T15:42:52Z","/oy/school/197984":"2026-10-30T15:42:52Z","/oy/school/198066":"2026-10-30T15:42:52Z","/oy/school/198215":"2026-10-30T15:42:52Z","/oy/school/198303":"2026-10-30T15:42:52Z","/oy/school/198695":"2026-10-30T15:42:52Z","/oy/school/198808":"2026-10-30T15:42:52Z","/oy/school/198862":"2026-10-30T15:42:52Z","/oy/school/198899":"2026-10-30T15:42:52Z","/oy/school/199032":"2026-10-30T15:42:52Z","/oy/school/199209":"2026-10-30T15:42:52Z","/oy/school/199272":"2026-10-30T15:42:52Z","/oy/school/199458":"2026-10-30T15:42:52Z","/oy/school/199582":"2026-10-30T15:42:52Z","/oy/school/199643":"2026-10-30T15:42:52Z","/oy/school/199698":"2026-10-30T15:42:52Z","/oy/school/201371":"2026-11-10T18:17:15Z","/oy/school/202514":"2026-11-10T18:17:15Z","/oy/school/202903":"2026-11-10T18:17:15Z","/oy/school/203128":"2026-10-30T15:42:52Z","/oy/school/203845":"2026-11-10T18:17:15Z","/oy/school/204635":"2026-10-30T15:42:52Z","/oy/school/206491":"2026-10-30T15:42:52Z","/oy/school/206507":"2026-11-10T18:17:15Z","/oy/school/206817":"2026-10-30T15:42:52Z","/oy/school/207856":"2026-10-30T15:42:52Z","/oy/school/210304":"2026-10-30T15:42:52Z","/oy/school/212805":"2026-10-30T15:42:52Z","/oy/school/213303":"2026-10-30T15:42:52Z","/oy/school/214166":"2026-10-30T15:42:52Z","/oy/school/214883":"2026-10-30T15:42:52Z","/oy/school/216357":"2026-11-10T18:17:15Z","/oy/school/216542":"2026-10-30T15:42:52Z","/oy/school/217721":"2026-10-30T15:42:52Z","/oy/school/218238":"2026-11-10T18:17:15Z","/oy/school/218399":"2026-10-30T15:42:52Z","/oy/school/218414":"2026-11-10T18:17:15Z","/oy/school/218919":"2026-10-30T15:42:52Z","/oy/school/219091":"2026-10-30T15:42:52Z","/oy/school/219505":"2026-10-30T15:42:52Z","/oy/school/220206":"2026-11-10T18:17:15Z","/oy/school/220604":"2026-10-30T15:42:52Z","/oy/school/221731":"2026-10-30T15:42:52Z","/oy/school/222877":"2026-10-30T15:42:52Z","/oy/school/224244":"2026-10-30T15:42:52Z","/oy/school/225201":"2026-10-30T15:42:52Z","/oy/school/225548":"2026-10-30T15:42:52Z","/oy/school/225575":"2026-10-30T15:42:52Z","/oy/school/225885":"2026-11-10T18:17:15Z","/oy/school/226587":"2026-10-30T15:42:52Z","/oy/school/227429":"2026-11-10T18:17:15Z","/oy/school/228468":"2026-11-10T18:17:15Z","/oy/school/228884":"2026-11-10T18:17:15Z","/oy/school/228981":"2026-10-30T15:42:52Z","/oy/school/229887":"2026-10-30T15:42:52Z","/oy/school/230047":"2026-10-30T15:42:52Z","/oy/school/231095":"2026-10-30T15:42:52Z","/oy/school/232089":"2026-10-30T15:42:52Z","/oy/school/237358":"2026-10-30T15:42:52Z","/oy/school/237969":"2026-11-10T18:17:15Z","/oy/school/239512":"2026-10-30T15:42:52Z","/oy/school/240338":"2026-11-10T18:17:15Z","/oy/school/241386":"2026-11-10T18:17:15Z","/oy/school/242644":"2026-11-10T18:17:15Z","/oy/school/242662":"2026-10-30T15:42:52Z","/oy/school/242680":"2026-11-10T18:17:15Z","/oy/school/242699":"2026-10-30T15:42:52Z","/oy/school/242705":"2026-10-30T15:42:52Z","/oy/school/243586":"2026-10-30T15:42:52Z","/oy/school/363907":"2026-11-10T18:17:15Z","/oy/school/363916":"2026-11-10T18:17:15Z","/oy/school/366003":"2026-11-10T18:17:15Z","/oy/school/384254":"2026-10-30T15:42:52Z","/oy/school/428259":"2026-10-30T15:42:52Z","/oy/school/444398":"2026-10-30T15:42:52Z","/oy/school/445708":"2026-10-30T15:42:52Z","/oy/school/446233":"2026-11-10T18:17:15Z","/oy/school/454582":"2026-10-30T15:42:52Z","/oy/school/456481":"2026-10-30T15:42:52Z","/oy/school/456490":"2026-10-30T15:42:52Z","/oy/school/457484":"2026-11-10T18:17:15Z","/oy/school/457697":"2026-10-30T15:42:52Z","/oy/school/461528":"2026-10-30T15:42:52Z","/oy/school/462354":"2026-11-10T18:17:15Z","/oy/school/464226":"2026-10-30T15:42:52Z","/oy/school/475200":"2026-11-10T18:17:15Z","/oy/school/475608":"2026-11-10T18:17:15Z","/oy/school/480198":"2026-10-30T15:42:52Z","/oy/school/487603":"2026-10-30T15:42:52Z","/oy/school/492801":"2026-10-30T15:42:52Z","/oy/school/492962":"2026-10-30T15:42:52Z","/oy/school/494685":"2026-11-10T18:17:15Z","/atlas":"2026-11-13T02:20:42Z","/hermes/model/source/amd-repro-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/amd-pruning-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-repro-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-repro-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/amd-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/amd-repro-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-tech-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-amd-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/apple-mac":"2026-11-12T16:08:25Z","/hermes/model/source/supp-asus-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/azure-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/azure-lustre-storage-v3-0":"2026-11-12T16:08:25Z","/hermes/model/source/azure-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/broadcom-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/cisco-x210c-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/cisco-c845a-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/cisco-blog-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-cisco-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/coreweave-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-coreweave-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/coreweave-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/crusoe-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-crusoe-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/dell-mi355x-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/dell-yolo-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/dell-overview-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/dell-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-fujitsu-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-gigacomputing-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/google-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/hpe-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/hpe-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-hpe-v6-1-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-individual-contributor-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/intel-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/intel-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/intel-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-intel-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/k-veritas":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-lambda-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/lenovo-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-mangoboost-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-nebius-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-storage-v3-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-nvidia-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-aistore-storage-v3-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v5-1-per-dollar":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-oracle-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-orrick-industries-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/red-hat-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/red-hat-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-scitix-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supermicro-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/supermicro-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supermicro-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-vibehpc-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-wiwynn-v6-1":"2026-11-12T16:08:25Z","/hermes/model":"2026-11-12T16:08:25Z","/time":"2026-11-12T16:08:25Z","/cada":"2026-11-12T16:08:25Z","/api":"2026-11-10T12:38:25Z","/uptime":"2026-11-12T16:08:25Z","/forecast":"2026-11-12T16:08:25Z","/trials":"2026-11-13T02:20:42Z","/launch":"2026-11-12T22:10:34Z","/linkrot":"2026-11-12T16:08:25Z","/tape":"2026-11-10T23:48:46Z","/receipts/stamps":"2026-11-10T13:44:10Z","/hosts":"2026-11-12T16:08:25Z","/campus":"2026-11-13T08:53:27Z","/airq":"2026-11-12T16:08:25Z","/ailuminate":"2026-11-12T16:08:25Z","/hpt":"2026-11-12T16:08:25Z","/weights":"2026-11-13T13:12:57Z","/airline":"2026-11-12T16:08:25Z","/fedsep":"2026-11-12T16:08:25Z","/revise":"2026-11-12T16:08:25Z","/stack":"2026-11-10T13:52:05Z","/pkginstall":"2026-11-12T17:14:40Z","/seat":"2026-11-12T16:46:48Z","/secrecords":"2026-11-13T13:12:57Z","/change":"2026-11-12T16:08:25Z","/hfsize":"2026-11-13T13:12:57Z","/hflicense":"2026-11-12T16:08:25Z","/pkglicense":"2026-11-12T18:14:45Z","/support":"2026-11-13T05:40:04Z","/arxivdrift":"2026-11-10T13:52:05Z","/cadence":"2026-11-12T16:08:25Z","/atlas/electricity":"2026-10-30T15:42:52Z","/atlas/power-plants":"2026-10-30T15:42:52Z","/atlas/carbon":"2026-10-30T15:42:52Z","/atlas/planned-plants":"2026-10-30T15:42:52Z","/water":"2026-11-12T16:08:25Z","/neo":"2026-11-13T13:12:57Z","/seasonal":"2026-11-12T16:20:33Z","/steo":"2026-11-12T16:20:33Z","/solar":"2026-11-13T02:20:42Z","/quake":"2026-11-13T13:12:57Z","/rank":"2026-11-12T16:08:25Z","/flu":"2026-11-12T16:20:33Z","/credit":"2026-11-12T16:08:25Z","/tornado":"2026-11-12T16:08:25Z","/cone":"2026-11-12T16:08:25Z","/census/revisions":"2026-11-13T02:20:42Z","/census/coverage":"2026-11-12T16:08:25Z","/census/fidelity":"2026-11-12T16:08:25Z","/census/vintages":"2026-11-12T16:08:25Z","/petrol":"2026-11-13T08:53:27Z","/census":"2026-11-12T16:08:25Z","/wiki":"2026-11-12T16:20:33Z","/social":"2026-11-12T16:08:25Z","/predictions":"2026-11-12T16:08:25Z","/oy":"2026-11-12T16:09:02Z","/iris/study/2610.30512":"2026-10-30T15:42:52Z","/iris/study/2610.25964":"2026-10-30T15:42:52Z","/iris/study/2610.31135":"2026-10-30T15:42:52Z","/iris/study/2610.25159":"2026-10-30T15:42:52Z","/iris/study/2610.15732":"2026-10-30T15:42:52Z","/iris/study/2610.21468":"2026-10-30T15:42:52Z","/iris/study/2610.17203":"2026-10-30T15:42:52Z","/iris/study/2610.25626":"2026-10-30T15:42:52Z","/iris/study/2610.24999":"2026-10-30T15:42:52Z","/hermes/model/papers":"2026-10-30T15:42:52Z","/iris":"2026-11-13T08:53:27Z","/iris/lab":"2026-11-12T22:18:26Z","/iris/lab/live":"2026-11-09T20:33:50Z","/yo":"2026-11-10T11:37:32Z","/iris/key":"2026-10-30T14:51:35Z","/iris/list":"2026-11-10T13:52:05Z","/qia/study/2607.25998":"2026-10-30T15:42:52Z","/qia/study/2409.02575":"2026-10-30T15:42:52Z","/qia/study/2606.30606":"2026-10-30T15:42:52Z","/qia/study/2505.05957":"2026-10-30T15:42:52Z","/qia/study/2512.22001":"2026-10-30T15:42:52Z","/qia/study/2609.28657":"2026-10-30T16:40:15Z","/qia/study/2607.16389":"2026-10-30T15:42:52Z","/qia/study/2609.11637":"2026-10-30T15:42:52Z","/qia/study/2604.09857":"2026-10-30T16:40:15Z","/qia/study/2512.17130":"2026-10-30T15:42:52Z","/qia/study/2606.30402":"2026-10-30T15:42:52Z","/qia/study/2605.01138":"2026-10-30T15:42:52Z","/qia/study/2411.15536":"2026-10-30T15:42:52Z","/qia/study/2406.09341":"2026-10-30T16:40:15Z","/qia/study/2411.09123":"2026-10-30T15:42:52Z","/qia/study/2603.00260":"2026-10-30T15:42:52Z","/qia/study/2509.10657":"2026-10-30T15:42:52Z","/qia/study/2605.24252":"2026-10-30T15:42:52Z","/qia/study/2506.03636":"2026-10-30T15:42:52Z","/qia/study/2609.06448":"2026-10-30T15:42:52Z","/qia/study/2511.20741":"2026-10-30T15:42:52Z","/qia/study/2509.17715":"2026-10-30T15:42:52Z","/qia/study/2603.15608":"2026-10-30T15:42:52Z","/qia/study/2606.20441":"2026-10-30T15:42:52Z","/qia/study/ibm-qaoa-tutorial-ibm-quantum-documentation-run-":"2026-10-30T15:42:52Z","/qia/study/2603.14485":"2026-10-30T15:42:52Z","/qia/study/2504.15725":"2026-10-30T16:40:15Z","/qia/study/2609.13108":"2026-10-30T16:40:15Z","/qia/study/2509.18259":"2026-11-01T17:36:55Z","/qia/study/2606.28866":"2026-10-30T15:42:52Z","/qia/study/2511.00224":"2026-10-30T16:40:15Z","/qia/study/2607.25941":"2026-10-30T15:42:52Z","/qia/study/2510.15316":"2026-11-10T11:37:32Z","/qia/study/2510.17286":"2026-10-30T15:42:52Z","/qia/study/2607.01037":"2026-10-30T15:42:52Z","/qia/study/2505.08663":"2026-10-30T15:42:52Z","/qia/study/2510.26735":"2026-10-30T16:40:15Z","/qia/study/2510.05851":"2026-10-30T15:42:52Z","/qia/study/2510.24509":"2026-10-30T15:42:52Z","/qia/study/2602.18350":"2026-10-30T15:42:52Z","/qia/study/zenodo-22009070":"2026-10-30T15:42:52Z","/qia/study/2609.30195":"2026-10-30T15:42:52Z","/qia/study/2607.12269":"2026-10-30T15:42:52Z","/qia/study/2503.17833":"2026-11-10T11:37:32Z","/qia/study/2609.39693":"2026-10-30T15:42:52Z","/qia/study/2405.20328":"2026-10-30T15:42:52Z","/qia/study/2406.01743":"2026-10-30T15:42:52Z","/qia/study/2511.09322":"2026-10-30T16:40:15Z","/qia/study/2509.26229":"2026-10-30T15:42:52Z","/qia/study/2512.08390":"2026-10-30T15:42:52Z","/qia/study/2503.06292":"2026-10-30T15:42:52Z","/qia/study/2602.01165":"2026-10-30T15:42:52Z","/qia/study/2605.04099":"2026-10-30T15:42:52Z","/qia/study/2610.09532":"2026-10-30T15:42:52Z","/qia/study/zenodo-23108790":"2026-11-10T11:37:32Z","/qia/study/2607.27777":"2026-10-30T15:42:52Z","/qia/study/2606.00433":"2026-10-30T15:42:52Z","/qia/study/2501.04649":"2026-11-10T11:37:32Z","/qia/study/2510.18847":"2026-10-30T15:42:52Z","/qia/study/2607.09368":"2026-11-10T11:37:32Z","/qia/study/2508.13557":"2026-10-30T15:42:52Z","/qia/study/2609.38713":"2026-10-30T16:40:15Z","/qia/study/zenodo-20736911":"2026-10-30T15:42:52Z","/qia/study/zenodo-21960772":"2026-10-30T16:40:15Z","/qia/study/2511.14821":"2026-10-30T15:42:52Z","/qia/study/zenodo-22737706":"2026-10-30T15:42:52Z","/qia/study/zenodo-22848316":"2026-10-30T15:42:52Z","/qia/study/zenodo-22804814":"2026-10-30T15:42:52Z","/qia/study/zenodo-21938548":"2026-10-30T15:42:52Z","/qia/study/zenodo-20352903":"2026-10-30T15:42:52Z","/qia/study/2610.28705":"2026-10-30T15:42:52Z","/qia/study/2602.20614":"2026-10-30T15:42:52Z","/qia/study/zenodo-21682087":"2026-10-30T15:42:52Z","/qia/study/zenodo-23123273":"2026-10-30T15:42:52Z","/qia/study/2609.15411":"2026-10-30T16:40:15Z","/qia/study/zenodo-21479684":"2026-10-30T15:42:52Z","/qia/study/zenodo-22644883":"2026-10-30T16:40:15Z","/qia/study/zenodo-22050177":"2026-10-30T15:42:52Z","/qia/study/zenodo-21199323":"2026-10-30T15:42:52Z","/qia/study/2604.23228":"2026-10-30T16:40:15Z","/qia/study/2508.10593":"2026-11-10T11:37:32Z","/qia/study/2602.21311":"2026-11-10T11:37:32Z","/qia/study/2510.08719":"2026-10-30T15:42:52Z","/qia/study/zenodo-22103070":"2026-10-30T15:42:52Z","/qia/study/zenodo-20026696":"2026-10-30T15:42:52Z","/qia/study/2511.10921":"2026-11-10T11:37:32Z","/qia/study/2509.19448":"2026-10-30T16:40:15Z","/qia/study/2603.16973":"2026-11-10T11:37:32Z","/qia/study/2512.04016":"2026-10-30T15:42:52Z","/qia/study/2511.21932":"2026-10-30T16:40:15Z","/qia/study/2602.09047":"2026-10-30T16:40:15Z","/qia/study/2512.14513":"2026-11-10T11:37:32Z","/qia/study/2603.28821":"2026-10-30T15:42:52Z","/qia/study/2512.03341":"2026-11-10T11:37:32Z","/qia/study/zenodo-22849729":"2026-10-30T15:42:52Z","/qia/study/2512.12645":"2026-10-30T15:42:52Z","/qia/study/2610.14778":"2026-10-30T15:42:52Z","/qia/study/2506.11270":"2026-10-30T15:42:52Z","/qia/study/2509.04761":"2026-10-30T15:42:52Z","/qia/study/zenodo-19840870":"2026-10-30T15:42:52Z","/qia/study/2607.24704":"2026-10-30T15:42:52Z","/qia/study/2607.26756":"2026-10-30T16:40:15Z","/qia/study/2608.28535":"2026-10-30T15:42:52Z","/qia/study/2603.13949":"2026-10-30T15:42:52Z","/qia/study/2610.18482":"2026-10-30T15:42:52Z","/qia/study/2508.01893":"2026-10-30T15:42:52Z","/qia/study/2511.08096":"2026-10-30T15:42:52Z","/qia/study/2608.02245":"2026-10-30T15:42:52Z","/qia/study/2208.01050":"2026-10-30T16:40:15Z","/qia/study/2604.02569":"2026-10-30T15:42:52Z","/qia/study/2605.13109":"2026-10-30T15:42:52Z","/qia/study/2610.06127":"2026-10-30T15:42:52Z","/qia/study/2508.05331":"2026-10-30T15:42:52Z","/qia/study/2608.04486":"2026-11-10T11:37:32Z","/qia/study/zenodo-20025452":"2026-10-30T15:42:52Z","/qia/study/2507.09532":"2026-10-30T15:42:52Z","/qia/study/zenodo-20162808":"2026-10-30T15:42:52Z","/qia/study/zenodo-20538557":"2026-10-30T15:42:52Z","/qia/study/2609.17497":"2026-10-30T16:40:15Z","/qia/study/2512.18493":"2026-10-30T15:42:52Z","/qia/study/zenodo-23122648":"2026-10-30T15:42:52Z","/qia/study/2607.13374":"2026-11-10T11:37:32Z","/qia/study/2511.17692":"2026-11-01T12:35:08Z","/qia/study/2609.35163":"2026-10-30T16:40:15Z","/qia/study/2607.20377":"2026-10-30T15:42:52Z","/qia/study/2603.13536":"2026-10-30T15:42:52Z","/qia/study/zenodo-21587385":"2026-10-30T15:42:52Z","/qia/study/zenodo-21586385":"2026-10-30T16:40:15Z","/qia/study/2609.13669":"2026-10-30T15:42:52Z","/qia/study/zenodo-19754086":"2026-10-30T15:42:52Z","/qia/study/zenodo-22172952":"2026-11-12T10:54:50Z","/qia/study/2509.20127":"2026-10-30T15:42:52Z","/qia/study/2512.14280":"2026-10-30T15:42:52Z","/qia/study/zenodo-23407123":"2026-10-30T16:40:15Z","/qia/study/zenodo-21981913":"2026-10-30T15:42:52Z","/qia/study/2610.21761":"2026-10-30T15:42:52Z","/qia/study/2512.21914":"2026-10-30T16:40:15Z","/qia/study/2610.22482":"2026-10-30T15:42:52Z","/qia/study/2410.09121":"2026-10-30T16:40:15Z","/qia/study/2601.07766":"2026-11-10T11:37:32Z","/qia/study/2605.10638":"2026-10-30T15:42:52Z","/qia/study/2604.17486":"2026-10-30T15:42:52Z","/qia/study/2609.16108":"2026-11-10T11:37:32Z","/qia/study/2609.30496":"2026-10-30T15:42:52Z","/qia/study/2609.13935":"2026-10-30T15:42:52Z","/qia/study/2610.20855":"2026-10-30T15:42:52Z","/qia/study/zenodo-23382139":"2026-11-10T11:37:32Z","/qia/study/zenodo-22790702":"2026-10-30T15:42:52Z","/qia/study/2604.26175":"2026-10-30T15:42:52Z","/qia/study/zenodo-21041855":"2026-10-30T15:42:52Z","/qia/study/zenodo-20840196":"2026-10-30T15:42:52Z","/qia/study/zenodo-21206538":"2026-10-30T15:42:52Z","/qia/study/2509.11450":"2026-11-10T11:37:32Z","/qia/study/zenodo-19855345":"2026-10-30T15:42:52Z","/qia/study/zenodo-22898763":"2026-10-30T16:40:15Z","/qia/study/2607.11637":"2026-10-30T15:42:52Z","/qia/study/2604.24283":"2026-10-30T15:42:52Z","/qia/study/2510.17692":"2026-10-30T15:42:52Z","/qia/study/2407.16107":"2026-11-10T11:37:32Z","/qia/study/2504.04021":"2026-11-10T11:37:32Z","/qia/study/zenodo-22073993":"2026-10-30T15:42:52Z","/qia/study/2509.24842":"2026-10-30T15:42:52Z","/qia/study/2610.18124":"2026-10-30T16:40:15Z","/qia/study/2605.11375":"2026-10-30T15:42:52Z","/qia/study/2604.24397":"2026-10-30T16:40:15Z","/qia/study/2509.18029":"2026-10-30T15:42:52Z","/qia/study/2605.30676":"2026-10-30T15:42:52Z","/qia/study/2610.09062":"2026-11-10T11:37:32Z","/qia/study/2609.33255":"2026-11-10T11:37:32Z","/qia/study/2502.01824":"2026-10-30T15:42:52Z","/qia/study/2610.19544":"2026-11-10T11:37:32Z","/qia/study/2505.21243":"2026-11-10T11:37:32Z","/qia/study/2604.27836":"2026-11-10T11:37:32Z","/qia/study/2511.22324":"2026-11-10T11:37:32Z","/qia/study/2604.17519":"2026-11-10T11:37:32Z","/qia/study/2604.03360":"2026-11-10T11:37:32Z","/qia/study/2502.13910":"2026-10-30T15:42:52Z","/qia/study/2505.09371":"2026-10-30T15:42:52Z","/qia/study/2511.15802":"2026-11-10T11:37:32Z","/qia/study/2603.18749":"2026-10-30T15:42:52Z","/qia/study/2508.16895":"2026-11-10T11:37:32Z","/qia/study/2608.13614":"2026-10-30T15:42:52Z","/qia/study/2609.34411":"2026-10-30T16:40:15Z","/qia/study/2602.16233":"2026-10-30T15:42:52Z","/qia/study/2602.21253":"2026-10-30T15:42:52Z","/qia/study/2209.05716":"2026-11-10T11:37:32Z","/qia/study/2212.14170":"2026-11-10T11:37:32Z","/qia/study/zenodo-23634581":"2026-10-30T15:42:52Z","/qia/study/2606.14933":"2026-11-10T11:37:32Z","/qia/study/zenodo-23396363":"2026-10-30T15:42:52Z","/qia/study/2605.08251":"2026-10-30T15:42:52Z","/qia/study/zenodo-22770646":"2026-10-30T15:42:52Z","/qia/study/2505.17731":"2026-11-10T11:37:32Z","/qia/study/zenodo-20688687":"2026-10-30T16:40:15Z","/qia/study/zenodo-22242711":"2026-11-02T14:36:57Z","/qia/study/2607.06971":"2026-10-30T16:40:15Z","/qia/study/2609.14424":"2026-11-10T11:37:32Z","/sagar":"2026-11-12T22:24:29Z","/sagar/study/2610.29436":"2026-11-12T22:24:29Z","/sagar/study/2603.29019":"2026-11-12T22:24:29Z","/sagar/study/2510.25579":"2026-11-12T22:24:29Z","/sagar/study/2510.14291":"2026-11-12T22:24:29Z","/sagar/study/2507.21566":"2026-11-12T22:24:29Z","/sagar/study/2507.02335":"2026-11-12T22:24:29Z","/sagar/study/2507.01294":"2026-11-12T22:24:29Z","/sagar/study/2506.21021":"2026-11-12T22:24:29Z","/sagar/study/2506.15984":"2026-11-12T22:24:29Z","/sagar/study/2506.13870":"2026-11-12T22:24:29Z","/sagar/study/2506.06838":"2026-11-12T22:24:29Z","/sagar/study/2504.00198":"2026-11-12T22:24:29Z","/sagar/study/2412.05369":"2026-11-12T22:24:29Z","/sagar/study/2410.16565":"2026-11-12T22:24:29Z","/sagar/study/2403.03982":"2026-11-12T22:24:29Z","/sagar/study/2311.16085":"2026-11-12T22:24:29Z","/sagar/study/2311.06416":"2026-11-12T22:24:29Z","/sagar/study/2303.17628":"2026-11-12T22:24:29Z","/sagar/study/2208.01766":"2026-11-12T22:24:29Z","/sagar/receipts/2603.29019_sigma":"2026-11-12T22:24:29Z","/qia":"2026-11-12T16:08:25Z","/qia/list":"2026-11-12T12:55:15Z","/qia/key":"2026-11-09T02:47:11Z","/qia/data":"2026-11-12T02:31:35Z","/hermes/datapapers":"2026-11-12T10:21:14Z","/standard":"2026-11-12T14:27:51Z","/record":"2026-11-12T14:27:51Z","/correction":"2026-10-30T15:42:52Z","/corrections":"2026-11-12T16:40:05Z","/newsletter/1":"2026-11-10T19:50:38Z","/newsletter/0":"2026-11-10T15:38:54Z","/newsletter":"2026-11-10T19:42:37Z","/respond":"2026-10-28T23:10:02Z","/now":"2026-10-31T22:28:09Z","/hermes":"2026-11-13T13:12:57Z","/darkwave":"2026-11-09T20:59:56Z","/qia/package":"2026-11-11T13:43:14Z","/darkwave/kit":"2026-11-10T13:52:05Z","/iris/package":"2026-11-11T14:08:16Z","/atlas/data-pack":"2026-11-10T19:42:37Z","/oy/data-pack":"2026-11-12T16:09:02Z","/hermes/model/data-pack":"2026-11-12T16:08:25Z","/week/2026-44":"2026-11-10T20:50:49Z","/week/2026-45":"2026-11-10T20:50:49Z","/week":"2026-11-12T22:42:24Z","/brand/abbott-medical-devices":"2026-11-13T13:12:57Z","/brand/abbvie":"2026-11-13T13:12:57Z","/brand/acadia-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/aclaris-therapeutics-inc":"2026-11-13T13:12:57Z","/brand/adguard":"2026-11-13T13:12:57Z","/brand/ain-shams-university":"2026-11-13T13:12:57Z","/brand/alaska-airlines":"2026-11-13T05:40:04Z","/brand/albert-einstein-college-of-medicine":"2026-11-13T13:12:57Z","/brand/alcon-research":"2026-11-13T13:12:57Z","/brand/aldeyra-therapeutics-inc":"2026-11-13T13:12:57Z","/brand/alexion-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/aliexpress":"2026-11-13T05:40:04Z","/brand/allegiant-air":"2026-11-13T05:40:04Z","/brand/allergan":"2026-11-13T13:12:57Z","/brand/amazon":"2026-11-13T13:12:57Z","/brand/aws":"2026-11-13T13:12:57Z","/brand/amd":"2026-11-13T05:40:04Z","/brand/american-airlines":"2026-11-13T05:40:04Z","/brand/amgen":"2026-11-13T13:12:57Z","/brand/anthropic":"2026-11-13T13:12:57Z","/brand/apple":"2026-11-13T13:12:57Z","/brand/applovin":"2026-11-13T13:12:57Z","/brand/arcutis-biotherapeutics-inc":"2026-11-13T13:12:57Z","/brand/astellas-pharma-global-development-inc":"2026-11-13T13:12:57Z","/brand/astrazeneca":"2026-11-13T13:12:57Z","/brand/asus":"2026-11-13T05:40:04Z","/brand/atlassian":"2026-11-13T13:12:57Z","/brand/automattic":"2026-11-13T13:12:57Z","/brand/axsome-therapeutics-inc":"2026-11-13T13:12:57Z","/brand/bausch-and-lomb-incorporated":"2026-11-13T13:12:57Z","/brand/bayer":"2026-11-13T13:12:57Z","/brand/baylor-college-of-medicine":"2026-11-13T13:12:57Z","/brand/bbc":"2026-11-13T13:12:57Z","/brand/beigene":"2026-11-13T13:12:57Z","/brand/beth-israel-deaconess-medical-center":"2026-11-13T13:12:57Z","/brand/biogen":"2026-11-13T13:12:57Z","/brand/biontech-se":"2026-11-13T13:12:57Z","/brand/bluehost":"2026-11-13T13:12:57Z","/brand/bluesky":"2026-11-13T05:40:04Z","/brand/boehringer-ingelheim":"2026-11-13T13:12:57Z","/brand/booking-com":"2026-11-13T05:40:04Z","/brand/boston-children-s-hospital":"2026-11-13T13:12:57Z","/brand/boston-scientific-corporation":"2026-11-13T13:12:57Z","/brand/branch":"2026-11-13T13:12:57Z","/brand/brigham-and-women-s-hospital":"2026-11-13T13:12:57Z","/brand/bristol-myers-squibb":"2026-11-13T13:12:57Z","/brand/broadcom":"2026-11-13T05:40:04Z","/brand/btl-industries-ltd":"2026-11-13T13:12:57Z","/brand/bureau-of-labor-statistics":"2026-11-13T13:12:57Z","/brand/bureau-of-reclamation":"2026-11-13T13:12:57Z","/brand/cairo-university":"2026-11-13T13:12:57Z","/brand/canonical":"2026-11-13T13:12:57Z","/brand/case-comprehensive-cancer-center":"2026-11-13T13:12:57Z","/brand/cedars-sinai-medical-center":"2026-11-13T13:12:57Z","/brand/celgene":"2026-11-13T13:12:57Z","/brand/cdc":"2026-11-13T05:40:04Z","/brand/cms":"2026-11-13T05:40:04Z","/brand/children-s-hospital-medical-center-cincinnati":"2026-11-13T13:12:57Z","/brand/cisco":"2026-11-13T13:12:57Z","/brand/cleanbrowsing":"2026-11-13T13:12:57Z","/brand/climate-prediction-center":"2026-11-10T23:53:38Z","/brand/cloudflare":"2026-11-13T13:12:57Z","/brand/colgate-palmolive":"2026-11-13T13:12:57Z","/brand/columbia-university":"2026-11-13T13:12:57Z","/brand/consumer-financial-protection-bureau":"2026-11-13T13:12:57Z","/brand/control-d":"2026-11-13T13:12:57Z","/brand/coopervision-inc":"2026-11-13T13:12:57Z","/brand/coreweave":"2026-11-13T05:40:04Z","/brand/corewell-health-east":"2026-11-13T13:12:57Z","/brand/crusoe":"2026-11-13T05:40:04Z","/brand/npl-india":"2026-11-13T13:12:57Z","/brand/cz-nic":"2026-11-13T13:12:57Z","/brand/daiichi-sankyo":"2026-11-13T13:12:57Z","/brand/dana-farber-cancer-institute":"2026-11-13T13:12:57Z","/brand/datadog":"2026-11-13T13:12:57Z","/brand/deep-cogito":"2026-11-13T13:12:57Z","/brand/deepseek":"2026-11-13T13:12:57Z","/brand/dell":"2026-11-13T05:40:04Z","/brand/delta-air-lines":"2026-11-13T05:40:04Z","/brand/doe":"2026-11-13T05:40:04Z","/brand/hhs":"2026-11-13T05:40:04Z","/brand/dol":"2026-11-13T05:40:04Z","/brand/va":"2026-11-13T05:40:04Z","/brand/digitalocean":"2026-11-13T13:12:57Z","/brand/discord":"2026-11-13T13:12:57Z","/brand/docker":"2026-11-13T13:12:57Z","/brand/dropbox":"2026-11-13T13:12:57Z","/brand/duke-university":"2026-11-13T13:12:57Z","/brand/ebay":"2026-11-13T13:12:57Z","/brand/eisai-inc":"2026-11-13T13:12:57Z","/brand/eleutherai":"2026-11-13T13:12:57Z","/brand/eli-lilly-and-company":"2026-11-13T13:12:57Z","/brand/elsevier":"2026-11-13T13:12:57Z","/brand/emd-serono-research-and-development-institute-inc":"2026-11-13T13:12:57Z","/brand/emory-university":"2026-11-13T13:12:57Z","/brand/epa":"2026-11-13T05:40:04Z","/brand/envoy-air":"2026-11-13T05:40:04Z","/brand/equifax":"2026-11-13T13:12:57Z","/brand/etsy":"2026-11-13T13:12:57Z","/brand/experian":"2026-11-13T13:12:57Z","/brand/federal-reserve":"2026-11-13T13:12:57Z","/brand/fred-hutchinson-cancer-center":"2026-11-13T13:12:57Z","/brand/frontier-airlines":"2026-11-13T05:40:04Z","/brand/fujitsu":"2026-11-13T05:40:04Z","/brand/galderma-r-and-d":"2026-11-13T13:12:57Z","/brand/genentech-inc":"2026-11-13T13:12:57Z","/brand/gigacomputing":"2026-11-13T05:40:04Z","/brand/gilead-sciences":"2026-11-13T13:12:57Z","/brand/github":"2026-11-13T13:12:57Z","/brand/glaxosmithkline":"2026-11-13T13:12:57Z","/brand/google":"2026-11-13T13:12:57Z","/brand/gov-uk":"2026-11-13T13:12:57Z","/brand/h-lee-moffitt-cancer-center-and-research-institute":"2026-11-13T13:12:57Z","/brand/hawaiian-airlines":"2026-11-13T05:40:04Z","/brand/henry-ford-health-system":"2026-11-13T13:12:57Z","/brand/hkust":"2026-11-13T13:12:57Z","/brand/hoffmann-la-roche":"2026-11-13T13:12:57Z","/brand/hospital-for-special-surgery-new-york":"2026-11-13T13:12:57Z","/brand/hostgator":"2026-11-13T13:12:57Z","/brand/hpe":"2026-11-13T05:40:04Z","/brand/hugging-face":"2026-11-13T05:40:04Z","/brand/ibm":"2026-11-13T13:12:57Z","/brand/icahn-school-of-medicine-at-mount-sinai":"2026-11-13T13:12:57Z","/brand/iiko":"2026-11-13T13:12:57Z","/brand/inclusionai":"2026-11-13T13:12:57Z","/brand/incyte-corporation":"2026-11-13T13:12:57Z","/brand/indiana-university":"2026-11-13T13:12:57Z","/brand/inmobi":"2026-11-13T13:12:57Z","/brand/inrim":"2026-11-13T13:12:57Z","/brand/intel":"2026-11-13T05:40:04Z","/brand/ionis-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/ionq":"2026-11-10T23:53:38Z","/brand/janssen-research-and-development-llc":"2026-11-13T13:12:57Z","/brand/janssen-vaccines-and-prevention-b-v":"2026-11-13T13:12:57Z","/brand/jazz-pharmaceuticals":"2026-11-13T13:12:57Z","/brand/jetblue":"2026-11-13T05:40:04Z","/brand/johns-hopkins-university":"2026-11-13T13:12:57Z","/brand/johnson-and-johnson-vision-care-inc":"2026-11-13T13:12:57Z","/brand/k-veritas":"2026-11-13T05:40:04Z","/brand/kriss":"2026-11-13T13:12:57Z","/brand/lambda":"2026-11-13T05:40:04Z","/brand/lenovo":"2026-11-13T05:40:04Z","/brand/leo-pharma":"2026-11-13T13:12:57Z","/brand/library-of-congress":"2026-11-13T13:12:57Z","/brand/linear":"2026-11-13T13:12:57Z","/brand/linkedin":"2026-11-13T05:40:04Z","/brand/loma-linda-university":"2026-11-13T13:12:57Z","/brand/m-d-anderson-cancer-center":"2026-11-13T13:12:57Z","/brand/mangoboost":"2026-11-13T05:40:04Z","/brand/markmonitor":"2026-11-13T13:12:57Z","/brand/masimo-corporation":"2026-11-13T13:12:57Z","/brand/masonic-cancer-center-university-of-minnesota":"2026-11-13T13:12:57Z","/brand/massachusetts-general-hospital":"2026-11-13T13:12:57Z","/brand/mayo-clinic":"2026-11-13T13:12:57Z","/brand/medical-college-of-wisconsin":"2026-11-13T13:12:57Z","/brand/medical-university-of-south-carolina":"2026-11-13T13:12:57Z","/brand/medtronic-minimed-inc":"2026-11-13T13:12:57Z","/brand/memorial-sloan-kettering-cancer-center":"2026-11-13T13:12:57Z","/brand/merck-sharp-and-dohme-llc":"2026-11-13T13:12:57Z","/brand/meta":"2026-11-13T13:12:57Z","/brand/metas":"2026-11-13T13:12:57Z","/brand/microsoft":"2026-11-13T13:12:57Z","/brand/milton-s-hershey-medical-center":"2026-11-13T13:12:57Z","/brand/mistral-ai":"2026-11-13T13:12:57Z","/brand/mlcommons":"2026-11-13T13:12:57Z","/brand/modernatx-inc":"2026-11-13T13:12:57Z","/brand/mohela":"2026-11-10T23:53:38Z","/brand/montefiore-medical-center":"2026-11-13T13:12:57Z","/brand/moonshot-ai":"2026-11-13T13:12:57Z","/brand/jpl":"2026-11-12T10:21:14Z","/brand/national-cancer-institute-nci":"2026-11-13T13:12:57Z","/brand/national-heart-lung-and-blood-institute-nhlbi":"2026-11-13T13:12:57Z","/brand/national-hurricane-center":"2026-11-10T23:53:38Z","/brand/national-institute-of-allergy-and-infectious-diseases-niaid":"2026-11-13T13:12:57Z","/brand/npl-uk":"2026-11-13T13:12:57Z","/brand/national-weather-service":"2026-11-13T13:12:57Z","/brand/nebius":"2026-11-13T05:40:04Z","/brand/netlify":"2026-11-13T13:12:57Z","/brand/netnod":"2026-11-13T13:12:57Z","/brand/neurocrine-biosciences":"2026-11-13T13:12:57Z","/brand/new-york-state-psychiatric-institute":"2026-11-13T13:12:57Z","/brand/nexus-mods":"2026-11-13T13:12:57Z","/brand/ngenix":"2026-11-13T13:12:57Z","/brand/nict":"2026-11-13T13:12:57Z","/brand/nist":"2026-11-13T13:12:57Z","/brand/noaa":"2026-11-12T10:21:14Z","/brand/northwell-health":"2026-11-13T13:12:57Z","/brand/northwestern-university":"2026-11-13T13:12:57Z","/brand/notion":"2026-11-13T13:12:57Z","/brand/novartis-pharmaceuticals":"2026-11-13T13:12:57Z","/brand/novo-nordisk-a-s":"2026-11-13T13:12:57Z","/brand/npm":"2026-11-13T13:12:57Z","/brand/ntp-pool-project":"2026-11-13T13:12:57Z","/brand/nvidia":"2026-11-13T13:12:57Z","/brand/nyu-langone-health":"2026-11-13T13:12:57Z","/brand/observatoire-de-paris":"2026-11-13T13:12:57Z","/brand/ohio-state-university":"2026-11-13T13:12:57Z","/brand/openai":"2026-11-13T13:12:57Z","/brand/openbmb":"2026-11-13T13:12:57Z","/brand/opencv":"2026-11-13T13:12:57Z","/brand/oracle":"2026-11-13T13:12:57Z","/brand/oregon-health-and-science-university":"2026-11-13T13:12:57Z","/brand/orrick-industries":"2026-11-13T05:40:04Z","/brand/otsuka-pharmaceutical-development-and-commercialization-inc":"2026-11-13T13:12:57Z","/brand/outbrain":"2026-11-13T13:12:57Z","/brand/pfizer":"2026-11-13T13:12:57Z","/brand/pikabu":"2026-11-13T13:12:57Z","/brand/pinterest":"2026-11-13T05:40:04Z","/brand/aylo":"2026-11-13T05:40:04Z","/brand/psa-airlines":"2026-11-13T05:40:04Z","/brand/ptb":"2026-11-13T13:12:57Z","/brand/pubmatic":"2026-11-13T13:12:57Z","/brand/purpleair":"2026-11-13T05:40:04Z","/brand/python-software-foundation":"2026-11-13T13:12:57Z","/brand/quad9":"2026-11-13T13:12:57Z","/brand/quantinuum":"2026-11-12T13:45:46Z","/brand/qwen":"2026-11-13T13:12:57Z","/brand/red-hat":"2026-11-13T13:12:57Z","/brand/reddit":"2026-11-13T13:12:57Z","/brand/regeneron-pharmaceuticals":"2026-11-13T13:12:57Z","/brand/reka":"2026-11-13T13:12:57Z","/brand/republic-airways":"2026-11-13T05:40:04Z","/brand/rigetti":"2026-11-10T23:53:38Z","/brand/roswell-park-cancer-institute":"2026-11-13T13:12:57Z","/brand/rush-university-medical-center":"2026-11-13T13:12:57Z","/brand/rutgers-the-state-university-of-new-jersey":"2026-11-13T13:12:57Z","/brand/sage-publishing":"2026-11-13T13:12:57Z","/brand/salesforce":"2026-11-13T13:12:57Z","/brand/sanofi":"2026-11-13T13:12:57Z","/brand/sanofi-pasteur-a-sanofi-company":"2026-11-13T13:12:57Z","/brand/scitix":"2026-11-13T05:40:04Z","/brand/seedtag":"2026-11-13T13:12:57Z","/brand/sentry":"2026-11-13T13:12:57Z","/brand/shein":"2026-11-13T05:40:04Z","/brand/shire":"2026-11-13T13:12:57Z","/brand/sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins":"2026-11-13T13:12:57Z","/brand/skywest-airlines":"2026-11-13T05:40:04Z","/brand/snap":"2026-11-13T05:40:04Z","/brand/sonova-ag":"2026-11-13T13:12:57Z","/brand/southwest-airlines":"2026-11-13T05:40:04Z","/brand/space-weather-prediction-center":"2026-11-12T16:08:25Z","/brand/speakleash":"2026-11-13T13:12:57Z","/brand/spirit-airlines":"2026-11-13T05:40:04Z","/brand/st-jude-children-s-research-hospital":"2026-11-13T13:12:57Z","/brand/stanford-university":"2026-11-13T13:12:57Z","/brand/storm-prediction-center":"2026-11-10T23:53:38Z","/brand/stripchat":"2026-11-13T05:40:04Z","/brand/sun-pharmaceutical-industries-limited":"2026-11-13T13:12:57Z","/brand/supermicro":"2026-11-13T05:40:04Z","/brand/supernus-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/takeda":"2026-11-13T13:12:57Z","/brand/teads":"2026-11-13T13:12:57Z","/brand/temu":"2026-11-13T05:40:04Z","/brand/tencent":"2026-11-13T13:12:57Z","/brand/teva-branded-pharmaceutical-products-r-and-d-inc":"2026-11-13T13:12:57Z","/brand/the-cleveland-clinic":"2026-11-13T13:12:57Z","/brand/the-university-of-texas-health-science-center-at-san-antonio":"2026-11-13T13:12:57Z","/brand/the-university-of-texas-health-science-center-houston":"2026-11-13T13:12:57Z","/brand/the-university-of-texas-medical-branch-galveston":"2026-11-13T13:12:57Z","/brand/thomas-jefferson-university":"2026-11-13T13:12:57Z","/brand/tiktok":"2026-11-13T05:40:04Z","/brand/transunion":"2026-11-13T13:12:57Z","/brand/trend-micro":"2026-11-13T13:12:57Z","/brand/tufts-medical-center":"2026-11-13T13:12:57Z","/brand/twilio":"2026-11-13T13:12:57Z","/brand/eia":"2026-11-12T01:20:03Z","/brand/usgs":"2026-11-13T13:12:57Z","/brand/usno":"2026-11-13T13:12:57Z","/brand/us-news":"2026-11-12T22:42:24Z","/brand/ucb-biopharma-srl":"2026-11-13T13:12:57Z","/brand/unc-lineberger-comprehensive-cancer-center":"2026-11-13T13:12:57Z","/brand/unesco-uis":"2026-11-10T23:53:38Z","/brand/united-airlines":"2026-11-13T05:40:04Z","/brand/university-hospitals-cleveland-medical-center":"2026-11-13T13:12:57Z","/brand/university-of-alabama-at-birmingham":"2026-11-13T13:12:57Z","/brand/university-of-arizona":"2026-11-13T13:12:57Z","/brand/university-of-arkansas":"2026-11-13T13:12:57Z","/brand/university-of-california-davis":"2026-11-13T13:12:57Z","/brand/university-of-california-irvine":"2026-11-13T13:12:57Z","/brand/university-of-california-los-angeles":"2026-11-13T13:12:57Z","/brand/university-of-california-san-diego":"2026-11-13T13:12:57Z","/brand/university-of-california-san-francisco":"2026-11-13T13:12:57Z","/brand/university-of-chicago":"2026-11-13T13:12:57Z","/brand/university-of-colorado-denver":"2026-11-13T13:12:57Z","/brand/university-of-florida":"2026-11-13T13:12:57Z","/brand/university-of-iowa":"2026-11-13T13:12:57Z","/brand/university-of-kansas-medical-center":"2026-11-13T13:12:57Z","/brand/university-of-maryland-baltimore":"2026-11-13T13:12:57Z","/brand/university-of-miami":"2026-11-13T13:12:57Z","/brand/university-of-michigan":"2026-11-13T13:12:57Z","/brand/university-of-michigan-rogel-cancer-center":"2026-11-13T13:12:57Z","/brand/university-of-minnesota":"2026-11-13T13:12:57Z","/brand/university-of-missouri-columbia":"2026-11-13T13:12:57Z","/brand/university-of-nebraska":"2026-11-13T13:12:57Z","/brand/university-of-new-mexico":"2026-11-13T13:12:57Z","/brand/university-of-north-carolina-chapel-hill":"2026-11-13T13:12:57Z","/brand/university-of-oklahoma":"2026-11-13T13:12:57Z","/brand/university-of-pennsylvania":"2026-11-13T13:12:57Z","/brand/university-of-rochester":"2026-11-13T13:12:57Z","/brand/university-of-southern-california":"2026-11-13T13:12:57Z","/brand/university-of-texas-southwestern-medical-center":"2026-11-13T13:12:57Z","/brand/university-of-utah":"2026-11-13T13:12:57Z","/brand/university-of-virginia":"2026-11-13T13:12:57Z","/brand/university-of-washington":"2026-11-13T13:12:57Z","/brand/university-of-wisconsin-madison":"2026-11-13T13:12:57Z","/brand/unsplash":"2026-11-13T13:12:57Z","/brand/va-office-of-research-and-development":"2026-11-13T13:12:57Z","/brand/vanderbilt-university-medical-center":"2026-11-13T13:12:57Z","/brand/vercel":"2026-11-13T13:12:57Z","/brand/vertex-pharmaceuticals-incorporated":"2026-11-13T13:12:57Z","/brand/vibehpc":"2026-11-13T05:40:04Z","/brand/viiv-healthcare":"2026-11-13T13:12:57Z","/brand/virginia-commonwealth-university":"2026-11-13T13:12:57Z","/brand/vox-media":"2026-11-13T13:12:57Z","/brand/wake-forest-university-health-sciences":"2026-11-13T13:12:57Z","/brand/washington-university-school-of-medicine":"2026-11-13T13:12:57Z","/brand/weill-medical-college-of-cornell-university":"2026-11-13T13:12:57Z","/brand/wikimedia-foundation":"2026-11-13T05:40:04Z","/brand/wildberries":"2026-11-13T13:12:57Z","/brand/wiwynn":"2026-11-13T05:40:04Z","/brand/world-bank":"2026-11-10T23:53:38Z","/brand/who":"2026-11-13T13:12:57Z","/brand/x":"2026-11-13T05:40:04Z","/brand/xiaomi":"2026-11-13T13:12:57Z","/brand/xnxx":"2026-11-13T05:40:04Z","/brand/xvideos":"2026-11-13T05:40:04Z","/brand/yale-university":"2026-11-13T13:12:57Z","/brand/z-ai":"2026-11-13T13:12:57Z","/brand/zalando":"2026-11-13T05:40:04Z","/brand/zoom":"2026-11-13T13:12:57Z","/brand":"2026-11-13T02:20:42Z","/e/backend/amazon-braket":"2026-11-11T21:28:03Z","/e/backend/ibm-aachen":"2026-11-11T21:28:03Z","/e/backend/ibm-algiers":"2026-11-11T21:28:03Z","/e/backend/ibm-auckland":"2026-11-11T21:28:03Z","/e/backend/ibm-belem":"2026-11-11T21:28:03Z","/e/backend/ibm-boston":"2026-11-12T13:45:46Z","/e/backend/ibm-brisbane":"2026-11-12T13:45:46Z","/e/backend/ibm-cairo":"2026-11-11T21:28:03Z","/e/backend/ibm-cleveland":"2026-11-12T13:45:46Z","/e/backend/ibm-fez":"2026-11-12T13:45:46Z","/e/backend/ibm-guadalupe":"2026-11-11T21:28:03Z","/e/backend/ibm-hanoi":"2026-11-11T21:28:03Z","/e/backend/ibm-kawasaki":"2026-11-12T13:45:46Z","/e/backend/ibm-kingston":"2026-11-12T13:45:46Z","/e/backend/ibm-kyiv":"2026-11-12T13:45:46Z","/e/backend/ibm-kyoto":"2026-11-11T21:28:03Z","/e/backend/ibm-lagos":"2026-11-11T21:28:03Z","/e/backend/ibm-manhattan":"2026-11-11T21:28:03Z","/e/backend/ibm-manila":"2026-11-11T21:28:03Z","/e/backend/ibm-marrakesh":"2026-11-12T13:45:46Z","/e/backend/ibm-miami":"2026-11-11T21:28:03Z","/e/backend/ibm-nairobi":"2026-11-11T21:28:03Z","/e/backend/ibm-osaka":"2026-11-11T21:28:03Z","/e/backend/ibm-oslo":"2026-11-11T21:28:03Z","/e/backend/ibm-peekskill":"2026-11-11T21:28:03Z","/e/backend/ibm-perth":"2026-11-11T21:28:03Z","/e/backend/ibm-phoenix":"2026-11-12T13:45:46Z","/e/backend/ibm-pittsburgh":"2026-11-12T13:45:46Z","/e/backend/ibm-quito":"2026-11-12T13:45:46Z","/e/backend/ibm-sherbrooke":"2026-11-11T21:28:03Z","/e/backend/ibm-strasbourg":"2026-11-11T21:28:03Z","/e/backend/ibm-tokyo":"2026-11-11T21:28:03Z","/e/backend/ibm-torino":"2026-11-12T13:45:46Z","/e/backend/ionq-aria-1":"2026-11-11T21:28:03Z","/e/backend/ionq-aria1":"2026-11-12T13:45:46Z","/e/backend/quantinuum-h1-1":"2026-11-12T13:45:46Z","/e/backend/rigetti-ankaa-3":"2026-11-11T21:28:03Z","/e/backend/rigetti-cepheus-1-108q":"2026-11-11T21:28:03Z","/e/model/deep-cogito-cogito-v2-1-671b":"2026-11-13T13:12:57Z","/e/model/deepseek-r1-1-5b":"2026-11-11T21:28:03Z","/e/model/falcon-family":"2026-11-11T21:28:03Z","/e/model/falcon3-3b":"2026-11-11T21:28:03Z","/e/model/gemma-family":"2026-11-13T13:12:57Z","/e/model/gemma3-4b":"2026-11-11T21:28:03Z","/e/model/gemma3n-e4b":"2026-11-13T13:12:57Z","/e/model/gpt-oss120b":"2026-11-13T13:12:57Z","/e/model/granite-family":"2026-11-13T13:12:57Z","/e/model/granite3-3-2b":"2026-11-11T21:28:03Z","/e/model/granite4-1-3b":"2026-11-11T21:28:03Z","/e/model/granite4-2-30b":"2026-11-13T13:12:57Z","/e/model/granite4-2-3b":"2026-11-13T13:12:57Z","/e/model/granite4-2-8b":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling2-6-1t":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling3-0-flash":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling3-0-flash-fin":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling3-0-flash-vl":"2026-11-13T13:12:57Z","/e/model/llama-family":"2026-11-12T16:08:25Z","/e/model/llama-guard2-8b":"2026-11-13T13:12:57Z","/e/model/llama-guard3-8b":"2026-11-13T13:12:57Z","/e/model/llama-guard4-12b":"2026-11-13T13:12:57Z","/e/model/llama3-1-8b":"2026-11-11T21:28:03Z","/e/model/medium-family":"2026-11-13T13:12:57Z","/e/model/medium3-5":"2026-11-13T13:12:57Z","/e/model/mistral-family":"2026-11-11T21:28:03Z","/e/model/mistral7b":"2026-11-11T21:28:03Z","/e/model/moonshot-ai-kimi-k2-7-code":"2026-11-13T13:12:57Z","/e/model/nemotron-family":"2026-11-13T13:12:57Z","/e/model/nemotron3-5-content-safety":"2026-11-13T13:12:57Z","/e/model/nemotron3-ultra550b-a55b":"2026-11-13T13:12:57Z","/e/model/olmo-family":"2026-11-11T21:28:03Z","/e/model/olmo2-7b":"2026-11-11T21:28:03Z","/e/model/phi-family":"2026-11-11T21:28:03Z","/e/model/phi4-mini":"2026-11-11T21:28:03Z","/e/model/qwen-family":"2026-11-13T13:12:57Z","/e/model/qwen3-1-7b":"2026-11-11T21:28:03Z","/e/model/qwen3-235b-a22b-instruct2507":"2026-11-13T13:12:57Z","/e/model/qwen3-4b":"2026-11-11T21:28:03Z","/e/model/smollm-family":"2026-11-11T21:28:03Z","/e/model/smollm2-1-7b":"2026-11-11T21:28:03Z","/e/model/speakleash-bielik11b-v3-0":"2026-11-13T13:12:57Z","/e/model/tencent-hy4-preview":"2026-11-13T13:12:57Z","/e/model/v4-flash":"2026-11-13T13:12:57Z","/e/model/v4-flash-vision-exp":"2026-11-13T13:12:57Z","/e/model/xiaomi-mimo-v2-5-pro":"2026-11-13T13:12:57Z","/e/model/z-ai-glm5-3-flash-bf16":"2026-11-13T13:12:57Z","/e/package/opencv-python":"2026-11-13T13:12:57Z","/e/package/opencv-python-headless":"2026-11-13T13:12:57Z","/e/package/pandas-gbq":"2026-11-13T13:12:57Z","/e/package/redshift-connector":"2026-11-13T13:12:57Z","/forecasters":"2026-11-13T13:12:57Z","/alerts":"2026-11-12T22:42:24Z","/changelog":"2026-11-13T13:12:57Z","/follow":"2026-11-11T15:47:30Z","/webhooks":"2026-11-11T15:47:30Z","/verify":"2026-11-10T22:03:07Z","/reproduce":"2026-11-13T13:12:57Z","/transparency":"2026-11-10T22:19:50Z","/security/self":"2026-11-10T22:58:57Z","/security/policy":"2026-11-10T22:19:50Z","/security/thanks":"2026-11-10T22:02:13Z","/mydata":"2026-11-10T22:19:50Z"};
+export const LASTMOD = {"/":"2026-11-12T22:46:12Z","/agree":"2026-11-11T21:28:03Z","/contact":"2026-11-11T21:28:03Z","/inquiry":"2026-10-28T23:10:02Z","/privacy":"2026-11-11T21:28:03Z","/terms":"2026-10-30T15:42:52Z","/conflict-of-interest":"2026-10-28T23:10:02Z","/media":"2026-11-10T15:50:57Z","/media/2026-10-26":"2026-10-29T20:44:30Z","/community":"2026-11-09T12:16:12Z","/changes":"2026-11-13T13:12:57Z","/vault":"2026-10-29T21:51:28Z","/security":"2026-11-10T22:02:13Z","/inquire-ok":"2026-10-28T23:10:02Z","/inquire-error":"2026-10-28T23:10:02Z","/404":"2026-11-09T02:20:41Z","/oy/school/101912":"2026-10-30T15:42:52Z","/oy/school/106342":"2026-10-30T15:42:52Z","/oy/school/107080":"2026-10-30T15:42:52Z","/oy/school/107512":"2026-10-30T15:42:52Z","/oy/school/112260":"2026-10-30T15:42:52Z","/oy/school/115409":"2026-10-30T15:42:52Z","/oy/school/116846":"2026-10-30T15:42:52Z","/oy/school/120254":"2026-11-10T18:17:15Z","/oy/school/121257":"2026-10-30T15:42:52Z","/oy/school/121345":"2026-10-30T15:42:52Z","/oy/school/123165":"2026-11-10T18:17:15Z","/oy/school/123457":"2026-10-30T15:42:52Z","/oy/school/124292":"2026-10-30T15:42:52Z","/oy/school/125727":"2026-10-30T15:42:52Z","/oy/school/125763":"2026-10-30T15:42:52Z","/oy/school/126678":"2026-10-30T15:42:52Z","/oy/school/128902":"2026-10-30T15:42:52Z","/oy/school/130590":"2026-10-30T15:42:52Z","/oy/school/130697":"2026-10-30T15:42:52Z","/oy/school/132602":"2026-11-10T18:17:15Z","/oy/school/133492":"2026-10-30T15:42:52Z","/oy/school/138600":"2026-10-30T15:42:52Z","/oy/school/139153":"2026-10-30T15:42:52Z","/oy/school/139393":"2026-10-30T15:42:52Z","/oy/school/140553":"2026-10-30T15:42:52Z","/oy/school/140696":"2026-10-30T15:42:52Z","/oy/school/140720":"2026-10-30T15:42:52Z","/oy/school/141060":"2026-10-30T15:42:52Z","/oy/school/141361":"2026-10-30T15:42:52Z","/oy/school/143084":"2026-11-10T18:17:15Z","/oy/school/144883":"2026-10-30T15:42:52Z","/oy/school/145497":"2026-10-30T15:42:52Z","/oy/school/145691":"2026-11-10T18:17:15Z","/oy/school/146427":"2026-10-30T15:42:52Z","/oy/school/146481":"2026-10-30T15:42:52Z","/oy/school/147341":"2026-11-10T18:17:15Z","/oy/school/148016":"2026-10-30T15:42:52Z","/oy/school/149781":"2026-10-30T15:42:52Z","/oy/school/150400":"2026-10-30T15:42:52Z","/oy/school/150455":"2026-10-30T15:42:52Z","/oy/school/150604":"2026-10-30T15:42:52Z","/oy/school/150756":"2026-10-30T15:42:52Z","/oy/school/150774":"2026-10-30T15:42:52Z","/oy/school/151810":"2026-10-30T15:42:52Z","/oy/school/152390":"2026-11-10T18:17:15Z","/oy/school/152673":"2026-11-10T18:17:15Z","/oy/school/153108":"2026-10-30T15:42:52Z","/oy/school/153144":"2026-10-30T15:42:52Z","/oy/school/153162":"2026-10-30T15:42:52Z","/oy/school/153241":"2026-10-30T15:42:52Z","/oy/school/153384":"2026-10-30T15:42:52Z","/oy/school/153834":"2026-10-30T15:42:52Z","/oy/school/154527":"2026-10-30T15:42:52Z","/oy/school/156295":"2026-10-30T15:42:52Z","/oy/school/156408":"2026-10-30T15:42:52Z","/oy/school/156745":"2026-10-30T15:42:52Z","/oy/school/157030":"2026-10-30T15:42:52Z","/oy/school/157818":"2026-11-10T18:17:15Z","/oy/school/158477":"2026-10-30T15:42:52Z","/oy/school/158802":"2026-11-10T18:17:15Z","/oy/school/160959":"2026-10-30T15:42:52Z","/oy/school/160977":"2026-10-30T15:42:52Z","/oy/school/161004":"2026-10-30T15:42:52Z","/oy/school/161086":"2026-10-30T15:42:52Z","/oy/school/162654":"2026-10-30T15:42:52Z","/oy/school/163976":"2026-10-30T15:42:52Z","/oy/school/164216":"2026-10-30T15:42:52Z","/oy/school/164465":"2026-10-30T15:42:52Z","/oy/school/165671":"2026-10-30T15:42:52Z","/oy/school/165936":"2026-10-30T15:42:52Z","/oy/school/166018":"2026-10-30T15:42:52Z","/oy/school/166054":"2026-10-30T15:42:52Z","/oy/school/166124":"2026-11-10T18:17:15Z","/oy/school/166939":"2026-11-10T18:17:15Z","/oy/school/167835":"2026-10-30T15:42:52Z","/oy/school/167996":"2026-11-10T18:17:15Z","/oy/school/168218":"2026-10-30T15:42:52Z","/oy/school/168281":"2026-10-30T15:42:52Z","/oy/school/168342":"2026-10-30T15:42:52Z","/oy/school/168546":"2026-10-30T15:42:52Z","/oy/school/168786":"2026-10-30T15:42:52Z","/oy/school/170286":"2026-10-30T15:42:52Z","/oy/school/170301":"2026-10-30T15:42:52Z","/oy/school/170532":"2026-10-30T15:42:52Z","/oy/school/172033":"2026-10-30T15:42:52Z","/oy/school/173142":"2026-10-30T15:42:52Z","/oy/school/173258":"2026-10-30T15:42:52Z","/oy/school/173300":"2026-10-30T15:42:52Z","/oy/school/173647":"2026-11-10T18:17:15Z","/oy/school/173902":"2026-10-30T15:42:52Z","/oy/school/174747":"2026-10-30T15:42:52Z","/oy/school/174792":"2026-10-30T15:42:52Z","/oy/school/174844":"2026-10-30T15:42:52Z","/oy/school/175980":"2026-10-30T15:42:52Z","/oy/school/176318":"2026-10-30T15:42:52Z","/oy/school/176406":"2026-11-10T18:17:15Z","/oy/school/179946":"2026-10-30T15:42:52Z","/oy/school/183239":"2026-10-30T15:42:52Z","/oy/school/183275":"2026-10-30T15:42:52Z","/oy/school/184348":"2026-10-30T15:42:52Z","/oy/school/189088":"2026-10-30T15:42:52Z","/oy/school/189097":"2026-10-30T15:42:52Z","/oy/school/190099":"2026-10-30T15:42:52Z","/oy/school/191515":"2026-10-30T15:42:52Z","/oy/school/191533":"2026-10-30T15:42:52Z","/oy/school/191630":"2026-10-30T15:42:52Z","/oy/school/191676":"2026-10-30T15:42:52Z","/oy/school/192864":"2026-10-30T15:42:52Z","/oy/school/195216":"2026-11-10T18:17:15Z","/oy/school/195304":"2026-11-10T18:17:15Z","/oy/school/195526":"2026-10-30T15:42:52Z","/oy/school/196866":"2026-11-10T18:17:15Z","/oy/school/197133":"2026-11-10T18:17:15Z","/oy/school/197993":"2026-10-30T15:42:52Z","/oy/school/198385":"2026-10-30T15:42:52Z","/oy/school/198613":"2026-10-30T15:42:52Z","/oy/school/198756":"2026-10-30T15:42:52Z","/oy/school/198950":"2026-10-30T15:42:52Z","/oy/school/199607":"2026-11-10T18:17:15Z","/oy/school/199865":"2026-10-30T15:42:52Z","/oy/school/202523":"2026-10-30T15:42:52Z","/oy/school/203535":"2026-10-30T15:42:52Z","/oy/school/204501":"2026-10-30T15:42:52Z","/oy/school/204909":"2026-10-30T15:42:52Z","/oy/school/205027":"2026-10-30T15:42:52Z","/oy/school/206525":"2026-10-30T15:42:52Z","/oy/school/206589":"2026-10-30T15:42:52Z","/oy/school/207157":"2026-10-30T15:42:52Z","/oy/school/209056":"2026-11-10T18:17:15Z","/oy/school/209065":"2026-11-10T18:17:15Z","/oy/school/209922":"2026-10-30T15:42:52Z","/oy/school/210401":"2026-10-30T15:42:52Z","/oy/school/210492":"2026-10-30T15:42:52Z","/oy/school/210571":"2026-11-10T18:17:15Z","/oy/school/210669":"2026-10-30T15:42:52Z","/oy/school/211273":"2026-11-10T18:17:15Z","/oy/school/211291":"2026-11-10T18:17:15Z","/oy/school/212009":"2026-11-10T18:17:15Z","/oy/school/212577":"2026-10-30T15:42:52Z","/oy/school/212674":"2026-10-30T15:42:52Z","/oy/school/212911":"2026-10-30T15:42:52Z","/oy/school/213251":"2026-10-30T15:42:52Z","/oy/school/213385":"2026-10-30T15:42:52Z","/oy/school/213668":"2026-10-30T15:42:52Z","/oy/school/214175":"2026-10-30T15:42:52Z","/oy/school/215798":"2026-10-30T15:42:52Z","/oy/school/216278":"2026-10-30T15:42:52Z","/oy/school/216287":"2026-10-30T15:42:52Z","/oy/school/216524":"2026-10-30T15:42:52Z","/oy/school/216667":"2026-10-30T15:42:52Z","/oy/school/216807":"2026-10-30T15:42:52Z","/oy/school/217624":"2026-10-30T15:42:52Z","/oy/school/217873":"2026-11-10T18:17:15Z","/oy/school/218070":"2026-10-30T15:42:52Z","/oy/school/218539":"2026-10-30T15:42:52Z","/oy/school/218973":"2026-10-30T15:42:52Z","/oy/school/220181":"2026-10-30T15:42:52Z","/oy/school/220598":"2026-10-30T15:42:52Z","/oy/school/220710":"2026-10-30T15:42:52Z","/oy/school/221351":"2026-10-30T15:42:52Z","/oy/school/221519":"2026-10-30T15:42:52Z","/oy/school/222983":"2026-11-10T18:17:15Z","/oy/school/228343":"2026-11-10T18:17:15Z","/oy/school/229267":"2026-10-30T15:42:52Z","/oy/school/230816":"2026-10-30T15:42:52Z","/oy/school/230959":"2026-10-30T15:42:52Z","/oy/school/231059":"2026-11-09T02:47:11Z","/oy/school/231581":"2026-10-30T15:42:52Z","/oy/school/232256":"2026-11-10T18:17:15Z","/oy/school/232308":"2026-10-30T15:42:52Z","/oy/school/233295":"2026-10-30T15:42:52Z","/oy/school/233301":"2026-10-30T15:42:52Z","/oy/school/233374":"2026-11-10T18:17:15Z","/oy/school/233426":"2026-10-30T15:42:52Z","/oy/school/233611":"2026-10-30T15:42:52Z","/oy/school/233718":"2026-10-30T15:42:52Z","/oy/school/234164":"2026-10-30T15:42:52Z","/oy/school/234173":"2026-11-10T18:17:15Z","/oy/school/234207":"2026-10-30T15:42:52Z","/oy/school/236328":"2026-10-30T15:42:52Z","/oy/school/237057":"2026-10-30T15:42:52Z","/oy/school/237181":"2026-10-30T15:42:52Z","/oy/school/238333":"2026-10-30T15:42:52Z","/oy/school/239017":"2026-10-30T15:42:52Z","/oy/school/239628":"2026-10-30T15:42:52Z","/oy/school/239716":"2026-11-10T18:17:15Z","/oy/school/245652":"2026-10-30T15:42:52Z","/oy/school/399911":"2026-10-30T15:42:52Z","/oy/school/439862":"2026-11-10T18:17:15Z","/oy/school/440396":"2026-10-30T15:42:52Z","/oy/school/440794":"2026-11-10T18:17:15Z","/oy/school/446048":"2026-10-30T15:42:52Z","/oy/school/449870":"2026-10-30T15:42:52Z","/oy/school/451927":"2026-10-30T15:42:52Z","/oy/school/455770":"2026-11-10T18:17:15Z","/oy/school/461759":"2026-10-30T15:42:52Z","/oy/school/483018":"2026-10-30T15:42:52Z","/oy/school/101435":"2026-11-10T18:17:15Z","/oy/school/101675":"2026-10-30T15:42:52Z","/oy/school/102234":"2026-10-30T15:42:52Z","/oy/school/102270":"2026-10-30T15:42:52Z","/oy/school/102298":"2026-10-30T15:42:52Z","/oy/school/102669":"2026-10-30T15:42:52Z","/oy/school/104586":"2026-10-30T15:42:52Z","/oy/school/105899":"2026-10-30T15:42:52Z","/oy/school/106713":"2026-10-30T15:42:52Z","/oy/school/106810":"2026-11-10T18:17:15Z","/oy/school/107558":"2026-10-30T15:42:52Z","/oy/school/107600":"2026-10-30T15:42:52Z","/oy/school/107877":"2026-11-10T18:17:15Z","/oy/school/110060":"2026-10-30T15:42:52Z","/oy/school/117104":"2026-11-10T18:17:15Z","/oy/school/117575":"2026-10-30T15:42:52Z","/oy/school/120865":"2026-10-30T15:42:52Z","/oy/school/129774":"2026-11-10T18:17:15Z","/oy/school/132408":"2026-10-30T15:42:52Z","/oy/school/133526":"2026-10-30T15:42:52Z","/oy/school/133711":"2026-10-30T15:42:52Z","/oy/school/133979":"2026-11-10T18:17:15Z","/oy/school/134510":"2026-11-10T18:17:15Z","/oy/school/137953":"2026-11-10T18:17:15Z","/oy/school/137962":"2026-11-10T18:17:15Z","/oy/school/138293":"2026-10-30T15:42:52Z","/oy/school/138868":"2026-10-30T15:42:52Z","/oy/school/139205":"2026-11-10T18:17:15Z","/oy/school/139630":"2026-10-30T15:42:52Z","/oy/school/140234":"2026-11-10T18:17:15Z","/oy/school/140340":"2026-10-30T15:42:52Z","/oy/school/140872":"2026-10-30T15:42:52Z","/oy/school/141185":"2026-10-30T15:42:52Z","/oy/school/141237":"2026-11-10T18:17:15Z","/oy/school/141325":"2026-11-10T18:17:15Z","/oy/school/142294":"2026-10-30T15:42:52Z","/oy/school/142522":"2026-10-30T15:42:52Z","/oy/school/143288":"2026-10-30T15:42:52Z","/oy/school/144971":"2026-10-30T15:42:52Z","/oy/school/145646":"2026-10-30T15:42:52Z","/oy/school/147244":"2026-10-30T15:42:52Z","/oy/school/148131":"2026-10-30T15:42:52Z","/oy/school/149505":"2026-11-10T18:17:15Z","/oy/school/150668":"2026-10-30T15:42:52Z","/oy/school/152530":"2026-10-30T15:42:52Z","/oy/school/152567":"2026-10-30T15:42:52Z","/oy/school/153302":"2026-11-10T18:17:15Z","/oy/school/153320":"2026-11-10T18:17:15Z","/oy/school/153825":"2026-10-30T15:42:52Z","/oy/school/154350":"2026-10-30T15:42:52Z","/oy/school/154590":"2026-10-30T15:42:52Z","/oy/school/154712":"2026-10-30T15:42:52Z","/oy/school/154721":"2026-10-30T15:42:52Z","/oy/school/154749":"2026-10-30T15:42:52Z","/oy/school/154855":"2026-10-30T15:42:52Z","/oy/school/155070":"2026-11-10T18:17:15Z","/oy/school/155414":"2026-10-30T15:42:52Z","/oy/school/155511":"2026-10-30T15:42:52Z","/oy/school/155627":"2026-10-30T15:42:52Z","/oy/school/155900":"2026-10-30T15:42:52Z","/oy/school/155937":"2026-10-30T15:42:52Z","/oy/school/155973":"2026-10-30T15:42:52Z","/oy/school/156189":"2026-10-30T15:42:52Z","/oy/school/156356":"2026-10-30T15:42:52Z","/oy/school/157076":"2026-10-30T15:42:52Z","/oy/school/157100":"2026-10-30T15:42:52Z","/oy/school/165574":"2026-11-10T18:17:15Z","/oy/school/165802":"2026-11-10T18:17:15Z","/oy/school/166911":"2026-11-10T18:17:15Z","/oy/school/168528":"2026-10-30T15:42:52Z","/oy/school/168591":"2026-10-30T15:42:52Z","/oy/school/170000":"2026-10-30T15:42:52Z","/oy/school/170091":"2026-10-30T15:42:52Z","/oy/school/170967":"2026-10-30T15:42:52Z","/oy/school/171599":"2026-10-30T15:42:52Z","/oy/school/171881":"2026-10-30T15:42:52Z","/oy/school/174437":"2026-10-30T15:42:52Z","/oy/school/174525":"2026-10-30T15:42:52Z","/oy/school/175430":"2026-10-30T15:42:52Z","/oy/school/176789":"2026-10-30T15:42:52Z","/oy/school/176947":"2026-10-30T15:42:52Z","/oy/school/177144":"2026-11-10T18:17:15Z","/oy/school/177542":"2026-10-30T15:42:52Z","/oy/school/178369":"2026-10-30T15:42:52Z","/oy/school/178697":"2026-10-30T15:42:52Z","/oy/school/179955":"2026-10-30T15:42:52Z","/oy/school/180106":"2026-10-30T15:42:52Z","/oy/school/181127":"2026-11-10T18:17:15Z","/oy/school/181738":"2026-10-30T15:42:52Z","/oy/school/181853":"2026-11-10T18:17:15Z","/oy/school/182634":"2026-11-10T18:17:15Z","/oy/school/188340":"2026-10-30T15:42:52Z","/oy/school/189413":"2026-11-10T18:17:15Z","/oy/school/190372":"2026-11-10T18:17:15Z","/oy/school/190983":"2026-10-30T15:42:52Z","/oy/school/191621":"2026-10-30T15:42:52Z","/oy/school/193399":"2026-10-30T15:42:52Z","/oy/school/194392":"2026-10-30T15:42:52Z","/oy/school/195173":"2026-10-30T15:42:52Z","/oy/school/197142":"2026-10-30T15:42:52Z","/oy/school/197911":"2026-10-30T15:42:52Z","/oy/school/197984":"2026-10-30T15:42:52Z","/oy/school/198066":"2026-10-30T15:42:52Z","/oy/school/198215":"2026-10-30T15:42:52Z","/oy/school/198303":"2026-10-30T15:42:52Z","/oy/school/198695":"2026-10-30T15:42:52Z","/oy/school/198808":"2026-10-30T15:42:52Z","/oy/school/198862":"2026-10-30T15:42:52Z","/oy/school/198899":"2026-10-30T15:42:52Z","/oy/school/199032":"2026-10-30T15:42:52Z","/oy/school/199209":"2026-10-30T15:42:52Z","/oy/school/199272":"2026-10-30T15:42:52Z","/oy/school/199458":"2026-10-30T15:42:52Z","/oy/school/199582":"2026-10-30T15:42:52Z","/oy/school/199643":"2026-10-30T15:42:52Z","/oy/school/199698":"2026-10-30T15:42:52Z","/oy/school/201371":"2026-11-10T18:17:15Z","/oy/school/202514":"2026-11-10T18:17:15Z","/oy/school/202903":"2026-11-10T18:17:15Z","/oy/school/203128":"2026-10-30T15:42:52Z","/oy/school/203845":"2026-11-10T18:17:15Z","/oy/school/204635":"2026-10-30T15:42:52Z","/oy/school/206491":"2026-10-30T15:42:52Z","/oy/school/206507":"2026-11-10T18:17:15Z","/oy/school/206817":"2026-10-30T15:42:52Z","/oy/school/207856":"2026-10-30T15:42:52Z","/oy/school/210304":"2026-10-30T15:42:52Z","/oy/school/212805":"2026-10-30T15:42:52Z","/oy/school/213303":"2026-10-30T15:42:52Z","/oy/school/214166":"2026-10-30T15:42:52Z","/oy/school/214883":"2026-10-30T15:42:52Z","/oy/school/216357":"2026-11-10T18:17:15Z","/oy/school/216542":"2026-10-30T15:42:52Z","/oy/school/217721":"2026-10-30T15:42:52Z","/oy/school/218238":"2026-11-10T18:17:15Z","/oy/school/218399":"2026-10-30T15:42:52Z","/oy/school/218414":"2026-11-10T18:17:15Z","/oy/school/218919":"2026-10-30T15:42:52Z","/oy/school/219091":"2026-10-30T15:42:52Z","/oy/school/219505":"2026-10-30T15:42:52Z","/oy/school/220206":"2026-11-10T18:17:15Z","/oy/school/220604":"2026-10-30T15:42:52Z","/oy/school/221731":"2026-10-30T15:42:52Z","/oy/school/222877":"2026-10-30T15:42:52Z","/oy/school/224244":"2026-10-30T15:42:52Z","/oy/school/225201":"2026-10-30T15:42:52Z","/oy/school/225548":"2026-10-30T15:42:52Z","/oy/school/225575":"2026-10-30T15:42:52Z","/oy/school/225885":"2026-11-10T18:17:15Z","/oy/school/226587":"2026-10-30T15:42:52Z","/oy/school/227429":"2026-11-10T18:17:15Z","/oy/school/228468":"2026-11-10T18:17:15Z","/oy/school/228884":"2026-11-10T18:17:15Z","/oy/school/228981":"2026-10-30T15:42:52Z","/oy/school/229887":"2026-10-30T15:42:52Z","/oy/school/230047":"2026-10-30T15:42:52Z","/oy/school/231095":"2026-10-30T15:42:52Z","/oy/school/232089":"2026-10-30T15:42:52Z","/oy/school/237358":"2026-10-30T15:42:52Z","/oy/school/237969":"2026-11-10T18:17:15Z","/oy/school/239512":"2026-10-30T15:42:52Z","/oy/school/240338":"2026-11-10T18:17:15Z","/oy/school/241386":"2026-11-10T18:17:15Z","/oy/school/242644":"2026-11-10T18:17:15Z","/oy/school/242662":"2026-10-30T15:42:52Z","/oy/school/242680":"2026-11-10T18:17:15Z","/oy/school/242699":"2026-10-30T15:42:52Z","/oy/school/242705":"2026-10-30T15:42:52Z","/oy/school/243586":"2026-10-30T15:42:52Z","/oy/school/363907":"2026-11-10T18:17:15Z","/oy/school/363916":"2026-11-10T18:17:15Z","/oy/school/366003":"2026-11-10T18:17:15Z","/oy/school/384254":"2026-10-30T15:42:52Z","/oy/school/428259":"2026-10-30T15:42:52Z","/oy/school/444398":"2026-10-30T15:42:52Z","/oy/school/445708":"2026-10-30T15:42:52Z","/oy/school/446233":"2026-11-10T18:17:15Z","/oy/school/454582":"2026-10-30T15:42:52Z","/oy/school/456481":"2026-10-30T15:42:52Z","/oy/school/456490":"2026-10-30T15:42:52Z","/oy/school/457484":"2026-11-10T18:17:15Z","/oy/school/457697":"2026-10-30T15:42:52Z","/oy/school/461528":"2026-10-30T15:42:52Z","/oy/school/462354":"2026-11-10T18:17:15Z","/oy/school/464226":"2026-10-30T15:42:52Z","/oy/school/475200":"2026-11-10T18:17:15Z","/oy/school/475608":"2026-11-10T18:17:15Z","/oy/school/480198":"2026-10-30T15:42:52Z","/oy/school/487603":"2026-10-30T15:42:52Z","/oy/school/492801":"2026-10-30T15:42:52Z","/oy/school/492962":"2026-10-30T15:42:52Z","/oy/school/494685":"2026-11-10T18:17:15Z","/atlas":"2026-11-13T02:20:42Z","/hermes/model/source/amd-repro-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/amd-pruning-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-repro-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-repro-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/amd-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/amd-repro-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-tech-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-amd-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/amd-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/apple-mac":"2026-11-12T16:08:25Z","/hermes/model/source/supp-asus-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/azure-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/azure-lustre-storage-v3-0":"2026-11-12T16:08:25Z","/hermes/model/source/azure-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/broadcom-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/cisco-x210c-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/cisco-c845a-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/cisco-blog-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-cisco-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/coreweave-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-coreweave-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/coreweave-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/crusoe-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-crusoe-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/dell-mi355x-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/dell-yolo-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/dell-overview-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/dell-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-fujitsu-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-gigacomputing-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/google-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/hpe-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/hpe-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-hpe-v6-1-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-individual-contributor-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/intel-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/intel-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/intel-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-intel-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/k-veritas":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-lambda-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/lambda-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/lenovo-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-mangoboost-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-nebius-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/nebius-storage-v3-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-nvidia-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-aistore-storage-v3-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v5-1":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v5-1-per-dollar":"2026-11-12T16:08:25Z","/hermes/model/source/nvidia-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-oracle-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-orrick-industries-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/red-hat-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/red-hat-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-scitix-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supermicro-v5-0":"2026-11-12T16:08:25Z","/hermes/model/source/supermicro-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supermicro-training-v6-0":"2026-11-12T16:08:25Z","/hermes/model/source/supp-vibehpc-v6-1":"2026-11-12T16:08:25Z","/hermes/model/source/supp-wiwynn-v6-1":"2026-11-12T16:08:25Z","/hermes/model":"2026-11-12T16:08:25Z","/time":"2026-11-12T16:08:25Z","/cada":"2026-11-12T16:08:25Z","/api":"2026-11-10T12:38:25Z","/uptime":"2026-11-12T16:08:25Z","/forecast":"2026-11-12T16:08:25Z","/trials":"2026-11-13T02:20:42Z","/launch":"2026-11-12T22:10:34Z","/linkrot":"2026-11-12T16:08:25Z","/tape":"2026-11-10T23:48:46Z","/receipts/stamps":"2026-11-10T13:44:10Z","/hosts":"2026-11-12T16:08:25Z","/campus":"2026-11-13T08:53:27Z","/airq":"2026-11-12T16:08:25Z","/ailuminate":"2026-11-12T16:08:25Z","/hpt":"2026-11-12T16:08:25Z","/weights":"2026-11-13T13:12:57Z","/airline":"2026-11-12T16:08:25Z","/fedsep":"2026-11-12T16:08:25Z","/revise":"2026-11-12T16:08:25Z","/stack":"2026-11-10T13:52:05Z","/pkginstall":"2026-11-12T17:14:40Z","/seat":"2026-11-12T16:46:48Z","/secrecords":"2026-11-13T13:12:57Z","/change":"2026-11-12T16:08:25Z","/hfsize":"2026-11-13T13:12:57Z","/hflicense":"2026-11-12T16:08:25Z","/pkglicense":"2026-11-12T18:14:45Z","/support":"2026-11-13T05:40:04Z","/arxivdrift":"2026-11-10T13:52:05Z","/cadence":"2026-11-12T16:08:25Z","/atlas/electricity":"2026-10-30T15:42:52Z","/atlas/power-plants":"2026-10-30T15:42:52Z","/atlas/carbon":"2026-10-30T15:42:52Z","/atlas/planned-plants":"2026-10-30T15:42:52Z","/water":"2026-11-12T16:08:25Z","/neo":"2026-11-13T13:12:57Z","/seasonal":"2026-11-12T16:20:33Z","/steo":"2026-11-12T16:20:33Z","/solar":"2026-11-13T02:20:42Z","/quake":"2026-11-13T13:12:57Z","/rank":"2026-11-12T16:08:25Z","/flu":"2026-11-12T16:20:33Z","/credit":"2026-11-12T16:08:25Z","/tornado":"2026-11-12T16:08:25Z","/cone":"2026-11-12T16:08:25Z","/census/revisions":"2026-11-13T02:20:42Z","/census/coverage":"2026-11-12T16:08:25Z","/census/fidelity":"2026-11-12T16:08:25Z","/census/vintages":"2026-11-12T16:08:25Z","/petrol":"2026-11-13T08:53:27Z","/census":"2026-11-12T16:08:25Z","/wiki":"2026-11-12T16:20:33Z","/social":"2026-11-12T16:08:25Z","/predictions":"2026-11-12T16:08:25Z","/oy":"2026-11-12T16:09:02Z","/iris/study/2610.30512":"2026-10-30T15:42:52Z","/iris/study/2610.25964":"2026-10-30T15:42:52Z","/iris/study/2610.31135":"2026-10-30T15:42:52Z","/iris/study/2610.25159":"2026-10-30T15:42:52Z","/iris/study/2610.15732":"2026-10-30T15:42:52Z","/iris/study/2610.21468":"2026-10-30T15:42:52Z","/iris/study/2610.17203":"2026-10-30T15:42:52Z","/iris/study/2610.25626":"2026-10-30T15:42:52Z","/iris/study/2610.24999":"2026-10-30T15:42:52Z","/hermes/model/papers":"2026-10-30T15:42:52Z","/iris":"2026-11-13T08:53:27Z","/iris/lab":"2026-11-12T22:18:26Z","/iris/lab/live":"2026-11-09T20:33:50Z","/yo":"2026-11-10T11:37:32Z","/iris/key":"2026-10-30T14:51:35Z","/iris/list":"2026-11-10T13:52:05Z","/qia/study/2607.25998":"2026-10-30T15:42:52Z","/qia/study/2409.02575":"2026-10-30T15:42:52Z","/qia/study/2606.30606":"2026-10-30T15:42:52Z","/qia/study/2505.05957":"2026-10-30T15:42:52Z","/qia/study/2512.22001":"2026-10-30T15:42:52Z","/qia/study/2609.28657":"2026-10-30T16:40:15Z","/qia/study/2607.16389":"2026-10-30T15:42:52Z","/qia/study/2609.11637":"2026-10-30T15:42:52Z","/qia/study/2604.09857":"2026-10-30T16:40:15Z","/qia/study/2512.17130":"2026-10-30T15:42:52Z","/qia/study/2606.30402":"2026-10-30T15:42:52Z","/qia/study/2605.01138":"2026-10-30T15:42:52Z","/qia/study/2411.15536":"2026-10-30T15:42:52Z","/qia/study/2406.09341":"2026-10-30T16:40:15Z","/qia/study/2411.09123":"2026-10-30T15:42:52Z","/qia/study/2603.00260":"2026-10-30T15:42:52Z","/qia/study/2509.10657":"2026-10-30T15:42:52Z","/qia/study/2605.24252":"2026-10-30T15:42:52Z","/qia/study/2506.03636":"2026-10-30T15:42:52Z","/qia/study/2609.06448":"2026-10-30T15:42:52Z","/qia/study/2511.20741":"2026-10-30T15:42:52Z","/qia/study/2509.17715":"2026-10-30T15:42:52Z","/qia/study/2603.15608":"2026-10-30T15:42:52Z","/qia/study/2606.20441":"2026-10-30T15:42:52Z","/qia/study/ibm-qaoa-tutorial-ibm-quantum-documentation-run-":"2026-10-30T15:42:52Z","/qia/study/2603.14485":"2026-10-30T15:42:52Z","/qia/study/2504.15725":"2026-10-30T16:40:15Z","/qia/study/2609.13108":"2026-10-30T16:40:15Z","/qia/study/2509.18259":"2026-11-01T17:36:55Z","/qia/study/2606.28866":"2026-10-30T15:42:52Z","/qia/study/2511.00224":"2026-10-30T16:40:15Z","/qia/study/2607.25941":"2026-10-30T15:42:52Z","/qia/study/2510.15316":"2026-11-10T11:37:32Z","/qia/study/2510.17286":"2026-10-30T15:42:52Z","/qia/study/2607.01037":"2026-10-30T15:42:52Z","/qia/study/2505.08663":"2026-10-30T15:42:52Z","/qia/study/2510.26735":"2026-10-30T16:40:15Z","/qia/study/2510.05851":"2026-10-30T15:42:52Z","/qia/study/2510.24509":"2026-10-30T15:42:52Z","/qia/study/2602.18350":"2026-10-30T15:42:52Z","/qia/study/zenodo-22009070":"2026-10-30T15:42:52Z","/qia/study/2609.30195":"2026-10-30T15:42:52Z","/qia/study/2607.12269":"2026-10-30T15:42:52Z","/qia/study/2503.17833":"2026-11-10T11:37:32Z","/qia/study/2609.39693":"2026-10-30T15:42:52Z","/qia/study/2405.20328":"2026-10-30T15:42:52Z","/qia/study/2406.01743":"2026-10-30T15:42:52Z","/qia/study/2511.09322":"2026-10-30T16:40:15Z","/qia/study/2509.26229":"2026-10-30T15:42:52Z","/qia/study/2512.08390":"2026-10-30T15:42:52Z","/qia/study/2503.06292":"2026-10-30T15:42:52Z","/qia/study/2602.01165":"2026-10-30T15:42:52Z","/qia/study/2605.04099":"2026-10-30T15:42:52Z","/qia/study/2610.09532":"2026-10-30T15:42:52Z","/qia/study/zenodo-23108790":"2026-11-10T11:37:32Z","/qia/study/2607.27777":"2026-10-30T15:42:52Z","/qia/study/2606.00433":"2026-10-30T15:42:52Z","/qia/study/2501.04649":"2026-11-10T11:37:32Z","/qia/study/2510.18847":"2026-10-30T15:42:52Z","/qia/study/2607.09368":"2026-11-10T11:37:32Z","/qia/study/2508.13557":"2026-10-30T15:42:52Z","/qia/study/2609.38713":"2026-10-30T16:40:15Z","/qia/study/zenodo-20736911":"2026-10-30T15:42:52Z","/qia/study/zenodo-21960772":"2026-10-30T16:40:15Z","/qia/study/2511.14821":"2026-10-30T15:42:52Z","/qia/study/zenodo-22737706":"2026-10-30T15:42:52Z","/qia/study/zenodo-22848316":"2026-10-30T15:42:52Z","/qia/study/zenodo-22804814":"2026-10-30T15:42:52Z","/qia/study/zenodo-21938548":"2026-10-30T15:42:52Z","/qia/study/zenodo-20352903":"2026-10-30T15:42:52Z","/qia/study/2610.28705":"2026-10-30T15:42:52Z","/qia/study/2602.20614":"2026-10-30T15:42:52Z","/qia/study/zenodo-21682087":"2026-10-30T15:42:52Z","/qia/study/zenodo-23123273":"2026-10-30T15:42:52Z","/qia/study/2609.15411":"2026-10-30T16:40:15Z","/qia/study/zenodo-21479684":"2026-10-30T15:42:52Z","/qia/study/zenodo-22644883":"2026-10-30T16:40:15Z","/qia/study/zenodo-22050177":"2026-10-30T15:42:52Z","/qia/study/zenodo-21199323":"2026-10-30T15:42:52Z","/qia/study/2604.23228":"2026-10-30T16:40:15Z","/qia/study/2508.10593":"2026-11-10T11:37:32Z","/qia/study/2602.21311":"2026-11-10T11:37:32Z","/qia/study/2510.08719":"2026-10-30T15:42:52Z","/qia/study/zenodo-22103070":"2026-10-30T15:42:52Z","/qia/study/zenodo-20026696":"2026-10-30T15:42:52Z","/qia/study/2511.10921":"2026-11-10T11:37:32Z","/qia/study/2509.19448":"2026-10-30T16:40:15Z","/qia/study/2603.16973":"2026-11-10T11:37:32Z","/qia/study/2512.04016":"2026-10-30T15:42:52Z","/qia/study/2511.21932":"2026-10-30T16:40:15Z","/qia/study/2602.09047":"2026-10-30T16:40:15Z","/qia/study/2512.14513":"2026-11-10T11:37:32Z","/qia/study/2603.28821":"2026-10-30T15:42:52Z","/qia/study/2512.03341":"2026-11-10T11:37:32Z","/qia/study/zenodo-22849729":"2026-10-30T15:42:52Z","/qia/study/2512.12645":"2026-10-30T15:42:52Z","/qia/study/2610.14778":"2026-10-30T15:42:52Z","/qia/study/2506.11270":"2026-10-30T15:42:52Z","/qia/study/2509.04761":"2026-10-30T15:42:52Z","/qia/study/zenodo-19840870":"2026-10-30T15:42:52Z","/qia/study/2607.24704":"2026-10-30T15:42:52Z","/qia/study/2607.26756":"2026-10-30T16:40:15Z","/qia/study/2608.28535":"2026-10-30T15:42:52Z","/qia/study/2603.13949":"2026-10-30T15:42:52Z","/qia/study/2610.18482":"2026-10-30T15:42:52Z","/qia/study/2508.01893":"2026-10-30T15:42:52Z","/qia/study/2511.08096":"2026-10-30T15:42:52Z","/qia/study/2608.02245":"2026-10-30T15:42:52Z","/qia/study/2208.01050":"2026-10-30T16:40:15Z","/qia/study/2604.02569":"2026-10-30T15:42:52Z","/qia/study/2605.13109":"2026-10-30T15:42:52Z","/qia/study/2610.06127":"2026-10-30T15:42:52Z","/qia/study/2508.05331":"2026-10-30T15:42:52Z","/qia/study/2608.04486":"2026-11-10T11:37:32Z","/qia/study/zenodo-20025452":"2026-10-30T15:42:52Z","/qia/study/2507.09532":"2026-10-30T15:42:52Z","/qia/study/zenodo-20162808":"2026-10-30T15:42:52Z","/qia/study/zenodo-20538557":"2026-10-30T15:42:52Z","/qia/study/2609.17497":"2026-10-30T16:40:15Z","/qia/study/2512.18493":"2026-10-30T15:42:52Z","/qia/study/zenodo-23122648":"2026-10-30T15:42:52Z","/qia/study/2607.13374":"2026-11-10T11:37:32Z","/qia/study/2511.17692":"2026-11-01T12:35:08Z","/qia/study/2609.35163":"2026-10-30T16:40:15Z","/qia/study/2607.20377":"2026-10-30T15:42:52Z","/qia/study/2603.13536":"2026-10-30T15:42:52Z","/qia/study/zenodo-21587385":"2026-10-30T15:42:52Z","/qia/study/zenodo-21586385":"2026-10-30T16:40:15Z","/qia/study/2609.13669":"2026-10-30T15:42:52Z","/qia/study/zenodo-19754086":"2026-10-30T15:42:52Z","/qia/study/zenodo-22172952":"2026-11-12T10:54:50Z","/qia/study/2509.20127":"2026-10-30T15:42:52Z","/qia/study/2512.14280":"2026-10-30T15:42:52Z","/qia/study/zenodo-23407123":"2026-10-30T16:40:15Z","/qia/study/zenodo-21981913":"2026-10-30T15:42:52Z","/qia/study/2610.21761":"2026-10-30T15:42:52Z","/qia/study/2512.21914":"2026-10-30T16:40:15Z","/qia/study/2610.22482":"2026-10-30T15:42:52Z","/qia/study/2410.09121":"2026-10-30T16:40:15Z","/qia/study/2601.07766":"2026-11-10T11:37:32Z","/qia/study/2605.10638":"2026-10-30T15:42:52Z","/qia/study/2604.17486":"2026-10-30T15:42:52Z","/qia/study/2609.16108":"2026-11-10T11:37:32Z","/qia/study/2609.30496":"2026-10-30T15:42:52Z","/qia/study/2609.13935":"2026-10-30T15:42:52Z","/qia/study/2610.20855":"2026-10-30T15:42:52Z","/qia/study/zenodo-23382139":"2026-11-10T11:37:32Z","/qia/study/zenodo-22790702":"2026-10-30T15:42:52Z","/qia/study/2604.26175":"2026-10-30T15:42:52Z","/qia/study/zenodo-21041855":"2026-10-30T15:42:52Z","/qia/study/zenodo-20840196":"2026-10-30T15:42:52Z","/qia/study/zenodo-21206538":"2026-10-30T15:42:52Z","/qia/study/2509.11450":"2026-11-10T11:37:32Z","/qia/study/zenodo-19855345":"2026-10-30T15:42:52Z","/qia/study/zenodo-22898763":"2026-10-30T16:40:15Z","/qia/study/2607.11637":"2026-10-30T15:42:52Z","/qia/study/2604.24283":"2026-10-30T15:42:52Z","/qia/study/2510.17692":"2026-10-30T15:42:52Z","/qia/study/2407.16107":"2026-11-10T11:37:32Z","/qia/study/2504.04021":"2026-11-10T11:37:32Z","/qia/study/zenodo-22073993":"2026-10-30T15:42:52Z","/qia/study/2509.24842":"2026-10-30T15:42:52Z","/qia/study/2610.18124":"2026-10-30T16:40:15Z","/qia/study/2605.11375":"2026-10-30T15:42:52Z","/qia/study/2604.24397":"2026-10-30T16:40:15Z","/qia/study/2509.18029":"2026-10-30T15:42:52Z","/qia/study/2605.30676":"2026-10-30T15:42:52Z","/qia/study/2610.09062":"2026-11-10T11:37:32Z","/qia/study/2609.33255":"2026-11-10T11:37:32Z","/qia/study/2502.01824":"2026-10-30T15:42:52Z","/qia/study/2610.19544":"2026-11-10T11:37:32Z","/qia/study/2505.21243":"2026-11-10T11:37:32Z","/qia/study/2604.27836":"2026-11-10T11:37:32Z","/qia/study/2511.22324":"2026-11-10T11:37:32Z","/qia/study/2604.17519":"2026-11-10T11:37:32Z","/qia/study/2604.03360":"2026-11-10T11:37:32Z","/qia/study/2502.13910":"2026-10-30T15:42:52Z","/qia/study/2505.09371":"2026-10-30T15:42:52Z","/qia/study/2511.15802":"2026-11-10T11:37:32Z","/qia/study/2603.18749":"2026-10-30T15:42:52Z","/qia/study/2508.16895":"2026-11-10T11:37:32Z","/qia/study/2608.13614":"2026-10-30T15:42:52Z","/qia/study/2609.34411":"2026-10-30T16:40:15Z","/qia/study/2602.16233":"2026-10-30T15:42:52Z","/qia/study/2602.21253":"2026-10-30T15:42:52Z","/qia/study/2209.05716":"2026-11-10T11:37:32Z","/qia/study/2212.14170":"2026-11-10T11:37:32Z","/qia/study/zenodo-23634581":"2026-10-30T15:42:52Z","/qia/study/2606.14933":"2026-11-10T11:37:32Z","/qia/study/zenodo-23396363":"2026-10-30T15:42:52Z","/qia/study/2605.08251":"2026-10-30T15:42:52Z","/qia/study/zenodo-22770646":"2026-10-30T15:42:52Z","/qia/study/2505.17731":"2026-11-10T11:37:32Z","/qia/study/zenodo-20688687":"2026-10-30T16:40:15Z","/qia/study/zenodo-22242711":"2026-11-02T14:36:57Z","/qia/study/2607.06971":"2026-10-30T16:40:15Z","/qia/study/2609.14424":"2026-11-10T11:37:32Z","/sagar":"2026-11-13T13:28:16Z","/sagar/study/2610.29436":"2026-11-12T22:24:29Z","/sagar/study/2610.29384":"2026-11-13T13:28:16Z","/sagar/study/2609.39583":"2026-11-13T13:28:16Z","/sagar/study/2609.06211":"2026-11-13T13:28:16Z","/sagar/study/2609.01568":"2026-11-13T13:28:16Z","/sagar/study/2608.29295":"2026-11-13T13:28:16Z","/sagar/study/2608.07237":"2026-11-13T13:28:16Z","/sagar/study/2607.23119":"2026-11-13T13:28:16Z","/sagar/study/2607.21924":"2026-11-13T13:28:16Z","/sagar/study/2607.17439":"2026-11-13T13:28:16Z","/sagar/study/2607.16135":"2026-11-13T13:28:16Z","/sagar/study/2607.10816":"2026-11-13T13:28:16Z","/sagar/study/2607.08466":"2026-11-13T13:28:16Z","/sagar/study/2606.25304":"2026-11-13T13:28:16Z","/sagar/study/2606.18081":"2026-11-13T13:28:16Z","/sagar/study/2604.23793":"2026-11-13T13:28:16Z","/sagar/study/2604.22450":"2026-11-13T13:28:16Z","/sagar/study/2604.15129":"2026-11-13T13:28:16Z","/sagar/study/2604.14290":"2026-11-13T13:28:16Z","/sagar/study/2604.13839":"2026-11-13T13:28:16Z","/sagar/study/2604.07668":"2026-11-13T13:28:16Z","/sagar/study/2603.29019":"2026-11-12T22:24:29Z","/sagar/study/2602.04497":"2026-11-13T13:28:16Z","/sagar/study/2512.10344":"2026-11-13T13:28:16Z","/sagar/study/2512.04516":"2026-11-13T13:28:16Z","/sagar/study/2511.16879":"2026-11-13T13:28:16Z","/sagar/study/2511.06536":"2026-11-13T13:28:16Z","/sagar/study/2510.25579":"2026-11-12T22:24:29Z","/sagar/study/2510.23829":"2026-11-13T13:28:16Z","/sagar/study/2510.20891":"2026-11-13T13:28:16Z","/sagar/study/2510.14291":"2026-11-12T22:24:29Z","/sagar/study/2510.08764":"2026-11-13T13:28:16Z","/sagar/study/2510.05029":"2026-11-13T13:28:16Z","/sagar/study/2509.03579":"2026-11-13T13:28:16Z","/sagar/study/2509.03480":"2026-11-13T13:28:16Z","/sagar/study/2509.02047":"2026-11-13T13:28:16Z","/sagar/study/2509.00907":"2026-11-13T13:28:16Z","/sagar/study/2509.00274":"2026-11-13T13:28:16Z","/sagar/study/2508.19331":"2026-11-13T13:28:16Z","/sagar/study/2508.17103":"2026-11-13T13:28:16Z","/sagar/study/2508.04172":"2026-11-13T13:28:16Z","/sagar/study/2508.00179":"2026-11-13T13:28:16Z","/sagar/study/2507.21566":"2026-11-12T22:24:29Z","/sagar/study/2507.21315":"2026-11-13T13:28:16Z","/sagar/study/2507.20778":"2026-11-13T13:28:16Z","/sagar/study/2507.16022":"2026-11-13T13:28:16Z","/sagar/study/2507.09099":"2026-11-13T13:28:16Z","/sagar/study/2507.08318":"2026-11-13T13:28:16Z","/sagar/study/2507.02335":"2026-11-12T22:24:29Z","/sagar/study/2507.01294":"2026-11-12T22:24:29Z","/sagar/study/2506.21021":"2026-11-12T22:24:29Z","/sagar/study/2506.15984":"2026-11-12T22:24:29Z","/sagar/study/2506.13870":"2026-11-12T22:24:29Z","/sagar/study/2506.12126":"2026-11-13T13:28:16Z","/sagar/study/2506.06838":"2026-11-12T22:24:29Z","/sagar/study/2505.15399":"2026-11-13T13:28:16Z","/sagar/study/2504.00198":"2026-11-13T13:28:16Z","/sagar/study/2503.14179":"2026-11-13T13:28:16Z","/sagar/study/2503.09773":"2026-11-13T13:28:16Z","/sagar/study/2503.04916":"2026-11-13T13:28:16Z","/sagar/study/2412.06433":"2026-11-13T13:28:16Z","/sagar/study/2412.05369":"2026-11-12T22:24:29Z","/sagar/study/2412.01058":"2026-11-13T13:28:16Z","/sagar/study/2410.23541":"2026-11-13T13:28:16Z","/sagar/study/2410.16565":"2026-11-12T22:24:29Z","/sagar/study/2410.16416":"2026-11-13T13:28:16Z","/sagar/study/2409.05068":"2026-11-13T13:28:16Z","/sagar/study/2409.00179":"2026-11-13T13:28:16Z","/sagar/study/2407.08538":"2026-11-13T13:28:16Z","/sagar/study/2406.17832":"2026-11-13T13:28:16Z","/sagar/study/2406.11742":"2026-11-13T13:28:16Z","/sagar/study/2406.01784":"2026-11-13T13:28:16Z","/sagar/study/2405.18934":"2026-11-13T13:28:16Z","/sagar/study/2405.02286":"2026-11-13T13:28:16Z","/sagar/study/2404.03721":"2026-11-13T13:28:16Z","/sagar/study/2403.17186":"2026-11-13T13:28:16Z","/sagar/study/2403.17179":"2026-11-13T13:28:16Z","/sagar/study/2403.10804":"2026-11-13T13:28:16Z","/sagar/study/2403.03982":"2026-11-13T13:28:16Z","/sagar/study/2402.15336":"2026-11-13T13:28:16Z","/sagar/study/2402.04172":"2026-11-13T13:28:16Z","/sagar/study/2312.17491":"2026-11-13T13:28:16Z","/sagar/study/2312.03860":"2026-11-13T13:28:16Z","/sagar/study/2311.16085":"2026-11-12T22:24:29Z","/sagar/study/2311.15695":"2026-11-13T13:28:16Z","/sagar/study/2311.06630":"2026-11-13T13:28:16Z","/sagar/study/2311.06416":"2026-11-13T13:28:16Z","/sagar/study/2311.06061":"2026-11-13T13:28:16Z","/sagar/study/2311.03556":"2026-11-13T13:28:16Z","/sagar/study/2310.05823":"2026-11-13T13:28:16Z","/sagar/study/2309.04303":"2026-11-13T13:28:16Z","/sagar/study/2309.01894":"2026-11-13T13:28:16Z","/sagar/study/2308.08639":"2026-11-13T13:28:16Z","/sagar/study/2307.13099":"2026-11-13T13:28:16Z","/sagar/study/2306.03827":"2026-11-13T13:28:16Z","/sagar/study/2305.08257":"2026-11-13T13:28:16Z","/sagar/study/2304.14820":"2026-11-13T13:28:16Z","/sagar/study/2304.09977":"2026-11-13T13:28:16Z","/sagar/study/2304.09025":"2026-11-13T13:28:16Z","/sagar/study/2303.17628":"2026-11-13T13:28:16Z","/sagar/study/2303.10847":"2026-11-13T13:28:16Z","/sagar/study/2303.08399":"2026-11-13T13:28:16Z","/sagar/study/2302.12158":"2026-11-13T13:28:16Z","/sagar/study/2302.09651":"2026-11-13T13:28:16Z","/sagar/study/2302.08042":"2026-11-13T13:28:16Z","/sagar/study/2302.04881":"2026-11-13T13:28:16Z","/sagar/study/2212.14283":"2026-11-13T13:28:16Z","/sagar/study/2212.02026":"2026-11-13T13:28:16Z","/sagar/study/2210.16278":"2026-11-13T13:28:16Z","/sagar/study/2210.09592":"2026-11-13T13:28:16Z","/sagar/study/2210.09425":"2026-11-13T13:28:16Z","/sagar/study/2209.14321":"2026-11-13T13:28:16Z","/sagar/study/2208.12872":"2026-11-13T13:28:16Z","/sagar/study/2208.02291":"2026-11-13T13:28:16Z","/sagar/study/2208.01766":"2026-11-12T22:24:29Z","/sagar/study/2207.14286":"2026-11-13T13:28:16Z","/sagar/study/2207.10410":"2026-11-13T13:28:16Z","/sagar/study/2207.01654":"2026-11-13T13:28:16Z","/sagar/study/2204.13495":"2026-11-13T13:28:16Z","/sagar/study/2203.08998":"2026-11-13T13:28:16Z","/sagar/study/2202.07399":"2026-11-13T13:28:16Z","/sagar/study/2202.05092":"2026-11-13T13:28:16Z","/sagar/study/2201.05220":"2026-11-13T13:28:16Z","/sagar/study/2201.02543":"2026-11-13T13:28:16Z","/sagar/study/2201.01817":"2026-11-13T13:28:16Z","/sagar/study/2201.01526":"2026-11-13T13:28:16Z","/sagar/study/2112.11300":"2026-11-13T13:28:16Z","/sagar/study/2111.07219":"2026-11-13T13:28:16Z","/sagar/study/2111.00111":"2026-11-13T13:28:16Z","/sagar/study/2107.03516":"2026-11-13T13:28:16Z","/sagar/study/2106.13785":"2026-11-13T13:28:16Z","/sagar/study/2105.04263":"2026-11-13T13:28:16Z","/sagar/study/2103.12976":"2026-11-13T13:28:16Z","/sagar/study/2012.03963":"2026-11-13T13:28:16Z","/sagar/study/2011.09570":"2026-11-13T13:28:16Z","/sagar/study/2011.04414":"2026-11-13T13:28:16Z","/sagar/study/2010.09751":"2026-11-13T13:28:16Z","/sagar/study/2010.05830":"2026-11-13T13:28:16Z","/sagar/study/2010.04848":"2026-11-13T13:28:16Z","/sagar/study/2009.12260":"2026-11-13T13:28:16Z","/sagar/study/2008.00509":"2026-11-13T13:28:16Z","/sagar/study/2007.12709":"2026-11-13T13:28:16Z","/sagar/study/2007.04176":"2026-11-13T13:28:16Z","/sagar/study/2006.11293":"2026-11-13T13:28:16Z","/sagar/study/2006.00714":"2026-11-13T13:28:16Z","/sagar/study/2004.05128":"2026-11-13T13:28:16Z","/sagar/study/2003.04513":"2026-11-13T13:28:16Z","/sagar/study/2002.05528":"2026-11-13T13:28:16Z","/sagar/study/2001.03833":"2026-11-13T13:28:16Z","/sagar/study/1910.09138":"2026-11-13T13:28:16Z","/sagar/study/1909.11873":"2026-11-13T13:28:16Z","/sagar/study/1909.11801":"2026-11-13T13:28:16Z","/sagar/study/1905.12669":"2026-11-13T13:28:16Z","/sagar/study/1904.07214":"2026-11-13T13:28:16Z","/sagar/study/1904.06020":"2026-11-13T13:28:16Z","/sagar/study/1903.10159":"2026-11-13T13:28:16Z","/sagar/study/1903.02823":"2026-11-13T13:28:16Z","/sagar/study/1903.01998":"2026-11-13T13:28:16Z","/sagar/study/1902.09496":"2026-11-13T13:28:16Z","/sagar/study/1808.05453":"2026-11-13T13:28:16Z","/sagar/study/1807.07660":"2026-11-13T13:28:16Z","/sagar/study/1806.10610":"2026-11-13T13:28:16Z","/sagar/study/1711.09073":"2026-11-13T13:28:16Z","/sagar/receipts/2603.29019_sigma":"2026-11-12T22:24:29Z","/qia":"2026-11-12T16:08:25Z","/qia/list":"2026-11-12T12:55:15Z","/qia/key":"2026-11-09T02:47:11Z","/qia/data":"2026-11-12T02:31:35Z","/hermes/datapapers":"2026-11-12T10:21:14Z","/standard":"2026-11-12T14:27:51Z","/record":"2026-11-12T14:27:51Z","/correction":"2026-10-30T15:42:52Z","/corrections":"2026-11-12T16:40:05Z","/newsletter/1":"2026-11-10T19:50:38Z","/newsletter/0":"2026-11-10T15:38:54Z","/newsletter":"2026-11-10T19:42:37Z","/respond":"2026-10-28T23:10:02Z","/now":"2026-10-31T22:28:09Z","/hermes":"2026-11-13T13:12:57Z","/darkwave":"2026-11-09T20:59:56Z","/qia/package":"2026-11-11T13:43:14Z","/darkwave/kit":"2026-11-10T13:52:05Z","/iris/package":"2026-11-11T14:08:16Z","/atlas/data-pack":"2026-11-10T19:42:37Z","/oy/data-pack":"2026-11-12T16:09:02Z","/hermes/model/data-pack":"2026-11-12T16:08:25Z","/week/2026-44":"2026-11-10T20:50:49Z","/week/2026-45":"2026-11-10T20:50:49Z","/week":"2026-11-12T22:42:24Z","/brand/abbott-medical-devices":"2026-11-13T13:12:57Z","/brand/abbvie":"2026-11-13T13:12:57Z","/brand/acadia-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/aclaris-therapeutics-inc":"2026-11-13T13:12:57Z","/brand/adguard":"2026-11-13T13:28:16Z","/brand/ain-shams-university":"2026-11-13T13:12:57Z","/brand/alaska-airlines":"2026-11-13T05:40:04Z","/brand/albert-einstein-college-of-medicine":"2026-11-13T13:12:57Z","/brand/alcon-research":"2026-11-13T13:12:57Z","/brand/aldeyra-therapeutics-inc":"2026-11-13T13:12:57Z","/brand/alexion-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/aliexpress":"2026-11-13T05:40:04Z","/brand/allegiant-air":"2026-11-13T05:40:04Z","/brand/allergan":"2026-11-13T13:12:57Z","/brand/amazon":"2026-11-13T13:12:57Z","/brand/aws":"2026-11-13T13:28:16Z","/brand/amd":"2026-11-13T05:40:04Z","/brand/american-airlines":"2026-11-13T05:40:04Z","/brand/amgen":"2026-11-13T13:12:57Z","/brand/anthropic":"2026-11-13T13:28:16Z","/brand/apple":"2026-11-13T13:28:16Z","/brand/applovin":"2026-11-13T13:12:57Z","/brand/arcutis-biotherapeutics-inc":"2026-11-13T13:12:57Z","/brand/astellas-pharma-global-development-inc":"2026-11-13T13:12:57Z","/brand/astrazeneca":"2026-11-13T13:12:57Z","/brand/asus":"2026-11-13T05:40:04Z","/brand/atlassian":"2026-11-13T13:28:16Z","/brand/automattic":"2026-11-13T13:12:57Z","/brand/axsome-therapeutics-inc":"2026-11-13T13:12:57Z","/brand/bausch-and-lomb-incorporated":"2026-11-13T13:12:57Z","/brand/bayer":"2026-11-13T13:12:57Z","/brand/baylor-college-of-medicine":"2026-11-13T13:12:57Z","/brand/bbc":"2026-11-13T13:12:57Z","/brand/beigene":"2026-11-13T13:12:57Z","/brand/beth-israel-deaconess-medical-center":"2026-11-13T13:12:57Z","/brand/biogen":"2026-11-13T13:12:57Z","/brand/biontech-se":"2026-11-13T13:12:57Z","/brand/bluehost":"2026-11-13T13:12:57Z","/brand/bluesky":"2026-11-13T05:40:04Z","/brand/boehringer-ingelheim":"2026-11-13T13:12:57Z","/brand/booking-com":"2026-11-13T05:40:04Z","/brand/boston-children-s-hospital":"2026-11-13T13:12:57Z","/brand/boston-scientific-corporation":"2026-11-13T13:12:57Z","/brand/branch":"2026-11-13T13:12:57Z","/brand/brigham-and-women-s-hospital":"2026-11-13T13:12:57Z","/brand/bristol-myers-squibb":"2026-11-13T13:12:57Z","/brand/broadcom":"2026-11-13T05:40:04Z","/brand/btl-industries-ltd":"2026-11-13T13:12:57Z","/brand/bureau-of-labor-statistics":"2026-11-13T13:28:16Z","/brand/bureau-of-reclamation":"2026-11-13T13:28:16Z","/brand/cairo-university":"2026-11-13T13:12:57Z","/brand/canonical":"2026-11-13T13:28:16Z","/brand/case-comprehensive-cancer-center":"2026-11-13T13:12:57Z","/brand/cedars-sinai-medical-center":"2026-11-13T13:12:57Z","/brand/celgene":"2026-11-13T13:12:57Z","/brand/cdc":"2026-11-13T05:40:04Z","/brand/cms":"2026-11-13T05:40:04Z","/brand/children-s-hospital-medical-center-cincinnati":"2026-11-13T13:12:57Z","/brand/cisco":"2026-11-13T13:28:16Z","/brand/cleanbrowsing":"2026-11-13T13:28:16Z","/brand/climate-prediction-center":"2026-11-10T23:53:38Z","/brand/cloudflare":"2026-11-13T13:28:16Z","/brand/colgate-palmolive":"2026-11-13T13:12:57Z","/brand/columbia-university":"2026-11-13T13:12:57Z","/brand/consumer-financial-protection-bureau":"2026-11-13T13:12:57Z","/brand/control-d":"2026-11-13T13:28:16Z","/brand/coopervision-inc":"2026-11-13T13:12:57Z","/brand/coreweave":"2026-11-13T05:40:04Z","/brand/corewell-health-east":"2026-11-13T13:12:57Z","/brand/crusoe":"2026-11-13T05:40:04Z","/brand/npl-india":"2026-11-13T13:28:16Z","/brand/cz-nic":"2026-11-13T13:28:16Z","/brand/daiichi-sankyo":"2026-11-13T13:12:57Z","/brand/dana-farber-cancer-institute":"2026-11-13T13:12:57Z","/brand/datadog":"2026-11-13T13:28:16Z","/brand/deep-cogito":"2026-11-13T13:12:57Z","/brand/deepseek":"2026-11-13T13:12:57Z","/brand/dell":"2026-11-13T05:40:04Z","/brand/delta-air-lines":"2026-11-13T05:40:04Z","/brand/doe":"2026-11-13T05:40:04Z","/brand/hhs":"2026-11-13T05:40:04Z","/brand/dol":"2026-11-13T05:40:04Z","/brand/va":"2026-11-13T05:40:04Z","/brand/digitalocean":"2026-11-13T13:28:16Z","/brand/discord":"2026-11-13T13:28:16Z","/brand/docker":"2026-11-13T13:28:16Z","/brand/dropbox":"2026-11-13T13:28:16Z","/brand/duke-university":"2026-11-13T13:12:57Z","/brand/ebay":"2026-11-13T13:12:57Z","/brand/eisai-inc":"2026-11-13T13:12:57Z","/brand/eleutherai":"2026-11-13T13:12:57Z","/brand/eli-lilly-and-company":"2026-11-13T13:12:57Z","/brand/elsevier":"2026-11-13T13:12:57Z","/brand/emd-serono-research-and-development-institute-inc":"2026-11-13T13:12:57Z","/brand/emory-university":"2026-11-13T13:12:57Z","/brand/epa":"2026-11-13T05:40:04Z","/brand/envoy-air":"2026-11-13T05:40:04Z","/brand/equifax":"2026-11-13T13:12:57Z","/brand/etsy":"2026-11-13T13:12:57Z","/brand/experian":"2026-11-13T13:12:57Z","/brand/federal-reserve":"2026-11-13T13:28:16Z","/brand/fred-hutchinson-cancer-center":"2026-11-13T13:12:57Z","/brand/frontier-airlines":"2026-11-13T05:40:04Z","/brand/fujitsu":"2026-11-13T05:40:04Z","/brand/galderma-r-and-d":"2026-11-13T13:12:57Z","/brand/genentech-inc":"2026-11-13T13:12:57Z","/brand/gigacomputing":"2026-11-13T05:40:04Z","/brand/gilead-sciences":"2026-11-13T13:12:57Z","/brand/github":"2026-11-13T13:28:16Z","/brand/glaxosmithkline":"2026-11-13T13:12:57Z","/brand/google":"2026-11-13T13:28:16Z","/brand/gov-uk":"2026-11-13T13:12:57Z","/brand/h-lee-moffitt-cancer-center-and-research-institute":"2026-11-13T13:12:57Z","/brand/hawaiian-airlines":"2026-11-13T05:40:04Z","/brand/henry-ford-health-system":"2026-11-13T13:12:57Z","/brand/hkust":"2026-11-13T13:12:57Z","/brand/hoffmann-la-roche":"2026-11-13T13:12:57Z","/brand/hospital-for-special-surgery-new-york":"2026-11-13T13:12:57Z","/brand/hostgator":"2026-11-13T13:12:57Z","/brand/hpe":"2026-11-13T05:40:04Z","/brand/hugging-face":"2026-11-13T05:40:04Z","/brand/ibm":"2026-11-13T13:28:16Z","/brand/icahn-school-of-medicine-at-mount-sinai":"2026-11-13T13:12:57Z","/brand/iiko":"2026-11-13T13:12:57Z","/brand/inclusionai":"2026-11-13T13:12:57Z","/brand/incyte-corporation":"2026-11-13T13:12:57Z","/brand/indiana-university":"2026-11-13T13:12:57Z","/brand/inmobi":"2026-11-13T13:12:57Z","/brand/inrim":"2026-11-13T13:28:16Z","/brand/intel":"2026-11-13T05:40:04Z","/brand/ionis-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/ionq":"2026-11-10T23:53:38Z","/brand/janssen-research-and-development-llc":"2026-11-13T13:12:57Z","/brand/janssen-vaccines-and-prevention-b-v":"2026-11-13T13:12:57Z","/brand/jazz-pharmaceuticals":"2026-11-13T13:12:57Z","/brand/jetblue":"2026-11-13T05:40:04Z","/brand/johns-hopkins-university":"2026-11-13T13:12:57Z","/brand/johnson-and-johnson-vision-care-inc":"2026-11-13T13:12:57Z","/brand/k-veritas":"2026-11-13T05:40:04Z","/brand/kriss":"2026-11-13T13:28:16Z","/brand/lambda":"2026-11-13T05:40:04Z","/brand/lenovo":"2026-11-13T05:40:04Z","/brand/leo-pharma":"2026-11-13T13:12:57Z","/brand/library-of-congress":"2026-11-13T13:12:57Z","/brand/linear":"2026-11-13T13:28:16Z","/brand/linkedin":"2026-11-13T05:40:04Z","/brand/loma-linda-university":"2026-11-13T13:12:57Z","/brand/m-d-anderson-cancer-center":"2026-11-13T13:12:57Z","/brand/mangoboost":"2026-11-13T05:40:04Z","/brand/markmonitor":"2026-11-13T13:12:57Z","/brand/masimo-corporation":"2026-11-13T13:12:57Z","/brand/masonic-cancer-center-university-of-minnesota":"2026-11-13T13:12:57Z","/brand/massachusetts-general-hospital":"2026-11-13T13:12:57Z","/brand/mayo-clinic":"2026-11-13T13:12:57Z","/brand/medical-college-of-wisconsin":"2026-11-13T13:12:57Z","/brand/medical-university-of-south-carolina":"2026-11-13T13:12:57Z","/brand/medtronic-minimed-inc":"2026-11-13T13:12:57Z","/brand/memorial-sloan-kettering-cancer-center":"2026-11-13T13:12:57Z","/brand/merck-sharp-and-dohme-llc":"2026-11-13T13:12:57Z","/brand/meta":"2026-11-13T13:28:16Z","/brand/metas":"2026-11-13T13:28:16Z","/brand/microsoft":"2026-11-13T13:28:16Z","/brand/milton-s-hershey-medical-center":"2026-11-13T13:12:57Z","/brand/mistral-ai":"2026-11-13T13:12:57Z","/brand/mlcommons":"2026-11-13T13:12:57Z","/brand/modernatx-inc":"2026-11-13T13:12:57Z","/brand/mohela":"2026-11-10T23:53:38Z","/brand/montefiore-medical-center":"2026-11-13T13:12:57Z","/brand/moonshot-ai":"2026-11-13T13:12:57Z","/brand/jpl":"2026-11-12T10:21:14Z","/brand/national-cancer-institute-nci":"2026-11-13T13:12:57Z","/brand/national-heart-lung-and-blood-institute-nhlbi":"2026-11-13T13:12:57Z","/brand/national-hurricane-center":"2026-11-10T23:53:38Z","/brand/national-institute-of-allergy-and-infectious-diseases-niaid":"2026-11-13T13:12:57Z","/brand/npl-uk":"2026-11-13T13:28:16Z","/brand/national-weather-service":"2026-11-13T13:28:16Z","/brand/nebius":"2026-11-13T05:40:04Z","/brand/netlify":"2026-11-13T13:28:16Z","/brand/netnod":"2026-11-13T13:28:16Z","/brand/neurocrine-biosciences":"2026-11-13T13:12:57Z","/brand/new-york-state-psychiatric-institute":"2026-11-13T13:12:57Z","/brand/nexus-mods":"2026-11-13T13:12:57Z","/brand/ngenix":"2026-11-13T13:12:57Z","/brand/nict":"2026-11-13T13:28:16Z","/brand/nist":"2026-11-13T13:28:16Z","/brand/noaa":"2026-11-12T10:21:14Z","/brand/northwell-health":"2026-11-13T13:12:57Z","/brand/northwestern-university":"2026-11-13T13:12:57Z","/brand/notion":"2026-11-13T13:28:16Z","/brand/novartis-pharmaceuticals":"2026-11-13T13:12:57Z","/brand/novo-nordisk-a-s":"2026-11-13T13:12:57Z","/brand/npm":"2026-11-13T13:28:16Z","/brand/ntp-pool-project":"2026-11-13T13:28:16Z","/brand/nvidia":"2026-11-13T13:12:57Z","/brand/nyu-langone-health":"2026-11-13T13:12:57Z","/brand/observatoire-de-paris":"2026-11-13T13:28:16Z","/brand/ohio-state-university":"2026-11-13T13:12:57Z","/brand/openai":"2026-11-13T13:28:16Z","/brand/openbmb":"2026-11-13T13:12:57Z","/brand/opencv":"2026-11-13T13:28:16Z","/brand/oracle":"2026-11-13T13:12:57Z","/brand/oregon-health-and-science-university":"2026-11-13T13:12:57Z","/brand/orrick-industries":"2026-11-13T05:40:04Z","/brand/otsuka-pharmaceutical-development-and-commercialization-inc":"2026-11-13T13:12:57Z","/brand/outbrain":"2026-11-13T13:12:57Z","/brand/pfizer":"2026-11-13T13:12:57Z","/brand/pikabu":"2026-11-13T13:12:57Z","/brand/pinterest":"2026-11-13T05:40:04Z","/brand/aylo":"2026-11-13T05:40:04Z","/brand/psa-airlines":"2026-11-13T05:40:04Z","/brand/ptb":"2026-11-13T13:28:16Z","/brand/pubmatic":"2026-11-13T13:12:57Z","/brand/purpleair":"2026-11-13T05:40:04Z","/brand/python-software-foundation":"2026-11-13T13:28:16Z","/brand/quad9":"2026-11-13T13:28:16Z","/brand/quantinuum":"2026-11-12T13:45:46Z","/brand/qwen":"2026-11-13T13:12:57Z","/brand/red-hat":"2026-11-13T13:12:57Z","/brand/reddit":"2026-11-13T13:28:16Z","/brand/regeneron-pharmaceuticals":"2026-11-13T13:12:57Z","/brand/reka":"2026-11-13T13:12:57Z","/brand/republic-airways":"2026-11-13T05:40:04Z","/brand/rigetti":"2026-11-10T23:53:38Z","/brand/roswell-park-cancer-institute":"2026-11-13T13:12:57Z","/brand/rush-university-medical-center":"2026-11-13T13:12:57Z","/brand/rutgers-the-state-university-of-new-jersey":"2026-11-13T13:12:57Z","/brand/sage-publishing":"2026-11-13T13:12:57Z","/brand/salesforce":"2026-11-13T13:12:57Z","/brand/sanofi":"2026-11-13T13:12:57Z","/brand/sanofi-pasteur-a-sanofi-company":"2026-11-13T13:12:57Z","/brand/scitix":"2026-11-13T05:40:04Z","/brand/seedtag":"2026-11-13T13:12:57Z","/brand/sentry":"2026-11-13T13:28:16Z","/brand/shein":"2026-11-13T05:40:04Z","/brand/shire":"2026-11-13T13:12:57Z","/brand/sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins":"2026-11-13T13:12:57Z","/brand/skywest-airlines":"2026-11-13T05:40:04Z","/brand/snap":"2026-11-13T05:40:04Z","/brand/sonova-ag":"2026-11-13T13:12:57Z","/brand/southwest-airlines":"2026-11-13T05:40:04Z","/brand/space-weather-prediction-center":"2026-11-12T16:08:25Z","/brand/speakleash":"2026-11-13T13:12:57Z","/brand/spirit-airlines":"2026-11-13T05:40:04Z","/brand/st-jude-children-s-research-hospital":"2026-11-13T13:12:57Z","/brand/stanford-university":"2026-11-13T13:12:57Z","/brand/storm-prediction-center":"2026-11-10T23:53:38Z","/brand/stripchat":"2026-11-13T05:40:04Z","/brand/sun-pharmaceutical-industries-limited":"2026-11-13T13:12:57Z","/brand/supermicro":"2026-11-13T05:40:04Z","/brand/supernus-pharmaceuticals-inc":"2026-11-13T13:12:57Z","/brand/takeda":"2026-11-13T13:12:57Z","/brand/teads":"2026-11-13T13:12:57Z","/brand/temu":"2026-11-13T05:40:04Z","/brand/tencent":"2026-11-13T13:12:57Z","/brand/teva-branded-pharmaceutical-products-r-and-d-inc":"2026-11-13T13:12:57Z","/brand/the-cleveland-clinic":"2026-11-13T13:12:57Z","/brand/the-university-of-texas-health-science-center-at-san-antonio":"2026-11-13T13:12:57Z","/brand/the-university-of-texas-health-science-center-houston":"2026-11-13T13:12:57Z","/brand/the-university-of-texas-medical-branch-galveston":"2026-11-13T13:12:57Z","/brand/thomas-jefferson-university":"2026-11-13T13:12:57Z","/brand/tiktok":"2026-11-13T05:40:04Z","/brand/transunion":"2026-11-13T13:12:57Z","/brand/trend-micro":"2026-11-13T13:12:57Z","/brand/tufts-medical-center":"2026-11-13T13:12:57Z","/brand/twilio":"2026-11-13T13:28:16Z","/brand/eia":"2026-11-12T01:20:03Z","/brand/usgs":"2026-11-13T13:12:57Z","/brand/usno":"2026-11-13T13:28:16Z","/brand/us-news":"2026-11-12T22:42:24Z","/brand/ucb-biopharma-srl":"2026-11-13T13:12:57Z","/brand/unc-lineberger-comprehensive-cancer-center":"2026-11-13T13:12:57Z","/brand/unesco-uis":"2026-11-10T23:53:38Z","/brand/united-airlines":"2026-11-13T05:40:04Z","/brand/university-hospitals-cleveland-medical-center":"2026-11-13T13:12:57Z","/brand/university-of-alabama-at-birmingham":"2026-11-13T13:12:57Z","/brand/university-of-arizona":"2026-11-13T13:12:57Z","/brand/university-of-arkansas":"2026-11-13T13:12:57Z","/brand/university-of-california-davis":"2026-11-13T13:12:57Z","/brand/university-of-california-irvine":"2026-11-13T13:12:57Z","/brand/university-of-california-los-angeles":"2026-11-13T13:12:57Z","/brand/university-of-california-san-diego":"2026-11-13T13:12:57Z","/brand/university-of-california-san-francisco":"2026-11-13T13:12:57Z","/brand/university-of-chicago":"2026-11-13T13:12:57Z","/brand/university-of-colorado-denver":"2026-11-13T13:12:57Z","/brand/university-of-florida":"2026-11-13T13:12:57Z","/brand/university-of-iowa":"2026-11-13T13:12:57Z","/brand/university-of-kansas-medical-center":"2026-11-13T13:12:57Z","/brand/university-of-maryland-baltimore":"2026-11-13T13:12:57Z","/brand/university-of-miami":"2026-11-13T13:12:57Z","/brand/university-of-michigan":"2026-11-13T13:12:57Z","/brand/university-of-michigan-rogel-cancer-center":"2026-11-13T13:12:57Z","/brand/university-of-minnesota":"2026-11-13T13:12:57Z","/brand/university-of-missouri-columbia":"2026-11-13T13:12:57Z","/brand/university-of-nebraska":"2026-11-13T13:12:57Z","/brand/university-of-new-mexico":"2026-11-13T13:12:57Z","/brand/university-of-north-carolina-chapel-hill":"2026-11-13T13:12:57Z","/brand/university-of-oklahoma":"2026-11-13T13:12:57Z","/brand/university-of-pennsylvania":"2026-11-13T13:12:57Z","/brand/university-of-rochester":"2026-11-13T13:12:57Z","/brand/university-of-southern-california":"2026-11-13T13:12:57Z","/brand/university-of-texas-southwestern-medical-center":"2026-11-13T13:12:57Z","/brand/university-of-utah":"2026-11-13T13:12:57Z","/brand/university-of-virginia":"2026-11-13T13:12:57Z","/brand/university-of-washington":"2026-11-13T13:12:57Z","/brand/university-of-wisconsin-madison":"2026-11-13T13:12:57Z","/brand/unsplash":"2026-11-13T13:12:57Z","/brand/va-office-of-research-and-development":"2026-11-13T13:12:57Z","/brand/vanderbilt-university-medical-center":"2026-11-13T13:12:57Z","/brand/vercel":"2026-11-13T13:28:16Z","/brand/vertex-pharmaceuticals-incorporated":"2026-11-13T13:12:57Z","/brand/vibehpc":"2026-11-13T05:40:04Z","/brand/viiv-healthcare":"2026-11-13T13:12:57Z","/brand/virginia-commonwealth-university":"2026-11-13T13:12:57Z","/brand/vox-media":"2026-11-13T13:12:57Z","/brand/wake-forest-university-health-sciences":"2026-11-13T13:12:57Z","/brand/washington-university-school-of-medicine":"2026-11-13T13:12:57Z","/brand/weill-medical-college-of-cornell-university":"2026-11-13T13:12:57Z","/brand/wikimedia-foundation":"2026-11-13T05:40:04Z","/brand/wildberries":"2026-11-13T13:12:57Z","/brand/wiwynn":"2026-11-13T05:40:04Z","/brand/world-bank":"2026-11-10T23:53:38Z","/brand/who":"2026-11-13T13:12:57Z","/brand/x":"2026-11-13T05:40:04Z","/brand/xiaomi":"2026-11-13T13:12:57Z","/brand/xnxx":"2026-11-13T05:40:04Z","/brand/xvideos":"2026-11-13T05:40:04Z","/brand/yale-university":"2026-11-13T13:12:57Z","/brand/z-ai":"2026-11-13T13:12:57Z","/brand/zalando":"2026-11-13T05:40:04Z","/brand/zoom":"2026-11-13T13:28:16Z","/brand":"2026-11-13T02:20:42Z","/e/backend/amazon-braket":"2026-11-11T21:28:03Z","/e/backend/ibm-aachen":"2026-11-11T21:28:03Z","/e/backend/ibm-algiers":"2026-11-11T21:28:03Z","/e/backend/ibm-auckland":"2026-11-11T21:28:03Z","/e/backend/ibm-belem":"2026-11-11T21:28:03Z","/e/backend/ibm-boston":"2026-11-12T13:45:46Z","/e/backend/ibm-brisbane":"2026-11-12T13:45:46Z","/e/backend/ibm-cairo":"2026-11-11T21:28:03Z","/e/backend/ibm-cleveland":"2026-11-12T13:45:46Z","/e/backend/ibm-fez":"2026-11-12T13:45:46Z","/e/backend/ibm-guadalupe":"2026-11-11T21:28:03Z","/e/backend/ibm-hanoi":"2026-11-11T21:28:03Z","/e/backend/ibm-kawasaki":"2026-11-12T13:45:46Z","/e/backend/ibm-kingston":"2026-11-12T13:45:46Z","/e/backend/ibm-kyiv":"2026-11-12T13:45:46Z","/e/backend/ibm-kyoto":"2026-11-11T21:28:03Z","/e/backend/ibm-lagos":"2026-11-11T21:28:03Z","/e/backend/ibm-manhattan":"2026-11-11T21:28:03Z","/e/backend/ibm-manila":"2026-11-11T21:28:03Z","/e/backend/ibm-marrakesh":"2026-11-12T13:45:46Z","/e/backend/ibm-miami":"2026-11-11T21:28:03Z","/e/backend/ibm-nairobi":"2026-11-11T21:28:03Z","/e/backend/ibm-osaka":"2026-11-11T21:28:03Z","/e/backend/ibm-oslo":"2026-11-11T21:28:03Z","/e/backend/ibm-peekskill":"2026-11-11T21:28:03Z","/e/backend/ibm-perth":"2026-11-11T21:28:03Z","/e/backend/ibm-phoenix":"2026-11-12T13:45:46Z","/e/backend/ibm-pittsburgh":"2026-11-12T13:45:46Z","/e/backend/ibm-quito":"2026-11-12T13:45:46Z","/e/backend/ibm-sherbrooke":"2026-11-11T21:28:03Z","/e/backend/ibm-strasbourg":"2026-11-11T21:28:03Z","/e/backend/ibm-tokyo":"2026-11-11T21:28:03Z","/e/backend/ibm-torino":"2026-11-12T13:45:46Z","/e/backend/ionq-aria-1":"2026-11-11T21:28:03Z","/e/backend/ionq-aria1":"2026-11-12T13:45:46Z","/e/backend/quantinuum-h1-1":"2026-11-12T13:45:46Z","/e/backend/rigetti-ankaa-3":"2026-11-11T21:28:03Z","/e/backend/rigetti-cepheus-1-108q":"2026-11-11T21:28:03Z","/e/model/deep-cogito-cogito-v2-1-671b":"2026-11-13T13:12:57Z","/e/model/deepseek-r1-1-5b":"2026-11-11T21:28:03Z","/e/model/falcon-family":"2026-11-11T21:28:03Z","/e/model/falcon3-3b":"2026-11-11T21:28:03Z","/e/model/gemma-family":"2026-11-13T13:12:57Z","/e/model/gemma3-4b":"2026-11-11T21:28:03Z","/e/model/gemma3n-e4b":"2026-11-13T13:12:57Z","/e/model/gpt-oss120b":"2026-11-13T13:12:57Z","/e/model/granite-family":"2026-11-13T13:12:57Z","/e/model/granite3-3-2b":"2026-11-11T21:28:03Z","/e/model/granite4-1-3b":"2026-11-11T21:28:03Z","/e/model/granite4-2-30b":"2026-11-13T13:12:57Z","/e/model/granite4-2-3b":"2026-11-13T13:12:57Z","/e/model/granite4-2-8b":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling2-6-1t":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling3-0-flash":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling3-0-flash-fin":"2026-11-13T13:12:57Z","/e/model/inclusionai-ling3-0-flash-vl":"2026-11-13T13:12:57Z","/e/model/llama-family":"2026-11-12T16:08:25Z","/e/model/llama-guard2-8b":"2026-11-13T13:12:57Z","/e/model/llama-guard3-8b":"2026-11-13T13:12:57Z","/e/model/llama-guard4-12b":"2026-11-13T13:12:57Z","/e/model/llama3-1-8b":"2026-11-11T21:28:03Z","/e/model/medium-family":"2026-11-13T13:12:57Z","/e/model/medium3-5":"2026-11-13T13:12:57Z","/e/model/mistral-family":"2026-11-11T21:28:03Z","/e/model/mistral7b":"2026-11-11T21:28:03Z","/e/model/moonshot-ai-kimi-k2-7-code":"2026-11-13T13:12:57Z","/e/model/nemotron-family":"2026-11-13T13:12:57Z","/e/model/nemotron3-5-content-safety":"2026-11-13T13:12:57Z","/e/model/nemotron3-ultra550b-a55b":"2026-11-13T13:12:57Z","/e/model/olmo-family":"2026-11-11T21:28:03Z","/e/model/olmo2-7b":"2026-11-11T21:28:03Z","/e/model/phi-family":"2026-11-11T21:28:03Z","/e/model/phi4-mini":"2026-11-11T21:28:03Z","/e/model/qwen-family":"2026-11-13T13:12:57Z","/e/model/qwen3-1-7b":"2026-11-11T21:28:03Z","/e/model/qwen3-235b-a22b-instruct2507":"2026-11-13T13:12:57Z","/e/model/qwen3-4b":"2026-11-11T21:28:03Z","/e/model/smollm-family":"2026-11-11T21:28:03Z","/e/model/smollm2-1-7b":"2026-11-11T21:28:03Z","/e/model/speakleash-bielik11b-v3-0":"2026-11-13T13:12:57Z","/e/model/tencent-hy4-preview":"2026-11-13T13:12:57Z","/e/model/v4-flash":"2026-11-13T13:12:57Z","/e/model/v4-flash-vision-exp":"2026-11-13T13:12:57Z","/e/model/xiaomi-mimo-v2-5-pro":"2026-11-13T13:12:57Z","/e/model/z-ai-glm5-3-flash-bf16":"2026-11-13T13:12:57Z","/e/package/opencv-python":"2026-11-13T13:28:16Z","/e/package/opencv-python-headless":"2026-11-13T13:28:16Z","/e/package/pandas-gbq":"2026-11-13T13:28:16Z","/e/package/redshift-connector":"2026-11-13T13:28:16Z","/forecasters":"2026-11-13T13:28:16Z","/alerts":"2026-11-12T22:42:24Z","/changelog":"2026-11-13T13:28:16Z","/follow":"2026-11-11T15:47:30Z","/webhooks":"2026-11-11T15:47:30Z","/verify":"2026-11-10T22:03:07Z","/reproduce":"2026-11-13T13:28:16Z","/transparency":"2026-11-10T22:19:50Z","/security/self":"2026-11-10T22:58:57Z","/security/policy":"2026-11-10T22:19:50Z","/security/thanks":"2026-11-10T22:02:13Z","/mydata":"2026-11-10T22:19:50Z"};
 export const OY_FILES = {};  // kids files held 25 Oct
 export const LLMS = "# Heuremen LLC\n\n> Heuremen LLC measures published claims against the data behind them. Quantum hardware studies are recounted against IBM's published calibration (QIA). Language-model evaluation studies are recounted from their own released files (IRIS). University AI policy documents are indexed against their own published numbers (OY). Built infrastructure is mapped from public data, with a source for every dot (ATLAS). Vendor statements about AI hardware are held against published MLPerf\u00ae results (the MODEL desk of HERMES). Every live desk is listed below with one line. Every row has a source. Data downloads are free.\n\n## Recount record and verification\n- [RECORD](https://indahl.ai/record): every published claim we recounted, with fault codes and the finding, and every public number of ours corrected after it went out. Open benchmark and hardware verification with receipts.\n- [Corrections](https://indahl.ai/corrections): each catch and fix, with what was wrong, what it is now and who caught it.\n- [Key](https://indahl.ai/qia/key): the claim-level fault codes F1 to F7 used in every recount.\n- [STANDARD](https://indahl.ai/standard): Faults and Guards 2.0, an open standard for checking measurement claims, with a conformance checklist, a NIST AI RMF crosswalk and a JSON version. DOI 10.5281/zenodo.24164029 (all versions).\n\n## API and MCP\n- [MCP server](https://indahl.ai/mcp): read-only tools over every live desk, for Claude and other agents. Add it as a remote MCP server at https://indahl.ai/mcp.\n- [REST API](https://indahl.ai/api): the same tools as JSON at /api/v1, with an OpenAPI file at /api/openapi.json. Retrieval and answering are permitted, training is not.\n\n## Divisions\n- [QIA](https://indahl.ai/qia): IBM processors measured against their published calibration, the studies calibrated, and the List of every indexed study with its receipt.\n- [IRIS](https://indahl.ai/iris): Recount Matrix for language models, live Faults and Guards runs on open models, and the List of indexed evaluation studies.\n- [OY](https://indahl.ai/oy): A HERMES desk. Learning research, school AI policy and data, recounted with a source per row.\n- [ATLAS](https://indahl.ai/atlas): Built infrastructure. A map of United States data centers from OpenStreetMap and Epoch AI, with a source and pull date for every dot.\n- [HERMES](https://indahl.ai/hermes): Held Every Record, Measured Every Statement. The menu of every division and desk.\n- [STACK](https://indahl.ai/stack): Every test side by side, live.\n\n## Desks\n### IRIS\n- [LAB](https://indahl.ai/iris/lab): Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Faults and Guards across models.\n- [YO](https://indahl.ai/yo): Our small language model trained on IBM calibration records: live reads and every test.\n- [HFSIZE](https://indahl.ai/hfsize): Model names against the weights.\n- [HFLICENSE](https://indahl.ai/hflicense): Stated licenses against license files.\n- [PKGLICENSE](https://indahl.ai/pkglicense): Package licenses against repository licenses.\n- [PKGINSTALL](https://indahl.ai/pkginstall): Install commands against pip resolution.\n- [WEIGHTS](https://indahl.ai/weights): Model names against their weight files, pass after pass.\n- [AILUMINATE](https://indahl.ai/ailuminate): MLCommons AILuminate Safety results, kept and checked.\n- [HOSTS](https://indahl.ai/hosts): One open-weight model, many hosts, stated uptime and quantization.\n### OY\n- [CAMPUS](https://indahl.ai/campus): The documents behind the OY page, kept over time.\n- [RANK](https://indahl.ai/rank): US News education rankings against the public record.\n### ATLAS\n- [ELECTRICITY](https://indahl.ai/atlas/electricity): Prices, providers and generation by state.\n- [POWER PLANTS](https://indahl.ai/atlas/power-plants): Every operating plant by fuel and capacity.\n- [CARBON](https://indahl.ai/atlas/carbon): Pounds of CO2 per megawatthour by state and grid region.\n- [PLANNED PLANTS](https://indahl.ai/atlas/planned-plants): What is coming, by fuel, stage and year.\n- [PETROL](https://indahl.ai/petrol): OPEC+ required production against delivered output.\n- [WATER](https://indahl.ai/water): Reservoir forecasts against measured levels.\n- [NEO](https://indahl.ai/neo): Stated asteroid close-approach distances against the later record.\n- [SOLAR](https://indahl.ai/solar): Stated flare and storm chances against what happened.\n- [QUAKE](https://indahl.ai/quake): Stated aftershock odds against the aftershocks that followed.\n- [CONE](https://indahl.ai/cone): The hurricane forecast cone against where storms went.\n- [UPTIME](https://indahl.ai/uptime): Vendor status pages against independent probes.\n- [TIME](https://indahl.ai/time): Public time servers, stated against delivered.\n- [CADA](https://indahl.ai/cada): Public DNS filters against fresh abuse reports.\n- [SECRECORDS](https://indahl.ai/secrecords): Security records against their own rules.\n- [SEAT](https://indahl.ai/seat): An outside seat reads our own pages.\n- [SUPPORT](https://indahl.ai/support): Stated support windows against release activity.\n- [CHANGE](https://indahl.ai/change): Announced shutdown dates, kept over time.\n### HERMES\n- [DATA PAPERS](https://indahl.ai/hermes/datapapers): Papers in four data journals, each listed with the files its repository serves.\n- [MODEL](https://indahl.ai/hermes/model): Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data.\n- [TRIALS](https://indahl.ai/trials): Results due against results posted, and stopped trials.\n- [HPT](https://indahl.ai/hpt): Hospital price files against the rule.\n- [AIRLINE](https://indahl.ai/airline): Scheduled flight time against flown time.\n- [AIRQ](https://indahl.ai/airq): Air sensors against the EPA's own targets.\n- [REVISE](https://indahl.ai/revise): Stated margin against later revision.\n- [FEDSEP](https://indahl.ai/fedsep): The Fed's stated ranges against outcomes.\n- [CADENCE](https://indahl.ai/cadence): Stated update schedules against delivered.\n- [FORECAST](https://indahl.ai/forecast): Stated chance against what happened.\n- [SEASONAL](https://indahl.ai/seasonal): Stated seasonal outlook chances against what was observed.\n- [STEO](https://indahl.ai/steo): Stated energy price intervals against the spot price.\n- [FLU](https://indahl.ai/flu): Stated flu forecast intervals against reported admissions.\n- [TORNADO](https://indahl.ai/tornado): Stated tornado chances and warning goals against the tornadoes that came.\n- [CREDIT](https://indahl.ai/credit): Stated complaint responses and card terms against the public record.\n- [FORECASTERS](https://indahl.ai/forecasters): Every forecaster desk on one axis, stated against delivered.\n- [LAUNCH](https://indahl.ai/launch): Stated launch time against the time it flew.\n- [TAPE](https://indahl.ai/tape): Every page and live feed, hashed and chained, with a beacon.\n- [VAULT](https://indahl.ai/vault): A receipt for any file, or a file sealed until a date, no file stored.\n- [ARXIVDRIFT](https://indahl.ai/arxivdrift): Studies read, then revised.\n- [LINKROT](https://indahl.ai/linkrot): Stated code links against live.\n- [WIKI](https://indahl.ai/wiki): Cited figures against their source.\n- [SOCIAL](https://indahl.ai/social): Platform reports against the filings.\n- [NOW](https://indahl.ai/predictions): Public predictions against their deadline, and FORTUNE.\n- [STACK](https://indahl.ai/stack): Every test side by side.\n- [OY](https://indahl.ai/oy): Education policy studies and school data against the public record.\n- [CENSUS](https://indahl.ai/census): Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed.\n\n## Data\n- [Feed of new studies and bench rounds (Atom)](https://indahl.ai/feed.xml)\n- [QIA List (JSON)](https://indahl.ai/qia/list.json)\n- [IRIS List (JSON)](https://indahl.ai/iris/list.json)\n- [MODEL claims (JSON)](https://indahl.ai/hermes/model/claims.json) and [per-accelerator results (CSV)](https://indahl.ai/hermes/model/accelerators.csv)\n- [Datasets on Hugging Face](https://huggingface.co/indahl)\n- [QIA key (codes Q1 to Q23, F1 to F7)](https://indahl.ai/qia/key)\n- [IRIS key (codes L1 to L9)](https://indahl.ai/iris/key)\n\n## Free downloads (each tested, with a TESTED.md inside)\n- [QIA Research Package](https://indahl.ai/qia/package): for runs on IBM quantum hardware. Checks the calibration record a run depends on, before and after the run. The checker alone: pip install qia-check (https://pypi.org/project/qia-check/).\n- [Darkwave Correction Kit](https://indahl.ai/darkwave/kit): measures the phase turn a mid-circuit readout gives untouched qubits on your own IBM account and adds the matching virtual-Z correction. Tested on ibm_kingston.\n- [IRIS Research Package](https://indahl.ai/iris/package): for language-model evaluations. Reading sheets for parsers, flip counts between repeated runs, paired comparisons with four outcomes. The checker alone: pip install iris-check (https://pypi.org/project/iris-check/).\n- [ATLAS Data Pack](https://indahl.ai/atlas/data-pack): every ATLAS dataset as JSON, CSV and GeoJSON with sources.\n- [QIA List Pack](https://indahl.ai/qia/qia-list-pack.zip) and [IRIS List Pack](https://indahl.ai/iris/iris-list-pack.zip): every listed study as CSV, BibTeX and RIS.\n\n## Research\n- [A Readout Is Not an Idle (paper, PDF)](https://heuremen.org/a-readout-is-not-an-idle.pdf)\n- [Faults (PDF)](https://heuremen.org/faults.pdf) and [Guards (PDF)](https://heuremen.org/guards.pdf)\n- [Zenodo record](https://doi.org/10.5281/zenodo.23662284)\n- [heuremen.org](https://heuremen.org/)\n\n## Usage\n- Free to read, download and cite with attribution. Text and data mining and use as AI training data are not permitted: https://indahl.ai/terms#ai-training\n\n## Policies\n- [Privacy](https://indahl.ai/privacy), [Terms](https://indahl.ai/terms), [Security](https://indahl.ai/security), [Conflict of interest](https://indahl.ai/conflict-of-interest)\n";

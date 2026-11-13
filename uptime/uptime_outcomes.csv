@@ -8,7 +8,7 @@ path,label,outcome,n,of,share,lo,hi,vendor,expected_from_floor,status_unread,epi
 /vendors[6],Netlify,CANNOT_TELL,,,,,,Netlify,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[7],Vercel,CANNOT_TELL,,,,,,Vercel,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[8],DigitalOcean,CANNOT_TELL,,,,,,DigitalOcean,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
-/vendors[9],Atlassian,CANNOT_TELL,,,,,,Atlassian,1.86,0,0,60,0,0,2,58,TOO_WIDE_TO_RESOLVE
+/vendors[9],Atlassian,CANNOT_TELL,,,,,,Atlassian,1.86,0,0,60,0,0,1,59,TOO_WIDE_TO_RESOLVE
 /vendors[10],Twilio,CANNOT_TELL,,,,,,Twilio,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE
 /vendors[11],Datadog,CANNOT_TELL,,,,,,Datadog,0.0,60,0,0,0,0,0,0,NO_INTERVAL_FORMABLE
 /vendors[12],Zoom,CANNOT_TELL,,,,,,Zoom,1.86,0,0,60,0,0,0,60,TOO_WIDE_TO_RESOLVE

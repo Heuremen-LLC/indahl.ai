@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-13T09:54:00Z",
+ "built_utc": "2026-11-13T13:17:28Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 459,
+   "commit": "b14afdf5d34145a9ff57dbbb8f8a19bc5164b4ec",
+   "files": 5912,
+   "id": "b14afdf5d341",
+   "json": "/receipts/stamps/release_b14afdf5d341.json",
+   "ledger_sha256": "f2584f65b38352b3932016735d184d793c3043ea55f02c01e51caa4dc737b0d7",
+   "manifest_sha256": "766cb7d35b7069819bd17a1734b1cddde4d3b45ce626043dcea542a4613d0084",
+   "ots": "/receipts/stamps/release_b14afdf5d341.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-13T13:17:25Z",
+   "sha256": "a3399f7864c39171dc14f184732891eadadc216015bd5fa1f7d613270faf0dd1",
+   "wayback": [],
+   "wayback_waiting": 457
+  },
   {
    "changed": 1138,
    "commit": "a1c331915490134cc84fc1a3e45cda123f17a716",
@@ -231,7 +246,7 @@
      "url": "https://indahl.ai/changelog.xml"
     }
    ],
-   "wayback_waiting": 1093
+   "wayback_waiting": 719
   },
   {
    "changed": 460,
@@ -497,7 +512,7 @@
      "url": "https://indahl.ai/airline/airline-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 30
+   "wayback_waiting": 20
   },
   {
    "changed": 4865,
@@ -512,7 +527,7 @@
    "released_at": "2026-11-12T22:52:16Z",
    "sha256": "f2f20899d8cc2619c15720bb12509fa40e04e2e585b7e809b7eb49c62cc636da",
    "wayback": [],
-   "wayback_waiting": 3957
+   "wayback_waiting": 3944
   },
   {
    "changed": 338,
@@ -557,7 +572,7 @@
    "released_at": "2026-11-12T22:16:16Z",
    "sha256": "4205118ab6d8d84b27f1b0fec07816befd732318c6363b9345b68f792a883ede",
    "wayback": [],
-   "wayback_waiting": 11
+   "wayback_waiting": 10
   },
   {
    "changed": 128,
@@ -673,7 +688,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 87
+   "wayback_waiting": 79
   },
   {
    "changed": 169,
@@ -849,7 +864,7 @@
      "url": "https://indahl.ai/qia"
     }
    ],
-   "wayback_waiting": 4
+   "wayback_waiting": 3
   },
   {
    "changed": 441,
@@ -2360,7 +2375,7 @@
      "url": "https://indahl.ai/atlas"
     }
    ],
-   "wayback_waiting": 8
+   "wayback_waiting": 6
   },
   {
    "changed": 287,
@@ -4121,7 +4136,7 @@
    "released_at": "2026-11-10T18:21:41Z",
    "sha256": "1f6213c2b98107463dd663363c600e21d1607362f94c982792e5d1fbc4cbb2b7",
    "wayback": [],
-   "wayback_waiting": 3
+   "wayback_waiting": 2
   },
   {
    "changed": 926,
