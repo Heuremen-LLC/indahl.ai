@@ -1,0 +1,12 @@
+Heuremen LLC
+https://indahl.ai
+
+Plugin files (SKILL.md, the command file, .mcp.json, plugin.json)
+Heuremen LLC permits anyone to use, copy and change these files, for any purpose, with attribution to Heuremen LLC and https://indahl.ai.
+They are provided as they are, without warranty of any kind.
+
+Data served by the indahl.ai MCP server and API
+Free to retrieve, read, quote and cite with attribution (Heuremen LLC, with a link to the page the data came from, and the time it was
+read). Using the responses to answer a question, including inside an AI assistant's context, is permitted (see NOTICE.txt).
+All rights are reserved otherwise. Text and data mining of the site, and use of the data to train, fine-tune or build AI models, are not
+permitted. Terms: https://indahl.ai/terms

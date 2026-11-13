@@ -10,9 +10,17 @@
   },
   "plugins": [
     {
+      "name": "indahl-full",
+      "source": "./plugins/indahl-full",
+      "description": "Every Heuremen LLC plugin in one install: Standards, eval checks, readcheck gate, reproduce, QIA calibration, Darkwave, prereg, and the indahl.ai data connector.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/plugins"
+    },
+    {
       "name": "indahl",
       "source": "./plugins/indahl",
-      "description": "Every Heuremen LLC plugin in one install, with the indahl.ai data connector.",
+      "description": "Standards and eval checks plus the indahl.ai data connector, in one install for every Claude surface.",
       "version": "1.0.0",
       "category": "research",
       "homepage": "https://indahl.ai/plugins"

@@ -1,0 +1,21 @@
+{
+  "name": "indahl-full",
+  "version": "1.0.0",
+  "description": "Every Heuremen LLC plugin in one install: check papers and LLM eval claims against the Standards, gate readings with a check block, query and reproduce every indahl.ai desk, check and correct IBM Quantum runs, and test whether a plan was pushed before the first run. Includes the indahl.ai data connector.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "SEE licenses/",
+  "keywords": [
+    "research",
+    "standards",
+    "evaluation",
+    "reproducibility",
+    "quantum",
+    "data"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}
