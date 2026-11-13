@@ -160,7 +160,7 @@ def page(path, title, desc, body, wide_hero=None):
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p class="fl"><a href="/standard">Standards</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/standard">Standards</a><a href="/downloads">Downloads</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
@@ -2423,12 +2423,6 @@ def _navfor(path):
         _seen = set(); ds = [x for x in ds if not (x[0] in _seen or _seen.add(x[0]))]
         if ds or h == '/sagar': out.append('<span class="dd"><a href="' + h + '"' + cur + '>' + t + '</a><span class="ddpanel"><a href="' + h + '">' + t + ' main page</a>' + ''.join('<a href="' + a + '">' + b + '</a>' for a, b, c in ds) + '</span></span>')
         else: out.append('<a href="' + h + '"' + cur + '>' + t + '</a>')
-    _top = [('qia/qia-research-package.zip', 'All of QIA'), ('qia/qia-list-pack.zip', 'QIA LIST'), ('iris/iris-research-package.zip', 'All of IRIS'), ('iris/iris-list-pack.zip', 'IRIS LIST'),
-            ('atlas/atlas-data-pack.zip', 'All of ATLAS'), ('oy/oy-data-pack.zip', 'All of OY'), ('social/social-data-pack.zip', 'SOCIAL'), ('hermes/model-data-pack.zip', 'MODEL')]
-    _PSg = globals().get('_PS') or {}; _dg = globals().get('_dpk_for')
-    _mine = _dg(path) if _dg else None
-    _gl = ([f'<a href="/{_mine[0]}" download>This page: {_mine[1]}</a>'] if (_mine and _mine[0] in _PSg) else []) + [f'<a href="/{z}" download>{n}</a>' for z, n in _top if z in _PSg and not (_mine and _mine[0] == z)]
-    out.append('<span class="dd grab"><a href="/downloads"' + (' aria-current=page' if path == '/downloads' else '') + '>GRAB AND GO</a><span class="ddpanel">' + ''.join(_gl) + '<a href="/downloads">Every pack</a></span></span>')
     out.append('<a class="dw" href="/darkwave"' + (' aria-current=page' if path == '/darkwave' else '') + '>DARKWAVE</a>')   # 31 Oct: the Darkwave page on heuremen.org (countdown, then the paper page)
     return ''.join(out)
 
@@ -2755,6 +2749,28 @@ def main():
     PAGES['/downloads'] = page('/downloads', 'Grab and Go: Every Data Pack | Heuremen LLC', 'Every Heuremen LLC data pack and research package, division by division, each a zip with its README, sources and tests.',
                                '<section class="legal grab">' + _gb + '</section>', hero_slim('GRAB AND GO'))
     globals()['_PS'] = _PS; globals()['_dpk_for'] = _dpk_for   # the header menu (_navfor) reads these
+    # 13 Nov 2026 (Wayfinder: "grab and go was supposed to be individualized for each desk"): each page's own downloads, in its title banner
+    _GD = {d: l for d, n, l, w in _GRAB}; _GW = {d: w for d, n, l, w in _GRAB}
+    for _pp in list(PAGES):
+        if _pp in _DPK_NONE or _pp.startswith('/media/') or _pp == '/downloads': continue
+        _doc = PAGES[_pp]; _items = []
+        if _pp in _GD: _items = list(_GD[_pp]) + ([f'<li class="ggnote"><a href="{_GW[_pp]}">What is in each pack</a></li>'] if _GW.get(_pp) else [])
+        else:
+            _d = _dpk_for(_pp)
+            if _d and _d[0] in _PS:
+                _r = _PS[_d[0]]; _items.append(f'<li><a href="/{_d[0]}" download>{_r["title"]}</a> <span class="ggs">{_r["size"]}</span>' + (' <span class="ggr">Results only: our counts, outcomes and intervals, no source data</span>' if _r['licence'] == 'results' else '') + '</li>')
+            _sl = _pp.strip('/')
+            if _sl and '/' not in _sl:
+                for _fn, _lab in ((f'{_sl}/{_sl}_outcomes.csv', 'Outcomes (CSV)'), (f'{_sl}/live.json', 'Live feed (JSON)'), (f'{_sl}/changes.xml', 'Changes to the headline (Atom)')):
+                    if os.path.isfile(os.path.join(_pub, _fn)): _items.append(f'<li><a href="/{_fn}"' + (' download' if _fn.endswith('.csv') else '') + f'>{_lab}</a></li>')
+                if os.path.isdir(os.path.join(HERE, '..', 'reproduce_kits', 'kits', _sl)): _items.append(f'<li><a href="/reproduce#kit-{_sl}">Reproduce kit</a> <span class="ggw">code, inputs and one command</span></li>')
+        if not _items: continue
+        _gid = 'grab-' + (_pp.strip('/').replace('/', '-') or 'home')
+        _dd = (f'<span class="dd dpkdd"><button type="button" class="dpk" aria-haspopup="true" aria-controls="{_gid}">'
+               '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9M4 6.5 8 10.5 12 6.5M2 14h12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Grab and go</button>'
+               f'<span class="ddpanel ggpanel" id="{_gid}"><ul>' + ''.join(_items) + '</ul></span></span>')
+        _h = '<section class="hero slim"><div class="wrap">'
+        if _h in _doc: PAGES[_pp] = _doc.replace(_h, _h + _dd, 1)
     # 10 Nov 2026 (Zenodo packs): each desk page whose pack is deposited on Zenodo says where, under the page, from ledger/zenodo_dois.json.
     # 10 Nov evening: the ATLAS version that holds the ATLAS desks is published (10.5281/zenodo.24110654), so those desks say their data is inside it.
     try: _ZD = _jsonld.load(open(os.path.join(HERE, '..', 'ledger', 'zenodo_dois.json')))['desks']
