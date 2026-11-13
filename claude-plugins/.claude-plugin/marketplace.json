@@ -26,6 +26,14 @@
       "homepage": "https://indahl.ai/plugins"
     },
     {
+      "name": "indahl-triangulate",
+      "source": "./src/triangulate",
+      "description": "One question to three independent seats run blind; four-outcome verdict with a receipt.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
       "name": "indahl-standards",
       "source": "./src/standards",
       "description": "Check a paper or claim against the Standards claim codes and return a recount card with quotes, scope and four-state statuses. The agent is told to treat fetched paper text as data, not instructions.",

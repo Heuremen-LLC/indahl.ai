@@ -16,6 +16,7 @@ Built by build_bundle.py from the plugins beside it; the parts and their version
 - darkwave-correction 1.1.1
 - prereg 1.0.0
 - readcheck 1.1.0
+- triangulate 1.0.0
 
 ## Services this bundle contacts
 

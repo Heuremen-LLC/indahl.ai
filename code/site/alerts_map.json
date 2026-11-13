@@ -1031,12 +1031,6 @@
 "trials"
 ]
 ],
-"shopify": [
-"Shopify",
-[
-"secrecords"
-]
-],
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": [
 "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
 [
@@ -6686,13 +6680,6 @@
 "name": "Shire",
 "url": "/brand/shire"
 },
-"shopify": {
-"feed": true,
-"kind": "company",
-"kword": "company",
-"name": "Shopify",
-"url": "/brand/shopify"
-},
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": {
 "feed": true,
 "kind": "organisation",
@@ -7500,7 +7487,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3756,
+"every_min": 3754,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7583,7 +7570,7 @@
 "hfsize": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 134,
+"every_min": 133,
 "mode": "outcome",
 "name": "HFSIZE",
 "src": "rider",
@@ -7601,7 +7588,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3631,
+"every_min": 3629,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
