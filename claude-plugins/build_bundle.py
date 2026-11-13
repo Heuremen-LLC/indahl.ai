@@ -9,11 +9,12 @@ PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce
 SKIP = ('.v1', '.v2', '.v3', '.v4', '.v5', '.v6', '.pyc', '.DS_Store'); SKIP_DIRS = {'__pycache__', '.claude-plugin'}
 LIC = {'LICENSE', 'LICENSE.txt', 'LICENSE-STANDARD.txt', 'NOTICE.txt'}
 
-def build(dst, PARTS=PARTS, NAME='indahl-full', DESC=None):
+def build(dst, PARTS=PARTS, NAME='indahl-full', DESC=None, BASE=None):
+    BASE = BASE or os.path.join(H, 'src')
     os.makedirs(os.path.join(dst, '.claude-plugin'), exist_ok=True)
     versions, hooks, mcp, seen = {}, None, {}, {}
     for p in PARTS:
-        src = os.path.join(P, p); m = json.load(open(os.path.join(src, '.claude-plugin', 'plugin.json'))); versions[p] = m.get('version')
+        src = os.path.join(BASE, p); m = json.load(open(os.path.join(src, '.claude-plugin', 'plugin.json'))); versions[p] = m.get('version')
         for d, ds, fs in os.walk(src):
             ds[:] = [x for x in ds if x not in SKIP_DIRS]
             for f in fs:
@@ -29,7 +30,7 @@ def build(dst, PARTS=PARTS, NAME='indahl-full', DESC=None):
                 seen[tgt] = os.path.join(d, f); os.makedirs(os.path.dirname(os.path.join(dst, tgt)), exist_ok=True); shutil.copy2(os.path.join(d, f), os.path.join(dst, tgt))
     if hooks: os.makedirs(os.path.join(dst, 'hooks'), exist_ok=True); json.dump(hooks, open(os.path.join(dst, 'hooks', 'hooks.json'), 'w'), indent=2)
     if mcp: json.dump({'mcpServers': mcp}, open(os.path.join(dst, '.mcp.json'), 'w'), indent=2)
-    shutil.copy2(os.path.join(P, 'standards', '.claude-plugin', 'icon.png'), os.path.join(dst, '.claude-plugin', 'icon.png'))
+    shutil.copy2(os.path.join(H, 'src', 'standards', '.claude-plugin', 'icon.png'), os.path.join(dst, '.claude-plugin', 'icon.png'))
     json.dump({'name': NAME, 'version': '1.0.0',
                'description': DESC or 'Every Heuremen LLC plugin in one install: check papers and LLM eval claims against the Standards, gate readings with a check block, query and reproduce every indahl.ai desk, check and correct IBM Quantum runs, and test whether a plan was pushed before the first run. Includes the indahl.ai data connector.',
                'author': {'name': 'Heuremen LLC', 'url': 'https://indahl.ai'}, 'homepage': 'https://indahl.ai/plugins',
@@ -48,13 +49,13 @@ def build(dst, PARTS=PARTS, NAME='indahl-full', DESC=None):
               'Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins', '']
     open(os.path.join(dst, 'README.md'), 'w').write('\n'.join(lines))
 
-LITE = ['standards', 'eval-check', 'indahl-data']   # the parts with no scripts or command hooks (what the plugin directory accepts from an unverified organization)
-LITE_DESC = 'Heuremen LLC in one install for every Claude surface: check papers and LLM eval claims against the Standards, and query every indahl.ai desk through the indahl.ai data connector. The full set (Python checks, the readcheck commit gate) is indahl-full in the Heuremen-LLC/indahl.ai marketplace.'
+LITE = PARTS   # 13 Nov: the directory copies in plugins/ (built by build_plugins.py: no .py, no command hooks, scripts fetched at pinned sha256)
+LITE_DESC = 'Every Heuremen LLC plugin in one install: check papers and LLM eval claims against the Standards, query and reproduce every indahl.ai desk, check and correct IBM Quantum runs, test whether a plan was pushed before the first run, and check readings for a complete check block. Includes the indahl.ai data connector. Scripts are fetched from the public indahl.ai repository at pinned sha256; the version with bundled scripts and the automatic readcheck commit gate is indahl-full in the Heuremen-LLC/indahl.ai marketplace.'
 FULL = os.path.join(P, 'indahl-full')
 if '--check' in sys.argv:
-    t = tempfile.mkdtemp(); build(t, LITE, 'indahl', LITE_DESC); c = filecmp.dircmp(t, OUT)
+    t = tempfile.mkdtemp(); build(t, LITE, 'indahl', LITE_DESC, P); c = filecmp.dircmp(t, OUT)
     def diff(c): return bool(c.left_only or c.right_only or c.diff_files) or any(diff(s) for s in c.subdirs.values())
     shutil.rmtree(t); sys.exit(1 if diff(c) else 0)
-for out, parts, name, desc in ((FULL, PARTS, 'indahl-full', None), (OUT, LITE, 'indahl', LITE_DESC)):
-    shutil.rmtree(out, ignore_errors=True); build(out, parts, name, desc)
+for out, parts, name, desc, base in ((FULL, PARTS, 'indahl-full', None, os.path.join(H, 'src')), (OUT, LITE, 'indahl', LITE_DESC, P)):
+    shutil.rmtree(out, ignore_errors=True); build(out, parts, name, desc, base)
     n = sum(len(fs) for _, _, fs in os.walk(out)); print(f'  bundle: plugins/{name} built from {len(parts)} plugins, {n} files')

@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "indahl": { "type": "http", "url": "https://indahl.ai/mcp" }
+  }
+}

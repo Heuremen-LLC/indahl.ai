@@ -1,7 +1,7 @@
 {
   "name": "indahl",
   "version": "1.0.0",
-  "description": "Heuremen LLC in one install for every Claude surface: check papers and LLM eval claims against the Standards, and query every indahl.ai desk through the indahl.ai data connector. The full set (Python checks, the readcheck commit gate) is indahl-full in the Heuremen-LLC/indahl.ai marketplace.",
+  "description": "Every Heuremen LLC plugin in one install: check papers and LLM eval claims against the Standards, query and reproduce every indahl.ai desk, check and correct IBM Quantum runs, test whether a plan was pushed before the first run, and check readings for a complete check block. Includes the indahl.ai data connector. Scripts are fetched from the public indahl.ai repository at pinned sha256; the version with bundled scripts and the automatic readcheck commit gate is indahl-full in the Heuremen-LLC/indahl.ai marketplace.",
   "author": {
     "name": "Heuremen LLC",
     "url": "https://indahl.ai"

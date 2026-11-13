@@ -3,9 +3,22 @@ name: prereg
 description: Seal a research or evaluation plan in git and later show, from the git host's own push record, whether it was pushed before the first run, and which files that ran were not covered by the plan. Use when someone wants to preregister an analysis, prove a plan came first, check a plan against a run, or asks about prereg.
 ---
 
+## Get the script first
+
+The script is not stored in this plugin. Fetch it from the public Heuremen LLC repository at the pinned commit, check its
+sha256, and only then run it. If the download or the check fails, stop and tell the user; never run a file that did not pass.
+Show the user the commands before running them the first time.
+
+```bash
+F="$HOME/.cache/indahl-plugins/prereg/prereg-c0b541c68b40.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d')" "$F.part" && mv "$F.part" "$F"; }
+```
+Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py (sha256 c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d).
+
+
 # prereg
 
-Script: `${CLAUDE_PLUGIN_ROOT}/scripts/prereg.py` (Python 3.9 or later and git). Plan and amendments: plans/prereg in
+Script: `$HOME/.cache/indahl-plugins/prereg/prereg-c0b541c68b40.py` (Python 3.9 or later and git). Plan and amendments: plans/prereg in
 github.com/Heuremen-LLC/indahl.ai (claude-plugins/).
 
 1. **Seal** the plan files: `python3 prereg.py seal PLAN.md analysis.py --tolerance 120 --kind wrapper`. It refuses files with uncommitted

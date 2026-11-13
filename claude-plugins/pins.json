@@ -1,0 +1,32 @@
+{
+ "darkwave-correction/scripts/darkwave_kit.py": {
+  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
+  "sha256": "a43b1cf8989928dfd3f94b40b4ae5491d31e52e85cec117e315c4ad4fbc6a401",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/darkwave-correction/scripts/darkwave_kit.py"
+ },
+ "prereg/scripts/prereg.py": {
+  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
+  "sha256": "c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py"
+ },
+ "qia-calibration/scripts/qia_check.py": {
+  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
+  "sha256": "f7354879f19e47d2aac76a15951e125b2a3ce102e0af97aa9f1f75a6c81b7ede",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/qia-calibration/scripts/qia_check.py"
+ },
+ "qia-calibration/t1t2/run_check.py": {
+  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
+  "sha256": "16571a2f3f75b8336d08b5815540e59eefc5d1da88f0669572279e7f1f2f016a",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/qia-calibration/t1t2/run_check.py"
+ },
+ "readcheck/scripts/readcheck.py": {
+  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
+  "sha256": "cc0e26802ddbcc157def5ea0ee90e8d4a9b2c516336658f34072882c03c90592",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/readcheck/scripts/readcheck.py"
+ },
+ "reproduce/scripts/reproduce.py": {
+  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
+  "sha256": "c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py"
+ }
+}
