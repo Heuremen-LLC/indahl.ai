@@ -3,7 +3,7 @@ message: "If you use this kit, please cite it and the study it comes from."
 title: "Darkwave Correction Kit: measure and correct the phase turn a mid-circuit readout gives untouched qubits"
 authors:
   - name: "Heuremen LLC"
-version: 1.1.1
+version: 1.1.0
 date-released: "2026-11-02"
 url: "https://indahl.ai/darkwave/kit"
 repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
