@@ -1924,7 +1924,7 @@
 /r/pack.size.forecast-data-pack	2026-11-13
 /r/pack.size.hflicense-data-pack	2026-11-10
 /r/pack.size.hfsize-data-pack	2026-11-10
-/r/pack.size.hosts-data-pack	2026-11-12
+/r/pack.size.hosts-data-pack	2026-11-13
 /r/pack.size.hpt-data-pack	2026-11-10
 /r/pack.size.iris-list-pack	2026-11-10
 /r/pack.size.iris-research-package	2026-11-11
@@ -2892,12 +2892,12 @@
 /r/quake.cover.m7	2026-11-13
 /r/quake.first.m3	2026-11-12
 /r/quake.prob.0_1	2026-11-13
-/r/quake.prob.10_20	2026-11-12
+/r/quake.prob.10_20	2026-11-13
 /r/quake.prob.1_5	2026-11-13
-/r/quake.prob.20_40	2026-11-12
+/r/quake.prob.20_40	2026-11-13
 /r/quake.prob.40_60	2026-11-13
 /r/quake.prob.5_10	2026-11-13
-/r/quake.prob.60_80	2026-11-12
+/r/quake.prob.60_80	2026-11-13
 /r/quake.prob.80_90	2026-11-12
 /r/quake.prob.90_99	2026-11-11
 /r/quake.prob.99_100	2026-11-12
@@ -2905,7 +2905,7 @@
 /r/quake.prob10.all	2026-11-13
 /r/quake.prob10.day	2026-11-12
 /r/quake.prob10.m3	2026-11-13
-/r/quake.prob10.m4up	2026-11-12
+/r/quake.prob10.m4up	2026-11-13
 /r/quake.prob10.month	2026-11-12
 /r/quake.prob10.week	2026-11-12
 /r/quake.prob10.year	2026-11-13
@@ -3939,7 +3939,7 @@
 /r/desk/home	2026-11-03
 /r/desk/hosts	2026-11-11
 /r/desk/hpt	2026-11-10
-/r/desk/iris	2026-11-12
+/r/desk/iris	2026-11-13
 /r/desk/iris-paper	2026-10-31
 /r/desk/iris-lab	2026-11-08
 /r/desk/launch	2026-11-10
