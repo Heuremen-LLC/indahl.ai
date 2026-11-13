@@ -1,13 +1,13 @@
 path,label,outcome,n,of,share,lo,hi,rows,inside,above,below,cannot_tell,not_yet,reason,share_beyond_1_sigma,shift_rows,time_rows,time_inside_3_sigma,from_copy_outside,outcome_if_one_outside
-/cells[0],cells[0],BELOW,,,0.9711,0.9521,0.9827,6644,471,8,6,230,5929,,0.138,485,322,316,,
-/cells[1],cells[1],CONSISTENT,,,1.0,0.9812,1.0,263,200,0,0,54,9,,0.04,200,116,115,,
+/cells[0],cells[0],BELOW,,,0.9713,0.9523,0.9828,6644,473,8,6,230,5927,,0.138,487,324,318,,
+/cells[1],cells[1],CONSISTENT,,,1.0,0.9813,1.0,263,202,0,0,54,7,,0.04,202,118,117,,
 /cells[2],cells[2],CANNOT_TELL,,,1.0,0.963,1.0,118,100,0,0,9,9,STRADDLES_EDGE,0.07,100,90,88,,
 /cells[3],cells[3],BELOW,,,0.9247,0.8776,0.9546,6270,172,8,6,167,5917,,0.28,186,116,113,,
 /august_2026,august_2026,CANNOT_TELL,,,1.0,0.7847,1.0,21,14,0,0,7,0,STRADDLES_EDGE,0.286,14,4,4,,
-/dependence/cells[0]/without,without,CONSISTENT,,,,0.9823,0.9994,,315,,,,,,,,,,,
+/dependence/cells[0]/without,without,CONSISTENT,,,,0.9824,0.9994,,317,,,,,,,,,,,
 /dependence/cells[0]/against_2d,against_2d,BELOW,,,,,,,,,,,,,,,,,,
 /dependence/cells[1],cells[1],,,,,,,,,,,,,,,,,,0,CANNOT_TELL
-/dependence/cells[1]/without,without,CONSISTENT,,,,0.9804,1.0,,192,,,,,,,,,,,
+/dependence/cells[1]/without,without,CONSISTENT,,,,0.9806,1.0,,194,,,,,,,,,,,
 /dependence/cells[1]/against_2d,against_2d,CONSISTENT,,,,,,,,,,,,,,,,,,
 /dependence/cells[2],cells[2],,,,,,,,,,,,,,,,,,0,CANNOT_TELL
 /dependence/cells[2]/without,without,CANNOT_TELL,,,,0.9626,1.0,,99,,,,,STRADDLES_EDGE,,,,,,
