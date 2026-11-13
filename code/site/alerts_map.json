@@ -7500,7 +7500,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3760,
+"every_min": 3758,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7601,7 +7601,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3635,
+"every_min": 3633,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7695,7 +7695,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 602,
+"every_min": 601,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7778,7 +7778,7 @@
 "secrecords": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 130,
+"every_min": 129,
 "mode": "outcome",
 "name": "SECRECORDS",
 "src": "rider",
