@@ -2901,7 +2901,7 @@
 /r/quake.prob.60_80	2026-11-13
 /r/quake.prob.80_90	2026-11-12
 /r/quake.prob.90_99	2026-11-13
-/r/quake.prob.99_100	2026-11-12
+/r/quake.prob.99_100	2026-11-13
 /r/quake.prob.mainshock	2026-11-13
 /r/quake.prob10.all	2026-11-13
 /r/quake.prob10.day	2026-11-13
