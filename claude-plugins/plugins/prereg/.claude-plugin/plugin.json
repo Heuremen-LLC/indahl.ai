@@ -1,7 +1,7 @@
 {
   "name": "indahl-prereg",
   "version": "1.0.0",
-  "description": "Show that a plan was written before the first run, using your git host's own record of the push (no outside timestamp chain), and list what ran that the plan did not cover.",
+  "description": "Show that a plan was written before the first run, using your git host's own record of the push (no outside timestamp chain), and list what ran that the plan did not cover. It sends the name of the repository you check to the GitHub REST API (api.github.com) to read that repository's public push records; nothing else leaves your machine.",
   "author": {
     "name": "Heuremen LLC",
     "url": "https://indahl.ai"

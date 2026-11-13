@@ -3,6 +3,8 @@ name: prereg
 description: Seal a research or evaluation plan in git and later show, from the git host's own push record, whether it was pushed before the first run, and which files that ran were not covered by the plan. Use when someone wants to preregister an analysis, prove a plan came first, check a plan against a run, or asks about prereg.
 ---
 
+Data sent: the owner/name of the repository you check goes to the GitHub REST API (api.github.com) to read its public push activity. Nothing else leaves the machine, and no token is sent unless the user set one.
+
 # prereg
 
 Script: `${CLAUDE_PLUGIN_ROOT}/scripts/prereg.py` (Python 3.9 or later and git). Plan and amendments: plans/prereg in
