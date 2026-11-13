@@ -160,7 +160,7 @@ def page(path, title, desc, body, wide_hero=None):
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p class="fl"><a href="/standard">Standards</a><a href="/downloads">Downloads</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/standard">Standards</a><a href="/downloads">Downloads</a><a href="/plugins">Plugins</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
@@ -2747,7 +2747,21 @@ def main():
     # 13 Nov 2026 (Wayfinder): GRAB AND GO, one page with every pack, division by division (the header menu links here)
     _gb = ''.join(f'<h2>{_n}</h2><ul class="desklist">' + ''.join(_l) + (f'<li><a href="{_w}">What is in each pack</a></li>' if _w else '') + '</ul>' for _d0, _n, _l, _w in _GRAB)
     PAGES['/downloads'] = page('/downloads', 'Grab and Go: Every Data Pack | Heuremen LLC', 'Every Heuremen LLC data pack and research package, division by division, each a zip with its README, sources and tests.',
-                               '<section class="legal grab">' + _gb + '</section>', hero_slim('GRAB AND GO'))
+                               '<section class="legal grab">' + _gb + '<h2>Claude Code plugins</h2><ul class="desklist"><li><a href="/plugins">Standards check, readcheck gate and QIA calibration check</a> <span class="ggw">install inside Claude Code</span></li></ul></section>', hero_slim('GRAB AND GO'))
+    # 13 Nov 2026 (Wayfinder: "full dicks on the plugins"): the Claude Code plugins, from github.com/Heuremen-LLC/claude-plugins
+    PAGES['/plugins'] = page('/plugins', 'Claude Code Plugins | Heuremen LLC', 'Heuremen LLC plugins for Claude Code: check a paper against the Standards, gate a commit on a check block, and check an IBM Quantum calibration record.',
+        '<section class="legal">'
+        '<p>Three plugins for <a href="https://claude.com/claude-code">Claude Code</a>. Add the marketplace once, then install the ones you want.</p>'
+        '<pre><code>/plugin marketplace add Heuremen-LLC/claude-plugins\n/plugin install standards@heuremen\n/plugin install readcheck@heuremen\n/plugin install qia-calibration@heuremen</code></pre>'
+        '<h2>standards</h2><p><code>/standards &lt;arXiv id, DOI, file or claim&gt;</code> checks a paper or a measured claim against the <a href="/standard">Standards</a> claim codes F1 to F7 and returns a recount card. '
+        'Every code gets one of four statuses: PRESENT, ABSENT, CANNOT_TELL with its reason, or NOT_APPLICABLE. Every PRESENT carries a verbatim quote and where it sits in the paper. '
+        'Any recompute shows its arithmetic from the paper&rsquo;s printed numbers, with the rounding range. The card names no cause.</p>'
+        '<h2>readcheck</h2><p>A gate for research repositories. When Claude Code commits a reading (a results, outcomes or readings file), the commit is refused unless a complete check block, <code>CHECK.json</code>, sits beside it. '
+        'The block has one answer for each of the Standards recount requirements REQ-01 to REQ-13. <code>/readcheck new</code> writes a blank block, <code>/readcheck verify</code> checks one.</p>'
+        '<h2>qia-calibration</h2><p><code>/qia-check</code> runs the QIA calibration checker on IBM Quantum calibration records: before a run (stale figures, zero error values, T2 above 2 &times; T1, T1 and T2 measured apart) and after it (the record in force and what changed during the run). '
+        'Your files are opened read-only. The same checker installs on its own with <code>pip install qia-check</code>. More in the <a href="/qia/package">QIA Calibration Pack</a>.</p>'
+        '<p>Source, licenses and README: <a href="https://github.com/Heuremen-LLC/claude-plugins">github.com/Heuremen-LLC/claude-plugins</a>.</p>'
+        '</section>', hero_slim('CLAUDE CODE PLUGINS'))
     globals()['_PS'] = _PS; globals()['_dpk_for'] = _dpk_for   # the header menu (_navfor) reads these
     # 13 Nov 2026 (Wayfinder: "grab and go was supposed to be individualized for each desk"): each page's own downloads, in its title banner
     _GD = {d: l for d, n, l, w in _GRAB}; _GW = {d: w for d, n, l, w in _GRAB}
@@ -2771,6 +2785,8 @@ def main():
                 for _fn, _lab in ((f'{_sl}/{_sl}_outcomes.csv', 'Outcomes (CSV)'), (f'{_sl}/live.json', 'Live feed (JSON)'), (f'{_sl}/changes.xml', 'Changes to the headline (Atom)')):
                     if os.path.isfile(os.path.join(_pub, _fn)): _items.append(f'<li><a href="/{_fn}"' + (' download' if _fn.endswith('.csv') else '') + f'>{_lab}</a></li>')
                 if os.path.isdir(os.path.join(HERE, '..', 'reproduce_kits', 'kits', _sl)): _items.append(f'<li><a href="/reproduce#kit-{_sl}">Reproduce kit</a> <span class="ggw">code, inputs and one command</span></li>')
+        if _pp in ('/standard', '/qia', '/plugins'):   # 13 Nov 2026: the Claude Code plugins in the banner menus they belong to
+            _items.append('<li><a href="/plugins">Claude Code plugins</a> <span class="ggw">' + ('QIA calibration check inside Claude Code' if _pp == '/qia' else 'Standards check and readcheck gate inside Claude Code') + '</span></li>')
         if not _items: continue
         _gid = 'grab-' + (_pp.strip('/').replace('/', '-') or 'home')
         _dd = (f'<span class="dd dpkdd"><button type="button" class="dpk" aria-haspopup="true" aria-controls="{_gid}">'

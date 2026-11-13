@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-13T15:30:29Z",
+ "built_utc": "2026-11-13T15:42:03Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 5030,
+   "commit": "5aff73c90a8498db8e39bbd4ab70d41338963ffc",
+   "files": 5935,
+   "id": "5aff73c90a84",
+   "json": "/receipts/stamps/release_5aff73c90a84.json",
+   "ledger_sha256": "02a2fdb2288f06b289686bbc85b92b24c797719ab25caaca3b92ba43ae98f19f",
+   "manifest_sha256": "a5cecde6569c8b6e3639a2a57ed65b4b725f9f9cae738b6465d0f9b1d2ac274e",
+   "ots": "/receipts/stamps/release_5aff73c90a84.json.ots",
+   "ots_status": "pending",
+   "released_at": "2026-11-13T15:42:01Z",
+   "sha256": "a68dceb8f3d5cd23222f77a91090f411b83eac25493908bd74e7efb0e8fd02f6",
+   "wayback": [],
+   "wayback_waiting": 5021
+  },
   {
    "changed": 923,
    "commit": "8c1eba6366f08fa2ee0bbd95ed029bee800d23fc",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-13T15:12:45Z",
    "sha256": "b4541b000073876bbc4b598dd612f337f209b43ace4efe9d5ecfefe45dfcf57c",
    "wayback": [],
-   "wayback_waiting": 914
+   "wayback_waiting": 6
   },
   {
    "changed": 4881,
@@ -91,7 +106,7 @@
      "url": "https://indahl.ai/ailuminate"
     }
    ],
-   "wayback_waiting": 3965
+   "wayback_waiting": 16
   },
   {
    "changed": 853,
@@ -121,7 +136,7 @@
    "released_at": "2026-11-13T14:35:57Z",
    "sha256": "7a694deba45c258f647d1d632c6772dae4a89953a741354a0e63d21ce4f10c3d",
    "wayback": [],
-   "wayback_waiting": 2
+   "wayback_waiting": 1
   },
   {
    "changed": 184,
@@ -302,7 +317,7 @@
      "url": "https://indahl.ai/changelog.xml"
     }
    ],
-   "wayback_waiting": 22
+   "wayback_waiting": 21
   },
   {
    "changed": 858,
@@ -317,7 +332,7 @@
    "released_at": "2026-11-13T14:13:30Z",
    "sha256": "bbe02d71e655215af4717d749aa2202826823b24bdf1f6a75e004a2c64784149",
    "wayback": [],
-   "wayback_waiting": 60
+   "wayback_waiting": 59
   },
   {
    "changed": 5026,
@@ -583,7 +598,7 @@
      "url": "https://indahl.ai/pkglicense"
     }
    ],
-   "wayback_waiting": 163
+   "wayback_waiting": 6
   },
   {
    "changed": 4835,
@@ -1361,7 +1376,7 @@
      "url": "https://indahl.ai/airline/airline-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 17
+   "wayback_waiting": 15
   },
   {
    "changed": 4865,
