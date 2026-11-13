@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """darkwave_kit.py -- Darkwave Correction Kit, Heuremen LLC (https://indahl.ai/darkwave).
 
-A mid-circuit readout can turn the phase of the untouched qubits next to it. This kit measures that turn on your own IBM Quantum account,
+This kit measures the phase turn on untouched qubits after a mid-circuit readout, on your own IBM Quantum account,
 one value per untouched qubit in degrees per readout, and adds the matching virtual-Z correction to your own circuits. The method is the
 one in "A Readout's Kick Is a Turn" (doi:10.5281/zenodo.23843468). It names no mechanism for the turn.
 
@@ -130,6 +130,8 @@ def cmd_measure(a):
     if a.check or not a.yes:
         print('Checks passed. Nothing has been submitted. Add --yes to submit one job. IBM bills it by its quantum seconds, shown on your plan after the job.')
         return
+    if not sys.stdin.isatty():   # 1.1.1 (13 Nov 2026, Sage): a paid submit runs only from the user's own terminal, never from an agent's shell
+        sys.exit('submit from your own terminal: copy the measure command with --yes and run it there (this run has no terminal attached)')
     print('Submitting one job.')
     smp = SamplerV2(mode=b)   # no dynamical decoupling and no twirling: either would change what happens during the idle arm's wait
     smp.options.dynamical_decoupling.enable = False; smp.options.twirling.enable_gates = False; smp.options.twirling.enable_measure = False

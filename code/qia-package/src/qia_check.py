@@ -62,6 +62,7 @@ def check_record(S, Q, qubits):
             if t1[1] and t2[1]:
                 gap = abs((when(t1[1]) - when(t2[1])).total_seconds()) / 3600
                 if gap > 24: rows.append(dict(qubit=q, check='PAIR', field='T1/T2 dates', detail=f'{gap:.1f} h apart'))
+    for r in rows: r['category'] = 'T1 and T2' if r['check'] in ('STALE', 'T2>2T1', 'PAIR') else 'Error figures'   # 1.0.1: two categories
     return rows
 def page(title, meta, sections, inputs):
     css = ('body{font:16px/1.5 Georgia,serif;background:#f6efe2;color:#1c1712;margin:0}main{max-width:900px;margin:0 auto;padding:24px 16px}'
@@ -116,7 +117,8 @@ def main():
         meta = [f'Backend {b}, record stamped {S:%Y-%m-%d %H:%M} UTC, {age:.1f} h before this check. Qubits checked: {len(qs)}.',
                 'IBM recalibrates during the day. Save the record again right before you submit, and keep it with your data.'] + ([f'Not in this record, so not checked: qubits {", ".join(map(str, miss))}.'] if miss else [])
         cols = ['qubit', 'check', 'field', 'detail', 'outcome']
-        hp, jp = write(a.out, f'before_{b}', f'Before the run: {b}', meta, [(f'Flags ({len(rows)})', rows, cols)], [(rec, h0, h1)], dict(backend=b, stamp=S.isoformat(), qubits=qs, flags=rows))
+        tt = [r for r in rows if r['category'] == 'T1 and T2']; ee = [r for r in rows if r['category'] == 'Error figures']
+        hp, jp = write(a.out, f'before_{b}', f'Before the run: {b}', meta, [(f'T1 and T2 flags ({len(tt)}): STALE, T2>2T1, PAIR', tt, cols), (f'Error-figure flags ({len(ee)}): ZERO', ee, cols)], [(rec, h0, h1)], dict(backend=b, stamp=S.isoformat(), qubits=qs, flags=rows))
     else:
         rd = os.path.realpath(a.records); od = os.path.realpath(a.out)
         if od == rd or od.startswith(rd + os.sep): sys.exit('--out must be outside the records folder')
@@ -145,17 +147,19 @@ def main():
             b, S, Q, p = under[-1]; qs, miss = qlist(a.qubits, Q)
             meta.append(f'The latest record in this folder stamped at or before the start: {S:%Y-%m-%d %H:%M} UTC ({os.path.basename(p)}). If IBM recalibrated after it and before the run, the record in force is not in the folder.')
             if miss: meta.append(f'Not in this record, so not checked: qubits {", ".join(map(str, miss))}.')
-            secs.append(('Flags in that record', check_record(S, Q, qs), ['qubit', 'check', 'field', 'detail', 'outcome']))
+            fr = check_record(S, Q, qs)
+            secs.append(('T1 and T2 flags in that record', [r for r in fr if r['category'] == 'T1 and T2'], ['qubit', 'check', 'field', 'detail', 'outcome']))
+            secs.append(('Error-figure flags in that record', [r for r in fr if r['category'] == 'Error figures'], ['qubit', 'check', 'field', 'detail', 'outcome']))
             ch = []; prev = (S, Q)
             for b2, S2, Q2, p2 in during:
                 for q in qs:
                     for f in FIELDS:
                         v1, v2 = prev[1].get(q, {}).get(f), Q2.get(q, {}).get(f)
                         if (v1 or v2) and (v1 or (None, None))[:2] != (v2 or (None, None))[:2]:
-                            ch.append(dict(record=f'{S2:%Y-%m-%d %H:%M}', qubit=q, field=f, before=fmt(v1 and v1[0]), after=fmt(v2 and v2[0]), date_before=(v1 or ('', ''))[1], date_after=(v2 or ('', ''))[1]))
+                            ch.append(dict(record=f'{S2:%Y-%m-%d %H:%M}', category='T1 and T2' if f in ('T1', 'T2') else 'Error figures', qubit=q, field=f, before=fmt(v1 and v1[0]), after=fmt(v2 and v2[0]), date_before=(v1 or ('', ''))[1], date_after=(v2 or ('', ''))[1]))
                 prev = (S2, Q2)
             meta.append(f'Records stamped during the run: {len(during)}.' + (' T1, T2 or readout-error figures on your qubits changed during the run; see the table.' if ch else ''))
-            secs.append(('T1, T2 and readout-error figures that changed during the run (each record against the one before it)', ch, ['record', 'qubit', 'field', 'before', 'after', 'date_before', 'date_after']))
+            secs.append(('T1, T2 and readout-error figures that changed during the run (each record against the one before it)', ch, ['record', 'category', 'qubit', 'field', 'before', 'after', 'date_before', 'date_after']))
             data = dict(backend=b, record_at_start=S.isoformat(), records_during=[r[1].isoformat() for r in during], changes=ch, skipped=skipped)
         hp, jp = write(a.out, 'after', 'After the run: the record at the start, and what changed', meta, secs, [(p, hs[p], sha(p)) for p in fs], data)
     print(NAME, '|', ORG, '|', SITE); print('report:', hp); print('data:  ', jp)
