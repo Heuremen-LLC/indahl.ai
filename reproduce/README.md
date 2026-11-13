@@ -26,10 +26,10 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [NEO](neo/) | fetch and verify | `ebe615b627d6afc89051f9b1ca060c2ac432eb630f8fdf9ddd13fb9cfae34a8f` |
 | [PKGINSTALL](pkginstall/) | fetch and verify | `50cd23a1327ebbdd6bf56db81e4b2200c5bb37460a70de0ef4d75659518d6baa` |
 | [PKGLICENSE](pkglicense/) | fetch and verify | `46ab84f4bef32aaa4d529cf50cf780da6697bf1850dab424d7115153b5766933` |
-| [QUAKE](quake/) | included | `ad1d0ddddf72554eb2d2460f51f4fa3860269cc68e6ddeb4f991a858b3090649` |
+| [QUAKE](quake/) | included | `91830c21cf5c04d1fdb987c987e5f7b261414c163c96512bba06e1eb7d4e096c` |
 | [SEASONAL](seasonal/) | included | `bc5c500339489235e7034dd1ab3df2971672bbb776d8c74808320075ada0d87f` |
 | [SECRECORDS](secrecords/) | fetch and verify | `c342ceb2fb98509c4a38b267921be087c660320aa8b793e565244e244be7cc65` |
-| [SOLAR](solar/) | fetch and verify | `815650f7fe3e788b8c763be25e95f09e136e9c376d27b5d7209a214f9d26bdf9` |
+| [SOLAR](solar/) | fetch and verify | `2ec7ae5c71f072c1c11278a11f0c8dfe8885daeba159b08d159c6dcc05616019` |
 | [STEO](steo/) | included | `62582754f487e4bbb247ecb496530bfe0811c434a8f16222e973664ae554574d` |
 | [SUPPORT](support/) | fetch and verify | `7b50da5963d4ea65bfbfd163b110d6ef3e64f5a9c2ba3bcd3bb25958f1033c95` |
 | [TORNADO](tornado/) | fetch and verify | `5ff5d0988b98d09801df2459fa0deb6eb6639eaa2ad0ff222460b5408c325930` |

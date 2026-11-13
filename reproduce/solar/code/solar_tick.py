@@ -260,7 +260,7 @@ for row in rows:
 def bin_of(p):
     for a, b in BINS:
         if a <= p <= b: return '%d to %d' % (a, b)
-# 12 Nov 2026: Faults and Guards 2.0 outcome rule (PLAN_ADDENDUM_std2.md). bin_outcome returns (outcome, reason, lo, hi). The mean stated chance is a point figure with no tolerance, so a bin never reads CONSISTENT.
+# 12 Nov 2026: Standards 2.0 outcome rule (PLAN_ADDENDUM_std2.md). bin_outcome returns (outcome, reason, lo, hi). The mean stated chance is a point figure with no tolerance, so a bin never reads CONSISTENT.
 def bin_outcome(k, n, mean_p):
     lo, hi = K.wilson(k, n)
     if not n: return K.CANNOT_TELL, K.NO_INTERVAL_FORMABLE, lo, hi
@@ -459,7 +459,7 @@ def _hl():
     c = next(x for x in cells if x['event'] == 'M' and x['lead'] == 1); bs = [b for b in c['bins'] if b['n'] >= MIN_N]
     holds = sum(b['outcome'] == K.CANNOT_TELL and b['reason'] == K.STRADDLES_EDGE for b in bs)
     r13 = K.req13([(b['outcome'], b['reason']) for b in bs], nothing_returned=_cell_nr(c))
-    return dict(event='M', lead=1, bins=len(bs), holds_stated=holds, consistent=holds, consistent_note='legacy name, the count of bins whose interval holds the mean stated chance. Under Faults and Guards 2.0 these bins read CANNOT_TELL (STRADDLES_EDGE) and no bin reads CONSISTENT',
+    return dict(event='M', lead=1, bins=len(bs), holds_stated=holds, consistent=holds, consistent_note='legacy name, the count of bins whose interval holds the mean stated chance. Under Standards 2.0 these bins read CANNOT_TELL (STRADDLES_EDGE) and no bin reads CONSISTENT',
                 cannot_tell=sum(b['outcome'] == K.CANNOT_TELL for b in bs), above=sum(b['outcome'] == K.ABOVE for b in bs),
                 below=sum(b['outcome'] == K.BELOW for b in bs), share=round(holds / len(bs), 4) if bs else None,
                 bss=c['skill']['bss'], lo=c['skill']['lo'], hi=c['skill']['hi'], outcome=c['skill']['outcome'], reason=c['skill']['reason'], req13=r13,

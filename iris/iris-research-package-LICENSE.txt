@@ -13,7 +13,7 @@ this text or data to train, fine-tune or build AI models, are not permitted. Thi
 at https://indahl.ai/robots.txt and https://indahl.ai/.well-known/tdmrep.json.
 
 Other parts
-The Faults and Guards package (the wheel in the faultsguards folder) and the Faults and Guards PDFs keep their own terms, which are stated in the wheel and in
+The Standards package (the wheel in the faultsguards folder) and the Standards PDFs keep their own terms, which are stated in the wheel and in
 the PDFs. This file does not change them.
 
 Your results

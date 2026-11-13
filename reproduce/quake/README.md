@@ -10,15 +10,15 @@ This kit recomputes the QUAKE headline number and its outcome label with the des
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `ad1d0ddddf72554eb2d2460f51f4fa3860269cc68e6ddeb4f991a858b3090649`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `91830c21cf5c04d1fdb987c987e5f7b261414c163c96512bba06e1eb7d4e096c`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/quake/live.json served it at the feed stamp 2026-11-12T14:40:02Z, read by us at 2026-11-12T16:06:35Z. The feed bytes had sha256 `2013151c52aaadd63704bab9e664bcb45079356eace2649fb4d6d0973d36b5ec`.
+The headline as the live feed https://indahl.ai/quake/live.json served it at the feed stamp 2026-11-13T11:59:38Z, read by us at 2026-11-13T14:09:17Z. The feed bytes had sha256 `5c95b8f8b2b34c961f4b5f127b422e289788ec99adfef62f6dcf94477413cd3e`.
 
-- number: 30,694 of 31,894
+- number: 30,760 of 31,963
 - value: 0.9624
-- interval: 0.9459 to 0.9776
+- interval: 0.946 to 0.9776
 - outcome: CANNOT_TELL
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in our ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -38,8 +38,8 @@ As the QUAKE data pack lists them. Credit each source when you use its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/quake_rows.json.gz | 3,789,068 | `d25d9cd57b30d95cd8ee493710c014508408b9083d2a512c577a90d828d578c4` |
-| summary_quake.json | 183,129 | `b552ae6fbb31365233744ad90b243085326fe3bbcc7373c228aff4502f346b2f` |
+| data/quake_rows.json.gz | 3,795,555 | `7149d9a315c1f06873fddfcf13350a9f4792144791641aee63a466e5be2f3162` |
+| summary_quake.json | 183,087 | `8b2c01270f85a52c91b9316e08bbc09f455ca40ffc2711b3b87e888f97c1214c` |
 
 ## Code
 

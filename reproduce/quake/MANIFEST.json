@@ -14,31 +14,31 @@
  "desk": "quake",
  "inputs": [
   {
-   "bytes": 3789068,
+   "bytes": 3795555,
    "gzip_added": false,
-   "modified": "2026-11-12T15:20:53Z",
+   "modified": "2026-11-13T12:04:43Z",
    "path": "data/quake_rows.json.gz",
-   "sha256": "d25d9cd57b30d95cd8ee493710c014508408b9083d2a512c577a90d828d578c4",
+   "sha256": "7149d9a315c1f06873fddfcf13350a9f4792144791641aee63a466e5be2f3162",
    "stored": "data/quake_rows.json.gz",
-   "stored_sha256": "d25d9cd57b30d95cd8ee493710c014508408b9083d2a512c577a90d828d578c4"
+   "stored_sha256": "7149d9a315c1f06873fddfcf13350a9f4792144791641aee63a466e5be2f3162"
   },
   {
-   "bytes": 183129,
+   "bytes": 183087,
    "gzip_added": true,
-   "modified": "2026-11-12T15:20:53Z",
+   "modified": "2026-11-13T12:04:43Z",
    "path": "summary_quake.json",
-   "sha256": "b552ae6fbb31365233744ad90b243085326fe3bbcc7373c228aff4502f346b2f",
+   "sha256": "8b2c01270f85a52c91b9316e08bbc09f455ca40ffc2711b3b87e888f97c1214c",
    "stored": "summary_quake.json.gz",
-   "stored_sha256": "d4f997d0f83c4275b5efcd4c3a0993d6e3dcb724d681ced0c8610db49bc7db5e"
+   "stored_sha256": "9981e4c07320e832e887203058b48710a73c6ca701137884515cdc3a57b3286f"
   }
  ],
- "made": "2026-11-12T16:06:35Z",
+ "made": "2026-11-13T14:09:17Z",
  "mode": "inputs",
  "name": "QUAKE",
  "reference": [
   {
    "path": "desk/quake_tick.py",
-   "sha256": "b561ad8249b47de2c9e9a773ec1015fc01c9016a4b42a5a2184467b0ed3713e3"
+   "sha256": "fd9a56356c04a2dba197a3226128f6c3df0aa1657ab0c307356ba671645096d8"
   }
  ]
 }

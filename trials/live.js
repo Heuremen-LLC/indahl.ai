@@ -6,7 +6,7 @@
   function td(t, n) { var c = document.createElement('td'); if (n) c.className = 'n'; c.textContent = (n && typeof t === 'number') ? fmt(t) : t; return c; }
   // 30 Oct 2026 (site pass H-14): a cannot tell row says which kind it is, a share resolved between the two thresholds or an interval that reaches a threshold or too few records.
   function WC(o, lo, hi, lowT, highT, n, why) {
-    if (why || o !== 'CANNOT_TELL') return W(o, why);   // 12 Nov 2026 (Faults and Guards 2.0): the feed carries the reason, printed beside the word
+    if (why || o !== 'CANNOT_TELL') return W(o, why);   // 12 Nov 2026 (Standards 2.0): the feed carries the reason, printed beside the word
     if (n != null && n < 30) return 'cannot tell, fewer than 30 records';
     if (lo != null && hi != null && lo >= lowT && hi <= highT) return 'cannot tell, the whole interval sits between the thresholds';
     return 'cannot tell, the interval reaches a threshold';

@@ -2,7 +2,7 @@
 
 Heuremen LLC · https://indahl.ai/iris
 
-Tools to check the numbers from a language-model evaluation before you trust them and after a run. This applies to benchmark scores, LLM-as-judge scores and fine-tuning studies. IRIS recounts published evaluation studies from their own released output files, and this package puts the same checks in your hands for your own outputs. Your files are opened read-only and never changed. Reports go to a separate folder, and the checker refuses a folder inside the folder that holds an input, so run it from outside your data folder. The checker sends nothing anywhere. Two parts need other software or the network when you run them: `parser-check/replycheck.py` runs a model on your machine, and installing the Faults and Guards package from PyPI downloads it. Python 3.9 or later.
+Tools to check the numbers from a language-model evaluation before you trust them and after a run. This applies to benchmark scores, LLM-as-judge scores and fine-tuning studies. IRIS recounts published evaluation studies from their own released output files, and this package puts the same checks in your hands for your own outputs. Your files are opened read-only and never changed. Reports go to a separate folder, and the checker refuses a folder inside the folder that holds an input, so run it from outside your data folder. The checker sends nothing anywhere. Two parts need other software or the network when you run them: `parser-check/replycheck.py` runs a model on your machine, and installing the Standards package from PyPI downloads it. Python 3.9 or later.
 
 
 ## Install the checker on its own
@@ -59,9 +59,9 @@ with open("replies.jsonl") as f, open("scored.jsonl", "w") as out:
 - `START_HERE.html`: this guide as a page
 - `tests/`: the synthetic dataset and the tests
 - `TESTED.md`: how the package was tested, on what, with the results, and what was not tested
-- `faultsguards/`: the Faults and Guards as a Python package, with the PDFs
+- `faultsguards/`: the Standards as a Python package, with the PDFs
 - `check-block/`: the check block and its commit gate
-- `faultsbench/`: the scorer and the planted items of our Faults and Guards bench, with the synthetic check that runs the scorer on planted worlds. Run `python synth.py` from inside `faultsbench/`. The prompts and the runner are in the repository: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench
+- `faultsbench/`: the scorer and the planted items of our Standards bench, with the synthetic check that runs the scorer on planted worlds. Run `python synth.py` from inside `faultsbench/`. The prompts and the runner are in the repository: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench
 - `parser-check/`: `replycheck.py` regenerates replies from an lm-evaluation-harness task and writes each reply beside what each filter extracted, so the replies can be read in full. Run `python replycheck.py --help` for the named arguments. Output goes to `--out` (default `./replycheck_out`). It needs `pip install mlx-lm lm-eval` on Apple silicon.
 - `LICENSE.txt`, `CITATION.cff`
 
@@ -73,11 +73,11 @@ Our other IRIS code, such as the round scorers, the training scripts and the run
 - List of studies: https://indahl.ai/iris/list
 - Key: https://indahl.ai/iris/key
 - Code: https://github.com/Heuremen-LLC/indahl.ai
-- Faults and Guards on PyPI: https://pypi.org/project/faultsguards/
+- Standards on PyPI: https://pypi.org/project/faultsguards/
 - Data and models: https://huggingface.co/indahl
 
 ## Terms
 
 Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/iris
 
-Your results remain yours. The text and data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted. The Faults and Guards package and its PDFs keep their own terms. LICENSE.txt says which part is which.
+Your results remain yours. The text and data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted. The Standards package and its PDFs keep their own terms. LICENSE.txt says which part is which.

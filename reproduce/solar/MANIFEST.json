@@ -3,7 +3,7 @@
   {
    "path": "solar_tick.py",
    "public_copy": "https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/solar/solar_tick.py",
-   "sha256": "9a09f2354093a94619de6ea471c10b1d368248debc170a950abab0f71835602b"
+   "sha256": "131c65d0a07af9a16b75f2407cd372c35336f55ef57cb0d9520fb5515cdcc443"
   },
   {
    "path": "heuremen_kit.py",
@@ -19,18 +19,18 @@
  "desk": "solar",
  "inputs": [
   {
-   "bytes": 65393,
+   "bytes": 65392,
    "gzip_added": true,
-   "modified": "2026-11-12T15:27:04Z",
+   "modified": "2026-11-13T12:03:46Z",
    "path": "data/solar_live.json",
-   "sha256": "e1e1fba360144b94e00c173f5bf2f2d21aec786e0b3eac3d7e115e486779dadc",
+   "sha256": "d58641723ec3e5df07bbf175c6eac2e08fc8d0e3367ab2b1f18f014eca2af378",
    "stored": "data/solar_live.json.gz",
-   "stored_sha256": "143394b49c7b5c25309e9f840a0566ad04bcf674bc7c6d9c59c2f3ccec8a075b"
+   "stored_sha256": "37293903e9f9be8e5fba475e62a3d28af4d2bc305f65fe1cbbe6619d650d41e7"
   },
   {
    "bytes": 29502,
    "gzip_added": true,
-   "modified": "2026-11-12T15:29:37Z",
+   "modified": "2026-11-13T12:02:05Z",
    "path": "data/raw/SPE.txt",
    "sha256": "c75b901b1509ab15635978e11d0fc8ebfc2f02237c05f75c1d96fafab4796c5d",
    "stored": "data/raw/SPE.txt.gz",
@@ -39,25 +39,25 @@
   {
    "bytes": 53,
    "gzip_added": true,
-   "modified": "2026-11-12T15:29:37Z",
+   "modified": "2026-11-13T12:02:05Z",
    "path": "data/raw/SPE_listing.json",
-   "sha256": "f71dff6fd46b33cd4cf92449d357606cef328ddea85061e2153bb79dab72f2f8",
+   "sha256": "f3c620c4c03d73441725f81eaf3636acd128d70ad5b46c01953650d2b590860b",
    "stored": "data/raw/SPE_listing.json.gz",
-   "stored_sha256": "3a911627315107f4fae0e6044301c330ecf36ec2f6bb033d7c211a4d44d1d82b"
+   "stored_sha256": "7b03955a42ffd6a593de2443e95ebca7a90a439a9736fa4e6f8582926382b031"
   },
   {
-   "bytes": 5512783,
+   "bytes": 5512942,
    "gzip_added": true,
-   "modified": "2026-11-12T15:29:40Z",
+   "modified": "2026-11-13T12:02:08Z",
    "path": "data/raw/gfz/Kp_ap_Ap_SN_F107_since_1932.txt",
-   "sha256": "493dde1328c240a9a5095074d4b1f5148259b3a0f0764995fff0b1faf232ff2b",
+   "sha256": "cc76277f192590b5918d4148e6d22d73608568032fb84f2bab18fb4268cd377e",
    "stored": "data/raw/gfz/Kp_ap_Ap_SN_F107_since_1932.txt.gz",
-   "stored_sha256": "7d5b913e3c8627b93ca439585f5b428aec2bffaad79b8ae7fd74262f05f01dbd"
+   "stored_sha256": "7caae9d633dd1fddee47ebd70d8f6c52e4aad83d29d69d2c469ead8605c0bd9e"
   },
   {
    "bytes": 10598,
    "gzip_added": true,
-   "modified": "2026-11-12T15:27:49Z",
+   "modified": "2026-11-13T12:00:14Z",
    "path": "data/raw/indices/2026Q1_DGD.txt",
    "sha256": "16ae9ae600363499d6a3d7f3da34dd5a882783b487265fb92496d83dfbc9034c",
    "stored": "data/raw/indices/2026Q1_DGD.txt.gz",
@@ -66,7 +66,7 @@
   {
    "bytes": 7478,
    "gzip_added": true,
-   "modified": "2026-11-12T15:28:01Z",
+   "modified": "2026-11-13T12:00:27Z",
    "path": "data/raw/indices/2026Q1_DSD.txt",
    "sha256": "90ccec9a394f4c3bd3f25f763b1e1e514836488579bcda886177818b8e4ca097",
    "stored": "data/raw/indices/2026Q1_DSD.txt.gz",
@@ -75,7 +75,7 @@
   {
    "bytes": 10710,
    "gzip_added": true,
-   "modified": "2026-11-12T15:28:13Z",
+   "modified": "2026-11-13T12:00:39Z",
    "path": "data/raw/indices/2026Q2_DGD.txt",
    "sha256": "d5848aeb96d20ce521feca8dbf8bec8a780d56f539db7a14dda5e6fe51f0e715",
    "stored": "data/raw/indices/2026Q2_DGD.txt.gz",
@@ -84,7 +84,7 @@
   {
    "bytes": 7554,
    "gzip_added": true,
-   "modified": "2026-11-12T15:28:25Z",
+   "modified": "2026-11-13T12:00:51Z",
    "path": "data/raw/indices/2026Q2_DSD.txt",
    "sha256": "4e2ff15c167b0e7e004cf2258cbd6f44505cda1d94867d3523a8eab9fde4a061",
    "stored": "data/raw/indices/2026Q2_DSD.txt.gz",
@@ -93,7 +93,7 @@
   {
    "bytes": 10822,
    "gzip_added": true,
-   "modified": "2026-11-12T15:28:37Z",
+   "modified": "2026-11-13T12:01:04Z",
    "path": "data/raw/indices/2026Q3_DGD.txt",
    "sha256": "0349ea0cc18e03aec3c4514f33c2e1d9aac55dd543cd4c669d06a74bc4a3e4f7",
    "stored": "data/raw/indices/2026Q3_DGD.txt.gz",
@@ -102,29 +102,29 @@
   {
    "bytes": 7630,
    "gzip_added": true,
-   "modified": "2026-11-12T15:28:49Z",
+   "modified": "2026-11-13T12:01:16Z",
    "path": "data/raw/indices/2026Q3_DSD.txt",
    "sha256": "7365132e4283d2d4152e68183e92ea6ff38297e8d95cad49205aab8f92f31e2f",
    "stored": "data/raw/indices/2026Q3_DSD.txt.gz",
    "stored_sha256": "bfc0761719af38944d8da8c9e91c1332d2b1f51dd940cfe2b25845f4255f7e78"
   },
   {
-   "bytes": 5334,
+   "bytes": 5446,
    "gzip_added": true,
-   "modified": "2026-11-12T15:29:01Z",
+   "modified": "2026-11-13T12:01:28Z",
    "path": "data/raw/indices/2026Q4_DGD.txt",
-   "sha256": "1b36a77b404365c644ef5f50dbd2587b5a778cc1063dbd40b170c3fda20eab3f",
+   "sha256": "1deebc383414c864c706bc905b3e9a091fe53ad485e8caf37c117852b07045bf",
    "stored": "data/raw/indices/2026Q4_DGD.txt.gz",
-   "stored_sha256": "aa5c48ad5382f4db20652896d1b9473c29f9e3dc543f8ba06df65c5b8117ba95"
+   "stored_sha256": "fed82cd236203ca1ceb481f3726359c7d30be8e88b6b6da2ed1d47f2abd1af56"
   },
   {
-   "bytes": 3830,
+   "bytes": 3906,
    "gzip_added": true,
-   "modified": "2026-11-12T15:29:13Z",
+   "modified": "2026-11-13T12:01:40Z",
    "path": "data/raw/indices/2026Q4_DSD.txt",
-   "sha256": "5c54cc5be461b4cf4906ce98c0d77e83af0ae314725aaf461d75ceef8149a189",
+   "sha256": "d7de42be82ba06d8f6c3510208691519f43487bd4d3ab9f43d5f83d1c91d1075",
    "stored": "data/raw/indices/2026Q4_DSD.txt.gz",
-   "stored_sha256": "2c65d3aa22c1d61c89fc4047b7e1b2596d51f8b8d235bda77af8ed5eeabfb7f2"
+   "stored_sha256": "7634964eafc5d481a8c390388ee06e65003ff350c3f9e11a5815efbb720710c1"
   },
   {
    "bytes": 29707,
@@ -3169,6 +3169,15 @@
    "stored_sha256": "537c03cc850146ef4b973a3281db7ac6eb1e52e72c6351ebbb3b6505662390e9"
   },
   {
+   "bytes": 1831,
+   "gzip_added": true,
+   "modified": "2026-11-12T23:10:33Z",
+   "path": "data/raw/warehouse/2026_RSGA/20261112RSGA.txt",
+   "sha256": "4421828defb4cd60acd7d822b21eca76aff156fd6a20989d18796dad2150c2d5",
+   "stored": "data/raw/warehouse/2026_RSGA/20261112RSGA.txt.gz",
+   "stored_sha256": "fedca16662fa8a8f20c4a203b0b8b7a0948b64bfc8287770216701332a038af5"
+  },
+  {
    "bytes": 2871,
    "gzip_added": true,
    "modified": "2026-11-10T14:23:41Z",
@@ -6031,6 +6040,15 @@
    "stored_sha256": "43be828f1553396d8abd44abb8785a0102fdbc07496b6d8a7245b3a4d99e2095"
   },
   {
+   "bytes": 3277,
+   "gzip_added": true,
+   "modified": "2026-11-13T01:16:30Z",
+   "path": "data/raw/warehouse/2026_events/20261112events.txt",
+   "sha256": "5764d4a79efa83df5723bca37e8a884a399d41e37bfc8fe8466522db2bf09d00",
+   "stored": "data/raw/warehouse/2026_events/20261112events.txt.gz",
+   "stored_sha256": "b8b208eb5cf541b5155327377227febff69430550b36e5fd99470ace4602ecf1"
+  },
+  {
    "bytes": 1045,
    "gzip_added": false,
    "modified": "2026-11-10T14:28:43Z",
@@ -6103,6 +6121,33 @@
    "stored_sha256": "4d51c55cdf451d8414bb91000df3c0eae62fa12f8177037d5286ccfe6249b35a"
   },
   {
+   "bytes": 929,
+   "gzip_added": false,
+   "modified": "2026-11-12T18:51:13Z",
+   "path": "data/snapshots/20261112T184842Z_sgarf.txt.gz",
+   "sha256": "db9cd428209376da305b0703bd0f5f914d5fdc01e46a4c52eeffd3924baee55f",
+   "stored": "data/snapshots/20261112T184842Z_sgarf.txt.gz",
+   "stored_sha256": "db9cd428209376da305b0703bd0f5f914d5fdc01e46a4c52eeffd3924baee55f"
+  },
+  {
+   "bytes": 912,
+   "gzip_added": false,
+   "modified": "2026-11-13T01:18:36Z",
+   "path": "data/snapshots/20261113T011554Z_sgarf.txt.gz",
+   "sha256": "66b6e19bd6977dcf085c4171d414fa288228bd9790bf0ce432c291da3bda259b",
+   "stored": "data/snapshots/20261113T011554Z_sgarf.txt.gz",
+   "stored_sha256": "66b6e19bd6977dcf085c4171d414fa288228bd9790bf0ce432c291da3bda259b"
+  },
+  {
+   "bytes": 912,
+   "gzip_added": false,
+   "modified": "2026-11-13T07:46:15Z",
+   "path": "data/snapshots/20261113T074344Z_sgarf.txt.gz",
+   "sha256": "c6e7b558c2996b813e67d5d9070f47ce033a508056b96f07b929c7eac763b756",
+   "stored": "data/snapshots/20261113T074344Z_sgarf.txt.gz",
+   "stored_sha256": "c6e7b558c2996b813e67d5d9070f47ce033a508056b96f07b929c7eac763b756"
+  },
+  {
    "bytes": 695,
    "gzip_added": true,
    "modified": "2026-11-10T14:22:08Z",
@@ -6130,7 +6175,7 @@
    "stored_sha256": "ad69d9c7867bcaf428d070c2190be5127fec1e367cad84a31886381656347813"
   }
  ],
- "made": "2026-11-12T16:05:09Z",
+ "made": "2026-11-13T14:08:28Z",
  "mode": "fetch",
  "name": "SOLAR",
  "reference": [],

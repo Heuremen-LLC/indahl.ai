@@ -58,7 +58,7 @@ Every item has its live page and its plan. A desk is added here automatically wh
 - [x] **NOW** ([live](https://indahl.ai/predictions)). Public predictions against their deadline, and FORTUNE. Live since 2026-11-10.
 - [x] **YO** ([live](https://indahl.ai/yo)). Our small language model trained on IBM calibration records: live reads and every test. Live since 2026-11-09.
 - [x] **WATER** ([live](https://indahl.ai/water)). Reservoir forecasts against measured levels. Live since 2026-11-09.
-- [x] **LAB** ([live](https://indahl.ai/iris/lab)). Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Faults and Guards across models. Live since 2026-10-29.
+- [x] **LAB** ([live](https://indahl.ai/iris/lab)). Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Standards across models. Live since 2026-10-29.
 - [x] **MODEL** ([live](https://indahl.ai/hermes/model)). Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data. Live since 2026-10-29.
 - [x] **ELECTRICITY** ([live](https://indahl.ai/atlas/electricity)). Prices, providers and generation by state.
 - [x] **POWER PLANTS** ([live](https://indahl.ai/atlas/power-plants)). Every operating plant by fuel and capacity.

@@ -7,7 +7,7 @@
   var TABLES = [{"title": "Pooled over the four variables, intervals made over years", "path": "pooled", "first": "Horizon", "cols": [["Projections", "triples", "n"], ["Years", "years", "n"], ["Outside the range", "outside", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "By variable", "path": "per_variable", "first": "Variable and horizon", "cols": [["Projections", "n", "n"], ["Outside", "outside", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"], ["Mean error, outcome minus median", "mean_error", "n"], ["Typical stated range", "range_typical", "n"]]}, {"title": "Sensitivity, defined after the first read: the funds rate at year-end", "path": "sensitivity", "first": "Horizon", "cols": [["Projections", "triples", "n"], ["Outside the range", "outside", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"]]}, {"title": "This-year misses, read in full", "path": "misses", "first": "Year", "firstkey": "year", "cols": [["Variable", "variable", "t"], ["Median", "median", "n"], ["Outcome", "outcome_value", "n"], ["Stated range", "stated_range", "n"], ["Beyond the range by", "miss", "n"], ["Found on a full read", "note", "t"]]}], TOP = "{triples} projections of {septs} Septembers scored. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
-    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td((OC[v] || v) + (v === 'CANNOT_TELL' && row[key.replace('outcome', 'reason')] ? ' (' + row[key.replace('outcome', 'reason')] + ')' : ''));   // 12 Nov 2026 (Faults and Guards 2.0): the reason stands beside every cannot tell
+    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td((OC[v] || v) + (v === 'CANNOT_TELL' && row[key.replace('outcome', 'reason')] ? ' (' + row[key.replace('outcome', 'reason')] + ')' : ''));   // 12 Nov 2026 (Standards 2.0): the reason stands beside every cannot tell
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);
@@ -24,7 +24,7 @@
       var b = document.createElement('tbody'); rows.forEach(function (r) { var tr = document.createElement('tr'); if (!nolab) tr.appendChild(td(r._key != null ? r._key : r[T.firstkey])); T.cols.forEach(function (c) { tr.appendChild(cell(c[2], r, c[1])); }); b.appendChild(tr); });
       t.appendChild(b); box.appendChild(t);
     });
-    // 12 Nov 2026 (Faults and Guards 2.0, REQ-13): the count of failed reads and the share of cannot tell by reason, beside the headline
+    // 12 Nov 2026 (Standards 2.0, REQ-13): the count of failed reads and the share of cannot tell by reason, beside the headline
     function req13(label, q) { if (!q || !q.line) return; var p = document.createElement('p'); p.className = 'bench-note'; p.textContent = label + q.line + (q.not_comparable != null ? ' Not comparable and outside every share: ' + q.not_comparable + '.' : ''); box.appendChild(p); }
     req13('All rows above: ', d.req13);
     Object.keys(d.pooled || {}).forEach(function (k) { req13(k + ': ', d.pooled[k].req13); });

@@ -1,4 +1,4 @@
-// Live progress of the Faults and Guards run on open models. Counts of replies received only. Reads /iris/bench.json.
+// Live progress of the Standards run on open models. Counts of replies received only. Reads /iris/bench.json.
 (function () {
   var box = document.getElementById('bench-live'), box2 = document.getElementById('bench-live2'); if (!box) return;
   var NS = 'http://www.w3.org/2000/svg', ARMS = [['bare', 'Bare'], ['bare_copy', 'Repeat'], ['guard', 'Guard']];

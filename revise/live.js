@@ -12,7 +12,7 @@
   var TABLES = [{"title": "Months the first estimate moved by more than the stated margin", "path": "counts", "first": "Comparison", "cols": [["Months", "months", "n"], ["Years", "years", "n"], ["Moved by more", "exceed", "n"], ["Share, 95% interval over months (the interval the plan names)", "share", "pct"], ["Outcome on the plan's interval", "outcome", "oc"], ["Share, 95% interval over calendar years (bootstrap, 4,000 resamples, defined after the first read)", "share_y", "pct"], ["Outcome on the interval over years, same rule (defined after the first read)", "outcome_y", "oc"], ["Median signed, thousands", "median_signed", "n"], ["Median absolute", "median_abs", "n"], ["Largest", "largest", "n"]]}, {"title": "Months with a revision above 300 thousand, read in full", "path": "large", "first": "Month", "firstkey": "month", "cols": [["First", "first", "n"], ["Third", "third", "n"], ["Most recent", "most_recent", "n"], ["Found on a full read", "note", "t"]], "link": "{url}"}], TOP = "Stated margin {stated} thousand. BLS revisions table updated {file_updated}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
-    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td((OC[v] || v) + (v === 'CANNOT_TELL' && row[key.replace('outcome', 'reason')] ? ' (' + row[key.replace('outcome', 'reason')] + ')' : ''));   // 12 Nov 2026 (Faults and Guards 2.0): the reason stands beside every cannot tell
+    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td((OC[v] || v) + (v === 'CANNOT_TELL' && row[key.replace('outcome', 'reason')] ? ' (' + row[key.replace('outcome', 'reason')] + ')' : ''));   // 12 Nov 2026 (Standards 2.0): the reason stands beside every cannot tell
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);
@@ -30,7 +30,7 @@
       t.appendChild(b); box.appendChild(t);
     });
     // 10 Nov 2026 (newsletter audit): both intervals, and which one the plan named
-    // 12 Nov 2026 (Faults and Guards 2.0, REQ-13): the count of failed reads and the share of cannot tell by reason, beside the headline
+    // 12 Nov 2026 (Standards 2.0, REQ-13): the count of failed reads and the share of cannot tell by reason, beside the headline
     function req13(label, q) { if (!q || !q.line) return; var p = document.createElement('p'); p.className = 'bench-note'; p.textContent = label + q.line + (q.not_comparable != null ? ' Not comparable and outside every share: ' + q.not_comparable + '.' : ''); box.appendChild(p); }
     Object.keys(d.counts || {}).forEach(function (k) { req13(k + ', the two readings printed for it (interval over months and over calendar years): ', d.counts[k].req13); });
     var W = { ABOVE: 'above', BELOW: 'below', CONSISTENT: 'consistent', CANNOT_TELL: 'cannot tell' }, P = function (x) { return Math.round(100 * x) + '%'; }, RW = function (o, r) { return W[o] + (o === 'CANNOT_TELL' && r ? ' (' + r + ')' : ''); };

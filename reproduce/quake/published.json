@@ -1,17 +1,17 @@
 {
  "feed": "https://indahl.ai/quake/live.json",
- "feed_sha256": "2013151c52aaadd63704bab9e664bcb45079356eace2649fb4d6d0973d36b5ec",
+ "feed_sha256": "5c95b8f8b2b34c961f4b5f127b422e289788ec99adfef62f6dcf94477413cd3e",
  "headline": {
   "desk": "QUAKE",
-  "display": "30,694 of 31,894",
+  "display": "30,760 of 31,963",
   "hi": 0.9776,
   "keys": [],
-  "lo": 0.9459,
-  "n": 30694,
-  "of": 31894,
+  "lo": 0.946,
+  "n": 30760,
+  "of": 31963,
   "outcome": "CANNOT_TELL",
   "value": 0.9624
  },
- "read_at": "2026-11-12T16:06:35Z",
- "stamp": "2026-11-12T14:40:02Z"
+ "read_at": "2026-11-13T14:09:17Z",
+ "stamp": "2026-11-13T11:59:38Z"
 }

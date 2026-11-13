@@ -12,7 +12,7 @@
   var TABLES = [{"title": "Failure among commands that could be compared", "path": "comparison", "first": "", "cols": [["Compared", "of", "n"], ["Fail", "n", "n"], ["Share, 95% interval", "share", "pct"], ["Outcome", "outcome", "oc"], ["Failed reads and cannot tell", "req13_line", "t"]]}, {"title": "By class", "path": "classes", "first": "Class", "cols": [["Projects", "n", "n"]]}, {"title": "Why projects were not comparable", "path": "not_comparable_reasons", "first": "Reason", "cols": [["Projects", "n", "n"]]}, {"title": "Read in full: commands that fail", "path": "disagree_list", "link": "https://pypi.org/project/{project}/", "first": "Project", "firstkey": "project", "cols": [["Command", "command", "t"], ["Pip said", "error", "t"], ["Found on a full read", "reason", "t"]]}], TOP = "{projects} projects read with pip {pip}. Controls: {gate}. Updated {updated} UTC.";
   function cell(kind, row, key) {
     var v = row[key];
-    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td((OC[v] || v) + (row.reason ? ' (' + row.reason + ')' : ''));   // 12 Nov 2026 (Faults and Guards 2.0): the reason beside every cannot tell
+    if (kind === 'n') return td(v, 1); if (kind === 'oc') return td((OC[v] || v) + (row.reason ? ' (' + row.reason + ')' : ''));   // 12 Nov 2026 (Standards 2.0): the reason beside every cannot tell
     if (kind === 'pct') return td(v == null ? '' : pct(v) + ' [' + pct(row[key + '_lo']) + ', ' + pct(row[key + '_hi']) + ']', 1);
     if (kind === 'ci') return td(v == null ? '' : v + (row[key + '_ci'] ? ' [' + row[key + '_ci'][0] + ', ' + row[key + '_ci'][1] + ']' : ''), 1);
     return td(v);

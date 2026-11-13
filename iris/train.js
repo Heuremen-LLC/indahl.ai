@@ -1,4 +1,4 @@
-// Live progress of the trained Falcon on the Faults and Guards. Training steps and counts of replies received only. Reads /iris/train.json.
+// Live progress of the trained Falcon on the Standards. Training steps and counts of replies received only. Reads /iris/train.json.
 (function () {
   var box = document.getElementById('train-live'); if (!box) return;
   var NS = 'http://www.w3.org/2000/svg', ARMS = [['bare', 'Bare'], ['bare_copy', 'Repeat'], ['guard', 'Guard']];
@@ -14,7 +14,7 @@
     var W = 760, L = 230, bw = 150, gap = 12, rowh = 30, rows = 2 + 3 + 3, H = 60 + rows * rowh + 40;
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Training steps and replies received', 'class': 'bench-svg' });
     var y = 14; svg.appendChild(el('text', { x: 0, y: y, 'class': 'bench-h' }, 'Training, ' + (d.steps || 600) + ' steps each'));
-    [['trained', 'Faults and Guards labels'], ['mixed', 'Mixed labels (control)']].forEach(function (t, i) {
+    [['trained', 'Standards labels'], ['mixed', 'Mixed labels (control)']].forEach(function (t, i) {
       var yy = 24 + i * rowh, s = parseInt((d.step || {})[t[0]] || 0, 10) || 0, f = Math.min(1, s / (d.steps || 600));
       svg.appendChild(el('text', { x: 0, y: yy + 14, 'class': 'bench-m' }, t[1])); bar(svg, L, yy, bw * 2 + gap, f, f >= 1);
       svg.appendChild(el('text', { x: L + bw * 2 + gap + 4, y: yy + 13, 'class': 'bench-n' }, f >= 1 ? '✓' : (s ? 'step ' + s : '')));

@@ -48,7 +48,7 @@ time and needs at least eight qubits with a T1, a T2 and their dates. Model: htt
 - `TESTED.md`: how this package was tested, with results
 - `START_HERE.html`: this guide as a page
 - `yo/`: YO's record reader
-- `faultsguards/`: the Faults and Guards as a Python package, with the PDFs
+- `faultsguards/`: the Standards as a Python package, with the PDFs
 - `t1t2-check/`: same-job T1 and T2 measurement on your account
 - `check-block/`: the check block and its commit gate
 - `papers/`: A Readout Is Not an Idle (the QIA paper)
@@ -60,11 +60,11 @@ time and needs at least eight qubits with a T1, a T2 and their dates. Model: htt
 - List of studies: https://indahl.ai/qia/list
 - Key: https://indahl.ai/qia/key
 - Code: https://github.com/Heuremen-LLC/indahl.ai
-- Faults and Guards on PyPI: https://pypi.org/project/faultsguards/
+- Standards on PyPI: https://pypi.org/project/faultsguards/
 - YO: https://huggingface.co/indahl/YO
 
 ## Terms
 
 Heuremen LLC permits anyone to run, copy and change the code in this package, for any purpose, with attribution to Heuremen LLC and https://indahl.ai/qia
 
-Your results remain yours. The text, papers and data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted. The Faults and Guards package keeps its own terms.
+Your results remain yours. The text, papers and data follow LICENSE.txt, and their use to train, fine-tune or build AI models is not permitted. The Standards package keeps its own terms.

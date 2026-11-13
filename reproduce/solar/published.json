@@ -1,17 +1,17 @@
 {
  "feed": "https://indahl.ai/solar/live.json",
- "feed_sha256": "92ee9a367a8e334bfc30827a77251681a7941033fa9ce79f8b797ac53bff9075",
+ "feed_sha256": "d58641723ec3e5df07bbf175c6eac2e08fc8d0e3367ab2b1f18f014eca2af378",
  "headline": {
   "desk": "SOLAR",
   "display": "4 of 8",
-  "hi": 0.3209,
+  "hi": 0.3212,
   "keys": [],
-  "lo": 0.2049,
+  "lo": 0.208,
   "n": 4,
   "of": 8,
   "outcome": "ABOVE",
-  "value": 0.2683
+  "value": 0.2678
  },
- "read_at": "2026-11-12T16:05:09Z",
- "stamp": "2026-11-12T14:40:02Z"
+ "read_at": "2026-11-13T14:08:28Z",
+ "stamp": "2026-11-13T11:59:38Z"
 }

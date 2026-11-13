@@ -10,7 +10,7 @@
   function sg(x) { return x == null ? '' : (x > 0 ? '+' : '') + Number(x).toFixed(2); }
   function pc(x) { return x == null ? '' : (100 * x).toFixed(1) + '%'; }
   function fmt(x) { return String(x).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
-  function ow(o, r) { var w = OC[o] || o; return (o === 'CANNOT_TELL' && r) ? w + ' (' + r + ')' : w; }   // the reading word with its Faults and Guards 2.0 reason beside cannot tell
+  function ow(o, r) { var w = OC[o] || o; return (o === 'CANNOT_TELL' && r) ? w + ' (' + r + ')' : w; }   // the reading word with its Standards 2.0 reason beside cannot tell
   function note(t) { box.appendChild(el('p', 'bench-note', t)); }
   function table(head, rows) {
     var t = el('table', 'mtx'), h = el('thead'), tr = el('tr'); head.forEach(function (x) { tr.appendChild(el('th', null, x)); }); h.appendChild(tr); t.appendChild(h);

@@ -428,7 +428,7 @@ summary = dict(
                  first_event=iso(min(s['time'] for s in SEQ)) if SEQ else None, last_event=iso(max(s['time'] for s in SEQ)) if SEQ else None),
     rows=dict(total=len(rows), scored=len(SC), scored_bins=len(BIN), issued_after_window_opened=len(outside), late_versions=LATE, nothing_returned=dict(nr), cannot_tell=dict(ct),
               outcomes=dict(C.Counter(r['outcome'] for r in rows if r.get('outcome'))), failed_reads=sum(nr.values())),
-    req13=REQ13, outcome_rule='PLAN.md with PLAN_ADDENDUM_std2.md (Faults and Guards 2.0, 12 Nov 2026)',
+    req13=REQ13, outcome_rule='PLAN.md with PLAN_ADDENDUM_std2.md (Standards 2.0, 12 Nov 2026)',
     headline_cell=headline_cell, cover_by_magnitude=cover_mag, cover_by_window=cover_win, cover_all=cover_all, reliability=rel_bins, reliability_above_mainshock=rel_above,
     described=dict(stated_10_percent_or_more=rel10, stated_10_percent_or_more_all=rel10_all, by_region=region, cover_without_zero_ranges=nonzero, indexed_after_window_opened=late_index,
                    after_data_note='stated_10_percent_or_more, by_region, cover_without_zero_ranges and indexed_after_window_opened were added after the data on 10 Nov 2026 at the outside referee (quake_index_referee/REFEREE.md R1, R2, R5, R7). Display only. No outcome uses them.',
