@@ -11,3 +11,4 @@ base: hand 9/27 pos, 1/30 neg; pipeline 6/23 pos, 0/39 neg
 | 19:41 | (Bones) | | | added by hand on Wayfinder's "hit a training loop or two" | next lora_v7: data_short, lr 1e-5, 1200 iters (between v4 and v6) |
 | 20:49 | (Bones) | paper vote, defined after the data | v6 k>=1: 19/23 papers caught, 5/10 clean flagged (hand); k>=2: 1/23, 1/10 | errors sit in one chunk, so a vote kills recall; next: score-based threshold (eval with yes/no probabilities) after v7 |
 | 21:22 | lora_v7 | 16/27 pos, 0/30 neg | 12/23 pos, 2/39 neg | match_or_beat | ladder stopped
+| 23:51 | (Bones) | seed repeats queued on Wayfinder's word: v8/v10 = v4 config seeds 20261113/20261114, v9/v11 = v7 config same seeds; then seed_read, sage_seed_review, handoff_seeds |

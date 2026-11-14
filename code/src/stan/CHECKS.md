@@ -98,3 +98,13 @@
 - R: holds: read from train_e/results/curves.json written by curves.py over results/*_scores.json from eval_score.py
 - caught: base model's score flags 16 (hand) and 13 (pipeline) chunks its own generation did not, so its curve is CANNOT_TELL as an instrument for its generation; LoRA scores agree with their generation (0 to 1 disagreements)
 - cannot tell: whether a cutoff chosen on a separate validation set would give a LoRA better than base on both counts; that needs a held-out cutoff choice, not this test set
+
+## 2026-11-13 23:25 Cross-set cutoffs: chosen on one held-out set, scored on the other
+- I: holds: rule fixed in cross_cutoff.py before running (lowest threshold whose false-flag rate on the choosing set is at or below the untouched model's generated rate there, maximising caught); the cutoff never sees the set it is scored on; both sets were seen before, so the design is defined after the data
+- II: holds: each direction reported separately, nothing averaged
+- III: holds: counts only, no signed differences claimed
+- V: holds: exact counts per direction; no interval claimed at n = 23 to 27 positives
+- VI: holds: CANNOT_TELL that any score cutoff beats a model's own generated answers. Cutoffs do not transfer (v6: 10/23 one way, 3/27 the other; v7: 13/23 and 8/27). v4 is the most stable (12/23 with 1/39 false, 12/27 with 1/30 false). v7 generation stays the best plain behaviour (16/27 with 0/30 false; 12/23 with 2/39 false; base generation 9/27 and 6/23)
+- R: holds: read from train_e/results/cross_cutoff.json written by cross_cutoff.py over results/*_scores.json, and the generation summaries in results/<model>_<set>.json
+- caught: none new; the instability itself is the finding (positives too few for a cutoff to transfer)
+- cannot tell: whether v7 or v4 holds on fresh data; the deciding test needs more hand-checked recounts, not more training
