@@ -66,10 +66,10 @@ for qf in sorted(glob.glob('qbits/new/*.json')):
         os.rename(qf, 'qbits/done/' + os.path.basename(qf))
     except Exception as ex: print('tape: qbits file skipped,', os.path.basename(qf), type(ex).__name__)
 # 2 feeds
-fl = []
+fl = []; bodies = {}
 for s in SLUGS + ['headlines']:
     b = get('https://indahl.ai/%s' % (s + '/live.json?x=%d' % time.time() if s != 'headlines' else 'headlines.json?x=%d' % time.time()))
-    fl.append((s, sha(b) if b else 'NOTHING_RETURNED'))
+    fl.append((s, sha(b) if b else 'NOTHING_RETURNED')); bodies[s] = b
 ef = append('feeds', 'live feeds, %d of %d read' % (sum(1 for _, h in fl if h != 'NOTHING_RETURNED'), len(fl)), merkle(fl), fl)
 # 3 beacon
 dr = get(DRAND, 20); drd = json.loads(dr) if dr else None
@@ -96,8 +96,28 @@ except Exception as ex: anch['note'] = type(ex).__name__
 last = chain[-1]; bq = [e for e in chain if e['kind'] == 'beacon'][-1]
 lf = [e for e in chain if e['kind'] == 'feeds'][-1]; lfl = json.load(open('leaves/%d.json' % lf['n']))['leaves']
 feedrec = {k: dict(n=lf['n'], hash=h) for k, h in lfl}
+# 14 Nov 2026 (what_changed tool): the chain hashes each feed whole, so its own clock fields change the hash on every run. Beside the chain
+# (never in it), a substance digest drops the clock fields and records when each feed's substance last changed. changes.json keeps it.
+TIMEKEYS = {'updated', 'read', 'read_at', 'generated', 'generated_at', 'built_utc', 'served_at', 'last_probe', 'last_run', 'now_utc', 'checked_at', 'fetched_at', 'age_s', 'age_min', 'ago', 'as_of', 'stamp', 'x'}
+def _strip(o):
+    if isinstance(o, dict): return {k: _strip(v) for k, v in o.items() if k not in TIMEKEYS}
+    if isinstance(o, list): return [_strip(v) for v in o]
+    return o
+try:
+    ch = json.load(open('changes.json')) if os.path.exists('changes.json') else {}
+    nowt = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    for k, b in bodies.items():
+        if not b: continue
+        try: dg = hashlib.sha256(json.dumps(_strip(json.loads(b)), sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        except Exception: dg = sha(b)
+        r = ch.get(k)
+        if r is None: ch[k] = dict(digest=dg, first_seen=nowt, changed=[])
+        elif r['digest'] != dg: r['digest'] = dg; r['changed'] = (r.get('changed', []) + [dict(t=nowt, entry_n=lf['n'])])[-20:]
+    json.dump(ch, open('changes.json', 'w'), indent=0)
+    changes_out = {k: dict(last_changed=(v['changed'][-1]['t'] if v['changed'] else None), watched_since=v['first_seen'], changes=v['changed'][-20:]) for k, v in ch.items()}
+except Exception as ex: changes_out = {}; print('tape: substance digest skipped (%s)' % type(ex).__name__)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), read=1, count=len(chain), head=dict(n=last['n'], entry=last['entry'], t=last['t']), beacon=dict(n=bq['n'], t=bq['t'], value=bq['root'], drand_round=bq['subject'].replace('drand round ', '')), anchor=anch,
-           feeds=feedrec, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
+           feeds=feedrec, changes=changes_out, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
 json.dump(out, open('summary_tape.json', 'w'), indent=1)
 os.makedirs(PUB + '/leaves', exist_ok=True)
 _PUBLISH and subprocess.run('cp tape.jsonl PLAN.md tape_tick.py tape_push.py tape_verify.py tapelib.py known_good.py %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
