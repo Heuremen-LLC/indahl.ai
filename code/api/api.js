@@ -151,7 +151,7 @@ export async function handleApi(req, env, u) {
     const r = await callTool(env, req, m[1], args); if (!r) return jsonR({ error: 'unknown tool', see: 'https://indahl.ai/api/v1' }, 404);
     return jsonR(r, 200, { 'cache-control': 'public, max-age=60' });
   }
-  const gm = /^\/mcp(?:\/(quantum|models|public))?\/?$/.exec(p);
+  const gm = /^\/mcp(?:\/([a-z]+))?\/?$/.exec(p); if (gm && gm[1] && !GROUPS[gm[1]]) return null;   // 13 Nov: every group in GROUPS routes (the fixed list hid education); an unknown group falls through to 404
   if (gm) {
     const G = gm[1] ? GROUPS[gm[1]] : null; const TL = G ? TOOLS.filter(t => G.tools.includes(t.name)) : TOOLS;
     if (req.method === 'GET') return new Response('This is an MCP server. POST JSON-RPC to this URL.', { status: 405, headers: { allow: 'POST, OPTIONS', ...CORS } });
