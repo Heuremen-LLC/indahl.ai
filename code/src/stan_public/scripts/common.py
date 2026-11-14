@@ -47,7 +47,7 @@ def ollama(host,model,prompt,n=900,t=600,seed=0):
           'options':{'temperature':0,'seed':seed,'num_predict':n,'num_ctx':8192},'keep_alive':'30m'}
     r=json.load(urllib.request.urlopen(urllib.request.Request(host+'/api/chat',json.dumps(body).encode(),{'Content-Type':'application/json'}),timeout=t))
     return r['message']['content']
-GPU_LOCK='/Users/heuremen/bones-forge/sage_library/sage_v/.train.lock'
+GPU_LOCK='/Users/heuremen/bones-forge/sage_library/council/.train.lock'
 def gpu_lock():
     f=open(GPU_LOCK,'w'); fcntl.flock(f,fcntl.LOCK_EX); return f
 def jl_read(p):

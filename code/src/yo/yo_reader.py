@@ -11,7 +11,7 @@ GATE = os.path.join(HERE, 'LIVE_READER_ON'); ST = os.path.join(HERE, '.reader_st
 if not os.path.exists(GATE): print('yo reader: gate closed (no LIVE_READER_ON)'); sys.exit(0)
 busy = subprocess.run("pgrep -f 'mlx_lm.lora|mlx_lm lora|yo[0-9]_eval|yo[0-9]_run|lighteval|lm_eval|falcon_train/train'", shell=True, capture_output=True, text=True).stdout.split()
 if busy: print('yo reader: another model job holds the GPU, skipped'); sys.exit(0)
-if os.path.exists(os.path.expanduser('~/bones-forge/sage_library/sage_v/PAUSE_MAC')): print('yo reader: a Sage V GPU job holds the Mac (PAUSE_MAC), skipped'); sys.exit(0)   # 10 Nov: the always-on MLX seat servers matched the old 'mlx_lm' check and blocked every run
+if os.path.exists(os.path.expanduser('~/bones-forge/sage_library/council/PAUSE_MAC')): print('yo reader: a the council lane GPU job holds the Mac (PAUSE_MAC), skipped'); sys.exit(0)   # 10 Nov: the always-on MLX seat servers matched the old 'mlx_lm' check and blocked every run
 st = json.load(open(ST)) if os.path.exists(ST) else {'at': 0}
 open(os.path.join(HERE, '.reader_ran'), 'w').write(time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))   # heartbeat for the watch: the reader ran (gate open, GPU free)
 _rs = [r for r in map(json.loads, open(os.path.join(B, 'qia_mirror', 'changes.jsonl'))) if r.get('at', 0) > st['at'] and r.get('file')]

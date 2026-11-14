@@ -19,7 +19,7 @@ for c in CODES:
         st[k][0]+=x[0]; st[k][1]+=1; by[c][k][0]+=x[0]; by[c][k][1]+=1
 strat={k:{'agree':a,'n':n,'rate':round(a/n,3) if n else None,'wilson95':wilson(a,n)} for k,(a,n) in st.items()}
 json.dump({'stan_on_gold_dev_by_teacher_agreement':strat,'by_code':{c:{k:{'agree':a,'n':n,'wilson95':wilson(a,n)} for k,(a,n) in by[c].items()} for c in CODES}},open(S+'/results/stan_dev_stratified.json','w'),indent=1)
-# public rows, format of sage_v_public/results
+# public rows, format of council_public/results
 ts=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()); pb=P['pooled']
 os.makedirs(S+'/results/public_rows',exist_ok=True)
 open(S+'/results/public_rows/paired.jsonl','w').write(json.dumps({'agreement':[res['base']['pooled']['rate'],res['stan']['pooled']['rate'],pb['ci95'][0],pb['ci95'][1]],'n':pb['n'],'seat':'stan:v1','ts':ts},sort_keys=True)+'\n')

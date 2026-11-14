@@ -2,7 +2,7 @@
 .train.lock (blocking) -> PAUSE_MAC 'muse_glimmer_eval' -> .flywheel.lock -> unload Ollama :11500 models (as harvest does) -> mlxpark.park()
 -> memory check (free+inactive >= 22 GB or stop) -> muse gen -> hermes gen (subset) -> finally: unpark, remove PAUSE_MAC, release both locks."""
 import fcntl, json, os, subprocess, sys, time, urllib.request, re
-H = '/Users/heuremen/bones-forge/sage_library/sage_v'
+H = '/Users/heuremen/bones-forge/sage_library/council'
 D = os.path.dirname(os.path.abspath(__file__))
 PY = os.path.expanduser('~/bones-forge/venv/bin/python')
 LOG = open(D + '/locked_run.log', 'a')

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """results_push.py (12 Nov 2026, "ANY training we do is live on the lab page and full public repo accessible"): copies STAN's public files to
-GitHub Heuremen-LLC/stan and Hugging Face dataset indahl/stan-results when they changed, at most once every 20 minutes. Copy of sage_v/results_push.py.
+GitHub Heuremen-LLC/stan and Hugging Face dataset indahl/stan-results when they changed, at most once every 20 minutes. Copy of council/results_push.py.
 Only an allow-list is copied: code, the plan and its stamps, README, LICENSE, CHECKS.md, and results files that hold numbers only.
 Never copied: data/, teachers/, runs/, review_queue/, gold labels, wall-flag lists (they name gold items), logs.  python3 results_push.py [--dry] [--force]"""
 import hashlib, json, os, shutil, subprocess, sys, time
@@ -27,6 +27,9 @@ def wanted():
     return out
 
 
+import re
+SCRUB = re.compile(r'the council lane(?![A-Za-z])|sage[-_]v(?![a-z])|council', re.I)
+
 def main():
     dry = '--dry' in sys.argv; st = json.load(open(ST)) if os.path.exists(ST) else {}
     if time.time() - st.get('at', 0) < GAP and '--force' not in sys.argv: print('stan results_push: last push under 20 min ago'); return 0
@@ -52,10 +55,20 @@ def main():
     for k, src in files.items():
         dst = os.path.join(PUB, k); os.makedirs(os.path.dirname(dst), exist_ok=True)
         if k == 'LICENSE': open(dst, 'w').write(LICENSE)
-        else: shutil.copyfile(src, dst)
+        else:
+            shutil.copyfile(src, dst)
+            try:   # 13 Nov 2026 (Wayfinder): the council lane full scrub from anything public; the public copy only, house originals untouched
+                t = open(dst, encoding='utf-8').read()
+                if SCRUB.search(t):
+                    t = re.sub(r'the council lane(?![A-Za-z])', 'the council lane', t); t = re.sub(r'sage[-_]v(?![a-z])|council', 'council', t, flags=re.I)
+                    if k == 'PLAN.md': t += '\n\n---\nPublic copy edited 13 November 2026 to remove the name of a retired project. PLAN.sha256 covers the original plan, which is kept privately.\n'
+                    open(dst, 'w', encoding='utf-8').write(t)
+            except UnicodeDecodeError: pass
     g = lambda *a: subprocess.run(['git', '-C', PUB] + list(a), capture_output=True, text=True)
-    g('add', '-A'); g('commit', '-m', 'results and code, %s' % time.strftime('%Y-%m-%d %H:%MZ', time.gmtime()))
-    p = g('push', 'origin', 'HEAD'); ok_gh = p.returncode == 0
+    g('add', '-A'); cm = g('commit', '-m', 'results and code, %s' % time.strftime('%Y-%m-%d %H:%MZ', time.gmtime()))
+    staged = g('diff', '--cached', '--name-only').stdout.strip()   # 13 Nov: a refused commit (readcheck gate) used to read as GitHub ok
+    if staged: p = subprocess.CompletedProcess([], 1, '', 'commit refused: ' + (cm.stdout + cm.stderr)[-300:]); ok_gh = False
+    else: p = g('push', 'origin', 'HEAD'); ok_gh = p.returncode == 0
     hf = subprocess.run([HF_PY, '-c', 'import sys;from huggingface_hub import HfApi;HfApi().upload_folder(folder_path=sys.argv[1],repo_id=sys.argv[2],repo_type="dataset",allow_patterns=["results/*","results/**","README.md","LICENSE","PLAN*","CHECKS.md"],commit_message="results: live training rows")', PUB, HF_REPO],
                         capture_output=True, text=True, timeout=300); ok_hf = hf.returncode == 0
     if ok_gh and ok_hf: st['digest'] = dig.hexdigest()

@@ -4,7 +4,7 @@ MODEL_KIND: muse (mlx-vlm, mlx-community/Muse-Glimmer-30B-4bit, reasoning_streng
 import json, sys, time, os
 kind, out, deadline = sys.argv[1], sys.argv[2], float(sys.argv[3])
 subset_only = len(sys.argv) > 4
-SRC = '/Users/heuremen/bones-forge/sage_library/sage_v/gap_corpus/heldout_sft.jsonl'
+SRC = '/Users/heuremen/bones-forge/sage_library/council/gap_corpus/heldout_sft.jsonl'
 R = [json.loads(l) for l in open(SRC)]
 sub = json.load(open(os.path.dirname(os.path.abspath(__file__)) + '/subset160.json'))['indices']
 order = list(sub) + ([] if subset_only else [i for i in range(len(R)) if i not in set(sub)])
@@ -28,7 +28,7 @@ if kind == 'muse':
             last = r
         return ids, last
 else:
-    sys.path.insert(0, '/Users/heuremen/bones-forge/sage_library/sage_v'); import chatfmt
+    sys.path.insert(0, '/Users/heuremen/bones-forge/sage_library/council'); import chatfmt
     from mlx_lm import load, stream_generate
     from mlx_lm.sample_utils import make_sampler
     model, tok = load('mlx-community/Hermes-3-Llama-3.1-8B-4bit')

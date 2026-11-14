@@ -78,3 +78,13 @@
 - R: holds: read from train_e/results/<model>_<set>.json written by eval_mlx.py; summary in train_e/results/clustered_read.json by train_e/clustered_read.py
 - caught: chunk-level Wilson intervals in the night ladder rows were too narrow (handoff caveat); this read replaces them for any claim. No adapter is kept: the rule is beat base on both measures, and false flags rise
 - cannot tell: whether v7 (data_short, lr 1e-5, 1200 iters, running) holds the recall gain with fewer false flags
+
+## 2026-11-13 21:10 Public copies: retired project name removed, and results_push reports a refused commit as a failure
+- I: holds: no reading changes; the public copies of PLAN.md and three scripts have one retired project name rewritten, house originals untouched
+- II: holds: nothing netted; four files, every occurrence rewritten, counted before (PLAN.md 4, scripts 1 each) and after (0)
+- III: holds: no signs involved
+- V: holds: the check is a regex count over the public folder and the GitHub and Hugging Face copies, after the push
+- VI: holds: zero remaining in stan_public; the GitHub and HF copies are read back after the push
+- R: holds: counts read from grep over stan_public and from the raw GitHub and HF files
+- caught: results_push.py printed "GitHub ok" while the readcheck gate had refused its commit, so the push carried the old HEAD. It now checks for staged files after the commit and reports FAILED
+- cannot tell: how many earlier pushes carried nothing new; the stan_public git log shows the last landed commit at 02:08Z

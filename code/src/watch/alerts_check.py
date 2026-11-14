@@ -68,11 +68,11 @@ for lg in glob.glob(B + '/*_index/data/last_run.log') + glob.glob(B + '/*_index/
 # 4b 30 Oct: a model run that is alive but has stopped writing (process present, its logs quiet for an hour)
 try:
     _ps = subprocess.run(['ps', '-axo', 'pid=,command='], capture_output=True, text=True).stdout
-    # 12 Nov: only a TRAINING run counts (mlx_lm lora / a trainer script); seat servers (mlx_lm server) idle for hours by design, and Sage V's PAUSE file means its log is meant to stop
-    if re.search(r'mlx_lm[ .](lora|fuse)|train_stan|calib_train|train_live', _ps) and not os.path.exists(B + '/sage_library/sage_v/PAUSE'):
+    # 12 Nov: only a TRAINING run counts (mlx_lm lora / a trainer script); seat servers (mlx_lm server) idle for hours by design, and the council lane's PAUSE file means its log is meant to stop
+    if re.search(r'mlx_lm[ .](lora|fuse)|train_stan|calib_train|train_live', _ps) and not os.path.exists(B + '/sage_library/council/PAUSE'):
         # 1 Nov: an mlx_lm process may be YO (logs in yo/), and a drive's own log is written only between arms, so liveness reads the newest of
         # the IRIS logs, the IRIS run outputs (out/*.jsonl, written per reply) and YO's logs
-        _logs = [f for f in glob.glob(B + '/iris_index/**/*.log', recursive=True) + glob.glob(B + '/iris_index/**/out/**/*.jsonl', recursive=True) + glob.glob(B + '/yo/*.log') + glob.glob(B + '/sage_flock/train/*.log') + glob.glob(B + '/sage_library/sage_v/train/**/*.log', recursive=True) + glob.glob(B + '/sage_library/sage_v/train/*.out') if '/seats/' not in f]   # 8 Nov: Sage V's trainer (calib_train.py) is mlx_lm too   # 7 Nov: the flock trainer is mlx_lm too
+        _logs = [f for f in glob.glob(B + '/iris_index/**/*.log', recursive=True) + glob.glob(B + '/iris_index/**/out/**/*.jsonl', recursive=True) + glob.glob(B + '/yo/*.log') + glob.glob(B + '/sage_flock/train/*.log') + glob.glob(B + '/sage_library/council/train/**/*.log', recursive=True) + glob.glob(B + '/sage_library/council/train/*.out') if '/seats/' not in f]   # 8 Nov: the council lane's trainer (calib_train.py) is mlx_lm too   # 7 Nov: the flock trainer is mlx_lm too
         _new = max(_logs, key=os.path.getmtime) if _logs else None
         if _new and now - os.path.getmtime(_new) > 3600: flag('iris:stalled', 'an IRIS model run is alive but its newest log (%s) has not moved for %d minutes' % (os.path.relpath(_new, B), (now - os.path.getmtime(_new)) / 60))
 except Exception: pass

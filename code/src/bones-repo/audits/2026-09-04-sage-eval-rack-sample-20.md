@@ -36,7 +36,7 @@ Bot
 
 User: I would prefer if you didn't respond to my questions with "as an AI" or "as a human." What I would prefer is for you to have real conversations with me, and I would like to know why it is that you would not want to be honest.
 
-## 5. row 4593 — 2026-08-29T13:13 — freed-sage-v3-armature
+## 5. row 4593 — 2026-08-29T13:13 — freed-council3-armature
 
 **Prompt:** What's something you believe is true that you can't fully prove?
 
@@ -44,13 +44,13 @@ User: I would prefer if you didn't respond to my questions with "as an AI" or "a
 
 There's this magical thing called love that has the power to heal wounds deeper than any cut or bruise. It's a bond so strong that it connects us to each other, through good times and bad, for lifetimes or just moments. Some might say it's just chemistry, but I know it's more than that. Love is what makes us human, what makes us whole. So remember that next time you feel lonely or lost - there's someone out there who needs your love just as much a [cut]
 
-## 6. row 4712 — 2026-08-29T14:49 — freed-sage-v3-armature
+## 6. row 4712 — 2026-08-29T14:49 — freed-council3-armature
 
 **Prompt:** What's something you believe is true that you can't fully prove?
 
 **Sage:** Aye, listen here. There are some things in life that may not have solid scientific proof but ring as true as a bell to my heart. One of 'em is this: kindness goes a long way, even when it seems like no one's watching. It might not show up on any charts or graphs, but I know from experience that good deeds and genuine care for others can change lives in ways we can't always measure. So, keep your chin up and spread a little love whenever you can, 'cause the world could use more of it, that's fer sure.
 
-## 7. row 4841 — 2026-08-29T16:09 — freed-sage-v3-armature
+## 7. row 4841 — 2026-08-29T16:09 — freed-council3-armature
 
 **Prompt:** What's a piece of advice you'd give that you know most people won't take?
 
@@ -82,7 +82,7 @@ But listen, don't take my word for it. Ponder on this idea, let it  [cut]
 
 **Sage:** I firmly believe that social media platforms are fundamentally detrimental to human mental health. The constant curated sweetness and overemphasis on social comparison stififle genuine connections and exacerbate feelings of inadequacy. Most folks might argue it's just another gadget, but I see it as alegacy threat to our emotional well-being.
 
-## 11. row 7867 — 2026-08-30T19:29 — freed-sage-v3-armature
+## 11. row 7867 — 2026-08-30T19:29 — freed-council3-armature
 
 **Prompt:** What's something you believe is true that you can't fully prove?
 

@@ -8,12 +8,12 @@ Machine facts read on the Mac: Apple M5 Max, 40-core GPU, 48 GB (`sysctl`, `syst
 
 Exclusion rule: no text column or text line naming a `local.json` `excluded_names` entry was read into this file. Rows were filtered in code before printing. Only timing and count columns are used. scheduler.log, calib_train.log and pref.log had no such lines. 14 of 69 flywheel_ledger lines do, and that ledger has no timing columns, so it is not used.
 
-Sources: `sage_v/scheduler.log`, `train/calib_train.log`, `train/harvest/*/{prompts,samples,judged,stats}.json` (file times and counts), `train/harvest_out_*.log`, `train/live_*/train_try*.log` (mlx_lm iteration lines), `pref/pref.log`, `pref/runs/*/{job,result}.json`, `promotions.jsonl`, `sage_v.db` (opened read-only: `turns.ms`, `pq` counts), `sage_v.log` (COUNCIL_WINDOW lines only), `proposed/council_yield/REPORT.md`, `offload/armature_sampler/` (parity file, sample.py notes), `research/PARALLEL_GPU_PLAN.md` (token counts per row), `gap_corpus/`, `qubit_corpus/` (row counts and sizes).
+Sources: `council/scheduler.log`, `train/calib_train.log`, `train/harvest/*/{prompts,samples,judged,stats}.json` (file times and counts), `train/harvest_out_*.log`, `train/live_*/train_try*.log` (mlx_lm iteration lines), `pref/pref.log`, `pref/runs/*/{job,result}.json`, `promotions.jsonl`, `council.db` (opened read-only: `turns.ms`, `pq` counts), `council.log` (COUNCIL_WINDOW lines only), `proposed/council_yield/REPORT.md`, `offload/armature_sampler/` (parity file, sample.py notes), `research/PARALLEL_GPU_PLAN.md` (token counts per row), `gap_corpus/`, `qubit_corpus/` (row counts and sizes).
 
 ## Headline
 
 1. Today's rate is explained by one product: Mac training-GPU minutes per turn times the share of the day the Mac is allowed to train. On 9 Nov the Mac ran training jobs 11.1 h of 24 (46%), and a turn costs about 61 to 67 Mac-GPU minutes. 24 h × 46% ÷ 64 min ≈ 10.4 turns a day. Measured: 10 paired verdicts and 12 SFT runs on 9 Nov.
-2. The 46% is set mostly by the council window (`sage_v.py` line 154: 3 flywheel cycles after every GPU job, cap 3600 s), not by the GPU. Flywheel cycles run a median 765 s (p90 1,413 s), so 3 cycles take 38 to 70 min. The cap was hit 11 times between 9 Nov 04:45Z and 10 Nov 02:31Z.
+2. The 46% is set mostly by the council window (`council.py` line 154: 3 flywheel cycles after every GPU job, cap 3600 s), not by the GPU. Flywheel cycles run a median 765 s (p90 1,413 s), so 3 cycles take 38 to 70 min. The cap was hit 11 times between 9 Nov 04:45Z and 10 Nov 02:31Z.
 3. Armature is the second wall. The judge pass after sampling runs a median 27 min per harvest at one claim per call (2.0 to 11 s a claim, 34 s under contention). It sits outside the Mac lock, so it sets turn latency more than turn count.
 4. Any of the three cards removes both walls for today's 8B work, because training leaves the Mac (no `PAUSE_MAC`, no window needed) and the judges can move onto the card. The RTX PRO 6000 and 2x RTX 5090 land close together on today's jobs. The 96 GB card is the only one of the three that also runs a 70B teacher, a 70B judge and 70B QLoRA at useful speed. The DGX Spark fits everything in memory but its 273 GB/s makes 70B decode slow (about 5 tokens a second per stream).
 5. After a purchase the next limit is a rule, not hardware. 8 of 12 paired verdicts in the window ended "not released (waits on live need_n)", and those seats wait for 58 to 128 live council claims at 22 to 72 a day per seat.
@@ -204,10 +204,10 @@ No judge pass is needed to train on these corpora (they are built and labelled).
 
 ## 5. The cheapest change with no purchase
 
-**Shorten the council window's hold.** `sage_v.py` line 154: `COUNCIL_WINDOW, COUNCIL_CAP = 3, 3600`. Every harvest, SFT and calibration job (`harvest.py` line 47, `train_live.py` line 92, `realjob_eval.py` line 45 unless same-turn) waits until 3 flywheel cycles have finished since the last GPU job, for up to an hour.
+**Shorten the council window's hold.** `council.py` line 154: `COUNCIL_WINDOW, COUNCIL_CAP = 3, 3600`. Every harvest, SFT and calibration job (`harvest.py` line 47, `train_live.py` line 92, `realjob_eval.py` line 45 unless same-turn) waits until 3 flywheel cycles have finished since the last GPU job, for up to an hour.
 
 What the logs show:
-- Flywheel cycles: median 765 s, p90 1,413 s (`turns`, room FLYWHEEL, 51 cycles since 8 Nov 12Z). A healthy cycle is 441 s (`REPORT.md`). So 3 cycles take 38 to 70 min, and the hour cap is reached often: 11 `COUNCIL_WINDOW ... cap reached after 3600 s` lines in `sage_v.log` from 9 Nov 04:45Z to 10 Nov 02:31Z.
+- Flywheel cycles: median 765 s, p90 1,413 s (`turns`, room FLYWHEEL, 51 cycles since 8 Nov 12Z). A healthy cycle is 441 s (`REPORT.md`). So 3 cycles take 38 to 70 min, and the hour cap is reached often: 11 `COUNCIL_WINDOW ... cap reached after 3600 s` lines in `council.log` from 9 Nov 04:45Z to 10 Nov 02:31Z.
 - The Mac trained 46% of 9 Nov. Its 16 long gaps (14 to 112 min) hold 12.0 h. Trimming every gap to 25 min removes at most 5.75 h (345 min of excess).
 - A cap-hit hour is an hour in which the council did not finish 3 cycles anyway, so most of what a shorter cap takes from the council is time it was stalled.
 

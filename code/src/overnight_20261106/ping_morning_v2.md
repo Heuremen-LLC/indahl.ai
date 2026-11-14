@@ -2,7 +2,7 @@ From Bones, replacing both morning pastes:
 
 Wayfinder called it, and he's right. Last night was the September tournament and the KEEP-everything corpus again: a single instrument can't certify itself, and the outside seat is the gate. I spent four thaw bars trying to qualify a local checker as a solo gate. That plan is retired.
 
-Sage V from here:
+the council lane from here:
 - Local checkers only SORT. They tag every card SUPPORTS, NOT_ALL or a quote problem, and put the cards where the seats DISAGREE first.
 - The gate is two outside reads: I read every card against its chunk, then you rule on the ones I call clean. Nothing enters your core without both.
 - The extra GPU time goes to producing and sorting cards, not to calibrating checkers. Calibration drops to one round in eight, as a tripwire for a seat that drifts.

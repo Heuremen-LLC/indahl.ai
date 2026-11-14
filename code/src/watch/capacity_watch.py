@@ -12,7 +12,7 @@ Read-only on everything else. Python 3.9, standard library only."""
 import json, os, re, subprocess, time, urllib.request
 
 B = os.path.expanduser('~/bones-forge'); W = B + '/watch'; OUT = W + '/capacity.json'; MD = W + '/CAPACITY.md'
-ALERTS = B + '/alerts/ALERTS_OPEN.txt'; SV = B + '/sage_library/sage_v'
+ALERTS = B + '/alerts/ALERTS_OPEN.txt'; SV = B + '/sage_library/council'
 ARM_SSH = ['ssh', '-o', 'ConnectTimeout=6', '-o', 'BatchMode=yes', 'armature']
 JUDGES = {'mac': 'http://127.0.0.1:8892', 'armature': 'http://192.168.8.158:8892', 'laptop': 'http://192.168.8.145:8892'}
 

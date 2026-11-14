@@ -189,9 +189,9 @@ def qia():
     H['qia']['table']['cta'] = dict(text='Check a wait yourself: probe.py', href='/qia/probe.py', rest=' One Python file and your own IBM key. Jobs in front are free, a timed probe costs 2 s of your plan. Source also on ', link2='GitHub', href2='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/qia/probe.py', tail=', needs qiskit-ibm-runtime (PyPI).')
 def lab():
     # 11 Nov 2026 (his "ANY training we do is live on the lab page ... every page should have a live something at top and a data headline"): the newest
-    # paired test of a Sage V seat, and every seat's stage now, from sage_library/sage_v/live_export.json (the allow-listed bytes live_export.py puts to KV sagev_live).
-    if os.path.exists(B + '/sage_library/sage_v/PAUSE') and os.path.exists(B + '/stan/results/baseline_dev.json'):
-        # 12 Nov 2026 (his "close it out on the lab too and make sure Stan is live"): Sage V is paused for STAN, so the lab leads with STAN. Every number is computed from
+    # paired test of a the council lane seat, and every seat's stage now, from sage_library/council/live_export.json (the allow-listed bytes live_export.py puts to KV council_live).
+    if os.path.exists(B + '/sage_library/council/PAUSE') and os.path.exists(B + '/stan/results/baseline_dev.json'):
+        # 12 Nov 2026 (his "close it out on the lab too and make sure Stan is live"): the council lane is paused for STAN, so the lab leads with STAN. Every number is computed from
         # stan/results/baseline_dev.json: the untrained base's pooled agreement with the answer key (development half), and the pooled majority-class rate
         # (n-weighted mean of the per-code rates). Ledger rows stan.baseline.base and stan.baseline.majority.
         # 12 Nov 2026 (Sage break 1): the agreement headline counted CANNOT_TELL as agreeing with an unflagged recount, so it measured abstention.
@@ -204,10 +204,10 @@ def lab():
         names = {'base': 'Untrained base (Qwen3-1.7B)', 'llama': 'Llama 3.1 8B', 'mistral': 'Mistral 7B', 'gemma': 'Gemma 3 4B'}
         rows = [[names.get(k[4:], k[4:]), '%d%%' % round(100 * v['decided_share']), str(v['calls'])] for k, v in ds.items() if k.startswith('dev_')]
         H['iris/lab']['table'] = dict(cols=['Model', 'Calls committed to', 'Calls'], rows=rows,
-                                      note='Development half of the answer key, seven codes pooled. A call is committed when it is present, absent or not applicable rather than cannot tell. Sage V is paused so the machines can train STAN.',
+                                      note='Development half of the answer key, seven codes pooled. A call is committed when it is present, absent or not applicable rather than cannot tell. the council lane is paused so the machines can train STAN.',
                                       cta=dict(text='Watch STAN live', href='/iris/lab#stan', rest=' Results as data: ', link2='GitHub', href2='https://github.com/Heuremen-LLC/stan', tail='.'))
         return
-    d = json.load(open(B + '/sage_library/sage_v/live_export.json'))
+    d = json.load(open(B + '/sage_library/council/live_export.json'))
     pr = sorted([x for x in d.get('paired') or [] if x.get('grounded') and len(x['grounded']) == 4 and None not in x['grounded']], key=lambda x: x['ts'])
     ev = sorted(d.get('events') or [], key=lambda x: x['ts'])
     def outcome(seat, ts):
@@ -242,7 +242,7 @@ def lab():
                      NOW.get(st.get('stage'), st.get('stage') or ''), SERV.get(st.get('status'), st.get('status') or '')])
     H['iris/lab']['table'] = dict(cols=['Seat', 'Quoted claims, base to adapter', 'Last test', 'Now', 'Serving'], rows=rows,
                                   note='Cycle %d of the council. Every turn collects examples, trains a LoRA adapter, then tests it against its own base model on held-out prompts. Updated %s UTC. Every result is also in the public repository.' % (d.get('cycle') or 0, d['updated'][11:16]),
-                                  cta=dict(text='Watch every turn live', href='/iris/lab/live', rest=' Results as data: ', link2='GitHub', href2='https://github.com/Heuremen-LLC/sage-v/tree/main/results', tail='.'))
+                                  cta=dict(text='Watch every turn live', href='/iris/lab/live', rest=' Results as data: ', link2='GitHub', href2='https://github.com/Heuremen-LLC/council/tree/main/results', tail='.'))
 def iris():
     d = feed('hosts'); add('iris', f(d['endpoints']), 'host endpoints serve %d open-weight models. %d were flagged by OpenRouter or showed 5-minute uptime below 100 percent at the last read, %s UTC.' % (d['models'], d['problems_now'], d['updated'][-5:]))
 def water():

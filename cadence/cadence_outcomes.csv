@@ -6,4 +6,4 @@ path,label,outcome,n,of,share,lo,hi,portal,read,datasets_total,stating_cadence,s
 /portals[4],portals[4],,,,,,,Energy,14 Nov 01:51,487,309,130,103,1,102,27,1,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[5],portals[5],,,,,,,Labor,14 Nov 02:00,404,333,264,223,42,181,41,42,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[6],portals[6],,,,,,,HealthCare.gov,14 Nov 02:08,347,122,122,122,26,96,0,26,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
-/portals[7],portals[7],,,,,,,BLS,13 Nov 02:19,31,2,2,2,0,2,0,0,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
+/portals[7],portals[7],,,,,,,BLS,14 Nov 02:26,31,2,2,2,0,2,0,0,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"

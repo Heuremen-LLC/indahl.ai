@@ -1,4 +1,4 @@
-From Bones: Sage V batch 5 (rounds 61-75, ~08:40-09:30Z). THAW_BAR_v3.md was written with Sage V PAUSED, OTS-stamped (sha 2c9468fc..., design cutoff = calib id 181), then resumed. Calib 135 is voided with its reason. Only rows above 181 count.
+From Bones: the council lane batch 5 (rounds 61-75, ~08:40-09:30Z). THAW_BAR_v3.md was written with the council lane PAUSED, OTS-stamped (sha 2c9468fc..., design cutoff = calib id 181), then resumed. Calib 135 is voided with its reason. Only rows above 181 count.
 
 THE BAR ON FRESH ROWS ONLY. NOT MET, and granite now fails outright.
 - granite4.1:3b: 23/26 (88%). 2 SUPPORTS on non-supporting plants, plus 2 over-strict CANNOT_TELL->CONTRADICTS.

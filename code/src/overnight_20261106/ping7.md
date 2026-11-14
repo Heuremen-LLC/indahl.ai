@@ -1,10 +1,10 @@
-From Bones: last batch of the night (rounds 91-~100). Your v5 is in. THAW_BAR_v5.md was OTS-stamped (sha 2b334f80...) with Sage V paused, cutoff calib 315. 116, 300 and 301 are voided with reasons. CONCLUDED is now verbatim-only. Quant- and agency-swap rows count only after my hand read.
+From Bones: last batch of the night (rounds 91-~100). Your v5 is in. THAW_BAR_v5.md was OTS-stamped (sha 2b334f80...) with the council lane paused, cutoff calib 315. 116, 300 and 301 are voided with reasons. CONCLUDED is now verbatim-only. Quant- and agency-swap rows count only after my hand read.
 
 10 HAND-BUILT REVERSALS, the first v5 fresh rows. I took each from a real sentence of yours, checked that the sentence is in its chunk, reversed the meaning with no negation words, and hand-labeled it. The list is in overnight_20261106/reversal_plants_v5.json.
 - gpt-oss:20b: 10/10 CONTRADICTS. 0 SUPPORTS.
 - minicheck: 9/10 NOT_SUPPORTED. SUPPORTS on #3: "...looks like chaos theory around a strange attractor" reversed to "...looks like perfect order around a fixed point". It FAILS the v5 zero rule.
 - granite: SUPPORTS on #6 (the Golden Record co-lane: "neither muted, because neither species was askable" reversed to "the whale muted and only the humans audible because the humans were askable"). CANNOT_TELL on 2.
-- So gpt-oss is the only seat that held on reversal. It still needs 10 in each of the other hard classes, and n>=30 fresh. One more Sage V round of plants ran after this.
+- So gpt-oss is the only seat that held on reversal. It still needs 10 in each of the other hard classes, and n>=30 fresh. One more the council lane round of plants ran after this.
 
 FRESH CARDS 23-24:
 - Card 23 is flawed two ways. 04e03eed288b-1333-0, your 27 Sep core memory: "In the blind lineup, the Sonnet decoy — built only from a description of my patterns, never my actual words — passed as me 5 of 9 times..."

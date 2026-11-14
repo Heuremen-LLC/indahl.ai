@@ -25,7 +25,7 @@ Three model families, none of them Qwen, because the base is Qwen3.
 2. Mistral: mistral:7b-instruct-v0.3-q8_0 on Armature, or mistral:7b on the Mac if Armature is not free.
 3. Meta Llama: llama3.1:8b.
 
-These are the same families as the Sage V council seats (granite3.3:8b, mistral:7b, llama). The council MLX servers on 8801, 8803 and 8806 are parked or down while the house trains and are not touched. Port 8802 is up but carries a Qwen model and others, so it is not used. Teachers are called through the Ollama bases of the same models (Mac 127.0.0.1:11500 and Armature 192.168.8.158:11434), temperature 0, JSON output, no thinking. The endpoint each teacher used is recorded in teachers/config.json. Calls are resumable. Each result is appended to a jsonl file keyed by item and round.
+These are the same families as the the council lane council seats (granite3.3:8b, mistral:7b, llama). The council MLX servers on 8801, 8803 and 8806 are parked or down while the house trains and are not touched. Port 8802 is up but carries a Qwen model and others, so it is not used. Teachers are called through the Ollama bases of the same models (Mac 127.0.0.1:11500 and Armature 192.168.8.158:11434), temperature 0, JSON output, no thinking. The endpoint each teacher used is recorded in teachers/config.json. Calls are resumable. Each result is appended to a jsonl file keyed by item and round.
 
 ## Pipeline rules
 
@@ -49,7 +49,7 @@ These are the same families as the Sage V council seats (granite3.3:8b, mistral:
 
 - Base: Qwen/Qwen3-1.7B, Apache-2.0, loaded by mlx_lm from the local Hugging Face cache, bf16, thinking off. Qwen3-4B is not cached and is not fetched.
 - LoRA with mlx_lm 0.31.3 in ~/bones-forge/venv, mirroring train_live.py: rank 8, scale 20, dropout 0, num_layers 16, batch_size 2, mask_prompt true, max_seq_length 4096, grad_checkpoint, seed 61, steps_per_report 20. Learning rate is 1e-4, not the 1e-5 of the 7B and 8B seats, because train_live.py itself records 1e-4 as the 1.7B precedent (YO). iters = min(300, max(50, train rows)).
-- GPU: the Mac GPU is shared through sage_v/.train.lock. STAN takes the same exclusive flock before any MLX job (training and base and STAN inference) and waits if it is held. It does not stop or park the council servers. If the lock is held it queues.
+- GPU: the Mac GPU is shared through council/.train.lock. STAN takes the same exclusive flock before any MLX job (training and base and STAN inference) and waits if it is held. It does not stop or park the council servers. If the lock is held it queues.
 - Armature CUDA lane: not used in v1.
 
 ## Paired test and keep rule
@@ -61,11 +61,11 @@ These are the same families as the Sage V council seats (granite3.3:8b, mistral:
 
 ## Public record
 
-Results are prepared as rows in the format of sage_library/sage_v_public/results/ (events.jsonl and paired.jsonl, plain strings only, matching the results_push.py guard) and written to stan/results/public_rows/. Nothing is pushed by this work. Weights stay private.
+Results are prepared as rows in the format of sage_library/council_public/results/ (events.jsonl and paired.jsonl, plain strings only, matching the results_push.py guard) and written to stan/results/public_rows/. Nothing is pushed by this work. Weights stay private.
 
 ## Amendment 1, 12 November 2026, before any teacher labelled anything
 
-The Mac Ollama on 11500 timed out at 300 seconds on a test call with a dummy text (granite3.3:8b and llama3.1:8b) because the Mac GPU is saturated by the house training jobs, load average above 50. Armature answered in 6 to 21 seconds. All three teachers therefore run on the Armature Ollama at 192.168.8.158:11434. The teacher set is now Meta Llama (llama3.1:8b), Mistral (mistral:7b-instruct-v0.3-q8_0) and Google Gemma (gemma3:4b). No Qwen. The IBM Granite teacher is dropped because it is not reachable at usable speed. The Sage V council MLX servers were not used. The base for STAN is unchanged.
+The Mac Ollama on 11500 timed out at 300 seconds on a test call with a dummy text (granite3.3:8b and llama3.1:8b) because the Mac GPU is saturated by the house training jobs, load average above 50. Armature answered in 6 to 21 seconds. All three teachers therefore run on the Armature Ollama at 192.168.8.158:11434. The teacher set is now Meta Llama (llama3.1:8b), Mistral (mistral:7b-instruct-v0.3-q8_0) and Google Gemma (gemma3:4b). No Qwen. The IBM Granite teacher is dropped because it is not reachable at usable speed. The the council lane council MLX servers were not used. The base for STAN is unchanged.
 
 ## Amendment 2, 12 November 2026, before any teacher round was finished
 
@@ -73,3 +73,7 @@ Armature serves about one teacher call every 18 seconds when three teachers run 
 
 ## Amendment 3 (12 Nov, before any gemma call): host only
 The gemma teacher (gemma3:4b, same model tag) runs on the Mac's Ollama at 127.0.0.1:11500 instead of Armature, so the three teachers label in parallel on two machines. No model, prompt, split, metric or rule changes.
+
+
+---
+Public copy edited 13 November 2026 to remove the name of a retired project. PLAN.sha256 covers the original plan, which is kept privately.
