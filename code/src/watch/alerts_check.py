@@ -27,7 +27,9 @@ else:
 # 2b CI on the org's repos (30 Oct: the heuremen.org paper workflow sat red four hours unseen): the latest run of each workflow on main
 try:
     GH = '/opt/homebrew/bin/gh'
-    for rp in subprocess.run([GH, 'repo', 'list', 'Heuremen-LLC', '--limit', '50', '--json', 'name', '--jq', '.[].name'], capture_output=True, text=True, timeout=60).stdout.split():
+    _rl = subprocess.run([GH, 'repo', 'list', 'Heuremen-LLC', '--limit', '50', '--json', 'name', '--jq', '.[].name'], capture_output=True, text=True, timeout=60)
+    if _rl.returncode != 0 or not _rl.stdout.split(): flag('ci:unreadable', 'GitHub repo list returned nothing (rc %s): %s' % (_rl.returncode, (_rl.stderr or '')[-120:]))   # 13 Nov trust-but-verify: an empty list read as no failures
+    for rp in _rl.stdout.split():
         seen = set()
         for r in json.loads(subprocess.run([GH, 'run', 'list', '-R', 'Heuremen-LLC/' + rp, '-L', '30', '--branch', 'main', '--json', 'workflowName,conclusion,status,url'], capture_output=True, text=True, timeout=60).stdout or '[]'):
             if r['workflowName'] in seen: continue
@@ -40,14 +42,16 @@ try:
     ps = json.load(open(B + '/ledger/public_push_status.json'))
     if ps.get('rc') == 3: flag('public:pages', 'the ship at %s deployed the site but the public indahl.ai repo got code only, no site pages (ledger/deploy_hash.sh vs the deploy stamp)' % ps.get('at'))
     elif ps.get('ok') is False: flag('public:refused', 'the public repo push at %s was refused or failed: %s' % (ps.get('at'), str(ps.get('last'))[:160]))
-except Exception: pass
+except FileNotFoundError: flag('watcher:public_status', 'ledger/public_push_status.json is missing, so the last public push cannot be checked')
+except Exception as e: flag('watcher:public_status', 'public push status unreadable: ' + type(e).__name__)   # 13 Nov trust-but-verify
 # 2d (10 Nov): the follow channels. websub_ping.py (after each ship and each desk feed push), webhooks_send.py and push_send.py write
 # notify_state/<name>_status.json. A ping that failed, or a sender run that could not read the ledger or its list, stays open until a later run is ok.
 for _n in ('websub', 'webhooks', 'push', 'alert_guard', 'canary', 'transparency'):   # 10 Nov: alert_guard = an alert refused for an unpublished number, canary = our own webhook missed, got late or mismatched an alert, transparency = the counts could not be written (indahl-ai/alert_receipts.py, canary.py, transparency.py)
     try:
         _st = json.load(open(B + '/notify_state/%s_status.json' % _n))
         if _st.get('ok') is False: flag('notify:' + _n, '%s at %s: %s' % (_n, _st.get('at'), str(_st.get('failed') or _st.get('what'))[:200]))
-    except Exception: pass
+    except FileNotFoundError: pass   # a channel that has never run has no status file yet
+    except Exception as e: flag('watcher:notify_' + _n, '%s status unreadable: %s' % (_n, type(e).__name__))   # 13 Nov trust-but-verify
 # 3 STACK rows that returned nothing (some are expected for a while)
 EXPECTED_EMPTY = {'WEIGHTS', 'AILUMINATE', 'HOSTS'}
 st = j('https://indahl.ai/stack/live.json')
@@ -75,7 +79,7 @@ try:
         _logs = [f for f in glob.glob(B + '/iris_index/**/*.log', recursive=True) + glob.glob(B + '/iris_index/**/out/**/*.jsonl', recursive=True) + glob.glob(B + '/yo/*.log') + glob.glob(B + '/sage_flock/train/*.log') + glob.glob(B + '/sage_library/council/train/**/*.log', recursive=True) + glob.glob(B + '/sage_library/council/train/*.out') if '/seats/' not in f]   # 8 Nov: the council lane's trainer (calib_train.py) is mlx_lm too   # 7 Nov: the flock trainer is mlx_lm too
         _new = max(_logs, key=os.path.getmtime) if _logs else None
         if _new and now - os.path.getmtime(_new) > 3600: flag('iris:stalled', 'an IRIS model run is alive but its newest log (%s) has not moved for %d minutes' % (os.path.relpath(_new, B), (now - os.path.getmtime(_new)) / 60))
-except Exception: pass
+except Exception as e: flag('watcher:training_liveness', 'training liveness check failed: ' + type(e).__name__)   # 13 Nov trust-but-verify
 # 4c (10 Nov, owner: "you've swept our shit four or five times, how'd you miss that?"): process sweeps only asked whether a process should exist.
 # The Armature judge server was alive and wanted but its settings put qwen3:8b on the CPU (0 GPU bytes), and the CHECK rooms hung 4.5 h.
 # Check placement, not just presence: a GPU-meant model loaded with less than all of itself in VRAM is an alert.
@@ -107,7 +111,7 @@ try:
         p = line.split('\t')
         if len(p) == 3 and p[2] in ('com.heuremen.qia-audit', 'com.heuremen.tick-bus') and p[1] not in ('0', '-') and p[0] == '-':   # 30 Oct: a running job (PID present) keeps its last exit code after a restart; only a job that is down counts
             flag('launchd:' + p[2], '%s last exit status %s' % (p[2], p[1]))
-except Exception: pass
+except Exception as e: flag('watcher:launchd', 'launchctl list could not be read: ' + type(e).__name__)   # 13 Nov trust-but-verify
 # state: open, closed, with history
 op = json.load(open(A + '/open.json')) if os.path.exists(A + '/open.json') else {}
 hist = open(A + '/history.jsonl', 'a')
