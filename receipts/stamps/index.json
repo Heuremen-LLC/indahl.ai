@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-14T13:19:16Z",
+ "built_utc": "2026-11-14T13:25:31Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 100,
+   "commit": "75b7de98b598ae59a269b512778d9218a9132e7f",
+   "files": 6023,
+   "id": "75b7de98b598",
+   "json": "/receipts/stamps/release_75b7de98b598.json",
+   "ledger_sha256": "ed8b419ee716291cde3ce0dbdb1c12b66b58fa8ffe08f3d977712e36b2658b76",
+   "manifest_sha256": "12d0936d26fb86d7c267a9ad8bcc53a82bdb7e7739368f6512b32e68588a6125",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-14T13:25:31Z",
+   "sha256": "4536f3a0d443a57a04cdb970379d9e009ec9aaf76af123d1e9693edb39c766a4",
+   "wayback": [],
+   "wayback_waiting": 98
+  },
   {
    "changed": 88,
    "commit": "f3e54d7fab8ff8e887674fcaf57cba5459d78ff4",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-14T13:19:16Z",
    "sha256": "35ba98a244e40d1bd65bd6024a4dc10001db31402afddddfee15176db99def67",
    "wayback": [],
-   "wayback_waiting": 87
+   "wayback_waiting": 9
   },
   {
    "changed": 109,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-14T13:14:09Z",
    "sha256": "05dbcce9b02d3b47f2df3188398818e5b3bd495e87022efc3dcaf97e103ee2fa",
    "wayback": [],
-   "wayback_waiting": 30
+   "wayback_waiting": 22
   },
   {
    "changed": 88,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-14T13:08:22Z",
    "sha256": "299bd0a3b5bf3eab2c4825900d619f3f8ba44aeaeffa4302be25e191997b3d21",
    "wayback": [],
-   "wayback_waiting": 3
+   "wayback_waiting": 2
   },
   {
    "changed": 56,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-14T13:03:14Z",
    "sha256": "bf3132948eb29b1b4605bc61561fa776f6ca8c7bec7418f604d3cb1f895ed48e",
    "wayback": [],
-   "wayback_waiting": 4
+   "wayback_waiting": 1
   },
   {
    "changed": 124,
@@ -90,7 +105,7 @@
    "released_at": "2026-11-14T12:52:36Z",
    "sha256": "6adc560ac9664e982a8e01a19ad497ee0204bf40aa652fe9a4b9299244f3a5ef",
    "wayback": [],
-   "wayback_waiting": 242
+   "wayback_waiting": 241
   },
   {
    "changed": 88,
@@ -120,7 +135,7 @@
    "released_at": "2026-11-14T12:06:03Z",
    "sha256": "f746542623225e084fac3c2c56868b2c9f0dd9991a41b70f37c79d447527889b",
    "wayback": [],
-   "wayback_waiting": 6
+   "wayback_waiting": 1
   },
   {
    "changed": 99,
@@ -1938,7 +1953,7 @@
      "url": "https://indahl.ai/petrol"
     }
    ],
-   "wayback_waiting": 3235
+   "wayback_waiting": 3234
   },
   {
    "changed": 129,
