@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-14T02:05:57Z",
+ "built_utc": "2026-11-14T02:15:23Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 307,
+   "commit": "527b2d8a1afa2ce011d023fc130260559e940450",
+   "files": 5980,
+   "id": "527b2d8a1afa",
+   "json": "/receipts/stamps/release_527b2d8a1afa.json",
+   "ledger_sha256": "5e24279da67db9e5aa3e1d9da12c10594569501f553407438eff3d5f5176ae5c",
+   "manifest_sha256": "6d1ec2b22db252c0d24655b3b3d30810b049275041cf7e4647f135f52b6c875d",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-14T02:15:23Z",
+   "sha256": "12983b92083c61ebffb9d98864f20f13aeee5390f9a18a0704d3bfaa51540d52",
+   "wayback": [],
+   "wayback_waiting": 303
+  },
   {
    "changed": 124,
    "commit": "ad45176fcfdb6d0f235d488ddba0bd38125ac4e3",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-14T02:04:33Z",
    "sha256": "5bcabdc9ce89b15c1bd484d2231664ee2712342a5546ed9385b7ec368c7c8047",
    "wayback": [],
-   "wayback_waiting": 122
+   "wayback_waiting": 20
   },
   {
    "changed": 165,
@@ -281,7 +296,7 @@
      "url": "https://indahl.ai/brand/metas.csv"
     }
    ],
-   "wayback_waiting": 56
+   "wayback_waiting": 55
   },
   {
    "changed": 214,
@@ -296,7 +311,7 @@
    "released_at": "2026-11-14T01:32:53Z",
    "sha256": "6a68b769b32740d319dda661c2b7c30ecac4c50f7c496eb5aa53f96dac887c07",
    "wayback": [],
-   "wayback_waiting": 54
+   "wayback_waiting": 33
   },
   {
    "changed": 229,
@@ -447,7 +462,7 @@
      "url": "https://indahl.ai/changelog.xml"
     }
    ],
-   "wayback_waiting": 98
+   "wayback_waiting": 96
   },
   {
    "changed": 760,
@@ -462,7 +477,7 @@
    "released_at": "2026-11-14T00:53:17Z",
    "sha256": "bf9a645331e2dea1140b21a54a36505daad9d5553bd5e7d76db853396b85e07f",
    "wayback": [],
-   "wayback_waiting": 668
+   "wayback_waiting": 667
   },
   {
    "changed": 5035,
@@ -728,7 +743,7 @@
      "url": "https://indahl.ai/petrol"
     }
    ],
-   "wayback_waiting": 4073
+   "wayback_waiting": 3914
   },
   {
    "changed": 129,
@@ -1009,7 +1024,7 @@
    "released_at": "2026-11-13T23:47:52Z",
    "sha256": "bb3bf5160d467c4e4d01019a51a7e6359386c475f1c1819ad10bf5f1c83788ee",
    "wayback": [],
-   "wayback_waiting": 8
+   "wayback_waiting": 1
   },
   {
    "changed": 97,
@@ -1761,7 +1776,7 @@
    "released_at": "2026-11-13T14:13:30Z",
    "sha256": "bbe02d71e655215af4717d749aa2202826823b24bdf1f6a75e004a2c64784149",
    "wayback": [],
-   "wayback_waiting": 18
+   "wayback_waiting": 17
   },
   {
    "changed": 5026,
@@ -2805,7 +2820,7 @@
      "url": "https://indahl.ai/airline/airline-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 10
+   "wayback_waiting": 9
   },
   {
    "changed": 4865,

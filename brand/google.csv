@@ -1,6 +1,6 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-Google,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.google.com,Its statement,stated bound 0.11 ms,"offset 3.61 ms, path half-delay 11.53 ms",,CANNOT TELL,,14 Nov 02:08,
-Google,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time1.google.com,Its statement,stated bound 0.11 ms,"offset 3.56 ms, path half-delay 10.48 ms",,CANNOT TELL,,14 Nov 02:08,
+Google,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time.google.com,Its statement,stated bound 0.11 ms,"offset 3.61 ms, path half-delay 11.48 ms",,CANNOT TELL,,14 Nov 02:15,
+Google,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,time1.google.com,Its statement,stated bound 0.11 ms,"offset 3.56 ms, path half-delay 10.48 ms",,CANNOT TELL,,14 Nov 02:15,
 Google,CHANGE,https://indahl.ai/change,"When a vendor says something ends on a date, does the date hold?",gemini-2.5-pro,Its statement,shutdown date stated: 2026-12-01,17 days left at the read,,"not passed yet, so not in the test",,14 Nov 02:08,
 Google,CHANGE,https://indahl.ai/change,"When a vendor says something ends on a date, does the date hold?",gemini-2.5-flash,Its statement,shutdown date stated: 2026-12-01,17 days left at the read,,"not passed yet, so not in the test",,14 Nov 02:08,
 Google,CHANGE,https://indahl.ai/change,"When a vendor says something ends on a date, does the date hold?",gemini-omni-1.1-flash,Its statement,shutdown date stated: 2026-12-03,19 days left at the read,,"not passed yet, so not in the test",,14 Nov 02:08,
