@@ -35,8 +35,8 @@
   "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py"
  },
  "silent-failure-guard/scripts/watch_guard.py": {
-  "commit": "6031b8046f37c0e1ca11e5e5b3ba01b66250dffa",
-  "sha256": "b202788bc366eaa91c1fb936748676121afd7290a90b1350dca6fde639c97091",
-  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/6031b8046f37c0e1ca11e5e5b3ba01b66250dffa/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py"
+  "commit": "c6d8603c678d2053aaa4d184ddddb6affd93e75e",
+  "sha256": "9d791982654be52e6adb59c31ea2980c47a19836f2faebea392032c5e0295014",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/c6d8603c678d2053aaa4d184ddddb6affd93e75e/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py"
  }
 }
