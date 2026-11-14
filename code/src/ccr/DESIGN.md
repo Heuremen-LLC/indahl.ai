@@ -1,10 +1,12 @@
-# Indahl CCR: Custody Chain Receipts (design note v6, 14 Nov 2026, before any code)
+# Indahl CCR: Custody Chain Receipts (design note v8, 14 Nov 2026, before any code)
 
 v2 applied Sage's MOVES on v1. v3 applied her three MOVES on v2: the race definition, what anchoring can and cannot catch, and approvals
 computed by ccr with a scope. v4 applies her three MOVES on v3: range approvals located by content, when a race between two reads is
 shown, and a heartbeat that does not depend on the hooks it checks. v5 applies her four MOVES on v4: approved bytes in a side store, MOVED
 as its own outcome, the cross-check listing the transcript directory itself, and the specimen stated as a counterfactual. v6 applies her three MOVES on v5: release verifies the side store against the
-chain before searching, missing bytes split into REDACTED and UNLOGGED_REMOVAL, and `ccr why` names what it compares. Her verbatim reviews are kept in ccr/private/. Every place v1 said "shown" where it meant "inferred" is
+chain before searching, missing bytes split into REDACTED and UNLOGGED_REMOVAL, and `ccr why` names what it compares. v7 answers her two last watches: which bytes the
+integrity check hashes when a normalisation is declared, and where push time comes from. v8 applies her three MOVES on the push-time
+paragraph: the raw events response is kept, GitHub's time governs, and the event must contain the controls commit. Her verbatim reviews are kept in ccr/private/. Every place v1 said "shown" where it meant "inferred" is
 split below into what the chain SHOWS and what a reader JUDGES.
 
 Wayfinder named it. Banks hold back on agents partly because nothing answers "who did this" with proof, so blame lands on the newest
@@ -31,9 +33,12 @@ was actually read. A range approval never stands in for the whole file, and it i
   Found more than once reads CANNOT_TELL (ambiguous). Not found reads CHANGED.
 - Release also reports every released line that no approval covered, for example "approved lines unchanged, 6 lines shipped outside
   any approval". A range approval never passes silently.
-- Matching is on exact bytes, unless a normalisation (such as line endings) is declared in the entry.
+- Matching is on exact bytes, unless a normalisation (such as line endings) is declared in the entry. The integrity check always
+  hashes the stored raw bytes against the chain. A declared normalisation applies only to the search, never to the integrity check.
 Had today's review been a `ccr approve` of lines 36-100, release would read CHANGED: the new paragraph landed inside the reviewed span,
-so the approved block would not be found. No `ccr approve` existed today, so this is a counterfactual, not a result (see the replay). `ccr why` compares the approval bindings with the release bindings. "Approved A, deployed B" is SHOWN only where both bindings exist. Anything
+so the approved block would not be found. No `ccr approve` existed today, so this is a counterfactual, not a result (see the replay).
+
+`ccr why` compares the approval bindings with the release bindings. "Approved A, deployed B" is SHOWN only where both bindings exist. Anything
 without a declared binding is INFERRED and labelled so. This is the part a bank needs, and it is v1.
 
 ## One entry
@@ -100,8 +105,20 @@ defined before running:
 - an unattributed edit from an editor outside the hooks. It must read UNATTRIBUTED.
 
 The race window, its sensitivity range and both controls go in their own commit, pushed before the replay runs. Push time is witnessed by
-the remote's recorded push time, never the commit date. The replay's first run comes after that push, and the receipt names both times
-and the controls commit hash.
+the remote's own record of the push, never the commit date, which the committer sets. A git remote stores no push time, so the source
+is named: GitHub's repository events API (the PushEvent created_at), with the TAPE line written by the push hook as a second record.
+- The events API keeps only about 90 days and a capped number of events. The raw API response is captured at replay time, stored,
+  and its sha256 goes in the receipt, so the receipt stays checkable after the API forgets.
+- GitHub's time governs. TAPE alone reads "self-witnessed ordering", never outside-witnessed. If both are readable and disagree by more
+  than 120 seconds, the receipt reports the disagreement and does not pick one. If neither can be read, it reads CANNOT_TELL.
+- The PushEvent counts only if it pushed the controls commit: its head equals the controls commit, or the controls commit is reachable
+  from head and was not reachable from the event's before. Otherwise "pushed before" reads CANNOT_TELL.
+
+The replay's first run comes after that push, and the receipt names both times
+and the controls commit hash. The run's start time needs a named source too. It is the first ccr entry of the replay run, anchored by a
+public push made at the run's start and read back through the same events API. A start time from this machine's clock alone reads
+"self-clocked", and the comparison then reads "half outside-witnessed", never "pushed before". A missing start record reads
+CANNOT_TELL.
 
 The replay states what today's record can and cannot show. The review of version A was a line-range read with no file hash (the
 shasum exited 1, and the hands_log hash covers a line-numbered excerpt, not the file bytes). So "approved A" is INFERRED, "Edit wrote B"

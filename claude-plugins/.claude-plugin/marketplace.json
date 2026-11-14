@@ -216,6 +216,14 @@
       "version": "1.0.0",
       "category": "productivity",
       "homepage": "https://indahl.ai/connect"
+    },
+    {
+      "name": "indahl-ccr",
+      "source": "./src/ccr",
+      "description": "Custody chain receipts for agent work. A hash-chained record in .ccr/ of every prompt, tool call, denied call, read and write, with approvals and releases bound to the hashes they cover. Release reads SAME, MOVED, CHANGED, CANNOT_TELL or GAP and lists shipped lines no approval covered. Attribution is shown from the record and cause is left to a named judge. Nothing is sent outside your project.",
+      "version": "1.0.0",
+      "category": "security",
+      "homepage": "https://indahl.ai/connect"
     }
   ]
 }

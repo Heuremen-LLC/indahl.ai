@@ -1,0 +1,75 @@
+{
+  "description": "Indahl CCR: records each tool call, read, write and prompt into a hash-chained custody record in .ccr/. Does nothing until `ccr init` starts a chain in the project. Never blocks a tool call.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; $P -c 1 >/dev/null 2>&1 || exit 0; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/ccr.py\" hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; $P -c 1 >/dev/null 2>&1 || exit 0; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/ccr.py\" hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; $P -c 1 >/dev/null 2>&1 || exit 0; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/ccr.py\" hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; $P -c 1 >/dev/null 2>&1 || exit 0; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/ccr.py\" hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; $P -c 1 >/dev/null 2>&1 || exit 0; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/ccr.py\" hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; $P -c 1 >/dev/null 2>&1 || exit 0; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/ccr.py\" hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
