@@ -1102,3 +1102,4 @@
 {"id": "dbs5lmejjaos73ajq8f0", "backend": "ibm_chicago", "created": "2026-11-14T12:58:01.561466Z", "wait_s": 1.949858}
 {"id": "dbs5llok09pc73avpg1g", "backend": "ibm_boston", "created": "2026-11-14T12:57:59.964045Z", "wait_s": 1.320904}
 {"id": "dbs603gk09pc73avpqdg", "backend": "ibm_chicago", "created": "2026-11-14T13:20:14.349143Z", "wait_s": 1.720553}
+{"id": "dbs603ujjaos73ajqir0", "backend": "ibm_phoenix", "created": "2026-11-14T13:20:15.738921Z", "wait_s": 510.752813}
