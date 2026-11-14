@@ -1,0 +1,35 @@
+name = "heuremen-door"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[[rules]]
+type = "Text"
+globs = ["**/*.html", "**/*.css", "**/*.svg"]
+fallthrough = true
+
+[[kv_namespaces]]
+binding = "INDAHL_INQUIRIES"
+id = "034b2ec99c3843099b3d5888d9e246d0"
+
+[[send_email]]
+name = "INQUIRY_MAIL"
+destination_address = "indahl@heuremen.com"
+
+[vars]
+INQUIRY_TO = "indahl@heuremen.com"
+INQUIRY_FROM = "inquiries@indahl.ai"
+
+[[kv_namespaces]]
+binding = "IRIS_BENCH"
+id = "ecb59d96b07c43bdac14271687eae5af"
+
+[[d1_databases]]
+binding = "tape_commits"
+database_name = "tape-commits"
+database_id = "c7eb5dcd-6b9d-46b4-bafe-8123017d7079"
