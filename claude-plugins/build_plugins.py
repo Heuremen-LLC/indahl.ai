@@ -15,7 +15,9 @@ matching published copy keeps its old pin and is reported STALE (ship first, the
 import hashlib, json, os, re, shutil, subprocess, sys, urllib.request, filecmp
 H = os.path.dirname(os.path.abspath(__file__)); SRC = os.path.join(H, 'src'); P = os.path.join(H, 'plugins'); PINS = os.path.join(H, 'pins.json')
 REPO = 'Heuremen-LLC/indahl.ai'; RAW = 'https://raw.githubusercontent.com/' + REPO + '/{commit}/{path}'
-PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause', 'silent-failure-guard', 'relay']
+# 14 Nov 2026: built from the marketplace, not a hand list (indahl-rubicon and indahl-spend-cap were missing from the old list, so no directory copy was ever made)
+PARTS = [e['source'].split('/src/', 1)[1] for e in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.claude-plugin', 'marketplace.json')))['plugins'] if e.get('source', '').startswith('./src/')]
+_OLD_PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause', 'silent-failure-guard', 'relay']
 SKIPDIR = {'__pycache__'}; LIC = {'LICENSE', 'LICENSE.txt', 'LICENSE-STANDARD.txt', 'NOTICE.txt'}
 sha = lambda b: hashlib.sha256(b).hexdigest()
 

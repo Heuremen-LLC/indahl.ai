@@ -48,7 +48,7 @@ each seat's cited evidence yourself, using the source-check procedure (the indah
 does it say what the seat claims, which version was read. Mark each one SUPPORTS, PARTIAL, CONTRADICTS, SILENT, NOT_FOUND or CANNOT_TELL.
 A seat is grounded only if at least one of its citations reads SUPPORTS. A seat whose evidence is only PARTIAL, SILENT, NOT_FOUND,
 CONTRADICTS or CANNOT_TELL is UNGROUNDED, and the receipt says which citation failed. A computation counts as evidence only if you rerun it and get
-the seat's result.
+the seat's result. One that cannot be rerun reads CANNOT_TELL, never grounded.
 
 ## 3. Read the three readings item by item
 
