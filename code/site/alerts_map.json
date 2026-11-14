@@ -1031,12 +1031,6 @@
 "trials"
 ]
 ],
-"shopify": [
-"Shopify",
-[
-"secrecords"
-]
-],
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": [
 "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
 [
@@ -6686,13 +6680,6 @@
 "name": "Shire",
 "url": "/brand/shire"
 },
-"shopify": {
-"feed": true,
-"kind": "company",
-"kword": "company",
-"name": "Shopify",
-"url": "/brand/shopify"
-},
 "sidney-kimmel-comprehensive-cancer-center-at-johns-hopkins": {
 "feed": true,
 "kind": "organisation",
@@ -7464,7 +7451,7 @@
 "campus": {
 "div": "oy",
 "every": "checked about every 2 hours",
-"every_min": 149,
+"every_min": 150,
 "mode": "outcome",
 "name": "CAMPUS",
 "src": "rider",
@@ -7500,7 +7487,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3736,
+"every_min": 3747,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7601,7 +7588,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3612,
+"every_min": 3622,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7686,7 +7673,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 141,
+"every_min": 142,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -7695,7 +7682,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 598,
+"every_min": 600,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7742,7 +7729,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 548,
+"every_min": 550,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7760,7 +7747,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 548,
+"every_min": 550,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7787,7 +7774,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 461,
+"every_min": 462,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7814,7 +7801,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 548,
+"every_min": 550,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7850,7 +7837,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 461,
+"every_min": 462,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",

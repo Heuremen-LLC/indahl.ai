@@ -642,3 +642,72 @@ number-record census.retail.countedin: Counted in, advance retail would read sec
 number-record census.samerelease: In three months the second print came in the same release as the first (September 2025, November 2025 and February 2026), so those rows show no revision. With them left out, sales read 114 of 114, starts 114 of 114 and completions 112 of 114
 number-record census.frame: The frame has 5,031 rows from 2016-01 to 2026-09
 number-record census.widths: began on 2026-11-11. Until a month has a copy made within three days of its release, its width is the one served now, and the table says so in the Width column. 0 rows have a width as printed
+
+## 2026-11-14 01:31 CENSUS desk refresh record: the cell table and the other printed numbers as shipped (durable source for the census.* ledger rows)
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: every line below is read from summary_census.json of the run at 2026-11-14T06:19:24Z, the same run census_revisions.html prints, and equals the table row on the page (make_rows.py asserts the 39 rows against the 39 cells)
+- II: n/a: no comparison between two runs, a table copied as shipped
+- III: holds: above and below are separate columns in every line, cannot tell never in a share
+- V: holds: one ruler, the stated 90 percent half-width of the first print, with the outcome against 90 percent read on a 95 percent Wilson interval
+- VI: holds: outcomes as the plan states them, the page holds the four outcomes and each cell's cannot tell count beside it
+- R: holds: counts from the summary of 2026-11-14T06:19:24Z, no number typed by hand, post-data additions are listed in the entry before this one
+- P1: n/a: no quoted text in this record
+- P2: holds: each line names series, geography and step, the page names the run date
+- P3: holds: labels as the page prints them
+- P4: holds: no cause named
+- P5: holds: every share has its 95 percent Wilson interval in the line
+- P6: holds: the lines say what the table says and nothing stronger
+- P7: holds: ledger rows added staged, flipped to live in the ship's own lock, release through ledger/ship.sh
+- P8: holds: rows compared with the rendered page text by check_ledger.py at the gate
+- P9: holds: plain lines, no semicolons
+- P10: n/a: no rule set after the data in this record
+cell-record: cell SALES US S1: 117 of 117 inside, 0 above, 0 below, 12 cannot tell, share 1.0000, interval 0.9682 to 1.0000, ABOVE
+cell-record: cell SALES US S2: 105 of 105 inside, 0 above, 0 below, 24 cannot tell, share 1.0000, interval 0.9647 to 1.0000, ABOVE
+cell-record: cell SALES US S3: 126 of 128 inside, 1 above, 1 below, 1 cannot tell, share 0.9844, interval 0.9448 to 0.9957, ABOVE
+cell-record: cell STARTS US S1: 117 of 117 inside, 0 above, 0 below, 12 cannot tell, share 1.0000, interval 0.9682 to 1.0000, ABOVE
+cell-record: cell STARTS US S2: 104 of 105 inside, 1 above, 0 below, 24 cannot tell, share 0.9905, interval 0.9480 to 0.9983, ABOVE
+cell-record: cell STARTS US S3: 127 of 128 inside, 1 above, 0 below, 1 cannot tell, share 0.9922, interval 0.9571 to 0.9986, ABOVE
+cell-record: cell COMPLETIONS US S1: 115 of 117 inside, 1 above, 1 below, 12 cannot tell, share 0.9829, interval 0.9398 to 0.9953, ABOVE
+cell-record: cell COMPLETIONS US S2: 105 of 105 inside, 0 above, 0 below, 24 cannot tell, share 1.0000, interval 0.9647 to 1.0000, ABOVE
+cell-record: cell COMPLETIONS US S3: 124 of 128 inside, 3 above, 1 below, 1 cannot tell, share 0.9688, interval 0.9224 to 0.9878, ABOVE
+cell-record: cell RETAIL US S1: 112 of 115 inside, 3 above, 0 below, 14 cannot tell, share 0.9739, interval 0.9261 to 0.9911, ABOVE
+cell-record: cell RETAIL US S2: 99 of 104 inside, 5 above, 0 below, 25 cannot tell, share 0.9519, interval 0.8924 to 0.9793, CANNOT_TELL STRADDLES_EDGE
+cell-record: cell RETAIL US S3: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell SALES Northeast S1: 113 of 117 inside, 4 above, 0 below, 12 cannot tell, share 0.9658, interval 0.9154 to 0.9866, ABOVE
+cell-record: cell SALES Northeast S2: 97 of 105 inside, 8 above, 0 below, 24 cannot tell, share 0.9238, interval 0.8568 to 0.9609, CANNOT_TELL STRADDLES_EDGE
+cell-record: cell SALES Northeast S3: 119 of 128 inside, 9 above, 0 below, 1 cannot tell, share 0.9297, interval 0.8718 to 0.9626, CANNOT_TELL STRADDLES_EDGE
+cell-record: cell SALES Midwest S1: 117 of 117 inside, 0 above, 0 below, 12 cannot tell, share 1.0000, interval 0.9682 to 1.0000, ABOVE
+cell-record: cell SALES Midwest S2: 105 of 105 inside, 0 above, 0 below, 24 cannot tell, share 1.0000, interval 0.9647 to 1.0000, ABOVE
+cell-record: cell SALES Midwest S3: 126 of 128 inside, 2 above, 0 below, 1 cannot tell, share 0.9844, interval 0.9448 to 0.9957, ABOVE
+cell-record: cell SALES South S1: 117 of 117 inside, 0 above, 0 below, 12 cannot tell, share 1.0000, interval 0.9682 to 1.0000, ABOVE
+cell-record: cell SALES South S2: 104 of 105 inside, 1 above, 0 below, 24 cannot tell, share 0.9905, interval 0.9480 to 0.9983, ABOVE
+cell-record: cell SALES South S3: 126 of 128 inside, 1 above, 1 below, 1 cannot tell, share 0.9844, interval 0.9448 to 0.9957, ABOVE
+cell-record: cell SALES West S1: 116 of 117 inside, 1 above, 0 below, 12 cannot tell, share 0.9915, interval 0.9532 to 0.9985, ABOVE
+cell-record: cell SALES West S2: 105 of 105 inside, 0 above, 0 below, 24 cannot tell, share 1.0000, interval 0.9647 to 1.0000, ABOVE
+cell-record: cell SALES West S3: 125 of 128 inside, 3 above, 0 below, 1 cannot tell, share 0.9766, interval 0.9334 to 0.9920, ABOVE
+cell-record: cell STARTS Northeast S1: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS Northeast S2: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS Northeast S3: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS Midwest S1: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS Midwest S2: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS Midwest S3: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS South S1: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS South S2: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS South S3: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS West S1: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS West S2: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell STARTS West S3: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell PERMITS US S1: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell PERMITS US S2: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+cell-record: cell PERMITS US S3: 0 of 0 inside, 0 above, 0 below, 129 cannot tell, share 0.0000, interval 0.0000 to 1.0000, CANNOT_TELL NO_INTERVAL_FORMABLE
+number-record census.revision.median: new residential sales 3.1 percent of the first print, or 0.22 stated half-widths, housing starts 1.2 percent of the first print, or 0.14 stated half-widths, housing completions 1.5 percent of the first print, or 0.16 stated half-widths, advance retail and food services 0.2 percent of the first print, or 0.19 stated half-widths
+number-record census.revision.sensitivity: new residential sales 100.0 to 99.1, housing starts 100.0 to 100.0, housing completions 99.1 to 98.3, advance retail and food services 97.4 to 96.5 percent
+number-record census.revision.p90: new residential sales 0.54 and 0.65, housing starts 0.40 and 0.49, housing completions 0.46 and 0.47, advance retail and food services 0.46 and 0.57.
+number-record census.revision.scaled: Cutting every stated half-width to two thirds would leave the national cells at 90.5 to 99.1 percent inside. Cutting them to half would take them to 75.2 to 94.9 percent
+number-record census.retail.apr2025: It changed 159 months by a median of 1.8 percent and at most 2.2 percent
+number-record census.retail.sep2026: It changed 140 months by a median of 0.1 percent and at most 4.7 percent. The sealed rule
+number-record census.retail.countedin: Counted in, advance retail would read second print 124 of 128 inside (92.2 to 98.8 percent, above) and third print 118 of 127 inside (87.1 to 96.2 percent, straddles)
+number-record census.samerelease: In three months the second print came in the same release as the first (September 2025, November 2025 and February 2026), so those rows show no revision. With them left out, sales read 114 of 114, starts 114 of 114 and completions 112 of 114
+number-record census.frame: The frame has 5,031 rows from 2016-01 to 2026-09
+number-record census.widths: began on 2026-11-11. Until a month has a copy made within three days of its release, its width is the one served now, and the table says so in the Width column. 0 rows have a width as printed
