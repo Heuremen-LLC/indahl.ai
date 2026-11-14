@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-14T02:42:54Z",
+ "built_utc": "2026-11-14T02:48:36Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 100,
+   "commit": "10646b58c784993ebd194ddc4cb37906523410b0",
+   "files": 5984,
+   "id": "10646b58c784",
+   "json": "/receipts/stamps/release_10646b58c784.json",
+   "ledger_sha256": "a199fd0c523cd9a0ff2905a97883ca75ae78547456d4b28117eef082108eb30b",
+   "manifest_sha256": "716e5622bb0aa8d4b7ec019df3abcd6c8a2527ef7a7d2374d0d603c3b7581d65",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-14T02:48:36Z",
+   "sha256": "dbba8885d5637bd0251113df746407cbcecec874f6b58c5f35fcf5e4cb7ac6c7",
+   "wayback": [],
+   "wayback_waiting": 98
+  },
   {
    "changed": 210,
    "commit": "8eb90a0f63bc694ccc6b53af485d1731b7a20956",
@@ -14,8 +29,89 @@
    "ots_status": "none",
    "released_at": "2026-11-14T02:42:54Z",
    "sha256": "528458ad59fa1aa0ad5cfa1b1a0275a71b3b7d0b7b513143528afce2dc4cd209",
-   "wayback": [],
-   "wayback_waiting": 208
+   "wayback": [
+    {
+     "capture": "https://web.archive.org/web/20261114000938/https://indahl.ai/iris",
+     "timestamp": "20261114000938",
+     "url": "https://indahl.ai/iris"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001009/https://indahl.ai/oy",
+     "timestamp": "20261114001009",
+     "url": "https://indahl.ai/oy"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001042/https://indahl.ai/atlas",
+     "timestamp": "20261114001042",
+     "url": "https://indahl.ai/atlas"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001113/https://indahl.ai/tape",
+     "timestamp": "20261114001113",
+     "url": "https://indahl.ai/tape"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001245/https://indahl.ai/arxivdrift",
+     "timestamp": "20261114001245",
+     "url": "https://indahl.ai/arxivdrift"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001316/https://indahl.ai/cada",
+     "timestamp": "20261114001316",
+     "url": "https://indahl.ai/cada"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001346/https://indahl.ai/cadence",
+     "timestamp": "20261114001346",
+     "url": "https://indahl.ai/cadence"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001417/https://indahl.ai/changelog",
+     "timestamp": "20261114001417",
+     "url": "https://indahl.ai/changelog"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001449/https://indahl.ai/downloads",
+     "timestamp": "20261114001449",
+     "url": "https://indahl.ai/downloads"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001521/https://indahl.ai/fedsep",
+     "timestamp": "20261114001521",
+     "url": "https://indahl.ai/fedsep"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001552/https://indahl.ai/forecast",
+     "timestamp": "20261114001552",
+     "url": "https://indahl.ai/forecast"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001622/https://indahl.ai/forecasters",
+     "timestamp": "20261114001622",
+     "url": "https://indahl.ai/forecasters"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001653/https://indahl.ai/hosts",
+     "timestamp": "20261114001653",
+     "url": "https://indahl.ai/hosts"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001724/https://indahl.ai/launch",
+     "timestamp": "20261114001724",
+     "url": "https://indahl.ai/launch"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001754/https://indahl.ai/linkrot",
+     "timestamp": "20261114001754",
+     "url": "https://indahl.ai/linkrot"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261114001825/https://indahl.ai/reproduce",
+     "timestamp": "20261114001825",
+     "url": "https://indahl.ai/reproduce"
+    }
+   ],
+   "wayback_waiting": 121
   },
   {
    "changed": 148,
@@ -30,7 +126,7 @@
    "released_at": "2026-11-14T02:34:30Z",
    "sha256": "335c5efdb352adf2cc86a94bc4f6b7124d649fb862714652ac022a0a2b95282a",
    "wayback": [],
-   "wayback_waiting": 50
+   "wayback_waiting": 46
   },
   {
    "changed": 99,
@@ -45,7 +141,7 @@
    "released_at": "2026-11-14T02:21:00Z",
    "sha256": "51a0fe1cbcd2e5b9b3b40c5889ecc9c6268c8c87f9339e16661b43307282de17",
    "wayback": [],
-   "wayback_waiting": 10
+   "wayback_waiting": 7
   },
   {
    "changed": 307,
@@ -502,7 +598,7 @@
      "url": "https://indahl.ai/brand/metas.csv"
     }
    ],
-   "wayback_waiting": 54
+   "wayback_waiting": 52
   },
   {
    "changed": 214,
