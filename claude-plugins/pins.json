@@ -1,8 +1,8 @@
 {
  "ccr/scripts/ccr.py": {
-  "commit": "798d508c842d2b97459c4d4efb46d4a3ece8ce08",
-  "sha256": "544d028599e41661bdf2f5fbb8d9419435d0cec4e0040877ef2e38102a669d5d",
-  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/798d508c842d2b97459c4d4efb46d4a3ece8ce08/claude-plugins/src/ccr/scripts/ccr.py"
+  "commit": "12a6cc29ae2110efa8e335962d0461a64efd533e",
+  "sha256": "a11b0fba529516f0e0f602bf333ae13227a6911c49b1bd911b208b6849e3b0d8",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/12a6cc29ae2110efa8e335962d0461a64efd533e/claude-plugins/src/ccr/scripts/ccr.py"
  },
  "darkwave-correction/scripts/darkwave_kit.py": {
   "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
