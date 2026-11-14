@@ -10,9 +10,9 @@
   "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py"
  },
  "qia-calibration/scripts/qia_check.py": {
-  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
-  "sha256": "f7354879f19e47d2aac76a15951e125b2a3ce102e0af97aa9f1f75a6c81b7ede",
-  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/qia-calibration/scripts/qia_check.py"
+  "commit": "8eb90a0f63bc694ccc6b53af485d1731b7a20956",
+  "sha256": "81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/8eb90a0f63bc694ccc6b53af485d1731b7a20956/claude-plugins/src/qia-calibration/scripts/qia_check.py"
  },
  "qia-calibration/t1t2/run_check.py": {
   "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",

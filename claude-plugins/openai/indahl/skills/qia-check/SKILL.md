@@ -10,10 +10,10 @@ sha256, and only then run it. If the download or the check fails, stop and tell 
 Show the user the commands before running them the first time.
 
 ```bash
-F="$HOME/.cache/indahl-plugins/qia-calibration/qia_check-f7354879f19e.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/qia-calibration/scripts/qia_check.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'f7354879f19e47d2aac76a15951e125b2a3ce102e0af97aa9f1f75a6c81b7ede')" "$F.part" && mv "$F.part" "$F"; }
+F="$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/8eb90a0f63bc694ccc6b53af485d1731b7a20956/claude-plugins/src/qia-calibration/scripts/qia_check.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/qia-calibration/scripts/qia_check.py (sha256 f7354879f19e47d2aac76a15951e125b2a3ce102e0af97aa9f1f75a6c81b7ede).
+Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/8eb90a0f63bc694ccc6b53af485d1731b7a20956/claude-plugins/src/qia-calibration/scripts/qia_check.py (sha256 81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f).
 
 ```bash
 F="$HOME/.cache/indahl-plugins/qia-calibration/run_check-16571a2f3f75.py"
@@ -24,7 +24,7 @@ Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29d
 
 # QIA calibration check
 
-The checker is `$HOME/.cache/indahl-plugins/qia-calibration/qia_check-f7354879f19e.py` (Python 3.9 or later, standard library only; the same code as `pip install qia-check` 1.0.2). It opens the user's files read-only, prints their sha256 before and after, and writes its report to a separate
+The checker is `$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py` (Python 3.9 or later, standard library only; the same code as `pip install qia-check` 1.0.2). It opens the user's files read-only, prints their sha256 before and after, and writes its report to a separate
 folder (default `./heuremen_report/`). Run on saved files, it sends nothing anywhere. Only `--pull` contacts IBM, with the user's own saved
 account, and only when the user asks for it. Never add `--pull` on your own: it spends nothing, but it uses their account.
 
@@ -58,14 +58,14 @@ or the control failed), NOTHING_RETURNED. Report the control's result first.
 
 1. Get the record. If the user has none, show them how to save one:
    `json.dump(backend.properties().to_dict(), open('record.json', 'w'), default=str)`
-2. Run `python3 "$HOME/.cache/indahl-plugins/qia-calibration/qia_check-f7354879f19e.py" before record.json --qubits <the qubits the circuit uses>`.
+2. Run `python3 "$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py" before record.json --qubits <the qubits the circuit uses>`.
 3. Report each entry in `flags` (STALE, ZERO, T2>2T1 as ABOVE or CANNOT_TELL, PAIR) for the qubits used, and suggest moving the
    layout off flagged qubits where the circuit allows it. If no flags, say the record's own figures passed these checks, nothing more.
 
 ## After a run
 
 1. Collect the records saved around the run into one folder (one saved right before submitting is the one that matters).
-2. Run `python3 "$HOME/.cache/indahl-plugins/qia-calibration/qia_check-f7354879f19e.py" after <folder> --start <run start, UTC> --end <run end, UTC> --qubits <...>`.
+2. Run `python3 "$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py" after <folder> --start <run start, UTC> --end <run end, UTC> --qubits <...>`.
    Times come from the job record (`job.metrics()` or the job's timestamps), never from memory. If the folder holds records from
    several backends the checker refuses; rerun with `--backend <the backend the job ran on>`.
 3. Report the record in force at the start, every recalibration inside the window, and each change in T1, T2 and readout error on the
