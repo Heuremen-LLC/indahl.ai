@@ -490,7 +490,7 @@ path,label,outcome,n,of,share,lo,hi,inside,above,below,n_wy,k_wy,reason,median_w
 /usgs_revisions/gauges[1],gauges[1],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09380000,00060,140,0,0,1 percent
 /usgs_revisions/gauges[2],gauges[2],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09402500,00060,269,0,0,1 percent
 /usgs_revisions/gauges[3],gauges[3],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09404200,00060,261,0,0,1 percent
-/usgs_revisions/gauges[4],gauges[4],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09415000,00060,101,0,0,1 percent
+/usgs_revisions/gauges[4],gauges[4],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09415000,00060,102,0,0,1 percent
 /usgs_revisions/gauges[5],gauges[5],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09180500,00060,165,0,0,1 percent
 /usgs_revisions/gauges[6],gauges[6],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09315000,00060,303,0,0,1 percent
 /usgs_revisions/gauges[7],gauges[7],CANNOT_TELL,,,,0.0,1.0,,,,,,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,,,,,,,,,,,,,,,,,09379500,00060,113,0,0,1 percent

@@ -1,0 +1,8 @@
+{
+  "description": "Indahl Spend Cap: refuses tool calls once the session has used the budget in .claude/spend-cap.json. Does nothing without a budget file.",
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/spend_cap.py\"", "timeout": 15 } ] }
+    ]
+  }
+}

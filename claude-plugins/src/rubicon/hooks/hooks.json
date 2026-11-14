@@ -1,0 +1,8 @@
+{
+  "description": "Indahl Rubicon: while a task in this folder has frozen criteria, refuses a finish with no verdict or with open rows.",
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/rubicon.py\" stop", "timeout": 10 } ] }
+    ]
+  }
+}
