@@ -25,11 +25,18 @@ def write_if_changed(path, text):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     if os.path.exists(path) and open(path, encoding='utf-8').read() == text: return 0
     tmp = path + '.tmp'; open(tmp, 'w', encoding='utf-8').write(text); os.replace(tmp, path); return 1
+# 13 Nov: the page (runcheck.js) reads these five; qia_check added init_error, which the page does not check yet, so shards keep the five
+PAGE_FIELDS = ('T1', 'T2', 'readout_error', 'prob_meas1_prep0', 'prob_meas0_prep1')
+CONFLICTS = []
 def qrow(Q, i, dates, di):
     row = []
-    for f in qc.FIELDS:
-        v = Q.get(i, {}).get(f)
-        if v is None: row += [None, -2]; continue
+    for f in PAGE_FIELDS:
+        es = Q.get(i, {}).get(f)
+        if not es: row += [None, -2]; continue
+        # 13 Nov: qia_check.load keeps every entry as (value, date, unit) (R11). Agreeing entries read as one; conflicting ones
+        # are left out of the shard and named in the manifest under "conflicting", never folded into a value.
+        if len(set((repr(e[0]), str(e[1])) for e in es)) > 1: CONFLICTS.append([i, f, len(es)]); row += [None, -2]; continue
+        v = es[0]
         d = v[1]
         if d is None: row += [v[0], -1]; continue
         d = str(d)
@@ -57,9 +64,11 @@ def build_backend(rdir, out, days):
     keep = set(byday)
     for old in glob.glob(os.path.join(out, name, '????-??-??.json')):
         if os.path.basename(old)[:-5] not in keep: os.remove(old); n += 1
-    man = {'backend': name, 'fields': list(qc.FIELDS), 'qubits': nq, 'days_kept': days or None, 'built': iso(dt.datetime.now(UTC)),
+    man = {'backend': name, 'fields': list(PAGE_FIELDS), 'qubits': nq, 'days_kept': days or None, 'built': iso(dt.datetime.now(UTC)),
            'records': [[iso(S), os.path.basename(p), S.strftime('%Y-%m-%d')] for b, S, Q, p in recs],
            'not_read_same_stamp': dup, 'not_records': skipped}
+    if CONFLICTS: man['conflicting'] = list(CONFLICTS)
+    CONFLICTS.clear()
     # "built" changes on every run, so keep the old one when nothing else did
     mp = os.path.join(out, name, 'manifest.json')
     if os.path.exists(mp):

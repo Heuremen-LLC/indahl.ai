@@ -1,8 +1,8 @@
 # MORNING — hand review handoff (2026-11-13)
 
-Read-only run. Nothing edited, nothing sent. Every number is copied from the named file.
+Read-only run (refreshed with the night ladder). Nothing edited, nothing sent. Every number is copied from the named file.
 
-## 1. Full-slice read  (sagar/analysis/full_slice.json, rerun 10:19)
+## 1. Full-slice read  (sagar/analysis/full_slice.json, rerun 19:35 13 Nov, values identical to 10:19)
 
 Slice: outside 1003 total, 942 with arXiv id; control (LVK) 39 total, 34 with id. Papers read by pipeline: 976. Batches merged: 82.
 
@@ -35,35 +35,59 @@ Repeat floor (full_slice.json repeat_floor), same setup run twice:
 
 Floor, both directions: batch 11 lost 0 and gained 2; batch 12 lost 2 and gained 0. So the pipeline moves by 2 papers per 12 in each batch, in opposite signs, and nets to zero across the two. The 32 pipeline-only vs 4 hand-only flips are far above that floor, but the floor itself is 4 of 24 papers, so quote it as a floor of about 2 per 12, not zero.
 
-## 2. Training  (stan/train_e/results/*.json, data/manifest.json)
+## 2. Training  (stan/train_e/results/{base,lora_v1..v6}_test_{hand,pipeline}.json, data/manifest.json)
 
-Model Qwen2.5-7B-Instruct-4bit. Intervals as printed in each file's summary.
+Model mlx-community/Qwen2.5-7B-Instruct-4bit. Counts and 95% intervals as printed in each file's summary. data/lr/iters from stan/chain/chain.json (v1, v2 on `data`).
 
-| model | set | pos flagged | recall | neg flagged | false-flag | parse fail |
-|---|---|---|---|---|---|---|
-| base | test_pipeline | 6/23 | [0.125, 0.465] | 0/39 | [0.0, 0.09] | 0 |
-| base | test_hand | 9/27 | [0.186, 0.522] | 1/30 | [0.006, 0.167] | 1 |
-| lora_v1 | test_pipeline | 0/23 | [0.0, 0.143] | 0/39 | [0.0, 0.09] | 0 |
-| lora_v1 | test_hand | 0/27 | [0.0, 0.125] | 0/30 | [0.0, 0.114] | 0 |
-| lora_v2 | test_pipeline | 0/23 | [0.0, 0.143] | 0/39 | [0.0, 0.09] | 0 |
-| lora_v2 | test_hand | 0/27 | [0.0, 0.125] | 0/30 | [0.0, 0.114] | 0 |
+| model | data | lr | iters | hand recall | hand false-flag | pipeline recall | pipeline false-flag | parse fail (hand/pipe) |
+|---|---|---|---|---|---|---|---|---|
+| base | - | - | - | 9/27 [0.186, 0.522] | 1/30 [0.006, 0.167] | 6/23 [0.125, 0.465] | 0/39 [0.0, 0.09] | 1/0 |
+| lora_v1 | data | 1e-5 | 600 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v2 | data | 2e-5 | 1200 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v3 | data_bal | 1e-5 | 600 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v4 | data_short | 1e-5 | 600 | 19/27 [0.515, 0.841] | 5/30 [0.073, 0.336] | 15/23 [0.449, 0.812] | 4/39 [0.041, 0.236] | 0/0 |
+| lora_v5 | data_bal | 2e-5 | 1200 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v6 | data_short | 2e-5 | 1200 | 20/27 [0.553, 0.868] | 6/30 [0.095, 0.373] | 17/23 [0.535, 0.875] | 4/39 [0.041, 0.236] | 0/0 |
 
-Manifest: 630 papers drafted, 185 with a finding; split papers train 474, valid 50, test 52, hand 54; excluded ambiguous papers 281.
+Manifest (train_e/data/manifest.json): 630 papers drafted, 185 with a finding; split papers train 474, valid 50, test 52, hand 54; excluded ambiguous papers 281.
 
-**Did any LoRA beat the base on both measures? No.** Neither LoRA flagged a single positive on either set (0/27 and 0/23), so recall fell from the base's 9/27 and 6/23. False-flag is not distinguishable: base 1/30 (hand) and 0/39 (pipeline) against 0/30 and 0/39 for the LoRAs, and every interval overlaps.
-- test_hand recall: base [0.186, 0.522] vs LoRA [0.0, 0.125]. Intervals do not overlap, so both LoRAs are BELOW the base.
-- test_pipeline recall: base [0.125, 0.465] vs LoRA [0.0, 0.143]. Intervals overlap, so by the interval rule it **cannot be told** on this set alone (point estimates 6/23 vs 0/23).
-- false-flag on both sets: intervals overlap, **cannot be told**. Zero flags also means the LoRAs may simply have learned to say nothing, which would give zero false flags for free.
-- v1 and v2 are identical on every count; the two LoRAs cannot be separated.
-- Training logs (adapters_v1/v2.train.log): v1 final iter 600 val loss 1.174, train loss 0.146; v2 final iter 1200 val loss 1.450, train loss 0.232. Val loss well above train loss; I did not check whether the validation loss rose over training.
+**Did any LoRA beat the base on both measures? No.**
+- v1, v2, v3, v5 flagged nothing on either set (collapse): recall BELOW the base on test_hand (intervals [0.0, 0.125] vs [0.186, 0.522], no overlap); on test_pipeline [0.0, 0.143] vs [0.125, 0.465] overlap, CANNOT_TELL.
+- v4: recall hand 19/27 vs base 9/27 (intervals [0.515, 0.841] vs [0.186, 0.522] overlap by 0.007), pipeline 15/23 vs 6/23 ([0.449, 0.812] vs [0.125, 0.465] overlap): CANNOT_TELL on recall. False-flag 5/30 and 4/39 vs base 1/30 and 0/39, intervals overlap: CANNOT_TELL.
+- v6: recall hand 20/27 [0.553, 0.868] and pipeline 17/23 [0.535, 0.875], both clear of the base's intervals, so recall is ABOVE the base on both sets. False-flag hand 6/30 [0.095, 0.373] vs base 1/30 [0.006, 0.167], pipeline 4/39 [0.041, 0.236] vs base 0/39 [0.0, 0.09]: intervals overlap, CANNOT_TELL, though the point estimates are higher than the base on both sets. So v6 did not beat the base on both measures: one measure is above, the other cannot be told (and leans worse).
+- Two sets, one adapter each, 27 and 23 positives: small. Test sets are chunks, several chunks per paper (items in the result files carry arxiv and chunk), so intervals that treat chunks as independent are probably too narrow; not checked.
 
 ## 3. Failures / blocked stages
 
-- stan/chain/chain.log: all stages ended rc 0 (sagar_read_done, full_slice_numbers, train_set, eval_base, lora_v1, eval_v1, lora_v2, eval_v2). One event: 07:10:22 RESET lora_v1, v1 went NaN (prompts ≥ 3072 tokens masked every target); train_lora.sh now filters >4096 tokens, batch 1, grad checkpoint, NaN fails the stage. v1 was retrained and finished rc 0 at 07:52. The 4096-token filter dropped 0 positives (manifest length_filter).
-- sagar/pipeline/pipe.log: 418 lines, 0 lines matching fail/error. Last line 2026-11-13T03:24:56 MERGE batch_57. No stage blocked.
-- sagar/pipeline/logs/*: matches for 'fail' are reader/draft prose about papers (and one pypdf import failure in batch_27 draft that the agent worked around), not pipeline failures.
-- stan/train_e/logs does not exist; train logs are stan/train_e/adapters_v1.train.log, adapters_v2.train.log, train.log.
-- Path note: verified_full.jsonl is at sagar/index/verified_full.jsonl, not under sagar/pipeline/work.
+- stan/chain/chain.log (read 19:34): every DONE line is rc 0 (all rc files in stan/chain/rc present). No rung failed. handoff_night_v6 shows START 19:34:32 with no DONE yet; that is this run.
+- One event, 07:10:22 RESET lora_v1: v1 went NaN (prompts >= 3072 tokens masked every target); train_lora.sh now filters >4096 tokens, batch 1, grad checkpoint, NaN fails the stage. v1 retrained, rc 0 at 07:52. The filter dropped 0 positives (manifest length_filter).
+- The ladder stopped after v6 by rule (NIGHT.md). Nothing blocked.
+- sagar/pipeline/pipe.log: 418 lines, 0 lines matching fail/error. Last line 2026-11-13T03:24:56 MERGE batch_57.
+- stan/train_e/logs does not exist; train logs are stan/train_e/adapters_v1..v6.train.log. I did not read their loss curves. stan/chain/logs/*: no stage log matched fail/error except handoff_agent.log, which only states "pipe.log has no failed lines".
+- Open alert from the session banner (not from the chain): launchd com.heuremen.qia-audit last exit status 1 since 18:10. Not investigated.
+- Path note: verified_full.jsonl is at sagar/index/verified_full.jsonl, not under sagar/pipeline/work. The hand-review lists below are unchanged since 10:19: verified_full.jsonl, review_full.jsonl and review_redraft.jsonl have file times Nov 12 22:43 / 22:43 / 23:45, earlier than that run.
+
+## Night ladder  (stan/chain/NIGHT.md, stan/train_e/results/lora_v*_test_*.json, chain.log)
+
+The routes are pipeline routing, not findings. Counts and intervals only; a rung is called better only if its intervals do not overlap the base's. Base row first. No rung failed (no rc other than 0 in chain.log).
+
+| model | data | lr | iters | hand recall | hand false-flag | pipeline recall | pipeline false-flag | parse fail (hand/pipe) |
+|---|---|---|---|---|---|---|---|---|
+| base | - | - | - | 9/27 [0.186, 0.522] | 1/30 [0.006, 0.167] | 6/23 [0.125, 0.465] | 0/39 [0.0, 0.09] | 1/0 |
+| lora_v1 | data | 1e-5 | 600 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v2 | data | 2e-5 | 1200 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v3 | data_bal | 1e-5 | 600 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v4 | data_short | 1e-5 | 600 | 19/27 [0.515, 0.841] | 5/30 [0.073, 0.336] | 15/23 [0.449, 0.812] | 4/39 [0.041, 0.236] | 0/0 |
+| lora_v5 | data_bal | 2e-5 | 1200 | 0/27 [0.0, 0.125] | 0/30 [0.0, 0.114] | 0/23 [0.0, 0.143] | 0/39 [0.0, 0.09] | 0/0 |
+| lora_v6 | data_short | 2e-5 | 1200 | 20/27 [0.553, 0.868] | 6/30 [0.095, 0.373] | 17/23 [0.535, 0.875] | 4/39 [0.041, 0.236] | 0/0 |
+
+Routes (NIGHT.md, night_decide.py):
+- lora_v3 (data_bal, 1e-5, 600): flagged 0 positives on both sets; routed collapse -> lora_v4 on data_short, lr 1e-5, 600 iters.
+- lora_v4 (data_short, 1e-5, 600): hand 19/27 pos, 5/30 neg; pipeline 15/23 pos, 4/39 neg; routed partial -> lora_v5 on data_bal, lr 2e-5, 1200 iters. Against the base: recall intervals overlap, CANNOT_TELL.
+- lora_v5 (data_bal, 2e-5, 1200): flagged 0 positives on both sets; routed collapse -> lora_v6 on data_short, lr 2e-5, 1200 iters.
+- lora_v6 (data_short, 2e-5, 1200): hand 20/27 pos, 6/30 neg; pipeline 17/23 pos, 4/39 neg; routed partial -> ladder stopped. Against the base: recall intervals do not overlap on either set (above); false-flag intervals overlap (CANNOT_TELL).
+- lora_v1 and lora_v2 are the pre-ladder runs on `data`; NIGHT.md has no row for them. Both collapsed (0 flags).
+- Pattern in the table (not tested further): both rungs that flagged anything used data_short, both on data_bal collapsed. Two rungs each, so it is a pattern, not a finding.
 
 ## 4. Hand-review list for Bones
 

@@ -154,13 +154,13 @@ def page(path, title, desc, body, wide_hero=None):
 <a class="brand" href="/">{MARK}<span>Heuremen LLC</span></a>
 <nav class="links">{nav}</nav>
 </div></header>
-<div class="stdbar"><div class="wrap"><a href="/standard"><b>STANDARDS</b></a></div></div>
+<div class="stdbar"><div class="wrap"><a href="/standard"><b>STANDARDS</b></a><a href="/connect"><b>CONNECT</b> &middot; Connectors, plugins and skills</a></div></div>
 {hero}
 <main class="wrap">{_hlslot(path)}
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p class="fl"><a href="/standard">Standards</a><a href="/downloads">Downloads</a><a href="/plugins">Plugins</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/standard">Standards</a><a href="/downloads">Downloads</a><a href="/connect">Connect</a><a href="/plugins">Plugins</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/Heuremen-LLC/indahl.ai">GitHub</a><a href="https://huggingface.co/indahl">Hugging Face</a><a href="/changes">Changes</a><a href="/corrections">Corrections</a><a href="/community">Community</a><a href="/r/">Receipts</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="ai">Heuremen LLC reserves all rights. Content and data may be read, downloaded and cited with attribution. Text and data mining and use as AI training data are not permitted. <a href="/terms#ai-training">Details</a> &middot; Reference {_ref("page:" + path)}</p>
@@ -1050,6 +1050,10 @@ def _api_tools():
         out.append((t['name'], _first))
     return out
 import html as _he
+import json as _mj, re as _mre, html as _chtml
+_MKT = _mj.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'claude-plugins', '.claude-plugin', 'marketplace.json')))['plugins']
+_APIJS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'api.js'), encoding='utf-8').read()
+_MCPG = [(m.group(1), m.group(2), m.group(3)) for m in _mre.finditer(r"^  (\w+): \{ title: '([^']*)', note: '([^']*)'", _APIJS[_APIJS.index('const GROUPS'):], _mre.M)]
 # 28 Oct 2026 (his word): the read-only data API and MCP server, documented on our own site. Code: indahl-ai/api.js. Posting goes to indahl.ai only.
 _APIBODY = ('<section class="bench markguide"><h2>Our measurements as tools</h2>'
   '<p>Every live desk on this site can be read by an agent or a script, with no key and nothing to install. Each answer carries its source page, the time it was read and the terms. Outcomes are above, below, consistent or cannot tell, relative to what was stated. Nothing here writes anything.</p>'
@@ -2075,7 +2079,7 @@ CSS += '\n'.join(_MOVED) + """
 """
 # 25 Oct 2026 (his word): smaller type and tighter spacing sitewide; these rules come last so they win.
 CSS += """
-.stdbar{background:var(--lit);color:var(--cave);font-size:15px;line-height:1.35;padding:7px 0}.stdbar a{color:var(--cave);text-decoration:none;display:block}.stdbar a:hover{text-decoration:underline}.stdbar b{font-weight:700;letter-spacing:.08em}.stdlist{list-style:none;padding:0;margin:6px 0 18px}.stdlist li{padding:3px 0}.stdlist b{display:inline-block;min-width:5.2em}.stdproc{margin:28px 0}.stdproc summary{cursor:pointer;font-weight:600}
+.stdbar{background:var(--lit);color:var(--cave);font-size:15px;line-height:1.35;padding:7px 0}.stdbar a{color:var(--cave);text-decoration:none;display:inline-block;margin-right:1.6em}.stdbar a:hover{text-decoration:underline}.stdbar b{font-weight:700;letter-spacing:.08em}.stdlist{list-style:none;padding:0;margin:6px 0 18px}.stdlist li{padding:3px 0}.stdlist b{display:inline-block;min-width:5.2em}.stdproc{margin:28px 0}.stdproc summary{cursor:pointer;font-weight:600}
 .hero.slim{padding:16px 0 14px}.hero.slim h1{font-size:clamp(22px,2.4vw,28px)}.hero.slim .sub{font-size:14px;margin-top:4px}
 .mtx{font-size:13.5px;line-height:1.4}.mtx th{font-size:10.5px;letter-spacing:.06em;padding:6px 8px}.mtx td{padding:6px 8px}
 /* 29 Oct 2026 (his word): home headlines stacked like data, the number and one line, the rest opens on hover */
@@ -2376,7 +2380,7 @@ _DIVS = [('/sagar', 'SAGAR', 'Standards Audit of Gravitational and Astrophysical
 _cards = ''.join(f'<div class="hdiv"><h2><a href="{h}">{n}</a></h2><p class="hsub">{full}</p><p class="hwhat">{what}</p><p class="hdesks">{desks}</p></div>' for h, n, full, what, desks in _DIVS)
 PAGES['/'] = page('/', 'Heuremen LLC',
  'Heuremen LLC recounts published claims about AI benchmarks, quantum hardware and public data from the material released with them, with receipts anyone can rerun. Open benchmark verification and an open record of every correction.',
- '<section class="hdivs">' + _cards + '</section><section class="hmore"><a href="/standard">STANDARDS</a><a href="/record">RECORD &middot; What we recounted and corrected</a><a href="/stack">STACK &middot; Every test, side by side</a><a href="/api">API &middot; Data and MCP</a><a href="https://github.com/Heuremen-LLC/indahl.ai">Plans, code and trend history &middot; GitHub</a><a href="https://huggingface.co/indahl">Datasets and models &middot; Hugging Face</a></section>',
+ '<section class="hdivs">' + _cards + '</section><section class="hmore"><a href="/standard">STANDARDS</a><a href="/connect">CONNECT &middot; Connectors, plugins and skills</a><a href="/record">RECORD &middot; What we recounted and corrected</a><a href="/stack">STACK &middot; Every test, side by side</a><a href="/api">API &middot; Data and MCP</a><a href="https://github.com/Heuremen-LLC/indahl.ai">Plans, code and trend history &middot; GitHub</a><a href="https://huggingface.co/indahl">Datasets and models &middot; Hugging Face</a></section>',
  hero_slim('Heuremen LLC'))
 
 # 29 Oct 2026 (his word): HERMES is the menu of everything. The old SAD material is the MODEL desk at /hermes/model.
@@ -2749,10 +2753,29 @@ def main():
     PAGES['/downloads'] = page('/downloads', 'Grab and Go: Every Data Pack | Heuremen LLC', 'Every Heuremen LLC data pack and research package, division by division, each a zip with its README, sources and tests.',
                                '<section class="legal grab">' + _gb + '<h2>Claude Code plugins</h2><ul class="desklist"><li><a href="/plugins">Standards check, readcheck gate and QIA calibration check</a> <span class="ggw">install inside Claude Code</span></li></ul></section>', hero_slim('GRAB AND GO'))
     # 13 Nov 2026 (Wayfinder: "full dicks on the plugins"): the Claude Code plugins, from github.com/Heuremen-LLC/indahl.ai (claude-plugins/; 13 Nov: the separate repo was a mistake, now private)
+    # 13 Nov 2026 (Wayfinder: "make sure all the paths to all our connectors are prominent on our site"): CONNECT, built from
+    # claude-plugins/.claude-plugin/marketplace.json and the GROUPS in api.js, so a new plugin or connector group shows up on the next build.
+    _cr = '<section class="legal"><p>Every way to use our measurements and checks from Claude, Claude Code or any MCP client. Everything is free, read-only where it touches our data, and the code is public in <a href="https://github.com/Heuremen-LLC/indahl.ai">github.com/Heuremen-LLC/indahl.ai</a>.</p>'
+    _cr += ('<h2>Connectors (MCP servers)</h2><p>Remote MCP servers over HTTP, no key, nothing to install. In Claude: Settings, Connectors, Add custom connector, and paste the address. In Claude Code: <code>claude mcp add --transport http indahl &lt;address&gt;</code>.</p>'
+            '<table class="mtx"><thead><tr><th>Address</th><th>What it holds</th></tr></thead><tbody>'
+            '<tr><td><code>https://indahl.ai/mcp</code></td><td>Every tool over every live desk. Tool list on the <a href="/api">API page</a>.</td></tr>'
+            + ''.join('<tr><td><code>https://indahl.ai/mcp/' + _g + '</code></td><td>' + _chtml.escape(_t) + '. ' + _chtml.escape(_nt) + '</td></tr>' for _g, _t, _nt in _MCPG)
+            + '</tbody></table><p>The same tools as plain JSON: <a href="/api/v1">/api/v1</a>, with the OpenAPI description at <a href="/api/openapi.json">/api/openapi.json</a>.</p>')
+    _cr += ('<h2>Claude Code plugins and skills</h2><p>Add the marketplace once, then install what you want, or everything with <code>indahl-full</code>.</p>'
+            '<pre><code>/plugin marketplace add Heuremen-LLC/indahl.ai\n/plugin install indahl-full@heuremen</code></pre>'
+            '<table class="mtx"><thead><tr><th>Install</th><th>What it does</th></tr></thead><tbody>'
+            + ''.join('<tr><td><code>' + _x['name'] + '@heuremen</code></td><td>' + _chtml.escape(_x.get('description', '').replace('; ', ', ')) + '</td></tr>' for _x in _MKT if _x['name'] != 'indahl')
+            + '</tbody></table><p>Details for the checks with scripts are on <a href="/plugins">Plugins</a>. Source and READMEs: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins">claude-plugins</a> in the public repository, mirrored at <a href="https://github.com/Heuremen-LLC/claude-plugins">github.com/Heuremen-LLC/claude-plugins</a>.</p>')
+    _cr += ('<h2>Data and packs</h2><ul class="desklist"><li><a href="/downloads">Grab and Go</a> <span class="ggw">every data pack and research package</span></li>'
+            '<li><a href="https://huggingface.co/indahl">Hugging Face</a> <span class="ggw">datasets and models</span></li>'
+            '<li><code>pip install qia-check</code> <span class="ggw">the QIA calibration record checker</span></li></ul>'
+            '<p>Terms: retrieval and answering with attribution, no use as training data (<a href="/terms#ai-training">terms</a>).</p></section>')
+    PAGES['/connect'] = page('/connect', 'Connect: Claude Connectors, Plugins and Skills | Heuremen LLC', 'Every way to use Heuremen LLC measurements and checks from Claude, Claude Code or any MCP client: the indahl.ai MCP connectors, the Claude Code plugin marketplace and the skills.', _cr, hero_slim('CONNECT'))
+    _FEED.append(('/connect', 'Connect: Claude connectors, plugins and skills', 'Every indahl.ai MCP connector address and every Claude Code plugin and skill, in one place.'))
     PAGES['/plugins'] = page('/plugins', 'Claude Code Plugins | Heuremen LLC', 'Heuremen LLC plugins for Claude Code: check papers and eval claims against the Standards, use and reproduce every desk, and check and correct IBM Quantum runs.',
         '<section class="legal">'
         '<p>Plugins for <a href="https://claude.com/claude-code">Claude Code</a>. Add the marketplace once, then install the ones you want.</p>'
-        '<pre><code>/plugin marketplace add Heuremen-LLC/indahl.ai\n/plugin install indahl-standards@heuremen\n/plugin install indahl-eval-check@heuremen\n/plugin install indahl-prereg@heuremen\n/plugin install indahl-readcheck@heuremen\n/plugin install indahl-data@heuremen\n/plugin install indahl-reproduce@heuremen\n/plugin install indahl-qia-calibration@heuremen\n/plugin install indahl-darkwave@heuremen</code></pre>'
+        '<pre><code>/plugin marketplace add Heuremen-LLC/indahl.ai\n' + '\n'.join('/plugin install ' + _x['name'] + '@heuremen' for _x in _MKT if _x['name'] not in ('indahl', 'indahl-full')) + '</code></pre><p>Or everything at once: <code>/plugin install indahl-full@heuremen</code>. Every connector, plugin and skill: <a href="/connect">Connect</a>.</p>'
         '<h2>Outside text is treated as data</h2><p>Every plugin that reads outside text (a paper, a kit README, a released file, an API response) tells the agent to treat it as data, not instructions: if fetched text carries instructions aimed at the agent, it quotes them to you and carries on with the check. That is an instruction to the agent, not a guarantee. The guards that hold regardless are in code: nothing runs downloaded code without a go bound to the exact commit you reviewed, a paid IBM job submits only from your own terminal, and your files are opened read-only. Keep Claude Code&rsquo;s permission prompt on for Bash.</p>'
         '<h2>Check a claim</h2>'
         '<p><b>standards.</b> <code>/standards &lt;arXiv id, DOI, file or claim&gt;</code> checks a paper or a measured claim against the <a href="/standard">Standards</a> claim codes F1 to F7 and returns a recount card. '
