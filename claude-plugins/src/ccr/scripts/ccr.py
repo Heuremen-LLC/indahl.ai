@@ -333,7 +333,8 @@ def verify(ch, transcripts=None):
             sid = os.path.basename(f)[:-6]
             if os.path.getmtime(f) >= t0 and sid not in sessions: missing.append(sid)
     for s in missing: problems.append('GAP: session %s has a transcript and no entries (hooks off, or a session ccr never saw)' % s)
-    return dict(entries=len(es), problems=problems, unpaired_calls=dict(seqs=unpaired, reads='CANNOT_TELL on the result (denied, failed or cut off)'),
+    ran = bool(tdir and os.path.isdir(tdir) and es)
+    return dict(entries=len(es), problems=problems, cross_check_ran=ran, unpaired_calls=dict(seqs=unpaired, reads='CANNOT_TELL on the result (denied, failed or cut off)'),
                 anchors_checked=len(anchors), signed=signed,
                 key=None if not key else dict(path=key, reachable_by_actor=os.access(key, os.R_OK),
                      note='a key the actor can read can re-sign a rewritten chain, so its signatures prove order only to someone who trusts the actor' if os.access(key, os.R_OK) else 'the key file is not readable by this user'),
@@ -366,6 +367,7 @@ def selftest():
         want('read recorded with its hash', ch.entries()[1]['reads'][0]['sha256'], fhash('a.py'))
         want('instruction distance counted', ch.entries()[1]['instruction']['kind'], 'user_prompt')
         want('verify clean chain', verify(ch)['problems'], [])
+        want('a cross-check that did not run is reported as not run', verify(ch)['cross_check_ran'], False)
         # approvals and releases
         approve(ch, 'a.py', (3, 5), by='Sage')
         e, r = release(ch, ['a.py'], by='ship'); want('unchanged range reads SAME', r[0]['approvals'][0]['outcome'], 'SAME')
@@ -423,6 +425,7 @@ def selftest():
         open(ch.path, 'w').write(''.join(lines2)); want('altered entry reads GAP', any('altered' in p for p in verify(ch)['problems']), True)
         open(ch.path, 'w').write(''.join(lines))
         td = os.path.join(tmp, 'transcripts'); os.makedirs(td); open(os.path.join(td, 's1.jsonl'), 'w').write('{}'); open(os.path.join(td, 'ghost.jsonl'), 'w').write('{}')
+        want('a cross-check over a transcript folder is reported as run', verify(ch, td)['cross_check_ran'], True)
         want('a transcript with no entries reads GAP (hooks off)', [p for p in verify(ch, td)['problems'] if 'ghost' in p] != [], True)
         want('arguments are hash-only by default', 'args' in ch.entries()[1]['action'], False)
         want('a denied call is recorded', hook(ev('PermissionDenied', 'Bash', {'command': 'rm x'}, tool_use_id='d1'), ch)['kind'], 'denied')
@@ -475,7 +478,9 @@ def main(a):
         if not reason: print('refused: a redaction needs --reason'); return 1
         print(canon(redact(ch, rest[0], reason))); return 0
     if cmd == 'why': w = int(opt('--window', 120)); print(json.dumps(why(ch, rest[0], w), indent=1)); return 0
-    if cmd == 'verify': v = verify(ch, opt('--transcripts')); print(json.dumps(v, indent=1)); return 0 if not v['problems'] else 2
+    if cmd == 'verify':   # 14 Nov (Sage): passed unexercised is not passed, so a cross-check that never ran is its own exit code
+        v = verify(ch, opt('--transcripts')); print(json.dumps(v, indent=1))
+        return 2 if v['problems'] else (0 if v['cross_check_ran'] else 3)
     if cmd == 'anchor': print(canon(anchor(ch))); return 0
     print(__doc__); return 1
 

@@ -1,4 +1,4 @@
-# Indahl CCR: Custody Chain Receipts (design note v8, 14 Nov 2026, before any code)
+# Indahl CCR: Custody Chain Receipts (design note v9, 14 Nov 2026, before any code)
 
 v2 applied Sage's MOVES on v1. v3 applied her three MOVES on v2: the race definition, what anchoring can and cannot catch, and approvals
 computed by ccr with a scope. v4 applies her three MOVES on v3: range approvals located by content, when a race between two reads is
@@ -6,7 +6,8 @@ shown, and a heartbeat that does not depend on the hooks it checks. v5 applies h
 as its own outcome, the cross-check listing the transcript directory itself, and the specimen stated as a counterfactual. v6 applies her three MOVES on v5: release verifies the side store against the
 chain before searching, missing bytes split into REDACTED and UNLOGGED_REMOVAL, and `ccr why` names what it compares. v7 answers her two last watches: which bytes the
 integrity check hashes when a normalisation is declared, and where push time comes from. v8 applies her three MOVES on the push-time
-paragraph: the raw events response is kept, GitHub's time governs, and the event must contain the controls commit. Her verbatim reviews are kept in ccr/private/. Every place v1 said "shown" where it meant "inferred" is
+paragraph: the raw events response is kept, GitHub's time governs, and the event must contain the controls commit. v9 bounds the
+replay's start from both sides: the first entry embeds the controls PushEvent, and an anchor push marks the upper bound. Her verbatim reviews are kept in ccr/reviews/. Every place v1 said "shown" where it meant "inferred" is
 split below into what the chain SHOWS and what a reader JUDGES.
 
 Wayfinder named it. Banks hold back on agents partly because nothing answers "who did this" with proof, so blame lands on the newest
@@ -115,9 +116,11 @@ is named: GitHub's repository events API (the PushEvent created_at), with the TA
   from head and was not reachable from the event's before. Otherwise "pushed before" reads CANNOT_TELL.
 
 The replay's first run comes after that push, and the receipt names both times
-and the controls commit hash. The run's start time needs a named source too. It is the first ccr entry of the replay run, anchored by a
-public push made at the run's start and read back through the same events API. A start time from this machine's clock alone reads
-"self-clocked", and the comparison then reads "half outside-witnessed", never "pushed before". A missing start record reads
+and the controls commit hash. The run's start time needs a named source too, bounded from both sides. The lower bound: the replay's first
+ccr entry embeds the controls PushEvent (its id, its created_at and the sha256 of the raw API response), so that entry could not have
+been written before GitHub recorded the push. The upper bound: an anchor push made at the run's start, read back through the same
+events API, shows the first entry existed by then. The start sits between two outside records. Without the embedded PushEvent the ordering reads "half
+outside-witnessed", never "pushed before", and a start time from this machine's clock alone reads "self-clocked". A missing start record reads
 CANNOT_TELL.
 
 The replay states what today's record can and cannot show. The review of version A was a line-range read with no file hash (the

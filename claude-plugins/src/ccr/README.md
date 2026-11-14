@@ -33,7 +33,7 @@ Each tool call also records its nearest real instruction: the last prompt, or in
 
 `ccr verify` checks every link, flags altered entries, calls with no result (denied, failed or cut off), and anchors. `ccr anchor` writes the head to `.ccr/anchors.jsonl` for you to copy somewhere the agent cannot reach, such as a public push. A chain shorter than an anchor reads GAP.
 
-Hooks that were switched off write nothing, so the chain still looks whole. `verify` lists the session transcript folder itself, and a session with a transcript and no entries reads GAP.
+Hooks that were switched off write nothing, so the chain still looks whole. `verify` lists the session transcript folder itself, and a session with a transcript and no entries reads GAP. `verify` exits 0 only when the chain is clean and the cross-check ran, 2 when it found a problem, and 3 when the chain is clean but the cross-check did not run, so completeness is unknown.
 
 ## Signing
 
