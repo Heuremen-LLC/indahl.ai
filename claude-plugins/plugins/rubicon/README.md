@@ -50,7 +50,7 @@ Sage also refereed the design before release. She found that adding a criterion 
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/Heuremen-LLC/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/c0513651a088cb305938b1f205f8a5e5e4b43631/claude-plugins/src/rubicon/scripts/rubicon.py
-  sha256 34f0bfbbc2dfd656a6058b55b87676f59f2b65142a47a21601c098aca461d4e3
+- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/1f5b4469ac778f107d10f74ba87286861e8f8a50/claude-plugins/src/rubicon/scripts/rubicon.py
+  sha256 106205719ddcdfc9d2724380b8a713b8e24e98b118c4e848fed446387bf8405c
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`).
