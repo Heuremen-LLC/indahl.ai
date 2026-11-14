@@ -1035,3 +1035,4 @@
 {"id": "dbrt2t1abdes73fqfra0", "backend": "ibm_fez", "created": "2026-11-14T03:11:48.849886Z", "wait_s": 1.843133}
 {"id": "dbrt2sejjaos73ajgrpg", "backend": "ibm_boston", "created": "2026-11-14T03:11:45.136301Z", "wait_s": 1.41743}
 {"id": "dbrqlcmjjaos73ajeckg", "backend": "ibm_kingston", "created": "2026-11-14T00:26:26.980977Z", "wait_s": 10283.93258}
+{"id": "dbrt2smjjaos73ajgrqg", "backend": "ibm_chicago", "created": "2026-11-14T03:11:46.855717Z", "wait_s": 933.977489}

@@ -150,3 +150,5 @@ env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='f069aa0c8534706cb64f7cc3658dd894',
 pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'campus_live', '--path', os.path.join(H, 'summary_campus.json'), '--namespace-id', 'ecb59d96b07c43bdac14271687eae5af', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 with open('history.jsonl', 'a') as f: f.write(json.dumps(dict(t=out['updated'], pass_number=passno, sources=len(links), opens=now_c['resolves'], gone=now_c['gone'], blocked=now_c['blocked'], error=now_c['error'], changed=pc['CHANGED'])) + '\n')
 print('campus: pass', passno, dict(now_c), dict(pc), 'published' if pr.returncode == 0 else 'publish FAILED ' + (pr.stderr or pr.stdout)[-200:], flush=True)
+# 13 Nov 2026: the school directory for the education connector (Indahl Campus), built from this pass and read back from the live API
+if pr.returncode == 0: subprocess.run([sys.executable, '-I', os.path.join(H, 'campus_dir.py')], env=dict(os.environ))

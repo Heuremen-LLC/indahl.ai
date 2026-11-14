@@ -9,22 +9,22 @@
  "desk": "campus",
  "inputs": [
   {
-   "bytes": 6084375,
+   "bytes": 9915131,
    "gzip_added": true,
-   "modified": "2026-11-10T22:58:02Z",
+   "modified": "2026-11-14T01:28:37Z",
    "path": "data/reads.jsonl",
-   "sha256": "231bed0be3f71bb799a2321d7fe2d23f16f1940f6fd2e268751ea0a93421a250",
+   "sha256": "78ed39e1cadaa228b55e4173a31f0fc2323c7aff40c3fd67a25df036d30d65d9",
    "stored": "data/reads.jsonl.gz",
-   "stored_sha256": "4cc8cc8d811f14d30a9d6daec9879e0cf5bf22cd794ba4c154119a795fddad40"
+   "stored_sha256": "6bec3b26f1e6de48bbbcb803c2f9f1639ba97b171913c7d44e57cb456e627f3e"
   }
  ],
- "made": "2026-11-11T00:08:41Z",
+ "made": "2026-11-14T03:35:16Z",
  "mode": "fetch",
  "name": "CAMPUS",
  "reference": [
   {
    "path": "desk/campus_tick.py",
-   "sha256": "1f6724dab06e8de2f772044267ff7dd2ebd6f27a6c88038c45fb633c22fe8dcf"
+   "sha256": "e6e8f35165f371077e9b55dcc263e14ccac144342aaf73d1ceb803191345d8ac"
   }
  ],
  "sources": [

@@ -1,3 +1,3 @@
 path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,reason,awaiting
-/comparison/HSTS preload header,HSTS preload header,ABOVE,20,145,0.1379,0.0911,0.2035,0.0911,0.2035,,2
-/comparison/SPF lookup limit,SPF lookup limit,CONSISTENT,20,763,0.0262,0.017,0.0401,0.017,0.0401,,0
+/comparison/HSTS preload header,HSTS preload header,ABOVE,20,144,0.1389,0.0917,0.2048,0.0917,0.2048,,1
+/comparison/SPF lookup limit,SPF lookup limit,CONSISTENT,20,762,0.0262,0.0171,0.0402,0.0171,0.0402,,0

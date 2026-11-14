@@ -404,6 +404,30 @@
         "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
       }
     },
+    "education_list_schools": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "education_find_school": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
+        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
     "hosts": {
       "annotations": {
         "readOnlyHint": true,
