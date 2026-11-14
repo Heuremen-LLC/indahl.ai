@@ -102,8 +102,14 @@ def grid(path):
         out, mi = tally3([x['outcome'] for x in ans])
         row = dict(row=c['id'], question='meets the frozen criterion', criterion=c['criterion'], outcome=out, seats=[x['outcome'] for x in ans])
         if mi is not None: row['minority'] = dict(seat=seats[mi]['name'], says=ans[mi]['outcome'], reason=ans[mi].get('reason', '(no reason given)'))
-        if out == 'MET' and not all(x.get('planted_fail_caught') is True for x in ans):   # every seat voting MET must report the check catching its planted wrong answer
-            row['outcome'] = 'UNRESOLVED'; row['why'] = 'not every seat reported the check catching its planted wrong answer, so MET is not shown (self-reported by the seats)'
+        rerun = (g.get('agent_rerun') or {}).get(c['id'])   # 14 Nov (Sage): the skill says an unopened catch does not count, so the script must enforce it
+        if out == 'MET' and rerun is not True:
+            row['outcome'] = 'UNRESOLVED'
+            row['why'] = ('the agent did not rerun this check against its planted wrong answer, so the catch is self-reported by the seats' if rerun is None
+                          else 'the agent reran this check and did not see it catch its planted wrong answer')
+        elif out == 'MET' and not all(x.get('planted_fail_caught') is True for x in ans):
+            row['outcome'] = 'UNRESOLVED'; row['why'] = 'not every seat reported the check catching its planted wrong answer'
+        if rerun is not None: row['agent_rerun'] = rerun
         if c.get('defined_after_the_work'): row['defined_after_the_work'] = True
         rows.append(row)
     done = [s['done'] for s in seats]
@@ -171,9 +177,9 @@ def selftest():
         want('frozen, no verdict, stop refuses', stop({})[0], 2)
         want('stop_hook_active never loops', stop({'stop_hook_active': True})[0], 0)
         seat = lambda n, c1, c2, done, pbf, fired=True: dict(name=n, criteria={'C1': dict(outcome=c1, planted_fail_caught=fired, reason='r'), 'C2': dict(outcome=c2, planted_fail_caught=fired, reason='looked at cents')}, done=done, pass_but_fail=pbf)
-        json.dump(dict(independent=True, seats=[seat('A', 'MET', 'MET', True, ''), seat('B', 'MET', 'MET', True, ''), seat('C', 'MET', 'MET', True, '')]), open('g.json', 'w'))
+        json.dump(dict(independent=True, agent_rerun={'C1': True, 'C2': True}, seats=[seat('A', 'MET', 'MET', True, ''), seat('B', 'MET', 'MET', True, ''), seat('C', 'MET', 'MET', True, '')]), open('g.json', 'w'))
         want('all agree MET', grid('g.json')[1].split(':')[0], 'verdict MET'); want('MET, stop passes', stop({})[0], 0)
-        json.dump(dict(independent=True, seats=[seat('A', 'MET', 'MET', True, ''), seat('B', 'MET', 'MET', True, ''), seat('C', 'MET', 'MISSED', True, '')]), open('g.json', 'w'))
+        json.dump(dict(independent=True, agent_rerun={'C1': True, 'C2': True}, seats=[seat('A', 'MET', 'MET', True, ''), seat('B', 'MET', 'MET', True, ''), seat('C', 'MET', 'MISSED', True, '')]), open('g.json', 'w'))
         grid('g.json'); v = load('verdict.json'); r2 = [r for r in v['rows'] if r['row'] == 'C2'][0]
         want('two to one reads UNRESOLVED', r2['outcome'], 'UNRESOLVED'); want('minority kept with its reason', (r2['minority']['seat'], r2['minority']['reason']), ('C', 'looked at cents'))
         want('unacknowledged UNRESOLVED, stop refuses', stop({})[0], 2)
@@ -193,7 +199,7 @@ def selftest():
         open('bad.md', 'w').write('- C9: something | check: x | fails-on: no\n'); shutil.rmtree(D); want('weak planted wrong answer refused', freeze('bad.md')[0], 1)
         # Sage pre-ship MOVES, each planted
         shutil.rmtree(D, ignore_errors=True); freeze('c.md')
-        mk = lambda seats: json.dump(dict(independent=True, seats=seats), open('g.json', 'w'))
+        mk = lambda seats, rr={'C1': True, 'C2': True, 'C3': True}: json.dump(dict(independent=True, agent_rerun=rr, seats=seats), open('g.json', 'w'))
         mk([seat('A', 'MET', 'MET', True, ''), seat('B', 'MET', 'MET', True, ''), seat('C', 'MET', 'MET', True, '')]); grid('g.json'); want('baseline MET, stop passes', stop({})[0], 0)
         open('a.md', 'w').write('- C3: the export opens in the finance tool | check: import it | fails-on: a file with a byte order mark the tool rejects\n')
         want('after-criterion accepted', freeze_after('a.md')[0], 0); want('after-criterion post-verdict, stop refuses', stop({})[0], 2)
@@ -214,6 +220,10 @@ def selftest():
         want('person row is MISSED and overall follows', (next(r['outcome'] for r in load('verdict.json')['rows'] if r['row'] == 'Q2_PERSON'), load('verdict.json')['overall']), ('MISSED', 'MISSED'))
         x = seat3('C', 'MET'); x['done'] = 1; mk([seat3('A', 'MET'), seat3('B', 'MET'), x]); want('integer done refused', grid('g.json')[0], 1)
         mk([seat3('A', 'MET'), seat3('B', 'MET'), seat3('C', 'MET', done=False)]); grid('g.json'); want('new grid notes the cleared person answer', 'person_answer_cleared' in load('verdict.json'), True)
+        mk([seat3('A', 'MET'), seat3('B', 'MET'), seat3('C', 'MET')], {}); grid('g.json')
+        want('MET without the agent rerun reads UNRESOLVED (self-reported)', [r for r in load('verdict.json')['rows'] if r['row'] == 'C1'][0]['outcome'], 'UNRESOLVED')
+        mk([seat3('A', 'MET'), seat3('B', 'MET'), seat3('C', 'MET')], {'C1': False, 'C2': True, 'C3': True}); grid('g.json')
+        want('agent rerun that saw no catch reads UNRESOLVED', [r for r in load('verdict.json')['rows'] if r['row'] == 'C1'][0]['outcome'], 'UNRESOLVED')
     finally: os.chdir(home); shutil.rmtree(tmp, ignore_errors=True)
     print('selftest: %s' % ('all pass' if not bad else '%d FAILED' % bad)); return 1 if bad else 0
 

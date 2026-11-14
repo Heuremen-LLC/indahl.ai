@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-14T11:18:10Z",
+ "built_utc": "2026-11-14T11:35:03Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 131,
+   "commit": "522389cfd18cae5718796865cffa3e1f1a1bcd33",
+   "files": 6011,
+   "id": "522389cfd18c",
+   "json": "/receipts/stamps/release_522389cfd18c.json",
+   "ledger_sha256": "46b1ada295cb25853056501dd0e33ea7300fcf9738a93afee181f1ebf2d17a74",
+   "manifest_sha256": "d6a6581d6d1a54c7db4df770c1ea581b47f5a3b72e2a3e78800ce8914163a8b2",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-14T11:35:02Z",
+   "sha256": "050cb4358ed111c42d82755adf1521f361a3e82a05db7f9819e7e9e7b744f477",
+   "wayback": [],
+   "wayback_waiting": 129
+  },
   {
    "changed": 86,
    "commit": "95ae6a40be1d71c3b1cf78d33093d56befc11701",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-14T11:18:10Z",
    "sha256": "4693382e1386ec1c416cd88fd602877bd7ee2b3e3124fd46eef37475ff4ba9b3",
    "wayback": [],
-   "wayback_waiting": 83
+   "wayback_waiting": 3
   },
   {
    "changed": 88,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-14T11:10:16Z",
    "sha256": "6f50e4a8e8f6e00af4504dea2b0cbca0539f6052e4b91e17a3fafe71972fff13",
    "wayback": [],
-   "wayback_waiting": 13
+   "wayback_waiting": 1
   },
   {
    "changed": 295,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-14T11:05:07Z",
    "sha256": "52fce9e372efa589960a42ae9507f7a3ed93c883dacbf0b11d5226cdfe50e5a9",
    "wayback": [],
-   "wayback_waiting": 206
+   "wayback_waiting": 185
   },
   {
    "changed": 103,
@@ -75,7 +90,7 @@
    "released_at": "2026-11-14T10:40:47Z",
    "sha256": "95d01bae999ff887a2c57c904b73eb56d9b4d8a9877a3043a9e1b8c2e218da9a",
    "wayback": [],
-   "wayback_waiting": 83
+   "wayback_waiting": 81
   },
   {
    "changed": 673,
@@ -150,7 +165,7 @@
    "released_at": "2026-11-14T09:40:14Z",
    "sha256": "c18897a2be742812d400c4084c496a7d6e52503f8b0c4ec9f3bd020e8cc4eb65",
    "wayback": [],
-   "wayback_waiting": 14
+   "wayback_waiting": 11
   },
   {
    "changed": 122,
@@ -165,7 +180,7 @@
    "released_at": "2026-11-14T09:09:31Z",
    "sha256": "7f9b004ffdc6e8adcfa6f1f7d0cb18f644fbeb60131b83d6644bf3da83fb659d",
    "wayback": [],
-   "wayback_waiting": 18
+   "wayback_waiting": 15
   },
   {
    "changed": 476,
@@ -180,7 +195,7 @@
    "released_at": "2026-11-14T09:02:50Z",
    "sha256": "49b8830a4fdba9e62197ea5872bd7e18653559e732077797bc53af949a9d67ba",
    "wayback": [],
-   "wayback_waiting": 60
+   "wayback_waiting": 53
   },
   {
    "changed": 302,

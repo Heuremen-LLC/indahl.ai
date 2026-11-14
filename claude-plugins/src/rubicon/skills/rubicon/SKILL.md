@@ -63,6 +63,7 @@ Write the answers to `grid.json`:
 
 ```json
 { "independent": true,
+  "agent_rerun": { "C1": true },
   "seats": [
     { "name": "A", "criteria": { "C1": { "outcome": "MET", "planted_fail_caught": true, "reason": "..." } },
       "done": true, "done_reason": "...", "pass_but_fail": "" },
@@ -71,7 +72,9 @@ Write the answers to `grid.json`:
 ```
 
 Before tallying, open what the seats cite. For every criterion, rerun its check against its planted wrong answer yourself where it can
-be run, and set `planted_fail_caught` from what you saw, not from what the seat said. Where a seat cites a source for a MET or a
+be run, and record what you saw in the grid's `agent_rerun` field (`{"C1": true}` when your own rerun saw the check catch its planted wrong
+answer, `false` when you reran it and the check did not catch it, and no entry when it could not be rerun). The script counts MET only
+where your own rerun saw the catch. No entry reads UNRESOLVED as self-reported, and `false` reads UNRESOLVED as a check that missed. Where a seat cites a source for a MET or a
 pass-but-fail, open it with the source-check procedure (the indahl-source-check skill, if installed). A seat whose only support is
 something nobody could open does not count as having shown its answer. Where nothing could be rerun or opened, say so in the report:
 the catch is then self-reported.

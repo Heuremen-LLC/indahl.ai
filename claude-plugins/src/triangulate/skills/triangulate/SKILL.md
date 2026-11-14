@@ -43,12 +43,19 @@ thing that would change its answer.
 Evidence means a source, data or computation a reader can open and check. A seat that returns none is **UNGROUNDED**. It is reported
 in full but cannot count toward convergence.
 
-**Open the evidence before counting it.** A citation is not grounding until someone has opened it. Before reading convergence, open
-each seat's cited evidence yourself, using the source-check procedure (the indahl-source-check skill, if installed): does it exist,
-does it say what the seat claims, which version was read. Mark each one SUPPORTS, PARTIAL, CONTRADICTS, SILENT, NOT_FOUND or CANNOT_TELL.
-A seat is grounded only if at least one of its citations reads SUPPORTS. A seat whose evidence is only PARTIAL, SILENT, NOT_FOUND,
-CONTRADICTS or CANNOT_TELL is UNGROUNDED, and the receipt says which citation failed. A computation counts as evidence only if you rerun it and get
-the seat's result. One that cannot be rerun reads CANNOT_TELL, never grounded.
+**Open the evidence before counting it.** A citation is not grounding until someone has opened it. Before reading convergence, you,
+the triangulating agent, open each seat's cited evidence using the source-check procedure (the indahl-source-check skill, if installed):
+does it exist, does it say what the seat claims, which version was read. Mark each one SUPPORTS, PARTIAL, CONTRADICTS, SILENT,
+NOT_FOUND or CANNOT_TELL. This is one model's reading of the source, and the receipt says so.
+- A seat is grounded only if a citation reads SUPPORTS **on the claim its answer rests on**. A tangential SUPPORTS does not ground it.
+- Every CONTRADICTS a seat's evidence turns up is carried into the item-by-item table, even when the seat is grounded on another
+  citation. A contradiction never disappears from convergence.
+- A SUPPORTS counts only with its receipt: the quoted passage, and the version, date or hash of what was opened. A label with no passage
+  behind it is not evidence.
+- The same work under another URL, DOI, preprint, mirror or translation is one evidence chain. SHARED_SOURCE checks for the same work,
+  not the same link.
+- A computation counts only if you rerun it. NOT_RERUN (it could not be rerun) reads CANNOT_TELL. RERUN_MISMATCH (it was rerun and gave
+  a different result) counts like CONTRADICTS.
 
 ## 3. Read the three readings item by item
 
@@ -88,7 +95,7 @@ Write `triangulate/<short-name>/RECEIPT.md` in the working folder (or show it in
 
 1. The question block from step 1, with the time it was fixed (UTC).
 2. Each seat's full answer, verbatim, labelled A, B, C, with whether the seats ran as independent agents or sequentially.
-   Beside each seat, its cited evidence and the status you found when you opened it.
+   Beside each seat, its cited evidence, the status you found when you opened it, the quoted passage and the version opened.
 3. The item-by-item comparison table.
 4. The outcome, its range, the alternatives tested, and what would decide a CANNOT_TELL.
 5. Anything defined after the answers, labelled so.
