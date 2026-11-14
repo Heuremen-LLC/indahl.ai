@@ -1925,7 +1925,7 @@
 /r/pack.size.forecast-data-pack	2026-11-13
 /r/pack.size.hflicense-data-pack	2026-11-13
 /r/pack.size.hfsize-data-pack	2026-11-13
-/r/pack.size.hosts-data-pack	2026-11-13
+/r/pack.size.hosts-data-pack	2026-11-14
 /r/pack.size.hpt-data-pack	2026-11-13
 /r/pack.size.iris-list-pack	2026-11-13
 /r/pack.size.iris-research-package	2026-11-13

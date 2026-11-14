@@ -91,6 +91,7 @@ print(json.dumps({'at': time.strftime('%Y-%m-%d %H:%M'), 'ok': not bad, 'site_pa
 PY
 python3 "$B/indahl-ai/accountability.py" buildinfo 2>&1 | tail -1 || true   # 10 Nov: the release record at /build.json (commits, deploy fingerprint, gate lines, pages hash), KV build_json
 if [ $PUBRC -eq 3 ]; then echo "!! 5b FAIL: the site deployed but its pages were NOT mirrored to the public indahl.ai repo (code only). Alert written for Bones."; fi
+set +e; python3 "$L/served_public_gate.py"; SPG=$?; set -e; if [ $SPG -ne 0 ]; then echo "!! 5b FAIL: files the site serves are missing from the public indahl.ai repo"; printf -- '- [public:served] since %s: served files missing from the public indahl.ai repo (ledger/served_public_gate.py)\n' "$(date '+%Y-%m-%d %H:%M')" >> "$B/alerts/ALERTS_OPEN.txt"; fi   # 14 Nov (Wayfinder caught it): everything the site serves is in the public repo, checked every release
 if [ $PUBRC -ne 0 ] || echo "$PUBOUT" | grep -q REFUSED; then echo "!! PUBLIC REPOS REFUSED: the site shipped, the public code copies did not (see above; the watch shows this BAD until fixed)"; fi
 echo "== 5c INDEXNOW"; python3 "$B/tools/indexnow.py" 2>&1 | tail -1 || true
 # 7 STAMPS (10 Nov): outside timestamps after a verified release. release_<commit>.json (commit, ledger hash, manifest of every deployed file)
