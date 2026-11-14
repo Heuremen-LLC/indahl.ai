@@ -1,5 +1,5 @@
 path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,reason,wilson_lo,wilson_hi,products_tested
-/all,all,ABOVE,,,0.239,0.1524,0.3333,431,103,0.1524,0.3333,,0.2011,0.2814,229
+/all,all,ABOVE,,,0.2384,0.1514,0.3327,432,103,0.1514,0.3327,,0.2007,0.2808,229
 /product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.179,0.1348,0.2339,229,41,0.1348,0.2339,,,,
 /product_level/Products where every tested supported cycle is unreleased,Products where every tested supported cycle is unreleased,ABOVE,,,0.083,0.0538,0.1259,229,19,0.0538,0.1259,,,,
 /by_product/amazon-neptune,amazon-neptune,CANNOT_TELL,,,1.0,0.8513,1.0,22,22,0.8513,1.0,TOO_WIDE_TO_RESOLVE,,,

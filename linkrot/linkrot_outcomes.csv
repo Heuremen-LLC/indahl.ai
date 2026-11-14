@@ -14,7 +14,7 @@ path,label,outcome,n,of,share,lo,hi,links,live,gone,dns_fail,blocked,timeout,rot
 /by_host/gitlab.com,gitlab.com,CANNOT_TELL,,,,0.0,0.4899,4,4,0,0,0,0,0.0,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,
 /by_host/huggingface.co,huggingface.co,CONSISTENT,,,,0.0036,0.0461,160,152,2,0,6,0,0.013,,,,,,,,,,,,,
 /by_host/zenodo.org,zenodo.org,CANNOT_TELL,,,,0.0,0.2281,13,13,0,0,0,0,0.0,TOO_WIDE_TO_RESOLVE,,,,,,,,,,,,
-/repos/all,all,CONSISTENT,,,,0.0,0.0022,,,,,,,,,764,0.4429,0.4196,0.4664,1725,0,200,1525,0,19,1017,0.0
+/repos/all,all,CONSISTENT,,,,0.0,0.0022,,,,,,,,,764,0.4429,0.4196,0.4664,1725,0,200,1525,0,19,1020,0.0
 /repos/by_year/2018,2018,CANNOT_TELL,,,,0.0,0.1487,,,,,,,,TOO_WIDE_TO_RESOLVE,6,0.2727,0.1315,0.4815,22,0,0,22,0,0,18,0.0
 /repos/by_year/2019,2019,CANNOT_TELL,,,,0.0,0.0918,,,,,,,,STRADDLES_EDGE,16,0.4211,0.2785,0.5781,38,0,1,37,0,0,34,0.0
 /repos/by_year/2020,2020,CONSISTENT,,,,0.0,0.0464,,,,,,,,,30,0.3797,0.2807,0.49,79,0,6,73,0,1,73,0.0
@@ -22,5 +22,5 @@ path,label,outcome,n,of,share,lo,hi,links,live,gone,dns_fail,blocked,timeout,rot
 /repos/by_year/2022,2022,CONSISTENT,,,,0.0,0.0228,,,,,,,,,68,0.4121,0.3398,0.4884,165,0,11,154,0,1,140,0.0
 /repos/by_year/2023,2023,CONSISTENT,,,,0.0,0.0153,,,,,,,,,102,0.413,0.3533,0.4752,247,0,27,220,0,11,202,0.0
 /repos/by_year/2024,2024,CONSISTENT,,,,0.0,0.0104,,,,,,,,,174,0.4754,0.4248,0.5266,366,0,28,338,0,3,258,0.0
-/repos/by_year/2025,2025,CONSISTENT,,,,0.0,0.0093,,,,,,,,,203,0.4963,0.4481,0.5446,409,0,56,353,0,2,198,0.0
+/repos/by_year/2025,2025,CONSISTENT,,,,0.0,0.0093,,,,,,,,,203,0.4963,0.4481,0.5446,409,0,56,353,0,2,201,0.0
 /repos/by_year/2026,2026,CONSISTENT,,,,0.0,0.0125,,,,,,,,,125,0.4112,0.3573,0.4673,304,0,65,239,0,0,11,0.0
