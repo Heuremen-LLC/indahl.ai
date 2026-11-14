@@ -58,3 +58,12 @@ Then in the project: `/ccr init`. Requires Python 3 (python3, or python on Windo
 ## Credits
 
 Designed by Wayfinder (who named it) and Bones. Sage refereed the design over seven rounds and moved it each time toward claiming only what the record shows: hash-bound approvals, attribution apart from cause, ranges found by content, MOVED, the tampered-store check, REDACTED against UNLOGGED_REMOVAL, and the transcript cross-check.
+
+## How the scripts arrive
+
+This copy carries no executable file. Its commands fetch each script from the public repository github.com/Heuremen-LLC/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
+
+- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/798d508c842d2b97459c4d4efb46d4a3ece8ce08/claude-plugins/src/ccr/scripts/ccr.py
+  sha256 544d028599e41661bdf2f5fbb8d9419435d0cec4e0040877ef2e38102a669d5d
+
+The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`).
