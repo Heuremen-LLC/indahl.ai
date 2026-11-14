@@ -28,6 +28,7 @@ The tool is then the command `qia-check`. It is also importable as the module `q
    Flags: STALE (T1, T2, readout_error, prob_meas0_prep1, prob_meas1_prep0 or init_error measured more than 24 hours before the stamp or the run), ZERO (an error value of 0), TINY (a nonzero error value below 1e-6), FUTURE (a figure dated after its record's stamp), T2>2T1, and PAIR (T1 and T2 measured more than 24 hours apart).
    UNKNOWN marks anything that cannot be read: an absent, null, NaN, zero or negative T1 or T2, a negative error value, an unknown unit, an unreadable date, a date with no zone, conflicting duplicate entries, or a qubit with no figures. UNKNOWN is never a pass.
    The page opens with the number of flag rows and UNKNOWN rows. A page where nothing was checked says so, and the command exits with code 2. A record stamp with no zone is refused.
+   `before` reads one file. If other files in the same folder carry the same stamp, the page says how many and whether their figures differ, and `after` over the folder checks every one.
    Gates and zz are not read.
 3. Read the Guards before the work: `pip install faultsguards`, then `python -m faultsguards guards`
 

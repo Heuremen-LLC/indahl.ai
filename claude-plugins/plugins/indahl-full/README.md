@@ -25,7 +25,7 @@ Built by build_bundle.py from the plugins beside it; the parts and their version
 - quote-check 1.0.0
 - source-check 1.0.0
 - controls 1.0.0
-- slack 1.0.0
+- margin 1.0.0
 - correct 1.0.0
 - clause 1.0.0
 

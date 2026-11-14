@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qia-check"
-version = "1.0.2"
+version = "1.0.3"
 description = "Checks on IBM Quantum calibration records before and after a run, from Heuremen LLC. Standard library only."
 readme = "README.md"
 requires-python = ">=3.9"

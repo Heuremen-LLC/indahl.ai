@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""qia_check.py -- QIA Research Package, Heuremen LLC (https://indahl.ai/qia). Standard library only. Version 1.0.2.
+"""qia_check.py -- QIA Research Package, Heuremen LLC (https://indahl.ai/qia). Standard library only. Version 1.0.3.
 
 Checks the IBM Quantum calibration record your run depends on, before the run and after it. Your files are opened read-only and are
 never changed. Their sha256 is taken before and after and printed in the report. Reports go to a separate folder (default
@@ -31,7 +31,7 @@ Gates and zz are NOT read by this package. Every flag and change carries a categ
 
 The checks read IBM's published figures only. They make no claim about your results. Free to run and cite with attribution; see LICENSE."""
 import json, gzip, sys, os, glob, hashlib, argparse, html, math, re, datetime as dt
-VERSION = '1.0.2'
+VERSION = '1.0.3'
 UTC = dt.timezone.utc
 ERRS = ('readout_error', 'prob_meas1_prep0', 'prob_meas0_prep1'); TIMES = ('T1', 'T2'); FIELDS = TIMES + ERRS + ('init_error',)
 UNIT_US = {'': 1.0, 'us': 1.0, 'µs': 1.0, 'μs': 1.0, 'ns': 1e-3, 'ms': 1e3, 's': 1e6}   # T1/T2 normalised to microseconds (R12)

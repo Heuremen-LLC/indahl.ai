@@ -5,7 +5,7 @@ plugin's own license kept under licenses/<plugin>/. Run before every release (pu
   python3 build_bundle.py [--check]   (--check: exit 1 if plugins/indahl is not what this script would build)"""
 import json, os, shutil, sys, filecmp, tempfile
 H = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(H, 'plugins'); OUT = os.path.join(P, 'indahl')
-PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'slack', 'correct', 'clause']
+PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause']
 SKIP = ('.v1', '.v2', '.v3', '.v4', '.v5', '.v6', '.pyc', '.DS_Store'); SKIP_DIRS = {'__pycache__', '.claude-plugin'}
 LIC = {'LICENSE', 'LICENSE.txt', 'LICENSE-STANDARD.txt', 'NOTICE.txt'}
 

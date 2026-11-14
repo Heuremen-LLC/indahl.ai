@@ -162,9 +162,9 @@
       "homepage": "https://indahl.ai/standard"
     },
     {
-      "name": "indahl-slack",
-      "source": "./src/slack",
-      "description": "For a sharp prediction, design or result, find how far its key parameter can move before the conclusion fails, and compare that slack with the parameter's own stated uncertainty. Returns ROBUST, FRAGI",
+      "name": "indahl-margin",
+      "source": "./src/margin",
+      "description": "For a sharp prediction, design or result, find how far its key parameter can move before the conclusion fails, and compare that margin with the parameter's own stated uncertainty. Returns ROBUST, FRAGILE (margin smaller than the uncertainty) or CANNOT_TELL, with the break point. Use before an expensive run, a preregistration, a launch decision, or when a result rests on one tuned number. Nothing is sent outside your session.",
       "version": "1.0.0",
       "category": "research",
       "homepage": "https://indahl.ai/standard"
