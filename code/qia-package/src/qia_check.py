@@ -85,7 +85,7 @@ def check_record(S, Q, qubits, ref=None, ref_name='the run'):
     rows = []; U = lambda q, f, why: rows.append(dict(qubit=q, check='UNKNOWN', field=f, detail=why, outcome='UNKNOWN'))
     for q in qubits:
         e = Q.get(q, {})
-        if not e: U(q, '(all)', 'no T1, T2 or error figures for this qubit in the record'); continue
+        if not e: U(q, '(all)', 'no figures: no T1, T2 or error figure for this qubit in the record'); continue
         val, date = {}, {}
         for f in TIMES:
             if f not in e: U(q, f, 'absent from the record')   # P04: a missing T1/T2 is never a pass
@@ -194,7 +194,7 @@ def pull(backend, dest):
 COLS = ['category', 'qubit', 'check', 'field', 'detail', 'outcome']
 def figs(Qx):   # a record's figures, independent of file bytes and key order: two records conflict only if these differ
     return json.dumps({str(q): {f: [[num(x[0]) if num(x[0]) is not None else x[0], x[1], x[2] or ''] for x in e[f]] for f in sorted(e)} for q, e in sorted(Qx.items())}, sort_keys=True, default=str)
-UNK_TEXT = 'UNKNOWN (figures, qubits or entries that could not be read: absent, unusable, zoneless or conflicting)'
+UNK_TEXT = 'UNKNOWN row(s) (a figure, entry or qubit that could not be read: absent, unusable, zoneless or conflicting. An (all) row is one qubit with no figures)'   # 13 Nov, Sage: counts are rows, not figures
 def main():
     ap = argparse.ArgumentParser(description=f'{NAME} {VERSION}, {ORG}'); sub = ap.add_subparsers(dest='cmd', required=True)
     a1 = sub.add_parser('before'); a1.add_argument('record', nargs='?'); a1.add_argument('--qubits'); a1.add_argument('--pull'); a1.add_argument('--out', default='heuremen_report')
@@ -219,8 +219,20 @@ def main():
         meta = [(f'{len(rows) - unk} flag row(s), {unk} ' + UNK_TEXT + '.') if qs else 'NO QUBIT WAS CHECKED: this page is not a pass.', f'Backend {b}, record stamped {S:%Y-%m-%d %H:%M} UTC, {(at - S).total_seconds() / 3600:.1f} h before {"the run time " + format(at, "%Y-%m-%d %H:%M") + " UTC" if a.at else "this check"}. Qubits checked: {len(qs)}.',
                 'IBM recalibrates during the day. Save the record again right before you submit, and keep it with your data.', 'Gates and zz are not read by this package.']
         if not qs: meta.append('NO QUBITS CHECKED: the record has no qubits, or none of the ones asked for. Nothing here is a pass.')
-        if unk: meta.append(f'{unk} figure(s) could not be read (UNKNOWN). UNKNOWN is not a pass.')
+        if unk: meta.append(f'{unk} UNKNOWN row(s): something could not be read. UNKNOWN is not a pass.')
         if miss: meta.append(f'Not in this record, so not checked: qubits {", ".join(map(str, miss))}.')
+        # 13 Nov 2026, Sage: before reads one file. Look for other files in the same folder with the same stamp and say what was not checked.
+        sib = []
+        if a.record:
+            for p2 in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(rec)), '*.json')) + glob.glob(os.path.join(os.path.dirname(os.path.abspath(rec)), '*.json.gz'))):
+                if os.path.realpath(p2) == os.path.realpath(rec): continue
+                try: b2, S2, Q2 = load(p2)
+                except Exception: continue
+                if b2 == b and S2 == S: sib.append((os.path.basename(p2), figs(Q2) != figs(Q)))
+        if sib:
+            nd = [n for n, d in sib if d]
+            meta.append(f'{len(sib)} other file(s) in this folder carry the same stamp' + (f', {len(nd)} with different figures ({", ".join(nd)})' if nd else ', with the same figures') + '. before checks only the file given. Run after over the folder to check every one.')
+        else: meta.append('before reads only this file. Other records with the same stamp, if any exist outside this folder, were not seen.')
         tt = [r for r in rows if r.get('category') == 'T1 and T2']; ee = [r for r in rows if r.get('category') != 'T1 and T2']
         hp, jp = write(a.out, f'before_{b}', f'Before the run: {b}', meta, [(f'T1 and T2 flags ({len(tt)})', tt, COLS), (f'Error-figure flags ({len(ee)})', ee, COLS)], [(rec, h0, h1)],
                        dict(_empty_flags_before=None if qs else 'Nothing was checked: no qubit to read.', backend=b, stamp=S.isoformat(), run_time=at.isoformat(), qubits=qs, flags=rows, unknown=unk))

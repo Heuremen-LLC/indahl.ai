@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-14T00:59:11Z",
+ "built_utc": "2026-11-14T01:21:18Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 229,
+   "commit": "d51378c3b58703451663cf3c2089f62cd079f109",
+   "files": 5977,
+   "id": "d51378c3b587",
+   "json": "/receipts/stamps/release_d51378c3b587.json",
+   "ledger_sha256": "33a4ce72e45ec70a79d75100851ff96fa8496973bf1c80a5c3dcc3f4dc144d54",
+   "manifest_sha256": "46cd4a0891b2d1607ba4beb69690880a34b8d9e04230345a5adfd95fc6dbbc7d",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-14T01:21:18Z",
+   "sha256": "deb03317626fd6a53d41f09b3e2de3b4e52567554577a37b91ee3dafb7f9f199",
+   "wayback": [],
+   "wayback_waiting": 226
+  },
   {
    "changed": 760,
    "commit": "9c213ce66a21a74184eef3b09cc7ebeaa70da10f",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-14T00:53:17Z",
    "sha256": "bf9a645331e2dea1140b21a54a36505daad9d5553bd5e7d76db853396b85e07f",
    "wayback": [],
-   "wayback_waiting": 759
+   "wayback_waiting": 669
   },
   {
    "changed": 5035,
@@ -281,7 +296,7 @@
      "url": "https://indahl.ai/petrol"
     }
    ],
-   "wayback_waiting": 4231
+   "wayback_waiting": 4139
   },
   {
    "changed": 129,
@@ -622,7 +637,7 @@
    "released_at": "2026-11-13T23:18:34Z",
    "sha256": "8b304d7161aaa268b21eb4a909288526ce318014aeba175c84d7c9d7267811d4",
    "wayback": [],
-   "wayback_waiting": 52
+   "wayback_waiting": 21
   },
   {
    "changed": 109,
@@ -2358,7 +2373,7 @@
      "url": "https://indahl.ai/airline/airline-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 15
+   "wayback_waiting": 12
   },
   {
    "changed": 4865,
@@ -7663,7 +7678,7 @@
      "url": "https://indahl.ai/weights"
     }
    ],
-   "wayback_waiting": 198
+   "wayback_waiting": 197
   }
  ],
  "site": "https://indahl.ai"

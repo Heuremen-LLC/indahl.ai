@@ -135,7 +135,7 @@
     qubits.forEach(function (q) {
       function U(f, why) { rows.push({ qubit: q, check: 'UNKNOWN', field: f, detail: why, outcome: 'UNKNOWN' }); }
       var e = rec.Q[q] || {}, keys = Object.keys(e), val = {}, date = {}, dord = [];
-      if (!keys.length) { U('(all)', 'no T1, T2 or error figures for this qubit in the record'); return; }
+      if (!keys.length) { U('(all)', 'no figures: no T1, T2 or error figure for this qubit in the record'); return; }
       TIMES.forEach(function (f) { if (!(f in e)) U(f, 'absent from the record'); });
       keys.forEach(function (f) {
         var entries = e[f], seen = {}, nd = 0;
@@ -342,6 +342,7 @@
       return;
     }
     var age = (s - r.under.stamp) / 3600000;
+    out.appendChild(el('p', 'bench-note', 'What this page checks: the record in force at the start, for the qubits in that record. Records stamped during the run are listed and their changes shown, but their own flags are not checked here. The qia-check package checks each of them (qia-check after).'));   // 13 Nov 2026, Sage: the limit sits beside the result
     out.appendChild(el('h4', null, 'The record in force at the start'));
     out.appendChild(el('p', null, 'The latest record in our mirror stamped at or before the start was stamped ' + second(r.under.stamp) + ' UTC, ' + fmtFixed(age, 1) + ' hours before the start. File: ' + r.under.file + '. If IBM recalibrated after it and before the run, the record in force is not in our mirror.'));
     if (r.inForce.length > 1) out.appendChild(el('p', 'bench-note', 'Our mirror holds ' + r.inForce.length + ' files with that stamp. ' + (r.conflict ? 'Their figures differ, so which one was in force is not known. The flags below are for the first file.' : 'Their figures are the same.')));
@@ -351,7 +352,7 @@
     if (!r.flags.length) out.appendChild(el('p', null, 'Nothing flagged in the figures this check reads.'));
     else {
       var nu = r.flags.filter(function (x) { return x.check === 'UNKNOWN'; }).length;
-      if (nu) out.appendChild(el('p', 'bench-note', nu + ' figure' + (nu === 1 ? '' : 's') + ' could not be read (UNKNOWN). UNKNOWN is not a pass.'));
+      if (nu) out.appendChild(el('p', 'bench-note', nu + ' UNKNOWN row' + (nu === 1 ? '' : 's') + ': something could not be read. UNKNOWN is not a pass.'));
       out.appendChild(table('Flags in the record in force at the start', [['Qubit', 'qubit', 1], ['Check', 'check'], ['Figure', 'field'], ['Detail', 'detail'], ['Outcome', 'outcome']],
         r.flags.map(function (x) { return { qubit: x.qubit, check: x.check, field: x.field, detail: String(x.detail).replace(/; /g, ', '), outcome: x.outcome }; })));
     }
