@@ -53,7 +53,7 @@ Privacy: https://indahl.ai/privacy. Terms: https://indahl.ai/terms.
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/Heuremen-LLC/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/91c5f7fb14e0e32fa8c642c5c1d73558d88f43f5/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
-  sha256 0f7fd2ccc0076ecb5293c1b442c6411a4ddc9c1afbbee2d80bdba55bf52c85ef
+- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/6031b8046f37c0e1ca11e5e5b3ba01b66250dffa/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
+  sha256 b202788bc366eaa91c1fb936748676121afd7290a90b1350dca6fde639c97091
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`).
