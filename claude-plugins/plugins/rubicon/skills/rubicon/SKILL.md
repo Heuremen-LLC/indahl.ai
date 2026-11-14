@@ -10,10 +10,10 @@ sha256, and only then run it. If the download or the check fails, stop and tell 
 Show the user the commands before running them the first time.
 
 ```bash
-F="$HOME/.cache/indahl-plugins/rubicon/rubicon-106205719ddc.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/1f5b4469ac778f107d10f74ba87286861e8f8a50/claude-plugins/src/rubicon/scripts/rubicon.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '106205719ddcdfc9d2724380b8a713b8e24e98b118c4e848fed446387bf8405c')" "$F.part" && mv "$F.part" "$F"; }
+F="$HOME/.cache/indahl-plugins/rubicon/rubicon-f3b427ef7a92.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/4fd9271385579e7521b9046c355ac4e66c95df2c/claude-plugins/src/rubicon/scripts/rubicon.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'f3b427ef7a92a8beb11caafd8ad07e47367203461013d0410de0756e9bac39f7')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/1f5b4469ac778f107d10f74ba87286861e8f8a50/claude-plugins/src/rubicon/scripts/rubicon.py (sha256 106205719ddcdfc9d2724380b8a713b8e24e98b118c4e848fed446387bf8405c).
+Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/4fd9271385579e7521b9046c355ac4e66c95df2c/claude-plugins/src/rubicon/scripts/rubicon.py (sha256 f3b427ef7a92a8beb11caafd8ad07e47367203461013d0410de0756e9bac39f7).
 
 
 # Indahl Rubicon
@@ -49,7 +49,7 @@ Rules for the criteria:
 Show the criteria to the user, then freeze them:
 
 ```
-python3 "$HOME/.cache/indahl-plugins/rubicon/rubicon-106205719ddc.py" freeze criteria.md
+python3 "$HOME/.cache/indahl-plugins/rubicon/rubicon-f3b427ef7a92.py" freeze criteria.md
 ```
 
 Freezing records a hash. After this the criteria do not change. A criterion added later goes in with `freeze FILE --after` and is labelled **defined after the work** in every verdict.
@@ -95,7 +95,7 @@ the catch is then self-reported.
 Then tally it:
 
 ```
-python3 "$HOME/.cache/indahl-plugins/rubicon/rubicon-106205719ddc.py" grid grid.json
+python3 "$HOME/.cache/indahl-plugins/rubicon/rubicon-f3b427ef7a92.py" grid grid.json
 ```
 
 How rows are read:
@@ -116,7 +116,7 @@ Report the verdict row by row. For each UNRESOLVED row, quote the minority seat'
 When the seats' Q2 prediction is anything but a unanimous MET, ask the person who asked whether they call it done, and record their answer as its own row:
 
 ```
-python3 "$HOME/.cache/indahl-plugins/rubicon/rubicon-106205719ddc.py" person yes|no "what they said"
+python3 "$HOME/.cache/indahl-plugins/rubicon/rubicon-f3b427ef7a92.py" person yes|no "what they said"
 ```
 
 It is never mixed into the seat count, so a split Q2 stays open after the person answers yes. Close it by acknowledging Q2 and citing their answer, for example `rubicon.py ack Q2 "the person said it is done, see Q2_PERSON"`. A new grid clears the person's answer, because it was about older work, so ask again after a re-run. Then, for every open row (UNRESOLVED or CANNOT_TELL), do one of two things:
