@@ -1028,6 +1028,7 @@ _CADABODY = ('<section class="bench"><h2>Public DNS Filters, Checked Against Dom
   '<p class="bench-note">Each cell is the share of live listed domains the resolver refused, with the 95% interval, and the count behind it. It is a measured share and is not compared with any provider claim, so no cell carries an outcome word and none is cannot tell. A query that returns no answer is a failed read, counted apart and outside every share. No ranking.</p></section>')
 PAGES['/cada'] = page('/cada', 'CADA | Checked Against Domain Alerts | Heuremen LLC', 'CADA: public DNS filters held against fresh malware and phishing listings, live, with the share blocked and the time to block for every resolver.', _CADABODY, hero_slim('CADA &middot; Checked Against Domain Alerts'))
 _FEED.append(('/cada', 'CADA: Checked Against Domain Alerts', 'Public DNS filters held against fresh bad-domain listings.'))
+_API_META = {}
 def _api_tools():
     # 30 Oct 2026 (site pass A-9): the Tools table is built from the TOOLS list in api.js, so it cannot drift from /api/v1. Each row is the first sentence of the tool's own description.
     import subprocess as _spp, tempfile as _tf, shutil as _sh, json as _jj
@@ -1036,10 +1037,10 @@ def _api_tools():
         _p = os.path.join(_d, 'api_tools.mjs')
         for _imp in set(_re.findall(r"from '\./([\w.-]+\.js)'", open(os.path.join(HERE, 'api.js'), encoding='utf-8').read())):   # 14 Nov 2026: api.js imports its sibling modules, copy them beside it
             _sh.copy(os.path.join(HERE, _imp), os.path.join(_d, _imp))
-        open(_p, 'w', encoding='utf-8').write(open(os.path.join(HERE, 'api.js'), encoding='utf-8').read() + '\nexport const __TOOLS = TOOLS.map(t => ({ name: t.name, description: t.description }));\n')
-        _r = _spp.run([_sh.which('node') or '/opt/homebrew/bin/node', '--input-type=module', '-e', 'import(' + _jj.dumps('file://' + _p) + ').then(m => console.log(JSON.stringify(m.__TOOLS)))'], capture_output=True, text=True, timeout=90)
+        open(_p, 'w', encoding='utf-8').write(open(os.path.join(HERE, 'api.js'), encoding='utf-8').read() + '\nexport const __TOOLS = TOOLS.map(t => ({ name: t.name, title: t.title || null, description: t.description }));\nexport const __GROUPS = Object.fromEntries(Object.entries(GROUPS).map(([k, v]) => [k, v.tools.filter(n => TOOLS.some(t => t.name === n))]));\nexport const __PROMPTS = PROMPTS.filter(p => TOOLS.some(t => t.name === p.tool)).map(p => ({ name: p.name, title: p.title, description: p.description, tool: p.tool }));\n')   # 14 Nov: /connect lists each server's tools and the prompts
+        _r = _spp.run([_sh.which('node') or '/opt/homebrew/bin/node', '--input-type=module', '-e', 'import(' + _jj.dumps('file://' + _p) + ').then(m => console.log(JSON.stringify({ tools: m.__TOOLS, groups: m.__GROUPS, prompts: m.__PROMPTS })))'], capture_output=True, text=True, timeout=90)
         if _r.returncode != 0: raise SystemExit('build_site: could not read the tool list from api.js: ' + _r.stderr[:300])
-        _tools = _jj.loads(_r.stdout)
+        _meta = _jj.loads(_r.stdout); _tools = _meta['tools']; _API_META.update(_meta)
     finally: _sh.rmtree(_d, ignore_errors=True)
     out = []
     for t in _tools:
@@ -2746,8 +2747,30 @@ def main():
     _cr += ('<h2>Connectors (MCP servers)</h2><p>Remote MCP servers over HTTP, no key, nothing to install. In Claude: Settings, Connectors, Add custom connector, and paste the address. In Claude Code: <code>claude mcp add --transport http indahl &lt;address&gt;</code>.</p>'
             '<table class="mtx"><thead><tr><th>Address</th><th>What it holds</th></tr></thead><tbody>'
             '<tr><td><code>https://indahl.ai/mcp</code></td><td>Every tool over every live desk. Tool list on the <a href="/api">API page</a>.</td></tr>'
-            + ''.join('<tr><td><code>https://indahl.ai/mcp/' + _g + '</code></td><td>' + _chtml.escape(_t) + '. ' + _chtml.escape(_nt) + '</td></tr>' for _g, _t, _nt in _MCPG)
+            + ''.join('<tr><td><code>https://indahl.ai/mcp/' + _g + '</code></td><td>' + _chtml.escape(_t) + '. ' + _chtml.escape(_nt)
+                      + ('<br><span class="ggw">Tools: ' + ', '.join('<code>' + _n + '</code>' for _n in _API_META.get('groups', {}).get(_g, []) if _n != 'list_divisions') + '</span>' if _API_META.get('groups', {}).get(_g) else '') + '</td></tr>' for _g, _t, _nt in _MCPG)
             + '</tbody></table><p>The same tools as plain JSON: <a href="/api/v1">/api/v1</a>, with the OpenAPI description at <a href="/api/openapi.json">/api/openapi.json</a>.</p>')
+    # 14 Nov 2026 (Wayfinder: "get our skills and connectors listed on indahl.ai"): checks you bring, prompts, signed answers and other clients,
+    # all from api.js (TOOLS, GROUPS, PROMPTS) at build time, so the page cannot drift from the servers.
+    _TD = {t['name']: t for t in _API_META.get('tools', [])}
+    _first = lambda d: _mre.split(r'(?<=[a-z0-9\)])\.\s+(?=[A-Z])', d.strip(), maxsplit=1)[0].rstrip('.').replace('; ', ', ') + '.'
+    _bring = [n for n in ('paper_check', 'check_reported_statistics', 'package_check', 'model_check', 'what_changed') if n in _TD]
+    if _bring:
+        _cr += ('<h2>Checks you bring</h2><p>These tools check something you name or paste, live, with the same rules our desks use.</p>'
+                '<table class="mtx"><thead><tr><th>Tool</th><th>What it checks</th><th>Server</th></tr></thead><tbody>'
+                + ''.join('<tr><td><code>' + n + '</code></td><td>' + _chtml.escape(_first(_TD[n]['description'])) + '</td><td>'
+                          + ', '.join('<code>/mcp/' + g + '</code>' for g, L in _API_META.get('groups', {}).items() if n in L) + '</td></tr>' for n in _bring)
+                + '</tbody></table>')
+    if _API_META.get('prompts'):
+        _cr += ('<h2>Commands</h2><p>Each server offers ready-made prompts. Clients that support prompts show them as commands.</p>'
+                '<table class="mtx"><thead><tr><th>Command</th><th>What it does</th><th>Tool it runs</th></tr></thead><tbody>'
+                + ''.join('<tr><td><code>' + _x['name'] + '</code></td><td>' + _chtml.escape(_x['description']) + '</td><td><code>' + _x['tool'] + '</code></td></tr>' for _x in _API_META['prompts'])
+                + '</tbody></table>')
+    _cr += ('<h2>Every answer is signed</h2><p>Each tool answer from an MCP server carries a second block, a receipt: the SHA-256 of the answer exactly as sent, the SHA-256 of the request, '
+            'the server time, and an Ed25519 signature from the key published at <a href="/.well-known/jwks.json">/.well-known/jwks.json</a>. A receipt shows that indahl.ai produced this answer to this request at that time. '
+            'It does not show that the answer is right. The receipt itself says how to verify it.</p>')
+    _cr += ('<h2>Other MCP clients</h2><p>Any client that speaks MCP over HTTP can use the same addresses. A typical configuration entry:</p>'
+            '<pre><code>{\n  "mcpServers": {\n    "indahl-research": { "type": "http", "url": "https://indahl.ai/mcp/research" }\n  }\n}</code></pre>')
     _cr += ('<h2>Claude Code plugins and skills</h2><p>Add the marketplace once, then install what you want, or everything with <code>indahl-full</code>.</p>'
             '<pre><code>/plugin marketplace add Heuremen-LLC/indahl.ai\n/plugin install indahl-full@heuremen</code></pre>'
             '<table class="mtx"><thead><tr><th>Install</th><th>What it does</th></tr></thead><tbody>'
