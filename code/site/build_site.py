@@ -2772,7 +2772,8 @@ def main():
              ('After it goes out', [('silent-failure-guard', 'Quiet is not success. After any push, deploy, sync or job, the effect is read back from where it should have landed, not from the exit code or an &ldquo;ok&rdquo; line.'),
                                     ('correct', 'A correction goes beside the original, with who caught it and when. Ours are on the <a href="/corrections">Corrections</a> page.'),
                                     ('readcheck', 'The skill refuses to write a reading without its check block. The commit gate that enforces it ships in the version from our own marketplace, not in the directory copy.')]),
-             ('Big jobs', [('batch', 'Work too large for one context window is split into batches, each done by a fresh worker against the same written checks.')]),
+             ('Big jobs', [('relay', 'Multi-stage unattended work as a chain of stages with dependencies and machine lanes. Each stage records its own exit code, a failed stage blocks its dependents in the open, decide stages add the next run from the last result, and a final stage writes the handoff.'),
+                           ('batch', 'Work too large for one context window is split into batches, each done by a fresh worker against the same written checks.')]),
              ('Checking other people&rsquo;s claims', [('standards', 'A paper or claim checked against the <a href="/standard">Standards</a> claim codes, with quotes and four-state statuses.'),
                                                        ('eval-check', 'A language-model evaluation claim, or your own eval run, checked against the house eval checks.')])]
     _hw = ('<section class="legal"><p>These are the checks we hold our results to. Each one is also a free skill for Claude Code, so anyone can run it on their own work. Several were written after a mistake of ours. Our corrections are listed on the <a href="/corrections">Corrections</a> page.</p>'

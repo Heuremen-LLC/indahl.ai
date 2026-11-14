@@ -1,0 +1,19 @@
+{
+  "name": "indahl-relay",
+  "version": "1.0.0",
+  "description": "Run multi-stage unattended work (training ladders, eval sweeps, data pipelines) as a chain of stages with dependencies, machine lanes, exit codes recorded to files, explicit blocked states and an optional end-of-run handoff. Runs locally. Nothing is sent anywhere unless a stage you write sends it.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "pipeline",
+    "automation",
+    "unattended",
+    "workflow"
+  ],
+  "homepage": "https://indahl.ai/how",
+  "icon": ".claude-plugin/icon.png"
+}

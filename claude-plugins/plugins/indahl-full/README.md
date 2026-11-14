@@ -29,6 +29,7 @@ Built by build_bundle.py from the plugins beside it; the parts and their version
 - correct 1.0.0
 - clause 1.0.0
 - silent-failure-guard 1.0.0
+- relay 1.0.0
 
 ## Services this bundle contacts
 

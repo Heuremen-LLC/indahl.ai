@@ -7500,7 +7500,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3756,
+"every_min": 3761,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -7601,7 +7601,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3631,
+"every_min": 3636,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -7695,7 +7695,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 601,
+"every_min": 602,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -7742,7 +7742,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 551,
+"every_min": 552,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -7760,7 +7760,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 551,
+"every_min": 552,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -7778,7 +7778,7 @@
 "secrecords": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 129,
+"every_min": 130,
 "mode": "outcome",
 "name": "SECRECORDS",
 "src": "rider",
@@ -7787,7 +7787,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 463,
+"every_min": 464,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -7814,7 +7814,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 551,
+"every_min": 552,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -7850,7 +7850,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 463,
+"every_min": 464,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",

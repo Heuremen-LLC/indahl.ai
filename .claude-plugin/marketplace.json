@@ -192,6 +192,14 @@
       "version": "1.0.0",
       "category": "research",
       "homepage": "https://indahl.ai/how"
+    },
+    {
+      "name": "indahl-relay",
+      "source": "./claude-plugins/src/relay",
+      "description": "Run multi-stage unattended work (training ladders, eval sweeps, data pipelines) as a chain of stages with dependencies, machine lanes, exit codes recorded to files, explicit blocked states and an optional end-of-run handoff. Runs locally. Nothing is sent anywhere unless a stage you write sends it.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/how"
     }
   ]
 }

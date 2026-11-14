@@ -8,7 +8,7 @@ Never edit openai/ by hand.   python3 build_openai.py"""
 import json, os, re, shutil, urllib.request, zipfile
 H = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(H, 'plugins'); O = os.path.join(H, 'openai')
 ICONS = os.path.expanduser('~/bones-forge/cloudflare-workers/heuremen-door/public/icons')
-ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause', 'silent-failure-guard']
+ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause', 'silent-failure-guard', 'relay']
 SUB = {   # subtitle (30 characters or fewer) and three starter prompts per listing
  'indahl': ('Stated vs. delivered, measured', ['What does indahl.ai measure?', "Is IBM's published T1 for ibm_kingston current?", 'Check this paper against the Standards.']),
  'indahl-data': ('Query every indahl.ai desk', ['List the indahl.ai divisions.', 'Do top Hugging Face licenses match their files?', 'Show every live test side by side.']),
@@ -27,6 +27,7 @@ SUB = {   # subtitle (30 characters or fewer) and three starter prompts per list
  'quote-check': ('Every quote, verbatim', ['Check every quote in this draft against its source.', 'Run quote check on this.', 'Show quote check on an example.']),
  'source-check': ('Do the citations say it?', ['Check that every citation in this exists and says what is claimed.', 'Run source check on this.', 'Show source check on an example.']),
  'controls': ('Can your test actually fail?', ['Audit the controls of this study before we run it.', 'Run controls on this.', 'Show controls on an example.']),
+ 'relay': ('Run a multi-stage job', ['Set up a relay chain for this pipeline.', 'Show the status of my relay chain.', 'Add a decide stage that picks the next run.']),
  'silent-failure-guard': ('Did it really work?', ['Verify what this push actually did.', 'Run silent-failure-guard on this pipeline.', 'Scan this script for hidden failures.']),
  'margin': ('How far before it breaks?', ['How much margin does this prediction have?', 'Run margin on this.', 'Show margin on an example.']),
  'correct': ('Fix it beside, not over', ['Log this correction properly.', 'Run correct on this.', 'Show correct on an example.']),
