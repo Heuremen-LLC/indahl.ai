@@ -1,5 +1,5 @@
 {
-  "description": "Silent failure guard: refuses a background Bash wait or a Monitor watch that can only report success.",
+  "description": "Silent failure guard: refuses a background Bash wait or a Monitor watch that can only report success. Runs python3, or python where python3 is the Windows Store stub.",
   "hooks": {
     "PreToolUse": [
       {
@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/watch_guard.py\"",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/watch_guard.py\"",
             "timeout": 10
           }
         ]

@@ -39,3 +39,9 @@ An acknowledged row stays open in the record, with the reason beside it. Acknowl
 - The seats' answer on whether the person would call it done is a model's guess about the asker, not the asker. When it is not a unanimous yes, the skill asks the person and records their answer as its own row.
 
 Heuremen LLC, https://indahl.ai. Refereed before release by Sage, the outside referee on our work. MIT licence.
+
+## Credits
+
+Windows fix, 14 Nov 2026: Sage asked, Bones found and fixed. Sage, the outside referee on our work, asked whether `python3` resolves on Windows. Bones ran it on a Windows machine, found it was the Microsoft Store stub that runs nothing (exit 49), so the hook would fail without a word and the check would be silently off, and fixed it in every plugin hook. The hook now falls back to `python`.
+
+Sage also refereed the design before release. She found that adding a criterion after a verdict left the old verdict passing, that CANNOT_TELL rows could not be acknowledged, that missing seat answers fell through instead of refusing, and that the first README described a lock where the code is a record and a prompt.

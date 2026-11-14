@@ -1,8 +1,16 @@
 {
-  "description": "Indahl Rubicon: while a task in this folder has frozen criteria, refuses a finish with no verdict or with open rows.",
+  "description": "Indahl Rubicon: while a task in this folder has frozen criteria, refuses a finish with no verdict or with open rows. Runs python3, or python where python3 is the Windows Store stub.",
   "hooks": {
     "Stop": [
-      { "hooks": [ { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/rubicon.py\" stop", "timeout": 10 } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=python3; $P -c 1 >/dev/null 2>&1 || P=python; exec $P \"${CLAUDE_PLUGIN_ROOT}/scripts/rubicon.py\" stop",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   }
 }

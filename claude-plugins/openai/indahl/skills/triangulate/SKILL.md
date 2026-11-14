@@ -40,12 +40,17 @@ The seats must not see each other's work, and none of them sees this skill's lat
 Each seat returns: its answer in the ruler's form, its confidence as a width or range (not a word), the evidence it used, and the one
 thing that would change its answer.
 
+Evidence means a source, data or computation a reader can open and check. A seat that returns none is **UNGROUNDED**. It is reported
+in full but cannot count toward convergence.
+
 ## 3. Read the three readings item by item
 
 Compare before you combine. Never average three answers into one.
 
-- **Converge**: all three answers fall inside each other's widths and for the same reasons. High confidence, but check that the
-  agreement is not one shared assumption (the same misread source, the same default).
+- **Before reading convergence, list each seat's evidence.** Seats whose only support is the same source, or the same assumption,
+  count as one evidence chain. Convergence needs at least two grounded seats resting on independent evidence chains.
+- **Converge**: at least two grounded seats on independent evidence chains fall inside each other's widths. Agreement among
+  ungrounded seats, or among seats on one chain, is not convergence.
 - **Split two to one**: name the odd seat, its reason, and whether that reason is a fact the other two missed or an error. A split
   is a reading, not noise.
 - **Three ways apart**: the question is not settled by this material. Say what is missing.
@@ -60,7 +65,10 @@ For a value against a stated figure:
 - **ABOVE** or **BELOW**: the seats' combined range sits wholly on one side of the stated value.
 - **CONSISTENT**: the range contains the stated value. Print the range - CONSISTENT is a bound, never "the same".
 - **CANNOT_TELL**: the range is too wide to decide, the seats split, or the seats were not independent enough to trust the
-  agreement. Say what would decide it: which data, which test, which source.
+  agreement. Say what would decide it: which data, which test, which source. Name the reason, and list every reason that applies,
+  since reasons stack:
+  - **UNGROUNDED**: fewer than two grounded seats.
+  - **SHARED_SOURCE**: the agreement rests on one evidence chain.
 
 For a yes/no question, use **HOLDS**, **FAILS**, **SPLIT** or **CANNOT_TELL** the same way.
 
@@ -83,6 +91,8 @@ The user can rerun the same block later and diff the two receipts; a changed out
 
 - A question rewritten after the seats answer, to fit what they said.
 - One seat's answer passed off as three.
+- Agreement counted from a seat that cites no evidence.
+- Two seats on one source counted as two witnesses.
 - A majority vote presented as certainty when the minority seat cites a fact the others did not address.
 - An average of the seats' numbers presented as the answer.
 - A CONSISTENT with no range printed.

@@ -48,3 +48,7 @@ jobs with a no-op.
 None. It runs inside your session.
 
 Privacy: https://indahl.ai/privacy. Terms: https://indahl.ai/terms.
+
+## Credits
+
+Windows fix, 14 Nov 2026: Sage asked, Bones found and fixed. Sage, the outside referee on our work, asked whether `python3` resolves on Windows. Bones ran it on a Windows machine, found it was the Microsoft Store stub that runs nothing (exit 49), so the hook would fail without a word and the check would be silently off, and fixed it in every plugin hook. The hook now falls back to `python`.

@@ -20,9 +20,12 @@ import glob, hashlib, json, os, sys, tempfile
 
 CLASSES = ('input', 'output', 'cache_write', 'cache_read')
 
+def home_dir():   # one place for the home folder, so the selftest can point it elsewhere on every OS (Windows ignores HOME, Sage)
+    return os.environ.get('INDAHL_SPEND_CAP_HOME') or os.path.expanduser('~')
+
 def budget_files(cwd):
     out = []
-    for p in (os.path.join(cwd or '.', '.claude', 'spend-cap.json'), os.path.expanduser('~/.claude/spend-cap.json')):
+    for p in (os.path.join(cwd or '.', '.claude', 'spend-cap.json'), os.path.join(home_dir(), '.claude', 'spend-cap.json')):
         if os.path.exists(p) and os.path.abspath(p) not in [os.path.abspath(x) for x, _ in out]:
             try:
                 with open(p) as f: b = json.load(f)
@@ -87,13 +90,12 @@ def limits(b):
 def fmt(unit, x): return ('$%.2f' % x) if unit == 'usd' else '{:,.0f} tokens'.format(x)
 def breakdown(t): return 'input {:,}, output {:,}, cache writes {:,}, cache reads {:,} over {:,} messages'.format(t['input'], t['output'], t['cache_write'], t['cache_read'], t['messages'])
 
-def warned_once(transcript, tag):
-    """True if this warning was already given for this session. Keeps one marker file per session and limit in the temp folder."""
-    p = os.path.join(tempfile.gettempdir(), 'indahl-spend-cap-' + hashlib.sha256((transcript + '|' + tag).encode()).hexdigest()[:20])
-    if os.path.exists(p): return True
-    try: open(p, 'w').close()
-    except Exception: pass
-    return False
+def marker(transcript, tag): return os.path.join(tempfile.gettempdir(), 'indahl-spend-cap-' + hashlib.sha256((transcript + '|' + tag).encode()).hexdigest()[:20])
+def warned_before(transcript, tag): return os.path.exists(marker(transcript, tag))
+def mark_warned(transcript, tags):   # written only when the warning is actually emitted (Sage: a later deny must not swallow it)
+    for tag in tags:
+        try: open(marker(transcript, tag), 'w').close()
+        except Exception: pass
 
 def check(ev):
     """-> (decision, message) with decision 'allow', 'warn' or 'deny'."""
@@ -102,19 +104,22 @@ def check(ev):
     plans = []
     for path, b in files:
         lim = limits(b)
-        if isinstance(lim, str): return 'deny', 'spend-cap: the budget file %s %s. Tool calls are refused until it is fixed or deleted.' % (path, lim)
+        if isinstance(lim, str): return 'deny', ('spend-cap: the budget file %s %s. Tool calls are refused until it is fixed or deleted. The agent cannot fix it, because its own edit '
+                                                  'would be refused too: stop and ask the person to edit or delete %s by hand.' % (path, lim, path))
         plans += [(path,) + x for x in lim]
     tr = session_transcript(ev.get('transcript_path'))
     if not tr or not os.path.exists(tr): return 'warn', 'spend-cap: no transcript to read, so the budget cannot be checked for this call (CANNOT_TELL).'
-    t = usage(tr); warns = []
+    t = usage(tr); warns = []; tags = []
     for path, unit, used_fn, lim, warn in plans:
         used = used_fn(t)
         if used >= lim:
             return 'deny', ('spend-cap: this session has used %s of the %s budget in %s (%s). Tool calls are refused from here. Stop, report what is done '
                             'and what is not, and ask the person whether to raise the budget.' % (fmt(unit, used), fmt(unit, lim), path, breakdown(t)))
-        if lim and used >= warn * lim and not warned_once(tr, '%s|%s|%s' % (path, unit, warn)):
-            warns.append('spend-cap: %s of %s used (%.0f%%, %s), budget in %s.' % (fmt(unit, used), fmt(unit, lim), 100 * used / lim, breakdown(t), path))
-    return ('warn', ' '.join(warns)) if warns else ('allow', '')
+        tag = '%s|%s|%s|%s' % (path, unit, lim, warn)   # the limit is in the tag, so raising the cap re-arms the warning
+        if lim and used >= warn * lim and not warned_before(tr, tag):
+            tags.append(tag); warns.append('spend-cap: %s of %s used (%.0f%%, %s), budget in %s.' % (fmt(unit, used), fmt(unit, lim), 100 * used / lim, breakdown(t), path))
+    if warns: mark_warned(tr, tags); return 'warn', ' '.join(warns)
+    return 'allow', ''
 
 def emit(decision, msg):
     """PreToolUse output (Claude Code hooks reference, read 14 Nov 2026). deny: exit 2, the reason on stderr goes to the model. warn: exit 0 with
@@ -130,9 +135,9 @@ def selftest():
     bad = 0; tmp = tempfile.mkdtemp()
     def want(n, g, e):
         nonlocal bad; ok = g == e; bad += not ok; print(('PASS ' if ok else 'FAIL ') + n + ' -> ' + repr(g))
-    home = os.environ.get('HOME')
+    home = os.environ.get('INDAHL_SPEND_CAP_HOME')
     try:
-        os.environ['HOME'] = os.path.join(tmp, 'home'); os.makedirs(os.path.join(tmp, 'home', '.claude'))
+        os.environ['INDAHL_SPEND_CAP_HOME'] = os.path.join(tmp, 'home'); os.makedirs(os.path.join(tmp, 'home', '.claude'))
         tr = os.path.join(tmp, 'sess.jsonl'); os.makedirs(os.path.join(tmp, 'sess', 'subagents'))
         msg = lambda i, a, b: json.dumps({'type': 'assistant', 'requestId': 'r' + i, 'message': {'id': 'm' + i, 'usage': {'input_tokens': a, 'output_tokens': b, 'cache_creation_input_tokens': 0, 'cache_read_input_tokens': 1000}}})
         noid = lambda a: json.dumps({'type': 'assistant', 'message': {'usage': {'input_tokens': a, 'output_tokens': 0}}})
@@ -156,7 +161,9 @@ def selftest():
         put(P, {'max_tokens': 10000000, 'max_usd': 0.000001, 'prices_per_mtok': {'input': 5, 'output': 25, 'cache_write': 6.25, 'cache_read': 0.5}}); os.remove(H)
         want('both limits enforced: usd trips', check(ev)[0], 'deny')
         put(P, {'max_tokens': 1000}); want('missing transcript: warn visibly, CANNOT_TELL', check(dict(cwd=cwd, transcript_path='/nope')), ('warn', 'spend-cap: no transcript to read, so the budget cannot be checked for this call (CANNOT_TELL).'))
-        want('deny exits 2', emit('deny', 'x'), 2)
+        want('deny exits 2', emit('deny', ''), 2)
+        put(P, {'max_tokens': 4400, 'warn_at': 0.8}); r = check(ev); want('a new limit re-arms the warning', check(dict(ev))[0] == 'allow' and r[0] == 'warn', True)
+        put(P, {'max_tokens': 3000}); put(H, {'max_tokens': 100000, 'warn_at': 0.01}); want('a deny does not swallow a warning', (check(ev)[0], warned_before(tr, '%s|tokens|100000.0|0.01' % H)), ('deny', False)); os.remove(H)
         put(P, {'max_tokens': 3000}); sub = os.path.join(tmp, 'sess', 'subagents', 'a.jsonl')
         want('called from a subagent transcript, counts the whole session', check(dict(cwd=cwd, transcript_path=sub))[0], 'deny')
         import io, contextlib; buf = io.StringIO()
@@ -164,7 +171,8 @@ def selftest():
         o = json.loads(buf.getvalue()); want('warn sets no permission decision', 'permissionDecision' in o['hookSpecificOutput'], False)
         want('warn reaches person and model', (o['systemMessage'], o['hookSpecificOutput']['additionalContext']), ('near', 'near'))
     finally:
-        if home is not None: os.environ['HOME'] = home
+        if home is None: os.environ.pop('INDAHL_SPEND_CAP_HOME', None)
+        else: os.environ['INDAHL_SPEND_CAP_HOME'] = home
         shutil.rmtree(tmp, ignore_errors=True)
     print('selftest: %s' % ('all pass' if not bad else '%d FAILED' % bad)); return 1 if bad else 0
 
@@ -173,6 +181,11 @@ def main():
     if len(sys.argv) > 2 and sys.argv[1] == 'report': print(json.dumps(usage(sys.argv[2]), indent=1)); return 0
     try: ev = json.load(sys.stdin)
     except Exception: return emit('warn', 'spend-cap: the hook input could not be read, so the budget was not checked for this call (CANNOT_TELL).')
-    return emit(*check(ev))
+    d, m = check(ev)
+    if os.environ.get('INDAHL_SPEND_CAP_LOG'):   # optional debug log: what each call handed the hook and what the hook decided
+        try:
+            with open(os.environ['INDAHL_SPEND_CAP_LOG'], 'a') as f: f.write(json.dumps(dict(tool=ev.get('tool_name'), transcript_path=ev.get('transcript_path'), agent_id=ev.get('agent_id'), agent_type=ev.get('agent_type'), decision=d)) + '\n')
+        except Exception: pass
+    return emit(d, m)
 
 if __name__ == '__main__': sys.exit(main())
