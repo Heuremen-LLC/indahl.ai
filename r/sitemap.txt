@@ -1951,7 +1951,7 @@
 /r/pack.size.trials-data-pack	2026-11-13
 /r/pack.size.uptime-data-pack	2026-11-13
 /r/pack.size.water-data-pack	2026-11-13
-/r/pack.size.weights-data-pack	2026-11-13
+/r/pack.size.weights-data-pack	2026-11-14
 /r/pack.size.wiki-data-pack	2026-11-14
 /r/paper.conc.d39m1.fez_repeat	2026-10-22
 /r/paper.conc.d39m1.kingston_first	2026-10-22

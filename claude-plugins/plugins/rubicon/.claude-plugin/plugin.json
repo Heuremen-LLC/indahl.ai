@@ -1,0 +1,19 @@
+{
+  "name": "indahl-rubicon",
+  "version": "1.0.0",
+  "description": "Decide what done means before the work, freeze it, then judge the finished work with three blind seats. A two-to-one split stays UNRESOLVED with the minority's reason, every seat voting MET must report its check catching a planted wrong answer, and each seat tries to build a way the work passes every check and still fails. Returns MET, MISSED, UNRESOLVED or CANNOT_TELL. A Stop hook interrupts the first attempt to finish while a row is open: a record and a prompt, not a lock. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "done",
+    "criteria",
+    "review",
+    "gate"
+  ],
+  "homepage": "https://indahl.ai/connect",
+  "icon": ".claude-plugin/icon.png"
+}
