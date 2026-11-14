@@ -41,3 +41,12 @@ jobs with a no-op.
 None. It runs inside your session.
 
 Privacy: https://indahl.ai/privacy. Terms: https://indahl.ai/terms.
+
+## How the scripts arrive
+
+This copy carries no executable file. Its commands fetch each script from the public repository github.com/Heuremen-LLC/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
+
+- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/91c5f7fb14e0e32fa8c642c5c1d73558d88f43f5/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
+  sha256 0f7fd2ccc0076ecb5293c1b442c6411a4ddc9c1afbbee2d80bdba55bf52c85ef
+
+The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`).
