@@ -40,3 +40,12 @@ Each stage's outcome is its own exit code, written to a file. A process that van
 None. The plugin reads no personal data and stores nothing outside the folder beside your chain file.
 
 Privacy: https://indahl.ai/privacy. Terms: https://indahl.ai/terms.
+
+## How the scripts arrive
+
+This copy carries no executable file. Its commands fetch each script from the public repository github.com/Heuremen-LLC/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
+
+- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py
+  sha256 9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0
+
+The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`).

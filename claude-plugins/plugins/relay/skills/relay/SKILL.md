@@ -3,11 +3,24 @@ name: relay
 description: Run long multi-step unattended work as a chain of stages with dependencies, machine lanes, recorded exit codes, explicit blocked states and an end-of-run handoff. Use for training ladders, eval sweeps, data pipelines, or any work that spans machines or sessions and must not fail silently. Use when someone asks about relay, a stage chain, or an overnight run.
 ---
 
+## Get the script first
+
+The script is not stored in this plugin. Fetch it from the public Heuremen LLC repository at the pinned commit, check its
+sha256, and only then run it. If the download or the check fails, stop and tell the user; never run a file that did not pass.
+Show the user the commands before running them the first time.
+
+```bash
+F="$HOME/.cache/indahl-plugins/relay/relay-9d2e36720036.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0')" "$F.part" && mv "$F.part" "$F"; }
+```
+Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py (sha256 9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0).
+
+
 Data sent: none. The plugin runs locally and sends nothing anywhere unless a stage you write sends it.
 
 # relay
 
-Script: `${CLAUDE_PLUGIN_ROOT}/scripts/relay.py` (Python 3.9 or later, standard library only).
+Script: `$HOME/.cache/indahl-plugins/relay/relay-9d2e36720036.py` (Python 3.9 or later, standard library only).
 
 ## When to use it
 
@@ -71,4 +84,4 @@ A loop that sends the same prompt again knows only what the model remembers and 
 
 ## Checks
 
-Run `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/relay.py selftest` to confirm it works on the machine. It plants chains in a temporary directory and checks the rules above.
+Run `python3 $HOME/.cache/indahl-plugins/relay/relay-9d2e36720036.py selftest` to confirm it works on the machine. It plants chains in a temporary directory and checks the rules above.

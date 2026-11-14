@@ -24,6 +24,11 @@
   "sha256": "cc0e26802ddbcc157def5ea0ee90e8d4a9b2c516336658f34072882c03c90592",
   "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/readcheck/scripts/readcheck.py"
  },
+ "relay/scripts/relay.py": {
+  "commit": "46c113e5fedcd0c5292224491ad34de86d2c3af1",
+  "sha256": "9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0",
+  "url": "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py"
+ },
  "reproduce/scripts/reproduce.py": {
   "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
   "sha256": "c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4",
