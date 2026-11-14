@@ -1034,6 +1034,8 @@ def _api_tools():
     _d = _tf.mkdtemp()
     try:
         _p = os.path.join(_d, 'api_tools.mjs')
+        for _imp in set(_re.findall(r"from '\./([\w.-]+\.js)'", open(os.path.join(HERE, 'api.js'), encoding='utf-8').read())):   # 14 Nov 2026: api.js imports its sibling modules, copy them beside it
+            _sh.copy(os.path.join(HERE, _imp), os.path.join(_d, _imp))
         open(_p, 'w', encoding='utf-8').write(open(os.path.join(HERE, 'api.js'), encoding='utf-8').read() + '\nexport const __TOOLS = TOOLS.map(t => ({ name: t.name, description: t.description }));\n')
         _r = _spp.run([_sh.which('node') or '/opt/homebrew/bin/node', '--input-type=module', '-e', 'import(' + _jj.dumps('file://' + _p) + ').then(m => console.log(JSON.stringify(m.__TOOLS)))'], capture_output=True, text=True, timeout=90)
         if _r.returncode != 0: raise SystemExit('build_site: could not read the tool list from api.js: ' + _r.stderr[:300])

@@ -1,4 +1,0 @@
-Heuremen LLC, https://indahl.ai/qia
-
-Loading this package's text (SKILL.md, the command file, README, the checker's reports) into an AI assistant's context to run these
-checks is permitted. It is not text and data mining or training under LICENSE.txt.

@@ -1,5 +1,8 @@
 // Read-only data API and MCP server for indahl.ai (28 Oct 2026). One tool list drives three surfaces: the MCP endpoint (POST /mcp), the REST endpoints (GET /api/v1/<tool>) and the OpenAPI file (/api/openapi.json).
 // Nothing here writes. Every answer carries its source page, the time it was read and the terms (retrieval and answering permitted, training not).
+import { paperCheck, checkReportedStatistics } from './research.js';
+import { signBytes, SIGNING_KEY } from './security.js';
+import { packageCheck, modelCheck } from './checks.js';   // 14 Nov 2026: desk rules on any package or model a person names   // 14 Nov 2026: a signed receipt on every MCP tool answer   // 14 Nov 2026: checks a person brings (research connector)
 const TERMS = 'https://indahl.ai/terms', USE = 'Retrieval and answering are permitted. Use as training data is not permitted.';
 const CORS = { 'access-control-allow-origin': '*', 'access-control-allow-methods': 'GET, POST, OPTIONS', 'access-control-allow-headers': 'content-type, mcp-protocol-version, mcp-session-id, accept' };
 const kv = async (env, key) => { const v = env.IRIS_BENCH ? await env.IRIS_BENCH.get(key) : null; try { return v ? JSON.parse(v) : null; } catch (e) { return null; } };
@@ -76,7 +79,7 @@ const DIVISIONS = [
   { id: 'atlas', url: 'https://indahl.ai/atlas', what: 'United States data centers, power plants and grid carbon with a source and pull date per row.' },
 ];
 const OUTCOMES = 'Outcomes are ABOVE, BELOW, CONSISTENT or CANNOT_TELL, relative to what was stated. Nothing returned, refused and held are counted as their own outcomes.';
-const TOOLS = [
+const TOOLS_ALL = [
   { name: 'list_divisions', description: 'List every division of indahl.ai with a one-line description and its page. Start here. ' + OUTCOMES, params: {}, run: async () => wrap('https://indahl.ai', DIVISIONS) },
   { name: 'time_servers', description: 'Public time servers (NTP) stated against delivered, live. Per server: stratum, its own stated error bound, measured offset from a GPS-disciplined reference, path half-delay and the outcome. Optional filter by server name. Offsets are shown from two networks. The offset common to all servers on one network belongs to that network\'s access link.', params: { server: { type: 'string', description: 'Substring of a server name, for example google or nist.' } },
     run: async (env, a) => { const d = await kv(env, 'time_live'); if (!d) return wrap('https://indahl.ai/time', null); if (a.server) d.servers = (d.servers || []).filter(s => s.server.includes(String(a.server).toLowerCase())); return wrap('https://indahl.ai/time', d); } },
@@ -132,8 +135,26 @@ const TOOLS = [
   { name: 'water', description: "WATER: every 24-Month Study projection of Lake Mead and Lake Powell since 2000 against the measured end-of-month level, by months ahead, with the live levels and the elevations the governing documents name.", params: {}, run: async (env) => wrap('https://indahl.ai/water', await kv(env, 'water_live')) },
   { name: 'wiki', description: "WIKI: population, GDP, Gini, unemployment, life expectancy and fertility figures in Wikidata that cite the World Bank or UNESCO, each read against the source's current and archived releases, and the Wikimedia Foundation's stated figures against the Wikimedia Analytics API, site statistics and its DSA filings.", params: {}, run: async (env) => wrap('https://indahl.ai/wiki', await kv(env, 'wiki_live')) },
   { name: 'social', description: "SOCIAL: the outcome counts and headline of each section (EU moderation reports against the DSA Transparency Database, Google's political ad library against FEC filings, TikTok's quarterly report against its EU filings, Bluesky's transparency report against its signed label stream), with the links to each section's rows.", params: {}, run: async (env, a, req) => wrap('https://indahl.ai/social', await (await env.ASSETS.fetch(new Request(new URL('/social/summary.json', req.url)))).json()) },
+  { name: 'paper_check', title: 'Check a paper', openWorld: true, description: 'Check one paper by DOI or arXiv id: retraction, correction and expression-of-concern notices registered in Crossref (which carries the Retraction Watch records), the current arXiv version, whether the code and data links stated in the abstract still open, and whether QIA or IRIS indexed it. Each check says what was read, from where, and what could not be read. NONE_FOUND means nothing was registered at the source when read, not that the paper is sound.', params: { id: { type: 'string', description: 'A DOI (10.xxxx/...) or an arXiv id (2401.01234, arXiv:2401.01234 or an arxiv.org link).' } }, required: ['id'],
+    run: async (env, a, req) => ({ source: 'https://indahl.ai/connect', served_at: new Date().toISOString(), terms: TERMS, use: USE, data: await paperCheck(env, req, a, studies) }) },
+  { name: 'check_reported_statistics', title: 'Recompute reported statistics', description: 'Paste text from a paper. Every reported t, F, chi-square, r and z statistic with its p value is recomputed from the statistic and its degrees of freedom (the method of statcheck), and every count-and-percentage pair such as "45 of 120 (37.5%)" is recomputed from its counts, allowing for rounding. Each row gives the quoted text, the stated and recomputed values and one of ABOVE, BELOW, CONSISTENT or CANNOT_TELL. Arithmetic only. This server keeps no copy of the text and writes no logs of it. Sent over MCP, the text travels in the request body. Sent to the REST endpoint, it travels in the URL, which networks along the way can log.', params: { text: { type: 'string', description: 'Text from a paper, up to 20,000 characters.' } }, required: ['text'],
+    run: async (env, a) => ({ source: 'https://indahl.ai/connect', served_at: new Date().toISOString(), terms: TERMS, use: USE, data: checkReportedStatistics(a.text) }) },
+  { name: 'what_changed', title: 'What changed since', description: 'Which live checks on indahl.ai changed since a given time. Each feed is fingerprinted on every run with only its own run-clock field removed (by exact path), so a CONTENT event means what the feed says changed. When only a source timestamp moved and nothing else did, that is recorded as its own STAMP_ONLY event, never as no change. Returns each feed with events since the time, its page and its tool. History starts on 14 Nov 2026 (watched_since per feed). Pass since as an ISO time. Default is 24 hours ago.', params: { since: { type: 'string', description: 'ISO time. Default 24 hours ago.' } },
+    run: async (env, a) => { const d = await kv(env, 'tape_live'); const ch = (d && d.changes) || null;
+      const since = a.since && !isNaN(Date.parse(a.since)) ? new Date(Date.parse(a.since)).toISOString() : new Date(Date.now() - 86400000).toISOString();
+      if (!ch || !Object.keys(ch).length) return wrap('https://indahl.ai/tape', { since, outcome: 'CANNOT_TELL', note: 'The change record is not available yet. It is written on each TAPE run.' });
+      const tools = new Set(TOOLS.map(t => t.name)), rows = [];
+      for (const [k, v] of Object.entries(ch)) { const ev = (v.events || []).filter(e => e.t > since); if (!ev.length) continue;
+        rows.push({ feed: k, page: k === 'headlines' ? 'https://indahl.ai/' : `https://indahl.ai/${k}`, tool: tools.has(k) ? k : null, content_events: ev.filter(e => e.kind === 'CONTENT').length, stamp_only_events: ev.filter(e => e.kind === 'STAMP_ONLY').length, last_event: ev[ev.length - 1], watched_since: v.watched_since, run_clock_paths_removed: v.clock_paths }); }
+      rows.sort((x, y) => (y.last_event.t || '').localeCompare(x.last_event.t || ''));
+      const unwatched = Object.entries(ch).filter(([, v]) => v.watched_since > since).map(([k]) => k);
+      return wrap('https://indahl.ai/tape', { updated: d.updated, since, feeds_with_events: rows.length, of: Object.keys(ch).length, feeds: rows,
+        ...(unwatched.length ? { not_watched_for_whole_window: unwatched, note: 'These feeds were first fingerprinted after the time asked, so an event before then would not show.' } : {}) }); } },
   { name: 'model_claims_round', description: 'The live round that reruns an open model\'s stated benchmark results with the published harness: each claim, our result and the outcome.', params: {}, run: async (env) => wrap('https://indahl.ai/hermes/model', await kv(env, 'model_live')) },
 ];
+// 14 Nov 2026: tools held back from the public surfaces until Sage's MOVES on them are applied and planted (third pass)
+const HELD = new Set(['what_changed', 'package_check', 'model_check']);
+const TOOLS = TOOLS_ALL.filter(t => !HELD.has(t.name));
 const schema = (t) => ({ type: 'object', properties: t.params || {}, required: t.required || [] });
 const jsonR = (o, status = 200, extra = {}) => new Response(JSON.stringify(o), { status, headers: { 'content-type': 'application/json; charset=utf-8', ...CORS, ...extra } });
 async function callTool(env, req, name, args) { const t = TOOLS.find(x => x.name === name); if (!t) return null; return t.run(env, args || {}, req); }
@@ -141,16 +162,43 @@ function openapi() {
   const paths = {}; for (const t of TOOLS) paths[`/api/v1/${t.name}`] = { get: { operationId: t.name, summary: t.description, parameters: Object.entries(t.params || {}).map(([n, p]) => ({ name: n, in: 'query', required: (t.required || []).includes(n), schema: { type: p.type, ...(p.enum ? { enum: p.enum } : {}) }, description: p.description })), responses: { 200: { description: 'JSON with source, read_at, terms, use and data.' } } } };
   return { openapi: '3.1.0', info: { title: 'indahl.ai data API', version: '1.0.0', description: 'Read-only. ' + OUTCOMES + ' ' + USE, termsOfService: TERMS }, servers: [{ url: 'https://indahl.ai' }], paths };
 }
+// 14 Nov 2026: receipt for one tool answer. The answer travels as its own text block, byte for byte the bytes hashed. The receipt signs
+// "indahl.ai receipt v1\n<tool>\n<served_at>\n<sha256 hex of the answer block>" with the site's Ed25519 key (public key at /.well-known/jwks.json).
+const canon = (o) => o === null || typeof o !== 'object' ? JSON.stringify(o) : Array.isArray(o) ? '[' + o.map(canon).join(',') + ']' : '{' + Object.keys(o).sort().map(k => JSON.stringify(k) + ':' + canon(o[k])).join(',') + '}';
+async function receipt(env, tool, args, text) {   // 14 Nov (Sage, second pass): v2 binds the request as well as the answer
+  const enc = new TextEncoder(), h = async (t) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', enc.encode(t)))].map(x => x.toString(16).padStart(2, '0')).join('');
+  const ah = await h(canon(args || {})), hex = await h(text);
+  const at = new Date().toISOString(), msg = `indahl.ai receipt v2\n${tool}\n${at}\n${ah}\n${hex}`, sig = await signBytes(env, enc.encode(msg)).catch(() => null);
+  return { receipt: 'indahl.ai receipt v2', tool, signed_at: at, signed_at_clock: 'the indahl.ai server clock', arguments_sha256: ah, answer_sha256: hex, signature_ed25519: sig, key_id: SIGNING_KEY.kid, public_key: 'https://indahl.ai/.well-known/jwks.json',
+    proves: 'indahl.ai produced this answer to this request at this server time. It does not prove the answer is right.',
+    how_to_verify: 'answer_sha256 is the SHA-256 of the first content block exactly as received (the string itself, not a re-serialization). arguments_sha256 is the SHA-256 of the request arguments as canonical JSON, keys sorted and no spaces. All argument values are strings, so the canonical form is the same in every language. Verify signature_ed25519 (base64url) over the UTF-8 text "indahl.ai receipt v2", tool, signed_at, arguments_sha256 and answer_sha256, joined by newlines, with the public key.',
+    ...(sig ? {} : { note: 'Signing was not available for this answer. The hash still identifies it.' }) };
+}
+// 14 Nov 2026: MCP prompts, one per check a person brings. A client shows them as commands. Each lists only where its tool is served.
+const PROMPTS = [
+  { name: 'check_paper', title: 'Check a paper', tool: 'paper_check', description: 'Notices, current version, stated links and our index for one paper.', arguments: [{ name: 'id', description: 'DOI or arXiv id', required: true }],
+    text: (a) => `Run paper_check with id "${a.id}". Report each check with its outcome and what it read. Quote any notice type and date. NONE_FOUND means nothing was registered at the source, so do not call the paper sound or clean from it. End with the links to the notices and pages the tool returned.` },
+  { name: 'check_statistics', title: 'Recompute reported statistics', tool: 'check_reported_statistics', description: 'Recompute every reported test statistic and percentage in a passage.', arguments: [{ name: 'text', description: 'Text from a paper', required: true }],
+    text: (a) => `Run check_reported_statistics on the text below. List every row that is not CONSISTENT with its quoted text, stated value, recomputed value, outcome and reason. Say how many rows were CONSISTENT. A difference can come from typesetting, a one-tailed test or a correction the text does not name, so present each one as something to check with the authors, not as an error.\n\n${a.text}` },
+  { name: 'vet_package', title: 'Check a PyPI package before adding it', tool: 'package_check', description: 'Install and license checks on one PyPI package.', arguments: [{ name: 'name', description: 'PyPI project name', required: true }],
+    text: (a) => `Run package_check with name "${a.name}". Report whether the newest release installs and whether its stated license agrees with its repository. If PyPI has no such project, say so and suggest checking the spelling.` },
+  { name: 'vet_model', title: 'Check a Hugging Face model', tool: 'model_check', description: 'Size and license checks on one Hugging Face model.', arguments: [{ name: 'repo', description: 'Model id, such as owner/name', required: true }],
+    text: (a) => `Run model_check with repo "${a.repo}". Report whether the size in the name agrees with the weights and whether the card license agrees with the license file, with each reason.` },
+  { name: 'whats_changed', title: 'What changed since', tool: 'what_changed', description: 'Which live checks changed in substance since a time.', arguments: [{ name: 'since', description: 'ISO time, default 24 hours ago', required: false }],
+    text: (a) => `Run what_changed${a.since ? ` with since "${a.since}"` : ''}. List each changed feed with when it changed and its page. Then open the changed feeds with their own tools and summarise what each now says.` },
+];
 // 13 Nov 2026 (Wayfinder: "Quantum is WIDE fucking open"): focused connectors on the same server, one URL each, each its own directory listing.
 const GROUPS = {
   quantum: { title: 'Heuremen LLC quantum data', note: 'IBM Quantum published calibration checked against itself and the QIA index of quantum hardware studies.',
     tools: ['list_divisions', 'ibm_calibration', 'ibm_audit', 'ibm_stability', 'ibm_queue', 'find_study', 'all_tests_side_by_side'] },
   models: { title: 'Heuremen LLC model and package data', note: 'Open models, packages and AI benchmarks: stated against delivered.',
-    tools: ['list_divisions', 'huggingface_license_claims', 'huggingface_model_sizes', 'package_license_claims', 'pypi_install_commands', 'hosts', 'weights', 'ailuminate', 'bench_results', 'model_claims_round', 'announced_shutdown_dates', 'arxiv_version_drift', 'link_rot', 'find_study', 'all_tests_side_by_side'] },
+    tools: ['list_divisions', 'package_check', 'model_check', 'huggingface_license_claims', 'huggingface_model_sizes', 'package_license_claims', 'pypi_install_commands', 'hosts', 'weights', 'ailuminate', 'bench_results', 'model_claims_round', 'announced_shutdown_dates', 'arxiv_version_drift', 'link_rot', 'find_study', 'all_tests_side_by_side'] },
   education: { title: 'Indahl Campus', note: 'Where colleges and universities publish their AI-policy material, and whether each page still opens. Links and states only, no ratings.',
     tools: ['list_divisions', 'education_list_schools', 'education_find_school', 'campus'] },
   infrastructure: { title: 'Indahl Atlas', note: 'Built infrastructure from open sources: data centers, operating power plants and planned power plants, with their places and source records. Locations and sources only, no ratings.',
     tools: ['list_divisions', 'infrastructure_find_datacenter', 'infrastructure_find_power_plant', 'infrastructure_planned_plants', 'infrastructure_near'] },
+  research: { title: 'Indahl Research Checks', note: 'Checks you bring: one paper by DOI or arXiv id (notices, current version, links, our index), and reported statistics in pasted text recomputed from their own numbers.',
+    tools: ['paper_check', 'check_reported_statistics', 'find_study', 'arxiv_version_drift', 'link_rot', 'what_changed'] },
   public: { title: 'Heuremen LLC public data checks', note: 'Forecasts, agencies, public services and infrastructure: stated against delivered.',
     tools: ['list_divisions', 'forecast_calibration', 'fed_projection_ranges_against_outcomes', 'payroll_revision_against_stated_margin', 'water', 'launch_slip', 'trials_results', 'data_cadence', 'support_windows', 'time_servers', 'dns_filters', 'uptime_vendors', 'security_record_claims', 'airline', 'airq', 'hpt', 'wiki', 'social', 'campus', 'tape', 'outside_seat_drift', 'all_tests_side_by_side'] },
 };
@@ -162,7 +210,7 @@ export async function handleApi(req, env, u) {
   let m = /^\/api\/v1\/([a-z_]+)$/.exec(p);
   if (m) {
     if (req.method !== 'GET') return jsonR({ error: 'GET only' }, 405, { allow: 'GET, OPTIONS' });
-    const args = {}; for (const [k, v] of u.searchParams) if (k.length < 40 && v.length < 200) args[k] = v;
+    const args = {}; for (const [k, v] of u.searchParams) if (k.length < 40 && v.length < (k === 'text' ? 8000 : 200)) args[k] = v;   // 14 Nov: pasted text for check_reported_statistics
     const r = await callTool(env, req, m[1], args); if (!r) return jsonR({ error: 'unknown tool', see: 'https://indahl.ai/api/v1' }, 404);
     return jsonR(r, 200, { 'cache-control': 'public, max-age=60' });
   }
@@ -177,10 +225,15 @@ export async function handleApi(req, env, u) {
       const id = msg.id, has = Object.prototype.hasOwnProperty.call(msg, 'id'); const ok = (result) => ({ jsonrpc: '2.0', id, result }), err = (code, message) => ({ jsonrpc: '2.0', id, error: { code, message } });
       if (!has) return null;
       switch (msg.method) {
-        case 'initialize': { const pv = (msg.params && msg.params.protocolVersion) || '2025-06-18'; return ok({ protocolVersion: pv, capabilities: { tools: { listChanged: false } }, serverInfo: { name: G ? 'indahl-' + gm[1] : 'indahl-ai', title: G ? G.title : 'Heuremen LLC data', version: '1.0.0' }, instructions: (G ? G.note + ' ' : '') + 'Read-only measurements of published claims against the data behind them. Start with list_divisions. ' + OUTCOMES + ' ' + USE }); }
+        case 'initialize': { const pv = (msg.params && msg.params.protocolVersion) || '2025-06-18'; return ok({ protocolVersion: pv, capabilities: { tools: { listChanged: false }, ...(PROMPTS.some(pr => TL.some(t => t.name === pr.tool)) ? { prompts: { listChanged: false } } : {}) }, serverInfo: { name: G ? 'indahl-' + gm[1] : 'indahl-ai', title: G ? G.title : 'Heuremen LLC data', version: '1.0.0' }, instructions: (G ? G.note + ' ' : '') + 'Read-only measurements of published claims against the data behind them. Start with list_divisions. ' + OUTCOMES + ' ' + USE }); }
         case 'ping': return ok({});
-        case 'tools/list': return ok({ tools: TL.map(t => { const title = t.title || toolTitle(t.name); return { name: t.name, title, description: t.description, inputSchema: schema(t), annotations: { title, readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false } }; }) });   // 13 Nov: every tool carries a title and explicit read-only, non-destructive, closed-world hints (Anthropic and OpenAI directory requirements: our own published data only)
-        case 'tools/call': { const n = msg.params && msg.params.name; if (!TL.some(t => t.name === n)) return err(-32602, 'unknown tool'); const r = await callTool(env, req, n, (msg.params && msg.params.arguments) || {}).catch(() => 'ERR'); if (r === null) return err(-32602, 'unknown tool'); if (r === 'ERR') return ok({ content: [{ type: 'text', text: 'The source could not be read just now.' }], isError: true }); return ok({ content: [{ type: 'text', text: JSON.stringify(r) }], isError: false }); }
+        case 'prompts/list': return ok({ prompts: PROMPTS.filter(pr => TL.some(t => t.name === pr.tool)).map(pr => ({ name: pr.name, title: pr.title, description: pr.description, arguments: pr.arguments })) });
+        case 'prompts/get': { const pr = PROMPTS.find(x => x.name === (msg.params && msg.params.name) && TL.some(t => t.name === x.tool)); if (!pr) return err(-32602, 'unknown prompt');
+          const a = (msg.params && msg.params.arguments) || {}; for (const ar of pr.arguments) if (ar.required && !a[ar.name]) return err(-32602, 'missing argument: ' + ar.name);
+          const clean = {}; for (const [k, v] of Object.entries(a)) clean[k] = String(v).slice(0, 20000);
+          return ok({ description: pr.description, messages: [{ role: 'user', content: { type: 'text', text: pr.text(clean) } }] }); }
+        case 'tools/list': return ok({ tools: TL.map(t => { const title = t.title || toolTitle(t.name); return { name: t.name, title, description: t.description, inputSchema: schema(t), annotations: { title, readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: !!t.openWorld } }; }) });   // 13 Nov: every tool carries a title and explicit read-only, non-destructive, closed-world hints (Anthropic and OpenAI directory requirements: our own published data only)
+        case 'tools/call': { const n = msg.params && msg.params.name; if (!TL.some(t => t.name === n)) return err(-32602, 'unknown tool'); const r = await callTool(env, req, n, (msg.params && msg.params.arguments) || {}).catch(() => 'ERR'); if (r === null) return err(-32602, 'unknown tool'); if (r === 'ERR') return ok({ content: [{ type: 'text', text: 'The source could not be read just now.' }], isError: true }); const text = JSON.stringify(r); return ok({ content: [{ type: 'text', text }, { type: 'text', text: JSON.stringify(await receipt(env, n, (msg.params && msg.params.arguments) || {}, text)) }], isError: false }); }
         default: return err(-32601, 'method not found');
       }
     };

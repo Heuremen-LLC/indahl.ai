@@ -34,6 +34,8 @@ def patterns(cmd):
 
 def check(tool, inp):
     cmd = inp.get('command') or ''
+    # 14 Nov: judge the shell, not the text it carries. Heredoc bodies (<<'EOF' ... EOF) are data, and prose inside them tripped the checks.
+    cmd = re.sub(r"<<-?\s*(['\"]?)(\w+)\1[^\n]*\n.*?\n\s*\2\s*(?=\n|$)", '<<HEREDOC', cmd, flags=re.S)
     background = tool == 'Monitor' or (tool == 'Bash' and inp.get('run_in_background'))
     if not background or not cmd: return None
     waits = re.search(r'\buntil\b|\bwhile\b', cmd) is not None
@@ -90,7 +92,9 @@ if __name__ == '__main__':
                  ('Bash', {'command': 'end=$((SECONDS+900)); while kill -0 4242 2>/dev/null && [ $SECONDS -lt $end ]; do sleep 10; done; tail -4 ship.log', 'run_in_background': True}, False),
                  ('Bash', {'command': 'end=$((SECONDS+900)); until ! pgrep -f "[s]hip.sh" >/dev/null || [ $SECONDS -ge $end ]; do sleep 10; done', 'run_in_background': True}, False),
                  ('Bash', {'command': 'end=$((SECONDS+900)); until [ "$(wc -l < released.txt)" = "2" ] || [ $SECONDS -ge $end ]; do sleep 10; done', 'run_in_background': True}, True),   # 13 Nov: hung all night
-                 ('Bash', {'command': 'until [ -s crawl.out ]; do sleep 15; done; cat crawl.out', 'run_in_background': True}, True)]   # no deadline
+                 ('Bash', {'command': 'until [ -s crawl.out ]; do sleep 15; done; cat crawl.out', 'run_in_background': True}, True),   # no deadline
+                 ('Bash', {'command': "{ cat <<'EOF'\nwe wait until the twin reads, while Sage checks\nEOF\n} > m.md; python3 send.py m.md; grep -E 'VERDICT|STANDS' out.txt", 'run_in_background': True}, False),   # 14 Nov: prose in a heredoc is not a wait
+                 ('Bash', {'command': "cat <<EOF > x\nhi\nEOF\nuntil grep -q DONE j.log; do sleep 5; done", 'run_in_background': True}, True)]   # a real wait after a heredoc is still judged
         bad = 0
         for t, i, want in cases:
             got = check(t, i) is not None

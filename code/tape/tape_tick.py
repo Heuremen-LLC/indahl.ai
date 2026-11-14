@@ -96,26 +96,16 @@ except Exception as ex: anch['note'] = type(ex).__name__
 last = chain[-1]; bq = [e for e in chain if e['kind'] == 'beacon'][-1]
 lf = [e for e in chain if e['kind'] == 'feeds'][-1]; lfl = json.load(open('leaves/%d.json' % lf['n']))['leaves']
 feedrec = {k: dict(n=lf['n'], hash=h) for k, h in lfl}
-# 14 Nov 2026 (what_changed tool): the chain hashes each feed whole, so its own clock fields change the hash on every run. Beside the chain
-# (never in it), a substance digest drops the clock fields and records when each feed's substance last changed. changes.json keeps it.
-TIMEKEYS = {'updated', 'read', 'read_at', 'generated', 'generated_at', 'built_utc', 'served_at', 'last_probe', 'last_run', 'now_utc', 'checked_at', 'fetched_at', 'age_s', 'age_min', 'ago', 'as_of', 'stamp', 'x'}
-def _strip(o):
-    if isinstance(o, dict): return {k: _strip(v) for k, v in o.items() if k not in TIMEKEYS}
-    if isinstance(o, list): return [_strip(v) for v in o]
-    return o
+# 14 Nov 2026 (what_changed tool, Sage third pass): content and stamp-only events per feed, beside the chain and never in it (tape_changes.py)
+changes_out = {}
 try:
-    ch = json.load(open('changes.json')) if os.path.exists('changes.json') else {}
+    import tape_changes as TCH
+    chs = json.load(open('changes.json')) if os.path.exists('changes.json') else {}
     nowt = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
     for k, b in bodies.items():
-        if not b: continue
-        try: dg = hashlib.sha256(json.dumps(_strip(json.loads(b)), sort_keys=True, separators=(',', ':')).encode()).hexdigest()
-        except Exception: dg = sha(b)
-        r = ch.get(k)
-        if r is None: ch[k] = dict(digest=dg, first_seen=nowt, changed=[])
-        elif r['digest'] != dg: r['digest'] = dg; r['changed'] = (r.get('changed', []) + [dict(t=nowt, entry_n=lf['n'])])[-20:]
-    json.dump(ch, open('changes.json', 'w'), indent=0)
-    changes_out = {k: dict(last_changed=(v['changed'][-1]['t'] if v['changed'] else None), watched_since=v['first_seen'], changes=v['changed'][-20:]) for k, v in ch.items()}
-except Exception as ex: changes_out = {}; print('tape: substance digest skipped (%s)' % type(ex).__name__)
+        if b: TCH.update(chs, k, b, nowt, lf['n'])
+    json.dump(chs, open('changes.json.tmp', 'w')); os.replace('changes.json.tmp', 'changes.json'); changes_out = TCH.publish(chs)
+except Exception as ex: print('tape: change record skipped (%s)' % type(ex).__name__)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), read=1, count=len(chain), head=dict(n=last['n'], entry=last['entry'], t=last['t']), beacon=dict(n=bq['n'], t=bq['t'], value=bq['root'], drand_round=bq['subject'].replace('drand round ', '')), anchor=anch,
            feeds=feedrec, changes=changes_out, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
 json.dump(out, open('summary_tape.json', 'w'), indent=1)

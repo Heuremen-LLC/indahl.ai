@@ -1,4 +1,0 @@
-Heuremen LLC, https://indahl.ai
-
-Calling these tools and placing their responses in an AI assistant's context to answer the user's question is permitted. It is not
-text and data mining or training under LICENSE.txt. Saving responses to train, fine-tune or build a model is not permitted.

@@ -66,10 +66,10 @@ for qf in sorted(glob.glob('qbits/new/*.json')):
         os.rename(qf, 'qbits/done/' + os.path.basename(qf))
     except Exception as ex: print('tape: qbits file skipped,', os.path.basename(qf), type(ex).__name__)
 # 2 feeds
-fl = []
+fl = []; bodies = {}
 for s in SLUGS + ['headlines']:
     b = get('https://indahl.ai/%s' % (s + '/live.json?x=%d' % time.time() if s != 'headlines' else 'headlines.json?x=%d' % time.time()))
-    fl.append((s, sha(b) if b else 'NOTHING_RETURNED'))
+    fl.append((s, sha(b) if b else 'NOTHING_RETURNED')); bodies[s] = b
 ef = append('feeds', 'live feeds, %d of %d read' % (sum(1 for _, h in fl if h != 'NOTHING_RETURNED'), len(fl)), merkle(fl), fl)
 # 3 beacon
 dr = get(DRAND, 20); drd = json.loads(dr) if dr else None
@@ -96,8 +96,18 @@ except Exception as ex: anch['note'] = type(ex).__name__
 last = chain[-1]; bq = [e for e in chain if e['kind'] == 'beacon'][-1]
 lf = [e for e in chain if e['kind'] == 'feeds'][-1]; lfl = json.load(open('leaves/%d.json' % lf['n']))['leaves']
 feedrec = {k: dict(n=lf['n'], hash=h) for k, h in lfl}
+# 14 Nov 2026 (what_changed tool, Sage third pass): content and stamp-only events per feed, beside the chain and never in it (tape_changes.py)
+changes_out = {}
+try:
+    import tape_changes as TCH
+    chs = json.load(open('changes.json')) if os.path.exists('changes.json') else {}
+    nowt = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    for k, b in bodies.items():
+        if b: TCH.update(chs, k, b, nowt, lf['n'])
+    json.dump(chs, open('changes.json.tmp', 'w')); os.replace('changes.json.tmp', 'changes.json'); changes_out = TCH.publish(chs)
+except Exception as ex: print('tape: change record skipped (%s)' % type(ex).__name__)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), read=1, count=len(chain), head=dict(n=last['n'], entry=last['entry'], t=last['t']), beacon=dict(n=bq['n'], t=bq['t'], value=bq['root'], drand_round=bq['subject'].replace('drand round ', '')), anchor=anch,
-           feeds=feedrec, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
+           feeds=feedrec, changes=changes_out, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/Heuremen-LLC/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
 json.dump(out, open('summary_tape.json', 'w'), indent=1)
 os.makedirs(PUB + '/leaves', exist_ok=True)
 _PUBLISH and subprocess.run('cp tape.jsonl PLAN.md tape_tick.py tape_push.py tape_verify.py tapelib.py known_good.py %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
