@@ -1,7 +1,8 @@
-# Indahl CCR: Custody Chain Receipts (design note v3, 14 Nov 2026, before any code)
+# Indahl CCR: Custody Chain Receipts (design note v4, 14 Nov 2026, before any code)
 
-v2 applied Sage's MOVES on v1. v3 applies her three MOVES on v2: the race definition, what anchoring can and cannot catch, and approvals
-computed by ccr with a scope. Her verbatim reviews are kept in ccr/private/. Every place v1 said "shown" where it meant "inferred" is
+v2 applied Sage's MOVES on v1. v3 applied her three MOVES on v2: the race definition, what anchoring can and cannot catch, and approvals
+computed by ccr with a scope. v4 applies her three MOVES on v3: range approvals located by content, when a race between two reads is
+shown, and a heartbeat that does not depend on the hooks it checks. Her verbatim reviews are kept in ccr/private/. Every place v1 said "shown" where it meant "inferred" is
 split below into what the chain SHOWS and what a reader JUDGES.
 
 Wayfinder named it. Banks hold back on agents partly because nothing answers "who did this" with proof, so blame lands on the newest
@@ -14,8 +15,16 @@ shipped B, and which entry wrote B.
 A review, sign-off or verification is an entry that names the exact hashes it approved. A ship, deploy or release is an entry that names
 the exact hashes it sent out. `ccr approve` and `ccr release` hash the files themselves at that moment. An agent never types the
 hashes, because a typed hash is only the agent's word. Every approval carries approved_scope: the whole file, or the line range that
-was actually read. A range approval binds the hash of those lines in that file version and is compared against the same lines of the
-released file. It never stands in for the whole file. `ccr why` compares the two. "Approved A, deployed B" is SHOWN only where both bindings exist. Anything
+was actually read. A range approval never stands in for the whole file, and it is located by content, never by line number:
+- `ccr approve` stores the hash of the approved bytes and the bytes themselves. The approved bytes are kept because a range cannot be
+  found again from its hash alone. Everything else stays hash-only by default.
+- `ccr release` searches the released file for those exact bytes. Found once reads SAME, with the line offset recorded if it moved.
+  Found more than once reads CANNOT_TELL (ambiguous). Not found reads CHANGED.
+- Release also reports every released line that no approval covered, for example "approved lines unchanged, 6 lines shipped outside
+  any approval". A range approval never passes silently.
+- Matching is on exact bytes, unless a normalisation (such as line endings) is declared in the entry.
+Today's specimen reads correctly under this: the new paragraph landed inside the reviewed span, so the approved block is not found and
+the result is CHANGED. `ccr why` compares the two. "Approved A, deployed B" is SHOWN only where both bindings exist. Anything
 without a declared binding is INFERRED and labelled so. This is the part a bank needs, and it is v1.
 
 ## One entry
@@ -45,7 +54,8 @@ without a declared binding is INFERRED and labelled so. This is the part a bank 
    anything outside the hooks), or GAP (a missing seq, an unpaired pre, or a head that does not match its anchor). Race detection runs
    BEFORE naming a writer. A race is either of two things: two writers to one path inside the race window, or a write to a path between
    two reads of it that a binding treats as the same version (a review read A, a write, a build read B). The second is the common one.
-   Comparing the approval read against the release read is what shows it.
+   Comparing the approval read against the release read is what shows it. A race between two reads is SHOWN only when both reads are
+   bound by ccr (`ccr approve` and `ccr release`). Where either read is unbound, the race is INFERRED and labelled so.
 2. CAUSE, judged: AGENT (went beyond its instruction), INSTRUCTION (did what it was asked), ENVIRONMENT (race, stale read, tool fault) or
    CANNOT_TELL, always with who judged it and from which entries. Cause is never presented as the same kind of proof as attribution.
 
@@ -59,7 +69,8 @@ without a declared binding is INFERRED and labelled so. This is the part a bank 
 - Hooks switched off write nothing, so the chain stays contiguous and every anchor still matches. Anchoring cannot catch it. It shows
   only from outside the chain: a later read finds a hash no entry wrote (UNATTRIBUTED), or an outside record of sessions (the session
   transcript files, a session-start heartbeat on TAPE) shows a session with no entries. That session cross-check is v1, and a session
-  with no entries reads GAP.
+  with no entries reads GAP. The outside record must not come from the hook path it checks: a heartbeat written by a hook goes dark with
+  the other hooks. The heartbeat comes from the launcher that starts the session, and the transcript files serve as the second record.
 
 ## v1 must include
 

@@ -98,6 +98,8 @@ def grid(path):
         if not isinstance(s.get('pass_but_fail'), str): return 1, 'refused: seat %s has no pass_but_fail answer (a description, or an empty string)' % s.get('name')
     ar = g.get('agent_rerun', {})   # 14 Nov (Sage): a malformed agent_rerun refuses, it never falls through
     if not isinstance(ar, dict) or any(not isinstance(v, bool) for v in ar.values()): return 1, 'refused: agent_rerun must map criterion ids to true or false'
+    unknown = sorted(set(ar) - {c['id'] for c in crit})
+    if unknown: return 1, 'refused: agent_rerun names criteria that are not frozen: %s (ids are case-sensitive)' % ', '.join(unknown)
     rows = []
     for c in crit:
         ans = [s['criteria'][c['id']] for s in seats]
@@ -202,7 +204,7 @@ def selftest():
         open('bad.md', 'w').write('- C9: something | check: x | fails-on: no\n'); shutil.rmtree(D); want('weak planted wrong answer refused', freeze('bad.md')[0], 1)
         # Sage pre-ship MOVES, each planted
         shutil.rmtree(D, ignore_errors=True); freeze('c.md')
-        mk = lambda seats, rr={'C1': True, 'C2': True, 'C3': True}: json.dump(dict(independent=True, agent_rerun=rr, seats=seats), open('g.json', 'w'))
+        mk = lambda seats, rr=None: json.dump(dict(independent=True, agent_rerun=rr if rr is not None else {c['id']: True for c in load('frozen.json')['criteria'] + load('frozen.json')['after']}, seats=seats), open('g.json', 'w'))
         mk([seat('A', 'MET', 'MET', True, ''), seat('B', 'MET', 'MET', True, ''), seat('C', 'MET', 'MET', True, '')]); grid('g.json'); want('baseline MET, stop passes', stop({})[0], 0)
         open('a.md', 'w').write('- C3: the export opens in the finance tool | check: import it | fails-on: a file with a byte order mark the tool rejects\n')
         want('after-criterion accepted', freeze_after('a.md')[0], 0); want('after-criterion post-verdict, stop refuses', stop({})[0], 2)
@@ -230,6 +232,7 @@ def selftest():
         mk([seat3('A', 'MET'), seat3('B', 'MET'), seat3('C', 'MET')], ['C1']); want('agent_rerun as a list refused', grid('g.json')[0], 1)
         mk([seat3('A', 'MET'), seat3('B', 'MET'), seat3('C', 'MET')], {'C1': 'true', 'C2': True, 'C3': True}); want('agent_rerun string true refused', grid('g.json')[0], 1)
         mk([seat3('A', 'MET'), seat3('B', 'MET', False), seat3('C', 'MET')]); grid('g.json'); want('dissenting seat named in the why', [r for r in load('verdict.json')['rows'] if r['row'] == 'C1'][0]['why'], 'seat B voted MET without reporting the catch')
+        mk([seat3('A', 'MET'), seat3('B', 'MET'), seat3('C', 'MET')], {'c1': True, 'C2': True, 'C3': True}); want('agent_rerun with an unknown id refused', grid('g.json')[0], 1)
     finally: os.chdir(home); shutil.rmtree(tmp, ignore_errors=True)
     print('selftest: %s' % ('all pass' if not bad else '%d FAILED' % bad)); return 1 if bad else 0
 
