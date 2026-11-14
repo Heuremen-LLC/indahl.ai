@@ -1,14 +1,14 @@
 {
-  "description": "Readcheck gate: a git commit that stages a reading needs a complete CHECK.json beside it.",
+  "description": "Silent failure guard: refuses a background Bash wait or a Monitor watch that can only report success.",
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Bash",
+        "matcher": "Bash|Monitor",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/readcheck.py\" hook",
-            "timeout": 30
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/watch_guard.py\"",
+            "timeout": 10
           }
         ]
       }

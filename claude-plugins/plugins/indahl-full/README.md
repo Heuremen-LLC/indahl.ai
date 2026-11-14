@@ -28,7 +28,7 @@ Built by build_bundle.py from the plugins beside it; the parts and their version
 - margin 1.0.0
 - correct 1.0.0
 - clause 1.0.0
-- trust-but-verify 1.0.0
+- silent-failure-guard 1.0.0
 
 ## Services this bundle contacts
 

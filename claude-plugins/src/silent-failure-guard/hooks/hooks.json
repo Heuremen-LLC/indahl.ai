@@ -1,0 +1,9 @@
+{
+  "description": "Silent failure guard: refuses a background Bash wait or a Monitor watch that can only report success.",
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "Bash|Monitor",
+        "hooks": [ { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/watch_guard.py\"", "timeout": 10 } ] }
+    ]
+  }
+}

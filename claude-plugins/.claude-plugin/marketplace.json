@@ -186,12 +186,12 @@
       "homepage": "https://indahl.ai/standard"
     },
     {
-      "name": "indahl-trust-but-verify",
-      "source": "./src/trust-but-verify",
-      "description": "Quiet is not success. After any action that claims it worked (a push, a deploy, a sync, a job, an import, a migration, a scheduled run), read the effect back from where it should have landed instead of trusting the exit code, an 'ok' line or the absence of errors. Returns VERIFIED, FAILED, NOTHING_RETURNED or CANNOT_TELL per action, and scans scripts for the patterns that hide failures. Nothing is sent outside your session.",
+      "name": "indahl-silent-failure-guard",
+      "source": "./src/silent-failure-guard",
+      "description": "Quiet is not success. After any action that claims it worked (a push, a deploy, a sync, a job, an import, a migration, a scheduled run), read the effect back from where it should have landed instead of taking the exit code, an 'ok' line or the absence of errors as proof. Returns VERIFIED, FAILED, NOTHING_RETURNED or CANNOT_TELL per action, and scans scripts for the patterns that hide failures. Nothing is sent outside your session.",
       "version": "1.0.0",
       "category": "research",
-      "homepage": "https://indahl.ai/standard"
+      "homepage": "https://indahl.ai/how"
     }
   ]
 }

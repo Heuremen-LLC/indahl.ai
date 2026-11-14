@@ -7,7 +7,7 @@ all made by the human reader, none by the writer: Faults entry 45, Guards entry 
 Usage: python3 tone_scan.py FILE.html ...   (exit 1 on any hit)"""
 import re, html, sys, os
 ARGUE = [r"\bso (?:that )?you can\b", r"\bwhich means\b", r"\bwe help\b", r"\byou(?:'|’)ll\b", r"\bactually\b", r"\bhonest(?:ly)?\b",
-         r"\btrust(?:ed(?! flaggers?\b)|worthy)?\b(?!-but-verify)",   # 13 Nov: the product name indahl-trust-but-verify is skipped, exact form only r"\bensur(?:e|es|ing)\b", r"\bworld[- ]class\b", r"\bholds? up\b", r"\bbefore you see it\b",
+         r"\btrust(?:ed(?! flaggers?\b)|worthy)?\b", r"\bensur(?:e|es|ing)\b", r"\bworld[- ]class\b", r"\bholds? up\b", r"\bbefore you see it\b",
          r"\bworth checking\b", r"\bdeliberately\b", r"\bwe do not force\b", r"\bnever one\b", r"\bdecided later\b", r"\bstart with a\b"]
 STOP = set("""about above after again against also among another because been before being below between both cannot could
 does doing during each either every from further have having into itself more most other ought same should some such than that
