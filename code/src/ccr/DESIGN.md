@@ -1,8 +1,10 @@
-# Indahl CCR: Custody Chain Receipts (design note v4, 14 Nov 2026, before any code)
+# Indahl CCR: Custody Chain Receipts (design note v6, 14 Nov 2026, before any code)
 
 v2 applied Sage's MOVES on v1. v3 applied her three MOVES on v2: the race definition, what anchoring can and cannot catch, and approvals
 computed by ccr with a scope. v4 applies her three MOVES on v3: range approvals located by content, when a race between two reads is
-shown, and a heartbeat that does not depend on the hooks it checks. Her verbatim reviews are kept in ccr/private/. Every place v1 said "shown" where it meant "inferred" is
+shown, and a heartbeat that does not depend on the hooks it checks. v5 applies her four MOVES on v4: approved bytes in a side store, MOVED
+as its own outcome, the cross-check listing the transcript directory itself, and the specimen stated as a counterfactual. v6 applies her three MOVES on v5: release verifies the side store against the
+chain before searching, missing bytes split into REDACTED and UNLOGGED_REMOVAL, and `ccr why` names what it compares. Her verbatim reviews are kept in ccr/private/. Every place v1 said "shown" where it meant "inferred" is
 split below into what the chain SHOWS and what a reader JUDGES.
 
 Wayfinder named it. Banks hold back on agents partly because nothing answers "who did this" with proof, so blame lands on the newest
@@ -16,15 +18,22 @@ A review, sign-off or verification is an entry that names the exact hashes it ap
 the exact hashes it sent out. `ccr approve` and `ccr release` hash the files themselves at that moment. An agent never types the
 hashes, because a typed hash is only the agent's word. Every approval carries approved_scope: the whole file, or the line range that
 was actually read. A range approval never stands in for the whole file, and it is located by content, never by line number:
-- `ccr approve` stores the hash of the approved bytes and the bytes themselves. The approved bytes are kept because a range cannot be
-  found again from its hash alone. Everything else stays hash-only by default.
-- `ccr release` searches the released file for those exact bytes. Found once reads SAME, with the line offset recorded if it moved.
+- `ccr approve` puts the hash of the approved bytes in the chain and the bytes themselves in a side store outside the chain. The bytes
+  are kept because a range cannot be found again from its hash alone. They stay out of the chain because the chain is append-only and a
+  secret in a reviewed range could never be removed from it. The side store can be redacted, and a redaction is itself an entry. Missing
+  bytes read CANNOT_TELL for that approval, never SAME, with one of two reasons: REDACTED when a redaction entry backs it, and
+  UNLOGGED_REMOVAL when the bytes are gone and no entry says why. Everything else stays hash-only by default.
+- Before searching, `ccr release` hashes the side-store bytes and checks them against the approved hash in the chain. A mismatch reads
+  GAP (tampered store), never SAME. Without this check, a store overwritten with the shipped bytes would find itself and pass.
+- `ccr release` then searches the released file for those exact bytes. Found once at the approved place reads SAME. Found once at a
+  different place reads MOVED, a separate outcome with the old and new offsets, never folded into SAME in any summary: the bytes are
+  identical but their context is not, and judging that is the reviewer's call.
   Found more than once reads CANNOT_TELL (ambiguous). Not found reads CHANGED.
 - Release also reports every released line that no approval covered, for example "approved lines unchanged, 6 lines shipped outside
   any approval". A range approval never passes silently.
 - Matching is on exact bytes, unless a normalisation (such as line endings) is declared in the entry.
-Today's specimen reads correctly under this: the new paragraph landed inside the reviewed span, so the approved block is not found and
-the result is CHANGED. `ccr why` compares the two. "Approved A, deployed B" is SHOWN only where both bindings exist. Anything
+Had today's review been a `ccr approve` of lines 36-100, release would read CHANGED: the new paragraph landed inside the reviewed span,
+so the approved block would not be found. No `ccr approve` existed today, so this is a counterfactual, not a result (see the replay). `ccr why` compares the approval bindings with the release bindings. "Approved A, deployed B" is SHOWN only where both bindings exist. Anything
 without a declared binding is INFERRED and labelled so. This is the part a bank needs, and it is v1.
 
 ## One entry
@@ -70,7 +79,9 @@ without a declared binding is INFERRED and labelled so. This is the part a bank 
   only from outside the chain: a later read finds a hash no entry wrote (UNATTRIBUTED), or an outside record of sessions (the session
   transcript files, a session-start heartbeat on TAPE) shows a session with no entries. That session cross-check is v1, and a session
   with no entries reads GAP. The outside record must not come from the hook path it checks: a heartbeat written by a hook goes dark with
-  the other hooks. The heartbeat comes from the launcher that starts the session, and the transcript files serve as the second record.
+  the other hooks. The heartbeat comes from the launcher that starts the session. The cross-check also lists the transcript directory
+  itself, independently of the launcher's list of sessions, so a session started without the launcher still shows. A transcript with no
+  launcher heartbeat and no entries reads GAP.
 
 ## v1 must include
 
@@ -88,6 +99,10 @@ defined before running:
 - a sequential negative: edit, then ship, then a review of the shipped hash. It must not read as a race.
 - an unattributed edit from an editor outside the hooks. It must read UNATTRIBUTED.
 
+The race window, its sensitivity range and both controls go in their own commit, pushed before the replay runs. Push time is witnessed by
+the remote's recorded push time, never the commit date. The replay's first run comes after that push, and the receipt names both times
+and the controls commit hash.
+
 The replay states what today's record can and cannot show. The review of version A was a line-range read with no file hash (the
 shasum exited 1, and the hands_log hash covers a line-numbered excerpt, not the file bytes). So "approved A" is INFERRED, "Edit wrote B"
 is SHOWN (Edit reports its file), and the cause, ENVIRONMENT, is JUDGED. It is a fair test of attribution and race detection. It is not a
@@ -96,7 +111,8 @@ demonstration of hash-bound approval, because that did not exist when it happene
 ## Limits, stated
 
 - The chain proves order and integrity from its first entry. Completeness holds only up to its last anchor, and only for sessions the
-  cross-check saw. A session that no outside record knows about is invisible to both.
+  cross-check saw. A session that no outside record knows about is invisible to both. The actor can delete its own transcripts, so a
+  session started without the launcher whose transcript was deleted leaves nothing to find.
 - Hooks see what Claude Code shows them. Bash reads and writes are unobserved unless paths are watched, and the entry says so.
 - Cause is a judgement from the record, labelled with its judge.
 - The landscape claim (what other drafts and products do not offer) is secondhand until the Sahu and SCITT drafts are read first-hand,
