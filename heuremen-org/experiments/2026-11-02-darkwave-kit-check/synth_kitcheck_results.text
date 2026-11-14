@@ -1,0 +1,6 @@
+A same turn, right correction: R1 +0.002 [-0.213, +0.191] CONSISTENT | R2a +0.027 [-0.144, +0.165] CONSISTENT | R2b +1.009 [+0.990, +1.031] n=110 ABOVE
+B kit sign flipped: R1 +6.869 [+4.687, +9.007] ABOVE | R2a -5.105 [-6.999, -3.535] BELOW | R2b -0.973 [-1.019, -0.920] n=110 BELOW
+C kit 1 deg too big: R1 +1.015 [+0.839, +1.197] ABOVE | R2a -0.957 [-1.069, -0.846] BELOW | R2b +0.787 [+0.713, +0.865] n=110 ABOVE
+D null world: R1 +0.005 [-0.118, +0.230] CONSISTENT | R2a -0.006 [-0.153, +0.066] CONSISTENT | R2b +0.892 [+0.420, +1.038] n=57 CANNOT_TELL
+E correction sign wrong on hardware: R1 +0.002 [-0.213, +0.191] CONSISTENT | R2a -5.032 [-6.781, -3.561] BELOW | R2b -0.973 [-1.009, -0.935] n=110 BELOW
+SYNTH PASS: every planted alternative reads as planted

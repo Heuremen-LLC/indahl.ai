@@ -1,0 +1,33 @@
+ibm_fez: sampling alone, two 4096-shot measurements of the same qubits, median per-qubit change 8.8 %
+ibm_kingston: sampling alone, two 4096-shot measurements of the same qubits, median per-qubit change 9.8 %
+ibm_marrakesh: sampling alone, two 4096-shot measurements of the same qubits, median per-qubit change 7.6 %
+ibm_fez (record 2026-10-22 19:55): sampling alone at the record's real shot count, two 4096-shot measurements, median per-qubit change 8.8 %
+ibm_kingston (record 2026-10-22 20:00): sampling alone at the record's real shot count, two 4096-shot measurements, median per-qubit change 9.8 %
+ibm_marrakesh (record 2026-10-22 19:23): sampling alone at the record's real shot count, two 1024-shot measurements, median per-qubit change 15.1 %
+
+pair (readout_error dates)                              n old/new  observed  null median  null p97.5  ratio
+ibm_fez       2026-09-26 16:24 -> 2026-09-27 16:30   24.1 h  4096/4096    26.9 %       9.7 %      11.3 %   2.8x  above p97.5
+ibm_fez       2026-09-27 16:30 -> 2026-09-28 19:16   26.8 h  4096/4096    24.4 %       9.4 %      11.3 %   2.6x  above p97.5
+ibm_fez       2026-09-28 19:16 -> 2026-09-29 07:26   12.2 h  4096/4096    23.5 %       9.6 %      11.5 %   2.5x  above p97.5
+ibm_fez       2026-09-29 07:26 -> 2026-10-21 16:41  537.3 h  4096/4096    31.3 %       9.3 %      11.0 %   3.4x  above p97.5
+ibm_fez       2026-10-21 16:41 -> 2026-10-22 06:09   13.5 h  4096/4096    20.4 %       8.8 %      10.5 %   2.3x  above p97.5
+ibm_fez       2026-10-22 06:09 -> 2026-10-22 17:03   10.9 h  4096/4096    22.7 %       9.4 %      10.9 %   2.4x  above p97.5  (not in results_record_notes.text)
+ibm_kingston  2026-09-26 11:37 -> 2026-09-27 08:34   21.0 h  4096/4096    25.5 %       9.6 %      11.7 %   2.7x  above p97.5
+ibm_kingston  2026-09-27 08:34 -> 2026-09-28 12:47   28.2 h  4096/4096    26.8 %       9.7 %      11.5 %   2.8x  above p97.5
+ibm_kingston  2026-09-28 12:47 -> 2026-10-21 07:07  546.3 h  4096/4096    36.5 %       9.8 %      11.8 %   3.7x  above p97.5
+ibm_kingston  2026-10-21 07:07 -> 2026-10-21 21:40   14.5 h  4096/4096    30.5 %       8.6 %      10.7 %   3.5x  above p97.5
+ibm_kingston  2026-10-21 21:40 -> 2026-10-22 02:16    4.6 h  4096/4096    18.7 %       9.5 %      11.2 %   2.0x  above p97.5
+ibm_kingston  2026-10-22 02:16 -> 2026-10-22 08:55    6.6 h  4096/4096    15.6 %       9.7 %      12.1 %   1.6x  above p97.5
+ibm_kingston  2026-10-22 08:55 -> 2026-10-22 15:36    6.7 h  4096/4096    24.2 %       9.8 %      11.5 %   2.5x  above p97.5  (not in results_record_notes.text)
+ibm_kingston  2026-10-22 15:36 -> 2026-10-22 19:26    3.8 h  4096/4096    24.9 %       9.5 %      11.2 %   2.6x  above p97.5  (not in results_record_notes.text)
+ibm_kingston  2026-10-22 19:26 -> 2026-10-23 02:23    7.0 h  4096/4096    22.3 %       9.6 %      11.4 %   2.3x  above p97.5  (not in results_record_notes.text)
+ibm_kingston  2026-10-23 02:23 -> 2026-11-01 16:53  231.5 h  4096/4096    25.0 %       9.7 %      11.2 %   2.6x  above p97.5  (not in results_record_notes.text)
+ibm_marrakesh 2026-09-26 16:47 -> 2026-09-27 17:35   24.8 h  4096/4096    36.4 %       9.2 %      10.9 %   4.0x  above p97.5
+ibm_marrakesh 2026-09-27 17:35 -> 2026-09-28 14:29   20.9 h  4096/4096    34.6 %       8.8 %      10.9 %   3.9x  above p97.5
+ibm_marrakesh 2026-09-28 14:29 -> 2026-10-21 15:48  553.3 h  4096/4096    60.4 %       9.6 %      11.7 %   6.3x  above p97.5
+ibm_marrakesh 2026-10-21 15:48 -> 2026-10-21 19:17    3.5 h  4096/4096    62.2 %       6.8 %       8.4 %   9.2x  above p97.5
+ibm_marrakesh 2026-10-21 19:17 -> 2026-10-21 21:07    1.8 h  4096/4096    49.3 %       6.7 %       8.1 %   7.3x  above p97.5
+ibm_marrakesh 2026-10-21 21:07 -> 2026-10-22 05:18    8.2 h  4096/4096    44.5 %       7.6 %       9.1 %   5.8x  above p97.5
+ibm_marrakesh 2026-10-22 05:18 -> 2026-10-22 10:44    5.4 h  4096/4096    29.2 %       6.8 %       8.4 %   4.3x  above p97.5
+ibm_marrakesh 2026-10-22 10:44 -> 2026-10-22 16:25    5.7 h  4096/1024    35.3 %      11.3 %      13.5 %   3.1x  above p97.5  (not in results_record_notes.text)
+thinnest margin (all pairs above): ibm_kingston 2026-10-22 02:16 -> 2026-10-22 08:55 (6.6 h apart), observed 15.6 % against a null of 9.7 %, 1.6x

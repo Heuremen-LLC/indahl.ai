@@ -1,0 +1,40 @@
+{
+  "name": "indahl-source-check",
+  "version": "1.0.0",
+  "description": "Check every citation, reference or link in a paper, report, answer or another skill's output: does it exist, does it say what the text claims, which version was read. Marks each SUPPORTS, PARTIAL, CONTRADICTS, SILENT, NOT_FOUND or CANNOT_TELL with the passage that decides it. Use on literature reviews, research memos, AI-written answers with references, and before citing anything you did not read. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "verification",
+    "citations",
+    "research",
+    "references",
+    "receipts"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Source Check",
+    "shortDescription": "Do the citations say it?",
+    "longDescription": "Check every citation, reference or link in a paper, report, answer or another skill's output: does it exist, does it say what the text claims, which version was read. Marks each SUPPORTS, PARTIAL, CONTRADICTS, SILENT, NOT_FOUND or CANNOT_TELL with the passage that decides it. Use on literature reviews, research memos, AI-written answers with references, and before citing anything you did not read. Nothing is sent outside your session.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Check that every citation in this exists and says what is claimed.",
+      "Run source check on this.",
+      "Show source check on an example."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

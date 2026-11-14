@@ -1,0 +1,40 @@
+{
+  "name": "indahl-qia-calibration",
+  "version": "1.1.1",
+  "description": "Check the IBM Quantum calibration record a run depends on, before the run (stale, zero, T2 above 2xT1, split T1/T2 measurements) and after it (which record was in force, what changed). Read-only, standard library only. Also measures T1 and T2 together on chosen qubits in one job (self-test free; the paid run only from your own terminal).",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "SEE LICENSE.txt",
+  "keywords": [
+    "quantum",
+    "ibm-quantum",
+    "qiskit",
+    "calibration",
+    "reproducibility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl QIA Calibration",
+    "shortDescription": "Check an IBM Quantum run",
+    "longDescription": "Check the IBM Quantum calibration record a run depends on, before the run (stale, zero, T2 above 2xT1, split T1/T2 measurements) and after it (which record was in force, what changed). Read-only, standard library only. Also measures T1 and T2 together on chosen qubits in one job (self-test free; the paid run only from your own terminal).",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Check this calibration record before my run.",
+      "Which records were in force during my run?",
+      "Run the same-job T1/T2 check."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

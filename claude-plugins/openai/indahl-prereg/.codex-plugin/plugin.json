@@ -1,0 +1,39 @@
+{
+  "name": "indahl-prereg",
+  "version": "1.0.0",
+  "description": "Show that a plan was written before the first run, using your git host's own record of the push (no outside timestamp chain), and list what ran that the plan did not cover. It sends the name of the repository you check to the GitHub REST API (api.github.com) to read that repository's public push records; nothing else leaves your machine.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "preregistration",
+    "reproducibility",
+    "research",
+    "git"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Prereg",
+    "shortDescription": "Was the plan pushed first?",
+    "longDescription": "Show that a plan was written before the first run, using your git host's own record of the push (no outside timestamp chain), and list what ran that the plan did not cover. It sends the name of the repository you check to the GitHub REST API (api.github.com) to read that repository's public push records; nothing else leaves your machine.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Was my plan pushed before the first run?",
+      "List what ran that the plan did not cover.",
+      "Check this repository for a pre-registration."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

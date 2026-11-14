@@ -1,0 +1,4 @@
+Heuremen LLC, https://indahl.ai/darkwave
+
+Loading this kit's text (SKILL.md, the command file, README, the kit's output tables) into an AI assistant's context to run the kit is
+permitted. It is not text and data mining or training under LICENSE.txt.

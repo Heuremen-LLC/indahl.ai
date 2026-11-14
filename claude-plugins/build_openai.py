@@ -71,10 +71,11 @@ def submission(name, desc):
                                headers={'content-type': 'application/json', 'user-agent': 'indahl-openai-build'}), timeout=60)
     tools = json.load(r)['result']['tools']; names = {t['name'] for t in tools}; T = {}
     for t in tools:
-        a = t['annotations']; assert a.get('readOnlyHint') is True and a.get('destructiveHint') is False and a.get('openWorldHint') is False, t['name']
-        T[t['name']] = {'annotations': {'readOnlyHint': True, 'openWorldHint': False, 'destructiveHint': False},
+        a = t['annotations']; assert a.get('readOnlyHint') is True and a.get('destructiveHint') is False, t['name']   # 14 Nov: paper_check, package_check and model_check read the open web, so openWorld is taken from the tool
+        ow = a.get('openWorldHint') is True
+        T[t['name']] = {'annotations': {'readOnlyHint': True, 'openWorldHint': ow, 'destructiveHint': False},
                         'justifications': {'read_only_justification': "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
-                                           'open_world_justification': "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
+                                           'open_world_justification': ("Reads public records at the source the person names (Crossref, arXiv, PyPI, GitHub or Hugging Face) to answer, and never writes to the internet or to any third-party system." if ow else "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system."),
                                            'destructive_justification': 'Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data.'}}
     pos = [('Start with the list of what the app covers.', 'What does indahl.ai measure? List its divisions.', 'list_divisions', 'Lists each division with a one-line description and its page, and explains the four outcomes.'),
            ("Read IBM's published calibration for one processor.", 'What is the median T1 and T2 on ibm_kingston right now?', 'ibm_calibration', 'Returns the newest record stamp, qubit count and median T1, T2, readout and two-qubit error for ibm_kingston, with the record time.'),
