@@ -1,2 +1,2 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-Canonical,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp.ubuntu.com,Its statement,stated bound 4.33 ms,"offset 3.48 ms, path half-delay 42.02 ms",,CANNOT TELL,,14 Nov 04:00,
+Canonical,TIME,https://indahl.ai/time,Does a public time server stay inside its own stated error bound?,ntp.ubuntu.com,Its statement,stated bound 4.41 ms,"offset 3.41 ms, path half-delay 41.81 ms",,CANNOT TELL,,14 Nov 04:25,

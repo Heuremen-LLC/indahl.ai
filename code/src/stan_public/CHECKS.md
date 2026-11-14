@@ -88,3 +88,13 @@
 - R: holds: counts read from grep over stan_public and from the raw GitHub and HF files
 - caught: results_push.py printed "GitHub ok" while the readcheck gate had refused its commit, so the push carried the old HEAD. It now checks for staged files after the commit and reports FAILED
 - cannot tell: how many earlier pushes carried nothing new; the stan_public git log shows the last landed commit at 02:08Z
+
+## 2026-11-13 22:55 Confidence-score curves (base, v4, v6, v7), cutoffs fixed before the scores existed
+- I: holds: cutoffs 0.5 to 0.999 fixed in curves.py before any score was read; same chunks for every model
+- II: holds: per-model counts at each cutoff printed, nothing pooled across sets
+- III: holds: AUC is unsigned by construction; differences between models read by interval overlap only
+- V: holds: AUC with a paper-cluster bootstrap (2,000 resamples, seed 20261113); first, the score is checked against each model's own generated answers
+- VI: holds: discrimination (AUC) CANNOT_TELL between base and every LoRA, all intervals overlap (base 0.833 [0.71, 0.937] hand, 0.806 [0.671, 0.911] pipeline; LoRAs 0.815 to 0.874). Training moved the operating point, not the ranking. LoRA scores never reach 0.9, so the cutoffs above 0.5 carry no information for them
+- R: holds: read from train_e/results/curves.json written by curves.py over results/*_scores.json from eval_score.py
+- caught: base model's score flags 16 (hand) and 13 (pipeline) chunks its own generation did not, so its curve is CANNOT_TELL as an instrument for its generation; LoRA scores agree with their generation (0 to 1 disagreements)
+- cannot tell: whether a cutoff chosen on a separate validation set would give a LoRA better than base on both counts; that needs a held-out cutoff choice, not this test set
