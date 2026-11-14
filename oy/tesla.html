@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tesla | OY | Indahl</title>
+<meta name="description" content="Nikola Tesla for kids: alternating current, the rotating magnetic field, and a toy that shows it spinning.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel:wght@500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Indahl</span></a>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/about">About</a></nav>
+<a class="cta" href="/contact">Contact</a>
+</div></header>
+<section class="hero"><div class="wrap"><p class="kicker">OY &middot; Technology</p><h1>Tesla</h1></div></section>
+<main class="wrap">
+
+<section class="split"><div><h2>The real Tesla</h2></div>
+<div><p>Nikola Tesla was born in 1856 in a small village in what is now Croatia. He came to New York in 1884 with almost nothing, worked for Thomas Edison for a short while, and then went his own way.</p>
+<p>His big idea: electricity that flips back and forth, called <b>alternating current</b>, and a motor with no brushes that it could spin. In 1895 his system ran the power plant at Niagara Falls, and the next year it sent power all the way to the city of Buffalo. Almost every plug in your house runs on his idea today.</p>
+<p>He built the Tesla coil, which throws long purple sparks, and dreamed of sending power through the air with no wires at all. His tower for it on Long Island was never finished, and it was torn down in 1917. He died in 1943 in a New York hotel room, with very little money. Today the unit scientists use to measure how strong a magnet is is called a <b>tesla</b>.</p></div></section>
+
+<section class="split"><div><h2>The spinning field</h2></div>
+<div><p>Here is the trick inside his motor. Three coils, three currents, each a little behind the one before. Nothing moves, but together their pull spins around in a circle (the black arrow). Put a metal rotor in the middle and it spins with it. Switch to steady current, the kind a battery gives, and the spin stops.</p>
+<canvas id="tesla" aria-label="Three coils making a rotating magnetic field"></canvas>
+<p class="die-controls"><button id="tesla-ac" class="btn" type="button">Switch to DC</button><label>Speed <input id="tesla-speed" type="range" min="0.2" max="3" step="0.1" value="1"></label></p>
+<p class="meta">Three coils, three currents: there&rsquo;s a triangle hiding inside almost every big motor in the world.</p></div></section>
+<script src="/oy/play/tesla.js?v=48d17ce40b"></script>
+
+</main>
+<footer class="foot"><div class="wrap cols">
+<div><p class="label">Indahl</p><a href="/qia">QIA &middot; Quantum Idle Audit</a><a href="/iris">IRIS &middot; Inorganic Research &amp; Intelligence Systems</a><a href="/oy">OY &middot; Learning</a><a href="/approach">What we offer</a><a href="/about">About</a><a href="/contact">Contact</a></div>
+<div><p class="label">Research</p><a href="https://heuremen.org/">heuremen.org</a><a href="https://heuremen.org/a-readout-is-not-an-idle.pdf">Paper (PDF)</a><a href="https://doi.org/10.5281/zenodo.23169755">Data and code (DOI)</a><a href="https://heuremen.org/faults.pdf">Faults (PDF)</a><a href="https://heuremen.org/guards.pdf">Guards (PDF)</a></div>
+<div><p class="label">Legal</p><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/contact">Contact</a></div>
+</div>
+<div class="wrap sign"><p>Heuremen LLC<br>&ldquo;We found it.&rdquo;</p></div>
+</footer>
+</body>
+</html>

@@ -1,6 +1,6 @@
 path,label,outcome,n,of,share,lo,hi,portal,read,datasets_total,stating_cadence,series,readable,consistent,below,cannot_tell,on_cadence,at_bound,outcome_rule
-/portals[0],portals[0],,,,,,,CMS,13 Nov 01:01,3528,3528,159,159,142,17,0,142,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
-/portals[1],portals[1],,,,,,,CDC,13 Nov 01:07,1394,323,192,132,94,38,60,94,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
+/portals[0],portals[0],,,,,,,CMS,14 Nov 01:03,3532,3532,159,159,142,17,0,142,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
+/portals[1],portals[1],,,,,,,CDC,14 Nov 01:08,1394,323,192,132,98,34,60,98,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[2],portals[2],,,,,,,HealthData.gov,13 Nov 05:15,19688,1394,300,233,105,128,67,105,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[3],portals[3],,,,,,,Veterans Affairs,13 Nov 01:38,2084,621,255,255,185,70,0,185,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[4],portals[4],,,,,,,Energy,13 Nov 01:47,487,309,130,103,1,102,27,1,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"

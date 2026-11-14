@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waves and Nodes | OY | Indahl</title>
+<meta name="description" content="How nodes are made: two waves going opposite ways, ripples from one, two or three stones, and the still places between them.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel:wght@500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,30 180,170 20,170"/><polygon points="100,170 139,84 61,84"/><circle cx="100" cy="112" r="5"/></svg><span>Indahl</span></a>
+<nav class="links"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/oy">OY</a><a href="/about">About</a></nav>
+<a class="cta" href="/contact">Contact</a>
+</div></header>
+<section class="hero"><div class="wrap"><p class="kicker">OY &middot; Science</p><h1>Waves and Nodes</h1></div></section>
+<main class="wrap">
+
+<section class="split"><div><h2>Two waves make one</h2></div>
+<div><p>A wave going right (red) and a wave going left (blue) add up into one wave (black). Some spots of the black wave never move at all: the gold dots. Those are <b>nodes</b>. The waves travel; the nodes stay put.</p>
+<canvas id="waves-line" aria-label="Two waves going opposite ways adding into a standing wave"></canvas></div></section>
+
+<section class="split"><div><h2>Ripples</h2></div>
+<div><p>Drop one, two or three stones in a pond. Where a high part of one ripple meets a low part of another, they cancel, and the water there stays still.</p>
+<canvas id="waves-pond" aria-label="Ripples from stones in a pond"></canvas>
+<p class="die-controls"><button id="pond-1" class="btn" type="button">One stone</button><button id="pond-2" class="btn" type="button">Two stones</button><button id="pond-3" class="btn" type="button">Three stones</button>
+<label><input id="pond-still" type="checkbox"> Show the still places</label></p>
+<p class="meta">Tap the pond to move a stone. Three stones in a triangle is how our <a href="/oy/hoverboard">hoverboard table</a> was going to make its nodes.</p></div></section>
+<script src="/oy/play/waves.js?v=abc80f39e3"></script>
+
+</main>
+<footer class="foot"><div class="wrap cols">
+<div><p class="label">Indahl</p><a href="/qia">QIA &middot; Quantum Idle Audit</a><a href="/iris">IRIS &middot; Inorganic Research &amp; Intelligence Systems</a><a href="/oy">OY &middot; Learning</a><a href="/approach">What we offer</a><a href="/about">About</a><a href="/contact">Contact</a></div>
+<div><p class="label">Research</p><a href="https://heuremen.org/">heuremen.org</a><a href="https://heuremen.org/a-readout-is-not-an-idle.pdf">Paper (PDF)</a><a href="https://doi.org/10.5281/zenodo.23169755">Data and code (DOI)</a><a href="https://heuremen.org/faults.pdf">Faults (PDF)</a><a href="https://heuremen.org/guards.pdf">Guards (PDF)</a></div>
+<div><p class="label">Legal</p><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/contact">Contact</a></div>
+</div>
+<div class="wrap sign"><p>Heuremen LLC<br>&ldquo;We found it.&rdquo;</p></div>
+</footer>
+</body>
+</html>

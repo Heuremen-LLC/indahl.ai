@@ -2,15 +2,23 @@
 """build_index.py: turns the QIA mirror's saved IBM calibration records into small static JSON for the /qia "Check a run" page.
 
 Reads (never changes) ~/bones-forge/qia_mirror/records/<backend>/*.json(.gz) with the loader of qia_check.py itself, so a record is read
-exactly as the QIA Research Package reads it, and the same rule drops a file that carries the same stamp as an earlier file (files sorted by
-name, the first one wins). Nothing is precomputed. The page computes the four checks and the changes from the figures below.
+exactly as the QIA Research Package reads it. Files that carry the same stamp are all kept, sorted by stamp and then file name, as the
+package orders them, so the page can show a repeated stamp and compare the files as the package does. Nothing is precomputed. The page computes the checks and the changes from the figures below, with the rules of qia_check.py.
 
 Writes, under --out (default ./public/qia/records):
   index.json                      the processors, their first and newest stamp, and when this index was built
-  <backend>/manifest.json         every record kept: stamp (UTC), file name, UTC day shard. Files dropped for a repeated stamp are listed.
-  <backend>/<YYYY-MM-DD>.json     one UTC day of records. Per qubit, ten numbers: T1, its date, T2, its date, readout_error, its date,
-                                  prob_meas1_prep0, its date, prob_meas0_prep1, its date. Dates are indexes into the shard's "dates" list,
-                                  which holds IBM's own date strings. -1 = the figure has no date, -2 = the figure is not in the record.
+  <backend>/manifest.json         every record kept: stamp (UTC), file name, UTC day shard. Unreadable files are listed under not_records.
+  <backend>/<YYYY-MM-DD>.json     one UTC day of records: {"dates": [...], "units": [...], "orders": [...], "records": [{"s","f","q"}, ...]}.
+    FIELDS are the six qia_check.FIELDS: 0 T1, 1 T2, 2 readout_error, 3 prob_meas1_prep0, 4 prob_meas0_prep1, 5 init_error.
+    "dates" holds IBM's own date strings, "units" the unit strings, "orders" strings of field digits such as "012345".
+    A qubit is one list: [o, v, d, u, v, d, u, ...(, extras)]. o indexes "orders": the fields present for that qubit, in the order they
+    first appear in the record (qia_check keeps that order, and its rows follow it). After o come three numbers per listed field, in that
+    order: v the value, d an index into "dates" (-1 = no date), u an index into "units" (-1 = no unit key). A field absent from the qubit is
+    simply not listed. If a field has more than one entry in the record, the first sits in its slot and the others come last as extras,
+    a list of [field digit, v, d, u] (qia_check keeps duplicates and calls conflicting ones UNKNOWN, so the page must see them).
+    A value v is plain JSON when it is null, true/false, a string, an integer below 2^53, or a non-integral finite float. Anything else
+    (an integral float such as 0.0, NaN, infinity, a huge integer, a list or object) is {"r": Python repr, "t": "f"|"i"|"o"}, so the page
+    can tell 0 from 0.0 and print the value as Python does. Nothing is precomputed.
 Only the last --days days (default 30, counted back from the newest record of each processor) are kept. Older shards are removed.
 A file is rewritten only when its content changed, so a refresh after one new record touches one shard and one manifest.
 Usage: python3 -I build_index.py [--records DIR] [--out DIR] [--days 30] [--backend NAME]"""
@@ -25,50 +33,53 @@ def write_if_changed(path, text):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     if os.path.exists(path) and open(path, encoding='utf-8').read() == text: return 0
     tmp = path + '.tmp'; open(tmp, 'w', encoding='utf-8').write(text); os.replace(tmp, path); return 1
-# 13 Nov: the page (runcheck.js) reads these five; qia_check added init_error, which the page does not check yet, so shards keep the five
-PAGE_FIELDS = ('T1', 'T2', 'readout_error', 'prob_meas1_prep0', 'prob_meas0_prep1')
-CONFLICTS = []
-def qrow(Q, i, dates, di):
-    row = []
-    for f in PAGE_FIELDS:
-        es = Q.get(i, {}).get(f)
-        if not es: row += [None, -2]; continue
-        # 13 Nov: qia_check.load keeps every entry as (value, date, unit) (R11). Agreeing entries read as one; conflicting ones
-        # are left out of the shard and named in the manifest under "conflicting", never folded into a value.
-        if len(set((repr(e[0]), str(e[1])) for e in es)) > 1: CONFLICTS.append([i, f, len(es)]); row += [None, -2]; continue
-        v = es[0]
-        d = v[1]
-        if d is None: row += [v[0], -1]; continue
-        d = str(d)
-        if d not in di: di[d] = len(dates); dates.append(d)
-        row += [v[0], di[d]]
+# 13 Nov: the page applies the rules of qia_check.check_record, so shards carry every field it reads (qc.FIELDS), with unit and duplicates.
+FIELDS = tuple(qc.FIELDS)
+def val(v):
+    if v is None or isinstance(v, (bool, str)): return v
+    if type(v) is int: return v if abs(v) < 2 ** 53 else {'r': repr(v), 't': 'i'}
+    if type(v) is float: return v if (v == v and abs(v) != float('inf') and not v.is_integer()) else {'r': repr(v), 't': 'f'}
+    return {'r': repr(v), 't': 'o'}
+def idx(x, lst, di):
+    if x is None: return -1
+    x = str(x)
+    if x not in di: di[x] = len(lst); lst.append(x)
+    return di[x]
+def qrow(Q, i, S):
+    dates, di, units, ui, orders, oi = S
+    e = Q.get(i, {}); order = ''.join(str(FIELDS.index(f)) for f in e)
+    if order not in oi: oi[order] = len(orders); orders.append(order)
+    row = [oi[order]]; extra = []
+    for f, es in e.items():
+        for k, (v, d, u) in enumerate(es):
+            c = [val(v), idx(d, dates, di), idx(u, units, ui)]
+            if k == 0: row += c
+            else: extra.append([FIELDS.index(f)] + c)
+    if extra: row.append(extra)
     return row
 def build_backend(rdir, out, days):
     name = os.path.basename(rdir); fs = sorted(glob.glob(os.path.join(rdir, '*.json')) + glob.glob(os.path.join(rdir, '*.json.gz')))
-    recs, skipped, dup, seen = [], [], [], set()
+    recs, skipped = [], []
     for p in fs:
         try: r = qc.load(p)
         except (ValueError, KeyError, json.JSONDecodeError, OSError): skipped.append(os.path.basename(p)); continue
-        if (r[0], r[1]) in seen: dup.append(os.path.basename(p)); continue
-        seen.add((r[0], r[1])); recs.append(r + (p,))
-    recs.sort(key=lambda r: r[1])
+        recs.append(r + (p,))
+    recs.sort(key=lambda r: (r[1], r[3]))
     if not recs: return None
     if days: cut = recs[-1][1] - dt.timedelta(days=days); recs = [r for r in recs if r[1] >= cut]
     byday = {}
     for b, S, Q, p in recs: byday.setdefault(S.strftime('%Y-%m-%d'), []).append((b, S, Q, p))
     nq = max(len(r[2]) for r in recs); n = 0
     for day, rs in byday.items():
-        dates, di, items = [], {}, []
-        for b, S, Q, p in rs: items.append({'s': iso(S), 'f': os.path.basename(p), 'q': [qrow(Q, i, dates, di) for i in range(len(Q))]})
-        n += write_if_changed(os.path.join(out, name, day + '.json'), dump({'dates': dates, 'records': items}))
+        sh = ([], {}, [], {}, [], {}); items = []
+        for b, S, Q, p in rs: items.append({'s': iso(S), 'f': os.path.basename(p), 'q': [qrow(Q, i, sh) for i in range(len(Q))]})
+        n += write_if_changed(os.path.join(out, name, day + '.json'), dump({'dates': sh[0], 'units': sh[2], 'orders': sh[4], 'records': items}))
     keep = set(byday)
     for old in glob.glob(os.path.join(out, name, '????-??-??.json')):
         if os.path.basename(old)[:-5] not in keep: os.remove(old); n += 1
-    man = {'backend': name, 'fields': list(PAGE_FIELDS), 'qubits': nq, 'days_kept': days or None, 'built': iso(dt.datetime.now(UTC)),
+    man = {'backend': name, 'format': 2, 'fields': list(FIELDS), 'qubits': nq, 'days_kept': days or None, 'built': iso(dt.datetime.now(UTC)),
            'records': [[iso(S), os.path.basename(p), S.strftime('%Y-%m-%d')] for b, S, Q, p in recs],
-           'not_read_same_stamp': dup, 'not_records': skipped}
-    if CONFLICTS: man['conflicting'] = list(CONFLICTS)
-    CONFLICTS.clear()
+           'not_records': skipped}
     # "built" changes on every run, so keep the old one when nothing else did
     mp = os.path.join(out, name, 'manifest.json')
     if os.path.exists(mp):

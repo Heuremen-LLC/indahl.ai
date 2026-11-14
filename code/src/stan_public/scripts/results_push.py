@@ -19,6 +19,8 @@ def wanted():
         if f.endswith(('.py', '.sh')): out['scripts/' + f] = S + '/scripts/' + f
     for f in RES_OK:
         if os.path.exists(S + '/results/' + f): out['results/' + f] = S + '/results/' + f
+    for f in ('train_e/results/clustered_read.json', 'train_e/clustered_read.py', 'chain/NIGHT.md'):   # 13 Nov: the STAN-E LoRA ladder and its paper-clustered read (summaries only, no item rows)
+        if os.path.exists(S + '/' + f): out[f] = S + '/' + f
     pr = S + '/results/public_rows'
     if os.path.isdir(pr):
         for f in sorted(os.listdir(pr)): out['results/public_rows/' + f] = pr + '/' + f

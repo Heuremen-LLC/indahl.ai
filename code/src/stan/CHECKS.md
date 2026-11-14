@@ -68,3 +68,13 @@
 - R: holds: read from stan/lexical/thresholded_rule.json; differences recomputed by hand from its counts
 - caught: none
 - cannot tell: whether F2's separation holds on fresh recounts; the rule is fixed now, before any fresh draw
+
+## 2026-11-13 19:50 STAN-E LoRA ladder (lora_v1..v6, Qwen2.5-7B-Instruct 4-bit) re-read with the paper as the unit, against base
+- I: holds: both held-out sets (test_hand, test_pipeline) and base were fixed before the ladder ran; every model scored on the same chunks; unparsed replies counted by arm (base 1 on test_hand, every LoRA 0) and left out of the pairing, so the denominators match by construction
+- II: holds: flips counted both ways per set before any rate: recall v4 +9/-0 and +9/-0, v6 +10/-0 and +11/-0; false flags v4 +4/-0 and +4/-0, v6 +6/-1 and +4/-0
+- III: holds: signed differences printed (model minus base); every recall difference positive, every false-flag difference positive (worse)
+- V: holds: paper-cluster bootstrap (5,000 resamples, seed 20261113) for intervals, because chunks from one paper are not independent; exact two-sided sign test on discordant chunks beside it
+- VI: holds: recall ABOVE base in all four cells (lowest lower bound 0.154); false flags ABOVE base for v6 test_pipeline (+0.103 [0.026, 0.19]), CANNOT_TELL in the other three cells (intervals reach 0 and 0.10). Size that matters 0.10, defined after the data
+- R: holds: read from train_e/results/<model>_<set>.json written by eval_mlx.py; summary in train_e/results/clustered_read.json by train_e/clustered_read.py
+- caught: chunk-level Wilson intervals in the night ladder rows were too narrow (handoff caveat); this read replaces them for any claim. No adapter is kept: the rule is beat base on both measures, and false flags rise
+- cannot tell: whether v7 (data_short, lr 1e-5, 1200 iters, running) holds the recall gain with fewer false flags

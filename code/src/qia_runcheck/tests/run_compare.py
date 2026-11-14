@@ -15,6 +15,7 @@ CASES = [
  dict(name='pittsburgh, run across midnight UTC, every qubit', backend='ibm_pittsburgh', start='2026-10-30 22:00', end='2026-10-31 03:00', qubits=''),
  dict(name='aachen, run before the first saved record', backend='ibm_aachen', start='2026-10-20 08:00', end='2026-10-20 09:00', qubits='0,1'),
 ]
+W = lambda x: (lambda r: r[0] if isinstance(r, tuple) else r)(qc.when(x))   # 13 Nov: qia_check.when returns (datetime, naive)
 def py_case(c, recdir):
     tmp = tempfile.mkdtemp(); z = lambda x: x.replace(' ', 'T') + (':00' if len(x) == 16 else '') + 'Z'; st = z(c['start']); en = z(c['end'])
     qa = ['--qubits', c['qubits'].replace('-', ',') if '-' not in c['qubits'] else ','.join(str(i) for p in c['qubits'].split(',') for i in (range(int(p.split('-')[0]), int(p.split('-')[1]) + 1) if '-' in p else [int(p)]))] if c['qubits'] else []
@@ -22,12 +23,12 @@ def py_case(c, recdir):
     if r.returncode: return dict(file=None, stamp=None, during=[], flags=[], changes=[], missing=[], note=r.stdout + r.stderr)
     j = json.load(open(glob.glob(os.path.join(tmp, 'after_*.json'))[0]))
     if 'record_at_start' not in j: return dict(file=None, stamp=None, during=[], flags=[], changes=[], missing=[])
-    S = qc.when(j['record_at_start']); fs = sorted(glob.glob(os.path.join(recdir, '*.json')) + glob.glob(os.path.join(recdir, '*.json.gz')))
+    S = W(j['record_at_start']); fs = sorted(glob.glob(os.path.join(recdir, '*.json')) + glob.glob(os.path.join(recdir, '*.json.gz')))
     f = next(p for p in fs if qc.load(p)[1] == S)   # the first file with that stamp, as the package reads them
-    b = subprocess.run([sys.executable, '-I', CHECK, 'before', f, '--out', tmp] + qa, capture_output=True, text=True, check=True)
+    b = subprocess.run([sys.executable, '-I', CHECK, 'before', f, '--at', st, '--out', tmp] + qa, capture_output=True, text=True, check=True)   # 13 Nov: --at the run start, as the page judges age (before defaults to now)
     bj = json.load(open(glob.glob(os.path.join(tmp, 'before_*.json'))[0]))
     shutil.rmtree(tmp)
-    iso = lambda d: qc.when(d).strftime('%Y-%m-%dT%H:%M:%SZ')
+    iso = lambda d: W(d).strftime('%Y-%m-%dT%H:%M:%SZ')
     _, _, Q = qc.load(f); want = [int(x) for x in qa[1].split(',')] if qa else []
     return dict(file=os.path.basename(f), stamp=iso(j['record_at_start']), during=[iso(x) for x in j['records_during']],
                 flags=[{k: v for k, v in x.items()} for x in bj['flags']], changes=j['changes'], missing=[q for q in want if q not in Q])
