@@ -64,7 +64,7 @@ Designed by Wayfinder (who named it) and Bones. Sage refereed the design over se
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/Heuremen-LLC/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/12a6cc29ae2110efa8e335962d0461a64efd533e/claude-plugins/src/ccr/scripts/ccr.py
-  sha256 a11b0fba529516f0e0f602bf333ae13227a6911c49b1bd911b208b6849e3b0d8
+- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/93afd7335d58b56ef2da0e302b91fd2149a2a81f/claude-plugins/src/ccr/scripts/ccr.py
+  sha256 715e5e35f686179c8403555f80f8cd1c1b0b1a709420665af1fcc9b54a099355
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`).
