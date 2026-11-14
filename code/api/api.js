@@ -150,10 +150,14 @@ const TOOLS_ALL = [
       const unwatched = Object.entries(ch).filter(([, v]) => v.watched_since > since).map(([k]) => k);
       return wrap('https://indahl.ai/tape', { updated: d.updated, since, feeds_with_events: rows.length, of: Object.keys(ch).length, feeds: rows,
         ...(unwatched.length ? { not_watched_for_whole_window: unwatched, note: 'These feeds were first fingerprinted after the time asked, so an event before then would not show.' } : {}) }); } },
+  { name: 'package_check', title: 'Check a PyPI package', openWorld: true, description: 'Check one PyPI project by name, live, with the rules of the PKGLICENSE and PKGINSTALL desks: whether the newest release carries files pip can install on any platform (an sdist or a universal wheel), is limited to certain platforms, is yanked or has no files, and whether the license the package states agrees with the license of its linked GitHub repository, compared by family. Each check reads its outcome with the reason. A name PyPI does not know reads NO_RECORD.', params: { name: { type: 'string', description: 'The PyPI project name, for example requests.' } }, required: ['name'],
+    run: async (env, a) => ({ source: 'https://indahl.ai/pkglicense', served_at: new Date().toISOString(), terms: TERMS, use: USE, data: await packageCheck(a) }) },
+  { name: 'model_check', title: 'Check a Hugging Face model', openWorld: true, description: 'Check one Hugging Face model by id, live, with the rules of the HFSIZE and HFLICENSE desks: whether the size in its name agrees with the parameter count of its safetensors weights (0.70 to 1.35 times), and whether the license on its card agrees with the license file in the repository, compared by family. Each check reads AGREE, DISAGREE or NOT_COMPARABLE with the reason.', params: { repo: { type: 'string', description: 'The model id, for example Qwen/Qwen2.5-7B-Instruct.' } }, required: ['repo'],
+    run: async (env, a) => ({ source: 'https://indahl.ai/hfsize', served_at: new Date().toISOString(), terms: TERMS, use: USE, data: await modelCheck(a) }) },
   { name: 'model_claims_round', description: 'The live round that reruns an open model\'s stated benchmark results with the published harness: each claim, our result and the outcome.', params: {}, run: async (env) => wrap('https://indahl.ai/hermes/model', await kv(env, 'model_live')) },
 ];
 // 14 Nov 2026: tools held back from the public surfaces until Sage's MOVES on them are applied and planted (third pass)
-const HELD = new Set(['what_changed', 'package_check', 'model_check']);
+const HELD = new Set(['what_changed']);   // package_check and model_check: Sage STANDS (fourth pass, parity ALL IDENTICAL)
 const TOOLS = TOOLS_ALL.filter(t => !HELD.has(t.name));
 const schema = (t) => ({ type: 'object', properties: t.params || {}, required: t.required || [] });
 const jsonR = (o, status = 200, extra = {}) => new Response(JSON.stringify(o), { status, headers: { 'content-type': 'application/json; charset=utf-8', ...CORS, ...extra } });

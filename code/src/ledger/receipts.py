@@ -285,7 +285,7 @@ def mirror_index():
     global _mirror_index
     if _mirror_index is None:
         _mirror_index = {}
-        for name in ('indahl.ai', 'heuremen.org'):
+        for name in ('indahl.ai',):   # 14 Nov 2026: heuremen.org is private since 3 Nov, its files are public in indahl.ai/heuremen-org, so links point there only
             repo = os.path.join(MIRROR, name)
             if not os.path.isdir(os.path.join(repo, '.git')): continue
             for line in git(repo, 'ls-files', '-s').splitlines():
