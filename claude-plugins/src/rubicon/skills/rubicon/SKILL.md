@@ -70,6 +70,12 @@ Write the answers to `grid.json`:
     { "name": "C", "...": "..." } ] }
 ```
 
+Before tallying, open what the seats cite. For every criterion, rerun its check against its planted wrong answer yourself where it can
+be run, and set `planted_fail_caught` from what you saw, not from what the seat said. Where a seat cites a source for a MET or a
+pass-but-fail, open it with the source-check procedure (the indahl-source-check skill, if installed). A seat whose only support is
+something nobody could open does not count as having shown its answer. Where nothing could be rerun or opened, say so in the report:
+the catch is then self-reported.
+
 Then tally it:
 
 ```

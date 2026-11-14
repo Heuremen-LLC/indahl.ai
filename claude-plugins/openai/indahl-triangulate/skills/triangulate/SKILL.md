@@ -43,6 +43,13 @@ thing that would change its answer.
 Evidence means a source, data or computation a reader can open and check. A seat that returns none is **UNGROUNDED**. It is reported
 in full but cannot count toward convergence.
 
+**Open the evidence before counting it.** A citation is not grounding until someone has opened it. Before reading convergence, open
+each seat's cited evidence yourself, using the source-check procedure (the indahl-source-check skill, if installed): does it exist,
+does it say what the seat claims, which version was read. Mark each one SUPPORTS, PARTIAL, CONTRADICTS, SILENT, NOT_FOUND or CANNOT_TELL.
+A seat is grounded only if at least one of its citations reads SUPPORTS. A seat whose evidence is only PARTIAL, SILENT, NOT_FOUND,
+CONTRADICTS or CANNOT_TELL is UNGROUNDED, and the receipt says which citation failed. A computation counts as evidence only if you rerun it and get
+the seat's result.
+
 ## 3. Read the three readings item by item
 
 Compare before you combine. Never average three answers into one.
@@ -81,6 +88,7 @@ Write `triangulate/<short-name>/RECEIPT.md` in the working folder (or show it in
 
 1. The question block from step 1, with the time it was fixed (UTC).
 2. Each seat's full answer, verbatim, labelled A, B, C, with whether the seats ran as independent agents or sequentially.
+   Beside each seat, its cited evidence and the status you found when you opened it.
 3. The item-by-item comparison table.
 4. The outcome, its range, the alternatives tested, and what would decide a CANNOT_TELL.
 5. Anything defined after the answers, labelled so.
@@ -92,6 +100,7 @@ The user can rerun the same block later and diff the two receipts; a changed out
 - A question rewritten after the seats answer, to fit what they said.
 - One seat's answer passed off as three.
 - Agreement counted from a seat that cites no evidence.
+- A seat counted as grounded because it cited something nobody opened.
 - Two seats on one source counted as two witnesses.
 - A majority vote presented as certainty when the minority seat cites a fact the others did not address.
 - An average of the seats' numbers presented as the answer.
