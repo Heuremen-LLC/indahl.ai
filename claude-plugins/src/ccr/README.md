@@ -42,6 +42,7 @@ Hooks that were switched off write nothing, so the chain still looks whole. `ver
 ## Limits
 
 - The record proves order and integrity from its first entry. Completeness holds only up to the last anchor, and only for sessions the transcript cross-check saw. The actor can delete its own transcripts.
+- The transcripts folder the cross-check reads is set in `.ccr/config.json`, a file the agent can edit. A changed setting can hide sessions from the cross-check.
 - The principal is a label set by the operator, never an identity.
 - The clock is this machine's clock, stated as such. The sequence number is the order that counts.
 - Each hook call reads the chain, so very long chains slow the hooks. Start a new chain per project or per release.

@@ -426,6 +426,20 @@ def selftest():
         open(ch.path, 'w').write(''.join(lines))
         td = os.path.join(tmp, 'transcripts'); os.makedirs(td); open(os.path.join(td, 's1.jsonl'), 'w').write('{}'); open(os.path.join(td, 'ghost.jsonl'), 'w').write('{}')
         want('a cross-check over a transcript folder is reported as run', verify(ch, td)['cross_check_ran'], True)
+        import io, contextlib
+        def rc(args):
+            old = os.environ.get(ROOT_ENV); os.environ[ROOT_ENV] = tmp
+            try:
+                with contextlib.redirect_stdout(io.StringIO()): return main(args)
+            finally:
+                if old is None: os.environ.pop(ROOT_ENV, None)
+                else: os.environ[ROOT_ENV] = old
+        cfg0 = ch.cfg(); cfg0.pop('transcripts_dir', None); json.dump(cfg0, open(ch.cfg_path, 'w'))
+        want('verify exits 3 when clean but the cross-check did not run', rc(['verify']), 3)
+        open(os.path.join(td, 'ghost.jsonl'), 'a').close(); os.rename(os.path.join(td, 'ghost.jsonl'), os.path.join(td, 'ghost.keep'))
+        want('verify exits 0 only when clean and the cross-check ran', rc(['verify', '--transcripts', td]), 0)
+        os.rename(os.path.join(td, 'ghost.keep'), os.path.join(td, 'ghost.jsonl'))
+        want('verify exits 2 on a problem', rc(['verify', '--transcripts', td]), 2)
         want('a transcript with no entries reads GAP (hooks off)', [p for p in verify(ch, td)['problems'] if 'ghost' in p] != [], True)
         want('arguments are hash-only by default', 'args' in ch.entries()[1]['action'], False)
         want('a denied call is recorded', hook(ev('PermissionDenied', 'Bash', {'command': 'rm x'}, tool_use_id='d1'), ch)['kind'], 'denied')

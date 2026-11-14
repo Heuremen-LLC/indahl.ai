@@ -1,4 +1,4 @@
-# Indahl CCR: Custody Chain Receipts (design note v10, 14 Nov 2026, before any code)
+# Indahl CCR: Custody Chain Receipts (design note v12, 14 Nov 2026, before any code)
 
 v2 applied Sage's MOVES on v1. v3 applied her three MOVES on v2: the race definition, what anchoring can and cannot catch, and approvals
 computed by ccr with a scope. v4 applies her three MOVES on v3: range approvals located by content, when a race between two reads is
@@ -8,7 +8,8 @@ chain before searching, missing bytes split into REDACTED and UNLOGGED_REMOVAL, 
 integrity check hashes when a normalisation is declared, and where push time comes from. v8 applies her three MOVES on the push-time
 paragraph: the raw events response is kept, GitHub's time governs, and the event must contain the controls commit. v9 bounds the
 replay's start from both sides: the first entry embeds the controls PushEvent, and an anchor push marks the upper bound. v10 makes the
-embed count only when GitHub's own record agrees with it on read-back. Her verbatim reviews are kept in ccr/reviews/. Every place v1 said "shown" where it meant "inferred" is
+embed count only when GitHub's own record agrees with it on read-back. v11 applies the same
+push rule to the anchor push that marks the upper bound. v12 keeps the anchor's raw events response too. Her verbatim reviews are kept in ccr/reviews/. Every place v1 said "shown" where it meant "inferred" is
 split below into what the chain SHOWS and what a reader JUDGES.
 
 Wayfinder named it. Banks hold back on agents partly because nothing answers "who did this" with proof, so blame lands on the newest
@@ -122,7 +123,11 @@ ccr entry embeds the controls PushEvent (its id, its created_at and the sha256 o
 been written before GitHub recorded the push. The upper bound: an anchor push made at the run's start, read back through the same
 events API, shows the first entry existed by then. The start sits between two outside records. The embedded PushEvent counts as
 the lower bound only when it matches GitHub's own record on read-back: the same id, created_at and head. An event the API does not
-hold, or holds with a different id, time or head, reads CANNOT_TELL, because otherwise the lower bound is a value we wrote ourselves. Without the embedded PushEvent the ordering reads "half
+hold, or holds with a different id, time or head, reads CANNOT_TELL, because otherwise the lower bound is a value we wrote ourselves.
+The anchor push counts as the upper bound only under the same rule as the controls push: its head is the commit holding the replay's
+first entry, or that commit is reachable from its head and was not reachable from its before. Otherwise the upper bound reads
+CANNOT_TELL. Every events-API read the receipt rests on, the anchor's as well as the controls', has its raw response captured, stored
+and hashed into the receipt, because each one is forgotten by the API after about 90 days. Without the embedded PushEvent the ordering reads "half
 outside-witnessed", never "pushed before", and a start time from this machine's clock alone reads "self-clocked". A missing start record reads
 CANNOT_TELL.
 
