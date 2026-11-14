@@ -1830,22 +1830,15 @@ PAGES['/iris'] = page('/iris', 'Recount Matrix: Language Models | IRIS | Heureme
 # 30 Oct 2026 (his word, 'it needs its own desk'): the lab sections move off /iris to their own desk, LAB, at /iris/lab. The stale 'Running Now' table is dropped.
 # 9 Nov 2026 (his word: "just one big chunk of text at the top"): the LAB page opens on a short lead, and YO moves to its own desk at /yo.
 LAB_LEAD = ('<section class="lablead"><p class="lede">Models we train and test ourselves. Each run opens on its result, with its tables, method and data one click below.</p>'
-            '<p><a href="#stan">STAN, training live</a> &middot; <a href="/iris/lab/live">Sage V training, live</a> &middot; <a href="/yo">YO, our model for IBM calibration records</a></p></section>')
+            '<p><a href="#stan">STAN, training live</a> &middot; <a href="/yo">YO, our model for IBM calibration records</a></p></section>')
+# 13 Nov 2026 (Sage's terms; Wayfinder: "kill it if sage wants it off"): no Sage V section or link on LAB
 PAGES['/iris/lab'] = page('/iris/lab', 'LAB: Our Own Model Runs | IRIS | Heuremen LLC',
- 'Our own model runs: Sage V training live, a small model trained on the house&rsquo;s own answers, a Falcon trained on the Standards, the finalists head to head, and how open models handle Standards.',
- (LAB_LEAD + IRIS_STAN + IRIS_SAGEV + IRIS_FLOCK + IRIS_FALCON + IRIS_THUNDER + IRIS_BENCH).replace('<h2>Live From Our Lab: ', '<h2>'), hero_slim('LAB', 'Our Own Model Runs'))
+ 'Our own model runs: STAN training live, a small model trained on the house&rsquo;s own answers, a Falcon trained on the Standards, the finalists head to head, and how open models handle Standards.',
+ (LAB_LEAD + IRIS_STAN + IRIS_FLOCK + IRIS_FALCON + IRIS_THUNDER + IRIS_BENCH).replace('<h2>Live From Our Lab: ', '<h2>'), hero_slim('LAB', 'Our Own Model Runs'))
 HOME['/iris/lab'] = '/iris'
 # 9 Nov 2026 (his word: "put this training live ... someone else might want to tune in"): Sage V training as it happens. The feed
 # (/iris/lab/live.json, written by sage_library/sage_v/live_export.py) carries stages, seat names, timestamps and numbers only.
-PAGES['/iris/lab/live'] = page('/iris/lab/live', 'Sage V Training, Live | LAB | IRIS | Heuremen LLC',
- 'Sage V training as it happens: the stage each seat is in, the paired evals with their intervals, and every promotion and rollback, with times.',
- '<section class="bench svlive"><p>Sage V trains small open-weight models to answer from a private text library with an exact quote and a stated probability for every claim. '
- 'This page shows the training as it happens: the stage each seat is in, the paired evals with their intervals, and each promotion and rollback. '
- 'It shows stages, seat names, times and numbers only. The library, the prompts and the answers stay private.</p>'
- '<div id="sagev-live" class="bench-live">Loading.</div><script src="/iris/lab-live.js?v=1" defer></script>'
- '<p class="meta"><a href="/iris/lab#sage-v">Sage V on the LAB page</a> &middot; <a href="https://huggingface.co/datasets/indahl/sage-v-council-training">Method and numbers (Hugging Face)</a> &middot; <a href="https://github.com/Heuremen-LLC/sage-v">Code (git)</a></p></section>',
- hero_slim('Sage V Training', 'Live'))
-HOME['/iris/lab/live'] = '/iris'
+# 13 Nov 2026 (Sage's terms, Wayfinder's go): the Sage V live page is retired from LAB; the record stays on GitHub and Hugging Face
 # 9 Nov 2026 (his word): YO gets its own desk. Everything about YO lives here: what it is, its live reads of IBM records, and how it was trained and tested.
 YO_LEAD = ('<section class="yolead"><p class="lede">YO is a small language model trained on IBM&rsquo;s qubit calibration records to find stale data in them. '
            'It is Qwen3-1.7B, a small open-weight model (Apache-2.0), trained by us with LoRA on IBM&rsquo;s own calibration history. '
@@ -1864,7 +1857,6 @@ PAGES['/yo'] = page('/yo', 'YO: A Small Model for IBM Calibration Records | IRIS
 HOME['/yo'] = '/iris'
 HOME['/stack'] = '/hermes'   # 10 Nov (Wayfinder): STACK lives under HERMES now; SOCIAL has the banner slot
 _FEED.append(('/yo', 'YO: a small model for IBM calibration records', 'What YO is, its live reads of each new IBM record, and how every version was trained and tested.'))
-_FEED.append(('/iris/lab/live', 'Sage V training, live', 'The stage each Sage V seat is in, the paired evals with their intervals, and each promotion and rollback.'))
 PAGES['/iris/key'] = page('/iris/key', 'IRIS Key | IRIS | Heuremen LLC', 'IRIS codes: what moves a language-model result besides the model, where we measured it, and the indexed studies it touches.',
  open(os.path.join(HERE, '..', 'iris_index', 'matrix_page', 'iris_key_body.html'), encoding='utf-8').read() + IRIS_DISC, hero_slim('IRIS Key', ''))
 PAGES['/iris/list'] = page('/iris/list', 'The List: Inventory of Published Studies | IRIS | Heuremen LLC', 'Every published language-model study IRIS has read and indexed, with its classification, date indexed and receipt.',
@@ -2353,7 +2345,7 @@ if '/iris/lab' in PAGES and '</main>' in PAGES['/iris/lab']:   # 30 Oct 2026: th
 # 29 Oct 2026: DIVISIONS. Each live page has one home division. A division page lists its desks, and a desk page shows its division.
 DESKS = {'/census': [('/census/revisions', 'REVISIONS', 'Stated Census intervals against the revisions that followed'), ('/census/coverage', 'COVERAGE', 'The 2020 Census state counts against the Census Bureau\'s own survey'), ('/census/fidelity', 'FIDELITY', 'State marriage and divorce counts from the CDC against the Census survey estimates'), ('/census/vintages', 'VINTAGES', 'State population estimates across Vintages and against the 2020 Census count')],
          '/oy': [('/campus', 'CAMPUS', 'The documents behind the OY page, kept over time'), ('/rank', 'RANK', 'US News education rankings against the public record')],
-         '/iris': [('/iris/lab', 'LAB', 'Our own model runs: Sage V training live, the house training, Falcon training, the finalists, Standards across models'), ('/yo', 'YO', 'Our small language model trained on IBM calibration records: live reads and every test'), ('/hfsize', 'HFSIZE', 'Model names against the weights'), ('/hflicense', 'HFLICENSE', 'Stated licenses against license files'), ('/pkglicense', 'PKGLICENSE', 'Package licenses against repository licenses'), ('/pkginstall', 'PKGINSTALL', 'Install commands against pip resolution'), ('/weights', 'WEIGHTS', 'Model names against their weight files, pass after pass'), ('/ailuminate', 'AILUMINATE', 'MLCommons AILuminate Safety results, kept and checked'), ('/hosts', 'HOSTS', 'One open-weight model, many hosts, stated uptime and quantization')],
+         '/iris': [('/iris/lab', 'LAB', 'Our own model runs: STAN training live, the house training, Falcon training, the finalists, Standards across models'), ('/yo', 'YO', 'Our small language model trained on IBM calibration records: live reads and every test'), ('/hfsize', 'HFSIZE', 'Model names against the weights'), ('/hflicense', 'HFLICENSE', 'Stated licenses against license files'), ('/pkglicense', 'PKGLICENSE', 'Package licenses against repository licenses'), ('/pkginstall', 'PKGINSTALL', 'Install commands against pip resolution'), ('/weights', 'WEIGHTS', 'Model names against their weight files, pass after pass'), ('/ailuminate', 'AILUMINATE', 'MLCommons AILuminate Safety results, kept and checked'), ('/hosts', 'HOSTS', 'One open-weight model, many hosts, stated uptime and quantization')],
          '/atlas': [('/atlas/electricity', 'ELECTRICITY', 'Prices, providers and generation by state'), ('/atlas/power-plants', 'POWER PLANTS', 'Every operating plant by fuel and capacity'), ('/atlas/carbon', 'CARBON', 'Pounds of CO2 per megawatthour by state and grid region'), ('/atlas/planned-plants', 'PLANNED PLANTS', 'What is coming, by fuel, stage and year'), ('/petrol', 'PETROL', 'OPEC+ required production against delivered output'), ('/water', 'WATER', 'Reservoir forecasts against measured levels'), ('/neo', 'NEO', 'Stated asteroid close-approach distances against the later record'), ('/solar', 'SOLAR', 'Stated flare and storm chances against what happened'), ('/quake', 'QUAKE', 'Stated aftershock odds against the aftershocks that followed'), ('/cone', 'CONE', 'The hurricane forecast cone against where storms went'),
                     ('/uptime', 'UPTIME', 'Vendor status pages against independent probes'), ('/time', 'TIME', 'Public time servers, stated against delivered'), ('/cada', 'CADA', 'Public DNS filters against fresh abuse reports'), ('/secrecords', 'SECRECORDS', 'Security records against their own rules'),
                     ('/seat', 'SEAT', 'An outside seat reads our own pages'), ('/support', 'SUPPORT', 'Stated support windows against release activity'), ('/change', 'CHANGE', 'Announced shutdown dates, kept over time')],
@@ -2667,7 +2659,7 @@ def main():
     _HF = {'/qia': ['qia-calibrated-studies', 'qia-run-data', 'readout-run-data', 'model:YO'], '/qia/list': ['qia-list'], '/qia/package': ['qia-calibrated-studies', 'qia-run-data'],
            '/darkwave': ['darkwave-run-data', 'readout-run-data'], '/darkwave/kit': ['darkwave-run-data'],
            '/iris': ['iris-list', 'iris-run-data', 'iris-judge-counts', 'iris-training-runs', 'iris-faults-guards-bench', 'faultsguards'], '/iris/list': ['iris-list'],
-           '/iris/package': ['iris-list', 'faultsguards'], '/iris/lab': ['iris-training-runs', 'iris-faults-guards-bench', 'iris-house-training', 'sage-v-council-training'], '/iris/lab/live': ['sage-v-council-training'], '/yo': ['model:YO'],
+           '/iris/package': ['iris-list', 'faultsguards'], '/iris/lab': ['iris-training-runs', 'iris-faults-guards-bench', 'iris-house-training'], '/yo': ['model:YO'],
            '/atlas': ['atlas-datacenters', 'atlas-data-pack'], '/atlas/data-pack': ['atlas-data-pack'], '/oy': ['oy-schools', 'oy-data-pack'], '/oy/data-pack': ['oy-data-pack'],
            '/hermes/model': ['model-data-pack'], '/hermes/model/data-pack': ['model-data-pack']}
     for _pp, _rs in _HF.items():
