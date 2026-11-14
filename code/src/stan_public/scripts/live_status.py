@@ -10,7 +10,7 @@ import json, os, re, sys, time
 S = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); R = S + '/results'; B = os.path.dirname(S)
 OUT = R + '/live.json'
 STAGES = ('teachers', 'crosstalk', 'silver', 'training', 'paired test', 'kept', 'not kept')
-FIXED = set(STAGES) | {'submitted', 'confirmed', 'ABOVE', 'BELOW', 'CANNOT_TELL STRADDLES_EDGE', 'base', 'Qwen3-1.7B', 'Apache-2.0', 'gold dev', 'gold test', 'closed', 'sagar', 'brands', 'quant', 'arm', 'mac'}
+FIXED = set(STAGES) | {'submitted', 'confirmed', 'ABOVE', 'BELOW', 'CANNOT_TELL STRADDLES_EDGE', 'base', 'Qwen3-1.7B', 'Apache-2.0', 'gold dev', 'gold test', 'closed', 'sagar', 'brands', 'quant', 'arm', 'mac', 'CONSISTENT', 'CANNOT_TELL', 'test_hand', 'test_pipeline'}
 CODES = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7']
 KEY_RE = re.compile(r'^[A-Za-z0-9_.:\-]{1,60}$'); MODEL_RE = re.compile(r'^[a-z0-9][a-z0-9.:_\-]{0,40}$')
 HEX_RE = re.compile(r'^[0-9a-f]{64}$'); TS_RE = re.compile(r'^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$')
@@ -97,6 +97,28 @@ def bench():
     return out
 
 
+def ladder():
+    """13 Nov 2026: the STAN-E LoRA ladder (Qwen2.5-7B-Instruct 4-bit, MLX). Counts from train_e/results/<model>_<set>.json, the
+    paper-clustered reading from train_e/results/clustered_read.json. Numbers and fixed words only."""
+    T = S + '/train_e/results'; rows = []
+    for m in ['base'] + ['lora_v%d' % i for i in range(1, 30)]:
+        r = {}
+        for st in ('test_hand', 'test_pipeline'):
+            j = jload(T + '/%s_%s.json' % (m, st))
+            if j and j.get('summary'):
+                q = j['summary']; r[st] = {k: q.get(k) for k in ('pos', 'pos_flag', 'neg', 'neg_flag', 'parse_fail')}
+        if r: rows.append({'model': m, **r})
+    cr = jload(T + '/clustered_read.json') or {}; cl = []
+    for m, sets in (cr.get('models') or {}).items():
+        for x in sets:
+            cl.append({'model': m, 'set': x['set'], 'papers': x['papers'], 'chunks': x['chunks'],
+                       'recall_diff': x['recall']['diff'], 'recall_diff_ci95': x['recall']['diff_ci95_paper'], 'recall_outcome': x['recall']['outcome'],
+                       'recall_flips_up': x['pos']['flips_base_miss_to_flag'], 'recall_flips_down': x['pos']['flips_flag_to_miss'],
+                       'false_flag_diff': x['false_flag']['diff'], 'false_flag_diff_ci95': x['false_flag']['diff_ci95_paper'], 'false_flag_outcome': x['false_flag']['outcome'],
+                       'false_flag_flips_up': x['neg']['flips_base_miss_to_flag'], 'false_flag_flips_down': x['neg']['flips_flag_to_miss']})
+    return {'base_model': 'qwen2.5-7b-instruct-4bit', 'rows': rows, 'clustered': cl, 'kept': False} if rows else None
+
+
 def build():
     names, per, slices = teachers(); ss = jload(R + '/silver_summary.json') or {}; items = ss.get('items')
     run = jload(S + '/runs/stan_v1/run.json'); pt = jload(R + '/paired_test.json'); st = jload(R + '/stan_dev_stratified.json')
@@ -112,7 +134,7 @@ def build():
     silver['items_not_yet_labelled_by_all_three'] = (ss.get('outcomes') or {}).get('item_not_yet_labelled_by_all_three')
     out = {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'stage': stage,
            'teachers': {'names': names, 'labelled': per, 'slices': slices, 'items_in_pool': items},
-           'stan_a': {'stage': 'closed', 'cells_passed': 0, 'cells': 12}, 'stan_e': stan_e(), 'pipelines': pipelines(),
+           'stan_a': {'stage': 'closed', 'cells_passed': 0, 'cells': 12}, 'stan_e': stan_e(), 'ladder': ladder(), 'pipelines': pipelines(),
            'silver': silver, 'baseline_gold_dev': baseline(), 'bench_gold_dev': bench(),
            'training': ({k: run.get(k) for k in ('iters', 'train_rows', 'seconds', 'lr', 'rank')} | {'base': 'Qwen3-1.7B', 'license': 'Apache-2.0'}) if run else None,
            'paired_test': ({'base_conversion': {k: v for k, v in jload(R + '/base_conversion.json').items() if k != 'note'}, 'n_items': pt.get('n_items'), 'base': num(pt.get('base')), 'stan': num(pt.get('stan')), 'paired_stan_minus_base': num(pt.get('paired_stan_minus_base')),

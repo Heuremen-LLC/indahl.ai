@@ -42,6 +42,20 @@
         E.runs.map(function (r) { return [r.model, r.papers_seen, r.papers_flagged, r.verified_positive_papers_seen, r.hits, iv(r.recall_wilson95), r.parse_fail]; })));
       if (E.running_now && E.running_now.length) box.appendChild(h('p', 'Running now: ' + E.running_now.map(function (j) { return j.model + ' on the ' + MACH[j.machine]; }).join(', ') + '.'));
     }
+    var L = d.ladder;
+    if (L && L.rows && L.rows.length) {
+      box.appendChild(h('h3', 'STAN-E training ladder'));
+      box.appendChild(h('p', 'LoRA adapters on Qwen2.5-7B-Instruct (4-bit, MLX), each tested on two held-out sets of paper excerpts: one marked by our readers and one from the desk pipelines. Caught: excerpts with a confirmed finding that the model flagged. False flags: excerpts with no finding that it flagged. No adapter is kept yet.', 'meta'));
+      var SN = { test_hand: 'hand-marked', test_pipeline: 'pipeline' };
+      function cell(x) { return x ? x.pos_flag + ' of ' + x.pos + ' caught, ' + x.neg_flag + ' of ' + x.neg + ' false flags' + (x.parse_fail ? ', ' + x.parse_fail + ' unreadable' : '') : '-'; }
+      box.appendChild(table(['Model', 'Hand-marked set', 'Pipeline set'], L.rows.map(function (r) { return [r.model, cell(r.test_hand), cell(r.test_pipeline)]; })));
+      if (L.clustered && L.clustered.length) {
+        box.appendChild(h('p', 'Against the untouched model on the same excerpts, with the paper as the unit (several excerpts come from one paper, so intervals are drawn by resampling papers). Flips count excerpts that changed each way. A difference reads cannot tell when its interval reaches both zero and 0.10, a size defined after the data.', 'meta'));
+        box.appendChild(table(['Model', 'Set', 'Papers', 'Caught, change', 'Flips', 'Outcome', 'False flags, change', 'Flips', 'Outcome'],
+          L.clustered.map(function (c) { return [c.model, SN[c.set] || c.set, c.papers, p3(c.recall_diff) + ' ' + iv(c.recall_diff_ci95), '+' + c.recall_flips_up + ' / -' + c.recall_flips_down, c.recall_outcome.replace('_', ' ').toLowerCase(),
+            p3(c.false_flag_diff) + ' ' + iv(c.false_flag_diff_ci95), '+' + c.false_flag_flips_up + ' / -' + c.false_flag_flips_down, c.false_flag_outcome.replace('_', ' ').toLowerCase()]; })));
+      }
+    }
     var P2 = d.pipelines;
     if (P2) {
       box.appendChild(h('h3', 'Where the confirmed findings come from'));
