@@ -102,7 +102,8 @@ How rows are read:
 - **All three seats agree:** the row takes that outcome.
 - **Two against one:** the row is **UNRESOLVED**. The minority seat, what it said and its reason are kept in the row. The third answer is the one most often thrown away, so this skill keeps it.
 - **Three different answers:** CANNOT_TELL.
-- **MET where any seat voting MET did not report the check catching its planted wrong answer:** UNRESOLVED, because MET was not shown. The catch is reported by the seats, not verified by the script.
+- **MET without your own rerun seeing the catch:** UNRESOLVED. No `agent_rerun` entry reads as self-reported, and `false` reads as a check that missed.
+- **MET where a seat voting MET did not report the catch:** UNRESOLVED, with that seat named. A seat contradicting its own vote is dissent, and dissent is kept.
 - **A seat answer that is missing, or an outcome other than MET, MISSED or CANNOT_TELL:** the grid is refused until it is fixed. Nothing falls through to CANNOT_TELL.
 - **Any seat builds a way to pass every check and still fail:** the Q3 row is UNRESOLVED. The criteria have a hole until a criterion closes it.
 

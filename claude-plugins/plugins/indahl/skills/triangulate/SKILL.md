@@ -83,6 +83,7 @@ For a value against a stated figure:
   since reasons stack:
   - **UNGROUNDED**: fewer than two grounded seats.
   - **SHARED_SOURCE**: the agreement rests on one evidence chain.
+  - **NOT_RERUN**: a computation the answer rests on could not be rerun.
 
 For a yes/no question, use **HOLDS**, **FAILS**, **SPLIT** or **CANNOT_TELL** the same way.
 

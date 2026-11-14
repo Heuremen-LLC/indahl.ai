@@ -6,7 +6,7 @@ Work can pass every check and still fail. Indahl Rubicon is a gate that asks for
 |---|---|---|
 | The finish line is written after the work | Criteria frozen with a hash before work starts. A criterion added later is labelled "defined after the work" and the grid must run again. | Self-reported: the freeze time is this machine's clock. |
 | The checks are written by the same hand as the work | Three blind seats judge the finished work. | Self-reported: the worker writes the grid file and says whether the seats ran independently. |
-| A check that cannot fail passes anything | Every criterion names a planted wrong answer, and every seat voting MET must report its check catching it. | Self-reported by the seats, not verified by the script. |
+| A check that cannot fail passes anything | Every criterion names a planted wrong answer, and the working agent reruns each check against it before a MET counts. | The working agent's own rerun: recorded, not witnessed. A seat voting MET without reporting the catch keeps the row UNRESOLVED. |
 | A majority vote erases the dissent | A two-to-one split reads UNRESOLVED, with the minority's reason kept in the row. | Enforced by the tally. |
 
 Each seat also tries to build a way the work passes every check and still fails what was asked. If any seat builds one, the criteria have a hole, and that row stays UNRESOLVED until a criterion closes it. A MET there means no seat built one. It does not show that none exists.
