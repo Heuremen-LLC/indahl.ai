@@ -4377,7 +4377,7 @@
   "page": "/oy",
   "stage": "public",
   "published": "The list said the pages of 4 schools refused our reader or needed a login, so they read not reached: Williams, Haverford, Mississippi State and Wellesley. None found read 17 of 148.",
-  "wrong": "Williams, Haverford and the 18 blocked Mississippi State provost pages open in an ordinary browser. Read there, none of them states a measured outcome of the school’s own AI policy, guidance, tool or pilot.",
+  "wrong": "Williams, Haverford and the 18 blocked Mississippi State provost pages open in an ordinary browser. Read there, none of them states a measured outcome of the school\u2019s own AI policy, guidance, tool or pilot.",
   "now": "Those 3 rows read None found, dated 10 Nov 2026. Wellesley still needs a login and reads not reached. None found reads 20 of 148 and not reached reads 1 of 148. The two headline counts, 10 of 148 and 3 to 4 of 148, do not change.",
   "why": "Our reader was refused by those sites, and a read in an ordinary browser had not been tried.",
   "caught_by": "our own check",
@@ -4598,6 +4598,23 @@
   "links": [
    "https://indahl.ai/airline",
    "https://indahl.ai/standard"
+  ]
+ },
+ {
+  "id": "c20261113-runcheck-1",
+  "date": "2026-11-13",
+  "desk": "QIA",
+  "page": "/qia",
+  "stage": "public",
+  "published": "The Check a Run page on /qia said it runs the same checks as the record checker in the QIA Research Package.",
+  "wrong": "On 13 November the checker was reworked at 19:43 UTC and the page kept running the earlier rules until the evening. Our comparison test, run that evening, found different flags between the page and the checker on records from each of the eight processors in our mirror. The page's data also stopped refreshing at 23:10 UTC, because the script that builds it did not read the checker's new record format.",
+  "now": "The page runs the reworked checks, and its data now carries units, repeated entries and init_error. The comparison test between the page and the checker reads identical on every fixed case and on every processor's whole history. A release is now refused whenever the two disagree.",
+  "why": "The checker changed and the two things built on it were not changed with it. Nothing compared them on release.",
+  "caught_by": "our own check",
+  "worse": true,
+  "source": "ledger/runcheck_gate.sh",
+  "links": [
+   "https://indahl.ai/qia"
   ]
  }
 ]

@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-14T01:45:02Z",
+ "built_utc": "2026-11-14T01:48:07Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 165,
+   "commit": "70543827ff5e8318379928cb1ac9354d34f9fb1e",
+   "files": 5979,
+   "id": "70543827ff5e",
+   "json": "/receipts/stamps/release_70543827ff5e.json",
+   "ledger_sha256": "5009577e565e9103005aee753b6ad0533c171ea1999984d9bf255446f342e443",
+   "manifest_sha256": "f8bf285c5849508697e6b58504a06863b57c3dde2cf724d0550bdb5d12d13a32",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-14T01:48:07Z",
+   "sha256": "a15f49a96bc11ecd6efebad5118f45bd2e7c8d49ab0438ff776e26e7d227b20d",
+   "wayback": [],
+   "wayback_waiting": 163
+  },
   {
    "changed": 214,
    "commit": "a1d77dd1596c5503263a0452a63c6616cef8972b",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-14T01:32:53Z",
    "sha256": "6a68b769b32740d319dda661c2b7c30ecac4c50f7c496eb5aa53f96dac887c07",
    "wayback": [],
-   "wayback_waiting": 212
+   "wayback_waiting": 65
   },
   {
    "changed": 229,
@@ -166,7 +181,7 @@
      "url": "https://indahl.ai/changelog.xml"
     }
    ],
-   "wayback_waiting": 99
+   "wayback_waiting": 98
   },
   {
    "changed": 760,
@@ -447,7 +462,7 @@
      "url": "https://indahl.ai/petrol"
     }
    ],
-   "wayback_waiting": 4079
+   "wayback_waiting": 4074
   },
   {
    "changed": 129,
@@ -713,7 +728,7 @@
      "url": "https://indahl.ai/brand/linear.csv"
     }
    ],
-   "wayback_waiting": 4
+   "wayback_waiting": 1
   },
   {
    "changed": 104,
@@ -788,7 +803,7 @@
    "released_at": "2026-11-13T23:18:34Z",
    "sha256": "8b304d7161aaa268b21eb4a909288526ce318014aeba175c84d7c9d7267811d4",
    "wayback": [],
-   "wayback_waiting": 10
+   "wayback_waiting": 9
   },
   {
    "changed": 109,
@@ -803,7 +818,7 @@
    "released_at": "2026-11-13T22:58:15Z",
    "sha256": "b90497d15bd2883aed01e70fbe6be4a540e87970e593e2f891394eed3e33dec0",
    "wayback": [],
-   "wayback_waiting": 4
+   "wayback_waiting": 2
   },
   {
    "changed": 98,
@@ -2524,7 +2539,7 @@
      "url": "https://indahl.ai/airline/airline-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 12
+   "wayback_waiting": 11
   },
   {
    "changed": 4865,

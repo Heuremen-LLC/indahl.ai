@@ -2772,6 +2772,31 @@ def main():
             '<p>Terms: retrieval and answering with attribution, no use as training data (<a href="/terms#ai-training">terms</a>).</p></section>')
     PAGES['/connect'] = page('/connect', 'Connect: Claude Connectors, Plugins and Skills | Heuremen LLC', 'Every way to use Heuremen LLC measurements and checks from Claude, Claude Code or any MCP client: the indahl.ai MCP connectors, the Claude Code plugin marketplace and the skills.', _cr, hero_slim('CONNECT'))
     _FEED.append(('/connect', 'Connect: Claude connectors, plugins and skills', 'Every indahl.ai MCP connector address and every Claude Code plugin and skill, in one place.'))
+    # 13 Nov 2026 (Wayfinder: "do it all"): HOW, the practice behind the skills, each linked to the free skill that runs it. Refereed by Sage before release.
+    _HOWS = [('Before the run', [('controls', 'A test that cannot fail tells you nothing when it passes. Check the controls before the run, while it is cheap.'),
+                                 ('margin', 'A prediction that breaks when one input moves by less than that input&rsquo;s own uncertainty is not a prediction yet. Find the margin first.'),
+                                 ('prereg', 'Seal the plan in git, and read from the git host&rsquo;s own push record whether it came before the first run you supply.')]),
+             ('Reading the result', [('cannot-tell', 'A guess dressed as an answer costs more than a plain &ldquo;not yet&rdquo;. Four outcomes, never two: above, below, consistent, cannot tell.'),
+                                     ('both', 'Most bad conclusions come from a second explanation dropped too early. Keep two readings open until the evidence separates them.'),
+                                     ('triangulate', 'One reading is a perspective. Two give a difference. Three independent readings, run blind, show where they agree and where they split. Agreement is not proof.')]),
+             ('Before it goes out', [('outside-ruler', 'The person who made the work cannot be its only check. A referee gets the raw material, not the summary.'),
+                                     ('number-check', 'Every number read back against where it came from.'),
+                                     ('quote-check', 'A paraphrase inside quotation marks is a misquote, however close.'),
+                                     ('source-check', 'Each citation opened and read for whether it says what the text says it says.'),
+                                     ('clause', 'The sentences that claim more than the comparison behind them, found before a reviewer finds them.')]),
+             ('After it goes out', [('correct', 'A correction goes beside the original, with who caught it and when. Ours are on the <a href="/corrections">Corrections</a> page.'),
+                                    ('readcheck', 'The skill refuses to write a reading without its check block. The commit gate that enforces it ships in the version from our own marketplace, not in the directory copy.')]),
+             ('Big jobs', [('batch', 'Work too large for one context window is split into batches, each done by a fresh worker against the same written checks.')]),
+             ('Checking other people&rsquo;s claims', [('standards', 'A paper or claim checked against the <a href="/standard">Standards</a> claim codes, with quotes and four-state statuses.'),
+                                                       ('eval-check', 'A language-model evaluation claim, or your own eval run, checked against the house eval checks.')])]
+    _hw = ('<section class="legal"><p>These are the checks we hold our results to. Each one is also a free skill for Claude Code, so anyone can run it on their own work. Several were written after a mistake of ours. Our corrections are listed on the <a href="/corrections">Corrections</a> page.</p>'
+           '<pre><code>/plugin marketplace add Heuremen-LLC/indahl.ai\n/plugin install indahl-full@heuremen</code></pre>')
+    for _h, _rows in _HOWS:
+        _hw += '<h2>' + _h + '</h2><ul class="desklist">' + ''.join('<li><code>indahl-' + _n + '</code> <span class="ggw">' + _t + '</span></li>' for _n, _t in _rows) + '</ul>'
+    _hw += ('<h2>The same checks on our own model training</h2><p>Our model training is read the same way: the held-out sets fixed in git before the run (the ordering is self-witnessed), every model scored on the same items, the paper as the unit when one paper gives several items, and no model kept until it beats the untouched model on both counts. It is live on the <a href="/iris/lab#stan">LAB</a> page.</p>'
+            '<p>Every connector, plugin and skill, with install lines: <a href="/connect">Connect</a>. Source: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins">claude-plugins</a> in the public repository.</p></section>')
+    PAGES['/how'] = page('/how', 'How We Check Our Own Work | Heuremen LLC', 'The checks Heuremen LLC holds its results to, each one a free skill for Claude Code.', _hw, hero_slim('HOW WE CHECK OUR OWN WORK'))
+    _FEED.append(('/how', 'How we check our own work', 'The checks we hold our results to, each a free skill for Claude Code.'))
     PAGES['/plugins'] = page('/plugins', 'Claude Code Plugins | Heuremen LLC', 'Heuremen LLC plugins for Claude Code: check papers and eval claims against the Standards, use and reproduce every desk, and check and correct IBM Quantum runs.',
         '<section class="legal">'
         '<p>Plugins for <a href="https://claude.com/claude-code">Claude Code</a>. Add the marketplace once, then install the ones you want.</p>'

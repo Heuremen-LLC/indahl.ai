@@ -1,0 +1,40 @@
+{
+  "name": "indahl-margin",
+  "version": "1.0.0",
+  "description": "For a sharp prediction, design or result, find how far its key parameter can move before the conclusion fails, and compare that margin with the parameter's own stated uncertainty. Returns ROBUST, FRAGILE (margin smaller than the uncertainty) or CANNOT_TELL, with the break point. Use before an expensive run, a preregistration, a launch decision, or when a result rests on one tuned number. Nothing is sent outside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "sensitivity",
+    "experiment-design",
+    "robustness",
+    "research",
+    "decision"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Margin",
+    "shortDescription": "How far before it breaks?",
+    "longDescription": "For a sharp prediction, design or result, find how far its key parameter can move before the conclusion fails, and compare that margin with the parameter's own stated uncertainty. Returns ROBUST, FRAGILE (margin smaller than the uncertainty) or CANNOT_TELL, with the break point. Use before an expensive run, a preregistration, a launch decision, or when a result rests on one tuned number. Nothing is sent outside your session.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "How much margin does this prediction have?",
+      "Run margin on this.",
+      "Show margin on an example."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}
