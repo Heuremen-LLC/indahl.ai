@@ -1,2 +1,2 @@
 brand,desk,desk_page,question,row,role,stated,delivered,interval,outcome,note,read,receipt
-EleutherAI,HFSIZE,https://indahl.ai/hfsize,Does the size in a model's name match the weights?,EleutherAI/pythia-70m-deduped,Its statement,size in the name: 70 M,parameters in the weights: 96 M,,"mismatch, read in full",The card's table gives the size in non-embedding parameters. The weights also hold the embeddings.,14 Nov 04:15,
+EleutherAI,HFSIZE,https://indahl.ai/hfsize,Does the size in a model's name match the weights?,EleutherAI/pythia-70m-deduped,Its statement,size in the name: 70 M,parameters in the weights: 96 M,,"mismatch, read in full",The card's table gives the size in non-embedding parameters. The weights also hold the embeddings.,14 Nov 06:36,

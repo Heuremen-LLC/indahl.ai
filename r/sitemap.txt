@@ -1783,8 +1783,8 @@
 /r/msg.echo_off	2026-10-25
 /r/msg.echo_on	2026-10-22
 /r/neo.august2026	2026-11-10
-/r/neo.cell.all	2026-11-13
-/r/neo.cell.lead0_7	2026-11-13
+/r/neo.cell.all	2026-11-14
+/r/neo.cell.lead0_7	2026-11-14
 /r/neo.cell.lead30	2026-11-13
 /r/neo.cell.lead8_30	2026-11-12
 /r/neo.dep.copy20240209	2026-11-13
@@ -2884,7 +2884,7 @@
 /r/quake.cover.all	2026-11-14
 /r/quake.cover.m3	2026-11-14
 /r/quake.cover.m3.day	2026-11-14
-/r/quake.cover.m3.month	2026-11-13
+/r/quake.cover.m3.month	2026-11-14
 /r/quake.cover.m3.week	2026-11-14
 /r/quake.cover.m3.year	2026-11-14
 /r/quake.cover.m4	2026-11-14
@@ -2895,7 +2895,7 @@
 /r/quake.prob.0_1	2026-11-14
 /r/quake.prob.10_20	2026-11-14
 /r/quake.prob.1_5	2026-11-14
-/r/quake.prob.20_40	2026-11-13
+/r/quake.prob.20_40	2026-11-14
 /r/quake.prob.40_60	2026-11-13
 /r/quake.prob.5_10	2026-11-14
 /r/quake.prob.60_80	2026-11-13
@@ -2907,9 +2907,9 @@
 /r/quake.prob10.day	2026-11-13
 /r/quake.prob10.m3	2026-11-14
 /r/quake.prob10.m4up	2026-11-13
-/r/quake.prob10.month	2026-11-13
+/r/quake.prob10.month	2026-11-14
 /r/quake.prob10.week	2026-11-14
-/r/quake.prob10.year	2026-11-13
+/r/quake.prob10.year	2026-11-14
 /r/rank.checks.edu	2026-11-10
 /r/rank.checks.eng	2026-11-10
 /r/rank.checks.hs	2026-11-10
@@ -3949,7 +3949,7 @@
 /r/desk/media	2026-11-10
 /r/desk/media-2026-10-26	2026-10-30
 /r/desk/model	2026-11-12
-/r/desk/neo	2026-11-13
+/r/desk/neo	2026-11-14
 /r/desk/newsletter-0	2026-11-10
 /r/desk/predictions	2026-11-10
 /r/desk/oy	2026-11-12

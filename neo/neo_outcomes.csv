@@ -1,6 +1,6 @@
 path,label,outcome,n,of,share,lo,hi,rows,inside,above,below,cannot_tell,not_yet,reason,share_beyond_1_sigma,shift_rows,time_rows,time_inside_3_sigma,from_copy_outside,outcome_if_one_outside
-/cells[0],cells[0],BELOW,,,0.9713,0.9524,0.9828,6647,474,8,6,229,5930,,0.137,488,324,318,,
-/cells[1],cells[1],CONSISTENT,,,1.0,0.9814,1.0,265,203,0,0,53,9,,0.039,203,118,117,,
+/cells[0],cells[0],BELOW,,,0.9713,0.9524,0.9828,6647,474,8,6,230,5929,,0.137,488,324,318,,
+/cells[1],cells[1],CONSISTENT,,,1.0,0.9814,1.0,265,203,0,0,54,8,,0.039,203,118,117,,
 /cells[2],cells[2],CANNOT_TELL,,,1.0,0.963,1.0,119,100,0,0,9,10,STRADDLES_EDGE,0.07,100,90,88,,
 /cells[3],cells[3],BELOW,,,0.9247,0.8776,0.9546,6270,172,8,6,167,5917,,0.28,186,116,113,,
 /august_2026,august_2026,CANNOT_TELL,,,1.0,0.7847,1.0,21,14,0,0,7,0,STRADDLES_EDGE,0.286,14,4,4,,

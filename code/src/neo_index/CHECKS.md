@@ -489,3 +489,35 @@ row-record neo.more.nominal: value 512, lo None, hi None, unit of 528, outcome C
 row-record neo.more.other30: value 24, lo None, hi None, unit of 25, outcome COUNT, as printed: From other copies more than 30 days ahead: 25 scored, 24 inside.
 row-record neo.more.over365: value 80, lo None, hi None, unit of 91, outcome COUNT, as printed: All 91 scored statements made more than 365 days ahead are from the 9 February 2024 copy, and 80 are inside.
 row-record neo.outside.small: value 11, lo None, hi None, unit of 14, outcome COUNT, as printed: In 11 of these 14 rows the nominal distance moved by less than 2,000 km.
+
+## 2026-11-14 03:57 NEO desk refresh record: the rows as shipped, recomputed from the run of 2026-11-14T07:40:48Z and the page built from it (durable source for the neo.* ledger rows)
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: every line below is read from summary_neo.json of the run at 2026-11-14T07:40:48Z, the same run neo.html prints, and the printed text is found in the rendered page (make_rows.py asserts it)
+- II: n/a: no comparison between two runs, numbers copied as printed
+- III: holds: farther and closer are separate columns in the cell lines, cannot tell is never folded into a share
+- V: holds: one ruler, the stated 3-sigma range against the later range, read against 99.7 percent on a 95 percent Wilson interval as the plan states
+- VI: holds: outcomes as the plan states them, counts of cannot tell sit beside each cell
+- R: holds: counts from the summary of 2026-11-14T07:40:48Z, no number typed by hand, after-data additions keep their after-the-data label in the claim
+- P1: n/a: no quoted text in this record
+- P2: holds: each line names the cell or the display count and the page names the run date
+- P3: holds: labels as the page prints them
+- P4: holds: no cause named
+- P5: holds: every share has its 95 percent Wilson interval in the line
+- P6: holds: the lines say what the page says and nothing stronger
+- P7: holds: ledger rows updated before the page ships, release through ledger/ship.sh
+- P8: holds: rows compared with the rendered page text by check_ledger.py at the gate
+- P9: holds: plain lines, no semicolons
+- P10: n/a: no rule set after the data in this record
+row-record neo.cell.all: value 0.9713, lo 0.9524, hi 0.9828, unit 474 of 488, outcome BELOW, as printed: all leads 488 474 8 6 97.1 95.2 to 98.3 below 230
+row-record neo.cell.lead0_7: value 1.0, lo 0.9814, hi 1.0, unit 203 of 203, outcome CONSISTENT, as printed: 0 to 7 days 203 203 0 0 100.0 98.1 to 100.0 consistent 54
+row-record neo.cell.lead8_30: value 1.0, lo 0.963, hi 1.0, unit 100 of 100, outcome CANNOT_TELL, as printed: 8 to 30 days 100 100 0 0 100.0 96.3 to 100.0 cannot tell (STRADDLES_EDGE) 9
+row-record neo.cell.lead30: value 0.9247, lo 0.8776, hi 0.9546, unit 172 of 186, outcome BELOW, as printed: more than 30 days 186 172 8 6 92.5 87.8 to 95.5 below 167
+row-record neo.august2026: value 1.0, lo 0.7847, hi 1.0, unit 14 of 14, outcome CANNOT_TELL, as printed: 14 rows are scored, 14 inside, 0 farther and 0 closer, and 7 cannot tell.
+row-record neo.dep.copy20240209: value 169, lo None, hi None, unit of 488 scored, 13 of 14 outside, outcome COUNT, as printed: It was made on 9 February 2024 and it gives 169 of the 488 scored rows and 13 of the 14 rows outside the range.
+row-record neo.dep.without: value 0.9969, lo 0.9825, hi 0.9994, unit 318 of 319, outcome CONSISTENT, as printed: Without that copy 318 of 319 scored rows are inside and the first row reads consistent, and the 0 to 7 day cell holds 195 of 195 and reads consistent.
+row-record neo.more.narrow: value 11, lo None, hi None, unit of 14, outcome COUNT, as printed: 11 of the 14 stated ranges were under 1,000 km wide.
+row-record neo.more.nominal: value 512, lo None, hi None, unit of 528, outcome COUNT, as printed: 512 of 528 are inside, which reads the same.
+row-record neo.more.other30: value 24, lo None, hi None, unit of 25, outcome COUNT, as printed: From other copies more than 30 days ahead: 25 scored, 24 inside.
+row-record neo.more.over365: value 80, lo None, hi None, unit of 91, outcome COUNT, as printed: All 91 scored statements made more than 365 days ahead are from the 9 February 2024 copy, and 80 are inside.
+row-record neo.outside.small: value 11, lo None, hi None, unit of 14, outcome COUNT, as printed: In 11 of these 14 rows the nominal distance moved by less than 2,000 km.
