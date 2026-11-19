@@ -1,0 +1,7 @@
+f2_pauli_by_pauli.py -- 24 Oct Pooters data, pooled copies (DEFINED AFTER THE DATA). 63 non-identity Pauli expectations.
+  copy floor chi2: D(J1)-D(J2) 78.8, M(J1)-M(J2) 71.1 (63 expected under shot noise alone)
+  copy floor norm (pooled-vs-pooled scale) 0.0164
+  look, uncorrected, minus idle                              chi2  32799.8  norm 4.8160  (294.20 x floor)  largest |r|/sd at ['IXI', 'IXX', 'IYY'] = [85.1, 76.3, 72.0]
+  look corrected by the committed 21 Oct kicks, minus idle   chi2    105.6  norm 0.0191  (1.17 x floor)  largest |r|/sd at ['XII', 'IXZ', 'YII'] = [4.8, 3.4, 2.9]
+  look minus idle rotated by the committed kicks (forward)   chi2    100.5  norm 0.0191  (1.17 x floor)  largest |r|/sd at ['XII', 'YII', 'IYZ'] = [3.9, 3.5, 3.2]
+  forward prediction F(idle rotated) - F(look measured) = -0.0070 [-0.0208, +0.0072] (99 % shot bootstrap)

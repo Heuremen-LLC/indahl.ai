@@ -1,0 +1,8 @@
+job2: baseline mine 0.9058 pub 0.9058 | b_LM mine +0.0007 pub +0.0007 -> agree
+job4: baseline mine 0.9619 pub 0.9619 | b_LM mine -0.0031 pub -0.0031 -> agree
+job2: stated-T2 projection mine 0.9079 (wait 10.78 us) qualification 0.9079 -> agree
+job4: stated-T2 projection mine 0.9451 (wait 10.78 us) qualification 0.9451 -> agree
+KNOWN-GOOD (data): PASS
+set A (his job2, seed 20261003): rebuilt metadata equals his manifest in 200/200; window_dt from TODAY's target equals his in 200/200
+set B (his job4, seed 20261007): rebuilt metadata equals his manifest in 200/200; window_dt from TODAY's target equals his in 200/200
+KNOWN-GOOD (circuits): PASS

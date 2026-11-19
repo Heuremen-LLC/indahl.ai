@@ -1,0 +1,6 @@
+ibm_fez: 44 circuits/job x 2 jobs, 6000 shots, equal-duration check: PASS, max duration 36.3 us, ESTIMATED 140 s (cap 200), remaining 3086
+SUBMITTED J0 dbebthfgdj9s73flgpqg 2026-10-24T14:20:53Z attempt 1
+DONE J0 usage 74 s
+SUBMITTED J1 dbebu70m94ac738rhstg 2026-10-24T14:22:20Z attempt 1
+DONE J1 usage 74 s
+ALL DONE

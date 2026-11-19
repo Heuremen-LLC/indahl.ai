@@ -1,0 +1,10 @@
+DARKWAVE CLOCK, ibm_marrakesh, fire 20261101_1159 UTC. Code and plan: PLAN_CLOCK.md.text (committed before the jobs). Copies A and B, FINAL = pooled if they agree.
+Table ages at job A: 31 Oct table (M31) 16.9 h | 21 Oct table (MC) 252.9 h | today's table (MT) minutes.
+KNOWN-GOOD (pooled median signed kick of M, 99 %): -1.474 [-2.072, -0.912] deg/readout -> PASS
+share given back MC vs 0.5: +0.304 [-0.030, +0.479] n=117 | A CONSISTENT B BELOW | FINAL CANNOT_TELL
+share given back M31 vs 0.5: +0.808 [+0.672, +0.863] n=117 | A ABOVE B ABOVE | FINAL ABOVE
+share given back MT vs 0.5: +0.865 [+0.780, +0.921] n=117 | A ABOVE B ABOVE | FINAL ABOVE
+share M31 minus share MT (margin 0.05): -0.057 [-0.159, -0.000] n=117 | A CANNOT_TELL B CANNOT_TELL | FINAL BELOW
+share MC minus share MT (margin 0.05): -0.562 [-0.868, -0.389] n=117 | A BELOW B BELOW | FINAL BELOW
+share MC minus share M31 (margin 0.05): -0.504 [-0.794, -0.328] n=117 | A BELOW B BELOW | FINAL BELOW
+copy gap of the clock reading (A minus B, addendum 1): -0.000 [-0.127, +0.114] -> does not resolve

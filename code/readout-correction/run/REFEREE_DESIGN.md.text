@@ -1,0 +1,27 @@
+DESIGN REFEREE REPORT -- keystone run, 31 Oct 2026, before any job. Read-only refuting referee: a Claude (Sonnet) instance, the same model
+family as the writer. It read the plan (as of 14:34), the code, the committed tables and sources, and ran local compute only (its harness is kept
+here as sim_harness.py). Verdict as returned: FIRE AFTER FIXES. No code bug found. What each finding became is under "ACTION".
+
+1. BLOCKER: the falsification list could not test "mostly" (no threshold; S2 vs 0 and vs 1 only; vs 1 vacuous because a do-nothing correction
+   reads BELOW 1 through regression dilution, ceiling 0.98-0.99; S1's +-0.1 deg band flags any ten-day drift; C2 unconditional).
+   ACTION: S7 share given back vs 0.5, S2c slope vs 0.5, S2d slope(M) minus slope(arm) ABOVE 0, gates on C2/C2b/C3/C4/P3/P4; the claim list
+   rewritten around "more than half" on the baseline-free rulers.
+2. FIX: F-based readings depend on the idle arm's own offset from the ideal (24 Oct idle rotated by -25.7, +25.8, +36.0 deg gives F 0.834);
+   synthetic showed resolved wrong-sign C1/C2 calls. ACTION: C4 (distance to its own none) and P4/P5 (per-pair phase) added as the headline
+   clock and pair readings; F readings labelled secondary; synthetic re-run with the measured fixed offsets.
+3. FIX: "only an in-circuit correction can work" overclaimed (c0/c1 phases commute with the later CRY). ACTION: reworded.
+4. FIX: the recovered share was promised but not computed. ACTION: C2b added.
+5. FIX: fire_keystone.run() resubmitted on any exception. ACTION: resubmits only on IBM status ERROR/CANCELLED after listing the backend's jobs.
+6. FIX: synthetic thin (8 draws), C part bypassed the builders and counts3; coherence floor 0.3 hid weak qubits. ACTION: 30 draws per world on
+   both chips, real coherences (floor 0.03), the referee's end-to-end harness added (sim_harness.py, sim_harness_results.text).
+7. NOTE: branch errors in the unwrap cannot change a correction modulo 360 deg at the dose used; kingston 125, 146 and marrakesh 9 are the
+   plausible mis-unwraps (146 is noise, coherence 0.03; 9 looks like dose dependence). ACTION: catch reworded in the plan.
+8. NOTE: the marrakesh clock rule falls to a near-kick-free triple if q106 fails a record gate. ACTION: HOLD when the best contrast < 5 deg;
+   the plan says both clocks are chosen for kick contrast.
+9. NOTE: known-good implemented correctly; a drift over 2x blanks the chip. No change.
+10. NOTE: arms like for like; rz gates survive between barriers; echo time equal in DE and ME. No change.
+11. NOTE: budget at 0.33 ms per shot about 404 s for both chips, leaving about 279 s against Kumar's 236 + 30. ACTION: written into the plan.
+12. NOTE: claim list lacked MC-fails-MF-passes, over-correction, dose disagreement. ACTION: added.
+13. NOTE: readings to label as bounds only (C3; C1 loss of the corrected arms; P3/P1 MC in the drifted world; on marrakesh also P1 of M, C2 in
+    the drifted world, C1 of M). ACTION: kept in the plan's resolution paragraph; re-read from the 30-draw synthetic.
+Also: add committed_kicks_*.json, free/*.py and the harness to CODE_KEYSTONE.sha256.text. ACTION: done at hashing.

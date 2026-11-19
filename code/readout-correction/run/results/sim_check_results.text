@@ -1,0 +1,4 @@
+(1) planted rz -7.60 deg/step x 8: read (phase M - phase D)/N = -7.600; with rz(-kick) per step: +0.000
+(2) clock, look in the middle: F(D) 1.0000  F(M) 0.6259  F(MC) 1.0000  F(M, total put back at the end) 0.9556
+    |<pooters ideal | circuit D>|^2 = 1.000000 (1 = the circuit builds the history state pooters.py scores against)
+(3) 24 Oct look at the END: measured F(D) 0.6654, measured F(M) 0.1582, measured D rotated by the committed kicks (no loss) 0.1513  (DEFINED AFTER THE 24 Oct DATA)

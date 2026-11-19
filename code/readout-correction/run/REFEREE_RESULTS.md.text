@@ -1,0 +1,19 @@
+RESULTS REFEREE REPORT -- keystone run, 31 Oct 2026, after the jobs. Read-only refuting referee: a Claude (Sonnet) instance, the same model
+family as the writer. It re-ran the committed analysis and wrote its own independent reader from the raw npz files. Summary of its findings and
+what each became:
+1. CONFIRMED: plan and code hashes match; no code or plan change between the preregistration and the results commit; submitted circuits match
+   the job record; MC carries the committed table, MF the fresh one. The OpenTimestamps proof was calendar-pending at review time.
+2. CONFIRMED: every summary number reproduces to the printed digits with an independent reader; all gates open on both chips.
+3. NOTE: marrakesh known-good passes narrowly (today's band [-2.338, -1.017] has the committed -2.393 just outside it; ratio of medians 0.70).
+4. CORRECTED: 'shrank about 30 %' replaced by the per-qubit scale (ours: 0.52 [0.42, 0.64]; referee 0.49-0.57 by several estimators), broad
+   across qubits, labelled defined after the data. ACTION: paper text.
+5. CANNOT_TELL: why marrakesh over-corrects. Ruled out: the fresh calibration job and a copy artefact. Not separable: slow drift, a step at a
+   recalibration, or a difference between the two sessions.
+6. CONFIRMED with caveats: kingston clock MC 0.76 vs MF 1.00 rests on two stale clock-qubit entries (q3, q23); not a preregistered contrast.
+   ACTION: paper text, labelled.
+7. CONFIRMED: no single qubit or pair drives the headline readings (exclusion tests).
+8. NOTE: the FINAL rule takes pooled outcomes when copies agree; copy-level C4 used the pooled-scale floor (outcomes unchanged); the plan's
+   dose-disagreement and residual-distance items were missing. ACTION: both added (results_post_hoc.text) and reported in the paper.
+9. CONFIRMED: seconds 165 + 171 = 336 from the job records; one attempt per job.
+10. CORRECTED: coherence loss restricted to kingston; X-part concurrence loss stated as a range across arms. ACTION: paper text.
+11. NOTE: the share ruler has a noise ceiling (echo arm 0.95 / 0.91); the slope is the cleaner statement. ACTION: paper text.

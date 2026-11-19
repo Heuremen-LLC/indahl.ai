@@ -1,0 +1,6 @@
+ibm_kingston: record 2026-10-24 07:48:56-04:00; targets [10, 3, 144, 122, 77, 62, 49, 136, 84, 33, 80, 60, 68, 70, 22, 155, 87, 107, 0, 43]; neighbours 37 (36 with readout_error < 0.05); Blo [144, 136, 68, 107]; circuits per job 272 (A 40, Bhi 40, Blo 160, C 32), shots per job 176000; twirl only rz: True; neighbour durations equal readout vs idle: True {'X': ([2196], [2196]), 'Y': ([2196], [2196])}; est 126 s (cap 150), remaining 3936, reserve 430
+SUBMITTED J1 dbe9uhnpc3tc739lb2n0 2026-10-24T12:06:30Z
+DONE J1 usage 50 s
+SUBMITTED J2 dbea3bvsstms73fbn80g 2026-10-24T12:16:47Z
+DONE J2 usage 50 s
+ALL DONE

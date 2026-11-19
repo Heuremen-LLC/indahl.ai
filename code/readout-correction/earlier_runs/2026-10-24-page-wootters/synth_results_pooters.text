@@ -1,0 +1,72 @@
+pooters.py --synth  40 draws per world, 2000 shots x 27 settings x 2 arms, bootstrap 400; readout from the kingston record; none alpha(t) = 1.04, 45.45, 89.87, 134.42
+== W0 null (no look effect)
+   R1 alpha(t=0) - none [deg]               ABOVE 1  CONSISTENT 39
+   R1 alpha(t=1) - none [deg]               BELOW 7  CONSISTENT 33
+   R1 alpha(t=2) - none [deg]               BELOW 1  CONSISTENT 39
+   R1 alpha(t=3) - none [deg]               ABOVE 5  CONSISTENT 35
+   R2 kick c0 [deg/readout]                 CONSISTENT 40
+   R2 kick c1 [deg/readout]                 ABOVE 1  CONSISTENT 39
+   R2 kick s [deg/readout]                  CONSISTENT 40
+   R3 dF (M - D)                            CONSISTENT 40
+   R4 delta = phi_c1 - 2 phi_c0 [deg]       BELOW 1  CONSISTENT 39
+== W1 clock only (-12, -72 deg)
+   R1 alpha(t=0) - none [deg]               ABOVE 1  CONSISTENT 39
+   R1 alpha(t=1) - none [deg]               BELOW 6  CONSISTENT 34
+   R1 alpha(t=2) - none [deg]               ABOVE 1  CONSISTENT 39
+   R1 alpha(t=3) - none [deg]               ABOVE 6  CONSISTENT 34
+   R2 kick c0 [deg/readout]                 BELOW 40
+   R2 kick c1 [deg/readout]                 BELOW 40
+   R2 kick s [deg/readout]                  CONSISTENT 40
+   R3 dF (M - D)                            BELOW 40
+   R4 delta = phi_c1 - 2 phi_c0 [deg]       BELOW 40
+== W2 system only (-30 deg)
+   R1 alpha(t=0) - none [deg]               CONSISTENT 40
+   R1 alpha(t=1) - none [deg]               BELOW 7  CONSISTENT 33
+   R1 alpha(t=2) - none [deg]               CONSISTENT 40
+   R1 alpha(t=3) - none [deg]               ABOVE 7  CONSISTENT 33
+   R2 kick c0 [deg/readout]                 CONSISTENT 40
+   R2 kick c1 [deg/readout]                 CONSISTENT 40
+   R2 kick s [deg/readout]                  BELOW 40
+   R3 dF (M - D)                            BELOW 40
+   R4 delta = phi_c1 - 2 phi_c0 [deg]       CONSISTENT 40
+== W3 uniform clock + system
+   R1 alpha(t=0) - none [deg]               CONSISTENT 40
+   R1 alpha(t=1) - none [deg]               BELOW 7  CONSISTENT 33
+   R1 alpha(t=2) - none [deg]               BELOW 2  CONSISTENT 38
+   R1 alpha(t=3) - none [deg]               ABOVE 6  CONSISTENT 34
+   R2 kick c0 [deg/readout]                 BELOW 40
+   R2 kick c1 [deg/readout]                 BELOW 40
+   R2 kick s [deg/readout]                  BELOW 40
+   R3 dF (M - D)                            BELOW 40
+   R4 delta = phi_c1 - 2 phi_c0 [deg]       CONSISTENT 40
+== W4 NEITHER (0.05 deg each)
+   R1 alpha(t=0) - none [deg]               ABOVE 1  CONSISTENT 39
+   R1 alpha(t=1) - none [deg]               BELOW 8  CONSISTENT 32
+   R1 alpha(t=2) - none [deg]               CONSISTENT 40
+   R1 alpha(t=3) - none [deg]               ABOVE 7  CONSISTENT 33
+   R2 kick c0 [deg/readout]                 BELOW 1  CONSISTENT 39
+   R2 kick c1 [deg/readout]                 CONSISTENT 40
+   R2 kick s [deg/readout]                  BELOW 2  CONSISTENT 38
+   R3 dF (M - D)                            CONSISTENT 40
+   R4 delta = phi_c1 - 2 phi_c0 [deg]       ABOVE 1  CONSISTENT 39
+== W5 D over-rotated +4 deg/tick
+   R1 alpha(t=0) - none [deg]               ABOVE 1  CONSISTENT 39
+   R1 alpha(t=1) - none [deg]               ABOVE 16  CONSISTENT 24
+   R1 alpha(t=2) - none [deg]               ABOVE 28  CONSISTENT 12
+   R1 alpha(t=3) - none [deg]               ABOVE 40
+   R2 kick c0 [deg/readout]                 CONSISTENT 40
+   R2 kick c1 [deg/readout]                 BELOW 1  CONSISTENT 39
+   R2 kick s [deg/readout]                  CONSISTENT 40
+   R3 dF (M - D)                            CONSISTENT 40
+   R4 delta = phi_c1 - 2 phi_c0 [deg]       CONSISTENT 40
+== W6 R1 null: D = ideal + readout
+   R1 alpha(t=0) - none [deg]               CONSISTENT 40
+   R1 alpha(t=1) - none [deg]               CONSISTENT 40
+   R1 alpha(t=2) - none [deg]               CONSISTENT 40
+   R1 alpha(t=3) - none [deg]               CONSISTENT 40
+   R2 kick c0 [deg/readout]                 CONSISTENT 40
+   R2 kick c1 [deg/readout]                 CONSISTENT 40
+   R2 kick s [deg/readout]                  CONSISTENT 40
+   R3 dF (M - D)                            ABOVE 1  CONSISTENT 39
+   R4 delta = phi_c1 - 2 phi_c0 [deg]       BELOW 1  CONSISTENT 39
+FALSE CALLS (planted CONSISTENT read as ABOVE/BELOW): 10/1200 = 0.8 %   MISSES (planted ABOVE/BELOW read otherwise): 36/520 = 6.9 %

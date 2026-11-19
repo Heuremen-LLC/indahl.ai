@@ -1,0 +1,10 @@
+SYNTHETIC, clock.py readers unchanged, 10 draws per world per chip (31 Oct 2026)
+ibm_kingston WH: known-good passed 10/10; M31 - MT FINAL {'CANNOT_TELL': 5, 'CONSISTENT': 5}; expected ('CONSISTENT', 'CANNOT_TELL')
+ibm_kingston WA: known-good passed 10/10; M31 - MT FINAL {'BELOW': 10}; expected ('BELOW',)
+ibm_kingston WM: known-good passed 10/10; M31 - MT FINAL {'BELOW': 10}; expected ('BELOW',)
+ibm_kingston W0: known-good passed 0/10; M31 - MT FINAL {'NOT DECIDED (known-good failed)': 10}; expected known-good FAIL
+ibm_marrakesh WH: known-good passed 10/10; M31 - MT FINAL {'CANNOT_TELL': 8, 'BELOW': 2}; expected ('CONSISTENT', 'CANNOT_TELL')
+ibm_marrakesh WA: known-good passed 10/10; M31 - MT FINAL {'BELOW': 10}; expected ('BELOW',)
+ibm_marrakesh WM: known-good passed 10/10; M31 - MT FINAL {'BELOW': 10}; expected ('BELOW',)
+ibm_marrakesh W0: known-good passed 0/10; M31 - MT FINAL {'NOT DECIDED (known-good failed)': 10}; expected known-good FAIL
+MISMATCHES against the expected outcomes: 2 of 80 draws

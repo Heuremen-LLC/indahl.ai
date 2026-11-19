@@ -1,0 +1,624 @@
+synth_keystone.py  30 draws per world, chip table ibm_marrakesh, shots S 2000 P 2500 C 1000 per copy, two copies; FINAL outcomes
+  W0 C1 dF M minus none                                       CONSISTENT 30   (expected C)
+  W0 C1 dF M with the total put back at the END minus D       BELOW 30   (expected B)
+  W0 C1 dF MC minus none                                      BELOW 30   (expected B)
+  W0 C1 dF ME minus none                                      BELOW 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W0 C1 dF MF minus none                                      CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W0 C2 F(MC) minus F(M) (given back)                         CANNOT_TELL 30   (expected None)
+  W0 C2b recovered share (F(MC)-F(M))/(F(D)-F(M)) vs 0.5      CANNOT_TELL 30   (expected None)
+  W0 C3 F(MC) minus F(M put back at the end)                  CANNOT_TELL 30   (expected None)
+  W0 C4 distance share given back MC vs 0.5                   CANNOT_TELL 30   (expected None)
+  W0 C4 distance share given back ME vs 0.5                   CANNOT_TELL 30   (expected None)
+  W0 C4 distance share given back MF vs 0.5                   CANNOT_TELL 30   (expected None)
+  W0 C4a look distance |E_M - E_D|^2 minus copy floor (gate)  CANNOT_TELL 6  CONSISTENT 24   (expected C)
+  W0 KG kick M (deg/readout)                                  BELOW 1  CONSISTENT 29   (expected C)
+  W0 P1 Bell fidelity M minus none                            CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W0 P1 Bell fidelity MC minus none                           BELOW 30   (expected B)
+  W0 P1 Bell fidelity ME minus none                           CONSISTENT 30   (expected C)
+  W0 P1 Bell fidelity MF minus none                           CONSISTENT 30   (expected C)
+  W0 P2 X-part concurrence M minus none                       ABOVE 1  CONSISTENT 29   (expected C)
+  W0 P2 X-part concurrence MC minus none                      CONSISTENT 30   (expected C)
+  W0 P2 X-part concurrence ME minus none                      CONSISTENT 30   (expected C)
+  W0 P2 X-part concurrence MF minus none                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W0 P3 Bell fidelity MC minus M (given back)                 CANNOT_TELL 30   (expected None)
+  W0 P3b X-part concurrence MC minus M (frame only)           BELOW 1  CONSISTENT 29   (expected C)
+  W0 P4 pair-phase share given back MC vs 0.5                 CANNOT_TELL 30   (expected None)
+  W0 P4 pair-phase share given back ME vs 0.5                 CANNOT_TELL 30   (expected None)
+  W0 P4 pair-phase share given back MF vs 0.5                 CANNOT_TELL 30   (expected None)
+  W0 P4a |pair phase| M minus copy floor (gate)               CONSISTENT 30   (expected C)
+  W0 P5 signed pair-phase residual MC (deg/step)              ABOVE 30   (expected A)
+  W0 P5 signed pair-phase residual ME (deg/step)              CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W0 P5 signed pair-phase residual MF (deg/step)              CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W0 S1 signed residual MC (deg/readout)                      ABOVE 30   (expected A)
+  W0 S1 signed residual ME (deg/readout)                      CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W0 S1 signed residual MF (deg/readout)                      CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W0 S2 SPLIT slope M vs 0 (all given back)                   CONSISTENT 30   (expected C)
+  W0 S2 SPLIT slope MC vs 0 (all given back)                  CANNOT_TELL 1  CONSISTENT 29   (expected None)
+  W0 S2 SPLIT slope ME vs 0 (all given back)                  CONSISTENT 30   (expected None)
+  W0 S2 SPLIT slope MF vs 0 (all given back)                  CONSISTENT 30   (expected None)
+  W0 S2b SPLIT slope M vs 1 (none given back)                 BELOW 30   (expected None)
+  W0 S2b SPLIT slope MC vs 1 (none given back)                BELOW 4  CANNOT_TELL 12  CONSISTENT 14   (expected None)
+  W0 S2b SPLIT slope ME vs 1 (none given back)                BELOW 30   (expected None)
+  W0 S2b SPLIT slope MF vs 1 (none given back)                BELOW 30   (expected None)
+  W0 S2c SPLIT slope MC vs 0.5 (BELOW = more than half given back) BELOW 3  CANNOT_TELL 2  CONSISTENT 25   (expected None)
+  W0 S2c SPLIT slope ME vs 0.5 (BELOW = more than half given back) BELOW 24  CANNOT_TELL 6   (expected None)
+  W0 S2c SPLIT slope MF vs 0.5 (BELOW = more than half given back) BELOW 25  CANNOT_TELL 5   (expected None)
+  W0 S2d SPLIT slope M minus MC (ABOVE = clears the ruler ceiling) CANNOT_TELL 1  CONSISTENT 29   (expected None)
+  W0 S2d SPLIT slope M minus ME (ABOVE = clears the ruler ceiling) CONSISTENT 30   (expected None)
+  W0 S2d SPLIT slope M minus MF (ABOVE = clears the ruler ceiling) CANNOT_TELL 2  CONSISTENT 28   (expected None)
+  W0 S3 P(1) excess back-to-zero M                            CONSISTENT 30   (expected C)
+  W0 S3 P(1) excess back-to-zero MC                           ABOVE 30   (expected A)
+  W0 S3 P(1) excess back-to-zero ME                           BELOW 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W0 S3 P(1) excess back-to-zero MF                           ABOVE 1  CONSISTENT 29   (expected C)
+  W0 S4 coherence M minus none                                CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W0 S4 coherence MC minus none                               CONSISTENT 30   (expected C)
+  W0 S4 coherence ME minus none                               ABOVE 1  CONSISTENT 29   (expected C)
+  W0 S4 coherence MF minus none                               CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W0 S4b coherence MC minus M (frame only)                    CONSISTENT 30   (expected C)
+  W0 S5 SPLIT slope MC minus MF (old vs fresh table)          CONSISTENT 30   (expected None)
+  W0 S6 |kick| M minus |residual| MC (given back)             BELOW 30   (expected B)
+  W0 S7 share given back MC vs 0.5 (ABOVE = more than half)   BELOW 30   (expected None)
+  W0 S7 share given back ME vs 0.5 (ABOVE = more than half)   BELOW 29  CANNOT_TELL 1   (expected None)
+  W0 S7 share given back MF vs 0.5 (ABOVE = more than half)   BELOW 30   (expected None)
+  W1 C1 dF M minus none                                       BELOW 30   (expected B)
+  W1 C1 dF M with the total put back at the END minus D       BELOW 28  CANNOT_TELL 2   (expected B)
+  W1 C1 dF MC minus none                                      CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W1 C1 dF ME minus none                                      ABOVE 1  CONSISTENT 29   (expected C)
+  W1 C1 dF MF minus none                                      CANNOT_TELL 5  CONSISTENT 25   (expected C)
+  W1 C2 F(MC) minus F(M) (given back)                         ABOVE 30   (expected A)
+  W1 C2b recovered share (F(MC)-F(M))/(F(D)-F(M)) vs 0.5      ABOVE 30   (expected None)
+  W1 C3 F(MC) minus F(M put back at the end)                  ABOVE 30   (expected A)
+  W1 C4 distance share given back MC vs 0.5                   ABOVE 30   (expected A)
+  W1 C4 distance share given back ME vs 0.5                   ABOVE 30   (expected A)
+  W1 C4 distance share given back MF vs 0.5                   ABOVE 30   (expected A)
+  W1 C4a look distance |E_M - E_D|^2 minus copy floor (gate)  ABOVE 30   (expected A)
+  W1 KG kick M (deg/readout)                                  BELOW 30   (expected B)
+  W1 P1 Bell fidelity M minus none                            BELOW 29  CANNOT_TELL 1   (expected B)
+  W1 P1 Bell fidelity MC minus none                           BELOW 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W1 P1 Bell fidelity ME minus none                           CONSISTENT 30   (expected C)
+  W1 P1 Bell fidelity MF minus none                           BELOW 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W1 P2 X-part concurrence M minus none                       CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W1 P2 X-part concurrence MC minus none                      CONSISTENT 30   (expected C)
+  W1 P2 X-part concurrence ME minus none                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W1 P2 X-part concurrence MF minus none                      CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W1 P3 Bell fidelity MC minus M (given back)                 ABOVE 29  CANNOT_TELL 1   (expected A)
+  W1 P3b X-part concurrence MC minus M (frame only)           ABOVE 1  BELOW 1  CONSISTENT 28   (expected C)
+  W1 P4 pair-phase share given back MC vs 0.5                 ABOVE 30   (expected A)
+  W1 P4 pair-phase share given back ME vs 0.5                 ABOVE 30   (expected A)
+  W1 P4 pair-phase share given back MF vs 0.5                 ABOVE 30   (expected A)
+  W1 P4a |pair phase| M minus copy floor (gate)               ABOVE 30   (expected A)
+  W1 P5 signed pair-phase residual MC (deg/step)              ABOVE 1  CANNOT_TELL 3  CONSISTENT 26   (expected C)
+  W1 P5 signed pair-phase residual ME (deg/step)              ABOVE 1  CONSISTENT 29   (expected C)
+  W1 P5 signed pair-phase residual MF (deg/step)              CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W1 S1 signed residual MC (deg/readout)                      CONSISTENT 30   (expected C)
+  W1 S1 signed residual ME (deg/readout)                      CONSISTENT 30   (expected C)
+  W1 S1 signed residual MF (deg/readout)                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W1 S2 SPLIT slope M vs 0 (all given back)                   ABOVE 30   (expected A)
+  W1 S2 SPLIT slope MC vs 0 (all given back)                  CONSISTENT 30   (expected C)
+  W1 S2 SPLIT slope ME vs 0 (all given back)                  CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W1 S2 SPLIT slope MF vs 0 (all given back)                  CONSISTENT 30   (expected C)
+  W1 S2b SPLIT slope M vs 1 (none given back)                 BELOW 22  CANNOT_TELL 8   (expected None)
+  W1 S2b SPLIT slope MC vs 1 (none given back)                BELOW 30   (expected B)
+  W1 S2b SPLIT slope ME vs 1 (none given back)                BELOW 30   (expected B)
+  W1 S2b SPLIT slope MF vs 1 (none given back)                BELOW 30   (expected B)
+  W1 S2c SPLIT slope MC vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W1 S2c SPLIT slope ME vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W1 S2c SPLIT slope MF vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W1 S2d SPLIT slope M minus MC (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W1 S2d SPLIT slope M minus ME (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W1 S2d SPLIT slope M minus MF (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W1 S3 P(1) excess back-to-zero M                            ABOVE 30   (expected A)
+  W1 S3 P(1) excess back-to-zero MC                           CONSISTENT 30   (expected C)
+  W1 S3 P(1) excess back-to-zero ME                           CONSISTENT 30   (expected C)
+  W1 S3 P(1) excess back-to-zero MF                           CONSISTENT 30   (expected C)
+  W1 S4 coherence M minus none                                CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W1 S4 coherence MC minus none                               CONSISTENT 30   (expected C)
+  W1 S4 coherence ME minus none                               CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W1 S4 coherence MF minus none                               CONSISTENT 30   (expected C)
+  W1 S4b coherence MC minus M (frame only)                    ABOVE 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W1 S5 SPLIT slope MC minus MF (old vs fresh table)          CONSISTENT 30   (expected C)
+  W1 S6 |kick| M minus |residual| MC (given back)             ABOVE 30   (expected A)
+  W1 S7 share given back MC vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+  W1 S7 share given back ME vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+  W1 S7 share given back MF vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+  W2 C1 dF M minus none                                       BELOW 21  CANNOT_TELL 4  CONSISTENT 5   (expected None)
+  W2 C1 dF M with the total put back at the END minus D       BELOW 30   (expected B)
+  W2 C1 dF MC minus none                                      BELOW 28  CANNOT_TELL 1  CONSISTENT 1   (expected B)
+  W2 C1 dF ME minus none                                      CANNOT_TELL 4  CONSISTENT 26   (expected C)
+  W2 C1 dF MF minus none                                      ABOVE 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W2 C2 F(MC) minus F(M) (given back)                         ABOVE 1  BELOW 12  CANNOT_TELL 12  CONSISTENT 5   (expected None)
+  W2 C2b recovered share (F(MC)-F(M))/(F(D)-F(M)) vs 0.5      BELOW 17  CANNOT_TELL 12  CONSISTENT 1   (expected None)
+  W2 C3 F(MC) minus F(M put back at the end)                  ABOVE 21  CANNOT_TELL 9   (expected None)
+  W2 C4 distance share given back MC vs 0.5                   ABOVE 27  CANNOT_TELL 2  CONSISTENT 1   (expected A)
+  W2 C4 distance share given back ME vs 0.5                   ABOVE 30   (expected A)
+  W2 C4 distance share given back MF vs 0.5                   ABOVE 30   (expected A)
+  W2 C4a look distance |E_M - E_D|^2 minus copy floor (gate)  ABOVE 30   (expected A)
+  W2 KG kick M (deg/readout)                                  BELOW 30   (expected B)
+  W2 P1 Bell fidelity M minus none                            BELOW 20  CANNOT_TELL 9  CONSISTENT 1   (expected B)
+  W2 P1 Bell fidelity MC minus none                           BELOW 1  CANNOT_TELL 10  CONSISTENT 19   (expected B)
+  W2 P1 Bell fidelity ME minus none                           CONSISTENT 30   (expected C)
+  W2 P1 Bell fidelity MF minus none                           CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W2 P2 X-part concurrence M minus none                       ABOVE 1  BELOW 1  CONSISTENT 28   (expected C)
+  W2 P2 X-part concurrence MC minus none                      ABOVE 1  CONSISTENT 29   (expected C)
+  W2 P2 X-part concurrence ME minus none                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W2 P2 X-part concurrence MF minus none                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W2 P3 Bell fidelity MC minus M (given back)                 ABOVE 6  CANNOT_TELL 14  CONSISTENT 10   (expected A)
+  W2 P3b X-part concurrence MC minus M (frame only)           BELOW 1  CONSISTENT 29   (expected C)
+  W2 P4 pair-phase share given back MC vs 0.5                 CONSISTENT 30   (expected None)
+  W2 P4 pair-phase share given back ME vs 0.5                 ABOVE 30   (expected A)
+  W2 P4 pair-phase share given back MF vs 0.5                 ABOVE 30   (expected A)
+  W2 P4a |pair phase| M minus copy floor (gate)               ABOVE 30   (expected A)
+  W2 P5 signed pair-phase residual MC (deg/step)              ABOVE 30   (expected A)
+  W2 P5 signed pair-phase residual ME (deg/step)              CONSISTENT 30   (expected C)
+  W2 P5 signed pair-phase residual MF (deg/step)              CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W2 S1 signed residual MC (deg/readout)                      ABOVE 30   (expected A)
+  W2 S1 signed residual ME (deg/readout)                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W2 S1 signed residual MF (deg/readout)                      BELOW 1  CONSISTENT 29   (expected C)
+  W2 S2 SPLIT slope M vs 0 (all given back)                   ABOVE 30   (expected A)
+  W2 S2 SPLIT slope MC vs 0 (all given back)                  BELOW 28  CANNOT_TELL 2   (expected B)
+  W2 S2 SPLIT slope ME vs 0 (all given back)                  BELOW 1  CANNOT_TELL 2  CONSISTENT 27   (expected C)
+  W2 S2 SPLIT slope MF vs 0 (all given back)                  CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W2 S2b SPLIT slope M vs 1 (none given back)                 BELOW 22  CANNOT_TELL 8   (expected None)
+  W2 S2b SPLIT slope MC vs 1 (none given back)                BELOW 30   (expected B)
+  W2 S2b SPLIT slope ME vs 1 (none given back)                BELOW 30   (expected B)
+  W2 S2b SPLIT slope MF vs 1 (none given back)                BELOW 30   (expected B)
+  W2 S2c SPLIT slope MC vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W2 S2c SPLIT slope ME vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W2 S2c SPLIT slope MF vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W2 S2d SPLIT slope M minus MC (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W2 S2d SPLIT slope M minus ME (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W2 S2d SPLIT slope M minus MF (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W2 S3 P(1) excess back-to-zero M                            ABOVE 30   (expected A)
+  W2 S3 P(1) excess back-to-zero MC                           ABOVE 7  CANNOT_TELL 11  CONSISTENT 12   (expected A)
+  W2 S3 P(1) excess back-to-zero ME                           CONSISTENT 30   (expected C)
+  W2 S3 P(1) excess back-to-zero MF                           BELOW 1  CONSISTENT 29   (expected C)
+  W2 S4 coherence M minus none                                CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W2 S4 coherence MC minus none                               BELOW 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W2 S4 coherence ME minus none                               ABOVE 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W2 S4 coherence MF minus none                               CONSISTENT 30   (expected C)
+  W2 S4b coherence MC minus M (frame only)                    CONSISTENT 30   (expected C)
+  W2 S5 SPLIT slope MC minus MF (old vs fresh table)          BELOW 28  CANNOT_TELL 2   (expected B)
+  W2 S6 |kick| M minus |residual| MC (given back)             ABOVE 30   (expected A)
+  W2 S7 share given back MC vs 0.5 (ABOVE = more than half)   CANNOT_TELL 3  CONSISTENT 27   (expected None)
+  W2 S7 share given back ME vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+  W2 S7 share given back MF vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+  W3 C1 dF M minus none                                       BELOW 15  CANNOT_TELL 14  CONSISTENT 1   (expected B)
+  W3 C1 dF M with the total put back at the END minus D       BELOW 30   (expected B)
+  W3 C1 dF MC minus none                                      BELOW 30   (expected B)
+  W3 C1 dF ME minus none                                      BELOW 17  CANNOT_TELL 10  CONSISTENT 3   (expected B)
+  W3 C1 dF MF minus none                                      BELOW 12  CANNOT_TELL 15  CONSISTENT 3   (expected B)
+  W3 C2 F(MC) minus F(M) (given back)                         BELOW 15  CANNOT_TELL 15   (expected None)
+  W3 C2b recovered share (F(MC)-F(M))/(F(D)-F(M)) vs 0.5      BELOW 13  CANNOT_TELL 15  CONSISTENT 2   (expected None)
+  W3 C3 F(MC) minus F(M put back at the end)                  ABOVE 15  CANNOT_TELL 15   (expected None)
+  W3 C4 distance share given back MC vs 0.5                   BELOW 5  CANNOT_TELL 25   (expected None)
+  W3 C4 distance share given back ME vs 0.5                   CANNOT_TELL 26  CONSISTENT 4   (expected None)
+  W3 C4 distance share given back MF vs 0.5                   CANNOT_TELL 26  CONSISTENT 4   (expected None)
+  W3 C4a look distance |E_M - E_D|^2 minus copy floor (gate)  ABOVE 5  CANNOT_TELL 3  CONSISTENT 22   (expected None)
+  W3 KG kick M (deg/readout)                                  ABOVE 2  CANNOT_TELL 1  CONSISTENT 27   (expected C)
+  W3 P1 Bell fidelity M minus none                            BELOW 30   (expected B)
+  W3 P1 Bell fidelity MC minus none                           BELOW 30   (expected B)
+  W3 P1 Bell fidelity ME minus none                           BELOW 30   (expected B)
+  W3 P1 Bell fidelity MF minus none                           BELOW 30   (expected B)
+  W3 P2 X-part concurrence M minus none                       BELOW 30   (expected B)
+  W3 P2 X-part concurrence MC minus none                      BELOW 30   (expected B)
+  W3 P2 X-part concurrence ME minus none                      BELOW 30   (expected B)
+  W3 P2 X-part concurrence MF minus none                      BELOW 30   (expected B)
+  W3 P3 Bell fidelity MC minus M (given back)                 BELOW 30   (expected None)
+  W3 P3b X-part concurrence MC minus M (frame only)           CONSISTENT 30   (expected C)
+  W3 P4 pair-phase share given back MC vs 0.5                 BELOW 1  CANNOT_TELL 29   (expected None)
+  W3 P4 pair-phase share given back ME vs 0.5                 BELOW 1  CANNOT_TELL 29   (expected None)
+  W3 P4 pair-phase share given back MF vs 0.5                 CANNOT_TELL 29  CONSISTENT 1   (expected None)
+  W3 P4a |pair phase| M minus copy floor (gate)               ABOVE 1  CANNOT_TELL 3  CONSISTENT 26   (expected C)
+  W3 P5 signed pair-phase residual MC (deg/step)              ABOVE 30   (expected A)
+  W3 P5 signed pair-phase residual ME (deg/step)              CONSISTENT 30   (expected C)
+  W3 P5 signed pair-phase residual MF (deg/step)              CONSISTENT 30   (expected C)
+  W3 S1 signed residual MC (deg/readout)                      ABOVE 30   (expected A)
+  W3 S1 signed residual ME (deg/readout)                      CONSISTENT 30   (expected C)
+  W3 S1 signed residual MF (deg/readout)                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W3 S2 SPLIT slope M vs 0 (all given back)                   CONSISTENT 30   (expected C)
+  W3 S2 SPLIT slope MC vs 0 (all given back)                  CONSISTENT 30   (expected None)
+  W3 S2 SPLIT slope ME vs 0 (all given back)                  ABOVE 1  CONSISTENT 29   (expected None)
+  W3 S2 SPLIT slope MF vs 0 (all given back)                  CANNOT_TELL 1  CONSISTENT 29   (expected None)
+  W3 S2b SPLIT slope M vs 1 (none given back)                 BELOW 30   (expected None)
+  W3 S2b SPLIT slope MC vs 1 (none given back)                BELOW 5  CANNOT_TELL 14  CONSISTENT 11   (expected None)
+  W3 S2b SPLIT slope ME vs 1 (none given back)                BELOW 30   (expected None)
+  W3 S2b SPLIT slope MF vs 1 (none given back)                BELOW 30   (expected None)
+  W3 S2c SPLIT slope MC vs 0.5 (BELOW = more than half given back) CANNOT_TELL 5  CONSISTENT 25   (expected None)
+  W3 S2c SPLIT slope ME vs 0.5 (BELOW = more than half given back) BELOW 27  CANNOT_TELL 3   (expected None)
+  W3 S2c SPLIT slope MF vs 0.5 (BELOW = more than half given back) BELOW 29  CANNOT_TELL 1   (expected None)
+  W3 S2d SPLIT slope M minus MC (ABOVE = clears the ruler ceiling) CONSISTENT 30   (expected None)
+  W3 S2d SPLIT slope M minus ME (ABOVE = clears the ruler ceiling) CANNOT_TELL 1  CONSISTENT 29   (expected None)
+  W3 S2d SPLIT slope M minus MF (ABOVE = clears the ruler ceiling) CONSISTENT 30   (expected None)
+  W3 S3 P(1) excess back-to-zero M                            ABOVE 30   (expected A)
+  W3 S3 P(1) excess back-to-zero MC                           ABOVE 30   (expected A)
+  W3 S3 P(1) excess back-to-zero ME                           ABOVE 30   (expected A)
+  W3 S3 P(1) excess back-to-zero MF                           ABOVE 30   (expected A)
+  W3 S4 coherence M minus none                                BELOW 30   (expected B)
+  W3 S4 coherence MC minus none                               BELOW 30   (expected B)
+  W3 S4 coherence ME minus none                               BELOW 30   (expected B)
+  W3 S4 coherence MF minus none                               BELOW 30   (expected B)
+  W3 S4b coherence MC minus M (frame only)                    BELOW 1  CONSISTENT 29   (expected C)
+  W3 S5 SPLIT slope MC minus MF (old vs fresh table)          CONSISTENT 30   (expected None)
+  W3 S6 |kick| M minus |residual| MC (given back)             BELOW 30   (expected B)
+  W3 S7 share given back MC vs 0.5 (ABOVE = more than half)   BELOW 30   (expected None)
+  W3 S7 share given back ME vs 0.5 (ABOVE = more than half)   BELOW 30   (expected None)
+  W3 S7 share given back MF vs 0.5 (ABOVE = more than half)   BELOW 30   (expected None)
+  W4 C1 dF M minus none                                       BELOW 30   (expected B)
+  W4 C1 dF M with the total put back at the END minus D       BELOW 30   (expected B)
+  W4 C1 dF MC minus none                                      BELOW 12  CANNOT_TELL 14  CONSISTENT 4   (expected B)
+  W4 C1 dF ME minus none                                      BELOW 17  CANNOT_TELL 12  CONSISTENT 1   (expected B)
+  W4 C1 dF MF minus none                                      BELOW 8  CANNOT_TELL 21  CONSISTENT 1   (expected B)
+  W4 C2 F(MC) minus F(M) (given back)                         ABOVE 30   (expected A)
+  W4 C2b recovered share (F(MC)-F(M))/(F(D)-F(M)) vs 0.5      ABOVE 29  CANNOT_TELL 1   (expected None)
+  W4 C3 F(MC) minus F(M put back at the end)                  ABOVE 28  CANNOT_TELL 2   (expected A)
+  W4 C4 distance share given back MC vs 0.5                   ABOVE 30   (expected A)
+  W4 C4 distance share given back ME vs 0.5                   ABOVE 30   (expected A)
+  W4 C4 distance share given back MF vs 0.5                   ABOVE 30   (expected A)
+  W4 C4a look distance |E_M - E_D|^2 minus copy floor (gate)  ABOVE 30   (expected A)
+  W4 KG kick M (deg/readout)                                  BELOW 30   (expected B)
+  W4 P1 Bell fidelity M minus none                            BELOW 30   (expected B)
+  W4 P1 Bell fidelity MC minus none                           BELOW 30   (expected B)
+  W4 P1 Bell fidelity ME minus none                           BELOW 30   (expected B)
+  W4 P1 Bell fidelity MF minus none                           BELOW 30   (expected B)
+  W4 P2 X-part concurrence M minus none                       BELOW 30   (expected B)
+  W4 P2 X-part concurrence MC minus none                      BELOW 30   (expected B)
+  W4 P2 X-part concurrence ME minus none                      BELOW 30   (expected B)
+  W4 P2 X-part concurrence MF minus none                      BELOW 30   (expected B)
+  W4 P3 Bell fidelity MC minus M (given back)                 ABOVE 27  CANNOT_TELL 3   (expected A)
+  W4 P3b X-part concurrence MC minus M (frame only)           CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W4 P4 pair-phase share given back MC vs 0.5                 ABOVE 30   (expected A)
+  W4 P4 pair-phase share given back ME vs 0.5                 ABOVE 30   (expected A)
+  W4 P4 pair-phase share given back MF vs 0.5                 ABOVE 30   (expected A)
+  W4 P4a |pair phase| M minus copy floor (gate)               ABOVE 30   (expected A)
+  W4 P5 signed pair-phase residual MC (deg/step)              CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W4 P5 signed pair-phase residual ME (deg/step)              CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W4 P5 signed pair-phase residual MF (deg/step)              CANNOT_TELL 2  CONSISTENT 28   (expected C)
+  W4 S1 signed residual MC (deg/readout)                      CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W4 S1 signed residual ME (deg/readout)                      ABOVE 1  CONSISTENT 29   (expected C)
+  W4 S1 signed residual MF (deg/readout)                      ABOVE 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W4 S2 SPLIT slope M vs 0 (all given back)                   ABOVE 30   (expected A)
+  W4 S2 SPLIT slope MC vs 0 (all given back)                  CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W4 S2 SPLIT slope ME vs 0 (all given back)                  CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W4 S2 SPLIT slope MF vs 0 (all given back)                  CONSISTENT 30   (expected C)
+  W4 S2b SPLIT slope M vs 1 (none given back)                 BELOW 22  CANNOT_TELL 8   (expected None)
+  W4 S2b SPLIT slope MC vs 1 (none given back)                BELOW 30   (expected B)
+  W4 S2b SPLIT slope ME vs 1 (none given back)                BELOW 30   (expected B)
+  W4 S2b SPLIT slope MF vs 1 (none given back)                BELOW 30   (expected B)
+  W4 S2c SPLIT slope MC vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W4 S2c SPLIT slope ME vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W4 S2c SPLIT slope MF vs 0.5 (BELOW = more than half given back) BELOW 30   (expected B)
+  W4 S2d SPLIT slope M minus MC (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W4 S2d SPLIT slope M minus ME (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W4 S2d SPLIT slope M minus MF (ABOVE = clears the ruler ceiling) ABOVE 30   (expected A)
+  W4 S3 P(1) excess back-to-zero M                            ABOVE 30   (expected A)
+  W4 S3 P(1) excess back-to-zero MC                           ABOVE 30   (expected A)
+  W4 S3 P(1) excess back-to-zero ME                           ABOVE 30   (expected A)
+  W4 S3 P(1) excess back-to-zero MF                           ABOVE 30   (expected A)
+  W4 S4 coherence M minus none                                BELOW 30   (expected B)
+  W4 S4 coherence MC minus none                               BELOW 30   (expected B)
+  W4 S4 coherence ME minus none                               BELOW 30   (expected B)
+  W4 S4 coherence MF minus none                               BELOW 30   (expected B)
+  W4 S4b coherence MC minus M (frame only)                    ABOVE 1  CANNOT_TELL 1  CONSISTENT 28   (expected C)
+  W4 S5 SPLIT slope MC minus MF (old vs fresh table)          CANNOT_TELL 1  CONSISTENT 29   (expected C)
+  W4 S6 |kick| M minus |residual| MC (given back)             ABOVE 30   (expected A)
+  W4 S7 share given back MC vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+  W4 S7 share given back ME vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+  W4 S7 share given back MF vs 0.5 (ABOVE = more than half)   ABOVE 30   (expected A)
+FALSE CALLS (planted CONSISTENT read otherwise): 113/2970 = 3.8 %   MISSES (planted ABOVE/BELOW read otherwise): 203/4200 = 4.8 %
+MISMATCHES:
+  W0 d0 S1 signed residual MF (deg/readout): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0795 [-0.1447,+0.0281] want CONSISTENT
+  W0 d0 P5 signed pair-phase residual MF (deg/step): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.1461 [-0.0668,+0.5582] want CONSISTENT
+  W0 d1 S1 signed residual MF (deg/readout): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0538 [-0.1223,+0.0471] want CONSISTENT
+  W0 d3 S3 P(1) excess back-to-zero ME: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0018 [-0.0063,+0.0003] want CONSISTENT
+  W0 d3 S4 coherence M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0060 [-0.0100,-0.0019] want CONSISTENT
+  W0 d3 S4 coherence MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0038 [-0.0094,-0.0013] want CONSISTENT
+  W0 d3 P3b X-part concurrence MC minus M (frame only): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0055 [-0.0085,-0.0002] want CONSISTENT
+  W0 d4 C4a look distance |E_M - E_D|^2 minus copy floor (gate): got CANNOT_TELL (A CONSISTENT, B ABOVE) value -0.0026 [-0.0334,+0.0263] want CONSISTENT
+  W0 d7 S1 signed residual ME (deg/readout): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0755 [-0.0175,+0.1721] want CONSISTENT
+  W0 d8 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0183 [-0.0319,+0.0006] want CONSISTENT
+  W0 d11 S1 signed residual ME (deg/readout): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0113 [-0.0951,+0.1148] want CONSISTENT
+  W0 d12 P2 X-part concurrence M minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0049 [+0.0003,+0.0089] want CONSISTENT
+  W0 d14 P1 Bell fidelity M minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0018 [-0.0022,+0.0038] want CONSISTENT
+  W0 d14 C4a look distance |E_M - E_D|^2 minus copy floor (gate): got CANNOT_TELL (A ABOVE, B CONSISTENT) value -0.0015 [-0.0217,+0.0332] want CONSISTENT
+  W0 d16 S4 coherence M minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0015 [-0.0020,+0.0055] want CONSISTENT
+  W0 d17 C4a look distance |E_M - E_D|^2 minus copy floor (gate): got CANNOT_TELL (A CONSISTENT, B ABOVE) value -0.0069 [-0.0414,+0.0232] want CONSISTENT
+  W0 d18 C4a look distance |E_M - E_D|^2 minus copy floor (gate): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0063 [-0.0273,+0.0464] want CONSISTENT
+  W0 d19 S3 P(1) excess back-to-zero MF: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0010 [+0.0002,+0.0035] want CONSISTENT
+  W0 d19 C4a look distance |E_M - E_D|^2 minus copy floor (gate): got CANNOT_TELL (A CONSISTENT, B ABOVE) value -0.0065 [-0.0404,+0.0378] want CONSISTENT
+  W0 d20 C4a look distance |E_M - E_D|^2 minus copy floor (gate): got CANNOT_TELL (A ABOVE, B CONSISTENT) value -0.0069 [-0.0411,+0.0234] want CONSISTENT
+  W0 d21 KG kick M (deg/readout): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0916 [-0.1551,-0.0041] want CONSISTENT
+  W0 d21 P5 signed pair-phase residual ME (deg/step): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.1519 [+0.0318,+0.3393] want CONSISTENT
+  W0 d23 C1 dF ME minus none: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0146 [-0.0285,-0.0003] want CONSISTENT
+  W0 d24 S4 coherence ME minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0030 [+0.0001,+0.0065] want CONSISTENT
+  W0 d24 P2 X-part concurrence MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0052 [-0.0082,-0.0002] want CONSISTENT
+  W0 d25 S3 P(1) excess back-to-zero ME: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0020 [-0.0045,-0.0003] want CONSISTENT
+  W0 d26 C1 dF ME minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0097 [-0.0092,+0.0311] want CONSISTENT
+  W0 d29 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0165 [-0.0341,-0.0009] want CONSISTENT
+  W1 d1 P3b X-part concurrence MC minus M (frame only): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0043 [-0.0081,-0.0024] want CONSISTENT
+  W1 d1 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0166 [-0.0326,+0.0036] want CONSISTENT
+  W1 d2 P2 X-part concurrence MF minus none: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0043 [-0.0039,+0.0083] want CONSISTENT
+  W1 d3 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0056 [-0.0195,+0.0089] want CONSISTENT
+  W1 d4 S4 coherence M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0027 [-0.0099,+0.0042] want CONSISTENT
+  W1 d4 P1 Bell fidelity MF minus none: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0021 [-0.0039,-0.0003] want CONSISTENT
+  W1 d4 P2 X-part concurrence M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0050 [-0.0108,-0.0001] want CONSISTENT
+  W1 d4 P3b X-part concurrence MC minus M (frame only): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0059 [+0.0005,+0.0092] want CONSISTENT
+  W1 d5 P5 signed pair-phase residual ME (deg/step): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.2325 [+0.0301,+0.4682] want CONSISTENT
+  W1 d6 P1 Bell fidelity MC minus none: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0016 [-0.0029,-0.0001] want CONSISTENT
+  W1 d7 S4b coherence MC minus M (frame only): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0054 [+0.0008,+0.0111] want CONSISTENT
+  W1 d8 P2 X-part concurrence M minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0013 [-0.0029,+0.0093] want CONSISTENT
+  W1 d9 P5 signed pair-phase residual MC (deg/step): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.1084 [-0.4146,+0.1263] want CONSISTENT
+  W1 d11 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0205 [-0.0391,-0.0066] want CONSISTENT
+  W1 d12 S4 coherence M minus none: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0014 [-0.0032,+0.0088] want CONSISTENT
+  W1 d12 P5 signed pair-phase residual MC (deg/step): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.1016 [-0.4225,+0.0980] want CONSISTENT
+  W1 d13 P5 signed pair-phase residual MC (deg/step): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.3098 [-0.4783,+0.0887] want CONSISTENT
+  W1 d14 C1 dF MF minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0199 [+0.0048,+0.0385] want CONSISTENT
+  W1 d15 S2 SPLIT slope ME vs 0 (all given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0027 [-0.0120,+0.0210] want CONSISTENT
+  W1 d16 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0145 [-0.0303,+0.0052] want CONSISTENT
+  W1 d17 C1 dF MF minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0174 [-0.0005,+0.0357] want CONSISTENT
+  W1 d20 C1 dF M with the total put back at the END minus D: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0404 [-0.0593,-0.0240] want BELOW
+  W1 d21 S4 coherence ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0011 [-0.0064,+0.0030] want CONSISTENT
+  W1 d21 P5 signed pair-phase residual MF (deg/step): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.1919 [-0.4103,+0.0538] want CONSISTENT
+  W1 d22 P2 X-part concurrence ME minus none: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0010 [-0.0039,+0.0084] want CONSISTENT
+  W1 d22 C1 dF ME minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0169 [+0.0017,+0.0299] want CONSISTENT
+  W1 d23 S1 signed residual MF (deg/readout): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0152 [-0.1099,+0.0949] want CONSISTENT
+  W1 d23 P1 Bell fidelity MC minus none: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0036 [-0.0010,+0.0058] want CONSISTENT
+  W1 d23 C1 dF M with the total put back at the END minus D: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0322 [-0.0544,-0.0165] want BELOW
+  W1 d25 S4b coherence MC minus M (frame only): got CANNOT_TELL (A CONSISTENT, B BELOW) value +0.0000 [-0.0072,+0.0049] want CONSISTENT
+  W1 d25 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0129 [-0.0336,+0.0004] want CONSISTENT
+  W1 d26 P1 Bell fidelity M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0237 [-0.0722,+0.0017] want BELOW
+  W1 d26 P1 Bell fidelity MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0004 [-0.0030,+0.0022] want CONSISTENT
+  W1 d26 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0273 [-0.0012,+0.0591] want ABOVE
+  W1 d26 P5 signed pair-phase residual MC (deg/step): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.2360 [+0.0143,+0.5041] want CONSISTENT
+  W1 d28 P2 X-part concurrence MF minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0009 [-0.0051,+0.0077] want CONSISTENT
+  W2 d0 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0025 [-0.0028,+0.0080] want ABOVE
+  W2 d0 P1 Bell fidelity M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0152 [-0.0407,-0.0003] want BELOW
+  W2 d0 P1 Bell fidelity MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0060 [-0.0156,+0.0028] want BELOW
+  W2 d0 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0131 [-0.0015,+0.0267] want ABOVE
+  W2 d0 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0127 [-0.0298,+0.0025] want CONSISTENT
+  W2 d1 S1 signed residual ME (deg/readout): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0594 [-0.1157,+0.0231] want CONSISTENT
+  W2 d1 S3 P(1) excess back-to-zero MC: got CONSISTENT (A ABOVE, B ABOVE) value +0.0063 [-0.0007,+0.0155] want ABOVE
+  W2 d1 P1 Bell fidelity M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0116 [-0.0399,-0.0015] want BELOW
+  W2 d1 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0018 [-0.0165,+0.0036] want BELOW
+  W2 d1 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B CONSISTENT) value +0.0080 [+0.0010,+0.0393] want ABOVE
+  W2 d2 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0045 [-0.0008,+0.0105] want ABOVE
+  W2 d2 S4 coherence M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0044 [-0.0071,+0.0024] want CONSISTENT
+  W2 d2 P1 Bell fidelity M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0127 [-0.0372,-0.0019] want BELOW
+  W2 d2 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0034 [-0.0106,+0.0028] want BELOW
+  W2 d2 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B CONSISTENT) value +0.0076 [+0.0001,+0.0378] want ABOVE
+  W2 d3 S3 P(1) excess back-to-zero MC: got CONSISTENT (A ABOVE, B ABOVE) value +0.0060 [-0.0005,+0.0163] want ABOVE
+  W2 d3 P1 Bell fidelity MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0061 [-0.0119,+0.0009] want BELOW
+  W2 d3 P1 Bell fidelity MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0021 [-0.0052,+0.0003] want CONSISTENT
+  W2 d3 P2 X-part concurrence MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0050 [-0.0081,+0.0010] want CONSISTENT
+  W2 d3 P2 X-part concurrence ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0011 [-0.0054,+0.0065] want CONSISTENT
+  W2 d3 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0061 [-0.0026,+0.0268] want ABOVE
+  W2 d4 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0053 [-0.0157,+0.0001] want BELOW
+  W2 d4 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0065 [-0.0059,+0.0202] want ABOVE
+  W2 d5 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0048 [-0.0010,+0.0122] want ABOVE
+  W2 d5 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0037 [-0.0179,+0.0031] want BELOW
+  W2 d5 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0062 [-0.0067,+0.0249] want ABOVE
+  W2 d5 C1 dF MF minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0187 [+0.0003,+0.0425] want CONSISTENT
+  W2 d6 S1 signed residual MF (deg/readout): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0963 [-0.1621,-0.0012] want CONSISTENT
+  W2 d6 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0055 [+0.0000,+0.0098] want ABOVE
+  W2 d6 P1 Bell fidelity M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0133 [-0.0377,-0.0014] want BELOW
+  W2 d6 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0072 [-0.0145,+0.0067] want BELOW
+  W2 d6 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0107 [-0.0028,+0.0453] want ABOVE
+  W2 d6 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0197 [-0.0403,-0.0081] want CONSISTENT
+  W2 d7 S2 SPLIT slope MF vs 0 (all given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0005 [-0.0308,+0.0265] want CONSISTENT
+  W2 d7 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0020 [-0.0005,+0.0118] want ABOVE
+  W2 d7 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0044 [-0.0126,+0.0045] want BELOW
+  W2 d7 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0160 [+0.0016,+0.0351] want ABOVE
+  W2 d8 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0060 [+0.0000,+0.0115] want ABOVE
+  W2 d8 S4 coherence MC minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0062 [-0.0014,+0.0100] want CONSISTENT
+  W2 d8 P1 Bell fidelity M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0101 [-0.0353,+0.0000] want BELOW
+  W2 d8 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0024 [-0.0192,+0.0031] want BELOW
+  W2 d8 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B ABOVE) value +0.0116 [+0.0035,+0.0346] want ABOVE
+  W2 d9 S2 SPLIT slope MC vs 0 (all given back): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.2275 [-0.3616,-0.0470] want BELOW
+  W2 d9 S5 SPLIT slope MC minus MF (old vs fresh table): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.2377 [-0.3490,-0.0545] want BELOW
+  W2 d9 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0028 [-0.0111,+0.0004] want BELOW
+  W2 d10 S2 SPLIT slope MF vs 0 (all given back): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0181 [-0.0388,+0.0013] want CONSISTENT
+  W2 d10 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0033 [-0.0008,+0.0095] want ABOVE
+  W2 d10 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0055 [-0.0079,+0.0020] want BELOW
+  W2 d10 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0073 [-0.0029,+0.0514] want ABOVE
+  W2 d11 S2 SPLIT slope ME vs 0 (all given back): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0233 [-0.0485,-0.0049] want CONSISTENT
+  W2 d11 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0038 [-0.0018,+0.0092] want ABOVE
+  W2 d11 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0035 [-0.0188,+0.0022] want BELOW
+  W2 d12 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0055 [+0.0018,+0.0110] want ABOVE
+  W2 d12 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0026 [-0.0087,+0.0017] want BELOW
+  W2 d13 S2 SPLIT slope MC vs 0 (all given back): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.1952 [-0.3382,-0.0145] want BELOW
+  W2 d13 S5 SPLIT slope MC minus MF (old vs fresh table): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.1941 [-0.3244,-0.0220] want BELOW
+  W2 d13 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0026 [-0.0124,+0.0021] want BELOW
+  W2 d13 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0112 [-0.0023,+0.0395] want ABOVE
+  W2 d13 C1 dF MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0142 [-0.0308,+0.0060] want BELOW
+  W2 d14 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0040 [-0.0000,+0.0092] want ABOVE
+  W2 d14 P1 Bell fidelity MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0032 [-0.0132,+0.0011] want BELOW
+  W2 d14 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0206 [+0.0029,+0.0509] want ABOVE
+  W2 d14 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0259 [+0.0101,+0.0463] want CONSISTENT
+  W2 d15 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0058 [-0.0015,+0.0115] want ABOVE
+  W2 d15 S4 coherence M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0029 [-0.0089,+0.0032] want CONSISTENT
+  W2 d15 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0006 [-0.0093,+0.0045] want BELOW
+  W2 d15 P2 X-part concurrence M minus none: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0051 [-0.0086,-0.0005] want CONSISTENT
+  W2 d16 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0043 [-0.0003,+0.0092] want ABOVE
+  W2 d16 P1 Bell fidelity M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0083 [-0.0373,+0.0009] want BELOW
+  W2 d16 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0035 [-0.0154,+0.0017] want BELOW
+  W2 d16 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B CONSISTENT) value +0.0051 [-0.0032,+0.0263] want ABOVE
+  W2 d17 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0070 [+0.0025,+0.0112] want ABOVE
+  W2 d17 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0026 [-0.0177,+0.0031] want BELOW
+  W2 d17 P5 signed pair-phase residual MF (deg/step): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.1238 [-0.3232,+0.1171] want CONSISTENT
+  W2 d18 P1 Bell fidelity MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0101 [-0.0219,-0.0029] want BELOW
+  W2 d18 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0034 [-0.0140,+0.0232] want ABOVE
+  W2 d19 S2 SPLIT slope ME vs 0 (all given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0059 [-0.0160,+0.0251] want CONSISTENT
+  W2 d19 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0043 [+0.0000,+0.0090] want ABOVE
+  W2 d19 P1 Bell fidelity M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0104 [-0.0335,-0.0004] want BELOW
+  W2 d19 P1 Bell fidelity MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0069 [-0.0134,+0.0001] want BELOW
+  W2 d19 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0091 [-0.0040,+0.0267] want ABOVE
+  W2 d19 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0221 [-0.0451,-0.0077] want BELOW
+  W2 d20 P1 Bell fidelity MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0077 [-0.0168,+0.0017] want BELOW
+  W2 d20 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0073 [-0.0030,+0.0329] want ABOVE
+  W2 d21 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0048 [-0.0003,+0.0112] want ABOVE
+  W2 d21 P1 Bell fidelity MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0053 [-0.0121,+0.0009] want BELOW
+  W2 d21 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0038 [-0.0064,+0.0254] want ABOVE
+  W2 d22 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0060 [+0.0010,+0.0117] want ABOVE
+  W2 d22 P1 Bell fidelity M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0144 [-0.0304,-0.0041] want BELOW
+  W2 d22 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B CONSISTENT) value +0.0071 [-0.0027,+0.0247] want ABOVE
+  W2 d23 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0055 [+0.0000,+0.0097] want ABOVE
+  W2 d23 P1 Bell fidelity MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0056 [-0.0167,-0.0005] want BELOW
+  W2 d23 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0056 [-0.0011,+0.0384] want ABOVE
+  W2 d23 C4 distance share given back MC vs 0.5: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.6783 [+0.5861,+0.7417] want ABOVE
+  W2 d24 S2 SPLIT slope ME vs 0 (all given back): got CANNOT_TELL (A ABOVE, B BELOW) value +0.0002 [-0.0182,+0.0220] want CONSISTENT
+  W2 d24 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0020 [-0.0015,+0.0128] want ABOVE
+  W2 d24 S4 coherence ME minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0054 [+0.0017,+0.0093] want CONSISTENT
+  W2 d24 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0063 [-0.0142,+0.0008] want BELOW
+  W2 d24 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0091 [-0.0020,+0.0407] want ABOVE
+  W2 d24 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0127 [-0.0323,+0.0057] want CONSISTENT
+  W2 d24 C4 distance share given back MC vs 0.5: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.6104 [+0.4986,+0.7046] want ABOVE
+  W2 d25 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0040 [+0.0005,+0.0100] want ABOVE
+  W2 d25 S3 P(1) excess back-to-zero MF: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0025 [-0.0047,-0.0008] want CONSISTENT
+  W2 d25 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0045 [-0.0124,+0.0001] want BELOW
+  W2 d25 C1 dF ME minus none: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0146 [+0.0006,+0.0305] want CONSISTENT
+  W2 d26 S3 P(1) excess back-to-zero MC: got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0060 [+0.0028,+0.0113] want ABOVE
+  W2 d26 P1 Bell fidelity MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0078 [-0.0139,-0.0011] want BELOW
+  W2 d26 P3 Bell fidelity MC minus M (given back): got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0077 [-0.0088,+0.0376] want ABOVE
+  W2 d27 S4 coherence ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0010 [-0.0053,+0.0029] want CONSISTENT
+  W2 d27 P1 Bell fidelity M minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0041 [-0.0191,+0.0012] want BELOW
+  W2 d27 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0042 [-0.0178,+0.0017] want BELOW
+  W2 d27 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B CONSISTENT) value +0.0007 [-0.0112,+0.0229] want ABOVE
+  W2 d28 S3 P(1) excess back-to-zero MC: got CONSISTENT (A CONSISTENT, B CONSISTENT) value +0.0050 [-0.0010,+0.0100] want ABOVE
+  W2 d28 S4 coherence MC minus none: got BELOW (A CONSISTENT, B CONSISTENT) value -0.0081 [-0.0123,-0.0023] want CONSISTENT
+  W2 d28 P1 Bell fidelity M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0115 [-0.0530,-0.0017] want BELOW
+  W2 d28 P1 Bell fidelity MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0029 [-0.0114,+0.0024] want BELOW
+  W2 d28 P2 X-part concurrence M minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0074 [+0.0015,+0.0147] want CONSISTENT
+  W2 d28 P2 X-part concurrence MC minus none: got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0038 [+0.0008,+0.0088] want CONSISTENT
+  W2 d28 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B CONSISTENT) value +0.0110 [-0.0030,+0.0512] want ABOVE
+  W2 d29 P1 Bell fidelity MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0042 [-0.0129,+0.0022] want BELOW
+  W2 d29 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0178 [+0.0021,+0.0662] want ABOVE
+  W2 d29 P3b X-part concurrence MC minus M (frame only): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0033 [-0.0091,-0.0011] want CONSISTENT
+  W2 d29 C4 distance share given back MC vs 0.5: got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.6349 [+0.5450,+0.7258] want ABOVE
+  W3 d0 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0260 [-0.0442,-0.0055] want BELOW
+  W3 d2 C1 dF MF minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0199 [-0.0371,+0.0001] want BELOW
+  W3 d2 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0235 [-0.0412,-0.0085] want BELOW
+  W3 d3 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0310 [-0.0516,-0.0114] want BELOW
+  W3 d3 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0261 [-0.0452,+0.0009] want BELOW
+  W3 d3 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0270 [-0.0476,-0.0111] want BELOW
+  W3 d5 P4a |pair phase| M minus copy floor (gate): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0946 [-0.0699,+0.3950] want CONSISTENT
+  W3 d5 C1 dF M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0228 [-0.0415,-0.0085] want BELOW
+  W3 d6 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0283 [-0.0446,-0.0104] want BELOW
+  W3 d6 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0278 [-0.0491,-0.0106] want BELOW
+  W3 d6 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0225 [-0.0398,-0.0065] want BELOW
+  W3 d7 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0309 [-0.0473,-0.0123] want BELOW
+  W3 d7 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0277 [-0.0480,-0.0106] want BELOW
+  W3 d8 C1 dF M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0195 [-0.0402,+0.0001] want BELOW
+  W3 d8 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0287 [-0.0502,-0.0130] want BELOW
+  W3 d8 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0299 [-0.0442,-0.0150] want BELOW
+  W3 d10 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0259 [-0.0423,-0.0070] want BELOW
+  W3 d11 P4a |pair phase| M minus copy floor (gate): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0051 [-0.1946,+0.1497] want CONSISTENT
+  W3 d11 C1 dF M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0206 [-0.0370,-0.0067] want BELOW
+  W3 d11 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0212 [-0.0421,-0.0073] want BELOW
+  W3 d12 C1 dF M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0274 [-0.0460,-0.0087] want BELOW
+  W3 d12 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0306 [-0.0444,-0.0117] want BELOW
+  W3 d13 P4a |pair phase| M minus copy floor (gate): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0789 [-0.0820,+0.2263] want CONSISTENT
+  W3 d14 C1 dF MF minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0151 [-0.0316,+0.0008] want BELOW
+  W3 d15 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0357 [-0.0561,-0.0197] want BELOW
+  W3 d15 C1 dF ME minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0115 [-0.0255,+0.0041] want BELOW
+  W3 d16 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0179 [-0.0338,-0.0009] want BELOW
+  W3 d17 P4a |pair phase| M minus copy floor (gate): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.1053 [+0.0022,+0.2632] want CONSISTENT
+  W3 d17 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0304 [-0.0510,-0.0084] want BELOW
+  W3 d17 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0325 [-0.0505,-0.0148] want BELOW
+  W3 d18 KG kick M (deg/readout): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0395 [-0.1331,+0.0658] want CONSISTENT
+  W3 d18 S4b coherence MC minus M (frame only): got BELOW (A CONSISTENT, B CONSISTENT) value -0.0059 [-0.0114,-0.0007] want CONSISTENT
+  W3 d18 C1 dF M minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0123 [-0.0281,+0.0066] want BELOW
+  W3 d18 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0262 [-0.0469,-0.0077] want BELOW
+  W3 d18 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0237 [-0.0380,-0.0029] want BELOW
+  W3 d19 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0283 [-0.0481,-0.0074] want BELOW
+  W3 d20 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0306 [-0.0442,-0.0141] want BELOW
+  W3 d20 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0252 [-0.0491,-0.0089] want BELOW
+  W3 d20 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0255 [-0.0448,-0.0077] want BELOW
+  W3 d21 C1 dF M minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0101 [-0.0256,+0.0082] want BELOW
+  W3 d21 C1 dF MF minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0134 [-0.0330,+0.0051] want BELOW
+  W3 d22 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0195 [-0.0382,-0.0010] want BELOW
+  W3 d22 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0219 [-0.0457,-0.0057] want BELOW
+  W3 d23 KG kick M (deg/readout): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.1047 [+0.0040,+0.1702] want CONSISTENT
+  W3 d23 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0206 [-0.0397,-0.0039] want BELOW
+  W3 d23 C1 dF ME minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0123 [-0.0266,+0.0020] want BELOW
+  W3 d24 KG kick M (deg/readout): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0611 [+0.0006,+0.1412] want CONSISTENT
+  W3 d24 S1 signed residual MF (deg/readout): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0361 [-0.0630,+0.2227] want CONSISTENT
+  W3 d25 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0303 [-0.0449,-0.0097] want BELOW
+  W3 d27 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0273 [-0.0404,-0.0097] want BELOW
+  W3 d27 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0251 [-0.0405,-0.0052] want BELOW
+  W3 d27 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0194 [-0.0358,-0.0065] want BELOW
+  W3 d28 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0191 [-0.0368,-0.0028] want BELOW
+  W3 d29 C1 dF M minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0285 [-0.0483,-0.0093] want BELOW
+  W3 d29 C1 dF ME minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0114 [-0.0285,+0.0042] want BELOW
+  W4 d0 S2 SPLIT slope MC vs 0 (all given back): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0101 [-0.0110,+0.0330] want CONSISTENT
+  W4 d0 S5 SPLIT slope MC minus MF (old vs fresh table): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0101 [-0.0139,+0.0319] want CONSISTENT
+  W4 d0 C1 dF MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0165 [-0.0362,+0.0026] want BELOW
+  W4 d0 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0305 [-0.0506,-0.0120] want BELOW
+  W4 d0 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0248 [-0.0450,-0.0083] want BELOW
+  W4 d1 P5 signed pair-phase residual MC (deg/step): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.2030 [-0.2500,+0.5353] want CONSISTENT
+  W4 d1 P5 signed pair-phase residual MF (deg/step): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.1468 [-0.0571,+0.4472] want CONSISTENT
+  W4 d2 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0374 [-0.0593,-0.0195] want BELOW
+  W4 d2 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0255 [-0.0436,-0.0122] want BELOW
+  W4 d3 S1 signed residual ME (deg/readout): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0775 [+0.0003,+0.1459] want CONSISTENT
+  W4 d3 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0135 [+0.0028,+0.0529] want ABOVE
+  W4 d4 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0268 [-0.0487,-0.0078] want BELOW
+  W4 d4 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0253 [-0.0469,-0.0095] want BELOW
+  W4 d4 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0248 [-0.0395,-0.0095] want BELOW
+  W4 d5 P5 signed pair-phase residual MF (deg/step): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.2147 [-0.0618,+0.3230] want CONSISTENT
+  W4 d5 C1 dF MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0195 [-0.0380,+0.0006] want BELOW
+  W4 d5 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0232 [-0.0456,-0.0027] want BELOW
+  W4 d6 C1 dF ME minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0196 [-0.0350,+0.0006] want BELOW
+  W4 d7 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A ABOVE, B CONSISTENT) value +0.0262 [-0.0004,+0.0674] want ABOVE
+  W4 d7 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0212 [-0.0383,-0.0074] want BELOW
+  W4 d7 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0242 [-0.0417,-0.0050] want BELOW
+  W4 d8 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0317 [-0.0458,-0.0162] want BELOW
+  W4 d8 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0263 [-0.0436,-0.0066] want BELOW
+  W4 d9 S4b coherence MC minus M (frame only): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0044 [+0.0002,+0.0078] want CONSISTENT
+  W4 d9 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0201 [-0.0363,-0.0011] want BELOW
+  W4 d11 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0242 [-0.0406,-0.0035] want BELOW
+  W4 d11 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0353 [-0.0498,-0.0207] want BELOW
+  W4 d12 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0324 [-0.0506,-0.0146] want BELOW
+  W4 d12 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0266 [-0.0448,-0.0082] want BELOW
+  W4 d12 C3 F(MC) minus F(M put back at the end): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0472 [+0.0299,+0.0696] want ABOVE
+  W4 d13 S1 signed residual MC (deg/readout): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0349 [-0.1782,+0.1199] want CONSISTENT
+  W4 d13 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0257 [-0.0481,-0.0119] want BELOW
+  W4 d13 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0309 [-0.0494,-0.0130] want BELOW
+  W4 d13 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0255 [-0.0390,-0.0075] want BELOW
+  W4 d14 P5 signed pair-phase residual ME (deg/step): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0449 [-0.2759,+0.2947] want CONSISTENT
+  W4 d14 P3b X-part concurrence MC minus M (frame only): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0024 [-0.0100,+0.0020] want CONSISTENT
+  W4 d14 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0303 [-0.0435,-0.0109] want BELOW
+  W4 d14 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0271 [-0.0415,-0.0073] want BELOW
+  W4 d14 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0239 [-0.0374,-0.0070] want BELOW
+  W4 d15 C1 dF MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0216 [-0.0381,+0.0004] want BELOW
+  W4 d15 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0302 [-0.0485,-0.0045] want BELOW
+  W4 d17 C1 dF MC minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0143 [-0.0336,+0.0021] want BELOW
+  W4 d17 C1 dF MF minus none: got CONSISTENT (A CONSISTENT, B CONSISTENT) value -0.0114 [-0.0311,+0.0069] want BELOW
+  W4 d17 C1 dF ME minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0262 [-0.0430,-0.0070] want BELOW
+  W4 d18 S1 signed residual MF (deg/readout): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0343 [-0.1689,+0.1003] want CONSISTENT
+  W4 d18 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0277 [-0.0458,-0.0071] want BELOW
+  W4 d18 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0294 [-0.0434,-0.0110] want BELOW
+  W4 d18 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0187 [-0.0357,+0.0006] want BELOW
+  W4 d19 S1 signed residual MF (deg/readout): got ABOVE (A CONSISTENT, B CONSISTENT) value +0.0549 [+0.0039,+0.0933] want CONSISTENT
+  W4 d19 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0288 [-0.0488,-0.0098] want BELOW
+  W4 d20 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0274 [-0.0432,-0.0030] want BELOW
+  W4 d20 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0177 [-0.0344,+0.0043] want BELOW
+  W4 d20 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0293 [-0.0464,-0.0120] want BELOW
+  W4 d21 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0252 [-0.0451,-0.0050] want BELOW
+  W4 d22 P5 signed pair-phase residual MC (deg/step): got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.1329 [-0.3893,+0.1510] want CONSISTENT
+  W4 d22 P5 signed pair-phase residual ME (deg/step): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.1099 [-0.6859,+0.2366] want CONSISTENT
+  W4 d22 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0282 [-0.0459,-0.0143] want BELOW
+  W4 d22 C1 dF MF minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0322 [-0.0584,-0.0117] want BELOW
+  W4 d23 S4b coherence MC minus M (frame only): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0020 [-0.0076,+0.0039] want CONSISTENT
+  W4 d23 C1 dF MC minus none: got CANNOT_TELL (A BELOW, B CONSISTENT) value -0.0279 [-0.0512,-0.0124] want BELOW
+  W4 d23 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0264 [-0.0455,-0.0081] want BELOW
+  W4 d24 P3 Bell fidelity MC minus M (given back): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0239 [+0.0001,+0.0617] want ABOVE
+  W4 d24 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0172 [-0.0306,+0.0001] want BELOW
+  W4 d24 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0186 [-0.0340,-0.0026] want BELOW
+  W4 d24 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0260 [-0.0450,-0.0125] want BELOW
+  W4 d26 S2 SPLIT slope ME vs 0 (all given back): got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0164 [-0.0429,+0.0038] want CONSISTENT
+  W4 d26 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0161 [-0.0298,+0.0013] want BELOW
+  W4 d27 C3 F(MC) minus F(M put back at the end): got CANNOT_TELL (A CONSISTENT, B ABOVE) value +0.0388 [+0.0211,+0.0587] want ABOVE
+  W4 d28 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0385 [-0.0535,-0.0198] want BELOW
+  W4 d28 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0409 [-0.0594,-0.0224] want BELOW
+  W4 d28 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0279 [-0.0427,-0.0103] want BELOW
+  W4 d29 C1 dF MC minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0238 [-0.0433,-0.0035] want BELOW
+  W4 d29 C1 dF MF minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0263 [-0.0425,-0.0080] want BELOW
+  W4 d29 C1 dF ME minus none: got CANNOT_TELL (A CONSISTENT, B BELOW) value -0.0267 [-0.0452,-0.0102] want BELOW

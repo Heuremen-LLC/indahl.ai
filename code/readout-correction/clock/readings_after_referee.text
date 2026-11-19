@@ -1,0 +1,10 @@
+DARKWAVE CLOCK, first fire: readings defined after the data, after the outside referee (31 Oct 2026 ~19:30 EDT). Not in the plan.
+1. Bootstrap-draw check of the kingston clock reading (share M31 minus share MT): the FINAL label at seed 31 (results_clock.text) read
+   CONSISTENT; over seeds 0..19 at 2,000 draws it reads CANNOT_TELL in 18 and CONSISTENT in 2. Copy B's lower band edge sits at the
+   margin: min -0.0526, median -0.0510, max -0.0497 over those seeds. The pooled band sits inside +-0.05 at every seed. Reading:
+   kingston CANNOT_TELL at the plan's margin (one copy at its edge). The referee found the same over 40 seeds (14 CONSISTENT, 26 CANNOT_TELL).
+2. Copy gap (A minus B) of the clock reading, 99 % bootstrap over qubits: kingston +0.009 [-0.038, +0.050], marrakesh +0.045
+   [-0.053, +0.133]; neither resolves; on marrakesh the copies differ in sign (A +0.017, B -0.028).
+3. IBM records between the two tables (props_before_C of the keystone run and of this fire): kingston restamped 14:58:55 -> 17:11:43 EDT,
+   marrakesh 14:56:12 -> 17:47:21 EDT. Over the 117 untouched qubits: T1, T2 and readout length unchanged on both chips; readout_error
+   changed on 114 of 117 kingston qubits (median |delta| 0.00305) and on none of marrakesh's.

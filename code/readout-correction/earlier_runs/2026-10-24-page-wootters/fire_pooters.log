@@ -1,0 +1,6 @@
+ibm_kingston: c0,s,c1 = 3,16,23; 54 circuits per job x 2 jobs x 2000 shots; cz per circuit 4; scheduled durations on c0,c1,s (dt) {"M_XXX": {"3": 2865, "23": 2799, "16": 2873}, "D_XXX": {"3": 2865, "23": 2799, "16": 2873}, "M_ZZZ": {"3": 2857, "23": 2791, "16": 2865}, "D_ZZZ": {"3": 2857, "23": 2791, "16": 2865}} -> equal M vs D: True; est 79 s (cap 90), remaining 3968, reserve 430
+SUBMITTED J1 attempt 1 job dbe9nf7pc3tc739lar8g 2026-10-24T11:51:24Z
+DONE J1 usage 32 s (total 32)
+SUBMITTED J2 attempt 1 job dbe9ru7gdj9s73fle000 2026-10-24T12:00:56Z
+DONE J2 usage 32 s (total 64)
+ALL DONE 64 s

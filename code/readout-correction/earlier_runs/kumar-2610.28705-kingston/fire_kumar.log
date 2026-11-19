@@ -1,0 +1,10 @@
+ibm_kingston: FIRING, est 236 s, cap 280, remaining 3854
+SUBMITTED job A1 dbea7evsstms73fbnehg 2026-10-24T12:25:31Z (remaining before 3854)
+DONE job A1 usage 57 s (total 57)
+SUBMITTED job B1 dbea8oom94ac738rfiag 2026-10-24T12:28:19Z (remaining before 3747)
+DONE job B1 usage 57 s (total 114)
+SUBMITTED job B2 dbeabgnpc3tc739lbj30 2026-10-24T12:34:10Z (remaining before 3671)
+DONE job B2 usage 57 s (total 171)
+SUBMITTED job A2 dbeacfnsstms73fbnk50 2026-10-24T12:36:14Z (remaining before 3576)
+DONE job A2 usage 57 s (total 228)
+ALL DONE 228 s -- now run analyze_kumar.py
